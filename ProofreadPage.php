@@ -4,12 +4,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
-$wgExtensionFunctions[] = 'wfProofreadPageSetup';
-
-function wfProofreadPageSetup() {
-	global $wgParser, $wgHooks;
-	$wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
-}
+$wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
 
 function wfProofreadPageParserOutput( &$out, &$pout ) {
 	global $wgTitle, $wgJsMimeType;
