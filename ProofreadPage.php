@@ -7,10 +7,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
 
 function wfProofreadPageParserOutput( &$out, &$pout ) {
-	global $wgTitle, $wgJsMimeType, $wgScriptPath;
-	if ( !isset( $wgTitle ) || !$out->isArticle() ) {
+	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest;
+	$action = $wgRequest->getVal('action');
+	$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
+	if ( !isset( $wgTitle ) || ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
 		return true;
 	}
+	$out->proofreadPageDone = true;
 	if ( !preg_match( '/^Page:(.*)$/', $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
 	}
@@ -35,6 +38,7 @@ var proofreadPageWidth = $width;
 var proofreadPageHeight = $height;
 var proofreadPageViewURL = "$viewURL";
 var proofreadPageThumbURL = "$thumbURL";
+var proofreadPageIsEdit = $isEdit;
 </script>
 <script type="$wgJsMimeType" src="$jsFile"></script>
 
