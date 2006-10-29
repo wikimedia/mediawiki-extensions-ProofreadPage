@@ -5,6 +5,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
+$wgExtensionCredits['parserhook'][] = array(
+	'name' => 'ProofreadPage',
+	'author' => 'ThomasV'
+);
 
 function wfProofreadPageParserOutput( &$out, &$pout ) {
 	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest;
