@@ -5,6 +5,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
+$wgHooks['LoadAllMessages'][] = 'wfProofreadPageLoadMessages';
+
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'ProofreadPage',
 	'author' => 'ThomasV'
@@ -12,13 +14,15 @@ $wgExtensionCredits['parserhook'][] = array(
 
 function wfProofreadPageParserOutput( &$out, &$pout ) {
 	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest;
+	wfProofreadPageLoadMessages();
 	$action = $wgRequest->getVal('action');
 	$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
 	if ( !isset( $wgTitle ) || ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
 		return true;
 	}
 	$out->proofreadPageDone = true;
-	if ( !preg_match( '/^Page:(.*)$/', $wgTitle->getPrefixedText(), $m ) ) {
+	$namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ) );
+	if ( !preg_match( "/^$namespace:(.*)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
 	}
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
@@ -49,6 +53,17 @@ var proofreadPageIsEdit = $isEdit;
 EOT
 	);
 	return true;
+}
+
+function wfProofreadPageLoadMessages() {
+	global $wgMessageCache;
+	static $done = false;
+	if ( $done ) return;
+
+	require( dirname( __FILE__ ) . '/ProofreadPage.i18n.php' );
+	foreach ( $messages as $lang => $messagesForLang ) {
+		$wgMessageCache->addMessages( $messagesForLang, $lang );
+	}
 }
 
 ?>
