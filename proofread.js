@@ -78,4 +78,4 @@ function proofreadPageSetup() {
 		f.appendChild(table);
 	}
 }
-addOnloadHook(proofreadPageSetup);
+// addOnloadHook(proofreadPageSetup);
