@@ -30,6 +30,32 @@ function proofreadPageSetup() {
 		displayWidth = proofreadPageWidth; 
 	}
 
+	if(proofreadPageIsEdit) {
+		text = document.getElementById("wpTextbox1"); 
+		if (text) {
+			text.setAttribute("style", "width:100%; height:100%;");  //width seems to be set by monobook already...
+
+                        re = /^(\{\{PageQuality\|[0-9][0-9*]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)(<noinclude>([\s\S]*?)<\/noinclude>|)\n$/;
+                        m = text.value.match(re);
+                        if(m) { 
+                                pageHeader = m2[2]; 
+                                pageBody   = m2[1]+m2[3];
+                                pageFooter = m2[5]; 
+                        }
+                        else {
+                                pageBody = text.value;
+                                pageHeader = '';
+                                pageFooter = '';
+                        }
+		}
+	} else { 
+		text = document.getElementById("bodyContent"); 
+	}
+	if(!text) return;
+
+
+
+
 	//image 
 	image = document.createElement("img");
 	image.setAttribute("src", image_url); 
@@ -47,30 +73,38 @@ function proofreadPageSetup() {
 	t_body = document.createElement("tbody");
 	t_row = document.createElement("tr");
 	t_row.setAttribute("valign","top");
-	cell0 = document.createElement("td");   
-	cell0.setAttribute("width", "50%");
-	cell0.setAttribute("style", "padding-right: 0.5em");
-	cell1 = document.createElement("td");   
-	cell1.appendChild(container);
-	cell1.setAttribute("valign","top");
-	t_row.appendChild(cell0);
-	t_row.appendChild(cell1);
+	cell_left = document.createElement("td");   
+	cell_left.setAttribute("width", "50%");
+	cell_left.setAttribute("style", "padding-right: 0.5em");
+	cell_right = document.createElement("td");   
+	cell_right.appendChild(container);
+	cell_right.setAttribute("valign","top");
+	cell_right.setAttribute("rowspan","3");
+	t_row.appendChild(cell_left);
+	t_row.appendChild(cell_right);
 	t_body.appendChild(t_row);
 	table.appendChild(t_body);
 
-	if(proofreadPageIsEdit) {
-		text = document.getElementById("wpTextbox1"); 
-		if (text) {
-			text.setAttribute("style", "width:100%; height:100%;");  //width seems to be set by monobook already...
-		}
-	} else { 
-		text = document.getElementById("bodyContent"); 
-	}
-	if(!text) return;
-
 	f = text.parentNode; 
 	new_text = f.removeChild(text);
-	cell0.appendChild(new_text);
+        
+
+	if(proofreadPageIsEdit) {
+		cell_left.innerHTML = ''
+			+'Header (noinclude):<br/>'
+			+'<textarea name="headerTextbox" rows="4" cols="80">'+pageHeader+'</textarea>'
+			+'<br/>Page body (to be transcluded):<br/>'
+			+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
+			+'<br/>Footer (noinclude):<br/>'
+			+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea>';
+
+		saveButton = document.getElementById("wpSave"); 
+		saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+		previewButton = document.getElementById("wpPreview"); 
+		previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+
+	} else cell_left.appendChild(new_text);
+
 	copywarn = document.getElementById("editpage-copywarn");
 	if(copywarn){ 
 		f.insertBefore(table,copywarn);
@@ -78,4 +112,25 @@ function proofreadPageSetup() {
 		f.appendChild(table);
 	}
 }
-// addOnloadHook(proofreadPageSetup);
+
+
+
+
+function proofreadPageFillForm(form) {
+	header = form.elements["headerTextbox"];
+	footer = form.elements["footerTextbox"];
+	if(header){
+		h = header.value;
+		if(h) h = "<noinclude>"+h+"</noinclude>";
+		f = footer.value;
+		if(f) f = "<noinclude>\n"+f+"</noinclude>";
+		ph = header.parentNode; 
+		ph.removeChild(header);
+		pf = footer.parentNode; 
+		pf.removeChild(footer);
+		form.elements["wpTextbox1"].value = h+form.elements["wpTextbox1"].value+f;
+	}
+}
+
+
+addOnloadHook(proofreadPageSetup);
