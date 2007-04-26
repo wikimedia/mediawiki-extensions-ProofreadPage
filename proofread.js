@@ -32,28 +32,35 @@ function proofreadPageSetup() {
 
 	if(proofreadPageIsEdit) {
 		text = document.getElementById("wpTextbox1"); 
-		if (text) {
-			text.setAttribute("style", "width:100%; height:100%;");  //width seems to be set by monobook already...
+		if (!text) return;
+		text.setAttribute("style", "width:100%; height:100%;");  //width seems to be set by monobook already...
 
-                        re = /^(\{\{PageQuality\|[0-9][0-9*]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)(<noinclude>([\s\S]*?)<\/noinclude>|)\n$/;
-                        m = text.value.match(re);
-                        if(m) { 
-                                pageHeader = m2[2]; 
-                                pageBody   = m2[1]+m2[3];
-                                pageFooter = m2[5]; 
-                        }
-                        else {
-                                pageBody = text.value;
-                                pageHeader = '';
-                                pageFooter = '';
-                        }
+		re = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
+		m = text.value.match(re);
+		if(m) {
+			pageHeader = m[2];
+			pageBody   = m[1]+m[3];
+			pageFooter = m[4];
 		}
-	} else { 
-		text = document.getElementById("bodyContent"); 
+		else {
+			re2 = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)\n$/;
+			m2 = text.value.match(re2);
+			if(m2) {
+				pageHeader = m2[2];
+				pageBody   = m2[1]+m2[3];
+				pageFooter = '';
+			}
+			else {
+				pageHeader = '';
+				pageBody = text.value;
+				pageFooter = '';
+			}
+		}
 	}
-	if(!text) return;
-
-
+	else { 
+		text = document.getElementById("bodyContent"); 
+		if(!text) return;
+	}
 
 
 	//image 
