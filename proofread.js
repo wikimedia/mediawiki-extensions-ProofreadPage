@@ -1,9 +1,51 @@
 // Author : ThomasV - License : GPL
 
-function proofreadPageSetup() {
-	if(!self.proofreadPageViewURL) {
-		return;
+
+function proofreadPageDoTabs(){
+
+	a = document.getElementById("p-cactions");
+	if (!a) return;
+	b = a.getElementsByTagName("ul");
+	if (!b) return;
+
+	if(self.proofreadPageViewURL) {
+		b[0].innerHTML = b[0].innerHTML 
+			+ '<li id="ca-image">'
+			+ '<a href='+proofreadPageViewURL+'>'
+			+ 'Image</a></li>';
 	}
+
+	if(self.proofreadPageIndexURL){
+		b[0].innerHTML = b[0].innerHTML 
+			+ '<li id="ca-index">'
+			+ '<a href='+proofreadPageIndexURL+' title="Index">'
+			+ "<img src='http://upload.wikimedia.org/wikipedia/commons/a/af/1uparrow.png' alt='Index' width='15' height='15' longdesc='Next Page'/></a></li>";
+	}
+  
+	if(self.proofreadPageNextURL){
+		b[0].innerHTML = 
+			'<li id="ca-next">'
+			+ '<a href='+self.proofreadPageNextURL+' title="Next Page">'
+			+ "<img src='http://upload.wikimedia.org/wikipedia/commons/3/3c/1rightarrow.png' alt='Next Page' width='15' height='15' longdesc='Next Page'/></a></li>"
+			+ b[0].innerHTML ;
+	}
+
+	if(self.proofreadPagePrevURL){
+		b[0].innerHTML = 
+			'<li id="ca-prev">'
+			+ '<a href='+self.proofreadPagePrevURL+' title="Previous Page">'
+			+ "<img src='http://upload.wikimedia.org/wikipedia/commons/8/8e/1leftarrow.png' alt='Previous Page' width='15' height='15' longdesc='Previous Page'/></a></li>"
+			+ b[0].innerHTML ;
+       }
+}
+
+
+
+
+
+function proofreadPageSetup() {
+
+	if(!self.proofreadPageViewURL) return;
 
 	if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
 	if(document.URL.indexOf("action=delete") > 0 || document.URL.indexOf("action=undelete") > 0) return;
@@ -137,7 +179,162 @@ function proofreadPageFillForm(form) {
 		pf.removeChild(footer);
 		form.elements["wpTextbox1"].value = h+form.elements["wpTextbox1"].value+f;
 	}
+
 }
 
 
+
+
+
+
+/*
+ *  Mouse Zoom.  Credits: http://valid.tjp.hu/zoom/
+ */
+
+
+//size of the zoom window
+var zoomw=160;
+var zoomh=120;
+
+var zp_pic;
+var zp_clip;
+var zp_container;
+
+var zoomamount=2; 
+//size of the lowresself.pr image
+var objw;
+var objh;
+var zoom_status=''; 
+var zoomratio=zoomw/zoomh; 
+var ieox=0; var ieoy=0; 
+var ffox=0; var ffoy=0;
+
+
+function zoom_move(evt) {
+
+	if(zoom_status == 0) { return false;}
+
+	if(typeof(evt) == 'object') {
+		var evt = evt?evt:window.event?window.event:null; if(!evt){ return;}
+		if(evt.pageX) {
+			xx=evt.pageX - ffox;
+			yy=evt.pageY - ffoy;
+		} 
+		else {
+			if(typeof(document.getElementById("zp")+1) == 'number') {return true;} 
+			xx=evt.clientX - ieox;
+			yy=evt.clientY - ieoy;
+		}
+	} 
+	else { 
+		xx=lastxx; 
+		yy=lastyy; 
+	}
+	lastxx=xx; lastyy=yy;
+
+	zp_clip.style.margin=((yy-zoomh/2 > 0)?(zoomh/2-yy*zoomamount):(yy*(1-zoomamount)))+'px 0px 0px '+((xx-zoomw/2 > 0)?(zoomw/2-xx*zoomamount):(xx*(1-zoomamount)))+'px';
+
+	zp_container.style.margin=((yy-zoomh/2 > 0)?(yy-zoomh/2):(0))+'px 0px 0px '+((xx-zoomw/2 > 0)?(xx-zoomw/2):(0))+'px';
+	//width of the zoom window
+	w2=((xx+zoomw/2<objw)?((zoomw/2<xx)?(zoomw):(zoomw/2+xx)):(zoomw/2+objw-xx));  if(w2<0) {w2=0;} 
+	h2=((yy+zoomh/2<objh)?((zoomh/2<yy)?(zoomh):(zoomh/2+yy)):(zoomh/2+objh-yy));  if(h2<0) {h2=0;} 
+	zp_container.style.width=w2+'px';
+	zp_container.style.height=h2+'px';
+
+	return false;
+}
+
+function zoom_off() {
+	if(zoom_status == 1) {
+		zp_container.style.width='0px';
+		zp_container.style.height='0px';
+	}
+	zoom_status=0;
+}
+
+function countoffset() {
+	zme=document.getElementById("zp");
+	ieox=0; ieoy=0;
+	for(zmi=0;zmi<50;zmi++) {
+		if(zme+1 == 1) { 
+			break;
+		} 
+		else {
+			ieox+=zme.offsetLeft; 
+			ieoy+=zme.offsetTop;
+		}
+		zme=zme.offsetParent; 
+	}
+	ffox=ieox;
+	ffoy=ieoy;
+	ieox-=document.body.scrollLeft;
+	ieoy-=document.body.scrollTop;
+}
+
+
+function zoom_on(evt) {
+
+	if(zoom_status==1) {
+		zoom_off(); 
+		return false;
+	}
+
+	var evt = evt?evt:window.event?window.event:null; if(!evt){ return;}
+	zoom_status=1;
+
+	if(evt.pageX) {
+		countoffset();
+		lastxx=evt.pageX - ffox; 
+		lastyy=evt.pageY - ffoy;
+		} 
+	else {
+		countoffset();
+		lastxx=evt.clientX - ieox;
+		lastyy=evt.clientY - ieoy; 
+	}
+
+	objw=zp_pic.width; 
+	objh=zp_pic.height; 
+	zoomamount = zp_clip.height/objh;
+
+	if(zoomw>objw) {zoomw=objw; zoomh=objw/zoomratio;}
+	else if(zoomh>objh) {zoomh=objh; zoomw=objh*zoomratio}
+	zoom_move('');
+	return false;
+}
+
+
+function proofreadPageZoom(){
+
+	if(!self.proofreadPageViewURL) return;
+	if(!self.proofreadPageWidth) return;
+
+	zp = document.getElementById("proofreadImage");
+	if(zp){
+		if(proofreadPageWidth>800) {
+			hires_url = proofreadPageThumbURL.replace('##WIDTH##',""+800); 
+		}
+		else { 
+		     hires_url = proofreadPageViewURL; 
+		}
+
+	zp.setAttribute("onmouseup","zoom_on(event);" );
+	zp.setAttribute("onmousemove","zoom_move(event);" );
+	zp.setAttribute("id","zp" );
+	zp_pic=zp.firstChild;
+
+	zp_container = document.createElement("div");
+	zp_container.setAttribute("style","position:absolute; width:0; height:0; overflow:hidden;"); 
+	zp_clip = document.createElement("img");
+	zp_clip.setAttribute("src", hires_url);
+	zp_clip.setAttribute("style", "padding:0;margin:0;border:0;");
+	zp_container.appendChild(zp_clip);
+	zp.insertBefore(zp_container,zp_pic); 
+	}
+}
+
+
+
 addOnloadHook(proofreadPageSetup);
+addOnloadHook(proofreadPageDoTabs);
+hookEvent("load", proofreadPageZoom);
