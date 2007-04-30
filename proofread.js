@@ -45,6 +45,7 @@ function proofreadPageDoTabs(){
 
 function proofreadPageSetup() {
 
+	if( document.getElementById("proofreadImage")) return;
 	if(!self.proofreadPageViewURL) return;
 
 	if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
