@@ -69,21 +69,26 @@ function wfProofreadPageNavigation( ) {
 	if( !$zz ) return $err;
 
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ) );
-	$tag_pattern = "/\[\[($page_namespace:[\s\S]*?)\]\]/m";
+	$tag_pattern = "/\[\[($page_namespace:.*?)(\|.*?|)\]\]/";
 	preg_match_all( $tag_pattern, $zz->old_text, $links, PREG_PATTERN_ORDER );
 
 	for( $i=0; $i<count( $links[1] ); $i++) { 
-		if( $links[1][$i]==$wgTitle->getPrefixedText() ) break;
+		$a_title = Title::newFromText( $links[1][$i] );
+		if(!$a_title) continue; 
+		if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) break;
 	}
-	if( $i>0 ){
+	if( ($i>0) && ($i+1<count($links[1])) ){
 		$prev_title = Title::newFromText( $links[1][$i-1] );
+		if(!$prev_title) return $err; 
 		$prev_url = $prev_title->getFullURL();
-	} else $prev_url = '';
-
-	if( $i+1<count($links[1])){ 
 		$next_title = Title::newFromText( $links[1][$i+1] );
+		if(!$next_title) return $err; 
 		$next_url = $next_title->getFullURL();
-	} else $next_url = '';
+	} 
+	else {
+	     $prev_url = '';
+	     $next_url = '';
+	}
 
 	return array( $index_url, $prev_url, $next_url );
 
