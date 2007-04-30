@@ -77,18 +77,18 @@ function wfProofreadPageNavigation( ) {
 		if(!$a_title) continue; 
 		if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) break;
 	}
-	if( ($i>0) && ($i+1<count($links[1])) ){
+	if( ($i>0) && ($i<count($links[1])) ){
 		$prev_title = Title::newFromText( $links[1][$i-1] );
 		if(!$prev_title) return $err; 
 		$prev_url = $prev_title->getFullURL();
+	}
+	else $prev_url = '';
+	if( ($i>=0) && ($i+1<count($links[1])) ){
 		$next_title = Title::newFromText( $links[1][$i+1] );
 		if(!$next_title) return $err; 
 		$next_url = $next_title->getFullURL();
 	} 
-	else {
-	     $prev_url = '';
-	     $next_url = '';
-	}
+	else $next_url = '';
 
 	return array( $index_url, $prev_url, $next_url );
 
