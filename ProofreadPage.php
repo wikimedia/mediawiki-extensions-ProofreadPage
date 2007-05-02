@@ -27,50 +27,26 @@ function wfProofreadPageNavigation( ) {
 	$err = array( '', '', '' );
 
 	$dbr =& wfGetDB( DB_SLAVE );
-	$pagelinks = $dbr->tableName( 'pagelinks' );
-	$sql = "SELECT pl_from FROM $pagelinks WHERE pl_title=? LIMIT 100" ;
-	$result = $dbr->safeQuery ( $sql, $wgTitle->getDBKey() ) ;
+	$result = $dbr->select( array('page','pagelinks'), array('page_namespace,page_title'), array('pl_namespace' => $wgTitle->getNamespace(), 'pl_title' => $wgTitle->getDBkey(), 'pl_from=page_id'), __METHOD__);
 	while( $x = $dbr->fetchObject ( $result )) {
-
-		$page_table = $dbr->tableName( 'page' );
-		$sql = "SELECT page_title, page_namespace, page_latest	FROM $page_table WHERE page_id=? LIMIT 1" ;
-		$result2 = $dbr->safeQuery ( $sql, $x->pl_from ) ;
-		$y = $dbr->fetchObject ( $result2 );
-		$dbr->freeResult( $result2 ) ;
-		if(!$y) { continue; }
-
-		$ref_title = Title::makeTitle( $y->page_namespace, $y->page_title );
-		if(!$ref_title) { continue; }
-
+		$ref_title = Title::makeTitle( $x->page_namespace, $x->page_title );
+		if(!$ref_title) continue;
 		if ( preg_match( "/^$index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
 			break;
 		}
-		else { continue;}
-
+		else continue;
 	}
 	if( !$x ) { return $err;}
 	$dbr->freeResult( $result ) ;
 
 	$index_title = $ref_title;
 	$index_url = $index_title->getFullURL();
-
-	$revision_table = $dbr->tableName( 'revision' );
-	$sql = "SELECT rev_text_id FROM $revision_table WHERE rev_id=? LIMIT 1" ;
-	$result = $dbr->safeQuery ( $sql, $y->page_latest ) ;
-	$z = $dbr->fetchObject ( $result ); 
-	$dbr->freeResult ( $result ) ;
-	if( !$z ) return $err;
-
-	$text = $dbr->tableName( 'text' );
-	$sql = "SELECT old_text FROM $text WHERE old_id=? LIMIT 1" ;
-	$result = $dbr->safeQuery ( $sql, $z->rev_text_id ) ;
-	$zz = $dbr->fetchObject ( $result ); 
-	$dbr->freeResult( $result ) ;
-	if( !$zz ) return $err;
+	$rev = Revision::newFromTitle( $index_title );
+	$text =	$rev->getText();
 
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ) );
-	$tag_pattern = "/\[\[($page_namespace:.*?)(\|.*?|)\]\]/";
-	preg_match_all( $tag_pattern, $zz->old_text, $links, PREG_PATTERN_ORDER );
+	$tag_pattern = "/\[\[($page_namespace:.*?)(\|.*?|)\]\]/i";
+	preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 
 	for( $i=0; $i<count( $links[1] ); $i++) { 
 		$a_title = Title::newFromText( $links[1][$i] );
