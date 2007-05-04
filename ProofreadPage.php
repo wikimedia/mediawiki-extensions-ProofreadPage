@@ -90,7 +90,7 @@ function wfProofreadPageParserOutput( &$out, &$pout ) {
 	$out->proofreadPageDone = true;
 
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ) );
-	if ( !preg_match( "/^$page_namespace:(.*)$/", $wgTitle->getPrefixedText(), $m ) ) {
+	if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
 	}
 
@@ -105,8 +105,17 @@ function wfProofreadPageParserOutput( &$out, &$pout ) {
 	if ( $image->exists() ) {
 		$width = intval( $image->getWidth() );
 		$height = intval( $image->getHeight() );
-		$viewURL = Xml::escapeJsString( $image->getViewURL() );
-		list( $isScript, $thumbURL ) = $image->thumbUrl( '##WIDTH##' );
+		if($m[2]) { 
+			$viewName = $image->thumbName( array( 'width' => $width, 'page' => $m[3] ) );
+			$viewURL = $image->thumbUrlFromName( $viewName );
+
+			$thumbName = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[3] ) );
+			$thumbURL = $image->thumbUrlFromName( $thumbName );
+		}
+		else {
+			$viewURL = Xml::escapeJsString(	$image->getViewURL() );
+			list( $isScript, $thumbURL ) = $image->thumbUrl( '##WIDTH##' );
+		}
 		$thumbURL = Xml::escapeJsString( str_replace( '%23', '#', $thumbURL ) );
 	} 
 	else {	
