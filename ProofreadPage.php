@@ -21,22 +21,30 @@ $wgExtensionCredits['parserhook'][] = array(
  * 
  */
 
-function wfProofreadPageNavigation( ) {
+function wfProofreadPageNavigation() {
 	global $wgTitle, $wgExtraNamespaces;
-	$index_namespace = preg_quote( wfMsgForContent('proofreadpage_index_namespace' ) );
+	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	$err = array( '', '', '' );
 
-	$dbr =& wfGetDB( DB_SLAVE );
-	$result = $dbr->select( array('page','pagelinks'), array('page_namespace,page_title'), array('pl_namespace' => $wgTitle->getNamespace(), 'pl_title' => $wgTitle->getDBkey(), 'pl_from=page_id'), __METHOD__);
-	while( $x = $dbr->fetchObject ( $result )) {
+	$dbr = wfGetDB( DB_SLAVE );
+	$result = $dbr->select(
+			array( 'page', 'pagelinks' ),
+			array( 'page_namespace', 'page_title' ),
+			array(
+				'pl_namespace' => $wgTitle->getNamespace(),
+				'pl_title' => $wgTitle->getDBkey(),
+				'pl_from=page_id'
+			),
+			__METHOD__);
+	while( $x = $dbr->fetchObject( $result ) ) {
 		$ref_title = Title::makeTitle( $x->page_namespace, $x->page_title );
-		if(!$ref_title) continue;
-		if ( preg_match( "/^$index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
+		if( preg_match( "/^$index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
 			break;
 		}
-		else continue;
 	}
-	if( !$x ) { return $err;}
+	if( !$x ) {
+		return $err;
+	}
 	$dbr->freeResult( $result ) ;
 
 	$index_title = $ref_title;
@@ -44,7 +52,7 @@ function wfProofreadPageNavigation( ) {
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
 
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ) );
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$tag_pattern = "/\[\[($page_namespace:.*?)(\|.*?|)\]\]/i";
 	preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 
@@ -78,7 +86,6 @@ function wfProofreadPageNavigation( ) {
  */
 
 function wfProofreadPageParserOutput( &$out, &$pout ) {
-
 	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest;
 
 	wfProofreadPageLoadMessages();
@@ -89,7 +96,7 @@ function wfProofreadPageParserOutput( &$out, &$pout ) {
 	}
 	$out->proofreadPageDone = true;
 
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ) );
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
 	}
