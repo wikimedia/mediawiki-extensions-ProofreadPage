@@ -307,6 +307,7 @@ function zoom_on(evt) {
 
 function proofreadPageZoom(){
 
+	if(navigator.appName == "Microsoft Internet Explorer") return;
 	if(!self.proofreadPageViewURL) return;
 	if(!self.proofreadPageWidth) return;
 
