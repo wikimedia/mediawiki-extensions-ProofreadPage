@@ -155,12 +155,13 @@ EOT
 function wfProofreadPageLoadMessages() {
 	global $wgMessageCache;
 	static $done = false;
-	if ( $done ) return;
+	if ( $done ) return true;
 
 	require( dirname( __FILE__ ) . '/ProofreadPage.i18n.php' );
 	foreach ( $messages as $lang => $messagesForLang ) {
 		$wgMessageCache->addMessages( $messagesForLang, $lang );
 	}
+	return true;
 }
 
 ?>
