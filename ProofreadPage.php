@@ -108,8 +108,8 @@ function wfProofreadPageParserOutput( &$out, &$pout ) {
 		return true;
 	}
 
-	$image = function_exists( 'wfFindFile' ) ? wfFindFile( $imageTitle ) : new Image( $imageTitle );
-	if ( $image && $image->exists() ) {
+	$image = Image::newFromTitle( $imageTitle );
+	if ( $image->exists() ) {
 		$width = intval( $image->getWidth() );
 		$height = intval( $image->getHeight() );
 		if($m[2]) { 
