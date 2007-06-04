@@ -114,14 +114,15 @@ function wfProofreadPageParserOutput( &$out, &$pout ) {
 		$height = intval( $image->getHeight() );
 		if($m[2]) { 
 			$viewName = $image->thumbName( array( 'width' => $width, 'page' => $m[3] ) );
-			$viewURL = $image->thumbUrlFromName( $viewName );
+			$viewURL = $image->getThumbUrl( $viewName );
 
 			$thumbName = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[3] ) );
-			$thumbURL = $image->thumbUrlFromName( $thumbName );
+			$thumbURL = $image->getThumbUrl( $thumbName );
 		}
 		else {
 			$viewURL = Xml::escapeJsString(	$image->getViewURL() );
-			list( $isScript, $thumbURL ) = $image->thumbUrl( '##WIDTH##' );
+			$thumbName = $image->thumbName( array( 'width' => '##WIDTH##' ) );
+			$thumbURL = $image->getThumbUrl( $thumbName );
 		}
 		$thumbURL = Xml::escapeJsString( str_replace( '%23', '#', $thumbURL ) );
 	} 
