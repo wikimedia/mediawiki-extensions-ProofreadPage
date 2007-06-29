@@ -165,4 +165,4 @@ function wfProofreadPageLoadMessages() {
 	return true;
 }
 
-?>
+

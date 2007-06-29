@@ -23,4 +23,4 @@ $messages = array(
 	),
 );
 
-?>
+
