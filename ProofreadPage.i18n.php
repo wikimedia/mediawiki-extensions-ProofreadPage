@@ -21,6 +21,10 @@ $messages = array(
 		'proofreadpage_namespace' => 'Страница',
 		'proofreadpage_index_namespace' => 'Индекс',
 	),
+	'sv' => array(
+		'proofreadpage_namespace' => 'Sida',
+		'proofreadpage_index_namespace' => 'Index',
+	),
 	'yue' => array(
 		'proofreadpage_namespace' => '頁',
 		'proofreadpage_index_namespace' => '索引',
@@ -40,5 +44,6 @@ $messages['zh-hk'] = $messages['zh-hant'];
 $messages['zh-sg'] = $messages['zh-hans'];
 $messages['zh-tw'] = $messages['zh-hant'];
 $messages['zh-yue'] = $messages['yue'];
+
 
 
