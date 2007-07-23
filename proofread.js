@@ -193,27 +193,28 @@ function proofreadPageFillForm(form) {
  */
 
 
-//size of the zoom window
-var zoomw=160;
-var zoomh=120;
 
-var zp_pic;
-var zp_clip;
+
+var zp_pic;   //zp_clip is the reduced image
+var zp_clip;  //zp_clip is the large image
+
 var zp_container;
 
-var zoomamount=2; 
+var zoomamount_h=2; 
+var zoomamount_w=2; 
 //size of the lowresself.pr image
 var objw;
 var objh;
 var zoom_status=''; 
-var zoomratio=zoomw/zoomh; 
+
 var ieox=0; var ieoy=0; 
 var ffox=0; var ffoy=0;
 
 
+//mouse move
 function zoom_move(evt) {
 
-	if(zoom_status == 0) { return false;}
+	if(zoom_status != 1) { return false;}
 
 	if(typeof(evt) == 'object') {
 		var evt = evt?evt:window.event?window.event:null; if(!evt){ return;}
@@ -226,31 +227,43 @@ function zoom_move(evt) {
 			xx=evt.clientX - ieox;
 			yy=evt.clientY - ieoy;
 		}
-	} 
-	else { 
-		xx=lastxx; 
-		yy=lastyy; 
 	}
-	lastxx=xx; lastyy=yy;
+	else { 
+		xx = lastxx; 
+		yy = lastyy; 
+	}
+	lastxx = xx; 
+        lastyy = yy;
 
-	zp_clip.style.margin=((yy-zoomh/2 > 0)?(zoomh/2-yy*zoomamount):(yy*(1-zoomamount)))+'px 0px 0px '+((xx-zoomw/2 > 0)?(zoomw/2-xx*zoomamount):(xx*(1-zoomamount)))+'px';
-
-	zp_container.style.margin=((yy-zoomh/2 > 0)?(yy-zoomh/2):(0))+'px 0px 0px '+((xx-zoomw/2 > 0)?(xx-zoomw/2):(0))+'px';
-	//width of the zoom window
-	w2=((xx+zoomw/2<objw)?((zoomw/2<xx)?(zoomw):(zoomw/2+xx)):(zoomw/2+objw-xx));  if(w2<0) {w2=0;} 
-	h2=((yy+zoomh/2<objh)?((zoomh/2<yy)?(zoomh):(zoomh/2+yy)):(zoomh/2+objh-yy));  if(h2<0) {h2=0;} 
-	zp_container.style.width=w2+'px';
-	zp_container.style.height=h2+'px';
+	//new
+        zp_clip.style.margin = 
+                  ((yy > objh )?(objh*(1-zoomamount_h)):(yy*(1-zoomamount_h))) + 'px 0px 0px '
+		+ ((xx > objw )?(objw*(1-zoomamount_w)):(xx*(1-zoomamount_w)))
+		+ 'px';
 
 	return false;
 }
 
+
+
+
+
+
 function zoom_off() {
-	if(zoom_status == 1) {
-		zp_container.style.width='0px';
-		zp_container.style.height='0px';
-	}
-	zoom_status=0;
+	zp_container.style.width='0px';
+	zp_container.style.height='0px';
+	zoom_status = 0;
+}
+
+
+
+function zoom_max() {
+	zp_clip.style.margin='0px 0px 0px 0px';
+	zp_container.style.margin = '0px 0px 0px 0px';
+	zp_container.style.width  = zp_pic.width+'px';
+	zp_container.style.height = zp_pic.height+'px';
+	zoom_status = 2;
+	zoom_move('');
 }
 
 function countoffset() {
@@ -273,12 +286,33 @@ function countoffset() {
 }
 
 
-function zoom_on(evt) {
 
-	if(zoom_status==1) {
-		zoom_off(); 
+
+function zoom_mouseup(evt) {
+
+	 var evt = evt?evt:window.event?window.event:null; 
+	 if(!evt) return;
+
+	 //only left button
+	 if(evt.button != 0) return;
+
+
+	if(zoom_status == 0) {
+       		zoom_on(evt);
 		return false;
-	}
+		}
+	 else if(zoom_status == 1) {
+		zoom_status = 2;
+		return false;
+	 }
+	 else if(zoom_status == 2) {
+	 	zoom_off(); 
+		return false;
+	 }
+}
+
+
+function zoom_on(evt) {
 
 	var evt = evt?evt:window.event?window.event:null; if(!evt){ return;}
 	zoom_status=1;
@@ -296,10 +330,14 @@ function zoom_on(evt) {
 
 	objw=zp_pic.width; 
 	objh=zp_pic.height; 
-	zoomamount = zp_clip.height/objh;
+	zoomamount_h = zp_clip.height/objh;
+	zoomamount_w = zp_clip.width/objw;
 
-	if(zoomw>objw) {zoomw=objw; zoomh=objw/zoomratio;}
-	else if(zoomh>objh) {zoomh=objh; zoomw=objh*zoomratio}
+
+        zp_container.style.margin = '0px 0px 0px 0px';
+	zp_container.style.width=objw+'px';
+	zp_container.style.height=objh+'px';
+
 	zoom_move('');
 	return false;
 }
@@ -311,6 +349,7 @@ function proofreadPageZoom(){
 	if(!self.proofreadPageViewURL) return;
 	if(!self.proofreadPageWidth) return;
 
+
 	zp = document.getElementById("proofreadImage");
 	if(zp){
 		if(proofreadPageWidth>800) {
@@ -320,10 +359,11 @@ function proofreadPageZoom(){
 		     hires_url = proofreadPageViewURL; 
 		}
 
-	zp.setAttribute("onmouseup","zoom_on(event);" );
+	zp.setAttribute("onmouseup","zoom_mouseup(event);" );
 	zp.setAttribute("onmousemove","zoom_move(event);" );
 	zp.setAttribute("id","zp" );
 	zp_pic=zp.firstChild;
+
 
 	zp_container = document.createElement("div");
 	zp_container.setAttribute("style","position:absolute; width:0; height:0; overflow:hidden;"); 
@@ -332,6 +372,7 @@ function proofreadPageZoom(){
 	zp_clip.setAttribute("style", "padding:0;margin:0;border:0;");
 	zp_container.appendChild(zp_clip);
 	zp.insertBefore(zp_container,zp_pic); 
+
 	}
 }
 
