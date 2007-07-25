@@ -42,36 +42,34 @@ function proofreadPageDoTabs(){
 
 
 
+function proofreadpage_ImageUrl(requested_width){
 
-function proofreadPageSetup() {
+	//enforce quantization: width must be multiple of 100px
+	width = (100*requested_width)/100;
 
-	if( document.getElementById("proofreadImage")) return;
-	if(!self.proofreadPageViewURL) return;
+	if(width < proofreadPageWidth)  
+		image_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
+	else 
+		image_url = proofreadPageViewURL; 
 
-	if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
-	if(document.URL.indexOf("action=delete") > 0 || document.URL.indexOf("action=undelete") > 0) return;
-	if(document.URL.indexOf("action=watch") > 0 || document.URL.indexOf("action=unwatch") > 0) return;
-	if(document.URL.indexOf("action=history") > 0 ) return;
-	if(document.URL.indexOf("&diff=") > 0 ) return;
+	return image_url;
+}
+
+
+function proofreadpage_default_setup() {
 
 	var displayWidth = 400; //default value
-	//quantization: displayWidth must be multiple of 100px
+
 	if (parseInt(navigator.appVersion)>3) {
 		if (navigator.appName=="Netscape") {
-			displayWidth = 100*parseInt((window.innerWidth/2-70)/100);
+			displayWidth = parseInt(window.innerWidth/2-70);
 		}
 		if (navigator.appName.indexOf("Microsoft")!=-1) {
-			displayWidth = 100*parseInt((document.body.offsetWidth/2-70)/100);
+			displayWidth = parseInt(document.body.offsetWidth/2-70);
 		}
 	}
 
-	if(displayWidth<proofreadPageWidth) { 
-		image_url = proofreadPageThumbURL.replace('##WIDTH##',""+displayWidth); 
-	}
-	else { 
-		image_url = proofreadPageViewURL; 
-		displayWidth = proofreadPageWidth; 
-	}
+        image_url = proofreadpage_ImageUrl(displayWidth);
 
 	if(proofreadPageIsEdit) {
 		text = document.getElementById("wpTextbox1"); 
@@ -110,7 +108,6 @@ function proofreadPageSetup() {
 	image = document.createElement("img");
 	image.setAttribute("src", image_url); 
 	image.setAttribute("style","padding:0;margin:0;border:0;");
-	image.setAttribute("width",displayWidth);
 
 	//container
 	//useful for hooking elements to the image, eg href or zoom.
@@ -257,14 +254,6 @@ function zoom_off() {
 
 
 
-function zoom_max() {
-	zp_clip.style.margin='0px 0px 0px 0px';
-	zp_container.style.margin = '0px 0px 0px 0px';
-	zp_container.style.width  = zp_pic.width+'px';
-	zp_container.style.height = zp_pic.height+'px';
-	zoom_status = 2;
-	zoom_move('');
-}
 
 function countoffset() {
 	zme=document.getElementById("zp");
@@ -347,35 +336,50 @@ function proofreadPageZoom(){
 
 	if(navigator.appName == "Microsoft Internet Explorer") return;
 	if(!self.proofreadPageViewURL) return;
-	if(!self.proofreadPageWidth) return;
-
 
 	zp = document.getElementById("proofreadImage");
 	if(zp){
-		if(proofreadPageWidth>800) {
-			hires_url = proofreadPageThumbURL.replace('##WIDTH##',""+800); 
-		}
-		else { 
-		     hires_url = proofreadPageViewURL; 
-		}
+		hires_url = proofreadpage_ImageUrl(800);
 
-	zp.setAttribute("onmouseup","zoom_mouseup(event);" );
-	zp.setAttribute("onmousemove","zoom_move(event);" );
-	zp.setAttribute("id","zp" );
-	zp_pic=zp.firstChild;
+		zp.setAttribute("onmouseup","zoom_mouseup(event);" );
+		zp.setAttribute("onmousemove","zoom_move(event);" );
+		zp.setAttribute("id","zp" );
+		zp_pic=zp.firstChild;
 
-
-	zp_container = document.createElement("div");
-	zp_container.setAttribute("style","position:absolute; width:0; height:0; overflow:hidden;"); 
-	zp_clip = document.createElement("img");
-	zp_clip.setAttribute("src", hires_url);
-	zp_clip.setAttribute("style", "padding:0;margin:0;border:0;");
-	zp_container.appendChild(zp_clip);
-	zp.insertBefore(zp_container,zp_pic); 
+		zp_container = document.createElement("div");
+		zp_container.setAttribute("style","position:absolute; width:0; height:0; overflow:hidden;"); 
+		zp_clip = document.createElement("img");
+		zp_clip.setAttribute("src", hires_url);
+		zp_clip.setAttribute("style", "padding:0;margin:0;border:0;");
+		zp_container.appendChild(zp_clip);
+		zp.insertBefore(zp_container,zp_pic); 
 
 	}
 }
 
+
+
+
+function proofreadPageSetup() {
+
+	 if( document.getElementById("proofreadImage")) return;
+	 if(!self.proofreadPageViewURL) return;
+
+	 if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
+	 if(document.URL.indexOf("action=delete") > 0 || document.URL.indexOf("action=undelete") > 0) return;
+	 if(document.URL.indexOf("action=watch") > 0 || document.URL.indexOf("action=unwatch") > 0) return;
+	 if(document.URL.indexOf("action=history") > 0 ) return;
+	 if(document.URL.indexOf("&diff=") > 0 ) return;
+
+	 if( self.proofreadpage_setup ) 
+
+	     proofreadpage_setup(
+		proofreadPageWidth,
+		proofreadPageHeight, 
+		proofreadPageIsEdit);
+
+	else proofreadpage_default_setup();
+}
 
 
 addOnloadHook(proofreadPageSetup);
