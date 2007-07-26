@@ -82,19 +82,19 @@ function proofreadpage_make_edit_area(container,text){
 			pageFooter = '';
 		}
 		else {
-			pageHeader = '';
+			pageHeader = '<div class="pagetext">';
 			pageBody = text;
-			pageFooter = '';
+			pageFooter = '</div>';
 		}
 	}
 
 	container.innerHTML = ''
-		+'Header (noinclude):<br/>'
+		+'<div id="prp_header" style="display:none">Header (noinclude):<br/>'
 		+'<textarea name="headerTextbox" rows="4" cols="80">'+pageHeader+'</textarea>'
-		+'<br/>Page body (to be transcluded):<br/>'
+		+'<br/>Page body (to be transcluded):<br/></div>'
 		+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
-		+'<br/>Footer (noinclude):<br/>'
-		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea>';
+		+'<div id="prp_footer" style="display:none"><br/>Footer (noinclude):<br/>'
+		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea></div>';
 
 	saveButton = document.getElementById("wpSave"); 
 	saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
@@ -106,6 +106,19 @@ function proofreadpage_make_edit_area(container,text){
 }
 
 
+function proofreadpage_toggle_visibility() {
+
+	h = document.getElementById("prp_header"); 
+	f = document.getElementById("prp_footer"); 
+	s = h.getAttribute("style");
+	if( s == ""){
+	     	h.setAttribute("style", "display:none;"); 
+		f.setAttribute("style", "display:none;"); 
+	} else {
+	     	h.setAttribute("style", ""); 
+		f.setAttribute("style", ""); 
+	}
+}
 
 
 function proofreadpage_default_setup() {
@@ -167,6 +180,21 @@ function proofreadpage_default_setup() {
 
 	if(proofreadPageIsEdit) {
 		proofreadpage_make_edit_area(cell_left,new_text.value);
+		toolbar = document.getElementById("toolbar");
+		if(toolbar){
+			var image = document.createElement("img");
+			image.width = 23;
+			image.height = 22;
+			image.className = "mw-toolbar-editbutton";
+			image.src = "http://upload.wikimedia.org/wikipedia/commons/2/2a/Button_category_plus.png";
+			image.border = 0;
+			image.alt = "headers";
+			image.title = "toggle headers visibility";
+			image.style.cursor = "pointer";
+			image.onclick = proofreadpage_toggle_visibility;
+			toolbar.appendChild(image);
+		}
+
 	} else {
 		cell_left.appendChild(new_text);
 	}
