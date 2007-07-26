@@ -149,6 +149,9 @@ function proofreadpage_default_setup() {
 		saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
 		previewButton = document.getElementById("wpPreview"); 
 		previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+		diffButton = document.getElementById("wpDiff")
+		diffButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+
 
 	} else cell_left.appendChild(new_text);
 
