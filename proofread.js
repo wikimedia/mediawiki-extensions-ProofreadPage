@@ -44,13 +44,19 @@ function proofreadPageDoTabs(){
 
 function proofreadpage_ImageUrl(requested_width){
 
-	//enforce quantization: width must be multiple of 100px
-	width = (100*requested_width)/100;
+        if(self.proofreadPageExternalURL) {
+		image_url = proofreadPageExternalURL; 
+	}
+	else{
 
-	if(width < proofreadPageWidth)  
-		image_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
-	else 
-		image_url = proofreadPageViewURL; 
+		//enforce quantization: width must be multiple of 100px
+		width = (100*requested_width)/100;
+
+		if(width < proofreadPageWidth)  
+			image_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
+		else 
+		     image_url = proofreadPageViewURL; 
+	}
 
 	return image_url;
 }
@@ -365,16 +371,41 @@ function proofreadPageZoom(){
 
 function proofreadPageSetup() {
 
-	 if( document.getElementById("proofreadImage")) return;
-	 if(!self.proofreadPageViewURL) return;
+	if( document.getElementById("proofreadImage")) return;
 
-	 if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
-	 if(document.URL.indexOf("action=delete") > 0 || document.URL.indexOf("action=undelete") > 0) return;
-	 if(document.URL.indexOf("action=watch") > 0 || document.URL.indexOf("action=unwatch") > 0) return;
-	 if(document.URL.indexOf("action=history") > 0 ) return;
-	 if(document.URL.indexOf("&diff=") > 0 ) return;
+	if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
+	if(document.URL.indexOf("action=delete") > 0 || document.URL.indexOf("action=undelete") > 0) return;
+	if(document.URL.indexOf("action=watch") > 0 || document.URL.indexOf("action=unwatch") > 0) return;
+	if(document.URL.indexOf("action=history") > 0 ) return;
 
-	 if( self.proofreadpage_setup ) 
+	/*check if external url is provided*/				       
+	if(!self.proofreadPageViewURL) {
+		text = document.getElementById("wpTextbox1"); 
+		if (text) {
+			proofreadPageIsEdit = true;
+			re = /<span class="hiddenStructure" id="pageURL">\[http:\/\/(.*?)\]<\/span>/;
+			m = re.exec(text.value);
+			if( m ) { 
+				self.proofreadPageExternalURL = "http://"+m[1];  
+			}
+		} 
+		else {
+			proofreadPageIsEdit = false;
+			text = document.getElementById("bodyContent"); 
+			try { 
+				a = document.getElementById("pageURL");
+				b = a.firstChild;
+				self.proofreadPageExternalURL = b.getAttribute("href");
+			} catch(err){};
+		}
+		//set to dummy values, not used
+		self.proofreadPageWidth = 400;
+		self.proofreadPageHeight = 400;
+	}
+
+	if(!self.proofreadPageViewURL && !self.proofreadPageExternalURL) return;
+
+	if( self.proofreadpage_setup ) 
 
 	     proofreadpage_setup(
 		proofreadPageWidth,
@@ -383,6 +414,7 @@ function proofreadPageSetup() {
 
 	else proofreadpage_default_setup();
 }
+
 
 
 addOnloadHook(proofreadPageSetup);
