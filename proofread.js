@@ -358,7 +358,7 @@ function proofreadPageZoom(){
 
 	zp = document.getElementById("proofreadImage");
 	if(zp){
-		hires_url = proofreadpage_ImageUrl(800);
+		hires_url = proofreadpage_image_url(800);
 
 		zp.setAttribute("onmouseup","zoom_mouseup(event);" );
 		zp.setAttribute("onmousemove","zoom_move(event);" );
