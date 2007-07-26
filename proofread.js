@@ -1,7 +1,7 @@
 // Author : ThomasV - License : GPL
 
 
-function proofreadPageDoTabs(){
+function proofreadpage_init_tabs(){
 
 	a = document.getElementById("p-cactions");
 	if (!a) return;
@@ -42,7 +42,8 @@ function proofreadPageDoTabs(){
 
 
 
-function proofreadpage_ImageUrl(requested_width){
+
+function proofreadpage_image_url(requested_width){
 
         if(self.proofreadPageExternalURL) {
 		image_url = proofreadPageExternalURL; 
@@ -62,6 +63,51 @@ function proofreadpage_ImageUrl(requested_width){
 }
 
 
+
+function proofreadpage_make_edit_area(container,text){
+
+	re = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
+	m = text.match(re);
+	if(m) {
+		pageHeader = m[2];
+		pageBody   = m[1]+m[3];
+		pageFooter = m[4];
+	}
+	else {
+		re2 = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)\n$/;
+		m2 = text.match(re2);
+		if(m2) {
+			pageHeader = m2[2];
+			pageBody   = m2[1]+m2[3];
+			pageFooter = '';
+		}
+		else {
+			pageHeader = '';
+			pageBody = text;
+			pageFooter = '';
+		}
+	}
+
+	container.innerHTML = ''
+		+'Header (noinclude):<br/>'
+		+'<textarea name="headerTextbox" rows="4" cols="80">'+pageHeader+'</textarea>'
+		+'<br/>Page body (to be transcluded):<br/>'
+		+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
+		+'<br/>Footer (noinclude):<br/>'
+		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea>';
+
+	saveButton = document.getElementById("wpSave"); 
+	saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+	previewButton = document.getElementById("wpPreview"); 
+	previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+	diffButton = document.getElementById("wpDiff")
+	diffButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+
+}
+
+
+
+
 function proofreadpage_default_setup() {
 
 	var displayWidth = 400; //default value
@@ -75,34 +121,11 @@ function proofreadpage_default_setup() {
 		}
 	}
 
-        image_url = proofreadpage_ImageUrl(displayWidth);
+        image_url = proofreadpage_image_url(displayWidth);
 
 	if(proofreadPageIsEdit) {
 		text = document.getElementById("wpTextbox1"); 
 		if (!text) return;
-		text.setAttribute("style", "width:100%; height:100%;");  //width seems to be set by monobook already...
-
-		re = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
-		m = text.value.match(re);
-		if(m) {
-			pageHeader = m[2];
-			pageBody   = m[1]+m[3];
-			pageFooter = m[4];
-		}
-		else {
-			re2 = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)\n$/;
-			m2 = text.value.match(re2);
-			if(m2) {
-				pageHeader = m2[2];
-				pageBody   = m2[1]+m2[3];
-				pageFooter = '';
-			}
-			else {
-				pageHeader = '';
-				pageBody = text.value;
-				pageFooter = '';
-			}
-		}
 	}
 	else { 
 		text = document.getElementById("bodyContent"); 
@@ -138,28 +161,15 @@ function proofreadpage_default_setup() {
 	t_body.appendChild(t_row);
 	table.appendChild(t_body);
 
+    
 	f = text.parentNode; 
 	new_text = f.removeChild(text);
-        
 
 	if(proofreadPageIsEdit) {
-		cell_left.innerHTML = ''
-			+'Header (noinclude):<br/>'
-			+'<textarea name="headerTextbox" rows="4" cols="80">'+pageHeader+'</textarea>'
-			+'<br/>Page body (to be transcluded):<br/>'
-			+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
-			+'<br/>Footer (noinclude):<br/>'
-			+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea>';
-
-		saveButton = document.getElementById("wpSave"); 
-		saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
-		previewButton = document.getElementById("wpPreview"); 
-		previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
-		diffButton = document.getElementById("wpDiff")
-		diffButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
-
-
-	} else cell_left.appendChild(new_text);
+		proofreadpage_make_edit_area(cell_left,new_text.value);
+	} else {
+		cell_left.appendChild(new_text);
+	}
 
 	copywarn = document.getElementById("editpage-copywarn");
 	if(copywarn){ 
@@ -369,7 +379,7 @@ function proofreadPageZoom(){
 
 
 
-function proofreadPageSetup() {
+function proofreadpage_init() {
 
 	if( document.getElementById("proofreadImage")) return;
 
@@ -417,6 +427,6 @@ function proofreadPageSetup() {
 
 
 
-addOnloadHook(proofreadPageSetup);
-addOnloadHook(proofreadPageDoTabs);
+addOnloadHook(proofreadpage_init);
+addOnloadHook(proofreadpage_init_tabs);
 hookEvent("load", proofreadPageZoom);
