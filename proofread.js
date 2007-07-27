@@ -53,10 +53,16 @@ function proofreadpage_image_url(requested_width){
 		//enforce quantization: width must be multiple of 100px
 		width = (100*requested_width)/100;
 
-		if(width < proofreadPageWidth)  
-			image_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
-		else 
+		if(width < proofreadPageWidth)  {
+			 self.DisplayWidth = width;
+			 self.DisplayHeight = width*proofreadPageHeight/proofreadPageWidth;
+			 image_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
+		}
+		else {
+		     self.DisplayWidth = proofreadPageWidth;
+		     self.DisplayHeight = proofreadPageHeight;
 		     image_url = proofreadPageViewURL; 
+		}
 	}
 
 	return image_url;
@@ -123,7 +129,7 @@ function proofreadpage_toggle_visibility() {
 
 function proofreadpage_default_setup() {
 
-	var displayWidth = 400; //default value
+	self.displayWidth = 400; //default value
 
 	if (parseInt(navigator.appVersion)>3) {
 		if (navigator.appName=="Netscape") {
@@ -194,17 +200,15 @@ function proofreadpage_default_setup() {
 			image.onclick = proofreadpage_toggle_visibility;
 			toolbar.appendChild(image);
 		}
+		copywarn = document.getElementById("editpage-copywarn");
+		f.insertBefore(table,copywarn);
+		document.getElementById("wpTextbox1").setAttribute("style","height:"+self.DisplayHeight+"px");
 
 	} else {
 		cell_left.appendChild(new_text);
-	}
-
-	copywarn = document.getElementById("editpage-copywarn");
-	if(copywarn){ 
-		f.insertBefore(table,copywarn);
-	} else {
 		f.appendChild(table);
 	}
+
 }
 
 
@@ -383,6 +387,7 @@ function proofreadPageZoom(){
 
 	if(navigator.appName == "Microsoft Internet Explorer") return;
 	if(!self.proofreadPageViewURL) return;
+	if(self.DisplayWidth>800) return;
 
 	zp = document.getElementById("proofreadImage");
 	if(zp){
