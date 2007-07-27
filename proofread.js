@@ -48,7 +48,7 @@ function proofreadpage_image_url(requested_width){
         if(self.proofreadPageExternalURL) {
 		image_url = proofreadPageExternalURL; 
 	}
-	else{
+	else {
 
 		//enforce quantization: width must be multiple of 100px
 		width = (100*requested_width)/100;
@@ -114,15 +114,18 @@ function proofreadpage_make_edit_area(container,text){
 
 function proofreadpage_toggle_visibility() {
 
+	box = document.getElementById("wpTextbox1");
 	h = document.getElementById("prp_header"); 
 	f = document.getElementById("prp_footer"); 
 	s = h.getAttribute("style");
 	if( s == ""){
 	     	h.setAttribute("style", "display:none;"); 
 		f.setAttribute("style", "display:none;"); 
+		if(self.TextBoxHeight)	box.setAttribute("style","height:"+(TextBoxHeight-7)+"px");
 	} else {
 	     	h.setAttribute("style", ""); 
 		f.setAttribute("style", ""); 
+		if(self.TextBoxHeight)  box.setAttribute("style","height:"+(TextBoxHeight-270)+"px");
 	}
 }
 
@@ -141,6 +144,7 @@ function proofreadpage_default_setup() {
 	}
 
         image_url = proofreadpage_image_url(displayWidth);
+	self.TextBoxHeight = DisplayHeight;
 
 	if(proofreadPageIsEdit) {
 		text = document.getElementById("wpTextbox1"); 
@@ -202,7 +206,7 @@ function proofreadpage_default_setup() {
 		}
 		copywarn = document.getElementById("editpage-copywarn");
 		f.insertBefore(table,copywarn);
-		document.getElementById("wpTextbox1").setAttribute("style","height:"+self.DisplayHeight+"px");
+		document.getElementById("wpTextbox1").setAttribute("style","height:"+(TextBoxHeight-7)+"px");
 
 	} else {
 		cell_left.appendChild(new_text);
@@ -241,18 +245,11 @@ function proofreadPageFillForm(form) {
  */
 
 
-
-
-var zp_pic;   //zp_clip is the reduced image
 var zp_clip;  //zp_clip is the large image
-
 var zp_container;
 
 var zoomamount_h=2; 
 var zoomamount_w=2; 
-//size of the lowresself.pr image
-var objw;
-var objh;
 var zoom_status=''; 
 
 var ieox=0; var ieoy=0; 
@@ -271,7 +268,7 @@ function zoom_move(evt) {
 			yy=evt.pageY - ffoy;
 		} 
 		else {
-			if(typeof(document.getElementById("zp")+1) == 'number') {return true;} 
+			if(typeof(document.getElementById("proofreadImage")+1) == 'number') {return true;} 
 			xx=evt.clientX - ieox;
 			yy=evt.clientY - ieoy;
 		}
@@ -307,7 +304,7 @@ function zoom_off() {
 
 
 function countoffset() {
-	zme=document.getElementById("zp");
+	zme=document.getElementById("proofreadImage");
 	ieox=0; ieoy=0;
 	for(zmi=0;zmi<50;zmi++) {
 		if(zme+1 == 1) { 
@@ -368,15 +365,12 @@ function zoom_on(evt) {
 		lastyy=evt.clientY - ieoy; 
 	}
 
-	objw=zp_pic.width; 
-	objh=zp_pic.height; 
 	zoomamount_h = zp_clip.height/objh;
 	zoomamount_w = zp_clip.width/objw;
 
-
         zp_container.style.margin = '0px 0px 0px 0px';
-	zp_container.style.width=objw+'px';
-	zp_container.style.height=objh+'px';
+	zp_container.style.width = objw+'px';
+	zp_container.style.height = objh+'px';
 
 	zoom_move('');
 	return false;
@@ -392,11 +386,11 @@ function proofreadPageZoom(){
 	zp = document.getElementById("proofreadImage");
 	if(zp){
 		hires_url = proofreadpage_image_url(800);
+		self.objw = zp.firstChild.width;
+		self.objh = zp.firstChild.height;
 
 		zp.setAttribute("onmouseup","zoom_mouseup(event);" );
 		zp.setAttribute("onmousemove","zoom_move(event);" );
-		zp.setAttribute("id","zp" );
-		zp_pic=zp.firstChild;
 
 		zp_container = document.createElement("div");
 		zp_container.setAttribute("style","position:absolute; width:0; height:0; overflow:hidden;"); 
@@ -404,7 +398,7 @@ function proofreadPageZoom(){
 		zp_clip.setAttribute("src", hires_url);
 		zp_clip.setAttribute("style", "padding:0;margin:0;border:0;");
 		zp_container.appendChild(zp_clip);
-		zp.insertBefore(zp_container,zp_pic); 
+		zp.insertBefore(zp_container,zp.firstChild); 
 
 	}
 }
