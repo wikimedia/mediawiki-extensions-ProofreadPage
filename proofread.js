@@ -94,6 +94,11 @@ function proofreadpage_make_edit_area(container,text){
 		}
 	}
 
+        //escape & character
+	pageBody = pageBody.split("&").join("&amp;")
+	pageHeader = pageHeader.split("&").join("&amp;")
+	pageFooter = pageFooter.split("&").join("&amp;")
+
 	container.innerHTML = ''
 		+'<div id="prp_header" style="display:none">Header (noinclude):<br/>'
 		+'<textarea name="headerTextbox" rows="4" cols="80">'+pageHeader+'</textarea>'
