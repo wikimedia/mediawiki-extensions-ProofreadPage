@@ -149,7 +149,9 @@ function proofreadpage_default_setup() {
 	}
 
         image_url = proofreadpage_image_url(displayWidth);
-	self.TextBoxHeight = DisplayHeight;
+
+	if(self.DisplayHeight) self.TextBoxHeight = DisplayHeight;
+	else self.TextBoxHeight = 700;
 
 	if(proofreadPageIsEdit) {
 		text = document.getElementById("wpTextbox1"); 
