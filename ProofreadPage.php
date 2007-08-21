@@ -7,12 +7,12 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
 $wgHooks['LoadAllMessages'][] = 'wfProofreadPageLoadMessages';
 
-$wgExtensionCredits['parserhook'][] = array(
+$wgExtensionCredits['other'][] = array(
 	'name' => 'ProofreadPage',
-	'author' => 'ThomasV'
+	'author' => 'ThomasV',
+	'url' => 'http://www.mediawiki.org/wiki/Extension:Proofread_Page',
+	'description' => 'Allow easy comparison of text to the original scan',
 );
-
-
 
 /**
  * 
@@ -164,5 +164,3 @@ function wfProofreadPageLoadMessages() {
 	}
 	return true;
 }
-
-
