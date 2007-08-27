@@ -13,6 +13,9 @@ $messages = array(
 		'proofreadpage_namespace' => 'გვერდი',
 		'proofreadpage_index_namespace' => 'ინდექსი',
 	),
+	'nl' => array(
+		'proofreadpage_namespace' => 'Pagina',
+	),
 	'pt' => array(
 		'proofreadpage_namespace' => 'Página',
 		'proofreadpage_index_namespace' => 'Índice',
@@ -44,6 +47,7 @@ $messages['zh-hk'] = $messages['zh-hant'];
 $messages['zh-sg'] = $messages['zh-hans'];
 $messages['zh-tw'] = $messages['zh-hant'];
 $messages['zh-yue'] = $messages['yue'];
+
 
 
 
