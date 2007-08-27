@@ -14,6 +14,9 @@ $wgExtensionCredits['other'][] = array(
 	'description' => 'Allow easy comparison of text to the original scan',
 );
 
+# Bump the version number every time you change proofread.js
+$wgProofreadPageVersion = 1;
+
 /**
  * 
  * Query the database to find if the current page is referred in an
@@ -86,7 +89,7 @@ function wfProofreadPageNavigation() {
  */
 
 function wfProofreadPageParserOutput( &$out, &$pout ) {
-	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest;
+	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
 
 	wfProofreadPageLoadMessages();
 	$action = $wgRequest->getVal('action');
@@ -133,7 +136,7 @@ function wfProofreadPageParserOutput( &$out, &$pout ) {
 		$thumbURL = '';
 	}
 
-	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js" );
+	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
 
 	$out->addScript( <<<EOT
 <script type="$wgJsMimeType">
