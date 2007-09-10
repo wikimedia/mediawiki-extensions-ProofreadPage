@@ -9,6 +9,10 @@ $messages = array(
 		'proofreadpage_namespace' => 'Seite',
 		'proofreadpage_index_namespace' => 'Index',
 	),
+	'hsb' => array(
+	'proofreadpage_namespace' => 'Strona',
+	'proofreadpage_index_namespace' => 'Indeks',
+	),
 	'ka' => array(
 		'proofreadpage_namespace' => 'გვერდი',
 		'proofreadpage_index_namespace' => 'ინდექსი',
