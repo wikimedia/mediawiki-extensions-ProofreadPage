@@ -5,6 +5,9 @@ $messages = array(
 		'proofreadpage_namespace' => 'Page',
 		'proofreadpage_index_namespace' => 'Index',
 	),
+	'ar' => array(
+	'proofreadpage_namespace' => 'صفحة',
+	),
 	'de' => array(
 		'proofreadpage_namespace' => 'Seite',
 		'proofreadpage_index_namespace' => 'Index',
