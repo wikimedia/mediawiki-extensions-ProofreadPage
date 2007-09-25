@@ -20,6 +20,9 @@ $messages = array(
 		'proofreadpage_namespace' => 'გვერდი',
 		'proofreadpage_index_namespace' => 'ინდექსი',
 	),
+	'la' => array(
+	'proofreadpage_namespace' => 'Pagina',
+	),
 	'nl' => array(
 		'proofreadpage_namespace' => 'Pagina',
 	),
