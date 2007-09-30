@@ -7,6 +7,7 @@ $messages = array(
 	),
 	'ar' => array(
 	'proofreadpage_namespace' => 'صفحة',
+	'proofreadpage_index_namespace' => 'فهرس',
 	),
 	'de' => array(
 		'proofreadpage_namespace' => 'Seite',
