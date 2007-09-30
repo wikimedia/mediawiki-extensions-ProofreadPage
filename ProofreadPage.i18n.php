@@ -25,7 +25,8 @@ $messages = array(
 	'proofreadpage_namespace' => 'Pagina',
 	),
 	'nl' => array(
-		'proofreadpage_namespace' => 'Pagina',
+	'proofreadpage_namespace' => 'Pagina',
+	'proofreadpage_index_namespace' => 'Index',#identical but defined
 	),
 	'pt' => array(
 		'proofreadpage_namespace' => 'Página',
