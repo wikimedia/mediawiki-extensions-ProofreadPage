@@ -9,6 +9,10 @@ $messages = array(
 	'proofreadpage_namespace' => 'صفحة',
 	'proofreadpage_index_namespace' => 'فهرس',
 	),
+	'bcl' => array(
+	'proofreadpage_namespace' => 'Pahina',
+	'proofreadpage_index_namespace' => 'Indeks',
+	),
 	'de' => array(
 		'proofreadpage_namespace' => 'Seite',
 		'proofreadpage_index_namespace' => 'Index',
