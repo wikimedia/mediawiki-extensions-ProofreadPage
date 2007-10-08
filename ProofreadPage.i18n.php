@@ -21,6 +21,10 @@ $messages = array(
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
 	),
+		'hy' => array(
+	'proofreadpage_namespace' => 'Էջ',
+	'proofreadpage_index_namespace' => 'Ինդեքս',
+	),
 	'ka' => array(
 		'proofreadpage_namespace' => 'გვერდი',
 		'proofreadpage_index_namespace' => 'ინდექსი',
