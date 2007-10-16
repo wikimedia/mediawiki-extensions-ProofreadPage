@@ -15,7 +15,7 @@ $wgExtensionCredits['other'][] = array(
 );
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 1;
+$wgProofreadPageVersion = 2;
 
 /**
  * 

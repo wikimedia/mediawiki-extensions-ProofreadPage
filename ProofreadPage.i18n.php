@@ -28,14 +28,14 @@ $messages = array(
 	'de' => array(
 		'proofreadpage_namespace' => 'Seite',
 		'proofreadpage_index_namespace' => 'Index',
-		'proofreadpage_image' => 'scan',
+		'proofreadpage_image' => 'Scan',
 		'proofreadpage_index' => 'Index',
 		'proofreadpage_nextpage' => 'Nächste Seite',
 		'proofreadpage_prevpage' => 'Vorherige Seite',
 		'proofreadpage_header' => 'Kopfzeile (noinclude):',
-		'proofreadpage_body' => 'Textkörper (transklusion):',
+		'proofreadpage_body' => 'Textkörper (Transklusion):',
 		'proofreadpage_footer' => 'Fußzeile (noinclude):',
-		'proofreadpage_toggleheaders' => 'noinclude Abschnitte ein/ausblenden',
+		'proofreadpage_toggleheaders' => 'noinclude-Abschnitte ein-/ausblenden',
 	),
 	'ar' => array(
 	'proofreadpage_namespace' => 'صفحة',
@@ -104,8 +104,3 @@ $messages['zh-hk'] = $messages['zh-hant'];
 $messages['zh-sg'] = $messages['zh-hans'];
 $messages['zh-tw'] = $messages['zh-hant'];
 $messages['zh-yue'] = $messages['yue'];
-
-
-
-
-
