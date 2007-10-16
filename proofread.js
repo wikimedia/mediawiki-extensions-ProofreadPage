@@ -11,30 +11,30 @@ function proofreadpage_init_tabs(){
 	if(self.proofreadPageViewURL) {
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-image">'
-			+ '<a href='+proofreadPageViewURL+'>'
-			+ 'Image</a></li>';
+			+ '<a href="'+proofreadPageViewURL+'">'
+			+ proofreadPageMessageImage+'</a></li>';
 	}
 
 	if(self.proofreadPageIndexURL){
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-index">'
-			+ '<a href='+proofreadPageIndexURL+' title="Index">'
-			+ "<img src='http://upload.wikimedia.org/wikipedia/commons/a/af/1uparrow.png' alt='Index' width='15' height='15' longdesc='Next Page'/></a></li>";
+			+ '<a href="'+proofreadPageIndexURL+'" title="'+proofreadPageMessageIndex+'">'
+			+ '<img src="http://upload.wikimedia.org/wikipedia/commons/a/af/1uparrow.png" alt="'+proofreadPageMessageIndex+'" width="15" height="15" /></a></li>';
 	}
   
 	if(self.proofreadPageNextURL){
 		b[0].innerHTML = 
 			'<li id="ca-next">'
-			+ '<a href='+self.proofreadPageNextURL+' title="Next Page">'
-			+ "<img src='http://upload.wikimedia.org/wikipedia/commons/3/3c/1rightarrow.png' alt='Next Page' width='15' height='15' longdesc='Next Page'/></a></li>"
+			+ '<a href="'+self.proofreadPageNextURL+'" title="'+proofreadPageMessageNextPage+'">'
+			+ '<img src="http://upload.wikimedia.org/wikipedia/commons/3/3c/1rightarrow.png" alt="'+proofreadPageMessageNextPage+'" width="15" height="15" /></a></li>'
 			+ b[0].innerHTML ;
 	}
 
 	if(self.proofreadPagePrevURL){
 		b[0].innerHTML = 
 			'<li id="ca-prev">'
-			+ '<a href='+self.proofreadPagePrevURL+' title="Previous Page">'
-			+ "<img src='http://upload.wikimedia.org/wikipedia/commons/8/8e/1leftarrow.png' alt='Previous Page' width='15' height='15' longdesc='Previous Page'/></a></li>"
+			+ '<a href="'+self.proofreadPagePrevURL+'" title="'+proofreadPageMessagePrevPage+'">'
+			+ '<img src="http://upload.wikimedia.org/wikipedia/commons/8/8e/1leftarrow.png" alt="'+proofreadPageMessagePrevPage+'" width="15" height="15" /></a></li>'
 			+ b[0].innerHTML ;
        }
 }
@@ -100,11 +100,11 @@ function proofreadpage_make_edit_area(container,text){
 	pageFooter = pageFooter.split("&").join("&amp;")
 
 	container.innerHTML = ''
-		+'<div id="prp_header" style="display:none">Header (noinclude):<br/>'
+		+'<div id="prp_header" style="display:none">'+proofreadPageMessageHeader+'<br/>'
 		+'<textarea name="headerTextbox" rows="4" cols="80">'+pageHeader+'</textarea>'
-		+'<br/>Page body (to be transcluded):<br/></div>'
+		+'<br/>'+proofreadPageMessagePageBody+'<br/></div>'
 		+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
-		+'<div id="prp_footer" style="display:none"><br/>Footer (noinclude):<br/>'
+		+'<div id="prp_footer" style="display:none"><br/>'+proofreadPageMessageFooter+'<br/>'
 		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea></div>';
 
 	saveButton = document.getElementById("wpSave"); 
@@ -205,8 +205,8 @@ function proofreadpage_default_setup() {
 			image.className = "mw-toolbar-editbutton";
 			image.src = "http://upload.wikimedia.org/wikipedia/commons/2/2a/Button_category_plus.png";
 			image.border = 0;
-			image.alt = "headers";
-			image.title = "toggle headers visibility";
+			image.alt = proofreadPageMessageToggleHeaders;
+			image.title = proofreadPageMessageToggleHeaders;
 			image.style.cursor = "pointer";
 			image.onclick = proofreadpage_toggle_visibility;
 			toolbar.appendChild(image);
