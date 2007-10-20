@@ -13,6 +13,18 @@ $messages = array(
 		'proofreadpage_footer' => 'Footer (noinclude):',
 		'proofreadpage_toggleheaders' => 'toggle noinclude sections visibility',
 	),
+	'ar' => array(
+	'proofreadpage_namespace' => 'صفحة',
+	'proofreadpage_index_namespace' => 'فهرس',
+	'proofreadpage_image' => 'صورة',
+	'proofreadpage_index' => 'فهرس',
+	'proofreadpage_nextpage' => 'الصفحة التالية',
+	'proofreadpage_prevpage' => 'الصفحة السابقة',
+	'proofreadpage_header' => 'العنوان (noinclude):',
+	'proofreadpage_body' => 'جسم الصفحة (للتضمين):',
+	'proofreadpage_footer' => 'ذيل (noinclude):',
+	'proofreadpage_toggleheaders' => 'تغيير رؤية أقسام noinclude',
+	),
 	'fr' => array(
 		'proofreadpage_namespace' => 'Page',
 		'proofreadpage_index_namespace' => 'Index',
@@ -48,6 +60,14 @@ $messages = array(
 	'hsb' => array(
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'Wobraz',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_nextpage' => 'Přichodna strona',
+	'proofreadpage_prevpage' => 'Předchadna strona',
+	'proofreadpage_header' => 'Hłowowa linka (noinclude)',
+	'proofreadpage_body' => 'Tekstowy ćěleso (transkluzija):',
+	'proofreadpage_footer' => 'Nohowa linka (noinclude):',
+	'proofreadpage_toggleheaders' => 'wotrězki noinclude pokazać/schować',
 	),
 		'hy' => array(
 	'proofreadpage_namespace' => 'Էջ',
@@ -63,6 +83,10 @@ $messages = array(
 	'nl' => array(
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Index',#identical but defined
+	'proofreadpage_image' => 'afbeelding',
+	'proofreadpage_index' => 'Index',#identical but defined
+	'proofreadpage_nextpage' => 'Volgende pagina',
+	'proofreadpage_prevpage' => 'Vorige pagina',
 	),
 	'pt' => array(
 		'proofreadpage_namespace' => 'Página',
