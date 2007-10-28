@@ -88,6 +88,18 @@ $messages = array(
 	'proofreadpage_nextpage' => 'Volgende pagina',
 	'proofreadpage_prevpage' => 'Vorige pagina',
 	),
+	'pms' => array(
+	'proofreadpage_namespace' => 'Pàgina',
+	'proofreadpage_index_namespace' => 'Ìndess',
+	'proofreadpage_image' => 'figura',
+	'proofreadpage_index' => 'Ìndess',
+	'proofreadpage_nextpage' => 'Pàgina anans',
+	'proofreadpage_prevpage' => 'Pàgina andré',
+	'proofreadpage_header' => 'Testà (da nen anclude):',
+	'proofreadpage_body' => 'Còrp dla pàgina (da transclude):',
+	'proofreadpage_footer' => 'Pè (da nen anclude)',
+	'proofreadpage_toggleheaders' => 'smon/stërma le part da nen anclude',
+	),
 	'pt' => array(
 		'proofreadpage_namespace' => 'Página',
 		'proofreadpage_index_namespace' => 'Índice',
