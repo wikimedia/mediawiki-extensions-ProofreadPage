@@ -87,6 +87,10 @@ $messages = array(
 	'proofreadpage_index' => 'Index',#identical but defined
 	'proofreadpage_nextpage' => 'Volgende pagina',
 	'proofreadpage_prevpage' => 'Vorige pagina',
+	'proofreadpage_header' => 'Koptekst (geen inclusie):',
+	'proofreadpage_body' => 'Broodtekst (voor transclusie):',
+	'proofreadpage_footer' => 'Voettekst (geen inclusie):',
+	'proofreadpage_toggleheaders' => 'zichtbaarheid elementen zonder transclusie wijzigen',
 	),
 	'pms' => array(
 	'proofreadpage_namespace' => 'Pàgina',
