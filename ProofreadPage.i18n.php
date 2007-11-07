@@ -59,7 +59,9 @@ $messages = array(
 	),
 	'gl' => array(
 		'proofreadpage_namespace' => 'Páxina',
+		'proofreadpage_index_namespace' => 'Índice',
 		'proofreadpage_image' => 'imaxe',
+		'proofreadpage_index' => 'Índice',
 		'proofreadpage_nextpage' => 'Páxina seguinte',
 		'proofreadpage_prevpage' => 'Páxina anterior',
 		'proofreadpage_header' => 'Cabezallo (\'\'noinclude\'\'):',
