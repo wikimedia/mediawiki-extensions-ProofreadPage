@@ -104,6 +104,18 @@ $messages = array(
 		'proofreadpage_footer' => 'Voettekst (geen inclusie):',
 		'proofreadpage_toggleheaders' => 'zichtbaarheid elementen zonder transclusie wijzigen',
 	),
+	'oc' => array(
+		'proofreadpage_namespace' => 'Pagina',
+		'proofreadpage_index_namespace' => 'Indèx',
+		'proofreadpage_image' => 'imatge',
+		'proofreadpage_index' => 'Indèx',
+		'proofreadpage_nextpage' => 'Pagina seguenta',
+		'proofreadpage_prevpage' => 'Pagina precedenta',
+		'proofreadpage_header' => 'Entèsta (noinclude):',
+		'proofreadpage_body' => 'Contengut (transclusion):',
+		'proofreadpage_footer' => 'Pè de pagina (noinclude):',
+		'proofreadpage_toggleheaders' => 'amagar/mostrar las seccions noinclude',
+	),
 	'pms' => array(
 		'proofreadpage_namespace' => 'Pàgina',
 		'proofreadpage_index_namespace' => 'Ìndess',
