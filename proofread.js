@@ -108,11 +108,16 @@ function proofreadpage_make_edit_area(container,text){
 		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea></div>';
 
 	saveButton = document.getElementById("wpSave"); 
-	saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
-	previewButton = document.getElementById("wpPreview"); 
-	previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
-	diffButton = document.getElementById("wpDiff")
-	diffButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+	if(saveButton){
+		saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+		previewButton = document.getElementById("wpPreview"); 
+		previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+		diffButton = document.getElementById("wpDiff")
+		diffButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+	} 
+	else {
+	     container.firstChild.nextSibling.setAttribute("readonly","readonly");
+	}
 
 }
 
