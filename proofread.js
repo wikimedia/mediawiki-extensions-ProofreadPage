@@ -19,14 +19,14 @@ function proofreadpage_init_tabs(){
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-index">'
 			+ '<a href="'+proofreadPageIndexURL+'" title="'+proofreadPageMessageIndex+'">'
-			+ '<img src="http://upload.wikimedia.org/wikipedia/commons/a/af/1uparrow.png" alt="'+proofreadPageMessageIndex+'" width="15" height="15" /></a></li>';
+			+ '<img src="'+wgScriptPath+'/extensions/ProofreadPage/uparrow.png" alt="'+proofreadPageMessageIndex+'" width="15" height="15" /></a></li>';
 	}
   
 	if(self.proofreadPageNextURL){
 		b[0].innerHTML = 
 			'<li id="ca-next">'
 			+ '<a href="'+self.proofreadPageNextURL+'" title="'+proofreadPageMessageNextPage+'">'
-			+ '<img src="http://upload.wikimedia.org/wikipedia/commons/3/3c/1rightarrow.png" alt="'+proofreadPageMessageNextPage+'" width="15" height="15" /></a></li>'
+			+ '<img src="'+wgScriptPath+'/extensions/ProofreadPage/rightarrow.png" alt="'+proofreadPageMessageNextPage+'" width="15" height="15" /></a></li>'
 			+ b[0].innerHTML ;
 	}
 
@@ -34,7 +34,7 @@ function proofreadpage_init_tabs(){
 		b[0].innerHTML = 
 			'<li id="ca-prev">'
 			+ '<a href="'+self.proofreadPagePrevURL+'" title="'+proofreadPageMessagePrevPage+'">'
-			+ '<img src="http://upload.wikimedia.org/wikipedia/commons/8/8e/1leftarrow.png" alt="'+proofreadPageMessagePrevPage+'" width="15" height="15" /></a></li>'
+			+ '<img src="'+wgScriptPath+'/extensions/ProofreadPage/leftarrow.png" alt="'+proofreadPageMessagePrevPage+'" width="15" height="15" /></a></li>'
 			+ b[0].innerHTML ;
        }
 }
