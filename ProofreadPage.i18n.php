@@ -14,6 +14,13 @@ $messages = array(
 		'proofreadpage_toggleheaders' => 'toggle noinclude sections visibility',
 	),
 
+	'af' => array(
+		'proofreadpage_namespace' => 'Bladsye',
+		'proofreadpage_image' => 'beeld',
+		'proofreadpage_nextpage' => 'Volgende bladsy',
+		'proofreadpage_prevpage' => 'Vorige bladsy',
+	),
+
 	'ar' => array(
 		'proofreadpage_namespace' => 'صفحة',
 		'proofreadpage_index_namespace' => 'فهرس',
