@@ -6,6 +6,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
 $wgHooks['LoadAllMessages'][] = 'wfProofreadPageLoadMessages';
+$wgHooks['GetLinkColour'][] = 'wfProofreadPageLinkColour';
+$wgHooks['GetLinkColourCode'][] = 'wfProofreadPageColourCode';
 
 $wgExtensionCredits['other'][] = array(
 	'name' => 'ProofreadPage',
@@ -180,3 +182,72 @@ function wfProofreadPageLoadMessages() {
 	}
 	return true;
 }
+
+
+
+
+
+/**
+ *  Give quality colour codes to pages linked from an index page
+ */
+function wfProofreadPageLinkColour( $dbr, $id, &$colour ) {
+	global $wgTitle;
+
+	if ( !isset( $wgTitle ) ) {
+		return true;
+	}
+	wfProofreadPageLoadMessages();
+
+	// abort if we are not an index page
+	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+	if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText() ) ) {
+		return true;
+	}
+
+	$colour = 1;
+	// check if page belongs to one of the special categories
+	$result = $dbr->select('categorylinks',
+				array('cl_to'),
+				array('cl_from' => $id),
+				__METHOD__ );
+
+	while($x = $dbr->fetchObject($result)){
+		if($x->cl_to == WfMsgForContent('proofreadpage_quality1_category')) $colour = 2;
+		if($x->cl_to == WfMsgForContent('proofreadpage_quality2_category')) $colour = 3;
+		if($x->cl_to == WfMsgForContent('proofreadpage_quality3_category')) $colour = 4;
+		if($x->cl_to == WfMsgForContent('proofreadpage_quality4_category')) $colour = 5;
+	}
+
+	return true;
+}
+
+
+/**
+ *  Convert colour numbers to css class names. 
+ */
+function wfProofreadPageColourCode( &$colourcode ) {
+	global $wgTitle;
+
+	if ( !isset( $wgTitle ) ) {
+		return true;
+	}
+	wfProofreadPageLoadMessages();
+
+	// abort if we are not an index page
+	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+	if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText() ) ) {
+		return true;
+	}
+
+	$colourcode = array(
+		0 => 'new',
+		1 => '',
+		2 => 'quality1',
+		3 => 'quality2',
+		4 => 'quality3',
+		5 => 'quality4',
+	);
+
+	return true;
+}
+

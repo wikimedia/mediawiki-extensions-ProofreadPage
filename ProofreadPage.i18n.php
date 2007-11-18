@@ -12,10 +12,14 @@ $messages = array(
 		'proofreadpage_body' => 'Page body (to be transcluded):',
 		'proofreadpage_footer' => 'Footer (noinclude):',
 		'proofreadpage_toggleheaders' => 'toggle noinclude sections visibility',
+		'proofreadpage_quality1_category' => 'Not_proofread',
+		'proofreadpage_quality2_category' => 'Incomplete',
+		'proofreadpage_quality3_category' => 'Proofread',
+		'proofreadpage_quality4_category' => 'Validated',
 	),
 
 	'af' => array(
-		'proofreadpage_namespace' => 'Bladsye',
+		'proofreadpage_namespace' => 'Bladsye', 
 		'proofreadpage_image' => 'beeld',
 		'proofreadpage_nextpage' => 'Volgende bladsy',
 		'proofreadpage_prevpage' => 'Vorige bladsy',
@@ -50,6 +54,10 @@ $messages = array(
 		'proofreadpage_body' => 'Textkörper (Transklusion):',
 		'proofreadpage_footer' => 'Fußzeile (noinclude):',
 		'proofreadpage_toggleheaders' => 'noinclude-Abschnitte ein-/ausblenden',
+		'proofreadpage_quality1_category' => 'Unkorrigiert',
+		'proofreadpage_quality2_category' => 'Unvollständig',
+		'proofreadpage_quality3_category' => 'Korrigiert',
+		'proofreadpage_quality4_category' => 'Fertig',
 	),
 
 	'fr' => array(
@@ -63,6 +71,10 @@ $messages = array(
 		'proofreadpage_body' => 'Contenu (transclusion):',
 		'proofreadpage_footer' => 'Pied de page (noinclude):',
 		'proofreadpage_toggleheaders' => 'masquer/montrer les sections noinclude',
+		'proofreadpage_quality1_category' => 'Page_non_corrigé',
+		'proofreadpage_quality2_category' => 'Page_incomplète',
+		'proofreadpage_quality3_category' => 'Page_corrigé',
+		'proofreadpage_quality4_category' => 'Page_validée',
 	),
 
 	'gl' => array(
