@@ -212,10 +212,10 @@ function wfProofreadPageLinkColour( $dbr, $id, &$colour ) {
 				__METHOD__ );
 
 	while($x = $dbr->fetchObject($result)){
-		if($x->cl_to == WfMsgForContent('proofreadpage_quality1_category')) $colour = 2;
-		if($x->cl_to == WfMsgForContent('proofreadpage_quality2_category')) $colour = 3;
-		if($x->cl_to == WfMsgForContent('proofreadpage_quality3_category')) $colour = 4;
-		if($x->cl_to == WfMsgForContent('proofreadpage_quality4_category')) $colour = 5;
+		if($x->cl_to == wfMsgForContent('proofreadpage_quality1_category')) $colour = 2;
+		if($x->cl_to == wfMsgForContent('proofreadpage_quality2_category')) $colour = 3;
+		if($x->cl_to == wfMsgForContent('proofreadpage_quality3_category')) $colour = 4;
+		if($x->cl_to == wfMsgForContent('proofreadpage_quality4_category')) $colour = 5;
 	}
 
 	return true;
