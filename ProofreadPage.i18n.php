@@ -36,6 +36,10 @@ $messages = array(
 		'proofreadpage_body' => 'جسم الصفحة (للتضمين):',
 		'proofreadpage_footer' => 'ذيل (noinclude):',
 		'proofreadpage_toggleheaders' => 'تغيير رؤية أقسام noinclude',
+		'proofreadpage_quality1_category' => 'ليس_مثبت_قراءة',
+		'proofreadpage_quality2_category' => 'غير_كامل',
+		'proofreadpage_quality3_category' => 'مثبت_قراءة',
+		'proofreadpage_quality4_category' => 'مصحح',
 	),
 
 	'bcl' => array(
@@ -101,6 +105,10 @@ $messages = array(
 		'proofreadpage_body' => 'Tekstowy ćěleso (transkluzija):',
 		'proofreadpage_footer' => 'Nohowa linka (noinclude):',
 		'proofreadpage_toggleheaders' => 'wotrězki noinclude pokazać/schować',
+		'proofreadpage_quality1_category' => 'Njeskorigowany',
+		'proofreadpage_quality2_category' => 'Njedospołny',
+		'proofreadpage_quality3_category' => 'Skorigowany',
+		'proofreadpage_quality4_category' => 'Hotowy',
 	),
 
 	'hy' => array(
