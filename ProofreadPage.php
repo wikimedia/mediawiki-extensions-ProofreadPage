@@ -204,7 +204,16 @@ function wfProofreadPageLinkColour( $dbr, $id, &$colour ) {
 		return true;
 	}
 
-	$colour = 1;
+	// abort if link is not in page namespace
+	$title = Title::newFromId($id);
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+	if ( !preg_match( "/^$page_namespace:(.*?)$/", $title->getPrefixedText() ) ) {
+		return true;
+	}
+
+	// make 'quality1' the default value
+	$colour = 2;
+
 	// check if page belongs to one of the special categories
 	$result = $dbr->select('categorylinks',
 				array('cl_to'),
@@ -227,6 +236,7 @@ function wfProofreadPageLinkColour( $dbr, $id, &$colour ) {
  */
 function wfProofreadPageColourCode( &$colourcode ) {
 	global $wgTitle;
+
 
 	if ( !isset( $wgTitle ) ) {
 		return true;
