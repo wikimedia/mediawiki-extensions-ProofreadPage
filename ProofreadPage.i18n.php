@@ -136,6 +136,10 @@ $messages = array(
 		'proofreadpage_body' => 'Broodtekst (voor transclusie):',
 		'proofreadpage_footer' => 'Voettekst (geen inclusie):',
 		'proofreadpage_toggleheaders' => 'zichtbaarheid elementen zonder transclusie wijzigen',
+		'proofreadpage_quality1_category' => 'Onbewerkt',
+		'proofreadpage_quality2_category' => 'Onvolledig',
+		'proofreadpage_quality3_category' => 'Proefgelezen',
+		'proofreadpage_quality4_category' => 'Gecontroleerd',
 	),
 
 	'oc' => array(
