@@ -4,10 +4,9 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
-$wgHooks['OutputPageParserOutput'][] = 'wfProofreadPageParserOutput';
-$wgHooks['LoadAllMessages'][] = 'wfProofreadPageLoadMessages';
-$wgHooks['GetLinkColour'][] = 'wfProofreadPageLinkColour';
-$wgHooks['GetLinkColourCode'][] = 'wfProofreadPageColourCode';
+$wgHooks['OutputPageParserOutput'][] = 'wfPRParserOutput';
+$wgHooks['LoadAllMessages'][] = 'wfPRLoadMessages';
+$wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
 
 $wgExtensionCredits['other'][] = array(
 	'name' => 'ProofreadPage',
@@ -26,7 +25,7 @@ $wgProofreadPageVersion = 2;
  * 
  */
 
-function wfProofreadPageNavigation() {
+function wfPRNavigation() {
 	global $wgTitle, $wgExtraNamespaces;
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	$err = array( '', '', '' );
@@ -90,10 +89,10 @@ function wfProofreadPageNavigation() {
  * 
  */
 
-function wfProofreadPageParserOutput( &$out, &$pout ) {
+function wfPRParserOutput( &$out, &$pout ) {
 	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
 
-	wfProofreadPageLoadMessages();
+	wfPRLoadMessages();
 	$action = $wgRequest->getVal('action');
 	$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
 	if ( !isset( $wgTitle ) || ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
@@ -106,7 +105,7 @@ function wfProofreadPageParserOutput( &$out, &$pout ) {
 		return true;
 	}
 
-	list($index_url,$prev_url,$next_url ) = wfProofreadPageNavigation();
+	list($index_url,$prev_url,$next_url ) = wfPRNavigation();
 
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	if ( !$imageTitle ) {
@@ -171,7 +170,7 @@ var proofreadPageMessageToggleHeaders = \"" . Xml::escapeJsString(wfMsg('proofre
 	return true;
 }
 
-function wfProofreadPageLoadMessages() {
+function wfPRLoadMessages() {
 	global $wgMessageCache;
 	static $done = false;
 	if ( $done ) return true;
@@ -190,13 +189,13 @@ function wfProofreadPageLoadMessages() {
 /**
  *  Give quality colour codes to pages linked from an index page
  */
-function wfProofreadPageLinkColour( $dbr, $id, &$colour ) {
+function wfPRLinkColours( $page_ids, &$colours ) {
 	global $wgTitle;
 
 	if ( !isset( $wgTitle ) ) {
 		return true;
 	}
-	wfProofreadPageLoadMessages();
+	wfPRLoadMessages();
 
 	// abort if we are not an index page
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
@@ -204,60 +203,40 @@ function wfProofreadPageLinkColour( $dbr, $id, &$colour ) {
 		return true;
 	}
 
-	// abort if link is not in page namespace
-	$title = Title::newFromId($id);
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	if ( !preg_match( "/^$page_namespace:(.*?)$/", $title->getPrefixedText() ) ) {
-		return true;
+	$dbr = wfGetDB( DB_SLAVE );
+	$catlinks = $dbr->tableName( 'categorylinks' );
+	foreach ( $page_ids as $id => $pdbk ) {
+
+		// consider only link in page namespace
+		$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+		if ( preg_match( "/^$page_namespace:(.*?)$/", $pdbk ) ) {
+
+			if ( !isset( $query ) ) {
+				$query =  "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(";
+			} else {
+				$query .= ', ';
+			}
+			$query .= $id;
+		}
 	}
+	if ( isset( $query ) ) {
+		$query .= ')';
+		$res = $dbr->query( $query, __METHOD__ );
 
-	// make 'quality1' the default value
-	$colour = 2;
+		while ( $x = $dbr->fetchObject($res) ) {
 
-	// check if page belongs to one of the special categories
-	$result = $dbr->select('categorylinks',
-				array('cl_to'),
-				array('cl_from' => $id),
-				__METHOD__ );
+			$colour = 'quality1'; // default value
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality1_category')) $colour = 'quality1';
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality2_category')) $colour = 'quality2';
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality3_category')) $colour = 'quality3';
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality4_category')) $colour = 'quality4';
 
-	while($x = $dbr->fetchObject($result)){
-		if($x->cl_to == wfMsgForContent('proofreadpage_quality1_category')) $colour = 2;
-		if($x->cl_to == wfMsgForContent('proofreadpage_quality2_category')) $colour = 3;
-		if($x->cl_to == wfMsgForContent('proofreadpage_quality3_category')) $colour = 4;
-		if($x->cl_to == wfMsgForContent('proofreadpage_quality4_category')) $colour = 5;
+			$pdbk = $page_ids[$x->cl_from];
+			$colours[$pdbk] = $colour;
+		}
 	}
 
 	return true;
 }
 
-
-/**
- *  Convert colour numbers to css class names. 
- */
-function wfProofreadPageColourCode( &$colourcode ) {
-	global $wgTitle;
-
-
-	if ( !isset( $wgTitle ) ) {
-		return true;
-	}
-	wfProofreadPageLoadMessages();
-
-	// abort if we are not an index page
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText() ) ) {
-		return true;
-	}
-
-	$colourcode = array(
-		0 => 'new',
-		1 => '',
-		2 => 'quality1',
-		3 => 'quality2',
-		4 => 'quality3',
-		5 => 'quality4',
-	);
-
-	return true;
-}
 
