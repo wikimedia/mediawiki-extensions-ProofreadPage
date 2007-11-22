@@ -211,6 +211,8 @@ function wfPRLinkColours( $page_ids, &$colours ) {
 		$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 		if ( preg_match( "/^$page_namespace:(.*?)$/", $pdbk ) ) {
 
+			$colours[$pdbk] = 'quality1';
+
 			if ( !isset( $query ) ) {
 				$query =  "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(";
 			} else {
@@ -225,14 +227,13 @@ function wfPRLinkColours( $page_ids, &$colours ) {
 
 		while ( $x = $dbr->fetchObject($res) ) {
 
-			$colour = 'quality1'; // default value
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality1_category')) $colour = 'quality1';
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality2_category')) $colour = 'quality2';
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality3_category')) $colour = 'quality3';
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality4_category')) $colour = 'quality4';
-
 			$pdbk = $page_ids[$x->cl_from];
-			$colours[$pdbk] = $colour;
+
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality1_category')) $colours[$pdbk] = 'quality1';
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality2_category')) $colours[$pdbk] = 'quality2';
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality3_category')) $colours[$pdbk] = 'quality3';
+			if($x->cl_to == wfMsgForContent('proofreadpage_quality4_category')) $colours[$pdbk] = 'quality4';
+			
 		}
 	}
 
