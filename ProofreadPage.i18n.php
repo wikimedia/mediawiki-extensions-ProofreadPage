@@ -64,6 +64,10 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Fertig',
 	),
 
+	'el' => array(
+		'proofreadpage_nextpage' => 'Επόμενη σελίδα',
+	),
+
 	'fr' => array(
 		'proofreadpage_namespace' => 'Page',
 		'proofreadpage_index_namespace' => 'Index',
