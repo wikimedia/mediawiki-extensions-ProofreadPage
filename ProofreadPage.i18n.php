@@ -65,7 +65,10 @@ $messages = array(
 	),
 
 	'el' => array(
+		'proofreadpage_namespace' => 'Σελίδα',
+		'proofreadpage_image' => 'Εικόνα',
 		'proofreadpage_nextpage' => 'Επόμενη σελίδα',
+		'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
 	),
 
 	'fr' => array(
