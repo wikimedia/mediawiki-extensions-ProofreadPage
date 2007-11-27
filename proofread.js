@@ -208,7 +208,7 @@ function proofreadpage_default_setup() {
 			image.width = 23;
 			image.height = 22;
 			image.className = "mw-toolbar-editbutton";
-			image.src = "http://upload.wikimedia.org/wikipedia/commons/2/2a/Button_category_plus.png";
+			image.src = wgScriptPath+'/extensions/ProofreadPage/button_category_plus.png';
 			image.border = 0;
 			image.alt = proofreadPageMessageToggleHeaders;
 			image.title = proofreadPageMessageToggleHeaders;
