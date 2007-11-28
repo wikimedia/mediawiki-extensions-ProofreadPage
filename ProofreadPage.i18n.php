@@ -101,6 +101,23 @@ $messages = array(
 		'proofreadpage_toggleheaders' => 'alternar a visibilidade das seccións \'\'noinclude\'\'',
 	),
 
+	'hr' => array(
+		'proofreadpage_namespace' => 'Stranica',
+		'proofreadpage_index_namespace' => 'Indeks',
+		'proofreadpage_image' => 'slika',
+		'proofreadpage_index' => 'Sadržaj (indeks)',
+		'proofreadpage_nextpage' => 'Slijedeća stranica',
+		'proofreadpage_prevpage' => 'Prethodna stranica',
+		'proofreadpage_header' => 'Zaglavlje (\'\'noinclude\'\'):',
+		'proofreadpage_body' => 'Tijelo stranice (bit će uključeno):',
+		'proofreadpage_footer' => 'Podnožje (\'\'footer noinclude\'\'):',
+		'proofreadpage_toggleheaders' => 'promijeni vidljivost \'\'noinclude\'\' odlomaka',
+		'proofreadpage_quality1_category' => 'Nepregledano',
+		'proofreadpage_quality2_category' => 'Nedovršeno',
+		'proofreadpage_quality3_category' => 'Pregledano',
+		'proofreadpage_quality4_category' => 'Dobro',
+	),
+
 	'hsb' => array(
 		'proofreadpage_namespace' => 'Strona',
 		'proofreadpage_index_namespace' => 'Indeks',
