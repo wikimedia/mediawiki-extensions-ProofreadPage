@@ -88,7 +88,7 @@ function proofreadpage_make_edit_area(container,text){
 			pageFooter = '';
 		}
 		else {
-			pageHeader = '<div class="pagetext">';
+			pageHeader = '<div class="pagetext">\n\n\n';
 			pageBody = text;
 			pageFooter = '</div>';
 		}
