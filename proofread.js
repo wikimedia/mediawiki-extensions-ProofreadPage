@@ -72,19 +72,19 @@ function proofreadpage_image_url(requested_width){
 
 function proofreadpage_make_edit_area(container,text){
 
-	re = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
+	re = /^<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
 	m = text.match(re);
 	if(m) {
-		pageHeader = m[2];
-		pageBody   = m[1]+m[3];
-		pageFooter = m[4];
+		pageHeader = m[1];
+		pageBody   = m[2];
+		pageFooter = m[3];
 	}
 	else {
-		re2 = /^(\{\{PageQuality\|[0-9][0-9]%\}\}|)<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)\n$/;
+		re2 = /^<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)\n$/;
 		m2 = text.match(re2);
 		if(m2) {
-			pageHeader = m2[2];
-			pageBody   = m2[1]+m2[3];
+			pageHeader = m2[1];
+			pageBody   = m2[2];
 			pageFooter = '';
 		}
 		else {
