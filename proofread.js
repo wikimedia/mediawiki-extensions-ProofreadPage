@@ -72,7 +72,7 @@ function proofreadpage_image_url(requested_width){
 
 function proofreadpage_make_edit_area(container,text){
 
-	re = /^<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
+	re = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
 	m = text.match(re);
 	if(m) {
 		pageHeader = m[1];
@@ -80,7 +80,7 @@ function proofreadpage_make_edit_area(container,text){
 		pageFooter = m[3];
 	}
 	else {
-		re2 = /^<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*?)\n$/;
+		re2 = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*?)\n$/;
 		m2 = text.match(re2);
 		if(m2) {
 			pageHeader = m2[1];
@@ -88,7 +88,7 @@ function proofreadpage_make_edit_area(container,text){
 			pageFooter = '';
 		}
 		else {
-			pageHeader = '<div class="pagetext">\n\n\n';
+			pageHeader = '<div class="pagetext">';
 			pageBody = text;
 			pageFooter = '</div>';
 		}
@@ -234,8 +234,8 @@ function proofreadPageFillForm(form) {
 	header = form.elements["headerTextbox"];
 	footer = form.elements["footerTextbox"];
 	if(header){
-		h = header.value;
-		if(h) h = "<noinclude>"+h+"</noinclude>";
+		h = header.value.match(/^([\s\S]*?)\n*$/)[1];
+		if(h) h = "<noinclude>"+h+"\n\n\n</noinclude>";
 		f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
 		ph = header.parentNode; 
