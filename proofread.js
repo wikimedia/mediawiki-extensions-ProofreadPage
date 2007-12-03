@@ -116,7 +116,7 @@ function proofreadpage_make_edit_area(container,text){
 		diffButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
 	} 
 	else {
-	     container.firstChild.nextSibling.setAttribute("readonly","readonly");
+		container.firstChild.nextSibling.setAttribute("readonly","readonly");
 	}
 
 }
