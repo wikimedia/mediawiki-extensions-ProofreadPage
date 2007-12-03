@@ -83,7 +83,7 @@ $messages = array(
 		'proofreadpage_footer' => 'Pied de page (noinclude):',
 		'proofreadpage_toggleheaders' => 'masquer/montrer les sections noinclude',
 		'proofreadpage_quality1_category' => 'Page_non_corrigé',
-		'proofreadpage_quality2_category' => 'Page_incomplète',
+		'proofreadpage_quality2_category' => 'Page_à_problème',
 		'proofreadpage_quality3_category' => 'Page_corrigé',
 		'proofreadpage_quality4_category' => 'Page_validée',
 	),
