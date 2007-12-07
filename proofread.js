@@ -3,9 +3,9 @@
 
 function proofreadpage_init_tabs(){
 
-	a = document.getElementById("p-cactions");
+	var a = document.getElementById("p-cactions");
 	if (!a) return;
-	b = a.getElementsByTagName("ul");
+	var b = a.getElementsByTagName("ul");
 	if (!b) return;
 
 	if(self.proofreadPageViewURL) {
@@ -44,6 +44,7 @@ function proofreadpage_init_tabs(){
 
 
 function proofreadpage_image_url(requested_width){
+        var image_url;
 
         if(self.proofreadPageExternalURL) {
 		image_url = proofreadPageExternalURL; 
@@ -51,7 +52,7 @@ function proofreadpage_image_url(requested_width){
 	else {
 
 		//enforce quantization: width must be multiple of 100px
-		width = (100*requested_width)/100;
+		var width = (100*requested_width)/100;
 
 		if(width < proofreadPageWidth)  {
 			 self.DisplayWidth = width;
@@ -126,7 +127,7 @@ function proofreadpage_toggle_visibility() {
 
 	box = document.getElementById("wpTextbox1");
 	h = document.getElementById("prp_header"); 
-	f = document.getElementById("prp_footer"); 
+	var f = document.getElementById("prp_footer"); 
 	s = h.getAttribute("style");
 	if( s == ""){
 	     	h.setAttribute("style", "display:none;"); 
@@ -153,41 +154,41 @@ function proofreadpage_default_setup() {
 		}
 	}
 
-        image_url = proofreadpage_image_url(displayWidth);
+        var image_url = proofreadpage_image_url(displayWidth);
 
 	if(self.DisplayHeight) self.TextBoxHeight = DisplayHeight;
 	else self.TextBoxHeight = 700;
 
 	if(proofreadPageIsEdit) {
-		text = document.getElementById("wpTextbox1"); 
+		var text = document.getElementById("wpTextbox1"); 
 		if (!text) return;
 	}
 	else { 
-		text = document.getElementById("bodyContent"); 
+		var text = document.getElementById("bodyContent"); 
 		if(!text) return;
 	}
 
 
 	//image 
-	image = document.createElement("img");
+	var image = document.createElement("img");
 	image.setAttribute("src", image_url); 
 	image.setAttribute("style","padding:0;margin:0;border:0;");
 
 	//container
 	//useful for hooking elements to the image, eg href or zoom.
-	container = document.createElement("div");
+	var container = document.createElement("div");
 	container.setAttribute("id", "proofreadImage");
 	container.appendChild(image);
 
-	table = document.createElement("table");
+	var table = document.createElement("table");
 	table.setAttribute("id", "textBoxTable");
-	t_body = document.createElement("tbody");
-	t_row = document.createElement("tr");
+	var t_body = document.createElement("tbody");
+	var t_row = document.createElement("tr");
 	t_row.setAttribute("valign","top");
-	cell_left = document.createElement("td");   
+	var cell_left = document.createElement("td");   
 	cell_left.setAttribute("width", "50%");
 	cell_left.setAttribute("style", "padding-right: 0.5em");
-	cell_right = document.createElement("td");   
+	var cell_right = document.createElement("td");   
 	cell_right.appendChild(container);
 	cell_right.setAttribute("valign","top");
 	cell_right.setAttribute("rowspan","3");
@@ -197,8 +198,8 @@ function proofreadpage_default_setup() {
 	table.appendChild(t_body);
 
     
-	f = text.parentNode; 
-	new_text = f.removeChild(text);
+	var f = text.parentNode; 
+	var new_text = f.removeChild(text);
 
 	if(proofreadPageIsEdit) {
 		proofreadpage_make_edit_area(cell_left,new_text.value);
@@ -236,7 +237,7 @@ function proofreadPageFillForm(form) {
 	if(header){
 		h = header.value.match(/^([\s\S]*?)\n*$/)[1];
 		if(h) h = "<noinclude>"+h+"\n\n\n</noinclude>";
-		f = footer.value;
+		var f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
 		ph = header.parentNode; 
 		ph.removeChild(header);
@@ -256,6 +257,8 @@ function proofreadPageFillForm(form) {
  *  Mouse Zoom.  Credits: http://valid.tjp.hu/zoom/
  */
 
+// global vars
+var lastxx, lastyy, xx, yy;
 
 var zp_clip;  //zp_clip is the large image
 var zp_container;
@@ -274,7 +277,7 @@ function zoom_move(evt) {
 	if(zoom_status != 1) { return false;}
 
 	if(typeof(evt) == 'object') {
-		var evt = evt?evt:window.event?window.event:null; if(!evt){ return;}
+		evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 		if(evt.pageX) {
 			xx=evt.pageX - ffox;
 			yy=evt.pageY - ffoy;
@@ -339,11 +342,11 @@ function countoffset() {
 
 function zoom_mouseup(evt) {
 
-	 var evt = evt?evt:window.event?window.event:null; 
-	 if(!evt) return;
+	 evt = evt?evt:window.event?window.event:null; 
+	 if(!evt) return false;
 
 	 //only left button
-	 if(evt.button != 0) return;
+	 if(evt.button != 0) return false;
 
 
 	if(zoom_status == 0) {
@@ -358,12 +361,12 @@ function zoom_mouseup(evt) {
 	 	zoom_off(); 
 		return false;
 	 }
+	 return false;
 }
 
 
 function zoom_on(evt) {
-
-	var evt = evt?evt:window.event?window.event:null; if(!evt){ return;}
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	zoom_status=1;
 
 	if(evt.pageX) {
@@ -397,7 +400,7 @@ function proofreadPageZoom(){
 
 	zp = document.getElementById("proofreadImage");
 	if(zp){
-		hires_url = proofreadpage_image_url(800);
+		var hires_url = proofreadpage_image_url(800);
 		self.objw = zp.firstChild.width;
 		self.objh = zp.firstChild.height;
 
@@ -429,7 +432,7 @@ function proofreadpage_init() {
 
 	/*check if external url is provided*/				       
 	if(!self.proofreadPageViewURL) {
-		text = document.getElementById("wpTextbox1"); 
+		var text = document.getElementById("wpTextbox1"); 
 		if (text) {
 			proofreadPageIsEdit = true;
 			re = /<span class="hiddenStructure" id="pageURL">\[http:\/\/(.*?)\]<\/span>/;
@@ -442,8 +445,8 @@ function proofreadpage_init() {
 			proofreadPageIsEdit = false;
 			text = document.getElementById("bodyContent"); 
 			try { 
-				a = document.getElementById("pageURL");
-				b = a.firstChild;
+				var a = document.getElementById("pageURL");
+				var b = a.firstChild;
 				self.proofreadPageExternalURL = b.getAttribute("href");
 			} catch(err){};
 		}
