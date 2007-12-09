@@ -166,6 +166,24 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Gecontroleerd',
 	),
 
+	'no' => array(
+		'proofreadpage_namespace' => 'Side',
+		'proofreadpage_index_namespace' => 'Indeks',
+		'proofreadpage_image' => 'bilde',
+		'proofreadpage_index' => 'Indeks',
+		'proofreadpage_nextpage' => 'Neste side',
+		'proofreadpage_prevpage' => 'Forrige side',
+		'proofreadpage_header' => 'Hodeseksjon (inkluderes ikke):',
+		'proofreadpage_body' => 'Hoveddel (skal inkluderes):',
+		'proofreadpage_footer' => 'Fotseksjon (inkluderes ikke):',
+		'proofreadpage_toggleheaders' => 'slå av/på synlighet for ikke-inkluderte seksjoner',
+		'proofreadpage_quality1_category' => 'Rå',
+		'proofreadpage_quality2_category' => 'Ufullstendig',
+		'proofreadpage_quality3_category' => 'Korrekturlest',
+		'proofreadpage_quality4_category' => 'Validert',
+	),
+
+
 	'oc' => array(
 		'proofreadpage_namespace' => 'Pagina',
 		'proofreadpage_index_namespace' => 'Indèx',
