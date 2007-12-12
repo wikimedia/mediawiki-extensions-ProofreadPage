@@ -99,6 +99,10 @@ $messages = array(
 		'proofreadpage_body' => 'Corpo da páxina (para ser transcluído)',
 		'proofreadpage_footer' => 'Rodapé (\'\'noinclude\'\'):',
 		'proofreadpage_toggleheaders' => 'alternar a visibilidade das seccións \'\'noinclude\'\'',
+		'proofreadpage_quality1_category' => 'Non corrixir',
+		'proofreadpage_quality2_category' => 'Problemático',
+		'proofreadpage_quality3_category' => 'Corrixir',
+		'proofreadpage_quality4_category' => 'Validado',
 	),
 
 	'hr' => array(
