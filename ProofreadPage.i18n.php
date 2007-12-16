@@ -188,17 +188,24 @@ $messages = array(
 	),
 
 
+/** Occitan (Occitan)
+ * @author Cedric31
+ */
 	'oc' => array(
-		'proofreadpage_namespace' => 'Pagina',
-		'proofreadpage_index_namespace' => 'Indèx',
-		'proofreadpage_image' => 'imatge',
-		'proofreadpage_index' => 'Indèx',
-		'proofreadpage_nextpage' => 'Pagina seguenta',
-		'proofreadpage_prevpage' => 'Pagina precedenta',
-		'proofreadpage_header' => 'Entèsta (noinclude):',
-		'proofreadpage_body' => 'Contengut (transclusion):',
-		'proofreadpage_footer' => 'Pè de pagina (noinclude):',
-		'proofreadpage_toggleheaders' => 'amagar/mostrar las seccions noinclude',
+		'proofreadpage_namespace'         => 'Pagina',
+		'proofreadpage_index_namespace'   => 'Indèx',
+		'proofreadpage_image'             => 'imatge',
+		'proofreadpage_index'             => 'Indèx',
+		'proofreadpage_nextpage'          => 'Pagina seguenta',
+		'proofreadpage_prevpage'          => 'Pagina precedenta',
+		'proofreadpage_header'            => 'Entèsta (noinclude):',
+		'proofreadpage_body'              => 'Contengut (transclusion):',
+		'proofreadpage_footer'            => 'Pè de pagina (noinclude):',
+		'proofreadpage_toggleheaders'     => 'amagar/mostrar las seccions noinclude',
+		'proofreadpage_quality1_category' => 'Pagina pas corregida',
+		'proofreadpage_quality2_category' => 'Pagina amb problèma',
+		'proofreadpage_quality3_category' => 'Pagina corregida',
+		'proofreadpage_quality4_category' => 'Pagina validada',
 	),
 
 	'pms' => array(
