@@ -10,7 +10,6 @@ $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
 
 $wgExtensionCredits['other'][] = array(
 	'name' => 'ProofreadPage',
-	'version' => '1.1',
 	'author' => 'ThomasV',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Proofread_Page',
 	'description' => 'Allow easy comparison of text to the original scan',
@@ -20,10 +19,10 @@ $wgExtensionCredits['other'][] = array(
 $wgProofreadPageVersion = 4;
 
 /**
- *
+ * 
  * Query the database to find if the current page is referred in an
  * Index page. If yes, return the URLs of the index, previous and next pages.
- *
+ * 
  */
 
 function wfPRNavigation() {
@@ -61,22 +60,22 @@ function wfPRNavigation() {
 	$tag_pattern = "/\[\[($page_namespace:.*?)(\|.*?|)\]\]/i";
 	preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 
-	for( $i=0; $i<count( $links[1] ); $i++) {
+	for( $i=0; $i<count( $links[1] ); $i++) { 
 		$a_title = Title::newFromText( $links[1][$i] );
-		if(!$a_title) continue;
+		if(!$a_title) continue; 
 		if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) break;
 	}
 	if( ($i>0) && ($i<count($links[1])) ){
 		$prev_title = Title::newFromText( $links[1][$i-1] );
-		if(!$prev_title) return $err;
+		if(!$prev_title) return $err; 
 		$prev_url = $prev_title->getFullURL();
 	}
 	else $prev_url = '';
 	if( ($i>=0) && ($i+1<count($links[1])) ){
 		$next_title = Title::newFromText( $links[1][$i+1] );
-		if(!$next_title) return $err;
+		if(!$next_title) return $err; 
 		$next_url = $next_title->getFullURL();
-	}
+	} 
 	else $next_url = '';
 
 	return array( $index_url, $prev_url, $next_url );
@@ -85,9 +84,9 @@ function wfPRNavigation() {
 
 
 /**
- *
+ * 
  * Append javascript variables and code to the page.
- *
+ * 
  */
 
 function wfPRParserOutput( &$out, &$pout ) {
@@ -117,7 +116,7 @@ function wfPRParserOutput( &$out, &$pout ) {
 	if ( $image->exists() ) {
 		$width = intval( $image->getWidth() );
 		$height = intval( $image->getHeight() );
-		if($m[2]) {
+		if($m[2]) { 
 			$viewName = $image->thumbName( array( 'width' => $width, 'page' => $m[3] ) );
 			$viewURL = $image->getThumbUrl( $viewName );
 
@@ -130,8 +129,8 @@ function wfPRParserOutput( &$out, &$pout ) {
 			$thumbURL = $image->getThumbUrl( $thumbName );
 		}
 		$thumbURL = Xml::escapeJsString( str_replace( '%23', '#', $thumbURL ) );
-	}
-	else {
+	} 
+	else {	
 		$width = 0;
 		$height = 0;
 		$viewURL = '';
@@ -157,7 +156,7 @@ EOT
 	);
 
         # Add messages from i18n
-        $out->addScript( "<script type=\"{$wgJsMimeType}\">
+        $out->addScript( "<script type=\"{$wgJsMimeType}\"> 
 var proofreadPageMessageIndex = \"" . Xml::escapeJsString(wfMsg('proofreadpage_index')) . "\";
 var proofreadPageMessageNextPage = \"" . Xml::escapeJsString(wfMsg('proofreadpage_nextpage')) . "\";
 var proofreadPageMessagePrevPage = \"" . Xml::escapeJsString(wfMsg('proofreadpage_prevpage')) . "\";
@@ -166,7 +165,7 @@ var proofreadPageMessageHeader = \"" . Xml::escapeJsString(wfMsg('proofreadpage_
 var proofreadPageMessagePageBody = \"" . Xml::escapeJsString(wfMsg('proofreadpage_body')) . "\";
 var proofreadPageMessageFooter = \"" . Xml::escapeJsString(wfMsg('proofreadpage_footer')) . "\";
 var proofreadPageMessageToggleHeaders = \"" . Xml::escapeJsString(wfMsg('proofreadpage_toggleheaders')) . "\";
-</script>\n"
+</script>\n" 
         );
 	return true;
 }
@@ -234,9 +233,11 @@ function wfPRLinkColours( $page_ids, &$colours ) {
 			if($x->cl_to == wfMsgForContent('proofreadpage_quality2_category')) $colours[$pdbk] = 'quality2';
 			if($x->cl_to == wfMsgForContent('proofreadpage_quality3_category')) $colours[$pdbk] = 'quality3';
 			if($x->cl_to == wfMsgForContent('proofreadpage_quality4_category')) $colours[$pdbk] = 'quality4';
-
+			
 		}
 	}
 
 	return true;
 }
+
+
