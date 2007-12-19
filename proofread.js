@@ -345,9 +345,12 @@ function zoom_mouseup(evt) {
 	 evt = evt?evt:window.event?window.event:null; 
 	 if(!evt) return false;
 
-	 //only left button
-	 if(evt.button != 0) return false;
-
+	 //only left button; see http://unixpapa.com/js/mouse.html for why it is this complicated
+	 if(evt.which == null) {
+	 	if(evt.button != 1) return false;
+	 } else {
+		if(evt.which > 1) return false;
+	 }
 
 	if(zoom_status == 0) {
        		zoom_on(evt);
