@@ -16,6 +16,8 @@ $messages = array(
 		'proofreadpage_quality2_category' => 'Problematic',
 		'proofreadpage_quality3_category' => 'Proofread',
 		'proofreadpage_quality4_category' => 'Validated',
+		'proofreadpage_index_listofpages' => 'List of pages',
+		'proofreadpage_image_message' => 'Link to the index page',
 	),
 
 	'af' => array(
@@ -62,6 +64,7 @@ $messages = array(
 		'proofreadpage_quality2_category' => 'Unvollständig',
 		'proofreadpage_quality3_category' => 'Korrigiert',
 		'proofreadpage_quality4_category' => 'Fertig',
+		'proofreadpage_index_listofpages' => 'Seitenliste',
 	),
 
 	'el' => array(
@@ -86,6 +89,7 @@ $messages = array(
 		'proofreadpage_quality2_category' => 'Page_à_problème',
 		'proofreadpage_quality3_category' => 'Page_corrigé',
 		'proofreadpage_quality4_category' => 'Page_validée',
+		'proofreadpage_index_listofpages' => 'Liste des pages',
 	),
 
 	'gl' => array(

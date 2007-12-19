@@ -7,6 +7,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgHooks['OutputPageParserOutput'][] = 'wfPRParserOutput';
 $wgHooks['LoadAllMessages'][] = 'wfPRLoadMessages';
 $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
+$wgHooks['ArticleViewHeader'][] = 'wfPRRenderLinks';
+$wgHooks['ImageOpenShowImageInlineBefore'][] = 'wfPRImageMessage';
+
+
+
 
 $wgExtensionCredits['other'][] = array(
 	'name' => 'ProofreadPage',
@@ -25,8 +30,9 @@ $wgProofreadPageVersion = 5;
  * 
  */
 
-function wfPRNavigation() {
-	global $wgTitle, $wgExtraNamespaces;
+function wfPRNavigation( $image ) {
+	global $wgTitle;
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	$err = array( '', '', '' );
 
@@ -46,17 +52,37 @@ function wfPRNavigation() {
 			break;
 		}
 	}
-	if( !$x ) {
+	$dbr->freeResult( $result ) ;
+
+	if( !$x ) { // there is no index page; but maybe we can create one (for multipage documents like .pdf and .djvu)
+		$handler = $image->getHandler();
+		if( $image->exists() && $handler && $handler->isMultiPage() ) {
+			$pagenr = 1;
+			$parts = explode( '/', $wgTitle->getText() );
+			if( count( $parts ) > 1 ) {
+				$pagenr = intval( array_pop( $parts ) );
+			}
+			$count = $handler->pageCount( $image );
+			if( $pagenr < 1 || $pagenr > $count || $count == 1 )
+				return $err;
+
+			$name = $image->getTitle()->getText();
+			$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
+			$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
+			$index_name = "$index_namespace:$name";
+			$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
+			$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
+			$index_url = Title::newFromText( $index_name )->getFullURL();
+			return array( $index_url, $prev_url, $next_url );
+		}
 		return $err;
 	}
-	$dbr->freeResult( $result ) ;
 
 	$index_title = $ref_title;
 	$index_url = $index_title->getFullURL();
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
 
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$tag_pattern = "/\[\[($page_namespace:.*?)(\|.*?|)\]\]/i";
 	preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 
@@ -105,8 +131,6 @@ function wfPRParserOutput( &$out, &$pout ) {
 		return true;
 	}
 
-	list($index_url,$prev_url,$next_url ) = wfPRNavigation();
-
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	if ( !$imageTitle ) {
 		return true;
@@ -136,6 +160,8 @@ function wfPRParserOutput( &$out, &$pout ) {
 		$viewURL = '';
 		$thumbURL = '';
 	}
+	
+	list( $index_url, $prev_url, $next_url ) = wfPRNavigation( $image );
 
 	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
 
@@ -240,4 +266,96 @@ function wfPRLinkColours( $page_ids, &$colours ) {
 	return true;
 }
 
+function wfPRImageMessage(  &$imgpage , &$wgOut ) {
 
+	global $wgUser;
+	$sk = $wgUser->getSkin();
+
+	$image = $imgpage->img;
+	if ( !$image->isMultipage() ) {
+		return true;
+	}
+
+	wfPRLoadMessages();
+	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+	$name = $image->getTitle()->getText();
+
+	$link = $sk->makeKnownLink( "$index_namespace:$name", wfMsg('proofreadpage_image_message') );
+	$wgOut->addHTML( "{$link}" );
+
+	return true;
+}
+
+
+function wfPRRenderLinks( &$article, &$outputDone, &$pcache){
+
+	global $wgUser, $wgOut, $wgTitle;
+
+	wfPRLoadMessages();
+	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+	if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
+		return true;
+	}
+
+	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
+	if ( !$imageTitle ) {
+		return true;
+	}
+	$image = Image::newFromTitle( $imageTitle );
+
+	if ( $image->isMultipage() ) {
+
+		$name = $imageTitle->getText();
+		$count = $image->pageCount();
+		$wgOut->addHTML( '<h2>' . wfMsg('proofreadpage_index_listofpages'). '</h2>' );
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$pagetable = $dbr->tableName( 'page' );
+
+		$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+		$page_ns_index = Namespace::getCanonicalIndex( strtolower( $page_namespace ) );
+		if( $page_ns_index == NULL ) {
+			$page_ns_index = NS_MAIN;
+		}
+
+		for( $i=0; $i<$count ; $i++) { 
+
+			if ( !isset( $query ) ) {
+				$query =  "SELECT page_id, page_title, page_namespace";
+				$query .= " FROM $pagetable WHERE (page_namespace=$page_ns_index AND page_title IN(";
+			} else {
+				$query .= ', ';
+			}
+			$link_name = "$page_namespace:$name" . '/'. ($i+1) ;	
+			$query .= $dbr->addQuotes( $link_name );
+		}
+		$query .= '))';
+		$res = $dbr->query( $query, __METHOD__ );
+
+		$colours = array();
+		$linkcolour_ids = array();
+		while ( $s = $dbr->fetchObject($res) ) {
+			$title = Title::makeTitle( $s->page_namespace, $s->page_title );
+			$pdbk = $title->getPrefixedDBkey();
+			$colours[$pdbk] = 'known';
+			$linkcolour_ids[$s->page_id] = $pdbk;
+		}
+		wfPRLinkColours( $linkcolour_ids, $colours );
+
+		$sk = $wgUser->getSkin();
+		for( $i=1; $i<$count+1 ; $i++) { 
+
+			$pdbk = "$page_namespace:$name" . '/'. $i ;
+			$title = Title::newFromText( $pdbk );
+			if ( !isset( $colours[$pdbk] ) ) {
+				$link = $sk->makeBrokenLinkObj( $title, ' '.$i );
+			} else {
+				$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], ' '.$i );
+			}
+			$wgOut->addHTML( "{$link}" );
+		}
+		$wgOut->addHTML( "<br/>" );
+
+	}
+	return true;
+}
