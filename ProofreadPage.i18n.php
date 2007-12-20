@@ -74,22 +74,22 @@ $messages = array(
 		'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
 	),
 
+/** French (Français)
+ * @author Dereckson
+ */
 	'fr' => array(
-		'proofreadpage_namespace' => 'Page',
-		'proofreadpage_index_namespace' => 'Index',
-		'proofreadpage_image' => 'image',
-		'proofreadpage_index' => 'Index',
-		'proofreadpage_nextpage' => 'Page suivante',
-		'proofreadpage_prevpage' => 'Page précédente',
-		'proofreadpage_header' => 'En-tête (noinclude):',
-		'proofreadpage_body' => 'Contenu (transclusion):',
-		'proofreadpage_footer' => 'Pied de page (noinclude):',
-		'proofreadpage_toggleheaders' => 'masquer/montrer les sections noinclude',
+		'proofreadpage_nextpage'          => 'Page suivante',
+		'proofreadpage_prevpage'          => 'Page précédente',
+		'proofreadpage_header'            => 'En-tête (noinclude):',
+		'proofreadpage_body'              => 'Contenu (transclusion):',
+		'proofreadpage_footer'            => 'Pied de page (noinclude):',
+		'proofreadpage_toggleheaders'     => 'masquer/montrer les sections noinclude',
 		'proofreadpage_quality1_category' => 'Page_non_corrigé',
 		'proofreadpage_quality2_category' => 'Page_à_problème',
 		'proofreadpage_quality3_category' => 'Page_corrigé',
 		'proofreadpage_quality4_category' => 'Page_validée',
 		'proofreadpage_index_listofpages' => 'Liste des pages',
+		'proofreadpage_image_message'     => "Lien vers l'index",
 	),
 
 	'gl' => array(
@@ -157,21 +157,27 @@ $messages = array(
 		'proofreadpage_namespace' => 'Pagina',
 	),
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ * @author SPQRobin
+ */
 	'nl' => array(
-		'proofreadpage_namespace' => 'Pagina',
-		'proofreadpage_index_namespace' => 'Index',#identical but defined
-		'proofreadpage_image' => 'afbeelding',
-		'proofreadpage_index' => 'Index',#identical but defined
-		'proofreadpage_nextpage' => 'Volgende pagina',
-		'proofreadpage_prevpage' => 'Vorige pagina',
-		'proofreadpage_header' => 'Koptekst (geen inclusie):',
-		'proofreadpage_body' => 'Broodtekst (voor transclusie):',
-		'proofreadpage_footer' => 'Voettekst (geen inclusie):',
-		'proofreadpage_toggleheaders' => 'zichtbaarheid elementen zonder transclusie wijzigen',
+		'proofreadpage_namespace'         => 'Pagina',
+		'proofreadpage_index_namespace'   => 'Index',
+		'proofreadpage_image'             => 'afbeelding',
+		'proofreadpage_index'             => 'Index',
+		'proofreadpage_nextpage'          => 'Volgende pagina',
+		'proofreadpage_prevpage'          => 'Vorige pagina',
+		'proofreadpage_header'            => 'Koptekst (geen inclusie):',
+		'proofreadpage_body'              => 'Broodtekst (voor transclusie):',
+		'proofreadpage_footer'            => 'Voettekst (geen inclusie):',
+		'proofreadpage_toggleheaders'     => 'zichtbaarheid elementen zonder transclusie wijzigen',
 		'proofreadpage_quality1_category' => 'Onbewerkt',
 		'proofreadpage_quality2_category' => 'Onvolledig',
 		'proofreadpage_quality3_category' => 'Proefgelezen',
 		'proofreadpage_quality4_category' => 'Gecontroleerd',
+		'proofreadpage_index_listofpages' => "Lijst van pagina's",
+		'proofreadpage_image_message'     => 'Verwijziging naar de indexpagina',
 	),
 
 	'no' => array(
