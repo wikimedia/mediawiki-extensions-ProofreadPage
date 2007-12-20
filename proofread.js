@@ -146,11 +146,10 @@ function proofreadpage_default_setup() {
 	self.displayWidth = 400; //default value
 
 	if (parseInt(navigator.appVersion)>3) {
-		if (navigator.appName=="Netscape") {
-			displayWidth = parseInt(window.innerWidth/2-70);
-		}
 		if (navigator.appName.indexOf("Microsoft")!=-1) {
 			displayWidth = parseInt(document.body.offsetWidth/2-70);
+		} else {
+			displayWidth = parseInt(window.innerWidth/2-70);
 		}
 	}
 
