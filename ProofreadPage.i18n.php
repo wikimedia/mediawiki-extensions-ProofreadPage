@@ -49,22 +49,27 @@ $messages = array(
 		'proofreadpage_index_namespace' => 'Indeks',
 	),
 
+/** German (Deutsch)
+ * @author ThomasV
+ * @author Raimond Spekking
+ */
 	'de' => array(
-		'proofreadpage_namespace' => 'Seite',
-		'proofreadpage_index_namespace' => 'Index',
-		'proofreadpage_image' => 'Scan',
-		'proofreadpage_index' => 'Index',
-		'proofreadpage_nextpage' => 'Nächste Seite',
-		'proofreadpage_prevpage' => 'Vorherige Seite',
-		'proofreadpage_header' => 'Kopfzeile (noinclude):',
-		'proofreadpage_body' => 'Textkörper (Transklusion):',
-		'proofreadpage_footer' => 'Fußzeile (noinclude):',
-		'proofreadpage_toggleheaders' => 'noinclude-Abschnitte ein-/ausblenden',
+		'proofreadpage_namespace'         => 'Seite',
+		'proofreadpage_index_namespace'   => 'Index',
+		'proofreadpage_image'             => 'Scan',
+		'proofreadpage_index'             => 'Index',
+		'proofreadpage_nextpage'          => 'Nächste Seite',
+		'proofreadpage_prevpage'          => 'Vorherige Seite',
+		'proofreadpage_header'            => 'Kopfzeile (noinclude):',
+		'proofreadpage_body'              => 'Textkörper (Transklusion):',
+		'proofreadpage_footer'            => 'Fußzeile (noinclude):',
+		'proofreadpage_toggleheaders'     => 'noinclude-Abschnitte ein-/ausblenden',
 		'proofreadpage_quality1_category' => 'Unkorrigiert',
 		'proofreadpage_quality2_category' => 'Unvollständig',
 		'proofreadpage_quality3_category' => 'Korrigiert',
 		'proofreadpage_quality4_category' => 'Fertig',
 		'proofreadpage_index_listofpages' => 'Seitenliste',
+		'proofreadpage_image_message'     => 'Link zur Indexseite',
 	),
 
 	'el' => array(
