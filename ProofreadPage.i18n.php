@@ -27,26 +27,39 @@ $messages = array(
 		'proofreadpage_prevpage' => 'Vorige bladsy',
 	),
 
+/** Arabic (العربية)
+ * @author Meno25
+ */
 	'ar' => array(
-		'proofreadpage_namespace' => 'صفحة',
-		'proofreadpage_index_namespace' => 'فهرس',
-		'proofreadpage_image' => 'صورة',
-		'proofreadpage_index' => 'فهرس',
-		'proofreadpage_nextpage' => 'الصفحة التالية',
-		'proofreadpage_prevpage' => 'الصفحة السابقة',
-		'proofreadpage_header' => 'العنوان (noinclude):',
-		'proofreadpage_body' => 'جسم الصفحة (للتضمين):',
-		'proofreadpage_footer' => 'ذيل (noinclude):',
-		'proofreadpage_toggleheaders' => 'تغيير رؤية أقسام noinclude',
+		'proofreadpage_namespace'         => 'صفحة',
+		'proofreadpage_index_namespace'   => 'فهرس',
+		'proofreadpage_image'             => 'صورة',
+		'proofreadpage_index'             => 'فهرس',
+		'proofreadpage_nextpage'          => 'الصفحة التالية',
+		'proofreadpage_prevpage'          => 'الصفحة السابقة',
+		'proofreadpage_header'            => 'العنوان (noinclude):',
+		'proofreadpage_body'              => 'جسم الصفحة (للتضمين):',
+		'proofreadpage_footer'            => 'ذيل (noinclude):',
+		'proofreadpage_toggleheaders'     => 'تغيير رؤية أقسام noinclude',
 		'proofreadpage_quality1_category' => 'ليس_مثبت_قراءة',
 		'proofreadpage_quality2_category' => 'غير_كامل',
 		'proofreadpage_quality3_category' => 'مثبت_قراءة',
 		'proofreadpage_quality4_category' => 'مصحح',
+		'proofreadpage_index_listofpages' => 'قائمة الصفحات',
+		'proofreadpage_image_message'     => 'وصلة إلى صفحة الفهرس',
 	),
 
 	'bcl' => array(
 		'proofreadpage_namespace' => 'Pahina',
 		'proofreadpage_index_namespace' => 'Indeks',
+	),
+
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+	'bg' => array(
+		'proofreadpage_nextpage' => 'Следваща страница',
+		'proofreadpage_prevpage' => 'Предишна страница',
 	),
 
 /** German (Deutsch)
