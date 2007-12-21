@@ -144,21 +144,23 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Dobro',
 	),
 
+/** Upper Sorbian (Hornjoserbsce) */
 	'hsb' => array(
-		'proofreadpage_namespace' => 'Strona',
-		'proofreadpage_index_namespace' => 'Indeks',
-		'proofreadpage_image' => 'Wobraz',
-		'proofreadpage_index' => 'Indeks',
-		'proofreadpage_nextpage' => 'Přichodna strona',
-		'proofreadpage_prevpage' => 'Předchadna strona',
-		'proofreadpage_header' => 'Hłowowa linka (noinclude)',
-		'proofreadpage_body' => 'Tekstowy ćěleso (transkluzija):',
-		'proofreadpage_footer' => 'Nohowa linka (noinclude):',
-		'proofreadpage_toggleheaders' => 'wotrězki noinclude pokazać/schować',
+		'proofreadpage_namespace'         => 'Strona',
+		'proofreadpage_index_namespace'   => 'Indeks',
+		'proofreadpage_image'             => 'Wobraz',
+		'proofreadpage_index'             => 'Indeks',
+		'proofreadpage_nextpage'          => 'Přichodna strona',
+		'proofreadpage_prevpage'          => 'Předchadna strona',
+		'proofreadpage_header'            => 'Hłowowa linka (noinclude)',
+		'proofreadpage_body'              => 'Tekstowy ćěleso (transkluzija):',
+		'proofreadpage_footer'            => 'Nohowa linka (noinclude):',
+		'proofreadpage_toggleheaders'     => 'wotrězki noinclude pokazać/schować',
 		'proofreadpage_quality1_category' => 'Njeskorigowany',
 		'proofreadpage_quality2_category' => 'Njedospołny',
 		'proofreadpage_quality3_category' => 'Skorigowany',
 		'proofreadpage_quality4_category' => 'Hotowy',
+		'proofreadpage_index_listofpages' => 'Lisćina stronow',
 	),
 
 	'hy' => array(
