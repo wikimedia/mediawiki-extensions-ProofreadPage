@@ -21,7 +21,7 @@ $messages = array(
 	),
 
 	'af' => array(
-		'proofreadpage_namespace' => 'Bladsye', 
+		'proofreadpage_namespace' => 'Bladsye',
 		'proofreadpage_image' => 'beeld',
 		'proofreadpage_nextpage' => 'Volgende bladsy',
 		'proofreadpage_prevpage' => 'Vorige bladsy',
@@ -259,6 +259,28 @@ $messages = array(
 	'ru' => array(
 		'proofreadpage_namespace' => 'Страница',
 		'proofreadpage_index_namespace' => 'Индекс',
+	),
+
+/** Seeltersk (Seeltersk)
+ * @author Pyt
+ */
+	'stq' => array(
+		'proofreadpage_namespace'         => 'Siede',
+		'proofreadpage_index_namespace'   => 'Index',
+		'proofreadpage_image'             => 'Scan',
+		'proofreadpage_index'             => 'Index',
+		'proofreadpage_nextpage'          => 'Naiste Siede',
+		'proofreadpage_prevpage'          => 'Foarige Siede',
+		'proofreadpage_header'            => 'Kopriege (noinclude):',
+		'proofreadpage_body'              => 'Textköärper (Transklusion):',
+		'proofreadpage_footer'            => 'Foutriege (noinclude):',
+		'proofreadpage_toggleheaders'     => 'noinclude-Ousnitte ien-/uutbländje',
+		'proofreadpage_quality1_category' => 'Uunkorrigierd',
+		'proofreadpage_quality2_category' => 'Nit fulboodich',
+		'proofreadpage_quality3_category' => 'Korrigierd',
+		'proofreadpage_quality4_category' => 'Kloor',
+		'proofreadpage_index_listofpages' => 'Siedenlieste',
+		'proofreadpage_image_message'     => 'Ferbiendenge tou ju Indexsiede',
 	),
 
 	'sv' => array(
