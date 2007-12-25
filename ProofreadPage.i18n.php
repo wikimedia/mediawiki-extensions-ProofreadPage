@@ -283,17 +283,25 @@ $messages = array(
 		'proofreadpage_image_message'     => 'Ferbiendenge tou ju Indexsiede',
 	),
 
+/** Swedish (Svenska)
+ * @author Lejonel
+ */
 	'sv' => array(
-		'proofreadpage_namespace' => 'Sida',
-		'proofreadpage_index_namespace' => 'Index',
-		'proofreadpage_image' => 'bild',
-		'proofreadpage_index' => 'Indexsida',
-		'proofreadpage_nextpage' => 'Nästa sida',
-		'proofreadpage_prevpage' => 'Föregående sida',
-		'proofreadpage_header' => 'Sidhuvud (inkluderas ej):',
-		'proofreadpage_body' => 'Sidinnehåll (som ska inkluderas):',
-		'proofreadpage_footer' => 'Sidfot (inkluderas ej):',
-		'proofreadpage_toggleheaders' => 'visa/dölj sidhuvud',
+		'proofreadpage_namespace'         => 'Sida',
+		'proofreadpage_image'             => 'bild',
+		'proofreadpage_index'             => 'Indexsida',
+		'proofreadpage_nextpage'          => 'Nästa sida',
+		'proofreadpage_prevpage'          => 'Föregående sida',
+		'proofreadpage_header'            => 'Sidhuvud (inkluderas ej):',
+		'proofreadpage_body'              => 'Sidinnehåll (som ska inkluderas):',
+		'proofreadpage_footer'            => 'Sidfot (inkluderas ej):',
+		'proofreadpage_toggleheaders'     => 'visa/dölj sidhuvud',
+		'proofreadpage_quality1_category' => 'Ej korrekturläst',
+		'proofreadpage_quality2_category' => 'Ofullständigt',
+		'proofreadpage_quality3_category' => 'Korrekturläst',
+		'proofreadpage_quality4_category' => 'Validerat',
+		'proofreadpage_index_listofpages' => 'Lista över sidor',
+		'proofreadpage_image_message'     => 'Länk till indexsidan',
 	),
 
 	'yue' => array(
