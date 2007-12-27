@@ -182,6 +182,14 @@ $messages = array(
 		'proofreadpage_namespace' => 'Pagina',
 	),
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+	'lb' => array(
+		'proofreadpage_nextpage'          => 'Nächst Säit',
+		'proofreadpage_index_listofpages' => 'Säitelëscht',
+	),
+
 /** Dutch (Nederlands)
  * @author Siebrand
  * @author SPQRobin
@@ -256,9 +264,25 @@ $messages = array(
 		'proofreadpage_toggleheaders' => 'smon/stërma le part da nen anclude',
 	),
 
+/** Portuguese (Português)
+ * @author 555
+ */
 	'pt' => array(
-		'proofreadpage_namespace' => 'Página',
-		'proofreadpage_index_namespace' => 'Índice',
+		'proofreadpage_namespace'         => 'Página',
+		'proofreadpage_index_namespace'   => 'Índice',
+		'proofreadpage_image'             => 'imagem',
+		'proofreadpage_index'             => 'Índice',
+		'proofreadpage_nextpage'          => 'Próxima página',
+		'proofreadpage_prevpage'          => 'Página anterior',
+		'proofreadpage_header'            => 'Cabeçalho (em modo noinclude):',
+		'proofreadpage_body'              => 'Corpo de página (em modo de transclusão):',
+		'proofreadpage_footer'            => 'Rodapé (em modo noinclude):',
+		'proofreadpage_quality1_category' => 'Não foi revisto',
+		'proofreadpage_quality2_category' => 'Problemático',
+		'proofreadpage_quality3_category' => 'Revisto e corrigido',
+		'proofreadpage_quality4_category' => 'Validado',
+		'proofreadpage_index_listofpages' => 'Lista de páginas',
+		'proofreadpage_image_message'     => 'Link para a página de índice',
 	),
 
 	'ru' => array(
