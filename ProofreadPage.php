@@ -326,7 +326,7 @@ function wfPRRenderLinks( &$article, &$outputDone, &$pcache){
 			} else {
 				$query .= ', ';
 			}
-			$link_name = "$page_namespace:$name" . '/'. ($i+1) ;	
+			$link_name = "$name" . '/'. ($i+1) ;	
 			$query .= $dbr->addQuotes( $link_name );
 		}
 		$query .= '))';
