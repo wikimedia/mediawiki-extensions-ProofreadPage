@@ -119,13 +119,12 @@ function proofreadpage_make_edit_area(container,text){
 		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea></div>';
 
 	var saveButton = document.getElementById("wpSave"); 
+	var previewButton = document.getElementById("wpPreview"); 
+	var diffButton = document.getElementById("wpDiff")
 	if(saveButton){
-		//saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
 		saveButton.onclick = proofreadPageFillForm;
-		previewButton = document.getElementById("wpPreview"); 
-		previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
-		diffButton = document.getElementById("wpDiff")
-		diffButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+		previewButton.onclick = proofreadPageFillForm;
+		diffButton.onclick = proofreadPageFillForm;
 	} 
 	else {
 		container.firstChild.nextSibling.setAttribute("readonly","readonly");
