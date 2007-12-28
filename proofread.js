@@ -202,7 +202,7 @@ function proofreadpage_default_setup() {
 
 	if(proofreadPageIsEdit) {
 		proofreadpage_make_edit_area(cell_left,new_text.value);
-		toolbar = document.getElementById("toolbar");
+		var toolbar = document.getElementById("toolbar");
 		if(toolbar){
 			var image = document.createElement("img");
 			image.width = 23;
