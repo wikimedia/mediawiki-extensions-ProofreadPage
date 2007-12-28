@@ -55,14 +55,13 @@ function wfPRNavigation( $image ) {
 	$dbr->freeResult( $result ) ;
 
 	if( !$x ) { // there is no index page; but maybe we can create one (for multipage documents like .pdf and .djvu)
-		$handler = $image->getHandler();
-		if( $image->exists() && $handler && $handler->isMultiPage() ) {
+		if( $image->exists() && $image->isMultiPage() ) {
 			$pagenr = 1;
 			$parts = explode( '/', $wgTitle->getText() );
 			if( count( $parts ) > 1 ) {
 				$pagenr = intval( array_pop( $parts ) );
 			}
-			$count = $handler->pageCount( $image );
+			$count = $image->pageCount();
 			if( $pagenr < 1 || $pagenr > $count || $count == 1 )
 				return $err;
 
