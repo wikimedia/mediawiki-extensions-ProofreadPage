@@ -198,7 +198,6 @@ function proofreadpage_default_setup() {
 	cell_left.style.cssText = "width:50%; padding-right:0.5em;";
 	var cell_right = document.createElement("td");
 	cell_right.appendChild(container);
-	cell_right.style.cssText = "valign:top;";
 	cell_right.setAttribute("rowspan","3");
 	t_row.appendChild(cell_left);
 	t_row.appendChild(cell_right);
