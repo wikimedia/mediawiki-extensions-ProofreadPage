@@ -21,7 +21,7 @@ function proofreadpage_init_tabs(){
 			+ '<a href="'+proofreadPageIndexURL+'" title="'+proofreadPageMessageIndex+'">'
 			+ '<img src="'+wgScriptPath+'/extensions/ProofreadPage/uparrow.png" alt="'+proofreadPageMessageIndex+'" width="15" height="15" /></a></li>';
 	}
-  
+
 	if(self.proofreadPageNextURL){
 		b[0].innerHTML = 
 			'<li id="ca-next">'
@@ -118,6 +118,7 @@ function proofreadpage_make_edit_area(container,text){
 		+'<div id="prp_footer" style="display:none"><br/>'+proofreadPageMessageFooter+'<br/>'
 		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea></div>';
 
+
 	var saveButton = document.getElementById("wpSave"); 
 	var previewButton = document.getElementById("wpPreview"); 
 	var diffButton = document.getElementById("wpDiff")
@@ -179,7 +180,7 @@ function proofreadpage_default_setup() {
 	//image 
 	var image = document.createElement("img");
 	image.setAttribute("src", image_url); 
-	image.setAttribute("style","padding:0;margin:0;border:0;");
+	image.style.cssText = "padding:0;margin:0;border:0;";
 
 	//container
 	//useful for hooking elements to the image, eg href or zoom.
@@ -189,15 +190,15 @@ function proofreadpage_default_setup() {
 
 	var table = document.createElement("table");
 	table.setAttribute("id", "textBoxTable");
+	table.style.cssText = "width:100%;";
 	var t_body = document.createElement("tbody");
 	var t_row = document.createElement("tr");
 	t_row.setAttribute("valign","top");
-	var cell_left = document.createElement("td");   
-	cell_left.setAttribute("width", "50%");
-	cell_left.setAttribute("style", "padding-right: 0.5em");
-	var cell_right = document.createElement("td");   
+	var cell_left = document.createElement("td");
+	cell_left.style.cssText = "width:50%; padding-right:0.5em;";
+	var cell_right = document.createElement("td");
 	cell_right.appendChild(container);
-	cell_right.setAttribute("valign","top");
+	cell_right.style.cssText = "valign:top;";
 	cell_right.setAttribute("rowspan","3");
 	t_row.appendChild(cell_left);
 	t_row.appendChild(cell_right);
@@ -418,10 +419,10 @@ function proofreadPageZoom(){
 		zp.setAttribute("onmousemove","zoom_move(event);" );
 
 		zp_container = document.createElement("div");
-		zp_container.setAttribute("style","position:absolute; width:0; height:0; overflow:hidden;"); 
+		zp_container.style.cssText ="position:absolute; width:0; height:0; overflow:hidden;";
 		zp_clip = document.createElement("img");
 		zp_clip.setAttribute("src", hires_url);
-		zp_clip.setAttribute("style", "padding:0;margin:0;border:0;");
+		zp_clip.style.cssText = "padding:0;margin:0;border:0;";
 		zp_container.appendChild(zp_clip);
 		zp.insertBefore(zp_container,zp.firstChild); 
 
