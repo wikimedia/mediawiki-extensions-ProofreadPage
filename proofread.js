@@ -247,9 +247,9 @@ function proofreadPageFillForm() {
 		if(h) h = "<noinclude>"+h+"\n\n\n</noinclude>";
 		var f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
-		ph = header.parentNode; 
+		var ph = header.parentNode; 
 		ph.removeChild(header);
-		pf = footer.parentNode; 
+		var pf = footer.parentNode; 
 		pf.removeChild(footer);
 		form.elements["wpTextbox1"].value = h+form.elements["wpTextbox1"].value+f;
 	}
