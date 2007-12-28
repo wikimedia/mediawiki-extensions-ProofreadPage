@@ -85,8 +85,18 @@ function proofreadpage_make_edit_area(container,text){
 		m2 = text.match(re2);
 		if(m2) {
 			pageHeader = m2[1];
-			pageBody   = m2[2];
-			pageFooter = '';
+			//apparently lookahead is not supported by all browsers
+			//so let us do another regexp
+			re3 = /^([\s\S]*?)<noinclude>([\s\S]*?)<\/noinclude>/;
+			m3 = m2[2].match(re3);
+			if(m3){
+				pageBody   = m3[1];
+				pageFooter = m3[2];
+			}
+			else{
+				pageBody   = m2[2];
+				pageFooter = '';
+			}
 		}
 		else {
 			pageHeader = '<div class="pagetext">';
@@ -108,9 +118,10 @@ function proofreadpage_make_edit_area(container,text){
 		+'<div id="prp_footer" style="display:none"><br/>'+proofreadPageMessageFooter+'<br/>'
 		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea></div>';
 
-	saveButton = document.getElementById("wpSave"); 
+	var saveButton = document.getElementById("wpSave"); 
 	if(saveButton){
-		saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+		//saveButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
+		saveButton.onclick = proofreadPageFillForm;
 		previewButton = document.getElementById("wpPreview"); 
 		previewButton.setAttribute("onclick","proofreadPageFillForm(this.form);");
 		diffButton = document.getElementById("wpDiff")
@@ -124,19 +135,17 @@ function proofreadpage_make_edit_area(container,text){
 
 
 function proofreadpage_toggle_visibility() {
-
-	box = document.getElementById("wpTextbox1");
-	h = document.getElementById("prp_header"); 
+	var box = document.getElementById("wpTextbox1");
+	var h = document.getElementById("prp_header"); 
 	var f = document.getElementById("prp_footer"); 
-	s = h.getAttribute("style");
-	if( s == ""){
-	     	h.setAttribute("style", "display:none;"); 
-		f.setAttribute("style", "display:none;"); 
-		if(self.TextBoxHeight)	box.setAttribute("style","height:"+(TextBoxHeight-7)+"px");
+	if( h.style.cssText == ''){
+		h.style.cssText = 'display:none';
+		f.style.cssText = 'display:none';
+		if(self.TextBoxHeight)	box.style.cssText = "height:"+(TextBoxHeight-7)+"px";
 	} else {
-	     	h.setAttribute("style", ""); 
-		f.setAttribute("style", ""); 
-		if(self.TextBoxHeight)  box.setAttribute("style","height:"+(TextBoxHeight-270)+"px");
+		h.style.cssText = '';
+		f.style.cssText = '';
+		if(self.TextBoxHeight)  box.style.cssText = "height:"+(TextBoxHeight-270)+"px";
 	}
 }
 
@@ -218,8 +227,7 @@ function proofreadpage_default_setup() {
 		}
 		copywarn = document.getElementById("editpage-copywarn");
 		f.insertBefore(table,copywarn);
-		document.getElementById("wpTextbox1").setAttribute("style","height:"+(TextBoxHeight-7)+"px");
-
+		document.getElementById("wpTextbox1").style.cssText = "height:"+(TextBoxHeight-7)+"px";
 	} else {
 		cell_left.appendChild(new_text);
 		f.appendChild(table);
@@ -230,11 +238,12 @@ function proofreadpage_default_setup() {
 
 
 
-function proofreadPageFillForm(form) {
-	header = form.elements["headerTextbox"];
-	footer = form.elements["footerTextbox"];
+function proofreadPageFillForm() {
+	var form = document.getElementById("editform");
+	var header = form.elements["headerTextbox"];
+	var footer = form.elements["footerTextbox"];
 	if(header){
-		h = header.value.match(/^([\s\S]*?)\n*$/)[1];
+		var h = header.value.match(/^([\s\S]*?)\n*$/)[1];
 		if(h) h = "<noinclude>"+h+"\n\n\n</noinclude>";
 		var f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
