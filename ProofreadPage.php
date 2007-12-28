@@ -304,7 +304,7 @@ function wfPRRenderLinks( &$article, &$outputDone, &$pcache){
 
 	if ( $image->isMultipage() ) {
 
-		$name = $imageTitle->getText();
+		$name = $imageTitle->getDBKey();
 		$count = $image->pageCount();
 		$wgOut->addHTML( '<h2>' . wfMsg('proofreadpage_index_listofpages'). '</h2>' );
 
