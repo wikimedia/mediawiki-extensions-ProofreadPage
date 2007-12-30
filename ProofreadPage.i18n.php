@@ -277,6 +277,7 @@ $messages = array(
 		'proofreadpage_header'            => 'Cabeçalho (em modo noinclude):',
 		'proofreadpage_body'              => 'Corpo de página (em modo de transclusão):',
 		'proofreadpage_footer'            => 'Rodapé (em modo noinclude):',
+		'proofreadpage_toggleheaders'     => 'tornar as seções noinclude visíveis',
 		'proofreadpage_quality1_category' => 'Não foi revisto',
 		'proofreadpage_quality2_category' => 'Problemático',
 		'proofreadpage_quality3_category' => 'Revisto e corrigido',
