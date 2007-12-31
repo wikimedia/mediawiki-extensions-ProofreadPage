@@ -341,6 +341,17 @@ $messages = array(
 		'proofreadpage_image_message'     => 'Länk till indexsidan',
 	),
 
+/** Volapük (Volapük)
+ * @author Malafaya
+ */
+	'vo' => array(
+		'proofreadpage_namespace'         => 'Pad',
+		'proofreadpage_image'             => 'magod',
+		'proofreadpage_nextpage'          => 'Pad sököl',
+		'proofreadpage_prevpage'          => 'Pad büik',
+		'proofreadpage_index_listofpages' => 'Padalised',
+	),
+
 	'yue' => array(
 		'proofreadpage_namespace' => '頁',
 		'proofreadpage_index_namespace' => '索引',
