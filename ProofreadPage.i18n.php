@@ -58,8 +58,10 @@ $messages = array(
  * @author DCLXVI
  */
 	'bg' => array(
-		'proofreadpage_nextpage' => 'Следваща страница',
-		'proofreadpage_prevpage' => 'Предишна страница',
+		'proofreadpage_namespace' => 'Страница',
+		'proofreadpage_image'     => 'картинка',
+		'proofreadpage_nextpage'  => 'Следваща страница',
+		'proofreadpage_prevpage'  => 'Предишна страница',
 	),
 
 /** German (Deutsch)
@@ -90,6 +92,15 @@ $messages = array(
 		'proofreadpage_image' => 'Εικόνα',
 		'proofreadpage_nextpage' => 'Επόμενη σελίδα',
 		'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
+	),
+
+/** Finnish (Suomi)
+ * @author Str4nd
+ */
+	'fi' => array(
+		'proofreadpage_image'    => 'kuva',
+		'proofreadpage_nextpage' => 'Seuraava sivu',
+		'proofreadpage_prevpage' => 'Edellinen sivu',
 	),
 
 /** French (Français)
@@ -293,9 +304,26 @@ $messages = array(
 		'proofreadpage_image_message'     => 'Link para a página de índice',
 	),
 
+/** Russian (Русский)
+ * @author .:Ajvol:.
+ */
 	'ru' => array(
-		'proofreadpage_namespace' => 'Страница',
-		'proofreadpage_index_namespace' => 'Индекс',
+		'proofreadpage_namespace'         => 'Страница',
+		'proofreadpage_index_namespace'   => 'Индекс',
+		'proofreadpage_image'             => 'изображение',
+		'proofreadpage_index'             => 'индекс',
+		'proofreadpage_nextpage'          => 'следующая страница',
+		'proofreadpage_prevpage'          => 'предыдущая страница',
+		'proofreadpage_header'            => 'Заголовок (не включается):',
+		'proofreadpage_body'              => 'Тело страницы (будет включаться):',
+		'proofreadpage_footer'            => 'Нижний колонтитул (не включается):',
+		'proofreadpage_toggleheaders'     => 'показывать невключаемые разделы',
+		'proofreadpage_quality1_category' => 'Не вычитана',
+		'proofreadpage_quality2_category' => 'Проблематичная',
+		'proofreadpage_quality3_category' => 'Вычитана',
+		'proofreadpage_quality4_category' => 'Проверена',
+		'proofreadpage_index_listofpages' => 'Список страниц',
+		'proofreadpage_image_message'     => 'Ссылка на страницу индекса',
 	),
 
 /** Seeltersk (Seeltersk)
