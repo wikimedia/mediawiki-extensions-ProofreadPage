@@ -184,6 +184,24 @@ $messages = array(
 		'proofreadpage_index_namespace' => 'Ինդեքս',
 	),
 
+/** Italian (Italiano)
+ * @author BrokenArrow
+ */
+	'it' => array(
+		'proofreadpage_namespace'         => 'Pagina',
+		'proofreadpage_index_namespace'   => 'Indice',
+		'proofreadpage_image'             => 'immagine',
+		'proofreadpage_index'             => 'Indice',
+		'proofreadpage_nextpage'          => 'Pagina successiva',
+		'proofreadpage_prevpage'          => 'Pagina precedente',
+		'proofreadpage_header'            => 'Intestazione (non inclusa):',
+		'proofreadpage_body'              => 'Corpo della pagina (da includere):',
+		'proofreadpage_footer'            => 'Piè di pagina (non incluso)',
+		'proofreadpage_toggleheaders'     => 'attiva/disattiva la visibilità delle sezioni non incluse',
+		'proofreadpage_index_listofpages' => 'Lista delle pagine',
+		'proofreadpage_image_message'     => 'Collegamento alla pagina indice',
+	),
+
 	'ka' => array(
 		'proofreadpage_namespace' => 'გვერდი',
 		'proofreadpage_index_namespace' => 'ინდექსი',
