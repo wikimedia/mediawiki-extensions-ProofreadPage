@@ -417,6 +417,7 @@ $messages = array(
 		'proofreadpage_image'             => 'magod',
 		'proofreadpage_nextpage'          => 'Pad sököl',
 		'proofreadpage_prevpage'          => 'Pad büik',
+		'proofreadpage_quality2_category' => 'Säkädik',
 		'proofreadpage_index_listofpages' => 'Padalised',
 	),
 
