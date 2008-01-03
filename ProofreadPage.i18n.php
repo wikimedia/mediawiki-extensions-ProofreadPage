@@ -344,6 +344,28 @@ $messages = array(
 		'proofreadpage_image_message'     => 'Ссылка на страницу индекса',
 	),
 
+/** Slovak (Slovenčina)
+ * @author Helix84
+ */
+	'sk' => array(
+		'proofreadpage_namespace'         => 'Stránka',
+		'proofreadpage_index_namespace'   => 'Index',
+		'proofreadpage_image'             => 'obrázok',
+		'proofreadpage_index'             => 'Index',
+		'proofreadpage_nextpage'          => 'Ďalšia stránka',
+		'proofreadpage_prevpage'          => 'Predošlá stránka',
+		'proofreadpage_header'            => 'Hlavička (noinclude):',
+		'proofreadpage_body'              => 'Telo stránky (pre transklúziu):',
+		'proofreadpage_footer'            => 'Pätka (noinclude):',
+		'proofreadpage_toggleheaders'     => 'prepnúť viditeľnosť sekcií noinclude',
+		'proofreadpage_quality1_category' => 'Nebolo skontrolované',
+		'proofreadpage_quality2_category' => 'Problematické',
+		'proofreadpage_quality3_category' => 'Skontrolované',
+		'proofreadpage_quality4_category' => 'Overené',
+		'proofreadpage_index_listofpages' => 'Zoznam stránok',
+		'proofreadpage_image_message'     => 'Odkaz na stránku index',
+	),
+
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
