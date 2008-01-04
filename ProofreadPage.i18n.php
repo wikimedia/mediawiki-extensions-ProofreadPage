@@ -221,6 +221,14 @@ $messages = array(
 		'proofreadpage_index_listofpages' => 'Säitelëscht',
 	),
 
+/** Low German (Plattdüütsch)
+ * @author Slomox
+ */
+	'nds' => array(
+		'proofreadpage_namespace' => 'Siet',
+		'proofreadpage_image'     => 'Bild',
+	),
+
 /** Dutch (Nederlands)
  * @author Siebrand
  * @author SPQRobin
