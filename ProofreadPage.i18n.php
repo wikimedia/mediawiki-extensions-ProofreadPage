@@ -374,6 +374,16 @@ $messages = array(
 		'proofreadpage_image_message'     => 'Odkaz na stránku index',
 	),
 
+/** ћирилица (ћирилица)
+ * @author Sasa Stefanovic
+ */
+	'sr-ec' => array(
+		'proofreadpage_namespace' => 'Страница',
+		'proofreadpage_image'     => 'слика',
+		'proofreadpage_nextpage'  => 'Следећа страница',
+		'proofreadpage_prevpage'  => 'Претходна страница',
+	),
+
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
