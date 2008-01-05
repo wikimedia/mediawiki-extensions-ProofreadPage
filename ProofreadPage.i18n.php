@@ -179,29 +179,6 @@ $messages = array(
 		'proofreadpage_index_listofpages' => 'Lisćina stronow',
 	),
 
-/** Hungarian (Magyar)
- * @author KossuthRad
- * @author Bdanee
- */
-	'hu' => array(
-		'proofreadpage_namespace'         => 'Oldal',
-		'proofreadpage_index_namespace'   => 'Index',
-		'proofreadpage_image'             => 'Kép',
-		'proofreadpage_index'             => 'Index',
-		'proofreadpage_nextpage'          => 'Következő oldal',
-		'proofreadpage_prevpage'          => 'Előző oldal',
-		'proofreadpage_header'            => 'Fejléc (noinclude):',
-		'proofreadpage_body'              => 'Oldal (be lesz illesztve):',
-		'proofreadpage_footer'            => 'Lábléc (noinclude):',
-		'proofreadpage_toggleheaders'     => 'noinclude részek láthatóságának váltása',
-		'proofreadpage_quality1_category' => 'korrigálatlan',
-		'proofreadpage_quality2_category' => 'Problematikus',
-		'proofreadpage_quality3_category' => 'Korrigálva',
-		'proofreadpage_quality4_category' => 'Jóváhagyva',
-		'proofreadpage_index_listofpages' => 'Oldalak listája',
-		'proofreadpage_image_message'     => 'Csatolni az index oldalhoz',
-	),
-
 	'hy' => array(
 		'proofreadpage_namespace' => 'Էջ',
 		'proofreadpage_index_namespace' => 'Ինդեքս',
