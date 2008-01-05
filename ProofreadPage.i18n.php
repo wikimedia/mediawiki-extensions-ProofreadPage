@@ -58,10 +58,11 @@ $messages = array(
  * @author DCLXVI
  */
 	'bg' => array(
-		'proofreadpage_namespace' => 'Страница',
-		'proofreadpage_image'     => 'картинка',
-		'proofreadpage_nextpage'  => 'Следваща страница',
-		'proofreadpage_prevpage'  => 'Предишна страница',
+		'proofreadpage_namespace'         => 'Страница',
+		'proofreadpage_image'             => 'картинка',
+		'proofreadpage_nextpage'          => 'Следваща страница',
+		'proofreadpage_prevpage'          => 'Предишна страница',
+		'proofreadpage_index_listofpages' => 'Списък на страниците',
 	),
 
 /** German (Deutsch)
@@ -95,12 +96,22 @@ $messages = array(
 	),
 
 /** Finnish (Suomi)
+ * @author Nike
  * @author Str4nd
  */
 	'fi' => array(
-		'proofreadpage_image'    => 'kuva',
-		'proofreadpage_nextpage' => 'Seuraava sivu',
-		'proofreadpage_prevpage' => 'Edellinen sivu',
+		'proofreadpage_namespace'         => 'Sivu',
+		'proofreadpage_index_namespace'   => 'Hakemisto',
+		'proofreadpage_image'             => 'kuva',
+		'proofreadpage_index'             => 'Hakemisto',
+		'proofreadpage_nextpage'          => 'Seuraava sivu',
+		'proofreadpage_prevpage'          => 'Edellinen sivu',
+		'proofreadpage_quality1_category' => 'Korjauslukematon',
+		'proofreadpage_quality2_category' => 'Ongelmallinen',
+		'proofreadpage_quality3_category' => 'Korjausluettu',
+		'proofreadpage_quality4_category' => 'Hyväksytty',
+		'proofreadpage_index_listofpages' => 'Sivuluettelo',
+		'proofreadpage_image_message'     => 'Linkki hakemistosivuun',
 	),
 
 /** French (Français)
