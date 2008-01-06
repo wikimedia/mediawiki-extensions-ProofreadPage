@@ -171,7 +171,10 @@ $messages = array(
 		'proofreadpage_image_message'     => 'Poveznica na sadržaj (kazalo)',
 	),
 
-/** Upper Sorbian (Hornjoserbsce) */
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ * @author Dundak
+ */
 	'hsb' => array(
 		'proofreadpage_namespace'         => 'Strona',
 		'proofreadpage_index_namespace'   => 'Indeks',
@@ -188,6 +191,7 @@ $messages = array(
 		'proofreadpage_quality3_category' => 'Skorigowany',
 		'proofreadpage_quality4_category' => 'Hotowy',
 		'proofreadpage_index_listofpages' => 'Lisćina stronow',
+		'proofreadpage_image_message'     => 'Wotkaz k indeksowej stronje',
 	),
 
 /** Hungarian (Magyar)
