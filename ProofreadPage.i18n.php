@@ -94,6 +94,27 @@ $messages = array(
 		'proofreadpage_nextpage' => 'Επόμενη σελίδα',
 		'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
 	),
+	
+	# فارسی (Huji)
+	'fa' => array(
+		'proofreadpage_namespace'         => 'صفحه',
+		'proofreadpage_index_namespace'   => 'اندیس',
+		'proofreadpage_image'             => 'تصویر',
+		'proofreadpage_index'             => 'اندیس',
+		'proofreadpage_nextpage'          => 'صفحهٔ بعدی',
+		'proofreadpage_prevpage'          => 'صفحهٔ قبلی',
+		'proofreadpage_header'            => 'عنوان (noinclude):',
+		'proofreadpage_body'              => 'متن صفحه (برای گنجانده شدن):',
+		'proofreadpage_footer'            => 'پانویس (noinclude):',
+		'proofreadpage_toggleheaders'     => 'تغییر پدیداری بخش‌های noinclude:',
+		'proofreadpage_quality1_category' => 'بازبینی‌نشده',
+		'proofreadpage_quality2_category' => 'مشکل‌دار',
+		'proofreadpage_quality3_category' => 'بازبینی‌شده',
+		'proofreadpage_quality4_category' => 'تاییدشده',
+		'proofreadpage_index_listofpages' => 'فهرست صفحه‌ها',
+		'proofreadpage_image_message'     => 'پیوند به صفحهٔ اندیس',
+
+	),
 
 /** Finnish (Suomi)
  * @author Nike
