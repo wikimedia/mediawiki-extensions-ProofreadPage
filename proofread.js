@@ -524,8 +524,8 @@ function proofreadpage_add_quality_buttons(){
 		//this is for backward compatibility
 		if(m[1]=="100%") m[1]="4";
 		if(m[1]=="75%") m[1]="3";
-		if(m[1]=="50%") m[1]="2";
-		if(m[1]=="25%") m[1]="1";
+		if(m[1]=="50%") m[1]="1";
+		if(m[1]=="25%") m[1]="2";
 
 		if( (m[2] != "|"+wgUserName) && (m[1]=="3")) show4 = true;
 		if(m[1] =="4") show4 = true;
@@ -538,7 +538,13 @@ function proofreadpage_add_quality_buttons(){
 	if(show4) f.innerHTML = f.innerHTML + '<span class="quality4"> <input type="radio" name="quality" value="4" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
-	if(m) document.editform.quality[ m[1]-1 ].checked=true;
+	if(m) { 
+		switch(m[1]){
+			case "4": document.editform.quality[3].checked=true; break;
+			case "3": document.editform.quality[2].checked=true; break;
+			case "1": document.editform.quality[1].checked=true; break; 
+			case "2": document.editform.quality[0].checked=true; break; 
+	}
 }
 
  
