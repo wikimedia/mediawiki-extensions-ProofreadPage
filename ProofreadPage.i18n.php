@@ -1,7 +1,7 @@
 <?php
 
-$messages = array(
-	'en' => array(
+$messages = array();
+	$messages['en'] = array(
 		'proofreadpage_namespace' => 'Page',
 		'proofreadpage_index_namespace' => 'Index',
 		'proofreadpage_image' => 'image',
@@ -18,19 +18,19 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Validated',
 		'proofreadpage_index_listofpages' => 'List of pages',
 		'proofreadpage_image_message' => 'Link to the index page',
-	),
+	);
 
-	'af' => array(
+	$messages['af'] = array(
 		'proofreadpage_namespace' => 'Bladsye',
 		'proofreadpage_image' => 'beeld',
 		'proofreadpage_nextpage' => 'Volgende bladsy',
 		'proofreadpage_prevpage' => 'Vorige bladsy',
-	),
+	);
 
 /** Arabic (العربية)
  * @author Meno25
  */
-	'ar' => array(
+	$messages['ar'] = array(
 		'proofreadpage_namespace'         => 'صفحة',
 		'proofreadpage_index_namespace'   => 'فهرس',
 		'proofreadpage_image'             => 'صورة',
@@ -47,29 +47,29 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'مصحح',
 		'proofreadpage_index_listofpages' => 'قائمة الصفحات',
 		'proofreadpage_image_message'     => 'وصلة إلى صفحة الفهرس',
-	),
+	);
 
-	'bcl' => array(
+	$messages['bcl'] = array(
 		'proofreadpage_namespace' => 'Pahina',
 		'proofreadpage_index_namespace' => 'Indeks',
-	),
+	);
 
 /** Bulgarian (Български)
  * @author DCLXVI
  */
-	'bg' => array(
+	$messages['bg'] = array(
 		'proofreadpage_namespace'         => 'Страница',
 		'proofreadpage_image'             => 'картинка',
 		'proofreadpage_nextpage'          => 'Следваща страница',
 		'proofreadpage_prevpage'          => 'Предишна страница',
 		'proofreadpage_index_listofpages' => 'Списък на страниците',
-	),
+	);
 
 /** German (Deutsch)
  * @author ThomasV
  * @author Raimond Spekking
  */
-	'de' => array(
+	$messages['de'] = array(
 		'proofreadpage_namespace'         => 'Seite',
 		'proofreadpage_index_namespace'   => 'Index',
 		'proofreadpage_image'             => 'Scan',
@@ -86,17 +86,17 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Fertig',
 		'proofreadpage_index_listofpages' => 'Seitenliste',
 		'proofreadpage_image_message'     => 'Link zur Indexseite',
-	),
+	);
 
-	'el' => array(
+	$messages['el'] = array(
 		'proofreadpage_namespace' => 'Σελίδα',
 		'proofreadpage_image' => 'Εικόνα',
 		'proofreadpage_nextpage' => 'Επόμενη σελίδα',
 		'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
-	),
+	);
 	
 	# فارسی (Huji)
-	'fa' => array(
+	$messages['fa'] = array(
 		'proofreadpage_namespace'         => 'صفحه',
 		'proofreadpage_index_namespace'   => 'اندیس',
 		'proofreadpage_image'             => 'تصویر',
@@ -114,13 +114,13 @@ $messages = array(
 		'proofreadpage_index_listofpages' => 'فهرست صفحه‌ها',
 		'proofreadpage_image_message'     => 'پیوند به صفحهٔ اندیس',
 
-	),
+	);
 
 /** Finnish (Suomi)
  * @author Nike
  * @author Str4nd
  */
-	'fi' => array(
+	$messages['fi'] = array(
 		'proofreadpage_namespace'         => 'Sivu',
 		'proofreadpage_index_namespace'   => 'Hakemisto',
 		'proofreadpage_image'             => 'kuva',
@@ -133,12 +133,16 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Hyväksytty',
 		'proofreadpage_index_listofpages' => 'Sivuluettelo',
 		'proofreadpage_image_message'     => 'Linkki hakemistosivuun',
-	),
+	);
 
 /** French (Français)
  * @author Dereckson
  */
-	'fr' => array(
+	$messages['fr'] = array(
+		'proofreadpage_namespace'         => 'Page',
+		'proofreadpage_index_namespace'   => 'Index',
+		'proofreadpage_namespace'         => 'Page',
+		'proofreadpage_index_namespace'   => 'Index',
 		'proofreadpage_nextpage'          => 'Page suivante',
 		'proofreadpage_prevpage'          => 'Page précédente',
 		'proofreadpage_header'            => 'En-tête (noinclude):',
@@ -151,9 +155,9 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Page_validée',
 		'proofreadpage_index_listofpages' => 'Liste des pages',
 		'proofreadpage_image_message'     => "Lien vers l'index",
-	),
+	);
 
-	'gl' => array(
+	$messages['gl'] = array(
 		'proofreadpage_namespace' => 'Páxina',
 		'proofreadpage_index_namespace' => 'Índice',
 		'proofreadpage_image' => 'imaxe',
@@ -168,12 +172,12 @@ $messages = array(
 		'proofreadpage_quality2_category' => 'Problemático',
 		'proofreadpage_quality3_category' => 'Corrixir',
 		'proofreadpage_quality4_category' => 'Validado',
-	),
+	);
 
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  */
-	'hr' => array(
+	$messages['hr'] = array(
 		'proofreadpage_namespace'         => 'Stranica',
 		'proofreadpage_index_namespace'   => 'Indeks',
 		'proofreadpage_image'             => 'slika',
@@ -190,13 +194,13 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Dobro',
 		'proofreadpage_index_listofpages' => 'Popis stranica',
 		'proofreadpage_image_message'     => 'Poveznica na sadržaj (kazalo)',
-	),
+	);
 
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  * @author Dundak
  */
-	'hsb' => array(
+	$messages['hsb'] = array(
 		'proofreadpage_namespace'         => 'Strona',
 		'proofreadpage_index_namespace'   => 'Indeks',
 		'proofreadpage_image'             => 'Wobraz',
@@ -213,13 +217,13 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Hotowy',
 		'proofreadpage_index_listofpages' => 'Lisćina stronow',
 		'proofreadpage_image_message'     => 'Wotkaz k indeksowej stronje',
-	),
+	);
 
 /** Hungarian (Magyar)
  * @author KossuthRad
  * @author Bdanee
  */
-	'hu' => array(
+	$messages['hu'] = array(
 		'proofreadpage_namespace'         => 'Oldal',
 		'proofreadpage_index_namespace'   => 'Index',
 		'proofreadpage_image'             => 'Kép',
@@ -236,17 +240,17 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Jóváhagyva',
 		'proofreadpage_index_listofpages' => 'Oldalak listája',
 		'proofreadpage_image_message'     => 'Csatolni az index oldalhoz',
-	),
+	);
 
-	'hy' => array(
+	$messages['hy'] = array(
 		'proofreadpage_namespace' => 'Էջ',
 		'proofreadpage_index_namespace' => 'Ինդեքս',
-	),
+	);
 
 /** Italian (Italiano)
  * @author BrokenArrow
  */
-	'it' => array(
+	$messages['it'] = array(
 		'proofreadpage_namespace'         => 'Pagina',
 		'proofreadpage_index_namespace'   => 'Indice',
 		'proofreadpage_image'             => 'immagine',
@@ -259,40 +263,40 @@ $messages = array(
 		'proofreadpage_toggleheaders'     => 'attiva/disattiva la visibilità delle sezioni non incluse',
 		'proofreadpage_index_listofpages' => 'Lista delle pagine',
 		'proofreadpage_image_message'     => 'Collegamento alla pagina indice',
-	),
+	);
 
-	'ka' => array(
+	$messages['ka'] = array(
 		'proofreadpage_namespace' => 'გვერდი',
 		'proofreadpage_index_namespace' => 'ინდექსი',
-	),
+	);
 
-	'la' => array(
+	$messages['la'] = array(
 		'proofreadpage_namespace' => 'Pagina',
-	),
+	);
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
-	'lb' => array(
+	$messages['lb'] = array(
 		'proofreadpage_namespace'         => 'Säit',
 		'proofreadpage_nextpage'          => 'Nächst Säit',
 		'proofreadpage_prevpage'          => 'Virescht Säit',
 		'proofreadpage_index_listofpages' => 'Säitelëscht',
-	),
+	);
 
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
-	'nds' => array(
+	$messages['nds'] = array(
 		'proofreadpage_namespace' => 'Siet',
 		'proofreadpage_image'     => 'Bild',
-	),
+	);
 
 /** Dutch (Nederlands)
  * @author Siebrand
  * @author SPQRobin
  */
-	'nl' => array(
+	$messages['nl'] = array(
 		'proofreadpage_namespace'         => 'Pagina',
 		'proofreadpage_index_namespace'   => 'Index',
 		'proofreadpage_image'             => 'afbeelding',
@@ -309,12 +313,12 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Gecontroleerd',
 		'proofreadpage_index_listofpages' => "Lijst van pagina's",
 		'proofreadpage_image_message'     => 'Verwijziging naar de indexpagina',
-	),
+	);
 
 /** Norwegian (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  */
-	'no' => array(
+	$messages['no'] = array(
 		'proofreadpage_namespace'         => 'Side',
 		'proofreadpage_index_namespace'   => 'Indeks',
 		'proofreadpage_image'             => 'bilde',
@@ -331,13 +335,13 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Validert',
 		'proofreadpage_index_listofpages' => 'Liste over sider',
 		'proofreadpage_image_message'     => 'Lenke til indekssiden',
-	),
+	);
 
 
 /** Occitan (Occitan)
  * @author Cedric31
  */
-	'oc' => array(
+	$messages['oc'] = array(
 		'proofreadpage_namespace'         => 'Pagina',
 		'proofreadpage_index_namespace'   => 'Indèx',
 		'proofreadpage_image'             => 'imatge',
@@ -352,9 +356,9 @@ $messages = array(
 		'proofreadpage_quality2_category' => 'Pagina amb problèma',
 		'proofreadpage_quality3_category' => 'Pagina corregida',
 		'proofreadpage_quality4_category' => 'Pagina validada',
-	),
+	);
 
-	'pms' => array(
+	$messages['pms'] = array(
 		'proofreadpage_namespace' => 'Pàgina',
 		'proofreadpage_index_namespace' => 'Ìndess',
 		'proofreadpage_image' => 'figura',
@@ -365,12 +369,12 @@ $messages = array(
 		'proofreadpage_body' => 'Còrp dla pàgina (da transclude):',
 		'proofreadpage_footer' => 'Pè (da nen anclude)',
 		'proofreadpage_toggleheaders' => 'smon/stërma le part da nen anclude',
-	),
+	);
 
 /** Portuguese (Português)
  * @author 555
  */
-	'pt' => array(
+	$messages['pt'] = array(
 		'proofreadpage_namespace'         => 'Página',
 		'proofreadpage_index_namespace'   => 'Índice',
 		'proofreadpage_image'             => 'imagem',
@@ -387,12 +391,12 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Validado',
 		'proofreadpage_index_listofpages' => 'Lista de páginas',
 		'proofreadpage_image_message'     => 'Link para a página de índice',
-	),
+	);
 
 /** Russian (Русский)
  * @author .:Ajvol:.
  */
-	'ru' => array(
+	$messages['ru'] = array(
 		'proofreadpage_namespace'         => 'Страница',
 		'proofreadpage_index_namespace'   => 'Индекс',
 		'proofreadpage_image'             => 'изображение',
@@ -409,12 +413,12 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Проверена',
 		'proofreadpage_index_listofpages' => 'Список страниц',
 		'proofreadpage_image_message'     => 'Ссылка на страницу индекса',
-	),
+	);
 
 /** Slovak (Slovenčina)
  * @author Helix84
  */
-	'sk' => array(
+	$messages['sk'] = array(
 		'proofreadpage_namespace'         => 'Stránka',
 		'proofreadpage_index_namespace'   => 'Index',
 		'proofreadpage_image'             => 'obrázok',
@@ -431,22 +435,22 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Overené',
 		'proofreadpage_index_listofpages' => 'Zoznam stránok',
 		'proofreadpage_image_message'     => 'Odkaz na stránku index',
-	),
+	);
 
 /** ћирилица (ћирилица)
  * @author Sasa Stefanovic
  */
-	'sr-ec' => array(
+	$messages['sr-ec'] = array(
 		'proofreadpage_namespace' => 'Страница',
 		'proofreadpage_image'     => 'слика',
 		'proofreadpage_nextpage'  => 'Следећа страница',
 		'proofreadpage_prevpage'  => 'Претходна страница',
-	),
+	);
 
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
-	'stq' => array(
+	$messages['stq'] = array(
 		'proofreadpage_namespace'         => 'Siede',
 		'proofreadpage_index_namespace'   => 'Index',
 		'proofreadpage_image'             => 'Scan',
@@ -463,12 +467,12 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Kloor',
 		'proofreadpage_index_listofpages' => 'Siedenlieste',
 		'proofreadpage_image_message'     => 'Ferbiendenge tou ju Indexsiede',
-	),
+	);
 
 /** Swedish (Svenska)
  * @author Lejonel
  */
-	'sv' => array(
+	$messages['sv'] = array(
 		'proofreadpage_namespace'         => 'Sida',
 		'proofreadpage_image'             => 'bild',
 		'proofreadpage_index'             => 'Indexsida',
@@ -484,35 +488,34 @@ $messages = array(
 		'proofreadpage_quality4_category' => 'Validerat',
 		'proofreadpage_index_listofpages' => 'Lista över sidor',
 		'proofreadpage_image_message'     => 'Länk till indexsidan',
-	),
+	);
 
 /** Volapük (Volapük)
  * @author Malafaya
  */
-	'vo' => array(
+	$messages['vo'] = array(
 		'proofreadpage_namespace'         => 'Pad',
 		'proofreadpage_image'             => 'magod',
 		'proofreadpage_nextpage'          => 'Pad sököl',
 		'proofreadpage_prevpage'          => 'Pad büik',
 		'proofreadpage_quality2_category' => 'Säkädik',
 		'proofreadpage_index_listofpages' => 'Padalised',
-	),
+	);
 
-	'yue' => array(
+	$messages['yue'] = array(
 		'proofreadpage_namespace' => '頁',
 		'proofreadpage_index_namespace' => '索引',
-	),
+	);
 
-	'zh-hans' => array(
+	$messages['zh-hans'] = array(
 		'proofreadpage_namespace' => '页面',
 		'proofreadpage_index_namespace' => '索引',
-	),
+	);
 
-	'zh-hant' => array(
+	$messages['zh-hant'] = array(
 		'proofreadpage_namespace' => '頁面',
 		'proofreadpage_index_namespace' => '索引',
-	),
-);
+	);
 
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
