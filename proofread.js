@@ -544,6 +544,7 @@ function proofreadpage_add_quality_buttons(){
 			case "3": document.editform.quality[2].checked=true; break;
 			case "1": document.editform.quality[1].checked=true; break; 
 			case "2": document.editform.quality[0].checked=true; break; 
+		}
 	}
 }
 
