@@ -18,6 +18,7 @@ $messages = array();
 		'proofreadpage_quality4_category' => 'Validated',
 		'proofreadpage_index_listofpages' => 'List of pages',
 		'proofreadpage_image_message' => 'Link to the index page',
+		'proofreadpage_page_status' => 'Page status',
 	);
 
 	$messages['af'] = array(
@@ -86,6 +87,7 @@ $messages = array();
 		'proofreadpage_quality4_category' => 'Fertig',
 		'proofreadpage_index_listofpages' => 'Seitenliste',
 		'proofreadpage_image_message'     => 'Link zur Indexseite',
+		'proofreadpage_page_status'       => 'Seitenstatus',
 	);
 
 	$messages['el'] = array(
@@ -149,12 +151,13 @@ $messages = array();
 		'proofreadpage_body'              => 'Contenu (transclusion):',
 		'proofreadpage_footer'            => 'Pied de page (noinclude):',
 		'proofreadpage_toggleheaders'     => 'masquer/montrer les sections noinclude',
-		'proofreadpage_quality1_category' => 'Page_non_corrigée',
-		'proofreadpage_quality2_category' => 'Page_à_problème',
+		'proofreadpage_quality1_category' => 'Page non corrigée',
+		'proofreadpage_quality2_category' => 'Page à problème',
 		'proofreadpage_quality3_category' => 'Page_corrigée',
-		'proofreadpage_quality4_category' => 'Page_validée',
+		'proofreadpage_quality4_category' => 'Page validée',
 		'proofreadpage_index_listofpages' => 'Liste des pages',
 		'proofreadpage_image_message'     => "Lien vers l'index",
+		'proofreadpage_page_status' => 'Etat de la page',
 	);
 
 	$messages['gl'] = array(

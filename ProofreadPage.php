@@ -21,7 +21,7 @@ $wgExtensionCredits['other'][] = array(
 );
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 7;
+$wgProofreadPageVersion = 8;
 
 /**
  * 
@@ -190,6 +190,11 @@ var proofreadPageMessageHeader = \"" . Xml::escapeJsString(wfMsg('proofreadpage_
 var proofreadPageMessagePageBody = \"" . Xml::escapeJsString(wfMsg('proofreadpage_body')) . "\";
 var proofreadPageMessageFooter = \"" . Xml::escapeJsString(wfMsg('proofreadpage_footer')) . "\";
 var proofreadPageMessageToggleHeaders = \"" . Xml::escapeJsString(wfMsg('proofreadpage_toggleheaders')) . "\";
+var proofreadPageMessageStatus = \"" . Xml::escapeJsString(wfMsg('proofreadpage_page_status')) . "\";
+var proofreadPageMessageQuality1 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality1_category')) . "\";
+var proofreadPageMessageQuality2 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality2_category')) . "\";
+var proofreadPageMessageQuality3 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality3_category')) . "\";
+var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality4_category')) . "\";
 </script>\n" 
         );
 	return true;
@@ -253,12 +258,13 @@ function wfPRLinkColours( $page_ids, &$colours ) {
 		while ( $x = $dbr->fetchObject($res) ) {
 
 			$pdbk = $page_ids[$x->cl_from];
-
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality1_category')) $colours[$pdbk] = 'quality1';
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality2_category')) $colours[$pdbk] = 'quality2';
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality3_category')) $colours[$pdbk] = 'quality3';
-			if($x->cl_to == wfMsgForContent('proofreadpage_quality4_category')) $colours[$pdbk] = 'quality4';
 			
+			switch($x->cl_to){
+				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality1_category')): $colours[$pdbk] = 'quality1';
+				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality2_category')): $colours[$pdbk] = 'quality2';
+				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality3_category')): $colours[$pdbk] = 'quality3';
+				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality4_category')): $colours[$pdbk] = 'quality4';
+			}
 		}
 	}
 

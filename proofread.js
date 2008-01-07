@@ -135,6 +135,7 @@ function proofreadpage_make_edit_area(container,text){
 
 
 function proofreadpage_toggle_visibility() {
+
 	var box = document.getElementById("wpTextbox1");
 	var h = document.getElementById("prp_header"); 
 	var f = document.getElementById("prp_footer"); 
@@ -148,6 +149,8 @@ function proofreadpage_toggle_visibility() {
 		if(self.TextBoxHeight)  box.style.cssText = "height:"+(TextBoxHeight-270)+"px";
 	}
 }
+
+
 
 
 function proofreadpage_default_setup() {
@@ -227,6 +230,7 @@ function proofreadpage_default_setup() {
 		copywarn = document.getElementById("editpage-copywarn");
 		f.insertBefore(table,copywarn);
 		document.getElementById("wpTextbox1").style.cssText = "height:"+(TextBoxHeight-7)+"px";
+
 	} else {
 		cell_left.appendChild(new_text);
 		f.appendChild(table);
@@ -482,3 +486,61 @@ function proofreadpage_init() {
 addOnloadHook(proofreadpage_init);
 addOnloadHook(proofreadpage_init_tabs);
 hookEvent("load", proofreadPageZoom);
+
+
+
+
+/*Quality buttons*/
+
+function proofreadpage_add_quality(form,value){
+ 
+	var text="";
+	switch(value){
+		case "1": text = proofreadPageMessageQuality1; break;
+		case "2": text = proofreadPageMessageQuality2; break;
+		case "3": text = proofreadPageMessageQuality3; break;
+		case "4": text = proofreadPageMessageQuality4; break;
+	}
+
+	form.elements["wpSummary"].value="/* "+text+" */";
+	s = form.elements["headerTextbox"].value;
+	s = s.replace(/\{\{PageQuality\|(.*?)\}\}/gi,"")
+	form.elements["headerTextbox"].value="{{PageQuality|"+value+"|"+wgUserName+"}}"+s;
+}
+
+
+function proofreadpage_add_quality_buttons(){
+
+        if(self.proofreadpage_no_quality_buttons) return;
+
+	var ig  = document.getElementById("wpWatchthis");
+	if(!ig) return;
+
+	var s = document.editform.headerTextbox.value;
+	var reg = /\{\{PageQuality\|([0-9]*(%|))(\|.*?|)\}\}/g;
+	var m = reg.exec(s);
+	var show4 = false;
+	if(m) {
+		//this is for backward compatibility
+		if(m[1]=="100%") m[1]="4";
+		if(m[1]=="75%") m[1]="3";
+		if(m[1]=="50%") m[1]="2";
+		if(m[1]=="25%") m[1]="1";
+
+		if( (m[2] != "|"+wgUserName) && (m[1]=="3")) show4 = true;
+		if(m[1] =="4") show4 = true;
+	}
+	var f = document.createElement("span");
+	f.innerHTML = 
+' <span class="quality2"> <input type="radio" name="quality" value="2" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>'
++'<span class="quality1"> <input type="radio" name="quality" value="1" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>'
++'<span class="quality3"> <input type="radio" name="quality" value="3" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>';
+	if(show4) f.innerHTML = f.innerHTML + '<span class="quality4"> <input type="radio" name="quality" value="4" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>';
+	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
+	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
+	if(m) document.editform.quality[ m[1]-1 ].checked=true;
+}
+
+ 
+
+addOnloadHook(proofreadpage_add_quality_buttons);
