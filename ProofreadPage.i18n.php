@@ -54,6 +54,7 @@ $messages['ar'] = array(
 	'proofreadpage_quality4_category' => 'مصحح',
 	'proofreadpage_index_listofpages' => 'قائمة الصفحات',
 	'proofreadpage_image_message'     => 'وصلة إلى صفحة الفهرس',
+	'proofreadpage_page_status'       => 'حالة الصفحة',
 );
 
 $messages['bcl'] = array(
@@ -227,6 +228,30 @@ $messages['hsb'] = array(
 	'proofreadpage_page_status'       => 'Status strony',
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ * @author Dundak
+ */
+$messages['hsb'] = array(
+	'proofreadpage_namespace'         => 'Strona',
+	'proofreadpage_index_namespace'   => 'Indeks',
+	'proofreadpage_image'             => 'Wobraz',
+	'proofreadpage_index'             => 'Indeks',
+	'proofreadpage_nextpage'          => 'Přichodna strona',
+	'proofreadpage_prevpage'          => 'Předchadna strona',
+	'proofreadpage_header'            => 'Hłowowa linka (noinclude)',
+	'proofreadpage_body'              => 'Tekstowy ćěleso (transkluzija):',
+	'proofreadpage_footer'            => 'Nohowa linka (noinclude):',
+	'proofreadpage_toggleheaders'     => 'wotrězki noinclude pokazać/schować',
+	'proofreadpage_quality1_category' => 'Njeskorigowany',
+	'proofreadpage_quality2_category' => 'Njedospołny',
+	'proofreadpage_quality3_category' => 'Skorigowany',
+	'proofreadpage_quality4_category' => 'Hotowy',
+	'proofreadpage_index_listofpages' => 'Lisćina stronow',
+	'proofreadpage_image_message'     => 'Wotkaz k indeksowej stronje',
+	'proofreadpage_page_status'       => 'Status strony',
+);
+
 /** Hungarian (Magyar)
  * @author KossuthRad
  * @author Bdanee
@@ -321,6 +346,7 @@ $messages['nl'] = array(
 	'proofreadpage_quality4_category' => 'Gecontroleerd',
 	'proofreadpage_index_listofpages' => "Lijst van pagina's",
 	'proofreadpage_image_message'     => 'Verwijziging naar de indexpagina',
+	'proofreadpage_page_status'       => 'Paginastatus',
 );
 
 /** Norwegian (‪Norsk (bokmål)‬)
@@ -442,6 +468,7 @@ $messages['sk'] = array(
 	'proofreadpage_quality4_category' => 'Overené',
 	'proofreadpage_index_listofpages' => 'Zoznam stránok',
 	'proofreadpage_image_message'     => 'Odkaz na stránku index',
+	'proofreadpage_page_status'       => 'Stav stránky',
 );
 
 /** ћирилица (ћирилица)
