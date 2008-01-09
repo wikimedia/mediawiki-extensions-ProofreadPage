@@ -260,10 +260,10 @@ function wfPRLinkColours( $page_ids, &$colours ) {
 			$pdbk = $page_ids[$x->cl_from];
 			
 			switch($x->cl_to){
-				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality1_category')): $colours[$pdbk] = 'quality1';
-				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality2_category')): $colours[$pdbk] = 'quality2';
-				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality3_category')): $colours[$pdbk] = 'quality3';
-				case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality4_category')): $colours[$pdbk] = 'quality4';
+			case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality1_category')): $colours[$pdbk] = 'quality1';break;
+			case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality2_category')): $colours[$pdbk] = 'quality2';break;
+			case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality3_category')): $colours[$pdbk] = 'quality3';break;
+			case str_replace( ' ' , '_' , wfMsgForContent('proofreadpage_quality4_category')): $colours[$pdbk] = 'quality4';break;
 			}
 		}
 	}
