@@ -294,6 +294,10 @@ $messages['it'] = array(
 	'proofreadpage_body'              => 'Corpo della pagina (da includere):',
 	'proofreadpage_footer'            => 'Piè di pagina (non incluso)',
 	'proofreadpage_toggleheaders'     => 'attiva/disattiva la visibilità delle sezioni non incluse',
+	'proofreadpage_quality1_category' => 'Da correggere',
+	'proofreadpage_quality2_category' => 'Da rivedere',
+	'proofreadpage_quality3_category' => 'Corretta',
+	'proofreadpage_quality4_category' => 'Verificata',
 	'proofreadpage_index_listofpages' => 'Lista delle pagine',
 	'proofreadpage_image_message'     => 'Collegamento alla pagina indice',
 );
