@@ -122,6 +122,7 @@ $messages['fa'] = array(
 	'proofreadpage_quality4_category' => 'تاییدشده',
 	'proofreadpage_index_listofpages' => 'فهرست صفحه‌ها',
 	'proofreadpage_image_message'     => 'پیوند به صفحهٔ اندیس',
+	'proofreadpage_page_status'       => 'وضعیت صفحه',
 );
 
 /** Finnish (Suomi)
