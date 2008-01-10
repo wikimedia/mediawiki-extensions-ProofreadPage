@@ -254,6 +254,7 @@ $messages['hu'] = array(
 	'proofreadpage_quality4_category' => 'Jóváhagyva',
 	'proofreadpage_index_listofpages' => 'Oldalak listája',
 	'proofreadpage_image_message'     => 'Csatolni az index oldalhoz',
+	'proofreadpage_page_status'       => 'Oldal állapota',
 );
 
 $messages['hy'] = array(
