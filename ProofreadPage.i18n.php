@@ -71,6 +71,7 @@ $messages['bg'] = array(
 	'proofreadpage_nextpage'          => 'Следваща страница',
 	'proofreadpage_prevpage'          => 'Предишна страница',
 	'proofreadpage_index_listofpages' => 'Списък на страниците',
+	'proofreadpage_page_status'       => 'Статут на страницата',
 );
 
 /** German (Deutsch)
@@ -186,6 +187,7 @@ $messages['gl'] = array(
 
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
+ * @author Dnik
  */
 $messages['hr'] = array(
 	'proofreadpage_namespace'         => 'Stranica',
@@ -204,29 +206,7 @@ $messages['hr'] = array(
 	'proofreadpage_quality4_category' => 'Dobro',
 	'proofreadpage_index_listofpages' => 'Popis stranica',
 	'proofreadpage_image_message'     => 'Poveznica na sadržaj (kazalo)',
-);
-/** Upper Sorbian (Hornjoserbsce)
- * @author Michawiki
- * @author Dundak
- */
-$messages['hsb'] = array(
-	'proofreadpage_namespace'         => 'Strona',
-	'proofreadpage_index_namespace'   => 'Indeks',
-	'proofreadpage_image'             => 'Wobraz',
-	'proofreadpage_index'             => 'Indeks',
-	'proofreadpage_nextpage'          => 'Přichodna strona',
-	'proofreadpage_prevpage'          => 'Předchadna strona',
-	'proofreadpage_header'            => 'Hłowowa linka (noinclude)',
-	'proofreadpage_body'              => 'Tekstowy ćěleso (transkluzija):',
-	'proofreadpage_footer'            => 'Nohowa linka (noinclude):',
-	'proofreadpage_toggleheaders'     => 'wotrězki noinclude pokazać/schować',
-	'proofreadpage_quality1_category' => 'Njeskorigowany',
-	'proofreadpage_quality2_category' => 'Njedospołny',
-	'proofreadpage_quality3_category' => 'Skorigowany',
-	'proofreadpage_quality4_category' => 'Hotowy',
-	'proofreadpage_index_listofpages' => 'Lisćina stronow',
-	'proofreadpage_image_message'     => 'Wotkaz k indeksowej stronje',
-	'proofreadpage_page_status'       => 'Status strony',
+	'proofreadpage_page_status'       => 'Status stranice',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
