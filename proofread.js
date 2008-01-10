@@ -527,7 +527,7 @@ function proofreadpage_add_quality_buttons(){
 		if(m[1]=="50%") m[1]="1";
 		if(m[1]=="25%") m[1]="2";
 
-		if( (m[2] != "|"+wgUserName) && (m[1]=="3")) show4 = true;
+		if( (m[3] != "|"+wgUserName) && (m[1]=="3")) show4 = true;
 		if(m[1] =="4") show4 = true;
 	}
 	var f = document.createElement("span");
