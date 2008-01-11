@@ -508,6 +508,7 @@ $messages['sv'] = array(
 	'proofreadpage_quality4_category' => 'Validerat',
 	'proofreadpage_index_listofpages' => 'Lista över sidor',
 	'proofreadpage_image_message'     => 'Länk till indexsidan',
+	'proofreadpage_page_status'       => 'Sidans status',
 );
 
 /** Volapük (Volapük)
