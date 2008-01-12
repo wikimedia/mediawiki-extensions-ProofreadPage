@@ -432,6 +432,7 @@ $messages['ru'] = array(
 	'proofreadpage_quality4_category' => 'Проверена',
 	'proofreadpage_index_listofpages' => 'Список страниц',
 	'proofreadpage_image_message'     => 'Ссылка на страницу индекса',
+	'proofreadpage_page_status'       => 'Статус страницы',
 );
 
 /** Slovak (Slovenčina)
