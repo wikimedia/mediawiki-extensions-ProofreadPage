@@ -69,16 +69,16 @@ function wfPRNavigation( $image ) {
 			$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
 			$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
 			$index_name = "$index_namespace:$name";
-			$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
-			$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
-			$index_url = Title::newFromText( $index_name )->getFullURL();
+			$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->escapeFullURL();
+			$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->escapeFullURL();
+			$index_url = Title::newFromText( $index_name )->escapeFullURL();
 			return array( $index_url, $prev_url, $next_url );
 		}
 		return $err;
 	}
 
 	$index_title = $ref_title;
-	$index_url = $index_title->getFullURL();
+	$index_url = $index_title->escapeFullURL();
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
 
@@ -93,13 +93,13 @@ function wfPRNavigation( $image ) {
 	if( ($i>0) && ($i<count($links[1])) ){
 		$prev_title = Title::newFromText( $links[1][$i-1] );
 		if(!$prev_title) return $err; 
-		$prev_url = $prev_title->getFullURL();
+		$prev_url = $prev_title->escapeFullURL();
 	}
 	else $prev_url = '';
 	if( ($i>=0) && ($i+1<count($links[1])) ){
 		$next_title = Title::newFromText( $links[1][$i+1] );
 		if(!$next_title) return $err; 
-		$next_url = $next_title->getFullURL();
+		$next_url = $next_title->escapeFullURL();
 	} 
 	else $next_url = '';
 
