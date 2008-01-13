@@ -303,6 +303,29 @@ $messages['lb'] = array(
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
 );
 
+/** Limburgish (Limburgs)
+ * @author Ooswesthoesbes
+ */
+$messages['li'] = array(
+	'proofreadpage_namespace'         => 'Pazjena',
+	'proofreadpage_index_namespace'   => 'Indeks',
+	'proofreadpage_image'             => 'aafbeilding',
+	'proofreadpage_index'             => 'Indeks',
+	'proofreadpage_nextpage'          => 'Volgendje pazjena',
+	'proofreadpage_prevpage'          => 'Vörge pazjena',
+	'proofreadpage_header'            => 'Kopteks (gein inclusie):',
+	'proofreadpage_body'              => 'Broeadteks (veur transclusie):',
+	'proofreadpage_footer'            => 'Vootteks (gein inclusie):',
+	'proofreadpage_toggleheaders'     => 'zichbaarheid elemente zónger transclusie wiezige',
+	'proofreadpage_quality1_category' => 'Ónbewèrk',
+	'proofreadpage_quality2_category' => 'Ónvolledig',
+	'proofreadpage_quality3_category' => 'Proofgelaeze',
+	'proofreadpage_quality4_category' => 'Gekonterleerdj',
+	'proofreadpage_index_listofpages' => "Lies van pazjena's",
+	'proofreadpage_image_message'     => 'Verwieziging nao de indekspaasj',
+	'proofreadpage_page_status'       => 'Pazjenastatus',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
