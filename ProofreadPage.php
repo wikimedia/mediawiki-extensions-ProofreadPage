@@ -7,9 +7,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgHooks['OutputPageParserOutput'][] = 'wfPRParserOutput';
 $wgHooks['LoadAllMessages'][] = 'wfPRLoadMessages';
 $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
-$wgHooks['ArticleViewHeader'][] = 'wfPRRenderLinks';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'wfPRImageMessage';
-
 
 
 
@@ -20,8 +18,19 @@ $wgExtensionCredits['other'][] = array(
 	'description' => 'Allow easy comparison of text to the original scan',
 );
 
+
+
+$wgExtensionFunctions[] = "wfPRPageList";
+function wfPRPageList() {
+    global $wgParser;
+    $wgParser->setHook( "pagelist", "wfPRRenderPageList" );
+}
+ 
+
 # Bump the version number every time you change proofread.js
 $wgProofreadPageVersion = 9;
+
+
 
 /**
  * 
@@ -126,14 +135,46 @@ function wfPRParserOutput( &$out, &$pout ) {
 	$out->proofreadPageDone = true;
 
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
+	if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
+		wfPRPreparePage( $out, $m, $isEdit );
 		return true;
 	}
+
+	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+	if ( $isEdit && (preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) ) {
+		wfPRPrepareIndex( $out );
+		return true;
+	}
+
+	return true;
+}
+
+
+function wfPRPrepareIndex( $out ) {
+	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
+	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread_index.js?$wgProofreadPageVersion" );
+
+	$out->addScript( <<<EOT
+<script type="$wgJsMimeType" src="$jsFile"></script>
+
+EOT
+	);
+	$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
+var prp_index_attributes = \"" . Xml::escapeJsString(wfMsg('proofreadpage_index_attributes')) . "\";
+</script>\n"
+	);
+
+}
+
+
+function wfPRPreparePage( $out, $m, $isEdit ) {
+	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
 
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	if ( !$imageTitle ) {
 		return true;
 	}
+
 
 	$image = Image::newFromTitle( $imageTitle );
 	if ( $image->exists() ) {
@@ -294,9 +335,11 @@ function wfPRImageMessage(  &$imgpage , &$wgOut ) {
 }
 
 
-function wfPRRenderLinks( &$article, &$outputDone, &$pcache){
 
-	global $wgUser, $wgOut, $wgTitle;
+
+function wfPRRenderPageList( $input ) {
+
+	global $wgUser, $wgTitle;
 
 	wfPRLoadMessages();
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
@@ -309,13 +352,12 @@ function wfPRRenderLinks( &$article, &$outputDone, &$pcache){
 		return true;
 	}
 	$image = Image::newFromTitle( $imageTitle );
+	$return="";
 
 	if ( $image->isMultipage() ) {
 
 		$name = $imageTitle->getDBKey();
 		$count = $image->pageCount();
-		$wgOut->addHTML( '<h2>' . wfMsg('proofreadpage_index_listofpages'). '</h2>' );
-
 		$dbr = wfGetDB( DB_SLAVE );
 		$pagetable = $dbr->tableName( 'page' );
 
@@ -359,10 +401,9 @@ function wfPRRenderLinks( &$article, &$outputDone, &$pcache){
 			} else {
 				$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], ' '.$i );
 			}
-			$wgOut->addHTML( "{$link}" );
+			$return .= "{$link}";
 		}
-		$wgOut->addHTML( "<br/>" );
 
 	}
-	return true;
+	return $return;
 }

@@ -25,6 +25,14 @@ $messages['en'] = array(
 	'proofreadpage_index_listofpages' => 'List of pages',
 	'proofreadpage_image_message' => 'Link to the index page',
 	'proofreadpage_page_status' => 'Page status',
+	'proofreadpage_index_attributes' => 'Author
+Title
+Year|Year of publication
+Publisher
+Source
+Image|Cover image
+Pages||20
+Remarks||10',
 );
 
 $messages['af'] = array(
