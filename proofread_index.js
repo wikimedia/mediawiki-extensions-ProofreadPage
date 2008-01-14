@@ -78,7 +78,9 @@ function proofreadpage_fill_index() {
 	for(i=0;i<index_attributes.length;i++){
 		m = index_attributes[i].split('|');
 		param_name = m[0];
-		result = result + "\n|"+param_name+"="+form.elements[param_name].value;
+		value = form.elements[param_name].value;
+		value = value.replace('\n|','\n\\|');
+		result = result + "\n|"+param_name+"="+value;
 	}
 	result = result + "\n}}";
 	form.elements["wpTextbox1"].value = result;
