@@ -63,6 +63,14 @@ $messages['ar'] = array(
 	'proofreadpage_index_listofpages' => 'قائمة الصفحات',
 	'proofreadpage_image_message'     => 'وصلة إلى صفحة الفهرس',
 	'proofreadpage_page_status'       => 'حالة الصفحة',
+	'proofreadpage_index_attributes'  => 'المؤلف
+العنوان
+السنة|سنة النشر
+الناشر
+المصدر
+الصورة|صورة الغلاف
+الصفحات||20
+الملاحظات||10',
 );
 
 $messages['bcl'] = array(
@@ -155,12 +163,13 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Dereckson
+ * @author Grondin
  */
 $messages['fr'] = array(
 	'proofreadpage_namespace'         => 'Page',
 	'proofreadpage_index_namespace'   => 'Index',
-	'proofreadpage_namespace'         => 'Page',
-	'proofreadpage_index_namespace'   => 'Index',
+	'proofreadpage_image'             => 'image',
+	'proofreadpage_index'             => 'Index',
 	'proofreadpage_nextpage'          => 'Page suivante',
 	'proofreadpage_prevpage'          => 'Page précédente',
 	'proofreadpage_header'            => 'En-tête (noinclude):',
@@ -173,7 +182,15 @@ $messages['fr'] = array(
 	'proofreadpage_quality4_category' => 'Page validée',
 	'proofreadpage_index_listofpages' => 'Liste des pages',
 	'proofreadpage_image_message'     => "Lien vers l'index",
-	'proofreadpage_page_status' => 'Etat de la page',
+	'proofreadpage_page_status'       => 'Etat de la page',
+	'proofreadpage_index_attributes'  => 'Auteur
+Titre
+Année|Année de publication
+Éditeur
+Source
+Image|Image en couverture
+Pages||20
+Commentaires||10',
 );
 
 $messages['gl'] = array(
@@ -215,6 +232,14 @@ $messages['hr'] = array(
 	'proofreadpage_index_listofpages' => 'Popis stranica',
 	'proofreadpage_image_message'     => 'Poveznica na sadržaj (kazalo)',
 	'proofreadpage_page_status'       => 'Status stranice',
+	'proofreadpage_index_attributes'  => 'Autor
+Naslov
+Godina|Godina izdavanja
+Izdavač
+Izvor
+Slika|Naslovnica
+Stranica||20
+Napomene||10',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -239,6 +264,14 @@ $messages['hsb'] = array(
 	'proofreadpage_index_listofpages' => 'Lisćina stronow',
 	'proofreadpage_image_message'     => 'Wotkaz k indeksowej stronje',
 	'proofreadpage_page_status'       => 'Status strony',
+	'proofreadpage_index_attributes'  => 'Awtor
+Titul
+Lěto|Lěto publikowanja
+Wudawaćel
+Žórło
+Wobraz|Wobraz titloweje strony
+Strony||20
+Přispomnjenki||10',
 );
 
 /** Hungarian (Magyar)
@@ -364,6 +397,14 @@ $messages['nl'] = array(
 	'proofreadpage_index_listofpages' => "Lijst van pagina's",
 	'proofreadpage_image_message'     => 'Verwijziging naar de indexpagina',
 	'proofreadpage_page_status'       => 'Paginastatus',
+	'proofreadpage_index_attributes'  => "Auteur
+Titel
+Jaar|Jaar van publicatie
+Uitgever
+Bron
+Afbeelding|Omslag
+Pagina's||20
+Opmerkingen||10",
 );
 
 /** Norwegian (‪Norsk (bokmål)‬)
