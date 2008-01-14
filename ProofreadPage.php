@@ -356,7 +356,7 @@ function wfPRRenderPageList( $input ) {
 
 	if ( $image->isMultipage() ) {
 
-		$name = $imageTitle->getDBKey();
+		$name = $imageTitle->getDBkey();
 		$count = $image->pageCount();
 		$dbr = wfGetDB( DB_SLAVE );
 		$pagetable = $dbr->tableName( 'page' );
