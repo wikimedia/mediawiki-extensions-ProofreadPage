@@ -160,7 +160,7 @@ function wfPRPrepareIndex( $out ) {
 EOT
 	);
 	$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
-var prp_index_attributes = \"" . Xml::escapeJsString(wfMsg('proofreadpage_index_attributes')) . "\";
+var prp_index_attributes = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_index_attributes')) . "\";
 </script>\n"
 	);
 
