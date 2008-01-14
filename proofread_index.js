@@ -41,6 +41,8 @@ function proofreadpage_index_init() {
 		str = str + '<tr><td>'+param_label+': </td>';
 
 		value = findparam(params,param_name);
+		value = value.replace(/\{\{!\}\}/g,'|');
+
 		if(m[2]) size=m[2]; else size="1";
 		if(size=="1") {
 			str = str + '<td><input	name="'+param_name+'" size=60 value="'+value+'"/></td></tr>'; 
@@ -78,8 +80,12 @@ function proofreadpage_fill_index() {
 	for(i=0;i<index_attributes.length;i++){
 		m = index_attributes[i].split('|');
 		param_name = m[0];
+
 		value = form.elements[param_name].value;
-		value = value.replace('\n|','\n\\|');
+		value = value.replace(/\|/g,'{{!}}');
+		//not for links!
+		value = value.replace(/\[\[(.*?)\{\{!\}\}(.*?)\]\]/g,'[[$1|$2]]');
+
 		result = result + "\n|"+param_name+"="+value;
 	}
 	result = result + "\n}}";
