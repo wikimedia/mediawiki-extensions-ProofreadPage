@@ -15,12 +15,15 @@ function proofreadpage_index_init() {
 
         if(!self.proofreadpage_debug) return;
 
+	var toolbar = document.getElementById("toolbar"); 
+	toolbar.parentNode.removeChild(toolbar);
+
 	var text = document.getElementById("wpTextbox1"); 
 	if(!text) return;
 
 	params = '';
 	if(text.value) {
-		var re = /\{\{:MediaWiki:Proofreadpage_index_template([\s\S]*)\}\}/m;
+		var re = /\{\{:MediaWiki:Proofreadpage_index_template([\s\S]*)\n\}\}/m;
 		var m = text.value.match(re);
 		if(!m) return; 
 		params = m[1]+'\n\|END='; 
@@ -32,7 +35,8 @@ function proofreadpage_index_init() {
 	var container = document.createElement("div");
 
 	var index_attributes = self.prp_index_attributes.split('\n');
-	var str = '<table>';
+	var str = '<div style="display:none;"><textarea id="wpTextbox1" name="wpTextbox1">'+new_text.value+'</textarea></div>';
+	str = str + '<table>';
 	for(i=0;i<index_attributes.length;i++){
 		m = index_attributes[i].split('|');
 		param_name = m[0];
@@ -52,7 +56,7 @@ function proofreadpage_index_init() {
 		}
 
 	}
-	str = str +'</table><div style="display:none;"><textarea name="wpTextbox1" >'+new_text.value+'</textarea></div>';
+	str = str +'</table>';
 	container.innerHTML = str;
 
 	var saveButton = document.getElementById("wpSave");
@@ -95,4 +99,5 @@ function proofreadpage_fill_index() {
 
 
 
-addOnloadHook(proofreadpage_index_init);
+//use hookevent instead of addOnLoadHook, so that the code is evalued after wikibits.js
+hookEvent("load", proofreadpage_index_init);
