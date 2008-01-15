@@ -611,6 +611,8 @@ $messages['zh-hant'] = array(
 	'proofreadpage_index_namespace' => '索引',
 );
 
+# Fallbacks:
+$messages['de-formal'] = $messages['de'];
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
 $messages['zh-hk'] = $messages['zh-hant'];
