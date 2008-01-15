@@ -13,7 +13,7 @@ function findparam(str2, param_name) {
 
 function proofreadpage_index_init() {
 
-	if(!self.proofreadpage_debug) return;
+        if(!self.proofreadpage_debug) return;
 
 	var toolbar = document.getElementById("toolbar"); 
 	toolbar.parentNode.removeChild(toolbar);
@@ -86,9 +86,6 @@ function proofreadpage_fill_index() {
 		param_name = m[0];
 
 		value = form.elements[param_name].value;
-		//remove training \n
-		value = value.replace(/\n$/,'');
-		//replace pipe symbol
 		value = value.replace(/\|/g,'{{!}}');
 		//not for links!
 		value = value.replace(/\[\[(.*?)\{\{!\}\}(.*?)\]\]/g,'[[$1|$2]]');
