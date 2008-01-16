@@ -367,6 +367,13 @@ $messages['li'] = array(
 	'proofreadpage_page_status'       => 'Pazjenastatus',
 );
 
+/** Erzya (эрзянь кель)
+ * @author Amdf
+ */
+$messages['myv'] = array(
+	'proofreadpage_namespace' => 'Лопа',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -505,6 +512,14 @@ $messages['ru'] = array(
 	'proofreadpage_index_listofpages' => 'Список страниц',
 	'proofreadpage_image_message'     => 'Ссылка на страницу индекса',
 	'proofreadpage_page_status'       => 'Статус страницы',
+	'proofreadpage_index_attributes'  => 'Автор
+Заголовок
+Год|Год публикации
+Издатель
+Источник
+Изображение|Изображение обложки
+Страниц||20
+Примечаний||10',
 );
 
 /** Slovak (Slovenčina)
@@ -528,6 +543,14 @@ $messages['sk'] = array(
 	'proofreadpage_index_listofpages' => 'Zoznam stránok',
 	'proofreadpage_image_message'     => 'Odkaz na stránku index',
 	'proofreadpage_page_status'       => 'Stav stránky',
+	'proofreadpage_index_attributes'  => 'Autor
+Názov
+Rok|Rok vydania
+Vydavateľstvo
+Zdroj
+Obrázok|Obálka
+Strán||20
+Poznámky||10',
 );
 
 /** ћирилица (ћирилица)
@@ -611,7 +634,6 @@ $messages['zh-hant'] = array(
 	'proofreadpage_index_namespace' => '索引',
 );
 
-# Fallbacks:
 $messages['de-formal'] = $messages['de'];
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
