@@ -491,6 +491,37 @@ $messages['pt'] = array(
 	'proofreadpage_page_status'       => 'Estado da página',
 );
 
+/** Portuguese (Português)
+ * @author 555
+ */
+$messages['pt'] = array(
+	'proofreadpage_namespace'         => 'Página',
+	'proofreadpage_index_namespace'   => 'Índice',
+	'proofreadpage_image'             => 'imagem',
+	'proofreadpage_index'             => 'Índice',
+	'proofreadpage_nextpage'          => 'Próxima página',
+	'proofreadpage_prevpage'          => 'Página anterior',
+	'proofreadpage_header'            => 'Cabeçalho (em modo noinclude):',
+	'proofreadpage_body'              => 'Corpo de página (em modo de transclusão):',
+	'proofreadpage_footer'            => 'Rodapé (em modo noinclude):',
+	'proofreadpage_toggleheaders'     => 'tornar as seções noinclude visíveis',
+	'proofreadpage_quality1_category' => 'Não foi revisto',
+	'proofreadpage_quality2_category' => 'Problemático',
+	'proofreadpage_quality3_category' => 'Revisto e corrigido',
+	'proofreadpage_quality4_category' => 'Validado',
+	'proofreadpage_index_listofpages' => 'Lista de páginas',
+	'proofreadpage_image_message'     => 'Link para a página de índice',
+	'proofreadpage_page_status'       => 'Estado da página',
+	'proofreadpage_index_attributes'  => 'Autor
+Título
+Ano|Ano de publicação
+Editora
+Fonte
+Imagem|Imagem de capa
+Páginas||20
+Notas||10',
+);
+
 /** Russian (Русский)
  * @author .:Ajvol:.
  */
@@ -587,9 +618,11 @@ $messages['stq'] = array(
 
 /** Swedish (Svenska)
  * @author Lejonel
+ * @author Max sonnelid
  */
 $messages['sv'] = array(
 	'proofreadpage_namespace'         => 'Sida',
+	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'bild',
 	'proofreadpage_index'             => 'Indexsida',
 	'proofreadpage_nextpage'          => 'Nästa sida',
@@ -605,6 +638,14 @@ $messages['sv'] = array(
 	'proofreadpage_index_listofpages' => 'Lista över sidor',
 	'proofreadpage_image_message'     => 'Länk till indexsidan',
 	'proofreadpage_page_status'       => 'Sidans status',
+	'proofreadpage_index_attributes'  => 'Skapare
+Titel
+År|År för publikation
+Utgivare
+Källa
+Bild|Omslags bild
+Sidor||20
+Anmärkningar||10',
 );
 
 /** Volapük (Volapük)
