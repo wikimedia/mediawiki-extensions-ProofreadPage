@@ -193,21 +193,26 @@ Pages||20
 Commentaires||10',
 );
 
+/** Galician (Galego)
+ * @author Xosé
+ * @author Alma
+ */
 $messages['gl'] = array(
-	'proofreadpage_namespace' => 'Páxina',
-	'proofreadpage_index_namespace' => 'Índice',
-	'proofreadpage_image' => 'imaxe',
-	'proofreadpage_index' => 'Índice',
-	'proofreadpage_nextpage' => 'Páxina seguinte',
-	'proofreadpage_prevpage' => 'Páxina anterior',
-	'proofreadpage_header' => 'Cabezallo (\'\'noinclude\'\'):',
-	'proofreadpage_body' => 'Corpo da páxina (para ser transcluído)',
-	'proofreadpage_footer' => 'Rodapé (\'\'noinclude\'\'):',
-	'proofreadpage_toggleheaders' => 'alternar a visibilidade das seccións \'\'noinclude\'\'',
+	'proofreadpage_namespace'         => 'Páxina',
+	'proofreadpage_index_namespace'   => 'Índice',
+	'proofreadpage_image'             => 'imaxe',
+	'proofreadpage_index'             => 'Índice',
+	'proofreadpage_nextpage'          => 'Páxina seguinte',
+	'proofreadpage_prevpage'          => 'Páxina anterior',
+	'proofreadpage_header'            => "Cabezallo (''noinclude''):",
+	'proofreadpage_body'              => 'Corpo da páxina (para ser transcluído)',
+	'proofreadpage_footer'            => "Rodapé (''noinclude''):",
+	'proofreadpage_toggleheaders'     => "alternar a visibilidade das seccións ''noinclude''",
 	'proofreadpage_quality1_category' => 'Non corrixir',
 	'proofreadpage_quality2_category' => 'Problemático',
 	'proofreadpage_quality3_category' => 'Corrixir',
 	'proofreadpage_quality4_category' => 'Validado',
+	'proofreadpage_index_listofpages' => 'Listaxe de páxinas',
 );
 
 /** Croatian (Hrvatski)
@@ -638,12 +643,12 @@ $messages['sv'] = array(
 	'proofreadpage_index_listofpages' => 'Lista över sidor',
 	'proofreadpage_image_message'     => 'Länk till indexsidan',
 	'proofreadpage_page_status'       => 'Sidans status',
-	'proofreadpage_index_attributes'  => 'Skapare
+	'proofreadpage_index_attributes'  => 'Upphovsman
 Titel
-År|År för publikation
+År|Utgivningsår
 Utgivare
 Källa
-Bild|Omslags bild
+Bild|Omslagsbild
 Sidor||20
 Anmärkningar||10',
 );
