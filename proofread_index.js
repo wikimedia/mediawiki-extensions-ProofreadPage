@@ -88,10 +88,23 @@ function proofreadpage_fill_index() {
 		value = form.elements[param_name].value;
 		//remove trailing \n
 		value = value.replace(/\n$/,'');
-		//replace pipe symbol
+
+		//replace pipe symbol everywhere...
 		value = value.replace(/\|/g,'{{!}}');
-		//not for links!
-		value = value.replace(/\[\[(.*?)\{\{!\}\}(.*?)\]\]/g,'[[$1|$2]]');
+
+		//...except in links...
+		do { 
+		   prev = value;
+		   value = value.replace(/\[\[(.*?)\{\{!\}\}(.*?)\]\]/g,'[[$1|$2]]');
+		}
+		while (value != prev);
+
+		//..and in templates
+		do { 
+		   prev = value;
+		   value = value.replace(/\{\{(.*?)\{\{!\}\}(.*?)\}\}/g,'{{$1|$2}}');
+		}
+		while (value != prev);
 
 		result = result + "\n|"+param_name+"="+value;
 	}
