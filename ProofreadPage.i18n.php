@@ -459,6 +459,17 @@ $messages['oc'] = array(
 	'proofreadpage_quality2_category' => 'Pagina amb problèma',
 	'proofreadpage_quality3_category' => 'Pagina corregida',
 	'proofreadpage_quality4_category' => 'Pagina validada',
+	'proofreadpage_index_listofpages' => 'Lista de las paginas',
+	'proofreadpage_image_message'     => "Ligam vèrs l'indèx",
+	'proofreadpage_page_status'       => 'Estat de la pagina',
+	'proofreadpage_index_attributes'  => 'Autor
+Títol
+Annada|Annada de publicacion
+Editour
+Font
+Imatge|Imatge en cobertura
+Paginas||20
+Comentaris||10',
 );
 
 $messages['pms'] = array(
@@ -655,6 +666,7 @@ Anmärkningar||10',
 
 /** Volapük (Volapük)
  * @author Malafaya
+ * @author Smeira
  */
 $messages['vo'] = array(
 	'proofreadpage_namespace'         => 'Pad',
@@ -663,6 +675,7 @@ $messages['vo'] = array(
 	'proofreadpage_prevpage'          => 'Pad büik',
 	'proofreadpage_quality2_category' => 'Säkädik',
 	'proofreadpage_index_listofpages' => 'Padalised',
+	'proofreadpage_page_status'       => 'Stad pada',
 );
 
 $messages['yue'] = array(
