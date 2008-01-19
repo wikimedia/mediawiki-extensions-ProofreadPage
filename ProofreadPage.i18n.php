@@ -193,6 +193,37 @@ Pages||20
 Commentaires||10',
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'proofreadpage_namespace'         => 'Pâge',
+	'proofreadpage_index_namespace'   => 'Endèxe',
+	'proofreadpage_image'             => 'émâge',
+	'proofreadpage_index'             => 'Endèxe',
+	'proofreadpage_nextpage'          => 'Pâge siuventa',
+	'proofreadpage_prevpage'          => 'Pâge prècèdenta',
+	'proofreadpage_header'            => 'En-téta (noinclude) :',
+	'proofreadpage_body'              => 'Contegnu (transcllusion) :',
+	'proofreadpage_footer'            => 'Pied de pâge (noinclude) :',
+	'proofreadpage_toggleheaders'     => 'afichiér/mâscar les sèccions noinclude',
+	'proofreadpage_quality1_category' => 'Pâge pas corregiê',
+	'proofreadpage_quality2_category' => 'Pâge avouéc problèmo',
+	'proofreadpage_quality3_category' => 'Pâge corregiê',
+	'proofreadpage_quality4_category' => 'Pâge validâ',
+	'proofreadpage_index_listofpages' => 'Lista de les pâges',
+	'proofreadpage_image_message'     => 'Lim vers l’endèxe',
+	'proofreadpage_page_status'       => 'Ètat de la pâge',
+	'proofreadpage_index_attributes'  => 'Ôtor
+Titro
+An|An de publecacion
+Èditor
+Sôrsa
+Émâge|Émâge en cuvèrta
+Pâges||20
+Comentèros||10',
+);
+
 /** Galician (Galego)
  * @author Xosé
  * @author Alma
