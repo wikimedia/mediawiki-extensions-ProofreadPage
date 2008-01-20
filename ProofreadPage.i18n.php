@@ -332,6 +332,14 @@ $messages['hu'] = array(
 	'proofreadpage_index_listofpages' => 'Oldalak listája',
 	'proofreadpage_image_message'     => 'Csatolni az index oldalhoz',
 	'proofreadpage_page_status'       => 'Oldal állapota',
+	'proofreadpage_index_attributes'  => 'Szerző
+Cím
+Év|Kiadás éve
+Kiadó
+Forrás
+Kép|Borító
+Oldalak||20
+Megjegyzések||10',
 );
 
 $messages['hy'] = array(
