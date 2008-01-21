@@ -13,7 +13,7 @@ function findparam(str2, param_name) {
 
 function proofreadpage_index_init() {
 
-	if(!self.proofreadpage_debug) return;
+	if(self.proofreadpage_index_noauto) return;
 
 	var toolbar = document.getElementById("toolbar"); 
 	toolbar.parentNode.removeChild(toolbar);
