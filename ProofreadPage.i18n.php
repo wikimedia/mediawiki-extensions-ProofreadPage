@@ -90,6 +90,28 @@ $messages['bg'] = array(
 	'proofreadpage_page_status'       => 'Статут на страницата',
 );
 
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'proofreadpage_namespace'         => 'পাতা',
+	'proofreadpage_index_namespace'   => 'সূচী',
+	'proofreadpage_image'             => 'চিত্র',
+	'proofreadpage_index'             => 'সূচী',
+	'proofreadpage_nextpage'          => 'পরবর্তী পাতা',
+	'proofreadpage_prevpage'          => 'পূর্ববর্তী পাতা',
+	'proofreadpage_index_listofpages' => 'পাতাসমূহের তালিকা',
+	'proofreadpage_page_status'       => 'পাতার অবস্থা',
+	'proofreadpage_index_attributes'  => 'লেখক
+শিরোনাম
+বছর|প্রকাশনার বছর
+প্রকাশক
+উৎস
+চিত্র|প্রচ্ছদ
+পাতা||20
+মন্তব্য||10',
+);
+
 /** German (Deutsch)
  * @author ThomasV
  * @author Raimond Spekking
@@ -709,6 +731,16 @@ Källa
 Bild|Omslagsbild
 Sidor||20
 Anmärkningar||10',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'proofreadpage_namespace'         => 'పేజీ',
+	'proofreadpage_image'             => 'బొమ్మ',
+	'proofreadpage_nextpage'          => 'తర్వాతి పేజీ',
+	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
 );
 
 /** Volapük (Volapük)
