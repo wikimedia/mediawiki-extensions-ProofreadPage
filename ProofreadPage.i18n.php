@@ -448,6 +448,13 @@ $messages['li'] = array(
 	'proofreadpage_page_status'       => 'Pazjenastatus',
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Matasg
+ */
+$messages['lt'] = array(
+	'proofreadpage_image' => 'paveikslėlis',
+);
+
 /** Erzya (эрзянь кель)
  * @author Amdf
  */
