@@ -100,7 +100,14 @@ $messages['bn'] = array(
 	'proofreadpage_index'             => 'সূচী',
 	'proofreadpage_nextpage'          => 'পরবর্তী পাতা',
 	'proofreadpage_prevpage'          => 'পূর্ববর্তী পাতা',
+	'proofreadpage_header'            => 'শিরোনাম (noinclude):',
+	'proofreadpage_body'              => 'পাতার প্রধান অংশ (to be transcluded):',
+	'proofreadpage_footer'            => 'পাদটীকা (noinclude):',
+	'proofreadpage_quality1_category' => 'মুদ্রণ সংশোধন করা হয়নি',
+	'proofreadpage_quality2_category' => 'সমস্যাসঙ্কুল',
+	'proofreadpage_quality3_category' => 'মুদ্রণ সংশোধন',
 	'proofreadpage_index_listofpages' => 'পাতাসমূহের তালিকা',
+	'proofreadpage_image_message'     => 'সূচী পাতায় লিঙ্ক করো',
 	'proofreadpage_page_status'       => 'পাতার অবস্থা',
 	'proofreadpage_index_attributes'  => 'লেখক
 শিরোনাম
