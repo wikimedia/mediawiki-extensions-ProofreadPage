@@ -713,6 +713,15 @@ $messages['stq'] = array(
 	'proofreadpage_quality4_category' => 'Kloor',
 	'proofreadpage_index_listofpages' => 'Siedenlieste',
 	'proofreadpage_image_message'     => 'Ferbiendenge tou ju Indexsiede',
+	'proofreadpage_page_status'       => 'Siedenstoatus',
+	'proofreadpage_index_attributes'  => 'Autor
+Tittel
+Jier|Ärschienengsjier
+Ferlaach
+Wälle
+Bielde|Tittelbielde
+Sieden||20
+Bemäärkengen||10',
 );
 
 /** Swedish (Svenska)
@@ -749,12 +758,21 @@ Anmärkningar||10',
 
 /** Telugu (తెలుగు)
  * @author Veeven
+ * @author Mpradeep
  */
 $messages['te'] = array(
 	'proofreadpage_namespace'         => 'పేజీ',
 	'proofreadpage_image'             => 'బొమ్మ',
 	'proofreadpage_nextpage'          => 'తర్వాతి పేజీ',
 	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
+	'proofreadpage_index_attributes'  => 'రచయిత
+శీర్షిక
+సంవత్సరం|ప్రచురణ సంవత్సరం
+ప్రచురణకర్త
+మూలం
+బొమ్మ|ముఖచిత్రం
+పేజీలు||20
+రిమార్కులు||10',
 );
 
 /** Volapük (Volapük)
