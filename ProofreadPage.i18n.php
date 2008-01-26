@@ -452,7 +452,11 @@ $messages['li'] = array(
  * @author Matasg
  */
 $messages['lt'] = array(
-	'proofreadpage_image' => 'paveikslėlis',
+	'proofreadpage_namespace'   => 'Puslapis',
+	'proofreadpage_image'       => 'paveikslėlis',
+	'proofreadpage_nextpage'    => 'Kitas puslapis',
+	'proofreadpage_prevpage'    => 'Ankstesnis puslapis',
+	'proofreadpage_page_status' => 'Puslapio statusas',
 );
 
 /** Erzya (эрзянь кель)
@@ -765,6 +769,7 @@ $messages['te'] = array(
 	'proofreadpage_image'             => 'బొమ్మ',
 	'proofreadpage_nextpage'          => 'తర్వాతి పేజీ',
 	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
+	'proofreadpage_page_status'       => 'పేజీ స్థితి',
 	'proofreadpage_index_attributes'  => 'రచయిత
 శీర్షిక
 సంవత్సరం|ప్రచురణ సంవత్సరం
