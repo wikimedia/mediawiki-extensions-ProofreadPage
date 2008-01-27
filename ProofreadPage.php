@@ -28,7 +28,7 @@ function wfPRPageList() {
  
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 12;
+$wgProofreadPageVersion = 13;
 
 
 
@@ -43,7 +43,7 @@ function wfPRNavigation( $image ) {
 	global $wgTitle;
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	$err = array( '', '', '' );
+	$err = array( '', '', '', '', '' );
 
 	$dbr = wfGetDB( DB_SLAVE );
 	$result = $dbr->select(
@@ -81,7 +81,7 @@ function wfPRNavigation( $image ) {
 			$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 			$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
 			$index_url = Title::newFromText( $index_name )->getFullURL();
-			return array( $index_url, $prev_url, $next_url );
+			return array( $index_url, $prev_url, $next_url, '', '' );
 		}
 		return $err;
 	}
@@ -91,13 +91,28 @@ function wfPRNavigation( $image ) {
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
 
-	$tag_pattern = "/\[\[($page_namespace:.*?)(\|.*?|)\]\]/i";
+	$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
 	preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 
+
+	$var_names = explode(" ", wfMsgForContent('proofreadpage_js_attributes') );
+	$attributes = array();
+	for($i=0; $i< count($var_names);$i++){
+		$tag_pattern = "/\n\|".$var_names[$i]."=(.*?)\n/i";
+		$var = 'proofreadPage'.$var_names[$i];
+		if( preg_match( $tag_pattern, $text, $matches ) ) $attributes[$var] = $matches[1]; 
+		else $attributes[$var] = '';
+	}
+
+
+	$page_num='';
 	for( $i=0; $i<count( $links[1] ); $i++) { 
 		$a_title = Title::newFromText( $links[1][$i] );
 		if(!$a_title) continue; 
-		if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) break;
+		if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) {
+			$page_num = $links[3][$i];
+			break;
+		}
 	}
 	if( ($i>0) && ($i<count($links[1])) ){
 		$prev_title = Title::newFromText( $links[1][$i-1] );
@@ -112,7 +127,7 @@ function wfPRNavigation( $image ) {
 	} 
 	else $next_url = '';
 
-	return array( $index_url, $prev_url, $next_url );
+	return array( $index_url, $prev_url, $next_url, $page_num, $attributes );
 
 }
 
@@ -201,7 +216,7 @@ function wfPRPreparePage( $out, $m, $isEdit ) {
 		$thumbURL = '';
 	}
 
-	list( $index_url, $prev_url, $next_url ) = wfPRNavigation( $image );
+	list( $index_url, $prev_url, $next_url, $page_num, $attributes ) = wfPRNavigation( $image );
 
 	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
 	$jsVars = array(
@@ -213,7 +228,8 @@ function wfPRPreparePage( $out, $m, $isEdit ) {
 		'proofreadPageIndexURL' => $index_url,
 		'proofreadPagePrevURL' => $prev_url,
 		'proofreadPageNextURL' => $next_url,
-	);
+		'proofreadPageNum' => $page_num,
+	) + $attributes;
 	$varScript = Skin::makeVariablesScript( $jsVars );
 
 	$out->addScript( <<<EOT

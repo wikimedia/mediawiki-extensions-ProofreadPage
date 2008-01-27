@@ -292,7 +292,7 @@ function zoom_move(evt) {
 		if(evt.pageX) {
 			xx=evt.pageX - ffox;
 			yy=evt.pageY - ffoy;
-		} 
+		}
 		else {
 			if(typeof(document.getElementById("proofreadImage")+1) == 'number') {return true;} 
 			xx=evt.clientX - ieox;
@@ -506,6 +506,10 @@ function proofreadpage_add_quality(form,value){
 	s = form.elements["headerTextbox"].value;
 	s = s.replace(/\{\{PageQuality\|(.*?)\}\}/gi,"")
 	form.elements["headerTextbox"].value="{{PageQuality|"+value+"|"+wgUserName+"}}"+s;
+	//remove template from wpTextbox1 in case it was corrupted
+	s = form.elements["wpTextbox1"].value;
+	s = s.replace(/\{\{PageQuality\|(.*?)\}\}/gi,"")
+	form.elements["wpTextbox1"].value=s;
 }
 
 
