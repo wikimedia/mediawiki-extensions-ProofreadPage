@@ -255,6 +255,7 @@ function proofreadPageFillForm() {
 		var pf = footer.parentNode; 
 		pf.removeChild(footer);
 		form.elements["wpTextbox1"].value = h+form.elements["wpTextbox1"].value+f;
+		form.elements["wpTextbox1"].setAttribute('readonly',"readonly");
 	}
 
 }
