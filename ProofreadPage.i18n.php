@@ -142,6 +142,7 @@ $messages['de'] = array(
 	'proofreadpage_index_listofpages' => 'Seitenliste',
 	'proofreadpage_image_message'     => 'Link zur Indexseite',
 	'proofreadpage_page_status'       => 'Seitenstatus',
+	'proofreadpage_js_attributes'     => 'Autor Titel Jahr Verlag',
 	'proofreadpage_index_attributes'  => 'Autor
 Titel
 Jahr|Erscheinungsjahr
