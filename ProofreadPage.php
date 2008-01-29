@@ -85,10 +85,10 @@ function wfPRNavigation( $image ) {
 		$index_title = Title::newFromText( $index_name );
 		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
-		$page_num = $page_enr;
+		$page_num = $pagenr;
 	} 
 	else {
-		$page_num='';
+		$page_num = '';
 		$prev_url = '';
 		$next_url = '';
 	}
