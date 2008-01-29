@@ -43,7 +43,7 @@ function wfPRNavigation( $image ) {
 	global $wgTitle;
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	$err = array( '', '', '', '', '' );
+	$err = array( '', '', '', '', array() );
 
 	$dbr = wfGetDB( DB_SLAVE );
 	$result = $dbr->select(
@@ -55,77 +55,86 @@ function wfPRNavigation( $image ) {
 				'pl_from=page_id'
 			),
 			__METHOD__);
+
+	$index_title = '';
 	while( $x = $dbr->fetchObject( $result ) ) {
 		$ref_title = Title::makeTitle( $x->page_namespace, $x->page_title );
 		if( preg_match( "/^$index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
+			$index_title = $ref_title;
 			break;
 		}
 	}
 	$dbr->freeResult( $result ) ;
 
-	if( !$x ) { // there is no index page; but maybe we can create one (for multipage documents like .pdf and .djvu)
-		if( $image->exists() && $image->isMultiPage() ) {
-			$pagenr = 1;
-			$parts = explode( '/', $wgTitle->getText() );
-			if( count( $parts ) > 1 ) {
-				$pagenr = intval( array_pop( $parts ) );
-			}
-			$count = $image->pageCount();
-			if( $pagenr < 1 || $pagenr > $count || $count == 1 )
-				return $err;
+	if( !$index_title ) { // there is no index, or no page list in the index
 
-			$name = $image->getTitle()->getText();
-			$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
-			$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
-			$index_name = "$index_namespace:$name";
-			$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
-			$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
-			$index_url = Title::newFromText( $index_name )->getFullURL();
-			return array( $index_url, $prev_url, $next_url, '', '' );
+		if( ! ($image->exists() && $image->isMultiPage() ) ) return $err;
+
+		$pagenr = 1;
+		$parts = explode( '/', $wgTitle->getText() );
+		if( count( $parts ) > 1 ) {
+			$pagenr = intval( array_pop( $parts ) );
 		}
-		return $err;
-	}
-
-	$index_title = $ref_title;
-	$index_url = $index_title->getFullURL();
-	$rev = Revision::newFromTitle( $index_title );
-	$text =	$rev->getText();
-
-	$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
-	preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
-
-
-	$var_names = explode(" ", wfMsgForContent('proofreadpage_js_attributes') );
-	$attributes = array();
-	for($i=0; $i< count($var_names);$i++){
-		$tag_pattern = "/\n\|".$var_names[$i]."=(.*?)\n/i";
-		$var = 'proofreadPage'.$var_names[$i];
-		if( preg_match( $tag_pattern, $text, $matches ) ) $attributes[$var] = $matches[1]; 
-		else $attributes[$var] = '';
-	}
-
-
-	$page_num='';
-	for( $i=0; $i<count( $links[1] ); $i++) { 
-		$a_title = Title::newFromText( $links[1][$i] );
-		if(!$a_title) continue; 
-		if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) {
-			$page_num = $links[3][$i];
-			break;
-		}
-	}
-	if( ($i>0) && ($i<count($links[1])) ){
-		$prev_title = Title::newFromText( $links[1][$i-1] );
-		if(!$prev_title) return $err; 
-		$prev_url = $prev_title->getFullURL();
-	}
-	else $prev_url = '';
-	if( ($i>=0) && ($i+1<count($links[1])) ){
-		$next_title = Title::newFromText( $links[1][$i+1] );
-		if(!$next_title) return $err; 
-		$next_url = $next_title->getFullURL();
+		$count = $image->pageCount();
+		if( $pagenr < 1 || $pagenr > $count || $count == 1 )
+			return $err;
+		$name = $image->getTitle()->getText();
+		$index_name = "$index_namespace:$name";
+		$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
+		$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
+		$index_title = Title::newFromText( $index_name );
+		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
+		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
+		$page_num = $page_enr;
 	} 
-	else $next_url = '';
+	else {
+		$page_num='';
+		$prev_url = '';
+		$next_url = '';
+	}
+
+	$index_url = $index_title->getFullURL();
+
+	//if the index page exists, read metadata
+	if( $index_title->exists()) {
+
+		$rev = Revision::newFromTitle( $index_title );
+		$text =	$rev->getText();
+
+		$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
+		preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
+
+		for( $i=0; $i<count( $links[1] ); $i++) { 
+			$a_title = Title::newFromText( $links[1][$i] );
+			if(!$a_title) continue; 
+			if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) {
+				$page_num = $links[3][$i];
+				break;
+			}
+		}
+		if( ($i>0) && ($i<count($links[1])) ){
+			$prev_title = Title::newFromText( $links[1][$i-1] );
+			if(!$prev_title) return $err; 
+			$prev_url = $prev_title->getFullURL();
+		}
+		if( ($i>=0) && ($i+1<count($links[1])) ){
+			$next_title = Title::newFromText( $links[1][$i+1] );
+			if(!$next_title) return $err; 
+			$next_url = $next_title->getFullURL();
+		}
+
+		$var_names = explode(" ", wfMsgForContent('proofreadpage_js_attributes') );
+		$attributes = array();
+		for($i=0; $i< count($var_names);$i++){
+			$tag_pattern = "/\n\|".$var_names[$i]."=(.*?)\n/i";
+			$var = 'proofreadPage'.$var_names[$i];
+			if( preg_match( $tag_pattern, $text, $matches ) ) $attributes[$var] = $matches[1]; 
+			else $attributes[$var] = '';
+		}
+	}
+	else {
+		$attributes=array();
+	}
 
 	return array( $index_url, $prev_url, $next_url, $page_num, $attributes );
 
