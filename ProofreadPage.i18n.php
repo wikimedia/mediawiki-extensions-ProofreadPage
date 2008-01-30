@@ -262,6 +262,7 @@ $messages['frp'] = array(
 	'proofreadpage_index_listofpages' => 'Lista de les pâges',
 	'proofreadpage_image_message'     => 'Lim vers l’endèxe',
 	'proofreadpage_page_status'       => 'Ètat de la pâge',
+	'proofreadpage_js_attributes'     => 'Ôtor Titro An Èditor',
 	'proofreadpage_index_attributes'  => 'Ôtor
 Titro
 An|An de publecacion
@@ -406,6 +407,17 @@ Megjegyzések||10',
 $messages['hy'] = array(
 	'proofreadpage_namespace' => 'Էջ',
 	'proofreadpage_index_namespace' => 'Ինդեքս',
+);
+
+/** Icelandic (Íslenska)
+ * @author S.Örvarr.S
+ */
+$messages['is'] = array(
+	'proofreadpage_namespace'         => 'Síða',
+	'proofreadpage_image'             => 'mynd',
+	'proofreadpage_nextpage'          => 'Næsta síða',
+	'proofreadpage_prevpage'          => 'Fyrri síða',
+	'proofreadpage_index_listofpages' => 'Listi yfir síður',
 );
 
 /** Italian (Italiano)
@@ -582,6 +594,13 @@ Font
 Imatge|Imatge en cobertura
 Paginas||20
 Comentaris||10',
+);
+
+/** Polish (Polski)
+ * @author Sp5uhe
+ */
+$messages['pl'] = array(
+	'proofreadpage_page_status' => 'Status strony',
 );
 
 $messages['pms'] = array(
