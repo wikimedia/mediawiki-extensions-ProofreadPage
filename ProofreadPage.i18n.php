@@ -160,6 +160,14 @@ $messages['el'] = array(
 	'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'proofreadpage_nextpage' => 'Sekva paĝo',
+	'proofreadpage_prevpage' => 'Antaŭa paĝo',
+);
+
 	# فارسی (Huji)
 $messages['fa'] = array(
 	'proofreadpage_namespace'         => 'صفحه',
@@ -222,6 +230,7 @@ $messages['fr'] = array(
 	'proofreadpage_index_listofpages' => 'Liste des pages',
 	'proofreadpage_image_message'     => "Lien vers l'index",
 	'proofreadpage_page_status'       => 'Etat de la page',
+	'proofreadpage_js_attributes'     => 'Auteur Titre Année Éditeur',
 	'proofreadpage_index_attributes'  => 'Auteur
 Titre
 Année|Année de publication
@@ -283,6 +292,15 @@ $messages['gl'] = array(
 	'proofreadpage_quality3_category' => 'Corrixir',
 	'proofreadpage_quality4_category' => 'Validado',
 	'proofreadpage_index_listofpages' => 'Listaxe de páxinas',
+	'proofreadpage_js_attributes'     => 'Autor Título Ano Publicación',
+	'proofreadpage_index_attributes'  => 'Autor
+Título
+Ano|Ano de publicación
+Publicación
+Orixe
+Imaxe|Imaxe da cuberta
+Páxinas||20
+Comentarios||10',
 );
 
 /** Croatian (Hrvatski)
@@ -307,6 +325,7 @@ $messages['hr'] = array(
 	'proofreadpage_index_listofpages' => 'Popis stranica',
 	'proofreadpage_image_message'     => 'Poveznica na sadržaj (kazalo)',
 	'proofreadpage_page_status'       => 'Status stranice',
+	'proofreadpage_js_attributes'     => 'Autor Naslov Godina Izdavač',
 	'proofreadpage_index_attributes'  => 'Autor
 Naslov
 Godina|Godina izdavanja
@@ -339,6 +358,7 @@ $messages['hsb'] = array(
 	'proofreadpage_index_listofpages' => 'Lisćina stronow',
 	'proofreadpage_image_message'     => 'Wotkaz k indeksowej stronje',
 	'proofreadpage_page_status'       => 'Status strony',
+	'proofreadpage_js_attributes'     => 'Awtor Titul Lěto Wudawaćel',
 	'proofreadpage_index_attributes'  => 'Awtor
 Titul
 Lěto|Lěto publikowanja
@@ -352,6 +372,7 @@ Přispomnjenki||10',
 /** Hungarian (Magyar)
  * @author KossuthRad
  * @author Bdanee
+ * @author Dorgan
  */
 $messages['hu'] = array(
 	'proofreadpage_namespace'         => 'Oldal',
@@ -371,6 +392,7 @@ $messages['hu'] = array(
 	'proofreadpage_index_listofpages' => 'Oldalak listája',
 	'proofreadpage_image_message'     => 'Csatolni az index oldalhoz',
 	'proofreadpage_page_status'       => 'Oldal állapota',
+	'proofreadpage_js_attributes'     => 'Szerző Cím Év Kiadó',
 	'proofreadpage_index_attributes'  => 'Szerző
 Cím
 Év|Kiadás éve
@@ -498,6 +520,7 @@ $messages['nl'] = array(
 	'proofreadpage_index_listofpages' => "Lijst van pagina's",
 	'proofreadpage_image_message'     => 'Verwijziging naar de indexpagina',
 	'proofreadpage_page_status'       => 'Paginastatus',
+	'proofreadpage_js_attributes'     => 'Auteur Titel Jaar Uitgever',
 	'proofreadpage_index_attributes'  => "Auteur
 Titel
 Jaar|Jaar van publicatie
@@ -617,6 +640,7 @@ $messages['pt'] = array(
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message'     => 'Link para a página de índice',
 	'proofreadpage_page_status'       => 'Estado da página',
+	'proofreadpage_js_attributes'     => 'Autor Título Ano Editora',
 	'proofreadpage_index_attributes'  => 'Autor
 Título
 Ano|Ano de publicação
@@ -648,6 +672,7 @@ $messages['ru'] = array(
 	'proofreadpage_index_listofpages' => 'Список страниц',
 	'proofreadpage_image_message'     => 'Ссылка на страницу индекса',
 	'proofreadpage_page_status'       => 'Статус страницы',
+	'proofreadpage_js_attributes'     => 'Автор Название Год Издательство',
 	'proofreadpage_index_attributes'  => 'Автор
 Заголовок
 Год|Год публикации
@@ -679,6 +704,7 @@ $messages['sk'] = array(
 	'proofreadpage_index_listofpages' => 'Zoznam stránok',
 	'proofreadpage_image_message'     => 'Odkaz na stránku index',
 	'proofreadpage_page_status'       => 'Stav stránky',
+	'proofreadpage_js_attributes'     => 'Autor Názov Rok Vydavateľ',
 	'proofreadpage_index_attributes'  => 'Autor
 Názov
 Rok|Rok vydania
@@ -752,6 +778,7 @@ $messages['sv'] = array(
 	'proofreadpage_index_listofpages' => 'Lista över sidor',
 	'proofreadpage_image_message'     => 'Länk till indexsidan',
 	'proofreadpage_page_status'       => 'Sidans status',
+	'proofreadpage_js_attributes'     => 'Författare Titel År Utgivare',
 	'proofreadpage_index_attributes'  => 'Upphovsman
 Titel
 År|Utgivningsår
@@ -780,6 +807,17 @@ $messages['te'] = array(
 బొమ్మ|ముఖచిత్రం
 పేజీలు||20
 రిమార్కులు||10',
+);
+
+/** Turkish (Türkçe)
+ * @author Erkan Yilmaz
+ */
+$messages['tr'] = array(
+	'proofreadpage_namespace' => 'Sayfa',
+	'proofreadpage_image'     => 'Resim',
+	'proofreadpage_index'     => 'Dizin',
+	'proofreadpage_nextpage'  => 'Gelecek sayfa',
+	'proofreadpage_prevpage'  => 'Önceki sayfa',
 );
 
 /** Volapük (Volapük)
