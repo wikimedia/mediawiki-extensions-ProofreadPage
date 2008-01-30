@@ -99,7 +99,7 @@ function proofreadpage_make_edit_area(container,text){
 			}
 		}
 		else {
-			pageHeader = '<div class="pagetext">';
+			pageHeader = '{{PageQuality|1|}<div class="pagetext">';
 			pageBody = text;
 			pageFooter = '</div>';
 		}
