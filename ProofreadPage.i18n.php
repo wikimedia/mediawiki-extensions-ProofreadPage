@@ -827,8 +827,11 @@ $messages['te'] = array(
 	'proofreadpage_namespace'         => 'పేజీ',
 	'proofreadpage_image'             => 'బొమ్మ',
 	'proofreadpage_nextpage'          => 'తర్వాతి పేజీ',
+	'proofreadpage_prevpage'          => 'గత పేజీ',
+	'proofreadpage_quality2_category' => 'సమస్యాత్మకం',
 	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
 	'proofreadpage_page_status'       => 'పేజీ స్థితి',
+	'proofreadpage_js_attributes'     => 'రచయిత శీర్షిక సంవత్సరం ప్రచురణకర్త',
 	'proofreadpage_index_attributes'  => 'రచయిత
 శీర్షిక
 సంవత్సరం|ప్రచురణ సంవత్సరం
