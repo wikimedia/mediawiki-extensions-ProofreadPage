@@ -420,13 +420,19 @@ function wfPRRenderPageList( $input ) {
 		for( $i=1; $i<$count+1 ; $i++) { 
 
 			$pdbk = "$page_namespace:$name" . '/'. $i ;
+			$n = strlen($count) - strlen(''.$i);
+			if($n){
+				$txt = '<span style="visibility:hidden;">';
+				for( $j=0; $j<$n; $j++) $txt = $txt.'0';
+				$txt = $txt.'</span>'.$i;
+			} else $txt = ''.$i;
 			$title = Title::newFromText( $pdbk );
 			if ( !isset( $colours[$pdbk] ) ) {
-				$link = $sk->makeBrokenLinkObj( $title, ' '.$i );
+				$link = $sk->makeBrokenLinkObj( $title, $txt );
 			} else {
-				$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], ' '.$i );
+				$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], $txt );
 			}
-			$return .= "{$link}";
+			$return .= "{$link} ";
 		}
 
 	}
