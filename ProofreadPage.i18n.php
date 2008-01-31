@@ -168,7 +168,9 @@ $messages['eo'] = array(
 	'proofreadpage_prevpage' => 'Antaŭa paĝo',
 );
 
-	# فارسی (Huji)
+/** فارسی (فارسی)
+ * @author Huji
+ */
 $messages['fa'] = array(
 	'proofreadpage_namespace'         => 'صفحه',
 	'proofreadpage_index_namespace'   => 'اندیس',
@@ -187,6 +189,15 @@ $messages['fa'] = array(
 	'proofreadpage_index_listofpages' => 'فهرست صفحه‌ها',
 	'proofreadpage_image_message'     => 'پیوند به صفحهٔ اندیس',
 	'proofreadpage_page_status'       => 'وضعیت صفحه',
+	'proofreadpage_js_attributes'     => 'نویسنده عنوان سال ناشر',
+	'proofreadpage_index_attributes'  => 'نویسنده
+عنوان
+سال|سال انتشار
+ناشر
+منبع
+تصویر|تصویر روی جلد
+صفحه||20
+ملاحظات||10',
 );
 
 /** Finnish (Suomi)
