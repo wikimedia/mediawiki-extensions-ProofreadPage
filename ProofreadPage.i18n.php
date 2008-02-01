@@ -107,9 +107,11 @@ $messages['bn'] = array(
 	'proofreadpage_quality1_category' => 'মুদ্রণ সংশোধন করা হয়নি',
 	'proofreadpage_quality2_category' => 'সমস্যাসঙ্কুল',
 	'proofreadpage_quality3_category' => 'মুদ্রণ সংশোধন',
+	'proofreadpage_quality4_category' => 'বৈধকরণ',
 	'proofreadpage_index_listofpages' => 'পাতাসমূহের তালিকা',
 	'proofreadpage_image_message'     => 'সূচী পাতায় লিঙ্ক করো',
 	'proofreadpage_page_status'       => 'পাতার অবস্থা',
+	'proofreadpage_js_attributes'     => 'লেখক শিরোনাম বছর প্রকাশক',
 	'proofreadpage_index_attributes'  => 'লেখক
 শিরোনাম
 বছর|প্রকাশনার বছর
