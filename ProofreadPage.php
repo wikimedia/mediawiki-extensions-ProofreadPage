@@ -446,7 +446,7 @@ function wfPRRenderPageList( $input, $args ) {
 		$sk = $wgUser->getSkin();
 
 		$offset = 0;
-		$mode = 'main';
+		$mode = 'normal';
 		for( $i=1; $i<$count+1 ; $i++) { 
 
 			$pdbk = "$page_namespace:$name" . '/'. $i ;
@@ -454,21 +454,21 @@ function wfPRRenderPageList( $input, $args ) {
 			foreach ( $args as $num => $param ) {
 				if($i == $num) {
 					$offset = $num - 1;
-					if(($mode == 'main') && ($i != 1)) $return .= '<br/>';
+					if(($mode == 'normal') && ($i != 1)) $return .= '<br/>';
 					$mode = $param;
-					if(($mode == 'main') && ($i != 1)) $return .= '<br/>';
+					if(($mode == 'normal') && ($i != 1)) $return .= '<br/>';
 				}
 		  	}
 
 			$view = ($i - $offset);
 			if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
 			elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
-			elseif($mode == 'main') $view = ''.$view;
+			elseif($mode == 'normal') $view = ''.$view;
 			elseif($mode == 'void') $view = '&nbsp;&nbsp;&nbsp;';
 			else $view = $mode.$view;
 
 			$n = strlen($count) - strlen($view);
-			if( $n && ($mode == 'main') ){
+			if( $n && ($mode == 'normal') ){
 				$txt = '<span style="visibility:hidden;">';
 				for( $j=0; $j<$n; $j++) $txt = $txt.'0';
 				$view = $txt.'</span>'.$view;
