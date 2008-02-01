@@ -451,11 +451,11 @@ function wfPRRenderPageList( $input, $args ) {
 
 			$pdbk = "$page_namespace:$name" . '/'. $i ;
 
-			foreach ( $args as $param_name => $num ) {
+			foreach ( $args as $num => $param ) {
 				if($i == $num) {
 					$offset = $num - 1;
 					if(($mode == 'main') && ($i != 1)) $return .= '<br/>';
-					$mode = $param_name;
+					$mode = $param;
 					if(($mode == 'main') && ($i != 1)) $return .= '<br/>';
 				}
 		  	}
