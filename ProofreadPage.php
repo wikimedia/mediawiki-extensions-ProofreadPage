@@ -28,7 +28,7 @@ function wfPRPageList() {
  
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 13;
+$wgProofreadPageVersion = 14;
 
 
 
@@ -451,21 +451,24 @@ function wfPRRenderPageList( $input, $args ) {
 
 			$pdbk = "$page_namespace:$name" . '/'. $i ;
 
+			$single=false;
 			foreach ( $args as $num => $param ) {
 				if($i == $num) {
-					$offset = $num - 1;
-					if(($mode == 'normal') && ($i != 1)) $return .= '<br/>';
-					$mode = $param;
-					if(($mode == 'normal') && ($i != 1)) $return .= '<br/>';
+					$param = explode(";",$param);
+					if(isset($param[1])) $mode = $param[1]; else $mode='normal';
+					if(is_numeric($param[0])) $offset = $i - $param[0]; 
+					else $single=$param[0];
 				}
 		  	}
 
-			$view = ($i - $offset);
-			if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
-			elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
-			elseif($mode == 'normal') $view = ''.$view;
-			elseif($mode == 'void') $view = '&nbsp;&nbsp;&nbsp;';
-			else $view = $mode.$view;
+			if( $single ) { $view = $single; $single=false; $offset=$offset+1;}
+			else {
+			  $view = ($i - $offset);
+			  if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
+			  elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
+			  elseif($mode == 'normal') $view = ''.$view;
+			  else $view = $mode.$view;
+			}
 
 			$n = strlen($count) - strlen($view);
 			if( $n && ($mode == 'normal') ){
