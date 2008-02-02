@@ -74,6 +74,38 @@ $messages['ar'] = array(
 الملاحظات||10',
 );
 
+/** Asturian (Asturianu)
+ * @author Esbardu
+ */
+$messages['ast'] = array(
+	'proofreadpage_namespace'         => 'Páxina',
+	'proofreadpage_index_namespace'   => 'Índiz',
+	'proofreadpage_image'             => 'imaxe',
+	'proofreadpage_index'             => 'Índiz',
+	'proofreadpage_nextpage'          => 'Páxina siguiente',
+	'proofreadpage_prevpage'          => 'Páxina anterior',
+	'proofreadpage_header'            => 'Cabecera (noinclude):',
+	'proofreadpage_body'              => 'Cuerpu de la páxina (pa trescluyir):',
+	'proofreadpage_footer'            => 'Pie de páxina (noinclude):',
+	'proofreadpage_toggleheaders'     => 'activar/desactivar la visibilidá de les seiciones noinclude',
+	'proofreadpage_quality1_category' => 'Non correxida',
+	'proofreadpage_quality2_category' => 'Problemática',
+	'proofreadpage_quality3_category' => 'Correxida',
+	'proofreadpage_quality4_category' => 'Validada',
+	'proofreadpage_index_listofpages' => 'Llista de páxines',
+	'proofreadpage_image_message'     => 'Enllaciar a la páxina índiz',
+	'proofreadpage_page_status'       => 'Estatus de la páxina',
+	'proofreadpage_js_attributes'     => 'Autor Títulu Añu Editor',
+	'proofreadpage_index_attributes'  => 'Autor
+Títulu
+Añu|Añu de publicación
+Editor
+Fonte
+Imaxe|Imaxe de la cubierta
+Páxines||20
+Comentarios||10',
+);
+
 $messages['bcl'] = array(
 	'proofreadpage_namespace' => 'Pahina',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -713,6 +745,37 @@ $messages['ru'] = array(
 Изображение|Изображение обложки
 Страниц||20
 Примечаний||10',
+);
+
+/** Yakut (Саха тыла)
+ * @author HalanTul
+ */
+$messages['sah'] = array(
+	'proofreadpage_namespace'         => 'Сирэй',
+	'proofreadpage_index_namespace'   => 'Индекс',
+	'proofreadpage_image'             => 'ойуу',
+	'proofreadpage_index'             => 'индекс',
+	'proofreadpage_nextpage'          => 'Аныгыскы сирэй',
+	'proofreadpage_prevpage'          => 'Иннинээҕи сирэй',
+	'proofreadpage_header'            => 'Аата (киллэриллибэт):',
+	'proofreadpage_footer'            => 'Аллараа колонтитул (киллэриллибэт):',
+	'proofreadpage_toggleheaders'     => 'киллэриллибэт разделлары көрдөр',
+	'proofreadpage_quality1_category' => 'Ааҕыллыбатах',
+	'proofreadpage_quality2_category' => 'Моһоллоох',
+	'proofreadpage_quality3_category' => 'Ааҕыллыбыт',
+	'proofreadpage_quality4_category' => 'Бэрэбиэркэлэммит',
+	'proofreadpage_index_listofpages' => 'Сирэйдэр испииһэктэрэ',
+	'proofreadpage_image_message'     => 'Индекс сирэйигэр ыйынньык',
+	'proofreadpage_page_status'       => 'Сирэй статуһа',
+	'proofreadpage_js_attributes'     => 'Ааптар Айымньы Сыла Кыһата',
+	'proofreadpage_index_attributes'  => 'Ааптар
+Айымньы аата
+Сыла|Бэчээттэммит сыла
+Кыһа аата
+Источник
+Ойуу|Таһын ойуута
+Сирэйин ахсаана||20
+Хос быһаарыылара||10',
 );
 
 /** Slovak (Slovenčina)
