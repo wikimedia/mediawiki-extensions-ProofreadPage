@@ -154,6 +154,18 @@ $messages['bn'] = array(
 মন্তব্য||10',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'proofreadpage_namespace'       => 'Pajenn',
+	'proofreadpage_index_namespace' => 'Meneger',
+	'proofreadpage_image'           => 'skeudenn',
+	'proofreadpage_nextpage'        => "Pajenn war-lerc'h",
+	'proofreadpage_prevpage'        => 'Pajenn a-raok',
+	'proofreadpage_page_status'     => 'Statud ar bajenn',
+);
+
 /** German (Deutsch)
  * @author ThomasV
  * @author Raimond Spekking
