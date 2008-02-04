@@ -350,6 +350,7 @@ $messages['gl'] = array(
 	'proofreadpage_quality3_category' => 'Corrixir',
 	'proofreadpage_quality4_category' => 'Validado',
 	'proofreadpage_index_listofpages' => 'Listaxe de páxinas',
+	'proofreadpage_image_message'     => 'Ligazón a páxina do índice',
 	'proofreadpage_js_attributes'     => 'Autor Título Ano Publicación',
 	'proofreadpage_index_attributes'  => 'Autor
 Título
@@ -902,11 +903,14 @@ Anmärkningar||10',
  */
 $messages['te'] = array(
 	'proofreadpage_namespace'         => 'పేజీ',
+	'proofreadpage_index_namespace'   => 'సూచిక',
 	'proofreadpage_image'             => 'బొమ్మ',
+	'proofreadpage_index'             => 'సూచిక',
 	'proofreadpage_nextpage'          => 'తర్వాతి పేజీ',
 	'proofreadpage_prevpage'          => 'గత పేజీ',
 	'proofreadpage_quality2_category' => 'సమస్యాత్మకం',
 	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
+	'proofreadpage_image_message'     => 'సూచిక పేజీకి లింకు',
 	'proofreadpage_page_status'       => 'పేజీ స్థితి',
 	'proofreadpage_js_attributes'     => 'రచయిత శీర్షిక సంవత్సరం ప్రచురణకర్త',
 	'proofreadpage_index_attributes'  => 'రచయిత
