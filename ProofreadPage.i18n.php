@@ -540,6 +540,15 @@ $messages['li'] = array(
 	'proofreadpage_index_listofpages' => "Lies van pazjena's",
 	'proofreadpage_image_message'     => 'Verwieziging nao de indekspaasj',
 	'proofreadpage_page_status'       => 'Pazjenastatus',
+	'proofreadpage_js_attributes'     => 'Auteur Titel Jaor Oetgaever',
+	'proofreadpage_index_attributes'  => "Auteur
+Titel
+Jaor|Jaor van publicatie
+Oetgaever
+Brón
+Aafbeilding|Ómslaag
+Pazjena's||20
+Opmèrkinge||10",
 );
 
 /** Lithuanian (Lietuvių)
@@ -621,6 +630,16 @@ $messages['no'] = array(
 	'proofreadpage_quality4_category' => 'Validert',
 	'proofreadpage_index_listofpages' => 'Liste over sider',
 	'proofreadpage_image_message'     => 'Lenke til indekssiden',
+	'proofreadpage_page_status'       => 'Sidestatus',
+	'proofreadpage_js_attributes'     => 'Forfatter Tittel År Utgiver',
+	'proofreadpage_index_attributes'  => 'Forfatter
+Tittel
+År|Utgivelsesår
+Utgiver
+Kilde
+Bilde|Omslagsbilde
+Sider||20
+Merknader||10',
 );
 
 /** Occitan (Occitan)
