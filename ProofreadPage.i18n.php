@@ -680,6 +680,11 @@ $messages['pl'] = array(
 	'proofreadpage_page_status' => 'Status strony',
 );
 
+
+$messages['sl'] = array(
+	'proofreadpage_namespace' => 'Stran',
+);
+
 $messages['pms'] = array(
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Ìndess',
