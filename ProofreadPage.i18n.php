@@ -942,6 +942,32 @@ $messages['te'] = array(
 రిమార్కులు||10',
 );
 
+/** Tajik (Тоҷикӣ)
+ * @author Ibrahim
+ */
+$messages['tg'] = array(
+	'proofreadpage_namespace'         => 'Саҳифа',
+	'proofreadpage_index_namespace'   => 'Индекс',
+	'proofreadpage_image'             => 'акс',
+	'proofreadpage_index'             => 'Индекс',
+	'proofreadpage_nextpage'          => 'Саҳифаи баъдӣ',
+	'proofreadpage_prevpage'          => 'Саҳифаи қаблӣ',
+	'proofreadpage_quality3_category' => 'Бозбинишуда',
+	'proofreadpage_quality4_category' => 'Таъйидшуда',
+	'proofreadpage_index_listofpages' => 'Феҳристи саҳифаҳо',
+	'proofreadpage_image_message'     => 'Пайванд ба саҳифаи индекс',
+	'proofreadpage_page_status'       => 'Вазъияти саҳифа',
+	'proofreadpage_js_attributes'     => 'Муаллиф Унвон Сол Нашриёт',
+	'proofreadpage_index_attributes'  => 'Муаллиф
+Унвон
+Сол|Соли интишор
+Нашриёт
+Манбаъ
+Акс|Акси рӯи ҷилд
+Саҳифаҳо||20
+Мулоҳизот||10',
+);
+
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
  */
