@@ -64,6 +64,7 @@ $messages['ar'] = array(
 	'proofreadpage_index_listofpages' => 'قائمة الصفحات',
 	'proofreadpage_image_message'     => 'وصلة إلى صفحة الفهرس',
 	'proofreadpage_page_status'       => 'حالة الصفحة',
+	'proofreadpage_js_attributes'     => 'المؤلف العنوان السنة الناشر',
 	'proofreadpage_index_attributes'  => 'المؤلف
 العنوان
 السنة|سنة النشر
@@ -164,6 +165,37 @@ $messages['br'] = array(
 	'proofreadpage_nextpage'        => "Pajenn war-lerc'h",
 	'proofreadpage_prevpage'        => 'Pajenn a-raok',
 	'proofreadpage_page_status'     => 'Statud ar bajenn',
+);
+
+/** Czech (Česky)
+ * @author Matěj Grabovský
+ */
+$messages['cs'] = array(
+	'proofreadpage_namespace'         => 'Stránka',
+	'proofreadpage_index_namespace'   => 'Index',
+	'proofreadpage_image'             => 'soubor',
+	'proofreadpage_index'             => 'Index',
+	'proofreadpage_nextpage'          => 'Další stránka',
+	'proofreadpage_prevpage'          => 'Předchozí stránka',
+	'proofreadpage_header'            => 'Hlavička (noinclude):',
+	'proofreadpage_body'              => 'Tělo stránky (pro transkluzi):',
+	'proofreadpage_footer'            => 'Pata (noinclude):',
+	'proofreadpage_toggleheaders'     => 'přepnout viditelnost sekcí noinclude',
+	'proofreadpage_quality1_category' => 'Nebylo zkontrolováno',
+	'proofreadpage_quality2_category' => 'Problematické',
+	'proofreadpage_quality3_category' => 'Zkontrolováno',
+	'proofreadpage_quality4_category' => 'Ověřeno',
+	'proofreadpage_index_listofpages' => 'Seznam stránek',
+	'proofreadpage_image_message'     => 'Odkaz na úvodní stránku',
+	'proofreadpage_page_status'       => 'Stav stránky',
+	'proofreadpage_js_attributes'     => 'Autor Název Rok Vydavatel',
+	'proofreadpage_index_attributes'  => 'Autor
+Název
+Rok|Rok vydání
+Vydavatelství
+Obrázek|Obálka
+Stran||20
+Poznámky||10',
 );
 
 /** German (Deutsch)
@@ -680,11 +712,6 @@ $messages['pl'] = array(
 	'proofreadpage_page_status' => 'Status strony',
 );
 
-
-$messages['sl'] = array(
-	'proofreadpage_namespace' => 'Stran',
-);
-
 $messages['pms'] = array(
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Ìndess',
@@ -847,6 +874,11 @@ Strán||20
 Poznámky||10',
 );
 
+
+$messages['sl'] = array(
+	'proofreadpage_namespace' => 'Stran',
+);
+
 /** ћирилица (ћирилица)
  * @author Sasa Stefanovic
  */
@@ -996,6 +1028,15 @@ $messages['vo'] = array(
 	'proofreadpage_quality2_category' => 'Säkädik',
 	'proofreadpage_index_listofpages' => 'Padalised',
 	'proofreadpage_page_status'       => 'Stad pada',
+	'proofreadpage_js_attributes'     => 'Lautan Tiäd Yel Püban',
+	'proofreadpage_index_attributes'  => 'Lautan
+Tiäd
+Yel|Pübayel
+Püban
+Fonät
+Magod|Magod tegoda
+Pads|20
+Küpets|10',
 );
 
 $messages['yue'] = array(
