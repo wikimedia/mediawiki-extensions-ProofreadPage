@@ -304,6 +304,7 @@ $messages['fi'] = array(
  * @author Grondin
  */
 $messages['fr'] = array(
+	'proofreadpage_desc'              => 'Permet une comparaison facile entre le texte et la numérisation originale',
 	'proofreadpage_namespace'         => 'Page',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'image',
