@@ -617,6 +617,7 @@ $messages['nds'] = array(
  * @author SPQRobin
  */
 $messages['nl'] = array(
+	'proofreadpage_desc'              => 'Maakt het mogelijk eenvoudig teksten te vergelijken met een originele scan',
 	'proofreadpage_namespace'         => 'Pagina',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'afbeelding',
@@ -649,6 +650,7 @@ Opmerkingen||10",
  * @author Jon Harald Søby
  */
 $messages['no'] = array(
+	'proofreadpage_desc'              => 'Tillat lett sammenligning av tekst med originalskanningen',
 	'proofreadpage_namespace'         => 'Side',
 	'proofreadpage_index_namespace'   => 'Indeks',
 	'proofreadpage_image'             => 'bilde',
@@ -1056,3 +1058,4 @@ $messages['zh-hant'] = array(
 	'proofreadpage_namespace' => '頁面',
 	'proofreadpage_index_namespace' => '索引',
 );
+
