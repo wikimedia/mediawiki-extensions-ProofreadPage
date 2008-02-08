@@ -4,8 +4,9 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
+$wgExtensionMessagesFiles['ProofReadPage'] = dirname(__FILE__) . '/'ProofreadPage.i18n.php';
+
 $wgHooks['OutputPageParserOutput'][] = 'wfPRParserOutput';
-$wgHooks['LoadAllMessages'][] = 'wfPRLoadMessages';
 $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'wfPRImageMessage';
 
@@ -145,7 +146,7 @@ function wfPRNavigation( $image ) {
 function wfPRParserOutput( &$out, &$pout ) {
 	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
 
-	wfPRLoadMessages();
+	wfLoadExtensionMessages( 'ProofreadPage' )
 	$action = $wgRequest->getVal('action');
 	$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
 	if ( !isset( $wgTitle ) || ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
@@ -263,21 +264,6 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString(wfMsgForContent('pr
 	return true;
 }
 
-function wfPRLoadMessages() {
-	global $wgMessageCache;
-	static $done = false;
-	if ( $done ) return true;
-
-	require( dirname( __FILE__ ) . '/ProofreadPage.i18n.php' );
-	foreach ( $messages as $lang => $messagesForLang ) {
-		$wgMessageCache->addMessages( $messagesForLang, $lang );
-	}
-	return true;
-}
-
-
-
-
 
 /**
  *  Give quality colour codes to pages linked from an index page
@@ -288,7 +274,7 @@ function wfPRLinkColours( $page_ids, &$colours ) {
 	if ( !isset( $wgTitle ) ) {
 		return true;
 	}
-	wfPRLoadMessages();
+	wfLoadExtensionMessages( 'ProofreadPage' )
 
 	// abort if we are not an index page
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
@@ -344,7 +330,7 @@ function wfPRImageMessage(  &$imgpage , &$wgOut ) {
 		return true;
 	}
 
-	wfPRLoadMessages();
+	wfLoadExtensionMessages( 'ProofreadPage' )
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	$name = $image->getTitle()->getText();
 
@@ -388,7 +374,7 @@ function wfPRRenderPageList( $input, $args ) {
 
 	global $wgUser, $wgTitle;
 
-	wfPRLoadMessages();
+	wfLoadExtensionMessages( 'ProofreadPage' )
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
