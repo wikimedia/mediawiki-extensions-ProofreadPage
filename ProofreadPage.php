@@ -9,28 +9,23 @@ $wgHooks['LoadAllMessages'][] = 'wfPRLoadMessages';
 $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'wfPRImageMessage';
 
-
-
 $wgExtensionCredits['other'][] = array(
-	'name' => 'ProofreadPage',
-	'author' => 'ThomasV',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Proofread_Page',
-	'description' => 'Allow easy comparison of text to the original scan',
+	'name'           => 'ProofreadPage',
+	'author'         => 'ThomasV',
+	'version'        => '2008-02-08',
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:Proofread_Page',
+	'description'    => 'Allow easy comparison of text to the original scan',
+	'descriptionmsg' => 'proofreadpage_desc',
 );
-
-
 
 $wgExtensionFunctions[] = "wfPRPageList";
 function wfPRPageList() {
     global $wgParser;
     $wgParser->setHook( "pagelist", "wfPRRenderPageList" );
 }
- 
 
 # Bump the version number every time you change proofread.js
 $wgProofreadPageVersion = 14;
-
-
 
 /**
  * 

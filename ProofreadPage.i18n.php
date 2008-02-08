@@ -8,6 +8,7 @@
 $messages = array();
 
 $messages['en'] = array(
+	'proofreadpage_desc' => 'Allow easy comparison of text to the original scan',
 	'proofreadpage_namespace' => 'Page',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'image',
@@ -203,6 +204,7 @@ Poznámky||10',
  * @author Raimond Spekking
  */
 $messages['de'] = array(
+	'proofreadpage_desc'              => 'Ermöglicht das bequeme Vergleichen von Text mit dem Originalscan',
 	'proofreadpage_namespace'         => 'Seite',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'Scan',
@@ -1054,7 +1056,6 @@ $messages['zh-hant'] = array(
 	'proofreadpage_index_namespace' => '索引',
 );
 
-$messages['de-formal'] = $messages['de'];
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
 $messages['zh-hk'] = $messages['zh-hant'];
