@@ -435,6 +435,7 @@ Napomene||10',
  * @author Dundak
  */
 $messages['hsb'] = array(
+	'proofreadpage_desc'              => 'Lochke přirunanje teksta z originalnym skanom dowolić',
 	'proofreadpage_namespace'         => 'Strona',
 	'proofreadpage_index_namespace'   => 'Indeks',
 	'proofreadpage_image'             => 'Wobraz',
@@ -617,7 +618,7 @@ $messages['nds'] = array(
  * @author SPQRobin
  */
 $messages['nl'] = array(
-	'proofreadpage_desc'              => 'Maakt het mogelijk eenvoudig teksten te vergelijken met een originele scan',
+	'proofreadpage_desc'              => 'Maakt het mogelijk teksten eenvoudig te vergelijken met de oorspronkelijke scan',
 	'proofreadpage_namespace'         => 'Pagina',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'afbeelding',
@@ -754,8 +755,10 @@ $messages['pt'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author Malafaya
  */
 $messages['pt'] = array(
+	'proofreadpage_desc'              => 'Permite a comparação fácil de um texto com a sua digitalização original',
 	'proofreadpage_namespace'         => 'Página',
 	'proofreadpage_index_namespace'   => 'Índice',
 	'proofreadpage_image'             => 'imagem',
@@ -851,6 +854,7 @@ $messages['sah'] = array(
  * @author Helix84
  */
 $messages['sk'] = array(
+	'proofreadpage_desc'              => 'Umožňuje jednoduché porovnanie textu s originálnym skenom',
 	'proofreadpage_namespace'         => 'Stránka',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'obrázok',
@@ -930,6 +934,7 @@ Bemäärkengen||10',
  * @author Max sonnelid
  */
 $messages['sv'] = array(
+	'proofreadpage_desc'              => 'Ger möjlighet att korrekturläsa texter mot scannade original',
 	'proofreadpage_namespace'         => 'Sida',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'bild',
@@ -994,6 +999,7 @@ $messages['tg'] = array(
 	'proofreadpage_index'             => 'Индекс',
 	'proofreadpage_nextpage'          => 'Саҳифаи баъдӣ',
 	'proofreadpage_prevpage'          => 'Саҳифаи қаблӣ',
+	'proofreadpage_quality1_category' => 'Бозбинӣ нашуда',
 	'proofreadpage_quality3_category' => 'Бозбинишуда',
 	'proofreadpage_quality4_category' => 'Таъйидшуда',
 	'proofreadpage_index_listofpages' => 'Феҳристи саҳифаҳо',
