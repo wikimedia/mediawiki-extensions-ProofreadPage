@@ -48,6 +48,7 @@ $messages['af'] = array(
  * @author Meno25
  */
 $messages['ar'] = array(
+	'proofreadpage_desc'              => 'يسمح بمقارنة سهلة للنص مع المسح الأصلي',
 	'proofreadpage_namespace'         => 'صفحة',
 	'proofreadpage_index_namespace'   => 'فهرس',
 	'proofreadpage_image'             => 'صورة',
@@ -559,6 +560,7 @@ $messages['lb'] = array(
  * @author Ooswesthoesbes
  */
 $messages['li'] = array(
+	'proofreadpage_desc'              => "Maak 't meugelik teks einvawdig te verglieke mit de oorspronkelike sken",
 	'proofreadpage_namespace'         => 'Pazjena',
 	'proofreadpage_index_namespace'   => 'Indeks',
 	'proofreadpage_image'             => 'aafbeilding',
