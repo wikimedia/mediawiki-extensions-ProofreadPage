@@ -253,6 +253,7 @@ $messages['eo'] = array(
  * @author Huji
  */
 $messages['fa'] = array(
+	'proofreadpage_desc'              => 'امکان مقایسهٔ آسان متن با نسخهٔ اصلی پویش شده را فراهم می‌آورد',
 	'proofreadpage_namespace'         => 'صفحه',
 	'proofreadpage_index_namespace'   => 'اندیس',
 	'proofreadpage_image'             => 'تصویر',
@@ -279,6 +280,7 @@ $messages['fa'] = array(
 تصویر|تصویر روی جلد
 صفحه||20
 ملاحظات||10',
+
 );
 
 /** Finnish (Suomi)
