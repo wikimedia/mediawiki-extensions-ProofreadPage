@@ -173,6 +173,7 @@ $messages['br'] = array(
  * @author Matěj Grabovský
  */
 $messages['cs'] = array(
+	'proofreadpage_desc'              => 'Umožňuje jednoduché porovnání textu s předlohou',
 	'proofreadpage_namespace'         => 'Stránka',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'soubor',
