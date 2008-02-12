@@ -4,7 +4,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
-$wgExtensionMessagesFiles['ProofReadPage'] = dirname(__FILE__) . '/ProofreadPage.i18n.php';
+$wgExtensionMessagesFiles['ProofreadPage'] = dirname(__FILE__) . '/ProofreadPage.i18n.php';
 
 $wgHooks['OutputPageParserOutput'][] = 'wfPRParserOutput';
 $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
