@@ -246,7 +246,7 @@ function proofreadPageFillForm() {
 	var header = form.elements["headerTextbox"];
 	var footer = form.elements["footerTextbox"];
 	if(header){
-		var h = header.value.match(/^([\s\S]*?)\n*$/)[1];
+		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
 		if(h) h = "<noinclude>"+h+"\n\n\n</noinclude>";
 		var f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
