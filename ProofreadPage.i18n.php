@@ -235,6 +235,13 @@ Seiten||20
 Bemerkungen||10',
 );
 
+/** Ewe (Eʋegbe)
+ * @author M.M.S.
+ */
+$messages['ee'] = array(
+	'proofreadpage_namespace' => 'Nuŋɔŋlɔ',
+);
+
 $messages['el'] = array(
 	'proofreadpage_namespace' => 'Σελίδα',
 	'proofreadpage_image' => 'Εικόνα',
@@ -683,6 +690,15 @@ Kilde
 Bilde|Omslagsbilde
 Sider||20
 Merknader||10',
+);
+
+/** Northern Sotho (Sesotho sa Leboa)
+ * @author Mohau
+ */
+$messages['nso'] = array(
+	'proofreadpage_namespace' => 'Letlakala',
+	'proofreadpage_nextpage'  => 'Letlakala lago latela',
+	'proofreadpage_prevpage'  => 'Letlaka lago feta',
 );
 
 /** Occitan (Occitan)
