@@ -26,7 +26,7 @@ function wfPRPageList() {
 }
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 14;
+$wgProofreadPageVersion = 15;
 
 /**
  * 
