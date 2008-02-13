@@ -911,6 +911,10 @@ Poznámky||10',
 
 $messages['sl'] = array(
 	'proofreadpage_namespace' => 'Stran',
+	'proofreadpage_quality1_category' => 'Nekorigirano',
+	'proofreadpage_quality2_category' => 'Problematične strani',
+	'proofreadpage_quality3_category' => 'Korigirano',
+	'proofreadpage_quality4_category' => 'Potrjeno',
 );
 
 /** ћирилица (ћирилица)
