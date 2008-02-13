@@ -709,6 +709,7 @@ $messages['nso'] = array(
  * @author Cedric31
  */
 $messages['oc'] = array(
+	'proofreadpage_desc'              => 'Permet una comparason aisida entre lo tèxt e la numerizacion originala',
 	'proofreadpage_namespace'         => 'Pagina',
 	'proofreadpage_index_namespace'   => 'Indèx',
 	'proofreadpage_image'             => 'imatge',
@@ -726,6 +727,7 @@ $messages['oc'] = array(
 	'proofreadpage_index_listofpages' => 'Lista de las paginas',
 	'proofreadpage_image_message'     => "Ligam vèrs l'indèx",
 	'proofreadpage_page_status'       => 'Estat de la pagina',
+	'proofreadpage_js_attributes'     => 'Autor Títol Annada Editor',
 	'proofreadpage_index_attributes'  => 'Autor
 Títol
 Annada|Annada de publicacion
@@ -816,6 +818,7 @@ Notas||10',
  * @author .:Ajvol:.
  */
 $messages['ru'] = array(
+	'proofreadpage_desc'              => 'Позволяет в удобном виде сравнивать текст и отсканированное изображение оригинала',
 	'proofreadpage_namespace'         => 'Страница',
 	'proofreadpage_index_namespace'   => 'Индекс',
 	'proofreadpage_image'             => 'изображение',
