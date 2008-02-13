@@ -512,6 +512,10 @@ Megjegyzések||10',
 $messages['hy'] = array(
 	'proofreadpage_namespace' => 'Էջ',
 	'proofreadpage_index_namespace' => 'Ինդեքս',
+	'proofreadpage_quality1_category' => 'Չսրբագրված',
+	'proofreadpage_quality2_category' => 'Խնդրահարույց',
+	'proofreadpage_quality3_category' => 'Սրբագրված',
+	'proofreadpage_quality4_category' => 'Հաստատված',
 );
 
 /** Icelandic (Íslenska)
