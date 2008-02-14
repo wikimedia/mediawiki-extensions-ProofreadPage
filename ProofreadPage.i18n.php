@@ -742,7 +742,11 @@ Comentaris||10',
  * @author Sp5uhe
  */
 $messages['pl'] = array(
-	'proofreadpage_page_status' => 'Status strony',
+	'proofreadpage_namespace'       => 'Strona',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image'           => 'Grafika',
+	'proofreadpage_index'           => 'Indeks',
+	'proofreadpage_page_status'     => 'Status strony',
 );
 
 $messages['pms'] = array(
