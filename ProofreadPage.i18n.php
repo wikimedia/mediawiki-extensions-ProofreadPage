@@ -397,6 +397,7 @@ $messages['gl'] = array(
 	'proofreadpage_quality4_category' => 'Validado',
 	'proofreadpage_index_listofpages' => 'Listaxe de páxinas',
 	'proofreadpage_image_message'     => 'Ligazón a páxina do índice',
+	'proofreadpage_page_status'       => 'Status da páxina',
 	'proofreadpage_js_attributes'     => 'Autor Título Ano Publicación',
 	'proofreadpage_index_attributes'  => 'Autor
 Título
@@ -855,6 +856,7 @@ $messages['ru'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
+	'proofreadpage_desc'              => 'Оригинаалы уонна скаанердаммыт ойууну тэҥнээн көрөр кыаҕы биэрэр',
 	'proofreadpage_namespace'         => 'Сирэй',
 	'proofreadpage_index_namespace'   => 'Индекс',
 	'proofreadpage_image'             => 'ойуу',
@@ -862,6 +864,7 @@ $messages['sah'] = array(
 	'proofreadpage_nextpage'          => 'Аныгыскы сирэй',
 	'proofreadpage_prevpage'          => 'Иннинээҕи сирэй',
 	'proofreadpage_header'            => 'Аата (киллэриллибэт):',
+	'proofreadpage_body'              => 'Сирэй иһэ (холбонуо):',
 	'proofreadpage_footer'            => 'Аллараа колонтитул (киллэриллибэт):',
 	'proofreadpage_toggleheaders'     => 'киллэриллибэт разделлары көрдөр',
 	'proofreadpage_quality1_category' => 'Ааҕыллыбатах',
@@ -1063,6 +1066,27 @@ $messages['tr'] = array(
 	'proofreadpage_index'     => 'Dizin',
 	'proofreadpage_nextpage'  => 'Gelecek sayfa',
 	'proofreadpage_prevpage'  => 'Önceki sayfa',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'proofreadpage_desc'              => 'So sánh văn bản với hình quét gốc',
+	'proofreadpage_namespace'         => 'Trang',
+	'proofreadpage_image'             => 'hình',
+	'proofreadpage_nextpage'          => 'Trang trước',
+	'proofreadpage_prevpage'          => 'Trang sau',
+	'proofreadpage_index_listofpages' => 'Danh sách các trang',
+	'proofreadpage_page_status'       => 'Tình trạng của trang',
+	'proofreadpage_index_attributes'  => 'Author|Tác giả
+Title|Tên
+Year|Năm xuất bản
+Publisher|Nhà xuất bản
+Source|Nguồn
+Image|Hình bìa
+Pages|Các trang|20
+Remarks|Ghi chú|10',
 );
 
 /** Volapük (Volapük)
