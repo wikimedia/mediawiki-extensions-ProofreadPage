@@ -348,6 +348,7 @@ Commentaires||10',
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'proofreadpage_desc'              => 'Pèrmèt una comparèson ésiê entre lo tèxte et la numerisacion originâla.',
 	'proofreadpage_namespace'         => 'Pâge',
 	'proofreadpage_index_namespace'   => 'Endèxe',
 	'proofreadpage_image'             => 'émâge',
@@ -552,6 +553,39 @@ $messages['it'] = array(
 	'proofreadpage_image_message'     => 'Collegamento alla pagina indice',
 );
 
+/** Japanese (日本語)
+ * @author JtFuruhata
+ */
+$messages['ja'] = array(
+	'proofreadpage_desc'              => 'オリジナルのスキャン画像とテキストとの比較を容易にする',
+	'proofreadpage_namespace'         => 'ページ',
+	'proofreadpage_index_namespace'   => '文献概要',
+	'proofreadpage_image'             => 'スキャン画像',
+	'proofreadpage_index'             => '文献概要',
+	'proofreadpage_nextpage'          => '次のページ',
+	'proofreadpage_prevpage'          => '前のページ',
+	'proofreadpage_header'            => 'ヘッダ（埋め込み対象外）:',
+	'proofreadpage_body'              => 'ページ本体（埋め込み参照の対象）:',
+	'proofreadpage_footer'            => 'フッタ（埋め込み対象外）:',
+	'proofreadpage_toggleheaders'     => '埋め込み対象外項目の表示切替',
+	'proofreadpage_quality1_category' => '未校正',
+	'proofreadpage_quality2_category' => '問題あり',
+	'proofreadpage_quality3_category' => '校正済',
+	'proofreadpage_quality4_category' => '検証済',
+	'proofreadpage_index_listofpages' => 'ページの一覧',
+	'proofreadpage_image_message'     => '文献概要ページへ',
+	'proofreadpage_page_status'       => '校正状況',
+	'proofreadpage_js_attributes'     => '著者 書名 出版年 出版元',
+	'proofreadpage_index_attributes'  => '著者
+書名
+出版年|出版年
+出版元
+引用元
+画像|表紙画像
+ページ||20
+注釈||10',
+);
+
 $messages['ka'] = array(
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
@@ -743,10 +777,13 @@ Comentaris||10',
  * @author Sp5uhe
  */
 $messages['pl'] = array(
+	'proofreadpage_desc'            => 'Umożliwia łatwe porównanie treści ze skanem oryginału',
 	'proofreadpage_namespace'       => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image'           => 'Grafika',
 	'proofreadpage_index'           => 'Indeks',
+	'proofreadpage_nextpage'        => 'Następna strona',
+	'proofreadpage_prevpage'        => 'Poprzednia strona',
 	'proofreadpage_page_status'     => 'Status strony',
 );
 
