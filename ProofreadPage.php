@@ -6,7 +6,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $wgExtensionMessagesFiles['ProofreadPage'] = dirname(__FILE__) . '/ProofreadPage.i18n.php';
 
-$wgHooks['OutputPageParserOutput'][] = 'wfPRParserOutput';
+$wgHooks['BeforePageDisplay'][] = 'wfPRParserOutput';
 $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'wfPRImageMessage';
 
@@ -143,7 +143,7 @@ function wfPRNavigation( $image ) {
  * 
  */
 
-function wfPRParserOutput( &$out, &$pout ) {
+function wfPRParserOutput( &$out ) {
 	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
 
 	wfLoadExtensionMessages( 'ProofreadPage' );
