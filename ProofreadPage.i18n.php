@@ -600,6 +600,7 @@ $messages['la'] = array(
  */
 $messages['lb'] = array(
 	'proofreadpage_namespace'         => 'Säit',
+	'proofreadpage_image'             => 'Bild',
 	'proofreadpage_nextpage'          => 'Nächst Säit',
 	'proofreadpage_prevpage'          => 'Virescht Säit',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
@@ -820,6 +821,28 @@ $messages['pt'] = array(
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message'     => 'Link para a página de índice',
 	'proofreadpage_page_status'       => 'Estado da página',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'proofreadpage_namespace'         => 'مخ',
+	'proofreadpage_index_namespace'   => 'ليکلړ',
+	'proofreadpage_image'             => 'انځور',
+	'proofreadpage_index'             => 'ليکلړ',
+	'proofreadpage_nextpage'          => 'بل مخ',
+	'proofreadpage_prevpage'          => 'تېر مخ',
+	'proofreadpage_index_listofpages' => 'د مخونو لړليک',
+	'proofreadpage_page_status'       => 'د مخ دريځ',
+	'proofreadpage_index_attributes'  => 'ليکوال
+سرليک
+کال|د خپرېدو کال
+خپرونکی
+سرچينه
+انځور|د پښتۍ انځور
+مخونه||20
+تبصرې||10',
 );
 
 /** Portuguese (Português)
