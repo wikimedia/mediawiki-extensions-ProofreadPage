@@ -312,6 +312,7 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Dereckson
+ * @author Urhixidur
  * @author Grondin
  */
 $messages['fr'] = array(
@@ -322,9 +323,9 @@ $messages['fr'] = array(
 	'proofreadpage_index'             => 'Index',
 	'proofreadpage_nextpage'          => 'Page suivante',
 	'proofreadpage_prevpage'          => 'Page précédente',
-	'proofreadpage_header'            => 'En-tête (noinclude):',
-	'proofreadpage_body'              => 'Contenu (transclusion):',
-	'proofreadpage_footer'            => 'Pied de page (noinclude):',
+	'proofreadpage_header'            => 'En-tête (noinclude) :',
+	'proofreadpage_body'              => 'Contenu (transclusion) :',
+	'proofreadpage_footer'            => 'Pied de page (noinclude) :',
 	'proofreadpage_toggleheaders'     => 'masquer/montrer les sections noinclude',
 	'proofreadpage_quality1_category' => 'Page non corrigée',
 	'proofreadpage_quality2_category' => 'Page à problème',
@@ -332,7 +333,7 @@ $messages['fr'] = array(
 	'proofreadpage_quality4_category' => 'Page validée',
 	'proofreadpage_index_listofpages' => 'Liste des pages',
 	'proofreadpage_image_message'     => "Lien vers l'index",
-	'proofreadpage_page_status'       => 'Etat de la page',
+	'proofreadpage_page_status'       => 'État de la page',
 	'proofreadpage_js_attributes'     => 'Auteur Titre Année Éditeur',
 	'proofreadpage_index_attributes'  => 'Auteur
 Titre
@@ -535,6 +536,7 @@ $messages['is'] = array(
  * @author BrokenArrow
  */
 $messages['it'] = array(
+	'proofreadpage_desc'              => 'Consente un facile confronto tra un testo e la sua scansione originale',
 	'proofreadpage_namespace'         => 'Pagina',
 	'proofreadpage_index_namespace'   => 'Indice',
 	'proofreadpage_image'             => 'immagine',
@@ -551,6 +553,16 @@ $messages['it'] = array(
 	'proofreadpage_quality4_category' => 'Verificata',
 	'proofreadpage_index_listofpages' => 'Lista delle pagine',
 	'proofreadpage_image_message'     => 'Collegamento alla pagina indice',
+	'proofreadpage_page_status'       => 'Status della pagina',
+	'proofreadpage_js_attributes'     => 'Autore Titolo Anno Editore',
+	'proofreadpage_index_attributes'  => 'Autore
+Titolo
+Anno|Anno di pubblicazione
+Editore
+Fonte
+Immagine|Immagine di copertina
+Pagine||20
+Note||10',
 );
 
 /** Japanese (日本語)
