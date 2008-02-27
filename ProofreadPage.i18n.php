@@ -521,6 +521,39 @@ $messages['hy'] = array(
 	'proofreadpage_quality4_category' => 'Հաստատված',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author IvanLanin
+ */
+$messages['id'] = array(
+	'proofreadpage_desc' => 'Memungkinkan perbandingan mudah teks dengan hasil pemindaian orisinal',
+	'proofreadpage_namespace' => 'Halaman',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'gambar',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_nextpage' => 'Halaman selanjutnya',
+	'proofreadpage_prevpage' => 'Halaman sebelumnya',
+	'proofreadpage_header' => 'Kepala (noinclude):',
+	'proofreadpage_body' => 'Badan halaman (untuk ditransklusikan):',
+	'proofreadpage_footer' => 'Kaki (noinclude):',
+	'proofreadpage_toggleheaders' => 'ganti keterlihatan bagian noinclude',
+	'proofreadpage_quality1_category' => 'Belum diuji-baca',
+	'proofreadpage_quality2_category' => 'Bermasalah',
+	'proofreadpage_quality3_category' => 'Diuji-baca',
+	'proofreadpage_quality4_category' => 'Divalidasi',
+	'proofreadpage_index_listofpages' => 'Daftar halaman',
+	'proofreadpage_image_message' => 'Pranala ke halaman indeks',
+	'proofreadpage_page_status' => 'Status halaman',
+	'proofreadpage_js_attributes' =>'Pengarang Judul Tahun Penerbit',
+	'proofreadpage_index_attributes' => 'Pengarang
+Judul
+Tahun|Tahun penerbitan
+Penerbit
+Sumber
+Gambar|Gambar sampul
+Halaman||20
+Catatan||10',
+);
+
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
  */
