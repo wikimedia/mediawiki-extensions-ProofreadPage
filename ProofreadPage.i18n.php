@@ -253,8 +253,33 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'proofreadpage_nextpage' => 'Sekva paĝo',
-	'proofreadpage_prevpage' => 'Antaŭa paĝo',
+	'proofreadpage_desc'              => 'Permesas facilan komparon de teksto al la originala skanitaĵo.',
+	'proofreadpage_namespace'         => 'Paĝo',
+	'proofreadpage_index_namespace'   => 'Indekso',
+	'proofreadpage_image'             => 'bildo',
+	'proofreadpage_index'             => 'Indekso',
+	'proofreadpage_nextpage'          => 'Sekva paĝo',
+	'proofreadpage_prevpage'          => 'Antaŭa paĝo',
+	'proofreadpage_header'            => 'Supra titolo (ne inkluzivu):',
+	'proofreadpage_body'              => 'Paĝa korpo (esti transinkluzivita):',
+	'proofreadpage_footer'            => 'Suba paĝtitolo (neinkluzive):',
+	'proofreadpage_toggleheaders'     => 'baskulo neinkluzivu sekcioj videbleco',
+	'proofreadpage_quality1_category' => 'Ne provlegita',
+	'proofreadpage_quality2_category' => 'Problema',
+	'proofreadpage_quality3_category' => 'Provlegita',
+	'proofreadpage_quality4_category' => 'Validigita',
+	'proofreadpage_index_listofpages' => 'Listo de paĝoj',
+	'proofreadpage_image_message'     => 'Ligilo al la indekspaĝo',
+	'proofreadpage_page_status'       => 'Statuso de paĝo',
+	'proofreadpage_js_attributes'     => 'Aŭtoro Titolo Jaro Eldonejo',
+	'proofreadpage_index_attributes'  => 'Aŭtoro
+Titolo
+Jaro|Jaro de eldonado
+Eldonejo
+Fonto
+Bildo|Bildo de kovrilo
+Paĝoj||20
+Rimarkoj||10',
 );
 
 /** فارسی (فارسی)
@@ -634,6 +659,18 @@ $messages['ja'] = array(
 $messages['ka'] = array(
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
+);
+
+/** Khmer (ភាសាខ្មែរ)
+ * @author Chhorran
+ */
+$messages['km'] = array(
+	'proofreadpage_namespace'         => 'ទំព័រ',
+	'proofreadpage_image'             => 'រូបភាព',
+	'proofreadpage_nextpage'          => 'ទំព័រ បន្ទាប់',
+	'proofreadpage_prevpage'          => 'ទំព័រ មុន',
+	'proofreadpage_index_listofpages' => 'បញ្ជីទំព័រ',
+	'proofreadpage_page_status'       => 'ស្ថានភាព ទំព័រ',
 );
 
 $messages['la'] = array(
