@@ -537,13 +537,36 @@ Oldalak||20
 Megjegyzések||10',
 );
 
+/** Armenian (Հայերեն)
+ * @author Teak
+ */
 $messages['hy'] = array(
-	'proofreadpage_namespace' => 'Էջ',
-	'proofreadpage_index_namespace' => 'Ինդեքս',
+	'proofreadpage_desc'              => 'Թույլ է տալիս տեքստի և բնօրինակի տեսածրված պատկերի հեշտ համեմատում',
+	'proofreadpage_namespace'         => 'Էջ',
+	'proofreadpage_index_namespace'   => 'Ինդեքս',
+	'proofreadpage_image'             => 'պատկեր',
+	'proofreadpage_index'             => 'Ինդեքս',
+	'proofreadpage_nextpage'          => 'Հաջորդ էջ',
+	'proofreadpage_prevpage'          => 'Նախորդ էջ',
+	'proofreadpage_header'            => 'Վերնագիր (չի ներառվում).',
+	'proofreadpage_body'              => 'Էջի մարմին (ներառվելու է).',
+	'proofreadpage_footer'            => 'Ստորագիր (չի ներառվում)',
+	'proofreadpage_toggleheaders'     => 'ցուցադրել չներառվող բաժինները',
 	'proofreadpage_quality1_category' => 'Չսրբագրված',
 	'proofreadpage_quality2_category' => 'Խնդրահարույց',
 	'proofreadpage_quality3_category' => 'Սրբագրված',
 	'proofreadpage_quality4_category' => 'Հաստատված',
+	'proofreadpage_index_listofpages' => 'Էջերի ցանկ',
+	'proofreadpage_image_message'     => 'Հղում ինդեքսի էջին',
+	'proofreadpage_page_status'       => 'Էջի կարգավիճակ',
+	'proofreadpage_index_attributes'  => 'Author|Հեղինակ
+Title|Անվանում
+Year|Հրատարակման տարեթիվ
+Publisher|Հրատարակիչ
+Source|Աղբյուր
+Image|Կազմի պատկեր
+Pages|Էջեր|20
+Remarks|Նշումներ|10',
 );
 
 /** Indonesian (Bahasa Indonesia)
