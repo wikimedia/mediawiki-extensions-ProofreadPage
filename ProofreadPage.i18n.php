@@ -115,15 +115,33 @@ $messages['bcl'] = array(
 );
 
 /** Bulgarian (Български)
+ * @author Borislav
  * @author DCLXVI
  */
 $messages['bg'] = array(
 	'proofreadpage_namespace'         => 'Страница',
+	'proofreadpage_index_namespace'   => 'Показалец',
 	'proofreadpage_image'             => 'картинка',
+	'proofreadpage_index'             => 'Показалец',
 	'proofreadpage_nextpage'          => 'Следваща страница',
 	'proofreadpage_prevpage'          => 'Предишна страница',
+	'proofreadpage_body'              => 'Тяло на страницата (за вграждане):',
+	'proofreadpage_toggleheaders'     => 'превключване на видимостта на разделите с „noinclude“',
+	'proofreadpage_quality1_category' => 'Некоригирана',
+	'proofreadpage_quality2_category' => 'Проблематична',
+	'proofreadpage_quality3_category' => 'Коригирана',
+	'proofreadpage_quality4_category' => 'Одобрена',
 	'proofreadpage_index_listofpages' => 'Списък на страниците',
 	'proofreadpage_page_status'       => 'Статут на страницата',
+	'proofreadpage_js_attributes'     => 'Автор Заглавие Година Издател',
+	'proofreadpage_index_attributes'  => 'Автор
+Заглавие
+Година|Година на публикация
+Издател
+Източник
+Изображение|Изображение на корицата
+Страници||20
+Забележки||10',
 );
 
 /** Bengali (বাংলা)
@@ -748,11 +766,19 @@ Opmèrkinge||10",
  * @author Matasg
  */
 $messages['lt'] = array(
-	'proofreadpage_namespace'   => 'Puslapis',
-	'proofreadpage_image'       => 'paveikslėlis',
-	'proofreadpage_nextpage'    => 'Kitas puslapis',
-	'proofreadpage_prevpage'    => 'Ankstesnis puslapis',
-	'proofreadpage_page_status' => 'Puslapio statusas',
+	'proofreadpage_namespace'        => 'Puslapis',
+	'proofreadpage_image'            => 'paveikslėlis',
+	'proofreadpage_nextpage'         => 'Kitas puslapis',
+	'proofreadpage_prevpage'         => 'Ankstesnis puslapis',
+	'proofreadpage_page_status'      => 'Puslapio statusas',
+	'proofreadpage_index_attributes' => 'Autorius
+Pavadinimas
+Metai|Išleidimo metai
+Leidėjas
+Šaltinis
+Paveikslėlis|Viršelis
+Puslapiai||20
+Pastabos||10',
 );
 
 /** Erzya (эрзянь кель)
