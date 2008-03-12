@@ -704,12 +704,13 @@ $messages['ka'] = array(
 
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
+ * @author Lovekhmer
  */
 $messages['km'] = array(
 	'proofreadpage_namespace'         => 'ទំព័រ',
 	'proofreadpage_image'             => 'រូបភាព',
-	'proofreadpage_nextpage'          => 'ទំព័រ បន្ទាប់',
-	'proofreadpage_prevpage'          => 'ទំព័រ មុន',
+	'proofreadpage_nextpage'          => 'ទំព័របន្ទាប់',
+	'proofreadpage_prevpage'          => 'ទំព័រមុន',
 	'proofreadpage_index_listofpages' => 'បញ្ជីទំព័រ',
 	'proofreadpage_page_status'       => 'ស្ថានភាព ទំព័រ',
 );
@@ -1161,7 +1162,7 @@ Bemäärkengen||10',
 
 /** Swedish (Svenska)
  * @author Lejonel
- * @author Max sonnelid
+ * @author M.M.S.
  */
 $messages['sv'] = array(
 	'proofreadpage_desc'              => 'Ger möjlighet att korrekturläsa texter mot scannade original',
@@ -1207,6 +1208,7 @@ $messages['te'] = array(
 	'proofreadpage_header'            => 'శీర్షిక (కలుపకు):',
 	'proofreadpage_footer'            => 'పాదము (కలుపకు):',
 	'proofreadpage_quality2_category' => 'సమస్యాత్మకం',
+	'proofreadpage_quality4_category' => 'సరిచూడబడింది',
 	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
 	'proofreadpage_image_message'     => 'సూచిక పేజీకి లింకు',
 	'proofreadpage_page_status'       => 'పేజీ స్థితి',
@@ -1225,6 +1227,7 @@ $messages['te'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
+	'proofreadpage_desc'              => 'Имкони муқоисаи осони матн бо нусхаи аслии пӯйишшударо фароҳам меоварад',
 	'proofreadpage_namespace'         => 'Саҳифа',
 	'proofreadpage_index_namespace'   => 'Индекс',
 	'proofreadpage_image'             => 'акс',
@@ -1234,6 +1237,7 @@ $messages['tg'] = array(
 	'proofreadpage_header'            => 'Унвон (noinclude):',
 	'proofreadpage_body'              => 'Тани саҳифа (барои ғунҷонида шудан):',
 	'proofreadpage_footer'            => 'Понавис (noinclude):',
+	'proofreadpage_toggleheaders'     => 'тағйири намоёнии бахшҳои noinclude',
 	'proofreadpage_quality1_category' => 'Бозбинӣ нашуда',
 	'proofreadpage_quality2_category' => 'Мушкилдор',
 	'proofreadpage_quality3_category' => 'Бозбинишуда',
