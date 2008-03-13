@@ -703,15 +703,18 @@ $messages['ka'] = array(
 );
 
 /** Khmer (ភាសាខ្មែរ)
- * @author Chhorran
  * @author Lovekhmer
+ * @author Chhorran
  */
 $messages['km'] = array(
 	'proofreadpage_namespace'         => 'ទំព័រ',
+	'proofreadpage_index_namespace'   => 'លិបិក្រម',
 	'proofreadpage_image'             => 'រូបភាព',
+	'proofreadpage_index'             => 'លិបិក្រម',
 	'proofreadpage_nextpage'          => 'ទំព័របន្ទាប់',
 	'proofreadpage_prevpage'          => 'ទំព័រមុន',
 	'proofreadpage_index_listofpages' => 'បញ្ជីទំព័រ',
+	'proofreadpage_image_message'     => 'ភ្ជាប់ទៅទំព័រលិបិក្រម',
 	'proofreadpage_page_status'       => 'ស្ថានភាព ទំព័រ',
 );
 
@@ -793,8 +796,19 @@ $messages['myv'] = array(
  * @author Slomox
  */
 $messages['nds'] = array(
-	'proofreadpage_namespace' => 'Siet',
-	'proofreadpage_image'     => 'Bild',
+	'proofreadpage_namespace'         => 'Siet',
+	'proofreadpage_index_namespace'   => 'Index',
+	'proofreadpage_image'             => 'Bild',
+	'proofreadpage_index'             => 'Index',
+	'proofreadpage_index_listofpages' => 'Siedenlist',
+	'proofreadpage_index_attributes'  => 'Schriever
+Titel
+Johr|Johr, dat dat rutkamen is
+Verlag
+Born
+Bild|Titelbild
+Sieden||20
+Anmarkungen||10',
 );
 
 /** Dutch (Nederlands)
@@ -910,14 +924,29 @@ Comentaris||10',
  * @author Sp5uhe
  */
 $messages['pl'] = array(
-	'proofreadpage_desc'            => 'Umożliwia łatwe porównanie treści ze skanem oryginału',
-	'proofreadpage_namespace'       => 'Strona',
-	'proofreadpage_index_namespace' => 'Indeks',
-	'proofreadpage_image'           => 'Grafika',
-	'proofreadpage_index'           => 'Indeks',
-	'proofreadpage_nextpage'        => 'Następna strona',
-	'proofreadpage_prevpage'        => 'Poprzednia strona',
-	'proofreadpage_page_status'     => 'Status strony',
+	'proofreadpage_desc'              => 'Umożliwia łatwe porównanie treści ze skanem oryginału',
+	'proofreadpage_namespace'         => 'Strona',
+	'proofreadpage_index_namespace'   => 'Indeks',
+	'proofreadpage_image'             => 'Grafika',
+	'proofreadpage_index'             => 'Indeks',
+	'proofreadpage_nextpage'          => 'Następna strona',
+	'proofreadpage_prevpage'          => 'Poprzednia strona',
+	'proofreadpage_header'            => 'Nagłówek (noinclude):',
+	'proofreadpage_footer'            => 'Stopka (noinclude):',
+	'proofreadpage_quality2_category' => 'Problematyczne',
+	'proofreadpage_quality4_category' => 'Sprawdzone',
+	'proofreadpage_index_listofpages' => 'Spis stron',
+	'proofreadpage_image_message'     => 'Link do strony indeksowej',
+	'proofreadpage_page_status'       => 'Status strony',
+	'proofreadpage_js_attributes'     => 'Autor Tytuł Rok Wydawca',
+	'proofreadpage_index_attributes'  => 'Autor
+Tytuł
+Rok|Rok publikacji
+Wydawca
+Źródło
+Ilustracja|Okładka
+Stron||20
+Uwagi||10',
 );
 
 $messages['pms'] = array(
