@@ -713,9 +713,13 @@ $messages['km'] = array(
 	'proofreadpage_index'             => 'លិបិក្រម',
 	'proofreadpage_nextpage'          => 'ទំព័របន្ទាប់',
 	'proofreadpage_prevpage'          => 'ទំព័រមុន',
+	'proofreadpage_header'            => 'បឋមកថា(មិនរួមបញ្ចូល)៖',
+	'proofreadpage_footer'            => 'បាតកថា(មិនរួមបញ្ចូល)៖',
+	'proofreadpage_quality2_category' => 'មានបញ្ហា',
 	'proofreadpage_index_listofpages' => 'បញ្ជីទំព័រ',
 	'proofreadpage_image_message'     => 'ភ្ជាប់ទៅទំព័រលិបិក្រម',
 	'proofreadpage_page_status'       => 'ស្ថានភាព ទំព័រ',
+	'proofreadpage_js_attributes'     => 'អ្នកនិពន្ធ ចំណងជើង ឆ្នាំបោះពុម្ព រោងពុម្ព',
 );
 
 $messages['la'] = array(
@@ -800,7 +804,15 @@ $messages['nds'] = array(
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'Bild',
 	'proofreadpage_index'             => 'Index',
+	'proofreadpage_nextpage'          => 'Nächste Siet',
+	'proofreadpage_prevpage'          => 'Vörige Siet',
+	'proofreadpage_quality1_category' => 'nich korrekturleest',
+	'proofreadpage_quality2_category' => 'problemaatsch',
+	'proofreadpage_quality3_category' => 'korrekturleest',
 	'proofreadpage_index_listofpages' => 'Siedenlist',
+	'proofreadpage_image_message'     => 'Lenk na de Indexsiet',
+	'proofreadpage_page_status'       => 'Siedenstatus',
+	'proofreadpage_js_attributes'     => 'Schriever Titel Johr Verlag',
 	'proofreadpage_index_attributes'  => 'Schriever
 Titel
 Johr|Johr, dat dat rutkamen is
