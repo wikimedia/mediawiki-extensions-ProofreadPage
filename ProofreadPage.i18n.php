@@ -733,7 +733,7 @@ $messages['lb'] = array(
 	'proofreadpage_namespace'         => 'Säit',
 	'proofreadpage_image'             => 'Bild',
 	'proofreadpage_nextpage'          => 'Nächst Säit',
-	'proofreadpage_prevpage'          => 'Virescht Säit',
+	'proofreadpage_prevpage'          => 'Säit virdrun',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
 );
 
@@ -787,6 +787,39 @@ Leidėjas
 Paveikslėlis|Viršelis
 Puslapiai||20
 Pastabos||10',
+);
+
+/** Marathi (मराठी)
+ * @author Kaustubh
+ */
+$messages['mr'] = array(
+	'proofreadpage_desc'              => 'मूळ प्रतीशी मजकूराची छाननी करण्याची सोपी पद्धत',
+	'proofreadpage_namespace'         => 'पान',
+	'proofreadpage_index_namespace'   => 'अनुक्रमणिका',
+	'proofreadpage_image'             => 'चित्र',
+	'proofreadpage_index'             => 'अनुक्रमणिका',
+	'proofreadpage_nextpage'          => 'पुढील पान',
+	'proofreadpage_prevpage'          => 'मागील पान',
+	'proofreadpage_header'            => 'पानाच्या वरील मजकूर (noinclude):',
+	'proofreadpage_body'              => 'पानाचा मुख्य मजकूर (जो वापरायचा आहे):',
+	'proofreadpage_footer'            => 'पानाच्या खालील मजकूर (noinclude):',
+	'proofreadpage_toggleheaders'     => 'noinclude विभांगांची दृष्य पातळी बदला',
+	'proofreadpage_quality1_category' => 'तपासलेले नाही',
+	'proofreadpage_quality2_category' => 'समस्या करणारे',
+	'proofreadpage_quality3_category' => 'मजकूर तपासा',
+	'proofreadpage_quality4_category' => 'प्रमाणित',
+	'proofreadpage_index_listofpages' => 'पानांची यादी',
+	'proofreadpage_image_message'     => 'अनुक्रमणिका असणार्‍या पानाशी दुवा द्या',
+	'proofreadpage_page_status'       => 'पानाची स्थिती',
+	'proofreadpage_js_attributes'     => 'लेखक शीर्षक वर्ष प्रकाशक',
+	'proofreadpage_index_attributes'  => 'लेखक
+शीर्षक
+वर्ष|प्रकाशन वर्ष
+प्रकाशक
+स्रोत
+चित्र|मुखपृष्ठ चित्र
+पाने||२०
+शेरा||१०',
 );
 
 /** Erzya (эрзянь кель)
