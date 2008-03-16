@@ -337,6 +337,7 @@ $messages['fa'] = array(
 /** Finnish (Suomi)
  * @author Nike
  * @author Str4nd
+ * @author Cimon Avaro
  */
 $messages['fi'] = array(
 	'proofreadpage_namespace'         => 'Sivu',
@@ -351,6 +352,7 @@ $messages['fi'] = array(
 	'proofreadpage_quality4_category' => 'Hyväksytty',
 	'proofreadpage_index_listofpages' => 'Sivuluettelo',
 	'proofreadpage_image_message'     => 'Linkki hakemistosivuun',
+	'proofreadpage_page_status'       => 'Sivun tila',
 );
 
 /** French (Français)
@@ -695,6 +697,26 @@ $messages['ja'] = array(
 画像|表紙画像
 ページ||20
 注釈||10',
+);
+
+/** Jutish (Jysk)
+ * @author Huslåke
+ */
+$messages['jut'] = array(
+	'proofreadpage_namespace'        => 'Ertikel',
+	'proofreadpage_index_namespace'  => 'Indeks',
+	'proofreadpage_image'            => 'billet',
+	'proofreadpage_index'            => 'Indeks',
+	'proofreadpage_nextpage'         => 'Følgende pæge',
+	'proofreadpage_prevpage'         => 'Førge pæge',
+	'proofreadpage_index_attributes' => 'Skrever
+Titel
+År|År der publikåsje
+Udgæver
+Sårs
+Billet|Førkåntsbillet
+Strøk||20
+Anmarker||10',
 );
 
 $messages['ka'] = array(
