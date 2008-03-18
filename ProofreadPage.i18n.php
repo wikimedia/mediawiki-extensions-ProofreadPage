@@ -700,16 +700,30 @@ $messages['ja'] = array(
 );
 
 /** Jutish (Jysk)
+ * @author Ælsån
  * @author Huslåke
  */
 $messages['jut'] = array(
-	'proofreadpage_namespace'        => 'Ertikel',
-	'proofreadpage_index_namespace'  => 'Indeks',
-	'proofreadpage_image'            => 'billet',
-	'proofreadpage_index'            => 'Indeks',
-	'proofreadpage_nextpage'         => 'Følgende pæge',
-	'proofreadpage_prevpage'         => 'Førge pæge',
-	'proofreadpage_index_attributes' => 'Skrever
+	'proofreadpage_desc'              => 'Kan semple ándrenger der tekst til æ original sken',
+	'proofreadpage_namespace'         => 'Ertikel',
+	'proofreadpage_index_namespace'   => 'Indeks',
+	'proofreadpage_image'             => 'billet',
+	'proofreadpage_index'             => 'Indeks',
+	'proofreadpage_nextpage'          => 'Følgende pæge',
+	'proofreadpage_prevpage'          => 'Førge pæge',
+	'proofreadpage_header'            => 'Åverskreft (noinclude):',
+	'proofreadpage_body'              => 'Pæge kåm (til være transkluded):',
+	'proofreadpage_footer'            => 'Fåt (noinclude):',
+	'proofreadpage_toggleheaders'     => 'toggle noinclude seksje sænhvårdeghed',
+	'proofreadpage_quality1_category' => 'Ekke sæn',
+	'proofreadpage_quality2_category' => 'Pråblæmåtisk',
+	'proofreadpage_quality3_category' => 'Sæn',
+	'proofreadpage_quality4_category' => 'Vålidærn',
+	'proofreadpage_index_listofpages' => 'Liste der pæger',
+	'proofreadpage_image_message'     => 'Link til æ indeks pæge',
+	'proofreadpage_page_status'       => 'Pægeståt',
+	'proofreadpage_js_attributes'     => 'Skrever Titel År Udgæver',
+	'proofreadpage_index_attributes'  => 'Skrever
 Titel
 År|År der publikåsje
 Udgæver
@@ -999,8 +1013,11 @@ $messages['pl'] = array(
 	'proofreadpage_nextpage'          => 'Następna strona',
 	'proofreadpage_prevpage'          => 'Poprzednia strona',
 	'proofreadpage_header'            => 'Nagłówek (noinclude):',
+	'proofreadpage_body'              => 'Treść strony (załączany fragment):',
 	'proofreadpage_footer'            => 'Stopka (noinclude):',
+	'proofreadpage_quality1_category' => 'Niesprawdzone',
 	'proofreadpage_quality2_category' => 'Problematyczne',
+	'proofreadpage_quality3_category' => 'Sprawdzone',
 	'proofreadpage_quality4_category' => 'Sprawdzone',
 	'proofreadpage_index_listofpages' => 'Spis stron',
 	'proofreadpage_image_message'     => 'Link do strony indeksowej',
@@ -1062,7 +1079,9 @@ $messages['ps'] = array(
 	'proofreadpage_nextpage'          => 'بل مخ',
 	'proofreadpage_prevpage'          => 'تېر مخ',
 	'proofreadpage_index_listofpages' => 'د مخونو لړليک',
+	'proofreadpage_image_message'     => 'د ليکلړ مخ ته تړنه',
 	'proofreadpage_page_status'       => 'د مخ دريځ',
+	'proofreadpage_js_attributes'     => 'ليکوال سرليک کال خپرونکی',
 	'proofreadpage_index_attributes'  => 'ليکوال
 سرليک
 کال|د خپرېدو کال
