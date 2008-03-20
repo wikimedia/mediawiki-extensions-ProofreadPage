@@ -260,11 +260,19 @@ $messages['ee'] = array(
 	'proofreadpage_namespace' => 'Nuŋɔŋlɔ',
 );
 
+/** Greek (Ελληνικά)
+ * @author ZaDiak
+ * @author Consta
+ */
 $messages['el'] = array(
-	'proofreadpage_namespace' => 'Σελίδα',
-	'proofreadpage_image' => 'Εικόνα',
-	'proofreadpage_nextpage' => 'Επόμενη σελίδα',
-	'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
+	'proofreadpage_namespace'         => 'Σελίδα',
+	'proofreadpage_image'             => 'Εικόνα',
+	'proofreadpage_nextpage'          => 'Επόμενη σελίδα',
+	'proofreadpage_prevpage'          => 'Προηγούμενη σελίδα',
+	'proofreadpage_header'            => 'Επικεφαλίδα (noinclude):',
+	'proofreadpage_footer'            => 'Κατακλείδα (noinclude):',
+	'proofreadpage_quality2_category' => 'Προβληματική',
+	'proofreadpage_quality4_category' => 'Αναγνωρίστηκε',
 );
 
 /** Esperanto (Esperanto)
@@ -912,7 +920,7 @@ $messages['nl'] = array(
 	'proofreadpage_quality2_category' => 'Onvolledig',
 	'proofreadpage_quality3_category' => 'Proefgelezen',
 	'proofreadpage_quality4_category' => 'Gecontroleerd',
-	'proofreadpage_index_listofpages' => "Lijst van pagina's",
+	'proofreadpage_index_listofpages' => 'Paginalijst',
 	'proofreadpage_image_message'     => 'Verwijziging naar de indexpagina',
 	'proofreadpage_page_status'       => 'Paginastatus',
 	'proofreadpage_js_attributes'     => 'Auteur Titel Jaar Uitgever',
@@ -1391,6 +1399,8 @@ $messages['vi'] = array(
 	'proofreadpage_image'             => 'hình',
 	'proofreadpage_nextpage'          => 'Trang trước',
 	'proofreadpage_prevpage'          => 'Trang sau',
+	'proofreadpage_header'            => 'Phần đầu (noinclude):',
+	'proofreadpage_footer'            => 'Phần cuối (noinclude):',
 	'proofreadpage_index_listofpages' => 'Danh sách các trang',
 	'proofreadpage_page_status'       => 'Tình trạng của trang',
 	'proofreadpage_index_attributes'  => 'Author|Tác giả
