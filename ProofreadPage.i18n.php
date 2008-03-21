@@ -533,7 +533,7 @@ Přispomnjenki||10',
 
 /** Hungarian (Magyar)
  * @author KossuthRad
- * @author Bdanee
+ * @author Dani
  * @author Dorgan
  */
 $messages['hu'] = array(
