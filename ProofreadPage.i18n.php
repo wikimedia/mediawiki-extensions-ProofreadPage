@@ -219,6 +219,15 @@ Stran||20
 Poznámky||10',
 );
 
+/** Danish (Dansk)
+ * @author Jon Harald Søby
+ */
+$messages['da'] = array(
+	'proofreadpage_namespace' => 'Side',
+	'proofreadpage_nextpage'  => 'Næste side',
+	'proofreadpage_prevpage'  => 'Forrige side',
+);
+
 /** German (Deutsch)
  * @author ThomasV
  * @author Raimond Spekking
@@ -537,6 +546,7 @@ Přispomnjenki||10',
  * @author Dorgan
  */
 $messages['hu'] = array(
+	'proofreadpage_desc'              => 'Lehetővé teszi a szöveg és az eredeti szkennelt változat egyszerű összehasonlítását',
 	'proofreadpage_namespace'         => 'Oldal',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'Kép',
@@ -932,6 +942,17 @@ Bron
 Afbeelding|Omslag
 Pagina's||20
 Opmerkingen||10",
+);
+
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Jon Harald Søby
+ */
+$messages['nn'] = array(
+	'proofreadpage_namespace'       => 'Side',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_index'           => 'Indeks',
+	'proofreadpage_nextpage'        => 'Neste side',
+	'proofreadpage_prevpage'        => 'Førre side',
 );
 
 /** Norwegian (‪Norsk (bokmål)‬)
@@ -1344,6 +1365,13 @@ $messages['te'] = array(
 బొమ్మ|ముఖచిత్రం
 పేజీలు||20
 రిమార్కులు||10',
+);
+
+/** Tetum (Tetun)
+ * @author MF-Warburg
+ */
+$messages['tet'] = array(
+	'proofreadpage_namespace' => 'Pájina',
 );
 
 /** Tajik (Тоҷикӣ)
