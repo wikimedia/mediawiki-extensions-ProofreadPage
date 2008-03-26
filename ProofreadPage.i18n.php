@@ -187,6 +187,13 @@ $messages['br'] = array(
 	'proofreadpage_page_status'     => 'Statud ar bajenn',
 );
 
+/** Catalan (Català)
+ * @author SMP
+ */
+$messages['ca'] = array(
+	'proofreadpage_namespace' => 'Pàgina',
+);
+
 /** Czech (Česky)
  * @author Matěj Grabovský
  */
@@ -1302,6 +1309,27 @@ Wälle
 Bielde|Tittelbielde
 Sieden||20
 Bemäärkengen||10',
+);
+
+/** Sundanese (Basa Sunda)
+ * @author Kandar
+ */
+$messages['su'] = array(
+	'proofreadpage_namespace'        => 'Kaca',
+	'proofreadpage_index_namespace'  => 'Béréndélan',
+	'proofreadpage_image'            => 'gambar',
+	'proofreadpage_index'            => 'Béréndélan',
+	'proofreadpage_nextpage'         => 'Kaca salajengna',
+	'proofreadpage_prevpage'         => 'Kaca saméméhna',
+	'proofreadpage_page_status'      => 'Status kaca',
+	'proofreadpage_index_attributes' => 'Pangarang
+Judul
+Taun|Taun medal
+Pamedal
+Sumber
+Gambar|Gambar jilid
+Kaca||20
+Catetan||10',
 );
 
 /** Swedish (Svenska)
