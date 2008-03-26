@@ -8,26 +8,26 @@
 $messages = array();
 
 $messages['en'] = array(
-	'proofreadpage_desc' => 'Allow easy comparison of text to the original scan',
-	'proofreadpage_namespace' => 'Page',
-	'proofreadpage_index_namespace' => 'Index',
-	'proofreadpage_image' => 'image',
-	'proofreadpage_index' => 'Index',
-	'proofreadpage_nextpage' => 'Next page',
-	'proofreadpage_prevpage' => 'Previous page',
-	'proofreadpage_header' => 'Header (noinclude):',
-	'proofreadpage_body' => 'Page body (to be transcluded):',
-	'proofreadpage_footer' => 'Footer (noinclude):',
-	'proofreadpage_toggleheaders' => 'toggle noinclude sections visibility',
+	'proofreadpage_desc'              => 'Allow easy comparison of text to the original scan',
+	'proofreadpage_namespace'         => 'Page',
+	'proofreadpage_index_namespace'   => 'Index',
+	'proofreadpage_image'             => 'image',
+	'proofreadpage_index'             => 'Index',
+	'proofreadpage_nextpage'          => 'Next page',
+	'proofreadpage_prevpage'          => 'Previous page',
+	'proofreadpage_header'            => 'Header (noinclude):',
+	'proofreadpage_body'              => 'Page body (to be transcluded):',
+	'proofreadpage_footer'            => 'Footer (noinclude):',
+	'proofreadpage_toggleheaders'     => 'toggle noinclude sections visibility',
 	'proofreadpage_quality1_category' => 'Not proofread',
 	'proofreadpage_quality2_category' => 'Problematic',
 	'proofreadpage_quality3_category' => 'Proofread',
 	'proofreadpage_quality4_category' => 'Validated',
 	'proofreadpage_index_listofpages' => 'List of pages',
-	'proofreadpage_image_message' => 'Link to the index page',
-	'proofreadpage_page_status' => 'Page status',
-	'proofreadpage_js_attributes' =>'Author Title Year Publisher',
-	'proofreadpage_index_attributes' => 'Author
+	'proofreadpage_image_message'     => 'Link to the index page',
+	'proofreadpage_page_status'       => 'Page status',
+	'proofreadpage_js_attributes'     =>'Author Title Year Publisher',
+	'proofreadpage_index_attributes'  => 'Author
 Title
 Year|Year of publication
 Publisher
