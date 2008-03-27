@@ -1315,14 +1315,17 @@ Bemäärkengen||10',
  * @author Kandar
  */
 $messages['su'] = array(
-	'proofreadpage_namespace'        => 'Kaca',
-	'proofreadpage_index_namespace'  => 'Béréndélan',
-	'proofreadpage_image'            => 'gambar',
-	'proofreadpage_index'            => 'Béréndélan',
-	'proofreadpage_nextpage'         => 'Kaca salajengna',
-	'proofreadpage_prevpage'         => 'Kaca saméméhna',
-	'proofreadpage_page_status'      => 'Status kaca',
-	'proofreadpage_index_attributes' => 'Pangarang
+	'proofreadpage_namespace'         => 'Kaca',
+	'proofreadpage_index_namespace'   => 'Béréndélan',
+	'proofreadpage_image'             => 'gambar',
+	'proofreadpage_index'             => 'Béréndélan',
+	'proofreadpage_nextpage'          => 'Kaca salajengna',
+	'proofreadpage_prevpage'          => 'Kaca saméméhna',
+	'proofreadpage_index_listofpages' => 'Béréndélan kaca',
+	'proofreadpage_image_message'     => 'Tumbu ka kaca béréndélan',
+	'proofreadpage_page_status'       => 'Status kaca',
+	'proofreadpage_js_attributes'     => 'Pangarang Judul Taun Pamedal',
+	'proofreadpage_index_attributes'  => 'Pangarang
 Judul
 Taun|Taun medal
 Pamedal
