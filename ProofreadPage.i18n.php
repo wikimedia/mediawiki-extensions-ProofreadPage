@@ -791,6 +791,7 @@ $messages['la'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'proofreadpage_desc'              => 'Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen',
 	'proofreadpage_namespace'         => 'Säit',
 	'proofreadpage_image'             => 'Bild',
 	'proofreadpage_nextpage'          => 'Nächst Säit',
@@ -848,6 +849,17 @@ Leidėjas
 Paveikslėlis|Viršelis
 Puslapiai||20
 Pastabos||10',
+);
+
+/** Malayalam (മലയാളം)
+ * @author Shijualex
+ */
+$messages['ml'] = array(
+	'proofreadpage_namespace'         => 'താള്‍',
+	'proofreadpage_image'             => 'ചിത്രം',
+	'proofreadpage_nextpage'          => 'അടുത്ത താള്‍',
+	'proofreadpage_prevpage'          => 'പിറകിലെ താള്‍',
+	'proofreadpage_index_listofpages' => 'താളുകളുടെ പട്ടിക',
 );
 
 /** Marathi (मराठी)
