@@ -179,12 +179,28 @@ $messages['bn'] = array(
  * @author Fulup
  */
 $messages['br'] = array(
-	'proofreadpage_namespace'       => 'Pajenn',
-	'proofreadpage_index_namespace' => 'Meneger',
-	'proofreadpage_image'           => 'skeudenn',
-	'proofreadpage_nextpage'        => "Pajenn war-lerc'h",
-	'proofreadpage_prevpage'        => 'Pajenn a-raok',
-	'proofreadpage_page_status'     => 'Statud ar bajenn',
+	'proofreadpage_namespace'         => 'Pajenn',
+	'proofreadpage_index_namespace'   => 'Meneger',
+	'proofreadpage_image'             => 'skeudenn',
+	'proofreadpage_index'             => 'Meneger',
+	'proofreadpage_nextpage'          => "Pajenn war-lerc'h",
+	'proofreadpage_prevpage'          => 'Pajenn a-raok',
+	'proofreadpage_quality1_category' => 'Da reizhañ',
+	'proofreadpage_quality2_category' => 'Kudennek',
+	'proofreadpage_quality3_category' => 'Reizhet',
+	'proofreadpage_quality4_category' => 'Gwiriekaet',
+	'proofreadpage_index_listofpages' => 'Roll ar pajennoù',
+	'proofreadpage_image_message'     => 'Liamm war-du ar meneger',
+	'proofreadpage_page_status'       => 'Statud ar bajenn',
+	'proofreadpage_js_attributes'     => 'Aozer Titl Bloaz Embanner',
+	'proofreadpage_index_attributes'  => 'Aozer
+titl
+Bloaz|Bloavezh embann
+Embanner
+Mammenn
+Skeudenn|Skeudenn ar golo
+Pajennoù||20
+Notennoù||10',
 );
 
 /** Catalan (Català)
