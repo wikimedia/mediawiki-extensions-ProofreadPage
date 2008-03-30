@@ -876,6 +876,7 @@ $messages['ml'] = array(
 	'proofreadpage_nextpage'          => 'അടുത്ത താള്‍',
 	'proofreadpage_prevpage'          => 'പിറകിലെ താള്‍',
 	'proofreadpage_index_listofpages' => 'താളുകളുടെ പട്ടിക',
+	'proofreadpage_page_status'       => 'താളിന്റെ തല്‍സ്ഥിതി',
 );
 
 /** Marathi (मराठी)
