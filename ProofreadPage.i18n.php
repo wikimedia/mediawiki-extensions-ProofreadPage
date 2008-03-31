@@ -1437,7 +1437,7 @@ $messages['tet'] = array(
 /** Tajik (Тоҷикӣ)
  * @author Ibrahim
  */
-$messages['tg'] = array(
+$messages['tg-cyrl'] = array(
 	'proofreadpage_desc'              => 'Имкони муқоисаи осони матн бо нусхаи аслии пӯйишшударо фароҳам меоварад',
 	'proofreadpage_namespace'         => 'Саҳифа',
 	'proofreadpage_index_namespace'   => 'Индекс',
