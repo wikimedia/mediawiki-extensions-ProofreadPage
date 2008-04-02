@@ -204,10 +204,15 @@ Notennoù||10',
 );
 
 /** Catalan (Català)
+ * @author Paucabot
  * @author SMP
  */
 $messages['ca'] = array(
-	'proofreadpage_namespace' => 'Pàgina',
+	'proofreadpage_namespace'         => 'Pàgina',
+	'proofreadpage_nextpage'          => 'Pàgina següent',
+	'proofreadpage_prevpage'          => 'Pàgina anterior',
+	'proofreadpage_index_listofpages' => 'Llista de pàgines',
+	'proofreadpage_js_attributes'     => 'Autor Títol Any Editorial',
 );
 
 /** Czech (Česky)
@@ -1299,14 +1304,14 @@ $messages['sl'] = array(
 	'proofreadpage_quality4_category' => 'Potrjeno',
 );
 
-/** ћирилица (ћирилица)
+/** Serbian Cyrillic ekavian (ћирилица)
  * @author Sasa Stefanovic
  */
 $messages['sr-ec'] = array(
-	'proofreadpage_namespace' => 'Страница',
+	'proofreadpage_namespace' => 'Страна',
 	'proofreadpage_image'     => 'слика',
-	'proofreadpage_nextpage'  => 'Следећа страница',
-	'proofreadpage_prevpage'  => 'Претходна страница',
+	'proofreadpage_nextpage'  => 'Следећа страна',
+	'proofreadpage_prevpage'  => 'Претходна страна',
 );
 
 /** Seeltersk (Seeltersk)
