@@ -501,6 +501,38 @@ Páxinas||20
 Comentarios||10',
 );
 
+/** Hindi (हिन्दी)
+ * @author Kaustubh
+ */
+$messages['hi'] = array(
+	'proofreadpage_namespace'         => 'पन्ना',
+	'proofreadpage_index_namespace'   => 'अनुक्रम',
+	'proofreadpage_image'             => 'चित्र',
+	'proofreadpage_index'             => 'अनुक्रम',
+	'proofreadpage_nextpage'          => 'अगला पन्ना',
+	'proofreadpage_prevpage'          => 'पिछला पन्ना',
+	'proofreadpage_header'            => 'पन्ने का उपरी पाठ (noinclude):',
+	'proofreadpage_body'              => 'पन्ने का मुख्य पाठ (जो इस्तेमाल में आयेगा):',
+	'proofreadpage_footer'            => 'पन्ने का निचला पाठ (noinclude):',
+	'proofreadpage_toggleheaders'     => 'noinclude विभांगोंका दृष्य स्तर बदलें',
+	'proofreadpage_quality1_category' => 'परिक्षण हुआ नहीं',
+	'proofreadpage_quality2_category' => 'समस्याकारक',
+	'proofreadpage_quality3_category' => 'परिक्षण करें',
+	'proofreadpage_quality4_category' => 'प्रमाणित',
+	'proofreadpage_index_listofpages' => 'पन्नों की सूची',
+	'proofreadpage_image_message'     => 'अनुक्रम पन्ने के लिये कड़ी',
+	'proofreadpage_page_status'       => 'पन्नेकी स्थिती',
+	'proofreadpage_js_attributes'     => 'लेखक शीर्षक वर्ष प्रकाशक',
+	'proofreadpage_index_attributes'  => 'लेखक
+शीर्षक
+वर्ष|प्रकाशन वर्ष
+प्रकाशक
+स्रोत
+चित्र|मुखपृष्ठ चित्र
+पन्ने||२०
+टिप्पणी||१०',
+);
+
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  * @author Dnik
