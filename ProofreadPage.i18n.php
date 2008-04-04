@@ -505,6 +505,7 @@ Comentarios||10',
  * @author Kaustubh
  */
 $messages['hi'] = array(
+	'proofreadpage_desc'              => 'मूल पाठ और सद्य पाठ में फर्क आसानी से दर्शाती हैं',
 	'proofreadpage_namespace'         => 'पन्ना',
 	'proofreadpage_index_namespace'   => 'अनुक्रम',
 	'proofreadpage_image'             => 'चित्र',
