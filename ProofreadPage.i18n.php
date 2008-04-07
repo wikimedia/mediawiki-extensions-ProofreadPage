@@ -850,7 +850,9 @@ $messages['lb'] = array(
 	'proofreadpage_image'             => 'Bild',
 	'proofreadpage_nextpage'          => 'Nächst Säit',
 	'proofreadpage_prevpage'          => 'Säit virdrun',
+	'proofreadpage_footer'            => 'Foussnote (noinclude):',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
+	'proofreadpage_js_attributes'     => 'Auteur Titel Joer Editeur',
 );
 
 /** Limburgish (Limburgs)
@@ -910,11 +912,31 @@ Pastabos||10',
  */
 $messages['ml'] = array(
 	'proofreadpage_namespace'         => 'താള്‍',
+	'proofreadpage_index_namespace'   => 'ഇന്‍ഡെക്സ്',
 	'proofreadpage_image'             => 'ചിത്രം',
+	'proofreadpage_index'             => 'ഇന്‍ഡെക്സ്',
 	'proofreadpage_nextpage'          => 'അടുത്ത താള്‍',
 	'proofreadpage_prevpage'          => 'പിറകിലെ താള്‍',
+	'proofreadpage_header'            => 'തലവാചകം (noinclude):',
+	'proofreadpage_body'              => 'താളിന്റെ ഉള്ളടക്കം (transclude ചെയ്യാനുള്ളത്):',
+	'proofreadpage_footer'            => 'പാദവാചകം (noinclude):',
+	'proofreadpage_toggleheaders'     => 'noinclude വിഭാഗങ്ങളുടെ പ്രദര്‍ശനം ടോഗിള്‍ ചെയ്യുക',
+	'proofreadpage_quality1_category' => 'പ്രൂഫ് റീഡ് ചെയ്തിട്ടില്ല',
+	'proofreadpage_quality2_category' => 'പ്രശ്നമുള്ളതാണ്‌',
+	'proofreadpage_quality3_category' => 'പ്രൂഫ്റീഡ് ചെയ്തതാണ്‌',
+	'proofreadpage_quality4_category' => 'സ്ഥിരീകരിച്ചതാണ്‌',
 	'proofreadpage_index_listofpages' => 'താളുകളുടെ പട്ടിക',
+	'proofreadpage_image_message'     => 'ഇന്‍ഡെക്സ് താളിലേക്കുള്ള കണ്ണി',
 	'proofreadpage_page_status'       => 'താളിന്റെ തല്‍സ്ഥിതി',
+	'proofreadpage_js_attributes'     => 'ലേഖകന്‍ കൃതിയുടെപേര്‌ വര്‍ഷം പ്രസാധകര്‍',
+	'proofreadpage_index_attributes'  => 'ലേഖകന്‍ 
+കൃതിയുടെപേര്‌ 
+വര്‍ഷം|പ്രസിദ്ധീകരിച്ച വര്‍ഷം 
+പ്രസാധകര്‍
+ഉറവിടം
+ചിത്രം|മുഖച്ചിത്രം
+താളുകള്‍||20
+കുറിപ്പുകള്‍||10',
 );
 
 /** Marathi (मराठी)
@@ -1118,6 +1140,7 @@ $messages['pl'] = array(
 	'proofreadpage_header'            => 'Nagłówek (noinclude):',
 	'proofreadpage_body'              => 'Treść strony (załączany fragment):',
 	'proofreadpage_footer'            => 'Stopka (noinclude):',
+	'proofreadpage_toggleheaders'     => 'zmień widoczność sekcji noinclude',
 	'proofreadpage_quality1_category' => 'Niesprawdzone',
 	'proofreadpage_quality2_category' => 'Problematyczne',
 	'proofreadpage_quality3_category' => 'Sprawdzone',
