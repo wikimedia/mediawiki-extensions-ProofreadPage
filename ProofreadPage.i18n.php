@@ -812,6 +812,16 @@ Strøk||20
 Anmarker||10',
 );
 
+/** Javanese (Basa Jawa)
+ * @author Meursault2004
+ */
+$messages['jv'] = array(
+	'proofreadpage_quality2_category' => 'Problématis',
+	'proofreadpage_index_listofpages' => 'Daftar kaca',
+	'proofreadpage_page_status'       => 'Status kaca',
+	'proofreadpage_js_attributes'     => 'Pangripta Irah-irahan Taun Panerbit',
+);
+
 $messages['ka'] = array(
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
@@ -1528,6 +1538,22 @@ $messages['tg-cyrl'] = array(
 Мулоҳизот||10',
 );
 
+/** Thai (ไทย)
+ * @author Passawuth
+ */
+$messages['th'] = array(
+	'proofreadpage_namespace'         => 'หน้า',
+	'proofreadpage_index_namespace'   => 'ดัชนี',
+	'proofreadpage_image'             => 'ภาพ',
+	'proofreadpage_index'             => 'ดัชนี',
+	'proofreadpage_nextpage'          => 'หน้าต่อไป',
+	'proofreadpage_prevpage'          => 'หน้าก่อนหน้านี้',
+	'proofreadpage_header'            => 'หัวเรื่อง (noinclude) :',
+	'proofreadpage_quality1_category' => 'ยังไม่ได้ตรวจสอบ',
+	'proofreadpage_quality2_category' => 'มีปัญหา',
+	'proofreadpage_page_status'       => 'สถานะของหน้า',
+);
+
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
  */
@@ -1537,6 +1563,39 @@ $messages['tr'] = array(
 	'proofreadpage_index'     => 'Dizin',
 	'proofreadpage_nextpage'  => 'Gelecek sayfa',
 	'proofreadpage_prevpage'  => 'Önceki sayfa',
+);
+
+/** Vèneto (Vèneto)
+ * @author Candalua
+ */
+$messages['vec'] = array(
+	'proofreadpage_desc'              => 'Parméte un façile confronto tra un testo e la so scansion original',
+	'proofreadpage_namespace'         => 'Pagina',
+	'proofreadpage_index_namespace'   => 'Indice',
+	'proofreadpage_image'             => 'imagine',
+	'proofreadpage_index'             => 'Indice',
+	'proofreadpage_nextpage'          => 'Pagina sucessiva',
+	'proofreadpage_prevpage'          => 'Pagina precedente',
+	'proofreadpage_header'            => 'Intestazion (mìa inclusa):',
+	'proofreadpage_body'              => 'Corpo de la pagina (da inclùdar):',
+	'proofreadpage_footer'            => 'Pié de pagina (mìa incluso)',
+	'proofreadpage_toggleheaders'     => 'ativa/disativa la visibilità de le sezioni mìa incluse',
+	'proofreadpage_quality1_category' => 'Da corègiar',
+	'proofreadpage_quality2_category' => 'Da rivédar',
+	'proofreadpage_quality3_category' => 'Corèta',
+	'proofreadpage_quality4_category' => 'Verificà',
+	'proofreadpage_index_listofpages' => 'Lista de le pagine',
+	'proofreadpage_image_message'     => 'Colegamento a la pagina indice',
+	'proofreadpage_page_status'       => 'Status de la pagina',
+	'proofreadpage_js_attributes'     => 'Autor Titolo Ano Editor',
+	'proofreadpage_index_attributes'  => 'Autor
+Titolo
+Ano|Ano de pubblicazion
+Editor
+Fonte
+Imagine|Imagine de copertina
+Pagine||20
+Note||10',
 );
 
 /** Vietnamese (Tiếng Việt)
