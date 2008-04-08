@@ -1645,17 +1645,91 @@ Küpets|10',
 );
 
 $messages['yue'] = array(
-	'proofreadpage_namespace' => '頁',
-	'proofreadpage_index_namespace' => '索引',
+	'proofreadpage_desc'              => '容許簡易噉去比較原掃瞄同埋文字',
+	'proofreadpage_namespace'         => '頁',
+	'proofreadpage_index_namespace'   => '索引',
+	'proofreadpage_image'             => '圖像',
+	'proofreadpage_index'             => '索引',
+	'proofreadpage_nextpage'          => '下一版',
+	'proofreadpage_prevpage'          => '上一版',
+	'proofreadpage_header'            => '頭 (唔包含):',
+	'proofreadpage_body'              => '頁身 (去包含):',
+	'proofreadpage_footer'            => '尾 (唔包含):',
+	'proofreadpage_toggleheaders'     => '較唔包含小節可見性',
+	'proofreadpage_quality1_category' => '未校對',
+	'proofreadpage_quality2_category' => '有問題',
+	'proofreadpage_quality3_category' => '已校對',
+	'proofreadpage_quality4_category' => '已認證',
+	'proofreadpage_index_listofpages' => '頁一覽',
+	'proofreadpage_image_message'     => '連到索引頁嘅連結',
+	'proofreadpage_page_status'       => '頁狀態',
+	'proofreadpage_js_attributes'     => '作者 標題 年份 出版者',
+	'proofreadpage_index_attributes'  => '作者
+標題
+年份|出版年份
+出版者
+來源
+圖像|封面照
+頁數||20
+備註||10',
 );
 
 $messages['zh-hans'] = array(
-	'proofreadpage_namespace' => '页面',
-	'proofreadpage_index_namespace' => '索引',
+	'proofreadpage_desc'              => '容许简易地去比较原扫瞄和文字',
+	'proofreadpage_namespace'         => '页面',
+	'proofreadpage_index_namespace'   => '索引',
+	'proofreadpage_image'             => '图像',
+	'proofreadpage_index'             => '索引',
+	'proofreadpage_nextpage'          => '下一页',
+	'proofreadpage_prevpage'          => '上一页',
+	'proofreadpage_header'            => '首 (不包含):',
+	'proofreadpage_body'              => '页身 (包含):',
+	'proofreadpage_footer'            => '尾 (不包含):',
+	'proofreadpage_toggleheaders'     => '调整不包含段落之可见性',
+	'proofreadpage_quality1_category' => '未校对',
+	'proofreadpage_quality2_category' => '有问题',
+	'proofreadpage_quality3_category' => '已校对',
+	'proofreadpage_quality4_category' => '已认证',
+	'proofreadpage_index_listofpages' => '页面列表',
+	'proofreadpage_image_message'     => '连到索引页的链接',
+	'proofreadpage_page_status'       => '页面状态',
+	'proofreadpage_js_attributes'     => '作者 标题 年份 出版者',
+	'proofreadpage_index_attributes'  => '作者
+标题
+年份|出版年份
+出版者
+来源
+图像|封面照
+页数||20
+备注||10',
 );
 
 $messages['zh-hant'] = array(
-	'proofreadpage_namespace' => '頁面',
-	'proofreadpage_index_namespace' => '索引',
+	'proofreadpage_desc'              => '容許簡易地去比較原掃瞄和文字',
+	'proofreadpage_namespace'         => '頁面',
+	'proofreadpage_index_namespace'   => '索引',
+	'proofreadpage_image'             => '圖像',
+	'proofreadpage_index'             => '索引',
+	'proofreadpage_nextpage'          => '下一頁',
+	'proofreadpage_prevpage'          => '上一頁',
+	'proofreadpage_header'            => '首 (不包含):',
+	'proofreadpage_body'              => '頁身 (包含):',
+	'proofreadpage_footer'            => '尾 (不包含):',
+	'proofreadpage_toggleheaders'     => '調整不包含段落之可見性',
+	'proofreadpage_quality1_category' => '未校對',
+	'proofreadpage_quality2_category' => '有問題',
+	'proofreadpage_quality3_category' => '已校對',
+	'proofreadpage_quality4_category' => '已認證',
+	'proofreadpage_index_listofpages' => '頁面清單',
+	'proofreadpage_image_message'     => '連到索引頁的連結',
+	'proofreadpage_page_status'       => '頁面狀態',
+	'proofreadpage_js_attributes'     => '作者 標題 年份 出版者',
+	'proofreadpage_index_attributes'  => '作者
+標題
+年份|出版年份
+出版者
+來源
+圖像|封面照
+頁數||20
+備註||10',
 );
-
