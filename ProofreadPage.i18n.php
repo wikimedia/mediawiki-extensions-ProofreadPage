@@ -816,7 +816,12 @@ Anmarker||10',
  * @author Meursault2004
  */
 $messages['jv'] = array(
+	'proofreadpage_desc'              => "Supaya prabandhingan karo asliné sing di-''scan'' luwih gampang",
+	'proofreadpage_namespace'         => 'Kaca',
+	'proofreadpage_image'             => 'gambar',
+	'proofreadpage_quality1_category' => 'Durung dikorèksi tulisané',
 	'proofreadpage_quality2_category' => 'Problématis',
+	'proofreadpage_quality3_category' => 'Korèksi tulisan',
 	'proofreadpage_index_listofpages' => 'Daftar kaca',
 	'proofreadpage_page_status'       => 'Status kaca',
 	'proofreadpage_js_attributes'     => 'Pangripta Irah-irahan Taun Panerbit',
@@ -1733,3 +1738,4 @@ $messages['zh-hant'] = array(
 頁數||20
 備註||10',
 );
+
