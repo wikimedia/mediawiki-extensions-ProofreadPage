@@ -383,8 +383,10 @@ $messages['fa'] = array(
  * @author Nike
  * @author Str4nd
  * @author Cimon Avaro
+ * @author Crt
  */
 $messages['fi'] = array(
+	'proofreadpage_desc'              => 'Mahdollistaa helpon vertailun tekstin ja alkuperäisen skannauksen välillä.',
 	'proofreadpage_namespace'         => 'Sivu',
 	'proofreadpage_index_namespace'   => 'Hakemisto',
 	'proofreadpage_image'             => 'kuva',
@@ -819,9 +821,12 @@ $messages['jv'] = array(
 	'proofreadpage_desc'              => "Supaya prabandhingan karo asliné sing di-''scan'' luwih gampang",
 	'proofreadpage_namespace'         => 'Kaca',
 	'proofreadpage_image'             => 'gambar',
+	'proofreadpage_nextpage'          => 'Kaca sabanjuré',
+	'proofreadpage_prevpage'          => 'Kaca sadurungé',
 	'proofreadpage_quality1_category' => 'Durung dikorèksi tulisané',
 	'proofreadpage_quality2_category' => 'Problématis',
 	'proofreadpage_quality3_category' => 'Korèksi tulisan',
+	'proofreadpage_quality4_category' => 'Diabsahaké',
 	'proofreadpage_index_listofpages' => 'Daftar kaca',
 	'proofreadpage_page_status'       => 'Status kaca',
 	'proofreadpage_js_attributes'     => 'Pangripta Irah-irahan Taun Panerbit',
