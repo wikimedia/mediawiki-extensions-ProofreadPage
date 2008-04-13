@@ -1479,6 +1479,15 @@ Sidor||20
 Anmärkningar||10',
 );
 
+/** Silesian (ślůnski)
+ * @author Herr Kriss
+ */
+$messages['szl'] = array(
+	'proofreadpage_namespace' => 'Zajta',
+	'proofreadpage_nextpage'  => 'Nostympno zajta',
+	'proofreadpage_prevpage'  => 'Popředńo zajta',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  * @author Mpradeep
