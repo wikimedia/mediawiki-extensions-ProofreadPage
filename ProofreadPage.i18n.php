@@ -828,6 +828,7 @@ $messages['jv'] = array(
 	'proofreadpage_quality3_category' => 'Korèksi tulisan',
 	'proofreadpage_quality4_category' => 'Diabsahaké',
 	'proofreadpage_index_listofpages' => 'Daftar kaca',
+	'proofreadpage_image_message'     => 'Pranala menyang kaca indèks',
 	'proofreadpage_page_status'       => 'Status kaca',
 	'proofreadpage_js_attributes'     => 'Pangripta Irah-irahan Taun Panerbit',
 );
