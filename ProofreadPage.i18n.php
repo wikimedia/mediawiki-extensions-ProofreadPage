@@ -833,6 +833,14 @@ $messages['jv'] = array(
 	'proofreadpage_image_message'     => 'Pranala menyang kaca indèks',
 	'proofreadpage_page_status'       => 'Status kaca',
 	'proofreadpage_js_attributes'     => 'Pangripta Irah-irahan Taun Panerbit',
+	'proofreadpage_index_attributes'  => 'Pangripta
+Irah-irahan
+Taun|Taun olèhe mbabar
+Panerbit
+Sumber
+Gambar|Gambar samak
+Kaca||20
+Cathetan||10',
 );
 
 $messages['ka'] = array(
