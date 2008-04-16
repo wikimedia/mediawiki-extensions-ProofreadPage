@@ -703,6 +703,14 @@ Halaman||20
 Catatan||10',
 );
 
+/** Ido (Ido)
+ * @author Malafaya
+ */
+$messages['io'] = array(
+	'proofreadpage_namespace' => 'Pagino',
+	'proofreadpage_image'     => 'imajo',
+);
+
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
  */
