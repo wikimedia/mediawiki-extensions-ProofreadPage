@@ -503,6 +503,16 @@ Páxinas||20
 Comentarios||10',
 );
 
+/** Manx (Gaelg)
+ * @author MacTire02
+ */
+$messages['gv'] = array(
+	'proofreadpage_namespace'         => 'Duillag',
+	'proofreadpage_nextpage'          => 'Yn chied duillag elley',
+	'proofreadpage_prevpage'          => 'Yn duillag roish shen',
+	'proofreadpage_index_listofpages' => 'Rolley duillagyn',
+);
+
 /** Hindi (हिन्दी)
  * @author Kaustubh
  */
