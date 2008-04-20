@@ -1157,9 +1157,9 @@ $messages['oc'] = array(
 	'proofreadpage_index'             => 'Indèx',
 	'proofreadpage_nextpage'          => 'Pagina seguenta',
 	'proofreadpage_prevpage'          => 'Pagina precedenta',
-	'proofreadpage_header'            => 'Entèsta (noinclude):',
-	'proofreadpage_body'              => 'Contengut (transclusion):',
-	'proofreadpage_footer'            => 'Pè de pagina (noinclude):',
+	'proofreadpage_header'            => 'Entèsta (noinclude) :',
+	'proofreadpage_body'              => 'Contengut (transclusion) :',
+	'proofreadpage_footer'            => 'Pè de pagina (noinclude) :',
 	'proofreadpage_toggleheaders'     => 'amagar/mostrar las seccions noinclude',
 	'proofreadpage_quality1_category' => 'Pagina pas corregida',
 	'proofreadpage_quality2_category' => 'Pagina amb problèma',
@@ -1172,7 +1172,7 @@ $messages['oc'] = array(
 	'proofreadpage_index_attributes'  => 'Autor
 Títol
 Annada|Annada de publicacion
-Editour
+Editor
 Font
 Imatge|Imatge en cobertura
 Paginas||20
