@@ -865,9 +865,13 @@ Kaca||20
 Cathetan||10',
 );
 
+/** Georgian (ქართული)
+ * @author Malafaya
+ */
 $messages['ka'] = array(
-	'proofreadpage_namespace' => 'გვერდი',
+	'proofreadpage_namespace'       => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
+	'proofreadpage_image'           => 'სურათი',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -904,8 +908,17 @@ $messages['lb'] = array(
 	'proofreadpage_nextpage'          => 'Nächst Säit',
 	'proofreadpage_prevpage'          => 'Säit virdrun',
 	'proofreadpage_footer'            => 'Foussnote (noinclude):',
+	'proofreadpage_quality2_category' => 'Problematesch',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
 	'proofreadpage_js_attributes'     => 'Auteur Titel Joer Editeur',
+	'proofreadpage_index_attributes'  => 'Auteur
+Titel
+Joer|Joer vun der Publikatioun
+Eiteur
+Quell
+Bild|Titelbild
+Säiten||20
+Bemierkungen||10',
 );
 
 /** Limburgish (Limburgs)
@@ -1594,6 +1607,7 @@ $messages['tg-cyrl'] = array(
  * @author Passawuth
  */
 $messages['th'] = array(
+	'proofreadpage_desc'              => 'สามารถเปรียบเทียบข้อความกับข้อความต้นฉบับที่สแกนมาได้',
 	'proofreadpage_namespace'         => 'หน้า',
 	'proofreadpage_index_namespace'   => 'ดัชนี',
 	'proofreadpage_image'             => 'ภาพ',
@@ -1601,9 +1615,16 @@ $messages['th'] = array(
 	'proofreadpage_nextpage'          => 'หน้าต่อไป',
 	'proofreadpage_prevpage'          => 'หน้าก่อนหน้านี้',
 	'proofreadpage_header'            => 'หัวเรื่อง (noinclude) :',
+	'proofreadpage_footer'            => 'ส่วนท้าย (noinclude):',
+	'proofreadpage_toggleheaders'     => 'ซ่อนส่วน noinclude',
 	'proofreadpage_quality1_category' => 'ยังไม่ได้ตรวจสอบ',
 	'proofreadpage_quality2_category' => 'มีปัญหา',
+	'proofreadpage_quality3_category' => 'พิสูจน์อักษร',
+	'proofreadpage_quality4_category' => 'ยืนยัน',
+	'proofreadpage_index_listofpages' => 'รายชื่อหน้า',
+	'proofreadpage_image_message'     => 'ลิงก์ไปยังหน้าดัชนี',
 	'proofreadpage_page_status'       => 'สถานะของหน้า',
+	'proofreadpage_js_attributes'     => 'ผู้แต่ง หัวเรื่อง ปี ผู้พิมพ์',
 );
 
 /** Turkish (Türkçe)
