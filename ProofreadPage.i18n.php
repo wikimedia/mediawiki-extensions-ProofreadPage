@@ -910,6 +910,7 @@ $messages['lb'] = array(
 	'proofreadpage_footer'            => 'Foussnote (noinclude):',
 	'proofreadpage_quality2_category' => 'Problematesch',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
+	'proofreadpage_page_status'       => 'Status vun der Säit',
 	'proofreadpage_js_attributes'     => 'Auteur Titel Joer Editeur',
 	'proofreadpage_index_attributes'  => 'Auteur
 Titel
@@ -1055,6 +1056,9 @@ $messages['nds'] = array(
 	'proofreadpage_index'             => 'Index',
 	'proofreadpage_nextpage'          => 'Nächste Siet',
 	'proofreadpage_prevpage'          => 'Vörige Siet',
+	'proofreadpage_header'            => 'Koppreeg (noinclude):',
+	'proofreadpage_body'              => 'Hööfttext (warrt inbunnen):',
+	'proofreadpage_footer'            => 'Footreeg (noinclude):',
 	'proofreadpage_quality1_category' => 'nich korrekturleest',
 	'proofreadpage_quality2_category' => 'problemaatsch',
 	'proofreadpage_quality3_category' => 'korrekturleest',
@@ -1190,6 +1194,13 @@ Font
 Imatge|Imatge en cobertura
 Paginas||20
 Comentaris||10',
+);
+
+/** Ossetic (Иронау)
+ * @author Amikeco
+ */
+$messages['os'] = array(
+	'proofreadpage_namespace' => 'Фарс',
 );
 
 /** Polish (Polski)
