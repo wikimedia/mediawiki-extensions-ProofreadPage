@@ -44,6 +44,39 @@ $messages['af'] = array(
 	'proofreadpage_prevpage' => 'Vorige bladsy',
 );
 
+/** Aragonese (Aragonés)
+ * @author Juanpabl
+ */
+$messages['an'] = array(
+	'proofreadpage_desc'              => 'Premite contimparar de trazas simples o testo con o escaneyo orichinal',
+	'proofreadpage_namespace'         => 'Pachina',
+	'proofreadpage_index_namespace'   => 'Endize',
+	'proofreadpage_image'             => 'Imachen',
+	'proofreadpage_index'             => 'Endize',
+	'proofreadpage_nextpage'          => 'Pachina siguient',
+	'proofreadpage_prevpage'          => 'Pachina anterior',
+	'proofreadpage_header'            => 'Cabezera (noinclude):',
+	'proofreadpage_body'              => "Cuerpo d'a pachina (to be transcluded):",
+	'proofreadpage_footer'            => 'Piet de pachina (noinclude):',
+	'proofreadpage_toggleheaders'     => "cambiar a bisibilidat d'as sezions noinclude",
+	'proofreadpage_quality1_category' => 'Pachina no correchita',
+	'proofreadpage_quality2_category' => 'Pachina problematica',
+	'proofreadpage_quality3_category' => 'Pachina correchita',
+	'proofreadpage_quality4_category' => 'Pachina balidata',
+	'proofreadpage_index_listofpages' => 'Lista de pachinas',
+	'proofreadpage_image_message'     => "Binclo t'a pachina d'endize",
+	'proofreadpage_page_status'       => "Estau d'a pachina",
+	'proofreadpage_js_attributes'     => 'Autor Títol Año Editorial',
+	'proofreadpage_index_attributes'  => 'Autor
+Títol
+Año|Año de publicazión
+Editorial
+Fuent
+Imachen|Imachen de portalada
+Pachinas||20
+Notas||10',
+);
+
 /** Arabic (العربية)
  * @author Meno25
  */
@@ -1647,6 +1680,15 @@ $messages['tr'] = array(
 	'proofreadpage_index'     => 'Dizin',
 	'proofreadpage_nextpage'  => 'Gelecek sayfa',
 	'proofreadpage_prevpage'  => 'Önceki sayfa',
+);
+
+/** Ukrainian (Українська)
+ * @author Ahonc
+ */
+$messages['uk'] = array(
+	'proofreadpage_desc'            => 'Дозволяє легко порівнювати текст і відскановане зображення оригіналу',
+	'proofreadpage_namespace'       => 'Сторінка',
+	'proofreadpage_index_namespace' => 'Індекс',
 );
 
 /** Vèneto (Vèneto)
