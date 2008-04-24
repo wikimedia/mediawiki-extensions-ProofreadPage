@@ -9,6 +9,7 @@ $wgExtensionMessagesFiles['ProofreadPage'] = dirname(__FILE__) . '/ProofreadPage
 $wgHooks['BeforePageDisplay'][] = 'wfPRParserOutput';
 $wgHooks['GetLinkColours'][] = 'wfPRLinkColours';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'wfPRImageMessage';
+$wgHooks['ArticleSave'][] = 'wfPRSave';
 
 $wgExtensionCredits['other'][] = array(
 	'name'           => 'ProofreadPage',
@@ -468,4 +469,18 @@ function wfPRRenderPageList( $input, $args ) {
 
 	}
 	return $return;
+}
+
+
+/* update coloured links in index pages */
+function wfPRSave( $article ) {
+
+	wfLoadExtensionMessages( 'ProofreadPage' );
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+
+	if( preg_match( "/^$page_namespace:(.*)$/", $article->mTitle->getPrefixedText() ) ) {
+		$article->mTitle->touchLinks();
+	}
+	return true;
+
 }
