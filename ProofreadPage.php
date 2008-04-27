@@ -480,6 +480,7 @@ function wfPRSave( $article ) {
 
 	if( preg_match( "/^$page_namespace:(.*)$/", $article->mTitle->getPrefixedText() ) ) {
 		$article->mTitle->touchLinks();
+		$article->mTitle->purgeSquid();
 	}
 	return true;
 
