@@ -943,6 +943,7 @@ $messages['lb'] = array(
 	'proofreadpage_footer'            => 'Foussnote (noinclude):',
 	'proofreadpage_quality2_category' => 'Problematesch',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
+	'proofreadpage_image_message'     => "Link op d'Indexsäit",
 	'proofreadpage_page_status'       => 'Status vun der Säit',
 	'proofreadpage_js_attributes'     => 'Auteur Titel Joer Editeur',
 	'proofreadpage_index_attributes'  => 'Auteur
@@ -1569,11 +1570,12 @@ Sidor||20
 Anmärkningar||10',
 );
 
-/** Silesian (ślůnski)
+/** Silesian (Ślůnski)
  * @author Herr Kriss
  */
 $messages['szl'] = array(
 	'proofreadpage_namespace' => 'Zajta',
+	'proofreadpage_image'     => 'uobrozek',
 	'proofreadpage_nextpage'  => 'Nostympno zajta',
 	'proofreadpage_prevpage'  => 'Popředńo zajta',
 );
@@ -1673,22 +1675,57 @@ $messages['th'] = array(
 
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
+ * @author Mach
  */
 $messages['tr'] = array(
-	'proofreadpage_namespace' => 'Sayfa',
-	'proofreadpage_image'     => 'Resim',
-	'proofreadpage_index'     => 'Dizin',
-	'proofreadpage_nextpage'  => 'Gelecek sayfa',
-	'proofreadpage_prevpage'  => 'Önceki sayfa',
+	'proofreadpage_namespace'         => 'Sayfa',
+	'proofreadpage_image'             => 'Resim',
+	'proofreadpage_index'             => 'Dizin',
+	'proofreadpage_nextpage'          => 'Gelecek sayfa',
+	'proofreadpage_prevpage'          => 'Önceki sayfa',
+	'proofreadpage_index_listofpages' => 'Sayfalar listesi',
+	'proofreadpage_js_attributes'     => 'Yazar Başlık Yıl Yayımcı',
+	'proofreadpage_index_attributes'  => 'Yazar
+Başlık
+Yıl|Yayım yılı
+Yayımcı
+Kaynak
+Resim|Kapak resmi
+Sayfalar||20
+Remarks||10',
 );
 
 /** Ukrainian (Українська)
  * @author Ahonc
  */
 $messages['uk'] = array(
-	'proofreadpage_desc'            => 'Дозволяє легко порівнювати текст і відскановане зображення оригіналу',
-	'proofreadpage_namespace'       => 'Сторінка',
-	'proofreadpage_index_namespace' => 'Індекс',
+	'proofreadpage_desc'              => 'Дозволяє легко порівнювати текст і відскановане зображення оригіналу',
+	'proofreadpage_namespace'         => 'Сторінка',
+	'proofreadpage_index_namespace'   => 'Індекс',
+	'proofreadpage_image'             => 'зображення',
+	'proofreadpage_index'             => 'Індекс',
+	'proofreadpage_nextpage'          => 'Наступна сторінка',
+	'proofreadpage_prevpage'          => 'Попередня сторінка',
+	'proofreadpage_header'            => 'Заголовок (не включається):',
+	'proofreadpage_body'              => 'Тіло сторінки (буде включатися):',
+	'proofreadpage_footer'            => 'Нижній колонтитул (не включається):',
+	'proofreadpage_toggleheaders'     => 'показувати невключені розділи',
+	'proofreadpage_quality1_category' => 'Не вичитана',
+	'proofreadpage_quality2_category' => 'Проблематична',
+	'proofreadpage_quality3_category' => 'Вичитана',
+	'proofreadpage_quality4_category' => 'Перевірена',
+	'proofreadpage_index_listofpages' => 'Список сторінок',
+	'proofreadpage_image_message'     => 'Посилання на сторінку індексу',
+	'proofreadpage_page_status'       => 'Стан сторінки',
+	'proofreadpage_js_attributes'     => 'Автор Назва Рік Видавництво',
+	'proofreadpage_index_attributes'  => 'Автор
+Назва
+Рік|Рік видання
+Видавництво
+Джерело
+Зображення|Зображення обкладинки
+Сторінок||20
+Приміток||10',
 );
 
 /** Vèneto (Vèneto)
