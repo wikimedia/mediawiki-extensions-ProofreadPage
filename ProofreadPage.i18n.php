@@ -713,6 +713,13 @@ Pages|Էջեր|20
 Remarks|Նշումներ|10',
 );
 
+/** Interlingua (Interlingua)
+ * @author Malafaya
+ */
+$messages['ia'] = array(
+	'proofreadpage_namespace' => 'Pagina',
+);
+
 /** Indonesian (Bahasa Indonesia)
  * @author IvanLanin
  */
@@ -752,6 +759,8 @@ Catatan||10',
 $messages['io'] = array(
 	'proofreadpage_namespace' => 'Pagino',
 	'proofreadpage_image'     => 'imajo',
+	'proofreadpage_nextpage'  => 'Sequanta pagino',
+	'proofreadpage_prevpage'  => 'Antea pagino',
 );
 
 /** Icelandic (Íslenska)
@@ -1017,7 +1026,7 @@ $messages['ml'] = array(
 	'proofreadpage_image'             => 'ചിത്രം',
 	'proofreadpage_index'             => 'ഇന്‍ഡെക്സ്',
 	'proofreadpage_nextpage'          => 'അടുത്ത താള്‍',
-	'proofreadpage_prevpage'          => 'പിറകിലെ താള്‍',
+	'proofreadpage_prevpage'          => 'മുന്‍പത്തെ താള്‍',
 	'proofreadpage_header'            => 'തലവാചകം (noinclude):',
 	'proofreadpage_body'              => 'താളിന്റെ ഉള്ളടക്കം (transclude ചെയ്യാനുള്ളത്):',
 	'proofreadpage_footer'            => 'പാദവാചകം (noinclude):',
@@ -1771,6 +1780,7 @@ $messages['vi'] = array(
 	'proofreadpage_nextpage'          => 'Trang trước',
 	'proofreadpage_prevpage'          => 'Trang sau',
 	'proofreadpage_header'            => 'Phần đầu (noinclude):',
+	'proofreadpage_body'              => 'Thân của trang (sẽ được nhúng vào):',
 	'proofreadpage_footer'            => 'Phần cuối (noinclude):',
 	'proofreadpage_index_listofpages' => 'Danh sách các trang',
 	'proofreadpage_page_status'       => 'Tình trạng của trang',
