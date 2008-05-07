@@ -936,6 +936,13 @@ $messages['km'] = array(
 	'proofreadpage_js_attributes'     => 'អ្នកនិពន្ធ ចំណងជើង ឆ្នាំបោះពុម្ព រោងពុម្ព',
 );
 
+/** Kinaray-a (Kinaray-a)
+ * @author Jose77
+ */
+$messages['krj'] = array(
+	'proofreadpage_namespace' => 'Pahina',
+);
+
 $messages['la'] = array(
 	'proofreadpage_namespace' => 'Pagina',
 );
