@@ -972,6 +972,14 @@ Säiten||20
 Bemierkungen||10',
 );
 
+/** Lingua Franca Nova (Lingua Franca Nova)
+ * @author Malafaya
+ */
+$messages['lfn'] = array(
+	'proofreadpage_namespace' => 'Paje',
+	'proofreadpage_image'     => 'imaje',
+);
+
 /** Limburgish (Limburgs)
  * @author Ooswesthoesbes
  */
@@ -1779,18 +1787,28 @@ Note||10',
 
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
+ * @author Vinhtantran
  */
 $messages['vi'] = array(
 	'proofreadpage_desc'              => 'So sánh văn bản với hình quét gốc',
 	'proofreadpage_namespace'         => 'Trang',
+	'proofreadpage_index_namespace'   => 'Chỉ mục',
 	'proofreadpage_image'             => 'hình',
+	'proofreadpage_index'             => 'Chỉ mục',
 	'proofreadpage_nextpage'          => 'Trang trước',
 	'proofreadpage_prevpage'          => 'Trang sau',
 	'proofreadpage_header'            => 'Phần đầu (noinclude):',
 	'proofreadpage_body'              => 'Thân của trang (sẽ được nhúng vào):',
 	'proofreadpage_footer'            => 'Phần cuối (noinclude):',
+	'proofreadpage_toggleheaders'     => 'thay đổi độ khả kiến của đề mục noinclude',
+	'proofreadpage_quality1_category' => 'Chưa hiệu đính',
+	'proofreadpage_quality2_category' => 'Có vấn đề',
+	'proofreadpage_quality3_category' => 'Hiệu đính',
+	'proofreadpage_quality4_category' => 'Phê chuẩn',
 	'proofreadpage_index_listofpages' => 'Danh sách các trang',
+	'proofreadpage_image_message'     => 'Liên kết trang chỉ mục',
 	'proofreadpage_page_status'       => 'Tình trạng của trang',
+	'proofreadpage_js_attributes'     => 'Tác giả Tựa đề Năm Nhà xuất bản',
 	'proofreadpage_index_attributes'  => 'Author|Tác giả
 Title|Tên
 Year|Năm xuất bản
