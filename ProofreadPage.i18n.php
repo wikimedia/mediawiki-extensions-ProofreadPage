@@ -757,10 +757,12 @@ Catatan||10',
  * @author Malafaya
  */
 $messages['io'] = array(
-	'proofreadpage_namespace' => 'Pagino',
-	'proofreadpage_image'     => 'imajo',
-	'proofreadpage_nextpage'  => 'Sequanta pagino',
-	'proofreadpage_prevpage'  => 'Antea pagino',
+	'proofreadpage_namespace'       => 'Pagino',
+	'proofreadpage_index_namespace' => 'Indexo',
+	'proofreadpage_image'           => 'imajo',
+	'proofreadpage_index'           => 'Indexo',
+	'proofreadpage_nextpage'        => 'Sequanta pagino',
+	'proofreadpage_prevpage'        => 'Antea pagino',
 );
 
 /** Icelandic (Íslenska)
