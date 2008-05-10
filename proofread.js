@@ -102,6 +102,7 @@ function proofreadpage_make_edit_area(container,text){
 			pageHeader = '{{PageQuality|1|}}<div class="pagetext">';
 			pageBody = text;
 			pageFooter = '<references/></div>';
+			document.editform.elements["wpSummary"].value="/* "+proofreadPageMessageQuality1+" */";
 		}
 	}
 
@@ -497,10 +498,10 @@ function proofreadpage_add_quality(form,value){
  
 	var text="";
 	switch(value){
-		case "1": text = proofreadPageMessageQuality1; break;
-		case "2": text = proofreadPageMessageQuality2; break;
-		case "3": text = proofreadPageMessageQuality3; break;
-		case "4": text = proofreadPageMessageQuality4; break;
+		case 1: text = proofreadPageMessageQuality1; break;
+		case 2: text = proofreadPageMessageQuality2; break;
+		case 3: text = proofreadPageMessageQuality3; break;
+		case 4: text = proofreadPageMessageQuality4; break;
 	}
 
 	form.elements["wpSummary"].value="/* "+text+" */";
@@ -537,10 +538,11 @@ function proofreadpage_add_quality_buttons(){
 	}
 	var f = document.createElement("span");
 	f.innerHTML = 
-' <span class="quality2"> <input type="radio" name="quality" value="2" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>'
-+'<span class="quality1"> <input type="radio" name="quality" value="1" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>'
-+'<span class="quality3"> <input type="radio" name="quality" value="3" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>';
-	if(show4) f.innerHTML = f.innerHTML + '<span class="quality4"> <input type="radio" name="quality" value="4" onclick="proofreadpage_add_quality(this.form,this.value)"> </span>';
+' <span class="quality2"> <input type="radio" name="quality" onclick="proofreadpage_add_quality(this.form,2)"> </span>'
++'<span class="quality1"> <input type="radio" name="quality" onclick="proofreadpage_add_quality(this.form,1)"> </span>'
++'<span class="quality3"> <input type="radio" name="quality" onclick="proofreadpage_add_quality(this.form,3)"> </span>';
+	if(show4) f.innerHTML = f.innerHTML 
++ '<span class="quality4"> <input type="radio" name="quality" onclick="proofreadpage_add_quality(this.form,4)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 	if(m) { 
