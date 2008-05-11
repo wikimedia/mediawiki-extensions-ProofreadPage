@@ -1034,6 +1034,14 @@ Puslapiai||20
 Pastabos||10',
 );
 
+/** Latvian (Latviešu)
+ * @author Yyy
+ */
+$messages['lv'] = array(
+	'proofreadpage_nextpage' => 'Nākamā lapa',
+	'proofreadpage_prevpage' => 'Iepriekšējā lapa',
+);
+
 /** Malayalam (മലയാളം)
  * @author Shijualex
  */
