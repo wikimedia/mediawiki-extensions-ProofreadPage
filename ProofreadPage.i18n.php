@@ -142,6 +142,17 @@ Páxines||20
 Comentarios||10',
 );
 
+/** Kotava (Kotava)
+ * @author Sab
+ */
+$messages['avk'] = array(
+	'proofreadpage_namespace' => 'Bu',
+	'proofreadpage_image'     => 'ewava',
+	'proofreadpage_nextpage'  => 'Radimebu',
+	'proofreadpage_prevpage'  => 'Abduebu',
+	'proofreadpage_header'    => 'Kroj (noinclude) :',
+);
+
 $messages['bcl'] = array(
 	'proofreadpage_namespace' => 'Pahina',
 	'proofreadpage_index_namespace' => 'Indeks',
