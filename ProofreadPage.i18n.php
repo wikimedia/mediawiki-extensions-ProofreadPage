@@ -966,7 +966,9 @@ $messages['la'] = array(
 $messages['lb'] = array(
 	'proofreadpage_desc'              => 'Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen',
 	'proofreadpage_namespace'         => 'Säit',
+	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'Bild',
+	'proofreadpage_index'             => 'Index',
 	'proofreadpage_nextpage'          => 'Nächst Säit',
 	'proofreadpage_prevpage'          => 'Säit virdrun',
 	'proofreadpage_footer'            => 'Foussnote (noinclude):',
@@ -1721,6 +1723,7 @@ $messages['th'] = array(
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
  * @author Mach
+ * @author Suelnur
  */
 $messages['tr'] = array(
 	'proofreadpage_namespace'         => 'Sayfa',
@@ -1737,7 +1740,7 @@ Yayımcı
 Kaynak
 Resim|Kapak resmi
 Sayfalar||20
-Remarks||10',
+Açıklamalar||10',
 );
 
 /** Ukrainian (Українська)
