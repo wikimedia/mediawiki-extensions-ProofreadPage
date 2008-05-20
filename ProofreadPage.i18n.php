@@ -973,6 +973,7 @@ $messages['lb'] = array(
 	'proofreadpage_prevpage'          => 'Säit virdrun',
 	'proofreadpage_footer'            => 'Foussnote (noinclude):',
 	'proofreadpage_quality2_category' => 'Problematesch',
+	'proofreadpage_quality4_category' => 'Validéiert',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
 	'proofreadpage_image_message'     => "Link op d'Indexsäit",
 	'proofreadpage_page_status'       => 'Status vun der Säit',
