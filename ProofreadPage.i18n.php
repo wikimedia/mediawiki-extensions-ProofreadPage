@@ -956,6 +956,14 @@ $messages['krj'] = array(
 	'proofreadpage_namespace' => 'Pahina',
 );
 
+/** Ripoarisch (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'proofreadpage_nextpage' => 'Näx Sigg',
+	'proofreadpage_prevpage' => 'vörije Sigg',
+);
+
 $messages['la'] = array(
 	'proofreadpage_namespace' => 'Pagina',
 );
