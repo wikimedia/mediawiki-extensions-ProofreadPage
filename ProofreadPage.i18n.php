@@ -960,8 +960,9 @@ $messages['krj'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'proofreadpage_nextpage' => 'Näx Sigg',
-	'proofreadpage_prevpage' => 'vörije Sigg',
+	'proofreadpage_namespace' => 'Sigg',
+	'proofreadpage_nextpage'  => 'Näx Sigg',
+	'proofreadpage_prevpage'  => 'vörije Sigg',
 );
 
 $messages['la'] = array(
@@ -979,8 +980,11 @@ $messages['lb'] = array(
 	'proofreadpage_index'             => 'Index',
 	'proofreadpage_nextpage'          => 'Nächst Säit',
 	'proofreadpage_prevpage'          => 'Säit virdrun',
+	'proofreadpage_header'            => 'Entête (noinclude):',
 	'proofreadpage_footer'            => 'Foussnote (noinclude):',
+	'proofreadpage_quality1_category' => 'Net verbessert',
 	'proofreadpage_quality2_category' => 'Problematesch',
+	'proofreadpage_quality3_category' => 'Verbessert',
 	'proofreadpage_quality4_category' => 'Validéiert',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
 	'proofreadpage_image_message'     => "Link op d'Indexsäit",
