@@ -1737,9 +1737,11 @@ $messages['th'] = array(
  * @author Erkan Yilmaz
  * @author Mach
  * @author Suelnur
+ * @author Runningfridgesrule
  */
 $messages['tr'] = array(
 	'proofreadpage_namespace'         => 'Sayfa',
+	'proofreadpage_index_namespace'   => 'Endeks',
 	'proofreadpage_image'             => 'Resim',
 	'proofreadpage_index'             => 'Dizin',
 	'proofreadpage_nextpage'          => 'Gelecek sayfa',
