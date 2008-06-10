@@ -257,6 +257,14 @@ $messages['ca'] = array(
 	'proofreadpage_prevpage'          => 'Pàgina anterior',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
 	'proofreadpage_js_attributes'     => 'Autor Títol Any Editorial',
+	'proofreadpage_index_attributes'  => 'Autor<br />
+Títol<br />
+Any|Any de publicació<br />
+Editorial<br />
+Font<br />
+Imatge|Imatge de la coberta<br />
+Pàgines||20<br />
+Notes||10<br />',
 );
 
 /** Czech (Česky)
