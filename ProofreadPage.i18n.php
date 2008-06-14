@@ -565,6 +565,39 @@ $messages['gv'] = array(
 	'proofreadpage_index_listofpages' => 'Rolley duillagyn',
 );
 
+/** Hebrew (עברית)
+ * @author Rotem Liss
+ */
+$messages['he'] = array(
+	'proofreadpage_desc'              => 'השוואה קלה של טקסט לסריקה המקורית שלו',
+	'proofreadpage_namespace'         => 'דף',
+	'proofreadpage_index_namespace'   => 'אינדקס',
+	'proofreadpage_image'             => 'תמונה',
+	'proofreadpage_index'             => 'אינדקס',
+	'proofreadpage_nextpage'          => 'הדף הבא',
+	'proofreadpage_prevpage'          => 'הדף הקודם',
+	'proofreadpage_header'            => 'כותרת (לא להכללה):',
+	'proofreadpage_body'              => 'גוף הדף (להכללה):',
+	'proofreadpage_footer'            => 'כותרת תחתונה (לא להכללה):',
+	'proofreadpage_toggleheaders'     => 'הצגת או הסתרת החלקים שאינם להכללה',
+	'proofreadpage_quality1_category' => 'לא בוצעה הגהה',
+	'proofreadpage_quality2_category' => 'בעייתי',
+	'proofreadpage_quality3_category' => 'בוצעה הגהה',
+	'proofreadpage_quality4_category' => 'מאומת',
+	'proofreadpage_index_listofpages' => 'רשימת דפים',
+	'proofreadpage_image_message'     => 'קישור לדף האינדקס',
+	'proofreadpage_page_status'       => 'מצב הדף',
+	'proofreadpage_js_attributes'     => 'מחבר כותרת שנה מוציא לאור',
+	'proofreadpage_index_attributes'  => 'מחבר
+כותרת
+שנה|שנת פרסום
+מוציא לאור
+מקור
+תמונה|תמונת עטיפה
+דפים||20
+הערות||10',
+);
+
 /** Hindi (हिन्दी)
  * @author Kaustubh
  */
