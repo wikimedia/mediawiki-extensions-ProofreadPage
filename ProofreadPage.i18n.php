@@ -522,6 +522,13 @@ Pâges||20
 Comentèros||10',
 );
 
+/** Western Frisian (Frysk)
+ * @author Snakesteuben
+ */
+$messages['fy'] = array(
+	'proofreadpage_namespace' => 'Side',
+);
+
 /** Galician (Galego)
  * @author Xosé
  * @author Alma
@@ -563,6 +570,13 @@ $messages['gv'] = array(
 	'proofreadpage_nextpage'          => 'Yn chied duillag elley',
 	'proofreadpage_prevpage'          => 'Yn duillag roish shen',
 	'proofreadpage_index_listofpages' => 'Rolley duillagyn',
+);
+
+/** Hawaiian (Hawai`i)
+ * @author Singularity
+ */
+$messages['haw'] = array(
+	'proofreadpage_namespace' => '‘Ao‘ao',
 );
 
 /** Hebrew (עברית)
