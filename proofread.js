@@ -102,7 +102,7 @@ function proofreadpage_make_edit_area(container,text){
 			pageHeader = '{{PageQuality|1|}}<div class="pagetext">';
 			pageBody = text;
 			pageFooter = '<references/></div>';
-			document.editform.elements["wpSummary"].value="/* "+proofreadPageMessageQuality1+" */";
+			document.editform.elements["wpSummary"].value="/* "+proofreadPageMessageQuality1+" */ ";
 		}
 	}
 
@@ -504,7 +504,7 @@ function proofreadpage_add_quality(form,value){
 		case 4: text = proofreadPageMessageQuality4; break;
 	}
 
-	form.elements["wpSummary"].value="/* "+text+" */";
+	form.elements["wpSummary"].value="/* "+text+" */ ";
 	s = form.elements["headerTextbox"].value;
 	s = s.replace(/\{\{PageQuality\|(.*?)\}\}/gi,"")
 	form.elements["headerTextbox"].value="{{PageQuality|"+value+"|"+wgUserName+"}}"+s;
