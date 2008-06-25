@@ -37,6 +37,13 @@ Pages||20
 Remarks||10',
 );
 
+/** Eastern Mari (Олык Марий йылме)
+ * @author Сай
+ */
+$messages['mhr'] = array(
+	'proofreadpage_namespace' => 'Лаштык',
+);
+
 $messages['af'] = array(
 	'proofreadpage_namespace' => 'Bladsye',
 	'proofreadpage_image' => 'beeld',
@@ -530,17 +537,19 @@ $messages['fy'] = array(
 );
 
 /** Galician (Galego)
- * @author Xosé
  * @author Alma
+ * @author Xosé
+ * @author Toliño
  */
 $messages['gl'] = array(
+	'proofreadpage_desc'              => 'Permite a comparación sinxela do texto coa dixitalización orixinal',
 	'proofreadpage_namespace'         => 'Páxina',
 	'proofreadpage_index_namespace'   => 'Índice',
 	'proofreadpage_image'             => 'imaxe',
 	'proofreadpage_index'             => 'Índice',
 	'proofreadpage_nextpage'          => 'Páxina seguinte',
 	'proofreadpage_prevpage'          => 'Páxina anterior',
-	'proofreadpage_header'            => "Cabezallo (''noinclude''):",
+	'proofreadpage_header'            => 'Cabeceira (noinclude):',
 	'proofreadpage_body'              => 'Corpo da páxina (para ser transcluído)',
 	'proofreadpage_footer'            => "Rodapé (''noinclude''):",
 	'proofreadpage_toggleheaders'     => "alternar a visibilidade das seccións ''noinclude''",
@@ -1199,6 +1208,7 @@ $messages['myv'] = array(
  * @author Slomox
  */
 $messages['nds'] = array(
+	'proofreadpage_desc'              => 'Verlöövt dat bequeme Verglieken vun Text mit’n Original-Scan',
 	'proofreadpage_namespace'         => 'Siet',
 	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'Bild',
@@ -1208,9 +1218,11 @@ $messages['nds'] = array(
 	'proofreadpage_header'            => 'Koppreeg (noinclude):',
 	'proofreadpage_body'              => 'Hööfttext (warrt inbunnen):',
 	'proofreadpage_footer'            => 'Footreeg (noinclude):',
+	'proofreadpage_toggleheaders'     => 'noinclude-Afsneed in-/utblennen',
 	'proofreadpage_quality1_category' => 'nich korrekturleest',
 	'proofreadpage_quality2_category' => 'problemaatsch',
 	'proofreadpage_quality3_category' => 'korrekturleest',
+	'proofreadpage_quality4_category' => 'Fertig',
 	'proofreadpage_index_listofpages' => 'Siedenlist',
 	'proofreadpage_image_message'     => 'Lenk na de Indexsiet',
 	'proofreadpage_page_status'       => 'Siedenstatus',
