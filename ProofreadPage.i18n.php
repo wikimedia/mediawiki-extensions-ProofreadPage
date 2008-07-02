@@ -1197,6 +1197,39 @@ $messages['mr'] = array(
 शेरा||१०',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Aviator
+ */
+$messages['ms'] = array(
+	'proofreadpage_desc'              => 'Membolehkan perbandingan mudah bagi teks dengan imbasan asal',
+	'proofreadpage_namespace'         => 'Halaman',
+	'proofreadpage_index_namespace'   => 'Indeks',
+	'proofreadpage_image'             => 'imej',
+	'proofreadpage_index'             => 'Indeks',
+	'proofreadpage_nextpage'          => 'Halaman berikutnya',
+	'proofreadpage_prevpage'          => 'Halaman sebelumnya',
+	'proofreadpage_header'            => 'Pengatas (tidak dimasukkan):',
+	'proofreadpage_body'              => 'Isi halaman (untuk dimasukkan):',
+	'proofreadpage_footer'            => 'Pembawah (tidak dimasukkan):',
+	'proofreadpage_toggleheaders'     => 'tukar kebolehnampakan bahagian yang tidak dimasukkan',
+	'proofreadpage_quality1_category' => 'Belum dibaca pruf',
+	'proofreadpage_quality2_category' => 'Bermasalah',
+	'proofreadpage_quality3_category' => 'Dibaca pruf',
+	'proofreadpage_quality4_category' => 'Disahkan',
+	'proofreadpage_index_listofpages' => 'Senarai halaman',
+	'proofreadpage_image_message'     => 'Pautan ke halaman indeks',
+	'proofreadpage_page_status'       => 'Status halaman',
+	'proofreadpage_js_attributes'     => 'Pengarang Judul Tahun Penerbit',
+	'proofreadpage_index_attributes'  => 'Pengarang
+Judul
+Tahun|Tahun diterbitkan
+Penerbit
+Sumber
+Imej|Imej kulit
+Jumlah halaman||20
+Catatan||10',
+);
+
 /** Erzya (эрзянь кель)
  * @author Amdf
  */
@@ -1506,7 +1539,7 @@ $messages['ru'] = array(
 	'proofreadpage_footer'            => 'Нижний колонтитул (не включается):',
 	'proofreadpage_toggleheaders'     => 'показывать невключаемые разделы',
 	'proofreadpage_quality1_category' => 'Не вычитана',
-	'proofreadpage_quality2_category' => 'Проблематичная',
+	'proofreadpage_quality2_category' => 'Проблемная',
 	'proofreadpage_quality3_category' => 'Вычитана',
 	'proofreadpage_quality4_category' => 'Проверена',
 	'proofreadpage_index_listofpages' => 'Список страниц',
