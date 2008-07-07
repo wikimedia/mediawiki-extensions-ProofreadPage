@@ -37,7 +37,7 @@ Pages||20
 Remarks||10',
 );
 
-/** Eastern Mari (Олык Марий йылме)
+/** Eastern Mari (Олык Марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -257,6 +257,7 @@ Notennoù||10',
 /** Catalan (Català)
  * @author Paucabot
  * @author SMP
+ * @author Jordi Roqué
  */
 $messages['ca'] = array(
 	'proofreadpage_namespace'         => 'Pàgina',
