@@ -26,7 +26,7 @@ $messages['en'] = array(
 	'proofreadpage_index_listofpages' => 'List of pages',
 	'proofreadpage_image_message'     => 'Link to the index page',
 	'proofreadpage_page_status'       => 'Page status',
-	'proofreadpage_js_attributes'     =>'Author Title Year Publisher',
+	'proofreadpage_js_attributes'     => 'Author Title Year Publisher',
 	'proofreadpage_index_attributes'  => 'Author
 Title
 Year|Year of publication
