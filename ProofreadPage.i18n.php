@@ -44,11 +44,14 @@ $messages['mhr'] = array(
 	'proofreadpage_namespace' => 'Лаштык',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author SPQRobin
+ */
 $messages['af'] = array(
 	'proofreadpage_namespace' => 'Bladsye',
-	'proofreadpage_image' => 'beeld',
-	'proofreadpage_nextpage' => 'Volgende bladsy',
-	'proofreadpage_prevpage' => 'Vorige bladsy',
+	'proofreadpage_image'     => 'beeld',
+	'proofreadpage_nextpage'  => 'Volgende bladsy',
+	'proofreadpage_prevpage'  => 'Vorige bladsy',
 );
 
 /** Aragonese (Aragonés)
@@ -160,8 +163,11 @@ $messages['avk'] = array(
 	'proofreadpage_header'    => 'Kroj (noinclude) :',
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Filipinayzd
+ */
 $messages['bcl'] = array(
-	'proofreadpage_namespace' => 'Pahina',
+	'proofreadpage_namespace'       => 'Pahina',
 	'proofreadpage_index_namespace' => 'Indeks',
 );
 
@@ -405,7 +411,7 @@ Paĝoj||20
 Rimarkoj||10',
 );
 
-/** فارسی (فارسی)
+/** Persian (فارسی)
  * @author Huji
  */
 $messages['fa'] = array(
@@ -436,7 +442,6 @@ $messages['fa'] = array(
 تصویر|تصویر روی جلد
 صفحه||20
 ملاحظات||10',
-
 );
 
 /** Finnish (Suomi)
@@ -800,26 +805,26 @@ $messages['ia'] = array(
  * @author IvanLanin
  */
 $messages['id'] = array(
-	'proofreadpage_desc' => 'Memungkinkan perbandingan mudah teks dengan hasil pemindaian orisinal',
-	'proofreadpage_namespace' => 'Halaman',
-	'proofreadpage_index_namespace' => 'Indeks',
-	'proofreadpage_image' => 'gambar',
-	'proofreadpage_index' => 'Indeks',
-	'proofreadpage_nextpage' => 'Halaman selanjutnya',
-	'proofreadpage_prevpage' => 'Halaman sebelumnya',
-	'proofreadpage_header' => 'Kepala (noinclude):',
-	'proofreadpage_body' => 'Badan halaman (untuk ditransklusikan):',
-	'proofreadpage_footer' => 'Kaki (noinclude):',
-	'proofreadpage_toggleheaders' => 'ganti keterlihatan bagian noinclude',
+	'proofreadpage_desc'              => 'Memungkinkan perbandingan mudah teks dengan hasil pemindaian orisinal',
+	'proofreadpage_namespace'         => 'Halaman',
+	'proofreadpage_index_namespace'   => 'Indeks',
+	'proofreadpage_image'             => 'gambar',
+	'proofreadpage_index'             => 'Indeks',
+	'proofreadpage_nextpage'          => 'Halaman selanjutnya',
+	'proofreadpage_prevpage'          => 'Halaman sebelumnya',
+	'proofreadpage_header'            => 'Kepala (noinclude):',
+	'proofreadpage_body'              => 'Badan halaman (untuk ditransklusikan):',
+	'proofreadpage_footer'            => 'Kaki (noinclude):',
+	'proofreadpage_toggleheaders'     => 'ganti keterlihatan bagian noinclude',
 	'proofreadpage_quality1_category' => 'Belum diuji-baca',
 	'proofreadpage_quality2_category' => 'Bermasalah',
 	'proofreadpage_quality3_category' => 'Diuji-baca',
 	'proofreadpage_quality4_category' => 'Divalidasi',
 	'proofreadpage_index_listofpages' => 'Daftar halaman',
-	'proofreadpage_image_message' => 'Pranala ke halaman indeks',
-	'proofreadpage_page_status' => 'Status halaman',
-	'proofreadpage_js_attributes' =>'Pengarang Judul Tahun Penerbit',
-	'proofreadpage_index_attributes' => 'Pengarang
+	'proofreadpage_image_message'     => 'Pranala ke halaman indeks',
+	'proofreadpage_page_status'       => 'Status halaman',
+	'proofreadpage_js_attributes'     => 'Pengarang Judul Tahun Penerbit',
+	'proofreadpage_index_attributes'  => 'Pengarang
 Judul
 Tahun|Tahun penerbitan
 Penerbit
@@ -1030,6 +1035,9 @@ $messages['ksh'] = array(
 	'proofreadpage_prevpage'  => 'vörije Sigg',
 );
 
+/** Latin (Latina)
+ * @author SPQRobin
+ */
 $messages['la'] = array(
 	'proofreadpage_namespace' => 'Pagina',
 );
@@ -1231,7 +1239,7 @@ Jumlah halaman||20
 Catatan||10',
 );
 
-/** Erzya (эрзянь кель)
+/** Erzya (Эрзянь)
  * @author Amdf
  */
 $messages['myv'] = array(
@@ -1316,7 +1324,7 @@ $messages['nn'] = array(
 	'proofreadpage_prevpage'        => 'Førre side',
 );
 
-/** Norwegian (‪Norsk (bokmål)‬)
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  */
 $messages['no'] = array(
@@ -1431,18 +1439,23 @@ Stron||20
 Uwagi||10',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author 555
+ * @author Bèrto 'd Sèra
+ */
 $messages['pms'] = array(
-	'proofreadpage_namespace' => 'Pàgina',
+	'proofreadpage_namespace'       => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Ìndess',
-	'proofreadpage_image' => 'figura',
-	'proofreadpage_index' => 'Ìndess',
-	'proofreadpage_nextpage' => 'Pàgina anans',
-	'proofreadpage_prevpage' => 'Pàgina andré',
-	'proofreadpage_header' => 'Testà (da nen anclude):',
-	'proofreadpage_body' => 'Còrp dla pàgina (da transclude):',
-	'proofreadpage_footer' => 'Pè (da nen anclude)',
-	'proofreadpage_toggleheaders' => 'smon/stërma le part da nen anclude',
+	'proofreadpage_image'           => 'figura',
+	'proofreadpage_index'           => 'Ìndess',
+	'proofreadpage_nextpage'        => 'Pàgina anans',
+	'proofreadpage_prevpage'        => 'Pàgina andré',
+	'proofreadpage_header'          => 'Testà (da nen anclude):',
+	'proofreadpage_body'            => 'Còrp dla pàgina (da transclude):',
+	'proofreadpage_footer'          => 'Pè (da nen anclude)',
+	'proofreadpage_toggleheaders'   => 'smon/stërma le part da nen anclude',
 );
+
 /** Portuguese (Português)
  * @author 555
  */
@@ -1623,9 +1636,9 @@ Strán||20
 Poznámky||10',
 );
 
-
+/** Slovenian (Slovenščina) */
 $messages['sl'] = array(
-	'proofreadpage_namespace' => 'Stran',
+	'proofreadpage_namespace'         => 'Stran',
 	'proofreadpage_quality1_category' => 'Nekorigirano',
 	'proofreadpage_quality2_category' => 'Problematične strani',
 	'proofreadpage_quality3_category' => 'Korigirano',
@@ -1777,7 +1790,7 @@ $messages['tet'] = array(
 	'proofreadpage_namespace' => 'Pájina',
 );
 
-/** Tajik (Тоҷикӣ)
+/** Tajik (Cyrillic) (Тоҷикӣ/tojikī (Cyrillic))
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -1982,6 +1995,7 @@ Pads|20
 Küpets|10',
 );
 
+/** Yue (粵語) */
 $messages['yue'] = array(
 	'proofreadpage_desc'              => '容許簡易噉去比較原掃瞄同埋文字',
 	'proofreadpage_namespace'         => '頁',
@@ -2012,6 +2026,7 @@ $messages['yue'] = array(
 備註||10',
 );
 
+/** Simplified Chinese (‪中文(简体)‬) */
 $messages['zh-hans'] = array(
 	'proofreadpage_desc'              => '容许简易地去比较原扫瞄和文字',
 	'proofreadpage_namespace'         => '页面',
@@ -2042,6 +2057,7 @@ $messages['zh-hans'] = array(
 备注||10',
 );
 
+/** Traditional Chinese (‪中文(繁體)‬) */
 $messages['zh-hant'] = array(
 	'proofreadpage_desc'              => '容許簡易地去比較原掃瞄和文字',
 	'proofreadpage_namespace'         => '頁面',
