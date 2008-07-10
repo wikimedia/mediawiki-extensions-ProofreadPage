@@ -171,6 +171,17 @@ $messages['bcl'] = array(
 	'proofreadpage_index_namespace' => 'Indeks',
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author EugeneZelenko
+ */
+$messages['be-tarask'] = array(
+	'proofreadpage_namespace'         => 'Старонка',
+	'proofreadpage_image'             => 'выява',
+	'proofreadpage_nextpage'          => 'Наступная старонка',
+	'proofreadpage_prevpage'          => 'Папярэдняя старонка',
+	'proofreadpage_index_listofpages' => 'Сьпіс старонак',
+);
+
 /** Bulgarian (Български)
  * @author Borislav
  * @author DCLXVI
@@ -258,6 +269,13 @@ Mammenn
 Skeudenn|Skeudenn ar golo
 Pajennoù||20
 Notennoù||10',
+);
+
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'proofreadpage_prevpage' => 'Prethodna stranica',
 );
 
 /** Catalan (Català)
@@ -1454,29 +1472,6 @@ $messages['pms'] = array(
 	'proofreadpage_body'            => 'Còrp dla pàgina (da transclude):',
 	'proofreadpage_footer'          => 'Pè (da nen anclude)',
 	'proofreadpage_toggleheaders'   => 'smon/stërma le part da nen anclude',
-);
-
-/** Portuguese (Português)
- * @author 555
- */
-$messages['pt'] = array(
-	'proofreadpage_namespace'         => 'Página',
-	'proofreadpage_index_namespace'   => 'Índice',
-	'proofreadpage_image'             => 'imagem',
-	'proofreadpage_index'             => 'Índice',
-	'proofreadpage_nextpage'          => 'Próxima página',
-	'proofreadpage_prevpage'          => 'Página anterior',
-	'proofreadpage_header'            => 'Cabeçalho (em modo noinclude):',
-	'proofreadpage_body'              => 'Corpo de página (em modo de transclusão):',
-	'proofreadpage_footer'            => 'Rodapé (em modo noinclude):',
-	'proofreadpage_toggleheaders'     => 'tornar as seções noinclude visíveis',
-	'proofreadpage_quality1_category' => 'Não foi revisto',
-	'proofreadpage_quality2_category' => 'Problemático',
-	'proofreadpage_quality3_category' => 'Revisto e corrigido',
-	'proofreadpage_quality4_category' => 'Validado',
-	'proofreadpage_index_listofpages' => 'Lista de páginas',
-	'proofreadpage_image_message'     => 'Link para a página de índice',
-	'proofreadpage_page_status'       => 'Estado da página',
 );
 
 /** Pashto (پښتو)
