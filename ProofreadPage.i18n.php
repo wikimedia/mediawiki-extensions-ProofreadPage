@@ -46,12 +46,14 @@ $messages['mhr'] = array(
 
 /** Afrikaans (Afrikaans)
  * @author SPQRobin
+ * @author Naudefj
  */
 $messages['af'] = array(
-	'proofreadpage_namespace' => 'Bladsye',
-	'proofreadpage_image'     => 'beeld',
-	'proofreadpage_nextpage'  => 'Volgende bladsy',
-	'proofreadpage_prevpage'  => 'Vorige bladsy',
+	'proofreadpage_namespace'   => 'Bladsye',
+	'proofreadpage_image'       => 'beeld',
+	'proofreadpage_nextpage'    => 'Volgende bladsy',
+	'proofreadpage_prevpage'    => 'Vorige bladsy',
+	'proofreadpage_page_status' => 'Bladsystatus',
 );
 
 /** Aragonese (Aragonés)
