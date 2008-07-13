@@ -64,9 +64,8 @@ function wfPRNavigation( $image ) {
 	}
 	$dbr->freeResult( $result ) ;
 
-	if( !$index_title ) { // there is no index, or no page list in the index
-
-		if( ! ($image->exists() && $image->isMultiPage() ) ) return $err;
+	//if multipage, we use the page order, but we should read pagenum from the index
+	if( $image->exists() && $image->isMultiPage() ) {
 
 		$pagenr = 1;
 		$parts = explode( '/', $wgTitle->getText() );
@@ -80,10 +79,14 @@ function wfPRNavigation( $image ) {
 		$index_name = "$index_namespace:$name";
 		$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
 		$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
-		$index_title = Title::newFromText( $index_name );
 		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
 		$page_num = $pagenr;
+
+		if( !$index_title ) { 
+			//there is no index, or the page is not listed in the index : use canonical index
+			$index_title = Title::newFromText( $index_name );
+		}
 	} 
 	else {
 		$page_num = '';
@@ -91,6 +94,8 @@ function wfPRNavigation( $image ) {
 		$next_url = '';
 	}
 
+
+	if( !$index_title ) return $err;
 	$index_url = $index_title->getFullURL();
 
 	//if the index page exists, read metadata
