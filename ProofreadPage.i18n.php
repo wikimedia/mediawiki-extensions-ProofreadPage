@@ -165,6 +165,39 @@ $messages['avk'] = array(
 	'proofreadpage_header'    => 'Kroj (noinclude) :',
 );
 
+/** Southern Balochi (بلوچی مکرانی)
+ * @author Mostafadaneshvar
+ */
+$messages['bcc'] = array(
+	'proofreadpage_desc'              => 'اجازه دن مقایسه متن گون اصلی اسکن',
+	'proofreadpage_namespace'         => 'صفحه',
+	'proofreadpage_index_namespace'   => 'ایندکس',
+	'proofreadpage_image'             => 'عکس',
+	'proofreadpage_index'             => 'ایندکس',
+	'proofreadpage_nextpage'          => 'صفحه بعدی',
+	'proofreadpage_prevpage'          => 'پیشگین صفحه',
+	'proofreadpage_header'            => 'سرتاک(شامل نه):',
+	'proofreadpage_body'              => 'بدنه صفحه (به ):',
+	'proofreadpage_footer'            => 'جهل نوشت (شامل نه):',
+	'proofreadpage_toggleheaders'     => 'عوض کن ظاهربیگ بخشانی که هور نهنت',
+	'proofreadpage_quality1_category' => 'آزمایش نه بیتت',
+	'proofreadpage_quality2_category' => 'مشکل دار',
+	'proofreadpage_quality3_category' => 'آماده آزمایش',
+	'proofreadpage_quality4_category' => 'معتبر',
+	'proofreadpage_index_listofpages' => 'لیست صفحات',
+	'proofreadpage_image_message'     => 'لینک په صفحه اول',
+	'proofreadpage_page_status'       => 'وضعیت صفحه',
+	'proofreadpage_js_attributes'     => 'نویسوک عنوان سال ناشر کنوک',
+	'proofreadpage_index_attributes'  => 'نویسوک
+عنوان
+سال|سال انتشار
+نشار
+منبع
+عکس|عکس پوش
+صفحات||20
+نشانان||',
+);
+
 /** Bikol Central (Bikol Central)
  * @author Filipinayzd
  */
