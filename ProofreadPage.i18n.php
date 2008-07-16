@@ -1677,12 +1677,36 @@ $messages['sl'] = array(
 
 /** Serbian Cyrillic ekavian (ћирилица)
  * @author Sasa Stefanovic
+ * @author Millosh
  */
 $messages['sr-ec'] = array(
-	'proofreadpage_namespace' => 'Страна',
-	'proofreadpage_image'     => 'слика',
-	'proofreadpage_nextpage'  => 'Следећа страна',
-	'proofreadpage_prevpage'  => 'Претходна страна',
+	'proofreadpage_desc'              => 'Омогући лако упоређивање текста и оригиналног скена.',
+	'proofreadpage_namespace'         => 'Страна',
+	'proofreadpage_index_namespace'   => 'индекс',
+	'proofreadpage_image'             => 'слика',
+	'proofreadpage_index'             => 'индекс',
+	'proofreadpage_nextpage'          => 'Следећа страна',
+	'proofreadpage_prevpage'          => 'Претходна страна',
+	'proofreadpage_header'            => 'Заглавље (без укључивања):',
+	'proofreadpage_body'              => 'Тело стране (за укључивање):',
+	'proofreadpage_footer'            => 'Подножје (без укључивања):',
+	'proofreadpage_toggleheaders'     => 'управљање видљивошћу делова који се не укључују',
+	'proofreadpage_quality1_category' => 'Непрегледано',
+	'proofreadpage_quality2_category' => 'Проблематично',
+	'proofreadpage_quality3_category' => 'Прегледано',
+	'proofreadpage_quality4_category' => 'Оверено',
+	'proofreadpage_index_listofpages' => 'Списак страна',
+	'proofreadpage_image_message'     => 'Веза ка индексу стране.',
+	'proofreadpage_page_status'       => 'Статус стране',
+	'proofreadpage_js_attributes'     => 'аутор наслов година издавач',
+	'proofreadpage_index_attributes'  => 'аутор
+наслов
+година|година публикације
+издавач
+извор
+слика|насловна страна
+страна||20
+примедбе||10',
 );
 
 /** Seeltersk (Seeltersk)
