@@ -49,11 +49,14 @@ $messages['mhr'] = array(
  * @author Naudefj
  */
 $messages['af'] = array(
-	'proofreadpage_namespace'   => 'Bladsye',
-	'proofreadpage_image'       => 'beeld',
-	'proofreadpage_nextpage'    => 'Volgende bladsy',
-	'proofreadpage_prevpage'    => 'Vorige bladsy',
-	'proofreadpage_page_status' => 'Bladsystatus',
+	'proofreadpage_namespace'         => 'Bladsye',
+	'proofreadpage_index_namespace'   => 'Indeks',
+	'proofreadpage_image'             => 'beeld',
+	'proofreadpage_index'             => 'Indeks',
+	'proofreadpage_nextpage'          => 'Volgende bladsy',
+	'proofreadpage_prevpage'          => 'Vorige bladsy',
+	'proofreadpage_index_listofpages' => 'Lys van bladsye',
+	'proofreadpage_page_status'       => 'Bladsystatus',
 );
 
 /** Aragonese (Aragonés)
@@ -1889,6 +1892,7 @@ $messages['th'] = array(
 	'proofreadpage_nextpage'          => 'หน้าต่อไป',
 	'proofreadpage_prevpage'          => 'หน้าก่อนหน้านี้',
 	'proofreadpage_header'            => 'หัวเรื่อง (noinclude) :',
+	'proofreadpage_body'              => 'เนื้อหาของหน้า (จะถูกรวมไปด้วย):',
 	'proofreadpage_footer'            => 'ส่วนท้าย (noinclude):',
 	'proofreadpage_toggleheaders'     => 'ซ่อนส่วน noinclude',
 	'proofreadpage_quality1_category' => 'ยังไม่ได้ตรวจสอบ',
@@ -1899,6 +1903,14 @@ $messages['th'] = array(
 	'proofreadpage_image_message'     => 'ลิงก์ไปยังหน้าดัชนี',
 	'proofreadpage_page_status'       => 'สถานะของหน้า',
 	'proofreadpage_js_attributes'     => 'ผู้แต่ง หัวเรื่อง ปี ผู้พิมพ์',
+	'proofreadpage_index_attributes'  => 'ผู้แต่ง
+ชื่อเรื่อง
+ปี|ปีที่พิมพ์
+สำนักพิมพ์
+แหล่งที่มา
+ภาพ|ภาพหน้าปก
+หน้า||20
+หมายเหตุ||10',
 );
 
 /** Turkish (Türkçe)
