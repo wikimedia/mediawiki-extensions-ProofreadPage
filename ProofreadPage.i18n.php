@@ -852,9 +852,36 @@ Remarks|Նշումներ|10',
 
 /** Interlingua (Interlingua)
  * @author Malafaya
+ * @author McDutchie
  */
 $messages['ia'] = array(
-	'proofreadpage_namespace' => 'Pagina',
+	'proofreadpage_desc'              => 'Facilita le comparation inter un texto e su scansion original',
+	'proofreadpage_namespace'         => 'Pagina',
+	'proofreadpage_index_namespace'   => 'Indice',
+	'proofreadpage_image'             => 'imagine',
+	'proofreadpage_index'             => 'Indice',
+	'proofreadpage_nextpage'          => 'Pagina sequente',
+	'proofreadpage_prevpage'          => 'Pagina precedente',
+	'proofreadpage_header'            => 'Capite (noinclude):',
+	'proofreadpage_body'              => 'Corpore del pagina (a esser transcludite):',
+	'proofreadpage_footer'            => 'Pede (noinclude):',
+	'proofreadpage_toggleheaders'     => 'activar/disactivar le visibilitate del sectiones noinclude',
+	'proofreadpage_quality1_category' => 'Lection de probas non facite',
+	'proofreadpage_quality2_category' => 'Problematic',
+	'proofreadpage_quality3_category' => 'Lection de probas facite',
+	'proofreadpage_quality4_category' => 'Validate',
+	'proofreadpage_index_listofpages' => 'Lista de paginas',
+	'proofreadpage_image_message'     => 'Ligamine verso le pagina de indice',
+	'proofreadpage_page_status'       => 'Stato del pagina',
+	'proofreadpage_js_attributes'     => 'Autor Titulo Anno Editor',
+	'proofreadpage_index_attributes'  => 'Autor
+Titulo
+Anno|Anno de publication
+Editor
+Origine
+Imagine|Imagine de copertura
+Paginas||20
+Notas||10',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1302,6 +1329,15 @@ $messages['myv'] = array(
 	'proofreadpage_namespace' => 'Лопа',
 );
 
+/** Nahuatl (Nahuatl)
+ * @author Fluence
+ */
+$messages['nah'] = array(
+	'proofreadpage_namespace' => 'Zāzanilli',
+	'proofreadpage_nextpage'  => 'Niman zāzanilli',
+	'proofreadpage_prevpage'  => 'Achto zāzanilli',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -1568,6 +1604,13 @@ Fonte
 Imagem|Imagem de capa
 Páginas||20
 Notas||10',
+);
+
+/** Romanian (Română)
+ * @author KlaudiuMihaila
+ */
+$messages['ro'] = array(
+	'proofreadpage_namespace' => 'Pagină',
 );
 
 /** Russian (Русский)
@@ -1936,6 +1979,14 @@ Kaynak
 Resim|Kapak resmi
 Sayfalar||20
 Açıklamalar||10',
+);
+
+/** Tsonga (Xitsonga)
+ * @author Thuvack
+ */
+$messages['ts'] = array(
+	'proofreadpage_namespace'       => 'Tluka',
+	'proofreadpage_index_namespace' => 'Nxaxamelo',
 );
 
 /** Ukrainian (Українська)
