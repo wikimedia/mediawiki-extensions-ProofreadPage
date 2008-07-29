@@ -505,6 +505,7 @@ $messages['fa'] = array(
  * @author Str4nd
  * @author Cimon Avaro
  * @author Crt
+ * @author Jaakonam
  */
 $messages['fi'] = array(
 	'proofreadpage_desc'              => 'Mahdollistaa helpon vertailun tekstin ja alkuperäisen skannauksen välillä.',
@@ -521,6 +522,15 @@ $messages['fi'] = array(
 	'proofreadpage_index_listofpages' => 'Sivuluettelo',
 	'proofreadpage_image_message'     => 'Linkki hakemistosivuun',
 	'proofreadpage_page_status'       => 'Sivun tila',
+	'proofreadpage_js_attributes'     => 'Tekijä Nimike Vuosi Julkaisija',
+	'proofreadpage_index_attributes'  => 'Tekijä
+Nimike
+Vuosi|Julkaisuvuosi
+Julkaisija
+Lähde
+Kuva|Kansikuva
+Sivuja||20
+Huomautuksia||10',
 );
 
 /** French (Français)
