@@ -323,8 +323,13 @@ $messages['bs'] = array(
  */
 $messages['ca'] = array(
 	'proofreadpage_namespace'         => 'Pàgina',
+	'proofreadpage_index_namespace'   => 'Index',
+	'proofreadpage_image'             => 'imatge',
+	'proofreadpage_index'             => 'Índex',
 	'proofreadpage_nextpage'          => 'Pàgina següent',
 	'proofreadpage_prevpage'          => 'Pàgina anterior',
+	'proofreadpage_quality2_category' => 'Problemàtic',
+	'proofreadpage_quality4_category' => 'Validat',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
 	'proofreadpage_js_attributes'     => 'Autor Títol Any Editorial',
 	'proofreadpage_index_attributes'  => 'Autor<br />
