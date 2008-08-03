@@ -342,6 +342,14 @@ Pàgines||20<br />
 Notes||10<br />',
 );
 
+/** Cebuano (Cebuano)
+ * @author Abastillas
+ */
+$messages['ceb'] = array(
+	'proofreadpage_nextpage' => 'Sunod nga panid',
+	'proofreadpage_prevpage' => 'Miaging panid',
+);
+
 /** Czech (Česky)
  * @author Matěj Grabovský
  */
