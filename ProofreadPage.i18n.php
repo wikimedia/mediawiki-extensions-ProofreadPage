@@ -125,6 +125,13 @@ $messages['ar'] = array(
 الملاحظات||10',
 );
 
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Ghaly
+ */
+$messages['arz'] = array(
+	'proofreadpage_image' => 'صوره',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
