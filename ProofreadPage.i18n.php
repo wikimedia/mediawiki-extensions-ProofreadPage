@@ -129,7 +129,8 @@ $messages['ar'] = array(
  * @author Ghaly
  */
 $messages['arz'] = array(
-	'proofreadpage_image' => 'صوره',
+	'proofreadpage_namespace' => 'صفحه',
+	'proofreadpage_image'     => 'صوره',
 );
 
 /** Asturian (Asturianu)
