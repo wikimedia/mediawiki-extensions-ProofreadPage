@@ -1249,10 +1249,15 @@ Pastabos||10',
 
 /** Latvian (Latviešu)
  * @author Yyy
+ * @author Xil
  */
 $messages['lv'] = array(
-	'proofreadpage_nextpage' => 'Nākamā lapa',
-	'proofreadpage_prevpage' => 'Iepriekšējā lapa',
+	'proofreadpage_namespace'       => 'Lapa',
+	'proofreadpage_index_namespace' => 'Saturs',
+	'proofreadpage_image'           => 'Attēls',
+	'proofreadpage_index'           => 'Saturs',
+	'proofreadpage_nextpage'        => 'Nākamā lapa',
+	'proofreadpage_prevpage'        => 'Iepriekšējā lapa',
 );
 
 /** Malayalam (മലയാളം)
