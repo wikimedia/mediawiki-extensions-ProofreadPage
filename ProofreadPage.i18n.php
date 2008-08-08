@@ -339,6 +339,7 @@ $messages['ca'] = array(
 	'proofreadpage_quality2_category' => 'Problemàtic',
 	'proofreadpage_quality4_category' => 'Validat',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
+	'proofreadpage_page_status'       => 'Status de la pàgina',
 	'proofreadpage_js_attributes'     => 'Autor Títol Any Editorial',
 	'proofreadpage_index_attributes'  => 'Autor<br />
 Títol<br />
@@ -1252,12 +1253,15 @@ Pastabos||10',
  * @author Xil
  */
 $messages['lv'] = array(
-	'proofreadpage_namespace'       => 'Lapa',
-	'proofreadpage_index_namespace' => 'Saturs',
-	'proofreadpage_image'           => 'Attēls',
-	'proofreadpage_index'           => 'Saturs',
-	'proofreadpage_nextpage'        => 'Nākamā lapa',
-	'proofreadpage_prevpage'        => 'Iepriekšējā lapa',
+	'proofreadpage_namespace'         => 'Lapa',
+	'proofreadpage_index_namespace'   => 'Saturs',
+	'proofreadpage_image'             => 'Attēls',
+	'proofreadpage_index'             => 'Saturs',
+	'proofreadpage_nextpage'          => 'Nākamā lapa',
+	'proofreadpage_prevpage'          => 'Iepriekšējā lapa',
+	'proofreadpage_quality1_category' => 'Nav pārlasīts',
+	'proofreadpage_quality2_category' => 'Problemātisks',
+	'proofreadpage_quality3_category' => 'Pārlasīts',
 );
 
 /** Malayalam (മലയാളം)
