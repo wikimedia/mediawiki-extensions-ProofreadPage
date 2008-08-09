@@ -137,6 +137,7 @@ $messages['arz'] = array(
  * @author Esbardu
  */
 $messages['ast'] = array(
+	'proofreadpage_desc'              => 'Permite una comparanza cenciella del testu col escaniáu orixinal',
 	'proofreadpage_namespace'         => 'Páxina',
 	'proofreadpage_index_namespace'   => 'Índiz',
 	'proofreadpage_image'             => 'imaxe',
