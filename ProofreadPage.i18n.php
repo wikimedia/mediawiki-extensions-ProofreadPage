@@ -1155,9 +1155,33 @@ $messages['krj'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'proofreadpage_desc' => 'Määt et müjjelesch, bequem der Täx mem enjeskännte Ojinaal ze verjliische.',
 	'proofreadpage_namespace' => 'Sigg',
+	'proofreadpage_index_namespace' => 'Enhallt',
+	'proofreadpage_image' => 'Beld',
+	'proofreadpage_index' => 'Verzeischneß',
 	'proofreadpage_nextpage' => 'Näx Sigg',
-	'proofreadpage_prevpage' => 'vörije Sigg',
+	'proofreadpage_prevpage' => 'Vörije Sigg',
+	'proofreadpage_header' => 'Sigge-Kopp (<i lang="en">noinclude</i>):',
+	'proofreadpage_body' => 'Tex op dä Sigg (för enzfööje):',
+	'proofreadpage_footer' => 'Sigge-Fohß (<i lang="en">noinclude</i>):',
+	'proofreadpage_toggleheaders' => '<i lang="en">Noinclude</i>-Afschnedde en- un ußblende',
+	'proofreadpage_quality1_category' => 'Unjeprööf',
+	'proofreadpage_quality2_category' => 'Problemscher',
+	'proofreadpage_quality3_category' => 'Nohjelässe',
+	'proofreadpage_quality4_category' => 'Fäädesch jepröhf',
+	'proofreadpage_index_listofpages' => 'SiggeLeß',
+	'proofreadpage_image_message' => 'Lengk op en Index-Sigg',
+	'proofreadpage_page_status' => 'Siggestattus',
+	'proofreadpage_js_attributes' => 'Schriver Tittel Johr Verlaach',
+	'proofreadpage_index_attributes' => 'Schriver
+Tittel
+Johr|ÄscheinungsJohr
+Verlaach
+Quell
+Beld|Beld om Ömschlach
+Sigge||20
+Aanmerkunge||10',
 );
 
 /** Latin (Latina)
@@ -1658,9 +1682,27 @@ Notas||10',
 
 /** Romanian (Română)
  * @author KlaudiuMihaila
+ * @author Mihai
  */
 $messages['ro'] = array(
 	'proofreadpage_namespace' => 'Pagină',
+	'proofreadpage_index_namespace' => 'Index',
+	'proofreadpage_image' => 'imagine',
+	'proofreadpage_index' => 'Index',
+	'proofreadpage_nextpage' => 'Pagina următoare',
+	'proofreadpage_prevpage' => 'Pagina anterioară',
+	'proofreadpage_index_listofpages' => 'Lista paginilor',
+	'proofreadpage_image_message' => 'Legătură către pagina index',
+	'proofreadpage_page_status' => 'Pagina status',
+	'proofreadpage_js_attributes' => 'Autor Titlu An Editor',
+	'proofreadpage_index_attributes' => 'Autor
+Titlu
+An|Anul publicării
+Editură
+Sursă
+Imagine|Imagine copertă
+Pagini||20
+Comentarii||10',
 );
 
 /** Russian (Русский)
