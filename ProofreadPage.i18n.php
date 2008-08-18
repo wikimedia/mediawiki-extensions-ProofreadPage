@@ -759,10 +759,12 @@ $messages['hi'] = array(
 );
 
 /** Croatian (Hrvatski)
+ * @author Dalibor Bosits
  * @author Dnik
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
+	'proofreadpage_desc' => 'Omogućava jednostavnu usporedbu teksta i izvornog skena',
 	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'slika',
