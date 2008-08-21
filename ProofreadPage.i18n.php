@@ -138,10 +138,36 @@ $messages['ar'] = array(
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Ghaly
+ * @author Ramsis II
  */
 $messages['arz'] = array(
+	'proofreadpage_desc' => 'بيسمح بمقارنة سهلة للنص مع المسح الأصلي',
 	'proofreadpage_namespace' => 'صفحه',
+	'proofreadpage_index_namespace' => 'فهرس',
 	'proofreadpage_image' => 'صوره',
+	'proofreadpage_index' => 'فهرس',
+	'proofreadpage_nextpage' => 'الصفحة الجاية',
+	'proofreadpage_prevpage' => 'الصفحة اللي فاتت',
+	'proofreadpage_header' => 'الراس(مش متضمن):',
+	'proofreadpage_body' => 'جسم الصفحة (للتضمين):',
+	'proofreadpage_footer' => 'ديل(مش متضمن):',
+	'proofreadpage_toggleheaders' => 'تغيير رؤية أقسام noinclude',
+	'proofreadpage_quality1_category' => 'مش مثبت قراية',
+	'proofreadpage_quality2_category' => 'بيعمل مشاكل',
+	'proofreadpage_quality3_category' => 'مثبت قراية',
+	'proofreadpage_quality4_category' => 'متصحح',
+	'proofreadpage_index_listofpages' => 'لستة الصفحات',
+	'proofreadpage_image_message' => 'لينك لصفحة الفهرس',
+	'proofreadpage_page_status' => 'حالة الصفحة',
+	'proofreadpage_js_attributes' => 'المؤلف العنوان السنة الناشر',
+	'proofreadpage_index_attributes' => 'المؤلف
+العنوان
+السنة|سنة النشر
+الناشر
+المصدر
+الصورة|صورة الغلاف
+الصفحات||20
+الملاحظات||10',
 );
 
 /** Asturian (Asturianu)
