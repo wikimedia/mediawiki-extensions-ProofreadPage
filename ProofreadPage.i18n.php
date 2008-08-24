@@ -559,6 +559,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Agony
  * @author Cimon Avaro
  * @author Crt
  * @author Jaakonam
@@ -573,6 +574,10 @@ $messages['fi'] = array(
 	'proofreadpage_index' => 'Hakemisto',
 	'proofreadpage_nextpage' => 'Seuraava sivu',
 	'proofreadpage_prevpage' => 'Edellinen sivu',
+	'proofreadpage_header' => 'Ylätunniste (ei sisällytetä):',
+	'proofreadpage_body' => 'Sivun runko (sisällytetään):',
+	'proofreadpage_footer' => 'Alatunniste (ei sisällytetä):',
+	'proofreadpage_toggleheaders' => 'vaihtaa sisällyttämättömien osioiden näkyvyyttä',
 	'proofreadpage_quality1_category' => 'Korjauslukematon',
 	'proofreadpage_quality2_category' => 'Ongelmallinen',
 	'proofreadpage_quality3_category' => 'Korjausluettu',
