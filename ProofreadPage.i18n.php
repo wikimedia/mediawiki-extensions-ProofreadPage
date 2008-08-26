@@ -717,10 +717,13 @@ $messages['gv'] = array(
 );
 
 /** Hawaiian (Hawai`i)
+ * @author Kalani
  * @author Singularity
  */
 $messages['haw'] = array(
 	'proofreadpage_namespace' => '‘Ao‘ao',
+	'proofreadpage_nextpage' => 'Mea aʻe',
+	'proofreadpage_prevpage' => 'Mea ma mua aʻe',
 );
 
 /** Hebrew (עברית)
