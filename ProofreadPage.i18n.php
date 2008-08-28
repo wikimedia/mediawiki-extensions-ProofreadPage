@@ -138,6 +138,7 @@ $messages['ar'] = array(
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Ghaly
+ * @author Meno25
  * @author Ramsis II
  */
 $messages['arz'] = array(
@@ -147,7 +148,7 @@ $messages['arz'] = array(
 	'proofreadpage_image' => 'صوره',
 	'proofreadpage_index' => 'فهرس',
 	'proofreadpage_nextpage' => 'الصفحة الجاية',
-	'proofreadpage_prevpage' => 'الصفحة اللي فاتت',
+	'proofreadpage_prevpage' => 'الصفحة اللى فاتت',
 	'proofreadpage_header' => 'الراس(مش متضمن):',
 	'proofreadpage_body' => 'جسم الصفحة (للتضمين):',
 	'proofreadpage_footer' => 'ديل(مش متضمن):',
