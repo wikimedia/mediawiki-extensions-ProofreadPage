@@ -670,6 +670,7 @@ Comentèros||10',
  */
 $messages['fy'] = array(
 	'proofreadpage_namespace' => 'Side',
+	'proofreadpage_nextpage' => 'Folgjende side',
 );
 
 /** Galician (Galego)
