@@ -1164,6 +1164,7 @@ $messages['ka'] = array(
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author Lovekhmer
+ * @author គីមស៊្រុន
  */
 $messages['km'] = array(
 	'proofreadpage_namespace' => 'ទំព័រ',
@@ -1179,6 +1180,14 @@ $messages['km'] = array(
 	'proofreadpage_image_message' => 'ភ្ជាប់ទៅទំព័រលិបិក្រម',
 	'proofreadpage_page_status' => 'ស្ថានភាព ទំព័រ',
 	'proofreadpage_js_attributes' => 'អ្នកនិពន្ធ ចំណងជើង ឆ្នាំបោះពុម្ព រោងពុម្ព',
+	'proofreadpage_index_attributes' => 'អ្នកនិពន្ឋ
+ចំនងជើង
+ឆ្នាំ|ឆ្នាំបោះពុម្ព
+គ្រឹះស្ថានបោះពុម្ព
+ប្រភព
+រូបភាព|រូបភាពលើក្រប
+ទំព័រ||២០
+កំនត់សំគាល់||១០',
 );
 
 /** Kinaray-a (Kinaray-a)
