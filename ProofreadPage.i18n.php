@@ -1445,9 +1445,19 @@ Catatan||10',
 
 /** Erzya (Эрзянь)
  * @author Amdf
+ * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
 	'proofreadpage_namespace' => 'Лопа',
+	'proofreadpage_nextpage' => 'Седе тов ве лопа',
+	'proofreadpage_index_attributes' => 'Сёрмадыцясь
+Конаксось
+Иесь|Нолдавкс иесь
+Нолдыцясь
+Лисьмапрясь
+Неевтесь|Лангаксонь неевтесь
+Лопатне||20
+Мельть-арьсемат||10',
 );
 
 /** Nahuatl (Nāhuatl)
