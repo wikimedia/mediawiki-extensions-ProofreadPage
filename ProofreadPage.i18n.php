@@ -270,8 +270,10 @@ $messages['be-tarask'] = array(
 /** Bulgarian (Български)
  * @author Borislav
  * @author DCLXVI
+ * @author Spiritia
  */
 $messages['bg'] = array(
+	'proofreadpage_desc' => 'Позволява лесно сравнение на текст с оригинален сканиран документ',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Показалец',
 	'proofreadpage_image' => 'картинка',
