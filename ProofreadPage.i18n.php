@@ -667,6 +667,13 @@ Pâges||20
 Comentèros||10',
 );
 
+/** Friulian (Furlan)
+ * @author Klenje
+ */
+$messages['fur'] = array(
+	'proofreadpage_index_listofpages' => 'Liste des pagjinis',
+);
+
 /** Western Frisian (Frysk)
  * @author Snakesteuben
  */
