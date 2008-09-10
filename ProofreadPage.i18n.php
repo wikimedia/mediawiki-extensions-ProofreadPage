@@ -717,6 +717,13 @@ Páxinas||20
 Comentarios||10',
 );
 
+/** Swiss German (Alemannisch)
+ * @author J. 'mach' wust
+ */
+$messages['gsw'] = array(
+	'proofreadpage_prevpage' => 'Vorderi Syte',
+);
+
 /** Manx (Gaelg)
  * @author MacTire02
  */
