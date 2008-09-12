@@ -366,30 +366,39 @@ $messages['bs'] = array(
 );
 
 /** Catalan (Català)
+ * @author Aleator
  * @author Jordi Roqué
  * @author Paucabot
  * @author SMP
  */
 $messages['ca'] = array(
+	'proofreadpage_desc' => "Permetre una fàcil comparació d'un text amb l'escanejat original",
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imatge',
 	'proofreadpage_index' => 'Índex',
 	'proofreadpage_nextpage' => 'Pàgina següent',
 	'proofreadpage_prevpage' => 'Pàgina anterior',
+	'proofreadpage_header' => 'Capçalera (noinclude):',
+	'proofreadpage_footer' => 'Peu de pàgina (noinclude):',
+	'proofreadpage_toggleheaders' => "Visualitzar seccions ''noinclude''",
+	'proofreadpage_quality1_category' => 'No revisat',
 	'proofreadpage_quality2_category' => 'Problemàtic',
+	'proofreadpage_quality3_category' => 'Revisat',
 	'proofreadpage_quality4_category' => 'Validat',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
 	'proofreadpage_page_status' => 'Status de la pàgina',
 	'proofreadpage_js_attributes' => 'Autor Títol Any Editorial',
-	'proofreadpage_index_attributes' => 'Autor<br />
-Títol<br />
-Any|Any de publicació<br />
-Editorial<br />
-Font<br />
-Imatge|Imatge de la coberta<br />
-Pàgines||20<br />
-Notes||10<br />',
+	'proofreadpage_index_attributes' => "Títol
+Autor
+Editor
+Lloc|Lloc d'edició
+Any|Any de publicació
+Clau
+Font|Facsímils
+Imatge
+Pàgines||20
+Sumari||15",
 );
 
 /** Cebuano (Cebuano)
@@ -526,6 +535,18 @@ Fonto
 Bildo|Bildo de kovrilo
 Paĝoj||20
 Rimarkoj||10',
+);
+
+/** Spanish (Español)
+ * @author Aleator
+ */
+$messages['es'] = array(
+	'proofreadpage_desc' => 'Permitir una fácil comparación de un texto con el escaneado original',
+	'proofreadpage_namespace' => 'Página',
+	'proofreadpage_index_namespace' => 'Índice',
+	'proofreadpage_nextpage' => 'Página siguiente',
+	'proofreadpage_prevpage' => 'Página anterior',
+	'proofreadpage_js_attributes' => 'Autor Título Año Editor',
 );
 
 /** Persian (فارسی)
