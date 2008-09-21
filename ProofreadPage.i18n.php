@@ -380,13 +380,15 @@ $messages['ca'] = array(
 	'proofreadpage_nextpage' => 'Pàgina següent',
 	'proofreadpage_prevpage' => 'Pàgina anterior',
 	'proofreadpage_header' => 'Capçalera (noinclude):',
+	'proofreadpage_body' => 'Cos de la pàgina (per a ser transclós):',
 	'proofreadpage_footer' => 'Peu de pàgina (noinclude):',
 	'proofreadpage_toggleheaders' => "Visualitzar seccions ''noinclude''",
-	'proofreadpage_quality1_category' => 'No revisat',
-	'proofreadpage_quality2_category' => 'Problemàtic',
-	'proofreadpage_quality3_category' => 'Revisat',
-	'proofreadpage_quality4_category' => 'Validat',
+	'proofreadpage_quality1_category' => 'Sense revisar',
+	'proofreadpage_quality2_category' => 'Problemàtica',
+	'proofreadpage_quality3_category' => 'Revisada',
+	'proofreadpage_quality4_category' => 'Validada',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
+	'proofreadpage_image_message' => "Enllaç a la pàgina d'índex",
 	'proofreadpage_page_status' => 'Status de la pàgina',
 	'proofreadpage_js_attributes' => 'Autor Títol Any Editorial',
 	'proofreadpage_index_attributes' => "Títol
@@ -539,13 +541,20 @@ Rimarkoj||10',
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Remember the dot
  */
 $messages['es'] = array(
 	'proofreadpage_desc' => 'Permitir una fácil comparación de un texto con el escaneado original',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
+	'proofreadpage_image' => 'imagen',
+	'proofreadpage_index' => 'Índice',
 	'proofreadpage_nextpage' => 'Página siguiente',
 	'proofreadpage_prevpage' => 'Página anterior',
+	'proofreadpage_quality2_category' => 'Problemática',
+	'proofreadpage_quality4_category' => 'Validada',
+	'proofreadpage_index_listofpages' => 'Lista de páginas',
+	'proofreadpage_page_status' => 'Estatus de página',
 	'proofreadpage_js_attributes' => 'Autor Título Año Editor',
 );
 
