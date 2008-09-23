@@ -556,6 +556,14 @@ $messages['es'] = array(
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_page_status' => 'Estatus de página',
 	'proofreadpage_js_attributes' => 'Autor Título Año Editor',
+	'proofreadpage_index_attributes' => 'Autor
+Título
+Año|Año de publicación
+Publicador
+Fuente
+Imagen|Imagen de cubierta
+Páginas||20
+Comentarios||10',
 );
 
 /** Persian (فارسی)
