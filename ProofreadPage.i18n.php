@@ -38,14 +38,18 @@ Remarks||10',
 );
 
 /** Message documentation (Message documentation)
+ * @author Aleator
  * @author Jon Harald Søby
+ * @author Purodha
  */
 $messages['qqq'] = array(
+	'proofreadpage_desc' => 'Short description of the Proofreadpage extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
+	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 );
 
 /** Eastern Mari (Олык Марий)
@@ -542,6 +546,7 @@ Rimarkoj||10',
 /** Spanish (Español)
  * @author Aleator
  * @author Remember the dot
+ * @author Sanbec
  */
 $messages['es'] = array(
 	'proofreadpage_desc' => 'Permitir una fácil comparación de un texto con el escaneado original',
@@ -551,15 +556,22 @@ $messages['es'] = array(
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_nextpage' => 'Página siguiente',
 	'proofreadpage_prevpage' => 'Página anterior',
+	'proofreadpage_header' => 'Encabezado (noinclude):',
+	'proofreadpage_body' => 'Cuerpo de la página (para ser transcluido):',
+	'proofreadpage_footer' => 'Pie de página (noinclude):',
+	'proofreadpage_toggleheaders' => 'visualizar secciones noinclude',
+	'proofreadpage_quality1_category' => 'No corregido',
 	'proofreadpage_quality2_category' => 'Problemática',
+	'proofreadpage_quality3_category' => 'Corregido',
 	'proofreadpage_quality4_category' => 'Validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
+	'proofreadpage_image_message' => 'Enlace a la página de índice',
 	'proofreadpage_page_status' => 'Estatus de página',
 	'proofreadpage_js_attributes' => 'Autor Título Año Editor',
 	'proofreadpage_index_attributes' => 'Autor
 Título
 Año|Año de publicación
-Publicador
+Editor
 Fuente
 Imagen|Imagen de cubierta
 Páginas||20
