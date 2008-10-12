@@ -57,6 +57,7 @@ $messages['qqq'] = array(
  */
 $messages['mhr'] = array(
 	'proofreadpage_namespace' => 'Лаштык',
+	'proofreadpage_nextpage' => 'Вес лаштык',
 );
 
 /** Afrikaans (Afrikaans)
@@ -138,6 +139,13 @@ $messages['ar'] = array(
 الصورة|صورة الغلاف
 الصفحات||20
 الملاحظات||10',
+);
+
+/** Araucanian (Mapudungun)
+ * @author Remember the dot
+ */
+$messages['arn'] = array(
+	'proofreadpage_namespace' => 'Pakina',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
