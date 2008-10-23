@@ -52,14 +52,6 @@ $messages['qqq'] = array(
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 );
 
-/** Eastern Mari (Олык Марий)
- * @author Сай
- */
-$messages['mhr'] = array(
-	'proofreadpage_namespace' => 'Лаштык',
-	'proofreadpage_nextpage' => 'Вес лаштык',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  * @author SPQRobin
@@ -775,6 +767,13 @@ Páxinas||20
 Comentarios||10',
 );
 
+/** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author Crazymadlover
+ */
+$messages['grc'] = array(
+	'proofreadpage_namespace' => 'Δέλτος',
+);
+
 /** Swiss German (Alemannisch)
  * @author J. 'mach' wust
  */
@@ -1417,6 +1416,14 @@ $messages['lv'] = array(
 	'proofreadpage_quality1_category' => 'Nav pārlasīts',
 	'proofreadpage_quality2_category' => 'Problemātisks',
 	'proofreadpage_quality3_category' => 'Pārlasīts',
+);
+
+/** Eastern Mari (Олык Марий)
+ * @author Сай
+ */
+$messages['mhr'] = array(
+	'proofreadpage_namespace' => 'Лаштык',
+	'proofreadpage_nextpage' => 'Вес лаштык',
 );
 
 /** Malayalam (മലയാളം)
