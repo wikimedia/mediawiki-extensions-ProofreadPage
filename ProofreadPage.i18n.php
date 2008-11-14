@@ -366,6 +366,7 @@ Notennoù||10',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_prevpage' => 'Prethodna stranica',
 );
 
