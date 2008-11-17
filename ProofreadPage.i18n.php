@@ -770,9 +770,17 @@ Comentarios||10',
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author Crazymadlover
+ * @author Omnipaedista
  */
 $messages['grc'] = array(
 	'proofreadpage_namespace' => 'Δέλτος',
+	'proofreadpage_index_namespace' => 'Δείκτης',
+	'proofreadpage_image' => 'εἰκών',
+	'proofreadpage_index' => 'Δείκτης',
+	'proofreadpage_quality1_category' => 'Μὴ ἠλεγμένη',
+	'proofreadpage_quality2_category' => 'Προβληματική',
+	'proofreadpage_index_listofpages' => 'Καταλογὴ δέλτων',
+	'proofreadpage_page_status' => 'Κατάστασις δέλτου',
 );
 
 /** Swiss German (Alemannisch)
