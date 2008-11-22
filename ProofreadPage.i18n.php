@@ -367,7 +367,17 @@ Notennoù||10',
  */
 $messages['bs'] = array(
 	'proofreadpage_namespace' => 'Stranica',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'slika',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_nextpage' => 'Slijedeća stranica',
 	'proofreadpage_prevpage' => 'Prethodna stranica',
+	'proofreadpage_header' => 'Zaglavlje (bez uključivanja):',
+	'proofreadpage_body' => 'Tijelo stranice (koje će biti uključeno):',
+	'proofreadpage_quality2_category' => 'Problematično',
+	'proofreadpage_quality4_category' => 'Provjereno',
+	'proofreadpage_index_listofpages' => 'Spisak stranica',
+	'proofreadpage_page_status' => 'Status stranice',
 );
 
 /** Catalan (Català)
