@@ -366,6 +366,7 @@ Notennoù||10',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'proofreadpage_desc' => 'Omogućuje jednostavnu usporedbu teksta sa originalnim',
 	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'slika',
@@ -374,10 +375,21 @@ $messages['bs'] = array(
 	'proofreadpage_prevpage' => 'Prethodna stranica',
 	'proofreadpage_header' => 'Zaglavlje (bez uključivanja):',
 	'proofreadpage_body' => 'Tijelo stranice (koje će biti uključeno):',
+	'proofreadpage_footer' => 'Podnožje (neuključuje):',
+	'proofreadpage_toggleheaders' => 'pokaži/sakrij vidljivost sekcija koje se ne uključuju',
 	'proofreadpage_quality2_category' => 'Problematično',
 	'proofreadpage_quality4_category' => 'Provjereno',
 	'proofreadpage_index_listofpages' => 'Spisak stranica',
 	'proofreadpage_page_status' => 'Status stranice',
+	'proofreadpage_js_attributes' => 'Autor Naslov Godina Izdavač',
+	'proofreadpage_index_attributes' => 'Autor
+Naslov
+Godina|Godina izdavanja
+Izdavač
+Izvor
+Slika|Naslovna slika
+Stranica||20
+Napomene||10',
 );
 
 /** Catalan (Català)
