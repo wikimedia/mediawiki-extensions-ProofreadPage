@@ -1282,6 +1282,7 @@ $messages['km'] = array(
 	'proofreadpage_header' => 'បឋមកថា(មិនរួមបញ្ចូល)៖',
 	'proofreadpage_footer' => 'បាតកថា(មិនរួមបញ្ចូល)៖',
 	'proofreadpage_quality2_category' => 'មានបញ្ហា',
+	'proofreadpage_quality4_category' => 'បាន​ធ្វើឱ្យមានសុពលភាព',
 	'proofreadpage_index_listofpages' => 'បញ្ជីទំព័រ',
 	'proofreadpage_image_message' => 'ភ្ជាប់ទៅទំព័រលិបិក្រម',
 	'proofreadpage_page_status' => 'ស្ថានភាព ទំព័រ',
