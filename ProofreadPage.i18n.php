@@ -758,6 +758,20 @@ $messages['fy'] = array(
 	'proofreadpage_nextpage' => 'Folgjende side',
 );
 
+/** Irish (Gaeilge)
+ * @author Alison
+ */
+$messages['ga'] = array(
+	'proofreadpage_index_attributes' => 'Údar
+Teideal
+Blian|Blian foilseacháin
+Foilsitheoir
+Foinse
+Íomhá|Íomhá clúdaigh
+Leathanaigh||20
+Nótaí',
+);
+
 /** Galician (Galego)
  * @author Alma
  * @author Toliño
@@ -1460,6 +1474,23 @@ $messages['lv'] = array(
 $messages['mhr'] = array(
 	'proofreadpage_namespace' => 'Лаштык',
 	'proofreadpage_nextpage' => 'Вес лаштык',
+);
+
+/** Macedonian (Македонски)
+ * @author Brest
+ */
+$messages['mk'] = array(
+	'proofreadpage_namespace' => 'Страница',
+	'proofreadpage_index_namespace' => 'Индекс',
+	'proofreadpage_image' => 'слика',
+	'proofreadpage_index' => 'Индекс',
+	'proofreadpage_nextpage' => 'Следна страница',
+	'proofreadpage_prevpage' => 'Претходна страница',
+	'proofreadpage_header' => 'Заглавие (без вклучување):',
+	'proofreadpage_body' => 'Содржина на страница (се трансклудира):',
+	'proofreadpage_index_listofpages' => 'Листа на страници',
+	'proofreadpage_image_message' => 'Врска до индекс страницата',
+	'proofreadpage_page_status' => 'Статус на страница',
 );
 
 /** Malayalam (മലയാളം)
