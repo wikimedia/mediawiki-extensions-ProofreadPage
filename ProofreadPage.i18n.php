@@ -2253,6 +2253,39 @@ $messages['th'] = array(
 หมายเหตุ||10',
 );
 
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'proofreadpage_desc' => 'Pahintulutan ang madaling paghahambing ng teksto sa orihinal na kuha (iskan) ng larawan',
+	'proofreadpage_namespace' => 'Pahina',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'larawan',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_nextpage' => 'Susunod na pahina',
+	'proofreadpage_prevpage' => 'Sinundang pahina',
+	'proofreadpage_header' => 'Paulo (huwagisama):',
+	'proofreadpage_body' => 'Katawan ng pahina (ililipat-sama):',
+	'proofreadpage_footer' => 'Talababa (huwagisama):',
+	'proofreadpage_toggleheaders' => 'pindutin-palitan huwagibilang mga seksyon antas ng pagkanatatanaw',
+	'proofreadpage_quality1_category' => 'Hindi pa nababasa, napaghahambing, at naiwawasto ang mga mali',
+	'proofreadpage_quality2_category' => 'May suliranin',
+	'proofreadpage_quality3_category' => 'Basahin, paghambingin, at magwasto ng kamalian',
+	'proofreadpage_quality4_category' => 'Napatotohanan na',
+	'proofreadpage_index_listofpages' => 'Talaan ng mga pahina',
+	'proofreadpage_image_message' => 'Kawing patungo sa pahina ng pagpapaksa (indeks)',
+	'proofreadpage_page_status' => 'Kalagayan ng pahina',
+	'proofreadpage_js_attributes' => 'May-akda Pamagat Taon Tapaglathala',
+	'proofreadpage_index_attributes' => 'May-akda
+Pamagat
+Taon|Taon ng paglalathala
+Tagapaglathala
+Pinagmulan
+Larawan|Pabalat na larawan
+Mga pahina||20
+Mga puna||10',
+);
+
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
  * @author Mach
