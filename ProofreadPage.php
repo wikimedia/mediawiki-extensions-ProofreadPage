@@ -402,7 +402,7 @@ function wfPRRenderPageList( $input, $args ) {
 		$pagetable = $dbr->tableName( 'page' );
 
 		$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-		$page_ns_index = Namespace::getCanonicalIndex( strtolower( $page_namespace ) );
+		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
 		if( $page_ns_index == NULL ) {
 			$page_ns_index = NS_MAIN;
 		}
