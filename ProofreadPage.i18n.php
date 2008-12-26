@@ -262,13 +262,36 @@ $messages['bcl'] = array(
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
+ * @author Jim-by
  */
 $messages['be-tarask'] = array(
+	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўнаць тэкст і адсканаваны арыгінал',
 	'proofreadpage_namespace' => 'Старонка',
+	'proofreadpage_index_namespace' => 'Індэкс',
 	'proofreadpage_image' => 'выява',
+	'proofreadpage_index' => 'Індэкс',
 	'proofreadpage_nextpage' => 'Наступная старонка',
 	'proofreadpage_prevpage' => 'Папярэдняя старонка',
+	'proofreadpage_header' => 'Загаловак (не ўключаецца):',
+	'proofreadpage_body' => 'Зьмест старонкі (будзе ўключацца):',
+	'proofreadpage_footer' => 'Ніжні калонтытул (не ўключаецца):',
+	'proofreadpage_toggleheaders' => 'зьмяніць бачнасьць няўключаных сэкцыяў',
+	'proofreadpage_quality1_category' => 'Не праверана',
+	'proofreadpage_quality2_category' => 'Праблематычная',
+	'proofreadpage_quality3_category' => 'Праверана',
+	'proofreadpage_quality4_category' => 'Праверана',
 	'proofreadpage_index_listofpages' => 'Сьпіс старонак',
+	'proofreadpage_image_message' => 'Спасылка на старонку індэксу',
+	'proofreadpage_page_status' => 'Статус старонкі',
+	'proofreadpage_js_attributes' => 'Аўтар Назва Год Выдавецтва',
+	'proofreadpage_index_attributes' => 'Аўтар
+Назва
+Год|Год выданьня
+Выдавецтва
+Крыніца
+Выява|Выява абкладкі
+Старонак||20
+Прымячаньняў||10',
 );
 
 /** Bulgarian (Български)
