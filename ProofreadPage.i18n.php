@@ -67,6 +67,13 @@ $messages['af'] = array(
 	'proofreadpage_page_status' => 'Bladsystatus',
 );
 
+/** Amharic (አማርኛ)
+ * @author Codex Sinaiticus
+ */
+$messages['am'] = array(
+	'proofreadpage_nextpage' => 'የሚቀጥለው ገጽ',
+);
+
 /** Aragonese (Aragonés)
  * @author Juanpabl
  */
@@ -274,7 +281,7 @@ $messages['be-tarask'] = array(
 	'proofreadpage_prevpage' => 'Папярэдняя старонка',
 	'proofreadpage_header' => 'Загаловак (не ўключаецца):',
 	'proofreadpage_body' => 'Зьмест старонкі (ўключаецца):',
-	'proofreadpage_footer' => 'Ніжні калонтытул (не ўключаецца):',
+	'proofreadpage_footer' => 'Ніжні калянтытул (не ўключаецца):',
 	'proofreadpage_toggleheaders' => 'зьмяніць бачнасьць не ўключаных сэкцыяў',
 	'proofreadpage_quality1_category' => 'Не правераная',
 	'proofreadpage_quality2_category' => 'Праблематычная',
@@ -1643,6 +1650,7 @@ $messages['myv'] = array(
  */
 $messages['nah'] = array(
 	'proofreadpage_namespace' => 'Zāzanilli',
+	'proofreadpage_image' => 'īxiptli',
 	'proofreadpage_nextpage' => 'Niman zāzanilli',
 	'proofreadpage_prevpage' => 'Achto zāzanilli',
 );
@@ -1715,14 +1723,37 @@ Opmerkingen||10",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Harald Khan
  * @author Jon Harald Søby
  */
 $messages['nn'] = array(
+	'proofreadpage_desc' => 'Tillèt enkel samanlikning av tekst med originalskanning.',
 	'proofreadpage_namespace' => 'Side',
 	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'bilete',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_nextpage' => 'Neste side',
 	'proofreadpage_prevpage' => 'Førre side',
+	'proofreadpage_header' => 'Hovudseksjon (ikkje inkludert):',
+	'proofreadpage_body' => 'Hovuddel (inkludert):',
+	'proofreadpage_footer' => 'Fotseksjon (ikkje inludert):',
+	'proofreadpage_toggleheaders' => 'syna/ikkje syna seksjonar ikkje inkluderte på sida',
+	'proofreadpage_quality1_category' => 'Ikkje korrekturlest',
+	'proofreadpage_quality2_category' => 'Problematisk',
+	'proofreadpage_quality3_category' => 'Korrekturlest',
+	'proofreadpage_quality4_category' => 'Validert',
+	'proofreadpage_index_listofpages' => 'Lista over sider',
+	'proofreadpage_image_message' => 'Lenkja til indekssida',
+	'proofreadpage_page_status' => 'Sidestatus',
+	'proofreadpage_js_attributes' => 'Forfattar Tittel År Utgjevar',
+	'proofreadpage_index_attributes' => 'Forfattar
+Tittel
+År|Utgjeve år
+Utgjevar
+Kjelda
+Bilete|Omslagsbilete
+Sider||20
+Merknader||10',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
