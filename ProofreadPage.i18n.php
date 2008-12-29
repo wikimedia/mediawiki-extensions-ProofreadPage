@@ -270,6 +270,7 @@ $messages['bcl'] = array(
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Red Winged Duck
  */
 $messages['be-tarask'] = array(
 	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўноўваць тэкст і адсканаваны арыгінал',
@@ -280,9 +281,9 @@ $messages['be-tarask'] = array(
 	'proofreadpage_nextpage' => 'Наступная старонка',
 	'proofreadpage_prevpage' => 'Папярэдняя старонка',
 	'proofreadpage_header' => 'Загаловак (не ўключаецца):',
-	'proofreadpage_body' => 'Зьмест старонкі (ўключаецца):',
+	'proofreadpage_body' => 'Зьмест старонкі (уключаецца):',
 	'proofreadpage_footer' => 'Ніжні калянтытул (не ўключаецца):',
-	'proofreadpage_toggleheaders' => 'зьмяніць бачнасьць не ўключаных сэкцыяў',
+	'proofreadpage_toggleheaders' => 'зьмяніць бачнасьць ня ўключаных сэкцыяў',
 	'proofreadpage_quality1_category' => 'Не правераная',
 	'proofreadpage_quality2_category' => 'Праблематычная',
 	'proofreadpage_quality3_category' => 'Вычытаная',
@@ -1328,7 +1329,9 @@ $messages['km'] = array(
 	'proofreadpage_prevpage' => 'ទំព័រមុន',
 	'proofreadpage_header' => 'បឋមកថា(មិនរួមបញ្ចូល)៖',
 	'proofreadpage_footer' => 'បាតកថា(មិនរួមបញ្ចូល)៖',
+	'proofreadpage_quality1_category' => 'មិន​មើលកែ',
 	'proofreadpage_quality2_category' => 'មានបញ្ហា',
+	'proofreadpage_quality3_category' => 'មើលកែ',
 	'proofreadpage_quality4_category' => 'បាន​ធ្វើឱ្យមានសុពលភាព',
 	'proofreadpage_index_listofpages' => 'បញ្ជីទំព័រ',
 	'proofreadpage_image_message' => 'ភ្ជាប់ទៅទំព័រលិបិក្រម',
