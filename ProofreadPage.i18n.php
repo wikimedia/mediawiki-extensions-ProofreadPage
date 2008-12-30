@@ -2249,6 +2249,7 @@ $messages['te'] = array(
  */
 $messages['tet'] = array(
 	'proofreadpage_namespace' => 'Pájina',
+	'proofreadpage_prevpage' => 'Pájina molok',
 );
 
 /** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
