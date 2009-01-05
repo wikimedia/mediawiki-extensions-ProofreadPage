@@ -547,6 +547,39 @@ Seiten||20
 Bemerkungen||10',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'proofreadpage_desc' => 'Zmóžnja lažke pśirownowanje teksta z originalnym skanom',
+	'proofreadpage_namespace' => 'Bok',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'wobraz',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_nextpage' => 'Pśiducy bok',
+	'proofreadpage_prevpage' => 'Slědny bok',
+	'proofreadpage_header' => 'Głowowa smužka (noinclude)',
+	'proofreadpage_body' => 'Tekstowe śěło',
+	'proofreadpage_footer' => 'Nogowa smužka (noinclude):',
+	'proofreadpage_toggleheaders' => 'wótrězki noinclude pokazaś/schowaś',
+	'proofreadpage_quality1_category' => 'Njekontrolěrowany',
+	'proofreadpage_quality2_category' => 'Problematiski',
+	'proofreadpage_quality3_category' => 'Pśekontrolěrowany',
+	'proofreadpage_quality4_category' => 'Wobwěsćony',
+	'proofreadpage_index_listofpages' => 'Lisćina bokow',
+	'proofreadpage_image_message' => 'Wótkaz k indeksowemu bokoju',
+	'proofreadpage_page_status' => 'Bokowy status',
+	'proofreadpage_js_attributes' => 'Awtor Titel Lěto Wudawaŕ',
+	'proofreadpage_index_attributes' => 'Awtor
+Titel
+Lěto|Lěto wózjawjenja
+Wudawaŕ
+Žrědło
+Wobraz|Titelowy wobraz
+Boki||20
+Pśispomnjeśa||10',
+);
+
 /** Ewe (Eʋegbe) */
 $messages['ee'] = array(
 	'proofreadpage_namespace' => 'Nuŋɔŋlɔ',
