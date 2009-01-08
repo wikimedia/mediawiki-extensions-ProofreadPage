@@ -887,10 +887,37 @@ $messages['grc'] = array(
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Holder
  * @author J. 'mach' wust
  */
 $messages['gsw'] = array(
+	'proofreadpage_desc' => 'Macht e eifache Verglyych vu Täxt mit em Originalscan megli',
+	'proofreadpage_namespace' => 'Syte',
+	'proofreadpage_index_namespace' => 'Index',
+	'proofreadpage_image' => 'Scan',
+	'proofreadpage_index' => 'Index',
+	'proofreadpage_nextpage' => 'Negschti Syte',
 	'proofreadpage_prevpage' => 'Vorderi Syte',
+	'proofreadpage_header' => 'Chopfzyylete (noinclude):',
+	'proofreadpage_body' => 'Täxtlyyb (Transklusion):',
+	'proofreadpage_footer' => 'Fueßzyylete (noinclude):',
+	'proofreadpage_toggleheaders' => 'noinclude-Abschnit yy-/uusblände',
+	'proofreadpage_quality1_category' => 'Nit korrigiert',
+	'proofreadpage_quality2_category' => 'Korrekturprobläm',
+	'proofreadpage_quality3_category' => 'Korrigiert',
+	'proofreadpage_quality4_category' => 'Fertig',
+	'proofreadpage_index_listofpages' => 'Sytelischt',
+	'proofreadpage_image_message' => 'Gleich zue dr Indexsyte',
+	'proofreadpage_page_status' => 'Sytestatus',
+	'proofreadpage_js_attributes' => 'Autor Titel Johr Verlag',
+	'proofreadpage_index_attributes' => 'Autor
+Titel
+Johr|Johr vu dr Vereffetlichung
+Verlag
+Quälle
+Bild|Titelbild
+Syte||20
+Aamerkige||10',
 );
 
 /** Manx (Gaelg)
@@ -1345,6 +1372,8 @@ $messages['ka'] = array(
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
 	'proofreadpage_image' => 'სურათი',
+	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
+	'proofreadpage_prevpage' => 'წინა გვერდი',
 );
 
 /** Khmer (ភាសាខ្មែរ)
