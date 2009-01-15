@@ -1414,6 +1414,7 @@ $messages['km'] = array(
  */
 $messages['ko'] = array(
 	'proofreadpage_image' => '그림',
+	'proofreadpage_page_status' => '문서 상태',
 );
 
 /** Kinaray-a (Kinaray-a)
@@ -1918,9 +1919,9 @@ $messages['pl'] = array(
 	'proofreadpage_body' => 'Treść strony (załączany fragment):',
 	'proofreadpage_footer' => 'Stopka (noinclude):',
 	'proofreadpage_toggleheaders' => 'zmień widoczność sekcji noinclude',
-	'proofreadpage_quality1_category' => 'Niesprawdzone',
-	'proofreadpage_quality2_category' => 'Problematyczne',
-	'proofreadpage_quality3_category' => 'Sprawdzone',
+	'proofreadpage_quality1_category' => 'Bez korekty',
+	'proofreadpage_quality2_category' => 'Do wyjaśnienia',
+	'proofreadpage_quality3_category' => 'Skorygowane',
 	'proofreadpage_quality4_category' => 'Sprawdzone',
 	'proofreadpage_index_listofpages' => 'Spis stron',
 	'proofreadpage_image_message' => 'Link do strony indeksowej',
@@ -1932,7 +1933,7 @@ Rok|Rok publikacji
 Wydawca
 Źródło
 Ilustracja|Okładka
-Stron||20
+Strony||20
 Uwagi||10',
 );
 
@@ -2034,6 +2035,20 @@ Sursă
 Imagine|Imagine copertă
 Pagini||20
 Comentarii||10',
+);
+
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'proofreadpage_index_attributes' => "Autore
+Titele
+Anne|Anne de pubblicazione
+Pubblicatore
+Sorgende
+Immaggine|Immaggine d'a coprtine
+Paggène||20
+Note||10",
 );
 
 /** Russian (Русский)
@@ -2416,18 +2431,30 @@ Mga puna||10',
 
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
+ * @author Joseph
  * @author Mach
  * @author Runningfridgesrule
  * @author Suelnur
  */
 $messages['tr'] = array(
+	'proofreadpage_desc' => 'Orijinal taramayla metnin kolayca karşılaştırılmasına izin verir',
 	'proofreadpage_namespace' => 'Sayfa',
 	'proofreadpage_index_namespace' => 'Endeks',
-	'proofreadpage_image' => 'Resim',
+	'proofreadpage_image' => 'resim',
 	'proofreadpage_index' => 'Dizin',
 	'proofreadpage_nextpage' => 'Gelecek sayfa',
 	'proofreadpage_prevpage' => 'Önceki sayfa',
+	'proofreadpage_header' => 'Başlık (içerme):',
+	'proofreadpage_body' => 'Sayfa gövdesi (çapraz eklenecek):',
+	'proofreadpage_footer' => 'Alt bilgi (içerme):',
+	'proofreadpage_toggleheaders' => 'içerilmeyen bölümlerinin görünürlüğünü değiştir',
+	'proofreadpage_quality1_category' => 'Düzeltilmemiş',
+	'proofreadpage_quality2_category' => 'Sorunlu',
+	'proofreadpage_quality3_category' => 'Düzelt',
+	'proofreadpage_quality4_category' => 'Doğrulanmış',
 	'proofreadpage_index_listofpages' => 'Sayfalar listesi',
+	'proofreadpage_image_message' => 'Endeks sayfasına bağlantı',
+	'proofreadpage_page_status' => 'Sayfa durumu',
 	'proofreadpage_js_attributes' => 'Yazar Başlık Yıl Yayımcı',
 	'proofreadpage_index_attributes' => 'Yazar
 Başlık
