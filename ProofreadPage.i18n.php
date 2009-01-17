@@ -1374,6 +1374,7 @@ $messages['ka'] = array(
 	'proofreadpage_image' => 'სურათი',
 	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
 	'proofreadpage_prevpage' => 'წინა გვერდი',
+	'proofreadpage_index_listofpages' => 'გვერდების სია',
 );
 
 /** Khmer (ភាសាខ្មែរ)
