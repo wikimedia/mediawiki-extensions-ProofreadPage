@@ -1367,14 +1367,26 @@ Cathetan||10',
 
 /** Georgian (ქართული)
  * @author Malafaya
+ * @author Sopho
  */
 $messages['ka'] = array(
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
 	'proofreadpage_image' => 'სურათი',
+	'proofreadpage_index' => 'ინდექსი',
 	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
 	'proofreadpage_prevpage' => 'წინა გვერდი',
+	'proofreadpage_quality2_category' => 'პრობლემატური',
 	'proofreadpage_index_listofpages' => 'გვერდების სია',
+	'proofreadpage_page_status' => 'გვერდის სტატუსი',
+	'proofreadpage_index_attributes' => 'ავტორი
+სათაური
+წელი|გამოცემის წელი
+გამომცემელი
+წყარო
+გამოსახულება|ყდის გამოსახულება
+გვერდები||20
+შენიშვნები||10',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -2198,6 +2210,7 @@ $messages['sr-ec'] = array(
  * @author Pyt
  */
 $messages['stq'] = array(
+	'proofreadpage_desc' => 'Moaket dät mäkkelk Ferglieken muugelk fon Text mäd dän Originoalscan',
 	'proofreadpage_namespace' => 'Siede',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Scan',
@@ -2215,6 +2228,7 @@ $messages['stq'] = array(
 	'proofreadpage_index_listofpages' => 'Siedenlieste',
 	'proofreadpage_image_message' => 'Ferbiendenge tou ju Indexsiede',
 	'proofreadpage_page_status' => 'Siedenstoatus',
+	'proofreadpage_js_attributes' => 'Autor Tittel Jier Ferlaach',
 	'proofreadpage_index_attributes' => 'Autor
 Tittel
 Jier|Ärschienengsjier
