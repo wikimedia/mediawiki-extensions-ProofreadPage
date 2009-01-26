@@ -668,6 +668,29 @@ Páginas||20
 Comentarios||10',
 );
 
+/** Basque (Euskara)
+ * @author An13sa
+ */
+$messages['eu'] = array(
+	'proofreadpage_namespace' => 'Orria',
+	'proofreadpage_index_namespace' => 'Aurkibidea',
+	'proofreadpage_image' => 'irudi',
+	'proofreadpage_index' => 'Aurkibidea',
+	'proofreadpage_nextpage' => 'Hurrengo orria',
+	'proofreadpage_prevpage' => 'Aurreko orria',
+	'proofreadpage_index_listofpages' => 'Orri zerrenda',
+	'proofreadpage_image_message' => 'Aurkibide orrira lotu',
+	'proofreadpage_js_attributes' => 'Egilea Izenburua Urtea Argitaratzailea',
+	'proofreadpage_index_attributes' => 'Egilea
+Izenburua
+Urtea|Argitalpen urtea
+Argitaratzailea
+Iturria
+Irudia|estalki irudia
+Orriak||20
+Oharrak||10',
+);
+
 /** Persian (فارسی)
  * @author Huji
  */
