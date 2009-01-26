@@ -1427,6 +1427,8 @@ $messages['km'] = array(
  */
 $messages['ko'] = array(
 	'proofreadpage_image' => '그림',
+	'proofreadpage_nextpage' => '다음 페이지',
+	'proofreadpage_prevpage' => '이전 페이지',
 	'proofreadpage_quality2_category' => '문제 있음',
 	'proofreadpage_index_listofpages' => '문서 목록',
 	'proofreadpage_page_status' => '문서 상태',
