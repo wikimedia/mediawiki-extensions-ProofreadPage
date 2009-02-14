@@ -587,17 +587,44 @@ $messages['ee'] = array(
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author Dead3y3
  * @author ZaDiak
  */
 $messages['el'] = array(
+	'proofreadpage_desc' => 'Επίτρεψε εύκολη σύγκριση κειμένου με την πρωτότυπη σάρωση',
 	'proofreadpage_namespace' => 'Σελίδα',
-	'proofreadpage_image' => 'Εικόνα',
+	'proofreadpage_index_namespace' => 'Ευρετήριο',
+	'proofreadpage_image' => 'εικόνα',
+	'proofreadpage_index' => 'Ευρετήριο',
 	'proofreadpage_nextpage' => 'Επόμενη σελίδα',
 	'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
 	'proofreadpage_header' => 'Επικεφαλίδα (noinclude):',
+	'proofreadpage_body' => 'Σώμα σελίδας (προς εσωκλεισμό):',
 	'proofreadpage_footer' => 'Κατακλείδα (noinclude):',
+	'proofreadpage_toggleheaders' => 'ενάλλαξε την ορατότητα των τμημάτων noinclude',
+	'proofreadpage_quality1_category' => 'Δεν έχει γίνει proofreading',
 	'proofreadpage_quality2_category' => 'Προβληματική',
-	'proofreadpage_quality4_category' => 'Αναγνωρίστηκε',
+	'proofreadpage_quality3_category' => 'Έχει γίνει proofreading',
+	'proofreadpage_quality4_category' => 'Εγκρίθηκε',
+	'proofreadpage_index_listofpages' => 'Κατάλογος σελίδων',
+	'proofreadpage_image_message' => 'Σύνδεσμος προς τη σελίδα ευρετηρίου',
+	'proofreadpage_page_status' => 'Κατάσταση σελίδας',
+	'proofreadpage_js_attributes' => 'Συγγραφέας Τίτλος Έτος Εκδότης',
+	'proofreadpage_index_attributes' => 'Συγγραφέας
+
+Τίτλος
+
+Έτος|Έτος έκδοσης
+
+Εκδότης
+
+Πηγή
+
+Εικόνα|Εξώφυλλο
+
+Σελίδες||20
+
+Σχόλια||10',
 );
 
 /** Esperanto (Esperanto)
