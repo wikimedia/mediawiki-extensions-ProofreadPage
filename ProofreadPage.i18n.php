@@ -793,9 +793,10 @@ Huomautuksia||10',
  * @author Dereckson
  * @author Grondin
  * @author Urhixidur
+ * @author Verdy p
  */
 $messages['fr'] = array(
-	'proofreadpage_desc' => 'Permet une comparaison facile entre le texte et la numérisation originale',
+	'proofreadpage_desc' => 'Permet une comparaison facile entre le texte et sa numérisation originale',
 	'proofreadpage_namespace' => 'Page',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'image',
@@ -803,15 +804,15 @@ $messages['fr'] = array(
 	'proofreadpage_nextpage' => 'Page suivante',
 	'proofreadpage_prevpage' => 'Page précédente',
 	'proofreadpage_header' => 'En-tête (noinclude) :',
-	'proofreadpage_body' => 'Contenu (transclusion) :',
+	'proofreadpage_body' => 'Contenu (par transclusion) :',
 	'proofreadpage_footer' => 'Pied de page (noinclude) :',
 	'proofreadpage_toggleheaders' => 'masquer/montrer les sections noinclude',
-	'proofreadpage_quality1_category' => 'Page non corrigée',
-	'proofreadpage_quality2_category' => 'Page à problème',
-	'proofreadpage_quality3_category' => 'Page corrigée',
-	'proofreadpage_quality4_category' => 'Page validée',
+	'proofreadpage_quality1_category' => 'Non corrigée',
+	'proofreadpage_quality2_category' => 'Problématique',
+	'proofreadpage_quality3_category' => 'Corrigée',
+	'proofreadpage_quality4_category' => 'Validée',
 	'proofreadpage_index_listofpages' => 'Liste des pages',
-	'proofreadpage_image_message' => "Lien vers l'index",
+	'proofreadpage_image_message' => 'Lien vers la page d’index',
 	'proofreadpage_page_status' => 'État de la page',
 	'proofreadpage_js_attributes' => 'Auteur Titre Année Éditeur',
 	'proofreadpage_index_attributes' => 'Auteur
@@ -821,7 +822,7 @@ Année|Année de publication
 Source
 Image|Image en couverture
 Pages||20
-Commentaires||10',
+Remarques||10',
 );
 
 /** Franco-Provençal (Arpetan)
