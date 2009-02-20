@@ -2080,6 +2080,39 @@ Páginas||20
 Notas||10',
 );
 
+/** Brazilian Portuguese (Português do Brasil)
+ * @author Eduardo.mps
+ */
+$messages['pt-br'] = array(
+	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
+	'proofreadpage_namespace' => 'Página',
+	'proofreadpage_index_namespace' => 'Índice',
+	'proofreadpage_image' => 'imagem',
+	'proofreadpage_index' => 'Índice',
+	'proofreadpage_nextpage' => 'Próxima página',
+	'proofreadpage_prevpage' => 'Página anterior',
+	'proofreadpage_header' => 'Cabeçalho (em modo noinclude):',
+	'proofreadpage_body' => 'Corpo de página (em modo de transclusão):',
+	'proofreadpage_footer' => 'Rodapé (em modo noinclude):',
+	'proofreadpage_toggleheaders' => 'tornar as seções noinclude visíveis',
+	'proofreadpage_quality1_category' => 'Não revistas',
+	'proofreadpage_quality2_category' => 'Problemáticas',
+	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
+	'proofreadpage_quality4_category' => 'Validadas',
+	'proofreadpage_index_listofpages' => 'Lista de páginas',
+	'proofreadpage_image_message' => 'Link para a página de índice',
+	'proofreadpage_page_status' => 'Estado da página',
+	'proofreadpage_js_attributes' => 'Autor Título Ano Editora',
+	'proofreadpage_index_attributes' => 'Autor
+Título
+Ano|Ano de publicação
+Editora
+Fonte
+Imagem|Imagem de capa
+Páginas||20
+Notas||10',
+);
+
 /** Romanian (Română)
  * @author KlaudiuMihaila
  * @author Mihai
