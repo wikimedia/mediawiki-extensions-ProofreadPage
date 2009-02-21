@@ -908,7 +908,7 @@ $messages['gl'] = array(
 	'proofreadpage_quality2_category' => 'Problemático',
 	'proofreadpage_quality3_category' => 'Corrixir',
 	'proofreadpage_quality4_category' => 'Validado',
-	'proofreadpage_index_listofpages' => 'Listaxe de páxinas',
+	'proofreadpage_index_listofpages' => 'Lista de páxinas',
 	'proofreadpage_image_message' => 'Ligazón a páxina do índice',
 	'proofreadpage_page_status' => 'Status da páxina',
 	'proofreadpage_js_attributes' => 'Autor Título Ano Publicación',
@@ -2575,6 +2575,15 @@ Açıklamalar||10',
 $messages['ts'] = array(
 	'proofreadpage_namespace' => 'Tluka',
 	'proofreadpage_index_namespace' => 'Nxaxamelo',
+);
+
+/** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
+ * @author Jose77
+ */
+$messages['ug-latn'] = array(
+	'proofreadpage_namespace' => 'Bet',
+	'proofreadpage_nextpage' => 'Kéyinki bet',
+	'proofreadpage_prevpage' => 'Aldinqi bet',
 );
 
 /** Ukrainian (Українська)
