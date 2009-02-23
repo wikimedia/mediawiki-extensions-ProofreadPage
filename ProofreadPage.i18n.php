@@ -1183,10 +1183,11 @@ $messages['hy'] = array(
 	'proofreadpage_index_listofpages' => 'Էջերի ցանկ',
 	'proofreadpage_image_message' => 'Հղում ինդեքսի էջին',
 	'proofreadpage_page_status' => 'Էջի կարգավիճակ',
+	'proofreadpage_js_attributes' => 'Հեղինակ Անվանում Տարի Հրատարակություն',
 	'proofreadpage_index_attributes' => 'Author|Հեղինակ
 Title|Անվանում
 Year|Հրատարակման տարեթիվ
-Publisher|Հրատարակիչ
+Publisher|Հրատարակություն
 Source|Աղբյուր
 Image|Կազմի պատկեր
 Pages|Էջեր|20
@@ -1270,6 +1271,8 @@ $messages['io'] = array(
 	'proofreadpage_index' => 'Indexo',
 	'proofreadpage_nextpage' => 'Sequanta pagino',
 	'proofreadpage_prevpage' => 'Antea pagino',
+	'proofreadpage_index_listofpages' => 'Pagino-listo',
+	'proofreadpage_page_status' => 'Stando di pagino',
 );
 
 /** Icelandic (Íslenska)
