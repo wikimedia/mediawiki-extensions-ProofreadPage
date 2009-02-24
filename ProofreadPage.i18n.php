@@ -1547,6 +1547,7 @@ $messages['lb'] = array(
 	'proofreadpage_nextpage' => 'Nächst Säit',
 	'proofreadpage_prevpage' => 'Säit virdrun',
 	'proofreadpage_header' => 'Entête (noinclude):',
+	'proofreadpage_body' => 'Inhalt vun der Säit (Transklusioun):',
 	'proofreadpage_footer' => 'Foussnote (noinclude):',
 	'proofreadpage_quality1_category' => 'Net verbessert',
 	'proofreadpage_quality2_category' => 'Problematesch',
