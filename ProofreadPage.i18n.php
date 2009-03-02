@@ -1786,6 +1786,13 @@ Jumlah halaman||20
 Catatan||10',
 );
 
+/** Mirandese (Mirandés)
+ * @author Malafaya
+ */
+$messages['mwl'] = array(
+	'proofreadpage_namespace' => 'Páigina',
+);
+
 /** Erzya (Эрзянь)
  * @author Amdf
  * @author Botuzhaleny-sodamo
