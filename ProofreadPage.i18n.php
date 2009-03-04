@@ -1548,6 +1548,13 @@ Sigge||20
 Aanmerkunge||10',
 );
 
+/** Cornish (Kernewek)
+ * @author Kw-Moon
+ */
+$messages['kw'] = array(
+	'proofreadpage_namespace' => 'Folen',
+);
+
 /** Latin (Latina)
  * @author SPQRobin
  */
