@@ -2008,6 +2008,9 @@ Comentaris||10',
  */
 $messages['os'] = array(
 	'proofreadpage_namespace' => 'Фарс',
+	'proofreadpage_image' => 'ныв',
+	'proofreadpage_nextpage' => 'Фæдылдзог фарс',
+	'proofreadpage_prevpage' => 'Раздæры фарс',
 );
 
 /** Polish (Polski)
