@@ -41,15 +41,19 @@ Remarks||10',
  * @author Aleator
  * @author Jon Harald Søby
  * @author Purodha
+ * @author Yknok29
  */
 $messages['qqq'] = array(
 	'proofreadpage_desc' => 'Short description of the Proofreadpage extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
+	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
+	'proofreadpage_js_attributes' => '작가 제목 연도 출판사',
+	'proofreadpage_index_attributes' => '도서 정보',
 );
 
 /** Veps (Vepsan kel')
