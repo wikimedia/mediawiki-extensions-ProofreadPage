@@ -1502,14 +1502,27 @@ $messages['km'] = array(
 
 /** Korean (한국어)
  * @author Kwj2772
+ * @author Yknok29
  */
 $messages['ko'] = array(
+	'proofreadpage_index_namespace' => '목록',
 	'proofreadpage_image' => '그림',
+	'proofreadpage_index' => '목록',
 	'proofreadpage_nextpage' => '다음 페이지',
 	'proofreadpage_prevpage' => '이전 페이지',
 	'proofreadpage_quality2_category' => '문제 있음',
 	'proofreadpage_index_listofpages' => '문서 목록',
+	'proofreadpage_image_message' => '목록 페이지로 연결됩니다.',
 	'proofreadpage_page_status' => '문서 상태',
+	'proofreadpage_js_attributes' => '작가 제목 연도 출판사',
+	'proofreadpage_index_attributes' => '저자
+제목
+연도|출판연도
+출판사
+출처
+그림|책 표지
+쪽수||20
+비평||10',
 );
 
 /** Kinaray-a (Kinaray-a)
