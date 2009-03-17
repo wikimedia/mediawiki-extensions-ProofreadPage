@@ -12,6 +12,10 @@ $wgHooks['BeforePageDisplay'][] = 'pr_beforePageDisplay';
 $wgHooks['GetLinkColours'][] = 'pr_getLinkColours';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'pr_imageMessage';
 $wgHooks['ArticleSaveComplete'][] = 'pr_articleSave';
+$wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
+
+$wgDjvutxt = 'djvutxt';
+
 
 $wgExtensionCredits['other'][] = array(
 	'name'           => 'ProofreadPage',
@@ -648,3 +652,32 @@ function pr_articleSave( $article ) {
 
 }
 
+
+
+function pr_preloadText( $textbox1, $mTitle ) {
+	global $wgDjvutxt;
+
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+
+	if ( preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
+
+		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
+		if ( !$imageTitle ) {
+			return true;
+		}
+
+		$image = Image::newFromTitle( $imageTitle );
+		if ( $image->exists() ) {
+			$srcPath = $image->getPath();
+			$cmd = "( " .wfEscapeShellArg( $wgDjvutxt );
+			$cmd .= " --page={$m[2]} ". wfEscapeShellArg( $srcPath )." )";
+			wfProfileIn( 'ProofreadPage' );
+			wfDebug( __METHOD__.": $cmd\n" );
+			$err = wfShellExec( $cmd, $retval );
+			wfProfileOut( 'ProofreadPage' );
+
+			if($retval==0) $textbox1 = $err;
+		}
+	}
+	return true;
+}
