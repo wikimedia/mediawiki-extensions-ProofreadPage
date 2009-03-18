@@ -663,7 +663,7 @@ function pr_preloadText( $textbox1, $mTitle ) {
 			return true;
 		}
 
-		$image = wfFindFile( $title );
+		$image = wfFindFile( $imageTitle );
 		if ( $image->exists() && $image->getMimeType() == 'image/vnd.djvu' ) {
 			$srcPath = $image->getPath();
 			$cmd = "( " .wfEscapeShellArg( $wgDjvutxt );
