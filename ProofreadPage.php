@@ -670,13 +670,13 @@ function pr_preloadText( $textbox1, $mTitle ) {
 		if ( $image->exists() ) {
 			$srcPath = $image->getPath();
 			$cmd = "( " .wfEscapeShellArg( $wgDjvutxt );
-			$cmd .= " --page={$m[2]} ". wfEscapeShellArg( $srcPath )." )";
+			$cmd .= " --page {$m[2]} ". wfEscapeShellArg( $srcPath )." )";
 			wfProfileIn( 'ProofreadPage' );
 			wfDebug( __METHOD__.": $cmd\n" );
-			$err = wfShellExec( $cmd, $retval );
+			$out = wfShellExec( $cmd, $retval );
 			wfProfileOut( 'ProofreadPage' );
 
-			if($retval==0) $textbox1 = $err;
+			if($retval==0) $textbox1 = $out;
 		}
 	}
 	return true;
