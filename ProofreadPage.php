@@ -14,7 +14,8 @@ $wgHooks['ImageOpenShowImageInlineBefore'][] = 'pr_imageMessage';
 $wgHooks['ArticleSaveComplete'][] = 'pr_articleSave';
 $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 
-$wgDjvutxt = 'djvutxt';
+# Allows for extracting text from djvu files. To enable, set to 'djvutxt' or similar
+$wgDjvutxt = null;
 
 
 $wgExtensionCredits['other'][] = array(
@@ -659,15 +660,15 @@ function pr_preloadText( $textbox1, $mTitle ) {
 
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 
-	if ( preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
+	if ( $wgDjvutxt && preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
 
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 		if ( !$imageTitle ) {
 			return true;
 		}
 
-		$image = Image::newFromTitle( $imageTitle );
-		if ( $image->exists() ) {
+		$image = wfFindFile( $title );
+		if ( $image->exists() && $image->getMimeType() == 'image/vnd.djvu' ) {
 			$srcPath = $image->getPath();
 			$cmd = "( " .wfEscapeShellArg( $wgDjvutxt );
 			$cmd .= " --page {$m[2]} ". wfEscapeShellArg( $srcPath )." )";
