@@ -32,12 +32,8 @@ $wgExtensionCredits['other'][] = array(
 $wgExtensionFunctions[] = "pr_main";
 function pr_main() {
 	global $wgParser;
-
 	$wgParser->setHook( "pagelist", "pr_renderPageList" );
 	$wgParser->setHook( "indexref", "pr_renderIndexTag" );
-	wfLoadExtensionMessages( 'ProofreadPage' );
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-
 }
 
 
