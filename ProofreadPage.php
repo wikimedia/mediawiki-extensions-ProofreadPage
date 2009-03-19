@@ -83,7 +83,7 @@ function pr_load_index($title){
 	}
 	if ( !$imageTitle ) return;
 
-	$image = Image::newFromTitle( $imageTitle );
+	$image = wfFindFile( $imageTitle );
 
 	//if it is multipage, we use the page order of the file
 	if( $image->exists() && $image->isMultiPage() ) {
@@ -298,7 +298,7 @@ function pr_preparePage( $out, $m, $isEdit ) {
 		return true;
 	}
 
-	$image = Image::newFromTitle( $imageTitle );
+	$image = wfFindFile( $imageTitle );
 	if ( $image->exists() ) {
 		$width = $image->getWidth();
 		$height = $image->getHeight();
@@ -540,7 +540,7 @@ function pr_renderPageList( $input, $args ) {
 	if ( !$imageTitle ) {
 		return true;
 	}
-	$image = Image::newFromTitle( $imageTitle );
+	$image = wfFindFile( $imageTitle );
 	$return="";
 
 	if ( $image->isMultipage() ) {
