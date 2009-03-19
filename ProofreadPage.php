@@ -587,41 +587,70 @@ function pr_renderPageList( $input, $args ) {
 		for( $i=1; $i<$count+1 ; $i++) { 
 
 			$pdbk = "$page_namespace:$name" . '/'. $i ;
-
+			//default
 			$single=false;
-			foreach ( $args as $num => $param ) {
-				if($i == $num) {
-					$param = explode(";",$param);
-					if(isset($param[1])) $mode = $param[1]; else $mode='normal';
-					if(is_numeric($param[0])) $offset = $i - $param[0]; 
-					else $single=$param[0];
-				}
-		  	}
+			$mode = 'normal';
+			$links = true;
 
-			if( $single ) { $view = $single; $single=false; $offset=$offset+1;}
+			foreach ( $args as $num => $param ) {
+
+			  if( ( preg_match( "/^([0-9]*)to([0-9]*)$/", $num, $m ) && ( $i>=$m[1] && $i<=$m[2] ) ) 
+			      || ( is_numeric($num) && ($i == $num) ) ) {
+					$params = explode(";",$param);
+					foreach ( $params as $iparam ) {
+						switch($iparam){
+						case 'roman': 
+							$mode = 'roman';
+							break;
+						case 'highroman': 
+							$mode = 'highroman';
+							break;
+						case 'empty': 
+							$links = false;
+							break;
+						default:
+							if(is_numeric($iparam)) 
+								$offset = $i - $iparam[0]; 
+							else
+								$single = $iparam[0];
+
+						}
+					}
+				}
+			}
+
+			if( $single ) { 
+				$view = $single; 
+				$offset=$offset+1;
+			}
 			else {
-			  $view = ($i - $offset);
-			  if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
-			  elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
-			  elseif($mode == 'normal') $view = ''.$view;
-			  else $view = $mode.$view;
+				$view = ($i - $offset);
+				if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
+				elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
+				elseif($mode == 'normal') $view = ''.$view;
+				elseif($mode == 'empty') $view = ''.$view;
+				else $view = $mode.$view;
 			}
 
 			$n = strlen($count) - strlen($view);
-			if( $n && ($mode == 'normal') ){
+			if( $n && ($mode == 'normal' || $mode == 'empty') ){
 				$txt = '<span style="visibility:hidden;">';
 				for( $j=0; $j<$n; $j++) $txt = $txt.'0';
 				$view = $txt.'</span>'.$view;
 			}
 			$title = Title::newFromText( $pdbk );
-			if ( !isset( $colours[$pdbk] ) ) {
-				$link = $sk->makeBrokenLinkObj( $title, $view );
-			} else {
-				$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], $view );
-			}
-			$return .= "{$link} ";
-		}
 
+			if($links==false) $return.= $view." ";
+			else{
+				if ( !isset( $colours[$pdbk] ) ) {
+					$link = $sk->makeBrokenLinkObj( $title, $view );
+				} 
+				else {
+					$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], $view );
+				}
+				$return .= "{$link} ";
+			}
+		}
 	}
 	return $return;
 }
