@@ -2171,6 +2171,29 @@ Páginas||20
 Notas||10',
 );
 
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'proofreadpage_namespace' => "P'anqa",
+	'proofreadpage_index_namespace' => 'Yuyarina',
+	'proofreadpage_image' => 'rikcha',
+	'proofreadpage_index' => 'Yuyarina',
+	'proofreadpage_nextpage' => "Qatiq p'anqa",
+	'proofreadpage_prevpage' => "Ñawpaq p'anqa",
+	'proofreadpage_header' => "Uma siq'i (mana ch'aqtana):",
+	'proofreadpage_body' => "P'anqa kurku (ch'aqtanapaq):",
+	'proofreadpage_footer' => "Chaki siq'i (mana ch'aqtana):",
+	'proofreadpage_index_attributes' => "Qillqaq
+Qillqa suti
+Wata|Liwruchasqap watan
+Liwruchaq
+Pukyu
+Rikcha|Qata rikcha
+P'anqakuna||20
+Willapusqakuna||10",
+);
+
 /** Romanian (Română)
  * @author KlaudiuMihaila
  * @author Mihai
