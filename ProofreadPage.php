@@ -40,7 +40,7 @@ function pr_main() {
 
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 17;
+$wgProofreadPageVersion = 18;
 
 /**
  * 
