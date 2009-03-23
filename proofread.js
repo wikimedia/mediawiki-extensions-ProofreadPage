@@ -494,13 +494,13 @@ addOnloadHook(pr_init_tabs);
 
 
 function pr_initzoom(){
-	if(self.pr_horiz){
-		document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
+	if(document.getElementById("wpTextbox1")){
+		if(self.pr_horiz)
+			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
+		else
+			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
+		pr_zoom(0);
 	}
-	else{
-		document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
-	}
-	pr_zoom(0);
 }
 hookEvent("load", pr_initzoom );
 
