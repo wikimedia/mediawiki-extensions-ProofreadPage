@@ -1505,6 +1505,7 @@ $messages['km'] = array(
  * @author Yknok29
  */
 $messages['ko'] = array(
+	'proofreadpage_namespace' => '쪽수',
 	'proofreadpage_index_namespace' => '목록',
 	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '목록',
