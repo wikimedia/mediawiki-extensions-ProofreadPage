@@ -185,11 +185,13 @@ function pr_navigation( $image ) {
 
 function pr_parse_index($index_title, $page_title){
 
+	$err = array( '', '', array() );
+
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 
-	if( !$index_title ) return ;
-	if( !$index_title->exists() ) return;
+	if( !$index_title ) return $err;
+	if( !$index_title->exists() ) return $err;
 
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
