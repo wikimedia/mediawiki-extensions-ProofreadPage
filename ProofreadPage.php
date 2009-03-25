@@ -132,7 +132,7 @@ function pr_navigation( $image ) {
 
 
 	//if multipage, we use the page order, but we should read pagenum from the index
-	if( $image->exists() && $image->isMultiPage() ) {
+	if( $image && $image->exists() && $image->isMultiPage() ) {
 
 		$pagenr = 1;
 		$parts = explode( '/', $wgTitle->getText() );
