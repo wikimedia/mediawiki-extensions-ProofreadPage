@@ -128,7 +128,7 @@ function pr_navigation( $image ) {
 	global $wgTitle;
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	$err = array( '', '', '', '', array() );
+	$err = array( '', '', '', array() );
 
 
 	//if multipage, we use the page order, but we should read pagenum from the index
