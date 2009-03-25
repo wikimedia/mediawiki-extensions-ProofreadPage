@@ -126,6 +126,8 @@ function pr_load_index($title){
 
 function pr_navigation( $image ) {
 	global $wgTitle;
+	$index_title = Title::newFromText( $wgTitle->pr_index_title );
+
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	$err = array( '', '', '', array() );
@@ -159,7 +161,6 @@ function pr_navigation( $image ) {
 		$prev_url = '';
 		$next_url = '';
 	}
-
 
 	if( !$index_title ) return array( '', $prev_url, $next_url, array() ) ;
 
