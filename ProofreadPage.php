@@ -86,7 +86,7 @@ function pr_load_index($title){
 	$image = wfFindFile( $imageTitle );
 
 	//if it is multipage, we use the page order of the file
-	if( $image->exists() && $image->isMultiPage() ) {
+	if( $image && $image->exists() && $image->isMultiPage() ) {
 
 		$pagenr = 1;
 		$parts = explode( '/', $title->getText() );
