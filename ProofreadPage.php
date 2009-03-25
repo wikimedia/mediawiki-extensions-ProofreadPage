@@ -130,7 +130,6 @@ function pr_navigation( $image ) {
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	$err = array( '', '', '', array() );
 
-
 	//if multipage, we use the page order, but we should read pagenum from the index
 	if( $image && $image->exists() && $image->isMultiPage() ) {
 
@@ -162,14 +161,15 @@ function pr_navigation( $image ) {
 	}
 
 
-	if( !$index_title ) return $err;
-	if( !$index_title->exists()) return $err;
-
-	//if the index page exists, read metadata
-
-	list( $prev_title, $next_title, $attributes ) = pr_parse_index($index_title,$wgTitle);
+	if( !$index_title ) return array( '', $prev_url, $next_url, array() ) ;
 
 	$index_url = $index_title->getFullURL();
+
+	if( !$index_title->exists()) return array( $index_url, $prev_url, $next_url, array() );
+
+	//if the index page exists, read metadata
+	list( $prev_title, $next_title, $attributes ) = pr_parse_index($index_title,$wgTitle);
+
 	if($prev_title) $prev_url = $prev_title->getFullURL();
 	if($next_title) $next_url = $next_title->getFullURL();
 
