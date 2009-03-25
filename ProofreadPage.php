@@ -591,7 +591,6 @@ function pr_renderPageList( $input, $args ) {
 
 			$pdbk = "$page_namespace:$name" . '/'. $i ;
 			//default
-			$single=false;
 			$mode = 'normal';
 			$links = true;
 
@@ -615,25 +614,20 @@ function pr_renderPageList( $input, $args ) {
 							if(is_numeric($iparam)) 
 								$offset = $i - $iparam[0]; 
 							else
-								$single = $iparam[0];
+								$mode = $iparam;
 
 						}
 					}
 				}
 			}
 
-			if( $single ) { 
-				$view = $single; 
-				$offset=$offset+1;
-			}
-			else {
-				$view = ($i - $offset);
-				if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
-				elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
-				elseif($mode == 'normal') $view = ''.$view;
-				elseif($mode == 'empty') $view = ''.$view;
-				else $view = $mode.$view;
-			}
+			$view = ($i - $offset);
+			if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
+			elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
+			elseif($mode == 'normal') $view = ''.$view;
+			elseif($mode == 'empty') $view = ''.$view;
+			else $view = $mode;
+			
 
 			$n = strlen($count) - strlen($view);
 			if( $n && ($mode == 'normal' || $mode == 'empty') ){
