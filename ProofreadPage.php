@@ -543,7 +543,7 @@ function pr_renderPageList( $input, $args ) {
 	$image = wfFindFile( $imageTitle );
 	$return="";
 
-	if ( $image->isMultipage() ) {
+	if ( $image && $image->isMultipage() ) {
 
 		$name = $imageTitle->getDBkey();
 		$count = $image->pageCount();
@@ -693,7 +693,7 @@ function pr_preloadText( $textbox1, $mTitle ) {
 		}
 
 		$image = wfFindFile( $imageTitle );
-		if ( $image->exists() && $image->getMimeType() == 'image/vnd.djvu' ) {
+		if ( $image && $image->exists() && $image->getMimeType() == 'image/vnd.djvu' ) {
 			$srcPath = $image->getPath();
 			$cmd = "( " .wfEscapeShellArg( $wgDjvutxt );
 			$cmd .= " --page {$m[2]} ". wfEscapeShellArg( $srcPath )." )";
