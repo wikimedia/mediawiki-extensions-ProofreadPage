@@ -299,7 +299,7 @@ function pr_preparePage( $out, $m, $isEdit ) {
 	}
 
 	$image = wfFindFile( $imageTitle );
-	if ( $image->exists() ) {
+	if ( $image && $image->exists() ) {
 		$width = $image->getWidth();
 		$height = $image->getHeight();
 		if($m[2]) { 
