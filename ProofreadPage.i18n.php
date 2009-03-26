@@ -56,26 +56,6 @@ $messages['qqq'] = array(
 	'proofreadpage_index_attributes' => '도서 정보',
 );
 
-/** Veps (Vepsan kel')
- * @author Triple-ADHD-AS
- * @author Игорь Бродский
- */
-$messages['vep'] = array(
-	'proofreadpage_namespace' => 'Lehtpol’',
-	'proofreadpage_index_namespace' => 'Indeks',
-	'proofreadpage_image' => 'kuva',
-	'proofreadpage_index' => 'Indeks',
-	'proofreadpage_nextpage' => "Jäl'ghine lehtpol'",
-	'proofreadpage_prevpage' => "Edeline lehtpol'",
-	'proofreadpage_header' => 'Pälkirjutez (ei ele mülütadud)',
-	'proofreadpage_body' => 'Lehtpolen tüvi (mülütadas):',
-	'proofreadpage_quality1_category' => 'Ei ole lugetud kodvaks',
-	'proofreadpage_quality2_category' => 'Problematine',
-	'proofreadpage_quality3_category' => 'Om lugetud kodvaks',
-	'proofreadpage_quality4_category' => 'Kodvdud da hüvästadud',
-	'proofreadpage_index_listofpages' => 'Lehtpoliden nimikirjutez',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  * @author SPQRobin
@@ -2732,6 +2712,26 @@ Fonte
 Imagine|Imagine de copertina
 Pagine||20
 Note||10',
+);
+
+/** Veps (Vepsan kel')
+ * @author Triple-ADHD-AS
+ * @author Игорь Бродский
+ */
+$messages['vep'] = array(
+	'proofreadpage_namespace' => 'Lehtpol’',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'kuva',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_nextpage' => "Jäl'ghine lehtpol'",
+	'proofreadpage_prevpage' => "Edeline lehtpol'",
+	'proofreadpage_header' => 'Pälkirjutez (ei ele mülütadud)',
+	'proofreadpage_body' => 'Lehtpolen tüvi (mülütadas):',
+	'proofreadpage_quality1_category' => 'Ei ole lugetud kodvaks',
+	'proofreadpage_quality2_category' => 'Problematine',
+	'proofreadpage_quality3_category' => 'Om lugetud kodvaks',
+	'proofreadpage_quality4_category' => 'Kodvdud da hüvästadud',
+	'proofreadpage_index_listofpages' => 'Lehtpoliden nimikirjutez',
 );
 
 /** Vietnamese (Tiếng Việt)
