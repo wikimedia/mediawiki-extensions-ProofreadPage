@@ -612,7 +612,7 @@ function pr_renderPageList( $input, $args ) {
 							break;
 						default:
 							if(is_numeric($iparam)) 
-								$offset = $i - $iparam[0]; 
+								$offset = $i - $iparam;
 							else
 								$mode = $iparam;
 
