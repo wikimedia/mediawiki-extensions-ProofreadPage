@@ -1483,17 +1483,26 @@ $messages['km'] = array(
 );
 
 /** Korean (한국어)
+ * @author Ilovesabbath
  * @author Kwj2772
  * @author Yknok29
  */
 $messages['ko'] = array(
-	'proofreadpage_namespace' => '쪽수',
+	'proofreadpage_desc' => '최초 스캔과 텍스트를 쉽게 비교할 수 있게 함',
+	'proofreadpage_namespace' => '쪽',
 	'proofreadpage_index_namespace' => '목록',
 	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '목록',
 	'proofreadpage_nextpage' => '다음 페이지',
 	'proofreadpage_prevpage' => '이전 페이지',
+	'proofreadpage_header' => '머리말 (표시안함):',
+	'proofreadpage_body' => '본문 (트랜스클루전):',
+	'proofreadpage_footer' => '꼬리말 (표시안함):',
+	'proofreadpage_toggleheaders' => '표시안함 부분의 표시 여부 선택',
+	'proofreadpage_quality1_category' => '교정 안됨',
 	'proofreadpage_quality2_category' => '문제 있음',
+	'proofreadpage_quality3_category' => '교정',
+	'proofreadpage_quality4_category' => '확인됨',
 	'proofreadpage_index_listofpages' => '문서 목록',
 	'proofreadpage_image_message' => '목록 페이지로 연결됩니다.',
 	'proofreadpage_page_status' => '문서 상태',
