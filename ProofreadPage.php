@@ -271,7 +271,7 @@ function pr_beforePageDisplay( &$out ) {
 
 
 function pr_prepareIndex( $out ) {
-	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
+	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
 	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread_index.js?$wgProofreadPageVersion" );
 
 	$out->addScript( <<<EOT
@@ -292,7 +292,7 @@ var prp_index_attributes = \"" . Xml::escapeJsString(wfMsgForContent('proofreadp
 
 
 function pr_preparePage( $out, $m, $isEdit ) {
-	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
+	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
 
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	if ( !$imageTitle ) {
