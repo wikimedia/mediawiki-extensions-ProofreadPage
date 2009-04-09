@@ -1585,6 +1585,7 @@ $messages['lb'] = array(
 	'proofreadpage_header' => 'Entête (noinclude):',
 	'proofreadpage_body' => 'Inhalt vun der Säit (Transklusioun):',
 	'proofreadpage_footer' => 'Foussnote (noinclude):',
+	'proofreadpage_toggleheaders' => 'noinclude-Abschnitter an- resp. ausblenden',
 	'proofreadpage_quality1_category' => 'Net verbessert',
 	'proofreadpage_quality2_category' => 'Problematesch',
 	'proofreadpage_quality3_category' => 'Verbessert',
@@ -2743,6 +2744,14 @@ $messages['vep'] = array(
 	'proofreadpage_quality3_category' => 'Om lugetud kodvaks',
 	'proofreadpage_quality4_category' => 'Kodvdud da hüvästadud',
 	'proofreadpage_index_listofpages' => 'Lehtpoliden nimikirjutez',
+	'proofreadpage_index_attributes' => "Avtor
+Pälkirjutez
+Voz'|Pästandvoz'
+Pästai
+Purde
+Kuva|Kirjankoren kuva
+Lehtpol't||20
+Homaičendad||10",
 );
 
 /** Vietnamese (Tiếng Việt)
