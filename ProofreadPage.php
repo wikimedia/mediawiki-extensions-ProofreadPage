@@ -17,17 +17,17 @@ $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 # Allows for extracting text from djvu files. To enable, set to 'djvutxt' or similar
 $wgDjvutxt = null;
 
-
-
+# Bump the version number every time you change proofread.js
+$wgProofreadPageVersion = 19;
 
 $wgExtensionCredits['other'][] = array(
 	'name'           => 'ProofreadPage',
 	'author'         => 'ThomasV',
+	'version'        => '2009-04-20',
 	'url'            => 'http://www.mediawiki.org/wiki/Extension:Proofread_Page',
 	'description'    => 'Allow easy comparison of text to the original scan',
 	'descriptionmsg' => 'proofreadpage_desc',
 );
-
 
 $wgExtensionFunctions[] = "pr_main";
 $wgAjaxExportList[] = "pr_fetch_djvutxt";
@@ -61,10 +61,6 @@ function pr_fetch_djvutxt( $url ) {
 	}
 	return "";
 }
-
-
-# Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 18;
 
 /**
  * 
