@@ -1984,7 +1984,7 @@ $messages['nso'] = array(
  * @author Cedric31
  */
 $messages['oc'] = array(
-	'proofreadpage_desc' => 'Permet una comparason aisida entre lo tèxt e la numerizacion originala',
+	'proofreadpage_desc' => 'Permet una comparason aisida entre lo tèxte e la numerizacion originala',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indèx',
 	'proofreadpage_image' => 'imatge',
@@ -2021,6 +2021,13 @@ $messages['os'] = array(
 	'proofreadpage_image' => 'ныв',
 	'proofreadpage_nextpage' => 'Фæдылдзог фарс',
 	'proofreadpage_prevpage' => 'Раздæры фарс',
+);
+
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'proofreadpage_namespace' => 'Blatt',
 );
 
 /** Polish (Polski)
