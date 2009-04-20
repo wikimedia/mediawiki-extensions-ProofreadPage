@@ -47,6 +47,7 @@ function pr_init_tabs(){
 
 
 
+
 function pr_image_url(requested_width){
 	var image_url;
 
@@ -316,7 +317,7 @@ function pr_setup() {
 	table.style.cssText = "width:100%;";
 
 	//fill table
-    if(self.proofreadpage_default_layout=='horizontal') 
+	if(self.proofreadpage_default_layout=='horizontal') 
 		pr_fill_table(true);
 	else
 		pr_fill_table(false);
@@ -493,16 +494,39 @@ addOnloadHook(pr_init);
 addOnloadHook(pr_init_tabs);
 
 
-function pr_initzoom(){
-	if(document.getElementById("wpTextbox1")){
+/*fetch djvu content with ajax*/
+function pr_fetch_djvutxt(){
+    var text_url = proofreadPageThumbURL.replace('##WIDTH##px',"djvutxt").replace(".jpg",".txt"); 
+    sajax_do_call( 'pr_fetch_djvutxt', [ text_url ], pr_init_textbox );
+}
+
+
+function pr_init_textbox(xmlhttp) {
+    if (xmlhttp == null) return;
+    if (xmlhttp.readyState == 4) {
+	document.getElementById("wpTextbox1").value = xmlhttp.responseText;
+    }
+}
+
+
+function pr_onload(){
+
+	if(self.proofreadPageIsEdit){
+		if(!document.getElementById("wpTextbox1") ) return;
 		if(self.pr_horiz)
 			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
 		else
 			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
 		pr_zoom(0);
+
+		//to enable, set proofreadpage_djvutxt=1 
+		if(self.proofreadpage_djvutxt) {
+			if( document.getElementById("wpTextbox1").value == "" ) pr_fetch_djvutxt();
+		}
 	}
 }
-hookEvent("load", pr_initzoom );
+hookEvent("load", pr_onload );
+
 
 
 /*Quality buttons*/
