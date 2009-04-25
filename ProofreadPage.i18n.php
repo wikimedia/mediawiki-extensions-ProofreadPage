@@ -19,6 +19,7 @@ $messages['en'] = array(
 	'proofreadpage_body'              => 'Page body (to be transcluded):',
 	'proofreadpage_footer'            => 'Footer (noinclude):',
 	'proofreadpage_toggleheaders'     => 'toggle noinclude sections visibility',
+	'proofreadpage_quality0_category' => 'Empty',
 	'proofreadpage_quality1_category' => 'Not proofread',
 	'proofreadpage_quality2_category' => 'Problematic',
 	'proofreadpage_quality3_category' => 'Proofread',

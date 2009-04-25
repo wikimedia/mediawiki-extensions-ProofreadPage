@@ -379,6 +379,7 @@ var proofreadPageMessagePageBody = \"" . Xml::escapeJsString(wfMsg('proofreadpag
 var proofreadPageMessageFooter = \"" . Xml::escapeJsString(wfMsg('proofreadpage_footer')) . "\";
 var proofreadPageMessageToggleHeaders = \"" . Xml::escapeJsString(wfMsg('proofreadpage_toggleheaders')) . "\";
 var proofreadPageMessageStatus = \"" . Xml::escapeJsString(wfMsg('proofreadpage_page_status')) . "\";
+var proofreadPageMessageQuality0 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality0_category')) . "\";
 var proofreadPageMessageQuality1 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality1_category')) . "\";
 var proofreadPageMessageQuality2 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality2_category')) . "\";
 var proofreadPageMessageQuality3 = \"" . Xml::escapeJsString(wfMsgForContent('proofreadpage_quality3_category')) . "\";

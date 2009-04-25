@@ -535,6 +535,7 @@ function pr_add_quality(form,value){
  
 	var text="";
 	switch(value){
+		case 0: text = proofreadPageMessageQuality0; break;
 		case 1: text = proofreadPageMessageQuality1; break;
 		case 2: text = proofreadPageMessageQuality2; break;
 		case 3: text = proofreadPageMessageQuality3; break;
@@ -575,7 +576,8 @@ function pr_add_quality_buttons(){
 	}
 	var f = document.createElement("span");
 	f.innerHTML = 
-' <span class="quality2"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,2)"> </span>'
+' <span class="quality0"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,0)"> </span>'
++'<span class="quality2"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,2)"> </span>'
 +'<span class="quality1"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,1)"> </span>'
 +'<span class="quality3"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,3)"> </span>';
 	if(show4) f.innerHTML = f.innerHTML 
@@ -584,10 +586,11 @@ function pr_add_quality_buttons(){
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 	if(m) { 
 		switch(m[1]){
-			case "4": document.editform.quality[3].checked=true; break;
-			case "3": document.editform.quality[2].checked=true; break;
-			case "1": document.editform.quality[1].checked=true; break; 
-			case "2": document.editform.quality[0].checked=true; break; 
+			case "4": document.editform.quality[4].checked=true; break;
+			case "3": document.editform.quality[3].checked=true; break;
+			case "1": document.editform.quality[2].checked=true; break; 
+			case "2": document.editform.quality[1].checked=true; break; 
+			case "0": document.editform.quality[0].checked=true; break; 
 		}
 	}
 }
