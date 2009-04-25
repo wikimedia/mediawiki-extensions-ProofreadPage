@@ -108,7 +108,6 @@ function proofreadpage_fill_index() {
 	}
 	result = result + "\n}}";
 	form.elements["wpTextbox1"].value = result;
-	form.elements["wpSummary"].value="/* new index */ ";
 }
 
 
