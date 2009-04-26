@@ -1013,6 +1013,7 @@ $messages['he'] = array(
 	'proofreadpage_body' => 'גוף הדף (להכללה):',
 	'proofreadpage_footer' => 'כותרת תחתונה (לא להכללה):',
 	'proofreadpage_toggleheaders' => 'הצגת או הסתרת החלקים שאינם להכללה',
+	'proofreadpage_quality0_category' => 'ריק',
 	'proofreadpage_quality1_category' => 'לא בוצעה הגהה',
 	'proofreadpage_quality2_category' => 'בעייתי',
 	'proofreadpage_quality3_category' => 'בוצעה הגהה',
