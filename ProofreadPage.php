@@ -21,6 +21,7 @@ $wgDjvutxt = null;
 $wgProofreadPageVersion = 19;
 
 $wgExtensionCredits['other'][] = array(
+	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',
 	'author'         => 'ThomasV',
 	'version'        => '2009-04-20',
