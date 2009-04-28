@@ -417,6 +417,7 @@ $messages['bs'] = array(
 	'proofreadpage_body' => 'Tijelo stranice (koje će biti uključeno):',
 	'proofreadpage_footer' => 'Podnožje (neuključuje):',
 	'proofreadpage_toggleheaders' => 'pokaži/sakrij vidljivost sekcija koje se ne uključuju',
+	'proofreadpage_quality0_category' => 'Prazno',
 	'proofreadpage_quality1_category' => 'Nije provjerena',
 	'proofreadpage_quality2_category' => 'Problematično',
 	'proofreadpage_quality3_category' => 'Provjereno',
@@ -969,6 +970,7 @@ $messages['gsw'] = array(
 	'proofreadpage_body' => 'Täxtlyyb (Transklusion):',
 	'proofreadpage_footer' => 'Fueßzyylete (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude-Abschnit yy-/uusblände',
+	'proofreadpage_quality0_category' => 'Läär',
 	'proofreadpage_quality1_category' => 'Nit korrigiert',
 	'proofreadpage_quality2_category' => 'Korrekturprobläm',
 	'proofreadpage_quality3_category' => 'Korrigiert',
@@ -1602,6 +1604,7 @@ $messages['lb'] = array(
 	'proofreadpage_body' => 'Inhalt vun der Säit (Transklusioun):',
 	'proofreadpage_footer' => 'Foussnote (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude-Abschnitter an- resp. ausblenden',
+	'proofreadpage_quality0_category' => 'Eidel',
 	'proofreadpage_quality1_category' => 'Net verbessert',
 	'proofreadpage_quality2_category' => 'Problematesch',
 	'proofreadpage_quality3_category' => 'Verbessert',
@@ -1922,6 +1925,7 @@ Opmerkingen||10",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
  */
@@ -1937,6 +1941,7 @@ $messages['nn'] = array(
 	'proofreadpage_body' => 'Hovuddel (inkludert):',
 	'proofreadpage_footer' => 'Fotseksjon (ikkje inludert):',
 	'proofreadpage_toggleheaders' => 'syna/ikkje syna seksjonar ikkje inkluderte på sida',
+	'proofreadpage_quality0_category' => 'Tom',
 	'proofreadpage_quality1_category' => 'Ikkje korrekturlest',
 	'proofreadpage_quality2_category' => 'Problematisk',
 	'proofreadpage_quality3_category' => 'Korrekturlest',
@@ -2012,6 +2017,7 @@ $messages['oc'] = array(
 	'proofreadpage_body' => 'Contengut (transclusion) :',
 	'proofreadpage_footer' => 'Pè de pagina (noinclude) :',
 	'proofreadpage_toggleheaders' => 'amagar/mostrar las seccions noinclude',
+	'proofreadpage_quality0_category' => 'Void',
 	'proofreadpage_quality1_category' => 'Pagina pas corregida',
 	'proofreadpage_quality2_category' => 'Pagina amb problèma',
 	'proofreadpage_quality3_category' => 'Pagina corregida',
@@ -2366,6 +2372,7 @@ $messages['sl'] = array(
 /** Serbian Cyrillic ekavian (ћирилица)
  * @author Millosh
  * @author Sasa Stefanovic
+ * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
 	'proofreadpage_desc' => 'Омогући лако упоређивање текста и оригиналног скена.',
@@ -2379,6 +2386,7 @@ $messages['sr-ec'] = array(
 	'proofreadpage_body' => 'Тело стране (за укључивање):',
 	'proofreadpage_footer' => 'Подножје (без укључивања):',
 	'proofreadpage_toggleheaders' => 'управљање видљивошћу делова који се не укључују',
+	'proofreadpage_quality0_category' => 'Празно',
 	'proofreadpage_quality1_category' => 'Непрегледано',
 	'proofreadpage_quality2_category' => 'Проблематично',
 	'proofreadpage_quality3_category' => 'Прегледано',
@@ -2738,6 +2746,7 @@ $messages['vec'] = array(
 	'proofreadpage_body' => 'Corpo de la pagina (da inclùdar):',
 	'proofreadpage_footer' => 'Pié de pagina (mìa incluso)',
 	'proofreadpage_toggleheaders' => 'ativa/disativa la visibilità de le sezioni mìa incluse',
+	'proofreadpage_quality0_category' => 'Vòdo',
 	'proofreadpage_quality1_category' => 'Da corègiar',
 	'proofreadpage_quality2_category' => 'Da rivédar',
 	'proofreadpage_quality3_category' => 'Corèta',
