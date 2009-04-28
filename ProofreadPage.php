@@ -31,8 +31,6 @@ $wgExtensionCredits['other'][] = array(
 );
 
 $wgExtensionFunctions[] = "pr_main";
-$wgAjaxExportList[] = "pr_fetch_djvutxt";
-
 function pr_main() {
 	global $wgParser;
 	$wgParser->setHook( "pagelist", "pr_renderPageList" );
@@ -40,28 +38,10 @@ function pr_main() {
 }
 
 
-/*
- * Fetch Djvu text with curl
- */
-function pr_fetch_djvutxt( $url ) {
 
-	if($url[0]=='/') $url = "http://localhost" . $url;
 
-	$ch = curl_init( $url );
-	curl_setopt( $ch, CURLOPT_HEADER, false );
-	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
-	$text = curl_exec( $ch );
-
-	$errno = curl_errno( $ch );
-	$httpCode = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
-	//$contentType = curl_getinfo( $ch, CURLINFO_CONTENT_TYPE );
-
-	curl_close($ch);
-	if($errno==0 && ( $httpCode==200 || $httpCode==404 ) ) {
-		return $text;
-	}
-	return "";
-}
+# Bump the version number every time you change proofread.js
+$wgProofreadPageVersion = 18;
 
 /**
  * 
