@@ -680,11 +680,11 @@ function pr_articleSave( $article ) {
 
 
 function pr_preloadText( $textbox1, $mTitle ) {
-	global $wgDjvutxt;
+	global $wgDjvuTxt;
 
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 
-	if ( $wgDjvutxt && preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
+	if ( $wgDjvuTxt && preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
 
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 		if ( !$imageTitle ) {
@@ -693,15 +693,15 @@ function pr_preloadText( $textbox1, $mTitle ) {
 
 		$image = wfFindFile( $imageTitle );
 		if ( $image && $image->exists() && $image->getMimeType() == 'image/vnd.djvu' ) {
-			$srcPath = $image->getPath();
-			$cmd = "( " .wfEscapeShellArg( $wgDjvutxt );
-			$cmd .= " --page {$m[2]} ". wfEscapeShellArg( $srcPath )." )";
-			wfProfileIn( 'ProofreadPage' );
-			wfDebug( __METHOD__.": $cmd\n" );
-			$out = wfShellExec( $cmd, $retval );
-			wfProfileOut( 'ProofreadPage' );
 
-			if($retval==0) $textbox1 = $out;
+			$name = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[2] ) );
+			$name = str_replace( '##WIDTH##px', 'djvutxt', $name );
+			$name = str_replace( '.jpg', '.txt', $name );
+			$url = $image->getThumbUrl( $name );
+
+			if($url[0]=='/') $url = "http://localhost" . $url;
+			$text = Http::get($url);
+			if($text) $textbox1 = $text;
 		}
 	}
 	return true;
