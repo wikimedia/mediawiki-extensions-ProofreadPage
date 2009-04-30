@@ -732,6 +732,7 @@ Oharrak||10',
 
 /** Persian (فارسی)
  * @author Huji
+ * @author Mardetanha
  */
 $messages['fa'] = array(
 	'proofreadpage_desc' => 'امکان مقایسهٔ آسان متن با نسخهٔ اصلی پویش شده را فراهم می‌آورد',
@@ -745,6 +746,7 @@ $messages['fa'] = array(
 	'proofreadpage_body' => 'متن صفحه (برای گنجانده شدن):',
 	'proofreadpage_footer' => 'پانویس (noinclude):',
 	'proofreadpage_toggleheaders' => 'تغییر پدیداری بخش‌های noinclude:',
+	'proofreadpage_quality0_category' => 'خالی',
 	'proofreadpage_quality1_category' => 'بازبینی‌نشده',
 	'proofreadpage_quality2_category' => 'مشکل‌دار',
 	'proofreadpage_quality3_category' => 'بازبینی‌شده',
@@ -783,6 +785,7 @@ $messages['fi'] = array(
 	'proofreadpage_body' => 'Sivun runko (sisällytetään):',
 	'proofreadpage_footer' => 'Alatunniste (ei sisällytetä):',
 	'proofreadpage_toggleheaders' => 'vaihtaa sisällyttämättömien osioiden näkyvyyttä',
+	'proofreadpage_quality0_category' => 'Tyhjä',
 	'proofreadpage_quality1_category' => 'Korjauslukematon',
 	'proofreadpage_quality2_category' => 'Ongelmallinen',
 	'proofreadpage_quality3_category' => 'Korjausluettu',
@@ -2308,6 +2311,7 @@ $messages['sah'] = array(
 	'proofreadpage_body' => 'Сирэй иһэ (холбонуо):',
 	'proofreadpage_footer' => 'Аллараа колонтитул (киллэриллибэт):',
 	'proofreadpage_toggleheaders' => 'киллэриллибэт разделлары көрдөр',
+	'proofreadpage_quality0_category' => 'Кураанах',
 	'proofreadpage_quality1_category' => 'Ааҕыллыбатах',
 	'proofreadpage_quality2_category' => 'Моһоллоох',
 	'proofreadpage_quality3_category' => 'Ааҕыллыбыт',
@@ -2465,6 +2469,7 @@ Catetan||10',
 /** Swedish (Svenska)
  * @author Lejonel
  * @author M.M.S.
+ * @author Najami
  */
 $messages['sv'] = array(
 	'proofreadpage_desc' => 'Ger möjlighet att korrekturläsa texter mot scannade original',
@@ -2478,6 +2483,7 @@ $messages['sv'] = array(
 	'proofreadpage_body' => 'Sidinnehåll (som ska inkluderas):',
 	'proofreadpage_footer' => 'Sidfot (inkluderas ej):',
 	'proofreadpage_toggleheaders' => 'visa/dölj sidhuvud',
+	'proofreadpage_quality0_category' => 'Tom',
 	'proofreadpage_quality1_category' => 'Ej korrekturläst',
 	'proofreadpage_quality2_category' => 'Ofullständigt',
 	'proofreadpage_quality3_category' => 'Korrekturläst',
