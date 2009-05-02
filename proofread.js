@@ -50,16 +50,22 @@ function pr_image_url(requested_width){
 
 	if(self.proofreadPageExternalURL) {
 		thumb_url = proofreadPageViewURL;
+		self.DisplayWidth = requested_width;
+		self.DisplayHeight = "";
 	}
 	else {
 		//enforce quantization: width must be multiple of 100px
 		var width = (100*requested_width)/100;
 		//compare to the width of the image
 		if(width < proofreadPageWidth)  {
-			 thumb_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
+			thumb_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
+            self.DisplayWidth = requested_width;
+            self.DisplayHeight = requested_width*proofreadPageHeight/proofreadPageWidth;
 		}
 		else {
-		     thumb_url = proofreadPageViewURL; 
+		    thumb_url = proofreadPageViewURL; 
+            self.DisplayWidth = proofreadPageWidth;
+            self.DisplayHeight = proofreadPageHeight;
 		}
 	}
 	return thumb_url;
@@ -428,7 +434,7 @@ function pr_zoom(delta){
 	if(!zp_img) return;
 	
 	if (delta == 0) {
-		zp_img.width = document.getElementById("ImageContainer").offsetWidth-20;
+		zp_img.width = document.getElementById("ImageContainer").offsetWidth; //-20;
 		zp_img.style.margin =  '0px 0px 0px 0px';
 		prev_margin_x = margin_x = 0;
 		prev_margin_y = margin_y = 0;
@@ -537,8 +543,9 @@ function  pr_fill_table(horizontal_layout){
 				desired_width = parseInt(window.innerWidth/2-70);
 			}
 		}
+		//this sets DisplayWidth and DisplayHeight
 		var thumb_url = pr_image_url(desired_width); 
-		
+
 		//self.DisplayHeight is known if the image is not external
 		if(self.DisplayHeight) 
 			self.TextBoxHeight = self.DisplayHeight;
@@ -550,14 +557,14 @@ function  pr_fill_table(horizontal_layout){
 			var image = document.createElement("img");
 			image.setAttribute("src", thumb_url);
 			image.setAttribute("id", "ProofReadImage");
-			image.setAttribute("width", desired_width);
+			image.setAttribute("width", self.DisplayWidth);
 			image.style.cssText = "padding:0;margin:0;border:0;";
 			image_container.appendChild(image);
 		}
 		else{
-			var s = "<div id=\"pr_container\" style=\"background:#000000; overflow: auto; width: "+desired_width+"px;\">";
+			var s = "<div id=\"pr_container\" style=\"background:#000000; overflow: auto; width: "+self.DisplayWidth+"px; height:"+self.TextBoxHeight+"px;\">";
 			s = s + "<img id=\"ProofReadImage\" src=\""+ proofreadPageViewURL +"\" alt=\""+ proofreadPageViewURL +"\"";
-			s = s + " width=\"" + desired_width +"\"></div>";
+			s = s + " width=\"" + self.DisplayWidth +"\"></div>";
 			image_container.innerHTML = s;
 			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
 			pr_zoom(0);
