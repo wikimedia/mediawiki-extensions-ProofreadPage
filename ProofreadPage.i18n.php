@@ -600,6 +600,7 @@ $messages['ee'] = array(
 /** Greek (Ελληνικά)
  * @author Consta
  * @author Dead3y3
+ * @author Konsnos
  * @author ZaDiak
  */
 $messages['el'] = array(
@@ -614,6 +615,7 @@ $messages['el'] = array(
 	'proofreadpage_body' => 'Σώμα σελίδας (προς εσωκλεισμό):',
 	'proofreadpage_footer' => 'Κατακλείδα (noinclude):',
 	'proofreadpage_toggleheaders' => 'ενάλλαξε την ορατότητα των τμημάτων noinclude',
+	'proofreadpage_quality0_category' => 'Κενό',
 	'proofreadpage_quality1_category' => 'Δεν έχει γίνει proofreading',
 	'proofreadpage_quality2_category' => 'Προβληματική',
 	'proofreadpage_quality3_category' => 'Έχει γίνει proofreading',
