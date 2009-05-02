@@ -45,31 +45,24 @@ function pr_init_tabs(){
 
 
 
-
 function pr_image_url(requested_width){
-	var image_url;
+	var thumb_url;
 
 	if(self.proofreadPageExternalURL) {
-		image_url = proofreadPageExternalURL; 
+		thumb_url = proofreadPageViewURL;
 	}
 	else {
-
 		//enforce quantization: width must be multiple of 100px
 		var width = (100*requested_width)/100;
-
+		//compare to the width of the image
 		if(width < proofreadPageWidth)  {
-			 self.DisplayWidth = width;
-			 self.DisplayHeight = width*proofreadPageHeight/proofreadPageWidth;
-			 image_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
+			 thumb_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
 		}
 		else {
-		     self.DisplayWidth = proofreadPageWidth;
-		     self.DisplayHeight = proofreadPageHeight;
-		     image_url = proofreadPageViewURL; 
+		     thumb_url = proofreadPageViewURL; 
 		}
 	}
-
-	return image_url;
+	return thumb_url;
 }
 
 
@@ -186,9 +179,6 @@ var zoom_status='';
 var ieox=0; var ieoy=0; 
 var ffox=0; var ffoy=0;
 
-
-var zoomw=160;
-var zoomh=120;
 
 
 /*relative coordinates of the mouse pointer*/
@@ -547,9 +537,9 @@ function  pr_fill_table(horizontal_layout){
 				desired_width = parseInt(window.innerWidth/2-70);
 			}
 		}
-		//this function sets self.DisplayWidth and self.DisplayHeight
 		var thumb_url = pr_image_url(desired_width); 
 		
+		//self.DisplayHeight is known if the image is not external
 		if(self.DisplayHeight) 
 			self.TextBoxHeight = self.DisplayHeight;
 		else 
@@ -560,14 +550,14 @@ function  pr_fill_table(horizontal_layout){
 			var image = document.createElement("img");
 			image.setAttribute("src", thumb_url);
 			image.setAttribute("id", "ProofReadImage");
+			image.setAttribute("width", desired_width);
 			image.style.cssText = "padding:0;margin:0;border:0;";
 			image_container.appendChild(image);
 		}
 		else{
-			var image_url = proofreadPageViewURL;
-			var s = "<div id=\"pr_container\" style=\"background:#000000; overflow: auto; width: 100%; height:"+self.DisplayHeight+"px;\">";
-			s = s + "<img id=\"ProofReadImage\" src=\""+ image_url +"\" alt=\""+ image_url +"\"";
-			s = s + " width=\"" + self.DisplayWidth +"\"></div>";
+			var s = "<div id=\"pr_container\" style=\"background:#000000; overflow: auto; width: "+desired_width+"px;\">";
+			s = s + "<img id=\"ProofReadImage\" src=\""+ proofreadPageViewURL +"\" alt=\""+ proofreadPageViewURL +"\"";
+			s = s + " width=\"" + desired_width +"\"></div>";
 			image_container.innerHTML = s;
 			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
 			pr_zoom(0);
@@ -582,7 +572,8 @@ function  pr_fill_table(horizontal_layout){
 		else
 			self.vertHeight=Math.ceil(window.innerHeight*0.4);
 
-		var s = "<div id=\"pr_container\" style= \"background:#000000; overflow: auto; height: " + self.vertHeight + "px; width: 100%;\">";
+		var s = "<div id=\"pr_container\" style= \"background:#000000; overflow: auto; height: " 
+			+ self.vertHeight + "px; width: 100%;\">";
 		s = s + "<img id=\"ProofReadImage\" src=\""+ proofreadPageViewURL +"\" alt=\""+ proofreadPageViewURL +"\"";
 		s = s + "\"></div>";		
 
@@ -764,7 +755,8 @@ function pr_init() {
 			re = /<span class="hiddenStructure" id="pageURL">\[http:\/\/(.*?)\]<\/span>/;
 			m = re.exec(text.value);
 			if( m ) { 
-				self.proofreadPageExternalURL = "http://"+m[1];  
+				self.proofreadPageViewURL = "http://"+m[1];  
+				self.proofreadPageExternalURL = true;
 			}
 		} 
 		else {
@@ -773,7 +765,8 @@ function pr_init() {
 			try { 
 				var a = document.getElementById("pageURL");
 				var b = a.firstChild;
-				self.proofreadPageExternalURL = b.getAttribute("href");
+				self.proofreadPageViewURL = b.getAttribute("href");
+				self.proofreadPageExternalURL = true;
 			} catch(err){};
 		}
 		//set to dummy values, not used
@@ -781,7 +774,7 @@ function pr_init() {
 		self.proofreadPageHeight = 400;
 	}
 
-	if(!self.proofreadPageViewURL && !self.proofreadPageExternalURL) return;
+	if(!self.proofreadPageViewURL) return;
 
 	if( self.proofreadpage_setup ) {
 	  
