@@ -18,7 +18,7 @@ $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 $wgDjvutxt = null;
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 19;
+$wgProofreadPageVersion = 20;
 
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
@@ -38,10 +38,6 @@ function pr_main() {
 }
 
 
-
-
-# Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 18;
 
 /**
  * 

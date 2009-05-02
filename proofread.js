@@ -1,8 +1,7 @@
 // Author : ThomasV - License : GPL
 
 //todo : 
-//add a state for empty pages : detect if textbox is empty
-//use the API
+//empty pages : detect if textbox is empty
 
 
 function pr_init_tabs(){
@@ -166,43 +165,328 @@ function pr_toggle_layout() {
 
 
 
-//vertical mode
-self.vertHeight = 0;
-var ImgWidth  = 0;
 
-function pr_content(image_url){
-  
-	if (self.vertHeight == 0) {
-		if(document.selection  && !is_gecko)
-			self.vertHeight=Math.ceil(document.body.clientHeight*0.4);
-		else
-			self.vertHeight=Math.ceil(window.innerHeight*0.4);
+
+/*
+ *  Mouse Zoom.  Credits: http://valid.tjp.hu/zoom/
+ */
+
+// global vars
+var lastxx, lastyy, xx, yy;
+
+var zp_clip;  //zp_clip is the large image
+var zp_container;
+var zp_img;
+
+var zoomamount_h=2; 
+var zoomamount_w=2; 
+var zoomamount=2; 
+var zoom_status=''; 
+
+var ieox=0; var ieoy=0; 
+var ffox=0; var ffoy=0;
+
+
+var zoomw=160;
+var zoomh=120;
+
+
+/*relative coordinates of the mouse pointer*/
+function get_xy(evt){
+	if(typeof(evt) == 'object') {
+		evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
+		if(evt.pageX) {
+			xx=evt.pageX - ffox;
+			yy=evt.pageY - ffoy;
+		}
+		else {
+			if(typeof(document.getElementById("ImageContainer")+1) == 'number') {return true;} 
+			xx=evt.clientX - ieox;
+			yy=evt.clientY - ieoy;
+		}
 	}
-	var s = "<div style=\"overflow: auto; height: " + self.vertHeight + "px; width: 100%;\">";
-	s = s + "<img id=\"ProofReadImage\" src=\""+ image_url +"\" alt=\""+ image_url +"\"";
-	s = s + " width=\"" + ImgWidth +"\"></div>";		
-	return s;
+	else { 
+		xx = lastxx; 
+		yy = lastyy; 
+	}
+	lastxx = xx; 
+    lastyy = yy;
+	
+}
+
+//mouse move
+function zoom_move(evt) {
+
+	if(zoom_status != 1) { return false;}
+	
+	get_xy(evt);
+
+    zp_clip.style.margin =  ((yy > objh )?(objh*(1-zoomamount_h)):(yy*(1-zoomamount_h))) + 'px 0px 0px '
+		+ ((xx > objw )?(objw*(1-zoomamount_w)):(xx*(1-zoomamount_w)))
+		+ 'px';
+	
+	return false;
 }
 
 
-function pr_zoom(value) {
 
-	if(!document.getElementById("ImageContainer")) return;
-	
-	var PrImage = document.getElementById("ProofReadImage");
- 
-	if (value == 0) 
-		PrImage.width = document.getElementById("ImageContainer").offsetWidth-20;
-	else 
-		PrImage.width = PrImage.width + value;
- 
-	ImgWidth = PrImage.width;
- 
-	if(document.selection  && !is_gecko) {
-		//IE: 
-		document.getElementById("ImageContainer").innerHTML = pr_content(PrImage.src);
+
+
+
+function zoom_off() {
+	zp_container.style.width='0px';
+	zp_container.style.height='0px';
+	zoom_status = 0;
+}
+
+
+
+
+function countoffset() {
+	zme=document.getElementById("ImageContainer");
+	ieox=0; ieoy=0;
+	for(zmi=0;zmi<50;zmi++) {
+		if(zme+1 == 1) { 
+			break;
+		} 
+		else {
+			ieox+=zme.offsetLeft; 
+			ieoy+=zme.offsetTop;
+		}
+		zme=zme.offsetParent; 
 	}
-} 
+	ffox=ieox;
+	ffoy=ieoy;
+	ieox-=document.body.scrollLeft;
+	ieoy-=document.body.scrollTop;
+}
+
+
+
+
+function zoom_mouseup(evt) {
+
+	 evt = evt?evt:window.event?window.event:null; 
+	 if(!evt) return false;
+
+	 //only left button; see http://unixpapa.com/js/mouse.html for why it is this complicated
+	 if(evt.which == null) {
+	 	if(evt.button != 1) return false;
+	 } else {
+		if(evt.which > 1) return false;
+	 }
+
+	if(zoom_status == 0) {
+       		zoom_on(evt);
+		return false;
+		}
+	 else if(zoom_status == 1) {
+		zoom_status = 2;
+		return false;
+	 }
+	 else if(zoom_status == 2) {
+	 	zoom_off(); 
+		return false;
+	 }
+	 return false;
+}
+
+
+
+
+
+function zoom_on(evt) {
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
+	zoom_status=1;
+
+	if(evt.pageX) {
+		countoffset();
+		lastxx=evt.pageX - ffox; 
+		lastyy=evt.pageY - ffoy;
+		} 
+	else {
+		countoffset();
+		lastxx=evt.clientX - ieox;
+		lastyy=evt.clientY - ieoy; 
+	}
+
+	zoomamount_h = zp_clip.height/objh;
+	zoomamount_w = zp_clip.width/objw;
+
+    zp_container.style.margin = '0px 0px 0px 0px';
+	zp_container.style.width = objw+'px';
+	zp_container.style.height = objh+'px';
+
+	zoom_move('');
+	return false;
+}
+
+
+//zoom using two images (magnification glass)
+function proofreadPageZoom(){
+
+	if(navigator.appName == "Microsoft Internet Explorer") return;
+	if(!self.proofreadPageViewURL) return;
+	if(self.DisplayWidth>800) return;
+
+	zp = document.getElementById("ImageContainer");
+	if(zp){
+		var hires_url = pr_image_url(800);
+		self.objw = zp.firstChild.width;
+		self.objh = zp.firstChild.height;
+
+		zp.setAttribute("onmouseup","zoom_mouseup(event);" );
+		zp.setAttribute("onmousemove","zoom_move(event);" );
+
+
+		zp_container = document.createElement("div");
+		zp_container.style.cssText ="position:absolute; width:0; height:0; overflow:hidden;";
+		zp_clip = document.createElement("img");
+		zp_clip.setAttribute("src", hires_url);
+		zp_clip.style.cssText = "padding:0;margin:0;border:0;";
+		zp_container.appendChild(zp_clip);
+		zp.insertBefore(zp_container,zp.firstChild); 
+
+	}
+}
+
+
+
+/********************************
+ * new zoom : mouse wheel
+ * 
+ ********************************/
+
+var	margin_x = 0;
+var margin_y = 0;
+var	prev_margin_x = 0;
+var prev_margin_y = 0;
+var	init_x = 0;
+var init_y = 0;
+
+function pr_drop(evt){
+	prev_margin_x = margin_x;
+	prev_margin_y = margin_y;
+	document.onmouseup = null;
+	document.onmousemove = null;
+	document.onmousedown = null;
+	zp_container.onmousemove = pr_move;
+
+	return false;
+}
+
+function pr_grab(evt){
+
+	zp_img = document.getElementById("ProofReadImage");
+	zp_container = document.getElementById("pr_container");
+
+	evt = evt?evt:window.event?window.event:null; 
+	if(!evt) return false;
+
+	//only left button; see http://unixpapa.com/js/mouse.html for why it is this complicated
+	if(evt.which == null) {
+		if(evt.button != 1) return false;
+	} else {
+		if(evt.which > 1) return false;
+	}
+
+	document.onmousedown = function(){return false;}; 
+	document.onmousemove = pr_drag;
+	document.onmouseup = pr_drop;
+	zp_container.onmousemove = pr_drag;
+	
+	if(evt.pageX) {
+		countoffset();
+		lastxx=evt.pageX - ffox; 
+		lastyy=evt.pageY - ffoy;
+	} 
+	else {
+		countoffset();
+		lastxx=evt.clientX - ieox;
+		lastyy=evt.clientY - ieoy; 
+	}
+
+	init_x = lastxx;
+	init_y = lastyy;
+
+	return false;
+
+}
+
+
+function pr_move(evt) {
+	countoffset();
+	get_xy(evt);
+}
+
+function pr_drag(evt) {
+	get_xy(evt);
+	//new
+	margin_x = prev_margin_x - (init_x-xx); //*(1-zoomamount_w);
+    margin_y = prev_margin_y - (init_y-yy); //*(1-zoomamount_h);
+    zp_img.style.margin =  margin_y + 'px 0px 0px ' + margin_x + 'px';
+		
+	if (evt.preventDefault)	evt.preventDefault();
+	evt.returnValue = false;
+	return false;
+}
+
+
+function pr_zoom(delta){
+
+	zp_img = document.getElementById("ProofReadImage");		
+	if(!zp_img) return;
+	
+	if (delta == 0) {
+		zp_img.width = document.getElementById("ImageContainer").offsetWidth-20;
+		zp_img.style.margin =  '0px 0px 0px 0px';
+		prev_margin_x = margin_x = 0;
+		prev_margin_y = margin_y = 0;
+	}
+	else{
+		var old_width = zp_img.width;
+		var new_width = Math.round(zp_img.width*Math.pow(1.1,delta));
+		var delta_w = new_width - old_width;
+		var s = (delta_w>0)?1:-1;
+		
+		for(var dw=s; dw != delta_w; dw=dw+s){
+			zp_img.width = old_width + dw;//this adds 1 pixel
+			//magnification factor
+			var lambda = (old_width+dw)/old_width;
+			margin_x = xx - lambda*(xx - prev_margin_x);
+			margin_y = yy - lambda*(yy - prev_margin_y);
+			zp_img.style.margin =  margin_y + 'px 0px 0px ' + margin_x + 'px';
+		}
+		prev_margin_x = margin_x;
+		prev_margin_y = margin_y;
+	}
+}
+
+function pr_zoom_wheel(event){
+// see http://adomas.org/javascript-mouse-wheel/
+		
+    var delta = 0;
+    if (!event) /* For IE. */
+        event = window.event;
+    if (event.wheelDelta) { /* IE/Opera. */
+        delta = event.wheelDelta/120;
+        /** In Opera 9, delta differs in sign as compared to IE.*/
+        if (window.opera)
+            delta = -delta;
+    } else if (event.detail) { /** Mozilla case. */
+        /** In Mozilla, sign of delta is different than in IE.
+         * Also, delta is multiple of 3.
+         */
+        delta = -event.detail/3;
+    }
+	if(delta) pr_zoom(delta);
+	if (event.preventDefault) event.preventDefault();
+	event.returnValue = false;
+}
+
+
+
+
 
 
 
@@ -254,50 +538,73 @@ function  pr_fill_table(horizontal_layout){
 	if(!horizontal_layout){
 
 		self.pr_horiz = false;
-		var displayWidth = 400;
+		var desired_width = 400;
 		if (parseInt(navigator.appVersion)>3) {
 			if (navigator.appName.indexOf("Microsoft")!=-1) {
-				displayWidth = parseInt(document.body.offsetWidth/2-70);
+				desired_width = parseInt(document.body.offsetWidth/2-70);
 			}
 			else {
-				displayWidth = parseInt(window.innerWidth/2-70);
+				desired_width = parseInt(window.innerWidth/2-70);
 			}
 		}
-		//this function sets self.DisplayHeight
-		var image_url = pr_image_url(displayWidth); 
+		//this function sets self.DisplayWidth and self.DisplayHeight
+		var thumb_url = pr_image_url(desired_width); 
 		
 		if(self.DisplayHeight) 
-			self.TextBoxHeight = DisplayHeight;
+			self.TextBoxHeight = self.DisplayHeight;
 		else 
 			self.TextBoxHeight = 700;
 
 		//fill image container	
-		if(!proofreadPageIsEdit) {
+		if(!proofreadPageIsEdit) { 
 			var image = document.createElement("img");
-			image.setAttribute("src", image_url); 
+			image.setAttribute("src", thumb_url);
+			image.setAttribute("id", "ProofReadImage");
 			image.style.cssText = "padding:0;margin:0;border:0;";
 			image_container.appendChild(image);
 		}
 		else{
 			var image_url = proofreadPageViewURL;
-			var s = "<div style=\"overflow: auto; width: 100%; height:"+self.DisplayHeight+"px;\">";
+			var s = "<div id=\"pr_container\" style=\"background:#000000; overflow: auto; width: 100%; height:"+self.DisplayHeight+"px;\">";
 			s = s + "<img id=\"ProofReadImage\" src=\""+ image_url +"\" alt=\""+ image_url +"\"";
-			s = s + " width=\"" + displayWidth +"\"></div>";
+			s = s + " width=\"" + self.DisplayWidth +"\"></div>";
 			image_container.innerHTML = s;
 			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
 			pr_zoom(0);
 		}
-		//document.getElementById("contentSub").appendChild(ImageContainer);
-		
 	}
 	else{
+		//horizontal layout
 		self.pr_horiz = true;
-		image_container.innerHTML = pr_content(proofreadPageViewURL);
+
+		if(document.selection  && !is_gecko)
+			self.vertHeight=Math.ceil(document.body.clientHeight*0.4);
+		else
+			self.vertHeight=Math.ceil(window.innerHeight*0.4);
+
+		var s = "<div id=\"pr_container\" style= \"background:#000000; overflow: auto; height: " + self.vertHeight + "px; width: 100%;\">";
+		s = s + "<img id=\"ProofReadImage\" src=\""+ proofreadPageViewURL +"\" alt=\""+ proofreadPageViewURL +"\"";
+		s = s + "\"></div>";		
+
+		image_container.innerHTML = s;
 		
 		if(proofreadPageIsEdit){
 			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
 			pr_zoom(0);
 		}
+	}
+
+	//setup the mouse wheel listener
+    if(proofreadPageIsEdit) {
+		if (image_container.addEventListener) image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+		image_container.setAttribute("onmousewheel","pr_zoom_wheel(event);" );
+		//image_container.setAttribute("onmousemove", "pr_zoom_move(event);" );
+		//image_container.setAttribute("onmouseup",   "pr_zoom_up(event);" );
+		image_container.setAttribute("onmousedown", "pr_grab(event);" );
+		image_container.onmousemove=pr_move;
+
+		zp_img = document.getElementById("ProofReadImage");
+		zp_container = document.getElementById("pr_container");
 	}
 }
 
@@ -373,7 +680,7 @@ function pr_setup() {
 			image3.alt = "-";
 			image3.title = "zoom out";
 			image3.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_out.png";
-			image3.onclick = new Function("pr_zoom(-50);");
+			image3.onclick = new Function("pr_zoom(-2);");
 			toolbar.appendChild(image3);
 			
 			var image4 = document.createElement("img");
@@ -397,7 +704,7 @@ function pr_setup() {
 			image2.alt = "+";
 			image2.title = "zoom in";
 			image2.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_in.png";
-			image2.onclick = new Function("pr_zoom(50);");
+			image2.onclick = new Function("pr_zoom(2);");
 			toolbar.appendChild(image2);
 			
 			var image1 = document.createElement("img");
@@ -442,7 +749,7 @@ function pr_fill_form() {
 
 function pr_init() {
 
-	if( document.getElementById("proofreadImage")) return;
+	if( document.getElementById("ImageContainer")) return;
 
 	if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
 	if(document.URL.indexOf("action=delete") > 0 || document.URL.indexOf("action=undelete") > 0) return;
@@ -501,6 +808,8 @@ function pr_initzoom(){
 			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
 		pr_zoom(0);
 	}
+	else proofreadPageZoom();
+	
 }
 hookEvent("load", pr_initzoom );
 
