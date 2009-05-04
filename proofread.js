@@ -551,9 +551,8 @@ function  pr_fill_table(horizontal_layout){
 			self.vertHeight = 700;
 	}
 	else{
-		if(document.selection  && !is_gecko){
+		if(document.selection  && !is_gecko)
 			self.vertHeight = Math.ceil(document.body.clientHeight*0.4);
-		}
 		else
 			self.vertHeight = Math.ceil(window.innerHeight*0.4);
 	}
@@ -570,14 +569,13 @@ function  pr_fill_table(horizontal_layout){
 	}
 	else{
 		if(!horizontal_layout){
-			cont_w = self.DisplayWidth+"px";
 			img_w = self.DisplayWidth;
+			self.container_css = "background:#000000; overflow:hidden; width:"+self.DisplayWidth+"px; height:"+self.vertHeight+"px;";
 		}
 		else{
-			cont_w = "100%";
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
+			self.container_css = "background:#000000; overflow-x:hidden; overflow-y:scroll; width:100%; height:"+self.vertHeight+"px;";
 		}
-		self.container_css = "background:#000000; overflow:hidden; width:"+cont_w+"; height:"+self.vertHeight+"px;";
 		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
 		image_container.style.cssText = self.container_css;
 		document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
