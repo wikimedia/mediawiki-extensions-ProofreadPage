@@ -145,11 +145,11 @@ function pr_toggle_visibility() {
 	if( h.style.cssText == ''){
 		h.style.cssText = 'display:none';
 		f.style.cssText = 'display:none';
-		if(self.TextBoxHeight)	box.style.cssText = "height:"+(TextBoxHeight-7)+"px";
+		if(self.vertHeight)	box.style.cssText = "height:"+(vertHeight-7)+"px";
 	} else {
 		h.style.cssText = '';
 		f.style.cssText = '';
-		if(self.TextBoxHeight)  box.style.cssText = "height:"+(TextBoxHeight-270)+"px";
+		if(self.vertHeight)  box.style.cssText = "height:"+(vertHeight-270)+"px";
 	}
 }
 
@@ -189,6 +189,7 @@ var ffox=0; var ffoy=0;
 
 /*relative coordinates of the mouse pointer*/
 function get_xy(evt){
+
 	if(typeof(evt) == 'object') {
 		evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 		if(evt.pageX) {
@@ -196,7 +197,6 @@ function get_xy(evt){
 			yy=evt.pageY - ffoy;
 		}
 		else {
-			if(typeof(document.getElementById("ImageContainer")+1) == 'number') {return true;} 
 			xx=evt.clientX - ieox;
 			yy=evt.clientY - ieoy;
 		}
@@ -206,21 +206,18 @@ function get_xy(evt){
 		yy = lastyy; 
 	}
 	lastxx = xx; 
-    lastyy = yy;
-	
+	lastyy = yy;
+    
 }
 
 //mouse move
 function zoom_move(evt) {
 
 	if(zoom_status != 1) { return false;}
-	
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	get_xy(evt);
-
-    zp_clip.style.margin =  ((yy > objh )?(objh*(1-zoomamount_h)):(yy*(1-zoomamount_h))) + 'px 0px 0px '
-		+ ((xx > objw )?(objw*(1-zoomamount_w)):(xx*(1-zoomamount_w)))
-		+ 'px';
-	
+	zp_clip.style.margin =  ((yy > objh )?(objh*(1-zoomamount_h)):(yy*(1-zoomamount_h))) + 'px 0px 0px '
+		+ ((xx > objw )?(objw*(1-zoomamount_w)):(xx*(1-zoomamount_w))) + 'px';
 	return false;
 }
 
@@ -239,7 +236,7 @@ function zoom_off() {
 
 
 function countoffset() {
-	zme=document.getElementById("ImageContainer");
+	zme=document.getElementById("pr_container");
 	ieox=0; ieoy=0;
 	for(zmi=0;zmi<50;zmi++) {
 		if(zme+1 == 1) { 
@@ -262,21 +259,20 @@ function countoffset() {
 
 function zoom_mouseup(evt) {
 
-	 evt = evt?evt:window.event?window.event:null; 
-	 if(!evt) return false;
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 
-	 //only left button; see http://unixpapa.com/js/mouse.html for why it is this complicated
-	 if(evt.which == null) {
-	 	if(evt.button != 1) return false;
-	 } else {
+	//only left button; see http://unixpapa.com/js/mouse.html for why it is this complicated
+	if(evt.which == null) {
+		if(evt.button != 1) return false;
+	} else {
 		if(evt.which > 1) return false;
-	 }
+	}
 
 	if(zoom_status == 0) {
        		zoom_on(evt);
 		return false;
-		}
-	 else if(zoom_status == 1) {
+	}
+	else if(zoom_status == 1) {
 		zoom_status = 2;
 		return false;
 	 }
@@ -286,9 +282,6 @@ function zoom_mouseup(evt) {
 	 }
 	 return false;
 }
-
-
-
 
 
 function zoom_on(evt) {
@@ -309,7 +302,7 @@ function zoom_on(evt) {
 	zoomamount_h = zp_clip.height/objh;
 	zoomamount_w = zp_clip.width/objw;
 
-    zp_container.style.margin = '0px 0px 0px 0px';
+	zp_container.style.margin = '0px 0px 0px 0px';
 	zp_container.style.width = objw+'px';
 	zp_container.style.height = objh+'px';
 
@@ -321,20 +314,17 @@ function zoom_on(evt) {
 //zoom using two images (magnification glass)
 function proofreadPageZoom(){
 
-	if(navigator.appName == "Microsoft Internet Explorer") return;
 	if(!self.proofreadPageViewURL) return;
 	if(self.DisplayWidth>800) return;
 
-	zp = document.getElementById("ImageContainer");
+	zp = document.getElementById("pr_container");
 	if(zp){
 		var hires_url = pr_image_url(800);
 		self.objw = zp.firstChild.width;
 		self.objh = zp.firstChild.height;
 
-		zp.setAttribute("onmouseup","zoom_mouseup(event);" );
-		zp.setAttribute("onmousemove","zoom_move(event);" );
-
-
+		zp.onmouseup = zoom_mouseup;
+		zp.onmousemove =  zoom_move;
 		zp_container = document.createElement("div");
 		zp_container.style.cssText ="position:absolute; width:0; height:0; overflow:hidden;";
 		zp_clip = document.createElement("img");
@@ -353,12 +343,13 @@ function proofreadPageZoom(){
  * 
  ********************************/
 
-var	margin_x = 0;
+var margin_x = 0;
 var margin_y = 0;
-var	prev_margin_x = 0;
+var prev_margin_x = 0;
 var prev_margin_y = 0;
-var	init_x = 0;
+var init_x = 0;
 var init_y = 0;
+
 
 function pr_drop(evt){
 	prev_margin_x = margin_x;
@@ -367,17 +358,14 @@ function pr_drop(evt){
 	document.onmousemove = null;
 	document.onmousedown = null;
 	zp_container.onmousemove = pr_move;
-
 	return false;
 }
 
 function pr_grab(evt){
 
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	zp_img = document.getElementById("ProofReadImage");
 	zp_container = document.getElementById("pr_container");
-
-	evt = evt?evt:window.event?window.event:null; 
-	if(!evt) return false;
 
 	//only left button; see http://unixpapa.com/js/mouse.html for why it is this complicated
 	if(evt.which == null) {
@@ -392,37 +380,39 @@ function pr_grab(evt){
 	zp_container.onmousemove = pr_drag;
 	
 	if(evt.pageX) {
-		countoffset();
-		lastxx=evt.pageX - ffox; 
-		lastyy=evt.pageY - ffoy;
+	    countoffset();
+	    lastxx=evt.pageX - ffox; 
+	    lastyy=evt.pageY - ffoy;
 	} 
 	else {
-		countoffset();
-		lastxx=evt.clientX - ieox;
-		lastyy=evt.clientY - ieoy; 
+	    countoffset();
+	    lastxx=evt.clientX - ieox;
+	    lastyy=evt.clientY - ieoy; 
 	}
-
+	
 	init_x = lastxx;
 	init_y = lastyy;
-
+	
 	return false;
 
 }
 
 
 function pr_move(evt) {
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	countoffset();
 	get_xy(evt);
 }
 
 function pr_drag(evt) {
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	get_xy(evt);
-	//new
-	margin_x = prev_margin_x - (init_x-xx); //*(1-zoomamount_w);
-    margin_y = prev_margin_y - (init_y-yy); //*(1-zoomamount_h);
-    zp_img.style.margin =  margin_y + 'px 0px 0px ' + margin_x + 'px';
-		
-	if (evt.preventDefault)	evt.preventDefault();
+	margin_x = prev_margin_x - (init_x-xx); 
+	margin_y = prev_margin_y - (init_y-yy); 
+	zp_img.style.margin =  margin_y + 'px 0px 0px ' + margin_x + 'px';
+	image_container.style.cssText = self.container_css; //needed by IE6
+	
+	if (evt.preventDefault) evt.preventDefault();
 	evt.returnValue = false;
 	return false;
 }
@@ -430,12 +420,15 @@ function pr_drag(evt) {
 
 function pr_zoom(delta){
 
+	image_container = document.getElementById("pr_container");
 	zp_img = document.getElementById("ProofReadImage");		
 	if(!zp_img) return;
 	
 	if (delta == 0) {
-		zp_img.width = document.getElementById("ImageContainer").offsetWidth; //-20;
-		zp_img.style.margin =  '0px 0px 0px 0px';
+		zp_img.width = image_container.offsetWidth;
+		zp_img.style.margin = '0px 0px 0px 0px';
+		image_container.style.cssText = self.container_css; //needed by IE6
+
 		prev_margin_x = margin_x = 0;
 		prev_margin_y = margin_y = 0;
 	}
@@ -444,40 +437,43 @@ function pr_zoom(delta){
 		var new_width = Math.round(zp_img.width*Math.pow(1.1,delta));
 		var delta_w = new_width - old_width;
 		var s = (delta_w>0)?1:-1;
-		
+
 		for(var dw=s; dw != delta_w; dw=dw+s){
 			zp_img.width = old_width + dw;//this adds 1 pixel
-			//magnification factor
-			var lambda = (old_width+dw)/old_width;
-			margin_x = xx - lambda*(xx - prev_margin_x);
-			margin_y = yy - lambda*(yy - prev_margin_y);
-			zp_img.style.margin =  margin_y + 'px 0px 0px ' + margin_x + 'px';
+			image_container.style.cssText = self.container_css; //needed by IE6
+			if(xx){
+				//magnification factor
+				var lambda = (old_width+dw)/old_width;
+				margin_x = xx - lambda*(xx - prev_margin_x);
+				margin_y = yy - lambda*(yy - prev_margin_y);
+				zp_img.style.margin =  Math.round(margin_y) + 'px 0px 0px ' + Math.round(margin_x) + 'px';
+			}
 		}
 		prev_margin_x = margin_x;
 		prev_margin_y = margin_y;
+
 	}
 }
 
-function pr_zoom_wheel(event){
-// see http://adomas.org/javascript-mouse-wheel/
-		
-    var delta = 0;
-    if (!event) /* For IE. */
-        event = window.event;
-    if (event.wheelDelta) { /* IE/Opera. */
-        delta = event.wheelDelta/120;
-        /** In Opera 9, delta differs in sign as compared to IE.*/
-        if (window.opera)
-            delta = -delta;
-    } else if (event.detail) { /** Mozilla case. */
-        /** In Mozilla, sign of delta is different than in IE.
-         * Also, delta is multiple of 3.
-         */
-        delta = -event.detail/3;
-    }
+function pr_zoom_wheel(evt){
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
+	var delta = 0;
+	if (evt.wheelDelta) { 
+		/* IE/Opera. */
+		delta = evt.wheelDelta/120;
+		/** In Opera 9, delta differs in sign as compared to IE.*/
+		if (window.opera) delta = -delta;
+	}
+	else if (evt.detail) {
+		/** Mozilla case. */
+		/** In Mozilla, sign of delta is different than in IE.
+        	 * Also, delta is multiple of 3.
+        	 */
+		delta = -evt.detail/3;
+	}
 	if(delta) pr_zoom(delta);
-	if (event.preventDefault) event.preventDefault();
-	event.returnValue = false;
+	if(evt.preventDefault) evt.preventDefault();
+	evt.returnValue = false;
 }
 
 
@@ -487,24 +483,25 @@ function pr_zoom_wheel(event){
 
 
 
-
+/*do not use a table in the horizontal case ?*/
 function  pr_fill_table(horizontal_layout){
 
-	//remove existing body  
-	if(self.table.firstChild){
+	//remove existing content
+	while(self.table.firstChild){
 		self.table.removeChild(self.table.firstChild);
 	}
 
-	//create table body
-	var t_body = document.createElement("tbody");
-	self.table.appendChild(t_body);
-	var cell_left  = document.createElement("td");
-	var cell_right = document.createElement("td");
-  
 	if(!proofreadPageIsEdit) horizontal_layout=false;
 
 	//first setup the layout
 	if(!horizontal_layout) {
+		//use a table only here
+		var t_table = document.createElement("table");
+		var t_body = document.createElement("tbody");
+		var cell_left  = document.createElement("td");
+		var cell_right = document.createElement("td");
+		t_table.appendChild(t_body);  
+
 		var t_row = document.createElement("tr");
 		t_row.setAttribute("valign","top");
 		cell_left.style.cssText = "width:50%; padding-right:0.5em;";
@@ -512,28 +509,30 @@ function  pr_fill_table(horizontal_layout){
 		t_row.appendChild(cell_left);
 		t_row.appendChild(cell_right);
 		t_body.appendChild(t_row);
+
+		self.table.appendChild(t_table);
 	}
 	else {
-		var t_row1 = document.createElement("tr");
-		var t_row2 = document.createElement("tr");
-		t_body.appendChild(t_row2);	  
-		t_body.appendChild(t_row1);	  
-		t_row1.appendChild(cell_left);
-		t_row2.appendChild(cell_right);
+		var cell_left = document.createElement("div");
+		var cell_right = document.createElement("div");
+		self.table.appendChild(cell_right);
+		self.table.appendChild(cell_left);
 	}
 	
 
 	//create image and text containers
 	var image_container = document.createElement("div");
-	image_container.setAttribute("id", "ImageContainer");
+	image_container.setAttribute("id", "pr_container");
+	image_container.style.cssText = "background:#0000ff; overflow:hidden;";
+
 	cell_right.appendChild(image_container);
 	cell_left.appendChild(self.text_container);
 
+	self.pr_horiz = horizontal_layout;
 
-	//fill the image container
+	//compute the dimensions of the image container
 	if(!horizontal_layout){
 
-		self.pr_horiz = false;
 		var desired_width = 400;
 		if (parseInt(navigator.appVersion)>3) {
 			if (navigator.appName.indexOf("Microsoft")!=-1) {
@@ -548,58 +547,50 @@ function  pr_fill_table(horizontal_layout){
 
 		//self.DisplayHeight is known if the image is not external
 		if(self.DisplayHeight) 
-			self.TextBoxHeight = self.DisplayHeight;
+			self.vertHeight = self.DisplayHeight;
 		else 
-			self.TextBoxHeight = 700;
-
-		//fill image container	
-		if(!proofreadPageIsEdit) { 
-			var image = document.createElement("img");
-			image.setAttribute("src", thumb_url);
-			image.setAttribute("id", "ProofReadImage");
-			image.setAttribute("width", self.DisplayWidth);
-			image.style.cssText = "padding:0;margin:0;border:0;";
-			image_container.appendChild(image);
-		}
-		else{
-			var s = "<div id=\"pr_container\" style=\"background:#000000; overflow: auto; width: "+self.DisplayWidth+"px; height:"+self.TextBoxHeight+"px;\">";
-			s = s + "<img id=\"ProofReadImage\" src=\""+ proofreadPageViewURL +"\" alt=\""+ proofreadPageViewURL +"\"";
-			s = s + " width=\"" + self.DisplayWidth +"\"></div>";
-			image_container.innerHTML = s;
-			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
-			pr_zoom(0);
-		}
+			self.vertHeight = 700;
 	}
 	else{
-		//horizontal layout
-		self.pr_horiz = true;
-
-		if(document.selection  && !is_gecko)
-			self.vertHeight=Math.ceil(document.body.clientHeight*0.4);
-		else
-			self.vertHeight=Math.ceil(window.innerHeight*0.4);
-
-		var s = "<div id=\"pr_container\" style= \"background:#000000; overflow: auto; height: " 
-			+ self.vertHeight + "px; width: 100%;\">";
-		s = s + "<img id=\"ProofReadImage\" src=\""+ proofreadPageViewURL +"\" alt=\""+ proofreadPageViewURL +"\"";
-		s = s + "\"></div>";		
-
-		image_container.innerHTML = s;
-		
-		if(proofreadPageIsEdit){
-			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
-			pr_zoom(0);
+		if(document.selection  && !is_gecko){
+			self.vertHeight = Math.ceil(document.body.clientHeight*0.4);
 		}
+		else
+			self.vertHeight = Math.ceil(window.innerHeight*0.4);
+	}
+
+
+	//fill the image container	
+	if(!proofreadPageIsEdit) { 
+		var image = document.createElement("img");
+		image_container.appendChild(image);
+		image.setAttribute("id", "ProofReadImage");
+		image.setAttribute("src", thumb_url);
+		image.setAttribute("width", self.DisplayWidth);
+		image.style.cssText = "padding:0;margin:0;border:0;";
+	}
+	else{
+		if(!horizontal_layout){
+			cont_w = self.DisplayWidth+"px";
+			img_w = self.DisplayWidth;
+		}
+		else{
+			cont_w = "100%";
+			img_w = 0; //this prevents the container from being resized. 
+		}
+		self.container_css = "background:#000000; overflow:hidden; width:"+cont_w+"; height:"+self.vertHeight+"px;";
+		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
+		image_container.style.cssText = self.container_css;
+		document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
+		pr_zoom(0);
 	}
 
 	//setup the mouse wheel listener
-    if(proofreadPageIsEdit) {
+	if(proofreadPageIsEdit) {
 		if (image_container.addEventListener) image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
-		image_container.setAttribute("onmousewheel","pr_zoom_wheel(event);" );
-		//image_container.setAttribute("onmousemove", "pr_zoom_move(event);" );
-		//image_container.setAttribute("onmouseup",   "pr_zoom_up(event);" );
-		image_container.setAttribute("onmousedown", "pr_grab(event);" );
-		image_container.onmousemove=pr_move;
+		image_container.onmousewheel = pr_zoom_wheel;
+		image_container.onmousedown = pr_grab;
+		image_container.onmousemove = pr_move;
 
 		zp_img = document.getElementById("ProofReadImage");
 		zp_container = document.getElementById("pr_container");
@@ -614,14 +605,14 @@ function  pr_fill_table(horizontal_layout){
 
 function pr_setup() {
 
-	self.table = document.createElement("table");
+	self.table = document.createElement("div");
 	self.text_container = document.createElement("div");
 	self.image_container = document.createElement("div");
 	table.setAttribute("id", "textBoxTable");
 	table.style.cssText = "width:100%;";
 
 	//fill table
-    if(self.proofreadpage_default_layout=='horizontal') 
+	if(self.proofreadpage_default_layout=='horizontal') 
 		pr_fill_table(true);
 	else
 		pr_fill_table(false);
@@ -747,7 +738,7 @@ function pr_fill_form() {
 
 function pr_init() {
 
-	if( document.getElementById("ImageContainer")) return;
+	if( document.getElementById("pr_container")) return;
 
 	if(document.URL.indexOf("action=protect") > 0 || document.URL.indexOf("action=unprotect") > 0) return;
 	if(document.URL.indexOf("action=delete") > 0 || document.URL.indexOf("action=undelete") > 0) return;
@@ -805,7 +796,7 @@ function pr_initzoom(){
 		if(self.pr_horiz)
 			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
 		else
-			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.TextBoxHeight-7)+"px";
+			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.vertHeight-7)+"px";
 		pr_zoom(0);
 	}
 	else proofreadPageZoom();
