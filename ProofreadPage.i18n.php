@@ -676,6 +676,7 @@ Rimarkoj||10',
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Crazymadlover
  * @author Remember the dot
  * @author Sanbec
  */
@@ -691,6 +692,7 @@ $messages['es'] = array(
 	'proofreadpage_body' => 'Cuerpo de la página (para ser transcluido):',
 	'proofreadpage_footer' => 'Pie de página (noinclude):',
 	'proofreadpage_toggleheaders' => 'cambiar la visibilidad de las secciones noinclude',
+	'proofreadpage_quality0_category' => 'Vacío',
 	'proofreadpage_quality1_category' => 'No corregido',
 	'proofreadpage_quality2_category' => 'Problemática',
 	'proofreadpage_quality3_category' => 'Corregido',
