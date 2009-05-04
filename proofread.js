@@ -486,14 +486,22 @@ function pr_zoom_wheel(evt){
 /*do not use a table in the horizontal case ?*/
 function  pr_fill_table(horizontal_layout){
 
-	//remove existing content
+
+	//remove existing image_container and table
+	image_container = document.getElementById("pr_container");
+	if(image_container) image_container.parentNode.removeChild(image_container);
 	while(self.table.firstChild){
 		self.table.removeChild(self.table.firstChild);
 	}
 
 	if(!proofreadPageIsEdit) horizontal_layout=false;
 
-	//first setup the layout
+	//create image container
+	var image_container = document.createElement("div");
+	image_container.setAttribute("id", "pr_container");
+	image_container.style.cssText = "background:#0000ff; overflow:hidden;";
+
+	//setup the layout
 	if(!horizontal_layout) {
 		//use a table only here
 		var t_table = document.createElement("table");
@@ -510,24 +518,15 @@ function  pr_fill_table(horizontal_layout){
 		t_row.appendChild(cell_right);
 		t_body.appendChild(t_row);
 
+		cell_right.appendChild(image_container);
+		cell_left.appendChild(self.text_container);
 		self.table.appendChild(t_table);
 	}
 	else {
-		var cell_left = document.createElement("div");
-		var cell_right = document.createElement("div");
-		self.table.appendChild(cell_right);
-		self.table.appendChild(cell_left);
+		self.table.appendChild(self.text_container);
+		document.getElementById("contentSub").appendChild(image_container);
 	}
 	
-
-	//create image and text containers
-	var image_container = document.createElement("div");
-	image_container.setAttribute("id", "pr_container");
-	image_container.style.cssText = "background:#0000ff; overflow:hidden;";
-
-	cell_right.appendChild(image_container);
-	cell_left.appendChild(self.text_container);
-
 	self.pr_horiz = horizontal_layout;
 
 	//compute the dimensions of the image container
@@ -576,7 +575,7 @@ function  pr_fill_table(horizontal_layout){
 		}
 		else{
 			cont_w = "100%";
-			img_w = 0; //this prevents the container from being resized. 
+			img_w = 0; //prevent the container from being resized when the image is downloaded. 
 		}
 		self.container_css = "background:#000000; overflow:hidden; width:"+cont_w+"; height:"+self.vertHeight+"px;";
 		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
