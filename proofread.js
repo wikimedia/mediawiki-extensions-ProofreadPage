@@ -571,7 +571,7 @@ function  pr_fill_table(horizontal_layout){
 		}
 		else{
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
-			self.container_css = "background:#000000; overflow:hidden; width:100%; height:"+self.vertHeight+"px;";
+			self.container_css = "background:#000000; overflow-x:hidden; overflow-y:scroll; width:100%; height:"+self.vertHeight+"px;";
 		}
 		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
 		image_container.style.cssText = self.container_css;
@@ -581,8 +581,10 @@ function  pr_fill_table(horizontal_layout){
 
 	//setup the mouse wheel listener
 	if(proofreadPageIsEdit) {
-		if (image_container.addEventListener) image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
-		image_container.onmousewheel = pr_zoom_wheel;
+		if(!horizontal_layout){
+			if (image_container.addEventListener) image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+			image_container.onmousewheel = pr_zoom_wheel;
+		}
 		image_container.onmousedown = pr_grab;
 		image_container.onmousemove = pr_move;
 
