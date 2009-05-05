@@ -461,8 +461,6 @@ function pr_zoom_wheel(evt){
 	if (evt.wheelDelta) { 
 		/* IE/Opera. */
 		delta = evt.wheelDelta/120;
-		/** In Opera 9, delta differs in sign as compared to IE.*/
-		if (window.opera) delta = -delta;
 	}
 	else if (evt.detail) {
 		/** Mozilla case. */
