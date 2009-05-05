@@ -522,7 +522,8 @@ function  pr_fill_table(horizontal_layout){
 	}
 	else {
 		self.table.appendChild(self.text_container);
-		document.getElementById("contentSub").appendChild(image_container);
+		var tb = document.getElementById("toolbar");
+		tb.parentNode.insertBefore(image_container,tb);
 	}
 	
 	self.pr_horiz = horizontal_layout;
@@ -532,12 +533,10 @@ function  pr_fill_table(horizontal_layout){
 
 		var desired_width = 400;
 		if (parseInt(navigator.appVersion)>3) {
-			if (navigator.appName.indexOf("Microsoft")!=-1) {
+			if (navigator.appName.indexOf("Microsoft")!=-1) 
 				desired_width = parseInt(document.body.offsetWidth/2-70);
-			}
-			else {
+			else
 				desired_width = parseInt(window.innerWidth/2-70);
-			}
 		}
 		//this sets DisplayWidth and DisplayHeight
 		var thumb_url = pr_image_url(desired_width); 
@@ -549,7 +548,7 @@ function  pr_fill_table(horizontal_layout){
 			self.vertHeight = 700;
 	}
 	else{
-		if(document.selection  && !is_gecko)
+		if (navigator.appName.indexOf("Microsoft")!=-1)
 			self.vertHeight = Math.ceil(document.body.clientHeight*0.4);
 		else
 			self.vertHeight = Math.ceil(window.innerHeight*0.4);
@@ -572,7 +571,7 @@ function  pr_fill_table(horizontal_layout){
 		}
 		else{
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
-			self.container_css = "background:#000000; overflow-x:hidden; overflow-y:scroll; width:100%; height:"+self.vertHeight+"px;";
+			self.container_css = "background:#000000; overflow:hidden; width:100%; height:"+self.vertHeight+"px;";
 		}
 		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
 		image_container.style.cssText = self.container_css;
@@ -638,9 +637,6 @@ function pr_setup() {
 	if(proofreadPageIsEdit) {
 
 		var toolbar = document.getElementById("toolbar");
-		/*var f = tb.parentNode; 
-		 var toolbar = f.removeChild(tb);
-		 self.text_container.insertBefore(toolbar,self.text_container.firstChild);*/
 
 		if(toolbar){
 			var image = document.createElement("img");
@@ -664,7 +660,7 @@ function pr_setup() {
 			image3.alt = "-";
 			image3.title = "zoom out";
 			image3.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_out.png";
-			image3.onclick = new Function("pr_zoom(-2);");
+			image3.onclick = new Function("xx=0;yy=0;pr_zoom(-2);");
 			toolbar.appendChild(image3);
 			
 			var image4 = document.createElement("img");
@@ -688,7 +684,7 @@ function pr_setup() {
 			image2.alt = "+";
 			image2.title = "zoom in";
 			image2.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_in.png";
-			image2.onclick = new Function("pr_zoom(2);");
+			image2.onclick = new Function("xx=0;yy=0;pr_zoom(2);");
 			toolbar.appendChild(image2);
 			
 			var image1 = document.createElement("img");
