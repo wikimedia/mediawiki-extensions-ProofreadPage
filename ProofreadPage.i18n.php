@@ -656,6 +656,7 @@ $messages['eo'] = array(
 	'proofreadpage_body' => 'Paĝa korpo (esti transinkluzivita):',
 	'proofreadpage_footer' => 'Suba paĝtitolo (neinkluzive):',
 	'proofreadpage_toggleheaders' => 'baskulo neinkluzivu sekcioj videbleco',
+	'proofreadpage_quality0_category' => 'Malplena',
 	'proofreadpage_quality1_category' => 'Ne provlegita',
 	'proofreadpage_quality2_category' => 'Problema',
 	'proofreadpage_quality3_category' => 'Provlegita',
