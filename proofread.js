@@ -115,11 +115,11 @@ function pr_make_edit_area(container,text){
 
 	container.innerHTML = ''
 		+'<div id="prp_header" style="display:none">'+proofreadPageMessageHeader+'<br/>'
-		+'<textarea name="headerTextbox" rows="4" cols="80">'+pageHeader+'</textarea>'
+		+'<textarea name="headerTextbox" rows="2" cols="80">'+pageHeader+'</textarea>'
 		+'<br/>'+proofreadPageMessagePageBody+'<br/></div>'
 		+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
 		+'<div id="prp_footer" style="display:none"><br/>'+proofreadPageMessageFooter+'<br/>'
-		+'<textarea name="footerTextbox" rows="4" cols="80">'+pageFooter+'</textarea></div>';
+		+'<textarea name="footerTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
 
 
 	var saveButton = document.getElementById("wpSave"); 
@@ -149,7 +149,7 @@ function pr_toggle_visibility() {
 	} else {
 		h.style.cssText = '';
 		f.style.cssText = '';
-		if(self.vertHeight)  box.style.cssText = "height:"+(vertHeight-270)+"px";
+		if(self.vertHeight)  box.style.cssText = "height:"+(vertHeight-190)+"px";
 	}
 }
 
@@ -793,7 +793,7 @@ function pr_initzoom(){
 		if(self.pr_horiz)
 			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
 		else
-			document.getElementById("wpTextbox1").style.cssText = "height:"+(self.vertHeight-7)+"px";
+			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
 		pr_zoom(0);
 	}
 	else proofreadPageZoom();
