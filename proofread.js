@@ -425,7 +425,11 @@ function pr_zoom(delta){
 	if(!zp_img) return;
 	
 	if (delta == 0) {
-		zp_img.width = image_container.offsetWidth;
+		if(self.pr_horiz)
+			//reduce width by 20 pixels in order to prevent horizontal scrollbar from showing up
+			zp_img.width = image_container.offsetWidth-20; 
+		else
+			zp_img.width = image_container.offsetWidth;
 		zp_img.style.margin = '0px 0px 0px 0px';
 		image_container.style.cssText = self.container_css; //needed by IE6
 
@@ -571,7 +575,7 @@ function  pr_fill_table(horizontal_layout){
 		}
 		else{
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
-			self.container_css = "background:#000000; overflow-x:hidden; overflow-y:scroll; width:100%; height:"+self.vertHeight+"px;";
+			self.container_css = "background:#000000; overflow:auto; width:100%; height:"+self.vertHeight+"px;";
 		}
 		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
 		image_container.style.cssText = self.container_css;
