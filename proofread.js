@@ -59,13 +59,13 @@ function pr_image_url(requested_width){
 		//compare to the width of the image
 		if(width < proofreadPageWidth)  {
 			thumb_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
-            self.DisplayWidth = requested_width;
-            self.DisplayHeight = requested_width*proofreadPageHeight/proofreadPageWidth;
+			self.DisplayWidth = requested_width;
+			self.DisplayHeight = requested_width*proofreadPageHeight/proofreadPageWidth;
 		}
 		else {
-		    thumb_url = proofreadPageViewURL; 
-            self.DisplayWidth = proofreadPageWidth;
-            self.DisplayHeight = proofreadPageHeight;
+			thumb_url = proofreadPageViewURL; 
+			self.DisplayWidth = proofreadPageWidth;
+			self.DisplayHeight = proofreadPageHeight;
 		}
 	}
 	return thumb_url;
@@ -101,12 +101,40 @@ function pr_make_edit_area(container,text){
 			}
 		}
 		else {
-			pageHeader = '{{PageQuality|1|}}<div class="pagetext">';
+			pageHeader = proofreadPageHeader;
 			pageBody = text;
-			pageFooter = '<references/></div>';
+			pageFooter = proofreadPageFooter;
 			document.editform.elements["wpSummary"].value="/* "+proofreadPageMessageQuality1+" */ ";
 		}
 	}
+
+	//find the PageQuality template
+	//we do this separately from header detection,
+	//because the template might not be in the header 
+	var reg = /\{\{PageQuality\|(0|1|2|3|4|25%|50%|75%|100%)(\|.*?|)\}\}/g;
+	var m4 = reg.exec(pageHeader);
+	self.show4 = false;
+	if(m4) {
+		switch(m4[1]){
+			case "0": self.proofreadpage_quality = 0; break;
+			case "1": self.proofreadpage_quality = 1; break;
+			case "2": self.proofreadpage_quality = 2; break;
+			case "3": self.proofreadpage_quality = 3; break;
+			case "4": self.proofreadpage_quality = 4; break;
+			//keep this for backward compatibility
+			case "100%": self.proofreadpage_quality = 4; break;
+			case "75%": self.proofreadpage_quality = 3; break;
+			case "50%": self.proofreadpage_quality = 1; break;
+			case "25%": self.proofreadpage_quality = 2; break;
+			default: self.proofreadpage_quality = 1;
+		}
+
+		if((m4[3]!= "|"+wgUserName) && (m4[1]=="3")) self.show4 = true;
+		if(m4[1] =="4") self.show4 = true;
+		pageHeader = pageHeader.replace(reg,'');
+	}
+	else  self.proofreadpage_quality = 1;
+
 
 	//escape & character
 	pageBody = pageBody.split("&").join("&amp;")
@@ -275,12 +303,12 @@ function zoom_mouseup(evt) {
 	else if(zoom_status == 1) {
 		zoom_status = 2;
 		return false;
-	 }
-	 else if(zoom_status == 2) {
-	 	zoom_off(); 
+	}
+	else if(zoom_status == 2) {
+		zoom_off(); 
 		return false;
-	 }
-	 return false;
+	}
+	return false;
 }
 
 
@@ -380,14 +408,14 @@ function pr_grab(evt){
 	zp_container.onmousemove = pr_drag;
 	
 	if(evt.pageX) {
-	    countoffset();
-	    lastxx=evt.pageX - ffox; 
-	    lastyy=evt.pageY - ffoy;
+		countoffset();
+		lastxx=evt.pageX - ffox; 
+		lastyy=evt.pageY - ffoy;
 	} 
 	else {
-	    countoffset();
-	    lastxx=evt.clientX - ieox;
-	    lastyy=evt.clientY - ieoy; 
+		countoffset();
+		lastxx=evt.clientX - ieox;
+		lastyy=evt.clientY - ieoy; 
 	}
 	
 	init_x = lastxx;
@@ -718,7 +746,7 @@ function pr_fill_form() {
 	var footer = form.elements["footerTextbox"];
 	if(header){
 		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
-		if(h) h = "<noinclude>"+h+"\n\n\n</noinclude>";
+		if(h) h = "<noinclude>{{PageQuality|"+self.proofreadpage_quality+"|"+wgUserName+"}}"+h+"\n\n\n</noinclude>";
 		var f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
 		var ph = header.parentNode; 
@@ -773,11 +801,10 @@ function pr_init() {
 
 	if( self.proofreadpage_setup ) {
 	  
-	    proofreadpage_setup(
-		proofreadPageWidth,
-		proofreadPageHeight, 
-		proofreadPageIsEdit);
-
+		proofreadpage_setup(
+			proofreadPageWidth,
+			proofreadPageHeight, 
+			proofreadPageIsEdit);
 	}
 	else pr_setup();
 }
@@ -806,6 +833,7 @@ hookEvent("load", pr_initzoom );
 
 function pr_add_quality(form,value){
  
+	self.proofreadpage_quality = value;
 	var text="";
 	switch(value){
 		case 0: text = proofreadPageMessageQuality0; break;
@@ -814,56 +842,33 @@ function pr_add_quality(form,value){
 		case 3: text = proofreadPageMessageQuality3; break;
 		case 4: text = proofreadPageMessageQuality4; break;
 	}
-
 	form.elements["wpSummary"].value="/* "+text+" */ ";
-	s = form.elements["headerTextbox"].value;
-	s = s.replace(/\{\{PageQuality\|(.*?)\}\}/gi,"")
-	form.elements["headerTextbox"].value="{{PageQuality|"+value+"|"+wgUserName+"}}"+s;
-	//remove template from wpTextbox1 in case it was corrupted
-	s = form.elements["wpTextbox1"].value;
-	s = s.replace(/\{\{PageQuality\|(.*?)\}\}/gi,"")
-	form.elements["wpTextbox1"].value=s;
+
 }
 
 
 function pr_add_quality_buttons(){
 
-    if(self.proofreadpage_no_quality_buttons) return;
-
+	if(self.proofreadpage_no_quality_buttons) return;
 	var ig  = document.getElementById("wpWatchthis");
 	if(!ig) return;
-
-	var s = document.editform.headerTextbox.value;
-	var reg = /\{\{PageQuality\|([0-9]*(%|))(\|.*?|)\}\}/g;
-	var m = reg.exec(s);
-	var show4 = false;
-	if(m) {
-		//this is for backward compatibility
-		if(m[1]=="100%") m[1]="4";
-		if(m[1]=="75%") m[1]="3";
-		if(m[1]=="50%") m[1]="1";
-		if(m[1]=="25%") m[1]="2";
-
-		if( (m[3] != "|"+wgUserName) && (m[1]=="3")) show4 = true;
-		if(m[1] =="4") show4 = true;
-	}
 	var f = document.createElement("span");
 	f.innerHTML = 
 ' <span class="quality0"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,0)"> </span>'
 +'<span class="quality2"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,2)"> </span>'
 +'<span class="quality1"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,1)"> </span>'
 +'<span class="quality3"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,3)"> </span>';
-	if(show4) f.innerHTML = f.innerHTML 
+	if(self.show4) f.innerHTML = f.innerHTML 
 + '<span class="quality4"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,4)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
-	if(m) { 
-		switch(m[1]){
-			case "4": document.editform.quality[4].checked=true; break;
-			case "3": document.editform.quality[3].checked=true; break;
-			case "1": document.editform.quality[2].checked=true; break; 
-			case "2": document.editform.quality[1].checked=true; break; 
-			case "0": document.editform.quality[0].checked=true; break; 
+	if(self.proofreadpage_quality) { 
+		switch(self.proofreadpage_quality){
+			case 4: document.editform.quality[4].checked=true; break;
+			case 3: document.editform.quality[3].checked=true; break;
+			case 1: document.editform.quality[2].checked=true; break; 
+			case 2: document.editform.quality[1].checked=true; break; 
+			case 0: document.editform.quality[0].checked=true; break; 
 		}
 	}
 }

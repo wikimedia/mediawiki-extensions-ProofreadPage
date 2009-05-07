@@ -228,8 +228,6 @@ function pr_parse_index($index_title, $page_title){
 		if( preg_match( $tag_pattern, $text, $matches ) ) $attributes[$var] = $matches[1]; 
 		else $attributes[$var] = '';
 	}
-	
-
 	return array( $prev_title, $next_title, $attributes );
 
 }
@@ -326,6 +324,7 @@ function pr_preparePage( $out, $m, $isEdit ) {
 	list( $index_url, $prev_url, $next_url, $attributes ) = pr_navigation( $image );
 
 	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
+
 	$jsVars = array(
 		'proofreadPageWidth' => intval( $width ),
 		'proofreadPageHeight' => intval( $height ),
@@ -336,6 +335,17 @@ function pr_preparePage( $out, $m, $isEdit ) {
 		'proofreadPagePrevURL' => $prev_url,
 		'proofreadPageNextURL' => $next_url,
 	) + $attributes;
+
+	//Header and Footer 
+	$header = $attributes['header'] ? $attributes['header'] : wfMsgGetKey('proofreadpage_default_header',true,false,false);
+	$footer = $attributes['footer'] ? $attributes['footer'] : wfMsgGetKey('proofreadpage_default_footer',true,false,false);
+	foreach($attributes as $key=>$val){
+		$header = str_replace( "{{{{$key}}}}", $val, $header );
+		$footer = str_replace( "{{{{$key}}}}", $val, $footer );
+	}
+	$jsVars['proofreadPageHeader'] = $header;
+	$jsVars['proofreadPageFooter'] = $footer;
+
 	$varScript = Skin::makeVariablesScript( $jsVars );
 
 	$out->addScript( <<<EOT

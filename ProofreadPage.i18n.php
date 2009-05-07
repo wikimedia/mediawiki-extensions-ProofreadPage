@@ -36,6 +36,8 @@ Source
 Image|Cover image
 Pages||20
 Remarks||10',
+	'proofreadpage_default_header'        => '<div class="pagetext">',
+	'proofreadpage_default_footer'        => '<references/></div>',
 );
 
 /** Message documentation (Message documentation)
