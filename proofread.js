@@ -741,7 +741,7 @@ function pr_fill_form() {
 	var footer = form.elements["footerTextbox"];
 	if(header){
 		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
-		if(h) h = "<noinclude>{{PageQuality|"+self.proofreadpage_quality+"|"+wgUserName+"}}"+h+"\n\n\n</noinclude>";
+		if(h) h = "<noinclude>{{PageQuality|"+self.proofreadpage_quality+"|"+self.proofreadpage_username+"}}"+h+"\n\n\n</noinclude>";
 		var f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
 		var ph = header.parentNode; 
@@ -829,6 +829,7 @@ hookEvent("load", pr_initzoom );
 function pr_add_quality(form,value){
  
 	self.proofreadpage_quality = value;
+	self.proofreadpage_username = wgUserName;
 	var text="";
 	switch(value){
 		case 0: text = proofreadPageMessageQuality0; break;
