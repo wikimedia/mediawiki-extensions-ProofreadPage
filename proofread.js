@@ -111,7 +111,7 @@ function pr_make_edit_area(container,text){
 	//find the PageQuality template
 	//we do this separately from header detection,
 	//because the template might not be in the header 
-	var reg = /\{\{PageQuality\|(0|1|2|3|4|25%|50%|75%|100%)(\|.*?|)\}\}/g;
+	var reg = /\{\{PageQuality\|(0|1|2|3|4|25%|50%|75%|100%)(\|(.*?|))\}\}/g;
 	var m4 = reg.exec(pageHeader);
 	self.show4 = false;
 	if(m4) {
@@ -128,12 +128,13 @@ function pr_make_edit_area(container,text){
 			case "25%": self.proofreadpage_quality = 2; break;
 			default: self.proofreadpage_quality = 1;
 		}
-
-		if((m4[3]!= "|"+wgUserName) && (m4[1]=="3")) self.show4 = true;
-		if(m4[1] =="4") self.show4 = true;
+		self.proofreadpage_username = m4[3];
 		pageHeader = pageHeader.replace(reg,'');
 	}
-	else  self.proofreadpage_quality = 1;
+	else {
+		 self.proofreadpage_quality = 1;
+		 self.proofreadpage_username = "";
+	}
 
 
 	//escape & character
@@ -852,7 +853,11 @@ function pr_add_quality_buttons(){
 +'<span class="quality2"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,2)"> </span>'
 +'<span class="quality1"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,1)"> </span>'
 +'<span class="quality3"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,3)"> </span>';
-	if(self.show4) f.innerHTML = f.innerHTML 
+
+	var show4 = false;
+	if(self.proofreadpage_quality==4) show4 = true;
+	if((self.proofreadpage_quality==3) && (self.proofreadpage_username != "|"+wgUserName)) show4 = true;
+	if(show4) f.innerHTML = f.innerHTML 
 + '<span class="quality4"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,4)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
