@@ -131,7 +131,7 @@ $messages['ar'] = array(
 	'proofreadpage_body' => 'جسم الصفحة (للتضمين):',
 	'proofreadpage_footer' => 'ذيل (غير مضمن):',
 	'proofreadpage_toggleheaders' => 'تغيير رؤية أقسام noinclude',
-	'proofreadpage_quality0_category' => 'فارغ',
+	'proofreadpage_quality0_category' => 'بدون نص',
 	'proofreadpage_quality1_category' => 'ليس مثبت قراءة',
 	'proofreadpage_quality2_category' => 'به مشاكل',
 	'proofreadpage_quality3_category' => 'مثبت قراءة',
@@ -294,7 +294,7 @@ $messages['be-tarask'] = array(
 	'proofreadpage_body' => 'Зьмест старонкі (уключаецца):',
 	'proofreadpage_footer' => 'Ніжні калянтытул (не ўключаецца):',
 	'proofreadpage_toggleheaders' => 'зьмяніць бачнасьць ня ўключаных сэкцыяў',
-	'proofreadpage_quality0_category' => 'Пуста',
+	'proofreadpage_quality0_category' => 'Бяз тэксту',
 	'proofreadpage_quality1_category' => 'Не правераная',
 	'proofreadpage_quality2_category' => 'Праблематычная',
 	'proofreadpage_quality3_category' => 'Вычытаная',
@@ -575,7 +575,7 @@ $messages['dsb'] = array(
 	'proofreadpage_body' => 'Tekstowe śěło',
 	'proofreadpage_footer' => 'Nogowa smužka (noinclude):',
 	'proofreadpage_toggleheaders' => 'wótrězki noinclude pokazaś/schowaś',
-	'proofreadpage_quality0_category' => 'Prozny',
+	'proofreadpage_quality0_category' => 'Bźez teksta',
 	'proofreadpage_quality1_category' => 'Njekontrolěrowany',
 	'proofreadpage_quality2_category' => 'Problematiski',
 	'proofreadpage_quality3_category' => 'Pśekontrolěrowany',
@@ -601,6 +601,7 @@ $messages['ee'] = array(
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author Crazymadlover
  * @author Dead3y3
  * @author Konsnos
  * @author ZaDiak
@@ -617,7 +618,7 @@ $messages['el'] = array(
 	'proofreadpage_body' => 'Σώμα σελίδας (προς εσωκλεισμό):',
 	'proofreadpage_footer' => 'Κατακλείδα (noinclude):',
 	'proofreadpage_toggleheaders' => 'ενάλλαξε την ορατότητα των τμημάτων noinclude',
-	'proofreadpage_quality0_category' => 'Κενό',
+	'proofreadpage_quality0_category' => 'Χωρίς κείμενο',
 	'proofreadpage_quality1_category' => 'Δεν έχει γίνει proofreading',
 	'proofreadpage_quality2_category' => 'Προβληματική',
 	'proofreadpage_quality3_category' => 'Έχει γίνει proofreading',
@@ -695,7 +696,7 @@ $messages['es'] = array(
 	'proofreadpage_body' => 'Cuerpo de la página (para ser transcluido):',
 	'proofreadpage_footer' => 'Pie de página (noinclude):',
 	'proofreadpage_toggleheaders' => 'cambiar la visibilidad de las secciones noinclude',
-	'proofreadpage_quality0_category' => 'Vacío',
+	'proofreadpage_quality0_category' => 'Sin texto',
 	'proofreadpage_quality1_category' => 'No corregido',
 	'proofreadpage_quality2_category' => 'Problemática',
 	'proofreadpage_quality3_category' => 'Corregido',
@@ -928,7 +929,7 @@ $messages['gl'] = array(
 	'proofreadpage_body' => 'Corpo da páxina (para ser transcluído)',
 	'proofreadpage_footer' => "Rodapé (''noinclude''):",
 	'proofreadpage_toggleheaders' => "alternar a visibilidade das seccións ''noinclude''",
-	'proofreadpage_quality0_category' => 'Baleiro',
+	'proofreadpage_quality0_category' => 'Sen texto',
 	'proofreadpage_quality1_category' => 'Non corrixir',
 	'proofreadpage_quality2_category' => 'Problemático',
 	'proofreadpage_quality3_category' => 'Corrixir',
@@ -980,7 +981,7 @@ $messages['gsw'] = array(
 	'proofreadpage_body' => 'Täxtlyyb (Transklusion):',
 	'proofreadpage_footer' => 'Fueßzyylete (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude-Abschnit yy-/uusblände',
-	'proofreadpage_quality0_category' => 'Läär',
+	'proofreadpage_quality0_category' => 'Ohni Tekscht',
 	'proofreadpage_quality1_category' => 'Nit korrigiert',
 	'proofreadpage_quality2_category' => 'Korrekturprobläm',
 	'proofreadpage_quality3_category' => 'Korrigiert',
@@ -1137,7 +1138,7 @@ $messages['hsb'] = array(
 	'proofreadpage_body' => 'Tekstowy ćěleso (transkluzija):',
 	'proofreadpage_footer' => 'Nohowa linka (noinclude):',
 	'proofreadpage_toggleheaders' => 'wotrězki noinclude pokazać/schować',
-	'proofreadpage_quality0_category' => 'Prózdny',
+	'proofreadpage_quality0_category' => 'Bjez teksta',
 	'proofreadpage_quality1_category' => 'Njeskorigowany',
 	'proofreadpage_quality2_category' => 'Njedospołny',
 	'proofreadpage_quality3_category' => 'Skorigowany',
@@ -1366,7 +1367,7 @@ $messages['ja'] = array(
 	'proofreadpage_body' => 'ページ本体（埋め込み参照の対象）:',
 	'proofreadpage_footer' => 'フッタ（埋め込み対象外）:',
 	'proofreadpage_toggleheaders' => '埋め込み対象外項目の表示切替',
-	'proofreadpage_quality0_category' => '空',
+	'proofreadpage_quality0_category' => '文章なし',
 	'proofreadpage_quality1_category' => '未校正',
 	'proofreadpage_quality2_category' => '問題あり',
 	'proofreadpage_quality3_category' => '校正済',
@@ -1614,7 +1615,7 @@ $messages['lb'] = array(
 	'proofreadpage_body' => 'Inhalt vun der Säit (Transklusioun):',
 	'proofreadpage_footer' => 'Foussnote (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude-Abschnitter an- resp. ausblenden',
-	'proofreadpage_quality0_category' => 'Eidel',
+	'proofreadpage_quality0_category' => 'Ouni Text',
 	'proofreadpage_quality1_category' => 'Net verbessert',
 	'proofreadpage_quality2_category' => 'Problematesch',
 	'proofreadpage_quality3_category' => 'Verbessert',
@@ -1915,7 +1916,7 @@ $messages['nl'] = array(
 	'proofreadpage_body' => 'Broodtekst (voor transclusie):',
 	'proofreadpage_footer' => 'Voettekst (geen inclusie):',
 	'proofreadpage_toggleheaders' => 'zichtbaarheid elementen zonder transclusie wijzigen',
-	'proofreadpage_quality0_category' => 'Leeg',
+	'proofreadpage_quality0_category' => 'Geen tekst',
 	'proofreadpage_quality1_category' => 'Onbewerkt',
 	'proofreadpage_quality2_category' => 'Onvolledig',
 	'proofreadpage_quality3_category' => 'Proefgelezen',
@@ -2078,7 +2079,7 @@ $messages['pl'] = array(
 	'proofreadpage_body' => 'Treść strony (załączany fragment):',
 	'proofreadpage_footer' => 'Stopka (noinclude):',
 	'proofreadpage_toggleheaders' => 'zmień widoczność sekcji noinclude',
-	'proofreadpage_quality0_category' => 'Brak',
+	'proofreadpage_quality0_category' => 'Bez treści',
 	'proofreadpage_quality1_category' => 'Nieskorygowana',
 	'proofreadpage_quality2_category' => 'Problemy',
 	'proofreadpage_quality3_category' => 'Skorygowana',
@@ -2141,6 +2142,7 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Malafaya
+ * @author Waldir
  */
 $messages['pt'] = array(
 	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
@@ -2154,7 +2156,7 @@ $messages['pt'] = array(
 	'proofreadpage_body' => 'Corpo de página (em modo de transclusão):',
 	'proofreadpage_footer' => 'Rodapé (em modo noinclude):',
 	'proofreadpage_toggleheaders' => 'tornar as seções noinclude visíveis',
-	'proofreadpage_quality0_category' => 'Vazia',
+	'proofreadpage_quality0_category' => 'Sem texto',
 	'proofreadpage_quality1_category' => 'Não revistas',
 	'proofreadpage_quality2_category' => 'Problemáticas',
 	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
@@ -2188,7 +2190,7 @@ $messages['pt-br'] = array(
 	'proofreadpage_body' => 'Corpo de página (em modo de transclusão):',
 	'proofreadpage_footer' => 'Rodapé (em modo noinclude):',
 	'proofreadpage_toggleheaders' => 'tornar as seções noinclude visíveis',
-	'proofreadpage_quality0_category' => 'Vazia',
+	'proofreadpage_quality0_category' => 'Sem texto',
 	'proofreadpage_quality1_category' => 'Não revistas',
 	'proofreadpage_quality2_category' => 'Problemáticas',
 	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
@@ -2270,6 +2272,7 @@ Note||10",
 );
 
 /** Russian (Русский)
+ * @author Ferrer
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -2284,7 +2287,7 @@ $messages['ru'] = array(
 	'proofreadpage_body' => 'Тело страницы (будет включаться):',
 	'proofreadpage_footer' => 'Нижний колонтитул (не включается):',
 	'proofreadpage_toggleheaders' => 'показывать невключаемые разделы',
-	'proofreadpage_quality0_category' => 'Пусто',
+	'proofreadpage_quality0_category' => 'Без текста',
 	'proofreadpage_quality1_category' => 'Не вычитана',
 	'proofreadpage_quality2_category' => 'Проблемная',
 	'proofreadpage_quality3_category' => 'Вычитана',
@@ -2490,7 +2493,7 @@ $messages['sv'] = array(
 	'proofreadpage_body' => 'Sidinnehåll (som ska inkluderas):',
 	'proofreadpage_footer' => 'Sidfot (inkluderas ej):',
 	'proofreadpage_toggleheaders' => 'visa/dölj sidhuvud',
-	'proofreadpage_quality0_category' => 'Tom',
+	'proofreadpage_quality0_category' => 'Utan text',
 	'proofreadpage_quality1_category' => 'Ej korrekturläst',
 	'proofreadpage_quality2_category' => 'Ofullständigt',
 	'proofreadpage_quality3_category' => 'Korrekturläst',
@@ -2675,7 +2678,7 @@ $messages['tr'] = array(
 	'proofreadpage_body' => 'Sayfa gövdesi (çapraz eklenecek):',
 	'proofreadpage_footer' => 'Alt bilgi (içerme):',
 	'proofreadpage_toggleheaders' => 'içerilmeyen bölümlerinin görünürlüğünü değiştir',
-	'proofreadpage_quality0_category' => 'Boş',
+	'proofreadpage_quality0_category' => 'Metinsiz',
 	'proofreadpage_quality1_category' => 'Düzeltilmemiş',
 	'proofreadpage_quality2_category' => 'Sorunlu',
 	'proofreadpage_quality3_category' => 'Düzelt',
@@ -2759,7 +2762,7 @@ $messages['vec'] = array(
 	'proofreadpage_body' => 'Corpo de la pagina (da inclùdar):',
 	'proofreadpage_footer' => 'Pié de pagina (mìa incluso)',
 	'proofreadpage_toggleheaders' => 'ativa/disativa la visibilità de le sezioni mìa incluse',
-	'proofreadpage_quality0_category' => 'Vòdo',
+	'proofreadpage_quality0_category' => 'Sensa testo',
 	'proofreadpage_quality1_category' => 'Da corègiar',
 	'proofreadpage_quality2_category' => 'Da rivédar',
 	'proofreadpage_quality3_category' => 'Corèta',
