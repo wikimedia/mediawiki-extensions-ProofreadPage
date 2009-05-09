@@ -857,7 +857,7 @@ function pr_add_quality_buttons(){
 
 	var show4 = false;
 	if(self.proofreadpage_quality==4) show4 = true;
-	if((self.proofreadpage_quality==3) && (self.proofreadpage_username != "|"+wgUserName)) show4 = true;
+	if((self.proofreadpage_quality==3) && (self.proofreadpage_username != wgUserName)) show4 = true;
 	if(show4) f.innerHTML = f.innerHTML 
 + '<span class="quality4"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,4)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
