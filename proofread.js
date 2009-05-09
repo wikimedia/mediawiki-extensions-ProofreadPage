@@ -173,11 +173,11 @@ function pr_toggle_visibility() {
 	if( h.style.cssText == ''){
 		h.style.cssText = 'display:none';
 		f.style.cssText = 'display:none';
-		if(self.vertHeight)	box.style.cssText = "height:"+(vertHeight-7)+"px";
+		if(self.DisplayHeight)	box.style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 	} else {
 		h.style.cssText = '';
 		f.style.cssText = '';
-		if(self.vertHeight)  box.style.cssText = "height:"+(vertHeight-190)+"px";
+		if(self.DisplayHeight)  box.style.cssText = "height:"+(self.DisplayHeight-190)+"px";
 	}
 }
 
@@ -448,7 +448,7 @@ function pr_drag(evt) {
 
 function pr_zoom(delta){
 
-	image_container = document.getElementById("pr_container");
+	var image_container = document.getElementById("pr_container");
 	zp_img = document.getElementById("ProofReadImage");		
 	if(!zp_img) return;
 	
@@ -529,7 +529,6 @@ function  pr_fill_table(horizontal_layout){
 	//create image container
 	var image_container = document.createElement("div");
 	image_container.setAttribute("id", "pr_container");
-	image_container.style.cssText = "background:#0000ff; overflow:hidden;";
 
 	//setup the layout
 	if(!horizontal_layout) {
@@ -560,54 +559,49 @@ function  pr_fill_table(horizontal_layout){
 	
 	self.pr_horiz = horizontal_layout;
 
-	//compute the dimensions of the image container
-	if(!horizontal_layout){
-
-		var desired_width = 400;
-		if (parseInt(navigator.appVersion)>3) {
-			if (navigator.appName.indexOf("Microsoft")!=-1) 
-				desired_width = parseInt(document.body.offsetWidth/2-70);
-			else
-				desired_width = parseInt(window.innerWidth/2-70);
+	//get the size of the window
+	var width, height;
+	if (parseInt(navigator.appVersion)>3) {
+		if (navigator.appName.indexOf("Microsoft")!=-1) {
+			height = document.body.clientHeight;
+			width = document.body.offsetWidth;
 		}
-		//this sets DisplayWidth and DisplayHeight
-		var thumb_url = pr_image_url(desired_width); 
-
-		//self.DisplayHeight is known if the image is not external
-		if(self.DisplayHeight) 
-			self.vertHeight = self.DisplayHeight;
-		else 
-			self.vertHeight = 700;
+		else{
+			height = window.innerHeight;
+			width = window.innerWidth;
+		}
 	}
-	else{
-		if (navigator.appName.indexOf("Microsoft")!=-1)
-			self.vertHeight = Math.ceil(document.body.clientHeight*0.4);
-		else
-			self.vertHeight = Math.ceil(window.innerHeight*0.4);
+	else {
+		width = 800; height = 600;
 	}
-
 
 	//fill the image container	
 	if(!proofreadPageIsEdit) { 
+		//this sets DisplayWidth and DisplayHeight
+		var thumb_url = pr_image_url(parseInt(width/2-70)); 
 		var image = document.createElement("img");
 		image_container.appendChild(image);
 		image.setAttribute("id", "ProofReadImage");
 		image.setAttribute("src", thumb_url);
 		image.setAttribute("width", self.DisplayWidth);
 		image.style.cssText = "padding:0;margin:0;border:0;";
+		image_container.style.cssText = "background:#0000ff; overflow:hidden;width:"+self.DisplayWidth+"px;";
 	}
 	else{
 		if(!horizontal_layout){
+			self.DisplayHeight = Math.ceil(height*0.9);
+			self.DisplayWidth = parseInt(width/2-70);
 			img_w = self.DisplayWidth;
-			self.container_css = "background:#000000; overflow:hidden; width:"+self.DisplayWidth+"px; height:"+self.vertHeight+"px;";
+			self.container_css = "background:#000000; overflow:hidden; width:"+self.DisplayWidth+"px; height:"+self.DisplayHeight+"px;";
 		}
 		else{
+			self.DisplayHeight = Math.ceil(height*0.4);
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
-			self.container_css = "background:#000000; overflow:auto; width:100%; height:"+self.vertHeight+"px;";
+			self.container_css = "background:#000000; overflow:auto; width:100%; height:"+self.DisplayHeight+"px;";
 		}
 		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
 		image_container.style.cssText = self.container_css;
-		document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
+		document.getElementById("wpTextbox1").style.cssText = "height:"+self.DisplayHeight+"px";
 		pr_zoom(0);
 	}
 
@@ -818,9 +812,9 @@ addOnloadHook(pr_init_tabs);
 function pr_initzoom(){
 	if(document.getElementById("wpTextbox1")){
 		if(self.pr_horiz)
-			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
+			document.getElementById("wpTextbox1").style.cssText = "height:"+self.DisplayHeight+"px";
 		else
-			document.getElementById("wpTextbox1").style.cssText = "height:"+self.vertHeight+"px";
+			document.getElementById("wpTextbox1").style.cssText = "height:"+self.DisplayHeight+"px";
 		pr_zoom(0);
 	}
 	else proofreadPageZoom();
