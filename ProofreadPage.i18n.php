@@ -419,7 +419,7 @@ $messages['bs'] = array(
 	'proofreadpage_body' => 'Tijelo stranice (koje će biti uključeno):',
 	'proofreadpage_footer' => 'Podnožje (neuključuje):',
 	'proofreadpage_toggleheaders' => 'pokaži/sakrij vidljivost sekcija koje se ne uključuju',
-	'proofreadpage_quality0_category' => 'Prazno',
+	'proofreadpage_quality0_category' => 'Bez teksta',
 	'proofreadpage_quality1_category' => 'Nije provjerena',
 	'proofreadpage_quality2_category' => 'Problematično',
 	'proofreadpage_quality3_category' => 'Provjereno',
@@ -1022,6 +1022,7 @@ $messages['haw'] = array(
 
 /** Hebrew (עברית)
  * @author Rotem Liss
+ * @author YaronSh
  */
 $messages['he'] = array(
 	'proofreadpage_desc' => 'השוואה קלה של טקסט לסריקה המקורית שלו',
@@ -1035,7 +1036,7 @@ $messages['he'] = array(
 	'proofreadpage_body' => 'גוף הדף (להכללה):',
 	'proofreadpage_footer' => 'כותרת תחתונה (לא להכללה):',
 	'proofreadpage_toggleheaders' => 'הצגת או הסתרת החלקים שאינם להכללה',
-	'proofreadpage_quality0_category' => 'ריק',
+	'proofreadpage_quality0_category' => 'ללא טקסט',
 	'proofreadpage_quality1_category' => 'לא בוצעה הגהה',
 	'proofreadpage_quality2_category' => 'בעייתי',
 	'proofreadpage_quality3_category' => 'בוצעה הגהה',
@@ -1241,7 +1242,7 @@ $messages['ia'] = array(
 	'proofreadpage_body' => 'Corpore del pagina (a esser transcludite):',
 	'proofreadpage_footer' => 'Pede (noinclude):',
 	'proofreadpage_toggleheaders' => 'activar/disactivar le visibilitate del sectiones noinclude',
-	'proofreadpage_quality0_category' => 'Vacue',
+	'proofreadpage_quality0_category' => 'Sin texto',
 	'proofreadpage_quality1_category' => 'Non corrigite',
 	'proofreadpage_quality2_category' => 'Problematic',
 	'proofreadpage_quality3_category' => 'Corrigite',
