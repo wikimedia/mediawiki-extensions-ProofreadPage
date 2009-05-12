@@ -100,7 +100,6 @@ function pr_load_index($title){
 		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
 
-		//todo : we should read pagenum from the index if it is provided
 		$title->pr_page_num = "$pagenr";
 
 		if( !$title->pr_index_title ) { 
@@ -146,7 +145,6 @@ function pr_navigation( $image ) {
 		$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
 		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
-		$page_num = $pagenr;
 
 		if( !$index_title ) { 
 			//there is no index, or the page is not listed in the index : use canonical index
@@ -154,7 +152,6 @@ function pr_navigation( $image ) {
 		}
 	} 
 	else {
-		$page_num = '';
 		$prev_url = '';
 		$next_url = '';
 	}
@@ -178,7 +175,7 @@ function pr_navigation( $image ) {
 
 /*
   read metadata from the index page
-  read also pagenum if page_title is provided (not for djvu with pagelist)
+  if page_title is provided, return page number, previous and next pages
 */
 
 function pr_parse_index($index_title, $page_title){
@@ -197,26 +194,41 @@ function pr_parse_index($index_title, $page_title){
 	$attributes = array();
 
 	if($page_title){
+		//find page number, previous and next pages
 
 		//default pagenum was set during load()
 		if($page_title->pr_page_num) $attributes["pagenum"] = $page_title->pr_page_num;
 
-		$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
-		preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
-
-		for( $i=0; $i<count( $links[1] ); $i++) { 
-			$a_title = Title::newFromText( $links[1][$i] );
-			if(!$a_title) continue; 
-			if( $a_title->getPrefixedText() == $page_title->getPrefixedText() ) {
-				$attributes["pagenum"] = $links[3][$i];
-				break;
+		//check if it is using pagelist
+		preg_match( "/<pagelist(.*?)\/>/i", $text, $m );
+		if($m){
+			preg_match_all( "/([0-9a-z]*?)\=(.*?)\s/", $m[1]." ", $m2, PREG_PATTERN_ORDER );
+			$params = array();
+			for( $i=0; $i<count( $m2[1] ); $i++) { 
+				$params[ $m2[1][$i] ] = $m2[2][$i];
 			}
+			list($view, $links, $mode) = pr_pageNumber($page_title->pr_page_num,$params);
+			$attributes["pagenum"] = $view;
 		}
-		if( ($i>0) && ($i<count($links[1])) ){
-			$prev_title = Title::newFromText( $links[1][$i-1] );
-		}
-		if( ($i>=0) && ($i+1<count($links[1])) ){
-			$next_title = Title::newFromText( $links[1][$i+1] );
+		else{
+
+			$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
+			preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
+
+			for( $i=0; $i<count( $links[1] ); $i++) { 
+				$a_title = Title::newFromText( $links[1][$i] );
+				if(!$a_title) continue; 
+				if( $a_title->getPrefixedText() == $page_title->getPrefixedText() ) {
+					$attributes["pagenum"] = $links[3][$i];
+					break;
+				}
+			}
+			if( ($i>0) && ($i<count($links[1])) ){
+				$prev_title = Title::newFromText( $links[1][$i-1] );
+			}
+			if( ($i>=0) && ($i+1<count($links[1])) ){
+				$next_title = Title::newFromText( $links[1][$i+1] );
+			}
 		}
 	}
 
@@ -537,10 +549,63 @@ function pr_renderIndexTag( $input, $args ) {
 }
 
 
+
+function pr_pageNumber($i,$args){
+	$mode = 'normal'; //default
+	$offset = 0;
+	$links = true;
+	foreach ( $args as $num => $param ) {
+
+		if( ( preg_match( "/^([0-9]*)to([0-9]*)$/", $num, $m ) && ( $i>=$m[1] && $i<=$m[2] ) ) 
+		      || ( is_numeric($num) && ($i == $num) ) ) {
+			$params = explode(";",$param);
+			foreach ( $params as $iparam ) {
+				switch($iparam){
+					case 'roman': 
+						$mode = 'roman';
+						break;
+					case 'highroman': 
+						$mode = 'highroman';
+						break;
+					case 'empty': 
+						$links = false;
+						break;
+					default:
+						if(!is_numeric($iparam)) 
+							$mode = $iparam;
+				}
+			}
+		}
+
+		if( is_numeric($num) && ($i >= $num) )  {
+			$params = explode(";",$param);
+			foreach ( $params as $iparam ) 
+				if(is_numeric($iparam)) 
+					$offset = $num - $iparam;
+		}
+
+	}
+	$view = ($i - $offset);
+	switch($mode) {
+	case 'highroman': 
+		$view = toRoman($view); break;
+	case 'roman': 
+		$view = strtolower(toRoman($view)); break;
+	case 'normal': 
+		$view = ''.$view; break;
+	case 'empty': 
+		$view = ''.$view; break;
+	default: 
+		$view = $mode;
+	}
+	return array($view,$links,$mode);
+}
+			
+
+
 function pr_renderPageList( $input, $args ) {
 
 	global $wgUser, $wgTitle;
-
 	wfLoadExtensionMessages( 'ProofreadPage' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
@@ -593,49 +658,12 @@ function pr_renderPageList( $input, $args ) {
 
 		$sk = $wgUser->getSkin();
 
-		$offset = 0;
-		$mode = 'normal';
 		for( $i=1; $i<$count+1 ; $i++) { 
 
 			$pdbk = "$page_namespace:$name" . '/'. $i ;
-			//default
-			$mode = 'normal';
-			$links = true;
+			list( $view, $links, $mode ) = pr_pageNumber($i,$args);
 
-			foreach ( $args as $num => $param ) {
-
-			  if( ( preg_match( "/^([0-9]*)to([0-9]*)$/", $num, $m ) && ( $i>=$m[1] && $i<=$m[2] ) ) 
-			      || ( is_numeric($num) && ($i == $num) ) ) {
-					$params = explode(";",$param);
-					foreach ( $params as $iparam ) {
-						switch($iparam){
-						case 'roman': 
-							$mode = 'roman';
-							break;
-						case 'highroman': 
-							$mode = 'highroman';
-							break;
-						case 'empty': 
-							$links = false;
-							break;
-						default:
-							if(is_numeric($iparam)) 
-								$offset = $i - $iparam;
-							else
-								$mode = $iparam;
-
-						}
-					}
-				}
-			}
-
-			$view = ($i - $offset);
-			if($mode == 'highroman') $view = '&nbsp;'.toRoman($view);
-			elseif($mode == 'roman') $view = '&nbsp;'.strtolower(toRoman($view));
-			elseif($mode == 'normal') $view = ''.$view;
-			elseif($mode == 'empty') $view = ''.$view;
-			else $view = $mode;
-			
+			if($mode == 'highroman' || $mode == 'roman') $view = '&nbsp;'.$view;
 
 			$n = strlen($count) - strlen($view);
 			if( $n && ($mode == 'normal' || $mode == 'empty') ){
