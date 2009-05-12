@@ -845,15 +845,17 @@ function pr_add_quality_buttons(){
 ' <span class="quality0"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,0)"> </span>'
 +'<span class="quality2"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,2)"> </span>'
 +'<span class="quality1"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,1)"> </span>'
-+'<span class="quality3"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,3)"> </span>';
++'<span class="quality3"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,3)"> </span>'
++'<span class="quality4"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,4)"> </span>';
+	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
+	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
 	var show4 = false;
 	if(self.proofreadpage_quality==4) show4 = true;
 	if((self.proofreadpage_quality==3) && (self.proofreadpage_username != wgUserName)) show4 = true;
-	if(show4) f.innerHTML = f.innerHTML 
-+ '<span class="quality4"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,4)"> </span>';
-	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
-	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
+	if(!show4) 
+		document.editform.quality[4].parentNode.style.cssText='display:none';
+
 	if(self.proofreadpage_quality) { 
 		switch(self.proofreadpage_quality){
 			case 4: document.editform.quality[4].checked=true; break;
