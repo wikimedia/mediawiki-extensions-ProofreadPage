@@ -147,7 +147,7 @@ function pr_make_edit_area(container,text){
 		+'<textarea name="headerTextbox" rows="2" cols="80">'+pageHeader+'</textarea>'
 		+'<br/>'+proofreadPageMessagePageBody+'<br/></div>'
 		+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
-		+'<div id="prp_footer" style="display:none"><br/>'+proofreadPageMessageFooter+'<br/>'
+		+'<div id="prp_footer" style="display:none">'+proofreadPageMessageFooter+'<br/>'
 		+'<textarea name="footerTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
 
 
@@ -174,11 +174,12 @@ function pr_toggle_visibility() {
 	if( h.style.cssText == ''){
 		h.style.cssText = 'display:none';
 		f.style.cssText = 'display:none';
-		if(self.DisplayHeight)	box.style.cssText = "height:"+(self.DisplayHeight-7)+"px";
+		box.style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 	} else {
 		h.style.cssText = '';
 		f.style.cssText = '';
-		if(self.DisplayHeight)  box.style.cssText = "height:"+(self.DisplayHeight-190)+"px";
+		if(!self.pr_horiz)  box.style.cssText = "height:"+(self.DisplayHeight-169)+"px";
+		else box.style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 	}
 }
 
@@ -331,18 +332,18 @@ function zoom_on(evt) {
 	zoomamount_h = zp_clip.height/objh;
 	zoomamount_w = zp_clip.width/objw;
 
-	zp_container.style.margin = '0px 0px 0px 0px';
 	zp_container.style.width = objw+'px';
 	zp_container.style.height = objh+'px';
+	zp_clip.style.margin =  ((lastyy > objh )?(objh*(1-zoomamount_h)):(lastyy*(1-zoomamount_h))) + 'px 0px 0px '
+		+ ((lastxx > objw )?(objw*(1-zoomamount_w)):(lastxx*(1-zoomamount_w))) + 'px';
 
-	zoom_move('');
 	return false;
 }
 
 
 //zoom using two images (magnification glass)
-function proofreadPageZoom(){
-
+function pr_initzoom(){
+	if(proofreadPageIsEdit) return;
 	if(!self.proofreadPageViewURL) return;
 	if(self.DisplayWidth>800) return;
 
@@ -602,7 +603,7 @@ function  pr_fill_table(horizontal_layout){
 		}
 		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
 		image_container.style.cssText = self.container_css;
-		document.getElementById("wpTextbox1").style.cssText = "height:"+self.DisplayHeight+"px";
+		document.getElementById("wpTextbox1").style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 		pr_zoom(0);
 	}
 
@@ -655,7 +656,9 @@ function pr_setup() {
 		pr_make_edit_area(self.text_container,new_text.value);
 		var copywarn = document.getElementById("editpage-copywarn");
 		f.insertBefore(table,copywarn);
-		
+		if (self.proofreadpage_show_headers){
+			pr_toggle_visibility();
+		}
 	}
 	else {
 		self.text_container.appendChild(new_text);
@@ -810,17 +813,6 @@ addOnloadHook(pr_init);
 addOnloadHook(pr_init_tabs);
 
 
-function pr_initzoom(){
-	if(document.getElementById("wpTextbox1")){
-		if(self.pr_horiz)
-			document.getElementById("wpTextbox1").style.cssText = "height:"+self.DisplayHeight+"px";
-		else
-			document.getElementById("wpTextbox1").style.cssText = "height:"+self.DisplayHeight+"px";
-		pr_zoom(0);
-	}
-	else proofreadPageZoom();
-	
-}
 hookEvent("load", pr_initzoom );
 
 
