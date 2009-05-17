@@ -456,6 +456,7 @@ $messages['ca'] = array(
 	'proofreadpage_body' => 'Cos de la pàgina (per a ser transclós):',
 	'proofreadpage_footer' => 'Peu de pàgina (noinclude):',
 	'proofreadpage_toggleheaders' => "Visualitzar seccions ''noinclude''",
+	'proofreadpage_quality0_category' => 'Sense text',
 	'proofreadpage_quality1_category' => 'Sense revisar',
 	'proofreadpage_quality2_category' => 'Problemàtica',
 	'proofreadpage_quality3_category' => 'Revisada',
