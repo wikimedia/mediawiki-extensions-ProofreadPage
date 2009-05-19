@@ -794,7 +794,7 @@ $messages['fi'] = array(
 	'proofreadpage_body' => 'Sivun runko (sisällytetään):',
 	'proofreadpage_footer' => 'Alatunniste (ei sisällytetä):',
 	'proofreadpage_toggleheaders' => 'vaihtaa sisällyttämättömien osioiden näkyvyyttä',
-	'proofreadpage_quality0_category' => 'Tyhjä',
+	'proofreadpage_quality0_category' => 'Ilman tekstiä',
 	'proofreadpage_quality1_category' => 'Korjauslukematon',
 	'proofreadpage_quality2_category' => 'Ongelmallinen',
 	'proofreadpage_quality3_category' => 'Korjausluettu',
@@ -1976,6 +1976,7 @@ Merknader||10',
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
+ * @author Nghtwlkr
  */
 $messages['no'] = array(
 	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
@@ -1989,6 +1990,7 @@ $messages['no'] = array(
 	'proofreadpage_body' => 'Hoveddel (skal inkluderes):',
 	'proofreadpage_footer' => 'Fotseksjon (inkluderes ikke):',
 	'proofreadpage_toggleheaders' => 'slå av/på synlighet for ikke-inkluderte seksjoner',
+	'proofreadpage_quality0_category' => 'Uten tekst',
 	'proofreadpage_quality1_category' => 'Rå',
 	'proofreadpage_quality2_category' => 'Ufullstendig',
 	'proofreadpage_quality3_category' => 'Korrekturlest',
