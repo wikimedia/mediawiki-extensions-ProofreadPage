@@ -88,7 +88,7 @@ function pr_load_index( $title ) {
 			$pagenr = intval( array_pop( $parts ) );
 		}
 		$count = $image->pageCount();
-		if ( $pagenr < 1 || $pagenr > $count || $count == 1 )
+		if ( $pagenr < 1 || $pagenr > $count || $count <= 1 )
 			return $err;
 		$name = $image->getTitle()->getText();
 		$index_name = "$index_namespace:$name";
@@ -128,7 +128,7 @@ function pr_navigation( $image ) {
 			$pagenr = intval( array_pop( $parts ) );
 		}
 		$count = $image->pageCount();
-		if ( $pagenr < 1 || $pagenr > $count || $count == 1 ) {
+		if ( $pagenr < 1 || $pagenr > $count || $count <= 1 ) {
 			return $err;
 		}
 		$name = $image->getTitle()->getText();
@@ -412,7 +412,7 @@ function pr_getLinkColours( $page_ids, &$colours ) {
 			} else {
 				$query .= ', ';
 			}
-			$query .= $id;
+			$query .= intval( $id );
 		}
 	}
 
@@ -451,7 +451,7 @@ function pr_imageMessage(  &$imgpage , &$wgOut ) {
 	$sk = $wgUser->getSkin();
 
 	$image = $imgpage->img;
-	if ( !$image->isMultipage() ) {
+	if ( !$image->isMultiPage() ) {
 		return true;
 	}
 
@@ -603,7 +603,7 @@ function pr_renderPageList( $input, $args ) {
 	$image = wfFindFile( $imageTitle );
 	$return = "";
 
-	if ( $image && $image->isMultipage() ) {
+	if ( $image && $image->isMultiPage() && $image->pageCount() ) {
 		$name = $imageTitle->getDBkey();
 		$count = $image->pageCount();
 		$dbr = wfGetDB( DB_SLAVE );
@@ -618,7 +618,7 @@ function pr_renderPageList( $input, $args ) {
 		for ( $i = 0; $i < $count ; $i++ ) {
 			if ( !isset( $query ) ) {
 				$query =  "SELECT page_id, page_title, page_namespace";
-				$query .= " FROM $pagetable WHERE (page_namespace=$page_ns_index AND page_title IN(";
+				$query .= " FROM $pagetable WHERE (page_namespace=" . intval( $page_ns_index ) . " AND page_title IN(";
 			} else {
 				$query .= ', ';
 			}
