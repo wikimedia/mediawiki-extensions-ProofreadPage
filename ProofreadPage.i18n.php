@@ -1529,6 +1529,7 @@ $messages['ko'] = array(
 	'proofreadpage_body' => '본문 (트랜스클루전):',
 	'proofreadpage_footer' => '꼬리말 (표시안함):',
 	'proofreadpage_toggleheaders' => '표시안함 부분의 표시 여부 선택',
+	'proofreadpage_quality0_category' => '텍스트 없음',
 	'proofreadpage_quality1_category' => '교정 안됨',
 	'proofreadpage_quality2_category' => '문제 있음',
 	'proofreadpage_quality3_category' => '교정',
