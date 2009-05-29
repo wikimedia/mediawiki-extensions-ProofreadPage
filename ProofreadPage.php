@@ -209,15 +209,14 @@ function pr_parse_index($index_title){
 
 	//check if it is using pagelist
 	preg_match( "/<pagelist(.*?)\/>/i", $text, $m );
-	if($m){
-		preg_match_all( "/([0-9a-z]*?)\=(.*?)\s/", $m[1]." ", $m2, PREG_PATTERN_ORDER );
+	if( $m ){
+		preg_match_all( "/([0-9a-z]*?)\=(.*?)\s/", $m[1] . " ", $m2, PREG_PATTERN_ORDER );
 		$params = array();
 		$links = null;
-		for( $i=0; $i<count( $m2[1] ); $i++) { 
+		for( $i = 0; $i < count( $m2[1] ); $i++) { 
 			$params[ $m2[1][$i] ] = $m2[2][$i];
 		}
-	}
-	else{
+	} else {
 		$params = null;
 		$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
 		preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
@@ -226,12 +225,15 @@ function pr_parse_index($index_title){
 	//read attributes
 	$attributes = array();
 	$var_names = explode(" ", wfMsgForContent('proofreadpage_js_attributes') );
-	for($i=0; $i< count($var_names);$i++){
-		$tag_pattern = "/\n\|".$var_names[$i]."=(.*?)\n/i";
+	for( $i = 0; $i < count($var_names); $i++ ) {
+		$tag_pattern = "/\n\|" . $var_names[$i] . "=(.*?)\n/i";
 		//$var = 'proofreadPage'.$var_names[$i];
-		$var = strtolower($var_names[$i]);
-		if( preg_match( $tag_pattern, $text, $matches ) ) $attributes[$var] = $matches[1]; 
-		else $attributes[$var] = '';
+		$var = strtolower( $var_names[$i] );
+		if( preg_match( $tag_pattern, $text, $matches ) ) {
+			$attributes[$var] = $matches[1]; 
+		} else {
+			$attributes[$var] = '';
+		}
 	}
 	return array( $links, $params, $attributes );
 
