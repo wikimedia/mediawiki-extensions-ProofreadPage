@@ -196,7 +196,7 @@ function pr_navigation( $image ) {
  */
 function pr_parse_index($index_title){
 
-	$err = array( array(), array() );
+	$err = array( false, false, array() );
 
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
