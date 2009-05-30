@@ -208,7 +208,7 @@ function pr_parse_index($index_title){
 	$text =	$rev->getText();
 
 	//check if it is using pagelist
-	preg_match( "/<pagelist(.*?)\/>/i", $text, $m );
+	preg_match( "/<pagelist(.*?)\/>/is", $text, $m );
 	if( $m ){
 		preg_match_all( "/([0-9a-z]*?)\=(.*?)\s/", $m[1] . " ", $m2, PREG_PATTERN_ORDER );
 		$params = array();
