@@ -14,30 +14,36 @@ function pr_init_tabs(){
 	if(self.proofreadPageViewURL) {
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-image">'
-			+ '<a href="'+proofreadPageViewURL+'">'
-			+ proofreadPageMessageImage+'</a></li>';
+			+ '<a href="' + escapeQuotesHTML(proofreadPageViewURL) + '">'
+			+ escapeQuotesHTML(proofreadPageMessageImage) + '</a></li>';
 	}
 
 	if(self.proofreadPageIndexURL){
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-index">'
-			+ '<a href="'+proofreadPageIndexURL+'" title="'+proofreadPageMessageIndex+'">'
-			+ '<img src="'+wgScriptPath+'/extensions/ProofreadPage/uparrow.png" alt="'+proofreadPageMessageIndex+'" width="15" height="15" /></a></li>';
+			+ '<a href="' + escapeQuotesHTML(proofreadPageIndexURL) 
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessageIndex) + '">'
+			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/uparrow.png" alt="'
+			+ escapeQuotesHTML(proofreadPageMessageIndex) + '" width="15" height="15" /></a></li>';
 	}
 
 	if(self.proofreadPageNextURL){
 		b[0].innerHTML = 
 			'<li id="ca-next">'
-			+ '<a href="'+self.proofreadPageNextURL+'" title="'+proofreadPageMessageNextPage+'">'
-			+ '<img src="'+wgScriptPath+'/extensions/ProofreadPage/rightarrow.png" alt="'+proofreadPageMessageNextPage+'" width="15" height="15" /></a></li>'
+			+ '<a href="' + escapeQuotesHTML(self.proofreadPageNextURL)
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessageNextPage) + '">'
+			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/rightarrow.png" alt="'
+			+ escapeQuotesHTML(proofreadPageMessageNextPage) + '" width="15" height="15" /></a></li>'
 			+ b[0].innerHTML ;
 	}
 
 	if(self.proofreadPagePrevURL){
 		b[0].innerHTML = 
 			'<li id="ca-prev">'
-			+ '<a href="'+self.proofreadPagePrevURL+'" title="'+proofreadPageMessagePrevPage+'">'
-			+ '<img src="'+wgScriptPath+'/extensions/ProofreadPage/leftarrow.png" alt="'+proofreadPageMessagePrevPage+'" width="15" height="15" /></a></li>'
+			+ '<a href="' + escapeQuotesHTML(self.proofreadPagePrevURL) 
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessagePrevPage) + '">'
+			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/leftarrow.png" alt="'
+			+ escapeQuotesHTML(proofreadPageMessagePrevPage) + '" width="15" height="15" /></a></li>'
 			+ b[0].innerHTML ;
        }
 }
@@ -143,12 +149,12 @@ function pr_make_edit_area(container,text){
 	pageFooter = pageFooter.split("&").join("&amp;")
 
 	container.innerHTML = ''
-		+'<div id="prp_header" style="display:none">'+proofreadPageMessageHeader+'<br/>'
-		+'<textarea name="headerTextbox" rows="2" cols="80">'+pageHeader+'</textarea>'
-		+'<br/>'+proofreadPageMessagePageBody+'<br/></div>'
-		+'<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
-		+'<div id="prp_footer" style="display:none">'+proofreadPageMessageFooter+'<br/>'
-		+'<textarea name="footerTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
+		+ '<div id="prp_header" style="display:none">' + escapeQuotesHTML(proofreadPageMessageHeader) + '<br/>'
+		+ '<textarea name="headerTextbox" rows="2" cols="80">' + pageHeader + '</textarea>'
+		+ '<br/>' + escapeQuotesHTML(proofreadPageMessagePageBody) + '<br/></div>'
+		+ '<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
+		+ '<div id="prp_footer" style="display:none">' + escapeQuotesHTML(proofreadPageMessageFooter) + '<br/>'
+		+ '<textarea name="footerTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
 
 
 	var saveButton = document.getElementById("wpSave"); 
@@ -601,7 +607,11 @@ function  pr_fill_table(horizontal_layout){
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
 			self.container_css = "background:#000000; overflow:auto; width:100%; height:"+self.DisplayHeight+"px;";
 		}
-		image_container.innerHTML = "<img id=\"ProofReadImage\" src=\""+proofreadPageViewURL+"\" width=\""+img_w+"\" />";
+		image_container.innerHTML = 
+			"<img id=\"ProofReadImage\" src=\""	
+			+ escapeQuotesHTML(proofreadPageViewURL) 
+			+ "\" width=\""+img_w+"\" />";
+		
 		image_container.style.cssText = self.container_css;
 		document.getElementById("wpTextbox1").style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 		pr_zoom(0);
@@ -847,7 +857,7 @@ function pr_add_quality_buttons(){
 +'<span class="quality1"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,1)"> </span>'
 +'<span class="quality3"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,3)"> </span>'
 +'<span class="quality4"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,4)"> </span>';
-	f.innerHTML = f.innerHTML + '&nbsp;'+proofreadPageMessageStatus;
+	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
 	var show4 = false;
