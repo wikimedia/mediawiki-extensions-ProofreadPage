@@ -531,6 +531,7 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Metalhead64
  * @author Raimond Spekking
  * @author ThomasV
  */
@@ -540,6 +541,10 @@ $messages['de'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Scan',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Fehler: Index erwartet',
+	'proofreadpage_nosuch_index' => 'Fehler: Kein entsprechender Index',
+	'proofreadpage_number_expected' => 'Fehler: Numerischer Wert erwartet',
+	'proofreadpage_interval_too_large' => 'Fehler: Intervall zu groß',
 	'proofreadpage_nextpage' => 'Nächste Seite',
 	'proofreadpage_prevpage' => 'Vorherige Seite',
 	'proofreadpage_header' => 'Kopfzeile (noinclude):',
@@ -992,6 +997,10 @@ $messages['gsw'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Scan',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Fähler: Index erwartet',
+	'proofreadpage_nosuch_index' => 'Fähler: Kei sonige Index',
+	'proofreadpage_number_expected' => 'Fähler: Numerische Wärt erwartet',
+	'proofreadpage_interval_too_large' => 'Fähler: Intervall z groß',
 	'proofreadpage_nextpage' => 'Negschti Syte',
 	'proofreadpage_prevpage' => 'Vorderi Syte',
 	'proofreadpage_header' => 'Chopfzyylete (noinclude):',
@@ -1350,6 +1359,7 @@ $messages['is'] = array(
 
 /** Italian (Italiano)
  * @author BrokenArrow
+ * @author Stefano-c
  */
 $messages['it'] = array(
 	'proofreadpage_desc' => 'Consente un facile confronto tra un testo e la sua scansione originale',
@@ -1357,12 +1367,17 @@ $messages['it'] = array(
 	'proofreadpage_index_namespace' => 'Indice',
 	'proofreadpage_image' => 'immagine',
 	'proofreadpage_index' => 'Indice',
+	'proofreadpage_index_expected' => 'Errore: previsto indice',
+	'proofreadpage_nosuch_index' => 'Errore: indice non presente',
+	'proofreadpage_number_expected' => 'Errore: previsto valore numerico',
+	'proofreadpage_interval_too_large' => 'Errore: intervallo troppo ampio',
 	'proofreadpage_nextpage' => 'Pagina successiva',
 	'proofreadpage_prevpage' => 'Pagina precedente',
 	'proofreadpage_header' => 'Intestazione (non inclusa):',
 	'proofreadpage_body' => 'Corpo della pagina (da includere):',
 	'proofreadpage_footer' => 'Piè di pagina (non incluso)',
 	'proofreadpage_toggleheaders' => 'attiva/disattiva la visibilità delle sezioni non incluse',
+	'proofreadpage_quality0_category' => 'Senza testo',
 	'proofreadpage_quality1_category' => 'Da correggere',
 	'proofreadpage_quality2_category' => 'Da rivedere',
 	'proofreadpage_quality3_category' => 'Corretta',
@@ -1391,6 +1406,10 @@ $messages['ja'] = array(
 	'proofreadpage_index_namespace' => '文献概要',
 	'proofreadpage_image' => 'スキャン画像',
 	'proofreadpage_index' => '文献概要',
+	'proofreadpage_index_expected' => 'エラー: 文献概要があるべきです',
+	'proofreadpage_nosuch_index' => 'エラー: そのような文献概要はありません',
+	'proofreadpage_number_expected' => 'エラー: 数値がくるべきです',
+	'proofreadpage_interval_too_large' => 'エラー: 間隔が大きすぎます',
 	'proofreadpage_nextpage' => '次のページ',
 	'proofreadpage_prevpage' => '前のページ',
 	'proofreadpage_header' => 'ヘッダ（埋め込み対象外）:',
@@ -1592,6 +1611,10 @@ $messages['ksh'] = array(
 	'proofreadpage_index_namespace' => 'Enhallt',
 	'proofreadpage_image' => 'Beld',
 	'proofreadpage_index' => 'Verzeischneß',
+	'proofreadpage_index_expected' => 'Fähler: Ene Indäx weet jebruch',
+	'proofreadpage_nosuch_index' => 'Fähler: Esu ene Indäx jidd_et nit',
+	'proofreadpage_number_expected' => 'Fähler: En Zahl weet jebruch',
+	'proofreadpage_interval_too_large' => 'Fähler: Dä Affschtand es zoh jruuß',
 	'proofreadpage_nextpage' => 'Näx Sigg',
 	'proofreadpage_prevpage' => 'Vörije Sigg',
 	'proofreadpage_header' => 'Sigge-Kopp (<i lang="en">noinclude</i>):',
@@ -1942,6 +1965,10 @@ $messages['nl'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'afbeelding',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Fout: er werd een index verwacht',
+	'proofreadpage_nosuch_index' => 'Fout: de index bestaat niet',
+	'proofreadpage_number_expected' => 'Fout: er werd een numerieke waarde verwacht',
+	'proofreadpage_interval_too_large' => 'Fout: het interval is te groot',
 	'proofreadpage_nextpage' => 'Volgende pagina',
 	'proofreadpage_prevpage' => 'Vorige pagina',
 	'proofreadpage_header' => 'Koptekst (geen inclusie):',
@@ -2107,6 +2134,10 @@ $messages['pl'] = array(
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Grafika',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Błąd – oczekiwano indeksu',
+	'proofreadpage_nosuch_index' => 'Błąd – nie ma takiego indeksu',
+	'proofreadpage_number_expected' => 'Błąd – oczekiwano liczby',
+	'proofreadpage_interval_too_large' => 'Błąd – zbyt duży odstęp',
 	'proofreadpage_nextpage' => 'Następna strona',
 	'proofreadpage_prevpage' => 'Poprzednia strona',
 	'proofreadpage_header' => 'Nagłówek (noinclude):',
@@ -2315,6 +2346,10 @@ $messages['ru'] = array(
 	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'изображение',
 	'proofreadpage_index' => 'индекс',
+	'proofreadpage_index_expected' => 'Ошибка. Индекс не обнаружен.',
+	'proofreadpage_nosuch_index' => 'Ошибка. Нет такого индекса.',
+	'proofreadpage_number_expected' => 'Ошибка. Ожидается числовое значение.',
+	'proofreadpage_interval_too_large' => 'Ошибка. Слишком большой промежуток.',
 	'proofreadpage_nextpage' => 'следующая страница',
 	'proofreadpage_prevpage' => 'предыдущая страница',
 	'proofreadpage_header' => 'Заголовок (не включается):',
