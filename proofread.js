@@ -476,6 +476,7 @@ function pr_zoom(delta){
 		var old_width = zp_img.width;
 		var new_width = Math.round(zp_img.width*Math.pow(1.1,delta));
 		var delta_w = new_width - old_width;
+		if(delta_w==0) return;
 		var s = (delta_w>0)?1:-1;
 
 		for(var dw=s; dw != delta_w; dw=dw+s){
