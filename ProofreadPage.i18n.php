@@ -675,6 +675,10 @@ $messages['eo'] = array(
 	'proofreadpage_index_namespace' => 'Indekso',
 	'proofreadpage_image' => 'bildo',
 	'proofreadpage_index' => 'Indekso',
+	'proofreadpage_index_expected' => 'Eraro: indekso atentita',
+	'proofreadpage_nosuch_index' => 'Eraro: nenia indekso',
+	'proofreadpage_number_expected' => 'Eraro: numera valuto atentita',
+	'proofreadpage_interval_too_large' => 'Eraro: intervalo tro granda',
 	'proofreadpage_nextpage' => 'Sekva paĝo',
 	'proofreadpage_prevpage' => 'Antaŭa paĝo',
 	'proofreadpage_header' => 'Supra titolo (ne inkluzivu):',
@@ -2425,6 +2429,14 @@ $messages['sah'] = array(
 Хос быһаарыылара||10',
 );
 
+/** Sardinian (Sardu)
+ * @author Marzedu
+ */
+$messages['sc'] = array(
+	'proofreadpage_namespace' => 'Pàgina',
+	'proofreadpage_index_listofpages' => 'Lista de is pàginas',
+);
+
 /** Slovak (Slovenčina)
  * @author Helix84
  */
@@ -2912,6 +2924,10 @@ $messages['vi'] = array(
 	'proofreadpage_index_namespace' => 'Chỉ mục',
 	'proofreadpage_image' => 'hình',
 	'proofreadpage_index' => 'Chỉ mục',
+	'proofreadpage_index_expected' => 'Lỗi: cần chỉ mục',
+	'proofreadpage_nosuch_index' => 'Lỗi: không có chỉ mục như vậy',
+	'proofreadpage_number_expected' => 'Lỗi: cần giá trị số',
+	'proofreadpage_interval_too_large' => 'Lỗi: khoảng thời gian quá lớn',
 	'proofreadpage_nextpage' => 'Trang trước',
 	'proofreadpage_prevpage' => 'Trang sau',
 	'proofreadpage_header' => 'Phần đầu (noinclude):',
