@@ -396,7 +396,7 @@ function pr_getLinkColours( $page_ids, &$colours ) {
 	}
 
 	// counters
-	$n = $n1 = $n2 = $n3 = $n4 = 0;
+	$n = $n0 = $n1 = $n2 = $n3 = $n4 = 0;
 
 	$dbr = wfGetDB( DB_SLAVE );
 	$catlinks = $dbr->tableName( 'categorylinks' );
@@ -423,6 +423,10 @@ function pr_getLinkColours( $page_ids, &$colours ) {
 		while ( $x = $dbr->fetchObject( $res ) ) {
 			$pdbk = $page_ids[$x->cl_from];
 			switch( $x->cl_to ) {
+			case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ):
+				$colours[$pdbk] = 'quality0';
+				$n0++;
+				break;
 			case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality1_category' ) ):
 				$colours[$pdbk] = 'quality1';
 				$n1++;
