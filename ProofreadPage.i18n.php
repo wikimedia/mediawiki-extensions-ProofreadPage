@@ -48,6 +48,7 @@ Remarks||10',
  * @author Aleator
  * @author IAlex
  * @author Jon Harald Søby
+ * @author Mormegil
  * @author Purodha
  * @author Yknok29
  */
@@ -61,7 +62,7 @@ $messages['qqq'] = array(
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
-	'proofreadpage_js_attributes' => '작가 제목 연도 출판사',
+	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
 	'proofreadpage_index_attributes' => '도서 정보',
 );
 
@@ -499,6 +500,7 @@ $messages['ceb'] = array(
 
 /** Czech (Česky)
  * @author Matěj Grabovský
+ * @author Mormegil
  */
 $messages['cs'] = array(
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnání textu s předlohou',
@@ -506,12 +508,17 @@ $messages['cs'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'soubor',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Chyba: očekáván index',
+	'proofreadpage_nosuch_index' => 'Chyba: takový index neexistuje',
+	'proofreadpage_number_expected' => 'Chyba: očekávána číselná hodnota',
+	'proofreadpage_interval_too_large' => 'Chyba: příliš velký interval',
 	'proofreadpage_nextpage' => 'Další stránka',
 	'proofreadpage_prevpage' => 'Předchozí stránka',
 	'proofreadpage_header' => 'Hlavička (noinclude):',
 	'proofreadpage_body' => 'Tělo stránky (pro transkluzi):',
-	'proofreadpage_footer' => 'Pata (noinclude):',
+	'proofreadpage_footer' => 'Patička (noinclude):',
 	'proofreadpage_toggleheaders' => 'přepnout viditelnost sekcí noinclude',
+	'proofreadpage_quality0_category' => 'Bez textu',
 	'proofreadpage_quality1_category' => 'Nebylo zkontrolováno',
 	'proofreadpage_quality2_category' => 'Problematické',
 	'proofreadpage_quality3_category' => 'Zkontrolováno',
