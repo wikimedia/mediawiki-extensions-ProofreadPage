@@ -741,14 +741,12 @@ function pr_preloadText( $textbox1, $mTitle ) {
 
 		$image = wfFindFile( $imageTitle );
 		if ( $image && $image->exists() && $image->getMimeType() == 'image/vnd.djvu' ) {
-			$name = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[2] ) );
-			$name = str_replace( '##WIDTH##px', 'djvutxt', $name );
-			$name = str_replace( '.jpg', '.txt', $name );
-			$url = $image->getThumbUrl( $name );
-
-			if ( $url[0] == '/' ) $url = "http://localhost" . $url;
-			$text = Http::get( $url );
-			if ( $text ) $textbox1 = $text;
+			$text = $image->handler->getPageText($image, $m[2]);
+			if ( $text ) {
+				$text = preg_replace( "/(\\\\n)/", "\n", $text );
+				$text = preg_replace( "/(\\\\\d*)/", "", $text );
+				$textbox1 = $text;
+			}
 		}
 	}
 	return true;
