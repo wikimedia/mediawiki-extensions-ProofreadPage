@@ -119,9 +119,8 @@ function pr_make_edit_area(container,text){
 	//because the template might not be in the header 
 	var reg = /\{\{PageQuality\|(0|1|2|3|4|25%|50%|75%|100%)(\|(.*?|))\}\}/g;
 	var m4 = reg.exec(pageHeader);
-	self.show4 = false;
-	if(m4) {
-		switch(m4[1]){
+	if( m4 ) {
+		switch( m4[1] ) {
 			case "0": self.proofreadpage_quality = 0; break;
 			case "1": self.proofreadpage_quality = 1; break;
 			case "2": self.proofreadpage_quality = 2; break;
@@ -753,6 +752,10 @@ function pr_fill_form() {
 	var form = document.getElementById("editform");
 	var header = form.elements["headerTextbox"];
 	var footer = form.elements["footerTextbox"];
+	if( ( self.proofreadpage_quality == 0 ) && ( form.elements["wpTextbox1"].value != "" ) ) { 
+		self.proofreadpage_quality = 1;
+		form.elements["wpSummary"].value="/* " + proofreadPageMessageQuality1 + " */ ";
+	}
 	if(header){
 		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
 		if(h) h = "<noinclude>{{PageQuality|"+self.proofreadpage_quality+"|"+self.proofreadpage_username+"}}"+h+"\n\n\n</noinclude>";
@@ -831,26 +834,36 @@ hookEvent("load", pr_initzoom );
 
 function pr_add_quality(form,value){
  
+	if( ( value == 0 ) && ( form.elements["wpTextbox1"].value != "" ) ) {
+		switch( self.proofreadpage_quality ) {
+			case 4: document.editform.quality[4].checked = true; break;
+			case 3: document.editform.quality[3].checked = true; break;
+			case 1: document.editform.quality[2].checked = true; break; 
+			case 2: document.editform.quality[1].checked = true; break; 
+			case 0: document.editform.quality[0].checked = true; break; 
+		}
+		return;
+	}
 	self.proofreadpage_quality = value;
 	self.proofreadpage_username = wgUserName;
 	var text="";
-	switch(value){
+	switch( value ) {
 		case 0: text = proofreadPageMessageQuality0; break;
 		case 1: text = proofreadPageMessageQuality1; break;
 		case 2: text = proofreadPageMessageQuality2; break;
 		case 3: text = proofreadPageMessageQuality3; break;
 		case 4: text = proofreadPageMessageQuality4; break;
 	}
-	form.elements["wpSummary"].value="/* "+text+" */ ";
+	form.elements["wpSummary"].value="/* " + text + " */ ";
 
 }
 
 
 function pr_add_quality_buttons(){
 
-	if(self.proofreadpage_no_quality_buttons) return;
+	if( self.proofreadpage_no_quality_buttons ) return;
 	var ig  = document.getElementById("wpWatchthis");
-	if(!ig) return;
+	if( !ig ) return;
 	var f = document.createElement("span");
 	f.innerHTML = 
 ' <span class="quality0"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,0)"> </span>'
@@ -861,19 +874,16 @@ function pr_add_quality_buttons(){
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
-	var show4 = false;
-	if(self.proofreadpage_quality==4) show4 = true;
-	if((self.proofreadpage_quality==3) && (self.proofreadpage_username != wgUserName)) show4 = true;
-	if(!show4) 
-		document.editform.quality[4].parentNode.style.cssText='display:none';
-
-	if(self.proofreadpage_quality) { 
-		switch(self.proofreadpage_quality){
-			case 4: document.editform.quality[4].checked=true; break;
-			case 3: document.editform.quality[3].checked=true; break;
-			case 1: document.editform.quality[2].checked=true; break; 
-			case 2: document.editform.quality[1].checked=true; break; 
-			case 0: document.editform.quality[0].checked=true; break; 
+	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != wgUserName ) ) ) ) {
+		document.editform.quality[4].parentNode.style.cssText = 'display:none';
+	}
+	if( self.proofreadpage_quality ) { 
+		switch( self.proofreadpage_quality ) {
+			case 4: document.editform.quality[4].checked = true; break;
+			case 3: document.editform.quality[3].checked = true; break;
+			case 1: document.editform.quality[2].checked = true; break; 
+			case 2: document.editform.quality[1].checked = true; break; 
+			case 0: document.editform.quality[0].checked = true; break; 
 		}
 	}
 }
