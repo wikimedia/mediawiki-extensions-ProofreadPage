@@ -1,8 +1,5 @@
 // Author : ThomasV - License : GPL
 
-//todo : 
-//empty pages : detect if textbox is empty
-
 
 function pr_init_tabs(){
 
@@ -834,7 +831,8 @@ hookEvent("load", pr_initzoom );
 
 function pr_add_quality(form,value){
  
-	if( ( value == 0 ) && ( form.elements["wpTextbox1"].value != "" ) ) {
+	var tbv = form.elements["wpTextbox1"].value;
+	if( ( ( value == 0 ) && ( tbv != "" ) ) || ( ( value >= 3 ) && ( tbv == "" ) ) ) {
 		switch( self.proofreadpage_quality ) {
 			case 4: document.editform.quality[4].checked = true; break;
 			case 3: document.editform.quality[3].checked = true; break;
@@ -877,14 +875,12 @@ function pr_add_quality_buttons(){
 	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != wgUserName ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';
 	}
-	if( self.proofreadpage_quality ) { 
-		switch( self.proofreadpage_quality ) {
-			case 4: document.editform.quality[4].checked = true; break;
-			case 3: document.editform.quality[3].checked = true; break;
-			case 1: document.editform.quality[2].checked = true; break; 
-			case 2: document.editform.quality[1].checked = true; break; 
-			case 0: document.editform.quality[0].checked = true; break; 
-		}
+	switch( self.proofreadpage_quality ) {
+		case 4: document.editform.quality[4].checked = true; break;
+		case 3: document.editform.quality[3].checked = true; break;
+		case 1: document.editform.quality[2].checked = true; break; 
+		case 2: document.editform.quality[1].checked = true; break; 
+		case 0: document.editform.quality[0].checked = true; break; 
 	}
 }
 
