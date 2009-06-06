@@ -666,7 +666,7 @@ function pr_renderPages( $input, $args ) {
 	if( ! $index_title || ! $index_title->exists() ) 
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 
-	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->getFullUrl().'">'.$index_namespace.'</a> </span>';
+	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$index_namespace.'</a> </span>';
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
 
 	if( $params ) {
