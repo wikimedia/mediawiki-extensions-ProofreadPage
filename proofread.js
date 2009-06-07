@@ -874,6 +874,7 @@ function pr_add_quality_buttons(){
 
 	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != wgUserName ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';
+		document.editform.quality[4].disabled = true;
 	}
 	switch( self.proofreadpage_quality ) {
 		case 4: document.editform.quality[4].checked = true; break;
