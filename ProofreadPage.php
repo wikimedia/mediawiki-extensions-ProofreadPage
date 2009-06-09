@@ -20,6 +20,9 @@ $wgDjvutxt = null;
 # Bump the version number every time you change proofread.js
 $wgProofreadPageVersion = 20;
 
+# Max width of zoomable image
+$wgProofreadPageMaxWidth = 2048;
+
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',
@@ -291,7 +294,7 @@ var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofrea
 
 
 function pr_preparePage( $out, $m, $isEdit ) {
-	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
+	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion, $wgProofreadPageMaxWidth;
 
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	if ( !$imageTitle ) {
@@ -302,6 +305,10 @@ function pr_preparePage( $out, $m, $isEdit ) {
 	if ( $image && $image->exists() ) {
 		$width = $image->getWidth();
 		$height = $image->getHeight();
+		if( $width > $wgProofreadPageMaxWidth ) {
+			$width = $wgProofreadPageMaxWidth;
+			$height = $image->getHeight() * $wgProofreadPageMaxWidth / $image->getWidth();
+		}
 		if ( $m[2] ) {
 			$viewName = $image->thumbName( array( 'width' => $width, 'page' => $m[3] ) );
 			$viewURL = $image->getThumbUrl( $viewName );
