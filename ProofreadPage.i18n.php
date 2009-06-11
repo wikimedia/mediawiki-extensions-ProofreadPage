@@ -633,6 +633,7 @@ $messages['ee'] = array(
  * @author Crazymadlover
  * @author Dead3y3
  * @author Konsnos
+ * @author Omnipaedista
  * @author ZaDiak
  */
 $messages['el'] = array(
@@ -641,6 +642,7 @@ $messages['el'] = array(
 	'proofreadpage_index_namespace' => 'Ευρετήριο',
 	'proofreadpage_image' => 'εικόνα',
 	'proofreadpage_index' => 'Ευρετήριο',
+	'proofreadpage_interval_too_large' => 'Σφάλμα: υπερβολικά μεγάλο διάστημα',
 	'proofreadpage_nextpage' => 'Επόμενη σελίδα',
 	'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
 	'proofreadpage_header' => 'Επικεφαλίδα (noinclude):',
@@ -2033,13 +2035,17 @@ $messages['nn'] = array(
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'bilete',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Feil: Indeks forventa',
+	'proofreadpage_nosuch_index' => 'Feil: ingen slik indeks',
+	'proofreadpage_number_expected' => 'Feil: Talverdi forventa',
+	'proofreadpage_interval_too_large' => 'Feil: for stort intervall',
 	'proofreadpage_nextpage' => 'Neste side',
 	'proofreadpage_prevpage' => 'Førre side',
 	'proofreadpage_header' => 'Hovudseksjon (ikkje inkludert):',
 	'proofreadpage_body' => 'Hovuddel (inkludert):',
 	'proofreadpage_footer' => 'Fotseksjon (ikkje inludert):',
 	'proofreadpage_toggleheaders' => 'syna/ikkje syna seksjonar ikkje inkluderte på sida',
-	'proofreadpage_quality0_category' => 'Tom',
+	'proofreadpage_quality0_category' => 'Utan tekst',
 	'proofreadpage_quality1_category' => 'Ikkje korrekturlest',
 	'proofreadpage_quality2_category' => 'Problematisk',
 	'proofreadpage_quality3_category' => 'Korrekturlest',
@@ -2252,6 +2258,10 @@ $messages['pt'] = array(
 	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'imagem',
 	'proofreadpage_index' => 'Índice',
+	'proofreadpage_index_expected' => 'Erro: índice esperado',
+	'proofreadpage_nosuch_index' => 'Erro: índice não existe',
+	'proofreadpage_number_expected' => 'Erro: valor numérico esperado',
+	'proofreadpage_interval_too_large' => 'Erro: intervalo demasiado grande',
 	'proofreadpage_nextpage' => 'Próxima página',
 	'proofreadpage_prevpage' => 'Página anterior',
 	'proofreadpage_header' => 'Cabeçalho (em modo noinclude):',
