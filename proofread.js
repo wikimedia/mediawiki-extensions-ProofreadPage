@@ -145,11 +145,16 @@ function pr_make_edit_area(container,text){
 	pageFooter = pageFooter.split("&").join("&amp;")
 
 	container.innerHTML = ''
-		+ '<div id="prp_header" style="display:none">' + escapeQuotesHTML(proofreadPageMessageHeader) + '<br/>'
-		+ '<textarea name="headerTextbox" rows="2" cols="80">' + pageHeader + '</textarea>'
-		+ '<br/>' + escapeQuotesHTML(proofreadPageMessagePageBody) + '<br/></div>'
-		+ '<textarea name="wpTextbox1" id="wpTextbox1" rows="40" cols="80">'+pageBody+'</textarea>'
-		+ '<div id="prp_footer" style="display:none">' + escapeQuotesHTML(proofreadPageMessageFooter) + '<br/>'
+		+ '<div id="prp_header" style="display:none;">'
+		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
+		+ escapeQuotesHTML(proofreadPageMessageHeader) + '</span>'
+		+ '<textarea name="headerTextbox" rows="2" cols="80">' + pageHeader + '</textarea><br/>'
+		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
+		+ escapeQuotesHTML(proofreadPageMessagePageBody) + '</span></div>'
+		+ '<textarea name="wpTextbox1" id="wpTextbox1" style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' + pageBody + '</textarea>'
+		+ '<div id="prp_footer" style="display:none;">'
+		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
+		+ escapeQuotesHTML(proofreadPageMessageFooter) + '</span><br/>'
 		+ '<textarea name="footerTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
 
 
@@ -168,6 +173,22 @@ function pr_make_edit_area(container,text){
 }
 
 
+function pr_reset_size() {
+
+	var box = document.getElementById("wpTextbox1");
+	var h = document.getElementById("prp_header"); 
+	var f = document.getElementById("prp_footer"); 
+	if( h.style.cssText == 'display:none;') {
+		box.style.cssText = "height:" + ( self.DisplayHeight - 6 ) + "px";
+	} else {
+		if( self.pr_horiz ) {
+			box.style.cssText = "height:" + ( self.DisplayHeight - 6 ) + "px";
+		} else {
+			box.style.cssText = "height:" + ( self.DisplayHeight - 6 - h.offsetHeight - f.offsetHeight) + "px";
+		}
+	}
+}
+
 function pr_toggle_visibility() {
 
 	var box = document.getElementById("wpTextbox1");
@@ -176,22 +197,21 @@ function pr_toggle_visibility() {
 	if( h.style.cssText == ''){
 		h.style.cssText = 'display:none';
 		f.style.cssText = 'display:none';
-		box.style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 	} else {
 		h.style.cssText = '';
 		f.style.cssText = '';
-		if(!self.pr_horiz)  box.style.cssText = "height:"+(self.DisplayHeight-169)+"px";
-		else box.style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 	}
+	pr_reset_size();
 }
 
 function pr_toggle_layout() {
 
-	if (!self.pr_horiz)
-		pr_fill_table(true);
-	else
+	if ( self.pr_horiz ) {
 		pr_fill_table(false);
-  
+	} else {
+		pr_fill_table(true);
+	}
+	pr_reset_size();
 }
 
 
@@ -594,7 +614,7 @@ function  pr_fill_table(horizontal_layout){
 	}
 	else{
 		if(!horizontal_layout){
-			self.DisplayHeight = Math.ceil(height*0.9);
+			self.DisplayHeight = Math.ceil(height*0.85);
 			self.DisplayWidth = parseInt(width/2-70);
 			img_w = self.DisplayWidth;
 			self.container_css = "background:#000000; overflow:hidden; width:"+self.DisplayWidth+"px; height:"+self.DisplayHeight+"px;";
@@ -610,7 +630,6 @@ function  pr_fill_table(horizontal_layout){
 			+ "\" width=\""+img_w+"\" />";
 		
 		image_container.style.cssText = self.container_css;
-		document.getElementById("wpTextbox1").style.cssText = "height:"+(self.DisplayHeight-7)+"px";
 		pr_zoom(0);
 	}
 
