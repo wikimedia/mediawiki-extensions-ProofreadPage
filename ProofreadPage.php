@@ -212,7 +212,7 @@ function pr_parse_index($index_title){
 
 	//check if it is using pagelist
 	preg_match_all( "/<pagelist(.*?)\/>/is", $text, $m, PREG_PATTERN_ORDER );
-	if( $m ) {
+	if( $m[1] ) {
 
 		$params = array();
 		for( $k = 0; $k < count( $m[1] ); $k++) { 
@@ -690,20 +690,20 @@ function pr_renderPages( $input, $args ) {
 	if( ! $index_title || ! $index_title->exists() ) 
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 
-	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
-	if ( !$imageTitle ) {
-		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
-	}
-	$image = wfFindFile( $imageTitle );
-	if ( ! ( $image && $image->isMultiPage() && $image->pageCount() ) ) {
-		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
-	}
-	$count = $image->pageCount();
-
 	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$index_namespace.'</a> </span>';
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
 
 	if( $params ) {
+		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
+		if ( !$imageTitle ) {
+			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+		}
+		$image = wfFindFile( $imageTitle );
+		if ( ! ( $image && $image->isMultiPage() && $image->pageCount() ) ) {
+			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+		}
+		$count = $image->pageCount();
+
 		if( !$from ) $from = 1;
 		if( !$to ) $to = $count;
 
