@@ -571,91 +571,94 @@ function pr_pageNumber( $i, $args ) {
 function pr_renderPageList( $input, $args ) {
 	global $wgUser, $wgTitle;
 	wfLoadExtensionMessages( 'ProofreadPage' );
+
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
-		return true;
+		return "";
 	}
 
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	if ( !$imageTitle ) {
-		return true;
+		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
 	}
+
 	$image = wfFindFile( $imageTitle );
+	if ( ! ( $image && $image->isMultiPage() && $image->pageCount() ) ) {
+		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+	} 
+
 	$return = "";
+	$name = $imageTitle->getDBkey();
+	$count = $image->pageCount();
+	$dbr = wfGetDB( DB_SLAVE );
+	$pagetable = $dbr->tableName( 'page' );
 
-	if ( $image && $image->isMultiPage() && $image->pageCount() ) {
-		$name = $imageTitle->getDBkey();
-		$count = $image->pageCount();
-		$dbr = wfGetDB( DB_SLAVE );
-		$pagetable = $dbr->tableName( 'page' );
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
+	if ( $page_ns_index == NULL ) {
+		$page_ns_index = NS_MAIN;
+	}
 
-		$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
-		if ( $page_ns_index == NULL ) {
-			$page_ns_index = NS_MAIN;
+	$from = $args['from'];
+	$to = $args['to'];
+	if( !$from ) $from = 1;
+	if( !$to ) $to = $count;
+
+	if( !is_numeric($from) || !is_numeric($to) )
+		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
+	if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) )
+		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+
+	for ( $i = $from - 1; $i < $to; $i++ ) {
+		if ( !isset( $query ) ) {
+			$query =  "SELECT page_id, page_title, page_namespace";
+			$query .= " FROM $pagetable WHERE (page_namespace=" . intval( $page_ns_index ) . " AND page_title IN(";
+		} else {
+			$query .= ', ';
 		}
+		$link_name = "$name" . '/' . ( $i + 1 ) ;
+		$query .= $dbr->addQuotes( $link_name );
+	}
+	$query .= '))';
+	$res = $dbr->query( $query, __METHOD__ );
 
-		$from = $args['from'];
-		$to = $args['to'];
-		if( !$from ) $from = 1;
-		if( !$to ) $to = $count;
+	$colours = array();
+	$linkcolour_ids = array();
+	while ( $s = $dbr->fetchObject( $res ) ) {
+		$title = Title::makeTitle( $s->page_namespace, $s->page_title );
+		$pdbk = $title->getPrefixedDBkey();
+		$colours[$pdbk] = 'known';
+		$linkcolour_ids[$s->page_id] = $pdbk;
+	}
+	pr_getLinkColours( $linkcolour_ids, $colours );
 
-		if( !is_numeric($from) || !is_numeric($to) )
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
-		if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) )
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+	$sk = $wgUser->getSkin();
 
-		for ( $i = $from - 1; $i < $to; $i++ ) {
-			if ( !isset( $query ) ) {
-				$query =  "SELECT page_id, page_title, page_namespace";
-				$query .= " FROM $pagetable WHERE (page_namespace=" . intval( $page_ns_index ) . " AND page_title IN(";
+	for ( $i = $from; $i < $to + 1; $i++ ) {
+		$pdbk = "$page_namespace:$name" . '/' . $i ;
+		list( $view, $links, $mode ) = pr_pageNumber( $i, $args );
+
+		if ( $mode == 'highroman' || $mode == 'roman' ) $view = '&nbsp;' . $view;
+
+		$n = strlen( $count ) - strlen( $view );
+		if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
+			$txt = '<span style="visibility:hidden;">';
+			for ( $j = 0; $j < $n; $j++ ) {
+				$txt = $txt . '0';
+			}
+			$view = $txt . '</span>' . $view;
+		}
+		$title = Title::newFromText( $pdbk );
+
+		if ( $links == false ) {
+			$return .= $view . " ";
+		} else {
+			if ( !isset( $colours[$pdbk] ) ) {
+				$link = $sk->makeBrokenLinkObj( $title, $view );
 			} else {
-				$query .= ', ';
+				$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], $view );
 			}
-			$link_name = "$name" . '/' . ( $i + 1 ) ;
-			$query .= $dbr->addQuotes( $link_name );
-		}
-		$query .= '))';
-		$res = $dbr->query( $query, __METHOD__ );
-
-		$colours = array();
-		$linkcolour_ids = array();
-		while ( $s = $dbr->fetchObject( $res ) ) {
-			$title = Title::makeTitle( $s->page_namespace, $s->page_title );
-			$pdbk = $title->getPrefixedDBkey();
-			$colours[$pdbk] = 'known';
-			$linkcolour_ids[$s->page_id] = $pdbk;
-		}
-		pr_getLinkColours( $linkcolour_ids, $colours );
-
-		$sk = $wgUser->getSkin();
-
-		for ( $i = $from; $i < $to + 1; $i++ ) {
-			$pdbk = "$page_namespace:$name" . '/' . $i ;
-			list( $view, $links, $mode ) = pr_pageNumber( $i, $args );
-
-			if ( $mode == 'highroman' || $mode == 'roman' ) $view = '&nbsp;' . $view;
-
-			$n = strlen( $count ) - strlen( $view );
-			if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
-				$txt = '<span style="visibility:hidden;">';
-				for ( $j = 0; $j < $n; $j++ ) {
-					$txt = $txt . '0';
-				}
-				$view = $txt . '</span>' . $view;
-			}
-			$title = Title::newFromText( $pdbk );
-
-			if ( $links == false ) {
-				$return .= $view . " ";
-			} else {
-				if ( !isset( $colours[$pdbk] ) ) {
-					$link = $sk->makeBrokenLinkObj( $title, $view );
-				} else {
-					$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], $view );
-				}
-				$return .= "{$link} ";
-			}
+			$return .= "{$link} ";
 		}
 	}
 	return $return;
@@ -687,14 +690,30 @@ function pr_renderPages( $input, $args ) {
 	if( ! $index_title || ! $index_title->exists() ) 
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 
+	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
+	if ( !$imageTitle ) {
+		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+	}
+	$image = wfFindFile( $imageTitle );
+	if ( ! ( $image && $image->isMultiPage() && $image->pageCount() ) ) {
+		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+	}
+	$count = $image->pageCount();
+
 	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$index_namespace.'</a> </span>';
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
 
 	if( $params ) {
+		if( !$from ) $from = 1;
+		if( !$to ) $to = $count;
+
 		if(!is_numeric($from) || !is_numeric($to))
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
-		if( ($from > $to) || ($to - $from > 1000) )
+		if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) )
+			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+		if( $to - $from > 1000 )
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
+
 		for($i=$from; $i<=$to;$i++){
 			$text = "$page_namespace:$index/" . $i;
 			list($pagenum, $links, $mode) = pr_pageNumber($i,$params);
