@@ -91,8 +91,9 @@ function pr_load_index( $title ) {
 			$pagenr = intval( array_pop( $parts ) );
 		}
 		$count = $image->pageCount();
-		if ( $pagenr < 1 || $pagenr > $count || $count <= 1 )
+		if ( $pagenr < 1 || $pagenr > $count || $count <= 1 ) {
 			return $err;
+		}
 		$name = $image->getTitle()->getText();
 		$index_name = "$index_namespace:$name";
 		$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
@@ -604,10 +605,12 @@ function pr_renderPageList( $input, $args ) {
 	if( !$from ) $from = 1;
 	if( !$to ) $to = $count;
 
-	if( !is_numeric($from) || !is_numeric($to) )
+	if( !is_numeric( $from ) || !is_numeric( $to ) ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
-	if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) )
+	}
+	if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+	}
 
 	for ( $i = $from - 1; $i < $to; $i++ ) {
 		if ( !isset( $query ) ) {
@@ -685,10 +688,13 @@ function pr_renderPages( $input, $args ) {
 	$from = $args['from'];
 	$to = $args['to'];
 
-	if( ! $index ) return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
+	if( ! $index ) { 
+		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
+	}
 	$index_title = Title::newFromText( "$index_namespace:$index" );
-	if( ! $index_title || ! $index_title->exists() ) 
+	if( ! $index_title || ! $index_title->exists() ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
+	}
 
 	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$index_namespace.'</a> </span>';
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
@@ -707,14 +713,17 @@ function pr_renderPages( $input, $args ) {
 		if( !$from ) $from = 1;
 		if( !$to ) $to = $count;
 
-		if(!is_numeric($from) || !is_numeric($to))
+		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
-		if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) )
+		}
+		if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
-		if( $to - $from > 1000 )
+		}
+		if( $to - $from > 1000 ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
+		}
 
-		for($i=$from; $i<=$to;$i++){
+		for( $i=$from; $i<=$to;$i++ ) {
 			$text = "$page_namespace:$index/" . $i;
 			list($pagenum, $links, $mode) = pr_pageNumber($i,$params);
 			$input = "{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}";
