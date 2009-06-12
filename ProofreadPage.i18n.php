@@ -17,6 +17,7 @@ $messages['en'] = array(
 	'proofreadpage_nosuch_index'      => 'Error: no such index',
 	'proofreadpage_number_expected'   => 'Error: numeric value expected',
 	'proofreadpage_interval_too_large'=> 'Error: interval too large',
+	'proofreadpage_invalid_interval'  => 'Error: invalid interval',
 	'proofreadpage_nextpage'          => 'Next page',
 	'proofreadpage_prevpage'          => 'Previous page',
 	'proofreadpage_header'            => 'Header (noinclude):',

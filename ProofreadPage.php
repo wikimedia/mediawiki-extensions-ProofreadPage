@@ -591,7 +591,17 @@ function pr_renderPageList( $input, $args ) {
 			$page_ns_index = NS_MAIN;
 		}
 
-		for ( $i = 0; $i < $count ; $i++ ) {
+		$from = $args['from'];
+		$to = $args['to'];
+		if( !$from ) $from = 1;
+		if( !$to ) $to = $count;
+
+		if( !is_numeric($from) || !is_numeric($to) )
+			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
+		if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) )
+			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+
+		for ( $i = $from - 1; $i < $to; $i++ ) {
 			if ( !isset( $query ) ) {
 				$query =  "SELECT page_id, page_title, page_namespace";
 				$query .= " FROM $pagetable WHERE (page_namespace=" . intval( $page_ns_index ) . " AND page_title IN(";
@@ -616,7 +626,7 @@ function pr_renderPageList( $input, $args ) {
 
 		$sk = $wgUser->getSkin();
 
-		for ( $i = 1; $i < $count + 1 ; $i++ ) {
+		for ( $i = $from; $i < $to + 1; $i++ ) {
 			$pdbk = "$page_namespace:$name" . '/' . $i ;
 			list( $view, $links, $mode ) = pr_pageNumber( $i, $args );
 
