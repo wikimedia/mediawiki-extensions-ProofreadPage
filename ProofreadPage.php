@@ -211,14 +211,18 @@ function pr_parse_index($index_title){
 	$text =	$rev->getText();
 
 	//check if it is using pagelist
-	preg_match( "/<pagelist(.*?)\/>/is", $text, $m );
-	if( $m ){
-		preg_match_all( "/([0-9a-z]*?)\=(.*?)\s/", $m[1] . " ", $m2, PREG_PATTERN_ORDER );
+	preg_match_all( "/<pagelist(.*?)\/>/is", $text, $m, PREG_PATTERN_ORDER );
+	if( $m ) {
+
 		$params = array();
-		$links = null;
-		for( $i = 0; $i < count( $m2[1] ); $i++) { 
-			$params[ $m2[1][$i] ] = $m2[2][$i];
+		for( $k = 0; $k < count( $m[1] ); $k++) { 
+			preg_match_all( "/([0-9a-z]*?)\=(.*?)\s/", $m[1][$k] . " ", $m2, PREG_PATTERN_ORDER );
+			for( $i = 0; $i < count( $m2[1] ); $i++) { 
+				$params[ $m2[1][$i] ] = $m2[2][$i];
+			}
 		}
+		$links = null;
+
 	} else {
 		$params = null;
 		$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
