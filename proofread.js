@@ -768,10 +768,10 @@ function pr_fill_form() {
 	var form = document.getElementById("editform");
 	var header = form.elements["headerTextbox"];
 	var footer = form.elements["footerTextbox"];
-	if( ( self.proofreadpage_quality == 0 ) && ( form.elements["wpTextbox1"].value != "" ) ) { 
-		self.proofreadpage_quality = 1;
-		form.elements["wpSummary"].value="/* " + proofreadPageMessageQuality1 + " */ ";
-	}
+	//if( ( self.proofreadpage_quality == 0 ) && ( form.elements["wpTextbox1"].value != "" ) ) { 
+	//	self.proofreadpage_quality = 1;
+	//	form.elements["wpSummary"].value="/* " + proofreadPageMessageQuality1 + " */ ";
+	//}
 	if(header){
 		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
 		if(h) h = "<noinclude>{{PageQuality|"+self.proofreadpage_quality+"|"+self.proofreadpage_username+"}}"+h+"\n\n\n</noinclude>";
@@ -851,7 +851,7 @@ hookEvent("load", pr_initzoom );
 function pr_add_quality(form,value){
  
 	var tbv = form.elements["wpTextbox1"].value;
-	if( ( ( value == 0 ) && ( tbv != "" ) ) || ( ( value >= 3 ) && ( tbv == "" ) ) ) {
+	if( /*( ( value == 0 ) && ( tbv != "" ) ) ||*/ ( ( value >= 3 ) && ( tbv == "" ) ) ) {
 		switch( self.proofreadpage_quality ) {
 			case 4: document.editform.quality[4].checked = true; break;
 			case 3: document.editform.quality[3].checked = true; break;

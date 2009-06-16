@@ -18,7 +18,7 @@ $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 $wgDjvutxt = null;
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 20;
+$wgProofreadPageVersion = 21;
 
 # Max width of zoomable image
 $wgProofreadPageMaxWidth = 2048;
