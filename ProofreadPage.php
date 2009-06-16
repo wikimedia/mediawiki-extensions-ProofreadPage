@@ -695,7 +695,7 @@ function pr_renderPages( $input, $args ) {
 	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$index_namespace.'</a> </span>';
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
 
-	if( $params ) {
+	if( $links==null ) {
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
 		if ( !$imageTitle ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';

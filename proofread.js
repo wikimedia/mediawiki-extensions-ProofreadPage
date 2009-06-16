@@ -610,7 +610,7 @@ function  pr_fill_table(horizontal_layout){
 		image.setAttribute("src", thumb_url);
 		image.setAttribute("width", self.DisplayWidth);
 		image.style.cssText = "padding:0;margin:0;border:0;";
-		image_container.style.cssText = "background:#0000ff; overflow:hidden;width:"+self.DisplayWidth+"px;";
+		image_container.style.cssText = "overflow:hidden;width:"+self.DisplayWidth+"px;";
 	}
 	else{
 		if(!horizontal_layout){
