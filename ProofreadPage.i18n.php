@@ -662,6 +662,7 @@ $messages['el'] = array(
 	'proofreadpage_index' => 'Ευρετήριο',
 	'proofreadpage_nosuch_file' => 'Σφάλμα: δεν υπάρχει αυτό το αρχείο',
 	'proofreadpage_interval_too_large' => 'Σφάλμα: υπερβολικά μεγάλο διάστημα',
+	'proofreadpage_invalid_interval' => 'Σφάλμα: άκυρο διάστημα',
 	'proofreadpage_nextpage' => 'Επόμενη σελίδα',
 	'proofreadpage_prevpage' => 'Προηγούμενη σελίδα',
 	'proofreadpage_header' => 'Επικεφαλίδα (noinclude):',
@@ -1734,6 +1735,7 @@ $messages['lb'] = array(
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Feeler: Index erwaart',
 	'proofreadpage_nosuch_index' => 'Feeler: et gëtt keen esou een Index',
+	'proofreadpage_nosuch_file' => 'Feeler: de Fichier gëtt et net',
 	'proofreadpage_number_expected' => 'Feeler: et gof en numerische Wert erwaart',
 	'proofreadpage_interval_too_large' => 'Feeler: Intervall ze ze grouss',
 	'proofreadpage_nextpage' => 'Nächst Säit',
@@ -2215,6 +2217,8 @@ $messages['os'] = array(
  */
 $messages['pdc'] = array(
 	'proofreadpage_namespace' => 'Blatt',
+	'proofreadpage_nextpage' => 'Neegscht Blatt',
+	'proofreadpage_prevpage' => 'Letscht Blatt',
 );
 
 /** Polish (Polski)
