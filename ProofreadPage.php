@@ -18,7 +18,7 @@ $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 $wgDjvutxt = null;
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 21;
+$wgProofreadPageVersion = 22;
 
 # Max width of zoomable image
 $wgProofreadPageMaxWidth = 2048;
@@ -288,9 +288,10 @@ EOT
 	);
 	$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
 var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
+var prp_default_header = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_default_header' ) ) . "\";
+var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_default_footer' ) ) . "\";
 </script>\n"
 	);
-
 }
 
 

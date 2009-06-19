@@ -45,6 +45,9 @@ function proofreadpage_index_init() {
 		value = findparam(params,param_name);
 		value = value.replace(/\{\{!\}\}/g,'|');
 
+		if( (m[0]=="Header") && (value=="") ) value = prp_default_header;
+		if( (m[0]=="Footer") && (value=="") ) value = prp_default_footer;
+
 		if(m[2]) size=m[2]; else size="1";
 		if(size=="1") {
 			str = str + '<td><input	name="'+param_name+'" size=60 value="'+value+'"/></td></tr>'; 
@@ -52,7 +55,6 @@ function proofreadpage_index_init() {
 		else{
 			str = str +'<td><textarea name="'+param_name+'" cols=60 rows='+size+'>'+value+'</textarea></td></tr>';
 		}
-
 	}
 	str = str +'</table>';
 	container.innerHTML = str;
