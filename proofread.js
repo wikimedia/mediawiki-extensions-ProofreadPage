@@ -114,7 +114,7 @@ function pr_make_edit_area(container,text){
 	//find the PageQuality template
 	//we do this separately from header detection,
 	//because the template might not be in the header 
-	var reg = /\{\{PageQuality\|(0|1|2|3|4|25%|50%|75%|100%)(\|(.*?|))\}\}/g;
+	var reg = /\{\{PageQuality\|(0|1|2|3|4)(\|(.*?|))\}\}/g;
 	var m4 = reg.exec(pageHeader);
 	if( m4 ) {
 		switch( m4[1] ) {
@@ -123,11 +123,6 @@ function pr_make_edit_area(container,text){
 			case "2": self.proofreadpage_quality = 2; break;
 			case "3": self.proofreadpage_quality = 3; break;
 			case "4": self.proofreadpage_quality = 4; break;
-			//keep this for backward compatibility
-			case "100%": self.proofreadpage_quality = 4; break;
-			case "75%": self.proofreadpage_quality = 3; break;
-			case "50%": self.proofreadpage_quality = 1; break;
-			case "25%": self.proofreadpage_quality = 2; break;
 			default: self.proofreadpage_quality = 1;
 		}
 		self.proofreadpage_username = m4[3];
