@@ -723,11 +723,10 @@ function pr_renderPages( $input, $args ) {
 		for( $i=$from; $i<=$to;$i++ ) {
 			$text = "$page_namespace:$index/" . $i;
 			list($pagenum, $links, $mode) = pr_pageNumber($i,$params);
-			$input = "{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}";
-			$out.= $wgParser->recursiveTagParse($input);
-			$input = "{{:".$text."}}";
-			$out.= $wgParser->recursiveTagParse($input);
+			$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
+			$out.= "{{:".$text."}}";
 		}
+		$out = $wgParser->recursiveTagParse($out);
 	} 
 	else {
 		$adding = false;
@@ -736,13 +735,12 @@ function pr_renderPages( $input, $args ) {
 			$pagenum = $links[3][$i];
 			if($text == $page_namespace.":".$from ) $adding = true;
 			if($adding){
-				$input = "{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}";
-				$out.= $wgParser->recursiveTagParse($input);
-				$input= "{{:".$text."}}";
-				$out.= $wgParser->recursiveTagParse($input);
+				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
+				$out.= "{{:".$text."}}";
 			}
 			if($text == $page_namespace.":".$to ) $adding = false;
 		}
+		$out = $wgParser->recursiveTagParse($out);
 	}
 	return $out;
 }
