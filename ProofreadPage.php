@@ -9,7 +9,7 @@ $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = dirname( __FILE__ ) . '/ProofreadPage.i18n.php';
 
 $wgHooks['BeforePageDisplay'][] = 'pr_beforePageDisplay';
-$wgHooks['GetLinkColours'][] = 'pr_getLinkColours';
+$wgHooks['GetLinkColours'][] = 'pr_getLinkColoursHook';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'pr_imageMessage';
 $wgHooks['ArticleSaveComplete'][] = 'pr_articleSave';
 $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
@@ -387,10 +387,10 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 
 
 /**
- *  Return the quality colour codes to pages linked from an index page
- *  Update page counts in pr_index table
+ *  Hook function
  */
-function pr_getLinkColours( $page_ids, &$colours ) {
+function pr_getLinkColoursHook( $page_ids, &$colours ) {
+
 	global $wgTitle;
 
 	if ( !isset( $wgTitle ) ) {
@@ -400,12 +400,26 @@ function pr_getLinkColours( $page_ids, &$colours ) {
 
 	// abort if we are not an index page
 	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText() ) ) {
+	if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
 	}
+	// abort too if we are a djvu index
+	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
+	if ( $imageTitle ) {
+		$image = wfFindFile( $imageTitle );
+		if ( $image && $image->isMultiPage() ) {
+			return true;
+		} 
+	}
+	pr_getLinkColours( $page_ids, $colours );
+	return true;
+}		
+	
 
-	// counters
-	$n = $n0 = $n1 = $n2 = $n3 = $n4 = 0;
+/**
+ *  Return the quality colour codes to pages linked from an index page
+ */
+function pr_getLinkColours( $page_ids, &$colours ) {
 
 	$dbr = wfGetDB( DB_SLAVE );
 	$catlinks = $dbr->tableName( 'categorylinks' );
@@ -414,8 +428,6 @@ function pr_getLinkColours( $page_ids, &$colours ) {
 		$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 		if ( preg_match( "/^$page_namespace:(.*?)$/", $pdbk ) ) {
 			$colours[$pdbk] = 'quality1';
-			$n++;
-
 			if ( !isset( $query ) ) {
 				$query =  "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(";
 			} else {
@@ -434,29 +446,22 @@ function pr_getLinkColours( $page_ids, &$colours ) {
 			switch( $x->cl_to ) {
 			case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ):
 				$colours[$pdbk] = 'quality0';
-				$n0++;
 				break;
 			case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality1_category' ) ):
 				$colours[$pdbk] = 'quality1';
-				$n1++;
 				break;
 			case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) ):
 				$colours[$pdbk] = 'quality2';
-				$n2++;
 				break;
 			case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) ):
 				$colours[$pdbk] = 'quality3';
-				$n3++;
 				break;
 			case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) ):
 				$colours[$pdbk] = 'quality4';
-				$n4++;
 				break;
 			}
 		}
 	}
-
-	return true;
 }
 
 function pr_imageMessage(  &$imgpage , &$wgOut ) {
