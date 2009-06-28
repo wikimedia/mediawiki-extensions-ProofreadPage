@@ -11,6 +11,7 @@ $wgExtensionMessagesFiles['ProofreadPage'] = dirname( __FILE__ ) . '/ProofreadPa
 $wgHooks['BeforePageDisplay'][] = 'pr_beforePageDisplay';
 $wgHooks['GetLinkColours'][] = 'pr_getLinkColoursHook';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'pr_imageMessage';
+$wgHooks['EditPage::attemptSave'][] = 'pr_attemptSave';
 $wgHooks['ArticleSaveComplete'][] = 'pr_articleSave';
 $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 
@@ -750,7 +751,75 @@ function pr_renderPages( $input, $args ) {
 	return $out;
 }
 
+/* 
+ * Try to parse a page.
+ * Return quality status of the page and username of the proofreader
+ * Return -1 if the page cannot be parsed
+ */
+function pr_parse_page( $text ) {
+	$page_regexp = "/^<noinclude>\{\{PageQuality\|(0|1|2|3|4)\|(.*?)\}\}(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s";
+        if( !preg_match( $page_regexp, $text, $m ) ) {
+		return array( -1, null ); 
+	}
+	return array( intval($m[1]), $m[2] );
+}
 
+
+/*
+ * Check the format of pages in "Page" namespace. 
+ * Todo: check that listed pages are unique for pages in "Index" namespace.
+ */
+
+function pr_attemptSave( $editpage ) {
+	global $wgOut, $wgUser;
+
+	wfLoadExtensionMessages( 'ProofreadPage' );
+	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+
+	$title = $editpage->mTitle;
+	if ( ! preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		return true;
+	}
+
+	//$text = $editpage->mArticle->replaceSection( $editpage->section, $editpage->textbox1, $editpage->summary, $editpage->edittime );
+	$text = $editpage->textbox1;
+
+	//parse the page
+	list( $q , $username ) = pr_parse_page( $text );
+	if( $q == -1 ) {
+		$wgOut->showErrorPage( 'proofreadpage_badpage', 'proofreadpage_badpagetext' );
+		return false;
+	}
+	//read previous revision, so that I know how much I need to add to pr_index
+	$rev = Revision::newFromTitle( $title );
+	if( $rev ) {
+		$old_text = $rev->getText();
+		list( $old_q , $old_username ) = pr_parse_page( $old_text );
+	} else {
+		$old_q = -1;
+	}
+
+	//check usernames
+	if( $old_q != -1 ) {
+		if( ($old_q != $q) && $wgUser->isAnon() ) {
+			$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
+			return false;
+		}
+		if ( $wgUser->getName() != $username ) {
+			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
+			return false;
+		}
+		if( ( ($q == 4) && ($old_q < 3) ) || ( ($q == 4) && ($old_q == 3) && ($old_username == $username) ) ) {
+			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
+			return false;
+		}
+	}
+	else {
+		$old_q = 1;
+	}
+	return true;
+}
 
 
 /* update coloured links in index pages */
@@ -758,8 +827,6 @@ function pr_articleSave( $article ) {
 
 	wfLoadExtensionMessages( 'ProofreadPage' );
 	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-
 	$title = $article->mTitle;
 
 	if ( preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
@@ -767,7 +834,7 @@ function pr_articleSave( $article ) {
 			pr_load_index( $title );
 		}
 		if ( $title->pr_index_title ) {
-			$index_title = Title::makeTitleSafe( $index_namespace, $title->pr_index_title );
+			$index_title = Title::newFromText( $title->pr_index_title );
 			$index_title->invalidateCache();
 		}
 	}
