@@ -580,19 +580,19 @@ function  pr_fill_table(horizontal_layout){
 	self.pr_horiz = horizontal_layout;
 
 	//get the size of the window
-	var width, height;
-	if (parseInt(navigator.appVersion)>3) {
-		if (navigator.appName.indexOf("Microsoft")!=-1) {
-			height = document.body.clientHeight;
-			width = document.body.offsetWidth;
-		}
-		else{
-			height = window.innerHeight;
-			width = window.innerWidth;
-		}
-	}
-	else {
-		width = 800; height = 600;
+	var width = 0, height = 0;
+	if( typeof( window.innerWidth ) == 'number' ) {
+		//Non-IE
+		width = window.innerWidth;
+		height = window.innerHeight;
+	} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+		//IE 6+ in 'standards compliant mode'
+		width = document.documentElement.clientWidth;
+		height = document.documentElement.clientHeight;
+	} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+		//IE 4 compatible
+		width = document.body.clientWidth;
+		height = document.body.clientHeight;
 	}
 
 	//fill the image container	
