@@ -289,8 +289,8 @@ EOT
 	);
 	$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
 var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
-var prp_default_header = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_default_header' ) ) . "\";
-var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_default_footer' ) ) . "\";
+var prp_default_header = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_header', true, false, false ) ) . "\";
+var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_footer', true, false, false ) ) . "\";
 </script>\n"
 	);
 }
