@@ -782,21 +782,28 @@ function pr_attemptSave( $editpage ) {
 		return true;
 	}
 
-	//$text = $editpage->mArticle->replaceSection( $editpage->section, $editpage->textbox1, $editpage->summary, $editpage->edittime );
 	$text = $editpage->textbox1;
 
 	//parse the page
 	list( $q , $username ) = pr_parse_page( $text );
 	if( $q == -1 ) {
+		if( !preg_match( "/\{\{PageQuality\|(.*?)\}\}/is", $text ) ) {
+			return true;
+		}
 		$wgOut->showErrorPage( 'proofreadpage_badpage', 'proofreadpage_badpagetext' );
 		return false;
 	}
+
 	//read previous revision, so that I know how much I need to add to pr_index
 	$rev = Revision::newFromTitle( $title );
 	if( $rev ) {
 		$old_text = $rev->getText();
 		list( $old_q , $old_username ) = pr_parse_page( $old_text );
 	} else {
+		if($q == 4) {
+			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
+			return false;
+		}
 		$old_q = -1;
 	}
 
