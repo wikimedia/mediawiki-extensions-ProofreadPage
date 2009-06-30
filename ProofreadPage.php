@@ -12,7 +12,8 @@ $wgHooks['BeforePageDisplay'][] = 'pr_beforePageDisplay';
 $wgHooks['GetLinkColours'][] = 'pr_getLinkColoursHook';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'pr_imageMessage';
 $wgHooks['EditPage::attemptSave'][] = 'pr_attemptSave';
-$wgHooks['ArticleSaveComplete'][] = 'pr_articleSave';
+$wgHooks['ArticleSaveComplete'][] = 'pr_articleSaveComplete';
+$wgHooks['ArticleDelete'][] = 'pr_articleDelete';
 $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 
 # Allows for extracting text from djvu files. To enable, set to 'djvutxt' or similar
@@ -35,23 +36,27 @@ $wgExtensionCredits['other'][] = array(
 );
 
 $wgExtensionFunctions[] = "pr_main";
+
 function pr_main() {
 	global $wgParser;
+	global $pr_page_namespace, $pr_index_namespace;
 	$wgParser->setHook( "pagelist", "pr_renderPageList" );
 	$wgParser->setHook( "pages", "pr_renderPages" );
+	wfLoadExtensionMessages( 'ProofreadPage' );
+	$pr_page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
+	$pr_index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+
 }
+
 
 
 /**
  * Query the database to find if the current page is referred in an Index page. 
  */
 function pr_load_index( $title ) {
-
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+	global $pr_page_namespace, $pr_index_namespace;
 
 	$title->pr_index_title = NULL;
-
 	$dbr = wfGetDB( DB_SLAVE );
 	$result = $dbr->select(
 			array( 'page', 'pagelinks' ),
@@ -65,7 +70,7 @@ function pr_load_index( $title ) {
 
 	while ( $x = $dbr->fetchObject( $result ) ) {
 		$ref_title = Title::makeTitle( $x->page_namespace, $x->page_title );
-		if ( preg_match( "/^$index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
+		if ( preg_match( "/^$pr_index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
 			$title->pr_index_title = $ref_title->getPrefixedText();
 			break;
 		}
@@ -75,8 +80,7 @@ function pr_load_index( $title ) {
 	if ( $title->pr_index_title ) return;
 
 	/*check if we are a page of a multipage file*/
-
-	if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $title->getPrefixedText(), $m ) ) {
+	if ( preg_match( "/^$pr_page_namespace:(.*?)(\/([0-9]*)|)$/", $title->getPrefixedText(), $m ) ) {
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	}
 	if ( !$imageTitle ) return;
@@ -96,9 +100,9 @@ function pr_load_index( $title ) {
 			return $err;
 		}
 		$name = $image->getTitle()->getText();
-		$index_name = "$index_namespace:$name";
-		$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
-		$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
+		$index_name = "$pr_index_namespace:$name";
+		$prev_name = "$pr_page_namespace:$name/" . ( $pagenr - 1 );
+		$next_name = "$pr_page_namespace:$name/" . ( $pagenr + 1 );
 		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
 
@@ -117,18 +121,19 @@ function pr_load_index( $title ) {
 /**
  * return the URLs of the index, previous and next pages.
  */
-function pr_navigation( $image ) {
-	global $wgTitle;
-	$index_title = Title::newFromText( $wgTitle->pr_index_title );
+function pr_navigation( $title ) {
+	global $pr_page_namespace, $pr_index_namespace;
 
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	$err = array( '', '', '', array() );
+	$err = array( '', '', '', '', '', array() );
+
+	$index_title = Title::newFromText( $title->pr_index_title );
+	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
+	$image = wfFindFile( $imageTitle );
 
 	// if multipage, we use the page order, but we should read pagenum from the index
 	if ( $image && $image->exists() && $image->isMultiPage() ) {
 		$pagenr = 1;
-		$parts = explode( '/', $wgTitle->getText() );
+		$parts = explode( '/', $title->getText() );
 		if ( count( $parts ) > 1 ) {
 			$pagenr = intval( array_pop( $parts ) );
 		}
@@ -137,9 +142,9 @@ function pr_navigation( $image ) {
 			return $err;
 		}
 		$name = $image->getTitle()->getText();
-		$index_name = "$index_namespace:$name";
-		$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
-		$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
+		$index_name = "$pr_index_namespace:$name";
+		$prev_name = "$pr_page_namespace:$name/" . ( $pagenr - 1 );
+		$next_name = "$pr_page_namespace:$name/" . ( $pagenr + 1 );
 		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
 
@@ -153,27 +158,26 @@ function pr_navigation( $image ) {
 	}
 
 	if ( !$index_title ) {
-		return array( '', $prev_url, $next_url, array() ) ;
+		return array( '', $prev_url, $next_url, '', '', array() ) ;
 	}
 
 	$index_url = $index_title->getFullURL();
 
 	if ( !$index_title->exists() ) {
-		return array( $index_url, $prev_url, $next_url, array() );
+		return array( $index_url, $prev_url, $next_url, '', '', array() );
 	}
 
 	//if the index page exists, find current page number, previous and next pages
 	list( $links, $params, $attributes ) = pr_parse_index($index_title);
 
 	if($params){
-		list($pagenum, $links, $mode) = pr_pageNumber($wgTitle->pr_page_num,$params);
+		list($pagenum, $links, $mode) = pr_pageNumber($title->pr_page_num,$params);
 		$attributes["pagenum"] = $pagenum;
-	}
-	else{
+	} else {
 		for( $i=0; $i<count( $links[1] ); $i++) { 
 			$a_title = Title::newFromText( $links[1][$i] );
 			if(!$a_title) continue; 
-			if( $a_title->getPrefixedText() == $wgTitle->getPrefixedText() ) {
+			if( $a_title->getPrefixedText() == $title->getPrefixedText() ) {
 				$attributes["pagenum"] = $links[3][$i];
 				break;
 			}
@@ -188,7 +192,15 @@ function pr_navigation( $image ) {
 		if($next_title) $next_url = $next_title->getFullURL();
 	}
 
-	return array( $index_url, $prev_url, $next_url, $attributes );
+	// Header and Footer 
+	$header = $attributes['header'] ? $attributes['header'] : wfMsgGetKey( 'proofreadpage_default_header', true, false, false );
+	$footer = $attributes['footer'] ? $attributes['footer'] : wfMsgGetKey( 'proofreadpage_default_footer', true, false, false );
+	foreach ( $attributes as $key => $val ) {
+		$header = str_replace( "{{{{$key}}}}", $val, $header );
+		$footer = str_replace( "{{{{$key}}}}", $val, $footer );
+	}
+
+	return array( $index_url, $prev_url, $next_url, $header, $footer, $attributes );
 
 }
 
@@ -199,12 +211,10 @@ function pr_navigation( $image ) {
  * it will return either a list of links or a list 
  * of parameters to pagelist, and a list of attributes.
  */
-function pr_parse_index($index_title){
+function pr_parse_index( $index_title ){
+	global $pr_page_namespace, $pr_index_namespace;
 
 	$err = array( false, false, array() );
-
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 
 	if ( !$index_title ) return $err;
 	if ( !$index_title->exists() ) return $err;
@@ -223,7 +233,7 @@ function pr_parse_index($index_title){
 		$links = null;
 	} else {
 		$params = null;
-		$tag_pattern = "/\[\[($page_namespace:.*?)(\|(.*?)|)\]\]/i";
+		$tag_pattern = "/\[\[($pr_page_namespace:.*?)(\|(.*?)|)\]\]/i";
 		preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 	}
 
@@ -250,8 +260,8 @@ function pr_parse_index($index_title){
  */
 function pr_beforePageDisplay( &$out ) {
 	global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
+	global $pr_page_namespace, $pr_index_namespace;
 
-	wfLoadExtensionMessages( 'ProofreadPage' );
 	$action = $wgRequest->getVal( 'action' );
 	$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
 	if ( !isset( $wgTitle ) || ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
@@ -259,17 +269,12 @@ function pr_beforePageDisplay( &$out ) {
 	}
 	$out->proofreadPageDone = true;
 
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
-		if ( !isset( $wgTitle->pr_index_title ) ) {
-			pr_load_index( $wgTitle );
-		}
+	if ( preg_match( "/^$pr_page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		pr_preparePage( $out, $m, $isEdit );
 		return true;
 	}
 
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	if ( $isEdit && ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) ) {
+	if ( $isEdit && ( preg_match( "/^$pr_index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) ) {
 		pr_prepareIndex( $out );
 		return true;
 	}
@@ -298,6 +303,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 
 function pr_preparePage( $out, $m, $isEdit ) {
 	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion, $wgProofreadPageMaxWidth;
+	global $wgTitle;
+
+	if ( !isset( $wgTitle->pr_index_title ) ) {
+		pr_load_index( $wgTitle );
+	}
 
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 	if ( !$imageTitle ) {
@@ -331,7 +341,7 @@ function pr_preparePage( $out, $m, $isEdit ) {
 		$thumbURL = '';
 	}
 
-	list( $index_url, $prev_url, $next_url, $attributes ) = pr_navigation( $image );
+	list( $index_url, $prev_url, $next_url, $header, $footer, $attributes ) = pr_navigation( $wgTitle );
 
 	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
 
@@ -346,13 +356,6 @@ function pr_preparePage( $out, $m, $isEdit ) {
 		'proofreadPageNextURL' => $next_url,
 	) + $attributes;
 
-	// Header and Footer 
-	$header = $attributes['header'] ? $attributes['header'] : wfMsgGetKey( 'proofreadpage_default_header', true, false, false );
-	$footer = $attributes['footer'] ? $attributes['footer'] : wfMsgGetKey( 'proofreadpage_default_footer', true, false, false );
-	foreach ( $attributes as $key => $val ) {
-		$header = str_replace( "{{{{$key}}}}", $val, $header );
-		$footer = str_replace( "{{{{$key}}}}", $val, $footer );
-	}
 	$jsVars['proofreadPageHeader'] = $header;
 	$jsVars['proofreadPageFooter'] = $footer;
 
@@ -391,17 +394,15 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
  *  Hook function
  */
 function pr_getLinkColoursHook( $page_ids, &$colours ) {
-
+	global $pr_page_namespace, $pr_index_namespace;
 	global $wgTitle;
 
 	if ( !isset( $wgTitle ) ) {
 		return true;
 	}
-	wfLoadExtensionMessages( 'ProofreadPage' );
 
 	// abort if we are not an index page
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText(), $m ) ) {
+	if ( !preg_match( "/^$pr_index_namespace:(.*?)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
 	}
 	// abort too if we are a djvu index
@@ -421,13 +422,13 @@ function pr_getLinkColoursHook( $page_ids, &$colours ) {
  *  Return the quality colour codes to pages linked from an index page
  */
 function pr_getLinkColours( $page_ids, &$colours ) {
+	global $pr_page_namespace, $pr_index_namespace;
 
 	$dbr = wfGetDB( DB_SLAVE );
 	$catlinks = $dbr->tableName( 'categorylinks' );
 	foreach ( $page_ids as $id => $pdbk ) {
 		// consider only link in page namespace
-		$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-		if ( preg_match( "/^$page_namespace:(.*?)$/", $pdbk ) ) {
+		if ( preg_match( "/^$pr_page_namespace:(.*?)$/", $pdbk ) ) {
 			$colours[$pdbk] = 'quality1';
 			if ( !isset( $query ) ) {
 				$query =  "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(";
@@ -466,19 +467,17 @@ function pr_getLinkColours( $page_ids, &$colours ) {
 }
 
 function pr_imageMessage(  &$imgpage , &$wgOut ) {
+	global $pr_page_namespace, $pr_index_namespace;
 	global $wgUser;
-	$sk = $wgUser->getSkin();
 
 	$image = $imgpage->img;
 	if ( !$image->isMultiPage() ) {
 		return true;
 	}
 
-	wfLoadExtensionMessages( 'ProofreadPage' );
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+	$sk = $wgUser->getSkin();
 	$name = $image->getTitle()->getText();
-
-	$link = $sk->makeKnownLink( "$index_namespace:$name", wfMsg( 'proofreadpage_image_message' ) );
+	$link = $sk->makeKnownLink( "$pr_index_namespace:$name", wfMsg( 'proofreadpage_image_message' ) );
 	$wgOut->addHTML( "{$link}" );
 
 	return true;
@@ -573,11 +572,10 @@ function pr_pageNumber( $i, $args ) {
  * Display a list of coloured links to pages
  */
 function pr_renderPageList( $input, $args ) {
+	global $pr_page_namespace, $pr_index_namespace;
 	global $wgUser, $wgTitle;
-	wfLoadExtensionMessages( 'ProofreadPage' );
 
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
+	if ( !preg_match( "/^$pr_index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return "";
 	}
 
@@ -597,8 +595,7 @@ function pr_renderPageList( $input, $args ) {
 	$dbr = wfGetDB( DB_SLAVE );
 	$pagetable = $dbr->tableName( 'page' );
 
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
+	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
 	if ( $page_ns_index == NULL ) {
 		$page_ns_index = NS_MAIN;
 	}
@@ -641,7 +638,7 @@ function pr_renderPageList( $input, $args ) {
 	$sk = $wgUser->getSkin();
 
 	for ( $i = $from; $i < $to + 1; $i++ ) {
-		$pdbk = "$page_namespace:$name" . '/' . $i ;
+		$pdbk = "$pr_page_namespace:$name" . '/' . $i ;
 		list( $view, $links, $mode ) = pr_pageNumber( $i, $args );
 
 		if ( $mode == 'highroman' || $mode == 'roman' ) $view = '&nbsp;' . $view;
@@ -680,12 +677,8 @@ function pr_renderPageList( $input, $args ) {
  * todo : handle LST...
  */
 function pr_renderPages( $input, $args ) {
+	global $pr_page_namespace, $pr_index_namespace;
 	global $wgParser, $wgTitle;
-
-	wfLoadExtensionMessages( 'ProofreadPage' );
-
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 
 	$index = $args['index'];
 	$from = $args['from'];
@@ -694,12 +687,12 @@ function pr_renderPages( $input, $args ) {
 	if( ! $index ) { 
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
 	}
-	$index_title = Title::newFromText( "$index_namespace:$index" );
+	$index_title = Title::newFromText( "$pr_index_namespace:$index" );
 	if( ! $index_title || ! $index_title->exists() ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 	}
 
-	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$index_namespace.'</a> </span>';
+	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$pr_index_namespace.'</a> </span>';
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
 
 	if( $links==null ) {
@@ -727,7 +720,7 @@ function pr_renderPages( $input, $args ) {
 		}
 
 		for( $i=$from; $i<=$to;$i++ ) {
-			$text = "$page_namespace:$index/" . $i;
+			$text = "$pr_page_namespace:$index/" . $i;
 			list($pagenum, $links, $mode) = pr_pageNumber($i,$params);
 			$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
 			$out.= "{{:".$text."}}";
@@ -739,12 +732,12 @@ function pr_renderPages( $input, $args ) {
 		for( $i=0; $i<count( $links[1] ); $i++) { 
 			$text = $links[1][$i];
 			$pagenum = $links[3][$i];
-			if($text == $page_namespace.":".$from ) $adding = true;
+			if($text == $pr_page_namespace.":".$from ) $adding = true;
 			if($adding){
 				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
 				$out.= "{{:".$text."}}";
 			}
-			if($text == $page_namespace.":".$to ) $adding = false;
+			if($text == $pr_page_namespace.":".$to ) $adding = false;
 		}
 		$out = $wgParser->recursiveTagParse($out);
 	}
@@ -771,14 +764,12 @@ function pr_parse_page( $text ) {
  */
 
 function pr_attemptSave( $editpage ) {
+	global $pr_page_namespace, $pr_index_namespace;
 	global $wgOut, $wgUser;
 
-	wfLoadExtensionMessages( 'ProofreadPage' );
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	$index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-
+	//abort if we are not a page
 	$title = $editpage->mTitle;
-	if ( ! preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+	if ( ! preg_match( "/^$pr_page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 		return true;
 	}
 
@@ -787,11 +778,14 @@ function pr_attemptSave( $editpage ) {
 	//parse the page
 	list( $q , $username ) = pr_parse_page( $text );
 	if( $q == -1 ) {
-		if( !preg_match( "/\{\{PageQuality\|(.*?)\}\}/is", $text ) ) {
-			return true;
-		}
-		$wgOut->showErrorPage( 'proofreadpage_badpage', 'proofreadpage_badpagetext' );
-		return false;
+		//convert to page format
+		$username = $wgUser->getName();
+		pr_load_index( $title );
+		list( $index_url, $prev_url, $next_url, $header, $footer, $attributes ) = pr_navigation( $title );
+		$editpage->textbox1 = 
+			"<noinclude>{{PageQuality|1|$username}}$header\n\n\n</noinclude>"
+			.$text."<noinclude>\n$footer</noinclude>";
+		return true;
 	}
 
 	//read previous revision, so that I know how much I need to add to pr_index
@@ -822,28 +816,30 @@ function pr_attemptSave( $editpage ) {
 			return false;
 		}
 	}
-	else {
-		$old_q = 1;
-	}
+
+	$editpage->mArticle->new_q = $q;
+	$editpage->mArticle->old_q = $old_q;
+
 	return true;
+
 }
 
 
-/* update coloured links in index pages */
-function pr_articleSave( $article ) {
+/*
+ * if I delete a page, I need to update the index 
+ */
+function pr_articleDelete( $article ) {
+	global $pr_page_namespace, $pr_index_namespace;
 
-	wfLoadExtensionMessages( 'ProofreadPage' );
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$title = $article->mTitle;
 
-	if ( preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
-		if ( !isset( $title->pr_index_title ) ) {
-			pr_load_index( $title );
-		}
-		if ( $title->pr_index_title ) {
+	if ( preg_match( "/^$pr_page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		pr_load_index( $title );
+		if( $title->pr_index_title ) {
 			$index_title = Title::newFromText( $title->pr_index_title );
 			$index_title->invalidateCache();
 		}
+		return true;
 	}
 
 	return true;
@@ -851,12 +847,42 @@ function pr_articleSave( $article ) {
 }
 
 
+function pr_articleSaveComplete( $article ) {
+	global $pr_page_namespace, $pr_index_namespace;
+
+	$title = $article->mTitle;
+
+	//return if it is not a page
+	if ( ! preg_match( "/^$pr_page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		return true;
+	}
+
+	/* check if there is an index */
+	if ( !isset( $title->pr_index_title ) ) {
+		pr_load_index( $title );
+	}
+	if( ! $title->pr_index_title ) {
+		return true;
+	}
+
+	/* 
+	 * invalidate the cache of the index page 
+	 */
+	if ( $title->pr_index_title ) {
+		$index_title = Title::newFromText( $title->pr_index_title );
+		$index_title->invalidateCache();
+	}
+
+	return true;
+}
+
+
+/* preload Djvu Text */
 function pr_preloadText( $textbox1, $mTitle ) {
+	global $pr_page_namespace, $pr_index_namespace;
 	global $wgDjvuTxt;
 
-	$page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-
-	if ( $wgDjvuTxt && preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
+	if ( $wgDjvuTxt && preg_match( "/^$pr_page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 		if ( !$imageTitle ) {
 			return true;
@@ -874,3 +900,6 @@ function pr_preloadText( $textbox1, $mTitle ) {
 	}
 	return true;
 }
+
+
+
