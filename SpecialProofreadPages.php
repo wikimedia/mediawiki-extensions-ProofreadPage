@@ -90,17 +90,14 @@ class ProofreadPagesQuery extends QueryPage {
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 
-		$table = "<table style=\"display:inline;line-height:100%;vertical-align:middle;\" border=0 cellpadding=0 cellspacing=0 >
-<tr><td>&nbsp;</td>
+		$table = "<table style=\"line-height:100%;\" border=0 cellpadding=0 cellspacing=0 >
+<tr><td>{$dm}{$plink} {$dm}{$size} &nbsp;</td>
 <td align=center class='quality4' width=\"$q4\">".($q4>10?$q4:"")."</td>
 <td align=center class='quality3' width=\"$q3\">".($q3>10?$q3:"")."</td>
 <td align=center class='quality2' width=\"$q2\">".($q2>10?$q2:"")."</td>
 <td align=center class='quality1' width=\"$q1\">".($q1>10?$q1:"")."</td>
 <td align=center class='quality0' width=\"$q0\">".($q0>10?$q0:"")."</td>
 </tr></table>";
-
-		return $title->exists()
-				? "{$dm}{$plink} {$dm}{$size} $table"
-				: "<s>{$dm}{$plink} {$dm}{$size}</s>";
+		return $title->exists()	? "$table" : "<s>{$dm}{$plink} {$dm}{$size}</s>";
 	}
 }
