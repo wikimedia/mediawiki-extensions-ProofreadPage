@@ -1,5 +1,11 @@
 <?php
 
+/*
+ todo : 
+ - check for dupes in index page : when index is saved
+ - check unicity of the index page : when index is saved too
+*/
+
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
@@ -15,6 +21,16 @@ $wgHooks['EditPage::attemptSave'][] = 'pr_attemptSave';
 $wgHooks['ArticleSaveComplete'][] = 'pr_articleSaveComplete';
 $wgHooks['ArticleDelete'][] = 'pr_articleDelete';
 $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
+$wgHooks['ArticlePurge'][] = 'pr_articlePurge';
+$wgHooks['SpecialMovepageAfterMove'][] = 'pr_movePage';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'pr_schema_update';
+
+
+# special page
+$wgAutoloadClasses['ProofreadPages'] = $dir . 'SpecialProofreadPages.php';
+$wgSpecialPages['ProofreadPages'] = 'ProofreadPages';
+$wgSpecialPageGroups['ProofreadPages'] = 'pages';
+
 
 # Allows for extracting text from djvu files. To enable, set to 'djvutxt' or similar
 $wgDjvutxt = null;
@@ -36,6 +52,16 @@ $wgExtensionCredits['other'][] = array(
 );
 
 $wgExtensionFunctions[] = "pr_main";
+
+
+function pr_schema_update() {
+	global $wgExtNewTables;
+	$base = dirname(__FILE__);
+	$wgExtNewTables[] = array( 'pr_index', "$base/ProofreadPage.sql" ); 
+	return true;
+}
+
+
 
 function pr_main() {
 	global $wgParser;
@@ -175,7 +201,7 @@ function pr_navigation( $title ) {
 		$attributes["pagenum"] = $pagenum;
 	} else {
 		for( $i=0; $i<count( $links[1] ); $i++) { 
-			$a_title = Title::newFromText( $links[1][$i] );
+			$a_title = Title::newFromText( $pr_page_namespace.":".$links[1][$i] );
 			if(!$a_title) continue; 
 			if( $a_title->getPrefixedText() == $title->getPrefixedText() ) {
 				$attributes["pagenum"] = $links[3][$i];
@@ -183,10 +209,10 @@ function pr_navigation( $title ) {
 			}
 		}
 		if( ($i>0) && ($i<count($links[1])) ){
-			$prev_title = Title::newFromText( $links[1][$i-1] );
+			$prev_title = Title::newFromText( $pr_page_namespace.":".$links[1][$i-1] );
 		}
 		if( ($i>=0) && ($i+1<count($links[1])) ){
-			$next_title = Title::newFromText( $links[1][$i+1] );
+			$next_title = Title::newFromText( $pr_page_namespace.":".$links[1][$i+1] );
 		}
 		if($prev_title) $prev_url = $prev_title->getFullURL();
 		if($next_title) $next_url = $next_title->getFullURL();
@@ -233,7 +259,7 @@ function pr_parse_index( $index_title ){
 		$links = null;
 	} else {
 		$params = null;
-		$tag_pattern = "/\[\[($pr_page_namespace:.*?)(\|(.*?)|)\]\]/i";
+		$tag_pattern = "/\[\[$pr_page_namespace:(.*?)(\|(.*?)|)\]\]/i";
 		preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 	}
 
@@ -730,12 +756,13 @@ function pr_renderPages( $input, $args ) {
 		for( $i=0; $i<count( $links[1] ); $i++) { 
 			$text = $links[1][$i];
 			$pagenum = $links[3][$i];
-			if($text == $pr_page_namespace.":".$from ) $adding = true;
+			if($text == $from ) $adding = true;
 			if($adding){
-				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
-				$out.= "{{:".$text."}}";
+				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page="
+				  .$pr_page_namespace.":".$text."|num=$pagenum}}</span>";
+				$out.= "{{:".$pr_page_namespace.":".$text."}}";
 			}
-			if($text == $pr_page_namespace.":".$to ) $adding = false;
+			if($text == $to ) $adding = false;
 		}
 		$out = $wgParser->recursiveTagParse($out);
 	}
@@ -824,18 +851,30 @@ function pr_attemptSave( $editpage ) {
 
 
 /*
- * if I delete a page, I need to update the index 
+ * if I delete a page, I need to update the index table
+ * if I delete an index page too...
  */
 function pr_articleDelete( $article ) {
 	global $pr_page_namespace, $pr_index_namespace;
 
 	$title = $article->mTitle;
 
+	if ( preg_match( "/^$pr_index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		$id = $article->getID();
+		$pr_index = $dbw->tableName( 'pr_index' );
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->query ("DELETE FROM $pr_index WHERE pr_page_id=$id");
+		$dbw->commit();
+		return true;
+	}
+
 	if ( preg_match( "/^$pr_page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 		pr_load_index( $title );
 		if( $title->pr_index_title ) {
 			$index_title = Title::newFromText( $title->pr_index_title );
 			$index_title->invalidateCache();
+			$index = new Article( $index_title );
+			if( $index ) pr_update_pr_index( $index, $title->getDBKey() );
 		}
 		return true;
 	}
@@ -850,10 +889,18 @@ function pr_articleSaveComplete( $article ) {
 
 	$title = $article->mTitle;
 
+	//if it's an index, update pr_index table
+	if ( preg_match( "/^$pr_index_namespace:(.*)$/", $title->getPrefixedText(), $m ) ) {
+		pr_update_pr_index( $article );
+		return true;
+	}
+
 	//return if it is not a page
 	if ( ! preg_match( "/^$pr_page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 		return true;
 	}
+
+	$dbw = wfGetDB( DB_MASTER );
 
 	/* check if there is an index */
 	if ( !isset( $title->pr_index_title ) ) {
@@ -871,6 +918,46 @@ function pr_articleSaveComplete( $article ) {
 		$index_title->invalidateCache();
 	}
 
+	/* 
+	 * update pr_index iteratively
+	 */
+	$index = new Article( $index_title );
+	$index_id = $index->getID();
+	$dbr = wfGetDB( DB_SLAVE );
+	$pr_index = $dbr->tableName( 'pr_index' );
+	$query = "SELECT * FROM $pr_index WHERE pr_page_id=".$index_id;
+	$res = $dbr->query( $query, __METHOD__ );
+	if( $x = $dbr->fetchObject( $res ) ) {
+		$n  = $x->pr_count ;
+		$n0 = $x->pr_q0 ;
+		$n1 = $x->pr_q1 ;
+		$n2 = $x->pr_q2 ;
+		$n3 = $x->pr_q3 ;
+		$n4 = $x->pr_q4 ;
+
+		switch( $article->new_q ) {
+		case 0:	$n0 = $n0 + 1; break;
+		case 1:	$n1 = $n1 + 1; break;
+		case 2:	$n2 = $n2 + 1; break;
+		case 3:	$n3 = $n3 + 1; break;
+		case 4:	$n4 = $n4 + 1; break;
+		}
+
+		switch( $article->old_q ) {
+		case 0:	$n0 = $n0 - 1; break;
+		case 1:	$n1 = $n1 - 1; break;
+		case 2:	$n2 = $n2 - 1; break;
+		case 3:	$n3 = $n3 - 1; break;
+		case 4:	$n4 = $n4 - 1; break;
+		}
+
+		$query = "REPLACE INTO $pr_index (pr_page_id, pr_count, pr_q0, pr_q1, pr_q2, pr_q3, pr_q4) VALUES ({$index_id},$n,$n0,$n1,$n2,$n3,$n4)";
+		$dbw->query ( $query  );
+		$dbw->commit();
+
+	}
+	$dbr->freeResult( $res );
+	
 	return true;
 }
 
@@ -901,3 +988,133 @@ function pr_preloadText( $textbox1, $mTitle ) {
 
 
 
+function pr_movePage( $form, $ot, $nt ) {
+	global $pr_page_namespace, $pr_index_namespace;
+
+	if ( preg_match( "/^$pr_page_namespace:(.*)$/", $ot->getPrefixedText() ) ) {
+		pr_load_index( $ot );
+		if( $ot->pr_index_title ) {
+			$index_title = Title::newFromText( $ot->pr_index_title );
+			$index_title->invalidateCache();
+			$index = new Article( $index_title );
+			if( $index ) pr_update_pr_index( $index );
+		}
+		return true;
+	}
+
+	if ( preg_match( "/^$pr_page_namespace:(.*)$/", $nt->getPrefixedText() ) ) {
+		pr_load_index( $nt );
+		if( $nt->pr_index_title && ($nt->pr_index_title!=$ot->pr_index_title) ) {
+			$index_title = Title::newFromText( $nt->pr_index_title );
+			$index_title->invalidateCache();
+			$index = new Article( $index_title );
+			if( $index ) pr_update_pr_index( $index );
+		}
+		return true;
+	}
+	return true;
+}
+
+
+/* 
+ * When an index page is created or purged, recompute pr_index values
+ */
+function pr_articlePurge( $article ) {
+	global $pr_page_namespace, $pr_index_namespace;
+
+	$title = $article->mTitle;
+	if ( preg_match( "/^$pr_index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		pr_update_pr_index( $article );
+		return true;
+	}
+	return true;
+}
+
+
+
+/*
+ * update the pr_index entry of an article
+ */
+function pr_update_pr_index( $index, $deletedpage=null ) {
+	global $pr_page_namespace, $pr_index_namespace;
+
+	$index_title = $index->mTitle;
+	$index_id = $index->getID();
+
+	//read the list of pages
+	$pages = array();
+	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
+	if( $links==null ) {
+		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
+		if ( $imageTitle ) {
+			$image = wfFindFile( $imageTitle );
+			if ( $image && $image->isMultiPage() && $image->pageCount() ) {
+				$n = $image->pageCount();
+				for ( $i = 1; $i <= $n; $i++ ) {
+					$page = $index_title->getDBKey().'/'.$i;
+					if($page != $deletedpage) array_push( $pages, $page );
+				}
+			}
+		}
+	} else {
+		$n = count($links[1]);
+		for ( $i = 0; $i < $n; $i++ ) {
+			$page = str_replace( ' ' , '_' , $links[1][$i] );
+			if($page != $deletedpage) array_push( $pages, $page );
+		}
+	}
+	$n0 = $n1 = $n2 = $n3 = $n4 = 0;
+
+	$dbr = wfGetDB( DB_SLAVE );
+	$catlinks = $dbr->tableName( 'categorylinks' );
+	$page = $dbr->tableName( 'page' );
+	$pagelist = "'".implode( "', '", $pages)."'";
+	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
+	$query = "SELECT COUNT(page_id) AS count FROM $page LEFT JOIN $catlinks ON cl_from=page_id WHERE cl_to='###' AND page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
+
+	$q0 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
+	$res = $dbr->query( str_replace( '###', $q0, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n0 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$q1 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality1_category' ) );
+	$res = $dbr->query( str_replace( '###', $q1, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n1 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$q2 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) );
+	$res = $dbr->query( str_replace( '###', $q2, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n2 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$q3 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) );
+	$res = $dbr->query( str_replace( '###', $q3, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n3 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$q4 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) );
+	$res = $dbr->query( str_replace( '###', $q4, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n4 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$dbw = wfGetDB( DB_MASTER );
+	$pr_index = $dbw->tableName( 'pr_index' );
+	$query = "REPLACE INTO $pr_index (pr_page_id, pr_count, pr_q0, pr_q1, pr_q2, pr_q3, pr_q4) VALUES ({$index_id},$n,$n0,$n1,$n2,$n3,$n4)";
+	$dbw->query ( $query  );
+	$dbw->commit();
+}

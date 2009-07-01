@@ -8,6 +8,7 @@
 $messages = array();
 
 $messages['en'] = array(
+	'proofreadpages'                  => 'List of index pages',
 	'proofreadpage_desc'              => 'Allow easy comparison of text to the original scan',
 	'proofreadpage_namespace'         => 'Page',
 	'proofreadpage_index_namespace'   => 'Index',
