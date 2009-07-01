@@ -618,6 +618,7 @@ Bemerkungen||10',
  * @author Michawiki
  */
 $messages['dsb'] = array(
+	'proofreadpages' => 'Lisćina indeksowych bokow',
 	'proofreadpage_desc' => 'Zmóžnja lažke pśirownowanje teksta z originalnym skanom',
 	'proofreadpage_namespace' => 'Bok',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -1263,6 +1264,7 @@ Napomene||10',
  * @author Michawiki
  */
 $messages['hsb'] = array(
+	'proofreadpages' => 'Lisćina indeksowych stronow',
 	'proofreadpage_desc' => 'Lochke přirunanje teksta z originalnym skanom dowolić',
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -1764,7 +1766,7 @@ $messages['ksh'] = array(
 	'proofreadpage_badpagetext' => 'Dat Fommaat vun dä Sigg, di De jrahdt afzeshpeischere versöhk häß, eß verkiehert.',
 	'proofreadpage_nologin' => 'Nit enjelogk',
 	'proofreadpage_nologintext' => 'Do möötß ald [[Special:UserLogin|enjelogg]] sin, öm dä {{int:proofreadpage_page_status}} hee ze ändere.',
-	'proofreadpage_notallowed' => 'Nit zohjelohße',
+	'proofreadpage_notallowed' => 'Änderung nit zohjelohße',
 	'proofreadpage_notallowedtext' => 'Nit zohjelohße.',
 	'proofreadpage_number_expected' => 'Fähler: En Zahl weet jebruch',
 	'proofreadpage_interval_too_large' => 'Fähler: Dä Affschtand es zoh jruuß',
@@ -2553,6 +2555,7 @@ Note||10",
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
+	'proofreadpages' => 'Список страниц каталогов',
 	'proofreadpage_desc' => 'Позволяет в удобном виде сравнивать текст и отсканированное изображение оригинала',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -2647,6 +2650,7 @@ $messages['sc'] = array(
  * @author Helix84
  */
 $messages['sk'] = array(
+	'proofreadpages' => 'Zoznam indexových stránok',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnanie textu s originálnym skenom',
 	'proofreadpage_namespace' => 'Stránka',
 	'proofreadpage_index_namespace' => 'Index',
