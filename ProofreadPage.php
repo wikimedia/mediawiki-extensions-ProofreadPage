@@ -124,7 +124,7 @@ function pr_load_index( $title ) {
 function pr_navigation( $title ) {
 	global $pr_page_namespace, $pr_index_namespace;
 
-	$err = array( '', '', '', '', '', array() );
+	$err = array( '', '', '', '', '' );
 
 	$index_title = Title::newFromText( $title->pr_index_title );
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
@@ -158,13 +158,13 @@ function pr_navigation( $title ) {
 	}
 
 	if ( !$index_title ) {
-		return array( '', $prev_url, $next_url, '', '', array() ) ;
+		return array( '', $prev_url, $next_url, '', '' ) ;
 	}
 
 	$index_url = $index_title->getFullURL();
 
 	if ( !$index_title->exists() ) {
-		return array( $index_url, $prev_url, $next_url, '', '', array() );
+		return array( $index_url, $prev_url, $next_url, '', '' );
 	}
 
 	//if the index page exists, find current page number, previous and next pages
@@ -200,7 +200,7 @@ function pr_navigation( $title ) {
 		$footer = str_replace( "{{{{$key}}}}", $val, $footer );
 	}
 
-	return array( $index_url, $prev_url, $next_url, $header, $footer, $attributes );
+	return array( $index_url, $prev_url, $next_url, $header, $footer );
 
 }
 
@@ -341,7 +341,7 @@ function pr_preparePage( $out, $m, $isEdit ) {
 		$thumbURL = '';
 	}
 
-	list( $index_url, $prev_url, $next_url, $header, $footer, $attributes ) = pr_navigation( $wgTitle );
+	list( $index_url, $prev_url, $next_url, $header, $footer ) = pr_navigation( $wgTitle );
 
 	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
 
@@ -354,11 +354,9 @@ function pr_preparePage( $out, $m, $isEdit ) {
 		'proofreadPageIndexURL' => $index_url,
 		'proofreadPagePrevURL' => $prev_url,
 		'proofreadPageNextURL' => $next_url,
-	) + $attributes;
-
-	$jsVars['proofreadPageHeader'] = $header;
-	$jsVars['proofreadPageFooter'] = $footer;
-
+		'proofreadPageHeader' => $header,
+		'proofreadPageFooter' => $footer,
+	);
 	$varScript = Skin::makeVariablesScript( $jsVars );
 
 	$out->addScript( <<<EOT
@@ -781,7 +779,7 @@ function pr_attemptSave( $editpage ) {
 		//convert to page format
 		$username = $wgUser->getName();
 		pr_load_index( $title );
-		list( $index_url, $prev_url, $next_url, $header, $footer, $attributes ) = pr_navigation( $title );
+		list( $index_url, $prev_url, $next_url, $header, $footer ) = pr_navigation( $title );
 		$editpage->textbox1 = 
 			"<noinclude>{{PageQuality|1|$username}}$header\n\n\n</noinclude>"
 			.$text."<noinclude>\n$footer</noinclude>";
