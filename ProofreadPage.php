@@ -832,7 +832,7 @@ function pr_attemptSave( $editpage ) {
 			$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
 			return false;
 		}
-		if ( $wgUser->getName() != $username ) {
+		if ( ($old_q != $q) && ($wgUser->getName() != $username) ) {
 			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
 			return false;
 		}
