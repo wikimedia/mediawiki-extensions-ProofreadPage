@@ -1080,14 +1080,6 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 		$dbr->freeResult( $res );
 	}
 
-	$q1 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality1_category' ) );
-	$res = $dbr->query( str_replace( '###', $q1, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n1 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
 	$q2 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) );
 	$res = $dbr->query( str_replace( '###', $q2, $query) , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
@@ -1112,6 +1104,14 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 		$dbr->freeResult( $res );
 	}
 
+	$query = "SELECT COUNT(page_id) AS count FROM $page WHERE page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
+	$res = $dbr->query( $query , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n1 = $row->count - $n0 - $n2 - $n3 - $n4;
+		$dbr->freeResult( $res );
+	}
+	
 	$dbw = wfGetDB( DB_MASTER );
 	$pr_index = $dbw->tableName( 'pr_index' );
 	$query = "REPLACE INTO $pr_index (pr_page_id, pr_count, pr_q0, pr_q1, pr_q2, pr_q3, pr_q4) VALUES ({$index_id},$n,$n0,$n1,$n2,$n3,$n4)";
