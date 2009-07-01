@@ -170,7 +170,7 @@ function pr_navigation( $title ) {
 	//if the index page exists, find current page number, previous and next pages
 	list( $links, $params, $attributes ) = pr_parse_index($index_title);
 
-	if($params){
+	if( $links==null ) {
 		list($pagenum, $links, $mode) = pr_pageNumber($title->pr_page_num,$params);
 		$attributes["pagenum"] = $pagenum;
 	} else {
