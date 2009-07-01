@@ -30,7 +30,7 @@ class ProofreadPages extends SpecialPage {
 class ProofreadPagesQuery extends QueryPage {
 
 	function getName() {
-		return 'ProofreadPagesQuery';
+		return 'ProofreadPages';
 	}
 
 	function isExpensive() {
@@ -90,7 +90,7 @@ class ProofreadPagesQuery extends QueryPage {
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 
-		$table = "<table style=\"line-height:100%;\" border=0 cellpadding=0 cellspacing=0 >
+		$table = "<table border=0 cellpadding=0 cellspacing=0 >
 <tr><td>{$dm}{$plink} {$dm}{$size} &nbsp;</td>
 <td align=center class='quality4' width=\"$q4\">".($q4>10?$q4:"")."</td>
 <td align=center class='quality3' width=\"$q3\">".($q3>10?$q3:"")."</td>

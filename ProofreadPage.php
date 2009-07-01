@@ -861,8 +861,8 @@ function pr_articleDelete( $article ) {
 
 	if ( preg_match( "/^$pr_index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 		$id = $article->getID();
-		$pr_index = $dbw->tableName( 'pr_index' );
 		$dbw = wfGetDB( DB_MASTER );
+		$pr_index = $dbw->tableName( 'pr_index' );
 		$dbw->query ("DELETE FROM $pr_index WHERE pr_page_id=$id");
 		$dbw->commit();
 		return true;
