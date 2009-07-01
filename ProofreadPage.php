@@ -429,14 +429,6 @@ function pr_getLinkColoursHook( $page_ids, &$colours ) {
 	if ( !preg_match( "/^$pr_index_namespace:(.*?)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return true;
 	}
-	// abort too if we are a djvu index
-	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
-	if ( $imageTitle ) {
-		$image = wfFindFile( $imageTitle );
-		if ( $image && $image->isMultiPage() ) {
-			return true;
-		} 
-	}
 	pr_getLinkColours( $page_ids, $colours );
 	return true;
 }		
@@ -597,7 +589,7 @@ function pr_pageNumber( $i, $args ) {
  */
 function pr_renderPageList( $input, $args ) {
 	global $pr_page_namespace, $pr_index_namespace;
-	global $wgUser, $wgTitle;
+	global $wgUser, $wgTitle, $wgParser;
 
 	if ( !preg_match( "/^$pr_index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
 		return "";
@@ -636,31 +628,6 @@ function pr_renderPageList( $input, $args ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
 	}
 
-	for ( $i = $from - 1; $i < $to; $i++ ) {
-		if ( !isset( $query ) ) {
-			$query =  "SELECT page_id, page_title, page_namespace";
-			$query .= " FROM $pagetable WHERE (page_namespace=" . intval( $page_ns_index ) . " AND page_title IN(";
-		} else {
-			$query .= ', ';
-		}
-		$link_name = "$name" . '/' . ( $i + 1 ) ;
-		$query .= $dbr->addQuotes( $link_name );
-	}
-	$query .= '))';
-	$res = $dbr->query( $query, __METHOD__ );
-
-	$colours = array();
-	$linkcolour_ids = array();
-	while ( $s = $dbr->fetchObject( $res ) ) {
-		$title = Title::makeTitle( $s->page_namespace, $s->page_title );
-		$pdbk = $title->getPrefixedDBkey();
-		$colours[$pdbk] = 'known';
-		$linkcolour_ids[$s->page_id] = $pdbk;
-	}
-	pr_getLinkColours( $linkcolour_ids, $colours );
-
-	$sk = $wgUser->getSkin();
-
 	for ( $i = $from; $i < $to + 1; $i++ ) {
 		$pdbk = "$pr_page_namespace:$name" . '/' . $i ;
 		list( $view, $links, $mode ) = pr_pageNumber( $i, $args );
@@ -680,14 +647,10 @@ function pr_renderPageList( $input, $args ) {
 		if ( $links == false ) {
 			$return .= $view . " ";
 		} else {
-			if ( !isset( $colours[$pdbk] ) ) {
-				$link = $sk->makeBrokenLinkObj( $title, $view );
-			} else {
-				$link = $sk->makeColouredLinkObj( $title, $colours[$pdbk], $view );
-			}
-			$return .= "{$link} ";
+			$return .= "[[".$title->getPrefixedText()."|$view]] ";
 		}
 	}
+	$return = $wgParser->recursiveTagParse($return);
 	return $return;
 }
 
