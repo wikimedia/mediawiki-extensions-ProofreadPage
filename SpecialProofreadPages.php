@@ -73,8 +73,6 @@ class ProofreadPagesQuery extends QueryPage {
 		global $wgLang, $wgContLang;
 		global $pr_index_namespace;
 
-		$dm = $wgContLang->getDirMark();
-
 		$title = Title::newFromText( $pr_index_namespace.":".$result->title );
 
 		if ( !$title ) {
@@ -83,21 +81,19 @@ class ProofreadPagesQuery extends QueryPage {
 		$plink = $this->isCached()
 		  ? $skin->makeLinkObj( $title , $title->getText() )
 			: $skin->makeKnownLinkObj( $title , $title->getText() );
-		$size = "[".$result->pr_count."&nbsp;pages]&nbsp;&nbsp;";
+
+		if ( !$title->exists() ) {
+			return "<s>{$plink}</s>";
+		}
+
+		$size = $result->pr_count;
 		$q0 = $result->pr_q0;
 		$q1 = $result->pr_q1;
 		$q2 = $result->pr_q2;
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 
-		$table = "<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>{$dm}{$plink} {$dm}{$size} &nbsp;</td>
-<td align=center class='quality4' width=\"$q4\">".($q4>10?$q4:"")."</td>
-<td align=center class='quality3' width=\"$q3\">".($q3>10?$q3:"")."</td>
-<td align=center class='quality2' width=\"$q2\">".($q2>10?$q2:"")."</td>
-<td align=center class='quality1' width=\"$q1\">".($q1>10?$q1:"")."</td>
-<td align=center class='quality0' width=\"$q0\">".($q0>10?$q0:"")."</td>
-</tr></table>";
-		return $title->exists()	? "$table" : "<s>{$dm}{$plink} {$dm}{$size}</s>";
+		$output = wfMsgForContent( 'proofreadpage_indexlist_item', $plink, $size, $q0, $q1, $q2, $q3, $q4 );
+		return $output; 
 	}
 }

@@ -53,7 +53,23 @@ Pages||20
 Remarks||10',
 	'proofreadpage_default_header'        => '<div class="pagetext">',
 	'proofreadpage_default_footer'        => '<references/></div>',
-	'proofreadpage_quality_message'       => '<!-- -->',
+	'proofreadpage_quality_message'       => "<table style=\"line-height:40%;\" border=0 cellpadding=0 cellspacing=0 ><tr>
+<td align=center >&nbsp;</td>
+<td align=center class='quality4' width=\"$5\"></td>
+<td align=center class='quality3' width=\"$4\"></td>
+<td align=center class='quality2' width=\"$3\"></td>
+<td align=center class='quality1' width=\"$2\"></td>
+<td align=center class='quality0' width=\"$1\"></td>
+<td ><span id=pr_index style=\"visibility:hidden;\">$7</span></td>
+</tr></table>",
+	'proofreadpage_indexlist_item'        => "<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;pages]&nbsp;&nbsp;</td>
+<td align=center class='quality4' width=\"$7\"></td>
+<td align=center class='quality3' width=\"$6\"></td>
+<td align=center class='quality2' width=\"$5\"></td>
+<td align=center class='quality1' width=\"$4\"></td>
+<td align=center class='quality0' width=\"$3\"></td>
+</tr></table>",
 );
 
 /** Message documentation (Message documentation)
