@@ -220,8 +220,8 @@ function pr_navigation( $title ) {
 	}
 
 	// Header and Footer 
-	$header = $attributes['header'] ? $attributes['header'] : wfMsgGetKey( 'proofreadpage_default_header', true, false, false );
-	$footer = $attributes['footer'] ? $attributes['footer'] : wfMsgGetKey( 'proofreadpage_default_footer', true, false, false );
+	$header = $attributes['header'] ? $attributes['header'] : wfMsgGetKey( 'proofreadpage_default_header', true, true, false );
+	$footer = $attributes['footer'] ? $attributes['footer'] : wfMsgGetKey( 'proofreadpage_default_footer', true, true, false );
 	foreach ( $attributes as $key => $val ) {
 		$header = str_replace( "{{{{$key}}}}", $val, $header );
 		$footer = str_replace( "{{{{$key}}}}", $val, $footer );
@@ -321,8 +321,8 @@ EOT
 	);
 	$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
 var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
-var prp_default_header = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_header', true, false, false ) ) . "\";
-var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_footer', true, false, false ) ) . "\";
+var prp_default_header = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_header', true, true, false ) ) . "\";
+var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_footer', true, true, false ) ) . "\";
 </script>\n"
 	);
 }
