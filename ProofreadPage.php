@@ -24,6 +24,7 @@ $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 $wgHooks['ArticlePurge'][] = 'pr_articlePurge';
 $wgHooks['SpecialMovepageAfterMove'][] = 'pr_movePage';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'pr_schema_update';
+$wgHooks['OutputPageBeforeHTML'][] = 'pr_OutputPageBeforeHTML';
 
 
 # special page
@@ -1081,3 +1082,96 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 	$dbw->query ( $query  );
 	$dbw->commit();
 }
+
+
+
+
+/*
+ * In ns-0, display the proofreading status of transcluded pages
+ */
+function pr_OutputPageBeforeHTML( $out, $text ) {
+	global $wgTitle, $wgUser;
+	global $pr_page_namespace, $pr_index_namespace;
+
+	if($wgTitle->getNamespace() != NS_MAIN){
+		return true;
+	}
+
+	$id = $wgTitle->mArticleID;
+	if($id == -1) {
+		return true;
+	}
+	
+	$dbr = wfGetDB( DB_SLAVE );
+	$pr_index = $dbr->tableName( 'pr_index' );
+	$page = $dbr->tableName( 'page' );
+	$pagelinks = $dbr->tableName( 'pagelinks' );
+	$templatelinks = $dbr->tableName( 'templatelinks' );
+	$catlinks = $dbr->tableName( 'categorylinks' );
+	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
+	$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_index_namespace ) );
+
+	# count transclusions from page namespace
+	$query = "SELECT COUNT(page_id) AS count FROM templatelinks LEFT JOIN $page ON page_title=tl_title where tl_from=$id and tl_namespace=$page_ns_index";
+	$res = $dbr->query( $query , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n = $row->count;
+		$dbr->freeResult( $res );
+	}
+	if($n == 0) {
+		return true;
+	}
+
+	# find the proofreading status of transclusions
+	$query = "SELECT COUNT(page_id) AS count FROM templatelinks LEFT JOIN $page ON page_title=tl_title LEFT JOIN $catlinks ON cl_from=page_id where tl_from=$id and tl_namespace=$page_ns_index AND cl_to='###'";
+
+	$q4 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) );
+	$res = $dbr->query( str_replace( '###', $q4, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n4 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$q3 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) );
+	$res = $dbr->query( str_replace( '###', $q3, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n3 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$q2 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) );
+	$res = $dbr->query( str_replace( '###', $q2, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n2 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	$q0 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
+	$res = $dbr->query( str_replace( '###', $q0, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n0 = $row->count;
+		$dbr->freeResult( $res );
+	}
+
+	# q1 is default value
+	$n1 = $n - $n0 - $n2 - $n3 - $n4;
+
+	# find the index page
+	$indexquery = "SELECT DISTINCT p2.page_title AS title FROM $templatelinks LEFT JOIN $page AS p1 ON page_title=tl_title LEFT JOIN $pagelinks ON pl_title=page_title LEFT JOIN $page AS p2 ON p2.page_id=pl_from WHERE tl_from=$id AND tl_namespace=$page_ns_index AND pl_title=p1.page_title AND p2.page_namespace=$index_ns_index";
+	$res = $dbr->query( $indexquery , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$title = $row->title;
+		$dbr->freeResult( $res );
+	}
+	$sk = $wgUser->getSkin();
+	$indexlink = $sk->makeKnownLink( "$pr_index_namespace:$title", "[index]" );
+	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0, $n1, $n2, $n3, $n4, $n, $indexlink );
+	$out->setSubtitle($output);
+	return true;
+};

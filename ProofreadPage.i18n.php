@@ -51,6 +51,7 @@ Pages||20
 Remarks||10',
 	'proofreadpage_default_header'        => '<div class="pagetext">',
 	'proofreadpage_default_footer'        => '<references/></div>',
+	'proofreadpage_quality_message'       => '<!-- -->',
 );
 
 /** Message documentation (Message documentation)
