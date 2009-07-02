@@ -680,7 +680,7 @@ function pr_renderPages( $input, $args ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 	}
 
-	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$pr_index_namespace.'</a> </span>';
+	$out = '';
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
 
 	if( $links==null ) {
