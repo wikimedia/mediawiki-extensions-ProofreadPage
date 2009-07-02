@@ -63,14 +63,13 @@ Remarks||10',
 <td ><span id=pr_index style=\"visibility:hidden;\">$7</span></td>
 </tr></table>",
 	'proofreadpage_indexlist_item'        => "<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{int:proofreadpage_indexlist_item_pages}}]&nbsp;&nbsp;</td>
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|page|pages}}]&nbsp;&nbsp;</td>
 <td align=center class='quality4' width=\"$7\"></td>
 <td align=center class='quality3' width=\"$6\"></td>
 <td align=center class='quality2' width=\"$5\"></td>
 <td align=center class='quality1' width=\"$4\"></td>
 <td align=center class='quality0' width=\"$3\"></td>
 </tr></table>",
-	'proofreadpage_indexlist_item_pages'  => 'pages',
 );
 
 /** Message documentation (Message documentation)
@@ -94,7 +93,6 @@ Meaning: "This is a duplicate link"',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
-	'proofreadpage_indexlist_item_pages' => 'Substituted in {{msg-mw|proofreadpage_indexlist_item}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -684,7 +682,6 @@ Wudawaŕ
 Wobraz|Titelowy wobraz
 Boki||20
 Pśispomnjeśa||10',
-	'proofreadpage_indexlist_item_pages' => 'boki',
 );
 
 /** Ewe (Eʋegbe) */
@@ -1159,7 +1156,6 @@ Quälle
 Bild|Titelbild
 Syte||20
 Aamerkige||10',
-	'proofreadpage_indexlist_item_pages' => 'Syte',
 );
 
 /** Manx (Gaelg)
@@ -1339,7 +1335,6 @@ Wudawaćel
 Wobraz|Wobraz titloweje strony
 Strony||20
 Přispomnjenki||10',
-	'proofreadpage_indexlist_item_pages' => 'strony',
 );
 
 /** Hungarian (Magyar)
@@ -2207,7 +2202,6 @@ Bron
 Afbeelding|Omslag
 Pagina's||20
 Opmerkingen||10",
-	'proofreadpage_indexlist_item_pages' => "pagina's",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)

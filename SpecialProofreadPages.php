@@ -79,8 +79,8 @@ class ProofreadPagesQuery extends QueryPage {
 			return '<!-- Invalid title ' .  htmlspecialchars( $pr_index_namespace.":".$result->title ). '-->';
 		}
 		$plink = $this->isCached()
-		  ? $skin->makeLinkObj( $title , $title->getText() )
-			: $skin->makeKnownLinkObj( $title , $title->getText() );
+		  ? $skin->link( $title , htmlspecialchars( $title->getText() ) )
+			: $skin->linkKnown( $title , htmlspecialchars( $title->getText() ) );
 
 		if ( !$title->exists() ) {
 			return "<s>{$plink}</s>";
@@ -93,7 +93,11 @@ class ProofreadPagesQuery extends QueryPage {
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 
-		$output = wfMsgForContent( 'proofreadpage_indexlist_item', $plink, $size, $q0, $q1, $q2, $q3, $q4 );
+		$output = wfMsgExt(
+			'proofreadpage_indexlist_item',
+			array( 'parsemag', 'content' ),
+			$plink, $size, $q0, $q1, $q2, $q3, $q4
+		);
 		return $output; 
 	}
 }
