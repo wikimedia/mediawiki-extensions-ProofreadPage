@@ -116,23 +116,8 @@ function pr_load_index( $title ) {
 	// if it is multipage, we use the page order of the file
 	if ( $image && $image->exists() && $image->isMultiPage() ) {
 
-		$pagenr = 1;
-		$parts = explode( '/', $title->getText() );
-		if ( count( $parts ) > 1 ) {
-			$pagenr = intval( array_pop( $parts ) );
-		}
-		$count = $image->pageCount();
-		if ( $pagenr < 1 || $pagenr > $count || $count <= 1 ) {
-			return $err;
-		}
 		$name = $image->getTitle()->getText();
 		$index_name = "$pr_index_namespace:$name";
-		$prev_name = "$pr_page_namespace:$name/" . ( $pagenr - 1 );
-		$next_name = "$pr_page_namespace:$name/" . ( $pagenr + 1 );
-		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
-		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
-
-		$title->pr_page_num = "$pagenr";
 
 		if ( !$title->pr_index_title ) {
 			// there is no index, or the page is not listed in the index : use canonical index
@@ -149,6 +134,8 @@ function pr_load_index( $title ) {
  */
 function pr_navigation( $title ) {
 	global $pr_page_namespace, $pr_index_namespace;
+	$default_header = wfMsgGetKey( 'proofreadpage_default_header', true, true, false );
+	$default_footer = wfMsgGetKey( 'proofreadpage_default_footer', true, true, false );
 
 	$err = array( '', '', '', '', '' );
 
@@ -184,20 +171,20 @@ function pr_navigation( $title ) {
 	}
 
 	if ( !$index_title ) {
-		return array( '', $prev_url, $next_url, '', '' ) ;
+		return $err;
 	}
 
 	$index_url = $index_title->getFullURL();
 
 	if ( !$index_title->exists() ) {
-		return array( $index_url, $prev_url, $next_url, '', '' );
+		return array( $index_url, $prev_url, $next_url,  $default_header, $default_footer );
 	}
 
 	//if the index page exists, find current page number, previous and next pages
 	list( $links, $params, $attributes ) = pr_parse_index($index_title);
 
 	if( $links==null ) {
-		list($pagenum, $links, $mode) = pr_pageNumber($title->pr_page_num,$params);
+		list($pagenum, $links, $mode) = pr_pageNumber($pagenr,$params);
 		$attributes["pagenum"] = $pagenum;
 	} else {
 		for( $i=0; $i<count( $links[1] ); $i++) { 
@@ -219,8 +206,8 @@ function pr_navigation( $title ) {
 	}
 
 	// Header and Footer 
-	$header = $attributes['header'] ? $attributes['header'] : wfMsgGetKey( 'proofreadpage_default_header', true, true, false );
-	$footer = $attributes['footer'] ? $attributes['footer'] : wfMsgGetKey( 'proofreadpage_default_footer', true, true, false );
+	$header = $attributes['header'] ? $attributes['header'] : $default_header; 
+	$footer = $attributes['footer'] ? $attributes['footer'] : $default_footer; 
 	foreach ( $attributes as $key => $val ) {
 		$header = str_replace( "{{{{$key}}}}", $val, $header );
 		$footer = str_replace( "{{{{$key}}}}", $val, $footer );
