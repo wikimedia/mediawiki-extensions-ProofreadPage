@@ -2,7 +2,6 @@
 
 /*
  todo : 
- - check for dupes in index page : when index is saved
  - check unicity of the index page : when index is saved too
 */
 
@@ -239,15 +238,19 @@ function pr_navigation( $title ) {
  * of parameters to pagelist, and a list of attributes.
  */
 function pr_parse_index( $index_title ){
-	global $pr_page_namespace, $pr_index_namespace;
 
 	$err = array( false, false, array() );
-
 	if ( !$index_title ) return $err;
 	if ( !$index_title->exists() ) return $err;
 
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
+	return pr_parse_index_text( $text );
+}
+
+
+function pr_parse_index_text( $text ){
+	global $pr_page_namespace, $pr_index_namespace;
 
 	//check if it is using pagelist
 	preg_match_all( "/<pagelist([^<]*?)\/>/is", $text, $m, PREG_PATTERN_ORDER );
@@ -749,15 +752,26 @@ function pr_parse_page( $text ) {
 
 /*
  * Check the format of pages in "Page" namespace. 
- * Todo: check that listed pages are unique for pages in "Index" namespace.
  */
 
 function pr_attemptSave( $editpage ) {
 	global $pr_page_namespace, $pr_index_namespace;
 	global $wgOut, $wgUser;
 
-	//abort if we are not a page
 	$title = $editpage->mTitle;
+
+	//check that pages liste on an index are unique.
+	if ( preg_match( "/^$pr_index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		$text = $editpage->textbox1;
+		list( $links, $params, $attributes ) = pr_parse_index_text($text);
+		if( $links!=null && count($links[1]) != count( array_unique($links[1]))) {
+			$wgOut->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
+			return false;
+		};
+		return true;
+	}
+
+	//abort if we are not a page
 	if ( ! preg_match( "/^$pr_page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 		return true;
 	}
