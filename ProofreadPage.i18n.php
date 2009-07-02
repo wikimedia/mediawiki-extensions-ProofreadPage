@@ -63,13 +63,14 @@ Remarks||10',
 <td ><span id=pr_index style=\"visibility:hidden;\">$7</span></td>
 </tr></table>",
 	'proofreadpage_indexlist_item'        => "<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;pages]&nbsp;&nbsp;</td>
+<tr><td>$1 [$2&nbsp;{{int:proofreadpage_indexlist_item_pages}}]&nbsp;&nbsp;</td>
 <td align=center class='quality4' width=\"$7\"></td>
 <td align=center class='quality3' width=\"$6\"></td>
 <td align=center class='quality2' width=\"$5\"></td>
 <td align=center class='quality1' width=\"$4\"></td>
 <td align=center class='quality0' width=\"$3\"></td>
 </tr></table>",
+	'proofreadpage_indexlist_item_pages'  => 'pages',
 );
 
 /** Message documentation (Message documentation)
@@ -84,14 +85,13 @@ $messages['qqq'] = array(
 	'proofreadpage_desc' => 'Short description of the Proofreadpage extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
-	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
-	'proofreadpage_index_attributes' => '도서 정보',
+	'proofreadpage_indexlist_item_pages'  => 'Substituted in {{msg-mw|proofreadpage_indexlist_item}}',
 );
 
 /** Afrikaans (Afrikaans)
