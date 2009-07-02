@@ -86,12 +86,15 @@ $messages['qqq'] = array(
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
+	'proofreadpage_indexdupe' => 'Likely,
+Meaning: "This is a duplicate link"',
+	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
-	'proofreadpage_indexlist_item_pages'  => 'Substituted in {{msg-mw|proofreadpage_indexlist_item}}',
+	'proofreadpage_indexlist_item_pages' => 'Substituted in {{msg-mw|proofreadpage_indexlist_item}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -322,6 +325,7 @@ $messages['bcl'] = array(
  * @author Red Winged Duck
  */
 $messages['be-tarask'] = array(
+	'proofreadpages' => 'Сьпіс індэксных старонак',
 	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўноўваць тэкст і адсканаваны арыгінал',
 	'proofreadpage_namespace' => 'Старонка',
 	'proofreadpage_index_namespace' => 'Індэкс',
@@ -648,6 +652,8 @@ $messages['dsb'] = array(
 	'proofreadpage_nosuch_file' => 'Zmólka: taka dataja njejo',
 	'proofreadpage_badpage' => 'Wopacny format',
 	'proofreadpage_badpagetext' => 'Format boka, kótaryž sy wopytał składowaś, jo wopaki.',
+	'proofreadpage_indexdupe' => 'Dwójny wótkaz',
+	'proofreadpage_indexdupetext' => 'Boki njedaju se wěcej ako jaden raz na indeksowem boku nalicyś.',
 	'proofreadpage_nologin' => 'Njejsy se pśizjawił',
 	'proofreadpage_nologintext' => 'Musyš [[Special:UserLogin|pśizjawjony]] byś, aby status kontrolnego cytanja bokow změnił.',
 	'proofreadpage_notallowed' => 'Změna njedowólona',
@@ -678,6 +684,7 @@ Wudawaŕ
 Wobraz|Titelowy wobraz
 Boki||20
 Pśispomnjeśa||10',
+	'proofreadpage_indexlist_item_pages' => 'boki',
 );
 
 /** Ewe (Eʋegbe) */
@@ -935,6 +942,8 @@ $messages['fr'] = array(
 	'proofreadpage_nosuch_file' => "Erreur : le fichier n'a pas été trouvé",
 	'proofreadpage_badpage' => 'Mauvais format',
 	'proofreadpage_badpagetext' => 'Le format de la page que vous essayez de publier est incorrect.',
+	'proofreadpage_indexdupe' => 'Lien en double',
+	'proofreadpage_indexdupetext' => "Les pages ne peuvent pas être listées plus d'une fois sur une page d'index.",
 	'proofreadpage_nologin' => 'Non connecté',
 	'proofreadpage_nologintext' => 'Vous devez être [[Special:UserLogin|connecté]] pour modifier le statut de correction des pages.',
 	'proofreadpage_notallowed' => 'Modification non autorisée',
@@ -1042,6 +1051,7 @@ Nótaí',
  * @author Xosé
  */
 $messages['gl'] = array(
+	'proofreadpages' => 'Lista de páxinas índice',
 	'proofreadpage_desc' => 'Permite a comparación sinxela do texto coa dixitalización orixinal',
 	'proofreadpage_namespace' => 'Páxina',
 	'proofreadpage_index_namespace' => 'Índice',
@@ -1117,6 +1127,8 @@ $messages['gsw'] = array(
 	'proofreadpage_nosuch_file' => 'Fähler: Kei sonigi Datei',
 	'proofreadpage_badpage' => 'Falsch Format',
 	'proofreadpage_badpagetext' => 'S Format vu dr Syte, wu du versuecht hesch z spychere, isch falsch.',
+	'proofreadpage_indexdupe' => 'Gleich (Link) dupliziere',
+	'proofreadpage_indexdupetext' => 'Syte chenne nit meh wie eimol ufglischtet wäre uf ere Indexsyte',
 	'proofreadpage_nologin' => 'Nit aagmäldet',
 	'proofreadpage_nologintext' => 'Du muesch [[Special:UserLogin|aagmäldet syy]] go dr Korrekturläsigs-Status vu Syte ändere.',
 	'proofreadpage_notallowed' => 'Änderig nit erlaubt',
@@ -1147,6 +1159,7 @@ Quälle
 Bild|Titelbild
 Syte||20
 Aamerkige||10',
+	'proofreadpage_indexlist_item_pages' => 'Syte',
 );
 
 /** Manx (Gaelg)
@@ -1294,6 +1307,8 @@ $messages['hsb'] = array(
 	'proofreadpage_nosuch_file' => 'Zmylk: tajka dataja njeje',
 	'proofreadpage_badpage' => 'Wopačny format',
 	'proofreadpage_badpagetext' => 'Format strony, kotruž sy spytał składować, je wopak.',
+	'proofreadpage_indexdupe' => 'Dwójny wotkaz',
+	'proofreadpage_indexdupetext' => 'Strony njedadźa so wjace hač jedyn raz na indeksowej stronje nalistować.',
 	'proofreadpage_nologin' => 'Njejsy so přizjewił',
 	'proofreadpage_nologintext' => 'Dyrbiš [[Special:UserLogin|přizjewjeny]] być, zo by status kontrolneho čitanja stronow změnił.',
 	'proofreadpage_notallowed' => 'Změna njedowolena',
@@ -1324,6 +1339,7 @@ Wudawaćel
 Wobraz|Wobraz titloweje strony
 Strony||20
 Přispomnjenki||10',
+	'proofreadpage_indexlist_item_pages' => 'strony',
 );
 
 /** Hungarian (Magyar)
@@ -1406,6 +1422,7 @@ Remarks|Նշումներ|10',
  * @author McDutchie
  */
 $messages['ia'] = array(
+	'proofreadpages' => 'Lista de paginas indice',
 	'proofreadpage_desc' => 'Facilita le comparation inter un texto e su scan original',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indice',
@@ -1560,6 +1577,7 @@ Note||10',
  * @author 青子守歌
  */
 $messages['ja'] = array(
+	'proofreadpages' => '文献概要ページの一覧',
 	'proofreadpage_desc' => 'オリジナルのスキャン画像とテキストとの比較を容易にする',
 	'proofreadpage_namespace' => 'ページ',
 	'proofreadpage_index_namespace' => '文献概要',
@@ -1570,6 +1588,8 @@ $messages['ja'] = array(
 	'proofreadpage_nosuch_file' => 'エラー: そのようなファイルはありません',
 	'proofreadpage_badpage' => '不正な形式',
 	'proofreadpage_badpagetext' => '保存しようとしたページの形式が正しくありません。',
+	'proofreadpage_indexdupe' => '重複したリンク',
+	'proofreadpage_indexdupetext' => '文献概要ページ上にページを複数回載せることはできません。',
 	'proofreadpage_nologin' => 'ログインしていない',
 	'proofreadpage_nologintext' => 'ページの校正状況を修正するためには[[Special:UserLogin|ログイン]]しなければなりません。',
 	'proofreadpage_notallowed' => '変更が許可されていません',
@@ -1773,6 +1793,7 @@ $messages['krj'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'proofreadpages' => 'Leß met de Indäx_Sigge',
 	'proofreadpage_desc' => 'Määt et müjjelesch, bequem der Täx mem enjeskännte Ojinaal ze verjliische.',
 	'proofreadpage_namespace' => 'Sigg',
 	'proofreadpage_index_namespace' => 'Enhallt',
@@ -1783,10 +1804,12 @@ $messages['ksh'] = array(
 	'proofreadpage_nosuch_file' => 'Fähler: esu en Dattei ham_mer nit',
 	'proofreadpage_badpage' => 'Verhiehrt Fommaat',
 	'proofreadpage_badpagetext' => 'Dat Fommaat vun dä Sigg, di De jrahdt afzeshpeischere versöhk häß, eß verkiehert.',
+	'proofreadpage_indexdupe' => 'Dubbelte Lengk',
+	'proofreadpage_indexdupetext' => 'Sigge künne nit mieh wi eijmohl en en Indäx_Sigg opdouche.',
 	'proofreadpage_nologin' => 'Nit enjelogk',
 	'proofreadpage_nologintext' => 'Do möötß ald [[Special:UserLogin|enjelogg]] sin, öm dä {{int:proofreadpage_page_status}} hee ze ändere.',
-	'proofreadpage_notallowed' => 'Änderung nit zohjelohße',
-	'proofreadpage_notallowedtext' => 'Nit zohjelohße.',
+	'proofreadpage_notallowed' => 'Dat Ändere es nit zohjelohße',
+	'proofreadpage_notallowedtext' => 'Do häs nit et Rääsch, heh dä {{int:proofreadpage_page_status}} ze ändere.',
 	'proofreadpage_number_expected' => 'Fähler: En Zahl weet jebruch',
 	'proofreadpage_interval_too_large' => 'Fähler: Dä Affschtand es zoh jruuß',
 	'proofreadpage_invalid_interval' => 'Fähler: Dä Afshtand es nit jöltesch',
@@ -2152,6 +2175,8 @@ $messages['nl'] = array(
 	'proofreadpage_nosuch_file' => 'Fout: het aangegeven bestand bestaat niet',
 	'proofreadpage_badpage' => 'Verkeerde formaat',
 	'proofreadpage_badpagetext' => 'Het formaat van de pagina die u probeerde op te slaan is onjuist.',
+	'proofreadpage_indexdupe' => 'Verwijzing kopiëren',
+	'proofreadpage_indexdupetext' => "Pagina's kunnen niet meer dan één keer op een indexpagina weergegeven worden.",
 	'proofreadpage_nologin' => 'Niet aangemeld',
 	'proofreadpage_nologintext' => "U moet [[Special:UserLogin|aanmelden]] om de proefleesstatus van pagina's te kunnen wijzigen.",
 	'proofreadpage_notallowed' => 'Wijzigen is niet toegestaan',
@@ -2182,6 +2207,7 @@ Bron
 Afbeelding|Omslag
 Pagina's||20
 Opmerkingen||10",
+	'proofreadpage_indexlist_item_pages' => "pagina's",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2281,6 +2307,7 @@ $messages['nso'] = array(
  * @author Cedric31
  */
 $messages['oc'] = array(
+	'proofreadpages' => "Lista de las paginas d'indèx",
 	'proofreadpage_desc' => 'Permet una comparason aisida entre lo tèxte e la numerizacion originala',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indèx',
@@ -2291,6 +2318,8 @@ $messages['oc'] = array(
 	'proofreadpage_nosuch_file' => 'Error : lo fichièr es pas estat trobat',
 	'proofreadpage_badpage' => 'Format marrit',
 	'proofreadpage_badpagetext' => "Lo format de la pagina qu'ensajatz de publicar es incorrècte.",
+	'proofreadpage_indexdupe' => 'Ligam en doble',
+	'proofreadpage_indexdupetext' => "Las paginas pòdon pas èsser listadas mai d'un còp sus una pagina d'indèx.",
 	'proofreadpage_nologin' => 'Pas connectat',
 	'proofreadpage_nologintext' => "Vos cal èsser [[Special:UserLogin|connectat]] per modificar l'estatut de correccion de las paginas.",
 	'proofreadpage_notallowed' => 'Cambiament pas autorizat.',
@@ -2346,6 +2375,7 @@ $messages['pdc'] = array(
  * @author Sp5uhe
  */
 $messages['pl'] = array(
+	'proofreadpages' => 'Spis stron indeksów',
 	'proofreadpage_desc' => 'Umożliwia łatwe porównanie treści ze skanem oryginału',
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -2358,8 +2388,8 @@ $messages['pl'] = array(
 	'proofreadpage_badpagetext' => 'Format strony którą próbujesz zapisać jest nieprawidłowy.',
 	'proofreadpage_nologin' => 'Niezalogowany',
 	'proofreadpage_nologintext' => 'Musisz [[Special:UserLogin|zalogować się]], aby zmienić status proofreading strony.',
-	'proofreadpage_notallowed' => 'Niedozwolone',
-	'proofreadpage_notallowedtext' => 'Niedozwolone.',
+	'proofreadpage_notallowed' => 'Zmiana niedozwolona',
+	'proofreadpage_notallowedtext' => 'Zmiana statusu proofreeding tej strony przez Ciebie jest niedozwolona.',
 	'proofreadpage_number_expected' => 'Błąd – oczekiwano liczby',
 	'proofreadpage_interval_too_large' => 'Błąd – zbyt duży odstęp',
 	'proofreadpage_invalid_interval' => 'Błąd – nieprawidłowy odstęp',
@@ -2574,7 +2604,7 @@ Note||10",
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
-	'proofreadpages' => 'Список страниц каталогов',
+	'proofreadpages' => 'Список индексных страниц',
 	'proofreadpage_desc' => 'Позволяет в удобном виде сравнивать текст и отсканированное изображение оригинала',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -2585,6 +2615,8 @@ $messages['ru'] = array(
 	'proofreadpage_nosuch_file' => 'Ошибка: нет такого файла',
 	'proofreadpage_badpage' => 'Неправильный формат',
 	'proofreadpage_badpagetext' => 'Ошибочный формат записываемой страницы.',
+	'proofreadpage_indexdupe' => 'Ссылка-дубликат',
+	'proofreadpage_indexdupetext' => 'Страницы не могут быть перечислены на индексной странице более одного раза.',
 	'proofreadpage_nologin' => 'Не выполнен вход',
 	'proofreadpage_nologintext' => 'Вы должны [[Special:UserLogin|представиться системе]] для изменения статуса вычитки страниц.',
 	'proofreadpage_notallowed' => 'Изменение не допускается',
