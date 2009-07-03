@@ -673,8 +673,6 @@ function pr_renderPageList( $input, $args ) {
 /*
  * Parser hook that includes a list of pages.
  * It needs 3 parameters : index, from, to
- *
- * todo : handle LST...
  */
 function pr_renderPages( $input, $args ) {
 	global $pr_page_namespace, $pr_index_namespace;
@@ -1158,14 +1156,18 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 		return true;
 	}
 	
+	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
+	$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_index_namespace ) );
+	if( $page_ns_index==null ){
+		return true;
+	}
+
 	$dbr = wfGetDB( DB_SLAVE );
 	$pr_index = $dbr->tableName( 'pr_index' );
 	$page = $dbr->tableName( 'page' );
 	$pagelinks = $dbr->tableName( 'pagelinks' );
 	$templatelinks = $dbr->tableName( 'templatelinks' );
 	$catlinks = $dbr->tableName( 'categorylinks' );
-	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
-	$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_index_namespace ) );
 
 	# count transclusions from page namespace
 	$query = "SELECT COUNT(page_id) AS count FROM templatelinks LEFT JOIN $page ON page_title=tl_title where tl_from=$id and tl_namespace=$page_ns_index";
