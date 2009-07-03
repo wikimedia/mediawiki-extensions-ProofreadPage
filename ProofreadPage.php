@@ -723,12 +723,20 @@ function pr_renderPages( $input, $args ) {
 			$text = "$pr_page_namespace:$index/" . $i;
 			list($pagenum, $links, $mode) = pr_pageNumber($i,$params);
 			$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
-			$out.= "{{:".$text."}}";
+			if( $args["$i"] != null){
+				$out.= "{{#lst:".$text."|".$args["$i"]."}}";
+			} else {
+				$out.= "{{:".$text."}}";
+			}
 		}
 		$out = $wgParser->recursiveTagParse($out);
 	} 
 	else {
-		$adding = false;
+		if($from) {
+			$adding = false;
+		} else {
+			$adding = true;
+		}
 		for( $i=0; $i<count( $links[1] ); $i++) { 
 			$text = $links[1][$i];
 			$pagenum = $links[3][$i];
