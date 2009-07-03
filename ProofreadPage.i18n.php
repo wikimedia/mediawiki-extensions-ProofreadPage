@@ -81,8 +81,10 @@ Remarks||10',
  * @author Aleator
  * @author IAlex
  * @author Jon Harald Søby
+ * @author McDutchie
  * @author Mormegil
  * @author Purodha
+ * @author Siebrand
  * @author Yknok29
  */
 $messages['qqq'] = array(
@@ -90,14 +92,22 @@ $messages['qqq'] = array(
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
-	'proofreadpage_indexdupe' => 'Likely,
-Meaning: "This is a duplicate link"',
+	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
 	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
+	'proofreadpage_indexlist_item' => '{{doc-important|only translate $2 and the plural statement. Leave the rest unchanged.}}
+* $1 is $plink
+* $2 is $size
+* $3 is $q0 = $result->pr_q0;
+* $4 is $q1 = $result->pr_q1;
+* $5 is $q2 = $result->pr_q2;
+* $6 is $q3 = $result->pr_q3;
+* $7 is $q4 = $result->pr_q4;
+(variable descriptions need updating)',
 );
 
 /** Afrikaans (Afrikaans)
@@ -339,6 +349,8 @@ $messages['be-tarask'] = array(
 	'proofreadpage_nosuch_file' => 'Памылка: няма такога файла',
 	'proofreadpage_badpage' => 'Няслушны фармат',
 	'proofreadpage_badpagetext' => 'Няслушны фармат старонкі, якую Вы спрабуеце захаваць.',
+	'proofreadpage_indexdupe' => 'Спасылка-дублікат',
+	'proofreadpage_indexdupetext' => 'Старонкі ня могуць быць ў сьпісе на індэкснай старонцы болей аднаго разу.',
 	'proofreadpage_nologin' => 'Вы не ўвайшлі ў сыстэму',
 	'proofreadpage_nologintext' => 'Вы павінны [[Special:UserLogin|ўвайсьці ў сыстэму]], каб зьмяняць статус праверкі старонкі.',
 	'proofreadpage_notallowed' => 'Зьмена не дазволеная',
@@ -357,6 +369,11 @@ $messages['be-tarask'] = array(
 	'proofreadpage_quality2_category' => 'Праблематычная',
 	'proofreadpage_quality3_category' => 'Вычытаная',
 	'proofreadpage_quality4_category' => 'Правераная',
+	'proofreadpage_quality0_message' => 'Гэта старонка не патрабуе вычыткі',
+	'proofreadpage_quality1_message' => 'Гэта старонка не была вычытана',
+	'proofreadpage_quality2_message' => 'Узьнікла праблема ў вычытцы гэтай старонкі',
+	'proofreadpage_quality3_message' => 'Гэта старонка была вычытана',
+	'proofreadpage_quality4_message' => 'Гэта старонка была праверана',
 	'proofreadpage_index_listofpages' => 'Сьпіс старонак',
 	'proofreadpage_image_message' => 'Спасылка на старонку індэксу',
 	'proofreadpage_page_status' => 'Статус старонкі',
@@ -369,6 +386,14 @@ $messages['be-tarask'] = array(
 Выява|Выява вокладкі
 Старонак||20
 Заўвагаў||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|старонка|старонкі|старонак}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Bulgarian (Български)
@@ -675,6 +700,11 @@ $messages['dsb'] = array(
 	'proofreadpage_quality2_category' => 'Problematiski',
 	'proofreadpage_quality3_category' => 'Pśekontrolěrowany',
 	'proofreadpage_quality4_category' => 'Wobwěsćony',
+	'proofreadpage_quality0_message' => 'Toś ten bok jo se skorigěrował',
+	'proofreadpage_quality1_message' => 'Toś ten bok njejo se skorigěrował',
+	'proofreadpage_quality2_message' => 'Pśi korigěrowanju toś togo boka jo se problem nastał',
+	'proofreadpage_quality3_message' => 'Toś ten bok jo se skorigěrował',
+	'proofreadpage_quality4_message' => 'Toś ten bok jo se pśekontrolěrował',
 	'proofreadpage_index_listofpages' => 'Lisćina bokow',
 	'proofreadpage_image_message' => 'Wótkaz k indeksowemu bokoju',
 	'proofreadpage_page_status' => 'Bokowy status',
@@ -687,6 +717,14 @@ Wudawaŕ
 Wobraz|Titelowy wobraz
 Boki||20
 Pśispomnjeśa||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|bok|boka|boki|bokow}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Ewe (Eʋegbe) */
@@ -788,6 +826,7 @@ Rimarkoj||10',
 /** Spanish (Español)
  * @author Aleator
  * @author Crazymadlover
+ * @author Locos epraix
  * @author Remember the dot
  * @author Sanbec
  */
@@ -800,7 +839,7 @@ $messages['es'] = array(
 	'proofreadpage_badpage' => 'Formato erróneo',
 	'proofreadpage_nologin' => 'No ha iniciado sesión',
 	'proofreadpage_notallowed' => 'Cambio no permitido',
-	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el status corregido de esta página.',
+	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el estatus corregido de esta página.',
 	'proofreadpage_nextpage' => 'Página siguiente',
 	'proofreadpage_prevpage' => 'Página anterior',
 	'proofreadpage_header' => 'Encabezado (noinclude):',
@@ -824,6 +863,14 @@ Fuente
 Imagen|Imagen de cubierta
 Páginas||20
 Comentarios||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|página|páginas}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Basque (Euskara)
@@ -926,6 +973,7 @@ Huomautuksia||10',
 );
 
 /** French (Français)
+ * @author Crochet.david
  * @author Dereckson
  * @author Grondin
  * @author IAlex
@@ -964,6 +1012,11 @@ $messages['fr'] = array(
 	'proofreadpage_quality2_category' => 'Problématique',
 	'proofreadpage_quality3_category' => 'Corrigée',
 	'proofreadpage_quality4_category' => 'Validée',
+	'proofreadpage_quality0_message' => 'Cette page n’a pas besoin d’être relu',
+	'proofreadpage_quality1_message' => 'Cette page n’a pas été relu',
+	'proofreadpage_quality2_message' => 'Il y a eu un problème lors de la relecture de cette page',
+	'proofreadpage_quality3_message' => 'Cette page a été relu',
+	'proofreadpage_quality4_message' => 'Cette page a été validé',
 	'proofreadpage_index_listofpages' => 'Liste des pages',
 	'proofreadpage_image_message' => 'Lien vers la page d’index',
 	'proofreadpage_page_status' => 'État de la page',
@@ -976,6 +1029,14 @@ Source
 Image|Image en couverture
 Pages||20
 Remarques||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td> $1 [$2&nbsp;page{{PLURAL: $2||s}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -1064,6 +1125,8 @@ $messages['gl'] = array(
 	'proofreadpage_nosuch_file' => 'Erro: non existe tal ficheiro',
 	'proofreadpage_badpage' => 'Formato incorrecto',
 	'proofreadpage_badpagetext' => 'O formato da páxina que intentou gardar é incorrecto.',
+	'proofreadpage_indexdupe' => 'Ligazón duplicada',
+	'proofreadpage_indexdupetext' => 'Non se poden listar as páxinas máis dunha vez nunha páxina índice.',
 	'proofreadpage_nologin' => 'Non accedeu ao sistema',
 	'proofreadpage_nologintext' => 'Debe [[Special:UserLogin|acceder ao sistema]] para modificar o estado de corrección das páxinas.',
 	'proofreadpage_notallowed' => 'Cambio non autorizado',
@@ -1078,12 +1141,12 @@ $messages['gl'] = array(
 	'proofreadpage_footer' => 'Pé de páxina (noinclude):',
 	'proofreadpage_toggleheaders' => 'alternar a visibilidade das seccións noinclude',
 	'proofreadpage_quality0_category' => 'Sen texto',
-	'proofreadpage_quality1_category' => 'Non corrixir',
+	'proofreadpage_quality1_category' => 'Non corrixido',
 	'proofreadpage_quality2_category' => 'Problemático',
-	'proofreadpage_quality3_category' => 'Corrixir',
+	'proofreadpage_quality3_category' => 'Corrixido',
 	'proofreadpage_quality4_category' => 'Validado',
 	'proofreadpage_index_listofpages' => 'Lista de páxinas',
-	'proofreadpage_image_message' => 'Ligazón á páxina do índice',
+	'proofreadpage_image_message' => 'Ligazón á páxina índice',
 	'proofreadpage_page_status' => 'Estado da páxina',
 	'proofreadpage_js_attributes' => 'Autor Título Ano Editor',
 	'proofreadpage_index_attributes' => 'Autor
@@ -1094,6 +1157,14 @@ Orixe
 Imaxe|Imaxe da cuberta
 Páxinas||20
 Comentarios||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|páxina|páxinas}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -1161,6 +1232,14 @@ Quälle
 Bild|Titelbild
 Syte||20
 Aamerkige||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|Syte|Syte}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Manx (Gaelg)
@@ -1328,6 +1407,11 @@ $messages['hsb'] = array(
 	'proofreadpage_quality2_category' => 'Njedospołny',
 	'proofreadpage_quality3_category' => 'Skorigowany',
 	'proofreadpage_quality4_category' => 'Hotowy',
+	'proofreadpage_quality0_message' => 'Tuta strona njetrjeba so skorigować',
+	'proofreadpage_quality1_message' => 'Tut strona njeje so skorigowała',
+	'proofreadpage_quality2_message' => 'Při korigowanju tuteje strony je problem wustupił',
+	'proofreadpage_quality3_message' => 'Tuta strona je so skorigowała',
+	'proofreadpage_quality4_message' => 'Tuta strona je so přepruwowała',
 	'proofreadpage_index_listofpages' => 'Lisćina stronow',
 	'proofreadpage_image_message' => 'Wotkaz k indeksowej stronje',
 	'proofreadpage_page_status' => 'Status strony',
@@ -1340,6 +1424,14 @@ Wudawaćel
 Wobraz|Wobraz titloweje strony
 Strony||20
 Přispomnjenki||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|strona|stronje|strony|stronow}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Hungarian (Magyar)
@@ -1433,6 +1525,8 @@ $messages['ia'] = array(
 	'proofreadpage_nosuch_file' => 'Error: non existe tal file',
 	'proofreadpage_badpage' => 'Formato incorrecte',
 	'proofreadpage_badpagetext' => 'Le formato del pagina que tu tentava immagazinar es incorrecte.',
+	'proofreadpage_indexdupe' => 'Ligamine duplicate',
+	'proofreadpage_indexdupetext' => 'Paginas non pote figurar plus de un vice in un pagina de indice.',
 	'proofreadpage_nologin' => 'Non identificate',
 	'proofreadpage_nologintext' => 'Tu debe [[Special:UserLogin|aperir un session]] pro modificar le stato de correction de paginas.',
 	'proofreadpage_notallowed' => 'Cambio non permittite',
@@ -1451,6 +1545,11 @@ $messages['ia'] = array(
 	'proofreadpage_quality2_category' => 'Problematic',
 	'proofreadpage_quality3_category' => 'Corrigite',
 	'proofreadpage_quality4_category' => 'Validate',
+	'proofreadpage_quality0_message' => 'Iste pagina non ha besonio de esser corrigite',
+	'proofreadpage_quality1_message' => 'Iste pagina non ha essite corrigite',
+	'proofreadpage_quality2_message' => 'Il habeva un problema durante le correction de iste pagina',
+	'proofreadpage_quality3_message' => 'Iste pagina ha essite corrigite',
+	'proofreadpage_quality4_message' => 'Iste pagina ha essite validate',
 	'proofreadpage_index_listofpages' => 'Lista de paginas',
 	'proofreadpage_image_message' => 'Ligamine verso le pagina de indice',
 	'proofreadpage_page_status' => 'Stato del pagina',
@@ -1463,6 +1562,14 @@ Origine
 Imagine|Imagine de copertura
 Paginas||20
 Notas||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|paginas}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1836,6 +1943,14 @@ Quell
 Beld|Beld om Ömschlach
 Sigge||20
 Aanmerkunge||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [{{PLURAL:$2|Ei&nbsp;Sigg|$2&nbsp;Sigge|Kei&nbsp;Sigg}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Cornish (Kernewek)
@@ -1856,6 +1971,7 @@ $messages['la'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'proofreadpages' => 'Lëscht vun Index-Säiten',
 	'proofreadpage_desc' => 'Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen',
 	'proofreadpage_namespace' => 'Säit',
 	'proofreadpage_index_namespace' => 'Index',
@@ -1864,6 +1980,14 @@ $messages['lb'] = array(
 	'proofreadpage_index_expected' => 'Feeler: Index erwaart',
 	'proofreadpage_nosuch_index' => 'Feeler: et gëtt keen esou een Index',
 	'proofreadpage_nosuch_file' => 'Feeler: de Fichier gëtt et net',
+	'proofreadpage_badpage' => 'Falsche Format',
+	'proofreadpage_badpagetext' => "De Format vun der Säit déi Dir versicht hutt z'änneren ass net korrekt.",
+	'proofreadpage_indexdupe' => 'Duebele Link',
+	'proofreadpage_indexdupetext' => 'Säite kënnen net méi wéi eemol op eng Index-Säit gesat ginn.',
+	'proofreadpage_nologin' => 'Net ageloggt',
+	'proofreadpage_nologintext' => "Dir musst [[Special:UserLogin|ageloggt]] si fir de Status vum Iwwerliese vu Säiten z'änneren.",
+	'proofreadpage_notallowed' => 'Ännerung net erlaabt',
+	'proofreadpage_notallowedtext' => "Dir sidd net berechtigt de Status vum Iwwerliese vun dëser Säit z'änneren.",
 	'proofreadpage_number_expected' => 'Feeler: et gof en numerische Wert erwaart',
 	'proofreadpage_interval_too_large' => 'Feeler: Intervall ze ze grouss',
 	'proofreadpage_invalid_interval' => 'Feeler: net valabelen Intervall',
@@ -1890,6 +2014,14 @@ Quell
 Bild|Titelbild
 Säiten||20
 Bemierkungen||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|Säit|Säiten}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -2160,6 +2292,7 @@ Anmarkungen||10',
 );
 
 /** Dutch (Nederlands)
+ * @author McDutchie
  * @author SPQRobin
  * @author Siebrand
  */
@@ -2175,7 +2308,7 @@ $messages['nl'] = array(
 	'proofreadpage_nosuch_file' => 'Fout: het aangegeven bestand bestaat niet',
 	'proofreadpage_badpage' => 'Verkeerde formaat',
 	'proofreadpage_badpagetext' => 'Het formaat van de pagina die u probeerde op te slaan is onjuist.',
-	'proofreadpage_indexdupe' => 'Verwijzing kopiëren',
+	'proofreadpage_indexdupe' => 'Dubbele verwijzing',
 	'proofreadpage_indexdupetext' => "Pagina's kunnen niet meer dan één keer op een indexpagina weergegeven worden.",
 	'proofreadpage_nologin' => 'Niet aangemeld',
 	'proofreadpage_nologintext' => "U moet [[Special:UserLogin|aanmelden]] om de proefleesstatus van pagina's te kunnen wijzigen.",
@@ -2195,6 +2328,11 @@ $messages['nl'] = array(
 	'proofreadpage_quality2_category' => 'Onvolledig',
 	'proofreadpage_quality3_category' => 'Proefgelezen',
 	'proofreadpage_quality4_category' => 'Gecontroleerd',
+	'proofreadpage_quality0_message' => 'Deze pagina hoeft niet te worden proefgelezen',
+	'proofreadpage_quality1_message' => 'Deze pagina is niet proefgelezen',
+	'proofreadpage_quality2_message' => 'Er was een probleem bij het proeflezen van deze pagina',
+	'proofreadpage_quality3_message' => 'Deze pagina is proefgelezen',
+	'proofreadpage_quality4_message' => 'Deze pagina is gecontroleerd',
 	'proofreadpage_index_listofpages' => 'Paginalijst',
 	'proofreadpage_image_message' => 'Verwijziging naar de indexpagina',
 	'proofreadpage_page_status' => 'Paginastatus',
@@ -2207,6 +2345,14 @@ Bron
 Afbeelding|Omslag
 Pagina's||20
 Opmerkingen||10",
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|pagina\'s}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2646,6 +2792,14 @@ $messages['ru'] = array(
 Изображение|Изображение обложки
 Страниц||20
 Примечаний||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|страница|страницы|страниц}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Yakut (Саха тыла)
@@ -2711,6 +2865,8 @@ $messages['sk'] = array(
 	'proofreadpage_nosuch_file' => 'Chyba: Taký súbor neexistuje',
 	'proofreadpage_badpage' => 'Nesprávny formát',
 	'proofreadpage_badpagetext' => 'Formát stránky, ktorú ste sa pokúsili uložiť nie je správny.',
+	'proofreadpage_indexdupe' => 'Duplicitný odkaz',
+	'proofreadpage_indexdupetext' => 'Stránky nemožno na indexovej stránke uviesť viac ako raz.',
 	'proofreadpage_nologin' => 'Nie ste prihlásený',
 	'proofreadpage_nologintext' => 'Ak chcete meniť stav skontrolovania stránky, musíte sa [[Special:UserLogin|prihlásiť]].',
 	'proofreadpage_notallowed' => 'Zmena nie je dovolená',
@@ -2741,6 +2897,14 @@ Zdroj
 Obrázok|Obálka
 Strán||20
 Poznámky||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stránka|stránky|stránok}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Slovenian (Slovenščina) */
@@ -3047,6 +3211,8 @@ $messages['tr'] = array(
 	'proofreadpage_nosuch_file' => 'Hata: Böyle bir dosya yok',
 	'proofreadpage_badpage' => 'Yanlış Biçim',
 	'proofreadpage_badpagetext' => 'Kaydetmeye çalıştığınız sayfanın biçimi yanlış.',
+	'proofreadpage_indexdupe' => 'Yinelenen bağlantı',
+	'proofreadpage_indexdupetext' => 'Bir dizin sayfasında, sayfalar birden fazla listelenemez.',
 	'proofreadpage_nologin' => 'Giriş yapılmamış',
 	'proofreadpage_nologintext' => 'Sayfaların düzeltme durumunu değiştirmek için [[Special:UserLogin|giriş yapmış]] olmalısınız.',
 	'proofreadpage_notallowed' => 'Değişikliğe izin verilmiyor',
@@ -3077,6 +3243,14 @@ Kaynak
 Resim|Kapak resmi
 Sayfalar||20
 Açıklamalar||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|sayfa|sayfa}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Tsonga (Xitsonga)
