@@ -725,6 +725,10 @@ function pr_renderPages( $input, $args ) {
 			$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
 			if( $args["$i"] != null){
 				$out.= "{{#lst:".$text."|".$args["$i"]."}}";
+			} else if($i == $from && $args["fromsection"]){
+				$out.= "{{#lst:".$text."|".$args["fromsection"]."}}";
+			} else if($i == $to && $args["tosection"]){
+				$out.= "{{#lst:".$text."|".$args["tosection"]."}}";
 			} else {
 				$out.= "{{:".$text."}}";
 			}
@@ -744,7 +748,13 @@ function pr_renderPages( $input, $args ) {
 			if($adding){
 				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page="
 				  .$pr_page_namespace.":".$text."|num=$pagenum}}</span>";
-				$out.= "{{:".$pr_page_namespace.":".$text."}}";
+				if($text == $from && $args["fromsection"]){
+					$out.= "{{#lst:".$pr_page_namespace.":".$text."|".$args["fromsection"]."}}";
+				} else if($text == $to && $args["tosection"]){
+					$out.= "{{#lst:".$pr_page_namespace.":".$text."|".$args["tosection"]."}}";
+				} else {
+					$out.= "{{:".$pr_page_namespace.":".$text."}}";
+				}
 			}
 			if($text == $to ) $adding = false;
 		}
