@@ -805,7 +805,7 @@ function pr_attemptSave( $editpage ) {
 
 	//replace deprecated template
 	$text = $editpage->textbox1;
-	$text = preg_replace( "/\{\{PageQuality\|(0|1|2|3|4)\|(.*?)\}\}/is", "<pagequality level=\"\\1\" user=\"\\2\" />", $text );
+	$text = preg_replace( "/\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}/is", "<pagequality level=\"\\1\" user=\"\\3\" />", $text );
 	$editpage->textbox1 = $text;
 
 	//parse the page
