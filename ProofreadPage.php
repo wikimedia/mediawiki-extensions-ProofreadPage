@@ -36,7 +36,7 @@ $wgSpecialPageGroups['ProofreadPages'] = 'pages';
 $wgDjvutxt = null;
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 22;
+$wgProofreadPageVersion = 23;
 
 # Max width of zoomable image
 $wgProofreadPageMaxWidth = 2048;
@@ -68,6 +68,7 @@ function pr_main() {
 	global $pr_page_namespace, $pr_index_namespace;
 	$wgParser->setHook( "pagelist", "pr_renderPageList" );
 	$wgParser->setHook( "pages", "pr_renderPages" );
+	$wgParser->setHook( "pagequality", "pr_pageQuality" );
 	wfLoadExtensionMessages( 'ProofreadPage' );
 	$pr_page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	$pr_index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
@@ -575,6 +576,27 @@ function pr_pageNumber( $i, $args ) {
 
 
 /*
+ * add the pagequality category.
+ * todo : display whether page has been proofread by the user or by someone else
+ */
+function pr_pageQuality( $input, $args ) {
+	global $pr_page_namespace, $pr_index_namespace;
+	global $wgUser, $wgTitle, $wgParser;
+
+	if ( !preg_match( "/^$pr_page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText() ) ) {
+		return "";
+	}
+	$q = $args['level'];
+	if( ! in_array( $q, array('0','1','2','3','4') ) ) {
+		return "";
+	}
+	$message = "<div id=\"pagequality\" width=100% class=quality$q>".wfMsgForContent( "proofreadpage_quality{$q}_message" )."</div>";
+	$out = "__NOEDITSECTION__[[Category:".wfMsgForContent( "proofreadpage_quality{$q}_category" )."]]";
+	return $wgParser->recursiveTagParse( $out . $message);
+}
+
+
+/*
  * Parser hook for index pages 
  * Display a list of coloured links to pages
  */
@@ -729,11 +751,29 @@ function pr_renderPages( $input, $args ) {
  * Return -1 if the page cannot be parsed
  */
 function pr_parse_page( $text ) {
-	$page_regexp = "/^<noinclude>\{\{PageQuality\|(0|1|2|3|4)\|(.*?)\}\}(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s";
+	global $wgTitle, $wgUser;
+	$username = $wgUser->getName();
+
+	$page_regexp = "/^<noinclude>(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s";
         if( !preg_match( $page_regexp, $text, $m ) ) {
-		return array( -1, null ); 
+		pr_load_index( $wgTitle );
+		list( $index_url, $prev_url, $next_url, $header, $footer ) = pr_navigation( $wgTitle );
+		$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
+			."$header\n\n\n</noinclude>$text<noinclude>\n$footer</noinclude>";
+		return array( -1, null, $new_text ); 
 	}
-	return array( intval($m[1]), $m[2] );
+
+	$header_regexp = "/^<pagequality level=\"(0|1|2|3|4)\" user=\"(.*?)\" \/>/";
+	$header = $m[1];
+	$body = $m[2];
+	$footer = $m[3];
+        if( !preg_match( $header_regexp, $header, $m2 ) ) {
+		$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
+			."$header\n\n\n</noinclude>$body<noinclude>\n$footer</noinclude>";
+		return array( -1, null, $new_text ); 
+	}
+
+	return array( intval($m2[1]), $m2[2], null );
 }
 
 
@@ -747,7 +787,7 @@ function pr_attemptSave( $editpage ) {
 
 	$title = $editpage->mTitle;
 
-	//check that pages liste on an index are unique.
+	//check that pages listed on an index are unique.
 	if ( preg_match( "/^$pr_index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 		$text = $editpage->textbox1;
 		list( $links, $params, $attributes ) = pr_parse_index_text($text);
@@ -763,18 +803,15 @@ function pr_attemptSave( $editpage ) {
 		return true;
 	}
 
+	//replace deprecated template
 	$text = $editpage->textbox1;
+	$text = preg_replace( "/\{\{PageQuality\|(0|1|2|3|4)\|(.*?)\}\}/is", "<pagequality level=\"\\1\" user=\"\\2\" />", $text );
+	$editpage->textbox1 = $text;
 
 	//parse the page
-	list( $q , $username ) = pr_parse_page( $text );
+	list( $q , $username, $ptext ) = pr_parse_page( $text );
 	if( $q == -1 ) {
-		//convert to page format
-		$username = $wgUser->getName();
-		pr_load_index( $title );
-		list( $index_url, $prev_url, $next_url, $header, $footer ) = pr_navigation( $title );
-		$editpage->textbox1 = 
-			"<noinclude>{{PageQuality|1|$username}}$header\n\n\n</noinclude>"
-			.$text."<noinclude>\n$footer</noinclude>";
+		$editpage->textbox1 = $ptext;
 		return true;
 	}
 
@@ -782,7 +819,7 @@ function pr_attemptSave( $editpage ) {
 	$rev = Revision::newFromTitle( $title );
 	if( $rev ) {
 		$old_text = $rev->getText();
-		list( $old_q , $old_username ) = pr_parse_page( $old_text );
+		list( $old_q , $old_username, $old_ptext ) = pr_parse_page( $old_text );
 	} else {
 		if($q == 4) {
 			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );

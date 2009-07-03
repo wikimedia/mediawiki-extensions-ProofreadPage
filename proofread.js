@@ -114,8 +114,10 @@ function pr_make_edit_area(container,text){
 	//find the PageQuality template
 	//we do this separately from header detection,
 	//because the template might not be in the header 
-	var reg = /\{\{PageQuality\|(0|1|2|3|4)(\|(.*?|))\}\}/g;
+	var reg = /<pagequality level=\"(0|1|2|3|4)\" user=\"(.*?)\" \/>/g;
 	var m4 = reg.exec(pageHeader);
+	var old_reg = /\{\{PageQuality\|(0|1|2|3|4)(\|(.*?|))\}\}/g;
+	var old_m4 = old_reg.exec(pageHeader);
 	if( m4 ) {
 		switch( m4[1] ) {
 			case "0": self.proofreadpage_quality = 0; break;
@@ -125,14 +127,25 @@ function pr_make_edit_area(container,text){
 			case "4": self.proofreadpage_quality = 4; break;
 			default: self.proofreadpage_quality = 1;
 		}
-		self.proofreadpage_username = m4[3];
+		self.proofreadpage_username = m4[2];
 		pageHeader = pageHeader.replace(reg,'');
+	}
+	else if (old_m4 ) {
+		switch( old_m4[1] ) {
+			case "0": self.proofreadpage_quality = 0; break;
+			case "1": self.proofreadpage_quality = 1; break;
+			case "2": self.proofreadpage_quality = 2; break;
+			case "3": self.proofreadpage_quality = 3; break;
+			case "4": self.proofreadpage_quality = 4; break;
+			default: self.proofreadpage_quality = 1;
+		}
+		self.proofreadpage_username = old_m4[3];
+		pageHeader = pageHeader.replace(old_reg,'');
 	}
 	else {
 		 self.proofreadpage_quality = 1;
 		 self.proofreadpage_username = "";
 	}
-
 
 	//escape & character
 	pageBody = pageBody.split("&").join("&amp;")
@@ -769,7 +782,7 @@ function pr_fill_form() {
 	//}
 	if(header){
 		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
-		if(h) h = "<noinclude>{{PageQuality|"+self.proofreadpage_quality+"|"+self.proofreadpage_username+"}}"+h+"\n\n\n</noinclude>";
+		if(h) h = "<noinclude><pagequality level=\""+self.proofreadpage_quality+"\" user=\""+self.proofreadpage_username+"\" />"+h+"\n\n\n</noinclude>";
 		var f = footer.value;
 		if(f) f = "<noinclude>\n"+f+"</noinclude>";
 		var ph = header.parentNode; 
