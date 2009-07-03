@@ -1158,7 +1158,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	
 	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
 	$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_index_namespace ) );
-	if( $page_ns_index==null ){
+	if( $page_ns_index==null || $index_ns_index == null){
 		return true;
 	}
 
