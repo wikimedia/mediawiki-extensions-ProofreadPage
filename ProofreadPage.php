@@ -621,13 +621,6 @@ function pr_renderPageList( $input, $args ) {
 	$return = "";
 	$name = $imageTitle->getDBkey();
 	$count = $image->pageCount();
-	$dbr = wfGetDB( DB_SLAVE );
-	$pagetable = $dbr->tableName( 'page' );
-
-	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
-	if ( $page_ns_index == NULL ) {
-		$page_ns_index = NS_MAIN;
-	}
 
 	$from = $args['from'];
 	$to = $args['to'];
@@ -1056,6 +1049,11 @@ function pr_articlePurge( $article ) {
 function pr_update_pr_index( $index, $deletedpage=null ) {
 	global $pr_page_namespace, $pr_index_namespace;
 
+	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
+	if ( $page_ns_index == NULL ) {
+		return; 
+	}
+
 	$index_title = $index->mTitle;
 	$index_id = $index->getID();
 
@@ -1087,7 +1085,6 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 	$catlinks = $dbr->tableName( 'categorylinks' );
 	$page = $dbr->tableName( 'page' );
 	$pagelist = "'".implode( "', '", $pages)."'";
-	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $pr_page_namespace ) );
 	$query = "SELECT COUNT(page_id) AS count FROM $page LEFT JOIN $catlinks ON cl_from=page_id WHERE cl_to='###' AND page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
 
 	$q0 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
