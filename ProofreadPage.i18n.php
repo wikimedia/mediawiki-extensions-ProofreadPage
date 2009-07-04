@@ -370,10 +370,10 @@ $messages['be-tarask'] = array(
 	'proofreadpage_quality3_category' => 'Вычытаная',
 	'proofreadpage_quality4_category' => 'Правераная',
 	'proofreadpage_quality0_message' => 'Гэта старонка не патрабуе вычыткі',
-	'proofreadpage_quality1_message' => 'Гэта старонка не была вычытана',
+	'proofreadpage_quality1_message' => 'Гэта старонка не была вычытаная',
 	'proofreadpage_quality2_message' => 'Узьнікла праблема ў вычытцы гэтай старонкі',
-	'proofreadpage_quality3_message' => 'Гэта старонка была вычытана',
-	'proofreadpage_quality4_message' => 'Гэта старонка была праверана',
+	'proofreadpage_quality3_message' => 'Гэта старонка была вычытаная',
+	'proofreadpage_quality4_message' => 'Гэта старонка была правераная',
 	'proofreadpage_index_listofpages' => 'Сьпіс старонак',
 	'proofreadpage_image_message' => 'Спасылка на старонку індэксу',
 	'proofreadpage_page_status' => 'Статус старонкі',
@@ -626,6 +626,7 @@ $messages['da'] = array(
 /** German (Deutsch)
  * @author Metalhead64
  * @author Raimond Spekking
+ * @author Tbleher
  * @author ThomasV
  */
 $messages['de'] = array(
@@ -637,6 +638,7 @@ $messages['de'] = array(
 	'proofreadpage_index_expected' => 'Fehler: Index erwartet',
 	'proofreadpage_nosuch_index' => 'Fehler: Kein entsprechender Index',
 	'proofreadpage_nosuch_file' => 'Fehler: Keine entsprechende Datei',
+	'proofreadpage_badpage' => 'Falsches Format',
 	'proofreadpage_number_expected' => 'Fehler: Numerischer Wert erwartet',
 	'proofreadpage_interval_too_large' => 'Fehler: Intervall zu groß',
 	'proofreadpage_invalid_interval' => 'Fehler: ungültiges Intervall',
@@ -831,15 +833,19 @@ Rimarkoj||10',
  * @author Sanbec
  */
 $messages['es'] = array(
+	'proofreadpages' => 'Lista de páginas indexadas',
 	'proofreadpage_desc' => 'Permitir una fácil comparación de un texto con el escaneado original',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'imagen',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_badpage' => 'Formato erróneo',
+	'proofreadpage_indexdupe' => 'Vínculo duplicado',
 	'proofreadpage_nologin' => 'No ha iniciado sesión',
 	'proofreadpage_notallowed' => 'Cambio no permitido',
 	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el estatus corregido de esta página.',
+	'proofreadpage_interval_too_large' => 'Error: intervalo demasiado grande',
+	'proofreadpage_invalid_interval' => 'Error: intervalo inválido',
 	'proofreadpage_nextpage' => 'Página siguiente',
 	'proofreadpage_prevpage' => 'Página anterior',
 	'proofreadpage_header' => 'Encabezado (noinclude):',
@@ -1145,6 +1151,11 @@ $messages['gl'] = array(
 	'proofreadpage_quality2_category' => 'Problemático',
 	'proofreadpage_quality3_category' => 'Corrixido',
 	'proofreadpage_quality4_category' => 'Validado',
+	'proofreadpage_quality0_message' => 'Esta páxina non necesita corrección',
+	'proofreadpage_quality1_message' => 'Esta páxina non foi corrixida',
+	'proofreadpage_quality2_message' => 'Houbo un problema ao corrixir esta páxina',
+	'proofreadpage_quality3_message' => 'Esta páxina foi corrixida',
+	'proofreadpage_quality4_message' => 'Esta páxina foi validada',
 	'proofreadpage_index_listofpages' => 'Lista de páxinas',
 	'proofreadpage_image_message' => 'Ligazón á páxina índice',
 	'proofreadpage_page_status' => 'Estado da páxina',
@@ -1220,6 +1231,11 @@ $messages['gsw'] = array(
 	'proofreadpage_quality2_category' => 'Korrekturprobläm',
 	'proofreadpage_quality3_category' => 'Korrigiert',
 	'proofreadpage_quality4_category' => 'Fertig',
+	'proofreadpage_quality0_message' => 'Die Syte brucht nit Korrektur gläse wäre.',
+	'proofreadpage_quality1_message' => 'Die Syte isch nit Korrektur gläse wore',
+	'proofreadpage_quality2_message' => 'S het e Probläm gee bim Korrektur läse vu däre Syte',
+	'proofreadpage_quality3_message' => 'Die Syte isch Korrektur gläse wore',
+	'proofreadpage_quality4_message' => 'Die Syte isch validiert wore',
 	'proofreadpage_index_listofpages' => 'Sytelischt',
 	'proofreadpage_image_message' => 'Gleich zue dr Indexsyte',
 	'proofreadpage_page_status' => 'Sytestatus',
@@ -1715,6 +1731,11 @@ $messages['ja'] = array(
 	'proofreadpage_quality2_category' => '問題あり',
 	'proofreadpage_quality3_category' => '校正済',
 	'proofreadpage_quality4_category' => '検証済',
+	'proofreadpage_quality0_message' => 'このページは校正する必要がありません',
+	'proofreadpage_quality1_message' => 'このページはまだ校正されていません',
+	'proofreadpage_quality2_message' => 'このページを校正するときに問題が発生しました',
+	'proofreadpage_quality3_message' => 'このページは校正済みです',
+	'proofreadpage_quality4_message' => 'このページは検証済みです',
 	'proofreadpage_index_listofpages' => 'ページの一覧',
 	'proofreadpage_image_message' => '文献概要ページへ',
 	'proofreadpage_page_status' => '校正状況',
@@ -1727,6 +1748,14 @@ $messages['ja'] = array(
 画像|表紙画像
 ページ||20
 注釈||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;ページ]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Jutish (Jysk)
@@ -1931,6 +1960,11 @@ $messages['ksh'] = array(
 	'proofreadpage_quality2_category' => 'Problemscher',
 	'proofreadpage_quality3_category' => 'Nohjelässe',
 	'proofreadpage_quality4_category' => 'Fäädesch jepröhf',
+	'proofreadpage_quality0_message' => 'Heh di Sigg moß nit jeääjejelässe wääde',
+	'proofreadpage_quality1_message' => 'Heh di Sigg woodt nit jeääjejelässe',
+	'proofreadpage_quality2_message' => 'Beim Jeääjelässe för heh di Sigg eß jät opjevalle',
+	'proofreadpage_quality3_message' => 'Heh di Sigg woodt jeääjejelässe',
+	'proofreadpage_quality4_message' => 'Heh di Sigg es jeääjejelässe un joot',
 	'proofreadpage_index_listofpages' => 'SiggeLeß',
 	'proofreadpage_image_message' => 'Lengk op en Index-Sigg',
 	'proofreadpage_page_status' => 'Siggestattus',
@@ -2780,6 +2814,11 @@ $messages['ru'] = array(
 	'proofreadpage_quality2_category' => 'Проблемная',
 	'proofreadpage_quality3_category' => 'Вычитана',
 	'proofreadpage_quality4_category' => 'Проверена',
+	'proofreadpage_quality0_message' => 'Эта страница не требует вычитки',
+	'proofreadpage_quality1_message' => 'Эта страница не вычитана',
+	'proofreadpage_quality2_message' => 'Есть проблемы при вычитке этой страницы',
+	'proofreadpage_quality3_message' => 'Эта страница вычитана',
+	'proofreadpage_quality4_message' => 'Эта страница выверена',
 	'proofreadpage_index_listofpages' => 'Список страниц',
 	'proofreadpage_image_message' => 'Ссылка на страницу индекса',
 	'proofreadpage_page_status' => 'Статус страницы',
@@ -3315,6 +3354,7 @@ $messages['vec'] = array(
 	'proofreadpage_index_expected' => 'Eròr: indice mancante',
 	'proofreadpage_nosuch_index' => "Eròr: sto indice no'l xe presente",
 	'proofreadpage_nosuch_file' => 'Eròr: file mia catà',
+	'proofreadpage_indexdupe' => 'Colegamento dopio',
 	'proofreadpage_number_expected' => 'Eròr: me spetavo un valor numerico',
 	'proofreadpage_interval_too_large' => 'Eròr: intervalo massa grando',
 	'proofreadpage_invalid_interval' => 'Eròr: intervalo mia valido',
@@ -3341,6 +3381,14 @@ Fonte
 Imagine|Imagine de copertina
 Pagine||20
 Note||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|pagine}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Veps (Vepsan kel')
