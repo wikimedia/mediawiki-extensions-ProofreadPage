@@ -639,6 +639,11 @@ $messages['de'] = array(
 	'proofreadpage_nosuch_index' => 'Fehler: Kein entsprechender Index',
 	'proofreadpage_nosuch_file' => 'Fehler: Keine entsprechende Datei',
 	'proofreadpage_badpage' => 'Falsches Format',
+	'proofreadpage_indexdupe' => 'Doppelter Link',
+	'proofreadpage_nologin' => 'Nicht angemeldet',
+	'proofreadpage_nologintext' => 'Du musst [[Special:UserLogin|angemeldet sein]], um den Korrekturlesungsstatus von Seiten zu ändern.',
+	'proofreadpage_notallowed' => 'Änderung nicht erlaubt',
+	'proofreadpage_notallowedtext' => 'Du bist nicht berechtigt, den Korrekturlesungsstatus dieser Seite zu ändern.',
 	'proofreadpage_number_expected' => 'Fehler: Numerischer Wert erwartet',
 	'proofreadpage_interval_too_large' => 'Fehler: Intervall zu groß',
 	'proofreadpage_invalid_interval' => 'Fehler: ungültiges Intervall',
@@ -653,6 +658,11 @@ $messages['de'] = array(
 	'proofreadpage_quality2_category' => 'Korrekturproblem',
 	'proofreadpage_quality3_category' => 'Korrigiert',
 	'proofreadpage_quality4_category' => 'Fertig',
+	'proofreadpage_quality0_message' => 'Diese Seite muss nicht korrekturgelesen werden',
+	'proofreadpage_quality1_message' => 'Diese Seite wurde nicht korrekturgelesen',
+	'proofreadpage_quality2_message' => 'Es gab ein Problem beim Korrekturlesen der Seite',
+	'proofreadpage_quality3_message' => 'Diese Seite wurde korrekturgelesen',
+	'proofreadpage_quality4_message' => 'Diese Seite wurde geprüft',
 	'proofreadpage_index_listofpages' => 'Seitenliste',
 	'proofreadpage_image_message' => 'Link zur Indexseite',
 	'proofreadpage_page_status' => 'Seitenstatus',
@@ -665,6 +675,14 @@ Quelle
 Bild|Titelbild
 Seiten||20
 Bemerkungen||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|Seite|Seiten}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -2565,6 +2583,8 @@ $messages['pl'] = array(
 	'proofreadpage_nosuch_file' => 'Błąd – nie ma takiego pliku',
 	'proofreadpage_badpage' => 'Zły format',
 	'proofreadpage_badpagetext' => 'Format strony którą próbujesz zapisać jest nieprawidłowy.',
+	'proofreadpage_indexdupe' => 'Zdublowany link',
+	'proofreadpage_indexdupetext' => 'Strony nie mogą być wymienione więcej niż jeden raz na stronie indeksu.',
 	'proofreadpage_nologin' => 'Niezalogowany',
 	'proofreadpage_nologintext' => 'Musisz [[Special:UserLogin|zalogować się]], aby zmienić status proofreading strony.',
 	'proofreadpage_notallowed' => 'Zmiana niedozwolona',
@@ -2583,6 +2603,11 @@ $messages['pl'] = array(
 	'proofreadpage_quality2_category' => 'Problemy',
 	'proofreadpage_quality3_category' => 'Skorygowana',
 	'proofreadpage_quality4_category' => 'Uwierzytelniona',
+	'proofreadpage_quality0_message' => 'Ta strona nie wymaga korekty',
+	'proofreadpage_quality1_message' => 'Ta strona nie została skorygowana',
+	'proofreadpage_quality2_message' => 'Wystąpił problem przy korekcie tej stronie',
+	'proofreadpage_quality3_message' => 'Ta strona została skorygowana',
+	'proofreadpage_quality4_message' => 'Ta strona została zatwierdzona',
 	'proofreadpage_index_listofpages' => 'Spis stron',
 	'proofreadpage_image_message' => 'Link do strony indeksowej',
 	'proofreadpage_page_status' => 'Status strony',
@@ -2595,6 +2620,14 @@ Wydawca
 Ilustracja|Okładka
 Strony||20
 Uwagi||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|strona|strony|stron}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Piedmontese (Piemontèis)
@@ -2845,6 +2878,7 @@ $messages['ru'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
+	'proofreadpages' => 'Индекс сирэйдэрин тиһигэ',
 	'proofreadpage_desc' => 'Оригинаалы уонна скаанердаммыт ойууну тэҥнээн көрөр кыаҕы биэрэр',
 	'proofreadpage_namespace' => 'Сирэй',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -2853,6 +2887,14 @@ $messages['sah'] = array(
 	'proofreadpage_index_expected' => 'Алҕас: Индекс көстүбэтэ',
 	'proofreadpage_nosuch_index' => 'Алҕас: Маннык индекс суох',
 	'proofreadpage_nosuch_file' => 'Алҕас: маннык билэ суох',
+	'proofreadpage_badpage' => 'Сыыһа формаат',
+	'proofreadpage_badpagetext' => 'Суруллар сирэй атын формааттаах.',
+	'proofreadpage_indexdupe' => 'Хос сигэ',
+	'proofreadpage_indexdupetext' => 'Сирэй индекс сирэйигэр хаста да суруллубат.',
+	'proofreadpage_nologin' => 'Киирии сатаммата (сатамматах)',
+	'proofreadpage_nologintext' => 'Сирэйи бэрэбиэркэлээһин туругун уларытарга [[Special:UserLogin|бэлиэтэммит ааккын этиэхтээххин]].',
+	'proofreadpage_notallowed' => 'Уларытар сатаммат',
+	'proofreadpage_notallowedtext' => 'Бу сирэйи бэрэбиэркэлээһин туругун уларытар кыаҕыҥ суох.',
 	'proofreadpage_number_expected' => 'Алҕас: Чыыһыла наада',
 	'proofreadpage_interval_too_large' => 'Алҕас: наһаа улахан кээмэйи эппиккин',
 	'proofreadpage_invalid_interval' => 'Алҕас: сыыһа интервал',
@@ -2867,6 +2909,11 @@ $messages['sah'] = array(
 	'proofreadpage_quality2_category' => 'Моһоллоох',
 	'proofreadpage_quality3_category' => 'Ааҕыллыбыт',
 	'proofreadpage_quality4_category' => 'Бэрэбиэркэлэммит',
+	'proofreadpage_quality0_message' => 'Бу сирэй бэрэбиэркэлэнэрэ ирдэммэт',
+	'proofreadpage_quality1_message' => 'Бу сирэй тургутуллубатах',
+	'proofreadpage_quality2_message' => 'Бу сирэйи тургутарга туох эрэ моһол үөскээбит',
+	'proofreadpage_quality3_message' => 'Бу сирэй тургутуллубут',
+	'proofreadpage_quality4_message' => 'Бу сирэй бэрэбиэкэлэммит (выверка)',
 	'proofreadpage_index_listofpages' => 'Сирэйдэр испииһэктэрэ',
 	'proofreadpage_image_message' => 'Индекс сирэйигэр ыйынньык',
 	'proofreadpage_page_status' => 'Сирэй статуһа',
@@ -2879,6 +2926,14 @@ $messages['sah'] = array(
 Ойуу|Таһын ойуута
 Сирэйин ахсаана||20
 Хос быһаарыылара||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|сирэй|сирэйдээх}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Sardinian (Sardu)
@@ -2924,6 +2979,11 @@ $messages['sk'] = array(
 	'proofreadpage_quality2_category' => 'Problematické',
 	'proofreadpage_quality3_category' => 'Skontrolované',
 	'proofreadpage_quality4_category' => 'Overené',
+	'proofreadpage_quality0_message' => 'Túto stránku netreba kontrolovať',
+	'proofreadpage_quality1_message' => 'Táto stránka nebola skontrolovaná',
+	'proofreadpage_quality2_message' => 'Nastal problém pri kontrolovaní tejto stránky',
+	'proofreadpage_quality3_message' => 'Táto stránka bola skontrolovaná',
+	'proofreadpage_quality4_message' => 'Táto stránka bola overená',
 	'proofreadpage_index_listofpages' => 'Zoznam stránok',
 	'proofreadpage_image_message' => 'Odkaz na stránku index',
 	'proofreadpage_page_status' => 'Stav stránky',
