@@ -776,15 +776,11 @@ function pr_fill_form() {
 	var form = document.getElementById("editform");
 	var header = form.elements["headerTextbox"];
 	var footer = form.elements["footerTextbox"];
-	//if( ( self.proofreadpage_quality == 0 ) && ( form.elements["wpTextbox1"].value != "" ) ) { 
-	//	self.proofreadpage_quality = 1;
-	//	form.elements["wpSummary"].value="/* " + proofreadPageMessageQuality1 + " */ ";
-	//}
 	if(header){
 		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
-		if(h) h = "<noinclude><pagequality level=\""+self.proofreadpage_quality+"\" user=\""+self.proofreadpage_username+"\" />"+h+"\n\n\n</noinclude>";
+		h = "<noinclude><pagequality level=\""+self.proofreadpage_quality+"\" user=\""+self.proofreadpage_username+"\" />"+h+"\n\n\n</noinclude>";
 		var f = footer.value;
-		if(f) f = "<noinclude>\n"+f+"</noinclude>";
+		f = "<noinclude>\n"+f+"</noinclude>";
 		var ph = header.parentNode; 
 		ph.removeChild(header);
 		var pf = footer.parentNode; 
