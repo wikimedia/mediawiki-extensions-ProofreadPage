@@ -24,6 +24,7 @@ $wgHooks['ArticlePurge'][] = 'pr_articlePurge';
 $wgHooks['SpecialMovepageAfterMove'][] = 'pr_movePage';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'pr_schema_update';
 $wgHooks['OutputPageBeforeHTML'][] = 'pr_OutputPageBeforeHTML';
+$wgHooks['EditPage::importFormData'][] = 'pr_formData';
 
 
 # special page
@@ -786,10 +787,43 @@ function pr_parse_page( $text ) {
 }
 
 
+
+function  pr_formData( $editpage ) {
+	global $wgRequest, $wgTitle;
+	global $pr_page_namespace;
+
+	//abort if we are not a page
+	if ( ! preg_match( "/^$pr_page_namespace:(.*)$/", $wgTitle->getPrefixedText() ) ) {
+		return true;
+	}
+	if ( ! $wgRequest->wasPosted() ) {
+		return true;
+	}
+	$editpage->quality = $wgRequest->getVal( 'quality' );
+	$editpage->username = $editpage->safeUnicodeInput( $wgRequest, 'wpProofreader' );
+	$editpage->header = $editpage->safeUnicodeInput( $wgRequest, 'wpHeaderTextbox' );
+	$editpage->footer = $editpage->safeUnicodeInput( $wgRequest, 'wpFooterTextbox' );
+
+	if( $editpage->quality != null ) {
+		//format the page
+		$text = "<noinclude><pagequality level=\"".$editpage->quality."\" user=\"".$editpage->username."\" />"
+			.$editpage->header."\n\n\n</noinclude>"
+			.$editpage->textbox1
+			."<noinclude>\n".$editpage->footer."\n\n\n</noinclude>";
+		$editpage->textbox1 = $text;
+	} else {
+		//replace deprecated template
+		$text = $editpage->textbox1;
+		$text = preg_replace( "/\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}/is", "<pagequality level=\"\\1\" user=\"\\3\" />", $text );
+		$editpage->textbox1 = $text;
+	}
+	return true;
+}
+
+
 /*
  * Check the format of pages in "Page" namespace. 
  */
-
 function pr_attemptSave( $editpage ) {
 	global $pr_page_namespace, $pr_index_namespace;
 	global $wgOut, $wgUser;
@@ -812,11 +846,7 @@ function pr_attemptSave( $editpage ) {
 		return true;
 	}
 
-	//replace deprecated template
 	$text = $editpage->textbox1;
-	$text = preg_replace( "/\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}/is", "<pagequality level=\"\\1\" user=\"\\3\" />", $text );
-	$editpage->textbox1 = $text;
-
 	//parse the page
 	list( $q , $username, $ptext ) = pr_parse_page( $text );
 	if( $q == -1 ) {
@@ -843,7 +873,7 @@ function pr_attemptSave( $editpage ) {
 			$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
 			return false;
 		}
-		if ( ($old_q != $q) && ($wgUser->getName() != $username) ) {
+		if ( ( ($old_username != $username) || ($old_q != $q) ) && ($wgUser->getName() != $username) ) {
 			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
 			return false;
 		}

@@ -156,28 +156,16 @@ function pr_make_edit_area(container,text){
 		+ '<div id="prp_header" style="display:none;">'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessageHeader) + '</span>'
-		+ '<textarea name="headerTextbox" rows="2" cols="80">' + pageHeader + '</textarea><br/>'
+		+ '<textarea name="wpHeaderTextbox" rows="2" cols="80">' + pageHeader + '</textarea><br/>'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessagePageBody) + '</span></div>'
 		+ '<textarea name="wpTextbox1" id="wpTextbox1" style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' + pageBody + '</textarea>'
 		+ '<div id="prp_footer" style="display:none;">'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessageFooter) + '</span><br/>'
-		+ '<textarea name="footerTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
+		+ '<textarea name="wpFooterTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
 
 
-	var saveButton = document.getElementById("wpSave"); 
-	var previewButton = document.getElementById("wpPreview"); 
-	var diffButton = document.getElementById("wpDiff")
-	if(saveButton){
-		saveButton.onclick = pr_fill_form;
-		previewButton.onclick = pr_fill_form;
-		diffButton.onclick = pr_fill_form;
-	} 
-	else {
-		//make the text area readonly
-		container.firstChild.nextSibling.setAttribute("readonly","readonly");
-	}
 }
 
 
@@ -772,26 +760,6 @@ function pr_setup() {
 
 
 
-function pr_fill_form() {
-	var form = document.getElementById("editform");
-	var header = form.elements["headerTextbox"];
-	var footer = form.elements["footerTextbox"];
-	if(header){
-		var h = header.value.replace(/(\s*(\r?\n|\r))+$/, ''); 
-		h = "<noinclude><pagequality level=\""+self.proofreadpage_quality+"\" user=\""+self.proofreadpage_username+"\" />"+h+"\n\n\n</noinclude>";
-		var f = footer.value;
-		f = "<noinclude>\n"+f+"</noinclude>";
-		var ph = header.parentNode; 
-		ph.removeChild(header);
-		var pf = footer.parentNode; 
-		pf.removeChild(footer);
-		form.elements["wpTextbox1"].value = h+form.elements["wpTextbox1"].value+f;
-		form.elements["wpTextbox1"].setAttribute('readonly',"readonly");
-	}
-}
-
-
-
 
 function pr_init() {
 
@@ -854,17 +822,6 @@ hookEvent("load", pr_initzoom );
 
 function pr_add_quality(form,value){
  
-	var tbv = form.elements["wpTextbox1"].value;
-	if( /*( ( value == 0 ) && ( tbv != "" ) ) ||*/ ( ( value >= 3 ) && ( tbv == "" ) ) ) {
-		switch( self.proofreadpage_quality ) {
-			case 4: document.editform.quality[4].checked = true; break;
-			case 3: document.editform.quality[3].checked = true; break;
-			case 1: document.editform.quality[2].checked = true; break; 
-			case 2: document.editform.quality[1].checked = true; break; 
-			case 0: document.editform.quality[0].checked = true; break; 
-		}
-		return;
-	}
 	self.proofreadpage_quality = value;
 	self.proofreadpage_username = wgUserName;
 	var text="";
@@ -876,22 +833,23 @@ function pr_add_quality(form,value){
 		case 4: text = proofreadPageMessageQuality4; break;
 	}
 	form.elements["wpSummary"].value="/* " + text + " */ ";
+	form.elements["wpProofreader"].value=self.proofreadpage_username;
 
 }
 
 
 function pr_add_quality_buttons(){
 
-	if( self.proofreadpage_no_quality_buttons ) return;
 	var ig  = document.getElementById("wpWatchthis");
 	if( !ig ) return;
 	var f = document.createElement("span");
 	f.innerHTML = 
-' <span class="quality0"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,0)"> </span>'
-+'<span class="quality2"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,2)"> </span>'
-+'<span class="quality1"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,1)"> </span>'
-+'<span class="quality3"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,3)"> </span>'
-+'<span class="quality4"> <input type="radio" name="quality" onclick="pr_add_quality(this.form,4)"> </span>';
+' <input type="hidden" name="wpProofreader" value="'+self.proofreadpage_username+'">'
++'<span class="quality0"> <input type="radio" name="quality" value=0 onclick="pr_add_quality(this.form,0)"> </span>'
++'<span class="quality2"> <input type="radio" name="quality" value=2 onclick="pr_add_quality(this.form,2)"> </span>'
++'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)"> </span>'
++'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)"> </span>'
++'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
