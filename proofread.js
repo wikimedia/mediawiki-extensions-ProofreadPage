@@ -853,7 +853,7 @@ function pr_add_quality_buttons(){
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
 
-	if(!wgUserName) f.setStyleAttribute('hidden');
+	if(!wgUserName) f.style.cssText = 'display:none';
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
 	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != wgUserName ) ) ) ) {
