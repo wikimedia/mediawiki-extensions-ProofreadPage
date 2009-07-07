@@ -841,6 +841,7 @@ function pr_add_quality(form,value){
 function pr_add_quality_buttons(){
 
 	var ig  = document.getElementById("wpWatchthis");
+	if(!wgUserName) ig = document.getElementById("wpSummary");
 	if( !ig ) return;
 	var f = document.createElement("span");
 	f.innerHTML = 
@@ -851,6 +852,8 @@ function pr_add_quality_buttons(){
 +'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)"> </span>'
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)"> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
+
+	if(!wgUserName) f.setStyleAttribute('hidden');
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
 	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != wgUserName ) ) ) ) {
