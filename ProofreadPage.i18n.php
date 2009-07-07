@@ -875,6 +875,8 @@ $messages['es'] = array(
 	'proofreadpage_quality2_category' => 'Problemática',
 	'proofreadpage_quality3_category' => 'Corregido',
 	'proofreadpage_quality4_category' => 'Validada',
+	'proofreadpage_quality3_message' => 'Esta página ha sido corregida',
+	'proofreadpage_quality4_message' => 'Esta página ha sido validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message' => 'Enlace a la página de índice',
 	'proofreadpage_page_status' => 'Estatus de página',
@@ -2535,6 +2537,11 @@ $messages['oc'] = array(
 	'proofreadpage_quality2_category' => 'Pagina amb problèma',
 	'proofreadpage_quality3_category' => 'Pagina corregida',
 	'proofreadpage_quality4_category' => 'Pagina validada',
+	'proofreadpage_quality0_message' => 'Aquesta pagina a pas besonh d’èsser relegida',
+	'proofreadpage_quality1_message' => 'Aquesta pagina es pas estada relegida',
+	'proofreadpage_quality2_message' => "I a agut un problèma al moment de la relectura d'aquesta pagina",
+	'proofreadpage_quality3_message' => 'Aquesta pagina es estada relegida',
+	'proofreadpage_quality4_message' => 'Aquesta pagina es estada validada',
 	'proofreadpage_index_listofpages' => 'Lista de las paginas',
 	'proofreadpage_image_message' => "Ligam cap a l'indèx",
 	'proofreadpage_page_status' => 'Estat de la pagina',
@@ -2547,6 +2554,14 @@ Font
 Imatge|Imatge en cobertura
 Paginas||20
 Comentaris||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td> $1 [$2&nbsp;pagin{{PLURAL: $2||s}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Ossetic (Иронау)
@@ -2848,9 +2863,9 @@ $messages['ru'] = array(
 	'proofreadpage_quality3_category' => 'Вычитана',
 	'proofreadpage_quality4_category' => 'Проверена',
 	'proofreadpage_quality0_message' => 'Эта страница не требует вычитки',
-	'proofreadpage_quality1_message' => 'Эта страница не вычитана',
+	'proofreadpage_quality1_message' => 'Эта страница не была вычитана',
 	'proofreadpage_quality2_message' => 'Есть проблемы при вычитке этой страницы',
-	'proofreadpage_quality3_message' => 'Эта страница вычитана',
+	'proofreadpage_quality3_message' => 'Эта страница была вычитана',
 	'proofreadpage_quality4_message' => 'Эта страница выверена',
 	'proofreadpage_index_listofpages' => 'Список страниц',
 	'proofreadpage_image_message' => 'Ссылка на страницу индекса',
