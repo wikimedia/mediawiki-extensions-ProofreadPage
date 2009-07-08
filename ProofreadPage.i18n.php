@@ -808,6 +808,7 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
+	'proofreadpages' => 'Listo de indeksaj paĝoj',
 	'proofreadpage_desc' => 'Permesas facilan komparon de teksto al la originala skanitaĵo.',
 	'proofreadpage_namespace' => 'Paĝo',
 	'proofreadpage_index_namespace' => 'Indekso',
@@ -815,7 +816,9 @@ $messages['eo'] = array(
 	'proofreadpage_index' => 'Indekso',
 	'proofreadpage_index_expected' => 'Eraro: indekso atentita',
 	'proofreadpage_nosuch_index' => 'Eraro: nenia indekso',
+	'proofreadpage_indexdupe' => 'Duplikata ligilo',
 	'proofreadpage_nologin' => 'Ne ensalutita',
+	'proofreadpage_notallowed' => 'Ŝanĝo ne permesiĝis',
 	'proofreadpage_number_expected' => 'Eraro: numera valuto atentita',
 	'proofreadpage_interval_too_large' => 'Eraro: intervalo tro granda',
 	'proofreadpage_nextpage' => 'Sekva paĝo',
@@ -858,7 +861,9 @@ $messages['es'] = array(
 	'proofreadpage_image' => 'imagen',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_badpage' => 'Formato erróneo',
+	'proofreadpage_badpagetext' => 'El formato de la página que intestaste grabar es incorrecto.',
 	'proofreadpage_indexdupe' => 'Vínculo duplicado',
+	'proofreadpage_indexdupetext' => 'Las páginas no pueden ser listadas más de una vez en una página índice.',
 	'proofreadpage_nologin' => 'No ha iniciado sesión',
 	'proofreadpage_notallowed' => 'Cambio no permitido',
 	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el estatus corregido de esta página.',
