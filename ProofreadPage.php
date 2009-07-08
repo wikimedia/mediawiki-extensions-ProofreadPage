@@ -140,11 +140,13 @@ function pr_navigation( $title ) {
 	$default_footer = wfMsgGetKey( 'proofreadpage_default_footer', true, true, false );
 
 	$err = array( '', '', '', '', '' );
-
 	$index_title = Title::newFromText( $title->pr_index_title );
+	if ( !$index_title ) {
+		return $err;
+	}
+
 	$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
 	$image = wfFindFile( $imageTitle );
-
 	// if multipage, we use the page order, but we should read pagenum from the index
 	if ( $image && $image->exists() && $image->isMultiPage() ) {
 		$pagenr = 1;
@@ -157,23 +159,14 @@ function pr_navigation( $title ) {
 			return $err;
 		}
 		$name = $image->getTitle()->getText();
-		$index_name = "$pr_index_namespace:$name";
 		$prev_name = "$pr_page_namespace:$name/" . ( $pagenr - 1 );
 		$next_name = "$pr_page_namespace:$name/" . ( $pagenr + 1 );
 		$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
 		$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
 
-		if ( !$index_title ) {
-			// there is no index, or the page is not listed in the index : use canonical index
-			$index_title = Title::newFromText( $index_name );
-		}
 	} else {
 		$prev_url = '';
 		$next_url = '';
-	}
-
-	if ( !$index_title ) {
-		return $err;
 	}
 
 	$index_url = $index_title->getFullURL();
@@ -809,7 +802,7 @@ function  pr_formData( $editpage ) {
 		$text = "<noinclude><pagequality level=\"".$editpage->quality."\" user=\"".$editpage->username."\" />"
 			.$editpage->header."\n\n\n</noinclude>"
 			.$editpage->textbox1
-			."<noinclude>\n".$editpage->footer."\n\n\n</noinclude>";
+			."<noinclude>\n".$editpage->footer."</noinclude>";
 		$editpage->textbox1 = $text;
 	} else {
 		//replace deprecated template
