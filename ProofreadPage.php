@@ -781,21 +781,21 @@ function pr_parse_page( $text ) {
 
 
 
-function  pr_formData( $editpage ) {
-	global $wgRequest, $wgTitle;
+function  pr_formData( $editpage, $request ) {
+	global $wgTitle;
 	global $pr_page_namespace;
 
 	//abort if we are not a page
 	if ( ! preg_match( "/^$pr_page_namespace:(.*)$/", $wgTitle->getPrefixedText() ) ) {
 		return true;
 	}
-	if ( ! $wgRequest->wasPosted() ) {
+	if ( ! $request->wasPosted() ) {
 		return true;
 	}
-	$editpage->quality = $wgRequest->getVal( 'quality' );
-	$editpage->username = $editpage->safeUnicodeInput( $wgRequest, 'wpProofreader' );
-	$editpage->header = $editpage->safeUnicodeInput( $wgRequest, 'wpHeaderTextbox' );
-	$editpage->footer = $editpage->safeUnicodeInput( $wgRequest, 'wpFooterTextbox' );
+	$editpage->quality = $request->getVal( 'quality' );
+	$editpage->username = $editpage->safeUnicodeInput( $request, 'wpProofreader' );
+	$editpage->header = $editpage->safeUnicodeInput( $request, 'wpHeaderTextbox' );
+	$editpage->footer = $editpage->safeUnicodeInput( $request, 'wpFooterTextbox' );
 
 	if( $editpage->quality != null ) {
 		//format the page
