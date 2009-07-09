@@ -797,12 +797,18 @@ function  pr_formData( $editpage, $request ) {
 	$editpage->header = $editpage->safeUnicodeInput( $request, 'wpHeaderTextbox' );
 	$editpage->footer = $editpage->safeUnicodeInput( $request, 'wpFooterTextbox' );
 
+	//we want to keep ordinary spaces at the end of the main textbox
+	$text = rtrim( $request->getText( 'wpTextbox1' ), "\t\n\r\0\x0B");
+	$editpage->textbox1 = $request->getBool( 'safemode' )
+		? $editpage->unmakesafe( $text )
+		: $text;
+
 	if( $editpage->quality != null ) {
 		//format the page
 		$text = "<noinclude><pagequality level=\"".$editpage->quality."\" user=\"".$editpage->username."\" />"
 			.$editpage->header."\n\n\n</noinclude>"
 			.$editpage->textbox1
-			."<noinclude>\n".$editpage->footer."</noinclude>";
+			."\n<noinclude>\n".$editpage->footer."</noinclude>";
 		$editpage->textbox1 = $text;
 	} else {
 		//replace deprecated template
