@@ -1226,7 +1226,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	$catlinks = $dbr->tableName( 'categorylinks' );
 
 	# count transclusions from page namespace
-	$query = "SELECT COUNT(page_id) AS count FROM templatelinks LEFT JOIN $page ON page_title=tl_title where tl_from=$id and tl_namespace=$page_ns_index";
+	$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title where tl_from=$id and tl_namespace=$page_ns_index";
 	$res = $dbr->query( $query , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
 		$row = $dbr->fetchObject( $res );
@@ -1238,7 +1238,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	}
 
 	# find the proofreading status of transclusions
-	$query = "SELECT COUNT(page_id) AS count FROM templatelinks LEFT JOIN $page ON page_title=tl_title LEFT JOIN $catlinks ON cl_from=page_id where tl_from=$id and tl_namespace=$page_ns_index AND cl_to='###'";
+	$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title LEFT JOIN $catlinks ON cl_from=page_id where tl_from=$id and tl_namespace=$page_ns_index AND cl_to='###'";
 
 	$q4 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) );
 	$res = $dbr->query( str_replace( '###', $q4, $query) , __METHOD__ );
