@@ -71,12 +71,12 @@ class ProofreadPagesQuery extends QueryPage {
 
 	function formatResult( $skin, $result ) {
 		global $wgLang, $wgContLang;
-		global $pr_index_namespace;
 
-		$title = Title::newFromText( $pr_index_namespace.":".$result->title );
+		$index_namespace = pr_index_ns();
+		$title = Title::newFromText( $index_namespace.":".$result->title );
 
 		if ( !$title ) {
-			return '<!-- Invalid title ' .  htmlspecialchars( $pr_index_namespace.":".$result->title ). '-->';
+			return '<!-- Invalid title ' .  htmlspecialchars( $index_namespace.":".$result->title ). '-->';
 		}
 		$plink = $this->isCached()
 		  ? $skin->link( $title , htmlspecialchars( $title->getText() ) )
