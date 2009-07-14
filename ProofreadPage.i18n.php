@@ -205,6 +205,16 @@ $messages['ar'] = array(
 الملاحظات||10',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'proofreadpage_namespace' => 'ܦܐܬܐ',
+	'proofreadpage_image' => 'ܨܘܪܬܐ',
+	'proofreadpage_indexdupe' => 'ܐܣܘܪܐ ܥܦܝܦܐ',
+	'proofreadpage_nologin' => 'ܠܐ ܥܠܝܠܐ',
+);
+
 /** Araucanian (Mapudungun)
  * @author Remember the dot
  */
@@ -630,6 +640,7 @@ $messages['da'] = array(
  * @author ThomasV
  */
 $messages['de'] = array(
+	'proofreadpages' => 'Liste von Indexseiten',
 	'proofreadpage_desc' => 'Ermöglicht das bequeme Vergleichen von Text mit dem Originalscan',
 	'proofreadpage_namespace' => 'Seite',
 	'proofreadpage_index_namespace' => 'Index',
@@ -639,7 +650,9 @@ $messages['de'] = array(
 	'proofreadpage_nosuch_index' => 'Fehler: Kein entsprechender Index',
 	'proofreadpage_nosuch_file' => 'Fehler: Keine entsprechende Datei',
 	'proofreadpage_badpage' => 'Falsches Format',
+	'proofreadpage_badpagetext' => 'Das Format der Seite, die du versuchst zu speichern, ist falsch.',
 	'proofreadpage_indexdupe' => 'Doppelter Link',
+	'proofreadpage_indexdupetext' => 'Seiten können nicht mehr als einmal auf einer Indexseite aufgelistet werden.',
 	'proofreadpage_nologin' => 'Nicht angemeldet',
 	'proofreadpage_nologintext' => 'Du musst [[Special:UserLogin|angemeldet sein]], um den Korrekturlesungsstatus von Seiten zu ändern.',
 	'proofreadpage_notallowed' => 'Änderung nicht erlaubt',
@@ -761,6 +774,7 @@ $messages['ee'] = array(
  * @author ZaDiak
  */
 $messages['el'] = array(
+	'proofreadpages' => 'Κατάλογος σελίδων ευρετηρίου',
 	'proofreadpage_desc' => 'Επίτρεψε εύκολη σύγκριση κειμένου με την πρωτότυπη σάρωση',
 	'proofreadpage_namespace' => 'Σελίδα',
 	'proofreadpage_index_namespace' => 'Ευρετήριο',
@@ -768,8 +782,10 @@ $messages['el'] = array(
 	'proofreadpage_index' => 'Ευρετήριο',
 	'proofreadpage_nosuch_file' => 'Σφάλμα: δεν υπάρχει αυτό το αρχείο',
 	'proofreadpage_badpage' => 'Λάθος Φορμά',
-	'proofreadpage_notallowed' => 'Μη επιτρεπόμενο',
-	'proofreadpage_notallowedtext' => 'Μη επιτρεπόμενο.',
+	'proofreadpage_indexdupe' => 'Διπλότυπος σύνδεσμος',
+	'proofreadpage_nologin' => 'Δεν έχετε συνδεθεί',
+	'proofreadpage_notallowed' => 'Αλλαγή δεν επιτρέπεται',
+	'proofreadpage_notallowedtext' => 'Δεν επιτρέπεται να αλλάξετε την κατάσταση διόρθωσης κειμένου αυτής της σελίδας.',
 	'proofreadpage_interval_too_large' => 'Σφάλμα: υπερβολικά μεγάλο διάστημα',
 	'proofreadpage_invalid_interval' => 'Σφάλμα: άκυρο διάστημα',
 	'proofreadpage_nextpage' => 'Επόμενη σελίδα',
@@ -802,6 +818,14 @@ $messages['el'] = array(
 Σελίδες||20
 
 Σχόλια||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|σελίδα|σελίδες}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Esperanto (Esperanto)
@@ -816,11 +840,15 @@ $messages['eo'] = array(
 	'proofreadpage_index' => 'Indekso',
 	'proofreadpage_index_expected' => 'Eraro: indekso atentita',
 	'proofreadpage_nosuch_index' => 'Eraro: nenia indekso',
+	'proofreadpage_nosuch_file' => 'Eraro: nenia dosiero',
+	'proofreadpage_badpage' => 'Malbona Formato',
 	'proofreadpage_indexdupe' => 'Duplikata ligilo',
 	'proofreadpage_nologin' => 'Ne ensalutita',
+	'proofreadpage_nologintext' => 'Vi devas [[Special:UserLogin|ensaluti]] por modifi la provlegan statuson de paĝojn.',
 	'proofreadpage_notallowed' => 'Ŝanĝo ne permesiĝis',
 	'proofreadpage_number_expected' => 'Eraro: numera valuto atentita',
 	'proofreadpage_interval_too_large' => 'Eraro: intervalo tro granda',
+	'proofreadpage_invalid_interval' => 'Eraro: malvalida intervalo',
 	'proofreadpage_nextpage' => 'Sekva paĝo',
 	'proofreadpage_prevpage' => 'Antaŭa paĝo',
 	'proofreadpage_header' => 'Supra titolo (ne inkluzivu):',
@@ -832,6 +860,8 @@ $messages['eo'] = array(
 	'proofreadpage_quality2_category' => 'Problema',
 	'proofreadpage_quality3_category' => 'Provlegita',
 	'proofreadpage_quality4_category' => 'Validigita',
+	'proofreadpage_quality0_message' => 'La paĝo ne bezonas esti provlegata',
+	'proofreadpage_quality2_message' => 'Estis problemo pruvlegante ĉi tiun paĝon',
 	'proofreadpage_index_listofpages' => 'Listo de paĝoj',
 	'proofreadpage_image_message' => 'Ligilo al la indekspaĝo',
 	'proofreadpage_page_status' => 'Statuso de paĝo',
@@ -865,6 +895,7 @@ $messages['es'] = array(
 	'proofreadpage_indexdupe' => 'Vínculo duplicado',
 	'proofreadpage_indexdupetext' => 'Las páginas no pueden ser listadas más de una vez en una página índice.',
 	'proofreadpage_nologin' => 'No ha iniciado sesión',
+	'proofreadpage_nologintext' => 'Debes haber [[Special:UserLogin|iniciado sesión]]para modificar el status de corrección de las páginas.',
 	'proofreadpage_notallowed' => 'Cambio no permitido',
 	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el estatus corregido de esta página.',
 	'proofreadpage_interval_too_large' => 'Error: intervalo demasiado grande',
@@ -880,6 +911,9 @@ $messages['es'] = array(
 	'proofreadpage_quality2_category' => 'Problemática',
 	'proofreadpage_quality3_category' => 'Corregido',
 	'proofreadpage_quality4_category' => 'Validada',
+	'proofreadpage_quality0_message' => 'Esta página no necesita ser corregida',
+	'proofreadpage_quality1_message' => 'Esta página no ha sido corregida',
+	'proofreadpage_quality2_message' => 'Hubo un problema cuando se corregía esta página',
 	'proofreadpage_quality3_message' => 'Esta página ha sido corregida',
 	'proofreadpage_quality4_message' => 'Esta página ha sido validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
@@ -2128,10 +2162,29 @@ Opmèrkinge||10",
  * @author Matasg
  */
 $messages['lt'] = array(
+	'proofreadpages' => 'Indeksuotų puslapių sąrašas',
+	'proofreadpage_desc' => 'Galima lengvai palyginti tekstą su originaliu',
 	'proofreadpage_namespace' => 'Puslapis',
+	'proofreadpage_index_namespace' => 'Indeksas',
 	'proofreadpage_image' => 'paveikslėlis',
+	'proofreadpage_index' => 'Indeksas',
+	'proofreadpage_index_expected' => 'Klaida: indeksas laukiamas',
+	'proofreadpage_nosuch_index' => 'Klaida: nėra tokio indekso',
+	'proofreadpage_nosuch_file' => 'Klaida: nėra tokio failo',
+	'proofreadpage_badpage' => 'Neteisingas formatas',
+	'proofreadpage_badpagetext' => 'Puslapio, kurį bandėte išsaugoti, formatas yra neteisingas.',
+	'proofreadpage_indexdupe' => 'Dublikuoti nuorodą',
+	'proofreadpage_indexdupetext' => 'Puslapiai negali būti pateikiami daugiau kaip kartą pagrindiniame puslapyje.',
+	'proofreadpage_nologin' => 'Neprisijungta',
+	'proofreadpage_nologintext' => 'Jūs turite būti [[Special:Userlogin|prisijungęs]], norėdamas keisti puslapių statusą.',
+	'proofreadpage_notallowed' => 'Keisti neleidžiama',
+	'proofreadpage_notallowedtext' => 'Jums neleidžiama pakeisti šio puslapio statuso.',
+	'proofreadpage_interval_too_large' => 'Klaida: intervalas per didelis',
+	'proofreadpage_invalid_interval' => 'Klaida: neteisingas intervalas',
 	'proofreadpage_nextpage' => 'Kitas puslapis',
 	'proofreadpage_prevpage' => 'Ankstesnis puslapis',
+	'proofreadpage_header' => 'Antraštė (neįskaitoma):',
+	'proofreadpage_index_listofpages' => 'Puslapių sąrašas',
 	'proofreadpage_page_status' => 'Puslapio statusas',
 	'proofreadpage_index_attributes' => 'Autorius
 Pavadinimas
@@ -2584,8 +2637,10 @@ $messages['os'] = array(
  */
 $messages['pdc'] = array(
 	'proofreadpage_namespace' => 'Blatt',
+	'proofreadpage_image' => 'Bild',
 	'proofreadpage_nextpage' => 'Neegscht Blatt',
 	'proofreadpage_prevpage' => 'Letscht Blatt',
+	'proofreadpage_index_listofpages' => 'Lischt vun Bledder',
 );
 
 /** Polish (Polski)
@@ -3350,6 +3405,11 @@ $messages['tr'] = array(
 	'proofreadpage_quality2_category' => 'Sorunlu',
 	'proofreadpage_quality3_category' => 'Düzelt',
 	'proofreadpage_quality4_category' => 'Doğrulanmış',
+	'proofreadpage_quality0_message' => 'Bu sayfada düzeltme yapılması gerekmez',
+	'proofreadpage_quality1_message' => 'Bu sayfada düzeltme yapılmadı',
+	'proofreadpage_quality2_message' => 'Bu sayfada düzeltme yapılırken bir sorun oluştu',
+	'proofreadpage_quality3_message' => 'Bu sayfada düzeltme yapıldı',
+	'proofreadpage_quality4_message' => 'Bu sayfa doğrulanmış',
 	'proofreadpage_index_listofpages' => 'Sayfalar listesi',
 	'proofreadpage_image_message' => 'Endeks sayfasına bağlantı',
 	'proofreadpage_page_status' => 'Sayfa durumu',
