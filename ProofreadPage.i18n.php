@@ -501,6 +501,7 @@ Notennoù||10',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'proofreadpages' => 'Spisak stranica indeksa',
 	'proofreadpage_desc' => 'Omogućuje jednostavnu usporedbu teksta sa originalnim',
 	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -509,6 +510,14 @@ $messages['bs'] = array(
 	'proofreadpage_index_expected' => 'Greška: očekivan indeks',
 	'proofreadpage_nosuch_index' => 'Greška: nema takvog indeksa',
 	'proofreadpage_nosuch_file' => 'Greška: nema takve datoteke',
+	'proofreadpage_badpage' => 'Pogrešan Format',
+	'proofreadpage_badpagetext' => 'Format stranice koju pokušavate spremiti nije validan.',
+	'proofreadpage_indexdupe' => 'Duplicirani link',
+	'proofreadpage_indexdupetext' => 'Stranice ne mogu biti prikazane više od jednog puta na stranici indeksa.',
+	'proofreadpage_nologin' => 'Niste prijavljeni',
+	'proofreadpage_nologintext' => 'Morate biti [[Special:UserLogin|prijavljeni]] da biste mogli mijenati status lektorisanja stranica.',
+	'proofreadpage_notallowed' => 'Izmjene nisu dopuštene',
+	'proofreadpage_notallowedtext' => 'Nije Vam dopušteno da mijenjate status lektorisanja ove stranice.',
 	'proofreadpage_number_expected' => 'Greška: očekivana brojna vrijednost',
 	'proofreadpage_interval_too_large' => 'Greška: interval je prevelik',
 	'proofreadpage_invalid_interval' => 'Greška: nevaljan interval',
@@ -523,6 +532,11 @@ $messages['bs'] = array(
 	'proofreadpage_quality2_category' => 'Problematično',
 	'proofreadpage_quality3_category' => 'Provjereno',
 	'proofreadpage_quality4_category' => 'Provjereno',
+	'proofreadpage_quality0_message' => 'Ova stranica ne treba biti lektorisana',
+	'proofreadpage_quality1_message' => 'Ova stranica nije bila lektorisana',
+	'proofreadpage_quality2_message' => 'Dogodio se problem pri lektorisanju ove stranice',
+	'proofreadpage_quality3_message' => 'Ova stranice je bila lektorisana',
+	'proofreadpage_quality4_message' => 'Ova stranice je bila provjerena',
 	'proofreadpage_index_listofpages' => 'Spisak stranica',
 	'proofreadpage_image_message' => 'Link na stranicu indeksa',
 	'proofreadpage_page_status' => 'Status stranice',
@@ -535,6 +549,14 @@ Izvor
 Slika|Naslovna slika
 Stranica||20
 Napomene||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stranica|stranice|stranica}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Catalan (Català)
@@ -874,6 +896,14 @@ Fonto
 Bildo|Bildo de kovrilo
 Paĝoj||20
 Rimarkoj||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|paĝo|paĝoj}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Spanish (Español)
@@ -1011,6 +1041,8 @@ $messages['fi'] = array(
 	'proofreadpage_image' => 'kuva',
 	'proofreadpage_index' => 'Hakemisto',
 	'proofreadpage_nosuch_file' => 'Virhe: tiedostoa ei löydy',
+	'proofreadpage_nologin' => 'Et ole kirjautunut sisään',
+	'proofreadpage_notallowed' => 'Muutos ei ole sallittu',
 	'proofreadpage_number_expected' => 'Virhe: odotettiin numeerista arvoa',
 	'proofreadpage_nextpage' => 'Seuraava sivu',
 	'proofreadpage_prevpage' => 'Edellinen sivu',
@@ -2176,16 +2208,32 @@ $messages['lt'] = array(
 	'proofreadpage_indexdupe' => 'Dublikuoti nuorodą',
 	'proofreadpage_indexdupetext' => 'Puslapiai negali būti pateikiami daugiau kaip kartą pagrindiniame puslapyje.',
 	'proofreadpage_nologin' => 'Neprisijungta',
-	'proofreadpage_nologintext' => 'Jūs turite būti [[Special:Userlogin|prisijungęs]], norėdamas keisti puslapių statusą.',
+	'proofreadpage_nologintext' => 'Jūs turite būti [[Special:UserLogin|prisijungęs]], norėdamas keisti puslapių statusą.',
 	'proofreadpage_notallowed' => 'Keisti neleidžiama',
 	'proofreadpage_notallowedtext' => 'Jums neleidžiama pakeisti šio puslapio statuso.',
+	'proofreadpage_number_expected' => 'Klaida: tikėtasi skaitinės vertės',
 	'proofreadpage_interval_too_large' => 'Klaida: intervalas per didelis',
 	'proofreadpage_invalid_interval' => 'Klaida: neteisingas intervalas',
 	'proofreadpage_nextpage' => 'Kitas puslapis',
 	'proofreadpage_prevpage' => 'Ankstesnis puslapis',
 	'proofreadpage_header' => 'Antraštė (neįskaitoma):',
+	'proofreadpage_body' => 'Puslapio pagrindas (perkeliamas):',
+	'proofreadpage_footer' => 'Poraštė (neįskaitoma):',
+	'proofreadpage_toggleheaders' => 'įjungti neįskaitytų sekcijų matomumą',
+	'proofreadpage_quality0_category' => 'Be teksto',
+	'proofreadpage_quality1_category' => 'Neperžiūrėtas',
+	'proofreadpage_quality2_category' => 'Problemiškas',
+	'proofreadpage_quality3_category' => 'Peržiūrėtas',
+	'proofreadpage_quality4_category' => 'Patvirtintas',
+	'proofreadpage_quality0_message' => 'Šis puslapis neturi būti peržiūrėtas',
+	'proofreadpage_quality1_message' => 'Šis puslapis nebuvo peržiūrėtas',
+	'proofreadpage_quality2_message' => 'Iškilo problema kai buvo peržiūrimas šis puslapis',
+	'proofreadpage_quality3_message' => 'Šis puslapis buvo peržiūrėtas',
+	'proofreadpage_quality4_message' => 'Šis puslapis buvo patvirtintas',
 	'proofreadpage_index_listofpages' => 'Puslapių sąrašas',
+	'proofreadpage_image_message' => 'Nuoroda į pagrindinį puslapį',
 	'proofreadpage_page_status' => 'Puslapio statusas',
+	'proofreadpage_js_attributes' => 'Autorius Pavadinimas Metai Publikuotojas',
 	'proofreadpage_index_attributes' => 'Autorius
 Pavadinimas
 Metai|Išleidimo metai
