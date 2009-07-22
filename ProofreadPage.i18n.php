@@ -88,6 +88,7 @@ Remarks||10',
  * @author Yknok29
  */
 $messages['qqq'] = array(
+	'proofreadpages' => 'Title of [[Special:ProofreadPages]]',
 	'proofreadpage_desc' => 'Short description of the Proofreadpage extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
@@ -611,6 +612,7 @@ $messages['ceb'] = array(
  * @author Mormegil
  */
 $messages['cs'] = array(
+	'proofreadpages' => 'Seznam indexových stránek',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnání textu s předlohou',
 	'proofreadpage_namespace' => 'Stránka',
 	'proofreadpage_index_namespace' => 'Index',
@@ -619,6 +621,8 @@ $messages['cs'] = array(
 	'proofreadpage_index_expected' => 'Chyba: očekáván index',
 	'proofreadpage_nosuch_index' => 'Chyba: takový index neexistuje',
 	'proofreadpage_nosuch_file' => 'Chyba: takový soubor neexistuje',
+	'proofreadpage_indexdupe' => 'Duplicitní odkaz',
+	'proofreadpage_indexdupetext' => 'Stránky mohou být v indexu uvedeny maximálně jednou.',
 	'proofreadpage_number_expected' => 'Chyba: očekávána číselná hodnota',
 	'proofreadpage_interval_too_large' => 'Chyba: příliš velký interval',
 	'proofreadpage_invalid_interval' => 'Chyba: nesprávný interval',
