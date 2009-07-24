@@ -1048,7 +1048,9 @@ $messages['fi'] = array(
 	'proofreadpage_badpage' => 'Väärä muoto',
 	'proofreadpage_badpagetext' => 'Sivu, jota yritit tallentaa on virheellisessä muodossa.',
 	'proofreadpage_nologin' => 'Et ole kirjautunut sisään',
+	'proofreadpage_nologintext' => 'Sinun on oltava [[Special:UserLogin|kirjautunut sisään]] muuttaaksesi sivun oikoluku-tilaa.',
 	'proofreadpage_notallowed' => 'Muutos ei ole sallittu',
+	'proofreadpage_notallowedtext' => 'Sinulla ei ole oikeuksia muuttaa tämän sivun oikoluku-tilaa.',
 	'proofreadpage_number_expected' => 'Virhe: odotettiin numeerista arvoa',
 	'proofreadpage_nextpage' => 'Seuraava sivu',
 	'proofreadpage_prevpage' => 'Edellinen sivu',
@@ -1078,6 +1080,14 @@ Lähde
 Kuva|Kansikuva
 Sivuja||20
 Huomautuksia||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|sivu|sivua}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** French (Français)
