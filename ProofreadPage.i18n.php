@@ -1046,6 +1046,7 @@ $messages['fi'] = array(
 	'proofreadpage_image' => 'kuva',
 	'proofreadpage_index' => 'Hakemisto',
 	'proofreadpage_index_expected' => 'Virhe: täsmennysosiota odotetaan',
+	'proofreadpage_nosuch_index' => 'Virhe: Kyseistä indeksiä ei ole',
 	'proofreadpage_nosuch_file' => 'Virhe: tiedostoa ei löydy',
 	'proofreadpage_badpage' => 'Väärä muoto',
 	'proofreadpage_badpagetext' => 'Sivu, jota yritit tallentaa on virheellisessä muodossa.',
