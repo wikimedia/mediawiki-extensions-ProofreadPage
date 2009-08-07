@@ -607,7 +607,7 @@ function pr_pageQuality( $input, $args ) {
 	if( ! in_array( $q, array('0','1','2','3','4') ) ) {
 		return "";
 	}
-	$message = "<div id=\"pagequality\" width=100% class=quality$q>".wfMsgForContent( "proofreadpage_quality{$q}_message" )."</div>";
+	$message = "<div id=\"pagequality\" width=100% class=quality$q><div id=\"pagequality_content\">".wfMsgForContent( "proofreadpage_quality{$q}_message" )."</div></div>";
 	$out = "__NOEDITSECTION__[[Category:".wfMsgForContent( "proofreadpage_quality{$q}_category" )."]]";
 	return $wgParser->recursiveTagParse( $out . $message);
 }
