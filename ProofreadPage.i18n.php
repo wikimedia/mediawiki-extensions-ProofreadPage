@@ -168,6 +168,7 @@ Notas||10',
 
 /** Arabic (العربية)
  * @author Meno25
+ * @author OsamaK
  */
 $messages['ar'] = array(
 	'proofreadpage_desc' => 'يسمح بمقارنة سهلة للنص مع المسح الأصلي',
@@ -178,6 +179,8 @@ $messages['ar'] = array(
 	'proofreadpage_index_expected' => 'خطأ: فهرس تم توقعه',
 	'proofreadpage_nosuch_index' => 'خطأ: لا فهرس كهذا',
 	'proofreadpage_nosuch_file' => 'خطأ: لا ملف كهذا',
+	'proofreadpage_nologin' => 'غير مسجل الدخول',
+	'proofreadpage_notallowed' => 'التغيير غير مسموح به',
 	'proofreadpage_number_expected' => 'خطأ: قيمة عددية تم توقعها',
 	'proofreadpage_interval_too_large' => 'خطأ: الفترة كبيرة جدا',
 	'proofreadpage_invalid_interval' => 'خطأ: فترة غير صحيحة',
@@ -888,6 +891,7 @@ $messages['eo'] = array(
 	'proofreadpage_quality4_category' => 'Validigita',
 	'proofreadpage_quality0_message' => 'La paĝo ne bezonas esti provlegata',
 	'proofreadpage_quality2_message' => 'Estis problemo pruvlegante ĉi tiun paĝon',
+	'proofreadpage_quality4_message' => 'Ĉi tiu paĝo estis validigita',
 	'proofreadpage_index_listofpages' => 'Listo de paĝoj',
 	'proofreadpage_image_message' => 'Ligilo al la indekspaĝo',
 	'proofreadpage_page_status' => 'Statuso de paĝo',
@@ -1402,6 +1406,7 @@ $messages['haw'] = array(
  * @author YaronSh
  */
 $messages['he'] = array(
+	'proofreadpages' => 'רשימת דפי אינדקס',
 	'proofreadpage_desc' => 'השוואה קלה של טקסט לסריקה המקורית שלו',
 	'proofreadpage_namespace' => 'דף',
 	'proofreadpage_index_namespace' => 'אינדקס',
@@ -1410,6 +1415,14 @@ $messages['he'] = array(
 	'proofreadpage_index_expected' => 'שגיאה: נדרש אינדקס',
 	'proofreadpage_nosuch_index' => 'שגיאה: אין אינדקס כזה',
 	'proofreadpage_nosuch_file' => 'שגיאה: אין קובץ כזה',
+	'proofreadpage_badpage' => 'מבנה שגוי',
+	'proofreadpage_badpagetext' => 'מבנה הדף אותו ניסיתם לשמור הינו שגוי.',
+	'proofreadpage_indexdupe' => 'קישור כפול',
+	'proofreadpage_indexdupetext' => 'לא ניתן להציג את הדפים יותר מפעם אחת בדף אינדקס.',
+	'proofreadpage_nologin' => 'לא נכנסתם לאתר',
+	'proofreadpage_nologintext' => 'עליכם [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של הדפים.',
+	'proofreadpage_notallowed' => 'אסור לבצע שינויים',
+	'proofreadpage_notallowedtext' => 'אינכם מורשים לשנות את מצב ההגהה של דף זה.',
 	'proofreadpage_number_expected' => 'שגיאה: נדרש ערך מספרי',
 	'proofreadpage_interval_too_large' => 'שגיאה: המרווח גדול מדי',
 	'proofreadpage_invalid_interval' => 'שגיאה: מרווח בלתי תקין',
@@ -1424,6 +1437,11 @@ $messages['he'] = array(
 	'proofreadpage_quality2_category' => 'בעייתי',
 	'proofreadpage_quality3_category' => 'בוצעה הגהה',
 	'proofreadpage_quality4_category' => 'מאומת',
+	'proofreadpage_quality0_message' => 'לדף זה לא נדרשת בדיקת הגהה',
+	'proofreadpage_quality1_message' => 'דף זה לא עבר בדיקת הגהה',
+	'proofreadpage_quality2_message' => 'ארעה שגיאה בעת בדיקת הגהת דף זה',
+	'proofreadpage_quality3_message' => 'דף זה עבר הגהה',
+	'proofreadpage_quality4_message' => 'דף זה עבר אימות',
 	'proofreadpage_index_listofpages' => 'רשימת דפים',
 	'proofreadpage_image_message' => 'קישור לדף האינדקס',
 	'proofreadpage_page_status' => 'מצב הדף',
@@ -1436,6 +1454,14 @@ $messages['he'] = array(
 תמונה|תמונת עטיפה
 דפים||20
 הערות||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [{{PLURAL:$2|דף $2|$2 דפים}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Hindi (हिन्दी)
@@ -1771,6 +1797,7 @@ $messages['is'] = array(
  * @author Stefano-c
  */
 $messages['it'] = array(
+	'proofreadpages' => 'Elenco delle pagine di indice',
 	'proofreadpage_desc' => 'Consente un facile confronto tra un testo e la sua scansione originale',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indice',
@@ -1781,6 +1808,7 @@ $messages['it'] = array(
 	'proofreadpage_nosuch_file' => 'Errore: file non presente',
 	'proofreadpage_badpage' => 'Formato errato',
 	'proofreadpage_badpagetext' => 'Il formato della pagina che si è tentato di salvare non è corretto.',
+	'proofreadpage_indexdupe' => 'Collegamento duplicato',
 	'proofreadpage_nologin' => 'Accesso non effettuato',
 	'proofreadpage_nologintext' => "Per modificare lo stato di correttezza delle pagine è necessario [[Special:UserLogin|effettuare l'accesso]].",
 	'proofreadpage_notallowed' => 'Modifica non consentita',
@@ -1799,6 +1827,7 @@ $messages['it'] = array(
 	'proofreadpage_quality2_category' => 'Da rivedere',
 	'proofreadpage_quality3_category' => 'Corretta',
 	'proofreadpage_quality4_category' => 'Verificata',
+	'proofreadpage_quality4_message' => 'Questa pagina è stata convalidata',
 	'proofreadpage_index_listofpages' => 'Lista delle pagine',
 	'proofreadpage_image_message' => 'Collegamento alla pagina indice',
 	'proofreadpage_page_status' => 'Status della pagina',
@@ -1811,6 +1840,14 @@ Fonte
 Immagine|Immagine di copertina
 Pagine||20
 Note||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|pagine}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Japanese (日本語)
@@ -2003,38 +2040,39 @@ $messages['km'] = array(
 
 /** Korean (한국어)
  * @author Ilovesabbath
+ * @author Klutzy
  * @author Kwj2772
  * @author Yknok29
  */
 $messages['ko'] = array(
 	'proofreadpage_desc' => '최초 스캔과 텍스트를 쉽게 비교할 수 있게 함',
-	'proofreadpage_namespace' => '쪽',
-	'proofreadpage_index_namespace' => '목록',
+	'proofreadpage_namespace' => '문서',
+	'proofreadpage_index_namespace' => '목차',
 	'proofreadpage_image' => '그림',
-	'proofreadpage_index' => '목록',
+	'proofreadpage_index' => '목차',
 	'proofreadpage_nextpage' => '다음 페이지',
 	'proofreadpage_prevpage' => '이전 페이지',
 	'proofreadpage_header' => '머리말 (표시안함):',
 	'proofreadpage_body' => '본문 (트랜스클루전):',
 	'proofreadpage_footer' => '꼬리말 (표시안함):',
 	'proofreadpage_toggleheaders' => '표시안함 부분의 표시 여부 선택',
-	'proofreadpage_quality0_category' => '텍스트 없음',
+	'proofreadpage_quality0_category' => '비었음',
 	'proofreadpage_quality1_category' => '교정 안됨',
 	'proofreadpage_quality2_category' => '문제 있음',
 	'proofreadpage_quality3_category' => '교정',
 	'proofreadpage_quality4_category' => '확인됨',
 	'proofreadpage_index_listofpages' => '문서 목록',
-	'proofreadpage_image_message' => '목록 페이지로 연결됩니다.',
+	'proofreadpage_image_message' => '목차 페이지로',
 	'proofreadpage_page_status' => '문서 상태',
-	'proofreadpage_js_attributes' => '작가 제목 연도 출판사',
+	'proofreadpage_js_attributes' => '저자 제목 출판년도 출판사',
 	'proofreadpage_index_attributes' => '저자
 제목
-연도|출판연도
+연도|출판년도
 출판사
 출처
-그림|책 표지
+그림|표지 그림
 쪽수||20
-비평||10',
+주석||10',
 );
 
 /** Kinaray-a (Kinaray-a)
