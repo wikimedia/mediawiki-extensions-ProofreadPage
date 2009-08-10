@@ -575,6 +575,9 @@ $messages['ca'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imatge',
 	'proofreadpage_index' => 'Índex',
+	'proofreadpage_badpage' => 'Format erroni',
+	'proofreadpage_indexdupe' => 'Enllaç duplicat',
+	'proofreadpage_notallowed' => 'Canvi no permès',
 	'proofreadpage_nextpage' => 'Pàgina següent',
 	'proofreadpage_prevpage' => 'Pàgina anterior',
 	'proofreadpage_header' => 'Capçalera (noinclude):',
@@ -828,6 +831,7 @@ $messages['el'] = array(
 	'proofreadpage_quality2_category' => 'Προβληματική',
 	'proofreadpage_quality3_category' => 'Έχει γίνει proofreading',
 	'proofreadpage_quality4_category' => 'Εγκρίθηκε',
+	'proofreadpage_quality4_message' => 'Αυτή η σελίδα έχει εγκριθεί',
 	'proofreadpage_index_listofpages' => 'Κατάλογος σελίδων',
 	'proofreadpage_image_message' => 'Σύνδεσμος προς τη σελίδα ευρετηρίου',
 	'proofreadpage_page_status' => 'Κατάσταση σελίδας',
@@ -890,7 +894,9 @@ $messages['eo'] = array(
 	'proofreadpage_quality3_category' => 'Provlegita',
 	'proofreadpage_quality4_category' => 'Validigita',
 	'proofreadpage_quality0_message' => 'La paĝo ne bezonas esti provlegata',
+	'proofreadpage_quality1_message' => 'Ĉi tiu paĝo ne estis pruvlegita',
 	'proofreadpage_quality2_message' => 'Estis problemo pruvlegante ĉi tiun paĝon',
+	'proofreadpage_quality3_message' => 'Ĉi tiu paĝo estis pruvlegita',
 	'proofreadpage_quality4_message' => 'Ĉi tiu paĝo estis validigita',
 	'proofreadpage_index_listofpages' => 'Listo de paĝoj',
 	'proofreadpage_image_message' => 'Ligilo al la indekspaĝo',
@@ -974,6 +980,28 @@ Comentarios||10',
 <td align=center class=\'quality1\' width="$4"></td>
 <td align=center class=\'quality0\' width="$3"></td>
 </tr></table>',
+);
+
+/** Estonian (Eesti)
+ * @author Avjoska
+ */
+$messages['et'] = array(
+	'proofreadpage_namespace' => 'Lehekülg',
+	'proofreadpage_image' => 'pilt',
+	'proofreadpage_nextpage' => 'Järgmine lehekülg',
+	'proofreadpage_prevpage' => 'Eelmine lehekülg',
+	'proofreadpage_quality0_category' => 'Ilma tekstita',
+	'proofreadpage_index_listofpages' => 'Lehekülgede loend',
+	'proofreadpage_page_status' => 'Lehekülje staatus',
+	'proofreadpage_js_attributes' => 'Autor Pealkiri Aasta Väljaandja',
+	'proofreadpage_index_attributes' => 'Autor
+Pealkiri
+Aasta|Väljaandmise aasta
+Väljaandja
+Päritolu
+Pilt|Kaanepilt
+Lehekülgi||20
+Märkused||10',
 );
 
 /** Basque (Euskara)
@@ -2965,6 +2993,7 @@ Willapusqakuna||10",
 );
 
 /** Romanian (Română)
+ * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
  */
@@ -2973,8 +3002,12 @@ $messages['ro'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imagine',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_badpage' => 'Format greşit',
+	'proofreadpage_indexdupe' => 'Legătură duplicat',
+	'proofreadpage_nologin' => 'Nu sunteţi autentificat',
 	'proofreadpage_nextpage' => 'Pagina următoare',
 	'proofreadpage_prevpage' => 'Pagina anterioară',
+	'proofreadpage_quality0_category' => 'Fără text',
 	'proofreadpage_index_listofpages' => 'Lista paginilor',
 	'proofreadpage_image_message' => 'Legătură către pagina index',
 	'proofreadpage_page_status' => 'Pagina status',
@@ -3245,6 +3278,40 @@ $messages['sr-ec'] = array(
 примедбе||10',
 );
 
+/** latinica (latinica)
+ * @author Michaello
+ */
+$messages['sr-el'] = array(
+	'proofreadpage_desc' => 'Omogući lako upoređivanje teksta i originalnog skena.',
+	'proofreadpage_namespace' => 'Strana',
+	'proofreadpage_index_namespace' => 'indeks',
+	'proofreadpage_image' => 'slika',
+	'proofreadpage_index' => 'indeks',
+	'proofreadpage_nextpage' => 'Sledeća strana',
+	'proofreadpage_prevpage' => 'Prethodna strana',
+	'proofreadpage_header' => 'Zaglavlje (bez uključivanja):',
+	'proofreadpage_body' => 'Telo strane (za uključivanje):',
+	'proofreadpage_footer' => 'Podnožje (bez uključivanja):',
+	'proofreadpage_toggleheaders' => 'upravljanje vidljivošću delova koji se ne uključuju',
+	'proofreadpage_quality0_category' => 'Bez teksta',
+	'proofreadpage_quality1_category' => 'Nepregledano',
+	'proofreadpage_quality2_category' => 'Problematično',
+	'proofreadpage_quality3_category' => 'Pregledano',
+	'proofreadpage_quality4_category' => 'Overeno',
+	'proofreadpage_index_listofpages' => 'Spisak strana',
+	'proofreadpage_image_message' => 'Veza ka indeksu strane.',
+	'proofreadpage_page_status' => 'Status strane',
+	'proofreadpage_js_attributes' => 'autor naslov godina izdavač',
+	'proofreadpage_index_attributes' => 'autor
+naslov
+godina|godina publikacije
+izdavač
+izvor
+slika|naslovna strana
+strana||20
+primedbe||10',
+);
+
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
@@ -3303,16 +3370,33 @@ Catetan||10',
 );
 
 /** Swedish (Svenska)
+ * @author Fluff
  * @author Lejonel
  * @author M.M.S.
  * @author Najami
+ * @author Rotsee
  */
 $messages['sv'] = array(
+	'proofreadpages' => 'Sidor med innehållsförteckningar',
 	'proofreadpage_desc' => 'Ger möjlighet att korrekturläsa texter mot scannade original',
 	'proofreadpage_namespace' => 'Sida',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'bild',
 	'proofreadpage_index' => 'Indexsida',
+	'proofreadpage_index_expected' => 'Fel: index förväntades',
+	'proofreadpage_nosuch_index' => 'Fel: index saknas',
+	'proofreadpage_nosuch_file' => 'Fel: fil saknas',
+	'proofreadpage_badpage' => 'Fel format',
+	'proofreadpage_badpagetext' => 'Sidan du försöker spara har ett felaktigt format.',
+	'proofreadpage_indexdupe' => 'Dubblett av länk',
+	'proofreadpage_indexdupetext' => 'Sidor kan inte listas mer än en gång på en index-sida.',
+	'proofreadpage_nologin' => 'Ej inloggad',
+	'proofreadpage_nologintext' => 'Du måste vara [[Special:UserLogin|inloggad]] för att förändra status på korrekturläsningen av sidor.',
+	'proofreadpage_notallowed' => 'Förändring är inte tillåten',
+	'proofreadpage_notallowedtext' => 'Du har inte rättigheter att ändra status på korrekturläsningen av den här sidan.',
+	'proofreadpage_number_expected' => 'Fel: ett numeriskt värde förväntades',
+	'proofreadpage_interval_too_large' => 'Fel: ett för stort intervall',
+	'proofreadpage_invalid_interval' => 'Fel: ogiltigt intervall',
 	'proofreadpage_nextpage' => 'Nästa sida',
 	'proofreadpage_prevpage' => 'Föregående sida',
 	'proofreadpage_header' => 'Sidhuvud (inkluderas ej):',
@@ -3324,6 +3408,11 @@ $messages['sv'] = array(
 	'proofreadpage_quality2_category' => 'Ofullständigt',
 	'proofreadpage_quality3_category' => 'Korrekturläst',
 	'proofreadpage_quality4_category' => 'Validerat',
+	'proofreadpage_quality0_message' => 'Den här sidan behöver inte korrekturläsas',
+	'proofreadpage_quality1_message' => 'Den här sidan har inte korrekturlästs',
+	'proofreadpage_quality2_message' => 'Ett problem uppstod när den här sidan skulle korrekturläsas',
+	'proofreadpage_quality3_message' => 'Den här sidan har korrekturlästs',
+	'proofreadpage_quality4_message' => 'Den här sidan har godkänts',
 	'proofreadpage_index_listofpages' => 'Lista över sidor',
 	'proofreadpage_image_message' => 'Länk till indexsidan',
 	'proofreadpage_page_status' => 'Sidans status',
@@ -3336,6 +3425,14 @@ Källa
 Bild|Omslagsbild
 Sidor||20
 Anmärkningar||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|sida|sidor}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Silesian (Ślůnski)
