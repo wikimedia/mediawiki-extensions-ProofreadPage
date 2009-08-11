@@ -825,12 +825,15 @@ $messages['el'] = array(
 	'proofreadpage_index_namespace' => 'Ευρετήριο',
 	'proofreadpage_image' => 'εικόνα',
 	'proofreadpage_index' => 'Ευρετήριο',
+	'proofreadpage_index_expected' => 'Σφάλμα: αναμενόταν δείκτης',
+	'proofreadpage_nosuch_index' => 'Σφάλμα: δεν υπάρχει αυτός ο δείκτης',
 	'proofreadpage_nosuch_file' => 'Σφάλμα: δεν υπάρχει αυτό το αρχείο',
 	'proofreadpage_badpage' => 'Λάθος Φορμά',
 	'proofreadpage_indexdupe' => 'Διπλότυπος σύνδεσμος',
 	'proofreadpage_nologin' => 'Δεν έχετε συνδεθεί',
 	'proofreadpage_notallowed' => 'Αλλαγή δεν επιτρέπεται',
 	'proofreadpage_notallowedtext' => 'Δεν επιτρέπεται να αλλάξετε την κατάσταση διόρθωσης κειμένου αυτής της σελίδας.',
+	'proofreadpage_number_expected' => 'Σφάλμα: αναμενόταν αριθμητικό μέγεθος',
 	'proofreadpage_interval_too_large' => 'Σφάλμα: υπερβολικά μεγάλο διάστημα',
 	'proofreadpage_invalid_interval' => 'Σφάλμα: άκυρο διάστημα',
 	'proofreadpage_nextpage' => 'Επόμενη σελίδα',
@@ -1002,9 +1005,17 @@ Comentarios||10',
 $messages['et'] = array(
 	'proofreadpage_namespace' => 'Lehekülg',
 	'proofreadpage_image' => 'pilt',
+	'proofreadpage_nologin' => 'Ei ole sisse logitud',
+	'proofreadpage_notallowed' => 'Muudatus ei ole lubatud',
 	'proofreadpage_nextpage' => 'Järgmine lehekülg',
 	'proofreadpage_prevpage' => 'Eelmine lehekülg',
 	'proofreadpage_quality0_category' => 'Ilma tekstita',
+	'proofreadpage_quality1_category' => 'Korrigeerimata',
+	'proofreadpage_quality2_category' => 'Problemaatiline',
+	'proofreadpage_quality3_category' => 'Korrigeeritud',
+	'proofreadpage_quality0_message' => 'See lehekülg ei vaja korrigeerimist',
+	'proofreadpage_quality1_message' => 'Seda lehekülge ei ole korrigeeritud',
+	'proofreadpage_quality3_message' => 'See lehekülg on korrigeeritud',
 	'proofreadpage_index_listofpages' => 'Lehekülgede loend',
 	'proofreadpage_page_status' => 'Lehekülje staatus',
 	'proofreadpage_js_attributes' => 'Autor Pealkiri Aasta Väljaandja',
@@ -1543,25 +1554,47 @@ $messages['hi'] = array(
  * @author Dalibor Bosits
  * @author Dnik
  * @author SpeedyGonsales
+ * @author Suradnik13
  */
 $messages['hr'] = array(
+	'proofreadpages' => 'Popis sadržaja stranica',
 	'proofreadpage_desc' => 'Omogućava jednostavnu usporedbu teksta i izvornog skena',
 	'proofreadpage_namespace' => 'Stranica',
-	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_index_namespace' => 'Sadržaj',
 	'proofreadpage_image' => 'slika',
-	'proofreadpage_index' => 'Sadržaj (indeks)',
+	'proofreadpage_index' => 'Sadržaj',
+	'proofreadpage_index_expected' => 'Progreška: očekivan je sadržaj',
+	'proofreadpage_nosuch_index' => 'Pogreška: nema takvog sadržaja',
+	'proofreadpage_nosuch_file' => 'Pogreška: nema takve datoteke',
+	'proofreadpage_badpage' => 'Pogrešan format',
+	'proofreadpage_badpagetext' => 'Format stranice koju ste pokušali spremiti je neispravan.',
+	'proofreadpage_indexdupe' => 'Duplicirana poveznica',
+	'proofreadpage_indexdupetext' => 'Stranice ne mogu biti iszlistane više od jednom na stranici sadržaja.',
+	'proofreadpage_nologin' => 'Niste prijavljeni',
+	'proofreadpage_nologintext' => 'Morate biti [[Special:UserLogin|prijavljeni]] za izmjenu statusa provjerenosti na stranicama.',
+	'proofreadpage_notallowed' => 'Izmjena nije dozvoljena',
+	'proofreadpage_notallowedtext' => 'Nije Vam dozvoljeno mijenjati status ispravljenosti ove stranice.',
+	'proofreadpage_number_expected' => 'Pogreška: očekivana je brojčana vrijednost',
+	'proofreadpage_interval_too_large' => 'Pogreška: interval je prevelik',
+	'proofreadpage_invalid_interval' => 'Pogreška: interval nije valjan',
 	'proofreadpage_nextpage' => 'Slijedeća stranica',
 	'proofreadpage_prevpage' => 'Prethodna stranica',
 	'proofreadpage_header' => "Zaglavlje (''noinclude''):",
 	'proofreadpage_body' => 'Tijelo stranice (bit će uključeno):',
 	'proofreadpage_footer' => "Podnožje (''footer noinclude''):",
 	'proofreadpage_toggleheaders' => "promijeni vidljivost ''noinclude'' odlomaka",
-	'proofreadpage_quality1_category' => 'Nepregledano',
-	'proofreadpage_quality2_category' => 'Nedovršeno',
-	'proofreadpage_quality3_category' => 'Pregledano',
-	'proofreadpage_quality4_category' => 'Dobro',
+	'proofreadpage_quality0_category' => 'Bez teksta',
+	'proofreadpage_quality1_category' => 'Nije ispravljeno',
+	'proofreadpage_quality2_category' => 'Problematično',
+	'proofreadpage_quality3_category' => 'Ispravljeno',
+	'proofreadpage_quality4_category' => 'Potvrđeno',
+	'proofreadpage_quality0_message' => 'Ovu stranicu nije potrebno ispravljati',
+	'proofreadpage_quality1_message' => 'Ova stranica nije ispravljena',
+	'proofreadpage_quality2_message' => 'Došlo je do problema prilikom ispravljanja ove stranice',
+	'proofreadpage_quality3_message' => 'Ova stranica je ispravljena',
+	'proofreadpage_quality4_message' => 'Ova stranica je potvrđena',
 	'proofreadpage_index_listofpages' => 'Popis stranica',
-	'proofreadpage_image_message' => 'Poveznica na sadržaj (kazalo)',
+	'proofreadpage_image_message' => 'Poveznica na stranicu sa sadržajem',
 	'proofreadpage_page_status' => 'Status stranice',
 	'proofreadpage_js_attributes' => 'Autor Naslov Godina Izdavač',
 	'proofreadpage_index_attributes' => 'Autor
@@ -1572,6 +1605,14 @@ Izvor
 Slika|Naslovnica
 Stranica||20
 Napomene||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stranica|stranice}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -2052,16 +2093,20 @@ $messages['ka'] = array(
  * @author Lovekhmer
  * @author Thearith
  * @author គីមស៊្រុន
+ * @author វ័ណថារិទ្ធ
  */
 $messages['km'] = array(
 	'proofreadpage_namespace' => 'ទំព័រ',
 	'proofreadpage_index_namespace' => 'លិបិក្រម',
 	'proofreadpage_image' => 'រូបភាព',
 	'proofreadpage_index' => 'លិបិក្រម',
+	'proofreadpage_badpage' => 'ទម្រង់​/ប្រភេទ មិនត្រឹមត្រូវ​​',
+	'proofreadpage_indexdupe' => 'ចម្លងស្ទួន តំណ​បណ្ដាញ​',
 	'proofreadpage_nextpage' => 'ទំព័របន្ទាប់',
 	'proofreadpage_prevpage' => 'ទំព័រមុន',
 	'proofreadpage_header' => 'បឋមកថា(មិនរួមបញ្ចូល)៖',
 	'proofreadpage_footer' => 'បាតកថា(មិនរួមបញ្ចូល)៖',
+	'proofreadpage_quality0_category' => 'ដោយ​មិន​មាន​អក្សរ​',
 	'proofreadpage_quality1_category' => 'មិន​មើលកែ',
 	'proofreadpage_quality2_category' => 'មានបញ្ហា',
 	'proofreadpage_quality3_category' => 'មើលកែ',
@@ -3012,16 +3057,28 @@ Willapusqakuna||10",
  * @author Mihai
  */
 $messages['ro'] = array(
+	'proofreadpages' => 'Lista paginilor index',
 	'proofreadpage_namespace' => 'Pagină',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imagine',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Eroare: index aşteptat',
+	'proofreadpage_nosuch_index' => 'Eroare: index inexistent',
+	'proofreadpage_nosuch_file' => 'Eroare: fişier inexistent',
 	'proofreadpage_badpage' => 'Format greşit',
+	'proofreadpage_badpagetext' => 'Formatul paginii în care se doreşte salvarea este incorect.',
 	'proofreadpage_indexdupe' => 'Legătură duplicat',
+	'proofreadpage_indexdupetext' => 'Paginile nu pot fi afişate de mai multe ori într-o pagină index.',
 	'proofreadpage_nologin' => 'Nu sunteţi autentificat',
+	'proofreadpage_notallowed' => 'Schimbare nepermisă',
+	'proofreadpage_number_expected' => 'Eroare: valoare numerică aşteptată',
+	'proofreadpage_interval_too_large' => 'Eroare: interval prea mare',
+	'proofreadpage_invalid_interval' => 'Eroare: interval incorect',
 	'proofreadpage_nextpage' => 'Pagina următoare',
 	'proofreadpage_prevpage' => 'Pagina anterioară',
 	'proofreadpage_quality0_category' => 'Fără text',
+	'proofreadpage_quality2_category' => 'Problematic',
+	'proofreadpage_quality4_category' => 'Validat',
 	'proofreadpage_index_listofpages' => 'Lista paginilor',
 	'proofreadpage_image_message' => 'Legătură către pagina index',
 	'proofreadpage_page_status' => 'Pagina status',
@@ -3918,13 +3975,16 @@ $messages['zh-hans'] = array(
 备注||10',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬) */
+/** Traditional Chinese (‪中文(繁體)‬)
+ * @author Wrightbus
+ */
 $messages['zh-hant'] = array(
 	'proofreadpage_desc' => '容許簡易地去比較原掃瞄和文字',
 	'proofreadpage_namespace' => '頁面',
 	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '圖像',
 	'proofreadpage_index' => '索引',
+	'proofreadpage_nologin' => '未登入',
 	'proofreadpage_nextpage' => '下一頁',
 	'proofreadpage_prevpage' => '上一頁',
 	'proofreadpage_header' => '首 (不包含):',
@@ -3935,6 +3995,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_quality2_category' => '有問題',
 	'proofreadpage_quality3_category' => '已校對',
 	'proofreadpage_quality4_category' => '已認證',
+	'proofreadpage_quality1_message' => '本頁面尚未進行校對',
 	'proofreadpage_index_listofpages' => '頁面清單',
 	'proofreadpage_image_message' => '連到索引頁的連結',
 	'proofreadpage_page_status' => '頁面狀態',
