@@ -168,6 +168,7 @@ Notas||10',
 
 /** Arabic (العربية)
  * @author Meno25
+ * @author Orango
  * @author OsamaK
  */
 $messages['ar'] = array(
@@ -182,6 +183,7 @@ $messages['ar'] = array(
 	'proofreadpage_nosuch_file' => 'خطأ: لا ملف كهذا',
 	'proofreadpage_badpage' => 'تنسيق خاطئ',
 	'proofreadpage_badpagetext' => 'تنسيق الصفحة التي تحاول حفظها غير صحيح.',
+	'proofreadpage_indexdupe' => 'رابط نظير',
 	'proofreadpage_indexdupetext' => 'لا يمكن سرد الصفحة أكثر من في صفحة الفهرس.',
 	'proofreadpage_nologin' => 'غير مسجل الدخول',
 	'proofreadpage_nologintext' => 'يجب أن تكون [[Special:UserLogin|مُسجلًا الدخول]] لتعدّل حالة تدقيق الصفحات.',
@@ -218,6 +220,14 @@ $messages['ar'] = array(
 الصورة|صورة الغلاف
 الصفحات||20
 الملاحظات||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|صفحة|صفحات}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -588,9 +598,14 @@ $messages['ca'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imatge',
 	'proofreadpage_index' => 'Índex',
+	'proofreadpage_index_expected' => "Error: s'esperava un índex",
 	'proofreadpage_badpage' => 'Format erroni',
 	'proofreadpage_indexdupe' => 'Enllaç duplicat',
+	'proofreadpage_nologin' => 'No heu iniciat la sessió',
 	'proofreadpage_notallowed' => 'Canvi no permès',
+	'proofreadpage_number_expected' => "Error: s'esperava un valor numèric",
+	'proofreadpage_interval_too_large' => 'Error: interval massa ampli',
+	'proofreadpage_invalid_interval' => 'Error: interval no vàlid',
 	'proofreadpage_nextpage' => 'Pàgina següent',
 	'proofreadpage_prevpage' => 'Pàgina anterior',
 	'proofreadpage_header' => 'Capçalera (noinclude):',
@@ -602,6 +617,7 @@ $messages['ca'] = array(
 	'proofreadpage_quality2_category' => 'Problemàtica',
 	'proofreadpage_quality3_category' => 'Revisada',
 	'proofreadpage_quality4_category' => 'Validada',
+	'proofreadpage_quality4_message' => 'Aquesta pàgina ha estat validada',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
 	'proofreadpage_image_message' => "Enllaç a la pàgina d'índex",
 	'proofreadpage_page_status' => 'Status de la pàgina',
@@ -667,6 +683,14 @@ Vydavatelství
 Obrázek|Obálka
 Stran||20
 Poznámky||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stránka|stránky|stránek}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Danish (Dansk)
@@ -847,6 +871,10 @@ $messages['el'] = array(
 	'proofreadpage_quality2_category' => 'Προβληματική',
 	'proofreadpage_quality3_category' => 'Έχει γίνει proofreading',
 	'proofreadpage_quality4_category' => 'Εγκρίθηκε',
+	'proofreadpage_quality0_message' => 'Αυτή η σελίδα δεν χρειάζεται να ελεγχθεί για πιθανά λάθη',
+	'proofreadpage_quality1_message' => 'Αυτή η σελίδα δεν έχει ελεγχθεί ακόμη για πιθανά λάθη',
+	'proofreadpage_quality2_message' => 'Υπήρξε ένα πρόβλημα στον έλεγχο για πιθανά λάθη αυτής της σελίδας',
+	'proofreadpage_quality3_message' => 'Η σελίδα αυτή έχει ελεγθεί για πιθανά λάθη',
 	'proofreadpage_quality4_message' => 'Αυτή η σελίδα έχει εγκριθεί',
 	'proofreadpage_index_listofpages' => 'Κατάλογος σελίδων',
 	'proofreadpage_image_message' => 'Σύνδεσμος προς τη σελίδα ευρετηρίου',
@@ -3984,6 +4012,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '圖像',
 	'proofreadpage_index' => '索引',
+	'proofreadpage_badpage' => '格式錯誤',
 	'proofreadpage_nologin' => '未登入',
 	'proofreadpage_nextpage' => '下一頁',
 	'proofreadpage_prevpage' => '上一頁',
