@@ -767,6 +767,15 @@ Bemerkungen||10',
 </tr></table>',
 );
 
+/** German (formal address) (Deutsch (Sie-Form))
+ * @author Imre
+ */
+$messages['de-formal'] = array(
+	'proofreadpage_badpagetext' => 'Das Format der Seite, die Sie versuchen zu speichern, ist falsch.',
+	'proofreadpage_nologintext' => 'Sie müssen [[Special:UserLogin|angemeldet sein]], um den Korrekturlesungsstatus von Seiten zu ändern.',
+	'proofreadpage_notallowedtext' => 'Sie sind nicht berechtigt, den Korrekturlesungsstatus dieser Seite zu ändern.',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
@@ -3601,6 +3610,7 @@ $messages['szl'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Kiranmayee
  * @author Mpradeep
  * @author Veeven
  */
@@ -3613,6 +3623,7 @@ $messages['te'] = array(
 	'proofreadpage_prevpage' => 'గత పేజీ',
 	'proofreadpage_header' => 'శీర్షిక (కలుపకు):',
 	'proofreadpage_footer' => 'పాదము (కలుపకు):',
+	'proofreadpage_quality0_category' => 'పాఠ్యం లేకుండా',
 	'proofreadpage_quality2_category' => 'సమస్యాత్మకం',
 	'proofreadpage_quality4_category' => 'సరిచూడబడింది',
 	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
