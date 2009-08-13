@@ -853,8 +853,11 @@ $messages['el'] = array(
 	'proofreadpage_nosuch_index' => 'Σφάλμα: δεν υπάρχει αυτός ο δείκτης',
 	'proofreadpage_nosuch_file' => 'Σφάλμα: δεν υπάρχει αυτό το αρχείο',
 	'proofreadpage_badpage' => 'Λάθος Φορμά',
+	'proofreadpage_badpagetext' => 'Η μορφοποίηση της σελίδας που αποπειραθήκατε να αποθηκεύσετε είναι λανθασμένη.',
 	'proofreadpage_indexdupe' => 'Διπλότυπος σύνδεσμος',
+	'proofreadpage_indexdupetext' => 'Οι σελίδες δεν μπορούν περιλαμβάνονται στο ευρετήριο περισσότερες από μία φορές.',
 	'proofreadpage_nologin' => 'Δεν έχετε συνδεθεί',
+	'proofreadpage_nologintext' => 'Πρέπει να είστε [[Special:UserLogin|συνδεδεμένος]] για να αλλάξετε την κατάσταση επαλήθευσης σελίδων.',
 	'proofreadpage_notallowed' => 'Αλλαγή δεν επιτρέπεται',
 	'proofreadpage_notallowedtext' => 'Δεν επιτρέπεται να αλλάξετε την κατάσταση διόρθωσης κειμένου αυτής της σελίδας.',
 	'proofreadpage_number_expected' => 'Σφάλμα: αναμενόταν αριθμητικό μέγεθος',
@@ -2157,6 +2160,7 @@ $messages['km'] = array(
  * @author Ilovesabbath
  * @author Klutzy
  * @author Kwj2772
+ * @author Pakman
  * @author Yknok29
  */
 $messages['ko'] = array(
@@ -2165,6 +2169,11 @@ $messages['ko'] = array(
 	'proofreadpage_index_namespace' => '목차',
 	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '목차',
+	'proofreadpage_badpage' => '잘못된 포맷',
+	'proofreadpage_nologin' => ' 로그인된 상태가 아닙니다.',
+	'proofreadpage_nologintext' => '주시문서를 보려면 [[특별:로그인|로그인]]해야 합니다. 70‰',
+	'proofreadpage_notallowed' => '이 문서는 변경이 불가능합니다. 60‰',
+	'proofreadpage_notallowedtext' => '주시문서 변경이 불가능합니다. 60‰',
 	'proofreadpage_nextpage' => '다음 페이지',
 	'proofreadpage_prevpage' => '이전 페이지',
 	'proofreadpage_header' => '머리말 (표시안함):',
@@ -2176,6 +2185,7 @@ $messages['ko'] = array(
 	'proofreadpage_quality2_category' => '문제 있음',
 	'proofreadpage_quality3_category' => '교정',
 	'proofreadpage_quality4_category' => '확인됨',
+	'proofreadpage_quality0_message' => '이 페이지는 교정이 필요없습니다. 50.00‰',
 	'proofreadpage_index_listofpages' => '문서 목록',
 	'proofreadpage_image_message' => '목차 페이지로',
 	'proofreadpage_page_status' => '문서 상태',
@@ -2455,20 +2465,66 @@ $messages['mhr'] = array(
 );
 
 /** Macedonian (Македонски)
+ * @author Bjankuloski06
  * @author Brest
  */
 $messages['mk'] = array(
+	'proofreadpages' => 'Листа на страници во индексот',
+	'proofreadpage_desc' => 'Дозволи лесна споредба на текстот со скенираниот оригинал',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'слика',
 	'proofreadpage_index' => 'Индекс',
+	'proofreadpage_index_expected' => 'Грешка: се очекува индекс',
+	'proofreadpage_nosuch_index' => 'Грешка: нема таков индекс',
+	'proofreadpage_nosuch_file' => 'Грешка: нема таква податотека',
+	'proofreadpage_badpage' => 'Погрешен формат',
+	'proofreadpage_badpagetext' => 'Форматот на страницата што сакате да ја зачувате е погрешен.',
+	'proofreadpage_indexdupe' => 'Дупликат врска',
+	'proofreadpage_indexdupetext' => 'Страниците не можат да се наведуваат на индексот повеќе од еднаш по страница',
+	'proofreadpage_nologin' => 'Не сте најавени',
+	'proofreadpage_nologintext' => 'Морате да бидете [[Special:UserLogin|најавени]] за да можете да го менувате статусот на коректурата на страници.',
+	'proofreadpage_notallowed' => 'Менувањето не е дозволено',
+	'proofreadpage_notallowedtext' => 'Не ви е дозволено да го менувате статусот на коректурата на оваа страница.',
+	'proofreadpage_number_expected' => 'Грешка: се очекува бројчена вредност',
+	'proofreadpage_interval_too_large' => 'Грешка: растојанието е преголемо',
+	'proofreadpage_invalid_interval' => 'Грешка: погрешно растојание',
 	'proofreadpage_nextpage' => 'Следна страница',
 	'proofreadpage_prevpage' => 'Претходна страница',
 	'proofreadpage_header' => 'Заглавие (без вклучување):',
 	'proofreadpage_body' => 'Содржина на страница (се трансклудира):',
+	'proofreadpage_footer' => 'Долна колон цифра (noinclude):',
+	'proofreadpage_toggleheaders' => 'превклучи ја видливоста на noinclude пасусите',
+	'proofreadpage_quality0_category' => 'Без текст',
+	'proofreadpage_quality1_category' => 'Непрегледана',
+	'proofreadpage_quality2_category' => 'Проблематично',
+	'proofreadpage_quality3_category' => 'Прегледано',
+	'proofreadpage_quality4_category' => 'Потврдено',
+	'proofreadpage_quality0_message' => 'Оваа страница нема потреба од преглед',
+	'proofreadpage_quality1_message' => 'Оваа страница е непрегледана',
+	'proofreadpage_quality2_message' => 'Се јави проблем при прегледувањето на оваа страница',
+	'proofreadpage_quality3_message' => 'Оваа страница е прегледана',
+	'proofreadpage_quality4_message' => 'Оваа страница е потврдена',
 	'proofreadpage_index_listofpages' => 'Листа на страници',
 	'proofreadpage_image_message' => 'Врска до индекс страницата',
 	'proofreadpage_page_status' => 'Статус на страница',
+	'proofreadpage_js_attributes' => 'Автор Наслов Година Издавач',
+	'proofreadpage_index_attributes' => 'Автор
+Наслов
+Година|Година на издавање
+Издавач
+Извор
+Слика|Корица
+Страници||20
+Белешки||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|страница|страници}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Malayalam (മലയാളം)
