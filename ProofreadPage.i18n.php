@@ -2170,6 +2170,7 @@ $messages['km'] = array(
  * @author Klutzy
  * @author Kwj2772
  * @author Pakman
+ * @author ToePeu
  * @author Yknok29
  */
 $messages['ko'] = array(
@@ -2178,7 +2179,7 @@ $messages['ko'] = array(
 	'proofreadpage_index_namespace' => '목차',
 	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '목차',
-	'proofreadpage_badpage' => '잘못된 포맷',
+	'proofreadpage_badpage' => '잘못된 형식',
 	'proofreadpage_nologin' => ' 로그인된 상태가 아닙니다.',
 	'proofreadpage_nologintext' => '주시문서를 보려면 [[특별:로그인|로그인]]해야 합니다. 70‰',
 	'proofreadpage_notallowed' => '이 문서는 변경이 불가능합니다. 60‰',
@@ -3047,6 +3048,7 @@ $messages['ps'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author Giro720
  * @author Malafaya
  * @author Waldir
  */
@@ -3073,6 +3075,7 @@ $messages['pt'] = array(
 	'proofreadpage_quality2_category' => 'Problemáticas',
 	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
 	'proofreadpage_quality4_category' => 'Validadas',
+	'proofreadpage_quality4_message' => 'Esta página foi validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message' => 'Link para a página de índice',
 	'proofreadpage_page_status' => 'Estado da página',
