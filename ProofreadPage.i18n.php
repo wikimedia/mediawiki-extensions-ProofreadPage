@@ -3970,6 +3970,7 @@ Homaičendad||10",
  * @author Vinhtantran
  */
 $messages['vi'] = array(
+	'proofreadpages' => 'Danh sách các trang chỉ mục',
 	'proofreadpage_desc' => 'So sánh văn bản với hình quét gốc',
 	'proofreadpage_namespace' => 'Trang',
 	'proofreadpage_index_namespace' => 'Chỉ mục',
@@ -3979,10 +3980,16 @@ $messages['vi'] = array(
 	'proofreadpage_nosuch_index' => 'Lỗi: không có chỉ mục như vậy',
 	'proofreadpage_nosuch_file' => 'Lỗi: không có tập tin như vậy',
 	'proofreadpage_badpage' => 'Định dạng sai',
+	'proofreadpage_badpagetext' => 'Định dạng của trang bạn đang cố lưu là không đúng.',
+	'proofreadpage_indexdupe' => 'Liên kết lặp lại',
+	'proofreadpage_indexdupetext' => 'Không thể liệt kê trang quá một lần tại một trang chỉ mục.',
 	'proofreadpage_nologin' => 'Chưa đăng nhập',
+	'proofreadpage_nologintext' => 'Bạn phải [[Special:UserLogin|đăng nhập]] để sửa đổi tình trạng duyệt bài của trang.',
 	'proofreadpage_notallowed' => 'Không được phép thay đổi',
+	'proofreadpage_notallowedtext' => 'Bạn không được phép thay đổi tình trạng duyệt bài của trang này.',
 	'proofreadpage_number_expected' => 'Lỗi: cần giá trị số',
 	'proofreadpage_interval_too_large' => 'Lỗi: khoảng thời gian quá lớn',
+	'proofreadpage_invalid_interval' => 'Lỗi: khoảng thời gian không hợp lệ',
 	'proofreadpage_nextpage' => 'Trang trước',
 	'proofreadpage_prevpage' => 'Trang sau',
 	'proofreadpage_header' => 'Phần đầu (noinclude):',
@@ -3994,6 +4001,11 @@ $messages['vi'] = array(
 	'proofreadpage_quality2_category' => 'Có vấn đề',
 	'proofreadpage_quality3_category' => 'Hiệu đính',
 	'proofreadpage_quality4_category' => 'Phê chuẩn',
+	'proofreadpage_quality0_message' => 'Trang này không cần phải duyệt lại',
+	'proofreadpage_quality1_message' => 'Trang này chưa được duyệt lại',
+	'proofreadpage_quality2_message' => 'Có vấn đề khi duyệt lại trang này',
+	'proofreadpage_quality3_message' => 'Trang này đã được duyệt lại',
+	'proofreadpage_quality4_message' => 'Trang này đã được thông qua',
 	'proofreadpage_index_listofpages' => 'Danh sách các trang',
 	'proofreadpage_image_message' => 'Liên kết trang chỉ mục',
 	'proofreadpage_page_status' => 'Tình trạng của trang',
@@ -4006,6 +4018,14 @@ Source|Nguồn
 Image|Hình bìa
 Pages|Các trang|20
 Remarks|Ghi chú|10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|trang|trang}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Volapük (Volapük)
