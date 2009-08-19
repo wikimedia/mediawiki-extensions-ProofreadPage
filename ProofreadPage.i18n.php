@@ -1502,6 +1502,7 @@ $messages['haw'] = array(
 
 /** Hebrew (עברית)
  * @author Rotem Liss
+ * @author Rotemliss
  * @author YaronSh
  */
 $messages['he'] = array(
@@ -1515,12 +1516,12 @@ $messages['he'] = array(
 	'proofreadpage_nosuch_index' => 'שגיאה: אין אינדקס כזה',
 	'proofreadpage_nosuch_file' => 'שגיאה: אין קובץ כזה',
 	'proofreadpage_badpage' => 'מבנה שגוי',
-	'proofreadpage_badpagetext' => 'מבנה הדף אותו ניסיתם לשמור הינו שגוי.',
+	'proofreadpage_badpagetext' => 'מבנה הדף אותו ניסיתם לשמור אינו נכון.',
 	'proofreadpage_indexdupe' => 'קישור כפול',
 	'proofreadpage_indexdupetext' => 'לא ניתן להציג את הדפים יותר מפעם אחת בדף אינדקס.',
 	'proofreadpage_nologin' => 'לא נכנסתם לאתר',
-	'proofreadpage_nologintext' => 'עליכם [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של הדפים.',
-	'proofreadpage_notallowed' => 'אסור לבצע שינויים',
+	'proofreadpage_nologintext' => 'עליכם [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של דפים.',
+	'proofreadpage_notallowed' => 'לא ניתן לבצע השינוי',
 	'proofreadpage_notallowedtext' => 'אינכם מורשים לשנות את מצב ההגהה של דף זה.',
 	'proofreadpage_number_expected' => 'שגיאה: נדרש ערך מספרי',
 	'proofreadpage_interval_too_large' => 'שגיאה: המרווח גדול מדי',
@@ -1538,7 +1539,7 @@ $messages['he'] = array(
 	'proofreadpage_quality4_category' => 'מאומת',
 	'proofreadpage_quality0_message' => 'לדף זה לא נדרשת בדיקת הגהה',
 	'proofreadpage_quality1_message' => 'דף זה לא עבר בדיקת הגהה',
-	'proofreadpage_quality2_message' => 'ארעה שגיאה בעת בדיקת הגהת דף זה',
+	'proofreadpage_quality2_message' => 'הייתה בעיה בעת ביצוע בדיקת הגהה לדף זה',
 	'proofreadpage_quality3_message' => 'דף זה עבר הגהה',
 	'proofreadpage_quality4_message' => 'דף זה עבר אימות',
 	'proofreadpage_index_listofpages' => 'רשימת דפים',
@@ -1554,7 +1555,7 @@ $messages['he'] = array(
 דפים||20
 הערות||10',
 	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [{{PLURAL:$2|דף $2|$2 דפים}}]&nbsp;&nbsp;</td>
+<tr><td>$1 [{{PLURAL:$2|דף&nbsp;אחד|$2&nbsp;דפים}}]&nbsp;&nbsp;</td>
 <td align=center class=\'quality4\' width="$7"></td>
 <td align=center class=\'quality3\' width="$6"></td>
 <td align=center class=\'quality2\' width="$5"></td>
@@ -1938,6 +1939,7 @@ $messages['it'] = array(
 	'proofreadpage_badpage' => 'Formato errato',
 	'proofreadpage_badpagetext' => 'Il formato della pagina che si è tentato di salvare non è corretto.',
 	'proofreadpage_indexdupe' => 'Collegamento duplicato',
+	'proofreadpage_indexdupetext' => 'Le pagine non possono essere elencate più di una volta su una pagina di indice.',
 	'proofreadpage_nologin' => 'Accesso non effettuato',
 	'proofreadpage_nologintext' => "Per modificare lo stato di correttezza delle pagine è necessario [[Special:UserLogin|effettuare l'accesso]].",
 	'proofreadpage_notallowed' => 'Modifica non consentita',
@@ -2819,6 +2821,7 @@ Merknader||10',
  * @author Jon Harald Søby
  * @author Laaknor
  * @author Nghtwlkr
+ * @author Simny
  */
 $messages['no'] = array(
 	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
@@ -2829,6 +2832,10 @@ $messages['no'] = array(
 	'proofreadpage_index_expected' => 'Feil: Indeks forventet',
 	'proofreadpage_nosuch_index' => 'Feil: ingen slik indeks',
 	'proofreadpage_nosuch_file' => 'Feil: ingen slik fil',
+	'proofreadpage_badpage' => 'Feil format',
+	'proofreadpage_nologin' => 'Ikke innlogget',
+	'proofreadpage_nologintext' => 'Du må være [[Special:UserLogin|innlogget]] for å kunne forandre status på korrekturlesningen på sider.',
+	'proofreadpage_notallowed' => 'Å gjøre en forandring er ikke lov',
 	'proofreadpage_number_expected' => 'Feil: Numerisk verdi forventet',
 	'proofreadpage_interval_too_large' => 'Feil: Intervall for stort',
 	'proofreadpage_invalid_interval' => 'Feil: ugyldig intervall',
@@ -2843,6 +2850,11 @@ $messages['no'] = array(
 	'proofreadpage_quality2_category' => 'Ufullstendig',
 	'proofreadpage_quality3_category' => 'Korrekturlest',
 	'proofreadpage_quality4_category' => 'Validert',
+	'proofreadpage_quality0_message' => 'Denne siden trenger ikke korrekturleses',
+	'proofreadpage_quality1_message' => 'Denne siden er ikke korrekturlest',
+	'proofreadpage_quality2_message' => 'Det oppsto et problem når denne siden skulle korrekturleses',
+	'proofreadpage_quality3_message' => 'Denne siden er korrekturlest',
+	'proofreadpage_quality4_message' => 'Denne siden er godkjent',
 	'proofreadpage_index_listofpages' => 'Liste over sider',
 	'proofreadpage_image_message' => 'Lenke til indekssiden',
 	'proofreadpage_page_status' => 'Sidestatus',
@@ -3877,6 +3889,7 @@ $messages['uk'] = array(
  * @author Candalua
  */
 $messages['vec'] = array(
+	'proofreadpages' => 'Elenco de le pagine de indice',
 	'proofreadpage_desc' => 'Parméte un façile confronto tra un testo e la so scansion original',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indice',
@@ -3887,6 +3900,7 @@ $messages['vec'] = array(
 	'proofreadpage_nosuch_file' => 'Eròr: file mia catà',
 	'proofreadpage_badpage' => 'Formato sbalià',
 	'proofreadpage_indexdupe' => 'Colegamento dopio',
+	'proofreadpage_notallowed' => 'Canbiamento mia parmesso',
 	'proofreadpage_number_expected' => 'Eròr: me spetavo un valor numerico',
 	'proofreadpage_interval_too_large' => 'Eròr: intervalo massa grando',
 	'proofreadpage_invalid_interval' => 'Eròr: intervalo mia valido',
@@ -4048,19 +4062,26 @@ $messages['yue'] = array(
 備註||10',
 );
 
-/** Simplified Chinese (‪中文(简体)‬) */
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Liangent
+ */
 $messages['zh-hans'] = array(
-	'proofreadpage_desc' => '容许简易地去比较原扫瞄和文字',
+	'proofreadpage_desc' => '容许简易地比较原扫描和文字',
 	'proofreadpage_namespace' => '页面',
 	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '图像',
 	'proofreadpage_index' => '索引',
+	'proofreadpage_badpage' => '错误的格式',
+	'proofreadpage_indexdupe' => '重复链接',
+	'proofreadpage_nologin' => '没有登录',
+	'proofreadpage_notallowed' => '更改不允许',
 	'proofreadpage_nextpage' => '下一页',
 	'proofreadpage_prevpage' => '上一页',
 	'proofreadpage_header' => '首 （不包含）:',
 	'proofreadpage_body' => '页身 （包含）:',
 	'proofreadpage_footer' => '尾 （不包含）:',
 	'proofreadpage_toggleheaders' => '调整不包含段落之可见性',
+	'proofreadpage_quality0_category' => '没有文字',
 	'proofreadpage_quality1_category' => '未校对',
 	'proofreadpage_quality2_category' => '有问题',
 	'proofreadpage_quality3_category' => '已校对',
