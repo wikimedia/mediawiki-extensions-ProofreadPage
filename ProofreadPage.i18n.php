@@ -3427,7 +3427,7 @@ $messages['sl'] = array(
 	'proofreadpage_quality4_category' => 'Potrjeno',
 );
 
-/** Serbian Cyrillic ekavian (ћирилица)
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
  * @author Sasa Stefanovic
  * @author Михајло Анђелковић
@@ -3463,7 +3463,7 @@ $messages['sr-ec'] = array(
 примедбе||10',
 );
 
-/** latinica (latinica)
+/** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
  */
 $messages['sr-el'] = array(
