@@ -1285,7 +1285,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	}
 	$sk = $wgUser->getSkin();
 	$indexlink = $sk->makeKnownLink( "$index_namespace:$title", "[index]" );
-	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0, $n1, $n2, $n3, $n4, $n, $indexlink );
+	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n, $indexlink );
 	$out->setSubtitle($output);
 	return true;
 };
