@@ -506,7 +506,7 @@ $messages['br'] = array(
 	'proofreadpage_index' => 'Meneger',
 	'proofreadpage_nextpage' => "Pajenn war-lerc'h",
 	'proofreadpage_prevpage' => 'Pajenn a-raok',
-	'proofreadpage_quality1_category' => 'Da reizhañ',
+	'proofreadpage_quality1_category' => 'Da wiriañ',
 	'proofreadpage_quality2_category' => 'Kudennek',
 	'proofreadpage_quality3_category' => 'Reizhet',
 	'proofreadpage_quality4_category' => 'Gwiriekaet',
@@ -985,6 +985,7 @@ Rimarkoj||10',
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Barcex
  * @author Crazymadlover
  * @author Locos epraix
  * @author Remember the dot
@@ -997,6 +998,8 @@ $messages['es'] = array(
 	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'imagen',
 	'proofreadpage_index' => 'Índice',
+	'proofreadpage_index_expected' => 'Error: se esperaba un índice',
+	'proofreadpage_nosuch_file' => 'Error: no existe el archivo',
 	'proofreadpage_badpage' => 'Formato erróneo',
 	'proofreadpage_badpagetext' => 'El formato de la página que intestaste grabar es incorrecto.',
 	'proofreadpage_indexdupe' => 'Vínculo duplicado',
@@ -1005,6 +1008,7 @@ $messages['es'] = array(
 	'proofreadpage_nologintext' => 'Debes haber [[Special:UserLogin|iniciado sesión]]para modificar el status de corrección de las páginas.',
 	'proofreadpage_notallowed' => 'Cambio no permitido',
 	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el estatus corregido de esta página.',
+	'proofreadpage_number_expected' => 'Error: se esperaba un valor numérico',
 	'proofreadpage_interval_too_large' => 'Error: intervalo demasiado grande',
 	'proofreadpage_invalid_interval' => 'Error: intervalo inválido',
 	'proofreadpage_nextpage' => 'Página siguiente',
@@ -3275,7 +3279,7 @@ $messages['ru'] = array(
 Источник
 Изображение|Изображение обложки
 Страниц||20
-Примечаний||10',
+Примечания||10',
 	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
 <tr><td>$1 [$2&nbsp;{{PLURAL:$2|страница|страницы|страниц}}]&nbsp;&nbsp;</td>
 <td align=center class=\'quality4\' width="$7"></td>
