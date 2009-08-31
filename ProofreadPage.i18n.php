@@ -999,6 +999,7 @@ $messages['es'] = array(
 	'proofreadpage_image' => 'imagen',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Error: se esperaba un índice',
+	'proofreadpage_nosuch_index' => 'Error: no hay tal índice',
 	'proofreadpage_nosuch_file' => 'Error: no existe el archivo',
 	'proofreadpage_badpage' => 'Formato erróneo',
 	'proofreadpage_badpagetext' => 'El formato de la página que intestaste grabar es incorrecto.',
@@ -1868,24 +1869,46 @@ Notas||10',
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Irwangatot
  * @author IvanLanin
  */
 $messages['id'] = array(
+	'proofreadpages' => 'Daftar dari halaman indek',
 	'proofreadpage_desc' => 'Memungkinkan perbandingan mudah teks dengan hasil pemindaian orisinal',
 	'proofreadpage_namespace' => 'Halaman',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'gambar',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Kesalahan : diperlukan indeks',
+	'proofreadpage_nosuch_index' => 'Kesalahan: tidak ada indeks',
+	'proofreadpage_nosuch_file' => 'Kesalahan: tidak ada file',
+	'proofreadpage_badpage' => 'Kesalahan Format',
+	'proofreadpage_badpagetext' => 'Format halaman yang akan anda simpan, salah.',
+	'proofreadpage_indexdupe' => 'Gandakan pranala',
+	'proofreadpage_indexdupetext' => 'Halaman tidak dapat di daftarkan lebih dari sekali di halaman indek.',
+	'proofreadpage_nologin' => 'Belum masuk log',
+	'proofreadpage_nologintext' => 'Anda harus [[Special:UserLogin|masuk log]] untuk mengubah status koreksi halaman.',
+	'proofreadpage_notallowed' => 'Perubahan tidak diperbolehkan',
+	'proofreadpage_notallowedtext' => 'Anda tidak diperbolehkan untuk mengubah status koreksi di halaman ini.',
+	'proofreadpage_number_expected' => 'Kesalahan: nilai angka diharapkan',
+	'proofreadpage_interval_too_large' => 'Kesalahan:Interval terlalu besar',
+	'proofreadpage_invalid_interval' => 'Kesalahan: Interval tidak sah',
 	'proofreadpage_nextpage' => 'Halaman selanjutnya',
 	'proofreadpage_prevpage' => 'Halaman sebelumnya',
 	'proofreadpage_header' => 'Kepala (noinclude):',
 	'proofreadpage_body' => 'Badan halaman (untuk ditransklusikan):',
 	'proofreadpage_footer' => 'Kaki (noinclude):',
 	'proofreadpage_toggleheaders' => 'ganti keterlihatan bagian noinclude',
+	'proofreadpage_quality0_category' => 'Tanpa teks',
 	'proofreadpage_quality1_category' => 'Belum diuji-baca',
 	'proofreadpage_quality2_category' => 'Bermasalah',
 	'proofreadpage_quality3_category' => 'Diuji-baca',
 	'proofreadpage_quality4_category' => 'Divalidasi',
+	'proofreadpage_quality0_message' => 'Halaman ini tidak perlu dikoreksi',
+	'proofreadpage_quality1_message' => 'Halaman ini belum dikoreksi',
+	'proofreadpage_quality2_message' => 'Ada masalah ketika mengoreksi halaman ini',
+	'proofreadpage_quality3_message' => 'Halaman ini telah dikoreksi',
+	'proofreadpage_quality4_message' => 'Halaman ini telah divalidasi',
 	'proofreadpage_index_listofpages' => 'Daftar halaman',
 	'proofreadpage_image_message' => 'Pranala ke halaman indeks',
 	'proofreadpage_page_status' => 'Status halaman',
@@ -1898,6 +1921,14 @@ Sumber
 Gambar|Gambar sampul
 Halaman||20
 Catatan||10',
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|halaman|halaman}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Ido (Ido)
