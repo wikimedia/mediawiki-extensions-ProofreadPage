@@ -196,7 +196,7 @@ function pr_navigation( $title ) {
 	}
 
 	//if the index page exists, find current page number, previous and next pages
-	list( $links, $params, $attributes ) = pr_parse_index($index_title);
+	list( $text_links, $links, $params, $attributes ) = pr_parse_index($index_title);
 
 	if( $links==null ) {
 		list($pagenum, $links, $mode) = pr_pageNumber($pagenr,$params);
@@ -269,6 +269,10 @@ function pr_parse_index_text( $text ){
 		preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 	}
 
+	//links in ns-0
+	$text_links_pattern = "/\[\[([^:\|]*?)(\|(.*?)|)\]\]/i";
+	preg_match_all( $text_links_pattern, $text, $text_links, PREG_PATTERN_ORDER );
+
 	//read attributes
 	$attributes = array();
 	$var_names = explode(" ", wfMsgForContent('proofreadpage_js_attributes') );
@@ -282,7 +286,7 @@ function pr_parse_index_text( $text ){
 			$attributes[$var] = '';
 		}
 	}
-	return array( $links, $params, $attributes );
+	return array( $text_links, $links, $params, $attributes );
 
 }
 
@@ -683,7 +687,7 @@ function pr_renderPageList( $input, $args ) {
 
 /*
  * Parser hook that includes a list of pages.
- * It needs 3 parameters : index, from, to
+ *  parameters : index, from, to, header
  */
 function pr_renderPages( $input, $args ) {
 	global $wgParser, $wgTitle;
@@ -693,6 +697,7 @@ function pr_renderPages( $input, $args ) {
 	$index = $args['index'];
 	$from = $args['from'];
 	$to = $args['to'];
+	$header = $args['header'];
 
 	if( ! $index ) { 
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
@@ -703,7 +708,7 @@ function pr_renderPages( $input, $args ) {
 	}
 
 	$out = '';
-	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
+	list( $text_links, $links, $params, $attributes ) = pr_parse_index( $index_title );
 
 	if( $links==null ) {
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
@@ -742,8 +747,9 @@ function pr_renderPages( $input, $args ) {
 			} else {
 				$out.= "{{:".$text."}}";
 			}
+			if( $i == $from ) $from_pagenum = $pagenum;
+			if( $i == $to ) $to_pagenum = $pagenum;
 		}
-		$out = $wgParser->recursiveTagParse($out);
 	} 
 	else {
 		if($from) {
@@ -754,7 +760,10 @@ function pr_renderPages( $input, $args ) {
 		for( $i=0; $i<count( $links[1] ); $i++) { 
 			$text = $links[1][$i];
 			$pagenum = $links[3][$i];
-			if($text == $from ) $adding = true;
+			if($text == $from ) {
+				$adding = true;
+				$from_pagenum = $pagenum;
+			}
 			if($adding){
 				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page="
 				  .$page_namespace.":".$text."|num=$pagenum}}</span>";
@@ -766,10 +775,41 @@ function pr_renderPages( $input, $args ) {
 					$out.= "{{:".$page_namespace.":".$text."}}";
 				}
 			}
-			if($text == $to ) $adding = false;
+			if($text == $to ) {
+				$adding = false;
+				$to_pagenum = $pagenum;
+			}
 		}
-		$out = $wgParser->recursiveTagParse($out);
 	}
+
+	if( $header ) {
+		$h_out = '{{'.$header;
+		//find next and previous pages in list
+		for( $i=1; $i < count( $text_links[1] ); $i++) { 
+			if( $text_links[1][$i] == $wgTitle->getPrefixedText() ) {
+				$current = $text_links[0][$i];
+				break;
+			}
+		}
+		if( ( $i > 1 ) && ( $i < count( $text_links[1] ) ) ) {
+			$prev = $text_links[0][$i-1];
+		}
+		if( ( $i >= 1 ) && ( $i + 1 < count( $text_links[1] ) ) ) {
+			$next = $text_links[0][$i+1];
+		}
+		if( $current ) $h_out .= "|current=$current";
+		if( $prev ) $h_out .= "|prev=$prev";
+		if( $next ) $h_out .= "|next=$next";
+		if( $from_pagenum ) $h_out .= "|from=$from_pagenum";
+		if( $to_pagenum ) $h_out .= "|to=$to_pagenum";
+		foreach ( $attributes as $key => $val ) {
+			$h_out .= "|$key=$val";
+		}
+		$h_out .= '}}';
+		$out = $h_out . $out;
+	}
+
+	$out = $wgParser->recursiveTagParse($out);
 	return $out;
 }
 
@@ -858,7 +898,7 @@ function pr_attemptSave( $editpage ) {
 	//check that pages listed on an index are unique.
 	if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 		$text = $editpage->textbox1;
-		list( $links, $params, $attributes ) = pr_parse_index_text($text);
+		list( $text_links, $links, $params, $attributes ) = pr_parse_index_text($text);
 		if( $links!=null && count($links[1]) != count( array_unique($links[1]))) {
 			$wgOut->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
 			return false;
@@ -1117,7 +1157,7 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 
 	//read the list of pages
 	$pages = array();
-	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
+	list( $text_links, $links, $params, $attributes ) = pr_parse_index( $index_title );
 	if( $links==null ) {
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
 		if ( $imageTitle ) {
