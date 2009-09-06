@@ -593,16 +593,23 @@ Napomene||10',
  * @author SMP
  */
 $messages['ca'] = array(
+	'proofreadpages' => "Llista de pàgines d'índex",
 	'proofreadpage_desc' => "Permetre una fàcil comparació d'un text amb l'escanejat original",
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imatge',
 	'proofreadpage_index' => 'Índex',
 	'proofreadpage_index_expected' => "Error: s'esperava un índex",
+	'proofreadpage_nosuch_index' => "Error: no existeix l'índex",
+	'proofreadpage_nosuch_file' => 'Error: no existeix el fitxer',
 	'proofreadpage_badpage' => 'Format erroni',
+	'proofreadpage_badpagetext' => 'El format de la pàgina que heu intentat desar és incorrecte.',
 	'proofreadpage_indexdupe' => 'Enllaç duplicat',
+	'proofreadpage_indexdupetext' => "Les pàgines no es poden llistar més d'una vegada a una pàgina d'índex.",
 	'proofreadpage_nologin' => 'No heu iniciat la sessió',
+	'proofreadpage_nologintext' => "Heu d'estar [[Special:UserLogin|registrat]] per a modificar l'estat de revisió de les pàgines.",
 	'proofreadpage_notallowed' => 'Canvi no permès',
+	'proofreadpage_notallowedtext' => "No esteu autoritzat per a canviar l'estat de revisió d'aquesta pàgina.",
 	'proofreadpage_number_expected' => "Error: s'esperava un valor numèric",
 	'proofreadpage_interval_too_large' => 'Error: interval massa ampli',
 	'proofreadpage_invalid_interval' => 'Error: interval no vàlid',
@@ -617,6 +624,9 @@ $messages['ca'] = array(
 	'proofreadpage_quality2_category' => 'Problemàtica',
 	'proofreadpage_quality3_category' => 'Revisada',
 	'proofreadpage_quality4_category' => 'Validada',
+	'proofreadpage_quality0_message' => 'Aquesta pàgina no necessita ser revisada.',
+	'proofreadpage_quality2_message' => "Hi ha un problema amb la revisió d'aquesta pàgina.",
+	'proofreadpage_quality3_message' => 'Aquesta pàgina ha estat revisada.',
 	'proofreadpage_quality4_message' => 'Aquesta pàgina ha estat validada',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
 	'proofreadpage_image_message' => "Enllaç a la pàgina d'índex",
@@ -632,6 +642,14 @@ Font|Facsímils
 Imatge
 Pàgines||20
 Sumari||15",
+	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
+<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pàgina|pàgines}}]&nbsp;&nbsp;</td>
+<td align=center class=\'quality4\' width="$7"></td>
+<td align=center class=\'quality3\' width="$6"></td>
+<td align=center class=\'quality2\' width="$5"></td>
+<td align=center class=\'quality1\' width="$4"></td>
+<td align=center class=\'quality0\' width="$3"></td>
+</tr></table>',
 );
 
 /** Cebuano (Cebuano)
