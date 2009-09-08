@@ -756,8 +756,9 @@ function pr_renderPages( $input, $args ) {
 			$adding = false;
 		} else {
 			$adding = true;
+			$from_pagenum = $links[3][0];
 		}
-		for( $i=0; $i<count( $links[1] ); $i++) { 
+		for( $i=0; $i < count( $links[1] ); $i++) { 
 			$text = $links[1][$i];
 			$pagenum = $links[3][$i];
 			if($text == $from ) {
@@ -780,10 +781,13 @@ function pr_renderPages( $input, $args ) {
 				$to_pagenum = $pagenum;
 			}
 		}
+		if( !$to ) {
+			$to_pagenum = $links[3][ count( $links[1] ) - 1 ];
+		}
 	}
 
 	if( $header ) {
-		$h_out = '{{'.$header;
+		$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 		//find next and previous pages in list
 		for( $i=1; $i < count( $text_links[1] ); $i++) { 
 			if( $text_links[1][$i] == $wgTitle->getPrefixedText() ) {
