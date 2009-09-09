@@ -955,6 +955,7 @@ $messages['eo'] = array(
 	'proofreadpage_nosuch_index' => 'Eraro: nenia indekso',
 	'proofreadpage_nosuch_file' => 'Eraro: nenia dosiero',
 	'proofreadpage_badpage' => 'Malbona Formato',
+	'proofreadpage_badpagetext' => 'La formato de la paĝo kiun vi provis konservi estas malĝusta.',
 	'proofreadpage_indexdupe' => 'Duplikata ligilo',
 	'proofreadpage_nologin' => 'Ne ensalutita',
 	'proofreadpage_nologintext' => 'Vi devas [[Special:UserLogin|ensaluti]] por modifi la provlegan statuson de paĝojn.',
