@@ -3970,6 +3970,7 @@ $messages['vec'] = array(
 	'proofreadpage_quality2_category' => 'Da rivédar',
 	'proofreadpage_quality3_category' => 'Corèta',
 	'proofreadpage_quality4_category' => 'Verificà',
+	'proofreadpage_quality4_message' => 'Sta pagina la xe stà validà',
 	'proofreadpage_index_listofpages' => 'Lista de le pagine',
 	'proofreadpage_image_message' => 'Colegamento a la pagina indice',
 	'proofreadpage_page_status' => 'Status de la pagina',
