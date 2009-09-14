@@ -3164,6 +3164,7 @@ Notas||10',
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
+ * @author Luckas Blade
  */
 $messages['pt-br'] = array(
 	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
@@ -3171,6 +3172,7 @@ $messages['pt-br'] = array(
 	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'imagem',
 	'proofreadpage_index' => 'Índice',
+	'proofreadpage_notallowed' => 'Alteração não permitida',
 	'proofreadpage_nextpage' => 'Próxima página',
 	'proofreadpage_prevpage' => 'Página anterior',
 	'proofreadpage_header' => 'Cabeçalho (em modo noinclude):',
