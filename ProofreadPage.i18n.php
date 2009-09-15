@@ -4007,6 +4007,7 @@ $messages['vep'] = array(
 	'proofreadpage_nosuch_index' => 'Petuz: ei ole mugošt indeksad',
 	'proofreadpage_nosuch_file' => 'Petuz: ei ole mugošt failad',
 	'proofreadpage_badpage' => 'Vär format',
+	'proofreadpage_indexdupe' => 'Kaksitadud kosketuz',
 	'proofreadpage_invalid_interval' => 'Petuz: vär interval',
 	'proofreadpage_nextpage' => "Jäl'ghine lehtpol'",
 	'proofreadpage_prevpage' => "Edeline lehtpol'",
@@ -4018,6 +4019,7 @@ $messages['vep'] = array(
 	'proofreadpage_quality3_category' => 'Om lugetud kodvaks',
 	'proofreadpage_quality4_category' => 'Kodvdud da hüvästadud',
 	'proofreadpage_index_listofpages' => 'Lehtpoliden nimikirjutez',
+	'proofreadpage_page_status' => 'Lehtpolen status',
 	'proofreadpage_index_attributes' => "Avtor
 Pälkirjutez
 Voz'|Pästandvoz'
