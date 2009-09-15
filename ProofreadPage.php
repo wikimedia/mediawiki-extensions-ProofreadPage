@@ -252,7 +252,8 @@ function pr_parse_index( $index_title ){
 
 
 function pr_parse_index_text( $text ){
-
+	global $wgParser;
+	
 	$page_namespace = pr_page_ns();
 	//check if it is using pagelist
 	preg_match_all( "/<pagelist([^<]*?)\/>/is", $text, $m, PREG_PATTERN_ORDER );
@@ -269,9 +270,13 @@ function pr_parse_index_text( $text ){
 		preg_match_all( $tag_pattern, $text, $links, PREG_PATTERN_ORDER );
 	}
 
-	//links in ns-0
-	$text_links_pattern = "/\[\[([^:\|]*?)(\|(.*?)|)\]\]/i";
-	preg_match_all( $text_links_pattern, $text, $text_links, PREG_PATTERN_ORDER );
+	//links in ns-0. Only if mOptions exist
+	if( $wgParser->mOptions ) {
+		$rtext = $wgParser->replaceVariables( $text );
+		$text_links_pattern = "/\[\[([^:\|]*?)(\|(.*?)|)\]\]/i";
+		preg_match_all( $text_links_pattern, $rtext, $text_links, PREG_PATTERN_ORDER );
+	}
+	else $text_links = null;
 
 	//read attributes
 	$attributes = array();
@@ -788,6 +793,7 @@ function pr_renderPages( $input, $args ) {
 
 	if( $header ) {
 		$h_out = '{{:MediaWiki:Proofreadpage_header_template';
+		$h_out .= "|value=$header";
 		//find next and previous pages in list
 		for( $i=1; $i < count( $text_links[1] ); $i++) { 
 			if( $text_links[1][$i] == $wgTitle->getPrefixedText() ) {
@@ -1326,9 +1332,11 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 		$row = $dbr->fetchObject( $res );
 		$title = $row->title;
 		$dbr->freeResult( $res );
-	}
-	$sk = $wgUser->getSkin();
-	$indexlink = $sk->makeKnownLink( "$index_namespace:$title", "[index]" );
+		$sk = $wgUser->getSkin();
+		$indexlink = $sk->makeKnownLink( "$index_namespace:$title", "[index]" );
+	} else {
+		$indexlink="";
+	}	
 	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n, $indexlink );
 	$out->setSubtitle($output);
 	return true;
