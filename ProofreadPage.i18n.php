@@ -1107,6 +1107,7 @@ $messages['eu'] = array(
 	'proofreadpage_index_namespace' => 'Aurkibidea',
 	'proofreadpage_image' => 'irudi',
 	'proofreadpage_index' => 'Aurkibidea',
+	'proofreadpage_badpage' => 'Formatu Okerra',
 	'proofreadpage_nextpage' => 'Hurrengo orria',
 	'proofreadpage_prevpage' => 'Aurreko orria',
 	'proofreadpage_index_listofpages' => 'Orri zerrenda',
