@@ -1092,12 +1092,15 @@ function pr_preloadText( $textbox1, $mTitle ) {
 		}
 
 		$image = wfFindFile( $imageTitle );
-		if ( $image && $image->exists() && $image->getMimeType() == 'image/vnd.djvu' ) {
-			$text = $image->handler->getPageText($image, $m[2]);
-			if ( $text ) {
-				$text = preg_replace( "/(\\\\n)/", "\n", $text );
-				$text = preg_replace( "/(\\\\\d*)/", "", $text );
-				$textbox1 = $text;
+		if ( $image && $image->exists() ) {
+			$mime = $image->getMimeType();  
+			if( $mime == 'image/vnd.djvu' || $mime == 'application/pdf')  {
+				$text = $image->handler->getPageText($image, $m[2]);
+				if ( $text ) {
+					$text = preg_replace( "/(\\\\n)/", "\n", $text );
+					$text = preg_replace( "/(\\\\\d*)/", "", $text );
+					$textbox1 = $text;
+				}
 			}
 		}
 	}
