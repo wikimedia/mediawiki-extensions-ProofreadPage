@@ -1293,7 +1293,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	# find the proofreading status of transclusions
 	$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title LEFT JOIN $catlinks ON cl_from=page_id where tl_from=$id and tl_namespace=$page_ns_index AND cl_to='###'";
 
-	$q4 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) );
+	$q4 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) ) );
 	$res = $dbr->query( str_replace( '###', $q4, $query) , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
 		$row = $dbr->fetchObject( $res );
@@ -1301,7 +1301,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 		$dbr->freeResult( $res );
 	}
 
-	$q3 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) );
+	$q3 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) ) );
 	$res = $dbr->query( str_replace( '###', $q3, $query) , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
 		$row = $dbr->fetchObject( $res );
@@ -1309,7 +1309,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 		$dbr->freeResult( $res );
 	}
 
-	$q2 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) );
+	$q2 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) ) );
 	$res = $dbr->query( str_replace( '###', $q2, $query) , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
 		$row = $dbr->fetchObject( $res );
@@ -1317,7 +1317,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 		$dbr->freeResult( $res );
 	}
 
-	$q0 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
+	$q0 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ) );
 	$res = $dbr->query( str_replace( '###', $q0, $query) , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
 		$row = $dbr->fetchObject( $res );
