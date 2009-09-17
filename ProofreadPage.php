@@ -1180,6 +1180,7 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 
 	$index_title = $index->mTitle;
 	$index_id = $index->getID();
+	$dbr = wfGetDB( DB_SLAVE );
 
 	//read the list of pages
 	$pages = array();
@@ -1199,12 +1200,11 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 	} else {
 		$n = count($links[1]);
 		for ( $i = 0; $i < $n; $i++ ) {
-			$page = str_replace( ' ' , '_' , $links[1][$i] );
+			$page = $dbr->strencode( str_replace( ' ' , '_' , $links[1][$i] ) );
 			if($page != $deletedpage) array_push( $pages, $page );
 		}
 	}
 
-	$dbr = wfGetDB( DB_SLAVE );
 	$catlinks = $dbr->tableName( 'categorylinks' );
 	$page = $dbr->tableName( 'page' );
 	$pagelist = "'".implode( "', '", $pages)."'";
