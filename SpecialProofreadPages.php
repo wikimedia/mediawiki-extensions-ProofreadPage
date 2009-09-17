@@ -45,7 +45,6 @@ class ProofreadPagesQuery extends QueryPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$page = $dbr->tableName( 'page' );
 		$pr_index = $dbr->tableName( 'pr_index' );
-		$name = $dbr->addQuotes( $this->getName() );
 
 		return
 			"SELECT pr_page_id as title,

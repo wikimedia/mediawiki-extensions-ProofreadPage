@@ -1153,6 +1153,19 @@ function pr_articlePurge( $article ) {
 
 
 
+function pr_query_count( $dbr, $query, $cat ){
+	$q = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( $cat ) ) );
+	$res = $dbr->query( str_replace( '###', $q, $query) , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$n = $row->count;
+		$dbr->freeResult( $res );
+		return $n;
+	}
+	return 0;
+}
+
+
 /*
  * update the pr_index entry of an article
  */
@@ -1190,53 +1203,29 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 			if($page != $deletedpage) array_push( $pages, $page );
 		}
 	}
-	$n0 = $n1 = $n2 = $n3 = $n4 = 0;
 
 	$dbr = wfGetDB( DB_SLAVE );
 	$catlinks = $dbr->tableName( 'categorylinks' );
 	$page = $dbr->tableName( 'page' );
 	$pagelist = "'".implode( "', '", $pages)."'";
-	$query = "SELECT COUNT(page_id) AS count FROM $page LEFT JOIN $catlinks ON cl_from=page_id WHERE cl_to='###' AND page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
-
-	$q0 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
-	$res = $dbr->query( str_replace( '###', $q0, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n0 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
-	$q2 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) );
-	$res = $dbr->query( str_replace( '###', $q2, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n2 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
-	$q3 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) );
-	$res = $dbr->query( str_replace( '###', $q3, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n3 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
-	$q4 = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) );
-	$res = $dbr->query( str_replace( '###', $q4, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n4 = $row->count;
-		$dbr->freeResult( $res );
-	}
 
 	$query = "SELECT COUNT(page_id) AS count FROM $page WHERE page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
 	$res = $dbr->query( $query , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
 		$row = $dbr->fetchObject( $res );
-		$n1 = $row->count - $n0 - $n2 - $n3 - $n4;
+		$total = $row->count;
 		$dbr->freeResult( $res );
+	} else {
+		return;
 	}
+
+	# proofreading status of pages
+	$query = "SELECT COUNT(page_id) AS count FROM $page LEFT JOIN $catlinks ON cl_from=page_id WHERE cl_to='###' AND page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
+	$n0 = pr_query_count( $dbr, $query, 'proofreadpage_quality0_category' );
+	$n2 = pr_query_count( $dbr, $query, 'proofreadpage_quality2_category' );
+	$n3 = pr_query_count( $dbr, $query, 'proofreadpage_quality3_category' );
+	$n4 = pr_query_count( $dbr, $query, 'proofreadpage_quality4_category' );
+	$n1 = $total - $n0 - $n2 - $n3 - $n4;
 	
 	$dbw = wfGetDB( DB_MASTER );
 	$pr_index = $dbw->tableName( 'pr_index' );
@@ -1292,40 +1281,11 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 
 	# find the proofreading status of transclusions
 	$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title LEFT JOIN $catlinks ON cl_from=page_id where tl_from=$id and tl_namespace=$page_ns_index AND cl_to='###'";
-
-	$q4 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) ) );
-	$res = $dbr->query( str_replace( '###', $q4, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n4 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
-	$q3 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) ) );
-	$res = $dbr->query( str_replace( '###', $q3, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n3 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
-	$q2 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) ) );
-	$res = $dbr->query( str_replace( '###', $q2, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n2 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
-	$q0 = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ) );
-	$res = $dbr->query( str_replace( '###', $q0, $query) , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$n0 = $row->count;
-		$dbr->freeResult( $res );
-	}
-
-	# q1 is default value
+	$n0 = pr_query_count( $dbr, $query, 'proofreadpage_quality0_category' );
+	$n2 = pr_query_count( $dbr, $query, 'proofreadpage_quality2_category' );
+	$n3 = pr_query_count( $dbr, $query, 'proofreadpage_quality3_category' );
+	$n4 = pr_query_count( $dbr, $query, 'proofreadpage_quality4_category' );
+	# quality1 is the default value
 	$n1 = $n - $n0 - $n2 - $n3 - $n4;
 
 	# find the index page
