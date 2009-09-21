@@ -2542,8 +2542,8 @@ $messages['mhr'] = array(
  * @author Brest
  */
 $messages['mk'] = array(
-	'indexpages' => 'Листа на страници во индексот',
-	'proofreadpage_desc' => 'Дозволи лесна споредба на текстот со скенираниот оригинал',
+	'indexpages' => 'Листа на индексни страници',
+	'proofreadpage_desc' => 'Овозможува едноставна споредба на текстот со скенираниот оригинал',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'слика',
