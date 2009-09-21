@@ -8,7 +8,7 @@
 $messages = array();
 
 $messages['en'] = array(
-	'proofreadpages'                  => 'List of index pages',
+	'indexpages'                      => 'List of index pages',
 	'proofreadpage_desc'              => 'Allow easy comparison of text to the original scan',
 	'proofreadpage_namespace'         => 'Page',
 	'proofreadpage_index_namespace'   => 'Index',
@@ -88,7 +88,7 @@ Remarks||10',
  * @author Yknok29
  */
 $messages['qqq'] = array(
-	'proofreadpages' => 'Title of [[Special:ProofreadPages]]',
+	'indexpages' => 'Title of [[Special:IndexPages]]',
 	'proofreadpage_desc' => 'Short description of the Proofreadpage extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
@@ -172,7 +172,7 @@ Notas||10',
  * @author OsamaK
  */
 $messages['ar'] = array(
-	'proofreadpages' => 'قائمة صفحات الفهرس',
+	'indexpages' => 'قائمة صفحات الفهرس',
 	'proofreadpage_desc' => 'يسمح بمقارنة سهلة للنص مع المسح الأصلي',
 	'proofreadpage_namespace' => 'صفحة',
 	'proofreadpage_index_namespace' => 'فهرس',
@@ -373,7 +373,7 @@ $messages['bcl'] = array(
  * @author Red Winged Duck
  */
 $messages['be-tarask'] = array(
-	'proofreadpages' => 'Сьпіс індэксных старонак',
+	'indexpages' => 'Сьпіс індэксных старонак',
 	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўноўваць тэкст і адсканаваны арыгінал',
 	'proofreadpage_namespace' => 'Старонка',
 	'proofreadpage_index_namespace' => 'Індэкс',
@@ -528,7 +528,7 @@ Notennoù||10',
  * @author CERminator
  */
 $messages['bs'] = array(
-	'proofreadpages' => 'Spisak stranica indeksa',
+	'indexpages' => 'Spisak stranica indeksa',
 	'proofreadpage_desc' => 'Omogućuje jednostavnu usporedbu teksta sa originalnim',
 	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -593,7 +593,7 @@ Napomene||10',
  * @author SMP
  */
 $messages['ca'] = array(
-	'proofreadpages' => "Llista de pàgines d'índex",
+	'indexpages' => "Llista de pàgines d'índex",
 	'proofreadpage_desc' => "Permetre una fàcil comparació d'un text amb l'escanejat original",
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Index',
@@ -665,7 +665,7 @@ $messages['ceb'] = array(
  * @author Mormegil
  */
 $messages['cs'] = array(
-	'proofreadpages' => 'Seznam indexových stránek',
+	'indexpages' => 'Seznam indexových stránek',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnání textu s předlohou',
 	'proofreadpage_namespace' => 'Stránka',
 	'proofreadpage_index_namespace' => 'Index',
@@ -733,7 +733,7 @@ $messages['da'] = array(
  * @author ThomasV
  */
 $messages['de'] = array(
-	'proofreadpages' => 'Liste von Indexseiten',
+	'indexpages' => 'Liste von Indexseiten',
 	'proofreadpage_desc' => 'Ermöglicht das bequeme Vergleichen von Text mit dem Originalscan',
 	'proofreadpage_namespace' => 'Seite',
 	'proofreadpage_index_namespace' => 'Index',
@@ -804,7 +804,7 @@ $messages['de-formal'] = array(
  * @author Michawiki
  */
 $messages['dsb'] = array(
-	'proofreadpages' => 'Lisćina indeksowych bokow',
+	'indexpages' => 'Lisćina indeksowych bokow',
 	'proofreadpage_desc' => 'Zmóžnja lažke pśirownowanje teksta z originalnym skanom',
 	'proofreadpage_namespace' => 'Bok',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -876,7 +876,7 @@ $messages['ee'] = array(
  * @author ZaDiak
  */
 $messages['el'] = array(
-	'proofreadpages' => 'Κατάλογος σελίδων ευρετηρίου',
+	'indexpages' => 'Κατάλογος σελίδων ευρετηρίου',
 	'proofreadpage_desc' => 'Επίτρεψε εύκολη σύγκριση κειμένου με την πρωτότυπη σάρωση',
 	'proofreadpage_namespace' => 'Σελίδα',
 	'proofreadpage_index_namespace' => 'Ευρετήριο',
@@ -945,7 +945,7 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'proofreadpages' => 'Listo de indeksaj paĝoj',
+	'indexpages' => 'Listo de indeksaj paĝoj',
 	'proofreadpage_desc' => 'Permesas facilan komparon de teksto al la originala skanitaĵo.',
 	'proofreadpage_namespace' => 'Paĝo',
 	'proofreadpage_index_namespace' => 'Indekso',
@@ -1011,7 +1011,7 @@ Rimarkoj||10',
  * @author Sanbec
  */
 $messages['es'] = array(
-	'proofreadpages' => 'Lista de páginas indexadas',
+	'indexpages' => 'Lista de páginas indexadas',
 	'proofreadpage_desc' => 'Permitir una fácil comparación de un texto con el escaneado original',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
@@ -1167,7 +1167,7 @@ $messages['fa'] = array(
  * @author Str4nd
  */
 $messages['fi'] = array(
-	'proofreadpages' => 'Luettelo hakemiston sivuista',
+	'indexpages' => 'Luettelo hakemiston sivuista',
 	'proofreadpage_desc' => 'Mahdollistaa helpon vertailun tekstin ja alkuperäisen skannauksen välillä.',
 	'proofreadpage_namespace' => 'Sivu',
 	'proofreadpage_index_namespace' => 'Hakemisto',
@@ -1234,7 +1234,7 @@ Huomautuksia||10',
  * @author Verdy p
  */
 $messages['fr'] = array(
-	'proofreadpages' => "Liste des pages d'index",
+	'indexpages' => "Liste des pages d'index",
 	'proofreadpage_desc' => 'Permet une comparaison facile entre le texte et sa numérisation originale',
 	'proofreadpage_namespace' => 'Page',
 	'proofreadpage_index_namespace' => 'Index',
@@ -1367,7 +1367,7 @@ Nótaí',
  * @author Xosé
  */
 $messages['gl'] = array(
-	'proofreadpages' => 'Lista de páxinas índice',
+	'indexpages' => 'Lista de páxinas índice',
 	'proofreadpage_desc' => 'Permite a comparación sinxela do texto coa dixitalización orixinal',
 	'proofreadpage_namespace' => 'Páxina',
 	'proofreadpage_index_namespace' => 'Índice',
@@ -1447,7 +1447,7 @@ $messages['grc'] = array(
  * @author J. 'mach' wust
  */
 $messages['gsw'] = array(
-	'proofreadpages' => 'Lischte vu Indexsyte',
+	'indexpages' => 'Lischte vu Indexsyte',
 	'proofreadpage_desc' => 'Macht e eifache Verglyych vu Täxt mit em Originalscan megli',
 	'proofreadpage_namespace' => 'Syte',
 	'proofreadpage_index_namespace' => 'Index',
@@ -1531,7 +1531,7 @@ $messages['haw'] = array(
  * @author YaronSh
  */
 $messages['he'] = array(
-	'proofreadpages' => 'רשימת דפי אינדקס',
+	'indexpages' => 'רשימת דפי אינדקס',
 	'proofreadpage_desc' => 'השוואה קלה של טקסט לסריקה המקורית שלו',
 	'proofreadpage_namespace' => 'דף',
 	'proofreadpage_index_namespace' => 'אינדקס',
@@ -1629,7 +1629,7 @@ $messages['hi'] = array(
  * @author Suradnik13
  */
 $messages['hr'] = array(
-	'proofreadpages' => 'Popis sadržaja stranica',
+	'indexpages' => 'Popis sadržaja stranica',
 	'proofreadpage_desc' => 'Omogućava jednostavnu usporedbu teksta i izvornog skena',
 	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_index_namespace' => 'Sadržaj',
@@ -1692,7 +1692,7 @@ Napomene||10',
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'proofreadpages' => 'Lisćina indeksowych stronow',
+	'indexpages' => 'Lisćina indeksowych stronow',
 	'proofreadpage_desc' => 'Lochke přirunanje teksta z originalnym skanom dowolić',
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -1830,7 +1830,7 @@ Remarks|Նշումներ|10',
  * @author McDutchie
  */
 $messages['ia'] = array(
-	'proofreadpages' => 'Lista de paginas indice',
+	'indexpages' => 'Lista de paginas indice',
 	'proofreadpage_desc' => 'Facilita le comparation inter un texto e su scan original',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indice',
@@ -1893,7 +1893,7 @@ Notas||10',
  * @author IvanLanin
  */
 $messages['id'] = array(
-	'proofreadpages' => 'Daftar dari halaman indek',
+	'indexpages' => 'Daftar dari halaman indek',
 	'proofreadpage_desc' => 'Memungkinkan perbandingan mudah teks dengan hasil pemindaian orisinal',
 	'proofreadpage_namespace' => 'Halaman',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -1982,7 +1982,7 @@ $messages['is'] = array(
  * @author Stefano-c
  */
 $messages['it'] = array(
-	'proofreadpages' => 'Elenco delle pagine di indice',
+	'indexpages' => 'Elenco delle pagine di indice',
 	'proofreadpage_desc' => 'Consente un facile confronto tra un testo e la sua scansione originale',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indice',
@@ -2042,7 +2042,7 @@ Note||10',
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'proofreadpages' => '文献概要ページの一覧',
+	'indexpages' => '文献概要ページの一覧',
 	'proofreadpage_desc' => 'オリジナルのスキャン画像とテキストとの比較を容易にする',
 	'proofreadpage_namespace' => 'ページ',
 	'proofreadpage_index_namespace' => '文献概要',
@@ -2284,7 +2284,7 @@ $messages['krj'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'proofreadpages' => 'Leß met de Indäx_Sigge',
+	'indexpages' => 'Leß met de Indäx_Sigge',
 	'proofreadpage_desc' => 'Määt et müjjelesch, bequem der Täx mem enjeskännte Ojinaal ze verjliische.',
 	'proofreadpage_namespace' => 'Sigg',
 	'proofreadpage_index_namespace' => 'Enhallt',
@@ -2360,7 +2360,7 @@ $messages['la'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
-	'proofreadpages' => 'Lëscht vun Index-Säiten',
+	'indexpages' => 'Lëscht vun Index-Säiten',
 	'proofreadpage_desc' => 'Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen',
 	'proofreadpage_namespace' => 'Säit',
 	'proofreadpage_index_namespace' => 'Index',
@@ -2463,7 +2463,7 @@ Opmèrkinge||10",
  * @author Matasg
  */
 $messages['lt'] = array(
-	'proofreadpages' => 'Indeksuotų puslapių sąrašas',
+	'indexpages' => 'Indeksuotų puslapių sąrašas',
 	'proofreadpage_desc' => 'Galima lengvai palyginti tekstą su originaliu',
 	'proofreadpage_namespace' => 'Puslapis',
 	'proofreadpage_index_namespace' => 'Indeksas',
@@ -2542,7 +2542,7 @@ $messages['mhr'] = array(
  * @author Brest
  */
 $messages['mk'] = array(
-	'proofreadpages' => 'Листа на страници во индексот',
+	'indexpages' => 'Листа на страници во индексот',
 	'proofreadpage_desc' => 'Дозволи лесна споредба на текстот со скенираниот оригинал',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -2772,7 +2772,7 @@ Anmarkungen||10',
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'proofreadpages' => "Lijst van index-pagina's",
+	'indexpages' => "Lijst van index-pagina's",
 	'proofreadpage_desc' => 'Maakt het mogelijk teksten eenvoudig te vergelijken met de oorspronkelijke scan',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Index',
@@ -2937,7 +2937,7 @@ $messages['nso'] = array(
  * @author Cedric31
  */
 $messages['oc'] = array(
-	'proofreadpages' => "Lista de las paginas d'indèx",
+	'indexpages' => "Lista de las paginas d'indèx",
 	'proofreadpage_desc' => 'Permet una comparason aisida entre lo tèxte e la numerizacion originala',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indèx',
@@ -3020,7 +3020,7 @@ $messages['pdc'] = array(
  * @author Sp5uhe
  */
 $messages['pl'] = array(
-	'proofreadpages' => 'Spis stron indeksów',
+	'indexpages' => 'Spis stron indeksów',
 	'proofreadpage_desc' => 'Umożliwia łatwe porównanie treści ze skanem oryginału',
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -3228,7 +3228,7 @@ Willapusqakuna||10",
  * @author Mihai
  */
 $messages['ro'] = array(
-	'proofreadpages' => 'Lista paginilor index',
+	'indexpages' => 'Lista paginilor index',
 	'proofreadpage_namespace' => 'Pagină',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imagine',
@@ -3285,7 +3285,7 @@ Note||10",
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
-	'proofreadpages' => 'Список индексных страниц',
+	'indexpages' => 'Список индексных страниц',
 	'proofreadpage_desc' => 'Позволяет в удобном виде сравнивать текст и отсканированное изображение оригинала',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -3347,7 +3347,7 @@ $messages['ru'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
-	'proofreadpages' => 'Индекс сирэйдэрин тиһигэ',
+	'indexpages' => 'Индекс сирэйдэрин тиһигэ',
 	'proofreadpage_desc' => 'Оригинаалы уонна скаанердаммыт ойууну тэҥнээн көрөр кыаҕы биэрэр',
 	'proofreadpage_namespace' => 'Сирэй',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -3417,7 +3417,7 @@ $messages['sc'] = array(
  * @author Helix84
  */
 $messages['sk'] = array(
-	'proofreadpages' => 'Zoznam indexových stránok',
+	'indexpages' => 'Zoznam indexových stránok',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnanie textu s originálnym skenom',
 	'proofreadpage_namespace' => 'Stránka',
 	'proofreadpage_index_namespace' => 'Index',
@@ -3619,7 +3619,7 @@ Catetan||10',
  * @author Rotsee
  */
 $messages['sv'] = array(
-	'proofreadpages' => 'Sidor med innehållsförteckningar',
+	'indexpages' => 'Sidor med innehållsförteckningar',
 	'proofreadpage_desc' => 'Ger möjlighet att korrekturläsa texter mot scannade original',
 	'proofreadpage_namespace' => 'Sida',
 	'proofreadpage_index_namespace' => 'Index',
@@ -3835,7 +3835,7 @@ Mga puna||10',
  * @author Suelnur
  */
 $messages['tr'] = array(
-	'proofreadpages' => 'Endeks sayfalarının listesi',
+	'indexpages' => 'Endeks sayfalarının listesi',
 	'proofreadpage_desc' => 'Orijinal taramayla metnin kolayca karşılaştırılmasına izin verir',
 	'proofreadpage_namespace' => 'Sayfa',
 	'proofreadpage_index_namespace' => 'Endeks',
@@ -3947,7 +3947,7 @@ $messages['uk'] = array(
  * @author Candalua
  */
 $messages['vec'] = array(
-	'proofreadpages' => 'Elenco de le pagine de indice',
+	'indexpages' => 'Elenco de le pagine de indice',
 	'proofreadpage_desc' => 'Parméte un façile confronto tra un testo e la so scansion original',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indice',
@@ -4036,7 +4036,7 @@ Homaičendad||10",
  * @author Vinhtantran
  */
 $messages['vi'] = array(
-	'proofreadpages' => 'Danh sách các trang chỉ mục',
+	'indexpages' => 'Danh sách các trang chỉ mục',
 	'proofreadpage_desc' => 'So sánh văn bản với hình quét gốc',
 	'proofreadpage_namespace' => 'Trang',
 	'proofreadpage_index_namespace' => 'Chỉ mục',

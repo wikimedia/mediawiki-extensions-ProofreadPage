@@ -29,8 +29,8 @@ $wgHooks['EditPage::importFormData'][] = 'pr_formData';
 
 # special page
 $wgAutoloadClasses['ProofreadPages'] = $dir . 'SpecialProofreadPages.php';
-$wgSpecialPages['ProofreadPages'] = 'ProofreadPages';
-$wgSpecialPageGroups['ProofreadPages'] = 'pages';
+$wgSpecialPages['IndexPages'] = 'ProofreadPages';
+$wgSpecialPageGroups['IndexPages'] = 'pages';
 
 
 # Allows for extracting text from djvu files. To enable, set to 'djvutxt' or similar

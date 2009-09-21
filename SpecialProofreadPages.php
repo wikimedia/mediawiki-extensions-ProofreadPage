@@ -13,7 +13,7 @@ require_once "$IP/includes/QueryPage.php";
 class ProofreadPages extends SpecialPage {
 
 	function ProofreadPages() {
-		SpecialPage::SpecialPage( 'ProofreadPages' );
+		SpecialPage::SpecialPage( 'IndexPages' );
 	}
 
 	function execute( $parameters ) {
@@ -30,7 +30,7 @@ class ProofreadPages extends SpecialPage {
 class ProofreadPagesQuery extends QueryPage {
 
 	function getName() {
-		return 'ProofreadPages';
+		return 'IndexPages';
 	}
 
 	function isExpensive() {
