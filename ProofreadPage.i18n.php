@@ -1464,7 +1464,7 @@ $messages['he'] = array(
 תמונה|תמונת עטיפה
 דפים||20
 הערות||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|דף&nbsp;אחד|$2&nbsp;דפים}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|דף|דפים}}',
 );
 
 /** Hindi (हिन्दी)
