@@ -1080,7 +1080,7 @@ $messages['fa'] = array(
  * @author Str4nd
  */
 $messages['fi'] = array(
-	'indexpages' => 'Luettelo hakemiston sivuista',
+	'indexpages' => 'Luettelo hakemistosivuista',
 	'proofreadpage_desc' => 'Mahdollistaa helpon vertailun tekstin ja alkuperäisen skannauksen välillä.',
 	'proofreadpage_namespace' => 'Sivu',
 	'proofreadpage_index_namespace' => 'Hakemisto',
@@ -1094,7 +1094,7 @@ $messages['fi'] = array(
 	'proofreadpage_indexdupe' => 'Kaksoiskappalelinkki',
 	'proofreadpage_indexdupetext' => 'Sivuja ei voida luetella useammin kuin kerran hakemistosivulla.',
 	'proofreadpage_nologin' => 'Et ole kirjautunut sisään',
-	'proofreadpage_nologintext' => 'Sinun on oltava [[Special:UserLogin|kirjautunut sisään]] muuttaaksesi sivun oikoluku-tilaa.',
+	'proofreadpage_nologintext' => 'Sinun täytyy olla [[Special:UserLogin|kirjautunut sisään]] muuttaaksesi sivun oikolukutilaa.',
 	'proofreadpage_notallowed' => 'Muutos ei ole sallittu',
 	'proofreadpage_notallowedtext' => 'Sinulla ei ole oikeuksia muuttaa tämän sivun oikoluku-tilaa.',
 	'proofreadpage_number_expected' => 'Virhe: odotettiin numeerista arvoa',
@@ -3828,14 +3828,14 @@ $messages['vi'] = array(
 	'proofreadpage_image_message' => 'Liên kết trang chỉ mục',
 	'proofreadpage_page_status' => 'Tình trạng của trang',
 	'proofreadpage_js_attributes' => 'Tác giả Tựa đề Năm Nhà xuất bản',
-	'proofreadpage_index_attributes' => 'Author|Tác giả
-Title|Tên
-Year|Năm xuất bản
-Publisher|Nhà xuất bản
-Source|Nguồn
-Image|Hình bìa
-Pages|Các trang|20
-Remarks|Ghi chú|10',
+	'proofreadpage_index_attributes' => 'Tác giả
+Tựa đề
+Năm|Năm xuất bản
+Nhà xuất bản
+Nguồn
+Hình|Hình bìa
+Các trang||20
+Ghi chú||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|trang|trang}}',
 );
 
