@@ -1094,7 +1094,7 @@ function pr_preloadText( $textbox1, $mTitle ) {
 		$image = wfFindFile( $imageTitle );
 		if ( $image && $image->exists() ) {
 			$mime = $image->getMimeType();  
-			if( $mime == 'image/vnd.djvu' || $mime == 'application/pdf')  {
+			if( $mime == 'image/vnd.djvu' /*|| $mime == 'application/pdf'*/ )  {
 				$text = $image->handler->getPageText($image, $m[2]);
 				if ( $text ) {
 					$text = preg_replace( "/(\\\\n)/", "\n", $text );
