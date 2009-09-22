@@ -646,6 +646,7 @@ function pr_renderPageList( $input, $args ) {
 	} 
 
 	$return = "";
+	
 	$name = $imageTitle->getDBkey();
 	$count = $image->pageCount();
 
@@ -712,7 +713,8 @@ function pr_renderPages( $input, $args ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 	}
 
-	$out = '';
+	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$pr_index_namespace.'</a> </span>';
+	
 	list( $text_links, $links, $params, $attributes ) = pr_parse_index( $index_title );
 
 	if( $links==null ) {
@@ -1288,19 +1290,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	# quality1 is the default value
 	$n1 = $n - $n0 - $n2 - $n3 - $n4;
 
-	# find the index page
-	$indexquery = "SELECT DISTINCT p2.page_title AS title FROM $templatelinks LEFT JOIN $page AS p1 ON page_title=tl_title LEFT JOIN $pagelinks ON pl_title=page_title LEFT JOIN $page AS p2 ON p2.page_id=pl_from WHERE tl_from=$id AND tl_namespace=$page_ns_index AND pl_title=p1.page_title AND p2.page_namespace=$index_ns_index";
-	$res = $dbr->query( $indexquery , __METHOD__ );
-	if( $res && $dbr->numRows( $res ) > 0 ) {
-		$row = $dbr->fetchObject( $res );
-		$title = $row->title;
-		$dbr->freeResult( $res );
-		$sk = $wgUser->getSkin();
-		$indexlink = $sk->makeKnownLink( "$index_namespace:$title", "[index]" );
-	} else {
-		$indexlink="";
-	}	
-	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n, $indexlink );
+	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n );
 	$out->setSubtitle($output);
 	return true;
 };
