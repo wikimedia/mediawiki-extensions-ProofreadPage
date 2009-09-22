@@ -12,4 +12,4 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/pr_index (
   pr_q3 integer NOT NULL default '0',
   pr_q4 integer NOT NULL default '0',
   PRIMARY KEY (pr_page_id)
-) ;
+)  /*$wgDBTableOptions*/;
