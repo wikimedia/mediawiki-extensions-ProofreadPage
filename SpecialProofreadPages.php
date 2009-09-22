@@ -92,11 +92,25 @@ class ProofreadPagesQuery extends QueryPage {
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 
-		$output = wfMsgExt(
-			'proofreadpage_indexlist_item',
-			array( 'parsemag', 'content' ),
-			$plink, $size, $q0, $q1, $q2, $q3, $q4
-		);
+		$pages = wfMsg( 'proofreadpage_pages', $size );
+
+		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
+<tr valign=\"bottom\">
+<td>{$plink}</td>
+<td> [$size $pages] </td>
+<td>
+<table style=\"line-height:70%;\" border=0 cellpadding=0 cellspacing=0 >
+<tr>
+<td width=\"2\">&nbsp;</td>
+<td align=center class='quality4' width=\"$q4\"></td>
+<td align=center class='quality3' width=\"$q3\"></td>
+<td align=center class='quality2' width=\"$q2\"></td>
+<td align=center class='quality1' width=\"$q1\"></td>
+<td align=center class='quality0' width=\"$q0\"></td>
+</tr></table>
+</td>
+</tr></table>";
+
 		return $output; 
 	}
 }

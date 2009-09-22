@@ -67,14 +67,7 @@ Remarks||10',
 <td align=center class='quality0' width=\"$1\"></td>
 <td ><span id=pr_index style=\"visibility:hidden;\">$7</span></td>
 </tr></table>",
-	'proofreadpage_indexlist_item'        => "<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|page|pages}}]&nbsp;&nbsp;</td>
-<td align=center class='quality4' width=\"$7\"></td>
-<td align=center class='quality3' width=\"$6\"></td>
-<td align=center class='quality2' width=\"$5\"></td>
-<td align=center class='quality1' width=\"$4\"></td>
-<td align=center class='quality0' width=\"$3\"></td>
-</tr></table>",
+	'proofreadpage_pages'        => "{{PLURAL:$1|page|pages}}",
 );
 
 /** Message documentation (Message documentation)
@@ -100,15 +93,6 @@ $messages['qqq'] = array(
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
-	'proofreadpage_indexlist_item' => '{{doc-important|only translate $2 and the plural statement. Leave the rest unchanged.}}
-* $1 is $plink
-* $2 is $size
-* $3 is $q0 = $result->pr_q0;
-* $4 is $q1 = $result->pr_q1;
-* $5 is $q2 = $result->pr_q2;
-* $6 is $q3 = $result->pr_q3;
-* $7 is $q4 = $result->pr_q4;
-(variable descriptions need updating)',
 );
 
 /** Afrikaans (Afrikaans)
@@ -220,14 +204,7 @@ $messages['ar'] = array(
 الصورة|صورة الغلاف
 الصفحات||20
 الملاحظات||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|صفحة|صفحات}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|صفحة|صفحات}}',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -421,14 +398,7 @@ $messages['be-tarask'] = array(
 Выява|Выява вокладкі
 Старонак||20
 Заўвагаў||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|старонка|старонкі|старонак}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|старонка|старонкі|старонак}}',
 );
 
 /** Bulgarian (Български)
@@ -576,14 +546,7 @@ Izvor
 Slika|Naslovna slika
 Stranica||20
 Napomene||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stranica|stranice|stranica}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice|stranica}}',
 );
 
 /** Catalan (Català)
@@ -642,14 +605,7 @@ Font|Facsímils
 Imatge
 Pàgines||20
 Sumari||15",
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pàgina|pàgines}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgines}}',
 );
 
 /** Cebuano (Cebuano)
@@ -707,14 +663,7 @@ Vydavatelství
 Obrázek|Obálka
 Stran||20
 Poznámky||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stránka|stránky|stránek}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránek}}',
 );
 
 /** Danish (Dansk)
@@ -781,14 +730,7 @@ Quelle
 Bild|Titelbild
 Seiten||20
 Bemerkungen||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|Seite|Seiten}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|Seite|Seiten}}',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -852,14 +794,7 @@ Wudawaŕ
 Wobraz|Titelowy wobraz
 Boki||20
 Pśispomnjeśa||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|bok|boka|boki|bokow}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|bok|boka|boki|bokow}}',
 );
 
 /** Ewe (Eʋegbe) */
@@ -931,14 +866,7 @@ $messages['el'] = array(
 Σελίδες||20
 
 Σχόλια||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|σελίδα|σελίδες}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}',
 );
 
 /** Esperanto (Esperanto)
@@ -992,14 +920,7 @@ Fonto
 Bildo|Bildo de kovrilo
 Paĝoj||20
 Rimarkoj||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|paĝo|paĝoj}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|paĝo|paĝoj}}',
 );
 
 /** Spanish (Español)
@@ -1059,14 +980,7 @@ Fuente
 Imagen|Imagen de cubierta
 Páginas||20
 Comentarios||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|página|páginas}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
 );
 
 /** Estonian (Eesti)
@@ -1215,14 +1129,7 @@ Lähde
 Kuva|Kansikuva
 Sivuja||20
 Huomautuksia||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|sivu|sivua}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|sivu|sivua}}',
 );
 
 /** French (Français)
@@ -1282,14 +1189,7 @@ Source
 Image|Image en couverture
 Pages||20
 Remarques||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td> $1 [$2&nbsp;page{{PLURAL: $2||s}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|page|pages}}',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -1415,14 +1315,7 @@ Orixe
 Imaxe|Imaxe da cuberta
 Páxinas||20
 Comentarios||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|páxina|páxinas}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|páxina|páxinas}}',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -1495,14 +1388,7 @@ Quälle
 Bild|Titelbild
 Syte||20
 Aamerkige||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|Syte|Syte}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|Syte|Syte}}',
 );
 
 /** Manx (Gaelg)
@@ -1579,14 +1465,7 @@ $messages['he'] = array(
 תמונה|תמונת עטיפה
 דפים||20
 הערות||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [{{PLURAL:$2|דף&nbsp;אחד|$2&nbsp;דפים}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|דף&nbsp;אחד|$2&nbsp;דפים}}',
 );
 
 /** Hindi (हिन्दी)
@@ -1677,14 +1556,7 @@ Izvor
 Slika|Naslovnica
 Stranica||20
 Napomene||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stranica|stranice}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice}}',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -1740,14 +1612,7 @@ Wudawaćel
 Wobraz|Wobraz titloweje strony
 Strony||20
 Přispomnjenki||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|strona|stronje|strony|stronow}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|strona|stronje|strony|stronow}}',
 );
 
 /** Hungarian (Magyar)
@@ -1878,14 +1743,7 @@ Origine
 Imagine|Imagine de copertura
 Paginas||20
 Notas||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|paginas}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1941,14 +1799,7 @@ Sumber
 Gambar|Gambar sampul
 Halaman||20
 Catatan||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|halaman|halaman}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|halaman|halaman}}',
 );
 
 /** Ido (Ido)
@@ -2026,14 +1877,7 @@ Fonte
 Immagine|Immagine di copertina
 Pagine||20
 Note||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|pagine}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
 );
 
 /** Japanese (日本語)
@@ -2090,14 +1934,7 @@ $messages['ja'] = array(
 画像|表紙画像
 ページ||20
 注釈||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;ページ]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => 'ページ',
 );
 
 /** Jutish (Jysk)
@@ -2332,14 +2169,7 @@ Quell
 Beld|Beld om Ömschlach
 Sigge||20
 Aanmerkunge||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [{{PLURAL:$2|Ei&nbsp;Sigg|$2&nbsp;Sigge|Kei&nbsp;Sigg}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|Ei&nbsp;Sigg|$2&nbsp;Sigge|Kei&nbsp;Sigg}}',
 );
 
 /** Cornish (Kernewek)
@@ -2408,14 +2238,7 @@ Quell
 Bild|Titelbild
 Säiten||20
 Bemierkungen||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|Säit|Säiten}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|Säit|Säiten}}',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -2590,14 +2413,7 @@ $messages['mk'] = array(
 Слика|Корица
 Страници||20
 Белешки||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|страница|страници}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
 );
 
 /** Malayalam (മലയാളം)
@@ -2820,14 +2636,7 @@ Bron
 Afbeelding|Omslag
 Pagina's||20
 Opmerkingen||10",
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|pagina\'s}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagina\'s}}',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2985,14 +2794,7 @@ Font
 Imatge|Imatge en cobertura
 Paginas||20
 Comentaris||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td> $1 [$2&nbsp;pagin{{PLURAL: $2||s}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
 );
 
 /** Ossetic (Иронау)
@@ -3068,14 +2870,7 @@ Wydawca
 Ilustracja|Okładka
 Strony||20
 Uwagi||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|strona|strony|stron}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|strona|strony|stron}}',
 );
 
 /** Piedmontese (Piemontèis)
@@ -3333,14 +3128,7 @@ $messages['ru'] = array(
 Изображение|Изображение обложки
 Страниц||20
 Примечания||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|страница|страницы|страниц}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|страница|страницы|страниц}}',
 );
 
 /** Yakut (Саха тыла)
@@ -3395,14 +3183,7 @@ $messages['sah'] = array(
 Ойуу|Таһын ойуута
 Сирэйин ахсаана||20
 Хос быһаарыылара||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|сирэй|сирэйдээх}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|сирэй|сирэйдээх}}',
 );
 
 /** Sardinian (Sardu)
@@ -3465,14 +3246,7 @@ Zdroj
 Obrázok|Obálka
 Strán||20
 Poznámky||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|stránka|stránky|stránok}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránok}}',
 );
 
 /** Slovenian (Slovenščina) */
@@ -3667,14 +3441,7 @@ Källa
 Bild|Omslagsbild
 Sidor||20
 Anmärkningar||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|sida|sidor}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|sida|sidor}}',
 );
 
 /** Silesian (Ślůnski)
@@ -3883,14 +3650,7 @@ Kaynak
 Resim|Kapak resmi
 Sayfalar||20
 Açıklamalar||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|sayfa|sayfa}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|sayfa|sayfa}}',
 );
 
 /** Tsonga (Xitsonga)
@@ -3986,14 +3746,7 @@ Fonte
 Imagine|Imagine de copertina
 Pagine||20
 Note||10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|pagina|pagine}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
 );
 
 /** Veps (Vepsan kel')
@@ -4084,14 +3837,7 @@ Source|Nguồn
 Image|Hình bìa
 Pages|Các trang|20
 Remarks|Ghi chú|10',
-	'proofreadpage_indexlist_item' => '<table border=0 cellpadding=0 cellspacing=0 >
-<tr><td>$1 [$2&nbsp;{{PLURAL:$2|trang|trang}}]&nbsp;&nbsp;</td>
-<td align=center class=\'quality4\' width="$7"></td>
-<td align=center class=\'quality3\' width="$6"></td>
-<td align=center class=\'quality2\' width="$5"></td>
-<td align=center class=\'quality1\' width="$4"></td>
-<td align=center class=\'quality0\' width="$3"></td>
-</tr></table>',
+	'proofreadpage_pages' => '{{PLURAL:$1|trang|trang}}',
 );
 
 /** Volapük (Volapük)
