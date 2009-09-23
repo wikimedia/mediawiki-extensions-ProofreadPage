@@ -713,7 +713,7 @@ function pr_renderPages( $input, $args ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 	}
 
-	$out = '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$pr_index_namespace.'</a> </span>';
+	$out = '';
 	
 	list( $text_links, $links, $params, $attributes ) = pr_parse_index( $index_title );
 
@@ -822,7 +822,7 @@ function pr_renderPages( $input, $args ) {
 	}
 
 	$out = $wgParser->recursiveTagParse($out);
-	return $out;
+	return '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$pr_index_namespace.'</a> </span>'.$out;
 }
 
 /* 
