@@ -1934,7 +1934,7 @@ $messages['ja'] = array(
 画像|表紙画像
 ページ||20
 注釈||10',
-	'proofreadpage_pages' => 'ページ',
+	'proofreadpage_pages' => '{{PLURAL:$1|ページ|ページ}}',
 );
 
 /** Jutish (Jysk)
