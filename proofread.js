@@ -562,7 +562,7 @@ function  pr_fill_table(horizontal_layout){
 
 		var t_row = document.createElement("tr");
 		t_row.setAttribute("valign","top");
-		cell_left.style.cssText = "width:50%; padding-right:0.5em;";
+		cell_left.style.cssText = "width:50%; padding-right:0.5em;vertical-align:top;";
 		cell_right.setAttribute("rowspan","3");
 		t_row.appendChild(cell_left);
 		t_row.appendChild(cell_right);

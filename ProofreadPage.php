@@ -37,7 +37,7 @@ $wgSpecialPageGroups['IndexPages'] = 'pages';
 $wgDjvutxt = null;
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 23;
+$wgProofreadPageVersion = 24;
 
 # Max width of zoomable image
 $wgProofreadPageMaxWidth = 2048;
@@ -616,7 +616,7 @@ function pr_pageQuality( $input, $args ) {
 	if( ! in_array( $q, array('0','1','2','3','4') ) ) {
 		return "";
 	}
-	$message = "<div id=\"pagequality\" width=100% class=quality$q><div id=\"pagequality_content\">".wfMsgForContent( "proofreadpage_quality{$q}_message" )."</div></div>";
+	$message = "<div id=\"pagequality\" width=100% class=quality$q>".wfMsgForContent( "proofreadpage_quality{$q}_message" )."</div>";
 	$out = "__NOEDITSECTION__[[Category:".wfMsgForContent( "proofreadpage_quality{$q}_category" )."]]";
 	return $wgParser->recursiveTagParse( $out . $message);
 }
@@ -880,7 +880,7 @@ function  pr_formData( $editpage, $request ) {
 		? $editpage->unmakesafe( $text )
 		: $text;
 
-	if( $editpage->quality != null ) {
+	if( in_array( $editpage->quality , array( "0", "1", "2", "3", "4" ) ) ) {
 		//format the page
 		$text = "<noinclude><pagequality level=\"".$editpage->quality."\" user=\"".$editpage->username."\" />"
 			.$editpage->header."\n\n\n</noinclude>"
