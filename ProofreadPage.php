@@ -1296,7 +1296,7 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	$res = $dbr->query( $query1 , __METHOD__ );
 	if( $res && $dbr->numRows( $res ) > 0 ) {
 		$row = $dbr->fetchObject( $res );
-		$title = $row->title;
+		$title = $dbr->strencode( $row->title );
 		$dbr->freeResult( $res );
 		$query2 = "SELECT page_title AS title FROM $pagelinks LEFT JOIN $page ON page_id=pl_from WHERE pl_title=\"$title\" AND pl_namespace=$page_ns_index AND page_namespace=$index_ns_index LIMIT 1";
 		$res2 = $dbr->query( $query2 , __METHOD__ );
