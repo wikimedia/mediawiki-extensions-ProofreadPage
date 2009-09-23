@@ -822,7 +822,7 @@ function pr_renderPages( $input, $args ) {
 	}
 
 	$out = $wgParser->recursiveTagParse($out);
-	return '<span id="pr_index" class="hiddenStructure"><a href="'.$index_title->escapeFullUrl().'">'.$pr_index_namespace.'</a> </span>'.$out;
+	return $out;
 }
 
 /* 
@@ -1290,7 +1290,25 @@ function pr_OutputPageBeforeHTML( $out, $text ) {
 	# quality1 is the default value
 	$n1 = $n - $n0 - $n2 - $n3 - $n4;
 
-	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n );
+	# find the index page
+	$indexlink="";
+	$query1 = "SELECT tl_title AS title FROM $templatelinks WHERE tl_from=$id AND tl_namespace=$page_ns_index LIMIT 1";
+	$res = $dbr->query( $query1 , __METHOD__ );
+	if( $res && $dbr->numRows( $res ) > 0 ) {
+		$row = $dbr->fetchObject( $res );
+		$title = $row->title;
+		$dbr->freeResult( $res );
+		$query2 = "SELECT page_title AS title FROM $pagelinks LEFT JOIN $page ON page_id=pl_from WHERE pl_title=\"$title\" AND pl_namespace=$page_ns_index AND page_namespace=$index_ns_index LIMIT 1";
+		$res2 = $dbr->query( $query2 , __METHOD__ );
+		if( $res2 && $dbr->numRows( $res2 ) > 0 ) {
+			$row = $dbr->fetchObject( $res2 );
+			$indextitle = $row->title;
+			$dbr->freeResult( $res2 );
+			$sk = $wgUser->getSkin();
+			$indexlink = $sk->makeKnownLink( "$index_namespace:$indextitle", "[index]" );
+		}
+	}
+	$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n, $indexlink );
 	$out->setSubtitle($output);
 	return true;
 };

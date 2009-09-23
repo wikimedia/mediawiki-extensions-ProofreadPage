@@ -65,6 +65,7 @@ Remarks||10',
 <td align=center class='quality2' width=\"$3\"></td>
 <td align=center class='quality1' width=\"$2\"></td>
 <td align=center class='quality0' width=\"$1\"></td>
+<td ><span id=pr_index style=\"visibility:hidden;\">$7</span></td>
 </tr></table>",
 	'proofreadpage_pages'        => "{{PLURAL:$1|page|pages}}",
 );
