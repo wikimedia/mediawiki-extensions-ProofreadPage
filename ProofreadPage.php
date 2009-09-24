@@ -272,7 +272,13 @@ function pr_parse_index_text( $text ){
 
 	//links in ns-0. Only if mOptions exist
 	if( $wgParser->mOptions ) {
+		# We use Parser::replaceVariables to expand templates
+		# However this method has a side effect on wgParser->mOutput->mTemplates, 
+		# To avoid this, we instanciate a temporary ParserOutput object
+		$saved_output = $wgParser->mOutput;
+		$wgParser->mOutput = new ParserOutput;
 		$rtext = $wgParser->replaceVariables( $text );
+		$wgParser->mOutput = $saved_output;
 		$text_links_pattern = "/\[\[([^:\|]*?)(\|(.*?)|)\]\]/i";
 		preg_match_all( $text_links_pattern, $rtext, $text_links, PREG_PATTERN_ORDER );
 	}
