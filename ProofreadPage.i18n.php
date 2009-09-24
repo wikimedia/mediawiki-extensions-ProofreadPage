@@ -652,6 +652,11 @@ $messages['cs'] = array(
 	'proofreadpage_quality2_category' => 'Problematické',
 	'proofreadpage_quality3_category' => 'Zkontrolováno',
 	'proofreadpage_quality4_category' => 'Ověřeno',
+	'proofreadpage_quality0_message' => 'Tuto stránku není potřeba kontrolovat',
+	'proofreadpage_quality1_message' => 'Tato stránka nebyla zkontrolována',
+	'proofreadpage_quality2_message' => 'Při kontrole této stránky se objevil problém',
+	'proofreadpage_quality3_message' => 'Tato stránka byla zkontrolována',
+	'proofreadpage_quality4_message' => 'Tato stránka byla ověřena',
 	'proofreadpage_index_listofpages' => 'Seznam stránek',
 	'proofreadpage_image_message' => 'Odkaz na úvodní stránku',
 	'proofreadpage_page_status' => 'Stav stránky',
@@ -2169,7 +2174,7 @@ Quell
 Beld|Beld om Ömschlach
 Sigge||20
 Aanmerkunge||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|Ei&nbsp;Sigg|$2&nbsp;Sigge|Kei&nbsp;Sigg}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|Ei&nbsp;Sigg|$1&nbsp;Sigge|Kei&nbsp;Sigg}}',
 );
 
 /** Cornish (Kernewek)
