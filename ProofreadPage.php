@@ -711,6 +711,10 @@ function pr_renderPages( $input, $args ) {
 	$to = $args['to'];
 	$header = $args['header'];
 
+	# abort if the tag is on an index page
+	if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText() ) ) {
+		return "";
+	}
 	if( ! $index ) { 
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
 	}
