@@ -895,7 +895,7 @@ function  pr_formData( $editpage, $request ) {
 		$text = "<noinclude><pagequality level=\"".$editpage->quality."\" user=\"".$editpage->username."\" />"
 			.$editpage->header."\n\n\n</noinclude>"
 			.$editpage->textbox1
-			."\n<noinclude>\n".$editpage->footer."</noinclude>";
+			."<noinclude>\n".$editpage->footer."</noinclude>";
 		$editpage->textbox1 = $text;
 	} else {
 		//replace deprecated template
