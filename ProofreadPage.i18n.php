@@ -1543,7 +1543,7 @@ $messages['hr'] = array(
 	'proofreadpage_quality1_category' => 'Nije ispravljeno',
 	'proofreadpage_quality2_category' => 'Problematično',
 	'proofreadpage_quality3_category' => 'Ispravljeno',
-	'proofreadpage_quality4_category' => 'Potvrđeno',
+	'proofreadpage_quality4_category' => 'Provjereno',
 	'proofreadpage_quality0_message' => 'Ovu stranicu nije potrebno ispravljati',
 	'proofreadpage_quality1_message' => 'Ova stranica nije ispravljena',
 	'proofreadpage_quality2_message' => 'Došlo je do problema prilikom ispravljanja ove stranice',
@@ -1752,11 +1752,12 @@ Notas||10',
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Bennylin
  * @author Irwangatot
  * @author IvanLanin
  */
 $messages['id'] = array(
-	'indexpages' => 'Daftar dari halaman indek',
+	'indexpages' => 'Daftar dari halaman indeks',
 	'proofreadpage_desc' => 'Memungkinkan perbandingan mudah teks dengan hasil pemindaian orisinal',
 	'proofreadpage_namespace' => 'Halaman',
 	'proofreadpage_index_namespace' => 'Indeks',
