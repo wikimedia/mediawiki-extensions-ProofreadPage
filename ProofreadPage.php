@@ -764,6 +764,7 @@ function pr_renderPages( $input, $args ) {
 			} else {
 				$out.= "{{:".$text."}}";
 			}
+			$out.= "\n";
 			if( $i == $from ) $from_pagenum = $pagenum;
 			if( $i == $to ) $to_pagenum = $pagenum;
 		}
