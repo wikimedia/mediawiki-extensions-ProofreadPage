@@ -820,7 +820,7 @@ function pr_renderPages( $input, $args ) {
 		if( ( $i >= 1 ) && ( $i + 1 < count( $text_links[1] ) ) ) {
 			$next = $text_links[0][$i+1];
 		}
-		if( $args[$current] ) $current = $args[$current];
+		if( $args["current"] ) $current = $args["current"];
 		if( $current ) $h_out .= "|current=$current";
 		if( $prev ) $h_out .= "|prev=$prev";
 		if( $next ) $h_out .= "|next=$next";
