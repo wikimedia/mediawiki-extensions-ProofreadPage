@@ -802,6 +802,7 @@ Wobraz|Titelowy wobraz
 Boki||20
 Pśispomnjeśa||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|bok|boka|boki|bokow}}',
+	'proofreadpage_specialpage_legend' => 'Indeksowe boki pśepytaś',
 );
 
 /** Ewe (Eʋegbe) */
@@ -1144,6 +1145,7 @@ Huomautuksia||10',
  * @author Dereckson
  * @author Grondin
  * @author IAlex
+ * @author Jean-Frédéric
  * @author Urhixidur
  * @author Verdy p
  */
@@ -1197,6 +1199,7 @@ Image|Image en couverture
 Pages||20
 Remarques||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|page|pages}}',
+	'proofreadpage_specialpage_legend' => 'Rechercher dans les pages d’index',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -1620,6 +1623,7 @@ Wobraz|Wobraz titloweje strony
 Strony||20
 Přispomnjenki||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|strona|stronje|strony|stronow}}',
+	'proofreadpage_specialpage_legend' => 'Indeksowe strony přepytać',
 );
 
 /** Hungarian (Magyar)
@@ -1661,6 +1665,7 @@ Megjegyzések||10',
  * @author Teak
  */
 $messages['hy'] = array(
+	'indexpages' => 'Ինդեքս էջերի ցանկ',
 	'proofreadpage_desc' => 'Թույլ է տալիս տեքստի և բնօրինակի տեսածրված պատկերի հեշտ համեմատում',
 	'proofreadpage_namespace' => 'Էջ',
 	'proofreadpage_index_namespace' => 'Ինդեքս',
@@ -1669,6 +1674,14 @@ $messages['hy'] = array(
 	'proofreadpage_index_expected' => 'Սխալ. ինդեքս չհայտնաբերվեց',
 	'proofreadpage_nosuch_index' => 'Սխալ. այդպիսի ինդեքս չկա',
 	'proofreadpage_nosuch_file' => 'Սխալ. այդպիսի ֆայլ չկա',
+	'proofreadpage_badpage' => 'Սխալ ֆորմատ',
+	'proofreadpage_badpagetext' => 'Հիշվող էջի սխալ ֆորմատ։',
+	'proofreadpage_indexdupe' => 'Կրկնակի հղում',
+	'proofreadpage_indexdupetext' => 'Էջերը չեն կարող ներառվել ինդեքս էջում մեկից ավել անգամ։',
+	'proofreadpage_nologin' => 'Չեք մտել համակարգ',
+	'proofreadpage_nologintext' => 'Էջերի սրբագրման կարգավիճակը փոխելու համար անհրաժեշտ է [[Special:UserLogin|մտնել համակարգ]]։',
+	'proofreadpage_notallowed' => 'Փոփոխությունը չի թույլատրվում',
+	'proofreadpage_notallowedtext' => 'Դուք չեք կարող փոխել այս էջի սրբագրման կարգավիճակը։',
 	'proofreadpage_number_expected' => 'Սխալ. սպասվում է թվային արժեք',
 	'proofreadpage_interval_too_large' => 'Սխալ. չափից մեծ միջակայք',
 	'proofreadpage_invalid_interval' => 'Սխալ. անվավեր միջակայք',
@@ -1683,6 +1696,11 @@ $messages['hy'] = array(
 	'proofreadpage_quality2_category' => 'Խնդրահարույց',
 	'proofreadpage_quality3_category' => 'Սրբագրված',
 	'proofreadpage_quality4_category' => 'Հաստատված',
+	'proofreadpage_quality0_message' => 'Այս էջը սրբագրման կարիք չունի',
+	'proofreadpage_quality1_message' => 'Այս էջը սրբագրված չէ',
+	'proofreadpage_quality2_message' => 'Սխալ առաջացավ էջը սրբագրելիս',
+	'proofreadpage_quality3_message' => 'Այս էջը սրբագրված է',
+	'proofreadpage_quality4_message' => 'Այս էջը հաստատված է',
 	'proofreadpage_index_listofpages' => 'Էջերի ցանկ',
 	'proofreadpage_image_message' => 'Հղում ինդեքսի էջին',
 	'proofreadpage_page_status' => 'Էջի կարգավիճակ',
@@ -1695,6 +1713,7 @@ Source|Աղբյուր
 Image|Կազմի պատկեր
 Pages|Էջեր|20
 Remarks|Նշումներ|10',
+	'proofreadpage_pages' => '{{PLURAL:$1|էջ|էջ}}',
 );
 
 /** Interlingua (Interlingua)
@@ -2290,6 +2309,15 @@ Pazjena's||20
 Opmèrkinge||10",
 );
 
+/** Lumbaart (Lumbaart)
+ * @author Dakrismeno
+ */
+$messages['lmo'] = array(
+	'proofreadpage_nextpage' => 'Pagina inanz',
+	'proofreadpage_prevpage' => 'Pagina indree',
+	'proofreadpage_header' => 'Intestazion (minga inclüsa)',
+);
+
 /** Lithuanian (Lietuvių)
  * @author Matasg
  */
@@ -2644,7 +2672,8 @@ Bron
 Afbeelding|Omslag
 Pagina's||20
 Opmerkingen||10",
-	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagina\'s}}',
+	'proofreadpage_pages' => "{{PLURAL:$1|pagina|pagina's}}",
+	'proofreadpage_specialpage_legend' => "Indexpagina's doorzoeken",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -3137,6 +3166,7 @@ $messages['ru'] = array(
 Страниц||20
 Примечания||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|страницы|страниц}}',
+	'proofreadpage_specialpage_legend' => 'Поиск индексных страниц',
 );
 
 /** Yakut (Саха тыла)
