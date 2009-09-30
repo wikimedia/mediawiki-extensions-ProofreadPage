@@ -17,10 +17,29 @@ class ProofreadPages extends SpecialPage {
 	}
 
 	function execute( $parameters ) {
+		global $wgOut, $wgRequest, $wgDisableTextSearch;
+
 		$this->setHeaders();
 		list( $limit, $offset ) = wfCheckLimits();
+		$wgOut->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
 
-		$cnl = new ProofreadPagesQuery();
+		if( $wgDisableTextSearch ) {
+			$search = false; 
+		} else {
+			$search = $wgRequest->getText( 'key' );
+			$wgOut->addHTML(
+				Xml::openElement( 'form', array( 'id' => 'specialmimesearch', 'method' => 'get', 'action' => SpecialPage::getTitleFor( 'IndexPages' )->getLocalUrl() ) ) .
+				Xml::openElement( 'fieldset' ) .
+				Xml::hidden( 'title', SpecialPage::getTitleFor( 'IndexPages' )->getPrefixedText() ) .
+				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
+				Xml::input( 'key', 20, $search ) . ' ' .
+				Xml::submitButton( wfMsg( 'ilsubmit' ) ) .
+				Xml::closeElement( 'fieldset' ) .
+				Xml::closeElement( 'form' )
+			);
+		}
+
+		$cnl = new ProofreadPagesQuery( $search );
 		$cnl->doQuery( $offset, $limit );
 	}
 }
@@ -28,6 +47,10 @@ class ProofreadPages extends SpecialPage {
 
 
 class ProofreadPagesQuery extends QueryPage {
+
+	function ProofreadPagesQuery( $search ) {
+		$this->search = $search;
+	}
 
 	function getName() {
 		return 'IndexPages';
@@ -45,18 +68,20 @@ class ProofreadPagesQuery extends QueryPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$page = $dbr->tableName( 'page' );
 		$pr_index = $dbr->tableName( 'pr_index' );
+		$searchindex = $dbr->tableName( 'searchindex' );
 
-		return
-			"SELECT pr_page_id as title,
-			page_title as title,
-			pr_count,
-			pr_q0,
-			pr_q1,
-			pr_q2,
-			pr_q3,
-			pr_q4
-			FROM $pr_index 
-			LEFT JOIN $page ON page_id = pr_page_id";
+		if($this->search) {
+			$query = "SELECT page_title as title,
+			pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
+			FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id
+			LEFT JOIN $searchindex ON si_page = pr_page_id 
+			WHERE match (si_text) against ('". $dbr->strencode( $this->search ) ."')";
+		} else {
+			$query = "SELECT page_title as title,
+			pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
+			FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id";
+		}
+		return $query;
 	}
 
 	function getOrder() {
