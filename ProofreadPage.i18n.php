@@ -2952,10 +2952,12 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Giro720
+ * @author Lijealso
  * @author Malafaya
  * @author Waldir
  */
 $messages['pt'] = array(
+	'indexpages' => 'Lista de páginas de índice',
 	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
@@ -2963,7 +2965,11 @@ $messages['pt'] = array(
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Erro: índice esperado',
 	'proofreadpage_nosuch_index' => 'Erro: índice não existe',
+	'proofreadpage_nosuch_file' => 'Erro: não existe esse ficheiro',
+	'proofreadpage_badpage' => 'Formato Errado',
+	'proofreadpage_indexdupe' => 'Ligação duplicada',
 	'proofreadpage_nologin' => 'Não se encontra autenticado',
+	'proofreadpage_notallowed' => 'Mudança não permitida',
 	'proofreadpage_number_expected' => 'Erro: valor numérico esperado',
 	'proofreadpage_interval_too_large' => 'Erro: intervalo demasiado grande',
 	'proofreadpage_invalid_interval' => 'Erro: intervalo inválido',
@@ -2978,6 +2984,10 @@ $messages['pt'] = array(
 	'proofreadpage_quality2_category' => 'Problemáticas',
 	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
 	'proofreadpage_quality4_category' => 'Validadas',
+	'proofreadpage_quality0_message' => 'Esta página não necessita ser revista',
+	'proofreadpage_quality1_message' => 'Esta página não foi ainda revista',
+	'proofreadpage_quality2_message' => 'Houve um problema a fazer a revisão desta página',
+	'proofreadpage_quality3_message' => 'Esta página foi revista',
 	'proofreadpage_quality4_message' => 'Esta página foi validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message' => 'Link para a página de índice',
