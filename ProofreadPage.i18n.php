@@ -929,6 +929,7 @@ Bildo|Bildo de kovrilo
 Paĝoj||20
 Rimarkoj||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|paĝo|paĝoj}}',
+	'proofreadpage_specialpage_legend' => 'Serĉi indeksajn paĝojn',
 );
 
 /** Spanish (Español)
@@ -1326,6 +1327,7 @@ Imaxe|Imaxe da cuberta
 Páxinas||20
 Comentarios||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|páxina|páxinas}}',
+	'proofreadpage_specialpage_legend' => 'Procurar nas páxinas de índice',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -2266,6 +2268,7 @@ Bild|Titelbild
 Säiten||20
 Bemierkungen||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Säit|Säiten}}',
+	'proofreadpage_specialpage_legend' => 'An den Index-Säite sichen',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
