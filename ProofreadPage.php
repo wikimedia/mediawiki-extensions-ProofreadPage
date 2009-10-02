@@ -32,10 +32,6 @@ $wgAutoloadClasses['ProofreadPages'] = $dir . 'SpecialProofreadPages.php';
 $wgSpecialPages['IndexPages'] = 'ProofreadPages';
 $wgSpecialPageGroups['IndexPages'] = 'pages';
 
-
-# Allows for extracting text from djvu files. To enable, set to 'djvutxt' or similar
-$wgDjvutxt = null;
-
 # Bump the version number every time you change proofread.js
 $wgProofreadPageVersion = 24;
 
@@ -1095,12 +1091,11 @@ function pr_articleSaveComplete( $article ) {
 }
 
 
-/* preload Djvu Text */
+/* Preload text layer from multipage formats */
 function pr_preloadText( $textbox1, $mTitle ) {
-	global $wgDjvuTxt;
 
 	$page_namespace = pr_page_ns();
-	if ( $wgDjvuTxt && preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
+	if ( preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 		if ( !$imageTitle ) {
 			return true;
@@ -1108,14 +1103,11 @@ function pr_preloadText( $textbox1, $mTitle ) {
 
 		$image = wfFindFile( $imageTitle );
 		if ( $image && $image->exists() ) {
-			$mime = $image->getMimeType();  
-			if( $mime == 'image/vnd.djvu' /*|| $mime == 'application/pdf'*/ )  {
-				$text = $image->handler->getPageText($image, $m[2]);
-				if ( $text ) {
-					$text = preg_replace( "/(\\\\n)/", "\n", $text );
-					$text = preg_replace( "/(\\\\\d*)/", "", $text );
-					$textbox1 = $text;
-				}
+			$text = $image->handler->getPageText($image, $m[2]);
+			if ( $text ) {
+				$text = preg_replace( "/(\\\\n)/", "\n", $text );
+				$text = preg_replace( "/(\\\\\d*)/", "", $text );
+				$textbox1 = $text;
 			}
 		}
 	}
