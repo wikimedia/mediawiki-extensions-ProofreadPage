@@ -68,6 +68,8 @@ Remarks||10',
 <td ><span id=pr_index style=\"visibility:hidden;\">$7</span></td>
 </tr></table>",
 	'proofreadpage_pages'        => "{{PLURAL:$1|page|pages}}",
+	'proofreadpage_specialpage_text'       => '',
+	'proofreadpage_specialpage_legend'     => 'Search index pages',
 );
 
 /** Message documentation (Message documentation)

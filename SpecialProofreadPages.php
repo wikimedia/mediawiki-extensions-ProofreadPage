@@ -17,10 +17,39 @@ class ProofreadPages extends SpecialPage {
 	}
 
 	function execute( $parameters ) {
+		global $wgOut, $wgRequest, $wgDisableTextSearch;
+
 		$this->setHeaders();
 		list( $limit, $offset ) = wfCheckLimits();
-
-		$cnl = new ProofreadPagesQuery();
+		$wgOut->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
+		$searchList = array();
+		if( ! $wgDisableTextSearch ) {
+			$searchTerm = $wgRequest->getText( 'key' );
+			$wgOut->addHTML(
+				Xml::openElement( 'form' ) .
+				Xml::openElement( 'fieldset' ) .
+				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
+				Xml::input( 'key', 20, $searchTerm ) . ' ' .
+				Xml::submitButton( wfMsg( 'ilsubmit' ) ) .
+				Xml::closeElement( 'fieldset' ) .
+				Xml::closeElement( 'form' )
+			);
+			if( $searchTerm ) {
+				$index_namespace = pr_index_ns() ;
+				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+				$searchEngine = SearchEngine::create();
+				$searchEngine->setLimitOffset( $limit, $offset );
+				$searchEngine->setNamespaces( array( $index_ns_index ) );
+				$searchEngine->showRedirects = false;
+				$textMatches = $searchEngine->searchText( $searchTerm );
+				while( $result = $textMatches->next() ) {
+					if ( preg_match( "/^$index_namespace:(.*)$/", $result->getTitle(), $m ) ) {
+						array_push( $searchList, str_replace( ' ' , '_' , $m[1] ) );
+					}
+				}		
+			}
+		}
+		$cnl = new ProofreadPagesQuery( $searchList );
 		$cnl->doQuery( $offset, $limit );
 	}
 }
@@ -28,6 +57,10 @@ class ProofreadPages extends SpecialPage {
 
 
 class ProofreadPagesQuery extends QueryPage {
+
+	function ProofreadPagesQuery( $searchList ) {
+		$this->searchList = $searchList;
+	}
 
 	function getName() {
 		return 'IndexPages';
@@ -46,17 +79,24 @@ class ProofreadPagesQuery extends QueryPage {
 		$page = $dbr->tableName( 'page' );
 		$pr_index = $dbr->tableName( 'pr_index' );
 
-		return
-			"SELECT pr_page_id as title,
-			page_title as title,
-			pr_count,
-			pr_q0,
-			pr_q1,
-			pr_q2,
-			pr_q3,
-			pr_q4
-			FROM $pr_index 
-			LEFT JOIN $page ON page_id = pr_page_id";
+		if( $this->searchList ) {
+			$index_namespace = pr_index_ns() ;
+			$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+			$querylist = '';
+			foreach( $this->searchList as $item ) {
+				if( $querylist ) $querylist .= ', ';
+				$querylist .= "'" . $dbr->strencode( $item ). "'";
+			}
+			$query = "SELECT page_title as title,
+			pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
+			FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id
+			WHERE page_namespace=$index_ns_index AND page_title IN ($querylist)";
+		} else {
+			$query = "SELECT page_title as title,
+			pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
+			FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id";
+		}
+		return $query;
 	}
 
 	function getOrder() {
