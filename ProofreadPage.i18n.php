@@ -555,6 +555,7 @@ Napomene||10',
  * @author Aleator
  * @author Jordi Roqué
  * @author Paucabot
+ * @author Qllach
  * @author SMP
  */
 $messages['ca'] = array(
@@ -590,6 +591,7 @@ $messages['ca'] = array(
 	'proofreadpage_quality3_category' => 'Revisada',
 	'proofreadpage_quality4_category' => 'Validada',
 	'proofreadpage_quality0_message' => 'Aquesta pàgina no necessita ser revisada.',
+	'proofreadpage_quality1_message' => "Aquesta pàgina no s'ha revisat",
 	'proofreadpage_quality2_message' => "Hi ha un problema amb la revisió d'aquesta pàgina.",
 	'proofreadpage_quality3_message' => 'Aquesta pàgina ha estat revisada.',
 	'proofreadpage_quality4_message' => 'Aquesta pàgina ha estat validada',
@@ -608,6 +610,7 @@ Imatge
 Pàgines||20
 Sumari||15",
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgines}}',
+	'proofreadpage_specialpage_legend' => "Cerca a les pàgines d'índex",
 );
 
 /** Cebuano (Cebuano)
@@ -738,6 +741,7 @@ Bild|Titelbild
 Seiten||20
 Bemerkungen||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Seite|Seiten}}',
+	'proofreadpage_specialpage_legend' => 'Indexseiten durchsuchen',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -1478,6 +1482,7 @@ $messages['he'] = array(
 דפים||20
 הערות||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|דף|דפים}}',
+	'proofreadpage_specialpage_legend' => 'חיפוש בדפי האינדקס',
 );
 
 /** Hindi (हिन्दी)
@@ -1772,6 +1777,7 @@ Imagine|Imagine de copertura
 Paginas||20
 Notas||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
+	'proofreadpage_specialpage_legend' => 'Cercar in paginas de indice',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -2150,19 +2156,19 @@ $messages['krj'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'indexpages' => 'Leß met de Indäx_Sigge',
+	'indexpages' => 'Leß met de Verzeischneß_Sigge',
 	'proofreadpage_desc' => 'Määt et müjjelesch, bequem der Täx mem enjeskännte Ojinaal ze verjliische.',
 	'proofreadpage_namespace' => 'Sigg',
 	'proofreadpage_index_namespace' => 'Enhallt',
 	'proofreadpage_image' => 'Beld',
 	'proofreadpage_index' => 'Verzeischneß',
-	'proofreadpage_index_expected' => 'Fähler: Ene Indäx weet jebruch',
-	'proofreadpage_nosuch_index' => 'Fähler: Esu ene Indäx jidd_et nit',
+	'proofreadpage_index_expected' => 'Fähler: En Enndraachsnummer (ene Indäx) weet jebruch',
+	'proofreadpage_nosuch_index' => 'Fähler: Esu en Enndraachsnummer (esu ene Indäx) jidd_et nit',
 	'proofreadpage_nosuch_file' => 'Fähler: esu en Dattei ham_mer nit',
 	'proofreadpage_badpage' => 'Verhiehrt Fommaat',
 	'proofreadpage_badpagetext' => 'Dat Fommaat vun dä Sigg, di De jrahdt afzeshpeischere versöhk häß, eß verkiehert.',
 	'proofreadpage_indexdupe' => 'Dubbelte Lengk',
-	'proofreadpage_indexdupetext' => 'Sigge künne nit mieh wi eijmohl en en Indäx_Sigg opdouche.',
+	'proofreadpage_indexdupetext' => 'Sigge künne nit mieh wi eijmohl en en Verzeischneß_Sigg opdouche.',
 	'proofreadpage_nologin' => 'Nit enjelogk',
 	'proofreadpage_nologintext' => 'Do möötß ald [[Special:UserLogin|enjelogg]] sin, öm dä {{int:proofreadpage_page_status}} hee ze ändere.',
 	'proofreadpage_notallowed' => 'Dat Ändere es nit zohjelohße',
@@ -2187,7 +2193,7 @@ $messages['ksh'] = array(
 	'proofreadpage_quality3_message' => 'Heh di Sigg woodt jeääjejelässe',
 	'proofreadpage_quality4_message' => 'Heh di Sigg es jeääjejelässe un joot',
 	'proofreadpage_index_listofpages' => 'SiggeLeß',
-	'proofreadpage_image_message' => 'Lengk op en Index-Sigg',
+	'proofreadpage_image_message' => 'Lengk op en Verzeischneß_Sigg',
 	'proofreadpage_page_status' => 'Siggestattus',
 	'proofreadpage_js_attributes' => 'Schriver Tittel Johr Verlaach',
 	'proofreadpage_index_attributes' => 'Schriver
@@ -2199,6 +2205,7 @@ Beld|Beld om Ömschlach
 Sigge||20
 Aanmerkunge||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Ei&nbsp;Sigg|$1&nbsp;Sigge|Kei&nbsp;Sigg}}',
+	'proofreadpage_specialpage_legend' => 'Op dä Verzeischneßsigg söhke',
 );
 
 /** Cornish (Kernewek)
