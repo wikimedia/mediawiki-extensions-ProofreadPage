@@ -2463,6 +2463,7 @@ $messages['mk'] = array(
 );
 
 /** Malayalam (മലയാളം)
+ * @author Praveenp
  * @author Shijualex
  */
 $messages['ml'] = array(
@@ -2476,6 +2477,7 @@ $messages['ml'] = array(
 	'proofreadpage_body' => 'താളിന്റെ ഉള്ളടക്കം (transclude ചെയ്യാനുള്ളത്):',
 	'proofreadpage_footer' => 'പാദവാചകം (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude വിഭാഗങ്ങളുടെ പ്രദര്‍ശനം ടോഗിള്‍ ചെയ്യുക',
+	'proofreadpage_quality0_category' => 'എഴുത്ത് ഇല്ലാതെ',
 	'proofreadpage_quality1_category' => 'പ്രൂഫ് റീഡ് ചെയ്തിട്ടില്ല',
 	'proofreadpage_quality2_category' => 'പ്രശ്നമുള്ളതാണ്‌',
 	'proofreadpage_quality3_category' => 'പ്രൂഫ്റീഡ് ചെയ്തതാണ്‌',
@@ -2492,6 +2494,7 @@ $messages['ml'] = array(
 ചിത്രം|മുഖച്ചിത്രം
 താളുകള്‍||20
 കുറിപ്പുകള്‍||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|താൾ|താളുകൾ}}',
 );
 
 /** Marathi (मराठी)
@@ -3709,6 +3712,7 @@ Resim|Kapak resmi
 Sayfalar||20
 Açıklamalar||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sayfa|sayfa}}',
+	'proofreadpage_specialpage_legend' => 'Dizin sayfalarını ara',
 );
 
 /** Tsonga (Xitsonga)
@@ -3805,6 +3809,7 @@ Imagine|Imagine de copertina
 Pagine||20
 Note||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
+	'proofreadpage_specialpage_legend' => 'Serca in te le pagine de indice',
 );
 
 /** Veps (Vepsan kel')
