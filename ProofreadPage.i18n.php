@@ -401,6 +401,7 @@ $messages['be-tarask'] = array(
 Старонак||20
 Заўвагаў||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|старонка|старонкі|старонак}}',
+	'proofreadpage_specialpage_legend' => 'Пошук індэксных старонак',
 );
 
 /** Bulgarian (Български)
@@ -1636,6 +1637,7 @@ Přispomnjenki||10',
 /** Hungarian (Magyar)
  * @author Dani
  * @author Dorgan
+ * @author Glanthor Reviol
  * @author KossuthRad
  */
 $messages['hu'] = array(
@@ -1644,6 +1646,13 @@ $messages['hu'] = array(
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Kép',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_badpage' => 'Hibás formátum',
+	'proofreadpage_indexdupe' => 'Hivatkozás megkettőzése',
+	'proofreadpage_nologin' => 'Nem vagy bejelentkezve',
+	'proofreadpage_notallowed' => 'A változtatás nincs engedélyezve',
+	'proofreadpage_number_expected' => 'Hiba: numerikus értéket vártam',
+	'proofreadpage_interval_too_large' => 'Hiba: az intervallum túl nagy',
+	'proofreadpage_invalid_interval' => 'Hiba: érvénytelen intervallum',
 	'proofreadpage_nextpage' => 'Következő oldal',
 	'proofreadpage_prevpage' => 'Előző oldal',
 	'proofreadpage_header' => 'Fejléc (noinclude):',
