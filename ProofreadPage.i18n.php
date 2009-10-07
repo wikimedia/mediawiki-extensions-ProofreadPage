@@ -2854,6 +2854,7 @@ Imatge|Imatge en cobertura
 Paginas||20
 Comentaris||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
+	'proofreadpage_specialpage_legend' => 'Recercar dins las paginas d’indèx',
 );
 
 /** Ossetic (Иронау)
@@ -3910,6 +3911,7 @@ Hình|Hình bìa
 Các trang||20
 Ghi chú||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|trang|trang}}',
+	'proofreadpage_specialpage_legend' => 'Tìm kiếm trong các trang chỉ mục',
 );
 
 /** Volapük (Volapük)
