@@ -2933,6 +2933,7 @@ Ilustracja|Okładka
 Strony||20
 Uwagi||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|strona|strony|stron}}',
+	'proofreadpage_specialpage_legend' => 'Szukaj stron indeksowych',
 );
 
 /** Piedmontese (Piemontèis)
@@ -3557,6 +3558,7 @@ $messages['te'] = array(
 బొమ్మ|ముఖచిత్రం
 పేజీలు||20
 రిమార్కులు||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|పేజీ|పేజీలు}}',
 );
 
 /** Tetum (Tetun)
