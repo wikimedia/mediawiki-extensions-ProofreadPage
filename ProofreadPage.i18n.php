@@ -880,6 +880,7 @@ $messages['el'] = array(
 
 Σχόλια||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}',
+	'proofreadpage_specialpage_legend' => 'Αναζήτηση σελίδων ευρετηρίου',
 );
 
 /** Esperanto (Esperanto)
