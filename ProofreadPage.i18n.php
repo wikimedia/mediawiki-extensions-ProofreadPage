@@ -1845,6 +1845,7 @@ Gambar|Gambar sampul
 Halaman||20
 Catatan||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|halaman|halaman}}',
+	'proofreadpage_specialpage_legend' => 'Pencarian halaman indek',
 );
 
 /** Ido (Ido)
@@ -3259,6 +3260,7 @@ $messages['sah'] = array(
 Сирэйин ахсаана||20
 Хос быһаарыылара||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|сирэй|сирэйдээх}}',
+	'proofreadpage_specialpage_legend' => 'Индекстаммыт сирэйдэри көрдөөһүн',
 );
 
 /** Sardinian (Sardu)
