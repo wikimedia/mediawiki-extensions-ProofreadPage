@@ -3324,6 +3324,7 @@ Obrázok|Obálka
 Strán||20
 Poznámky||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránok}}',
+	'proofreadpage_specialpage_legend' => 'Hľadať v stránkach indexu',
 );
 
 /** Slovenian (Slovenščina) */
