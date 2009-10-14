@@ -1731,6 +1731,7 @@ Image|Կազմի պատկեր
 Pages|Էջեր|20
 Remarks|Նշումներ|10',
 	'proofreadpage_pages' => '{{PLURAL:$1|էջ|էջ}}',
+	'proofreadpage_specialpage_legend' => 'Որոնել ինդեքս էջեր',
 );
 
 /** Interlingua (Interlingua)
