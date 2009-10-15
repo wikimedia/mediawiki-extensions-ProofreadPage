@@ -675,6 +675,7 @@ Obrázek|Obálka
 Stran||20
 Poznámky||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránek}}',
+	'proofreadpage_specialpage_legend' => 'Hledat na indexových stránkách',
 );
 
 /** Danish (Dansk)
