@@ -46,7 +46,7 @@ class ProofreadPages extends SpecialPage {
 					if ( preg_match( "/^$index_namespace:(.*)$/", $result->getTitle(), $m ) ) {
 						array_push( $searchList, str_replace( ' ' , '_' , $m[1] ) );
 					}
-				}		
+				}
 			}
 		}
 		$cnl = new ProofreadPagesQuery( $searchList );
@@ -54,10 +54,7 @@ class ProofreadPages extends SpecialPage {
 	}
 }
 
-
-
 class ProofreadPagesQuery extends QueryPage {
-
 	function ProofreadPagesQuery( $searchList ) {
 		$this->searchList = $searchList;
 	}
@@ -109,7 +106,7 @@ class ProofreadPagesQuery extends QueryPage {
 	}
 
 	function formatResult( $skin, $result ) {
-		global $wgLang, $wgContLang;
+		global $wgLang;
 
 		$index_namespace = pr_index_ns();
 		$title = Title::newFromText( $index_namespace.":".$result->title );
@@ -133,8 +130,10 @@ class ProofreadPagesQuery extends QueryPage {
 		$q4 = $result->pr_q4;
 		$num_void = $size-$q1-$q2-$q3-$q4-$q0;
 		$void_cell = $num_void ? "<td align=center style='border-style:dotted;background:#ffffff;border-width:1px;' width=\"{$num_void}\"></td>" : "";
-		
-		$pages = wfMsg( 'proofreadpage_pages', $size );
+
+		// FIXME: consider using $size in 'proofreadpage_pages' instead of glueing it together in $output
+		$pages = wfMsgExt( 'proofreadpage_pages', 'parsemag', $size );
+		$size = $wgLang->formatNum( $size );
 
 		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
 <tr valign=\"bottom\">
@@ -153,6 +152,6 @@ $void_cell
 </td>
 </tr></table>";
 
-		return $output; 
+		return $output;
 	}
 }
