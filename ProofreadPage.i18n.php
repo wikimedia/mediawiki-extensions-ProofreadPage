@@ -74,6 +74,7 @@ Remarks||10',
 
 /** Message documentation (Message documentation)
  * @author Aleator
+ * @author EugeneZelenko
  * @author IAlex
  * @author Jon Harald Søby
  * @author McDutchie
@@ -87,6 +88,7 @@ $messages['qqq'] = array(
 	'proofreadpage_desc' => 'Short description of the Proofreadpage extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
+	'proofreadpage_image' => '{{Identical|Image}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
 	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
@@ -2486,6 +2488,12 @@ $messages['ml'] = array(
 	'proofreadpage_index_namespace' => 'ഇന്‍ഡെക്സ്',
 	'proofreadpage_image' => 'ചിത്രം',
 	'proofreadpage_index' => 'ഇന്‍ഡെക്സ്',
+	'proofreadpage_indexdupe' => 'കണ്ണിയുടെ പകർപ്പ്',
+	'proofreadpage_nologin' => 'ലോഗിൻ ചെയ്തിട്ടില്ല',
+	'proofreadpage_notallowed' => 'മാറ്റങ്ങൾ അനുവദനീയമല്ല',
+	'proofreadpage_number_expected' => 'പിശക്: സംഖ്യയായുള്ള മൂല്യമാണ് പ്രതീക്ഷിക്കുന്നത്',
+	'proofreadpage_interval_too_large' => 'പിശക്: വളരെ വലിയ ഇടവേള',
+	'proofreadpage_invalid_interval' => 'പിശക്: അസാധുവായ ഇടവേള',
 	'proofreadpage_nextpage' => 'അടുത്ത താള്‍',
 	'proofreadpage_prevpage' => 'മുന്‍പത്തെ താള്‍',
 	'proofreadpage_header' => 'തലവാചകം (noinclude):',
