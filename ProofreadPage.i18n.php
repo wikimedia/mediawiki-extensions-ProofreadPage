@@ -757,6 +757,62 @@ $messages['de-formal'] = array(
 	'proofreadpage_notallowedtext' => 'Sie sind nicht berechtigt, den Korrekturlesungsstatus dieser Seite zu ändern.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Aspar
+ */
+$messages['diq'] = array(
+	'indexpages' => 'listeya pelê endeksi',
+	'proofreadpage_desc' => "Destur bıd' wa metın pê cıgerayişê orjinali rehet u asan têver şan",
+	'proofreadpage_namespace' => 'pel',
+	'proofreadpage_index_namespace' => 'endeks',
+	'proofreadpage_image' => 'resım',
+	'proofreadpage_index' => 'indeks',
+	'proofreadpage_index_expected' => 'xeta: paweyê endeksibi',
+	'proofreadpage_nosuch_index' => 'xeta: hina yew endeks çino',
+	'proofreadpage_nosuch_file' => 'xeta: hina yew dosya çina.',
+	'proofreadpage_badpage' => 'foramto/fesalo şaş',
+	'proofreadpage_badpagetext' => 'pelo ke şıma qeyd keni formatê ey şaşo',
+	'proofreadpage_indexdupe' => 'gıreyo ke reyna reyna tesel beno, tekrar beno',
+	'proofreadpage_indexdupetext' => 'no pelê indeksi de peli yew ra zêd liste nıbeni',
+	'proofreadpage_nologin' => 'cı nıkewiyo.',
+	'proofreadpage_nologintext' => 'qey vurnayişê halê raştkerdışê pelan gani şıma [[Special:UserLogin|cı kewiyi]].',
+	'proofreadpage_notallowed' => 'vurnayiş re destur çino',
+	'proofreadpage_notallowedtext' => 'vurnayişê halê raştkerdışê peli re destur nêdano',
+	'proofreadpage_number_expected' => 'Error: numeric value expected',
+	'proofreadpage_interval_too_large' => 'xeta: benate/mabên zaf hêrayo',
+	'proofreadpage_invalid_interval' => 'xeta: benateyo nemeqbul',
+	'proofreadpage_nextpage' => 'pelo ke yeno',
+	'proofreadpage_prevpage' => 'pelo ke pey de mend',
+	'proofreadpage_header' => 'sername (ihtiwa)',
+	'proofreadpage_body' => 'miyaneyê peli (çepraşt têarê beno):',
+	'proofreadpage_footer' => 'Footer (ihtiwa):',
+	'proofreadpage_toggleheaders' => 'asayişê qısmi yê ke ihtiwa nıbeni bıvurn',
+	'proofreadpage_quality0_category' => 'metn tede çino',
+	'proofreadpage_quality1_category' => 'raşt nıbiyo',
+	'proofreadpage_quality2_category' => 'problemın',
+	'proofreadpage_quality3_category' => 'raşt ker',
+	'proofreadpage_quality4_category' => 'raşt/tesdiq biyo',
+	'proofreadpage_quality0_message' => 'no pel re raştkerdış luzûm nıkeno',
+	'proofreadpage_quality1_message' => 'no pel de reaştkerdış nıbı',
+	'proofreadpage_quality2_message' => 'wexta no pel de raştkerdış bêne xeta vıraziya',
+	'proofreadpage_quality3_message' => 'no pel de raştkerdış bı',
+	'proofreadpage_quality4_message' => 'no pel raşt/tesdiq biyo',
+	'proofreadpage_index_listofpages' => 'listeya pelan',
+	'proofreadpage_image_message' => 'gıreyo ke erziyayo pelê endeksi',
+	'proofreadpage_page_status' => 'halê peli',
+	'proofreadpage_js_attributes' => 'nuştox/e sername serre weşanger',
+	'proofreadpage_index_attributes' => 'nuştox/e
+sername
+serre|serrê weşanayişi/neşri
+weşanger
+çıme
+Resım|resmê qapaxi
+peli||20
+beyanati||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|pel|pel}}',
+	'proofreadpage_specialpage_legend' => 'bıgêr pelê indeksan',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
@@ -3548,6 +3604,7 @@ $messages['szl'] = array(
  * @author Veeven
  */
 $messages['te'] = array(
+	'indexpages' => 'సూచీ పేజీల జాబితా',
 	'proofreadpage_namespace' => 'పేజీ',
 	'proofreadpage_index_namespace' => 'సూచిక',
 	'proofreadpage_image' => 'బొమ్మ',
