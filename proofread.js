@@ -2,8 +2,10 @@
 
 
 function pr_init_tabs(){
+	var a;
+	if ( self.skin=="vector" ) a = document.getElementById("p-namespaces");
+	else var a = document.getElementById("p-cactions");
 
-	var a = document.getElementById("p-cactions");
 	if (!a) return;
 	var b = a.getElementsByTagName("ul");
 	if (!b) return;
@@ -11,26 +13,28 @@ function pr_init_tabs(){
 	if(self.proofreadPageViewURL) {
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-image">'
-			+ '<a href="' + escapeQuotesHTML(proofreadPageViewURL) + '">'
-			+ escapeQuotesHTML(proofreadPageMessageImage) + '</a></li>';
+			+ '<a href="' + escapeQuotesHTML(proofreadPageViewURL) + '"><span>'
+			+ escapeQuotesHTML(proofreadPageMessageImage) + '</span></a></li>';
 	}
 
 	if(self.proofreadPageIndexURL){
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-index">'
 			+ '<a href="' + escapeQuotesHTML(proofreadPageIndexURL) 
-			+ '" title="' + escapeQuotesHTML(proofreadPageMessageIndex) + '">'
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessageIndex) + '"><span>'
 			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/uparrow.png" alt="'
-			+ escapeQuotesHTML(proofreadPageMessageIndex) + '" width="15" height="15" /></a></li>';
+			+ escapeQuotesHTML(proofreadPageMessageIndex) 
+			+ '" width="15" height="15" /></span></a></li>';
 	}
 
 	if(self.proofreadPageNextURL){
 		b[0].innerHTML = 
 			'<li id="ca-next">'
 			+ '<a href="' + escapeQuotesHTML(self.proofreadPageNextURL)
-			+ '" title="' + escapeQuotesHTML(proofreadPageMessageNextPage) + '">'
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessageNextPage) + '"><span>'
 			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/rightarrow.png" alt="'
-			+ escapeQuotesHTML(proofreadPageMessageNextPage) + '" width="15" height="15" /></a></li>'
+			+ escapeQuotesHTML(proofreadPageMessageNextPage) 
+			+ '" width="15" height="15" /></span></a></li>'
 			+ b[0].innerHTML ;
 	}
 
@@ -38,9 +42,10 @@ function pr_init_tabs(){
 		b[0].innerHTML = 
 			'<li id="ca-prev">'
 			+ '<a href="' + escapeQuotesHTML(self.proofreadPagePrevURL) 
-			+ '" title="' + escapeQuotesHTML(proofreadPageMessagePrevPage) + '">'
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessagePrevPage) + '"><span>'
 			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/leftarrow.png" alt="'
-			+ escapeQuotesHTML(proofreadPageMessagePrevPage) + '" width="15" height="15" /></a></li>'
+			+ escapeQuotesHTML(proofreadPageMessagePrevPage) 
+			+ '" width="15" height="15" /></span></a></li>'
 			+ b[0].innerHTML ;
        }
 }
