@@ -1059,12 +1059,26 @@ Comentarios||10',
 
 /** Estonian (Eesti)
  * @author Avjoska
+ * @author WikedKentaur
  */
 $messages['et'] = array(
+	'indexpages' => 'Registrilehtede loetelu',
+	'proofreadpage_desc' => 'Võimaldab teksti kõrvutada skänneritud lehega.',
 	'proofreadpage_namespace' => 'Lehekülg',
+	'proofreadpage_index_namespace' => 'Register',
 	'proofreadpage_image' => 'pilt',
+	'proofreadpage_index' => 'Register',
+	'proofreadpage_index_expected' => 'Viga: register puudub',
+	'proofreadpage_nosuch_index' => 'Viga: küsitud registrit pole',
+	'proofreadpage_nosuch_file' => 'Viga: faili ei leitud',
+	'proofreadpage_badpage' => 'Vale vorming',
+	'proofreadpage_badpagetext' => 'Salvestatava lehe vorming on vigane.',
+	'proofreadpage_indexdupetext' => 'Lehekülge saab registris loetleda vaid ühe korra.',
 	'proofreadpage_nologin' => 'Ei ole sisse logitud',
 	'proofreadpage_notallowed' => 'Muudatus ei ole lubatud',
+	'proofreadpage_number_expected' => 'Viga: sisesta arv',
+	'proofreadpage_interval_too_large' => 'Viga: vahemik on liiga suur',
+	'proofreadpage_invalid_interval' => 'Viga: vigane vahemik',
 	'proofreadpage_nextpage' => 'Järgmine lehekülg',
 	'proofreadpage_prevpage' => 'Eelmine lehekülg',
 	'proofreadpage_quality0_category' => 'Ilma tekstita',
@@ -1075,6 +1089,7 @@ $messages['et'] = array(
 	'proofreadpage_quality1_message' => 'Seda lehekülge ei ole korrigeeritud',
 	'proofreadpage_quality3_message' => 'See lehekülg on korrigeeritud',
 	'proofreadpage_index_listofpages' => 'Lehekülgede loend',
+	'proofreadpage_image_message' => 'Link registrilehele',
 	'proofreadpage_page_status' => 'Lehekülje staatus',
 	'proofreadpage_js_attributes' => 'Autor Pealkiri Aasta Väljaandja',
 	'proofreadpage_index_attributes' => 'Autor
@@ -1085,6 +1100,8 @@ Päritolu
 Pilt|Kaanepilt
 Lehekülgi||20
 Märkused||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|lehekülg|lehekülge}}',
+	'proofreadpage_specialpage_legend' => 'Otsi registrilehtedelt',
 );
 
 /** Basque (Euskara)
