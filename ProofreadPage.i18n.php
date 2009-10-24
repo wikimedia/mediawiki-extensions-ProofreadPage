@@ -1729,11 +1729,15 @@ Přispomnjenki||10',
  * @author KossuthRad
  */
 $messages['hu'] = array(
+	'indexpages' => 'Indexlapok listája',
 	'proofreadpage_desc' => 'Lehetővé teszi a szöveg és az eredeti szkennelt változat egyszerű összehasonlítását',
 	'proofreadpage_namespace' => 'Oldal',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Kép',
 	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Hiba: indexet vártam',
+	'proofreadpage_nosuch_index' => 'Hiba: nincs ilyen index',
+	'proofreadpage_nosuch_file' => 'Hiba: nincs ilyen fájl',
 	'proofreadpage_badpage' => 'Hibás formátum',
 	'proofreadpage_indexdupe' => 'Hivatkozás megkettőzése',
 	'proofreadpage_nologin' => 'Nem vagy bejelentkezve',
@@ -1747,6 +1751,7 @@ $messages['hu'] = array(
 	'proofreadpage_body' => 'Oldal (be lesz illesztve):',
 	'proofreadpage_footer' => 'Lábléc (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude részek láthatóságának váltása',
+	'proofreadpage_quality0_category' => 'Szöveg nélkül',
 	'proofreadpage_quality1_category' => 'Nincs korrektúrázva',
 	'proofreadpage_quality2_category' => 'Problematikus',
 	'proofreadpage_quality3_category' => 'Korrektúrázva',
