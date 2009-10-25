@@ -1739,7 +1739,9 @@ $messages['hu'] = array(
 	'proofreadpage_nosuch_index' => 'Hiba: nincs ilyen index',
 	'proofreadpage_nosuch_file' => 'Hiba: nincs ilyen fájl',
 	'proofreadpage_badpage' => 'Hibás formátum',
+	'proofreadpage_badpagetext' => 'A lap formátuma, amit menteni próbáltál rossz.',
 	'proofreadpage_indexdupe' => 'Hivatkozás megkettőzése',
+	'proofreadpage_indexdupetext' => 'A lapok nem szerepelhetnek egynél többször egy indexlapon.',
 	'proofreadpage_nologin' => 'Nem vagy bejelentkezve',
 	'proofreadpage_notallowed' => 'A változtatás nincs engedélyezve',
 	'proofreadpage_number_expected' => 'Hiba: numerikus értéket vártam',
@@ -1768,6 +1770,8 @@ Forrás
 Kép|Borító
 Oldalak||20
 Megjegyzések||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|lap|lap}}',
+	'proofreadpage_specialpage_legend' => 'Indexlapok keresése',
 );
 
 /** Armenian (Հայերեն)
@@ -2566,6 +2570,7 @@ $messages['mk'] = array(
 Страници||20
 Белешки||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
+	'proofreadpage_specialpage_legend' => 'Пребарување на индексни страници',
 );
 
 /** Malayalam (മലയാളം)
