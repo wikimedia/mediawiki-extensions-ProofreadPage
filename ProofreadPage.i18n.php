@@ -1743,7 +1743,9 @@ $messages['hu'] = array(
 	'proofreadpage_indexdupe' => 'Hivatkozás megkettőzése',
 	'proofreadpage_indexdupetext' => 'A lapok nem szerepelhetnek egynél többször egy indexlapon.',
 	'proofreadpage_nologin' => 'Nem vagy bejelentkezve',
+	'proofreadpage_nologintext' => '[[Special:UserLogin|Be kell jelentkezned]], hogy módosítani tudd a lapok korrektúrázási állapotát.',
 	'proofreadpage_notallowed' => 'A változtatás nincs engedélyezve',
+	'proofreadpage_notallowedtext' => 'Nincs jogosultságod megváltoztatni a lap korrektúrázási állapotát.',
 	'proofreadpage_number_expected' => 'Hiba: numerikus értéket vártam',
 	'proofreadpage_interval_too_large' => 'Hiba: az intervallum túl nagy',
 	'proofreadpage_invalid_interval' => 'Hiba: érvénytelen intervallum',
@@ -1758,6 +1760,11 @@ $messages['hu'] = array(
 	'proofreadpage_quality2_category' => 'Problematikus',
 	'proofreadpage_quality3_category' => 'Korrektúrázva',
 	'proofreadpage_quality4_category' => 'Jóváhagyva',
+	'proofreadpage_quality0_message' => 'A lapot nem szükséges korrektúrázni',
+	'proofreadpage_quality1_message' => 'A lap nincsen korrektúrázva',
+	'proofreadpage_quality2_message' => 'Probléma történt a lap korrektúrázása közben',
+	'proofreadpage_quality3_message' => 'A lap korrektúrázva van',
+	'proofreadpage_quality4_message' => 'A lap jóváhagyva',
 	'proofreadpage_index_listofpages' => 'Oldalak listája',
 	'proofreadpage_image_message' => 'Csatolni az index oldalhoz',
 	'proofreadpage_page_status' => 'Oldal állapota',
@@ -2397,10 +2404,11 @@ $messages['lfn'] = array(
 );
 
 /** Limburgish (Limburgs)
+ * @author Aelske
  * @author Ooswesthoesbes
  */
 $messages['li'] = array(
-	'proofreadpage_desc' => "Maak 't meugelik teks einvawdig te verglieke mit de oorspronkelike sken",
+	'proofreadpage_desc' => "Maak 't meugelik teks eenvoudig te vergelieke mit de oorsjpronkelike scan",
 	'proofreadpage_namespace' => 'Pazjena',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'aafbeilding',
@@ -2578,12 +2586,18 @@ $messages['mk'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
+	'indexpages' => 'സൂചികാ താളുകളുടെ പട്ടിക',
 	'proofreadpage_namespace' => 'താള്‍',
 	'proofreadpage_index_namespace' => 'ഇന്‍ഡെക്സ്',
 	'proofreadpage_image' => 'ചിത്രം',
 	'proofreadpage_index' => 'ഇന്‍ഡെക്സ്',
+	'proofreadpage_index_expected' => 'പിശക്: സൂചിക വേണം',
+	'proofreadpage_nosuch_index' => 'പിശക്: അത്തരത്തിലൊരു സൂചിക ഇല്ല',
+	'proofreadpage_nosuch_file' => 'പിശക്: അത്തരത്തിലൊരു പ്രമാണം ഇല്ല',
 	'proofreadpage_badpage' => 'തെറ്റായ തരം',
+	'proofreadpage_badpagetext' => 'താങ്കൾ സേവ് ചെയ്യാൻ ശ്രമിച്ച താളിന്റെ തരം (ഫോർമാറ്റ്) ശരിയല്ല.',
 	'proofreadpage_indexdupe' => 'കണ്ണിയുടെ പകർപ്പ്',
+	'proofreadpage_indexdupetext' => 'ഒരു സൂചികാ താളിൽ ഒന്നിലധികം പ്രാവശ്യം ഒരു താൾ തന്നെ ചേർക്കാൻ കഴിയില്ല.',
 	'proofreadpage_nologin' => 'ലോഗിൻ ചെയ്തിട്ടില്ല',
 	'proofreadpage_notallowed' => 'മാറ്റങ്ങൾ അനുവദനീയമല്ല',
 	'proofreadpage_number_expected' => 'പിശക്: സംഖ്യയായുള്ള മൂല്യമാണ് പ്രതീക്ഷിക്കുന്നത്',
@@ -2613,6 +2627,7 @@ $messages['ml'] = array(
 താളുകള്‍||20
 കുറിപ്പുകള്‍||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|താൾ|താളുകൾ}}',
+	'proofreadpage_specialpage_legend' => 'സൂചികാ താളുകൾ തിരയുക',
 );
 
 /** Marathi (मराठी)
