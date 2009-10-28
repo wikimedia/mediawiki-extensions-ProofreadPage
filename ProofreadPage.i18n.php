@@ -1004,6 +1004,7 @@ Rimarkoj||10',
  * @author Locos epraix
  * @author Remember the dot
  * @author Sanbec
+ * @author Translationista
  */
 $messages['es'] = array(
 	'indexpages' => 'Lista de páginas indexadas',
@@ -1055,6 +1056,7 @@ Imagen|Imagen de cubierta
 Páginas||20
 Comentarios||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
+	'proofreadpage_specialpage_legend' => 'Buscar en páginas de índice',
 );
 
 /** Estonian (Eesti)
@@ -2587,6 +2589,7 @@ $messages['mk'] = array(
  */
 $messages['ml'] = array(
 	'indexpages' => 'സൂചികാ താളുകളുടെ പട്ടിക',
+	'proofreadpage_desc' => 'യഥാർത്ഥ സ്കാനും എഴുത്തും തമ്മിലുള്ള ലളിതമായ ഒത്തുനോക്കൽ അനുവദിക്കുക',
 	'proofreadpage_namespace' => 'താള്‍',
 	'proofreadpage_index_namespace' => 'ഇന്‍ഡെക്സ്',
 	'proofreadpage_image' => 'ചിത്രം',
