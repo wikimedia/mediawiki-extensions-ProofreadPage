@@ -23,8 +23,8 @@ class ProofreadPages extends SpecialPage {
 		list( $limit, $offset ) = wfCheckLimits();
 		$wgOut->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
 		$searchList = array();
+		$searchTerm = $wgRequest->getText( 'key' );
 		if( ! $wgDisableTextSearch ) {
-			$searchTerm = $wgRequest->getText( 'key' );
 			$wgOut->addHTML(
 				Xml::openElement( 'form' ) .
 				Xml::openElement( 'fieldset' ) .
@@ -49,14 +49,15 @@ class ProofreadPages extends SpecialPage {
 				}
 			}
 		}
-		$cnl = new ProofreadPagesQuery( $searchList );
+		$cnl = new ProofreadPagesQuery( $searchList, $searchTerm );
 		$cnl->doQuery( $offset, $limit );
 	}
 }
 
 class ProofreadPagesQuery extends QueryPage {
-	function ProofreadPagesQuery( $searchList ) {
+	function ProofreadPagesQuery( $searchList, $searchTerm ) {
 		$this->searchList = $searchList;
+		$this->searchTerm = $searchTerm;
 	}
 
 	function getName() {
@@ -69,6 +70,10 @@ class ProofreadPagesQuery extends QueryPage {
 
 	function isSyndicated() {
 		return false;
+	}
+
+	function linkParameters() {
+		return array( 'key'=> $this->searchTerm );
 	}
 
 	function getSQL() {
