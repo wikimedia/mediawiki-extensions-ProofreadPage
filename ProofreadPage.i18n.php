@@ -475,12 +475,14 @@ $messages['bn'] = array(
  * @author Fulup
  */
 $messages['br'] = array(
+	'indexpages' => 'Roll ar pajennoù meneger',
 	'proofreadpage_namespace' => 'Pajenn',
 	'proofreadpage_index_namespace' => 'Meneger',
 	'proofreadpage_image' => 'skeudenn',
 	'proofreadpage_index' => 'Meneger',
 	'proofreadpage_nextpage' => "Pajenn war-lerc'h",
 	'proofreadpage_prevpage' => 'Pajenn a-raok',
+	'proofreadpage_quality0_category' => 'Hep testenn',
 	'proofreadpage_quality1_category' => 'Da wiriañ',
 	'proofreadpage_quality2_category' => 'Kudennek',
 	'proofreadpage_quality3_category' => 'Reizhet',
@@ -1111,7 +1113,7 @@ Aasta|Väljaandmise aasta
 Väljaandja
 Päritolu
 Pilt|Kaanepilt
-Lehekülgi||20
+Leheküljed||20
 Märkused||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|lehekülg|lehekülge}}',
 	'proofreadpage_specialpage_legend' => 'Otsi registrilehtedelt',
