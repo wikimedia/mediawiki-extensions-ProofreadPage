@@ -472,6 +472,7 @@ $messages['bn'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fohanno
  * @author Fulup
  */
 $messages['br'] = array(
@@ -480,6 +481,7 @@ $messages['br'] = array(
 	'proofreadpage_index_namespace' => 'Meneger',
 	'proofreadpage_image' => 'skeudenn',
 	'proofreadpage_index' => 'Meneger',
+	'proofreadpage_badpage' => 'Furmad fall',
 	'proofreadpage_nextpage' => "Pajenn war-lerc'h",
 	'proofreadpage_prevpage' => 'Pajenn a-raok',
 	'proofreadpage_quality0_category' => 'Hep testenn',
@@ -1984,6 +1986,7 @@ $messages['is'] = array(
 /** Italian (Italiano)
  * @author BrokenArrow
  * @author Darth Kule
+ * @author Gianfranco
  * @author Stefano-c
  */
 $messages['it'] = array(
@@ -2001,9 +2004,9 @@ $messages['it'] = array(
 	'proofreadpage_indexdupe' => 'Collegamento duplicato',
 	'proofreadpage_indexdupetext' => 'Le pagine non possono essere elencate più di una volta su una pagina di indice.',
 	'proofreadpage_nologin' => 'Accesso non effettuato',
-	'proofreadpage_nologintext' => "Per modificare lo stato di correttezza delle pagine è necessario [[Special:UserLogin|effettuare l'accesso]].",
+	'proofreadpage_nologintext' => "Per modificare lo stato di verifica delle pagine, è necessario aver effettuato [[Special:UserLogin|l'accesso]].",
 	'proofreadpage_notallowed' => 'Modifica non consentita',
-	'proofreadpage_notallowedtext' => 'Non si è autorizzati a modificare lo stato di correttezza di questa pagina.',
+	'proofreadpage_notallowedtext' => 'Non sei autorizzato a modificare lo stato di verifica di questa pagina.',
 	'proofreadpage_number_expected' => 'Errore: previsto valore numerico',
 	'proofreadpage_interval_too_large' => 'Errore: intervallo troppo ampio',
 	'proofreadpage_invalid_interval' => 'Errore: intervallo non valido',
