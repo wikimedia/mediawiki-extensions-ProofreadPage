@@ -481,7 +481,9 @@ $messages['br'] = array(
 	'proofreadpage_index_namespace' => 'Meneger',
 	'proofreadpage_image' => 'skeudenn',
 	'proofreadpage_index' => 'Meneger',
+	'proofreadpage_nosuch_file' => "Fazi : n'eus restr ebet evel-se",
 	'proofreadpage_badpage' => 'Furmad fall',
+	'proofreadpage_nologin' => "N'eo ket kevreet",
 	'proofreadpage_nextpage' => "Pajenn war-lerc'h",
 	'proofreadpage_prevpage' => 'Pajenn a-raok',
 	'proofreadpage_quality0_category' => 'Hep testenn',
@@ -489,6 +491,10 @@ $messages['br'] = array(
 	'proofreadpage_quality2_category' => 'Kudennek',
 	'proofreadpage_quality3_category' => 'Reizhet',
 	'proofreadpage_quality4_category' => 'Gwiriekaet',
+	'proofreadpage_quality0_message' => "Ar bajenn-mañ n'he deus ket ezhomm da vezañ adlennet",
+	'proofreadpage_quality1_message' => "Ar bajenn-mañ n'eo ket bet adlennet",
+	'proofreadpage_quality3_message' => 'Adlennet eo bet ar bajenn-mañ',
+	'proofreadpage_quality4_message' => 'Gwiriekaet eo bet ar bajenn-mañ',
 	'proofreadpage_index_listofpages' => 'Roll ar pajennoù',
 	'proofreadpage_image_message' => 'Liamm war-du ar meneger',
 	'proofreadpage_page_status' => 'Statud ar bajenn',
@@ -501,6 +507,8 @@ Mammenn
 Skeudenn|Skeudenn ar golo
 Pajennoù||20
 Notennoù||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|bajenn|pajenn}}',
+	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
 );
 
 /** Bosnian (Bosanski)
