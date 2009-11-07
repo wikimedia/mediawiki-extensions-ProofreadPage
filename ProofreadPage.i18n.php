@@ -564,6 +564,7 @@ Slika|Naslovna slika
 Stranica||20
 Napomene||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice|stranica}}',
+	'proofreadpage_specialpage_legend' => 'Ptretraga indeksnih stranica',
 );
 
 /** Catalan (Català)
@@ -1508,6 +1509,7 @@ Bild|Titelbild
 Syte||20
 Aamerkige||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Syte|Syte}}',
+	'proofreadpage_specialpage_legend' => 'Indexsyte dursueche',
 );
 
 /** Manx (Gaelg)
@@ -2100,6 +2102,7 @@ $messages['ja'] = array(
 ページ||20
 注釈||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|ページ|ページ}}',
+	'proofreadpage_specialpage_legend' => '文献概要ページを検索',
 );
 
 /** Jutish (Jysk)
@@ -2340,7 +2343,7 @@ Aanmerkunge||10',
 	'proofreadpage_specialpage_legend' => 'Op dä Verzeischneßsigg söhke',
 );
 
-/** Cornish (Kernewek)
+/** Cornish (Kernowek)
  * @author Kw-Moon
  */
 $messages['kw'] = array(
