@@ -956,6 +956,7 @@ $messages['el'] = array(
 );
 
 /** Esperanto (Esperanto)
+ * @author Michawiki
  * @author Yekrats
  */
 $messages['eo'] = array(
@@ -975,7 +976,7 @@ $messages['eo'] = array(
 	'proofreadpage_nologintext' => 'Vi devas [[Special:UserLogin|ensaluti]] por modifi la provlegan statuson de paĝojn.',
 	'proofreadpage_notallowed' => 'Ŝanĝo ne permesiĝis',
 	'proofreadpage_notallowedtext' => 'Vi ne estas permesata ŝanĝi la pruvlegadan statuson de ĉi tiu paĝo.',
-	'proofreadpage_number_expected' => 'Eraro: numera valuto atentita',
+	'proofreadpage_number_expected' => 'Eraro: numera valoro atentita',
 	'proofreadpage_interval_too_large' => 'Eraro: intervalo tro granda',
 	'proofreadpage_invalid_interval' => 'Eraro: malvalida intervalo',
 	'proofreadpage_nextpage' => 'Sekva paĝo',
@@ -3026,6 +3027,7 @@ $messages['pdc'] = array(
 	'proofreadpage_nextpage' => 'Neegscht Blatt',
 	'proofreadpage_prevpage' => 'Letscht Blatt',
 	'proofreadpage_index_listofpages' => 'Lischt vun Bledder',
+	'proofreadpage_pages' => '{{PLURAL:$1|Blatt|Bledder}}',
 );
 
 /** Polish (Polski)
