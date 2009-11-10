@@ -3179,6 +3179,7 @@ Fonte
 Imagem|Imagem de capa
 Páginas||20
 Notas||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
