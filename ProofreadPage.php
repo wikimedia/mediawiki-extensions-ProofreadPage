@@ -610,10 +610,6 @@ function pr_pageNumber( $i, $args ) {
 function pr_pageQuality( $input, $args ) {
 	global $wgUser, $wgTitle, $wgParser;
 
-	$page_namespace = pr_page_ns();
-	if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText() ) ) {
-		return "";
-	}
 	$q = $args['level'];
 	if( ! in_array( $q, array('0','1','2','3','4') ) ) {
 		return "";
