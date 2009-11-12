@@ -972,6 +972,7 @@ $messages['eo'] = array(
 	'proofreadpage_badpage' => 'Malbona Formato',
 	'proofreadpage_badpagetext' => 'La formato de la paĝo kiun vi provis konservi estas malĝusta.',
 	'proofreadpage_indexdupe' => 'Duplikata ligilo',
+	'proofreadpage_indexdupetext' => 'Paĝoj ne povas esti listigataj pli ol unu fojo sur indekspaĝo.',
 	'proofreadpage_nologin' => 'Ne ensalutita',
 	'proofreadpage_nologintext' => 'Vi devas [[Special:UserLogin|ensaluti]] por modifi la provlegan statuson de paĝojn.',
 	'proofreadpage_notallowed' => 'Ŝanĝo ne permesiĝis',
