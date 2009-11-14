@@ -608,7 +608,12 @@ function pr_pageNumber( $i, $args ) {
  * todo : display whether page has been proofread by the user or by someone else
  */
 function pr_pageQuality( $input, $args ) {
-	global $wgUser, $wgTitle, $wgParser;
+	global $wgUser, $wgParser;
+
+	$page_namespace = pr_page_ns();
+	if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgParser->Title()->getPrefixedText() ) ) {
+		return "";
+	}
 
 	$q = $args['level'];
 	if( ! in_array( $q, array('0','1','2','3','4') ) ) {
@@ -625,11 +630,11 @@ function pr_pageQuality( $input, $args ) {
  * Display a list of coloured links to pages
  */
 function pr_renderPageList( $input, $args ) {
-	global $wgUser, $wgTitle, $wgParser;
+	global $wgUser, $wgParser;
 
 	$page_namespace = pr_page_ns();
 	$index_namespace = pr_index_ns();
-	if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
+	if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgParser->Title()->getPrefixedText(), $m ) ) {
 		return "";
 	}
 
@@ -694,7 +699,7 @@ function pr_renderPageList( $input, $args ) {
  *  parameters : index, from, to, header
  */
 function pr_renderPages( $input, $args ) {
-	global $wgParser, $wgTitle;
+	global $wgParser;
 
 	$page_namespace = pr_page_ns();
 	$index_namespace = pr_index_ns();
@@ -704,7 +709,7 @@ function pr_renderPages( $input, $args ) {
 	$header = $args['header'];
 
 	# abort if the tag is on an index page
-	if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText() ) ) {
+	if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgParser->Title()->getPrefixedText() ) ) {
 		return "";
 	}
 	if( ! $index ) { 
@@ -801,7 +806,7 @@ function pr_renderPages( $input, $args ) {
 		$h_out .= "|value=$header";
 		//find next and previous pages in list
 		for( $i=1; $i < count( $text_links[1] ); $i++) { 
-			if( $text_links[1][$i] == $wgTitle->getPrefixedText() ) {
+			if( $text_links[1][$i] == $wgParser->Title()->getPrefixedText() ) {
 				$current = $text_links[0][$i];
 				break;
 			}
