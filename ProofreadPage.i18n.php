@@ -1141,10 +1141,14 @@ $messages['eu'] = array(
 	'proofreadpage_image' => 'irudi',
 	'proofreadpage_index' => 'Aurkibidea',
 	'proofreadpage_badpage' => 'Formatu Okerra',
+	'proofreadpage_indexdupe' => 'Bikoiztutako lotura',
+	'proofreadpage_notallowed' => 'Aldaketa ez baimendua',
 	'proofreadpage_nextpage' => 'Hurrengo orria',
 	'proofreadpage_prevpage' => 'Aurreko orria',
+	'proofreadpage_quality0_category' => 'Testurik gabe',
 	'proofreadpage_index_listofpages' => 'Orri zerrenda',
 	'proofreadpage_image_message' => 'Aurkibide orrira lotu',
+	'proofreadpage_page_status' => 'Orriaren egoera',
 	'proofreadpage_js_attributes' => 'Egilea Izenburua Urtea Argitaratzailea',
 	'proofreadpage_index_attributes' => 'Egilea
 Izenburua
