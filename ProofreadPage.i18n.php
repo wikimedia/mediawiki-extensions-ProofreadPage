@@ -1986,6 +1986,7 @@ $messages['io'] = array(
 	'proofreadpage_prevpage' => 'Antea pagino',
 	'proofreadpage_index_listofpages' => 'Pagino-listo',
 	'proofreadpage_page_status' => 'Stando di pagino',
+	'proofreadpage_pages' => '{{PLURAL:$1|pagino|pagini}}',
 );
 
 /** Icelandic (Íslenska)
