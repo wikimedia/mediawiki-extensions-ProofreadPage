@@ -4087,6 +4087,7 @@ $messages['vo'] = array(
 	'proofreadpage_image' => 'magod',
 	'proofreadpage_nextpage' => 'Pad sököl',
 	'proofreadpage_prevpage' => 'Pad büik',
+	'proofreadpage_quality0_category' => 'Nen vödem',
 	'proofreadpage_quality2_category' => 'Säkädik',
 	'proofreadpage_index_listofpages' => 'Padalised',
 	'proofreadpage_page_status' => 'Stad pada',
@@ -4099,6 +4100,7 @@ Fonät
 Magod|Magod tegoda
 Pads|20
 Küpets|10',
+	'proofreadpage_pages' => '{{PLURAL:$1|pad|pads}}',
 );
 
 /** Yue (粵語) */
