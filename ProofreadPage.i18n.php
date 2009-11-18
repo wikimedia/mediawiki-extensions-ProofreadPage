@@ -3623,6 +3623,7 @@ Catetan||10',
  * @author Lejonel
  * @author M.M.S.
  * @author Najami
+ * @author Per
  * @author Rotsee
  */
 $messages['sv'] = array(
@@ -3675,6 +3676,7 @@ Bild|Omslagsbild
 Sidor||20
 Anmärkningar||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sida|sidor}}',
+	'proofreadpage_specialpage_legend' => 'Sök i indexsidorna',
 );
 
 /** Silesian (Ślůnski)
