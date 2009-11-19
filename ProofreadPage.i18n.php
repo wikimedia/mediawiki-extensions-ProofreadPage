@@ -3136,6 +3136,7 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Giro720
+ * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
  * @author Waldir
@@ -3151,18 +3152,22 @@ $messages['pt'] = array(
 	'proofreadpage_nosuch_index' => 'Erro: índice não existe',
 	'proofreadpage_nosuch_file' => 'Erro: não existe esse ficheiro',
 	'proofreadpage_badpage' => 'Formato Errado',
+	'proofreadpage_badpagetext' => 'O formato da página que tentou gravar é incorrecto.',
 	'proofreadpage_indexdupe' => 'Ligação duplicada',
+	'proofreadpage_indexdupetext' => 'As páginas não podem ser listadas mais do que uma vez numa página de índice.',
 	'proofreadpage_nologin' => 'Não se encontra autenticado',
+	'proofreadpage_nologintext' => 'Precisa de estar [[Special:UserLogin|autenticado]] para alterar o estado de revisão das páginas.',
 	'proofreadpage_notallowed' => 'Mudança não permitida',
+	'proofreadpage_notallowedtext' => 'Não lhe é permitido alterar o estado de revisão desta página.',
 	'proofreadpage_number_expected' => 'Erro: valor numérico esperado',
 	'proofreadpage_interval_too_large' => 'Erro: intervalo demasiado grande',
 	'proofreadpage_invalid_interval' => 'Erro: intervalo inválido',
 	'proofreadpage_nextpage' => 'Próxima página',
 	'proofreadpage_prevpage' => 'Página anterior',
-	'proofreadpage_header' => 'Cabeçalho (em modo noinclude):',
+	'proofreadpage_header' => "Cabeçalho (em modo ''noinclude''):",
 	'proofreadpage_body' => 'Corpo de página (em modo de transclusão):',
-	'proofreadpage_footer' => 'Rodapé (em modo noinclude):',
-	'proofreadpage_toggleheaders' => 'tornar as seções noinclude visíveis',
+	'proofreadpage_footer' => "Rodapé (em modo ''noinclude''):",
+	'proofreadpage_toggleheaders' => "inverter a visibilidade das secções ''noinclude''",
 	'proofreadpage_quality0_category' => 'Sem texto',
 	'proofreadpage_quality1_category' => 'Não revistas',
 	'proofreadpage_quality2_category' => 'Problemáticas',
@@ -3174,7 +3179,7 @@ $messages['pt'] = array(
 	'proofreadpage_quality3_message' => 'Esta página foi revista',
 	'proofreadpage_quality4_message' => 'Esta página foi validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
-	'proofreadpage_image_message' => 'Link para a página de índice',
+	'proofreadpage_image_message' => 'Ligação para a página de índice',
 	'proofreadpage_page_status' => 'Estado da página',
 	'proofreadpage_js_attributes' => 'Autor Título Ano Editora',
 	'proofreadpage_index_attributes' => 'Autor
@@ -3186,6 +3191,7 @@ Imagem|Imagem de capa
 Páginas||20
 Notas||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
+	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
