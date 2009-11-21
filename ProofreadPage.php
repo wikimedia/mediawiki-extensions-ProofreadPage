@@ -284,7 +284,7 @@ function pr_parse_index_text( $text ){
 	$attributes = array();
 	$var_names = explode(" ", wfMsgForContent('proofreadpage_js_attributes') );
 	for( $i = 0; $i < count($var_names); $i++ ) {
-		$tag_pattern = "/\n\|" . $var_names[$i] . "=(.*?)\n/i";
+		$tag_pattern = "/\n\|" . $var_names[$i] . "=(.*?)\n(\||\}\})/is";
 		//$var = 'proofreadPage'.$var_names[$i];
 		$var = strtolower( $var_names[$i] );
 		if( preg_match( $tag_pattern, $text, $matches ) ) {
