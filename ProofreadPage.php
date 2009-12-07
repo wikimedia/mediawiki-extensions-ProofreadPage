@@ -285,21 +285,18 @@ function pr_parse_index_text( $text ){
 /**
  * Return the ordered list of links to ns-0 from an index page
  */
-function pr_parse_index_links( $index_title, $parser ){
+function pr_parse_index_links( $index_title ){
 
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
-
-	# We use Parser::replaceVariables to expand templates
-	# However this method has a side effect on wgParser->mOutput->mTemplates, 
-	# To avoid this, we instanciate a temporary ParserOutput object
-	$saved_output = $parser->mOutput;
-	$parser->mOutput = new ParserOutput;
+	# Instanciate a new parser object to avoid side effects of $parser->replaceVariables
+	$parser = new Parser;
+	$parser->clearState();
+	$parser->mOptions = new ParserOptions();
+	$parser->setTitle( $index_title );
 	$rtext = $parser->replaceVariables( $text );
-	$parser->mOutput = $saved_output;
 	$text_links_pattern = "/\[\[([^:\|]*?)(\|(.*?)|)\]\]/i";
 	preg_match_all( $text_links_pattern, $rtext, $text_links, PREG_PATTERN_ORDER );
-
 	return $text_links;
 }
 
@@ -727,7 +724,6 @@ function pr_renderPages( $input, $args, &$parser ) {
 	$out = '';
 	
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
-	$text_links = pr_parse_index_links( $index_title, $parser );
 
 	if( $from || $to ) {
 
@@ -810,6 +806,7 @@ function pr_renderPages( $input, $args, &$parser ) {
 	}
 
 	if( $header ) {
+		$text_links = pr_parse_index_links( $index_title );
 		$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 		$h_out .= "|value=$header";
 		//find next and previous pages in list
