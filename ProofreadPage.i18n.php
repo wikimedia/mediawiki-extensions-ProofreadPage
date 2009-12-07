@@ -1461,6 +1461,7 @@ $messages['grc'] = array(
 	'proofreadpage_quality2_category' => 'Προβληματική',
 	'proofreadpage_index_listofpages' => 'Καταλογὴ δέλτων',
 	'proofreadpage_page_status' => 'Κατάστασις δέλτου',
+	'proofreadpage_pages' => '{{PLURAL:$1|δέλτος|δέλτοι}}',
 );
 
 /** Swiss German (Alemannisch)
@@ -3164,7 +3165,7 @@ $messages['pt'] = array(
 	'proofreadpage_number_expected' => 'Erro: valor numérico esperado',
 	'proofreadpage_interval_too_large' => 'Erro: intervalo demasiado grande',
 	'proofreadpage_invalid_interval' => 'Erro: intervalo inválido',
-	'proofreadpage_nextpage' => 'Próxima página',
+	'proofreadpage_nextpage' => 'Página seguinte',
 	'proofreadpage_prevpage' => 'Página anterior',
 	'proofreadpage_header' => "Cabeçalho (em modo ''noinclude''):",
 	'proofreadpage_body' => 'Corpo de página (em modo de transclusão):',
