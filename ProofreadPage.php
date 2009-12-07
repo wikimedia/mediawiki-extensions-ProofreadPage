@@ -729,80 +729,83 @@ function pr_renderPages( $input, $args, &$parser ) {
 	list( $links, $params, $attributes ) = pr_parse_index( $index_title );
 	$text_links = pr_parse_index_links( $index_title, $parser );
 
-	if( $links==null ) {
-		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
-		if ( !$imageTitle ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
-		}
-		$image = wfFindFile( $imageTitle );
-		if ( ! ( $image && $image->isMultiPage() && $image->pageCount() ) ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
-		}
-		$count = $image->pageCount();
+	if( $from || $to ) {
 
-		if( !$from ) $from = 1;
-		if( !$to ) $to = $count;
-
-		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
-		}
-		if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
-		}
-		if( $to - $from > 1000 ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
-		}
-
-		for( $i=$from; $i<=$to;$i++ ) {
-			$text = "$page_namespace:$index/" . $i;
-			list($pagenum, $links, $mode) = pr_pageNumber($i,$params);
-			$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
-			if( $args["$i"] != null){
-				$out.= "{{#lst:".$text."|".$args["$i"]."}}";
-			} else if($i == $from && $args["fromsection"]){
-				$out.= "{{#lst:".$text."|".$args["fromsection"]."}}";
-			} else if($i == $to && $args["tosection"]){
-				$out.= "{{#lst:".$text."|".$args["tosection"]."}}";
-			} else {
-				$out.= "{{:".$text."}}";
+		if( $links==null ) {
+			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
+			if ( !$imageTitle ) {
+				return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
 			}
-			$out.= "\n";
-			if( $i == $from ) $from_pagenum = $pagenum;
-			if( $i == $to ) $to_pagenum = $pagenum;
-		}
-	} 
-	else {
-		if($from) {
-			$adding = false;
-		} else {
-			$adding = true;
-			$from_pagenum = $links[3][0];
-		}
-		for( $i=0; $i < count( $links[1] ); $i++) { 
-			$text = $links[1][$i];
-			$pagenum = $links[3][$i];
-			if($text == $from ) {
-				$adding = true;
-				$from_pagenum = $pagenum;
+			$image = wfFindFile( $imageTitle );
+			if ( ! ( $image && $image->isMultiPage() && $image->pageCount() ) ) {
+				return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
 			}
-			if($adding){
-				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page="
-				  .$page_namespace.":".$text."|num=$pagenum}}</span>";
-				if($text == $from && $args["fromsection"]){
-					$out.= "{{#lst:".$page_namespace.":".$text."|".$args["fromsection"]."}}";
-				} else if($text == $to && $args["tosection"]){
-					$out.= "{{#lst:".$page_namespace.":".$text."|".$args["tosection"]."}}";
+			$count = $image->pageCount();
+
+			if( !$from ) $from = 1;
+			if( !$to ) $to = $count;
+
+			if( !is_numeric( $from ) || !is_numeric( $to ) ) {
+				return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
+			}
+			if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
+				return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+			}
+			if( $to - $from > 1000 ) {
+				return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
+			}
+	
+			for( $i=$from; $i<=$to;$i++ ) {
+				$text = "$page_namespace:$index/" . $i;
+				list($pagenum, $links, $mode) = pr_pageNumber($i,$params);
+				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
+				if( $args["$i"] != null){
+					$out.= "{{#lst:".$text."|".$args["$i"]."}}";
+				} else if($i == $from && $args["fromsection"]){
+					$out.= "{{#lst:".$text."|".$args["fromsection"]."}}";
+				} else if($i == $to && $args["tosection"]){
+					$out.= "{{#lst:".$text."|".$args["tosection"]."}}";
 				} else {
-					$out.= "{{:".$page_namespace.":".$text."}}";
+					$out.= "{{:".$text."}}";
+				}
+				$out.= "\n";
+				if( $i == $from ) $from_pagenum = $pagenum;
+				if( $i == $to ) $to_pagenum = $pagenum;
+			}
+		} 
+		else {
+			if($from) {
+				$adding = false;
+			} else {
+				$adding = true;
+				$from_pagenum = $links[3][0];
+			}
+			for( $i=0; $i < count( $links[1] ); $i++) { 
+				$text = $links[1][$i];
+				$pagenum = $links[3][$i];
+				if($text == $from ) {
+					$adding = true;
+					$from_pagenum = $pagenum;
+				}
+				if($adding){
+					$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page="
+					  .$page_namespace.":".$text."|num=$pagenum}}</span>";
+					if($text == $from && $args["fromsection"]){
+						$out.= "{{#lst:".$page_namespace.":".$text."|".$args["fromsection"]."}}";
+					} else if($text == $to && $args["tosection"]){
+						$out.= "{{#lst:".$page_namespace.":".$text."|".$args["tosection"]."}}";
+					} else {
+						$out.= "{{:".$page_namespace.":".$text."}}";
+					}
+				}
+				if($text == $to ) {
+					$adding = false;
+					$to_pagenum = $pagenum;
 				}
 			}
-			if($text == $to ) {
-				$adding = false;
-				$to_pagenum = $pagenum;
+			if( !$to ) {
+				$to_pagenum = $links[3][ count( $links[1] ) - 1 ];
 			}
-		}
-		if( !$to ) {
-			$to_pagenum = $links[3][ count( $links[1] ) - 1 ];
 		}
 	}
 
