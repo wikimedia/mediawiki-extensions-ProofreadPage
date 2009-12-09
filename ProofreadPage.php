@@ -287,14 +287,15 @@ function pr_parse_index_text( $text ){
  */
 function pr_parse_index_links( $index_title ){
 
+	# Instanciate a new parser object to avoid side effects of $parser->replaceVariables
+	global $pr_index_parser;
+	if( is_null($pr_index_parser) ) {
+		$pr_index_parser = new Parser;
+	}
 	$rev = Revision::newFromTitle( $index_title );
 	$text =	$rev->getText();
-	# Instanciate a new parser object to avoid side effects of $parser->replaceVariables
-	$parser = new Parser;
-	$parser->clearState();
-	$parser->mOptions = new ParserOptions();
-	$parser->setTitle( $index_title );
-	$rtext = $parser->replaceVariables( $text );
+	$options = new ParserOptions();
+	$rtext = $pr_index_parser->preprocess( $text, $index_title, $options );
 	$text_links_pattern = "/\[\[([^:\|]*?)(\|(.*?)|)\]\]/i";
 	preg_match_all( $text_links_pattern, $rtext, $text_links, PREG_PATTERN_ORDER );
 	return $text_links;
