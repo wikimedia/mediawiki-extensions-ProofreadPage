@@ -861,17 +861,24 @@ function pr_parse_page( $text ) {
 		return array( -1, null, $new_text ); 
 	}
 
-	$header_regexp = "/^<pagequality level=\"(0|1|2|3|4)\" user=\"(.*?)\" \/>/";
 	$header = $m[1];
 	$body = $m[2];
 	$footer = $m[3];
-        if( !preg_match( $header_regexp, $header, $m2 ) ) {
-		$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
-			."$header\n\n\n</noinclude>$body<noinclude>\n$footer</noinclude>";
-		return array( -1, null, $new_text ); 
+
+	$header_regexp = "/^<pagequality level=\"(0|1|2|3|4)\" user=\"(.*?)\" \/>/";
+	if( preg_match( $header_regexp, $header, $m2 ) ) {
+		return array( intval($m2[1]), $m2[2], null );
 	}
 
-	return array( intval($m2[1]), $m2[2], null );
+	$old_header_regexp = "/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}/is";
+	if( preg_match( $old_header_regexp, $header, $m3 ) ) {
+		return array( intval($m3[1]), $m3[3], null );
+	}
+
+	$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
+		."$header\n\n\n</noinclude>$body<noinclude>\n$footer</noinclude>";
+	return array( -1, null, $new_text ); 
+	
 }
 
 
@@ -946,7 +953,7 @@ function pr_attemptSave( $editpage ) {
 	list( $q , $username, $ptext ) = pr_parse_page( $text );
 	if( $q == -1 ) {
 		$editpage->textbox1 = $ptext;
-		return true;
+		$q = 1;
 	}
 
 	//read previous revision, so that I know how much I need to add to pr_index
@@ -954,28 +961,28 @@ function pr_attemptSave( $editpage ) {
 	if( $rev ) {
 		$old_text = $rev->getText();
 		list( $old_q , $old_username, $old_ptext ) = pr_parse_page( $old_text );
+		if( $old_q != -1 ) {
+			//check usernames
+			if( ($old_q != $q) && $wgUser->isAnon() ) {
+				$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
+				return false;
+			}
+			if ( ( ($old_username != $username) || ($old_q != $q) ) && ($wgUser->getName() != $username) ) {
+				$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
+				return false;
+			}
+			if( ( ($q == 4) && ($old_q < 3) ) || ( ($q == 4) && ($old_q == 3) && ($old_username == $username) ) ) {
+				$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
+				return false;
+			}
+		}
+		else $old_q = 1;
 	} else {
 		if($q == 4) {
 			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
 			return false;
 		}
 		$old_q = -1;
-	}
-
-	//check usernames
-	if( $old_q != -1 ) {
-		if( ($old_q != $q) && $wgUser->isAnon() ) {
-			$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
-			return false;
-		}
-		if ( ( ($old_username != $username) || ($old_q != $q) ) && ($wgUser->getName() != $username) ) {
-			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
-			return false;
-		}
-		if( ( ($q == 4) && ($old_q < 3) ) || ( ($q == 4) && ($old_q == 3) && ($old_username == $username) ) ) {
-			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
-			return false;
-		}
 	}
 
 	$editpage->mArticle->new_q = $q;
