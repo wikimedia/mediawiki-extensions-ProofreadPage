@@ -2193,6 +2193,7 @@ $messages['ka'] = array(
 	'proofreadpage_image' => 'სურათი',
 	'proofreadpage_index' => 'ინდექსი',
 	'proofreadpage_indexdupe' => 'დუბლიკატი ბმული',
+	'proofreadpage_nologin' => 'შესვლა არ მომხდარა',
 	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
 	'proofreadpage_prevpage' => 'წინა გვერდი',
 	'proofreadpage_quality2_category' => 'პრობლემატური',
@@ -2916,6 +2917,9 @@ $messages['no'] = array(
 	'proofreadpage_nosuch_index' => 'Feil: ingen slik indeks',
 	'proofreadpage_nosuch_file' => 'Feil: ingen slik fil',
 	'proofreadpage_badpage' => 'Feil format',
+	'proofreadpage_badpagetext' => 'Siden du prøver å lagre har galt format.',
+	'proofreadpage_indexdupe' => 'Duplikat lenke',
+	'proofreadpage_indexdupetext' => 'Sider kan ikke listes mer enn en gang på en indeksside.',
 	'proofreadpage_nologin' => 'Ikke innlogget',
 	'proofreadpage_nologintext' => 'Du må være [[Special:UserLogin|innlogget]] for å kunne forandre status på korrekturlesningen på sider.',
 	'proofreadpage_notallowed' => 'Å gjøre en forandring er ikke lov',
@@ -2950,6 +2954,8 @@ Kilde
 Bilde|Omslagsbilde
 Sider||20
 Merknader||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
+	'proofreadpage_specialpage_legend' => 'Søk i indekssider',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
