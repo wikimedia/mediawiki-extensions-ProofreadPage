@@ -2194,6 +2194,7 @@ $messages['ka'] = array(
 	'proofreadpage_index' => 'ინდექსი',
 	'proofreadpage_indexdupe' => 'დუბლიკატი ბმული',
 	'proofreadpage_nologin' => 'შესვლა არ მომხდარა',
+	'proofreadpage_notallowed' => 'ცვლილებები არაა დაშვებული',
 	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
 	'proofreadpage_prevpage' => 'წინა გვერდი',
 	'proofreadpage_quality2_category' => 'პრობლემატური',
@@ -3104,12 +3105,16 @@ Uwagi||10',
 /** Piedmontese (Piemontèis)
  * @author 555
  * @author Bèrto 'd Sèra
+ * @author Dragonòt
  */
 $messages['pms'] = array(
+	'indexpages' => "Lista dle pàgine d'ìndes",
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Ìndess',
 	'proofreadpage_image' => 'figura',
 	'proofreadpage_index' => 'Ìndess',
+	'proofreadpage_index_expected' => 'Eror: ìndes spetà',
+	'proofreadpage_nosuch_index' => 'Eror: ìndes pa esistent',
 	'proofreadpage_nextpage' => 'Pàgina anans',
 	'proofreadpage_prevpage' => 'Pàgina andré',
 	'proofreadpage_header' => 'Testà (da nen anclude):',
