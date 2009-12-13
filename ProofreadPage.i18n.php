@@ -3104,23 +3104,40 @@ Uwagi||10',
 
 /** Piedmontese (Piemontèis)
  * @author 555
+ * @author Borichèt
  * @author Bèrto 'd Sèra
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'indexpages' => "Lista dle pàgine d'ìndes",
+	'indexpages' => 'Lista dle pàgine ëd tàula',
+	'proofreadpage_desc' => 'A përmëtt confront bel fé ëd test con la scansion original',
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Ìndess',
 	'proofreadpage_image' => 'figura',
 	'proofreadpage_index' => 'Ìndess',
-	'proofreadpage_index_expected' => 'Eror: ìndes spetà',
-	'proofreadpage_nosuch_index' => 'Eror: ìndes pa esistent',
+	'proofreadpage_index_expected' => 'Eror: a së spetava na tàula',
+	'proofreadpage_nosuch_index' => 'Eror: tàula pa esistenta',
+	'proofreadpage_nosuch_file' => 'Eror: ël file a-i é pa',
+	'proofreadpage_badpage' => 'Formà pa bon',
+	'proofreadpage_badpagetext' => "Ël formà dla pàgina ch'i l'has tentà ëd salvé a l'é pa bon.",
+	'proofreadpage_indexdupe' => 'Colegament duplicà',
+	'proofreadpage_indexdupetext' => "Le pàgine a peul pa esse listà pi 'd na vòta ans na pàgina d'ìndes.",
+	'proofreadpage_nologin' => 'Pa intrà',
+	'proofreadpage_nologintext' => 'It deuve [[Special:UserLogin|Intré]] për modifié lë stat proofreading ëd le pàgine.',
+	'proofreadpage_notallowed' => 'Cambe pa possìbil',
+	'proofreadpage_notallowedtext' => 'It peule pa cambié lë stat proofreading dë sta pàgina-sì.',
+	'proofreadpage_number_expected' => 'Eror: valor numérich spetà',
+	'proofreadpage_interval_too_large' => 'Eror: antërval tròp largh',
+	'proofreadpage_invalid_interval' => 'Eror: antërval pa bon',
 	'proofreadpage_nextpage' => 'Pàgina anans',
 	'proofreadpage_prevpage' => 'Pàgina andré',
 	'proofreadpage_header' => 'Testà (da nen anclude):',
 	'proofreadpage_body' => 'Còrp dla pàgina (da transclude):',
 	'proofreadpage_footer' => 'Pè (da nen anclude)',
 	'proofreadpage_toggleheaders' => 'smon/stërma le part da nen anclude',
+	'proofreadpage_quality0_category' => 'Sensa test',
+	'proofreadpage_quality1_category' => 'Pa passà ël proofread',
+	'proofreadpage_quality2_category' => 'Problemàtich',
 );
 
 /** Pashto (پښتو)
