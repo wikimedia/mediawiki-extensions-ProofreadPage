@@ -50,6 +50,8 @@ $wgExtensionCredits['other'][] = array(
 
 $wgExtensionFunctions[] = "pr_main";
 
+# parser object; a default value is needed if register_globals is enabled
+$pr_index_parser = null;
 
 function pr_schema_update() {
 	global $wgExtNewTables;
