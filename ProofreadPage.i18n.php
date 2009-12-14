@@ -2208,6 +2208,7 @@ $messages['ka'] = array(
 გამოსახულება|ყდის გამოსახულება
 გვერდები||20
 შენიშვნები||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|გვერდი|გვერდები}}',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -3138,6 +3139,27 @@ $messages['pms'] = array(
 	'proofreadpage_quality0_category' => 'Sensa test',
 	'proofreadpage_quality1_category' => 'Pa passà ël proofread',
 	'proofreadpage_quality2_category' => 'Problemàtich',
+	'proofreadpage_quality3_category' => 'Proofread',
+	'proofreadpage_quality4_category' => 'Validà',
+	'proofreadpage_quality0_message' => "Sta pàgina-sì a l'ha pa dabzògn ëd la revision",
+	'proofreadpage_quality1_message' => "Sta pàgina-sì a l'é pa stàita revisinà",
+	'proofreadpage_quality2_message' => "A l'é stàit-ie un problema an revisionand sta pàgina-sì",
+	'proofreadpage_quality3_message' => "Sta pàgina-sì a l'é stàita revisionà",
+	'proofreadpage_quality4_message' => "Sta pàgina-sì a l'é stàita validà",
+	'proofreadpage_index_listofpages' => 'Lista ëd pàgina',
+	'proofreadpage_image_message' => 'Colegament a la pàgina ìndes',
+	'proofreadpage_page_status' => 'Stat ëd la pàgina',
+	'proofreadpage_js_attributes' => 'Autor Tìtol Ann Editor',
+	'proofreadpage_index_attributes' => 'Autor
+Tìtol
+Ann|Ann ëd publicassion
+Editor
+Sorziss
+Figura|Figura ëd coertin-a
+Pàgine||20
+Nòte||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgine}}',
+	'proofreadpage_specialpage_legend' => "Serca la pàgina dl'ìndes",
 );
 
 /** Pashto (پښتو)
