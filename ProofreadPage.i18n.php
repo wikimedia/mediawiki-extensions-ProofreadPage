@@ -3969,14 +3969,22 @@ $messages['ug-latn'] = array(
 );
 
 /** Ukrainian (Українська)
+ * @author AS
  * @author Ahonc
  */
 $messages['uk'] = array(
+	'indexpages' => 'Список індексових сторінок',
 	'proofreadpage_desc' => 'Дозволяє легко порівнювати текст і відскановане зображення оригіналу',
 	'proofreadpage_namespace' => 'Сторінка',
 	'proofreadpage_index_namespace' => 'Індекс',
 	'proofreadpage_image' => 'зображення',
 	'proofreadpage_index' => 'Індекс',
+	'proofreadpage_index_expected' => 'Помилка: очікувано індексу.',
+	'proofreadpage_nosuch_index' => 'Помилка: нема такого індексу',
+	'proofreadpage_nosuch_file' => 'Помилка: нема такого файлу',
+	'proofreadpage_badpage' => 'Неправильний формат',
+	'proofreadpage_badpagetext' => 'Формат сторінки, яку ви хочете зберегти, неправильний.',
+	'proofreadpage_indexdupe' => 'Посилання-дублікат',
 	'proofreadpage_nextpage' => 'Наступна сторінка',
 	'proofreadpage_prevpage' => 'Попередня сторінка',
 	'proofreadpage_header' => 'Заголовок (не включається):',
