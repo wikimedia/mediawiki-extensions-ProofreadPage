@@ -474,6 +474,7 @@ $messages['bn'] = array(
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
+ * @author Y-M D
  */
 $messages['br'] = array(
 	'indexpages' => 'Roll ar pajennoù meneger',
@@ -486,6 +487,7 @@ $messages['br'] = array(
 	'proofreadpage_nosuch_file' => "Fazi : n'eus restr ebet evel-se",
 	'proofreadpage_badpage' => 'Furmad fall',
 	'proofreadpage_nologin' => "N'eo ket kevreet",
+	'proofreadpage_notallowed' => "N'eo ket ar c'hemm-se",
 	'proofreadpage_nextpage' => "Pajenn war-lerc'h",
 	'proofreadpage_prevpage' => 'Pajenn a-raok',
 	'proofreadpage_quality0_category' => 'Hep testenn',
@@ -3111,22 +3113,22 @@ Uwagi||10',
  */
 $messages['pms'] = array(
 	'indexpages' => 'Lista dle pàgine ëd tàula',
-	'proofreadpage_desc' => 'A përmëtt confront bel fé ëd test con la scansion original',
+	'proofreadpage_desc' => 'A rend bel fé confronté ëd test con la scansion original',
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Ìndess',
 	'proofreadpage_image' => 'figura',
 	'proofreadpage_index' => 'Ìndess',
 	'proofreadpage_index_expected' => 'Eror: a së spetava na tàula',
 	'proofreadpage_nosuch_index' => 'Eror: tàula pa esistenta',
-	'proofreadpage_nosuch_file' => 'Eror: ël file a-i é pa',
+	'proofreadpage_nosuch_file' => "Eror: l'archivi a-i é pa",
 	'proofreadpage_badpage' => 'Formà pa bon',
-	'proofreadpage_badpagetext' => "Ël formà dla pàgina ch'i l'has tentà ëd salvé a l'é pa bon.",
+	'proofreadpage_badpagetext' => "Ël formà dla pàgina ch'a ha sërcà ëd salvé a l'é pa bon.",
 	'proofreadpage_indexdupe' => 'Colegament duplicà',
-	'proofreadpage_indexdupetext' => "Le pàgine a peul pa esse listà pi 'd na vòta ans na pàgina d'ìndes.",
-	'proofreadpage_nologin' => 'Pa intrà',
-	'proofreadpage_nologintext' => 'It deuve [[Special:UserLogin|Intré]] për modifié lë stat proofreading ëd le pàgine.',
-	'proofreadpage_notallowed' => 'Cambe pa possìbil',
-	'proofreadpage_notallowedtext' => 'It peule pa cambié lë stat proofreading dë sta pàgina-sì.',
+	'proofreadpage_indexdupetext' => "Le pàgine a peulo pa esse listà pi 'd na vòta an sna pàgina ëd tàula.",
+	'proofreadpage_nologin' => 'Pa rintrà ant ël sistema',
+	'proofreadpage_nologintext' => 'It deve [[Special:UserLogin|intré ant ël sistema]] për modifiché lë stat ëd verifìca ëd le pàgine.',
+	'proofreadpage_notallowed' => 'Cangiament pa possìbil',
+	'proofreadpage_notallowedtext' => 'It peule pa cambié lë stat ëd verìfica dë sta pàgina-sì.',
 	'proofreadpage_number_expected' => 'Eror: valor numérich spetà',
 	'proofreadpage_interval_too_large' => 'Eror: antërval tròp largh',
 	'proofreadpage_invalid_interval' => 'Eror: antërval pa bon',
@@ -3137,29 +3139,29 @@ $messages['pms'] = array(
 	'proofreadpage_footer' => 'Pè (da nen anclude)',
 	'proofreadpage_toggleheaders' => 'smon/stërma le part da nen anclude',
 	'proofreadpage_quality0_category' => 'Sensa test',
-	'proofreadpage_quality1_category' => 'Pa passà ël proofread',
+	'proofreadpage_quality1_category' => 'Pa passà an verìfica',
 	'proofreadpage_quality2_category' => 'Problemàtich',
-	'proofreadpage_quality3_category' => 'Proofread',
+	'proofreadpage_quality3_category' => 'Verificà',
 	'proofreadpage_quality4_category' => 'Validà',
 	'proofreadpage_quality0_message' => "Sta pàgina-sì a l'ha pa dabzògn ëd la revision",
-	'proofreadpage_quality1_message' => "Sta pàgina-sì a l'é pa stàita revisinà",
-	'proofreadpage_quality2_message' => "A l'é stàit-ie un problema an revisionand sta pàgina-sì",
+	'proofreadpage_quality1_message' => "Sta pàgina-sì a l'é pa stàita revisionà",
+	'proofreadpage_quality2_message' => 'A-i é stàje un problema an revisionand sta pàgina-sì',
 	'proofreadpage_quality3_message' => "Sta pàgina-sì a l'é stàita revisionà",
 	'proofreadpage_quality4_message' => "Sta pàgina-sì a l'é stàita validà",
-	'proofreadpage_index_listofpages' => 'Lista ëd pàgina',
-	'proofreadpage_image_message' => 'Colegament a la pàgina ìndes',
+	'proofreadpage_index_listofpages' => 'Lista ëd le pàgine',
+	'proofreadpage_image_message' => 'Colegament a la pàgina ëd tàula',
 	'proofreadpage_page_status' => 'Stat ëd la pàgina',
 	'proofreadpage_js_attributes' => 'Autor Tìtol Ann Editor',
 	'proofreadpage_index_attributes' => 'Autor
 Tìtol
 Ann|Ann ëd publicassion
 Editor
-Sorziss
+Sorgiss
 Figura|Figura ëd coertin-a
 Pàgine||20
 Nòte||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgine}}',
-	'proofreadpage_specialpage_legend' => "Serca la pàgina dl'ìndes",
+	'proofreadpage_specialpage_legend' => 'Sërca ant le pàgine ëd tàula',
 );
 
 /** Pashto (پښتو)
