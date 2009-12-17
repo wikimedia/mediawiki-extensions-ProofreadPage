@@ -14,7 +14,7 @@ function findparam(str2, param_name) {
 function proofreadpage_index_init() {
 
 	var toolbar = document.getElementById("toolbar"); 
-	toolbar.parentNode.removeChild(toolbar);
+	if(toolbar) toolbar.parentNode.removeChild(toolbar);
 
 	var text = document.getElementById("wpTextbox1"); 
 	if(!text) return;
