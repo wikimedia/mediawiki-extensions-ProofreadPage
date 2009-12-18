@@ -402,7 +402,7 @@ var prev_margin_x = 0;
 var prev_margin_y = 0;
 var init_x = 0;
 var init_y = 0;
-
+var is_drag = false;
 
 function pr_drop(evt){
 	prev_margin_x = margin_x;
@@ -411,6 +411,24 @@ function pr_drop(evt){
 	document.onmousemove = null;
 	document.onmousedown = null;
 	zp_container.onmousemove = pr_move;
+
+	var image_container = document.getElementById("pr_container");
+	if( is_drag==false ) {
+		if( self.container_css.search("overflow:hidden") > -1 ) {
+			self.container_css = self.container_css.replace("overflow:hidden","overflow:auto");
+			self.container_css = self.container_css.replace("cursor:crosshair","cursor:default");
+			image_container.style.cssText = self.container_css;
+			if (image_container.removeEventListener) 
+				image_container.removeEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+		} else {
+			self.container_css = self.container_css.replace("overflow:auto","overflow:hidden");
+			self.container_css = self.container_css.replace("cursor:default","cursor:crosshair");
+			image_container.style.cssText = self.container_css;
+			if (image_container.addEventListener) 
+				image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+		}
+	}
+	is_drag = false;
 	return false;
 }
 
@@ -431,7 +449,7 @@ function pr_grab(evt){
 	document.onmousemove = pr_drag;
 	document.onmouseup = pr_drop;
 	zp_container.onmousemove = pr_drag;
-	
+
 	if(evt.pageX) {
 		countoffset();
 		lastxx=evt.pageX - ffox; 
@@ -445,6 +463,7 @@ function pr_grab(evt){
 	
 	init_x = lastxx;
 	init_y = lastyy;
+	is_drag = false;
 	
 	return false;
 
@@ -467,6 +486,7 @@ function pr_drag(evt) {
 	
 	if (evt.preventDefault) evt.preventDefault();
 	evt.returnValue = false;
+	is_drag = true;
 	return false;
 }
 
@@ -579,8 +599,10 @@ function  pr_fill_table(horizontal_layout){
 	}
 	else {
 		self.table.appendChild(self.text_container);
-		var tb = document.getElementById("toolbar");
-		tb.parentNode.insertBefore(image_container,tb);
+		form = document.getElementById("editform");
+		tb = document.getElementById("toolbar");
+		if(tb) tb.parentNode.insertBefore(image_container,tb);
+		else form.parentNode.insertBefore(image_container,form);
 	}
 	
 	self.pr_horiz = horizontal_layout;
@@ -618,13 +640,14 @@ function  pr_fill_table(horizontal_layout){
 			self.DisplayHeight = Math.ceil(height*0.85);
 			self.DisplayWidth = parseInt(width/2-70);
 			img_w = self.DisplayWidth;
-			self.container_css = "background:#000000; overflow:hidden; width:"+self.DisplayWidth+"px; height:"+self.DisplayHeight+"px;";
+			css_wh = "width:"+self.DisplayWidth+"px; height:"+self.DisplayHeight+"px;";
 		}
 		else{
 			self.DisplayHeight = Math.ceil(height*0.4);
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
-			self.container_css = "background:#000000; overflow:auto; width:100%; height:"+self.DisplayHeight+"px;";
+			css_wh = "width:100%; height:"+self.DisplayHeight+"px;";
 		}
+		self.container_css = "cursor:default; background:#000000; overflow:auto; " + css_wh;
 		image_container.innerHTML = 
 			"<img id=\"ProofReadImage\" src=\""	
 			+ escapeQuotesHTML(proofreadPageViewURL) 
@@ -632,14 +655,7 @@ function  pr_fill_table(horizontal_layout){
 		
 		image_container.style.cssText = self.container_css;
 		pr_zoom(0);
-	}
 
-	//setup the mouse wheel listener
-	if(proofreadPageIsEdit) {
-		if(!horizontal_layout){
-			if (image_container.addEventListener) image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
-			image_container.onmousewheel = pr_zoom_wheel;
-		}
 		image_container.onmousedown = pr_grab;
 		image_container.onmousemove = pr_move;
 
