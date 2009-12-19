@@ -486,6 +486,7 @@ $messages['br'] = array(
 	'proofreadpage_nosuch_index' => "Fazi : n'eus ket eus ar meneger-se",
 	'proofreadpage_nosuch_file' => "Fazi : n'eus restr ebet evel-se",
 	'proofreadpage_badpage' => 'Furmad fall',
+	'proofreadpage_indexdupe' => 'Liamm e doubl',
 	'proofreadpage_nologin' => "N'eo ket kevreet",
 	'proofreadpage_notallowed' => "N'eo ket ar c'hemm-se",
 	'proofreadpage_nextpage' => "Pajenn war-lerc'h",
