@@ -516,14 +516,17 @@ function pr_zoom(delta){
 		if(delta_w==0) return;
 		var s = (delta_w>0)?1:-1;
 
+		var ptx = xx + image_container.scrollLeft;
+		var pty = yy + image_container.scrollTop;
+		
 		for(var dw=s; dw != delta_w; dw=dw+s){
 			zp_img.width = old_width + dw;//this adds 1 pixel
 			image_container.style.cssText = self.container_css; //needed by IE6
 			if(xx){
 				//magnification factor
 				var lambda = (old_width+dw)/old_width;
-				margin_x = xx - lambda*(xx - prev_margin_x);
-				margin_y = yy - lambda*(yy - prev_margin_y);
+				margin_x = ptx - lambda*(ptx - prev_margin_x);
+				margin_y = pty - lambda*(pty - prev_margin_y);
 				zp_img.style.margin =  Math.round(margin_y) + 'px 0px 0px ' + Math.round(margin_x) + 'px';
 			}
 		}
