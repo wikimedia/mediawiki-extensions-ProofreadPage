@@ -2,9 +2,8 @@
 
 
 function pr_init_tabs(){
-	var a;
-	if ( self.skin=="vector" ) a = document.getElementById("p-namespaces");
-	else var a = document.getElementById("p-cactions");
+	var a = document.getElementById("p-namespaces");
+	if(!a) a = document.getElementById("p-cactions");
 
 	if (!a) return;
 	var b = a.getElementsByTagName("ul");
