@@ -2913,6 +2913,7 @@ Merknader||10',
  * @author Simny
  */
 $messages['no'] = array(
+	'indexpages' => 'Liste over innholdsfortegnelser',
 	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
 	'proofreadpage_namespace' => 'Side',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -2928,6 +2929,7 @@ $messages['no'] = array(
 	'proofreadpage_nologin' => 'Ikke innlogget',
 	'proofreadpage_nologintext' => 'Du må være [[Special:UserLogin|innlogget]] for å kunne forandre status på korrekturlesningen på sider.',
 	'proofreadpage_notallowed' => 'Å gjøre en forandring er ikke lov',
+	'proofreadpage_notallowedtext' => 'Du har ikke rettigheter til å endre korrekturlesningen på denne siden.',
 	'proofreadpage_number_expected' => 'Feil: Numerisk verdi forventet',
 	'proofreadpage_interval_too_large' => 'Feil: Intervall for stort',
 	'proofreadpage_invalid_interval' => 'Feil: ugyldig intervall',
