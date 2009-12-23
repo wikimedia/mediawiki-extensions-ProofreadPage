@@ -497,11 +497,8 @@ function pr_zoom(delta){
 	if(!zp_img) return;
 	
 	if (delta == 0) {
-		if(self.pr_horiz)
-			//reduce width by 20 pixels in order to prevent horizontal scrollbar from showing up
-			zp_img.width = image_container.offsetWidth-20; 
-		else
-			zp_img.width = image_container.offsetWidth;
+		//reduce width by 20 pixels in order to prevent horizontal scrollbar from showing up
+		zp_img.width = image_container.offsetWidth-20; 
 		zp_img.style.margin = '0px 0px 0px 0px';
 		image_container.style.cssText = self.container_css; //needed by IE6
 
@@ -776,6 +773,12 @@ function pr_setup() {
 			image1.onclick = pr_toggle_layout;
 			toolbar.appendChild(image1);
 
+		} else {
+			var mb = document.createElement("div");
+			mb.style.cssText="background-color:#eeeeee;";
+			mb.innerHTML = "<a href=\"javascript:pr_toggle_visibility();\">headers</a> - <a href=\"javascript:pr_toggle_layout();\">layout</a> - <a href=\"javascript:pr_zoom(0);\">zoom</a> : <a href=\"javascript:xx=0;yy=0;pr_zoom(2);\">+</a> / <a href=\"javascript:xx=0;yy=0;pr_zoom(-2);\">\u2013</a>";
+			var p = table.parentNode;
+			p.insertBefore(mb,p.firstChild);
 		}
 	}
 }
