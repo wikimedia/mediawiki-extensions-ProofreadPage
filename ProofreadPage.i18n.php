@@ -106,14 +106,56 @@ $messages['qqq'] = array(
  * @author SPQRobin
  */
 $messages['af'] = array(
+	'indexpages' => 'Lys van indeks-bladsye',
+	'proofreadpage_desc' => 'Maak dit moontlik om teks maklik met die oorspronklike skandering te vergelyk',
 	'proofreadpage_namespace' => 'Bladsye',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'beeld',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Fout: indeks verwag',
+	'proofreadpage_nosuch_index' => 'Fout: die indeks bestaan nie',
+	'proofreadpage_nosuch_file' => 'Fout: die lêer bestaan nie',
+	'proofreadpage_badpage' => 'Verkeerde formaat',
+	'proofreadpage_badpagetext' => 'Die formaat van die bladsy wat u probeer stoor is verkeerd.',
+	'proofreadpage_indexdupe' => 'Dubbele skakel',
+	'proofreadpage_indexdupetext' => "Bladsye kan nie meer as een keer op 'n indeksbladsy gelys word nie.",
+	'proofreadpage_nologin' => 'Nie aangeteken nie',
+	'proofreadpage_nologintext' => 'U moet [[Special:UserLogin|aanteken]] om die proeflees-status van bladsye te kan wysig.',
+	'proofreadpage_notallowed' => 'Wysiging is nie toegelaat nie',
+	'proofreadpage_notallowedtext' => 'U mag nie die proeflees-status van hierdie bladsy wysig nie.',
+	'proofreadpage_number_expected' => 'Fout: numeriese waarde verwag',
+	'proofreadpage_interval_too_large' => 'Fout: die interval is te groot',
+	'proofreadpage_invalid_interval' => 'Fout: die interval is ongeldig',
 	'proofreadpage_nextpage' => 'Volgende bladsy',
 	'proofreadpage_prevpage' => 'Vorige bladsy',
+	'proofreadpage_header' => 'Opskrif (geen inklusie):',
+	'proofreadpage_body' => 'Bladsyteks (vir transklusie):',
+	'proofreadpage_footer' => 'Voetteks (geen inklusie):',
+	'proofreadpage_toggleheaders' => 'wysig sigbaarheid van afdelings sonder transklusie',
+	'proofreadpage_quality0_category' => 'Geen teks nie',
+	'proofreadpage_quality1_category' => 'Nie geproeflees nie',
+	'proofreadpage_quality2_category' => 'Onvolledig',
+	'proofreadpage_quality3_category' => 'Proeflees',
+	'proofreadpage_quality4_category' => 'Gekontroleer',
+	'proofreadpage_quality0_message' => 'Hierdie bladsy hoef nie geproeflees te word nie',
+	'proofreadpage_quality1_message' => 'Hierdie bladsy is nie geproeflees nie',
+	'proofreadpage_quality2_message' => "Daar was 'n probleem tydens die proeflees van hierdie bladsy",
+	'proofreadpage_quality3_message' => 'Hierdie bladsy is geproeflees',
+	'proofreadpage_quality4_message' => 'Hierdie bladsy is gekontroleer',
 	'proofreadpage_index_listofpages' => 'Lys van bladsye',
+	'proofreadpage_image_message' => 'Skakel na die indeksblad',
 	'proofreadpage_page_status' => 'Bladsystatus',
+	'proofreadpage_js_attributes' => 'Outeur Titel Jaar Uitgewer',
+	'proofreadpage_index_attributes' => 'Outeur
+Titel
+Jaar|Jaar van publikasie
+Uitgewer
+Bron
+Beeld|Omslag
+Bladsye||20
+Opmerkings||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|bladsy|bladsye}}',
+	'proofreadpage_specialpage_legend' => 'Deursoek indeks-bladsye',
 );
 
 /** Amharic (አማርኛ)
@@ -211,6 +253,7 @@ $messages['ar'] = array(
 الصفحات||20
 الملاحظات||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|صفحة|صفحات}}',
+	'proofreadpage_specialpage_legend' => 'بحث صفحات الفهرس',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -412,6 +455,7 @@ $messages['be-tarask'] = array(
  * @author Borislav
  * @author DCLXVI
  * @author Spiritia
+ * @author Turin
  */
 $messages['bg'] = array(
 	'proofreadpage_desc' => 'Позволява лесно сравнение на текст с оригинален сканиран документ',
@@ -419,10 +463,13 @@ $messages['bg'] = array(
 	'proofreadpage_index_namespace' => 'Показалец',
 	'proofreadpage_image' => 'картинка',
 	'proofreadpage_index' => 'Показалец',
+	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
+	'proofreadpage_badpage' => 'Неправилен формат',
 	'proofreadpage_nextpage' => 'Следваща страница',
 	'proofreadpage_prevpage' => 'Предишна страница',
 	'proofreadpage_body' => 'Тяло на страницата (за вграждане):',
 	'proofreadpage_toggleheaders' => 'превключване на видимостта на разделите с „noinclude“',
+	'proofreadpage_quality0_category' => 'Без текст',
 	'proofreadpage_quality1_category' => 'Некоригирана',
 	'proofreadpage_quality2_category' => 'Проблематична',
 	'proofreadpage_quality3_category' => 'Коригирана',
@@ -1082,6 +1129,7 @@ Páginas||20
 Comentarios||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
 	'proofreadpage_specialpage_legend' => 'Buscar en páginas de índice',
+	'proofreadpage_source' => 'Fuente',
 );
 
 /** Estonian (Eesti)
@@ -1529,6 +1577,8 @@ Syte||20
 Aamerkige||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Syte|Syte}}',
 	'proofreadpage_specialpage_legend' => 'Indexsyte dursueche',
+	'proofreadpage_source' => 'Quälle',
+	'proofreadpage_source_message' => 'Gscannti Uusgab, wu brucht wird go dää Text erarbeite',
 );
 
 /** Manx (Gaelg)
@@ -3871,6 +3921,31 @@ $messages['th'] = array(
 หมายเหตุ||10',
 );
 
+/** Turkmen (Türkmençe)
+ * @author Hanberke
+ */
+$messages['tk'] = array(
+	'indexpages' => 'Indeks sahypalarynyň sanawy',
+	'proofreadpage_namespace' => 'Sahypa',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'surat',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Säwlik: indekse garaşylýardy',
+	'proofreadpage_nosuch_index' => 'Säwlik: beýle indeks ýok',
+	'proofreadpage_nosuch_file' => 'Säwlik: beýle faýl ýok',
+	'proofreadpage_badpage' => 'Ýalňyş format',
+	'proofreadpage_indexdupe' => 'Dublikat çykgyt',
+	'proofreadpage_nologin' => 'Sessiýa açylmadyk',
+	'proofreadpage_notallowed' => 'Üýtgeşmä rugsat berilmeýär',
+	'proofreadpage_nextpage' => 'Indiki sahypa',
+	'proofreadpage_prevpage' => 'Öňki sahypa',
+	'proofreadpage_quality0_category' => 'Tekstsiz',
+	'proofreadpage_index_listofpages' => 'Sahypalaryň sanawy',
+	'proofreadpage_image_message' => 'Indeks sahypasyna çykgyt',
+	'proofreadpage_page_status' => 'Sahypanyň statusy',
+	'proofreadpage_specialpage_legend' => 'Indeks sahypalaryny gözle',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
@@ -3984,6 +4059,7 @@ $messages['ug-latn'] = array(
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
+ * @author Prima klasy4na
  */
 $messages['uk'] = array(
 	'indexpages' => 'Список індексових сторінок',
@@ -3998,6 +4074,7 @@ $messages['uk'] = array(
 	'proofreadpage_badpage' => 'Неправильний формат',
 	'proofreadpage_badpagetext' => 'Формат сторінки, яку ви хочете зберегти, неправильний.',
 	'proofreadpage_indexdupe' => 'Посилання-дублікат',
+	'proofreadpage_interval_too_large' => 'Помилка: інтервал занадто великий',
 	'proofreadpage_nextpage' => 'Наступна сторінка',
 	'proofreadpage_prevpage' => 'Попередня сторінка',
 	'proofreadpage_header' => 'Заголовок (не включається):',
@@ -4020,6 +4097,7 @@ $messages['uk'] = array(
 Зображення|Зображення обкладинки
 Сторінок||20
 Приміток||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|сторінка|сторінки|сторінок}}',
 );
 
 /** Vèneto (Vèneto)
@@ -4218,18 +4296,30 @@ $messages['yue'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Gaoxuewei
  * @author Liangent
  */
 $messages['zh-hans'] = array(
+	'indexpages' => '索引页列表',
 	'proofreadpage_desc' => '容许简易地比较原扫描和文字',
 	'proofreadpage_namespace' => '页面',
 	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '图像',
 	'proofreadpage_index' => '索引',
+	'proofreadpage_index_expected' => '错误：需要索引',
+	'proofreadpage_nosuch_index' => '错误：没有此类索引',
+	'proofreadpage_nosuch_file' => '错误：没有这种文件',
 	'proofreadpage_badpage' => '错误的格式',
+	'proofreadpage_badpagetext' => '您试图保存的页面的格式不正确。',
 	'proofreadpage_indexdupe' => '重复链接',
+	'proofreadpage_indexdupetext' => '在索引页中，页面不会被重复列出。',
 	'proofreadpage_nologin' => '没有登录',
-	'proofreadpage_notallowed' => '更改不允许',
+	'proofreadpage_nologintext' => '您必须[[Special:UserLogin|先登录]]才能修改页面的校对状态。',
+	'proofreadpage_notallowed' => '不允许修改',
+	'proofreadpage_notallowedtext' => '您没有获得修改这个页面校对状态的许可。',
+	'proofreadpage_number_expected' => '错误：不为数值',
+	'proofreadpage_interval_too_large' => '错误：间隔过大',
+	'proofreadpage_invalid_interval' => '错误：无法识别间隔',
 	'proofreadpage_nextpage' => '下一页',
 	'proofreadpage_prevpage' => '上一页',
 	'proofreadpage_header' => '首 （不包含）:',
@@ -4241,6 +4331,11 @@ $messages['zh-hans'] = array(
 	'proofreadpage_quality2_category' => '有问题',
 	'proofreadpage_quality3_category' => '已校对',
 	'proofreadpage_quality4_category' => '已认证',
+	'proofreadpage_quality0_message' => '本页面不需要校对',
+	'proofreadpage_quality1_message' => '本页面还没有被校对',
+	'proofreadpage_quality2_message' => '校对本页时出现了一个问题',
+	'proofreadpage_quality3_message' => '本页已经被校对',
+	'proofreadpage_quality4_message' => '本页已经被认证',
 	'proofreadpage_index_listofpages' => '页面列表',
 	'proofreadpage_image_message' => '连到索引页的链接',
 	'proofreadpage_page_status' => '页面状态',
@@ -4253,30 +4348,51 @@ $messages['zh-hans'] = array(
 图像|封面照
 页数||20
 备注||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|页|页}}',
+	'proofreadpage_specialpage_legend' => '搜索索引页',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Gaoxuewei
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
+	'indexpages' => '索引頁列表',
 	'proofreadpage_desc' => '容許簡易地去比較原掃瞄和文字',
 	'proofreadpage_namespace' => '頁面',
 	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '圖像',
 	'proofreadpage_index' => '索引',
+	'proofreadpage_index_expected' => '錯誤：需要索引',
+	'proofreadpage_nosuch_index' => '錯誤：沒有此類索引',
+	'proofreadpage_nosuch_file' => '錯誤：沒有這種文件',
 	'proofreadpage_badpage' => '格式錯誤',
+	'proofreadpage_badpagetext' => '您試圖保存的頁面的格式不正確。',
+	'proofreadpage_indexdupe' => '重複鏈接',
+	'proofreadpage_indexdupetext' => '在索引頁中，頁面不會被重複列出。',
 	'proofreadpage_nologin' => '未登入',
+	'proofreadpage_nologintext' => '您必须[[Special:UserLogin|先登录]]才能修改页面的校对状态。',
+	'proofreadpage_notallowed' => '不允許修改',
+	'proofreadpage_notallowedtext' => '您沒有獲得修改這個頁面校對狀態的許可。',
+	'proofreadpage_number_expected' => '錯誤：不為數值',
+	'proofreadpage_interval_too_large' => '錯誤：間隔過大',
+	'proofreadpage_invalid_interval' => '錯誤：無法識別間隔',
 	'proofreadpage_nextpage' => '下一頁',
 	'proofreadpage_prevpage' => '上一頁',
 	'proofreadpage_header' => '首 （不包含）:',
 	'proofreadpage_body' => '頁身 （包含）:',
 	'proofreadpage_footer' => '尾 （不包含）:',
 	'proofreadpage_toggleheaders' => '調整不包含段落之可見性',
+	'proofreadpage_quality0_category' => '沒有文字',
 	'proofreadpage_quality1_category' => '未校對',
 	'proofreadpage_quality2_category' => '有問題',
 	'proofreadpage_quality3_category' => '已校對',
 	'proofreadpage_quality4_category' => '已認證',
+	'proofreadpage_quality0_message' => '本頁不需要校對',
 	'proofreadpage_quality1_message' => '本頁面尚未進行校對',
+	'proofreadpage_quality2_message' => '校對本頁時出現了一個問題',
+	'proofreadpage_quality3_message' => '本頁已經被校對',
+	'proofreadpage_quality4_message' => '本頁已經被認證',
 	'proofreadpage_index_listofpages' => '頁面清單',
 	'proofreadpage_image_message' => '連到索引頁的連結',
 	'proofreadpage_page_status' => '頁面狀態',
@@ -4289,5 +4405,7 @@ $messages['zh-hant'] = array(
 圖像|封面照
 頁數||20
 備註||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|頁|頁}}',
+	'proofreadpage_specialpage_legend' => '搜索索引頁',
 );
 
