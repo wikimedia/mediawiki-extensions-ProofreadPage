@@ -70,6 +70,8 @@ Remarks||10',
 	'proofreadpage_pages'        => "{{PLURAL:$1|page|pages}}",
 	'proofreadpage_specialpage_text'       => '',
 	'proofreadpage_specialpage_legend'     => 'Search index pages',
+	'proofreadpage_source'         => 'Source',
+	'proofreadpage_source_message' => 'Scanned edition used to establish this text',
 );
 
 /** Message documentation (Message documentation)
@@ -766,6 +768,7 @@ Seiten||20
 Bemerkungen||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Seite|Seiten}}',
 	'proofreadpage_specialpage_legend' => 'Indexseiten durchsuchen',
+	'proofreadpage_source'         => 'Quelle',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -1322,6 +1325,8 @@ Pages||20
 Remarques||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|page|pages}}',
 	'proofreadpage_specialpage_legend' => 'Rechercher dans les pages d’index',
+	'proofreadpage_source'         => 'Source',
+	'proofreadpage_source_message' => 'Édition scannée dont est issu ce texte',
 );
 
 /** Franco-Provençal (Arpetan)

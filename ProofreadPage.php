@@ -328,9 +328,28 @@ function pr_beforePageDisplay( &$out ) {
 		return true;
 	}
 
+	if( $wgTitle->getNamespace() == NS_MAIN ) {
+		pr_prepareArticle( $out );
+		return true;
+	}
+
 	return true;
 }
 
+
+function pr_prepareArticle( $out ) {
+	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
+	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread_article.js?$wgProofreadPageVersion" );
+	$out->addScript( <<<EOT
+<script type="$wgJsMimeType" src="$jsFile"></script>
+EOT
+	);
+	$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
+var prp_source = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_source' ) ) . "\";
+var prp_source_message = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_source_message' ) ) . "\";
+</script>\n"
+	);
+}
 
 function pr_prepareIndex( $out ) {
 	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
