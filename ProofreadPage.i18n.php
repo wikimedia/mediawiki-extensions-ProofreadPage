@@ -99,6 +99,7 @@ $messages['qqq'] = array(
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
+	'proofreadpage_source' => '{{Identical|Source}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -254,6 +255,8 @@ $messages['ar'] = array(
 الملاحظات||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|صفحة|صفحات}}',
 	'proofreadpage_specialpage_legend' => 'بحث صفحات الفهرس',
+	'proofreadpage_source' => 'المصدر',
+	'proofreadpage_source_message' => 'الإصدارة المفحوصة المستخدمة لإنشاء هذا النص',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -449,6 +452,8 @@ $messages['be-tarask'] = array(
 Заўвагаў||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|старонка|старонкі|старонак}}',
 	'proofreadpage_specialpage_legend' => 'Пошук індэксных старонак',
+	'proofreadpage_source' => 'Крыніца',
+	'proofreadpage_source_message' => 'Сканаваная вэрсія, якая выкарыстоўвалася для стварэньня гэтага тэксту',
 );
 
 /** Bulgarian (Български)
@@ -621,6 +626,8 @@ Stranica||20
 Napomene||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice|stranica}}',
 	'proofreadpage_specialpage_legend' => 'Ptretraga indeksnih stranica',
+	'proofreadpage_source' => 'Izvor',
+	'proofreadpage_source_message' => 'Skenirana varijanta korištena za nastanak ovog teksta',
 );
 
 /** Catalan (Català)
@@ -747,6 +754,8 @@ Stran||20
 Poznámky||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránek}}',
 	'proofreadpage_specialpage_legend' => 'Hledat na indexových stránkách',
+	'proofreadpage_source' => 'Zdroj',
+	'proofreadpage_source_message' => 'Naskenovaná verze použitá k vypracování tohoto textu',
 );
 
 /** Danish (Dansk)
@@ -1010,6 +1019,7 @@ $messages['el'] = array(
 Σχόλια||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}',
 	'proofreadpage_specialpage_legend' => 'Αναζήτηση σελίδων ευρετηρίου',
+	'proofreadpage_source' => 'Πηγή',
 );
 
 /** Esperanto (Esperanto)
@@ -1067,6 +1077,8 @@ Paĝoj||20
 Rimarkoj||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|paĝo|paĝoj}}',
 	'proofreadpage_specialpage_legend' => 'Serĉi indeksajn paĝojn',
+	'proofreadpage_source' => 'Fonto',
+	'proofreadpage_source_message' => 'Skanita eldono uzata establi ĉi tiu teksto',
 );
 
 /** Spanish (Español)
@@ -1502,6 +1514,8 @@ Páxinas||20
 Comentarios||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|páxina|páxinas}}',
 	'proofreadpage_specialpage_legend' => 'Procurar nas páxinas de índice',
+	'proofreadpage_source' => 'Orixe',
+	'proofreadpage_source_message' => 'Edición dixitalizada utilizada para establecer este texto',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -2173,6 +2187,8 @@ $messages['ja'] = array(
 注釈||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|ページ|ページ}}',
 	'proofreadpage_specialpage_legend' => '文献概要ページを検索',
+	'proofreadpage_source' => '引用元',
+	'proofreadpage_source_message' => 'このテキストを構築するのに使用したスキャン元の版',
 );
 
 /** Jutish (Jysk)
@@ -2484,6 +2500,8 @@ Säiten||20
 Bemierkungen||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Säit|Säiten}}',
 	'proofreadpage_specialpage_legend' => 'An den Index-Säite sichen',
+	'proofreadpage_source' => 'Quell',
+	'proofreadpage_source_message' => 'Gescannten Editioun déi benotzt gouf fir dësen Text ze schreiwen',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -2727,6 +2745,7 @@ $messages['ml'] = array(
 കുറിപ്പുകള്‍||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|താൾ|താളുകൾ}}',
 	'proofreadpage_specialpage_legend' => 'സൂചികാ താളുകൾ തിരയുക',
+	'proofreadpage_source' => 'സ്രോതസ്സ്',
 );
 
 /** Marathi (मराठी)
@@ -2919,6 +2938,8 @@ Pagina's||20
 Opmerkingen||10",
 	'proofreadpage_pages' => "{{PLURAL:$1|pagina|pagina's}}",
 	'proofreadpage_specialpage_legend' => "Indexpagina's doorzoeken",
+	'proofreadpage_source' => 'Bron',
+	'proofreadpage_source_message' => 'Gescande versie waarop deze tekst is gebaseerd',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -3020,6 +3041,7 @@ Sider||20
 Merknader||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
 	'proofreadpage_specialpage_legend' => 'Søk i indekssider',
+	'proofreadpage_source' => 'Kilde',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -3163,6 +3185,8 @@ Strony||20
 Uwagi||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|strona|strony|stron}}',
 	'proofreadpage_specialpage_legend' => 'Szukaj stron indeksowych',
+	'proofreadpage_source' => 'Źródło',
+	'proofreadpage_source_message' => 'Zeskanowane wydanie wykorzystane do przygotowania tego tekstu',
 );
 
 /** Piedmontese (Piemontèis)
@@ -3265,7 +3289,7 @@ $messages['pt'] = array(
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Erro: índice esperado',
 	'proofreadpage_nosuch_index' => 'Erro: índice não existe',
-	'proofreadpage_nosuch_file' => 'Erro: não existe esse ficheiro',
+	'proofreadpage_nosuch_file' => 'Erro: ficheiro não existe',
 	'proofreadpage_badpage' => 'Formato Errado',
 	'proofreadpage_badpagetext' => 'O formato da página que tentou gravar é incorrecto.',
 	'proofreadpage_indexdupe' => 'Ligação duplicada',
@@ -3288,9 +3312,9 @@ $messages['pt'] = array(
 	'proofreadpage_quality2_category' => 'Problemáticas',
 	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
 	'proofreadpage_quality4_category' => 'Validadas',
-	'proofreadpage_quality0_message' => 'Esta página não necessita ser revista',
+	'proofreadpage_quality0_message' => 'Esta página não necessita de ser revista',
 	'proofreadpage_quality1_message' => 'Esta página não foi ainda revista',
-	'proofreadpage_quality2_message' => 'Houve um problema a fazer a revisão desta página',
+	'proofreadpage_quality2_message' => 'Ocorreu um problema ao fazer a revisão desta página',
 	'proofreadpage_quality3_message' => 'Esta página foi revista',
 	'proofreadpage_quality4_message' => 'Esta página foi validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
@@ -3307,6 +3331,8 @@ Páginas||20
 Notas||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
 	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
+	'proofreadpage_source' => 'Fonte',
+	'proofreadpage_source_message' => 'Edição digitalizada usada para criar este texto',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -3481,6 +3507,8 @@ $messages['ru'] = array(
 Примечания||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|страницы|страниц}}',
 	'proofreadpage_specialpage_legend' => 'Поиск индексных страниц',
+	'proofreadpage_source' => 'Источник',
+	'proofreadpage_source_message' => 'Для создания электронной версии текста использовались отсканированные материалы',
 );
 
 /** Yakut (Саха тыла)
@@ -3537,6 +3565,7 @@ $messages['sah'] = array(
 Хос быһаарыылара||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|сирэй|сирэйдээх}}',
 	'proofreadpage_specialpage_legend' => 'Индекстаммыт сирэйдэри көрдөөһүн',
+	'proofreadpage_source' => 'Хантан ылыллыбыта',
 );
 
 /** Sardinian (Sardu)
@@ -3798,6 +3827,7 @@ Sidor||20
 Anmärkningar||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sida|sidor}}',
 	'proofreadpage_specialpage_legend' => 'Sök i indexsidorna',
+	'proofreadpage_source' => 'Källa',
 );
 
 /** Silesian (Ślůnski)
@@ -3943,7 +3973,18 @@ $messages['tk'] = array(
 	'proofreadpage_index_listofpages' => 'Sahypalaryň sanawy',
 	'proofreadpage_image_message' => 'Indeks sahypasyna çykgyt',
 	'proofreadpage_page_status' => 'Sahypanyň statusy',
+	'proofreadpage_js_attributes' => 'Awtor At Ýyl Neşirýat',
+	'proofreadpage_index_attributes' => 'Awtor
+At
+Ýyl|Neşir edilen ýyly
+Neşirýat
+Çeşme
+Surat|Sahap suraty
+Sahypa||20
+Bellikler||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|sahypa|sahypa}}',
 	'proofreadpage_specialpage_legend' => 'Indeks sahypalaryny gözle',
+	'proofreadpage_source' => 'Çeşme',
 );
 
 /** Tagalog (Tagalog)
@@ -4074,7 +4115,9 @@ $messages['uk'] = array(
 	'proofreadpage_badpage' => 'Неправильний формат',
 	'proofreadpage_badpagetext' => 'Формат сторінки, яку ви хочете зберегти, неправильний.',
 	'proofreadpage_indexdupe' => 'Посилання-дублікат',
+	'proofreadpage_nologin' => 'Не виконаний вхід',
 	'proofreadpage_interval_too_large' => 'Помилка: інтервал занадто великий',
+	'proofreadpage_invalid_interval' => 'Помилка: неправильній інтервал',
 	'proofreadpage_nextpage' => 'Наступна сторінка',
 	'proofreadpage_prevpage' => 'Попередня сторінка',
 	'proofreadpage_header' => 'Заголовок (не включається):',
@@ -4098,6 +4141,7 @@ $messages['uk'] = array(
 Сторінок||20
 Приміток||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|сторінка|сторінки|сторінок}}',
+	'proofreadpage_source' => 'Джерело',
 );
 
 /** Vèneto (Vèneto)
