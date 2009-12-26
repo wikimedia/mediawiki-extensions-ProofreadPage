@@ -157,6 +157,8 @@ Bladsye||20
 Opmerkings||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|bladsy|bladsye}}',
 	'proofreadpage_specialpage_legend' => 'Deursoek indeks-bladsye',
+	'proofreadpage_source' => 'Bron',
+	'proofreadpage_source_message' => 'Geskandeerde uitgawe waarop hierdie teks gebaseer is',
 );
 
 /** Amharic (አማርኛ)
@@ -468,8 +470,12 @@ $messages['bg'] = array(
 	'proofreadpage_index_namespace' => 'Показалец',
 	'proofreadpage_image' => 'картинка',
 	'proofreadpage_index' => 'Показалец',
+	'proofreadpage_index_expected' => 'Грешка: очаква се индекс',
+	'proofreadpage_nosuch_index' => 'Грешка: няма такъв индекс',
 	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
 	'proofreadpage_badpage' => 'Неправилен формат',
+	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
+	'proofreadpage_invalid_interval' => 'Грешка: недопустим интервал',
 	'proofreadpage_nextpage' => 'Следваща страница',
 	'proofreadpage_prevpage' => 'Предишна страница',
 	'proofreadpage_body' => 'Тяло на страницата (за вграждане):',
@@ -490,6 +496,7 @@ $messages['bg'] = array(
 Изображение|Изображение на корицата
 Страници||20
 Забележки||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
 );
 
 /** Bengali (বাংলা)
@@ -532,6 +539,7 @@ $messages['bn'] = array(
  */
 $messages['br'] = array(
 	'indexpages' => 'Roll ar pajennoù meneger',
+	'proofreadpage_desc' => "Aotreañ a ra ur c'heñveriadur aes etre an destenn hag he nivereladur orin",
 	'proofreadpage_namespace' => 'Pajenn',
 	'proofreadpage_index_namespace' => 'Meneger',
 	'proofreadpage_image' => 'skeudenn',
@@ -540,13 +548,22 @@ $messages['br'] = array(
 	'proofreadpage_nosuch_index' => "Fazi : n'eus ket eus ar meneger-se",
 	'proofreadpage_nosuch_file' => "Fazi : n'eus restr ebet evel-se",
 	'proofreadpage_badpage' => 'Furmad fall',
+	'proofreadpage_badpagetext' => "N'eo ket reizh furmad ar bajenn ho peus klasket embann.",
 	'proofreadpage_indexdupe' => 'Liamm e doubl',
+	'proofreadpage_indexdupetext' => "Ne c'hell ket ar pajennoù bezañ listennet muioc'h evit ur wech war ur bajenn meneger.",
 	'proofreadpage_nologin' => "N'eo ket kevreet",
+	'proofreadpage_nologintext' => "Rankout a reoc'h bezañ [[Special:UserLogin|luget]] evit kemmañ statud reizhañ ar pajennoù.",
 	'proofreadpage_notallowed' => "N'eo ket ar c'hemm-se",
+	'proofreadpage_notallowedtext' => "Noc'h ket aotreet da gemmañ ar statud reizhañ ar bajenn-mañ.",
+	'proofreadpage_number_expected' => 'Fazi : gortozet e vez un dalvoud niverel',
+	'proofreadpage_interval_too_large' => 'Fazi : re vras eo an esaouenn',
+	'proofreadpage_invalid_interval' => "Fazi : n'eo ket mat an esaouenn",
 	'proofreadpage_nextpage' => "Pajenn war-lerc'h",
 	'proofreadpage_prevpage' => 'Pajenn a-raok',
 	'proofreadpage_header' => 'Penn uhelañ ar bajenn (noinclude) :',
+	'proofreadpage_body' => 'Danvez (dre dreuzklozadur) :',
 	'proofreadpage_footer' => 'Traoñ ar bajenn (noinclude) :',
+	'proofreadpage_toggleheaders' => 'kuzhat/diskouez ar rannoù noinclude',
 	'proofreadpage_quality0_category' => 'Hep testenn',
 	'proofreadpage_quality1_category' => 'Da wiriañ',
 	'proofreadpage_quality2_category' => 'Kudennek',
@@ -554,6 +571,7 @@ $messages['br'] = array(
 	'proofreadpage_quality4_category' => 'Gwiriekaet',
 	'proofreadpage_quality0_message' => "Ar bajenn-mañ n'he deus ket ezhomm da vezañ adlennet",
 	'proofreadpage_quality1_message' => "Ar bajenn-mañ n'eo ket bet adlennet",
+	'proofreadpage_quality2_message' => "Ur gudenn 'zo bet pa oa ar bajenn o vezañ reizhet",
 	'proofreadpage_quality3_message' => 'Adlennet eo bet ar bajenn-mañ',
 	'proofreadpage_quality4_message' => 'Gwiriekaet eo bet ar bajenn-mañ',
 	'proofreadpage_index_listofpages' => 'Roll ar pajennoù',
@@ -570,6 +588,8 @@ Pajennoù||20
 Notennoù||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|bajenn|pajenn}}',
 	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
+	'proofreadpage_source' => 'Mammenn',
+	'proofreadpage_source_message' => 'Embannadurioù bet niverelaet implijet evit sevel an destenn-mañ',
 );
 
 /** Bosnian (Bosanski)
@@ -946,6 +966,8 @@ Boki||20
 Pśispomnjeśa||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|bok|boka|boki|bokow}}',
 	'proofreadpage_specialpage_legend' => 'Indeksowe boki pśepytaś',
+	'proofreadpage_source' => 'Žrědło',
+	'proofreadpage_source_message' => 'Skanowane wudaśe wužyte za napóranje toś togo teksta',
 );
 
 /** Ewe (Eʋegbe) */
@@ -1323,6 +1345,8 @@ Kuva|Kansikuva
 Sivuja||20
 Huomautuksia||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sivu|sivua}}',
+	'proofreadpage_specialpage_legend' => 'Hae indeksisivuilta',
+	'proofreadpage_source' => 'Lähde',
 );
 
 /** French (Français)
@@ -1819,6 +1843,8 @@ Strony||20
 Přispomnjenki||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|strona|stronje|strony|stronow}}',
 	'proofreadpage_specialpage_legend' => 'Indeksowe strony přepytać',
+	'proofreadpage_source' => 'Žórło',
+	'proofreadpage_source_message' => 'Skanowane wudaće wužite za wutworjenje tutoho teksta',
 );
 
 /** Hungarian (Magyar)
@@ -1995,6 +2021,7 @@ Notas||10',
 
 /** Indonesian (Bahasa Indonesia)
  * @author Bennylin
+ * @author Farras
  * @author Irwangatot
  * @author IvanLanin
  */
@@ -2049,6 +2076,7 @@ Halaman||20
 Catatan||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|halaman|halaman}}',
 	'proofreadpage_specialpage_legend' => 'Pencarian halaman indek',
+	'proofreadpage_source' => 'Sumber',
 );
 
 /** Ido (Ido)
@@ -2338,11 +2366,13 @@ $messages['ko'] = array(
 	'proofreadpage_index_namespace' => '목차',
 	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '목차',
+	'proofreadpage_nosuch_file' => '오류: 해당 파일이 없습니다.',
 	'proofreadpage_badpage' => '잘못된 형식',
+	'proofreadpage_indexdupe' => '중복된 링크',
 	'proofreadpage_nologin' => ' 로그인된 상태가 아닙니다.',
 	'proofreadpage_nologintext' => '문서의 검토 상태를 변경하려면 [[Special:UserLogin|로그인]]해야 합니다.',
 	'proofreadpage_notallowed' => '이 문서는 변경이 불가능합니다.',
-	'proofreadpage_notallowedtext' => '주시문서 변경이 불가능합니다. 60‰',
+	'proofreadpage_notallowedtext' => '이 문서의 교정 상태를 바꿀 수 없습니다.',
 	'proofreadpage_nextpage' => '다음 페이지',
 	'proofreadpage_prevpage' => '이전 페이지',
 	'proofreadpage_header' => '머리말 (표시안함):',
@@ -2354,7 +2384,7 @@ $messages['ko'] = array(
 	'proofreadpage_quality2_category' => '문제 있음',
 	'proofreadpage_quality3_category' => '교정',
 	'proofreadpage_quality4_category' => '확인됨',
-	'proofreadpage_quality0_message' => '이 페이지는 교정이 필요없습니다.',
+	'proofreadpage_quality0_message' => '이 페이지는 교정할 필요가 없습니다.',
 	'proofreadpage_index_listofpages' => '문서 목록',
 	'proofreadpage_image_message' => '목차 페이지로',
 	'proofreadpage_page_status' => '문서 상태',
@@ -2688,6 +2718,8 @@ $messages['mk'] = array(
 Белешки||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
 	'proofreadpage_specialpage_legend' => 'Пребарување на индексни страници',
+	'proofreadpage_source' => 'Извор',
+	'proofreadpage_source_message' => 'Скенирано издание за востановување на овој текст',
 );
 
 /** Malayalam (മലയാളം)
@@ -3398,9 +3430,11 @@ Willapusqakuna||10",
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'indexpages' => 'Lista paginilor index',
+	'proofreadpage_desc' => 'Permiteţi compararea cu uşurinţă a textului faţă de scanarea originală',
 	'proofreadpage_namespace' => 'Pagină',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'imagine',
@@ -3413,15 +3447,27 @@ $messages['ro'] = array(
 	'proofreadpage_indexdupe' => 'Legătură duplicat',
 	'proofreadpage_indexdupetext' => 'Paginile nu pot fi afişate de mai multe ori într-o pagină index.',
 	'proofreadpage_nologin' => 'Nu sunteţi autentificat',
+	'proofreadpage_nologintext' => 'Trebuie să fii [[Special:UserLogin|logat]] pentru a modifica statutul de verificare a paginilor.',
 	'proofreadpage_notallowed' => 'Schimbare nepermisă',
+	'proofreadpage_notallowedtext' => 'Nu vi se permite să schimbaţi statutul de vericare al acestei pagini.',
 	'proofreadpage_number_expected' => 'Eroare: valoare numerică aşteptată',
 	'proofreadpage_interval_too_large' => 'Eroare: interval prea mare',
 	'proofreadpage_invalid_interval' => 'Eroare: interval incorect',
 	'proofreadpage_nextpage' => 'Pagina următoare',
 	'proofreadpage_prevpage' => 'Pagina anterioară',
+	'proofreadpage_header' => 'Antet (nu include):',
+	'proofreadpage_body' => 'Corp-mesaj (pentru a fi introdus):',
+	'proofreadpage_footer' => 'Coloncifru (nu include):',
 	'proofreadpage_quality0_category' => 'Fără text',
+	'proofreadpage_quality1_category' => 'Neverificat',
 	'proofreadpage_quality2_category' => 'Problematic',
+	'proofreadpage_quality3_category' => 'Verificat',
 	'proofreadpage_quality4_category' => 'Validat',
+	'proofreadpage_quality0_message' => 'Această pagină nu necesită să fie verificată',
+	'proofreadpage_quality1_message' => 'Această pagină n-a fost verificată',
+	'proofreadpage_quality2_message' => 'Aici a fost o problemă când verifica această pagină',
+	'proofreadpage_quality3_message' => 'Această pagină a fost verificată',
+	'proofreadpage_quality4_message' => 'Această pagină a fost validată',
 	'proofreadpage_index_listofpages' => 'Lista paginilor',
 	'proofreadpage_image_message' => 'Legătură către pagina index',
 	'proofreadpage_page_status' => 'Pagina status',
@@ -3434,6 +3480,8 @@ Sursă
 Imagine|Imagine copertă
 Pagini||20
 Comentarii||10',
+	'proofreadpage_specialpage_legend' => 'Căutaţi paginile de index',
+	'proofreadpage_source' => 'Sursă',
 );
 
 /** Tarandíne (Tarandíne)
@@ -3828,6 +3876,7 @@ Anmärkningar||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sida|sidor}}',
 	'proofreadpage_specialpage_legend' => 'Sök i indexsidorna',
 	'proofreadpage_source' => 'Källa',
+	'proofreadpage_source_message' => 'Scannat orginal använt för att skapa denna text',
 );
 
 /** Silesian (Ślůnski)
@@ -3970,6 +4019,8 @@ $messages['tk'] = array(
 	'proofreadpage_nextpage' => 'Indiki sahypa',
 	'proofreadpage_prevpage' => 'Öňki sahypa',
 	'proofreadpage_quality0_category' => 'Tekstsiz',
+	'proofreadpage_quality4_category' => 'Barlanan',
+	'proofreadpage_quality4_message' => 'Bu sahypa barlanan',
 	'proofreadpage_index_listofpages' => 'Sahypalaryň sanawy',
 	'proofreadpage_image_message' => 'Indeks sahypasyna çykgyt',
 	'proofreadpage_page_status' => 'Sahypanyň statusy',
@@ -4026,6 +4077,7 @@ Mga puna||10',
  * @author Mach
  * @author Runningfridgesrule
  * @author Suelnur
+ * @author Vito Genovese
  */
 $messages['tr'] = array(
 	'indexpages' => 'Endeks sayfalarının listesi',
@@ -4078,6 +4130,8 @@ Sayfalar||20
 Açıklamalar||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sayfa|sayfa}}',
 	'proofreadpage_specialpage_legend' => 'Dizin sayfalarını ara',
+	'proofreadpage_source' => 'Kaynak',
+	'proofreadpage_source_message' => 'Bu metni oluşturmak için kullanılan taranmış sürüm',
 );
 
 /** Tsonga (Xitsonga)
@@ -4115,7 +4169,12 @@ $messages['uk'] = array(
 	'proofreadpage_badpage' => 'Неправильний формат',
 	'proofreadpage_badpagetext' => 'Формат сторінки, яку ви хочете зберегти, неправильний.',
 	'proofreadpage_indexdupe' => 'Посилання-дублікат',
+	'proofreadpage_indexdupetext' => 'Сторінки не можуть бути перелічені в списку на сторінці індексації більше одного разу.',
 	'proofreadpage_nologin' => 'Не виконаний вхід',
+	'proofreadpage_nologintext' => 'Ви повинні [[Special:UserLogin|увійти в систему]], щоб змінити статус коректури сторінок.',
+	'proofreadpage_notallowed' => 'Зміна не дозволена',
+	'proofreadpage_notallowedtext' => 'Ви не можете змінити статус коректури цієї сторінки.',
+	'proofreadpage_number_expected' => 'Помилка: потрібне числове значення',
 	'proofreadpage_interval_too_large' => 'Помилка: інтервал занадто великий',
 	'proofreadpage_invalid_interval' => 'Помилка: неправильній інтервал',
 	'proofreadpage_nextpage' => 'Наступна сторінка',
@@ -4124,10 +4183,16 @@ $messages['uk'] = array(
 	'proofreadpage_body' => 'Тіло сторінки (буде включатися):',
 	'proofreadpage_footer' => 'Нижній колонтитул (не включається):',
 	'proofreadpage_toggleheaders' => 'показувати невключені розділи',
+	'proofreadpage_quality0_category' => 'Без тексту',
 	'proofreadpage_quality1_category' => 'Не вичитана',
 	'proofreadpage_quality2_category' => 'Проблематична',
 	'proofreadpage_quality3_category' => 'Вичитана',
 	'proofreadpage_quality4_category' => 'Перевірена',
+	'proofreadpage_quality0_message' => 'Ця сторінка не потребує коректури',
+	'proofreadpage_quality1_message' => 'Ця сторінка ще не пройшла коректури',
+	'proofreadpage_quality2_message' => 'Виникла проблема з коректурою цієї сторінки',
+	'proofreadpage_quality3_message' => 'Ця сторінка пройшла коректуру',
+	'proofreadpage_quality4_message' => 'Ця сторінка була затверджена',
 	'proofreadpage_index_listofpages' => 'Список сторінок',
 	'proofreadpage_image_message' => 'Посилання на сторінку індексу',
 	'proofreadpage_page_status' => 'Стан сторінки',
@@ -4141,7 +4206,9 @@ $messages['uk'] = array(
 Сторінок||20
 Приміток||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|сторінка|сторінки|сторінок}}',
+	'proofreadpage_specialpage_legend' => 'Пошук сторінок індексації',
 	'proofreadpage_source' => 'Джерело',
+	'proofreadpage_source_message' => 'Для створення цього тексту використані відскановані видання',
 );
 
 /** Vèneto (Vèneto)
@@ -4398,6 +4465,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Gaoxuewei
+ * @author Mark85296341
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -4405,7 +4473,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_desc' => '容許簡易地去比較原掃瞄和文字',
 	'proofreadpage_namespace' => '頁面',
 	'proofreadpage_index_namespace' => '索引',
-	'proofreadpage_image' => '圖像',
+	'proofreadpage_image' => '圖片',
 	'proofreadpage_index' => '索引',
 	'proofreadpage_index_expected' => '錯誤：需要索引',
 	'proofreadpage_nosuch_index' => '錯誤：沒有此類索引',
@@ -4446,7 +4514,7 @@ $messages['zh-hant'] = array(
 年份|出版年份
 出版者
 來源
-圖像|封面照
+圖片|封面照
 頁數||20
 備註||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|頁|頁}}',
