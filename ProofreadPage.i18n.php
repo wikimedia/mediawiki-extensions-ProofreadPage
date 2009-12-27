@@ -465,6 +465,7 @@ $messages['be-tarask'] = array(
  * @author Turin
  */
 $messages['bg'] = array(
+	'indexpages' => 'Списък на индексните страници',
 	'proofreadpage_desc' => 'Позволява лесно сравнение на текст с оригинален сканиран документ',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Показалец',
@@ -474,7 +475,10 @@ $messages['bg'] = array(
 	'proofreadpage_nosuch_index' => 'Грешка: няма такъв индекс',
 	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
 	'proofreadpage_badpage' => 'Неправилен формат',
+	'proofreadpage_badpagetext' => 'Форматът на страницата, която опитвате да запазите, е неправилен.',
+	'proofreadpage_notallowed' => 'Промяната не е позволена',
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
+	'proofreadpage_interval_too_large' => 'Грешка: обхватът е твърде голям',
 	'proofreadpage_invalid_interval' => 'Грешка: недопустим интервал',
 	'proofreadpage_nextpage' => 'Следваща страница',
 	'proofreadpage_prevpage' => 'Предишна страница',
@@ -486,6 +490,7 @@ $messages['bg'] = array(
 	'proofreadpage_quality3_category' => 'Коригирана',
 	'proofreadpage_quality4_category' => 'Одобрена',
 	'proofreadpage_index_listofpages' => 'Списък на страниците',
+	'proofreadpage_image_message' => 'Препратка към индексната страница',
 	'proofreadpage_page_status' => 'Статут на страницата',
 	'proofreadpage_js_attributes' => 'Автор Заглавие Година Издател',
 	'proofreadpage_index_attributes' => 'Автор
@@ -497,6 +502,7 @@ $messages['bg'] = array(
 Страници||20
 Забележки||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
+	'proofreadpage_source' => 'Източник',
 );
 
 /** Bengali (বাংলা)
@@ -1294,6 +1300,7 @@ $messages['fa'] = array(
  * @author Jaakonam
  * @author Nike
  * @author Str4nd
+ * @author ZeiP
  */
 $messages['fi'] = array(
 	'indexpages' => 'Luettelo hakemistosivuista',
@@ -1308,7 +1315,7 @@ $messages['fi'] = array(
 	'proofreadpage_badpage' => 'Väärä muoto',
 	'proofreadpage_badpagetext' => 'Sivu, jota yritit tallentaa on virheellisessä muodossa.',
 	'proofreadpage_indexdupe' => 'Kaksoiskappalelinkki',
-	'proofreadpage_indexdupetext' => 'Sivuja ei voida luetella useammin kuin kerran hakemistosivulla.',
+	'proofreadpage_indexdupetext' => 'Sivuja ei voida listata useammin kuin kerran hakemistosivulla.',
 	'proofreadpage_nologin' => 'Et ole kirjautunut sisään',
 	'proofreadpage_nologintext' => 'Sinun täytyy olla [[Special:UserLogin|kirjautunut sisään]] muuttaaksesi sivun oikolukutilaa.',
 	'proofreadpage_notallowed' => 'Muutos ei ole sallittu',
@@ -1417,14 +1424,23 @@ Remarques||10',
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'indexpages' => 'Lista de les pâges d’endèxe',
 	'proofreadpage_desc' => 'Pèrmèt una comparèson ésiê entre lo tèxto et sa numerisacion originâla.',
 	'proofreadpage_namespace' => 'Pâge',
-	'proofreadpage_index_namespace' => 'Endèxo',
+	'proofreadpage_index_namespace' => 'Endèxe',
 	'proofreadpage_image' => 'émâge',
-	'proofreadpage_index' => 'Endèxo',
-	'proofreadpage_index_expected' => 'Èrror : un endèxo est atendu',
-	'proofreadpage_nosuch_index' => 'Èrror : l’endèxo at pas étâ trovâ',
+	'proofreadpage_index' => 'Endèxe',
+	'proofreadpage_index_expected' => 'Èrror : un endèxe est atendu',
+	'proofreadpage_nosuch_index' => 'Èrror : l’endèxe at pas étâ trovâ',
 	'proofreadpage_nosuch_file' => 'Èrror : lo fichiér at pas étâ trovâ',
+	'proofreadpage_badpage' => 'Crouyo format',
+	'proofreadpage_badpagetext' => 'Lo format de la pâge que vos tâchiéd de sôvar est fôx.',
+	'proofreadpage_indexdupe' => 'Lim en doblo',
+	'proofreadpage_indexdupetext' => 'Les pâges pôvont pas étre listâs més d’un côp sur una pâge d’endèxe.',
+	'proofreadpage_nologin' => 'Pas branchiê',
+	'proofreadpage_nologintext' => 'Vos dête étre [[Special:UserLogin|branchiê]] por changiér lo statut de corrèccion de les pâges.',
+	'proofreadpage_notallowed' => 'Changement pas ôtorisâ',
+	'proofreadpage_notallowedtext' => 'Vos éte pas ôtorisâ a changiér lo statut de corrèccion de ceta pâge.',
 	'proofreadpage_number_expected' => 'Èrror : una valor numerica est atendua',
 	'proofreadpage_interval_too_large' => 'Èrror : entèrvalo trop grant',
 	'proofreadpage_invalid_interval' => 'Èrror : entèrvalo envalido',
@@ -1439,8 +1455,13 @@ $messages['frp'] = array(
 	'proofreadpage_quality2_category' => 'Pas de sûr',
 	'proofreadpage_quality3_category' => 'Corregiê',
 	'proofreadpage_quality4_category' => 'Validâ',
+	'proofreadpage_quality0_message' => 'Ceta pâge at pas fôta d’étre corregiê.',
+	'proofreadpage_quality1_message' => 'Ceta pâge at p’oncor étâ corregiê.',
+	'proofreadpage_quality2_message' => 'Y at avu un problèmo pendent la corrèccion de ceta pâge.',
+	'proofreadpage_quality3_message' => 'Ceta pâge at étâ corregiê.',
+	'proofreadpage_quality4_message' => 'Ceta pâge at étâ validâ.',
 	'proofreadpage_index_listofpages' => 'Lista de les pâges',
-	'proofreadpage_image_message' => 'Lim de vers la pâge d’endèxo',
+	'proofreadpage_image_message' => 'Lim de vers la pâge d’endèxe',
 	'proofreadpage_page_status' => 'Ètat de la pâge',
 	'proofreadpage_js_attributes' => 'Ôtor Titro An Èditor',
 	'proofreadpage_index_attributes' => 'Ôtor
@@ -1451,6 +1472,10 @@ Sôrsa
 Émâge|Émâge en cuvèrta
 Pâges||20
 Comentèros||10',
+	'proofreadpage_pages' => 'pâge{{PLURAL:$1||s}}',
+	'proofreadpage_specialpage_legend' => 'Rechèrchiér dens les pâges d’endèxe',
+	'proofreadpage_source' => 'Sôrsa',
+	'proofreadpage_source_message' => 'Èdicion scanâ que vint de cél tèxto',
 );
 
 /** Friulian (Furlan)
@@ -1695,6 +1720,7 @@ $messages['he'] = array(
 הערות||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|דף|דפים}}',
 	'proofreadpage_specialpage_legend' => 'חיפוש בדפי האינדקס',
+	'proofreadpage_source' => 'מקור',
 );
 
 /** Hindi (हिन्दी)
@@ -3488,6 +3514,46 @@ Comentarii||10',
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'indexpages' => 'Elenghe de le pàggene de indice',
+	'proofreadpage_desc' => "Permette combronde facele de teste cu 'a scanzione origgenale",
+	'proofreadpage_namespace' => 'Pàgene',
+	'proofreadpage_index_namespace' => 'Indice',
+	'proofreadpage_image' => 'immaggine',
+	'proofreadpage_index' => 'Indice',
+	'proofreadpage_index_expected' => 'Errore: previste indice',
+	'proofreadpage_nosuch_index' => 'Errore: nisciune indice',
+	'proofreadpage_nosuch_file' => 'Errore: nisciune file',
+	'proofreadpage_badpage' => 'Formate sbagliate',
+	'proofreadpage_badpagetext' => "'U formate d'a pàgene ca tu ste pruève a reggistrà non g'è corrette.",
+	'proofreadpage_indexdupe' => 'Collegamende duplicate',
+	'proofreadpage_indexdupetext' => "Le pàggene non ge ponne essere elengate cchiù de 'na vote jndr'à 'na pàgene de indice.",
+	'proofreadpage_nologin' => 'Non ge sì collegate',
+	'proofreadpage_nologintext' => "Tu a essere [[Special:UserLogin|collegate]] pe cangià 'u state de verifiche de le pàggene.",
+	'proofreadpage_notallowed' => 'Cangiamende none consendite',
+	'proofreadpage_notallowedtext' => "Non ge t'è permesse cangià 'u state de verifiche de sta pàgene.",
+	'proofreadpage_number_expected' => "Errore: aspettamme 'nu valore numereche",
+	'proofreadpage_interval_too_large' => 'Errore: indervalle troppe larije',
+	'proofreadpage_invalid_interval' => 'Errore: indervalle invalide',
+	'proofreadpage_nextpage' => 'Pàgena successive',
+	'proofreadpage_prevpage' => 'Pàgena precedende',
+	'proofreadpage_header' => 'Testate (none ingluse):',
+	'proofreadpage_body' => "Cuerpe d'a pàgene (da ingludere):",
+	'proofreadpage_footer' => "Fine d'a pàgene (none ingluse):",
+	'proofreadpage_toggleheaders' => "abbilite/disabbilite 'a visibbeletà de le seziune none ingluse",
+	'proofreadpage_quality0_category' => 'Senza teste',
+	'proofreadpage_quality1_category' => 'Da correggere',
+	'proofreadpage_quality2_category' => 'Probblemateche',
+	'proofreadpage_quality3_category' => 'Corrette',
+	'proofreadpage_quality4_category' => 'Validate',
+	'proofreadpage_quality0_message' => "Sta pàgene none g'abbesogne de essere corrette",
+	'proofreadpage_quality1_message' => "Sta pàgene none g'à state corrette",
+	'proofreadpage_quality2_message' => 'Ha state quacche probbleme quanne è corrette sta pàgene',
+	'proofreadpage_quality3_message' => 'Sta pàgene ha state corrette',
+	'proofreadpage_quality4_message' => 'Sta pàgene ha state validate',
+	'proofreadpage_index_listofpages' => 'Elenghe de le pàggene',
+	'proofreadpage_image_message' => "Colleghe a 'a pàgene de indice",
+	'proofreadpage_page_status' => "State d'a pàgene",
+	'proofreadpage_js_attributes' => 'Autore Titele Anne Pubblicatore',
 	'proofreadpage_index_attributes' => "Autore
 Titele
 Anne|Anne de pubblicazione
@@ -3496,6 +3562,10 @@ Sorgende
 Immaggine|Immaggine d'a coprtine
 Paggène||20
 Note||10",
+	'proofreadpage_pages' => '{{PLURAL:$1|pàgene|pàggene}}',
+	'proofreadpage_specialpage_legend' => 'Cirche le pàggene de indice',
+	'proofreadpage_source' => 'Sorgende',
+	'proofreadpage_source_message' => 'Edizione scanzionate ausate pe definì stu teste',
 );
 
 /** Russian (Русский)
@@ -3901,6 +3971,7 @@ $messages['te'] = array(
 	'proofreadpage_image' => 'బొమ్మ',
 	'proofreadpage_index' => 'సూచిక',
 	'proofreadpage_nosuch_file' => 'పొరపాటు: అటువంటి ఫైలు లేదు',
+	'proofreadpage_badpagetext' => 'మీరు భద్రపరచడానికి ప్రయత్నించిన పేజీ యొక్క రూపం చెల్లదు.',
 	'proofreadpage_nologin' => 'ప్రవేశించలేదు',
 	'proofreadpage_nextpage' => 'తర్వాతి పేజీ',
 	'proofreadpage_prevpage' => 'గత పేజీ',
@@ -3967,6 +4038,39 @@ $messages['tg-cyrl'] = array(
 Мулоҳизот||10',
 );
 
+/** Tajik (Latin) (Тоҷикӣ (Latin))
+ * @author Liangent
+ */
+$messages['tg-latn'] = array(
+	'proofreadpage_desc' => 'Imkoni muqoisai osoni matn bo nusxai asliji pūjişşudaro faroham meovarad',
+	'proofreadpage_namespace' => 'Sahifa',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'aks',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_nextpage' => "Sahifai ba'dī",
+	'proofreadpage_prevpage' => 'Sahifai qablī',
+	'proofreadpage_header' => 'Unvon (noinclude):',
+	'proofreadpage_body' => 'Tani sahifa (baroi ƣunçonida şudan):',
+	'proofreadpage_footer' => 'Ponavis (noinclude):',
+	'proofreadpage_toggleheaders' => 'taƣjiri namojoniji baxşhoi noinclude',
+	'proofreadpage_quality1_category' => 'Bozbinī naşuda',
+	'proofreadpage_quality2_category' => 'Muşkildor',
+	'proofreadpage_quality3_category' => 'Bozbinişuda',
+	'proofreadpage_quality4_category' => "Ta'jidşuda",
+	'proofreadpage_index_listofpages' => 'Fehristi sahifaho',
+	'proofreadpage_image_message' => 'Pajvand ba sahifai indeks',
+	'proofreadpage_page_status' => "Vaz'ijati sahifa",
+	'proofreadpage_js_attributes' => 'Muallif Unvon Sol Naşrijot',
+	'proofreadpage_index_attributes' => "Muallif
+Unvon
+Sol|Soli intişor
+Naşrijot
+Manba'
+Aks|Aksi rūi çild
+Sahifaho||20
+Mulohizot||10",
+);
+
 /** Thai (ไทย)
  * @author Passawuth
  */
@@ -4016,6 +4120,9 @@ $messages['tk'] = array(
 	'proofreadpage_indexdupe' => 'Dublikat çykgyt',
 	'proofreadpage_nologin' => 'Sessiýa açylmadyk',
 	'proofreadpage_notallowed' => 'Üýtgeşmä rugsat berilmeýär',
+	'proofreadpage_number_expected' => 'Säwlik: san bahasyna garaşylýar',
+	'proofreadpage_interval_too_large' => 'Säwlik: aralyk örän giň',
+	'proofreadpage_invalid_interval' => 'Säwlik: nädogry aralyk',
 	'proofreadpage_nextpage' => 'Indiki sahypa',
 	'proofreadpage_prevpage' => 'Öňki sahypa',
 	'proofreadpage_quality0_category' => 'Tekstsiz',
@@ -4408,6 +4515,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
+ * @author Jimmy xu wrk
  * @author Liangent
  */
 $messages['zh-hans'] = array(
@@ -4461,10 +4569,12 @@ $messages['zh-hans'] = array(
 备注||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|页|页}}',
 	'proofreadpage_specialpage_legend' => '搜索索引页',
+	'proofreadpage_source' => '来源',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Gaoxuewei
+ * @author Liangent
  * @author Mark85296341
  * @author Wrightbus
  */
@@ -4519,5 +4629,6 @@ $messages['zh-hant'] = array(
 備註||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|頁|頁}}',
 	'proofreadpage_specialpage_legend' => '搜索索引頁',
+	'proofreadpage_source' => '來源',
 );
 
