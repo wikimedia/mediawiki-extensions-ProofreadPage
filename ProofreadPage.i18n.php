@@ -662,6 +662,7 @@ Napomene||10',
  * @author Paucabot
  * @author Qllach
  * @author SMP
+ * @author Solde
  */
 $messages['ca'] = array(
 	'indexpages' => "Llista de pàgines d'índex",
@@ -716,6 +717,7 @@ Pàgines||20
 Sumari||15",
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgines}}',
 	'proofreadpage_specialpage_legend' => "Cerca a les pàgines d'índex",
+	'proofreadpage_source' => 'Font',
 );
 
 /** Cebuano (Cebuano)
@@ -794,6 +796,7 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Imre
  * @author Metalhead64
  * @author Raimond Spekking
  * @author Tbleher
@@ -850,7 +853,8 @@ Seiten||20
 Bemerkungen||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Seite|Seiten}}',
 	'proofreadpage_specialpage_legend' => 'Indexseiten durchsuchen',
-	'proofreadpage_source'         => 'Quelle',
+	'proofreadpage_source' => 'Quelle',
+	'proofreadpage_source_message' => 'Zur Erstellung dieses Texts wurde die gescannte Edition benutzt.',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -864,6 +868,7 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Mirzali
  */
 $messages['diq'] = array(
 	'indexpages' => 'listeya pelê endeksi',
@@ -916,6 +921,8 @@ peli||20
 beyanati||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pel|pel}}',
 	'proofreadpage_specialpage_legend' => 'bıgêr pelê indeksan',
+	'proofreadpage_source' => 'Çıme',
+	'proofreadpage_source_message' => 'Versiyono kopyakerde gurêna ke nê meqaley rono',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -1354,6 +1361,7 @@ Huomautuksia||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sivu|sivua}}',
 	'proofreadpage_specialpage_legend' => 'Hae indeksisivuilta',
 	'proofreadpage_source' => 'Lähde',
+	'proofreadpage_source_message' => 'Skannattua versiota on käytetty tämän tekstin muodostamiseen',
 );
 
 /** French (Français)
@@ -1721,6 +1729,7 @@ $messages['he'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|דף|דפים}}',
 	'proofreadpage_specialpage_legend' => 'חיפוש בדפי האינדקס',
 	'proofreadpage_source' => 'מקור',
+	'proofreadpage_source_message' => 'הגרסה הסרוקה ששימשה להכנת טקסט זה',
 );
 
 /** Hindi (हिन्दी)
@@ -2804,6 +2813,7 @@ $messages['ml'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|താൾ|താളുകൾ}}',
 	'proofreadpage_specialpage_legend' => 'സൂചികാ താളുകൾ തിരയുക',
 	'proofreadpage_source' => 'സ്രോതസ്സ്',
+	'proofreadpage_source_message' => 'ഈ എഴുത്ത് സ്ഥാപിക്കാൻ സ്കാൻ ചെയ്തെടുത്ത പ്രസിദ്ധീകരണമാണുപയോഗിച്ചത്',
 );
 
 /** Marathi (मराठी)
@@ -3994,6 +4004,7 @@ $messages['te'] = array(
 పేజీలు||20
 రిమార్కులు||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|పేజీ|పేజీలు}}',
+	'proofreadpage_source' => 'మూలం',
 );
 
 /** Tetum (Tetun)
@@ -4117,7 +4128,9 @@ $messages['tk'] = array(
 	'proofreadpage_nosuch_index' => 'Säwlik: beýle indeks ýok',
 	'proofreadpage_nosuch_file' => 'Säwlik: beýle faýl ýok',
 	'proofreadpage_badpage' => 'Ýalňyş format',
+	'proofreadpage_badpagetext' => 'Ýazdyrjak bolan sahypaňyzyň formaty nädogry',
 	'proofreadpage_indexdupe' => 'Dublikat çykgyt',
+	'proofreadpage_indexdupetext' => 'Sahypalar bir indeks sahypasynda birden artykmaç sanawlanyp bilmeýär.',
 	'proofreadpage_nologin' => 'Sessiýa açylmadyk',
 	'proofreadpage_notallowed' => 'Üýtgeşmä rugsat berilmeýär',
 	'proofreadpage_number_expected' => 'Säwlik: san bahasyna garaşylýar',
@@ -4126,6 +4139,7 @@ $messages['tk'] = array(
 	'proofreadpage_nextpage' => 'Indiki sahypa',
 	'proofreadpage_prevpage' => 'Öňki sahypa',
 	'proofreadpage_quality0_category' => 'Tekstsiz',
+	'proofreadpage_quality2_category' => 'Problemaly',
 	'proofreadpage_quality4_category' => 'Barlanan',
 	'proofreadpage_quality4_message' => 'Bu sahypa barlanan',
 	'proofreadpage_index_listofpages' => 'Sahypalaryň sanawy',
