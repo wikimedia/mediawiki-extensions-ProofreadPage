@@ -160,14 +160,14 @@ function pr_make_edit_area(container,text){
 		+ '<div id="prp_header" style="display:none;">'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessageHeader) + '</span>'
-		+ '<textarea name="wpHeaderTextbox" rows="2" cols="80">' + pageHeader + '</textarea><br/>'
+		+ '<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + pageHeader + '</textarea><br/>'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessagePageBody) + '</span></div>'
-		+ '<textarea name="wpTextbox1" id="wpTextbox1" style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' + pageBody + '</textarea>'
+		+ '<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' + pageBody + '</textarea>'
 		+ '<div id="prp_footer" style="display:none;">'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessageFooter) + '</span><br/>'
-		+ '<textarea name="wpFooterTextbox" rows="2" cols="80">'+pageFooter+'</textarea></div>';
+		+ '<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>'+pageFooter+'</textarea></div>';
 
 
 }
@@ -872,11 +872,11 @@ function pr_add_quality_buttons(){
 	var f = document.createElement("span");
 	f.innerHTML = 
 ' <input type="hidden" name="wpProofreader" value="'+self.proofreadpage_username+'">'
-+'<span class="quality0"> <input type="radio" name="quality" value=0 onclick="pr_add_quality(this.form,0)"> </span>'
-+'<span class="quality2"> <input type="radio" name="quality" value=2 onclick="pr_add_quality(this.form,2)"> </span>'
-+'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)"> </span>'
-+'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)"> </span>'
-+'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)"> </span>';
++'<span class="quality0"> <input type="radio" name="quality" value=0 onclick="pr_add_quality(this.form,0)" tabindex=4> </span>'
++'<span class="quality2"> <input type="radio" name="quality" value=2 onclick="pr_add_quality(this.form,2)" tabindex=4> </span>'
++'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)" tabindex=4> </span>'
++'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)" tabindex=4> </span>'
++'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
 
 	if(!wgUserName) f.style.cssText = 'display:none';
