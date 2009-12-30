@@ -476,6 +476,7 @@ $messages['bg'] = array(
 	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
 	'proofreadpage_badpage' => 'Неправилен формат',
 	'proofreadpage_badpagetext' => 'Форматът на страницата, която опитвате да запазите, е неправилен.',
+	'proofreadpage_nologin' => 'Не сте влезли',
 	'proofreadpage_notallowed' => 'Промяната не е позволена',
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
 	'proofreadpage_interval_too_large' => 'Грешка: обхватът е твърде голям',
@@ -502,6 +503,7 @@ $messages['bg'] = array(
 Страници||20
 Забележки||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
+	'proofreadpage_specialpage_legend' => 'Търсене в индексните страници',
 	'proofreadpage_source' => 'Източник',
 );
 
@@ -854,7 +856,7 @@ Bemerkungen||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Seite|Seiten}}',
 	'proofreadpage_specialpage_legend' => 'Indexseiten durchsuchen',
 	'proofreadpage_source' => 'Quelle',
-	'proofreadpage_source_message' => 'Zur Erstellung dieses Texts wurde die gescannte Edition benutzt.',
+	'proofreadpage_source_message' => 'Zur Erstellung dieses Texts wurde die gescannte Ausgabe benutzt.',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -1235,6 +1237,7 @@ Leheküljed||20
 Märkused||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|lehekülg|lehekülge}}',
 	'proofreadpage_specialpage_legend' => 'Otsi registrilehtedelt',
+	'proofreadpage_source' => 'Allikas',
 );
 
 /** Basque (Euskara)
