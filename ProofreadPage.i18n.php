@@ -476,6 +476,7 @@ $messages['bg'] = array(
 	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
 	'proofreadpage_badpage' => 'Неправилен формат',
 	'proofreadpage_badpagetext' => 'Форматът на страницата, която опитвате да запазите, е неправилен.',
+	'proofreadpage_indexdupetext' => 'Страниците не могат да се изписват повече от веднъж на индексната страница.',
 	'proofreadpage_nologin' => 'Не сте влезли',
 	'proofreadpage_notallowed' => 'Промяната не е позволена',
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
@@ -720,6 +721,7 @@ Sumari||15",
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgines}}',
 	'proofreadpage_specialpage_legend' => "Cerca a les pàgines d'índex",
 	'proofreadpage_source' => 'Font',
+	'proofreadpage_source_message' => "Edició digitalitzada d'on s'ha extret aquest text",
 );
 
 /** Cebuano (Cebuano)
@@ -3428,6 +3430,7 @@ $messages['pt-br'] = array(
 	'proofreadpage_quality2_category' => 'Problemáticas',
 	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
 	'proofreadpage_quality4_category' => 'Validadas',
+	'proofreadpage_quality4_message' => 'Esta página foi validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message' => 'Link para a página de índice',
 	'proofreadpage_page_status' => 'Estado da página',
@@ -3440,6 +3443,8 @@ Fonte
 Imagem|Imagem de capa
 Páginas||20
 Notas||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
+	'proofreadpage_source' => 'Fonte',
 );
 
 /** Quechua (Runa Simi)
@@ -4142,8 +4147,14 @@ $messages['tk'] = array(
 	'proofreadpage_nextpage' => 'Indiki sahypa',
 	'proofreadpage_prevpage' => 'Öňki sahypa',
 	'proofreadpage_quality0_category' => 'Tekstsiz',
+	'proofreadpage_quality1_category' => 'Okalyp barlanmadyk',
 	'proofreadpage_quality2_category' => 'Problemaly',
+	'proofreadpage_quality3_category' => 'Okap barla',
 	'proofreadpage_quality4_category' => 'Barlanan',
+	'proofreadpage_quality0_message' => 'Bu sahypany okap barlamak gerek däl',
+	'proofreadpage_quality1_message' => 'Bu sahypa okalyp barlanylmandyr',
+	'proofreadpage_quality2_message' => 'Bu sahypa okalyp barlananda bir problema çykdy',
+	'proofreadpage_quality3_message' => 'Bu sahypa okalyp barlandy',
 	'proofreadpage_quality4_message' => 'Bu sahypa barlanan',
 	'proofreadpage_index_listofpages' => 'Sahypalaryň sanawy',
 	'proofreadpage_image_message' => 'Indeks sahypasyna çykgyt',
