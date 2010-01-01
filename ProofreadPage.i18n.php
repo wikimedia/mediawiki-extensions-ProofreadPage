@@ -1429,7 +1429,7 @@ Pages||20
 Remarques||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|page|pages}}',
 	'proofreadpage_specialpage_legend' => 'Rechercher dans les pages d’index',
-	'proofreadpage_source'         => 'Source',
+	'proofreadpage_source' => 'Source',
 	'proofreadpage_source_message' => 'Édition scannée dont est issu ce texte',
 );
 
@@ -4146,6 +4146,10 @@ $messages['tk'] = array(
 	'proofreadpage_invalid_interval' => 'Säwlik: nädogry aralyk',
 	'proofreadpage_nextpage' => 'Indiki sahypa',
 	'proofreadpage_prevpage' => 'Öňki sahypa',
+	'proofreadpage_header' => 'At (degişli däl):',
+	'proofreadpage_body' => 'Sahypa göwresi (atanaklaýyn girizilmeli):',
+	'proofreadpage_footer' => 'Futer (goşma):',
+	'proofreadpage_toggleheaders' => 'degişli däl bölümleriň görkezilişini üýtget',
 	'proofreadpage_quality0_category' => 'Tekstsiz',
 	'proofreadpage_quality1_category' => 'Okalyp barlanmadyk',
 	'proofreadpage_quality2_category' => 'Problemaly',
@@ -4171,6 +4175,7 @@ Bellikler||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sahypa|sahypa}}',
 	'proofreadpage_specialpage_legend' => 'Indeks sahypalaryny gözle',
 	'proofreadpage_source' => 'Çeşme',
+	'proofreadpage_source_message' => 'Bu teksti döretmek üçin ulanylan skanirlenen wersiýa',
 );
 
 /** Tagalog (Tagalog)
