@@ -3990,6 +3990,7 @@ $messages['te'] = array(
 	'proofreadpage_index' => 'సూచిక',
 	'proofreadpage_nosuch_file' => 'పొరపాటు: అటువంటి ఫైలు లేదు',
 	'proofreadpage_badpagetext' => 'మీరు భద్రపరచడానికి ప్రయత్నించిన పేజీ యొక్క రూపం చెల్లదు.',
+	'proofreadpage_indexdupe' => 'నకిలీ లింకు',
 	'proofreadpage_nologin' => 'ప్రవేశించలేదు',
 	'proofreadpage_nextpage' => 'తర్వాతి పేజీ',
 	'proofreadpage_prevpage' => 'గత పేజీ',
