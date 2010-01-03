@@ -3115,6 +3115,7 @@ Merknader||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
 	'proofreadpage_specialpage_legend' => 'Søk i indekssider',
 	'proofreadpage_source' => 'Kilde',
+	'proofreadpage_source_message' => 'Scannet utgave brukt for å etablere denne teksten',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
