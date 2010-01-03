@@ -857,7 +857,7 @@ function pr_renderPages( $input, $args, &$parser ) {
 			$h_out .= "|$key=$val";
 		}
 		$h_out .= '}}';
-		$out = $h_out . $out;
+		$out = $h_out . $out . "\n{{:MediaWiki:Proofreadpage_footer_template}}";
 	}
 
 	$out = $parser->recursiveTagParse($out);
