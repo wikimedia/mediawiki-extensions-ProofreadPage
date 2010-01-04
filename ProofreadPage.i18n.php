@@ -3993,6 +3993,7 @@ $messages['te'] = array(
 	'proofreadpage_badpagetext' => 'మీరు భద్రపరచడానికి ప్రయత్నించిన పేజీ యొక్క రూపం చెల్లదు.',
 	'proofreadpage_indexdupe' => 'నకిలీ లింకు',
 	'proofreadpage_nologin' => 'ప్రవేశించలేదు',
+	'proofreadpage_notallowed' => 'మార్పుకి అనుమతి లేదు',
 	'proofreadpage_nextpage' => 'తర్వాతి పేజీ',
 	'proofreadpage_prevpage' => 'గత పేజీ',
 	'proofreadpage_header' => 'శీర్షిక (కలుపకు):',
