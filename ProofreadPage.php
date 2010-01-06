@@ -103,7 +103,7 @@ function pr_load_index( $title ) {
 
 	$page_namespace = pr_page_ns();
 	$index_namespace = pr_index_ns();
-	$title->pr_index_title = NULL;
+	$title->pr_index_title = null;
 	$dbr = wfGetDB( DB_SLAVE );
 	$result = $dbr->select(
 			array( 'page', 'pagelinks' ),
@@ -1218,7 +1218,7 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 	$page_namespace = pr_page_ns();
 	$index_namespace = pr_index_ns();
 	$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
-	if ( $page_ns_index == NULL ) {
+	if ( $page_ns_index == null ) {
 		return; 
 	}
 
