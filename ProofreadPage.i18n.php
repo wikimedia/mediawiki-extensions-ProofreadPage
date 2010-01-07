@@ -2353,6 +2353,7 @@ $messages['ka'] = array(
 გვერდები||20
 შენიშვნები||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|გვერდი|გვერდები}}',
+	'proofreadpage_source' => 'წყარო',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -4283,6 +4284,13 @@ Açıklamalar||10',
 $messages['ts'] = array(
 	'proofreadpage_namespace' => 'Tluka',
 	'proofreadpage_index_namespace' => 'Nxaxamelo',
+);
+
+/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+ * @author Timming
+ */
+$messages['tt-cyrl'] = array(
+	'proofreadpage_nextpage' => 'алдагы бит',
 );
 
 /** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
