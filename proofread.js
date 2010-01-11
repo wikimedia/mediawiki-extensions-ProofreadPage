@@ -227,7 +227,6 @@ var lastxx, lastyy, xx, yy;
 
 var zp_clip;  //zp_clip is the large image
 var zp_container;
-var zp_img;
 
 var zoomamount_h=2; 
 var zoomamount_w=2; 
@@ -395,36 +394,32 @@ function pr_initzoom(){
  * 
  ********************************/
 
-var margin_x = 0;
-var margin_y = 0;
-var prev_margin_x = 0;
-var prev_margin_y = 0;
 var init_x = 0;
 var init_y = 0;
 var is_drag = false;
+var is_zoom = false;
+var pr_container = false;
 
 function pr_drop(evt){
-	prev_margin_x = margin_x;
-	prev_margin_y = margin_y;
+	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
+	get_xy(evt); if(xx>pr_container.offsetWidth-20 || yy>pr_container.offsetHeight-20) return false;
+
 	document.onmouseup = null;
 	document.onmousemove = null;
 	document.onmousedown = null;
-	zp_container.onmousemove = pr_move;
+	pr_container.onmousemove = pr_move;
 
-	var image_container = document.getElementById("pr_container");
 	if( is_drag==false ) {
-		if( self.container_css.search("overflow:hidden") > -1 ) {
+		if( is_zoom ) {
+			is_zoom = false;
 			self.container_css = self.container_css.replace("overflow:hidden","overflow:auto");
 			self.container_css = self.container_css.replace("cursor:crosshair","cursor:default");
-			image_container.style.cssText = self.container_css;
-			if (image_container.removeEventListener) 
-				image_container.removeEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+			pr_container.style.cssText = self.container_css;
 		} else {
+			is_zoom = true;
 			self.container_css = self.container_css.replace("overflow:auto","overflow:hidden");
 			self.container_css = self.container_css.replace("cursor:default","cursor:crosshair");
-			image_container.style.cssText = self.container_css;
-			if (image_container.addEventListener) 
-				image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+			pr_container.style.cssText = self.container_css;
 		}
 	}
 	is_drag = false;
@@ -434,8 +429,7 @@ function pr_drop(evt){
 function pr_grab(evt){
 
 	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
-	zp_img = document.getElementById("ProofReadImage");
-	zp_container = document.getElementById("pr_container");
+	get_xy(evt); if(xx>pr_container.offsetWidth-20 || yy>pr_container.offsetHeight-20) return false;
 
 	//only left button; see http://unixpapa.com/js/mouse.html for why it is this complicated
 	if(evt.which == null) {
@@ -447,7 +441,7 @@ function pr_grab(evt){
 	document.onmousedown = function(){return false;}; 
 	document.onmousemove = pr_drag;
 	document.onmouseup = pr_drop;
-	zp_container.onmousemove = pr_drag;
+	pr_container.onmousemove = pr_drag;
 
 	if(evt.pageX) {
 		countoffset();
@@ -460,8 +454,8 @@ function pr_grab(evt){
 		lastyy=evt.clientY - ieoy; 
 	}
 	
-	init_x = lastxx;
-	init_y = lastyy;
+	init_x = pr_container.scrollLeft + lastxx;
+	init_y = pr_container.scrollTop + lastyy;
 	is_drag = false;
 	
 	return false;
@@ -477,12 +471,10 @@ function pr_move(evt) {
 
 function pr_drag(evt) {
 	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
-	get_xy(evt);
-	margin_x = prev_margin_x - (init_x-xx); 
-	margin_y = prev_margin_y - (init_y-yy); 
-	zp_img.style.margin =  margin_y + 'px 0px 0px ' + margin_x + 'px';
-	image_container.style.cssText = self.container_css; //needed by IE6
-	
+	get_xy(evt); if(xx>pr_container.offsetWidth-20 || yy>pr_container.offsetHeight-20) return false;
+
+	pr_container.scrollLeft = (init_x-xx);
+	pr_container.scrollTop  = (init_y-yy);
 	if (evt.preventDefault) evt.preventDefault();
 	evt.returnValue = false;
 	is_drag = true;
@@ -492,18 +484,12 @@ function pr_drag(evt) {
 
 function pr_zoom(delta){
 
-	var image_container = document.getElementById("pr_container");
-	zp_img = document.getElementById("ProofReadImage");		
+	var zp_img = document.getElementById("ProofReadImage");
 	if(!zp_img) return;
 	
 	if (delta == 0) {
 		//reduce width by 20 pixels in order to prevent horizontal scrollbar from showing up
-		zp_img.width = image_container.offsetWidth-20; 
-		zp_img.style.margin = '0px 0px 0px 0px';
-		image_container.style.cssText = self.container_css; //needed by IE6
-
-		prev_margin_x = margin_x = 0;
-		prev_margin_y = margin_y = 0;
+		zp_img.width = pr_container.offsetWidth-20;
 	}
 	else{
 		var old_width = zp_img.width;
@@ -512,22 +498,18 @@ function pr_zoom(delta){
 		if(delta_w==0) return;
 		var s = (delta_w>0)?1:-1;
 
-		var ptx = xx + image_container.scrollLeft;
-		var pty = yy + image_container.scrollTop;
+		var ptx = xx + pr_container.scrollLeft;
+		var pty = yy + pr_container.scrollTop;
 		
 		for(var dw=s; dw != delta_w; dw=dw+s){
 			zp_img.width = old_width + dw;//this adds 1 pixel
-			image_container.style.cssText = self.container_css; //needed by IE6
 			if(xx){
 				//magnification factor
 				var lambda = (old_width+dw)/old_width;
-				margin_x = ptx - lambda*(ptx - prev_margin_x);
-				margin_y = pty - lambda*(pty - prev_margin_y);
-				zp_img.style.margin =  Math.round(margin_y) + 'px 0px 0px ' + Math.round(margin_x) + 'px';
+				pr_container.scrollLeft = Math.round(lambda*ptx - xx);
+				pr_container.scrollTop = Math.round(lambda*pty - yy);
 			}
 		}
-		prev_margin_x = margin_x;
-		prev_margin_y = margin_y;
 
 	}
 }
@@ -546,9 +528,12 @@ function pr_zoom_wheel(evt){
         	 */
 		delta = -evt.detail/3;
 	}
-	if(delta) pr_zoom(delta);
-	if(evt.preventDefault) evt.preventDefault();
-	evt.returnValue = false;
+	if(is_zoom && delta) {
+		pr_zoom(delta);
+		if(evt.preventDefault) evt.preventDefault();
+		evt.returnValue = false;
+	}
+
 }
 
 
@@ -638,7 +623,7 @@ function  pr_fill_table(horizontal_layout){
 		if(!horizontal_layout){
 			self.DisplayHeight = Math.ceil(height*0.85);
 			self.DisplayWidth = parseInt(width/2-70);
-			img_w = self.DisplayWidth;
+			img_w = self.DisplayWidth-20;
 			css_wh = "width:"+self.DisplayWidth+"px; height:"+self.DisplayHeight+"px;";
 		}
 		else{
@@ -653,13 +638,15 @@ function  pr_fill_table(horizontal_layout){
 			+ "\" width=\""+img_w+"\" />";
 		
 		image_container.style.cssText = self.container_css;
-		pr_zoom(0);
 
 		image_container.onmousedown = pr_grab;
 		image_container.onmousemove = pr_move;
 
-		zp_img = document.getElementById("ProofReadImage");
-		zp_container = document.getElementById("pr_container");
+		if (image_container.addEventListener)
+			image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+
+		pr_container = image_container;
+		pr_zoom(0);
 	}
 }
 
