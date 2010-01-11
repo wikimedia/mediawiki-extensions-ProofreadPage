@@ -81,22 +81,23 @@ class ProofreadPagesQuery extends QueryPage {
 		$page = $dbr->tableName( 'page' );
 		$pr_index = $dbr->tableName( 'pr_index' );
 
-		if( $this->searchList ) {
-			$index_namespace = pr_index_ns() ;
-			$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
-			$querylist = '';
-			foreach( $this->searchList as $item ) {
-				if( $querylist ) $querylist .= ', ';
-				$querylist .= "'" . $dbr->strencode( $item ). "'";
+		$query = "SELECT page_title as title,
+		pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
+		FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id";
+
+		if( $this->searchTerm ) {
+			if( $this->searchList ) {
+				$index_namespace = pr_index_ns() ;
+				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+				$querylist = '';
+				foreach( $this->searchList as $item ) {
+					if( $querylist ) $querylist .= ', ';
+					$querylist .= "'" . $dbr->strencode( $item ). "'";
+				}
+				$query .= " WHERE page_namespace=$index_ns_index AND page_title IN ($querylist)";
+			} else {
+				$query .= " WHERE false";
 			}
-			$query = "SELECT page_title as title,
-			pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
-			FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id
-			WHERE page_namespace=$index_ns_index AND page_title IN ($querylist)";
-		} else {
-			$query = "SELECT page_title as title,
-			pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
-			FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id";
 		}
 		return $query;
 	}
