@@ -4134,6 +4134,7 @@ $messages['th'] = array(
  */
 $messages['tk'] = array(
 	'indexpages' => 'Indeks sahypalarynyň sanawy',
+	'proofreadpage_desc' => 'Original skanirleme bilen tekstiň aňsat deňedirilmegine rugsat berýär',
 	'proofreadpage_namespace' => 'Sahypa',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'surat',
@@ -4146,7 +4147,9 @@ $messages['tk'] = array(
 	'proofreadpage_indexdupe' => 'Dublikat çykgyt',
 	'proofreadpage_indexdupetext' => 'Sahypalar bir indeks sahypasynda birden artykmaç sanawlanyp bilmeýär.',
 	'proofreadpage_nologin' => 'Sessiýa açylmadyk',
+	'proofreadpage_nologintext' => 'Sahypalryň okap düzetmek statusyny üýtgetmek üçin [[Special:UserLogin|sessiýa açmaly]].',
 	'proofreadpage_notallowed' => 'Üýtgeşmä rugsat berilmeýär',
+	'proofreadpage_notallowedtext' => 'Bu sahypanyň okap görmek statusyny üýtgetmäge rugsadyňyz ýok.',
 	'proofreadpage_number_expected' => 'Säwlik: san bahasyna garaşylýar',
 	'proofreadpage_interval_too_large' => 'Säwlik: aralyk örän giň',
 	'proofreadpage_invalid_interval' => 'Säwlik: nädogry aralyk',
