@@ -206,12 +206,10 @@ function pr_toggle_visibility() {
 
 function pr_toggle_layout() {
 
-	if ( self.pr_horiz ) {
-		pr_fill_table(false);
-	} else {
-		pr_fill_table(true);
-	}
+	self.pr_horiz = ! self.pr_horiz;
+	pr_fill_table();
 	pr_reset_size();
+	pr_zoom(0);
 }
 
 
@@ -400,6 +398,10 @@ var is_drag = false;
 var is_zoom = false;
 var pr_container = false;
 
+/* size of the window */
+var pr_width = 0, pr_height = 0;
+
+
 function pr_drop(evt){
 	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	get_xy(evt); if(xx>pr_container.offsetWidth-20 || yy>pr_container.offsetHeight-20) return false;
@@ -539,29 +541,16 @@ function pr_zoom_wheel(evt){
 
 
 
+/* fill table with textbox and image */
+function  pr_fill_table(){
 
-
-
-
-/*do not use a table in the horizontal case ?*/
-function  pr_fill_table(horizontal_layout){
-
-
-	//remove existing image_container and table
-	image_container = document.getElementById("pr_container");
-	if(image_container) image_container.parentNode.removeChild(image_container);
+	//remove existing table
 	while(self.table.firstChild){
 		self.table.removeChild(self.table.firstChild);
 	}
 
-	if(!proofreadPageIsEdit) horizontal_layout=false;
-
-	//create image container
-	var image_container = document.createElement("div");
-	image_container.setAttribute("id", "pr_container");
-
 	//setup the layout
-	if(!horizontal_layout) {
+	if(!pr_horiz) {
 		//use a table only here
 		var t_table = document.createElement("table");
 		var t_body = document.createElement("tbody");
@@ -577,7 +566,7 @@ function  pr_fill_table(horizontal_layout){
 		t_row.appendChild(cell_right);
 		t_body.appendChild(t_row);
 
-		cell_right.appendChild(image_container);
+		cell_right.appendChild(pr_container_parent);
 		cell_left.appendChild(self.text_container);
 		self.table.appendChild(t_table);
 	}
@@ -585,69 +574,25 @@ function  pr_fill_table(horizontal_layout){
 		self.table.appendChild(self.text_container);
 		form = document.getElementById("editform");
 		tb = document.getElementById("toolbar");
-		if(tb) tb.parentNode.insertBefore(image_container,tb);
-		else form.parentNode.insertBefore(image_container,form);
+		if(tb) tb.parentNode.insertBefore(pr_container_parent,tb);
+		else form.parentNode.insertBefore(pr_container_parent,form);
 	}
 	
-	self.pr_horiz = horizontal_layout;
-
-	//get the size of the window
-	var width = 0, height = 0;
-	if( typeof( window.innerWidth ) == 'number' ) {
-		//Non-IE
-		width = window.innerWidth;
-		height = window.innerHeight;
-	} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
-		//IE 6+ in 'standards compliant mode'
-		width = document.documentElement.clientWidth;
-		height = document.documentElement.clientHeight;
-	} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
-		//IE 4 compatible
-		width = document.body.clientWidth;
-		height = document.body.clientHeight;
-	}
-
-	//fill the image container	
-	if(!proofreadPageIsEdit) { 
-		//this sets DisplayWidth and DisplayHeight
-		var thumb_url = pr_image_url(parseInt(width/2-70)); 
-		var image = document.createElement("img");
-		image_container.appendChild(image);
-		image.setAttribute("id", "ProofReadImage");
-		image.setAttribute("src", thumb_url);
-		image.setAttribute("width", self.DisplayWidth);
-		image.style.cssText = "padding:0;margin:0;border:0;";
-		image_container.style.cssText = "overflow:hidden;width:"+self.DisplayWidth+"px;";
-	}
-	else{
-		if(!horizontal_layout){
-			self.DisplayHeight = Math.ceil(height*0.85);
-			self.DisplayWidth = parseInt(width/2-70);
+	if(proofreadPageIsEdit) { 
+		if(!pr_horiz){
+			self.DisplayHeight = Math.ceil(pr_height*0.85);
+			self.DisplayWidth = parseInt(pr_width/2-70);
 			img_w = self.DisplayWidth-20;
 			css_wh = "width:"+self.DisplayWidth+"px; height:"+self.DisplayHeight+"px;";
-		}
-		else{
-			self.DisplayHeight = Math.ceil(height*0.4);
+		} else {
+			self.DisplayHeight = Math.ceil(pr_height*0.4);
 			img_w = 0; //prevent the container from being resized when the image is downloaded. 
 			css_wh = "width:100%; height:"+self.DisplayHeight+"px;";
 		}
 		self.container_css = "cursor:default; background:#000000; overflow:auto; " + css_wh;
-		image_container.innerHTML = 
-			"<img id=\"ProofReadImage\" src=\""	
-			+ escapeQuotesHTML(proofreadPageViewURL) 
-			+ "\" width=\""+img_w+"\" />";
-		
-		image_container.style.cssText = self.container_css;
-
-		image_container.onmousedown = pr_grab;
-		image_container.onmousemove = pr_move;
-
-		if (image_container.addEventListener)
-			image_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
-
-		pr_container = image_container;
-		pr_zoom(0);
+		pr_container.style.cssText = self.container_css;
 	}
+	pr_zoom(0);
 }
 
 
@@ -658,18 +603,69 @@ function  pr_fill_table(horizontal_layout){
 
 function pr_setup() {
 
+	self.pr_horiz = (self.proofreadpage_default_layout=='horizontal');
+	if(!proofreadPageIsEdit) pr_horiz = false;
+
 	self.table = document.createElement("div");
 	self.text_container = document.createElement("div");
-	self.image_container = document.createElement("div");
+
+	pr_container = document.createElement("div");
+	pr_container.setAttribute("id", "pr_container");
+
+	self.pr_container_parent = document.createElement("div");
+	pr_container_parent.appendChild(pr_container);
+
+	//get the size of the window
+	if( typeof( window.innerWidth ) == 'number' ) {
+		//Non-IE
+		pr_width = window.innerWidth;
+		pr_height = window.innerHeight;
+	} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+		//IE 6+ in 'standards compliant mode'
+		pr_width = document.documentElement.clientWidth;
+		pr_height = document.documentElement.clientHeight;
+	} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+		//IE 4 compatible
+		pr_width = document.body.clientWidth;
+		pr_height = document.body.clientHeight;
+	}
+
+	//fill the image container	
+	if(!proofreadPageIsEdit) { 
+		//this sets DisplayWidth and DisplayHeight
+		var thumb_url = pr_image_url(parseInt(pr_width/2-70)); 
+		var image = document.createElement("img");
+		image.setAttribute("id", "ProofReadImage");
+		image.setAttribute("src", thumb_url);
+		image.setAttribute("width", self.DisplayWidth);
+		image.style.cssText = "padding:0;margin:0;border:0;";
+		pr_container.appendChild(image);
+		pr_container.style.cssText = "overflow:hidden;width:"+self.DisplayWidth+"px;";
+	} else {
+		if(!pr_horiz){
+			self.DisplayHeight = Math.ceil(pr_height*0.85);
+			self.DisplayWidth = parseInt(pr_width/2-70);
+			img_w = self.DisplayWidth-20;
+		}
+		else{
+			self.DisplayHeight = Math.ceil(pr_height*0.4);
+			img_w = 0; //prevent the container from being resized once the image is downloaded. 
+		}
+
+		pr_container.innerHTML = "<img id=\"ProofReadImage\" src=\""
+		    + escapeQuotesHTML(proofreadPageViewURL) 
+		    + "\" width=\"" + img_w + "\" />";
+		pr_container.onmousedown = pr_grab;
+		pr_container.onmousemove = pr_move;
+		if (pr_container.addEventListener)
+			pr_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+	}
+
 	table.setAttribute("id", "textBoxTable");
 	table.style.cssText = "width:100%;";
 
-	//fill table
-	if(self.proofreadpage_default_layout=='horizontal') 
-		pr_fill_table(true);
-	else
-		pr_fill_table(false);
-
+	pr_fill_table();
+	
 	//insert the image    
 	if(proofreadPageIsEdit) {
 		var text = document.getElementById("wpTextbox1"); 
@@ -699,74 +695,75 @@ function pr_setup() {
 
 		var toolbar = document.getElementById("toolbar");
 
-		if(toolbar){
-			var image = document.createElement("img");
-			image.width = 23;
-			image.height = 22;
-			image.className = "mw-toolbar-editbutton";
-			image.src = wgScriptPath+'/extensions/ProofreadPage/button_category_plus.png';
-			image.border = 0;
-			image.alt = proofreadPageMessageToggleHeaders;
-			image.title = proofreadPageMessageToggleHeaders;
-			image.style.cursor = "pointer";
-			image.onclick = pr_toggle_visibility;
-			toolbar.appendChild(image);
+		var image = document.createElement("img");
+		image.width = 23;
+		image.height = 22;
+		image.className = "mw-toolbar-editbutton";
+		image.src = wgScriptPath+'/extensions/ProofreadPage/button_category_plus.png';
+		image.border = 0;
+		image.alt = proofreadPageMessageToggleHeaders;
+		image.title = proofreadPageMessageToggleHeaders;
+		image.style.cursor = "pointer";
+		image.onclick = pr_toggle_visibility;
 			
-			var image3 = document.createElement("img");
-			image3.width = 23;
-			image3.height = 22;
-			image3.border = 0;
-			image3.className = "mw-toolbar-proofread";
-			image3.style.cursor = "pointer";
-			image3.alt = "-";
-			image3.title = "zoom out";
-			image3.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_out.png";
-			image3.onclick = new Function("xx=0;yy=0;pr_zoom(-2);");
-			toolbar.appendChild(image3);
+		var image3 = document.createElement("img");
+		image3.width = 23;
+		image3.height = 22;
+		image3.border = 0;
+		image3.className = "mw-toolbar-proofread";
+		image3.style.cursor = "pointer";
+		image3.alt = "-";
+		image3.title = "zoom out";
+		image3.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_out.png";
+		image3.onclick = new Function("xx=0;yy=0;pr_zoom(-2);");
 			
-			var image4 = document.createElement("img");
-			image4.width = 23;
-			image4.height = 22;
-			image4.border = 0;
-			image4.className = "mw-toolbar-proofread";
-			image4.style.cursor = "pointer";
-			image4.alt = "-";
-			image4.title = "reset zoom";
-			image4.src = wgScriptPath+"/extensions/ProofreadPage/Button_examine.png";
-			image4.onclick = new Function("pr_zoom(0);");
-			toolbar.appendChild(image4);
+		var image4 = document.createElement("img");
+		image4.width = 23;
+		image4.height = 22;
+		image4.border = 0;
+		image4.className = "mw-toolbar-proofread";
+		image4.style.cursor = "pointer";
+		image4.alt = "-";
+		image4.title = "reset zoom";
+		image4.src = wgScriptPath+"/extensions/ProofreadPage/Button_examine.png";
+		image4.onclick = new Function("pr_zoom(0);");
 			
-			var image2 = document.createElement("img");
-			image2.width = 23;
-			image2.height = 22;
-			image2.border = 0;
-			image2.className = "mw-toolbar-proofread";
-			image2.style.cursor = "pointer";
-			image2.alt = "+";
-			image2.title = "zoom in";
-			image2.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_in.png";
-			image2.onclick = new Function("xx=0;yy=0;pr_zoom(2);");
-			toolbar.appendChild(image2);
+		var image2 = document.createElement("img");
+		image2.width = 23;
+		image2.height = 22;
+		image2.border = 0;
+		image2.className = "mw-toolbar-proofread";
+		image2.style.cursor = "pointer";
+		image2.alt = "+";
+		image2.title = "zoom in";
+		image2.src = wgScriptPath+"/extensions/ProofreadPage/Button_zoom_in.png";
+		image2.onclick = new Function("xx=0;yy=0;pr_zoom(2);");
 			
-			var image1 = document.createElement("img");
-			image1.width = 23;
-			image1.height = 22;
-			image1.className = "mw-toolbar-editbutton";
-			image1.src = wgScriptPath+'/extensions/ProofreadPage/Button_multicol.png';
-			image1.border = 0;
-			image1.alt = " ";
-			image1.title = "vertical/horizontal layout";
-			image1.style.cursor = "pointer";
-			image1.onclick = pr_toggle_layout;
-			toolbar.appendChild(image1);
+		var image1 = document.createElement("img");
+		image1.width = 23;
+		image1.height = 22;
+		image1.className = "mw-toolbar-editbutton";
+		image1.src = wgScriptPath+'/extensions/ProofreadPage/Button_multicol.png';
+		image1.border = 0;
+		image1.alt = " ";
+		image1.title = "vertical/horizontal layout";
+		image1.style.cursor = "pointer";
+		image1.onclick = pr_toggle_layout;
 
-		} else {
+		if( (!toolbar) || (self.wgWikiEditorPreferences && self.wgWikiEditorPreferences["toolbar"] ) ) {
 			var mb = document.createElement("div");
-			mb.style.cssText="background-color:#eeeeee;";
-			mb.innerHTML = "<a href=\"javascript:pr_toggle_visibility();\">headers</a> - <a href=\"javascript:pr_toggle_layout();\">layout</a> - <a href=\"javascript:pr_zoom(0);\">zoom</a> : <a href=\"javascript:xx=0;yy=0;pr_zoom(2);\">+</a> / <a href=\"javascript:xx=0;yy=0;pr_zoom(-2);\">\u2013</a>";
-			var p = table.parentNode;
+			mb.style.cssText="position:relative;";
+			toolbar = document.createElement("div");
+			toolbar.style.cssText="position:absolute;";
+			mb.appendChild(toolbar);
+			var p = pr_container.parentNode;
 			p.insertBefore(mb,p.firstChild);
 		}
+		toolbar.appendChild(image);
+		toolbar.appendChild(image3);
+		toolbar.appendChild(image4);
+		toolbar.appendChild(image2);
+		toolbar.appendChild(image1);
 	}
 }
 
