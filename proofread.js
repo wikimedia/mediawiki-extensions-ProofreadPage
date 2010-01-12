@@ -492,6 +492,7 @@ function pr_zoom(delta){
 	if (delta == 0) {
 		//reduce width by 20 pixels in order to prevent horizontal scrollbar from showing up
 		zp_img.width = pr_container.offsetWidth-20;
+		pr_container.style.cssText = self.container_css; //needed by IE6
 	}
 	else{
 		var old_width = zp_img.width;
@@ -505,6 +506,7 @@ function pr_zoom(delta){
 		
 		for(var dw=s; dw != delta_w; dw=dw+s){
 			zp_img.width = old_width + dw;//this adds 1 pixel
+			pr_container.style.cssText = self.container_css; //needed by IE6
 			if(xx){
 				//magnification factor
 				var lambda = (old_width+dw)/old_width;
@@ -659,6 +661,7 @@ function pr_setup() {
 		pr_container.onmousemove = pr_move;
 		if (pr_container.addEventListener)
 			pr_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
+		pr_container.onmousewheel = pr_zoom_wheel;//IE,Opera. 
 	}
 
 	table.setAttribute("id", "textBoxTable");
