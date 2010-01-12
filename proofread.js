@@ -416,12 +416,20 @@ function pr_drop(evt){
 			is_zoom = false;
 			self.container_css = self.container_css.replace("overflow:hidden","overflow:auto");
 			self.container_css = self.container_css.replace("cursor:crosshair","cursor:default");
+			sl = pr_container.scrollLeft;//save scrollbar value for Opera, Chrome
+			st = pr_container.scrollTop;
 			pr_container.style.cssText = self.container_css;
+			pr_container.scrollLeft = sl;
+			pr_container.scrollTop = st;
 		} else {
 			is_zoom = true;
 			self.container_css = self.container_css.replace("overflow:auto","overflow:hidden");
 			self.container_css = self.container_css.replace("cursor:default","cursor:crosshair");
+			sl = pr_container.scrollLeft;
+			st = pr_container.scrollTop;
 			pr_container.style.cssText = self.container_css;
+			pr_container.scrollLeft = sl;
+			pr_container.scrollTop = st;
 		}
 	}
 	is_drag = false;
