@@ -401,6 +401,23 @@ var pr_container = false;
 /* size of the window */
 var pr_width = 0, pr_height = 0;
 
+function set_container_css(show_scrollbars,default_cursor){
+	if(show_scrollbars) {
+		self.container_css = self.container_css.replace("overflow:hidden","overflow:auto");
+	} else {
+		self.container_css = self.container_css.replace("overflow:auto","overflow:hidden");
+	}
+	if(default_cursor) {
+		self.container_css = self.container_css.replace("cursor:crosshair","cursor:default");
+	} else {
+		self.container_css = self.container_css.replace("cursor:default","cursor:crosshair");
+	}
+	sl = pr_container.scrollLeft;//save scrollbar value for Opera, Chrome
+	st = pr_container.scrollTop;
+	pr_container.style.cssText = self.container_css;
+	pr_container.scrollLeft = sl;
+	pr_container.scrollTop = st;
+}
 
 function pr_drop(evt){
 	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
@@ -410,29 +427,11 @@ function pr_drop(evt){
 	document.onmousemove = null;
 	document.onmousedown = null;
 	pr_container.onmousemove = pr_move;
-
 	if( is_drag==false ) {
-		if( is_zoom ) {
-			is_zoom = false;
-			self.container_css = self.container_css.replace("overflow:hidden","overflow:auto");
-			self.container_css = self.container_css.replace("cursor:crosshair","cursor:default");
-			sl = pr_container.scrollLeft;//save scrollbar value for Opera, Chrome
-			st = pr_container.scrollTop;
-			pr_container.style.cssText = self.container_css;
-			pr_container.scrollLeft = sl;
-			pr_container.scrollTop = st;
-		} else {
-			is_zoom = true;
-			self.container_css = self.container_css.replace("overflow:auto","overflow:hidden");
-			self.container_css = self.container_css.replace("cursor:default","cursor:crosshair");
-			sl = pr_container.scrollLeft;
-			st = pr_container.scrollTop;
-			pr_container.style.cssText = self.container_css;
-			pr_container.scrollLeft = sl;
-			pr_container.scrollTop = st;
-		}
+		is_zoom = !is_zoom;
 	}
 	is_drag = false;
+	set_container_css(!is_zoom,!is_zoom);
 	return false;
 }
 
@@ -467,7 +466,7 @@ function pr_grab(evt){
 	init_x = pr_container.scrollLeft + lastxx;
 	init_y = pr_container.scrollTop + lastyy;
 	is_drag = false;
-	
+	set_container_css(!is_zoom,!is_zoom);
 	return false;
 
 }
@@ -488,6 +487,7 @@ function pr_drag(evt) {
 	if (evt.preventDefault) evt.preventDefault();
 	evt.returnValue = false;
 	is_drag = true;
+	set_container_css(true,!is_zoom);
 	return false;
 }
 
