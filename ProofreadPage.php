@@ -298,7 +298,7 @@ function pr_parse_index_links( $index_title ){
 	$text =	$rev->getText();
 	$options = new ParserOptions();
 	$rtext = $pr_index_parser->preprocess( $text, $index_title, $options );
-	$text_links_pattern = "/\[\[([^:\|]*?)(\|(.*?)|)\]\]/i";
+	$text_links_pattern = "/\[\[\s*([^:\|]*?)\s*(\|(.*?)|)\]\]/i";
 	preg_match_all( $text_links_pattern, $rtext, $text_links, PREG_PATTERN_ORDER );
 	return $text_links;
 }
