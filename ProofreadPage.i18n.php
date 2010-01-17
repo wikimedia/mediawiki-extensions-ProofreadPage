@@ -2057,6 +2057,8 @@ Paginas||20
 Notas||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
 	'proofreadpage_specialpage_legend' => 'Cercar in paginas de indice',
+	'proofreadpage_source' => 'Fonte',
+	'proofreadpage_source_message' => 'Le original scannate usate pro crear iste texto',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -3770,6 +3772,8 @@ Strán||20
 Poznámky||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránok}}',
 	'proofreadpage_specialpage_legend' => 'Hľadať v stránkach indexu',
+	'proofreadpage_source' => 'Zdroj',
+	'proofreadpage_source_message' => 'Naskenované vydanie použité pri vzniku tohto textu',
 );
 
 /** Slovenian (Slovenščina) */
