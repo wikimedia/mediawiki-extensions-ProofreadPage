@@ -3325,6 +3325,8 @@ Pàgine||20
 Nòte||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgine}}',
 	'proofreadpage_specialpage_legend' => 'Sërca ant le pàgine ëd tàula',
+	'proofreadpage_source' => 'Sorgiss',
+	'proofreadpage_source_message' => 'Edission digitalisà dovrà për stabilì sto test-sì',
 );
 
 /** Pashto (پښتو)
