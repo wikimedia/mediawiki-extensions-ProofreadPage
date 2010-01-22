@@ -1181,6 +1181,7 @@ Comentarios||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
 	'proofreadpage_specialpage_legend' => 'Buscar en páginas de índice',
 	'proofreadpage_source' => 'Fuente',
+	'proofreadpage_source_message' => 'Edición escaneada usada para establecer este texto',
 );
 
 /** Estonian (Eesti)
@@ -1773,8 +1774,8 @@ $messages['hi'] = array(
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
+ * @author Ex13
  * @author SpeedyGonsales
- * @author Suradnik13
  */
 $messages['hr'] = array(
 	'indexpages' => 'Popis sadržaja stranica',
