@@ -4511,6 +4511,8 @@ Các trang||20
 Ghi chú||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|trang|trang}}',
 	'proofreadpage_specialpage_legend' => 'Tìm kiếm trong các trang mục lục',
+	'proofreadpage_source' => 'Nguồn',
+	'proofreadpage_source_message' => 'Bản quét được dùng để tạo ra văn bản này',
 );
 
 /** Volapük (Volapük)
