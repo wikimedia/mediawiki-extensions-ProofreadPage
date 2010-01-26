@@ -4419,6 +4419,7 @@ Pagine||20
 Note||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
 	'proofreadpage_specialpage_legend' => 'Serca in te le pagine de indice',
+	'proofreadpage_source' => 'Fonte',
 );
 
 /** Veps (Vepsan kel')
