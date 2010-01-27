@@ -653,7 +653,7 @@ function pr_pageQuality( $input, $args, &$parser ) {
  * Parser hook for index pages 
  * Display a list of coloured links to pages
  */
-function pr_renderPageList( $input, $args, &$parser ) {
+function pr_renderPageList( $input, $args, $parser ) {
 	global $wgUser;
 
 	$page_namespace = pr_page_ns();
