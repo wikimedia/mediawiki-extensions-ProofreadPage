@@ -575,7 +575,8 @@ function pr_zoom_wheel(evt){
 	}
 	if(is_zoom && delta) {
 		//disable wheel zoom for IE6.
-		if( navigator.appName.indexOf("Microsoft")==-1 || navigator.appVersion.indexOf("MSIE 6.")==-1) 
+		if( (!self.proofreadpage_disable_wheelzoom) 
+		    && ( navigator.appName.indexOf("Microsoft")==-1 || navigator.appVersion.indexOf("MSIE 6.")==-1) ) 
 			pr_zoom(delta);
 		if(evt.preventDefault) evt.preventDefault();
 		evt.returnValue = false;
