@@ -3924,7 +3924,7 @@ Catetan||10',
  * @author Rotsee
  */
 $messages['sv'] = array(
-	'indexpages' => 'Sidor med innehållsförteckningar',
+	'indexpages' => 'Lista över indexsidor',
 	'proofreadpage_desc' => 'Ger möjlighet att korrekturläsa texter mot scannade original',
 	'proofreadpage_namespace' => 'Sida',
 	'proofreadpage_index_namespace' => 'Index',
