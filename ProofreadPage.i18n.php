@@ -1245,6 +1245,7 @@ Märkused||10',
 
 /** Basque (Euskara)
  * @author An13sa
+ * @author Unai Fdz. de Betoño
  */
 $messages['eu'] = array(
 	'proofreadpage_namespace' => 'Orria',
@@ -1269,6 +1270,7 @@ Iturria
 Irudia|estalki irudia
 Orriak||20
 Oharrak||10',
+	'proofreadpage_source' => 'Jatorria',
 );
 
 /** Persian (فارسی)
