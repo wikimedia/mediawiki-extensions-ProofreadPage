@@ -3994,25 +3994,44 @@ $messages['szl'] = array(
  * @author Kiranmayee
  * @author Mpradeep
  * @author Veeven
+ * @author రాకేశ్వర
  */
 $messages['te'] = array(
 	'indexpages' => 'సూచీ పేజీల జాబితా',
+	'proofreadpage_desc' => 'గద్యానికీ అసలు బొమ్మకు (స్కాన్) మధ్యన తేలికగా పోల్చిచూపడాన్ని అనుమతించు',
 	'proofreadpage_namespace' => 'పేజీ',
 	'proofreadpage_index_namespace' => 'సూచిక',
 	'proofreadpage_image' => 'బొమ్మ',
 	'proofreadpage_index' => 'సూచిక',
+	'proofreadpage_index_expected' => 'తప్పిదం: సూచిక వుండవలసినది',
+	'proofreadpage_nosuch_index' => 'పొరపాటు: అటువంటి సూచిక లేదు',
 	'proofreadpage_nosuch_file' => 'పొరపాటు: అటువంటి ఫైలు లేదు',
+	'proofreadpage_badpage' => 'అమరిక(format) తప్పు',
 	'proofreadpage_badpagetext' => 'మీరు భద్రపరచడానికి ప్రయత్నించిన పేజీ యొక్క రూపం చెల్లదు.',
 	'proofreadpage_indexdupe' => 'నకిలీ లింకు',
+	'proofreadpage_indexdupetext' => 'ఒక సూచికలో ఒక పుటను ఒక్క సారి కంటే ఎక్కువ ఎక్కించరాదు.',
 	'proofreadpage_nologin' => 'ప్రవేశించలేదు',
+	'proofreadpage_nologintext' => 'పుటలో తప్పులు దిద్దబడినవోలేవో అన్న ష్టేటస్ మార్చడానికి మీరు [[Special:UserLogin|లాగిన్ ]] అయివుండాలి.',
 	'proofreadpage_notallowed' => 'మార్పుకి అనుమతి లేదు',
+	'proofreadpage_notallowedtext' => 'ఈ పుట తప్పులుదిద్దబడ్డవో లేదో అన్న ష్టేటస్ మార్చడానికి మీరు తగరు.',
+	'proofreadpage_number_expected' => 'పొరబాటు: సంఖ్య వుండవలెను',
+	'proofreadpage_interval_too_large' => 'పొరబాటు: గడువు మఱీ ఎక్కువగా వున్నది',
+	'proofreadpage_invalid_interval' => 'పొరబాటు: గడువు చెల్లదు',
 	'proofreadpage_nextpage' => 'తర్వాతి పేజీ',
 	'proofreadpage_prevpage' => 'గత పేజీ',
 	'proofreadpage_header' => 'శీర్షిక (కలుపకు):',
+	'proofreadpage_body' => 'పుటావస్తువు (పుట నుండి లాక్కోబడవలసిన వస్తువు):',
 	'proofreadpage_footer' => 'పాదము (కలుపకు):',
+	'proofreadpage_toggleheaders' => 'చూపించకూడని భాగాలు (noinclude sections)ని చూపించడం లేదా చూపించకపోవడాన్ని మార్చండి',
 	'proofreadpage_quality0_category' => 'పాఠ్యం లేకుండా',
+	'proofreadpage_quality1_category' => 'తప్పులు సరిఁజూడఁబడలేదు',
 	'proofreadpage_quality2_category' => 'సమస్యాత్మకం',
+	'proofreadpage_quality3_category' => 'తప్పులు సరిజూడబడ్డవి',
 	'proofreadpage_quality4_category' => 'సరిచూడబడింది',
+	'proofreadpage_quality0_message' => 'ఈ పటలోని తప్పులు సరిజూడనక్కరలేదు',
+	'proofreadpage_quality1_message' => 'ఈ పట సరిఁజూడఁబడలేదు.',
+	'proofreadpage_quality2_message' => 'ఈ పటను సరిజూస్తున్నప్పుడు తెలియని సమస్య ఎదురైనది',
+	'proofreadpage_quality3_message' => 'ఈ పట సరిజూడబడ్డది',
 	'proofreadpage_quality4_message' => 'ఈ పేజీని సరిచూసారు',
 	'proofreadpage_index_listofpages' => 'పేజీల జాబితా',
 	'proofreadpage_image_message' => 'సూచిక పేజీకి లింకు',
@@ -4027,7 +4046,9 @@ $messages['te'] = array(
 పేజీలు||20
 రిమార్కులు||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|పేజీ|పేజీలు}}',
+	'proofreadpage_specialpage_legend' => 'సూచీపుటలు వెదకు',
 	'proofreadpage_source' => 'మూలం',
+	'proofreadpage_source_message' => 'ఈ పాఠ్య నిర్ధారణకు ఛాయాచిత్రము సంగ్రహించబడ్డ  కూర్పు (scanned edition) వాడబడ్డది.',
 );
 
 /** Tetum (Tetun)
