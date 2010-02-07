@@ -3189,6 +3189,8 @@ Paginas||20
 Comentaris||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
 	'proofreadpage_specialpage_legend' => 'Recercar dins las paginas d’indèx',
+	'proofreadpage_source' => 'Font',
+	'proofreadpage_source_message' => "Edicion numerizada d'ont es eissit aqueste tèxte",
 );
 
 /** Ossetic (Иронау)
