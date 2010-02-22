@@ -44,7 +44,6 @@ $wgExtensionCredits['other'][] = array(
 	'author'         => 'ThomasV',
 	'version'        => '2009-04-20',
 	'url'            => 'http://www.mediawiki.org/wiki/Extension:Proofread_Page',
-	'description'    => 'Allow easy comparison of text to the original scan',
 	'descriptionmsg' => 'proofreadpage_desc',
 );
 
