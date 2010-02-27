@@ -1947,6 +1947,8 @@ Oldalak||20
 Megjegyzések||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|lap|lap}}',
 	'proofreadpage_specialpage_legend' => 'Indexlapok keresése',
+	'proofreadpage_source' => 'Forrás',
+	'proofreadpage_source_message' => 'A szkennelt változat amin a szöveg alapszik',
 );
 
 /** Armenian (Հայերեն)
