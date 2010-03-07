@@ -792,11 +792,20 @@ Poznámky||10',
 
 /** Danish (Dansk)
  * @author Jon Harald Søby
+ * @author Sarrus
  */
 $messages['da'] = array(
 	'proofreadpage_namespace' => 'Side',
+	'proofreadpage_badpage' => 'Forkert format',
+	'proofreadpage_badpagetext' => 'Formatet på den side, du forsøgte at gemme, er forkert.',
+	'proofreadpage_indexdupetext' => 'Sider kan ikke vises mere end én gang på en indeksside.',
+	'proofreadpage_nologin' => 'Ikke logget på',
+	'proofreadpage_notallowed' => 'Ændringer er ikke tilladt',
+	'proofreadpage_notallowedtext' => 'Du har ikke rettigheder til at ændre korrekturlæsningen på denne side.',
 	'proofreadpage_nextpage' => 'Næste side',
 	'proofreadpage_prevpage' => 'Forrige side',
+	'proofreadpage_quality0_category' => 'Uden tekst',
+	'proofreadpage_quality1_category' => 'Ikke korrekturlæst',
 );
 
 /** German (Deutsch)
