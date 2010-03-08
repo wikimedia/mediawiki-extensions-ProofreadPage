@@ -4587,6 +4587,15 @@ Küpets|10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pad|pads}}',
 );
 
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'proofreadpage_namespace' => 'בלאַט',
+	'proofreadpage_nextpage' => 'קומענדיגער בלאַט',
+	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
+);
+
 /** Yue (粵語) */
 $messages['yue'] = array(
 	'proofreadpage_desc' => '容許簡易噉去比較原掃瞄同埋文字',
