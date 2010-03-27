@@ -26,21 +26,25 @@ function proofreadpage_index_init() {
 		if(!m) return; 
 		params = m[1]+'\n\|END='; 
 	}
-
-	var f = text.parentNode; 
-	var new_text = f.removeChild(text);
-
+	
+	// Certain extensions, like UsabilityInitiative, wrap the textarea
+	var textWrapper = text;
+	while(textWrapper.parentNode.nodeName != 'FORM') textWrapper = textWrapper.parentNode;
+	var f = textWrapper.parentNode;
 	var container = document.createElement("div");
+	var wrapper = document.createElement("div");
+	wrapper.style.display = 'none';
+	container.appendChild(wrapper);
+	wrapper.appendChild(textWrapper);
 
 	var index_attributes = self.prp_index_attributes.split('\n');
-	var str = '<div style="display:none;"><textarea id="wpTextbox1" name="wpTextbox1">'+new_text.value+'</textarea></div>';
-	str = str + '<table>';
+	var str = '<table>';
 	for(i=0;i<index_attributes.length;i++){
 		m = index_attributes[i].split('|');
 		param_name = m[0];
 
 		if(m[1]) param_label=m[1]; else param_label=param_name;
-		str = str + '<tr><td>'+param_label+': </td>';
+		str += '<tr><td>'+param_label+': </td>';
 
 		value = findparam(params,param_name);
 		value = value.replace(/\{\{!\}\}/g,'|');
@@ -50,14 +54,14 @@ function proofreadpage_index_init() {
 
 		if(m[2]) size=m[2]; else size="1";
 		if(size=="1") {
-			str = str + '<td><input	name="'+param_name+'" size=60 value="'+value+'"/></td></tr>'; 
+			str += '<td><input name="'+param_name+'" size=60 value="'+value+'"/></td></tr>'; 
 		}
 		else{
-			str = str +'<td><textarea name="'+param_name+'" cols=60 rows='+size+'>'+value+'</textarea></td></tr>';
+			str += '<td><textarea name="'+param_name+'" cols=60 rows='+size+'>'+value+'</textarea></td></tr>';
 		}
 	}
-	str = str +'</table>';
-	container.innerHTML = str;
+	str += '</table>';
+	container.innerHTML += str;
 
 	var saveButton = document.getElementById("wpSave");
 	var previewButton = document.getElementById("wpPreview");
