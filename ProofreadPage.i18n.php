@@ -1254,6 +1254,7 @@ Märkused||10',
 
 /** Basque (Euskara)
  * @author An13sa
+ * @author Joxemai
  * @author Unai Fdz. de Betoño
  */
 $messages['eu'] = array(
@@ -1267,6 +1268,7 @@ $messages['eu'] = array(
 	'proofreadpage_nextpage' => 'Hurrengo orria',
 	'proofreadpage_prevpage' => 'Aurreko orria',
 	'proofreadpage_quality0_category' => 'Testurik gabe',
+	'proofreadpage_quality4_category' => 'Balioztatua.',
 	'proofreadpage_index_listofpages' => 'Orri zerrenda',
 	'proofreadpage_image_message' => 'Aurkibide orrira lotu',
 	'proofreadpage_page_status' => 'Orriaren egoera',
@@ -1442,7 +1444,7 @@ Remarques||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|page|pages}}',
 	'proofreadpage_specialpage_legend' => 'Rechercher dans les pages d’index',
 	'proofreadpage_source' => 'Source',
-	'proofreadpage_source_message' => 'Édition scannée dont est issu ce texte',
+	'proofreadpage_source_message' => 'Édition numérisée dont est issu ce texte',
 );
 
 /** Franco-Provençal (Arpetan)
