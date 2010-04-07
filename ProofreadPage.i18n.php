@@ -2790,10 +2790,10 @@ $messages['mk'] = array(
 $messages['ml'] = array(
 	'indexpages' => 'സൂചികാ താളുകളുടെ പട്ടിക',
 	'proofreadpage_desc' => 'യഥാർത്ഥ സ്കാനും എഴുത്തും തമ്മിലുള്ള ലളിതമായ ഒത്തുനോക്കൽ അനുവദിക്കുക',
-	'proofreadpage_namespace' => 'താള്‍',
-	'proofreadpage_index_namespace' => 'ഇന്‍ഡെക്സ്',
+	'proofreadpage_namespace' => 'താൾ',
+	'proofreadpage_index_namespace' => 'ഇൻഡെക്സ്',
 	'proofreadpage_image' => 'ചിത്രം',
-	'proofreadpage_index' => 'ഇന്‍ഡെക്സ്',
+	'proofreadpage_index' => 'ഇൻഡെക്സ്',
 	'proofreadpage_index_expected' => 'പിഴവ്: സൂചിക വേണം',
 	'proofreadpage_nosuch_index' => 'പിഴവ്: അത്തരത്തിലൊരു സൂചിക ഇല്ല',
 	'proofreadpage_nosuch_file' => 'പിഴവ്: അത്തരത്തിലൊരു പ്രമാണം ഇല്ല',
@@ -2808,12 +2808,12 @@ $messages['ml'] = array(
 	'proofreadpage_number_expected' => 'പിഴവ്: സംഖ്യയായുള്ള മൂല്യമാണ് പ്രതീക്ഷിക്കുന്നത്',
 	'proofreadpage_interval_too_large' => 'പിഴവ്: വളരെ വലിയ ഇടവേള',
 	'proofreadpage_invalid_interval' => 'പിഴവ്: അസാധുവായ ഇടവേള',
-	'proofreadpage_nextpage' => 'അടുത്ത താള്‍',
-	'proofreadpage_prevpage' => 'മുന്‍പത്തെ താള്‍',
+	'proofreadpage_nextpage' => 'അടുത്ത താൾ',
+	'proofreadpage_prevpage' => 'മുൻപത്തെ താൾ',
 	'proofreadpage_header' => 'തലവാചകം (noinclude):',
 	'proofreadpage_body' => 'താളിന്റെ ഉള്ളടക്കം (transclude ചെയ്യാനുള്ളത്):',
 	'proofreadpage_footer' => 'പാദവാചകം (noinclude):',
-	'proofreadpage_toggleheaders' => 'noinclude വിഭാഗങ്ങളുടെ പ്രദര്‍ശനം ടോഗിള്‍ ചെയ്യുക',
+	'proofreadpage_toggleheaders' => 'noinclude വിഭാഗങ്ങളുടെ പ്രദർശനം ടോഗിൾ ചെയ്യുക',
 	'proofreadpage_quality0_category' => 'എഴുത്ത് ഇല്ലാതെ',
 	'proofreadpage_quality1_category' => 'തെറ്റുതിരുത്തൽ വായന നടന്നിട്ടില്ല',
 	'proofreadpage_quality2_category' => 'പ്രശ്നമുള്ളതാണ്‌',
@@ -2826,16 +2826,16 @@ $messages['ml'] = array(
 	'proofreadpage_quality4_message' => 'ഈ താളിന്റെ സാധുത തെളിയിക്കപ്പെട്ടതാണ്',
 	'proofreadpage_index_listofpages' => 'താളുകളുടെ പട്ടിക',
 	'proofreadpage_image_message' => 'സൂചിക താളിലേക്കുള്ള കണ്ണി',
-	'proofreadpage_page_status' => 'താളിന്റെ തല്‍സ്ഥിതി',
-	'proofreadpage_js_attributes' => 'ലേഖകന്‍ കൃതിയുടെപേര്‌ വര്‍ഷം പ്രസാധകര്‍',
-	'proofreadpage_index_attributes' => 'ലേഖകന്‍ 
+	'proofreadpage_page_status' => 'താളിന്റെ തൽസ്ഥിതി',
+	'proofreadpage_js_attributes' => 'ലേഖകൻ കൃതിയുടെപേര്‌ വർഷം പ്രസാധകർ',
+	'proofreadpage_index_attributes' => 'ലേഖകൻ 
 കൃതിയുടെപേര്‌ 
-വര്‍ഷം|പ്രസിദ്ധീകരിച്ച വര്‍ഷം 
-പ്രസാധകര്‍
+വർഷം|പ്രസിദ്ധീകരിച്ച വർഷം 
+പ്രസാധകർ
 ഉറവിടം
 ചിത്രം|മുഖച്ചിത്രം
-താളുകള്‍||20
-കുറിപ്പുകള്‍||10',
+താളുകൾ||20
+കുറിപ്പുകൾ||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|താൾ|താളുകൾ}}',
 	'proofreadpage_specialpage_legend' => 'സൂചികാ താളുകൾ തിരയുക',
 	'proofreadpage_source' => 'സ്രോതസ്സ്',
