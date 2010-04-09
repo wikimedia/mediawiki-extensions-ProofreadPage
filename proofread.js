@@ -157,14 +157,14 @@ function pr_make_edit_area(container,text){
 	pageFooter = pageFooter.split("&").join("&amp;")
 
 	container.innerHTML = ''
-		+ '<div id="prp_header" style="display:none;">'
+		+ '<div id="prp_header" style="">'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessageHeader) + '</span>'
 		+ '<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + pageHeader + '</textarea><br/>'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessagePageBody) + '</span></div>'
 		+ '<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' + pageBody + '</textarea>'
-		+ '<div id="prp_footer" style="display:none;">'
+		+ '<div id="prp_footer" style="">'
 		+ '<span style="color:gray;font-size:80%;line-height:100%;">'
 		+ escapeQuotesHTML(proofreadPageMessageFooter) + '</span><br/>'
 		+ '<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>'+pageFooter+'</textarea></div>';
@@ -718,8 +718,8 @@ function pr_setup() {
 		pr_make_edit_area(self.text_container,new_text.value);
 		var copywarn = document.getElementById("editpage-copywarn");
 		f.insertBefore(table,copywarn);
-		if (self.proofreadpage_show_headers){
-			pr_toggle_visibility();
+		if ( ! self.proofreadpage_show_headers){
+			hookEvent( 'load', pr_toggle_visibility );
 		}
 	}
 	else {
