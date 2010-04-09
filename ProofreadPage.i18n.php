@@ -2165,6 +2165,7 @@ $messages['is'] = array(
 
 /** Italian (Italiano)
  * @author BrokenArrow
+ * @author Civvì
  * @author Darth Kule
  * @author Gianfranco
  * @author Stefano-c
@@ -2215,6 +2216,7 @@ Immagine|Immagine di copertina
 Pagine||20
 Note||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
+	'proofreadpage_source' => 'Fonte',
 );
 
 /** Japanese (日本語)
