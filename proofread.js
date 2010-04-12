@@ -392,8 +392,15 @@ function pr_initzoom(){
  * 
  ********************************/
 
+/* width and margin of the scan */
+var margin_x = 0;
+var margin_y = 0;
+var img_width = 0;
+
+/* initial mouse position during a drag */
 var init_x = 0;
 var init_y = 0;
+
 var is_drag = false;
 var is_zoom = false;
 var pr_container = false;
@@ -402,22 +409,31 @@ var pr_rect = false;
 /* size of the window */
 var pr_width = 0, pr_height = 0;
 
-function set_container_css(show_scrollbars,default_cursor){
+function set_container_css(show_scrollbars){
+	var sl = pr_container.scrollLeft;//read scrollbar values
+	var st = pr_container.scrollTop;
 	if(show_scrollbars) {
 		self.container_css = self.container_css.replace("overflow:hidden","overflow:auto");
+		self.container_css = self.container_css.replace("cursor:crosshair","cursor:default");
+		//we should check if the sb is going to be shown
+		if(margin_x<0) { sl = - Math.round(margin_x); margin_x=0; }
+		if(margin_y<0) { st = - Math.round(margin_y); margin_y=0; }
 	} else {
 		self.container_css = self.container_css.replace("overflow:auto","overflow:hidden");
-	}
-	if(default_cursor) {
-		self.container_css = self.container_css.replace("cursor:crosshair","cursor:default");
-	} else {
 		self.container_css = self.container_css.replace("cursor:default","cursor:crosshair");
+		if(sl) {
+			margin_x -= sl;
+			sl = 0;
+		}
+		if(st) {
+			margin_y -= st;
+			st = 0;
+		}
 	}
-	sl = pr_container.scrollLeft;//save scrollbar value for Opera, Chrome
-	st = pr_container.scrollTop;
-	pr_container.style.cssText = self.container_css;
+	pr_set_margins(margin_x, margin_y, false);
 	pr_container.scrollLeft = sl;
 	pr_container.scrollTop = st;
+
 }
 
 function pr_drop(evt){
@@ -434,22 +450,18 @@ function pr_drop(evt){
 		if(is_zoom) {
 			is_zoom=false;
 			if(boxWidth*boxWidth+boxHeight*boxHeight >= 2500){
-				var zp_img = document.getElementById("ProofReadImage");
-				ratio_x = Math.abs( pr_container.offsetWidth/self.boxWidth );
-				zp_img.width = zp_img.width*ratio_x;
-				pr_container.scrollLeft = (pr_container.scrollLeft + xMin)*ratio_x;
-				pr_container.scrollTop =  (pr_container.scrollTop  + yMin)*ratio_x;
+				var ratio_x = Math.abs( pr_container.offsetWidth/self.boxWidth );
+			        pr_set_margins( (margin_x - xMin)*ratio_x, (margin_y - yMin)*ratio_x, img_width*ratio_x ) ;
 			}
 		}
 	}
 	is_drag = false;
 	pr_rect.style.cssText = "display:none";
-	set_container_css(!is_zoom,!is_zoom);
+	set_container_css(!is_zoom);
 	return false;
 }
 
 function pr_grab(evt){
-
 	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	get_xy(evt); if(xx>pr_container.offsetWidth-20 || yy>pr_container.offsetHeight-20) return false;
 
@@ -476,10 +488,14 @@ function pr_grab(evt){
 		lastyy=evt.clientY - ieoy; 
 	}
 	
-	init_x = pr_container.scrollLeft + lastxx;
-	init_y = pr_container.scrollTop + lastyy;
+	if(is_zoom){
+		init_x = - margin_x + lastxx;
+		init_y = - margin_y + lastyy;
+	} else {
+		init_x = pr_container.scrollLeft + lastxx;
+		init_y = pr_container.scrollTop + lastyy;
+	}
 	is_drag = false;
-	set_container_css(!is_zoom,!is_zoom);
 	return false;
 
 }
@@ -494,15 +510,14 @@ function pr_move(evt) {
 function pr_drag(evt) {
 	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	get_xy(evt); if(xx>pr_container.offsetWidth-20 || yy>pr_container.offsetHeight-20) return false;
-
 	if(!is_zoom) {
 		pr_container.scrollLeft = (init_x-xx);
 		pr_container.scrollTop  = (init_y-yy);
 	} else {
-		self.xMin = Math.min( init_x - pr_container.scrollLeft, xx );
-		self.yMin = Math.min( init_y - pr_container.scrollTop , yy );
-		self.xMax = Math.max( init_x - pr_container.scrollLeft, xx );
-		self.yMax = Math.max( init_y - pr_container.scrollTop , yy );
+		self.xMin = Math.min( init_x + margin_x, xx );
+		self.yMin = Math.min( init_y + margin_y, yy );
+		self.xMax = Math.max( init_x + margin_x, xx );
+		self.yMax = Math.max( init_y + margin_y, yy );
 		self.boxWidth  = Math.max( xMax-xMin, 1 );
 		self.boxHeight = Math.max( yMax-yMin, 1 );
 		if(boxWidth*boxWidth+boxHeight*boxHeight < 2500){
@@ -511,10 +526,10 @@ function pr_drag(evt) {
 			ratio = pr_container.offsetWidth/pr_container.offsetHeight;
 			if(boxWidth/boxHeight < ratio ) {
 				boxWidth = boxHeight*ratio;
-				if(xx==xMin) xMin = init_x - pr_container.scrollLeft - boxWidth;
+				if(xx==xMin) xMin = init_x + margin_x - boxWidth;
 			} else {
 				boxHeight = boxWidth/ratio;
-				if(yy==yMin) yMin = init_y - pr_container.scrollTop - boxHeight;
+				if(yy==yMin) yMin = init_y + margin_y - boxHeight;
 			}
 			pr_rect.style.cssText = "cursor:crosshair;opacity:0.5;position:absolute;left:"+ xMin +"px;top:"+ yMin +"px;width:"+boxWidth+"px;height:"+boxHeight+"px;background:#000000;";
 		}
@@ -526,40 +541,43 @@ function pr_drag(evt) {
 }
 
 
-function pr_zoom(delta){
-
+function pr_set_margins(mx, my, new_width) {
 	var zp_img = document.getElementById("ProofReadImage");
-	if(!zp_img) return;
+	if(zp_img) {
+		margin_x = mx;
+		margin_y = my;
+		zp_img.style.margin = Math.round(margin_y) + 'px 0px 0px ' + Math.round(margin_x) + 'px';
+		if(new_width) {
+			img_width = Math.round(new_width);
+			zp_img.width = img_width;
+		}
+		pr_container.style.cssText = self.container_css; //needed by IE6
+	}
+}
+
+
+function pr_zoom(delta) {
 	
 	if (delta == 0) {
 		//reduce width by 20 pixels in order to prevent horizontal scrollbar from showing up
-		zp_img.width = pr_container.offsetWidth-20;
-		pr_container.style.cssText = self.container_css; //needed by IE6
-	}
-	else{
-		var old_width = zp_img.width;
-		var new_width = Math.round(zp_img.width*Math.pow(1.1,delta));
+		pr_set_margins(0, 0, pr_container.offsetWidth-20);
+	} else {
+		var old_margin_x = margin_x;
+		var old_margin_y = margin_y;
+		var old_width = img_width;
+		var new_width = Math.round(old_width*Math.pow(1.1,delta));
 		var delta_w = new_width - old_width;
 		if(delta_w==0) return;
 		var s = (delta_w>0)?1:-1;
-
-		var ptx = xx + pr_container.scrollLeft;
-		var pty = yy + pr_container.scrollTop;
-		
 		for(var dw=s; dw != delta_w; dw=dw+s){
-			zp_img.width = old_width + dw;//this adds 1 pixel
-			pr_container.style.cssText = self.container_css; //needed by IE6
-			if(xx){
-				//magnification factor
-				var lambda = (old_width+dw)/old_width;
-				pr_container.scrollLeft = Math.round(lambda*ptx - xx);
-				pr_container.scrollTop = Math.round(lambda*pty - yy);
-			}
+			var lambda = (old_width + dw)/old_width;
+			pr_set_margins(xx - lambda*(xx - old_margin_x), yy - lambda*(yy - old_margin_y), old_width+dw);
 		}
 	}
 }
 
-function pr_zoom_wheel(evt){
+function pr_zoom_wheel(evt) {
+
 	evt = evt?evt:window.event?window.event:null; if(!evt){ return false;}
 	var delta = 0;
 	if (evt.wheelDelta) { 
@@ -687,10 +705,10 @@ function pr_setup() {
 		pr_container.style.cssText = "overflow:hidden;width:"+self.DisplayWidth+"px;";
 	} else {
 		//prevent the container from being resized once the image is downloaded. 
-		img_w = pr_horiz?0:parseInt(pr_width/2-70)-20;
+		img_width = pr_horiz?0:parseInt(pr_width/2-70)-20;
 		pr_container.innerHTML = "<img id=\"ProofReadImage\" src=\""
 		    + escapeQuotesHTML(proofreadPageViewURL) 
-		    + "\" width=\"" + img_w + "\" />";
+		    + "\" width=\"" + img_width + "\" />";
 		pr_container.onmousedown = pr_grab;
 		pr_container.onmousemove = pr_move;
 		if (pr_container.addEventListener)
