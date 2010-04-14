@@ -656,7 +656,11 @@ function  pr_fill_table(){
 
 
 
-
+function pr_load_image() {
+	pr_container.innerHTML = "<img id=\"ProofReadImage\" src=\""
+	    + escapeQuotesHTML(proofreadPageViewURL) 
+	    + "\" width=\"" + img_width + "\" />";
+}
 
 
 
@@ -703,14 +707,12 @@ function pr_setup() {
 	} else {
 		//prevent the container from being resized once the image is downloaded. 
 		img_width = pr_horiz?0:parseInt(pr_width/2-70)-20;
-		pr_container.innerHTML = "<img id=\"ProofReadImage\" src=\""
-		    + escapeQuotesHTML(proofreadPageViewURL) 
-		    + "\" width=\"" + img_width + "\" />";
 		pr_container.onmousedown = pr_grab;
 		pr_container.onmousemove = pr_move;
 		if (pr_container.addEventListener)
 			pr_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
 		pr_container.onmousewheel = pr_zoom_wheel;//IE,Opera. 
+		hookEvent( 'load', pr_load_image );
 	}
 
 	table.setAttribute("id", "textBoxTable");
