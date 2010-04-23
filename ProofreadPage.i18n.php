@@ -2415,6 +2415,13 @@ $messages['km'] = array(
 កំណត់សម្គាល់||១០',
 );
 
+/** Kannada (ಕನ್ನಡ)
+ * @author Nayvik
+ */
+$messages['kn'] = array(
+	'proofreadpage_image' => 'ಚಿತ್ರ',
+);
+
 /** Korean (한국어)
  * @author Ilovesabbath
  * @author Klutzy
