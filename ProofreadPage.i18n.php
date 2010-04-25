@@ -2985,6 +2985,20 @@ Sieden||20
 Anmarkungen||10',
 );
 
+/** Nedersaksisch (Nedersaksisch)
+ * @author Servien
+ */
+$messages['nds-nl'] = array(
+	'proofreadpage_index_attributes' => "Auteur
+Titel
+Jaor|Jaar van publicatie
+Uutgever
+Bron
+Ofbeelding|Umslag
+Pagina's||20
+Opmarkingen||10",
+);
+
 /** Dutch (Nederlands)
  * @author McDutchie
  * @author SPQRobin
