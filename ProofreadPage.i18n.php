@@ -2476,7 +2476,7 @@ $messages['krj'] = array(
 	'proofreadpage_namespace' => 'Pahina',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -2532,7 +2532,7 @@ Aanmerkunge||10',
 	'proofreadpage_specialpage_legend' => 'Op dä Verzeischneßsigg söhke',
 );
 
-/** Cornish (Kernowek)
+/** Cornish (Kernewek)
  * @author Kw-Moon
  */
 $messages['kw'] = array(
@@ -4621,7 +4621,7 @@ $messages['yi'] = array(
 	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
 );
 
-/** Yue (粵語) */
+/** Cantonese (粵語) */
 $messages['yue'] = array(
 	'proofreadpage_desc' => '容許簡易噉去比較原掃瞄同埋文字',
 	'proofreadpage_namespace' => '頁',
