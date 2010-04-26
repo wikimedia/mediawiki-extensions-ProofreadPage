@@ -1268,6 +1268,7 @@ $messages['eu'] = array(
 	'proofreadpage_nextpage' => 'Hurrengo orria',
 	'proofreadpage_prevpage' => 'Aurreko orria',
 	'proofreadpage_quality0_category' => 'Testurik gabe',
+	'proofreadpage_quality2_category' => 'Arazoak dakartza',
 	'proofreadpage_quality4_category' => 'Balioztatua.',
 	'proofreadpage_index_listofpages' => 'Orri zerrenda',
 	'proofreadpage_image_message' => 'Aurkibide orrira lotu',
