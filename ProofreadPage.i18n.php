@@ -2432,18 +2432,26 @@ $messages['kn'] = array(
  * @author Yknok29
  */
 $messages['ko'] = array(
+	'indexpages' => '목차 문서의 목록',
 	'proofreadpage_desc' => '최초 스캔과 텍스트를 쉽게 비교할 수 있게 함',
 	'proofreadpage_namespace' => '문서',
 	'proofreadpage_index_namespace' => '목차',
 	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '목차',
+	'proofreadpage_index_expected' => '오류: 목차가 있어야 합니다.',
+	'proofreadpage_nosuch_index' => '오류: 해당 목차가 없습니다.',
 	'proofreadpage_nosuch_file' => '오류: 해당 파일이 없습니다.',
 	'proofreadpage_badpage' => '잘못된 형식',
+	'proofreadpage_badpagetext' => '당신이 저장하려 한 문서의 포맷이 올바르지 않습니다.',
 	'proofreadpage_indexdupe' => '중복된 링크',
+	'proofreadpage_indexdupetext' => '페이지가 목차 문서에 한 번 이상 올라올 수 없습니다.',
 	'proofreadpage_nologin' => ' 로그인된 상태가 아닙니다.',
 	'proofreadpage_nologintext' => '문서의 검토 상태를 변경하려면 [[Special:UserLogin|로그인]]해야 합니다.',
 	'proofreadpage_notallowed' => '이 문서는 변경이 불가능합니다.',
 	'proofreadpage_notallowedtext' => '이 문서의 교정 상태를 바꿀 수 없습니다.',
+	'proofreadpage_number_expected' => '오류: 숫자 값을 입력해야 합니다.',
+	'proofreadpage_interval_too_large' => '오류: 간격이 너무 큽니다.',
+	'proofreadpage_invalid_interval' => '오류: 간격이 잘못되었습니다.',
 	'proofreadpage_nextpage' => '다음 페이지',
 	'proofreadpage_prevpage' => '이전 페이지',
 	'proofreadpage_header' => '머리말 (표시안함):',
@@ -2456,6 +2464,10 @@ $messages['ko'] = array(
 	'proofreadpage_quality3_category' => '교정',
 	'proofreadpage_quality4_category' => '확인됨',
 	'proofreadpage_quality0_message' => '이 페이지는 교정할 필요가 없습니다.',
+	'proofreadpage_quality1_message' => '이 페이지는 아직 교정을 보지 않았습니다.',
+	'proofreadpage_quality2_message' => '이 문서를 교정하는 중 문제가 있었습니다.',
+	'proofreadpage_quality3_message' => '이 페이지는 교정 작업을 거쳤습니다.',
+	'proofreadpage_quality4_message' => '이 페이지는 검증되었습니다.',
 	'proofreadpage_index_listofpages' => '문서 목록',
 	'proofreadpage_image_message' => '목차 페이지로',
 	'proofreadpage_page_status' => '문서 상태',
@@ -2468,6 +2480,10 @@ $messages['ko'] = array(
 그림|표지 그림
 쪽수||20
 주석||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|페이지}}',
+	'proofreadpage_specialpage_legend' => '목차 문서 찾기',
+	'proofreadpage_source' => '출처',
+	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
 );
 
 /** Kinaray-a (Kinaray-a)
