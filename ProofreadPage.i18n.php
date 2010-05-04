@@ -539,6 +539,7 @@ $messages['bn'] = array(
 চিত্র|প্রচ্ছদ
 পাতা||20
 মন্তব্য||10',
+	'proofreadpage_source' => 'উৎস',
 );
 
 /** Breton (Brezhoneg)
@@ -2351,12 +2352,16 @@ Cathetan||10',
  * @author BRUTE
  * @author Malafaya
  * @author Sopho
+ * @author გიორგიმელა
  */
 $messages['ka'] = array(
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
 	'proofreadpage_image' => 'სურათი',
 	'proofreadpage_index' => 'ინდექსი',
+	'proofreadpage_index_expected' => 'შეცდომა: ინდექსი არ არის ნაპოვნი',
+	'proofreadpage_nosuch_index' => 'შეცდომა: ასეთი ინდექსი არ არის ნაპოვნი',
+	'proofreadpage_nosuch_file' => 'შეცდომა:ასეთი ფაილი არ არის ნაპოვნი',
 	'proofreadpage_badpage' => 'არასწორი ფორმატი',
 	'proofreadpage_indexdupe' => 'დუბლიკატი ბმული',
 	'proofreadpage_nologin' => 'შესვლა არ მომხდარა',
