@@ -23,7 +23,6 @@ $wgHooks['EditFormPreloadText'][] = 'pr_preloadText';
 $wgHooks['ArticlePurge'][] = 'pr_articlePurge';
 $wgHooks['SpecialMovepageAfterMove'][] = 'pr_movePage';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'pr_schema_update';
-$wgHooks['OutputPageBeforeHTML'][] = 'pr_OutputPageBeforeHTML';
 $wgHooks['EditPage::importFormData'][] = 'pr_formData';
 
 
@@ -348,6 +347,7 @@ var prp_source = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_source' ) ) . 
 var prp_source_message = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_source_message' ) ) . "\";
 </script>\n"
 	);
+	pr_displayProofreadingStatus( $out );
 }
 
 function pr_prepareIndex( $out ) {
@@ -1283,12 +1283,8 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 /*
  * In ns-0, display the proofreading status of transcluded pages
  */
-function pr_OutputPageBeforeHTML( $out, $text ) {
+function pr_displayProofreadingStatus( $out ) {
 	global $wgTitle, $wgUser;
-
-	if($wgTitle->getNamespace() != NS_MAIN){
-		return true;
-	}
 
 	$id = $wgTitle->mArticleID;
 	if($id == -1) {
