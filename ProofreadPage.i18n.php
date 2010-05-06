@@ -1271,6 +1271,7 @@ $messages['eu'] = array(
 	'proofreadpage_quality0_category' => 'Testurik gabe',
 	'proofreadpage_quality2_category' => 'Arazoak dakartza',
 	'proofreadpage_quality4_category' => 'Balioztatua.',
+	'proofreadpage_quality4_message' => 'Balioztatu egin da orri hau',
 	'proofreadpage_index_listofpages' => 'Orri zerrenda',
 	'proofreadpage_image_message' => 'Aurkibide orrira lotu',
 	'proofreadpage_page_status' => 'Orriaren egoera',
