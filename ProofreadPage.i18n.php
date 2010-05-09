@@ -4460,12 +4460,13 @@ $messages['uk'] = array(
 
 /** Vèneto (Vèneto)
  * @author Candalua
+ * @author Vajotwo
  */
 $messages['vec'] = array(
 	'indexpages' => 'Elenco de le pagine de indice',
 	'proofreadpage_desc' => 'Parméte un façile confronto tra un testo e la so scansion original',
-	'proofreadpage_namespace' => 'Pagina',
-	'proofreadpage_index_namespace' => 'Indice',
+	'proofreadpage_namespace' => 'Pajina',
+	'proofreadpage_index_namespace' => 'Indexe',
 	'proofreadpage_image' => 'Imagine',
 	'proofreadpage_index' => 'Indice',
 	'proofreadpage_index_expected' => 'Eròr: indice mancante',
