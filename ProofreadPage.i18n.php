@@ -1251,6 +1251,7 @@ Märkused||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|lehekülg|lehekülge}}',
 	'proofreadpage_specialpage_legend' => 'Otsi registrilehtedelt',
 	'proofreadpage_source' => 'Allikas',
+	'proofreadpage_source_message' => 'Selle teksti moodustamiseks kasutatud skannitud versioon',
 );
 
 /** Basque (Euskara)
