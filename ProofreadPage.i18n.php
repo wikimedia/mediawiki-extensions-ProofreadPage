@@ -4738,6 +4738,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Gaoxuewei
+ * @author Horacewai2
  * @author Liangent
  * @author Mark85296341
  * @author Wrightbus
@@ -4794,5 +4795,6 @@ $messages['zh-hant'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|頁|頁}}',
 	'proofreadpage_specialpage_legend' => '搜索索引頁',
 	'proofreadpage_source' => '來源',
+	'proofreadpage_source_message' => '掃描版用來建立這個文本',
 );
 
