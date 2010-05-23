@@ -96,7 +96,7 @@ class ProofreadPagesQuery extends QueryPage {
 				}
 				$query .= " WHERE page_namespace=$index_ns_index AND page_title IN ($querylist)";
 			} else {
-				$query .= " WHERE false";
+				# The SQL query is complete
 			}
 		}
 		return $query;
