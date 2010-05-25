@@ -63,11 +63,15 @@ function pr_schema_update() {
 function pr_main() {
 	global $wgParser;
 	global $pr_page_namespace, $pr_index_namespace;
-	$wgParser->setHook( "pagelist", "pr_renderPageList" );
-	$wgParser->setHook( "pages", "pr_renderPages" );
-	$wgParser->setHook( "pagequality", "pr_pageQuality" );
-	$pr_page_namespace = null;
-	$pr_index_namespace = null;
+
+	// @fixme Use ParserFirstCallInit hook, $wgParser is evil
+	if ( !is_null( $wgParser ) ) {
+		$wgParser->setHook( "pagelist", "pr_renderPageList" );
+		$wgParser->setHook( "pages", "pr_renderPages" );
+		$wgParser->setHook( "pagequality", "pr_pageQuality" );
+		$pr_page_namespace = null;
+		$pr_index_namespace = null;
+	}
 }
 
 
