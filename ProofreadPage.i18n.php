@@ -2430,6 +2430,8 @@ $messages['km'] = array(
  */
 $messages['kn'] = array(
 	'proofreadpage_image' => 'ಚಿತ್ರ',
+	'proofreadpage_nextpage' => 'ಮುಂದಿನ ಪುಟ',
+	'proofreadpage_prevpage' => 'ಹಿಂದಿನ ಪುಟ',
 );
 
 /** Korean (한국어)
