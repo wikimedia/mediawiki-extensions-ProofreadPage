@@ -81,6 +81,7 @@ function pr_main() {
 function pr_page_ns() {
 	global $pr_page_namespace;
 	if( is_null($pr_page_namespace) ) {
+		wfLoadExtensionMessages( 'ProofreadPage' );
 		$pr_page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	}
 	return $pr_page_namespace;
@@ -89,6 +90,7 @@ function pr_page_ns() {
 function pr_index_ns() {
 	global $pr_index_namespace;
 	if( is_null($pr_index_namespace) ) {
+		wfLoadExtensionMessages( 'ProofreadPage' );
 		$pr_index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	}
 	return $pr_index_namespace;
