@@ -2766,7 +2766,7 @@ $messages['mhr'] = array(
  * @author Brest
  */
 $messages['mk'] = array(
-	'indexpages' => 'Листа на индексни страници',
+	'indexpages' => 'Список на индексни страници',
 	'proofreadpage_desc' => 'Овозможува едноставна споредба на текстот со скенираниот оригинал',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -2802,7 +2802,7 @@ $messages['mk'] = array(
 	'proofreadpage_quality2_message' => 'Се јави проблем при прегледувањето на оваа страница',
 	'proofreadpage_quality3_message' => 'Оваа страница е прегледана',
 	'proofreadpage_quality4_message' => 'Оваа страница е потврдена',
-	'proofreadpage_index_listofpages' => 'Листа на страници',
+	'proofreadpage_index_listofpages' => 'Список на страници',
 	'proofreadpage_image_message' => 'Врска до индекс страницата',
 	'proofreadpage_page_status' => 'Статус на страница',
 	'proofreadpage_js_attributes' => 'Автор Наслов Година Издавач',
@@ -4287,21 +4287,42 @@ Bellikler||10',
  * @author AnakngAraw
  */
 $messages['tl'] = array(
+	'indexpages' => 'Talaan ng mga pahina ng talatuntunan',
 	'proofreadpage_desc' => 'Pahintulutan ang madaling paghahambing ng teksto sa orihinal na kuha (iskan) ng larawan',
 	'proofreadpage_namespace' => 'Pahina',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Larawan',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Kamalian: inaasahan ang talatuntunan',
+	'proofreadpage_nosuch_index' => 'Kamalian: walang ganyang talatuntunan',
+	'proofreadpage_nosuch_file' => 'Kamalian: walang ganyang talaksan',
+	'proofreadpage_badpage' => 'Maling Anyo',
+	'proofreadpage_badpagetext' => 'Mali ang anyo ng pahinang sinubok mong sagipin.',
+	'proofreadpage_indexdupe' => 'Katulad na kawing',
+	'proofreadpage_indexdupetext' => 'Hindi maaaring itala ang mga pahina nang higit sa isa sa ibabaw ng pahina ng talatuntunan.',
+	'proofreadpage_nologin' => 'Hindi nakalagda',
+	'proofreadpage_nologintext' => 'Dapat kang [[Special:UserLogin|nakalagda]] upang mabago ang katayuan ng pagwawasto ng mga pahina.',
+	'proofreadpage_notallowed' => 'Hindi pinapayagan ang pagbabago',
+	'proofreadpage_notallowedtext' => 'Hindi ka pinahihintulutang magbago ng katayuan ng pagwawasto ng pahinang ito.',
+	'proofreadpage_number_expected' => 'Kamalian: inaasahan ang halagang maka-bilang',
+	'proofreadpage_interval_too_large' => 'Kamalian: napakalaki ng agwat',
+	'proofreadpage_invalid_interval' => 'Kamalian: hindi tanggap na agwat',
 	'proofreadpage_nextpage' => 'Susunod na pahina',
 	'proofreadpage_prevpage' => 'Sinundang pahina',
 	'proofreadpage_header' => 'Paulo (huwagisama):',
 	'proofreadpage_body' => 'Katawan ng pahina (ililipat-sama):',
 	'proofreadpage_footer' => 'Talababa (huwagisama):',
 	'proofreadpage_toggleheaders' => 'pindutin-palitan huwagibilang mga seksyon antas ng pagkanatatanaw',
+	'proofreadpage_quality0_category' => 'Walang teksto',
 	'proofreadpage_quality1_category' => 'Hindi pa nababasa, napaghahambing, at naiwawasto ang mga mali',
 	'proofreadpage_quality2_category' => 'May suliranin',
 	'proofreadpage_quality3_category' => 'Basahin, paghambingin, at magwasto ng kamalian',
 	'proofreadpage_quality4_category' => 'Napatotohanan na',
+	'proofreadpage_quality0_message' => 'Hindi kailangang basahin at iwasto ang pahinang ito',
+	'proofreadpage_quality1_message' => 'Hindi pa nababasa at naiwawasto ang pahinang ito',
+	'proofreadpage_quality2_message' => 'Nagkaroon ng isang sularin habang iwinawasto ang pahinang ito',
+	'proofreadpage_quality3_message' => 'Nabasa at naiwasto na ang pahinang ito',
+	'proofreadpage_quality4_message' => 'Napatunayan na ang pahinang ito',
 	'proofreadpage_index_listofpages' => 'Talaan ng mga pahina',
 	'proofreadpage_image_message' => 'Kawing patungo sa pahina ng pagpapaksa (indeks)',
 	'proofreadpage_page_status' => 'Kalagayan ng pahina',
@@ -4314,6 +4335,10 @@ Pinagmulan
 Larawan|Pabalat na larawan
 Mga pahina||20
 Mga puna||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|pahina|mga pahina}}',
+	'proofreadpage_specialpage_legend' => 'Maghanap sa mga pahina ng talatuntunan',
+	'proofreadpage_source' => 'Pinagmulan',
+	'proofreadpage_source_message' => 'Edisyong nasiyasat na ginamit upang maitatag ang tekstong ito',
 );
 
 /** Turkish (Türkçe)
