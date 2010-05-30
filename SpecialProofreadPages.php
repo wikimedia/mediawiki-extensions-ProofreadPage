@@ -147,7 +147,7 @@ class ProofreadPagesQuery extends QueryPage {
 <td>
 <table style=\"line-height:70%;\" border=0 cellpadding=0 cellspacing=0 >
 <tr>
-<td width=\"2\">&nbsp;</td>
+<td width=\"2\">&#160;</td>
 <td align=center class='quality4' width=\"$q4\"></td>
 <td align=center class='quality3' width=\"$q3\"></td>
 <td align=center class='quality2' width=\"$q2\"></td>

@@ -696,7 +696,7 @@ function pr_renderPageList( $input, $args, $parser ) {
 		$pdbk = "$page_namespace:$name" . '/' . $i ;
 		list( $view, $links, $mode ) = pr_pageNumber( $i, $args );
 
-		if ( $mode == 'highroman' || $mode == 'roman' ) $view = '&nbsp;' . $view;
+		if ( $mode == 'highroman' || $mode == 'roman' ) $view = '&#160;' . $view;
 
 		$n = strlen( $count ) - strlen( $view );
 		if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
