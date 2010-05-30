@@ -93,6 +93,7 @@ $messages['qqq'] = array(
 	'proofreadpage_image' => '{{Identical|Image}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
+	'proofreadpage_nologin' => '{{Identical|Not logged in}}',
 	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
@@ -3782,11 +3783,14 @@ $messages['sah'] = array(
 );
 
 /** Sardinian (Sardu)
+ * @author Andria
  * @author Marzedu
  */
 $messages['sc'] = array(
 	'proofreadpage_namespace' => 'Pàgina',
+	'proofreadpage_image' => 'Immàgine',
 	'proofreadpage_index_listofpages' => 'Lista de is pàginas',
+	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàginas}}',
 );
 
 /** Slovak (Slovenčina)
