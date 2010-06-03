@@ -2353,11 +2353,13 @@ Cathetan||10',
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author ITshnik
  * @author Malafaya
  * @author Sopho
  * @author გიორგიმელა
  */
 $messages['ka'] = array(
+	'indexpages' => 'მთავარი გვერდების სია',
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
 	'proofreadpage_image' => 'სურათი',
@@ -2366,10 +2368,12 @@ $messages['ka'] = array(
 	'proofreadpage_nosuch_index' => 'შეცდომა: ასეთი ინდექსი არ არის ნაპოვნი',
 	'proofreadpage_nosuch_file' => 'შეცდომა:ასეთი ფაილი არ არის ნაპოვნი',
 	'proofreadpage_badpage' => 'არასწორი ფორმატი',
+	'proofreadpage_badpagetext' => 'ფორმატი გვერდისა, რომლის შენახვაც თქვენ ცადეთ, არასწორია.',
 	'proofreadpage_indexdupe' => 'დუბლიკატი ბმული',
 	'proofreadpage_nologin' => 'შესვლა არ მომხდარა',
 	'proofreadpage_notallowed' => 'ცვლილებები არაა დაშვებული',
 	'proofreadpage_interval_too_large' => 'შეცდომა: ინტერვალი ძალიან დიდია',
+	'proofreadpage_invalid_interval' => 'შეცდომა: არასწორი ინტერვალი',
 	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
 	'proofreadpage_prevpage' => 'წინა გვერდი',
 	'proofreadpage_quality0_category' => 'ტექსტის გარეშე',
