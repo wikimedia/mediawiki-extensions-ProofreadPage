@@ -3425,6 +3425,7 @@ $messages['ps'] = array(
 انځور|د پښتۍ انځور
 مخونه||20
 تبصرې||10',
+	'proofreadpage_source' => 'سرچينه',
 );
 
 /** Portuguese (Português)
@@ -3875,6 +3876,7 @@ $messages['sr-ec'] = array(
 	'proofreadpage_index_namespace' => 'индекс',
 	'proofreadpage_image' => 'слика',
 	'proofreadpage_index' => 'индекс',
+	'proofreadpage_notallowed' => 'Промена није дозвољена',
 	'proofreadpage_nextpage' => 'Следећа страна',
 	'proofreadpage_prevpage' => 'Претходна страна',
 	'proofreadpage_header' => 'Заглавље (без укључивања):',
