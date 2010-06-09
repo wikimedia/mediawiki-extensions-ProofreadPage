@@ -176,26 +176,26 @@ $messages['am'] = array(
 $messages['an'] = array(
 	'proofreadpage_desc' => 'Premite contimparar de trazas simples o testo con o escaneyo orichinal',
 	'proofreadpage_namespace' => 'Pachina',
-	'proofreadpage_index_namespace' => 'Endize',
+	'proofreadpage_index_namespace' => 'Endice',
 	'proofreadpage_image' => 'Imachen',
-	'proofreadpage_index' => 'Endize',
+	'proofreadpage_index' => 'Endice',
 	'proofreadpage_nextpage' => 'Pachina siguient',
 	'proofreadpage_prevpage' => 'Pachina anterior',
-	'proofreadpage_header' => 'Cabezera (noinclude):',
+	'proofreadpage_header' => 'Cabecera (noinclude):',
 	'proofreadpage_body' => "Cuerpo d'a pachina (to be transcluded):",
 	'proofreadpage_footer' => 'Piet de pachina (noinclude):',
-	'proofreadpage_toggleheaders' => "cambiar a bisibilidat d'as sezions noinclude",
+	'proofreadpage_toggleheaders' => "cambiar a bisibilidat d'as seccions noinclude",
 	'proofreadpage_quality1_category' => 'Pachina no correchita',
 	'proofreadpage_quality2_category' => 'Pachina problematica',
 	'proofreadpage_quality3_category' => 'Pachina correchita',
-	'proofreadpage_quality4_category' => 'Pachina balidata',
+	'proofreadpage_quality4_category' => 'Validata',
 	'proofreadpage_index_listofpages' => 'Lista de pachinas',
-	'proofreadpage_image_message' => "Binclo t'a pachina d'endize",
+	'proofreadpage_image_message' => "Vinclo t'a pachina d'endice",
 	'proofreadpage_page_status' => "Estau d'a pachina",
-	'proofreadpage_js_attributes' => 'Autor Títol Año Editorial',
+	'proofreadpage_js_attributes' => 'Autor Títol Anyo Editorial',
 	'proofreadpage_index_attributes' => 'Autor
 Títol
-Año|Año de publicazión
+Anyo|Anyo de publicación
 Editorial
 Fuent
 Imachen|Imachen de portalada
