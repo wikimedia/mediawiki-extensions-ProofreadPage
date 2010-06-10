@@ -3912,6 +3912,7 @@ $messages['sr-el'] = array(
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Slika',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_notallowed' => 'Promena nije dozvoljena',
 	'proofreadpage_nextpage' => 'Sledeća strana',
 	'proofreadpage_prevpage' => 'Prethodna strana',
 	'proofreadpage_header' => 'Zaglavlje (bez uključivanja):',
@@ -4774,6 +4775,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|页|页}}',
 	'proofreadpage_specialpage_legend' => '搜索索引页',
 	'proofreadpage_source' => '来源',
+	'proofreadpage_source_message' => '扫描版用来建立这个文本',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
