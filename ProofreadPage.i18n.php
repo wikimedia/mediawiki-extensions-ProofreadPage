@@ -3877,6 +3877,7 @@ $messages['sr-ec'] = array(
 	'proofreadpage_index_namespace' => 'индекс',
 	'proofreadpage_image' => 'слика',
 	'proofreadpage_index' => 'индекс',
+	'proofreadpage_badpage' => 'Погрешан Формат',
 	'proofreadpage_notallowed' => 'Промена није дозвољена',
 	'proofreadpage_nextpage' => 'Следећа страна',
 	'proofreadpage_prevpage' => 'Претходна страна',
