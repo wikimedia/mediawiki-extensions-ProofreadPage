@@ -3913,6 +3913,7 @@ $messages['sr-el'] = array(
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Slika',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_badpage' => 'Pogrešan Format',
 	'proofreadpage_notallowed' => 'Promena nije dozvoljena',
 	'proofreadpage_nextpage' => 'Sledeća strana',
 	'proofreadpage_prevpage' => 'Prethodna strana',
