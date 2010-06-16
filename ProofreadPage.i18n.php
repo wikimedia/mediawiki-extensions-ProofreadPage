@@ -3495,14 +3495,29 @@ Notas||10',
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
  * @author Luckas Blade
+ * @author 555
  */
 $messages['pt-br'] = array(
-	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
+	'indexpages' => 'Lista de páginas de índice',
+	'proofreadpage_desc' => 'Permite uma fácil comparação de textos e suas digitalizações originais',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'Imagem',
 	'proofreadpage_index' => 'Índice',
+	'proofreadpage_index_expected' => 'Erro: era esperado um índice',
+	'proofreadpage_nosuch_index' => 'Erro: índice inexistente',
+	'proofreadpage_nosuch_file' => 'Erro: arquivo inexistente',
+	'proofreadpage_badpage' => 'Formato errôneo',
+	'proofreadpage_badpagetext' => 'Você tentou salvar em um formato incorreto.',
+	'proofreadpage_indexdupe' => 'Link duplicado',
+	'proofreadpage_indexdupetext' => 'As páginas não podem ser listadas mais de uma vez em uma página de índice.',
+	'proofreadpage_nologin' => 'Você não está autenticado',
+	'proofreadpage_nologintext' => 'É necessário estar [[Special:UserLogin|autenticado]] para poder alterar o status de revisão das páginas.',
 	'proofreadpage_notallowed' => 'Alteração não permitida',
+	'proofreadpage_notallowedtext' => 'Você não está autorizado a alterar o status de revisão desta página.',
+	'proofreadpage_number_expected' => 'Erro: era esperado um valor numérico',
+	'proofreadpage_interval_too_large' => 'Erro: intervalo muito longo',
+	'proofreadpage_invalid_interval' => 'Erro: intervalo inválido',
 	'proofreadpage_nextpage' => 'Próxima página',
 	'proofreadpage_prevpage' => 'Página anterior',
 	'proofreadpage_header' => 'Cabeçalho (em modo noinclude):',
@@ -3510,10 +3525,14 @@ $messages['pt-br'] = array(
 	'proofreadpage_footer' => 'Rodapé (em modo noinclude):',
 	'proofreadpage_toggleheaders' => 'tornar as seções noinclude visíveis',
 	'proofreadpage_quality0_category' => 'Sem texto',
-	'proofreadpage_quality1_category' => 'Não revistas',
+	'proofreadpage_quality1_category' => 'Não revisadas',
 	'proofreadpage_quality2_category' => 'Problemáticas',
-	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
+	'proofreadpage_quality3_category' => 'Revisadas e corrigidas',
 	'proofreadpage_quality4_category' => 'Validadas',
+	'proofreadpage_quality0_message' => 'Esta página não precisa ser revisada',
+	'proofreadpage_quality1_message' => 'Esta página ainda não foi revisada',
+	'proofreadpage_quality2_message' => 'Ocorreu um erro ao revisar esta página',
+	'proofreadpage_quality3_message' => 'Esta página foi revisada',
 	'proofreadpage_quality4_message' => 'Esta página foi validada',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message' => 'Link para a página de índice',
@@ -3528,7 +3547,9 @@ Imagem|Imagem de capa
 Páginas||20
 Notas||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
+	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
 	'proofreadpage_source' => 'Fonte',
+	'proofreadpage_source_message' => 'Edição digitalizada utilizada para estabelecer este texto',
 );
 
 /** Quechua (Runa Simi)
