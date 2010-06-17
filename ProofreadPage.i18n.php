@@ -3493,9 +3493,9 @@ Notas||10',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author 555
  * @author Eduardo.mps
  * @author Luckas Blade
- * @author 555
  */
 $messages['pt-br'] = array(
 	'indexpages' => 'Lista de páginas de índice',
