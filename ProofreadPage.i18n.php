@@ -3923,6 +3923,7 @@ $messages['sr-ec'] = array(
 слика|насловна страна
 страна||20
 примедбе||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|страна|стране|стране|стране|страна}}',
 );
 
 /** Serbian Latin ekavian (Srpski (latinica))
