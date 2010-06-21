@@ -3960,6 +3960,7 @@ izvor
 slika|naslovna strana
 strana||20
 primedbe||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|strana|strane|strane|strane|strana}}',
 );
 
 /** Seeltersk (Seeltersk)
