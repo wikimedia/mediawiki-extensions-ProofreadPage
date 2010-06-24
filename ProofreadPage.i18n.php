@@ -3580,6 +3580,7 @@ Willapusqakuna||10",
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
+ * @author Minisarm
  * @author Stelistcristi
  */
 $messages['ro'] = array(
@@ -3615,7 +3616,7 @@ $messages['ro'] = array(
 	'proofreadpage_quality4_category' => 'Validat',
 	'proofreadpage_quality0_message' => 'Această pagină nu necesită să fie verificată',
 	'proofreadpage_quality1_message' => 'Această pagină n-a fost verificată',
-	'proofreadpage_quality2_message' => 'A fost o problemă la verificarea acestei pagini',
+	'proofreadpage_quality2_message' => 'Am întâmpinat o problemă la verificarea acestei pagini',
 	'proofreadpage_quality3_message' => 'Această pagină a fost verificată',
 	'proofreadpage_quality4_message' => 'Această pagină a fost validată',
 	'proofreadpage_index_listofpages' => 'Lista paginilor',
