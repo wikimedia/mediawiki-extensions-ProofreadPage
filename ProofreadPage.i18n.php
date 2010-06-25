@@ -3576,6 +3576,7 @@ Willapusqakuna||10",
 );
 
 /** Romanian (Română)
+ * @author AdiJapan
  * @author Cin
  * @author Firilacroco
  * @author KlaudiuMihaila
@@ -3608,7 +3609,7 @@ $messages['ro'] = array(
 	'proofreadpage_prevpage' => 'Pagina anterioară',
 	'proofreadpage_header' => 'Antet (nu include):',
 	'proofreadpage_body' => 'Corp-mesaj (pentru a fi introdus):',
-	'proofreadpage_footer' => 'Notă de subsol (nu include):',
+	'proofreadpage_footer' => "Notă de subsol (''noinclude''):",
 	'proofreadpage_quality0_category' => 'Fără text',
 	'proofreadpage_quality1_category' => 'Neverificat',
 	'proofreadpage_quality2_category' => 'Problematic',
