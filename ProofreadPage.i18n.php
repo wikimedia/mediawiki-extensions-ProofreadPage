@@ -3755,6 +3755,13 @@ $messages['ru'] = array(
 	'proofreadpage_source_message' => 'Для создания электронной версии текста использовались отсканированные материалы',
 );
 
+/** Rusyn (русиньскый язык)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'proofreadpage_namespace' => 'Сторінка',
+);
+
 /** Yakut (Саха тыла)
  * @author HalanTul
  */
