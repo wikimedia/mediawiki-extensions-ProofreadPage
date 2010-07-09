@@ -2141,6 +2141,7 @@ Catatan||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|halaman|halaman}}',
 	'proofreadpage_specialpage_legend' => 'Pencarian halaman indek',
 	'proofreadpage_source' => 'Sumber',
+	'proofreadpage_source_message' => 'Versi pindai digunakan untuk membuat teks ini',
 );
 
 /** Ido (Ido)
