@@ -34,6 +34,9 @@ $wgSpecialPageGroups['IndexPages'] = 'pages';
 # Bump the version number every time you change proofread.js
 $wgProofreadPageVersion = 26;
 
+# set to true in order to allow anons to modify pagequality
+$wgProofreadPageAllowAnons = false;
+
 # Max width of zoomable image
 $wgProofreadPageMaxWidth = 2048;
 
@@ -952,7 +955,7 @@ function  pr_formData( $editpage, $request ) {
  * Check the format of pages in "Page" namespace. 
  */
 function pr_attemptSave( $editpage ) {
-	global $wgOut, $wgUser;
+	global $wgOut, $wgUser, $wgProofreadPageAllowAnons;
 
 	$page_namespace = pr_page_ns();
 	$index_namespace = pr_index_ns();
@@ -989,7 +992,7 @@ function pr_attemptSave( $editpage ) {
 		list( $old_q , $old_username, $old_ptext ) = pr_parse_page( $old_text );
 		if( $old_q != -1 ) {
 			//check usernames
-			if( ($old_q != $q) && $wgUser->isAnon() ) {
+			if( ($old_q != $q) && $wgUser->isAnon() && !$wgProofreadPageAllowAnons ) {
 				$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
 				return false;
 			}
