@@ -34,8 +34,8 @@ $wgSpecialPageGroups['IndexPages'] = 'pages';
 # Bump the version number every time you change proofread.js
 $wgProofreadPageVersion = 26;
 
-# set to true in order to allow anons to modify pagequality
-$wgProofreadPageAllowAnons = false;
+# Group allowed to modify pagequality
+$wgGroupPermissions['user']['pagequality'] = true;
 
 # Max width of zoomable image
 $wgProofreadPageMaxWidth = 2048;
@@ -377,7 +377,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 
 function pr_preparePage( $out, $m, $isEdit ) {
 	global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion, $wgProofreadPageMaxWidth;
-	global $wgTitle;
+	global $wgTitle, $wgUser;
 
 	if ( !isset( $wgTitle->pr_index_title ) ) {
 		pr_load_index( $wgTitle );
@@ -430,6 +430,8 @@ function pr_preparePage( $out, $m, $isEdit ) {
 		'proofreadPageNextURL' => $next_url,
 		'proofreadPageHeader' => $header,
 		'proofreadPageFooter' => $footer,
+		'proofreadPageAddButtons' => $wgUser->isAllowed('pagequality'),
+		'proofreadPageUserName' => $wgUser->getName(),
 	);
 	$varScript = Skin::makeVariablesScript( $jsVars );
 
@@ -955,7 +957,7 @@ function  pr_formData( $editpage, $request ) {
  * Check the format of pages in "Page" namespace. 
  */
 function pr_attemptSave( $editpage ) {
-	global $wgOut, $wgUser, $wgProofreadPageAllowAnons;
+	global $wgOut, $wgUser;
 
 	$page_namespace = pr_page_ns();
 	$index_namespace = pr_index_ns();
@@ -992,7 +994,7 @@ function pr_attemptSave( $editpage ) {
 		list( $old_q , $old_username, $old_ptext ) = pr_parse_page( $old_text );
 		if( $old_q != -1 ) {
 			//check usernames
-			if( ($old_q != $q) && $wgUser->isAnon() && !$wgProofreadPageAllowAnons ) {
+			if( ($old_q != $q) && !$wgUser->isAllowed('pagequality') ) {
 				$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
 				return false;
 			}

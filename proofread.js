@@ -886,7 +886,7 @@ hookEvent("load", pr_initzoom );
 function pr_add_quality(form,value){
  
 	self.proofreadpage_quality = value;
-	self.proofreadpage_username = wgUserName;
+	self.proofreadpage_username = proofreadPageUserName;
 	var text="";
 	switch( value ) {
 		case 0: text = proofreadPageMessageQuality0; break;
@@ -903,8 +903,9 @@ function pr_add_quality(form,value){
 
 function pr_add_quality_buttons(){
 
+	if( !proofreadPageAddButtons ) return;
 	var ig  = document.getElementById("wpWatchthis");
-	if(!wgUserName) ig = document.getElementById("wpSummary");
+	if( !ig ) ig = document.getElementById("wpSummary");
 	if( !ig ) return;
 	var f = document.createElement("span");
 	f.innerHTML = 
@@ -916,10 +917,9 @@ function pr_add_quality_buttons(){
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
 
-	if(!wgUserName) f.style.cssText = 'display:none';
 	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
-	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != wgUserName ) ) ) ) {
+	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';
 		document.editform.quality[4].disabled = true;
 	}
