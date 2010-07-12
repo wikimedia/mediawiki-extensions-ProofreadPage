@@ -749,7 +749,7 @@ function pr_renderPages( $input, $args, &$parser ) {
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 	}
 
-	$parser->mOutput->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
+	$parser->getOutput()->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
 	
 	$out = '';
 	
