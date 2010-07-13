@@ -794,11 +794,13 @@ Poznámky||10',
 );
 
 /** Danish (Dansk)
+ * @author Dferg
  * @author Jon Harald Søby
  * @author Sarrus
  */
 $messages['da'] = array(
 	'proofreadpage_namespace' => 'Side',
+	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_badpage' => 'Forkert format',
 	'proofreadpage_badpagetext' => 'Formatet på den side, du forsøgte at gemme, er forkert.',
 	'proofreadpage_indexdupetext' => 'Sider kan ikke vises mere end én gang på en indeksside.',
