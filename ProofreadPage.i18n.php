@@ -796,21 +796,62 @@ Poznámky||10',
 /** Danish (Dansk)
  * @author Dferg
  * @author Jon Harald Søby
+ * @author Peter Alberti
  * @author Sarrus
  */
 $messages['da'] = array(
+	'indexpages' => 'Liste over indekssider',
+	'proofreadpage_desc' => 'Muliggør nem sammenligning af tekst med den indscannede original',
 	'proofreadpage_namespace' => 'Side',
 	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'Billede',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Fejl: indeks forventet',
+	'proofreadpage_nosuch_index' => 'Fejl: intet indeks med det navn',
+	'proofreadpage_nosuch_file' => 'Fejl: ingen fil med det navn',
 	'proofreadpage_badpage' => 'Forkert format',
 	'proofreadpage_badpagetext' => 'Formatet på den side, du forsøgte at gemme, er forkert.',
+	'proofreadpage_indexdupe' => 'Linket er en duplet',
 	'proofreadpage_indexdupetext' => 'Sider kan ikke vises mere end én gang på en indeksside.',
 	'proofreadpage_nologin' => 'Ikke logget på',
+	'proofreadpage_nologintext' => 'Du skal være [[Special:UserLogin|logget på]] for at ændre en sides korrekturlæsningsstatus.',
 	'proofreadpage_notallowed' => 'Ændringer er ikke tilladt',
 	'proofreadpage_notallowedtext' => 'Du har ikke rettigheder til at ændre korrekturlæsningen på denne side.',
+	'proofreadpage_number_expected' => 'Fejl: talværdi forventet',
+	'proofreadpage_interval_too_large' => 'Fejl: for stort interval',
+	'proofreadpage_invalid_interval' => 'Fejl: ugyldigt interval',
 	'proofreadpage_nextpage' => 'Næste side',
 	'proofreadpage_prevpage' => 'Forrige side',
+	'proofreadpage_header' => 'Sidehoved (inkluderes ikke)',
+	'proofreadpage_body' => 'Sidens indhold (som skal inkluderes)',
+	'proofreadpage_footer' => 'Sidefod (inkluderes ikke)',
+	'proofreadpage_toggleheaders' => 'Slå synligheden af sidehoved og -fod til og fra',
 	'proofreadpage_quality0_category' => 'Uden tekst',
 	'proofreadpage_quality1_category' => 'Ikke korrekturlæst',
+	'proofreadpage_quality2_category' => 'Problematisk',
+	'proofreadpage_quality3_category' => 'Korrekturlæst',
+	'proofreadpage_quality4_category' => 'Valideret',
+	'proofreadpage_quality0_message' => 'Denne side behøver ikke korrekturlæsning',
+	'proofreadpage_quality1_message' => 'Denne side er ikke blevet korrekturlæst',
+	'proofreadpage_quality2_message' => 'Der opstod et problem under korrekturlæsningen af denne side',
+	'proofreadpage_quality3_message' => 'Denne side er blevet korrekturlæst',
+	'proofreadpage_quality4_message' => 'Denne side er valideret',
+	'proofreadpage_index_listofpages' => 'Liste over sider',
+	'proofreadpage_image_message' => 'Link til indekssiden',
+	'proofreadpage_page_status' => 'Sidestatus',
+	'proofreadpage_js_attributes' => 'Forfatter Titel År Udgiver',
+	'proofreadpage_index_attributes' => 'Forfatter 
+Titel 
+År | Udgivelsesår 
+Udgiver
+Kilde 
+Billede | Titelblad
+Sider | | 20 
+Bemærkninger | | 10',
+	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
+	'proofreadpage_specialpage_legend' => 'Søg i indekssider',
+	'proofreadpage_source' => 'Kilde',
+	'proofreadpage_source_message' => 'Indscannet original, der blev brugt som grundlag for denne tekst',
 );
 
 /** German (Deutsch)
