@@ -125,7 +125,7 @@ class ProofreadPagesQuery extends QueryPage {
 			: $skin->linkKnown( $title , htmlspecialchars( $title->getText() ) );
 
 		if ( !$title->exists() ) {
-			return "<s>{$plink}</s>";
+			return "<del>{$plink}</del>";
 		}
 
 		$size = $result->pr_count;
