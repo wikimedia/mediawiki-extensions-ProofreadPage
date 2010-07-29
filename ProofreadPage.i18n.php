@@ -3630,7 +3630,7 @@ Willapusqakuna||10",
  */
 $messages['ro'] = array(
 	'indexpages' => 'Lista paginilor index',
-	'proofreadpage_desc' => 'Permiteți compararea cu ușurință a textului față de scanarea originală',
+	'proofreadpage_desc' => 'Permite compararea facilă a textului față de scanarea originală',
 	'proofreadpage_namespace' => 'Pagină',
 	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Imagine',
@@ -3676,6 +3676,7 @@ Sursă
 Imagine|Imagine copertă
 Pagini||20
 Comentarii||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|pagină|pagini}}',
 	'proofreadpage_specialpage_legend' => 'Căutați paginile de index',
 	'proofreadpage_source' => 'Sursă',
 );
