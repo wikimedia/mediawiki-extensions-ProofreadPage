@@ -3452,6 +3452,7 @@ Nòte||10',
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'indexpages' => 'د ليکلړ مخونو لړليک',
 	'proofreadpage_namespace' => 'مخ',
 	'proofreadpage_index_namespace' => 'ليکلړ',
 	'proofreadpage_image' => 'انځور',
@@ -3470,6 +3471,8 @@ $messages['ps'] = array(
 انځور|د پښتۍ انځور
 مخونه||20
 تبصرې||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|مخ|مخونه}}',
+	'proofreadpage_specialpage_legend' => 'ليکلړ مخونه پلټل',
 	'proofreadpage_source' => 'سرچينه',
 );
 
