@@ -3936,13 +3936,58 @@ Poznámky||10',
 	'proofreadpage_source_message' => 'Naskenované vydanie použité pri vzniku tohto textu',
 );
 
-/** Slovenian (Slovenščina) */
+/** Slovenian (Slovenščina)
+ * @author Dbc334
+ */
 $messages['sl'] = array(
+	'indexpages' => 'Seznam kazalnih strani',
+	'proofreadpage_desc' => 'Omogočajo enostavno primerjavo besedila z izvirno preslikavo',
 	'proofreadpage_namespace' => 'Stran',
+	'proofreadpage_index_namespace' => 'Kazalo',
+	'proofreadpage_image' => 'Slika',
+	'proofreadpage_index' => 'Kazalo',
+	'proofreadpage_index_expected' => 'Napaka: pričakovano kazalo',
+	'proofreadpage_nosuch_index' => 'Napaka: ni takšnega kazala',
+	'proofreadpage_nosuch_file' => 'Napaka: ni takšne datoteke',
+	'proofreadpage_badpage' => 'Napačna oblika',
+	'proofreadpage_indexdupe' => 'Podvojena povezava',
+	'proofreadpage_nologin' => 'Niste prijavljeni',
+	'proofreadpage_notallowed' => 'Sprememba ni dovoljena',
+	'proofreadpage_notallowedtext' => 'Niste pooblaščeni za spreminjanje stanja lekture te strani.',
+	'proofreadpage_number_expected' => 'Napaka: pričakovana številčna vrednost',
+	'proofreadpage_interval_too_large' => 'Napaka: preveliko obdobje',
+	'proofreadpage_invalid_interval' => 'Napaka: neveljavno obdobje',
+	'proofreadpage_nextpage' => 'Naslednja stran',
+	'proofreadpage_prevpage' => 'Prejšnja stran',
+	'proofreadpage_header' => 'Glava (noinclude):',
+	'proofreadpage_footer' => 'Noga (noinclude):',
+	'proofreadpage_toggleheaders' => 'preklopi vidnost razdelkov noinclude',
+	'proofreadpage_quality0_category' => 'Brez besedila',
 	'proofreadpage_quality1_category' => 'Nekorigirano',
 	'proofreadpage_quality2_category' => 'Problematične strani',
 	'proofreadpage_quality3_category' => 'Korigirano',
 	'proofreadpage_quality4_category' => 'Potrjeno',
+	'proofreadpage_quality0_message' => 'Te strani ni potrebno lektorirati',
+	'proofreadpage_quality1_message' => 'Ta stran ni lektorirana',
+	'proofreadpage_quality2_message' => 'Prišlo je do težave med lektoriranjem te strani',
+	'proofreadpage_quality3_message' => 'Ta stran je bila lektorirana',
+	'proofreadpage_quality4_message' => 'Ta stran je bila potrjena',
+	'proofreadpage_index_listofpages' => 'Seznam strani',
+	'proofreadpage_image_message' => 'Povezava do kazala',
+	'proofreadpage_page_status' => 'Stanje strani',
+	'proofreadpage_js_attributes' => 'Avtor Naslov Leto Založnik',
+	'proofreadpage_index_attributes' => 'Avtor 
+Naslov 
+Leto|Leto izida 
+Založba 
+Vir 
+Slika|Naslovnica
+Strani||20 
+Pripombe||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|stran|strani}}',
+	'proofreadpage_specialpage_legend' => 'Iskanje kazalnih strani',
+	'proofreadpage_source' => 'Vir',
+	'proofreadpage_source_message' => 'Preslikana izdaja, uporabljena za nastanek tega besedila',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
