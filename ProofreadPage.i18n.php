@@ -2187,6 +2187,18 @@ Catatan||10',
 	'proofreadpage_source_message' => 'Versi pindai digunakan untuk membuat teks ini',
 );
 
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
+$messages['ig'] = array(
+	'proofreadpage_namespace' => 'Ihü',
+	'proofreadpage_image' => 'Nhuunuche',
+	'proofreadpage_nextpage' => 'Ihü sò',
+	'proofreadpage_prevpage' => 'Ihü na àzú',
+	'proofreadpage_index_listofpages' => 'Ndétu ihü',
+	'proofreadpage_source' => 'Mkpọlógwù',
+);
+
 /** Ido (Ido)
  * @author Malafaya
  */
