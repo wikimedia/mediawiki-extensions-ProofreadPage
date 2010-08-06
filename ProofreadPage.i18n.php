@@ -1730,6 +1730,11 @@ $messages['gv'] = array(
 	'proofreadpage_index_listofpages' => 'Rolley duillagyn',
 );
 
+/** Hausa (هَوُسَ) */
+$messages['ha'] = array(
+	'proofreadpage_namespace' => 'Shafi',
+);
+
 /** Hawaiian (Hawai`i)
  * @author Kalani
  * @author Singularity
