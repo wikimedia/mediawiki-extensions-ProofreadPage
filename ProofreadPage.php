@@ -1259,6 +1259,10 @@ function pr_update_pr_index( $index, $deletedpage=null ) {
 		}
 	}
 
+	if( $n==0 ) {
+		return;
+	}
+
 	$catlinks = $dbr->tableName( 'categorylinks' );
 	$page = $dbr->tableName( 'page' );
 	$pagelist = "'".implode( "', '", $pages)."'";
