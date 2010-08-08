@@ -3476,6 +3476,7 @@ $messages['ps'] = array(
 	'proofreadpage_index' => 'ليکلړ',
 	'proofreadpage_nextpage' => 'بل مخ',
 	'proofreadpage_prevpage' => 'تېر مخ',
+	'proofreadpage_quality0_category' => 'بې متنه',
 	'proofreadpage_index_listofpages' => 'د مخونو لړليک',
 	'proofreadpage_image_message' => 'د ليکلړ مخ ته تړنه',
 	'proofreadpage_page_status' => 'د مخ دريځ',
