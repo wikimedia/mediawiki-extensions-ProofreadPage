@@ -150,6 +150,11 @@ function pr_make_edit_area(container,text){
 		 self.proofreadpage_quality = 1;
 		 self.proofreadpage_username = "";
 	}
+	//detect the container div
+	if( pageHeader.match("^<div class=\"pagetext\">") && pageFooter.match("</div>$") ) {
+		pageHeader = pageHeader.substr(22,pageHeader.length);
+		pageFooter = pageFooter.substr(0,pageFooter.length-6);
+	}
 
 	//escape & character
 	pageBody = pageBody.split("&").join("&amp;")
@@ -870,6 +875,15 @@ function pr_init() {
 			proofreadPageIsEdit);
 	}
 	else pr_setup();
+
+	//add css classes to the container div
+	var c = document.getElementById("pagequality"); 
+	if(c) { 
+		c = c.nextSibling; 
+		if(c.className=="pagetext") {
+			c.className += " "+self.proofreadPageCss; 
+		}
+	}
 }
 
 
