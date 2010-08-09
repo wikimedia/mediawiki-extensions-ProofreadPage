@@ -2070,6 +2070,8 @@ Pages|Էջեր|20
 Remarks|Նշումներ|10',
 	'proofreadpage_pages' => '{{PLURAL:$1|էջ|էջ}}',
 	'proofreadpage_specialpage_legend' => 'Որոնել ինդեքս էջեր',
+	'proofreadpage_source' => 'Աղբյուր',
+	'proofreadpage_source_message' => 'Այս տեքստը ստեղծելու համար օգտագործված նյութեր',
 );
 
 /** Interlingua (Interlingua)
