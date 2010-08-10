@@ -917,11 +917,19 @@ function pr_add_quality(form,value){
 
 function pr_add_quality_buttons(){
 
-	if( !proofreadPageAddButtons ) return;
 	var ig  = document.getElementById("wpWatchthis");
 	if( !ig ) ig = document.getElementById("wpSummary");
 	if( !ig ) return;
 	var f = document.createElement("span");
+	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
+
+	if( !proofreadPageAddButtons ) {
+		f.innerHTML = 
+		    ' <input type="hidden" name="wpProofreader" value="' + self.proofreadpage_username + '">'
+		    +'<input type="hidden" name="quality" value=' + self.proofreadpage_quality + ' >';
+		return;
+	}
+
 	f.innerHTML = 
 ' <input type="hidden" name="wpProofreader" value="'+self.proofreadpage_username+'">'
 +'<span class="quality0"> <input type="radio" name="quality" value=0 onclick="pr_add_quality(this.form,0)" tabindex=4> </span>'
@@ -930,8 +938,6 @@ function pr_add_quality_buttons(){
 +'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)" tabindex=4> </span>'
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML(proofreadPageMessageStatus);
-
-	ig.parentNode.insertBefore(f,ig.nextSibling.nextSibling.nextSibling);
 
 	if( ! ( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';
