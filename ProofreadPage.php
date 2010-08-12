@@ -746,6 +746,10 @@ function pr_renderPages( $input, $args, &$parser ) {
 	if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
 		return "";
 	}
+	# abort too if the tag is in the page namespace
+	if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
+		return "";
+	}
 	if( ! $index ) { 
 		return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
 	}
