@@ -2445,6 +2445,7 @@ $messages['ka'] = array(
 	'proofreadpage_quality4_category' => 'შემოწმებული',
 	'proofreadpage_index_listofpages' => 'გვერდების სია',
 	'proofreadpage_page_status' => 'გვერდის სტატუსი',
+	'proofreadpage_js_attributes' => 'ავტორი სათაური წელი გამომცემელი',
 	'proofreadpage_index_attributes' => 'ავტორი
 სათაური
 წელი|გამოცემის წელი
@@ -4579,7 +4580,7 @@ $messages['tt-cyrl'] = array(
 	'proofreadpage_nextpage' => 'алдагы бит',
 );
 
-/** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
+/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
  * @author Jose77
  */
 $messages['ug-latn'] = array(
