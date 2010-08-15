@@ -37,9 +37,6 @@ $wgProofreadPageVersion = 26;
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
 
-# Max width of zoomable image
-$wgProofreadPageMaxWidth = 2048;
-
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',
@@ -232,8 +229,9 @@ function pr_navigation( $title ) {
 		$footer = str_replace( "{{{{$key}}}}", $val, $footer );
 	}
 	$css = $attributes['css'] ? $attributes['css'] : "";
+	$edit_width = $attributes['width'] ? $attributes['width'] : "";
 
-	return array( $index_url, $prev_url, $next_url, $header, $footer, $css );
+	return array( $index_url, $prev_url, $next_url, $header, $footer, $css, $edit_width );
 
 }
 
@@ -394,37 +392,27 @@ function pr_preparePage( $out, $m, $isEdit ) {
 	if ( $image && $image->exists() ) {
 		$width = $image->getWidth();
 		$height = $image->getHeight();
-		if( $width > $wgProofreadPageMaxWidth ) {
-			$width = $wgProofreadPageMaxWidth;
-			$height = $image->getHeight() * $wgProofreadPageMaxWidth / $image->getWidth();
-		}
 		if ( $m[2] ) {
-			$viewName = $image->thumbName( array( 'width' => $width, 'page' => $m[3] ) );
-			$viewURL = $image->getThumbUrl( $viewName );
-
 			$thumbName = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[3] ) );
-			$thumbURL = $image->getThumbUrl( $thumbName );
 		} else {
-			$viewURL = $image->getViewURL();
 			$thumbName = $image->thumbName( array( 'width' => '##WIDTH##' ) );
-			$thumbURL = $image->getThumbUrl( $thumbName );
 		}
+		$thumbURL = $image->getThumbUrl( $thumbName );
 		$thumbURL = str_replace( '%23', '#', $thumbURL );
 	} else {
 		$width = 0;
 		$height = 0;
-		$viewURL = '';
 		$thumbURL = '';
 	}
 
-	list( $index_url, $prev_url, $next_url, $header, $footer, $css ) = pr_navigation( $wgTitle );
+	list( $index_url, $prev_url, $next_url, $header, $footer, $css, $edit_width ) = pr_navigation( $wgTitle );
 
 	$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
 
 	$jsVars = array(
 		'proofreadPageWidth' => intval( $width ),
 		'proofreadPageHeight' => intval( $height ),
-		'proofreadPageViewURL' => $viewURL,
+		'proofreadPageEditWidth' => $edit_width,
 		'proofreadPageThumbURL' => $thumbURL,
 		'proofreadPageIsEdit' => intval( $isEdit ),
 		'proofreadPageIndexURL' => $index_url,
@@ -893,7 +881,7 @@ function pr_parse_page( $text ) {
 	$page_regexp = "/^<noinclude>(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s";
         if( !preg_match( $page_regexp, $text, $m ) ) {
 		pr_load_index( $wgTitle );
-		list( $index_url, $prev_url, $next_url, $header, $footer, $css ) = pr_navigation( $wgTitle );
+		list( $index_url, $prev_url, $next_url, $header, $footer, $css, $edit_width ) = pr_navigation( $wgTitle );
 		$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
 			."$header\n\n\n</noinclude>$text<noinclude>\n$footer</noinclude>";
 		return array( -1, null, $new_text ); 

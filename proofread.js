@@ -1,6 +1,10 @@
 // Author : ThomasV - License : GPL
 
 
+/* Default size of the high resolution image in edit mode */
+self.proofreadPageDefaultEditWidth = 1024;
+
+
 function pr_init_tabs(){
 	var a = document.getElementById("p-namespaces");
 	if(!a) a = document.getElementById("p-cactions");
@@ -9,10 +13,11 @@ function pr_init_tabs(){
 	var b = a.getElementsByTagName("ul");
 	if (!b) return;
 
-	if(self.proofreadPageViewURL) {
+	if( self.proofreadPageThumbURL ) {
+		var view_url = self.proofreadPageThumbURL.replace('##WIDTH##',"" + self.proofreadPageWidth );
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-image">'
-			+ '<a href="' + escapeQuotesHTML(proofreadPageViewURL) + '"><span>'
+			+ '<a href="' + escapeQuotesHTML( view_url ) + '"><span>'
 			+ escapeQuotesHTML(proofreadPageMessageImage) + '</span></a></li>';
 	}
 
@@ -53,29 +58,20 @@ function pr_init_tabs(){
 
 
 function pr_image_url(requested_width){
-	var thumb_url;
-
 	if(self.proofreadPageExternalURL) {
-		thumb_url = proofreadPageViewURL;
 		self.DisplayWidth = requested_width;
 		self.DisplayHeight = "";
+		return self.proofreadPageExternalURL;
 	}
 	else {
 		//enforce quantization: width must be multiple of 100px
 		var width = 100 * Math.round( requested_width /100 );
 		//compare to the width of the image
-		if(width < proofreadPageWidth)  {
-			thumb_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
-			self.DisplayWidth = requested_width;
-			self.DisplayHeight = requested_width*proofreadPageHeight/proofreadPageWidth;
-		}
-		else {
-			thumb_url = proofreadPageViewURL; 
-			self.DisplayWidth = proofreadPageWidth;
-			self.DisplayHeight = proofreadPageHeight;
-		}
+		width = Math.min( width, proofreadPageWidth );
+		self.DisplayWidth = width;
+		self.DisplayHeight = width*proofreadPageHeight/proofreadPageWidth;
+		return proofreadPageThumbURL.replace( '##WIDTH##', "" + width ); 
 	}
-	return thumb_url;
 }
 
 
@@ -368,7 +364,7 @@ function zoom_on(evt) {
 //zoom using two images (magnification glass)
 function pr_initzoom(){
 	if(proofreadPageIsEdit) return;
-	if(!self.proofreadPageViewURL) return;
+	if( !self.proofreadPageThumbURL ) return;
 	if(self.DisplayWidth>800) return;
 
 	zp = document.getElementById("pr_container");
@@ -661,9 +657,9 @@ function  pr_fill_table(){
 
 
 
-function pr_load_image() {
+function pr_load_image( view_url ) {
 	pr_container.innerHTML = "<img id=\"ProofReadImage\" src=\""
-	    + escapeQuotesHTML(proofreadPageViewURL) 
+	    + escapeQuotesHTML( view_url ) 
 	    + "\" width=\"" + img_width + "\" />";
 }
 
@@ -710,6 +706,9 @@ function pr_setup() {
 		pr_container.appendChild(image);
 		pr_container.style.cssText = "overflow:hidden;width:"+self.DisplayWidth+"px;";
 	} else {
+		var w = parseInt(self.proofreadPageEditWidth);
+		if( !w ) w = self.proofreadPageDefaultEditWidth;
+		var view_url = pr_image_url( Math.min( w, self.proofreadPageWidth ) ); 
 		//prevent the container from being resized once the image is downloaded. 
 		img_width = pr_horiz?0:parseInt(pr_width/2-70)-20;
 		pr_container.onmousedown = pr_grab;
@@ -717,7 +716,7 @@ function pr_setup() {
 		if (pr_container.addEventListener)
 			pr_container.addEventListener('DOMMouseScroll', pr_zoom_wheel, false);
 		pr_container.onmousewheel = pr_zoom_wheel;//IE,Opera. 
-		hookEvent( 'load', pr_load_image );
+		hookEvent( 'load', function() { pr_load_image(view_url); } );
 	}
 
 	table.setAttribute("id", "textBoxTable");
@@ -839,15 +838,14 @@ function pr_init() {
 	if(document.URL.indexOf("action=history") > 0 ) return;
 
 	/*check if external url is provided*/				       
-	if(!self.proofreadPageViewURL) {
+	if( !self.proofreadPageThumbURL ) {
 		var text = document.getElementById("wpTextbox1"); 
 		if (text) {
 			var proofreadPageIsEdit = true;
 			re = /<span class="hiddenStructure" id="pageURL">\[http:\/\/(.*?)\]<\/span>/;
 			m = re.exec(text.value);
 			if( m ) { 
-				self.proofreadPageViewURL = "http://"+m[1];  
-				self.proofreadPageExternalURL = true;
+				self.proofreadPageExternalURL = "http://"+m[1];  
 			}
 		} 
 		else {
@@ -856,8 +854,7 @@ function pr_init() {
 			try { 
 				var a = document.getElementById("pageURL");
 				var b = a.firstChild;
-				self.proofreadPageViewURL = b.getAttribute("href");
-				self.proofreadPageExternalURL = true;
+				self.proofreadPageExternalURL = b.getAttribute("href");
 			} catch(err){};
 		}
 		//set to dummy values, not used
@@ -865,7 +862,7 @@ function pr_init() {
 		self.proofreadPageHeight = 400;
 	}
 
-	if(!self.proofreadPageViewURL) return;
+	if( !self.proofreadPageThumbURL ) return;
 
 	if( self.proofreadpage_setup ) {
 	  
