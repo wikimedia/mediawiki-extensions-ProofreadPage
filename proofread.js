@@ -62,7 +62,7 @@ function pr_image_url(requested_width){
 	}
 	else {
 		//enforce quantization: width must be multiple of 100px
-		var width = (100*requested_width)/100;
+		var width = 100 * Math.round( requested_width /100 );
 		//compare to the width of the image
 		if(width < proofreadPageWidth)  {
 			thumb_url = proofreadPageThumbURL.replace('##WIDTH##',""+width); 
