@@ -1,10 +1,6 @@
 // Author : ThomasV - License : GPL
 
 
-/* Default size of the high resolution image in edit mode */
-self.proofreadPageDefaultEditWidth = 1024;
-
-
 function pr_init_tabs(){
 	var a = document.getElementById("p-namespaces");
 	if(!a) a = document.getElementById("p-cactions");
@@ -708,6 +704,7 @@ function pr_setup() {
 	} else {
 		var w = parseInt(self.proofreadPageEditWidth);
 		if( !w ) w = self.proofreadPageDefaultEditWidth;
+		if( !w ) w = 1024; /* Default size in edit mode */
 		var view_url = pr_image_url( Math.min( w, self.proofreadPageWidth ) ); 
 		//prevent the container from being resized once the image is downloaded. 
 		img_width = pr_horiz?0:parseInt(pr_width/2-70)-20;
