@@ -1334,15 +1334,31 @@ Oharrak||10',
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Huji
  * @author Mardetanha
+ * @author Wayiran
  */
 $messages['fa'] = array(
+	'indexpages' => 'فهرست صفحات شاخص',
 	'proofreadpage_desc' => 'امکان مقایسهٔ آسان متن با نسخهٔ اصلی پویش شده را فراهم می‌آورد',
 	'proofreadpage_namespace' => 'صفحه',
 	'proofreadpage_index_namespace' => 'اندیس',
 	'proofreadpage_image' => 'تصویر',
 	'proofreadpage_index' => 'اندیس',
+	'proofreadpage_index_expected' => 'خطا: وجود شاخص پیش‌بینی‌شده است',
+	'proofreadpage_nosuch_index' => 'خطا: چنین شاخصی پیدا نشد.',
+	'proofreadpage_nosuch_file' => 'خطا: چنین پرونده‌ای پیدا نشد.',
+	'proofreadpage_badpage' => 'فرمت اشتباه',
+	'proofreadpage_badpagetext' => 'فرمت صفحه‌ای که قصد ذخیره‌اش را دارید، نادرست است.',
+	'proofreadpage_indexdupe' => 'پیوند المثنی',
+	'proofreadpage_indexdupetext' => 'صفحات نمی‌توانند بیش از یک بار بر صفحه‌ای شاخص فهرست شوند.',
+	'proofreadpage_nologin' => 'وارد نشده',
+	'proofreadpage_nologintext' => 'به منظور تغییر وضعیت نمونه‌خوانی صفحات، باید [[Special:UserLogin|وارد شده باشید]].',
+	'proofreadpage_notallowed' => 'تغییر مجاز نیست',
+	'proofreadpage_notallowedtext' => 'شما مجاز به تغییر وضعیت نمونه‌خوانی این صفحه نیستید.',
+	'proofreadpage_interval_too_large' => 'خطا:بازهٔ بسیار بزرگ',
+	'proofreadpage_invalid_interval' => 'خطا: بازهٔ نامعتبر',
 	'proofreadpage_nextpage' => 'صفحهٔ بعدی',
 	'proofreadpage_prevpage' => 'صفحهٔ قبلی',
 	'proofreadpage_header' => 'عنوان (noinclude):',
@@ -1354,6 +1370,11 @@ $messages['fa'] = array(
 	'proofreadpage_quality2_category' => 'مشکل‌دار',
 	'proofreadpage_quality3_category' => 'بازبینی‌شده',
 	'proofreadpage_quality4_category' => 'تاییدشده',
+	'proofreadpage_quality0_message' => 'این صفحه نیازی به نمونه‌خوانی شدن ندارد',
+	'proofreadpage_quality1_message' => 'این صفحه بازخوانی نشده است',
+	'proofreadpage_quality2_message' => 'هنگام بازخوانی این صفحه مشکلی وجود داشت',
+	'proofreadpage_quality3_message' => 'این صفحه نمونه‌خوانی شده است',
+	'proofreadpage_quality4_message' => 'این صفحه اعتباردهی شده است',
 	'proofreadpage_index_listofpages' => 'فهرست صفحه‌ها',
 	'proofreadpage_image_message' => 'پیوند به صفحهٔ اندیس',
 	'proofreadpage_page_status' => 'وضعیت صفحه',
@@ -1366,6 +1387,9 @@ $messages['fa'] = array(
 تصویر|تصویر روی جلد
 صفحه||20
 ملاحظات||10',
+	'proofreadpage_specialpage_legend' => 'جستجو در صفحات شاخص',
+	'proofreadpage_source' => 'منبع',
+	'proofreadpage_source_message' => 'برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده',
 );
 
 /** Finnish (Suomi)
@@ -3971,8 +3995,11 @@ $messages['sl'] = array(
 	'proofreadpage_nosuch_index' => 'Napaka: ni takšnega kazala',
 	'proofreadpage_nosuch_file' => 'Napaka: ni takšne datoteke',
 	'proofreadpage_badpage' => 'Napačna oblika',
+	'proofreadpage_badpagetext' => 'Oblika strani, ki ste jo poskušali shraniti, je nepravilna.',
 	'proofreadpage_indexdupe' => 'Podvojena povezava',
+	'proofreadpage_indexdupetext' => 'Strani na kazalu ni mogoče navesti več kot enkrat.',
 	'proofreadpage_nologin' => 'Niste prijavljeni',
+	'proofreadpage_nologintext' => 'Morate biti [[Special:UserLogin|prijavljeni]] za spreminjanje stanja lekture strani.',
 	'proofreadpage_notallowed' => 'Sprememba ni dovoljena',
 	'proofreadpage_notallowedtext' => 'Niste pooblaščeni za spreminjanje stanja lekture te strani.',
 	'proofreadpage_number_expected' => 'Napaka: pričakovana številčna vrednost',
@@ -3981,6 +4008,7 @@ $messages['sl'] = array(
 	'proofreadpage_nextpage' => 'Naslednja stran',
 	'proofreadpage_prevpage' => 'Prejšnja stran',
 	'proofreadpage_header' => 'Glava (noinclude):',
+	'proofreadpage_body' => 'Telo strani (ki bo vključeno):',
 	'proofreadpage_footer' => 'Noga (noinclude):',
 	'proofreadpage_toggleheaders' => 'preklopi vidnost razdelkov noinclude',
 	'proofreadpage_quality0_category' => 'Brez besedila',
