@@ -660,6 +660,7 @@ function pr_load_image( view_url ) {
 	pr_container.innerHTML = "<img id=\"ProofReadImage\" src=\""
 	    + escapeQuotesHTML( view_url ) 
 	    + "\" width=\"" + img_width + "\" />";
+	pr_zoom(0);
 }
 
 
