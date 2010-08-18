@@ -520,6 +520,7 @@ $messages['bn'] = array(
 	'proofreadpage_index' => 'সূচী',
 	'proofreadpage_badpage' => 'ভুল বিন্যাস',
 	'proofreadpage_nologin' => 'লগইন করা হয়নি',
+	'proofreadpage_notallowed' => 'পরিবর্তনের অনুমতি নেই',
 	'proofreadpage_nextpage' => 'পরবর্তী পাতা',
 	'proofreadpage_prevpage' => 'পূর্ববর্তী পাতা',
 	'proofreadpage_header' => 'শিরোনাম (noinclude):',
@@ -1336,6 +1337,7 @@ Oharrak||10',
 /** Persian (فارسی)
  * @author Ebraminio
  * @author Huji
+ * @author Ladsgroup
  * @author Mardetanha
  * @author Wayiran
  */
@@ -1357,6 +1359,7 @@ $messages['fa'] = array(
 	'proofreadpage_nologintext' => 'به منظور تغییر وضعیت نمونه‌خوانی صفحات، باید [[Special:UserLogin|وارد شده باشید]].',
 	'proofreadpage_notallowed' => 'تغییر مجاز نیست',
 	'proofreadpage_notallowedtext' => 'شما مجاز به تغییر وضعیت نمونه‌خوانی این صفحه نیستید.',
+	'proofreadpage_number_expected' => 'خطا:مقدار عددی مورد انتظار است.',
 	'proofreadpage_interval_too_large' => 'خطا:بازهٔ بسیار بزرگ',
 	'proofreadpage_invalid_interval' => 'خطا: بازهٔ نامعتبر',
 	'proofreadpage_nextpage' => 'صفحهٔ بعدی',
@@ -1387,6 +1390,7 @@ $messages['fa'] = array(
 تصویر|تصویر روی جلد
 صفحه||20
 ملاحظات||10',
+	'proofreadpage_pages' => '((PLURAL:$1|صفحه|صفحه))',
 	'proofreadpage_specialpage_legend' => 'جستجو در صفحات شاخص',
 	'proofreadpage_source' => 'منبع',
 	'proofreadpage_source_message' => 'برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده',
