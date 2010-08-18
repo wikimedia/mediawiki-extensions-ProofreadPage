@@ -103,7 +103,9 @@ function pr_make_edit_area(container,text){
 			pageHeader = proofreadPageHeader;
 			pageBody = text;
 			pageFooter = proofreadPageFooter;
-			document.editform.elements["wpSummary"].value="/* "+proofreadPageMessageQuality1+" */ ";
+			if(document.editform) { 
+				document.editform.elements["wpSummary"].value="/* "+proofreadPageMessageQuality1+" */ ";
+			}
 		}
 	}
 
