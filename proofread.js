@@ -633,7 +633,8 @@ function  pr_fill_table(){
 		form = document.getElementById("editform");
 		tb = document.getElementById("toolbar");
 		if(tb) tb.parentNode.insertBefore(pr_container_parent,tb);
-		else form.parentNode.insertBefore(pr_container_parent,form);
+		else if(form) form.parentNode.insertBefore(pr_container_parent,form);
+		else self.table.insertBefore(pr_container_parent,self.table.firstChild);
 	}
 	
 	if(proofreadPageIsEdit) { 
