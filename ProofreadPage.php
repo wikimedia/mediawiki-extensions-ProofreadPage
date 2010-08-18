@@ -32,7 +32,7 @@ $wgSpecialPages['IndexPages'] = 'ProofreadPages';
 $wgSpecialPageGroups['IndexPages'] = 'pages';
 
 # Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 26;
+$wgProofreadPageVersion = 27;
 
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
