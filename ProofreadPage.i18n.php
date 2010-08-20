@@ -2754,6 +2754,7 @@ $messages['li'] = array(
 	'proofreadpage_body' => 'Broeadteks (veur transclusie):',
 	'proofreadpage_footer' => 'Vootteks (gein inclusie):',
 	'proofreadpage_toggleheaders' => 'zichbaarheid elemente zónger transclusie wiezige',
+	'proofreadpage_quality0_category' => 'Teksloeas',
 	'proofreadpage_quality1_category' => 'Ónbewèrk',
 	'proofreadpage_quality2_category' => 'Ónvolledig',
 	'proofreadpage_quality3_category' => 'Proofgelaeze',
@@ -2770,6 +2771,8 @@ Brón
 Aafbeilding|Ómslaag
 Pazjena's||20
 Opmèrkinge||10",
+	'proofreadpage_pages' => "$1 {{PLURAL:$1|pazjena|pazjena's}}",
+	'proofreadpage_source' => 'Brón',
 );
 
 /** Lumbaart (Lumbaart)
@@ -4046,6 +4049,7 @@ Pripombe||10',
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
  * @author Sasa Stefanovic
+ * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
@@ -4056,8 +4060,8 @@ $messages['sr-ec'] = array(
 	'proofreadpage_index' => 'индекс',
 	'proofreadpage_badpage' => 'Погрешан Формат',
 	'proofreadpage_notallowed' => 'Промена није дозвољена',
-	'proofreadpage_nextpage' => 'Следећа страна',
-	'proofreadpage_prevpage' => 'Претходна страна',
+	'proofreadpage_nextpage' => 'Следећа страница',
+	'proofreadpage_prevpage' => 'Претходна страница',
 	'proofreadpage_header' => 'Заглавље (без укључивања):',
 	'proofreadpage_body' => 'Тело стране (за укључивање):',
 	'proofreadpage_footer' => 'Подножје (без укључивања):',
@@ -4067,7 +4071,7 @@ $messages['sr-ec'] = array(
 	'proofreadpage_quality2_category' => 'Проблематично',
 	'proofreadpage_quality3_category' => 'Прегледано',
 	'proofreadpage_quality4_category' => 'Оверено',
-	'proofreadpage_index_listofpages' => 'Списак страна',
+	'proofreadpage_index_listofpages' => 'Списак страница',
 	'proofreadpage_image_message' => 'Веза ка индексу стране.',
 	'proofreadpage_page_status' => 'Статус стране',
 	'proofreadpage_js_attributes' => 'аутор наслов година издавач',
