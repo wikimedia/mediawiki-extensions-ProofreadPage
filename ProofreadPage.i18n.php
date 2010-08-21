@@ -84,11 +84,12 @@ Remarks||10',
  * @author Mormegil
  * @author Purodha
  * @author Siebrand
+ * @author The Evil IP address
  * @author Yknok29
  */
 $messages['qqq'] = array(
 	'indexpages' => 'Title of [[Special:IndexPages]]',
-	'proofreadpage_desc' => 'Short description of the Proofreadpage extension, shown in [[Special:Version]]. Do not translate or change links.',
+	'proofreadpage_desc' => '{{desc}}',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
 	'proofreadpage_image' => '{{Identical|Image}}',
@@ -2743,11 +2744,26 @@ $messages['lfn'] = array(
  * @author Ooswesthoesbes
  */
 $messages['li'] = array(
+	'indexpages' => 'Indexpaginalies',
 	'proofreadpage_desc' => "Maak 't meugelik teks eenvoudig te vergelieke mit de oorsjpronkelike scan",
 	'proofreadpage_namespace' => 'Pazjena',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Aafbeilding',
 	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => "Fout: d'r woort 'nen index verwach",
+	'proofreadpage_nosuch_index' => "Fout: d'n index besteit neet",
+	'proofreadpage_nosuch_file' => "Fout: 't aangegaeve bestandj besteit neet",
+	'proofreadpage_badpage' => 'Verkieërdj formaat',
+	'proofreadpage_badpagetext' => "'t Formaat van de pagina die se perbeers óp te slaon is neet zjuus.",
+	'proofreadpage_indexdupe' => 'Dóbbel verwiezing',
+	'proofreadpage_indexdupetext' => "Pagina's kinne neet mieër es eine kieër óp 'n indexpagina getuundj waere.",
+	'proofreadpage_nologin' => 'Neet aangemeld',
+	'proofreadpage_nologintext' => "De mós tich [[Special:UserLogin|aanmelden]] óm de proeflaesstatus van pagina's te kinne wiezige.",
+	'proofreadpage_notallowed' => 'Kèns neet verangere',
+	'proofreadpage_notallowedtext' => 'De moogs de proeflaesstatus van dees pagina neet wiezige.',
+	'proofreadpage_number_expected' => "Fout: d'r woort 'n numerieke waerd verwach",
+	'proofreadpage_interval_too_large' => "Fout: d'n interval is te groeat",
+	'proofreadpage_invalid_interval' => "Fout: d'r is 'nen óngeljigen interval ópgegaeve",
 	'proofreadpage_nextpage' => 'Volgendje pazjena',
 	'proofreadpage_prevpage' => 'Vörge pazjena',
 	'proofreadpage_header' => 'Kopteks (gein inclusie):',
