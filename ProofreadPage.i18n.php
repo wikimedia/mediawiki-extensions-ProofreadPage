@@ -2775,6 +2775,11 @@ $messages['li'] = array(
 	'proofreadpage_quality2_category' => 'Ónvolledig',
 	'proofreadpage_quality3_category' => 'Proofgelaeze',
 	'proofreadpage_quality4_category' => 'Gekonterleerdj',
+	'proofreadpage_quality0_message' => 'Dees paasj hoof neet proofgelaeze te waere.',
+	'proofreadpage_quality1_message' => 'De paasj is neet proofgelaeze',
+	'proofreadpage_quality2_message' => 'Der waar e perbleem bie t prooflaeze van dees paasj',
+	'proofreadpage_quality3_message' => 'Dees paasj isproofgelaeze',
+	'proofreadpage_quality4_message' => 'Dees paasj is gecontroleerd',
 	'proofreadpage_index_listofpages' => "Lies van pazjena's",
 	'proofreadpage_image_message' => 'Verwieziging nao de indekspaasj',
 	'proofreadpage_page_status' => 'Pazjenastatus',
@@ -2788,7 +2793,9 @@ Aafbeilding|Ómslaag
 Pazjena's||20
 Opmèrkinge||10",
 	'proofreadpage_pages' => "$1 {{PLURAL:$1|pazjena|pazjena's}}",
+	'proofreadpage_specialpage_legend' => "Doorzeuk indexpagina's.",
 	'proofreadpage_source' => 'Brón',
+	'proofreadpage_source_message' => 'Gescande versie worop dees teks is gebaseerd.',
 );
 
 /** Lumbaart (Lumbaart)
