@@ -1296,7 +1296,7 @@ Pilt|Kaanepilt
 Leheküljed||20
 Märkused||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|lehekülg|lehekülge}}',
-	'proofreadpage_specialpage_legend' => 'Otsi registrilehtedelt',
+	'proofreadpage_specialpage_legend' => 'Registrilehekülgede otsimine',
 	'proofreadpage_source' => 'Allikas',
 	'proofreadpage_source_message' => 'Selle teksti moodustamiseks kasutatud skannitud versioon',
 );
@@ -3951,6 +3951,14 @@ $messages['sc'] = array(
 	'proofreadpage_image' => 'Immàgine',
 	'proofreadpage_index_listofpages' => 'Lista de is pàginas',
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàginas}}',
+);
+
+/** Sinhala (සිංහල)
+ * @author බිඟුවා
+ */
+$messages['si'] = array(
+	'proofreadpage_nextpage' => 'ඊළඟ පිටුව',
+	'proofreadpage_source' => ' මූලාශ්‍රය',
 );
 
 /** Slovak (Slovenčina)
