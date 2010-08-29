@@ -2163,6 +2163,7 @@ Notas||10',
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author -iNu-
  * @author Bennylin
  * @author Farras
  * @author Irwangatot
@@ -2170,14 +2171,14 @@ Notas||10',
  */
 $messages['id'] = array(
 	'indexpages' => 'Daftar dari halaman indeks',
-	'proofreadpage_desc' => 'Memungkinkan perbandingan mudah teks dengan hasil pemindaian orisinal',
+	'proofreadpage_desc' => 'Menyediakan perbandingan antara naskah dengan hasil pemindaian asli secara mudah',
 	'proofreadpage_namespace' => 'Halaman',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Gambar',
 	'proofreadpage_index' => 'Indeks',
-	'proofreadpage_index_expected' => 'Kesalahan : diperlukan indeks',
+	'proofreadpage_index_expected' => 'Kesalahan: diperlukan indeks',
 	'proofreadpage_nosuch_index' => 'Kesalahan: tidak ada indeks',
-	'proofreadpage_nosuch_file' => 'Kesalahan: tidak ada file',
+	'proofreadpage_nosuch_file' => 'Kesalahan: tidak ada berkas',
 	'proofreadpage_badpage' => 'Kesalahan Format',
 	'proofreadpage_badpagetext' => 'Format halaman yang akan anda simpan, salah.',
 	'proofreadpage_indexdupe' => 'Gandakan pranala',
@@ -2185,7 +2186,7 @@ $messages['id'] = array(
 	'proofreadpage_nologin' => 'Belum masuk log',
 	'proofreadpage_nologintext' => 'Anda harus [[Special:UserLogin|masuk log]] untuk mengubah status koreksi halaman.',
 	'proofreadpage_notallowed' => 'Perubahan tidak diperbolehkan',
-	'proofreadpage_notallowedtext' => 'Anda tidak diperbolehkan untuk mengubah status koreksi di halaman ini.',
+	'proofreadpage_notallowedtext' => 'Anda tidak diperbolehkan untuk mengubah status uji-baca halaman ini.',
 	'proofreadpage_number_expected' => 'Kesalahan: nilai angka diharapkan',
 	'proofreadpage_interval_too_large' => 'Kesalahan:Interval terlalu besar',
 	'proofreadpage_invalid_interval' => 'Kesalahan: Interval tidak sah',
@@ -2195,15 +2196,15 @@ $messages['id'] = array(
 	'proofreadpage_body' => 'Badan halaman (untuk ditransklusikan):',
 	'proofreadpage_footer' => 'Kaki (noinclude):',
 	'proofreadpage_toggleheaders' => 'ganti keterlihatan bagian noinclude',
-	'proofreadpage_quality0_category' => 'Tanpa teks',
-	'proofreadpage_quality1_category' => 'Belum diuji-baca',
-	'proofreadpage_quality2_category' => 'Bermasalah',
-	'proofreadpage_quality3_category' => 'Diuji-baca',
-	'proofreadpage_quality4_category' => 'Divalidasi',
-	'proofreadpage_quality0_message' => 'Halaman ini tidak perlu dikoreksi',
-	'proofreadpage_quality1_message' => 'Halaman ini belum dikoreksi',
-	'proofreadpage_quality2_message' => 'Ada masalah ketika mengoreksi halaman ini',
-	'proofreadpage_quality3_message' => 'Halaman ini telah dikoreksi',
+	'proofreadpage_quality0_category' => 'Halaman tanpa naskah',
+	'proofreadpage_quality1_category' => 'Halaman yang belum diuji-baca',
+	'proofreadpage_quality2_category' => 'Halaman bermasalah',
+	'proofreadpage_quality3_category' => 'Halaman yang telah diuji-baca',
+	'proofreadpage_quality4_category' => 'Halaman yang telah divalidasi',
+	'proofreadpage_quality0_message' => 'Halaman ini tidak perlu diuji-baca',
+	'proofreadpage_quality1_message' => 'Halaman ini belum diuji-baca',
+	'proofreadpage_quality2_message' => 'Ada masalah ketika menguji-baca halaman ini',
+	'proofreadpage_quality3_message' => 'Halaman ini telah diuji-baca',
 	'proofreadpage_quality4_message' => 'Halaman ini telah divalidasi',
 	'proofreadpage_index_listofpages' => 'Daftar halaman',
 	'proofreadpage_image_message' => 'Pranala ke halaman indeks',
@@ -2218,9 +2219,9 @@ Gambar|Gambar sampul
 Halaman||20
 Catatan||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|halaman|halaman}}',
-	'proofreadpage_specialpage_legend' => 'Pencarian halaman indek',
+	'proofreadpage_specialpage_legend' => 'Cari halaman indeks',
 	'proofreadpage_source' => 'Sumber',
-	'proofreadpage_source_message' => 'Versi pindai digunakan untuk membuat teks ini',
+	'proofreadpage_source_message' => 'Versi pindai yang digunakan untuk membuat naskah ini',
 );
 
 /** Igbo (Igbo)
