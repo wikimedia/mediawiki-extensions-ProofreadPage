@@ -13,7 +13,7 @@ require_once "$IP/includes/QueryPage.php";
 class ProofreadPages extends SpecialPage {
 
 	function __construct() {
-		SpecialPage::SpecialPage( 'IndexPages' );
+		parent::__construct( 'IndexPages' );
 	}
 
 	function execute( $parameters ) {
