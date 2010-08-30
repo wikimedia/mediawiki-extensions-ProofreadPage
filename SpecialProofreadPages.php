@@ -12,7 +12,7 @@ require_once "$IP/includes/QueryPage.php";
 
 class ProofreadPages extends SpecialPage {
 
-	function ProofreadPages() {
+	function __construct() {
 		SpecialPage::SpecialPage( 'IndexPages' );
 	}
 
@@ -55,7 +55,7 @@ class ProofreadPages extends SpecialPage {
 }
 
 class ProofreadPagesQuery extends QueryPage {
-	function ProofreadPagesQuery( $searchList, $searchTerm ) {
+	function __construct( $searchList, $searchTerm ) {
 		$this->searchList = $searchList;
 		$this->searchTerm = $searchTerm;
 	}
