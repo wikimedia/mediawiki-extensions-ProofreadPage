@@ -1871,6 +1871,7 @@ $messages['hi'] = array(
  * @author Dalibor Bosits
  * @author Dnik
  * @author Ex13
+ * @author Roberta F.
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
@@ -1923,6 +1924,7 @@ Slika|Naslovnica
 Stranica||20
 Napomene||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice}}',
+	'proofreadpage_source' => 'Izvor',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
