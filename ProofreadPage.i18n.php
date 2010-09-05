@@ -1924,7 +1924,9 @@ Slika|Naslovnica
 Stranica||20
 Napomene||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice}}',
+	'proofreadpage_specialpage_legend' => 'Pretraživanje stranica kataloga',
 	'proofreadpage_source' => 'Izvor',
+	'proofreadpage_source_message' => 'Skenirana inačica rabljena za ovaj tekst',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
