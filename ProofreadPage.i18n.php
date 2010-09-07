@@ -3888,6 +3888,15 @@ $messages['ru'] = array(
  */
 $messages['rue'] = array(
 	'proofreadpage_namespace' => 'Сторінка',
+	'proofreadpage_js_attributes' => 'Автор Назва Рік Выдавательство',
+	'proofreadpage_index_attributes' => 'Автор
+Назва
+Рік|Рік выданя
+Выдавательство
+Жрідло
+Образок|Обалка
+Сторінок||20
+Познамок||10',
 );
 
 /** Yakut (Саха тыла)
@@ -4277,6 +4286,15 @@ Anmärkningar||10',
 	'proofreadpage_specialpage_legend' => 'Sök i indexsidorna',
 	'proofreadpage_source' => 'Källa',
 	'proofreadpage_source_message' => 'Scannat orginal använt för att skapa denna text',
+);
+
+/** Swahili (Kiswahili)
+ * @author Ikiwaner
+ */
+$messages['sw'] = array(
+	'proofreadpage_namespace' => 'Ukurasa',
+	'proofreadpage_image' => 'Picha',
+	'proofreadpage_source' => 'Chanzo',
 );
 
 /** Silesian (Ślůnski)
