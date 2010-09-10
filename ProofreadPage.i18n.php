@@ -102,6 +102,7 @@ $messages['qqq'] = array(
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
+	'proofreadpage_pages' => '{{Identical|Page}}',
 	'proofreadpage_source' => '{{Identical|Source}}',
 );
 
