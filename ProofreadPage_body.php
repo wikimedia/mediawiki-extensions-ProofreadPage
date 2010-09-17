@@ -774,11 +774,39 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 				}
 			}
 
+			// find which pages have quality0
+			$pp = array();
+			foreach( $pages as $item ) {
+				list( $page, $pagenum ) = $item;
+				$pp[] = $page;
+			}
+			$pagelist = "'".implode( "', '", $pp)."'";
+			$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
+			$dbr = wfGetDB( DB_SLAVE );
+			$catlinks = $dbr->tableName( 'categorylinks' );
+			$page = $dbr->tableName( 'page' );
+			$cat = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ) );
+			$query = "SELECT page_title FROM $page LEFT JOIN $catlinks on cl_from=page_id WHERE page_title in ( $pagelist ) AND cl_to='$cat' AND page_namespace=$page_ns_index;" ;
+			$res = $dbr->query( $query , __METHOD__ );
+			$q0_pages = array();
+			if( $res ) { 
+				while( $o = $dbr->fetchObject( $res ) ) { 
+					array_push( $q0_pages, $o->page_title );
+				}
+			}
+			
 			//write the output
 			foreach( $pages as $item ) {
 				list( $page, $pagenum ) = $item;
+				if( in_array( $page , $q0_pages ) ) {
+					$is_q0 = true;
+				} else {
+					$is_q0 = false;
+				}
 				$text = "$page_namespace:$page";
-				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
+				if( !$is_q0 ) {
+					$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
+				}
 				if( $args["$i"] != null){
 					$out.= "{{#lst:".$text."|".$args["$i"]."}}";
 				} else if($page == $from && $args["fromsection"]){
@@ -788,7 +816,9 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 				} else {
 					$out.= "{{:".$text."}}";
 				}
-				$out.= "\n"; 
+				if( !$is_q0 ) {
+					$out.= "\n"; 
+				}
 			}
 		}
 
