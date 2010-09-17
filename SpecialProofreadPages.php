@@ -4,7 +4,6 @@
  * @ingroup SpecialPage
  */
 
-
 if ( !defined( 'MEDIAWIKI' ) ) die( 1 );
 global $wgHooks, $IP;
 require_once "$IP/includes/QueryPage.php";
@@ -14,6 +13,8 @@ class ProofreadPages extends SpecialPage {
 
 	function __construct() {
 		parent::__construct( 'IndexPages' );
+		wfLoadExtensionMessages( 'ProofreadPage' );
+		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	}
 
 	function execute( $parameters ) {
@@ -35,7 +36,7 @@ class ProofreadPages extends SpecialPage {
 				Xml::closeElement( 'form' )
 			);
 			if( $searchTerm ) {
-				$index_namespace = pr_index_ns() ;
+				$index_namespace = $this->index_namespace;
 				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
 				$searchEngine = SearchEngine::create();
 				$searchEngine->setLimitOffset( $limit, $offset );
@@ -58,6 +59,7 @@ class ProofreadPagesQuery extends QueryPage {
 	function __construct( $searchList, $searchTerm ) {
 		$this->searchList = $searchList;
 		$this->searchTerm = $searchTerm;
+		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	}
 
 	function getName() {
@@ -87,8 +89,7 @@ class ProofreadPagesQuery extends QueryPage {
 
 		if( $this->searchTerm ) {
 			if( $this->searchList ) {
-				$index_namespace = pr_index_ns() ;
-				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $this->index_namespace ) );
 				$querylist = '';
 				foreach( $this->searchList as $item ) {
 					if( $querylist ) $querylist .= ', ';
@@ -114,11 +115,10 @@ class ProofreadPagesQuery extends QueryPage {
 	function formatResult( $skin, $result ) {
 		global $wgLang;
 
-		$index_namespace = pr_index_ns();
-		$title = Title::newFromText( $index_namespace.":".$result->title );
+		$title = Title::newFromText( $this->index_namespace.":".$result->title );
 
 		if ( !$title ) {
-			return '<!-- Invalid title ' .  htmlspecialchars( $index_namespace.":".$result->title ). '-->';
+			return '<!-- Invalid title ' .  htmlspecialchars( $this->index_namespace.":".$result->title ). '-->';
 		}
 		$plink = $this->isCached()
 		  ? $skin->link( $title , htmlspecialchars( $title->getText() ) )
