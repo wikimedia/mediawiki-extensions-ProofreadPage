@@ -855,6 +855,8 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 			$out = $h_out . $out ;
 		}
 
+		// wrap the output in a div, to prevent the parser from inserting pararaphs
+		$out = "<div>$out</div>";
 		$out = $parser->recursiveTagParse($out);
 		return $out;
 	}
