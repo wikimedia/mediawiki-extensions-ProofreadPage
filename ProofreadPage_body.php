@@ -672,6 +672,7 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 	/*
 	 * Parser hook that includes a list of pages.
 	 *  parameters : index, from, to, header
+	 * todo : check if pages are q0, with a single request
 	 */
 	function renderPages( $input, $args, &$parser ) {
 
@@ -729,26 +730,22 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 				if( $to - $from > 1000 ) {
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
 				}
-	
+				$pages = array();
+
 				for( $i=$from; $i<=$to;$i++ ) {
-					$text = "$page_namespace:$index/" . $i;
-					list($pagenum, $links, $mode) = $this->pageNumber($i,$params);
-					$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
-					if( $args["$i"] != null){
-						$out.= "{{#lst:".$text."|".$args["$i"]."}}";
-					} else if($i == $from && $args["fromsection"]){
-						$out.= "{{#lst:".$text."|".$args["fromsection"]."}}";
-					} else if($i == $to && $args["tosection"]){
-						$out.= "{{#lst:".$text."|".$args["tosection"]."}}";
-					} else {
-						$out.= "{{:".$text."}}";
+					list($pagenum, $links, $mode) = $this->pageNumber( $i, $params );
+					$page = str_replace( ' ' , '_', "$index/" . $i );
+					if( $i == $from ) { 
+						$from_page = $page;
+						$from_pagenum = $pagenum;
 					}
-					$out.= "\n"; 
-					if( $i == $from ) $from_pagenum = $pagenum;
-					if( $i == $to ) $to_pagenum = $pagenum;
+					if( $i == $to ) {
+						$to_page = $page;
+						$to_pagenum = $pagenum;
+					}
+					$pages[] = array( $page, $pagenum );
 				}
-			} 
-			else {
+			} else {
 				if($from) {
 					$adding = false;
 				} else {
@@ -760,27 +757,38 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 					$pagenum = $links[3][$i];
 					if($text == $from ) {
 						$adding = true;
+						$from_page = $from;
 						$from_pagenum = $pagenum;
 					}
-					if($adding){
-						$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page="
-							.$page_namespace.":".$text."|num=$pagenum}}</span>";
-						if($text == $from && $args["fromsection"]){
-							$out.= "{{#lst:".$page_namespace.":".$text."|".$args["fromsection"]."}}";
-						} else if($text == $to && $args["tosection"]){
-							$out.= "{{#lst:".$page_namespace.":".$text."|".$args["tosection"]."}}";
-						} else {
-							$out.= "{{:".$page_namespace.":".$text."}}";
-						}
+					if($adding) {
+						$pages[] = array( $text, $pagenum );
 					}
 					if($text == $to ) {
 						$adding = false;
+						$to_page = $to;
 						$to_pagenum = $pagenum;
 					}
 				}
 				if( !$to ) {
 					$to_pagenum = $links[3][ count( $links[1] ) - 1 ];
 				}
+			}
+
+			//write the output
+			foreach( $pages as $item ) {
+				list( $page, $pagenum ) = $item;
+				$text = "$page_namespace:$page";
+				$out.= "<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=".$text."|num=$pagenum}}</span>";
+				if( $args["$i"] != null){
+					$out.= "{{#lst:".$text."|".$args["$i"]."}}";
+				} else if($page == $from && $args["fromsection"]){
+					$out.= "{{#lst:".$text."|".$args["fromsection"]."}}";
+				} else if($page == $to && $args["tosection"]){
+					$out.= "{{#lst:".$text."|".$args["tosection"]."}}";
+				} else {
+					$out.= "{{:".$text."}}";
+				}
+				$out.= "\n"; 
 			}
 		}
 
