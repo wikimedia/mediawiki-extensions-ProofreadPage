@@ -43,6 +43,11 @@ $wgAutoloadClasses['ProofreadPages'] = dirname( __FILE__ ) . '/SpecialProofreadP
 $wgSpecialPages['IndexPages'] = 'ProofreadPages';
 $wgSpecialPageGroups['IndexPages'] = 'pages';
 
+# special page
+$wgAutoloadClasses['NakedPages'] = dirname( __FILE__ ) . '/SpecialNakedPages.php';
+$wgSpecialPages['NakedPages'] = 'NakedPages';
+$wgSpecialPageGroups['NakedPages'] = 'maintenance';
+
 # Bump the version number every time you change proofread.js
 $wgProofreadPageVersion = 27;
 
