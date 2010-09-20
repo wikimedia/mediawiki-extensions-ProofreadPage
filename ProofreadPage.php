@@ -44,7 +44,7 @@ $wgSpecialPages['IndexPages'] = 'ProofreadPages';
 $wgSpecialPageGroups['IndexPages'] = 'pages';
 
 # special page
-$wgAutoloadClasses['PagesWithoutScans'] = dirname( __FILE__ ) . '/SpecialNakedPages.php';
+$wgAutoloadClasses['PagesWithoutScans'] = dirname( __FILE__ ) . '/SpecialPagesWithoutScans.php';
 $wgSpecialPages['PagesWithoutScans'] = 'PagesWithoutScans';
 $wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
 
