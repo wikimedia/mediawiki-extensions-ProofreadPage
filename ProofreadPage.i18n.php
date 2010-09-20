@@ -74,6 +74,7 @@ Remarks||10',
 	'proofreadpage_specialpage_legend'     => 'Search index pages',
 	'proofreadpage_source'         => 'Source',
 	'proofreadpage_source_message' => 'Scanned edition used to establish this text',
+	'right-pagequality'            => 'Modify page quality flag',
 );
 
 /** Message documentation (Message documentation)
