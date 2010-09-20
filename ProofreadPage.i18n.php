@@ -614,6 +614,7 @@ Notennoù||10',
  */
 $messages['bs'] = array(
 	'indexpages' => 'Spisak stranica indeksa',
+	'pageswithoutscans' => 'Stranice bez skeniranja',
 	'proofreadpage_desc' => 'Omogućuje jednostavnu usporedbu teksta sa originalnim',
 	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -665,6 +666,7 @@ Napomene||10',
 	'proofreadpage_specialpage_legend' => 'Ptretraga indeksnih stranica',
 	'proofreadpage_source' => 'Izvor',
 	'proofreadpage_source_message' => 'Skenirana varijanta korištena za nastanak ovog teksta',
+	'right-pagequality' => 'Izmijeni zastavu kvalitete stranice',
 );
 
 /** Catalan (Català)
@@ -1622,6 +1624,7 @@ Nótaí',
  */
 $messages['gl'] = array(
 	'indexpages' => 'Lista de páxinas índice',
+	'pageswithoutscans' => 'Páxinas sen exames',
 	'proofreadpage_desc' => 'Permite a comparación sinxela do texto coa dixitalización orixinal',
 	'proofreadpage_namespace' => 'Páxina',
 	'proofreadpage_index_namespace' => 'Índice',
@@ -3477,6 +3480,7 @@ Uwagi||10',
  */
 $messages['pms'] = array(
 	'indexpages' => 'Lista dle pàgine ëd tàula',
+	'pageswithoutscans' => 'Pàgine sensa scansion',
 	'proofreadpage_desc' => 'A rend bel fé confronté ëd test con la scansion original',
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Ìndess',
@@ -3569,6 +3573,7 @@ $messages['ps'] = array(
  */
 $messages['pt'] = array(
 	'indexpages' => 'Lista de páginas de índice',
+	'pageswithoutscans' => 'Páginas não transcluídas',
 	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
@@ -3620,15 +3625,18 @@ Notas||10',
 	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edição digitalizada usada para criar este texto',
+	'right-pagequality' => 'Modificar o indicador da qualidade da página',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author 555
  * @author Eduardo.mps
+ * @author Giro720
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
 	'indexpages' => 'Lista de páginas de índice',
+	'pageswithoutscans' => 'Páginas sem imagens',
 	'proofreadpage_desc' => 'Permite uma fácil comparação de textos e suas digitalizações originais',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
