@@ -27,8 +27,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 
 $wgExtensionFunctions[] = 'wfProofreadPage';
-$wgExtensionMessagesFiles['ProofreadPage'] = dirname( __FILE__ ) . '/ProofreadPage.i18n.php';
-$wgAutoloadClasses['ProofreadPage'] = dirname( __FILE__ ) . "/ProofreadPage_body.php";
+
+$dir = dirname( __FILE__ ) . '/';
+$wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
+$wgExtensionAliasesFiles['ProofreadPage'] = $dir . 'ProofreadPage.alias.php';
+
+$wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage_body.php';
+
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',
