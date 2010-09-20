@@ -10,7 +10,7 @@ $messages = array();
 
 $messages['en'] = array(
 	'indexpages'                      => 'List of index pages',
-	'nakedpages'                      => 'Texts without scans',
+	'pageswithoutscans'               => 'Pages without scans',
 	'proofreadpage_desc'              => 'Allow easy comparison of text to the original scan',
 	'proofreadpage_namespace'         => 'Page',
 	'proofreadpage_index_namespace'   => 'Index',

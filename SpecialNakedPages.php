@@ -23,23 +23,23 @@
    * 
    */
 
-class NakedPages extends SpecialPage {
+class PagesWithoutScans extends SpecialPage {
 
 	function __construct() {
-		parent::__construct( 'NakedPages' );
+		parent::__construct( 'PagesWithoutScans' );
 	}
 
 	function execute( $parameters ) {
 		global $wgOut, $wgRequest, $wgDisableTextSearch;
 		$this->setHeaders();
 		list( $limit, $offset ) = wfCheckLimits();
-		$cnl = new NakedPagesQuery( );
+		$cnl = new PagesWithoutScansQuery( );
 		$cnl->doQuery( $offset, $limit );
 	}
 }
 
 
-class NakedPagesQuery extends QueryPage {
+class PagesWithoutScansQuery extends QueryPage {
 
 	function __construct( ) {
 		wfLoadExtensionMessages( 'ProofreadPage' );
@@ -48,7 +48,7 @@ class NakedPagesQuery extends QueryPage {
 	}
 
 	function getName() {
-		return 'NakedPages';
+		return 'PagesWithoutScans';
 	}
 
 	function isExpensive() {
