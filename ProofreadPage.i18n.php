@@ -1649,7 +1649,7 @@ $messages['gl'] = array(
 	'proofreadpage_header' => 'Cabeceira (noinclude):',
 	'proofreadpage_body' => 'Corpo da páxina (para ser transcluído)',
 	'proofreadpage_footer' => 'Pé de páxina (noinclude):',
-	'proofreadpage_toggleheaders' => 'alternar a visibilidade das seccións noinclude',
+	'proofreadpage_toggleheaders' => 'alternar a visibilidade das seccións "noinclude"',
 	'proofreadpage_quality0_category' => 'Sen texto',
 	'proofreadpage_quality1_category' => 'Non corrixido',
 	'proofreadpage_quality2_category' => 'Problemático',
@@ -1676,6 +1676,7 @@ Comentarios||10',
 	'proofreadpage_specialpage_legend' => 'Procurar nas páxinas de índice',
 	'proofreadpage_source' => 'Orixe',
 	'proofreadpage_source_message' => 'Edición dixitalizada utilizada para establecer este texto',
+	'right-pagequality' => 'Modificar a marca de calidade da páxina',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -1702,6 +1703,7 @@ $messages['grc'] = array(
  */
 $messages['gsw'] = array(
 	'indexpages' => 'Lischte vu Indexsyte',
+	'pageswithoutscans' => 'Syte ohni Scans',
 	'proofreadpage_desc' => 'Macht e eifache Verglyych vu Täxt mit em Originalscan megli',
 	'proofreadpage_namespace' => 'Syte',
 	'proofreadpage_index_namespace' => 'Index',
@@ -1753,6 +1755,7 @@ Aamerkige||10',
 	'proofreadpage_specialpage_legend' => 'Indexsyte dursueche',
 	'proofreadpage_source' => 'Quälle',
 	'proofreadpage_source_message' => 'Gscannti Uusgab, wu brucht wird go dää Text erarbeite',
+	'right-pagequality' => 'Qualitetsmarkierig vu dr Syte ändere',
 );
 
 /** Manx (Gaelg)
@@ -3012,6 +3015,7 @@ $messages['ml'] = array(
 	'proofreadpage_specialpage_legend' => 'സൂചികാ താളുകൾ തിരയുക',
 	'proofreadpage_source' => 'സ്രോതസ്സ്',
 	'proofreadpage_source_message' => 'ഈ എഴുത്ത് സ്ഥാപിക്കാൻ സ്കാൻ ചെയ്തെടുത്ത പ്രസിദ്ധീകരണമാണുപയോഗിച്ചത്',
+	'right-pagequality' => 'താളിന്റെ ഗുണമേന്മാ പതാകയിൽ മാറ്റം വരുത്തുക',
 );
 
 /** Marathi (मराठी)
@@ -3532,6 +3536,7 @@ Nòte||10',
 	'proofreadpage_specialpage_legend' => 'Sërca ant le pàgine ëd tàula',
 	'proofreadpage_source' => 'Sorgiss',
 	'proofreadpage_source_message' => 'Edission digitalisà dovrà për stabilì sto test-sì',
+	'right-pagequality' => 'Modìfica bandiera ëd qualità dla pàgina',
 );
 
 /** Pashto (پښتو)
@@ -3688,6 +3693,7 @@ Notas||10',
 	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edição digitalizada utilizada para estabelecer este texto',
+	'right-pagequality' => 'Modificar o indicador da qualidade da página',
 );
 
 /** Quechua (Runa Simi)
@@ -3841,6 +3847,7 @@ Note||10",
  */
 $messages['ru'] = array(
 	'indexpages' => 'Список индексных страниц',
+	'pageswithoutscans' => 'Страницы без сканов',
 	'proofreadpage_desc' => 'Позволяет в удобном виде сравнивать текст и отсканированное изображение оригинала',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -3892,6 +3899,7 @@ $messages['ru'] = array(
 	'proofreadpage_specialpage_legend' => 'Поиск индексных страниц',
 	'proofreadpage_source' => 'Источник',
 	'proofreadpage_source_message' => 'Для создания электронной версии текста использовались отсканированные материалы',
+	'right-pagequality' => 'изменять флаг качества страницы',
 );
 
 /** Rusyn (русиньскый язык)
@@ -4550,6 +4558,7 @@ Bellikler||10',
  */
 $messages['tl'] = array(
 	'indexpages' => 'Talaan ng mga pahina ng talatuntunan',
+	'pageswithoutscans' => 'Mga pahinang walang mga saliksik',
 	'proofreadpage_desc' => 'Pahintulutan ang madaling paghahambing ng teksto sa orihinal na kuha (iskan) ng larawan',
 	'proofreadpage_namespace' => 'Pahina',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -4601,6 +4610,7 @@ Mga puna||10',
 	'proofreadpage_specialpage_legend' => 'Maghanap sa mga pahina ng talatuntunan',
 	'proofreadpage_source' => 'Pinagmulan',
 	'proofreadpage_source_message' => 'Edisyong nasiyasat na ginamit upang maitatag ang tekstong ito',
+	'right-pagequality' => 'Baguhin ang watawat na pangkalidad ng pahina',
 );
 
 /** Turkish (Türkçe)
@@ -4850,6 +4860,7 @@ Homaičendad||10",
  */
 $messages['vi'] = array(
 	'indexpages' => 'Danh sách các trang mục lục',
+	'pageswithoutscans' => 'Trang không có hình quét',
 	'proofreadpage_desc' => 'Cho phép dễ dàng so sánh văn bản với hình quét gốc',
 	'proofreadpage_namespace' => 'Trang',
 	'proofreadpage_index_namespace' => 'Mục lục',
@@ -4901,6 +4912,7 @@ Ghi chú||10',
 	'proofreadpage_specialpage_legend' => 'Tìm kiếm trong các trang mục lục',
 	'proofreadpage_source' => 'Nguồn',
 	'proofreadpage_source_message' => 'Bản quét được dùng để tạo ra văn bản này',
+	'right-pagequality' => 'Sửa đổi chất lượng trang',
 );
 
 /** Volapük (Volapük)
