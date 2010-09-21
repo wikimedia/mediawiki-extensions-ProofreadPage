@@ -783,11 +783,13 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 			$pagelist = "'".implode( "', '", $pp)."'";
 			$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
 			$dbr = wfGetDB( DB_SLAVE );
-			$catlinks = $dbr->tableName( 'categorylinks' );
-			$page = $dbr->tableName( 'page' );
 			$cat = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ) );
-			$query = "SELECT page_title FROM $page LEFT JOIN $catlinks on cl_from=page_id WHERE page_title in ( $pagelist ) AND cl_to='$cat' AND page_namespace=$page_ns_index;" ;
-			$res = $dbr->query( $query , __METHOD__ );
+			$res = $dbr->select( array('page', 'categorylinks' ),
+					     array("page_title"),
+					     array("page_title IN ( $pagelist )", "cl_to='$cat'", "page_namespace=$page_ns_index" ),
+					     __METHOD__, null,
+					     array('categorylinks' => array ( 'LEFT JOIN','cl_from=page_id') ) );
+
 			$q0_pages = array();
 			if( $res ) { 
 				while( $o = $dbr->fetchObject( $res ) ) { 
