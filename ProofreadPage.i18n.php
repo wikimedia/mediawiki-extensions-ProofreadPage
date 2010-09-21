@@ -83,6 +83,7 @@ Remarks||10',
  * @author IAlex
  * @author Jon Harald Søby
  * @author McDutchie
+ * @author Minh Nguyen
  * @author Mormegil
  * @author Purodha
  * @author Siebrand
@@ -91,6 +92,7 @@ Remarks||10',
  */
 $messages['qqq'] = array(
 	'indexpages' => 'Title of [[Special:IndexPages]]',
+	'pageswithoutscans' => 'Title of special page that lists texts without scans; that is, the texts that have not been transcluded into any other page',
 	'proofreadpage_desc' => '{{desc}}',
 	'proofreadpage_namespace' => '{{Identical|Page}}',
 	'proofreadpage_index_namespace' => '{{Identical|Index}}',
@@ -3902,7 +3904,7 @@ $messages['ru'] = array(
 	'right-pagequality' => 'изменять флаг качества страницы',
 );
 
-/** Rusyn (русиньскый язык)
+/** Rusyn (Русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
