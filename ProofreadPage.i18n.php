@@ -554,10 +554,12 @@ $messages['bn'] = array(
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
+ * @author Gwendal
  * @author Y-M D
  */
 $messages['br'] = array(
 	'indexpages' => 'Roll ar pajennoù meneger',
+	'pageswithoutscans' => "Pajennoù ha n'int ket skannet",
 	'proofreadpage_desc' => "Aotreañ a ra ur c'heñveriadur aes etre an destenn hag he nivereladur orin",
 	'proofreadpage_namespace' => 'Pajenn',
 	'proofreadpage_index_namespace' => 'Meneger',
@@ -609,6 +611,7 @@ Notennoù||10',
 	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
 	'proofreadpage_source' => 'Mammenn',
 	'proofreadpage_source_message' => 'Embannadurioù bet niverelaet implijet evit sevel an destenn-mañ',
+	'right-pagequality' => 'Kemm banniel perzhded ar bajennoù',
 );
 
 /** Bosnian (Bosanski)
@@ -2340,6 +2343,7 @@ Note||10',
  */
 $messages['ja'] = array(
 	'indexpages' => '文献概要ページの一覧',
+	'pageswithoutscans' => 'スキャンのないページ',
 	'proofreadpage_desc' => 'オリジナルのスキャン画像とテキストとの比較を容易にする',
 	'proofreadpage_namespace' => 'ページ',
 	'proofreadpage_index_namespace' => '文献概要',
@@ -2391,6 +2395,7 @@ $messages['ja'] = array(
 	'proofreadpage_specialpage_legend' => '文献概要ページを検索',
 	'proofreadpage_source' => '引用元',
 	'proofreadpage_source_message' => 'このテキストを構築するのに使用したスキャン元の版',
+	'right-pagequality' => 'ページ品質フラグの変更',
 );
 
 /** Jutish (Jysk)
@@ -3175,6 +3180,7 @@ Opmarkingen||10",
  */
 $messages['nl'] = array(
 	'indexpages' => "Lijst van index-pagina's",
+	'pageswithoutscans' => "Pagina's zonder scans",
 	'proofreadpage_desc' => 'Maakt het mogelijk teksten eenvoudig te vergelijken met de oorspronkelijke scan',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Index',
@@ -3226,6 +3232,7 @@ Opmerkingen||10",
 	'proofreadpage_specialpage_legend' => "Indexpagina's doorzoeken",
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Gescande versie waarop deze tekst is gebaseerd',
+	'right-pagequality' => 'Kwaliteitsmarkering voor de pagina wijzigen',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
