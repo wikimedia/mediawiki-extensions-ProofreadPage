@@ -875,6 +875,7 @@ Bemærkninger | | 10',
  */
 $messages['de'] = array(
 	'indexpages' => 'Liste von Indexseiten',
+	'pageswithoutscans' => 'Seiten ohne Scans',
 	'proofreadpage_desc' => 'Ermöglicht das bequeme Vergleichen von Text mit dem Originalscan',
 	'proofreadpage_namespace' => 'Seite',
 	'proofreadpage_index_namespace' => 'Index',
@@ -926,6 +927,7 @@ Bemerkungen||10',
 	'proofreadpage_specialpage_legend' => 'Indexseiten durchsuchen',
 	'proofreadpage_source' => 'Quelle',
 	'proofreadpage_source_message' => 'Zur Erstellung dieses Texts wurde die gescannte Ausgabe benutzt.',
+	'right-pagequality' => 'Seitenqualität ändern',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -2178,6 +2180,7 @@ Notas||10',
 	'proofreadpage_specialpage_legend' => 'Cercar in paginas de indice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Le original scannate usate pro crear iste texto',
+	'right-pagequality' => 'Modificar le marca de qualitate del pagina',
 );
 
 /** Indonesian (Bahasa Indonesia)
