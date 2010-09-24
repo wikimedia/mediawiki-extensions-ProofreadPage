@@ -753,6 +753,7 @@ $messages['ceb'] = array(
  */
 $messages['cs'] = array(
 	'indexpages' => 'Seznam indexových stránek',
+	'pageswithoutscans' => 'Stránky bez skenů',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnání textu s předlohou',
 	'proofreadpage_namespace' => 'Stránka',
 	'proofreadpage_index_namespace' => 'Index',
@@ -803,6 +804,7 @@ Poznámky||10',
 	'proofreadpage_specialpage_legend' => 'Hledat na indexových stránkách',
 	'proofreadpage_source' => 'Zdroj',
 	'proofreadpage_source_message' => 'Naskenovaná verze použitá k vypracování tohoto textu',
+	'right-pagequality' => 'Upravování příznaku kvality stránky',
 );
 
 /** Danish (Dansk)
@@ -2129,6 +2131,7 @@ Remarks|Նշումներ|10',
  */
 $messages['ia'] = array(
 	'indexpages' => 'Lista de paginas indice',
+	'pageswithoutscans' => 'Paginas non transcludite',
 	'proofreadpage_desc' => 'Facilita le comparation inter un texto e su scan original',
 	'proofreadpage_namespace' => 'Pagina',
 	'proofreadpage_index_namespace' => 'Indice',
