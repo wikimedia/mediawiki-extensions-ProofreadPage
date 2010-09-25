@@ -1263,9 +1263,10 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 		$catlinks = $dbr->tableName( 'categorylinks' );
 		$page = $dbr->tableName( 'page' );
 		$pagelist = "'".implode( "', '", $pages)."'";
-
-		$query = "SELECT COUNT(page_id) AS count FROM $page WHERE page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
-		$res = $dbr->query( $query , __METHOD__ );
+		$res = $dbr->select( array( 'page' ), 
+				     array( 'COUNT(page_id) AS count'),
+				     array( "page_namespace=$page_ns_index", "page_title IN ( $pagelist )"),
+				     __METHOD__ );
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$total = $row->count;
@@ -1319,8 +1320,11 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 		$catlinks = $dbr->tableName( 'categorylinks' );
 
 		// count transclusions from page namespace
-		$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title AND page_namespace=tl_namespace WHERE tl_from=$id AND tl_namespace=$page_ns_index";
-		$res = $dbr->query( $query , __METHOD__ );
+		$res = $dbr->select( array( 'templatelinks', 'page' ),
+				     array( 'COUNT(page_id) AS count' ),
+				     array( "tl_from=$id", "tl_namespace=$page_ns_index" ),
+				     __METHOD__, null,
+				     array( 'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ) ) ) ;
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$n = $row->count;
@@ -1340,22 +1344,30 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 		$n1 = $n - $n0 - $n2 - $n3 - $n4;
 
 		// find the index page
-		$indexlink="";
-		$query1 = "SELECT tl_title AS title FROM $templatelinks WHERE tl_from=$id AND tl_namespace=$page_ns_index LIMIT 1";
-		$res = $dbr->query( $query1 , __METHOD__ );
+		$indextitle = null;
+		$res = $dbr->select( array( 'templatelinks' ),
+				     array( 'tl_title AS title' ),
+				     array( "tl_from=$id", "tl_namespace=$page_ns_index" ),
+				     __METHOD__, array( 'LIMIT' => 1 ) );
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$title = $dbr->strencode( $row->title );
 			$dbr->freeResult( $res );
-			$query2 = "SELECT page_title AS title FROM $pagelinks LEFT JOIN $page ON page_id=pl_from WHERE pl_title=\"$title\" AND pl_namespace=$page_ns_index AND page_namespace=$index_ns_index LIMIT 1";
-			$res2 = $dbr->query( $query2 , __METHOD__ );
+			$res2 = $dbr->select( array( 'pagelinks', 'page' ),
+					      array( 'page_title AS title' ),
+					      array( "pl_title='$title'","pl_namespace=$page_ns_index","page_namespace=$index_ns_index"),
+					      __METHOD__, array( 'LIMIT' => 1 ),
+					      array( 'page' => array( 'LEFT JOIN', 'page_id=pl_from' ) ) ) ;
 			if( $res2 && $dbr->numRows( $res2 ) > 0 ) {
 				$row = $dbr->fetchObject( $res2 );
 				$indextitle = $row->title;
 				$dbr->freeResult( $res2 );
-				$sk = $wgUser->getSkin();
-				$indexlink = $sk->makeKnownLink( "$index_namespace:$indextitle", "[index]" );
 			}
+		}
+		$indexlink = '';
+		if( $indextitle ) {
+			$sk = $wgUser->getSkin();
+			$indexlink = $sk->makeKnownLink( "$index_namespace:$indextitle", "[index]" );
 		}
 		$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n, $indexlink );
 		$out->setSubtitle( $out->getSubtitle() . $output );
