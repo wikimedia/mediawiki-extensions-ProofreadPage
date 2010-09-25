@@ -672,7 +672,6 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 	/*
 	 * Parser hook that includes a list of pages.
 	 *  parameters : index, from, to, header
-	 * todo : check if pages are q0, with a single request
 	 */
 	function renderPages( $input, $args, &$parser ) {
 
