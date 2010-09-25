@@ -822,6 +822,16 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 					$out.= "\n"; 
 				}
 			}
+		} else {
+			/* table of Contents */
+			$header = "toc";
+			if( $links==null ) {
+				$firstpage = str_replace( ' ' , '_', "$index/1" );
+			} else {
+				$firstpage = $links[1][0];
+			}
+			$firstpage_title = Title::newFromText( "$page_namespace:$firstpage" );
+			$parser->getOutput()->addTemplate( $firstpage_title, $firstpage_title->getArticleID(), $firstpage_title->getLatestRevID() );
 		}
 
 		if( $header ) {
