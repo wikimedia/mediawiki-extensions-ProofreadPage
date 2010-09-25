@@ -50,6 +50,7 @@ class ProofreadPage {
 		$wgHooks['SpecialMovepageAfterMove'][] = array( &$this, 'movePage' );
 		$wgHooks['LoadExtensionSchemaUpdates'][] = array( &$this, 'schema_update' );
 		$wgHooks['EditPage::importFormData'][] = array( &$this, 'importFormData' );
+		$wgHooks['OutputPageParserOutput'][] = array( &$this, 'OutputPageParserOutput' );
 		wfLoadExtensionMessages( 'ProofreadPage' );
 		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
@@ -831,6 +832,7 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 			}
 			$firstpage_title = Title::newFromText( "$page_namespace:$firstpage" );
 			$parser->getOutput()->addTemplate( $firstpage_title, $firstpage_title->getArticleID(), $firstpage_title->getLatestRevID() );
+			$parser->getOutput()->is_toc = true;
 		}
 
 		if( $header ) {
@@ -870,6 +872,19 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 		$out = "<div>$out</div>";
 		$out = $parser->recursiveTagParse($out);
 		return $out;
+	}
+
+
+	/*
+	 * Set is_toc flag (true if page is a table of contents)
+	 */
+	function OutputPageParserOutput( $outputPage, $parserOutput ) {
+		if( isset( $parserOutput->is_toc ) ) {
+			$outputPage->is_toc = $parserOutput->is_toc;
+		} else {
+			$outputPage->is_toc = false;
+		}
+		return true;
 	}
 
 	/* 
@@ -1303,7 +1318,6 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 		if($id == -1) {
 			return true;
 		}
-	
 		$page_namespace = $this->page_namespace;
 		$index_namespace = $this->index_namespace;
 		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
@@ -1318,30 +1332,6 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 		$pagelinks = $dbr->tableName( 'pagelinks' );
 		$templatelinks = $dbr->tableName( 'templatelinks' );
 		$catlinks = $dbr->tableName( 'categorylinks' );
-
-		// count transclusions from page namespace
-		$res = $dbr->select( array( 'templatelinks', 'page' ),
-				     array( 'COUNT(page_id) AS count' ),
-				     array( "tl_from=$id", "tl_namespace=$page_ns_index" ),
-				     __METHOD__, null,
-				     array( 'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ) ) ) ;
-		if( $res && $dbr->numRows( $res ) > 0 ) {
-			$row = $dbr->fetchObject( $res );
-			$n = $row->count;
-			$dbr->freeResult( $res );
-		}
-		if($n == 0) {
-			return true;
-		}
-
-		// find the proofreading status of transclusions
-		$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title AND page_namespace=tl_namespace LEFT JOIN $catlinks ON cl_from=page_id WHERE tl_from=$id AND tl_namespace=$page_ns_index AND cl_to='###'";
-		$n0 = $this->query_count( $dbr, $query, 'proofreadpage_quality0_category' );
-		$n2 = $this->query_count( $dbr, $query, 'proofreadpage_quality2_category' );
-		$n3 = $this->query_count( $dbr, $query, 'proofreadpage_quality3_category' );
-		$n4 = $this->query_count( $dbr, $query, 'proofreadpage_quality4_category' );
-		// quality1 is the default value
-		$n1 = $n - $n0 - $n2 - $n3 - $n4;
 
 		// find the index page
 		$indextitle = null;
@@ -1364,12 +1354,75 @@ var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( '
 				$dbr->freeResult( $res2 );
 			}
 		}
+
+		if( isset( $out->is_toc ) && $out->is_toc ) {
+			if ($indextitle) {
+				$res = $dbr->select( array( 'pr_index', 'page' ),
+						     array( 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ),
+						     array( "page_title='$indextitle'", "page_namespace=$index_ns_index" ),
+						     __METHOD__, null,
+						     array( 'page' => array( 'LEFT JOIN', 'page_id=pr_page_id' ) ) ) ;
+				$row = $dbr->fetchObject( $res );
+				if( $row ) {
+					$n0 = $row->pr_q0;
+					$n1 = $row->pr_q1;
+					$n2 = $row->pr_q2;
+					$n3 = $row->pr_q3;
+					$n4 = $row->pr_q4;
+					$n = $row->pr_count;
+					$ne = $n - ($n0+$n1+$n2+$n3+$n4);
+				}
+			}
+		} else {
+			// count transclusions from page namespace
+			$res = $dbr->select( array( 'templatelinks', 'page' ),
+					     array( 'COUNT(page_id) AS count' ),
+					     array( "tl_from=$id", "tl_namespace=$page_ns_index" ),
+					     __METHOD__, null,
+					     array( 'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ) ) ) ;
+			if( $res && $dbr->numRows( $res ) > 0 ) {
+				$row = $dbr->fetchObject( $res );
+				$n = $row->count;
+				$dbr->freeResult( $res );
+			}
+			// find the proofreading status of transclusions
+			$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title AND page_namespace=tl_namespace LEFT JOIN $catlinks ON cl_from=page_id WHERE tl_from=$id AND tl_namespace=$page_ns_index AND cl_to='###'";
+			$n0 = $this->query_count( $dbr, $query, 'proofreadpage_quality0_category' );
+			$n2 = $this->query_count( $dbr, $query, 'proofreadpage_quality2_category' );
+			$n3 = $this->query_count( $dbr, $query, 'proofreadpage_quality3_category' );
+			$n4 = $this->query_count( $dbr, $query, 'proofreadpage_quality4_category' );
+			// quality1 is the default value
+			$n1 = $n - $n0 - $n2 - $n3 - $n4;
+			$ne = 0;
+		}
+
+		if($n == 0) {
+			return true;
+		}
+
 		$indexlink = '';
 		if( $indextitle ) {
 			$sk = $wgUser->getSkin();
 			$indexlink = $sk->makeKnownLink( "$index_namespace:$indextitle", "[index]" );
 		}
-		$output = wfMsgForContent( 'proofreadpage_quality_message', $n0*100/$n, $n1*100/$n, $n2*100/$n, $n3*100/$n, $n4*100/$n, $n, $indexlink );
+
+		$q0 = $n0*100/$n;
+		$q1 = $n1*100/$n;
+		$q2 = $n2*100/$n;
+		$q3 = $n3*100/$n;
+		$q4 = $n4*100/$n;
+		$qe = $ne*100/$n;
+		$void_cell = $ne ? "<td align=center style='border-style:dotted;border-width:1px;' width=\"{$qe}\"></td>" : "";
+		$output = "<table class=\"pr_quality\" style=\"line-height:40%;\" border=0 cellpadding=0 cellspacing=0 ><tr>
+<td align=center >&nbsp;</td>
+<td align=center class='quality4' width=\"$q4\"></td>
+<td align=center class='quality3' width=\"$q3\"></td>
+<td align=center class='quality2' width=\"$q2\"></td>
+<td align=center class='quality1' width=\"$q1\"></td>
+<td align=center class='quality0' width=\"$q0\"></td>
+$void_cell
+<td ><span id=pr_index style=\"visibility:hidden;\">$indexlink</span></td>
+</tr></table>";
 		$out->setSubtitle( $out->getSubtitle() . $output );
 		return true;
 	}
