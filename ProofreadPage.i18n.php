@@ -2913,10 +2913,11 @@ $messages['mhr'] = array(
  */
 $messages['mk'] = array(
 	'indexpages' => 'Список на индексни страници',
+	'pageswithoutscans' => 'Страници без скенови',
 	'proofreadpage_desc' => 'Овозможува едноставна споредба на текстот со скенираниот оригинал',
 	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'Индекс',
-	'proofreadpage_image' => 'слика',
+	'proofreadpage_image' => 'Слика',
 	'proofreadpage_index' => 'Индекс',
 	'proofreadpage_index_expected' => 'Грешка: се очекува индекс',
 	'proofreadpage_nosuch_index' => 'Грешка: нема таков индекс',
@@ -2935,9 +2936,9 @@ $messages['mk'] = array(
 	'proofreadpage_nextpage' => 'Следна страница',
 	'proofreadpage_prevpage' => 'Претходна страница',
 	'proofreadpage_header' => 'Заглавие (без вклучување):',
-	'proofreadpage_body' => 'Содржина на страница (се трансклудира):',
+	'proofreadpage_body' => 'Содржина на страница (за превметнување):',
 	'proofreadpage_footer' => 'Подножје (не се вклучува):',
-	'proofreadpage_toggleheaders' => 'превклучи ја видливоста на noinclude пасусите',
+	'proofreadpage_toggleheaders' => 'промена на видливоста на пасусите со „noinclude“',
 	'proofreadpage_quality0_category' => 'Без текст',
 	'proofreadpage_quality1_category' => 'Непрегледана',
 	'proofreadpage_quality2_category' => 'Проблематично',
@@ -3434,6 +3435,7 @@ $messages['pdc'] = array(
  */
 $messages['pl'] = array(
 	'indexpages' => 'Spis stron indeksów',
+	'pageswithoutscans' => 'Strony bez skanów',
 	'proofreadpage_desc' => 'Umożliwia łatwe porównanie treści ze skanem oryginału',
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -3485,6 +3487,7 @@ Uwagi||10',
 	'proofreadpage_specialpage_legend' => 'Szukaj stron indeksowych',
 	'proofreadpage_source' => 'Źródło',
 	'proofreadpage_source_message' => 'Zeskanowane wydanie wykorzystane do przygotowania tego tekstu',
+	'right-pagequality' => 'Zmienianie statusu uwierzytelnienia strony',
 );
 
 /** Piedmontese (Piemontèis)
