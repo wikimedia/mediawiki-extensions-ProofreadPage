@@ -18,7 +18,7 @@ function pr_init_tabs() {
 		var view_url = self.proofreadPageThumbURL.replace( '##WIDTH##', '' + self.proofreadPageWidth );
 		b[0].innerHTML = b[0].innerHTML + '<li id="ca-image">' +
 			'<span><a href="' + escapeQuotesHTML( view_url ) + '">' +
-			escapeQuotesHTML( proofreadPageMessageImage ) + '</a></span></li>';
+			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_image' ) ) + '</a></span></li>';
 	}
 
 	if( self.proofreadPageIndexURL ) {
@@ -26,16 +26,16 @@ function pr_init_tabs() {
 			'<span><a href="' + escapeQuotesHTML( proofreadPageIndexURL ) +
 			'" title="' + escapeQuotesHTML( proofreadPageMessageIndex ) + '">' +
 			'<img src="' + wgScriptPath + '/extensions/ProofreadPage/uparrow.png" alt="' +
-			escapeQuotesHTML( proofreadPageMessageIndex ) +
+			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_index' ) ) +
 			'" width="15" height="15" /></a></span></li>';
 	}
 
 	if( self.proofreadPageNextURL ) {
 		b[0].innerHTML = '<li id="ca-next">' +
 			'<span><a href="' + escapeQuotesHTML( self.proofreadPageNextURL ) +
-			'" title="' + escapeQuotesHTML( proofreadPageMessageNextPage ) + '">' +
+			'" title="' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_nextpage' ) ) + '">' +
 			'<img src="' + wgScriptPath + '/extensions/ProofreadPage/rightarrow.png" alt="' +
-			escapeQuotesHTML( proofreadPageMessageNextPage ) +
+			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_nextpage' ) ) +
 			'" width="15" height="15" /></a></span></li>' +
 			b[0].innerHTML;
 	}
@@ -43,9 +43,9 @@ function pr_init_tabs() {
 	if( self.proofreadPagePrevURL ) {
 		b[0].innerHTML = '<li id="ca-prev">' +
 			'<span><a href="' + escapeQuotesHTML( self.proofreadPagePrevURL ) +
-			'" title="' + escapeQuotesHTML( proofreadPageMessagePrevPage ) + '">' +
+			'" title="' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_prevpage' ) ) + '">' +
 			'<img src="' + wgScriptPath + '/extensions/ProofreadPage/leftarrow.png" alt="' +
-			escapeQuotesHTML( proofreadPageMessagePrevPage ) +
+			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_prevpage' ) ) +
 			'" width="15" height="15" /></a></span></li>' +
 			b[0].innerHTML;
 	}
@@ -95,7 +95,7 @@ function pr_make_edit_area( container, text ) {
 			pageBody = text;
 			pageFooter = proofreadPageFooter;
 			if( document.editform ) {
-				document.editform.elements['wpSummary'].value = '/* ' + proofreadPageMessageQuality1 + ' */ ';
+				document.editform.elements['wpSummary'].value = "/* " + mediaWiki.msg.get( 'proofreadpage_quality1_category' ) + " */ ";
 			}
 		}
 	}
@@ -166,18 +166,20 @@ function pr_make_edit_area( container, text ) {
 	pageHeader = pageHeader.split( '&' ).join( '&amp;' );
 	pageFooter = pageFooter.split( '&' ).join( '&amp;' );
 
+	if ( ! self.proofreadpage_show_headers ) headers_style = 'display:none'; else headers_style='';
+
 	container.innerHTML = '' +
-		'<div id="prp_header" style="">' +
+		'<div id="prp_header" style="' + headers_style + '">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( proofreadPageMessageHeader ) + '</span>' +
+		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_header' ) ) + '</span>' +
 		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + pageHeader + '</textarea><br />' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( proofreadPageMessagePageBody ) + '</span></div>' +
+		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_body' ) ) + '</span></div>' +
 		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' +
 			pageBody + '</textarea>' +
-		'<div id="prp_footer" style="">' +
+		'<div id="prp_footer" style="' + headers_style + '">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( proofreadPageMessageFooter ) + '</span><br />' +
+		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_footer' ) ) + '</span><br />' +
 		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>' +
 		pageFooter + '</textarea></div>';
 }
@@ -599,7 +601,7 @@ function pr_set_margins( mx, my, new_width ) {
 	}
 }
 
-function pr_zoom( delta ) {
+self.pr_zoom = function(delta) {
 	if ( delta == 0 ) {
 		// reduce width by 20 pixels in order to prevent horizontal scrollbar
 		// from showing up
@@ -774,7 +776,7 @@ function pr_setup() {
 			pr_container.addEventListener( 'DOMMouseScroll', pr_zoom_wheel, false );
 		}
 		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
-		hookEvent( 'load', function() { pr_load_image( view_url ); } );
+		pr_load_image(view_url);
 	}
 
 	table.setAttribute( 'id', 'textBoxTable' );
@@ -798,9 +800,6 @@ function pr_setup() {
 		pr_make_edit_area( self.text_container, new_text.value );
 		var copywarn = document.getElementById( 'editpage-copywarn' );
 		f.insertBefore( table, copywarn );
-		if ( !self.proofreadpage_show_headers ) {
-			hookEvent( 'load', pr_toggle_visibility );
-		}
 	} else {
 		self.text_container.appendChild( new_text );
 		f.appendChild( self.table );
@@ -816,8 +815,8 @@ function pr_setup() {
 		image.className = 'mw-toolbar-editbutton';
 		image.src = wgScriptPath + '/extensions/ProofreadPage/button_category_plus.png';
 		image.border = 0;
-		image.alt = proofreadPageMessageToggleHeaders;
-		image.title = proofreadPageMessageToggleHeaders;
+		image.alt = mediaWiki.msg.get( 'proofreadpage_toggleheaders' );
+		image.title = mediaWiki.msg.get( 'proofreadpage_toggleheaders' );
 		image.style.cursor = 'pointer';
 		image.onclick = pr_toggle_visibility;
 
@@ -954,25 +953,25 @@ addOnloadHook( pr_init_tabs );
 hookEvent( 'load', pr_initzoom );
 
 /* Quality buttons */
-function pr_add_quality( form, value ) {
+self.pr_add_quality = function( form, value ) {
 	self.proofreadpage_quality = value;
 	self.proofreadpage_username = proofreadPageUserName;
 	var text = '';
 	switch( value ) {
 		case 0:
-			text = proofreadPageMessageQuality0;
+			text = mediaWiki.msg.get( 'proofreadpage_quality0_category' ); 
 			break;
 		case 1:
-			text = proofreadPageMessageQuality1;
+			text = mediaWiki.msg.get( 'proofreadpage_quality1_category' ); 
 			break;
 		case 2:
-			text = proofreadPageMessageQuality2;
+			text = mediaWiki.msg.get( 'proofreadpage_quality2_category' ); 
 			break;
 		case 3:
-			text = proofreadPageMessageQuality3;
+			text = mediaWiki.msg.get( 'proofreadpage_quality3_category' ); 
 			break;
 		case 4:
-			text = proofreadPageMessageQuality4;
+			text = mediaWiki.msg.get( 'proofreadpage_quality4_category' ); 
 			break;
 	}
 	form.elements['wpSummary'].value = '/* ' + text + ' */ ';
@@ -1004,7 +1003,7 @@ function pr_add_quality_buttons() {
 +'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)" tabindex=4> </span>'
 +'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)" tabindex=4> </span>'
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
-	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( proofreadPageMessageStatus );
+	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_page_status' ) );
 
 	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';

@@ -13,8 +13,8 @@ function pr_add_source() {
 			return;
 		}
 		q.removeChild( href );
-		href.innerHTML = prp_source;
-		href.setAttribute( 'title', prp_source_message );
+		href.innerHTML = mediaWiki.msg.get( 'proofreadpage_source' );
+		href.setAttribute( 'title', mediaWiki.msg.get( 'proofreadpage_source_message' ) );
 		var new_li = document.createElement( 'li' );
 		new_li.appendChild( href );
 		var new_span = document.createElement( 'span' );

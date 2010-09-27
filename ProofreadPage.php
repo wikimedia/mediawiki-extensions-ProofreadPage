@@ -53,9 +53,6 @@ $wgAutoloadClasses['PagesWithoutScans'] = dirname( __FILE__ ) . '/SpecialPagesWi
 $wgSpecialPages['PagesWithoutScans'] = 'PagesWithoutScans';
 $wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
 
-# Bump the version number every time you change proofread.js
-$wgProofreadPageVersion = 27;
-
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
 

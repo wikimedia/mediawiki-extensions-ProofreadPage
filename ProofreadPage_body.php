@@ -51,10 +51,48 @@ class ProofreadPage {
 		$wgHooks['LoadExtensionSchemaUpdates'][] = array( &$this, 'schema_update' );
 		$wgHooks['EditPage::importFormData'][] = array( &$this, 'importFormData' );
 		$wgHooks['OutputPageParserOutput'][] = array( &$this, 'OutputPageParserOutput' );
+		$wgHooks['ResourceLoaderRegisterModules'][] = array( &$this, 'resourceLoaderRegisterModules' );
 		wfLoadExtensionMessages( 'ProofreadPage' );
 		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	}
+
+ 
+	public static function resourceLoaderRegisterModules() {
+
+		ResourceLoader::register( 'proofreadpage.page', 
+					  new ResourceLoaderFileModule( 
+						array( 'scripts' => 'extensions/ProofreadPage/proofread.js',
+						       'messages' => array( 'proofreadpage_index', 
+									    'proofreadpage_nextpage',
+									    'proofreadpage_prevpage',
+									    'proofreadpage_image',
+									    'proofreadpage_header',
+									    'proofreadpage_body',
+									    'proofreadpage_footer',
+									    'proofreadpage_toggleheaders',
+									    'proofreadpage_page_status',
+									    'proofreadpage_quality0_category',
+									    'proofreadpage_quality1_category',
+									    'proofreadpage_quality2_category',
+									    'proofreadpage_quality3_category',
+									    'proofreadpage_quality4_category',
+									    )
+						       ) ) );
+
+		ResourceLoader::register( 'proofreadpage.article', 
+					  new ResourceLoaderFileModule( 
+						array( 'scripts' => 'extensions/ProofreadPage/proofread_article.js',
+						       'messages'=> array( 'proofreadpage_source', 'proofreadpage_source_message' )
+						       ) ) );
+
+		ResourceLoader::register( 'proofreadpage.index', 
+					  new ResourceLoaderFileModule( array( 'scripts' => 'extensions/ProofreadPage/proofread_index.js' ) ) );
+
+		return true;
+	}
+
+
 
 	function schema_update() {
 		global $wgExtNewTables;
@@ -306,42 +344,20 @@ class ProofreadPage {
 		return true;
 	}
 
-	
 	function prepareArticle( $out ) {
-		global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
-		$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread_article.js?$wgProofreadPageVersion" );
-		$out->addScript( <<<EOT
-<script type="$wgJsMimeType" src="$jsFile"></script>
-EOT
-				 );
-		$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
-var prp_source = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_source' ) ) . "\";
-var prp_source_message = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_source_message' ) ) . "\";
-</script>\n"
-				 );
+		$out->addModules( 'proofreadpage.article' );
 		$this->displayProofreadingStatus( $out );
 	}
 
 	function prepareIndex( $out ) {
-		global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
-		$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread_index.js?$wgProofreadPageVersion" );
-
-		$out->addScript( <<<EOT
-<script type="$wgJsMimeType" src="$jsFile"></script>
-
-EOT
-				 );
-		$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
+		$out->addModules( 'proofreadpage.index' );
+		$out->addInlineScript("
 var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
 var prp_default_header = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_header', true, true, false ) ) . "\";
-var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_footer', true, true, false ) ) . "\";
-</script>\n"
-				 );
+var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_footer', true, true, false ) ) . "\";" );
 	}
 
-
 	function preparePage( $out, $m, $isEdit ) {
-		global $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion, $wgProofreadPageMaxWidth;
 		global $wgTitle, $wgUser;
 
 		if ( !isset( $wgTitle->pr_index_title ) ) {
@@ -372,8 +388,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 
 		list( $index_url, $prev_url, $next_url, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
 		
-		$jsFile = htmlspecialchars( "$wgScriptPath/extensions/ProofreadPage/proofread.js?$wgProofreadPageVersion" );
-		
 		$jsVars = array(
 				'proofreadPageWidth' => intval( $width ),
 				'proofreadPageHeight' => intval( $height ),
@@ -389,32 +403,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				'proofreadPageUserName' => $wgUser->getName(),
 				'proofreadPageCss' => $css,
 				);
-		$varScript = Skin::makeVariablesScript( $jsVars );
+		$out->addInlineScript( ResourceLoader::makeConfigSetScript( $jsVars ) );
 
-		$out->addScript( <<<EOT
-$varScript
-<script type="$wgJsMimeType" src="$jsFile"></script>
+		$out->addModules( 'proofreadpage.page' );
 
-EOT
-				 );
-
-		// Add messages from i18n
-		$out->addScript( "<script type=\"{$wgJsMimeType}\"> 
-var proofreadPageMessageIndex = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_index' ) ) . "\";
-var proofreadPageMessageNextPage = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_nextpage' ) ) . "\";
-var proofreadPageMessagePrevPage = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_prevpage' ) ) . "\";
-var proofreadPageMessageImage = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_image' ) ) . "\";
-var proofreadPageMessageHeader = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_header' ) ) . "\";
-var proofreadPageMessagePageBody = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_body' ) ) . "\";
-var proofreadPageMessageFooter = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_footer' ) ) . "\";
-var proofreadPageMessageToggleHeaders = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_toggleheaders' ) ) . "\";
-var proofreadPageMessageStatus = \"" . Xml::escapeJsString( wfMsg( 'proofreadpage_page_status' ) ) . "\";
-var proofreadPageMessageQuality0 = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_quality0_category' ) ) . "\";
-var proofreadPageMessageQuality1 = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_quality1_category' ) ) . "\";
-var proofreadPageMessageQuality2 = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_quality2_category' ) ) . "\";
-var proofreadPageMessageQuality3 = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_quality3_category' ) ) . "\";
-var proofreadPageMessageQuality4 = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_quality4_category' ) ) . "\";
-</script>\n"	 );
 		return true;
 	}
 
