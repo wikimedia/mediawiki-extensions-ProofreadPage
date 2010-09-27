@@ -13,39 +13,39 @@ function pr_init_tabs(){
 		var view_url = self.proofreadPageThumbURL.replace('##WIDTH##',"" + self.proofreadPageWidth );
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-image">'
-			+ '<a href="' + escapeQuotesHTML( view_url ) + '"><span>'
-			+ escapeQuotesHTML(proofreadPageMessageImage) + '</span></a></li>';
+			+ '<span><a href="' + escapeQuotesHTML( view_url ) + '">'
+			+ escapeQuotesHTML(proofreadPageMessageImage) + '</a></span></li>';
 	}
 
 	if(self.proofreadPageIndexURL){
 		b[0].innerHTML = b[0].innerHTML 
 			+ '<li id="ca-index">'
-			+ '<a href="' + escapeQuotesHTML(proofreadPageIndexURL) 
-			+ '" title="' + escapeQuotesHTML(proofreadPageMessageIndex) + '"><span>'
+			+ '<span><a href="' + escapeQuotesHTML(proofreadPageIndexURL) 
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessageIndex) + '">'
 			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/uparrow.png" alt="'
 			+ escapeQuotesHTML(proofreadPageMessageIndex) 
-			+ '" width="15" height="15" /></span></a></li>';
+			+ '" width="15" height="15" /></a></span></li>';
 	}
 
 	if(self.proofreadPageNextURL){
 		b[0].innerHTML = 
 			'<li id="ca-next">'
-			+ '<a href="' + escapeQuotesHTML(self.proofreadPageNextURL)
-			+ '" title="' + escapeQuotesHTML(proofreadPageMessageNextPage) + '"><span>'
+			+ '<span><a href="' + escapeQuotesHTML(self.proofreadPageNextURL)
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessageNextPage) + '">'
 			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/rightarrow.png" alt="'
 			+ escapeQuotesHTML(proofreadPageMessageNextPage) 
-			+ '" width="15" height="15" /></span></a></li>'
+			+ '" width="15" height="15" /></a></span></li>'
 			+ b[0].innerHTML ;
 	}
 
 	if(self.proofreadPagePrevURL){
 		b[0].innerHTML = 
 			'<li id="ca-prev">'
-			+ '<a href="' + escapeQuotesHTML(self.proofreadPagePrevURL) 
-			+ '" title="' + escapeQuotesHTML(proofreadPageMessagePrevPage) + '"><span>'
+			+ '<span><a href="' + escapeQuotesHTML(self.proofreadPagePrevURL) 
+			+ '" title="' + escapeQuotesHTML(proofreadPageMessagePrevPage) + '">'
 			+ '<img src="' + wgScriptPath + '/extensions/ProofreadPage/leftarrow.png" alt="'
 			+ escapeQuotesHTML(proofreadPageMessagePrevPage) 
-			+ '" width="15" height="15" /></span></a></li>'
+			+ '" width="15" height="15" /></a></span></li>'
 			+ b[0].innerHTML ;
        }
 }

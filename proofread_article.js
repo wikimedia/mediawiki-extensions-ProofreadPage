@@ -9,11 +9,13 @@ function pr_add_source() {
 		href = q.firstChild; 
 		if(!href) return;
 		q.removeChild(href);
-		href.innerHTML = "<span>"+prp_source+"</span>";
+		href.innerHTML = prp_source;
 		href.setAttribute("title", prp_source_message);
 		var new_li = document.createElement("li");
 		new_li.appendChild(href); 
-		a.parentNode.insertBefore(new_li,a.nextSibling);
+		var new_span = document.createElement("span");
+		new_span.appendChild(new_li); 
+		a.parentNode.insertBefore(new_span,a.nextSibling);
 	}
 }
 addOnloadHook(pr_add_source);
