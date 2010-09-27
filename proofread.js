@@ -95,7 +95,7 @@ function pr_make_edit_area( container, text ) {
 			pageBody = text;
 			pageFooter = proofreadPageFooter;
 			if( document.editform ) {
-				document.editform.elements['wpSummary'].value = "/* " + mediaWiki.msg.get( 'proofreadpage_quality1_category' ) + " */ ";
+				document.editform.elements['wpSummary'].value = '/* ' + mediaWiki.msg.get( 'proofreadpage_quality1_category' ) + ' */ ';
 			}
 		}
 	}
@@ -166,7 +166,11 @@ function pr_make_edit_area( container, text ) {
 	pageHeader = pageHeader.split( '&' ).join( '&amp;' );
 	pageFooter = pageFooter.split( '&' ).join( '&amp;' );
 
-	if ( ! self.proofreadpage_show_headers ) headers_style = 'display:none'; else headers_style='';
+	if ( !self.proofreadpage_show_headers ) {
+		headers_style = 'display:none';
+	} else {
+		headers_style = '';
+	}
 
 	container.innerHTML = '' +
 		'<div id="prp_header" style="' + headers_style + '">' +
@@ -601,7 +605,7 @@ function pr_set_margins( mx, my, new_width ) {
 	}
 }
 
-self.pr_zoom = function(delta) {
+self.pr_zoom = function( delta ) {
 	if ( delta == 0 ) {
 		// reduce width by 20 pixels in order to prevent horizontal scrollbar
 		// from showing up
@@ -776,7 +780,7 @@ function pr_setup() {
 			pr_container.addEventListener( 'DOMMouseScroll', pr_zoom_wheel, false );
 		}
 		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
-		pr_load_image(view_url);
+		pr_load_image( view_url );
 	}
 
 	table.setAttribute( 'id', 'textBoxTable' );
@@ -959,19 +963,19 @@ self.pr_add_quality = function( form, value ) {
 	var text = '';
 	switch( value ) {
 		case 0:
-			text = mediaWiki.msg.get( 'proofreadpage_quality0_category' ); 
+			text = mediaWiki.msg.get( 'proofreadpage_quality0_category' );
 			break;
 		case 1:
-			text = mediaWiki.msg.get( 'proofreadpage_quality1_category' ); 
+			text = mediaWiki.msg.get( 'proofreadpage_quality1_category' );
 			break;
 		case 2:
-			text = mediaWiki.msg.get( 'proofreadpage_quality2_category' ); 
+			text = mediaWiki.msg.get( 'proofreadpage_quality2_category' );
 			break;
 		case 3:
-			text = mediaWiki.msg.get( 'proofreadpage_quality3_category' ); 
+			text = mediaWiki.msg.get( 'proofreadpage_quality3_category' );
 			break;
 		case 4:
-			text = mediaWiki.msg.get( 'proofreadpage_quality4_category' ); 
+			text = mediaWiki.msg.get( 'proofreadpage_quality4_category' );
 			break;
 	}
 	form.elements['wpSummary'].value = '/* ' + text + ' */ ';
