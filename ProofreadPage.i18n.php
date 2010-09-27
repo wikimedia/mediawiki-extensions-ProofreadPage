@@ -404,6 +404,7 @@ $messages['bcl'] = array(
  */
 $messages['be-tarask'] = array(
 	'indexpages' => 'Сьпіс індэксных старонак',
+	'pageswithoutscans' => 'Старонкі без сканаў',
 	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўноўваць тэкст і адсканаваны арыгінал',
 	'proofreadpage_namespace' => 'Старонка',
 	'proofreadpage_index_namespace' => 'Індэкс',
@@ -455,6 +456,7 @@ $messages['be-tarask'] = array(
 	'proofreadpage_specialpage_legend' => 'Пошук індэксных старонак',
 	'proofreadpage_source' => 'Крыніца',
 	'proofreadpage_source_message' => 'Сканаваная вэрсія, якая выкарыстоўвалася для стварэньня гэтага тэксту',
+	'right-pagequality' => 'зьмяненьне сьцяжка якасьці старонкі',
 );
 
 /** Bulgarian (Български)
