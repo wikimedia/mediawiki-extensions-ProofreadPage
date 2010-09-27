@@ -4,20 +4,22 @@
  * @ingroup SpecialPage
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) die( 1 );
-global $wgHooks, $IP;
-require_once "$IP/includes/QueryPage.php";
+if ( !defined( 'MEDIAWIKI' ) ) {
+	die( 1 );
+}
 
+global $IP;
+require_once "$IP/includes/QueryPage.php";
 
 class ProofreadPages extends SpecialPage {
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'IndexPages' );
 		wfLoadExtensionMessages( 'ProofreadPage' );
 		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	}
 
-	function execute( $parameters ) {
+	public function execute( $parameters ) {
 		global $wgOut, $wgRequest, $wgDisableTextSearch;
 
 		$this->setHeaders();
@@ -25,7 +27,7 @@ class ProofreadPages extends SpecialPage {
 		$wgOut->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
 		$searchList = array();
 		$searchTerm = $wgRequest->getText( 'key' );
-		if( ! $wgDisableTextSearch ) {
+		if( !$wgDisableTextSearch ) {
 			$wgOut->addHTML(
 				Xml::openElement( 'form' ) .
 				Xml::openElement( 'fieldset' ) .
@@ -75,7 +77,7 @@ class ProofreadPagesQuery extends QueryPage {
 	}
 
 	function linkParameters() {
-		return array( 'key'=> $this->searchTerm );
+		return array( 'key' => $this->searchTerm );
 	}
 
 	function getSQL() {
@@ -92,7 +94,9 @@ class ProofreadPagesQuery extends QueryPage {
 				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $this->index_namespace ) );
 				$querylist = '';
 				foreach( $this->searchList as $item ) {
-					if( $querylist ) $querylist .= ', ';
+					if( $querylist ) {
+						$querylist .= ', ';
+					}
 					$querylist .= "'" . $dbr->strencode( $item ). "'";
 				}
 				$query .= " WHERE page_namespace=$index_ns_index AND page_title IN ($querylist)";
@@ -105,7 +109,7 @@ class ProofreadPagesQuery extends QueryPage {
 
 	function getOrder() {
 		return ' ORDER BY 2*pr_q4+pr_q3 ' .
-			($this->sortDescending() ? 'DESC' : '');
+			( $this->sortDescending() ? 'DESC' : '' );
 	}
 
 	function sortDescending() {
@@ -115,13 +119,13 @@ class ProofreadPagesQuery extends QueryPage {
 	function formatResult( $skin, $result ) {
 		global $wgLang;
 
-		$title = Title::newFromText( $this->index_namespace.":".$result->title );
+		$title = Title::newFromText( $this->index_namespace . ':' . $result->title );
 
 		if ( !$title ) {
-			return '<!-- Invalid title ' .  htmlspecialchars( $this->index_namespace.":".$result->title ). '-->';
+			return '<!-- Invalid title ' .  htmlspecialchars( $this->index_namespace . ':' . $result->title ) . '-->';
 		}
 		$plink = $this->isCached()
-		  ? $skin->link( $title , htmlspecialchars( $title->getText() ) )
+			? $skin->link( $title , htmlspecialchars( $title->getText() ) )
 			: $skin->linkKnown( $title , htmlspecialchars( $title->getText() ) );
 
 		if ( !$title->exists() ) {
@@ -135,7 +139,7 @@ class ProofreadPagesQuery extends QueryPage {
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 		$num_void = $size-$q1-$q2-$q3-$q4-$q0;
-		$void_cell = $num_void ? "<td align=center style='border-style:dotted;background:#ffffff;border-width:1px;' width=\"{$num_void}\"></td>" : "";
+		$void_cell = $num_void ? "<td align=center style='border-style:dotted;background:#ffffff;border-width:1px;' width=\"{$num_void}\"></td>" : '';
 
 		// FIXME: consider using $size in 'proofreadpage_pages' instead of glueing it together in $output
 		$pages = wfMsgExt( 'proofreadpage_pages', 'parsemag', $size );

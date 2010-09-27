@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -15,33 +14,32 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @file
+ * @ingroup Extensions
  */
 
-  /*
-   * Special page that lists the texts that have no transclusions
-   * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
-   * 
-   */
-
+/**
+ * Special page that lists the texts that have no transclusions
+ * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
+ */
 class PagesWithoutScans extends SpecialPage {
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'PagesWithoutScans' );
 	}
 
-	function execute( $parameters ) {
-		global $wgOut, $wgRequest, $wgDisableTextSearch;
+	public function execute( $parameters ) {
 		$this->setHeaders();
 		list( $limit, $offset ) = wfCheckLimits();
-		$cnl = new PagesWithoutScansQuery( );
+		$cnl = new PagesWithoutScansQuery();
 		$cnl->doQuery( $offset, $limit );
 	}
 }
 
-
 class PagesWithoutScansQuery extends QueryPage {
 
-	function __construct( ) {
+	function __construct() {
 		wfLoadExtensionMessages( 'ProofreadPage' );
 		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 		$this->cat = wfMsgForContent( 'proofreadpage_notnaked_category' );
@@ -66,7 +64,7 @@ class PagesWithoutScansQuery extends QueryPage {
 		$page = $dbr->tableName( 'page' );
 		$templatelinks = $dbr->tableName( 'templatelinks' );
 		$categorylinks = $dbr->tableName( 'categorylinks' );
-		$forceindex = $dbr->useIndexClause("page_len");
+		$forceindex = $dbr->useIndexClause( 'page_len' );
 		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $this->page_namespace ) );
 		$cat = $dbr->strencode( str_replace( ' ' , '_' , $this->cat ) );
 		$clause = "page_namespace=" . NS_MAIN . " AND page_is_redirect=0 AND page_id NOT IN ( SELECT DISTINCT tl_from FROM $templatelinks LEFT JOIN $page ON page_id=tl_from WHERE tl_namespace=$page_ns_index AND page_namespace=" . NS_MAIN . " ) AND page_id NOT IN ( SELECT DISTINCT cl_from FROM $categorylinks WHERE cl_to='$cat' )";
@@ -89,7 +87,7 @@ class PagesWithoutScansQuery extends QueryPage {
 
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {
-			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ). '-->';
+			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
 		$hlink = $skin->linkKnown(
 			$title,
