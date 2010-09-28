@@ -24,7 +24,7 @@ function pr_init_tabs() {
 	if( self.proofreadPageIndexURL ) {
 		b[0].innerHTML = b[0].innerHTML + '<li id="ca-index">' +
 			'<span><a href="' + escapeQuotesHTML( proofreadPageIndexURL ) +
-			'" title="' + escapeQuotesHTML( proofreadPageMessageIndex ) + '">' +
+			'" title="' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_index' ) ) + '">' +
 			'<img src="' + wgScriptPath + '/extensions/ProofreadPage/uparrow.png" alt="' +
 			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_index' ) ) +
 			'" width="15" height="15" /></a></span></li>';
