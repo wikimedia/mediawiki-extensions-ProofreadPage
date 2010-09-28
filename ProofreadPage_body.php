@@ -85,11 +85,7 @@ class ProofreadPage {
 			'proofreadpage.article',
 			new ResourceLoaderFileModule(
 				array(
-					'scripts' => 'extensions/ProofreadPage/proofread_article.js',
-					'messages'=> array(
-						'proofreadpage_source',
-						'proofreadpage_source_message'
-					)
+					'scripts' => 'extensions/ProofreadPage/proofread_article.js'
 				)
 			)
 		);
@@ -355,11 +351,6 @@ class ProofreadPage {
 		}
 
 		return true;
-	}
-
-	function prepareArticle( $out ) {
-		$out->addModules( 'proofreadpage.article' );
-		$this->displayProofreadingStatus( $out );
 	}
 
 	function prepareIndex( $out ) {
@@ -1420,7 +1411,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	 *
 	 * @param $out Object: OutputPage object
 	 */
-	function displayProofreadingStatus( $out ) {
+	function prepareArticle( $out ) {
 		global $wgTitle, $wgUser;
 
 		$id = $wgTitle->mArticleID;
@@ -1528,7 +1519,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$indexlink = '';
 		if( $indextitle ) {
 			$sk = $wgUser->getSkin();
-			$indexlink = $sk->makeKnownLink( "$index_namespace:$indextitle", '[index]' );
+			$nt = Title::makeTitleSafe( $index_ns_index, $indextitle );
+			$indexlink = $sk->link( $nt, wfMsg( 'proofreadpage_source' ), 
+						array( 'title' => wfMsg( 'proofreadpage_source_message' ) ) );
+			$out->addInlineScript( ResourceLoader::makeConfigSetScript( array( 'proofreadpage_source_href' => $indexlink ) ) );
+			$out->addModules( 'proofreadpage.article' );
 		}
 
 		$q0 = $n0 * 100 / $n;
@@ -1546,7 +1541,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 <td align=center class='quality1' width=\"$q1\"></td>
 <td align=center class='quality0' width=\"$q0\"></td>
 $void_cell
-<td ><span id=pr_index style=\"visibility:hidden;\">$indexlink</span></td>
 </tr></table>";
 		$out->setSubtitle( $out->getSubtitle() . $output );
 		return true;
