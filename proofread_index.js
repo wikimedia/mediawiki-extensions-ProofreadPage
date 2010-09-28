@@ -131,5 +131,4 @@ function proofreadpage_fill_index() {
 	form.elements['wpTextbox1'].value = result;
 }
 
-// use hookevent instead of addOnLoadHook, so that the code is evaluated after wikibits.js
-hookEvent( 'load', proofreadpage_index_init );
+$(document).ready( proofreadpage_index_init );

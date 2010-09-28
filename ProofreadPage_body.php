@@ -57,7 +57,7 @@ class ProofreadPage {
 
 	public static function resourceLoaderRegisterModules() {
 		ResourceLoader::register(
-			'proofreadpage.page',
+			'ext.proofreadpage.page',
 			new ResourceLoaderFileModule(
 				array(
 					'scripts' => 'extensions/ProofreadPage/proofread.js',
@@ -82,7 +82,7 @@ class ProofreadPage {
 		);
 
 		ResourceLoader::register(
-			'proofreadpage.article',
+			'ext.proofreadpage.article',
 			new ResourceLoaderFileModule(
 				array(
 					'scripts' => 'extensions/ProofreadPage/proofread_article.js'
@@ -91,7 +91,7 @@ class ProofreadPage {
 		);
 
 		ResourceLoader::register(
-			'proofreadpage.index',
+			'ext.proofreadpage.index',
 			new ResourceLoaderFileModule( array( 'scripts' => 'extensions/ProofreadPage/proofread_index.js' ) )
 		);
 
@@ -354,7 +354,7 @@ class ProofreadPage {
 	}
 
 	function prepareIndex( $out ) {
-		$out->addModules( 'proofreadpage.index' );
+		$out->addModules( 'ext.proofreadpage.index' );
 		$out->addInlineScript("
 var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
 var prp_default_header = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_header', true, true, false ) ) . "\";
@@ -409,7 +409,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		);
 		$out->addInlineScript( ResourceLoader::makeConfigSetScript( $jsVars ) );
 
-		$out->addModules( 'proofreadpage.page' );
+		$out->addModules( 'ext.proofreadpage.page' );
 
 		return true;
 	}
@@ -1523,7 +1523,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			$indexlink = $sk->link( $nt, wfMsg( 'proofreadpage_source' ), 
 						array( 'title' => wfMsg( 'proofreadpage_source_message' ) ) );
 			$out->addInlineScript( ResourceLoader::makeConfigSetScript( array( 'proofreadpage_source_href' => $indexlink ) ) );
-			$out->addModules( 'proofreadpage.article' );
+			$out->addModules( 'ext.proofreadpage.article' );
 		}
 
 		$q0 = $n0 * 100 / $n;

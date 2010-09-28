@@ -166,14 +166,8 @@ function pr_make_edit_area( container, text ) {
 	pageHeader = pageHeader.split( '&' ).join( '&amp;' );
 	pageFooter = pageFooter.split( '&' ).join( '&amp;' );
 
-	if ( !self.proofreadpage_show_headers ) {
-		headers_style = 'display:none';
-	} else {
-		headers_style = '';
-	}
-
 	container.innerHTML = '' +
-		'<div id="prp_header" style="' + headers_style + '">' +
+		'<div id="prp_header" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_header' ) ) + '</span>' +
 		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + pageHeader + '</textarea><br />' +
@@ -181,7 +175,7 @@ function pr_make_edit_area( container, text ) {
 		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_body' ) ) + '</span></div>' +
 		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' +
 			pageBody + '</textarea>' +
-		'<div id="prp_footer" style="' + headers_style + '">' +
+		'<div id="prp_footer" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_footer' ) ) + '</span><br />' +
 		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>' +
@@ -723,7 +717,7 @@ function pr_load_image( view_url ) {
 }
 
 function pr_setup() {
-	self.pr_horiz = ( self.proofreadpage_default_layout ==' horizontal' );
+	self.pr_horiz = ( self.proofreadpage_default_layout == 'horizontal' );
 	if( !proofreadPageIsEdit ) {
 		pr_horiz = false;
 	}
@@ -804,6 +798,11 @@ function pr_setup() {
 		pr_make_edit_area( self.text_container, new_text.value );
 		var copywarn = document.getElementById( 'editpage-copywarn' );
 		f.insertBefore( table, copywarn );
+		if ( !self.proofreadpage_show_headers ) {
+			hookEvent( 'load', pr_toggle_visibility );
+		} else {
+			hookEvent( 'load', pr_reset_size );
+		}
 	} else {
 		self.text_container.appendChild( new_text );
 		f.appendChild( self.table );
@@ -951,10 +950,10 @@ function pr_init() {
 	}
 }
 
-addOnloadHook( pr_init );
-addOnloadHook( pr_init_tabs );
+$(document).ready( pr_init );
+$(document).ready( pr_init_tabs );
+$(document).ready( pr_initzoom );
 
-hookEvent( 'load', pr_initzoom );
 
 /* Quality buttons */
 self.pr_add_quality = function( form, value ) {
@@ -1032,4 +1031,4 @@ function pr_add_quality_buttons() {
 	}
 }
 
-addOnloadHook( pr_add_quality_buttons );
+$(document).ready( pr_add_quality_buttons );
