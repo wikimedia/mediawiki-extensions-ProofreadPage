@@ -754,6 +754,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		list( $links, $params, $attributes ) = $this->parse_index( $index_title );
 
 		if( $from || $to ) {
+			$pages = array();
 			if( $links == null ) {
 				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
 				if ( !$imageTitle ) {
@@ -781,7 +782,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				if( $to - $from > 1000 ) {
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
 				}
-				$pages = array();
 
 				for( $i = $from; $i <= $to; $i++ ) {
 					list( $pagenum, $links, $mode ) = $this->pageNumber( $i, $params );
@@ -824,33 +824,34 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 					$to_pagenum = $links[3][count( $links[1] ) - 1];
 				}
 			}
-
 			// find which pages have quality0
-			$pp = array();
-			foreach( $pages as $item ) {
-				list( $page, $pagenum ) = $item;
-				$pp[] = $page;
-			}
-			$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
-			$dbr = wfGetDB( DB_SLAVE );
-			$cat = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
-			$res = $dbr->select(
-				array( 'page', 'categorylinks' ),
-				array( 'page_title' ),
-				array(
-					'page_title' => $pp,
-					'cl_to' => $cat,
-					'page_namespace' => $page_ns_index
-				),
-				__METHOD__,
-				null,
-				array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
-			);
-
 			$q0_pages = array();
-			if( $res ) {
-				while( $o = $dbr->fetchObject( $res ) ) {
-					array_push( $q0_pages, $o->page_title );
+			if( !empty( $pages ) ) {
+				$pp = array();
+				foreach( $pages as $item ) {
+					list( $page, $pagenum ) = $item;
+					$pp[] = $page;
+				}
+				$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
+				$dbr = wfGetDB( DB_SLAVE );
+				$cat = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
+				$res = $dbr->select(
+						    array( 'page', 'categorylinks' ),
+						    array( 'page_title' ),
+						    array(
+							  'page_title' => $pp,
+							  'cl_to' => $cat,
+							  'page_namespace' => $page_ns_index
+							  ),
+						    __METHOD__,
+						    null,
+						    array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
+						    );
+				
+				if( $res ) {
+					while( $o = $dbr->fetchObject( $res ) ) {
+						array_push( $q0_pages, $o->page_title );
+					}
 				}
 			}
 
