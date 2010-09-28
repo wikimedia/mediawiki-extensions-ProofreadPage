@@ -637,7 +637,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	 * Add the pagequality category.
 	 * @todo FIXME: display whether page has been proofread by the user or by someone else
 	 */
-	function pageQuality( $input, $args, &$parser ) {
+	function pageQuality( $input, $args, $parser ) {
 		global $wgUser;
 
 		$page_namespace = $this->page_namespace;
@@ -732,7 +732,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	 * Parser hook that includes a list of pages.
 	 *  parameters : index, from, to, header
 	 */
-	function renderPages( $input, $args, &$parser ) {
+	function renderPages( $input, $args, $parser ) {
 		$page_namespace = $this->page_namespace;
 		$index_namespace = $this->index_namespace;
 		$index = $args['index'];
