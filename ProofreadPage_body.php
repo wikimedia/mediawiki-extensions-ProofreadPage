@@ -833,13 +833,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			}
 			$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
 			$dbr = wfGetDB( DB_SLAVE );
-			$encCat = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ) );
+			$cat = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
 			$res = $dbr->select(
 				array( 'page', 'categorylinks' ),
 				array( 'page_title' ),
 				array(
 					'page_title' => $pp,
-					'cl_to' => $encCat,
+					'cl_to' => $cat,
 					'page_namespace' => $page_ns_index
 				),
 				__METHOD__,
