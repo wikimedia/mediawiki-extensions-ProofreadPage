@@ -840,17 +840,16 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				list( $page, $pagenum ) = $item;
 				$pp[] = $page;
 			}
-			$pagelist = "'" . implode( "', '", $pp ) . "'";
 			$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
 			$dbr = wfGetDB( DB_SLAVE );
-			$encCat = $dbr->addQuotes( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ) );
+			$encCat = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ) );
 			$res = $dbr->select(
 				array( 'page', 'categorylinks' ),
 				array( 'page_title' ),
 				array(
-					"page_title IN ( $pagelist )",
-					"cl_to=$encCat",
-					"page_namespace=$page_ns_index"
+					'page_title' => $pp,
+					'cl_to' => $encCat,
+					'page_namespace' => $page_ns_index
 				),
 				__METHOD__,
 				null,
