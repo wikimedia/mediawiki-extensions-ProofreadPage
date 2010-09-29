@@ -4342,6 +4342,19 @@ $messages['szl'] = array(
 	'proofreadpage_prevpage' => 'Popředńo zajta',
 );
 
+/** Tamil (தமிழ்)
+ * @author TRYPPN
+ */
+$messages['ta'] = array(
+	'proofreadpage_namespace' => 'பக்கம்',
+	'proofreadpage_image' => 'படம்',
+	'proofreadpage_nologin' => 'புகுபதிகை செய்யப்படவில்லை',
+	'proofreadpage_nextpage' => 'அடுத்த பக்கம்',
+	'proofreadpage_prevpage' => 'முந்தைய பக்கம்',
+	'proofreadpage_index_listofpages' => 'பக்கங்களின் பட்டியல்',
+	'proofreadpage_page_status' => 'பக்கத்தின் நிலைமை',
+);
+
 /** Telugu (తెలుగు)
  * @author Kiranmayee
  * @author Mpradeep
