@@ -33,7 +33,7 @@ class ProofreadPage {
 	 * Constructor
 	 */
 	function ProofreadPage() {
-		global $wgParser, $wgHooks;
+		global $wgParser, $wgHooks, $wgScriptPath;
 		$wgParser->setHook( 'pagelist', array( &$this, 'renderPageList' ) );
 		$wgParser->setHook( 'pages', array( &$this, 'renderPages' ) );
 		$wgParser->setHook( 'pagequality', array( &$this, 'pageQuality' ) );
@@ -50,9 +50,25 @@ class ProofreadPage {
 		$wgHooks['EditPage::importFormData'][] = array( &$this, 'importFormData' );
 		$wgHooks['OutputPageParserOutput'][] = array( &$this, 'OutputPageParserOutput' );
 		$wgHooks['ResourceLoaderRegisterModules'][] = array( &$this, 'resourceLoaderRegisterModules' );
+
 		wfLoadExtensionMessages( 'ProofreadPage' );
+
+		/* Namespaces */
 		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+
+		/* Navigation icons */ 
+		$path = $wgScriptPath . '/extensions/ProofreadPage';
+		$this->prev_icon = Html::element( 'img', array(	'src' => $path . '/leftarrow.png', 
+								'alt' =>  wfMsg( 'proofreadpage_prevpage' ),
+								'width' => 15, 'height' => 15 ) );
+		$this->next_icon = Html::element( 'img', array(	'src' => $path . '/rightarrow.png', 
+								'alt' =>  wfMsg( 'proofreadpage_nextpage' ),
+								'width' => 15, 'height' => 15 ) );
+		$this->up_icon = Html::element( 'img', array(	'src' => $path . '/uparrow.png', 
+								'alt' =>  wfMsg( 'proofreadpage_index' ),
+								'width' => 15, 'height' => 15 ) );
+
 	}
 
 	public static function resourceLoaderRegisterModules() {
@@ -62,10 +78,6 @@ class ProofreadPage {
 				array(
 					'scripts' => 'extensions/ProofreadPage/proofread.js',
 					'messages' => array(
-						'proofreadpage_index',
-						'proofreadpage_nextpage',
-						'proofreadpage_prevpage',
-						'proofreadpage_image',
 						'proofreadpage_header',
 						'proofreadpage_body',
 						'proofreadpage_footer',
@@ -190,18 +202,16 @@ class ProofreadPage {
 			$name = $image->getTitle()->getText();
 			$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
 			$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
-			$prev_url = ( $pagenr == 1 ) ? '' : Title::newFromText( $prev_name )->getFullURL();
-			$next_url = ( $pagenr == $count ) ? '' : Title::newFromText( $next_name )->getFullURL();
+			$prev_title = ( $pagenr == 1 ) ? null : Title::newFromText( $prev_name );
+			$next_title = ( $pagenr == $count ) ? null : Title::newFromText( $next_name );
 
 		} else {
-			$prev_url = '';
-			$next_url = '';
+			$prev_title = null;
+			$next_title = null;
 		}
 
-		$index_url = $index_title->getFullURL();
-
 		if ( !$index_title->exists() ) {
-			return array( $index_url, $prev_url, $next_url,  $default_header, $default_footer );
+			return array( $index_title, $prev_title, $next_title,  $default_header, $default_footer );
 		}
 
 		// if the index page exists, find current page number, previous and next pages
@@ -227,12 +237,6 @@ class ProofreadPage {
 			if( ( $i >= 0 ) && ( $i + 1 < count( $links[1] ) ) ) {
 				$next_title = Title::newFromText( $page_namespace . ':' . $links[1][$i + 1] );
 			}
-			if( $prev_title ) {
-				$prev_url = $prev_title->getFullURL();
-			}
-			if( $next_title ) {
-				$next_url = $next_title->getFullURL();
-			}
 		}
 
 		// Header and Footer
@@ -246,7 +250,7 @@ class ProofreadPage {
 		$css = $attributes['css'] ? $attributes['css'] : '';
 		$edit_width = $attributes['width'] ? $attributes['width'] : '';
 
-		return array( $index_url, $prev_url, $next_url, $header, $footer, $css, $edit_width );
+		return array( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width );
 	}
 
 	/**
@@ -390,7 +394,17 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			$thumbURL = '';
 		}
 
-		list( $index_url, $prev_url, $next_url, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
+		list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
+
+		$sk = $wgUser->getSkin();
+		$next_link = $next_title ? $sk->link( $next_title, $this->next_icon, 
+						      array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : '';
+		$prev_link = $prev_title ? $sk->link( $prev_title, $this->prev_icon, 
+						      array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
+		$index_link = $index_title ? $sk->link( $index_title, $this->up_icon, 
+							array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : '';
+		$scan_link = $sk->link( $imageTitle, wfMsg( 'proofreadpage_image' ), 
+					array( 'title' => wfMsg( 'proofreadpage_image' ) ) );
 
 		$jsVars = array(
 			'proofreadPageWidth' => intval( $width ),
@@ -398,9 +412,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			'proofreadPageEditWidth' => $edit_width,
 			'proofreadPageThumbURL' => $thumbURL,
 			'proofreadPageIsEdit' => intval( $isEdit ),
-			'proofreadPageIndexURL' => $index_url,
-			'proofreadPagePrevURL' => $prev_url,
-			'proofreadPageNextURL' => $next_url,
+			'proofreadPageIndexLink' => $index_link,
+			'proofreadPageNextLink' => $next_link,
+			'proofreadPagePrevLink' => $prev_link,
+			'proofreadPageScanLink' => $scan_link,
 			'proofreadPageHeader' => $header,
 			'proofreadPageFooter' => $footer,
 			'proofreadPageAddButtons' => $wgUser->isAllowed( 'pagequality' ),
@@ -978,7 +993,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$page_regexp = "/^<noinclude>(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s";
 		if( !preg_match( $page_regexp, $text, $m ) ) {
 			$this->load_index( $wgTitle );
-			list( $index_url, $prev_url, $next_url, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
+			list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
 			$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
 				."$header\n\n\n</noinclude>$text<noinclude>\n$footer</noinclude>";
 			return array( -1, null, $new_text );

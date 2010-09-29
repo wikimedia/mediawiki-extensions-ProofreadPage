@@ -1,54 +1,10 @@
 // Author : ThomasV - License : GPL
 
 function pr_init_tabs() {
-	var a = document.getElementById( 'p-namespaces' );
-	if( !a ) {
-		a = document.getElementById( 'p-cactions' );
-	}
-
-	if ( !a ) {
-		return;
-	}
-	var b = a.getElementsByTagName( 'ul' );
-	if ( !b ) {
-		return;
-	}
-
-	if( self.proofreadPageThumbURL ) {
-		var view_url = self.proofreadPageThumbURL.replace( '##WIDTH##', '' + self.proofreadPageWidth );
-		b[0].innerHTML = b[0].innerHTML + '<li id="ca-image">' +
-			'<span><a href="' + escapeQuotesHTML( view_url ) + '">' +
-			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_image' ) ) + '</a></span></li>';
-	}
-
-	if( self.proofreadPageIndexURL ) {
-		b[0].innerHTML = b[0].innerHTML + '<li id="ca-index">' +
-			'<span><a href="' + escapeQuotesHTML( proofreadPageIndexURL ) +
-			'" title="' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_index' ) ) + '">' +
-			'<img src="' + wgScriptPath + '/extensions/ProofreadPage/uparrow.png" alt="' +
-			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_index' ) ) +
-			'" width="15" height="15" /></a></span></li>';
-	}
-
-	if( self.proofreadPageNextURL ) {
-		b[0].innerHTML = '<li id="ca-next">' +
-			'<span><a href="' + escapeQuotesHTML( self.proofreadPageNextURL ) +
-			'" title="' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_nextpage' ) ) + '">' +
-			'<img src="' + wgScriptPath + '/extensions/ProofreadPage/rightarrow.png" alt="' +
-			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_nextpage' ) ) +
-			'" width="15" height="15" /></a></span></li>' +
-			b[0].innerHTML;
-	}
-
-	if( self.proofreadPagePrevURL ) {
-		b[0].innerHTML = '<li id="ca-prev">' +
-			'<span><a href="' + escapeQuotesHTML( self.proofreadPagePrevURL ) +
-			'" title="' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_prevpage' ) ) + '">' +
-			'<img src="' + wgScriptPath + '/extensions/ProofreadPage/leftarrow.png" alt="' +
-			escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_prevpage' ) ) +
-			'" width="15" height="15" /></a></span></li>' +
-			b[0].innerHTML;
-	}
+	$( '#ca-talk' ).prev().before( '<li id="ca-prev"><span>' + self.proofreadPagePrevLink + '</span></li>' );
+	$( '#ca-talk' ).prev().before( '<li id="ca-next"><span>' + self.proofreadPageNextLink + '</span></li>' );
+	$( '#ca-talk' ).after( '<li id="ca-index"><span>' + self.proofreadPageIndexLink + '</span></li>' );
+	$( '#ca-talk' ).after( '<li id="ca-image"><span>' + self.proofreadPageScanLink + '</span></li>' );
 }
 
 function pr_image_url( requested_width ) {
