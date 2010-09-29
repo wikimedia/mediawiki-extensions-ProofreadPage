@@ -71,8 +71,8 @@ class ProofreadPage {
 
 	}
 
-	public static function resourceLoaderRegisterModules() {
-		ResourceLoader::register(
+	public static function resourceLoaderRegisterModules( &$resourceLoader ) {
+		$resourceLoader->register(
 			'ext.proofreadpage.page',
 			new ResourceLoaderFileModule(
 				array(
@@ -93,7 +93,7 @@ class ProofreadPage {
 			)
 		);
 
-		ResourceLoader::register(
+		$resourceLoader->register(
 			'ext.proofreadpage.article',
 			new ResourceLoaderFileModule(
 				array(
@@ -102,7 +102,7 @@ class ProofreadPage {
 			)
 		);
 
-		ResourceLoader::register(
+		$resourceLoader->register(
 			'ext.proofreadpage.index',
 			new ResourceLoaderFileModule( array( 'scripts' => 'extensions/ProofreadPage/proofread_index.js' ) )
 		);
