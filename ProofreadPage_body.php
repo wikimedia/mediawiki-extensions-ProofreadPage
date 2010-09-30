@@ -388,10 +388,15 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			}
 			$thumbURL = $image->getThumbUrl( $thumbName );
 			$thumbURL = str_replace( '%23', '#', $thumbURL );
+			$scan_link = Html::element( 'a', 
+						    array( 'href' => str_replace( '##WIDTH##', "$width", $thumbURL ), 
+							   'title' =>  wfMsg( 'proofreadpage_image' ) ), 
+						    wfMsg( 'proofreadpage_image' ) );
 		} else {
 			$width = 0;
 			$height = 0;
 			$thumbURL = '';
+			$scan_link = '';
 		}
 
 		list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
@@ -403,8 +408,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 						      array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
 		$index_link = $index_title ? $sk->link( $index_title, $this->up_icon, 
 							array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : '';
-		$scan_link = $sk->link( $imageTitle, wfMsg( 'proofreadpage_image' ), 
-					array( 'title' => wfMsg( 'proofreadpage_image' ) ) );
 
 		$jsVars = array(
 			'proofreadPageWidth' => intval( $width ),
