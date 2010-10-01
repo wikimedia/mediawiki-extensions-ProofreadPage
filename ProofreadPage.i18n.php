@@ -2702,6 +2702,7 @@ $messages['la'] = array(
  */
 $messages['lb'] = array(
 	'indexpages' => 'Lëscht vun Index-Säiten',
+	'pageswithoutscans' => 'Säiten ouni Scan',
 	'proofreadpage_desc' => 'Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen',
 	'proofreadpage_namespace' => 'Säit',
 	'proofreadpage_index_namespace' => 'Index',
@@ -2753,6 +2754,7 @@ Bemierkungen||10',
 	'proofreadpage_specialpage_legend' => 'An den Index-Säite sichen',
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'Gescannten Editioun déi benotzt gouf fir dësen Text ze schreiwen',
+	'right-pagequality' => 'Qualitéitsindice vun der Säit änneren',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
