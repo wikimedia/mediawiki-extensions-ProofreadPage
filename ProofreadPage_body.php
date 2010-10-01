@@ -912,10 +912,12 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				$firstpage_title->getArticleID(),
 				$firstpage_title->getLatestRevID()
 			);
-			$parser->getOutput()->is_toc = true;
 		}
 
 		if( $header ) {
+			if( $header == 'toc') {
+				$parser->getOutput()->is_toc = true;
+			}
 			$text_links = $this->parse_index_links( $index_title );
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
