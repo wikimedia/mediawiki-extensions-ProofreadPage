@@ -666,9 +666,9 @@ function pr_fill_table() {
 	pr_zoom( 0 );
 }
 
-function pr_load_image( view_url ) {
+function pr_load_image( ) {
 	pr_container.innerHTML = '<img id="ProofReadImage" src="' +
-		escapeQuotesHTML( view_url ) + '" width="' + img_width + '" />';
+		escapeQuotesHTML( self.proofreadPageViewURL ) + '" width="' + img_width + '" />';
 	pr_zoom( 0 );
 }
 
@@ -721,7 +721,7 @@ function pr_setup() {
 		if( !w ) {
 			w = 1024; /* Default size in edit mode */
 		}
-		var view_url = pr_image_url( Math.min( w, self.proofreadPageWidth ) );
+		self.proofreadPageViewURL = pr_image_url( Math.min( w, self.proofreadPageWidth ) );
 		// prevent the container from being resized once the image is downloaded.
 		img_width = pr_horiz ? 0 : parseInt( pr_width / 2 - 70 ) - 20;
 		pr_container.onmousedown = pr_grab;
@@ -730,7 +730,8 @@ function pr_setup() {
 			pr_container.addEventListener( 'DOMMouseScroll', pr_zoom_wheel, false );
 		}
 		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
-		pr_load_image( view_url );
+		/* Load the image after page setup, so that user-defined hooks do not have to wait for it. */
+		hookEvent( 'load', pr_load_image );
 	}
 
 	table.setAttribute( 'id', 'textBoxTable' );
