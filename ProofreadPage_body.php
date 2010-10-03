@@ -32,11 +32,9 @@ class ProofreadPage {
 	/**
 	 * Constructor
 	 */
-	function ProofreadPage() {
-		global $wgParser, $wgHooks, $wgScriptPath;
-		$wgParser->setHook( 'pagelist', array( &$this, 'renderPageList' ) );
-		$wgParser->setHook( 'pages', array( &$this, 'renderPages' ) );
-		$wgParser->setHook( 'pagequality', array( &$this, 'pageQuality' ) );
+	function __construct() {
+		global $wgHooks, $wgScriptPath;
+		$wgHooks['ParserFirstCallInit'][] = array( $this, 'parserFirstCallInit' );
 		$wgHooks['BeforePageDisplay'][] = array( &$this, 'beforePageDisplay' );
 		$wgHooks['GetLinkColours'][] = array( &$this, 'getLinkColoursHook' );
 		$wgHooks['ImageOpenShowImageInlineBefore'][] = array( &$this, 'imageMessage' );
@@ -69,6 +67,19 @@ class ProofreadPage {
 								'alt' =>  wfMsg( 'proofreadpage_index' ),
 								'width' => 15, 'height' => 15 ) );
 
+	}
+
+	/**
+	 * Set up our custom parser hooks when initializing parser.
+	 * 
+	 * @param Parser $parser
+	 * @return boolean hook return value
+	 */
+	public function parserFirstCallInit( $parser ) {
+		$parser->setHook( 'pagelist', array( $this, 'renderPageList' ) );
+		$parser->setHook( 'pages', array( $this, 'renderPages' ) );
+		$parser->setHook( 'pagequality', array( $this, 'pageQuality' ) );
+		return true;
 	}
 
 	public static function resourceLoaderRegisterModules( &$resourceLoader ) {
