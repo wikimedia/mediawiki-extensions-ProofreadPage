@@ -1195,6 +1195,7 @@ Rimarkoj||10',
  */
 $messages['es'] = array(
 	'indexpages' => 'Lista de páginas indexadas',
+	'pageswithoutscans' => 'Páginas sin exploraciones',
 	'proofreadpage_desc' => 'Permitir una fácil comparación de un texto con el escaneado original',
 	'proofreadpage_namespace' => 'Página',
 	'proofreadpage_index_namespace' => 'Índice',
@@ -1246,6 +1247,7 @@ Comentarios||10',
 	'proofreadpage_specialpage_legend' => 'Buscar en páginas de índice',
 	'proofreadpage_source' => 'Fuente',
 	'proofreadpage_source_message' => 'Edición escaneada usada para establecer este texto',
+	'right-pagequality' => 'Modificar la marca de calidad de la página',
 );
 
 /** Estonian (Eesti)
@@ -3292,6 +3294,7 @@ Merknader||10',
  */
 $messages['no'] = array(
 	'indexpages' => 'Liste over innholdsfortegnelser',
+	'pageswithoutscans' => 'Sider uten skanninger',
 	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
 	'proofreadpage_namespace' => 'Side',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -3343,6 +3346,7 @@ Merknader||10',
 	'proofreadpage_specialpage_legend' => 'Søk i indekssider',
 	'proofreadpage_source' => 'Kilde',
 	'proofreadpage_source_message' => 'Scannet utgave brukt for å etablere denne teksten',
+	'right-pagequality' => 'Endre sidens kvalitetsflagg',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
