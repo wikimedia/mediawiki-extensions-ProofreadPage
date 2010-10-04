@@ -3558,7 +3558,7 @@ Nòte||10',
 	'proofreadpage_specialpage_legend' => 'Sërca ant le pàgine ëd tàula',
 	'proofreadpage_source' => 'Sorgiss',
 	'proofreadpage_source_message' => 'Edission digitalisà dovrà për stabilì sto test-sì',
-	'right-pagequality' => 'Modìfica bandiera ëd qualità dla pàgina',
+	'right-pagequality' => 'Modifiché ël drapò ëd qualità dla pàgina',
 );
 
 /** Pashto (پښتو)
