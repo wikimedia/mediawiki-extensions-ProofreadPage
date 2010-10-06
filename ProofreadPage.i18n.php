@@ -2554,9 +2554,11 @@ $messages['km'] = array(
  * @author Nayvik
  */
 $messages['kn'] = array(
+	'proofreadpage_namespace' => 'ಪುಟ',
 	'proofreadpage_image' => 'ಚಿತ್ರ',
 	'proofreadpage_nextpage' => 'ಮುಂದಿನ ಪುಟ',
 	'proofreadpage_prevpage' => 'ಹಿಂದಿನ ಪುಟ',
+	'proofreadpage_pages' => '{{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}',
 );
 
 /** Korean (한국어)
