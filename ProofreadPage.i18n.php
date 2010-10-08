@@ -3038,19 +3038,30 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Kaustubh
+ * @author Sankalpdravid
  */
 $messages['mr'] = array(
+	'indexpages' => 'अनुक्रमणिका पानांची यादी',
+	'pageswithoutscans' => 'छाननी न केलेली पाने',
 	'proofreadpage_desc' => 'मूळ प्रतीशी मजकूराची छाननी करण्याची सोपी पद्धत',
 	'proofreadpage_namespace' => 'पान',
 	'proofreadpage_index_namespace' => 'अनुक्रमणिका',
 	'proofreadpage_image' => 'चित्र',
 	'proofreadpage_index' => 'अनुक्रमणिका',
+	'proofreadpage_index_expected' => 'त्रुटी: अनुक्रमणिका अपेक्षित',
+	'proofreadpage_nosuch_index' => 'त्रुटी: अशी कोणतीही अनुक्रमणिका नाही',
+	'proofreadpage_nosuch_file' => 'त्रुटी: अशी कोणतीही फाइल नाही',
+	'proofreadpage_badpage' => 'चुकीचा फॉरमॅट',
+	'proofreadpage_indexdupe' => 'पुनरावृत्ती झालेला दुवा',
+	'proofreadpage_nologin' => 'प्रवेश केलेला नाही',
+	'proofreadpage_notallowed' => 'बदल करण्यास परवानगी नाही',
 	'proofreadpage_nextpage' => 'पुढील पान',
 	'proofreadpage_prevpage' => 'मागील पान',
 	'proofreadpage_header' => 'पानाच्या वरील मजकूर (noinclude):',
 	'proofreadpage_body' => 'पानाचा मुख्य मजकूर (जो वापरायचा आहे):',
 	'proofreadpage_footer' => 'पानाच्या खालील मजकूर (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude विभांगांची दृष्य पातळी बदला',
+	'proofreadpage_quality0_category' => 'मजकुराविना',
 	'proofreadpage_quality1_category' => 'तपासलेले नाही',
 	'proofreadpage_quality2_category' => 'समस्या करणारे',
 	'proofreadpage_quality3_category' => 'मजकूर तपासा',
@@ -3067,6 +3078,8 @@ $messages['mr'] = array(
 चित्र|मुखपृष्ठ चित्र
 पाने||२०
 शेरा||१०',
+	'proofreadpage_pages' => '{{PLURAL:$1|पान|पाने}}',
+	'proofreadpage_source' => 'स्रोत',
 );
 
 /** Malay (Bahasa Melayu)
