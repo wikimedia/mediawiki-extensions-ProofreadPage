@@ -677,6 +677,7 @@ Napomene||10',
  */
 $messages['ca'] = array(
 	'indexpages' => "Llista de pàgines d'índex",
+	'pageswithoutscans' => 'Pàgines sense escanejos',
 	'proofreadpage_desc' => "Permetre una fàcil comparació d'un text amb l'escanejat original",
 	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_index_namespace' => 'Index',
@@ -730,6 +731,7 @@ Sumari||15",
 	'proofreadpage_specialpage_legend' => "Cerca a les pàgines d'índex",
 	'proofreadpage_source' => 'Font',
 	'proofreadpage_source_message' => "Edició digitalitzada d'on s'ha extret aquest text",
+	'right-pagequality' => "Modifica l'indicador de qualitat de la pàgina",
 );
 
 /** Cebuano (Cebuano)
@@ -1952,6 +1954,7 @@ Napomene||10',
  */
 $messages['hsb'] = array(
 	'indexpages' => 'Lisćina indeksowych stronow',
+	'pageswithoutscans' => 'Strony bjez skanow',
 	'proofreadpage_desc' => 'Lochke přirunanje teksta z originalnym skanom dowolić',
 	'proofreadpage_namespace' => 'Strona',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -2003,6 +2006,7 @@ Přispomnjenki||10',
 	'proofreadpage_specialpage_legend' => 'Indeksowe strony přepytać',
 	'proofreadpage_source' => 'Žórło',
 	'proofreadpage_source_message' => 'Skanowane wudaće wužite za wutworjenje tutoho teksta',
+	'right-pagequality' => 'Kajkosć strony změnić',
 );
 
 /** Hungarian (Magyar)
@@ -4094,6 +4098,7 @@ Poznámky||10',
  */
 $messages['sl'] = array(
 	'indexpages' => 'Seznam kazalnih strani',
+	'pageswithoutscans' => 'Strani brez skeniranj',
 	'proofreadpage_desc' => 'Omogočajo enostavno primerjavo besedila z izvirno preslikavo',
 	'proofreadpage_namespace' => 'Stran',
 	'proofreadpage_index_namespace' => 'Kazalo',
@@ -4145,6 +4150,7 @@ Pripombe||10',
 	'proofreadpage_specialpage_legend' => 'Iskanje kazalnih strani',
 	'proofreadpage_source' => 'Vir',
 	'proofreadpage_source_message' => 'Preslikana izdaja, uporabljena za nastanek tega besedila',
+	'right-pagequality' => 'Spremeni označbo kakovosti strani',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
@@ -4816,6 +4822,7 @@ $messages['uk'] = array(
  */
 $messages['vec'] = array(
 	'indexpages' => 'Elenco de le pagine de indice',
+	'pageswithoutscans' => 'Pagine sensa scansion',
 	'proofreadpage_desc' => 'Parméte un façile confronto tra un testo e la so scansion original',
 	'proofreadpage_namespace' => 'Pajina',
 	'proofreadpage_index_namespace' => 'Indexe',
