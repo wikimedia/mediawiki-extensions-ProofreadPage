@@ -4027,6 +4027,13 @@ $messages['sc'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàginas}}',
 );
 
+/** Sicilian (Sicilianu)
+ * @author Gmelfi
+ */
+$messages['scn'] = array(
+	'proofreadpage_header' => 'Ntistazzioni (nun inclusa)',
+);
+
 /** Sinhala (සිංහල)
  * @author බිඟුවා
  */
