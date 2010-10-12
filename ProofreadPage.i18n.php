@@ -1355,6 +1355,7 @@ Oharrak||10',
  */
 $messages['fa'] = array(
 	'indexpages' => 'فهرست صفحات شاخص',
+	'pageswithoutscans' => 'صفحه‌های بدون پویش',
 	'proofreadpage_desc' => 'امکان مقایسهٔ آسان متن با نسخهٔ اصلی پویش شده را فراهم می‌آورد',
 	'proofreadpage_namespace' => 'صفحه',
 	'proofreadpage_index_namespace' => 'اندیس',
@@ -1406,6 +1407,7 @@ $messages['fa'] = array(
 	'proofreadpage_specialpage_legend' => 'جستجو در صفحات شاخص',
 	'proofreadpage_source' => 'منبع',
 	'proofreadpage_source_message' => 'برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده',
+	'right-pagequality' => 'تغییر پرچم کیفیت صفحه',
 );
 
 /** Finnish (Suomi)
