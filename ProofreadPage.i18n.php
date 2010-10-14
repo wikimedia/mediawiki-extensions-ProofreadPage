@@ -1133,6 +1133,7 @@ $messages['el'] = array(
  */
 $messages['eo'] = array(
 	'indexpages' => 'Listo de indeksaj paĝoj',
+	'pageswithoutscans' => 'Paĝoj sen skanaĵoj',
 	'proofreadpage_desc' => 'Permesas facilan komparon de teksto al la originala skanitaĵo.',
 	'proofreadpage_namespace' => 'Paĝo',
 	'proofreadpage_index_namespace' => 'Indekso',
