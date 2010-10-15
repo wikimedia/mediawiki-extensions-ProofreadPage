@@ -4884,6 +4884,7 @@ Note||10',
 	'proofreadpage_specialpage_legend' => 'Serca in te le pagine de indice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edission scanerizà doparà par inserir sto testo',
+	'right-pagequality' => "Canbiar l'indicador de qualità de la pagina",
 );
 
 /** Veps (Vepsan kel')
