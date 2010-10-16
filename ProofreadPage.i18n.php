@@ -2071,6 +2071,7 @@ Megjegyzések||10',
 	'proofreadpage_specialpage_legend' => 'Indexlapok keresése',
 	'proofreadpage_source' => 'Forrás',
 	'proofreadpage_source_message' => 'A szkennelt változat amin a szöveg alapszik',
+	'right-pagequality' => 'lapok minőség szerinti értékelésének módosítása',
 );
 
 /** Armenian (Հայերեն)
