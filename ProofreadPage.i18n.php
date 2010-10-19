@@ -2744,7 +2744,7 @@ $messages['lb'] = array(
 	'proofreadpage_nologintext' => "Dir musst [[Special:UserLogin|ageloggt]] si fir de Status vum Iwwerliese vu Säiten z'änneren.",
 	'proofreadpage_notallowed' => 'Ännerung net erlaabt',
 	'proofreadpage_notallowedtext' => "Dir sidd net berechtigt de Status vum Iwwerliese vun dëser Säit z'änneren.",
-	'proofreadpage_number_expected' => 'Feeler: et gof en numerische Wert erwaart',
+	'proofreadpage_number_expected' => 'Feeler: et gouf en numeresche Wäert erwaart',
 	'proofreadpage_interval_too_large' => 'Feeler: Intervall ze ze grouss',
 	'proofreadpage_invalid_interval' => 'Feeler: net valabelen Intervall',
 	'proofreadpage_nextpage' => 'Nächst Säit',
@@ -4787,9 +4787,11 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Ahonc
  * @author Prima klasy4na
+ * @author Тест
  */
 $messages['uk'] = array(
 	'indexpages' => 'Список індексових сторінок',
+	'pageswithoutscans' => 'Сторінки без сканувань',
 	'proofreadpage_desc' => 'Дозволяє легко порівнювати текст і відскановане зображення оригіналу',
 	'proofreadpage_namespace' => 'Сторінка',
 	'proofreadpage_index_namespace' => 'Індекс',
@@ -4841,6 +4843,7 @@ $messages['uk'] = array(
 	'proofreadpage_specialpage_legend' => 'Пошук сторінок індексації',
 	'proofreadpage_source' => 'Джерело',
 	'proofreadpage_source_message' => 'Для створення цього тексту використані відскановані видання',
+	'right-pagequality' => 'Змінювати статус якості сторінки',
 );
 
 /** Vèneto (Vèneto)
