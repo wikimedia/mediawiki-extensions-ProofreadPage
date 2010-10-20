@@ -2748,7 +2748,7 @@ $messages['lb'] = array(
 	'proofreadpage_interval_too_large' => 'Feeler: Intervall ze ze grouss',
 	'proofreadpage_invalid_interval' => 'Feeler: net valabelen Intervall',
 	'proofreadpage_nextpage' => 'Nächst Säit',
-	'proofreadpage_prevpage' => 'Säit virdrun',
+	'proofreadpage_prevpage' => 'Vireg Säit',
 	'proofreadpage_header' => 'Entête (noinclude):',
 	'proofreadpage_body' => 'Inhalt vun der Säit (Transklusioun):',
 	'proofreadpage_footer' => 'Foussnote (noinclude):',
@@ -3965,6 +3965,15 @@ $messages['ru'] = array(
  */
 $messages['rue'] = array(
 	'proofreadpage_namespace' => 'Сторінка',
+	'proofreadpage_nextpage' => 'Далша сторінка',
+	'proofreadpage_prevpage' => 'Попередня сторінка',
+	'proofreadpage_header' => 'Головка (noinclude):',
+	'proofreadpage_body' => 'Тїло сторінкы (буде ся включати):',
+	'proofreadpage_footer' => 'Пятка (noinclude):',
+	'proofreadpage_quality0_category' => 'Без тексту',
+	'proofreadpage_quality2_category' => 'Проблематічна',
+	'proofreadpage_index_listofpages' => 'Список сторінок',
+	'proofreadpage_page_status' => 'Статус сторінкы',
 	'proofreadpage_js_attributes' => 'Автор Назва Рік Выдавательство',
 	'proofreadpage_index_attributes' => 'Автор
 Назва
@@ -3974,6 +3983,8 @@ $messages['rue'] = array(
 Образок|Обалка
 Сторінок||20
 Познамок||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|сторінка|сторінкы|сторінок}}',
+	'proofreadpage_source' => 'Жрідло',
 );
 
 /** Yakut (Саха тыла)
