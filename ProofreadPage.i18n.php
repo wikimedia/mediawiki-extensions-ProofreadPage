@@ -1603,6 +1603,7 @@ Comentèros||10',
 	'proofreadpage_specialpage_legend' => 'Rechèrchiér dens les pâges d’endèxe',
 	'proofreadpage_source' => 'Sôrsa',
 	'proofreadpage_source_message' => 'Èdicion scanâ que vint de cél tèxto',
+	'right-pagequality' => 'Changiér lo drapél de qualitât de la pâge',
 );
 
 /** Friulian (Furlan)
@@ -1858,6 +1859,7 @@ $messages['he'] = array(
 	'proofreadpage_specialpage_legend' => 'חיפוש בדפי האינדקס',
 	'proofreadpage_source' => 'מקור',
 	'proofreadpage_source_message' => 'הגרסה הסרוקה ששימשה להכנת טקסט זה',
+	'right-pagequality' => 'החלפת דגל האיכות של הדף',
 );
 
 /** Hindi (हिन्दी)
@@ -2913,6 +2915,7 @@ Pastabos||10',
 );
 
 /** Latvian (Latviešu)
+ * @author Papuass
  * @author Xil
  * @author Yyy
  */
@@ -2923,9 +2926,22 @@ $messages['lv'] = array(
 	'proofreadpage_index' => 'Saturs',
 	'proofreadpage_nextpage' => 'Nākamā lapa',
 	'proofreadpage_prevpage' => 'Iepriekšējā lapa',
+	'proofreadpage_quality0_category' => 'Bez teksta',
 	'proofreadpage_quality1_category' => 'Nav pārlasīts',
 	'proofreadpage_quality2_category' => 'Problemātisks',
 	'proofreadpage_quality3_category' => 'Pārlasīts',
+	'proofreadpage_index_listofpages' => 'Lapu saraksts',
+	'proofreadpage_page_status' => 'Lapas statuss',
+	'proofreadpage_js_attributes' => 'Autors Nosaukums Gads Izdevējs',
+	'proofreadpage_index_attributes' => 'Autors
+Nosaukums
+Gads|Publikācijas gads
+Izdevējs
+Avots
+Attēls|Vāka attēls
+Lapas||20
+Piezīmes||10',
+	'proofreadpage_source' => 'Avots',
 );
 
 /** Eastern Mari (Олык Марий)
@@ -3964,7 +3980,17 @@ $messages['ru'] = array(
  * @author Gazeb
  */
 $messages['rue'] = array(
+	'indexpages' => 'Список індексовых сторінок',
+	'pageswithoutscans' => 'Сторінкы без скеновань',
 	'proofreadpage_namespace' => 'Сторінка',
+	'proofreadpage_index_namespace' => 'Індекс',
+	'proofreadpage_image' => 'Образок',
+	'proofreadpage_index' => 'Індекс',
+	'proofreadpage_nosuch_file' => 'Хыба: такый файл не єствує',
+	'proofreadpage_badpage' => 'Неправилный формат',
+	'proofreadpage_indexdupe' => 'Дупліцітный одказ',
+	'proofreadpage_nologin' => 'Не сьте приголошеный(а)',
+	'proofreadpage_notallowed' => 'Зміна не є доволена',
 	'proofreadpage_nextpage' => 'Далша сторінка',
 	'proofreadpage_prevpage' => 'Попередня сторінка',
 	'proofreadpage_header' => 'Головка (noinclude):',
@@ -3972,6 +3998,8 @@ $messages['rue'] = array(
 	'proofreadpage_footer' => 'Пятка (noinclude):',
 	'proofreadpage_quality0_category' => 'Без тексту',
 	'proofreadpage_quality2_category' => 'Проблематічна',
+	'proofreadpage_quality4_category' => 'Перевірена',
+	'proofreadpage_quality0_message' => 'Тота сторінка не потребує коректуры',
 	'proofreadpage_index_listofpages' => 'Список сторінок',
 	'proofreadpage_page_status' => 'Статус сторінкы',
 	'proofreadpage_js_attributes' => 'Автор Назва Рік Выдавательство',
