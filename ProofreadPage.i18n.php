@@ -4103,6 +4103,7 @@ $messages['si'] = array(
  */
 $messages['sk'] = array(
 	'indexpages' => 'Zoznam indexových stránok',
+	'pageswithoutscans' => 'Stránky bez prehliadnutia',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnanie textu s originálnym skenom',
 	'proofreadpage_namespace' => 'Stránka',
 	'proofreadpage_index_namespace' => 'Index',
@@ -4154,6 +4155,7 @@ Poznámky||10',
 	'proofreadpage_specialpage_legend' => 'Hľadať v stránkach indexu',
 	'proofreadpage_source' => 'Zdroj',
 	'proofreadpage_source_message' => 'Naskenované vydanie použité pri vzniku tohto textu',
+	'right-pagequality' => 'Zmeniť príznak kvality stránky',
 );
 
 /** Slovenian (Slovenščina)
@@ -4622,6 +4624,7 @@ $messages['th'] = array(
  */
 $messages['tk'] = array(
 	'indexpages' => 'Indeks sahypalarynyň sanawy',
+	'pageswithoutscans' => 'Skansyz sahypalar',
 	'proofreadpage_desc' => 'Original skanirleme bilen tekstiň aňsat deňedirilmegine rugsat berýär',
 	'proofreadpage_namespace' => 'Sahypa',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -4673,6 +4676,7 @@ Bellikler||10',
 	'proofreadpage_specialpage_legend' => 'Indeks sahypalaryny gözle',
 	'proofreadpage_source' => 'Çeşme',
 	'proofreadpage_source_message' => 'Bu teksti döretmek üçin ulanylan skanirlenen wersiýa',
+	'right-pagequality' => 'Sahypanyň hil baýdagyny üýtget',
 );
 
 /** Tagalog (Tagalog)
