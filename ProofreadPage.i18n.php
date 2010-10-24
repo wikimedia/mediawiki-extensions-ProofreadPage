@@ -270,6 +270,11 @@ $messages['arc'] = array(
 	'proofreadpage_image' => 'ܨܘܪܬܐ',
 	'proofreadpage_indexdupe' => 'ܐܣܘܪܐ ܥܦܝܦܐ',
 	'proofreadpage_nologin' => 'ܠܐ ܥܠܝܠܐ',
+	'proofreadpage_nextpage' => 'ܦܐܬܐ ܐܚܪܬܐ',
+	'proofreadpage_prevpage' => 'ܦܐܬܐ ܩܕܝܡܬܐ',
+	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܕܦ̈ܐ',
+	'proofreadpage_pages' => '{{PLURAL:$1|ܕܦܐ|ܕܦ̈ܐ}}',
+	'proofreadpage_source' => 'ܥܩܪܐ',
 );
 
 /** Araucanian (Mapudungun)
@@ -1808,6 +1813,7 @@ $messages['haw'] = array(
  */
 $messages['he'] = array(
 	'indexpages' => 'רשימת דפי אינדקס',
+	'pageswithoutscans' => 'דפים ללא סריקות',
 	'proofreadpage_desc' => 'השוואה קלה של טקסט לסריקה המקורית שלו',
 	'proofreadpage_namespace' => 'דף',
 	'proofreadpage_index_namespace' => 'אינדקס',
@@ -3073,6 +3079,14 @@ $messages['ml'] = array(
 	'right-pagequality' => 'താളിന്റെ ഗുണമേന്മാ പതാകയിൽ മാറ്റം വരുത്തുക',
 );
 
+/** Mongolian (Монгол)
+ * @author Chinneeb
+ */
+$messages['mn'] = array(
+	'proofreadpage_namespace' => 'Хуудас',
+	'proofreadpage_pages' => '{{PLURAL:$1|хуудас}}',
+);
+
 /** Marathi (मराठी)
  * @author Kaustubh
  * @author Sankalpdravid
@@ -3857,9 +3871,11 @@ Comentarii||10',
 
 /** Tarandíne (Tarandíne)
  * @author Joetaras
+ * @author Reder
  */
 $messages['roa-tara'] = array(
 	'indexpages' => 'Elenghe de le pàggene de indice',
+	'pageswithoutscans' => 'Pàggene senze scansiune',
 	'proofreadpage_desc' => "Permette combronde facele de teste cu 'a scanzione origgenale",
 	'proofreadpage_namespace' => 'Pàgene',
 	'proofreadpage_index_namespace' => 'Indice',
@@ -3991,6 +4007,8 @@ $messages['rue'] = array(
 	'proofreadpage_indexdupe' => 'Дупліцітный одказ',
 	'proofreadpage_nologin' => 'Не сьте приголошеный(а)',
 	'proofreadpage_notallowed' => 'Зміна не є доволена',
+	'proofreadpage_interval_too_large' => 'Хыба: дуже великый інтервал',
+	'proofreadpage_invalid_interval' => 'Хыба: неправилны інтервал',
 	'proofreadpage_nextpage' => 'Далша сторінка',
 	'proofreadpage_prevpage' => 'Попередня сторінка',
 	'proofreadpage_header' => 'Головка (noinclude):',
