@@ -51,7 +51,7 @@ function pr_make_edit_area( container, text ) {
 			pageBody = text;
 			pageFooter = proofreadPageFooter;
 			if( document.editform ) {
-				document.editform.elements['wpSummary'].value = '/* ' + mediaWiki.msg.get( 'proofreadpage_quality1_category' ) + ' */ ';
+				document.editform.elements['wpSummary'].value = '/* ' + mediaWiki.message( 'proofreadpage_quality1_category' ) + ' */ ';
 			}
 		}
 	}
@@ -125,15 +125,15 @@ function pr_make_edit_area( container, text ) {
 	container.innerHTML = '' +
 		'<div id="prp_header" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_header' ) ) + '</span>' +
+		escapeQuotesHTML( mediaWiki.message( 'proofreadpage_header' ) ) + '</span>' +
 		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + pageHeader + '</textarea><br />' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_body' ) ) + '</span></div>' +
+		escapeQuotesHTML( mediaWiki.message( 'proofreadpage_body' ) ) + '</span></div>' +
 		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' +
 			pageBody + '</textarea>' +
 		'<div id="prp_footer" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_footer' ) ) + '</span><br />' +
+		escapeQuotesHTML( mediaWiki.message( 'proofreadpage_footer' ) ) + '</span><br />' +
 		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>' +
 		pageFooter + '</textarea></div>';
 }
@@ -775,8 +775,8 @@ function pr_setup() {
 		image.className = 'mw-toolbar-editbutton';
 		image.src = wgScriptPath + '/extensions/ProofreadPage/button_category_plus.png';
 		image.border = 0;
-		image.alt = mediaWiki.msg.get( 'proofreadpage_toggleheaders' );
-		image.title = mediaWiki.msg.get( 'proofreadpage_toggleheaders' );
+		image.alt = mediaWiki.message( 'proofreadpage_toggleheaders' );
+		image.title = mediaWiki.message( 'proofreadpage_toggleheaders' );
 		image.style.cursor = 'pointer';
 		image.onclick = pr_toggle_visibility;
 
@@ -919,19 +919,19 @@ self.pr_add_quality = function( form, value ) {
 	var text = '';
 	switch( value ) {
 		case 0:
-			text = mediaWiki.msg.get( 'proofreadpage_quality0_category' );
+			text = mediaWiki.message( 'proofreadpage_quality0_category' );
 			break;
 		case 1:
-			text = mediaWiki.msg.get( 'proofreadpage_quality1_category' );
+			text = mediaWiki.message( 'proofreadpage_quality1_category' );
 			break;
 		case 2:
-			text = mediaWiki.msg.get( 'proofreadpage_quality2_category' );
+			text = mediaWiki.message( 'proofreadpage_quality2_category' );
 			break;
 		case 3:
-			text = mediaWiki.msg.get( 'proofreadpage_quality3_category' );
+			text = mediaWiki.message( 'proofreadpage_quality3_category' );
 			break;
 		case 4:
-			text = mediaWiki.msg.get( 'proofreadpage_quality4_category' );
+			text = mediaWiki.message( 'proofreadpage_quality4_category' );
 			break;
 	}
 	form.elements['wpSummary'].value = '/* ' + text + ' */ ';
@@ -963,7 +963,7 @@ function pr_add_quality_buttons() {
 +'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)" tabindex=4> </span>'
 +'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)" tabindex=4> </span>'
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
-	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( mediaWiki.msg.get( 'proofreadpage_page_status' ) );
+	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( mediaWiki.message( 'proofreadpage_page_status' ) );
 
 	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';
