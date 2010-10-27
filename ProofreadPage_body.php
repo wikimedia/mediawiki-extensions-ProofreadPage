@@ -83,11 +83,14 @@ class ProofreadPage {
 	}
 
 	public static function resourceLoaderRegisterModules( &$resourceLoader ) {
+		global $wgExtensionAssetsPath;
+		$localpath = dirname( __FILE__ );
+		$remotepath = "$wgExtensionAssetsPath/ProofreadPage";
 		$resourceLoader->register(
 			'ext.proofreadpage.page',
 			new ResourceLoaderFileModule(
 				array(
-					'scripts' => 'extensions/ProofreadPage/proofread.js',
+					'scripts' => 'proofread.js',
 					'messages' => array(
 						'proofreadpage_header',
 						'proofreadpage_body',
@@ -100,7 +103,7 @@ class ProofreadPage {
 						'proofreadpage_quality3_category',
 						'proofreadpage_quality4_category',
 					)
-				)
+				), $basepath, $remotepath
 			)
 		);
 
@@ -108,14 +111,17 @@ class ProofreadPage {
 			'ext.proofreadpage.article',
 			new ResourceLoaderFileModule(
 				array(
-					'scripts' => 'extensions/ProofreadPage/proofread_article.js'
-				)
+					'scripts' => 'proofread_article.js'
+				), $basepath, $remotepath
 			)
 		);
 
 		$resourceLoader->register(
 			'ext.proofreadpage.index',
-			new ResourceLoaderFileModule( array( 'scripts' => 'extensions/ProofreadPage/proofread_index.js' ) )
+			new ResourceLoaderFileModule(
+				array( 'scripts' => 'proofread_index.js' ),
+				$basepath, $remotepath
+			)
 		);
 
 		return true;
