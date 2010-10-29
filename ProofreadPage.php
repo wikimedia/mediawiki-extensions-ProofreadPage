@@ -19,8 +19,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
-$wgExtensionFunctions[] = 'wfProofreadPage';
-
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionAliasesFiles['ProofreadPage'] = $dir . 'ProofreadPage.alias.php';
@@ -48,8 +46,3 @@ $wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
 
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
-
-function wfProofreadPage() {
-	new ProofreadPage;
-	return true;
-}
