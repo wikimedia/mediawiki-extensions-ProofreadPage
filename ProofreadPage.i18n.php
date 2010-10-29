@@ -3025,6 +3025,7 @@ $messages['mk'] = array(
  */
 $messages['ml'] = array(
 	'indexpages' => 'സൂചികാ താളുകളുടെ പട്ടിക',
+	'pageswithoutscans' => 'സ്കാനുകൾ ഇല്ലാത്ത താളുകൾ',
 	'proofreadpage_desc' => 'യഥാർത്ഥ സ്കാനും എഴുത്തും തമ്മിലുള്ള ലളിതമായ ഒത്തുനോക്കൽ അനുവദിക്കുക',
 	'proofreadpage_namespace' => 'താൾ',
 	'proofreadpage_index_namespace' => 'ഇൻഡെക്സ്',
