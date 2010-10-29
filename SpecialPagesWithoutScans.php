@@ -40,7 +40,6 @@ class PagesWithoutScans extends SpecialPage {
 class PagesWithoutScansQuery extends QueryPage {
 
 	function __construct() {
-		wfLoadExtensionMessages( 'ProofreadPage' );
 		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 	}
 

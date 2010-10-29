@@ -49,8 +49,6 @@ class ProofreadPage {
 		$wgHooks['OutputPageParserOutput'][] = array( &$this, 'OutputPageParserOutput' );
 		$wgHooks['ResourceLoaderRegisterModules'][] = array( &$this, 'resourceLoaderRegisterModules' );
 
-		wfLoadExtensionMessages( 'ProofreadPage' );
-
 		/* Namespaces */
 		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
 		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );

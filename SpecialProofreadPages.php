@@ -15,7 +15,6 @@ class ProofreadPages extends SpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'IndexPages' );
-		wfLoadExtensionMessages( 'ProofreadPage' );
 		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 	}
 
