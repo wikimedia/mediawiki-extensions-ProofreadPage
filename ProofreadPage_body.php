@@ -471,21 +471,18 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$page_namespace = $this->page_namespace;
 		$dbr = wfGetDB( DB_SLAVE );
 		$catlinks = $dbr->tableName( 'categorylinks' );
+
+		$values = array();
 		foreach ( $page_ids as $id => $pdbk ) {
 			// consider only link in page namespace
 			if ( preg_match( "/^$page_namespace:(.*?)$/", $pdbk ) ) {
 				$colours[$pdbk] = 'quality1';
-				if ( !isset( $query ) ) {
-					$query = "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(";
-				} else {
-					$query .= ', ';
-				}
-				$query .= intval( $id );
+				$values[] = intval( $id );
 			}
 		}
 
-		if ( isset( $query ) ) {
-			$query .= ')';
+		if ( count( $values ) ) {
+			$query .= "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(" . implode( ",", $values ) . ")";
 			$res = $dbr->query( $query, __METHOD__ );
 
 			foreach ( $res as $x ) {
