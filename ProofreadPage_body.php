@@ -101,7 +101,7 @@ class ProofreadPage {
 						'proofreadpage_quality3_category',
 						'proofreadpage_quality4_category',
 					)
-				), $basepath, $remotepath
+				), $localpath, $remotepath
 			)
 		);
 
@@ -110,7 +110,7 @@ class ProofreadPage {
 			new ResourceLoaderFileModule(
 				array(
 					'scripts' => 'proofread_article.js'
-				), $basepath, $remotepath
+				), $localpath, $remotepath
 			)
 		);
 
@@ -118,7 +118,7 @@ class ProofreadPage {
 			'ext.proofreadpage.index',
 			new ResourceLoaderFileModule(
 				array( 'scripts' => 'proofread_index.js' ),
-				$basepath, $remotepath
+				$localpath, $remotepath
 			)
 		);
 
