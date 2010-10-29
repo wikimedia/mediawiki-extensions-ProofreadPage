@@ -343,7 +343,7 @@ class ProofreadPage {
 	 * Append javascript variables and code to the page.
 	 */
 	function beforePageDisplay( &$out ) {
-		global $wgTitle, $wgJsMimeType, $wgScriptPath,  $wgRequest, $wgProofreadPageVersion;
+		global $wgTitle, $wgRequest;
 
 		$action = $wgRequest->getVal( 'action' );
 		$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
@@ -662,8 +662,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	 * @todo FIXME: display whether page has been proofread by the user or by someone else
 	 */
 	function pageQuality( $input, $args, $parser ) {
-		global $wgUser;
-
 		$page_namespace = $this->page_namespace;
 		if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
 			return '';
@@ -685,8 +683,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	 * Display a list of coloured links to pages
 	 */
 	function renderPageList( $input, $args, $parser ) {
-		global $wgUser;
-
 		$page_namespace = $this->page_namespace;
 		$index_namespace = $this->index_namespace;
 		if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText(), $m ) ) {
@@ -1463,9 +1459,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$pr_index = $dbr->tableName( 'pr_index' );
 		$page = $dbr->tableName( 'page' );
-		$pagelinks = $dbr->tableName( 'pagelinks' );
 		$templatelinks = $dbr->tableName( 'templatelinks' );
 		$catlinks = $dbr->tableName( 'categorylinks' );
 
@@ -1552,7 +1546,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			return true;
 		}
 
-		$indexlink = '';
 		if( $indextitle ) {
 			$sk = $wgUser->getSkin();
 			$nt = Title::makeTitleSafe( $index_ns_index, $indextitle );
