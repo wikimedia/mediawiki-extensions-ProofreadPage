@@ -152,7 +152,7 @@ class ProofreadPage {
 			__METHOD__
 		);
 
-		while ( $x = $dbr->fetchObject( $result ) ) {
+		foreach ( $result as $x ) {
 			$ref_title = Title::makeTitle( $x->page_namespace, $x->page_title );
 			if ( preg_match( "/^$index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
 				$title->pr_index_title = $ref_title->getPrefixedText();
@@ -488,7 +488,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			$query .= ')';
 			$res = $dbr->query( $query, __METHOD__ );
 
-			while ( $x = $dbr->fetchObject( $res ) ) {
+			foreach ( $res as $x ) {
 				$pdbk = $page_ids[$x->cl_from];
 				switch( $x->cl_to ) {
 				case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ):
@@ -882,7 +882,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 						    );
 				
 				if( $res ) {
-					while( $o = $dbr->fetchObject( $res ) ) {
+					foreach ( $res as $o ) {
 						array_push( $q0_pages, $o->page_title );
 					}
 				}
