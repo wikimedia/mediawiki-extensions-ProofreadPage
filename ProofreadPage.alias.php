@@ -8,10 +8,16 @@
 
 $specialPageAliases = array();
 
-/** English */
+/** English (English) */
 $specialPageAliases['en'] = array(
-	'IndexPages'   => array( 'IndexPages' ),
+	'IndexPages' => array( 'IndexPages' ),
 	'PagesWithoutScans' => array( 'PagesWithoutScans' ),
+);
+
+/** Japanese (日本語) */
+$specialPageAliases['ja'] = array(
+	'IndexPages' => array( '索引ページ' ),
+	'PagesWithoutScans' => array( 'スキャンのないページ' ),
 );
 
 /**
