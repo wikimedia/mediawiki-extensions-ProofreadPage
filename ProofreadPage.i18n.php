@@ -264,6 +264,7 @@ $messages['ar'] = array(
 
 /** Aramaic (ܐܪܡܝܐ)
  * @author Basharh
+ * @author Michaelovic
  */
 $messages['arc'] = array(
 	'proofreadpage_namespace' => 'ܦܐܬܐ',
@@ -274,7 +275,7 @@ $messages['arc'] = array(
 	'proofreadpage_prevpage' => 'ܦܐܬܐ ܩܕܝܡܬܐ',
 	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܕܦ̈ܐ',
 	'proofreadpage_pages' => '{{PLURAL:$1|ܕܦܐ|ܕܦ̈ܐ}}',
-	'proofreadpage_source' => 'ܥܩܪܐ',
+	'proofreadpage_source' => 'ܡܒܘܥܐ',
 );
 
 /** Araucanian (Mapudungun)
@@ -3312,6 +3313,7 @@ Opmerkingen||10",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Diupwijk
  * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
@@ -3325,6 +3327,7 @@ $messages['nn'] = array(
 	'proofreadpage_index_expected' => 'Feil: Indeks forventa',
 	'proofreadpage_nosuch_index' => 'Feil: ingen slik indeks',
 	'proofreadpage_nosuch_file' => 'Feil: inga slik fil',
+	'proofreadpage_nologin' => 'Ikkje innlogga',
 	'proofreadpage_number_expected' => 'Feil: Talverdi forventa',
 	'proofreadpage_interval_too_large' => 'Feil: for stort intervall',
 	'proofreadpage_invalid_interval' => 'Feil: ugyldig intervall',
@@ -3351,6 +3354,8 @@ Kjelda
 Bilete|Omslagsbilete
 Sider||20
 Merknader||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
+	'proofreadpage_source' => 'Kjelde',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -3928,6 +3933,7 @@ Note||10",
 	'proofreadpage_specialpage_legend' => 'Cirche le pàggene de indice',
 	'proofreadpage_source' => 'Sorgende',
 	'proofreadpage_source_message' => 'Edizione scanzionate ausate pe definì stu teste',
+	'right-pagequality' => "Cange 'a bandiere d'a qualità d'a pàgene",
 );
 
 /** Russian (Русский)
@@ -4373,6 +4379,7 @@ Catetan||10',
 
 /** Swedish (Svenska)
  * @author Cohan
+ * @author Diupwijk
  * @author Fluff
  * @author Lejonel
  * @author M.M.S.
@@ -4433,7 +4440,7 @@ Anmärkningar||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|sida|sidor}}',
 	'proofreadpage_specialpage_legend' => 'Sök i indexsidorna',
 	'proofreadpage_source' => 'Källa',
-	'proofreadpage_source_message' => 'Scannat orginal använt för att skapa denna text',
+	'proofreadpage_source_message' => 'Scannat original använt för att skapa denna text',
 	'right-pagequality' => 'Ändra sidans kvalitetsflagga',
 );
 
