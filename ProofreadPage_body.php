@@ -1226,7 +1226,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$pr_index = $dbr->tableName( 'pr_index' );
 		$query = "SELECT * FROM $pr_index WHERE pr_page_id=" . $index_id;
 		$res = $dbr->query( $query, __METHOD__ );
-		if( $x = $dbr->fetchObject( $res ) ) {
+		$x = $dbr->fetchObject( $res );
+		if( $x ) {
 			$n  = $x->pr_count;
 			$n0 = $x->pr_q0;
 			$n1 = $x->pr_q1;
