@@ -125,10 +125,15 @@ class ProofreadPage {
 		return true;
 	}
 
-	function schema_update() {
-		global $wgExtNewTables;
+	function schema_update( $updater = null ) {
 		$base = dirname( __FILE__ );
-		$wgExtNewTables[] = array( 'pr_index', "$base/ProofreadPage.sql" );
+		if ( $updater === null ) {
+			global $wgExtNewTables;
+			$wgExtNewTables[] = array( 'pr_index', "$base/ProofreadPage.sql" );
+		} else {
+			$updater->addExtensionUpdate( array( 'addTable', 'pr_index',
+				"$base/ProofreadPage.sql", true ) );
+		}
 		return true;
 	}
 
