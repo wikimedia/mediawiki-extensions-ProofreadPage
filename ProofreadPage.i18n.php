@@ -256,7 +256,7 @@ $messages['ar'] = array(
 الصورة|صورة الغلاف
 الصفحات||20
 الملاحظات||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|صفحة|صفحات}}',
+	'proofreadpage_pages' => '{{PLURAL:$1||صفحة واحدة|صفحتان|$1 صفحات|$1 صفحة}}',
 	'proofreadpage_specialpage_legend' => 'بحث صفحات الفهرس',
 	'proofreadpage_source' => 'المصدر',
 	'proofreadpage_source_message' => 'الإصدارة المفحوصة المستخدمة لإنشاء هذا النص',
