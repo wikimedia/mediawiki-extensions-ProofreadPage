@@ -513,6 +513,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		}
 	}
 
+	/**
+	 * @param  $imgpage ImagePage:
+	 * @param  $out OutputPage:
+	 * @return bool
+	 */
 	function imageMessage( &$imgpage, &$out ) {
 		global $wgUser;
 		$index_namespace = $this->index_namespace;
