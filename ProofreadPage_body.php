@@ -181,7 +181,7 @@ class ProofreadPage {
 		$image = wfFindFile( $imageTitle );
 
 		// if it is multipage, we use the page order of the file
-		if ( $image && $image->exists() && $image->isMultiPage() ) {
+		if ( $image && $image->exists() && $image->isMultipage() ) {
 			$name = $image->getTitle()->getText();
 			$index_name = "$index_namespace:$name";
 
@@ -209,7 +209,7 @@ class ProofreadPage {
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
 		$image = wfFindFile( $imageTitle );
 		// if multipage, we use the page order, but we should read pagenum from the index
-		if ( $image && $image->exists() && $image->isMultiPage() ) {
+		if ( $image && $image->exists() && $image->isMultipage() ) {
 			$pagenr = 1;
 			$parts = explode( '/', $title->getText() );
 			if ( count( $parts ) > 1 ) {
@@ -522,7 +522,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		global $wgUser;
 		$index_namespace = $this->index_namespace;
 		$image = $imgpage->img;
-		if ( !$image->isMultiPage() ) {
+		if ( !$image->isMultipage() ) {
 			return true;
 		}
 		$sk = $wgUser->getSkin();
@@ -702,7 +702,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		}
 
 		$image = wfFindFile( $imageTitle );
-		if ( !( $image && $image->isMultiPage() && $image->pageCount() ) ) {
+		if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
 		}
 
@@ -797,7 +797,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
 				}
 				$image = wfFindFile( $imageTitle );
-				if ( !( $image && $image->isMultiPage() && $image->pageCount() ) ) {
+				if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
 				}
 				$count = $image->pageCount();
@@ -1390,7 +1390,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
 			if ( $imageTitle ) {
 				$image = wfFindFile( $imageTitle );
-				if ( $image && $image->isMultiPage() && $image->pageCount() ) {
+				if ( $image && $image->isMultipage() && $image->pageCount() ) {
 					$n = $image->pageCount();
 					for ( $i = 1; $i <= $n; $i++ ) {
 						$page = $dbr->strencode( $index_title->getDBKey() . '/' . $i );
