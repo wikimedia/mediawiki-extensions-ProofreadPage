@@ -1008,6 +1008,7 @@ beyanati||10',
  */
 $messages['dsb'] = array(
 	'indexpages' => 'Lisćina indeksowych bokow',
+	'pageswithoutscans' => 'Boki bźez skanowanjow',
 	'proofreadpage_desc' => 'Zmóžnja lažke pśirownowanje teksta z originalnym skanom',
 	'proofreadpage_namespace' => 'Bok',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -1059,6 +1060,7 @@ Pśispomnjeśa||10',
 	'proofreadpage_specialpage_legend' => 'Indeksowe boki pśepytaś',
 	'proofreadpage_source' => 'Žrědło',
 	'proofreadpage_source_message' => 'Skanowane wudaśe wužyte za napóranje toś togo teksta',
+	'right-pagequality' => 'Kawlitu boka změniś',
 );
 
 /** Ewe (Eʋegbe) */
