@@ -49,6 +49,35 @@ $wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
 
+# Client-side resources
+$prpResourceTemplate = array(
+	'localBasePath' => $dir,
+	'remoteExtPath' => 'ProofreadPage'
+);
+$wgResourceModules += array(
+	'ext.proofreadpage.page' => $prpResourceTemplate + array(
+		'scripts' => 'proofread.js',
+		'messages' => array(
+			'proofreadpage_header',
+			'proofreadpage_body',
+			'proofreadpage_footer',
+			'proofreadpage_toggleheaders',
+			'proofreadpage_page_status',
+			'proofreadpage_quality0_category',
+			'proofreadpage_quality1_category',
+			'proofreadpage_quality2_category',
+			'proofreadpage_quality3_category',
+			'proofreadpage_quality4_category',
+		)
+	),
+	'ext.proofreadpage.article' => $prpResourceTemplate + array(
+		'scripts' => 'proofread_article.js'
+	),
+	'ext.proofreadpage.index' => $prpResourceTemplate + array(
+		'scripts' => 'proofread_index.js'
+	),
+);
+
 function wfProofreadPage() {
 	new ProofreadPage;
 	return true;

@@ -47,7 +47,6 @@ class ProofreadPage {
 		$wgHooks['LoadExtensionSchemaUpdates'][] = array( &$this, 'schema_update' );
 		$wgHooks['EditPage::importFormData'][] = array( &$this, 'importFormData' );
 		$wgHooks['OutputPageParserOutput'][] = array( &$this, 'OutputPageParserOutput' );
-		$wgHooks['ResourceLoaderRegisterModules'][] = array( &$this, 'resourceLoaderRegisterModules' );
 
 		/* Namespaces */
 		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
@@ -77,51 +76,6 @@ class ProofreadPage {
 		$parser->setHook( 'pagelist', array( $this, 'renderPageList' ) );
 		$parser->setHook( 'pages', array( $this, 'renderPages' ) );
 		$parser->setHook( 'pagequality', array( $this, 'pageQuality' ) );
-		return true;
-	}
-
-	public static function resourceLoaderRegisterModules( &$resourceLoader ) {
-		global $wgExtensionAssetsPath;
-		$localpath = dirname( __FILE__ );
-		$remotepath = "$wgExtensionAssetsPath/ProofreadPage";
-		$resourceLoader->register(
-			'ext.proofreadpage.page',
-			new ResourceLoaderFileModule(
-				array(
-					'scripts' => 'proofread.js',
-					'messages' => array(
-						'proofreadpage_header',
-						'proofreadpage_body',
-						'proofreadpage_footer',
-						'proofreadpage_toggleheaders',
-						'proofreadpage_page_status',
-						'proofreadpage_quality0_category',
-						'proofreadpage_quality1_category',
-						'proofreadpage_quality2_category',
-						'proofreadpage_quality3_category',
-						'proofreadpage_quality4_category',
-					)
-				), $localpath, $remotepath
-			)
-		);
-
-		$resourceLoader->register(
-			'ext.proofreadpage.article',
-			new ResourceLoaderFileModule(
-				array(
-					'scripts' => 'proofread_article.js'
-				), $localpath, $remotepath
-			)
-		);
-
-		$resourceLoader->register(
-			'ext.proofreadpage.index',
-			new ResourceLoaderFileModule(
-				array( 'scripts' => 'proofread_index.js' ),
-				$localpath, $remotepath
-			)
-		);
-
 		return true;
 	}
 
