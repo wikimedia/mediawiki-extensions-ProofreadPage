@@ -2220,6 +2220,7 @@ Notas||10',
  */
 $messages['id'] = array(
 	'indexpages' => 'Daftar dari halaman indeks',
+	'pageswithoutscans' => 'Halaman tanpa transklusi',
 	'proofreadpage_desc' => 'Menyediakan perbandingan antara naskah dengan hasil pemindaian asli secara mudah',
 	'proofreadpage_namespace' => 'Halaman',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -2271,6 +2272,7 @@ Catatan||10',
 	'proofreadpage_specialpage_legend' => 'Cari halaman indeks',
 	'proofreadpage_source' => 'Sumber',
 	'proofreadpage_source_message' => 'Versi pindai yang digunakan untuk membuat naskah ini',
+	'right-pagequality' => 'Memodifikasi tanda kualitas halaman',
 );
 
 /** Igbo (Igbo)
