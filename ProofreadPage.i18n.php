@@ -3508,7 +3508,7 @@ $messages['os'] = array(
 $messages['pdc'] = array(
 	'proofreadpage_namespace' => 'Blatt',
 	'proofreadpage_image' => 'Bild',
-	'proofreadpage_nextpage' => 'Neegscht Blatt',
+	'proofreadpage_nextpage' => 'Neegschtes Blatt',
 	'proofreadpage_prevpage' => 'Letscht Blatt',
 	'proofreadpage_index_listofpages' => 'Lischt vun Bledder',
 	'proofreadpage_pages' => '{{PLURAL:$1|Blatt|Bledder}}',
@@ -4963,7 +4963,7 @@ $messages['vec'] = array(
 	'proofreadpage_quality4_message' => 'Sta pagina la xe stà verificà da almanco do utenti',
 	'proofreadpage_index_listofpages' => 'Lista de le pagine',
 	'proofreadpage_image_message' => 'Colegamento a la pagina indice',
-	'proofreadpage_page_status' => 'Status de la pagina',
+	'proofreadpage_page_status' => 'Qualità de la pagina',
 	'proofreadpage_js_attributes' => 'Autor Titolo Ano Editor',
 	'proofreadpage_index_attributes' => 'Autor
 Titolo
