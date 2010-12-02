@@ -601,7 +601,7 @@ $messages['br'] = array(
 	'proofreadpage_page_status' => 'Statud ar bajenn',
 	'proofreadpage_js_attributes' => 'Aozer Titl Bloaz Embanner',
 	'proofreadpage_index_attributes' => 'Aozer
-titl
+Titl
 Bloaz|Bloavezh embann
 Embanner
 Mammenn
