@@ -364,6 +364,66 @@ $messages['avk'] = array(
 	'proofreadpage_header' => 'Kroj (noinclude) :',
 );
 
+/** Bashkir (Башҡорт)
+ * @author Assele
+ */
+$messages['ba'] = array(
+	'indexpages' => 'Индекс биттәренең исемлеге',
+	'pageswithoutscans' => 'Сканһыҙ биттәр',
+	'proofreadpage_desc' => 'Текстты төп нөхсәһенең сканы менән еңел сағыштырыу мөмкинлеге бирә',
+	'proofreadpage_namespace' => 'Бит',
+	'proofreadpage_index_namespace' => 'Индекс',
+	'proofreadpage_image' => 'Рәсем',
+	'proofreadpage_index' => 'Индекс',
+	'proofreadpage_index_expected' => 'Хата: индекс көтөлә',
+	'proofreadpage_nosuch_index' => 'Хата: бындай индекс юҡ',
+	'proofreadpage_nosuch_file' => 'Хата: бындай файл юҡ',
+	'proofreadpage_badpage' => 'Формат дөрөҫ түгел',
+	'proofreadpage_badpagetext' => 'Һеҙ һаҡларға теләгән биттең форматы дөрөҫ түгел.',
+	'proofreadpage_indexdupe' => 'Ҡабатланған һылтанма',
+	'proofreadpage_indexdupetext' => 'Биттәр индекс битендә бер тапҡыр ғына осрарға тейеш.',
+	'proofreadpage_nologin' => 'Танылмағанһығыҙ',
+	'proofreadpage_nologintext' => 'Биттәрҙең корректураһын уҡыу торошон үҙгәртеү өсөн, һеҙ [[Special:UserLogin|танылырға]] тейешһегеҙ.',
+	'proofreadpage_notallowed' => 'Үҙгәртеү рөхсәт ителмәй',
+	'proofreadpage_notallowedtext' => 'Һеҙгә биттәрҙең корректураһын уҡыу торошон үҙгәртеү рөхсәт ителмәй.',
+	'proofreadpage_number_expected' => 'Хата: һан көтөлә',
+	'proofreadpage_interval_too_large' => 'Хата: бигерәк ҙур арауыҡ',
+	'proofreadpage_invalid_interval' => 'Хата: арауыҡ дөрөҫ түгел',
+	'proofreadpage_nextpage' => 'Киләһе бит',
+	'proofreadpage_prevpage' => 'Алдағы бит',
+	'proofreadpage_header' => 'Исем (индерелмәй):',
+	'proofreadpage_body' => 'Биттең эстәлеге (индерелә):',
+	'proofreadpage_footer' => 'Аҫҡы колонтитул (индерелмәй):',
+	'proofreadpage_toggleheaders' => 'индерелмәгән бүлектәрҙе күрһәтергә',
+	'proofreadpage_quality0_category' => 'Текстһыҙ',
+	'proofreadpage_quality1_category' => 'Корректураһы уҡылмаған',
+	'proofreadpage_quality2_category' => 'Икеләндерә',
+	'proofreadpage_quality3_category' => 'Корректураһы уҡылған',
+	'proofreadpage_quality4_category' => 'Тикшерелгән',
+	'proofreadpage_quality0_message' => 'Был бит корректураһын уҡыуҙы талап итмәй',
+	'proofreadpage_quality1_message' => 'Был биттең корректураһы уҡылмаған',
+	'proofreadpage_quality2_message' => 'Был биттең корректураһын уҡығанда ҡыйынлыҡтар тыуҙы',
+	'proofreadpage_quality3_message' => 'Был биттең корректураһы уҡылған',
+	'proofreadpage_quality4_message' => 'Был бит тикшерелгән',
+	'proofreadpage_index_listofpages' => 'Биттәр исемлеге',
+	'proofreadpage_image_message' => 'Индекс битенә һылтанма',
+	'proofreadpage_page_status' => 'Биттең торошо',
+	'proofreadpage_js_attributes' => 'Автор Исем Йыл Нәшриәт',
+	'proofreadpage_index_attributes' => 'Автор
+Исем
+Йыл|Баҫтырыу йылы
+Нәшриәт
+Сығанаҡ
+Рәсем|Тышлығының рәсеме
+Биттәр||20
+Иҫкәрмәләр||10',
+	'proofreadpage_pages' => '{{PLURAL:$1|бит}}',
+	'proofreadpage_specialpage_legend' => 'Индекс биттәрен эҙләү',
+	'proofreadpage_source' => 'Сығанаҡ',
+	'proofreadpage_source_message' => 'Был текстты булдырыу өсөн сканланған материалдар ҡулланылған',
+	'right-pagequality' => 'Биттең сифаты билдәһен үҙгәртеү',
+);
+
 /** Southern Balochi (بلوچی مکرانی)
  * @author Mostafadaneshvar
  */
