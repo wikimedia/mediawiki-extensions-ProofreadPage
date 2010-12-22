@@ -85,7 +85,7 @@ function wfProofreadPage() {
 }
 
 function wfProofreadPageAddQueryPages( &$wgQueryPages ) {
-	$wgQueryPages['ProofreadPages'] = 'IndexPages';
-	$wgQueryPages['PagesWithoutScans'] = 'PagesWithoutScans';
+	$wgQueryPages[] = array( 'ProofreadPages', 'IndexPages' );
+	$wgQueryPages[] = array( 'PagesWithoutScans', 'PagesWithoutScans' );
 	return true;
 }
