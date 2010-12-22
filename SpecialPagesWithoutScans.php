@@ -23,28 +23,11 @@
  * Special page that lists the texts that have no transclusions
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
  */
-class PagesWithoutScans extends SpecialPage {
+class PagesWithoutScans extends QueryPage {
 
-	public function __construct() {
-		parent::__construct( 'PagesWithoutScans' );
-	}
-
-	public function execute( $parameters ) {
-		$this->setHeaders();
-		list( $limit, $offset ) = wfCheckLimits();
-		$cnl = new PagesWithoutScansQuery();
-		$cnl->doQuery( $offset, $limit );
-	}
-}
-
-class PagesWithoutScansQuery extends QueryPage {
-
-	function __construct() {
-		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-	}
-
-	function getName() {
-		return 'PagesWithoutScans';
+	function __construct( $name = 'PagesWithoutScans' ) {
+		parent::__construct( $name );
+		$this->page_namespace = wfMsgForContent( 'proofreadpage_namespace' );
 	}
 
 	function isExpensive() {
@@ -55,9 +38,9 @@ class PagesWithoutScansQuery extends QueryPage {
 		return false;
 	}
 
-	/*
-	 * return a clause with the list of disambiguation templates. 
-	 * this function was copied verbatim from specials/SpecialDisambiguations.php
+	/**
+	 * Return a clause with the list of disambiguation templates.
+	 * This function was copied verbatim from specials/SpecialDisambiguations.php
 	 */
 	function disambiguation_templates( $dbr ) {
 		$dMsgText = wfMsgForContent('disambiguationspage');
@@ -92,30 +75,47 @@ class PagesWithoutScansQuery extends QueryPage {
 		}
 		return $linkBatch->constructSet( 'tl', $dbr );
 	}
-
-	function getSQL() {
+	
+	function getQueryInfo() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$page = $dbr->tableName( 'page' );
-		$templatelinks = $dbr->tableName( 'templatelinks' );
-		$forceindex = $dbr->useIndexClause( 'page_len' );
 		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $this->page_namespace ) );
-
-		/* SQL clause to exclude pages with scans */
-		$pages_with_scans = "( SELECT DISTINCT tl_from FROM $templatelinks LEFT JOIN $page ON page_id=tl_from WHERE tl_namespace=$page_ns_index AND page_namespace=" . NS_MAIN . " ) ";
-
-		/* Exclude disambiguation pages too */
+		
+		// Construct subqueries
+		$pagesWithScansSubquery = $dbr->selectSQLText(
+			array( 'templatelinks', 'page' ),
+			'DISTINCT tl_from',
+			array(
+				'page_id=tl_from',
+				'tl_namespace' => $page_ns_index,
+				'page_namespace' => NS_MAIN
+			)
+		);
+		
+		// Exclude disambiguation pages too
 		$dt = $this->disambiguation_templates( $dbr );
-		$disambiguation_pages = "( SELECT page_id FROM $page LEFT JOIN $templatelinks ON page_id=tl_from WHERE page_namespace=" . NS_MAIN . " AND " . $dt . " )";
-
-		$sql = 	"SELECT page_namespace as namespace,
-				page_title as title,
-				page_len AS value
-			FROM $page $forceindex
-			WHERE page_namespace=" . NS_MAIN . " AND page_is_redirect=0 
-			AND page_id NOT IN $pages_with_scans
-			AND page_id NOT IN $disambiguation_pages";
-
-		return $sql;
+		$disambigPagesSubquery = $dbr->selectSQLText(
+			array( 'page', 'templatelinks' ),
+			'page_id',
+			array(
+				'page_id=tl_from',
+				'page_namespace' => NS_MAIN,
+				$dt
+			)
+		);
+		
+		return array(
+			'tables' => 'page',
+			'fields' => array(
+				'page_namespace AS namespace',
+				'page_title AS title',
+				'page_len AS value' ),
+			'conds' => array(
+				'page_namespace' => NS_MAIN,
+				'page_is_redirect' => 0,
+				"page_id NOT IN ($pagesWithScansSubquery)",
+				"page_id NOT IN ($disambigPagesSubquery)" ),
+			'options' => array( 'USE INDEX' => 'page_len' )
+		);	
 	}
 
 	function sortDescending() {

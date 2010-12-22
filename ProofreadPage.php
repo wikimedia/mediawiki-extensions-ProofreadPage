@@ -20,6 +20,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $wgExtensionFunctions[] = 'wfProofreadPage';
+$wgRunHooks['wgQueryPages'][] = 'wfProofreadPageAddQueryPages';
 
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
@@ -80,5 +81,11 @@ $wgResourceModules += array(
 
 function wfProofreadPage() {
 	new ProofreadPage;
+	return true;
+}
+
+function wfProofreadPageAddQueryPages( &$wgQueryPages ) {
+	$wgQueryPages['ProofreadPages'] = 'IndexPages';
+	$wgQueryPages['PagesWithoutScans'] = 'PagesWithoutScans';
 	return true;
 }

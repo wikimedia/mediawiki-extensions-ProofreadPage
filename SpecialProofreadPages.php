@@ -4,18 +4,12 @@
  * @ingroup SpecialPage
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 1 );
-}
-
-global $IP;
-require_once "$IP/includes/QueryPage.php";
-
-class ProofreadPages extends SpecialPage {
-
-	public function __construct() {
-		parent::__construct( 'IndexPages' );
-		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
+class ProofreadPages extends QueryPage {
+	protected $index_namespace, $searchTerm;
+	
+	public function __construct( $name = 'IndexPages' ) {
+		parent::__construct( $name );
+		$this->index_namespace = wfMsgForContent( 'proofreadpage_index_namespace' );
 	}
 
 	public function execute( $parameters ) {
@@ -25,49 +19,38 @@ class ProofreadPages extends SpecialPage {
 		list( $limit, $offset ) = wfCheckLimits();
 		$wgOut->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
 		$searchList = array();
-		$searchTerm = $wgRequest->getText( 'key' );
+		$this->searchTerm = $wgRequest->getText( 'key' );
 		if( !$wgDisableTextSearch ) {
 			$wgOut->addHTML(
 				Xml::openElement( 'form' ) .
 				Xml::openElement( 'fieldset' ) .
 				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
-				Xml::input( 'key', 20, $searchTerm ) . ' ' .
+				Xml::input( 'key', 20, $this->searchTerm ) . ' ' .
 				Xml::submitButton( wfMsg( 'ilsubmit' ) ) .
 				Xml::closeElement( 'fieldset' ) .
 				Xml::closeElement( 'form' )
 			);
-			if( $searchTerm ) {
+			if( $this->searchTerm ) {
 				$index_namespace = $this->index_namespace;
 				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
 				$searchEngine = SearchEngine::create();
 				$searchEngine->setLimitOffset( $limit, $offset );
 				$searchEngine->setNamespaces( array( $index_ns_index ) );
 				$searchEngine->showRedirects = false;
-				$textMatches = $searchEngine->searchText( $searchTerm );
+				$textMatches = $searchEngine->searchText( $this->searchTerm );
+				$escIndex = preg_quote( $index_namespace, '/' );
 				while( $result = $textMatches->next() ) {
-					if ( preg_match( "/^$index_namespace:(.*)$/", $result->getTitle(), $m ) ) {
+					if ( preg_match( "/^$escIndex:(.*)$/", $result->getTitle(), $m ) ) {
 						array_push( $searchList, str_replace( ' ' , '_' , $m[1] ) );
 					}
 				}
 			}
 		}
-		$cnl = new ProofreadPagesQuery( $searchList, $searchTerm );
-		$cnl->doQuery( $offset, $limit );
-	}
-}
-
-class ProofreadPagesQuery extends QueryPage {
-	function __construct( $searchList, $searchTerm ) {
-		$this->searchList = $searchList;
-		$this->searchTerm = $searchTerm;
-		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-	}
-
-	function getName() {
-		return 'IndexPages';
+		parent::execute( $parameters );
 	}
 
 	function isExpensive() {
+		// FIXME: the query does filesort, so we're kinda lying here right now
 		return false;
 	}
 
@@ -78,37 +61,26 @@ class ProofreadPagesQuery extends QueryPage {
 	function linkParameters() {
 		return array( 'key' => $this->searchTerm );
 	}
-
-	function getSQL() {
-		$dbr = wfGetDB( DB_SLAVE );
-		$page = $dbr->tableName( 'page' );
-		$pr_index = $dbr->tableName( 'pr_index' );
-
-		$query = "SELECT page_title as title,
-		pr_count,pr_q0,pr_q1,pr_q2,pr_q3,pr_q4
-		FROM $pr_index LEFT JOIN $page ON page_id = pr_page_id";
-
-		if( $this->searchTerm ) {
-			if( $this->searchList ) {
-				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $this->index_namespace ) );
-				$querylist = '';
-				foreach( $this->searchList as $item ) {
-					if( $querylist ) {
-						$querylist .= ', ';
-					}
-					$querylist .= "'" . $dbr->strencode( $item ). "'";
-				}
-				$query .= " WHERE page_namespace=$index_ns_index AND page_title IN ($querylist)";
+	
+	public function getQueryInfo() {
+		$conds = array();
+		if ( $this->searchTerm ) {
+			if ( $this->searchList ) {
+				$index_namespace = pr_index_ns();
+				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+				$conds = array( 'page_namespace' => $index_ns_index, 'page_title' => $this->searchList );
 			} else {
-				# The SQL query is complete
+				$conds = null;
 			}
 		}
-		return $query;
-	}
-
-	function getOrder() {
-		return ' ORDER BY 2*pr_q4+pr_q3 ' .
-			( $this->sortDescending() ? 'DESC' : '' );
+		return array(
+			'tables' => array( 'pr_index', 'page' ),
+			'fields' => array( 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
+			'pr_q0', 'pr_q1', 'pr_q2' ,'pr_q3', 'pr_q4' ),
+			'conds' => $conds,
+			'options' => array(),
+			'join_conds' => array( 'page' => array( 'LEFT JOIN', 'page_id=pr_page_id' ) )
+		);
 	}
 
 	function sortDescending() {
