@@ -878,6 +878,7 @@ Poznámky||10',
  */
 $messages['da'] = array(
 	'indexpages' => 'Liste over indekssider',
+	'pageswithoutscans' => 'Sider uden indskannede billeder',
 	'proofreadpage_desc' => 'Muliggør nem sammenligning af tekst med den indscannede original',
 	'proofreadpage_namespace' => 'Side',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -929,6 +930,7 @@ Bemærkninger | | 10',
 	'proofreadpage_specialpage_legend' => 'Søg i indekssider',
 	'proofreadpage_source' => 'Kilde',
 	'proofreadpage_source_message' => 'Indscannet original, der blev brugt som grundlag for denne tekst',
+	'right-pagequality' => 'Ændre en sides kvalititetsflag',
 );
 
 /** German (Deutsch)
