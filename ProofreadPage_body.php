@@ -1327,7 +1327,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	 */
 	function update_pr_index( $index, $deletedpage = null ) {
 		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
 		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
 		if ( $page_ns_index == null ) {
 			return;
@@ -1336,6 +1335,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$index_title = $index->mTitle;
 		$index_id = $index->getID();
 		$dbr = wfGetDB( DB_SLAVE );
+
+	    $n = 0;
 
 		// read the list of pages
 		$pages = array();
