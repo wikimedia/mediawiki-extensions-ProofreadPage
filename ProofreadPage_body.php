@@ -1336,7 +1336,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$index_id = $index->getID();
 		$dbr = wfGetDB( DB_SLAVE );
 
-	    $n = 0;
+		$n = 0;
 
 		// read the list of pages
 		$pages = array();
