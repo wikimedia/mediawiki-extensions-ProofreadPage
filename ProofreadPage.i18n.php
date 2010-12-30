@@ -5205,11 +5205,13 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
+ * @author Hydra
  * @author Jimmy xu wrk
  * @author Liangent
  */
 $messages['zh-hans'] = array(
 	'indexpages' => '索引页列表',
+	'pageswithoutscans' => '没有扫描的页面',
 	'proofreadpage_desc' => '容许简易地比较原扫描和文字',
 	'proofreadpage_namespace' => '页面',
 	'proofreadpage_index_namespace' => '索引',
@@ -5261,6 +5263,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage_specialpage_legend' => '搜索索引页',
 	'proofreadpage_source' => '来源',
 	'proofreadpage_source_message' => '扫描版用来建立这个文本',
+	'right-pagequality' => '修改页面质量标志',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
