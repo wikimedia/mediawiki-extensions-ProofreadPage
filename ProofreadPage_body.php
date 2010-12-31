@@ -1318,7 +1318,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	 */
 	function query_count( $dbr, $query, $cat ) {
 		$query['conds']['cl_to'] = $str_replace( ' ' , '_' , wfMsgForContent( $cat ) );
-		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, $query['joins'] );
+		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, array(), $query['joins'] );
 
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
