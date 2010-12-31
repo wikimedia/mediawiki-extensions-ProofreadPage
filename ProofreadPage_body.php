@@ -1310,9 +1310,16 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		return true;
 	}
 
+	/**
+	 * @param  $dbr DatabaseBase
+	 * @param  $query
+	 * @param  $cat
+	 * @return int
+	 */
 	function query_count( $dbr, $query, $cat ) {
-		$q = $dbr->strencode( str_replace( ' ' , '_' , wfMsgForContent( $cat ) ) );
-		$res = $dbr->query( str_replace( '###', $q, $query ), __METHOD__ );
+		$query['conds']['cl_to'] = $str_replace( ' ' , '_' , wfMsgForContent( $cat ) );
+		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, $query['joins'] );
+
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$n = $row->count;
@@ -1375,6 +1382,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			array( 'page_namespace' => $page_ns_index, 'page_title' => $pages ),
 			__METHOD__
 		);
+
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$total = $row->count;
@@ -1383,17 +1391,18 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			return;
 		}
 
-		$pagelist = "'".implode( "', '", $pages)."'";
-		$catlinks = $dbr->tableName( 'categorylinks' );
-		$page = $dbr->tableName( 'page' );
-
 		// proofreading status of pages
-		$query = "SELECT COUNT(page_id) AS count FROM $page LEFT JOIN $catlinks ON cl_from=page_id WHERE cl_to='###' AND page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
+		$queryArr = array(
+			'tables' => array( 'page', 'categorylinks' ),
+			'fields' => array( 'COUNT(page_id) AS count' ),
+			'conds' => array( 'cl_to' => '', 'page_namespace' => $page_ns_index, 'page_title' => $pages ),
+			'joins' => array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
+		);
 
-		$n0 = $this->query_count( $dbr, $query, 'proofreadpage_quality0_category' );
-		$n2 = $this->query_count( $dbr, $query, 'proofreadpage_quality2_category' );
-		$n3 = $this->query_count( $dbr, $query, 'proofreadpage_quality3_category' );
-		$n4 = $this->query_count( $dbr, $query, 'proofreadpage_quality4_category' );
+		$n0 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
+		$n2 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
+		$n3 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
+		$n4 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -1424,9 +1433,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$page = $dbr->tableName( 'page' );
-		$templatelinks = $dbr->tableName( 'templatelinks' );
-		$catlinks = $dbr->tableName( 'categorylinks' );
 
 		// find the index page
 		$indextitle = null;
@@ -1497,11 +1503,20 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				$dbr->freeResult( $res );
 			}
 			// find the proofreading status of transclusions
-			$query = "SELECT COUNT(page_id) AS count FROM $templatelinks LEFT JOIN $page ON page_title=tl_title AND page_namespace=tl_namespace LEFT JOIN $catlinks ON cl_from=page_id WHERE tl_from=$id AND tl_namespace=$page_ns_index AND cl_to='###'";
-			$n0 = $this->query_count( $dbr, $query, 'proofreadpage_quality0_category' );
-			$n2 = $this->query_count( $dbr, $query, 'proofreadpage_quality2_category' );
-			$n3 = $this->query_count( $dbr, $query, 'proofreadpage_quality3_category' );
-			$n4 = $this->query_count( $dbr, $query, 'proofreadpage_quality4_category' );
+			$queryArr = array(
+				'tables' => array( 'templatelinks', 'page', 'categorylinks' ),
+				'fields' => array( 'COUNT(page_id) AS count' ),
+				'conds' => array( 'cl_to' => '', 'page_namespace' => $page_ns_index, 'page_title' => $pages ),
+				'joins' => array(
+					'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ),
+					'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ),
+				)
+			);
+
+			$n0 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
+			$n2 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
+			$n3 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
+			$n4 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
 			// quality1 is the default value
 			$n1 = $n - $n0 - $n2 - $n3 - $n4;
 			$ne = 0;
