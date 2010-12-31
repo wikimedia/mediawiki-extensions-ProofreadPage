@@ -1369,13 +1369,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			return;
 		}
 
-		$catlinks = $dbr->tableName( 'categorylinks' );
-		$page = $dbr->tableName( 'page' );
-		$pagelist = "'" . implode( "', '", $pages ) . "'";
 		$res = $dbr->select(
 			array( 'page' ),
 			array( 'COUNT(page_id) AS count'),
-			array( "page_namespace=$page_ns_index", "page_title IN ( $pagelist )" ),
+			array( 'page_namespace' => $page_ns_index, 'page_title' => $pages ),
 			__METHOD__
 		);
 		if( $res && $dbr->numRows( $res ) > 0 ) {
@@ -1386,8 +1383,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			return;
 		}
 
+		$pagelist = "'".implode( "', '", $pages)."'";
+		$catlinks = $dbr->tableName( 'categorylinks' );
+		$page = $dbr->tableName( 'page' );
+
 		// proofreading status of pages
 		$query = "SELECT COUNT(page_id) AS count FROM $page LEFT JOIN $catlinks ON cl_from=page_id WHERE cl_to='###' AND page_namespace=$page_ns_index AND page_title IN ( $pagelist )" ;
+
 		$n0 = $this->query_count( $dbr, $query, 'proofreadpage_quality0_category' );
 		$n2 = $this->query_count( $dbr, $query, 'proofreadpage_quality2_category' );
 		$n3 = $this->query_count( $dbr, $query, 'proofreadpage_quality3_category' );
@@ -1431,7 +1433,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$res = $dbr->select(
 			array( 'templatelinks' ),
 			array( 'tl_title AS title' ),
-			array( "tl_from=$id", "tl_namespace=$page_ns_index" ),
+			array( 'tl_from' => $id, 'tl_namespace' => $page_ns_index ),
 			__METHOD__,
 			array( 'LIMIT' => 1 )
 		);
@@ -1443,9 +1445,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				array( 'pagelinks', 'page' ),
 				array( 'page_title AS title' ),
 				array(
-					"pl_title='$title'",
-					"pl_namespace=$page_ns_index",
-					"page_namespace=$index_ns_index"
+					'pl_title' => $title,
+					'pl_namespace' => $page_ns_index,
+					'page_namespace' => $index_ns_index
 				),
 				__METHOD__,
 				array( 'LIMIT' => 1 ),
@@ -1463,7 +1465,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				$res = $dbr->select(
 					array( 'pr_index', 'page' ),
 					array( 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ),
-					array( "page_title='$indextitle'", "page_namespace=$index_ns_index" ),
+					array( 'page_title' => $indextitle, 'page_namespace' => $index_ns_index ),
 					__METHOD__,
 					null,
 					array( 'page' => array( 'LEFT JOIN', 'page_id=pr_page_id' ) )
@@ -1484,7 +1486,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			$res = $dbr->select(
 				array( 'templatelinks', 'page' ),
 				array( 'COUNT(page_id) AS count' ),
-				array( "tl_from=$id", "tl_namespace=$page_ns_index" ),
+				array( 'tl_from' => $id, 'tl_namespace' => $page_ns_index ),
 				__METHOD__,
 				null,
 				array( 'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ) )
