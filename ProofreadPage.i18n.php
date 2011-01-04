@@ -4311,6 +4311,7 @@ Pripombe||10',
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
@@ -4346,7 +4347,7 @@ $messages['sr-ec'] = array(
 слика|насловна страна
 страна||20
 примедбе||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|страна|стране|стране|стране|страна}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|страна|стране|страна}}',
 );
 
 /** Serbian Latin ekavian (Srpski (latinica))
