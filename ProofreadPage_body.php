@@ -440,28 +440,27 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			}
 		}
 
+		// Get the names of the quality categories.  Replaces earlier
+		// code which called wfMsgForContent() 5 times for each page.
+		// ISSUE: Should the number of quality levels be adjustable?
+		// ISSUE 2: Should this array be saved as a member variable?
+		// How often is this code called anyway?
+		$qualityCategories = array();
+		for ( $i = 0; $i < 5; $i++ ) {
+			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsgForContent( "proofreadpage_quality{$i}_category" ) );
+			if ( $cat ) {
+				$qualityCategories[$cat->getDBkey()] = "quality$i";
+			}
+		}
+
 		if ( count( $values ) ) {
 			$query .= "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(" . implode( ",", $values ) . ")";
 			$res = $dbr->query( $query, __METHOD__ );
 
 			foreach ( $res as $x ) {
 				$pdbk = $page_ids[$x->cl_from];
-				switch( $x->cl_to ) {
-				case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) ):
-					$colours[$pdbk] = 'quality0';
-					break;
-				case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality1_category' ) ):
-					$colours[$pdbk] = 'quality1';
-					break;
-				case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality2_category' ) ):
-					$colours[$pdbk] = 'quality2';
-					break;
-				case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality3_category' ) ):
-					$colours[$pdbk] = 'quality3';
-					break;
-				case str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality4_category' ) ):
-					$colours[$pdbk] = 'quality4';
-					break;
+				if ( array_key_exists( $x->cl_to, $qualityCategories ) ) {
+					$colours[$pdbk] = $qualityCategories[$x->cl_to];
 				}
 			}
 		}
