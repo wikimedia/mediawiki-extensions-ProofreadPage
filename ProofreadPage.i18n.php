@@ -4111,6 +4111,7 @@ $messages['rue'] = array(
  */
 $messages['sah'] = array(
 	'indexpages' => 'Индекс сирэйдэрин тиһигэ',
+	'pageswithoutscans' => 'Скаана суох сирэйдэр',
 	'proofreadpage_desc' => 'Оригинаалы уонна скаанердаммыт ойууну тэҥнээн көрөр кыаҕы биэрэр',
 	'proofreadpage_namespace' => 'Сирэй',
 	'proofreadpage_index_namespace' => 'Индекс',
@@ -4161,6 +4162,7 @@ $messages['sah'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|сирэй|сирэйдээх}}',
 	'proofreadpage_specialpage_legend' => 'Индекстаммыт сирэйдэри көрдөөһүн',
 	'proofreadpage_source' => 'Хантан ылыллыбыта',
+	'proofreadpage_source_message' => 'Тиэкис электрон барылын оҥорорго скааннаммыт матырыйааллар туһаныллыбыттар',
 );
 
 /** Sardinian (Sardu)
