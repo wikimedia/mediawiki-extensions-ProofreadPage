@@ -2568,6 +2568,7 @@ Cathetan||10',
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author Dawid Deutschland
  * @author ITshnik
  * @author Malafaya
  * @author Sopho
@@ -2593,6 +2594,7 @@ $messages['ka'] = array(
 	'proofreadpage_prevpage' => 'წინა გვერდი',
 	'proofreadpage_quality0_category' => 'ტექსტის გარეშე',
 	'proofreadpage_quality2_category' => 'პრობლემატური',
+	'proofreadpage_quality3_category' => 'შესწორდა',
 	'proofreadpage_quality4_category' => 'შემოწმებული',
 	'proofreadpage_index_listofpages' => 'გვერდების სია',
 	'proofreadpage_page_status' => 'გვერდის სტატუსი',
