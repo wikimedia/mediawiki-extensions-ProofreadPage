@@ -4313,7 +4313,7 @@ Pripombe||10',
 	'right-pagequality' => 'Spremeni označbo kakovosti strani',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Sasa Stefanovic
@@ -4322,7 +4322,7 @@ Pripombe||10',
  */
 $messages['sr-ec'] = array(
 	'proofreadpage_desc' => 'Омогући лако упоређивање текста и оригиналног скена.',
-	'proofreadpage_namespace' => 'Страна',
+	'proofreadpage_namespace' => 'Страница',
 	'proofreadpage_index_namespace' => 'индекс',
 	'proofreadpage_image' => 'слика',
 	'proofreadpage_index' => 'индекс',
@@ -4354,12 +4354,13 @@ $messages['sr-ec'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|страна|стране|страна}}',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Michaello
+ * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
 	'proofreadpage_desc' => 'Omogući lako upoređivanje teksta i originalnog skena.',
-	'proofreadpage_namespace' => 'Strana',
+	'proofreadpage_namespace' => 'Stranica',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Slika',
 	'proofreadpage_index' => 'Indeks',
