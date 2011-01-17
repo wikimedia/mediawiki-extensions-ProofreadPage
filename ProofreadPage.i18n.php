@@ -5214,6 +5214,7 @@ $messages['yue'] = array(
  * @author Hydra
  * @author Jimmy xu wrk
  * @author Liangent
+ * @author Mark85296341
  */
 $messages['zh-hans'] = array(
 	'indexpages' => '索引页列表',
@@ -5239,7 +5240,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage_invalid_interval' => '错误：无法识别间隔',
 	'proofreadpage_nextpage' => '下一页',
 	'proofreadpage_prevpage' => '上一页',
-	'proofreadpage_header' => '首 （不包含）:',
+	'proofreadpage_header' => '首（不包含）：',
 	'proofreadpage_body' => '页身 （包含）:',
 	'proofreadpage_footer' => '尾 （不包含）:',
 	'proofreadpage_toggleheaders' => '调整不包含段落之可见性',
@@ -5281,6 +5282,7 @@ $messages['zh-hans'] = array(
  */
 $messages['zh-hant'] = array(
 	'indexpages' => '索引頁列表',
+	'pageswithoutscans' => '沒有掃瞄的頁面',
 	'proofreadpage_desc' => '容許簡易地去比較原掃瞄和文字',
 	'proofreadpage_namespace' => '頁面',
 	'proofreadpage_index_namespace' => '索引',
@@ -5290,11 +5292,11 @@ $messages['zh-hant'] = array(
 	'proofreadpage_nosuch_index' => '錯誤：沒有此類索引',
 	'proofreadpage_nosuch_file' => '錯誤：沒有這種文件',
 	'proofreadpage_badpage' => '格式錯誤',
-	'proofreadpage_badpagetext' => '您試圖保存的頁面的格式不正確。',
-	'proofreadpage_indexdupe' => '重複鏈接',
+	'proofreadpage_badpagetext' => '您試圖儲存的頁面的格式不正確。',
+	'proofreadpage_indexdupe' => '重複連結',
 	'proofreadpage_indexdupetext' => '在索引頁中，頁面不會被重複列出。',
 	'proofreadpage_nologin' => '未登入',
-	'proofreadpage_nologintext' => '您必须[[Special:UserLogin|先登录]]才能修改页面的校对状态。',
+	'proofreadpage_nologintext' => '您必須[[Special:UserLogin|先登入]]才能修改頁面的校對狀態。',
 	'proofreadpage_notallowed' => '不允許修改',
 	'proofreadpage_notallowedtext' => '您沒有獲得修改這個頁面校對狀態的許可。',
 	'proofreadpage_number_expected' => '錯誤：不為數值',
@@ -5302,9 +5304,9 @@ $messages['zh-hant'] = array(
 	'proofreadpage_invalid_interval' => '錯誤：無法識別間隔',
 	'proofreadpage_nextpage' => '下一頁',
 	'proofreadpage_prevpage' => '上一頁',
-	'proofreadpage_header' => '首 （不包含）:',
-	'proofreadpage_body' => '頁身 （包含）:',
-	'proofreadpage_footer' => '尾 （不包含）:',
+	'proofreadpage_header' => '首（不包含）：',
+	'proofreadpage_body' => '頁身（包含）：',
+	'proofreadpage_footer' => '尾（不包含）：',
 	'proofreadpage_toggleheaders' => '調整不包含段落之可見性',
 	'proofreadpage_quality0_category' => '沒有文字',
 	'proofreadpage_quality1_category' => '未校對',
@@ -5329,8 +5331,9 @@ $messages['zh-hant'] = array(
 頁數||20
 備註||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|頁|頁}}',
-	'proofreadpage_specialpage_legend' => '搜索索引頁',
+	'proofreadpage_specialpage_legend' => '搜尋索引頁',
 	'proofreadpage_source' => '來源',
-	'proofreadpage_source_message' => '掃描版用來建立這個文本',
+	'proofreadpage_source_message' => '掃描版用來建立這個文字',
+	'right-pagequality' => '修改頁面質量標誌',
 );
 
