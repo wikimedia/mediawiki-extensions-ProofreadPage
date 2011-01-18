@@ -5176,6 +5176,8 @@ $messages['yi'] = array(
 	'proofreadpage_namespace' => 'בלאַט',
 	'proofreadpage_nextpage' => 'קומענדיגער בלאַט',
 	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
+	'proofreadpage_pages' => '{{PLURAL:$1|בלאַט|בלעטער}}',
+	'proofreadpage_source' => 'מקור',
 );
 
 /** Cantonese (粵語) */
