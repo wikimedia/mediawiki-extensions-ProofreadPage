@@ -579,7 +579,7 @@ self.pr_zoom = function( delta ) {
 			);
 		}
 	}
-}
+};
 
 function pr_zoom_wheel( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
@@ -936,7 +936,7 @@ self.pr_add_quality = function( form, value ) {
 	}
 	form.elements['wpSummary'].value = '/* ' + text + ' */ ';
 	form.elements['wpProofreader'].value = self.proofreadpage_username;
-}
+};
 
 function pr_add_quality_buttons() {
 	var ig = document.getElementById( 'wpWatchthis' );
