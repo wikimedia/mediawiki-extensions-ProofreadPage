@@ -364,7 +364,7 @@ $messages['avk'] = array(
 	'proofreadpage_header' => 'Kroj (noinclude) :',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -465,7 +465,7 @@ $messages['bcl'] = array(
 	'proofreadpage_index_namespace' => 'Indeks',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -997,7 +997,7 @@ Bemerkungen||10',
 	'right-pagequality' => 'Seitenqualität ändern',
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Imre
  */
 $messages['de-formal'] = array(
@@ -2785,7 +2785,7 @@ Aanmerkunge||10',
 	'proofreadpage_specialpage_legend' => 'Op dä Verzeischneßsigg söhke',
 );
 
-/** Cornish (Kernewek)
+/** Cornish (Kernowek)
  * @author Kw-Moon
  */
 $messages['kw'] = array(
