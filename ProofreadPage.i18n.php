@@ -2785,6 +2785,14 @@ Aanmerkunge||10',
 	'proofreadpage_specialpage_legend' => 'Op dä Verzeischneßsigg söhke',
 );
 
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'proofreadpage_namespace' => 'Rûpel',
+	'proofreadpage_image' => 'Wêne',
+);
+
 /** Cornish (Kernowek)
  * @author Kw-Moon
  */
@@ -4165,6 +4173,7 @@ $messages['sah'] = array(
 	'proofreadpage_specialpage_legend' => 'Индекстаммыт сирэйдэри көрдөөһүн',
 	'proofreadpage_source' => 'Хантан ылыллыбыта',
 	'proofreadpage_source_message' => 'Тиэкис электрон барылын оҥорорго скааннаммыт матырыйааллар туһаныллыбыттар',
+	'right-pagequality' => 'Сирэй туругун бэлиэтин уларытыы',
 );
 
 /** Sardinian (Sardu)
