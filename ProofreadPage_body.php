@@ -1501,11 +1501,12 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				$n = $row->count;
 				$dbr->freeResult( $res );
 			}
+
 			// find the proofreading status of transclusions
 			$queryArr = array(
 				'tables' => array( 'templatelinks', 'page', 'categorylinks' ),
 				'fields' => array( 'COUNT(page_id) AS count' ),
-				'conds' => array( 'cl_to' => '', 'page_namespace' => $page_ns_index, 'page_title' => $pages ),
+				'conds' => array( 'tl_from' => $id, 'tl_namespace' => $page_ns_index, 'cl_to' => '' ),
 				'joins' => array(
 					'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ),
 					'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ),
