@@ -117,25 +117,20 @@ function pr_make_edit_area( container, text ) {
 		pageFooter = pageFooter.substr( 0, pageFooter.length - 6 );
 	}
 
-	// escape & character
-	pageBody = pageBody.split( '&' ).join( '&amp;' );
-	pageHeader = pageHeader.split( '&' ).join( '&amp;' );
-	pageFooter = pageFooter.split( '&' ).join( '&amp;' );
-
 	container.innerHTML = '' +
 		'<div id="prp_header" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_header' ) ) + '</span>' +
-		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + pageHeader + '</textarea><br />' +
+		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + escapeQuotesHTML( pageHeader ) + '</textarea><br />' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_body' ) ) + '</span></div>' +
 		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' +
-			pageBody + '</textarea>' +
+			escapeQuotesHTML( pageBody ) + '</textarea>' +
 		'<div id="prp_footer" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_footer' ) ) + '</span><br />' +
 		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>' +
-		pageFooter + '</textarea></div>';
+		escapeQuotesHTML( pageFooter ) + '</textarea></div>';
 }
 
 function pr_reset_size() {
@@ -951,13 +946,13 @@ function pr_add_quality_buttons() {
 
 	if( !proofreadPageAddButtons ) {
 		f.innerHTML =
-			' <input type="hidden" name="wpProofreader" value="' + self.proofreadpage_username + '">' +
-			'<input type="hidden" name="quality" value=' + self.proofreadpage_quality + ' >';
+			' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">' +
+			'<input type="hidden" name="quality" value="' + escapeQuotesHTML( self.proofreadpage_quality ) + '" >';
 		return;
 	}
 
 	f.innerHTML =
-' <input type="hidden" name="wpProofreader" value="' + self.proofreadpage_username + '">'
+' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">'
 +'<span class="quality0"> <input type="radio" name="quality" value=0 onclick="pr_add_quality(this.form,0)" tabindex=4> </span>'
 +'<span class="quality2"> <input type="radio" name="quality" value=2 onclick="pr_add_quality(this.form,2)" tabindex=4> </span>'
 +'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)" tabindex=4> </span>'
