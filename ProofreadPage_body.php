@@ -154,7 +154,7 @@ class ProofreadPage {
 		$default_header = wfMsgGetKey( 'proofreadpage_default_header', true, true, false );
 		$default_footer = wfMsgGetKey( 'proofreadpage_default_footer', true, true, false );
 
-		$err = array( '', '', '', '', '', '' );
+		$err = array( '', '', '', '', '', '', '' );
 		$index_title = Title::newFromText( $title->pr_index_title );
 		if ( !$index_title ) {
 			return $err;
@@ -185,7 +185,7 @@ class ProofreadPage {
 		}
 
 		if ( !$index_title->exists() ) {
-			return array( $index_title, $prev_title, $next_title,  $default_header, $default_footer );
+			return array( $index_title, $prev_title, $next_title,  $default_header, $default_footer, '', '' );
 		}
 
 		// if the index page exists, find current page number, previous and next pages
