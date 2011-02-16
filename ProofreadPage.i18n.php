@@ -5183,6 +5183,7 @@ Küpets|10',
  */
 $messages['yi'] = array(
 	'proofreadpage_namespace' => 'בלאַט',
+	'proofreadpage_image' => 'בילד',
 	'proofreadpage_nextpage' => 'קומענדיגער בלאַט',
 	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
 	'proofreadpage_pages' => '{{PLURAL:$1|בלאַט|בלעטער}}',
