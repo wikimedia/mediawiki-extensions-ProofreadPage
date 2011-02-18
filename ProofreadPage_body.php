@@ -856,11 +856,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				if( !$is_q0 ) {
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text . "|num=$pagenum}}</span>";
 				}
-				if( $args["$i"] != null ) {
-					$out .= '{{#lst:' . $text . '|' . $args["$i"] . '}}';
-				} elseif( $page == $from && $args['fromsection'] ) {
+				if( $page == $from_page && $args['fromsection'] ) {
 					$out .= '{{#lst:' . $text . '|' . $args['fromsection'] . '}}';
-				} elseif( $page == $to && $args['tosection'] ) {
+				} elseif( $page == $to_page && $args['tosection'] ) {
 					$out .= '{{#lst:' . $text . '|' . $args['tosection'] . '}}';
 				} else {
 					$out .= '{{:' . $text . '}}';
