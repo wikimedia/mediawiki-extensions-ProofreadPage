@@ -600,10 +600,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$view = ( $i - $offset );
 		switch( $mode ) {
 		case 'highroman':
-			$view = toRoman( $view );
+			$view = $this->toRoman( $view );
 			break;
 		case 'roman':
-			$view = strtolower( toRoman( $view ) );
+			$view = strtolower( $this->toRoman( $view ) );
 			break;
 		case 'normal':
 			$view = '' . $view;
