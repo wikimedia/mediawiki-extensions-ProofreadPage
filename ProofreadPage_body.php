@@ -1541,7 +1541,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$qe = $ne * 100 / $n;
 		$void_cell = $ne ? "<td align=center style='border-style:dotted;border-width:1px;' width=\"{$qe}\"></td>" : '';
 		$output = "<table class=\"pr_quality\" style=\"line-height:40%;\" border=0 cellpadding=0 cellspacing=0 ><tr>
-<td align=center >&nbsp;</td>
+<td align=center >&#160;</td>
 <td align=center class='quality4' width=\"$q4\"></td>
 <td align=center class='quality3' width=\"$q3\"></td>
 <td align=center class='quality2' width=\"$q2\"></td>
