@@ -893,12 +893,8 @@ function pr_init() {
 	}
 
 	// add CSS classes to the container div
-	var c = document.getElementById( 'pagequality' );
-	if( c ) {
-		c = c.nextSibling;
-		if( c.className == 'pagetext' ) {
-			c.className += ' ' + self.proofreadPageCss;
-		}
+	if( self.proofreadPageCss) {
+		$( 'div.pagetext' ).addClass( self.proofreadPageCss );
 	}
 }
 
