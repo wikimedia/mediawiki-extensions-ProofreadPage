@@ -474,7 +474,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	function imageMessage( &$imgpage, &$out ) {
 		global $wgUser;
 		$index_namespace = $this->index_namespace;
-		$image = $imgpage->img;
+		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
 			return true;
 		}
