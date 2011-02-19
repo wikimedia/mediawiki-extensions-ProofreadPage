@@ -2734,6 +2734,7 @@ $messages['krj'] = array(
  */
 $messages['ksh'] = array(
 	'indexpages' => 'Leß met de Verzeischneß_Sigge',
+	'pageswithoutscans' => 'Sigge ohne Belder',
 	'proofreadpage_desc' => 'Määt et müjjelesch, bequem der Täx mem enjeskännte Ojinaal ze verjliische.',
 	'proofreadpage_namespace' => 'Sigg',
 	'proofreadpage_index_namespace' => 'Enhallt',
@@ -2742,7 +2743,7 @@ $messages['ksh'] = array(
 	'proofreadpage_index_expected' => 'Fähler: En Enndraachsnummer (ene Indäx) weet jebruch',
 	'proofreadpage_nosuch_index' => 'Fähler: Esu en Enndraachsnummer (esu ene Indäx) jidd_et nit',
 	'proofreadpage_nosuch_file' => 'Fähler: esu en Dattei ham_mer nit',
-	'proofreadpage_badpage' => 'Verhiehrt Fommaat',
+	'proofreadpage_badpage' => 'Verkiehrt Fommaat',
 	'proofreadpage_badpagetext' => 'Dat Fommaat vun dä Sigg, di De jrahdt afzeshpeischere versöhk häß, eß verkiehert.',
 	'proofreadpage_indexdupe' => 'Dubbelte Lengk',
 	'proofreadpage_indexdupetext' => 'Sigge künne nit mieh wi eijmohl en en Verzeischneß_Sigg opdouche.',
@@ -2783,6 +2784,9 @@ Sigge||20
 Aanmerkunge||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|Ei&nbsp;Sigg|$1&nbsp;Sigge|Kei&nbsp;Sigg}}',
 	'proofreadpage_specialpage_legend' => 'Op dä Verzeischneßsigg söhke',
+	'proofreadpage_source' => 'Quell',
+	'proofreadpage_source_message' => 'För heh dä Täx ze schriive, wood dat Beld vum Täx jenumme.',
+	'right-pagequality' => 'De Qualiteit vun Sigge ändere',
 );
 
 /** Kurdish (Latin) (Kurdî (Latin))
