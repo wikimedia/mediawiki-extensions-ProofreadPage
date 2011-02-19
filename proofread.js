@@ -948,7 +948,7 @@ function pr_add_quality_buttons() {
 	if( !proofreadPageAddButtons ) {
 		f.innerHTML =
 			' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">' +
-			'<input type="hidden" name="quality" value="' + escapeQuotesHTML( self.proofreadpage_quality ) + '" >';
+			'<input type="hidden" name="quality" value="' + escapeQuotesHTML( self.proofreadpage_quality +'' ) + '" >';
 		return;
 	}
 
