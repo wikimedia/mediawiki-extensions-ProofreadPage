@@ -357,19 +357,24 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			$height = $image->getHeight();
 			if ( $m[2] ) {
 				$thumbName = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[3] ) );
+				$thumbURL = $image->getThumbUrl( $thumbName );
+				$thumbURL = str_replace( '%23', '#', $thumbURL );
+				$fullURL = str_replace( '##WIDTH##', "$width", $thumbURL );
 			} else {
 				$thumbName = $image->thumbName( array( 'width' => '##WIDTH##' ) );
+				$thumbURL = $image->getThumbUrl( $thumbName );
+				$thumbURL = str_replace( '%23', '#', $thumbURL );
+				$fullURL = $image->getURL();
 			}
-			$thumbURL = $image->getThumbUrl( $thumbName );
-			$thumbURL = str_replace( '%23', '#', $thumbURL );
 			$scan_link = Html::element( 'a', 
-						    array( 'href' => str_replace( '##WIDTH##', "$width", $thumbURL ), 
+						    array( 'href' => $fullURL, 
 							   'title' =>  wfMsg( 'proofreadpage_image' ) ), 
 						    wfMsg( 'proofreadpage_image' ) );
 		} else {
 			$width = 0;
 			$height = 0;
 			$thumbURL = '';
+			$fullURL = '';
 			$scan_link = '';
 		}
 
@@ -388,6 +393,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			'proofreadPageHeight' => intval( $height ),
 			'proofreadPageEditWidth' => $edit_width,
 			'proofreadPageThumbURL' => $thumbURL,
+			'proofreadPageURL' => $fullURL,
 			'proofreadPageIsEdit' => intval( $isEdit ),
 			'proofreadPageIndexLink' => $index_link,
 			'proofreadPageNextLink' => $next_link,

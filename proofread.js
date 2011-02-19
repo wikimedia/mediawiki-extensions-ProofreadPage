@@ -16,10 +16,15 @@ function pr_image_url( requested_width ) {
 		// enforce quantization: width must be multiple of 100px
 		var width = 100 * Math.round( requested_width / 100 );
 		// compare to the width of the image
-		width = Math.min( width, proofreadPageWidth );
-		self.DisplayWidth = width;
-		self.DisplayHeight = width * proofreadPageHeight / proofreadPageWidth;
-		return proofreadPageThumbURL.replace( '##WIDTH##', '' + width );
+		if( width < proofreadPageWidth ) {
+			self.DisplayWidth = width;
+			self.DisplayHeight = width * proofreadPageHeight / proofreadPageWidth;
+			return proofreadPageThumbURL.replace( '##WIDTH##', '' + width );
+		} else {
+			self.DisplayWidth = proofreadPageWidth;
+			self.DisplayHeight = proofreadPageHeight;
+			return proofreadPageURL;
+		}
 	}
 }
 
