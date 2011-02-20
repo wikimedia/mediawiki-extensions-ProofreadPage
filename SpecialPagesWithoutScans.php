@@ -106,6 +106,7 @@ class PagesWithoutScans extends QueryPage {
 		return array(
 			'tables' => 'page',
 			'fields' => array(
+				"'PagesWithoutScans' AS type",
 				'page_namespace AS namespace',
 				'page_title AS title',
 				'page_len AS value' ),

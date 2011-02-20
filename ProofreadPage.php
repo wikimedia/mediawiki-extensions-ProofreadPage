@@ -46,6 +46,15 @@ $wgSpecialPageGroups['IndexPages'] = 'pages';
 $wgAutoloadClasses['PagesWithoutScans'] = $dir . 'SpecialPagesWithoutScans.php';
 $wgSpecialPages['PagesWithoutScans'] = 'PagesWithoutScans';
 $wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
+# for maintenance/updateSpecialPages.php
+$wgHooks['wgQueryPages'][] = 'wfPagesWithoutScan';
+function wfPagesWithoutScan( &$QueryPages ) {
+	$QueryPages[] = array(
+			      'PagesWithoutScans',
+			      'PagesWithoutScans'
+			      );
+	return true;
+}
 
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
