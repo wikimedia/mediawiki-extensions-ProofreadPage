@@ -1464,7 +1464,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			);
 			if( $res2 && $dbr->numRows( $res2 ) > 0 ) {
 				$row = $dbr->fetchObject( $res2 );
-				$indextitle = $row->title;
+				$indextitle = $dbr->strencode( $row->title );
 				$dbr->freeResult( $res2 );
 			}
 		}
