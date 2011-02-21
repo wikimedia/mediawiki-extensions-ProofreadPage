@@ -1448,13 +1448,12 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		);
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
-			$title = $dbr->strencode( $row->title );
 			$dbr->freeResult( $res );
 			$res2 = $dbr->select(
 				array( 'pagelinks', 'page' ),
 				array( 'page_title AS title' ),
 				array(
-					'pl_title' => $title,
+					'pl_title' => $row->title,
 					'pl_namespace' => $page_ns_index,
 					'page_namespace' => $index_ns_index
 				),
@@ -1464,7 +1463,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			);
 			if( $res2 && $dbr->numRows( $res2 ) > 0 ) {
 				$row = $dbr->fetchObject( $res2 );
-				$indextitle = $dbr->strencode( $row->title );
+				$indextitle = $row->title;
 				$dbr->freeResult( $res2 );
 			}
 		}
