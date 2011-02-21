@@ -2568,6 +2568,7 @@ Cathetan||10',
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author David1010
  * @author Dawid Deutschland
  * @author ITshnik
  * @author Malafaya
@@ -2576,6 +2577,8 @@ Cathetan||10',
  */
 $messages['ka'] = array(
 	'indexpages' => 'მთავარი გვერდების სია',
+	'pageswithoutscans' => 'გვერდები სკანების გარეშე',
+	'proofreadpage_desc' => 'საშუალებას იძლევა კომფორტულად შეადაროთ ტექსტი ორიგინალის დასკანერებული სურათი',
 	'proofreadpage_namespace' => 'გვერდი',
 	'proofreadpage_index_namespace' => 'ინდექსი',
 	'proofreadpage_image' => 'სურათი',
@@ -2588,10 +2591,12 @@ $messages['ka'] = array(
 	'proofreadpage_indexdupe' => 'დუბლიკატი ბმული',
 	'proofreadpage_nologin' => 'შესვლა არ მომხდარა',
 	'proofreadpage_notallowed' => 'ცვლილებები არაა დაშვებული',
+	'proofreadpage_number_expected' => 'შეცდომა: რიცხვითი მნიშვნელობის ლოდინი',
 	'proofreadpage_interval_too_large' => 'შეცდომა: ინტერვალი ძალიან დიდია',
 	'proofreadpage_invalid_interval' => 'შეცდომა: არასწორი ინტერვალი',
 	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
 	'proofreadpage_prevpage' => 'წინა გვერდი',
+	'proofreadpage_header' => 'სათაური (არ შეიცავს):',
 	'proofreadpage_quality0_category' => 'ტექსტის გარეშე',
 	'proofreadpage_quality2_category' => 'პრობლემატური',
 	'proofreadpage_quality3_category' => 'შესწორდა',
