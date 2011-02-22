@@ -460,7 +460,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		}
 
 		if ( count( $values ) ) {
-			$query .= "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(" . implode( ",", $values ) . ")";
+			$query = "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(" . implode( ",", $values ) . ")";
 			$res = $dbr->query( $query, __METHOD__ );
 
 			foreach ( $res as $x ) {
@@ -670,14 +670,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		$name = $imageTitle->getDBkey();
 		$count = $image->pageCount();
 
-		$from = $args['from'];
-		$to = $args['to'];
-		if( !$from ) {
-			$from = 1;
-		}
-		if( !$to ) {
-			$to = $count;
-		}
+		$from = array_key_exists( 'from', $args ) ? $args['from'] : 1;
+		$to = array_key_exists( 'to', $args ) ? $args['to'] : $count;
 
 		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
@@ -721,10 +715,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 	function renderPages( $input, $args, $parser ) {
 		$page_namespace = $this->page_namespace;
 		$index_namespace = $this->index_namespace;
-		$index = $args['index'];
-		$from = $args['from'];
-		$to = $args['to'];
-		$header = $args['header'];
+
+		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
+		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
+		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
+		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
 
 		// abort if the tag is on an index page
 		if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
@@ -918,23 +913,23 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 			if( isset( $args['next'] ) ) {
 				$next = $args['next'];
 			}
-			if( $current ) {
+			if( isset( $current ) ) {
 				$h_out .= "|current=$current";
 			}
-			if( $prev ) {
+			if( isset( $prev ) ) {
 				$h_out .= "|prev=$prev";
 			}
-			if( $next ) {
+			if( isset( $next ) ) {
 				$h_out .= "|next=$next";
 			}
-			if( $from_pagenum ) {
+			if( isset( $from_pagenum ) ) {
 				$h_out .= "|from=$from_pagenum";
 			}
-			if( $to_pagenum ) {
+			if( isset( $to_pagenum ) ) {
 				$h_out .= "|to=$to_pagenum";
 			}
 			foreach ( $attributes as $key => $val ) {
-				if( $args[$key] ) {
+				if( array_key_exists( $key, $args ) ) {
 					$val = $args[$key];
 				}
 				$h_out .= "|$key=$val";
