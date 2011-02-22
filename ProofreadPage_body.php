@@ -974,8 +974,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		if( !preg_match( $page_regexp, $text, $m ) ) {
 			$this->load_index( $wgTitle );
 			list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
-			$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
-				."$header\n\n\n</noinclude>$text<noinclude>\n$footer</noinclude>";
+			$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" /><div class=\"pagetext\">"
+				."$header\n\n\n</noinclude>$text<noinclude>\n$footer</div></noinclude>";
 			return array( -1, null, $new_text );
 		}
 
