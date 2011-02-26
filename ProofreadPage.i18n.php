@@ -2810,10 +2810,24 @@ $messages['kw'] = array(
 );
 
 /** Latin (Latina)
+ * @author John Vandenberg
  * @author SPQRobin
  */
 $messages['la'] = array(
 	'proofreadpage_namespace' => 'Pagina',
+	'proofreadpage_index_namespace' => 'Liber',
+	'proofreadpage_image' => 'Fasciculus',
+	'proofreadpage_index' => 'Liber',
+	'proofreadpage_quality0_category' => 'Vacuus',
+	'proofreadpage_quality1_category' => 'Nondum emendata',
+	'proofreadpage_quality2_category' => 'Emendatio difficilis',
+	'proofreadpage_quality3_category' => 'Emendata',
+	'proofreadpage_quality4_category' => 'Bis lecta',
+	'proofreadpage_quality0_message' => 'Haec pagina emendanda non est',
+	'proofreadpage_quality1_message' => 'Haec pagina nondum emendata est',
+	'proofreadpage_quality2_message' => 'Emendatio difficilis',
+	'proofreadpage_quality3_message' => 'Haec pagina emendata est',
+	'proofreadpage_quality4_message' => 'Haec pagina emendata et bis lecta est',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
