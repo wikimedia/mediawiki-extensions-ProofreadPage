@@ -1872,25 +1872,26 @@ $messages['haw'] = array(
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author Rotem Liss
  * @author Rotemliss
  * @author YaronSh
  */
 $messages['he'] = array(
-	'indexpages' => 'רשימת דפי אינדקס',
+	'indexpages' => 'רשימת דפי מפתח',
 	'pageswithoutscans' => 'דפים ללא סריקות',
 	'proofreadpage_desc' => 'השוואה קלה של טקסט לסריקה המקורית שלו',
 	'proofreadpage_namespace' => 'דף',
-	'proofreadpage_index_namespace' => 'אינדקס',
+	'proofreadpage_index_namespace' => 'מפתח',
 	'proofreadpage_image' => 'תמונה',
-	'proofreadpage_index' => 'אינדקס',
-	'proofreadpage_index_expected' => 'שגיאה: נדרש אינדקס',
-	'proofreadpage_nosuch_index' => 'שגיאה: אין אינדקס כזה',
+	'proofreadpage_index' => 'מפתח',
+	'proofreadpage_index_expected' => 'שגיאה: נדרש מפתח',
+	'proofreadpage_nosuch_index' => 'שגיאה: אין מפתח כזה',
 	'proofreadpage_nosuch_file' => 'שגיאה: אין קובץ כזה',
 	'proofreadpage_badpage' => 'מבנה שגוי',
-	'proofreadpage_badpagetext' => 'מבנה הדף אותו ניסיתם לשמור אינו נכון.',
+	'proofreadpage_badpagetext' => 'מבנה הדף שניסיתם לשמור אינו נכון.',
 	'proofreadpage_indexdupe' => 'קישור כפול',
-	'proofreadpage_indexdupetext' => 'לא ניתן להציג את הדפים יותר מפעם אחת בדף אינדקס.',
+	'proofreadpage_indexdupetext' => 'לא ניתן להציג את הדפים יותר מפעם אחת בדף מפתח.',
 	'proofreadpage_nologin' => 'לא נכנסתם לאתר',
 	'proofreadpage_nologintext' => 'עליכם [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של דפים.',
 	'proofreadpage_notallowed' => 'לא ניתן לבצע השינוי',
@@ -1903,19 +1904,19 @@ $messages['he'] = array(
 	'proofreadpage_header' => 'כותרת (לא להכללה):',
 	'proofreadpage_body' => 'גוף הדף (להכללה):',
 	'proofreadpage_footer' => 'כותרת תחתונה (לא להכללה):',
-	'proofreadpage_toggleheaders' => 'הצגת או הסתרת החלקים שאינם להכללה',
+	'proofreadpage_toggleheaders' => 'הצגה או הסתרה של החלקים שאינם להכללה',
 	'proofreadpage_quality0_category' => 'ללא טקסט',
 	'proofreadpage_quality1_category' => 'לא בוצעה הגהה',
 	'proofreadpage_quality2_category' => 'בעייתי',
 	'proofreadpage_quality3_category' => 'בוצעה הגהה',
 	'proofreadpage_quality4_category' => 'מאומת',
-	'proofreadpage_quality0_message' => 'לדף זה לא נדרשת בדיקת הגהה',
-	'proofreadpage_quality1_message' => 'דף זה לא עבר בדיקת הגהה',
-	'proofreadpage_quality2_message' => 'הייתה בעיה בעת ביצוע בדיקת הגהה לדף זה',
+	'proofreadpage_quality0_message' => 'לדף זה לא נדרשת הגהה',
+	'proofreadpage_quality1_message' => 'דף זה לא עבר הגהה',
+	'proofreadpage_quality2_message' => 'הייתה בעיה בעת ביצוע הגהה לדף זה',
 	'proofreadpage_quality3_message' => 'דף זה עבר הגהה',
 	'proofreadpage_quality4_message' => 'דף זה עבר אימות',
 	'proofreadpage_index_listofpages' => 'רשימת דפים',
-	'proofreadpage_image_message' => 'קישור לדף האינדקס',
+	'proofreadpage_image_message' => 'קישור לדף המפתח',
 	'proofreadpage_page_status' => 'מצב הדף',
 	'proofreadpage_js_attributes' => 'מחבר כותרת שנה מוציא לאור',
 	'proofreadpage_index_attributes' => 'מחבר
