@@ -2378,6 +2378,7 @@ $messages['is'] = array(
 
 /** Italian (Italiano)
  * @author BrokenArrow
+ * @author Candalua
  * @author Civvì
  * @author Darth Kule
  * @author F. Cosoleto
@@ -2435,7 +2436,10 @@ Immagine|Immagine di copertina
 Pagine||20
 Note||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
+	'proofreadpage_specialpage_legend' => 'Cerca tra le pagine indice',
 	'proofreadpage_source' => 'Fonte',
+	'proofreadpage_source_message' => 'Edizione scansionata utilizzata per ricavare questo testo',
+	'right-pagequality' => 'Modificare la qualità della pagina',
 );
 
 /** Japanese (日本語)
@@ -3087,7 +3091,7 @@ $messages['mk'] = array(
 	'proofreadpage_invalid_interval' => 'Грешка: погрешно растојание',
 	'proofreadpage_nextpage' => 'Следна страница',
 	'proofreadpage_prevpage' => 'Претходна страница',
-	'proofreadpage_header' => 'Заглавие (без вклучување):',
+	'proofreadpage_header' => 'Заглавие (не се вклучува):',
 	'proofreadpage_body' => 'Содржина на страница (за превметнување):',
 	'proofreadpage_footer' => 'Подножје (не се вклучува):',
 	'proofreadpage_toggleheaders' => 'промена на видливоста на пасусите со „noinclude“',
