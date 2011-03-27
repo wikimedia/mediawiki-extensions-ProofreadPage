@@ -311,22 +311,21 @@ class ProofreadPage {
 		}
 		$out->proofreadPageDone = true;
 
-		$page_namespace = $this->page_namespace;
-		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
-			$this->preparePage( $out, $m, $isEdit );
-			return true;
+		switch( $wgTitle->getNamespace() ) {
+			case $this->page_namespace:
+				if ( preg_match( "/^{$this->page_namespace}:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
+					$this->preparePage( $out, $m, $isEdit );
+					return true;
+				}
+				break;
+			case $this->index_namespace:
+				$this->prepareIndex( $out );
+				break;
+			case NS_MAIN:
+				$this->prepareArticle( $out );
+				break;
 		}
-
-		$index_namespace = $this->index_namespace;
-		if ( $isEdit && ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) ) {
-			$this->prepareIndex( $out );
-			return true;
-		}
-
-		if( $wgTitle->getNamespace() == NS_MAIN ) {
-			$this->prepareArticle( $out );
-			return true;
-		}
+		return true;
 
 		return true;
 	}
