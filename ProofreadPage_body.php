@@ -877,11 +877,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 				$firstpage = $links[1][0];
 			}
 			$firstpage_title = Title::newFromText( "$page_namespace:$firstpage" );
-			$parser->getOutput()->addTemplate(
-				$firstpage_title,
-				$firstpage_title->getArticleID(),
-				$firstpage_title->getLatestRevID()
-			);
+			if ( $firstpage_title ) {
+				$parser->getOutput()->addTemplate(
+					$firstpage_title,
+					$firstpage_title->getArticleID(),
+					$firstpage_title->getLatestRevID()
+				);
+			}
 		}
 
 		if( $header ) {
