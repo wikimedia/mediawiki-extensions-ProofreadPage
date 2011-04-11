@@ -799,7 +799,7 @@ Sumari||15",
 	'proofreadpage_specialpage_legend' => "Cerca a les pàgines d'índex",
 	'proofreadpage_source' => 'Font',
 	'proofreadpage_source_message' => "Edició digitalitzada d'on s'ha extret aquest text",
-	'right-pagequality' => "Modifica l'indicador de qualitat de la pàgina",
+	'right-pagequality' => "Modificar l'indicador de qualitat de la pàgina",
 );
 
 /** Cebuano (Cebuano)
