@@ -58,20 +58,18 @@ class PagesWithoutScans extends QueryPage {
 			}
 			$linkBatch->addObj( $dp );
 		} else {
-				# Get all the templates linked from the Mediawiki:Disambiguationspage
-				$disPageObj = Title::makeTitleSafe( NS_MEDIAWIKI, 'disambiguationspage' );
-				$res = $dbr->select(
-					array('pagelinks', 'page'),
-					'pl_title',
-					array('page_id = pl_from', 'pl_namespace' => NS_TEMPLATE,
-						'page_namespace' => $disPageObj->getNamespace(), 'page_title' => $disPageObj->getDBkey()),
-					__METHOD__ );
+			# Get all the templates linked from the Mediawiki:Disambiguationspage
+			$disPageObj = Title::makeTitleSafe( NS_MEDIAWIKI, 'disambiguationspage' );
+			$res = $dbr->select(
+				array('pagelinks', 'page'),
+				'pl_title',
+				array('page_id = pl_from', 'pl_namespace' => NS_TEMPLATE,
+					'page_namespace' => $disPageObj->getNamespace(), 'page_title' => $disPageObj->getDBkey()),
+				__METHOD__ );
 
-				foreach ( $res as $row ) {
-					$linkBatch->addObj( Title::makeTitle( NS_TEMPLATE, $row->pl_title ));
-				}
-
-				$dbr->freeResult( $res );
+			foreach ( $res as $row ) {
+				$linkBatch->addObj( Title::makeTitle( NS_TEMPLATE, $row->pl_title ));
+			}
 		}
 		return $linkBatch->constructSet( 'tl', $dbr );
 	}
