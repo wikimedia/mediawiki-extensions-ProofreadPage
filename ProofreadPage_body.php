@@ -940,8 +940,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_
 		}
 
 		// wrap the output in a div, to prevent the parser from inserting pararaphs
-		$classes = array_key_exists( 'css', $attributes ) ? "class=\"" . Xml::escapeJsString( $attributes['css'] ) . "\"": '';
-		$out = "<div $classes>\n$out\n</div>";
+		$out = "<div>\n$out\n</div>";
 		$out = $parser->recursiveTagParse( $out );
 		return $out;
 	}
