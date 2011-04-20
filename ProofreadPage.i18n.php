@@ -2378,6 +2378,7 @@ $messages['is'] = array(
 );
 
 /** Italian (Italiano)
+ * @author Beta16
  * @author BrokenArrow
  * @author Candalua
  * @author Civvì
@@ -2414,11 +2415,11 @@ $messages['it'] = array(
 	'proofreadpage_body' => 'Corpo della pagina (da includere):',
 	'proofreadpage_footer' => 'Piè di pagina (non incluso)',
 	'proofreadpage_toggleheaders' => 'attiva/disattiva la visibilità delle sezioni non incluse',
-	'proofreadpage_quality0_category' => 'Pagine SAL 00%',
-	'proofreadpage_quality1_category' => 'Pagine SAL 25%',
-	'proofreadpage_quality2_category' => 'Pagine SAL 50%',
-	'proofreadpage_quality3_category' => 'Pagine SAL 75%',
-	'proofreadpage_quality4_category' => 'Pagine SAL 100%',
+	'proofreadpage_quality0_category' => 'Senza testo',
+	'proofreadpage_quality1_category' => 'Da correggere',
+	'proofreadpage_quality2_category' => 'Da rivedere',
+	'proofreadpage_quality3_category' => 'Corretta',
+	'proofreadpage_quality4_category' => 'Verificata',
 	'proofreadpage_quality0_message' => 'Questa pagina non necessita di essere corretta',
 	'proofreadpage_quality1_message' => 'Questa pagina non è stata corretta',
 	'proofreadpage_quality2_message' => "C'è stato un problema nella correzione di questa pagina",
