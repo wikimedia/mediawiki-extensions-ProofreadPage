@@ -3242,6 +3242,7 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
  * @author Aviator
  */
 $messages['ms'] = array(
@@ -3272,6 +3273,7 @@ Sumber
 Imej|Imej kulit
 Jumlah halaman||20
 Catatan||10',
+	'proofreadpage_source' => 'Sumber',
 );
 
 /** Mirandese (Mirandés)
