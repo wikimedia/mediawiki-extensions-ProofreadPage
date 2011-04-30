@@ -4657,6 +4657,7 @@ $messages['tet'] = array(
 	'proofreadpage_namespace' => 'Pájina',
 	'proofreadpage_nextpage' => 'Pájina oinmai',
 	'proofreadpage_prevpage' => 'Pájina molok',
+	'proofreadpage_pages' => '{{PLURAL:$1|pájina ida|pájina $1}}',
 );
 
 /** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
