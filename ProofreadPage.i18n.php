@@ -364,6 +364,13 @@ $messages['avk'] = array(
 	'proofreadpage_header' => 'Kroj (noinclude) :',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Cekli829
+ */
+$messages['az'] = array(
+	'proofreadpage_nextpage' => 'Növbəti səhifə',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  */
