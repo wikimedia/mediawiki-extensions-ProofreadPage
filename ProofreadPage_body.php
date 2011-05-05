@@ -151,8 +151,8 @@ class ProofreadPage {
 	 */
 	function navigation( $title ) {
 		$page_namespace = $this->page_namespace;
-		$default_header = wfMsgGetKey( 'proofreadpage_default_header', true, true, false );
-		$default_footer = wfMsgGetKey( 'proofreadpage_default_footer', true, true, false );
+		$default_header = wfMsgForContentNoTrans( 'proofreadpage_default_header' );
+		$default_footer = wfMsgForContentNoTrans( 'proofreadpage_default_footer' );
 
 		$err = array( '', '', '', '', '', '', '' );
 		$index_title = Title::newFromText( $title->pr_index_title );
@@ -334,8 +334,8 @@ class ProofreadPage {
 		$out->addModules( 'ext.proofreadpage.index' );
 		$out->addInlineScript("
 var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
-var prp_default_header = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_header', true, true, false ) ) . "\";
-var prp_default_footer = \"" . Xml::escapeJsString( wfMsgGetKey( 'proofreadpage_default_footer', true, true, false ) ) . "\";" );
+var prp_default_header = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_header' ) ) . "\";
+var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_footer' ) ) . "\";" );
 	}
 
 	function preparePage( $out, $m, $isEdit ) {
