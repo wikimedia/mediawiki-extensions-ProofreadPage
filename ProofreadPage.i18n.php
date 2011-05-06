@@ -3129,7 +3129,7 @@ $messages['mk'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
 	'proofreadpage_specialpage_legend' => 'Пребарување на индексни страници',
 	'proofreadpage_source' => 'Извор',
-	'proofreadpage_source_message' => 'Скенирано издание за востановување на овој текст',
+	'proofreadpage_source_message' => 'Отсликано издание што се користи за востановување на овој текст',
 	'right-pagequality' => 'Измени ознака за квалитет на страницата',
 );
 
