@@ -477,15 +477,14 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return bool
 	 */
 	function imageMessage( &$imgpage, &$out ) {
-		global $wgUser;
 		$index_namespace = $this->index_namespace;
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
 			return true;
 		}
-		$sk = $wgUser->getSkin();
 		$name = $image->getTitle()->getText();
-		$link = $sk->makeKnownLink( "$index_namespace:$name", wfMsg( 'proofreadpage_image_message' ) );
+		$title = Title::newFromText("$index_namespace:$name");
+		$link = Linker::link( $title, wfMsg( 'proofreadpage_image_message' ), array(), array(), 'known' );
 		$out->addHTML( "{$link}" );
 		return true;
 	}
