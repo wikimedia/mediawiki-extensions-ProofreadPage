@@ -2164,6 +2164,7 @@ Megjegyzések||10',
 );
 
 /** Armenian (Հայերեն)
+ * @author Chaojoker
  * @author Teak
  */
 $messages['hy'] = array(
@@ -2175,7 +2176,7 @@ $messages['hy'] = array(
 	'proofreadpage_index' => 'Ինդեքս',
 	'proofreadpage_index_expected' => 'Սխալ. ինդեքս չհայտնաբերվեց',
 	'proofreadpage_nosuch_index' => 'Սխալ. այդպիսի ինդեքս չկա',
-	'proofreadpage_nosuch_file' => 'Սխալ. այդպիսի ֆայլ չկա',
+	'proofreadpage_nosuch_file' => 'Սխալ. այդպիսի նիշք չկա',
 	'proofreadpage_badpage' => 'Սխալ ֆորմատ',
 	'proofreadpage_badpagetext' => 'Հիշվող էջի սխալ ֆորմատ։',
 	'proofreadpage_indexdupe' => 'Կրկնակի հղում',
