@@ -2736,7 +2736,7 @@ $messages['ko'] = array(
 그림|표지 그림
 쪽수||20
 주석||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|페이지}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|문서}}',
 	'proofreadpage_specialpage_legend' => '목차 문서 찾기',
 	'proofreadpage_source' => '출처',
 	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
@@ -3135,6 +3135,7 @@ $messages['mk'] = array(
 );
 
 /** Malayalam (മലയാളം)
+ * @author Hrishikesh.kb
  * @author Praveenp
  * @author Shijualex
  */
@@ -3143,9 +3144,9 @@ $messages['ml'] = array(
 	'pageswithoutscans' => 'സ്കാനുകൾ ഇല്ലാത്ത താളുകൾ',
 	'proofreadpage_desc' => 'യഥാർത്ഥ സ്കാനും എഴുത്തും തമ്മിലുള്ള ലളിതമായ ഒത്തുനോക്കൽ അനുവദിക്കുക',
 	'proofreadpage_namespace' => 'താൾ',
-	'proofreadpage_index_namespace' => 'ഇൻഡെക്സ്',
+	'proofreadpage_index_namespace' => 'സൂചിക',
 	'proofreadpage_image' => 'ചിത്രം',
-	'proofreadpage_index' => 'ഇൻഡെക്സ്',
+	'proofreadpage_index' => 'സൂചിക',
 	'proofreadpage_index_expected' => 'പിഴവ്: സൂചിക വേണം',
 	'proofreadpage_nosuch_index' => 'പിഴവ്: അത്തരത്തിലൊരു സൂചിക ഇല്ല',
 	'proofreadpage_nosuch_file' => 'പിഴവ്: അത്തരത്തിലൊരു പ്രമാണം ഇല്ല',
@@ -3166,11 +3167,11 @@ $messages['ml'] = array(
 	'proofreadpage_body' => 'താളിന്റെ ഉള്ളടക്കം (transclude ചെയ്യാനുള്ളത്):',
 	'proofreadpage_footer' => 'പാദവാചകം (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude വിഭാഗങ്ങളുടെ പ്രദർശനം ടോഗിൾ ചെയ്യുക',
-	'proofreadpage_quality0_category' => 'എഴുത്ത് ഇല്ലാതെ',
-	'proofreadpage_quality1_category' => 'തെറ്റുതിരുത്തൽ വായന നടന്നിട്ടില്ല',
-	'proofreadpage_quality2_category' => 'പ്രശ്നമുള്ളതാണ്‌',
-	'proofreadpage_quality3_category' => 'തെറ്റുതിരുത്തൽ വായന',
-	'proofreadpage_quality4_category' => 'സാധുകരിച്ചതാണ്‌',
+	'proofreadpage_quality0_category' => 'എഴുത്ത് ഇല്ലാത്തവ',
+	'proofreadpage_quality1_category' => 'തെറ്റുതിരുത്തൽ വായന നടന്നിട്ടില്ലാത്തവ',
+	'proofreadpage_quality2_category' => 'പ്രശ്നമുള്ളവ',
+	'proofreadpage_quality3_category' => 'തെറ്റുതിരുത്തൽ വായന കഴിഞ്ഞവ',
+	'proofreadpage_quality4_category' => 'സാധുകരിച്ചവ',
 	'proofreadpage_quality0_message' => 'ഈ താളിൽ തെറ്റുതിരുത്തൽ വായന ആവശ്യമില്ല',
 	'proofreadpage_quality1_message' => 'ഈ താളിൽ തെറ്റുതിരുത്തൽ വായന ഉണ്ടായിട്ടില്ല',
 	'proofreadpage_quality2_message' => 'ഈ താളിന്റെ തെറ്റുതിരുത്തൽ വായനയിൽ ഒരു പിഴവുണ്ടായിരിക്കുന്നു',
