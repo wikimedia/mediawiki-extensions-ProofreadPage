@@ -3282,6 +3282,7 @@ Sumber
 Imej|Imej kulit
 Jumlah halaman||20
 Catatan||10',
+	'proofreadpage_pages' => '$1 laman',
 	'proofreadpage_source' => 'Sumber',
 );
 
