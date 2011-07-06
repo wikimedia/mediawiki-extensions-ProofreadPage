@@ -790,7 +790,7 @@ $messages['ca'] = array(
 	'proofreadpage_quality4_message' => 'Aquesta pàgina ha estat validada',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
 	'proofreadpage_image_message' => "Enllaç a la pàgina d'índex",
-	'proofreadpage_page_status' => 'Status de la pàgina',
+	'proofreadpage_page_status' => 'Estat de la pàgina',
 	'proofreadpage_js_attributes' => 'Autor Títol Any Editorial',
 	'proofreadpage_index_attributes' => "Títol
 Autor
