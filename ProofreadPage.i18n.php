@@ -3942,6 +3942,7 @@ Willapusqakuna||10",
  */
 $messages['ro'] = array(
 	'indexpages' => 'Lista paginilor index',
+	'pageswithoutscans' => 'Pagini fără scanări',
 	'proofreadpage_desc' => 'Permite compararea facilă a textului față de scanarea originală',
 	'proofreadpage_namespace' => 'Pagină',
 	'proofreadpage_index_namespace' => 'Index',
@@ -3966,6 +3967,7 @@ $messages['ro'] = array(
 	'proofreadpage_header' => 'Antet (nu include):',
 	'proofreadpage_body' => 'Corp-mesaj (pentru a fi introdus):',
 	'proofreadpage_footer' => "Notă de subsol (''noinclude''):",
+	'proofreadpage_toggleheaders' => "arată/ascunde secțiunile ''noinclude''",
 	'proofreadpage_quality0_category' => 'Fără text',
 	'proofreadpage_quality1_category' => 'Neverificat',
 	'proofreadpage_quality2_category' => 'Problematic',
@@ -3991,6 +3993,8 @@ Comentarii||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pagină|pagini}}',
 	'proofreadpage_specialpage_legend' => 'Căutați paginile de index',
 	'proofreadpage_source' => 'Sursă',
+	'proofreadpage_source_message' => 'Pentru a confirma acest text s-au utilizat ediția scanată',
+	'right-pagequality' => 'Modifică indicatorul de calitate a paginii',
 );
 
 /** Tarandíne (Tarandíne)
