@@ -1495,6 +1495,7 @@ $messages['fa'] = array(
  * @author Agony
  * @author Cimon Avaro
  * @author Crt
+ * @author Harriv
  * @author Jaakonam
  * @author Nike
  * @author Olli
@@ -1530,9 +1531,9 @@ $messages['fi'] = array(
 	'proofreadpage_footer' => 'Alatunniste (ei sisällytetä):',
 	'proofreadpage_toggleheaders' => 'vaihtaa sisällyttämättömien osioiden näkyvyyttä',
 	'proofreadpage_quality0_category' => 'Ilman tekstiä',
-	'proofreadpage_quality1_category' => 'Korjauslukematon',
+	'proofreadpage_quality1_category' => 'Oikolukematta',
 	'proofreadpage_quality2_category' => 'Ongelmallinen',
-	'proofreadpage_quality3_category' => 'Korjausluettu',
+	'proofreadpage_quality3_category' => 'Oikoluettu',
 	'proofreadpage_quality4_category' => 'Hyväksytty',
 	'proofreadpage_quality0_message' => 'Tätä sivua ei tarvitse oikolukea',
 	'proofreadpage_quality1_message' => 'Tätä sivua ei ole oikoluettu',
