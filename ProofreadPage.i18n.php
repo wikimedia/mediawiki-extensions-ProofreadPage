@@ -66,6 +66,14 @@ Remarks||10',
 	'proofreadpage_source'         => 'Source',
 	'proofreadpage_source_message' => 'Scanned edition used to establish this text',
 	'right-pagequality'            => 'Modify page quality flag',
+	'proofreadpage-section-tools'                  => 'Proofread tools',
+	'proofreadpage-group-zoom'                     => 'Zoom',
+	'proofreadpage-group-other'                    => 'Other',
+	'proofreadpage-button-toggle-visibility-label' => 'Show/hide this page\'s header and footer',
+	'proofreadpage-button-zoom-out-label'          => 'Zoom out',
+	'proofreadpage-button-reset-zoom-label'        => 'Reset zoom',
+	'proofreadpage-button-zoom-in-label'           => 'Zoom in',
+	'proofreadpage-button-toggle-layout-label'     => 'Vertical/horizontal layout'
 );
 
 /** Message documentation (Message documentation)

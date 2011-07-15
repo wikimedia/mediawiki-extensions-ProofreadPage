@@ -767,76 +767,128 @@ function pr_setup() {
 
 	// add buttons
 	if( proofreadPageIsEdit ) {
-		var toolbar = document.getElementById( 'toolbar' );
+		var tools = {
+			'section': 'proofreadpage-tools',
+			'groups': {
+				'zoom': {
+					'label': mw.msg( 'proofreadpage-group-zoom' ),
+					'tools': {
+						'zoom-in': {
+							label: mw.msg( 'proofreadpage-button-zoom-in-label' ),
+							type: 'button',
+							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_zoom_in.png',
+							action: {
+								type: 'callback',
+								execute: function() {
+									xx=0;
+									yy=0;
+									pr_zoom(2);
+								}
+							}
+						},
+						'zoom-out': {
+							label: mw.msg( 'proofreadpage-button-zoom-out-label' ),
+							type: 'button',
+							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_zoom_out.png',
+							action: {
+								type: 'callback',
+								execute: function() {
+									xx=0;
+									yy=0;
+									pr_zoom(-2);
+								}
+							}
+						},
+						'reset-zoom': {
+							label: mw.msg( 'proofreadpage-button-reset-zoom-label' ),
+							type: 'button',
+							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_examine.png',
+							action: {
+								type: 'callback',
+								execute: function() {
+									pr_zoom(0);
+								}
+							}
+						}
+					}
+				},
+				'other': {
+					'label': mw.msg( 'proofreadpage-group-other' ),
+					'tools': {
+						'toggle-visibility': {
+							label: mw.msg( 'proofreadpage-button-toggle-visibility-label' ),
+							type: 'button',
+							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/button_category_plus.png',
+							action: {
+								type: 'callback',
+								execute: function() {
+									pr_toggle_visibility();
+								}
+							}
+						},
+						'toggle-layout': {
+							label: mw.msg( 'proofreadpage-button-toggle-layout-label' ),
+							type: 'button',
+							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_multicol.png',
+							action: {
+								type: 'callback',
+								execute: function() {
+									pr_toggle_layout();
+								}
+							}
+						}
+					}
+				}
+			}
+		};
 
-		var image = document.createElement( 'img' );
-		image.width = 23;
-		image.height = 22;
-		image.className = 'mw-toolbar-editbutton';
-		image.src = wgScriptPath + '/extensions/ProofreadPage/button_category_plus.png';
-		image.border = 0;
-		image.alt = mediaWiki.msg( 'proofreadpage_toggleheaders' );
-		image.title = mediaWiki.msg( 'proofreadpage_toggleheaders' );
-		image.style.cursor = 'pointer';
-		image.onclick = pr_toggle_visibility;
+		var $edit = $( '#wpTextbox1' );
+		if( typeof $edit.wikiEditor == 'function' ) {
+			console.log('hey hey');
+			setTimeout(function() {
+			$edit.wikiEditor( 'addToToolbar', {
+				'sections': {
+					'proofreadpage-tools': {
+						'type': 'toolbar',
+						'label': mw.msg( 'proofreadpage-section-tools' )
+					}
+				}
+			} )
+			.wikiEditor( 'addToToolbar', tools);
+			}, 500);
+		} else {
+			var toolbar = document.getElementById( 'toolbar' );
 
-		var image3 = document.createElement( 'img' );
-		image3.width = 23;
-		image3.height = 22;
-		image3.border = 0;
-		image3.className = 'mw-toolbar-proofread';
-		image3.style.cursor = 'pointer';
-		image3.alt = '-';
-		image3.title = 'zoom out';
-		image3.src = wgScriptPath + '/extensions/ProofreadPage/Button_zoom_out.png';
-		image3.onclick = new Function( 'xx=0;yy=0;pr_zoom(-2);' );
+			pr_rect = document.createElement( 'div' );
+			pr_container_parent.appendChild( pr_rect );
 
-		var image4 = document.createElement( 'img' );
-		image4.width = 23;
-		image4.height = 22;
-		image4.border = 0;
-		image4.className = 'mw-toolbar-proofread';
-		image4.style.cursor = 'pointer';
-		image4.alt = '-';
-		image4.title = 'reset zoom';
-		image4.src = wgScriptPath + '/extensions/ProofreadPage/Button_examine.png';
-		image4.onclick = new Function("pr_zoom(0);");
+			if( ( !toolbar ) || ( self.wgWikiEditorPreferences && self.wgWikiEditorPreferences['toolbar'] ) ) {
+				toolbar = document.createElement( 'div' );
+				toolbar.style.cssText = 'position:absolute;';
+				pr_container_parent.appendChild( toolbar );
+			}
 
-		var image2 = document.createElement( 'img' );
-		image2.width = 23;
-		image2.height = 22;
-		image2.border = 0;
-		image2.className = 'mw-toolbar-proofread';
-		image2.style.cursor = 'pointer';
-		image2.alt = '+';
-		image2.title = 'zoom in';
-		image2.src = wgScriptPath + '/extensions/ProofreadPage/Button_zoom_in.png';
-		image2.onclick = new Function( 'xx=0;yy=0;pr_zoom(2);' );
-
-		var image1 = document.createElement( 'img' );
-		image1.width = 23;
-		image1.height = 22;
-		image1.className = 'mw-toolbar-editbutton';
-		image1.src = wgScriptPath + '/extensions/ProofreadPage/Button_multicol.png';
-		image1.border = 0;
-		image1.alt = ' ';
-		image1.title = 'vertical/horizontal layout';
-		image1.style.cursor = 'pointer';
-		image1.onclick = pr_toggle_layout;
-
-		pr_rect = document.createElement( 'div' );
-		pr_container_parent.appendChild( pr_rect );
-
-		if( ( !toolbar ) || ( self.wgWikiEditorPreferences && self.wgWikiEditorPreferences['toolbar'] ) ) {
-			toolbar = document.createElement( 'div' );
-			toolbar.style.cssText = 'position:absolute;';
-			pr_container_parent.appendChild( toolbar );
+			var bits = [
+				tools.groups.other.tools['toggle-visibility'],
+				tools.groups.zoom.tools['zoom-out'],
+				tools.groups.zoom.tools['reset-zoom'],
+				tools.groups.zoom.tools['zoom-in'],
+				tools.groups.other.tools['toggle-layout']
+			];
+			$.each(bits, function(i, button) {
+				var image = document.createElement( 'img' );
+				image.width = 23;
+				image.height = 22;
+				image.className = 'mw-toolbar-editbutton';
+				image.src = button.icon;
+				image.border = 0;
+				image.alt = button.label;
+				image.title = button.label;
+				image.style.cursor = 'pointer';
+				image.onclick = button.action.execute;
+				toolbar.appendChild( image );
+			});
 		}
-		toolbar.appendChild( image );
-		toolbar.appendChild( image3 );
-		toolbar.appendChild( image4 );
-		toolbar.appendChild( image2 );
-		toolbar.appendChild( image1 );
 	}
 }
 

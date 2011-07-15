@@ -78,6 +78,14 @@ $wgResourceModules += array(
 			'proofreadpage_quality2_category',
 			'proofreadpage_quality3_category',
 			'proofreadpage_quality4_category',
+			'proofreadpage-section-tools',
+			'proofreadpage-group-zoom',
+			'proofreadpage-group-other',
+			'proofreadpage-button-toggle-visibility-label',
+			'proofreadpage-button-zoom-out-label',
+			'proofreadpage-button-reset-zoom-label',
+			'proofreadpage-button-zoom-in-label',
+			'proofreadpage-button-toggle-layout-label',
 		)
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(
