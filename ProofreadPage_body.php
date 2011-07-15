@@ -33,7 +33,7 @@ class ProofreadPage {
 	 * Constructor
 	 */
 	function __construct() {
-		global $wgHooks, $wgScriptPath;
+		global $wgHooks, $wgExtensionAssetsPath;
 		$wgHooks['ParserFirstCallInit'][] = array( $this, 'parserFirstCallInit' );
 		$wgHooks['BeforePageDisplay'][] = array( &$this, 'beforePageDisplay' );
 		$wgHooks['GetLinkColours'][] = array( &$this, 'getLinkColoursHook' );
@@ -53,7 +53,7 @@ class ProofreadPage {
 		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
 
 		/* Navigation icons */ 
-		$path = $wgScriptPath . '/extensions/ProofreadPage';
+		$path = $wgExtensionAssetsPath . '/ProofreadPage';
 		$this->prev_icon = Html::element( 'img', array(	'src' => $path . '/leftarrow.png', 
 								'alt' =>  wfMsg( 'proofreadpage_prevpage' ),
 								'width' => 15, 'height' => 15 ) );

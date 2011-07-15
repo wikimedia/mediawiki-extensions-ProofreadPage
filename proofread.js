@@ -776,7 +776,7 @@ function pr_setup() {
 						'zoom-in': {
 							label: mw.msg( 'proofreadpage-button-zoom-in-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_zoom_in.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_zoom_in.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -789,7 +789,7 @@ function pr_setup() {
 						'zoom-out': {
 							label: mw.msg( 'proofreadpage-button-zoom-out-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_zoom_out.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_zoom_out.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -802,7 +802,7 @@ function pr_setup() {
 						'reset-zoom': {
 							label: mw.msg( 'proofreadpage-button-reset-zoom-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_examine.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_examine.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -818,7 +818,7 @@ function pr_setup() {
 						'toggle-visibility': {
 							label: mw.msg( 'proofreadpage-button-toggle-visibility-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/button_category_plus.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/button_category_plus.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -829,7 +829,7 @@ function pr_setup() {
 						'toggle-layout': {
 							label: mw.msg( 'proofreadpage-button-toggle-layout-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgScriptPath' ) + '/extensions/ProofreadPage/Button_multicol.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_multicol.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -844,7 +844,6 @@ function pr_setup() {
 
 		var $edit = $( '#wpTextbox1' );
 		if( typeof $edit.wikiEditor == 'function' ) {
-			console.log('hey hey');
 			setTimeout(function() {
 			$edit.wikiEditor( 'addToToolbar', {
 				'sections': {
