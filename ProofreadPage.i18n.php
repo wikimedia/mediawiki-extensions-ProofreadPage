@@ -946,10 +946,19 @@ Bemærkninger | | 10',
 	'proofreadpage_source' => 'Kilde',
 	'proofreadpage_source_message' => 'Indscannet original, der blev brugt som grundlag for denne tekst',
 	'right-pagequality' => 'Ændre en sides kvalititetsflag',
+	'proofreadpage-section-tools' => 'Korrekturlæsning',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Øvrigt',
+	'proofreadpage-button-toggle-visibility-label' => 'Vis/skjul denne sides sidehoved og sidefod',
+	'proofreadpage-button-zoom-out-label' => 'Zoom ud',
+	'proofreadpage-button-reset-zoom-label' => 'Nulstil zoom',
+	'proofreadpage-button-zoom-in-label' => 'Zoom ind',
+	'proofreadpage-button-toggle-layout-label' => 'Lodret/vandret opsætning',
 );
 
 /** German (Deutsch)
  * @author Imre
+ * @author Kghbln
  * @author Metalhead64
  * @author Raimond Spekking
  * @author Tbleher
@@ -971,18 +980,18 @@ $messages['de'] = array(
 	'proofreadpage_indexdupe' => 'Doppelter Link',
 	'proofreadpage_indexdupetext' => 'Seiten können nicht mehr als einmal auf einer Indexseite aufgelistet werden.',
 	'proofreadpage_nologin' => 'Nicht angemeldet',
-	'proofreadpage_nologintext' => 'Du musst [[Special:UserLogin|angemeldet sein]], um den Korrekturlesungsstatus von Seiten zu ändern.',
+	'proofreadpage_nologintext' => 'Du musst [[Special:UserLogin|angemeldet sein]], um den Status des Korrekturlesens von Seiten ändern zu können.',
 	'proofreadpage_notallowed' => 'Änderung nicht erlaubt',
-	'proofreadpage_notallowedtext' => 'Du bist nicht berechtigt, den Korrekturlesungsstatus dieser Seite zu ändern.',
+	'proofreadpage_notallowedtext' => 'Du bist nicht berechtigt, den Status des Korrekturlesens dieser Seite zu ändern.',
 	'proofreadpage_number_expected' => 'Fehler: Numerischer Wert erwartet',
 	'proofreadpage_interval_too_large' => 'Fehler: Intervall zu groß',
 	'proofreadpage_invalid_interval' => 'Fehler: ungültiges Intervall',
 	'proofreadpage_nextpage' => 'Nächste Seite',
 	'proofreadpage_prevpage' => 'Vorherige Seite',
-	'proofreadpage_header' => 'Kopfzeile (noinclude):',
-	'proofreadpage_body' => 'Textkörper (Transklusion):',
-	'proofreadpage_footer' => 'Fußzeile (noinclude):',
-	'proofreadpage_toggleheaders' => 'noinclude-Abschnitte ein-/ausblenden',
+	'proofreadpage_header' => 'Kopfzeile (nicht einzufügen):',
+	'proofreadpage_body' => 'Textkörper (einzufügen):',
+	'proofreadpage_footer' => 'Fußzeile (nicht einzufügen):',
+	'proofreadpage_toggleheaders' => 'Nicht einzufügende Abschnitte ein-/ ausblenden',
 	'proofreadpage_quality0_category' => 'Ohne Text',
 	'proofreadpage_quality1_category' => 'Unkorrigiert',
 	'proofreadpage_quality2_category' => 'Korrekturproblem',
@@ -1010,15 +1019,24 @@ Bemerkungen||10',
 	'proofreadpage_source' => 'Quelle',
 	'proofreadpage_source_message' => 'Zur Erstellung dieses Texts wurde die gescannte Ausgabe benutzt.',
 	'right-pagequality' => 'Seitenqualität ändern',
+	'proofreadpage-section-tools' => 'Hilfsmittel zum Korrekturlesen',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Anderes',
+	'proofreadpage-button-toggle-visibility-label' => 'Kopf- und Fußzeile dieser Seite ein-/ ausblenden',
+	'proofreadpage-button-zoom-out-label' => 'Verkleinern',
+	'proofreadpage-button-reset-zoom-label' => 'Zoom zurücksetzen',
+	'proofreadpage-button-zoom-in-label' => 'Vergrößern',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikale/ horizontale Ausrichtung',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Imre
+ * @author Kghbln
  */
 $messages['de-formal'] = array(
 	'proofreadpage_badpagetext' => 'Das Format der Seite, die Sie versuchen zu speichern, ist falsch.',
-	'proofreadpage_nologintext' => 'Sie müssen [[Special:UserLogin|angemeldet sein]], um den Korrekturlesungsstatus von Seiten zu ändern.',
-	'proofreadpage_notallowedtext' => 'Sie sind nicht berechtigt, den Korrekturlesungsstatus dieser Seite zu ändern.',
+	'proofreadpage_nologintext' => 'Sie müssen [[Special:UserLogin|angemeldet sein]], um den Status des Korrekturlesens von Seiten ändern zu können.',
+	'proofreadpage_notallowedtext' => 'Sie sind nicht berechtigt, den Status des Korrekturlesens dieser Seite zu ändern.',
 );
 
 /** Zazaki (Zazaki)
@@ -1949,6 +1967,13 @@ $messages['he'] = array(
 	'proofreadpage_source' => 'מקור',
 	'proofreadpage_source_message' => 'הגרסה הסרוקה ששימשה להכנת טקסט זה',
 	'right-pagequality' => 'החלפת דגל האיכות של הדף',
+	'proofreadpage-section-tools' => 'כלי הגהה',
+	'proofreadpage-group-zoom' => 'תקריב',
+	'proofreadpage-button-toggle-visibility-label' => 'להציג או להסתיר את הכותרת העליונה והתחתונה של הדף הזה',
+	'proofreadpage-button-zoom-out-label' => 'התרחקות',
+	'proofreadpage-button-reset-zoom-label' => 'גודל מקורי',
+	'proofreadpage-button-zoom-in-label' => 'תקריב',
+	'proofreadpage-button-toggle-layout-label' => 'פריסה אופקית או אנכית',
 );
 
 /** Hindi (हिन्दी)
@@ -2290,6 +2315,14 @@ Notas||10',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Le original scannate usate pro crear iste texto',
 	'right-pagequality' => 'Modificar le marca de qualitate del pagina',
+	'proofreadpage-section-tools' => 'Instrumentos pro correction de probas',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Altere',
+	'proofreadpage-button-toggle-visibility-label' => 'Monstrar/celar le capite e le pede de iste pagina',
+	'proofreadpage-button-zoom-out-label' => 'Diminuer',
+	'proofreadpage-button-reset-zoom-label' => 'Reinitialisar zoom',
+	'proofreadpage-button-zoom-in-label' => 'Aggrandir',
+	'proofreadpage-button-toggle-layout-label' => 'Disposition vertical/horizontal',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -2912,6 +2945,8 @@ Bemierkungen||10',
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'Gescannten Editioun déi benotzt gouf fir dësen Text ze schreiwen',
 	'right-pagequality' => 'Qualitéitsindice vun der Säit änneren',
+	'proofreadpage-section-tools' => "Geschirkëscht fir z'iwwerliesen",
+	'proofreadpage-group-zoom' => 'Zoom',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -3141,6 +3176,14 @@ $messages['mk'] = array(
 	'proofreadpage_source' => 'Извор',
 	'proofreadpage_source_message' => 'Отсликано издание што се користи за востановување на овој текст',
 	'right-pagequality' => 'Измени ознака за квалитет на страницата',
+	'proofreadpage-section-tools' => 'Лекторски алатки',
+	'proofreadpage-group-zoom' => 'Размер',
+	'proofreadpage-group-other' => 'Други',
+	'proofreadpage-button-toggle-visibility-label' => 'Прикажи / скриј го заглавието и подножјето на страницава',
+	'proofreadpage-button-zoom-out-label' => 'Оддалечи',
+	'proofreadpage-button-reset-zoom-label' => 'Врати размер',
+	'proofreadpage-button-zoom-in-label' => 'Приближи',
+	'proofreadpage-button-toggle-layout-label' => 'Вертикален/хоризонтален распоред',
 );
 
 /** Malayalam (മലയാളം)
@@ -3437,6 +3480,7 @@ Opmerkingen||10",
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Gescande versie waarop deze tekst is gebaseerd',
 	'right-pagequality' => 'Kwaliteitsmarkering voor de pagina wijzigen',
+	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale lay-out',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -3695,6 +3739,14 @@ Uwagi||10',
 	'proofreadpage_source' => 'Źródło',
 	'proofreadpage_source_message' => 'Zeskanowane wydanie wykorzystane do przygotowania tego tekstu',
 	'right-pagequality' => 'Zmienianie statusu uwierzytelnienia strony',
+	'proofreadpage-section-tools' => 'Narzędzia proofread',
+	'proofreadpage-group-zoom' => 'Powiększenie',
+	'proofreadpage-group-other' => 'Pozostałe',
+	'proofreadpage-button-toggle-visibility-label' => 'Pokaż lub ukryj nagłówek i stopkę strony',
+	'proofreadpage-button-zoom-out-label' => 'Pomniejsz',
+	'proofreadpage-button-reset-zoom-label' => 'Powiększenie domyślne',
+	'proofreadpage-button-zoom-in-label' => 'Powiększ',
+	'proofreadpage-button-toggle-layout-label' => 'Zmień układ na poziomy lub pionowy',
 );
 
 /** Piedmontese (Piemontèis)
@@ -4375,6 +4427,14 @@ Pripombe||10',
 	'proofreadpage_source' => 'Vir',
 	'proofreadpage_source_message' => 'Preslikana izdaja, uporabljena za nastanek tega besedila',
 	'right-pagequality' => 'Spremeni označbo kakovosti strani',
+	'proofreadpage-section-tools' => 'Orodja za pregled',
+	'proofreadpage-group-zoom' => 'Povečava',
+	'proofreadpage-group-other' => 'Drugo',
+	'proofreadpage-button-toggle-visibility-label' => 'Pokaži/skrij glavo in nogo strani',
+	'proofreadpage-button-zoom-out-label' => 'Pomanjšaj',
+	'proofreadpage-button-reset-zoom-label' => 'Ponastavi povečavo',
+	'proofreadpage-button-zoom-in-label' => 'Povečaj',
+	'proofreadpage-button-toggle-layout-label' => 'Navpična/vodoravna postavitev',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
