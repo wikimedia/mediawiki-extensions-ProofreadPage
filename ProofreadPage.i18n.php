@@ -4234,6 +4234,14 @@ $messages['ru'] = array(
 	'proofreadpage_source' => 'Источник',
 	'proofreadpage_source_message' => 'Для создания электронной версии текста использовались отсканированные материалы',
 	'right-pagequality' => 'изменять флаг качества страницы',
+	'proofreadpage-section-tools' => 'Инструменты корректора',
+	'proofreadpage-group-zoom' => 'Увеличение',
+	'proofreadpage-group-other' => 'Иное',
+	'proofreadpage-button-toggle-visibility-label' => 'Показать/скрыть верхнюю и нижнюю часть этой страницы',
+	'proofreadpage-button-zoom-out-label' => 'Отдалить',
+	'proofreadpage-button-reset-zoom-label' => 'Сбросить увеличение',
+	'proofreadpage-button-zoom-in-label' => 'Приблизить',
+	'proofreadpage-button-toggle-layout-label' => 'Вертикальная/горизонтальная разметка',
 );
 
 /** Rusyn (Русиньскый)
