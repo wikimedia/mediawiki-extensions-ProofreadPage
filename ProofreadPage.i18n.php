@@ -1592,6 +1592,7 @@ Huomautuksia||10',
  * @author IAlex
  * @author Jean-Frédéric
  * @author John Vandenberg
+ * @author Seb35
  * @author Urhixidur
  * @author Verdy p
  */
@@ -1650,6 +1651,14 @@ Remarques||10',
 	'proofreadpage_source' => 'Source',
 	'proofreadpage_source_message' => 'Édition numérisée dont est issu ce texte',
 	'right-pagequality' => 'Modifier le drapeau de qualité de la page',
+	'proofreadpage-section-tools' => 'Outils d’aide à la relecture',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Autre',
+	'proofreadpage-button-toggle-visibility-label' => 'Afficher/cacher l’en-tête et le pied de page de cette page',
+	'proofreadpage-button-zoom-out-label' => 'Dézoomer',
+	'proofreadpage-button-reset-zoom-label' => 'Réinitialiser le zoom',
+	'proofreadpage-button-zoom-in-label' => 'Zoomer',
+	'proofreadpage-button-toggle-layout-label' => 'Disposition verticale/horizontale',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -2949,9 +2958,11 @@ Bemierkungen||10',
 	'proofreadpage-section-tools' => "Geschirkëscht fir z'iwwerliesen",
 	'proofreadpage-group-zoom' => 'Zoom',
 	'proofreadpage-group-other' => 'Aner',
+	'proofreadpage-button-toggle-visibility-label' => "D'Entête an de Fouss vun dëser Säit weisen/verstoppen",
 	'proofreadpage-button-zoom-out-label' => ' Verklengeren',
 	'proofreadpage-button-reset-zoom-label' => 'Zoom zerécksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergréisseren',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikalen/horizontale Layout',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
