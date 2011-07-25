@@ -1718,6 +1718,7 @@ Comentèros||10',
 	'proofreadpage_source' => 'Sôrsa',
 	'proofreadpage_source_message' => 'Èdicion scanâ que vint de cél tèxto',
 	'right-pagequality' => 'Changiér lo drapél de qualitât de la pâge',
+	'proofreadpage-group-other' => 'Ôtra',
 );
 
 /** Friulian (Furlan)
