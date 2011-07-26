@@ -3473,7 +3473,7 @@ Titel
 Jaor|Jaar van publicatie
 Uutgever
 Bron
-Ofbeelding|Umslag
+Aofbeelding|Umslag
 Pagina's||20
 Opmarkingen||10",
 );
