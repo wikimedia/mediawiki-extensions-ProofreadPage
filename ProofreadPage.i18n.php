@@ -3538,6 +3538,13 @@ Opmerkingen||10",
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Gescande versie waarop deze tekst is gebaseerd',
 	'right-pagequality' => 'Kwaliteitsmarkering voor de pagina wijzigen',
+	'proofreadpage-section-tools' => 'Hulpmiddelen voor proeflezen',
+	'proofreadpage-group-zoom' => 'Zoomen',
+	'proofreadpage-group-other' => 'Anders',
+	'proofreadpage-button-toggle-visibility-label' => 'De kop- en voettekst van deze pagina weergeven of verbergen',
+	'proofreadpage-button-zoom-out-label' => 'Uitzoomen',
+	'proofreadpage-button-reset-zoom-label' => 'Zoom opnieuw instellen',
+	'proofreadpage-button-zoom-in-label' => 'Inzoomen',
 	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale lay-out',
 );
 
