@@ -688,6 +688,7 @@ Notennoù||10',
 	'proofreadpage_source' => 'Mammenn',
 	'proofreadpage_source_message' => 'Embannadurioù bet niverelaet implijet evit sevel an destenn-mañ',
 	'right-pagequality' => 'Kemm banniel perzhded ar bajennoù',
+	'proofreadpage-section-tools' => 'Ostilhoù adlenn',
 );
 
 /** Bosnian (Bosanski)
