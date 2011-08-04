@@ -109,6 +109,7 @@ $messages['qqq'] = array(
 	'proofreadpage_pages' => '{{Identical|Page}}',
 	'proofreadpage_source' => '{{Identical|Source}}',
 	'right-pagequality' => '{{doc-right}}',
+	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -2050,7 +2051,7 @@ $messages['hr'] = array(
 	'proofreadpage_number_expected' => 'Pogreška: očekivana je brojčana vrijednost',
 	'proofreadpage_interval_too_large' => 'Pogreška: interval je prevelik',
 	'proofreadpage_invalid_interval' => 'Pogreška: interval nije valjan',
-	'proofreadpage_nextpage' => 'Slijedeća stranica',
+	'proofreadpage_nextpage' => 'Sljedeća stranica',
 	'proofreadpage_prevpage' => 'Prethodna stranica',
 	'proofreadpage_header' => "Zaglavlje (''noinclude''):",
 	'proofreadpage_body' => 'Tijelo stranice (bit će uključeno):',
@@ -3972,7 +3973,7 @@ Notas||10',
 	'right-pagequality' => 'Modificar o indicador da qualidade da página',
 	'proofreadpage-section-tools' => 'Instrumentos de revisão',
 	'proofreadpage-group-zoom' => 'Ampliar',
-	'proofreadpage-group-other' => 'Outro',
+	'proofreadpage-group-other' => 'Outros',
 	'proofreadpage-button-toggle-visibility-label' => 'Mostrar ou ocultar o cabeçalho e o rodapé desta página',
 	'proofreadpage-button-zoom-out-label' => 'Reduzir ampliação',
 	'proofreadpage-button-reset-zoom-label' => 'Reiniciar ampliação',
