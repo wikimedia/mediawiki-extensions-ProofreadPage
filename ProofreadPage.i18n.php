@@ -1812,6 +1812,11 @@ Comentarios||10',
 	'proofreadpage_source' => 'Orixe',
 	'proofreadpage_source_message' => 'Edición dixitalizada utilizada para establecer este texto',
 	'right-pagequality' => 'Modificar a marca de calidade da páxina',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Outro',
+	'proofreadpage-button-zoom-out-label' => 'Reducir',
+	'proofreadpage-button-reset-zoom-label' => 'Restablecer o zoom',
+	'proofreadpage-button-zoom-in-label' => 'Ampliar',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
