@@ -22,48 +22,24 @@
 
 class ProofreadPage {
 
-	/* Page and Index namespaces */
-	var $page_namespace = null;
-	var $index_namespace = null;
-
 	/* Parser object for index pages */
-	var $index_parser = null;
+	private static $index_parser = null;
 
-	/**
-	 * Constructor
-	 */
-	function __construct() {
-		global $wgHooks, $wgExtensionAssetsPath;
-		$wgHooks['ParserFirstCallInit'][] = array( $this, 'parserFirstCallInit' );
-		$wgHooks['BeforePageDisplay'][] = array( &$this, 'beforePageDisplay' );
-		$wgHooks['GetLinkColours'][] = array( &$this, 'getLinkColoursHook' );
-		$wgHooks['ImageOpenShowImageInlineBefore'][] = array( &$this, 'imageMessage' );
-		$wgHooks['EditPage::attemptSave'][] = array( &$this, 'attemptSave' );
-		$wgHooks['ArticleSaveComplete'][] = array( &$this, 'articleSaveComplete' );
-		$wgHooks['ArticleDelete'][] = array( &$this, 'articleDelete' );
-		$wgHooks['EditFormPreloadText'][] = array( &$this, 'preloadText' );
-		$wgHooks['ArticlePurge'][] = array( &$this, 'articlePurge' );
-		$wgHooks['SpecialMovepageAfterMove'][] = array( &$this, 'movePage' );
-		$wgHooks['LoadExtensionSchemaUpdates'][] = array( &$this, 'schema_update' );
-		$wgHooks['EditPage::importFormData'][] = array( &$this, 'importFormData' );
-		$wgHooks['OutputPageParserOutput'][] = array( &$this, 'OutputPageParserOutput' );
+	private static function getPageAndIndexNamespace() {
+		static $res = null;
+		if ( $res === null ) {
+			$res = array(
+				preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' ),
+				preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' ),
+			);
+		}
+		return $res;
+	}
 
-		/* Namespaces */
-		$this->page_namespace = preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' );
-		$this->index_namespace = preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' );
-
-		/* Navigation icons */ 
-		$path = $wgExtensionAssetsPath . '/ProofreadPage';
-		$this->prev_icon = Html::element( 'img', array(	'src' => $path . '/leftarrow.png', 
-								'alt' =>  wfMsg( 'proofreadpage_prevpage' ),
-								'width' => 15, 'height' => 15 ) );
-		$this->next_icon = Html::element( 'img', array(	'src' => $path . '/rightarrow.png', 
-								'alt' =>  wfMsg( 'proofreadpage_nextpage' ),
-								'width' => 15, 'height' => 15 ) );
-		$this->up_icon = Html::element( 'img', array(	'src' => $path . '/uparrow.png', 
-								'alt' =>  wfMsg( 'proofreadpage_index' ),
-								'width' => 15, 'height' => 15 ) );
-
+	public static function onwgQueryPages( &$queryPages ) {
+		$queryPages[] = array( 'ProofreadPages', 'IndexPages' );
+		$queryPages[] = array( 'PagesWithoutScans', 'PagesWithoutScans' );
+		return true;
 	}
 
 	/**
@@ -72,14 +48,14 @@ class ProofreadPage {
 	 * @param Parser $parser
 	 * @return boolean hook return value
 	 */
-	public function parserFirstCallInit( $parser ) {
-		$parser->setHook( 'pagelist', array( $this, 'renderPageList' ) );
-		$parser->setHook( 'pages', array( $this, 'renderPages' ) );
-		$parser->setHook( 'pagequality', array( $this, 'pageQuality' ) );
+	public static function onParserFirstCallInit( $parser ) {
+		$parser->setHook( 'pagelist', array( __CLASS__, 'renderPageList' ) );
+		$parser->setHook( 'pages', array( __CLASS__, 'renderPages' ) );
+		$parser->setHook( 'pagequality', array( __CLASS__, 'pageQuality' ) );
 		return true;
 	}
 
-	function schema_update( $updater = null ) {
+	public static function onLoadExtensionSchemaUpdates( $updater = null ) {
 		$base = dirname( __FILE__ );
 		if ( $updater === null ) {
 			global $wgExtNewTables;
@@ -94,9 +70,8 @@ class ProofreadPage {
 	/**
 	 * Query the database to find if the current page is referred in an Index page.
 	 */
-	function load_index( $title ) {
-		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
+	private static function load_index( $title ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 
 		$title->pr_index_title = null;
 		$dbr = wfGetDB( DB_SLAVE );
@@ -149,8 +124,8 @@ class ProofreadPage {
 	/**
 	 * return the URLs of the index, previous and next pages.
 	 */
-	function navigation( $title ) {
-		$page_namespace = $this->page_namespace;
+	private static function navigation( $title ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$default_header = wfMsgForContentNoTrans( 'proofreadpage_default_header' );
 		$default_footer = wfMsgForContentNoTrans( 'proofreadpage_default_footer' );
 
@@ -189,10 +164,10 @@ class ProofreadPage {
 		}
 
 		// if the index page exists, find current page number, previous and next pages
-		list( $links, $params, $attributes ) = $this->parse_index( $index_title );
+		list( $links, $params, $attributes ) = self::parse_index( $index_title );
 
 		if( $links == null ) {
-			list( $pagenum, $links, $mode ) = $this->pageNumber( $pagenr, $params );
+			list( $pagenum, $links, $mode ) = self::pageNumber( $pagenr, $params );
 			$attributes['pagenum'] = $pagenum;
 		} else {
 			for( $i = 0; $i < count( $links[1] ); $i++ ) {
@@ -233,7 +208,7 @@ class ProofreadPage {
 	 * it will return either a list of links or a list
 	 * of parameters to pagelist, and a list of attributes.
 	 */
-	function parse_index( $index_title ) {
+	private static function parse_index( $index_title ) {
 		$err = array( false, false, array() );
 		if ( !$index_title ) {
 			return $err;
@@ -243,12 +218,12 @@ class ProofreadPage {
 		}
 
 		$rev = Revision::newFromTitle( $index_title );
-		$text =	$rev->getText();
-		return $this->parse_index_text( $text );
+		$text = $rev->getText();
+		return self::parse_index_text( $text );
 	}
 
-	function parse_index_text( $text ) {
-		$page_namespace = $this->page_namespace;
+	private static function parse_index_text( $text ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		//check if it is using pagelist
 		preg_match_all( "/<pagelist([^<]*?)\/>/is", $text, $m, PREG_PATTERN_ORDER );
 		if( $m[1] ) {
@@ -284,15 +259,15 @@ class ProofreadPage {
 	/**
 	 * Return the ordered list of links to ns-0 from an index page
 	 */
-	function parse_index_links( $index_title ) {
+	private static function parse_index_links( $index_title ) {
 		// Instanciate a new parser object to avoid side effects of $parser->replaceVariables
-		if( is_null( $this->index_parser ) ) {
-			$this->index_parser = new Parser;
+		if( is_null( self::$index_parser ) ) {
+			self::$index_parser = new Parser;
 		}
 		$rev = Revision::newFromTitle( $index_title );
 		$text =	$rev->getText();
 		$options = new ParserOptions();
-		$rtext = $this->index_parser->preprocess( $text, $index_title, $options );
+		$rtext = self::$index_parser->preprocess( $text, $index_title, $options );
 		$text_links_pattern = "/\[\[\s*([^:\|]*?)\s*(\|(.*?)|)\]\]/i";
 		preg_match_all( $text_links_pattern, $rtext, $text_links, PREG_PATTERN_ORDER );
 		return $text_links;
@@ -301,37 +276,37 @@ class ProofreadPage {
 	/**
 	 * Append javascript variables and code to the page.
 	 */
-	function beforePageDisplay( &$out ) {
-		global $wgTitle, $wgRequest;
+	public static function onBeforePageDisplay( $out ) {
+		global $wgRequest;
 
 		$action = $wgRequest->getVal( 'action' );
 		$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
-		if ( !isset( $wgTitle ) || ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
+		if ( ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
 			return true;
 		}
 		$out->proofreadPageDone = true;
 
-		$page_namespace = $this->page_namespace;
-		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) {
-			$this->preparePage( $out, $m, $isEdit );
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
+
+		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
+			self::preparePage( $out, $m, $isEdit );
 			return true;
 		}
 
-		$index_namespace = $this->index_namespace;
-		if ( $isEdit && ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $wgTitle->getPrefixedText(), $m ) ) ) {
-			$this->prepareIndex( $out );
+		if ( $isEdit && ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) ) {
+			self::prepareIndex( $out );
 			return true;
 		}
 
-		if( $wgTitle->getNamespace() == NS_MAIN ) {
-			$this->prepareArticle( $out );
+		if( $out->getTitle()->getNamespace() == NS_MAIN ) {
+			self::prepareArticle( $out );
 			return true;
 		}
 
 		return true;
 	}
 
-	function prepareIndex( $out ) {
+	private static function prepareIndex( $out ) {
 		$out->addModules( 'ext.proofreadpage.index' );
 		$out->addInlineScript("
 var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
@@ -339,11 +314,11 @@ var prp_default_header = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_footer' ) ) . "\";" );
 	}
 
-	function preparePage( $out, $m, $isEdit ) {
-		global $wgTitle, $wgUser;
+	private static function preparePage( $out, $m, $isEdit ) {
+		global $wgUser, $wgExtensionAssetsPath;
 
-		if ( !isset( $wgTitle->pr_index_title ) ) {
-			$this->load_index( $wgTitle );
+		if ( !isset( $out->getTitle()->pr_index_title ) ) {
+			self::load_index( $out->getTitle() );
 		}
 
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
@@ -378,15 +353,25 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$scan_link = '';
 		}
 
-		list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
+		list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = self::navigation( $out->getTitle() );
 
 		$sk = $wgUser->getSkin();
-		$next_link = $next_title ? $sk->link( $next_title, $this->next_icon, 
-						      array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : '';
-		$prev_link = $prev_title ? $sk->link( $prev_title, $this->prev_icon, 
-						      array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
-		$index_link = $index_title ? $sk->link( $index_title, $this->up_icon, 
-							array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : '';
+		$path = $wgExtensionAssetsPath . '/ProofreadPage';
+
+		$next_link = $next_title ? $sk->link( $next_title,
+			Html::element( 'img', array( 'src' => $path . '/rightarrow.png',
+				'alt' => wfMsg( 'proofreadpage_nextpage' ), 'width' => 15, 'height' => 15 ) ),
+			array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : '';
+
+		$prev_link = $prev_title ? $sk->link( $prev_title,
+			Html::element( 'img', array( 'src' => $path . '/leftarrow.png', 
+				'alt' =>  wfMsg( 'proofreadpage_prevpage' ), 'width' => 15, 'height' => 15 ) ), 
+			array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
+
+		$index_link = $index_title ? $sk->link( $index_title,
+			Html::element( 'img', array(	'src' => $path . '/uparrow.png',
+				'alt' => wfMsg( 'proofreadpage_index' ), 'width' => 15, 'height' => 15 ) ),
+			array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : '';
 
 		$jsVars = array(
 			'proofreadPageWidth' => intval( $width ),
@@ -415,25 +400,25 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * Hook function
 	 */
-	function getLinkColoursHook( $page_ids, &$colours ) {
+	public static function onGetLinkColours( $page_ids, &$colours ) {
 		global $wgTitle;
 		if ( !isset( $wgTitle ) ) {
 			return true;
 		}
 		// abort if we are not an index page
-		$index_namespace = $this->index_namespace;
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText(), $m ) ) {
-			return true;
+			#return true;
 		}
-		$this->getLinkColours( $page_ids, $colours );
+		self::getLinkColours( $page_ids, $colours );
 		return true;
 	}
 
 	/**
 	 * Return the quality colour codes to pages linked from an index page
 	 */
-	function getLinkColours( $page_ids, &$colours ) {
-		$page_namespace = $this->page_namespace;
+	private static function getLinkColours( $page_ids, &$colours ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$dbr = wfGetDB( DB_SLAVE );
 		$catlinks = $dbr->tableName( 'categorylinks' );
 
@@ -477,8 +462,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @param  $out OutputPage:
 	 * @return bool
 	 */
-	function imageMessage( &$imgpage, &$out ) {
-		$index_namespace = $this->index_namespace;
+	public static function onImageOpenShowImageInlineBefore( &$imgpage, &$out ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
 			return true;
@@ -491,7 +476,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	// credit : http://www.mediawiki.org/wiki/Extension:RomanNumbers
-	function toRoman( $num ) {
+	private static function toRoman( $num ) {
 		if ( $num < 0 || $num > 9999 ) {
 			return - 1;
 		}
@@ -565,7 +550,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return $romanNum;
 	}
 
-	function pageNumber( $i, $args ) {
+	private static function pageNumber( $i, $args ) {
 		$mode = 'normal'; // default
 		$offset = 0;
 		$links = true;
@@ -605,10 +590,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$view = ( $i - $offset );
 		switch( $mode ) {
 		case 'highroman':
-			$view = $this->toRoman( $view );
+			$view = self::toRoman( $view );
 			break;
 		case 'roman':
-			$view = strtolower( $this->toRoman( $view ) );
+			$view = strtolower( self::toRoman( $view ) );
 			break;
 		case 'normal':
 			$view = '' . $view;
@@ -626,8 +611,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * Add the pagequality category.
 	 * @todo FIXME: display whether page has been proofread by the user or by someone else
 	 */
-	function pageQuality( $input, $args, $parser ) {
-		$page_namespace = $this->page_namespace;
+	public static function pageQuality( $input, $args, $parser ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
 			return '';
 		}
@@ -647,9 +632,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * Parser hook for index pages
 	 * Display a list of coloured links to pages
 	 */
-	function renderPageList( $input, $args, $parser ) {
-		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
+	public static function renderPageList( $input, $args, $parser ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText(), $m ) ) {
 			return '';
 		}
@@ -681,7 +665,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		for ( $i = $from; $i < $to + 1; $i++ ) {
 			$pdbk = "$page_namespace:$name" . '/' . $i ;
-			list( $view, $links, $mode ) = $this->pageNumber( $i, $args );
+			list( $view, $links, $mode ) = self::pageNumber( $i, $args );
 
 			if ( $mode == 'highroman' || $mode == 'roman' ) {
 				$view = '&#160;' . $view;
@@ -711,9 +695,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * Parser hook that includes a list of pages.
 	 *  parameters : index, from, to, header
 	 */
-	function renderPages( $input, $args, $parser ) {
-		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
+	public static function renderPages( $input, $args, $parser ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 
 		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
 		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
@@ -740,7 +723,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		$out = '';
 
-		list( $links, $params, $attributes ) = $this->parse_index( $index_title );
+		list( $links, $params, $attributes ) = self::parse_index( $index_title );
 
 		if( $from || $to ) {
 			$pages = array();
@@ -773,7 +756,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				}
 
 				for( $i = $from; $i <= $to; $i++ ) {
-					list( $pagenum, $links, $mode ) = $this->pageNumber( $i, $params );
+					list( $pagenum, $links, $mode ) = self::pageNumber( $i, $params );
 					$page = str_replace( ' ' , '_', "$index/" . $i );
 					if( $i == $from ) {
 						$from_page = $page;
@@ -889,7 +872,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			if( $header == 'toc') {
 				$parser->getOutput()->is_toc = true;
 			}
-			$text_links = $this->parse_index_links( $index_title );
+			$text_links = self::parse_index_links( $index_title );
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
 			// find next and previous pages in list
@@ -948,7 +931,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * Set is_toc flag (true if page is a table of contents)
 	 */
-	function OutputPageParserOutput( $outputPage, $parserOutput ) {
+	public static function onOutputPageParserOutput( $outputPage, $parserOutput ) {
 		if( isset( $parserOutput->is_toc ) ) {
 			$outputPage->is_toc = $parserOutput->is_toc;
 		} else {
@@ -962,14 +945,14 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * Return quality status of the page and username of the proofreader
 	 * Return -1 if the page cannot be parsed
 	 */
-	function parse_page( $text ) {
-		global $wgTitle, $wgUser;
+	private static function parse_page( $text, $title ) {
+		global $wgUser;
 
 		$username = $wgUser->getName();
 		$page_regexp = "/^<noinclude>(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s";
 		if( !preg_match( $page_regexp, $text, $m ) ) {
-			$this->load_index( $wgTitle );
-			list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = $this->navigation( $wgTitle );
+			self::load_index( $title );
+			list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = self::navigation( $title );
 			$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" /><div class=\"pagetext\">"
 				."$header\n\n\n</noinclude>$text<noinclude>\n$footer</div></noinclude>";
 			return array( -1, null, $new_text );
@@ -994,12 +977,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return array( -1, null, $new_text );
 	}
 
-	function importFormData( $editpage, $request ) {
-		global $wgTitle;
-
-		$page_namespace = $this->page_namespace;
+	public static function onEditPageImportFormData( $editpage, $request ) {
+		$title = $editpage->mTitle;
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		// abort if we are not a page
-		if ( !preg_match( "/^$page_namespace:(.*)$/", $wgTitle->getPrefixedText() ) ) {
+		if ( !preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 			return true;
 		}
 		if ( !$request->wasPosted() ) {
@@ -1042,17 +1024,16 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @param $editpage Object: EditPage object
 	 * @return Boolean
 	 */
-	function attemptSave( $editpage ) {
+	public static function onEditPageAttemptSave( $editpage ) {
 		global $wgOut, $wgUser;
 
-		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$title = $editpage->mTitle;
 
 		// check that pages listed on an index are unique.
 		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 			$text = $editpage->textbox1;
-			list( $links, $params, $attributes ) = $this->parse_index_text( $text );
+			list( $links, $params, $attributes ) = self::parse_index_text( $text );
 			if( $links != null && count( $links[1] ) != count( array_unique( $links[1] ) ) ) {
 				$wgOut->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
 				return false;
@@ -1067,7 +1048,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		$text = $editpage->textbox1;
 		// parse the page
-		list( $q, $username, $ptext ) = $this->parse_page( $text );
+		list( $q, $username, $ptext ) = self::parse_page( $text, $title );
 		if( $q == -1 ) {
 			$editpage->textbox1 = $ptext;
 			$q = 1;
@@ -1077,7 +1058,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$rev = Revision::newFromTitle( $title );
 		if( $rev ) {
 			$old_text = $rev->getText();
-			list( $old_q, $old_username, $old_ptext ) = $this->parse_page( $old_text );
+			list( $old_q, $old_username, $old_ptext ) = self::parse_page( $old_text, $title );
 			if( $old_q != -1 ) {
 				// check usernames
 				if( ( $old_q != $q ) && !$wgUser->isAllowed( 'pagequality' ) ) {
@@ -1116,10 +1097,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @param $article Object: Article object
 	 * @return Boolean: true
 	 */
-	function articleDelete( $article ) {
-		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
-		$title = $article->mTitle;
+	public static function onArticleDelete( $article ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
+		$title = $article->getTitle();
 
 		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
 			$id = $article->getID();
@@ -1131,13 +1111,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		if ( preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
-			$this->load_index( $title );
+			self::load_index( $title );
 			if( $title->pr_index_title ) {
 				$index_title = Title::newFromText( $title->pr_index_title );
 				$index_title->invalidateCache();
 				$index = new Article( $index_title );
 				if( $index ) {
-					$this->update_pr_index( $index, $title->getDBKey() );
+					self::update_pr_index( $index, $title->getDBKey() );
 				}
 			}
 			return true;
@@ -1146,14 +1126,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return true;
 	}
 
-	function articleSaveComplete( $article ) {
-		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
+	public static function onArticleSaveComplete( $article ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$title = $article->mTitle;
 
 		// if it's an index, update pr_index table
 		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText(), $m ) ) {
-			$this->update_pr_index( $article );
+			self::update_pr_index( $article );
 			return true;
 		}
 
@@ -1166,7 +1145,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		/* check if there is an index */
 		if ( !isset( $title->pr_index_title ) ) {
-			$this->load_index( $title );
+			self::load_index( $title );
 		}
 		if( ! $title->pr_index_title ) {
 			return true;
@@ -1245,8 +1224,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	/* Preload text layer from multipage formats */
-	function preloadText( $textbox1, $mTitle ) {
-		$page_namespace = $this->page_namespace;
+	public static function onEditFormPreloadText( $textbox1, $mTitle ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 			if ( !$imageTitle ) {
@@ -1266,29 +1245,29 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return true;
 	}
 
-	function movePage( $form, $ot, $nt ) {
-		$page_namespace = $this->page_namespace;
+	public static function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( preg_match( "/^$page_namespace:(.*)$/", $ot->getPrefixedText() ) ) {
-			$this->load_index( $ot );
+			self::load_index( $ot );
 			if( $ot->pr_index_title ) {
 				$index_title = Title::newFromText( $ot->pr_index_title );
 				$index_title->invalidateCache();
 				$index = new Article( $index_title );
 				if( $index ) {
-					$this->update_pr_index( $index );
+					self::update_pr_index( $index );
 				}
 			}
 			return true;
 		}
 
 		if ( preg_match( "/^$page_namespace:(.*)$/", $nt->getPrefixedText() ) ) {
-			$this->load_index( $nt );
+			self::load_index( $nt );
 			if( $nt->pr_index_title && ( $nt->pr_index_title != $ot->pr_index_title ) ) {
 				$index_title = Title::newFromText( $nt->pr_index_title );
 				$index_title->invalidateCache();
 				$index = new Article( $index_title );
 				if( $index ) {
-					$this->update_pr_index( $index );
+					self::update_pr_index( $index );
 				}
 			}
 			return true;
@@ -1299,11 +1278,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * When an index page is created or purged, recompute pr_index values
 	 */
-	function articlePurge( $article ) {
-		$index_namespace = $this->index_namespace;
-		$title = $article->mTitle;
+	public static function onArticlePurge( $article ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
+		$title = $article->getTitle();
 		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
-			$this->update_pr_index( $article );
+			self::update_pr_index( $article );
 			return true;
 		}
 		return true;
@@ -1315,7 +1294,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @param  $cat
 	 * @return int
 	 */
-	function query_count( $dbr, $query, $cat ) {
+	private static function query_count( $dbr, $query, $cat ) {
 		$query['conds']['cl_to'] = str_replace( ' ' , '_' , wfMsgForContent( $cat ) );
 		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, array(), $query['joins'] );
 
@@ -1331,8 +1310,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * Update the pr_index entry of an article
 	 */
-	function update_pr_index( $index, $deletedpage = null ) {
-		$page_namespace = $this->page_namespace;
+	private static function update_pr_index( $index, $deletedpage = null ) {
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
 		if ( $page_ns_index == null ) {
 			return;
@@ -1346,7 +1325,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		// read the list of pages
 		$pages = array();
-		list( $links, $params, $attributes ) = $this->parse_index( $index_title );
+		list( $links, $params, $attributes ) = self::parse_index( $index_title );
 		if( $links == null ) {
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index_title->getText() );
 			if ( $imageTitle ) {
@@ -1398,10 +1377,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			'joins' => array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
 		);
 
-		$n0 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
-		$n2 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
-		$n3 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
-		$n4 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
+		$n0 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
+		$n2 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
+		$n3 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
+		$n4 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -1416,15 +1395,14 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 *
 	 * @param $out Object: OutputPage object
 	 */
-	function prepareArticle( $out ) {
-		global $wgTitle, $wgUser;
+	private static function prepareArticle( $out ) {
+		global $wgUser;
 
-		$id = $wgTitle->mArticleID;
+		$id = $out->getTitle()->mArticleID;
 		if( $id == -1 ) {
 			return true;
 		}
-		$page_namespace = $this->page_namespace;
-		$index_namespace = $this->index_namespace;
+		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
 		$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
 		if( $page_ns_index == null || $index_ns_index == null ) {
@@ -1512,10 +1490,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				)
 			);
 
-			$n0 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
-			$n2 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
-			$n3 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
-			$n4 = $this->query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
+			$n0 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
+			$n2 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
+			$n3 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
+			$n4 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
 			// quality1 is the default value
 			$n1 = $n - $n0 - $n2 - $n3 - $n4;
 			$ne = 0;

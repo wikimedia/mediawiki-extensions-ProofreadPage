@@ -19,9 +19,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
-$wgExtensionFunctions[] = 'wfProofreadPage';
-$wgRunHooks['wgQueryPages'][] = 'wfProofreadPageAddQueryPages';
-
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionAliasesFiles['ProofreadPage'] = $dir . 'ProofreadPage.alias.php';
@@ -46,15 +43,6 @@ $wgSpecialPageGroups['IndexPages'] = 'pages';
 $wgAutoloadClasses['PagesWithoutScans'] = $dir . 'SpecialPagesWithoutScans.php';
 $wgSpecialPages['PagesWithoutScans'] = 'PagesWithoutScans';
 $wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
-# for maintenance/updateSpecialPages.php
-$wgHooks['wgQueryPages'][] = 'wfPagesWithoutScan';
-function wfPagesWithoutScan( &$QueryPages ) {
-	$QueryPages[] = array(
-			      'PagesWithoutScans',
-			      'PagesWithoutScans'
-			      );
-	return true;
-}
 
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
@@ -96,13 +84,18 @@ $wgResourceModules += array(
 	),
 );
 
-function wfProofreadPage() {
-	new ProofreadPage;
-	return true;
-}
+$wgHooks['ParserFirstCallInit'][] = 'ProofreadPage::onParserFirstCallInit';
+$wgHooks['BeforePageDisplay'][] = 'ProofreadPage::onBeforePageDisplay';
+$wgHooks['GetLinkColours'][] = 'ProofreadPage::onGetLinkColours';
+$wgHooks['ImageOpenShowImageInlineBefore'][] = 'ProofreadPage::onImageOpenShowImageInlineBefore';
+$wgHooks['EditPage::attemptSave'][] = 'ProofreadPage::onEditPageAttemptSave';
+$wgHooks['ArticleSaveComplete'][] = 'ProofreadPage::onArticleSaveComplete';
+$wgHooks['ArticleDelete'][] = 'ProofreadPage::onArticleDelete';
+$wgHooks['EditFormPreloadText'][] = 'ProofreadPage::onEditFormPreloadText';
+$wgHooks['ArticlePurge'][] = 'ProofreadPage::onArticlePurge';
+$wgHooks['SpecialMovepageAfterMove'][] = 'ProofreadPage::onSpecialMovepageAfterMove';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadPage::onLoadExtensionSchemaUpdates';
+$wgHooks['EditPage::importFormData'][] = 'ProofreadPage::onEditPageImportFormData';
+$wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
+$wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 
-function wfProofreadPageAddQueryPages( &$wgQueryPages ) {
-	$wgQueryPages[] = array( 'ProofreadPages', 'IndexPages' );
-	$wgQueryPages[] = array( 'PagesWithoutScans', 'PagesWithoutScans' );
-	return true;
-}
