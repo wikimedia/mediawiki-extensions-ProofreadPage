@@ -1835,6 +1835,7 @@ $messages['grc'] = array(
 	'proofreadpage_index_listofpages' => 'Καταλογὴ δέλτων',
 	'proofreadpage_page_status' => 'Κατάστασις δέλτου',
 	'proofreadpage_pages' => '{{PLURAL:$1|δέλτος|δέλτοι}}',
+	'proofreadpage_source' => 'Πηγή',
 );
 
 /** Swiss German (Alemannisch)
@@ -5439,11 +5440,12 @@ $messages['yue'] = array(
  * @author Jimmy xu wrk
  * @author Liangent
  * @author Mark85296341
+ * @author PhiLiP
  */
 $messages['zh-hans'] = array(
 	'indexpages' => '索引页列表',
 	'pageswithoutscans' => '没有扫描的页面',
-	'proofreadpage_desc' => '容许简易地比较原扫描和文字',
+	'proofreadpage_desc' => '允许简易地比较原始扫描稿和识别文本',
 	'proofreadpage_namespace' => '页面',
 	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '图像',
