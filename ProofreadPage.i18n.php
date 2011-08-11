@@ -5497,6 +5497,14 @@ $messages['zh-hans'] = array(
 	'proofreadpage_source' => '来源',
 	'proofreadpage_source_message' => '扫描版用来建立这个文本',
 	'right-pagequality' => '修改页面质量标志',
+	'proofreadpage-section-tools' => '校对工具',
+	'proofreadpage-group-zoom' => '缩放',
+	'proofreadpage-group-other' => '其他',
+	'proofreadpage-button-toggle-visibility-label' => '显示／隐藏此页的页眉和页脚',
+	'proofreadpage-button-zoom-out-label' => '缩小',
+	'proofreadpage-button-reset-zoom-label' => '重置显示比例',
+	'proofreadpage-button-zoom-in-label' => '放大',
+	'proofreadpage-button-toggle-layout-label' => '垂直／水平布局',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
