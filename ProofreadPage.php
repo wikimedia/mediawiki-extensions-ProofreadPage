@@ -44,6 +44,10 @@ $wgAutoloadClasses['PagesWithoutScans'] = $dir . 'SpecialPagesWithoutScans.php';
 $wgSpecialPages['PagesWithoutScans'] = 'PagesWithoutScans';
 $wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
 
+# api prop
+$wgAutoloadClasses['ApiQueryProofread'] = $dir . 'ApiQueryProofread.php';
+$wgAPIPropModules['proofread'] = 'ApiQueryProofread';
+
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
 
