@@ -3732,7 +3732,7 @@ Comentaris||10',
 	'proofreadpage_source_message' => "Edicion numerizada d'ont es eissit aqueste tèxte",
 );
 
-/** Ossetic (Иронау)
+/** Ossetic (Ирон)
  * @author Amikeco
  */
 $messages['os'] = array(
@@ -4312,7 +4312,7 @@ $messages['rue'] = array(
 	'proofreadpage_source' => 'Жрідло',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
