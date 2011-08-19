@@ -1419,6 +1419,12 @@ Märkused||10',
 	'proofreadpage_specialpage_legend' => 'Registrilehekülgede otsimine',
 	'proofreadpage_source' => 'Allikas',
 	'proofreadpage_source_message' => 'Selle teksti moodustamiseks kasutatud skannitud versioon',
+	'right-pagequality' => 'Muuta lehekülje tõendusolekut',
+	'proofreadpage-button-toggle-visibility-label' => 'Näita selle lehekülje päist ja jalust või peida need',
+	'proofreadpage-button-zoom-out-label' => 'Vähenda',
+	'proofreadpage-button-reset-zoom-label' => 'Lähtesta suum',
+	'proofreadpage-button-zoom-in-label' => 'Suurenda',
+	'proofreadpage-button-toggle-layout-label' => 'Püst- või rööppaigutus',
 );
 
 /** Basque (Euskara)
