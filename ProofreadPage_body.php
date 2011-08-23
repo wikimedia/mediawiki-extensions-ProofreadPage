@@ -702,6 +702,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
 		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
 		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
+		$tosection = array_key_exists( 'tosection', $args ) ? $args['tosection'] : null;
+		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
 
 		// abort if the tag is on an index page
 		if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
@@ -839,10 +841,15 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				if( !$is_q0 ) {
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text . "|num=$pagenum}}</span>";
 				}
-				if( $page == $from_page && $args['fromsection'] ) {
-					$out .= '{{#lst:' . $text . '|' . $args['fromsection'] . '}}';
-				} elseif( $page == $to_page && $args['tosection'] ) {
-					$out .= '{{#lst:' . $text . '|' . $args['tosection'] . '}}';
+				if( $page == $from_page && $fromsection !== null ) {
+					$ts = '';
+					// Check if it is single page transclusion
+					if ( $page == $to_page && $tosection !== null ) {
+						$ts = $tosection;
+					}
+					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts .'}}';
+				} elseif( $page == $to_page && $tosection != null ) {
+					$out .= '{{#lst:' . $text . '||' . $tosection . '}}';
 				} else {
 					$out .= '{{:' . $text . '}}';
 				}
