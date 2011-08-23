@@ -29,10 +29,7 @@ class ApiQueryProofread extends ApiQueryBase {
 			return true;
 		}
 
-		// Only include pages that can use the proofread tag
-		// Why doesn't it strtolower in getCanonicalIndex?
-		$pageNamespaceText = strtolower( wfMsgForContent( 'proofreadpage_namespace' ) );
-		$pageNamespaceId = MWNamespace::getCanonicalIndex( $pageNamespaceText );
+		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
 		$pageIds = array();
 		foreach ( $pages AS $pageId => $title ) {
 			if ( $title->getNamespace() == $pageNamespaceId ) {

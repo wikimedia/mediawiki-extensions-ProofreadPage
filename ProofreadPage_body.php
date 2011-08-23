@@ -25,6 +25,37 @@ class ProofreadPage {
 	/* Parser object for index pages */
 	private static $index_parser = null;
 
+	/**
+	 * Returns id of Page namespace.
+	 *
+	 * @return integer namespace id
+	 */
+	public static function getPageNamespaceId() {
+		static $namespace = null;
+		if ( $namespace !== null ) {
+			return $namespace;
+		}
+		$namespaceText = strtolower( wfMsgForContent( 'proofreadpage_namespace' ) );
+		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
+		return $namespace;
+	}
+
+	/**
+	 * Returns id of Index namespace.
+	 *
+	 * @return integer namespace id
+	 */
+	public static function getIndexNamespaceId() {
+		static $namespace = null;
+		if ( $namespace !== null ) {
+			return $namespace;
+		}
+		$namespaceText = strtolower( wfMsgForContent( 'proofreadpage_index_namespace' ) );
+		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
+		return $namespace;
+	}
+
+	/** @deprecated */
 	private static function getPageAndIndexNamespace() {
 		static $res = null;
 		if ( $res === null ) {
