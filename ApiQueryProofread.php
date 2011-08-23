@@ -71,10 +71,12 @@ class ApiQueryProofread extends ApiQueryBase {
 
 		$result = $this->getResult();
 		foreach ( $data['query']['pages'] as $pageid => $data) {
-			$pageQuality = $qualityLevels[ $data['categories'][0]['title'] ];
-			if ( $pageQuality === null ) {
+			$title = $data['categories'][0]['title'];
+			if ( !isset( $qualityLevels[ $title ] ) ) {
 				continue;
 			}
+			
+			$pageQuality = $qualityLevels[ $title ];
 			$val =  array( 'quality' => $pageQuality, 'quality_text' => $qualityText[ $pageQuality ] );
 			$result->addValue( array( 'query', 'pages', $pageid ), 'proofread', $val );
 		}
