@@ -885,7 +885,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					$out .= '{{:' . $text . '}}';
 				}
 				if( !$is_q0 ) {
-					$out.= "\n";
+					$out.= "&#32;";
 				}
 			}
 		} else {
