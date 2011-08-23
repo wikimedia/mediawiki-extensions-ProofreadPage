@@ -18,11 +18,14 @@ class ProofreadPages extends QueryPage {
 		$this->setHeaders();
 		list( $limit, $offset ) = wfCheckLimits();
 		$wgOut->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
-		$searchList = array();
+		$this->searchList = null;
 		$this->searchTerm = $wgRequest->getText( 'key' );
+		$this->suppressSqlOffset = false;
 		if( !$wgDisableTextSearch ) {
+			$self = $this->getTitle();
 			$wgOut->addHTML(
-				Xml::openElement( 'form' ) .
+				Xml::openElement( 'form', array( 'action' => $self->getLocalUrl() ) ) .
+				Xml::input( 'limit', false, $limit, array( 'type' => 'hidden' ) ) .
 				Xml::openElement( 'fieldset' ) .
 				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
 				Xml::input( 'key', 20, $this->searchTerm ) . ' ' .
@@ -39,14 +42,28 @@ class ProofreadPages extends QueryPage {
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
 				$escIndex = preg_quote( $index_namespace, '/' );
+				$this->searchList = array();
 				while( $result = $textMatches->next() ) {
-					if ( preg_match( "/^$escIndex:(.*)$/", $result->getTitle(), $m ) ) {
-						array_push( $searchList, str_replace( ' ' , '_' , $m[1] ) );
+					$title = $result->getTitle();
+					if ( $title->getNamespace() == $index_ns_index ) {
+						array_push( $this->searchList, $title->getDBkey() );
 					}
 				}
+				$this->suppressSqlOffset = true;
 			}
 		}
 		parent::execute( $parameters );
+	}
+
+	function reallyDoQuery( $limit, $offset = false ) {
+		if ( $this->suppressSqlOffset ) {
+			// Bug #27678: Do not use offset here, because it was already used in
+			// search perfomed by execute method
+			return parent::reallyDoQuery( $limit, false );
+		}
+		else {
+			return parent::reallyDoQuery( $limit, $offset );
+		}
 	}
 
 	function isExpensive() {
@@ -58,6 +75,11 @@ class ProofreadPages extends QueryPage {
 		return false;
 	}
 
+	function isCacheable() {
+		// The page is not cacheable due to its search capabilities
+		return false;
+	}
+
 	function linkParameters() {
 		return array( 'key' => $this->searchTerm );
 	}
@@ -65,10 +87,16 @@ class ProofreadPages extends QueryPage {
 	public function getQueryInfo() {
 		$conds = array();
 		if ( $this->searchTerm ) {
-			if ( $this->searchList ) {
-				$index_namespace = pr_index_ns();
+			if ( $this->searchList !== null ) {
+				$index_namespace = $this->index_namespace;
 				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
-				$conds = array( 'page_namespace' => $index_ns_index, 'page_title' => $this->searchList );
+				$conds = array( 'page_namespace' => $index_ns_index );
+				if ( $this->searchList ) {
+					$conds['page_title'] = $this->searchList;
+				} else {
+					// If not pages were found do not return results
+					$conds[] = 'false';
+				}
 			} else {
 				$conds = null;
 			}
