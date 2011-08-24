@@ -4673,6 +4673,7 @@ Catetan||10',
  * @author Diupwijk
  * @author Fluff
  * @author Lejonel
+ * @author Lokal Profil
  * @author M.M.S.
  * @author Najami
  * @author Per
@@ -4733,6 +4734,8 @@ Anmärkningar||10',
 	'proofreadpage_source' => 'Källa',
 	'proofreadpage_source_message' => 'Scannat original använt för att skapa denna text',
 	'right-pagequality' => 'Ändra sidans kvalitetsflagga',
+	'proofreadpage-button-zoom-out-label' => 'Zooma ut',
+	'proofreadpage-button-zoom-in-label' => 'Zooma in',
 );
 
 /** Swahili (Kiswahili)
