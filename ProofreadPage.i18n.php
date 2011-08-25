@@ -1818,11 +1818,14 @@ Comentarios||10',
 	'proofreadpage_source' => 'Orixe',
 	'proofreadpage_source_message' => 'Edición dixitalizada utilizada para establecer este texto',
 	'right-pagequality' => 'Modificar a marca de calidade da páxina',
+	'proofreadpage-section-tools' => 'Ferramentas de revisión',
 	'proofreadpage-group-zoom' => 'Zoom',
 	'proofreadpage-group-other' => 'Outro',
+	'proofreadpage-button-toggle-visibility-label' => 'Mostrar ou agochar a cabeceira e pé desta páxina',
 	'proofreadpage-button-zoom-out-label' => 'Reducir',
 	'proofreadpage-button-reset-zoom-label' => 'Restablecer o zoom',
 	'proofreadpage-button-zoom-in-label' => 'Ampliar',
+	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical ou horizontal',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
