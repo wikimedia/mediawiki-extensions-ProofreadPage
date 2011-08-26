@@ -91,7 +91,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		return 'Returns information about the current proofread status of the given pages.';
 	}
 
-	protected function getExamples() {
+	public function getExamples() {
 		return array(
 			'api.php?action=query&generator=allpages&gapnamespace=104&prop=proofread'
 		);
