@@ -1,30 +1,70 @@
 // Author : ThomasV - License : GPL
 
 function pr_init_tabs() {
-	$( '#ca-talk' ).prev().before( '<li id="ca-prev"><span>' + self.proofreadPagePrevLink + '</span></li>' );
-	$( '#ca-talk' ).prev().before( '<li id="ca-next"><span>' + self.proofreadPageNextLink + '</span></li>' );
-	$( '#ca-talk' ).after( '<li id="ca-index"><span>' + self.proofreadPageIndexLink + '</span></li>' );
-	$( '#ca-talk' ).after( '<li id="ca-image"><span>' + self.proofreadPageScanLink + '</span></li>' );
+	if( mw.config.get( 'proofreadPagePrevLink' ) != null ) {
+		$( '#ca-talk' ).prev().before( '<li id="ca-prev"><span>' + mw.config.get( 'proofreadPagePrevLink' ) + '</span></li>' );
+	}
+	if( mw.config.get( 'proofreadPageNextLink' ) != null ) {
+		$( '#ca-talk' ).prev().before( '<li id="ca-next"><span>' + mw.config.get( 'proofreadPageNextLink' ) + '</span></li>' );
+	}
+	if( mw.config.get( 'proofreadPageIndexLink' ) != null ) {
+		$( '#ca-talk' ).after( '<li id="ca-index"><span>' + mw.config.get( 'proofreadPageIndexLink' ) + '</span></li>' );
+	}
+	if( mw.config.get( 'proofreadPageScanLink' ) != null ) {
+		$( '#ca-talk' ).after( '<li id="ca-image"><span>' + mw.config.get( 'proofreadPageScanLink' ) + '</span></li>' );
+	}
 }
 
-function pr_image_url( requested_width ) {
-	if( self.proofreadPageExternalURL ) {
-		self.DisplayWidth = requested_width;
-		self.DisplayHeight = '';
-		return self.proofreadPageExternalURL;
-	} else {
-		// enforce quantization: width must be multiple of 100px
-		var width = 100 * Math.round( requested_width / 100 );
-		// compare to the width of the image
-		if( width < proofreadPageWidth ) {
-			self.DisplayWidth = width;
-			self.DisplayHeight = width * proofreadPageHeight / proofreadPageWidth;
-			return proofreadPageThumbURL.replace( '##WIDTH##', '' + width );
-		} else {
-			self.DisplayWidth = proofreadPageWidth;
-			self.DisplayHeight = proofreadPageHeight;
-			return proofreadPageURL;
+function pr_fetch_thumb_url( requestedWidth, callback ) {
+	var fullWidth = mw.config.get( 'proofreadPageWidth' );
+	var fullHeight = mw.config.get( 'proofreadPageHeight' );
+
+	// enforce quantization: width must be multiple of 100px
+	var quantizedWidth = 100 * Math.round( requestedWidth / 100 );
+
+	// compare to the width of the image
+	if( quantizedWidth < fullWidth ) {
+		// Send request to fetch thumbnail url
+		var request = {
+			action: 'query',
+			titles: mw.config.get( 'proofreadPageFileName' ),
+			prop: 'imageinfo',
+			iiprop: 'url|size',
+			iiurlwidth: quantizedWidth,
+			format: 'json'
+		};
+
+		if( mw.config.get( 'proofreadPageFilePage' ) != null ) {
+			request['iiurlparam'] = 'page' + mw.config.get( 'proofreadPageFilePage' ) + '-' + quantizedWidth + 'px';
 		}
+
+		$.getJSON( mw.util.wikiScript( 'api' ) ,request, function(data) {
+			if( data && data.query && data.query.pages ) {
+				for( var i in data.query.pages ) {
+					var page = data.query.pages[i];
+					if( !page.imageinfo || page.imageinfo.length < 1 ) {
+						continue;
+					}
+					var imageinfo = page.imageinfo[0];
+
+					if( !imageinfo.thumburl ) {
+						// Unable to fetch thumbnail, use image without scaling
+						// This works only for non-paged files and may mess up the layout of the page
+						if ( mw.config.get( 'proofreadPageFilePage' ) == null ) {
+							callback( imageinfo.url, imageinfo.width, imageinfo.height );
+						}
+					}
+					else {
+						callback( imageinfo.thumburl, imageinfo.thumbwidth, imageinfo.thumbheight );
+					}
+
+					return;
+				}
+			}
+		});
+	} else {
+		// Image without scaling
+		callback( mw.config.get( 'proofreadPageURL' ), fullWidth, fullHeight );
 	}
 }
 
@@ -90,7 +130,7 @@ function pr_make_edit_area( container, text ) {
 		}
 		self.proofreadpage_username = m4[2];
 		pageHeader = pageHeader.replace( reg, '' );
-	} else if ( old_m4 ) {
+	} else if( old_m4 ) {
 		switch( old_m4[1] ) {
 			case '0':
 				self.proofreadpage_quality = 0;
@@ -142,6 +182,7 @@ function pr_reset_size() {
 	var box = document.getElementById( 'wpTextbox1' );
 	var h = document.getElementById( 'prp_header' );
 	var f = document.getElementById( 'prp_footer' );
+
 	if( h.style.cssText == 'display:none;' ) {
 		box.style.cssText = 'height:' + ( self.DisplayHeight - 6 ) + 'px';
 	} else {
@@ -317,35 +358,32 @@ function zoom_on( evt ) {
 	return false;
 }
 
-
 //zoom using two images (magnification glass)
-function pr_initzoom() {
-	if( proofreadPageIsEdit ) {
-		return;
-	}
-	if( !self.proofreadPageThumbURL ) {
-		return;
-	}
-	if( self.DisplayWidth > 800 ) {
+function pr_initzoom( width, height ) {
+	var maxWidth = 800;
+
+	if( width > maxWidth ) {
 		return;
 	}
 
 	zp = document.getElementById( 'pr_container' );
-	if( zp ) {
-		var hires_url = pr_image_url( 800 );
-		self.objw = zp.firstChild.width;
-		self.objh = zp.firstChild.height;
+	if( !zp ) {
+		return;
+	}
+	pr_fetch_thumb_url( maxWidth, function( largeUrl, largeWidth, largeHeight ) {
+		self.objw = width;
+		self.objh = height;
 
 		zp.onmouseup = zoom_mouseup;
 		zp.onmousemove =  zoom_move;
 		zp_container = document.createElement( 'div' );
 		zp_container.style.cssText = 'position:absolute; width:0; height:0; overflow:hidden;';
 		zp_clip = document.createElement( 'img' );
-		zp_clip.setAttribute( 'src', hires_url );
+		zp_clip.setAttribute( 'src', largeUrl );
 		zp_clip.style.cssText = 'padding:0;margin:0;border:0;';
 		zp_container.appendChild( zp_clip );
 		zp.insertBefore( zp_container, zp.firstChild );
-	}
+	} );
 }
 
 /********************************
@@ -532,7 +570,7 @@ function pr_drag( evt ) {
 				boxHeight + 'px;background:#000000;';
 		}
 	}
-	if ( evt.preventDefault ) {
+	if( evt.preventDefault ) {
 		evt.preventDefault();
 	}
 	evt.returnValue = false;
@@ -556,7 +594,7 @@ function pr_set_margins( mx, my, new_width ) {
 }
 
 self.pr_zoom = function( delta ) {
-	if ( delta == 0 ) {
+	if( delta == 0 ) {
 		// reduce width by 20 pixels in order to prevent horizontal scrollbar
 		// from showing up
 		pr_set_margins( 0, 0, pr_container.offsetWidth - 20 );
@@ -587,10 +625,10 @@ function pr_zoom_wheel( evt ) {
 		return false;
 	}
 	var delta = 0;
-	if ( evt.wheelDelta ) {
+	if( evt.wheelDelta ) {
 		/* IE/Opera. */
 		delta = evt.wheelDelta / 120;
-	} else if ( evt.detail ) {
+	} else if( evt.detail ) {
 		/**
 		 * Mozilla case.
 		 * In Mozilla, sign of delta is different than in IE.
@@ -666,9 +704,9 @@ function pr_fill_table() {
 	pr_zoom( 0 );
 }
 
-function pr_load_image( ) {
+function pr_load_image( url ) {
 	pr_container.innerHTML = '<img id="ProofReadImage" src="' +
-		escapeQuotesHTML( self.proofreadPageViewURL ) + '" width="' + img_width + '" />';
+		escapeQuotesHTML( url ) + '" width="' + img_width + '" />';
 	pr_zoom( 0 );
 }
 
@@ -704,15 +742,16 @@ function pr_setup() {
 
 	// fill the image container
 	if( !proofreadPageIsEdit ) {
-		// this sets DisplayWidth and DisplayHeight
-		var thumb_url = pr_image_url( parseInt( pr_width / 2 - 70 ) );
-		var image = document.createElement( 'img' );
-		image.setAttribute( 'id', 'ProofReadImage' );
-		image.setAttribute( 'src', thumb_url );
-		image.setAttribute( 'width', self.DisplayWidth );
-		image.style.cssText = 'padding:0;margin:0;border:0;';
-		pr_container.appendChild( image );
-		pr_container.style.cssText = 'overflow:hidden;width:' + self.DisplayWidth + 'px;';
+		pr_fetch_thumb_url( parseInt( pr_width / 2 - 70 ), function( url, width, height ) {
+			var image = document.createElement( 'img' );
+			image.setAttribute( 'id', 'ProofReadImage' );
+			image.setAttribute( 'src', url );
+			image.setAttribute( 'width', width );
+			image.style.cssText = 'padding:0;margin:0;border:0;';
+			pr_container.appendChild( image );
+			pr_container.style.cssText = 'overflow:hidden;width:' + width + 'px;';
+			pr_initzoom( width, height );
+		} );
 	} else {
 		var w = parseInt( self.proofreadPageEditWidth );
 		if( !w ) {
@@ -721,17 +760,20 @@ function pr_setup() {
 		if( !w ) {
 			w = 1024; /* Default size in edit mode */
 		}
-		self.proofreadPageViewURL = pr_image_url( Math.min( w, self.proofreadPageWidth ) );
+
 		// prevent the container from being resized once the image is downloaded.
 		img_width = pr_horiz ? 0 : parseInt( pr_width / 2 - 70 ) - 20;
 		pr_container.onmousedown = pr_grab;
 		pr_container.onmousemove = pr_move;
-		if ( pr_container.addEventListener ) {
+		if( pr_container.addEventListener ) {
 			pr_container.addEventListener( 'DOMMouseScroll', pr_zoom_wheel, false );
 		}
 		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
-		/* Load the image after page setup, so that user-defined hooks do not have to wait for it. */
-		hookEvent( 'load', pr_load_image );
+
+		pr_fetch_thumb_url( Math.min( w, self.proofreadPageWidth ), function( url, width, height ) {
+			// Load the image after page setup, so that user-defined hooks do not have to wait for it.
+			$( function() { pr_load_image( url ) } );
+		} );
 	}
 
 	table.setAttribute( 'id', 'textBoxTable' );
@@ -755,7 +797,7 @@ function pr_setup() {
 		pr_make_edit_area( self.text_container, new_text.value );
 		var copywarn = document.getElementById( 'editpage-copywarn' );
 		f.insertBefore( table, copywarn );
-		if ( !self.proofreadpage_show_headers ) {
+		if( !self.proofreadpage_show_headers ) {
 			hookEvent( 'load', pr_toggle_visibility );
 		} else {
 			hookEvent( 'load', pr_reset_size );
@@ -896,68 +938,35 @@ function pr_init() {
 		return;
 	}
 
-	if( document.URL.indexOf( 'action=protect' ) > 0 || document.URL.indexOf( 'action=unprotect' ) > 0 ) {
-		return;
-	}
-	if( document.URL.indexOf( 'action=delete' ) > 0 || document.URL.indexOf( 'action=undelete' ) > 0 ) {
-		return;
-	}
-	if( document.URL.indexOf( 'action=watch' ) > 0 || document.URL.indexOf( 'action=unwatch' ) > 0 ) {
-		return;
-	}
-	if( document.URL.indexOf( 'action=history' ) > 0 ) {
+	if( $.inArray( mw.util.getParamValue( 'action' ), ['protect', 'unprotect', 'delete', 'undelete', 'watch', 'unwatch', 'history'] ) > -1 ) {
 		return;
 	}
 
-	/* check if external URL is provided */
-	if( !self.proofreadPageThumbURL ) {
-		var text = document.getElementById( 'wpTextbox1' );
-		if ( text ) {
-			var proofreadPageIsEdit = true;
-			re = /<span class="hiddenStructure" id="pageURL">\[http:\/\/(.*?)\]<\/span>/;
-			m = re.exec( text.value );
-			if( m ) {
-				self.proofreadPageExternalURL = 'http://' + m[1];
-			}
-		} else {
-			var proofreadPageIsEdit = false;
-			text = document.getElementById( 'bodyContent' );
-			try {
-				var a = document.getElementById( 'pageURL' );
-				var b = a.firstChild;
-				self.proofreadPageExternalURL = b.getAttribute( 'href' );
-			} catch( err ) {
-			};
-		}
-		// set to dummy values, not used
-		self.proofreadPageWidth = 400;
-		self.proofreadPageHeight = 400;
-	}
-
-	if( !self.proofreadPageThumbURL ) {
+	if( mw.config.get( 'proofreadPageFileName' ) == null ) {
+		// File does not exist
 		return;
 	}
 
 	if( self.proofreadpage_setup ) {
+		// Run site/user setup code
 		proofreadpage_setup(
-			proofreadPageWidth,
-			proofreadPageHeight,
-			proofreadPageIsEdit
+			mw.config.get( 'proofreadPageWidth' ),
+			mw.config.get( 'proofreadPageHeight' ),
+			mw.config.get( 'proofreadPageIsEdit' )
 		);
 	} else {
+		// Run extension setup code
 		pr_setup();
 	}
 
 	// add CSS classes to the container div
-	if( self.proofreadPageCss) {
-		$( 'div.pagetext' ).addClass( self.proofreadPageCss );
+	if( mw.config.get( 'proofreadPageCss' ) != null ) {
+		$( 'div.pagetext' ).addClass( mw.config.get( 'proofreadPageCss' ) );
 	}
 }
 
 $(document).ready( pr_init );
 $(document).ready( pr_init_tabs );
-$(document).ready( pr_initzoom );
-
 
 /* Quality buttons */
 self.pr_add_quality = function( form, value ) {
