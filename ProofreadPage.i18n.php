@@ -1368,6 +1368,7 @@ Comentarios||10',
  */
 $messages['et'] = array(
 	'indexpages' => 'Registrilehtede loetelu',
+	'pageswithoutscans' => 'Skannimata tekstidega leheküljed',
 	'proofreadpage_desc' => 'Võimaldab teksti kõrvutada skannitud lehega.',
 	'proofreadpage_namespace' => 'Lehekülg',
 	'proofreadpage_index_namespace' => 'Register',
@@ -1418,11 +1419,14 @@ Märkused||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|lehekülg|lehekülge}}',
 	'proofreadpage_specialpage_legend' => 'Registrilehekülgede otsimine',
 	'proofreadpage_source' => 'Allikas',
-	'proofreadpage_source_message' => 'Selle teksti moodustamiseks kasutatud skannitud versioon',
+	'proofreadpage_source_message' => 'Selle teksti aluseks olev skannitud versioon',
 	'right-pagequality' => 'Muuta lehekülje tõendusolekut',
+	'proofreadpage-section-tools' => 'Tõendusriistad',
+	'proofreadpage-group-zoom' => 'Suurendus',
+	'proofreadpage-group-other' => 'Muu',
 	'proofreadpage-button-toggle-visibility-label' => 'Näita selle lehekülje päist ja jalust või peida need',
 	'proofreadpage-button-zoom-out-label' => 'Vähenda',
-	'proofreadpage-button-reset-zoom-label' => 'Lähtesta suum',
+	'proofreadpage-button-reset-zoom-label' => 'Algsuurus',
 	'proofreadpage-button-zoom-in-label' => 'Suurenda',
 	'proofreadpage-button-toggle-layout-label' => 'Püst- või rööppaigutus',
 );
@@ -3764,6 +3768,7 @@ $messages['pdc'] = array(
 );
 
 /** Polish (Polski)
+ * @author Beau
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -3784,7 +3789,7 @@ $messages['pl'] = array(
 	'proofreadpage_nologin' => 'Niezalogowany',
 	'proofreadpage_nologintext' => 'Musisz [[Special:UserLogin|zalogować się]], aby zmienić status proofreading strony.',
 	'proofreadpage_notallowed' => 'Zmiana niedozwolona',
-	'proofreadpage_notallowedtext' => 'Zmiana statusu proofreeding tej strony przez Ciebie jest niedozwolona.',
+	'proofreadpage_notallowedtext' => 'Zmiana statusu proofreading tej strony przez Ciebie jest niedozwolona.',
 	'proofreadpage_number_expected' => 'Błąd – oczekiwano liczby',
 	'proofreadpage_interval_too_large' => 'Błąd – zbyt duży odstęp',
 	'proofreadpage_invalid_interval' => 'Błąd – nieprawidłowy odstęp',
