@@ -75,7 +75,7 @@ class ProofreadPage {
 
 	/**
 	 * Set up our custom parser hooks when initializing parser.
-	 *
+	 * 
 	 * @param Parser $parser
 	 * @return boolean hook return value
 	 */
@@ -324,7 +324,7 @@ class ProofreadPage {
 			return true;
 		}
 
-		if ( $isEdit && $out->getTitle()->getNamespace() == self::getIndexNamespaceId() ) {
+		if ( $isEdit && ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) ) {
 			self::prepareIndex( $out );
 			return true;
 		}
@@ -339,13 +339,10 @@ class ProofreadPage {
 
 	private static function prepareIndex( $out ) {
 		$out->addModules( 'ext.proofreadpage.index' );
-
-		$jsVars = array(
-			'prp_index_attributes' => wfMsgForContent( 'proofreadpage_index_attributes' ),
-			'prp_default_header' => wfMsgForContentNoTrans( 'proofreadpage_default_header' ),
-			'prp_default_footer' => wfMsgForContentNoTrans( 'proofreadpage_default_footer' ),
-		);
-		$out->addInlineScript( ResourceLoader::makeConfigSetScript( $jsVars ) );
+		$out->addInlineScript("
+var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
+var prp_default_header = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_header' ) ) . "\";
+var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_footer' ) ) . "\";" );
 	}
 
 	private static function preparePage( $out, $m, $isEdit ) {
@@ -360,32 +357,31 @@ class ProofreadPage {
 			return true;
 		}
 
-		$fileName = null;
-		$filePage = null;
-		$fileWidth = 0;
-		$fileHeight = 0;
-		$fileFullUrl = null;
-		$scanLink = null;
-
 		$image = wfFindFile( $imageTitle );
-
 		if ( $image && $image->exists() ) {
-			$fileName = $imageTitle->getPrefixedText();
-			$fileWidth = $image->getWidth();
-			$fileHeight = $image->getHeight();
-
+			$width = $image->getWidth();
+			$height = $image->getHeight();
 			if ( $m[2] ) {
-				$filePage = $m[3];
-
-				$thumbName = $image->thumbName( array( 'width' => $fileWidth, 'page' => $filePage ) );
-				$fileFullUrl = $image->getThumbUrl( $thumbName );
+				$thumbName = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[3] ) );
+				$thumbURL = $image->getThumbUrl( $thumbName );
+				$thumbURL = str_replace( '%23', '#', $thumbURL );
+				$fullURL = str_replace( '##WIDTH##', "$width", $thumbURL );
 			} else {
-				$fileFullUrl = $image->getViewURL();
+				$thumbName = $image->thumbName( array( 'width' => '##WIDTH##' ) );
+				$thumbURL = $image->getThumbUrl( $thumbName );
+				$thumbURL = str_replace( '%23', '#', $thumbURL );
+				$fullURL = $image->getURL();
 			}
-			$scanLink = Html::element( 'a',
-						    array( 'href' => $fileFullUrl,
-							   'title' =>  wfMsg( 'proofreadpage_image' ) ),
+			$scan_link = Html::element( 'a', 
+						    array( 'href' => $fullURL, 
+							   'title' =>  wfMsg( 'proofreadpage_image' ) ), 
 						    wfMsg( 'proofreadpage_image' ) );
+		} else {
+			$width = 0;
+			$height = 0;
+			$thumbURL = '';
+			$fullURL = '';
+			$scan_link = '';
 		}
 
 		list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = self::navigation( $out->getTitle() );
@@ -393,33 +389,32 @@ class ProofreadPage {
 		$sk = $wgUser->getSkin();
 		$path = $wgExtensionAssetsPath . '/ProofreadPage';
 
-		$nextLink = $next_title ? $sk->link( $next_title,
+		$next_link = $next_title ? $sk->link( $next_title,
 			Html::element( 'img', array( 'src' => $path . '/rightarrow.png',
 				'alt' => wfMsg( 'proofreadpage_nextpage' ), 'width' => 15, 'height' => 15 ) ),
-			array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : null;
+			array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : '';
 
-		$prevLink = $prev_title ? $sk->link( $prev_title,
-			Html::element( 'img', array( 'src' => $path . '/leftarrow.png',
-				'alt' =>  wfMsg( 'proofreadpage_prevpage' ), 'width' => 15, 'height' => 15 ) ),
-			array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): null;
+		$prev_link = $prev_title ? $sk->link( $prev_title,
+			Html::element( 'img', array( 'src' => $path . '/leftarrow.png', 
+				'alt' =>  wfMsg( 'proofreadpage_prevpage' ), 'width' => 15, 'height' => 15 ) ), 
+			array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
 
-		$indexLink = $index_title ? $sk->link( $index_title,
-			Html::element( 'img', array( 'src' => $path . '/uparrow.png',
+		$index_link = $index_title ? $sk->link( $index_title,
+			Html::element( 'img', array(	'src' => $path . '/uparrow.png',
 				'alt' => wfMsg( 'proofreadpage_index' ), 'width' => 15, 'height' => 15 ) ),
-			array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : null;
+			array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : '';
 
 		$jsVars = array(
-			'proofreadPageWidth' => intval( $fileWidth ),
-			'proofreadPageHeight' => intval( $fileHeight ),
+			'proofreadPageWidth' => intval( $width ),
+			'proofreadPageHeight' => intval( $height ),
 			'proofreadPageEditWidth' => $edit_width,
-			'proofreadPageURL' => $fileFullUrl,
-			'proofreadPageFileName' => $fileName,
-			'proofreadPageFilePage' => $filePage,
+			'proofreadPageThumbURL' => $thumbURL,
+			'proofreadPageURL' => $fullURL,
 			'proofreadPageIsEdit' => intval( $isEdit ),
-			'proofreadPageIndexLink' => $indexLink,
-			'proofreadPageNextLink' => $nextLink,
-			'proofreadPagePrevLink' => $prevLink,
-			'proofreadPageScanLink' => $scanLink,
+			'proofreadPageIndexLink' => $index_link,
+			'proofreadPageNextLink' => $next_link,
+			'proofreadPagePrevLink' => $prev_link,
+			'proofreadPageScanLink' => $scan_link,
 			'proofreadPageHeader' => $header,
 			'proofreadPageFooter' => $footer,
 			'proofreadPageAddButtons' => $wgUser->isAllowed( 'pagequality' ),
@@ -857,7 +852,7 @@ class ProofreadPage {
 						    null,
 						    array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
 						    );
-
+				
 				if( $res ) {
 					foreach ( $res as $o ) {
 						array_push( $q0_pages, $o->page_title );
@@ -1549,7 +1544,7 @@ class ProofreadPage {
 		if( $indextitle ) {
 			$sk = $wgUser->getSkin();
 			$nt = Title::makeTitleSafe( $index_ns_index, $indextitle );
-			$indexlink = $sk->link( $nt, wfMsg( 'proofreadpage_source' ),
+			$indexlink = $sk->link( $nt, wfMsg( 'proofreadpage_source' ), 
 						array( 'title' => wfMsg( 'proofreadpage_source_message' ) ) );
 			$out->addInlineScript( ResourceLoader::makeConfigSetScript( array( 'proofreadpage_source_href' => $indexlink ) ) );
 			$out->addModules( 'ext.proofreadpage.article' );
