@@ -110,6 +110,10 @@ $messages['qqq'] = array(
 	'proofreadpage_source' => '{{Identical|Source}}',
 	'right-pagequality' => '{{doc-right}}',
 	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.',
+	'proofreadpage-button-toggle-visibility-label' => 'Tooltip text in button for include and noinclude edit boxes toggle, only visible in edit mode.',
+	'proofreadpage-button-zoom-out-label' => 'Tooltip text in button for zoom out, only visible in edit mode.',
+	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.',
+	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -817,6 +821,14 @@ Sumari||15",
 	'proofreadpage_source' => 'Font',
 	'proofreadpage_source_message' => "Edició digitalitzada d'on s'ha extret aquest text",
 	'right-pagequality' => "Modificar l'indicador de qualitat de la pàgina",
+	'proofreadpage-section-tools' => 'Eines de correcció',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Altres',
+	'proofreadpage-button-toggle-visibility-label' => "Mostra/oculta capçalera i peu de pàgina d'aquesta pàgina",
+	'proofreadpage-button-zoom-out-label' => 'Allunya',
+	'proofreadpage-button-reset-zoom-label' => 'Restablir zoom',
+	'proofreadpage-button-zoom-in-label' => 'Amplia',
+	'proofreadpage-button-toggle-layout-label' => 'Presentació vertical/horitzontal',
 );
 
 /** Cebuano (Cebuano)
