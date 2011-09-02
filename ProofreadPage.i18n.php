@@ -173,6 +173,11 @@ Opmerkings||10',
 	'proofreadpage_specialpage_legend' => 'Deursoek indeks-bladsye',
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Geskandeerde uitgawe waarop hierdie teks gebaseer is',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Ander',
+	'proofreadpage-button-zoom-out-label' => 'Uitzoom',
+	'proofreadpage-button-reset-zoom-label' => 'Herstel zoom',
+	'proofreadpage-button-zoom-in-label' => 'Inzoom',
 );
 
 /** Amharic (አማርኛ)
@@ -219,9 +224,11 @@ Notas||10',
  * @author Meno25
  * @author Orango
  * @author OsamaK
+ * @author زكريا
  */
 $messages['ar'] = array(
 	'indexpages' => 'قائمة صفحات الفهرس',
+	'pageswithoutscans' => 'صفحات من دون تفحص',
 	'proofreadpage_desc' => 'يسمح بمقارنة سهلة للنص مع المسح الأصلي',
 	'proofreadpage_namespace' => 'صفحة',
 	'proofreadpage_index_namespace' => 'فهرس',
@@ -273,6 +280,15 @@ $messages['ar'] = array(
 	'proofreadpage_specialpage_legend' => 'بحث صفحات الفهرس',
 	'proofreadpage_source' => 'المصدر',
 	'proofreadpage_source_message' => 'الإصدارة المفحوصة المستخدمة لإنشاء هذا النص',
+	'right-pagequality' => 'عدل علامة جودة الصفحة',
+	'proofreadpage-section-tools' => 'أدوات تدقيق',
+	'proofreadpage-group-zoom' => 'تكبير وتصغير',
+	'proofreadpage-group-other' => 'غير ذلك',
+	'proofreadpage-button-toggle-visibility-label' => 'أظهر أو أخف ترويسة الصفحة وتذييلتها',
+	'proofreadpage-button-zoom-out-label' => 'تصغير',
+	'proofreadpage-button-reset-zoom-label' => 'رد التكبير',
+	'proofreadpage-button-zoom-in-label' => 'تكبير',
+	'proofreadpage-button-toggle-layout-label' => 'تخطيط أفقي أو رأسي',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -1482,6 +1498,7 @@ Oharrak||10',
  * @author Huji
  * @author Ladsgroup
  * @author Mardetanha
+ * @author Mjbmr
  * @author Wayiran
  */
 $messages['fa'] = array(
@@ -1539,6 +1556,14 @@ $messages['fa'] = array(
 	'proofreadpage_source' => 'منبع',
 	'proofreadpage_source_message' => 'برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده',
 	'right-pagequality' => 'تغییر پرچم کیفیت صفحه',
+	'proofreadpage-section-tools' => 'ابزارهای ویرایش',
+	'proofreadpage-group-zoom' => 'اندازه‌نمایی',
+	'proofreadpage-group-other' => 'دیگر',
+	'proofreadpage-button-toggle-visibility-label' => 'نمایش/نهفتن سرصفحه و پاورقی این صفحه',
+	'proofreadpage-button-zoom-out-label' => 'کوچک‌نمایی',
+	'proofreadpage-button-reset-zoom-label' => 'بازنشانی اندازه‌نمایی',
+	'proofreadpage-button-zoom-in-label' => 'بزرگ‌نمایی',
+	'proofreadpage-button-toggle-layout-label' => 'طرح عمودی/افقی',
 );
 
 /** Finnish (Suomi)
@@ -1742,7 +1767,11 @@ Comentèros||10',
 	'proofreadpage_source' => 'Sôrsa',
 	'proofreadpage_source_message' => 'Èdicion scanâ que vint de cél tèxto',
 	'right-pagequality' => 'Changiér lo drapél de qualitât de la pâge',
+	'proofreadpage-group-zoom' => 'Zoome',
 	'proofreadpage-group-other' => 'Ôtra',
+	'proofreadpage-button-zoom-out-label' => 'Rèduire',
+	'proofreadpage-button-reset-zoom-label' => 'Tornar inicialisar lo zoome',
+	'proofreadpage-button-zoom-in-label' => 'Agrantir',
 );
 
 /** Friulian (Furlan)
@@ -4163,6 +4192,14 @@ Comentarii||10',
 	'proofreadpage_source' => 'Sursă',
 	'proofreadpage_source_message' => 'Pentru a confirma acest text s-au utilizat ediția scanată',
 	'right-pagequality' => 'Modifică indicatorul de calitate a paginii',
+	'proofreadpage-section-tools' => 'Instrumente pentru revizuire',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Altele',
+	'proofreadpage-button-toggle-visibility-label' => 'Arată/ascunde antetul și subsolul acestei pagini',
+	'proofreadpage-button-zoom-out-label' => 'Depărtare',
+	'proofreadpage-button-reset-zoom-label' => 'Reinițializare zoom',
+	'proofreadpage-button-zoom-in-label' => 'Apropiere',
+	'proofreadpage-button-toggle-layout-label' => 'Aspect vertical/orizontal',
 );
 
 /** Tarandíne (Tarandíne)
@@ -4849,6 +4886,7 @@ $messages['te'] = array(
 	'proofreadpage_specialpage_legend' => 'సూచీపుటలు వెదకు',
 	'proofreadpage_source' => 'మూలము',
 	'proofreadpage_source_message' => 'ఈ పాఠ్య నిర్ధారణకు ఛాయాచిత్రసంగ్రహణకూర్పు(scanned edition) వాడబడ్డది.',
+	'proofreadpage-group-other' => 'ఇతర',
 );
 
 /** Tetum (Tetun)
@@ -5170,6 +5208,7 @@ $messages['ug-latn'] = array(
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
+ * @author Dim Grits
  * @author Prima klasy4na
  * @author Тест
  */
@@ -5228,6 +5267,13 @@ $messages['uk'] = array(
 	'proofreadpage_source' => 'Джерело',
 	'proofreadpage_source_message' => 'Для створення цього тексту використані відскановані видання',
 	'right-pagequality' => 'Змінювати статус якості сторінки',
+	'proofreadpage-group-zoom' => 'Масштаб',
+	'proofreadpage-group-other' => 'Інше',
+	'proofreadpage-button-toggle-visibility-label' => 'Показати / сховати верхні та нижні колонтитули цієї сторінки',
+	'proofreadpage-button-zoom-out-label' => 'Зменшити',
+	'proofreadpage-button-reset-zoom-label' => 'Скинути збільшення',
+	'proofreadpage-button-zoom-in-label' => 'Збільшити',
+	'proofreadpage-button-toggle-layout-label' => 'Вертикальна / горизонтальна розмітка',
 );
 
 /** Vèneto (Vèneto)
