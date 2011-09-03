@@ -505,6 +505,7 @@ $messages['bcl'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Renessaince
  */
 $messages['be-tarask'] = array(
 	'indexpages' => 'Сьпіс індэксных старонак',
@@ -561,6 +562,14 @@ $messages['be-tarask'] = array(
 	'proofreadpage_source' => 'Крыніца',
 	'proofreadpage_source_message' => 'Сканаваная вэрсія, якая выкарыстоўвалася для стварэньня гэтага тэксту',
 	'right-pagequality' => 'зьмяненьне сьцяжка якасьці старонкі',
+	'proofreadpage-section-tools' => 'Інструмэнты рэдактара',
+	'proofreadpage-group-zoom' => 'Маштаб',
+	'proofreadpage-group-other' => 'Іншае',
+	'proofreadpage-button-toggle-visibility-label' => 'Паказаць/схаваць калянтытулы гэтай старонкі',
+	'proofreadpage-button-zoom-out-label' => 'Зьменшыць',
+	'proofreadpage-button-reset-zoom-label' => 'Скінуць павелічэньне',
+	'proofreadpage-button-zoom-in-label' => 'Павялічыць',
+	'proofreadpage-button-toggle-layout-label' => 'Вэртыкальны/гарызантальны вывад',
 );
 
 /** Bulgarian (Български)
@@ -1203,6 +1212,7 @@ $messages['ee'] = array(
  */
 $messages['el'] = array(
 	'indexpages' => 'Κατάλογος σελίδων ευρετηρίου',
+	'pageswithoutscans' => 'Σελίδες χωρίς σάρωση',
 	'proofreadpage_desc' => 'Επίτρεψε εύκολη σύγκριση κειμένου με την πρωτότυπη σάρωση',
 	'proofreadpage_namespace' => 'Σελίδα',
 	'proofreadpage_index_namespace' => 'Ευρετήριο',
@@ -1260,6 +1270,11 @@ $messages['el'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}',
 	'proofreadpage_specialpage_legend' => 'Αναζήτηση σελίδων ευρετηρίου',
 	'proofreadpage_source' => 'Πηγή',
+	'proofreadpage-group-zoom' => 'Εστίαση',
+	'proofreadpage-group-other' => 'Άλλο',
+	'proofreadpage-button-zoom-out-label' => 'Σμίκρυνση',
+	'proofreadpage-button-reset-zoom-label' => 'Επαναφορά ζουμ',
+	'proofreadpage-button-zoom-in-label' => 'Μεγέθυνση',
 );
 
 /** Esperanto (Esperanto)
@@ -1321,6 +1336,12 @@ Rimarkoj||10',
 	'proofreadpage_source' => 'Fonto',
 	'proofreadpage_source_message' => 'Skanita eldono uzata establi ĉi tiu teksto',
 	'right-pagequality' => 'Modifi flagon de paĝa kvalito',
+	'proofreadpage-section-tools' => 'Iloj por provlegado',
+	'proofreadpage-group-zoom' => 'Zomi',
+	'proofreadpage-group-other' => 'Alia',
+	'proofreadpage-button-zoom-out-label' => 'Malzomi',
+	'proofreadpage-button-reset-zoom-label' => 'Refreŝi zomnivelon',
+	'proofreadpage-button-zoom-in-label' => 'Zomi',
 );
 
 /** Spanish (Español)
@@ -1715,6 +1736,7 @@ Remarques||10',
  */
 $messages['frp'] = array(
 	'indexpages' => 'Lista de les pâges d’endèxe',
+	'pageswithoutscans' => 'Pâges sen numerisacions',
 	'proofreadpage_desc' => 'Pèrmèt una comparèson ésiê entre lo tèxto et sa numerisacion originâla.',
 	'proofreadpage_namespace' => 'Pâge',
 	'proofreadpage_index_namespace' => 'Endèxe',
@@ -1767,6 +1789,7 @@ Comentèros||10',
 	'proofreadpage_source' => 'Sôrsa',
 	'proofreadpage_source_message' => 'Èdicion scanâ que vint de cél tèxto',
 	'right-pagequality' => 'Changiér lo drapél de qualitât de la pâge',
+	'proofreadpage-section-tools' => 'Outils d’éde a la rèvision',
 	'proofreadpage-group-zoom' => 'Zoome',
 	'proofreadpage-group-other' => 'Ôtra',
 	'proofreadpage-button-zoom-out-label' => 'Rèduire',
@@ -2570,6 +2593,7 @@ Note||10',
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author JtFuruhata
+ * @author Schu
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -2627,6 +2651,10 @@ $messages['ja'] = array(
 	'proofreadpage_source' => '引用元',
 	'proofreadpage_source_message' => 'このテキストを構築するのに使用したスキャン元の版',
 	'right-pagequality' => 'ページ品質フラグの変更',
+	'proofreadpage-button-zoom-out-label' => '縮小',
+	'proofreadpage-button-reset-zoom-label' => '拡大/縮小をリセット',
+	'proofreadpage-button-zoom-in-label' => '拡大',
+	'proofreadpage-button-toggle-layout-label' => '垂直/水平方向のレイアウト',
 );
 
 /** Jutish (Jysk)
@@ -5267,6 +5295,7 @@ $messages['uk'] = array(
 	'proofreadpage_source' => 'Джерело',
 	'proofreadpage_source_message' => 'Для створення цього тексту використані відскановані видання',
 	'right-pagequality' => 'Змінювати статус якості сторінки',
+	'proofreadpage-section-tools' => 'Інструменти коректури',
 	'proofreadpage-group-zoom' => 'Масштаб',
 	'proofreadpage-group-other' => 'Інше',
 	'proofreadpage-button-toggle-visibility-label' => 'Показати / сховати верхні та нижні колонтитули цієї сторінки',
