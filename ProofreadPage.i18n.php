@@ -178,6 +178,7 @@ Opmerkings||10',
 	'proofreadpage-button-zoom-out-label' => 'Uitzoom',
 	'proofreadpage-button-reset-zoom-label' => 'Herstel zoom',
 	'proofreadpage-button-zoom-in-label' => 'Inzoom',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikale/horisontale uitleg',
 );
 
 /** Amharic (አማርኛ)
@@ -1206,6 +1207,7 @@ $messages['ee'] = array(
  * @author Consta
  * @author Crazymadlover
  * @author Dead3y3
+ * @author Glavkos
  * @author Konsnos
  * @author Omnipaedista
  * @author ZaDiak
@@ -1270,11 +1272,14 @@ $messages['el'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}',
 	'proofreadpage_specialpage_legend' => 'Αναζήτηση σελίδων ευρετηρίου',
 	'proofreadpage_source' => 'Πηγή',
+	'proofreadpage-section-tools' => 'Διορθώστε τα εργαλεία',
 	'proofreadpage-group-zoom' => 'Εστίαση',
 	'proofreadpage-group-other' => 'Άλλο',
+	'proofreadpage-button-toggle-visibility-label' => 'Εμφάνιση / απόκρυψη κεφαλίδας και υποσέλιδου αυτής της σελίδας',
 	'proofreadpage-button-zoom-out-label' => 'Σμίκρυνση',
 	'proofreadpage-button-reset-zoom-label' => 'Επαναφορά ζουμ',
 	'proofreadpage-button-zoom-in-label' => 'Μεγέθυνση',
+	'proofreadpage-button-toggle-layout-label' => 'Κάθετη / οριζόντια διάταξη',
 );
 
 /** Esperanto (Esperanto)
@@ -1339,9 +1344,11 @@ Rimarkoj||10',
 	'proofreadpage-section-tools' => 'Iloj por provlegado',
 	'proofreadpage-group-zoom' => 'Zomi',
 	'proofreadpage-group-other' => 'Alia',
+	'proofreadpage-button-toggle-visibility-label' => 'Montri/kaŝi la kaplinion kaj piedlinion de ĉi tiu paĝo.',
 	'proofreadpage-button-zoom-out-label' => 'Malzomi',
 	'proofreadpage-button-reset-zoom-label' => 'Refreŝi zomnivelon',
 	'proofreadpage-button-zoom-in-label' => 'Zomi',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikala/horizonta aspekto',
 );
 
 /** Spanish (Español)
@@ -1653,6 +1660,14 @@ Huomautuksia||10',
 	'proofreadpage_source' => 'Lähde',
 	'proofreadpage_source_message' => 'Skannattua versiota on käytetty tämän tekstin muodostamiseen',
 	'right-pagequality' => 'Muuttaa sivun laatumerkintää',
+	'proofreadpage-section-tools' => 'Oikolukutyökalut',
+	'proofreadpage-group-zoom' => 'Zoomaus',
+	'proofreadpage-group-other' => 'Muu',
+	'proofreadpage-button-toggle-visibility-label' => 'Näytä/piilota tämän sivun yläosa ja alaosa',
+	'proofreadpage-button-zoom-out-label' => 'Loitonna',
+	'proofreadpage-button-reset-zoom-label' => 'Alkuperäinen koko',
+	'proofreadpage-button-zoom-in-label' => 'Lähennä',
+	'proofreadpage-button-toggle-layout-label' => 'Pystysuora/vaakasuora ulkoasu',
 );
 
 /** French (Français)
@@ -1792,9 +1807,11 @@ Comentèros||10',
 	'proofreadpage-section-tools' => 'Outils d’éde a la rèvision',
 	'proofreadpage-group-zoom' => 'Zoome',
 	'proofreadpage-group-other' => 'Ôtra',
+	'proofreadpage-button-toggle-visibility-label' => 'Fâre vêre / cachiér l’en-téta et lo pied de pâge de ceta pâge',
 	'proofreadpage-button-zoom-out-label' => 'Rèduire',
 	'proofreadpage-button-reset-zoom-label' => 'Tornar inicialisar lo zoome',
 	'proofreadpage-button-zoom-in-label' => 'Agrantir',
+	'proofreadpage-button-toggle-layout-label' => 'Misa en pâge drêta / plana',
 );
 
 /** Friulian (Furlan)
@@ -3133,6 +3150,7 @@ $messages['lmo'] = array(
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Eitvys200
  * @author Matasg
  */
 $messages['lt'] = array(
@@ -3184,6 +3202,14 @@ Leidėjas
 Paveikslėlis|Viršelis
 Puslapiai||20
 Pastabos||10',
+	'proofreadpage_source' => 'Šaltinis',
+	'proofreadpage-group-zoom' => 'Padidinti',
+	'proofreadpage-group-other' => 'Kita',
+	'proofreadpage-button-toggle-visibility-label' => 'Rodyti/slėpti šio puslapio antraštes ir poraštes',
+	'proofreadpage-button-zoom-out-label' => 'Nutolinti',
+	'proofreadpage-button-reset-zoom-label' => 'Perkrauti priartinimą',
+	'proofreadpage-button-zoom-in-label' => 'Priartinti',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikalus/horizontalus išdėstymas',
 );
 
 /** Latvian (Latviešu)
@@ -3745,6 +3771,11 @@ Merknader||10',
 	'proofreadpage_source' => 'Kilde',
 	'proofreadpage_source_message' => 'Scannet utgave brukt for å etablere denne teksten',
 	'right-pagequality' => 'Endre sidens kvalitetsflagg',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Annet',
+	'proofreadpage-button-zoom-out-label' => 'Zoom ut',
+	'proofreadpage-button-reset-zoom-label' => 'Tilbakestill zoom',
+	'proofreadpage-button-zoom-in-label' => 'Zoom inn',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -4075,6 +4106,7 @@ Notas||10',
  * @author Eduardo.mps
  * @author Giro720
  * @author Luckas Blade
+ * @author MetalBrasil
  */
 $messages['pt-br'] = array(
 	'indexpages' => 'Lista de páginas de índice',
@@ -4131,6 +4163,14 @@ Notas||10',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edição digitalizada utilizada para estabelecer este texto',
 	'right-pagequality' => 'Modificar o indicador da qualidade da página',
+	'proofreadpage-section-tools' => 'Ferramentas de revisão',
+	'proofreadpage-group-zoom' => 'Ampliar',
+	'proofreadpage-group-other' => 'Outro',
+	'proofreadpage-button-toggle-visibility-label' => 'Mostrar/ocultar o topo e o rodapé desta página',
+	'proofreadpage-button-zoom-out-label' => 'Afastar',
+	'proofreadpage-button-reset-zoom-label' => 'Redefinir ampliação',
+	'proofreadpage-button-zoom-in-label' => 'Aumentar ampliação',
+	'proofreadpage-button-toggle-layout-label' => 'Disposição vertical ou horizontal',
 );
 
 /** Quechua (Runa Simi)
@@ -4385,10 +4425,17 @@ $messages['rue'] = array(
 	'proofreadpage_body' => 'Тїло сторінкы (буде ся включати):',
 	'proofreadpage_footer' => 'Пятка (noinclude):',
 	'proofreadpage_quality0_category' => 'Без тексту',
+	'proofreadpage_quality1_category' => 'Не было сконтролёване',
 	'proofreadpage_quality2_category' => 'Проблематічна',
+	'proofreadpage_quality3_category' => 'Сконтролёване',
 	'proofreadpage_quality4_category' => 'Перевірена',
 	'proofreadpage_quality0_message' => 'Тота сторінка не потребує коректуры',
+	'proofreadpage_quality1_message' => 'Тота сторінка не была сконтролёвана',
+	'proofreadpage_quality2_message' => 'Почас контролї той сторінкы ся обявив проблем',
+	'proofreadpage_quality3_message' => 'Тота сторінка была сконтролёвана',
+	'proofreadpage_quality4_message' => 'Тота сторінка была овірена',
 	'proofreadpage_index_listofpages' => 'Список сторінок',
+	'proofreadpage_image_message' => 'Одказ на сторінку індексу',
 	'proofreadpage_page_status' => 'Статус сторінкы',
 	'proofreadpage_js_attributes' => 'Автор Назва Рік Выдавательство',
 	'proofreadpage_index_attributes' => 'Автор
@@ -4400,7 +4447,18 @@ $messages['rue'] = array(
 Сторінок||20
 Позначок||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|сторінка|сторінкы|сторінок}}',
+	'proofreadpage_specialpage_legend' => 'Глядати на індексовых сторінках',
 	'proofreadpage_source' => 'Жрідло',
+	'proofreadpage_source_message' => 'Наскенована верзія хоснована про выпрацованя того тексту',
+	'right-pagequality' => 'Позмінёвати флаґ кваліты сторінкы',
+	'proofreadpage-section-tools' => 'Інштрументы коректуры',
+	'proofreadpage-group-zoom' => 'Зоом',
+	'proofreadpage-group-other' => 'Інше',
+	'proofreadpage-button-toggle-visibility-label' => 'Указати/скрыти верьхнї і нижнї тітулы той сторінкы',
+	'proofreadpage-button-zoom-out-label' => 'Зменшыти',
+	'proofreadpage-button-reset-zoom-label' => 'Ресет звекшыня',
+	'proofreadpage-button-zoom-in-label' => 'Звекшыти',
+	'proofreadpage-button-toggle-layout-label' => 'Вертікалне / горізонтално розложіня',
 );
 
 /** Sakha (Саха тыла)
@@ -4763,6 +4821,7 @@ Catetan||10',
  * @author Najami
  * @author Per
  * @author Rotsee
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'indexpages' => 'Lista över indexsidor',
@@ -4819,8 +4878,13 @@ Anmärkningar||10',
 	'proofreadpage_source' => 'Källa',
 	'proofreadpage_source_message' => 'Scannat original använt för att skapa denna text',
 	'right-pagequality' => 'Ändra sidans kvalitetsflagga',
+	'proofreadpage-group-zoom' => 'Zooma',
+	'proofreadpage-group-other' => 'Övrigt',
+	'proofreadpage-button-toggle-visibility-label' => 'Visa/dölj denna sidas sidhuvud och sidfot',
 	'proofreadpage-button-zoom-out-label' => 'Zooma ut',
+	'proofreadpage-button-reset-zoom-label' => 'Återställ zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zooma in',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikal/horisontell uppsättning',
 );
 
 /** Swahili (Kiswahili)
