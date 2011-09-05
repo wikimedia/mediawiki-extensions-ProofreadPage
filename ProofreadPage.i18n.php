@@ -2605,6 +2605,14 @@ Note||10',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edizione scansionata utilizzata per ricavare questo testo',
 	'right-pagequality' => 'Modificare la qualità della pagina',
+	'proofreadpage-section-tools' => 'Strumenti proofread',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Altro',
+	'proofreadpage-button-toggle-visibility-label' => 'Mostra/Nascondi intestazione e piè di pagina',
+	'proofreadpage-button-zoom-out-label' => 'Zoom indietro',
+	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
+	'proofreadpage-button-zoom-in-label' => 'Zoom avanti',
+	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizzontale',
 );
 
 /** Japanese (日本語)
@@ -3997,6 +4005,14 @@ Nòte||10',
 	'proofreadpage_source' => 'Sorgiss',
 	'proofreadpage_source_message' => 'Edission digitalisà dovrà për stabilì sto test-sì',
 	'right-pagequality' => 'Modifiché ël drapò ëd qualità dla pàgina',
+	'proofreadpage-section-tools' => "Utiss d'agiut për riletura",
+	'proofreadpage-group-zoom' => 'Angrandiment',
+	'proofreadpage-group-other' => 'Àutr',
+	'proofreadpage-button-toggle-visibility-label' => "Smon-e/stërmé l'antestassion e ël pé 'd pàgina ëd costa pàgina",
+	'proofreadpage-button-zoom-out-label' => 'Diminuì',
+	'proofreadpage-button-reset-zoom-label' => 'Torna amposté angrandiment',
+	'proofreadpage-button-zoom-in-label' => 'Angrandì',
+	'proofreadpage-button-toggle-layout-label' => 'Layout vertical/orisontal',
 );
 
 /** Pashto (پښتو)
@@ -5428,6 +5444,14 @@ Note||10',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edission scanerizà doparà par inserir sto testo',
 	'right-pagequality' => "Canbiar l'indicador de qualità de la pagina",
+	'proofreadpage-section-tools' => 'Strumenti de riletura',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Altro',
+	'proofreadpage-button-toggle-visibility-label' => 'Mostra/scondi intestazion e piè de pagina',
+	'proofreadpage-button-zoom-out-label' => 'Zoom indrìo',
+	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
+	'proofreadpage-button-zoom-in-label' => 'Zoom avanti',
+	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizontale',
 );
 
 /** Veps (Vepsan kel')
