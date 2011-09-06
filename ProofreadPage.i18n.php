@@ -991,7 +991,7 @@ Bemærkninger | | 10',
 	'proofreadpage-group-other' => 'Øvrigt',
 	'proofreadpage-button-toggle-visibility-label' => 'Vis/skjul denne sides sidehoved og sidefod',
 	'proofreadpage-button-zoom-out-label' => 'Zoom ud',
-	'proofreadpage-button-reset-zoom-label' => 'Nulstil zoom',
+	'proofreadpage-button-reset-zoom-label' => 'Oprindelig størrelse',
 	'proofreadpage-button-zoom-in-label' => 'Zoom ind',
 	'proofreadpage-button-toggle-layout-label' => 'Lodret/vandret opsætning',
 );
@@ -2433,7 +2433,7 @@ Notas||10',
 	'proofreadpage-group-other' => 'Altere',
 	'proofreadpage-button-toggle-visibility-label' => 'Monstrar/celar le capite e le pede de iste pagina',
 	'proofreadpage-button-zoom-out-label' => 'Diminuer',
-	'proofreadpage-button-reset-zoom-label' => 'Reinitialisar zoom',
+	'proofreadpage-button-reset-zoom-label' => 'Dimension original',
 	'proofreadpage-button-zoom-in-label' => 'Aggrandir',
 	'proofreadpage-button-toggle-layout-label' => 'Disposition vertical/horizontal',
 );
@@ -3667,7 +3667,7 @@ Opmerkingen||10",
 	'proofreadpage-group-other' => 'Anders',
 	'proofreadpage-button-toggle-visibility-label' => 'De kop- en voettekst van deze pagina weergeven of verbergen',
 	'proofreadpage-button-zoom-out-label' => 'Uitzoomen',
-	'proofreadpage-button-reset-zoom-label' => 'Zoom opnieuw instellen',
+	'proofreadpage-button-reset-zoom-label' => 'Zoomniveau herinitialiseren',
 	'proofreadpage-button-zoom-in-label' => 'Inzoomen',
 	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale lay-out',
 );
@@ -4010,9 +4010,9 @@ Nòte||10',
 	'proofreadpage-group-other' => 'Àutr',
 	'proofreadpage-button-toggle-visibility-label' => "Smon-e/stërmé l'antestassion e ël pé 'd pàgina ëd costa pàgina",
 	'proofreadpage-button-zoom-out-label' => 'Diminuì',
-	'proofreadpage-button-reset-zoom-label' => 'Torna amposté angrandiment',
+	'proofreadpage-button-reset-zoom-label' => "Amposté torna l'angrandiment",
 	'proofreadpage-button-zoom-in-label' => 'Angrandì',
-	'proofreadpage-button-toggle-layout-label' => 'Layout vertical/orisontal',
+	'proofreadpage-button-toggle-layout-label' => 'Disposission vertical/orisontal',
 );
 
 /** Pashto (پښتو)
@@ -4345,6 +4345,10 @@ Note||10",
 	'proofreadpage_source' => 'Sorgende',
 	'proofreadpage_source_message' => 'Edizione scanzionate ausate pe definì stu teste',
 	'right-pagequality' => "Cange 'a bandiere d'a qualità d'a pàgene",
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Otre',
+	'proofreadpage-button-zoom-out-label' => 'Cchiù peccinne',
+	'proofreadpage-button-zoom-in-label' => 'Cchiù granne',
 );
 
 /** Russian (Русский)
@@ -5700,6 +5704,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Horacewai2
  * @author Liangent
@@ -5761,5 +5766,13 @@ $messages['zh-hant'] = array(
 	'proofreadpage_source' => '來源',
 	'proofreadpage_source_message' => '掃描版用來建立這個文字',
 	'right-pagequality' => '修改頁面質量標誌',
+	'proofreadpage-section-tools' => '校對工具',
+	'proofreadpage-group-zoom' => '縮放',
+	'proofreadpage-group-other' => '其他',
+	'proofreadpage-button-toggle-visibility-label' => '顯示／隱藏此頁面的頁眉及頁腳',
+	'proofreadpage-button-zoom-out-label' => '縮小',
+	'proofreadpage-button-reset-zoom-label' => '原本大小',
+	'proofreadpage-button-zoom-in-label' => '放大',
+	'proofreadpage-button-toggle-layout-label' => '垂直／水平佈局',
 );
 
