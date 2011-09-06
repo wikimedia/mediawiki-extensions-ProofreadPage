@@ -71,7 +71,7 @@ Remarks||10',
 	'proofreadpage-group-other'                    => 'Other',
 	'proofreadpage-button-toggle-visibility-label' => 'Show/hide this page\'s header and footer',
 	'proofreadpage-button-zoom-out-label'          => 'Zoom out',
-	'proofreadpage-button-reset-zoom-label'        => 'Reset zoom',
+	'proofreadpage-button-reset-zoom-label'        => 'Original size',
 	'proofreadpage-button-zoom-in-label'           => 'Zoom in',
 	'proofreadpage-button-toggle-layout-label'     => 'Vertical/horizontal layout'
 );
