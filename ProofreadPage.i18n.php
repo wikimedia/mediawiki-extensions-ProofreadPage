@@ -2975,6 +2975,7 @@ Aanmerkunge||10',
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'För heh dä Täx ze schriive, wood dat Beld vum Täx jenumme.',
 	'right-pagequality' => 'De Qualiteit vun Sigge ändere',
+	'proofreadpage-button-reset-zoom-label' => 'Ojinal-Enschtällong',
 );
 
 /** Kurdish (Latin) (Kurdî (Latin))
@@ -4345,9 +4346,11 @@ Note||10",
 	'proofreadpage_source' => 'Sorgende',
 	'proofreadpage_source_message' => 'Edizione scanzionate ausate pe definì stu teste',
 	'right-pagequality' => "Cange 'a bandiere d'a qualità d'a pàgene",
+	'proofreadpage-section-tools' => 'Struminde de revisione',
 	'proofreadpage-group-zoom' => 'Zoom',
 	'proofreadpage-group-other' => 'Otre',
 	'proofreadpage-button-zoom-out-label' => 'Cchiù peccinne',
+	'proofreadpage-button-reset-zoom-label' => 'Dimenzione origgenale',
 	'proofreadpage-button-zoom-in-label' => 'Cchiù granne',
 );
 
