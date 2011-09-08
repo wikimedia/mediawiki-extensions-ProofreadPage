@@ -4352,6 +4352,7 @@ Note||10",
 	'proofreadpage-button-zoom-out-label' => 'Cchiù peccinne',
 	'proofreadpage-button-reset-zoom-label' => 'Dimenzione origgenale',
 	'proofreadpage-button-zoom-in-label' => 'Cchiù granne',
+	'proofreadpage-button-toggle-layout-label' => 'Disposizione verticale/orizzondale',
 );
 
 /** Russian (Русский)
