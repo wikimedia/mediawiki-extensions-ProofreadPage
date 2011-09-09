@@ -398,7 +398,13 @@ $messages['avk'] = array(
  * @author Cekli829
  */
 $messages['az'] = array(
+	'proofreadpage_namespace' => 'Səhifə',
+	'proofreadpage_index_namespace' => 'İndeks',
+	'proofreadpage_image' => 'Şəkil',
+	'proofreadpage_index' => 'İndeks',
 	'proofreadpage_nextpage' => 'Növbəti səhifə',
+	'proofreadpage_source' => 'Mənbə',
+	'proofreadpage-button-reset-zoom-label' => 'Orijinal ölçü',
 );
 
 /** Bashkir (Башҡортса)
