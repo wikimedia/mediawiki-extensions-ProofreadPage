@@ -110,7 +110,8 @@ $messages['qqq'] = array(
 	'proofreadpage_source' => '{{Identical|Source}}',
 	'right-pagequality' => '{{doc-right}}',
 	'proofreadpage-group-zoom' => '{{Identical|Zoom}}',
-	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.',
+	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.
+{{Identical|Other}}',
 	'proofreadpage-button-toggle-visibility-label' => 'Tooltip text in button for include and noinclude edit boxes toggle, only visible in edit mode.',
 	'proofreadpage-button-zoom-out-label' => 'Tooltip text in button for zoom out, only visible in edit mode.',
 	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.',
@@ -574,10 +575,10 @@ $messages['be-tarask'] = array(
 	'proofreadpage-group-zoom' => 'Маштаб',
 	'proofreadpage-group-other' => 'Іншае',
 	'proofreadpage-button-toggle-visibility-label' => 'Паказаць/схаваць калянтытулы гэтай старонкі',
-	'proofreadpage-button-zoom-out-label' => 'Зьменшыць',
-	'proofreadpage-button-reset-zoom-label' => 'Скінуць павелічэньне',
+	'proofreadpage-button-zoom-out-label' => 'Паменшыць',
+	'proofreadpage-button-reset-zoom-label' => 'Зыходны памер',
 	'proofreadpage-button-zoom-in-label' => 'Павялічыць',
-	'proofreadpage-button-toggle-layout-label' => 'Вэртыкальны/гарызантальны вывад',
+	'proofreadpage-button-toggle-layout-label' => 'Вэртыкальная/гарызантальная разьметка',
 );
 
 /** Bulgarian (Български)
