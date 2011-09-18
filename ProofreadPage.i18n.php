@@ -931,6 +931,14 @@ Poznámky||10',
 	'proofreadpage_source' => 'Zdroj',
 	'proofreadpage_source_message' => 'Naskenovaná verze použitá k vypracování tohoto textu',
 	'right-pagequality' => 'Upravování příznaku kvality stránky',
+	'proofreadpage-section-tools' => 'Nástroje pro korekturu',
+	'proofreadpage-group-zoom' => 'Přiblížení',
+	'proofreadpage-group-other' => 'Jiné',
+	'proofreadpage-button-toggle-visibility-label' => 'Zobrazit/skrýt záhlaví a zápatí této stránky',
+	'proofreadpage-button-zoom-out-label' => 'Oddálit',
+	'proofreadpage-button-reset-zoom-label' => 'Původní velikost',
+	'proofreadpage-button-zoom-in-label' => 'Přiblížit',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikální/horizontální uspořádání',
 );
 
 /** Danish (Dansk)
