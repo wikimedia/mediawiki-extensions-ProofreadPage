@@ -3874,6 +3874,13 @@ Comentaris||10',
 	'proofreadpage_source_message' => "Edicion numerizada d'ont es eissit aqueste tèxte",
 );
 
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Psubhashish
+ */
+$messages['or'] = array(
+	'proofreadpage_prevpage' => 'ଆଗ ପୃଷ୍ଠା',
+);
+
 /** Ossetic (Ирон)
  * @author Amikeco
  */
