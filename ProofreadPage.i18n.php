@@ -728,6 +728,11 @@ Notennoù||10',
 	'proofreadpage_source_message' => 'Embannadurioù bet niverelaet implijet evit sevel an destenn-mañ',
 	'right-pagequality' => 'Kemm banniel perzhded ar bajennoù',
 	'proofreadpage-section-tools' => 'Ostilhoù adlenn',
+	'proofreadpage-group-zoom' => 'Zoum',
+	'proofreadpage-group-other' => 'All',
+	'proofreadpage-button-zoom-out-label' => 'Dizoumañ',
+	'proofreadpage-button-reset-zoom-label' => 'Ment orin',
+	'proofreadpage-button-zoom-in-label' => 'Zoumañ',
 );
 
 /** Bosnian (Bosanski)
@@ -1047,7 +1052,7 @@ $messages['de'] = array(
 	'proofreadpage_header' => 'Kopfzeile (nicht einzufügen):',
 	'proofreadpage_body' => 'Textkörper (einzufügen):',
 	'proofreadpage_footer' => 'Fußzeile (nicht einzufügen):',
-	'proofreadpage_toggleheaders' => 'Nicht einzufügende Abschnitte ein-/ ausblenden',
+	'proofreadpage_toggleheaders' => 'Nicht einzufügende Abschnitte ein-/ausblenden',
 	'proofreadpage_quality0_category' => 'Ohne Text',
 	'proofreadpage_quality1_category' => 'Unkorrigiert',
 	'proofreadpage_quality2_category' => 'Korrekturproblem',
@@ -1078,11 +1083,11 @@ Bemerkungen||10',
 	'proofreadpage-section-tools' => 'Hilfsmittel zum Korrekturlesen',
 	'proofreadpage-group-zoom' => 'Zoom',
 	'proofreadpage-group-other' => 'Anderes',
-	'proofreadpage-button-toggle-visibility-label' => 'Kopf- und Fußzeile dieser Seite ein-/ ausblenden',
+	'proofreadpage-button-toggle-visibility-label' => 'Kopf- und Fußzeile dieser Seite ein-/ausblenden',
 	'proofreadpage-button-zoom-out-label' => 'Verkleinern',
 	'proofreadpage-button-reset-zoom-label' => 'Zoom zurücksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergrößern',
-	'proofreadpage-button-toggle-layout-label' => 'Vertikale/ horizontale Ausrichtung',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikale/horizontale Ausrichtung',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
