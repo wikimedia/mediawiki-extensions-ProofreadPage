@@ -42,7 +42,7 @@ function pr_make_edit_area( container, text ) {
 			pageHeader = m2[1];
 			// apparently lookahead is not supported by all browsers
 			// so let us do another regexp
-			re3 = /^([\s\S]*?)<noinclude>([\s\S]*?)<\/noinclude>/;
+			re3 = /^([\s\S]*)<noinclude>([\s\S]*)<\/noinclude>\s*$/;
 			m3 = m2[2].match( re3 );
 			if( m3 ) {
 				pageBody   = m3[1];
