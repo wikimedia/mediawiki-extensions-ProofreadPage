@@ -126,15 +126,15 @@ function pr_make_edit_area( container, text ) {
 		'<div id="prp_header" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_header' ) ) + '</span>' +
-		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>' + escapeQuotesHTML( pageHeader ) + '</textarea><br />' +
+		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>\n' + escapeQuotesHTML( pageHeader ) + '</textarea><br />' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_body' ) ) + '</span></div>' +
-		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">' +
+		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">\n' +
 			escapeQuotesHTML( pageBody ) + '</textarea>' +
 		'<div id="prp_footer" style="">' +
 		'<span style="color:gray;font-size:80%;line-height:100%;">' +
 		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_footer' ) ) + '</span><br />' +
-		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>' +
+		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>\n' +
 		escapeQuotesHTML( pageFooter ) + '</textarea></div>';
 }
 
