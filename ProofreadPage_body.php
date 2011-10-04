@@ -75,7 +75,7 @@ class ProofreadPage {
 
 	/**
 	 * Set up our custom parser hooks when initializing parser.
-	 * 
+	 *
 	 * @param Parser $parser
 	 * @return boolean hook return value
 	 */
@@ -86,6 +86,10 @@ class ProofreadPage {
 		return true;
 	}
 
+	/**
+	 * @param $updater DatabaseUpdater
+	 * @return bool
+	 */
 	public static function onLoadExtensionSchemaUpdates( $updater = null ) {
 		$base = dirname( __FILE__ );
 		if ( $updater === null ) {
@@ -124,7 +128,6 @@ class ProofreadPage {
 				break;
 			}
 		}
-		$dbr->freeResult( $result ) ;
 
 		if ( $title->pr_index_title ) {
 			return;
@@ -372,9 +375,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				$thumbURL = str_replace( '%23', '#', $thumbURL );
 				$fullURL = $image->getURL();
 			}
-			$scan_link = Html::element( 'a', 
-						    array( 'href' => $fullURL, 
-							   'title' =>  wfMsg( 'proofreadpage_image' ) ), 
+			$scan_link = Html::element( 'a',
+						    array( 'href' => $fullURL,
+							   'title' =>  wfMsg( 'proofreadpage_image' ) ),
 						    wfMsg( 'proofreadpage_image' ) );
 		} else {
 			$width = 0;
@@ -395,8 +398,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : '';
 
 		$prev_link = $prev_title ? $sk->link( $prev_title,
-			Html::element( 'img', array( 'src' => $path . '/leftarrow.png', 
-				'alt' =>  wfMsg( 'proofreadpage_prevpage' ), 'width' => 15, 'height' => 15 ) ), 
+			Html::element( 'img', array( 'src' => $path . '/leftarrow.png',
+				'alt' =>  wfMsg( 'proofreadpage_prevpage' ), 'width' => 15, 'height' => 15 ) ),
 			array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
 
 		$index_link = $index_title ? $sk->link( $index_title,
@@ -565,6 +568,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$hund = $hund / 100;
 		$thou = $thou / 1000;
 
+		$romanNum = '';
 		if ( $thou ) {
 			$romanNum .= $romanThou[$thou];
 		}
@@ -852,7 +856,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 						    null,
 						    array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
 						    );
-				
+
 				if( $res ) {
 					foreach ( $res as $o ) {
 						array_push( $q0_pages, $o->page_title );
@@ -1256,7 +1260,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$dbw->commit();
 
 		}
-		$dbr->freeResult( $res );
 
 		return true;
 	}
@@ -1272,7 +1275,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 			$image = wfFindFile( $imageTitle );
 			if ( $image && $image->exists() ) {
-				$text = $image->handler->getPageText( $image, $m[2] );
+				$text = $image->getHandler()->getPageText( $image, $m[2] );
 				if ( $text ) {
 					$text = preg_replace( "/(\\\\n)/", "\n", $text );
 					$text = preg_replace( "/(\\\\\d*)/", '', $text );
@@ -1339,7 +1342,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$n = $row->count;
-			$dbr->freeResult( $res );
 			return $n;
 		}
 		return 0;
@@ -1402,7 +1404,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$total = $row->count;
-			$dbr->freeResult( $res );
 		} else {
 			return;
 		}
@@ -1460,7 +1461,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		);
 		if( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
-			$dbr->freeResult( $res );
 			$res2 = $dbr->select(
 				array( 'pagelinks', 'page' ),
 				array( 'page_title AS title' ),
@@ -1476,7 +1476,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			if( $res2 && $dbr->numRows( $res2 ) > 0 ) {
 				$row = $dbr->fetchObject( $res2 );
 				$indextitle = $row->title;
-				$dbr->freeResult( $res2 );
 			}
 		}
 
@@ -1514,7 +1513,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			if( $res && $dbr->numRows( $res ) > 0 ) {
 				$row = $dbr->fetchObject( $res );
 				$n = $row->count;
-				$dbr->freeResult( $res );
 			}
 
 			// find the proofreading status of transclusions
@@ -1544,7 +1542,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		if( $indextitle ) {
 			$sk = $wgUser->getSkin();
 			$nt = Title::makeTitleSafe( $index_ns_index, $indextitle );
-			$indexlink = $sk->link( $nt, wfMsg( 'proofreadpage_source' ), 
+			$indexlink = $sk->link( $nt, wfMsg( 'proofreadpage_source' ),
 						array( 'title' => wfMsg( 'proofreadpage_source_message' ) ) );
 			$out->addInlineScript( ResourceLoader::makeConfigSetScript( array( 'proofreadpage_source_href' => $indexlink ) ) );
 			$out->addModules( 'ext.proofreadpage.article' );
