@@ -88,6 +88,7 @@ Remarks||10',
  * @author Purodha
  * @author Siebrand
  * @author The Evil IP address
+ * @author Umherirrender
  * @author Yknok29
  */
 $messages['qqq'] = array(
@@ -108,7 +109,7 @@ $messages['qqq'] = array(
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
 	'proofreadpage_pages' => '{{Identical|Page}}',
 	'proofreadpage_source' => '{{Identical|Source}}',
-	'right-pagequality' => '{{doc-right}}',
+	'right-pagequality' => '{{doc-right|pagequality}}',
 	'proofreadpage-group-zoom' => '{{Identical|Zoom}}',
 	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.
 {{Identical|Other}}',
