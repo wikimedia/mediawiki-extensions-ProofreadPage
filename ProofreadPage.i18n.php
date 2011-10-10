@@ -80,6 +80,7 @@ Remarks||10',
  * @author Aleator
  * @author EugeneZelenko
  * @author IAlex
+ * @author Johnduhart
  * @author Jon Harald Søby
  * @author McDutchie
  * @author Minh Nguyen
@@ -106,6 +107,15 @@ $messages['qqq'] = array(
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
+	'proofreadpage_quality1_category' => 'Category name where quality level 1 pages are added to',
+	'proofreadpage_quality2_category' => 'Category name where quality level 2 pages are added to',
+	'proofreadpage_quality3_category' => 'Category name where quality level 3 pages are added to',
+	'proofreadpage_quality4_category' => 'Category name where quality level 4 pages are added to',
+	'proofreadpage_quality0_message' => 'Description of pages marked as a level 0 quality',
+	'proofreadpage_quality1_message' => 'Description of pages marked as a level 1 quality',
+	'proofreadpage_quality2_message' => 'Description of pages marked as a level 2 quality',
+	'proofreadpage_quality3_message' => 'Description of pages marked as a level 3 quality',
+	'proofreadpage_quality4_message' => 'Description of pages marked as a level 4 quality',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
 	'proofreadpage_pages' => '{{Identical|Page}}',
 	'proofreadpage_source' => '{{Identical|Source}}',
