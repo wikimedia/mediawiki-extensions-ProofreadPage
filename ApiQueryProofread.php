@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Created on August 8, 2011
  *
  * API module for MediaWiki's Proofread extension
@@ -72,7 +72,7 @@ class ApiQueryProofread extends ApiQueryBase {
 			if ( !isset( $qualityLevels[ $title ] ) ) {
 				continue;
 			}
-			
+
 			$pageQuality = $qualityLevels[ $title ];
 			$val =  array( 'quality' => $pageQuality, 'quality_text' => $qualityText[ $pageQuality ] );
 			$result->addValue( array( 'query', 'pages', $pageid ), 'proofread', $val );
