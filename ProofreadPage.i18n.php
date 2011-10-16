@@ -1965,6 +1965,7 @@ $messages['grc'] = array(
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  * @author J. 'mach' wust
  */
@@ -2023,6 +2024,14 @@ Aamerkige||10',
 	'proofreadpage_source' => 'Quälle',
 	'proofreadpage_source_message' => 'Gscannti Uusgab, wu brucht wird go dää Text erarbeite',
 	'right-pagequality' => 'Qualitetsmarkierig vu dr Syte ändere',
+	'proofreadpage-section-tools' => 'Hilfsmittel zum Korrekturläse',
+	'proofreadpage-group-zoom' => 'Zoome',
+	'proofreadpage-group-other' => 'Anders',
+	'proofreadpage-button-toggle-visibility-label' => 'Chopf- un Fuesszyyle vo derre Syte yy-/ussblände',
+	'proofreadpage-button-zoom-out-label' => 'Chleiner mache',
+	'proofreadpage-button-reset-zoom-label' => 'Orginalgrößi',
+	'proofreadpage-button-zoom-in-label' => 'Dryy suume',
+	'proofreadpage-button-toggle-layout-label' => 'Vertikali/horizontali Ussrichtig',
 );
 
 /** Manx (Gaelg)
