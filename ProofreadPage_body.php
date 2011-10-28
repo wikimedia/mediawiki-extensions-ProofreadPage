@@ -1045,7 +1045,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$text = '<noinclude><pagequality level="' . $editpage->quality . '" user="' . $editpage->username . '" />' .
 				'<div class="pagetext">' . $editpage->header."\n\n\n</noinclude>" .
 				$editpage->textbox1 .
-				"\n<noinclude>" . $editpage->footer . '</div></noinclude>';
+				"<noinclude>" . $editpage->footer . '</div></noinclude>';
 			$editpage->textbox1 = $text;
 		} else {
 			// replace deprecated template
