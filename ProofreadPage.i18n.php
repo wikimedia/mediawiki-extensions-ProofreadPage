@@ -2354,9 +2354,11 @@ Megjegyzések||10',
 /** Armenian (Հայերեն)
  * @author Chaojoker
  * @author Teak
+ * @author Xelgen
  */
 $messages['hy'] = array(
 	'indexpages' => 'Ինդեքս էջերի ցանկ',
+	'pageswithoutscans' => 'Էջեր առանց տեսածրած բնօրինակի',
 	'proofreadpage_desc' => 'Թույլ է տալիս տեքստի և բնօրինակի տեսածրված պատկերի հեշտ համեմատում',
 	'proofreadpage_namespace' => 'Էջ',
 	'proofreadpage_index_namespace' => 'Ինդեքս',
@@ -2408,6 +2410,15 @@ Remarks|Նշումներ|10',
 	'proofreadpage_specialpage_legend' => 'Որոնել ինդեքս էջեր',
 	'proofreadpage_source' => 'Աղբյուր',
 	'proofreadpage_source_message' => 'Այս տեքստը ստեղծելու համար օգտագործված նյութեր',
+	'right-pagequality' => 'Էջի որակի փոփոխման դրոշակ',
+	'proofreadpage-section-tools' => 'Սրբագրման գործիքներ',
+	'proofreadpage-group-zoom' => 'Խոշորացում',
+	'proofreadpage-group-other' => 'Այլ',
+	'proofreadpage-button-toggle-visibility-label' => 'Ցուցադրել/թաքցնել էջի շապիկն և ստորոտը',
+	'proofreadpage-button-zoom-out-label' => 'Հեռվացնել',
+	'proofreadpage-button-reset-zoom-label' => 'Բնօրինակ չափը',
+	'proofreadpage-button-zoom-in-label' => 'Խոշորացնել',
+	'proofreadpage-button-toggle-layout-label' => 'Պատկերը կողքից/վերևից',
 );
 
 /** Interlingua (Interlingua)
