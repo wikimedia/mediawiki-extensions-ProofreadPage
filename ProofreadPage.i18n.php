@@ -741,9 +741,11 @@ Notennoù||10',
 	'proofreadpage-section-tools' => 'Ostilhoù adlenn',
 	'proofreadpage-group-zoom' => 'Zoum',
 	'proofreadpage-group-other' => 'All',
+	'proofreadpage-button-toggle-visibility-label' => 'Diskouez/kuzhat an talbenn ha traoñ ar bajenn',
 	'proofreadpage-button-zoom-out-label' => 'Dizoumañ',
 	'proofreadpage-button-reset-zoom-label' => 'Ment orin',
 	'proofreadpage-button-zoom-in-label' => 'Zoumañ',
+	'proofreadpage-button-toggle-layout-label' => 'Kinnig a-sav/a-led',
 );
 
 /** Bosnian (Bosanski)
@@ -3937,6 +3939,7 @@ $messages['pdc'] = array(
 	'proofreadpage_prevpage' => 'Letscht Blatt',
 	'proofreadpage_index_listofpages' => 'Lischt vun Bledder',
 	'proofreadpage_pages' => '{{PLURAL:$1|Blatt|Bledder}}',
+	'proofreadpage-group-other' => 'Anneres',
 );
 
 /** Polish (Polski)
