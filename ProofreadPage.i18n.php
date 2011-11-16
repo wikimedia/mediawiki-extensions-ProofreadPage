@@ -4878,7 +4878,7 @@ $messages['stq'] = array(
 	'proofreadpage_js_attributes' => 'Autor Tittel Jier Ferlaach',
 	'proofreadpage_index_attributes' => 'Autor
 Tittel
-Jier|Ärschienengsjier
+Jier|Ärskienengsjier
 Ferlaach
 Wälle
 Bielde|Tittelbielde
