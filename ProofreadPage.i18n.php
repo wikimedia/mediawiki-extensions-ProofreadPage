@@ -2915,6 +2915,7 @@ $messages['kn'] = array(
  */
 $messages['ko'] = array(
 	'indexpages' => '목차 문서의 목록',
+	'pageswithoutscans' => '스캔본이 없는 페이지',
 	'proofreadpage_desc' => '최초 스캔과 텍스트를 쉽게 비교할 수 있게 함',
 	'proofreadpage_namespace' => '문서',
 	'proofreadpage_index_namespace' => '목차',
@@ -2966,6 +2967,10 @@ $messages['ko'] = array(
 	'proofreadpage_specialpage_legend' => '목차 문서 찾기',
 	'proofreadpage_source' => '출처',
 	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
+	'proofreadpage-button-zoom-out-label' => '축소',
+	'proofreadpage-button-reset-zoom-label' => '원본 크기',
+	'proofreadpage-button-zoom-in-label' => '확대',
+	'proofreadpage-button-toggle-layout-label' => '수직/수평 레이아웃',
 );
 
 /** Kinaray-a (Kinaray-a)
