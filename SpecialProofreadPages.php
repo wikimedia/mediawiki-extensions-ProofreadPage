@@ -140,13 +140,12 @@ class ProofreadPages extends QueryPage {
 		$num_void = $size-$q1-$q2-$q3-$q4-$q0;
 		$void_cell = $num_void ? "<td align=center style='border-style:dotted;background:#ffffff;border-width:1px;' width=\"{$num_void}\"></td>" : '';
 
-		// FIXME: consider using $size in 'proofreadpage_pages' instead of glueing it together in $output
-		$pages = wfMsgExt( 'proofreadpage_pages', 'parsemag', $size );
-		$size = $wgLang->formatNum( $size );
+		$dirmark = $wgLang->getDirMark();
+		$pages = wfMsgExt( 'proofreadpage_pages', 'parsemag', $size, $wgLang->formatNum( $size ) );
 
 		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
 <tr valign=\"bottom\">
-<td style=\"white-space:nowrap;overflow:hidden;\">{$plink} [$size $pages]</td>
+<td style=\"white-space:nowrap;overflow:hidden;\">{$plink} $dirmark[$pages]</td>
 <td>
 <table style=\"line-height:70%;\" border=0 cellpadding=0 cellspacing=0 >
 <tr>

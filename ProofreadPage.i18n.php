@@ -60,7 +60,7 @@ Pages||20
 Remarks||10',
 	'proofreadpage_default_header'        => '',
 	'proofreadpage_default_footer'        => '<references/>',
-	'proofreadpage_pages'        => "{{PLURAL:$1|page|pages}}",
+	'proofreadpage_pages'        => "$2 {{PLURAL:$1|page|pages}}",
 	'proofreadpage_specialpage_text'       => '',
 	'proofreadpage_specialpage_legend'     => 'Search index pages',
 	'proofreadpage_source'         => 'Source',
