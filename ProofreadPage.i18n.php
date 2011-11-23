@@ -87,6 +87,7 @@ Remarks||10',
  * @author Mormegil
  * @author Nike
  * @author Purodha
+ * @author SPQRobin
  * @author Siebrand
  * @author The Evil IP address
  * @author Umherirrender
@@ -117,7 +118,10 @@ $messages['qqq'] = array(
 	'proofreadpage_quality3_message' => 'Description of pages marked as a level 3 quality',
 	'proofreadpage_quality4_message' => 'Description of pages marked as a level 4 quality',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
-	'proofreadpage_pages' => '{{Identical|Page}}',
+	'proofreadpage_pages' => '* Parameter $1: number of pages for use with PLURAL
+* Parameter $2: localised number of pages
+
+{{Identical|Page}}',
 	'proofreadpage_source' => '{{Identical|Source}}',
 	'right-pagequality' => '{{doc-right|pagequality}}',
 	'proofreadpage-group-zoom' => '{{Identical|Zoom}}',
@@ -182,7 +186,7 @@ Bron
 Beeld|Omslag
 Bladsye||20
 Opmerkings||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|bladsy|bladsye}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|bladsy|bladsye}}',
 	'proofreadpage_specialpage_legend' => 'Deursoek indeks-bladsye',
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Geskandeerde uitgawe waarop hierdie teks gebaseer is',
@@ -868,7 +872,7 @@ Font|Facsímils
 Imatge
 Pàgines||20
 Sumari||15",
-	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgines}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pàgina|pàgines}}',
 	'proofreadpage_specialpage_legend' => "Cerca a les pàgines d'índex",
 	'proofreadpage_source' => 'Font',
 	'proofreadpage_source_message' => "Edició digitalitzada d'on s'ha extret aquest text",
@@ -1015,7 +1019,7 @@ Kilde
 Billede | Titelblad
 Sider | | 20 
 Bemærkninger | | 10',
-	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
 	'proofreadpage_specialpage_legend' => 'Søg i indekssider',
 	'proofreadpage_source' => 'Kilde',
 	'proofreadpage_source_message' => 'Indscannet original, der blev brugt som grundlag for denne tekst',
@@ -1088,7 +1092,7 @@ Quelle
 Bild|Titelbild
 Seiten||20
 Bemerkungen||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|Seite|Seiten}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|Seite|Seiten}}',
 	'proofreadpage_specialpage_legend' => 'Indexseiten durchsuchen',
 	'proofreadpage_source' => 'Quelle',
 	'proofreadpage_source_message' => 'Zur Erstellung dieses Texts wurde die gescannte Ausgabe benutzt.',
@@ -1370,7 +1374,7 @@ Fonto
 Bildo|Bildo de kovrilo
 Paĝoj||20
 Rimarkoj||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|paĝo|paĝoj}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|paĝo|paĝoj}}',
 	'proofreadpage_specialpage_legend' => 'Serĉi indeksajn paĝojn',
 	'proofreadpage_source' => 'Fonto',
 	'proofreadpage_source_message' => 'Skanita eldono uzata establi ĉi tiu teksto',
@@ -1444,7 +1448,7 @@ Fuente
 Imagen|Imagen de cubierta
 Páginas||20
 Comentarios||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|página|páginas}}',
 	'proofreadpage_specialpage_legend' => 'Buscar en páginas de índice',
 	'proofreadpage_source' => 'Fuente',
 	'proofreadpage_source_message' => 'Edición escaneada usada para establecer este texto',
@@ -1765,7 +1769,7 @@ Source
 Image|Image en couverture
 Pages||20
 Remarques||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|page|pages}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|page|pages}}',
 	'proofreadpage_specialpage_legend' => 'Rechercher dans les pages d’index',
 	'proofreadpage_source' => 'Source',
 	'proofreadpage_source_message' => 'Édition numérisée dont est issu ce texte',
@@ -1833,7 +1837,7 @@ Sôrsa
 Émâge|Émâge en cuvèrta
 Pâges||20
 Comentèros||10',
-	'proofreadpage_pages' => 'pâge{{PLURAL:$1||s}}',
+	'proofreadpage_pages' => '$2 pâge{{PLURAL:$1||s}}',
 	'proofreadpage_specialpage_legend' => 'Rechèrchiér dens les pâges d’endèxe',
 	'proofreadpage_source' => 'Sôrsa',
 	'proofreadpage_source_message' => 'Èdicion scanâ que vint de cél tèxto',
@@ -1932,7 +1936,7 @@ Orixe
 Imaxe|Imaxe da cuberta
 Páxinas||20
 Comentarios||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|páxina|páxinas}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|páxina|páxinas}}',
 	'proofreadpage_specialpage_legend' => 'Procurar nas páxinas de índice',
 	'proofreadpage_source' => 'Orixe',
 	'proofreadpage_source_message' => 'Edición dixitalizada utilizada para establecer este texto',
@@ -2021,7 +2025,7 @@ Quälle
 Bild|Titelbild
 Syte||20
 Aamerkige||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|Syte|Syte}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|Syte|Syte}}',
 	'proofreadpage_specialpage_legend' => 'Indexsyte dursueche',
 	'proofreadpage_source' => 'Quälle',
 	'proofreadpage_source_message' => 'Gscannti Uusgab, wu brucht wird go dää Text erarbeite',
@@ -2477,7 +2481,7 @@ Origine
 Imagine|Imagine de copertura
 Paginas||20
 Notas||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagina|paginas}}',
 	'proofreadpage_specialpage_legend' => 'Cercar in paginas de indice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Le original scannate usate pro crear iste texto',
@@ -2654,7 +2658,7 @@ Fonte
 Immagine|Immagine di copertina
 Pagine||20
 Note||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagina|pagine}}',
 	'proofreadpage_specialpage_legend' => 'Cerca tra le pagine indice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edizione scansionata utilizzata per ricavare questo testo',
@@ -3046,7 +3050,7 @@ Aanmerkunge||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ojinal-Enschtällong',
 );
 
-/** Kurdish (Latin) (Kurdî (Latin))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
  */
 $messages['ku-latn'] = array(
@@ -3135,7 +3139,7 @@ Quell
 Bild|Titelbild
 Säiten||20
 Bemierkungen||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|Säit|Säiten}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|Säit|Säiten}}',
 	'proofreadpage_specialpage_legend' => 'An den Index-Säite sichen',
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'Gescannten Editioun déi benotzt gouf fir dësen Text ze schreiwen',
@@ -3211,7 +3215,7 @@ Brón
 Aafbeilding|Ómslaag
 Pazjena's||20
 Opmèrkinge||10",
-	'proofreadpage_pages' => "$1 {{PLURAL:$1|pazjena|pazjena's}}",
+	'proofreadpage_pages' => "$2 {{PLURAL:$1|pazjena|pazjena's}}",
 	'proofreadpage_specialpage_legend' => "Doorzeuk indexpagina's.",
 	'proofreadpage_source' => 'Brón',
 	'proofreadpage_source_message' => 'Gescande versie worop dees teks is gebaseerd.',
@@ -3574,7 +3578,7 @@ Sumber
 Imej|Imej kulit
 Jumlah halaman||20
 Catatan||10',
-	'proofreadpage_pages' => '$1 laman',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|laman|laman}}',
 	'proofreadpage_specialpage_legend' => 'Cari laman indeks',
 	'proofreadpage_source' => 'Sumber',
 	'proofreadpage_source_message' => 'Edisi imbasan yang digunakan untuk membuktikan teks ini',
@@ -3726,7 +3730,7 @@ Bron
 Afbeelding|Omslag
 Pagina's||20
 Opmerkingen||10",
-	'proofreadpage_pages' => "{{PLURAL:$1|pagina|pagina's}}",
+	'proofreadpage_pages' => "$2 {{PLURAL:$1|pagina|pagina's}}",
 	'proofreadpage_specialpage_legend' => "Indexpagina's doorzoeken",
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Gescande versie waarop deze tekst is gebaseerd',
@@ -3783,7 +3787,7 @@ Kjelda
 Bilete|Omslagsbilete
 Sider||20
 Merknader||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
 	'proofreadpage_source' => 'Kjelde',
 );
 
@@ -3843,7 +3847,7 @@ Kilde
 Bilde|Omslagsbilde
 Sider||20
 Merknader||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|side|sider}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
 	'proofreadpage_specialpage_legend' => 'Søk i indekssider',
 	'proofreadpage_source' => 'Kilde',
 	'proofreadpage_source_message' => 'Scannet utgave brukt for å etablere denne teksten',
@@ -3916,7 +3920,7 @@ Font
 Imatge|Imatge en cobertura
 Paginas||20
 Comentaris||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pagina|paginas}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagina|paginas}}',
 	'proofreadpage_specialpage_legend' => 'Recercar dins las paginas d’indèx',
 	'proofreadpage_source' => 'Font',
 	'proofreadpage_source_message' => "Edicion numerizada d'ont es eissit aqueste tèxte",
@@ -3948,7 +3952,7 @@ $messages['pdc'] = array(
 	'proofreadpage_nextpage' => 'Neegschtes Blatt',
 	'proofreadpage_prevpage' => 'Letscht Blatt',
 	'proofreadpage_index_listofpages' => 'Lischt vun Bledder',
-	'proofreadpage_pages' => '{{PLURAL:$1|Blatt|Bledder}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|Blatt|Bledder}}',
 	'proofreadpage-group-other' => 'Anneres',
 );
 
@@ -4179,7 +4183,7 @@ Fonte
 Imagem|Imagem de capa
 Páginas||20
 Notas||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|página|páginas}}',
 	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edição digitalizada usada para criar este texto',
@@ -4251,7 +4255,7 @@ Fonte
 Imagem|Imagem de capa
 Páginas||20
 Notas||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|página|páginas}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|página|páginas}}',
 	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edição digitalizada utilizada para estabelecer este texto',
@@ -4348,7 +4352,7 @@ Sursă
 Imagine|Imagine copertă
 Pagini||20
 Comentarii||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pagină|pagini}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagină|pagini}}',
 	'proofreadpage_specialpage_legend' => 'Căutați paginile de index',
 	'proofreadpage_source' => 'Sursă',
 	'proofreadpage_source_message' => 'Pentru a confirma acest text s-au utilizat ediția scanată',
@@ -4417,7 +4421,7 @@ Sorgende
 Immaggine|Immaggine d'a coprtine
 Paggène||20
 Note||10",
-	'proofreadpage_pages' => '{{PLURAL:$1|pàgene|pàggene}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pàgene|pàggene}}',
 	'proofreadpage_specialpage_legend' => 'Cirche le pàggene de indice',
 	'proofreadpage_source' => 'Sorgende',
 	'proofreadpage_source_message' => 'Edizione scanzionate ausate pe definì stu teste',
@@ -4784,7 +4788,7 @@ Pripombe||10',
 	'proofreadpage-button-toggle-layout-label' => 'Navpična/vodoravna postavitev',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Sasa Stefanovic
@@ -4825,7 +4829,7 @@ $messages['sr-ec'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|страница|странице|страница}}',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -4982,7 +4986,7 @@ Källa
 Bild|Omslagsbild
 Sidor||20
 Anmärkningar||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|sida|sidor}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|sida|sidor}}',
 	'proofreadpage_specialpage_legend' => 'Sök i indexsidorna',
 	'proofreadpage_source' => 'Källa',
 	'proofreadpage_source_message' => 'Scannat original använt för att skapa denna text',
@@ -5101,7 +5105,7 @@ $messages['tet'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|pájina ida|pájina $1}}',
 );
 
-/** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
+/** Tajik (Cyrillic script) (Тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -5134,7 +5138,7 @@ $messages['tg-cyrl'] = array(
 Мулоҳизот||10',
 );
 
-/** Tajik (Latin) (Тоҷикӣ (Latin))
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -5391,14 +5395,14 @@ $messages['ts'] = array(
 	'proofreadpage_index_namespace' => 'Nxaxamelo',
 );
 
-/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+/** Tatar (Cyrillic script) (Татарча)
  * @author Timming
  */
 $messages['tt-cyrl'] = array(
 	'proofreadpage_nextpage' => 'алдагы бит',
 );
 
-/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
+/** Uyghur (Latin script) (Uyghurche‎)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
@@ -5533,7 +5537,7 @@ Fonte
 Imagine|Imagine de copertina
 Pagine||20
 Note||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pagina|pagine}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagina|pagine}}',
 	'proofreadpage_specialpage_legend' => 'Serca in te le pagine de indice',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edission scanerizà doparà par inserir sto testo',
