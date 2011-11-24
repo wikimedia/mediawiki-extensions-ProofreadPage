@@ -1693,7 +1693,7 @@ Lähde
 Kuva|Kansikuva
 Sivuja||20
 Huomautuksia||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|sivu|sivua}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|sivu|sivua}}',
 	'proofreadpage_specialpage_legend' => 'Hae indeksisivuilta',
 	'proofreadpage_source' => 'Lähde',
 	'proofreadpage_source_message' => 'Skannattua versiota on käytetty tämän tekstin muodostamiseen',
@@ -2584,7 +2584,7 @@ $messages['io'] = array(
 	'proofreadpage_prevpage' => 'Antea pagino',
 	'proofreadpage_index_listofpages' => 'Pagino-listo',
 	'proofreadpage_page_status' => 'Stando di pagino',
-	'proofreadpage_pages' => '{{PLURAL:$1|pagino|pagini}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagino|pagini}}',
 );
 
 /** Icelandic (Íslenska)
@@ -3385,7 +3385,7 @@ $messages['mk'] = array(
 Слика|Корица
 Страници||20
 Белешки||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страници}}',
 	'proofreadpage_specialpage_legend' => 'Пребарување на индексни страници',
 	'proofreadpage_source' => 'Извор',
 	'proofreadpage_source_message' => 'Отсликано издание што се користи за востановување на овој текст',
@@ -4081,7 +4081,7 @@ Sorgiss
 Figura|Figura ëd coertin-a
 Pàgine||20
 Nòte||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàgine}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pàgina|pàgine}}',
 	'proofreadpage_specialpage_legend' => 'Sërca ant le pàgine ëd tàula',
 	'proofreadpage_source' => 'Sorgiss',
 	'proofreadpage_source_message' => 'Edission digitalisà dovrà për stabilì sto test-sì',
@@ -4352,7 +4352,7 @@ Sursă
 Imagine|Imagine copertă
 Pagini||20
 Comentarii||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagină|pagini}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagină|pagini|de pagini}}',
 	'proofreadpage_specialpage_legend' => 'Căutați paginile de index',
 	'proofreadpage_source' => 'Sursă',
 	'proofreadpage_source_message' => 'Pentru a confirma acest text s-au utilizat ediția scanată',
@@ -4491,7 +4491,7 @@ $messages['ru'] = array(
 Изображение|Изображение обложки
 Страниц||20
 Примечания||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|страница|страницы|страниц}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страницы|страниц}}',
 	'proofreadpage_specialpage_legend' => 'Поиск индексных страниц',
 	'proofreadpage_source' => 'Источник',
 	'proofreadpage_source_message' => 'Для создания электронной версии текста использовались отсканированные материалы',
@@ -4773,7 +4773,7 @@ Vir
 Slika|Naslovnica
 Strani||20 
 Pripombe||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|stran|strani}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|stran|strani}}',
 	'proofreadpage_specialpage_legend' => 'Iskanje kazalnih strani',
 	'proofreadpage_source' => 'Vir',
 	'proofreadpage_source_message' => 'Preslikana izdaja, uporabljena za nastanek tega besedila',
@@ -5641,7 +5641,7 @@ Nguồn
 Hình|Hình bìa
 Các trang||20
 Ghi chú||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|trang|trang}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1}}trang',
 	'proofreadpage_specialpage_legend' => 'Tìm kiếm trong các trang mục lục',
 	'proofreadpage_source' => 'Nguồn',
 	'proofreadpage_source_message' => 'Bản quét được dùng để tạo ra văn bản này',
