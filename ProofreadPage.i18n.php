@@ -3455,7 +3455,7 @@ $messages['ml'] = array(
 ചിത്രം|മുഖച്ചിത്രം
 താളുകൾ||20
 കുറിപ്പുകൾ||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|താൾ|താളുകൾ}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|ഒരു താൾ|$2 താളുകൾ}}',
 	'proofreadpage_specialpage_legend' => 'സൂചികാ താളുകൾ തിരയുക',
 	'proofreadpage_source' => 'സ്രോതസ്സ്',
 	'proofreadpage_source_message' => 'ഈ എഴുത്ത് സ്ഥാപിക്കാൻ സ്കാൻ ചെയ്തെടുത്ത പ്രസിദ്ധീകരണമാണുപയോഗിച്ചത്',
