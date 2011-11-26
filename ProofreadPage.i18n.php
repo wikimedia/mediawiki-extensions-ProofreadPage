@@ -1510,7 +1510,7 @@ Päritolu
 Pilt|Kaanepilt
 Leheküljed||20
 Märkused||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|lehekülg|lehekülge}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|lehekülg|lehekülge}}',
 	'proofreadpage_specialpage_legend' => 'Registrilehekülgede otsimine',
 	'proofreadpage_source' => 'Allikas',
 	'proofreadpage_source_message' => 'Selle teksti aluseks olev skannitud versioon',
@@ -2121,7 +2121,7 @@ $messages['he'] = array(
 תמונה|תמונת עטיפה
 דפים||20
 הערות||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|דף|דפים}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|דף אחד|$2 דפים}}',
 	'proofreadpage_specialpage_legend' => 'חיפוש בדפי האינדקס',
 	'proofreadpage_source' => 'מקור',
 	'proofreadpage_source_message' => 'הגרסה הסרוקה ששימשה להכנת טקסט זה',
@@ -2287,11 +2287,19 @@ Wudawaćel
 Wobraz|Wobraz titloweje strony
 Strony||20
 Přispomnjenki||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|strona|stronje|strony|stronow}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|strona|stronje|strony|stronow}}',
 	'proofreadpage_specialpage_legend' => 'Indeksowe strony přepytać',
 	'proofreadpage_source' => 'Žórło',
 	'proofreadpage_source_message' => 'Skanowane wudaće wužite za wutworjenje tutoho teksta',
 	'right-pagequality' => 'Kajkosć strony změnić',
+	'proofreadpage-section-tools' => 'Nastroje za korigowanje',
+	'proofreadpage-group-zoom' => 'Skalowanje',
+	'proofreadpage-group-other' => 'Druhe',
+	'proofreadpage-button-toggle-visibility-label' => 'Hłowu a nohu tuteje strony pokazać/schować',
+	'proofreadpage-button-zoom-out-label' => 'Pomjeńšić',
+	'proofreadpage-button-reset-zoom-label' => 'Prěnjotna wulkosć',
+	'proofreadpage-button-zoom-in-label' => 'Powjetšić',
+	'proofreadpage-button-toggle-layout-label' => 'Padorune/Wodorune wuhotowanje',
 );
 
 /** Hungarian (Magyar)
@@ -4572,6 +4580,17 @@ $messages['rue'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Ресет звекшыня',
 	'proofreadpage-button-zoom-in-label' => 'Звекшыти',
 	'proofreadpage-button-toggle-layout-label' => 'Вертікалне / горізонтално розложіня',
+);
+
+/** Sanskrit (संस्कृतम्)
+ * @author Abhirama
+ */
+$messages['sa'] = array(
+	'indexpages' => 'अनुक्रमणिका पुटावली',
+	'proofreadpage_index_namespace' => 'अनुक्रमणिका',
+	'proofreadpage_image' => 'चित्रम्',
+	'proofreadpage_index' => 'अनुक्रमणिका',
+	'proofreadpage_quality3_category' => 'परिष्कृतम्',
 );
 
 /** Sakha (Саха тыла)
