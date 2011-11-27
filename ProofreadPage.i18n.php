@@ -2975,7 +2975,7 @@ $messages['ko'] = array(
 그림|표지 그림
 쪽수||20
 주석||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|문서}}',
+	'proofreadpage_pages' => '$2{{PLURAL:$1|페이지}}',
 	'proofreadpage_specialpage_legend' => '목차 문서 찾기',
 	'proofreadpage_source' => '출처',
 	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
@@ -5708,7 +5708,8 @@ $messages['yi'] = array(
 	'proofreadpage_image' => 'בילד',
 	'proofreadpage_nextpage' => 'קומענדיגער בלאַט',
 	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
-	'proofreadpage_pages' => '{{PLURAL:$1|בלאַט|בלעטער}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|בלאַט|בלעטער}}',
+	'proofreadpage_specialpage_legend' => 'זוכן אינדעקס־זײַטן',
 	'proofreadpage_source' => 'מקור',
 );
 
