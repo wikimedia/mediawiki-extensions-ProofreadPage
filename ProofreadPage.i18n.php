@@ -1574,6 +1574,7 @@ Oharrak||10',
  * @author Mardetanha
  * @author Mjbmr
  * @author Wayiran
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'indexpages' => 'فهرست صفحات شاخص',
@@ -1625,7 +1626,7 @@ $messages['fa'] = array(
 تصویر|تصویر روی جلد
 صفحه||20
 ملاحظات||10',
-	'proofreadpage_pages' => '((PLURAL:$1|صفحه|صفحه))',
+	'proofreadpage_pages' => '$2 صفحه',
 	'proofreadpage_specialpage_legend' => 'جستجو در صفحات شاخص',
 	'proofreadpage_source' => 'منبع',
 	'proofreadpage_source_message' => 'برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده',
@@ -3496,6 +3497,7 @@ $messages['mn'] = array(
 
 /** Marathi (मराठी)
  * @author Kaustubh
+ * @author Rahuldeshmukh101
  * @author Sankalpdravid
  * @author Vanandf1
  */
@@ -3511,9 +3513,11 @@ $messages['mr'] = array(
 	'proofreadpage_nosuch_index' => 'त्रुटी: अशी कोणतीही अनुक्रमणिका नाही',
 	'proofreadpage_nosuch_file' => 'त्रुटी: अशी कोणतीही फाइल नाही',
 	'proofreadpage_badpage' => 'चुकीचा फॉरमॅट',
+	'proofreadpage_badpagetext' => 'आपण ज्या स्वरुपात  पान जतन करण्याचा प्रयत्न करीत आहात ते  स्वरुप चुकीचे आहे.',
 	'proofreadpage_indexdupe' => 'पुनरावृत्ती झालेला दुवा',
 	'proofreadpage_nologin' => 'प्रवेश केलेला नाही',
 	'proofreadpage_notallowed' => 'बदल करण्यास परवानगी नाही',
+	'proofreadpage_interval_too_large' => 'त्रुटी: प्रदीर्घ मध्यान्तर कालावधी',
 	'proofreadpage_nextpage' => 'पुढील पान',
 	'proofreadpage_prevpage' => 'मागील पान',
 	'proofreadpage_header' => 'पानाच्या वरील मजकूर (noinclude):',
@@ -3541,6 +3545,11 @@ $messages['mr'] = array(
 शेरा||१०',
 	'proofreadpage_pages' => '{{PLURAL:$1|पान|पाने}}',
 	'proofreadpage_source' => 'स्रोत',
+	'proofreadpage-group-zoom' => 'मोठे करा',
+	'proofreadpage-group-other' => 'इतर',
+	'proofreadpage-button-zoom-out-label' => 'मोठे करा',
+	'proofreadpage-button-reset-zoom-label' => 'मुळ आकर',
+	'proofreadpage-button-zoom-in-label' => 'छोटे  करा',
 );
 
 /** Malay (Bahasa Melayu)
@@ -4741,9 +4750,12 @@ $messages['scn'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
  * @author බිඟුවා
  */
 $messages['si'] = array(
+	'proofreadpage_namespace' => 'පිටුව',
+	'proofreadpage_nologin' => 'ප්‍රවිෂ්ට වී නොමැත',
 	'proofreadpage_nextpage' => 'ඊළඟ පිටුව',
 	'proofreadpage_source' => ' මූලාශ්‍රය',
 );
