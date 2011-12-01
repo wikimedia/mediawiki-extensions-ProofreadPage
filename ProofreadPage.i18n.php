@@ -97,8 +97,12 @@ $messages['qqq'] = array(
 	'indexpages' => 'Title of [[Special:IndexPages]]',
 	'pageswithoutscans' => 'Title of special page that lists texts without scans; that is, the texts that have not been transcluded into any other page',
 	'proofreadpage_desc' => '{{desc}}',
-	'proofreadpage_namespace' => '{{Identical|Page}}',
-	'proofreadpage_index_namespace' => '{{Identical|Index}}',
+	'proofreadpage_namespace' => 'This message should match the namespace whose canonical name is "Page". Any space should be replaced with an underscore (_).
+
+{{Identical|Page}}',
+	'proofreadpage_index_namespace' => 'This message should match the namespace whose canonical name is "Index". Any space should be replaced with an underscore (_).
+
+{{Identical|Index}}',
 	'proofreadpage_image' => '{{Identical|Image}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
@@ -5696,7 +5700,7 @@ $messages['vi'] = array(
 	'pageswithoutscans' => 'Trang không có hình quét',
 	'proofreadpage_desc' => 'Cho phép dễ dàng so sánh văn bản với hình quét gốc',
 	'proofreadpage_namespace' => 'Trang',
-	'proofreadpage_index_namespace' => 'Mục lục',
+	'proofreadpage_index_namespace' => 'Mục_lục',
 	'proofreadpage_image' => 'Hình',
 	'proofreadpage_index' => 'Mục lục',
 	'proofreadpage_index_expected' => 'Lỗi: cần mục lục',
