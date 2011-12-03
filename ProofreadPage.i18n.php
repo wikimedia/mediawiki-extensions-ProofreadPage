@@ -87,6 +87,7 @@ Remarks||10',
  * @author Mormegil
  * @author Nike
  * @author Purodha
+ * @author Rahuldeshmukh101
  * @author SPQRobin
  * @author Siebrand
  * @author The Evil IP address
@@ -108,6 +109,8 @@ $messages['qqq'] = array(
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
 	'proofreadpage_nologin' => '{{Identical|Not logged in}}',
 	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
+	'proofreadpage_number_expected' => 'The place where the data entry should be in numaric form',
+	'proofreadpage_invalid_interval' => 'त्रुटि: अवैध अंतराळ',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
@@ -2697,28 +2700,29 @@ Note||10',
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author JtFuruhata
+ * @author Likibp
  * @author Schu
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'indexpages' => '文献概要ページの一覧',
-	'pageswithoutscans' => 'スキャンのないページ',
-	'proofreadpage_desc' => 'オリジナルのスキャン画像とテキストとの比較を容易にする',
+	'indexpages' => '書誌情報ページの一覧',
+	'pageswithoutscans' => 'スキャン画像のないページ',
+	'proofreadpage_desc' => 'オリジナルのスキャン画像と文章との比較を容易にする',
 	'proofreadpage_namespace' => 'ページ',
-	'proofreadpage_index_namespace' => '文献概要',
+	'proofreadpage_index_namespace' => '書誌情報',
 	'proofreadpage_image' => 'スキャン画像',
-	'proofreadpage_index' => '文献概要',
-	'proofreadpage_index_expected' => 'エラー: 文献概要があるべきです',
-	'proofreadpage_nosuch_index' => 'エラー: そのような文献概要はありません',
+	'proofreadpage_index' => '書誌情報',
+	'proofreadpage_index_expected' => 'エラー: 書誌情報が必要です',
+	'proofreadpage_nosuch_index' => 'エラー: そのような書誌情報はありません',
 	'proofreadpage_nosuch_file' => 'エラー: そのようなファイルはありません',
 	'proofreadpage_badpage' => '不正な形式',
 	'proofreadpage_badpagetext' => '保存しようとしたページの形式が正しくありません。',
 	'proofreadpage_indexdupe' => '重複したリンク',
-	'proofreadpage_indexdupetext' => '文献概要ページ上にページを複数回載せることはできません。',
+	'proofreadpage_indexdupetext' => 'ページ上に複数の書誌情報ページを載せることはできません。',
 	'proofreadpage_nologin' => 'ログインしていません',
-	'proofreadpage_nologintext' => 'ページの校正状況を修正するためには[[Special:UserLogin|ログイン]]しなければなりません。',
+	'proofreadpage_nologintext' => 'ページの校正ステータスを変更するには[[Special:UserLogin|ログイン]]する必要があります。',
 	'proofreadpage_notallowed' => '変更が許可されていません',
-	'proofreadpage_notallowedtext' => 'あなたにはこのページの校正状況を変更することが許可されていません。',
+	'proofreadpage_notallowedtext' => 'あなたにはこのページの校正ステータスを変更することが許可されていません。',
 	'proofreadpage_number_expected' => 'エラー: 数値がくるべきです',
 	'proofreadpage_interval_too_large' => 'エラー: 間隔が大きすぎます',
 	'proofreadpage_invalid_interval' => 'エラー: 間隔が無効です',
@@ -2727,7 +2731,7 @@ $messages['ja'] = array(
 	'proofreadpage_header' => 'ヘッダ(埋め込み対象外):',
 	'proofreadpage_body' => 'ページ本体(埋め込み参照の対象):',
 	'proofreadpage_footer' => 'フッタ(埋め込み対象外):',
-	'proofreadpage_toggleheaders' => '埋め込み対象外項目の表示切替',
+	'proofreadpage_toggleheaders' => '埋め込み対象外項目の表示の切り替え',
 	'proofreadpage_quality0_category' => '文章なし',
 	'proofreadpage_quality1_category' => '未校正',
 	'proofreadpage_quality2_category' => '問題あり',
@@ -2739,21 +2743,21 @@ $messages['ja'] = array(
 	'proofreadpage_quality3_message' => 'このページは校正済みです',
 	'proofreadpage_quality4_message' => 'このページは検証済みです',
 	'proofreadpage_index_listofpages' => 'ページの一覧',
-	'proofreadpage_image_message' => '文献概要ページへ',
-	'proofreadpage_page_status' => '校正状況',
-	'proofreadpage_js_attributes' => '著者 書名 出版年 出版元',
-	'proofreadpage_index_attributes' => '著者
-書名
+	'proofreadpage_image_message' => '書誌情報ページへのリンク',
+	'proofreadpage_page_status' => '校正ステータス',
+	'proofreadpage_js_attributes' => '著者名 作品名 出版年 出版元',
+	'proofreadpage_index_attributes' => '著者名
+作品名
 出版年|出版年
 出版元
-引用元
-画像|表紙画像
+底本
+表紙|表紙画像
 ページ||20
 注釈||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|ページ|ページ}}',
-	'proofreadpage_specialpage_legend' => '文献概要ページを検索',
-	'proofreadpage_source' => '引用元',
-	'proofreadpage_source_message' => 'このテキストを構築するのに使用したスキャン元の版',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|ページ|総ページ数}}',
+	'proofreadpage_specialpage_legend' => '書誌情報ページを検索',
+	'proofreadpage_source' => '底本',
+	'proofreadpage_source_message' => '底本となった出版物等のスキャン画像',
 	'right-pagequality' => 'ページ品質フラグの変更',
 	'proofreadpage-section-tools' => '校正ツール',
 	'proofreadpage-group-zoom' => 'ズーム',
@@ -3500,6 +3504,7 @@ $messages['mn'] = array(
 );
 
 /** Marathi (मराठी)
+ * @author Kaajawa
  * @author Kaustubh
  * @author Rahuldeshmukh101
  * @author Sankalpdravid
@@ -3519,9 +3524,12 @@ $messages['mr'] = array(
 	'proofreadpage_badpage' => 'चुकीचा फॉरमॅट',
 	'proofreadpage_badpagetext' => 'आपण ज्या स्वरुपात  पान जतन करण्याचा प्रयत्न करीत आहात ते  स्वरुप चुकीचे आहे.',
 	'proofreadpage_indexdupe' => 'पुनरावृत्ती झालेला दुवा',
+	'proofreadpage_indexdupetext' => 'पाने अनुक्रमणिकेत एकापेक्षा जास्त वेळेस येऊ शकत नाहीत.',
 	'proofreadpage_nologin' => 'प्रवेश केलेला नाही',
 	'proofreadpage_notallowed' => 'बदल करण्यास परवानगी नाही',
+	'proofreadpage_number_expected' => 'त्रुटि: संख्यात्मक माहित अपेक्षित आहे',
 	'proofreadpage_interval_too_large' => 'त्रुटी: प्रदीर्घ मध्यान्तर कालावधी',
+	'proofreadpage_invalid_interval' => 'त्रुटि: अवैध अंतराळ',
 	'proofreadpage_nextpage' => 'पुढील पान',
 	'proofreadpage_prevpage' => 'मागील पान',
 	'proofreadpage_header' => 'पानाच्या वरील मजकूर (noinclude):',
@@ -3547,7 +3555,7 @@ $messages['mr'] = array(
 चित्र|मुखपृष्ठ चित्र
 पाने||२०
 शेरा||१०',
-	'proofreadpage_pages' => '{{PLURAL:$1|पान|पाने}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|पान|पाने}}',
 	'proofreadpage_source' => 'स्रोत',
 	'proofreadpage-group-zoom' => 'मोठे करा',
 	'proofreadpage-group-other' => 'इतर',
@@ -5750,7 +5758,7 @@ Ghi chú||10',
 	'proofreadpage_source' => 'Nguồn',
 	'proofreadpage_source_message' => 'Bản quét được dùng để tạo ra văn bản này',
 	'right-pagequality' => 'Sửa đổi chất lượng trang',
-	'proofreadpage-section-tools' => 'Công cụ kiểm tra chính tả',
+	'proofreadpage-section-tools' => 'Hiệu đính',
 	'proofreadpage-group-zoom' => 'Thu phóng',
 	'proofreadpage-group-other' => 'Khác',
 	'proofreadpage-button-toggle-visibility-label' => 'Hiện/ẩn đầu và chân của trang này',
