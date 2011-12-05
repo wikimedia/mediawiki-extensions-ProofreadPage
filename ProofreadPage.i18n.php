@@ -98,10 +98,10 @@ $messages['qqq'] = array(
 	'indexpages' => 'Title of [[Special:IndexPages]]',
 	'pageswithoutscans' => 'Title of special page that lists texts without scans; that is, the texts that have not been transcluded into any other page',
 	'proofreadpage_desc' => '{{desc}}',
-	'proofreadpage_namespace' => 'This message should match the namespace whose canonical name is "Page". Any space should be replaced with an underscore (_).
+	'proofreadpage_namespace' => 'This message should match the namespace whose canonical name is "Page". Spaces trigger [[m:MediaZilla:32792|Bug 32792]].
 
 {{Identical|Page}}',
-	'proofreadpage_index_namespace' => 'This message should match the namespace whose canonical name is "Index". Any space should be replaced with an underscore (_).
+	'proofreadpage_index_namespace' => 'This message should match the namespace whose canonical name is "Index". Spaces trigger [[m:MediaZilla:32792|Bug 32792]].
 
 {{Identical|Index}}',
 	'proofreadpage_image' => '{{Identical|Image}}',
@@ -729,7 +729,7 @@ $messages['br'] = array(
 	'proofreadpage_quality4_category' => 'Kadarnaet',
 	'proofreadpage_quality0_message' => "Ar bajenn-mañ n'he deus ket ezhomm da vezañ adlennet",
 	'proofreadpage_quality1_message' => "Ar bajenn-mañ n'eo ket bet adlennet",
-	'proofreadpage_quality2_message' => "Ur gudenn 'zo bet pa oa ar bajenn o vezañ reizhet",
+	'proofreadpage_quality2_message' => 'Ur gudenn zo bet e-ser reizhañ ar bajenn',
 	'proofreadpage_quality3_message' => 'Adlennet eo bet ar bajenn-mañ',
 	'proofreadpage_quality4_message' => 'Gwiriekaet eo bet ar bajenn-mañ',
 	'proofreadpage_index_listofpages' => 'Roll ar pajennoù',
@@ -744,7 +744,7 @@ Mammenn
 Skeudenn|Skeudenn ar golo
 Pajennoù||20
 Notennoù||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|bajenn|pajenn}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pajenn|pajenn}}',
 	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
 	'proofreadpage_source' => 'Mammenn',
 	'proofreadpage_source_message' => 'Embannadurioù bet niverelaet implijet evit sevel an destenn-mañ',
