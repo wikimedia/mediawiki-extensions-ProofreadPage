@@ -2706,8 +2706,8 @@ Note||10',
  */
 $messages['ja'] = array(
 	'indexpages' => '書誌情報ページの一覧',
-	'pageswithoutscans' => 'スキャン画像のないページ',
-	'proofreadpage_desc' => 'オリジナルのスキャン画像と文章との比較を容易にする',
+	'pageswithoutscans' => 'スキャン画像と関連付けていないページ',
+	'proofreadpage_desc' => '底本のスキャン画像と写本した文章の比較を容易にする',
 	'proofreadpage_namespace' => 'ページ',
 	'proofreadpage_index_namespace' => '書誌情報',
 	'proofreadpage_image' => 'スキャン画像',
@@ -2715,15 +2715,15 @@ $messages['ja'] = array(
 	'proofreadpage_index_expected' => 'エラー: 書誌情報が必要です',
 	'proofreadpage_nosuch_index' => 'エラー: そのような書誌情報はありません',
 	'proofreadpage_nosuch_file' => 'エラー: そのようなファイルはありません',
-	'proofreadpage_badpage' => '不正な形式',
-	'proofreadpage_badpagetext' => '保存しようとしたページの形式が正しくありません。',
+	'proofreadpage_badpage' => '不正なフォーマット',
+	'proofreadpage_badpagetext' => '保存しようとしたページのフォーマットが正しくありません。',
 	'proofreadpage_indexdupe' => '重複したリンク',
 	'proofreadpage_indexdupetext' => 'ページ上に複数の書誌情報ページを載せることはできません。',
 	'proofreadpage_nologin' => 'ログインしていません',
 	'proofreadpage_nologintext' => 'ページの校正ステータスを変更するには[[Special:UserLogin|ログイン]]する必要があります。',
 	'proofreadpage_notallowed' => '変更が許可されていません',
-	'proofreadpage_notallowedtext' => 'あなたにはこのページの校正ステータスを変更することが許可されていません。',
-	'proofreadpage_number_expected' => 'エラー: 数値がくるべきです',
+	'proofreadpage_notallowedtext' => 'このページの校正ステータスを変更することはできません。',
+	'proofreadpage_number_expected' => 'エラー: 半角数字を入力してください',
 	'proofreadpage_interval_too_large' => 'エラー: 間隔が大きすぎます',
 	'proofreadpage_invalid_interval' => 'エラー: 間隔が無効です',
 	'proofreadpage_nextpage' => '次のページ',
@@ -2731,7 +2731,7 @@ $messages['ja'] = array(
 	'proofreadpage_header' => 'ヘッダ(埋め込み対象外):',
 	'proofreadpage_body' => 'ページ本体(埋め込み参照の対象):',
 	'proofreadpage_footer' => 'フッタ(埋め込み対象外):',
-	'proofreadpage_toggleheaders' => '埋め込み対象外項目の表示の切り替え',
+	'proofreadpage_toggleheaders' => '埋め込み対象とならない部分の表示切替',
 	'proofreadpage_quality0_category' => '文章なし',
 	'proofreadpage_quality1_category' => '未校正',
 	'proofreadpage_quality2_category' => '問題あり',
@@ -2745,19 +2745,19 @@ $messages['ja'] = array(
 	'proofreadpage_index_listofpages' => 'ページの一覧',
 	'proofreadpage_image_message' => '書誌情報ページへのリンク',
 	'proofreadpage_page_status' => '校正ステータス',
-	'proofreadpage_js_attributes' => '著者名 作品名 出版年 出版元',
-	'proofreadpage_index_attributes' => '著者名
-作品名
-出版年|出版年
+	'proofreadpage_js_attributes' => '著者 書名 年 出版元',
+	'proofreadpage_index_attributes' => '著者
+書名
+年|出版年
 出版元
 底本
-表紙|表紙画像
+画像|表紙の画像
 ページ||20
 注釈||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|ページ|総ページ数}}',
 	'proofreadpage_specialpage_legend' => '書誌情報ページを検索',
 	'proofreadpage_source' => '底本',
-	'proofreadpage_source_message' => '底本となった出版物等のスキャン画像',
+	'proofreadpage_source_message' => '底本となった出版物等のスキャンデーター',
 	'right-pagequality' => 'ページ品質フラグの変更',
 	'proofreadpage-section-tools' => '校正ツール',
 	'proofreadpage-group-zoom' => 'ズーム',
