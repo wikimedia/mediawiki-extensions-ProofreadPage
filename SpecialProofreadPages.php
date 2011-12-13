@@ -35,7 +35,7 @@ class ProofreadPages extends QueryPage {
 			);
 			if( $this->searchTerm ) {
 				$index_namespace = $this->index_namespace;
-				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $index_namespace ) ) );
 				$searchEngine = SearchEngine::create();
 				$searchEngine->setLimitOffset( $limit, $offset );
 				$searchEngine->setNamespaces( array( $index_ns_index ) );
@@ -89,7 +89,7 @@ class ProofreadPages extends QueryPage {
 		if ( $this->searchTerm ) {
 			if ( $this->searchList !== null ) {
 				$index_namespace = $this->index_namespace;
-				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $index_namespace ) ) );
 				$conds = array( 'page_namespace' => $index_ns_index );
 				if ( $this->searchList ) {
 					$conds['page_title'] = $this->searchList;

@@ -35,7 +35,7 @@ class ProofreadPage {
 		if ( $namespace !== null ) {
 			return $namespace;
 		}
-		$namespaceText = strtolower( wfMsgForContent( 'proofreadpage_namespace' ) );
+		$namespaceText = strtolower( str_replace( ' ', '_', wfMsgForContent( 'proofreadpage_namespace' ) ) );
 		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
 		return $namespace;
 	}
@@ -50,7 +50,7 @@ class ProofreadPage {
 		if ( $namespace !== null ) {
 			return $namespace;
 		}
-		$namespaceText = strtolower( wfMsgForContent( 'proofreadpage_index_namespace' ) );
+		$namespaceText = strtolower( str_replace( ' ', '_', wfMsgForContent( 'proofreadpage_index_namespace' ) ) );
 		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
 		return $namespace;
 	}
@@ -841,7 +841,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					list( $page, $pagenum ) = $item;
 					$pp[] = $page;
 				}
-				$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
+				$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $page_namespace ) ) );
 				$dbr = wfGetDB( DB_SLAVE );
 				$cat = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
 				$res = $dbr->select(
@@ -1352,7 +1352,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 */
 	private static function update_pr_index( $index, $deletedpage = null ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
+		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $page_namespace ) ) );
 		if ( $page_ns_index == null ) {
 			return;
 		}
@@ -1442,8 +1442,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			return true;
 		}
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $page_namespace ) );
-		$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( $index_namespace ) );
+		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $page_namespace ) ) );
+		$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $index_namespace ) ) );
 		if( $page_ns_index == null || $index_ns_index == null ) {
 			return true;
 		}

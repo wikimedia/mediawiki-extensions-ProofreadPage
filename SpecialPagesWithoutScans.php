@@ -76,7 +76,7 @@ class PagesWithoutScans extends QueryPage {
 	
 	function getQueryInfo() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( $this->page_namespace ) );
+		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $this->page_namespace ) ) );
 		
 		// Construct subqueries
 		$pagesWithScansSubquery = $dbr->selectSQLText(
