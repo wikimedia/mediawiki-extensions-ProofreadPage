@@ -30,7 +30,7 @@ $wgExtensionCredits['other'][] = array(
 	'name'           => 'ProofreadPage',
 	'author'         => 'ThomasV',
 	'version'        => '2010-09-17',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Proofread_Page',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:Proofread_Page',
 	'descriptionmsg' => 'proofreadpage_desc',
 );
 
