@@ -328,7 +328,7 @@ $messages['arc'] = array(
 	'proofreadpage_nextpage' => 'ܦܐܬܐ ܐܚܪܬܐ',
 	'proofreadpage_prevpage' => 'ܦܐܬܐ ܩܕܝܡܬܐ',
 	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܕܦ̈ܐ',
-	'proofreadpage_pages' => '{{PLURAL:$1|ܕܦܐ|ܕܦ̈ܐ}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|ܕܦܐ|ܕ̈ܦܐ}}',
 	'proofreadpage_source' => 'ܡܒܘܥܐ',
 );
 
