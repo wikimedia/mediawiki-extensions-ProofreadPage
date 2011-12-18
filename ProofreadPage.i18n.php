@@ -2712,7 +2712,7 @@ $messages['ja'] = array(
 	'proofreadpage_index_namespace' => '書誌情報',
 	'proofreadpage_image' => 'スキャン画像',
 	'proofreadpage_index' => '書誌情報',
-	'proofreadpage_index_expected' => 'エラー: 書誌情報が必要です',
+	'proofreadpage_index_expected' => 'エラー: 書誌情報を入力してください',
 	'proofreadpage_nosuch_index' => 'エラー: そのような書誌情報はありません',
 	'proofreadpage_nosuch_file' => 'エラー: そのようなファイルはありません',
 	'proofreadpage_badpage' => '不正なフォーマット',
@@ -2739,17 +2739,17 @@ $messages['ja'] = array(
 	'proofreadpage_quality4_category' => '検証済',
 	'proofreadpage_quality0_message' => 'このページを校正する必要はありません。',
 	'proofreadpage_quality1_message' => 'このページはまだ校正されていません',
-	'proofreadpage_quality2_message' => 'このページを校正するときに問題がありました',
+	'proofreadpage_quality2_message' => 'このページを校正する際に問題がありました',
 	'proofreadpage_quality3_message' => 'このページは校正済みです',
 	'proofreadpage_quality4_message' => 'このページは検証済みです',
 	'proofreadpage_index_listofpages' => 'ページの一覧',
 	'proofreadpage_image_message' => '書誌情報ページへのリンク',
 	'proofreadpage_page_status' => '校正ステータス',
-	'proofreadpage_js_attributes' => '著者 書名 年 出版元',
+	'proofreadpage_js_attributes' => '著者 書名 年 出版者',
 	'proofreadpage_index_attributes' => '著者
 書名
 年|出版年
-出版元
+出版者
 底本
 画像|表紙の画像
 ページ||20
@@ -2762,11 +2762,11 @@ $messages['ja'] = array(
 	'proofreadpage-section-tools' => '校正ツール',
 	'proofreadpage-group-zoom' => 'ズーム',
 	'proofreadpage-group-other' => 'その他',
-	'proofreadpage-button-toggle-visibility-label' => 'このページのヘッダーとフッターの表示または非表示',
+	'proofreadpage-button-toggle-visibility-label' => 'このページのヘッダーとフッターの表示/非表示',
 	'proofreadpage-button-zoom-out-label' => '縮小',
 	'proofreadpage-button-reset-zoom-label' => '元の大きさ',
 	'proofreadpage-button-zoom-in-label' => '拡大',
-	'proofreadpage-button-toggle-layout-label' => '垂直方向または水平方向のレイアウト',
+	'proofreadpage-button-toggle-layout-label' => '垂直方向/水平方向のレイアウト',
 );
 
 /** Jutish (Jysk)
@@ -3570,7 +3570,7 @@ $messages['mr'] = array(
 	'proofreadpage-group-other' => 'इतर',
 	'proofreadpage-button-toggle-visibility-label' => 'ह्या पानाची शिर्षणी आणि  तळ  टीप  दाखवा/लपवा',
 	'proofreadpage-button-zoom-out-label' => 'मोठे करा',
-	'proofreadpage-button-reset-zoom-label' => 'मुळ आकर',
+	'proofreadpage-button-reset-zoom-label' => 'मूळ आकार',
 	'proofreadpage-button-zoom-in-label' => 'छोटे  करा',
 	'proofreadpage-button-toggle-layout-label' => 'उभा/आडवा आराखडा',
 );
