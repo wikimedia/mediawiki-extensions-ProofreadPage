@@ -1580,6 +1580,7 @@ Oharrak||10',
  * @author Ladsgroup
  * @author Mardetanha
  * @author Mjbmr
+ * @author Reza1615
  * @author Wayiran
  * @author ZxxZxxZ
  */
@@ -1605,8 +1606,8 @@ $messages['fa'] = array(
 	'proofreadpage_number_expected' => 'خطا:مقدار عددی مورد انتظار است.',
 	'proofreadpage_interval_too_large' => 'خطا:بازهٔ بسیار بزرگ',
 	'proofreadpage_invalid_interval' => 'خطا: بازهٔ نامعتبر',
-	'proofreadpage_nextpage' => 'برگهٔ بعدی',
-	'proofreadpage_prevpage' => 'برگهٔ قبلی',
+	'proofreadpage_nextpage' => 'برگه بعدی',
+	'proofreadpage_prevpage' => 'برگه قبلی',
 	'proofreadpage_header' => 'عنوان (noinclude):',
 	'proofreadpage_body' => 'متن صفحه (برای گنجانده شدن):',
 	'proofreadpage_footer' => 'پانویس (noinclude):',
@@ -3067,7 +3068,7 @@ Quell
 Beld|Beld om Ömschlach
 Sigge||20
 Aanmerkunge||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|Ei&nbsp;Sigg|$1&nbsp;Sigge|Kei&nbsp;Sigg}}',
+	'proofreadpage_pages' => '{{PLURAL:$2|Ei&nbsp;Sigg|$1&nbsp;Sigge|Kei&nbsp;Sigg}}',
 	'proofreadpage_specialpage_legend' => 'Op dä Verzeischneßsigg söhke',
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'För heh dä Täx ze schriive, wood dat Beld vum Täx jenumme.',
