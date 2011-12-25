@@ -687,6 +687,7 @@ $messages['bn'] = array(
 পাতা||20
 মন্তব্য||10',
 	'proofreadpage_source' => 'উৎস',
+	'proofreadpage-group-other' => 'অন্য',
 );
 
 /** Breton (Brezhoneg)
@@ -3680,6 +3681,74 @@ $messages['nah'] = array(
 	'proofreadpage_prevpage' => 'Achto zāzanilli',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ * @author Laaknor
+ * @author Nghtwlkr
+ * @author Simny
+ */
+$messages['nb'] = array(
+	'indexpages' => 'Liste over innholdsfortegnelser',
+	'pageswithoutscans' => 'Sider uten skanninger',
+	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
+	'proofreadpage_namespace' => 'Side',
+	'proofreadpage_index_namespace' => 'Indeks',
+	'proofreadpage_image' => 'Bilde',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Feil: Indeks forventet',
+	'proofreadpage_nosuch_index' => 'Feil: ingen slik indeks',
+	'proofreadpage_nosuch_file' => 'Feil: ingen slik fil',
+	'proofreadpage_badpage' => 'Feil format',
+	'proofreadpage_badpagetext' => 'Siden du prøver å lagre har galt format.',
+	'proofreadpage_indexdupe' => 'Duplikat lenke',
+	'proofreadpage_indexdupetext' => 'Sider kan ikke listes mer enn en gang på en indeksside.',
+	'proofreadpage_nologin' => 'Ikke innlogget',
+	'proofreadpage_nologintext' => 'Du må være [[Special:UserLogin|innlogget]] for å kunne forandre status på korrekturlesningen på sider.',
+	'proofreadpage_notallowed' => 'Å gjøre en forandring er ikke lov',
+	'proofreadpage_notallowedtext' => 'Du har ikke rettigheter til å endre korrekturlesningen på denne siden.',
+	'proofreadpage_number_expected' => 'Feil: Numerisk verdi forventet',
+	'proofreadpage_interval_too_large' => 'Feil: Intervall for stort',
+	'proofreadpage_invalid_interval' => 'Feil: ugyldig intervall',
+	'proofreadpage_nextpage' => 'Neste side',
+	'proofreadpage_prevpage' => 'Forrige side',
+	'proofreadpage_header' => 'Hodeseksjon (inkluderes ikke):',
+	'proofreadpage_body' => 'Hoveddel (skal inkluderes):',
+	'proofreadpage_footer' => 'Fotseksjon (inkluderes ikke):',
+	'proofreadpage_toggleheaders' => 'slå av/på synlighet for ikke-inkluderte seksjoner',
+	'proofreadpage_quality0_category' => 'Uten tekst',
+	'proofreadpage_quality1_category' => 'Rå',
+	'proofreadpage_quality2_category' => 'Ufullstendig',
+	'proofreadpage_quality3_category' => 'Korrekturlest',
+	'proofreadpage_quality4_category' => 'Validert',
+	'proofreadpage_quality0_message' => 'Denne siden trenger ikke korrekturleses',
+	'proofreadpage_quality1_message' => 'Denne siden er ikke korrekturlest',
+	'proofreadpage_quality2_message' => 'Det oppsto et problem når denne siden skulle korrekturleses',
+	'proofreadpage_quality3_message' => 'Denne siden er korrekturlest',
+	'proofreadpage_quality4_message' => 'Denne siden er godkjent',
+	'proofreadpage_index_listofpages' => 'Liste over sider',
+	'proofreadpage_image_message' => 'Lenke til indekssiden',
+	'proofreadpage_page_status' => 'Sidestatus',
+	'proofreadpage_js_attributes' => 'Forfatter Tittel År Utgiver',
+	'proofreadpage_index_attributes' => 'Forfatter
+Tittel
+År|Utgivelsesår
+Utgiver
+Kilde
+Bilde|Omslagsbilde
+Sider||20
+Merknader||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
+	'proofreadpage_specialpage_legend' => 'Søk i indekssider',
+	'proofreadpage_source' => 'Kilde',
+	'proofreadpage_source_message' => 'Scannet utgave brukt for å etablere denne teksten',
+	'right-pagequality' => 'Endre sidens kvalitetsflagg',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Annet',
+	'proofreadpage-button-zoom-out-label' => 'Zoom ut',
+	'proofreadpage-button-reset-zoom-label' => 'Tilbakestill zoom',
+	'proofreadpage-button-zoom-in-label' => 'Zoom inn',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -3844,74 +3913,6 @@ Merknader||10',
 	'proofreadpage_source' => 'Kjelde',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- * @author Laaknor
- * @author Nghtwlkr
- * @author Simny
- */
-$messages['nb'] = array(
-	'indexpages' => 'Liste over innholdsfortegnelser',
-	'pageswithoutscans' => 'Sider uten skanninger',
-	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
-	'proofreadpage_namespace' => 'Side',
-	'proofreadpage_index_namespace' => 'Indeks',
-	'proofreadpage_image' => 'Bilde',
-	'proofreadpage_index' => 'Indeks',
-	'proofreadpage_index_expected' => 'Feil: Indeks forventet',
-	'proofreadpage_nosuch_index' => 'Feil: ingen slik indeks',
-	'proofreadpage_nosuch_file' => 'Feil: ingen slik fil',
-	'proofreadpage_badpage' => 'Feil format',
-	'proofreadpage_badpagetext' => 'Siden du prøver å lagre har galt format.',
-	'proofreadpage_indexdupe' => 'Duplikat lenke',
-	'proofreadpage_indexdupetext' => 'Sider kan ikke listes mer enn en gang på en indeksside.',
-	'proofreadpage_nologin' => 'Ikke innlogget',
-	'proofreadpage_nologintext' => 'Du må være [[Special:UserLogin|innlogget]] for å kunne forandre status på korrekturlesningen på sider.',
-	'proofreadpage_notallowed' => 'Å gjøre en forandring er ikke lov',
-	'proofreadpage_notallowedtext' => 'Du har ikke rettigheter til å endre korrekturlesningen på denne siden.',
-	'proofreadpage_number_expected' => 'Feil: Numerisk verdi forventet',
-	'proofreadpage_interval_too_large' => 'Feil: Intervall for stort',
-	'proofreadpage_invalid_interval' => 'Feil: ugyldig intervall',
-	'proofreadpage_nextpage' => 'Neste side',
-	'proofreadpage_prevpage' => 'Forrige side',
-	'proofreadpage_header' => 'Hodeseksjon (inkluderes ikke):',
-	'proofreadpage_body' => 'Hoveddel (skal inkluderes):',
-	'proofreadpage_footer' => 'Fotseksjon (inkluderes ikke):',
-	'proofreadpage_toggleheaders' => 'slå av/på synlighet for ikke-inkluderte seksjoner',
-	'proofreadpage_quality0_category' => 'Uten tekst',
-	'proofreadpage_quality1_category' => 'Rå',
-	'proofreadpage_quality2_category' => 'Ufullstendig',
-	'proofreadpage_quality3_category' => 'Korrekturlest',
-	'proofreadpage_quality4_category' => 'Validert',
-	'proofreadpage_quality0_message' => 'Denne siden trenger ikke korrekturleses',
-	'proofreadpage_quality1_message' => 'Denne siden er ikke korrekturlest',
-	'proofreadpage_quality2_message' => 'Det oppsto et problem når denne siden skulle korrekturleses',
-	'proofreadpage_quality3_message' => 'Denne siden er korrekturlest',
-	'proofreadpage_quality4_message' => 'Denne siden er godkjent',
-	'proofreadpage_index_listofpages' => 'Liste over sider',
-	'proofreadpage_image_message' => 'Lenke til indekssiden',
-	'proofreadpage_page_status' => 'Sidestatus',
-	'proofreadpage_js_attributes' => 'Forfatter Tittel År Utgiver',
-	'proofreadpage_index_attributes' => 'Forfatter
-Tittel
-År|Utgivelsesår
-Utgiver
-Kilde
-Bilde|Omslagsbilde
-Sider||20
-Merknader||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
-	'proofreadpage_specialpage_legend' => 'Søk i indekssider',
-	'proofreadpage_source' => 'Kilde',
-	'proofreadpage_source_message' => 'Scannet utgave brukt for å etablere denne teksten',
-	'right-pagequality' => 'Endre sidens kvalitetsflagg',
-	'proofreadpage-group-zoom' => 'Zoom',
-	'proofreadpage-group-other' => 'Annet',
-	'proofreadpage-button-zoom-out-label' => 'Zoom ut',
-	'proofreadpage-button-reset-zoom-label' => 'Tilbakestill zoom',
-	'proofreadpage-button-zoom-in-label' => 'Zoom inn',
-);
-
 /** Northern Sotho (Sesotho sa Leboa)
  * @author Mohau
  */
@@ -3980,10 +3981,26 @@ Comentaris||10',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
+ * @author Ansumang
  * @author Psubhashish
  */
 $messages['or'] = array(
+	'proofreadpage_namespace' => 'ପୃଷ୍ଠା',
+	'proofreadpage_index_namespace' => 'ସୂଚୀ',
+	'proofreadpage_image' => 'ପ୍ରତିକୃତି',
+	'proofreadpage_index' => 'ସୂଚୀ',
+	'proofreadpage_nextpage' => 'ପର ପୃଷ୍ଠା',
 	'proofreadpage_prevpage' => 'ଆଗ ପୃଷ୍ଠା',
+	'proofreadpage_index_listofpages' => 'ପୃଷ୍ଠାମାନଙ୍କର ତାଲିକା',
+	'proofreadpage_page_status' => 'ପୃଷ୍ଠାର ସ୍ଥିତି',
+	'proofreadpage_index_attributes' => 'ଲେଖକ
+ଶୀର୍ଷକ
+ବର୍ଷ|ପ୍ରକାଶନ ବର୍ଷ
+ପ୍ରକାଶକ
+ଛବି|ମଲାଟ ଛବି
+ପୃଷ୍ଠା| | ୨୦
+ଟିପ୍ପଣୀ| | ୧୦',
+	'proofreadpage-group-zoom' => 'ବଡ଼କରି ଦେଖାଇବେ',
 );
 
 /** Ossetic (Ирон)
@@ -5593,7 +5610,7 @@ $messages['uk'] = array(
 Зображення|Зображення обкладинки
 Сторінок||20
 Приміток||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|сторінка|сторінки|сторінок}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|сторінка|сторінки|сторінок}}',
 	'proofreadpage_specialpage_legend' => 'Пошук сторінок індексації',
 	'proofreadpage_source' => 'Джерело',
 	'proofreadpage_source_message' => 'Для створення цього тексту використані відскановані видання',
@@ -5851,6 +5868,7 @@ $messages['yue'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Hydra
  * @author Jimmy xu wrk
@@ -5908,7 +5926,7 @@ $messages['zh-hans'] = array(
 图像|封面照
 页数||20
 备注||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|页|页}}',
+	'proofreadpage_pages' => '$2个{{PLURAL:$1|页面|页面}}',
 	'proofreadpage_specialpage_legend' => '搜索索引页',
 	'proofreadpage_source' => '来源',
 	'proofreadpage_source_message' => '扫描版用来建立这个文本',
