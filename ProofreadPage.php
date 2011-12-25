@@ -21,7 +21,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
-$wgExtensionAliasesFiles['ProofreadPage'] = $dir . 'ProofreadPage.alias.php';
+$wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage_body.php';
 
