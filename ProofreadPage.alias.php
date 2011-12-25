@@ -70,7 +70,7 @@ $specialPageAliases['nl'] = array(
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['no'] = array(
+$specialPageAliases['nb'] = array(
 	'IndexPages' => array( 'Indekssider' ),
 	'PagesWithoutScans' => array( 'Sider_uten_skanninger' ),
 );

@@ -3850,7 +3850,7 @@ Merknader||10',
  * @author Nghtwlkr
  * @author Simny
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'indexpages' => 'Liste over innholdsfortegnelser',
 	'pageswithoutscans' => 'Sider uten skanninger',
 	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
