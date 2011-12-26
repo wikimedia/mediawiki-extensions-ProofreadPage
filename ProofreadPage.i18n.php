@@ -4175,6 +4175,8 @@ $messages['ps'] = array(
 	'proofreadpage_index_namespace' => 'ليکلړ',
 	'proofreadpage_image' => 'انځور',
 	'proofreadpage_index' => 'ليکلړ',
+	'proofreadpage_badpage' => 'ناسمه بڼه',
+	'proofreadpage_notallowed' => 'د بدلون پرېښه نشته',
 	'proofreadpage_nextpage' => 'بل مخ',
 	'proofreadpage_prevpage' => 'تېر مخ',
 	'proofreadpage_quality0_category' => 'بې متنه',
@@ -4193,6 +4195,8 @@ $messages['ps'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|مخ|مخونه}}',
 	'proofreadpage_specialpage_legend' => 'ليکلړ مخونه پلټل',
 	'proofreadpage_source' => 'سرچينه',
+	'proofreadpage-group-other' => 'بل',
+	'proofreadpage-button-reset-zoom-label' => 'آر کچه',
 );
 
 /** Portuguese (Português)
@@ -4785,9 +4789,14 @@ $messages['sc'] = array(
 );
 
 /** Sicilian (Sicilianu)
+ * @author Aushulz
  * @author Gmelfi
  */
 $messages['scn'] = array(
+	'proofreadpage_namespace' => 'Pàggina',
+	'proofreadpage_image' => 'Immaggini',
+	'proofreadpage_nextpage' => 'Pàggina appressu',
+	'proofreadpage_prevpage' => "Pàggina d'antura",
 	'proofreadpage_header' => 'Ntistazzioni (nun inclusa)',
 );
 
@@ -5834,6 +5843,7 @@ $messages['yi'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|בלאַט|בלעטער}}',
 	'proofreadpage_specialpage_legend' => 'זוכן אינדעקס־זײַטן',
 	'proofreadpage_source' => 'מקור',
+	'proofreadpage-group-zoom' => 'זום',
 );
 
 /** Cantonese (粵語) */
