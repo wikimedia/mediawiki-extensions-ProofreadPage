@@ -1410,6 +1410,7 @@ Rimarkoj||10',
  * @author Aleator
  * @author Barcex
  * @author Crazymadlover
+ * @author Imre
  * @author Locos epraix
  * @author Remember the dot
  * @author Sanbec
@@ -1470,6 +1471,9 @@ Comentarios||10',
 	'proofreadpage_source' => 'Fuente',
 	'proofreadpage_source_message' => 'Edición escaneada usada para establecer este texto',
 	'right-pagequality' => 'Modificar la marca de calidad de la página',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Otro',
+	'proofreadpage-button-reset-zoom-label' => 'Tamaño original',
 );
 
 /** Estonian (Eesti)
@@ -4805,10 +4809,18 @@ $messages['scn'] = array(
  * @author බිඟුවා
  */
 $messages['si'] = array(
+	'indexpages' => 'සුචි පිටු ලැයිස්තුව',
 	'proofreadpage_namespace' => 'පිටුව',
+	'proofreadpage_image' => 'පිංතූරය',
+	'proofreadpage_index' => 'සුචිය',
+	'proofreadpage_badpage' => 'වැරදි ආකෘතිය',
 	'proofreadpage_nologin' => 'ප්‍රවිෂ්ට වී නොමැත',
 	'proofreadpage_nextpage' => 'ඊළඟ පිටුව',
+	'proofreadpage_index_listofpages' => 'පිටු ලැයිස්තුව',
 	'proofreadpage_source' => ' මූලාශ්‍රය',
+	'proofreadpage-group-other' => 'වෙනත්',
+	'proofreadpage-button-reset-zoom-label' => 'නියම ප්‍රමාණය',
+	'proofreadpage-button-zoom-in-label' => 'විශාලනය කරන්න',
 );
 
 /** Slovak (Slovenčina)
@@ -5833,11 +5845,14 @@ Küpets|10',
 );
 
 /** Yiddish (ייִדיש)
+ * @author Imre
  * @author פוילישער
  */
 $messages['yi'] = array(
 	'proofreadpage_namespace' => 'בלאַט',
+	'proofreadpage_index_namespace' => 'אינדעקס',
 	'proofreadpage_image' => 'בילד',
+	'proofreadpage_index' => 'אינדעקס',
 	'proofreadpage_nextpage' => 'קומענדיגער בלאַט',
 	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|בלאַט|בלעטער}}',
@@ -6009,7 +6024,7 @@ $messages['zh-hant'] = array(
 圖片|封面照
 頁數||20
 備註||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|頁|頁}}',
+	'proofreadpage_pages' => '$2個{{PLURAL:$1|頁面|頁面}}',
 	'proofreadpage_specialpage_legend' => '搜尋索引頁',
 	'proofreadpage_source' => '來源',
 	'proofreadpage_source_message' => '掃描版用來建立這個文字',
