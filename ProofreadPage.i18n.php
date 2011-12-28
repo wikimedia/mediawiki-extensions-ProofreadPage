@@ -2160,6 +2160,7 @@ $messages['he'] = array(
 );
 
 /** Hindi (हिन्दी)
+ * @author Ansumang
  * @author Kaustubh
  */
 $messages['hi'] = array(
@@ -2190,6 +2191,10 @@ $messages['hi'] = array(
 चित्र|मुखपृष्ठ चित्र
 पन्ने||२०
 टिप्पणी||१०',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|पृष्ठ|पृष्ठ}}',
+	'proofreadpage_source' => 'स्रोत',
+	'proofreadpage-group-zoom' => 'ज़ूम',
+	'proofreadpage-group-other' => 'अन्य',
 );
 
 /** Croatian (Hrvatski)
@@ -4032,6 +4037,7 @@ $messages['pdc'] = array(
 
 /** Polish (Polski)
  * @author Beau
+ * @author Olgak85
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -4084,7 +4090,7 @@ Wydawca
 Ilustracja|Okładka
 Strony||20
 Uwagi||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|strona|strony|stron}}',
+	'proofreadpage_pages' => '$1 {{PLURAL:$1|strona|strony|stron}}',
 	'proofreadpage_specialpage_legend' => 'Szukaj stron indeksowych',
 	'proofreadpage_source' => 'Źródło',
 	'proofreadpage_source_message' => 'Zeskanowane wydanie wykorzystane do przygotowania tego tekstu',
@@ -4989,7 +4995,11 @@ $messages['sr-ec'] = array(
 слика|насловна страна
 страна||20
 примедбе||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|страница|странице|страница}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|странице|страница}}',
+	'proofreadpage_source' => 'Извор',
+	'proofreadpage-section-tools' => 'Лекторске алатке',
+	'proofreadpage-group-zoom' => 'Размера',
+	'proofreadpage-group-other' => 'Друго',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
