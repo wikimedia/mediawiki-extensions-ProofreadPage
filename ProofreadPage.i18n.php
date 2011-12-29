@@ -3998,6 +3998,7 @@ $messages['or'] = array(
 	'proofreadpage_index_namespace' => 'ସୂଚୀ',
 	'proofreadpage_image' => 'ପ୍ରତିକୃତି',
 	'proofreadpage_index' => 'ସୂଚୀ',
+	'proofreadpage_indexdupe' => 'ନକଲି ଲିଙ୍କ',
 	'proofreadpage_nextpage' => 'ପର ପୃଷ୍ଠା',
 	'proofreadpage_prevpage' => 'ଆଗ ପୃଷ୍ଠା',
 	'proofreadpage_index_listofpages' => 'ପୃଷ୍ଠାମାନଙ୍କର ତାଲିକା',
@@ -4009,7 +4010,9 @@ $messages['or'] = array(
 ଛବି|ମଲାଟ ଛବି
 ପୃଷ୍ଠା| | ୨୦
 ଟିପ୍ପଣୀ| | ୧୦',
+	'proofreadpage_source' => 'ମୂଳାଧାର',
 	'proofreadpage-group-zoom' => 'ବଡ଼କରି ଦେଖାଇବେ',
+	'proofreadpage-group-other' => 'ବାକି',
 );
 
 /** Ossetic (Ирон)
@@ -4821,8 +4824,13 @@ $messages['si'] = array(
 	'proofreadpage_index' => 'සුචිය',
 	'proofreadpage_badpage' => 'වැරදි ආකෘතිය',
 	'proofreadpage_nologin' => 'ප්‍රවිෂ්ට වී නොමැත',
+	'proofreadpage_notallowed' => 'වෙනස්කමට ඉඩ ලබා නොදේ',
 	'proofreadpage_nextpage' => 'ඊළඟ පිටුව',
+	'proofreadpage_prevpage' => 'පෙර පිටුව',
+	'proofreadpage_quality4_message' => 'මෙම පිටුව වලංගු කර ඇත',
 	'proofreadpage_index_listofpages' => 'පිටු ලැයිස්තුව',
+	'proofreadpage_page_status' => 'පිටුවේ තත්වය',
+	'proofreadpage_specialpage_legend' => 'සුචිකරණය කල පිටු සොයන්න',
 	'proofreadpage_source' => ' මූලාශ්‍රය',
 	'proofreadpage-group-other' => 'වෙනත්',
 	'proofreadpage-button-reset-zoom-label' => 'නියම ප්‍රමාණය',
