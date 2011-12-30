@@ -4820,6 +4820,7 @@ $messages['scn'] = array(
 $messages['si'] = array(
 	'indexpages' => 'සුචි පිටු ලැයිස්තුව',
 	'proofreadpage_namespace' => 'පිටුව',
+	'proofreadpage_index_namespace' => 'සුචිය',
 	'proofreadpage_image' => 'පිංතූරය',
 	'proofreadpage_index' => 'සුචිය',
 	'proofreadpage_badpage' => 'වැරදි ආකෘතිය',
@@ -5877,6 +5878,7 @@ $messages['yi'] = array(
 	'proofreadpage_specialpage_legend' => 'זוכן אינדעקס־זײַטן',
 	'proofreadpage_source' => 'מקור',
 	'proofreadpage-group-zoom' => 'זום',
+	'proofreadpage-group-other' => 'אַנדער',
 );
 
 /** Cantonese (粵語) */
