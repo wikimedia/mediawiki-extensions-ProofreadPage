@@ -883,7 +883,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 						$ts = $tosection;
 					}
 					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts .'}}';
-				} elseif( $page == $to_page && $tosection != null ) {
+				} elseif( $page == $to_page && $tosection !== null ) {
 					$out .= '{{#lst:' . $text . '||' . $tosection . '}}';
 				} else {
 					$out .= '{{:' . $text . '}}';
