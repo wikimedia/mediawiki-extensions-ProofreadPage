@@ -4864,6 +4864,7 @@ $messages['si'] = array(
 	'proofreadpage-button-zoom-out-label' => 'විශාලනයෙන් ඉවත් වෙන්න',
 	'proofreadpage-button-reset-zoom-label' => 'නියම ප්‍රමාණය',
 	'proofreadpage-button-zoom-in-label' => 'විශාලනය කරන්න',
+	'proofreadpage-button-toggle-layout-label' => 'සිරස්/තිරස් සැලැස්ම',
 );
 
 /** Slovak (Slovenčina)
@@ -5900,6 +5901,7 @@ $messages['yi'] = array(
 	'proofreadpage_index_namespace' => 'אינדעקס',
 	'proofreadpage_image' => 'בילד',
 	'proofreadpage_index' => 'אינדעקס',
+	'proofreadpage_nologin' => 'נישט אַרײַנלאגירט',
 	'proofreadpage_nextpage' => 'קומענדיגער בלאַט',
 	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|בלאַט|בלעטער}}',
@@ -5907,6 +5909,7 @@ $messages['yi'] = array(
 	'proofreadpage_source' => 'מקור',
 	'proofreadpage-group-zoom' => 'זום',
 	'proofreadpage-group-other' => 'אַנדער',
+	'proofreadpage-button-reset-zoom-label' => 'אריגינעלע גרייס',
 );
 
 /** Cantonese (粵語) */
