@@ -144,9 +144,11 @@ $messages['qqq'] = array(
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  * @author SPQRobin
+ * @author පසිඳු කාවින්ද
  */
 $messages['af'] = array(
 	'indexpages' => 'Lys van indeks-bladsye',
+	'pageswithoutscans' => 'Bladsye sonder skanderings',
 	'proofreadpage_desc' => 'Maak dit moontlik om teks maklik met die oorspronklike skandering te vergelyk',
 	'proofreadpage_namespace' => 'Bladsye',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -198,6 +200,8 @@ Opmerkings||10',
 	'proofreadpage_specialpage_legend' => 'Deursoek indeks-bladsye',
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Geskandeerde uitgawe waarop hierdie teks gebaseer is',
+	'right-pagequality' => 'Verander bladsy kwaliteit vlag',
+	'proofreadpage-section-tools' => 'proeflees gereedskap',
 	'proofreadpage-group-zoom' => 'Zoom',
 	'proofreadpage-group-other' => 'Ander',
 	'proofreadpage-button-zoom-out-label' => 'Uitzoom',
@@ -4663,13 +4667,14 @@ $messages['rue'] = array(
 
 /** Sanskrit (संस्कृतम्)
  * @author Abhirama
+ * @author Ansumang
  * @author Shreekant Hegde
  */
 $messages['sa'] = array(
 	'indexpages' => 'अनुक्रमणिका पुटावली',
 	'pageswithoutscans' => 'अगतिकपुटानि',
 	'proofreadpage_desc' => 'मूलगतिकलेखानां सरलतुलनावकाशः',
-	'proofreadpage_namespace' => 'पुटम्',
+	'proofreadpage_namespace' => 'पृष्ठम्',
 	'proofreadpage_index_namespace' => 'अनुक्रमणिका',
 	'proofreadpage_image' => 'चित्रम्',
 	'proofreadpage_index' => 'अनुक्रमणिका',
@@ -4854,6 +4859,7 @@ $messages['si'] = array(
 	'proofreadpage_index_listofpages' => 'පිටු ලැයිස්තුව',
 	'proofreadpage_image_message' => 'සුචිගත පිටුවට සබැඳිගත කරන්න',
 	'proofreadpage_page_status' => 'පිටුවේ තත්වය',
+	'proofreadpage_js_attributes' => 'කතෘ මාතෘකාව වර්ෂය ප්‍රකාශකයා',
 	'proofreadpage_pages' => '{{PLURAL:$1|පිටු|පිටු}} $2 ක්',
 	'proofreadpage_specialpage_legend' => 'සුචිකරණය කල පිටු සොයන්න',
 	'proofreadpage_source' => ' මූලාශ්‍රය',
@@ -4861,6 +4867,7 @@ $messages['si'] = array(
 	'proofreadpage-section-tools' => 'සෝදුපත් බැලීමේ මෙවලම්',
 	'proofreadpage-group-zoom' => 'විශාලනය',
 	'proofreadpage-group-other' => 'වෙනත්',
+	'proofreadpage-button-toggle-visibility-label' => 'මෙම පිටුවේ ශීර්ෂකය සහ පාදතලය පෙන්වන්න/සඟවන්න',
 	'proofreadpage-button-zoom-out-label' => 'විශාලනයෙන් ඉවත් වෙන්න',
 	'proofreadpage-button-reset-zoom-label' => 'නියම ප්‍රමාණය',
 	'proofreadpage-button-zoom-in-label' => 'විශාලනය කරන්න',
