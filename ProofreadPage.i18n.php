@@ -204,6 +204,7 @@ Opmerkings||10',
 	'proofreadpage-section-tools' => 'proeflees gereedskap',
 	'proofreadpage-group-zoom' => 'Zoom',
 	'proofreadpage-group-other' => 'Ander',
+	'proofreadpage-button-toggle-visibility-label' => 'Wys / verberg hierdie bladsy se kop-en voet',
 	'proofreadpage-button-zoom-out-label' => 'Uitzoom',
 	'proofreadpage-button-reset-zoom-label' => 'Herstel zoom',
 	'proofreadpage-button-zoom-in-label' => 'Inzoom',
@@ -2173,12 +2174,16 @@ $messages['hi'] = array(
 	'proofreadpage_index_namespace' => 'अनुक्रम',
 	'proofreadpage_image' => 'चित्र',
 	'proofreadpage_index' => 'अनुक्रम',
+	'proofreadpage_badpage' => 'गलत फ़ारमैट',
+	'proofreadpage_indexdupe' => 'नकली लिंक',
+	'proofreadpage_nologin' => 'लॉग इन नहीं किया हैं',
 	'proofreadpage_nextpage' => 'अगला पन्ना',
 	'proofreadpage_prevpage' => 'पिछला पन्ना',
 	'proofreadpage_header' => 'पन्ने का उपरी पाठ (noinclude):',
 	'proofreadpage_body' => 'पन्ने का मुख्य पाठ (जो इस्तेमाल में आयेगा):',
 	'proofreadpage_footer' => 'पन्ने का निचला पाठ (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude विभांगोंका दृष्य स्तर बदलें',
+	'proofreadpage_quality0_category' => 'लेख के बिना',
 	'proofreadpage_quality1_category' => 'परिक्षण हुआ नहीं',
 	'proofreadpage_quality2_category' => 'समस्याकारक',
 	'proofreadpage_quality3_category' => 'परिक्षण करें',
@@ -2196,9 +2201,11 @@ $messages['hi'] = array(
 पन्ने||२०
 टिप्पणी||१०',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|पृष्ठ|पृष्ठ}}',
+	'proofreadpage_specialpage_legend' => 'इंडेक्स पृष्ठ खोजें',
 	'proofreadpage_source' => 'स्रोत',
 	'proofreadpage-group-zoom' => 'ज़ूम',
 	'proofreadpage-group-other' => 'अन्य',
+	'proofreadpage-button-reset-zoom-label' => 'मूल आकार',
 );
 
 /** Croatian (Hrvatski)
@@ -4819,6 +4826,7 @@ $messages['scn'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Singhalawap
  * @author පසිඳු කාවින්ද
  * @author බිඟුවා
  */
@@ -4859,7 +4867,7 @@ $messages['si'] = array(
 	'proofreadpage_index_listofpages' => 'පිටු ලැයිස්තුව',
 	'proofreadpage_image_message' => 'සුචිගත පිටුවට සබැඳිගත කරන්න',
 	'proofreadpage_page_status' => 'පිටුවේ තත්වය',
-	'proofreadpage_js_attributes' => 'කතෘ මාතෘකාව වර්ෂය ප්‍රකාශකයා',
+	'proofreadpage_js_attributes' => 'කර්තෘ මාතෘකාව වසර ප්‍රකාශක',
 	'proofreadpage_pages' => '{{PLURAL:$1|පිටු|පිටු}} $2 ක්',
 	'proofreadpage_specialpage_legend' => 'සුචිකරණය කල පිටු සොයන්න',
 	'proofreadpage_source' => ' මූලාශ්‍රය',
