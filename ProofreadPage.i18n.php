@@ -543,6 +543,7 @@ $messages['bcl'] = array(
  * @author Jim-by
  * @author Red Winged Duck
  * @author Renessaince
+ * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'indexpages' => 'Сьпіс індэксных старонак',
@@ -594,7 +595,7 @@ $messages['be-tarask'] = array(
 Выява|Выява вокладкі
 Старонак||20
 Заўвагаў||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|старонка|старонкі|старонак}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|старонка|старонкі|старонак}}',
 	'proofreadpage_specialpage_legend' => 'Пошук індэксных старонак',
 	'proofreadpage_source' => 'Крыніца',
 	'proofreadpage_source_message' => 'Сканаваная вэрсія, якая выкарыстоўвалася для стварэньня гэтага тэксту',
