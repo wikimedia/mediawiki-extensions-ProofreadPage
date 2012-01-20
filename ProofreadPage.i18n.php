@@ -1368,6 +1368,7 @@ $messages['ee'] = array(
 );
 
 /** Greek (Ελληνικά)
+ * @author AndreasJS
  * @author Consta
  * @author Crazymadlover
  * @author Dead3y3
@@ -1410,7 +1411,7 @@ $messages['el'] = array(
 	'proofreadpage_quality3_category' => 'Έχει γίνει proofreading',
 	'proofreadpage_quality4_category' => 'Εγκρίθηκε',
 	'proofreadpage_quality0_message' => 'Αυτή η σελίδα δεν χρειάζεται να ελεγχθεί για πιθανά λάθη',
-	'proofreadpage_quality1_message' => 'Αυτή η σελίδα δεν έχει ελεγχθεί ακόμη για πιθανά λάθη',
+	'proofreadpage_quality1_message' => 'Αυτή η σελίδα δεν έχει ελεγχθεί ακόμη για πιθανά λάθη.',
 	'proofreadpage_quality2_message' => 'Υπήρξε ένα πρόβλημα στον έλεγχο για πιθανά λάθη αυτής της σελίδας',
 	'proofreadpage_quality3_message' => 'Η σελίδα αυτή έχει ελεγθεί για πιθανά λάθη',
 	'proofreadpage_quality4_message' => 'Αυτή η σελίδα έχει εγκριθεί',
@@ -6071,6 +6072,7 @@ $messages['yue'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author PhiLiP
+ * @author Xiaomingyan
  */
 $messages['zh-hans'] = array(
 	'indexpages' => '索引页列表',
@@ -6116,12 +6118,12 @@ $messages['zh-hans'] = array(
 	'proofreadpage_js_attributes' => '作者 标题 年份 出版者',
 	'proofreadpage_index_attributes' => '作者
 标题
-年份|出版年份
-出版者
+年份|出版时间
+出版
 来源
-图像|封面照
+图像|封面图像
 页数||20
-备注||10',
+注释||10',
 	'proofreadpage_pages' => '$2个{{PLURAL:$1|页面|页面}}',
 	'proofreadpage_specialpage_legend' => '搜索索引页',
 	'proofreadpage_source' => '来源',
