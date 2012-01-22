@@ -13,7 +13,7 @@ class ProofreadPages extends QueryPage {
 	}
 
 	public function execute( $parameters ) {
-		global $wgOut, $wgRequest, $wgDisableTextSearch;
+		global $wgOut, $wgRequest, $wgDisableTextSearch, $wgScript;
 
 		$this->setHeaders();
 		list( $limit, $offset ) = wfCheckLimits();
@@ -24,7 +24,8 @@ class ProofreadPages extends QueryPage {
 		if( !$wgDisableTextSearch ) {
 			$self = $this->getTitle();
 			$wgOut->addHTML(
-				Xml::openElement( 'form', array( 'action' => $self->getLocalUrl() ) ) .
+				Xml::openElement( 'form', array( 'action' => $wgScript ) ) .
+				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 				Xml::input( 'limit', false, $limit, array( 'type' => 'hidden' ) ) .
 				Xml::openElement( 'fieldset' ) .
 				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
