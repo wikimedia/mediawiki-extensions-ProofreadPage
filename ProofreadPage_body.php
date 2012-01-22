@@ -224,14 +224,14 @@ class ProofreadPage {
 
 		// Header and Footer
 		// use a js dictionary for style, width, header footer
-		$header = $attributes['header'] ? $attributes['header'] : $default_header;
-		$footer = $attributes['footer'] ? $attributes['footer'] : $default_footer;
+		$header = isset( $attributes['header'] ) ? $attributes['header'] : $default_header;
+		$footer = isset( $attributes['footer'] ) ? $attributes['footer'] : $default_footer;
 		foreach ( $attributes as $key => $val ) {
 			$header = str_replace( "{{{{$key}}}}", $val, $header );
 			$footer = str_replace( "{{{{$key}}}}", $val, $footer );
 		}
-		$css = $attributes['css'] ? $attributes['css'] : '';
-		$edit_width = $attributes['width'] ? $attributes['width'] : '';
+		$css = isset( $attributes['css'] ) ? $attributes['css'] : '';
+		$edit_width = isset( $attributes['width'] ) ? $attributes['width'] : '';
 
 		return array( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width );
 	}
