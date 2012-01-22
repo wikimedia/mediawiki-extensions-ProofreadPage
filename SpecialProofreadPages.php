@@ -146,7 +146,7 @@ class ProofreadPages extends QueryPage {
 
 		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
 <tr valign=\"bottom\">
-<td style=\"white-space:nowrap;overflow:hidden;\">{$plink} $dirmark[$pages]</td>
+<td style=\"white-space:nowrap;overflow:hidden;\">{$plink} {$dirmark}[$pages]</td>
 <td>
 <table style=\"line-height:70%;\" border=0 cellpadding=0 cellspacing=0 >
 <tr>
