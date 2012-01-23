@@ -2173,6 +2173,27 @@ Aamerkige||10',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikali/horizontali Ussrichtig',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author Dsvyas
+ */
+$messages['gu'] = array(
+	'indexpages' => 'સૂચિ પુષ્ઠોની યાદી',
+	'pageswithoutscans' => 'Pages without scans',
+	'proofreadpage_namespace' => 'પૃષ્ઠ',
+	'proofreadpage_index_namespace' => 'સૂચિ',
+	'proofreadpage_image' => 'ચિત્ર',
+	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'ત્રુટિ:સૂચિ અપેક્ષિત',
+	'proofreadpage_nosuch_index' => 'ત્રુટિ:આવી કોઈ સૂચિ નથી',
+	'proofreadpage_nosuch_file' => 'ત્રુટિ:આવી કોઇ ફાઇલ નથી',
+	'proofreadpage_badpage' => 'ખોટી શૈલી',
+	'proofreadpage_indexdupe' => 'પ્રતિકૃતિરૂપ કડી',
+	'proofreadpage_nologin' => 'પ્રવેશ કરેલ નથી',
+	'proofreadpage_nextpage' => 'પછીનું પાનું',
+	'proofreadpage_prevpage' => 'પહેલાંનું પાનું',
+	'proofreadpage_source' => 'સ્ત્રોત',
+);
+
 /** Manx (Gaelg)
  * @author MacTire02
  */
