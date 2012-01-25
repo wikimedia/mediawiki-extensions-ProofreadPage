@@ -2175,23 +2175,71 @@ Aamerkige||10',
 
 /** Gujarati (ગુજરાતી)
  * @author Dsvyas
+ * @author Sushant savla
  */
 $messages['gu'] = array(
 	'indexpages' => 'સૂચિ પુષ્ઠોની યાદી',
-	'pageswithoutscans' => 'Pages without scans',
+	'pageswithoutscans' => 'સ્કેન વગરના પાના',
+	'proofreadpage_desc' => 'મૂળ સ્કેન સાથે સરળ સરખામણીની રજા આપો',
 	'proofreadpage_namespace' => 'પૃષ્ઠ',
 	'proofreadpage_index_namespace' => 'સૂચિ',
 	'proofreadpage_image' => 'ચિત્ર',
-	'proofreadpage_index' => 'Index',
+	'proofreadpage_index' => 'અનુક્રમણિકા',
 	'proofreadpage_index_expected' => 'ત્રુટિ:સૂચિ અપેક્ષિત',
 	'proofreadpage_nosuch_index' => 'ત્રુટિ:આવી કોઈ સૂચિ નથી',
 	'proofreadpage_nosuch_file' => 'ત્રુટિ:આવી કોઇ ફાઇલ નથી',
 	'proofreadpage_badpage' => 'ખોટી શૈલી',
+	'proofreadpage_badpagetext' => 'તમે સાચવવા માંગતા પાનાનું ફોર્મૅટ અયોગ્ય',
 	'proofreadpage_indexdupe' => 'પ્રતિકૃતિરૂપ કડી',
+	'proofreadpage_indexdupetext' => 'અનુક્રમના પાના પર વિષયને એક થી વધુ વખત ન દર્શાવી શકાય.',
 	'proofreadpage_nologin' => 'પ્રવેશ કરેલ નથી',
+	'proofreadpage_nologintext' => 'પાનાના લેખન સુધારણાના સ્તરને બદલવા તમારે  [[Special:UserLogin|logged in]] (લોગ ઈન) થયેલા હોવું જોઈએ,',
+	'proofreadpage_notallowed' => 'બદલાવી નહી શકાય.',
+	'proofreadpage_notallowedtext' => 'તમને આ પાનાની લેખન સુધારણા સ્તરને બદલવાની પરવાનગી નથી.',
+	'proofreadpage_number_expected' => 'ભૂલ: આંકાડાકીય માહિતી અપેક્ષિત',
+	'proofreadpage_interval_too_large' => 'ભૂલ: ખૂબ મોટો વિરામ ગાળો',
+	'proofreadpage_invalid_interval' => 'ભૂલ: અનુચિત વિરામ ગાળો',
 	'proofreadpage_nextpage' => 'પછીનું પાનું',
 	'proofreadpage_prevpage' => 'પહેલાંનું પાનું',
+	'proofreadpage_header' => 'પૃષ્ઠ મથાળુ (અસમાવિષ્ટ):',
+	'proofreadpage_body' => 'પાનું (લેખ કડી આપવાની જગ્યા):',
+	'proofreadpage_footer' => 'પૃષ્ઠ અંત (અ સમાવિષ્ટ):',
+	'proofreadpage_toggleheaders' => 'શામિલ ન કરવાના લેખનની દ્રશ્યતા પલટાવો',
+	'proofreadpage_quality0_category' => 'શબ્દો વગર',
+	'proofreadpage_quality1_category' => 'લેખન સુધારણા બાકી',
+	'proofreadpage_quality2_category' => 'સમસ્યા',
+	'proofreadpage_quality3_category' => 'લેખન સુધારણા પૂર્ણ',
+	'proofreadpage_quality4_category' => 'પ્રમાણિત',
+	'proofreadpage_quality0_message' => 'આ પાનાને લેખન સુધારણાની જરૂર નથી.',
+	'proofreadpage_quality1_message' => 'આ પાનાની લેખન સુધારણા બાકી છે',
+	'proofreadpage_quality2_message' => 'આ પાનાની લેખન સુધારણા કરવામાં તકલીફ.',
+	'proofreadpage_quality3_message' => 'આ પાનાની લેખન સુધારણા થઈ ગઈ છે',
+	'proofreadpage_quality4_message' => 'આ પાનું પ્રમાણિત થઈ ગયું છે.',
+	'proofreadpage_index_listofpages' => 'પાનાને યાદી',
+	'proofreadpage_image_message' => 'અનુક્રમણિકા/ મૂળ પાના સાથે જોડો',
+	'proofreadpage_page_status' => 'પાનાની સ્થિતી',
+	'proofreadpage_js_attributes' => 'લેખક શીર્ષક વર્ષ પ્રકાશક',
+	'proofreadpage_index_attributes' => 'લેખક
+શીર્ષક
+વર્ષ|પ્રકાશનનું વર્ષ
+પ્રકાશક
+સ્ત્રોત
+ચિત્ર|મુખ પૃષ્ઠ
+પાના||20
+નોંધ||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|પાનું|પાના}}',
+	'proofreadpage_specialpage_legend' => 'મૂખ પૃષ્ઠ / અનુક્રમ પૃષ્ઠ શોધો',
 	'proofreadpage_source' => 'સ્ત્રોત',
+	'proofreadpage_source_message' => 'આ લેખ પ્રસિદ્ધ માટે સ્કેન આવૃત્તિ વપરાઈ છે.',
+	'right-pagequality' => 'પાનાની ગુણવત્તા સ્તર બદલો',
+	'proofreadpage-section-tools' => 'લેખન સુધારણા સાધનો',
+	'proofreadpage-group-zoom' => 'વિસ્તરણ',
+	'proofreadpage-group-other' => 'અન્ય',
+	'proofreadpage-button-toggle-visibility-label' => 'પાનાનું મથાળું - પાનિ બતાવો / છૂપાડો',
+	'proofreadpage-button-zoom-out-label' => 'સંકોચન',
+	'proofreadpage-button-reset-zoom-label' => 'મૂળ માપ',
+	'proofreadpage-button-zoom-in-label' => 'વિસ્તરણ',
+	'proofreadpage-button-toggle-layout-label' => 'પાનાની આડી - ઉભી ગોઠવણ',
 );
 
 /** Manx (Gaelg)
