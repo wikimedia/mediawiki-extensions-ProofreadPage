@@ -803,6 +803,7 @@ $messages['bn'] = array(
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
+ * @author VIGNERON
  * @author Y-M D
  */
 $messages['br'] = array(
@@ -847,14 +848,22 @@ $messages['br'] = array(
 	'proofreadpage_image_message' => 'Liamm war-du ar meneger',
 	'proofreadpage_page_status' => 'Statud ar bajenn',
 	'proofreadpage_js_attributes' => 'Aozer Titl Bloaz Embanner',
-	'proofreadpage_index_attributes' => 'Aozer
-Titl
-Bloaz|Bloavezh embann
-Embanner
-Mammenn
-Skeudenn|Skeudenn ar golo
-Pajennoù||20
-Notennoù||10',
+	'proofreadpage_index_attributes' => "Type|Doare
+Title|Titl
+Author|Oberour
+Translator|Troer
+Editor|Aozer
+School|Skol
+Year|Bloavezh embann
+Publisher|Embanner
+Address|Chomlec'h
+Key|Alc'hwez diforc'hañ
+Source|Mammenn
+Image|Skeudenn
+Progress|Araokaat
+Volumes|Levrennoù|5
+Pages|Pajennoù|20
+Remarks|Notennoù|10",
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pajenn|pajenn}}',
 	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
 	'proofreadpage_source' => 'Mammenn',
