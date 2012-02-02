@@ -63,6 +63,7 @@ $prpResourceTemplate = array(
 $wgResourceModules += array(
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'scripts' => 'proofread.js',
+		'dependencies' => array( 'mediawiki.legacy.wikibits' ),
 		'messages' => array(
 			'proofreadpage_header',
 			'proofreadpage_body',
@@ -106,4 +107,3 @@ $wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadPage::onLoadExtensionSchema
 $wgHooks['EditPage::importFormData'][] = 'ProofreadPage::onEditPageImportFormData';
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
-
