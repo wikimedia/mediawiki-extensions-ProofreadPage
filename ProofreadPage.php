@@ -57,7 +57,7 @@ $wgGroupPermissions['user']['pagequality'] = true;
 
 # Client-side resources
 $prpResourceTemplate = array(
-	'localBasePath' => $dir,
+	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'ProofreadPage'
 );
 $wgResourceModules += array(
