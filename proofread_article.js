@@ -5,4 +5,4 @@ function pr_add_source() {
 	$( '#ca-nstab-main' ).after( '<li id="ca-proofread-source"><span>' + proofreadpage_source_href + '</span></li>' );
 }
 
-$(document).ready( pr_add_source );
+jQuery( pr_add_source );

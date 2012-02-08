@@ -954,9 +954,9 @@ function pr_init() {
 	}
 }
 
-$(document).ready( pr_init );
-$(document).ready( pr_init_tabs );
-$(document).ready( pr_initzoom );
+jQuery( pr_init );
+jQuery( pr_init_tabs );
+jQuery( pr_initzoom );
 
 
 /* Quality buttons */
@@ -1035,4 +1035,4 @@ function pr_add_quality_buttons() {
 	}
 }
 
-$(document).ready( pr_add_quality_buttons );
+jQuery( pr_add_quality_buttons );

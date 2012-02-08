@@ -131,4 +131,4 @@ function proofreadpage_fill_index() {
 	form.elements['wpTextbox1'].value = result;
 }
 
-$(document).ready( proofreadpage_index_init );
+jQuery( proofreadpage_index_init );
