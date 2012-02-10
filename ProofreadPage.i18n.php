@@ -1527,6 +1527,7 @@ Rimarkoj||10',
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Armando-Martin
  * @author Barcex
  * @author Crazymadlover
  * @author Imre
@@ -1590,9 +1591,14 @@ Comentarios||10',
 	'proofreadpage_source' => 'Fuente',
 	'proofreadpage_source_message' => 'Edición escaneada usada para establecer este texto',
 	'right-pagequality' => 'Modificar la marca de calidad de la página',
+	'proofreadpage-section-tools' => 'Coregir herramientas',
 	'proofreadpage-group-zoom' => 'Zoom',
 	'proofreadpage-group-other' => 'Otro',
+	'proofreadpage-button-toggle-visibility-label' => 'Mostrar/ ocultar el encabezado y el pie de esta página',
+	'proofreadpage-button-zoom-out-label' => 'Alejar',
 	'proofreadpage-button-reset-zoom-label' => 'Tamaño original',
+	'proofreadpage-button-zoom-in-label' => 'Aumentar',
+	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical/horizontal',
 );
 
 /** Estonian (Eesti)
