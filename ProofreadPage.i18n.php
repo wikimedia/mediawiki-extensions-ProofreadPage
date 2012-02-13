@@ -650,7 +650,7 @@ $messages['be'] = array(
  */
 $messages['be-tarask'] = array(
 	'indexpages' => 'Сьпіс індэксных старонак',
-	'pageswithoutscans' => 'Старонкі без сканаў',
+	'pageswithoutscans' => 'Старонкі бяз сканаў',
 	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўноўваць тэкст і адсканаваны арыгінал',
 	'proofreadpage_namespace' => 'Старонка',
 	'proofreadpage_index_namespace' => 'Індэкс',
@@ -662,7 +662,7 @@ $messages['be-tarask'] = array(
 	'proofreadpage_badpage' => 'Няслушны фармат',
 	'proofreadpage_badpagetext' => 'Няслушны фармат старонкі, якую Вы спрабуеце захаваць.',
 	'proofreadpage_indexdupe' => 'Спасылка-дублікат',
-	'proofreadpage_indexdupetext' => 'Старонкі ня могуць быць ў сьпісе на індэкснай старонцы болей аднаго разу.',
+	'proofreadpage_indexdupetext' => 'Старонкі ня могуць трапляць на індэксную старонку болей аднаго разу.',
 	'proofreadpage_nologin' => 'Вы не ўвайшлі ў сыстэму',
 	'proofreadpage_nologintext' => 'Вы павінны [[Special:UserLogin|ўвайсьці ў сыстэму]], каб зьмяняць статус праверкі старонкі.',
 	'proofreadpage_notallowed' => 'Зьмена не дазволеная',
@@ -4240,6 +4240,7 @@ $messages['pdc'] = array(
 
 /** Polish (Polski)
  * @author Beau
+ * @author BeginaFelicysym
  * @author Olgak85
  * @author Sp5uhe
  */
@@ -4293,7 +4294,7 @@ Wydawca
 Ilustracja|Okładka
 Strony||20
 Uwagi||10',
-	'proofreadpage_pages' => '$1 {{PLURAL:$1|strona|strony|stron}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|strona|strony|stron}}',
 	'proofreadpage_specialpage_legend' => 'Szukaj stron indeksowych',
 	'proofreadpage_source' => 'Źródło',
 	'proofreadpage_source_message' => 'Zeskanowane wydanie wykorzystane do przygotowania tego tekstu',
