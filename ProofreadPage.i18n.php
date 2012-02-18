@@ -1716,7 +1716,7 @@ Oharrak||10',
  * @author ZxxZxxZ
  */
 $messages['fa'] = array(
-	'indexpages' => 'فهرست صفحات شاخص',
+	'indexpages' => 'فهرست صفحه‌های نمایه',
 	'pageswithoutscans' => 'صفحه‌های بدون پویش',
 	'proofreadpage_desc' => 'امکان مقایسهٔ آسان متن با نسخهٔ اصلی پویش شده را فراهم می‌آورد',
 	'proofreadpage_namespace' => 'برگه',
@@ -1729,7 +1729,7 @@ $messages['fa'] = array(
 	'proofreadpage_badpage' => 'فرمت اشتباه',
 	'proofreadpage_badpagetext' => 'فرمت صفحه‌ای که قصد ذخیره‌اش را دارید، نادرست است.',
 	'proofreadpage_indexdupe' => 'پیوند المثنی',
-	'proofreadpage_indexdupetext' => 'صفحات نمی‌توانند بیش از یک بار بر صفحه‌ای شاخص فهرست شوند.',
+	'proofreadpage_indexdupetext' => 'صفحه‌ها نمی‌توانند بیش از یک بار در یک صفحهٔ نمایه فهرست شوند.',
 	'proofreadpage_nologin' => 'وارد نشده',
 	'proofreadpage_nologintext' => 'به منظور تغییر وضعیت نمونه‌خوانی صفحات، باید [[Special:UserLogin|وارد شده باشید]].',
 	'proofreadpage_notallowed' => 'تغییر مجاز نیست',
@@ -1766,7 +1766,7 @@ $messages['fa'] = array(
 صفحه||20
 ملاحظات||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|برگه|برگه}}',
-	'proofreadpage_specialpage_legend' => 'جستجو در صفحات شاخص',
+	'proofreadpage_specialpage_legend' => 'جستجو در صفحه‌های شاخص',
 	'proofreadpage_source' => 'منبع',
 	'proofreadpage_source_message' => 'برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده',
 	'right-pagequality' => 'تغییر پرچم کیفیت صفحه',
@@ -3720,6 +3720,7 @@ $messages['mn'] = array(
  * @author Kaustubh
  * @author Rahuldeshmukh101
  * @author Sankalpdravid
+ * @author Shantanoo
  * @author Vanandf1
  */
 $messages['mr'] = array(
@@ -3761,7 +3762,7 @@ $messages['mr'] = array(
 	'proofreadpage_quality3_message' => 'या पानाचे परीक्षण झाले आहे',
 	'proofreadpage_quality4_message' => 'हे पान प्रमाणित केलेले आहे.',
 	'proofreadpage_index_listofpages' => 'पानांची यादी',
-	'proofreadpage_image_message' => 'अनुक्रमणिका असणार्‍या पानाशी दुवा द्या',
+	'proofreadpage_image_message' => 'अनुक्रमणिका असणाऱ्या पानाशी दुवा द्या',
 	'proofreadpage_page_status' => 'पानाची स्थिती',
 	'proofreadpage_js_attributes' => 'लेखक शीर्षक वर्ष प्रकाशक',
 	'proofreadpage_index_attributes' => 'लेखक
