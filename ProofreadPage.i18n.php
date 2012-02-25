@@ -4642,7 +4642,7 @@ Imagine|Imagine copertă
 Pagini||20
 Comentarii||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagină|pagini|de pagini}}',
-	'proofreadpage_specialpage_legend' => 'Căutați paginile de index',
+	'proofreadpage_specialpage_legend' => 'Caută paginile de index',
 	'proofreadpage_source' => 'Sursă',
 	'proofreadpage_source_message' => 'Pentru a confirma acest text s-au utilizat ediția scanată',
 	'right-pagequality' => 'Modifică indicatorul de calitate a paginii',
