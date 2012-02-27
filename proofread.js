@@ -749,18 +749,18 @@ function pr_setup() {
 		return;
 	}
 	var f = text.parentNode;
-	var new_text = f.removeChild( text );
 
 	if( proofreadPageIsEdit ) {
 		pr_make_edit_area( self.text_container, new_text.value );
-		var copywarn = document.getElementById( 'editpage-copywarn' );
-		f.insertBefore( table, copywarn );
+		f.insertBefore( table, text.nextSibling ); // Inserts table after text
+		f.removeChild( text );
 		if ( !self.proofreadpage_show_headers ) {
 			hookEvent( 'load', pr_toggle_visibility );
 		} else {
 			hookEvent( 'load', pr_reset_size );
 		}
 	} else {
+		var new_text = f.removeChild( text );
 		self.text_container.appendChild( new_text );
 		f.appendChild( self.table );
 	}
