@@ -751,7 +751,7 @@ function pr_setup() {
 	var f = text.parentNode;
 
 	if( proofreadPageIsEdit ) {
-		pr_make_edit_area( self.text_container, new_text.value );
+		pr_make_edit_area( self.text_container, text.value );
 		f.insertBefore( table, text.nextSibling ); // Inserts table after text
 		f.removeChild( text );
 		if ( !self.proofreadpage_show_headers ) {
