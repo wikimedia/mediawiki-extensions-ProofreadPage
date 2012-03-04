@@ -3718,6 +3718,7 @@ $messages['mn'] = array(
 /** Marathi (मराठी)
  * @author Kaajawa
  * @author Kaustubh
+ * @author Mvkulkarni23
  * @author Rahuldeshmukh101
  * @author Sankalpdravid
  * @author Shantanoo
@@ -3752,7 +3753,7 @@ $messages['mr'] = array(
 	'proofreadpage_footer' => 'पानाच्या खालील मजकूर (noinclude):',
 	'proofreadpage_toggleheaders' => 'noinclude विभांगांची दृष्य पातळी बदला',
 	'proofreadpage_quality0_category' => 'मजकुराविना',
-	'proofreadpage_quality1_category' => 'अपरिक्षीत',
+	'proofreadpage_quality1_category' => 'तपासणी करायचे साहित्य',
 	'proofreadpage_quality2_category' => 'समस्यादायक',
 	'proofreadpage_quality3_category' => 'परिक्षीत',
 	'proofreadpage_quality4_category' => 'प्रमाणित',
