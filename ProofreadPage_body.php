@@ -1373,7 +1373,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				if ( $image && $image->isMultipage() && $image->pageCount() ) {
 					$n = $image->pageCount();
 					for ( $i = 1; $i <= $n; $i++ ) {
-						$page = $dbr->strencode( $index_title->getDBKey() . '/' . $i );
+						$page = $index_title->getDBKey() . '/' . $i;
 						if( $page != $deletedpage ) {
 							array_push( $pages, $page );
 						}
@@ -1383,7 +1383,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		} else {
 			$n = count( $links[1] );
 			for ( $i = 0; $i < $n; $i++ ) {
-				$page = $dbr->strencode( str_replace( ' ' , '_' , $links[1][$i] ) );
+				$page = str_replace( ' ' , '_' , $links[1][$i] );
 				if( $page != $deletedpage ) {
 					array_push( $pages, $page );
 				}
