@@ -3094,8 +3094,13 @@ $messages['ka'] = array(
 გამოსახულება|ყდის გამოსახულება
 გვერდები||20
 შენიშვნები||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|გვერდი|გვერდები}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|გვერდი|გვერდები}}',
 	'proofreadpage_source' => 'წყარო',
+	'proofreadpage-group-zoom' => 'გადიდება',
+	'proofreadpage-group-other' => 'სხვა',
+	'proofreadpage-button-zoom-out-label' => 'დაპატარავება',
+	'proofreadpage-button-reset-zoom-label' => 'თავდაპირველი ზომა',
+	'proofreadpage-button-zoom-in-label' => 'გადიდება',
 );
 
 /** Khmer (ភាសាខ្មែរ)
