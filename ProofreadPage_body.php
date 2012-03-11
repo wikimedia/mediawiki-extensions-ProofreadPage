@@ -648,7 +648,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 */
 	public static function pageQuality( $input, $args, $parser ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
+		if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText() ) ) {
 			return '';
 		}
 
@@ -669,7 +669,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 */
 	public static function renderPageList( $input, $args, $parser ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText(), $m ) ) {
+		if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText(), $m ) ) {
 			return '';
 		}
 
@@ -729,6 +729,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * Parser hook that includes a list of pages.
 	 *  parameters : index, from, to, header
+	 * @param $input
+	 * @param $args
+	 * @param $parser Parser
+	 * @return string
 	 */
 	public static function renderPages( $input, $args, $parser ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -744,11 +748,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
 
 		// abort if the tag is on an index page
-		if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
+		if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText() ) ) {
 			return '';
 		}
 		// abort too if the tag is in the page namespace
-		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->Title()->getPrefixedText() ) ) {
+		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText() ) ) {
 			return '';
 		}
 		if( !$index ) {
@@ -962,7 +966,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$h_out .= "|value=$header";
 			// find next and previous pages in list
 			for( $i = 1; $i < count( $text_links[1] ); $i++ ) {
-				if( $text_links[1][$i] == $parser->Title()->getPrefixedText() ) {
+				if( $text_links[1][$i] == $parser->getTitle()->getPrefixedText() ) {
 					$current = $text_links[0][$i];
 					break;
 				}
