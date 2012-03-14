@@ -474,6 +474,7 @@ $messages['az'] = array(
 
 /** Bashkir (Башҡортса)
  * @author Assele
+ * @author Ebe123
  */
 $messages['ba'] = array(
 	'indexpages' => 'Индекс биттәренең исемлеге',
@@ -525,7 +526,7 @@ $messages['ba'] = array(
 Рәсем|Тышлығының рәсеме
 Биттәр||20
 Иҫкәрмәләр||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|бит}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|бит}}',
 	'proofreadpage_specialpage_legend' => 'Индекс биттәрен эҙләү',
 	'proofreadpage_source' => 'Сығанаҡ',
 	'proofreadpage_source_message' => 'Был текстты булдырыу өсөн сканланған материалдар ҡулланылған',
@@ -3101,6 +3102,13 @@ $messages['ka'] = array(
 	'proofreadpage-button-zoom-out-label' => 'დაპატარავება',
 	'proofreadpage-button-reset-zoom-label' => 'თავდაპირველი ზომა',
 	'proofreadpage-button-zoom-in-label' => 'გადიდება',
+);
+
+/** Khowar (کھوار)
+ * @author Rachitrali
+ */
+$messages['khw'] = array(
+	'indexpages' => 'صفحاتن لسٹ',
 );
 
 /** Khmer (ភាសាខ្មែរ)
