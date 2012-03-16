@@ -140,7 +140,7 @@ $messages['qqq'] = array(
 	'proofreadpage-button-zoom-out-label' => 'Tooltip text in button for zoom out, only visible in edit mode.',
 	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.',
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
-	'proofreadpage-preferences-showheaders-label'  => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.'
+	'proofreadpage-preferences-showheaders-label' => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.',
 );
 
 /**    زَوُن (   زَوُن)
@@ -1303,6 +1303,7 @@ Bemerkungen||10',
 	'proofreadpage-button-reset-zoom-label' => 'Zoom zurücksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergrößern',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikale/horizontale Ausrichtung',
+	'proofreadpage-preferences-showheaders-label' => 'Beim Bearbeiten von Seiten im Seitennamensraum die Felder für die Kopf- und die Fußzeile anzeigen',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -1440,6 +1441,7 @@ Pśispomnjeśa||10',
 	'proofreadpage-button-reset-zoom-label' => 'Spócetna wjelikosć',
 	'proofreadpage-button-zoom-in-label' => 'Pówětšyś',
 	'proofreadpage-button-toggle-layout-label' => 'Padorowny/Wódorowny layout',
+	'proofreadpage-preferences-showheaders-label' => 'Głowowe a nogowe póla pokazaś, gaž wobźěłujo se w mjenjowem rumje boka',
 );
 
 /** Ewe (Eʋegbe) */
@@ -1670,6 +1672,7 @@ Comentarios||10',
 	'proofreadpage-button-reset-zoom-label' => 'Tamaño original',
 	'proofreadpage-button-zoom-in-label' => 'Aumentar',
 	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical/horizontal',
+	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de encabezado y pie de página cuando se edita en el espacio de nombres de página',
 );
 
 /** Estonian (Eesti)
@@ -2599,6 +2602,7 @@ Přispomnjenki||10',
 	'proofreadpage-button-reset-zoom-label' => 'Prěnjotna wulkosć',
 	'proofreadpage-button-zoom-in-label' => 'Powjetšić',
 	'proofreadpage-button-toggle-layout-label' => 'Padorune/Wodorune wuhotowanje',
+	'proofreadpage-preferences-showheaders-label' => 'Hłowowe a nohowe pola pokazać, hdyž so w mjenowym rumje strony wobdźěłuje',
 );
 
 /** Hungarian (Magyar)
@@ -2801,6 +2805,7 @@ Notas||10',
 	'proofreadpage-button-reset-zoom-label' => 'Dimension original',
 	'proofreadpage-button-zoom-in-label' => 'Aggrandir',
 	'proofreadpage-button-toggle-layout-label' => 'Disposition vertical/horizontal',
+	'proofreadpage-preferences-showheaders-label' => 'Monstrar campos de capite e pede quando modificar in le spatio de nomines Pagina',
 );
 
 /** Indonesian (Bahasa Indonesia)
