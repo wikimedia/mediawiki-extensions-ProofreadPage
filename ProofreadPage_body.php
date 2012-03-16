@@ -1644,4 +1644,18 @@ $void_cell
 		return true;
 	}
 
+	/**
+	 * Add ProofreadPage preferences to the preferences menu
+	 */
+	public static function onGetPreferences( $user, &$preferences ) {
+ 
+		//Show header and footer fields when editing in the Page namespace
+		$preferences['proofreadpage-showheaders'] = array(
+			'type'           => 'toggle',
+			'label-message'  => 'proofreadpage-preferences-showheaders-label',
+			'section'        => 'editing/advancedediting',
+		);
+
+		return true;
+	}
 }
