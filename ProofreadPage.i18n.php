@@ -73,7 +73,8 @@ Remarks||10',
 	'proofreadpage-button-zoom-out-label'          => 'Zoom out',
 	'proofreadpage-button-reset-zoom-label'        => 'Original size',
 	'proofreadpage-button-zoom-in-label'           => 'Zoom in',
-	'proofreadpage-button-toggle-layout-label'     => 'Vertical/horizontal layout'
+	'proofreadpage-button-toggle-layout-label'     => 'Vertical/horizontal layout',
+	'proofreadpage-preferences-showheaders-label'  => 'Show header and footer fields when editing in the Page namespace'
 );
 
 /** Message documentation (Message documentation)
@@ -139,6 +140,7 @@ $messages['qqq'] = array(
 	'proofreadpage-button-zoom-out-label' => 'Tooltip text in button for zoom out, only visible in edit mode.',
 	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.',
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
+	'proofreadpage-preferences-showheaders-label'  => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.'
 );
 
 /**    زَوُن (   زَوُن)
