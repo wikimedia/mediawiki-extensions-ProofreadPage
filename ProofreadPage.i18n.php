@@ -3723,6 +3723,7 @@ $messages['mk'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Врати размер',
 	'proofreadpage-button-zoom-in-label' => 'Приближи',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикален/хоризонтален распоред',
+	'proofreadpage-preferences-showheaders-label' => 'Прикажувај заглавје и подножне при уредување на именскиот простор „Страница“',
 );
 
 /** Malayalam (മലയാളം)
@@ -3944,6 +3945,7 @@ Catatan||10',
 	'proofreadpage-button-reset-zoom-label' => 'Set semula zum',
 	'proofreadpage-button-zoom-in-label' => 'Zum dekat',
 	'proofreadpage-button-toggle-layout-label' => 'Susun atur menegak/melintang',
+	'proofreadpage-preferences-showheaders-label' => 'Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama Laman',
 );
 
 /** Mirandese (Mirandés)
