@@ -1938,6 +1938,7 @@ Huomautuksia||10',
  * @author Jean-Frédéric
  * @author John Vandenberg
  * @author Seb35
+ * @author Tpt
  * @author Urhixidur
  * @author Verdy p
  */
@@ -2004,6 +2005,7 @@ Remarques||10',
 	'proofreadpage-button-reset-zoom-label' => 'Réinitialiser le zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoomer',
 	'proofreadpage-button-toggle-layout-label' => 'Disposition verticale/horizontale',
+	'proofreadpage-preferences-showheaders-label' => "Afficher des champs d'en-tête et de pied de page lors de l'édition en mode page",
 );
 
 /** Franco-Provençal (Arpetan)
@@ -2171,6 +2173,7 @@ Comentarios||10',
 	'proofreadpage-button-reset-zoom-label' => 'Restablecer o zoom',
 	'proofreadpage-button-zoom-in-label' => 'Ampliar',
 	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical ou horizontal',
+	'proofreadpage-preferences-showheaders-label' => 'Mostrar os campos da cabeceira e do pé de páxina ao editar no espazo de nomes das páxinas',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -2425,6 +2428,7 @@ $messages['he'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'גודל מקורי',
 	'proofreadpage-button-zoom-in-label' => 'תקריב',
 	'proofreadpage-button-toggle-layout-label' => 'פריסה אופקית או אנכית',
+	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "עמוד".',
 );
 
 /** Hindi (हिन्दी)
@@ -3477,6 +3481,7 @@ Bemierkungen||10',
 	'proofreadpage-button-reset-zoom-label' => 'Zoom zerécksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergréisseren',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikalen/horizontale Layout',
+	'proofreadpage-preferences-showheaders-label' => "D'Entête an de Pied de page weise beim Ännerungen am Säiten-Nummraum",
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -3730,6 +3735,7 @@ $messages['mk'] = array(
  * @author Hrishikesh.kb
  * @author Praveenp
  * @author Shijualex
+ * @author Vssun
  */
 $messages['ml'] = array(
 	'indexpages' => 'സൂചികാ താളുകളുടെ പട്ടിക',
@@ -3763,7 +3769,7 @@ $messages['ml'] = array(
 	'proofreadpage_quality1_category' => 'തെറ്റുതിരുത്തൽ വായന നടന്നിട്ടില്ലാത്തവ',
 	'proofreadpage_quality2_category' => 'പ്രശ്നമുള്ളവ',
 	'proofreadpage_quality3_category' => 'തെറ്റുതിരുത്തൽ വായന കഴിഞ്ഞവ',
-	'proofreadpage_quality4_category' => 'സാധുകരിച്ചവ',
+	'proofreadpage_quality4_category' => 'സാധൂകരിച്ചവ',
 	'proofreadpage_quality0_message' => 'ഈ താളിൽ തെറ്റുതിരുത്തൽ വായന ആവശ്യമില്ല',
 	'proofreadpage_quality1_message' => 'ഈ താളിൽ തെറ്റുതിരുത്തൽ വായന ഉണ്ടായിട്ടില്ല',
 	'proofreadpage_quality2_message' => 'ഈ താളിന്റെ തെറ്റുതിരുത്തൽ വായനയിൽ ഒരു പിഴവുണ്ടായിരിക്കുന്നു',
