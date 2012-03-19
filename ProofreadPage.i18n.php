@@ -782,6 +782,7 @@ $messages['be-tarask'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Зыходны памер',
 	'proofreadpage-button-zoom-in-label' => 'Павялічыць',
 	'proofreadpage-button-toggle-layout-label' => 'Вэртыкальная/гарызантальная разьметка',
+	'proofreadpage-preferences-showheaders-label' => 'Паказваць палі для верхняга і ніжняга калянтытулаў пры рэдагаваньні ў прасторы назваў Старонка',
 );
 
 /** Bulgarian (Български)
@@ -1230,6 +1231,7 @@ Bemærkninger | | 10',
 	'proofreadpage-button-reset-zoom-label' => 'Oprindelig størrelse',
 	'proofreadpage-button-zoom-in-label' => 'Zoom ind',
 	'proofreadpage-button-toggle-layout-label' => 'Lodret/vandret opsætning',
+	'proofreadpage-preferences-showheaders-label' => 'Åbn automatisk felterne for sidehoved og sidefod under redigering i sidenavnerummet',
 );
 
 /** German (Deutsch)
@@ -4405,6 +4407,7 @@ Uwagi||10',
 	'proofreadpage-button-reset-zoom-label' => 'Powiększenie domyślne',
 	'proofreadpage-button-zoom-in-label' => 'Powiększ',
 	'proofreadpage-button-toggle-layout-label' => 'Zmień układ na poziomy lub pionowy',
+	'proofreadpage-preferences-showheaders-label' => 'Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw strony',
 );
 
 /** Piedmontese (Piemontèis)
