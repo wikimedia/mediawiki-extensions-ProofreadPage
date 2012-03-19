@@ -754,10 +754,10 @@ function pr_setup() {
 		pr_make_edit_area( self.text_container, text.value );
 		f.insertBefore( table, text.nextSibling ); // Inserts table after text
 		f.removeChild( text );
-	        if ( mw.user.options.get( 'proofreadpage-showheaders' ) ) {
-		    hookEvent( 'load', pr_reset_size );
+		if ( mw.user.options.get( 'proofreadpage-showheaders' ) ) {
+			hookEvent( 'load', pr_reset_size );
 		} else {
-		    hookEvent( 'load', pr_toggle_visibility );
+			hookEvent( 'load', pr_toggle_visibility );
 		}
 	} else {
 		var new_text = f.removeChild( text );
