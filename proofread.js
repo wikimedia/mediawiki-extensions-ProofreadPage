@@ -754,10 +754,10 @@ function pr_setup() {
 		pr_make_edit_area( self.text_container, text.value );
 		f.insertBefore( table, text.nextSibling ); // Inserts table after text
 		f.removeChild( text );
-		if ( mw.user.options.get( 'proofreadpage-showheaders' ) ) {
-			hookEvent( 'load', pr_reset_size );
-		} else {
+		if ( !self.proofreadpage_show_headers ) {
 			hookEvent( 'load', pr_toggle_visibility );
+		} else {
+			hookEvent( 'load', pr_reset_size );
 		}
 	} else {
 		var new_text = f.removeChild( text );
@@ -843,18 +843,18 @@ function pr_setup() {
 		};
 
 		var $edit = $( '#wpTextbox1' );
-		if( mw.user.options.get('usebetatoolbar') ) {
-			mw.loader.using('ext.wikiEditor.toolbar', function() {
-				$edit.wikiEditor( 'addToToolbar', {
-					'sections': {
-						'proofreadpage-tools': {
-							'type': 'toolbar',
-							'label': mw.msg( 'proofreadpage-section-tools' )
-						}
+		if( typeof $edit.wikiEditor == 'function' ) {
+			setTimeout(function() {
+			$edit.wikiEditor( 'addToToolbar', {
+				'sections': {
+					'proofreadpage-tools': {
+						'type': 'toolbar',
+						'label': mw.msg( 'proofreadpage-section-tools' )
 					}
-				} )
-				.wikiEditor( 'addToToolbar', tools);
-			} );
+				}
+			} )
+			.wikiEditor( 'addToToolbar', tools);
+			}, 500);
 		} else {
 			var toolbar = document.getElementById( 'toolbar' );
 
@@ -896,7 +896,16 @@ function pr_init() {
 		return;
 	}
 
-	if( $.inArray( mw.config.get( 'wgAction' ), ['protect', 'unprotect', 'delete', 'undelete', 'watch', 'unwatch', 'history'] ) !== -1 ) {
+	if( document.URL.indexOf( 'action=protect' ) > 0 || document.URL.indexOf( 'action=unprotect' ) > 0 ) {
+		return;
+	}
+	if( document.URL.indexOf( 'action=delete' ) > 0 || document.URL.indexOf( 'action=undelete' ) > 0 ) {
+		return;
+	}
+	if( document.URL.indexOf( 'action=watch' ) > 0 || document.URL.indexOf( 'action=unwatch' ) > 0 ) {
+		return;
+	}
+	if( document.URL.indexOf( 'action=history' ) > 0 ) {
 		return;
 	}
 

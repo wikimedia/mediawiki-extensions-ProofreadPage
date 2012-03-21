@@ -83,7 +83,6 @@ $wgResourceModules += array(
 			'proofreadpage-button-reset-zoom-label',
 			'proofreadpage-button-zoom-in-label',
 			'proofreadpage-button-toggle-layout-label',
-			'proofreadpage-preferences-showheaders-label',
 		)
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(
@@ -108,4 +107,3 @@ $wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadPage::onLoadExtensionSchema
 $wgHooks['EditPage::importFormData'][] = 'ProofreadPage::onEditPageImportFormData';
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
-$wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
