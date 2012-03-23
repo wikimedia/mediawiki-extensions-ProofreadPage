@@ -5918,6 +5918,17 @@ $messages['tt-cyrl'] = array(
 	'proofreadpage_nextpage' => 'алдагы бит',
 );
 
+/** Tuvinian (Тыва дыл)
+ * @author Sborsody
+ */
+$messages['tyv'] = array(
+	'proofreadpage_namespace' => 'Арын',
+	'proofreadpage_image' => 'Чурумал',
+	'proofreadpage_nextpage' => 'Соонда арын',
+	'proofreadpage_prevpage' => 'Бурунгу арын',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|арын|арын}}',
+);
+
 /** Uyghur (Latin script) (Uyghurche‎)
  * @author Jose77
  */
