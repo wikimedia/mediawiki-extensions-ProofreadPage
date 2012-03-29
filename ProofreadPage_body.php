@@ -740,6 +740,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
 		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
 		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
+		$include = array_key_exists( 'include', $args ) ? $args['include'] : null;
+		$exclude = array_key_exists( 'exclude', $args ) ? $args['exclude'] : null;
+		$step = array_key_exists( 'step', $args ) ? $args['step'] : null;
 		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
 		$tosection = array_key_exists( 'tosection', $args ) ? $args['tosection'] : null;
 		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
@@ -766,8 +769,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		list( $links, $params, $attributes ) = self::parse_index( $index_title );
 
-		if( $from || $to ) {
+		if( $from || $to || $include ) {
 			$pages = array();
+
 			if( $links == null ) {
 				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
 				if ( !$imageTitle ) {
@@ -779,36 +783,75 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				}
 				$count = $image->pageCount();
 
-				if( !$from ) {
-					$from = 1;
+				if( !$step ) {
+					$step = 1;
 				}
-				if( !$to ) {
-					$to = $count;
-				}
-
-				if( !is_numeric( $from ) || !is_numeric( $to ) ) {
+				if( !is_numeric( $step ) || $step < 1 ) {
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
 				}
-				if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
-					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+
+				$pagenums = array();
+
+				//add page selected with $include in pagenums
+				if( $include ) {
+					$list = self::parse_num_list( $include );
+					if( $list  == null ) {
+						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+					}
+					$pagenums = $list;
 				}
-				if( $to - $from > 1000 ) {
+
+				//ad pages selected with form and to in pagenums
+				if( $from || $to ) {
+					if( !$from ) {
+						$from = 1;
+					}
+					if( !$to ) {
+						$to = $count;
+					}
+					if( !is_numeric( $from ) || !is_numeric( $to )  || !is_numeric( $step ) ) {
+						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
+					}
+					if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
+						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+					}
+
+					for( $i = $from; $i <= $to; $i++ ) {
+						$pagenums[$i] = $i;
+					}
+				}
+
+				//remove excluded pages form $pagenums
+				if( $exclude ) {
+					$excluded = self::parse_num_list( $exclude );
+					if( $excluded  == null ) {
+						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+					}
+					$pagenums = array_diff( $pagenums, $excluded );
+				}
+
+				if( count($pagenums)/$step > 1000 ) {
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
 				}
 
-				for( $i = $from; $i <= $to; $i++ ) {
-					list( $pagenum, $links, $mode ) = self::pageNumber( $i, $params );
-					$page = str_replace( ' ' , '_', "$index/" . $i );
-					if( $i == $from ) {
-						$from_page = $page;
-						$from_pagenum = $pagenum;
-					}
-					if( $i == $to ) {
-						$to_page = $page;
-						$to_pagenum = $pagenum;
-					}
-					$pages[] = array( $page, $pagenum );
+				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order. 
+				if( reset( $pagenums ) > $count ) {
+					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
 				}
+
+				//Create the list of pages to translude. the step system start with the smaller pagenum
+				$mod = reset( $pagenums ) % $step;
+				foreach( $pagenums as $num ) {
+					if( $step == 1 || $num % $step == $mod ) {
+						list( $pagenum, $links, $mode ) = self::pageNumber( $num, $params );
+						$page = str_replace( ' ' , '_', "$index/" . $num );
+						$pages[] = array($page, $pagenum);
+					}
+				}
+
+				list( $from_page, $from_pagenum ) = end( $pages );
+				list( $to_page, $to_pagenum ) = reset( $pages );
+
 			} else {
 				if( $from ) {
 					$adding = false;
@@ -972,6 +1015,35 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$out = "<div>\n$out\n</div>";
 		$out = $parser->recursiveTagParse( $out );
 		return $out;
+	}
+
+	/**
+	 * Parse a comma-separated list of pages. A dash indicates an interval of pages
+	 * example: 1-10,23,38
+	 * Return an array of pages, or null if the input does not comply to the syntax
+	 */
+	private static function parse_num_list($input) {
+		$input = str_replace(array(' ', '\t', '\n'), '', $input);
+		$list = explode( ',', $input );
+		$nums = array();
+		foreach( $list as $item ) {
+			if( is_numeric( $item ) ) {
+				$nums[$item] = $item;
+			} else {
+				$interval = explode( '-', $item );
+				if( count( $interval ) != 2
+					|| !is_numeric( $interval[0] )
+					|| !is_numeric( $interval[1] )
+					|| $interval[1] < $interval[0]
+				) {
+					return null;
+				}
+				for( $i = $interval[0]; $i <= $interval[1]; $i += 1 ) {
+					$nums[$i] = $i;
+				}
+			}
+		}
+		return $nums;
 	}
 
 	/**
@@ -1572,4 +1644,18 @@ $void_cell
 		return true;
 	}
 
+	/**
+	 * Add ProofreadPage preferences to the preferences menu
+	 */
+	public static function onGetPreferences( $user, &$preferences ) {
+ 
+		//Show header and footer fields when editing in the Page namespace
+		$preferences['proofreadpage-showheaders'] = array(
+			'type'           => 'toggle',
+			'label-message'  => 'proofreadpage-preferences-showheaders-label',
+			'section'        => 'editing/advancedediting',
+		);
+
+		return true;
+	}
 }
