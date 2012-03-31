@@ -179,7 +179,7 @@ class ProofreadPage {
 				$pagenr = intval( array_pop( $parts ) );
 			}
 			$count = $image->pageCount();
-			if ( $pagenr < 1 || $pagenr > $count || $count <= 1 ) {
+			if ( $pagenr < 1 || $pagenr > $count || $count < 1 ) {
 				return $err;
 			}
 			$name = $image->getTitle()->getText();
