@@ -440,9 +440,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			return true;
 		}
 		// abort if we are not an index page
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( !preg_match( "/^$index_namespace:(.*?)$/", $wgTitle->getPrefixedText(), $m ) ) {
-			#return true;
+		if ( $wgTitle->getNamespace() !== self::getIndexNamespaceId() ) {
+			return true;
 		}
 		self::getLinkColours( $page_ids, $colours );
 		return true;
