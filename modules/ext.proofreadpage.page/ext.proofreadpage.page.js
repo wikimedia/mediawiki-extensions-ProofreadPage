@@ -22,9 +22,11 @@ function pr_image_url( requested_width ) {
 	}
 }
 
-function pr_make_edit_area( container, text ) {
-	re = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
-	m = text.match( re );
+function pr_make_edit_area( container, textbox ) {
+	var text = textbox.value;
+
+	var re = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
+	var m = text.match( re );
 	if( m ) {
 		pageHeader = m[1];
 		pageBody   = m[2];
@@ -116,20 +118,24 @@ function pr_make_edit_area( container, text ) {
 		pageFooter = pageFooter.substr( 0, pageFooter.length - 6 );
 	}
 
-	container.innerHTML = '' +
-		'<div id="prp_header" style="">' +
-		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_header' ) ) + '</span>' +
-		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>\n' + escapeQuotesHTML( pageHeader ) + '</textarea><br />' +
-		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_body' ) ) + '</span></div>' +
-		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">\n' +
-			escapeQuotesHTML( pageBody ) + '</textarea>' +
-		'<div id="prp_footer" style="">' +
-		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_footer' ) ) + '</span><br />' +
-		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>\n' +
-		escapeQuotesHTML( pageFooter ) + '</textarea></div>';
+	var $header = jQuery( '<div id="prp_header" style=""></div>' ).append(
+		'<label for="wpHeaderTextbox">' + mw.html.escape( mediaWiki.msg( 'proofreadpage_header' ) ) + '</label>' +
+		'<textarea id="wpHeaderTextbox" name="wpHeaderTextbox" rows="2" cols="80" tabindex="1">\n' +
+		mw.html.escape( pageHeader ) + '</textarea><br />' + '<label for="wpTextbox1">' +
+		mw.html.escape( mediaWiki.msg( 'proofreadpage_body' ) ) + '</label>'
+	);
+
+	var $footer = jQuery( '<div id="prp_footer" style=""></div>' ).append( '<label for="wpFooterTextbox">' +
+		mw.html.escape( mediaWiki.msg( 'proofreadpage_footer' ) ) + '</label><br />' +
+		'<textarea id="wpFooterTextbox" name="wpFooterTextbox" rows="2" cols="80" tabindex="1">\n' +
+		mw.html.escape( pageFooter ) + '</textarea>'
+	);
+
+	textbox.value = pageBody;
+	textbox.style.height = ( self.DisplayHeight - 6 ) + 'px';
+	textbox.style.margin = '0px';
+
+	jQuery( container ).append( $header, textbox, $footer );
 }
 
 function pr_reset_size() {
@@ -614,6 +620,7 @@ function pr_fill_table() {
 	if( !pr_horiz ) {
 		// use a table only here
 		var t_table = document.createElement( 'table' );
+		t_table.style.cssText = 'width: 100%; border-collapse: collapse; border-spacing: 0; border: none';
 		var t_body = document.createElement( 'tbody' );
 		var cell_left  = document.createElement( 'td' );
 		var cell_right = document.createElement( 'td' );
@@ -621,7 +628,7 @@ function pr_fill_table() {
 
 		var t_row = document.createElement( 'tr' );
 		t_row.setAttribute( 'valign', 'top' );
-		cell_left.style.cssText = 'width:50%; padding-right:0.5em;vertical-align:top;';
+		cell_left.style.cssText = 'width:50%; padding-right:0.5em; vertical-align:top; padding-left: 0';
 		cell_right.setAttribute( 'rowspan', '3' );
 		cell_right.style.cssText = 'vertical-align:top;';
 		t_row.appendChild( cell_left );
@@ -720,7 +727,7 @@ function pr_setup() {
 		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
 
 		pr_container.innerHTML = '<img id="ProofReadImage" src="' +
-			escapeQuotesHTML( self.proofreadPageViewURL ) + '" width="' + img_width + '" />';
+			mw.html.escape( self.proofreadPageViewURL ) + '" width="' + img_width + '" />';
 		pr_zoom( 0 );
 	}
 
@@ -730,29 +737,33 @@ function pr_setup() {
 	pr_fill_table();
 
 	// insert the image
+	var text;
+
 	if( proofreadPageIsEdit ) {
-		var text = document.getElementById( 'wpTextbox1' );
+		text = document.getElementById( 'wpTextbox1' );
 	} else {
-		var text = document.getElementById( 'bodyContent' );
+		text = document.getElementById( 'bodyContent' );
 	}
+
 	if( !text ) {
 		return;
 	}
-	var f = text.parentNode;
+	var textParent = text.parentNode;
+	var textSibling = text.nextSibling;
+	text = textParent.removeChild( text );
 
 	if( proofreadPageIsEdit ) {
-		pr_make_edit_area( self.text_container, text.value );
-		f.insertBefore( table, text.nextSibling ); // Inserts table after text
-		f.removeChild( text );
+		pr_make_edit_area( self.text_container, text );
+		textParent.insertBefore( table, textSibling ); // Inserts table after text
 		if ( mw.user.options.get( 'proofreadpage-showheaders' ) ) {
 			pr_reset_size();
 		} else {
 			pr_toggle_visibility();
 		}
+
 	} else {
-		var new_text = f.removeChild( text );
-		self.text_container.appendChild( new_text );
-		f.appendChild( self.table );
+		self.text_container.appendChild( text );
+		textParent.insertBefore( table, textSibling );
 	}
 
 	// add buttons
@@ -833,18 +844,16 @@ function pr_setup() {
 		};
 
 		var $edit = $( '#wpTextbox1' );
-		if( mw.user.options.get('usebetatoolbar') ) {
-			mw.loader.using('ext.wikiEditor.toolbar', function() {
-				$edit.wikiEditor( 'addToToolbar', {
-					'sections': {
-						'proofreadpage-tools': {
-							'type': 'toolbar',
-							'label': mw.msg( 'proofreadpage-section-tools' )
-						}
+		if( mw.user.options.get('usebetatoolbar') && typeof $edit.wikiEditor === 'function' ) {
+			$edit.wikiEditor( 'addToToolbar', {
+				'sections': {
+					'proofreadpage-tools': {
+						'type': 'toolbar',
+						'label': mw.msg( 'proofreadpage-section-tools' )
 					}
-				} )
-				.wikiEditor( 'addToToolbar', tools);
-			} );
+				}
+			} )
+			.wikiEditor( 'addToToolbar', tools);
 		} else {
 			var toolbar = document.getElementById( 'toolbar' );
 
@@ -866,14 +875,12 @@ function pr_setup() {
 			];
 			$.each(bits, function(i, button) {
 				var image = document.createElement( 'img' );
-				image.width = 23;
-				image.height = 22;
+				image.style.cssText = 'width: 23px; height: 23px; ';
 				image.className = 'mw-toolbar-editbutton';
 				image.src = button.icon;
 				image.border = 0;
 				image.alt = button.label;
 				image.title = button.label;
-				image.style.cursor = 'pointer';
 				image.onclick = button.action.execute;
 				toolbar.appendChild( image );
 			});
@@ -909,11 +916,6 @@ function pr_init() {
 		$( 'div.pagetext' ).addClass( self.proofreadPageCss );
 	}
 }
-
-jQuery( pr_init );
-jQuery( pr_init_tabs );
-jQuery( pr_initzoom );
-
 
 /* Quality buttons */
 self.pr_add_quality = function( form, value ) {
@@ -992,4 +994,21 @@ function pr_add_quality_buttons() {
 	}
 }
 
-jQuery( pr_add_quality_buttons );
+jQuery( pr_init_tabs );
+
+function pr_startup() {
+	jQuery( function() {
+		pr_init();
+		pr_initzoom();
+		pr_add_quality_buttons();
+	} );
+}
+
+if ( mw.user.options.get( 'usebetatoolbar' ) && jQuery.inArray( 'ext.wikiEditor.toolbar', mw.loader.getModuleNames() ) > -1 ) {
+	mw.loader.using( 'ext.wikiEditor.toolbar', function() {
+		// Load the whole thing after the toolbar has been constructed
+		pr_startup();
+	} );
+} else {
+	pr_startup();
+}
