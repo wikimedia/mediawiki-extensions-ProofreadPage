@@ -8,23 +8,17 @@ function pr_init_tabs() {
 }
 
 function pr_image_url( requested_width ) {
-	if( self.proofreadPageExternalURL ) {
-		self.DisplayWidth = requested_width;
-		self.DisplayHeight = '';
-		return self.proofreadPageExternalURL;
+	// enforce quantization: width must be multiple of 100px
+	var width = 100 * Math.round( requested_width / 100 );
+	// compare to the width of the image
+	if( width < proofreadPageWidth ) {
+		self.DisplayWidth = width;
+		self.DisplayHeight = width * proofreadPageHeight / proofreadPageWidth;
+		return proofreadPageThumbURL.replace( '##WIDTH##', '' + width );
 	} else {
-		// enforce quantization: width must be multiple of 100px
-		var width = 100 * Math.round( requested_width / 100 );
-		// compare to the width of the image
-		if( width < proofreadPageWidth ) {
-			self.DisplayWidth = width;
-			self.DisplayHeight = width * proofreadPageHeight / proofreadPageWidth;
-			return proofreadPageThumbURL.replace( '##WIDTH##', '' + width );
-		} else {
-			self.DisplayWidth = proofreadPageWidth;
-			self.DisplayHeight = proofreadPageHeight;
-			return proofreadPageURL;
-		}
+		self.DisplayWidth = proofreadPageWidth;
+		self.DisplayHeight = proofreadPageHeight;
+		return proofreadPageURL;
 	}
 }
 
@@ -900,31 +894,6 @@ function pr_init() {
 		return;
 	}
 
-	/* check if external URL is provided */
-	if( !self.proofreadPageThumbURL ) {
-		var text = document.getElementById( 'wpTextbox1' );
-		if ( text ) {
-			var proofreadPageIsEdit = true;
-			re = /<span class="hiddenStructure" id="pageURL">\[http:\/\/(.*?)\]<\/span>/;
-			m = re.exec( text.value );
-			if( m ) {
-				self.proofreadPageExternalURL = 'http://' + m[1];
-			}
-		} else {
-			var proofreadPageIsEdit = false;
-			text = document.getElementById( 'bodyContent' );
-			try {
-				var a = document.getElementById( 'pageURL' );
-				var b = a.firstChild;
-				self.proofreadPageExternalURL = b.getAttribute( 'href' );
-			} catch( err ) {
-			};
-		}
-		// set to dummy values, not used
-		self.proofreadPageWidth = 400;
-		self.proofreadPageHeight = 400;
-	}
-
 	if( !self.proofreadPageThumbURL ) {
 		return;
 	}
@@ -953,7 +922,7 @@ jQuery( pr_initzoom );
 /* Quality buttons */
 self.pr_add_quality = function( form, value ) {
 	self.proofreadpage_quality = value;
-	self.proofreadpage_username = proofreadPageUserName;
+	self.proofreadpage_username = mw.config.get( 'wgUserName' );
 	var text = '';
 	switch( value ) {
 		case 0:
@@ -987,6 +956,10 @@ function pr_add_quality_buttons() {
 	var f = document.createElement( 'span' );
 	ig.parentNode.insertBefore( f, ig.nextSibling.nextSibling.nextSibling );
 
+	if ( self.proofreadpage_username == null ) {
+		self.proofreadpage_username = '';
+	}
+
 	if( !proofreadPageAddButtons ) {
 		f.innerHTML =
 			' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">' +
@@ -1003,7 +976,7 @@ function pr_add_quality_buttons() {
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_page_status' ) );
 
-	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
+	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != mw.config.get( 'wgUserName' ) ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';
 		document.editform.quality[4].disabled = true;
 	}
