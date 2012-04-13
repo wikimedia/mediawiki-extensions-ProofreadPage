@@ -733,8 +733,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return string
 	 */
 	public static function renderPages( $input, $args, $parser ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-
 		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
 		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
 		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
@@ -744,19 +742,26 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
 		$tosection = array_key_exists( 'tosection', $args ) ? $args['tosection'] : null;
 		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
+		$onlysection = array_key_exists( 'onlysection', $args ) ? $args['onlysection'] : null;
 
 		// abort if the tag is on an index page
-		if ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText() ) ) {
+		if ( $parser->getTitle()->getNamespace() === self::getIndexNamespaceId() ) {
 			return '';
 		}
 		// abort too if the tag is in the page namespace
-		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText() ) ) {
+		if ( $parser->getTitle()->getNamespace() === self::getPageNamespaceId() ) {
 			return '';
 		}
+		// ignore fromsection and tosection arguments if onlysection is specified
+		if ( $onlysection !== null ) {
+			$fromsection = null;
+			$tosection = null;
+		}
+
 		if( !$index ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
 		}
-		$index_title = Title::newFromText( "$index_namespace:$index" );
+		$index_title = Title::makeTitleSafe( self::getIndexNamespaceId(), $index );
 		if( !$index_title || !$index_title->exists() ) {
 			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
 		}
@@ -886,7 +891,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					list( $page, $pagenum ) = $item;
 					$pp[] = $page;
 				}
-				$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $page_namespace ) ) );
 				$dbr = wfGetDB( DB_SLAVE );
 				$cat = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
 				$res = $dbr->select(
@@ -895,7 +899,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 						    array(
 							  'page_title' => $pp,
 							  'cl_to' => $cat,
-							  'page_namespace' => $page_ns_index
+							  'page_namespace' => self::getPageNamespaceId()
 							  ),
 						    __METHOD__,
 						    null,
@@ -917,7 +921,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				} else {
 					$is_q0 = false;
 				}
-				$text = "$page_namespace:$page";
+				$text = Title::makeTitle( self::getPageNamespaceId(), $page )->getPrefixedText();
 				if( !$is_q0 ) {
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text . "|num=$pagenum}}</span>";
 				}
@@ -930,6 +934,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts .'}}';
 				} elseif( $page == $to_page && $tosection !== null ) {
 					$out .= '{{#lst:' . $text . '||' . $tosection . '}}';
+				} elseif ( $onlysection !== null ) {
+					$out .= '{{#lst:' . $text . '|' . $onlysection . '}}';
 				} else {
 					$out .= '{{:' . $text . '}}';
 				}
@@ -945,7 +951,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			} else {
 				$firstpage = $links[1][0];
 			}
-			$firstpage_title = Title::newFromText( "$page_namespace:$firstpage" );
+			$firstpage_title = Title::makeTitleSafe( self::getPageNamespaceId(), $firstpage );
 			if ( $firstpage_title ) {
 				$parser->getOutput()->addTemplate(
 					$firstpage_title,
