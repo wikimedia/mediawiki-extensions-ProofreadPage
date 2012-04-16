@@ -839,24 +839,37 @@ $messages['bg'] = array(
  * @author Bellayet
  */
 $messages['bn'] = array(
+	'indexpages' => 'নির্ঘণ্ট পাতার তালিকা',
+	'pageswithoutscans' => 'স্ক্যান ছাড়া পাতাসমূহ',
+	'proofreadpage_desc' => 'মূল স্ক্যানের সাথে লেখার সহজ তুলনা অনুমোদন করো',
 	'proofreadpage_namespace' => 'পাতা',
-	'proofreadpage_index_namespace' => 'সূচী',
+	'proofreadpage_index_namespace' => 'নির্ঘন্ট',
 	'proofreadpage_image' => 'চিত্র',
-	'proofreadpage_index' => 'সূচী',
-	'proofreadpage_badpage' => 'ভুল বিন্যাস',
+	'proofreadpage_index' => 'নির্ঘন্ট',
+	'proofreadpage_nosuch_index' => 'ত্রুটি: এমন নির্ঘণ্ট নাই',
+	'proofreadpage_nosuch_file' => 'ত্রুটি: এমন ফাইল নাই',
+	'proofreadpage_badpage' => 'ভুল ফরমেট',
+	'proofreadpage_indexdupe' => 'সদৃশ লিঙ্ক',
 	'proofreadpage_nologin' => 'লগইন করা হয়নি',
-	'proofreadpage_notallowed' => 'পরিবর্তনের অনুমতি নেই',
+	'proofreadpage_notallowed' => 'পরিবর্তনের অনুমতি নাই',
+	'proofreadpage_notallowedtext' => 'আপনার এই পাতার প্রুফরিডিং অবস্থা পরিবর্তনের অনুমতি নাই।',
 	'proofreadpage_nextpage' => 'পরবর্তী পাতা',
 	'proofreadpage_prevpage' => 'পূর্ববর্তী পাতা',
 	'proofreadpage_header' => 'শিরোনাম (noinclude):',
 	'proofreadpage_body' => 'পাতার প্রধান অংশ (to be transcluded):',
 	'proofreadpage_footer' => 'পাদটীকা (noinclude):',
+	'proofreadpage_quality0_category' => 'লেখাবিহীন',
 	'proofreadpage_quality1_category' => 'মুদ্রণ সংশোধন করা হয়নি',
 	'proofreadpage_quality2_category' => 'সমস্যাসঙ্কুল',
 	'proofreadpage_quality3_category' => 'মুদ্রণ সংশোধন',
 	'proofreadpage_quality4_category' => 'বৈধকরণ',
+	'proofreadpage_quality0_message' => 'এই পাতার প্রুফরিডের প্রয়োজন নাই',
+	'proofreadpage_quality1_message' => 'এই পাতার প্রুফরিড হয়নি',
+	'proofreadpage_quality2_message' => 'এই পাতার প্রুফরিডের সময় কোন সমস্যা ছিল',
+	'proofreadpage_quality3_message' => 'এই পাতার প্রুফরিড সম্পন্ন হয়েছে',
+	'proofreadpage_quality4_message' => 'এই পাতা বৈধ হয়েছে',
 	'proofreadpage_index_listofpages' => 'পাতাসমূহের তালিকা',
-	'proofreadpage_image_message' => 'সূচী পাতায় লিঙ্ক করো',
+	'proofreadpage_image_message' => 'নির্ঘণ্ট পাতায় লিঙ্ক করো',
 	'proofreadpage_page_status' => 'পাতার অবস্থা',
 	'proofreadpage_js_attributes' => 'লেখক শিরোনাম বছর প্রকাশক',
 	'proofreadpage_index_attributes' => 'লেখক
@@ -867,8 +880,18 @@ $messages['bn'] = array(
 চিত্র|প্রচ্ছদ
 পাতা||20
 মন্তব্য||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|পাতাট|পাতাগুলো}}',
+	'proofreadpage_specialpage_legend' => 'নির্ঘণ্ট পাতাসমূহ অনুসন্ধান',
 	'proofreadpage_source' => 'উৎস',
+	'proofreadpage-section-tools' => 'প্রুফরিড টুলসমূহ',
+	'proofreadpage-group-zoom' => 'বড় করো',
 	'proofreadpage-group-other' => 'অন্য',
+	'proofreadpage-button-toggle-visibility-label' => 'এই পাতার শিরোনাম এবং পাদটীকা দেখাও/লুখাও',
+	'proofreadpage-button-zoom-out-label' => 'আরও ছোট',
+	'proofreadpage-button-reset-zoom-label' => 'মূল আকার',
+	'proofreadpage-button-zoom-in-label' => 'আরও বড়',
+	'proofreadpage-button-toggle-layout-label' => 'উল্লম্ব/অনুভূমিক বিন্যাস',
+	'proofreadpage-preferences-showheaders-label' => 'পাতা নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও',
 );
 
 /** Breton (Brezhoneg)
@@ -4336,6 +4359,14 @@ $messages['pdc'] = array(
 	'proofreadpage_index_listofpages' => 'Lischt vun Bledder',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|Blatt|Bledder}}',
 	'proofreadpage-group-other' => 'Anneres',
+);
+
+/** Pälzisch (Pälzisch)
+ * @author Manuae
+ */
+$messages['pfl'] = array(
+	'proofreadpage_namespace' => 'Said',
+	'proofreadpage_nextpage' => 'Negschd Said',
 );
 
 /** Polish (Polski)
