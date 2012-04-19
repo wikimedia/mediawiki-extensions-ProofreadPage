@@ -4438,7 +4438,7 @@ Uwagi||10',
 	'proofreadpage-button-reset-zoom-label' => 'Powiększenie domyślne',
 	'proofreadpage-button-zoom-in-label' => 'Powiększ',
 	'proofreadpage-button-toggle-layout-label' => 'Zmień układ na poziomy lub pionowy',
-	'proofreadpage-preferences-showheaders-label' => 'Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw strony',
+	'proofreadpage-preferences-showheaders-label' => 'Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw Strona',
 );
 
 /** Piedmontese (Piemontèis)
