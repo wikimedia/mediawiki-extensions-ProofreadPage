@@ -799,7 +799,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					$pagenums = $list;
 				}
 
-				//ad pages selected with form and to in pagenums
+				//ad pages selected with from and to in pagenums
 				if( $from || $to ) {
 					if( !$from ) {
 						$from = 1;
@@ -847,8 +847,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					}
 				}
 
-				list( $from_page, $from_pagenum ) = end( $pages );
-				list( $to_page, $to_pagenum ) = reset( $pages );
+				list( $from_page, $from_pagenum ) = reset( $pages );
+				list( $to_page, $to_pagenum ) = end( $pages );
 
 			} else {
 				if( $from ) {
