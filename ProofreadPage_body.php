@@ -421,6 +421,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			'proofreadPageHeader' => $header,
 			'proofreadPageFooter' => $footer,
 			'proofreadPageAddButtons' => $wgUser->isAllowed( 'pagequality' ),
+			'proofreadPageUserName' => $wgUser->getName(),
 			'proofreadPageCss' => $css,
 		);
 		$out->addInlineScript( ResourceLoader::makeConfigSetScript( $jsVars ) );
