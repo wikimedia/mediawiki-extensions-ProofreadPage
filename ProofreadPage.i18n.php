@@ -544,6 +544,7 @@ $messages['az'] = array(
 
 /** Bashkir (Башҡортса)
  * @author Assele
+ * @author Comp1089
  * @author Ebe123
  */
 $messages['ba'] = array(
@@ -601,6 +602,7 @@ $messages['ba'] = array(
 	'proofreadpage_source' => 'Сығанаҡ',
 	'proofreadpage_source_message' => 'Был текстты булдырыу өсөн сканланған материалдар ҡулланылған',
 	'right-pagequality' => 'Биттең сифаты билдәһен үҙгәртеү',
+	'proofreadpage-button-reset-zoom-label' => 'Сығанаҡ ҙурлыҡ',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
@@ -5483,6 +5485,7 @@ Catetan||10',
  * @author Najami
  * @author Per
  * @author Rotsee
+ * @author Thurs
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -5548,6 +5551,7 @@ Anmärkningar||10',
 	'proofreadpage-button-reset-zoom-label' => 'Återställ zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zooma in',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikal/horisontell uppsättning',
+	'proofreadpage-preferences-showheaders-label' => 'Visa fälten för sidhuvud och sidfot vid redigering i sidnamnrymden',
 );
 
 /** Swahili (Kiswahili)
