@@ -946,15 +946,8 @@ self.pr_add_quality = function( form, value ) {
 };
 
 function pr_add_quality_buttons() {
-	var ig = document.getElementById( 'wpWatchthis' );
-	if( !ig ) {
-		ig = document.getElementById( 'wpSummary' );
-	}
-	if( !ig ) {
-		return;
-	}
 	var f = document.createElement( 'span' );
-	ig.parentNode.insertBefore( f, ig.nextSibling.nextSibling.nextSibling );
+	jQuery( '.editCheckboxes' ).append( f );
 
 	if ( self.proofreadpage_username == null ) {
 		self.proofreadpage_username = '';
