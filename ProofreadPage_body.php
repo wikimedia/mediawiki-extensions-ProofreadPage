@@ -584,6 +584,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	private static function pageNumber( $i, $args ) {
+		global $wgContLang;
 		$mode = 'normal'; // default
 		$offset = 0;
 		$links = true;
@@ -629,10 +630,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$view = strtolower( self::toRoman( $view ) );
 			break;
 		case 'normal':
-			$view = '' . $view;
-			break;
 		case 'empty':
-			$view = '' . $view;
+			$view = '' . $wgContLang->formatNum( $view, true );
 			break;
 		default:
 			$view = $mode;
@@ -704,11 +703,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				$view = '&#160;' . $view;
 			}
 
-			$n = strlen( $count ) - strlen( $view );
+			$n = strlen( $count ) - mb_strlen( $view );
 			if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
+				global $wgContLang;
 				$txt = '<span style="visibility:hidden;">';
+				$pad = $wgContLang->formatNum( 0, true );
 				for ( $j = 0; $j < $n; $j++ ) {
-					$txt = $txt . '0';
+					$txt = $txt . $pad;
 				}
 				$view = $txt . '</span>' . $view;
 			}
