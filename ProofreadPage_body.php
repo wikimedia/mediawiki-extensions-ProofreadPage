@@ -734,6 +734,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return string
 	 */
 	public static function renderPages( $input, $args, $parser ) {
+		// abort if this is nested <pages> call
+		if ( isset( $parser->proofreadRenderingPages ) && $parser->proofreadRenderingPages ) {
+			return '';
+		}
+
 		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
 		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
 		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
@@ -1018,7 +1023,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		// wrap the output in a div, to prevent the parser from inserting pararaphs
 		$out = "<div>\n$out\n</div>";
+		$parser->proofreadRenderingPages = true;
 		$out = $parser->recursiveTagParse( $out );
+		$parser->proofreadRenderingPages = false;
 		return $out;
 	}
 
