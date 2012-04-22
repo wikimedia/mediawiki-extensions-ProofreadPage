@@ -832,7 +832,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
 				}
 
-				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order. 
+				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order.
 				if( reset( $pagenums ) > $count ) {
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
 				}
@@ -1646,7 +1646,7 @@ $void_cell
 	 * Add ProofreadPage preferences to the preferences menu
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
- 
+
 		//Show header and footer fields when editing in the Page namespace
 		$preferences['proofreadpage-showheaders'] = array(
 			'type'           => 'toggle',

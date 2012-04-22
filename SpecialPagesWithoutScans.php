@@ -73,11 +73,11 @@ class PagesWithoutScans extends QueryPage {
 		}
 		return $linkBatch->constructSet( 'tl', $dbr );
 	}
-	
+
 	function getQueryInfo() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $this->page_namespace ) ) );
-		
+
 		// Construct subqueries
 		$pagesWithScansSubquery = $dbr->selectSQLText(
 			array( 'templatelinks', 'page' ),
@@ -88,7 +88,7 @@ class PagesWithoutScans extends QueryPage {
 				'page_namespace' => NS_MAIN
 			)
 		);
-		
+
 		// Exclude disambiguation pages too
 		$dt = $this->disambiguation_templates( $dbr );
 		$disambigPagesSubquery = $dbr->selectSQLText(
@@ -100,7 +100,7 @@ class PagesWithoutScans extends QueryPage {
 				$dt
 			)
 		);
-		
+
 		return array(
 			'tables' => 'page',
 			'fields' => array(
@@ -114,7 +114,7 @@ class PagesWithoutScans extends QueryPage {
 				"page_id NOT IN ($pagesWithScansSubquery)",
 				"page_id NOT IN ($disambigPagesSubquery)" ),
 			'options' => array( 'USE INDEX' => 'page_len' )
-		);	
+		);
 	}
 
 	function sortDescending() {
@@ -145,4 +145,3 @@ class PagesWithoutScans extends QueryPage {
 				: "<s>({$hlink}) {$dm}{$plink} {$dm}[{$size}]</s>";
 	}
 }
-

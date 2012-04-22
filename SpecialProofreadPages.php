@@ -6,7 +6,7 @@
 
 class ProofreadPages extends QueryPage {
 	protected $index_namespace, $searchTerm;
-	
+
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
 		$this->index_namespace = wfMsgForContent( 'proofreadpage_index_namespace' );
@@ -84,7 +84,7 @@ class ProofreadPages extends QueryPage {
 	function linkParameters() {
 		return array( 'key' => $this->searchTerm );
 	}
-	
+
 	public function getQueryInfo() {
 		$conds = array();
 		if ( $this->searchTerm ) {
