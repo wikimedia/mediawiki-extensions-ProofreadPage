@@ -3021,6 +3021,7 @@ Note||10',
  * @author JtFuruhata
  * @author Likibp
  * @author Schu
+ * @author Shirayuki
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -3034,7 +3035,7 @@ $messages['ja'] = array(
 	'proofreadpage_index_expected' => 'エラー: 書誌情報を入力してください',
 	'proofreadpage_nosuch_index' => 'エラー: そのような書誌情報はありません',
 	'proofreadpage_nosuch_file' => 'エラー: そのようなファイルはありません',
-	'proofreadpage_badpage' => '不正なフォーマット',
+	'proofreadpage_badpage' => '間違ったフォーマット',
 	'proofreadpage_badpagetext' => '保存しようとしたページのフォーマットが正しくありません。',
 	'proofreadpage_indexdupe' => '重複したリンク',
 	'proofreadpage_indexdupetext' => 'ページ上に複数の書誌情報ページを載せることはできません。',
@@ -4199,6 +4200,7 @@ Opmerkingen||10",
 	'proofreadpage-button-reset-zoom-label' => 'Zoomniveau herinitialiseren',
 	'proofreadpage-button-zoom-in-label' => 'Inzoomen',
 	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale lay-out',
+	'proofreadpage-preferences-showheaders-label' => 'Kop- en voettekst velden weergeven als in de paginanaamruimte wordt bewerkt',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
