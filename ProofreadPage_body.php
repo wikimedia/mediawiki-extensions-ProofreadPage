@@ -389,20 +389,19 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		list( $index_title, $prev_title, $next_title, $header, $footer, $css, $edit_width ) = self::navigation( $out->getTitle() );
 
-		$sk = $wgUser->getSkin();
 		$path = $wgExtensionAssetsPath . '/ProofreadPage';
 
-		$next_link = $next_title ? $sk->link( $next_title,
+		$next_link = $next_title ? Linker::link( $next_title,
 			Html::element( 'img', array( 'src' => $path . '/rightarrow.png',
 				'alt' => wfMsg( 'proofreadpage_nextpage' ), 'width' => 15, 'height' => 15 ) ),
 			array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : '';
 
-		$prev_link = $prev_title ? $sk->link( $prev_title,
+		$prev_link = $prev_title ? Linker::link( $prev_title,
 			Html::element( 'img', array( 'src' => $path . '/leftarrow.png',
 				'alt' =>  wfMsg( 'proofreadpage_prevpage' ), 'width' => 15, 'height' => 15 ) ),
 			array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
 
-		$index_link = $index_title ? $sk->link( $index_title,
+		$index_link = $index_title ? Linker::link( $index_title,
 			Html::element( 'img', array(	'src' => $path . '/uparrow.png',
 				'alt' => wfMsg( 'proofreadpage_index' ), 'width' => 15, 'height' => 15 ) ),
 			array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : '';
@@ -1509,8 +1508,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @param $out Object: OutputPage object
 	 */
 	private static function prepareArticle( $out ) {
-		global $wgUser;
-
 		$id = $out->getTitle()->mArticleID;
 		if( $id == -1 ) {
 			return true;
@@ -1614,9 +1611,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		if( $indextitle ) {
-			$sk = $wgUser->getSkin();
 			$nt = Title::makeTitleSafe( $index_ns_index, $indextitle );
-			$indexlink = $sk->link( $nt, wfMsg( 'proofreadpage_source' ),
+			$indexlink = Linker::link( $nt, wfMsg( 'proofreadpage_source' ),
 						array( 'title' => wfMsg( 'proofreadpage_source_message' ) ) );
 			$out->addInlineScript( ResourceLoader::makeConfigSetScript( array( 'proofreadpage_source_href' => $indexlink ) ) );
 			$out->addModules( 'ext.proofreadpage.article' );
