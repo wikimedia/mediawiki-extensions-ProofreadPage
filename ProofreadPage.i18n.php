@@ -874,14 +874,28 @@ $messages['bn'] = array(
 	'proofreadpage_image_message' => 'নির্ঘণ্ট পাতায় লিঙ্ক করো',
 	'proofreadpage_page_status' => 'পাতার অবস্থা',
 	'proofreadpage_js_attributes' => 'লেখক শিরোনাম বছর প্রকাশক',
-	'proofreadpage_index_attributes' => 'লেখক
+	'proofreadpage_index_attributes' => 'ধরন
 শিরোনাম
-বছর|প্রকাশনার বছর
+খণ্ড
+লেখক
+অনুবাদক
+সম্পাদক
+অলঙ্করণ
+স্কুল
 প্রকাশক
-উৎস
+ঠিকানা|স্থান
+বছর|প্রকাশের বছর
+Key|Sort key
+উৎস|স্ক্যান
 চিত্র|প্রচ্ছদ
-পাতা||20
-মন্তব্য||10',
+অগ্রগতি
+পাতাসমূহ||15
+খণ্ডসমূহ||5
+মন্তব্য|সূচী|15
+প্রস্থ|সম্পাদনা মোডে স্ক্যান রেজুলুশন
+সিএসএস(Css)
+হেডার
+পাদটীকা',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|পাতাট|পাতাগুলো}}',
 	'proofreadpage_specialpage_legend' => 'নির্ঘণ্ট পাতাসমূহ অনুসন্ধান',
 	'proofreadpage_source' => 'উৎস',
