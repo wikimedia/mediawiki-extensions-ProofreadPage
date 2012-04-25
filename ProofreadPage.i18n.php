@@ -3796,7 +3796,7 @@ $messages['ml'] = array(
 	'proofreadpage_indexdupetext' => 'ഒരു സൂചികാ താളിൽ ഒന്നിലധികം പ്രാവശ്യം ഒരു താൾ തന്നെ ചേർക്കാൻ കഴിയില്ല.',
 	'proofreadpage_nologin' => 'ലോഗിൻ ചെയ്തിട്ടില്ല',
 	'proofreadpage_nologintext' => 'താളുകളുടെ തെറ്റുതിരുത്തൽ വായനയുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്താൻ താങ്കൾ [[Special:UserLogin|പ്രവേശിച്ചിരിക്കേണ്ടതാണ്]].',
-	'proofreadpage_notallowed' => 'മാറ്റങ്ങൾ അനുവദനീയമല്ല',
+	'proofreadpage_notallowed' => 'മാറ്റം വരുത്താൻ അനുവാദമില്ല',
 	'proofreadpage_notallowedtext' => 'ഈ താളിന്റെ തെറ്റുതിരുത്തൽ വായനയുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്താൻ താങ്കൾക്ക് അനുമതിയില്ല.',
 	'proofreadpage_number_expected' => 'പിഴവ്: സംഖ്യയായുള്ള മൂല്യമാണ് പ്രതീക്ഷിക്കുന്നത്',
 	'proofreadpage_interval_too_large' => 'പിഴവ്: വളരെ വലിയ ഇടവേള',
@@ -3842,6 +3842,7 @@ $messages['ml'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'വലിപ്പം പുനഃക്രമീകരിക്കുക',
 	'proofreadpage-button-zoom-in-label' => 'വലുതാക്കുക',
 	'proofreadpage-button-toggle-layout-label' => 'തിരശ്ചീന/ലംബ രൂപകല്പന',
+	'proofreadpage-preferences-showheaders-label' => 'താൾ നാമമേഖല തിരുത്തുമ്പോൾ തലക്കുറിപ്പ്, അടിക്കുറിപ്പ് മണ്ഡലങ്ങൾ പ്രദർശിപ്പിക്കുക',
 );
 
 /** Mongolian (Монгол)
