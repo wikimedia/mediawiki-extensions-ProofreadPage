@@ -922,7 +922,7 @@ jQuery( pr_initzoom );
 /* Quality buttons */
 self.pr_add_quality = function( form, value ) {
 	self.proofreadpage_quality = value;
-	self.proofreadpage_username = mw.config.get( 'wgUserName' );
+	self.proofreadpage_username = proofreadPageUserName;
 	var text = '';
 	switch( value ) {
 		case 0:
@@ -976,7 +976,7 @@ function pr_add_quality_buttons() {
 +'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
 	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_page_status' ) );
 
-	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != mw.config.get( 'wgUserName' ) ) ) ) ) {
+	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
 		document.editform.quality[4].parentNode.style.cssText = 'display:none';
 		document.editform.quality[4].disabled = true;
 	}
