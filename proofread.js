@@ -946,6 +946,10 @@ self.pr_add_quality = function( form, value ) {
 };
 
 function pr_add_quality_buttons() {
+	if ( !mw.config.get( 'proofreadPageIsEdit' ) ) {
+		return;
+	}
+
 	var f = document.createElement( 'span' );
 	jQuery( '.editCheckboxes' ).append( f );
 
