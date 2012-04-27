@@ -641,9 +641,7 @@ function pr_fill_table() {
 		self.table.appendChild( self.text_container );
 		form = document.getElementById( 'editform' );
 		tb = document.getElementById( 'toolbar' );
-		if( tb ) {
-			tb.parentNode.insertBefore( pr_container_parent, tb );
-		} else if( form ) {
+		if( form ) {
 			form.parentNode.insertBefore( pr_container_parent, form );
 		} else {
 			self.table.insertBefore( pr_container_parent, self.table.firstChild );
