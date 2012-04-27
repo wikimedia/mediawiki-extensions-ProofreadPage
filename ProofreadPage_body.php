@@ -1221,6 +1221,33 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	/**
+	 * Remove index data from pr_index table.
+	 * @param $pageId Integer: page identifier
+	 */
+	private static function removeIndexData( $pageId ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->delete( 'pr_index', array( 'pr_page_id' => $pageId ), __METHOD__ );
+		$dbw->commit();
+	}
+
+	/**
+	 * Updates index data for an index referencing the specified page.
+	 * @param $title Title: page title object
+	 * @param $deleted Boolean: indicates whether the page was deleted
+	 */
+	private static function updateIndexOfPage( $title, $deleted = false ) {
+		self::load_index( $title );
+		if ( $title->pr_index_title ) {
+			$index_title = Title::newFromText( $title->pr_index_title );
+			$index_title->invalidateCache();
+			$index = new Article( $index_title );
+			if ( $index ) {
+				self::update_pr_index( $index, $deleted ? $title->getDBKey() : null );
+			}
+		}
+	}
+
+	/**
 	 * if I delete a page, I need to update the index table
 	 * if I delete an index page too...
 	 *
@@ -1228,29 +1255,31 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return Boolean: true
 	 */
 	public static function onArticleDelete( $article ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$title = $article->getTitle();
 
-		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
-			$id = $article->getID();
-			$dbw = wfGetDB( DB_MASTER );
-			$pr_index = $dbw->tableName( 'pr_index' );
-			$dbw->query( "DELETE FROM $pr_index WHERE pr_page_id=$id", __METHOD__ );
-			$dbw->commit();
-			return true;
+		// Process Index removal.
+		if ( $title->getNamespace() === self::getIndexNamespaceId() ) {
+			self::removeIndexData( $article->getId() );
+
+		// Process Page removal.
+		} elseif ( $title->getNamespace() === self::getPageNamespaceId() ) {
+			self::updateIndexOfPage( $title, true );
 		}
 
-		if ( preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
-			self::load_index( $title );
-			if( $title->pr_index_title ) {
-				$index_title = Title::newFromText( $title->pr_index_title );
-				$index_title->invalidateCache();
-				$index = new Article( $index_title );
-				if( $index ) {
-					self::update_pr_index( $index, $title->getDBKey() );
-				}
+		return true;
+	}
+
+	public static function onArticleUndelete( $title, $create ) {
+		// Process Index restoration.
+		if ( $title->getNamespace() === self::getIndexNamespaceId() ) {
+			$index = new Article( $title );
+			if ( $index ) {
+				self::update_pr_index( $index );
 			}
-			return true;
+
+		// Process Page restoration.
+		} elseif ( $title->getNamespace() === self::getPageNamespaceId() ) {
+			self::updateIndexOfPage( $title );
 		}
 
 		return true;
@@ -1375,31 +1404,33 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	public static function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( preg_match( "/^$page_namespace:(.*)$/", $ot->getPrefixedText() ) ) {
-			self::load_index( $ot );
-			if( $ot->pr_index_title ) {
-				$index_title = Title::newFromText( $ot->pr_index_title );
-				$index_title->invalidateCache();
-				$index = new Article( $index_title );
-				if( $index ) {
-					self::update_pr_index( $index );
-				}
+		if ( $ot->getNamespace() === self::getPageNamespaceId() ) {
+			self::updateIndexOfPage( $ot );
+		} elseif ( $ot->getNamespace() === self::getIndexNamespaceId()
+			  && $nt->getNamespace() !== self::getIndexNamespaceId() ) {
+			// The page is moved out of the Index namespace.
+			// Remove all index data associated with that page.
+
+			// $nt is used here on purpose, as we need to get the page id.
+			// There is no page under the old title or it is a redirect.
+			$article = new Article( $nt );
+			if( $article ) {
+				self::removeIndexData( $article->getId() );
 			}
-			return true;
 		}
 
-		if ( preg_match( "/^$page_namespace:(.*)$/", $nt->getPrefixedText() ) ) {
+		if ( $nt->getNamespace() === self::getPageNamespaceId() ) {
 			self::load_index( $nt );
-			if( $nt->pr_index_title && ( $nt->pr_index_title != $ot->pr_index_title ) ) {
-				$index_title = Title::newFromText( $nt->pr_index_title );
-				$index_title->invalidateCache();
-				$index = new Article( $index_title );
-				if( $index ) {
-					self::update_pr_index( $index );
-				}
+			if( $nt->pr_index_title !== null
+			   && ( !isset( $ot->pr_index_title ) || ( $nt->pr_index_title != $ot->pr_index_title ) ) ) {
+				self::updateIndexOfPage( $nt );
 			}
-			return true;
+		} elseif ( $nt->getNamespace() === self::getIndexNamespaceId() ) {
+			// Update index data.
+			$article = new Article( $nt );
+			if( $article ) {
+				self::update_pr_index( $article );
+			}
 		}
 		return true;
 	}
