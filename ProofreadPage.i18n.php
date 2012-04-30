@@ -4557,7 +4557,7 @@ $messages['ps'] = array(
 انځور|د پښتۍ انځور
 مخونه||20
 تبصرې||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|مخ|مخونه}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|مخ|مخونه}}',
 	'proofreadpage_specialpage_legend' => 'ليکلړ مخونه پلټل',
 	'proofreadpage_source' => 'سرچينه',
 	'proofreadpage-group-other' => 'بل',
