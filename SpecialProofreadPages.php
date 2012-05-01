@@ -5,7 +5,7 @@
  */
 
 class ProofreadPages extends QueryPage {
-	protected $index_namespace, $searchTerm;
+	protected $index_namespace, $searchTerm, $searchList, $suppressSqlOffset;
 
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
@@ -13,17 +13,18 @@ class ProofreadPages extends QueryPage {
 	}
 
 	public function execute( $parameters ) {
-		global $wgOut, $wgRequest, $wgDisableTextSearch, $wgScript;
+		global $wgDisableTextSearch, $wgScript;
 
 		$this->setHeaders();
 		list( $limit, $offset ) = wfCheckLimits();
-		$wgOut->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
+		$output = $this->getOutput();
+		$request = $this->getRequest();
+		$output->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
 		$this->searchList = null;
-		$this->searchTerm = $wgRequest->getText( 'key' );
+		$this->searchTerm = $request->getText( 'key' );
 		$this->suppressSqlOffset = false;
 		if( !$wgDisableTextSearch ) {
-			$self = $this->getTitle();
-			$wgOut->addHTML(
+			$output->addHTML(
 				Xml::openElement( 'form', array( 'action' => $wgScript ) ) .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 				Xml::input( 'limit', false, $limit, array( 'type' => 'hidden' ) ) .
@@ -42,7 +43,6 @@ class ProofreadPages extends QueryPage {
 				$searchEngine->setNamespaces( array( $index_ns_index ) );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
-				$escIndex = preg_quote( $index_namespace, '/' );
 				$this->searchList = array();
 				while( $result = $textMatches->next() ) {
 					$title = $result->getTitle();
@@ -61,8 +61,7 @@ class ProofreadPages extends QueryPage {
 			// Bug #27678: Do not use offset here, because it was already used in
 			// search perfomed by execute method
 			return parent::reallyDoQuery( $limit, false );
-		}
-		else {
+		} else {
 			return parent::reallyDoQuery( $limit, $offset );
 		}
 	}
@@ -117,16 +116,14 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function formatResult( $skin, $result ) {
-		global $wgLang;
-
 		$title = Title::newFromText( $this->index_namespace . ':' . $result->title );
 
 		if ( !$title ) {
 			return '<!-- Invalid title ' .  htmlspecialchars( $this->index_namespace . ':' . $result->title ) . '-->';
 		}
 		$plink = $this->isCached()
-			? $skin->link( $title , htmlspecialchars( $title->getText() ) )
-			: $skin->linkKnown( $title , htmlspecialchars( $title->getText() ) );
+			? Linker::link( $title , htmlspecialchars( $title->getText() ) )
+			: Linker::linkKnown( $title , htmlspecialchars( $title->getText() ) );
 
 		if ( !$title->exists() ) {
 			return "<del>{$plink}</del>";
@@ -141,8 +138,9 @@ class ProofreadPages extends QueryPage {
 		$num_void = $size-$q1-$q2-$q3-$q4-$q0;
 		$void_cell = $num_void ? "<td align=center style='border-style:dotted;background:#ffffff;border-width:1px;' width=\"{$num_void}\"></td>" : '';
 
-		$dirmark = $wgLang->getDirMark();
-		$pages = wfMsgExt( 'proofreadpage_pages', 'parsemag', $size, $wgLang->formatNum( $size ) );
+		$lang = $this->getLanguage();
+		$dirmark = $lang->getDirMark();
+		$pages = wfMsgExt( 'proofreadpage_pages', 'parsemag', $size, $lang->formatNum( $size ) );
 
 		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
 <tr valign=\"bottom\">

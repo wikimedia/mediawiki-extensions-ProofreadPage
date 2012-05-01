@@ -22,7 +22,10 @@
 
 class ProofreadPage {
 
-	/* Parser object for index pages */
+	/**
+	 * Parser object for index pages
+	 * @var Parser
+	 */
 	private static $index_parser = null;
 
 	/**
@@ -55,7 +58,10 @@ class ProofreadPage {
 		return $namespace;
 	}
 
-	/** @deprecated */
+	/**
+	 * @deprecated
+	 * @return array
+	 */
 	private static function getPageAndIndexNamespace() {
 		static $res = null;
 		if ( $res === null ) {
@@ -67,6 +73,10 @@ class ProofreadPage {
 		return $res;
 	}
 
+	/**
+	 * @param $queryPages array
+	 * @return bool
+	 */
 	public static function onwgQueryPages( &$queryPages ) {
 		$queryPages[] = array( 'ProofreadPages', 'IndexPages' );
 		$queryPages[] = array( 'PagesWithoutScans', 'PagesWithoutScans' );
@@ -104,6 +114,7 @@ class ProofreadPage {
 
 	/**
 	 * Query the database to find if the current page is referred in an Index page.
+	 * @param $title Title
 	 */
 	private static function load_index( $title ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -157,6 +168,8 @@ class ProofreadPage {
 
 	/**
 	 * return the URLs of the index, previous and next pages.
+	 * @param $title Title
+	 * @return array
 	 */
 	private static function navigation( $title ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -241,6 +254,8 @@ class ProofreadPage {
 	 * Depending on whether the index uses pagelist,
 	 * it will return either a list of links or a list
 	 * of parameters to pagelist, and a list of attributes.
+	 * @param $index_title Title
+	 * @return array
 	 */
 	private static function parse_index( $index_title ) {
 		$err = array( false, false, array() );
@@ -256,6 +271,10 @@ class ProofreadPage {
 		return self::parse_index_text( $text );
 	}
 
+	/**
+	 * @param $text string
+	 * @return array
+	 */
 	private static function parse_index_text( $text ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		//check if it is using pagelist
@@ -309,6 +328,8 @@ class ProofreadPage {
 
 	/**
 	 * Append javascript variables and code to the page.
+	 * @param $out OutputPage
+	 * @return bool
 	 */
 	public static function onBeforePageDisplay( $out ) {
 		global $wgRequest;
@@ -340,6 +361,9 @@ class ProofreadPage {
 		return true;
 	}
 
+	/**
+	 * @param $out OutputPage
+	 */
 	private static function prepareIndex( $out ) {
 		$out->addModules( 'ext.proofreadpage.index' );
 		$out->addInlineScript("
@@ -348,6 +372,12 @@ var prp_default_header = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_footer' ) ) . "\";" );
 	}
 
+	/**
+	 * @param $out OutputPage
+	 * @param $m
+	 * @param $isEdit
+	 * @return bool
+	 */
 	private static function preparePage( $out, $m, $isEdit ) {
 		global $wgUser, $wgExtensionAssetsPath;
 
@@ -432,6 +462,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 	/**
 	 * Hook function
+	 * @param $page_ids
+	 * @param $colours
+	 * @return bool
 	 */
 	public static function onGetLinkColours( $page_ids, &$colours ) {
 		global $wgTitle;
@@ -448,6 +481,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 	/**
 	 * Return the quality colour codes to pages linked from an index page
+	 * @param $page_ids array
+	 * @param $colours array
 	 */
 	private static function getLinkColours( $page_ids, &$colours ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -490,8 +525,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	/**
-	 * @param  $imgpage ImagePage:
-	 * @param  $out OutputPage:
+	 * @param $imgpage ImagePage
+	 * @param $out OutputPage
 	 * @return bool
 	 */
 	public static function onImageOpenShowImageInlineBefore( &$imgpage, &$out ) {
@@ -507,7 +542,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return true;
 	}
 
-	// credit : http://www.mediawiki.org/wiki/Extension:RomanNumbers
+	/**
+	 * credit : http://www.mediawiki.org/wiki/Extension:RomanNumbers
+	 * @param $num int
+	 * @return int|string
+	 */
 	private static function toRoman( $num ) {
 		if ( $num < 0 || $num > 9999 ) {
 			return - 1;
@@ -583,6 +622,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return $romanNum;
 	}
 
+	/**
+	 * @param $i
+	 * @param $args array
+	 * @return array
+	 */
 	private static function pageNumber( $i, $args ) {
 		global $wgContLang;
 		$mode = 'normal'; // default
@@ -642,6 +686,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * Add the pagequality category.
 	 * @todo FIXME: display whether page has been proofread by the user or by someone else
+	 * @param $input
+	 * @param $args array
+	 * @param $parser Parser
+	 * @return string
 	 */
 	public static function pageQuality( $input, $args, $parser ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -663,6 +711,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * Parser hook for index pages
 	 * Display a list of coloured links to pages
+	 * @param $input
+	 * @param $args array
+	 * @param $parser Parser
+	 * @return string
 	 */
 	public static function renderPageList( $input, $args, $parser ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -729,7 +781,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * Parser hook that includes a list of pages.
 	 *  parameters : index, from, to, header
 	 * @param $input
-	 * @param $args
+	 * @param $args array
 	 * @param $parser Parser
 	 * @return string
 	 */
@@ -1033,6 +1085,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * Parse a comma-separated list of pages. A dash indicates an interval of pages
 	 * example: 1-10,23,38
 	 * Return an array of pages, or null if the input does not comply to the syntax
+	 * @param $input string
+	 * @return array|null
 	 */
 	private static function parse_num_list($input) {
 		$input = str_replace(array(' ', '\t', '\n'), '', $input);
@@ -1060,6 +1114,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 	/**
 	 * Set is_toc flag (true if page is a table of contents)
+	 * @param $outputPage OutputPage
+	 * @param $parserOutput ParserOutput
+	 * @return bool
 	 */
 	public static function onOutputPageParserOutput( $outputPage, $parserOutput ) {
 		if( isset( $parserOutput->is_toc ) ) {
@@ -1107,8 +1164,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return array( -1, null, $new_text );
 	}
 
+	/**
+	 * @param $editpage EditPage
+	 * @param $request WebRequest
+	 * @return bool
+	 */
 	public static function onEditPageImportFormData( $editpage, $request ) {
-		$title = $editpage->mTitle;
+		$title = $editpage->getTitle();
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		// abort if we are not a page
 		if ( !preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
@@ -1151,7 +1213,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * Check the format of pages in "Page" namespace.
 	 *
-	 * @param $editpage Object: EditPage object
+	 * @param $editpage EditPage
 	 * @return Boolean
 	 */
 	public static function onEditPageAttemptSave( $editpage ) {
@@ -1214,8 +1276,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$old_q = -1;
 		}
 
-		$editpage->mArticle->new_q = $q;
-		$editpage->mArticle->old_q = $old_q;
+		$editpage->getArticle()->new_q = $q;
+		$editpage->getArticle()->old_q = $old_q;
 
 		return true;
 	}
@@ -1224,7 +1286,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * if I delete a page, I need to update the index table
 	 * if I delete an index page too...
 	 *
-	 * @param $article Object: Article object
+	 * @param $article Article object
 	 * @return Boolean: true
 	 */
 	public static function onArticleDelete( $article ) {
@@ -1256,9 +1318,13 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return true;
 	}
 
+	/**
+	 * @param $article Article
+	 * @return bool
+	 */
 	public static function onArticleSaveComplete( $article ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		$title = $article->mTitle;
+		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table
 		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText(), $m ) ) {
@@ -1352,7 +1418,12 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return true;
 	}
 
-	/* Preload text layer from multipage formats */
+	/**
+	 * Preload text layer from multipage formats
+	 * @param $textbox1
+	 * @param $mTitle Title
+	 * @return bool
+	 */
 	public static function onEditFormPreloadText( $textbox1, $mTitle ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
@@ -1374,6 +1445,12 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return true;
 	}
 
+	/**
+	 * @param $form
+	 * @param $ot Title
+	 * @param $nt Title
+	 * @return bool
+	 */
 	public static function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( preg_match( "/^$page_namespace:(.*)$/", $ot->getPrefixedText() ) ) {
@@ -1406,6 +1483,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 	/**
 	 * When an index page is created or purged, recompute pr_index values
+	 * @param $article Article
+	 * @return bool
 	 */
 	public static function onArticlePurge( $article ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -1418,9 +1497,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	/**
-	 * @param  $dbr DatabaseBase
-	 * @param  $query
-	 * @param  $cat
+	 * @param $dbr DatabaseBase
+	 * @param $query
+	 * @param $cat
 	 * @return int
 	 */
 	private static function query_count( $dbr, $query, $cat ) {
@@ -1520,10 +1599,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	/**
 	 * In main namespace, display the proofreading status of transcluded pages.
 	 *
-	 * @param $out Object: OutputPage object
+	 * @param $out OutputPage object
+	 * @return bool
 	 */
 	private static function prepareArticle( $out ) {
-		$id = $out->getTitle()->mArticleID;
+		$id = $out->getTitle()->getArticleID();
 		if( $id == -1 ) {
 			return true;
 		}
@@ -1655,6 +1735,9 @@ $void_cell
 
 	/**
 	 * Add ProofreadPage preferences to the preferences menu
+	 * @param $user
+	 * @param $preferences array
+	 * @return bool
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
 

@@ -41,6 +41,8 @@ class PagesWithoutScans extends QueryPage {
 	/**
 	 * Return a clause with the list of disambiguation templates.
 	 * This function was copied verbatim from specials/SpecialDisambiguations.php
+	 * @param $dbr DatabaseBase
+	 * @return mixed
 	 */
 	function disambiguation_templates( $dbr ) {
 		$dMsgText = wfMsgForContent('disambiguationspage');
@@ -122,23 +124,25 @@ class PagesWithoutScans extends QueryPage {
 	}
 
 	function formatResult( $skin, $result ) {
-		global $wgLang, $wgContLang;
+		global $wgContLang;
 		$dm = $wgContLang->getDirMark();
 
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {
 			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
-		$hlink = $skin->linkKnown(
+		$hlink = Linker::linkKnown(
 			$title,
 			wfMsgHtml( 'hist' ),
 			array(),
 			array( 'action' => 'history' )
 		);
 		$plink = $this->isCached()
-					? $skin->link( $title )
-					: $skin->linkKnown( $title );
-		$size = wfMsgExt( 'nbytes', array( 'parsemag', 'escape' ), $wgLang->formatNum( htmlspecialchars( $result->value ) ) );
+					? Linker::link( $title )
+					: Linker::linkKnown( $title );
+		$size = wfMsgExt( 'nbytes', array( 'parsemag', 'escape' ),
+			$this->getLanguage()->formatNum( htmlspecialchars( $result->value ) )
+		);
 
 		return $title->exists()
 				? "({$hlink}) {$dm}{$plink} {$dm}[{$size}]"
