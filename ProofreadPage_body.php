@@ -1748,6 +1748,13 @@ $void_cell
 			'section'        => 'editing/advancedediting',
 		);
 
+		//Use horizontal layout when editing in the Page namespace
+		$preferences['proofreadpage-horizontal-layout'] = array(
+			'type'           => 'toggle',
+			'label-message'  => 'proofreadpage-preferences-horizontal-layout-label',
+			'section'        => 'editing/advancedediting',
+		);
+
 		return true;
 	}
 

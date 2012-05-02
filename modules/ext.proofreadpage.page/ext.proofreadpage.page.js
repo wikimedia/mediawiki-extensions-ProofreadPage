@@ -666,7 +666,11 @@ function pr_fill_table() {
 }
 
 function pr_setup() {
-	self.pr_horiz = ( self.proofreadpage_default_layout == 'horizontal' );
+	self.pr_horiz = mw.user.options.get( 'proofreadpage-horizontal-layout' );
+	if ( !self.pr_horiz ) {
+		// This is kept for compatibility reasons - it will be removed in the future
+		self.pr_horiz = ( self.proofreadpage_default_layout == 'horizontal' );
+	}
 	if( !proofreadPageIsEdit ) {
 		pr_horiz = false;
 	}
