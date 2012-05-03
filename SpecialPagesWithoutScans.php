@@ -16,7 +16,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  *
  * @file
- * @ingroup Extensions
+ * @ingroup SpecialPage
  */
 
 /**
@@ -27,7 +27,6 @@ class PagesWithoutScans extends QueryPage {
 
 	function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
-		$this->page_namespace = wfMsgForContent( 'proofreadpage_namespace' );
 	}
 
 	function isExpensive() {
@@ -78,7 +77,6 @@ class PagesWithoutScans extends QueryPage {
 
 	function getQueryInfo() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $this->page_namespace ) ) );
 
 		// Construct subqueries
 		$pagesWithScansSubquery = $dbr->selectSQLText(
@@ -86,7 +84,7 @@ class PagesWithoutScans extends QueryPage {
 			'DISTINCT tl_from',
 			array(
 				'page_id=tl_from',
-				'tl_namespace' => $page_ns_index,
+				'tl_namespace' => ProofreadPage::getPageNamespaceId(),
 				'page_namespace' => NS_MAIN
 			)
 		);

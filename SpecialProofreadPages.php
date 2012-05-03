@@ -1,15 +1,29 @@
 <?php
 /**
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
  * @file
  * @ingroup SpecialPage
  */
 
 class ProofreadPages extends QueryPage {
-	protected $index_namespace, $searchTerm, $searchList, $suppressSqlOffset;
+	protected $searchTerm, $searchList, $suppressSqlOffset;
 
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
-		$this->index_namespace = wfMsgForContent( 'proofreadpage_index_namespace' );
 	}
 
 	public function execute( $parameters ) {
@@ -36,17 +50,15 @@ class ProofreadPages extends QueryPage {
 				Xml::closeElement( 'form' )
 			);
 			if( $this->searchTerm ) {
-				$index_namespace = $this->index_namespace;
-				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $index_namespace ) ) );
 				$searchEngine = SearchEngine::create();
 				$searchEngine->setLimitOffset( $limit, $offset );
-				$searchEngine->setNamespaces( array( $index_ns_index ) );
+				$searchEngine->setNamespaces( array( ProofreadPage::getIndexNamespaceId() ) );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
 				$this->searchList = array();
 				while( $result = $textMatches->next() ) {
 					$title = $result->getTitle();
-					if ( $title->getNamespace() == $index_ns_index ) {
+					if ( $title->getNamespace() == ProofreadPage::getIndexNamespaceId() ) {
 						array_push( $this->searchList, $title->getDBkey() );
 					}
 				}
@@ -88,9 +100,7 @@ class ProofreadPages extends QueryPage {
 		$conds = array();
 		if ( $this->searchTerm ) {
 			if ( $this->searchList !== null ) {
-				$index_namespace = $this->index_namespace;
-				$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $index_namespace ) ) );
-				$conds = array( 'page_namespace' => $index_ns_index );
+				$conds = array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() );
 				if ( $this->searchList ) {
 					$conds['page_title'] = $this->searchList;
 				} else {
@@ -103,7 +113,7 @@ class ProofreadPages extends QueryPage {
 		}
 		return array(
 			'tables' => array( 'pr_index', 'page' ),
-			'fields' => array( 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
+			'fields' => array( 'page_namespace AS namespace', 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
 			'pr_q0', 'pr_q1', 'pr_q2' ,'pr_q3', 'pr_q4' ),
 			'conds' => $conds,
 			'options' => array(),
@@ -116,10 +126,9 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function formatResult( $skin, $result ) {
-		$title = Title::newFromText( $this->index_namespace . ':' . $result->title );
-
+		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {
-			return '<!-- Invalid title ' .  htmlspecialchars( $this->index_namespace . ':' . $result->title ) . '-->';
+			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
 		$plink = $this->isCached()
 			? Linker::link( $title , htmlspecialchars( $title->getText() ) )
