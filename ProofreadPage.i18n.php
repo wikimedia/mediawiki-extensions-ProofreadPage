@@ -357,6 +357,7 @@ Notas||10',
 );
 
 /** Arabic (العربية)
+ * @author DRIHEM
  * @author Meno25
  * @author Orango
  * @author OsamaK
@@ -412,7 +413,7 @@ $messages['ar'] = array(
 الصورة|صورة الغلاف
 الصفحات||20
 الملاحظات||10',
-	'proofreadpage_pages' => '{{PLURAL:$1||صفحة واحدة|صفحتان|$1 صفحات|$1 صفحة}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|صفحة|صفحات}}',
 	'proofreadpage_specialpage_legend' => 'بحث صفحات الفهرس',
 	'proofreadpage_source' => 'المصدر',
 	'proofreadpage_source_message' => 'الإصدارة المفحوصة المستخدمة لإنشاء هذا النص',
@@ -425,6 +426,7 @@ $messages['ar'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'رد التكبير',
 	'proofreadpage-button-zoom-in-label' => 'تكبير',
 	'proofreadpage-button-toggle-layout-label' => 'تخطيط أفقي أو رأسي',
+	'proofreadpage-preferences-showheaders-label' => 'أظهر حقل الرأس والقدم عند التعديل في صفحة مساحة الإسم',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -4223,6 +4225,7 @@ Opmerkingen||10",
  * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'proofreadpage_desc' => 'Tillèt enkel samanlikning av tekst med originalskanning.',
@@ -4237,8 +4240,8 @@ $messages['nn'] = array(
 	'proofreadpage_number_expected' => 'Feil: Talverdi forventa',
 	'proofreadpage_interval_too_large' => 'Feil: for stort intervall',
 	'proofreadpage_invalid_interval' => 'Feil: ugyldig intervall',
-	'proofreadpage_nextpage' => 'Neste side',
-	'proofreadpage_prevpage' => 'Førre side',
+	'proofreadpage_nextpage' => 'Neste sida',
+	'proofreadpage_prevpage' => 'Førre sida',
 	'proofreadpage_header' => 'Hovudseksjon (ikkje inkludert):',
 	'proofreadpage_body' => 'Hovuddel (inkludert):',
 	'proofreadpage_footer' => 'Fotseksjon (ikkje inludert):',
