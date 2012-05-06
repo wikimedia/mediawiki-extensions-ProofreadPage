@@ -3098,11 +3098,12 @@ $messages['ja'] = array(
 	'proofreadpage-section-tools' => '校正ツール',
 	'proofreadpage-group-zoom' => 'ズーム',
 	'proofreadpage-group-other' => 'その他',
-	'proofreadpage-button-toggle-visibility-label' => 'このページのヘッダーとフッターの表示/非表示',
+	'proofreadpage-button-toggle-visibility-label' => 'このページのヘッダー/フッターの表示/非表示',
 	'proofreadpage-button-zoom-out-label' => '縮小',
 	'proofreadpage-button-reset-zoom-label' => '元の大きさ',
 	'proofreadpage-button-zoom-in-label' => '拡大',
 	'proofreadpage-button-toggle-layout-label' => '垂直方向/水平方向のレイアウト',
+	'proofreadpage-preferences-showheaders-label' => 'Page 名前空間での編集中にヘッダー/フッターフィールドを表示',
 );
 
 /** Jutish (Jysk)
