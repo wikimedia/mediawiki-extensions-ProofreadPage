@@ -109,3 +109,4 @@ $wgHooks['EditPage::importFormData'][] = 'ProofreadPage::onEditPageImportFormDat
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
+$wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';

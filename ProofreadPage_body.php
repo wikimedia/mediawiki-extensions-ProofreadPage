@@ -1750,4 +1750,20 @@ $void_cell
 
 		return true;
 	}
+
+	/**
+	 * Adds an image link from pages in Page namespace, so they appear
+	 * in the file usage.
+	 */
+	public static function onLinksUpdateConstructed( $linksUpdate ) {
+		$title = $linksUpdate->getTitle();
+		if ( $title->getNamespace() == self::getPageNamespaceId() ) {
+			// Extract title from multipaged documents
+			$parts = explode( '/', $title->getText(), 2 );
+			$imageTitle = Title::makeTitle( NS_FILE, $parts[0] );
+			// Add to list of images
+			$linksUpdate->mImages[$imageTitle->getDBkey()] = 1;
+		}
+		return true;
+	}
 }
