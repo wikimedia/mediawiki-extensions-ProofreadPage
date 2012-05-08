@@ -1361,10 +1361,12 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Erdemaslancan
  * @author Mirzali
  */
 $messages['diq'] = array(
 	'indexpages' => 'listeya pelê endeksi',
+	'pageswithoutscans' => 'Pela miyandı geyrayışi',
 	'proofreadpage_desc' => "Destur bıd' wa metın pê cıgerayişê orjinali rehet u asan têver şan",
 	'proofreadpage_namespace' => 'pel',
 	'proofreadpage_index_namespace' => 'endeks',
@@ -1381,10 +1383,10 @@ $messages['diq'] = array(
 	'proofreadpage_nologintext' => 'qey vurnayişê halê raştkerdışê pelan gani şıma [[Special:UserLogin|cı kewiyi]].',
 	'proofreadpage_notallowed' => 'vurnayiş re destur çino',
 	'proofreadpage_notallowedtext' => 'vurnayişê halê raştkerdışê peli re destur nêdano',
-	'proofreadpage_number_expected' => 'Error: numeric value expected',
+	'proofreadpage_number_expected' => 'Xeta:Amarin weziyet pawéno',
 	'proofreadpage_interval_too_large' => 'xeta: benate/mabên zaf hêrayo',
 	'proofreadpage_invalid_interval' => 'xeta: benateyo nemeqbul',
-	'proofreadpage_nextpage' => 'pelo ke yeno',
+	'proofreadpage_nextpage' => 'Pela badê cû',
 	'proofreadpage_prevpage' => 'pelo ke pey de mend',
 	'proofreadpage_header' => 'sername (ihtiwa)',
 	'proofreadpage_body' => 'miyaneyê peli (çepraşt têarê beno):',
@@ -1412,10 +1414,20 @@ weşanger
 Resım|resmê qapaxi
 peli||20
 beyanati||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pel|pel}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pele|pele}}',
 	'proofreadpage_specialpage_legend' => 'bıgêr pelê indeksan',
 	'proofreadpage_source' => 'Çıme',
 	'proofreadpage_source_message' => 'Versiyono kopyakerde gurêna ke nê meqaley rono',
+	'right-pagequality' => 'Vurnayışté pela ré desmal çek',
+	'proofreadpage-section-tools' => 'Wesıtey',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Zewmi',
+	'proofreadpage-button-toggle-visibility-label' => 'Ena pelaya bımocne/bınımni  wanena u asınena',
+	'proofreadpage-button-zoom-out-label' => 'Zoomi teber ke',
+	'proofreadpage-button-reset-zoom-label' => 'Oricinal çep',
+	'proofreadpage-button-zoom-in-label' => 'Zoom ke',
+	'proofreadpage-button-toggle-layout-label' => 'Kewtey/tikey  asayış',
+	'proofreadpage-preferences-showheaders-label' => 'Nameye pela çı vurneyeno heqa cı wendış u asayışi bımocne.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
