@@ -140,7 +140,7 @@ $messages['qqq'] = array(
 	'proofreadpage-button-zoom-out-label' => 'Tooltip text in button for zoom out, only visible in edit mode.',
 	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.',
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
-	'proofreadpage-preferences-showheaders-label'  => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.'
+	'proofreadpage-preferences-showheaders-label' => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.',
 );
 
 /**    زَوُن (   زَوُن)
@@ -209,6 +209,7 @@ $messages['aeb'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'رد التكبير',
 	'proofreadpage-button-zoom-in-label' => 'تكبير',
 	'proofreadpage-button-toggle-layout-label' => 'تخطيط أفقي أو رأسي',
+	'proofreadpage-preferences-showheaders-label' => "warri plaiss' el entête wel pied de page wa9t il edition fil faragh mte3 el page",
 );
 
 /** Afrikaans (Afrikaans)
@@ -487,6 +488,75 @@ $messages['arz'] = array(
 الملاحظات||10',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Gitartha.bordoloi
+ */
+$messages['as'] = array(
+	'indexpages' => 'সূচীৰ পৃষ্ঠাৰ তালিকা',
+	'pageswithoutscans' => 'স্কেন নকৰা পৃষ্ঠাসমূহ',
+	'proofreadpage_desc' => 'মূল স্কেনৰ লগত পাঠ্যৰ সহজ তুলনা অনুমোদন কৰক',
+	'proofreadpage_namespace' => 'পৃষ্ঠা',
+	'proofreadpage_index_namespace' => 'সূচী',
+	'proofreadpage_image' => 'চিত্ৰ',
+	'proofreadpage_index' => 'সূচী',
+	'proofreadpage_index_expected' => 'ত্ৰুটি: সূচী আশা কৰা হৈছে',
+	'proofreadpage_nosuch_index' => 'ত্ৰুটি: তেনে কোনো সূচী নাই',
+	'proofreadpage_nosuch_file' => 'ত্ৰুটি: তেনে কোনো ফাইল নাই',
+	'proofreadpage_badpage' => 'ভুল ফৰ্মেট',
+	'proofreadpage_badpagetext' => 'আপুনি সাঁচিবলৈ বিচৰা পৃষ্ঠাৰ ফৰ্মেট অশুদ্ধ।',
+	'proofreadpage_indexdupe' => 'প্ৰতিলিপি সংযোগ',
+	'proofreadpage_indexdupetext' => 'সূচীত পৃষ্ঠাসমূহ এবাৰতকৈ বেছি তালিকাভুক্ত কৰিব নোৱাৰি',
+	'proofreadpage_nologin' => 'প্ৰৱেশ কৰা নাই',
+	'proofreadpage_nologintext' => 'পৃষ্ঠাখনৰ প্ৰুফৰিডিং অৱস্থা সলাবলৈ আপুনি [[Special:UserLogin|লগ্‌ ইন]] কৰিব লাগিব।',
+	'proofreadpage_notallowed' => 'পৰিৱৰ্তনৰ অনুমতি নাই',
+	'proofreadpage_notallowedtext' => 'এই পৃষ্ঠাৰ প্ৰুফৰিডিং অৱস্থা সলাবলৈ আপোনাৰ অনুমতি নাই।',
+	'proofreadpage_number_expected' => 'ত্ৰুটি: সাংখ্যিক মূল্য আশা কৰা হৈছে',
+	'proofreadpage_interval_too_large' => 'ত্ৰুটি: ব্যৱধান অতি বেছি',
+	'proofreadpage_invalid_interval' => 'ত্ৰুটি: অবৈধ ব্যৱধান',
+	'proofreadpage_nextpage' => 'পৰৱৰ্তী পৃষ্ঠা',
+	'proofreadpage_prevpage' => 'পূৰ্ববৰ্তী পৃষ্ঠা',
+	'proofreadpage_header' => 'শিৰোনামা (noinclude):',
+	'proofreadpage_body' => 'পৃষ্ঠাৰ প্ৰধান অংশ (to be transcluded):',
+	'proofreadpage_footer' => 'পাদটীকা (noinclude):',
+	'proofreadpage_toggleheaders' => 'noinclude অনুচ্ছেদৰ প্ৰত্যক্ষতা সলাওক',
+	'proofreadpage_quality0_category' => 'পাঠ্য নথকা',
+	'proofreadpage_quality1_category' => 'প্ৰুফ সংশোধন কৰা হোৱা নাই',
+	'proofreadpage_quality2_category' => 'সমস্যাজৰ্জৰ',
+	'proofreadpage_quality3_category' => 'মুদ্ৰণ সংশোধন',
+	'proofreadpage_quality4_category' => 'বৈধকৰণ',
+	'proofreadpage_quality0_message' => 'এই পৃষ্ঠাখন প্ৰুফ সংশোধনৰ প্ৰয়োজন নাই',
+	'proofreadpage_quality1_message' => 'এই পৃষ্ঠাখনৰ প্ৰুফ সংশোধন কৰা হোৱা নাই',
+	'proofreadpage_quality2_message' => 'এই পৃষ্ঠাখনৰ প্ৰুফৰিডিঙত এটা সমস্যা হৈছে',
+	'proofreadpage_quality3_message' => 'এই পৃষ্ঠাখনৰ প্ৰুফ সংশোধন কৰা হৈছে',
+	'proofreadpage_quality4_message' => 'এই পৃষ্ঠাখনৰ বৈধকৰণ কৰা হৈছে',
+	'proofreadpage_index_listofpages' => 'পৃষ্ঠাসমূহৰ তালিকা',
+	'proofreadpage_image_message' => 'সূচী পৃষ্ঠালৈ সংযোগ',
+	'proofreadpage_page_status' => 'পৃষ্ঠাৰ অৱস্থা',
+	'proofreadpage_js_attributes' => 'লেখক শিৰোনামা বছৰ প্ৰকাশক',
+	'proofreadpage_index_attributes' => 'লেখক
+শিৰোনামা
+বছৰ|প্ৰকাশৰ বছৰ
+প্ৰকাশক
+উৎস
+চিত্ৰ|প্ৰচ্ছদ
+পৃষ্ঠা||20
+মন্তব্য||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|খন পৃষ্ঠা| খন পৃষ্ঠা}}',
+	'proofreadpage_specialpage_legend' => 'সূচী পৃষ্ঠাসমূহ অনুসন্ধান কৰক',
+	'proofreadpage_source' => 'উৎস',
+	'proofreadpage_source_message' => 'এই পাঠ্য প্ৰতিষ্ঠা কৰিবলৈ ব্যৱহৃত স্কেন কৰা সংস্কৰণ',
+	'right-pagequality' => 'পৃষ্ঠা গুণাগুণ নিচান পৰিৱৰ্তন কৰক',
+	'proofreadpage-section-tools' => 'প্ৰুফ সংশোধনৰ সঁজুলি',
+	'proofreadpage-group-zoom' => 'ডাঙৰ কৰক',
+	'proofreadpage-group-other' => 'অন্য',
+	'proofreadpage-button-toggle-visibility-label' => 'এই পৃষ্ঠাৰ শিৰোনামা আৰু পাদটীকা দেখুৱাওক/লুকুৱাওক',
+	'proofreadpage-button-zoom-out-label' => 'সৰু কৰক',
+	'proofreadpage-button-reset-zoom-label' => 'মূল আকাৰ',
+	'proofreadpage-button-zoom-in-label' => 'ডাঙৰ কৰক',
+	'proofreadpage-button-toggle-layout-label' => 'থিয়/পথালি সজ্জা',
+	'proofreadpage-preferences-showheaders-label' => 'পৃষ্ঠা নামস্থানত সম্পাদনা কৰোঁতে শিৰোনামা আৰু পাদটীকা স্থান দেখুৱাওক',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
@@ -649,6 +719,7 @@ $messages['bcl'] = array(
 );
 
 /** Belarusian (Беларуская)
+ * @author Wizardist
  * @author Хомелка
  */
 $messages['be'] = array(
@@ -699,8 +770,8 @@ $messages['be'] = array(
 Выдавецтва
 Крыніца
 Выява|Выява вокладкі
-Старонак||20
-Заўваг||10',
+Старонкі||20
+Заўвагі||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|старонка|старонкі|старонак}}',
 	'proofreadpage_specialpage_legend' => 'Пошук індэксных старонак',
 	'proofreadpage_source' => 'Крыніца',
@@ -2268,7 +2339,7 @@ $messages['gsw'] = array(
 	'proofreadpage_nosuch_file' => 'Fähler: Kei sonigi Datei',
 	'proofreadpage_badpage' => 'Falsch Format',
 	'proofreadpage_badpagetext' => 'S Format vu dr Syte, wu du versuecht hesch z spychere, isch falsch.',
-	'proofreadpage_indexdupe' => 'Gleich (Link) dupliziere',
+	'proofreadpage_indexdupe' => 'Link dupliziere',
 	'proofreadpage_indexdupetext' => 'Syte chenne nit meh wie eimol ufglischtet wäre uf ere Indexsyte',
 	'proofreadpage_nologin' => 'Nit aagmäldet',
 	'proofreadpage_nologintext' => 'Du muesch [[Special:UserLogin|aagmäldet syy]] go dr Korrekturläsigs-Status vu Syte ändere.',
@@ -2294,7 +2365,7 @@ $messages['gsw'] = array(
 	'proofreadpage_quality3_message' => 'Die Syte isch Korrektur gläse wore',
 	'proofreadpage_quality4_message' => 'Die Syte isch validiert wore',
 	'proofreadpage_index_listofpages' => 'Sytelischt',
-	'proofreadpage_image_message' => 'Gleich zue dr Indexsyte',
+	'proofreadpage_image_message' => 'Link zue dr Indexsyte',
 	'proofreadpage_page_status' => 'Sytestatus',
 	'proofreadpage_js_attributes' => 'Autor Titel Johr Verlag',
 	'proofreadpage_index_attributes' => 'Autor
@@ -2325,7 +2396,7 @@ Aamerkige||10',
  * @author Sushant savla
  */
 $messages['gu'] = array(
-	'indexpages' => 'સૂચિ પુષ્ઠોની યાદી',
+	'indexpages' => 'સૂચિ પૃષ્ઠોની યાદી',
 	'pageswithoutscans' => 'સ્કેન વગરના પાના',
 	'proofreadpage_desc' => 'મૂળ સ્કેન સાથે સરળ સરખામણીની રજા આપો',
 	'proofreadpage_namespace' => 'પૃષ્ઠ',
@@ -2342,7 +2413,7 @@ $messages['gu'] = array(
 	'proofreadpage_nologin' => 'પ્રવેશ કરેલ નથી',
 	'proofreadpage_nologintext' => 'પાનાંનું પ્રુફરીડિંગ સ્તર બદલવા માટે આપનું [[Special:UserLogin|પ્રવેશ કરવું]] આવશ્યક છે .',
 	'proofreadpage_notallowed' => 'બદલાવની પરવાનગી નથી',
-	'proofreadpage_notallowedtext' => 'તમને આ પાનાની લેખન સુધારણા સ્તરને બદલવાની પરવાનગી નથી.',
+	'proofreadpage_notallowedtext' => 'તમને આ પાનાનો પ્રુફ રીડિંગ દરજ્જો બદલવાની પરવાનગી નથી.',
 	'proofreadpage_number_expected' => 'ત્રુટિ: આંકાડાકીય માહિતી અપેક્ષિત',
 	'proofreadpage_interval_too_large' => 'ત્રુટિ: ખૂબ મોટો વિરામ ગાળો',
 	'proofreadpage_invalid_interval' => 'ત્રુટિ: અનુચિત વિરામ ગાળો',
@@ -2357,29 +2428,29 @@ $messages['gu'] = array(
 	'proofreadpage_quality2_category' => 'સમસ્યારૂપ',
 	'proofreadpage_quality3_category' => 'પ્રુફરીડ કરેલાં',
 	'proofreadpage_quality4_category' => 'પ્રમાણિત',
-	'proofreadpage_quality0_message' => 'આ પાનાને લેખન સુધારણાની જરૂર નથી.',
-	'proofreadpage_quality1_message' => 'આ પાનાની લેખન સુધારણા બાકી છે',
+	'proofreadpage_quality0_message' => 'આ પાનાનું પ્રુફરીડ જરૂરી નથી.',
+	'proofreadpage_quality1_message' => 'આ પાનાનું પ્રુફરીડિંગ બાકી છે',
 	'proofreadpage_quality2_message' => 'આ પાનાનું પ્રુફરીડ કરતા તકલીફ આવી હતી.',
-	'proofreadpage_quality3_message' => 'આ પાનાની લેખન સુધારણા થઈ ગઈ છે',
+	'proofreadpage_quality3_message' => 'આ પાનાનું પ્રુફરીડિંગ થઈ ગયું છે',
 	'proofreadpage_quality4_message' => 'આ પાનું પ્રમાણિત થઈ ગયું છે.',
 	'proofreadpage_index_listofpages' => 'પાનાની યાદી',
 	'proofreadpage_image_message' => 'સૂચિ પૃષ્ઠ સાથે જોડો',
 	'proofreadpage_page_status' => 'પાનાની સ્થિતી',
 	'proofreadpage_js_attributes' => 'લેખક શીર્ષક વર્ષ પ્રકાશક',
-	'proofreadpage_index_attributes' => 'લેખક
+	'proofreadpage_index_attributes' => 'સર્જક
 શીર્ષક
 વર્ષ|પ્રકાશનનું વર્ષ
 પ્રકાશક
-સ્ત્રોત
+સ્રોત
 ચિત્ર|મુખ પૃષ્ઠ
-પાના||20
+પાનાં||20
 નોંધ||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|પાનું|પાના}}',
 	'proofreadpage_specialpage_legend' => 'સૂચિ પૃષ્ઠોમાં શોધો',
-	'proofreadpage_source' => 'સ્ત્રોત',
+	'proofreadpage_source' => 'સ્રોત',
 	'proofreadpage_source_message' => 'આ લખાણની માહિતી દૃઢ કરવા માટે સ્કેન આવૃત્તિ વપરાઈ છે.',
-	'right-pagequality' => 'પાનાની ગુણવત્તા સ્તર બદલો',
-	'proofreadpage-section-tools' => 'લેખન સુધારણા સાધનો',
+	'right-pagequality' => 'પાનાનો ગુણવત્તા દર્શક બદલો',
+	'proofreadpage-section-tools' => 'પ્રુફરીડ સાધનો',
 	'proofreadpage-group-zoom' => 'ઝૂમ',
 	'proofreadpage-group-other' => 'અન્ય',
 	'proofreadpage-button-toggle-visibility-label' => 'આ પાનાંનું મથાળું અને અંત બતાવો/છુપાવો',
@@ -2431,17 +2502,17 @@ $messages['he'] = array(
 	'proofreadpage_index_expected' => 'שגיאה: נדרש מפתח',
 	'proofreadpage_nosuch_index' => 'שגיאה: אין מפתח כזה',
 	'proofreadpage_nosuch_file' => 'שגיאה: אין קובץ כזה',
-	'proofreadpage_badpage' => 'מבנה שגוי',
-	'proofreadpage_badpagetext' => 'מבנה הדף שניסיתם לשמור אינו נכון.',
+	'proofreadpage_badpage' => 'תסדיר שגוי',
+	'proofreadpage_badpagetext' => 'תסדיר הדף שניסיתם לשמור אינו נכון.',
 	'proofreadpage_indexdupe' => 'קישור כפול',
 	'proofreadpage_indexdupetext' => 'לא ניתן להציג את הדפים יותר מפעם אחת בדף מפתח.',
 	'proofreadpage_nologin' => 'לא נכנסתם לחשבון',
 	'proofreadpage_nologintext' => 'עליכם [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של דפים.',
-	'proofreadpage_notallowed' => 'לא ניתן לבצע השינוי',
+	'proofreadpage_notallowed' => 'לא ניתן לבצע את השינוי',
 	'proofreadpage_notallowedtext' => 'אינכם מורשים לשנות את מצב ההגהה של דף זה.',
 	'proofreadpage_number_expected' => 'שגיאה: נדרש ערך מספרי',
 	'proofreadpage_interval_too_large' => 'שגיאה: המרווח גדול מדי',
-	'proofreadpage_invalid_interval' => 'שגיאה: מרווח בלתי תקין',
+	'proofreadpage_invalid_interval' => 'שגיאה: מרווח בלתי־תקין',
 	'proofreadpage_nextpage' => 'הדף הבא',
 	'proofreadpage_prevpage' => 'הדף הקודם',
 	'proofreadpage_header' => 'כותרת (לא להכללה):',
@@ -2471,7 +2542,7 @@ $messages['he'] = array(
 דפים||20
 הערות||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|דף אחד|$2 דפים}}',
-	'proofreadpage_specialpage_legend' => 'חיפוש בדפי האינדקס',
+	'proofreadpage_specialpage_legend' => 'חיפוש בדפי המפתח',
 	'proofreadpage_source' => 'מקור',
 	'proofreadpage_source_message' => 'הגרסה הסרוקה ששימשה להכנת טקסט זה',
 	'right-pagequality' => 'החלפת דגל האיכות של הדף',
@@ -2483,7 +2554,7 @@ $messages['he'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'גודל מקורי',
 	'proofreadpage-button-zoom-in-label' => 'תקריב',
 	'proofreadpage-button-toggle-layout-label' => 'פריסה אופקית או אנכית',
-	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "עמוד".',
+	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "דף".',
 );
 
 /** Hindi (हिन्दी)
@@ -2528,6 +2599,76 @@ $messages['hi'] = array(
 	'proofreadpage-group-zoom' => 'ज़ूम',
 	'proofreadpage-group-other' => 'अन्य',
 	'proofreadpage-button-reset-zoom-label' => 'मूल आकार',
+);
+
+/** Fiji Hindi (Latin script) (Fiji Hindi)
+ * @author AndySingh
+ * @author Thakurji
+ */
+$messages['hif-latn'] = array(
+	'indexpages' => 'Index panna ke suchi',
+	'pageswithoutscans' => 'Bina scan waala panna',
+	'proofreadpage_desc' => 'Text aur original scan ke easy se comapre kare do',
+	'proofreadpage_namespace' => 'Panna',
+	'proofreadpage_index_namespace' => 'Index',
+	'proofreadpage_image' => 'Chhapa',
+	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Wrong: index chaahat rahaa',
+	'proofreadpage_nosuch_index' => 'Wrong: ii rakam ke koi index nai hae',
+	'proofreadpage_nosuch_file' => 'Wrong: ii rakam ke koi file nai hae',
+	'proofreadpage_badpage' => 'Wrong Format',
+	'proofreadpage_badpagetext' => 'Jon panna ke aap bachae mangta hae ke format right nai hae.',
+	'proofreadpage_indexdupe' => 'Dugna link',
+	'proofreadpage_indexdupetext' => 'Index panna me ek panna ke ek time se jaada dafe nai list karaa jaae sake hae.',
+	'proofreadpage_nologin' => 'Aap abhi logged in nai hai',
+	'proofreadpage_nologintext' => 'Aap ke chaahi ki aap panna ke proofreading status ke badle ke khatir [[Special:UserLogin|logged in]]  hae.',
+	'proofreadpage_notallowed' => 'Badle le allowed nai hae',
+	'proofreadpage_notallowedtext' => 'Aap ke ii panna ke proofreading status ke badle ke ijaajat nai hae.',
+	'proofreadpage_number_expected' => 'Wrong: number ke jaruri rahaa',
+	'proofreadpage_interval_too_large' => 'Wrong: interval bahut barraa hae.',
+	'proofreadpage_invalid_interval' => 'Wrong: interval valid nai hae',
+	'proofreadpage_nextpage' => 'Aage waala panna',
+	'proofreadpage_prevpage' => 'Pahile waala panna',
+	'proofreadpage_header' => 'Header (noinclude):',
+	'proofreadpage_body' => 'Panna ke body (to be transcluded):',
+	'proofreadpage_footer' => 'Footer (noinclude):',
+	'proofreadpage_toggleheaders' => 'toggle noinclude sections visibility',
+	'proofreadpage_quality0_category' => 'Bina text ke',
+	'proofreadpage_quality1_category' => 'Proofread nai karaa gais hae',
+	'proofreadpage_quality2_category' => 'Problem hae',
+	'proofreadpage_quality3_category' => 'Proofread kar dewa gais',
+	'proofreadpage_quality4_category' => 'Validate kar dewa gais',
+	'proofreadpage_quality0_message' => 'II panna ke proofread kare ke jaruri nai hae',
+	'proofreadpage_quality1_message' => 'Ii panna ke proofread nai karaa gais hae',
+	'proofreadpage_quality2_message' => 'Proofread kare ke time kuchh karrbarri bhais',
+	'proofreadpage_quality3_message' => 'Ii panna ke proofread kar dewa gais hae',
+	'proofreadpage_quality4_message' => 'Ii panna ke validate kar dewa gais hae',
+	'proofreadpage_index_listofpages' => 'Panna ke suchi',
+	'proofreadpage_image_message' => 'Index panna se jorro',
+	'proofreadpage_page_status' => 'Panna ke status',
+	'proofreadpage_js_attributes' => 'Author Title Saal Publisher',
+	'proofreadpage_index_attributes' => 'Likhe waala
+Title
+Saal| Publication ke saal
+Publisher
+Source
+Chaapa|Cover ke chhapa
+Panna||20
+Remarks||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|panna|panna}}',
+	'proofreadpage_specialpage_legend' => 'Index panna me khojo',
+	'proofreadpage_source' => 'File ke source',
+	'proofreadpage_source_message' => 'Scanned edition used to establish this text',
+	'right-pagequality' => 'Panna ke quality jhanda ke badlo',
+	'proofreadpage-section-tools' => 'Proofread kare waala tool',
+	'proofreadpage-group-zoom' => 'Barraa karo',
+	'proofreadpage-group-other' => 'Duusra',
+	'proofreadpage-button-toggle-visibility-label' => 'Ii panna ke header aur footer ke dekhao/lukao',
+	'proofreadpage-button-zoom-out-label' => 'Chhota karo',
+	'proofreadpage-button-reset-zoom-label' => 'Pahile ke size',
+	'proofreadpage-button-zoom-in-label' => 'Barraa karo',
+	'proofreadpage-button-toggle-layout-label' => 'Vertical/horizontal layout',
+	'proofreadpage-preferences-showheaders-label' => 'Panna ke namespace me badle ke time header aur footer ke dekhao',
 );
 
 /** Croatian (Hrvatski)
@@ -3208,19 +3349,32 @@ $messages['ka'] = array(
 	'proofreadpage_badpage' => 'არასწორი ფორმატი',
 	'proofreadpage_badpagetext' => 'ფორმატი გვერდისა, რომლის შენახვაც თქვენ ცადეთ, არასწორია.',
 	'proofreadpage_indexdupe' => 'დუბლიკატი ბმული',
+	'proofreadpage_indexdupetext' => 'ინდექსის გვერდზე არ შეიძლება გვერდები ჩამოთვლილი იყოს ერთზე მეტჯერ.',
 	'proofreadpage_nologin' => 'შესვლა არ მომხდარა',
+	'proofreadpage_nologintext' => 'თქვენ უნდა [[Special:UserLogin|შეხვიდეთ სისტემაში]] სტატიების კორექტურის სტატუსის შესაცვლელად.',
 	'proofreadpage_notallowed' => 'ცვლილებები არაა დაშვებული',
+	'proofreadpage_notallowedtext' => 'თქვენ არ შეგიძლიათ ამ გვერდის კორექტურის სტატუსის შეცვლა.',
 	'proofreadpage_number_expected' => 'შეცდომა: რიცხვითი მნიშვნელობის ლოდინი',
 	'proofreadpage_interval_too_large' => 'შეცდომა: ინტერვალი ძალიან დიდია',
 	'proofreadpage_invalid_interval' => 'შეცდომა: არასწორი ინტერვალი',
 	'proofreadpage_nextpage' => 'შემდეგი გვერდი',
 	'proofreadpage_prevpage' => 'წინა გვერდი',
 	'proofreadpage_header' => 'სათაური (არ შეიცავს):',
+	'proofreadpage_body' => 'გვერდის სხეული (მოიცავს):',
+	'proofreadpage_footer' => 'ქვედა (არ შეიცავს):',
+	'proofreadpage_toggleheaders' => 'მოუცველი განყოფილებების ჩვენება',
 	'proofreadpage_quality0_category' => 'ტექსტის გარეშე',
+	'proofreadpage_quality1_category' => 'არაკორექტირებული',
 	'proofreadpage_quality2_category' => 'პრობლემატური',
 	'proofreadpage_quality3_category' => 'შესწორდა',
 	'proofreadpage_quality4_category' => 'შემოწმებული',
+	'proofreadpage_quality0_message' => 'ეს გვერდი არ საჭიროებს კორექტურას',
+	'proofreadpage_quality1_message' => 'ეს გვერდი არ იყო კორექტირებული',
+	'proofreadpage_quality2_message' => 'ამ გვერდის კორექტირებისას პრობლემებია',
+	'proofreadpage_quality3_message' => 'ეს გვერდი კორექტირებულია',
+	'proofreadpage_quality4_message' => 'ეს გვერდი დამოწმებულია',
 	'proofreadpage_index_listofpages' => 'გვერდების სია',
+	'proofreadpage_image_message' => 'ბმული ინდექსის გვერდზე',
 	'proofreadpage_page_status' => 'გვერდის სტატუსი',
 	'proofreadpage_js_attributes' => 'ავტორი სათაური წელი გამომცემელი',
 	'proofreadpage_index_attributes' => 'ავტორი
@@ -3232,12 +3386,19 @@ $messages['ka'] = array(
 გვერდები||20
 შენიშვნები||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|გვერდი|გვერდები}}',
+	'proofreadpage_specialpage_legend' => 'ინდექსური გვერდების ძიება',
 	'proofreadpage_source' => 'წყარო',
+	'proofreadpage_source_message' => 'ტექსტის ელექტრონული ვერსიის შესაქმნელად გამოყენებულია დასკანერებული მასალები',
+	'right-pagequality' => 'გვერდის ხარისხის დროშის შეცვლა',
+	'proofreadpage-section-tools' => 'კორექტურის ხელსაწყოები',
 	'proofreadpage-group-zoom' => 'გადიდება',
 	'proofreadpage-group-other' => 'სხვა',
+	'proofreadpage-button-toggle-visibility-label' => 'ამ გვერდის ზედა და ქვედა ნაწილების ჩვენება/დამალვა',
 	'proofreadpage-button-zoom-out-label' => 'დაპატარავება',
 	'proofreadpage-button-reset-zoom-label' => 'თავდაპირველი ზომა',
 	'proofreadpage-button-zoom-in-label' => 'გადიდება',
+	'proofreadpage-button-toggle-layout-label' => 'ვერტიკალური/ჰორიზონტალური განლაგება',
+	'proofreadpage-preferences-showheaders-label' => 'სახელთა სივრცის გვერდის რედაქტირებისას აჩვენე ზედა და ქვედა ველები.',
 );
 
 /** Khowar (کھوار)
@@ -3555,6 +3716,7 @@ $messages['lfn'] = array(
  */
 $messages['li'] = array(
 	'indexpages' => 'Indexpaginalies',
+	'pageswithoutscans' => "Pagina's zónger scans",
 	'proofreadpage_desc' => "Maak 't meugelik teks eenvoudig te vergelieke mit de oorsjpronkelike scan",
 	'proofreadpage_namespace' => 'Pazjena',
 	'proofreadpage_index_namespace' => 'Indeks',
@@ -3606,6 +3768,15 @@ Opmèrkinge||10",
 	'proofreadpage_specialpage_legend' => "Doorzeuk indexpagina's.",
 	'proofreadpage_source' => 'Brón',
 	'proofreadpage_source_message' => 'Gescande versie worop dees teks is gebaseerd.',
+	'right-pagequality' => 'Veranger de kwaliteitsmarkering van dees paasj',
+	'proofreadpage-section-tools' => 'Prooflaeshölpmiddele',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Anges',
+	'proofreadpage-button-toggle-visibility-label' => 'Tuun/verberg de kop- en voottèks van dees pagina.',
+	'proofreadpage-button-zoom-out-label' => 'Zoom oet',
+	'proofreadpage-button-reset-zoom-label' => 'Origineel gruuedje',
+	'proofreadpage-button-zoom-in-label' => 'Zoom in',
+	'proofreadpage-button-toggle-layout-label' => 'Verticale/horinzontale lay-out',
 );
 
 /** Lumbaart (Lumbaart)
@@ -5607,6 +5778,7 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Logicwiki
  * @author TRYPPN
  */
 $messages['ta'] = array(
@@ -5617,6 +5789,16 @@ $messages['ta'] = array(
 	'proofreadpage_prevpage' => 'முந்தைய பக்கம்',
 	'proofreadpage_index_listofpages' => 'பக்கங்களின் பட்டியல்',
 	'proofreadpage_page_status' => 'பக்கத்தின் நிலைமை',
+	'proofreadpage_js_attributes' => 'எழுத்தாளர் தலைப்பு ஆண்டு பதிப்பகம்',
+	'proofreadpage_index_attributes' => 'எழுத்தாளர்
+தலைப்பு
+ஆண்டு|வெளியிட்ட ஆண்டு
+பதிப்பகம்
+மூலம்
+படம்|அட்டைப் படம்
+பக்கங்கள்||20
+கருத்துக்கள்||10',
+	'proofreadpage_source' => 'மூலம்',
 );
 
 /** Telugu (తెలుగు)
@@ -5679,6 +5861,7 @@ $messages['te'] = array(
 	'proofreadpage_source' => 'మూలము',
 	'proofreadpage_source_message' => 'ఈ పాఠ్య నిర్ధారణకు ఛాయాచిత్రసంగ్రహణకూర్పు(scanned edition) వాడబడ్డది.',
 	'proofreadpage-group-other' => 'ఇతర',
+	'proofreadpage-button-reset-zoom-label' => 'అసలు పరిమాణం',
 );
 
 /** Tetum (Tetun)
@@ -5724,7 +5907,7 @@ $messages['tg-cyrl'] = array(
 Мулоҳизот||10',
 );
 
-/** Tajik (Latin script) (tojikī)
+/** Tajik (Latin script) (Tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -5967,10 +6150,11 @@ Kaynak
 Resim|Kapak resmi
 Sayfalar||20
 Açıklamalar||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|sayfa|sayfa}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|sayfa|sayfa}}',
 	'proofreadpage_specialpage_legend' => 'Dizin sayfalarını ara',
 	'proofreadpage_source' => 'Kaynak',
 	'proofreadpage_source_message' => 'Bu metni oluşturmak için kullanılan taranmış sürüm',
+	'proofreadpage-section-tools' => 'Redaksiyon araçları',
 );
 
 /** Tsonga (Xitsonga)
@@ -5999,7 +6183,7 @@ $messages['tyv'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|арын|арын}}',
 );
 
-/** Uyghur (Latin script) (Uyghurche‎)
+/** Uyghur (Latin script) (Uyghurche)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
@@ -6149,7 +6333,7 @@ Note||10',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizontale',
 );
 
-/** Veps (Vepsan kel')
+/** Veps (Vepsän kel’)
  * @author Triple-ADHD-AS
  * @author Игорь Бродский
  */
@@ -6251,6 +6435,7 @@ Ghi chú||10',
 	'proofreadpage-button-reset-zoom-label' => 'Cỡ bình thường',
 	'proofreadpage-button-zoom-in-label' => 'Phóng to',
 	'proofreadpage-button-toggle-layout-label' => 'Đứng thẳng/ngang',
+	'proofreadpage-preferences-showheaders-label' => 'Hiện các hộp đầu/chân khi sửa đổi trong không gian tên Trang',
 );
 
 /** Volapük (Volapük)
