@@ -3183,6 +3183,7 @@ Note||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoom avanti',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizzontale',
+	'proofreadpage-preferences-showheaders-label' => "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace Pagina",
 );
 
 /** Japanese (日本語)
