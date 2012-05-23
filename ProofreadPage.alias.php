@@ -36,6 +36,12 @@ $specialPageAliases['de'] = array(
 	'PagesWithoutScans' => array( 'Seiten_ohne_Scans' ),
 );
 
+/** Estonian (Eesti) */
+$specialPageAliases['et'] = array(
+	'IndexPages' => array( 'Registrid' ),
+	'PagesWithoutScans' => array( 'Skannimata_tekstid' ),
+);
+
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'IndexPages' => array( 'فهرست_صفحه‌ها' ),
@@ -61,6 +67,7 @@ $specialPageAliases['ja'] = array(
 
 /** Luxembourgish (Lëtzebuergesch) */
 $specialPageAliases['lb'] = array(
+	'IndexPages' => array( 'Säiten_indexéieren' ),
 	'PagesWithoutScans' => array( 'Säiten_ouni_Scan' ),
 );
 
@@ -73,6 +80,7 @@ $specialPageAliases['mk'] = array(
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
 	'IndexPages' => array( 'സൂചികാതാളുകൾ' ),
+	'PagesWithoutScans' => array( 'സ്കാൻലഭ്യമല്ലാത്തതാളുകൾ' ),
 );
 
 /** Norwegian Bokmål (‪Norsk (bokmål)‬) */
