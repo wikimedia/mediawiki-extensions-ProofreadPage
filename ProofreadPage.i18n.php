@@ -1259,7 +1259,7 @@ Vydavatelství
 Obrázek|Obálka
 Stran||20
 Poznámky||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránek}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|stránka|stránky|stránek}}',
 	'proofreadpage_specialpage_legend' => 'Hledat na indexových stránkách',
 	'proofreadpage_source' => 'Zdroj',
 	'proofreadpage_source_message' => 'Naskenovaná verze použitá k vypracování tohoto textu',
@@ -1272,6 +1272,7 @@ Poznámky||10',
 	'proofreadpage-button-reset-zoom-label' => 'Původní velikost',
 	'proofreadpage-button-zoom-in-label' => 'Přiblížit',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikální/horizontální uspořádání',
+	'proofreadpage-preferences-showheaders-label' => 'Při editaci ve jmenném prostoru Stránka zobrazovat hlavičku a patičku',
 );
 
 /** Danish (Dansk)
@@ -1495,7 +1496,7 @@ beyanati||10',
 	'proofreadpage-group-other' => 'Zewmi',
 	'proofreadpage-button-toggle-visibility-label' => 'Ena pelaya bımocne/bınımni  wanena u asınena',
 	'proofreadpage-button-zoom-out-label' => 'Zoomi teber ke',
-	'proofreadpage-button-reset-zoom-label' => 'Oricinal çep',
+	'proofreadpage-button-reset-zoom-label' => 'Oricinal ebat',
 	'proofreadpage-button-zoom-in-label' => 'Zoom ke',
 	'proofreadpage-button-toggle-layout-label' => 'Kewtey/tikey  asayış',
 	'proofreadpage-preferences-showheaders-label' => 'Nameye pela çı vurneyeno heqa cı wendış u asayışi bımocne.',
@@ -3016,9 +3017,9 @@ Notas||10',
  * @author IvanLanin
  */
 $messages['id'] = array(
-	'indexpages' => 'Daftar dari halaman indeks',
-	'pageswithoutscans' => 'Halaman tanpa transklusi',
-	'proofreadpage_desc' => 'Menyediakan perbandingan antara naskah dengan hasil pemindaian asli secara mudah',
+	'indexpages' => 'Daftar halaman indeks',
+	'pageswithoutscans' => 'Halaman tanpa pindaian',
+	'proofreadpage_desc' => 'Menyediakan perbandingan antara naskah dengan pindaian asli secara mudah',
 	'proofreadpage_namespace' => 'Halaman',
 	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Gambar',
@@ -3029,14 +3030,14 @@ $messages['id'] = array(
 	'proofreadpage_badpage' => 'Kesalahan Format',
 	'proofreadpage_badpagetext' => 'Format halaman yang akan anda simpan, salah.',
 	'proofreadpage_indexdupe' => 'Gandakan pranala',
-	'proofreadpage_indexdupetext' => 'Halaman tidak dapat di daftarkan lebih dari sekali di halaman indek.',
+	'proofreadpage_indexdupetext' => 'Halaman tidak dapat didaftarkan lebih dari sekali di halaman indeks.',
 	'proofreadpage_nologin' => 'Belum masuk log',
 	'proofreadpage_nologintext' => 'Anda harus [[Special:UserLogin|masuk log]] untuk mengubah status koreksi halaman.',
 	'proofreadpage_notallowed' => 'Perubahan tidak diperbolehkan',
 	'proofreadpage_notallowedtext' => 'Anda tidak diperbolehkan untuk mengubah status uji-baca halaman ini.',
-	'proofreadpage_number_expected' => 'Kesalahan: nilai angka diharapkan',
-	'proofreadpage_interval_too_large' => 'Kesalahan:Interval terlalu besar',
-	'proofreadpage_invalid_interval' => 'Kesalahan: Interval tidak sah',
+	'proofreadpage_number_expected' => 'Kesalahan: isi dengan angka',
+	'proofreadpage_interval_too_large' => 'Kesalahan: interval terlalu besar',
+	'proofreadpage_invalid_interval' => 'Kesalahan: interval tidak sah',
 	'proofreadpage_nextpage' => 'Halaman selanjutnya',
 	'proofreadpage_prevpage' => 'Halaman sebelumnya',
 	'proofreadpage_header' => 'Kepala (noinclude):',
@@ -3065,11 +3066,20 @@ Sumber
 Gambar|Gambar sampul
 Halaman||20
 Catatan||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|halaman|halaman}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|halaman|halaman}}',
 	'proofreadpage_specialpage_legend' => 'Cari halaman indeks',
 	'proofreadpage_source' => 'Sumber',
 	'proofreadpage_source_message' => 'Versi pindai yang digunakan untuk membuat naskah ini',
 	'right-pagequality' => 'Memodifikasi tanda kualitas halaman',
+	'proofreadpage-section-tools' => 'Peralatan uji-baca',
+	'proofreadpage-group-zoom' => 'Ukuran',
+	'proofreadpage-group-other' => 'Lain-lain',
+	'proofreadpage-button-toggle-visibility-label' => 'Tampilkan/sembunyikan header dan footer halaman ini',
+	'proofreadpage-button-zoom-out-label' => 'Perkecil',
+	'proofreadpage-button-reset-zoom-label' => 'Ukuran asli',
+	'proofreadpage-button-zoom-in-label' => 'Perbesar',
+	'proofreadpage-button-toggle-layout-label' => 'Tata letak vertikal/horizontal',
+	'proofreadpage-preferences-showheaders-label' => 'Tampilkan kolom header dan footer saat menyunting di ruang nama Halaman',
 );
 
 /** Igbo (Igbo)
