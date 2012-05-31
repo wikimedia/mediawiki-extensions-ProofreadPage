@@ -3474,6 +3474,7 @@ $messages['kn'] = array(
  * @author Pakman
  * @author ToePeu
  * @author Yknok29
+ * @author 아라
  */
 $messages['ko'] = array(
 	'indexpages' => '목차 문서의 목록',
@@ -3490,7 +3491,7 @@ $messages['ko'] = array(
 	'proofreadpage_badpagetext' => '당신이 저장하려 한 문서의 포맷이 올바르지 않습니다.',
 	'proofreadpage_indexdupe' => '중복된 링크',
 	'proofreadpage_indexdupetext' => '페이지가 목차 문서에 한 번 이상 올라올 수 없습니다.',
-	'proofreadpage_nologin' => ' 로그인된 상태가 아닙니다.',
+	'proofreadpage_nologin' => '로그인하지 않음',
 	'proofreadpage_nologintext' => '문서의 검토 상태를 변경하려면 [[Special:UserLogin|로그인]]해야 합니다.',
 	'proofreadpage_notallowed' => '이 문서는 변경이 불가능합니다.',
 	'proofreadpage_notallowedtext' => '이 문서의 교정 상태를 바꿀 수 없습니다.',
@@ -4036,7 +4037,7 @@ $messages['ml'] = array(
 	'proofreadpage-group-other' => 'മറ്റുള്ളവ',
 	'proofreadpage-button-toggle-visibility-label' => 'താളിന്റെ തലക്കുറിയും അടിക്കുറിപ്പും പ്രദർശിപ്പിക്കുക/മറയ്ക്കുക',
 	'proofreadpage-button-zoom-out-label' => 'ചെറുതാക്കി കാട്ടുക',
-	'proofreadpage-button-reset-zoom-label' => 'വലിപ്പം പുനഃക്രമീകരിക്കുക',
+	'proofreadpage-button-reset-zoom-label' => 'യഥാർത്ഥ വലിപ്പം',
 	'proofreadpage-button-zoom-in-label' => 'വലുതാക്കുക',
 	'proofreadpage-button-toggle-layout-label' => 'തിരശ്ചീന/ലംബ രൂപകല്പന',
 	'proofreadpage-preferences-showheaders-label' => 'താൾ നാമമേഖല തിരുത്തുമ്പോൾ തലക്കുറിപ്പ്, അടിക്കുറിപ്പ് മണ്ഡലങ്ങൾ പ്രദർശിപ്പിക്കുക',
@@ -6102,6 +6103,19 @@ Mga puna||10',
 	'proofreadpage_source' => 'Pinagmulan',
 	'proofreadpage_source_message' => 'Edisyong nasiyasat na ginamit upang maitatag ang tekstong ito',
 	'right-pagequality' => 'Baguhin ang watawat na pangkalidad ng pahina',
+);
+
+/** Толышә зывон (Толышә зывон)
+ * @author Erdemaslancan
+ */
+$messages['tly'] = array(
+	'proofreadpage_namespace' => 'Сәһифә',
+	'proofreadpage_image' => 'Шикил',
+	'proofreadpage_nextpage' => 'Думотоно шә сәһифә',
+	'proofreadpage_source' => 'Чыконҹо:',
+	'proofreadpage-group-zoom' => 'Мигјос',
+	'proofreadpage-group-other' => 'ҹо',
+	'proofreadpage-button-reset-zoom-label' => 'Сыфтәнә памјә',
 );
 
 /** Turkish (Türkçe)
