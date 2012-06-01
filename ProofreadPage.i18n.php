@@ -4696,7 +4696,7 @@ $messages['pms'] = array(
 	'proofreadpage_quality0_category' => 'Sensa test',
 	'proofreadpage_quality1_category' => 'Pa passà an verìfica',
 	'proofreadpage_quality2_category' => 'Problemàtich',
-	'proofreadpage_quality3_category' => 'Verificà',
+	'proofreadpage_quality3_category' => 'Verìfica',
 	'proofreadpage_quality4_category' => 'Validà',
 	'proofreadpage_quality0_message' => "Sta pàgina-sì a l'ha pa dabzògn ëd la revision",
 	'proofreadpage_quality1_message' => "Sta pàgina-sì a l'é pa stàita revisionà",
@@ -4728,6 +4728,7 @@ Nòte||10',
 	'proofreadpage-button-reset-zoom-label' => "Amposté torna l'angrandiment",
 	'proofreadpage-button-zoom-in-label' => 'Angrandì',
 	'proofreadpage-button-toggle-layout-label' => 'Disposission vertical/orisontal',
+	'proofreadpage-preferences-showheaders-label' => 'Mosta ij camp ëd testà e ëd pe quand as modìfica jë spassi nominaj dla Pagina',
 );
 
 /** Pashto (پښتو)
