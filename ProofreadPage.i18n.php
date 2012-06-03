@@ -441,6 +441,9 @@ $messages['arc'] = array(
 	'proofreadpage_nologin' => 'ܠܐ ܥܠܝܠܐ',
 	'proofreadpage_nextpage' => 'ܦܐܬܐ ܐܚܪܬܐ',
 	'proofreadpage_prevpage' => 'ܦܐܬܐ ܩܕܝܡܬܐ',
+	'proofreadpage_quality0_category' => 'ܕܠܐ ܟܬܒܬܐ',
+	'proofreadpage_quality1_category' => 'ܟܬܒܬܐ ܠܐ ܢܘܩܕܬܐ',
+	'proofreadpage_quality3_category' => 'ܟܬܒܬܐ ܢܘܩܕܬܐ',
 	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܕܦ̈ܐ',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|ܕܦܐ|ܕ̈ܦܐ}}',
 	'proofreadpage_source' => 'ܡܒܘܥܐ',
@@ -1447,7 +1450,7 @@ $messages['diq'] = array(
 	'proofreadpage_index_expected' => 'xeta: paweyê endeksibi',
 	'proofreadpage_nosuch_index' => 'xeta: hina yew endeks çino',
 	'proofreadpage_nosuch_file' => 'xeta: hina yew dosya çina.',
-	'proofreadpage_badpage' => 'foramto/fesalo şaş',
+	'proofreadpage_badpage' => 'Formato Xırab',
 	'proofreadpage_badpagetext' => 'pelo ke şıma qeyd keni formatê ey şaşo',
 	'proofreadpage_indexdupe' => 'gıreyo ke reyna reyna tesel beno, tekrar beno',
 	'proofreadpage_indexdupetext' => 'no pelê indeksi de peli yew ra zêd liste nıbeni',
@@ -3419,6 +3422,75 @@ $messages['khw'] = array(
 	'indexpages' => 'صفحاتن لسٹ',
 );
 
+/** Kirmanjki (Kırmancki)
+ * @author Erdemaslancan
+ */
+$messages['kiu'] = array(
+	'indexpages' => 'Listeya pelê endeksi',
+	'pageswithoutscans' => 'Pela miyandı geyrayışi',
+	'proofreadpage_desc' => "Destur bıd' wa metın pê cıgerayişê orjinali rehet u asan têver şan",
+	'proofreadpage_namespace' => 'Pel',
+	'proofreadpage_index_namespace' => 'Endeks',
+	'proofreadpage_image' => 'Resım',
+	'proofreadpage_index' => 'İndeks',
+	'proofreadpage_index_expected' => 'Xeta: paweyê endeksibi',
+	'proofreadpage_nosuch_index' => 'Xeta: hina yew endeks çino',
+	'proofreadpage_nosuch_file' => 'Xeta: hina yew dosya çina.',
+	'proofreadpage_badpage' => 'Formato/fesalo şaş',
+	'proofreadpage_badpagetext' => 'Pelo ke şıma qeyd keni formatê ey şaşo',
+	'proofreadpage_indexdupe' => 'Gıreyo ke reyna reyna tesel beno, tekrar beno',
+	'proofreadpage_indexdupetext' => 'No pelê indeksi de peli yew ra zêd liste nıbeni',
+	'proofreadpage_nologin' => 'Cı nêkota',
+	'proofreadpage_nologintext' => 'Qey vurnayişê halê raştkerdışê pelan gani şıma [[Special:UserLogin|cı kewiyi]].',
+	'proofreadpage_notallowed' => 'Vurnayiş re destur çino',
+	'proofreadpage_notallowedtext' => 'Vurnayişê halê raştkerdışê peli re destur nêdano',
+	'proofreadpage_number_expected' => 'Xeta:Amarin weziyet pawéno',
+	'proofreadpage_interval_too_large' => 'Xeta: benate/mabên zaf hêrayo',
+	'proofreadpage_invalid_interval' => 'Xeta: benateyo nemeqbul',
+	'proofreadpage_nextpage' => 'Pela badê cû',
+	'proofreadpage_prevpage' => 'Pelo ke pey de mend',
+	'proofreadpage_header' => 'Sername (ihtiwa):',
+	'proofreadpage_body' => 'Miyaneyê peli (çepraşt têarê beno):',
+	'proofreadpage_footer' => 'Bın zanışe (ihtiwa):',
+	'proofreadpage_toggleheaders' => 'asayişê qısmi yê ke ihtiwa nıbeni bıvurn',
+	'proofreadpage_quality0_category' => 'Metn tede çino',
+	'proofreadpage_quality1_category' => 'Raşt nıbiyo',
+	'proofreadpage_quality2_category' => 'Problemın',
+	'proofreadpage_quality3_category' => 'Timar ke',
+	'proofreadpage_quality4_category' => 'Raşt/tesdiq biyo',
+	'proofreadpage_quality0_message' => 'No pel re raştkerdış luzûm nıkeno',
+	'proofreadpage_quality1_message' => 'No pel de reaştkerdış nıbı',
+	'proofreadpage_quality2_message' => 'Wexta no pel de raştkerdış bêne xeta vıraziya',
+	'proofreadpage_quality3_message' => 'No pel de raştkerdış bı',
+	'proofreadpage_quality4_message' => 'No pel raşt/tesdiq biyo',
+	'proofreadpage_index_listofpages' => 'Listeya pelan',
+	'proofreadpage_image_message' => 'Gıreyo ke erziyayo pelê endeksi',
+	'proofreadpage_page_status' => 'halê peli',
+	'proofreadpage_js_attributes' => 'Nuştox/e sername serre weşanger',
+	'proofreadpage_index_attributes' => 'nuştox/e
+sername
+serre|serrê weşanayişi/neşri
+weşanger
+çıme
+Resım|resmê qapaxi
+peli||20
+beyanati||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pele|pele}}',
+	'proofreadpage_specialpage_legend' => 'Bıgêr pelê indeksan',
+	'proofreadpage_source' => 'Çıme',
+	'proofreadpage_source_message' => 'Versiyono kopyakerde gurêna ke nê meqaley rono',
+	'right-pagequality' => 'Vurnayışté pela ré desmal çek',
+	'proofreadpage-section-tools' => 'Wesıtey',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Zewbi',
+	'proofreadpage-button-toggle-visibility-label' => 'Ena pelaya bımocne/bınımni  wanena u asınena',
+	'proofreadpage-button-zoom-out-label' => 'Zoomi teber ke',
+	'proofreadpage-button-reset-zoom-label' => 'Oricinal ebat',
+	'proofreadpage-button-zoom-in-label' => 'Zoom ke',
+	'proofreadpage-button-toggle-layout-label' => 'Kewtey/tikey  asayış',
+	'proofreadpage-preferences-showheaders-label' => 'Nameye pela çı vurneyeno heqa cı wendış u asayışi bımocne.',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author Lovekhmer
@@ -3458,10 +3530,13 @@ $messages['km'] = array(
 
 /** Kannada (ಕನ್ನಡ)
  * @author Nayvik
+ * @author Omshivaprakash
  */
 $messages['kn'] = array(
 	'proofreadpage_namespace' => 'ಪುಟ',
+	'proofreadpage_index_namespace' => 'ಸೂಚ್ಯಂಕ',
 	'proofreadpage_image' => 'ಚಿತ್ರ',
+	'proofreadpage_index' => 'Index',
 	'proofreadpage_nextpage' => 'ಮುಂದಿನ ಪುಟ',
 	'proofreadpage_prevpage' => 'ಹಿಂದಿನ ಪುಟ',
 	'proofreadpage_pages' => '{{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}',
@@ -6113,6 +6188,7 @@ $messages['tly'] = array(
 	'proofreadpage_namespace' => 'Сәһифә',
 	'proofreadpage_image' => 'Шикил',
 	'proofreadpage_nextpage' => 'Думотоно шә сәһифә',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|бајт|бајтон}}',
 	'proofreadpage_source' => 'Чыконҹо:',
 	'proofreadpage-group-zoom' => 'Мигјос',
 	'proofreadpage-group-other' => 'ҹо',
