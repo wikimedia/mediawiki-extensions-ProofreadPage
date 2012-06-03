@@ -436,7 +436,9 @@ $messages['ar'] = array(
  */
 $messages['arc'] = array(
 	'proofreadpage_namespace' => 'ܦܐܬܐ',
+	'proofreadpage_index_namespace' => 'ܩܘܕܝܟܘܣ',
 	'proofreadpage_image' => 'ܨܘܪܬܐ',
+	'proofreadpage_index' => 'ܩܘܕܝܟܘܣ',
 	'proofreadpage_indexdupe' => 'ܐܣܘܪܐ ܥܦܝܦܐ',
 	'proofreadpage_nologin' => 'ܠܐ ܥܠܝܠܐ',
 	'proofreadpage_nextpage' => 'ܦܐܬܐ ܐܚܪܬܐ',
@@ -447,6 +449,12 @@ $messages['arc'] = array(
 	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܕܦ̈ܐ',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|ܕܦܐ|ܕ̈ܦܐ}}',
 	'proofreadpage_source' => 'ܡܒܘܥܐ',
+	'proofreadpage-section-tools' => 'ܡܐܢ̈ܐ ܕܢܩܕܘܬܐ',
+	'proofreadpage-group-zoom' => 'ܡܩܪܒ/ܡܙܥܪ',
+	'proofreadpage-group-other' => 'ܐܚܪܢܐ',
+	'proofreadpage-button-zoom-out-label' => 'ܡܙܥܪ',
+	'proofreadpage-button-reset-zoom-label' => 'ܥܓܪܐ ܫܪܫܝܐ',
+	'proofreadpage-button-zoom-in-label' => 'ܡܩܪܒ',
 );
 
 /** Araucanian (Mapudungun)
@@ -2393,6 +2401,7 @@ Aamerkige||10',
 	'proofreadpage-button-reset-zoom-label' => 'Orginalgrößi',
 	'proofreadpage-button-zoom-in-label' => 'Dryy suume',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikali/horizontali Ussrichtig',
+	'proofreadpage-preferences-showheaders-label' => 'Bim Bearbeite vo Syte im Sytenamensruum d Fälder für d Chopf- un Fuesszyyle aazeige.',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -4491,7 +4500,7 @@ Opmerkingen||10",
 	'proofreadpage-preferences-showheaders-label' => 'Kop- en voettekst velden weergeven als in de paginanaamruimte wordt bewerkt',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Diupwijk
  * @author Gunnernett
  * @author Harald Khan
@@ -4530,7 +4539,7 @@ $messages['nn'] = array(
 Tittel
 År|Utgjeve år
 Utgjevar
-Kjelda
+Kjelde
 Bilete|Omslagsbilete
 Sider||20
 Merknader||10',
@@ -6181,7 +6190,7 @@ Mga puna||10',
 	'right-pagequality' => 'Baguhin ang watawat na pangkalidad ng pahina',
 );
 
-/** Толышә зывон (Толышә зывон)
+/** толышә зывон (толышә зывон)
  * @author Erdemaslancan
  */
 $messages['tly'] = array(
