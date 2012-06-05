@@ -4812,7 +4812,7 @@ Nòte||10',
 	'proofreadpage-button-reset-zoom-label' => "Amposté torna l'angrandiment",
 	'proofreadpage-button-zoom-in-label' => 'Angrandì',
 	'proofreadpage-button-toggle-layout-label' => 'Disposission vertical/orisontal',
-	'proofreadpage-preferences-showheaders-label' => 'Mosta ij camp ëd testà e ëd pe quand as modìfica jë spassi nominaj dla Pagina',
+	'proofreadpage-preferences-showheaders-label' => "Smon-e dij camp d'antestassion e ëd pé ëd pàgina quand as modìfico jë spassi nominaj dla Pàgina",
 );
 
 /** Pashto (پښتو)
