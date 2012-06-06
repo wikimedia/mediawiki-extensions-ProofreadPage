@@ -3623,6 +3623,7 @@ $messages['ko'] = array(
 	'proofreadpage-button-reset-zoom-label' => '원본 크기',
 	'proofreadpage-button-zoom-in-label' => '확대',
 	'proofreadpage-button-toggle-layout-label' => '수직/수평 레이아웃',
+	'proofreadpage-preferences-showheaders-label' => '문서 이름공간에서 편집할 떄 머릿글 및 바닥글 필드 보이기',
 );
 
 /** Kinaray-a (Kinaray-a)
