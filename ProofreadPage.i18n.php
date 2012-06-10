@@ -994,7 +994,7 @@ Key|Sort key
 	'proofreadpage-preferences-showheaders-label' => 'পাতা নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
@@ -1072,6 +1072,7 @@ Remarks|Notennoù|10",
 	'proofreadpage-button-reset-zoom-label' => 'Ment orin',
 	'proofreadpage-button-zoom-in-label' => 'Zoumañ',
 	'proofreadpage-button-toggle-layout-label' => 'Kinnig a-sav/a-led',
+	'proofreadpage-preferences-showheaders-label' => 'Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù e mod Pajenn',
 );
 
 /** Bosnian (Bosanski)
@@ -4086,10 +4087,10 @@ $messages['ml'] = array(
 	'proofreadpage_invalid_interval' => 'പിഴവ്: അസാധുവായ ഇടവേള',
 	'proofreadpage_nextpage' => 'അടുത്ത താൾ',
 	'proofreadpage_prevpage' => 'മുൻപത്തെ താൾ',
-	'proofreadpage_header' => 'തലവാചകം (noinclude):',
-	'proofreadpage_body' => 'താളിന്റെ ഉള്ളടക്കം (transclude ചെയ്യാനുള്ളത്):',
+	'proofreadpage_header' => 'തലക്കെട്ട് (ഉൾപ്പെടുത്തില്ല):',
+	'proofreadpage_body' => 'താളിന്റെ ഉള്ളടക്കം (ട്രാൻസ്‌ക്ലൂഡ് ചെയ്യാനുള്ളത്):',
 	'proofreadpage_footer' => 'പാദവാചകം (noinclude):',
-	'proofreadpage_toggleheaders' => 'noinclude വിഭാഗങ്ങളുടെ പ്രദർശനം ടോഗിൾ ചെയ്യുക',
+	'proofreadpage_toggleheaders' => 'ഉൾപ്പെടുത്തില്ലാത്ത വിഭാഗങ്ങൾ പ്രദർശിപ്പിക്കുക / മറയ്ക്കുക',
 	'proofreadpage_quality0_category' => 'എഴുത്ത് ഇല്ലാത്തവ',
 	'proofreadpage_quality1_category' => 'തെറ്റുതിരുത്തൽ വായന നടന്നിട്ടില്ലാത്തവ',
 	'proofreadpage_quality2_category' => 'പ്രശ്നമുള്ളവ',
@@ -4115,7 +4116,7 @@ $messages['ml'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|ഒരു താൾ|$2 താളുകൾ}}',
 	'proofreadpage_specialpage_legend' => 'സൂചികാ താളുകൾ തിരയുക',
 	'proofreadpage_source' => 'സ്രോതസ്സ്',
-	'proofreadpage_source_message' => 'ഈ എഴുത്ത് സ്ഥാപിക്കാൻ സ്കാൻ ചെയ്തെടുത്ത പ്രസിദ്ധീകരണമാണുപയോഗിച്ചത്',
+	'proofreadpage_source_message' => 'സ്കാൻ ചെയ്തെടുത്ത പ്രസിദ്ധീകരണം ഉപയോഗിച്ചാണ് ഈ എഴുത്തുകൾ സ്ഥിരീകരിച്ചത്',
 	'right-pagequality' => 'താളിന്റെ ഗുണമേന്മാ പതാകയിൽ മാറ്റം വരുത്തുക',
 	'proofreadpage-section-tools' => 'തെറ്റുതിരുത്തൽ വായനോപകരണങ്ങൾ',
 	'proofreadpage-group-zoom' => 'വലുതാക്കി കാട്ടുക',
@@ -6626,7 +6627,7 @@ $messages['yue'] = array(
 備註||10',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Hydra
@@ -6680,12 +6681,12 @@ $messages['zh-hans'] = array(
 	'proofreadpage_js_attributes' => '作者 标题 年份 出版者',
 	'proofreadpage_index_attributes' => '作者
 标题
-年份|出版时间
+年份|出版年份
 出版
 来源
 图像|封面图像
 页数||20
-注释||10',
+评论||10',
 	'proofreadpage_pages' => '$2个{{PLURAL:$1|页面|页面}}',
 	'proofreadpage_specialpage_legend' => '搜索索引页',
 	'proofreadpage_source' => '来源',
