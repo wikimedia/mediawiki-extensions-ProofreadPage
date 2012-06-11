@@ -20,12 +20,12 @@ $specialPageAliases['ar'] = array(
 	'PagesWithoutScans' => array( 'صفحات_بدون_فحص' ),
 );
 
-/** Breton (Brezhoneg) */
+/** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'IndexPages' => array( 'PajennoùMeneger' ),
 );
 
-/** Danish (Dansk) */
+/** Danish (dansk) */
 $specialPageAliases['da'] = array(
 	'IndexPages' => array( 'Indekssider' ),
 );
@@ -36,7 +36,13 @@ $specialPageAliases['de'] = array(
 	'PagesWithoutScans' => array( 'Seiten_ohne_Scans' ),
 );
 
-/** Estonian (Eesti) */
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'IndexPages' => array( 'Pelaİndeks' ),
+	'PagesWithoutScans' => array( 'PeleyêBêCıgeyrayışi' ),
+);
+
+/** Estonian (eesti) */
 $specialPageAliases['et'] = array(
 	'IndexPages' => array( 'Registrid' ),
 	'PagesWithoutScans' => array( 'Skannimata_tekstid' ),
@@ -53,7 +59,7 @@ $specialPageAliases['ht'] = array(
 	'IndexPages' => array( 'PajEndèks' ),
 );
 
-/** Interlingua (Interlingua) */
+/** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'IndexPages' => array( 'Paginas_de_indice' ),
 	'PagesWithoutScans' => array( 'Paginas_non_transcludite' ),
@@ -65,13 +71,19 @@ $specialPageAliases['ja'] = array(
 	'PagesWithoutScans' => array( 'スキャンのないページ' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'IndexPages' => array( '색인문서' ),
+	'PagesWithoutScans' => array( '스캔안한문서' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $specialPageAliases['lb'] = array(
 	'IndexPages' => array( 'Säiten_indexéieren' ),
 	'PagesWithoutScans' => array( 'Säiten_ouni_Scan' ),
 );
 
-/** Macedonian (Македонски) */
+/** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'IndexPages' => array( 'ИндексираниСтраници' ),
 	'PagesWithoutScans' => array( 'СтранициБезПроверки' ),
@@ -83,7 +95,7 @@ $specialPageAliases['ml'] = array(
 	'PagesWithoutScans' => array( 'സ്കാൻലഭ്യമല്ലാത്തതാളുകൾ' ),
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+/** Norwegian Bokmål (‪norsk (bokmål)‬) */
 $specialPageAliases['nb'] = array(
 	'IndexPages' => array( 'Indekssider' ),
 	'PagesWithoutScans' => array( 'Sider_uten_skanninger' ),
@@ -101,7 +113,7 @@ $specialPageAliases['nl'] = array(
 	'PagesWithoutScans' => array( 'PaginasZonderScans', 'Pagina\'sZonderScans' ),
 );
 
-/** Swedish (Svenska) */
+/** Swedish (svenska) */
 $specialPageAliases['sv'] = array(
 	'IndexPages' => array( 'Indexsidor' ),
 );
@@ -112,7 +124,7 @@ $specialPageAliases['tr'] = array(
 	'PagesWithoutScans' => array( 'TaramasızSayfalar' ),
 );
 
-/** Vèneto (Vèneto) */
+/** vèneto (vèneto) */
 $specialPageAliases['vec'] = array(
 	'IndexPages' => array( 'PagineDeIndice' ),
 	'PagesWithoutScans' => array( 'PagineSensaScansion' ),
