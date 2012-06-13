@@ -629,6 +629,7 @@ $messages['az'] = array(
  * @author Assele
  * @author Comp1089
  * @author Ebe123
+ * @author ҒатаУлла
  */
 $messages['ba'] = array(
 	'indexpages' => 'Индекс биттәренең исемлеге',
@@ -685,7 +686,14 @@ $messages['ba'] = array(
 	'proofreadpage_source' => 'Сығанаҡ',
 	'proofreadpage_source_message' => 'Был текстты булдырыу өсөн сканланған материалдар ҡулланылған',
 	'right-pagequality' => 'Биттең сифаты билдәһен үҙгәртеү',
+	'proofreadpage-section-tools' => 'Төҙәтеүсе ҡоралдары',
+	'proofreadpage-group-zoom' => 'Ҙурайтыу',
+	'proofreadpage-group-other' => 'Икенсе',
+	'proofreadpage-button-toggle-visibility-label' => 'Биттең өҫкө һәм аҫҡы яғын күрһәтергә/йәшерергә',
+	'proofreadpage-button-zoom-out-label' => 'Йырағайтырға',
 	'proofreadpage-button-reset-zoom-label' => 'Сығанаҡ ҙурлыҡ',
+	'proofreadpage-button-zoom-in-label' => 'Яҡынайтырға',
+	'proofreadpage-button-toggle-layout-label' => 'Текә/арҡыры билдә',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
@@ -6588,6 +6596,10 @@ $messages['yi'] = array(
 	'proofreadpage_nologin' => 'נישט אַרײַנלאגירט',
 	'proofreadpage_nextpage' => 'קומענדיגער בלאַט',
 	'proofreadpage_prevpage' => 'פֿריערדיגער בלאַט',
+	'proofreadpage_quality0_category' => 'אן טעקסט',
+	'proofreadpage_quality1_category' => 'קארעקטור נישט געליינט',
+	'proofreadpage_quality2_category' => 'פראבלעמאטיש',
+	'proofreadpage_quality3_category' => 'קארעקטור געליינט',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|בלאַט|בלעטער}}',
 	'proofreadpage_specialpage_legend' => 'זוכן אינדעקס־זײַטן',
 	'proofreadpage_source' => 'מקור',
