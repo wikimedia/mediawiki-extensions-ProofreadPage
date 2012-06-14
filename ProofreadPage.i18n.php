@@ -457,7 +457,7 @@ $messages['arc'] = array(
 	'proofreadpage-button-zoom-in-label' => 'ܡܩܪܒ',
 );
 
-/** Araucanian (Mapudungun)
+/** Araucanian (mapudungun)
  * @author Remember the dot
  */
 $messages['arn'] = array(
@@ -568,7 +568,7 @@ $messages['as'] = array(
 	'proofreadpage-preferences-showheaders-label' => 'পৃষ্ঠা নামস্থানত সম্পাদনা কৰোঁতে শিৰোনামা আৰু পাদটীকা স্থান দেখুৱাওক',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Esbardu
  */
 $messages['ast'] = array(
@@ -612,7 +612,7 @@ $messages['avk'] = array(
 	'proofreadpage_header' => 'Kroj (noinclude) :',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  */
 $messages['az'] = array(
@@ -737,7 +737,7 @@ $messages['bcl'] = array(
 	'proofreadpage_index_namespace' => 'Indeks',
 );
 
-/** Belarusian (Беларуская)
+/** Belarusian (беларуская)
  * @author Wizardist
  * @author Хомелка
  */
@@ -879,7 +879,7 @@ $messages['be-tarask'] = array(
 	'proofreadpage-preferences-showheaders-label' => 'Паказваць палі для верхняга і ніжняга калянтытулаў пры рэдагаваньні ў прасторы назваў Старонка',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author Borislav
  * @author DCLXVI
  * @author Spiritia
@@ -1083,7 +1083,7 @@ Remarks|Notennoù|10",
 	'proofreadpage-preferences-showheaders-label' => 'Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù e mod Pajenn',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -1143,7 +1143,7 @@ Napomene||10',
 	'right-pagequality' => 'Izmijeni zastavu kvalitete stranice',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Aleator
  * @author Jordi Roqué
  * @author Paucabot
@@ -1226,7 +1226,7 @@ $messages['ceb'] = array(
 	'proofreadpage_prevpage' => 'Miaging panid',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Matěj Grabovský
  * @author Mormegil
  */
@@ -1295,7 +1295,7 @@ Poznámky||10',
 	'proofreadpage-preferences-showheaders-label' => 'Při editaci ve jmenném prostoru Stránka zobrazovat hlavičku a patičku',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Dferg
  * @author Jon Harald Søby
  * @author Peter Alberti
@@ -1591,7 +1591,7 @@ Pśispomnjeśa||10',
 	'proofreadpage-preferences-showheaders-label' => 'Głowowe a nogowe póla pokazaś, gaž wobźěłujo se w mjenjowem rumje boka',
 );
 
-/** Ewe (Eʋegbe) */
+/** Ewe (eʋegbe) */
 $messages['ee'] = array(
 	'proofreadpage_namespace' => 'Nuŋɔŋlɔ',
 );
@@ -1745,7 +1745,7 @@ Rimarkoj||10',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikala/horizonta aspekto',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Aleator
  * @author Armando-Martin
  * @author Barcex
@@ -1822,7 +1822,7 @@ Comentarios||10',
 	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de encabezado y pie de página cuando se edita en el espacio de nombres de página',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Avjoska
  * @author Pikne
  * @author WikedKentaur
@@ -1892,7 +1892,7 @@ Märkused||10',
 	'proofreadpage-button-toggle-layout-label' => 'Püst- või rööppaigutus',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  * @author Joxemai
  * @author Unai Fdz. de Betoño
@@ -2001,7 +2001,7 @@ $messages['fa'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'طرح عمودی/افقی',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Agony
  * @author Cimon Avaro
  * @author Crt
@@ -2077,7 +2077,7 @@ Huomautuksia||10',
 	'proofreadpage-button-toggle-layout-label' => 'Pystysuora/vaakasuora ulkoasu',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author Dereckson
  * @author Grondin
@@ -2155,7 +2155,7 @@ Remarques||10',
 	'proofreadpage-preferences-showheaders-label' => "Afficher des champs d'en-tête et de pied de page lors de l'édition en mode page",
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -2223,7 +2223,7 @@ Comentèros||10',
 	'proofreadpage-button-toggle-layout-label' => 'Misa en pâge drêta / plana',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -2693,7 +2693,7 @@ Remarks||10',
 	'proofreadpage-preferences-showheaders-label' => 'Panna ke namespace me badle ke time header aur footer ke dekhao',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
  * @author Ex13
@@ -2827,7 +2827,7 @@ Přispomnjenki||10',
 	'proofreadpage-preferences-showheaders-label' => 'Hłowowe a nohowe pola pokazać, hdyž so w mjenowym rumje strony wobdźěłuje',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Dorgan
  * @author Glanthor Reviol
@@ -2960,7 +2960,7 @@ Remarks|Նշումներ|10',
 	'proofreadpage-button-toggle-layout-label' => 'Պատկերը կողքից/վերևից',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author Malafaya
  * @author McDutchie
  */
@@ -3130,7 +3130,7 @@ $messages['io'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagino|pagini}}',
 );
 
-/** Icelandic (Íslenska)
+/** Icelandic (íslenska)
  * @author S.Örvarr.S
  */
 $messages['is'] = array(
@@ -3141,7 +3141,7 @@ $messages['is'] = array(
 	'proofreadpage_index_listofpages' => 'Listi yfir síður',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  * @author BrokenArrow
  * @author Candalua
@@ -3291,7 +3291,7 @@ $messages['ja'] = array(
 	'proofreadpage-preferences-showheaders-label' => 'Page 名前空間での編集中にヘッダー/フッターフィールドを表示',
 );
 
-/** Jutish (Jysk)
+/** Jutish (jysk)
  * @author Huslåke
  * @author Ælsån
  */
@@ -3711,7 +3711,7 @@ $messages['ku-latn'] = array(
 	'proofreadpage_image' => 'Wêne',
 );
 
-/** Cornish (Kernowek)
+/** Cornish (kernowek)
  * @author Kw-Moon
  */
 $messages['kw'] = array(
@@ -3885,7 +3885,7 @@ Opmèrkinge||10",
 	'proofreadpage-button-toggle-layout-label' => 'Verticale/horinzontale lay-out',
 );
 
-/** Lumbaart (Lumbaart)
+/** lumbaart (lumbaart)
  * @author Dakrismeno
  */
 $messages['lmo'] = array(
@@ -3894,7 +3894,7 @@ $messages['lmo'] = array(
 	'proofreadpage_header' => 'Intestazion (minga inclüsa)',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Matasg
  */
@@ -3957,7 +3957,7 @@ Pastabos||10',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikalus/horizontalus išdėstymas',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author Papuass
  * @author Xil
  * @author Yyy
@@ -3995,7 +3995,7 @@ $messages['mhr'] = array(
 	'proofreadpage_nextpage' => 'Вес лаштык',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
  */
@@ -4137,7 +4137,7 @@ $messages['ml'] = array(
 	'proofreadpage-preferences-showheaders-label' => 'താൾ നാമമേഖല തിരുത്തുമ്പോൾ തലക്കുറിപ്പ്, അടിക്കുറിപ്പ് മണ്ഡലങ്ങൾ പ്രദർശിപ്പിക്കുക',
 );
 
-/** Mongolian (Монгол)
+/** Mongolian (монгол)
  * @author Chinneeb
  */
 $messages['mn'] = array(
@@ -4566,7 +4566,7 @@ $messages['nso'] = array(
 	'proofreadpage_prevpage' => 'Letlaka lago feta',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -4681,7 +4681,7 @@ $messages['pfl'] = array(
 	'proofreadpage_nextpage' => 'Negschd Said',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Beau
  * @author BeginaFelicysym
  * @author Olgak85
@@ -4858,7 +4858,7 @@ $messages['ps'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'آر کچه',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author 555
  * @author Giro720
  * @author Hamilton Abreu
@@ -4931,7 +4931,7 @@ Notas||10',
 	'proofreadpage-button-toggle-layout-label' => 'Orientação vertical ou horizontal',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Eduardo.mps
  * @author Giro720
@@ -5026,7 +5026,7 @@ P'anqakuna||20
 Willapusqakuna||10",
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author AdiJapan
  * @author Cin
  * @author Firilacroco
@@ -5100,7 +5100,7 @@ Comentarii||10',
 	'proofreadpage-button-toggle-layout-label' => 'Aspect vertical/orizontal',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  * @author Reder
  */
@@ -5169,7 +5169,7 @@ Note||10",
 	'proofreadpage-button-toggle-layout-label' => 'Disposizione verticale/orizzondale',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Ferrer
  * @author Innv
  * @author Lockal
@@ -5378,7 +5378,7 @@ $messages['sa'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'लम्बः/तिर्यक् लुटविन्यासः',
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -5438,7 +5438,7 @@ $messages['sah'] = array(
 	'right-pagequality' => 'Сирэй туругун бэлиэтин уларытыы',
 );
 
-/** Sardinian (Sardu)
+/** Sardinian (sardu)
  * @author Andria
  * @author Marzedu
  */
@@ -5449,7 +5449,7 @@ $messages['sc'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàginas}}',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Aushulz
  * @author Gmelfi
  */
@@ -5518,7 +5518,7 @@ $messages['si'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'සිරස්/තිරස් සැලැස්ම',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  */
 $messages['sk'] = array(
@@ -5578,7 +5578,7 @@ Poznámky||10',
 	'right-pagequality' => 'Zmeniť príznak kvality stránky',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -5646,7 +5646,7 @@ Pripombe||10',
 	'proofreadpage-button-toggle-layout-label' => 'Navpična/vodoravna postavitev',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Sasa Stefanovic
@@ -5691,7 +5691,7 @@ $messages['sr-ec'] = array(
 	'proofreadpage-group-other' => 'Друго',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -5786,7 +5786,7 @@ Kaca||20
 Catetan||10',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Cohan
  * @author Diupwijk
  * @author Fluff
@@ -5971,7 +5971,7 @@ $messages['te'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'అసలు పరిమాణం',
 );
 
-/** Tetum (Tetun)
+/** Tetum (tetun)
  * @author MF-Warburg
  */
 $messages['tet'] = array(
@@ -5981,7 +5981,7 @@ $messages['tet'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|pájina ida|pájina $2}}',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -6014,7 +6014,7 @@ $messages['tg-cyrl'] = array(
 Мулоҳизот||10',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -6286,7 +6286,7 @@ $messages['ts'] = array(
 	'proofreadpage_index_namespace' => 'Nxaxamelo',
 );
 
-/** Tatar (Cyrillic script) (Татарча)
+/** Tatar (Cyrillic script) (татарча)
  * @author Timming
  */
 $messages['tt-cyrl'] = array(
@@ -6313,7 +6313,7 @@ $messages['ug-latn'] = array(
 	'proofreadpage_prevpage' => 'Aldinqi bet',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author AS
  * @author Ahonc
  * @author Dim Grits
@@ -6385,7 +6385,7 @@ $messages['uk'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальна / горизонтальна розмітка',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  * @author Vajotwo
  */
@@ -6714,7 +6714,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage-button-toggle-layout-label' => '垂直／水平布局',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Horacewai2
