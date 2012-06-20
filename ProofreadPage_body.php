@@ -73,6 +73,7 @@ class ProofreadPage {
 		return $res;
 	}
 
+
 	/**
 	 * @param $queryPages array
 	 * @return bool
@@ -134,7 +135,7 @@ class ProofreadPage {
 
 		foreach ( $result as $x ) {
 			$ref_title = Title::makeTitle( $x->page_namespace, $x->page_title );
-			if ( preg_match( "/^$index_namespace:(.*)$/", $ref_title->getPrefixedText() ) ) {
+			if ( $ref_title->inNamespace( self::getIndexNamespaceId() ) ) {
 				$title->pr_index_title = $ref_title->getPrefixedText();
 				break;
 			}
@@ -335,25 +336,27 @@ class ProofreadPage {
 		global $wgRequest;
 
 		$action = $wgRequest->getVal( 'action' );
-		$isEdit = ( $action == 'submit' || $action == 'edit' ) ? 1 : 0;
+		$isEdit = ( $action == 'submit' || $action == 'edit' );
+
 		if ( ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
 			return true;
 		}
 		$out->proofreadPageDone = true;
+		$title = $out->getTitle();
 
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-
-		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
+		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
+			list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
+			preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m );
 			self::preparePage( $out, $m, $isEdit );
 			return true;
 		}
 
-		if ( $isEdit && ( preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) ) {
+		if ( $isEdit && $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::prepareIndex( $out );
 			return true;
 		}
 
-		if( $out->getTitle()->getNamespace() == NS_MAIN ) {
+		if ( $title->inNamespace( NS_MAIN ) ) {
 			self::prepareArticle( $out );
 			return true;
 		}
@@ -472,7 +475,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			return true;
 		}
 		// abort if we are not an index page
-		if ( $wgTitle->getNamespace() !== self::getIndexNamespaceId() ) {
+		if ( !$wgTitle->inNamespace( self::getIndexNamespaceId() ) ) {
 			return true;
 		}
 		self::getLinkColours( $page_ids, $colours );
@@ -692,8 +695,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return string
 	 */
 	public static function pageQuality( $input, $args, $parser ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( !preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText() ) ) {
+
+		if ( !$parser->getTitle()->inNamespace( self::getPageNamespaceId() ) ) {
 			return '';
 		}
 
@@ -803,11 +806,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$onlysection = array_key_exists( 'onlysection', $args ) ? $args['onlysection'] : null;
 
 		// abort if the tag is on an index page
-		if ( $parser->getTitle()->getNamespace() === self::getIndexNamespaceId() ) {
+		if ( $parser->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) {
 			return '';
 		}
 		// abort too if the tag is in the page namespace
-		if ( $parser->getTitle()->getNamespace() === self::getPageNamespaceId() ) {
+		if ( $parser->getTitle()->inNamespace( self::getPageNamespaceId() ) ) {
 			return '';
 		}
 		// ignore fromsection and tosection arguments if onlysection is specified
@@ -1171,9 +1174,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 */
 	public static function onEditPageImportFormData( $editpage, $request ) {
 		$title = $editpage->getTitle();
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		// abort if we are not a page
-		if ( !preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
 		if ( !$request->wasPosted() ) {
@@ -1219,11 +1221,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	public static function onEditPageAttemptSave( $editpage ) {
 		global $wgOut, $wgUser;
 
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$title = $editpage->mTitle;
 
 		// check that pages listed on an index are unique.
-		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$text = $editpage->textbox1;
 			list( $links, $params, $attributes ) = self::parse_index_text( $text );
 			if( $links != null && count( $links[1] ) != count( array_unique( $links[1] ) ) ) {
@@ -1234,7 +1235,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		// abort if we are not a page
-		if ( !preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
 
@@ -1320,11 +1321,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$title = $article->getTitle();
 
 		// Process Index removal.
-		if ( $title->getNamespace() === self::getIndexNamespaceId() ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::removeIndexData( $article->getId() );
 
 		// Process Page removal.
-		} elseif ( $title->getNamespace() === self::getPageNamespaceId() ) {
+		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $title, true );
 		}
 
@@ -1333,7 +1334,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 	public static function onArticleUndelete( $title, $create ) {
 		// Process Index restoration.
-		if ( $title->getNamespace() === self::getIndexNamespaceId() ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$index = new Article( $title );
 			if ( $index ) {
 				self::update_pr_index( $index );
@@ -1362,7 +1363,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		// return if it is not a page
-		if ( !preg_match( "/^$page_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
 
@@ -1481,10 +1482,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return bool
 	 */
 	public static function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
-		if ( $ot->getNamespace() === self::getPageNamespaceId() ) {
+		if ( $ot->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $ot );
-		} elseif ( $ot->getNamespace() === self::getIndexNamespaceId()
-			  && $nt->getNamespace() !== self::getIndexNamespaceId() ) {
+		} elseif ( $ot->inNamespace( self::getIndexNamespaceId() )
+			  && !$nt->inNamespace( self::getIndexNamespaceId() ) ) {
 			// The page is moved out of the Index namespace.
 			// Remove all index data associated with that page.
 
@@ -1496,7 +1497,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			}
 		}
 
-		if ( $nt->getNamespace() === self::getPageNamespaceId() ) {
+		if ( $nt->inNamespace( self::getPageNamespaceId() ) ) {
 			self::load_index( $nt );
 			if( $nt->pr_index_title !== null
 			   && ( !isset( $ot->pr_index_title ) || ( $nt->pr_index_title != $ot->pr_index_title ) ) ) {
@@ -1518,9 +1519,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return bool
 	 */
 	public static function onArticlePurge( $article ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$title = $article->getTitle();
-		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText() ) ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::update_pr_index( $article );
 			return true;
 		}
@@ -1795,7 +1795,7 @@ $void_cell
 	 */
 	public static function onLinksUpdateConstructed( $linksUpdate ) {
 		$title = $linksUpdate->getTitle();
-		if ( $title->getNamespace() == self::getPageNamespaceId() ) {
+		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			// Extract title from multipaged documents
 			$parts = explode( '/', $title->getText(), 2 );
 			$imageTitle = Title::makeTitle( NS_FILE, $parts[0] );
