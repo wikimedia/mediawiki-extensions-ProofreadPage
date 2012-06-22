@@ -447,7 +447,7 @@ $messages['arc'] = array(
 	'proofreadpage_quality1_category' => 'ܟܬܒܬܐ ܠܐ ܢܘܩܕܬܐ',
 	'proofreadpage_quality3_category' => 'ܟܬܒܬܐ ܢܘܩܕܬܐ',
 	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܕܦ̈ܐ',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|ܕܦܐ|ܕ̈ܦܐ}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|ܦܐܬܐ|ܦܐܬܬܐ}}',
 	'proofreadpage_source' => 'ܡܒܘܥܐ',
 	'proofreadpage-section-tools' => 'ܡܐܢ̈ܐ ܕܢܩܕܘܬܐ',
 	'proofreadpage-group-zoom' => 'ܡܩܪܒ/ܡܙܥܪ',
@@ -3619,7 +3619,7 @@ $messages['ko'] = array(
 그림|표지 그림
 쪽수||20
 주석||10',
-	'proofreadpage_pages' => '$2{{PLURAL:$1|페이지}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|문서}} $2개',
 	'proofreadpage_specialpage_legend' => '목차 문서 찾기',
 	'proofreadpage_source' => '출처',
 	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
