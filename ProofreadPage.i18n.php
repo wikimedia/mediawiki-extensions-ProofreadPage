@@ -2223,6 +2223,75 @@ Comentèros||10',
 	'proofreadpage-button-toggle-layout-label' => 'Misa en pâge drêta / plana',
 );
 
+/** Northern Frisian (Nordfriisk)
+ * @author Murma174
+ */
+$messages['frr'] = array(
+	'indexpages' => 'Index sidjen',
+	'pageswithoutscans' => 'Sidjen saner scans',
+	'proofreadpage_desc' => 'Diarmä könst dü di tekst an di scan mäenööder ferglik',
+	'proofreadpage_namespace' => 'Seite',
+	'proofreadpage_index_namespace' => 'Index',
+	'proofreadpage_image' => 'Scan',
+	'proofreadpage_index' => 'Index',
+	'proofreadpage_index_expected' => 'Ferkiard: diar hiart en Index hen',
+	'proofreadpage_nosuch_index' => 'Ferkiard: son Index jaft at ei',
+	'proofreadpage_nosuch_file' => 'Ferkiard: son Datei jaft at ei',
+	'proofreadpage_badpage' => 'Ferkiard formaat',
+	'proofreadpage_badpagetext' => 'Det formaat faan det sidj, wat dü seekre wel, as ferkiard.',
+	'proofreadpage_indexdupe' => 'Dobelt ferwisang',
+	'proofreadpage_indexdupetext' => 'Sidjen kön man iansis üüb en Index sidj iindraanj wurd.',
+	'proofreadpage_nologin' => 'Ei uunmeldet',
+	'proofreadpage_nologintext' => 'Dü skel [[Special:UserLogin|uunmeldet]] wees, ööders könst dü di staatus faan korektuuren ei feranre.',
+	'proofreadpage_notallowed' => 'Feranrang ei mögelk',
+	'proofreadpage_notallowedtext' => 'Dü mutst di korektuurstaatus faan detdiar sidj ei feranre.',
+	'proofreadpage_number_expected' => 'Ferkiard: Diar hiart en taal hen',
+	'proofreadpage_interval_too_large' => 'Ferkiard: interwal tu grat',
+	'proofreadpage_invalid_interval' => 'Ferkiard: interwal ei mögelk',
+	'proofreadpage_nextpage' => 'Naist sidj',
+	'proofreadpage_prevpage' => 'Leetst sidj (turag)',
+	'proofreadpage_header' => 'Hoodrä (woort ei iinsaat)',
+	'proofreadpage_body' => 'Tekstdial (woort iinsaat)',
+	'proofreadpage_footer' => 'Futrä (woort ei iinsaat)',
+	'proofreadpage_toggleheaders' => 'Dialen, diar ei iinsaat wurd, uunwise of ei uunwise',
+	'proofreadpage_quality0_category' => 'Saner tekst',
+	'proofreadpage_quality1_category' => 'Ei efterluket',
+	'proofreadpage_quality2_category' => 'Diar stemet wat ei',
+	'proofreadpage_quality3_category' => 'Efterluket',
+	'proofreadpage_quality4_category' => 'Klaar',
+	'proofreadpage_quality0_message' => 'Detdiar sidj säär ei efterluket wurd.',
+	'proofreadpage_quality1_message' => 'Detdiar sidj as noch ei efterluket wurden.',
+	'proofreadpage_quality2_message' => "Bi't efterlukin as noch ei ales klaar wurden.",
+	'proofreadpage_quality3_message' => 'Detdiar sidj as efterluket wurden.',
+	'proofreadpage_quality4_message' => 'Detdiar sidj as klaar.',
+	'proofreadpage_index_listofpages' => 'Sidjen',
+	'proofreadpage_image_message' => "Ferwisang tu't Index sidj",
+	'proofreadpage_page_status' => "Staatus faan't sidj",
+	'proofreadpage_js_attributes' => 'Skriiwer Tiitel Juar Ferlach',
+	'proofreadpage_index_attributes' => 'Skriiwer
+Tiitel
+Juar|Ütjkimen
+Ferlach
+Kwel
+Bil|Tiitelbil
+Sidjen||20
+Komentaaren||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|sidj|sidjen}}',
+	'proofreadpage_specialpage_legend' => 'Sjük üüb Index sidjen',
+	'proofreadpage_source' => 'Kwel',
+	'proofreadpage_source_message' => 'För didiar tekst as en scan brükt wurden.',
+	'right-pagequality' => 'Wäärs faan det sidj feranre',
+	'proofreadpage-section-tools' => "Halep bi't korektuur",
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Ööders wat',
+	'proofreadpage-button-toggle-visibility-label' => 'Hoodrä an futrä uunwise of ei uunwise',
+	'proofreadpage-button-zoom-out-label' => 'Letjer maage',
+	'proofreadpage-button-reset-zoom-label' => 'Normool grate',
+	'proofreadpage-button-zoom-in-label' => 'Grater maage',
+	'proofreadpage-button-toggle-layout-label' => 'Loongs an swäärs ütjracht',
+	'proofreadpage-preferences-showheaders-label' => "Hoodrä an futrä bi't bewerkin faan sidjen uunwise",
+);
+
 /** Friulian (furlan)
  * @author Klenje
  */
