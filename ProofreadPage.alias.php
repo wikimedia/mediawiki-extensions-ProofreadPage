@@ -20,6 +20,11 @@ $specialPageAliases['ar'] = array(
 	'PagesWithoutScans' => array( 'صفحات_بدون_فحص' ),
 );
 
+/** Assamese (অসমীয়া) */
+$specialPageAliases['as'] = array(
+	'IndexPages' => array( 'সমল_পৃষ্ঠাসমূহ' ),
+);
+
 /** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'IndexPages' => array( 'PajennoùMeneger' ),
