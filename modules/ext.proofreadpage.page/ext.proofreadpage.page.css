@@ -1,0 +1,20 @@
+#prp_header,
+#prp_footer {
+	line-height: 1.5em;
+}
+
+#prp_header label,
+#prp_footer label {
+	color: gray;
+	font-size: 80%;
+}
+
+/* Adjustments for WikiEditor extension */
+.wikiEditor-ui-text #wpTextbox1,
+.wikiEditor-ui-text #wpHeaderTextbox,
+.wikiEditor-ui-text #wpFooterTextbox {
+	border: none;
+	padding: 0;
+	line-height: 1.5em;
+	margin: 0 !important;
+}

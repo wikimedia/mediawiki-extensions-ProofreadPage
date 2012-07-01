@@ -63,6 +63,7 @@ $prpResourceTemplate = array(
 $wgResourceModules += array(
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'scripts' => 'ext.proofreadpage.page/ext.proofreadpage.page.js',
+		'styles'  => 'ext.proofreadpage.page/ext.proofreadpage.page.css',
 		'dependencies' => array( 'mediawiki.legacy.wikibits' ),
 		'messages' => array(
 			'proofreadpage_header',
