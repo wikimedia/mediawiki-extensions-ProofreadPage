@@ -289,7 +289,7 @@ $messages['am'] = array(
 	'proofreadpage_nextpage' => 'የሚቀጥለው ገጽ',
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  */
 $messages['an'] = array(
@@ -806,7 +806,7 @@ $messages['be'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вертыкальная/гарызантальная разметка',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -1522,7 +1522,7 @@ beyanati||10',
 	'proofreadpage-preferences-showheaders-label' => 'Nameye pela çı vurneyeno heqa cı wendış u asayışi bımocne.',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -2321,7 +2321,7 @@ Leathanaigh||20
 Nótaí',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Alma
  * @author Toliño
  * @author Xosé
@@ -2515,9 +2515,9 @@ $messages['gu'] = array(
 	'proofreadpage_footer' => 'પૃષ્ઠ અંત (અસમાવિષ્ટ):',
 	'proofreadpage_toggleheaders' => 'અસમાવિષ્ટ વિભાગની દૃશ્યતા પલટાવો',
 	'proofreadpage_quality0_category' => 'લખાણ રહિત',
-	'proofreadpage_quality1_category' => 'પ્રુફરીડ વગરનાં',
+	'proofreadpage_quality1_category' => 'ભૂલશુદ્ધિ બાકી',
 	'proofreadpage_quality2_category' => 'સમસ્યારૂપ',
-	'proofreadpage_quality3_category' => 'પ્રુફરીડ કરેલાં',
+	'proofreadpage_quality3_category' => 'ભૂલશુદ્ધિ પૂર્ણ',
 	'proofreadpage_quality4_category' => 'પ્રમાણિત',
 	'proofreadpage_quality0_message' => 'આ પાનાનું પ્રુફરીડ જરૂરી નથી.',
 	'proofreadpage_quality1_message' => 'આ પાનાનું પ્રુફરીડિંગ બાકી છે',
@@ -2826,7 +2826,7 @@ Napomene||10',
 	'right-pagequality' => 'Izmijeni zastavicu kvalitete stranice',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Dundak
  * @author Michawiki
  */
@@ -5309,7 +5309,7 @@ $messages['ru'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальная/горизонтальная разметка',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
@@ -5943,7 +5943,7 @@ $messages['sw'] = array(
 	'proofreadpage_source' => 'Chanzo',
 );
 
-/** Silesian (Ślůnski)
+/** Silesian (ślůnski)
  * @author Herr Kriss
  */
 $messages['szl'] = array(
