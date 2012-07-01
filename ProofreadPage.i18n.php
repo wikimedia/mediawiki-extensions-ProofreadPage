@@ -74,8 +74,8 @@ Remarks||10',
 	'proofreadpage-button-reset-zoom-label'        => 'Original size',
 	'proofreadpage-button-zoom-in-label'           => 'Zoom in',
 	'proofreadpage-button-toggle-layout-label'     => 'Vertical/horizontal layout',
-	'proofreadpage-preferences-showheaders-label'  => 'Show header and footer fields when editing in the Page namespace',
-	'proofreadpage-preferences-horizontal-layout-label'  => 'Use horizontal layout when editing in the Page namespace'
+	'proofreadpage-preferences-showheaders-label'  => 'Show header and footer fields when editing in the {{ns:page}} namespace',
+	'proofreadpage-preferences-horizontal-layout-label'  => 'Use horizontal layout when editing in the {{ns:page}} namespace'
 );
 
 /** Message documentation (Message documentation)
@@ -1345,13 +1345,13 @@ $messages['da'] = array(
 	'proofreadpage_image_message' => 'Link til indekssiden',
 	'proofreadpage_page_status' => 'Sidestatus',
 	'proofreadpage_js_attributes' => 'Forfatter Titel År Udgiver',
-	'proofreadpage_index_attributes' => 'Forfatter 
-Titel 
-År | Udgivelsesår 
+	'proofreadpage_index_attributes' => 'Forfatter
+Titel
+År | Udgivelsesår
 Udgiver
-Kilde 
+Kilde
 Billede | Titelblad
-Sider | | 20 
+Sider | | 20
 Bemærkninger | | 10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
 	'proofreadpage_specialpage_legend' => 'Søg i indekssider',
@@ -4184,9 +4184,9 @@ $messages['ml'] = array(
 	'proofreadpage_image_message' => 'സൂചിക താളിലേക്കുള്ള കണ്ണി',
 	'proofreadpage_page_status' => 'താളിന്റെ തൽസ്ഥിതി',
 	'proofreadpage_js_attributes' => 'ലേഖകൻ കൃതിയുടെപേര്‌ വർഷം പ്രസാധകർ',
-	'proofreadpage_index_attributes' => 'ലേഖകൻ 
-കൃതിയുടെപേര്‌ 
-വർഷം|പ്രസിദ്ധീകരിച്ച വർഷം 
+	'proofreadpage_index_attributes' => 'ലേഖകൻ
+കൃതിയുടെപേര്‌
+വർഷം|പ്രസിദ്ധീകരിച്ച വർഷം
 പ്രസാധകർ
 ഉറവിടം
 ചിത്രം|മുഖച്ചിത്രം
@@ -5429,10 +5429,10 @@ $messages['sa'] = array(
 	'proofreadpage_js_attributes' => 'ग्रन्थकर्ता शिर्षिका वर्षम् प्रकाशकः',
 	'proofreadpage_index_attributes' => 'ग्रन्थकर्ता
 शीर्षिका
-वर्षम् | प्रकाशनवर्षम् 
+वर्षम् | प्रकाशनवर्षम्
 प्रकाशकः
 स्रोतः
-चित्रम् | रक्षापुटचित्रम् 
+चित्रम् | रक्षापुटचित्रम्
 पुटानि || २०
 टीका || १०',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|पुटम्|पुटानि}}',
@@ -5695,13 +5695,13 @@ $messages['sl'] = array(
 	'proofreadpage_image_message' => 'Povezava do kazala',
 	'proofreadpage_page_status' => 'Stanje strani',
 	'proofreadpage_js_attributes' => 'Avtor Naslov Leto Založnik',
-	'proofreadpage_index_attributes' => 'Avtor 
-Naslov 
-Leto|Leto izida 
-Založba 
-Vir 
+	'proofreadpage_index_attributes' => 'Avtor
+Naslov
+Leto|Leto izida
+Založba
+Vir
 Slika|Naslovnica
-Strani||20 
+Strani||20
 Pripombe||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|stran|strani}}',
 	'proofreadpage_specialpage_legend' => 'Iskanje kazalnih strani',
