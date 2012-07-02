@@ -142,7 +142,7 @@ $messages['qqq'] = array(
 	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.',
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
 	'proofreadpage-preferences-showheaders-label' => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.',
-	'proofreadpage-preferences-horizontal-layout-label' => 'Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.'
+	'proofreadpage-preferences-horizontal-layout-label' => 'Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.',
 );
 
 /**    زَوُن (   زَوُن)
@@ -1347,12 +1347,12 @@ $messages['da'] = array(
 	'proofreadpage_js_attributes' => 'Forfatter Titel År Udgiver',
 	'proofreadpage_index_attributes' => 'Forfatter
 Titel
-År | Udgivelsesår
+År|Udgivelsesår
 Udgiver
 Kilde
-Billede | Titelblad
-Sider | | 20
-Bemærkninger | | 10',
+Billede|Titelblad
+Sider||20
+Bemærkninger||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
 	'proofreadpage_specialpage_legend' => 'Søg i indekssider',
 	'proofreadpage_source' => 'Kilde',
@@ -1366,7 +1366,8 @@ Bemærkninger | | 10',
 	'proofreadpage-button-reset-zoom-label' => 'Oprindelig størrelse',
 	'proofreadpage-button-zoom-in-label' => 'Zoom ind',
 	'proofreadpage-button-toggle-layout-label' => 'Lodret/vandret opsætning',
-	'proofreadpage-preferences-showheaders-label' => 'Åbn automatisk felterne for sidehoved og sidefod under redigering i sidenavnerummet',
+	'proofreadpage-preferences-showheaders-label' => 'Åbn automatisk felterne for sidehoved og sidefod under redigering i {{ns:page}}navnerummet',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Brug vandret opsætning, når du redigerer i {{ns:page}}navnerummet',
 );
 
 /** German (Deutsch)
@@ -1440,7 +1441,8 @@ Bemerkungen||10',
 	'proofreadpage-button-reset-zoom-label' => 'Zoom zurücksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergrößern',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikale/horizontale Ausrichtung',
-	'proofreadpage-preferences-showheaders-label' => 'Beim Bearbeiten von Seiten im Seitennamensraum die Felder für die Kopf- und die Fußzeile anzeigen',
+	'proofreadpage-preferences-showheaders-label' => 'Beim Bearbeiten von Seiten im Namensraum {{ns:page}} die Felder für die Kopf- und die Fußzeile anzeigen',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Beim Bearbeiten von Seiten im Namensraum {{ns:page}} ein horizontales Layout verwenden',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -1821,7 +1823,7 @@ Comentarios||10',
 	'proofreadpage-button-reset-zoom-label' => 'Tamaño original',
 	'proofreadpage-button-zoom-in-label' => 'Aumentar',
 	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical/horizontal',
-	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de encabezado y pie de página cuando se edita en el espacio de nombres de página',
+	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de encabezado y pie de página cuando se edita en el espacio de nombres {{ns:page}}',
 );
 
 /** Estonian (eesti)
@@ -1866,7 +1868,7 @@ $messages['et'] = array(
 	'proofreadpage_quality1_message' => 'Selle lehekülje õigsus on tõendamata.',
 	'proofreadpage_quality2_message' => 'Selle lehekülje õigsuse tõendamisel ilmnes probleem.',
 	'proofreadpage_quality3_message' => 'Selle lehekülje õigsus on tõendatud.',
-	'proofreadpage_quality4_message' => 'See lehekülg on heakskiidetud.',
+	'proofreadpage_quality4_message' => 'See lehekülg on heaks kiidetud.',
 	'proofreadpage_index_listofpages' => 'Lehekülgede loend',
 	'proofreadpage_image_message' => 'Link registrilehele',
 	'proofreadpage_page_status' => 'Lehekülje olek',
@@ -1891,7 +1893,9 @@ Märkused||10',
 	'proofreadpage-button-zoom-out-label' => 'Vähenda',
 	'proofreadpage-button-reset-zoom-label' => 'Algsuurus',
 	'proofreadpage-button-zoom-in-label' => 'Suurenda',
-	'proofreadpage-button-toggle-layout-label' => 'Püst- või rööppaigutus',
+	'proofreadpage-button-toggle-layout-label' => 'Püst- või rõhtpaigutus',
+	'proofreadpage-preferences-showheaders-label' => 'Nimeruumis {{ns:page}} redigeerides näita päise- ja jalusevälja',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Nimeruumis {{ns:page}} redigeerides kasuta rõhtpaigutust',
 );
 
 /** Basque (euskara)
@@ -2391,7 +2395,8 @@ Comentarios||10',
 	'proofreadpage-button-reset-zoom-label' => 'Restablecer o zoom',
 	'proofreadpage-button-zoom-in-label' => 'Ampliar',
 	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical ou horizontal',
-	'proofreadpage-preferences-showheaders-label' => 'Mostrar os campos da cabeceira e do pé de páxina ao editar no espazo de nomes das páxinas',
+	'proofreadpage-preferences-showheaders-label' => 'Mostrar os campos da cabeceira e do pé de páxina ao editar no espazo de nomes {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Utilizar a disposición horizontal ao editar no espazo de nomes {{ns:page}}',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -2647,7 +2652,8 @@ $messages['he'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'גודל מקורי',
 	'proofreadpage-button-zoom-in-label' => 'תקריב',
 	'proofreadpage-button-toggle-layout-label' => 'פריסה אופקית או אנכית',
-	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "דף".',
+	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "{{ns:page}}".',
+	'proofreadpage-preferences-horizontal-layout-label' => 'להשתמש בתצוגה אופקית בעת עריכה ב מרחב השם {{ns:page}}',
 );
 
 /** Hindi (हिन्दी)
@@ -2895,7 +2901,8 @@ Přispomnjenki||10',
 	'proofreadpage-button-reset-zoom-label' => 'Prěnjotna wulkosć',
 	'proofreadpage-button-zoom-in-label' => 'Powjetšić',
 	'proofreadpage-button-toggle-layout-label' => 'Padorune/Wodorune wuhotowanje',
-	'proofreadpage-preferences-showheaders-label' => 'Hłowowe a nohowe pola pokazać, hdyž so w mjenowym rumje strony wobdźěłuje',
+	'proofreadpage-preferences-showheaders-label' => 'Hłowowe a nohowe pola pokazać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Horicontalne wuhotowanje wužiwać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje',
 );
 
 /** Hungarian (magyar)
@@ -3285,7 +3292,8 @@ Note||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoom avanti',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizzontale',
-	'proofreadpage-preferences-showheaders-label' => "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace Pagina",
+	'proofreadpage-preferences-showheaders-label' => "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace {{ns:page}}",
+	'proofreadpage-preferences-horizontal-layout-label' => 'Usa il layout orrizzontale durante la modifica nel namespace {{ns:page}}',
 );
 
 /** Japanese (日本語)
@@ -3642,7 +3650,7 @@ $messages['kn'] = array(
  */
 $messages['ko'] = array(
 	'indexpages' => '목차 문서의 목록',
-	'pageswithoutscans' => '스캔본이 없는 페이지',
+	'pageswithoutscans' => '스캔본이 없는 문서',
 	'proofreadpage_desc' => '최초 스캔과 텍스트를 쉽게 비교할 수 있게 함',
 	'proofreadpage_namespace' => '페이지',
 	'proofreadpage_index_namespace' => '목차',
@@ -3703,7 +3711,8 @@ $messages['ko'] = array(
 	'proofreadpage-button-reset-zoom-label' => '원본 크기',
 	'proofreadpage-button-zoom-in-label' => '확대',
 	'proofreadpage-button-toggle-layout-label' => '수직/수평 레이아웃',
-	'proofreadpage-preferences-showheaders-label' => '문서 이름공간에서 편집할 떄 머릿글 및 바닥글 필드 보이기',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:page}} 이름공간에서 편집할 때 머릿글 및 바닥글 필드 보이기',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} 이름공간에서 편집할 때 수평 레이아웃 사용',
 );
 
 /** Kinaray-a (Kinaray-a)
@@ -4133,7 +4142,8 @@ $messages['mk'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Врати размер',
 	'proofreadpage-button-zoom-in-label' => 'Приближи',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикален/хоризонтален распоред',
-	'proofreadpage-preferences-showheaders-label' => 'Прикажувај заглавје и подножне при уредување на именскиот простор „Страница“',
+	'proofreadpage-preferences-showheaders-label' => 'Прикажувај заглавје и подножне при уредување на именскиот простор „{{ns:page}}“',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Користи хоризонтален распоред при уредување во именскиот простор „{{ns:page}}“',
 );
 
 /** Malayalam (മലയാളം)
@@ -4578,7 +4588,8 @@ Opmerkingen||10",
 	'proofreadpage-button-reset-zoom-label' => 'Zoomniveau herinitialiseren',
 	'proofreadpage-button-zoom-in-label' => 'Inzoomen',
 	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale lay-out',
-	'proofreadpage-preferences-showheaders-label' => 'Kop- en voettekst velden weergeven als in de paginanaamruimte wordt bewerkt',
+	'proofreadpage-preferences-showheaders-label' => 'Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}',
 );
 
 /** Norwegian Nynorsk (‪norsk (nynorsk)‬)
@@ -4822,7 +4833,7 @@ Uwagi||10',
 	'proofreadpage-button-zoom-in-label' => 'Powiększ',
 	'proofreadpage-button-toggle-layout-label' => 'Zmień układ na poziomy lub pionowy',
 	'proofreadpage-preferences-showheaders-label' => 'Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw Strona',
-	'proofreadpage-preferences-horizontal-layout-label'  => 'Użyj poziomego układu podczas edycji w przestrzeni nazw Strona',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Użyj poziomego układu podczas edycji w przestrzeni nazw Strona',
 );
 
 /** Piedmontese (Piemontèis)
@@ -6628,7 +6639,8 @@ Ghi chú||10',
 	'proofreadpage-button-reset-zoom-label' => 'Cỡ bình thường',
 	'proofreadpage-button-zoom-in-label' => 'Phóng to',
 	'proofreadpage-button-toggle-layout-label' => 'Đứng thẳng/ngang',
-	'proofreadpage-preferences-showheaders-label' => 'Hiện các hộp đầu/chân khi sửa đổi trong không gian tên Trang',
+	'proofreadpage-preferences-showheaders-label' => 'Hiện các hộp đầu/chân khi sửa đổi trong không gian tên {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Bố trí ngang các trang sửa đổi trong không gian tên {{ns:page}}',
 );
 
 /** Volapük (Volapük)
