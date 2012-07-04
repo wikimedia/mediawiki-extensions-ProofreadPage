@@ -3106,7 +3106,8 @@ Notas||10',
 	'proofreadpage-button-reset-zoom-label' => 'Dimension original',
 	'proofreadpage-button-zoom-in-label' => 'Aggrandir',
 	'proofreadpage-button-toggle-layout-label' => 'Disposition vertical/horizontal',
-	'proofreadpage-preferences-showheaders-label' => 'Monstrar campos de capite e pede quando modificar in le spatio de nomines Pagina',
+	'proofreadpage-preferences-showheaders-label' => 'Monstrar campos de capite e pede quando modificar in le spatio de nomines "{{ns:page}}"',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Usar le disposition horizontal quando modificar in le spatio de nomines {{ns:page}}',
 );
 
 /** Indonesian (Bahasa Indonesia)
