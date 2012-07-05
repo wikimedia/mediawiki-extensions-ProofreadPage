@@ -878,7 +878,8 @@ $messages['be-tarask'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Зыходны памер',
 	'proofreadpage-button-zoom-in-label' => 'Павялічыць',
 	'proofreadpage-button-toggle-layout-label' => 'Вэртыкальная/гарызантальная разьметка',
-	'proofreadpage-preferences-showheaders-label' => 'Паказваць палі для верхняга і ніжняга калянтытулаў пры рэдагаваньні ў прасторы назваў Старонка',
+	'proofreadpage-preferences-showheaders-label' => 'Паказваць палі для верхняга і ніжняга калянтытулаў пры рэдагаваньні ў прасторы назваў {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Выкарыстоўваць гарызантальную разьметку для рэдагаваньня ў прасторы назваў {{ns:page}}',
 );
 
 /** Bulgarian (български)
@@ -4369,7 +4370,8 @@ Catatan||10',
 	'proofreadpage-button-reset-zoom-label' => 'Set semula zum',
 	'proofreadpage-button-zoom-in-label' => 'Zum dekat',
 	'proofreadpage-button-toggle-layout-label' => 'Susun atur menegak/melintang',
-	'proofreadpage-preferences-showheaders-label' => 'Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama Laman',
+	'proofreadpage-preferences-showheaders-label' => 'Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}',
 );
 
 /** Mirandese (Mirandés)
