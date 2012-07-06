@@ -1593,7 +1593,8 @@ Pśispomnjeśa||10',
 	'proofreadpage-button-reset-zoom-label' => 'Spócetna wjelikosć',
 	'proofreadpage-button-zoom-in-label' => 'Pówětšyś',
 	'proofreadpage-button-toggle-layout-label' => 'Padorowny/Wódorowny layout',
-	'proofreadpage-preferences-showheaders-label' => 'Głowowe a nogowe póla pokazaś, gaž wobźěłujo se w mjenjowem rumje boka',
+	'proofreadpage-preferences-showheaders-label' => 'Głowowe a nogowe póla pokazaś, gaž wobźěłujo se w mjenjowem rumje {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Horicontalne wugótowanje wužywaś, gaž se w mjenjowem rumje {{ns:page}} wobźěłujo',
 );
 
 /** Ewe (eʋegbe) */
@@ -2088,6 +2089,7 @@ Huomautuksia||10',
 /** French (français)
  * @author Crochet.david
  * @author Dereckson
+ * @author Gomoko
  * @author Grondin
  * @author IAlex
  * @author Jean-Frédéric
@@ -2160,7 +2162,8 @@ Remarques||10',
 	'proofreadpage-button-reset-zoom-label' => 'Réinitialiser le zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoomer',
 	'proofreadpage-button-toggle-layout-label' => 'Disposition verticale/horizontale',
-	'proofreadpage-preferences-showheaders-label' => "Afficher des champs d'en-tête et de pied de page lors de l'édition en mode page",
+	'proofreadpage-preferences-showheaders-label' => "Afficher des champs d'en-tête et de pied de page lors de l'édition dans l'espace de nommage {{ns:page}}",
+	'proofreadpage-preferences-horizontal-layout-label' => "Utiliser une disposition horizontale lors d'une modification dans l'espace de noms {{ns:page}}",
 );
 
 /** Franco-Provençal (arpetan)
@@ -2297,7 +2300,8 @@ Komentaaren||10',
 	'proofreadpage-button-reset-zoom-label' => 'Normool grate',
 	'proofreadpage-button-zoom-in-label' => 'Grater maage',
 	'proofreadpage-button-toggle-layout-label' => 'Loongs an swäärs ütjracht',
-	'proofreadpage-preferences-showheaders-label' => "Hoodrä an futrä bi't bewerkin faan sidjen uunwise",
+	'proofreadpage-preferences-showheaders-label' => "Hoodrä an futrä bi't bewerkin faan sidjen uun a nöömrüm {{ns:page}} uunwise",
+	'proofreadpage-preferences-horizontal-layout-label' => "Bi't bewerkin faan sidjen uun a nöömrüm {{ns:page}} brük en waagrocht layout",
 );
 
 /** Friulian (furlan)
