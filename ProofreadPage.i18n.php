@@ -1295,7 +1295,8 @@ Poznámky||10',
 	'proofreadpage-button-reset-zoom-label' => 'Původní velikost',
 	'proofreadpage-button-zoom-in-label' => 'Přiblížit',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikální/horizontální uspořádání',
-	'proofreadpage-preferences-showheaders-label' => 'Při editaci ve jmenném prostoru Stránka zobrazovat hlavičku a patičku',
+	'proofreadpage-preferences-showheaders-label' => 'Při editaci ve jmenném prostoru {{ns:page}} zobrazovat hlavičku a patičku',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Při editaci ve jmenném prostoru {{ns:page}} používat vodorovné rozložení',
 );
 
 /** Danish (dansk)
@@ -1368,7 +1369,7 @@ Bemærkninger||10',
 	'proofreadpage-button-zoom-in-label' => 'Zoom ind',
 	'proofreadpage-button-toggle-layout-label' => 'Lodret/vandret opsætning',
 	'proofreadpage-preferences-showheaders-label' => 'Åbn automatisk felterne for sidehoved og sidefod under redigering i {{ns:page}}navnerummet',
-	'proofreadpage-preferences-horizontal-layout-label' => 'Brug vandret opsætning, når du redigerer i {{ns:page}}navnerummet',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Brug vandret opsætning, når du redigerer i {{ns:page}}-navnerummet',
 );
 
 /** German (Deutsch)
