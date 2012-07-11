@@ -627,7 +627,7 @@ $messages['az'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Orijinal ölçü',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  * @author Comp1089
  * @author Ebe123
@@ -3517,7 +3517,7 @@ $messages['ka'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'თავდაპირველი ზომა',
 	'proofreadpage-button-zoom-in-label' => 'გადიდება',
 	'proofreadpage-button-toggle-layout-label' => 'ვერტიკალური/ჰორიზონტალური განლაგება',
-	'proofreadpage-preferences-showheaders-label' => 'სახელთა სივრცის გვერდის რედაქტირებისას აჩვენე ზედა და ქვედა ველები.',
+	'proofreadpage-preferences-showheaders-label' => 'სახელთა სივრცის {{ns:გვერდის}} რედაქტირებისას აჩვენე ზედა და ქვედა ველები.',
 );
 
 /** Khowar (کھوار)
@@ -4075,7 +4075,7 @@ Piezīmes||10',
 	'proofreadpage_source' => 'Avots',
 );
 
-/** Eastern Mari (Олык Марий)
+/** Eastern Mari (олык марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -4386,7 +4386,7 @@ $messages['mwl'] = array(
 	'proofreadpage_namespace' => 'Páigina',
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Amdf
  * @author Botuzhaleny-sodamo
  */
@@ -4413,8 +4413,7 @@ $messages['nah'] = array(
 	'proofreadpage_prevpage' => 'Achto zāzanilli',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Laaknor
  * @author Nghtwlkr
  * @author Simny
@@ -6387,7 +6386,7 @@ $messages['tt-cyrl'] = array(
 	'proofreadpage_nextpage' => 'алдагы бит',
 );
 
-/** Tuvinian (Тыва дыл)
+/** Tuvinian (тыва дыл)
  * @author Sborsody
  */
 $messages['tyv'] = array(
@@ -6548,7 +6547,7 @@ Note||10',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizontale',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Triple-ADHD-AS
  * @author Игорь Бродский
  */
