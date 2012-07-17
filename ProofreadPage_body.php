@@ -1334,6 +1334,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		return true;
 	}
 
+	/**
+	 * @param $title Title
+	 * @param $create
+	 * @return bool
+	 */
 	public static function onArticleUndelete( $title, $create ) {
 		// Process Index restoration.
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
@@ -1407,37 +1412,37 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 			switch( $article->new_q ) {
 				case 0:
-					$n0 = $n0 + 1;
+					$n0++;
 					break;
 				case 1:
-					$n1 = $n1 + 1;
+					$n1++;
 					break;
 				case 2:
-					$n2 = $n2 + 1;
+					$n2++;
 					break;
 				case 3:
-					$n3 = $n3 + 1;
+					$n3++;
 					break;
 				case 4:
-					$n4 = $n4 + 1;
+					$n4++;
 					break;
 			}
 
 			switch( $article->old_q ) {
 				case 0:
-					$n0 = $n0 - 1;
+					$n0--;
 					break;
 				case 1:
-					$n1 = $n1 - 1;
+					$n1--;
 					break;
 				case 2:
-					$n2 = $n2 - 1;
+					$n2--;
 					break;
 				case 3:
-					$n3 = $n3 - 1;
+					$n3--;
 					break;
 				case 4:
-					$n4 = $n4 - 1;
+					$n4--;
 					break;
 			}
 
@@ -1456,7 +1461,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @param $mTitle Title
 	 * @return bool
 	 */
-	public static function onEditFormPreloadText( $textbox1, $mTitle ) {
+	public static function onEditFormPreloadText( &$textbox1, $mTitle ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		if ( preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
@@ -1549,6 +1554,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 	/**
 	 * Update the pr_index entry of an article
+	 * @param $index Article
+	 * @param $deletedpage null|string
 	 */
 	private static function update_pr_index( $index, $deletedpage = null ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
@@ -1557,7 +1564,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			return;
 		}
 
-		$index_title = $index->mTitle;
+		$index_title = $index->getTitle();
 		$index_id = $index->getID();
 		$dbr = wfGetDB( DB_SLAVE );
 
@@ -1794,6 +1801,8 @@ $void_cell
 	/**
 	 * Adds an image link from pages in Page namespace, so they appear
 	 * in the file usage.
+	 * @param $linksUpdate LinksUpdate
+	 * @return bool
 	 */
 	public static function onLinksUpdateConstructed( $linksUpdate ) {
 		$title = $linksUpdate->getTitle();
