@@ -347,8 +347,9 @@ class ProofreadPage {
 
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-			preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m );
-			self::preparePage( $out, $m, $isEdit );
+			if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
+				self::preparePage( $out, $m, $isEdit );
+			}
 			return true;
 		}
 
