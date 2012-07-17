@@ -102,6 +102,7 @@ $wgHooks['ImageOpenShowImageInlineBefore'][] = 'ProofreadPage::onImageOpenShowIm
 $wgHooks['EditPage::attemptSave'][] = 'ProofreadPage::onEditPageAttemptSave';
 $wgHooks['ArticleSaveComplete'][] = 'ProofreadPage::onArticleSaveComplete';
 $wgHooks['ArticleDelete'][] = 'ProofreadPage::onArticleDelete';
+$wgHooks['ArticleUndelete'][] = 'ProofreadPage::onArticleUndelete';
 $wgHooks['EditFormPreloadText'][] = 'ProofreadPage::onEditFormPreloadText';
 $wgHooks['ArticlePurge'][] = 'ProofreadPage::onArticlePurge';
 $wgHooks['SpecialMovepageAfterMove'][] = 'ProofreadPage::onSpecialMovepageAfterMove';
