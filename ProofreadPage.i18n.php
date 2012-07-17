@@ -63,6 +63,8 @@ Remarks||10',
 	'proofreadpage_pages'        => "$2 {{PLURAL:$1|page|pages}}",
 	'proofreadpage_specialpage_text'       => '',
 	'proofreadpage_specialpage_legend'     => 'Search index pages',
+	'proofreadpage_specialpage_searcherror' => 'Error in the search engine',
+	'proofreadpage_specialpage_searcherrortext' => 'The search engine does not work. Sorry for the inconvenience.',
 	'proofreadpage_source'         => 'Source',
 	'proofreadpage_source_message' => 'Scanned edition used to establish this text',
 	'right-pagequality'            => 'Modify page quality flag',
@@ -132,6 +134,8 @@ $messages['qqq'] = array(
 * Parameter $2: localised number of pages
 
 {{Identical|Page}}',
+	'proofreadpage_specialpage_searcherror' => 'Title of the error page when the search engine does not work',
+	'proofreadpage_specialpage_searcherrortext' => 'Content of the error page when the search engine does not work',
 	'proofreadpage_source' => '{{Identical|Source}}',
 	'right-pagequality' => '{{doc-right|pagequality}}',
 	'proofreadpage-group-zoom' => '{{Identical|Zoom}}',

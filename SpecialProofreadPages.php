@@ -55,14 +55,19 @@ class ProofreadPages extends QueryPage {
 				$searchEngine->setNamespaces( array( ProofreadPage::getIndexNamespaceId() ) );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
-				$this->searchList = array();
-				while( $result = $textMatches->next() ) {
-					$title = $result->getTitle();
-					if ( $title->getNamespace() == ProofreadPage::getIndexNamespaceId() ) {
-						array_push( $this->searchList, $title->getDBkey() );
+				if( $textMatches === null) {
+					global $wgOut;
+					$wgOut->showErrorPage( 'proofreadpage_specialpage_searcherror', 'proofreadpage_specialpage_searcherrortext' );
+				} else {
+					$this->searchList = array();
+					while( $result = $textMatches->next() ) {
+						$title = $result->getTitle();
+						if ( $title->getNamespace() == ProofreadPage::getIndexNamespaceId() ) {
+							array_push( $this->searchList, $title->getDBkey() );
+						}
 					}
+					$this->suppressSqlOffset = true;
 				}
-				$this->suppressSqlOffset = true;
 			}
 		}
 		parent::execute( $parameters );
