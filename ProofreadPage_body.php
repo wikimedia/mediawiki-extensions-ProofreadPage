@@ -145,6 +145,7 @@ class ProofreadPage {
 			return;
 		}
 
+		$imageTitle = null;
 		/* check if we are a page of a multipage file */
 		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $title->getPrefixedText(), $m ) ) {
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
