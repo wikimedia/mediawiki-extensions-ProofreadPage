@@ -548,87 +548,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	}
 
 	/**
-	 * credit : http://www.mediawiki.org/wiki/Extension:RomanNumbers
-	 * @param $num int
-	 * @return int|string
-	 */
-	private static function toRoman( $num ) {
-		if ( $num < 0 || $num > 9999 ) {
-			return - 1;
-		}
-		$romanOnes = array(
-			1 => 'I',
-			2 => 'II',
-			3 => 'III',
-			4 => 'IV',
-			5 => 'V',
-			6 => 'VI',
-			7 => 'VII',
-			8 => 'VIII',
-			9 => 'IX'
-		);
-		$romanTens = array(
-			1 => 'X',
-			2 => 'XX',
-			3 => 'XXX',
-			4 => 'XL',
-			5 => 'L',
-			6 => 'LX',
-			7 => 'LXX',
-			8 => 'LXXX',
-			9 => 'XC'
-		);
-		$romanHund = array(
-			1 => 'C',
-			2 => 'CC',
-			3 => 'CCC',
-			4 => 'CD',
-			5 => 'D',
-			6 => 'DC',
-			7 => 'DCC',
-			8 => 'DCCC',
-			9 => 'CM'
-		);
-		$romanThou = array(
-			1 => 'M',
-			2 => 'MM',
-			3 => 'MMM',
-			4 => 'MMMM',
-			5 => 'MMMMM',
-			6 => 'MMMMMM',
-			7 => 'MMMMMMM',
-			8 => 'MMMMMMMM',
-			9 => 'MMMMMMMMM'
-		);
-
-		$ones = $num % 10;
-		$tens = ( $num - $ones ) % 100;
-		$hund = ( $num - $tens - $ones ) % 1000;
-		$thou = ( $num - $hund - $tens - $ones ) % 10000;
-
-		$tens = $tens / 10;
-		$hund = $hund / 100;
-		$thou = $thou / 1000;
-
-		$romanNum = '';
-		if ( $thou ) {
-			$romanNum .= $romanThou[$thou];
-		}
-		if ( $hund ) {
-			$romanNum .= $romanHund[$hund];
-		}
-		if ( $tens ) {
-			$romanNum .= $romanTens[$tens];
-		}
-		if ( $ones ) {
-			$romanNum .= $romanOnes[$ones];
-		}
-
-		return $romanNum;
-	}
-
-	/**
-	 * @param $i
+	 * @param $i int
 	 * @param $args array
 	 * @return array
 	 */
@@ -673,10 +593,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$view = ( $i - $offset );
 		switch( $mode ) {
 		case 'highroman':
-			$view = self::toRoman( $view );
+			$view = Language::romanNumeral( $view );
 			break;
 		case 'roman':
-			$view = strtolower( self::toRoman( $view ) );
+				$view = strtolower( Language::romanNumeral( $view ) );
 			break;
 		case 'normal':
 		case 'empty':
