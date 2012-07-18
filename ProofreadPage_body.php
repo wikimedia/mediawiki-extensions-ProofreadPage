@@ -1712,6 +1712,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			if( $res && $dbr->numRows( $res ) > 0 ) {
 				$row = $dbr->fetchObject( $res );
 				$n = $row->count;
+			} else {
+				return true;
 			}
 
 			// find the proofreading status of transclusions
