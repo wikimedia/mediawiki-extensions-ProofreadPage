@@ -23,56 +23,14 @@
  * Special page that lists the texts that have no transclusions
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
  */
-class PagesWithoutScans extends QueryPage {
+class PagesWithoutScans extends DisambiguationsPage {
 
 	function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
 	}
 
-	function isExpensive() {
-		return true;
-	}
-
-	function isSyndicated() {
-		return false;
-	}
-
-	/**
-	 * Return a clause with the list of disambiguation templates.
-	 * This function was copied verbatim from specials/SpecialDisambiguations.php
-	 * @param $dbr DatabaseBase
-	 * @return mixed
-	 */
-	function disambiguation_templates( $dbr ) {
-		$dMsgText = wfMsgForContent('disambiguationspage');
-
-		$linkBatch = new LinkBatch;
-
-		# If the text can be treated as a title, use it verbatim.
-		# Otherwise, pull the titles from the links table
-		$dp = Title::newFromText($dMsgText);
-		if( $dp ) {
-			if($dp->getNamespace() != NS_TEMPLATE) {
-				# FIXME we assume the disambiguation message is a template but
-				# the page can potentially be from another namespace :/
-				wfDebug("Mediawiki:disambiguationspage message does not refer to a template!\n");
-			}
-			$linkBatch->addObj( $dp );
-		} else {
-			# Get all the templates linked from the Mediawiki:Disambiguationspage
-			$disPageObj = Title::makeTitleSafe( NS_MEDIAWIKI, 'disambiguationspage' );
-			$res = $dbr->select(
-				array('pagelinks', 'page'),
-				'pl_title',
-				array('page_id = pl_from', 'pl_namespace' => NS_TEMPLATE,
-					'page_namespace' => $disPageObj->getNamespace(), 'page_title' => $disPageObj->getDBkey()),
-				__METHOD__ );
-
-			foreach ( $res as $row ) {
-				$linkBatch->addObj( Title::makeTitle( NS_TEMPLATE, $row->pl_title ));
-			}
-		}
-		return $linkBatch->constructSet( 'tl', $dbr );
+	function getPageHeader() {
+		return '';
 	}
 
 	function getQueryInfo() {
@@ -90,14 +48,13 @@ class PagesWithoutScans extends QueryPage {
 		);
 
 		// Exclude disambiguation pages too
-		$dt = $this->disambiguation_templates( $dbr );
 		$disambigPagesSubquery = $dbr->selectSQLText(
 			array( 'page', 'templatelinks' ),
 			'page_id',
 			array(
 				'page_id=tl_from',
 				'page_namespace' => NS_MAIN,
-				$dt
+				$this->getQueryFromLinkBatch(),
 			)
 		);
 
@@ -117,8 +74,8 @@ class PagesWithoutScans extends QueryPage {
 		);
 	}
 
-	function sortDescending() {
-		return true;
+	function getOrderFields() {
+		return array( 'value' );
 	}
 
 	function formatResult( $skin, $result ) {
