@@ -215,7 +215,8 @@ $messages['aeb'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'رد التكبير',
 	'proofreadpage-button-zoom-in-label' => 'تكبير',
 	'proofreadpage-button-toggle-layout-label' => 'تخطيط أفقي أو رأسي',
-	'proofreadpage-preferences-showheaders-label' => "warri plaiss' el entête wel pied de page wa9t il edition fil faragh mte3 el page",
+	'proofreadpage-preferences-showheaders-label' => "warri plaiss' el entête wel pied de page wa9t il edition fil faragh mte3 el page {{ns:page}}",
+	'proofreadpage-preferences-horizontal-layout-label' => "ista3mel i5raj ofo9i wa9t tekteb fil misse7a mte3 ess'af7a {{ns:page}}",
 );
 
 /** Afrikaans (Afrikaans)
@@ -506,6 +507,7 @@ $messages['arz'] = array(
 );
 
 /** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
  * @author Gitartha.bordoloi
  */
 $messages['as'] = array(
@@ -1436,6 +1438,8 @@ Seiten||20
 Bemerkungen||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|Seite|Seiten}}',
 	'proofreadpage_specialpage_legend' => 'Indexseiten durchsuchen',
+	'proofreadpage_specialpage_searcherror' => 'Fehler bei der Suchmaschine',
+	'proofreadpage_specialpage_searcherrortext' => 'Die Suchmaschine funktioniert leider nicht. Entschuldige die Unannehmlichkeiten.',
 	'proofreadpage_source' => 'Quelle',
 	'proofreadpage_source_message' => 'Zur Erstellung dieses Texts wurde die gescannte Ausgabe benutzt.',
 	'right-pagequality' => 'Seitenqualität ändern',
@@ -1459,6 +1463,7 @@ $messages['de-formal'] = array(
 	'proofreadpage_badpagetext' => 'Das Format der Seite, die Sie versuchen zu speichern, ist falsch.',
 	'proofreadpage_nologintext' => 'Sie müssen [[Special:UserLogin|angemeldet sein]], um den Status des Korrekturlesens von Seiten ändern zu können.',
 	'proofreadpage_notallowedtext' => 'Sie sind nicht berechtigt, den Status des Korrekturlesens dieser Seite zu ändern.',
+	'proofreadpage_specialpage_searcherrortext' => 'Die Suchmaschine funktioniert leider nicht. Entschuldigen Sie die Unannehmlichkeiten.',
 );
 
 /** Zazaki (Zazaki)
@@ -1481,7 +1486,7 @@ $messages['diq'] = array(
 	'proofreadpage_badpagetext' => 'pelo ke şıma qeyd keni formatê ey şaşo',
 	'proofreadpage_indexdupe' => 'gıreyo ke reyna reyna tesel beno, tekrar beno',
 	'proofreadpage_indexdupetext' => 'no pelê indeksi de peli yew ra zêd liste nıbeni',
-	'proofreadpage_nologin' => 'cı nıkewiyo.',
+	'proofreadpage_nologin' => 'Şıma de nêkewtê',
 	'proofreadpage_nologintext' => 'qey vurnayişê halê raştkerdışê pelan gani şıma [[Special:UserLogin|cı kewiyi]].',
 	'proofreadpage_notallowed' => 'vurnayiş re destur çino',
 	'proofreadpage_notallowedtext' => 'vurnayişê halê raştkerdışê peli re destur nêdano',
@@ -1529,7 +1534,8 @@ beyanati||10',
 	'proofreadpage-button-reset-zoom-label' => 'Oricinal ebat',
 	'proofreadpage-button-zoom-in-label' => 'Zoom ke',
 	'proofreadpage-button-toggle-layout-label' => 'Kewtey/tikey  asayış',
-	'proofreadpage-preferences-showheaders-label' => 'Nameye pela çı vurneyeno heqa cı wendış u asayışi bımocne.',
+	'proofreadpage-preferences-showheaders-label' => 'Nameye {{ns:page}} çı vurneyeno heqa cı wendış u asayışi bımocne.',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} bındı timar kerdış dı serte hali karkerdış',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -3676,8 +3682,8 @@ $messages['ko'] = array(
 	'proofreadpage_indexdupe' => '중복된 링크',
 	'proofreadpage_indexdupetext' => '문서가 목차 문서에 한 번 이상 올라올 수 없습니다.',
 	'proofreadpage_nologin' => '로그인하지 않음',
-	'proofreadpage_nologintext' => '문서의 검토 상태를 변경하려면 [[Special:UserLogin|로그인]]해야 합니다.',
-	'proofreadpage_notallowed' => '이 문서는 변경이 불가능합니다.',
+	'proofreadpage_nologintext' => '문서의 검토 상태를 수정하려면 [[Special:UserLogin|로그인]]해야 합니다.',
+	'proofreadpage_notallowed' => '이 문서는 바꾸기가 불가능합니다.',
 	'proofreadpage_notallowedtext' => '이 문서의 교정 상태를 바꿀 수 없습니다.',
 	'proofreadpage_number_expected' => '오류: 숫자 값을 입력해야 합니다.',
 	'proofreadpage_interval_too_large' => '오류: 간격이 너무 큽니다.',
@@ -3714,7 +3720,7 @@ $messages['ko'] = array(
 	'proofreadpage_specialpage_legend' => '목차 문서 찾기',
 	'proofreadpage_source' => '출처',
 	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
-	'right-pagequality' => '문서 품질 태그를 변경하기',
+	'right-pagequality' => '문서 품질 태그 수정하기',
 	'proofreadpage-section-tools' => '검토 도구',
 	'proofreadpage-group-zoom' => '확대/축소',
 	'proofreadpage-group-other' => '기타',
@@ -5409,6 +5415,7 @@ $messages['rue'] = array(
  * @author Abhirama
  * @author Ansumang
  * @author Shreekant Hegde
+ * @author Shubha
  */
 $messages['sa'] = array(
 	'indexpages' => 'अनुक्रमणिका पुटावली',
@@ -5426,7 +5433,7 @@ $messages['sa'] = array(
 	'proofreadpage_indexdupe' => 'द्वितकानुबन्धः',
 	'proofreadpage_indexdupetext' => 'अनुक्रमणिकायाम् अनेकवारं पुटानाम् आवलीकरणं न शक्यते ।',
 	'proofreadpage_nologin' => 'न प्रविष्टम्',
-	'proofreadpage_nologintext' => 'पुटपरिशीलनस्थितिं परिवर्तयतु',
+	'proofreadpage_nologintext' => 'पुटपरिशीलनस्थितेः परिवर्तनाय भवता प्रवेष्टव्यम् [[Special:UserLogin|logged in]]',
 	'proofreadpage_notallowed' => 'परिवर्तनम् अननुमतम्',
 	'proofreadpage_notallowedtext' => 'पुटपरिशीलनस्थितिं परिवर्तयितुम् अनुमतिः नास्ति ।',
 	'proofreadpage_number_expected' => 'दोशः : सङ्ख्यामौल्यं निरीक्षितम्',
@@ -5473,6 +5480,8 @@ $messages['sa'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'मूलापरिमाणम्',
 	'proofreadpage-button-zoom-in-label' => 'उपवीक्षणम्',
 	'proofreadpage-button-toggle-layout-label' => 'लम्बः/तिर्यक् लुटविन्यासः',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:page}} नामावकाशे सम्पादनावसरे शीर्षिका अधोटिप्पणी च दर्श्यताम् ।',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} नामावकाशे सम्पादनावसरे समतलप्राकारः उपयुज्यताम् ।',
 );
 
 /** Sakha (саха тыла)
