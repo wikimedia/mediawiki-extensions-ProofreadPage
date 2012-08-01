@@ -1523,6 +1523,8 @@ peli||20
 beyanati||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pele|pele}}',
 	'proofreadpage_specialpage_legend' => 'bıgêr pelê indeksan',
+	'proofreadpage_specialpage_searcherror' => 'Motorê cıgeyrayışi de xırabin',
+	'proofreadpage_specialpage_searcherrortext' => 'Motorê cıgeyrayışi nêguriyeno. Qandê coy qusır de mewnirên.',
 	'proofreadpage_source' => 'Çıme',
 	'proofreadpage_source_message' => 'Versiyono kopyakerde gurêna ke nê meqaley rono',
 	'right-pagequality' => 'Vurnayışté pela ré desmal çek',
@@ -2162,6 +2164,8 @@ Pages||20
 Remarques||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|page|pages}}',
 	'proofreadpage_specialpage_legend' => 'Rechercher dans les pages d’index',
+	'proofreadpage_specialpage_searcherror' => 'Erreur dans le moteur de recherche',
+	'proofreadpage_specialpage_searcherrortext' => 'Le moteur de recherche ne fonctionne pas. Désolé pour les inconvénients.',
 	'proofreadpage_source' => 'Source',
 	'proofreadpage_source_message' => 'Édition numérisée dont est issu ce texte',
 	'right-pagequality' => 'Modifier le drapeau de qualité de la page',
@@ -2300,6 +2304,8 @@ Sidjen||20
 Komentaaren||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|sidj|sidjen}}',
 	'proofreadpage_specialpage_legend' => 'Sjük üüb Index sidjen',
+	'proofreadpage_specialpage_searcherror' => 'Mä det schükmaskiin as wat skiaf gingen',
+	'proofreadpage_specialpage_searcherrortext' => 'Det schükmaskiin wal ei rocht. At dää mi iarag.',
 	'proofreadpage_source' => 'Kwel',
 	'proofreadpage_source_message' => 'För didiar tekst as en scan brükt wurden.',
 	'right-pagequality' => 'Wäärs faan det sidj feranre',
@@ -3111,6 +3117,8 @@ Paginas||20
 Notas||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagina|paginas}}',
 	'proofreadpage_specialpage_legend' => 'Cercar in paginas de indice',
+	'proofreadpage_specialpage_searcherror' => 'Error in le motor de recerca',
+	'proofreadpage_specialpage_searcherrortext' => 'Le motor de recerca non functiona. Nos regretta le inconvenientes.',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Le original scannate usate pro crear iste texto',
 	'right-pagequality' => 'Modificar le marca de qualitate del pagina',
@@ -3718,6 +3726,8 @@ $messages['ko'] = array(
 주석||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|문서}} $2개',
 	'proofreadpage_specialpage_legend' => '목차 문서 찾기',
+	'proofreadpage_specialpage_searcherror' => '검색 엔진 오류',
+	'proofreadpage_specialpage_searcherrortext' => '검색 엔진이 작동하지 않습니다. 불편을 끼쳐 죄송합니다.',
 	'proofreadpage_source' => '출처',
 	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
 	'right-pagequality' => '문서 품질 태그 수정하기',
@@ -3798,6 +3808,8 @@ Aanmerkunge||10',
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'För heh dä Täx ze schriive, wood dat Beld vum Täx jenumme.',
 	'right-pagequality' => 'De Qualiteit vun Sigge ändere',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Söns jät',
 	'proofreadpage-button-reset-zoom-label' => 'Ojinal-Enschtällong',
 );
 
@@ -4528,14 +4540,14 @@ Anmarkungen||10',
  * @author Servien
  */
 $messages['nds-nl'] = array(
-	'proofreadpage_index_attributes' => "Auteur
+	'proofreadpage_index_attributes' => 'Auteur
 Titel
 Jaor|Jaar van publicatie
 Uutgever
 Bron
 Aofbeelding|Umslag
-Pagina's||20
-Opmarkingen||10",
+Ziejen||20
+Opmarkingen||10',
 );
 
 /** Dutch (Nederlands)
@@ -4595,6 +4607,8 @@ Pagina's||20
 Opmerkingen||10",
 	'proofreadpage_pages' => "$2 {{PLURAL:$1|pagina|pagina's}}",
 	'proofreadpage_specialpage_legend' => "Indexpagina's doorzoeken",
+	'proofreadpage_specialpage_searcherror' => 'Fout in de zoekmachine',
+	'proofreadpage_specialpage_searcherrortext' => 'De zoekmachine werkt niet. Sorry voor het ongemak.',
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Gescande versie waarop deze tekst is gebaseerd',
 	'right-pagequality' => 'Kwaliteitsmarkering voor de pagina wijzigen',
@@ -4982,7 +4996,7 @@ $messages['pt'] = array(
 	'proofreadpage_badpagetext' => 'O formato da página que tentou gravar é incorrecto.',
 	'proofreadpage_indexdupe' => 'Link duplicado',
 	'proofreadpage_indexdupetext' => 'As páginas não podem ser listadas mais do que uma vez numa página de índice.',
-	'proofreadpage_nologin' => 'Não se encontra autenticado',
+	'proofreadpage_nologin' => 'Não está autenticado',
 	'proofreadpage_nologintext' => 'Precisa de estar [[Special:UserLogin|autenticado]] para alterar o estado de revisão das páginas.',
 	'proofreadpage_notallowed' => 'Mudança não permitida',
 	'proofreadpage_notallowedtext' => 'Não lhe é permitido alterar o estado de revisão desta página.',
