@@ -2664,6 +2664,8 @@ $messages['he'] = array(
 הערות||10',
 	'proofreadpage_pages' => '{{PLURAL:$1|דף אחד|$2 דפים}}',
 	'proofreadpage_specialpage_legend' => 'חיפוש בדפי המפתח',
+	'proofreadpage_specialpage_searcherror' => 'שגיאה במנוע חיפוש',
+	'proofreadpage_specialpage_searcherrortext' => 'מנוע החיפוש אינו עובד. אנו מצטערים על האי־נוחות.',
 	'proofreadpage_source' => 'מקור',
 	'proofreadpage_source_message' => 'הגרסה הסרוקה ששימשה להכנת טקסט זה',
 	'right-pagequality' => 'החלפת דגל האיכות של הדף',
@@ -3236,13 +3238,49 @@ $messages['io'] = array(
 
 /** Icelandic (íslenska)
  * @author S.Örvarr.S
+ * @author Snævar
  */
 $messages['is'] = array(
+	'proofreadpage_desc' => 'Leyfa einfaldan samanburð á texta við upphaflega skönnun',
 	'proofreadpage_namespace' => 'Síða',
 	'proofreadpage_image' => 'Mynd',
+	'proofreadpage_nosuch_file' => 'Villa: Skráin er ekki til',
+	'proofreadpage_nologin' => 'Óinnskráð(ur)',
+	'proofreadpage_nologintext' => 'Þú þarft að vera [[Special:UserLogin|skráð(ur) inn]] til þess að breyta prófarkar stöðu síðna.',
+	'proofreadpage_notallowed' => 'Breyting óheimil',
+	'proofreadpage_notallowedtext' => 'Þér er ekki heimilt að breyta prófarkarlesunar stöðu síðunnar.',
+	'proofreadpage_number_expected' => 'Villa: Bjóst við tölu en fann hana ekki',
 	'proofreadpage_nextpage' => 'Næsta síða',
 	'proofreadpage_prevpage' => 'Fyrri síða',
+	'proofreadpage_quality0_category' => 'Án texta',
+	'proofreadpage_quality1_category' => 'Ekki prófarkalesin',
+	'proofreadpage_quality3_category' => 'Prófarkalesnar',
+	'proofreadpage_quality4_category' => 'Gildar',
+	'proofreadpage_quality0_message' => 'Ekki þarf að prófarkalesa þessa síðu',
+	'proofreadpage_quality1_message' => 'Þessi síða hefur ekki verið prófarkalesin',
+	'proofreadpage_quality2_message' => 'Vandamál kom upp við prófarkarlesun síðunnar',
+	'proofreadpage_quality3_message' => 'Þessi síða hefur verið prófarkalesin',
+	'proofreadpage_quality4_message' => 'Þesi síða er gild',
 	'proofreadpage_index_listofpages' => 'Listi yfir síður',
+	'proofreadpage_page_status' => 'Staða síðu',
+	'proofreadpage_js_attributes' => 'Höfundur Titill Ár Útgefandi',
+	'proofreadpage_index_attributes' => 'Höfundur
+Titill
+Ár|Útgáfuár
+Útgefandi
+Heimild
+Myndir|Forsíðumynd
+Síður||20
+Tileinkanir||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|síða|síður}}',
+	'proofreadpage_specialpage_searcherror' => 'Villa í leitarvél',
+	'proofreadpage_specialpage_searcherrortext' => 'Leitarvélin virkar ekki í augnablikinu. Afsakið ónæðið.',
+	'proofreadpage_source' => 'Uppruni',
+	'proofreadpage-group-zoom' => 'Þysja',
+	'proofreadpage-group-other' => 'Annað',
+	'proofreadpage-button-zoom-out-label' => 'þysja út',
+	'proofreadpage-button-reset-zoom-label' => 'Upphafleg stærð',
+	'proofreadpage-button-zoom-in-label' => 'Þysja inn',
 );
 
 /** Italian (italiano)
@@ -4608,7 +4646,7 @@ Opmerkingen||10",
 	'proofreadpage_pages' => "$2 {{PLURAL:$1|pagina|pagina's}}",
 	'proofreadpage_specialpage_legend' => "Indexpagina's doorzoeken",
 	'proofreadpage_specialpage_searcherror' => 'Fout in de zoekmachine',
-	'proofreadpage_specialpage_searcherrortext' => 'De zoekmachine werkt niet. Sorry voor het ongemak.',
+	'proofreadpage_specialpage_searcherrortext' => 'De zoekmachine werkt niet. Excuses voor het ongemak.',
 	'proofreadpage_source' => 'Bron',
 	'proofreadpage_source_message' => 'Gescande versie waarop deze tekst is gebaseerd',
 	'right-pagequality' => 'Kwaliteitsmarkering voor de pagina wijzigen',
