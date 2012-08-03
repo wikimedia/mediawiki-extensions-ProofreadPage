@@ -712,12 +712,13 @@ function pr_setup() {
 		pr_container.style.cssText = 'overflow:hidden;width:' + self.DisplayWidth + 'px;';
 	} else {
 		var w = parseInt( self.proofreadPageEditWidth );
-		if( w > 0 ) {
-			w = Math.min( w, self.proofreadPageWidth );
-		} else {
-			w = self.proofreadPageWidth;
+		if( !w ) {
+			w = self.proofreadPageDefaultEditWidth;
 		}
-		self.proofreadPageViewURL = pr_image_url( w );
+		if( !w ) {
+			w = 1024; /* Default size in edit mode */
+		}
+		self.proofreadPageViewURL = pr_image_url( Math.min( w, self.proofreadPageWidth ) );
 		// prevent the container from being resized once the image is downloaded.
 		img_width = pr_horiz ? 0 : parseInt( pr_width / 2 - 70 ) - 20;
 		pr_container.onmousedown = pr_grab;
