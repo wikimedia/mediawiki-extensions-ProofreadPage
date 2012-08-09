@@ -4837,6 +4837,7 @@ $messages['pfl'] = array(
  * @author Beau
  * @author BeginaFelicysym
  * @author Olgak85
+ * @author Przemub
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -4891,6 +4892,8 @@ Strony||20
 Uwagi||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|strona|strony|stron}}',
 	'proofreadpage_specialpage_legend' => 'Szukaj stron indeksowych',
+	'proofreadpage_specialpage_searcherror' => 'Błąd w wyszukiwarce',
+	'proofreadpage_specialpage_searcherrortext' => 'Wyszukiwarka nie działa. Przepraszamy za kłopot.',
 	'proofreadpage_source' => 'Źródło',
 	'proofreadpage_source_message' => 'Zeskanowane wydanie wykorzystane do przygotowania tego tekstu',
 	'right-pagequality' => 'Zmienianie statusu uwierzytelnienia strony',
@@ -4902,8 +4905,8 @@ Uwagi||10',
 	'proofreadpage-button-reset-zoom-label' => 'Powiększenie domyślne',
 	'proofreadpage-button-zoom-in-label' => 'Powiększ',
 	'proofreadpage-button-toggle-layout-label' => 'Zmień układ na poziomy lub pionowy',
-	'proofreadpage-preferences-showheaders-label' => 'Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw Strona',
-	'proofreadpage-preferences-horizontal-layout-label' => 'Użyj poziomego układu podczas edycji w przestrzeni nazw Strona',
+	'proofreadpage-preferences-showheaders-label' => 'Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Użyj poziomego układu podczas edycji w przestrzeni nazw {{ns:page}}',
 );
 
 /** Piedmontese (Piemontèis)
@@ -6020,7 +6023,8 @@ Anmärkningar||10',
 	'proofreadpage-button-reset-zoom-label' => 'Återställ zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zooma in',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikal/horisontell uppsättning',
-	'proofreadpage-preferences-showheaders-label' => 'Visa fälten för sidhuvud och sidfot vid redigering i sidnamnrymden',
+	'proofreadpage-preferences-showheaders-label' => 'Visa fälten för sidhuvud och sidfot vid redigering i namnrymden {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Använd vågrät layout vid redigering i namnrymden {{ns:page}}',
 );
 
 /** Swahili (Kiswahili)
