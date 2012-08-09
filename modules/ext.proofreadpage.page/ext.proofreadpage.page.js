@@ -7,18 +7,54 @@ function pr_init_tabs() {
 	$( '#ca-talk' ).after( '<li id="ca-image"><span>' + self.proofreadPageScanLink + '</span></li>' );
 }
 
-function pr_image_url( requested_width ) {
+/**
+ * Fetches a url of the image thumbnail.
+ * Note: the callback will not be called if the attempt was unsuccessful.
+ */
+function pr_fetch_thumb_url( requestedWidth, callback ) {
+	var fullWidth = mw.config.get( 'proofreadPageWidth' );
+	var fullHeight = mw.config.get( 'proofreadPageHeight' );
+
 	// enforce quantization: width must be multiple of 100px
-	var width = 100 * Math.round( requested_width / 100 );
+	var quantizedWidth = 100 * Math.round( requestedWidth / 100 );
+
 	// compare to the width of the image
-	if( width < proofreadPageWidth ) {
-		self.DisplayWidth = width;
-		self.DisplayHeight = width * proofreadPageHeight / proofreadPageWidth;
-		return proofreadPageThumbURL.replace( '##WIDTH##', '' + width );
+	if ( quantizedWidth < fullWidth ) {
+		var request = {
+			action: 'query',
+			titles: mw.config.get( 'proofreadPageFileName' ),
+			prop: 'imageinfo',
+			iiprop: 'url|size',
+			iiurlwidth: quantizedWidth,
+			format: 'json'
+		};
+
+		// Check if this is multipaged document
+		if ( mw.config.get( 'proofreadPageFilePage' ) != null ) {
+			request['iiurlparam'] = 'page' + mw.config.get( 'proofreadPageFilePage' ) + '-' + quantizedWidth + 'px';
+		}
+
+		// Send request to fetch a thumbnail url
+		jQuery.getJSON( mw.util.wikiScript( 'api' ), request, function( data ) {
+			if ( data && data.query && data.query.pages ) {
+				for ( var i in data.query.pages ) {
+					var page = data.query.pages[i];
+					if ( !page.imageinfo || page.imageinfo.length < 1 ) {
+						continue;
+					}
+					var imageinfo = page.imageinfo[0];
+
+					if ( imageinfo.thumburl ) {
+						callback( imageinfo.thumburl, imageinfo.thumbwidth, imageinfo.thumbheight );
+					}
+
+					return;
+				}
+			}
+		} );
 	} else {
-		self.DisplayWidth = proofreadPageWidth;
-		self.DisplayHeight = proofreadPageHeight;
-		return proofreadPageURL;
+		// Image without scaling
+		callback( mw.config.get( 'proofreadPageURL' ), fullWidth, fullHeight );
 	}
 }
 
@@ -317,35 +353,32 @@ function zoom_on( evt ) {
 	return false;
 }
 
-
 //zoom using two images (magnification glass)
-function pr_initzoom() {
-	if( proofreadPageIsEdit ) {
-		return;
-	}
-	if( !self.proofreadPageThumbURL ) {
-		return;
-	}
-	if( self.DisplayWidth > 800 ) {
+function pr_initzoom( width, height ) {
+	var maxWidth = 800;
+
+	if( width > maxWidth ) {
 		return;
 	}
 
 	zp = document.getElementById( 'pr_container' );
-	if( zp ) {
-		var hires_url = pr_image_url( 800 );
-		self.objw = zp.firstChild.width;
-		self.objh = zp.firstChild.height;
+	if( !zp ) {
+		return;
+	}
+	pr_fetch_thumb_url( maxWidth, function( largeUrl, largeWidth, largeHeight ) {
+		self.objw = width;
+		self.objh = height;
 
 		zp.onmouseup = zoom_mouseup;
 		zp.onmousemove =  zoom_move;
 		zp_container = document.createElement( 'div' );
 		zp_container.style.cssText = 'position:absolute; width:0; height:0; overflow:hidden;';
 		zp_clip = document.createElement( 'img' );
-		zp_clip.setAttribute( 'src', hires_url );
+		zp_clip.setAttribute( 'src', largeUrl );
 		zp_clip.style.cssText = 'padding:0;margin:0;border:0;';
 		zp_container.appendChild( zp_clip );
 		zp.insertBefore( zp_container, zp.firstChild );
-	}
+	} );
 }
 
 /********************************
@@ -701,15 +734,16 @@ function pr_setup() {
 
 	// fill the image container
 	if( !proofreadPageIsEdit ) {
-		// this sets DisplayWidth and DisplayHeight
-		var thumb_url = pr_image_url( parseInt( pr_width / 2 - 70 ) );
-		var image = document.createElement( 'img' );
-		image.setAttribute( 'id', 'ProofReadImage' );
-		image.setAttribute( 'src', thumb_url );
-		image.setAttribute( 'width', self.DisplayWidth );
-		image.style.cssText = 'padding:0;margin:0;border:0;';
-		pr_container.appendChild( image );
-		pr_container.style.cssText = 'overflow:hidden;width:' + self.DisplayWidth + 'px;';
+		pr_fetch_thumb_url( parseInt( pr_width / 2 - 70 ), function( url, width, height ) {
+			var image = document.createElement( 'img' );
+			image.setAttribute( 'id', 'ProofReadImage' );
+			image.setAttribute( 'src', url );
+			image.setAttribute( 'width', width );
+			image.style.cssText = 'padding:0;margin:0;border:0;';
+			pr_container.appendChild( image );
+			pr_container.style.cssText = 'overflow:hidden;width:' + width + 'px;';
+			pr_initzoom( width, height );
+		} );
 	} else {
 		var w = parseInt( self.proofreadPageEditWidth );
 		if( !w ) {
@@ -718,7 +752,7 @@ function pr_setup() {
 		if( !w ) {
 			w = 1024; /* Default size in edit mode */
 		}
-		self.proofreadPageViewURL = pr_image_url( Math.min( w, self.proofreadPageWidth ) );
+
 		// prevent the container from being resized once the image is downloaded.
 		img_width = pr_horiz ? 0 : parseInt( pr_width / 2 - 70 ) - 20;
 		pr_container.onmousedown = pr_grab;
@@ -728,9 +762,11 @@ function pr_setup() {
 		}
 		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
 
-		pr_container.innerHTML = '<img id="ProofReadImage" src="' +
-			mw.html.escape( self.proofreadPageViewURL ) + '" width="' + img_width + '" />';
-		pr_zoom( 0 );
+		pr_fetch_thumb_url( Math.min( w, self.proofreadPageWidth ), function( url, width, height ) {
+			pr_container.innerHTML = '<img id="ProofReadImage" src="' +
+				mw.html.escape( url ) + '" width="' + img_width + '" />';
+			pr_zoom( 0 );
+		} );
 	}
 
 	table.setAttribute( 'id', 'textBoxTable' );
@@ -899,17 +935,20 @@ function pr_init() {
 		return;
 	}
 
-	if( !self.proofreadPageThumbURL ) {
+	if( mw.config.get( 'proofreadPageFileName' ) == null ) {
+		// File does not exist
 		return;
 	}
 
 	if( self.proofreadpage_setup ) {
+		// Run custom site/user setup code
 		proofreadpage_setup(
 			proofreadPageWidth,
 			proofreadPageHeight,
 			proofreadPageIsEdit
 		);
 	} else {
+		// Run extension setup code
 		pr_setup();
 	}
 
