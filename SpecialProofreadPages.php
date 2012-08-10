@@ -20,7 +20,7 @@
  */
 
 class ProofreadPages extends QueryPage {
-	protected $searchTerm, $searchList, $suppressSqlOffset;
+	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending;
 
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
@@ -34,18 +34,34 @@ class ProofreadPages extends QueryPage {
 		$output = $this->getOutput();
 		$request = $this->getRequest();
 		$output->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
+
 		$this->searchList = null;
 		$this->searchTerm = $request->getText( 'key' );
+		$this->queryOrder = $request->getText( 'order' );
+		$this->sortAscending = $request->getBool( 'sortascending' );
 		$this->suppressSqlOffset = false;
+
 		if( !$wgDisableTextSearch ) {
+			$orderSelect = new XmlSelect( 'order', 'order', $this->queryOrder );
+			$orderSelect->addOption( wfMsg( 'proofreadpage_index_status' ), 'quality' );
+			$orderSelect->addOption( wfMsg( 'proofreadpage_index_size' ), 'size' );
+			$orderSelect->addOption( wfMsg( 'proofreadpage_alphabeticalorder' ), 'alpha' );
+
 			$output->addHTML(
 				Xml::openElement( 'form', array( 'action' => $wgScript ) ) .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 				Xml::input( 'limit', false, $limit, array( 'type' => 'hidden' ) ) .
 				Xml::openElement( 'fieldset' ) .
 				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
-				Xml::input( 'key', 20, $this->searchTerm ) . ' ' .
+				Xml::element( 'p' ) .
+				Xml::label( wfMsg( 'proofreadpage_specialpage_label_key' ), 'key' )  . ' ' .
+				Xml::input( 'key', 20, $this->searchTerm ) .
+				Xml::closeElement( 'p' ) .
+				Xml::element( 'p' ) .
+				Xml::label( wfMsg( 'proofreadpage_specialpage_label_orderby' ), 'order' ) . ' ' . $orderSelect->getHtml() . ' ' .
+				Xml::checkLabel( wfMsg( 'proofreadpage_specialpage_label_sortascending' ), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
 				Xml::submitButton( wfMsg( 'ilsubmit' ) ) .
+				Xml::closeElement( 'p' ) .
 				Xml::closeElement( 'fieldset' ) .
 				Xml::closeElement( 'form' )
 			);
@@ -116,6 +132,7 @@ class ProofreadPages extends QueryPage {
 				$conds = null;
 			}
 		}
+
 		return array(
 			'tables' => array( 'pr_index', 'page' ),
 			'fields' => array( 'page_namespace AS namespace', 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
@@ -126,8 +143,19 @@ class ProofreadPages extends QueryPage {
 		);
 	}
 
+	function getOrderFields() {
+		switch( $this->queryOrder ) {
+			case 'size':
+				return array( 'pr_count' );
+			case 'alpha':
+				return array( 'page_title' );
+			default:
+				return array( 'value' );
+		}
+	}
+
 	function sortDescending() {
-		return true;
+		return !$this->sortAscending;
 	}
 
 	function formatResult( $skin, $result ) {
