@@ -61,10 +61,13 @@ $prpResourceTemplate = array(
 	'remoteExtPath' => 'ProofreadPage/modules'
 );
 $wgResourceModules += array(
+	'ext.proofreadpage.base' => $prpResourceTemplate + array(
+		'styles'  => 'ext.proofreadpage.base/ext.proofreadpage.base.css',
+	),
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'scripts' => 'ext.proofreadpage.page/ext.proofreadpage.page.js',
 		'styles'  => 'ext.proofreadpage.page/ext.proofreadpage.page.css',
-		'dependencies' => array( 'mediawiki.legacy.wikibits', 'mediawiki.util' ),
+		'dependencies' => array( 'ext.proofreadpage.base', 'mediawiki.legacy.wikibits', 'mediawiki.util' ),
 		'messages' => array(
 			'proofreadpage_header',
 			'proofreadpage_body',
@@ -91,7 +94,8 @@ $wgResourceModules += array(
 		'scripts' => 'ext.proofreadpage.article/ext.proofreadpage.article.js'
 	),
 	'ext.proofreadpage.index' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.index/ext.proofreadpage.index.js'
+		'scripts' => 'ext.proofreadpage.index/ext.proofreadpage.index.js',
+		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 );
 
