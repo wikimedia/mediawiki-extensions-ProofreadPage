@@ -1436,6 +1436,12 @@ $messages['de'] = array(
 	'proofreadpage_quality2_message' => 'Dieser Text wurde korrekturgelesen, enthält aber noch Problemfälle. Nähere Informationen zu den Problemen finden sich möglicherweise auf der Diskussionsseite.',
 	'proofreadpage_quality3_message' => 'Dieser Text wurde anhand der angegebenen Quelle einmal korrekturgelesen. Die Schreibweise sollte dem Originaltext folgen. Es ist noch ein weiterer Korrekturdurchgang nötig.',
 	'proofreadpage_quality4_message' => 'Fertig. Dieser Text wurde zweimal anhand der Quelle korrekturgelesen. Die Schreibweise folgt dem Originaltext.',
+	'proofreadpage_index_status' => 'Indexstatus',
+	'proofreadpage_index_size' => 'Anzahl der Seiten',
+	'proofreadpage_specialpage_label_orderby' => 'Sortieren nach:',
+	'proofreadpage_specialpage_label_key' => 'Suchen:',
+	'proofreadpage_specialpage_label_sortascending' => 'Aufsteigend sortieren',
+	'proofreadpage_alphabeticalorder' => 'Alphabetische Reihenfolge',
 	'proofreadpage_index_listofpages' => 'Seitenliste',
 	'proofreadpage_image_message' => 'Link zur Indexseite',
 	'proofreadpage_page_status' => 'Seitenstatus',
@@ -4442,6 +4448,8 @@ Jumlah halaman||20
 Catatan||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|laman|laman}}',
 	'proofreadpage_specialpage_legend' => 'Cari laman indeks',
+	'proofreadpage_specialpage_searcherror' => 'Ralat dalam enjin pencarian',
+	'proofreadpage_specialpage_searcherrortext' => 'Enjin pencarian tidak berfungsi. Maaf atas sebarang kesulitan.',
 	'proofreadpage_source' => 'Sumber',
 	'proofreadpage_source_message' => 'Edisi imbasan yang digunakan untuk membuktikan teks ini',
 	'right-pagequality' => 'Mengubahsuai bendera mutu laman',
@@ -6066,6 +6074,7 @@ $messages['szl'] = array(
 
 /** Tamil (தமிழ்)
  * @author Logicwiki
+ * @author Shanmugamp7
  * @author TRYPPN
  */
 $messages['ta'] = array(
@@ -6086,6 +6095,8 @@ $messages['ta'] = array(
 பக்கங்கள்||20
 கருத்துக்கள்||10',
 	'proofreadpage_source' => 'மூலம்',
+	'proofreadpage-group-other' => 'மற்றவை',
+	'proofreadpage-button-reset-zoom-label' => 'மூல அளவு',
 );
 
 /** Telugu (తెలుగు)
