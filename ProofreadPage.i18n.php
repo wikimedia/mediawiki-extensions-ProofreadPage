@@ -443,7 +443,7 @@ $messages['ar'] = array(
 	'proofreadpage-group-other' => 'غير ذلك',
 	'proofreadpage-button-toggle-visibility-label' => 'أظهر أو أخف ترويسة الصفحة وتذييلتها',
 	'proofreadpage-button-zoom-out-label' => 'تصغير',
-	'proofreadpage-button-reset-zoom-label' => 'رد التكبير',
+	'proofreadpage-button-reset-zoom-label' => 'حجم أصلي',
 	'proofreadpage-button-zoom-in-label' => 'تكبير',
 	'proofreadpage-button-toggle-layout-label' => 'تخطيط أفقي أو رأسي',
 	'proofreadpage-preferences-showheaders-label' => 'أظهر حقل الرأس والقدم عند التعديل في صفحة مساحة الإسم',
@@ -1255,6 +1255,7 @@ $messages['ceb'] = array(
 );
 
 /** Czech (česky)
+ * @author Jkjk
  * @author Matěj Grabovský
  * @author Mormegil
  */
@@ -1296,6 +1297,11 @@ $messages['cs'] = array(
 	'proofreadpage_quality2_message' => 'Při kontrole této stránky se objevil problém',
 	'proofreadpage_quality3_message' => 'Tato stránka byla zkontrolována',
 	'proofreadpage_quality4_message' => 'Tato stránka byla ověřena',
+	'proofreadpage_index_size' => 'Počet stránek',
+	'proofreadpage_specialpage_label_orderby' => 'Řadit podle:',
+	'proofreadpage_specialpage_label_key' => 'Hledat:',
+	'proofreadpage_specialpage_label_sortascending' => 'Seřadit vzestupně',
+	'proofreadpage_alphabeticalorder' => 'Abecední pořadí',
 	'proofreadpage_index_listofpages' => 'Seznam stránek',
 	'proofreadpage_image_message' => 'Odkaz na úvodní stránku',
 	'proofreadpage_page_status' => 'Stav stránky',
@@ -1309,6 +1315,8 @@ Stran||20
 Poznámky||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|stránka|stránky|stránek}}',
 	'proofreadpage_specialpage_legend' => 'Hledat na indexových stránkách',
+	'proofreadpage_specialpage_searcherror' => 'Chyba ve vyhledávacím systému',
+	'proofreadpage_specialpage_searcherrortext' => 'Vyhledávací systém nefunguje. Omlouváme se za případné potíže.',
 	'proofreadpage_source' => 'Zdroj',
 	'proofreadpage_source_message' => 'Naskenovaná verze použitá k vypracování tohoto textu',
 	'right-pagequality' => 'Upravování příznaku kvality stránky',
@@ -2652,6 +2660,7 @@ $messages['haw'] = array(
  * @author Rotem Liss
  * @author Rotemliss
  * @author YaronSh
+ * @author ערן
  */
 $messages['he'] = array(
 	'indexpages' => 'רשימת דפי מפתח',
@@ -2691,6 +2700,11 @@ $messages['he'] = array(
 	'proofreadpage_quality2_message' => 'הייתה בעיה בעת ביצוע הגהה לדף זה',
 	'proofreadpage_quality3_message' => 'דף זה עבר הגהה',
 	'proofreadpage_quality4_message' => 'דף זה עבר אימות',
+	'proofreadpage_index_size' => 'מספר הדפים',
+	'proofreadpage_specialpage_label_orderby' => 'סדר לפי:',
+	'proofreadpage_specialpage_label_key' => 'חיפוש:',
+	'proofreadpage_specialpage_label_sortascending' => 'מיון בסדר עולה',
+	'proofreadpage_alphabeticalorder' => 'סדר אלפביתי',
 	'proofreadpage_index_listofpages' => 'רשימת דפים',
 	'proofreadpage_image_message' => 'קישור לדף המפתח',
 	'proofreadpage_page_status' => 'מצב הדף',
@@ -4468,6 +4482,12 @@ $messages['ms'] = array(
 	'proofreadpage_quality2_message' => 'Masalah timbul ketika membaca pruf laman ini',
 	'proofreadpage_quality3_message' => 'Laman ini telah dibaca pruf',
 	'proofreadpage_quality4_message' => 'Laman ini telah disahkan',
+	'proofreadpage_index_status' => 'Status indeks',
+	'proofreadpage_index_size' => 'Bilangan halaman',
+	'proofreadpage_specialpage_label_orderby' => 'Isih mengikut:',
+	'proofreadpage_specialpage_label_key' => 'Cari:',
+	'proofreadpage_specialpage_label_sortascending' => 'Isih tertib menaik',
+	'proofreadpage_alphabeticalorder' => 'Susunan abjad',
 	'proofreadpage_index_listofpages' => 'Senarai halaman',
 	'proofreadpage_image_message' => 'Pautan ke halaman indeks',
 	'proofreadpage_page_status' => 'Status halaman',
@@ -5055,6 +5075,7 @@ $messages['ps'] = array(
 	'proofreadpage_nextpage' => 'بل مخ',
 	'proofreadpage_prevpage' => 'تېر مخ',
 	'proofreadpage_quality0_category' => 'بې متنه',
+	'proofreadpage_specialpage_label_key' => 'پلټل:',
 	'proofreadpage_index_listofpages' => 'د مخونو لړليک',
 	'proofreadpage_image_message' => 'د ليکلړ مخ ته تړنه',
 	'proofreadpage_page_status' => 'د مخ دريځ',
@@ -5721,6 +5742,9 @@ $messages['si'] = array(
 	'proofreadpage_quality2_message' => 'මෙම පිටුවේ සෝදුපත් බැලීමේදී දෝෂයක් හට ගැනුණි',
 	'proofreadpage_quality3_message' => 'මෙම පිටුව සෝදුපත් බලා ඇත',
 	'proofreadpage_quality4_message' => 'මෙම පිටුව වලංගු කර ඇත',
+	'proofreadpage_index_status' => 'සුචි තත්වය',
+	'proofreadpage_index_size' => 'පිටු ගණන',
+	'proofreadpage_specialpage_label_key' => 'සොයන්න:',
 	'proofreadpage_index_listofpages' => 'පිටු ලැයිස්තුව',
 	'proofreadpage_image_message' => 'සුචිගත පිටුවට සබැඳිගත කරන්න',
 	'proofreadpage_page_status' => 'පිටුවේ තත්වය',
@@ -6176,6 +6200,7 @@ $messages['te'] = array(
 	'proofreadpage_quality2_message' => 'ఈ పుటను అచ్చుదిద్దుతున్నప్పుడు తెలియని సమస్య ఎదురైనది',
 	'proofreadpage_quality3_message' => 'ఈ పుట అచ్చుదిద్దబడ్డది',
 	'proofreadpage_quality4_message' => 'ఈ పుట ఆమోదించబడ్డది',
+	'proofreadpage_index_size' => 'పేజీల సంఖ్య',
 	'proofreadpage_index_listofpages' => 'పుటల జాబితా',
 	'proofreadpage_image_message' => 'సూచిక పుటకు లంకె',
 	'proofreadpage_page_status' => 'పుట స్థితి',
@@ -6188,7 +6213,7 @@ $messages['te'] = array(
 బొమ్మ|ముఖచిత్రం
 పుటలు||20
 వ్యాఖ్యలు||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|పుట|పుటలు}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|పేజీ|పేజీలు}}',
 	'proofreadpage_specialpage_legend' => 'సూచీపుటలు వెదకు',
 	'proofreadpage_source' => 'మూలము',
 	'proofreadpage_source_message' => 'ఈ పాఠ్య నిర్ధారణకు ఛాయాచిత్రసంగ్రహణకూర్పు(scanned edition) వాడబడ్డది.',
