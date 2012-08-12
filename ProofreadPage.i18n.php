@@ -1376,6 +1376,12 @@ $messages['da'] = array(
 	'proofreadpage_quality2_message' => 'Der opstod et problem under korrekturlæsningen af denne side',
 	'proofreadpage_quality3_message' => 'Denne side er blevet korrekturlæst',
 	'proofreadpage_quality4_message' => 'Denne side er valideret',
+	'proofreadpage_index_status' => 'Indeksstatus',
+	'proofreadpage_index_size' => 'Antal sider',
+	'proofreadpage_specialpage_label_orderby' => 'Sorter efter:',
+	'proofreadpage_specialpage_label_key' => 'Søg:',
+	'proofreadpage_specialpage_label_sortascending' => 'Sorter stigende',
+	'proofreadpage_alphabeticalorder' => 'Alfabetisk orden',
 	'proofreadpage_index_listofpages' => 'Liste over sider',
 	'proofreadpage_image_message' => 'Link til indekssiden',
 	'proofreadpage_page_status' => 'Sidestatus',
@@ -1390,6 +1396,8 @@ Sider||20
 Bemærkninger||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|side|sider}}',
 	'proofreadpage_specialpage_legend' => 'Søg i indekssider',
+	'proofreadpage_specialpage_searcherror' => 'Fejl i søgemaskinen',
+	'proofreadpage_specialpage_searcherrortext' => 'Søgemaskinen virker ikke. Vi beklager ulejligheden.',
 	'proofreadpage_source' => 'Kilde',
 	'proofreadpage_source_message' => 'Indscannet original, der blev brugt som grundlag for denne tekst',
 	'right-pagequality' => 'Ændre en sides kvalititetsflag',
@@ -1542,6 +1550,12 @@ $messages['diq'] = array(
 	'proofreadpage_quality2_message' => 'wexta no pel de raştkerdış bêne xeta vıraziya',
 	'proofreadpage_quality3_message' => 'no pel de raştkerdış bı',
 	'proofreadpage_quality4_message' => 'Na pela araşt nêbiya',
+	'proofreadpage_index_status' => 'Weziyetê ratnayışi',
+	'proofreadpage_index_size' => 'Amariya pelan',
+	'proofreadpage_specialpage_label_orderby' => 'Ratnen:',
+	'proofreadpage_specialpage_label_key' => 'Cı geyre:',
+	'proofreadpage_specialpage_label_sortascending' => 'Ratnayışo zeydnayış',
+	'proofreadpage_alphabeticalorder' => 'Alfabetik ratnayış',
 	'proofreadpage_index_listofpages' => 'listeya pelan',
 	'proofreadpage_image_message' => 'gıreyo ke erziyayo pelê endeksi',
 	'proofreadpage_page_status' => 'halê peli',
@@ -1920,6 +1934,12 @@ $messages['et'] = array(
 	'proofreadpage_quality2_message' => 'Selle lehekülje õigsuse tõendamisel ilmnes probleem.',
 	'proofreadpage_quality3_message' => 'Selle lehekülje õigsus on tõendatud.',
 	'proofreadpage_quality4_message' => 'See lehekülg on heaks kiidetud.',
+	'proofreadpage_index_status' => 'Olek',
+	'proofreadpage_index_size' => 'Lehekülgede arv',
+	'proofreadpage_specialpage_label_orderby' => 'Järjestusalus:',
+	'proofreadpage_specialpage_label_key' => 'Otsitav:',
+	'proofreadpage_specialpage_label_sortascending' => 'Järjesta kasvavalt',
+	'proofreadpage_alphabeticalorder' => 'Tähestikuline',
 	'proofreadpage_index_listofpages' => 'Lehekülgede loend',
 	'proofreadpage_image_message' => 'Link registrilehele',
 	'proofreadpage_page_status' => 'Lehekülje olek',
@@ -1934,6 +1954,8 @@ Leheküljed||20
 Märkused||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|lehekülg|lehekülge}}',
 	'proofreadpage_specialpage_legend' => 'Registrilehekülgede otsimine',
+	'proofreadpage_specialpage_searcherror' => 'Tõrge otsimootoris',
+	'proofreadpage_specialpage_searcherrortext' => 'Otsimootor ei tööta. Palume vabandust.',
 	'proofreadpage_source' => 'Allikas',
 	'proofreadpage_source_message' => 'Selle teksti aluseks olev skannitud versioon',
 	'right-pagequality' => 'Muuta lehekülje tõendusolekut',
@@ -2700,6 +2722,7 @@ $messages['he'] = array(
 	'proofreadpage_quality2_message' => 'הייתה בעיה בעת ביצוע הגהה לדף זה',
 	'proofreadpage_quality3_message' => 'דף זה עבר הגהה',
 	'proofreadpage_quality4_message' => 'דף זה עבר אימות',
+	'proofreadpage_index_status' => 'מצב המפתח',
 	'proofreadpage_index_size' => 'מספר הדפים',
 	'proofreadpage_specialpage_label_orderby' => 'סדר לפי:',
 	'proofreadpage_specialpage_label_key' => 'חיפוש:',
@@ -3389,6 +3412,11 @@ $messages['it'] = array(
 	'proofreadpage_quality2_message' => "C'è stato un problema nella correzione di questa pagina",
 	'proofreadpage_quality3_message' => 'Questa pagina è stata corretta',
 	'proofreadpage_quality4_message' => 'Questa pagina è stata convalidata',
+	'proofreadpage_index_size' => 'Numero di pagine',
+	'proofreadpage_specialpage_label_orderby' => 'Ordina per:',
+	'proofreadpage_specialpage_label_key' => 'Ricerca:',
+	'proofreadpage_specialpage_label_sortascending' => 'Ordinamento crescente',
+	'proofreadpage_alphabeticalorder' => 'Ordine alfabetico',
 	'proofreadpage_index_listofpages' => 'Lista delle pagine',
 	'proofreadpage_image_message' => 'Collegamento alla pagina indice',
 	'proofreadpage_page_status' => 'Status della pagina',
@@ -4711,6 +4739,12 @@ $messages['nl'] = array(
 	'proofreadpage_quality2_message' => 'Er was een probleem bij het proeflezen van deze pagina',
 	'proofreadpage_quality3_message' => 'Deze pagina is proefgelezen',
 	'proofreadpage_quality4_message' => 'Deze pagina is gecontroleerd',
+	'proofreadpage_index_status' => 'Indexstatus',
+	'proofreadpage_index_size' => "Aantal pagina's",
+	'proofreadpage_specialpage_label_orderby' => 'Sorteren op:',
+	'proofreadpage_specialpage_label_key' => 'Zoeken:',
+	'proofreadpage_specialpage_label_sortascending' => 'Oplopend sorteren',
+	'proofreadpage_alphabeticalorder' => 'Alfabetische volgorde',
 	'proofreadpage_index_listofpages' => 'Paginalijst',
 	'proofreadpage_image_message' => 'Verwijziging naar de indexpagina',
 	'proofreadpage_page_status' => 'Paginastatus',
@@ -5412,6 +5446,7 @@ Note||10",
  * @author Ferrer
  * @author Innv
  * @author Lockal
+ * @author Sergey kudryavtsev
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -5466,6 +5501,7 @@ $messages['ru'] = array(
 Примечания||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страницы|страниц}}',
 	'proofreadpage_specialpage_legend' => 'Поиск индексных страниц',
+	'proofreadpage_specialpage_searcherror' => 'Ошибка в поисковой системе',
 	'proofreadpage_source' => 'Источник',
 	'proofreadpage_source_message' => 'Для создания электронной версии текста использовались отсканированные материалы',
 	'right-pagequality' => 'изменять флаг качества страницы',
@@ -5477,6 +5513,8 @@ $messages['ru'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Сбросить увеличение',
 	'proofreadpage-button-zoom-in-label' => 'Приблизить',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальная/горизонтальная разметка',
+	'proofreadpage-preferences-showheaders-label' => 'Показывать поля верхнего и нижнего колонтитулов при редактировании в пространстве имен {{ns:page}}.',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Использовать горизонтальную раскладку при редактировании в пространстве имен {{ns:page}}.',
 );
 
 /** Rusyn (русиньскый)
@@ -5744,13 +5782,17 @@ $messages['si'] = array(
 	'proofreadpage_quality4_message' => 'මෙම පිටුව වලංගු කර ඇත',
 	'proofreadpage_index_status' => 'සුචි තත්වය',
 	'proofreadpage_index_size' => 'පිටු ගණන',
+	'proofreadpage_specialpage_label_orderby' => 'අනුපිළිවෙළ:',
 	'proofreadpage_specialpage_label_key' => 'සොයන්න:',
+	'proofreadpage_specialpage_label_sortascending' => 'ආරෝහණ වර්ගය',
+	'proofreadpage_alphabeticalorder' => 'අකාරාදි පිළිවෙළ',
 	'proofreadpage_index_listofpages' => 'පිටු ලැයිස්තුව',
 	'proofreadpage_image_message' => 'සුචිගත පිටුවට සබැඳිගත කරන්න',
 	'proofreadpage_page_status' => 'පිටුවේ තත්වය',
 	'proofreadpage_js_attributes' => 'කර්තෘ මාතෘකාව වසර ප්‍රකාශක',
 	'proofreadpage_pages' => '{{PLURAL:$1|පිටු|පිටු}} $2 ක්',
 	'proofreadpage_specialpage_legend' => 'සුචිකරණය කල පිටු සොයන්න',
+	'proofreadpage_specialpage_searcherror' => 'සෙවුම් එන්ජිමේ දෝෂයක්',
 	'proofreadpage_source' => ' මූලාශ්‍රය',
 	'right-pagequality' => 'පිටුවේ ගුණාත්මක ධජය වෙනස් කරන්න',
 	'proofreadpage-section-tools' => 'සෝදුපත් බැලීමේ මෙවලම්',
@@ -6113,10 +6155,12 @@ Anmärkningar||10',
 
 /** Swahili (Kiswahili)
  * @author Ikiwaner
+ * @author Stephenwanjau
  */
 $messages['sw'] = array(
 	'proofreadpage_namespace' => 'Ukurasa',
 	'proofreadpage_image' => 'Picha',
+	'proofreadpage_specialpage_label_key' => 'Tafuta:',
 	'proofreadpage_source' => 'Chanzo',
 );
 
@@ -6131,6 +6175,7 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Karthi.dr
  * @author Logicwiki
  * @author Shanmugamp7
  * @author TRYPPN
@@ -6138,9 +6183,17 @@ $messages['szl'] = array(
 $messages['ta'] = array(
 	'proofreadpage_namespace' => 'பக்கம்',
 	'proofreadpage_image' => 'படம்',
+	'proofreadpage_nosuch_file' => 'பிழை: இப்படி ஒரு கோப்பே இல்லை',
 	'proofreadpage_nologin' => 'புகுபதிகை செய்யப்படவில்லை',
+	'proofreadpage_notallowed' => 'மாற்றத்திற்கு அனுமதி இல்லை.',
 	'proofreadpage_nextpage' => 'அடுத்த பக்கம்',
 	'proofreadpage_prevpage' => 'முந்தைய பக்கம்',
+	'proofreadpage_quality1_category' => 'மெய்ப்பு பார்க்கப்படாதவை',
+	'proofreadpage_quality2_category' => 'சிக்கலானவை',
+	'proofreadpage_quality3_category' => 'மெய்ப்புப் பார்க்கப்பட்டவை',
+	'proofreadpage_quality4_category' => 'சரிபார்க்கப்பட்டவை',
+	'proofreadpage_index_size' => 'பக்கங்களின் எண்ணிக்கை',
+	'proofreadpage_specialpage_label_key' => 'தேடு:',
 	'proofreadpage_index_listofpages' => 'பக்கங்களின் பட்டியல்',
 	'proofreadpage_page_status' => 'பக்கத்தின் நிலைமை',
 	'proofreadpage_js_attributes' => 'எழுத்தாளர் தலைப்பு ஆண்டு பதிப்பகம்',
@@ -6152,9 +6205,14 @@ $messages['ta'] = array(
 படம்|அட்டைப் படம்
 பக்கங்கள்||20
 கருத்துக்கள்||10',
+	'proofreadpage_specialpage_searcherror' => 'தேடு பொறியில் பிழை',
+	'proofreadpage_specialpage_searcherrortext' => 'தேடு பொறி இயங்கவில்லை. வசதிக்குறைவுக்கு மன்னிக்கவும்.',
 	'proofreadpage_source' => 'மூலம்',
+	'proofreadpage-group-zoom' => 'பெரிதாக்கு',
 	'proofreadpage-group-other' => 'மற்றவை',
+	'proofreadpage-button-zoom-out-label' => 'உருவ அளவு சிறிதாக்கு',
 	'proofreadpage-button-reset-zoom-label' => 'மூல அளவு',
+	'proofreadpage-button-zoom-in-label' => 'உருவ அளவு பெரிதாக்கு',
 );
 
 /** Telugu (తెలుగు)
