@@ -958,80 +958,56 @@ function pr_init() {
 	}
 }
 
-/* Quality buttons */
-self.pr_add_quality = function( form, value ) {
-	self.proofreadpage_quality = value;
-	self.proofreadpage_username = proofreadPageUserName;
-	var text = '';
-	switch( value ) {
-		case 0:
-			text = mediaWiki.msg( 'proofreadpage_quality0_category' );
-			break;
-		case 1:
-			text = mediaWiki.msg( 'proofreadpage_quality1_category' );
-			break;
-		case 2:
-			text = mediaWiki.msg( 'proofreadpage_quality2_category' );
-			break;
-		case 3:
-			text = mediaWiki.msg( 'proofreadpage_quality3_category' );
-			break;
-		case 4:
-			text = mediaWiki.msg( 'proofreadpage_quality4_category' );
-			break;
-	}
-	form.elements['wpSummary'].value = '/* ' + text + ' */ ';
-	form.elements['wpProofreader'].value = self.proofreadpage_username;
-};
-
 function pr_add_quality_buttons() {
 	if ( !mw.config.get( 'proofreadPageIsEdit' ) ) {
 		return;
 	}
 
-	var f = document.createElement( 'span' );
-	jQuery( '.editCheckboxes' ).append( f );
+	var lastProofreader = proofreadpage_username || '';
+	var currentQualityLevel = proofreadpage_quality;
 
-	if ( self.proofreadpage_username == null ) {
-		self.proofreadpage_username = '';
-	}
+	var $container = jQuery( '<span/>' );
+	$container.append( jQuery( '<input type="hidden" name="wpProofreader" />' ).val( lastProofreader ) );
 
-	if( !proofreadPageAddButtons ) {
-		f.innerHTML =
-			' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">' +
-			'<input type="hidden" name="quality" value="' + escapeQuotesHTML( self.proofreadpage_quality +'' ) + '" >';
+	jQuery( '.editCheckboxes' ).append( $container );
+
+	if ( !mw.config.get( 'proofreadPageAddButtons' ) ) {
+		// User has no premissions to change the quality level
+		$container.append( jQuery( '<input type="hidden" name="wpQuality" />' ).val( currentQualityLevel ) );
 		return;
 	}
 
-	f.innerHTML =
-' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">'
-+'<span class="quality0"> <input type="radio" name="quality" value=0 onclick="pr_add_quality(this.form,0)" tabindex=4> </span>'
-+'<span class="quality2"> <input type="radio" name="quality" value=2 onclick="pr_add_quality(this.form,2)" tabindex=4> </span>'
-+'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)" tabindex=4> </span>'
-+'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)" tabindex=4> </span>'
-+'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
-	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_page_status' ) );
+	var qualityLevels = [ 0, 2, 1, 3, 4 ];
+	$radioList = jQuery( '<span id="wpQuality-container" />' );
 
-	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
-		document.editform.quality[4].parentNode.style.cssText = 'display:none';
-		document.editform.quality[4].disabled = true;
+	for ( var i = 0; i < qualityLevels.length; i++ ) {
+		var level = qualityLevels[i];
+
+		var $input = jQuery( '<input type="radio" name="wpQuality" tabindex="4" />' );
+		$input
+			.val( level )
+			.attr( 'checked', level === currentQualityLevel )
+			.attr( 'title', mw.msg( 'proofreadpage_quality' + level + '_category' ) )
+			.click( function() {
+				var text = mw.msg( 'proofreadpage_quality' + this.value + '_category' );
+				this.form.elements['wpSummary'].value = '/* ' + text + ' */ ';
+				this.form.elements['wpProofreader'].value = mw.config.get( 'proofreadPageUserName' );
+			} );
+
+		var $span = jQuery( '<span class="quality' + level + '" />' );
+		$span.append( $input );
+
+		$radioList.append( $span );
 	}
-	switch( self.proofreadpage_quality ) {
-		case 4:
-			document.editform.quality[4].checked = true;
-			break;
-		case 3:
-			document.editform.quality[3].checked = true;
-			break;
-		case 1:
-			document.editform.quality[2].checked = true;
-			break;
-		case 2:
-			document.editform.quality[1].checked = true;
-			break;
-		case 0:
-			document.editform.quality[0].checked = true;
-			break;
+	$container
+		.append( $radioList )
+		.append( '&nbsp;<label for="wpQuality-container">' + mw.html.escape( mw.msg( 'proofreadpage_page_status' ) ) + '</label>'); //no "for" property: it's a label for the 4 radio buttons.
+
+	if ( currentQualityLevel !== 4
+		&& ( currentQualityLevel !== 3 || lastProofreader === mw.config.get( 'proofreadPageUserName' ) )
+	) {
+		document.editform.wpQuality[4].parentNode.style.cssText = 'display:none';
+		document.editform.wpQuality[4].disabled = true;
 	}
 }
 

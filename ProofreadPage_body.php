@@ -1105,7 +1105,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		if ( !$request->wasPosted() ) {
 			return true;
 		}
-		$editpage->quality = $request->getVal( 'quality' );
+		$editpage->quality = $request->getVal( 'wpQuality' );
 		$editpage->username = $editpage->safeUnicodeInput( $request, 'wpProofreader' );
 		$editpage->header = $editpage->safeUnicodeInput( $request, 'wpHeaderTextbox' );
 		$editpage->footer = $editpage->safeUnicodeInput( $request, 'wpFooterTextbox' );
