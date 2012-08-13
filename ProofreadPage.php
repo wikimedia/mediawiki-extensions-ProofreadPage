@@ -64,7 +64,7 @@ $wgResourceModules += array(
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'scripts' => 'ext.proofreadpage.page/ext.proofreadpage.page.js',
 		'styles'  => 'ext.proofreadpage.page/ext.proofreadpage.page.css',
-		'dependencies' => array( 'mediawiki.legacy.wikibits' ),
+		'dependencies' => array( 'mediawiki.legacy.wikibits', 'mediawiki.util' ),
 		'messages' => array(
 			'proofreadpage_header',
 			'proofreadpage_body',

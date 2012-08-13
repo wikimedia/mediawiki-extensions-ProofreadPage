@@ -395,20 +395,22 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			return true;
 		}
 
+		$fileName = null;
+		$filePage = null;
+
 		$image = wfFindFile( $imageTitle );
 		if ( $image && $image->exists() ) {
+			$fileName = $imageTitle->getPrefixedText();
+
 			$width = $image->getWidth();
 			$height = $image->getHeight();
 			if ( $m[2] ) {
-				$thumbName = $image->thumbName( array( 'width' => '##WIDTH##', 'page' => $m[3] ) );
-				$thumbURL = $image->getThumbUrl( $thumbName );
-				$thumbURL = str_replace( '%23', '#', $thumbURL );
-				$fullURL = str_replace( '##WIDTH##', "$width", $thumbURL );
+				$filePage = $m[3];
+
+				$thumbName = $image->thumbName( array( 'width' => $width, 'page' => $filePage ) );
+				$fullURL = $image->getThumbUrl( $thumbName );
 			} else {
-				$thumbName = $image->thumbName( array( 'width' => '##WIDTH##' ) );
-				$thumbURL = $image->getThumbUrl( $thumbName );
-				$thumbURL = str_replace( '%23', '#', $thumbURL );
-				$fullURL = $image->getURL();
+				$fullURL = $image->getViewURL();
 			}
 			$scan_link = Html::element( 'a',
 						    array( 'href' => $fullURL,
@@ -417,7 +419,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		} else {
 			$width = 0;
 			$height = 0;
-			$thumbURL = '';
 			$fullURL = '';
 			$scan_link = '';
 		}
@@ -445,8 +446,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			'proofreadPageWidth' => intval( $width ),
 			'proofreadPageHeight' => intval( $height ),
 			'proofreadPageEditWidth' => $edit_width,
-			'proofreadPageThumbURL' => $thumbURL,
 			'proofreadPageURL' => $fullURL,
+			'proofreadPageFileName' => $fileName,
+			'proofreadPageFilePage' => $filePage,
 			'proofreadPageIsEdit' => intval( $isEdit ),
 			'proofreadPageIndexLink' => $index_link,
 			'proofreadPageNextLink' => $next_link,
