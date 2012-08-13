@@ -2157,6 +2157,7 @@ Huomautuksia||10',
 );
 
 /** French (français)
+ * @author Brunoperel
  * @author Crochet.david
  * @author Dereckson
  * @author Gomoko
@@ -2209,7 +2210,7 @@ $messages['fr'] = array(
 	'proofreadpage_quality4_message' => 'Cette page a été validée par deux contributeurs.',
 	'proofreadpage_index_status' => 'État de l’index',
 	'proofreadpage_index_size' => 'Nombre de pages',
-	'proofreadpage_specialpage_label_orderby' => 'Trié par :',
+	'proofreadpage_specialpage_label_orderby' => 'Trier par :',
 	'proofreadpage_specialpage_label_key' => 'Recherche :',
 	'proofreadpage_specialpage_label_sortascending' => 'Tri croissant.',
 	'proofreadpage_alphabeticalorder' => 'Ordre alphabétique',
@@ -3838,6 +3839,12 @@ $messages['ko'] = array(
 	'proofreadpage_quality2_message' => '이 문서를 교정하는 중 문제가 있었습니다.',
 	'proofreadpage_quality3_message' => '이 문서는 교정 작업을 거쳤습니다.',
 	'proofreadpage_quality4_message' => '이 문서는 검증되었습니다.',
+	'proofreadpage_index_status' => '색인 상테',
+	'proofreadpage_index_size' => '문서 수',
+	'proofreadpage_specialpage_label_orderby' => '정렬 기준:',
+	'proofreadpage_specialpage_label_key' => '찾기:',
+	'proofreadpage_specialpage_label_sortascending' => '오름차순 정렬',
+	'proofreadpage_alphabeticalorder' => '알파벳순 정렬',
 	'proofreadpage_index_listofpages' => '문서 목록',
 	'proofreadpage_image_message' => '목차 페이지로',
 	'proofreadpage_page_status' => '문서 상태',
@@ -6124,6 +6131,12 @@ $messages['sv'] = array(
 	'proofreadpage_quality2_message' => 'Ett problem uppstod när den här sidan skulle korrekturläsas',
 	'proofreadpage_quality3_message' => 'Den här sidan har korrekturlästs',
 	'proofreadpage_quality4_message' => 'Den här sidan har godkänts',
+	'proofreadpage_index_status' => 'Indexstatus',
+	'proofreadpage_index_size' => 'Antal sidor',
+	'proofreadpage_specialpage_label_orderby' => 'Sortera efter:',
+	'proofreadpage_specialpage_label_key' => 'Sök:',
+	'proofreadpage_specialpage_label_sortascending' => 'Sortera stigande',
+	'proofreadpage_alphabeticalorder' => 'Alfabetisk ordning',
 	'proofreadpage_index_listofpages' => 'Lista över sidor',
 	'proofreadpage_image_message' => 'Länk till indexsidan',
 	'proofreadpage_page_status' => 'Sidans status',
@@ -6138,6 +6151,8 @@ Sidor||20
 Anmärkningar||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|sida|sidor}}',
 	'proofreadpage_specialpage_legend' => 'Sök i indexsidorna',
+	'proofreadpage_specialpage_searcherror' => 'Fel i sökmotorn',
+	'proofreadpage_specialpage_searcherrortext' => 'Sökmotorn fungerar inte. Vi beklagar för olägenheten.',
 	'proofreadpage_source' => 'Källa',
 	'proofreadpage_source_message' => 'Scannat original använt för att skapa denna text',
 	'right-pagequality' => 'Ändra sidans kvalitetsflagga',
