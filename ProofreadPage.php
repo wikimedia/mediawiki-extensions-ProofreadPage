@@ -29,7 +29,6 @@ $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',
 	'author'         => 'ThomasV',
-	'version'        => '2010-09-17',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Proofread_Page',
 	'descriptionmsg' => 'proofreadpage_desc',
 );
