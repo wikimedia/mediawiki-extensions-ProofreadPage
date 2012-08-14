@@ -3497,7 +3497,7 @@ $messages['ja'] = array(
 	'proofreadpage_quality4_message' => 'このページは検証済みです',
 	'proofreadpage_index_listofpages' => 'ページの一覧',
 	'proofreadpage_image_message' => '書誌情報ページへのリンク',
-	'proofreadpage_page_status' => '校正ステータス',
+	'proofreadpage_page_status' => '校正の状態',
 	'proofreadpage_js_attributes' => '著者 書名 年 出版者',
 	'proofreadpage_index_attributes' => '著者
 書名
@@ -5422,6 +5422,10 @@ $messages['roa-tara'] = array(
 	'proofreadpage_quality2_message' => 'Ha state quacche probbleme quanne è corrette sta pàgene',
 	'proofreadpage_quality3_message' => 'Sta pàgene ha state corrette',
 	'proofreadpage_quality4_message' => 'Sta pàgene ha state validate',
+	'proofreadpage_index_size' => 'Numere pe pàggene',
+	'proofreadpage_specialpage_label_orderby' => 'Ordine pe:',
+	'proofreadpage_specialpage_label_key' => 'Cirche:',
+	'proofreadpage_alphabeticalorder' => 'Ordene alfabbetiche',
 	'proofreadpage_index_listofpages' => 'Elenghe de le pàggene',
 	'proofreadpage_image_message' => "Colleghe a 'a pàgene de indice",
 	'proofreadpage_page_status' => "State d'a pàgene",
@@ -6194,6 +6198,7 @@ $messages['szl'] = array(
  * @author Logicwiki
  * @author Shanmugamp7
  * @author TRYPPN
+ * @author மதனாஹரன்
  */
 $messages['ta'] = array(
 	'proofreadpage_namespace' => 'பக்கம்',
@@ -6209,6 +6214,8 @@ $messages['ta'] = array(
 	'proofreadpage_quality4_category' => 'சரிபார்க்கப்பட்டவை',
 	'proofreadpage_index_size' => 'பக்கங்களின் எண்ணிக்கை',
 	'proofreadpage_specialpage_label_key' => 'தேடு:',
+	'proofreadpage_specialpage_label_sortascending' => 'ஏறுவரிசையில் ஒழுங்குபடுத்தவும்',
+	'proofreadpage_alphabeticalorder' => 'அகரவரிசை ஒழுங்கு',
 	'proofreadpage_index_listofpages' => 'பக்கங்களின் பட்டியல்',
 	'proofreadpage_page_status' => 'பக்கத்தின் நிலைமை',
 	'proofreadpage_js_attributes' => 'எழுத்தாளர் தலைப்பு ஆண்டு பதிப்பகம்',
@@ -6228,6 +6235,7 @@ $messages['ta'] = array(
 	'proofreadpage-button-zoom-out-label' => 'உருவ அளவு சிறிதாக்கு',
 	'proofreadpage-button-reset-zoom-label' => 'மூல அளவு',
 	'proofreadpage-button-zoom-in-label' => 'உருவ அளவு பெரிதாக்கு',
+	'proofreadpage-button-toggle-layout-label' => 'கிடை/செங்குத்து வடிவமைப்பு',
 );
 
 /** Telugu (తెలుగు)
