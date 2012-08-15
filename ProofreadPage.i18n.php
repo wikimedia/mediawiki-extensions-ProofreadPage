@@ -2402,8 +2402,11 @@ $messages['fy'] = array(
 
 /** Irish (Gaeilge)
  * @author Alison
+ * @author පසිඳු කාවින්ද
  */
 $messages['ga'] = array(
+	'proofreadpage_namespace' => 'Leathanach',
+	'proofreadpage_specialpage_label_key' => 'Cuardaigh:',
 	'proofreadpage_index_attributes' => 'Údar
 Teideal
 Blian|Blian foilseacháin
@@ -2412,6 +2415,8 @@ Foinse
 Íomhá|Íomhá clúdaigh
 Leathanaigh||20
 Nótaí',
+	'proofreadpage_source' => 'Foinse',
+	'proofreadpage-group-other' => 'Eile',
 );
 
 /** Galician (galego)
