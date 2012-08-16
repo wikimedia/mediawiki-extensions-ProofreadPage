@@ -1975,6 +1975,7 @@ Märkused||10',
  * @author An13sa
  * @author Joxemai
  * @author Unai Fdz. de Betoño
+ * @author පසිඳු කාවින්ද
  */
 $messages['eu'] = array(
 	'proofreadpage_namespace' => 'Orria',
@@ -1990,6 +1991,7 @@ $messages['eu'] = array(
 	'proofreadpage_quality2_category' => 'Arazoak dakartza',
 	'proofreadpage_quality4_category' => 'Balioztatua.',
 	'proofreadpage_quality4_message' => 'Balioztatu egin da orri hau',
+	'proofreadpage_specialpage_label_key' => 'Bilatu:',
 	'proofreadpage_index_listofpages' => 'Orri zerrenda',
 	'proofreadpage_image_message' => 'Aurkibide orrira lotu',
 	'proofreadpage_page_status' => 'Orriaren egoera',
@@ -2003,6 +2005,7 @@ Irudia|estalki irudia
 Orriak||20
 Oharrak||10',
 	'proofreadpage_source' => 'Jatorria',
+	'proofreadpage-group-other' => 'Bestelakoa',
 );
 
 /** Persian (فارسی)
@@ -2082,6 +2085,7 @@ $messages['fa'] = array(
 
 /** Finnish (suomi)
  * @author Agony
+ * @author Beluga
  * @author Cimon Avaro
  * @author Crt
  * @author Harriv
@@ -2129,6 +2133,10 @@ $messages['fi'] = array(
 	'proofreadpage_quality2_message' => 'Tämän sivun oikoluvussa oli ongelmia',
 	'proofreadpage_quality3_message' => 'Tämä sivu on oikoluettu',
 	'proofreadpage_quality4_message' => 'Tämä sivu on vahvistettu',
+	'proofreadpage_specialpage_label_orderby' => 'Järjestä:',
+	'proofreadpage_specialpage_label_key' => 'Etsi:',
+	'proofreadpage_specialpage_label_sortascending' => 'Lajittele nousevassa järjestyksessä',
+	'proofreadpage_alphabeticalorder' => 'Aakkosjärjestys',
 	'proofreadpage_index_listofpages' => 'Sivuluettelo',
 	'proofreadpage_image_message' => 'Linkki hakemistosivuun',
 	'proofreadpage_page_status' => 'Sivun tila',
@@ -2986,6 +2994,12 @@ $messages['hsb'] = array(
 	'proofreadpage_quality2_message' => 'Při korigowanju tuteje strony je problem wustupił',
 	'proofreadpage_quality3_message' => 'Tuta strona je so skorigowała',
 	'proofreadpage_quality4_message' => 'Tuta strona je so přepruwowała',
+	'proofreadpage_index_status' => 'Indeksowy status',
+	'proofreadpage_index_size' => 'Ličba stronow',
+	'proofreadpage_specialpage_label_orderby' => 'Sortěrować po:',
+	'proofreadpage_specialpage_label_key' => 'Pytać:',
+	'proofreadpage_specialpage_label_sortascending' => 'Postupowacy sortěrować',
+	'proofreadpage_alphabeticalorder' => 'Alfabetiski porjad',
 	'proofreadpage_index_listofpages' => 'Lisćina stronow',
 	'proofreadpage_image_message' => 'Wotkaz k indeksowej stronje',
 	'proofreadpage_page_status' => 'Status strony',
@@ -3564,23 +3578,52 @@ Anmarker||10',
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author NoiX180
  */
 $messages['jv'] = array(
+	'indexpages' => 'Daptar kaca indèks',
+	'pageswithoutscans' => 'Kaca tanpa pindéan',
 	'proofreadpage_desc' => "Supaya prabandhingan karo asliné sing di-''scan'' luwih gampang",
 	'proofreadpage_namespace' => 'Kaca',
 	'proofreadpage_index_namespace' => 'Indèks',
 	'proofreadpage_image' => 'Gambar',
 	'proofreadpage_index' => 'Indèks',
+	'proofreadpage_index_expected' => 'Kasalahan: mbutuhaké indèks',
+	'proofreadpage_nosuch_index' => 'Kasalahan: ora ana indèks',
+	'proofreadpage_nosuch_file' => 'Kasalahan: ora ana berkas',
+	'proofreadpage_badpage' => 'Format Salah',
+	'proofreadpage_badpagetext' => 'Format kaca sing arep Sampéyan simpen ora bener.',
+	'proofreadpage_indexdupe' => 'Gandhakaké pranala',
+	'proofreadpage_indexdupetext' => 'Kaca ora bisa didaptar punjul saka siji nèng kaca indeks.',
+	'proofreadpage_nologin' => 'Durung mlebu log',
+	'proofreadpage_nologintext' => 'Sampéyan kudu [[Special:UserLogin|mlebu log]] kanggo ngowah status korèksi kaca.',
+	'proofreadpage_notallowed' => 'Owahan ora dililakaké',
+	'proofreadpage_notallowedtext' => 'Sampéyan ora dililakaké ngowah status korèksi kaca iki.',
+	'proofreadpage_number_expected' => 'Kasalahan: isi mawa angka',
+	'proofreadpage_interval_too_large' => 'Kasalahan slisih kegedhèn',
+	'proofreadpage_invalid_interval' => 'Kasalah interval ora sah',
 	'proofreadpage_nextpage' => 'Kaca sabanjuré',
 	'proofreadpage_prevpage' => 'Kaca sadurungé',
 	'proofreadpage_header' => 'Sesirah (noinclude):',
 	'proofreadpage_body' => 'Awak kaca (kanggo transklusi):',
 	'proofreadpage_footer' => 'Tulisan sikil (noinclude):',
 	'proofreadpage_toggleheaders' => 'ganti visibilitas (kakatonan) bagéyan noinclude',
+	'proofreadpage_quality0_category' => 'Tanpa tèks',
 	'proofreadpage_quality1_category' => 'Durung dikorèksi tulisané',
 	'proofreadpage_quality2_category' => 'Problématis',
 	'proofreadpage_quality3_category' => 'Korèksi tulisan',
 	'proofreadpage_quality4_category' => 'Diabsahaké',
+	'proofreadpage_quality0_message' => 'Kaca iki ora butuh dikorèksi',
+	'proofreadpage_quality1_message' => 'Kaca iki durung dikorèksi',
+	'proofreadpage_quality2_message' => 'Ana masalah nalika ngorèksi kaca iki',
+	'proofreadpage_quality3_message' => 'Kaca iki wis dikorèksi',
+	'proofreadpage_quality4_message' => 'Kaca iki wis divalidasi',
+	'proofreadpage_index_status' => 'Status indeks',
+	'proofreadpage_index_size' => 'Cacahing kacak',
+	'proofreadpage_specialpage_label_orderby' => 'Urutaké miturut:',
+	'proofreadpage_specialpage_label_key' => 'Golèk',
+	'proofreadpage_specialpage_label_sortascending' => 'Urutaké munggah',
+	'proofreadpage_alphabeticalorder' => 'Urutan alfabetis',
 	'proofreadpage_index_listofpages' => 'Daftar kaca',
 	'proofreadpage_image_message' => 'Pranala menyang kaca indèks',
 	'proofreadpage_page_status' => 'Status kaca',
@@ -3593,6 +3636,23 @@ Sumber
 Gambar|Gambar samak
 Kaca||20
 Cathetan||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$2|kaca|kaca}}',
+	'proofreadpage_specialpage_legend' => 'Golèk kaca indeks',
+	'proofreadpage_specialpage_searcherror' => 'Kasalahan nèng mesin panggolèk',
+	'proofreadpage_specialpage_searcherrortext' => 'Mesin panggolèk ora mlaku. Ngapunten sanget.',
+	'proofreadpage_source' => 'Sumber',
+	'proofreadpage_source_message' => 'Vèrsi kapindé sing dianggo kanggo nggawé tèks iki',
+	'right-pagequality' => 'Owah tandha mutu kaca',
+	'proofreadpage-section-tools' => 'Piranti koreksi',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Liya',
+	'proofreadpage-button-toggle-visibility-label' => 'Tuduhaké/dhelikaké irah-irahan lan sikil kaca iki',
+	'proofreadpage-button-zoom-out-label' => 'Cilikaké',
+	'proofreadpage-button-reset-zoom-label' => 'Gedhé asli',
+	'proofreadpage-button-zoom-in-label' => 'Gedhèkaké',
+	'proofreadpage-button-toggle-layout-label' => 'Tata sèlèh vertikal/horizontal',
+	'proofreadpage-preferences-showheaders-label' => 'Tuduhaké bidhang irah-irahan lan sikil nalika nyunting nèng bilik jeneng {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Anggo tata sèlèh horizontal nalika nyunting nèng bilik jeneng {{ns:page}}',
 );
 
 /** Georgian (ქართული)
