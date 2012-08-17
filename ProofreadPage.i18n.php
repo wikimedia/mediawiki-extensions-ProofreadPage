@@ -1628,6 +1628,12 @@ $messages['dsb'] = array(
 	'proofreadpage_quality2_message' => 'Pśi korigěrowanju toś togo boka jo se problem nastał',
 	'proofreadpage_quality3_message' => 'Toś ten bok jo se skorigěrował',
 	'proofreadpage_quality4_message' => 'Toś ten bok jo se pśekontrolěrował',
+	'proofreadpage_index_status' => 'Indeksowy status',
+	'proofreadpage_index_size' => 'Licba bokow',
+	'proofreadpage_specialpage_label_orderby' => 'Sortěrowaś pó:',
+	'proofreadpage_specialpage_label_key' => 'Pytaś:',
+	'proofreadpage_specialpage_label_sortascending' => 'Stupujucy sortěrowaś',
+	'proofreadpage_alphabeticalorder' => 'Alfabetiski pórěd',
 	'proofreadpage_index_listofpages' => 'Lisćina bokow',
 	'proofreadpage_image_message' => 'Wótkaz k indeksowemu bokoju',
 	'proofreadpage_page_status' => 'Bokowy status',
@@ -1642,6 +1648,8 @@ Boki||20
 Pśispomnjeśa||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|bok|boka|boki|bokow}}',
 	'proofreadpage_specialpage_legend' => 'Indeksowe boki pśepytaś',
+	'proofreadpage_specialpage_searcherror' => 'Zmólka w pytawje',
+	'proofreadpage_specialpage_searcherrortext' => 'Pytawa njefunkcioněrujo. Wódaj pšosym wobuznosći.',
 	'proofreadpage_source' => 'Žrědło',
 	'proofreadpage_source_message' => 'Skanowane wudaśe wužyte za napóranje toś togo teksta',
 	'right-pagequality' => 'Kawlitu boka změniś',
@@ -6797,6 +6805,29 @@ $messages['uk'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Скинути збільшення',
 	'proofreadpage-button-zoom-in-label' => 'Збільшити',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальна / горизонтальна розмітка',
+);
+
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ur'] = array(
+	'indexpages' => 'فہرست صفحات کی فہرست',
+	'proofreadpage_namespace' => 'صفحہ',
+	'proofreadpage_index_namespace' => 'فہرست',
+	'proofreadpage_image' => 'تصویر',
+	'proofreadpage_index' => 'فہرست',
+	'proofreadpage_badpage' => 'غلط کی شکل',
+	'proofreadpage_nologin' => 'لاگ ان نہیں',
+	'proofreadpage_nextpage' => 'اگلا صفحہ',
+	'proofreadpage_prevpage' => 'سابق صفحہ',
+	'proofreadpage_quality0_category' => 'ٹیکسٹ کے بغیر',
+	'proofreadpage_quality4_category' => 'پاتی',
+	'proofreadpage_specialpage_label_key' => 'ڈھونڈو:',
+	'proofreadpage_specialpage_legend' => 'فہرست صفحات تلاش کریں',
+	'proofreadpage_source' => 'ماخذ',
+	'proofreadpage-group-zoom' => 'زوم',
+	'proofreadpage-group-other' => 'دیگر',
+	'proofreadpage-button-reset-zoom-label' => 'اصل سائز',
 );
 
 /** vèneto (vèneto)
