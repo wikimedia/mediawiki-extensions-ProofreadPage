@@ -231,6 +231,13 @@ $messages['aeb'] = array(
 	'proofreadpage-preferences-horizontal-layout-label' => "ista3mel i5raj ofo9i wa9t tekteb fil misse7a mte3 ess'af7a {{ns:page}}",
 );
 
+/** Achinese (Acèh)
+ * @author Si Gam Acèh
+ */
+$messages['ace'] = array(
+	'proofreadpage_specialpage_label_key' => 'Mita:',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  * @author SPQRobin
@@ -1071,6 +1078,12 @@ $messages['br'] = array(
 	'proofreadpage_quality2_message' => 'Ur gudenn zo bet e-ser reizhañ ar bajenn',
 	'proofreadpage_quality3_message' => 'Adlennet eo bet ar bajenn-mañ',
 	'proofreadpage_quality4_message' => 'Gwiriekaet eo bet ar bajenn-mañ',
+	'proofreadpage_index_status' => 'Stad ar meneger',
+	'proofreadpage_index_size' => 'Niver a bajennoù',
+	'proofreadpage_specialpage_label_orderby' => 'Renkañ dre :',
+	'proofreadpage_specialpage_label_key' => 'Klask :',
+	'proofreadpage_specialpage_label_sortascending' => 'Urzhiañ war-laez',
+	'proofreadpage_alphabeticalorder' => 'Dre urzh al lizherenneg',
 	'proofreadpage_index_listofpages' => 'Roll ar pajennoù',
 	'proofreadpage_image_message' => 'Liamm war-du ar meneger',
 	'proofreadpage_page_status' => 'Statud ar bajenn',
@@ -1093,6 +1106,7 @@ Pages|Pajennoù|20
 Remarks|Notennoù|10",
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pajenn|pajenn}}',
 	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
+	'proofreadpage_specialpage_searcherror' => 'Fazi el lusker enklask',
 	'proofreadpage_source' => 'Mammenn',
 	'proofreadpage_source_message' => 'Embannadurioù bet niverelaet implijet evit sevel an destenn-mañ',
 	'right-pagequality' => 'Kemm banniel perzhded ar bajennoù',
@@ -2184,6 +2198,7 @@ Huomautuksia||10',
  * @author Seb35
  * @author Tpt
  * @author Urhixidur
+ * @author VIGNERON
  * @author Verdy p
  */
 $messages['fr'] = array(
@@ -2232,7 +2247,7 @@ $messages['fr'] = array(
 	'proofreadpage_alphabeticalorder' => 'Ordre alphabétique',
 	'proofreadpage_index_listofpages' => 'Liste des pages',
 	'proofreadpage_image_message' => 'Lien vers la page d’index',
-	'proofreadpage_page_status' => 'État de la page',
+	'proofreadpage_page_status' => 'État de la page (<a href="/wiki/Help:Qualité_des_pages">aide</a>)',
 	'proofreadpage_js_attributes' => 'Auteur Titre Année Éditeur',
 	'proofreadpage_index_attributes' => 'Auteur
 Titre
@@ -6976,6 +6991,12 @@ $messages['vi'] = array(
 	'proofreadpage_quality2_message' => 'Có vấn đề khi hiệu đính trang này',
 	'proofreadpage_quality3_message' => 'Trang này đã được duyệt lại',
 	'proofreadpage_quality4_message' => 'Trang này đã được phê chuẩn',
+	'proofreadpage_index_status' => 'Trạng thái chỉ mục',
+	'proofreadpage_index_size' => 'Số trang',
+	'proofreadpage_specialpage_label_orderby' => 'Sắp xếp theo:',
+	'proofreadpage_specialpage_label_key' => 'Tìm kiếm:',
+	'proofreadpage_specialpage_label_sortascending' => 'Sắp xếp tăng dần',
+	'proofreadpage_alphabeticalorder' => 'Thứ tự chữ cái',
 	'proofreadpage_index_listofpages' => 'Danh sách các trang',
 	'proofreadpage_image_message' => 'Liên kết trang mục lục',
 	'proofreadpage_page_status' => 'Tình trạng của trang',
@@ -6990,6 +7011,8 @@ Các trang||20
 Ghi chú||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1}}trang',
 	'proofreadpage_specialpage_legend' => 'Tìm kiếm trong các trang mục lục',
+	'proofreadpage_specialpage_searcherror' => 'Lỗi trong công cụ tìm kiếm',
+	'proofreadpage_specialpage_searcherrortext' => 'Công cụ tìm kiếm không hoạt động. Xin lỗi vì sự bất tiện này.',
 	'proofreadpage_source' => 'Nguồn',
 	'proofreadpage_source_message' => 'Bản quét được dùng để tạo ra văn bản này',
 	'right-pagequality' => 'Sửa đổi chất lượng trang',
