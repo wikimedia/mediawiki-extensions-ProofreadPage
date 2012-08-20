@@ -1882,6 +1882,12 @@ $messages['es'] = array(
 	'proofreadpage_quality2_message' => 'Hubo un problema cuando se corregía esta página',
 	'proofreadpage_quality3_message' => 'Esta página ha sido corregida',
 	'proofreadpage_quality4_message' => 'Esta página ha sido validada',
+	'proofreadpage_index_status' => 'Estado del índice',
+	'proofreadpage_index_size' => 'Número de páginas',
+	'proofreadpage_specialpage_label_orderby' => 'Ordenar por:',
+	'proofreadpage_specialpage_label_key' => 'Buscar:',
+	'proofreadpage_specialpage_label_sortascending' => 'Orden ascendente',
+	'proofreadpage_alphabeticalorder' => 'Orden alfabético',
 	'proofreadpage_index_listofpages' => 'Lista de páginas',
 	'proofreadpage_image_message' => 'Enlace a la página de índice',
 	'proofreadpage_page_status' => 'Estatus de página',
@@ -2247,7 +2253,7 @@ $messages['fr'] = array(
 	'proofreadpage_alphabeticalorder' => 'Ordre alphabétique',
 	'proofreadpage_index_listofpages' => 'Liste des pages',
 	'proofreadpage_image_message' => 'Lien vers la page d’index',
-	'proofreadpage_page_status' => 'État de la page (<a href="/wiki/Help:Qualité_des_pages">aide</a>)',
+	'proofreadpage_page_status' => 'État de la page',
 	'proofreadpage_js_attributes' => 'Auteur Titre Année Éditeur',
 	'proofreadpage_index_attributes' => 'Auteur
 Titre
