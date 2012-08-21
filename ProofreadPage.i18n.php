@@ -3568,7 +3568,7 @@ $messages['ja'] = array(
 	'proofreadpage-button-reset-zoom-label' => '元の大きさ',
 	'proofreadpage-button-zoom-in-label' => '拡大',
 	'proofreadpage-button-toggle-layout-label' => '垂直方向/水平方向のレイアウト',
-	'proofreadpage-preferences-showheaders-label' => 'Page 名前空間での編集中にヘッダー/フッターフィールドを表示',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:Page}} 名前空間での編集中にヘッダー/フッター フィールドを表示',
 );
 
 /** Jutish (jysk)
