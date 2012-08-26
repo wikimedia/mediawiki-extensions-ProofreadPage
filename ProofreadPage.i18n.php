@@ -3549,6 +3549,9 @@ $messages['ja'] = array(
 	'proofreadpage_quality2_message' => 'このページを校正する際に問題がありました',
 	'proofreadpage_quality3_message' => 'このページは校正済みです',
 	'proofreadpage_quality4_message' => 'このページは検証済みです',
+	'proofreadpage_index_size' => 'ページ数',
+	'proofreadpage_specialpage_label_key' => '検索:',
+	'proofreadpage_specialpage_label_sortascending' => '昇順に並べ替え',
 	'proofreadpage_index_listofpages' => 'ページの一覧',
 	'proofreadpage_image_message' => '書誌情報ページへのリンク',
 	'proofreadpage_page_status' => '校正の状態',
@@ -3563,6 +3566,7 @@ $messages['ja'] = array(
 注釈||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|ページ|総ページ数}}',
 	'proofreadpage_specialpage_legend' => '書誌情報ページの検索',
+	'proofreadpage_specialpage_searcherror' => '検索エンジンでのエラー',
 	'proofreadpage_source' => '底本',
 	'proofreadpage_source_message' => '底本となった出版物等のスキャンデータ',
 	'right-pagequality' => 'ページ品質フラグの変更',
@@ -3575,6 +3579,7 @@ $messages['ja'] = array(
 	'proofreadpage-button-zoom-in-label' => '拡大',
 	'proofreadpage-button-toggle-layout-label' => '垂直方向/水平方向のレイアウト',
 	'proofreadpage-preferences-showheaders-label' => '{{ns:Page}} 名前空間での編集中にヘッダー/フッター フィールドを表示',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}}名前空間の編集の際に、水平レイアウトを使用',
 );
 
 /** Jutish (jysk)
