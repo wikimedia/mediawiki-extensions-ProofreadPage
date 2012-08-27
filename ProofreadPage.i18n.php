@@ -3467,6 +3467,7 @@ $messages['it'] = array(
 	'proofreadpage_quality2_message' => "C'è stato un problema nella correzione di questa pagina",
 	'proofreadpage_quality3_message' => 'Questa pagina è stata corretta',
 	'proofreadpage_quality4_message' => 'Questa pagina è stata convalidata',
+	'proofreadpage_index_status' => 'Stato avanzamento',
 	'proofreadpage_index_size' => 'Numero di pagine',
 	'proofreadpage_specialpage_label_orderby' => 'Ordina per:',
 	'proofreadpage_specialpage_label_key' => 'Ricerca:',
