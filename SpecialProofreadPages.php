@@ -20,7 +20,7 @@
  */
 
 class ProofreadPages extends QueryPage {
-	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending;
+	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending, $addOne;
 
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
@@ -30,7 +30,9 @@ class ProofreadPages extends QueryPage {
 		global $wgDisableTextSearch, $wgScript;
 
 		$this->setHeaders();
-		list( $limit, $offset ) = wfCheckLimits();
+		if ( $this->limit == 0 && $this->offset == 0 ) {
+			list( $this->limit, $this->offset ) = $this->getRequest()->getLimitOffset();
+		}
 		$output = $this->getOutput();
 		$request = $this->getRequest();
 		$output->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
@@ -50,7 +52,7 @@ class ProofreadPages extends QueryPage {
 			$output->addHTML(
 				Xml::openElement( 'form', array( 'action' => $wgScript ) ) .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-				Xml::input( 'limit', false, $limit, array( 'type' => 'hidden' ) ) .
+				Xml::input( 'limit', false, $this->limit, array( 'type' => 'hidden' ) ) .
 				Xml::openElement( 'fieldset' ) .
 				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
 				Xml::element( 'p' ) .
@@ -67,7 +69,7 @@ class ProofreadPages extends QueryPage {
 			);
 			if( $this->searchTerm ) {
 				$searchEngine = SearchEngine::create();
-				$searchEngine->setLimitOffset( $limit, $offset );
+				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
 				$searchEngine->setNamespaces( array( ProofreadPage::getIndexNamespaceId() ) );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
@@ -90,12 +92,24 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function reallyDoQuery( $limit, $offset = false ) {
+		$count = sizeof( $this->searchList );
+		if( $count > $this->limit ) { //Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
+			$this->addOne = true;
+			unset( $this->searchList[ $count - 1 ] );
+		}
 		if ( $this->suppressSqlOffset ) {
 			// Bug #27678: Do not use offset here, because it was already used in
 			// search perfomed by execute method
 			return parent::reallyDoQuery( $limit, false );
 		} else {
 			return parent::reallyDoQuery( $limit, $offset );
+		}
+		return $result;
+	}
+
+	function preprocessResults( $dbr, $res ) {
+		if( $this->addOne !== null) {
+			$this->numRows++; //there is a deleted item
 		}
 	}
 
@@ -114,7 +128,11 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function linkParameters() {
-		return array( 'key' => $this->searchTerm );
+		return array(
+			'key' => $this->searchTerm,
+			'order' => $this->queryOrder,
+			'sortascending' => $this->sortAscending
+		);
 	}
 
 	public function getQueryInfo() {
