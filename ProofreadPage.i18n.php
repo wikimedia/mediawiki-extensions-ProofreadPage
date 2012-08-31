@@ -2045,6 +2045,7 @@ Oharrak||10',
  * @author Reza1615
  * @author Wayiran
  * @author ZxxZxxZ
+ * @author جواد
  */
 $messages['fa'] = array(
 	'indexpages' => 'فهرست صفحه‌های نمایه',
@@ -2084,6 +2085,9 @@ $messages['fa'] = array(
 	'proofreadpage_quality2_message' => 'هنگام بازخوانی این صفحه مشکلی وجود داشت',
 	'proofreadpage_quality3_message' => 'این صفحه نمونه‌خوانی شده است',
 	'proofreadpage_quality4_message' => 'این صفحه اعتباردهی شده است',
+	'proofreadpage_specialpage_label_key' => 'جستجو:',
+	'proofreadpage_specialpage_label_sortascending' => 'مرتب‌سازی صعودی',
+	'proofreadpage_alphabeticalorder' => 'به ترتیب حروف الفبا',
 	'proofreadpage_index_listofpages' => 'فهرست برگه‌ها',
 	'proofreadpage_image_message' => 'پیوند به صفحهٔ اندیس',
 	'proofreadpage_page_status' => 'وضعیت صفحه',
