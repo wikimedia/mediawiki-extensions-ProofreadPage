@@ -94,7 +94,11 @@ function proofreadpage_index_init() {
 	}
 
 	copywarn = document.getElementById( 'editpage-copywarn' );
-	f.insertBefore( container, copywarn );
+	if( copywarn.parentNode.nodeName == 'FORM' ) {
+		f.insertBefore( container, copywarn );
+	} else {
+		f.insertBefore( container, copywarn.parentNode );
+	}
 }
 
 function proofreadpage_fill_index() {
