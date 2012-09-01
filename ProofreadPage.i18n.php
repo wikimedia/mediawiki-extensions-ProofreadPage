@@ -4888,7 +4888,7 @@ Opmerkingen||10",
 	'proofreadpage-button-zoom-out-label' => 'Uitzoomen',
 	'proofreadpage-button-reset-zoom-label' => 'Zoomniveau herinitialiseren',
 	'proofreadpage-button-zoom-in-label' => 'Inzoomen',
-	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale lay-out',
+	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale vormgeving',
 	'proofreadpage-preferences-showheaders-label' => 'Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}',
 );
