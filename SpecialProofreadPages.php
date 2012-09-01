@@ -35,6 +35,7 @@ class ProofreadPages extends QueryPage {
 		}
 		$output = $this->getOutput();
 		$request = $this->getRequest();
+		$output->addModules( 'ext.proofreadpage.base' );
 		$output->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
 
 		$this->searchList = null;
