@@ -453,7 +453,7 @@ $messages['ar'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'حجم أصلي',
 	'proofreadpage-button-zoom-in-label' => 'تكبير',
 	'proofreadpage-button-toggle-layout-label' => 'تخطيط أفقي أو رأسي',
-	'proofreadpage-preferences-showheaders-label' => 'أظهر حقل الرأس والقدم عند التعديل في صفحة مساحة الإسم',
+	'proofreadpage-preferences-showheaders-label' => 'أظهر ترويس الصفحة وتذييلها عند التحرير في نطاق {{ns:page}}',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
