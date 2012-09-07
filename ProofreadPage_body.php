@@ -73,6 +73,29 @@ class ProofreadPage {
 		return $res;
 	}
 
+	/**
+	 * Returns titles of a page namespace page from name of scan and page number
+	 * If the title with an internationalized number doesn't exist and a page with arabic number exist the title arabic number is return
+	 * @param $scan string scan name
+	 * @param $number int page number
+	 * @return Title|null
+	 */
+	protected static function getPageTitle( $scan, $number ) {
+		global $wgContLang;
+
+		$i18nNumber = $wgContLang->formatNum( $number, true );
+		$title = Title::makeTitleSafe( self::getPageNamespaceId(), $scan . '/' . $i18nNumber );
+		if ( $i18nNumber == $number || $title->exists() ) {
+			return $title;
+		} else {
+			$arabicTitle = Title::makeTitleSafe( self::getPageNamespaceId(), $scan . '/' . $number );
+			if ( $arabicTitle->exists() ) {
+				return $arabicTitle;
+			} else {
+				return $title;
+			}
+		}
+	}
 
 	/**
 	 * @param $queryPages array
@@ -147,7 +170,7 @@ class ProofreadPage {
 
 		$imageTitle = null;
 		/* check if we are a page of a multipage file */
-		if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $title->getPrefixedText(), $m ) ) {
+		if ( preg_match( "/^$page_namespace:(.*?)(\/(.*?)|)$/", $title->getPrefixedText(), $m ) ) {
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 		}
 		if ( !$imageTitle ) {
@@ -174,6 +197,8 @@ class ProofreadPage {
 	 * @return array
 	 */
 	private static function navigation( $title ) {
+		global $wgContLang;
+
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$default_header = wfMsgForContentNoTrans( 'proofreadpage_default_header' );
 		$default_footer = wfMsgForContentNoTrans( 'proofreadpage_default_footer' );
@@ -191,17 +216,15 @@ class ProofreadPage {
 			$pagenr = 1;
 			$parts = explode( '/', $title->getText() );
 			if ( count( $parts ) > 1 ) {
-				$pagenr = intval( array_pop( $parts ) );
+				$pagenr = intval( $wgContLang->parseFormattedNumber( array_pop( $parts ) ) );
 			}
 			$count = $image->pageCount();
 			if ( $pagenr < 1 || $pagenr > $count || $count < 1 ) {
 				return $err;
 			}
 			$name = $image->getTitle()->getText();
-			$prev_name = "$page_namespace:$name/" . ( $pagenr - 1 );
-			$next_name = "$page_namespace:$name/" . ( $pagenr + 1 );
-			$prev_title = ( $pagenr == 1 ) ? null : Title::newFromText( $prev_name );
-			$next_title = ( $pagenr == $count ) ? null : Title::newFromText( $next_name );
+			$prev_title = ( $pagenr == 1 ) ? null : self::getPageTitle( $name, $pagenr - 1 );
+			$next_title = ( $pagenr == $count ) ? null : self::getPageTitle( $name, $pagenr + 1 );
 
 		} else {
 			$prev_title = null;
@@ -305,10 +328,10 @@ class ProofreadPage {
 				$attributes[$var] = $matches[1];
 			} else {
 				$attributes[$var] = '';
+
 			}
 		}
 		return array( $links, $params, $attributes );
-
 	}
 
 	/**
@@ -347,7 +370,7 @@ class ProofreadPage {
 
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-			if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
+			if ( preg_match( "/^$page_namespace:(.*?)(\/(.*?)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
 				self::preparePage( $out, $m, $isEdit );
 			}
 			return true;
@@ -384,7 +407,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return bool
 	 */
 	private static function preparePage( $out, $m, $isEdit ) {
-		global $wgUser, $wgExtensionAssetsPath;
+		global $wgUser, $wgExtensionAssetsPath, $wgContLang;
 
 		if ( !isset( $out->getTitle()->pr_index_title ) ) {
 			self::load_index( $out->getTitle() );
@@ -405,7 +428,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$width = $image->getWidth();
 			$height = $image->getHeight();
 			if ( $m[2] ) {
-				$filePage = $m[3];
+				$filePage = $wgContLang->parseFormattedNumber( $m[3] );
 
 				$thumbName = $image->thumbName( array( 'width' => $width, 'page' => $filePage ) );
 				$fullURL = $image->getThumbUrl( $thumbName );
@@ -644,8 +667,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return string
 	 */
 	public static function renderPageList( $input, $args, $parser ) {
+		global $wgContLang;
+
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( !preg_match( "/^$index_namespace:(.*?)(\/([0-9]*)|)$/", $parser->getTitle()->getPrefixedText(), $m ) ) {
+		if ( !preg_match( "/^$index_namespace:(.*?)(\/(.*?)|)$/", $parser->getTitle()->getPrefixedText(), $m ) ) {
 			return '';
 		}
 
@@ -675,7 +700,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		for ( $i = $from; $i < $to + 1; $i++ ) {
-			$pdbk = "$page_namespace:$name" . '/' . $i ;
 			list( $view, $links, $mode ) = self::pageNumber( $i, $args );
 
 			if ( $mode == 'highroman' || $mode == 'roman' ) {
@@ -684,7 +708,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 			$n = strlen( $count ) - mb_strlen( $view );
 			if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
-				global $wgContLang;
 				$txt = '<span style="visibility:hidden;">';
 				$pad = $wgContLang->formatNum( 0, true );
 				for ( $j = 0; $j < $n; $j++ ) {
@@ -692,7 +715,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				}
 				$view = $txt . '</span>' . $view;
 			}
-			$title = Title::newFromText( $pdbk );
+			$title = self::getPageTitle( $name, $i );
 
 			if ( $links == false ) {
 				$return .= $view . ' ';
@@ -713,17 +736,21 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return string
 	 */
 	public static function renderPages( $input, $args, $parser ) {
+		global $wgContLang, $wgProofreadPageUseInternationalizedPageName;
+
+		$pageNamespaceId = self::getPageNamespaceId();
+
 		// abort if this is nested <pages> call
 		if ( isset( $parser->proofreadRenderingPages ) && $parser->proofreadRenderingPages ) {
 			return '';
 		}
 
 		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
-		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
-		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
+		$from = array_key_exists( 'from', $args ) ? $wgContLang->parseFormattedNumber( $args['from'] ) : null;
+		$to = array_key_exists( 'to', $args ) ? $wgContLang->parseFormattedNumber( $args['to'] ) : null;
 		$include = array_key_exists( 'include', $args ) ? $args['include'] : null;
 		$exclude = array_key_exists( 'exclude', $args ) ? $args['exclude'] : null;
-		$step = array_key_exists( 'step', $args ) ? $args['step'] : null;
+		$step = array_key_exists( 'step', $args ) ? $wgContLang->parseFormattedNumber( $args['step'] ) : null;
 		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
 		$tosection = array_key_exists( 'tosection', $args ) ? $args['tosection'] : null;
 		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
@@ -734,7 +761,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			return '';
 		}
 		// abort too if the tag is in the page namespace
-		if ( $parser->getTitle()->inNamespace( self::getPageNamespaceId() ) ) {
+		if ( $parser->getTitle()->inNamespace( $pageNamespaceId ) ) {
 			return '';
 		}
 		// ignore fromsection and tosection arguments if onlysection is specified
@@ -832,8 +859,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				foreach( $pagenums as $num ) {
 					if( $step == 1 || $num % $step == $mod ) {
 						list( $pagenum, $links, $mode ) = self::pageNumber( $num, $params );
-						$page = str_replace( ' ' , '_', "$index/" . $num );
-						$pages[] = array($page, $pagenum);
+						$pages[] = array( self::getPageTitle( $index, $num ), $pagenum );
 					}
 				}
 
@@ -852,15 +878,15 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					$pagenum = $links[3][$i];
 					if( $text == $from ) {
 						$adding = true;
-						$from_page = $from;
+						$from_page = Title::makeTitleSafe( $pageNamespaceId, $from );
 						$from_pagenum = $pagenum;
 					}
 					if( $adding ) {
-						$pages[] = array( $text, $pagenum );
+						$pages[] = array( Title::makeTitleSafe( $pageNamespaceId, $text ), $pagenum );
 					}
 					if( $text == $to ) {
 						$adding = false;
-						$to_page = $to;
+						$to_page = Title::makeTitleSafe( $pageNamespaceId, $to );
 						$to_pagenum = $pagenum;
 					}
 				}
@@ -874,7 +900,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				$pp = array();
 				foreach( $pages as $item ) {
 					list( $page, $pagenum ) = $item;
-					$pp[] = $page;
+					$pp[] = $page->getDBkey();
 				}
 				$dbr = wfGetDB( DB_SLAVE );
 				$cat = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
@@ -884,7 +910,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 						    array(
 							  'page_title' => $pp,
 							  'cl_to' => $cat,
-							  'page_namespace' => self::getPageNamespaceId()
+							  'page_namespace' => $pageNamespaceId
 							  ),
 						    __METHOD__,
 						    null,
@@ -893,7 +919,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 				if( $res ) {
 					foreach ( $res as $o ) {
-						array_push( $q0_pages, $o->page_title );
+						$q0_pages[] = $o->page_title;
 					}
 				}
 			}
@@ -901,23 +927,23 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			// write the output
 			foreach( $pages as $item ) {
 				list( $page, $pagenum ) = $item;
-				if( in_array( $page, $q0_pages ) ) {
+				if( in_array( $page->getDBKey(), $q0_pages ) ) {
 					$is_q0 = true;
 				} else {
 					$is_q0 = false;
 				}
-				$text = Title::makeTitle( self::getPageNamespaceId(), $page )->getPrefixedText();
+				$text = $page->getPrefixedText();
 				if( !$is_q0 ) {
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text . "|num=$pagenum}}</span>";
 				}
-				if( $page == $from_page && $fromsection !== null ) {
+				if( $page->equals( $from_page ) && $fromsection !== null ) {
 					$ts = '';
 					// Check if it is single page transclusion
-					if ( $page == $to_page && $tosection !== null ) {
+					if ( $page->equals( $to_page ) && $tosection !== null ) {
 						$ts = $tosection;
 					}
 					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts .'}}';
-				} elseif( $page == $to_page && $tosection !== null ) {
+				} elseif( $page->equals( $to_page ) && $tosection !== null ) {
 					$out .= '{{#lst:' . $text . '||' . $tosection . '}}';
 				} elseif ( $onlysection !== null ) {
 					$out .= '{{#lst:' . $text . '|' . $onlysection . '}}';
@@ -936,7 +962,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			} else {
 				$firstpage = $links[1][0];
 			}
-			$firstpage_title = Title::makeTitleSafe( self::getPageNamespaceId(), $firstpage );
+			$firstpage_title = Title::makeTitleSafe( $pageNamespaceId, $firstpage );
 			if ( $firstpage_title ) {
 				$parser->getOutput()->addTemplate(
 					$firstpage_title,
@@ -1384,8 +1410,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return bool
 	 */
 	public static function onEditFormPreloadText( &$textbox1, $mTitle ) {
+		global $wgContLang;
+
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( preg_match( "/^$page_namespace:(.*?)\/([0-9]*)$/", $mTitle->getPrefixedText(), $m ) ) {
+		if ( preg_match( "/^$page_namespace:(.*?)\/(.*?)$/", $mTitle->getPrefixedText(), $m ) ) {
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 			if ( !$imageTitle ) {
 				return true;
@@ -1393,7 +1421,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 			$image = wfFindFile( $imageTitle );
 			if ( $image && $image->exists() ) {
-				$text = $image->getHandler()->getPageText( $image, $m[2] );
+				$text = $image->getHandler()->getPageText( $image, $wgContLang->parseFormattedNumber( $m[2] ) );
 				if ( $text ) {
 					$text = preg_replace( "/(\\\\n)/", "\n", $text );
 					$text = preg_replace( "/(\\\\\d*)/", '', $text );
@@ -1481,7 +1509,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 */
 	private static function update_pr_index( $index, $deletedpage = null ) {
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $page_namespace ) ) );
+		$page_ns_index = self::getPageNamespaceId();
 		if ( $page_ns_index == null ) {
 			return;
 		}
@@ -1569,9 +1597,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		if( $id == -1 ) {
 			return true;
 		}
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $page_namespace ) ) );
-		$index_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $index_namespace ) ) );
+		$page_ns_index = self::getPageNamespaceId();
+		$index_ns_index = self::getIndexNamespaceId();
 		if( $page_ns_index == null || $index_ns_index == null ) {
 			return true;
 		}
