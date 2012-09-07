@@ -350,17 +350,14 @@ class ProofreadPage {
 			if ( preg_match( "/^$page_namespace:(.*?)(\/([0-9]*)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
 				self::preparePage( $out, $m, $isEdit );
 			}
-			return true;
-		}
-
-		if ( $isEdit && $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			self::prepareIndex( $out );
-			return true;
-		}
-
-		if ( $title->inNamespace( NS_MAIN ) ) {
+		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
+			if( $isEdit ) {
+				self::prepareIndex( $out );
+			} else {
+				$out->addModules( 'ext.proofreadpage.base' );
+			}
+		} elseif ( $title->inNamespace( NS_MAIN ) ) {
 			self::prepareArticle( $out );
-			return true;
 		}
 
 		return true;
@@ -478,10 +475,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		if ( !isset( $wgTitle ) ) {
 			return true;
 		}
-		// abort if we are not an index page
-		if ( !$wgTitle->inNamespace( self::getIndexNamespaceId() ) ) {
-			return true;
-		}
 		self::getLinkColours( $page_ids, $colours );
 		return true;
 	}
@@ -492,15 +485,23 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @param $colours array
 	 */
 	private static function getLinkColours( $page_ids, &$colours ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
+		global $wgTitle;
+
+		$page_namespace_id = self::getPageNamespaceId();
+		$page_namespace = MWNamespace::getCanonicalName( $page_namespace_id );
+		$in_index_namespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
 		$dbr = wfGetDB( DB_SLAVE );
-		$catlinks = $dbr->tableName( 'categorylinks' );
 
 		$values = array();
 		foreach ( $page_ids as $id => $pdbk ) {
+			$title = Title::newFromText( $pdbk );
 			// consider only link in page namespace
-			if ( preg_match( "/^$page_namespace:(.*?)$/", $pdbk ) ) {
-				$colours[$pdbk] = 'quality1';
+			if ( $title->inNamespace( $page_namespace_id ) ) {
+				if ( $in_index_namespace ) {
+					$colours[$pdbk] = 'quality1 prp-pagequality-1';
+				} else {
+					$colours[$pdbk] = 'prp-pagequality-1';
+				}
 				$values[] = intval( $id );
 			}
 		}
@@ -514,13 +515,21 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		for ( $i = 0; $i < 5; $i++ ) {
 			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsgForContent( "proofreadpage_quality{$i}_category" ) );
 			if ( $cat ) {
-				$qualityCategories[$cat->getDBkey()] = "quality$i";
+				if ( $in_index_namespace ) {
+					$qualityCategories[$cat->getDBkey()] = 'quality' . $i . ' prp-pagequality-' . $i;
+				} else {
+					$qualityCategories[$cat->getDBkey()] = 'prp-pagequality-' . $i;
+				}
 			}
 		}
 
 		if ( count( $values ) ) {
-			$query = "SELECT cl_from, cl_to FROM $catlinks WHERE cl_from IN(" . implode( ",", $values ) . ")";
-			$res = $dbr->query( $query, __METHOD__ );
+			$res = $dbr->select(
+				array( 'categorylinks' ),
+				array( 'cl_from', 'cl_to' ),
+				array( 'cl_from IN(' . implode( ',', $values ) . ')' ),
+				__METHOD__
+			);
 
 			foreach ( $res as $x ) {
 				$pdbk = $page_ids[$x->cl_from];
