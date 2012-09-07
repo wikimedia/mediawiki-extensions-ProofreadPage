@@ -642,6 +642,24 @@ function pr_zoom_wheel( evt ) {
 	}
 }
 
+/**
+ * Parses links included in a message already escape. Doesn't support cross-wiki links
+ * @param message string The message
+ * @return string
+ */
+function pr_parse_link( message ) {
+	function replaceInternal( p0, p1, p2 ) {
+		var text = '<a title="' + p1 + '" href="' + mw.util.wikiGetlink( p1 ) + '">';
+		if( p2 != '' ) {
+			text += p2;
+		} else {
+			text += p1;
+		}
+		return text + '</a>';
+	}
+	return message.replace( /\[\[([^\|]*)\|?([^\]]*)\]\]/g, replaceInternal );
+}
+
 /* fill table with textbox and image */
 function pr_fill_table() {
 	// remove existing table
@@ -1001,7 +1019,7 @@ function pr_add_quality_buttons() {
 	}
 	$container
 		.append( $radioList )
-		.append( '&nbsp;<label for="wpQuality-container">' + mw.html.escape( mw.msg( 'proofreadpage_page_status' ) ) + '</label>'); //no "for" property: it's a label for the 4 radio buttons.
+		.append( '&nbsp;<label for="wpQuality-container">' + pr_parse_link( mw.html.escape( mw.msg( 'proofreadpage_page_status' ) ) ) + '</label>'); //no "for" property: it's a label for the 4 radio buttons.
 
 	if ( currentQualityLevel !== 4
 		&& ( currentQualityLevel !== 3 || lastProofreader === mw.config.get( 'proofreadPageUserName' ) )
