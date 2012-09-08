@@ -372,7 +372,7 @@ function pr_initzoom( width, height ) {
 		zp.onmouseup = zoom_mouseup;
 		zp.onmousemove =  zoom_move;
 		zp_container = document.createElement( 'div' );
-		zp_container.style.cssText = 'position:absolute; width:0; height:0; overflow:hidden;';
+		zp_container.style.cssText = 'width:0; height:0; overflow:hidden;';
 		zp_clip = document.createElement( 'img' );
 		zp_clip.setAttribute( 'src', largeUrl );
 		zp_clip.style.cssText = 'padding:0;margin:0;border:0;';
@@ -704,13 +704,13 @@ function pr_fill_table() {
 			self.DisplayHeight = Math.ceil( pr_height * 0.85);
 			self.DisplayWidth = parseInt( pr_width / 2 - 70 );
 			css_wh = 'width:' + self.DisplayWidth + 'px; height:' + self.DisplayHeight + 'px;';
-			pr_container_parent.style.cssText = 'position:relative;width:' + self.DisplayWidth + 'px;';
+			pr_container_parent.style.cssText = 'width:' + self.DisplayWidth + 'px;';
 		} else {
 			self.DisplayHeight = Math.ceil( pr_height * 0.4 );
 			css_wh = 'width:100%; height:' + self.DisplayHeight + 'px;';
-			pr_container_parent.style.cssText = 'position:relative;height:' + self.DisplayHeight + 'px;';
+			pr_container_parent.style.cssText = 'height:' + self.DisplayHeight + 'px;';
 		}
-		self.container_css = 'position:absolute;top:0px;cursor:default; background:#000000; overflow:auto; ' + css_wh;
+		self.container_css = 'cursor:default; background:#000000; overflow:auto; ' + css_wh;
 		pr_container.style.cssText = self.container_css;
 	}
 	pr_zoom( 0 );
