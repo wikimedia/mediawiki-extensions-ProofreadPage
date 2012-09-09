@@ -6664,8 +6664,11 @@ Mga puna||10',
  */
 $messages['tly'] = array(
 	'proofreadpage_namespace' => 'Сәһифә',
+	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'Шикил',
+	'proofreadpage_index' => 'Индекс',
 	'proofreadpage_nextpage' => 'Думотоно шә сәһифә',
+	'proofreadpage_specialpage_label_key' => 'Нәве',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|бајт|бајтон}}',
 	'proofreadpage_source' => 'Сәвон',
 	'proofreadpage-group-zoom' => 'Мигјос',
