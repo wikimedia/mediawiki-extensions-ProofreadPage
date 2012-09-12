@@ -3577,7 +3577,7 @@ $messages['ja'] = array(
 画像|表紙の画像
 ページ||20
 注釈||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|ページ|総ページ数}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|ページ}}',
 	'proofreadpage_specialpage_legend' => '書誌情報ページの検索',
 	'proofreadpage_specialpage_searcherror' => '検索エンジンでのエラー',
 	'proofreadpage_source' => '底本',
