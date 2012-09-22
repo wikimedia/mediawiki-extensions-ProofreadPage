@@ -748,7 +748,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return string
 	 */
 	public static function renderPages( $input, $args, $parser ) {
-		global $wgContLang, $wgProofreadPageUseInternationalizedPageName;
+		global $wgContLang;
 
 		$pageNamespaceId = self::getPageNamespaceId();
 
@@ -758,11 +758,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
-		$from = array_key_exists( 'from', $args ) ? $wgContLang->parseFormattedNumber( $args['from'] ) : null;
-		$to = array_key_exists( 'to', $args ) ? $wgContLang->parseFormattedNumber( $args['to'] ) : null;
+		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
+		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
 		$include = array_key_exists( 'include', $args ) ? $args['include'] : null;
 		$exclude = array_key_exists( 'exclude', $args ) ? $args['exclude'] : null;
-		$step = array_key_exists( 'step', $args ) ? $wgContLang->parseFormattedNumber( $args['step'] ) : null;
+		$step = array_key_exists( 'step', $args ) ? $args['step'] : null;
 		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
 		$tosection = array_key_exists( 'tosection', $args ) ? $args['tosection'] : null;
 		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
@@ -800,6 +800,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			$pages = array();
 
 			if( $links == null ) {
+				$from = ( $from === null ) ? null : $wgContLang->parseFormattedNumber( $from );
+				$to = ( $to === null ) ? null : $wgContLang->parseFormattedNumber( $to );
+				$step = ( $step === null ) ? null : $wgContLang->parseFormattedNumber( $step );
+
 				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
 				if ( !$imageTitle ) {
 					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
