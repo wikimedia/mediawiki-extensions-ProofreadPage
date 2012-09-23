@@ -467,8 +467,8 @@ $messages['arc'] = array(
 	'proofreadpage_index' => 'ܩܘܕܝܟܘܣ',
 	'proofreadpage_indexdupe' => 'ܐܣܘܪܐ ܥܦܝܦܐ',
 	'proofreadpage_nologin' => 'ܠܐ ܥܠܝܠܐ',
-	'proofreadpage_nextpage' => 'ܦܐܬܐ ܐܚܪܬܐ',
-	'proofreadpage_prevpage' => 'ܦܐܬܐ ܩܕܝܡܬܐ',
+	'proofreadpage_nextpage' => 'ܦܐܬܐ ܕܒܬܪ',
+	'proofreadpage_prevpage' => 'ܦܐܬܐ ܕܩܕܡ',
 	'proofreadpage_quality0_category' => 'ܕܠܐ ܟܬܒܬܐ',
 	'proofreadpage_quality1_category' => 'ܟܬܒܬܐ ܠܐ ܢܘܩܕܬܐ',
 	'proofreadpage_quality3_category' => 'ܟܬܒܬܐ ܢܘܩܕܬܐ',
@@ -4482,6 +4482,12 @@ $messages['ml'] = array(
 	'proofreadpage_quality2_message' => 'ഈ താളിന്റെ തെറ്റുതിരുത്തൽ വായനയിൽ പിഴവ് കാണാനായി',
 	'proofreadpage_quality3_message' => 'ഈ താളിൽ തെറ്റുതിരുത്തൽ വായന നടന്നിരിക്കുന്നു',
 	'proofreadpage_quality4_message' => 'ഈ താളിന്റെ സാധുത തെളിയിക്കപ്പെട്ടതാണ്',
+	'proofreadpage_index_status' => 'സൂചികയുടെ സ്ഥിതി',
+	'proofreadpage_index_size' => 'താളുകളുടെ എണ്ണം',
+	'proofreadpage_specialpage_label_orderby' => 'ക്രമപ്പെടുത്തൽ രീതി:',
+	'proofreadpage_specialpage_label_key' => 'തിരയുക:',
+	'proofreadpage_specialpage_label_sortascending' => 'ആരോഹണമായി ക്രമപ്പെടുത്തുക',
+	'proofreadpage_alphabeticalorder' => 'അക്ഷരമാലാ ക്രമം',
 	'proofreadpage_index_listofpages' => 'താളുകളുടെ പട്ടിക',
 	'proofreadpage_image_message' => 'സൂചിക താളിലേക്കുള്ള കണ്ണി',
 	'proofreadpage_page_status' => 'താളിന്റെ തൽസ്ഥിതി',
@@ -6878,6 +6884,15 @@ $messages['ur'] = array(
 	'proofreadpage-group-zoom' => 'زوم',
 	'proofreadpage-group-other' => 'دیگر',
 	'proofreadpage-button-reset-zoom-label' => 'اصل سائز',
+);
+
+/** Uzbek (oʻzbekcha)
+ * @author CoderSI
+ */
+$messages['uz'] = array(
+	'proofreadpage_quality1_category' => 'Tuzatilmadi',
+	'proofreadpage_quality3_category' => "Ko'zdan kechirildi",
+	'proofreadpage-section-tools' => 'Tuzatish asboblari',
 );
 
 /** vèneto (vèneto)
