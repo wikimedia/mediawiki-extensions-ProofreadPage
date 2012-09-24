@@ -33,6 +33,7 @@ $specialPageAliases['br'] = array(
 /** Danish (dansk) */
 $specialPageAliases['da'] = array(
 	'IndexPages' => array( 'Indekssider' ),
+	'PagesWithoutScans' => array( 'Sider_uden_billeder' ),
 );
 
 /** German (Deutsch) */
