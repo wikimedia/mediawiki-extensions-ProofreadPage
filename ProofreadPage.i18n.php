@@ -1235,6 +1235,12 @@ $messages['ca'] = array(
 	'proofreadpage_quality2_message' => "Hi ha un problema amb la revisió d'aquesta pàgina.",
 	'proofreadpage_quality3_message' => 'Aquesta pàgina ha estat revisada.',
 	'proofreadpage_quality4_message' => 'Aquesta pàgina ha estat validada',
+	'proofreadpage_index_status' => 'Estat del llibre',
+	'proofreadpage_index_size' => 'Nombre de pàgines',
+	'proofreadpage_specialpage_label_orderby' => 'Ordenar per:',
+	'proofreadpage_specialpage_label_key' => 'Cerca:',
+	'proofreadpage_specialpage_label_sortascending' => 'Ordenació ascendent',
+	'proofreadpage_alphabeticalorder' => 'Ordre alfabètic',
 	'proofreadpage_index_listofpages' => 'Llista de pàgines',
 	'proofreadpage_image_message' => "Enllaç a la pàgina d'índex",
 	'proofreadpage_page_status' => 'Estat de la pàgina',
@@ -1868,7 +1874,7 @@ $messages['es'] = array(
 	'proofreadpage_indexdupe' => 'Vínculo duplicado',
 	'proofreadpage_indexdupetext' => 'Las páginas no pueden ser listadas más de una vez en una página índice.',
 	'proofreadpage_nologin' => 'No ha iniciado sesión',
-	'proofreadpage_nologintext' => 'Debes haber [[Special:UserLogin|iniciado sesión]]para modificar el status de corrección de las páginas.',
+	'proofreadpage_nologintext' => 'Debes haber [[Special:UserLogin|iniciado sesión]] para modificar el estado de corrección de las páginas.',
 	'proofreadpage_notallowed' => 'Cambio no permitido',
 	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el estatus corregido de esta página.',
 	'proofreadpage_number_expected' => 'Error: se esperaba un valor numérico',
@@ -6115,7 +6121,7 @@ $messages['sr-ec'] = array(
 	'proofreadpage-group-other' => 'Друго',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -6150,7 +6156,11 @@ izvor
 slika|naslovna strana
 strana||20
 primedbe||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|strana|strane|strane|strane|strana}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|stranica|stranice|stranica}}',
+	'proofreadpage_source' => 'Izvor',
+	'proofreadpage-section-tools' => 'Lektorske alatke',
+	'proofreadpage-group-zoom' => 'Razmera',
+	'proofreadpage-group-other' => 'Drugo',
 );
 
 /** Seeltersk (Seeltersk)
@@ -6893,6 +6903,7 @@ $messages['uz'] = array(
 	'proofreadpage_quality1_category' => 'Tuzatilmadi',
 	'proofreadpage_quality3_category' => "Ko'zdan kechirildi",
 	'proofreadpage-section-tools' => 'Tuzatish asboblari',
+	'proofreadpage-group-other' => 'Boshqa',
 );
 
 /** vèneto (vèneto)
