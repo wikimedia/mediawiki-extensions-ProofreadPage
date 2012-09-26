@@ -1210,7 +1210,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		// read previous revision, so that I know how much I need to add to pr_index
-		$rev = Revision::newFromTitle( $title );
+		$rev = Revision::newFromTitle( $title, false, Revision::READ_LATEST );
 		if( $rev ) {
 			$old_text = $rev->getText();
 			list( $old_q, $old_username, $old_ptext ) = self::parse_page( $old_text, $title );
