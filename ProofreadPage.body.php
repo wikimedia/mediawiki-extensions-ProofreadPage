@@ -78,7 +78,8 @@ class ProofreadPage {
 
 	/**
 	 * Returns titles of a page namespace page from name of scan and page number
-	 * If the title with an internationalized number doesn't exist and a page with arabic number exist the title arabic number is return
+	 * If the title with an internationalized number doesn't exist and a page with
+	 * arabic number exists, the title for the arabic number is returned
 	 * @param $scan string scan name
 	 * @param $number int page number
 	 * @return Title|null
@@ -88,16 +89,13 @@ class ProofreadPage {
 
 		$i18nNumber = $wgContLang->formatNum( $number, true );
 		$title = Title::makeTitleSafe( self::getPageNamespaceId(), $scan . '/' . $i18nNumber );
-		if ( $i18nNumber == $number || $title->exists() ) {
-			return $title;
-		} else {
+		if ( $i18nNumber != $number && !$title->exists() ) {
 			$arabicTitle = Title::makeTitleSafe( self::getPageNamespaceId(), $scan . '/' . $number );
 			if ( $arabicTitle->exists() ) {
 				return $arabicTitle;
-			} else {
-				return $title;
 			}
 		}
+		return $title;
 	}
 
 	/**
@@ -729,7 +727,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			}
 			$title = self::getPageTitle( $name, $i );
 
-			if ( $links == false ) {
+			if ( !$links || !$title ) {
 				$return .= $view . ' ';
 			} else {
 				$return .= '[[' . $title->getPrefixedText() . "|$view]] ";
