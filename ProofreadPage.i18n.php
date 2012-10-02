@@ -483,7 +483,7 @@ $messages['arc'] = array(
 	'proofreadpage-button-zoom-in-label' => 'ܡܩܪܒ',
 );
 
-/** Araucanian (mapudungun)
+/** Mapuche (mapudungun)
  * @author Remember the dot
  */
 $messages['arn'] = array(
@@ -836,7 +836,7 @@ $messages['be'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вертыкальная/гарызантальная разметка',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -1524,7 +1524,7 @@ Bemerkungen||10',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Beim Bearbeiten von Seiten im Namensraum {{ns:page}} ein horizontales Layout verwenden',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Imre
  * @author Kghbln
  */
@@ -2723,7 +2723,7 @@ $messages['gv'] = array(
 	'proofreadpage_index_listofpages' => 'Rolley duillagyn',
 );
 
-/** Hausa (هَوُسَ) */
+/** Hausa (Hausa) */
 $messages['ha'] = array(
 	'proofreadpage_namespace' => 'Shafi',
 );
@@ -4070,7 +4070,7 @@ Aanmerkunge||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ojinal-Enschtällong',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  */
 $messages['ku-latn'] = array(
@@ -4720,7 +4720,7 @@ $messages['nah'] = array(
 	'proofreadpage_prevpage' => 'Achto zāzanilli',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Laaknor
  * @author Nghtwlkr
  * @author Simny
@@ -4915,7 +4915,7 @@ Opmerkingen||10",
 	'proofreadpage-preferences-horizontal-layout-label' => 'Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Diupwijk
  * @author Gunnernett
  * @author Harald Khan
@@ -6076,7 +6076,7 @@ Pripombe||10',
 	'proofreadpage-button-toggle-layout-label' => 'Navpična/vodoravna postavitev',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Millosh
  * @author Rancher
  * @author Sasa Stefanovic
@@ -7169,7 +7169,7 @@ $messages['yue'] = array(
 備註||10',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Hydra
@@ -7244,7 +7244,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage-button-toggle-layout-label' => '垂直／水平布局',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Horacewai2
