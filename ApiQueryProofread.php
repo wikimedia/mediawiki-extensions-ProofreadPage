@@ -31,7 +31,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
 		$pageIds = array();
 		foreach ( $pages as $pageId => $title ) {
-			if ( $title->getNamespace() == $pageNamespaceId ) {
+			if ( $title->inNamespace( $pageNamespaceId ) ) {
 				$pageIds[] = $pageId;
 			}
 		}

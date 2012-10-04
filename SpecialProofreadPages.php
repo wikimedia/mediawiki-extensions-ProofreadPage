@@ -69,9 +69,10 @@ class ProofreadPages extends QueryPage {
 				Xml::closeElement( 'form' )
 			);
 			if( $this->searchTerm ) {
+				$indexNamespaceId = ProofreadPage::getIndexNamespaceId();
 				$searchEngine = SearchEngine::create();
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
-				$searchEngine->setNamespaces( array( ProofreadPage::getIndexNamespaceId() ) );
+				$searchEngine->setNamespaces( array( $indexNamespaceId ) );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
 				if( $textMatches === null) {
@@ -81,7 +82,7 @@ class ProofreadPages extends QueryPage {
 					$this->searchList = array();
 					while( $result = $textMatches->next() ) {
 						$title = $result->getTitle();
-						if ( $title->getNamespace() == ProofreadPage::getIndexNamespaceId() ) {
+						if ( $title->inNamespace( $indexNamespaceId ) ) {
 							array_push( $this->searchList, $title->getDBkey() );
 						}
 					}

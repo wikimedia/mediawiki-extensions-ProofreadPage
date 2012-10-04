@@ -23,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
-$dir = dirname( __FILE__ ) . '/';
+$dir = __DIR__ . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 
@@ -94,7 +94,8 @@ $wgResourceModules += array(
 		)
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.article/ext.proofreadpage.article.js'
+		'scripts' => 'ext.proofreadpage.article/ext.proofreadpage.article.js',
+		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 	'ext.proofreadpage.index' => $prpResourceTemplate + array(
 		'scripts' => 'ext.proofreadpage.index/ext.proofreadpage.index.js',

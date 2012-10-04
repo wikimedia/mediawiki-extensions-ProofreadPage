@@ -358,9 +358,7 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onBeforePageDisplay( $out ) {
-		global $wgRequest;
-
-		$action = $wgRequest->getVal( 'action' );
+		$action = $out->getRequest()->getVal( 'action' );
 		$isEdit = ( $action == 'submit' || $action == 'edit' );
 
 		if ( ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
@@ -1310,7 +1308,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			}
 
 		// Process Page restoration.
-		} elseif ( $title->getNamespace() === self::getPageNamespaceId() ) {
+		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $title );
 		}
 
@@ -1322,11 +1320,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return bool
 	 */
 	public static function onArticleSaveComplete( $article ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table
-		if ( preg_match( "/^$index_namespace:(.*)$/", $title->getPrefixedText(), $m ) ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::update_pr_index( $article );
 			return true;
 		}
@@ -1360,9 +1357,14 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$index = new Article( $index_title );
 		$index_id = $index->getID();
 		$dbr = wfGetDB( DB_SLAVE );
-		$pr_index = $dbr->tableName( 'pr_index' );
-		$query = "SELECT * FROM $pr_index WHERE pr_page_id=" . $index_id;
-		$res = $dbr->query( $query, __METHOD__ );
+		$res = $dbr->select(
+			array( 'pr_index' ),
+			array( 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ),
+			array(
+				'pr_page_id' => $index_id
+			),
+			__METHOD__
+		);
 		$x = $dbr->fetchObject( $res );
 		if( $x ) {
 			$n  = $x->pr_count;
@@ -1407,11 +1409,21 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					$n4--;
 					break;
 			}
-
-			$query = "REPLACE INTO $pr_index (pr_page_id, pr_count, pr_q0, pr_q1, pr_q2, pr_q3, pr_q4) VALUES ({$index_id},$n,$n0,$n1,$n2,$n3,$n4)";
-			$dbw->query( $query, __METHOD__ );
+			$dbw->replace(
+				'pr_index',
+				array( 'pr_page_id' ),
+				array(
+					'pr_page_id' => $index_id,
+					'pr_count' => $n,
+					'pr_q0' => $n0,
+					'pr_q1' => $n1,
+					'pr_q2' => $n2,
+					'pr_q3' => $n3,
+					'pr_q4' => $n4
+				),
+				__METHOD__
+			);
 			$dbw->commit();
-
 		}
 
 		return true;
@@ -1474,7 +1486,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			   && ( !isset( $ot->pr_index_title ) || ( $nt->pr_index_title != $ot->pr_index_title ) ) ) {
 				self::updateIndexOfPage( $nt );
 			}
-		} elseif ( $nt->getNamespace() === self::getIndexNamespaceId() ) {
+		} elseif ( $nt->inNamespace( self::getIndexNamespaceId() ) ) {
 			// Update index data.
 			$article = new Article( $nt );
 			if( $article ) {
@@ -1594,9 +1606,20 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
 		$dbw = wfGetDB( DB_MASTER );
-		$pr_index = $dbw->tableName( 'pr_index' );
-		$query = "REPLACE INTO $pr_index (pr_page_id, pr_count, pr_q0, pr_q1, pr_q2, pr_q3, pr_q4) VALUES ({$index_id},$n,$n0,$n1,$n2,$n3,$n4)";
-		$dbw->query( $query, __METHOD__ );
+		$dbw->replace(
+			'pr_index',
+			array( 'pr_page_id' ),
+			array(
+				'pr_page_id' => $index_id,
+				'pr_count' => $n,
+				'pr_q0' => $n0,
+				'pr_q1' => $n1,
+				'pr_q2' => $n2,
+				'pr_q3' => $n3,
+				'pr_q4' => $n4
+			),
+			__METHOD__
+		);
 		$dbw->commit();
 	}
 
