@@ -948,14 +948,14 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				if( !$is_q0 ) {
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text . "|num=$pagenum}}</span>";
 				}
-				if( $page->equals( $from_page ) && $fromsection !== null ) {
+				if( $from_page !== null && $page->equals( $from_page ) && $fromsection !== null ) {
 					$ts = '';
 					// Check if it is single page transclusion
-					if ( $page->equals( $to_page ) && $tosection !== null ) {
+					if ( $to_page !== null && $page->equals( $to_page ) && $tosection !== null ) {
 						$ts = $tosection;
 					}
 					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts .'}}';
-				} elseif( $page->equals( $to_page ) && $tosection !== null ) {
+				} elseif( $to_page !== null && $page->equals( $to_page ) && $tosection !== null ) {
 					$out .= '{{#lst:' . $text . '||' . $tosection . '}}';
 				} elseif ( $onlysection !== null ) {
 					$out .= '{{#lst:' . $text . '|' . $onlysection . '}}';
