@@ -121,7 +121,6 @@ $messages['qqq'] = array(
 	'proofreadpage_nologin' => '{{Identical|Not logged in}}',
 	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
 	'proofreadpage_number_expected' => 'The place where the data entry should be in numaric form',
-	'proofreadpage_invalid_interval' => 'त्रुटि: अवैध अंतराळ',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
