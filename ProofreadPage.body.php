@@ -19,12 +19,11 @@
  */
 
 /*
- todo :
+ @todo :
  - check unicity of the index page : when index is saved too
 */
 
 class ProofreadPage {
-
 	/**
 	 * Parser object for index pages
 	 * @var Parser
@@ -41,7 +40,7 @@ class ProofreadPage {
 		if ( $namespace !== null ) {
 			return $namespace;
 		}
-		$namespaceText = strtolower( str_replace( ' ', '_', wfMsgForContent( 'proofreadpage_namespace' ) ) );
+		$namespaceText = strtolower( str_replace( ' ', '_', wfMessage( 'proofreadpage_namespace' )->inContentLanguage()->text() ) );
 		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
 		return $namespace;
 	}
@@ -56,7 +55,7 @@ class ProofreadPage {
 		if ( $namespace !== null ) {
 			return $namespace;
 		}
-		$namespaceText = strtolower( str_replace( ' ', '_', wfMsgForContent( 'proofreadpage_index_namespace' ) ) );
+		$namespaceText = strtolower( str_replace( ' ', '_', wfMessage( 'proofreadpage_index_namespace' )->inContentLanguage()->text() ) );
 		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
 		return $namespace;
 	}
@@ -69,8 +68,8 @@ class ProofreadPage {
 		static $res = null;
 		if ( $res === null ) {
 			$res = array(
-				preg_quote( wfMsgForContent( 'proofreadpage_namespace' ), '/' ),
-				preg_quote( wfMsgForContent( 'proofreadpage_index_namespace' ), '/' ),
+				preg_quote( wfMessage( 'proofreadpage_namespace' )->inContentLanguage()->text(), '/' ),
+				preg_quote( wfMessage( 'proofreadpage_index_namespace' )->inContentLanguage()->text(), '/' ),
 			);
 		}
 		return $res;
@@ -201,8 +200,8 @@ class ProofreadPage {
 		global $wgContLang;
 
 		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		$default_header = wfMsgForContentNoTrans( 'proofreadpage_default_header' );
-		$default_footer = wfMsgForContentNoTrans( 'proofreadpage_default_footer' );
+		$default_header = wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain();
+		$default_footer = wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
 
 		$err = array( '', '', '', '', '', '', '' );
 		$index_title = Title::newFromText( $title->pr_index_title );
@@ -320,7 +319,7 @@ class ProofreadPage {
 
 		// read attributes
 		$attributes = array();
-		$var_names = explode( ' ', wfMsgForContent( 'proofreadpage_js_attributes' ) );
+		$var_names = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )->inContentLanguage()->text() );
 		for( $i = 0; $i < count( $var_names ); $i++ ) {
 			$tag_pattern = "/\n\|" . $var_names[$i] . "=(.*?)\n(\||\}\})/is";
 			//$var = 'proofreadPage' . $var_names[$i];
@@ -391,9 +390,9 @@ class ProofreadPage {
 	private static function prepareIndex( $out ) {
 		$out->addModules( 'ext.proofreadpage.index' );
 		$out->addInlineScript("
-var prp_index_attributes = \"" . Xml::escapeJsString( wfMsgForContent( 'proofreadpage_index_attributes' ) ) . "\";
-var prp_default_header = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_header' ) ) . "\";
-var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'proofreadpage_default_footer' ) ) . "\";" );
+var prp_index_attributes = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_index_attributes' )->inContentLanguage()->text() ) . "\";
+var prp_default_header = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_default_header' )->inContentLanguage()->plain() ) . "\";
+var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_default_footer' )->inContentLanguage()->plain() ) . "\";" );
 	}
 
 	/**
@@ -432,9 +431,12 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				$fullURL = $image->getViewURL();
 			}
 			$scan_link = Html::element( 'a',
-						    array( 'href' => $fullURL,
-							   'title' =>  wfMsg( 'proofreadpage_image' ) ),
-						    wfMsg( 'proofreadpage_image' ) );
+				array(
+					'href' => $fullURL,
+					'title' =>  $out->msg( 'proofreadpage_image' )->text()
+				),
+				$out->msg( 'proofreadpage_image' )->text()
+			);
 		} else {
 			$width = 0;
 			$height = 0;
@@ -448,18 +450,18 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		$next_link = $next_title ? Linker::link( $next_title,
 			Html::element( 'img', array( 'src' => $path . '/rightarrow.png',
-				'alt' => wfMsg( 'proofreadpage_nextpage' ), 'width' => 15, 'height' => 15 ) ),
-			array( 'title' => wfMsg( 'proofreadpage_nextpage' ) ) ) : '';
+				'alt' => $out->msg( 'proofreadpage_nextpage' )->text(), 'width' => 15, 'height' => 15 ) ),
+			array( 'title' => $out->msg( 'proofreadpage_nextpage' )->text() ) ) : '';
 
 		$prev_link = $prev_title ? Linker::link( $prev_title,
 			Html::element( 'img', array( 'src' => $path . '/leftarrow.png',
-				'alt' =>  wfMsg( 'proofreadpage_prevpage' ), 'width' => 15, 'height' => 15 ) ),
-			array( 'title' => wfMsg( 'proofreadpage_prevpage' ) ) ): '';
+				'alt' =>  $out->msg( 'proofreadpage_prevpage' )->text(), 'width' => 15, 'height' => 15 ) ),
+			array( 'title' => $out->msg( 'proofreadpage_prevpage' )->text() ) ): '';
 
 		$index_link = $index_title ? Linker::link( $index_title,
 			Html::element( 'img', array(	'src' => $path . '/uparrow.png',
-				'alt' => wfMsg( 'proofreadpage_index' ), 'width' => 15, 'height' => 15 ) ),
-			array( 'title' => wfMsg( 'proofreadpage_index' ) ) ) : '';
+				'alt' => $out->msg( 'proofreadpage_index' )->text(), 'width' => 15, 'height' => 15 ) ),
+			array( 'title' => $out->msg( 'proofreadpage_index' )->text() ) ) : '';
 
 		$jsVars = array(
 			'proofreadPageWidth' => intval( $width ),
@@ -528,14 +530,14 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			}
 		}
 
-		// Get the names of the quality categories.  Replaces earlier
-		// code which called wfMsgForContent() 5 times for each page.
+		// Get the names of the quality categories.  Replaces earlier code which
+		// called wfMessage()->inContentLanguagE() 5 times for each page.
 		// ISSUE: Should the number of quality levels be adjustable?
 		// ISSUE 2: Should this array be saved as a member variable?
 		// How often is this code called anyway?
 		$qualityCategories = array();
 		for ( $i = 0; $i < 5; $i++ ) {
-			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsgForContent( "proofreadpage_quality{$i}_category" ) );
+			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMessage( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text() );
 			if ( $cat ) {
 				if ( $in_index_namespace ) {
 					$qualityCategories[$cat->getDBkey()] = 'quality' . $i . ' prp-pagequality-' . $i;
@@ -575,7 +577,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 		$name = $image->getTitle()->getText();
 		$title = Title::newFromText("$index_namespace:$name");
-		$link = Linker::link( $title, wfMsg( 'proofreadpage_image_message' ), array(), array(), 'known' );
+		$link = Linker::link( $title, $out->msg( 'proofreadpage_image_message' )->text(), array(), array(), 'known' );
 		$out->addHTML( "{$link}" );
 		return true;
 	}
@@ -660,9 +662,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			return '';
 		}
 		$message = "<div id=\"pagequality\" width=100% class=quality$q>" .
-			wfMsgForContent( "proofreadpage_quality{$q}_message" ) . '</div>';
+			wfMessage( "proofreadpage_quality{$q}_message" )->inContentLanguage()->text() . '</div>';
 		$out = '__NOEDITSECTION__[[Category:' .
-			wfMsgForContent( "proofreadpage_quality{$q}_category" ) . ']]';
+			wfMessage( "proofreadpage_quality{$q}_category" )->inContentLanguage()->text() . ']]';
 		return $parser->recursiveTagParse( $out . $message );
 	}
 
@@ -684,12 +686,12 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
 		if ( !$imageTitle ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
 		}
 
 		$image = wfFindFile( $imageTitle );
 		if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
 		}
 
 		$return = '';
@@ -701,10 +703,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		$to = array_key_exists( 'to', $args ) ? $args['to'] : $count;
 
 		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
+			return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
 		}
 		if( ( $from > $to ) || ( $from < 1 ) || ( $to < 1 ) || ( $to > $count ) ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+			return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
 		}
 
 		for ( $i = $from; $i < $to + 1; $i++ ) {
@@ -779,11 +781,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 		}
 
 		if( !$index ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_index_expected' ) . '</strong>';
+			return '<strong class="error">' . wfMessage( 'proofreadpage_index_expected' )->inContentLanguage()->escaped() . '</strong>';
 		}
 		$index_title = Title::makeTitleSafe( self::getIndexNamespaceId(), $index );
 		if( !$index_title || !$index_title->exists() ) {
-			return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_index' ) . '</strong>';
+			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_index' )->inContentLanguage()->escaped() . '</strong>';
 		}
 
 		$parser->getOutput()->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
@@ -802,11 +804,11 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
 				if ( !$imageTitle ) {
-					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+					return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
 				}
 				$image = wfFindFile( $imageTitle );
 				if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_nosuch_file' ) . '</strong>';
+					return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
 				}
 				$count = $image->pageCount();
 
@@ -814,7 +816,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					$step = 1;
 				}
 				if( !is_numeric( $step ) || $step < 1 ) {
-					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
+					return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
 				}
 
 				$pagenums = array();
@@ -823,7 +825,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				if( $include ) {
 					$list = self::parse_num_list( $include );
 					if( $list  == null ) {
-						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
 					}
 					$pagenums = $list;
 				}
@@ -837,10 +839,10 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 						$to = $count;
 					}
 					if( !is_numeric( $from ) || !is_numeric( $to )  || !is_numeric( $step ) ) {
-						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_number_expected' ) . '</strong>';
+						return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
 					}
 					if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
-						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
 					}
 
 					for( $i = $from; $i <= $to; $i++ ) {
@@ -852,18 +854,18 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 				if( $exclude ) {
 					$excluded = self::parse_num_list( $exclude );
 					if( $excluded  == null ) {
-						return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
 					}
 					$pagenums = array_diff( $pagenums, $excluded );
 				}
 
 				if( count($pagenums)/$step > 1000 ) {
-					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_interval_too_large' ) . '</strong>';
+					return '<strong class="error">' . wfMessage( 'proofreadpage_interval_too_large' )->inContentLanguage()->escaped() . '</strong>';
 				}
 
 				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order.
 				if( reset( $pagenums ) > $count ) {
-					return '<strong class="error">' . wfMsgForContent( 'proofreadpage_invalid_interval' ) . '</strong>';
+					return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
 				}
 
 				//Create the list of pages to translude. the step system start with the smaller pagenum
@@ -915,7 +917,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 					$pp[] = $page->getDBkey();
 				}
 				$dbr = wfGetDB( DB_SLAVE );
-				$cat = str_replace( ' ' , '_' , wfMsgForContent( 'proofreadpage_quality0_category' ) );
+				$cat = str_replace( ' ' , '_' , wfMessage( 'proofreadpage_quality0_category' )->inContentLanguage()->escaped() );
 				$res = $dbr->select(
 						    array( 'page', 'categorylinks' ),
 						    array( 'page_title' ),
@@ -1517,7 +1519,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 	 * @return int
 	 */
 	private static function query_count( $dbr, $query, $cat ) {
-		$query['conds']['cl_to'] = str_replace( ' ' , '_' , wfMsgForContent( $cat ) );
+		$query['conds']['cl_to'] = str_replace( ' ' , '_' , wfMessage( $cat )->inContentLanguage()->text() );
 		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, array(), $query['joins'] );
 
 		if( $res && $dbr->numRows( $res ) > 0 ) {
@@ -1735,8 +1737,8 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 
 		if( $indextitle ) {
 			$nt = Title::makeTitleSafe( $index_ns_index, $indextitle );
-			$indexlink = Linker::link( $nt, wfMsg( 'proofreadpage_source' ),
-						array( 'title' => wfMsg( 'proofreadpage_source_message' ) ) );
+			$indexlink = Linker::link( $nt, $out->msg( 'proofreadpage_source' )->text(),
+						array( 'title' => $out->msg( 'proofreadpage_source_message' )->text() ) );
 			$out->addInlineScript( ResourceLoader::makeConfigSetScript( array( 'proofreadpage_source_href' => $indexlink ) ) );
 			$out->addModules( 'ext.proofreadpage.article' );
 		}

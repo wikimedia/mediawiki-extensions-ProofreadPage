@@ -24,7 +24,6 @@
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
  */
 class PagesWithoutScans extends DisambiguationsPage {
-
 	function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
 	}
@@ -88,16 +87,12 @@ class PagesWithoutScans extends DisambiguationsPage {
 		}
 		$hlink = Linker::linkKnown(
 			$title,
-			wfMsgHtml( 'hist' ),
+			$this->msg( 'hist' )->escaped(),
 			array(),
 			array( 'action' => 'history' )
 		);
-		$plink = $this->isCached()
-					? Linker::link( $title )
-					: Linker::linkKnown( $title );
-		$size = wfMsgExt( 'nbytes', array( 'parsemag', 'escape' ),
-			$this->getLanguage()->formatNum( htmlspecialchars( $result->value ) )
-		);
+		$plink = $this->isCached() ? Linker::link( $title ) : Linker::linkKnown( $title );
+		$size = $this->msg( 'nbytes', $result->value )->escaped();
 
 		return $title->exists()
 				? "({$hlink}) {$dm}{$plink} {$dm}[{$size}]"

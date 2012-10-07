@@ -36,7 +36,7 @@ class ProofreadPages extends QueryPage {
 		$output = $this->getOutput();
 		$request = $this->getRequest();
 		$output->addModules( 'ext.proofreadpage.base' );
-		$output->addWikiText( wfMsgForContentNoTrans( 'proofreadpage_specialpage_text' ) );
+		$output->addWikiText( $this->msg( 'proofreadpage_specialpage_text' )->inContentLanguage()->plain() );
 
 		$this->searchList = null;
 		$this->searchTerm = $request->getText( 'key' );
@@ -46,24 +46,24 @@ class ProofreadPages extends QueryPage {
 
 		if( !$wgDisableTextSearch ) {
 			$orderSelect = new XmlSelect( 'order', 'order', $this->queryOrder );
-			$orderSelect->addOption( wfMsg( 'proofreadpage_index_status' ), 'quality' );
-			$orderSelect->addOption( wfMsg( 'proofreadpage_index_size' ), 'size' );
-			$orderSelect->addOption( wfMsg( 'proofreadpage_alphabeticalorder' ), 'alpha' );
+			$orderSelect->addOption( $this->msg( 'proofreadpage_index_status' )->text(), 'quality' );
+			$orderSelect->addOption( $this->msg( 'proofreadpage_index_size' )->text(), 'size' );
+			$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
 
 			$output->addHTML(
 				Xml::openElement( 'form', array( 'action' => $wgScript ) ) .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 				Xml::input( 'limit', false, $this->limit, array( 'type' => 'hidden' ) ) .
 				Xml::openElement( 'fieldset' ) .
-				Xml::element( 'legend', null, wfMsg( 'proofreadpage_specialpage_legend' ) ) .
+				Xml::element( 'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
 				Xml::element( 'p' ) .
-				Xml::label( wfMsg( 'proofreadpage_specialpage_label_key' ), 'key' )  . ' ' .
+				Xml::label( $this->msg( 'proofreadpage_specialpage_label_key' )->text(), 'key' )  . ' ' .
 				Xml::input( 'key', 20, $this->searchTerm ) .
 				Xml::closeElement( 'p' ) .
 				Xml::element( 'p' ) .
-				Xml::label( wfMsg( 'proofreadpage_specialpage_label_orderby' ), 'order' ) . ' ' . $orderSelect->getHtml() . ' ' .
-				Xml::checkLabel( wfMsg( 'proofreadpage_specialpage_label_sortascending' ), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
-				Xml::submitButton( wfMsg( 'ilsubmit' ) ) .
+				Xml::label( $this->msg( 'proofreadpage_specialpage_label_orderby' )->text(), 'order' ) . ' ' . $orderSelect->getHtml() . ' ' .
+				Xml::checkLabel( $this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
+				Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
 				Xml::closeElement( 'p' ) .
 				Xml::closeElement( 'fieldset' ) .
 				Xml::closeElement( 'form' )
@@ -202,7 +202,7 @@ class ProofreadPages extends QueryPage {
 
 		$lang = $this->getLanguage();
 		$dirmark = $lang->getDirMark();
-		$pages = wfMsgExt( 'proofreadpage_pages', 'parsemag', $size, $lang->formatNum( $size ) );
+		$pages = $this->msg( 'proofreadpage_pages', $size )->numParams( $size )->text();
 
 		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
 <tr valign=\"bottom\">

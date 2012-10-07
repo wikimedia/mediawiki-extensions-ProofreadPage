@@ -20,7 +20,6 @@
  */
 
 class ApiQueryProofread extends ApiQueryBase {
-
 	public function execute() {
 		$pageSet = $this->getPageSet();
 		$pages = $pageSet->getGoodTitles();
@@ -43,7 +42,10 @@ class ApiQueryProofread extends ApiQueryBase {
 		// Determine the categories defined in MediaWiki: pages
 		$qualityCategories = $qualityText = array();
 		for ( $i = 0; $i < 5; $i++ ) {
-			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsgForContent( "proofreadpage_quality{$i}_category" ) );
+			$cat = Title::makeTitleSafe(
+				NS_CATEGORY,
+				$this->msg( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text()
+			);
 			if ( $cat ) {
 				$qualityCategories[$i] = $cat->getPrefixedText();
 				$qualityText[$i] = $cat->getText();
