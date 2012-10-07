@@ -426,7 +426,9 @@ var prp_default_footer = \"" . Xml::escapeJsString( wfMsgForContentNoTrans( 'pro
 			if ( $m[2] ) {
 				$filePage = $wgContLang->parseFormattedNumber( $m[3] );
 
-				$thumbName = $image->thumbName( array( 'width' => $width, 'page' => $filePage ) );
+				$params = array( 'width' => $width, 'page' => $filePage );
+				$image->handler->normaliseParams( $image, $params );
+				$thumbName = $image->thumbName( $params );
 				$fullURL = $image->getThumbUrl( $thumbName );
 			} else {
 				$fullURL = $image->getViewURL();
