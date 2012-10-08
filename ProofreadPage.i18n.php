@@ -3836,6 +3836,7 @@ $messages['kiu'] = array(
 	'proofreadpage_quality2_message' => 'Wexta no pel de raştkerdış bêne xeta vıraziya',
 	'proofreadpage_quality3_message' => 'No pel de raştkerdış bı',
 	'proofreadpage_quality4_message' => 'No pel raşt/tesdiq biyo',
+	'proofreadpage_index_size' => 'Amariya pelan',
 	'proofreadpage_index_listofpages' => 'Listeya pelan',
 	'proofreadpage_image_message' => 'Gıreyo ke erziyayo pelê endeksi',
 	'proofreadpage_page_status' => 'halê peli',
