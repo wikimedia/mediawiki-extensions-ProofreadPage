@@ -23,11 +23,25 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( "ProofreadPage extension\n" );
 }
 
+
+/**
+ * Array that contain the ids of namespaces used by ProofreadPage
+ * Exemple (with default namespace ids):
+ * $wgProofreadPageNamespaceIds = array(
+ * 	'page' => 250,
+ * 	'page' => 252
+ * );
+ */
+$wgProofreadPageNamespaceIds = array();
+
+
 $dir = __DIR__ . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
+$wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
+
 
 $wgAutoloadClasses['EditProofreadIndexPage'] = $dir . 'includes/index/EditProofreadIndexPage.php';
 $wgAutoloadClasses['ProofreadIndexEntry'] = $dir . 'includes/index/ProofreadIndexEntry.php';
@@ -108,6 +122,7 @@ $wgResourceModules += array(
 	),
 );
 
+$wgHooks['SetupAfterCache'][] = 'ProofreadPageInit::initNamespaces';
 $wgHooks['ParserFirstCallInit'][] = 'ProofreadPage::onParserFirstCallInit';
 $wgHooks['BeforePageDisplay'][] = 'ProofreadPage::onBeforePageDisplay';
 $wgHooks['GetLinkColours'][] = 'ProofreadPage::onGetLinkColours';
@@ -126,3 +141,7 @@ $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
 $wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';
 $wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
+
+
+//inclusion of i18n file. $wgExtensionMessagesFiles[] doesn't works
+include_once( $dir . 'ProofreadPage.namespaces.php' );

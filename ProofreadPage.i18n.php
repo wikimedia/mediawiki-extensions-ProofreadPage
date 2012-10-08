@@ -12,8 +12,6 @@ $messages['en'] = array(
 	'indexpages'                      => 'List of index pages',
 	'pageswithoutscans'               => 'Pages without scans',
 	'proofreadpage_desc'              => 'Allow easy comparison of text to the original scan',
-	'proofreadpage_namespace'         => 'Page',
-	'proofreadpage_index_namespace'   => 'Index',
 	'proofreadpage_image'             => 'Image',
 	'proofreadpage_index'             => 'Index',
 	'proofreadpage_index_expected'    => 'Error: index expected',
@@ -111,12 +109,6 @@ $messages['qqq'] = array(
 	'indexpages' => 'Title of [[Special:IndexPages]]',
 	'pageswithoutscans' => 'Title of special page that lists texts without scans; that is, the texts that have not been transcluded into any other page',
 	'proofreadpage_desc' => '{{desc}}',
-	'proofreadpage_namespace' => 'This message should match the namespace whose canonical name is "Page". Spaces trigger [[m:MediaZilla:32792|Bug 32792]].
-
-{{Identical|Page}}',
-	'proofreadpage_index_namespace' => 'This message should match the namespace whose canonical name is "Index". Spaces trigger [[m:MediaZilla:32792|Bug 32792]].
-
-{{Identical|Index}}',
 	'proofreadpage_image' => '{{Identical|Image}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',

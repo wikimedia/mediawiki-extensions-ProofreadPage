@@ -36,12 +36,10 @@ class ProofreadPage {
 	 * @return integer namespace id
 	 */
 	public static function getPageNamespaceId() {
-		static $namespace = null;
-		if ( $namespace !== null ) {
-			return $namespace;
+		static $namespace;
+		if ( $namespace === null ) {
+			$namespace = ProofreadPageInit::getNamespaceId( 'page', 'proofreadpage_namespace' );
 		}
-		$namespaceText = strtolower( str_replace( ' ', '_', wfMessage( 'proofreadpage_namespace' )->inContentLanguage()->text() ) );
-		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
 		return $namespace;
 	}
 
@@ -51,12 +49,10 @@ class ProofreadPage {
 	 * @return integer namespace id
 	 */
 	public static function getIndexNamespaceId() {
-		static $namespace = null;
-		if ( $namespace !== null ) {
-			return $namespace;
+		static $namespace;
+		if ( $namespace === null ) {
+			$namespace = ProofreadPageInit::getNamespaceId( 'index', 'proofreadpage_index_namespace' );
 		}
-		$namespaceText = strtolower( str_replace( ' ', '_', wfMessage( 'proofreadpage_index_namespace' )->inContentLanguage()->text() ) );
-		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
 		return $namespace;
 	}
 
@@ -65,11 +61,12 @@ class ProofreadPage {
 	 * @return array
 	 */
 	private static function getPageAndIndexNamespace() {
-		static $res = null;
+		static $res;
 		if ( $res === null ) {
+			global $wgExtraNamespaces;
 			$res = array(
-				preg_quote( wfMessage( 'proofreadpage_namespace' )->inContentLanguage()->text(), '/' ),
-				preg_quote( wfMessage( 'proofreadpage_index_namespace' )->inContentLanguage()->text(), '/' ),
+				preg_quote( $wgExtraNamespaces[self::getPageNamespaceId()], '/' ),
+				preg_quote( $wgExtraNamespaces[self::getIndexNamespaceId()], '/' ),
 			);
 		}
 		return $res;
