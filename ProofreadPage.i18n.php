@@ -471,7 +471,7 @@ $messages['arc'] = array(
 	'proofreadpage_quality0_category' => 'ܕܠܐ ܟܬܒܬܐ',
 	'proofreadpage_quality1_category' => 'ܟܬܒܬܐ ܠܐ ܢܘܩܕܬܐ',
 	'proofreadpage_quality3_category' => 'ܟܬܒܬܐ ܢܘܩܕܬܐ',
-	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܕܦ̈ܐ',
+	'proofreadpage_index_listofpages' => 'ܡܟܬܒܘܬܐ ܕܦܐܬܬ̈ܐ',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|ܦܐܬܐ|ܦܐܬܬܐ}}',
 	'proofreadpage_source' => 'ܡܒܘܥܐ',
 	'proofreadpage-section-tools' => 'ܡܐܢ̈ܐ ܕܢܩܕܘܬܐ',
@@ -6703,6 +6703,7 @@ $messages['tly'] = array(
 );
 
 /** Turkish (Türkçe)
+ * @author Erdemaslancan
  * @author Erkan Yilmaz
  * @author Joseph
  * @author Mach
@@ -6712,6 +6713,7 @@ $messages['tly'] = array(
  */
 $messages['tr'] = array(
 	'indexpages' => 'Endeks sayfalarının listesi',
+	'pageswithoutscans' => 'Sayfa içinde arama',
 	'proofreadpage_desc' => 'Orijinal taramayla metnin kolayca karşılaştırılmasına izin verir',
 	'proofreadpage_namespace' => 'Sayfa',
 	'proofreadpage_index_namespace' => 'Endeks',
@@ -6747,6 +6749,11 @@ $messages['tr'] = array(
 	'proofreadpage_quality2_message' => 'Bu sayfada düzeltme yapılırken bir sorun oluştu',
 	'proofreadpage_quality3_message' => 'Bu sayfada düzeltme yapıldı',
 	'proofreadpage_quality4_message' => 'Bu sayfa doğrulanmış',
+	'proofreadpage_index_status' => 'Dizin durumu',
+	'proofreadpage_index_size' => 'Sayfa sayısı',
+	'proofreadpage_specialpage_label_key' => 'Ara:',
+	'proofreadpage_specialpage_label_sortascending' => 'Artan sıralama',
+	'proofreadpage_alphabeticalorder' => 'Alfabetik sıraya göre',
 	'proofreadpage_index_listofpages' => 'Sayfalar listesi',
 	'proofreadpage_image_message' => 'Endeks sayfasına bağlantı',
 	'proofreadpage_page_status' => 'Sayfa durumu',
@@ -6761,9 +6768,20 @@ Sayfalar||20
 Açıklamalar||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|sayfa|sayfa}}',
 	'proofreadpage_specialpage_legend' => 'Dizin sayfalarını ara',
+	'proofreadpage_specialpage_searcherror' => 'Arma motoru hatası',
+	'proofreadpage_specialpage_searcherrortext' => 'Arama motoru çalışmıyor. Verdiğimiz rahatsızlıktan dolayı özür dileriz.',
 	'proofreadpage_source' => 'Kaynak',
 	'proofreadpage_source_message' => 'Bu metni oluşturmak için kullanılan taranmış sürüm',
 	'proofreadpage-section-tools' => 'Redaksiyon araçları',
+	'proofreadpage-group-zoom' => 'Yakınlaştır',
+	'proofreadpage-group-other' => 'Diğer',
+	'proofreadpage-button-toggle-visibility-label' => 'Bu sayfanın üstbilgisii ve altbilgisini göster/gizle',
+	'proofreadpage-button-zoom-out-label' => 'Uzaklaştır',
+	'proofreadpage-button-reset-zoom-label' => 'Özgün boyut',
+	'proofreadpage-button-zoom-in-label' => 'Yakınlaştır',
+	'proofreadpage-button-toggle-layout-label' => 'Yatay/dikey düzen',
+	'proofreadpage-preferences-showheaders-label' => '{{Ns:page}} ad alanında düzenlerken üstbilgi ve altbilgi alanlarını göster',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{Ns:page}} ad alanında düzenlerken yatay düzen kullan:',
 );
 
 /** Tsonga (Xitsonga)
