@@ -5031,6 +5031,7 @@ Comentaris||10',
 
 /** Oriya (ଓଡ଼ିଆ)
  * @author Ansumang
+ * @author Odisha1
  * @author Psubhashish
  */
 $messages['or'] = array(
@@ -5041,6 +5042,7 @@ $messages['or'] = array(
 	'proofreadpage_indexdupe' => 'ନକଲି ଲିଙ୍କ',
 	'proofreadpage_nextpage' => 'ପର ପୃଷ୍ଠା',
 	'proofreadpage_prevpage' => 'ଆଗ ପୃଷ୍ଠା',
+	'proofreadpage_specialpage_label_key' => 'ଖୋଜିବା:',
 	'proofreadpage_index_listofpages' => 'ପୃଷ୍ଠାମାନଙ୍କର ତାଲିକା',
 	'proofreadpage_page_status' => 'ପୃଷ୍ଠାର ସ୍ଥିତି',
 	'proofreadpage_index_attributes' => 'ଲେଖକ
@@ -5053,6 +5055,9 @@ $messages['or'] = array(
 	'proofreadpage_source' => 'ମୂଳାଧାର',
 	'proofreadpage-group-zoom' => 'ବଡ଼କରି ଦେଖାଇବେ',
 	'proofreadpage-group-other' => 'ବାକି',
+	'proofreadpage-button-zoom-out-label' => 'ସାନ କରନ୍ତୁ',
+	'proofreadpage-button-reset-zoom-label' => 'ମୂଳ ଆକାର',
+	'proofreadpage-button-zoom-in-label' => 'ବଡ କରନ୍ତୁ',
 );
 
 /** Ossetic (Ирон)
