@@ -5040,9 +5040,11 @@ $messages['or'] = array(
 	'proofreadpage_image' => 'ପ୍ରତିକୃତି',
 	'proofreadpage_index' => 'ସୂଚୀ',
 	'proofreadpage_indexdupe' => 'ନକଲି ଲିଙ୍କ',
+	'proofreadpage_nologin' => 'ଲଗ‌‌ ଇନ କରିନାହାନ୍ତି',
 	'proofreadpage_nextpage' => 'ପର ପୃଷ୍ଠା',
 	'proofreadpage_prevpage' => 'ଆଗ ପୃଷ୍ଠା',
 	'proofreadpage_specialpage_label_key' => 'ଖୋଜିବା:',
+	'proofreadpage_specialpage_label_sortascending' => 'ସାନରୁ ବଡ଼ କ୍ରମେ ସଜାନ୍ତୁ',
 	'proofreadpage_index_listofpages' => 'ପୃଷ୍ଠାମାନଙ୍କର ତାଲିକା',
 	'proofreadpage_page_status' => 'ପୃଷ୍ଠାର ସ୍ଥିତି',
 	'proofreadpage_index_attributes' => 'ଲେଖକ
@@ -5052,6 +5054,7 @@ $messages['or'] = array(
 ଛବି|ମଲାଟ ଛବି
 ପୃଷ୍ଠା| | ୨୦
 ଟିପ୍ପଣୀ| | ୧୦',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|ପୃଷ୍ଠା|ପୃଷ୍ଠାସବୁ}}',
 	'proofreadpage_source' => 'ମୂଳାଧାର',
 	'proofreadpage-group-zoom' => 'ବଡ଼କରି ଦେଖାଇବେ',
 	'proofreadpage-group-other' => 'ବାକି',
