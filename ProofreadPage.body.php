@@ -1253,9 +1253,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_de
 	 */
 	private static function removeIndexData( $pageId ) {
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin( __METHOD__ );
 		$dbw->delete( 'pr_index', array( 'pr_page_id' => $pageId ), __METHOD__ );
-		$dbw->commit( __METHOD__ );
 	}
 
 	/**
@@ -1336,9 +1334,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_de
 			return true;
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin( __METHOD__ );
-
 		/* check if there is an index */
 		if ( !isset( $title->pr_index_title ) ) {
 			self::load_index( $title );
@@ -1413,6 +1408,7 @@ var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_de
 					$n4--;
 					break;
 			}
+			$dbw = wfGetDB( DB_MASTER );
 			$dbw->replace(
 				'pr_index',
 				array( 'pr_page_id' ),
@@ -1427,7 +1423,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_de
 				),
 				__METHOD__
 			);
-			$dbw->commit( __METHOD__ );
 		}
 
 		return true;
@@ -1610,7 +1605,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_de
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin( __METHOD__ );
 		$dbw->replace(
 			'pr_index',
 			array( 'pr_page_id' ),
@@ -1625,7 +1619,6 @@ var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_de
 			),
 			__METHOD__
 		);
-		$dbw->commit( __METHOD__ );
 	}
 
 	/**
