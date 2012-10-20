@@ -108,6 +108,24 @@ class ProofreadPage {
 	}
 
 	/**
+	 * Set up our custom edition system.
+	 *
+	 * @param Article $article  being edited
+	 * @param User $user User performing the edit
+	 * @return boolean hook return value
+	 */
+	public static function onCustomEditor( $article, $user ) {
+		global $request;
+		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) { //TODO ExternalEditor case
+			$editor = new EditProofreadIndexPage( $article );
+			$editor->edit();
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
 	 * Set up our custom parser hooks when initializing parser.
 	 *
 	 * @param Parser $parser
@@ -319,16 +337,26 @@ class ProofreadPage {
 
 		// read attributes
 		$attributes = array();
-		$var_names = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )->inContentLanguage()->text() );
-		for( $i = 0; $i < count( $var_names ); $i++ ) {
-			$tag_pattern = "/\n\|" . $var_names[$i] . "=(.*?)\n(\||\}\})/is";
-			//$var = 'proofreadPage' . $var_names[$i];
-			$var = strtolower( $var_names[$i] );
-			if( preg_match( $tag_pattern, $text, $matches ) ) {
-				$attributes[$var] = $matches[1];
-			} else {
-				$attributes[$var] = '';
+		$config = ProofreadIndexPage::getDataConfig();
+		foreach( $config as $var_name => $property ) {
+			$var = strtolower( $var_name );
+			if( ( isset( $property['header'] ) && $property['header'] ) || in_array( $var, array( 'header', 'footer', 'css', 'width' ) ) ) {
+				if( isset( $property['hidden'] ) && $property['hidden'] ) {
+					if( isset( $property['default'] ) ) {
+						$attributes[$var] = $property['default'];
+					} else {
+						$attributes[$var] = '';
+					}
+				} else {
+					$tag_pattern = "/\n\|" . $var_name . "=(.*?)\n(\||\}\})/is";
+					//$var = 'proofreadPage' . $var_name;
 
+					if( preg_match( $tag_pattern, $text, $matches ) ) {
+						$attributes[$var] = $matches[1];
+					} else {
+						$attributes[$var] = '';
+					}
+				}
 			}
 		}
 		return array( $links, $params, $attributes );
@@ -389,10 +417,6 @@ class ProofreadPage {
 	 */
 	private static function prepareIndex( $out ) {
 		$out->addModules( 'ext.proofreadpage.index' );
-		$out->addInlineScript("
-var prp_index_attributes = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_index_attributes' )->inContentLanguage()->text() ) . "\";
-var prp_default_header = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_default_header' )->inContentLanguage()->plain() ) . "\";
-var prp_default_footer = \"" . Xml::escapeJsString( $out->msg( 'proofreadpage_default_footer' )->inContentLanguage()->plain() ) . "\";" );
 	}
 
 	/**

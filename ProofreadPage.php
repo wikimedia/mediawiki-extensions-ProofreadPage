@@ -29,6 +29,10 @@ $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.ph
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
 
+$wgAutoloadClasses['EditProofreadIndexPage'] = $dir . 'includes/index/EditProofreadIndexPage.php';
+$wgAutoloadClasses['ProofreadIndexEntry'] = $dir . 'includes/index/ProofreadIndexEntry.php';
+$wgAutoloadClasses['ProofreadIndexPage'] = $dir . 'includes/index/ProofreadIndexPage.php';
+
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',
@@ -99,7 +103,8 @@ $wgResourceModules += array(
 	),
 	'ext.proofreadpage.index' => $prpResourceTemplate + array(
 		'scripts' => 'ext.proofreadpage.index/ext.proofreadpage.index.js',
-		'dependencies' => array( 'ext.proofreadpage.base' )
+		'styles'  => 'ext.proofreadpage.index/ext.proofreadpage.index.css',
+		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.ui.autocomplete' )
 	),
 );
 
@@ -120,3 +125,4 @@ $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput'
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
 $wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';
+$wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
