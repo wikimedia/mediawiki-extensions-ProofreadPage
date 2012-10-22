@@ -114,9 +114,9 @@ $messages['qqq'] = array(
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
 	'proofreadpage_nologin' => '{{Identical|Not logged in}}',
 	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
-	'proofreadpage_number_expected' => 'The place where the data entry should be in numeric form',
 	'proofreadpage_dataconfig_badformatted' => 'Title of the error page when [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_dataconfig_badformattedtext' => 'Content of the error page when [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON',
+	'proofreadpage_number_expected' => 'The place where the data entry should be in numeric form',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
@@ -137,10 +137,13 @@ $messages['qqq'] = array(
 	'proofreadpage_specialpage_label_sortascending' => 'Label of a checkbox : sort the list of pages return by [[Special:IndexPages]] in ascending order or not.',
 	'proofreadpage_alphabeticalorder' => 'One of the possible sorts in [[Special:IndexPages]]',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
+	'proofreadpage_default_header' => '{{notranslate}}',
+	'proofreadpage_default_footer' => '{{notranslate}}',
 	'proofreadpage_pages' => '* Parameter $1: number of pages for use with PLURAL
 * Parameter $2: localised number of pages
 
 {{Identical|Page}}',
+	'proofreadpage_specialpage_text' => '{{notranslate}}',
 	'proofreadpage_specialpage_searcherror' => 'Title of the error page when the search engine does not work',
 	'proofreadpage_specialpage_searcherrortext' => 'Content of the error page when the search engine does not work',
 	'proofreadpage_source' => '{{Identical|Source}}',
@@ -156,6 +159,13 @@ $messages['qqq'] = array(
 	'proofreadpage-preferences-horizontal-layout-label' => 'Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.',
 );
 
+/** Achinese (Acèh)
+ * @author Si Gam Acèh
+ */
+$messages['ace'] = array(
+	'proofreadpage_specialpage_label_key' => 'Mita:',
+);
+
 /**    زَوُن (   زَوُن)
  * @author Csisc
  */
@@ -163,8 +173,6 @@ $messages['aeb'] = array(
 	'indexpages' => 'قائمة صفحات الفهرس',
 	'pageswithoutscans' => 'صفحات من دون تفحص',
 	'proofreadpage_desc' => 'يسمح بمقارنة سهلة للنص مع المسح الأصلي',
-	'proofreadpage_namespace' => "ss'af7a",
-	'proofreadpage_index_namespace' => 'فهرس',
 	'proofreadpage_image' => 'صورة',
 	'proofreadpage_index' => 'فهرس',
 	'proofreadpage_index_expected' => 'خطأ: فهرس تم توقعه',
@@ -226,13 +234,6 @@ $messages['aeb'] = array(
 	'proofreadpage-preferences-horizontal-layout-label' => "ista3mel i5raj ofo9i wa9t tekteb fil misse7a mte3 ess'af7a {{ns:page}}",
 );
 
-/** Achinese (Acèh)
- * @author Si Gam Acèh
- */
-$messages['ace'] = array(
-	'proofreadpage_specialpage_label_key' => 'Mita:',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  * @author SPQRobin
@@ -242,8 +243,6 @@ $messages['af'] = array(
 	'indexpages' => 'Lys van indeks-bladsye',
 	'pageswithoutscans' => 'Bladsye sonder skanderings',
 	'proofreadpage_desc' => 'Maak dit moontlik om teks maklik met die oorspronklike skandering te vergelyk',
-	'proofreadpage_namespace' => 'Bladsye',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Beeld',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Fout: indeks verwag',
@@ -317,8 +316,6 @@ $messages['an'] = array(
 	'indexpages' => 'Lista de pachinas indexadas',
 	'pageswithoutscans' => 'Pachinas sin escaneyos',
 	'proofreadpage_desc' => 'Premite contimparar de trazas simples o testo con o escaneyo orichinal',
-	'proofreadpage_namespace' => 'Pachina',
-	'proofreadpage_index_namespace' => 'Endice',
 	'proofreadpage_image' => 'Imachen',
 	'proofreadpage_index' => 'Endice',
 	'proofreadpage_index_expected' => "Error: s'asperaba un indiz",
@@ -389,8 +386,6 @@ $messages['ar'] = array(
 	'indexpages' => 'قائمة صفحات الفهرس',
 	'pageswithoutscans' => 'صفحات من دون تفحص',
 	'proofreadpage_desc' => 'يسمح بمقارنة سهلة للنص مع المسح الأصلي',
-	'proofreadpage_namespace' => 'صفحة',
-	'proofreadpage_index_namespace' => 'فهرس',
 	'proofreadpage_image' => 'صورة',
 	'proofreadpage_index' => 'فهرس',
 	'proofreadpage_index_expected' => 'خطأ: فهرس تم توقعه',
@@ -456,8 +451,6 @@ $messages['ar'] = array(
  * @author Michaelovic
  */
 $messages['arc'] = array(
-	'proofreadpage_namespace' => 'ܦܐܬܐ',
-	'proofreadpage_index_namespace' => 'ܩܘܕܝܟܘܣ',
 	'proofreadpage_image' => 'ܨܘܪܬܐ',
 	'proofreadpage_index' => 'ܩܘܕܝܟܘܣ',
 	'proofreadpage_indexdupe' => 'ܐܣܘܪܐ ܥܦܝܦܐ',
@@ -492,8 +485,6 @@ $messages['arn'] = array(
  */
 $messages['arz'] = array(
 	'proofreadpage_desc' => 'بيسمح بمقارنة سهلة للنص مع المسح الأصلي',
-	'proofreadpage_namespace' => 'صفحه',
-	'proofreadpage_index_namespace' => 'فهرس',
 	'proofreadpage_image' => 'صوره',
 	'proofreadpage_index' => 'فهرس',
 	'proofreadpage_nextpage' => 'الصفحة الجاية',
@@ -528,8 +519,6 @@ $messages['as'] = array(
 	'indexpages' => 'সূচীৰ পৃষ্ঠাৰ তালিকা',
 	'pageswithoutscans' => 'স্কেন নকৰা পৃষ্ঠাসমূহ',
 	'proofreadpage_desc' => 'মূল স্কেনৰ লগত পাঠ্যৰ সহজ তুলনা অনুমোদন কৰক',
-	'proofreadpage_namespace' => 'পৃষ্ঠা',
-	'proofreadpage_index_namespace' => 'সূচী',
 	'proofreadpage_image' => 'চিত্ৰ',
 	'proofreadpage_index' => 'সূচী',
 	'proofreadpage_index_expected' => 'ত্ৰুটি: সূচী আশা কৰা হৈছে',
@@ -598,8 +587,6 @@ $messages['as'] = array(
  */
 $messages['ast'] = array(
 	'proofreadpage_desc' => 'Permite una comparanza cenciella del testu col escaniáu orixinal',
-	'proofreadpage_namespace' => 'Páxina',
-	'proofreadpage_index_namespace' => 'Índiz',
 	'proofreadpage_image' => 'Imaxe',
 	'proofreadpage_index' => 'Índiz',
 	'proofreadpage_nextpage' => 'Páxina siguiente',
@@ -630,7 +617,6 @@ Comentarios||10',
  * @author Sab
  */
 $messages['avk'] = array(
-	'proofreadpage_namespace' => 'Bu',
 	'proofreadpage_image' => 'ewava',
 	'proofreadpage_nextpage' => 'Radimebu',
 	'proofreadpage_prevpage' => 'Abduebu',
@@ -641,8 +627,6 @@ $messages['avk'] = array(
  * @author Cekli829
  */
 $messages['az'] = array(
-	'proofreadpage_namespace' => 'Səhifə',
-	'proofreadpage_index_namespace' => 'İndeks',
 	'proofreadpage_image' => 'Şəkil',
 	'proofreadpage_index' => 'İndeks',
 	'proofreadpage_nextpage' => 'Növbəti səhifə',
@@ -660,8 +644,6 @@ $messages['ba'] = array(
 	'indexpages' => 'Индекс биттәренең исемлеге',
 	'pageswithoutscans' => 'Сканһыҙ биттәр',
 	'proofreadpage_desc' => 'Текстты төп нөхсәһенең сканы менән еңел сағыштырыу мөмкинлеге бирә',
-	'proofreadpage_namespace' => 'Бит',
-	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'Рәсем',
 	'proofreadpage_index' => 'Индекс',
 	'proofreadpage_index_expected' => 'Хата: индекс көтөлә',
@@ -726,8 +708,6 @@ $messages['ba'] = array(
  */
 $messages['bcc'] = array(
 	'proofreadpage_desc' => 'اجازه دن مقایسه متن گون اصلی اسکن',
-	'proofreadpage_namespace' => 'صفحه',
-	'proofreadpage_index_namespace' => 'ایندکس',
 	'proofreadpage_image' => 'عکس',
 	'proofreadpage_index' => 'ایندکس',
 	'proofreadpage_nextpage' => 'صفحه بعدی',
@@ -770,8 +750,6 @@ $messages['be'] = array(
 	'indexpages' => 'Спіс індэксных старонак',
 	'pageswithoutscans' => 'Старонкі без сканаў',
 	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўноўваць тэкст і адсканаваны арыгінал',
-	'proofreadpage_namespace' => 'Старонка',
-	'proofreadpage_index_namespace' => 'Індэкс',
 	'proofreadpage_image' => 'Выява',
 	'proofreadpage_index' => 'Індэкс',
 	'proofreadpage_index_expected' => 'Памылка: чакаецца індэкс',
@@ -842,8 +820,6 @@ $messages['be-tarask'] = array(
 	'indexpages' => 'Сьпіс індэксных старонак',
 	'pageswithoutscans' => 'Старонкі бяз сканаў',
 	'proofreadpage_desc' => 'Дазваляе ў зручным выглядзе параўноўваць тэкст і адсканаваны арыгінал',
-	'proofreadpage_namespace' => 'Старонка',
-	'proofreadpage_index_namespace' => 'Індэкс',
 	'proofreadpage_image' => 'выява',
 	'proofreadpage_index' => 'Індэкс',
 	'proofreadpage_index_expected' => 'Памылка: чакаецца індэкс',
@@ -922,8 +898,6 @@ $messages['be-tarask'] = array(
 $messages['bg'] = array(
 	'indexpages' => 'Списък на индексните страници',
 	'proofreadpage_desc' => 'Позволява лесно сравнение на текст с оригинален сканиран документ',
-	'proofreadpage_namespace' => 'Страница',
-	'proofreadpage_index_namespace' => 'Показалец',
 	'proofreadpage_image' => 'картинка',
 	'proofreadpage_index' => 'Показалец',
 	'proofreadpage_index_expected' => 'Грешка: очаква се индекс',
@@ -958,7 +932,7 @@ $messages['bg'] = array(
 Изображение|Изображение на корицата
 Страници||20
 Забележки||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Търсене в индексните страници',
 	'proofreadpage_source' => 'Източник',
 );
@@ -970,8 +944,6 @@ $messages['bn'] = array(
 	'indexpages' => 'নির্ঘণ্ট পাতার তালিকা',
 	'pageswithoutscans' => 'স্ক্যান ছাড়া পাতাসমূহ',
 	'proofreadpage_desc' => 'মূল স্ক্যানের সাথে লেখার সহজ তুলনা অনুমোদন করো',
-	'proofreadpage_namespace' => 'পাতা',
-	'proofreadpage_index_namespace' => 'নির্ঘন্ট',
 	'proofreadpage_image' => 'চিত্র',
 	'proofreadpage_index' => 'নির্ঘন্ট',
 	'proofreadpage_nosuch_index' => 'ত্রুটি: এমন নির্ঘণ্ট নাই',
@@ -1033,7 +1005,7 @@ Key|Sort key
 	'proofreadpage-button-reset-zoom-label' => 'মূল আকার',
 	'proofreadpage-button-zoom-in-label' => 'আরও বড়',
 	'proofreadpage-button-toggle-layout-label' => 'উল্লম্ব/অনুভূমিক বিন্যাস',
-	'proofreadpage-preferences-showheaders-label' => 'পাতা নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও',
+	'proofreadpage-preferences-showheaders-label' => 'পাতা নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও', # Fuzzy
 );
 
 /** Breton (brezhoneg)
@@ -1047,8 +1019,6 @@ $messages['br'] = array(
 	'indexpages' => 'Roll ar pajennoù meneger',
 	'pageswithoutscans' => "Pajennoù ha n'int ket skannet",
 	'proofreadpage_desc' => "Aotreañ a ra ur c'heñveriadur aes etre an destenn hag he nivereladur orin",
-	'proofreadpage_namespace' => 'Pajenn',
-	'proofreadpage_index_namespace' => 'Meneger',
 	'proofreadpage_image' => 'Skeudenn',
 	'proofreadpage_index' => 'Meneger',
 	'proofreadpage_index_expected' => 'Fazi : ur meneger a oa gortozet',
@@ -1121,7 +1091,7 @@ Remarks|Notennoù|10",
 	'proofreadpage-button-reset-zoom-label' => 'Ment orin',
 	'proofreadpage-button-zoom-in-label' => 'Zoumañ',
 	'proofreadpage-button-toggle-layout-label' => 'Kinnig a-sav/a-led',
-	'proofreadpage-preferences-showheaders-label' => 'Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù e mod Pajenn',
+	'proofreadpage-preferences-showheaders-label' => 'Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù e mod Pajenn', # Fuzzy
 );
 
 /** Bosnian (bosanski)
@@ -1131,8 +1101,6 @@ $messages['bs'] = array(
 	'indexpages' => 'Spisak stranica indeksa',
 	'pageswithoutscans' => 'Stranice bez skeniranja',
 	'proofreadpage_desc' => 'Omogućuje jednostavnu usporedbu teksta sa originalnim',
-	'proofreadpage_namespace' => 'Stranica',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Slika',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Greška: očekivan indeks',
@@ -1177,7 +1145,7 @@ Izvor
 Slika|Naslovna slika
 Stranica||20
 Napomene||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice|stranica}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice|stranica}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Ptretraga indeksnih stranica',
 	'proofreadpage_source' => 'Izvor',
 	'proofreadpage_source_message' => 'Skenirana varijanta korištena za nastanak ovog teksta',
@@ -1196,8 +1164,6 @@ $messages['ca'] = array(
 	'indexpages' => "Llista de pàgines d'índex",
 	'pageswithoutscans' => 'Pàgines sense escanejos',
 	'proofreadpage_desc' => "Permetre una fàcil comparació d'un text amb l'escanejat original",
-	'proofreadpage_namespace' => 'Pàgina',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Imatge',
 	'proofreadpage_index' => 'Índex',
 	'proofreadpage_index_expected' => "Error: s'esperava un índex",
@@ -1286,8 +1252,6 @@ $messages['cs'] = array(
 	'indexpages' => 'Seznam indexových stránek',
 	'pageswithoutscans' => 'Stránky bez skenů',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnání textu s předlohou',
-	'proofreadpage_namespace' => 'Stránka',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Soubor',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Chyba: očekáván index',
@@ -1365,8 +1329,6 @@ $messages['da'] = array(
 	'indexpages' => 'Liste over indekssider',
 	'pageswithoutscans' => 'Sider uden indskannede billeder',
 	'proofreadpage_desc' => 'Muliggør nem sammenligning af tekst med den indscannede original',
-	'proofreadpage_namespace' => 'Side',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Billede',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Fejl: indeks forventet',
@@ -1448,8 +1410,6 @@ $messages['de'] = array(
 	'indexpages' => 'Liste von Indexseiten',
 	'pageswithoutscans' => 'Seiten ohne Scans',
 	'proofreadpage_desc' => 'Ermöglicht das bequeme Vergleichen von Text mit dem Originalscan',
-	'proofreadpage_namespace' => 'Seite',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Scan',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Fehler: Index erwartet',
@@ -1463,6 +1423,8 @@ $messages['de'] = array(
 	'proofreadpage_nologintext' => 'Du musst [[Special:UserLogin|angemeldet sein]], um den Status des Korrekturlesens von Seiten ändern zu können.',
 	'proofreadpage_notallowed' => 'Änderung nicht erlaubt',
 	'proofreadpage_notallowedtext' => 'Du bist nicht berechtigt, den Status des Korrekturlesens dieser Seite zu ändern.',
+	'proofreadpage_dataconfig_badformatted' => 'Fehler in der Datenkonfiguration',
+	'proofreadpage_dataconfig_badformattedtext' => 'Die Seite [[Mediawiki:Proofreadpage index data config]] ist nicht in wohlgeformtem JSON.',
 	'proofreadpage_number_expected' => 'Fehler: Numerischer Wert erwartet',
 	'proofreadpage_interval_too_large' => 'Fehler: Intervall zu groß',
 	'proofreadpage_invalid_interval' => 'Fehler: ungültiges Intervall',
@@ -1539,8 +1501,6 @@ $messages['diq'] = array(
 	'indexpages' => 'listeya pelê endeksi',
 	'pageswithoutscans' => 'Pela miyandı geyrayışi',
 	'proofreadpage_desc' => "Destur bıd' wa metın pê cıgerayişê orjinali rehet u asan têver şan",
-	'proofreadpage_namespace' => 'Per',
-	'proofreadpage_index_namespace' => 'endeks',
 	'proofreadpage_image' => 'resım',
 	'proofreadpage_index' => 'indeks',
 	'proofreadpage_index_expected' => 'xeta: paweyê endeksibi',
@@ -1617,8 +1577,6 @@ $messages['dsb'] = array(
 	'indexpages' => 'Lisćina indeksowych bokow',
 	'pageswithoutscans' => 'Boki bźez skanowanjow',
 	'proofreadpage_desc' => 'Zmóžnja lažke pśirownowanje teksta z originalnym skanom',
-	'proofreadpage_namespace' => 'Bok',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Wobraz',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Zmólka: indeks wócakowany',
@@ -1707,8 +1665,6 @@ $messages['el'] = array(
 	'indexpages' => 'Κατάλογος σελίδων ευρετηρίου',
 	'pageswithoutscans' => 'Σελίδες χωρίς σάρωση',
 	'proofreadpage_desc' => 'Επίτρεψε εύκολη σύγκριση κειμένου με την πρωτότυπη σάρωση',
-	'proofreadpage_namespace' => 'Σελίδα',
-	'proofreadpage_index_namespace' => 'Ευρετήριο',
 	'proofreadpage_image' => 'εικόνα',
 	'proofreadpage_index' => 'Ευρετήριο',
 	'proofreadpage_index_expected' => 'Σφάλμα: αναμενόταν δείκτης',
@@ -1760,7 +1716,7 @@ $messages['el'] = array(
 Σελίδες||20
 
 Σχόλια||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Αναζήτηση σελίδων ευρετηρίου',
 	'proofreadpage_source' => 'Πηγή',
 	'proofreadpage-section-tools' => 'Διορθώστε τα εργαλεία',
@@ -1781,8 +1737,6 @@ $messages['eo'] = array(
 	'indexpages' => 'Listo de indeksaj paĝoj',
 	'pageswithoutscans' => 'Paĝoj sen skanaĵoj',
 	'proofreadpage_desc' => 'Permesas facilan komparon de teksto al la originala skanitaĵo.',
-	'proofreadpage_namespace' => 'Paĝo',
-	'proofreadpage_index_namespace' => 'Indekso',
 	'proofreadpage_image' => 'Bildo',
 	'proofreadpage_index' => 'Indekso',
 	'proofreadpage_index_expected' => 'Eraro: indekso atentita',
@@ -1849,6 +1803,7 @@ Rimarkoj||10',
  * @author Crazymadlover
  * @author Imre
  * @author Locos epraix
+ * @author Ralgis
  * @author Remember the dot
  * @author Sanbec
  * @author Translationista
@@ -1857,8 +1812,6 @@ $messages['es'] = array(
 	'indexpages' => 'Lista de páginas indexadas',
 	'pageswithoutscans' => 'Páginas sin exploraciones',
 	'proofreadpage_desc' => 'Permitir una fácil comparación de un texto con el escaneado original',
-	'proofreadpage_namespace' => 'Página',
-	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'Imagen',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Error: se esperaba un índice',
@@ -1872,6 +1825,8 @@ $messages['es'] = array(
 	'proofreadpage_nologintext' => 'Debes haber [[Special:UserLogin|iniciado sesión]] para modificar el estado de corrección de las páginas.',
 	'proofreadpage_notallowed' => 'Cambio no permitido',
 	'proofreadpage_notallowedtext' => 'No estás permitido de cambiar el estatus corregido de esta página.',
+	'proofreadpage_dataconfig_badformatted' => 'Error en la configuración de datos',
+	'proofreadpage_dataconfig_badformattedtext' => 'La página [[Mediawiki:Proofreadpage index data config]] no está en un buen formato JSON.',
 	'proofreadpage_number_expected' => 'Error: se esperaba un valor numérico',
 	'proofreadpage_interval_too_large' => 'Error: intervalo demasiado grande',
 	'proofreadpage_invalid_interval' => 'Error: intervalo inválido',
@@ -1937,8 +1892,6 @@ $messages['et'] = array(
 	'indexpages' => 'Registrilehtede loetelu',
 	'pageswithoutscans' => 'Skannimata tekstidega leheküljed',
 	'proofreadpage_desc' => 'Võimaldab teksti kõrvutada skannitud lehega.',
-	'proofreadpage_namespace' => 'Lehekülg',
-	'proofreadpage_index_namespace' => 'Register',
 	'proofreadpage_image' => 'Pilt',
 	'proofreadpage_index' => 'Register',
 	'proofreadpage_index_expected' => 'Tõrge: register puudub',
@@ -2015,8 +1968,6 @@ Märkused||10',
  * @author පසිඳු කාවින්ද
  */
 $messages['eu'] = array(
-	'proofreadpage_namespace' => 'Orria',
-	'proofreadpage_index_namespace' => 'Aurkibidea',
 	'proofreadpage_image' => 'Irudi',
 	'proofreadpage_index' => 'Aurkibidea',
 	'proofreadpage_badpage' => 'Formatu Okerra',
@@ -2060,8 +2011,6 @@ $messages['fa'] = array(
 	'indexpages' => 'فهرست صفحه‌های نمایه',
 	'pageswithoutscans' => 'صفحه‌های بدون پویش',
 	'proofreadpage_desc' => 'امکان مقایسهٔ آسان متن با نسخهٔ اصلی پویش شده را فراهم می‌آورد',
-	'proofreadpage_namespace' => 'برگه',
-	'proofreadpage_index_namespace' => 'اندیس',
 	'proofreadpage_image' => 'تصویر',
 	'proofreadpage_index' => 'اندیس',
 	'proofreadpage_index_expected' => 'خطا: وجود شاخص پیش‌بینی‌شده است',
@@ -2140,8 +2089,6 @@ $messages['fi'] = array(
 	'indexpages' => 'Luettelo hakemistosivuista',
 	'pageswithoutscans' => 'Sivut ilman skannauksia',
 	'proofreadpage_desc' => 'Mahdollistaa helpon vertailun tekstin ja alkuperäisen skannauksen välillä.',
-	'proofreadpage_namespace' => 'Sivu',
-	'proofreadpage_index_namespace' => 'Hakemisto',
 	'proofreadpage_image' => 'Kuva',
 	'proofreadpage_index' => 'Hakemisto',
 	'proofreadpage_index_expected' => 'Virhe: täsmennysosiota odotetaan',
@@ -2224,8 +2171,6 @@ $messages['fr'] = array(
 	'indexpages' => "Liste des pages d'index",
 	'pageswithoutscans' => 'Pages sans fac-similés',
 	'proofreadpage_desc' => 'Permet une comparaison facile entre le texte et sa numérisation originale',
-	'proofreadpage_namespace' => 'Page',
-	'proofreadpage_index_namespace' => 'Livre',
 	'proofreadpage_image' => 'Fichier',
 	'proofreadpage_index' => 'Livre',
 	'proofreadpage_index_expected' => 'Erreur : un index est attendu',
@@ -2302,8 +2247,6 @@ $messages['frp'] = array(
 	'indexpages' => 'Lista de les pâges d’endèxe',
 	'pageswithoutscans' => 'Pâges sen numerisacions',
 	'proofreadpage_desc' => 'Pèrmèt una comparèson ésiê entre lo tèxto et sa numerisacion originâla.',
-	'proofreadpage_namespace' => 'Pâge',
-	'proofreadpage_index_namespace' => 'Endèxe',
 	'proofreadpage_image' => 'Émâge',
 	'proofreadpage_index' => 'Endèxe',
 	'proofreadpage_index_expected' => 'Èrror : un endèxe est atendu',
@@ -2370,8 +2313,6 @@ $messages['frr'] = array(
 	'indexpages' => 'Index sidjen',
 	'pageswithoutscans' => 'Sidjen saner scans',
 	'proofreadpage_desc' => 'Diarmä könst dü di tekst an di scan mäenööder ferglik',
-	'proofreadpage_namespace' => 'Seite',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Scan',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Ferkiard: diar hiart en Index hen',
@@ -2446,7 +2387,6 @@ $messages['fur'] = array(
  * @author Snakesteuben
  */
 $messages['fy'] = array(
-	'proofreadpage_namespace' => 'Side',
 	'proofreadpage_nextpage' => 'Folgjende side',
 );
 
@@ -2455,7 +2395,6 @@ $messages['fy'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['ga'] = array(
-	'proofreadpage_namespace' => 'Leathanach',
 	'proofreadpage_specialpage_label_key' => 'Cuardaigh:',
 	'proofreadpage_index_attributes' => 'Údar
 Teideal
@@ -2478,8 +2417,6 @@ $messages['gl'] = array(
 	'indexpages' => 'Lista de páxinas índice',
 	'pageswithoutscans' => 'Páxinas sen exames',
 	'proofreadpage_desc' => 'Permite a comparación sinxela do texto coa dixitalización orixinal',
-	'proofreadpage_namespace' => 'Páxina',
-	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'Imaxe',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Erro: Agardábase un índice',
@@ -2554,8 +2491,6 @@ Comentarios||10',
  * @author Omnipaedista
  */
 $messages['grc'] = array(
-	'proofreadpage_namespace' => 'Δέλτος',
-	'proofreadpage_index_namespace' => 'Δείκτης',
 	'proofreadpage_image' => 'εἰκών',
 	'proofreadpage_index' => 'Δείκτης',
 	'proofreadpage_nextpage' => 'ἡ δέλτος ἡ ἑπομένη',
@@ -2564,7 +2499,7 @@ $messages['grc'] = array(
 	'proofreadpage_quality2_category' => 'Προβληματική',
 	'proofreadpage_index_listofpages' => 'Καταλογὴ δέλτων',
 	'proofreadpage_page_status' => 'Κατάστασις δέλτου',
-	'proofreadpage_pages' => '{{PLURAL:$1|δέλτος|δέλτοι}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|δέλτος|δέλτοι}}', # Fuzzy
 	'proofreadpage_source' => 'Πηγή',
 );
 
@@ -2577,8 +2512,6 @@ $messages['gsw'] = array(
 	'indexpages' => 'Lischte vu Indexsyte',
 	'pageswithoutscans' => 'Syte ohni Scans',
 	'proofreadpage_desc' => 'Macht e eifache Verglyych vu Täxt mit em Originalscan megli',
-	'proofreadpage_namespace' => 'Syte',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Scan',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Fähler: Index erwartet',
@@ -2636,7 +2569,7 @@ Aamerkige||10',
 	'proofreadpage-button-reset-zoom-label' => 'Orginalgrößi',
 	'proofreadpage-button-zoom-in-label' => 'Dryy suume',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikali/horizontali Ussrichtig',
-	'proofreadpage-preferences-showheaders-label' => 'Bim Bearbeite vo Syte im Sytenamensruum d Fälder für d Chopf- un Fuesszyyle aazeige.',
+	'proofreadpage-preferences-showheaders-label' => 'Bim Bearbeite vo Syte im Sytenamensruum d Fälder für d Chopf- un Fuesszyyle aazeige.', # Fuzzy
 );
 
 /** Gujarati (ગુજરાતી)
@@ -2647,8 +2580,6 @@ $messages['gu'] = array(
 	'indexpages' => 'સૂચિ પૃષ્ઠોની યાદી',
 	'pageswithoutscans' => 'સ્કેન વગરના પાના',
 	'proofreadpage_desc' => 'મૂળ સ્કેન સાથે સરળ સરખામણીની રજા આપો',
-	'proofreadpage_namespace' => 'પૃષ્ઠ',
-	'proofreadpage_index_namespace' => 'સૂચિ',
 	'proofreadpage_image' => 'ચિત્ર',
 	'proofreadpage_index' => 'અનુક્રમણિકા',
 	'proofreadpage_index_expected' => 'ત્રુટિ:સૂચિ અપેક્ષિત',
@@ -2712,7 +2643,6 @@ $messages['gu'] = array(
  * @author MacTire02
  */
 $messages['gv'] = array(
-	'proofreadpage_namespace' => 'Duillag',
 	'proofreadpage_nextpage' => 'Yn chied duillag elley',
 	'proofreadpage_prevpage' => 'Yn duillag roish shen',
 	'proofreadpage_index_listofpages' => 'Rolley duillagyn',
@@ -2728,7 +2658,6 @@ $messages['ha'] = array(
  * @author Singularity
  */
 $messages['haw'] = array(
-	'proofreadpage_namespace' => '‘Ao‘ao',
 	'proofreadpage_nextpage' => 'Mea aʻe',
 	'proofreadpage_prevpage' => 'Mea ma mua aʻe',
 );
@@ -2744,8 +2673,6 @@ $messages['he'] = array(
 	'indexpages' => 'רשימת דפי מפתח',
 	'pageswithoutscans' => 'דפים ללא סריקות',
 	'proofreadpage_desc' => 'השוואה קלה של טקסט לסריקה המקורית שלו',
-	'proofreadpage_namespace' => 'דף',
-	'proofreadpage_index_namespace' => 'מפתח',
 	'proofreadpage_image' => 'תמונה',
 	'proofreadpage_index' => 'מפתח',
 	'proofreadpage_index_expected' => 'שגיאה: נדרש מפתח',
@@ -2822,8 +2749,6 @@ $messages['he'] = array(
  */
 $messages['hi'] = array(
 	'proofreadpage_desc' => 'मूल पाठ और सद्य पाठ में फर्क आसानी से दर्शाती हैं',
-	'proofreadpage_namespace' => 'पन्ना',
-	'proofreadpage_index_namespace' => 'अनुक्रम',
 	'proofreadpage_image' => 'चित्र',
 	'proofreadpage_index' => 'अनुक्रम',
 	'proofreadpage_badpage' => 'गलत फ़ारमैट',
@@ -2868,8 +2793,6 @@ $messages['hif-latn'] = array(
 	'indexpages' => 'Index panna ke suchi',
 	'pageswithoutscans' => 'Bina scan waala panna',
 	'proofreadpage_desc' => 'Text aur original scan ke easy se comapre kare do',
-	'proofreadpage_namespace' => 'Panna',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Chhapa',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Wrong: index chaahat rahaa',
@@ -2927,7 +2850,7 @@ Remarks||10',
 	'proofreadpage-button-reset-zoom-label' => 'Pahile ke size',
 	'proofreadpage-button-zoom-in-label' => 'Barraa karo',
 	'proofreadpage-button-toggle-layout-label' => 'Vertical/horizontal layout',
-	'proofreadpage-preferences-showheaders-label' => 'Panna ke namespace me badle ke time header aur footer ke dekhao',
+	'proofreadpage-preferences-showheaders-label' => 'Panna ke namespace me badle ke time header aur footer ke dekhao', # Fuzzy
 );
 
 /** Croatian (hrvatski)
@@ -2941,8 +2864,6 @@ $messages['hr'] = array(
 	'indexpages' => 'Popis sadržaja stranica',
 	'pageswithoutscans' => 'Stranice bez skeniranih slika',
 	'proofreadpage_desc' => 'Omogućava jednostavnu usporedbu teksta i izvornog skena',
-	'proofreadpage_namespace' => 'Stranica',
-	'proofreadpage_index_namespace' => 'Sadržaj',
 	'proofreadpage_image' => 'Slika',
 	'proofreadpage_index' => 'Sadržaj',
 	'proofreadpage_index_expected' => 'Progreška: očekivan je sadržaj',
@@ -2987,7 +2908,7 @@ Izvor
 Slika|Naslovnica
 Stranica||20
 Napomene||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|stranica|stranice}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Pretraživanje stranica kataloga',
 	'proofreadpage_source' => 'Izvor',
 	'proofreadpage_source_message' => 'Skenirana inačica rabljena za ovaj tekst',
@@ -3002,8 +2923,6 @@ $messages['hsb'] = array(
 	'indexpages' => 'Lisćina indeksowych stronow',
 	'pageswithoutscans' => 'Strony bjez skanow',
 	'proofreadpage_desc' => 'Lochke přirunanje teksta z originalnym skanom dowolić',
-	'proofreadpage_namespace' => 'Strona',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Wobraz',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Zmylk: indeks wočakowany',
@@ -3083,8 +3002,6 @@ $messages['hu'] = array(
 	'indexpages' => 'Indexlapok listája',
 	'pageswithoutscans' => 'Vizsgálatlan lapok',
 	'proofreadpage_desc' => 'Lehetővé teszi a szöveg és az eredeti szkennelt változat egyszerű összehasonlítását',
-	'proofreadpage_namespace' => 'Oldal',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Kép',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Hiba: indexet vártam',
@@ -3129,7 +3046,7 @@ Forrás
 Kép|Borító
 Oldalak||20
 Megjegyzések||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|lap|lap}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|lap|lap}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Indexlapok keresése',
 	'proofreadpage_source' => 'Forrás',
 	'proofreadpage_source_message' => 'A szkennelt változat amin a szöveg alapszik',
@@ -3145,8 +3062,6 @@ $messages['hy'] = array(
 	'indexpages' => 'Ինդեքս էջերի ցանկ',
 	'pageswithoutscans' => 'Էջեր առանց տեսածրած բնօրինակի',
 	'proofreadpage_desc' => 'Թույլ է տալիս տեքստի և բնօրինակի տեսածրված պատկերի հեշտ համեմատում',
-	'proofreadpage_namespace' => 'Էջ',
-	'proofreadpage_index_namespace' => 'Ինդեքս',
 	'proofreadpage_image' => 'պատկեր',
 	'proofreadpage_index' => 'Ինդեքս',
 	'proofreadpage_index_expected' => 'Սխալ. ինդեքս չհայտնաբերվեց',
@@ -3191,7 +3106,7 @@ Source|Աղբյուր
 Image|Կազմի պատկեր
 Pages|Էջեր|20
 Remarks|Նշումներ|10',
-	'proofreadpage_pages' => '{{PLURAL:$1|էջ|էջ}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|էջ|էջ}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Որոնել ինդեքս էջեր',
 	'proofreadpage_source' => 'Աղբյուր',
 	'proofreadpage_source_message' => 'Այս տեքստը ստեղծելու համար օգտագործված նյութեր',
@@ -3214,8 +3129,6 @@ $messages['ia'] = array(
 	'indexpages' => 'Lista de paginas de indice',
 	'pageswithoutscans' => 'Paginas non transcludite',
 	'proofreadpage_desc' => 'Facilita le comparation inter un texto e su scan original',
-	'proofreadpage_namespace' => 'Pagina',
-	'proofreadpage_index_namespace' => 'Indice',
 	'proofreadpage_image' => 'Imagine',
 	'proofreadpage_index' => 'Indice',
 	'proofreadpage_index_expected' => 'Error: indice expectate',
@@ -3296,8 +3209,6 @@ $messages['id'] = array(
 	'indexpages' => 'Daftar halaman indeks',
 	'pageswithoutscans' => 'Halaman tanpa pindaian',
 	'proofreadpage_desc' => 'Menyediakan perbandingan antara naskah dengan pindaian asli secara mudah',
-	'proofreadpage_namespace' => 'Halaman',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Gambar',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Kesalahan: diperlukan indeks',
@@ -3355,14 +3266,13 @@ Catatan||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ukuran asli',
 	'proofreadpage-button-zoom-in-label' => 'Perbesar',
 	'proofreadpage-button-toggle-layout-label' => 'Tata letak vertikal/horizontal',
-	'proofreadpage-preferences-showheaders-label' => 'Tampilkan kolom header dan footer saat menyunting di ruang nama Halaman',
+	'proofreadpage-preferences-showheaders-label' => 'Tampilkan kolom header dan footer saat menyunting di ruang nama Halaman', # Fuzzy
 );
 
 /** Igbo (Igbo)
  * @author Ukabia
  */
 $messages['ig'] = array(
-	'proofreadpage_namespace' => 'Ihü',
 	'proofreadpage_image' => 'Nhuunuche',
 	'proofreadpage_nextpage' => 'Ihü sò',
 	'proofreadpage_prevpage' => 'Ihü na àzú',
@@ -3374,8 +3284,6 @@ $messages['ig'] = array(
  * @author Malafaya
  */
 $messages['io'] = array(
-	'proofreadpage_namespace' => 'Pagino',
-	'proofreadpage_index_namespace' => 'Indexo',
 	'proofreadpage_image' => 'Imajo',
 	'proofreadpage_index' => 'Indexo',
 	'proofreadpage_nextpage' => 'Sequanta pagino',
@@ -3391,7 +3299,6 @@ $messages['io'] = array(
  */
 $messages['is'] = array(
 	'proofreadpage_desc' => 'Leyfa einfaldan samanburð á texta við upphaflega skönnun',
-	'proofreadpage_namespace' => 'Síða',
 	'proofreadpage_image' => 'Mynd',
 	'proofreadpage_nosuch_file' => 'Villa: Skráin er ekki til',
 	'proofreadpage_nologin' => 'Óinnskráð(ur)',
@@ -3446,8 +3353,6 @@ $messages['it'] = array(
 	'indexpages' => 'Elenco delle pagine di indice',
 	'pageswithoutscans' => 'Pagine senza scansioni',
 	'proofreadpage_desc' => 'Consente un facile confronto tra un testo e la sua scansione originale',
-	'proofreadpage_namespace' => 'Pagina',
-	'proofreadpage_index_namespace' => 'Indice',
 	'proofreadpage_image' => 'Immagine',
 	'proofreadpage_index' => 'Indice',
 	'proofreadpage_index_expected' => 'Errore: previsto indice',
@@ -3529,8 +3434,6 @@ $messages['ja'] = array(
 	'indexpages' => '書誌情報ページの一覧',
 	'pageswithoutscans' => 'スキャン画像と関連付けていないページ',
 	'proofreadpage_desc' => '底本のスキャン画像と写本の本文の比較を容易にさせる',
-	'proofreadpage_namespace' => 'ページ',
-	'proofreadpage_index_namespace' => '書誌情報',
 	'proofreadpage_image' => 'スキャン画像',
 	'proofreadpage_index' => '書誌情報',
 	'proofreadpage_index_expected' => 'エラー: 書誌情報を入力してください',
@@ -3544,6 +3447,8 @@ $messages['ja'] = array(
 	'proofreadpage_nologintext' => 'ページの校正ステータスを変更するには[[Special:UserLogin|ログイン]]する必要があります。',
 	'proofreadpage_notallowed' => '変更が許可されていません',
 	'proofreadpage_notallowedtext' => 'このページの校正ステータスを変更することはできません。',
+	'proofreadpage_dataconfig_badformatted' => 'データの構成のエラー',
+	'proofreadpage_dataconfig_badformattedtext' => 'ページ [[Mediawiki:Proofreadpage index data config]] は正しい形式の JSON ではありません。',
 	'proofreadpage_number_expected' => 'エラー: 半角数字を入力してください',
 	'proofreadpage_interval_too_large' => 'エラー: 間隔が大きすぎます',
 	'proofreadpage_invalid_interval' => 'エラー: 間隔が無効です',
@@ -3602,8 +3507,6 @@ $messages['ja'] = array(
  */
 $messages['jut'] = array(
 	'proofreadpage_desc' => 'Kan semple ándrenger der tekst til æ original sken',
-	'proofreadpage_namespace' => 'Ertikel',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Billet',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_nextpage' => 'Følgende pæge',
@@ -3638,8 +3541,6 @@ $messages['jv'] = array(
 	'indexpages' => 'Daptar kaca indèks',
 	'pageswithoutscans' => 'Kaca tanpa pindéan',
 	'proofreadpage_desc' => "Supaya prabandhingan karo asliné sing di-''scan'' luwih gampang",
-	'proofreadpage_namespace' => 'Kaca',
-	'proofreadpage_index_namespace' => 'Indèks',
 	'proofreadpage_image' => 'Gambar',
 	'proofreadpage_index' => 'Indèks',
 	'proofreadpage_index_expected' => 'Kasalahan: mbutuhaké indèks',
@@ -3690,7 +3591,7 @@ Sumber
 Gambar|Gambar samak
 Kaca||20
 Cathetan||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$2|kaca|kaca}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$2|kaca|kaca}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Golèk kaca indeks',
 	'proofreadpage_specialpage_searcherror' => 'Kasalahan nèng mesin panggolèk',
 	'proofreadpage_specialpage_searcherrortext' => 'Mesin panggolèk ora mlaku. Ngapunten sanget.',
@@ -3722,8 +3623,6 @@ $messages['ka'] = array(
 	'indexpages' => 'მთავარი გვერდების სია',
 	'pageswithoutscans' => 'გვერდები სკანების გარეშე',
 	'proofreadpage_desc' => 'საშუალებას იძლევა კომფორტულად შეადაროთ ტექსტი ორიგინალის დასკანერებული სურათი',
-	'proofreadpage_namespace' => 'გვერდი',
-	'proofreadpage_index_namespace' => 'ინდექსი',
 	'proofreadpage_image' => 'სურათი',
 	'proofreadpage_index' => 'ინდექსი',
 	'proofreadpage_index_expected' => 'შეცდომა: ინდექსი არ არის ნაპოვნი',
@@ -3798,8 +3697,6 @@ $messages['kiu'] = array(
 	'indexpages' => 'Listeya pelê endeksi',
 	'pageswithoutscans' => 'Pela miyandı geyrayışi',
 	'proofreadpage_desc' => "Destur bıd' wa metın pê cıgerayişê orjinali rehet u asan têver şan",
-	'proofreadpage_namespace' => 'Pel',
-	'proofreadpage_index_namespace' => 'Endeks',
 	'proofreadpage_image' => 'Resım',
 	'proofreadpage_index' => 'İndeks',
 	'proofreadpage_index_expected' => 'Xeta: paweyê endeksibi',
@@ -3858,7 +3755,7 @@ beyanati||10',
 	'proofreadpage-button-reset-zoom-label' => 'Oricinal ebat',
 	'proofreadpage-button-zoom-in-label' => 'Zoom ke',
 	'proofreadpage-button-toggle-layout-label' => 'Kewtey/tikey  asayış',
-	'proofreadpage-preferences-showheaders-label' => 'Nameye pela çı vurneyeno heqa cı wendış u asayışi bımocne.',
+	'proofreadpage-preferences-showheaders-label' => 'Nameye pela çı vurneyeno heqa cı wendış u asayışi bımocne.', # Fuzzy
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -3869,8 +3766,6 @@ beyanati||10',
  * @author វ័ណថារិទ្ធ
  */
 $messages['km'] = array(
-	'proofreadpage_namespace' => 'ទំព័រ',
-	'proofreadpage_index_namespace' => 'លិបិក្រម',
 	'proofreadpage_image' => 'រូបភាព',
 	'proofreadpage_index' => 'លិបិក្រម',
 	'proofreadpage_badpage' => 'ទម្រង់​/ប្រភេទ មិនត្រឹមត្រូវ​​',
@@ -3903,13 +3798,11 @@ $messages['km'] = array(
  * @author Omshivaprakash
  */
 $messages['kn'] = array(
-	'proofreadpage_namespace' => 'ಪುಟ',
-	'proofreadpage_index_namespace' => 'ಸೂಚ್ಯಂಕ',
 	'proofreadpage_image' => 'ಚಿತ್ರ',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_nextpage' => 'ಮುಂದಿನ ಪುಟ',
 	'proofreadpage_prevpage' => 'ಹಿಂದಿನ ಪುಟ',
-	'proofreadpage_pages' => '{{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}', # Fuzzy
 );
 
 /** Korean (한국어)
@@ -3925,8 +3818,6 @@ $messages['ko'] = array(
 	'indexpages' => '목차 문서의 목록',
 	'pageswithoutscans' => '스캔본이 없는 문서',
 	'proofreadpage_desc' => '최초 스캔과 텍스트를 쉽게 비교할 수 있게 함',
-	'proofreadpage_namespace' => '문서',
-	'proofreadpage_index_namespace' => '목차',
 	'proofreadpage_image' => '그림',
 	'proofreadpage_index' => '목차',
 	'proofreadpage_index_expected' => '오류: 목차가 있어야 합니다.',
@@ -4010,8 +3901,6 @@ $messages['ksh'] = array(
 	'indexpages' => 'Leß met de Verzeischneß_Sigge',
 	'pageswithoutscans' => 'Sigge ohne Belder',
 	'proofreadpage_desc' => 'Määt et müjjelesch, bequem der Täx mem enjeskännte Ojinaal ze verjliische.',
-	'proofreadpage_namespace' => 'Sigg',
-	'proofreadpage_index_namespace' => 'Enhallt',
 	'proofreadpage_image' => 'Beld',
 	'proofreadpage_index' => 'Verzeischneß',
 	'proofreadpage_index_expected' => 'Fähler: En Enndraachsnummer (ene Indäx) weet jebruch',
@@ -4070,7 +3959,6 @@ Aanmerkunge||10',
  * @author George Animal
  */
 $messages['ku-latn'] = array(
-	'proofreadpage_namespace' => 'Rûpel',
 	'proofreadpage_image' => 'Wêne',
 );
 
@@ -4086,8 +3974,6 @@ $messages['kw'] = array(
  * @author SPQRobin
  */
 $messages['la'] = array(
-	'proofreadpage_namespace' => 'Pagina',
-	'proofreadpage_index_namespace' => 'Liber',
 	'proofreadpage_image' => 'Fasciculus',
 	'proofreadpage_index' => 'Liber',
 	'proofreadpage_quality0_category' => 'Vacuus',
@@ -4109,8 +3995,6 @@ $messages['lb'] = array(
 	'indexpages' => 'Lëscht vun Index-Säiten',
 	'pageswithoutscans' => 'Säiten ouni Scan',
 	'proofreadpage_desc' => 'Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen',
-	'proofreadpage_namespace' => 'Säit',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Bild',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Feeler: Index erwaart',
@@ -4178,7 +4062,6 @@ Bemierkungen||10',
  * @author Malafaya
  */
 $messages['lfn'] = array(
-	'proofreadpage_namespace' => 'Paje',
 	'proofreadpage_image' => 'Imaje',
 );
 
@@ -4190,8 +4073,6 @@ $messages['li'] = array(
 	'indexpages' => 'Indexpaginalies',
 	'pageswithoutscans' => "Pagina's zónger scans",
 	'proofreadpage_desc' => "Maak 't meugelik teks eenvoudig te vergelieke mit de oorsjpronkelike scan",
-	'proofreadpage_namespace' => 'Pazjena',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Aafbeilding',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => "Fout: d'r woort 'nen index verwach",
@@ -4267,8 +4148,6 @@ $messages['lmo'] = array(
 $messages['lt'] = array(
 	'indexpages' => 'Indeksuotų puslapių sąrašas',
 	'proofreadpage_desc' => 'Galima lengvai palyginti tekstą su originaliu',
-	'proofreadpage_namespace' => 'Puslapis',
-	'proofreadpage_index_namespace' => 'Indeksas',
 	'proofreadpage_image' => 'Paveikslėlis',
 	'proofreadpage_index' => 'Indeksas',
 	'proofreadpage_index_expected' => 'Klaida: indeksas laukiamas',
@@ -4329,8 +4208,6 @@ Pastabos||10',
  * @author Yyy
  */
 $messages['lv'] = array(
-	'proofreadpage_namespace' => 'Lapa',
-	'proofreadpage_index_namespace' => 'Saturs',
 	'proofreadpage_image' => 'Attēls',
 	'proofreadpage_index' => 'Saturs',
 	'proofreadpage_nextpage' => 'Nākamā lapa',
@@ -4357,7 +4234,6 @@ Piezīmes||10',
  * @author Сай
  */
 $messages['mhr'] = array(
-	'proofreadpage_namespace' => 'Лаштык',
 	'proofreadpage_nextpage' => 'Вес лаштык',
 );
 
@@ -4369,8 +4245,6 @@ $messages['mk'] = array(
 	'indexpages' => 'Список на индексни страници',
 	'pageswithoutscans' => 'Страници без скенови',
 	'proofreadpage_desc' => 'Овозможува едноставна споредба на текстот со скенираниот оригинал',
-	'proofreadpage_namespace' => 'Страница',
-	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'Слика',
 	'proofreadpage_index' => 'Индекс',
 	'proofreadpage_index_expected' => 'Грешка: се очекува индекс',
@@ -4450,8 +4324,6 @@ $messages['ml'] = array(
 	'indexpages' => 'സൂചികാ താളുകളുടെ പട്ടിക',
 	'pageswithoutscans' => 'സ്കാനുകൾ ഇല്ലാത്ത താളുകൾ',
 	'proofreadpage_desc' => 'യഥാർത്ഥ സ്കാനും എഴുത്തും തമ്മിലുള്ള ലളിതമായ ഒത്തുനോക്കൽ അനുവദിക്കുക',
-	'proofreadpage_namespace' => 'താൾ',
-	'proofreadpage_index_namespace' => 'സൂചിക',
 	'proofreadpage_image' => 'ചിത്രം',
 	'proofreadpage_index' => 'സൂചിക',
 	'proofreadpage_index_expected' => 'പിഴവ്: സൂചിക വേണം',
@@ -4525,8 +4397,7 @@ $messages['ml'] = array(
  * @author Chinneeb
  */
 $messages['mn'] = array(
-	'proofreadpage_namespace' => 'Хуудас',
-	'proofreadpage_pages' => '{{PLURAL:$1|хуудас}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|хуудас}}', # Fuzzy
 );
 
 /** Marathi (मराठी)
@@ -4542,8 +4413,6 @@ $messages['mr'] = array(
 	'indexpages' => 'अनुक्रमणिका पानांची यादी',
 	'pageswithoutscans' => 'छाननी न केलेली पाने',
 	'proofreadpage_desc' => 'मूळ प्रतीशी मजकूराची छाननी करण्याची सोपी पद्धत',
-	'proofreadpage_namespace' => 'पान',
-	'proofreadpage_index_namespace' => 'अनुक्रमणिका',
 	'proofreadpage_image' => 'चित्र',
 	'proofreadpage_index' => 'अनुक्रमणिका',
 	'proofreadpage_index_expected' => 'त्रुटी: अनुक्रमणिका अपेक्षित',
@@ -4611,8 +4480,6 @@ $messages['ms'] = array(
 	'indexpages' => 'Senarai laman indeks',
 	'pageswithoutscans' => 'Laman yang tidak diimbas',
 	'proofreadpage_desc' => 'Membolehkan perbandingan mudah bagi teks dengan imbasan asal',
-	'proofreadpage_namespace' => 'Halaman',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Imej',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Ralat: indeks diperlukan',
@@ -4694,7 +4561,6 @@ $messages['mwl'] = array(
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
-	'proofreadpage_namespace' => 'Лопа',
 	'proofreadpage_nextpage' => 'Седе тов ве лопа',
 	'proofreadpage_index_attributes' => 'Сёрмадыцясь
 Конаксось
@@ -4710,7 +4576,6 @@ $messages['myv'] = array(
  * @author Fluence
  */
 $messages['nah'] = array(
-	'proofreadpage_namespace' => 'Zāzanilli',
 	'proofreadpage_image' => 'īxiptli',
 	'proofreadpage_nextpage' => 'Niman zāzanilli',
 	'proofreadpage_prevpage' => 'Achto zāzanilli',
@@ -4725,8 +4590,6 @@ $messages['nb'] = array(
 	'indexpages' => 'Liste over innholdsfortegnelser',
 	'pageswithoutscans' => 'Sider uten skanninger',
 	'proofreadpage_desc' => 'Tillat lett sammenligning av tekst med originalskanningen',
-	'proofreadpage_namespace' => 'Side',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Bilde',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Feil: Indeks forventet',
@@ -4788,8 +4651,6 @@ Merknader||10',
  */
 $messages['nds'] = array(
 	'proofreadpage_desc' => 'Verlöövt dat bequeme Verglieken vun Text mit’n Original-Scan',
-	'proofreadpage_namespace' => 'Siet',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Bild',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_nextpage' => 'Nächste Siet',
@@ -4840,8 +4701,6 @@ $messages['nl'] = array(
 	'indexpages' => "Lijst van index-pagina's",
 	'pageswithoutscans' => "Pagina's zonder scans",
 	'proofreadpage_desc' => 'Maakt het mogelijk teksten eenvoudig te vergelijken met de oorspronkelijke scan',
-	'proofreadpage_namespace' => 'Pagina',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Afbeelding',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Fout: er werd een index verwacht',
@@ -4920,8 +4779,6 @@ Opmerkingen||10",
  */
 $messages['nn'] = array(
 	'proofreadpage_desc' => 'Tillèt enkel samanlikning av tekst med originalskanning.',
-	'proofreadpage_namespace' => 'Side',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Bilete',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Feil: Indeks forventa',
@@ -4962,7 +4819,6 @@ Merknader||10',
  * @author Mohau
  */
 $messages['nso'] = array(
-	'proofreadpage_namespace' => 'Letlakala',
 	'proofreadpage_nextpage' => 'Letlakala lago latela',
 	'proofreadpage_prevpage' => 'Letlaka lago feta',
 );
@@ -4973,8 +4829,6 @@ $messages['nso'] = array(
 $messages['oc'] = array(
 	'indexpages' => "Lista de las paginas d'indèx",
 	'proofreadpage_desc' => 'Permet una comparason aisida entre lo tèxte e la numerizacion originala',
-	'proofreadpage_namespace' => 'Pagina',
-	'proofreadpage_index_namespace' => 'Indèx',
 	'proofreadpage_image' => 'Imatge',
 	'proofreadpage_index' => 'Indèx',
 	'proofreadpage_index_expected' => 'Error : un indèx es esperat',
@@ -5031,8 +4885,6 @@ Comentaris||10',
  * @author Psubhashish
  */
 $messages['or'] = array(
-	'proofreadpage_namespace' => 'ପୃଷ୍ଠା',
-	'proofreadpage_index_namespace' => 'ସୂଚୀ',
 	'proofreadpage_image' => 'ପ୍ରତିକୃତି',
 	'proofreadpage_index' => 'ସୂଚୀ',
 	'proofreadpage_indexdupe' => 'ନକଲି ଲିଙ୍କ',
@@ -5063,7 +4915,6 @@ $messages['or'] = array(
  * @author Amikeco
  */
 $messages['os'] = array(
-	'proofreadpage_namespace' => 'Фарс',
 	'proofreadpage_image' => 'ныв',
 	'proofreadpage_nextpage' => 'Фæдылдзог фарс',
 	'proofreadpage_prevpage' => 'Раздæры фарс',
@@ -5073,7 +4924,6 @@ $messages['os'] = array(
  * @author Xqt
  */
 $messages['pdc'] = array(
-	'proofreadpage_namespace' => 'Blatt',
 	'proofreadpage_image' => 'Bild',
 	'proofreadpage_nextpage' => 'Neegschtes Blatt',
 	'proofreadpage_prevpage' => 'Letscht Blatt',
@@ -5086,7 +4936,6 @@ $messages['pdc'] = array(
  * @author Manuae
  */
 $messages['pfl'] = array(
-	'proofreadpage_namespace' => 'Said',
 	'proofreadpage_nextpage' => 'Negschd Said',
 );
 
@@ -5101,8 +4950,6 @@ $messages['pl'] = array(
 	'indexpages' => 'Spis stron indeksów',
 	'pageswithoutscans' => 'Strony bez skanów',
 	'proofreadpage_desc' => 'Umożliwia łatwe porównanie treści ze skanem oryginału',
-	'proofreadpage_namespace' => 'Strona',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Grafika',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Błąd – oczekiwano indeksu',
@@ -5167,17 +5014,15 @@ Uwagi||10',
 );
 
 /** Piedmontese (Piemontèis)
- * @author 555
  * @author Borichèt
  * @author Bèrto 'd Sèra
  * @author Dragonòt
+ * @author 555
  */
 $messages['pms'] = array(
 	'indexpages' => 'Lista dle pàgine ëd tàula',
 	'pageswithoutscans' => 'Pàgine sensa scansion',
 	'proofreadpage_desc' => 'A rend bel fé confronté ëd test con la scansion original',
-	'proofreadpage_namespace' => 'Pàgina',
-	'proofreadpage_index_namespace' => 'Ìndess',
 	'proofreadpage_image' => 'Figura',
 	'proofreadpage_index' => 'Ìndess',
 	'proofreadpage_index_expected' => 'Eror: a së spetava na tàula',
@@ -5235,7 +5080,7 @@ Nòte||10',
 	'proofreadpage-button-reset-zoom-label' => "Amposté torna l'angrandiment",
 	'proofreadpage-button-zoom-in-label' => 'Angrandì',
 	'proofreadpage-button-toggle-layout-label' => 'Disposission vertical/orisontal',
-	'proofreadpage-preferences-showheaders-label' => "Smon-e dij camp d'antestassion e ëd pé ëd pàgina quand as modìfico jë spassi nominaj dla Pàgina",
+	'proofreadpage-preferences-showheaders-label' => "Smon-e dij camp d'antestassion e ëd pé ëd pàgina quand as modìfico jë spassi nominaj dla Pàgina", # Fuzzy
 );
 
 /** Pashto (پښتو)
@@ -5243,8 +5088,6 @@ Nòte||10',
  */
 $messages['ps'] = array(
 	'indexpages' => 'د ليکلړ مخونو لړليک',
-	'proofreadpage_namespace' => 'مخ',
-	'proofreadpage_index_namespace' => 'ليکلړ',
 	'proofreadpage_image' => 'انځور',
 	'proofreadpage_index' => 'ليکلړ',
 	'proofreadpage_badpage' => 'ناسمه بڼه',
@@ -5273,19 +5116,17 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (português)
- * @author 555
  * @author Giro720
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
  * @author Waldir
+ * @author 555
  */
 $messages['pt'] = array(
 	'indexpages' => 'Lista de páginas de índice',
 	'pageswithoutscans' => 'Páginas não transcluídas',
 	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
-	'proofreadpage_namespace' => 'Página',
-	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'Imagem',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Erro: índice esperado',
@@ -5346,18 +5187,16 @@ Notas||10',
 );
 
 /** Brazilian Portuguese (português do Brasil)
- * @author 555
  * @author Eduardo.mps
  * @author Giro720
  * @author Luckas Blade
  * @author MetalBrasil
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'indexpages' => 'Lista de páginas de índice',
 	'pageswithoutscans' => 'Páginas sem imagens',
 	'proofreadpage_desc' => 'Permite uma fácil comparação de textos e suas digitalizações originais',
-	'proofreadpage_namespace' => 'Página',
-	'proofreadpage_index_namespace' => 'Índice',
 	'proofreadpage_image' => 'Imagem',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Erro: era esperado um índice',
@@ -5421,8 +5260,6 @@ Notas||10',
  * @author AlimanRuna
  */
 $messages['qu'] = array(
-	'proofreadpage_namespace' => "P'anqa",
-	'proofreadpage_index_namespace' => 'Yuyarina',
 	'proofreadpage_image' => 'Rikcha',
 	'proofreadpage_index' => 'Yuyarina',
 	'proofreadpage_nextpage' => "Qatiq p'anqa",
@@ -5453,8 +5290,6 @@ $messages['ro'] = array(
 	'indexpages' => 'Lista paginilor index',
 	'pageswithoutscans' => 'Pagini fără scanări',
 	'proofreadpage_desc' => 'Permite compararea facilă a textului față de scanarea originală',
-	'proofreadpage_namespace' => 'Pagină',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Imagine',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Eroare: index așteptat',
@@ -5524,8 +5359,6 @@ $messages['roa-tara'] = array(
 	'indexpages' => 'Elenghe de le pàggene de indice',
 	'pageswithoutscans' => 'Pàggene senze scansiune',
 	'proofreadpage_desc' => "Permette combronde facele de teste cu 'a scanzione origgenale",
-	'proofreadpage_namespace' => 'Pàgene',
-	'proofreadpage_index_namespace' => 'Indice',
 	'proofreadpage_image' => 'Immaggine',
 	'proofreadpage_index' => 'Indice',
 	'proofreadpage_index_expected' => 'Errore: previste indice',
@@ -5600,8 +5433,6 @@ $messages['ru'] = array(
 	'indexpages' => 'Список индексных страниц',
 	'pageswithoutscans' => 'Страницы без сканов',
 	'proofreadpage_desc' => 'Позволяет в удобном виде сравнивать текст и отсканированное изображение оригинала',
-	'proofreadpage_namespace' => 'Страница',
-	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'изображение',
 	'proofreadpage_index' => 'индекс',
 	'proofreadpage_index_expected' => 'Ошибка. Индекс не обнаружен.',
@@ -5671,8 +5502,6 @@ $messages['rue'] = array(
 	'indexpages' => 'Список індексовых сторінок',
 	'pageswithoutscans' => 'Сторінкы без скеновань',
 	'proofreadpage_desc' => 'Доволює просте порівнаня тексту з оріґіналом',
-	'proofreadpage_namespace' => 'Сторінка',
-	'proofreadpage_index_namespace' => 'Індекс',
 	'proofreadpage_image' => 'Образок',
 	'proofreadpage_index' => 'Індекс',
 	'proofreadpage_index_expected' => 'Хыба: очекаваный індекс',
@@ -5742,8 +5571,6 @@ $messages['sa'] = array(
 	'indexpages' => 'अनुक्रमणिका पुटावली',
 	'pageswithoutscans' => 'अगतिकपुटानि',
 	'proofreadpage_desc' => 'मूलगतिकलेखानां सरलतुलनावकाशः',
-	'proofreadpage_namespace' => 'पुटम्',
-	'proofreadpage_index_namespace' => 'अनुक्रमणिका',
 	'proofreadpage_image' => 'चित्रम्',
 	'proofreadpage_index' => 'अनुक्रमणिका',
 	'proofreadpage_index_expected' => 'दोषः :  निरीक्षितानुक्रमणिका',
@@ -5812,8 +5639,6 @@ $messages['sah'] = array(
 	'indexpages' => 'Индекс сирэйдэрин тиһигэ',
 	'pageswithoutscans' => 'Скаана суох сирэйдэр',
 	'proofreadpage_desc' => 'Оригинаалы уонна скаанердаммыт ойууну тэҥнээн көрөр кыаҕы биэрэр',
-	'proofreadpage_namespace' => 'Сирэй',
-	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'ойуу',
 	'proofreadpage_index' => 'индекс',
 	'proofreadpage_index_expected' => 'Алҕас: Индекс көстүбэтэ',
@@ -5858,7 +5683,7 @@ $messages['sah'] = array(
 Ойуу|Таһын ойуута
 Сирэйин ахсаана||20
 Хос быһаарыылара||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|сирэй|сирэйдээх}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|сирэй|сирэйдээх}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Индекстаммыт сирэйдэри көрдөөһүн',
 	'proofreadpage_source' => 'Хантан ылыллыбыта',
 	'proofreadpage_source_message' => 'Тиэкис электрон барылын оҥорорго скааннаммыт матырыйааллар туһаныллыбыттар',
@@ -5870,10 +5695,9 @@ $messages['sah'] = array(
  * @author Marzedu
  */
 $messages['sc'] = array(
-	'proofreadpage_namespace' => 'Pàgina',
 	'proofreadpage_image' => 'Immàgine',
 	'proofreadpage_index_listofpages' => 'Lista de is pàginas',
-	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàginas}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|pàgina|pàginas}}', # Fuzzy
 );
 
 /** Sicilian (sicilianu)
@@ -5881,7 +5705,6 @@ $messages['sc'] = array(
  * @author Gmelfi
  */
 $messages['scn'] = array(
-	'proofreadpage_namespace' => 'Pàggina',
 	'proofreadpage_image' => 'Immaggini',
 	'proofreadpage_nextpage' => 'Pàggina appressu',
 	'proofreadpage_prevpage' => "Pàggina d'antura",
@@ -5896,8 +5719,6 @@ $messages['scn'] = array(
 $messages['si'] = array(
 	'indexpages' => 'සුචි පිටු ලැයිස්තුව',
 	'pageswithoutscans' => 'පරිලෝකන රහිත පිටු',
-	'proofreadpage_namespace' => 'පිටුව',
-	'proofreadpage_index_namespace' => 'සුචිය',
 	'proofreadpage_image' => 'පිංතූරය',
 	'proofreadpage_index' => 'සුචිය',
 	'proofreadpage_index_expected' => 'දෝෂය: සුචිය අපේක්ෂිතයි',
@@ -5959,8 +5780,6 @@ $messages['sk'] = array(
 	'indexpages' => 'Zoznam indexových stránok',
 	'pageswithoutscans' => 'Stránky bez prehliadnutia',
 	'proofreadpage_desc' => 'Umožňuje jednoduché porovnanie textu s originálnym skenom',
-	'proofreadpage_namespace' => 'Stránka',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Obrázok',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_index_expected' => 'Chyba: očakával sa index',
@@ -6005,7 +5824,7 @@ Zdroj
 Obrázok|Obálka
 Strán||20
 Poznámky||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránok}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|stránka|stránky|stránok}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Hľadať v stránkach indexu',
 	'proofreadpage_source' => 'Zdroj',
 	'proofreadpage_source_message' => 'Naskenované vydanie použité pri vzniku tohto textu',
@@ -6019,8 +5838,6 @@ $messages['sl'] = array(
 	'indexpages' => 'Seznam kazalnih strani',
 	'pageswithoutscans' => 'Strani brez skeniranj',
 	'proofreadpage_desc' => 'Omogočajo enostavno primerjavo besedila z izvirno preslikavo',
-	'proofreadpage_namespace' => 'Stran',
-	'proofreadpage_index_namespace' => 'Kazalo',
 	'proofreadpage_image' => 'Slika',
 	'proofreadpage_index' => 'Kazalo',
 	'proofreadpage_index_expected' => 'Napaka: pričakovano kazalo',
@@ -6089,8 +5906,6 @@ Pripombe||10',
  */
 $messages['sr-ec'] = array(
 	'proofreadpage_desc' => 'Омогући лако упоређивање текста и оригиналног скена.',
-	'proofreadpage_namespace' => 'Страница',
-	'proofreadpage_index_namespace' => 'индекс',
 	'proofreadpage_image' => 'слика',
 	'proofreadpage_index' => 'индекс',
 	'proofreadpage_badpage' => 'Погрешан Формат',
@@ -6131,8 +5946,6 @@ $messages['sr-ec'] = array(
  */
 $messages['sr-el'] = array(
 	'proofreadpage_desc' => 'Omogući lako upoređivanje teksta i originalnog skena.',
-	'proofreadpage_namespace' => 'Stranica',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Slika',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_badpage' => 'Pogrešan Format',
@@ -6160,7 +5973,7 @@ izvor
 slika|naslovna strana
 strana||20
 primedbe||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|stranica|stranice|stranica}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|stranica|stranice|stranica}}', # Fuzzy
 	'proofreadpage_source' => 'Izvor',
 	'proofreadpage-section-tools' => 'Lektorske alatke',
 	'proofreadpage-group-zoom' => 'Razmera',
@@ -6172,8 +5985,6 @@ primedbe||10',
  */
 $messages['stq'] = array(
 	'proofreadpage_desc' => 'Moaket dät mäkkelk Ferglieken muugelk fon Text mäd dän Originoalscan',
-	'proofreadpage_namespace' => 'Siede',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Scan',
 	'proofreadpage_index' => 'Index',
 	'proofreadpage_nextpage' => 'Naiste Siede',
@@ -6204,8 +6015,6 @@ Bemäärkengen||10',
  * @author Kandar
  */
 $messages['su'] = array(
-	'proofreadpage_namespace' => 'Kaca',
-	'proofreadpage_index_namespace' => 'Béréndélan',
 	'proofreadpage_image' => 'Gambar',
 	'proofreadpage_index' => 'Béréndélan',
 	'proofreadpage_nextpage' => 'Kaca salajengna',
@@ -6241,8 +6050,6 @@ $messages['sv'] = array(
 	'indexpages' => 'Lista över indexsidor',
 	'pageswithoutscans' => 'Sidor utan scanningar.',
 	'proofreadpage_desc' => 'Ger möjlighet att korrekturläsa texter mot scannade original',
-	'proofreadpage_namespace' => 'Sida',
-	'proofreadpage_index_namespace' => 'Index',
 	'proofreadpage_image' => 'Bild',
 	'proofreadpage_index' => 'Indexsida',
 	'proofreadpage_index_expected' => 'Fel: index förväntades',
@@ -6317,7 +6124,6 @@ Anmärkningar||10',
  * @author Stephenwanjau
  */
 $messages['sw'] = array(
-	'proofreadpage_namespace' => 'Ukurasa',
 	'proofreadpage_image' => 'Picha',
 	'proofreadpage_specialpage_label_key' => 'Tafuta:',
 	'proofreadpage_source' => 'Chanzo',
@@ -6327,7 +6133,6 @@ $messages['sw'] = array(
  * @author Herr Kriss
  */
 $messages['szl'] = array(
-	'proofreadpage_namespace' => 'Zajta',
 	'proofreadpage_image' => 'Uobrozek',
 	'proofreadpage_nextpage' => 'Nostympno zajta',
 	'proofreadpage_prevpage' => 'Popředńo zajta',
@@ -6341,7 +6146,6 @@ $messages['szl'] = array(
  * @author மதனாஹரன்
  */
 $messages['ta'] = array(
-	'proofreadpage_namespace' => 'பக்கம்',
 	'proofreadpage_image' => 'படம்',
 	'proofreadpage_nosuch_file' => 'பிழை: இப்படி ஒரு கோப்பே இல்லை',
 	'proofreadpage_nologin' => 'புகுபதிகை செய்யப்படவில்லை',
@@ -6387,8 +6191,6 @@ $messages['ta'] = array(
 $messages['te'] = array(
 	'indexpages' => 'సూచిక పుటల జాబితా',
 	'proofreadpage_desc' => 'గద్యానికీ అసలు బొమ్మకు (స్కాన్) మధ్యన తేలికగా పోల్చిచూపడాన్ని అనుమతించు',
-	'proofreadpage_namespace' => 'పుట',
-	'proofreadpage_index_namespace' => 'సూచిక',
 	'proofreadpage_image' => 'బొమ్మ',
 	'proofreadpage_index' => 'సూచిక',
 	'proofreadpage_index_expected' => 'పొరపాటు: సూచిక వుండవలసినది',
@@ -6399,7 +6201,7 @@ $messages['te'] = array(
 	'proofreadpage_indexdupe' => 'నకిలీ లంకె',
 	'proofreadpage_indexdupetext' => 'ఒక సూచికలో ఒక పుటను ఒక్క సారి కంటే ఎక్కువ ఎక్కించరాదు.',
 	'proofreadpage_nologin' => 'లోనికి ప్రవేశించిలేరు',
-	'proofreadpage_nologintext' => 'పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[ప్రత్యేక:వాడుకరిప్రవేశం|లోనికి ప్రవేశించి]] వుండాలి.',
+	'proofreadpage_nologintext' => 'పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[ప్రత్యేక:వాడుకరిప్రవేశం|లోనికి ప్రవేశించి]] వుండాలి.', # Fuzzy
 	'proofreadpage_notallowed' => 'మార్పడానికి అనుమతి లేదు',
 	'proofreadpage_notallowedtext' => 'ఈ పుటయొక్క అచ్చుదిద్దుస్థితిని మార్చడానికి మీరు తగరు.',
 	'proofreadpage_number_expected' => 'పొరబాటు: సంఖ్య వుండవలెను',
@@ -6446,7 +6248,6 @@ $messages['te'] = array(
  * @author MF-Warburg
  */
 $messages['tet'] = array(
-	'proofreadpage_namespace' => 'Pájina',
 	'proofreadpage_nextpage' => 'Pájina oinmai',
 	'proofreadpage_prevpage' => 'Pájina molok',
 	'proofreadpage_pages' => '{{PLURAL:$1|pájina ida|pájina $2}}',
@@ -6457,8 +6258,6 @@ $messages['tet'] = array(
  */
 $messages['tg-cyrl'] = array(
 	'proofreadpage_desc' => 'Имкони муқоисаи осони матн бо нусхаи аслии пӯйишшударо фароҳам меоварад',
-	'proofreadpage_namespace' => 'Саҳифа',
-	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'акс',
 	'proofreadpage_index' => 'Индекс',
 	'proofreadpage_nextpage' => 'Саҳифаи баъдӣ',
@@ -6490,8 +6289,6 @@ $messages['tg-cyrl'] = array(
  */
 $messages['tg-latn'] = array(
 	'proofreadpage_desc' => 'Imkoni muqoisai osoni matn bo nusxai asliji pūjişşudaro faroham meovarad',
-	'proofreadpage_namespace' => 'Sahifa',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Aks',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_nextpage' => "Sahifai ba'dī",
@@ -6523,8 +6320,6 @@ Mulohizot||10",
  */
 $messages['th'] = array(
 	'proofreadpage_desc' => 'สามารถเปรียบเทียบข้อความกับข้อความต้นฉบับที่สแกนมาได้',
-	'proofreadpage_namespace' => 'หน้า',
-	'proofreadpage_index_namespace' => 'ดัชนี',
 	'proofreadpage_image' => 'ภาพ',
 	'proofreadpage_index' => 'ดัชนี',
 	'proofreadpage_nextpage' => 'หน้าต่อไป',
@@ -6558,8 +6353,6 @@ $messages['tk'] = array(
 	'indexpages' => 'Indeks sahypalarynyň sanawy',
 	'pageswithoutscans' => 'Skansyz sahypalar',
 	'proofreadpage_desc' => 'Original skanirleme bilen tekstiň aňsat deňedirilmegine rugsat berýär',
-	'proofreadpage_namespace' => 'Sahypa',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Surat',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Säwlik: indekse garaşylýardy',
@@ -6604,7 +6397,7 @@ Neşirýat
 Surat|Sahap suraty
 Sahypa||20
 Bellikler||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|sahypa|sahypa}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|sahypa|sahypa}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Indeks sahypalaryny gözle',
 	'proofreadpage_source' => 'Çeşme',
 	'proofreadpage_source_message' => 'Bu teksti döretmek üçin ulanylan skanirlenen wersiýa',
@@ -6618,8 +6411,6 @@ $messages['tl'] = array(
 	'indexpages' => 'Talaan ng mga pahina ng talatuntunan',
 	'pageswithoutscans' => 'Mga pahinang walang mga saliksik',
 	'proofreadpage_desc' => 'Pahintulutan ang madaling paghahambing ng teksto sa orihinal na kuha (iskan) ng larawan',
-	'proofreadpage_namespace' => 'Pahina',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Larawan',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_index_expected' => 'Kamalian: inaasahan ang talatuntunan',
@@ -6693,8 +6484,6 @@ Mga puna||10',
  * @author Erdemaslancan
  */
 $messages['tly'] = array(
-	'proofreadpage_namespace' => 'Сәһифә',
-	'proofreadpage_index_namespace' => 'Индекс',
 	'proofreadpage_image' => 'Шикил',
 	'proofreadpage_index' => 'Индекс',
 	'proofreadpage_nextpage' => 'Думотоно шә сәһифә',
@@ -6719,8 +6508,6 @@ $messages['tr'] = array(
 	'indexpages' => 'Endeks sayfalarının listesi',
 	'pageswithoutscans' => 'Sayfa içinde arama',
 	'proofreadpage_desc' => 'Orijinal taramayla metnin kolayca karşılaştırılmasına izin verir',
-	'proofreadpage_namespace' => 'Sayfa',
-	'proofreadpage_index_namespace' => 'Endeks',
 	'proofreadpage_image' => 'Resim',
 	'proofreadpage_index' => 'Dizin',
 	'proofreadpage_index_expected' => 'Hata: dizin bekleniyordu',
@@ -6807,7 +6594,6 @@ $messages['tt-cyrl'] = array(
  * @author Sborsody
  */
 $messages['tyv'] = array(
-	'proofreadpage_namespace' => 'Арын',
 	'proofreadpage_image' => 'Чурумал',
 	'proofreadpage_nextpage' => 'Соонда арын',
 	'proofreadpage_prevpage' => 'Бурунгу арын',
@@ -6818,7 +6604,6 @@ $messages['tyv'] = array(
  * @author Jose77
  */
 $messages['ug-latn'] = array(
-	'proofreadpage_namespace' => 'Bet',
 	'proofreadpage_nextpage' => 'Kéyinki bet',
 	'proofreadpage_prevpage' => 'Aldinqi bet',
 );
@@ -6834,8 +6619,6 @@ $messages['uk'] = array(
 	'indexpages' => 'Список індексових сторінок',
 	'pageswithoutscans' => 'Сторінки без сканувань',
 	'proofreadpage_desc' => 'Дозволяє легко порівнювати текст і відскановане зображення оригіналу',
-	'proofreadpage_namespace' => 'Сторінка',
-	'proofreadpage_index_namespace' => 'Індекс',
 	'proofreadpage_image' => 'зображення',
 	'proofreadpage_index' => 'Індекс',
 	'proofreadpage_index_expected' => 'Помилка: очікувано індексу.',
@@ -6900,8 +6683,6 @@ $messages['uk'] = array(
  */
 $messages['ur'] = array(
 	'indexpages' => 'فہرست صفحات کی فہرست',
-	'proofreadpage_namespace' => 'صفحہ',
-	'proofreadpage_index_namespace' => 'فہرست',
 	'proofreadpage_image' => 'تصویر',
 	'proofreadpage_index' => 'فہرست',
 	'proofreadpage_badpage' => 'غلط کی شکل',
@@ -6936,8 +6717,6 @@ $messages['vec'] = array(
 	'indexpages' => 'Elenco de le pagine de indice',
 	'pageswithoutscans' => 'Pagine sensa scansion',
 	'proofreadpage_desc' => 'Parméte un façile confronto tra un testo e la so scansion original',
-	'proofreadpage_namespace' => 'Pagina',
-	'proofreadpage_index_namespace' => 'Indice',
 	'proofreadpage_image' => 'Imagine',
 	'proofreadpage_index' => 'Indice',
 	'proofreadpage_index_expected' => 'Eròr: indice mancante',
@@ -7002,8 +6781,6 @@ Note||10',
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
-	'proofreadpage_namespace' => 'Lehtpol’',
-	'proofreadpage_index_namespace' => 'Indeks',
 	'proofreadpage_image' => 'Kuva',
 	'proofreadpage_index' => 'Indeks',
 	'proofreadpage_nosuch_index' => 'Petuz: ei ole mugošt indeksad',
@@ -7040,8 +6817,6 @@ $messages['vi'] = array(
 	'indexpages' => 'Danh sách các trang mục lục',
 	'pageswithoutscans' => 'Trang không có hình quét',
 	'proofreadpage_desc' => 'Cho phép dễ dàng so sánh văn bản với hình quét gốc',
-	'proofreadpage_namespace' => 'Trang',
-	'proofreadpage_index_namespace' => 'Mục lục',
 	'proofreadpage_image' => 'Hình',
 	'proofreadpage_index' => 'Mục lục',
 	'proofreadpage_index_expected' => 'Lỗi: cần mục lục',
@@ -7116,7 +6891,6 @@ Ghi chú||10',
  * @author Smeira
  */
 $messages['vo'] = array(
-	'proofreadpage_namespace' => 'Pad',
 	'proofreadpage_image' => 'Magod',
 	'proofreadpage_nextpage' => 'Pad sököl',
 	'proofreadpage_prevpage' => 'Pad büik',
@@ -7133,7 +6907,7 @@ Fonät
 Magod|Magod tegoda
 Pads|20
 Küpets|10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pad|pads}}',
+	'proofreadpage_pages' => '{{PLURAL:$1|pad|pads}}', # Fuzzy
 );
 
 /** Yiddish (ייִדיש)
@@ -7141,8 +6915,6 @@ Küpets|10',
  * @author פוילישער
  */
 $messages['yi'] = array(
-	'proofreadpage_namespace' => 'בלאַט',
-	'proofreadpage_index_namespace' => 'אינדעקס',
 	'proofreadpage_image' => 'בילד',
 	'proofreadpage_index' => 'אינדעקס',
 	'proofreadpage_nologin' => 'נישט אַרײַנלאגירט',
@@ -7160,11 +6932,10 @@ $messages['yi'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'אריגינעלע גרייס',
 );
 
-/** Cantonese (粵語) */
+/** Cantonese (粵語)
+ */
 $messages['yue'] = array(
 	'proofreadpage_desc' => '容許簡易噉去比較原掃瞄同埋文字',
-	'proofreadpage_namespace' => '頁',
-	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '圖像',
 	'proofreadpage_index' => '索引',
 	'proofreadpage_nextpage' => '下一版',
@@ -7205,8 +6976,6 @@ $messages['zh-hans'] = array(
 	'indexpages' => '索引页列表',
 	'pageswithoutscans' => '没有扫描的页面',
 	'proofreadpage_desc' => '允许简易地比较原始扫描稿和识别文本',
-	'proofreadpage_namespace' => '页面',
-	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '图像',
 	'proofreadpage_index' => '索引',
 	'proofreadpage_index_expected' => '错误：需要索引',
@@ -7278,8 +7047,6 @@ $messages['zh-hant'] = array(
 	'indexpages' => '索引頁列表',
 	'pageswithoutscans' => '沒有掃瞄的頁面',
 	'proofreadpage_desc' => '容許簡易地去比較原掃瞄和文字',
-	'proofreadpage_namespace' => '頁面',
-	'proofreadpage_index_namespace' => '索引',
 	'proofreadpage_image' => '圖片',
 	'proofreadpage_index' => '索引',
 	'proofreadpage_index_expected' => '錯誤：需要索引',
@@ -7338,4 +7105,3 @@ $messages['zh-hant'] = array(
 	'proofreadpage-button-zoom-in-label' => '放大',
 	'proofreadpage-button-toggle-layout-label' => '垂直／水平佈局',
 );
-
