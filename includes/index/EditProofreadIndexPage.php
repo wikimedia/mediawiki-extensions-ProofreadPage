@@ -161,7 +161,7 @@ class EditProofreadIndexPage extends EditPage {
 	 * @param $value string
 	 * @return string
 	 */
-	function cleanInputtedContent( $value ) {
+	protected function cleanInputtedContent( $value ) {
 		// remove trailing \n \t or \r
 		$value = trim( $value );
 
