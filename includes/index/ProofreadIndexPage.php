@@ -111,7 +111,7 @@ class ProofreadIndexPage {
 				if ( $m[0] == 'Footer' ) {
 					$params['default'] = wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
 				}
-				if ( isset( $m[1] ) ) {
+				if ( isset( $m[1] ) && $m[1] !== '' ) {
 					$params['label'] = $m[1];
 				}
 				if ( isset( $m[2] ) ) {
