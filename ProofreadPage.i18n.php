@@ -1553,7 +1553,7 @@ weşanger
 Resım|resmê qapaxi
 peli||20
 beyanati||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|pele|pele}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pela|peley}}',
 	'proofreadpage_specialpage_legend' => 'bıgêr pelê indeksan',
 	'proofreadpage_specialpage_searcherror' => 'Motorê cıgeyrayışi de xırabin',
 	'proofreadpage_specialpage_searcherrortext' => 'Motorê cıgeyrayışi nêguriyeno. Qandê coy qusır de mewnirên.',
@@ -3481,6 +3481,7 @@ $messages['ja'] = array(
 	'proofreadpage_index_size' => 'ページ数',
 	'proofreadpage_specialpage_label_key' => '検索:',
 	'proofreadpage_specialpage_label_sortascending' => '昇順に並べ替え',
+	'proofreadpage_alphabeticalorder' => '辞書順',
 	'proofreadpage_index_listofpages' => 'ページの一覧',
 	'proofreadpage_image_message' => '書誌情報ページへのリンク',
 	'proofreadpage_page_status' => '校正の状態',
@@ -3753,7 +3754,7 @@ weşanger
 Resım|resmê qapaxi
 peli||20
 beyanati||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|pele|pele}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pele|peli}}',
 	'proofreadpage_specialpage_legend' => 'Bıgêr pelê indeksan',
 	'proofreadpage_source' => 'Çıme',
 	'proofreadpage_source_message' => 'Versiyono kopyakerde gurêna ke nê meqaley rono',
