@@ -1553,7 +1553,7 @@ weşanger
 Resım|resmê qapaxi
 peli||20
 beyanati||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|pela|peley}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pele|peli}}',
 	'proofreadpage_specialpage_legend' => 'bıgêr pelê indeksan',
 	'proofreadpage_specialpage_searcherror' => 'Motorê cıgeyrayışi de xırabin',
 	'proofreadpage_specialpage_searcherrortext' => 'Motorê cıgeyrayışi nêguriyeno. Qandê coy qusır de mewnirên.',
