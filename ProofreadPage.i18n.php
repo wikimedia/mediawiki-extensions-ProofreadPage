@@ -1564,7 +1564,7 @@ beyanati||10',
 	'right-pagequality' => 'Vurnayışté pela ré desmal çek',
 	'proofreadpage-section-tools' => 'Hacetê raştkerdışê ğeletan',
 	'proofreadpage-group-zoom' => 'Nêzdikerdış',
-	'proofreadpage-group-other' => 'Zewmi',
+	'proofreadpage-group-other' => 'Sewbi',
 	'proofreadpage-button-toggle-visibility-label' => 'Ena pelaya bımocne/bınımni  wanena u asınena',
 	'proofreadpage-button-zoom-out-label' => 'Dûri ke',
 	'proofreadpage-button-reset-zoom-label' => 'Ebado oricinal',
@@ -2162,6 +2162,7 @@ Huomautuksia||10',
  * @author Dereckson
  * @author Gomoko
  * @author Grondin
+ * @author Hello71
  * @author IAlex
  * @author Jean-Frédéric
  * @author John Vandenberg
@@ -2189,7 +2190,7 @@ $messages['fr'] = array(
 	'proofreadpage_notallowed' => 'Modification non autorisée',
 	'proofreadpage_notallowedtext' => "Vous n'êtes pas autorisé à modifier le statut de correction de cette page.",
 	'proofreadpage_dataconfig_badformatted' => 'Bogue dans la configuration des données',
-	'proofreadpage_dataconfig_badformattedtext' => "La page [[Mediawiki:Proofreadpage index data config]] n'a pas un format JSON correct.",
+	'proofreadpage_dataconfig_badformattedtext' => "La page [[Mediawiki:Proofreadpage index data config]] n'est pas correctement mise en forme JSON.",
 	'proofreadpage_number_expected' => 'Erreur : une valeur numérique est attendue',
 	'proofreadpage_interval_too_large' => 'Erreur : intervalle trop grand',
 	'proofreadpage_invalid_interval' => 'Erreur : intervalle invalide',
@@ -6944,6 +6945,8 @@ $messages['vi'] = array(
 	'proofreadpage_nologintext' => 'Bạn phải [[Special:UserLogin|đăng nhập]] để sửa đổi tình trạng hiệu đính của trang.',
 	'proofreadpage_notallowed' => 'Không được phép thay đổi',
 	'proofreadpage_notallowedtext' => 'Bạn không được phép thay đổi tình trạng hiệu đính của trang này.',
+	'proofreadpage_dataconfig_badformatted' => 'Lỗi trong cấu hình dữ liệu',
+	'proofreadpage_dataconfig_badformattedtext' => 'Trang [[Mediawiki:Proofreadpage index data config]] không tuân theo định dạng JSON.',
 	'proofreadpage_number_expected' => 'Lỗi: cần giá trị số',
 	'proofreadpage_interval_too_large' => 'Lỗi: khoảng thời gian quá lớn',
 	'proofreadpage_invalid_interval' => 'Lỗi: khoảng thời gian không hợp lệ',
