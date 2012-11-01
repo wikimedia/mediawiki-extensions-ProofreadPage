@@ -49,6 +49,14 @@ $proofreadPageNamespacesNames['br'] = array(
 	'index_talk' => 'Kaozeadenn_oberour'
 );
 
+/** Catalan (català) */
+$proofreadPageNamespacesNames['ca'] = array(
+	'page' => 'Pàgina',
+	'page_talk' => 'Pàgina_Discussió',
+	'index' => 'Llibre',
+	'index_talk' => 'Llibre_Discussió'
+);
+
 /** Danish (dansk) */
 $proofreadPageNamespacesNames['da'] = array(
 	'page' => 'Side',
