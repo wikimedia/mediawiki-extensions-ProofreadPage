@@ -57,6 +57,14 @@ $proofreadPageNamespacesNames['ca'] = array(
 	'index_talk' => 'Llibre_Discussió'
 );
 
+/** Welsh (Cymraeg) */
+$proofreadPageNamespacesNames['cy'] = array(
+	'page' => 'Tudalen',
+	'page_talk' => 'Sgwrs_Tudalen',
+	'index' => 'Indecs',
+	'index_talk' => 'Sgwrs_Indecs'
+);
+
 /** Danish (dansk) */
 $proofreadPageNamespacesNames['da'] = array(
 	'page' => 'Side',
