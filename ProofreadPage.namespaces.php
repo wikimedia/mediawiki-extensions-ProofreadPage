@@ -45,8 +45,8 @@ $proofreadPageNamespacesNames['bn'] = array(
 $proofreadPageNamespacesNames['br'] = array(
 	'page' => 'Pajenn',
 	'page_talk' => 'Kaozeadenn_pajenn',
-	'index' => 'Oberour',
-	'index_talk' => 'Kaozeadenn_oberour'
+	'index' => 'Meneger',
+	'index_talk' => 'Kaozeadenn_meneger'
 );
 
 /** Catalan (català) */
