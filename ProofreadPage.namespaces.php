@@ -129,6 +129,14 @@ $proofreadPageNamespacesNames['fr'] = array(
 	'index_talk' => 'Discussion_Livre'
 );
 
+/** Northern Frisian (Nordfriisk) */
+$proofreadPageNamespacesNames['frr'] = array(
+	'page' => 'Seite',
+	'page_talk' => 'Seite_Diskussion',
+	'index' => 'Index',
+	'index_talk' => 'Index_Diskussion'
+);
+
 /** Gujarati (ગુજરાતી) */
 $proofreadPageNamespacesNames['gu'] = array(
 	'page' => 'પૃષ્ઠ',
