@@ -21,11 +21,6 @@
 
 class EditProofreadIndexPage extends EditPage {
 
-	/*
-	 * Store content of the from (useful for preview)
-	 */
-	protected $indexData;
-
 	protected function isSectionEditSupported() {
 		return false; // sections and forms don't mix
 	}
@@ -42,22 +37,16 @@ class EditProofreadIndexPage extends EditPage {
 			$inputAttributes['readonly'] = '';
 		}
 
-		if ( $this->indexData === null ) {
-			$index = new ProofreadIndexPage( $this->mTitle );
-			$entries = $index->getIndexEntries();
-		} else {
-			$entries = ProofreadIndexPage::getIndexEntriesFromIndexContent( $this->indexData );
-		}
+		$index = new ProofreadIndexPage( $this->mTitle, $this->textbox1 );
+		$entries = $index->getIndexEntries();
 
 		$wgOut->addHTML( Xml::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
-
 		$i = 10;
 		foreach( $entries as $entry ) {
 			$inputAttributes['tabindex'] = $i;
 			$this->addEntry( $entry, $inputAttributes );
 			$i++;
 		}
-
 		$wgOut->addHTML( Xml::closeElement( 'table' ) );
 	}
 
@@ -138,19 +127,20 @@ class EditProofreadIndexPage extends EditPage {
 	}
 
 	/**
-	 * Init $this->textbox1 and $this->indexData from form content
+	 * Init $this->textbox1 from form content
 	 *
 	 * @param $request WebRequest
 	 */
 	protected function importContentFormData( &$request ) {
 		$config = ProofreadIndexPage::getDataConfig();
 		$this->textbox1 = "{{:MediaWiki:Proofreadpage_index_template";
-		$this->indexData = array();
 		foreach( $config as $key => $params ) {
 			$field = $this->getFieldNameForEntry( $key );
 			$value = $this->cleanInputtedContent( $request->getVal( $field ) );
-			$this->indexData[$key] = $value;
-			$this->textbox1 .= "\n|" . $key . "=" . $value;
+			$entry = new ProofreadIndexEntry( $key, $value, $params );
+			if( !$entry->isHidden() ) {
+				$this->textbox1 .= "\n|" . $entry->getKey() . "=" . $entry->getStringValue();
+			}
 		}
 		$this->textbox1 .= "\n}}";
 	}

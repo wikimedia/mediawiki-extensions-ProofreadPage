@@ -37,9 +37,11 @@ class ProofreadIndexPage {
 	/**
 	 * Constructor
 	 * @param $title Title Reference to a Title object.
+	 * @param $text string content of the page. Warning: only done for EditProofreadIndexPage use.
 	 */
-	public function __construct( Title $title ) {
+	public function __construct( Title $title, $text = null ) {
 		$this->title = $title;
+		$this->text = $text;
 	}
 
 	/**
@@ -142,11 +144,10 @@ class ProofreadIndexPage {
 
 	/**
 	 * Return metadata from an index page.
-	 * Warning: this function is public only for EditProofreadIndexPage use. It can be removed at any moment
 	 * @param $values array key => value
 	 * @return array of ProofreadIndexEntry
 	 */
-	public static function getIndexEntriesFromIndexContent( $values ) {
+	protected static function getIndexEntriesFromIndexContent( $values ) {
 		$config = self::getDataConfig();
 		$metadata = array();
 		foreach( $config as $varName => $property ) {
