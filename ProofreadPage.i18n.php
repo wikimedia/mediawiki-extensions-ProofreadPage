@@ -6728,6 +6728,16 @@ $messages['tyv'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|арын|арын}}',
 );
 
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'proofreadpage_image' => 'ⵜⴰⵡⵍⴰⴼⵜ',
+	'proofreadpage_page_status' => 'ⴰⴷⴷⴰⴷ ⵏ ⵜⴰⵙⵏⴰ',
+	'proofreadpage_source' => 'ⴰⵖⴱⴰⵍⵓ',
+	'proofreadpage-section-tools' => 'ⵉⵎⴰⵙⵙⵏ ⵓⵙⵉⵙⴷⵉⴷ',
+);
+
 /** Uyghur (Latin script) (Uyghurche)
  * @author Jose77
  */
