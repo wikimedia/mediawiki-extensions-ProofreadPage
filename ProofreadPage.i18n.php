@@ -3672,6 +3672,8 @@ $messages['ka'] = array(
 	'proofreadpage_quality2_message' => 'ამ გვერდის კორექტირებისას პრობლემებია',
 	'proofreadpage_quality3_message' => 'ეს გვერდი კორექტირებულია',
 	'proofreadpage_quality4_message' => 'ეს გვერდი დამოწმებულია',
+	'proofreadpage_index_size' => 'გვერდების რაოდენობა',
+	'proofreadpage_specialpage_label_key' => 'ძიება:',
 	'proofreadpage_index_listofpages' => 'გვერდების სია',
 	'proofreadpage_image_message' => 'ბმული ინდექსის გვერდზე',
 	'proofreadpage_page_status' => 'გვერდის სტატუსი',
@@ -6749,6 +6751,7 @@ $messages['ug-latn'] = array(
 /** Ukrainian (українська)
  * @author AS
  * @author Ahonc
+ * @author Base
  * @author Dim Grits
  * @author Prima klasy4na
  * @author Тест
@@ -6770,6 +6773,8 @@ $messages['uk'] = array(
 	'proofreadpage_nologintext' => 'Ви повинні [[Special:UserLogin|увійти в систему]], щоб змінити статус коректури сторінок.',
 	'proofreadpage_notallowed' => 'Зміна не дозволена',
 	'proofreadpage_notallowedtext' => 'Ви не можете змінити статус коректури цієї сторінки.',
+	'proofreadpage_dataconfig_badformatted' => 'Помилка в конфігураціях даних',
+	'proofreadpage_dataconfig_badformattedtext' => 'Сторінка [[Mediawiki:Proofreadpage index data config]] не добре відформатована у JSON.',
 	'proofreadpage_number_expected' => 'Помилка: потрібне числове значення',
 	'proofreadpage_interval_too_large' => 'Помилка: інтервал занадто великий',
 	'proofreadpage_invalid_interval' => 'Помилка: неправильній інтервал',
@@ -6789,6 +6794,12 @@ $messages['uk'] = array(
 	'proofreadpage_quality2_message' => 'Виникла проблема з коректурою цієї сторінки',
 	'proofreadpage_quality3_message' => 'Ця сторінка пройшла коректуру',
 	'proofreadpage_quality4_message' => 'Ця сторінка була затверджена',
+	'proofreadpage_index_status' => 'Статус індексу',
+	'proofreadpage_index_size' => 'Число сторінок',
+	'proofreadpage_specialpage_label_orderby' => 'Сортувати за:',
+	'proofreadpage_specialpage_label_key' => 'Пошук:',
+	'proofreadpage_specialpage_label_sortascending' => 'Сортувати за зростанням',
+	'proofreadpage_alphabeticalorder' => 'За алфавітом',
 	'proofreadpage_index_listofpages' => 'Список сторінок',
 	'proofreadpage_image_message' => 'Посилання на сторінку індексу',
 	'proofreadpage_page_status' => 'Стан сторінки',
@@ -6803,6 +6814,7 @@ $messages['uk'] = array(
 Приміток||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|сторінка|сторінки|сторінок}}',
 	'proofreadpage_specialpage_legend' => 'Пошук сторінок індексації',
+	'proofreadpage_specialpage_searcherror' => 'Помилка в пошуковій системі',
 	'proofreadpage_source' => 'Джерело',
 	'proofreadpage_source_message' => 'Для створення цього тексту використані відскановані видання',
 	'right-pagequality' => 'Змінювати статус якості сторінки',
