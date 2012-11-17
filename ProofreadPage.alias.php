@@ -71,6 +71,12 @@ $specialPageAliases['ia'] = array(
 	'PagesWithoutScans' => array( 'Paginas_non_transcludite' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'IndexPages' => array( 'PagineIndicizzate' ),
+	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
+);
+
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
 	'IndexPages' => array( '索引ページ' ),
