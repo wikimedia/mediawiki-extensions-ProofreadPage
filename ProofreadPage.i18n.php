@@ -634,6 +634,44 @@ $messages['az'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Orijinal ölçü',
 );
 
+/** تورکجه (تورکجه)
+ * @author Ebrahimi-amir
+ */
+$messages['azb'] = array(
+	'indexpages' => 'ایندکس صحیفه‌لری‌نین لیستی',
+	'pageswithoutscans' => 'اسکن المایان صحیفه‌لر',
+	'proofreadpage_image' => 'شکیل',
+	'proofreadpage_index' => 'ایندکس',
+	'proofreadpage_badpage' => 'یانلیش فرمت',
+	'proofreadpage_indexdupe' => 'دابلیکات باغلانتی',
+	'proofreadpage_prevpage' => 'قاباغکی صحیفه',
+	'proofreadpage_quality0_category' => 'متن‌سیز',
+	'proofreadpage_index_status' => 'ایندکس دورومو',
+	'proofreadpage_index_size' => 'صحیفه‌لرین سایی',
+	'proofreadpage_specialpage_label_key' => 'آختار:',
+	'proofreadpage_alphabeticalorder' => 'الیفبا سیراسی',
+	'proofreadpage_index_listofpages' => 'صحیفه‌لرین لیستی',
+	'proofreadpage_image_message' => 'ایندکس صحیفه‌سینه باغلا',
+	'proofreadpage_page_status' => 'صحیفه دورومو',
+	'proofreadpage_js_attributes' => 'یارادان باشلیق ایل یایین ائوی',
+	'proofreadpage_index_attributes' => 'یارادان
+باشلیق
+ایل|یایین ایلی
+یایین ائوی
+قایناق
+شکیل|قابیق شکیلی
+صحیفه‌لر||20
+آچیقلامالار||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|صحیفه|صحیفه‌لر}}',
+	'proofreadpage_specialpage_legend' => 'ایندکس صحیفه‌لرینده آختار',
+	'proofreadpage_source' => 'قایناق',
+	'proofreadpage-group-zoom' => 'زوم',
+	'proofreadpage-group-other' => 'آیری',
+	'proofreadpage-button-zoom-out-label' => 'زومون کیچیلد',
+	'proofreadpage-button-reset-zoom-label' => 'اوریجینال اؤلچوسو',
+	'proofreadpage-button-zoom-in-label' => 'زوم ائت',
+);
+
 /** Bashkir (башҡортса)
  * @author Assele
  * @author Comp1089
@@ -833,6 +871,8 @@ $messages['be-tarask'] = array(
 	'proofreadpage_nologintext' => 'Вы павінны [[Special:UserLogin|ўвайсьці ў сыстэму]], каб зьмяняць статус праверкі старонкі.',
 	'proofreadpage_notallowed' => 'Зьмена не дазволеная',
 	'proofreadpage_notallowedtext' => 'Вам не дазволена зьмяняць статус праверкі гэтай старонкі.',
+	'proofreadpage_dataconfig_badformatted' => 'Хіба ў канфігурацыі зьвестак',
+	'proofreadpage_dataconfig_badformattedtext' => 'Старонка [[Mediawiki:Proofreadpage index data config]] зьмяшчае блага фарматаваны JSON.',
 	'proofreadpage_number_expected' => 'Памылка: чакаецца лічбавае значэньне',
 	'proofreadpage_interval_too_large' => 'Памылка: занадта вялікі інтэрвал',
 	'proofreadpage_invalid_interval' => 'Памылка: няслушны інтэрвал',
