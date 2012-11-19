@@ -83,7 +83,12 @@ Remarks||10',
 	'proofreadpage-button-zoom-in-label'           => 'Zoom in',
 	'proofreadpage-button-toggle-layout-label'     => 'Vertical/horizontal layout',
 	'proofreadpage-preferences-showheaders-label'  => 'Show header and footer fields when editing in the {{ns:page}} namespace',
-	'proofreadpage-preferences-horizontal-layout-label'  => 'Use horizontal layout when editing in the {{ns:page}} namespace'
+	'proofreadpage-preferences-horizontal-layout-label'  => 'Use horizontal layout when editing in the {{ns:page}} namespace',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata of books from {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-url' => '',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata of books managed by ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema not found',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'The $1 schema have not been found.',
 );
 
 /** Message documentation (Message documentation)
@@ -157,6 +162,11 @@ $messages['qqq'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
 	'proofreadpage-preferences-showheaders-label' => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.',
+	'proofreadpage-indexoai-repositoryName' => 'Name of the OAI-PMH api.',
+	'proofreadpage-indexoai-eprint-content-url' => '{{notranslate}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Short description of the OAI-PMH api.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Title of the error when a requested XML Schema does not exist.',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Text of the error when a requested XML Schema does not exist. $1: name of the schema.',
 );
 
 /** Achinese (Acèh)

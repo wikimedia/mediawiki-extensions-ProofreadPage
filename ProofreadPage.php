@@ -45,6 +45,7 @@ $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php
 
 $wgAutoloadClasses['EditProofreadIndexPage'] = $dir . 'includes/index/EditProofreadIndexPage.php';
 $wgAutoloadClasses['ProofreadIndexEntry'] = $dir . 'includes/index/ProofreadIndexEntry.php';
+$wgAutoloadClasses['ProofreadIndexValue'] = $dir . 'includes/index/ProofreadIndexValue.php';
 $wgAutoloadClasses['ProofreadIndexPage'] = $dir . 'includes/index/ProofreadIndexPage.php';
 
 $wgExtensionCredits['other'][] = array(
@@ -54,6 +55,12 @@ $wgExtensionCredits['other'][] = array(
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Proofread_Page',
 	'descriptionmsg' => 'proofreadpage_desc',
 );
+
+# OAI-PMH
+$wgAutoloadClasses['SpecialProofreadIndexOai'] = $dir . 'includes/index/SpecialProofreadIndexOai.php';
+$wgSpecialPages['ProofreadIndexOai'] = 'SpecialProofreadIndexOai';
+$wgAutoloadClasses['SpecialProofreadIndexOaiSchema'] = $dir . 'includes/index/SpecialProofreadIndexOaiSchema.php';
+$wgSpecialPages['ProofreadIndexOaiSchema'] = 'SpecialProofreadIndexOaiSchema';
 
 # special page
 $wgAutoloadClasses['ProofreadPages'] = $dir . 'SpecialProofreadPages.php';

@@ -82,6 +82,70 @@ class ProofreadIndexEntry {
 	}
 
 	/**
+	 * Return the values of the entry as string and splitted with the delimiter content
+	 * @return array string
+	 */
+	public function getStringValues() {
+		$value = $this->getStringValue();
+
+		if( $value === '' ) {
+			return array();
+		}
+
+		if( !isset( $this->config['delimiter'] ) || !$this->config['delimiter'] ) {
+			return array( $value );
+		}
+
+		$delimiters = $this->config['delimiter'];
+		if( !is_array( $delimiters ) ) {
+			$delimiters = array( $delimiters );
+		}
+
+		$values = array( $value );
+		foreach( $delimiters as $delimiter ) {
+			$values2 = array();
+			foreach( $values as $val) {
+				$values2 = array_merge( $values2, explode( $delimiter, $val ) );
+			}
+			$values = $values2;
+		}
+
+		foreach( $values as $id => $value) {
+			$values[$id] = trim( $value );
+		}
+		return $values;
+	}
+
+	/**
+	 * Return typed value. If the value doesn't match the value pattern a ProofreadIndexValueString is return.
+	 * @param $value string
+	 * @return ProofreadIndexValue
+	 */
+	protected function getTypedValue( $value ) {
+		try {
+			$class = ProofreadIndexValue::getIndexValueClassNameForType( $this->getType() );
+			$val = new $class( $value, $this->config );
+		} catch( MWException $e ) {
+			$class = ProofreadIndexValue::getIndexValueClassNameForType( 'string' );
+			$val = new $class( $value, $this->config );
+		}
+		return $val;
+	}
+
+	/**
+	 * Return the values of the entry as ProofreadIndexValue and splitted with the delimiter content
+	 * @return array ProofreadIndexValue
+	 */
+	public function getTypedValues() {
+		$values = $this->getStringValues();
+
+		foreach( $values as $id => $value) {
+			$values[$id] = $this->getTypedValue( $value );
+		}
+		return $values;
+	}
+
+	/**
 	 * Return the type of the entry
 	 * @return string
 	 */
@@ -154,6 +218,53 @@ class ProofreadIndexEntry {
 			}
 		} else {
 			return false;
+		}
+	}
+
+	/**
+	 * Return the qualified Dublin Core property the entry belongs to with the 'dcterms' or 'dc' prefix
+	 * @see http://dublincore.org/documents/dcmi-terms/
+	 * @return string
+	 */
+	public function getQualifiedDublinCoreProperty() {
+		if( !isset( $this->config['data'] ) || !$this->config['data'] )
+			return null;
+
+		switch( $this->config['data'] ) {
+			case 'year':
+				return 'dcterms:issued';
+			case 'place':
+				return 'dcterms:spatial';
+			default:
+				return $this->getSimpleDublinCoreProperty();
+		}
+	}
+
+	/**
+	 * Return the qualified Dublin Core property the entry belongs to with the 'dc' prefix
+	 * @see http://dublincore.org/documents/dces/
+	 * @return string
+	 */
+	public function getSimpleDublinCoreProperty() {
+		if( !isset( $this->config['data'] ) || !$this->config['data'] )
+			return null;
+
+		switch( $this->config['data'] ) {
+			case 'language':
+				return 'dc:language';
+			case 'identifier':
+				return 'dc:identifier';
+			case 'title':
+				return 'dc:title';
+			case 'author':
+				return 'dc:creator';
+			case 'publisher':
+				return 'dc:publisher';
+			case 'translator':
+			case 'illustrator':
+				return 'dc:contributor';
+			case 'year':
+				return 'dc:date';
 		}
 	}
 }

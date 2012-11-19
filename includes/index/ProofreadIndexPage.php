@@ -45,6 +45,14 @@ class ProofreadIndexPage {
 	}
 
 	/**
+	 * Return Title of the index page
+	 * @return Title
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
+
+	/**
 	 * Return content of the page
 	 * @return string
 	 */
@@ -175,5 +183,18 @@ class ProofreadIndexPage {
 			}
 		}
 		return self::getIndexEntriesFromIndexContent( $values );
+	}
+
+	/**
+	 * Return mime type of the file linked to the index page
+	 * @return string|null
+	 */
+	public function getMimeType() {
+		if( preg_match( "/^.*\.(.{2,5})$/", $this->title->getText(), $m ) ) {
+			$mimeMagic = new MimeMagic();
+			return $mimeMagic->guessTypesForExtension( $m[1] );
+		} else {
+			return null;
+		}
 	}
 }

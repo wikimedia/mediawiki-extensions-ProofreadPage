@@ -12,6 +12,8 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'IndexPages' => array( 'IndexPages' ),
 	'PagesWithoutScans' => array( 'PagesWithoutScans' ),
+	'ProofreadIndexOai' => array( 'ProofreadIndexOai' ),
+	'ProofreadIndexOaiSchema' => array( 'ProofreadIndexOaiSchema' ),
 );
 
 /** Arabic (العربية) */
