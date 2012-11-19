@@ -162,11 +162,8 @@ $messages['qqq'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
 	'proofreadpage-preferences-showheaders-label' => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.',
-	'proofreadpage-indexoai-repositoryName' => 'Name of the OAI-PMH api.',
 	'proofreadpage-indexoai-eprint-content-url' => '{{notranslate}}',
-	'proofreadpage-indexoai-eprint-content-text' => 'Short description of the OAI-PMH api.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Title of the error when a requested XML Schema does not exist.',
-	'proofreadpage-indexoai-error-schemanotfound-text' => 'Text of the error when a requested XML Schema does not exist. $1: name of the schema.',
 );
 
 /** Achinese (Acèh)
@@ -1112,7 +1109,7 @@ $messages['br'] = array(
 	'proofreadpage_image_message' => 'Liamm war-du ar meneger',
 	'proofreadpage_page_status' => 'Statud ar bajenn',
 	'proofreadpage_js_attributes' => 'Aozer Titl Bloaz Embanner',
-	'proofreadpage_index_attributes' => "Type|Doare
+	'proofreadpage_index_attributes' => 'Type|Doare
 Title|Titl
 Author|Oberour
 Translator|Troer
@@ -1120,14 +1117,14 @@ Editor|Aozer
 School|Skol
 Year|Bloavezh embann
 Publisher|Embanner
-Address|Chomlec'h
-Key|Alc'hwez diforc'hañ
+Address|Chomlec’h
+Key|Alc’hwez diforc’hañ
 Source|Mammenn
 Image|Skeudenn
 Progress|Araokaat
 Volumes|Levrennoù|5
 Pages|Pajennoù|20
-Remarks|Notennoù|10",
+Remarks|Notennoù|10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pajenn|pajenn}}',
 	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
 	'proofreadpage_specialpage_searcherror' => 'Fazi el lusker enklask',
