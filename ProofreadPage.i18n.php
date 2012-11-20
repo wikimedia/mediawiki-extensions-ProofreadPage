@@ -162,8 +162,11 @@ $messages['qqq'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
 	'proofreadpage-preferences-showheaders-label' => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.',
+	'proofreadpage-indexoai-repositoryName' => 'Name of the OAI-PMH api.',
 	'proofreadpage-indexoai-eprint-content-url' => '{{notranslate}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Short description of the OAI-PMH api.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Title of the error when a requested XML Schema does not exist.',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Text of the error when a requested XML Schema does not exist. $1: name of the schema.',
 );
 
 /** Achinese (Acèh)
@@ -934,6 +937,10 @@ $messages['be-tarask'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вэртыкальная/гарызантальная разьметка',
 	'proofreadpage-preferences-showheaders-label' => 'Паказваць палі для верхняга і ніжняга калянтытулаў пры рэдагаваньні ў прасторы назваў {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Выкарыстоўваць гарызантальную разьметку для рэдагаваньня ў прасторы назваў {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Мэтазьвесткі кнігі з {{GRAMMAR:родны|{{SITENAME}}}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Мэтазьвесткі для кніг паводле ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Схема ня знойдзеная',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Схема «$1» ня знойдзеная.',
 );
 
 /** Bulgarian (български)
@@ -1529,6 +1536,10 @@ Bemerkungen||10',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikale/horizontale Ausrichtung',
 	'proofreadpage-preferences-showheaders-label' => 'Beim Bearbeiten von Seiten im Namensraum {{ns:page}} die Felder für die Kopf- und die Fußzeile anzeigen',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Beim Bearbeiten von Seiten im Namensraum {{ns:page}} ein horizontales Layout verwenden',
+	'proofreadpage-indexoai-repositoryName' => 'Buchmetadaten von {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Buchmetadaten, die von der Erweiterung „ProofreadPage“ verwaltet werden',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nicht gefunden',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Das Schema „$1“ wurde nicht gefunden',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -1620,6 +1631,10 @@ beyanati||10',
 	'proofreadpage-button-toggle-layout-label' => 'Kewtey/tikey  asayış',
 	'proofreadpage-preferences-showheaders-label' => 'Nameye {{ns:page}} çı vurneyeno heqa cı wendış u asayışi bımocne.',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} bındı timar kerdış dı serte hali karkerdış',
+	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}} ra metamelumatê kıtaban',
+	'proofreadpage-indexoai-eprint-content-text' => 'Pera Vurnayışi ra vıraştena kıtab de metamelumati.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Şema nêvineyê',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Be şemay $1 çıniya.',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -2219,6 +2234,7 @@ Huomautuksia||10',
  * @author Urhixidur
  * @author VIGNERON
  * @author Verdy p
+ * @author Wyz
  */
 $messages['fr'] = array(
 	'indexpages' => "Liste des pages d'index",
@@ -2293,6 +2309,10 @@ Remarques||10',
 	'proofreadpage-button-toggle-layout-label' => 'Disposition verticale/horizontale',
 	'proofreadpage-preferences-showheaders-label' => "Afficher des champs d'en-tête et de pied de page lors de l'édition dans l'espace de nommage {{ns:page}}",
 	'proofreadpage-preferences-horizontal-layout-label' => "Utiliser une disposition horizontale lors d'une modification dans l'espace de noms {{ns:page}}",
+	'proofreadpage-indexoai-repositoryName' => 'Métadonnées des livres de {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Métadonnées des livres gérés par ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schéma introuvable',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Le schéma $1 est introuvable.',
 );
 
 /** Franco-Provençal (arpetan)
@@ -3561,8 +3581,12 @@ $messages['ja'] = array(
 	'proofreadpage-button-reset-zoom-label' => '元の大きさ',
 	'proofreadpage-button-zoom-in-label' => '拡大',
 	'proofreadpage-button-toggle-layout-label' => '垂直方向/水平方向のレイアウト',
-	'proofreadpage-preferences-showheaders-label' => '{{ns:Page}} 名前空間での編集中にヘッダー/フッター フィールドを表示',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:Page}}名前空間での編集中にヘッダー/フッター フィールドを表示',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}}名前空間の編集の際に、水平レイアウトを使用',
+	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}}からの書籍のメタデータ',
+	'proofreadpage-indexoai-eprint-content-text' => 'ProofreadPage で管理されている書籍のメタデータ',
+	'proofreadpage-indexoai-error-schemanotfound' => 'XML スキーマが見つかりません',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 スキーマが見つかりませんでした。',
 );
 
 /** Jutish (jysk)
@@ -3954,6 +3978,10 @@ $messages['ko'] = array(
 	'proofreadpage-button-toggle-layout-label' => '수직/수평 레이아웃',
 	'proofreadpage-preferences-showheaders-label' => '{{ns:page}} 이름공간에서 편집할 때 머릿글 및 바닥글 필드 보이기',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} 이름공간에서 편집할 때 수평 레이아웃 사용',
+	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}} 책의 메타데이터',
+	'proofreadpage-indexoai-eprint-content-text' => 'PoofreadPage가 관리하는 책의 메타데이터입니다.',
+	'proofreadpage-indexoai-error-schemanotfound' => '스키마를 찾을 수 없음',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 스키마를 찾지 못했습니다.',
 );
 
 /** Kinaray-a (Kinaray-a)
@@ -4461,6 +4489,10 @@ $messages['mk'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вертикален/хоризонтален распоред',
 	'proofreadpage-preferences-showheaders-label' => 'Прикажувај заглавје и подножне при уредување на именскиот простор „{{ns:page}}“',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Користи хоризонтален распоред при уредување во именскиот простор „{{ns:page}}“',
+	'proofreadpage-indexoai-repositoryName' => 'Метаподатоци за книги од {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Метаподатоци за книги под раководство на ЛектураНаСтраници.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Шемата не е пронајдена',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Шемите $1 не се пронајдени.',
 );
 
 /** Malayalam (മലയാളം)
@@ -7083,6 +7115,10 @@ Ghi chú||10',
 	'proofreadpage-button-toggle-layout-label' => 'Đứng thẳng/ngang',
 	'proofreadpage-preferences-showheaders-label' => 'Hiện các hộp đầu/chân khi sửa đổi trong không gian tên {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Bố trí ngang các trang sửa đổi trong không gian tên {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Siêu dữ liệu sách {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Siêu dữ liệu các sách do ProofreadPage quản lý.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Không tìm thấy lược đồ',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Không tìm thấy lược đồ $1.',
 );
 
 /** Volapük (Volapük)
