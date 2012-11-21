@@ -1632,9 +1632,9 @@ beyanati||10',
 	'proofreadpage-preferences-showheaders-label' => 'Nameye {{ns:page}} çı vurneyeno heqa cı wendış u asayışi bımocne.',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} bındı timar kerdış dı serte hali karkerdış',
 	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}} ra metamelumatê kıtaban',
-	'proofreadpage-indexoai-eprint-content-text' => 'Pera Vurnayışi ra vıraştena kıtab de metamelumati.',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metamelumatê kıtaban terefê pela ke ğeletan kena raşt, idare beno.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Şema nêvineyê',
-	'proofreadpage-indexoai-error-schemanotfound-text' => 'Be şemay $1 çıniya.',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 şema nêvêniyaya.',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -2561,6 +2561,10 @@ Comentarios||10',
 	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical ou horizontal',
 	'proofreadpage-preferences-showheaders-label' => 'Mostrar os campos da cabeceira e do pé de páxina ao editar no espazo de nomes {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Utilizar a disposición horizontal ao editar no espazo de nomes {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadatos de libros de {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadatos de libros xestionados por ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Non se atopou o esquema',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Non se atopou o esquema "$1".',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -3503,6 +3507,10 @@ Note||10',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizzontale',
 	'proofreadpage-preferences-showheaders-label' => "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace {{ns:page}}",
 	'proofreadpage-preferences-horizontal-layout-label' => 'Usa il layout orrizzontale durante la modifica nel namespace {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadati dei libri da {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadati dei libri gestiti da ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema non trovato',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Lo schema $1 non è stato trovato.',
 );
 
 /** Japanese (日本語)
