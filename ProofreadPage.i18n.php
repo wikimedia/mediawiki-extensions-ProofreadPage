@@ -645,6 +645,7 @@ $messages['az'] = array(
 );
 
 /** تورکجه (تورکجه)
+ * @author E THP
  * @author Ebrahimi-amir
  */
 $messages['azb'] = array(
@@ -652,13 +653,20 @@ $messages['azb'] = array(
 	'pageswithoutscans' => 'اسکن المایان صحیفه‌لر',
 	'proofreadpage_image' => 'شکیل',
 	'proofreadpage_index' => 'ایندکس',
+	'proofreadpage_index_expected' => 'خطا: بئله بیر شخاخیص تاپیلمادی',
+	'proofreadpage_nosuch_index' => 'خطا: بئله بیر شاخیص تاپیلمادی',
+	'proofreadpage_nosuch_file' => 'خطا: بئله بیر فایل تاپیلمادی',
 	'proofreadpage_badpage' => 'یانلیش فرمت',
 	'proofreadpage_indexdupe' => 'دابلیکات باغلانتی',
 	'proofreadpage_prevpage' => 'قاباغکی صحیفه',
 	'proofreadpage_quality0_category' => 'متن‌سیز',
+	'proofreadpage_quality3_message' => 'بو صحیفه‌‌ده دوزلتمه ائدیلدی',
+	'proofreadpage_quality4_message' => 'بو صحیفه‌‌ تسدیقلنمیش',
 	'proofreadpage_index_status' => 'ایندکس دورومو',
 	'proofreadpage_index_size' => 'صحیفه‌لرین سایی',
+	'proofreadpage_specialpage_label_orderby' => 'سیفاریش (قايدا):',
 	'proofreadpage_specialpage_label_key' => 'آختار:',
+	'proofreadpage_specialpage_label_sortascending' => 'چوخالان سیرالاماق',
 	'proofreadpage_alphabeticalorder' => 'الیفبا سیراسی',
 	'proofreadpage_index_listofpages' => 'صحیفه‌لرین لیستی',
 	'proofreadpage_image_message' => 'ایندکس صحیفه‌سینه باغلا',
@@ -1634,7 +1642,7 @@ beyanati||10',
 	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}} ra metamelumatê kıtaban',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metamelumatê kıtaban terefê pela ke ğeletan kena raşt, idare beno.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Şema nêvineyê',
-	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 şema nêvêniyaya.',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 şema nêvineyaya.',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -3927,7 +3935,7 @@ $messages['ko'] = array(
 	'proofreadpage_indexdupe' => '중복된 링크',
 	'proofreadpage_indexdupetext' => '문서가 목차 문서에 한 번 이상 올라올 수 없습니다.',
 	'proofreadpage_nologin' => '로그인하지 않음',
-	'proofreadpage_nologintext' => '문서의 검토 상태를 수정하려면 [[Special:UserLogin|로그인]]해야 합니다.',
+	'proofreadpage_nologintext' => '문서의 교정 상태를 수정하려면 [[Special:UserLogin|로그인]]해야 합니다.',
 	'proofreadpage_notallowed' => '이 문서는 바꾸기가 불가능합니다.',
 	'proofreadpage_notallowedtext' => '이 문서의 교정 상태를 바꿀 수 없습니다.',
 	'proofreadpage_dataconfig_badformatted' => '데이터 구성의 버그',
@@ -3976,7 +3984,7 @@ $messages['ko'] = array(
 	'proofreadpage_source' => '출처',
 	'proofreadpage_source_message' => '이 글을 작성할 때 사용된 스캔본',
 	'right-pagequality' => '문서 품질 태그 수정하기',
-	'proofreadpage-section-tools' => '검토 도구',
+	'proofreadpage-section-tools' => '교정 도구',
 	'proofreadpage-group-zoom' => '확대/축소',
 	'proofreadpage-group-other' => '기타',
 	'proofreadpage-button-toggle-visibility-label' => '이 문서의 머리말과 꼬리말을 보이기/숨기기',

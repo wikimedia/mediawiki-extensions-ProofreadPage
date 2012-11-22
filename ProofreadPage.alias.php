@@ -89,6 +89,8 @@ $specialPageAliases['ja'] = array(
 $specialPageAliases['ko'] = array(
 	'IndexPages' => array( '색인문서' ),
 	'PagesWithoutScans' => array( '스캔안한문서' ),
+	'ProofreadIndexOai' => array( '색인교정Oai' ),
+	'ProofreadIndexOaiSchema' => array( '색인교정Oai스키마' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
@@ -125,6 +127,12 @@ $specialPageAliases['nds-nl'] = array(
 $specialPageAliases['nl'] = array(
 	'IndexPages' => array( 'Indexpaginas', 'Indexpagina\'s' ),
 	'PagesWithoutScans' => array( 'PaginasZonderScans', 'Pagina\'sZonderScans' ),
+);
+
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'IndexPages' => array( 'PagineIndicizzate' ),
+	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
 );
 
 /** Swedish (svenska) */
