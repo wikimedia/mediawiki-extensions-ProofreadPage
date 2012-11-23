@@ -57,9 +57,11 @@ $wgExtensionCredits['other'][] = array(
 );
 
 # OAI-PMH
-$wgAutoloadClasses['SpecialProofreadIndexOai'] = $dir . 'includes/index/SpecialProofreadIndexOai.php';
+$wgAutoloadClasses['SpecialProofreadIndexOai'] = $dir . 'includes/index/oai/SpecialProofreadIndexOai.php';
+$wgAutoloadClasses['ProofreadIndexOaiRecord'] = $dir . 'includes/index/oai/ProofreadIndexOaiRecord.php';
+$wgAutoloadClasses['ProofreadIndexOaiSets'] = $dir . 'includes/index/oai/ProofreadIndexOaiSets.php';
 $wgSpecialPages['ProofreadIndexOai'] = 'SpecialProofreadIndexOai';
-$wgAutoloadClasses['SpecialProofreadIndexOaiSchema'] = $dir . 'includes/index/SpecialProofreadIndexOaiSchema.php';
+$wgAutoloadClasses['SpecialProofreadIndexOaiSchema'] = $dir . 'includes/index/oai/SpecialProofreadIndexOaiSchema.php';
 $wgSpecialPages['ProofreadIndexOaiSchema'] = 'SpecialProofreadIndexOaiSchema';
 
 # special page

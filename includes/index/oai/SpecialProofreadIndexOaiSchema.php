@@ -37,12 +37,11 @@ class SpecialProofreadIndexOaiSchema extends UnlistedSpecialPage {
 
 		if ( $namespace === '' || !in_array($namespace, $this->namespaces) ) {
 			$this->getRequest()->response()->header( 'HTTP/1.1 404 Not Found' );
-			$output->showErrorPage( 'proofreadpage-indexoai-error-schemanotfound', 'proofreadpage-indexoai-error-schemanotfound-text', array( $namespace ) ); //TODO
-			return;
+			$output->showErrorPage( 'proofreadpage-indexoai-error-schemanotfound', 'proofreadpage-indexoai-error-schemanotfound-text', array( $namespace ) );
 		} else {
 			$output->disable();
 			header( 'Content-type: text/xml; charset=utf-8' );
-			readfile( __DIR__ . '/oai schemas/' . $namespace . '.xsd');
+			readfile( __DIR__ . '/schemas/' . $namespace . '.xsd' );
 		}
 	}
 }

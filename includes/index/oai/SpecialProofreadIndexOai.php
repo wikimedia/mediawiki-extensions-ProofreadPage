@@ -153,13 +153,22 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
 			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd' ) )
 			. "\n";
-		echo $this->responseDate();
-		echo $this->regurgitateRequest();
+		$error = '';
 		try {
 			$this->request = $this->parseRequest();
-			$this->doResponse( $this->request['verb'] );
 		} catch (ProofreadIndexOaiError $e ) {
-			echo $e->getXML();
+			$error = $e->getXML();
+		}
+		echo $this->responseDate();
+		echo $this->regurgitateRequest();
+		if ( $error === '') {
+			try {
+				$this->doResponse( $this->request['verb'] );
+			} catch (ProofreadIndexOaiError $e ) {
+				echo $e->getXML();
+			}
+		} else {
+			echo $error;
 		}
 		echo Xml::closeElement( 'OAI-PMH');
 	}
@@ -194,7 +203,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 				$this->listRecords( $verb );
 				break;
 			case 'ListSets':
-				throw new ProofreadIndexOaiError( "This repository doesn't support sets.", 'noSetHierarchy' );
+				$this->listSets();
 				break;
 			case 'ListMetadataFormats':
 				$this->listMetadataFormats();
@@ -382,6 +391,38 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	}
 
 	/**
+	 * Output the ListSets action
+	 */
+	protected function listSets() {
+		//try if the page exist (required by specification)
+		if ( !ProofreadIndexOaiSets::withSets() ) {
+			throw new ProofreadIndexOaiError( "This repository doesn't support sets.", 'noSetHierarchy' );
+		}
+
+		$sets = ProofreadIndexOaiSets::getSetsBySpec();
+		echo Xml::openElement( 'ListSets' ) . "\n";
+		foreach( $sets as $set ) {
+			echo Xml::openElement( 'set' ) . "\n";
+			echo Xml::element( 'setSpec', null, $set['spec'] ) . "\n";
+			echo Xml::element( 'setName', null, $set['name'] ) . "\n";
+			if ( isset( $set['description'] ) ) {
+				echo Xml::openElement( 'setDescription' ) . "\n";
+				echo Xml::openElement( 'oai_dc:dc', array(
+					'xmlns:oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/',
+					'xmlns:dc' => 'http://purl.org/dc/elements/1.1/',
+					'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
+					'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd' ) )
+					. "\n";
+				echo Xml::element( 'dc:description', null, $set['description'] ) . "\n";
+				echo Xml::closeElement( 'oai_dc:dc' ) . "\n";
+				echo Xml::closeElement( 'setDescription' ) . "\n";
+			}
+			echo Xml::closeElement( 'set' ) . "\n";
+		}
+		echo Xml::closeElement( 'ListSets' ) . "\n";
+	}
+
+	/**
 	 * Output the ListMetadataFormats action
 	 */
 	protected function listMetadataFormats() {
@@ -414,7 +455,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 			),
 			'prp_qdc' => array(
 				'namespace' => 'http://mediawiki.org/xml/proofreadpage/qdc/',
-				'schema'    => Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc')->getFullURL()
+				'schema'    => Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc' )->getFullURL()
 			)
 		);
 	}
@@ -545,6 +586,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	protected function listRecords( $verb ) {
 		$withData = ($verb == 'ListRecords');
 
+		$category = null;
 		$startToken = $this->validateToken( 'resumptionToken' );
 		if ( $startToken !== null ) {
 			$metadataPrefix = $startToken['metadataPrefix'];
@@ -555,13 +597,16 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 			$from = $this->validateDatestamp( 'from', '000000' );
 			$until = $this->validateDatestamp( 'until', '235959' );
 			if ( isset( $this->request['set'] ) ) {
-				throw new ProofreadIndexOaiError( 'This repository does not support sets.', 'noSetHierarchy' );
+				$category = ProofreadIndexOaiSets::getCategoryForSpec( $this->request['set'] );
+				if ( $category === null ) {
+					throw new ProofreadIndexOaiError( 'No records available match the request.', 'noRecordsMatch' );
+				}
 			}
 		}
 
 		# Fetch one extra row to check if we need a resumptionToken
 		$chunk = $this->getChunkSize();
-		$resultSet = $this->getIndexRows( $from, $until, $chunk + 1, $startToken );
+		$resultSet = $this->getIndexRows( $from, $until, $chunk + 1, $startToken, $category );
 		$count = min( $resultSet->numRows(), $chunk );
 		if ( !$count ) {
 			throw new ProofreadIndexOaiError( 'No records available match the request.', 'noRecordsMatch' );
@@ -605,227 +650,31 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		echo Xml::closeElement( $verb ) . "\n";
 	}
 
-	protected function getIndexRows( $from, $until, $chunk, $token = null ) {
+	protected function getIndexRows( $from, $until, $chunk, $token = null, $category = null ) {
 		$tables = array( 'page', 'revision' );
 		$fields = array( 'page_namespace', 'page_title', 'page_id', 'rev_timestamp', 'rev_id' );
-		$conds = array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() );
+		$conds = array( 'rev_id = page_latest' );
+		$conds['page_namespace'] = ProofreadPage::getIndexNamespaceId();
 		$options = array( 'LIMIT' => $chunk, 'ORDER BY' => array( 'page_id ASC' ) );
-		$join_conds = array( 'page' => array( 'JOIN', 'rev_id = page_latest' )	);
 
-		if ( $token ) {
+		if ( $token !== null ) {
 			$conds[] = 'page_id >= ' . $this->db->addQuotes( $token['resume_id'] );
 		}
 
-		if ( $from ) {
+		if ( $from !== null ) {
 			$conds[] = 'rev_timestamp >= ' . $this->db->addQuotes( $from );
 		}
-		if ( $until ) {
+		if ( $until !== null ) {
 			$conds[] = 'rev_timestamp <= ' . $this->db->addQuotes( $until );
 		}
 
-		return $this->db->select( $tables, $fields, $conds, __METHOD__, $options, $join_conds );
-	}
-}
-
-
-/**
- * Provide OAI record of an index page
- */
-class ProofreadIndexOaiRecord {
-	protected $index;
-	protected $lang;
-	protected $entries = array();
-	protected $lastEditionTimestamp;
-
-	/**
-	 * @param $index ProofreadIndexPage
-	 * @param $lastEditionTimestamp MW timestamp of the last edition
-	 */
-	public function __construct( ProofreadIndexPage $index, $lastEditionTimestamp ) {
-		$this->index = $index;
-		$this->lang = $this->index->getTitle()->getPageLanguage();
-		$this->lastEditionTimestamp = $lastEditionTimestamp;
-	}
-
-	/**
-	 * Return OAI record of an index page.
-	 * @param $format string
-	 * @return string
-	 */
-	public function renderRecord( $format ) {
-		global $wgRightsPage, $wgRightsUrl, $wgRightsText;
-
-		$record = Xml::openElement( 'record' ) . "\n";
-		$record .= $this->renderHeader();
-		$record .= Xml::openElement( 'metadata' ) . "\n";
-		switch( $format ) {
-			case 'oai_dc':
-				$record .= $this->renderOaiDc();
-				break;
-			case 'prp_qdc':
-				$record .= $this->renderDcQdc();
-				break;
-			default:
-				throw new MWException( 'Unsupported metadata format.' );
-		}
-		$record .= Xml::closeElement( 'metadata' ) . "\n";
-		$record .= Xml::closeElement( 'record' ) . "\n";
-		return $record;
-	}
-
-	/**
-	 * Return header of an OAI record of an index page.
-	 * @param $format string
-	 * @return string
-	 */
-	public function renderHeader() {
-		$text = Xml::openElement('header') . "\n";
-		$text .= Xml::element( 'identifier', null, $this->getIdentifier() ) . "\n";
-		$text .= Xml::element( 'datestamp',  null, SpecialProofreadIndexOai::datestamp( $this->lastEditionTimestamp ) ) . "\n";
-		$text .= Xml::closeElement( 'header' ) . "\n";
-		return $text;
-	}
-
-	/**
-	 * Return identifier of the record.
-	 * @return string
-	 */
-	protected function getIdentifier() {
-		return 'oai:' . SpecialProofreadIndexOai::repositoryIdentifier() . ':' . SpecialProofreadIndexOai::repositoryBasePath() . '/' . wfUrlencode( $this->index->getTitle()->getDBkey() );
-	}
-
-	/**
-	 * Return OAI DC record of an index page.
-	 * @return string
-	 */
-	protected function renderOaiDc() {
-		global $wgMimeType;
-
-		$record = Xml::openElement( 'oai_dc:dc', array(
-			'xmlns:oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/',
-			'xmlns:dc' => 'http://purl.org/dc/elements/1.1/',
-			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd' ) )
-			. "\n";
-
-		$record .= Xml::element( 'dc:type', null, 'Text' );
-		$record .= Xml::element( 'dc:format', null, $wgMimeType );
-
-		$mime = $this->index->getMimeType();
-		if ( $mime ) {
-			$record .= Xml::element( 'dc:format', null, $mime );
+		if ( $category !== null ) {
+			$tables[] = 'categorylinks';
+			$conds['cl_to'] = $category;
+			$conds[] = 'cl_from = page_id';
 		}
 
-		$metadata = $this->index->getIndexEntries();
-		foreach( $metadata as $entry ) {
-			$record .= $this->getOaiDcEntry( $entry );
-		}
-		$record .= Xml::closeElement( 'oai_dc:dc' );
-		return $record;
-	}
-
-	/**
-	 * Return Dublin Core entry
-	 * @param $entry ProofreadIndexEntry
-	 * @return string
-	 */
-	protected function getOaiDcEntry( ProofreadIndexEntry $entry ) {
-		$key = $entry->getSimpleDublinCoreProperty();
-		if ( !$key ) {
-			return '';
-		}
-
-		$text = '';
-		$values = $entry->getTypedValues();
-		foreach( $values as $value ) {
-			switch( $value->getMainType() ) {
-				case 'string':
-					$text .= Xml::element( $key, array( 'xml:lang' => $this->lang->getHtmlCode() ), $value ) . "\n";
-					break;
-				case 'page':
-					$text .= Xml::element( $key, null, $value->getMainText() ) . "\n";
-					break;
-				case 'number':
-					$text .= Xml::element( $key, null, $value ) . "\n";
-					break;
-				case 'identifier':
-					$text .= Xml::element( $key, null, $value->getUri() ) . "\n";
-					break;
-				case 'langcode':
-					$text .= Xml::element( $key, null, $value ) . "\n";
-					break;
-				default:
-					throw new MWException( 'Unknown type: ' . $entry->getType() );
-			}
-		}
-		return $text;
-	}
-
-	/**
-	 * Return Qualified Dublin Core record of an index page.
-	 * @return string
-	 */
-	protected function renderDcQdc() {
-		global $wgMimeType;
-		$record = Xml::openElement( 'prp_qdc:qdc', array(
-			'xmlns:prp_qdc' => 'http://mediawiki.org/xml/proofreadpage/qdc/',
-			'xmlns:dc' => 'http://purl.org/dc/elements/1.1/',
-			'xmlns:dcterms' => 'http://purl.org/dc/terms/',
-			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://mediawiki.org/xml/proofreadpage/qdc/ ' . Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc')->getFullURL() ) )
-			. "\n";
-
-		$record .= Xml::element( 'dc:type', array( 'xsi:type' => 'dcterms:DCMIType' ), 'Text' );
-		$record .= Xml::element( 'dc:format', array( 'xsi:type' => 'dcterms:IMT' ), $wgMimeType );
-
-		$mime = $this->index->getMimeType();
-		if ( $mime ) {
-			$record .= Xml::element( 'dc:format', array( 'xsi:type' => 'dcterms:IMT' ), $mime );
-		}
-
-		$metadata = $this->index->getIndexEntries();
-		foreach( $metadata as $entry ) {
-			$record .= $this->getDcQdcEntry( $entry );
-		}
-		$record .= Xml::closeElement( 'prp_qdc:qdc' );
-		return $record;
-	}
-
-	/**
-	 * Return Qualified Dublin Core entry
-	 * @param $entry ProofreadIndexEntry
-	 * @return string
-	 */
-	protected function getDcQdcEntry( ProofreadIndexEntry $entry ) {
-		$key = $entry->getQualifiedDublinCoreProperty();
-		if ( !$key ) {
-			return '';
-		}
-
-		$text = '';
-		$values = $entry->getTypedValues();
-		foreach( $values as $value ) {
-			switch( $value->getMainType() ) {
-				case 'string':
-					$text .= Xml::element( $key, array( 'xml:lang' => $this->lang->getHtmlCode() ), $value ) . "\n";
-					break;
-				case 'page':
-					$text .= Xml::element( $key, null, $value->getMainText() ) . "\n";
-					break;
-				case 'number':
-					$text .= Xml::element( $key, array( 'xsi:type' => 'xsi:decimal' ), $value ) . "\n";
-					break;
-				case 'identifier':
-					$text .= Xml::element( $key, array( 'xsi:type' => 'dcterms:URI' ), $value->getUri() ) . "\n";
-					break;
-				case 'langcode':
-					$text .= Xml::element( $key, array( 'xsi:type' => 'dcterms:RFC5646' ), $value ) . "\n";
-					break;
-				default:
-					throw new MWException( 'Unknown type: ' . $entry->getType() );
-			}
-		}
-		return $text;
+		return $this->db->select( $tables, $fields, $conds, __METHOD__, $options );
 	}
 }
 
