@@ -1956,6 +1956,10 @@ Comentarios||10',
 	'proofreadpage-button-toggle-layout-label' => 'Disposición vertical/horizontal',
 	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de encabezado y pie de página cuando se edita en el espacio de nombres {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Usar diseño horizontal cuando se edita en el espacio de nombres {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadatos de libros de {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadatos de libros gestionados por ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Esquema no encontrado',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'El esquema $1 no ha sido encontrado.',
 );
 
 /** Estonian (eesti)
