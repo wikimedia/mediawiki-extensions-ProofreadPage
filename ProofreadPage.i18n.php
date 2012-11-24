@@ -960,8 +960,8 @@ $messages['be-tarask'] = array(
 $messages['bg'] = array(
 	'indexpages' => 'Списък на индексните страници',
 	'proofreadpage_desc' => 'Позволява лесно сравнение на текст с оригинален сканиран документ',
-	'proofreadpage_image' => 'картинка',
-	'proofreadpage_index' => 'Показалец',
+	'proofreadpage_image' => 'Изображение',
+	'proofreadpage_index' => 'Индекс',
 	'proofreadpage_index_expected' => 'Грешка: очаква се индекс',
 	'proofreadpage_nosuch_index' => 'Грешка: няма такъв индекс',
 	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
@@ -969,7 +969,9 @@ $messages['bg'] = array(
 	'proofreadpage_badpagetext' => 'Форматът на страницата, която опитвате да запазите, е неправилен.',
 	'proofreadpage_indexdupetext' => 'Страниците не могат да се изписват повече от веднъж на индексната страница.',
 	'proofreadpage_nologin' => 'Не сте влезли',
+	'proofreadpage_nologintext' => 'Трябва да [[Special:UserLogin|влезете]], за да може да променяте състоянието на корекция на страниците.',
 	'proofreadpage_notallowed' => 'Промяната не е позволена',
+	'proofreadpage_notallowedtext' => 'Не ви е позволено да променяте състоянието на корекция на страницата.',
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
 	'proofreadpage_interval_too_large' => 'Грешка: обхватът е твърде голям',
 	'proofreadpage_invalid_interval' => 'Грешка: недопустим интервал',
@@ -982,21 +984,38 @@ $messages['bg'] = array(
 	'proofreadpage_quality2_category' => 'Проблематична',
 	'proofreadpage_quality3_category' => 'Коригирана',
 	'proofreadpage_quality4_category' => 'Одобрена',
+	'proofreadpage_quality0_message' => 'Страницата няма нужда от корекция',
+	'proofreadpage_quality1_message' => 'Страницата не е била коригирана',
+	'proofreadpage_quality2_message' => 'Имало е проблем при корекцията на страницата',
+	'proofreadpage_quality3_message' => 'Страницата е коригирана',
+	'proofreadpage_quality4_message' => 'Корекцията на страницата е одобрена',
+	'proofreadpage_index_size' => 'Брой страници',
+	'proofreadpage_specialpage_label_orderby' => 'Подредба по:',
+	'proofreadpage_specialpage_label_key' => 'Търсене:',
+	'proofreadpage_specialpage_label_sortascending' => 'Възходящо сортиране',
+	'proofreadpage_alphabeticalorder' => 'Азбучен ред',
 	'proofreadpage_index_listofpages' => 'Списък на страниците',
 	'proofreadpage_image_message' => 'Препратка към индексната страница',
-	'proofreadpage_page_status' => 'Статут на страницата',
+	'proofreadpage_page_status' => 'Състояние на страницата',
 	'proofreadpage_js_attributes' => 'Автор Заглавие Година Издател',
 	'proofreadpage_index_attributes' => 'Автор
 Заглавие
 Година|Година на публикация
 Издател
 Източник
-Изображение|Изображение на корицата
+Корица|Страница с корица
 Страници||20
 Забележки||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|страница|страници}}', # Fuzzy
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страници}}',
 	'proofreadpage_specialpage_legend' => 'Търсене в индексните страници',
 	'proofreadpage_source' => 'Източник',
+	'proofreadpage-section-tools' => 'Инструменти за корекцията',
+	'proofreadpage-group-zoom' => 'Мащабиране',
+	'proofreadpage-button-zoom-out-label' => 'Отдалечаване',
+	'proofreadpage-button-reset-zoom-label' => 'Оригинален размер',
+	'proofreadpage-button-zoom-in-label' => 'Приближаване',
+	'proofreadpage-button-toggle-layout-label' => 'Вертикално/хоризонтално оформление',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Ползване на хоризонтално оформление при редактиране в именното пространство {{ns:page}}',
 );
 
 /** Bengali (বাংলা)
