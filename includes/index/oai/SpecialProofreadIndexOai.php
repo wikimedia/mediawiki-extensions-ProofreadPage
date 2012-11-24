@@ -367,7 +367,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * @return string
 	 */
 	public static function repositoryBasePath() {
-		return 'pfpIndex';
+		return 'prpIndex';
 	}
 
 	/**
