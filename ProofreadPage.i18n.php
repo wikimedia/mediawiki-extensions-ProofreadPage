@@ -955,6 +955,7 @@ $messages['be-tarask'] = array(
  * @author Borislav
  * @author DCLXVI
  * @author Spiritia
+ * @author Stanqo
  * @author Turin
  */
 $messages['bg'] = array(
@@ -968,11 +969,13 @@ $messages['bg'] = array(
 	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
 	'proofreadpage_badpage' => 'Неправилен формат',
 	'proofreadpage_badpagetext' => 'Форматът на страницата, която опитвате да запазите, е неправилен.',
+	'proofreadpage_indexdupe' => 'Дублиран връзка',
 	'proofreadpage_indexdupetext' => 'Страниците не могат да се изписват повече от веднъж на индексната страница.',
 	'proofreadpage_nologin' => 'Не сте влезли',
 	'proofreadpage_nologintext' => 'Трябва да [[Special:UserLogin|влезете]], за да може да променяте състоянието на корекция на страниците.',
 	'proofreadpage_notallowed' => 'Промяната не е позволена',
 	'proofreadpage_notallowedtext' => 'Не ви е позволено да променяте състоянието на корекция на страницата.',
+	'proofreadpage_dataconfig_badformatted' => 'Грешка в конфигурацията на данни',
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
 	'proofreadpage_interval_too_large' => 'Грешка: обхватът е твърде голям',
 	'proofreadpage_invalid_interval' => 'Грешка: недопустим интервал',
@@ -990,6 +993,7 @@ $messages['bg'] = array(
 	'proofreadpage_quality2_message' => 'Имало е проблем при корекцията на страницата',
 	'proofreadpage_quality3_message' => 'Страницата е коригирана',
 	'proofreadpage_quality4_message' => 'Корекцията на страницата е одобрена',
+	'proofreadpage_index_status' => 'Индекс статус',
 	'proofreadpage_index_size' => 'Брой страници',
 	'proofreadpage_specialpage_label_orderby' => 'Подредба по:',
 	'proofreadpage_specialpage_label_key' => 'Търсене:',
@@ -1009,15 +1013,23 @@ $messages['bg'] = array(
 Забележки||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страници}}',
 	'proofreadpage_specialpage_legend' => 'Търсене в индексните страници',
+	'proofreadpage_specialpage_searcherror' => 'Грешка в търсачката',
+	'proofreadpage_specialpage_searcherrortext' => 'Търсачката не работи. Съжаляваме за неудобството.',
 	'proofreadpage_source' => 'Източник',
+	'proofreadpage_source_message' => 'Текстът е от сканирано издание',
 	'proofreadpage-section-tools' => 'Инструменти за корекцията',
 	'proofreadpage-group-zoom' => 'Мащабиране',
 	'proofreadpage-group-other' => 'Други',
+	'proofreadpage-button-toggle-visibility-label' => 'Показване/скриване на тази страница на горен и долен колонтитул',
 	'proofreadpage-button-zoom-out-label' => 'Отдалечаване',
 	'proofreadpage-button-reset-zoom-label' => 'Оригинален размер',
 	'proofreadpage-button-zoom-in-label' => 'Приближаване',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикално/хоризонтално оформление',
+	'proofreadpage-preferences-showheaders-label' => 'Покажи горен и долен колонтитул при редактиране в именно пространство {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Ползване на хоризонтално оформление при редактиране в именното пространство {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Метаданни на книги от {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Метаданни на книги, управлявани от ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Схема не е намерена',
 );
 
 /** Bengali (বাংলা)
@@ -2856,6 +2868,10 @@ $messages['he'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'פריסה אופקית או אנכית',
 	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "{{ns:page}}".',
 	'proofreadpage-preferences-horizontal-layout-label' => 'להשתמש בתצוגה אופקית בעת עריכה ב מרחב השם {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'מטא־נתונים של ספרים מאתר {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'מטא־נתונים של ספרים שמנהלת ההרחבה ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'לא נמצאה סכֵמה.',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'לא נמצאה הסכֵמה $1.',
 );
 
 /** Hindi (हिन्दी)
@@ -3108,6 +3124,10 @@ Přispomnjenki||10',
 	'proofreadpage-button-toggle-layout-label' => 'Padorune/Wodorune wuhotowanje',
 	'proofreadpage-preferences-showheaders-label' => 'Hłowowe a nohowe pola pokazać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Horicontalne wuhotowanje wužiwać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje',
+	'proofreadpage-indexoai-repositoryName' => 'Knižne metadaty z {{GRAMMAR:genitiw|{{SITENAME}}}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Knižne metadaty zrjadowane přez ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Šema njeje so namakał',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Šema $1 njeje so namakał.',
 );
 
 /** Hungarian (magyar)
@@ -4773,6 +4793,8 @@ Catatan||10',
 	'proofreadpage-button-toggle-layout-label' => 'Susun atur menegak/melintang',
 	'proofreadpage-preferences-showheaders-label' => 'Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata buku-buku dari {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata buku-buku yang diuruskan oleh ProofreadPage.',
 );
 
 /** Mirandese (Mirandés)
@@ -4919,6 +4941,7 @@ Opmarkingen||10',
 );
 
 /** Dutch (Nederlands)
+ * @author Donarreiskoffer
  * @author McDutchie
  * @author SPQRobin
  * @author Siebrand
@@ -4996,6 +5019,7 @@ Opmerkingen||10",
 	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale vormgeving',
 	'proofreadpage-preferences-showheaders-label' => 'Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema niet gevonden',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
