@@ -976,12 +976,15 @@ $messages['bg'] = array(
 	'proofreadpage_notallowed' => 'Промяната не е позволена',
 	'proofreadpage_notallowedtext' => 'Не ви е позволено да променяте състоянието на корекция на страницата.',
 	'proofreadpage_dataconfig_badformatted' => 'Грешка в конфигурацията на данни',
+	'proofreadpage_dataconfig_badformattedtext' => 'Страницата [[Mediawiki:Proofreadpage индекс данни config]] не е в добре форматирано JSON.', # Fuzzy
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
 	'proofreadpage_interval_too_large' => 'Грешка: обхватът е твърде голям',
 	'proofreadpage_invalid_interval' => 'Грешка: недопустим интервал',
 	'proofreadpage_nextpage' => 'Следваща страница',
 	'proofreadpage_prevpage' => 'Предишна страница',
+	'proofreadpage_header' => 'Заглавие (не е включено):',
 	'proofreadpage_body' => 'Тяло на страницата (за вграждане):',
+	'proofreadpage_footer' => 'Долен колонтитул (не се включва):',
 	'proofreadpage_toggleheaders' => 'превключване на видимостта на разделите с „noinclude“',
 	'proofreadpage_quality0_category' => 'Без текст',
 	'proofreadpage_quality1_category' => 'Некоригирана',
@@ -1017,6 +1020,7 @@ $messages['bg'] = array(
 	'proofreadpage_specialpage_searcherrortext' => 'Търсачката не работи. Съжаляваме за неудобството.',
 	'proofreadpage_source' => 'Източник',
 	'proofreadpage_source_message' => 'Текстът е от сканирано издание',
+	'right-pagequality' => 'Промяна на флаг за качеството на страница',
 	'proofreadpage-section-tools' => 'Инструменти за корекцията',
 	'proofreadpage-group-zoom' => 'Мащабиране',
 	'proofreadpage-group-other' => 'Други',
@@ -1030,6 +1034,7 @@ $messages['bg'] = array(
 	'proofreadpage-indexoai-repositoryName' => 'Метаданни на книги от {{SITENAME}}',
 	'proofreadpage-indexoai-eprint-content-text' => 'Метаданни на книги, управлявани от ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Схема не е намерена',
+	'proofreadpage-indexoai-error-schemanotfound-text' => ' $1 схема не е открита.',
 );
 
 /** Bengali (বাংলা)
@@ -4473,6 +4478,14 @@ $messages['mdf'] = array(
  */
 $messages['mhr'] = array(
 	'proofreadpage_nextpage' => 'Вес лаштык',
+);
+
+/** Minangkabau (Baso Minangkabau)
+ * @author Gombang
+ */
+$messages['min'] = array(
+	'indexpages' => 'Daftar laman indeks',
+	'proofreadpage_nologin' => 'Alun masuak log',
 );
 
 /** Macedonian (македонски)

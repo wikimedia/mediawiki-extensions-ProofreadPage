@@ -117,7 +117,7 @@ $specialPageAliases['nb'] = array(
 	'PagesWithoutScans' => array( 'Sider_uten_skanninger' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'IndexPages' => array( 'Indexpagina\'s' ),
 	'PagesWithoutScans' => array( 'Pagina\'s_zonder_deurlochting' ),
