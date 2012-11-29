@@ -644,7 +644,7 @@ $messages['az'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Orijinal ölçü',
 );
 
-/** تورکجه (تورکجه)
+/** South Azerbaijani (تورکجه)
  * @author E THP
  * @author Ebrahimi-amir
  */
@@ -969,22 +969,22 @@ $messages['bg'] = array(
 	'proofreadpage_nosuch_file' => 'Грешка: няма такъв файл',
 	'proofreadpage_badpage' => 'Неправилен формат',
 	'proofreadpage_badpagetext' => 'Форматът на страницата, която опитвате да запазите, е неправилен.',
-	'proofreadpage_indexdupe' => 'Дублиран връзка',
+	'proofreadpage_indexdupe' => 'Повтаряща се препратка',
 	'proofreadpage_indexdupetext' => 'Страниците не могат да се изписват повече от веднъж на индексната страница.',
 	'proofreadpage_nologin' => 'Не сте влезли',
 	'proofreadpage_nologintext' => 'Трябва да [[Special:UserLogin|влезете]], за да може да променяте състоянието на корекция на страниците.',
 	'proofreadpage_notallowed' => 'Промяната не е позволена',
 	'proofreadpage_notallowedtext' => 'Не ви е позволено да променяте състоянието на корекция на страницата.',
 	'proofreadpage_dataconfig_badformatted' => 'Грешка в конфигурацията на данни',
-	'proofreadpage_dataconfig_badformattedtext' => 'Страницата [[Mediawiki:Proofreadpage index data config]] не е в добре форматиран JSON.',
+	'proofreadpage_dataconfig_badformattedtext' => 'Страницата [[Mediawiki:Proofreadpage index data config]] не съдържа правилно структуриран JSON.',
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
 	'proofreadpage_interval_too_large' => 'Грешка: обхватът е твърде голям',
 	'proofreadpage_invalid_interval' => 'Грешка: недопустим интервал',
 	'proofreadpage_nextpage' => 'Следваща страница',
 	'proofreadpage_prevpage' => 'Предишна страница',
-	'proofreadpage_header' => 'Header (не се включва):',
+	'proofreadpage_header' => 'Горен колонтитул (не се включва):',
 	'proofreadpage_body' => 'Тяло на страницата (за вграждане):',
-	'proofreadpage_footer' => 'Footer (не се включва):',
+	'proofreadpage_footer' => 'Долен колонтитул (не се включва):',
 	'proofreadpage_toggleheaders' => 'превключване на видимостта на разделите с „noinclude“',
 	'proofreadpage_quality0_category' => 'Без текст',
 	'proofreadpage_quality1_category' => 'Некоригирана',
@@ -1033,7 +1033,7 @@ $messages['bg'] = array(
 	'proofreadpage-preferences-horizontal-layout-label' => 'Ползване на хоризонтално оформление при редактиране в именното пространство {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'Метаданни на книги от {{SITENAME}}',
 	'proofreadpage-indexoai-eprint-content-text' => 'Метаданни на книги, управлявани от ProofreadPage.',
-	'proofreadpage-indexoai-error-schemanotfound' => 'Схема не е намерена',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Схемата не беше открита',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Схемата $1 не беше открита.',
 );
 
