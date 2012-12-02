@@ -3846,6 +3846,19 @@ $messages['ka'] = array(
  */
 $messages['khw'] = array(
 	'indexpages' => 'صفحاتن لسٹ',
+	'proofreadpage_image' => 'ھوٹو',
+	'proofreadpage_index' => 'فھرست',
+	'proofreadpage_badpage' => 'غلطو شکل',
+	'proofreadpage_indexdupe' => 'ڈپلیکیٹ لنک',
+	'proofreadpage_nologin' => 'لاگ ان نو',
+	'proofreadpage_prevpage' => 'سابقہ صفحہ',
+	'proofreadpage_quality0_category' => 'ٹیکسٹو سار غیر',
+	'proofreadpage_specialpage_legend' => 'فھرست صفحات تلاش کورے',
+	'proofreadpage-group-other' => 'دیگر/خور',
+	'proofreadpage-button-zoom-out-label' => 'زوم آوٹ/Zoom out',
+	'proofreadpage-button-reset-zoom-label' => 'اصل سایز',
+	'proofreadpage-button-zoom-in-label' => 'زوم ان/Zoom in',
+	'proofreadpage-button-toggle-layout-label' => 'تھروسکی لے آوٹ',
 );
 
 /** Kirmanjki (Kırmancki)
