@@ -314,7 +314,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * @see http://www.openarchives.org/OAI/2.0/guidelines-branding.htm
 	 */
 	protected function brandingDescription() {
-		global $wgLogo, $wgSitename, $wgServer;
+		global $wgLogo, $wgSitename;
 		if ( !isset( $wgLogo ) ) {
 			return;
 		}
@@ -326,13 +326,8 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/branding/ http://www.openarchives.org/OAI/2.0/branding.xsd' ) )
 			. "\n";
 		echo Xml::openElement( 'collectionIcon' ) . "\n";
-		if ( $wgLogo[0] == '/' ) {
-			echo Xml::element( 'url', null, $wgServer . $wgLogo ) . "\n";
-		} else {
-			echo Xml::element( 'url', null, $wgLogo ) . "\n";
-		}
-		$mainPage = Title::newMainPage();
-		echo Xml::element( 'link', null, $mainPage->getCanonicalUrl() ) . "\n";
+		echo Xml::element( 'url', null, self::normalizeFullUrl( $wgLogo ) ) . "\n";
+		echo Xml::element( 'link', null, Title::newMainPage()->getCanonicalUrl() ) . "\n";
 		echo Xml::element( 'title', null, $wgSitename ) . "\n";
 		echo Xml::closeElement( 'collectionIcon' ) . "\n";
 		echo Xml::closeElement( 'branding' ) . "\n";
@@ -348,7 +343,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * return the repositoryIndentifier ie the domain name of the website.
+	 * Return the repositoryIndentifier ie the domain name of the website.
 	 * @return string
 	 */
 	public static function repositoryIdentifier() {
@@ -358,12 +353,12 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		}
 
 		global $wgServer;
-		$prefix = parse_url( $wgServer, PHP_URL_HOST );
+		$prefix = parse_url( self::normalizeFullUrl( $wgServer ), PHP_URL_HOST );
 		return $prefix;
 	}
 
 	/**
-	 * return the base path for all the records of the repository
+	 * Return the base path for all the records of the repository
 	 * @return string
 	 */
 	public static function repositoryBasePath() {
@@ -371,17 +366,34 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * return the earliest last rev_timestamp of an index page
+	 * Add if needed the base URL or the sheme
+	 * @param $url string
+	 * @return string
+	 */
+	protected static function normalizeFullUrl( $url ) {
+		global $wgServer;
+
+		if ( $url[0] === '/' ) {
+			if ( $url[1] === '/' ) {
+				return 'http:' . $url;
+			} else {
+				return $wgServer . $url;
+			}
+		} else {
+			return $url;
+		}
+	}
+
+	/**
+	 * Return the earliest last rev_timestamp of an index page
 	 * @return string
 	 */
 	protected function earliestDatestamp() {
 		$row = $this->db->selectRow(
-			array( 'page', 'revision' ),
+			array( 'revision', 'page' ),
 			array( 'MIN(rev_timestamp) AS min' ),
-			array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() ),
-			__METHOD__,
-			array(),
-			array( 'page' => array( 'JOIN', 'rev_id = page_latest' ) )
+			array( 'rev_id = page_latest' ) + array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() ),
+			__METHOD__
 		);
 		if ( $row->min ) {
 			return $row->min;
@@ -444,7 +456,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * return the list of metadata formats available in the repository
+	 * Return the list of metadata formats available in the repository
 	 * @return string
 	 */
 	protected function metadataFormats() {
