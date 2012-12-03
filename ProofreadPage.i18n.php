@@ -645,21 +645,45 @@ $messages['az'] = array(
 );
 
 /** South Azerbaijani (تورکجه)
+ * @author Amir a57
  * @author E THP
  * @author Ebrahimi-amir
  */
 $messages['azb'] = array(
 	'indexpages' => 'ایندکس صحیفه‌لری‌نین لیستی',
 	'pageswithoutscans' => 'اسکن المایان صحیفه‌لر',
+	'proofreadpage_desc' => 'اورژینال تارامايلا متنین آسانلیقلا موقايیسه ایجازه وئریر',
 	'proofreadpage_image' => 'شکیل',
 	'proofreadpage_index' => 'ایندکس',
 	'proofreadpage_index_expected' => 'خطا: بئله بیر شخاخیص تاپیلمادی',
 	'proofreadpage_nosuch_index' => 'خطا: بئله بیر شاخیص تاپیلمادی',
 	'proofreadpage_nosuch_file' => 'خطا: بئله بیر فایل تاپیلمادی',
 	'proofreadpage_badpage' => 'یانلیش فرمت',
+	'proofreadpage_badpagetext' => 'قئيد ائتمه‌يه چالیشدیغینیز صحیفه‌‌نین فورمتی یانلیش دیر.',
 	'proofreadpage_indexdupe' => 'دابلیکات باغلانتی',
+	'proofreadpage_indexdupetext' => 'بیر سیلسیله/سئریالین صحیفه‌‌سینده، صحیفه‌‌لر بیردن چوخ سادالانا بیلمز.',
+	'proofreadpage_nologin' => 'گیریش ائدیلممیش',
+	'proofreadpage_nologintext' => 'صحیفه‌لرین دوزلتمه وضعیتینی دییش‌دیرمک اوچون [[Special:UserLogin |قئیدیات‌لی]] اولمالیسینیز.', # Fuzzy
+	'proofreadpage_notallowed' => 'دییشیک لیگی ایزین عوض لمه اجازه سی یوخ',
+	'proofreadpage_notallowedtext' => 'بو صحیفه‌نین دوزلتمه وضعیتینی دییشدیرمیینیزه ایجازه وئریلمیر.',
+	'proofreadpage_dataconfig_badformatted' => 'بیلگی ياپیلاندیرماسیندا خطا',
+	'proofreadpage_number_expected' => 'خطا: عددی دیر گؤزلنیلیردی بئله انتظار یوخ',
+	'proofreadpage_interval_too_large' => 'خطا:بازاسی چوخ بویوک',
+	'proofreadpage_invalid_interval' => 'خطا: اعتبار سیز بازا',
+	'proofreadpage_nextpage' => 'سونراکی صفحه',
 	'proofreadpage_prevpage' => 'قاباغکی صحیفه',
+	'proofreadpage_header' => 'موضوع (ایچئرمئ):',
+	'proofreadpage_body' => 'صحیفه گؤوده‌سی (چارپاز علاوه اولونا‌جاق):',
+	'proofreadpage_footer' => 'آلت بیلگی(noinclude):',
+	'proofreadpage_toggleheaders' => 'ایچئریلمئيئن بؤلوملئری‌نین گؤرونورلوغونو دَییشتیر',
 	'proofreadpage_quality0_category' => 'متن‌سیز',
+	'proofreadpage_quality1_category' => 'دوزلدیلمه‌میش',
+	'proofreadpage_quality2_category' => 'سورونلو',
+	'proofreadpage_quality3_category' => 'یئنی‌دن باخیش',
+	'proofreadpage_quality4_category' => 'تصدیقلن‌میش',
+	'proofreadpage_quality0_message' => 'بو صحیفه‌ده دوزلیش ائدیلمه‌سی لازیم دئییل',
+	'proofreadpage_quality1_message' => 'بو صحیفه‌ده دوزلیش ائدیلمه‌دی',
+	'proofreadpage_quality2_message' => 'بو صحیفه‌ده دوزلیش ائدیلرکن بیر پروبلئم میدانا گلدی',
 	'proofreadpage_quality3_message' => 'بو صحیفه‌‌ده دوزلتمه ائدیلدی',
 	'proofreadpage_quality4_message' => 'بو صحیفه‌‌ تسدیقلنمیش',
 	'proofreadpage_index_status' => 'ایندکس دورومو',
@@ -682,12 +706,22 @@ $messages['azb'] = array(
 آچیقلامالار||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|صحیفه|صحیفه‌لر}}',
 	'proofreadpage_specialpage_legend' => 'ایندکس صحیفه‌لرینده آختار',
+	'proofreadpage_specialpage_searcherror' => 'آرما موهرریکی خاطاسی',
+	'proofreadpage_specialpage_searcherrortext' => 'آختاریش موهرریکی ایشلمیر. وئردیگیمیز ناراهات‌لیق‌دان اؤتری اوزر دیلییریک.',
 	'proofreadpage_source' => 'قایناق',
+	'proofreadpage_source_message' => 'بو متنی میدانا گتیرمک اوچون ایستیفاده ائدیلن دارانمیش نوسخه سی',
+	'right-pagequality' => 'صفحه نین کیفیت بایراغین دییشدیر',
+	'proofreadpage-section-tools' => 'دَییشدیرمه آراجلاری',
 	'proofreadpage-group-zoom' => 'زوم',
 	'proofreadpage-group-other' => 'آیری',
+	'proofreadpage-button-toggle-visibility-label' => 'بو فايلین اوست بیلگیلری و آلت معلوماتینی گؤستر / گیزلت',
 	'proofreadpage-button-zoom-out-label' => 'زومون کیچیلد',
 	'proofreadpage-button-reset-zoom-label' => 'اوریجینال اؤلچوسو',
 	'proofreadpage-button-zoom-in-label' => 'زوم ائت',
+	'proofreadpage-button-toggle-layout-label' => 'اوفوقی / شاقولی طرحی',
+	'proofreadpage-preferences-showheaders-label' => '{{Ns:page}} آد آلانیندا دوزنلرکن اوست بیلگی و آلت بیلگی آلان‌لارینی گؤستر',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{Ns:page}} آد ساحه‌سینده قایدایا اوفوقی نیزام ناویقاسیا:',
+	'proofreadpage-indexoai-error-schemanotfound' => 'سئچمه تاپمادی',
 );
 
 /** Bashkir (башҡортса)
