@@ -2148,6 +2148,7 @@ Oharrak||10',
 );
 
 /** Persian (فارسی)
+ * @author E THP
  * @author Ebraminio
  * @author Huji
  * @author Ladsgroup
@@ -2194,6 +2195,7 @@ $messages['fa'] = array(
 	'proofreadpage_quality2_message' => 'هنگام بازخوانی این صفحه مشکلی وجود داشت',
 	'proofreadpage_quality3_message' => 'این صفحه نمونه‌خوانی شده است',
 	'proofreadpage_quality4_message' => 'این صفحه اعتباردهی شده است',
+	'proofreadpage_index_status' => 'وضعیت فهرست',
 	'proofreadpage_specialpage_label_key' => 'جستجو:',
 	'proofreadpage_specialpage_label_sortascending' => 'مرتب‌سازی صعودی',
 	'proofreadpage_alphabeticalorder' => 'به ترتیب حروف الفبا',
