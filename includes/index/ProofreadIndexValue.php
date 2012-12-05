@@ -140,10 +140,12 @@ class ProofreadIndexValueString extends ProofreadIndexValue {
 	 * @return string
 	 */
 	public function __toString() { //TODO improve by removing all tags.
-		if( !is_null( $this->value ) )
+		if( $this->value !== null ) {
 			return $this->value;
+		}
 
 		$value = $this->wikiValue;
+		$value = trim( $value, " '\t\n\r\0\x0B" );
 		if( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
 			if( $m[2] ) {
 				$value = $m[2];
@@ -258,6 +260,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 	 * @param $value string
 	 */
 	protected function setValue( $value ) {
+		$value = trim( $value, " '\t\n\r\0\x0B" );
 		if( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
 			$value = $m[1];
 		}
@@ -308,6 +311,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 	 * @return bool
 	 */
 	public function isValid( $value ) {
+		$value = trim( $value, " '\t\n\r\0\x0B" );
 		if( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
 			$value = $m[1];
 		}
