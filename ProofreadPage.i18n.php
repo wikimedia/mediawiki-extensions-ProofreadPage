@@ -663,10 +663,11 @@ $messages['azb'] = array(
 	'proofreadpage_indexdupe' => 'دابلیکات باغلانتی',
 	'proofreadpage_indexdupetext' => 'بیر سیلسیله/سئریالین صحیفه‌‌سینده، صحیفه‌‌لر بیردن چوخ سادالانا بیلمز.',
 	'proofreadpage_nologin' => 'گیریش ائدیلممیش',
-	'proofreadpage_nologintext' => 'صحیفه‌لرین دوزلتمه وضعیتینی دییش‌دیرمک اوچون [[Special:UserLogin |قئیدیات‌لی]] اولمالیسینیز.', # Fuzzy
+	'proofreadpage_nologintext' => 'صحیفه‌لرین دوزلتمه وضعیتینی دییش‌دیرمک اوچون [[Special:UserLogin|گیریش ائده سیز]] اولمالیسینیز.',
 	'proofreadpage_notallowed' => 'دییشیک لیگی ایزین عوض لمه اجازه سی یوخ',
 	'proofreadpage_notallowedtext' => 'بو صحیفه‌نین دوزلتمه وضعیتینی دییشدیرمیینیزه ایجازه وئریلمیر.',
 	'proofreadpage_dataconfig_badformatted' => 'بیلگی ياپیلاندیرماسیندا خطا',
+	'proofreadpage_dataconfig_badformattedtext' => 'بو صحیفه‌‌ [[Mediawiki:Proofreadpage index data config]]-ده بیچیملئندیریلمیش جسون دئيیل.',
 	'proofreadpage_number_expected' => 'خطا: عددی دیر گؤزلنیلیردی بئله انتظار یوخ',
 	'proofreadpage_interval_too_large' => 'خطا:بازاسی چوخ بویوک',
 	'proofreadpage_invalid_interval' => 'خطا: اعتبار سیز بازا',
@@ -721,7 +722,10 @@ $messages['azb'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'اوفوقی / شاقولی طرحی',
 	'proofreadpage-preferences-showheaders-label' => '{{Ns:page}} آد آلانیندا دوزنلرکن اوست بیلگی و آلت بیلگی آلان‌لارینی گؤستر',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{Ns:page}} آد ساحه‌سینده قایدایا اوفوقی نیزام ناویقاسیا:',
+	'proofreadpage-indexoai-repositoryName' => 'کیتاب مئتا دئیتا {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'کیتابلار مئتا دئیتا يازیم طرفیندن بیلمیشدیر.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'سئچمه تاپمادی',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 شئماسی آشکار ائدیلمه‌میشدیر.',
 );
 
 /** Bashkir (башҡортса)
