@@ -103,6 +103,8 @@ $specialPageAliases['lb'] = array(
 $specialPageAliases['mk'] = array(
 	'IndexPages' => array( 'ИндексираниСтраници' ),
 	'PagesWithoutScans' => array( 'СтранициБезПроверки' ),
+	'ProofreadIndexOai' => array( 'ИндексПроверениOai' ),
+	'ProofreadIndexOaiSchema' => array( 'ИндексПроверениOaiШема' ),
 );
 
 /** Malayalam (മലയാളം) */
