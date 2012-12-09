@@ -127,7 +127,7 @@ $wgResourceModules += array(
 	'ext.proofreadpage.index' => $prpResourceTemplate + array(
 		'scripts' => 'ext.proofreadpage.index/ext.proofreadpage.index.js',
 		'styles'  => 'ext.proofreadpage.index/ext.proofreadpage.index.css',
-		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.ui.autocomplete' )
+		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.tipsy' )
 	),
 );
 
