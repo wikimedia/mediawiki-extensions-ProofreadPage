@@ -797,6 +797,13 @@ $messages['ba'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Текә/арҡыры билдә',
 );
 
+/** Balinese (ᬩᬲᬩᬮᬶ)
+ * @author NoiX180
+ */
+$messages['ban'] = array(
+	'indexpages' => 'Daptar kaca indèks',
+);
+
 /** Southern Balochi (بلوچی مکرانی)
  * @author Mostafadaneshvar
  */
@@ -1380,6 +1387,13 @@ Sumari||15",
 $messages['ceb'] = array(
 	'proofreadpage_nextpage' => 'Sunod nga panid',
 	'proofreadpage_prevpage' => 'Miaging panid',
+);
+
+/** Sorani Kurdish (کوردی)
+ * @author Calak
+ */
+$messages['ckb'] = array(
+	'proofreadpage_index_status' => 'چۆنێتیی پێرست',
 );
 
 /** Czech (česky)
@@ -4861,6 +4875,8 @@ Catatan||10',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'Metadata buku-buku dari {{SITENAME}}',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadata buku-buku yang diuruskan oleh ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Skema tidak dijumpai',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Skema $1 tidak dijumpai.',
 );
 
 /** Mirandese (Mirandés)
