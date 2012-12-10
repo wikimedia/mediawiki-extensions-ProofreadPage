@@ -166,7 +166,8 @@ $messages['qqq'] = array(
 	'proofreadpage-indexoai-eprint-content-url' => '{{notranslate}}',
 	'proofreadpage-indexoai-eprint-content-text' => 'Short description of the OAI-PMH api.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Title of the error when a requested XML Schema does not exist.',
-	'proofreadpage-indexoai-error-schemanotfound-text' => 'Text of the error when a requested XML Schema does not exist. $1: name of the schema.',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Text of the error when a requested XML schema does not exist. Parameters:
+* $1 is name of the schema.',
 );
 
 /** Achinese (Acèh)
@@ -5101,7 +5102,10 @@ Opmerkingen||10",
 	'proofreadpage-button-toggle-layout-label' => 'Verticale/horizontale vormgeving',
 	'proofreadpage-preferences-showheaders-label' => 'Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata voor boeken van {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata voor boeken beheerd via ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema niet gevonden',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Het schema $1 is niet aangetroffen.',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
