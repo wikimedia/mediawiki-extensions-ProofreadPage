@@ -26,6 +26,14 @@ $proofreadPageNamespacesNames['ar'] = array(
 );
 
 /** Assamese (অসমীয়া) */
+$proofreadPageNamespacesNames['as'] = array(
+	'page' => 'পৃষ্ঠা',
+	'page_talk' => 'পৃষ্ঠা_আলোচনা',
+	'index' => 'সূচী',
+	'index_talk' => 'সূচী_আলোচনা'
+);
+
+/** Belarusian (беларуская) */
 $proofreadPageNamespacesNames['be'] = array(
 	'page' => 'Старонка',
 	'page_talk' => 'Размовы_пра_старонку',
