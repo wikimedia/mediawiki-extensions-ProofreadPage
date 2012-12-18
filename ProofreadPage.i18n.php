@@ -2258,6 +2258,7 @@ $messages['fa'] = array(
  * @author Crt
  * @author Harriv
  * @author Jaakonam
+ * @author Kulmalukko
  * @author Nike
  * @author Olli
  * @author Str4nd
@@ -2299,6 +2300,7 @@ $messages['fi'] = array(
 	'proofreadpage_quality2_message' => 'Tämän sivun oikoluvussa oli ongelmia',
 	'proofreadpage_quality3_message' => 'Tämä sivu on oikoluettu',
 	'proofreadpage_quality4_message' => 'Tämä sivu on vahvistettu',
+	'proofreadpage_index_size' => 'Sivumäärä',
 	'proofreadpage_specialpage_label_orderby' => 'Järjestä:',
 	'proofreadpage_specialpage_label_key' => 'Etsi:',
 	'proofreadpage_specialpage_label_sortascending' => 'Lajittele nousevassa järjestyksessä',
@@ -2317,6 +2319,7 @@ Sivuja||20
 Huomautuksia||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|sivu|sivua}}',
 	'proofreadpage_specialpage_legend' => 'Hae indeksisivuilta',
+	'proofreadpage_specialpage_searcherror' => 'Virhe hakukoneessa',
 	'proofreadpage_source' => 'Lähde',
 	'proofreadpage_source_message' => 'Skannattua versiota on käytetty tämän tekstin muodostamiseen',
 	'right-pagequality' => 'Muuttaa sivun laatumerkintää',
