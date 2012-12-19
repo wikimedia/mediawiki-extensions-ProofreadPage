@@ -2319,7 +2319,7 @@ Sivuja||20
 Huomautuksia||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|sivu|sivua}}',
 	'proofreadpage_specialpage_legend' => 'Hae indeksisivuilta',
-	'proofreadpage_specialpage_searcherror' => 'Virhe hakukoneessa',
+	'proofreadpage_specialpage_searcherror' => 'Hakukone on rikki',
 	'proofreadpage_source' => 'Lähde',
 	'proofreadpage_source_message' => 'Skannattua versiota on käytetty tämän tekstin muodostamiseen',
 	'right-pagequality' => 'Muuttaa sivun laatumerkintää',
