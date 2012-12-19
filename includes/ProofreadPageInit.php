@@ -138,7 +138,7 @@ class ProofreadPageInit {
 	public static function getNamespaceId( $key, $configName ) {
 		global $wgProofreadPageNamespaceIds;
 
-		$namespaceText = strtolower( str_replace( ' ', '_', wfMsgForContent( $configName ) ) );
+		$namespaceText = strtolower( str_replace( ' ', '_', wfMessage( $configName )->inContentLanguage()->plain() ) );
 		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
 		if ( $namespace === null ) {
 			if ( !isset( $wgProofreadPageNamespaceIds[$key] ) ) {
