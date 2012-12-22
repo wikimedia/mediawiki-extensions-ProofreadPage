@@ -7367,6 +7367,7 @@ $messages['yue'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author PhiLiP
+ * @author Shirayuki
  * @author Xiaomingyan
  */
 $messages['zh-hans'] = array(
@@ -7405,6 +7406,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage_quality2_message' => '校对本页时出现了一个问题',
 	'proofreadpage_quality3_message' => '本页已经被校对',
 	'proofreadpage_quality4_message' => '本页已经被认证',
+	'proofreadpage_specialpage_label_key' => '搜索：',
 	'proofreadpage_index_listofpages' => '页面列表',
 	'proofreadpage_image_message' => '连到索引页的链接',
 	'proofreadpage_page_status' => '页面状态',
@@ -7438,6 +7440,7 @@ $messages['zh-hans'] = array(
  * @author Horacewai2
  * @author Liangent
  * @author Mark85296341
+ * @author Shirayuki
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -7476,6 +7479,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_quality2_message' => '校對本頁時出現了一個問題',
 	'proofreadpage_quality3_message' => '本頁已經被校對',
 	'proofreadpage_quality4_message' => '本頁已經被認證',
+	'proofreadpage_specialpage_label_key' => '搜尋：',
 	'proofreadpage_index_listofpages' => '頁面清單',
 	'proofreadpage_image_message' => '連到索引頁的連結',
 	'proofreadpage_page_status' => '頁面狀態',
