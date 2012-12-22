@@ -389,17 +389,26 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * @return string
 	 */
 	protected function earliestDatestamp() {
-		$row = $this->db->selectRow(
-			array( 'revision', 'page' ),
-			array( 'MIN(rev_timestamp) AS min' ),
-			array( 'rev_id = page_latest' ) + array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() ),
-			__METHOD__
-		);
-		if ( $row->min ) {
-			return $row->min;
-		} else {
-			throw new MWException( 'Bogus result.' );
+		global $wgMemc;
+		$memcKey = wfMemcKey( 'proofreadindexoai-earliestdatestamp' );
+		$datestamp = $wgMemc->get( $memcKey );
+
+		if ( $datestamp === false ) {
+			$row = $this->db->selectRow(
+				array( 'revision', 'page' ),
+				array( 'MIN(rev_timestamp) AS min' ),
+				array( 'rev_id = page_latest' ) + array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() ),
+				__METHOD__
+			);
+			if ( $row->min ) {
+				$datestamp = $row->min;
+				$wgMemc->set( $memcKey, $datestamp, 60*60*24 );
+			} else {
+				throw new MWException( 'Bogus result.' );
+			}
 		}
+
+		return $datestamp;
 	}
 
 	/**
