@@ -123,7 +123,7 @@ class EditProofreadIndexPage extends EditPage {
 	 * @param $key string the entry key
 	 */
 	protected function getFieldNameForEntry( $key ) {
-		return 'wpprpindex-' . $key;
+		return 'wpprpindex-' . str_replace( ' ', '_', $key );
 	}
 
 	/**

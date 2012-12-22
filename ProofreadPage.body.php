@@ -702,12 +702,11 @@ class ProofreadPage {
 	public static function renderPageList( $input, $args, $parser ) {
 		global $wgContLang;
 
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-		if ( !preg_match( "/^$index_namespace:(.*?)(\/(.*?)|)$/", $parser->getTitle()->getPrefixedText(), $m ) ) {
+		$title = $parser->getTitle();
+		if ( !$title->inNamespace( self::getIndexNamespaceId() ) ) {
 			return '';
 		}
-
-		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
+		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $title->getText() );
 		if ( !$imageTitle ) {
 			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
 		}
