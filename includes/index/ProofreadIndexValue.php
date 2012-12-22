@@ -362,7 +362,7 @@ class ProofreadIndexValueLangcode extends ProofreadIndexValue {
 	 * @return bool
 	 */
 	public function isValid( $value ) {
-		return true; //TODO validation of langcodes
+		return Language::isValidBuiltInCode( $value );
 	}
 }
 
