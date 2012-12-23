@@ -3854,6 +3854,8 @@ $messages['ka'] = array(
 	'proofreadpage_nologintext' => 'თქვენ უნდა [[Special:UserLogin|შეხვიდეთ სისტემაში]] სტატიების კორექტურის სტატუსის შესაცვლელად.',
 	'proofreadpage_notallowed' => 'ცვლილებები არაა დაშვებული',
 	'proofreadpage_notallowedtext' => 'თქვენ არ შეგიძლიათ ამ გვერდის კორექტურის სტატუსის შეცვლა.',
+	'proofreadpage_dataconfig_badformatted' => 'შეცდომა კონფიგურაციის მონაცემებში',
+	'proofreadpage_dataconfig_badformattedtext' => 'გვერდი [[Mediawiki:Proofreadpage index data config]] არ არის კარგად ჩამოყალიბებული JSON.',
 	'proofreadpage_number_expected' => 'შეცდომა: რიცხვითი მნიშვნელობის ლოდინი',
 	'proofreadpage_interval_too_large' => 'შეცდომა: ინტერვალი ძალიან დიდია',
 	'proofreadpage_invalid_interval' => 'შეცდომა: არასწორი ინტერვალი',
@@ -3873,8 +3875,11 @@ $messages['ka'] = array(
 	'proofreadpage_quality2_message' => 'ამ გვერდის კორექტირებისას პრობლემებია',
 	'proofreadpage_quality3_message' => 'ეს გვერდი კორექტირებულია',
 	'proofreadpage_quality4_message' => 'ეს გვერდი დამოწმებულია',
+	'proofreadpage_index_status' => 'სტატუსის ინდექსი',
 	'proofreadpage_index_size' => 'გვერდების რაოდენობა',
+	'proofreadpage_specialpage_label_orderby' => 'სორტირება:',
 	'proofreadpage_specialpage_label_key' => 'ძიება:',
+	'proofreadpage_specialpage_label_sortascending' => 'ზრდის მიხედვით დალაგება',
 	'proofreadpage_alphabeticalorder' => 'ანბანური თანმიმდევრობა',
 	'proofreadpage_index_listofpages' => 'გვერდების სია',
 	'proofreadpage_image_message' => 'ბმული ინდექსის გვერდზე',
@@ -3903,6 +3908,8 @@ $messages['ka'] = array(
 	'proofreadpage-button-zoom-in-label' => 'გადიდება',
 	'proofreadpage-button-toggle-layout-label' => 'ვერტიკალური/ჰორიზონტალური განლაგება',
 	'proofreadpage-preferences-showheaders-label' => 'სახელთა სივრცის {{ns:გვერდის}} რედაქტირებისას აჩვენე ზედა და ქვედა ველები.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'სქემა ვერ მოიძებნა',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'სქემა „$1“ ვერ მოიძებნა.',
 );
 
 /** Khowar (کھوار)
@@ -4559,10 +4566,19 @@ $messages['mhr'] = array(
 
 /** Minangkabau (Baso Minangkabau)
  * @author Gombang
+ * @author Naval Scene
  */
 $messages['min'] = array(
 	'indexpages' => 'Daftar laman indeks',
+	'proofreadpage_image' => 'Gamba',
 	'proofreadpage_nologin' => 'Alun masuak log',
+	'proofreadpage_notallowed' => 'Paubahan indak dibuliahan',
+	'proofreadpage_nextpage' => 'Laman salanjuiknyo',
+	'proofreadpage_prevpage' => 'Laman sabalunnyo',
+	'proofreadpage_specialpage_label_key' => 'Cari',
+	'proofreadpage-button-zoom-out-label' => 'Ketekkan',
+	'proofreadpage-button-zoom-in-label' => 'Gadangkan',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Skema indak ditamui',
 );
 
 /** Macedonian (македонски)
