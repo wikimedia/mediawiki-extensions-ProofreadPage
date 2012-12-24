@@ -1594,7 +1594,7 @@ class ProofreadPage {
 			}
 		}
 
-		if( $n == 0 ) {
+		if( !count( $pages ) ) {
 			return;
 		}
 
