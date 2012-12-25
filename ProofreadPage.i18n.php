@@ -655,6 +655,7 @@ $messages['az'] = array(
  * @author Amir a57
  * @author E THP
  * @author Ebrahimi-amir
+ * @author Mousa
  */
 $messages['azb'] = array(
 	'indexpages' => 'ایندکس صحیفه‌لری‌نین لیستی',
@@ -669,7 +670,7 @@ $messages['azb'] = array(
 	'proofreadpage_badpagetext' => 'قئيد ائتمه‌يه چالیشدیغینیز صحیفه‌‌نین فورمتی یانلیش دیر.',
 	'proofreadpage_indexdupe' => 'دابلیکات باغلانتی',
 	'proofreadpage_indexdupetext' => 'بیر سیلسیله/سئریالین صحیفه‌‌سینده، صحیفه‌‌لر بیردن چوخ سادالانا بیلمز.',
-	'proofreadpage_nologin' => 'گیریش ائدیلممیش',
+	'proofreadpage_nologin' => 'گیریش ائدیلمه‌میش',
 	'proofreadpage_nologintext' => 'صحیفه‌لرین دوزلتمه وضعیتینی دییش‌دیرمک اوچون [[Special:UserLogin|گیریش ائده سیز]] اولمالیسینیز.',
 	'proofreadpage_notallowed' => 'دییشیک لیگی ایزین عوض لمه اجازه سی یوخ',
 	'proofreadpage_notallowedtext' => 'بو صحیفه‌نین دوزلتمه وضعیتینی دییشدیرمیینیزه ایجازه وئریلمیر.',
@@ -3007,6 +3008,8 @@ $messages['hif-latn'] = array(
 	'proofreadpage_nologintext' => 'Aap ke chaahi ki aap panna ke proofreading status ke badle ke khatir [[Special:UserLogin|logged in]]  hae.',
 	'proofreadpage_notallowed' => 'Badle le allowed nai hae',
 	'proofreadpage_notallowedtext' => 'Aap ke ii panna ke proofreading status ke badle ke ijaajat nai hae.',
+	'proofreadpage_dataconfig_badformatted' => 'Data configuration me bug hae',
+	'proofreadpage_dataconfig_badformattedtext' => 'Panna [[Mediawiki:Proofreadpage index data config]] achchhaa se formatted JSON nai hae.',
 	'proofreadpage_number_expected' => 'Wrong: number ke jaruri rahaa',
 	'proofreadpage_interval_too_large' => 'Wrong: interval bahut barraa hae.',
 	'proofreadpage_invalid_interval' => 'Wrong: interval valid nai hae',
@@ -3026,6 +3029,12 @@ $messages['hif-latn'] = array(
 	'proofreadpage_quality2_message' => 'Proofread kare ke time kuchh karrbarri bhais',
 	'proofreadpage_quality3_message' => 'Ii panna ke proofread kar dewa gais hae',
 	'proofreadpage_quality4_message' => 'Ii panna ke validate kar dewa gais hae',
+	'proofreadpage_index_status' => 'Index ke status',
+	'proofreadpage_index_size' => 'Ketna panna hae',
+	'proofreadpage_specialpage_label_orderby' => 'Order me karo:',
+	'proofreadpage_specialpage_label_key' => 'Khojo',
+	'proofreadpage_specialpage_label_sortascending' => 'Chhota se barraa karo',
+	'proofreadpage_alphabeticalorder' => 'Alphabetical order me karo',
 	'proofreadpage_index_listofpages' => 'Panna ke suchi',
 	'proofreadpage_image_message' => 'Index panna se jorro',
 	'proofreadpage_page_status' => 'Panna ke status',
@@ -3040,6 +3049,8 @@ Panna||20
 Remarks||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|panna|panna}}',
 	'proofreadpage_specialpage_legend' => 'Index panna me khojo',
+	'proofreadpage_specialpage_searcherror' => 'Search engine me kuchh garrbarri hae',
+	'proofreadpage_specialpage_searcherrortext' => 'Search engine kaam nai kare hae. Iske khatir maafi hae.',
 	'proofreadpage_source' => 'File ke source',
 	'proofreadpage_source_message' => 'Scanned edition used to establish this text',
 	'right-pagequality' => 'Panna ke quality jhanda ke badlo',
@@ -3051,7 +3062,12 @@ Remarks||10',
 	'proofreadpage-button-reset-zoom-label' => 'Pahile ke size',
 	'proofreadpage-button-zoom-in-label' => 'Barraa karo',
 	'proofreadpage-button-toggle-layout-label' => 'Vertical/horizontal layout',
-	'proofreadpage-preferences-showheaders-label' => 'Panna ke namespace me badle ke time header aur footer ke dekhao', # Fuzzy
+	'proofreadpage-preferences-showheaders-label' => 'Panna ke {{ns:page}} namespace me badle ke time header aur footer ke dekhao',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} namespace me badle ke khatir horizontal layout ke kaam me laao.',
+	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}} se book ke metadata',
+	'proofreadpage-indexoai-eprint-content-text' => 'Book ke metadata jiske ProofreadPanna manage kare hae.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nai milaa',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 schema nai mila hae.',
 );
 
 /** Croatian (hrvatski)
@@ -3484,7 +3500,7 @@ $messages['ig'] = array(
 	'proofreadpage_nextpage' => 'Ihü sò',
 	'proofreadpage_prevpage' => 'Ihü na àzú',
 	'proofreadpage_index_listofpages' => 'Ndétu ihü',
-	'proofreadpage_source' => 'Mkpọlógwù',
+	'proofreadpage_source' => 'Mkpọlọ́gwụ̀',
 );
 
 /** Ido (Ido)
@@ -5674,7 +5690,7 @@ Willapusqakuna||10",
  * @author Stelistcristi
  */
 $messages['ro'] = array(
-	'indexpages' => 'Lista paginilor index',
+	'indexpages' => 'Lista paginilor de index',
 	'pageswithoutscans' => 'Pagini fără scanări',
 	'proofreadpage_desc' => 'Permite compararea facilă a textului față de scanarea originală',
 	'proofreadpage_image' => 'Imagine',
@@ -5709,6 +5725,12 @@ $messages['ro'] = array(
 	'proofreadpage_quality2_message' => 'Am întâmpinat o problemă la verificarea acestei pagini',
 	'proofreadpage_quality3_message' => 'Această pagină a fost verificată',
 	'proofreadpage_quality4_message' => 'Această pagină a fost validată',
+	'proofreadpage_index_status' => 'Statutul indexului',
+	'proofreadpage_index_size' => 'Număr de pagini',
+	'proofreadpage_specialpage_label_orderby' => 'Ordonare după:',
+	'proofreadpage_specialpage_label_key' => 'Căutare:',
+	'proofreadpage_specialpage_label_sortascending' => 'Sotare ascendentă',
+	'proofreadpage_alphabeticalorder' => 'Ordine alfabetică',
 	'proofreadpage_index_listofpages' => 'Lista paginilor',
 	'proofreadpage_image_message' => 'Legătură către pagina index',
 	'proofreadpage_page_status' => 'Starea paginii',
@@ -5723,6 +5745,8 @@ Pagini||20
 Comentarii||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagină|pagini|de pagini}}',
 	'proofreadpage_specialpage_legend' => 'Caută paginile de index',
+	'proofreadpage_specialpage_searcherror' => 'Eroare în motorul de căutare.',
+	'proofreadpage_specialpage_searcherrortext' => 'Motorul de căutare nu funcționează. Ne pare rău pentru inconveniență.',
 	'proofreadpage_source' => 'Sursă',
 	'proofreadpage_source_message' => 'Pentru a confirma acest text s-au utilizat ediția scanată',
 	'right-pagequality' => 'Modifică indicatorul de calitate a paginii',
