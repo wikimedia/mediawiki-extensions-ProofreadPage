@@ -4586,9 +4586,21 @@ $messages['mhr'] = array(
  */
 $messages['min'] = array(
 	'indexpages' => 'Daftar laman indeks',
+	'pageswithoutscans' => 'Laman indak ado pindaian',
+	'proofreadpage_desc' => 'Maijinan pabandiangan mudah antaro naskah jo asia pindaian nan asali',
 	'proofreadpage_image' => 'Gamba',
+	'proofreadpage_index' => 'Indeks',
+	'proofreadpage_index_expected' => 'Kasalahan: diparaluan indeks',
+	'proofreadpage_nosuch_index' => 'Kasalahan: indak ado indeks',
+	'proofreadpage_nosuch_file' => 'Kasalahan: indak ado berkas',
+	'proofreadpage_badpage' => 'Kasalahan Format',
+	'proofreadpage_badpagetext' => 'Format laman nan handak sudaro simpan indak bana',
+	'proofreadpage_indexdupe' => 'Manyalin pautan',
+	'proofreadpage_indexdupetext' => 'Laman-laman anyo dapek dimuek satu kali sajo di laman indeks.',
 	'proofreadpage_nologin' => 'Alun masuak log',
+	'proofreadpage_nologintext' => 'Sudaro aruih [[Special:UserLogin|masuak log]] untuak mampaeloki status koreksi laman.',
 	'proofreadpage_notallowed' => 'Paubahan indak dibuliahan',
+	'proofreadpage_notallowedtext' => 'Sudaro indak dibuliahan untuak maubah status kalimaik nan tatulih di laman iko.',
 	'proofreadpage_nextpage' => 'Laman salanjuiknyo',
 	'proofreadpage_prevpage' => 'Laman sabalunnyo',
 	'proofreadpage_specialpage_label_key' => 'Cari',
@@ -6182,6 +6194,8 @@ $messages['si'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'නියම ප්‍රමාණය',
 	'proofreadpage-button-zoom-in-label' => 'විශාලනය කරන්න',
 	'proofreadpage-button-toggle-layout-label' => 'සිරස්/තිරස් සැලැස්ම',
+	'proofreadpage-indexoai-error-schemanotfound' => 'සංක්ෂිප්ත නිරූපණය හමු නොවුණි',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 සංක්ෂිප්ත නිරූපණය හමු නොවුණි.',
 );
 
 /** Slovak (slovenčina)
