@@ -2263,6 +2263,7 @@ $messages['fa'] = array(
  * @author Nike
  * @author Olli
  * @author Str4nd
+ * @author VezonThunder
  * @author ZeiP
  */
 $messages['fi'] = array(
@@ -2321,6 +2322,7 @@ Huomautuksia||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|sivu|sivua}}',
 	'proofreadpage_specialpage_legend' => 'Hae indeksisivuilta',
 	'proofreadpage_specialpage_searcherror' => 'Hakukone on rikki',
+	'proofreadpage_specialpage_searcherrortext' => 'Hakukone ei toimi. Pahoittelemme häiriötä.',
 	'proofreadpage_source' => 'Lähde',
 	'proofreadpage_source_message' => 'Skannattua versiota on käytetty tämän tekstin muodostamiseen',
 	'right-pagequality' => 'Muuttaa sivun laatumerkintää',
@@ -3217,6 +3219,7 @@ Přispomnjenki||10',
 
 /** Hungarian (magyar)
  * @author Dani
+ * @author Dj
  * @author Dorgan
  * @author Glanthor Reviol
  * @author KossuthRad
@@ -3269,7 +3272,7 @@ Forrás
 Kép|Borító
 Oldalak||20
 Megjegyzések||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|lap|lap}}', # Fuzzy
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|lap|lap}}',
 	'proofreadpage_specialpage_legend' => 'Indexlapok keresése',
 	'proofreadpage_source' => 'Forrás',
 	'proofreadpage_source_message' => 'A szkennelt változat amin a szöveg alapszik',
@@ -4232,6 +4235,14 @@ $messages['ku-latn'] = array(
  */
 $messages['kw'] = array(
 	'proofreadpage_namespace' => 'Folen',
+);
+
+/** Kirghiz (Кыргызча)
+ * @author Growingup
+ */
+$messages['ky'] = array(
+	'proofreadpage_nextpage' => 'кийинки барак',
+	'proofreadpage_prevpage' => 'мурунку барак',
 );
 
 /** Latin (Latina)
