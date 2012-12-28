@@ -2487,7 +2487,7 @@ Comentèros||10',
 	'proofreadpage_specialpage_legend' => 'Rechèrchiér dens les pâges d’endèxe',
 	'proofreadpage_source' => 'Sôrsa',
 	'proofreadpage_source_message' => 'Èdicion scanâ que vint de cél tèxto',
-	'right-pagequality' => 'Changiér lo drapél de qualitât de la pâge',
+	'right-pagequality' => 'Changiér lo segnalement de qualitât de la pâge',
 	'proofreadpage-section-tools' => 'Outils d’éde a la rèvision',
 	'proofreadpage-group-zoom' => 'Zoome',
 	'proofreadpage-group-other' => 'Ôtra',
@@ -5419,6 +5419,7 @@ Uwagi||10',
  * @author Borichèt
  * @author Bèrto 'd Sèra
  * @author Dragonòt
+ * @author පසිඳු කාවින්ද
  * @author 555
  */
 $messages['pms'] = array(
@@ -5457,6 +5458,7 @@ $messages['pms'] = array(
 	'proofreadpage_quality2_message' => 'A-i é stàje un problema an revisionand sta pàgina-sì',
 	'proofreadpage_quality3_message' => "Sta pàgina-sì a l'é stàita revisionà",
 	'proofreadpage_quality4_message' => "Sta pàgina-sì a l'é stàita validà",
+	'proofreadpage_specialpage_label_key' => 'Serca:',
 	'proofreadpage_index_listofpages' => 'Lista ëd le pàgine',
 	'proofreadpage_image_message' => 'Colegament a la pàgina ëd tàula',
 	'proofreadpage_page_status' => 'Stat ëd la pàgina',
