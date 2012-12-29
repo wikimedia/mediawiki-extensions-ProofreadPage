@@ -73,12 +73,7 @@ class EditProofreadIndexPage extends EditPage {
 
 		$help = $entry->getHelp();
 		if ( $help !== '' ) {
-			$wgOut->addHTML(
-				Xml::openElement( 'span', array( 'class' => 'mw-help-field-container' ) ) .
-						Xml::element( 'span',  array( 'class' => 'mw-help-field-hint' ), ' ' ) .
-						Xml::element( 'span',  array( 'class' => 'mw-help-field-data' ), $help ) .
-				Xml::closeElement( 'span' )
-			);
+			$wgOut->addHTML( Xml::element( 'span', array( 'title' => $help, 'class' => 'prp-help-field' ) ) );
 		}
 
 		$wgOut->addHTML(
