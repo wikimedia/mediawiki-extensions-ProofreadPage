@@ -5439,6 +5439,8 @@ $messages['pms'] = array(
 	'proofreadpage_nologintext' => 'It deve [[Special:UserLogin|intré ant ël sistema]] për modifiché lë stat ëd verifìca ëd le pàgine.',
 	'proofreadpage_notallowed' => 'Cangiament pa possìbil',
 	'proofreadpage_notallowedtext' => 'It peule pa cambié lë stat ëd verìfica dë sta pàgina-sì.',
+	'proofreadpage_dataconfig_badformatted' => 'Eror ant la configurassion dij dat',
+	'proofreadpage_dataconfig_badformattedtext' => "The page [[Mediawiki:Proofreadpage index data config]] a l'é pa an JSON bin formatà.",
 	'proofreadpage_number_expected' => 'Eror: valor numérich spetà',
 	'proofreadpage_interval_too_large' => 'Eror: antërval tròp largh',
 	'proofreadpage_invalid_interval' => 'Eror: antërval pa bon',
@@ -5458,7 +5460,12 @@ $messages['pms'] = array(
 	'proofreadpage_quality2_message' => 'A-i é stàje un problema an revisionand sta pàgina-sì',
 	'proofreadpage_quality3_message' => "Sta pàgina-sì a l'é stàita revisionà",
 	'proofreadpage_quality4_message' => "Sta pàgina-sì a l'é stàita validà",
+	'proofreadpage_index_status' => "Stat ëd l'ìndes",
+	'proofreadpage_index_size' => 'Nùmer ëd pàgine',
+	'proofreadpage_specialpage_label_orderby' => 'Ordina për:',
 	'proofreadpage_specialpage_label_key' => 'Serca:',
+	'proofreadpage_specialpage_label_sortascending' => 'Órdina an chërsend',
+	'proofreadpage_alphabeticalorder' => 'Ordin alfabétich',
 	'proofreadpage_index_listofpages' => 'Lista ëd le pàgine',
 	'proofreadpage_image_message' => 'Colegament a la pàgina ëd tàula',
 	'proofreadpage_page_status' => 'Stat ëd la pàgina',
@@ -5473,6 +5480,8 @@ Pàgine||20
 Nòte||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pàgina|pàgine}}',
 	'proofreadpage_specialpage_legend' => 'Sërca ant le pàgine ëd tàula',
+	'proofreadpage_specialpage_searcherror' => "Eror ant ël motor d'arserca",
+	'proofreadpage_specialpage_searcherrortext' => "Ël motor d'arserca a travaja pa. Spiasent për l'inconvenient.",
 	'proofreadpage_source' => 'Sorgiss',
 	'proofreadpage_source_message' => 'Edission digitalisà dovrà për stabilì sto test-sì',
 	'right-pagequality' => 'Modifiché ël drapò ëd qualità dla pàgina',
@@ -5484,7 +5493,12 @@ Nòte||10',
 	'proofreadpage-button-reset-zoom-label' => "Amposté torna l'angrandiment",
 	'proofreadpage-button-zoom-in-label' => 'Angrandì',
 	'proofreadpage-button-toggle-layout-label' => 'Disposission vertical/orisontal',
-	'proofreadpage-preferences-showheaders-label' => "Smon-e dij camp d'antestassion e ëd pé ëd pàgina quand as modìfico jë spassi nominaj dla Pàgina", # Fuzzy
+	'proofreadpage-preferences-showheaders-label' => "Smon-e dij camp d'antestassion e ëd pé ëd pàgina quand as modìfico jë spassi nominaj dla {{ns:page}}",
+	'proofreadpage-preferences-horizontal-layout-label' => 'Dòvré un layout orisontal quand as modìfica ant l{{ns:page}} spassi nominal {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadat ëd lìber da {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadat ëd lìber gestì da ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema pa trovà',
+	'proofreadpage-indexoai-error-schemanotfound-text' => "Lë schema $1 a l'é pa stàit trovà.",
 );
 
 /** Pashto (پښتو)
@@ -7062,6 +7076,7 @@ $messages['ug-latn'] = array(
  * @author Base
  * @author Dim Grits
  * @author Prima klasy4na
+ * @author Steve.rusyn
  * @author Тест
  */
 $messages['uk'] = array(
@@ -7134,6 +7149,7 @@ $messages['uk'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Скинути збільшення',
 	'proofreadpage-button-zoom-in-label' => 'Збільшити',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальна / горизонтальна розмітка',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Схеми не знайдено',
 );
 
 /** Urdu (اردو)
