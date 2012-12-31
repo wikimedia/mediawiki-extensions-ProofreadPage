@@ -5104,7 +5104,7 @@ $messages['nl'] = array(
 	'proofreadpage_nosuch_file' => 'Fout: het aangegeven bestand bestaat niet',
 	'proofreadpage_badpage' => 'Verkeerde formaat',
 	'proofreadpage_badpagetext' => 'Het formaat van de pagina die u probeerde op te slaan is onjuist.',
-	'proofreadpage_indexdupe' => 'Dubbele verwijzing',
+	'proofreadpage_indexdupe' => 'Dubbele koppeling',
 	'proofreadpage_indexdupetext' => "Pagina's kunnen niet meer dan één keer op een indexpagina weergegeven worden.",
 	'proofreadpage_nologin' => 'Niet aangemeld',
 	'proofreadpage_nologintext' => "U moet [[Special:UserLogin|aanmelden]] om de proefleesstatus van pagina's te kunnen wijzigen.",
@@ -7060,6 +7060,27 @@ $messages['tzm'] = array(
 	'proofreadpage_page_status' => 'ⴰⴷⴷⴰⴷ ⵏ ⵜⴰⵙⵏⴰ',
 	'proofreadpage_source' => 'ⴰⵖⴱⴰⵍⵓ',
 	'proofreadpage-section-tools' => 'ⵉⵎⴰⵙⵙⵏ ⵓⵙⵉⵙⴷⵉⴷ',
+);
+
+/** Uyghur (Arabic script) (ئۇيغۇرچە)
+ * @author Sahran
+ */
+$messages['ug-arab'] = array(
+	'proofreadpage_image' => 'سۈرەت',
+	'proofreadpage_index' => 'مۇندەرىجە',
+	'proofreadpage_nologin' => 'تىزىمغا كىرمىدى',
+	'proofreadpage_nextpage' => 'كېيىنكى بەت',
+	'proofreadpage_prevpage' => 'ئالدىنقى بەت',
+	'proofreadpage_quality3_category' => 'تۈزەت',
+	'proofreadpage_specialpage_label_orderby' => 'تەرتىپى:',
+	'proofreadpage_specialpage_label_key' => 'ئىزدە:',
+	'proofreadpage_specialpage_label_sortascending' => 'ئۆسكۈچى تەرتىپ',
+	'proofreadpage_source' => 'مەنبە',
+	'proofreadpage-group-zoom' => 'كېڭەيت-تارايت',
+	'proofreadpage-group-other' => 'باشقا',
+	'proofreadpage-button-zoom-out-label' => 'كىچىكلەت',
+	'proofreadpage-button-reset-zoom-label' => 'ئەسلى چوڭلۇق',
+	'proofreadpage-button-zoom-in-label' => 'چوڭايت',
 );
 
 /** Uyghur (Latin script) (Uyghurche)
