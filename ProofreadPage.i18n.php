@@ -4627,7 +4627,19 @@ $messages['min'] = array(
 	'proofreadpage_nextpage' => 'Laman salanjuiknyo',
 	'proofreadpage_prevpage' => 'Laman sabalunnyo',
 	'proofreadpage_specialpage_label_key' => 'Cari',
+	'proofreadpage_index_attributes' => 'Pangarang
+Judul
+Taun|Taun tabik
+Panabik
+Sumber
+Gamba|Gamba muko
+Alaman||20
+Catatan||10',
+	'proofreadpage_specialpage_legend' => 'Cari alaman indeks',
+	'proofreadpage_source' => 'Sumber',
+	'proofreadpage-group-other' => 'Lain-lain',
 	'proofreadpage-button-zoom-out-label' => 'Ketekkan',
+	'proofreadpage-button-reset-zoom-label' => 'Ukuran asali',
 	'proofreadpage-button-zoom-in-label' => 'Gadangkan',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Skema indak ditamui',
 );
