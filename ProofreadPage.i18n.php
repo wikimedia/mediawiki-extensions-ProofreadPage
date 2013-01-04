@@ -1481,6 +1481,7 @@ Poznámky||10',
 );
 
 /** Danish (dansk)
+ * @author Christian List
  * @author Dferg
  * @author Jon Harald Søby
  * @author Peter Alberti
@@ -1559,6 +1560,10 @@ Bemærkninger||10',
 	'proofreadpage-button-toggle-layout-label' => 'Lodret/vandret opsætning',
 	'proofreadpage-preferences-showheaders-label' => 'Åbn automatisk felterne for sidehoved og sidefod under redigering i {{ns:page}}navnerummet',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Brug vandret opsætning, når du redigerer i {{ns:page}}-navnerummet',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata for bøger fra {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata for bøger, der forvaltes af ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Skemaet blev ikke fundet',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Skemaet $1 er ikke blevet fundet.',
 );
 
 /** German (Deutsch)
