@@ -65,6 +65,14 @@ $proofreadPageNamespacesNames['ca'] = array(
 	'index_talk' => 'Llibre_Discussió'
 );
 
+/** Czech (česky) */
+$proofreadPageNamespacesNames['cs'] = array(
+	'page' => 'Stránka',
+	'page_talk' => 'Diskuse_ke_stránce',
+	'index' => 'Index',
+	'index_talk' => 'Diskuse_k_indexu'
+);
+
 /** Welsh (Cymraeg) */
 $proofreadPageNamespacesNames['cy'] = array(
 	'page' => 'Tudalen',
