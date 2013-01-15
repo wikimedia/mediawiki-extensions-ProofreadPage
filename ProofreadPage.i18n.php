@@ -3953,6 +3953,7 @@ $messages['ka'] = array(
  */
 $messages['khw'] = array(
 	'indexpages' => 'صفحاتن لسٹ',
+	'pageswithoutscans' => 'اسکین نو کاردو صفحات',
 	'proofreadpage_image' => 'ھوٹو',
 	'proofreadpage_index' => 'فھرست',
 	'proofreadpage_badpage' => 'غلطو شکل',
@@ -3960,7 +3961,9 @@ $messages['khw'] = array(
 	'proofreadpage_nologin' => 'لاگ ان نو',
 	'proofreadpage_prevpage' => 'سابقہ صفحہ',
 	'proofreadpage_quality0_category' => 'ٹیکسٹو سار غیر',
+	'proofreadpage_quality1_category' => 'پروف ریڈنگ نو کاردو',
 	'proofreadpage_specialpage_legend' => 'فھرست صفحات تلاش کورے',
+	'proofreadpage-group-zoom' => 'زووم',
 	'proofreadpage-group-other' => 'دیگر/خور',
 	'proofreadpage-button-zoom-out-label' => 'زوم آوٹ/Zoom out',
 	'proofreadpage-button-reset-zoom-label' => 'اصل سایز',
