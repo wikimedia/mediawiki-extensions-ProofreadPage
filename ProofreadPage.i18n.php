@@ -7333,6 +7333,7 @@ $messages['uz'] = array(
 
 /** vèneto (vèneto)
  * @author Candalua
+ * @author GatoSelvadego
  * @author Vajotwo
  */
 $messages['vec'] = array(
@@ -7352,6 +7353,8 @@ $messages['vec'] = array(
 	'proofreadpage_nologintext' => 'Te ghè da èssar [[Special:UserLogin|autenticà]] par canbiar el stato de revision de le pagine.',
 	'proofreadpage_notallowed' => 'Canbiamento mia parmesso',
 	'proofreadpage_notallowedtext' => 'No te ghè el parmesso de canbiar el stato de revision de le pagine.',
+	'proofreadpage_dataconfig_badformatted' => 'Problema inte ła configurasion de i dati',
+	'proofreadpage_dataconfig_badformattedtext' => 'Ła pàjina [[Mediawiki:Proofreadpage index data config]] nó ła xe inte un formà JSON coreto.',
 	'proofreadpage_number_expected' => 'Eròr: me spetavo un valor numerico',
 	'proofreadpage_interval_too_large' => 'Eròr: intervalo massa grando',
 	'proofreadpage_invalid_interval' => 'Eròr: intervalo mia valido',
@@ -7371,6 +7374,12 @@ $messages['vec'] = array(
 	'proofreadpage_quality2_message' => 'Sta pagina la xe stà trascrita, ma no la xe gnancora a posto del tuto',
 	'proofreadpage_quality3_message' => "Sta pagina la xe stà trascrita da l'originale",
 	'proofreadpage_quality4_message' => 'Sta pagina la xe stà verificà da almanco do utenti',
+	'proofreadpage_index_status' => 'Stato avansamento',
+	'proofreadpage_index_size' => 'Nùmaro de pàjine',
+	'proofreadpage_specialpage_label_orderby' => 'Ordena par:',
+	'proofreadpage_specialpage_label_key' => 'Riserca:',
+	'proofreadpage_specialpage_label_sortascending' => 'Ordinamento cresente',
+	'proofreadpage_alphabeticalorder' => 'Ordine alfabetego',
 	'proofreadpage_index_listofpages' => 'Lista de le pagine',
 	'proofreadpage_image_message' => 'Colegamento a la pagina indice',
 	'proofreadpage_page_status' => 'Qualità de la pagina',
@@ -7385,6 +7394,8 @@ Pagine||20
 Note||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagina|pagine}}',
 	'proofreadpage_specialpage_legend' => 'Serca in te le pagine de indice',
+	'proofreadpage_specialpage_searcherror' => "Eror inte'l motor de riserca",
+	'proofreadpage_specialpage_searcherrortext' => "El motor de riserca nó 'l funsiona. Se scuxemo pa'l incoveniente.",
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edission scanerizà doparà par inserir sto testo',
 	'right-pagequality' => "Canbiar l'indicador de qualità de la pagina",
@@ -7396,6 +7407,12 @@ Note||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoom avanti',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizontale',
+	'proofreadpage-preferences-showheaders-label' => "Mostra l'intestasion e 'l pie de pàjina durante ła modifega inte'l namespace {{ns:page}}",
+	'proofreadpage-preferences-horizontal-layout-label' => "Dopara el layout orixontałe có te modifeghi inte'l namespace {{ns:page}}",
+	'proofreadpage-indexoai-repositoryName' => 'Metadati de i libri da {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadati de i libri gestìi da ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nó trovà',
+	'proofreadpage-indexoai-error-schemanotfound-text' => "El schema $1 nó 'l xe sta trovà.",
 );
 
 /** Veps (vepsän kel’)
