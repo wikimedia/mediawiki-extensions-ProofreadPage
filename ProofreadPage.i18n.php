@@ -3537,22 +3537,41 @@ $messages['io'] = array(
 );
 
 /** Icelandic (íslenska)
+ * @author Bjarki S
  * @author S.Örvarr.S
  * @author Snævar
  */
 $messages['is'] = array(
+	'indexpages' => 'Listi yfir frumritasíður',
+	'pageswithoutscans' => 'Síður án skönnunar',
 	'proofreadpage_desc' => 'Leyfa einfaldan samanburð á texta við upphaflega skönnun',
 	'proofreadpage_image' => 'Mynd',
+	'proofreadpage_index' => 'Frumrit',
+	'proofreadpage_index_expected' => 'Villa: frumrit vantar',
+	'proofreadpage_nosuch_index' => 'Villa: frumrit óþekkt',
 	'proofreadpage_nosuch_file' => 'Villa: Skráin er ekki til',
+	'proofreadpage_badpage' => 'Rangt skráarsnið',
+	'proofreadpage_badpagetext' => 'Skráarsnið síðunnar sem þú reyndir að vista er rangt.',
+	'proofreadpage_indexdupe' => 'Endurtekinn tengill',
+	'proofreadpage_indexdupetext' => 'Blaðsíður geta ekki komið fyrir oftar en einu sinni á frumritasíðu.',
 	'proofreadpage_nologin' => 'Óinnskráð(ur)',
 	'proofreadpage_nologintext' => 'Þú þarft að vera [[Special:UserLogin|skráð(ur) inn]] til þess að breyta prófarkar stöðu síðna.',
 	'proofreadpage_notallowed' => 'Breyting óheimil',
 	'proofreadpage_notallowedtext' => 'Þér er ekki heimilt að breyta prófarkarlesunar stöðu síðunnar.',
+	'proofreadpage_dataconfig_badformatted' => 'Villa í gagnaupplýsingum',
+	'proofreadpage_dataconfig_badformattedtext' => 'Síðan [[Mediawiki:Proofreadpage index data config]] er ekki á vel formuðu JSON sniði.',
 	'proofreadpage_number_expected' => 'Villa: Bjóst við tölu en fann hana ekki',
+	'proofreadpage_interval_too_large' => 'Villa: bil of stórt',
+	'proofreadpage_invalid_interval' => 'Villa: ógilt bil',
 	'proofreadpage_nextpage' => 'Næsta síða',
 	'proofreadpage_prevpage' => 'Fyrri síða',
+	'proofreadpage_header' => 'Haus (ekki innifalið):',
+	'proofreadpage_body' => 'Meginmál (verður innfellt):',
+	'proofreadpage_footer' => 'Fótur (ekki innifalið):',
+	'proofreadpage_toggleheaders' => 'fela hluti sem ekki verða innfeldir',
 	'proofreadpage_quality0_category' => 'Án texta',
 	'proofreadpage_quality1_category' => 'Ekki prófarkalesin',
+	'proofreadpage_quality2_category' => 'Vesen',
 	'proofreadpage_quality3_category' => 'Prófarkalesnar',
 	'proofreadpage_quality4_category' => 'Gildar',
 	'proofreadpage_quality0_message' => 'Ekki þarf að prófarkalesa þessa síðu',
@@ -3560,7 +3579,14 @@ $messages['is'] = array(
 	'proofreadpage_quality2_message' => 'Vandamál kom upp við prófarkarlesun síðunnar',
 	'proofreadpage_quality3_message' => 'Þessi síða hefur verið prófarkalesin',
 	'proofreadpage_quality4_message' => 'Þessi síða er gild',
+	'proofreadpage_index_status' => 'Staða frumrits',
+	'proofreadpage_index_size' => 'Fjöldi blaðsíðna',
+	'proofreadpage_specialpage_label_orderby' => 'Raða eftir:',
+	'proofreadpage_specialpage_label_key' => 'Leita:',
+	'proofreadpage_specialpage_label_sortascending' => 'Raða í hækkandi röð',
+	'proofreadpage_alphabeticalorder' => 'Stafrófsröð',
 	'proofreadpage_index_listofpages' => 'Listi yfir síður',
+	'proofreadpage_image_message' => 'Tengill á frumritssíðu',
 	'proofreadpage_page_status' => 'Staða síðu',
 	'proofreadpage_js_attributes' => 'Höfundur Titill Ár Útgefandi',
 	'proofreadpage_index_attributes' => 'Höfundur
@@ -3572,14 +3598,26 @@ Myndir|Forsíðumynd
 Síður||20
 Tileinkanir||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|síða|síður}}',
+	'proofreadpage_specialpage_legend' => 'Leita á frumritssíðum',
 	'proofreadpage_specialpage_searcherror' => 'Villa í leitarvél',
 	'proofreadpage_specialpage_searcherrortext' => 'Leitarvélin virkar ekki í augnablikinu. Afsakið ónæðið.',
 	'proofreadpage_source' => 'Uppruni',
+	'proofreadpage_source_message' => 'Skannað frumrit sem þessi texti byggir á',
+	'right-pagequality' => 'Breyta gæðamarkinu',
+	'proofreadpage-section-tools' => 'Prófarkarlestursverkfæri',
 	'proofreadpage-group-zoom' => 'Þysja',
 	'proofreadpage-group-other' => 'Annað',
+	'proofreadpage-button-toggle-visibility-label' => 'Sýna/fela haus og fót þessarar síðu',
 	'proofreadpage-button-zoom-out-label' => 'þysja út',
 	'proofreadpage-button-reset-zoom-label' => 'Upphafleg stærð',
 	'proofreadpage-button-zoom-in-label' => 'Þysja inn',
+	'proofreadpage-button-toggle-layout-label' => 'Lóðrétt/lárétt útlit',
+	'proofreadpage-preferences-showheaders-label' => 'Sýna textabox fyrir haus og fót þegar unnið er í {{ns:page}}-nafnarýminu.',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Nota lóðrétt útlit þegar unnið er í {{ns:page}}-nafnarýminu',
+	'proofreadpage-indexoai-repositoryName' => 'Lýsigögn bóka frá {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Lýsigögn bóka sem stjórnað er með ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Fann ekkert útlit.',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1-útlitið fannst ekki.',
 );
 
 /** Italian (italiano)
@@ -4872,6 +4910,7 @@ $messages['mn'] = array(
  * @author Sankalpdravid
  * @author Shantanoo
  * @author Vanandf1
+ * @author संतोष दहिवळ
  */
 $messages['mr'] = array(
 	'indexpages' => 'अनुक्रमणिका पानांची यादी',
@@ -4890,6 +4929,7 @@ $messages['mr'] = array(
 	'proofreadpage_nologintext' => 'पानाच्या प्रामाणिकरणाची   स्थिती बदलवण्यासाठी आपणास  [[Special:UserLogin|प्रवेश करणे ]] आवश्यक आहे.',
 	'proofreadpage_notallowed' => 'बदल करण्यास परवानगी नाही',
 	'proofreadpage_notallowedtext' => 'ह्या पानाच्या प्रामाणिकरणाची स्थिती बदलवण्याचे आपणास परवानगी नाही',
+	'proofreadpage_dataconfig_badformattedtext' => '[[Mediawiki:Proofreadpage index data config]] हे पान JSON  या योग्य प्रकारात नाही.',
 	'proofreadpage_number_expected' => 'त्रुटि: आकडी संख्या अपेक्षित आहे',
 	'proofreadpage_interval_too_large' => 'त्रुटी: अतिदीर्घ अंतराळ',
 	'proofreadpage_invalid_interval' => 'त्रुटि: अवैध अंतराळ',
@@ -4909,6 +4949,12 @@ $messages['mr'] = array(
 	'proofreadpage_quality2_message' => 'या पानाचे परीक्षण करतांना काही समस्या उद्भवल्या आहेत',
 	'proofreadpage_quality3_message' => 'या पानाचे परीक्षण झाले आहे',
 	'proofreadpage_quality4_message' => 'हे पान प्रमाणित केलेले आहे.',
+	'proofreadpage_index_status' => 'अनुक्रम स्थिती',
+	'proofreadpage_index_size' => 'पानांची संख्या',
+	'proofreadpage_specialpage_label_orderby' => 'यानुसार क्रम:',
+	'proofreadpage_specialpage_label_key' => 'शोधा',
+	'proofreadpage_specialpage_label_sortascending' => 'चढत्या क्रमाने लावा',
+	'proofreadpage_alphabeticalorder' => 'वर्णानुक्रमे',
 	'proofreadpage_index_listofpages' => 'पानांची यादी',
 	'proofreadpage_image_message' => 'अनुक्रमणिका असणाऱ्या पानाशी दुवा द्या',
 	'proofreadpage_page_status' => 'पानाची स्थिती',
@@ -4923,6 +4969,8 @@ $messages['mr'] = array(
 शेरा||१०',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|पान|पाने}}',
 	'proofreadpage_specialpage_legend' => 'अनुक्रमणिकेत शोधा',
+	'proofreadpage_specialpage_searcherror' => 'शोधयंत्रात त्रूटी',
+	'proofreadpage_specialpage_searcherrortext' => 'शोधयंत्र काम करीत नाही. आपल्याला झालेल्या त्रासाबद्दल खेद आहे.',
 	'proofreadpage_source' => 'स्रोत',
 	'proofreadpage_source_message' => 'ह्या मजकुरास प्रस्थापित करण्यासाठी स्कॅन आवृत्तीचा वापर करण्यात आलेला आहे',
 	'right-pagequality' => 'पृष्ठ गुणवत्ता निशाणास बदला',
@@ -4934,6 +4982,10 @@ $messages['mr'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'मूळ आकार',
 	'proofreadpage-button-zoom-in-label' => 'छोटे करा',
 	'proofreadpage-button-toggle-layout-label' => 'उभा/आडवा आराखडा',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:page}} या नामविश्वात संपादन करताना हेडर आणि फूटर दाखवा',
+	'proofreadpage-indexoai-repositoryName' => 'पुस्तकाचा मेटाडाटा {{SITENAME}} पासून',
+	'proofreadpage-indexoai-error-schemanotfound' => 'स्किमा सापडत नाही',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 स्किमा सापडत नाही.',
 );
 
 /** Malay (Bahasa Melayu)
