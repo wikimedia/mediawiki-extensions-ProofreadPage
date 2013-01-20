@@ -201,6 +201,14 @@ $proofreadPageNamespacesNames['id'] = array(
 	'index_talk' => 'Pembicaraan_Indeks'
 );
 
+/** Icelandic (íslenska) */
+$proofreadPageNamespacesNames['is'] = array(
+	'page' => 'Blaðsíða',
+	'page_talk' => 'Blaðsíðuspjall',
+	'index' => 'Frumrit',
+	'index_talk' => 'Frumritsspjall'
+);
+
 /** Italian (italiano) */
 $proofreadPageNamespacesNames['it'] = array(
 	'page' => 'Pagina',
