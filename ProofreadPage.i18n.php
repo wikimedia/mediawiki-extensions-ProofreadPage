@@ -177,7 +177,7 @@ $messages['ace'] = array(
 	'proofreadpage_specialpage_label_key' => 'Mita:',
 );
 
-/**    زَوُن (   زَوُن)
+/** Tunisian Spoken Arabic (   زَوُن)
  * @author Csisc
  */
 $messages['aeb'] = array(
@@ -5200,7 +5200,7 @@ Sieden||20
 Anmarkungen||10',
 );
 
-/** Nedersaksisch (Nedersaksisch)
+/** Nedersaksies (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
