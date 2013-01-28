@@ -119,7 +119,7 @@ $specialPageAliases['nb'] = array(
 	'PagesWithoutScans' => array( 'Sider_uten_skanninger' ),
 );
 
-/** Nedersaksies (Nedersaksies) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'IndexPages' => array( 'Indexpagina\'s' ),
 	'PagesWithoutScans' => array( 'Pagina\'s_zonder_deurlochting' ),
