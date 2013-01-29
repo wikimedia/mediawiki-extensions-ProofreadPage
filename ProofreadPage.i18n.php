@@ -3447,6 +3447,7 @@ Notas||10',
  * @author Farras
  * @author Irwangatot
  * @author IvanLanin
+ * @author Iwan Novirion
  */
 $messages['id'] = array(
 	'indexpages' => 'Daftar halaman indeks',
@@ -3465,6 +3466,8 @@ $messages['id'] = array(
 	'proofreadpage_nologintext' => 'Anda harus [[Special:UserLogin|masuk log]] untuk mengubah status koreksi halaman.',
 	'proofreadpage_notallowed' => 'Perubahan tidak diperbolehkan',
 	'proofreadpage_notallowedtext' => 'Anda tidak diperbolehkan untuk mengubah status uji-baca halaman ini.',
+	'proofreadpage_dataconfig_badformatted' => 'Galat dalam data konfigurasi',
+	'proofreadpage_dataconfig_badformattedtext' => 'Halaman [[Mediawiki:Proofreadpage index data config]] tidak dalam format JSON yang benar.',
 	'proofreadpage_number_expected' => 'Kesalahan: isi dengan angka',
 	'proofreadpage_interval_too_large' => 'Kesalahan: interval terlalu besar',
 	'proofreadpage_invalid_interval' => 'Kesalahan: interval tidak sah',
@@ -3484,6 +3487,12 @@ $messages['id'] = array(
 	'proofreadpage_quality2_message' => 'Ada masalah ketika menguji-baca halaman ini',
 	'proofreadpage_quality3_message' => 'Halaman ini telah diuji-baca',
 	'proofreadpage_quality4_message' => 'Halaman ini telah divalidasi',
+	'proofreadpage_index_status' => '|Satus indeks',
+	'proofreadpage_index_size' => 'Jumlah halaman',
+	'proofreadpage_specialpage_label_orderby' => 'Urut berdasarkan:',
+	'proofreadpage_specialpage_label_key' => 'Cari:',
+	'proofreadpage_specialpage_label_sortascending' => 'Urut naik',
+	'proofreadpage_alphabeticalorder' => 'Urutan abjad',
 	'proofreadpage_index_listofpages' => 'Daftar halaman',
 	'proofreadpage_image_message' => 'Pranala ke halaman indeks',
 	'proofreadpage_page_status' => 'Status halaman',
@@ -3498,6 +3507,8 @@ Halaman||20
 Catatan||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|halaman|halaman}}',
 	'proofreadpage_specialpage_legend' => 'Cari halaman indeks',
+	'proofreadpage_specialpage_searcherror' => 'Kesalahan dalam mesin pencari',
+	'proofreadpage_specialpage_searcherrortext' => 'Mesin pencari tidak bekerja. Maaf atas ketidaknyamanan ini.',
 	'proofreadpage_source' => 'Sumber',
 	'proofreadpage_source_message' => 'Versi pindai yang digunakan untuk membuat naskah ini',
 	'right-pagequality' => 'Memodifikasi tanda kualitas halaman',
@@ -3509,7 +3520,12 @@ Catatan||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ukuran asli',
 	'proofreadpage-button-zoom-in-label' => 'Perbesar',
 	'proofreadpage-button-toggle-layout-label' => 'Tata letak vertikal/horizontal',
-	'proofreadpage-preferences-showheaders-label' => 'Tampilkan kolom header dan footer saat menyunting di ruang nama Halaman', # Fuzzy
+	'proofreadpage-preferences-showheaders-label' => 'Menunjukkan bidang header dan footer saat menyunting dalam ruangnama {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Menggunakan tampilan horizontal saat menyunting dalam ruangnama {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata buku dari {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata dari buku-buku yang dikelola oleh ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Skema tidak ditemukan',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Skema $1 tidak ditemukan.',
 );
 
 /** Igbo (Igbo)
@@ -3826,6 +3842,7 @@ Anmarker||10',
 );
 
 /** Javanese (Basa Jawa)
+ * @author Bennylin
  * @author Meursault2004
  * @author NoiX180
  */
@@ -3846,6 +3863,8 @@ $messages['jv'] = array(
 	'proofreadpage_nologintext' => 'Sampéyan kudu [[Special:UserLogin|mlebu log]] kanggo ngowah status korèksi kaca.',
 	'proofreadpage_notallowed' => 'Owahan ora dililakaké',
 	'proofreadpage_notallowedtext' => 'Sampéyan ora dililakaké ngowah status korèksi kaca iki.',
+	'proofreadpage_dataconfig_badformatted' => 'Ana kesalahan ing konfigurasi data',
+	'proofreadpage_dataconfig_badformattedtext' => 'Kaca [[Mediawiki:Proofreadpage index data config]] ora diformat nganggo JSON.',
 	'proofreadpage_number_expected' => 'Kasalahan: isi mawa angka',
 	'proofreadpage_interval_too_large' => 'Kasalahan slisih kegedhèn',
 	'proofreadpage_invalid_interval' => 'Kasalah interval ora sah',
@@ -3900,6 +3919,10 @@ Cathetan||10',
 	'proofreadpage-button-toggle-layout-label' => 'Tata sèlèh vertikal/horizontal',
 	'proofreadpage-preferences-showheaders-label' => 'Tuduhaké bidhang irah-irahan lan sikil nalika nyunting nèng bilik jeneng {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Anggo tata sèlèh horizontal nalika nyunting nèng bilik jeneng {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata saka buku saka {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata buku-buku nganggo ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Skema ora ketemu',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Skema $1 ora ketemu.',
 );
 
 /** Georgian (ქართული)
