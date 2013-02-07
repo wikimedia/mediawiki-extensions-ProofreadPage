@@ -113,7 +113,7 @@ $specialPageAliases['ml'] = array(
 	'PagesWithoutScans' => array( 'സ്കാൻലഭ്യമല്ലാത്തതാളുകൾ' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'IndexPages' => array( 'Indekssider' ),
 	'PagesWithoutScans' => array( 'Sider_uten_skanninger' ),
