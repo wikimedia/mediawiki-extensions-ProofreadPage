@@ -137,6 +137,14 @@ $proofreadPageNamespacesNames['fa'] = array(
 	'index_talk' => 'گفتگوی_فهرست'
 );
 
+/** Finnish (suomi) */
+$proofreadPageNamespacesNames['fi'] = array(
+	'page' => 'Sivu',
+	'page_talk' => 'Keskustelu_sivusta',
+	'index' => 'Hakemisto',
+	'index_talk' => 'Keskustelu_hakemistosta'
+);
+
 /** French (Français) */
 $proofreadPageNamespacesNames['fr'] = array(
 	'page' => 'Page',
