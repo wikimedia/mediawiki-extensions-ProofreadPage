@@ -7724,6 +7724,7 @@ $messages['yue'] = array(
  * @author PhiLiP
  * @author Shirayuki
  * @author Xiaomingyan
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'indexpages' => '索引页列表',
@@ -7742,6 +7743,8 @@ $messages['zh-hans'] = array(
 	'proofreadpage_nologintext' => '您必须[[Special:UserLogin|先登录]]才能修改页面的校对状态。',
 	'proofreadpage_notallowed' => '不允许修改',
 	'proofreadpage_notallowedtext' => '您没有获得修改这个页面校对状态的许可。',
+	'proofreadpage_dataconfig_badformatted' => '数据配置错误',
+	'proofreadpage_dataconfig_badformattedtext' => '[[Mediawiki:Proofreadpage 索引数据配置]]页面不是标准的JSON格式。', # Fuzzy
 	'proofreadpage_number_expected' => '错误：不为数值',
 	'proofreadpage_interval_too_large' => '错误：间隔过大',
 	'proofreadpage_invalid_interval' => '错误：无法识别间隔',
@@ -7761,7 +7764,12 @@ $messages['zh-hans'] = array(
 	'proofreadpage_quality2_message' => '校对本页时出现了一个问题',
 	'proofreadpage_quality3_message' => '本页已经被校对',
 	'proofreadpage_quality4_message' => '本页已经被认证',
+	'proofreadpage_index_status' => '索引状态',
+	'proofreadpage_index_size' => '页数',
+	'proofreadpage_specialpage_label_orderby' => '排序方式：',
 	'proofreadpage_specialpage_label_key' => '搜索：',
+	'proofreadpage_specialpage_label_sortascending' => '升序',
+	'proofreadpage_alphabeticalorder' => '按字母顺序',
 	'proofreadpage_index_listofpages' => '页面列表',
 	'proofreadpage_image_message' => '连到索引页的链接',
 	'proofreadpage_page_status' => '页面状态',
@@ -7776,6 +7784,7 @@ $messages['zh-hans'] = array(
 评论||10',
 	'proofreadpage_pages' => '$2个{{PLURAL:$1|页面|页面}}',
 	'proofreadpage_specialpage_legend' => '搜索索引页',
+	'proofreadpage_specialpage_searcherror' => '搜索引擎错误',
 	'proofreadpage_source' => '来源',
 	'proofreadpage_source_message' => '扫描版用来建立这个文本',
 	'right-pagequality' => '修改页面质量标志',
