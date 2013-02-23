@@ -153,3 +153,9 @@ $specialPageAliases['vec'] = array(
 	'IndexPages' => array( 'PagineDeIndice' ),
 	'PagesWithoutScans' => array( 'PagineSensaScansion' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'IndexPages' => array( '索引页面' ),
+	'PagesWithoutScans' => array( '未扫描页面' ),
+);
