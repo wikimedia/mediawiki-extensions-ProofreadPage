@@ -105,6 +105,7 @@ Remarks||10',
  * @author Purodha
  * @author Rahuldeshmukh101
  * @author SPQRobin
+ * @author Shirayuki
  * @author Siebrand
  * @author The Evil IP address
  * @author Umherirrender
@@ -128,7 +129,8 @@ $messages['qqq'] = array(
 	'proofreadpage_quality0_category' => '{{Identical|Empty}}',
 	'proofreadpage_quality1_category' => 'Category name where quality level 1 pages are added to',
 	'proofreadpage_quality2_category' => 'Category name where quality level 2 pages are added to',
-	'proofreadpage_quality3_category' => 'Category name where quality level 3 pages are added to. Read as in "proofRED" (past participle).',
+	'proofreadpage_quality3_category' => 'Category name where quality level 3 pages are added to. Read as in "proofRED" (past participle).
+{{Identical|Proofread}}',
 	'proofreadpage_quality4_category' => 'Category name where quality level 4 pages are added to',
 	'proofreadpage_quality0_message' => 'Description of pages marked as a level 0 quality',
 	'proofreadpage_quality1_message' => 'Description of pages marked as a level 1 quality',

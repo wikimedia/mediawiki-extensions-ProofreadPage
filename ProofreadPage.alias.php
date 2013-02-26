@@ -154,6 +154,12 @@ $specialPageAliases['vec'] = array(
 	'PagesWithoutScans' => array( 'PagineSensaScansion' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'IndexPages' => array( 'Trang_mục_lục' ),
+	'PagesWithoutScans' => array( 'Trang_không_có_hình_quét' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'IndexPages' => array( '索引页面' ),
