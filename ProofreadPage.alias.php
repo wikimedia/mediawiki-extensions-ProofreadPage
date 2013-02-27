@@ -165,3 +165,9 @@ $specialPageAliases['zh-hans'] = array(
 	'IndexPages' => array( '索引页面' ),
 	'PagesWithoutScans' => array( '未扫描页面' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$specialPageAliases['zh-hant'] = array(
+	'IndexPages' => array( '索引頁面' ),
+	'PagesWithoutScans' => array( '未掃描頁面' ),
+);

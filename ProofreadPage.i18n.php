@@ -114,14 +114,14 @@ Remarks||10',
 $messages['qqq'] = array(
 	'indexpages' => 'Title of [[Special:IndexPages]]',
 	'pageswithoutscans' => 'Title of special page that lists texts without scans; that is, the texts that have not been transcluded into any other page',
-	'proofreadpage_desc' => '{{desc}}',
+	'proofreadpage_desc' => '{{desc|name=Proofread Page|url=http://www.mediawiki.org/wiki/Extension:Proofread_Page}}',
 	'proofreadpage_image' => '{{Identical|Image}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
 	'proofreadpage_nologin' => '{{Identical|Not logged in}}',
 	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
-	'proofreadpage_dataconfig_badformatted' => 'Title of the error page when [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON',
-	'proofreadpage_dataconfig_badformattedtext' => 'Content of the error page when [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON',
+	'proofreadpage_dataconfig_badformatted' => 'Title of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
+	'proofreadpage_dataconfig_badformattedtext' => 'Content of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_number_expected' => 'The place where the data entry should be in numeric form',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
@@ -146,9 +146,8 @@ $messages['qqq'] = array(
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
 	'proofreadpage_default_header' => '{{notranslate}}',
 	'proofreadpage_default_footer' => '{{notranslate}}',
-	'proofreadpage_pages' => '* Parameter $1: number of pages for use with PLURAL
-* Parameter $2: localised number of pages
-
+	'proofreadpage_pages' => '* $1 - number of pages for use with PLURAL
+* $2 - localised number of pages
 {{Identical|Page}}',
 	'proofreadpage_specialpage_text' => '{{notranslate}}',
 	'proofreadpage_specialpage_searcherror' => 'Title of the error page when the search engine does not work',
