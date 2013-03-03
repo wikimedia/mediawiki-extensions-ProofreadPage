@@ -7329,6 +7329,7 @@ $messages['ug-latn'] = array(
 /** Ukrainian (українська)
  * @author AS
  * @author Ahonc
+ * @author AtUkr
  * @author Base
  * @author Dim Grits
  * @author Prima klasy4na
@@ -7394,6 +7395,7 @@ $messages['uk'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|сторінка|сторінки|сторінок}}',
 	'proofreadpage_specialpage_legend' => 'Пошук сторінок індексації',
 	'proofreadpage_specialpage_searcherror' => 'Помилка в пошуковій системі',
+	'proofreadpage_specialpage_searcherrortext' => 'Пошукова система не працює. Вибачте за незручності.',
 	'proofreadpage_source' => 'Джерело',
 	'proofreadpage_source_message' => 'Для створення цього тексту використані відскановані видання',
 	'right-pagequality' => 'Змінювати статус якості сторінки',
@@ -7405,7 +7407,12 @@ $messages['uk'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Скинути збільшення',
 	'proofreadpage-button-zoom-in-label' => 'Збільшити',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальна / горизонтальна розмітка',
+	'proofreadpage-preferences-showheaders-label' => 'Показувати поля верхнього і нижнього колонтитулів при редагуванні в просторі імен {{ns:page}}.',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Використовувати горизонтальну розкладку при редагуванні в просторі імен {{ns:page}}.',
+	'proofreadpage-indexoai-repositoryName' => 'Метадані книг з {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Метадані книг, підтримуваних ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Схеми не знайдено',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Схему $1 не знайдено.',
 );
 
 /** Urdu (اردو)
