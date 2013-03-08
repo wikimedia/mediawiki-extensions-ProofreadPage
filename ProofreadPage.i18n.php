@@ -1247,6 +1247,7 @@ Remarks|Notennoù|10',
 	'proofreadpage-button-zoom-in-label' => 'Zoumañ',
 	'proofreadpage-button-toggle-layout-label' => 'Kinnig a-sav/a-led',
 	'proofreadpage-preferences-showheaders-label' => 'Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù e mod Pajenn', # Fuzzy
+	'proofreadpage-indexoai-error-schemanotfound' => "N'eo ket bet kavet ar brastres",
 );
 
 /** Bosnian (bosanski)
