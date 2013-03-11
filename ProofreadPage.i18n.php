@@ -1248,6 +1248,7 @@ Remarks|Notennoù|10',
 	'proofreadpage-button-toggle-layout-label' => 'Kinnig a-sav/a-led',
 	'proofreadpage-preferences-showheaders-label' => 'Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù e mod Pajenn', # Fuzzy
 	'proofreadpage-indexoai-error-schemanotfound' => "N'eo ket bet kavet ar brastres",
+	'proofreadpage-indexoai-error-schemanotfound-text' => "N'eo ket bet kavet ar brastres $1.",
 );
 
 /** Bosnian (bosanski)
