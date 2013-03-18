@@ -7280,10 +7280,13 @@ $messages['tt-cyrl'] = array(
 );
 
 /** Tuvinian (тыва дыл)
+ * @author Agilight
  * @author Sborsody
  */
 $messages['tyv'] = array(
 	'proofreadpage_image' => 'Чурумал',
+	'proofreadpage_index' => 'Индекс',
+	'proofreadpage_badpage' => 'Меге формат',
 	'proofreadpage_nextpage' => 'Соонда арын',
 	'proofreadpage_prevpage' => 'Бурунгу арын',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|арын|арын}}',
