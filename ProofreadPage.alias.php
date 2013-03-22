@@ -42,6 +42,8 @@ $specialPageAliases['da'] = array(
 $specialPageAliases['de'] = array(
 	'IndexPages' => array( 'Seiten_indexieren' ),
 	'PagesWithoutScans' => array( 'Seiten_ohne_Scans' ),
+	'ProofreadIndexOai' => array( 'Index_korrekturlesen_OAI' ),
+	'ProofreadIndexOaiSchema' => array( 'Index_korrekturlesen_OAI-Schema' ),
 );
 
 /** Zazaki (Zazaki) */
