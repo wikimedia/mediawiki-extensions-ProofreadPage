@@ -1878,6 +1878,11 @@ $messages['el'] = array(
 	'proofreadpage_quality2_message' => 'Υπήρξε ένα πρόβλημα στον έλεγχο για πιθανά λάθη αυτής της σελίδας',
 	'proofreadpage_quality3_message' => 'Η σελίδα αυτή έχει ελεγθεί για πιθανά λάθη',
 	'proofreadpage_quality4_message' => 'Αυτή η σελίδα έχει εγκριθεί',
+	'proofreadpage_index_size' => 'Αριθμός σελίδων',
+	'proofreadpage_specialpage_label_orderby' => 'Ταξινόμηση με:',
+	'proofreadpage_specialpage_label_key' => 'Αναζήτηση:',
+	'proofreadpage_specialpage_label_sortascending' => 'Αύξουσα ταξινόμηση',
+	'proofreadpage_alphabeticalorder' => 'Αλφαβητική σειρά',
 	'proofreadpage_index_listofpages' => 'Κατάλογος σελίδων',
 	'proofreadpage_image_message' => 'Σύνδεσμος προς τη σελίδα ευρετηρίου',
 	'proofreadpage_page_status' => 'Κατάσταση σελίδας',
@@ -1897,7 +1902,7 @@ $messages['el'] = array(
 Σελίδες||20
 
 Σχόλια||10',
-	'proofreadpage_pages' => '{{PLURAL:$1|σελίδα|σελίδες}}', # Fuzzy
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|Σελίδα|Σελίδες}}',
 	'proofreadpage_specialpage_legend' => 'Αναζήτηση σελίδων ευρετηρίου',
 	'proofreadpage_source' => 'Πηγή',
 	'proofreadpage-section-tools' => 'Διορθώστε τα εργαλεία',
@@ -3997,6 +4002,7 @@ $messages['ka'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|გვერდი|გვერდები}}',
 	'proofreadpage_specialpage_legend' => 'ინდექსური გვერდების ძიება',
 	'proofreadpage_specialpage_searcherror' => 'შეცდომა საძიებო სისტემაში',
+	'proofreadpage_specialpage_searcherrortext' => 'ეს საძიებო სისტემა არ მუშაობს. ბოდიშს გიხდით შექმნილი უხერხულობისათვის.',
 	'proofreadpage_source' => 'წყარო',
 	'proofreadpage_source_message' => 'ტექსტის ელექტრონული ვერსიის შესაქმნელად გამოყენებულია დასკანერებული მასალები',
 	'right-pagequality' => 'გვერდის ხარისხის დროშის შეცვლა',
@@ -4009,6 +4015,9 @@ $messages['ka'] = array(
 	'proofreadpage-button-zoom-in-label' => 'გადიდება',
 	'proofreadpage-button-toggle-layout-label' => 'ვერტიკალური/ჰორიზონტალური განლაგება',
 	'proofreadpage-preferences-showheaders-label' => 'სახელთა სივრცის {{ns:გვერდის}} რედაქტირებისას აჩვენე ზედა და ქვედა ველები.',
+	'proofreadpage-preferences-horizontal-layout-label' => 'ჰორიზონტალური განლაგების გამოყენება {{ns:page}} სახელთა სივრცის რედაქტირებისას',
+	'proofreadpage-indexoai-repositoryName' => 'წიგნების მეტამონაცემები საიტისათვის {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'წიგნების მეტამონაცემები დალაგებულია წაკითხვის მიხედვით.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'სქემა ვერ მოიძებნა',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'სქემა „$1“ ვერ მოიძებნა.',
 );

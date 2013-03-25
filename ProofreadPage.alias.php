@@ -166,6 +166,8 @@ $specialPageAliases['vi'] = array(
 $specialPageAliases['zh-hans'] = array(
 	'IndexPages' => array( '索引页面' ),
 	'PagesWithoutScans' => array( '未扫描页面' ),
+	'ProofreadIndexOai' => array( '校对索引OAI' ),
+	'ProofreadIndexOaiSchema' => array( '校对索引OAI图表' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
