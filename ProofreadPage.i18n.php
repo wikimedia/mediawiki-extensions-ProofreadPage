@@ -112,8 +112,9 @@ Remarks||10',
  * @author Yknok29
  */
 $messages['qqq'] = array(
-	'indexpages' => 'Title of [[Special:IndexPages]]',
-	'pageswithoutscans' => 'Title of special page that lists texts without scans; that is, the texts that have not been transcluded into any other page',
+	'indexpages' => '{{doc-special|IndexPages}}',
+	'pageswithoutscans' => '{{doc-special|PagesWithoutScans}}
+The special page lists texts without scans; that is, the texts that have not been transcluded into any other page.',
 	'proofreadpage_desc' => '{{desc|name=Proofread Page|url=http://www.mediawiki.org/wiki/Extension:Proofread_Page}}',
 	'proofreadpage_image' => '{{Identical|Image}}',
 	'proofreadpage_index' => '{{Identical|Index}}',
@@ -1685,7 +1686,7 @@ $messages['diq'] = array(
 	'proofreadpage_badpagetext' => 'Formatê pela ke şıma wazenê qeyd kerê ğeleto.',
 	'proofreadpage_indexdupe' => 'Gıre beno zêde',
 	'proofreadpage_indexdupetext' => 'Peli zerreyê pela zerreki de yew ra zêde liste nêbenê.',
-	'proofreadpage_nologin' => 'Şıma de nêkewtê',
+	'proofreadpage_nologin' => 'Şıma cıkewtış nêvıraşto',
 	'proofreadpage_nologintext' => 'qey vurnayişê halê raştkerdışê pelan gani şıma [[Special:UserLogin|cı kewiyi]].',
 	'proofreadpage_notallowed' => 'vurnayiş re destur çino',
 	'proofreadpage_notallowedtext' => 'vurnayişê halê raştkerdışê peli re destur nêdano',
