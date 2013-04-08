@@ -504,7 +504,7 @@ class ProofreadPage {
 			'proofreadPageUserName' => $wgUser->getName(),
 			'proofreadPageCss' => $css,
 		);
-		$out->addInlineScript( ResourceLoader::makeConfigSetScript( $jsVars ) );
+		$out->addJsConfigVars( $jsVars );
 
 		$out->addModules( 'ext.proofreadpage.page' );
 
@@ -1757,7 +1757,7 @@ class ProofreadPage {
 			$nt = Title::makeTitleSafe( $index_ns_index, $indextitle );
 			$indexlink = Linker::link( $nt, $out->msg( 'proofreadpage_source' )->text(),
 						array( 'title' => $out->msg( 'proofreadpage_source_message' )->text() ) );
-			$out->addInlineScript( ResourceLoader::makeConfigSetScript( array( 'proofreadpage_source_href' => $indexlink ) ) );
+			$out->addJsConfigVars( 'proofreadpage_source_href', $indexlink );
 			$out->addModules( 'ext.proofreadpage.article' );
 		}
 
