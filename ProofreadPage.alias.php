@@ -22,7 +22,7 @@ $specialPageAliases['ar'] = array(
 	'PagesWithoutScans' => array( 'صفحات_بدون_فحص' ),
 );
 
-/** Assamese (অসমীয়া) */
+/** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'IndexPages' => array( 'সমল_পৃষ্ঠাসমূহ' ),
 );
