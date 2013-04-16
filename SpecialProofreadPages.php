@@ -51,22 +51,22 @@ class ProofreadPages extends QueryPage {
 			$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
 
 			$output->addHTML(
-				Xml::openElement( 'form', array( 'action' => $wgScript ) ) .
+				Html::openElement( 'form', array( 'action' => $wgScript) ) .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-				Xml::input( 'limit', false, $this->limit, array( 'type' => 'hidden' ) ) .
-				Xml::openElement( 'fieldset' ) .
-				Xml::element( 'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
-				Xml::element( 'p' ) .
+				Html::input( 'limit', $this->limit, 'hidden', array() ) .
+				Html::openElement('fieldset', array() ) .
+				Html::element('legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
+				Html::openElement( 'p' ) .
 				Xml::label( $this->msg( 'proofreadpage_specialpage_label_key' )->text(), 'key' )  . ' ' .
-				Xml::input( 'key', 20, $this->searchTerm ) .
-				Xml::closeElement( 'p' ) .
-				Xml::element( 'p' ) .
+				Html::input( 'key', $this->searchTerm ) .
+				Html::closeElement( 'p' ) .
+				Html::openElement( 'p' ) .
 				Xml::label( $this->msg( 'proofreadpage_specialpage_label_orderby' )->text(), 'order' ) . ' ' . $orderSelect->getHtml() . ' ' .
 				Xml::checkLabel( $this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
 				Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
-				Xml::closeElement( 'p' ) .
-				Xml::closeElement( 'fieldset' ) .
-				Xml::closeElement( 'form' )
+				Html::closeElement( 'p' ) .
+				Html::closeElement( 'fieldset' ) .
+				Html::closeElement( 'form' )
 			);
 			if( $this->searchTerm ) {
 				$indexNamespaceId = ProofreadPage::getIndexNamespaceId();

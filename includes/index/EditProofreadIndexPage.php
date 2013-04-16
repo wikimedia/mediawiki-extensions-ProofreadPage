@@ -40,14 +40,14 @@ class EditProofreadIndexPage extends EditPage {
 		$index = new ProofreadIndexPage( $this->mTitle, $this->textbox1 );
 		$entries = $index->getIndexEntries();
 
-		$wgOut->addHTML( Xml::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
+		$wgOut->addHTML( Html::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
 		$i = 10;
 		foreach( $entries as $entry ) {
 			$inputAttributes['tabindex'] = $i;
 			$this->addEntry( $entry, $inputAttributes );
 			$i++;
 		}
-		$wgOut->addHTML( Xml::closeElement( 'table' ) );
+		$wgOut->addHTML( Html::closeElement( 'table' ) );
 	}
 
 	/**
@@ -65,20 +65,20 @@ class EditProofreadIndexPage extends EditPage {
 		$val = $this->safeUnicodeOutput( $entry->getStringValue() );
 
 		$wgOut->addHTML(
-			Xml::openElement( 'tr' ) .
-				Xml::openElement( 'th', array( 'scope' => 'row' ) ) .
+			Html::openElement( 'tr' ) .
+				Html::openElement( 'th', array( 'scope' => 'row' ) ) .
 					Xml::label( $entry->getLabel(), $key )
 		);
 
 
 		$help = $entry->getHelp();
 		if ( $help !== '' ) {
-			$wgOut->addHTML( Xml::element( 'span', array( 'title' => $help, 'class' => 'prp-help-field' ) ) );
+			$wgOut->addHTML( Html::element( 'span', array( 'title' => $help, 'class' => 'prp-help-field' ) ) );
 		}
 
 		$wgOut->addHTML(
-			Xml::closeElement( 'th' ) .
-			Xml::openElement( 'td' )
+			Html::closeElement( 'th' ) .
+			Html::openElement( 'td' )
 		);
 
 		$values = $entry->getPossibleValues();
@@ -100,15 +100,19 @@ class EditProofreadIndexPage extends EditPage {
 			if ( $size === 1 ) {
 				$inputAttributes['type'] = $inputType;
 				$inputAttributes['id'] = $key;
-				$wgOut->addHTML( Xml::input( $key, 60, $val, $inputAttributes ) );
-			} else {
-				$wgOut->addHTML( Xml::textarea( $key, $val, 60, $size, $inputAttributes ) );
+				$inputAttributes['size'] = 60;
+				$inputAttributes['cols'] = 60;
+				$inputAttributes['rows'] = $size;
+				$wgOut->addHTML( Html::input( $key, $val, $inputType, $inputAttributes ) );
+			}
+			else {
+		        $wgOut->addHTML( Html::textarea( $key, $val, $inputAttributes ) );
 			}
 		}
 
 		$wgOut->addHTML(
-				Xml::closeElement( 'td' ) .
-			Xml::closeElement( 'tr' )
+				Html::closeElement( 'td' ) .
+			Html::closeElement( 'tr' )
 		);
 	}
 
