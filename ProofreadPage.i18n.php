@@ -102,6 +102,7 @@ Remarks||10',
  * @author Minh Nguyen
  * @author Mormegil
  * @author Nike
+ * @author Octahedron80
  * @author Purodha
  * @author Rahuldeshmukh101
  * @author SPQRobin
@@ -154,8 +155,9 @@ The special page lists texts without scans; that is, the texts that have not bee
 	'proofreadpage_specialpage_searcherror' => 'Title of the error page when the search engine does not work',
 	'proofreadpage_specialpage_searcherrortext' => 'Content of the error page when the search engine does not work',
 	'proofreadpage_source' => '{{Identical|Source}}',
-	'right-pagequality' => '{{doc-right|pagequality}}',
-	'proofreadpage-group-zoom' => '{{Identical|Zoom}}',
+	'right-pagequality' => '{{doc-right|pagequality}}
+คำหลักอยู่ที่ flag บ่งบอกสถานะ modify page quality',
+	'proofreadpage-group-zoom' => 'ซูม ไม่ใช่ภาษาไทย',
 	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.
 {{Identical|Other}}',
 	'proofreadpage-button-toggle-visibility-label' => 'Tooltip text in button for include and noinclude edit boxes toggle, only visible in edit mode.',
@@ -7143,7 +7145,7 @@ $messages['th'] = array(
 	'proofreadpage_index_listofpages' => 'รายชื่อหน้า',
 	'proofreadpage_image_message' => 'ลิงก์ไปยังหน้าดัชนี',
 	'proofreadpage_page_status' => 'สถานะของหน้า',
-	'proofreadpage_js_attributes' => 'ผู้ประพันธ์ ชื่อเรื่อง ปี สำนักพิมพ์',
+	'proofreadpage_js_attributes' => 'ผู้แต่ง ชื่อเรื่อง ปี สำนักพิมพ์',
 	'proofreadpage_index_attributes' => 'ผู้แต่ง
 ชื่อเรื่อง
 ปี|ปีที่พิมพ์
@@ -7155,17 +7157,17 @@ $messages['th'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|หน้า|หน้า}}',
 	'proofreadpage_specialpage_legend' => 'ค้นหาหน้าดัชนี',
 	'proofreadpage_specialpage_searcherror' => 'ข้อผิดพลาดในเสิร์ชเอนจิน',
-	'proofreadpage_specialpage_searcherrortext' => 'เซิร์ชเอนจินไม่ทำงาน ขออภัยในความไม่สะดวก',
+	'proofreadpage_specialpage_searcherrortext' => 'เสิร์ชเอนจินไม่ทำงาน ขออภัยในความไม่สะดวก',
 	'proofreadpage_source' => 'แหล่งที่มา',
 	'proofreadpage_source_message' => 'รุ่นสแกนที่ใช้สร้างข้อความนี้',
-	'right-pagequality' => 'ดัดแปรตัวบ่งชี้คุณภาพหน้า',
+	'right-pagequality' => 'ตัวบ่งชี้เปลี่ยนแปลงคุณภาพหน้า',
 	'proofreadpage-section-tools' => 'เครื่องมือพิสูจน์อักษร',
-	'proofreadpage-group-zoom' => 'ซูม',
+	'proofreadpage-group-zoom' => 'ย่อ/ขยาย',
 	'proofreadpage-group-other' => 'อื่น ๆ',
 	'proofreadpage-button-toggle-visibility-label' => 'แสดง/ซ่อนหัวเรื่องและท้ายเรื่องของหน้านี้',
-	'proofreadpage-button-zoom-out-label' => 'ซูมออก',
+	'proofreadpage-button-zoom-out-label' => 'ย่อ',
 	'proofreadpage-button-reset-zoom-label' => 'ขนาดเดิม',
-	'proofreadpage-button-zoom-in-label' => 'ซูมเข้า',
+	'proofreadpage-button-zoom-in-label' => 'ขยาย',
 	'proofreadpage-button-toggle-layout-label' => 'เค้าโครงแนวตั้ง/แนวนอน',
 	'proofreadpage-preferences-showheaders-label' => 'แสดงเขตข้อมูลหัวเรื่องและท้ายเรื่องเมื่อแก้ไขในเนมสเปซ {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'ใช้เค้าโครงแนวนอนเมื่อแก้ไขในเนมสเปซ {{ns:page}}',
