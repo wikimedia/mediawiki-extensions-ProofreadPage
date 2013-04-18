@@ -155,9 +155,8 @@ The special page lists texts without scans; that is, the texts that have not bee
 	'proofreadpage_specialpage_searcherror' => 'Title of the error page when the search engine does not work',
 	'proofreadpage_specialpage_searcherrortext' => 'Content of the error page when the search engine does not work',
 	'proofreadpage_source' => '{{Identical|Source}}',
-	'right-pagequality' => '{{doc-right|pagequality}}
-คำหลักอยู่ที่ flag บ่งบอกสถานะ modify page quality',
-	'proofreadpage-group-zoom' => 'ซูม ไม่ใช่ภาษาไทย',
+	'right-pagequality' => '{{doc-right|pagequality}}',
+	'proofreadpage-group-zoom' => '{{Identical|Zoom}}',
 	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.
 {{Identical|Other}}',
 	'proofreadpage-button-toggle-visibility-label' => 'Tooltip text in button for include and noinclude edit boxes toggle, only visible in edit mode.',
