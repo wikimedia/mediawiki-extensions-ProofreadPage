@@ -269,7 +269,7 @@ $messages['af'] = array(
 	'proofreadpage_indexdupe' => 'Dubbele skakel',
 	'proofreadpage_indexdupetext' => "Bladsye kan nie meer as een keer op 'n indeksbladsy gelys word nie.",
 	'proofreadpage_nologin' => 'Nie aangeteken nie',
-	'proofreadpage_nologintext' => 'U moet [[Special:UserLogin|aanteken]] om die proeflees-status van bladsye te kan wysig.',
+	'proofreadpage_nologintext' => 'U moet [[Special:UserLogin|aanmeld]] om die proeflees-status van bladsye te kan wysig.',
 	'proofreadpage_notallowed' => 'Wysiging is nie toegelaat nie',
 	'proofreadpage_notallowedtext' => 'U mag nie die proeflees-status van hierdie bladsy wysig nie.',
 	'proofreadpage_number_expected' => 'Fout: numeriese waarde verwag',
@@ -7620,7 +7620,7 @@ $messages['uz'] = array(
 $messages['vec'] = array(
 	'indexpages' => 'Elenco de le pagine de indice',
 	'pageswithoutscans' => 'Pagine sensa scansion',
-	'proofreadpage_desc' => 'Parméte un façile confronto tra un testo e la so scansion original',
+	'proofreadpage_desc' => 'El parméte un fasile confronto tra un testo e la so scansion original',
 	'proofreadpage_image' => 'Imagine',
 	'proofreadpage_index' => 'Indice',
 	'proofreadpage_index_expected' => 'Eròr: indice mancante',
@@ -7692,8 +7692,8 @@ Note||10',
 	'proofreadpage-preferences-horizontal-layout-label' => "Dopara el layout orixontałe có te modifeghi inte'l namespace {{ns:page}}",
 	'proofreadpage-indexoai-repositoryName' => 'Metadati de i libri da {{SITENAME}}',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadati de i libri gestìi da ProofreadPage.',
-	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nó trovà',
-	'proofreadpage-indexoai-error-schemanotfound-text' => "El schema $1 nó 'l xe sta trovà.",
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema mia catà',
+	'proofreadpage-indexoai-error-schemanotfound-text' => "El schema $1 no'l xe stà catà.",
 );
 
 /** Veps (vepsän kel’)
