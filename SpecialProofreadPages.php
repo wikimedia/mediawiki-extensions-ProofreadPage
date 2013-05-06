@@ -75,7 +75,9 @@ class ProofreadPages extends QueryPage {
 				$searchEngine->setNamespaces( array( $indexNamespaceId ) );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
-				if( $textMatches === null) {
+				if( !( $textMatches instanceof SearchResultSet ) ) {
+					// TODO: $searchEngine->searchText() can return status objects
+					// Might want to extract some information from them
 					global $wgOut;
 					$wgOut->showErrorPage( 'proofreadpage_specialpage_searcherror', 'proofreadpage_specialpage_searcherrortext' );
 				} else {
