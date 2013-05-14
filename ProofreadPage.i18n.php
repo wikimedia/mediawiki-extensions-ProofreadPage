@@ -1396,6 +1396,13 @@ Sumari||15",
 	'proofreadpage-preferences-horizontal-layout-label' => "Utilitza la presentació horitzontal en editar en el nom d'espai {{ns:page}}",
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'proofreadpage-group-other' => 'Кхин',
+);
+
 /** Cebuano (Cebuano)
  * @author Abastillas
  */
@@ -1841,6 +1848,7 @@ $messages['ee'] = array(
  * @author Consta
  * @author Crazymadlover
  * @author Dead3y3
+ * @author FocalPoint
  * @author Glavkos
  * @author Konsnos
  * @author Omnipaedista
@@ -1855,8 +1863,8 @@ $messages['el'] = array(
 	'proofreadpage_index_expected' => 'Σφάλμα: αναμενόταν δείκτης',
 	'proofreadpage_nosuch_index' => 'Σφάλμα: δεν υπάρχει αυτός ο δείκτης',
 	'proofreadpage_nosuch_file' => 'Σφάλμα: δεν υπάρχει αυτό το αρχείο',
-	'proofreadpage_badpage' => 'Λάθος Φορμά',
-	'proofreadpage_badpagetext' => 'Η μορφοποίηση της σελίδας που αποπειραθήκατε να αποθηκεύσετε είναι λανθασμένη.',
+	'proofreadpage_badpage' => 'Λανθασμένη μορφοποίηση',
+	'proofreadpage_badpagetext' => 'Η μορφοποίηση της σελίδας που προσπαθήσατε να αποθηκεύσετε είναι λανθασμένη.',
 	'proofreadpage_indexdupe' => 'Διπλότυπος σύνδεσμος',
 	'proofreadpage_indexdupetext' => 'Οι σελίδες δεν μπορούν περιλαμβάνονται στο ευρετήριο περισσότερες από μία φορές.',
 	'proofreadpage_nologin' => 'Δεν έχετε συνδεθεί',
@@ -1908,8 +1916,11 @@ $messages['el'] = array(
 Σχόλια||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|Σελίδα|Σελίδες}}',
 	'proofreadpage_specialpage_legend' => 'Αναζήτηση σελίδων ευρετηρίου',
+	'proofreadpage_specialpage_searcherror' => 'Σφάλμα στη μηχανή αναζήτησης',
+	'proofreadpage_specialpage_searcherrortext' => 'Η μηχανή αναζήτησης δεν λειτουργεί. Συγγνώμη για την ενόχληση.',
 	'proofreadpage_source' => 'Πηγή',
-	'proofreadpage-section-tools' => 'Διορθώστε τα εργαλεία',
+	'proofreadpage_source_message' => 'Αυτό το κείμενο προέκυψε από σκαναρισμένη έκδοση',
+	'proofreadpage-section-tools' => 'Εργαλεία διόρθωσης κειμένου',
 	'proofreadpage-group-zoom' => 'Εστίαση',
 	'proofreadpage-group-other' => 'Άλλο',
 	'proofreadpage-button-toggle-visibility-label' => 'Εμφάνιση / απόκρυψη κεφαλίδας και υποσέλιδου αυτής της σελίδας',
