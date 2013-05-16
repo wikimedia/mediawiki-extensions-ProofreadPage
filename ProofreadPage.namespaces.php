@@ -338,6 +338,14 @@ $proofreadPageNamespacesNames['te'] = array(
 	'index_talk' => 'సూచిక_చర్చ'
 );
 
+/** Thai (ไทย) */
+$proofreadPageNamespacesNames['th'] = array(
+	'page' => 'หน้า',
+	'page_talk' => 'คุยเรื่องหน้า',
+	'index' => 'ดัชนี',
+	'index_talk' => 'คุยเรื่องดัชนี'
+);
+
 /** vèneto (vèneto) */
 $proofreadPageNamespacesNames['vec'] = array(
 	'page' => 'Pagina',
