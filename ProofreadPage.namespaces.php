@@ -346,6 +346,14 @@ $proofreadPageNamespacesNames['th'] = array(
 	'index_talk' => 'คุยเรื่องดัชนี'
 );
 
+/** Ukrainian (украї́нська) */
+$proofreadPageNamespacesNames['uk'] = array(
+	'page' => 'Сторінка',
+	'page_talk' => 'Обговорення_сторінки',
+	'index' => 'Індекс',
+	'index_talk' => 'Обговорення_індексу',
+);
+
 /** vèneto (vèneto) */
 $proofreadPageNamespacesNames['vec'] = array(
 	'page' => 'Pagina',
