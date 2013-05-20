@@ -30,6 +30,7 @@ abstract class ProofreadIndexValue {
 	/**
 	 * @param $value string
 	 * @param $config array
+	 * @throws MWException
 	 */
 	public function __construct( $value, $config ) {
 		if( !$this->isValid( $value ) ) {
@@ -77,6 +78,7 @@ abstract class ProofreadIndexValue {
 	/**
 	 * Return name of the ProofreadIndexValue class for a type
 	 * @param $type string
+	 * @throws MWException
 	 * @return string
 	 */
 	public static function getIndexValueClassNameForType( $type ) {
@@ -236,6 +238,7 @@ class ProofreadIndexValueNumber extends ProofreadIndexValue {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -308,6 +311,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -359,6 +363,7 @@ class ProofreadIndexValueLangcode extends ProofreadIndexValue {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -432,6 +437,7 @@ class ProofreadIndexValueIsbn extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -511,6 +517,7 @@ class ProofreadIndexValueLccn extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -551,6 +558,7 @@ class ProofreadIndexValueOclc extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -590,6 +598,7 @@ class ProofreadIndexValueArc extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -650,6 +659,7 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
+	 * @param $value string
 	 * @return bool
 	 */
 	public function isValid( $value ) { //TODO to improve

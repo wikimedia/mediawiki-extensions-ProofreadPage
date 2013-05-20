@@ -54,6 +54,7 @@ class EditProofreadIndexPage extends EditPage {
 	 * Add an entry to the form
 	 *
 	 * @param $entry ProofreadIndexEntry
+	 * @param $inputAttributes array
 	 */
 	protected function addEntry( ProofreadIndexEntry $entry, $inputAttributes = array() ) {
 		global $wgOut;
@@ -120,6 +121,7 @@ class EditProofreadIndexPage extends EditPage {
 	 * Return the name of the edit field for an entry
 	 *
 	 * @param $key string the entry key
+	 * @return string
 	 */
 	protected function getFieldNameForEntry( $key ) {
 		return 'wpprpindex-' . str_replace( ' ', '_', $key );

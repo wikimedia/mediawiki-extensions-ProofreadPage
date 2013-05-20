@@ -76,7 +76,7 @@ class ProofreadPageInit {
 	 * @return int|bool the id of the namespace or false if it doesn't exist
 	 */
 	protected static function getNamespaceIdForDefaultName( $key ) {
-		global $wgExtraNamespaces, $wgLanguageCode;
+		global $wgExtraNamespaces;
 
 		$xNamespaces = array();
 		foreach ( $wgExtraNamespaces as $i => $text ) {
@@ -95,7 +95,7 @@ class ProofreadPageInit {
 	 * @return bool false if there is an error, true if not
 	 */
 	protected static function createNamespace( $id, $key ) {
-		global $wgLanguageCode, $wgCanonicalNamespaceNames, $wgExtraNamespaces;
+		global $wgCanonicalNamespaceNames, $wgExtraNamespaces;
 
 		if ( isset( $wgExtraNamespaces[$id] ) || isset( $wgExtraNamespaces[$id + 1] ) ) {
 			return false;
@@ -134,6 +134,7 @@ class ProofreadPageInit {
 	 * Warning: It's not the function you search. If you want to know the index or page namespace id use ProofreadPage::getIndexNamespaceId() or ProofreadPage::getPageNamespaceId()
 	 * @param $key string the key of the namespace in the i18n file
 	 * @param $configName string the name of the mediawiki configuration entry that store the name of the namespace
+	 * @return int
 	 */
 	public static function getNamespaceId( $key, $configName ) {
 		global $wgProofreadPageNamespaceIds;

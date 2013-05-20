@@ -447,7 +447,7 @@ class ProofreadPage {
 				$filePage = $wgContLang->parseFormattedNumber( $m[3] );
 
 				$params = array( 'width' => $width, 'page' => $filePage );
-				$image->handler->normaliseParams( $image, $params );
+				$image->getHandler()->normaliseParams( $image, $params );
 				$thumbName = $image->thumbName( $params );
 				$fullURL = $image->getThumbUrl( $thumbName );
 			} else {
