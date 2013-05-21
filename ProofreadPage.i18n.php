@@ -4397,6 +4397,7 @@ $messages['lb'] = array(
 	'proofreadpage_nologintext' => "Dir musst [[Special:UserLogin|ageloggt]] si fir de Status vum Iwwerliese vu Säiten z'änneren.",
 	'proofreadpage_notallowed' => 'Ännerung net erlaabt',
 	'proofreadpage_notallowedtext' => "Dir sidd net berechtigt de Status vum Iwwerliese vun dëser Säit z'änneren.",
+	'proofreadpage_dataconfig_badformatted' => 'Feeler an der Datekonfiguratioun',
 	'proofreadpage_number_expected' => 'Feeler: et gouf en numeresche Wäert erwaart',
 	'proofreadpage_interval_too_large' => 'Feeler: Intervall ze ze grouss',
 	'proofreadpage_invalid_interval' => 'Feeler: net valabelen Intervall',
@@ -4417,7 +4418,9 @@ $messages['lb'] = array(
 	'proofreadpage_quality3_message' => 'Dës Säit gouf iwwerliest',
 	'proofreadpage_quality4_message' => 'Dës Säit gouf validéiert',
 	'proofreadpage_index_size' => 'Zuel vun de Säiten',
+	'proofreadpage_specialpage_label_orderby' => 'Zortéieren no:',
 	'proofreadpage_specialpage_label_key' => 'Sichen:',
+	'proofreadpage_alphabeticalorder' => 'Alphabetesch Reiefolleg',
 	'proofreadpage_index_listofpages' => 'Säitelëscht',
 	'proofreadpage_image_message' => "Link op d'Indexsäit",
 	'proofreadpage_page_status' => 'Status vun der Säit',
@@ -4433,6 +4436,7 @@ Bemierkungen||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|Säit|Säiten}}',
 	'proofreadpage_specialpage_legend' => 'An den Index-Säite sichen',
 	'proofreadpage_specialpage_searcherror' => 'Feeler an der Sich-Maschine',
+	'proofreadpage_specialpage_searcherrortext' => "D'Sichmaschinn fonctionnéiert net. Entschëllegt w.e.g. d'Ëmstänn.",
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'Gescannten Editioun déi benotzt gouf fir dësen Text ze schreiwen',
 	'right-pagequality' => 'Qualitéitsindice vun der Säit änneren',
@@ -4445,6 +4449,8 @@ Bemierkungen||10',
 	'proofreadpage-button-zoom-in-label' => 'Vergréisseren',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikalen/horizontale Layout',
 	'proofreadpage-preferences-showheaders-label' => "D'Entête an de Pied de page weise beim Ännerungen am {{ns:page}}-Nummraum",
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema net fonnt',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'De Schema "$1" gouf net fonnt.',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -7509,6 +7515,7 @@ $messages['ug-latn'] = array(
  * @author AtUkr
  * @author Base
  * @author Dim Grits
+ * @author DixonD
  * @author Prima klasy4na
  * @author Steve.rusyn
  * @author Тест
@@ -7542,7 +7549,7 @@ $messages['uk'] = array(
 	'proofreadpage_footer' => 'Нижній колонтитул (не включається):',
 	'proofreadpage_toggleheaders' => 'показувати невключені розділи',
 	'proofreadpage_quality0_category' => 'Без тексту',
-	'proofreadpage_quality1_category' => 'Не вичитана',
+	'proofreadpage_quality1_category' => 'Не вичитано',
 	'proofreadpage_quality2_category' => 'Проблематична',
 	'proofreadpage_quality3_category' => 'Вичитана',
 	'proofreadpage_quality4_category' => 'Перевірена',
