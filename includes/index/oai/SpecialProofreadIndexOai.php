@@ -59,6 +59,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * Return OAI datestamp
 	 * @param $datestamp string MW Timestamp
 	 * @param $granularity string OAI ganularity ('YYYY-MM-DDThh:mm:ssZ' or 'YYY-MM-DD')
+	 * @throws MWException
 	 * @return string
 	 */
 	public static function datestamp( $datestamp, $granularity = 'YYYY-MM-DDThh:mm:ssZ' ) {
@@ -74,7 +75,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Return parameters of the request
-	 * @param $request WebRequest
+	 * @throws ProofreadIndexOaiError
 	 * @return array
 	 */
 	protected function parseRequest() {
@@ -192,6 +193,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	/**
 	 * Output the main OAI content
 	 * @param $verb string
+	 * @throws MWException
 	 */
 	protected function doResponse( $verb ) {
 		switch( $verb ) {
@@ -386,6 +388,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Return the earliest last rev_timestamp of an index page
+	 * @throws MWException
 	 * @return string
 	 */
 	protected function earliestDatestamp() {
@@ -483,7 +486,8 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * check if the parameter is a valid metadata format and return it
-	 * @param $var Request parameter that contain a metadata format
+	 * @param $var string Request parameter that contain a metadata format
+	 * @throws ProofreadIndexOaiError
 	 * @return string|null
 	 */
 	protected function validateMetadata( $var ) {
@@ -514,6 +518,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	/**
 	 * Get the Title page for a record
 	 * @param $identifier string
+	 * @throws ProofreadIndexOaiError
 	 * @return ProofreadIndexPage
 	 */
 	protected function getRecordPage( $identifier ) {
@@ -530,6 +535,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	/**
 	 * Return the datestamp for a record
 	 * @param $title Title
+	 * @throws MWException
 	 * @return string rev_timestamp
 	 */
 	protected function getRecordDatestamp( Title $title ) {
@@ -550,8 +556,9 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Check if an OAI datestamp is valid
-	 * @param $var Request parameter that contain a datestamp
+	 * @param $var string Request parameter that contain a datestamp
 	 * @param $defaultTime string default time for a date-only datestamp as HHMMSS
+	 * @throws ProofreadIndexOaiError
 	 * @return string|null timestamp in MW format
 	 */
 	protected function validateDatestamp( $var, $defaultTime = '000000' ) {
@@ -571,7 +578,8 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Check if a token is valid
-	 * @param $var Request parameter that contain a token
+	 * @param $var string Request parameter that contain a token
+	 * @throws ProofreadIndexOaiError
 	 * @return array|null the token content
 	 */
 	protected function validateToken( $var ) {

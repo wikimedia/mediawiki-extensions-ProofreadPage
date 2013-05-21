@@ -246,8 +246,9 @@ class ProofreadIndexEntry {
 	 * @return string
 	 */
 	public function getSimpleDublinCoreProperty() {
-		if( !isset( $this->config['data'] ) || !$this->config['data'] )
+		if( !isset( $this->config['data'] ) || !$this->config['data'] ) {
 			return null;
+		}
 
 		switch( $this->config['data'] ) {
 			case 'language':

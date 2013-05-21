@@ -24,7 +24,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		$pageSet = $this->getPageSet();
 		$pages = $pageSet->getGoodTitles();
 		if ( !count( $pages ) ) {
-			return true;
+			return;
 		}
 
 		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
@@ -36,7 +36,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		}
 
 		if ( !count( $pageIds ) ) {
-			return true;
+			return;
 		}
 
 		// Determine the categories defined in MediaWiki: pages

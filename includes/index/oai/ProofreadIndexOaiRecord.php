@@ -33,7 +33,7 @@ class ProofreadIndexOaiRecord {
 
 	/**
 	 * @param $index ProofreadIndexPage
-	 * @param $lastEditionTimestamp MW timestamp of the last edition
+	 * @param $lastEditionTimestamp string MW timestamp of the last edition
 	 */
 	public function __construct( ProofreadIndexPage $index, $lastEditionTimestamp ) {
 		$this->index = $index;
@@ -44,11 +44,10 @@ class ProofreadIndexOaiRecord {
 	/**
 	 * Return OAI record of an index page.
 	 * @param $format string
+	 * @throws MWException
 	 * @return string
 	 */
 	public function renderRecord( $format ) {
-		global $wgRightsPage, $wgRightsUrl, $wgRightsText;
-
 		$record = Xml::openElement( 'record' ) . "\n";
 		$record .= $this->renderHeader();
 		$record .= Xml::openElement( 'metadata' ) . "\n";
@@ -69,7 +68,6 @@ class ProofreadIndexOaiRecord {
 
 	/**
 	 * Return header of an OAI record of an index page.
-	 * @param $format string
 	 * @return string
 	 */
 	public function renderHeader() {
@@ -125,6 +123,7 @@ class ProofreadIndexOaiRecord {
 	/**
 	 * Return Dublin Core entry
 	 * @param $entry ProofreadIndexEntry
+	 * @throws MWException
 	 * @return string
 	 */
 	protected function getOaiDcEntry( ProofreadIndexEntry $entry ) {
@@ -192,6 +191,7 @@ class ProofreadIndexOaiRecord {
 	/**
 	 * Return Qualified Dublin Core entry
 	 * @param $entry ProofreadIndexEntry
+	 * @throws MWException
 	 * @return string
 	 */
 	protected function getDcQdcEntry( ProofreadIndexEntry $entry ) {

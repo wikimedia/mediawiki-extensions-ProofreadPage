@@ -105,10 +105,8 @@ class ProofreadPages extends QueryPage {
 			// Bug #27678: Do not use offset here, because it was already used in
 			// search perfomed by execute method
 			return parent::reallyDoQuery( $limit, false );
-		} else {
-			return parent::reallyDoQuery( $limit, $offset );
 		}
-		return $result;
+		return parent::reallyDoQuery( $limit, $offset );
 	}
 
 	function preprocessResults( $dbr, $res ) {
