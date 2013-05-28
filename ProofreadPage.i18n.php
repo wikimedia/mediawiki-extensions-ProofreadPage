@@ -4398,6 +4398,7 @@ $messages['lb'] = array(
 	'proofreadpage_notallowed' => 'Ännerung net erlaabt',
 	'proofreadpage_notallowedtext' => "Dir sidd net berechtigt de Status vum Iwwerliese vun dëser Säit z'änneren.",
 	'proofreadpage_dataconfig_badformatted' => 'Feeler an der Datekonfiguratioun',
+	'proofreadpage_dataconfig_badformattedtext' => "D'Säit [[Mediawiki:Proofreadpage index data config]] ass net gutt JSON formatéiert.",
 	'proofreadpage_number_expected' => 'Feeler: et gouf en numeresche Wäert erwaart',
 	'proofreadpage_interval_too_large' => 'Feeler: Intervall ze ze grouss',
 	'proofreadpage_invalid_interval' => 'Feeler: net valabelen Intervall',
