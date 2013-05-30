@@ -105,8 +105,6 @@ class ProofreadPageInit {
 		$wgExtraNamespaces[$id + 1] = self::getNamespaceName( $key . '_talk' );
 		$wgCanonicalNamespaceNames[$id] = $wgExtraNamespaces[$id]; //Very hugly but needed because initNamespaces() is called after the add of $wgExtraNamespaces into $wgCanonicalNamespaceNames
 		$wgCanonicalNamespaceNames[$id + 1] = $wgExtraNamespaces[$id + 1];
-		$wgNamespaceAliases[$id] = self::getNamespaceName( $key, 'en' );
-		$wgNamespaceAliases[$id + 1] = self::getNamespaceName( $key . '_talk', 'en' );
 		return true;
 	}
 

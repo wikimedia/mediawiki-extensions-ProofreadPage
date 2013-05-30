@@ -150,6 +150,7 @@ $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
 $wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';
 $wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
+$wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
 
 
 //inclusion of i18n file. $wgExtensionMessagesFiles[] doesn't works

@@ -1823,4 +1823,16 @@ $void_cell
 		}
 		return true;
 	}
+
+
+	/**
+	 * Adds canonical namespaces.
+	 */
+	public static function addCanonicalNamespaces( &$list ) {
+		$list[self::getPageNamespaceId()] = 'Page';
+		$list[self::getPageNamespaceId() + 1] = 'Page_talk';
+		$list[self::getIndexNamespaceId()] = 'Index';
+		$list[self::getIndexNamespaceId() + 1] = 'Index_talk';
+		return true;
+	}
 }
