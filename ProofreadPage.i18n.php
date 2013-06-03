@@ -527,7 +527,7 @@ $messages['arz'] = array(
 الملاحظات||10',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  * @author Gitartha.bordoloi
  */
@@ -5248,7 +5248,7 @@ Note||10",
 	'proofreadpage-indexoai-error-schemanotfound-text' => "'O schema $1 nun è stato truovato.",
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Laaknor
  * @author Nghtwlkr
  * @author Simny
@@ -5345,7 +5345,7 @@ Sieden||20
 Anmarkungen||10',
 );
 
-/** Nedersaksies (Nedersaksies)
+/** Low Saxon (Netherlands) (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
@@ -5444,7 +5444,7 @@ Opmerkingen||10",
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Het schema $1 is niet aangetroffen.',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Diupwijk
  * @author Gunnernett
  * @author Harald Khan
@@ -5553,7 +5553,7 @@ Comentaris||10',
 	'proofreadpage_source_message' => "Edicion numerizada d'ont es eissit aqueste tèxte",
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Ansumang
  * @author Jnanaranjan Sahu
  * @author Odisha1
@@ -5943,6 +5943,7 @@ Notas||10',
 /** Brazilian Portuguese (português do Brasil)
  * @author Eduardo.mps
  * @author Giro720
+ * @author Luckas
  * @author Luckas Blade
  * @author MetalBrasil
  * @author 555
