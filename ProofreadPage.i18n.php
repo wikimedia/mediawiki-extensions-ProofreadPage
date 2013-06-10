@@ -1400,6 +1400,7 @@ Sumari||15",
  * @author Умар
  */
 $messages['ce'] = array(
+	'proofreadpage_source' => 'Хьост',
 	'proofreadpage-group-other' => 'Кхин',
 );
 
