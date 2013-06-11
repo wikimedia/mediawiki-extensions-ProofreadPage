@@ -7,13 +7,13 @@ class ProofreadIndexDbConnector{
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater = null ) {
-		$base = dirname( __FILE__ );
+		$base = __DIR__;
 		if ( $updater === null ) {
 			global $wgExtNewTables;
-			$wgExtNewTables[] = array( 'pr_index', "$base/ProofreadPage.sql" );
+			$wgExtNewTables[] = array( 'pr_index', "$base/ProofreadIndex.sql" );
 		} else {
 			$updater->addExtensionUpdate( array( 'addTable', 'pr_index',
-				"$base/ProofreadPage.sql", true ) );
+				"$base/ProofreadIndex.sql", true ) );
 		}
 		return true;
 	}
