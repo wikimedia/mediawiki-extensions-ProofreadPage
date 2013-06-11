@@ -40,6 +40,7 @@ $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
+$wgAutoloadClasses['ProofreadIndexDbConnector'] = $dir . 'includes/index/ProofreadIndexDbConnector.php';
 $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
 
 
@@ -143,7 +144,7 @@ $wgHooks['ArticleUndelete'][] = 'ProofreadPage::onArticleUndelete';
 $wgHooks['EditFormPreloadText'][] = 'ProofreadPage::onEditFormPreloadText';
 $wgHooks['ArticlePurge'][] = 'ProofreadPage::onArticlePurge';
 $wgHooks['SpecialMovepageAfterMove'][] = 'ProofreadPage::onSpecialMovepageAfterMove';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadPage::onLoadExtensionSchemaUpdates';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadIndexDbConnector::onLoadExtensionSchemaUpdates';
 $wgHooks['EditPage::importFormData'][] = 'ProofreadPage::onEditPageImportFormData';
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
