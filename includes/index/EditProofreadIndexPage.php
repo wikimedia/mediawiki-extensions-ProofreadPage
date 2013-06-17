@@ -37,7 +37,7 @@ class EditProofreadIndexPage extends EditPage {
 			$inputAttributes['readonly'] = '';
 		}
 
-		$index = new ProofreadIndexPage( $this->mTitle, $this->textbox1 );
+		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
 		$entries = $index->getIndexEntries();
 
 		$wgOut->addHTML( Html::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
@@ -48,6 +48,8 @@ class EditProofreadIndexPage extends EditPage {
 			$i++;
 		}
 		$wgOut->addHTML( Html::closeElement( 'table' ) );
+
+		$wgOut->addModules( 'ext.proofreadpage.index' );
 	}
 
 	/**
@@ -133,11 +135,15 @@ class EditProofreadIndexPage extends EditPage {
 	 * @param $request WebRequest
 	 */
 	protected function importContentFormData( &$request ) {
+		if ( $this->textbox1 !== '' ) {
+			return;
+		}
+
 		$config = ProofreadIndexPage::getDataConfig();
 		$this->textbox1 = "{{:MediaWiki:Proofreadpage_index_template";
 		foreach( $config as $key => $params ) {
 			$field = $this->getFieldNameForEntry( $key );
-			$value = $this->cleanInputtedContent( $request->getVal( $field ) );
+			$value = $this->cleanInputtedContent( $this->safeUnicodeInput( $request, $field ) );
 			$entry = new ProofreadIndexEntry( $key, $value, $params );
 			if( !$entry->isHidden() ) {
 				$this->textbox1 .= "\n|" . $entry->getKey() . "=" . $entry->getStringValue();
@@ -175,5 +181,33 @@ class EditProofreadIndexPage extends EditPage {
 		$value = preg_replace( '#&!&#', '{{!}}', $value );
 
 		return $value;
+	}
+
+
+	/**
+	 * Check the validity of the page
+	 */
+	function internalAttemptSave( &$result, $bot = false ) {
+		global $wgOut;
+
+		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
+		list( $links, $params ) = $index->getPages();
+
+		if ( $links !== null ) {
+			//Get list of pages titles
+			$linksTitle = array();
+			foreach( $links as $link ) {
+				$linksTitle[] = $link[0];
+			}
+
+			if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
+				$wgOut->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
+				$status = Status::newGood();
+				$status->fatal( 'hookaborted' );
+				$status->value = self::AS_HOOK_ERROR;
+				return $status;
+			}
+		}
+		return parent::internalAttemptSave( $result, $bot );
 	}
 }

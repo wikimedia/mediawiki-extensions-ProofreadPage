@@ -88,7 +88,7 @@ $wgGroupPermissions['user']['pagequality'] = true;
 
 # Client-side resources
 $prpResourceTemplate = array(
-	'localBasePath' => dirname( __FILE__ ). '/modules',
+	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'ProofreadPage/modules'
 );
 $wgResourceModules += array(
@@ -151,6 +151,20 @@ $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
 $wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';
 $wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
+
+
+/**
+ * Hook to add PHPUnit test cases
+ * @param array $files
+ * @return boolean
+ */
+$wgHooks['UnitTestsList'][] = function( array &$files ) {
+	$dir = __DIR__ . '/tests/includes/';
+
+	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
+
+	return true;
+};
 
 
 //inclusion of i18n file. $wgExtensionMessagesFiles[] doesn't works

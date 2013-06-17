@@ -222,6 +222,26 @@ class ProofreadIndexEntry {
 	}
 
 	/**
+	 * Say if the entry have to be given to "header template"
+	 * @return bool
+	 */
+	public function isHeader() {
+		if ( in_array( strtolower( $this->key ), array( 'header', 'footer', 'css', 'width' ) ) ) {
+			return true;
+		} else {
+			if( isset( $this->config['header'] ) ) {
+				if ( is_bool( $this->config['header'] ) ) {
+					return $this->config['header'];
+				} else {
+					return filter_var( $this->config['header'], FILTER_VALIDATE_BOOLEAN );
+				}
+			} else {
+				return false;
+			}
+		}
+	}
+
+	/**
 	 * Return the qualified Dublin Core property the entry belongs to with the 'dcterms' or 'dc' prefix
 	 * @see http://dublincore.org/documents/dcmi-terms/
 	 * @return string

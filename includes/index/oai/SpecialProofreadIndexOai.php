@@ -526,7 +526,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		if ( $pageid ) {
 			$title = Title::makeTitleSafe( ProofreadPage::getIndexNamespaceId(), $pageid );
 			if ( $title !== null && $title->exists() ) {
-				return new ProofreadIndexPage( $title );
+				return ProofreadIndexPage::newFromTitle( $title );
 			}
 		}
 		throw new ProofreadIndexOaiError( 'Requested identifier is invalid or does not exist.', 'idDoesNotExist' );
@@ -663,7 +663,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		foreach( $rows as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 			if ( $title !== null ) {
-				$item = new ProofreadIndexOaiRecord( new ProofreadIndexPage( $title ), $row->rev_timestamp );
+				$item = new ProofreadIndexOaiRecord( ProofreadIndexPage::newFromTitle( $title ), $row->rev_timestamp );
 				if ( $withData ) {
 					echo $item->renderRecord( $metadataPrefix );
 				} else {
