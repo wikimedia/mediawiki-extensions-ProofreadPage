@@ -34,7 +34,7 @@ class ProofreadPage {
 	public static function getPageNamespaceId() {
 		static $namespace;
 		if ( $namespace === null ) {
-			$namespace = ProofreadPageInit::getNamespaceId( 'page', 'proofreadpage_namespace' );
+			$namespace = ProofreadPageInit::getNamespaceId( 'page' );
 		}
 		return $namespace;
 	}
@@ -47,7 +47,7 @@ class ProofreadPage {
 	public static function getIndexNamespaceId() {
 		static $namespace;
 		if ( $namespace === null ) {
-			$namespace = ProofreadPageInit::getNamespaceId( 'index', 'proofreadpage_index_namespace' );
+			$namespace = ProofreadPageInit::getNamespaceId( 'index' );
 		}
 		return $namespace;
 	}

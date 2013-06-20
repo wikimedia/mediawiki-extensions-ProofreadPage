@@ -131,24 +131,14 @@ class ProofreadPageInit {
 	 * Get the id of the namespace. Required that Mediawiki is loaded and ProofreadPageInit::initNamespace has been executed for the relevant namespace.
 	 * Warning: It's not the function you search. If you want to know the index or page namespace id use ProofreadPage::getIndexNamespaceId() or ProofreadPage::getPageNamespaceId()
 	 * @param $key string the key of the namespace in the i18n file
-	 * @param $configName string the name of the mediawiki configuration entry that store the name of the namespace
-	 * @return int
+	 * @return integer
 	 */
-	public static function getNamespaceId( $key, $configName ) {
+	public static function getNamespaceId( $key ) {
 		global $wgProofreadPageNamespaceIds;
 
-		$namespaceText = strtolower( str_replace( ' ', '_', wfMessage( $configName )->inContentLanguage()->plain() ) );
-		$namespace = MWNamespace::getCanonicalIndex( $namespaceText );
-		if ( $namespace === null ) {
-			if ( !isset( $wgProofreadPageNamespaceIds[$key] ) ) {
-				die( 'Namespace with id ' . self::$defaultNamespaceIds[$key] . ' is already set ! ProofreadPage can\'t use his id in order to create ' . self::getNamespaceName( $key, 'en' ) . ' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page' ); //The only case where there $globalId is not set is when a namespace with the default id already exist and is not a prp namespace.
-			}
-			return $wgProofreadPageNamespaceIds[$key];
-		} else {
-			if ( isset( $wgProofreadPageNamespaceIds[$key] ) && $namespace != $wgProofreadPageNamespaceIds[$key] ) {
-				die( 'There is a bug in mediawiki configuration: the ProofreadPage ' . self::getNamespaceName( $key, 'en' ) . ' namespace is set to be number ' . $wgProofreadPageNamespaceIds[$key] . ' in the $wgProofreadPageNamespaceIds[' . $key . '] PHP configuration parameter and number ' . $namespace . ' in the page [[Mediawiki:' . $configName . ']]. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page and delete [[Mediawiki:' . $configName . ']] page.' );
-			}
-			return $namespace;
+		if ( !isset( $wgProofreadPageNamespaceIds[$key] ) ) {
+			die( 'Namespace with id ' . self::$defaultNamespaceIds[$key] . ' is already set ! ProofreadPage can\'t use his id in order to create ' . self::getNamespaceName( $key, 'en' ) . ' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page' ); //The only case where $wgProofreadPageNamespaceIds is not set is when a namespace with the default id already exist and is not a prp namespace.
 		}
+		return $wgProofreadPageNamespaceIds[$key];
 	}
 }
