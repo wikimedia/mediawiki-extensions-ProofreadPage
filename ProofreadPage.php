@@ -41,6 +41,7 @@ $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.ph
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
 $wgAutoloadClasses['ProofreadIndexDbConnector'] = $dir . 'includes/index/ProofreadIndexDbConnector.php';
+$wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/ProofreadPageDbConnector.php';
 $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
 
 
