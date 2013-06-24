@@ -157,7 +157,7 @@ class ProofreadPage {
 		}
 		$image = wfFindFile( $imageTitle );
 		// if it is multipage, we use the page order of the file
-		if ( $image !== null && $image->exists() && $image->isMultipage() ) {
+		if ( $image && $image->exists() && $image->isMultipage() ) {
 			$indexTitle = Title::makeTitle( self::getIndexNamespaceId(), $image->getTitle()->getText() );
 			if ( $indexTitle !== null ) {
 				$title->prpIndexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
