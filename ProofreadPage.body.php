@@ -327,7 +327,6 @@ class ProofreadPage {
 		$page_namespace_id = self::getPageNamespaceId();
 		$page_namespace = MWNamespace::getCanonicalName( $page_namespace_id );
 		$in_index_namespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
-		$dbr = wfGetDB( DB_SLAVE );
 
 		$values = array();
 		foreach ( $page_ids as $id => $pdbk ) {
@@ -361,13 +360,7 @@ class ProofreadPage {
 		}
 
 		if ( count( $values ) ) {
-			$res = $dbr->select(
-				array( 'categorylinks' ),
-				array( 'cl_from', 'cl_to' ),
-				array( 'cl_from IN(' . implode( ',', $values ) . ')' ),
-				__METHOD__
-			);
-
+			$res = ProofreadPageDbConnector::getCategoryNamesForPageIds( $values );
 			foreach ( $res as $x ) {
 				$pdbk = $page_ids[$x->cl_from];
 				if ( array_key_exists( $x->cl_to, $qualityCategories ) ) {
@@ -730,20 +723,8 @@ class ProofreadPage {
 					list( $page, $pagenum ) = $item;
 					$pp[] = $page->getDBkey();
 				}
-				$dbr = wfGetDB( DB_SLAVE );
 				$cat = str_replace( ' ' , '_' , wfMessage( 'proofreadpage_quality0_category' )->inContentLanguage()->escaped() );
-				$res = $dbr->select(
-						    array( 'page', 'categorylinks' ),
-						    array( 'page_title' ),
-						    array(
-							  'page_title' => $pp,
-							  'cl_to' => $cat,
-							  'page_namespace' => $pageNamespaceId
-							  ),
-						    __METHOD__,
-						    null,
-						    array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
-						    );
+				$res = ProofreadPageDbConnector::getPagesNameInCategory( $pp, $cat );
 
 				if( $res ) {
 					foreach ( $res as $o ) {
@@ -1059,14 +1040,6 @@ class ProofreadPage {
 		return true;
 	}
 
-	/**
-	 * Remove index data from pr_index table.
-	 * @param $pageId Integer: page identifier
-	 */
-	private static function removeIndexData( $pageId ) {
-		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( 'pr_index', array( 'pr_page_id' => $pageId ), __METHOD__ );
-	}
 
 	/**
 	 * Updates index data for an index referencing the specified page.
@@ -1097,7 +1070,7 @@ class ProofreadPage {
 
 		// Process Index removal.
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			self::removeIndexData( $article->getId() );
+			ProofreadIndexDbConnector::removeIndexData( $article->getId() );
 
 		// Process Page removal.
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
@@ -1163,74 +1136,9 @@ class ProofreadPage {
 		 * update pr_index iteratively
 		 */
 		$indexId = $title->prpIndexPage->getTitle()->getArticleID();
-		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select(
-			array( 'pr_index' ),
-			array( 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ),
-			array(
-				'pr_page_id' => $indexId
-			),
-			__METHOD__
-		);
-		$x = $dbr->fetchObject( $res );
+		$x = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
 		if( $x ) {
-			$n  = $x->pr_count;
-			$n0 = $x->pr_q0;
-			$n1 = $x->pr_q1;
-			$n2 = $x->pr_q2;
-			$n3 = $x->pr_q3;
-			$n4 = $x->pr_q4;
-
-			switch( $article->new_q ) {
-				case 0:
-					$n0++;
-					break;
-				case 1:
-					$n1++;
-					break;
-				case 2:
-					$n2++;
-					break;
-				case 3:
-					$n3++;
-					break;
-				case 4:
-					$n4++;
-					break;
-			}
-
-			switch( $article->old_q ) {
-				case 0:
-					$n0--;
-					break;
-				case 1:
-					$n1--;
-					break;
-				case 2:
-					$n2--;
-					break;
-				case 3:
-					$n3--;
-					break;
-				case 4:
-					$n4--;
-					break;
-			}
-			$dbw = wfGetDB( DB_MASTER );
-			$dbw->replace(
-				'pr_index',
-				array( 'pr_page_id' ),
-				array(
-					'pr_page_id' => $indexId,
-					'pr_count' => $n,
-					'pr_q0' => $n0,
-					'pr_q1' => $n1,
-					'pr_q2' => $n2,
-					'pr_q3' => $n3,
-					'pr_q4' => $n4
-				),
-				__METHOD__
-			);
+			$a = ProofreadIndexDbConnector::replaceIndexById( $x, $indexId, $article );
 		}
 
 		return true;
@@ -1283,7 +1191,7 @@ class ProofreadPage {
 			// There is no page under the old title or it is a redirect.
 			$article = new Article( $nt );
 			if( $article ) {
-				self::removeIndexData( $article->getId() );
+				ProofreadIndexDbConnector::removeIndexData( $article->getId() );
 			}
 		}
 
@@ -1318,32 +1226,14 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $dbr DatabaseBase
-	 * @param $query
-	 * @param $cat
-	 * @return int
-	 */
-	private static function query_count( $dbr, $query, $cat ) {
-		$query['conds']['cl_to'] = str_replace( ' ' , '_' , wfMessage( $cat )->inContentLanguage()->text() );
-		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, array(), $query['joins'] );
-
-		if( $res && $dbr->numRows( $res ) > 0 ) {
-			$row = $dbr->fetchObject( $res );
-			$n = $row->count;
-			return $n;
-		}
-		return 0;
-	}
-
-	/**
 	 * Update the pr_index entry of an article
 	 * @param $index Article
 	 * @param $deletedpage Title|null
 	 */
-	private static function update_pr_index( $index, $deletedPage = null ) {
+	public static function update_pr_index( $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
 		$indexId = $index->getID();
-		$dbr = wfGetDB( DB_SLAVE );
+		$pageNamespaceId = self::getPageNamespaceId();
 
 		$n = 0;
 
@@ -1378,17 +1268,9 @@ class ProofreadPage {
 			return;
 		}
 
-		$res = $dbr->select(
-			array( 'page' ),
-			array( 'COUNT(page_id) AS count'),
-			array( 'page_namespace' => self::getPageNamespaceId(), 'page_title' => $pages ),
-			__METHOD__
-		);
+		$total = ProofreadPageDbConnector::getNumberOfExistingPagesFromPageTitle( $pages );
 
-		if( $res && $dbr->numRows( $res ) > 0 ) {
-			$row = $dbr->fetchObject( $res );
-			$total = $row->count;
-		} else {
+		if( $total === null ) {
 			return;
 		}
 
@@ -1400,27 +1282,14 @@ class ProofreadPage {
 			'joins' => array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
 		);
 
-		$n0 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
-		$n2 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
-		$n3 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
-		$n4 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
+		$n0 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality0_category' );
+		$n2 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality2_category' );
+		$n3 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality3_category' );
+		$n4 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality4_category' );
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
-		$dbw = wfGetDB( DB_MASTER );
-		$dbw->replace(
-			'pr_index',
-			array( 'pr_page_id' ),
-			array(
-				'pr_page_id' => $indexId,
-				'pr_count' => $n,
-				'pr_q0' => $n0,
-				'pr_q1' => $n1,
-				'pr_q2' => $n2,
-				'pr_q3' => $n3,
-				'pr_q4' => $n4
-			),
-			__METHOD__
-		);
+		$replace = ProofreadIndexDbConnector::setIndexData( $n, $n0, $n1, $n2, $n3, $n4, $indexId );
+
 	}
 
 	/**
@@ -1440,48 +1309,12 @@ class ProofreadPage {
 			return true;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
-
 		// find the index page
-		$indextitle = null;
-		$res = $dbr->select(
-			array( 'templatelinks' ),
-			array( 'tl_title AS title' ),
-			array( 'tl_from' => $id, 'tl_namespace' => $pageNamespaceId ),
-			__METHOD__,
-			array( 'LIMIT' => 1 )
-		);
-		if( $res && $dbr->numRows( $res ) > 0 ) {
-			$row = $dbr->fetchObject( $res );
-			$res2 = $dbr->select(
-				array( 'pagelinks', 'page' ),
-				array( 'page_title AS title' ),
-				array(
-					'pl_title' => $row->title,
-					'pl_namespace' => $pageNamespaceId,
-					'page_namespace' => $indexNamespaceId
-				),
-				__METHOD__,
-				array( 'LIMIT' => 1 ),
-				array( 'page' => array( 'LEFT JOIN', 'page_id=pl_from' ) )
-			);
-			if( $res2 && $dbr->numRows( $res2 ) > 0 ) {
-				$row = $dbr->fetchObject( $res2 );
-				$indextitle = $row->title;
-			}
-		}
+		$indextitle = ProofreadPageDbConnector::getIndexTitleForPageId( $id );
 
 		if( isset( $out->is_toc ) && $out->is_toc ) {
 			if ( $indextitle ) {
-				$res = $dbr->select(
-					array( 'pr_index', 'page' ),
-					array( 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ),
-					array( 'page_title' => $indextitle, 'page_namespace' => $indexNamespaceId ),
-					__METHOD__,
-					null,
-					array( 'page' => array( 'LEFT JOIN', 'page_id=pr_page_id' ) )
-				);
-				$row = $dbr->fetchObject( $res );
+				$row = ProofreadIndexDbConnector::getIndexDataFromIndexTitle( $indextitle );
 				if( $row ) {
 					$n0 = $row->pr_q0;
 					$n1 = $row->pr_q1;
@@ -1494,18 +1327,8 @@ class ProofreadPage {
 			}
 		} else {
 			// count transclusions from page namespace
-			$res = $dbr->select(
-				array( 'templatelinks', 'page' ),
-				array( 'COUNT(page_id) AS count' ),
-				array( 'tl_from' => $id, 'tl_namespace' => $pageNamespaceId ),
-				__METHOD__,
-				null,
-				array( 'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ) )
-			);
-			if( $res && $dbr->numRows( $res ) > 0 ) {
-				$row = $dbr->fetchObject( $res );
-				$n = $row->count;
-			} else {
+			$n = ProofreadPageDbConnector::countTransclusionFromPageId( $id );
+			if( $n === null ) {
 				return true;
 			}
 
@@ -1520,10 +1343,10 @@ class ProofreadPage {
 				)
 			);
 
-			$n0 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality0_category' );
-			$n2 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality2_category' );
-			$n3 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality3_category' );
-			$n4 = self::query_count( $dbr, $queryArr, 'proofreadpage_quality4_category' );
+			$n0 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality0_category' );
+			$n2 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality2_category' );
+			$n3 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality3_category' );
+			$n4 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality4_category' );
 			// quality1 is the default value
 			$n1 = $n - $n0 - $n2 - $n3 - $n4;
 			$ne = 0;
