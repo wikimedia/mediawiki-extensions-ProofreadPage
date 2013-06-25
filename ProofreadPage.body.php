@@ -827,7 +827,7 @@ class ProofreadPage {
 			}
 			$attributes = $indexPage->getIndexEntriesForHeader();
 			foreach( $attributes as $attribute ) {
-				$key = $attribute->getKey();
+				$key = strtolower( $attribute->getKey() );
 				if( array_key_exists( $key, $args ) ) {
 					$val = $args[$key];
 				} else {
