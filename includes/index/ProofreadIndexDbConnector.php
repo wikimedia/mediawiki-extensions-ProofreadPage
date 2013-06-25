@@ -1,20 +1,37 @@
 <?php
+/**
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @file
+ * @ingroup ProofreadPage
+ */
 
 class ProofreadIndexDbConnector{
 
-/**
+	/**
 	 * @param $updater DatabaseUpdater
 	 * @return bool
 	 */
-	public static function onLoadExtensionSchemaUpdates( $updater = null ) {
-		$base = __DIR__;
-		if ( $updater === null ) {
-			global $wgExtNewTables;
-			$wgExtNewTables[] = array( 'pr_index', "$base/ProofreadIndex.sql" );
-		} else {
-			$updater->addExtensionUpdate( array( 'addTable', 'pr_index',
-				"$base/ProofreadIndex.sql", true ) );
-		}
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'pr_index',
+			__DIR__ . '/ProofreadIndex.sql',
+			true
+		) );
 		return true;
 	}
 
@@ -23,7 +40,7 @@ class ProofreadIndexDbConnector{
 	 * @param $title Title
 	 * @return ResultWrapper
 	 */
-	public static function getRowsFromTitle( $title ) {
+	public static function getRowsFromTitle( Title $title ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select(
 			array( 'page', 'pagelinks' ),
@@ -39,11 +56,11 @@ class ProofreadIndexDbConnector{
 	}
 
 	/**
-	* @param $x Object
-	* @param $index_id integer
-	* @param $article Article
-	*/
-	public static function replaceIndexById( $x, $index_id, $article ) {
+	 * @param $x Object
+	 * @param $indexId integer
+	 * @param $article Article
+	 */
+	public static function replaceIndexById( $x, $indexId, Article $article ) {
 		$n  = $x->pr_count;
 		$n0 = $x->pr_q0;
 		$n1 = $x->pr_q1;
@@ -87,24 +104,29 @@ class ProofreadIndexDbConnector{
 		}
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->replace(
-				'pr_index',
-				array( 'pr_page_id' ),
-				array(
-					'pr_page_id' => $index_id,
-					'pr_count' => $n,
-					'pr_q0' => $n0,
-					'pr_q1' => $n1,
-					'pr_q2' => $n2,
-					'pr_q3' => $n3,
-					'pr_q4' => $n4
-				),
-				__METHOD__
-			);
+			'pr_index',
+			array( 'pr_page_id' ),
+			array(
+				'pr_page_id' => $indexId,
+				'pr_count' => $n,
+				'pr_q0' => $n0,
+				'pr_q1' => $n1,
+				'pr_q2' => $n2,
+				'pr_q3' => $n3,
+				'pr_q4' => $n4
+			),
+			__METHOD__
+		);
 	}
 
 	/**
-	 * @param $indexId
-	 * @param $n, $n0, $n1, $n2, $n3, $n4 int
+	 * @param $n integer
+	 * @param $n0 integer
+	 * @param $n1 integer
+	 * @param $n2 integer
+	 * @param $n3 integer
+	 * @param $n4 integer
+	 * @param $indexId integer
 	 */
 	public static function setIndexData( $n, $n0, $n1, $n2, $n3, $n4, $indexId ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -126,7 +148,7 @@ class ProofreadIndexDbConnector{
 
 	/**
 	 * Remove index data from pr_index table.
-	 * @param $pageId Integer page identifier
+	 * @param $pageId integer page identifier
 	 */
 	public static function removeIndexData( $pageId ) {
 		$dbw = wfGetDB( DB_MASTER );
