@@ -67,8 +67,6 @@ class ProofreadIndexPageTest extends MediaWikiLangTestCase {
 		global $wgProofreadPageNamespaceIds, $wgExtraNamespaces, $wgNamespacesWithSubpages;
 		parent::setUp();
 
-		$wgExtraNamespaces[250] = 'Page';
-		$wgExtraNamespaces[252] = 'Index';
 		$wgProofreadPageNamespaceIds =  array(
 			'page' => 250,
 			'index' => 252
@@ -123,10 +121,10 @@ class ProofreadIndexPageTest extends MediaWikiLangTestCase {
 	}
 
 	public function testGetLinksToMainNamespace() {
-		$page = new ProofreadIndexPage( Title::makeTitle( 252, 'Test.djvu' ), self::$config, "{{\n|Pages=<pagelist />\n|TOC=* [[Test/Chapter 1]]\n* [[Test/Chapter_2|Chapter 2]]\n}}" );
+		$page = new ProofreadIndexPage( Title::makeTitle( 252, 'Test.djvu' ), self::$config, "{{\n|Pages=[[Page:Test.jpg]]\n|TOC=* [[Test/Chapter 1]]\n* [[Azerty:Test/Chapter_2|Chapter 2]]\n}}" );
 		$links = array(
 			array( Title::newFromText( 'Test/Chapter 1' ), 'Chapter 1' ),
-			array( Title::newFromText( 'Test/Chapter_2' ), 'Chapter 2' )
+			array( Title::newFromText( 'Azerty:Test/Chapter_2' ), 'Chapter 2' )
         );
 		$this->assertEquals( $links, $page->getLinksToMainNamespace() );
 	}
@@ -138,11 +136,11 @@ class ProofreadIndexPageTest extends MediaWikiLangTestCase {
 	}
 
 	public function testGetPagesWithoutPagelist() {
-		$page = new ProofreadIndexPage( Title::makeTitle( 252, 'Test' ), self::$config, "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]\n|Author=[[Author:Me]]\n}}" );
+		$page = new ProofreadIndexPage( Title::makeTitle( 252, 'Test' ), self::$config, "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}" );
 		$links = array( array(
-			array( Title::newFromText( 'Test 1.jpg', 250 ), 'TOC' ),
-			array( Title::newFromText( 'Test 2.tiff', 250 ), '1' ),
-			array( Title::newFromText( 'Test 3.png', 250 ), '2' )
+			array( Title::newFromText( 'Page:Test 1.jpg' ), 'TOC' ),
+			array( Title::newFromText( 'Page:Test 2.tiff' ), '1' ),
+			array( Title::newFromText( 'Page:Test:3.png' ), '2' )
         ), null );
 		$this->assertEquals( $links, $page->getPages() );
 	}
@@ -150,10 +148,10 @@ class ProofreadIndexPageTest extends MediaWikiLangTestCase {
 	public function testGetPreviousAndNextPagesWithoutPagelist() {
 		$page = new ProofreadIndexPage( Title::makeTitle( 252, 'Test' ), self::$config, "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]\n|Author=[[Author:Me]]\n}}" );
 		$links = array(
-			Title::newFromText( 'Test 1.jpg', 250 ),
-			Title::newFromText( 'Test 3.png', 250 )
+			Title::newFromText( 'Page:Test 1.jpg' ),
+			Title::newFromText( 'Page:Test 3.png' )
         );
-		$this->assertEquals( $links, $page->getPreviousAndNextPages( Title::newFromText( 'Test 2.tiff', 250 ) ) );
+		$this->assertEquals( $links, $page->getPreviousAndNextPages( Title::newFromText( 'Page:Test 2.tiff' ) ) );
 	}
 
 	public function testGetIndexDataForPage() {

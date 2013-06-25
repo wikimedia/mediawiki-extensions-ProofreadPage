@@ -250,7 +250,7 @@ class ProofreadIndexPage {
 		$text = $this->getText();
 		$options = new ParserOptions();
 		$rtext = $indexParser->preprocess( $text, $this->title, $options );
-		return $this->linkPregMatch( $rtext, "/\[\[\s*([^:\|]*?)\s*(\|(.*?)|)\]\]/i" );
+		return $this->getLinksToNamespace( $rtext, NS_MAIN );
 	}
 
 	/**
@@ -273,26 +273,25 @@ class ProofreadIndexPage {
 			$links = null;
 		} else {
 			$params = null;
-			$links = $this->linkPregMatch( $text, "/\[\[$pageNamespace:(.*?)(\|(.*?)|)\]\]/i", ProofreadPage::getPageNamespaceId() );
+			$links = $this->getLinksToNamespace( $text, ProofreadPage::getPageNamespaceId() );
 		}
 		return array( $links, $params );
 	}
 
 
 	/**
-	 * Execute a preg_match_all with the pattern put in parameter and return it as a list of links
+	 * Return all links in a given namespace
 	 * @param $text string
-	 * @param $pattern string the pattern to execute
 	 * @param $namespace integer the default namespace id
 	 * @return array of array( Title title of the pointed page, the label of the link )
 	 */
-	protected function linkPregMatch( $text, $pattern, $namespace = NS_MAIN ) {
-		preg_match_all( $pattern, $text, $textLinks, PREG_PATTERN_ORDER );
+	protected function getLinksToNamespace( $text, $namespace ) {
+		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $text, $textLinks, PREG_PATTERN_ORDER );
 		$links = array();
 		$num = 0;
 		for( $i = 0; $i < count( $textLinks[1] ); $i++ ) {
-			$title = Title::newFromText( $textLinks[1][$i], $namespace );
-			if ( $title !== null ) {
+			$title = Title::newFromText( $textLinks[1][$i] );
+			if ( $title !== null && $title->inNamespace( $namespace ) ) {
 				if ( $textLinks[3][$i] === '' ) {
 					$links[$num] = array( $title, $title->getSubpageText() );
 				} else {
