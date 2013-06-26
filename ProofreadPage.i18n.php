@@ -1401,6 +1401,7 @@ Sumari||15",
  */
 $messages['ce'] = array(
 	'proofreadpage_source' => 'Хьост',
+	'proofreadpage-group-zoom' => 'Барам',
 	'proofreadpage-group-other' => 'Кхин',
 );
 
