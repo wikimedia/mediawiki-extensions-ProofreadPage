@@ -205,8 +205,10 @@ class ProofreadPage {
 	private static function preparePage( $out, $m, $isEdit ) {
 		global $wgUser, $wgExtensionAssetsPath, $wgContLang;
 
-		if ( !isset( $out->getTitle()->prpIndexPage ) ) {
-			self::loadIndex( $out->getTitle() );
+		$pageTitle = $out->getTitle();
+
+		if ( !isset( $pageTitle->prpIndexPage ) ) {
+			self::loadIndex( $pageTitle );
 		}
 
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
@@ -287,7 +289,7 @@ class ProofreadPage {
 					'alt' => $out->msg( 'proofreadpage_index' )->text(), 'width' => 15, 'height' => 15 ) ),
 				array( 'title' => $out->msg( 'proofreadpage_index' )->text() ) );
 
-			list( $header, $footer, $css, $editWidth ) = $indexPage->getIndexDataForPage();
+			list( $header, $footer, $css, $editWidth ) = $indexPage->getIndexDataForPage( $pageTitle );
 			$jsVars['editWidth'] = $editWidth;
 			$jsVars['proofreadPageHeader'] = $header;
 			$jsVars['proofreadPageFooter'] = $footer;

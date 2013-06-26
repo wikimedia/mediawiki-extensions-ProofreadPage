@@ -347,15 +347,45 @@ class ProofreadIndexPage {
 	}
 
 	/**
+	 * Return the Title of the previous and the next page pages
+	 * @param $page Title the page
+	 * @return string|null
+	 * @todo Move to pager system
+	 */
+	public function getDisplayedPageNumber( Title $page ) {
+		global $wgContLang;
+
+		list( $links, $params ) = $this->getPages();
+		if ( $links === null ) {
+			$pagenr = 1; //TODO move it to ProofreadPagePage::getPosition()
+			$parts = explode( '/', $page->getText() );
+			if ( count( $parts ) > 1 ) {
+				$pagenr = intval( $wgContLang->parseFormattedNumber( array_pop( $parts ) ) );
+				list( $pagenum, $links, $mode ) = ProofreadPage::pageNumber( $pagenr, $params );
+				return $pagenum;
+			}
+		} else {
+			foreach( $links as $pagenr => $link ) {
+				if ( $page->equals( $link[0] ) ) {
+					return $link[1];
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
 	 * Return metadata from the index pages that will be used by a page page.
+	 * @param $page Title the page (TODO: move to ProofreadPagePage)
 	 * @return array( header, footer, css, editWidth ) as string
 	 */
-	public function getIndexDataForPage() {
+	public function getIndexDataForPage( Title $page ) {
 		$entries = $this->getIndexEntriesForHeader();
 		$attributes = array();
 		foreach( $entries as $key => $attribute ) { //We use here only values as text
 			$attributes[strtolower( $key )] = $attribute->getStringValue();
 		}
+		$attributes['pagenum'] = $this->getDisplayedPageNumber( $page );
 
 		if( isset( $attributes['header'] ) ) {
 			$header = $attributes['header'];
@@ -363,13 +393,13 @@ class ProofreadIndexPage {
 			$header = wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain();
 		}
 
-		if( isset( $attributes['footer'] ) ) {
+		if ( isset( $attributes['footer'] ) ) {
 			$footer = $attributes['footer'];
 		} else {
 			$footer = wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
 		}
 
-		foreach ( $attributes as $key => $val ) {
+		foreach( $attributes as $key => $val ) {
 			$header = str_replace( '{{{' . $key . '}}}', $val, $header );
 			$footer = str_replace( '{{{' . $key . '}}}', $val, $footer );
 		}
