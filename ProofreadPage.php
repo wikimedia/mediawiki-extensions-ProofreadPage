@@ -40,15 +40,18 @@ $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
-$wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/ProofreadPageDbConnector.php';
 $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
 
 $wgAutoloadClasses['EditProofreadIndexPage'] = $dir . 'includes/index/EditProofreadIndexPage.php';
-$wgAutoloadClasses['EditProofreadPagePage'] = $dir . 'includes/page/EditProofreadPagePage.php';
 $wgAutoloadClasses['ProofreadIndexEntry'] = $dir . 'includes/index/ProofreadIndexEntry.php';
 $wgAutoloadClasses['ProofreadIndexValue'] = $dir . 'includes/index/ProofreadIndexValue.php';
 $wgAutoloadClasses['ProofreadIndexPage'] = $dir . 'includes/index/ProofreadIndexPage.php';
 $wgAutoloadClasses['ProofreadIndexDbConnector'] = $dir . 'includes/index/ProofreadIndexDbConnector.php';
+
+$wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/ProofreadPageDbConnector.php';
+$wgAutoloadClasses['EditProofreadPagePage'] = $dir . 'includes/page/EditProofreadPagePage.php';
+$wgAutoloadClasses['ProofreadPagePage'] = $dir.'includes/page/ProofreadPagePage.php';
+$wgAutoloadClasses['ProofreadPageValue'] = $dir.'includes/page/ProofreadPageValue.php';
 
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
