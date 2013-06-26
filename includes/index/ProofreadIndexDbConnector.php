@@ -58,9 +58,9 @@ class ProofreadIndexDbConnector{
 	/**
 	 * @param $x Object
 	 * @param $indexId integer
-	 * @param $article Article
+	 * @param $article WikiPage
 	 */
-	public static function replaceIndexById( $x, $indexId, Article $article ) {
+	public static function replaceIndexById( $x, $indexId, WikiPage $article ) {
 		$n  = $x->pr_count;
 		$n0 = $x->pr_q0;
 		$n1 = $x->pr_q1;
