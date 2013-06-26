@@ -155,8 +155,8 @@ class ProofreadIndexPageTest extends MediaWikiLangTestCase {
 	}
 
 	public function testGetIndexDataForPage() {
-		$page = new ProofreadIndexPage( Title::makeTitle( 252, 'Test.djvu' ), self::$config, "{{\n|Title=Test book\n|Header=Head\n}}" );
-		$result = array( 'Head', '<references/>', '', '' );
-		$this->assertEquals( $result, $page->getIndexDataForPage() );
+		$page = new ProofreadIndexPage( Title::makeTitle( 252, 'Test.djvu' ), self::$config, "{{\n|Title=Test book\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]\n|Header=Head {{{pagenum}}}\n}}" );
+		$result = array( 'Head TOC', '<references/>', '', '' );
+		$this->assertEquals( $result, $page->getIndexDataForPage( Title::newFromText( 'Page:Test 1.jpg' ) ) );
 	}
 }
