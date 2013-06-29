@@ -3,7 +3,7 @@
 /**
  * @group ProofreadPage
  */
-class ProofreadIndexPageTest extends MediaWikiLangTestCase {
+class ProofreadIndexPageTest extends ProofreadPageTestCase {
 
 	protected static $config = array(
 		'Title' => array(
@@ -62,17 +62,6 @@ class ProofreadIndexPageTest extends MediaWikiLangTestCase {
 			'hidden' => true
 		),
 	);
-
-	protected function setUp() {
-		global $wgProofreadPageNamespaceIds, $wgExtraNamespaces, $wgNamespacesWithSubpages;
-		parent::setUp();
-
-		$wgProofreadPageNamespaceIds =  array(
-			'page' => 250,
-			'index' => 252
-		);
-		$wgNamespacesWithSubpages[NS_MAIN] = true;
-	}
 
 	public function testNewFromTitle() {
 		$this->assertInstanceOf( 'ProofreadIndexPage', ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'Test.djvu' ) ) );

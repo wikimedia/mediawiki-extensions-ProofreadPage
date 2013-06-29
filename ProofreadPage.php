@@ -51,7 +51,7 @@ $wgAutoloadClasses['ProofreadIndexDbConnector'] = $dir . 'includes/index/Proofre
 $wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/ProofreadPageDbConnector.php';
 $wgAutoloadClasses['EditProofreadPagePage'] = $dir . 'includes/page/EditProofreadPagePage.php';
 $wgAutoloadClasses['ProofreadPagePage'] = $dir.'includes/page/ProofreadPagePage.php';
-$wgAutoloadClasses['ProofreadPageValue'] = $dir.'includes/page/ProofreadPageValue.php';
+$wgAutoloadClasses['ProofreadPageContent'] = $dir.'includes/page/ProofreadPageContent.php';
 
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
@@ -166,7 +166,12 @@ $wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
 $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$dir = __DIR__ . '/tests/includes/';
 
+	$files[] = $dir . 'ProofreadPageTestCase.php';
+
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
+
+	$files[] = $dir . 'page/ProofreadPagePageTest.php';
+	$files[] = $dir . 'page/ProofreadPageContentTest.php';
 
 	return true;
 };

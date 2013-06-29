@@ -71,15 +71,13 @@ class ProofreadPagePage {
 	 * Returns number of the page in the file if it's a multi-page file or null
 	 * @return integer|null
 	 */
-	protected function getPageNumber() {
+	public function getPageNumber() {
+		global $wgContLang;
 		$parts = explode( '/', $this->title->getText() );
 		if ( count( $parts ) === 1 ) {
 			return null;
 		}
 		$val = $wgContLang->parseFormattedNumber( $parts[count( $parts ) - 1] );
-		if ( !is_integer( $val ) ) {
-			return null;
-		}
 		return (int) $val;
 	}
 
@@ -125,7 +123,7 @@ class ProofreadPagePage {
 	 * Return content of the page
 	 * @return ProofreadPageValue
 	 */
-	protected function getContent() {
+	public function getContent() {
 		if ( $this->content === null ) {
 			$rev = Revision::newFromTitle( $this->title );
 			if ( $rev === null ) {
@@ -139,7 +137,7 @@ class ProofreadPagePage {
 
 	/**
 	 * Return content of the page initialised for edition
-	 * @return ProofreadPageValue
+	 * @return ProofreadPageContent
 	 */
 	public function getContentForEdition() {
 		global $wgContLang;
@@ -147,7 +145,7 @@ class ProofreadPagePage {
 		if ( $content->isEmpty() ) {
 			$index = $this->getIndex();
 			if ( $index ) {
-				list( $header, $footer, $css, $editWidth ) = $index->getIndexDataForPage();
+				list( $header, $footer, $css, $editWidth ) = $index->getIndexDataForPage( $this->title );
 				$content->setHeader( $header );
 				$content->setFooter( $footer );
 

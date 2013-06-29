@@ -55,7 +55,7 @@ class ProofreadPageContent {
 	 * @param $level integer
 	 * @param $proofreader User|string
 	 */
-	public function __construct( $header = '', $body = '', $footer = '', $level = 1, $proofreader = null ) {
+	public function __construct( $header = '', $body = '', $footer = '', $level = 1, $proofreader = '' ) {
 		$this->setHeader( $header );
 		$this->setBody( $body );
 		$this->setFooter( $footer );
@@ -147,7 +147,7 @@ class ProofreadPageContent {
 	 * Sets the last proofreader
 	 * @param $proofreader User
 	 */
-	public static function setProofreader( User $user ) {
+	public function setProofreader( User $user ) {
 		$this->proofreader = $user;
 	}
 
@@ -156,7 +156,7 @@ class ProofreadPageContent {
 	* @param $name string
 	* @throws MWException
 	*/
-	public static function setProofreaderFromName( $name ) {
+	public function setProofreaderFromName( $name ) {
 		if ( $name === '' ) {
 			$this->proofreader = null;
 		} elseif ( IP::isValid( $name ) ) {
@@ -176,7 +176,7 @@ class ProofreadPageContent {
 	 * @param $level integer
 	 * @throws MWException
 	 */
-	public static function setLevel( $level ) {
+	public function setLevel( $level ) {
 		if ( !is_integer( $level ) || $level < 0 || $level > 4 ) {
 			throw new MWException( 'level must be an integer between 0 and 4.' );
 		}
@@ -198,31 +198,47 @@ class ProofreadPageContent {
 		return $text;
 	}
 
-	/**
-	 * Parse a wikitext to setup the content of the ProofreadPageValue
-	 * @param $text string
-	 * @throws MWException
-	 */
 	public function unserialize( $text ) {
-		if ( !preg_match( '/^<noinclude>(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
+		if( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
+			$body = $m[2];
+			$footer = $this->cleanTrailingDivTag( $m[3] );
+		} elseif ( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)$/s', $text, $m ) ) {
+			$footer = '';
+			$body = $this->cleanTrailingDivTag( $m[2] );
+		} else {
 			throw new MWException( 'The serialize value of the page is not valid.' );
 		}
 		$header = $m[1];
-		$this->setBody( $m[2] );
-		$this->setFooter( $m[3] );
-
-		//Extract quality
-		if ( preg_match( '/^<pagequality level=\"(0|1|2|3|4)\" user=\"(.*?)\" \/>(.*)$/', $header, $m ) ) {
-			$this->setHeader( $m[3] );
-			$this->setProofreaderFromName( $m[2] );
-			$this->setLevel( inval( $m[1] ) );
-		} elseif( preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m ) ){
-			$this->setHeader( $m[4] );
-			$this->setProofreaderFromName( $m[3] );
-			$this->setLevel( inval( $m[1] ) );
-		} else {
-			$this->setHeader( $header );
+		if ( preg_match( '/^<pagequality level="(0|1|2|3|4)" user="(.*?)" \/>(.*?)$/s', $header, $m ) ) {
+			$level = intval( $m[1] );
+			$proofreader = $m[2];
+			$header = $this->cleanHeader( $m[3] );
+		} elseif( preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m ) ) {
+			$level = intval( $m[1] );
+			$proofreader = $m[3];
+			$header = $this->cleanHeader( $m[4] );
 		}
+		$this->setHeader( $header );
+		$this->setBody( $body );
+		$this->setFooter( $footer );
+		$this->setLevel( $level );
+		$this->setProofreaderFromName( $proofreader );
+	}
+
+	public function cleanTrailingDivTag( $text ) {
+		if ( preg_match( '/^(.*?)<\/div>$/s', $text, $m2 ) ) {
+			return  $m2[1];
+		} else {
+			return $text;
+		}
+	}
+	public function cleanHeader( $header ) {
+		if( preg_match('/^(.*?)<div class="pagetext">(.*?)$/s', $header, $mt) ) {
+			$header = $mt[2];
+		} elseif ( preg_match('/^(.*?)<div>(.*?)$/s', $header, $mt) ) {
+			$header = $mt[2];
+		}
+		return $header;
 	}
 
 	/**
@@ -234,8 +250,8 @@ class ProofreadPageContent {
 	}
 
 	/**
-	 * Create a new ProofreadPageValue from a ProofreadIndexPage
-	 * @param $index ProofreadIndexPage
+	 * Create a new ProofreadPageContent from a ProofreadIndexPage
+	 * @param $text string
 	 * @return ProofreadPageValue
 	 */
 	public static function newFromWikitext( $text ) {
