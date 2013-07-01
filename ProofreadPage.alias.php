@@ -49,7 +49,7 @@ $specialPageAliases['de'] = array(
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
 	'IndexPages' => array( 'Pelaİndeks' ),
-	'PagesWithoutScans' => array( 'PeleyêBêCıgeyrayışi' ),
+	'PagesWithoutScans' => array( 'PeréBéCıgeyrayışi' ),
 );
 
 /** Estonian (eesti) */
