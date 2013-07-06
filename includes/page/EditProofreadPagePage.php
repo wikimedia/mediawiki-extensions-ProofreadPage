@@ -113,7 +113,7 @@ class EditProofreadPagePage {
 
 		$text = $editpage->textbox1;
 		// parse the page
-		list( $q, $username, $ptext ) = ProofreadPage::parsePage( $text, $title );
+		list( $q, $username, $ptext ) = ProofreadPageParser::parsePage( $text, $title );
 		if( $q == -1 ) {
 			$editpage->textbox1 = $ptext;
 			$q = 1;
@@ -123,7 +123,7 @@ class EditProofreadPagePage {
 		$rev = Revision::newFromTitle( $title, false, Revision::READ_LATEST );
 		if( $rev ) {
 			$old_text = $rev->getText();
-			list( $old_q, $old_username, $old_ptext ) = ProofreadPage::parsePage( $old_text, $title );
+			list( $old_q, $old_username, $old_ptext ) = ProofreadPageParser::parsePage( $old_text, $title );
 			if( $old_q != -1 ) {
 				// check usernames
 				if( ( $old_q != $q ) && !$wgUser->isAllowed( 'pagequality' ) ) {
@@ -164,7 +164,7 @@ class EditProofreadPagePage {
 
 		// if it's an index, update pr_index table
 		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {	//Move this part to EditProofreadIndexPage
-			ProofreadPage::update_pr_index( $article );
+			ProofreadPage::updatePrIndex( $article );
 			return true;
 		}
 
