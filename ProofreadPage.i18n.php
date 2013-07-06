@@ -142,7 +142,8 @@ The special page lists texts without scans; that is, the texts that have not bee
 	'proofreadpage_index_status' => 'One of the possible sorts in [[Special:IndexPages]] : number of pages proofread and validated in a book.',
 	'proofreadpage_index_size' => 'One of the possible sorts in [[Special:IndexPages]] : number of pages of a book.',
 	'proofreadpage_specialpage_label_orderby' => 'Label of the order select in [[Special:IndexPages]]',
-	'proofreadpage_specialpage_label_key' => 'Label of the search input in [[Special:IndexPages]]',
+	'proofreadpage_specialpage_label_key' => 'Label of the search input in [[Special:IndexPages]].
+{{Identical|Search}}',
 	'proofreadpage_specialpage_label_sortascending' => 'Label of a checkbox : sort the list of pages return by [[Special:IndexPages]] in ascending order or not.',
 	'proofreadpage_alphabeticalorder' => 'One of the possible sorts in [[Special:IndexPages]]',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
