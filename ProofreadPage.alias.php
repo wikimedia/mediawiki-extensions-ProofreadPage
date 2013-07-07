@@ -124,7 +124,7 @@ $specialPageAliases['nb'] = array(
 /** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'IndexPages' => array( 'Indexpagina\'s' ),
-	'PagesWithoutScans' => array( 'Pagina\'s_zonder_deurlochting' ),
+	'PagesWithoutScans' => array( 'Ziejen_zonder_deurlochting' ),
 );
 
 /** Dutch (Nederlands) */
