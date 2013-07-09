@@ -1289,7 +1289,7 @@ Progress|Araokaat
 Volumes|Levrennoù|5
 Pages|Pajennoù|20
 Remarks|Notennoù|10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|pajenn|pajenn}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pajenn}}',
 	'proofreadpage_specialpage_legend' => 'Klask e pajennoù ar merdeer',
 	'proofreadpage_specialpage_searcherror' => 'Fazi el lusker enklask',
 	'proofreadpage_source' => 'Mammenn',
