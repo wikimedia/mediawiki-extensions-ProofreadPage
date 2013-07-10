@@ -95,7 +95,7 @@ class ProofreadPageContent {
 	 * returns the proofreading level of the page.
 	 * @return integer
 	 */
-	public function getProofreadingLevels() {
+	public function getProofreadingLevel() {
 		return $this->level;
 	}
 
@@ -199,24 +199,32 @@ class ProofreadPageContent {
 	}
 
 	public function unserialize( $text ) {
-		if( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
-			$body = $m[2];
-			$footer = $this->cleanTrailingDivTag( $m[3] );
-		} elseif ( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)$/s', $text, $m ) ) {
+		if( $text === '' ) {
+			$header = '';
+			$body = '';
 			$footer = '';
-			$body = $this->cleanTrailingDivTag( $m[2] );
+			$proofreader = '';
+			$level = 1;	
 		} else {
-			throw new MWException( 'The serialize value of the page is not valid.' );
-		}
-		$header = $m[1];
-		if ( preg_match( '/^<pagequality level="(0|1|2|3|4)" user="(.*?)" \/>(.*?)$/s', $header, $m ) ) {
-			$level = intval( $m[1] );
-			$proofreader = $m[2];
-			$header = $this->cleanHeader( $m[3] );
-		} elseif( preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m ) ) {
-			$level = intval( $m[1] );
-			$proofreader = $m[3];
-			$header = $this->cleanHeader( $m[4] );
+			if( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
+				$body = $m[2];
+				$footer = $this->cleanTrailingDivTag( $m[3] );
+			} elseif ( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)$/s', $text, $m ) ) {
+				$footer = '';
+				$body = $this->cleanTrailingDivTag( $m[2] );
+			} else {
+				throw new MWException( 'The serialize value of the page is not valid.' );
+			}
+			$header = $m[1];
+			if ( preg_match( '/^<pagequality level="(0|1|2|3|4)" user="(.*?)" \/>(.*?)$/s', $header, $m ) ) {
+				$level = intval( $m[1] );
+				$proofreader = $m[2];
+				$header = $this->cleanHeader( $m[3] );
+			} elseif( preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m ) ) {
+				$level = intval( $m[1] );
+				$proofreader = $m[3];
+				$header = $this->cleanHeader( $m[4] );
+			}
 		}
 		$this->setHeader( $header );
 		$this->setBody( $body );

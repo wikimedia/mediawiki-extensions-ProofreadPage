@@ -51,7 +51,7 @@ class ProofreadPageContentTest extends ProofreadPageTestCase {
 	public function testGetLevel() {
 		$level = 2;
 		$pageContent = new ProofreadPageContent( '', '', '', $level );
-		$this->assertEquals( $level, $pageContent->getProofreadingLevels() );
+		$this->assertEquals( $level, $pageContent->getProofreadingLevel() );
 	}
 
 	public function testSetHeader() {
@@ -79,7 +79,7 @@ class ProofreadPageContentTest extends ProofreadPageTestCase {
 		$level = 3;
 		$pageContent = new ProofreadPageContent();
 		$pageContent->setLevel( $level );
-		$this->assertEquals( $level, $pageContent->getProofreadingLevels() );
+		$this->assertEquals( $level, $pageContent->getProofreadingLevel() );
 	}
 
 	/**

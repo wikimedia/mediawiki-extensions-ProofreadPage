@@ -113,6 +113,10 @@ class ProofreadPage {
 			$editor = new EditProofreadIndexPage( $article );
 			$editor->edit();
 			return false;
+		} elseif ( $article->getTitle()->inNamespace( self::getPageNamespaceId() ) ) {
+			$editor = new EditProofreadPagePage( $article );
+			$editor->edit();
+			return false;
 		} else {
 			return true;
 		}
@@ -506,6 +510,49 @@ class ProofreadPage {
 				self::updatePrIndex( $index, $deleted ? $title : null );
 			}
 		}
+	}
+
+	/**
+	 * @param $article WikiPage
+	 * @return bool
+	 */
+	public static function onArticleSaveComplete( WikiPage &$article ) {
+		$title = $article->getTitle();
+
+		// if it's an index, update pr_index table
+		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {	//Move this part to EditProofreadIndexPage
+			ProofreadPage::updatePrIndex( $article );
+			return true;
+		}
+
+		// return if it is not a page
+		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
+			return true;
+		}
+
+		/* check if there is an index */
+		if ( !isset( $title->prpIndexPage ) ) {
+			ProofreadPage::loadIndex( $title );
+		}
+		if( $title->prpIndexPage === null ) {
+			return true;
+		}
+
+		/**
+		 * invalidate the cache of the index page
+		 */
+		$title->prpIndexPage->getTitle()->invalidateCache();
+
+		/**
+		 * update pr_index iteratively
+		 */
+		$indexId = $title->prpIndexPage->getTitle()->getArticleID();
+		$x = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
+		if( $x ) {
+			$a = ProofreadIndexDbConnector::replaceIndexById( $x, $indexId, $article );
+		}
+
+		return true;
 	}
 
 	/**

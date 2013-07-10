@@ -1,6 +1,6 @@
 // Author : ThomasV - License : GPL
 
-function pr_init_tabs() {
+function prInitTabs() {
 	$( '#ca-talk' ).prev().before( '<li id="ca-prev"><span>' + self.proofreadPagePrevLink + '</span></li>' );
 	$( '#ca-talk' ).prev().before( '<li id="ca-next"><span>' + self.proofreadPageNextLink + '</span></li>' );
 	$( '#ca-talk' ).after( '<li id="ca-index"><span>' + self.proofreadPageIndexLink + '</span></li>' );
@@ -11,7 +11,7 @@ function pr_init_tabs() {
  * Fetches a url of the image thumbnail.
  * Note: the callback will not be called if the attempt was unsuccessful.
  */
-function pr_fetch_thumb_url( requestedWidth, callback ) {
+function prFetchThumbUrl( requestedWidth, callback ) {
 	var fullWidth = mw.config.get( 'proofreadPageWidth' );
 	var fullHeight = mw.config.get( 'proofreadPageHeight' );
 
@@ -58,7 +58,7 @@ function pr_fetch_thumb_url( requestedWidth, callback ) {
 	}
 }
 
-function pr_make_edit_area( container, textbox ) {
+function prMakeEditArea( container, textbox ) {
 	var text = textbox.value;
 
 	var re = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
@@ -174,7 +174,7 @@ function pr_make_edit_area( container, textbox ) {
 	jQuery( container ).append( $header, textbox, $footer );
 }
 
-function pr_reset_size() {
+function prResetSize() {
 	var box = document.getElementById( 'wpTextbox1' );
 	var h = document.getElementById( 'prp_header' );
 	var f = document.getElementById( 'prp_footer' );
@@ -189,7 +189,7 @@ function pr_reset_size() {
 	}
 }
 
-function pr_toggle_visibility() {
+function prToggleVisibility() {
 	var box = document.getElementById( 'wpTextbox1' );
 	var h = document.getElementById( 'prp_header' );
 	var f = document.getElementById( 'prp_footer' );
@@ -200,14 +200,14 @@ function pr_toggle_visibility() {
 		h.style.cssText = '';
 		f.style.cssText = '';
 	}
-	pr_reset_size();
+	prResetSize();
 }
 
-function pr_toggle_layout() {
+function prToggleLayout() {
 	self.pr_horiz = ! self.pr_horiz;
-	pr_fill_table();
-	pr_reset_size();
-	pr_zoom( 0 );
+	prFillTable();
+	prResetSize();
+	prZoom( 0 );
 }
 
 /*
@@ -231,7 +231,7 @@ var ffox = 0;
 var ffoy = 0;
 
 /* relative coordinates of the mouse pointer */
-function get_xy( evt ) {
+function getXy( evt ) {
 	if( typeof( evt ) == 'object' ) {
 		evt = evt ? evt : window.event ? window.event : null;
 		if( !evt ) {
@@ -253,7 +253,7 @@ function get_xy( evt ) {
 }
 
 // mouse move
-function zoom_move( evt ) {
+function zoomMove( evt ) {
 	if( zoom_status != 1 ) {
 		return false;
 	}
@@ -261,7 +261,7 @@ function zoom_move( evt ) {
 	if( !evt ) {
 		return false;
 	}
-	get_xy( evt );
+	getXy( evt );
 	zp_clip.style.margin = ( ( yy > objh ) ? ( objh * ( 1 - zoomamount_h ) ) :
 		( yy * ( 1 - zoomamount_h ) ) ) + 'px 0px 0px ' +
 		( ( xx > objw ) ? ( objw * ( 1 - zoomamount_w ) ) :
@@ -269,7 +269,7 @@ function zoom_move( evt ) {
 	return false;
 }
 
-function zoom_off() {
+function zoomOff() {
 	zp_container.style.width = '0px';
 	zp_container.style.height = '0px';
 	zoom_status = 0;
@@ -294,7 +294,7 @@ function countoffset() {
 	ieoy -= document.body.scrollTop;
 }
 
-function zoom_mouseup( evt ) {
+function zoomMouseup( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
 	if( !evt ) {
 		return false;
@@ -312,19 +312,19 @@ function zoom_mouseup( evt ) {
 	}
 
 	if( zoom_status == 0 ) {
-		zoom_on( evt );
+		zoomOn( evt );
 		return false;
 	} else if( zoom_status == 1 ) {
 		zoom_status = 2;
 		return false;
 	} else if( zoom_status == 2 ) {
-		zoom_off();
+		zoomOff();
 		return false;
 	}
 	return false;
 }
 
-function zoom_on( evt ) {
+function zoomOn( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
 	if( !evt ) {
 		return false;
@@ -354,7 +354,7 @@ function zoom_on( evt ) {
 }
 
 //zoom using two images (magnification glass)
-function pr_initzoom( width, height ) {
+function prInitZoom( width, height ) {
 	var maxWidth = 800;
 
 	if( width > maxWidth ) {
@@ -365,12 +365,12 @@ function pr_initzoom( width, height ) {
 	if( !zp ) {
 		return;
 	}
-	pr_fetch_thumb_url( maxWidth, function( largeUrl, largeWidth, largeHeight ) {
+	prFetchThumbUrl( maxWidth, function( largeUrl, largeWidth, largeHeight ) {
 		self.objw = width;
 		self.objh = height;
 
-		zp.onmouseup = zoom_mouseup;
-		zp.onmousemove =  zoom_move;
+		zp.onmouseup = zoomMouseup;
+		zp.onmousemove =  zoomMove;
 		zp_container = document.createElement( 'div' );
 		zp_container.style.cssText = 'position:absolute; width:0; height:0; overflow:hidden;';
 		zp_clip = document.createElement( 'img' );
@@ -403,7 +403,7 @@ var pr_rect = false;
 /* size of the window */
 var pr_width = 0, pr_height = 0;
 
-function set_container_css( show_scrollbars ) {
+function setContainerCss( show_scrollbars ) {
 	var sl = pr_container.scrollLeft; // read scrollbar values
 	var st = pr_container.scrollTop;
 	if( show_scrollbars ) {
@@ -430,17 +430,17 @@ function set_container_css( show_scrollbars ) {
 			st = 0;
 		}
 	}
-	pr_set_margins( margin_x, margin_y, false );
+	prSetMargins( margin_x, margin_y, false );
 	pr_container.scrollLeft = sl;
 	pr_container.scrollTop = st;
 }
 
-function pr_drop( evt ) {
+function prDrop( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
 	if( !evt ) {
 		return false;
 	}
-	get_xy( evt );
+	getXy( evt );
 	if( xx > pr_container.offsetWidth - 20 || yy > pr_container.offsetHeight - 20 ) {
 		return false;
 	}
@@ -448,7 +448,7 @@ function pr_drop( evt ) {
 	document.onmouseup = null;
 	document.onmousemove = null;
 	document.onmousedown = null;
-	pr_container.onmousemove = pr_move;
+	pr_container.onmousemove = prMove;
 	if( is_drag == false ) {
 		is_zoom = !is_zoom;
 	} else {
@@ -456,7 +456,7 @@ function pr_drop( evt ) {
 			is_zoom = false;
 			if( boxWidth * boxWidth + boxHeight * boxHeight >= 2500 ) {
 				var ratio_x = Math.abs( pr_container.offsetWidth / self.boxWidth );
-					pr_set_margins(
+					prSetMargins(
 						( margin_x - xMin ) * ratio_x,
 						( margin_y - yMin ) * ratio_x,
 						img_width * ratio_x
@@ -466,16 +466,16 @@ function pr_drop( evt ) {
 	}
 	is_drag = false;
 	pr_rect.style.cssText = "display:none";
-	set_container_css(!is_zoom);
+	setContainerCss(!is_zoom);
 	return false;
 }
 
-function pr_grab( evt ) {
+function prGrab( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
 	if( !evt ) {
 		return false;
 	}
-	get_xy( evt );
+	getXy( evt );
 	if( xx > pr_container.offsetWidth - 20 || yy > pr_container.offsetHeight - 20 ) {
 		return false;
 	}
@@ -492,9 +492,9 @@ function pr_grab( evt ) {
 	}
 
 	document.onmousedown = function() { return false; };
-	document.onmousemove = pr_drag;
-	document.onmouseup = pr_drop;
-	pr_container.onmousemove = pr_drag;
+	document.onmousemove = prDrag;
+	document.onmouseup = prDrop;
+	pr_container.onmousemove = prDrag;
 
 	if( evt.pageX ) {
 		countoffset();
@@ -517,21 +517,21 @@ function pr_grab( evt ) {
 	return false;
 }
 
-function pr_move( evt ) {
+function prMove( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
 	if( !evt ) {
 		return false;
 	}
 	countoffset();
-	get_xy(evt);
+	getXy(evt);
 }
 
-function pr_drag( evt ) {
+function prDrag( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
 	if( !evt ) {
 		return false;
 	}
-	get_xy( evt );
+	getXy( evt );
 	if( xx > pr_container.offsetWidth - 20 || yy > pr_container.offsetHeight - 20 ) {
 		return false;
 	}
@@ -574,7 +574,7 @@ function pr_drag( evt ) {
 }
 
 
-function pr_set_margins( mx, my, new_width ) {
+function prSetMargins( mx, my, new_width ) {
 	var zp_img = document.getElementById( 'ProofReadImage' );
 	if( zp_img ) {
 		margin_x = mx;
@@ -588,11 +588,11 @@ function pr_set_margins( mx, my, new_width ) {
 	}
 }
 
-self.pr_zoom = function( delta ) {
+self.prZoom = function( delta ) {
 	if ( delta == 0 ) {
 		// reduce width by 20 pixels in order to prevent horizontal scrollbar
 		// from showing up
-		pr_set_margins( 0, 0, pr_container.offsetWidth - 20 );
+		prSetMargins( 0, 0, pr_container.offsetWidth - 20 );
 	} else {
 		var old_margin_x = margin_x;
 		var old_margin_y = margin_y;
@@ -605,7 +605,7 @@ self.pr_zoom = function( delta ) {
 		var s = ( delta_w > 0 ) ? 1 : -1;
 		for( var dw = s; dw != delta_w; dw = dw + s ) {
 			var lambda = ( old_width + dw ) / old_width;
-			pr_set_margins(
+			prSetMargins(
 				xx - lambda * ( xx - old_margin_x ),
 				yy - lambda * ( yy - old_margin_y ),
 				old_width + dw
@@ -614,7 +614,7 @@ self.pr_zoom = function( delta ) {
 	}
 };
 
-function pr_zoom_wheel( evt ) {
+function prZoomWheel( evt ) {
 	evt = evt ? evt : window.event ? window.event : null;
 	if( !evt ) {
 		return false;
@@ -633,7 +633,7 @@ function pr_zoom_wheel( evt ) {
 	}
 	if( is_zoom && delta ) {
 		if( !self.proofreadpage_disable_wheelzoom ) {
-			pr_zoom( delta );
+			prZoom( delta );
 		}
 		if( evt.preventDefault ) {
 			evt.preventDefault();
@@ -647,7 +647,7 @@ function pr_zoom_wheel( evt ) {
  * @param message string The message
  * @return string
  */
-function pr_parse_link( message ) {
+function prParseLink( message ) {
 	function replaceInternal( p0, p1, p2 ) {
 		var text = '<a title="' + p1 + '" href="' + mw.util.wikiGetlink( p1 ) + '">';
 		if( p2 != '' ) {
@@ -661,7 +661,7 @@ function pr_parse_link( message ) {
 }
 
 /* fill table with textbox and image */
-function pr_fill_table() {
+function prFillTable() {
 	// remove existing table
 	while( self.table.firstChild ) {
 		self.table.removeChild( self.table.firstChild );
@@ -713,10 +713,10 @@ function pr_fill_table() {
 		self.container_css = 'position:absolute; top:0px; cursor:default; background:#000000; overflow:auto; ' + css_wh;
 		pr_container.style.cssText = self.container_css;
 	}
-	pr_zoom( 0 );
+	prZoom( 0 );
 }
 
-function pr_setup() {
+function prSetup() {
 	self.pr_horiz = mw.user.options.get( 'proofreadpage-horizontal-layout' );
 	if ( !self.pr_horiz ) {
 		// This is kept for compatibility reasons - it will be removed in the future
@@ -752,7 +752,7 @@ function pr_setup() {
 
 	// fill the image container
 	if( !proofreadPageIsEdit ) {
-		pr_fetch_thumb_url( parseInt( pr_width / 2 - 70 ), function( url, width, height ) {
+		prFetchThumbUrl( parseInt( pr_width / 2 - 70 ), function( url, width, height ) {
 			var image = document.createElement( 'img' );
 			image.setAttribute( 'id', 'ProofReadImage' );
 			image.setAttribute( 'src', url );
@@ -760,7 +760,7 @@ function pr_setup() {
 			image.style.cssText = 'padding:0;margin:0;border:0;';
 			pr_container.appendChild( image );
 			pr_container.style.cssText = 'overflow:hidden;width:' + width + 'px;';
-			pr_initzoom( width, height );
+			prInitZoom( width, height );
 		} );
 	} else {
 		var w = parseInt( self.proofreadPageEditWidth );
@@ -773,24 +773,24 @@ function pr_setup() {
 
 		// prevent the container from being resized once the image is downloaded.
 		img_width = pr_horiz ? 0 : parseInt( pr_width / 2 - 70 ) - 20;
-		pr_container.onmousedown = pr_grab;
-		pr_container.onmousemove = pr_move;
+		pr_container.onmousedown = prGrab;
+		pr_container.onmousemove = prMove;
 		if ( pr_container.addEventListener ) {
-			pr_container.addEventListener( 'DOMMouseScroll', pr_zoom_wheel, false );
+			pr_container.addEventListener( 'DOMMouseScroll', prZoomWheel, false );
 		}
-		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
+		pr_container.onmousewheel = prZoomWheel; // IE, Opera.
 
-		pr_fetch_thumb_url( Math.min( w, self.proofreadPageWidth ), function( url, width, height ) {
+		prFetchThumbUrl( Math.min( w, self.proofreadPageWidth ), function( url, width, height ) {
 			pr_container.innerHTML = '<img id="ProofReadImage" src="' +
 				mw.html.escape( url ) + '" width="' + img_width + '" />';
-			pr_zoom( 0 );
+			prZoom( 0 );
 		} );
 	}
 
 	table.setAttribute( 'id', 'textBoxTable' );
 	table.style.cssText = 'width:100%;';
 
-	pr_fill_table();
+	prFillTable();
 
 	// insert the image
 	var text;
@@ -809,12 +809,12 @@ function pr_setup() {
 	text = textParent.removeChild( text );
 
 	if( proofreadPageIsEdit ) {
-		pr_make_edit_area( self.text_container, text );
+		prMakeEditArea( self.text_container, text );
 		textParent.insertBefore( table, textSibling ); // Inserts table after text
 		if ( mw.user.options.get( 'proofreadpage-showheaders' ) ) {
-			pr_reset_size();
+			prResetSize();
 		} else {
-			pr_toggle_visibility();
+			prToggleVisibility();
 		}
 
 	} else {
@@ -839,7 +839,7 @@ function pr_setup() {
 								execute: function() {
 									xx=0;
 									yy=0;
-									pr_zoom(2);
+									prZoom(2);
 								}
 							}
 						},
@@ -852,7 +852,7 @@ function pr_setup() {
 								execute: function() {
 									xx=0;
 									yy=0;
-									pr_zoom(-2);
+									prZoom(-2);
 								}
 							}
 						},
@@ -863,7 +863,7 @@ function pr_setup() {
 							action: {
 								type: 'callback',
 								execute: function() {
-									pr_zoom(0);
+									prZoom(0);
 								}
 							}
 						}
@@ -879,7 +879,7 @@ function pr_setup() {
 							action: {
 								type: 'callback',
 								execute: function() {
-									pr_toggle_visibility();
+									prToggleVisibility();
 								}
 							}
 						},
@@ -890,7 +890,7 @@ function pr_setup() {
 							action: {
 								type: 'callback',
 								execute: function() {
-									pr_toggle_layout();
+									prToggleLayout();
 								}
 							}
 						}
@@ -944,7 +944,7 @@ function pr_setup() {
 	}
 }
 
-function pr_init() {
+function prInit() {
 	if( document.getElementById( 'pr_container' ) ) {
 		return;
 	}
@@ -967,7 +967,7 @@ function pr_init() {
 		);
 	} else {
 		// Run extension setup code
-		pr_setup();
+		prSetup();
 	}
 
 	// add CSS classes to the container div
@@ -976,7 +976,7 @@ function pr_init() {
 	}
 }
 
-function pr_add_quality_buttons() {
+function prAddQualityButtons() {
 	if ( !mw.config.get( 'proofreadPageIsEdit' ) ) {
 		return;
 	}
@@ -1019,7 +1019,7 @@ function pr_add_quality_buttons() {
 	}
 	$container
 		.append( $radioList )
-		.append( '&nbsp;<label for="wpQuality-container">' + pr_parse_link( mw.html.escape( mw.msg( 'proofreadpage_page_status' ) ) ) + '</label>'); //no "for" property: it's a label for the 4 radio buttons.
+		.append( '&nbsp;<label for="wpQuality-container">' + prParseLink( mw.html.escape( mw.msg( 'proofreadpage_page_status' ) ) ) + '</label>'); //no "for" property: it's a label for the 4 radio buttons.
 
 	if ( currentQualityLevel !== 4
 		&& ( currentQualityLevel !== 3 || lastProofreader === mw.config.get( 'proofreadPageUserName' ) )
@@ -1029,21 +1029,21 @@ function pr_add_quality_buttons() {
 	}
 }
 
-jQuery( pr_init_tabs );
+jQuery( prInitTabs );
 
-function pr_startup() {
+function prStartup() {
 	jQuery( function() {
-		pr_init();
-		pr_initzoom();
-		pr_add_quality_buttons();
+		prInit();
+		prInitZoom();
+		prAddQualityButtons();
 	} );
 }
 
 if ( mw.user.options.get( 'usebetatoolbar' ) && jQuery.inArray( 'ext.wikiEditor.toolbar', mw.loader.getModuleNames() ) > -1 ) {
 	mw.loader.using( 'ext.wikiEditor.toolbar', function() {
 		// Load the whole thing after the toolbar has been constructed
-		pr_startup();
+		prStartup();
 	} );
 } else {
-	pr_startup();
+	prStartup();
 }

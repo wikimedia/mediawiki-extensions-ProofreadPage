@@ -32,7 +32,7 @@ class ProofreadPageParser {
 		if( !preg_match( $page_regexp, $text, $m ) ) {
 			ProofreadPage::loadIndex( $title );
 			if ( $title->prpIndexPage !== null ) {
-				list( $header, $footer, $css, $editWidth ) = $title->prpIndexPage->getIndexDataForPage();
+				list( $header, $footer, $css, $editWidth ) = $title->prpIndexPage->getIndexDataForPage( $title );
 			} else {
 				$header = '';
 				$footer = '';

@@ -90,7 +90,7 @@ class ProofreadPagePage {
 			return $this->index;
 		}
 
-		$result = ProofreadIndexDbConnector::getRowsFromTitle( $this->title() );
+		$result = ProofreadIndexDbConnector::getRowsFromTitle( $this->title );
 
 		foreach ( $result as $x ) {
 			$refTitle = Title::makeTitle( $x->page_namespace, $x->page_title );
@@ -127,9 +127,9 @@ class ProofreadPagePage {
 		if ( $this->content === null ) {
 			$rev = Revision::newFromTitle( $this->title );
 			if ( $rev === null ) {
-				$this->content = ProofreadPageValue::newEmpty();
+				$this->content = ProofreadPageContent::newEmpty();
 			} else {
-				$this->content = ProofreadPageValue::newFromWikitext( $rev->getText() );
+				$this->content = ProofreadPageContent::newFromWikitext( $rev->getText() );
 			}
 		}
 		return $this->content;
@@ -142,7 +142,8 @@ class ProofreadPagePage {
 	public function getContentForEdition() {
 		global $wgContLang;
 		$content = $this->getContent();
-		if ( $content->isEmpty() ) {
+
+		if ( $content->isEmpty() && !$this->title->exists() ) {
 			$index = $this->getIndex();
 			if ( $index ) {
 				list( $header, $footer, $css, $editWidth ) = $index->getIndexDataForPage( $this->title );
