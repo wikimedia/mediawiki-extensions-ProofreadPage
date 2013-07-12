@@ -1180,6 +1180,7 @@ $messages['bn'] = array(
 	'proofreadpage_quality3_message' => 'এই পাতার প্রুফরিড সম্পন্ন হয়েছে',
 	'proofreadpage_quality4_message' => 'এই পাতা বৈধ হয়েছে',
 	'proofreadpage_specialpage_label_key' => 'অনুসন্ধান:',
+	'proofreadpage_alphabeticalorder' => 'বর্ণানুক্রম',
 	'proofreadpage_index_listofpages' => 'পাতাসমূহের তালিকা',
 	'proofreadpage_image_message' => 'নির্ঘণ্ট পাতায় লিঙ্ক করো',
 	'proofreadpage_page_status' => 'পাতার অবস্থা',
@@ -1217,7 +1218,7 @@ Key|Sort key
 	'proofreadpage-button-reset-zoom-label' => 'মূল আকার',
 	'proofreadpage-button-zoom-in-label' => 'আরও বড়',
 	'proofreadpage-button-toggle-layout-label' => 'উল্লম্ব/অনুভূমিক বিন্যাস',
-	'proofreadpage-preferences-showheaders-label' => 'পাতা নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও', # Fuzzy
+	'proofreadpage-preferences-showheaders-label' => 'পাতা {{ns:page}} সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও',
 );
 
 /** Breton (brezhoneg)
