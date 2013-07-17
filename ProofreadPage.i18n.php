@@ -6894,6 +6894,7 @@ Catetan||10',
  * @author Cohan
  * @author Diupwijk
  * @author Fluff
+ * @author Jopparn
  * @author Lejonel
  * @author Lokal Profil
  * @author M.M.S.
@@ -6920,6 +6921,8 @@ $messages['sv'] = array(
 	'proofreadpage_nologintext' => 'Du måste vara [[Special:UserLogin|inloggad]] för att förändra status på korrekturläsningen av sidor.',
 	'proofreadpage_notallowed' => 'Förändring är inte tillåten',
 	'proofreadpage_notallowedtext' => 'Du har inte rättigheter att ändra status på korrekturläsningen av den här sidan.',
+	'proofreadpage_dataconfig_badformatted' => 'Bugg i datakonfiguration',
+	'proofreadpage_dataconfig_badformattedtext' => 'Sidan [[Mediawiki:Proofreadpage index data config]] är inte i välformaterad JSON.',
 	'proofreadpage_number_expected' => 'Fel: ett numeriskt värde förväntades',
 	'proofreadpage_interval_too_large' => 'Fel: ett för stort intervall',
 	'proofreadpage_invalid_interval' => 'Fel: ogiltigt intervall',
@@ -6974,6 +6977,10 @@ Anmärkningar||10',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikal/horisontell uppsättning',
 	'proofreadpage-preferences-showheaders-label' => 'Visa fälten för sidhuvud och sidfot vid redigering i namnrymden {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Använd vågrät layout vid redigering i namnrymden {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata för böcker från {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata för böcker som hanteras av ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schemat hittades inte',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Schemat $1 har inte hittats.',
 );
 
 /** Swahili (Kiswahili)
