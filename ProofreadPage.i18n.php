@@ -1550,6 +1550,13 @@ Poznámky||10',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Při editaci ve jmenném prostoru {{ns:page}} používat vodorovné rozložení',
 );
 
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+ * @author ОйЛ
+ */
+$messages['cu'] = array(
+	'proofreadpage_specialpage_label_key' => 'исканиѥ :',
+);
+
 /** Danish (dansk)
  * @author Christian List
  * @author Dferg
