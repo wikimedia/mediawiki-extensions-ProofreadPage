@@ -7,171 +7,12 @@ function prInitTabs() {
 	$( '#ca-talk' ).after( '<li id="ca-image"><span>' + self.proofreadPageScanLink + '</span></li>' );
 }
 
-/**
- * Fetches a url of the image thumbnail.
- * Note: the callback will not be called if the attempt was unsuccessful.
- */
-function prFetchThumbUrl( requestedWidth, callback ) {
-	var fullWidth = mw.config.get( 'proofreadPageWidth' );
-	var fullHeight = mw.config.get( 'proofreadPageHeight' );
+function prSetSummary() {
+	jQuery("input[name='wpQuality']").click( function() {
+		var text = mediaWiki.msg( 'proofreadpage_quality' + this.value + '_category' );
+		document.editform.elements['wpSummary'].value = '/* ' + text + ' */ ';
+	});
 
-	// enforce quantization: width must be multiple of 100px
-	var quantizedWidth = 100 * Math.round( requestedWidth / 100 );
-
-	// compare to the width of the image
-	if ( quantizedWidth < fullWidth ) {
-		var request = {
-			action: 'query',
-			titles: mw.config.get( 'proofreadPageFileName' ),
-			prop: 'imageinfo',
-			iiprop: 'url|size',
-			iiurlwidth: quantizedWidth,
-			format: 'json'
-		};
-
-		// Check if this is multipaged document
-		if ( mw.config.get( 'proofreadPageFilePage' ) != null ) {
-			request['iiurlparam'] = 'page' + mw.config.get( 'proofreadPageFilePage' ) + '-' + quantizedWidth + 'px';
-		}
-
-		// Send request to fetch a thumbnail url
-		jQuery.getJSON( mw.util.wikiScript( 'api' ), request, function( data ) {
-			if ( data && data.query && data.query.pages ) {
-				for ( var i in data.query.pages ) {
-					var page = data.query.pages[i];
-					if ( !page.imageinfo || page.imageinfo.length < 1 ) {
-						continue;
-					}
-					var imageinfo = page.imageinfo[0];
-
-					if ( imageinfo.thumburl ) {
-						callback( imageinfo.thumburl, imageinfo.thumbwidth, imageinfo.thumbheight );
-					}
-
-					return;
-				}
-			}
-		} );
-	} else {
-		// Image without scaling
-		callback( mw.config.get( 'proofreadPageURL' ), fullWidth, fullHeight );
-	}
-}
-
-function prMakeEditArea( container, textbox ) {
-	var text = textbox.value;
-
-	var re = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
-	var m = text.match( re );
-	if( m ) {
-		pageHeader = m[1];
-		pageBody   = m[2];
-		pageFooter = m[3];
-	} else {
-		re2 = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*?)\n$/;
-		m2 = text.match( re2 );
-		if( m2 ) {
-			pageHeader = m2[1];
-			// apparently lookahead is not supported by all browsers
-			// so let us do another regexp
-			re3 = /^([\s\S]*)<noinclude>([\s\S]*)<\/noinclude>\s*$/;
-			m3 = m2[2].match( re3 );
-			if( m3 ) {
-				pageBody   = m3[1];
-				pageFooter = m3[2];
-			} else {
-				pageBody   = m2[2];
-				pageFooter = '';
-			}
-		} else {
-			pageHeader = proofreadPageHeader;
-			pageBody = text;
-			pageFooter = proofreadPageFooter;
-			if( document.editform ) {
-				document.editform.elements['wpSummary'].value = '/* ' + mediaWiki.msg( 'proofreadpage_quality1_category' ) + ' */ ';
-			}
-		}
-	}
-
-	// find the PageQuality template
-	// we do this separately from header detection,
-	// because the template might not be in the header
-	var reg = /<pagequality level=\"(0|1|2|3|4)\" user=\"(.*?)\" \/>/g;
-	var m4 = reg.exec( pageHeader );
-	var old_reg = /\{\{PageQuality\|(0|1|2|3|4)(\|(.*?|))\}\}/g;
-	var old_m4 = old_reg.exec( pageHeader );
-	if( m4 ) {
-		switch( m4[1] ) {
-			case '0':
-				self.proofreadpage_quality = 0;
-				break;
-			case '1':
-				self.proofreadpage_quality = 1;
-				break;
-			case '2':
-				self.proofreadpage_quality = 2;
-				break;
-			case '3':
-				self.proofreadpage_quality = 3;
-				break;
-			case '4':
-				self.proofreadpage_quality = 4;
-				break;
-			default:
-				self.proofreadpage_quality = 1;
-		}
-		self.proofreadpage_username = m4[2];
-		pageHeader = pageHeader.replace( reg, '' );
-	} else if ( old_m4 ) {
-		switch( old_m4[1] ) {
-			case '0':
-				self.proofreadpage_quality = 0;
-				break;
-			case '1':
-				self.proofreadpage_quality = 1;
-				break;
-			case '2':
-				self.proofreadpage_quality = 2;
-				break;
-			case '3':
-				self.proofreadpage_quality = 3;
-				break;
-			case '4':
-				self.proofreadpage_quality = 4;
-				break;
-			default:
-				self.proofreadpage_quality = 1;
-		}
-		self.proofreadpage_username = old_m4[3];
-		pageHeader = pageHeader.replace( old_reg, '' );
-	} else {
-		self.proofreadpage_quality = 1;
-		self.proofreadpage_username = '';
-	}
-	// detect the container div
-	if( pageHeader.match( "^<div class=\"pagetext\">" ) && pageFooter.match( "</div>$" ) ) {
-		pageHeader = pageHeader.substr( 22, pageHeader.length );
-		pageFooter = pageFooter.substr( 0, pageFooter.length - 6 );
-	}
-
-	var $header = jQuery( '<div id="prp_header" style=""></div>' ).append(
-		'<label for="wpHeaderTextbox">' + mw.html.escape( mediaWiki.msg( 'proofreadpage_header' ) ) + '</label>' +
-		'<textarea id="wpHeaderTextbox" name="wpHeaderTextbox" rows="2" cols="80" tabindex="1">\n' +
-		mw.html.escape( pageHeader ) + '</textarea><br />' + '<label for="wpTextbox1">' +
-		mw.html.escape( mediaWiki.msg( 'proofreadpage_body' ) ) + '</label>'
-	);
-
-	var $footer = jQuery( '<div id="prp_footer" style=""></div>' ).append( '<label for="wpFooterTextbox">' +
-		mw.html.escape( mediaWiki.msg( 'proofreadpage_footer' ) ) + '</label><br />' +
-		'<textarea id="wpFooterTextbox" name="wpFooterTextbox" rows="2" cols="80" tabindex="1">\n' +
-		mw.html.escape( pageFooter ) + '</textarea>'
-	);
-
-	textbox.value = pageBody;
-	textbox.style.height = ( self.DisplayHeight - 6 ) + 'px';
-	textbox.style.margin = '0px';
-
-	jQuery( container ).append( $header, textbox, $footer );
 }
 
 function prResetSize() {
@@ -1033,9 +874,9 @@ jQuery( prInitTabs );
 
 function prStartup() {
 	jQuery( function() {
-		prInit();
+//		prInit();
 		prInitZoom();
-		prAddQualityButtons();
+		prSetSummary();
 	} );
 }
 
