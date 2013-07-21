@@ -1454,6 +1454,7 @@ Sumari||15",
  * @author Умар
  */
 $messages['ce'] = array(
+	'proofreadpage_header' => 'Корта (юкъаяло цатарло):',
 	'proofreadpage_source' => 'Хьост',
 	'proofreadpage-group-zoom' => 'Барам',
 	'proofreadpage-group-other' => 'Кхин',
