@@ -162,7 +162,8 @@ This phrase is confusing: Modify 'page quality flag' or 'Modify page quality' fl
 	'proofreadpage-group-other' => 'This is a group header in the Proofread Page extension preferences panel for "miscellaneous" settings.
 {{Identical|Other}}',
 	'proofreadpage-button-toggle-visibility-label' => 'Tooltip text in button for include and noinclude edit boxes toggle, only visible in edit mode.',
-	'proofreadpage-button-zoom-out-label' => 'Tooltip text in button for zoom out, only visible in edit mode.',
+	'proofreadpage-button-zoom-out-label' => 'Tooltip text in button for zoom out, only visible in edit mode.
+{{Identical|Zoom out}}',
 	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.
 {{Identical|Zoom in}}',
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
