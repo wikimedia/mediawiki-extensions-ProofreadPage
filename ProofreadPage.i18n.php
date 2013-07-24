@@ -5938,6 +5938,7 @@ $messages['ps'] = array(
  * @author Giro720
  * @author Hamilton Abreu
  * @author Lijealso
+ * @author Luckas
  * @author Malafaya
  * @author Waldir
  * @author 555
@@ -5969,7 +5970,7 @@ $messages['pt'] = array(
 	'proofreadpage_header' => "Cabeçalho (em modo ''noinclude''):",
 	'proofreadpage_body' => 'Corpo de página (em modo de transclusão):',
 	'proofreadpage_footer' => "Rodapé (em modo ''noinclude''):",
-	'proofreadpage_toggleheaders' => "inverter a visibilidade das secções ''noinclude''",
+	'proofreadpage_toggleheaders' => "inverter a visibilidade das seções ''noinclude''",
 	'proofreadpage_quality0_category' => 'Sem texto',
 	'proofreadpage_quality1_category' => 'Não revistas',
 	'proofreadpage_quality2_category' => 'Problemáticas',
