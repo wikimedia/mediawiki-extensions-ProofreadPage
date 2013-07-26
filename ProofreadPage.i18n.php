@@ -4436,8 +4436,10 @@ $messages['ky'] = array(
 );
 
 /** Latin (Latina)
+ * @author Candalua
  * @author John Vandenberg
  * @author SPQRobin
+ * @author UV
  */
 $messages['la'] = array(
 	'proofreadpage_image' => 'Fasciculus',
@@ -4452,6 +4454,9 @@ $messages['la'] = array(
 	'proofreadpage_quality2_message' => 'Emendatio difficilis',
 	'proofreadpage_quality3_message' => 'Haec pagina emendata est',
 	'proofreadpage_quality4_message' => 'Haec pagina emendata et bis lecta est',
+	'proofreadpage_page_status' => 'Paginae status',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pagina|paginae}}',
+	'proofreadpage_source' => 'Fons',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
