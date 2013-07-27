@@ -101,9 +101,12 @@ class EditProofreadPagePage extends EditPage {
 		}
 
 		$wgOut->addHTML(
-			Html::element( 'label', array( 'for' => 'wpHeaderTextbox'), wfMessage( 'proofreadpage_header' )->plain() ) .
+			Html::openElement( 'div', array( 'class' => 'wpHeader') ) .
+			Html::element( 'label', array( 'for' => 'wpHeaderTextbox'), wfMessage( 'proofreadpage_header' ) ) .
 			Html::textarea( 'wpHeaderTextbox', $content->getHeader(), $headerAttributes ) .
-			Html::element( 'label', array( 'for' => 'wpTextbox1'), wfMessage( 'proofreadpage_body' )->plain() ) .
+			Html::element( 'button', array( 'name' => 'hideHeader', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() ) .
+			Html::closeElement( 'div' ) .
+			Html::element( 'label', array( 'for' => 'wpTextbox1'), wfMessage( 'proofreadpage_body' ) ) .
 			Html::openElement('table', array( 'class' => 'wpProofreadingArea') ) .
 			Html::openElement( 'tr', array( 'class' => 'bodyImage') ) .
 			Html::openElement( 'td', array( 'class' => 'bodyTextbox1', 'style' => 'height:'. $height . 'px;') ) .
@@ -114,8 +117,11 @@ class EditProofreadPagePage extends EditPage {
 			Html::closeElement( 'td' ) .
 			Html::closeElement( 'tr' ) .
 			Html::closeElement( 'table') .
-			Html::element( 'label', array( 'for' => 'wpFooterTextbox'), wfMessage( 'proofreadpage_footer' )->plain() ) .
-			Html::textarea( 'wpFooterTextbox', $content->getFooter(), $footerAttributes )
+			Html::openElement( 'div', array( 'class' => 'wpFooter') ) .
+			Html::element( 'label', array( 'for' => 'wpFooterTextbox'), wfMessage( 'proofreadpage_footer' ) ) .
+			Html::closeElement( 'div' ) .
+			Html::textarea( 'wpFooterTextbox', $content->getFooter(), $footerAttributes ) .
+			Html::element( 'button', array( 'name' => 'hideFooter', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() )
 		);
 
 	}
@@ -126,9 +132,7 @@ class EditProofreadPagePage extends EditPage {
 	function getCheckBoxes( &$tabindex, $checked ) {
 		global $wgUser;
 		$content = ProofreadPageContent::newFromWikitext( $this->textbox1 );
-		$page = new ProofreadPagePage( $this->mTitle, $content );
 		$oldContent = $this->currentPage->getContent();
-		$oldContent = $page->getContent();
 		$oldLevel = $oldContent->getProofreadingLevel();
 		$oldUser = $oldContent->getProofreader();
 		$currentLevel = $content->getProofreadingLevel();
@@ -231,7 +235,6 @@ class EditProofreadPagePage extends EditPage {
 	 */
 	public function internalAttemptSave( &$result, $bot = false ) {
 		global $wgOut;
-		$page = ProofreadPagePage::newFromTitle( $this->mTitle );
 		$index = $this->currentPage->getIndex();
 
 		$oldContent = $this->currentPage->getContent();

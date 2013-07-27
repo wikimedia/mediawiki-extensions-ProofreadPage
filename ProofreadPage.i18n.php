@@ -89,6 +89,7 @@ Remarks||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadata of books managed by ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema not found',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'The $1 schema have not been found.',
+	'proofreadpage-toggle-headerfooter' => 'Toggle this area',
 );
 
 /** Message documentation (Message documentation)
@@ -173,6 +174,7 @@ This phrase is confusing: Modify 'page quality flag' or 'Modify page quality' fl
 	'proofreadpage-indexoai-error-schemanotfound' => 'Title of the error when a requested XML Schema does not exist.',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Text of the error when a requested XML schema does not exist. Parameters:
 * $1 is name of the schema.',
+	'proofreadpage-toggle-headerfooter' => 'Toggle the visibility of header/footer input area',
 );
 
 /** Achinese (Acèh)

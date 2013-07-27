@@ -125,6 +125,7 @@ $wgResourceModules += array(
 			'proofreadpage-button-zoom-in-label',
 			'proofreadpage-button-toggle-layout-label',
 			'proofreadpage-preferences-showheaders-label',
+			'proofreadpage-toggle-headerfooter',
 		)
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(
