@@ -43,85 +43,55 @@ class EditProofreadPagePage extends EditPage {
 			'lang' => $pageLang->getCode(),
 			'dir' => $pageLang->getDir(),
 			'cols' => '70'
-			);
+		);
 
 		if( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
 
-		$headerAttributes = array(
+		$headerAttributes = $inputAttributes + array(
 			'id' => 'wpHeaderTextbox',
 			'rows' => '2',
 			'tabindex' => '1'
-			);
-		$bodyAttributes = array(
+		);
+		$bodyAttributes = $inputAttributes + array(
 			'tabindex' => '1',
 			'accesskey' =>',',
 			'id' => 'wpTextbox1',
 			'rows' => '51',
 			'style' =>''
-			);
-		$footerAttributes = array(
+		);
+		$footerAttributes = $inputAttributes + array(
 			'id' => 'wpFooterTextbox',
 			'rows' => '2',
 			'tabindex' => '1'
-			);
-		$headerAttributes += $inputAttributes;
-		$bodyAttributes += $inputAttributes;
-		$footerAttributes += $inputAttributes;
-		$imageAttributes = array( 'id' => 'ProofReadImage' );
+		);
 
 		$content = ProofreadPageContent::newFromWikitext( $this->textbox1 );
 		$page = new ProofreadPagePage( $this->mTitle, $content );
 
 		$content = $page->getContentForEdition();
-		$text = $content->getBody();
-		$image = null;
-		$imageHtml = '';
-		$index = $page->getIndex();
-		if( $index ) {
-			$image = $index->getImage();
-		}
-
-		if( $image ) {
-			$width = $image->getWidth();
-			$height = $image->getHeight();
-			if( $width > 800 ) {
-				$width = 800;
-			}
-			if( $height > 800 ) {
-				$height = 800;
-			}
-			$thumbnail = $image->transform( array(
-				'page' => $page->getPageNumber(),
-				'height' => $height,
-				'width' => $width)
-			);
-			$imageHtml = $thumbnail->toHtml();
-		}
 
 		$wgOut->addHTML(
+			Html::openElement( 'div', array( 'class' => 'prp-page-container' )  ) .
+			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) ) .
 			Html::openElement( 'div', array( 'class' => 'wpHeader') ) .
 			Html::element( 'label', array( 'for' => 'wpHeaderTextbox'), wfMessage( 'proofreadpage_header' ) ) .
 			Html::textarea( 'wpHeaderTextbox', $content->getHeader(), $headerAttributes ) .
 			Html::element( 'button', array( 'name' => 'hideHeader', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() ) .
 			Html::closeElement( 'div' ) .
 			Html::element( 'label', array( 'for' => 'wpTextbox1'), wfMessage( 'proofreadpage_body' ) ) .
-			Html::openElement('table', array( 'class' => 'wpProofreadingArea') ) .
-			Html::openElement( 'tr', array( 'class' => 'bodyImage') ) .
-			Html::openElement( 'td', array( 'class' => 'bodyTextbox1', 'style' => 'height:'. $height . 'px;') ) .
-			Html::textarea( 'wpTextbox1', $text, $bodyAttributes ) .
-			Html::closeElement('td' ) .
-			Html::openElement( 'td', array( 'id' => 'proofreadImage' ) ) .
-			$imageHtml .
-			Html::closeElement( 'td' ) .
-			Html::closeElement( 'tr' ) .
-			Html::closeElement( 'table') .
+			Html::textarea( 'wpTextbox1', $content->getBody(), $bodyAttributes ) .
 			Html::openElement( 'div', array( 'class' => 'wpFooter') ) .
 			Html::element( 'label', array( 'for' => 'wpFooterTextbox'), wfMessage( 'proofreadpage_footer' ) ) .
 			Html::closeElement( 'div' ) .
 			Html::textarea( 'wpFooterTextbox', $content->getFooter(), $footerAttributes ) .
-			Html::element( 'button', array( 'name' => 'hideFooter', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() )
+			Html::element( 'button', array( 'name' => 'hideFooter', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() ) .
+			Html::closeElement( 'div' ) .
+			Html::openElement( 'div', array( 'class' => 'prp-page-image' ) ) .
+			$page->getImageHtml( array( 'max-width' => 800 ) ) .
+			Html::closeElement( 'div' ) .
+			Html::closeElement( 'div' )
 		);
 
 	}

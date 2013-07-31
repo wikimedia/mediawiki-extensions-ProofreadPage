@@ -14,3 +14,24 @@
 .quality0 {
 	background-color: #ddd;
 }
+
+/* Presentation of page pages */
+/*TODO: ie6 and ie7 support*/
+.prp-page-container {
+	display: table;
+	width: 100%;
+}
+.prp-page-image {
+	display: table-cell;
+	width: 50%;
+	vertical-align: top;
+}
+.prp-page-content {
+	display: table-cell;
+	width: 50%;
+	padding-right: 0.5em;
+	vertical-align: top;
+}
+#prp-page-qualityheader {
+	width: 100%;
+}

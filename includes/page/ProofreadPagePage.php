@@ -40,6 +40,11 @@ class ProofreadPagePage {
 	protected $index;
 
 	/**
+	 * @var File|null image related to the page
+	 */
+	protected $image;
+
+	/**
 	 * Constructor
 	 * @param $title Title Reference to a Title object.
 	 * @param $content ProofreadPageContent content of the page. Warning: only done for EditProofreadPagePage use.
@@ -100,13 +105,13 @@ class ProofreadPagePage {
 			}
 		}
 
-		$m = explode( '/', $title->getText(), 2 );
+		$m = explode( '/', $this->title->getText(), 2 );
 		if ( isset( $m[1] ) ) {
 			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[0] );
 			if ( $imageTitle !== null ) {
 				$image = wfFindFile( $imageTitle );
 				// if it is multipage, we use the page order of the file
-				if ( $image !== null && $image->exists() && $image->isMultipage() ) {
+				if ( $image && $image->exists() && $image->isMultipage() ) {
 					$indexTitle = Title::makeTitle( ProofreadPage::getIndexNamespaceId(), $image->getTitle()->getText());
 					if ( $indexTitle !== null ) {
 						$this->index = ProofreadIndexPage::newFromTitle( $indexTitle );
@@ -117,6 +122,30 @@ class ProofreadPagePage {
 		}
 		$this->index = false;
 		return false;
+	}
+
+	/**
+	 * Return image of the page if it exist or false.
+	 * @return File|false
+	 */
+	public function getImage() {
+		if ( $this->image !== null ) {
+			return $this->image;
+		}
+
+		//try to get the file related to the index
+		$index = $this->getIndex();
+		if( $index ) {
+			$this->image = $index->getImage();
+			if ( $this->image ) {
+				return $this->image;
+			}
+		}
+
+		//try to get an image with the same name as the file
+		$imageTitle = Title::makeTitle( NS_IMAGE, $this->title->getText() );
+		$this->image = wfFindFile( $imageTitle );
+		return $this->image;
 	}
 
 	/**
@@ -166,4 +195,94 @@ class ProofreadPagePage {
 		return $content;
 	}
 
+	/**
+	 * Return HTML for the image
+	 * @param $options array
+	 * @return string|null
+	 */
+	public function getImageHtml( $options ) {
+		$image = $this->getImage();
+		if ( !$image || !$image->exists() ) {
+			return null;
+		}
+		$width = $image->getWidth();
+		if ( isset( $options['max-width'] ) && $width > $options['max-width'] ) {
+			$width = $options['max-width'];
+		}
+		$transformAttributes = array(
+			'width' => $width
+		);
+
+		if ( $image->isMultipage() ) {
+			$pageNumber = $this->getPageNumber();
+			if ( $pageNumber !== null ) {
+				$transformAttributes['page'] = $pageNumber;
+			}
+		}
+		$thumbnail = $image->transform( $transformAttributes );
+		return $thumbnail->toHtml( $options );
+	}
+
+	/**
+	 * Output page content
+	 * @param OutputPage $out
+	 */
+	public function outputPage( OutputPage $out ) {
+		global $wgParser;
+
+		$content = $this->getContent();
+		$parserOptions = $this->createParserOptions( $out );
+
+		//beggining
+		$out->addHtml(
+			Html::openElement( 'div', array( 'class' => 'prp-page-container' )  ) .
+			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) )
+		);
+
+		//page quality
+		//TODO FIXME: display whether page has been proofread by the user or by someone else
+		$out->addHtml(
+			Html::openElement( 'div', array(
+				'class' => 'prp-page-qualityheader quality' . $content->getProofreadingLevel()
+			) )  .
+			wfMessage( 'proofreadpage_quality' . $content->getProofreadingLevel() . '_message' )->inContentLanguage()->text() .
+			Html::closeElement( 'div' )
+		);
+
+		$headerParserOutput = $wgParser->parse( $content->getHeader(), $this->title, $parserOptions );
+		$out->addParserOutput( $headerParserOutput );
+
+		$bodyParserOutput = $wgParser->parse( $content->getBody(), $this->title, $parserOptions );
+		$bodyParserOutput->addCategory(
+			wfMessage( 'proofreadpage_quality' . $content->getProofreadingLevel() . '_category' )->inContentLanguage()->text(),
+			$this->title->getText()
+		);
+		$out->addParserOutput( $bodyParserOutput );
+
+		$footerParserOutput = $wgParser->parse( $content->getFooter(), $this->title, $parserOptions );
+		$out->addParserOutput( $footerParserOutput );
+
+		//end
+		$out->addHtml(
+			Html::closeElement( 'div' ) .
+			Html::openElement( 'div', array( 'class' => 'prp-page-image' ) ) .
+			$this->getImageHtml( array( 'max-width' => 800 ) ) .
+			Html::closeElement( 'div' ) .
+			Html::closeElement( 'div' )
+		);
+	}
+
+	protected function createParserOptions( OutputPage $out ) {
+		global $wgUser;
+
+		$page = new WikiPage( $this->title );
+		$parserOptions = $page->makeParserOptions( $wgUser );
+		$parserOptions->setEditSection( false );
+
+		if ( $out->isPrintable() ) {
+			$parserOptions->setIsPrintable( true );
+		}
+
+		return $parserOptions;
+	}
 }

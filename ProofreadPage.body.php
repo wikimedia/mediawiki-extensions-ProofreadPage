@@ -107,8 +107,7 @@ class ProofreadPage {
 	 * @param User $user User performing the edit
 	 * @return boolean hook return value
 	 */
-	public static function onCustomEditor( $article, $user ) {
-		global $request;
+	public static function onCustomEditor( Article $article, User $user ) {
 		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) { //TODO ExternalEditor case
 			$editor = new EditProofreadIndexPage( $article );
 			$editor->edit();
@@ -131,7 +130,6 @@ class ProofreadPage {
 	public static function onParserFirstCallInit( $parser ) {
 		$parser->setHook( 'pagelist', array( 'ProofreadPageRenderer', 'renderPageList' ) );
 		$parser->setHook( 'pages', array( 'ProofreadPageRenderer', 'renderPages' ) );
-		$parser->setHook( 'pagequality', array( __CLASS__, 'pageQuality' ) );
 		return true;
 	}
 
@@ -187,7 +185,7 @@ class ProofreadPage {
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 			if ( preg_match( "/^$page_namespace:(.*?)(\/(.*?)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
-				self::preparePage( $out, $m, $isEdit );
+				ProofreadPage::preparePage( $out, $m, $isEdit );
 			}
 		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			if( !$isEdit ) {
@@ -239,7 +237,7 @@ class ProofreadPage {
 			} else {
 				$fullURL = $image->getViewURL();
 			}
-			$scan_link = Html::element( 'a',
+			$scanLink = Html::element( 'a',
 				array(
 					'href' => $fullURL,
 					'title' =>  $out->msg( 'proofreadpage_image' )->text()
@@ -250,7 +248,7 @@ class ProofreadPage {
 			$width = 0;
 			$height = 0;
 			$fullURL = '';
-			$scan_link = '';
+			$scanLink = '';
 		}
 
 		$path = $wgExtensionAssetsPath . '/ProofreadPage';
@@ -261,7 +259,7 @@ class ProofreadPage {
 			'proofreadPageFileName' => $fileName,
 			'proofreadPageFilePage' => $filePage,
 			'proofreadPageIsEdit' => intval( $isEdit ),
-			'proofreadPageScanLink' => $scan_link,
+			'proofreadPageScanLink' => $scanLink,
 			'proofreadPageAddButtons' => $wgUser->isAllowed( 'pagequality' ),
 			'proofreadPageUserName' => $wgUser->getName(),
 			'proofreadPageIndexLink' => '',
@@ -456,31 +454,6 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Add the pagequality category.
-	 * @todo FIXME: display whether page has been proofread by the user or by someone else
-	 * @param $input
-	 * @param $args array
-	 * @param $parser Parser
-	 * @return string
-	 */
-	public static function pageQuality( $input, $args, $parser ) {
-
-		if ( !$parser->getTitle()->inNamespace( self::getPageNamespaceId() ) ) {
-			return '';
-		}
-
-		$q = $args['level'];
-		if( !in_array( $q, array( '0', '1', '2', '3', '4' ) ) ) {
-			return '';
-		}
-		$message = "<div id=\"pagequality\" width=100% class=quality$q>" .
-			wfMessage( "proofreadpage_quality{$q}_message" )->inContentLanguage()->text() . '</div>';
-		$out = '__NOEDITSECTION__[[Category:' .
-			wfMessage( "proofreadpage_quality{$q}_category" )->inContentLanguage()->text() . ']]';
-		return $parser->recursiveTagParse( $out . $message );
-	}
-
-	/**
 	 * Set is_toc flag (true if page is a table of contents)
 	 * @param $outputPage OutputPage
 	 * @param $parserOutput ParserOutput
@@ -496,9 +469,37 @@ class ProofreadPage {
 	}
 
 	/**
+	 * Ouput content of a page page
+	 * @param $text string
+	 * @param $title Title
+	 * @param $out OutputPage
+	 * @return bool
+	 */
+	public static function onArticleViewCustom( $text, Title $title, OutputPage $out ) {
+		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
+			return true;
+		}
+
+		//redirections
+		if ( $text !== null ) {
+			$rt = Title::newFromRedirectArray( $text );
+			if ( $rt ) {
+				return true;
+			}
+		}
+
+		//display
+		$content = ($text !== null) ? ProofreadPageContent::newFromWikitext( $text ) : ProofreadPageContent::newEmpty();
+		$page = new ProofreadPagePage( $title, $content );
+		$page->outputPage( $out );
+
+		return false;
+	}
+
+	/**
 	 * Updates index data for an index referencing the specified page.
-	 * @param $title Title: page title object
-	 * @param $deleted Boolean: indicates whether the page was deleted
+	 * @param $title Title page title object
+	 * @param $deleted boolean indicates whether the page was deleted
 	 */
 	private static function updateIndexOfPage( $title, $deleted = false ) {
 		self::loadIndex( $title );

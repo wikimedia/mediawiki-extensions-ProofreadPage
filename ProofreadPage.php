@@ -148,6 +148,7 @@ $wgHooks['ArticleSaveComplete'][] = 'ProofreadPage::onArticleSaveComplete';
 $wgHooks['ArticleDelete'][] = 'ProofreadPage::onArticleDelete';
 $wgHooks['ArticleUndelete'][] = 'ProofreadPage::onArticleUndelete';
 $wgHooks['ArticlePurge'][] = 'ProofreadPage::onArticlePurge';
+$wgHooks['ArticleViewCustom'][] = 'ProofreadPage::onArticleViewCustom';
 $wgHooks['SpecialMovepageAfterMove'][] = 'ProofreadPage::onSpecialMovepageAfterMove';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadIndexDbConnector::onLoadExtensionSchemaUpdates';
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';

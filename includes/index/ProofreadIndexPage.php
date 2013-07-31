@@ -375,7 +375,7 @@ class ProofreadIndexPage {
 
 	/**
 	 * Return metadata from the index pages that will be used by a page page.
-	 * @param $page Title the page (TODO: move to ProofreadPagePage)
+	 * @param $page Title the page (TODO: move to ProofreadPagePage and add support of css and editWidth)
 	 * @return array( header, footer, css, editWidth ) as string
 	 */
 	public function getIndexDataForPage( Title $page ) {
