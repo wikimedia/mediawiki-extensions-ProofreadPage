@@ -1471,9 +1471,25 @@ $messages['ceb'] = array(
 
 /** Sorani Kurdish (کوردی)
  * @author Calak
+ * @author Muhammed taha
  */
 $messages['ckb'] = array(
+	'proofreadpage_image' => 'وێنە',
+	'proofreadpage_index' => 'پێڕست',
+	'proofreadpage_nologin' => 'لەژوورەوە نیت',
+	'proofreadpage_nextpage' => 'پەڕەی دواتر',
+	'proofreadpage_prevpage' => 'پەڕەی پێشوو',
 	'proofreadpage_index_status' => 'چۆنێتیی پێرست',
+	'proofreadpage_index_size' => 'ژمارەی پەڕەکان',
+	'proofreadpage_specialpage_label_key' => 'گەڕان',
+	'proofreadpage_index_listofpages' => 'پێڕستی پەڕەکان',
+	'proofreadpage_page_status' => 'دۆخی پەڕە',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|پەڕە|پەڕەکان}}',
+	'proofreadpage_source' => 'سەرچاوە',
+	'proofreadpage-group-other' => 'دیکە',
+	'proofreadpage-button-zoom-out-label' => 'بچووککردنەوە',
+	'proofreadpage-button-reset-zoom-label' => 'قەبارەی بنەڕەتی',
+	'proofreadpage-button-zoom-in-label' => 'گەورەکردنەوە',
 );
 
 /** Czech (česky)
