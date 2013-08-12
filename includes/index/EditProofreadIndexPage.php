@@ -137,7 +137,7 @@ class EditProofreadIndexPage extends EditPage {
 	 */
 	protected function importContentFormData( &$request ) {
 		if ( $this->textbox1 !== '' ) {
-			return;
+			return $this->textbox1;
 		}
 
 		$config = ProofreadIndexPage::getDataConfig();
@@ -164,22 +164,22 @@ class EditProofreadIndexPage extends EditPage {
 		$value = trim( $value );
 
 		// replace pipe symbol everywhere...
-		$value = preg_replace( '#\|#', '&!&', $value );
+		$value = preg_replace( '/\|/', '&!&', $value );
 
 		// ...except in links...
 		$prev = '';
 		do {
 			$prev = $value;
-			$value = preg_replace( '#\[\[(.*?)&!&(.*?)\]\]#', '[[$1|$2]]', $value );
+			$value = preg_replace( '/\[\[(.*?)&!&(.*?)\]\]/', '[[$1|$2]]', $value );
 		} while ( $value != $prev );
 
 		// ..and in templates
 		do {
 			$prev = $value;
-			$value = preg_replace( '#\{\{(.*?)&!&(.*?)\}\}#', '{{$1|$2}}', $value );
+			$value = preg_replace( '/\{\{(.*?)&!&(.*?)\}\}/s', '{{$1|$2}}', $value );
 		} while ( $value != $prev );
 
-		$value = preg_replace( '#&!&#', '{{!}}', $value );
+		$value = preg_replace( '/&!&/', '{{!}}', $value );
 
 		return $value;
 	}
