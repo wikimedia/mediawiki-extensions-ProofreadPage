@@ -4549,6 +4549,7 @@ Bemierkungen||10',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikalen/horizontale Layout',
 	'proofreadpage-preferences-showheaders-label' => "D'Entête an de Pied de page weise beim Ännerungen am {{ns:page}}-Nummraum",
 	'proofreadpage-indexoai-repositoryName' => 'Meta-Donnéeë vu Bicher vu(n) {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadate vu Bicher déi vu ProofreadPage geréiert ginn.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema net fonnt',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'De Schema "$1" gouf net fonnt.',
 );
