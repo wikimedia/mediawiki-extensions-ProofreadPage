@@ -77,7 +77,7 @@ $specialPageAliases['ia'] = array(
 
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
-	'IndexPages' => array( 'PagineIndicizzate' ),
+	'IndexPages' => array( 'PagineIndice' ),
 	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
 );
 
