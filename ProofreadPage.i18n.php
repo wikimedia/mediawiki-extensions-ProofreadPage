@@ -178,7 +178,8 @@ This phrase is confusing: Modify 'page quality flag' or 'Modify page quality' fl
 * $1 is name of the schema.',
 	'proofreadpage-disambiguationspage' => 'This message is the name of the template used for marking disambiguation pages. It is used to find all pages which link to disambiguation pages.
 
-{{doc-important|Don\'t translate the "Template:" part!}}',
+{{doc-important|Don\'t translate the "Template:" part!}}
+{{Identical|Template:disambig}}',
 );
 
 /** Achinese (Acèh)
@@ -1750,6 +1751,7 @@ Bemerkungen||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Buchmetadaten, die von der Erweiterung „ProofreadPage“ verwaltet werden',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nicht gefunden',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Das Schema „$1“ wurde nicht gefunden',
+	'proofreadpage-disambiguationspage' => 'Template:Begriffsklärung',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -2556,6 +2558,7 @@ Remarques||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Métadonnées des livres gérés par ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schéma introuvable',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Le schéma $1 est introuvable.',
+	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
 /** Franco-Provençal (arpetan)
@@ -2820,6 +2823,7 @@ Comentarios||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadatos de libros xestionados por ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Non se atopou o esquema',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Non se atopou o esquema "$1".',
+	'proofreadpage-disambiguationspage' => 'Template:Homónimos',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -3844,6 +3848,7 @@ Note||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadati dei libri gestiti da ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema non trovato',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Lo schema $1 non è stato trovato.',
+	'proofreadpage-disambiguationspage' => 'Template:Disambigua',
 );
 
 /** Japanese (日本語)
@@ -3928,6 +3933,7 @@ $messages['ja'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'ProofreadPage で管理されている書籍のメタデータ',
 	'proofreadpage-indexoai-error-schemanotfound' => 'XML スキーマが見つかりません',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 スキーマが見つかりませんでした。',
+	'proofreadpage-disambiguationspage' => 'Template:Aimai',
 );
 
 /** Jutish (jysk)
@@ -6312,6 +6318,7 @@ Note||10",
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadate de libbre gestite da ProofredPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Scheme non acchiate',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "'U scheme $1 non g'ha state acchiate.",
+	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
 /** Russian (русский)
@@ -7627,12 +7634,14 @@ $messages['ug-latn'] = array(
 /** Ukrainian (українська)
  * @author AS
  * @author Ahonc
+ * @author Andriykopanytsia
  * @author AtUkr
  * @author Base
  * @author Dim Grits
  * @author DixonD
  * @author Prima klasy4na
  * @author Steve.rusyn
+ * @author SteveR
  * @author Тест
  */
 $messages['uk'] = array(
@@ -7712,6 +7721,7 @@ $messages['uk'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'Метадані книг, підтримуваних ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Схеми не знайдено',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Схему $1 не знайдено.',
+	'proofreadpage-disambiguationspage' => 'Template:неоднозначність',
 );
 
 /** Urdu (اردو)
@@ -7943,6 +7953,7 @@ Ghi chú||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Siêu dữ liệu các sách do ProofreadPage quản lý.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Không tìm thấy lược đồ',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Không tìm thấy lược đồ $1.',
+	'proofreadpage-disambiguationspage' => 'Template:Trang_định_hướng',
 );
 
 /** Volapük (Volapük)
