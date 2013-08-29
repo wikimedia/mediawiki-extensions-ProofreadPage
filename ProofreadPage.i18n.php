@@ -2252,6 +2252,7 @@ Märkused||10',
 	'proofreadpage-button-toggle-layout-label' => 'Püst- või rõhtpaigutus',
 	'proofreadpage-preferences-showheaders-label' => 'Nimeruumis {{ns:page}} redigeerides näita päise- ja jalusevälja',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Nimeruumis {{ns:page}} redigeerides kasuta rõhtpaigutust',
+	'proofreadpage-disambiguationspage' => 'Template:täpsustus',
 );
 
 /** Basque (euskara)
@@ -4369,6 +4370,7 @@ $messages['ko'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'PoofreadPage가 관리하는 책의 메타데이터입니다.',
 	'proofreadpage-indexoai-error-schemanotfound' => '스키마를 찾을 수 없음',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 스키마를 찾지 못했습니다.',
+	'proofreadpage-disambiguationspage' => 'Template:동음이의',
 );
 
 /** Kinaray-a (Kinaray-a)
@@ -4563,6 +4565,7 @@ Bemierkungen||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadate vu Bicher déi vu ProofreadPage geréiert ginn.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema net fonnt',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'De Schema "$1" gouf net fonnt.',
+	'proofreadpage-disambiguationspage' => 'Template:Homonymie',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -4987,6 +4990,7 @@ $messages['mk'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'Метаподатоци за книги под раководство на ЛектураНаСтраници.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Шемата не е пронајдена',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Шемите $1 не се пронајдени.',
+	'proofreadpage-disambiguationspage' => 'Template:Појаснување',
 );
 
 /** Malayalam (മലയാളം)
