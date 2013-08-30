@@ -692,6 +692,7 @@ Comentarios||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadatos de los llibros xestionaos por ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Esquema no encontráu',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "Nun s'alcontró l'esquema $1.",
+	'proofreadpage-disambiguationspage' => 'Template:dixebra',
 );
 
 /** Kotava (Kotava)
@@ -1768,6 +1769,7 @@ $messages['de-formal'] = array(
 /** Zazaki (Zazaki)
  * @author Aspar
  * @author Erdemaslancan
+ * @author Gorizon
  * @author Mirzali
  */
 $messages['diq'] = array(
@@ -1847,6 +1849,7 @@ beyanati||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metamelumatê kıtaban terefê pela ke ğeletan kena raşt, idare beno.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Şema nêvineyê',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 şema nêvineyaya.',
+	'proofreadpage-disambiguationspage' => 'Şablon:Maneyo bin',
 );
 
 /** Lower Sorbian (dolnoserbski)
