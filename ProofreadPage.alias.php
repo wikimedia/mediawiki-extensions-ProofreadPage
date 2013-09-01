@@ -90,7 +90,7 @@ $specialPageAliases['ja'] = array(
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'IndexPages' => array( '색인문서' ),
-	'PagesWithoutScans' => array( '스캔안한문서' ),
+	'PagesWithoutScans' => array( '스캔안된문서', '스캔안한문서' ),
 	'ProofreadIndexOai' => array( '색인교정Oai' ),
 	'ProofreadIndexOaiSchema' => array( '색인교정Oai스키마' ),
 );
