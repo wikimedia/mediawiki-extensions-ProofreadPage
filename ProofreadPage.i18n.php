@@ -8050,6 +8050,7 @@ $messages['yue'] = array(
  * @author Shirayuki
  * @author Xiaomingyan
  * @author Yfdyh000
+ * @author Zhuyifei1999
  */
 $messages['zh-hans'] = array(
 	'indexpages' => '索引页列表',
@@ -8128,6 +8129,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => '由ProofreadPage管理书籍元数据。',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema未找到',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1架构未找到。',
+	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
