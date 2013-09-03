@@ -2711,6 +2711,7 @@ Komentaaren||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadooten för buken, diar faan „ProofreadPage“ ferwaltet wurd.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Skemsidj ei fünjen',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Det skemsidj „$1“ as ei fünjen wurden.',
+	'proofreadpage-disambiguationspage' => 'Template:Muardüüdag artiikel',
 );
 
 /** Friulian (furlan)
