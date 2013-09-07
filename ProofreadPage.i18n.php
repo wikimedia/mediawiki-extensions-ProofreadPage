@@ -150,7 +150,8 @@ The special page lists texts without scans; that is, the texts that have not bee
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
 	'proofreadpage_default_header' => '{{notranslate}}',
 	'proofreadpage_default_footer' => '{{notranslate}}',
-	'proofreadpage_pages' => '* $1 - number of pages for use with PLURAL
+	'proofreadpage_pages' => 'Parameters:
+* $1 - number of pages for use with PLURAL
 * $2 - localised number of pages
 {{Identical|Page}}',
 	'proofreadpage_specialpage_text' => '{{notranslate}}',
@@ -7836,7 +7837,7 @@ Note||10',
 	'proofreadpage-group-other' => 'Altro',
 	'proofreadpage-button-toggle-visibility-label' => 'Mostra/scondi intestazion e piè de pagina',
 	'proofreadpage-button-zoom-out-label' => 'Zoom indrìo',
-	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
+	'proofreadpage-button-reset-zoom-label' => 'Dimension orixenal',
 	'proofreadpage-button-zoom-in-label' => 'Zoom avanti',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizontale',
 	'proofreadpage-preferences-showheaders-label' => "Mostra l'intestasion e 'l pie de pàjina durante ła modifega inte'l namespace {{ns:page}}",
@@ -7845,6 +7846,7 @@ Note||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadati de i libri gestìi da ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema mia catà',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "El schema $1 no'l xe stà catà.",
+	'proofreadpage-disambiguationspage' => 'Template:Disambigua',
 );
 
 /** Veps (vepsän kel’)
