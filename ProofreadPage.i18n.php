@@ -1582,6 +1582,19 @@ $messages['cu'] = array(
 	'proofreadpage_specialpage_label_key' => 'исканиѥ :',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'indexpages' => 'Rhestr y mynegeion',
+	'proofreadpage_image' => 'Delwedd',
+	'proofreadpage_index' => 'Mynegai',
+	'proofreadpage_index_expected' => 'Gwall: disgwylid mynegai',
+	'proofreadpage_nosuch_index' => "Gwall: ni chafwyd hyd i'r mynegai",
+	'proofreadpage_nosuch_file' => "Gwall: ni chafwyd hyd i'r ffeil",
+	'proofreadpage_badpage' => 'Y Fformat Yn Anghywir',
+);
+
 /** Danish (dansk)
  * @author Christian List
  * @author Dferg
