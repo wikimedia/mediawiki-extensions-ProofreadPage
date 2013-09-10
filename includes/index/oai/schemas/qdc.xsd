@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema targetNamespace="http://mediawiki.org/xml/proofreadpage/qdc/"
+	xmlns:prp_qdc="http://mediawiki.org/xml/proofreadpage/qdc/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<annotation>
+		<documentation>
+			Adjusted for usage in the OAI-PMH.
+			Schema imports the Dublin Core elements from the DCMI schema for qualified Dublin Core.
+		</documentation>
+	</annotation>
+
+	<import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dcterms.xsd" />
+
+	<element name="qdc" type="prp_qdc:prp_qdcType" />
+	<complexType name="prp_qdcType">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element ref="dc:title" />
+			<element ref="dc:creator" />
+			<element ref="dc:subject" />
+			<element ref="dc:description" />
+			<element ref="dc:publisher" />
+			<element ref="dc:contributor" />
+			<element ref="dc:date" />
+			<element ref="dc:type" />
+			<element ref="dc:format" />
+			<element ref="dc:identifier" />
+			<element ref="dc:source" />
+			<element ref="dc:language" />
+			<element ref="dc:relation" />
+			<element ref="dc:coverage" />
+			<element ref="dc:rights" />
+			<element ref="dcterms:alternative" />
+			<element ref="dcterms:tableOfContents" />
+			<element ref="dcterms:abstract" />
+			<element ref="dcterms:created" />
+			<element ref="dcterms:valid" />
+			<element ref="dcterms:available" />
+			<element ref="dcterms:issued" />
+			<element ref="dcterms:modified" />
+			<element ref="dcterms:dateAccepted" />
+			<element ref="dcterms:dateCopyrighted" />
+			<element ref="dcterms:dateSubmitted" />
+			<element ref="dcterms:extent" />
+			<element ref="dcterms:medium" />
+			<element ref="dcterms:isVersionOf" />
+			<element ref="dcterms:hasVersion" />
+			<element ref="dcterms:isReplacedBy" />
+			<element ref="dcterms:replaces" />
+			<element ref="dcterms:isRequiredBy" />
+			<element ref="dcterms:requires" />
+			<element ref="dcterms:isPartOf" />
+			<element ref="dcterms:hasPart" />
+			<element ref="dcterms:isReferencedBy" />
+			<element ref="dcterms:references" />
+			<element ref="dcterms:isFormatOf" />
+			<element ref="dcterms:hasFormat" />
+			<element ref="dcterms:conformsTo" />
+			<element ref="dcterms:spatial" />
+			<element ref="dcterms:temporal" />
+			<element ref="dcterms:audience" />
+			<element ref="dcterms:accrualMethod" />
+			<element ref="dcterms:accrualPeriodicity" />
+			<element ref="dcterms:accrualPolicy" />
+			<element ref="dcterms:instructionalMethod" />
+			<element ref="dcterms:provenance" />
+			<element ref="dcterms:rightsHolder" />
+			<element ref="dcterms:mediator" />
+			<element ref="dcterms:educationLevel" />
+			<element ref="dcterms:accessRights" />
+			<element ref="dcterms:license" />
+			<element ref="dcterms:bibliographicCitation" />
+		</choice>
+	</complexType>
+</schema>
+

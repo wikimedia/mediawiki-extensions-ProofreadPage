@@ -1,4 +1,4 @@
--- Table for the ProofreadPage extension. 
+-- Table for the ProofreadPage extension.
 -- Holds a count of the number of pages at each quality level
 CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/pr_index (
   -- Foreign key to page.page_id

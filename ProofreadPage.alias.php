@@ -12,6 +12,8 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'IndexPages' => array( 'IndexPages' ),
 	'PagesWithoutScans' => array( 'PagesWithoutScans' ),
+	'ProofreadIndexOai' => array( 'ProofreadIndexOai' ),
+	'ProofreadIndexOaiSchema' => array( 'ProofreadIndexOaiSchema' ),
 );
 
 /** Arabic (العربية) */
@@ -20,20 +22,40 @@ $specialPageAliases['ar'] = array(
 	'PagesWithoutScans' => array( 'صفحات_بدون_فحص' ),
 );
 
-/** Breton (Brezhoneg) */
+/** Assamese (অসমীয়া) */
+$specialPageAliases['as'] = array(
+	'IndexPages' => array( 'সমল_পৃষ্ঠাসমূহ' ),
+);
+
+/** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'IndexPages' => array( 'PajennoùMeneger' ),
 );
 
-/** Danish (Dansk) */
+/** Danish (dansk) */
 $specialPageAliases['da'] = array(
 	'IndexPages' => array( 'Indekssider' ),
+	'PagesWithoutScans' => array( 'Sider_uden_billeder' ),
 );
 
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'IndexPages' => array( 'Seiten_indexieren' ),
 	'PagesWithoutScans' => array( 'Seiten_ohne_Scans' ),
+	'ProofreadIndexOai' => array( 'Index_korrekturlesen_OAI' ),
+	'ProofreadIndexOaiSchema' => array( 'Index_korrekturlesen_OAI-Schema' ),
+);
+
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'IndexPages' => array( 'Pelaİndeks' ),
+	'PagesWithoutScans' => array( 'PeréBéCıgeyrayışi' ),
+);
+
+/** Estonian (eesti) */
+$specialPageAliases['et'] = array(
+	'IndexPages' => array( 'Registrid' ),
+	'PagesWithoutScans' => array( 'Skannimata_tekstid' ),
 );
 
 /** Persian (فارسی) */
@@ -47,10 +69,16 @@ $specialPageAliases['ht'] = array(
 	'IndexPages' => array( 'PajEndèks' ),
 );
 
-/** Interlingua (Interlingua) */
+/** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'IndexPages' => array( 'Paginas_de_indice' ),
 	'PagesWithoutScans' => array( 'Paginas_non_transcludite' ),
+);
+
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'IndexPages' => array( 'PagineIndice' ),
+	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
 );
 
 /** Japanese (日本語) */
@@ -59,32 +87,44 @@ $specialPageAliases['ja'] = array(
 	'PagesWithoutScans' => array( 'スキャンのないページ' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'IndexPages' => array( '색인문서' ),
+	'PagesWithoutScans' => array( '스캔안된문서', '스캔안한문서' ),
+	'ProofreadIndexOai' => array( '색인교정Oai' ),
+	'ProofreadIndexOaiSchema' => array( '색인교정Oai스키마' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $specialPageAliases['lb'] = array(
+	'IndexPages' => array( 'Säiten_indexéieren' ),
 	'PagesWithoutScans' => array( 'Säiten_ouni_Scan' ),
 );
 
-/** Macedonian (Македонски) */
+/** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'IndexPages' => array( 'ИндексираниСтраници' ),
 	'PagesWithoutScans' => array( 'СтранициБезПроверки' ),
+	'ProofreadIndexOai' => array( 'ИндексПроверениOai' ),
+	'ProofreadIndexOaiSchema' => array( 'ИндексПроверениOaiШема' ),
 );
 
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
 	'IndexPages' => array( 'സൂചികാതാളുകൾ' ),
+	'PagesWithoutScans' => array( 'സ്കാൻലഭ്യമല്ലാത്തതാളുകൾ' ),
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'IndexPages' => array( 'Indekssider' ),
 	'PagesWithoutScans' => array( 'Sider_uten_skanninger' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
-	'IndexPages' => array( 'Indexpagina\'s' ),
-	'PagesWithoutScans' => array( 'Pagina\'s_zonder_deurlochting' ),
+	'IndexPages' => array( 'Indexziejen' ),
+	'PagesWithoutScans' => array( 'Ziejen_zonder_deurlochting' ),
 );
 
 /** Dutch (Nederlands) */
@@ -93,7 +133,13 @@ $specialPageAliases['nl'] = array(
 	'PagesWithoutScans' => array( 'PaginasZonderScans', 'Pagina\'sZonderScans' ),
 );
 
-/** Swedish (Svenska) */
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'IndexPages' => array( 'PagineIndicizzate' ),
+	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
+);
+
+/** Swedish (svenska) */
 $specialPageAliases['sv'] = array(
 	'IndexPages' => array( 'Indexsidor' ),
 );
@@ -104,8 +150,28 @@ $specialPageAliases['tr'] = array(
 	'PagesWithoutScans' => array( 'TaramasızSayfalar' ),
 );
 
-/** Vèneto (Vèneto) */
+/** vèneto (vèneto) */
 $specialPageAliases['vec'] = array(
 	'IndexPages' => array( 'PagineDeIndice' ),
 	'PagesWithoutScans' => array( 'PagineSensaScansion' ),
+);
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'IndexPages' => array( 'Trang_mục_lục' ),
+	'PagesWithoutScans' => array( 'Trang_không_có_hình_quét' ),
+);
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'IndexPages' => array( '索引页面' ),
+	'PagesWithoutScans' => array( '未扫描页面' ),
+	'ProofreadIndexOai' => array( '校对索引OAI' ),
+	'ProofreadIndexOaiSchema' => array( '校对索引OAI图表' ),
+);
+
+/** Traditional Chinese (中文（繁體）‎) */
+$specialPageAliases['zh-hant'] = array(
+	'IndexPages' => array( '索引頁面' ),
+	'PagesWithoutScans' => array( '未掃描頁面' ),
 );

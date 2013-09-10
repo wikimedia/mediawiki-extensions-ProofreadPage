@@ -1,9 +1,5 @@
 <?php
 /**
- * Created on August 8, 2011
- *
- * API module for MediaWiki's Proofread extension
- *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -18,33 +14,38 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @file
+ * @ingroup API
  */
 
 class ApiQueryProofread extends ApiQueryBase {
-
 	public function execute() {
 		$pageSet = $this->getPageSet();
 		$pages = $pageSet->getGoodTitles();
 		if ( !count( $pages ) ) {
-			return true;
+			return;
 		}
 
 		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
 		$pageIds = array();
-		foreach ( $pages AS $pageId => $title ) {
-			if ( $title->getNamespace() == $pageNamespaceId ) {
+		foreach ( $pages as $pageId => $title ) {
+			if ( $title->inNamespace( $pageNamespaceId ) ) {
 				$pageIds[] = $pageId;
 			}
 		}
 
 		if ( !count( $pageIds ) ) {
-			return true;
+			return;
 		}
 
 		// Determine the categories defined in MediaWiki: pages
 		$qualityCategories = $qualityText = array();
 		for ( $i = 0; $i < 5; $i++ ) {
-			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsgForContent( "proofreadpage_quality{$i}_category" ) );
+			$cat = Title::makeTitleSafe(
+				NS_CATEGORY,
+				$this->msg( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text()
+			);
 			if ( $cat ) {
 				$qualityCategories[$i] = $cat->getPrefixedText();
 				$qualityText[$i] = $cat->getText();

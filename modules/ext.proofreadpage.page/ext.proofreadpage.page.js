@@ -7,30 +7,62 @@ function pr_init_tabs() {
 	$( '#ca-talk' ).after( '<li id="ca-image"><span>' + self.proofreadPageScanLink + '</span></li>' );
 }
 
-function pr_image_url( requested_width ) {
-	if( self.proofreadPageExternalURL ) {
-		self.DisplayWidth = requested_width;
-		self.DisplayHeight = '';
-		return self.proofreadPageExternalURL;
-	} else {
-		// enforce quantization: width must be multiple of 100px
-		var width = 100 * Math.round( requested_width / 100 );
-		// compare to the width of the image
-		if( width < proofreadPageWidth ) {
-			self.DisplayWidth = width;
-			self.DisplayHeight = width * proofreadPageHeight / proofreadPageWidth;
-			return proofreadPageThumbURL.replace( '##WIDTH##', '' + width );
-		} else {
-			self.DisplayWidth = proofreadPageWidth;
-			self.DisplayHeight = proofreadPageHeight;
-			return proofreadPageURL;
+/**
+ * Fetches a url of the image thumbnail.
+ * Note: the callback will not be called if the attempt was unsuccessful.
+ */
+function pr_fetch_thumb_url( requestedWidth, callback ) {
+	var fullWidth = mw.config.get( 'proofreadPageWidth' );
+	var fullHeight = mw.config.get( 'proofreadPageHeight' );
+
+	// enforce quantization: width must be multiple of 100px
+	var quantizedWidth = 100 * Math.round( requestedWidth / 100 );
+
+	// compare to the width of the image
+	if ( quantizedWidth < fullWidth ) {
+		var request = {
+			action: 'query',
+			titles: mw.config.get( 'proofreadPageFileName' ),
+			prop: 'imageinfo',
+			iiprop: 'url|size',
+			iiurlwidth: quantizedWidth,
+			format: 'json'
+		};
+
+		// Check if this is multipaged document
+		if ( mw.config.get( 'proofreadPageFilePage' ) != null ) {
+			request['iiurlparam'] = 'page' + mw.config.get( 'proofreadPageFilePage' ) + '-' + quantizedWidth + 'px';
 		}
+
+		// Send request to fetch a thumbnail url
+		jQuery.getJSON( mw.util.wikiScript( 'api' ), request, function( data ) {
+			if ( data && data.query && data.query.pages ) {
+				for ( var i in data.query.pages ) {
+					var page = data.query.pages[i];
+					if ( !page.imageinfo || page.imageinfo.length < 1 ) {
+						continue;
+					}
+					var imageinfo = page.imageinfo[0];
+
+					if ( imageinfo.thumburl ) {
+						callback( imageinfo.thumburl, imageinfo.thumbwidth, imageinfo.thumbheight );
+					}
+
+					return;
+				}
+			}
+		} );
+	} else {
+		// Image without scaling
+		callback( mw.config.get( 'proofreadPageURL' ), fullWidth, fullHeight );
 	}
 }
 
-function pr_make_edit_area( container, text ) {
-	re = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
-	m = text.match( re );
+function pr_make_edit_area( container, textbox ) {
+	var text = textbox.value;
+
+	var re = /^<noinclude>([\s\S]*?)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>\n$/;
+	var m = text.match( re );
 	if( m ) {
 		pageHeader = m[1];
 		pageBody   = m[2];
@@ -122,20 +154,24 @@ function pr_make_edit_area( container, text ) {
 		pageFooter = pageFooter.substr( 0, pageFooter.length - 6 );
 	}
 
-	container.innerHTML = '' +
-		'<div id="prp_header" style="">' +
-		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_header' ) ) + '</span>' +
-		'<textarea name="wpHeaderTextbox" rows="2" cols="80" tabindex=1>\n' + escapeQuotesHTML( pageHeader ) + '</textarea><br />' +
-		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_body' ) ) + '</span></div>' +
-		'<textarea name="wpTextbox1" id="wpTextbox1" tabindex=1 style="height:' + ( self.DisplayHeight - 6 ) + 'px;">\n' +
-			escapeQuotesHTML( pageBody ) + '</textarea>' +
-		'<div id="prp_footer" style="">' +
-		'<span style="color:gray;font-size:80%;line-height:100%;">' +
-		escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_footer' ) ) + '</span><br />' +
-		'<textarea name="wpFooterTextbox" rows="2" cols="80" tabindex=1>\n' +
-		escapeQuotesHTML( pageFooter ) + '</textarea></div>';
+	var $header = jQuery( '<div id="prp_header" style=""></div>' ).append(
+		'<label for="wpHeaderTextbox">' + mw.html.escape( mediaWiki.msg( 'proofreadpage_header' ) ) + '</label>' +
+		'<textarea id="wpHeaderTextbox" name="wpHeaderTextbox" rows="2" cols="80" tabindex="1">\n' +
+		mw.html.escape( pageHeader ) + '</textarea><br />' + '<label for="wpTextbox1">' +
+		mw.html.escape( mediaWiki.msg( 'proofreadpage_body' ) ) + '</label>'
+	);
+
+	var $footer = jQuery( '<div id="prp_footer" style=""></div>' ).append( '<label for="wpFooterTextbox">' +
+		mw.html.escape( mediaWiki.msg( 'proofreadpage_footer' ) ) + '</label><br />' +
+		'<textarea id="wpFooterTextbox" name="wpFooterTextbox" rows="2" cols="80" tabindex="1">\n' +
+		mw.html.escape( pageFooter ) + '</textarea>'
+	);
+
+	textbox.value = pageBody;
+	textbox.style.height = ( self.DisplayHeight - 6 ) + 'px';
+	textbox.style.margin = '0px';
+
+	jQuery( container ).append( $header, textbox, $footer );
 }
 
 function pr_reset_size() {
@@ -317,35 +353,32 @@ function zoom_on( evt ) {
 	return false;
 }
 
-
 //zoom using two images (magnification glass)
-function pr_initzoom() {
-	if( proofreadPageIsEdit ) {
-		return;
-	}
-	if( !self.proofreadPageThumbURL ) {
-		return;
-	}
-	if( self.DisplayWidth > 800 ) {
+function pr_initzoom( width, height ) {
+	var maxWidth = 800;
+
+	if( width > maxWidth ) {
 		return;
 	}
 
 	zp = document.getElementById( 'pr_container' );
-	if( zp ) {
-		var hires_url = pr_image_url( 800 );
-		self.objw = zp.firstChild.width;
-		self.objh = zp.firstChild.height;
+	if( !zp ) {
+		return;
+	}
+	pr_fetch_thumb_url( maxWidth, function( largeUrl, largeWidth, largeHeight ) {
+		self.objw = width;
+		self.objh = height;
 
 		zp.onmouseup = zoom_mouseup;
 		zp.onmousemove =  zoom_move;
 		zp_container = document.createElement( 'div' );
 		zp_container.style.cssText = 'position:absolute; width:0; height:0; overflow:hidden;';
 		zp_clip = document.createElement( 'img' );
-		zp_clip.setAttribute( 'src', hires_url );
+		zp_clip.setAttribute( 'src', largeUrl );
 		zp_clip.style.cssText = 'padding:0;margin:0;border:0;';
 		zp_container.appendChild( zp_clip );
 		zp.insertBefore( zp_container, zp.firstChild );
-	}
+	} );
 }
 
 /********************************
@@ -609,6 +642,24 @@ function pr_zoom_wheel( evt ) {
 	}
 }
 
+/**
+ * Parses links included in a message already escape. Doesn't support cross-wiki links
+ * @param message string The message
+ * @return string
+ */
+function pr_parse_link( message ) {
+	function replaceInternal( p0, p1, p2 ) {
+		var text = '<a title="' + p1 + '" href="' + mw.util.wikiGetlink( p1 ) + '">';
+		if( p2 != '' ) {
+			text += p2;
+		} else {
+			text += p1;
+		}
+		return text + '</a>';
+	}
+	return message.replace( /\[\[([^\|]*)\|?([^\]]*)\]\]/g, replaceInternal );
+}
+
 /* fill table with textbox and image */
 function pr_fill_table() {
 	// remove existing table
@@ -620,6 +671,7 @@ function pr_fill_table() {
 	if( !pr_horiz ) {
 		// use a table only here
 		var t_table = document.createElement( 'table' );
+		t_table.style.cssText = 'width: 100%; border-collapse: collapse; border-spacing: 0; border: none';
 		var t_body = document.createElement( 'tbody' );
 		var cell_left  = document.createElement( 'td' );
 		var cell_right = document.createElement( 'td' );
@@ -627,7 +679,7 @@ function pr_fill_table() {
 
 		var t_row = document.createElement( 'tr' );
 		t_row.setAttribute( 'valign', 'top' );
-		cell_left.style.cssText = 'width:50%; padding-right:0.5em;vertical-align:top;';
+		cell_left.style.cssText = 'width:50%; padding-right:0.5em; vertical-align:top; padding-left: 0';
 		cell_right.setAttribute( 'rowspan', '3' );
 		cell_right.style.cssText = 'vertical-align:top;';
 		t_row.appendChild( cell_left );
@@ -640,9 +692,7 @@ function pr_fill_table() {
 		self.table.appendChild( self.text_container );
 		form = document.getElementById( 'editform' );
 		tb = document.getElementById( 'toolbar' );
-		if( tb ) {
-			tb.parentNode.insertBefore( pr_container_parent, tb );
-		} else if( form ) {
+		if( form ) {
 			form.parentNode.insertBefore( pr_container_parent, form );
 		} else {
 			self.table.insertBefore( pr_container_parent, self.table.firstChild );
@@ -654,26 +704,24 @@ function pr_fill_table() {
 			self.DisplayHeight = Math.ceil( pr_height * 0.85);
 			self.DisplayWidth = parseInt( pr_width / 2 - 70 );
 			css_wh = 'width:' + self.DisplayWidth + 'px; height:' + self.DisplayHeight + 'px;';
-			pr_container_parent.style.cssText = 'position:relative;width:' + self.DisplayWidth + 'px;';
+			pr_container_parent.style.cssText = 'position:relative; width:' + self.DisplayWidth + 'px;';
 		} else {
 			self.DisplayHeight = Math.ceil( pr_height * 0.4 );
 			css_wh = 'width:100%; height:' + self.DisplayHeight + 'px;';
-			pr_container_parent.style.cssText = 'position:relative;height:' + self.DisplayHeight + 'px;';
+			pr_container_parent.style.cssText = 'position:relative; height:' + self.DisplayHeight + 'px;';
 		}
-		self.container_css = 'position:absolute;top:0px;cursor:default; background:#000000; overflow:auto; ' + css_wh;
+		self.container_css = 'position:absolute; top:0px; cursor:default; background:#000000; overflow:auto; ' + css_wh;
 		pr_container.style.cssText = self.container_css;
 	}
 	pr_zoom( 0 );
 }
 
-function pr_load_image( ) {
-	pr_container.innerHTML = '<img id="ProofReadImage" src="' +
-		escapeQuotesHTML( self.proofreadPageViewURL ) + '" width="' + img_width + '" />';
-	pr_zoom( 0 );
-}
-
 function pr_setup() {
-	self.pr_horiz = ( self.proofreadpage_default_layout == 'horizontal' );
+	self.pr_horiz = mw.user.options.get( 'proofreadpage-horizontal-layout' );
+	if ( !self.pr_horiz ) {
+		// This is kept for compatibility reasons - it will be removed in the future
+		self.pr_horiz = ( self.proofreadpage_default_layout == 'horizontal' );
+	}
 	if( !proofreadPageIsEdit ) {
 		pr_horiz = false;
 	}
@@ -704,15 +752,16 @@ function pr_setup() {
 
 	// fill the image container
 	if( !proofreadPageIsEdit ) {
-		// this sets DisplayWidth and DisplayHeight
-		var thumb_url = pr_image_url( parseInt( pr_width / 2 - 70 ) );
-		var image = document.createElement( 'img' );
-		image.setAttribute( 'id', 'ProofReadImage' );
-		image.setAttribute( 'src', thumb_url );
-		image.setAttribute( 'width', self.DisplayWidth );
-		image.style.cssText = 'padding:0;margin:0;border:0;';
-		pr_container.appendChild( image );
-		pr_container.style.cssText = 'overflow:hidden;width:' + self.DisplayWidth + 'px;';
+		pr_fetch_thumb_url( parseInt( pr_width / 2 - 70 ), function( url, width, height ) {
+			var image = document.createElement( 'img' );
+			image.setAttribute( 'id', 'ProofReadImage' );
+			image.setAttribute( 'src', url );
+			image.setAttribute( 'width', width );
+			image.style.cssText = 'padding:0;margin:0;border:0;';
+			pr_container.appendChild( image );
+			pr_container.style.cssText = 'overflow:hidden;width:' + width + 'px;';
+			pr_initzoom( width, height );
+		} );
 	} else {
 		var w = parseInt( self.proofreadPageEditWidth );
 		if( !w ) {
@@ -721,7 +770,7 @@ function pr_setup() {
 		if( !w ) {
 			w = 1024; /* Default size in edit mode */
 		}
-		self.proofreadPageViewURL = pr_image_url( Math.min( w, self.proofreadPageWidth ) );
+
 		// prevent the container from being resized once the image is downloaded.
 		img_width = pr_horiz ? 0 : parseInt( pr_width / 2 - 70 ) - 20;
 		pr_container.onmousedown = pr_grab;
@@ -730,8 +779,12 @@ function pr_setup() {
 			pr_container.addEventListener( 'DOMMouseScroll', pr_zoom_wheel, false );
 		}
 		pr_container.onmousewheel = pr_zoom_wheel; // IE, Opera.
-		/* Load the image after page setup, so that user-defined hooks do not have to wait for it. */
-		hookEvent( 'load', pr_load_image );
+
+		pr_fetch_thumb_url( Math.min( w, self.proofreadPageWidth ), function( url, width, height ) {
+			pr_container.innerHTML = '<img id="ProofReadImage" src="' +
+				mw.html.escape( url ) + '" width="' + img_width + '" />';
+			pr_zoom( 0 );
+		} );
 	}
 
 	table.setAttribute( 'id', 'textBoxTable' );
@@ -740,29 +793,33 @@ function pr_setup() {
 	pr_fill_table();
 
 	// insert the image
+	var text;
+
 	if( proofreadPageIsEdit ) {
-		var text = document.getElementById( 'wpTextbox1' );
+		text = document.getElementById( 'wpTextbox1' );
 	} else {
-		var text = document.getElementById( 'bodyContent' );
+		text = document.getElementById( 'bodyContent' );
 	}
+
 	if( !text ) {
 		return;
 	}
-	var f = text.parentNode;
-	var new_text = f.removeChild( text );
+	var textParent = text.parentNode;
+	var textSibling = text.nextSibling;
+	text = textParent.removeChild( text );
 
 	if( proofreadPageIsEdit ) {
-		pr_make_edit_area( self.text_container, new_text.value );
-		var copywarn = document.getElementById( 'editpage-copywarn' );
-		f.insertBefore( table, copywarn );
-		if ( !self.proofreadpage_show_headers ) {
-			hookEvent( 'load', pr_toggle_visibility );
+		pr_make_edit_area( self.text_container, text );
+		textParent.insertBefore( table, textSibling ); // Inserts table after text
+		if ( mw.user.options.get( 'proofreadpage-showheaders' ) ) {
+			pr_reset_size();
 		} else {
-			hookEvent( 'load', pr_reset_size );
+			pr_toggle_visibility();
 		}
+
 	} else {
-		self.text_container.appendChild( new_text );
-		f.appendChild( self.table );
+		self.text_container.appendChild( text );
+		textParent.insertBefore( table, textSibling );
 	}
 
 	// add buttons
@@ -776,7 +833,7 @@ function pr_setup() {
 						'zoom-in': {
 							label: mw.msg( 'proofreadpage-button-zoom-in-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_zoom_in.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/ext.proofreadpage.page/images/Button_zoom_in.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -789,7 +846,7 @@ function pr_setup() {
 						'zoom-out': {
 							label: mw.msg( 'proofreadpage-button-zoom-out-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_zoom_out.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/ext.proofreadpage.page/images/Button_zoom_out.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -802,7 +859,7 @@ function pr_setup() {
 						'reset-zoom': {
 							label: mw.msg( 'proofreadpage-button-reset-zoom-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_examine.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/ext.proofreadpage.page/images/Button_examine.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -818,7 +875,7 @@ function pr_setup() {
 						'toggle-visibility': {
 							label: mw.msg( 'proofreadpage-button-toggle-visibility-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/button_category_plus.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/ext.proofreadpage.page/images/Button_category_plus.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -829,7 +886,7 @@ function pr_setup() {
 						'toggle-layout': {
 							label: mw.msg( 'proofreadpage-button-toggle-layout-label' ),
 							type: 'button',
-							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/Button_multicol.png',
+							icon: mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/ext.proofreadpage.page/images/Button_multicol.png',
 							action: {
 								type: 'callback',
 								execute: function() {
@@ -843,8 +900,7 @@ function pr_setup() {
 		};
 
 		var $edit = $( '#wpTextbox1' );
-		if( typeof $edit.wikiEditor == 'function' ) {
-			setTimeout(function() {
+		if( mw.user.options.get('usebetatoolbar') && typeof $edit.wikiEditor === 'function' ) {
 			$edit.wikiEditor( 'addToToolbar', {
 				'sections': {
 					'proofreadpage-tools': {
@@ -854,7 +910,6 @@ function pr_setup() {
 				}
 			} )
 			.wikiEditor( 'addToToolbar', tools);
-			}, 500);
 		} else {
 			var toolbar = document.getElementById( 'toolbar' );
 
@@ -876,14 +931,12 @@ function pr_setup() {
 			];
 			$.each(bits, function(i, button) {
 				var image = document.createElement( 'img' );
-				image.width = 23;
-				image.height = 22;
+				image.style.cssText = 'width: 23px; height: 23px; ';
 				image.className = 'mw-toolbar-editbutton';
 				image.src = button.icon;
 				image.border = 0;
 				image.alt = button.label;
 				image.title = button.label;
-				image.style.cursor = 'pointer';
 				image.onclick = button.action.execute;
 				toolbar.appendChild( image );
 			});
@@ -896,55 +949,24 @@ function pr_init() {
 		return;
 	}
 
-	if( document.URL.indexOf( 'action=protect' ) > 0 || document.URL.indexOf( 'action=unprotect' ) > 0 ) {
-		return;
-	}
-	if( document.URL.indexOf( 'action=delete' ) > 0 || document.URL.indexOf( 'action=undelete' ) > 0 ) {
-		return;
-	}
-	if( document.URL.indexOf( 'action=watch' ) > 0 || document.URL.indexOf( 'action=unwatch' ) > 0 ) {
-		return;
-	}
-	if( document.URL.indexOf( 'action=history' ) > 0 ) {
+	if( $.inArray( mw.config.get( 'wgAction' ), ['protect', 'unprotect', 'delete', 'undelete', 'watch', 'unwatch', 'history'] ) !== -1 ) {
 		return;
 	}
 
-	/* check if external URL is provided */
-	if( !self.proofreadPageThumbURL ) {
-		var text = document.getElementById( 'wpTextbox1' );
-		if ( text ) {
-			var proofreadPageIsEdit = true;
-			re = /<span class="hiddenStructure" id="pageURL">\[http:\/\/(.*?)\]<\/span>/;
-			m = re.exec( text.value );
-			if( m ) {
-				self.proofreadPageExternalURL = 'http://' + m[1];
-			}
-		} else {
-			var proofreadPageIsEdit = false;
-			text = document.getElementById( 'bodyContent' );
-			try {
-				var a = document.getElementById( 'pageURL' );
-				var b = a.firstChild;
-				self.proofreadPageExternalURL = b.getAttribute( 'href' );
-			} catch( err ) {
-			};
-		}
-		// set to dummy values, not used
-		self.proofreadPageWidth = 400;
-		self.proofreadPageHeight = 400;
-	}
-
-	if( !self.proofreadPageThumbURL ) {
+	if( mw.config.get( 'proofreadPageFileName' ) == null ) {
+		// File does not exist
 		return;
 	}
 
 	if( self.proofreadpage_setup ) {
+		// Run custom site/user setup code
 		proofreadpage_setup(
 			proofreadPageWidth,
 			proofreadPageHeight,
 			proofreadPageIsEdit
 		);
 	} else {
+		// Run extension setup code
 		pr_setup();
 	}
 
@@ -954,85 +976,74 @@ function pr_init() {
 	}
 }
 
-jQuery( pr_init );
-jQuery( pr_init_tabs );
-jQuery( pr_initzoom );
-
-
-/* Quality buttons */
-self.pr_add_quality = function( form, value ) {
-	self.proofreadpage_quality = value;
-	self.proofreadpage_username = proofreadPageUserName;
-	var text = '';
-	switch( value ) {
-		case 0:
-			text = mediaWiki.msg( 'proofreadpage_quality0_category' );
-			break;
-		case 1:
-			text = mediaWiki.msg( 'proofreadpage_quality1_category' );
-			break;
-		case 2:
-			text = mediaWiki.msg( 'proofreadpage_quality2_category' );
-			break;
-		case 3:
-			text = mediaWiki.msg( 'proofreadpage_quality3_category' );
-			break;
-		case 4:
-			text = mediaWiki.msg( 'proofreadpage_quality4_category' );
-			break;
-	}
-	form.elements['wpSummary'].value = '/* ' + text + ' */ ';
-	form.elements['wpProofreader'].value = self.proofreadpage_username;
-};
-
 function pr_add_quality_buttons() {
-	var ig = document.getElementById( 'wpWatchthis' );
-	if( !ig ) {
-		ig = document.getElementById( 'wpSummary' );
-	}
-	if( !ig ) {
-		return;
-	}
-	var f = document.createElement( 'span' );
-	ig.parentNode.insertBefore( f, ig.nextSibling.nextSibling.nextSibling );
-
-	if( !proofreadPageAddButtons ) {
-		f.innerHTML =
-			' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">' +
-			'<input type="hidden" name="quality" value="' + escapeQuotesHTML( self.proofreadpage_quality +'' ) + '" >';
+	if ( !mw.config.get( 'proofreadPageIsEdit' ) ) {
 		return;
 	}
 
-	f.innerHTML =
-' <input type="hidden" name="wpProofreader" value="' + escapeQuotesHTML( self.proofreadpage_username ) + '">'
-+'<span class="quality0"> <input type="radio" name="quality" value=0 onclick="pr_add_quality(this.form,0)" tabindex=4> </span>'
-+'<span class="quality2"> <input type="radio" name="quality" value=2 onclick="pr_add_quality(this.form,2)" tabindex=4> </span>'
-+'<span class="quality1"> <input type="radio" name="quality" value=1 onclick="pr_add_quality(this.form,1)" tabindex=4> </span>'
-+'<span class="quality3"> <input type="radio" name="quality" value=3 onclick="pr_add_quality(this.form,3)" tabindex=4> </span>'
-+'<span class="quality4"> <input type="radio" name="quality" value=4 onclick="pr_add_quality(this.form,4)" tabindex=4> </span>';
-	f.innerHTML = f.innerHTML + '&nbsp;' + escapeQuotesHTML( mediaWiki.msg( 'proofreadpage_page_status' ) );
+	var lastProofreader = proofreadpage_username || '';
+	var currentQualityLevel = proofreadpage_quality;
 
-	if( !( ( self.proofreadpage_quality == 4 ) || ( ( self.proofreadpage_quality == 3 ) && ( self.proofreadpage_username != proofreadPageUserName ) ) ) ) {
-		document.editform.quality[4].parentNode.style.cssText = 'display:none';
-		document.editform.quality[4].disabled = true;
+	var $container = jQuery( '<span/>' );
+	$container.append( jQuery( '<input type="hidden" name="wpProofreader" />' ).val( lastProofreader ) );
+
+	jQuery( '.editCheckboxes' ).append( $container );
+
+	if ( !mw.config.get( 'proofreadPageAddButtons' ) ) {
+		// User has no premissions to change the quality level
+		$container.append( jQuery( '<input type="hidden" name="wpQuality" />' ).val( currentQualityLevel ) );
+		return;
 	}
-	switch( self.proofreadpage_quality ) {
-		case 4:
-			document.editform.quality[4].checked = true;
-			break;
-		case 3:
-			document.editform.quality[3].checked = true;
-			break;
-		case 1:
-			document.editform.quality[2].checked = true;
-			break;
-		case 2:
-			document.editform.quality[1].checked = true;
-			break;
-		case 0:
-			document.editform.quality[0].checked = true;
-			break;
+
+	var qualityLevels = [ 0, 2, 1, 3, 4 ];
+	$radioList = jQuery( '<span id="wpQuality-container" />' );
+
+	for ( var i = 0; i < qualityLevels.length; i++ ) {
+		var level = qualityLevels[i];
+
+		var $input = jQuery( '<input type="radio" name="wpQuality" tabindex="4" />' );
+		$input
+			.val( level )
+			.attr( 'checked', level === currentQualityLevel )
+			.attr( 'title', mw.msg( 'proofreadpage_quality' + level + '_category' ) )
+			.click( function() {
+				var text = mw.msg( 'proofreadpage_quality' + this.value + '_category' );
+				this.form.elements['wpSummary'].value = '/* ' + text + ' */ ';
+				this.form.elements['wpProofreader'].value = mw.config.get( 'proofreadPageUserName' );
+			} );
+
+		var $span = jQuery( '<span class="quality' + level + '" />' );
+		$span.append( $input );
+
+		$radioList.append( $span );
+	}
+	$container
+		.append( $radioList )
+		.append( '&nbsp;<label for="wpQuality-container">' + pr_parse_link( mw.html.escape( mw.msg( 'proofreadpage_page_status' ) ) ) + '</label>'); //no "for" property: it's a label for the 4 radio buttons.
+
+	if ( currentQualityLevel !== 4
+		&& ( currentQualityLevel !== 3 || lastProofreader === mw.config.get( 'proofreadPageUserName' ) )
+	) {
+		document.editform.wpQuality[4].parentNode.style.cssText = 'display:none';
+		document.editform.wpQuality[4].disabled = true;
 	}
 }
 
-jQuery( pr_add_quality_buttons );
+jQuery( pr_init_tabs );
+
+function pr_startup() {
+	jQuery( function() {
+		pr_init();
+		pr_initzoom();
+		pr_add_quality_buttons();
+	} );
+}
+
+if ( mw.user.options.get( 'usebetatoolbar' ) && jQuery.inArray( 'ext.wikiEditor.toolbar', mw.loader.getModuleNames() ) > -1 ) {
+	mw.loader.using( 'ext.wikiEditor.toolbar', function() {
+		// Load the whole thing after the toolbar has been constructed
+		pr_startup();
+	} );
+} else {
+	pr_startup();
+}

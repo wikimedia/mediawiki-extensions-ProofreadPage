@@ -16,7 +16,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  *
  * @file
- * @ingroup Extensions
+ * @ingroup SpecialPage
  */
 
 /**
@@ -24,10 +24,8 @@
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
  */
 class PagesWithoutScans extends QueryPage {
-
 	function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
-		$this->page_namespace = wfMsgForContent( 'proofreadpage_namespace' );
 	}
 
 	function isExpensive() {
@@ -41,9 +39,11 @@ class PagesWithoutScans extends QueryPage {
 	/**
 	 * Return a clause with the list of disambiguation templates.
 	 * This function was copied verbatim from specials/SpecialDisambiguations.php
+	 * @param $dbr DatabaseBase
+	 * @return mixed
 	 */
 	function disambiguation_templates( $dbr ) {
-		$dMsgText = wfMsgForContent('disambiguationspage');
+		$dMsgText = wfMsgForContent('proofreadpage-disambiguationspage');
 
 		$linkBatch = new LinkBatch;
 
@@ -54,7 +54,7 @@ class PagesWithoutScans extends QueryPage {
 			if($dp->getNamespace() != NS_TEMPLATE) {
 				# FIXME we assume the disambiguation message is a template but
 				# the page can potentially be from another namespace :/
-				wfDebug("Mediawiki:disambiguationspage message does not refer to a template!\n");
+				wfDebug("Mediawiki:proofreadpage-disambiguationspage message does not refer to a template!\n");
 			}
 			$linkBatch->addObj( $dp );
 		} else {
@@ -73,23 +73,27 @@ class PagesWithoutScans extends QueryPage {
 		}
 		return $linkBatch->constructSet( 'tl', $dbr );
 	}
-	
+
 	function getQueryInfo() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$page_ns_index = MWNamespace::getCanonicalIndex( strtolower( str_replace( ' ', '_', $this->page_namespace ) ) );
-		
+
 		// Construct subqueries
 		$pagesWithScansSubquery = $dbr->selectSQLText(
 			array( 'templatelinks', 'page' ),
 			'DISTINCT tl_from',
 			array(
 				'page_id=tl_from',
-				'tl_namespace' => $page_ns_index,
+				'tl_namespace' => ProofreadPage::getPageNamespaceId(),
 				'page_namespace' => NS_MAIN
 			)
 		);
-		
+
 		// Exclude disambiguation pages too
+		// FIXME: Update to filter against 'disambiguation' page property
+		// instead. See https://www.mediawiki.org/wiki/Extension:Disambiguator.
+		// May want to verify that wikis using ProofreadPage have implemented
+		// the __DISAMBIG__ magic word for their disambiguation pages before
+		// changing this.
 		$dt = $this->disambiguation_templates( $dbr );
 		$disambigPagesSubquery = $dbr->selectSQLText(
 			array( 'page', 'templatelinks' ),
@@ -100,7 +104,7 @@ class PagesWithoutScans extends QueryPage {
 				$dt
 			)
 		);
-		
+
 		return array(
 			'tables' => 'page',
 			'fields' => array(
@@ -114,7 +118,7 @@ class PagesWithoutScans extends QueryPage {
 				"page_id NOT IN ($pagesWithScansSubquery)",
 				"page_id NOT IN ($disambigPagesSubquery)" ),
 			'options' => array( 'USE INDEX' => 'page_len' )
-		);	
+		);
 	}
 
 	function sortDescending() {
@@ -122,27 +126,24 @@ class PagesWithoutScans extends QueryPage {
 	}
 
 	function formatResult( $skin, $result ) {
-		global $wgLang, $wgContLang;
+		global $wgContLang;
 		$dm = $wgContLang->getDirMark();
 
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {
 			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
-		$hlink = $skin->linkKnown(
+		$hlink = Linker::linkKnown(
 			$title,
-			wfMsgHtml( 'hist' ),
+			$this->msg( 'hist' )->escaped(),
 			array(),
 			array( 'action' => 'history' )
 		);
-		$plink = $this->isCached()
-					? $skin->link( $title )
-					: $skin->linkKnown( $title );
-		$size = wfMsgExt( 'nbytes', array( 'parsemag', 'escape' ), $wgLang->formatNum( htmlspecialchars( $result->value ) ) );
+		$plink = $this->isCached() ? Linker::link( $title ) : Linker::linkKnown( $title );
+		$size = $this->msg( 'nbytes', $result->value )->escaped();
 
 		return $title->exists()
 				? "({$hlink}) {$dm}{$plink} {$dm}[{$size}]"
 				: "<s>({$hlink}) {$dm}{$plink} {$dm}[{$size}]</s>";
 	}
 }
-
