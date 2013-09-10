@@ -1587,12 +1587,16 @@ $messages['cu'] = array(
  */
 $messages['cy'] = array(
 	'indexpages' => 'Rhestr y mynegeion',
+	'pageswithoutscans' => 'Tudalennau heb eu sganio',
+	'proofreadpage_desc' => "Yn hwyluso cymharu testun gyda'r sgan gwreiddiol",
 	'proofreadpage_image' => 'Delwedd',
 	'proofreadpage_index' => 'Mynegai',
 	'proofreadpage_index_expected' => 'Gwall: disgwylid mynegai',
 	'proofreadpage_nosuch_index' => "Gwall: ni chafwyd hyd i'r mynegai",
 	'proofreadpage_nosuch_file' => "Gwall: ni chafwyd hyd i'r ffeil",
 	'proofreadpage_badpage' => 'Y Fformat Yn Anghywir',
+	'proofreadpage_nologin' => 'Nid ydych wedi mewngofnodi',
+	'proofreadpage_nologintext' => "Rhaid eich bod wedi [[Special:UserLogin|mewngofnodi]] i newid statws adolygu'r tudalennau.",
 );
 
 /** Danish (dansk)
@@ -5185,6 +5189,7 @@ $messages['mr'] = array(
 
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
+ * @author Aurora
  * @author Aviator
  */
 $messages['ms'] = array(
@@ -5264,6 +5269,7 @@ Catatan||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadata buku-buku yang diuruskan oleh ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Skema tidak dijumpai',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Skema $1 tidak dijumpai.',
+	'proofreadpage-disambiguationspage' => 'Template:nyahkekaburan',
 );
 
 /** Mirandese (Mirandés)
