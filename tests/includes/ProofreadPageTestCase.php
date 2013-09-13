@@ -5,7 +5,7 @@
  */
 abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	protected function setUp() {
-		global $wgProofreadPageNamespaceIds, $wgExtraNamespaces, $wgNamespacesWithSubpages;
+		global $wgProofreadPageNamespaceIds, $wgNamespacesWithSubpages;
 		parent::setUp();
 
 		$wgProofreadPageNamespaceIds =  array(

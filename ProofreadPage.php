@@ -29,11 +29,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * Exemple (with default namespace ids):
  * $wgProofreadPageNamespaceIds = array(
  * 	'page' => 250,
- * 	'page' => 252
+ * 	'index' => 252
  * );
  */
 $wgProofreadPageNamespaceIds = array();
 
+
+//Constants
+define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
 
 $dir = __DIR__ . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
@@ -54,6 +57,8 @@ $wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/Proofread
 $wgAutoloadClasses['EditProofreadPagePage'] = $dir . 'includes/page/EditProofreadPagePage.php';
 $wgAutoloadClasses['ProofreadPagePage'] = $dir.'includes/page/ProofreadPagePage.php';
 $wgAutoloadClasses['ProofreadPageContent'] = $dir.'includes/page/ProofreadPageContent.php';
+$wgAutoloadClasses['ProofreadPageLevel'] = $dir.'includes/page/ProofreadPageLevel.php';
+$wgAutoloadClasses['ProofreadPageContentHandler'] = $dir.'includes/page/ProofreadPageContentHandler.php';
 
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
@@ -142,6 +147,7 @@ $wgResourceModules += array(
 	),
 );
 
+//Hooks
 $wgHooks['SetupAfterCache'][] = 'ProofreadPageInit::initNamespaces';
 $wgHooks['ParserFirstCallInit'][] = 'ProofreadPage::onParserFirstCallInit';
 $wgHooks['BeforePageDisplay'][] = 'ProofreadPage::onBeforePageDisplay';
@@ -151,16 +157,15 @@ $wgHooks['ArticleSaveComplete'][] = 'ProofreadPage::onArticleSaveComplete';
 $wgHooks['ArticleDelete'][] = 'ProofreadPage::onArticleDelete';
 $wgHooks['ArticleUndelete'][] = 'ProofreadPage::onArticleUndelete';
 $wgHooks['ArticlePurge'][] = 'ProofreadPage::onArticlePurge';
-$wgHooks['ArticleViewCustom'][] = 'ProofreadPage::onArticleViewCustom';
 $wgHooks['SpecialMovepageAfterMove'][] = 'ProofreadPage::onSpecialMovepageAfterMove';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadIndexDbConnector::onLoadExtensionSchemaUpdates';
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
-$wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';
 $wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
 $wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
 $wgHooks['SkinTemplateNavigation'][] = 'ProofreadPage::onSkinTemplateNavigation';
+$wgHooks['ContentHandlerDefaultModelFor'][] = 'ProofreadPage::onContentHandlerDefaultModelFor';
 
 
 /**
@@ -175,12 +180,16 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
 
-	$files[] = $dir . 'page/ProofreadPagePageTest.php';
+	$files[] = $dir . 'page/ProofreadPageLevelTest.php';
 	$files[] = $dir . 'page/ProofreadPageContentTest.php';
+	$files[] = $dir . 'page/ProofreadPageContentHandlerTest.php';
+	$files[] = $dir . 'page/ProofreadPagePageTest.php';
 
 	return true;
 };
 
+//Handlers
+$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = 'ProofreadPageContentHandler';
 
 //inclusion of i18n file. $wgExtensionMessagesFiles[] doesn't works
 include_once( $dir . 'ProofreadPage.namespaces.php' );

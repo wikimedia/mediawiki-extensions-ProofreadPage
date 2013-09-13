@@ -14,28 +14,30 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @file
+ * @ingroup ProofreadPage
  */
 
  /**
-  * A value of a page entry
+  * Content of a Page: page
   */
-
-class ProofreadPageContent {
-
-	/**
-	 * @var string header of the page
-	 */
-	private $header;
+class ProofreadPageContent extends TextContent {
 
 	/**
-	 * @var string body of the page
+	 * @var WikitextContent header of the page
 	 */
-	private $body;
+	protected $header;
 
 	/**
-	 * @var string footer of the page
+	 * @var WikitextContent body of the page
 	 */
-	private $footer;
+	protected $body;
+
+	/**
+	 * @var WikitextContent footer of the page
+	 */
+	protected $footer;
 
 	/**
 	 * @var User|null last proofreader of the page
@@ -43,33 +45,30 @@ class ProofreadPageContent {
 	protected $proofreader;
 
 	/**
-	 * @var integer proofreading level of the page
+	 * @var ProofreadPageLevel proofreading level of the page
 	 */
-	protected $level = 1;
+	protected $level;
 
 	/**
 	 * Constructor
-	 * @param $header string
-	 * @param $body string
-	 * @param $footer string
-	 * @param $level integer
-	 * @param $proofreader User|string
+	 *
+	 * @param $header WikitextContent
+	 * @param $body WikitextContent
+	 * @param $footer WikitextContent
+	 * @param $level ProofreadPageLevel
 	 */
-	public function __construct( $header = '', $body = '', $footer = '', $level = 1, $proofreader = '' ) {
-		$this->setHeader( $header );
-		$this->setBody( $body );
-		$this->setFooter( $footer );
-		$this->setLevel( $level );
-		if ( is_string( $proofreader ) ) {
-			$this->setProofreaderFromName( $proofreader );
-		} else {
-			$this->setProofreader( $proofreader );
-		}
+	public function __construct( WikitextContent $header, WikitextContent $body, WikitextContent $footer, ProofreadPageLevel $level ) {
+		$this->header = $header;
+		$this->body = $body;
+		$this->footer = $footer;
+		$this->level = $level;
+
+		parent::__construct( '', CONTENT_MODEL_PROOFREAD_PAGE );
 	}
 
 	/**
 	 * returns the header of the page
-	 * @return string
+	 * @return WikitextContent
 	 */
 	public function getHeader() {
 		return $this->header;
@@ -77,7 +76,7 @@ class ProofreadPageContent {
 
 	/**
 	 * returns the body of the page
-	 * @return string
+	 * @return WikitextContent
 	 */
 	public function getBody(){
 		return $this->body;
@@ -85,7 +84,7 @@ class ProofreadPageContent {
 
 	/**
 	 * returns the footer of the page
-	 * @return string
+	 * @return WikitextContent
 	 */
 	public function getFooter() {
 		return $this->footer;
@@ -93,190 +92,181 @@ class ProofreadPageContent {
 
 	/**
 	 * returns the proofreading level of the page.
-	 * @return integer
+	 * @return ProofreadPageLevel
 	 */
-	public function getProofreadingLevel() {
+	public function getLevel() {
 		return $this->level;
 	}
 
 	/**
-	 * returns last proofreader of the page
-	 * @return User
+	 * @see Content:isValid
 	 */
-	public function getProofreader() {
-		return $this->proofreader;
+	public function isValid() {
+		return $this->header->isValid() &&
+			$this->body->isValid() &&
+			$this->footer->isValid() &&
+			$this->level->isValid();
 	}
 
 	/**
-	 * Sets value of the header
-	 * @param $header string
-	 * @throws MWException
-	 */
-	public function setHeader( $header ) {
-		if ( !is_string( $header ) ) {
-			throw new MWException( 'header must be a string.' );
-		}
-		$this->header = $header;
-	}
-
-	/**
-	 * Sets value of the body
-	 * @param $body string
-	 * @throws MWException
-	 */
-	public function setBody( $body ) {
-		if ( !is_string( $body ) ) {
-			throw new MWException( 'body must be a string.' );
-		}
-		$this->body = $body;
-	}
-
-	/**
-	 * Sets value of the footer
-	 * @param $footer string
-	 * @throws MWException
-	 */
-	public function setFooter( $footer ) {
-		if ( !is_string( $footer ) ) {
-			throw new MWException( 'footer must be a string.' );
-		}
-		$this->footer = $footer;
-	}
-
-	/**
-	 * Sets the last proofreader
-	 * @param $proofreader User
-	 */
-	public function setProofreader( User $user ) {
-		$this->proofreader = $user;
-	}
-
-	/**
-	* Sets the last proofreader from his name
-	* @param $name string
-	* @throws MWException
-	*/
-	public function setProofreaderFromName( $name ) {
-		if ( $name === '' ) {
-			$this->proofreader = null;
-		} elseif ( IP::isValid( $name ) ) {
-			$this->proofreader = User::newFromName( IP::sanitizeIP( $name ), false );
-		} else {
-			$name = User::newFromName( $name );
-			if ( $name === false ) {
-				throw new MWException( 'Name is an invalid username.' );
-			} else {
-				$this->proofreader = $name;
-			}
-		}
-	}
-
-	/**
-	 * Sets level
-	 * @param $level integer
-	 * @throws MWException
-	 */
-	public function setLevel( $level ) {
-		if ( !is_integer( $level ) || $level < 0 || $level > 4 ) {
-			throw new MWException( 'level must be an integer between 0 and 4.' );
-		}
-		$this->level = $level;
-	}
-
-	/**
-	 * Serialize the content of the ProofreadPageValue to wikitext
-	 * @return string
-	 */
-	public function serialize() {
-		$text = '<noinclude><pagequality level="' . $this->level . '" user="';
-		if ( $this->proofreader !== null ) {
-			$text .= $this->proofreader->getName();
-		}
-		$text .= '" /><div class="pagetext">' . $this->header. "\n\n\n" . '</noinclude>';
-		$text .= $this->body;
-		$text .= '<noinclude>' . $this->footer . '</div></noinclude>';
-		return $text;
-	}
-
-	public function unserialize( $text ) {
-		if( $text === '' ) {
-			$header = '';
-			$body = '';
-			$footer = '';
-			$proofreader = '';
-			$level = 1;	
-		} else {
-			if( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
-				$body = $m[2];
-				$footer = $this->cleanTrailingDivTag( $m[3] );
-			} elseif ( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)$/s', $text, $m ) ) {
-				$footer = '';
-				$body = $this->cleanTrailingDivTag( $m[2] );
-			} else {
-				throw new MWException( 'The serialize value of the page is not valid.' );
-			}
-			$header = $m[1];
-			if ( preg_match( '/^<pagequality level="(0|1|2|3|4)" user="(.*?)" \/>(.*?)$/s', $header, $m ) ) {
-				$level = intval( $m[1] );
-				$proofreader = $m[2];
-				$header = $this->cleanHeader( $m[3] );
-			} elseif( preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m ) ) {
-				$level = intval( $m[1] );
-				$proofreader = $m[3];
-				$header = $this->cleanHeader( $m[4] );
-			}
-		}
-		$this->setHeader( $header );
-		$this->setBody( $body );
-		$this->setFooter( $footer );
-		$this->setLevel( $level );
-		$this->setProofreaderFromName( $proofreader );
-	}
-
-	public function cleanTrailingDivTag( $text ) {
-		if ( preg_match( '/^(.*?)<\/div>$/s', $text, $m2 ) ) {
-			return  $m2[1];
-		} else {
-			return $text;
-		}
-	}
-	public function cleanHeader( $header ) {
-		if( preg_match('/^(.*?)<div class="pagetext">(.*?)$/s', $header, $mt) ) {
-			$header = $mt[2];
-		} elseif ( preg_match('/^(.*?)<div>(.*?)$/s', $header, $mt) ) {
-			$header = $mt[2];
-		}
-		return $header;
-	}
-
-	/**
-	 * Create a new empty ProofreadPageValue
-	 * @return ProofreadPageValue
-	 */
-	public static function newEmpty() {
-		return new self();
-	}
-
-	/**
-	 * Create a new ProofreadPageContent from a ProofreadIndexPage
-	 * @param $text string
-	 * @return ProofreadPageValue
-	 */
-	public static function newFromWikitext( $text ) {
-		$value = new self();
-		try {
-			$value->unserialize( $text );
-		} catch( MWExeption $e ) {
-			$value->setBody( $text );
-		}
-		return $value;
-	}
-
-	/**
-	 * Returns if the value is empty
-	 * @return bool
+	 * @see Content:isEmpty
 	 */
 	public function isEmpty() {
-		return $this->body === '';
+		return $this->body->isEmpty();
+	}
+
+	/**
+	 * @see Content::equals
+	 */
+	public function equals( Content $that = null ) {
+		if ( !( $that instanceof ProofreadPageContent ) || $that->getModel() !== $this->getModel() ) {
+			return false;
+		}
+
+		return
+			$this->header->equals( $that->getHeader() ) &&
+			$this->body->equals( $that->getBody() ) &&
+			$this->footer->equals( $that->getFooter() ) &&
+			$this->level->equals( $that->getLevel() );
+	}
+
+	/**
+	 * @see Content::getWikitextForTransclusion
+	 */
+	public function getWikitextForTransclusion() {
+		return $this->body->getWikitextForTransclusion();
+	}
+
+	/**
+	 * @see Content::getNativeData
+	 */
+	public function getNativeData() {
+		return $this->serialize();
+	}
+
+	/**
+	 * @see Content::getTextForSummary
+	 */
+	public function getTextForSummary( $maxlength = 250 ) {
+		return $this->body->getTextForSummary( $maxlength );
+	}
+
+	/**
+	 * @see Content::preSaveTransform
+	 */
+	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
+		return new self(
+			$this->header->preSaveTransform( $title, $user, $popts ),
+			$this->body->preSaveTransform( $title, $user, $popts ),
+			$this->footer->preSaveTransform( $title, $user, $popts ),
+			$this->level
+		);
+	}
+
+	/**
+	 * @see Content::preloadTransform
+	 */
+	public function preloadTransform( Title $title, ParserOptions $popts ) {
+		return new self(
+			$this->header->preloadTransform( $title, $popts ),
+			$this->body->preloadTransform( $title, $popts ),
+			$this->footer->preloadTransform( $title, $popts ),
+			$this->level
+		);
+	}
+
+	/**
+	 * @see Content::getRedirectTarget
+	 */
+	public function getRedirectTarget() {
+		return $this->body->getRedirectTarget();
+	}
+
+	/**
+	 * @see Content::updateRedirect
+	 */
+	public function updateRedirect( Title $target ) {
+		if ( !$this->isRedirect() ) {
+			return $this;
+		}
+
+		return new self(
+			$this->header,
+			$this->body->updateRedirect( $target ),
+			$this->footer,
+			$this->level
+		);
+	}
+
+	/**
+	 * @see Content::getSize
+	 */
+	public function getSize() {
+		return $this->header->getSize() +
+			$this->body->getSize() +
+			$this->footer->getSize();
+	}
+
+	/**
+	 * @see Content::isCountable
+	 */
+	public function isCountable( $hasLinks = null, Title $title = null ) {
+		return $this->header->isCountable( $hasLinks, $title ) ||
+			$this->body->isCountable( $hasLinks, $title ) ||
+			$this->footer->isCountable( $hasLinks, $title );
+	}
+
+	/**
+	 * @see Content::matchMagicWord
+	 */
+	public function matchMagicWord( MagicWord $word ) {
+		return $this->header->matchMagicWord( $word ) ||
+			$this->body->matchMagicWord( $word ) ||
+			$this->footer->matchMagicWord( $word );
+	}
+
+	/**
+	 * @see Content::getParserOutput
+	 */
+	public function getParserOutput( Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true ) {
+		if( $this->isRedirect() ) {
+			return $this->body->getParserOutput( $title, $revId, $options, $generateHtml );
+		}
+
+		if ( $options === null ) {
+			$options = $this->getContentHandler()->makeParserOptions( 'canonical' );
+		}
+		$page = new ProofreadPagePage( $title, $this );
+
+		$wikitextContent = new WikitextContent(
+			$this->header->getNativeData() . "\n\n\n" . $this->body->getNativeData() . $this->footer->getNativeData()
+		);
+		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
+		$parserOutput->addCategory(
+			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_category' )->inContentLanguage()->text(),
+			$title->getText()
+		);
+
+		//add dependencies on the image and on the index
+		$index = $page->getIndex();
+		if ( $index ) {
+			$indexTitle = $index->getTitle();
+			$parserOutput->addTemplate( $indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID() );
+		}
+		$image = $page->getImage();
+		if ( $image ) {
+			$parserOutput->addImage( $image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1() );
+		}
+		//page html
+		//TODO FIXME: display whether page has been proofread by the user or by someone else
+		$html = Html::openElement( 'div', array( 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ) ) .
+			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )->inContentLanguage()->parse() .
+			Html::closeElement( 'div' ) .
+			Html::openElement( 'div', array( 'class' => 'pagetext' ) ) .
+			$parserOutput->getText() .
+			Html::closeElement( 'div' );
+		$parserOutput->setText( $page->createPageContainer( $html ) );
+
+		return $parserOutput;
 	}
 }

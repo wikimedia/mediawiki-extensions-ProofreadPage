@@ -22,13 +22,23 @@
 class EditProofreadPagePage extends EditPage {
 
 	/**
-	 * @var ProofreadIndexPage stores the current revision of the page stored in the db.
+	 * @var ProofreadIndexPage stores the current revision of the page stored in the db
 	 */
 	protected $currentPage;
 
+	/**
+	 * @var ProofreadPageContentHander ContentHandler for Page: pages
+	 */
+	protected $contentHandler;
+
 	public function __construct( Article $article ) {
 		parent::__construct( $article );
+
 		$this->currentPage = ProofreadPagePage::newFromTitle( $this->mTitle );
+
+		$this->contentModel = CONTENT_MODEL_PROOFREAD_PAGE;
+		$this->contentHandler = ContentHandler::getForModelID( $this->contentModel );
+		$this->contentFormat = $this->contentHandler->getDefaultFormat();
 	}
 
 	protected function isSectionEditSupported() {
@@ -67,30 +77,25 @@ class EditProofreadPagePage extends EditPage {
 			'tabindex' => '1'
 		);
 
-		$content = ProofreadPageContent::newFromWikitext( $this->textbox1 );
+		$content = $this->contentHandler->unserializeContent( $this->textbox1 );
 		$page = new ProofreadPagePage( $this->mTitle, $content );
 		$content = $page->getContentForEdition();
 
 		$wgOut->addHTML(
-			Html::openElement( 'div', array( 'class' => 'prp-page-container' )  ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) ) .
-			Html::openElement( 'div', array( 'class' => 'wpHeader') ) .
-			Html::element( 'label', array( 'for' => 'wpHeaderTextbox'), wfMessage( 'proofreadpage_header' ) ) .
-			Html::textarea( 'wpHeaderTextbox', $content->getHeader(), $headerAttributes ) .
-			Html::element( 'button', array( 'name' => 'hideHeader', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() ) .
-			Html::closeElement( 'div' ) .
-			Html::element( 'label', array( 'for' => 'wpTextbox1'), wfMessage( 'proofreadpage_body' ) ) .
-			Html::textarea( 'wpTextbox1', $content->getBody(), $bodyAttributes ) .
-			Html::openElement( 'div', array( 'class' => 'wpFooter') ) .
-			Html::element( 'label', array( 'for' => 'wpFooterTextbox'), wfMessage( 'proofreadpage_footer' ) ) .
-			Html::closeElement( 'div' ) .
-			Html::textarea( 'wpFooterTextbox', $content->getFooter(), $footerAttributes ) .
-			Html::element( 'button', array( 'name' => 'hideFooter', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() ) .
-			Html::closeElement( 'div' ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-image' ) ) .
-			$page->getImageHtml( array( 'max-width' => 800 ) ) .
-			Html::closeElement( 'div' ) .
-			Html::closeElement( 'div' )
+			$page->createPageContainer(
+				Html::openElement( 'div', array( 'class' => 'wpHeader') ) .
+				Html::element( 'label', array( 'for' => 'wpHeaderTextbox'), wfMessage( 'proofreadpage_header' ) ) .
+				Html::textarea( 'wpHeaderTextbox', $content->getHeader()->serialize(), $headerAttributes ) .
+				Html::element( 'button', array( 'name' => 'hideHeader', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() ) .
+				Html::closeElement( 'div' ) .
+				Html::element( 'label', array( 'for' => 'wpTextbox1'), wfMessage( 'proofreadpage_body' ) ) .
+				Html::textarea( 'wpTextbox1', $content->getBody()->serialize(), $bodyAttributes ) .
+				Html::openElement( 'div', array( 'class' => 'wpFooter') ) .
+				Html::element( 'label', array( 'for' => 'wpFooterTextbox'), wfMessage( 'proofreadpage_footer' ) ) .
+				Html::closeElement( 'div' ) .
+				Html::textarea( 'wpFooterTextbox', $content->getFooter()->serialize(), $footerAttributes ) .
+				Html::element( 'button', array( 'name' => 'hideFooter', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() )
+			)
 		);
 	}
 
@@ -99,18 +104,20 @@ class EditProofreadPagePage extends EditPage {
 	 */
 	function getCheckBoxes( &$tabindex, $checked ) {
 		global $wgUser;
-		$content = ProofreadPageContent::newFromWikitext( $this->textbox1 );
-		$oldContent = $this->currentPage->getContent();
-		$oldLevel = $oldContent->getProofreadingLevel();
-		$oldUser = $oldContent->getProofreader();
-		$currentLevel = $content->getProofreadingLevel();
+
+		$oldLevel = $this->currentPage->getContent()->getLevel();
+
+		$content = $this->contentHandler->unserializeContent( $this->textbox1 );
+		$currentLevel = $content->getLevel();
+
 		$qualityLevels = array( 0, 2, 1, 3, 4 );
 		$html = '';
 		$checkboxes = parent::getCheckBoxes( $tabindex, $checked );
 
 		foreach( $qualityLevels as $level ) {
 
-			if( !$this->isLevelChangeAllowed( $oldUser, $oldLevel, $wgUser, $level ) ) {
+			$newLevel = new ProofreadPageLevel( $level, $wgUser );
+			if( !$oldLevel->isChangeAllowed( $newLevel ) ) {
 				continue;
 			}
 
@@ -118,7 +125,7 @@ class EditProofreadPagePage extends EditPage {
 			$cls = 'quality' . $level;
 
 			$attributes = array( 'tabindex' => ++$tabindex, 'title' => wfMessage( $msg )->plain() );
-			if( $level == $currentLevel ) {
+			if( $level == $currentLevel->getLevel() ) {
 				$attributes[] = 'checked';
 			}
 
@@ -142,10 +149,10 @@ class EditProofreadPagePage extends EditPage {
 	}
 
 
-	function getSummaryInput( $summary = "", $labelText = null, $inputAttrs = null, $spanLabelAttrs = null ) {
+	function getSummaryInput( $summary = '', $labelText = null, $inputAttrs = null, $spanLabelAttrs = null ) {
 
 		if ( !$this->mTitle->exists() ) {
-			$summary = '/*' . wfMessage( 'proofreadpage_quality1_category' )->plain() . '*/';
+			$summary = '/*' . wfMessage( 'proofreadpage_quality1_category' )->plain() . '*/ ' . $summary;
 		}
 
 		return parent::getSummaryInput( $summary, $labelText, $inputAttrs, $spanLabelAttrs );
@@ -160,42 +167,23 @@ class EditProofreadPagePage extends EditPage {
 	protected function importContentFormData( &$request ) {
 		global $wgUser;
 
-		$value = ProofreadPageContent::newEmpty();
-		$oldContent = $this->currentPage->getContent();
-
-		try {
-			$value->setHeader( $this->safeUnicodeInput( $request, 'wpHeaderTextbox' ) );
-		} catch ( MWException $exception) {
-			$exception->report();
-		}
-		try {
-			$value->setBody( $this->safeUnicodeInput( $request, 'wpTextbox1') );
-		} catch ( MWException $exception ) {
-			$exception->report();
-		}
-		try {
-			$value->setFooter( $this->safeUnicodeInput( $request, 'wpFooterTextbox' ) );
-		} catch ( MWException $exception ) {
-			$exception->report();
-		}
-		try {
-			$value->setLevel( $request->getInt( 'wpQuality' ) );
-		} catch ( MWException $exception ) {
-			$exception->report();
-		}
-		$user = ($oldContent->getProofreadingLevel() === $value->getProofreadingLevel())
-			? $oldContent->getProofreader()
+		$proofreadingLevel = $request->getInt( 'wpQuality' );
+		$oldLevel = $this->currentPage->getContent()->getLevel();
+		$user = ( $oldLevel->getLevel() === $proofreadingLevel )
+			? $oldLevel->getUser()
 			: $wgUser;
-		if( $oldContent->getProofreader() === null ) {
+		if( $oldLevel->getUser() === null ) {
 			$user = $wgUser;
 		}
-		try {
-			$value->setProofreader( $user );
-		} catch ( MWException $exception ) {
-			$exception->report();
-		}
 
-		return $value->serialize();
+		$content = new ProofreadPageContent(
+			new WikitextContent( $this->safeUnicodeInput( $request, 'wpHeaderTextbox' ) ),
+			new WikitextContent( $this->safeUnicodeInput( $request, 'wpTextbox1') ),
+			new WikitextContent( $this->safeUnicodeInput( $request, 'wpFooterTextbox' ) ),
+			new ProofreadPageLevel( $proofreadingLevel, $user )
+		);
+
+		return $content->serialize();
 	}
 
 	/**
@@ -203,41 +191,25 @@ class EditProofreadPagePage extends EditPage {
 	 */
 	public function internalAttemptSave( &$result, $bot = false ) {
 		global $wgOut;
-		$index = $this->currentPage->getIndex();
 
+		$error = '';
 		$oldContent = $this->currentPage->getContent();
-		$oldQ = $oldContent->getProofreadingLevel();
-		$oldUser = $oldContent->getProofreader();
-		$newContent = ProofreadPageContent::newFromWikitext( $this->textbox1 );
-		$newQ = $newContent->getProofreadingLevel();
-		$newUser = $newContent->getProofreader();
+		$newContent = $this->contentHandler->unserializeContent( $this->textbox1 );
 
-		if( !$this->mTitle->inNamespace( ProofreadPage::getPageNamespaceId() ) && $index!== null && !$this->isLevelChangeAllowed( $oldUser, $oldQ, $newUser, $newQ ) ) {
+		if ( !$newContent->isValid() ) {
+			$error = 'badpage';
+		} elseif ( !$oldContent->getLevel()->isChangeAllowed( $newContent->getLevel() ) ) {
+			$error = 'notallowed';
+		}
+
+		if ( $error !== '' ) {
 			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
 			$status = Status::newGood();
 			$status->fatal( 'hookaborted' );
 			$status->value = self::AS_HOOK_ERROR;
 			return $status;
 		}
+
 		return parent::internalAttemptSave( $result, $bot );
 	}
-
-	protected function isLevelChangeAllowed( $oldUser, $oldLevel, $newUser, $newLevel ) {
-		if( $oldLevel != -1 ) {
-			// check usernames
-			if( ( $oldLevel != $newLevel ) && !$newUser->isAllowed( 'pagequality' ) ) {
-				return false;
-			}
-
-			if( $newLevel == 4 && ( $oldLevel < 3 || $oldLevel == 3 && $oldUser->getName() == $newUser->getName() ) ) {
-				return false;
-			}
-		} else {
-			if( $newLevel >= 3 ) {
-				return false;
-			}
-		}
-		return true;
-	}
-
 }
