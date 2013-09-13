@@ -99,6 +99,7 @@ Remarks||10',
  * @author Johnduhart
  * @author Jon Harald Søby
  * @author Kaajawa
+ * @author Lloffiwr
  * @author McDutchie
  * @author Minh Nguyen
  * @author Mormegil
@@ -122,7 +123,14 @@ The special page lists texts without scans; that is, the texts that have not bee
 	'proofreadpage_index' => '{{Identical|Index}}',
 	'proofreadpage_indexdupe' => 'Meaning: "This is a duplicate link"',
 	'proofreadpage_nologin' => '{{Identical|Not logged in}}',
-	'proofreadpage_notallowed' => '"Making a change is not allowed" would be the verbose way to paraphrase the message.',
+	'proofreadpage_notallowed' => 'Used as error title.
+
+The body for this title is {{msg-mw|Proofreadpage notallowedtext}}.
+
+Translate this as "Changing the proofreading status is not allowed".',
+	'proofreadpage_notallowedtext' => 'Used as error message.
+
+The title for this error is {{msg-mw|Proofreadpage notallowed}}.',
 	'proofreadpage_dataconfig_badformatted' => 'Title of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_dataconfig_badformattedtext' => 'Content of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_number_expected' => 'The place where the data entry should be in numeric form',
@@ -143,7 +151,7 @@ The special page lists texts without scans; that is, the texts that have not bee
 	'proofreadpage_index_status' => 'One of the possible sorts in [[Special:IndexPages]] : number of pages proofread and validated in a book.',
 	'proofreadpage_index_size' => 'One of the possible sorts in [[Special:IndexPages]] : number of pages of a book.',
 	'proofreadpage_specialpage_label_orderby' => 'Label of the order select in [[Special:IndexPages]]',
-	'proofreadpage_specialpage_label_key' => 'Label of the search input in [[Special:IndexPages]].
+	'proofreadpage_specialpage_label_key' => 'Label of the search input in [https://en.wikisource.org/wiki/Special:IndexPages Special:IndexPages].
 {{Identical|Search}}',
 	'proofreadpage_specialpage_label_sortascending' => 'Label of a checkbox : sort the list of pages return by [[Special:IndexPages]] in ascending order or not.',
 	'proofreadpage_alphabeticalorder' => 'One of the possible sorts in [[Special:IndexPages]]',
@@ -1595,8 +1603,19 @@ $messages['cy'] = array(
 	'proofreadpage_nosuch_index' => "Gwall: ni chafwyd hyd i'r mynegai",
 	'proofreadpage_nosuch_file' => "Gwall: ni chafwyd hyd i'r ffeil",
 	'proofreadpage_badpage' => 'Y Fformat Yn Anghywir',
+	'proofreadpage_badpagetext' => 'Mae fformat y dudalen y ceisiasoch ei chadw yn anghywir.',
+	'proofreadpage_indexdupe' => 'Cyswllt dyblyg',
 	'proofreadpage_nologin' => 'Nid ydych wedi mewngofnodi',
 	'proofreadpage_nologintext' => "Rhaid eich bod wedi [[Special:UserLogin|mewngofnodi]] i newid statws adolygu'r tudalennau.",
+	'proofreadpage_notallowedtext' => "Ni chewch newid statws adolygu'r dudalen hon.",
+	'proofreadpage_dataconfig_badformatted' => 'Mae byg i gael yn ffurfweddiad y data',
+	'proofreadpage_index_size' => 'Nifer y tudalennau',
+	'proofreadpage_specialpage_label_orderby' => 'Trefnu yn ôl:',
+	'proofreadpage_specialpage_label_key' => 'Chwilio am:',
+	'proofreadpage_specialpage_label_sortascending' => 'Trefnu gan esgyn',
+	'proofreadpage_alphabeticalorder' => 'Yn nhrefn yr wyddor',
+	'proofreadpage_index_listofpages' => 'Rhestr y tudalennau mynegeio',
+	'proofreadpage_page_status' => 'Statws y dudalen',
 );
 
 /** Danish (dansk)
