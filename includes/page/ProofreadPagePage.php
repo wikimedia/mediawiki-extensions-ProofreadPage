@@ -282,7 +282,6 @@ class ProofreadPagePage {
 		if ( $out->isPrintable() ) {
 			$parserOptions->setIsPrintable( true );
 		}
-
 		return $parserOptions;
 	}
 }

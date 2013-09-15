@@ -1,11 +1,4 @@
 // Author : ThomasV - License : GPL
-/*
-function prInitTabs() {
-	$( '#ca-talk' ).prev().before( '<li id="ca-prev"><span>' + self.proofreadPagePrevLink + '</span></li>' );
-	$( '#ca-talk' ).prev().before( '<li id="ca-next"><span>' + self.proofreadPageNextLink + '</span></li>' );
-	$( '#ca-talk' ).after( '<li id="ca-index"><span>' + self.proofreadPageIndexLink + '</span></li>' );
-	$( '#ca-talk' ).after( '<li id="ca-image"><span>' + self.proofreadPageScanLink + '</span></li>' );
-}*/
 
 function prSetSummary() {
 	jQuery( "input[name='wpQuality']" ).click( function() {
@@ -39,8 +32,6 @@ function prHideHeaderFooter() {
 
 function prStartup() {
 	jQuery( function() {
-//		prInit();
-//		prInitZoom();
 		prSetSummary();
 		prHideHeaderFooter();
 	} );

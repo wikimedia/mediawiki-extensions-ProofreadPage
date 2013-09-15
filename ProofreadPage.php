@@ -157,6 +157,7 @@ $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
 $wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';
 $wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
 $wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
+$wgHooks['SkinTemplateNavigation'][] = 'ProofreadPage::onSkinTemplateNavigation';
 
 
 /**

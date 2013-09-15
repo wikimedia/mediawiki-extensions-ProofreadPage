@@ -863,4 +863,54 @@ $void_cell
 		$list[self::getIndexNamespaceId() + 1] = 'Index_talk';
 		return true;
 	}
+
+	/**
+	 * Add the links to previous, next, index page and scan image.
+	 * @param $skin SkinTemplate object
+	 * @param $links Structured navigation links
+	 */
+	public static function onSkinTemplateNavigation( &$skin, &$links ) {
+		global $wgOut, $wgExtensionAssetsPath;
+		$titleText = $wgOut->getPageTitle();
+		$title = Title::newFromText( $titleText );
+		if( $title->inNamespace( self::getPageNamespaceId() ) ) {
+			$page = ProofreadPagePage::newFromTitle( $title );
+			$indexPage = $page->getIndex();
+			if ( $indexPage !== null ) {
+				list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $page->getTitle() );
+				if ( $prevTitle !== null ) {
+					if( !$prevTitle->exists() ) {
+						$prevLink = $prevTitle->getEditURL();
+					} else {
+						$prevLink = $prevTitle->getLinkUrl();
+					}
+					$links['namespaces']['proofreadPagePrevLink'] = array( 'class' => '', 'href' => $prevLink,
+						'text' => wfMessage( 'proofreadpage_prevpage' )->plain() );
+				}
+				if ( $nextTitle !== null ) {
+					if( !$nextTitle->exists() ) {
+						$nextLink = $nextTitle->getEditURL();
+					} else {
+						$nextLink = $nextTitle->getLinkUrl();
+					}
+					$links['namespaces']['proofreadPageNextLink'] = array( 'class' => '', 'href' => $nextLink,
+						'text' => wfMessage( 'proofreadpage_nextpage' )->plain() );
+				}
+				$indexLink = $indexPage->getTitle()->getLinkUrl();
+				$links['namespaces']['proofreadPageIndexLink'] = array( 'class' => '', 'href' => $indexLink,
+						'text' => wfMessage( 'proofreadpage_index' )->plain() );
+
+				$image = $page->getImage();
+				$width = $image->getWidth();
+				$filePage = $page->getPageNumber();
+				$params = array( 'width' => $width, 'page' => $filePage );
+				$image->getHandler()->normaliseParams( $image, $params );
+				$thumbName = $image->thumbName( $params );
+				$imageUrl = $image->getThumbUrl( $thumbName );
+				$links['namespaces']['proofreadPageScanLink'] = array( 'class' => '', 'href' => $imageUrl,
+						'text' => wfMessage( 'proofreadpage_image')->plain() );
+			}
+		}
+		return true;
+	}
 }
