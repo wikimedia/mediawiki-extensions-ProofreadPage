@@ -1605,10 +1605,17 @@ $messages['cy'] = array(
 	'proofreadpage_badpage' => 'Y Fformat Yn Anghywir',
 	'proofreadpage_badpagetext' => 'Mae fformat y dudalen y ceisiasoch ei chadw yn anghywir.',
 	'proofreadpage_indexdupe' => 'Cyswllt dyblyg',
+	'proofreadpage_indexdupetext' => 'Ni ellir rhestri tudalennau mwy nag unwaith ar dudalen mynegeio.',
 	'proofreadpage_nologin' => 'Nid ydych wedi mewngofnodi',
-	'proofreadpage_nologintext' => "Rhaid eich bod wedi [[Special:UserLogin|mewngofnodi]] i newid statws adolygu'r tudalennau.",
-	'proofreadpage_notallowedtext' => "Ni chewch newid statws adolygu'r dudalen hon.",
+	'proofreadpage_nologintext' => "Rhaid eich bod wedi [[Special:UserLogin|mewngofnodi]] i newid statws darllen proflenni'r tudalennau.",
+	'proofreadpage_notallowed' => 'Ddim yn cael newid y statws',
+	'proofreadpage_notallowedtext' => "Ni chewch newid statws darllen proflenni'r dudalen hon.",
 	'proofreadpage_dataconfig_badformatted' => 'Mae byg i gael yn ffurfweddiad y data',
+	'proofreadpage_dataconfig_badformattedtext' => 'Nid yw fformat JSON y dudalen  [[Mediawiki:Proofreadpage index data config]] yn gywir.',
+	'proofreadpage_nextpage' => "I'r dudalen nesaf",
+	'proofreadpage_prevpage' => "I'r dudalen gynt",
+	'proofreadpage_header' => "Pennawd (ddim i'w drawsgynnwys):",
+	'proofreadpage_body' => "Testun y dudalen (i'w drawsgynnwys):",
 	'proofreadpage_index_size' => 'Nifer y tudalennau',
 	'proofreadpage_specialpage_label_orderby' => 'Trefnu yn ôl:',
 	'proofreadpage_specialpage_label_key' => 'Chwilio am:',
@@ -1616,6 +1623,7 @@ $messages['cy'] = array(
 	'proofreadpage_alphabeticalorder' => 'Yn nhrefn yr wyddor',
 	'proofreadpage_index_listofpages' => 'Rhestr y tudalennau mynegeio',
 	'proofreadpage_page_status' => 'Statws y dudalen',
+	'proofreadpage_source' => 'Ffynhonnell',
 );
 
 /** Danish (dansk)
