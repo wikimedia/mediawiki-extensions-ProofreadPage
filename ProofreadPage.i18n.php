@@ -134,6 +134,10 @@ The title for this error is {{msg-mw|Proofreadpage notallowed}}.',
 	'proofreadpage_dataconfig_badformatted' => 'Title of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_dataconfig_badformattedtext' => 'Content of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_number_expected' => 'The place where the data entry should be in numeric form',
+	'proofreadpage_interval_too_large' => 'See also:
+* {{msg-mw|Proofreadpage invalid interval}}',
+	'proofreadpage_invalid_interval' => 'See also:
+* {{msg-mw|Proofreadpage interval too large}}',
 	'proofreadpage_nextpage' => '{{Identical|Next page}}',
 	'proofreadpage_prevpage' => '{{Identical|Previous page}}',
 	'proofreadpage_toggleheaders' => 'Tooltip at right "+" button, at Wikisources, at namespace "Page".',
@@ -1592,6 +1596,7 @@ $messages['cu'] = array(
 
 /** Welsh (Cymraeg)
  * @author Lloffiwr
+ * @author Robin Owain
  */
 $messages['cy'] = array(
 	'indexpages' => 'Rhestr y mynegeion',
@@ -1612,18 +1617,55 @@ $messages['cy'] = array(
 	'proofreadpage_notallowedtext' => "Ni chewch newid statws darllen proflenni'r dudalen hon.",
 	'proofreadpage_dataconfig_badformatted' => 'Mae byg i gael yn ffurfweddiad y data',
 	'proofreadpage_dataconfig_badformattedtext' => 'Nid yw fformat JSON y dudalen  [[Mediawiki:Proofreadpage index data config]] yn gywir.',
+	'proofreadpage_number_expected' => 'Gwall: disgwylid gwerth rhifol',
 	'proofreadpage_nextpage' => "I'r dudalen nesaf",
 	'proofreadpage_prevpage' => "I'r dudalen gynt",
-	'proofreadpage_header' => "Pennawd (ddim i'w drawsgynnwys):",
+	'proofreadpage_header' => "Pennyn (ddim i'w drawsgynnwys):",
 	'proofreadpage_body' => "Testun y dudalen (i'w drawsgynnwys):",
+	'proofreadpage_footer' => "Troedyn (ddim i'w drawsgynnwys):",
+	'proofreadpage_toggleheaders' => "newid rhwng datguddio a chuddio'r adrannau nad ydynt i'w trawsgynnwys",
+	'proofreadpage_quality0_category' => 'Heb y testun',
+	'proofreadpage_quality1_category' => 'Heb ddarllen y proflenni',
+	'proofreadpage_quality2_category' => 'Gwallus',
+	'proofreadpage_quality3_category' => 'Darllenwyd y proflenni',
+	'proofreadpage_quality4_category' => 'Dilyswyd',
+	'proofreadpage_quality0_message' => "Nid oes angen darllen proflenni'r dudalen hon",
+	'proofreadpage_quality1_message' => "Ni ddarllenwyd proflenni'r dudalen hon eto",
+	'proofreadpage_quality2_message' => 'Roedd gwall wrth brawfddarllen y dudalen hon',
+	'proofreadpage_quality3_message' => 'Prawfddarllenwyd y dudalen hon',
+	'proofreadpage_quality4_message' => 'Gwirwyd y dudalen hon',
+	'proofreadpage_index_status' => 'Statws y mynegai',
 	'proofreadpage_index_size' => 'Nifer y tudalennau',
 	'proofreadpage_specialpage_label_orderby' => 'Trefnu yn ôl:',
 	'proofreadpage_specialpage_label_key' => 'Chwilio am:',
 	'proofreadpage_specialpage_label_sortascending' => 'Trefnu gan esgyn',
 	'proofreadpage_alphabeticalorder' => 'Yn nhrefn yr wyddor',
 	'proofreadpage_index_listofpages' => 'Rhestr y tudalennau mynegeio',
+	'proofreadpage_image_message' => 'Dolen i dudalen y mynegai',
 	'proofreadpage_page_status' => 'Statws y dudalen',
+	'proofreadpage_js_attributes' => 'Awdur Teitl Blwyddyn Cyhoeddwr',
+	'proofreadpage_index_attributes' => 'Awdur
+Teitl
+Blwyddyn|Blwyddyn cyhoeddi
+Cyhoeddwr
+Ffynhonnell
+Delwedd|Delwedd y clawr
+Tudalennau|20
+Sylwadau|10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|tudalennau|dudalen|dudalen|tudalen|thudalen|tudalen}}',
+	'proofreadpage_specialpage_legend' => 'Archwilio tudalennau mynegai',
+	'proofreadpage_specialpage_searcherror' => 'Gwall yn y porwr',
+	'proofreadpage_specialpage_searcherrortext' => "Dyw'r porwr ddim yn gweithio. Ymddiheurwn am hyn.",
 	'proofreadpage_source' => 'Ffynhonnell',
+	'proofreadpage_source_message' => "Y rhifyn a sganiwyd fel sail i'r testun hwn",
+	'right-pagequality' => "Addasu baner safoni'r dudalen",
+	'proofreadpage-section-tools' => 'Cyfarpar prawfddarllen',
+	'proofreadpage-group-zoom' => 'Chwyddo',
+	'proofreadpage-group-other' => 'Eraill',
+	'proofreadpage-button-toggle-visibility-label' => 'Dangos/cuddio pennyn a throedyn y dudalen',
+	'proofreadpage-button-zoom-out-label' => 'Lleihau',
+	'proofreadpage-button-reset-zoom-label' => 'Y maint gwreiddiol',
+	'proofreadpage-button-zoom-in-label' => 'Chwyddo',
 );
 
 /** Danish (dansk)
