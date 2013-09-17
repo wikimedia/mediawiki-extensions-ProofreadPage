@@ -159,6 +159,7 @@ The title for this error is {{msg-mw|Proofreadpage notallowed}}.',
 {{Identical|Search}}',
 	'proofreadpage_specialpage_label_sortascending' => 'Label of a checkbox : sort the list of pages return by [[Special:IndexPages]] in ascending order or not.',
 	'proofreadpage_alphabeticalorder' => 'One of the possible sorts in [[Special:IndexPages]]',
+	'proofreadpage_image_message' => 'Used as link text. The link points to the image file page.',
 	'proofreadpage_js_attributes' => 'Names of the variables on index pages, separated by spaces.',
 	'proofreadpage_default_header' => '{{notranslate}}',
 	'proofreadpage_default_footer' => '{{notranslate}}',
@@ -1653,7 +1654,7 @@ Delwedd|Delwedd y clawr
 Tudalennau|20
 Sylwadau|10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|tudalennau|dudalen|dudalen|tudalen|thudalen|tudalen}}',
-	'proofreadpage_specialpage_legend' => 'Archwilio tudalennau mynegai',
+	'proofreadpage_specialpage_legend' => "Chwilio drwy'r tudalennau mynegai",
 	'proofreadpage_specialpage_searcherror' => 'Gwall yn y porwr',
 	'proofreadpage_specialpage_searcherrortext' => "Dyw'r porwr ddim yn gweithio. Ymddiheurwn am hyn.",
 	'proofreadpage_source' => 'Ffynhonnell',
@@ -2110,6 +2111,7 @@ $messages['el'] = array(
 /** Esperanto (Esperanto)
  * @author Michawiki
  * @author Yekrats
+ * @author Zhang212
  */
 $messages['eo'] = array(
 	'indexpages' => 'Listo de indeksaj paĝoj',
@@ -2128,6 +2130,8 @@ $messages['eo'] = array(
 	'proofreadpage_nologintext' => 'Vi devas [[Special:UserLogin|ensaluti]] por modifi la provlegan statuson de paĝojn.',
 	'proofreadpage_notallowed' => 'Ŝanĝo ne permesiĝis',
 	'proofreadpage_notallowedtext' => 'Vi ne estas permesata ŝanĝi la pruvlegadan statuson de ĉi tiu paĝo.',
+	'proofreadpage_dataconfig_badformatted' => 'Insekto en datumoj agordo',
+	'proofreadpage_dataconfig_badformattedtext' => 'La paĝo [[MediaWiki: Proofreadpage indekso datumoj config]] ne estas en ĝust-formatan JSON', # Fuzzy
 	'proofreadpage_number_expected' => 'Eraro: numera valoro atentita',
 	'proofreadpage_interval_too_large' => 'Eraro: intervalo tro granda',
 	'proofreadpage_invalid_interval' => 'Eraro: malvalida intervalo',
@@ -2147,6 +2151,12 @@ $messages['eo'] = array(
 	'proofreadpage_quality2_message' => 'Estis problemo pruvlegante ĉi tiun paĝon',
 	'proofreadpage_quality3_message' => 'Ĉi tiu paĝo estis pruvlegita',
 	'proofreadpage_quality4_message' => 'Ĉi tiu paĝo estis validigita',
+	'proofreadpage_index_status' => 'Indekso statuso',
+	'proofreadpage_index_size' => 'Nombro de paĝoj',
+	'proofreadpage_specialpage_label_orderby' => 'Ordo Por',
+	'proofreadpage_specialpage_label_key' => 'Serĉi',
+	'proofreadpage_specialpage_label_sortascending' => 'Ordigi kreskante',
+	'proofreadpage_alphabeticalorder' => 'alfabeta ordo',
 	'proofreadpage_index_listofpages' => 'Listo de paĝoj',
 	'proofreadpage_image_message' => 'Ligilo al la indekspaĝo',
 	'proofreadpage_page_status' => 'Statuso de paĝo',
@@ -2161,6 +2171,8 @@ Paĝoj||20
 Rimarkoj||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|paĝo|paĝoj}}',
 	'proofreadpage_specialpage_legend' => 'Serĉi indeksajn paĝojn',
+	'proofreadpage_specialpage_searcherror' => 'Eraro en la serĉilon',
+	'proofreadpage_specialpage_searcherrortext' => 'La serĉilo ne funkcias. Pardonu pro la maloportunaĵo',
 	'proofreadpage_source' => 'Fonto',
 	'proofreadpage_source_message' => 'Skanita eldono uzata establi ĉi tiu teksto',
 	'right-pagequality' => 'Modifi flagon de paĝa kvalito',
@@ -2172,6 +2184,13 @@ Rimarkoj||10',
 	'proofreadpage-button-reset-zoom-label' => 'Refreŝi zomnivelon',
 	'proofreadpage-button-zoom-in-label' => 'Zomi',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikala/horizonta aspekto',
+	'proofreadpage-preferences-showheaders-label' => 'Montru header kaj footer kampoj dum redaktado en la {{ns: paĝo}} nomspaco',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Uzu horizontala aranĝo dum redaktado en la {{ns: paĝo}} nomspaco',
+	'proofreadpage-indexoai-repositoryName' => 'Metadatumoj de libroj de {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadatumoj de libroj administrata de ProofreadPage',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema ne trovita',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'La $ 1 skemo ne estis trovitaj.', # Fuzzy
+	'proofreadpage-disambiguationspage' => 'Template:Apartigilo',
 );
 
 /** Spanish (español)
