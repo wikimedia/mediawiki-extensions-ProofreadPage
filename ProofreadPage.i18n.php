@@ -1613,9 +1613,9 @@ $messages['cy'] = array(
 	'proofreadpage_indexdupe' => 'Cyswllt dyblyg',
 	'proofreadpage_indexdupetext' => 'Ni ellir rhestri tudalennau mwy nag unwaith ar dudalen mynegeio.',
 	'proofreadpage_nologin' => 'Nid ydych wedi mewngofnodi',
-	'proofreadpage_nologintext' => "Rhaid eich bod wedi [[Special:UserLogin|mewngofnodi]] i newid statws darllen proflenni'r tudalennau.",
+	'proofreadpage_nologintext' => 'Rhaid eich bod wedi [[Special:UserLogin|mewngofnodi]] i newid statws prawfddarllen y tudalennau.',
 	'proofreadpage_notallowed' => 'Ddim yn cael newid y statws',
-	'proofreadpage_notallowedtext' => "Ni chewch newid statws darllen proflenni'r dudalen hon.",
+	'proofreadpage_notallowedtext' => 'Ni chewch newid statws prawfddarllen y dudalen hon.',
 	'proofreadpage_dataconfig_badformatted' => 'Mae byg i gael yn ffurfweddiad y data',
 	'proofreadpage_dataconfig_badformattedtext' => 'Nid yw fformat JSON y dudalen  [[Mediawiki:Proofreadpage index data config]] yn gywir.',
 	'proofreadpage_number_expected' => 'Gwall: disgwylid gwerth rhifol',
@@ -1626,12 +1626,12 @@ $messages['cy'] = array(
 	'proofreadpage_footer' => "Troedyn (ddim i'w drawsgynnwys):",
 	'proofreadpage_toggleheaders' => "newid rhwng datguddio a chuddio'r adrannau nad ydynt i'w trawsgynnwys",
 	'proofreadpage_quality0_category' => 'Heb y testun',
-	'proofreadpage_quality1_category' => 'Heb ddarllen y proflenni',
+	'proofreadpage_quality1_category' => 'Heb ei brawfddarllen eto',
 	'proofreadpage_quality2_category' => 'Gwallus',
 	'proofreadpage_quality3_category' => 'Darllenwyd y proflenni',
-	'proofreadpage_quality4_category' => 'Dilyswyd',
-	'proofreadpage_quality0_message' => "Nid oes angen darllen proflenni'r dudalen hon",
-	'proofreadpage_quality1_message' => "Ni ddarllenwyd proflenni'r dudalen hon eto",
+	'proofreadpage_quality4_category' => 'Gwirwyd',
+	'proofreadpage_quality0_message' => 'Nid oes angen prawfddarllen y dudalen hon',
+	'proofreadpage_quality1_message' => 'Ni brawfddarllenwyd y dudalen hon eto',
 	'proofreadpage_quality2_message' => 'Roedd gwall wrth brawfddarllen y dudalen hon',
 	'proofreadpage_quality3_message' => 'Prawfddarllenwyd y dudalen hon',
 	'proofreadpage_quality4_message' => 'Gwirwyd y dudalen hon',
@@ -1641,7 +1641,7 @@ $messages['cy'] = array(
 	'proofreadpage_specialpage_label_key' => 'Chwilio am:',
 	'proofreadpage_specialpage_label_sortascending' => 'Trefnu gan esgyn',
 	'proofreadpage_alphabeticalorder' => 'Yn nhrefn yr wyddor',
-	'proofreadpage_index_listofpages' => 'Rhestr y tudalennau mynegeio',
+	'proofreadpage_index_listofpages' => 'Rhestr y tudalennau',
 	'proofreadpage_image_message' => 'Dolen i dudalen y mynegai',
 	'proofreadpage_page_status' => 'Statws y dudalen',
 	'proofreadpage_js_attributes' => 'Awdur Teitl Blwyddyn Cyhoeddwr',
@@ -1651,8 +1651,8 @@ Blwyddyn|Blwyddyn cyhoeddi
 Cyhoeddwr
 Ffynhonnell
 Delwedd|Delwedd y clawr
-Tudalennau|20
-Sylwadau|10',
+Tudalennau||20
+Sylwadau||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|tudalennau|dudalen|dudalen|tudalen|thudalen|tudalen}}',
 	'proofreadpage_specialpage_legend' => "Chwilio drwy'r tudalennau mynegai",
 	'proofreadpage_specialpage_searcherror' => 'Gwall yn y porwr',
@@ -1667,6 +1667,7 @@ Sylwadau|10',
 	'proofreadpage-button-zoom-out-label' => 'Lleihau',
 	'proofreadpage-button-reset-zoom-label' => 'Y maint gwreiddiol',
 	'proofreadpage-button-zoom-in-label' => 'Chwyddo',
+	'proofreadpage-indexoai-repositoryName' => "Metadata'r llyfrau o {{SITENAME}}",
 );
 
 /** Danish (dansk)
