@@ -1668,6 +1668,7 @@ Sylwadau||10',
 	'proofreadpage-button-reset-zoom-label' => 'Y maint gwreiddiol',
 	'proofreadpage-button-zoom-in-label' => 'Chwyddo',
 	'proofreadpage-indexoai-repositoryName' => "Metadata'r llyfrau o {{SITENAME}}",
+	'proofreadpage-disambiguationspage' => 'Template:gwahaniaethu',
 );
 
 /** Danish (dansk)
