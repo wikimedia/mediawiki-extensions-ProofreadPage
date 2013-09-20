@@ -1667,7 +1667,13 @@ Sylwadau||10',
 	'proofreadpage-button-zoom-out-label' => 'Lleihau',
 	'proofreadpage-button-reset-zoom-label' => 'Y maint gwreiddiol',
 	'proofreadpage-button-zoom-in-label' => 'Chwyddo',
+	'proofreadpage-button-toggle-layout-label' => 'Gosod am lan/ar draws',
+	'proofreadpage-preferences-showheaders-label' => 'Dangos y maesydd pennyn a throedyn wrth olygu yn y parth {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'defnyddio gosodiad ar draws pan yn golygu yn y parth {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => "Metadata'r llyfrau o {{SITENAME}}",
+	'proofreadpage-indexoai-eprint-content-text' => "Metadata'r llyfrau a drefnir gan ProofreadPage.",
+	'proofreadpage-indexoai-error-schemanotfound' => "Ni chafwyd hyd i'r sgema",
+	'proofreadpage-indexoai-error-schemanotfound-text' => "Ni chafwyd hyd i'r sgema $1.",
 	'proofreadpage-disambiguationspage' => 'Template:gwahaniaethu',
 );
 
