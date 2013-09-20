@@ -25,6 +25,7 @@
 	display: table-cell;
 	width: 50%;
 	vertical-align: top;
+	overflow: hidden;
 }
 .prp-page-content {
 	display: table-cell;

@@ -1,39 +1,34 @@
 // Author : ThomasV - License : GPL
 
-function prSetSummary() {
-	jQuery( "input[name='wpQuality']" ).click( function() {
-		var text = mediaWiki.msg( 'proofreadpage_quality' + this.value + '_category' );
+( function( $, mw ) {
+	$( "input[name='wpQuality']" ).click( function() {
+		var text = mw.msg( 'proofreadpage_quality' + this.value + '_category' );
 		document.editform.elements[ 'wpSummary' ].value = '/* ' + text + ' */ ';
 	});
 
-}
-
-function prHideHeaderFooter() {
-	jQuery( "button[name='hideHeader']" ).click( function() {
-		if ( jQuery( "textarea[id='wpHeaderTextbox']" ).is( ":visible" ) ) {
-			jQuery( "textarea[id='wpHeaderTextbox']" ).hide();
-			jQuery( "button[name='hideHeader']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
+	$( "button[name='hideHeader']" ).click( function() {
+		if ( $( "textarea[id='wpHeaderTextbox']" ).is( ":visible" ) ) {
+			$( "textarea[id='wpHeaderTextbox']" ).hide();
+			$( "button[name='hideHeader']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
 		} else {
-			jQuery( "textarea[id='wpHeaderTextbox']" ).show();
-			jQuery( "button[name='hideHeader']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
+			$( "textarea[id='wpHeaderTextbox']" ).show();
+			$( "button[name='hideHeader']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
 		}
 	} );
-	jQuery( "button[name='hideFooter']" ).click( function() {
-		if ( jQuery( "textarea[id='wpFooterTextbox']" ).is(":visible") ) {
-			jQuery( "textarea[id='wpFooterTextbox']" ).hide();
-			jQuery( "button[name='hideFooter']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
+	$( "button[name='hideFooter']" ).click( function() {
+		if ( $( "textarea[id='wpFooterTextbox']" ).is(":visible") ) {
+			$( "textarea[id='wpFooterTextbox']" ).hide();
+			$( "button[name='hideFooter']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
 		} else {
-			jQuery( "textarea[id='wpFooterTextbox']" ).show();
-			jQuery( "button[name='hideFooter']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
+			$( "textarea[id='wpFooterTextbox']" ).show();
+			$( "button[name='hideFooter']" ).text( mw.msg( 'proofreadpage-toggle-headerfooter' ) );
 		}
 	} );
-}
-
+} ( jQuery, mediaWiki ) );
 
 function prStartup() {
 	jQuery( function() {
-		prSetSummary();
-		prHideHeaderFooter();
+		prInitTabs();
 	} );
 }
 

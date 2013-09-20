@@ -69,7 +69,6 @@ class EditProofreadPagePage extends EditPage {
 
 		$content = ProofreadPageContent::newFromWikitext( $this->textbox1 );
 		$page = new ProofreadPagePage( $this->mTitle, $content );
-
 		$content = $page->getContentForEdition();
 
 		$wgOut->addHTML(
@@ -93,7 +92,6 @@ class EditProofreadPagePage extends EditPage {
 			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' )
 		);
-
 	}
 
 	/**

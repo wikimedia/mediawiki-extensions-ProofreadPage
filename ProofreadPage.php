@@ -98,13 +98,16 @@ $prpResourceTemplate = array(
 	'remoteExtPath' => 'ProofreadPage/modules'
 );
 $wgResourceModules += array(
+	'jquery.panZoom' => $prpResourceTemplate + array(
+		'scripts' => 'jquery.panZoom/jquery.panZoom.js'
+	),
 	'ext.proofreadpage.base' => $prpResourceTemplate + array(
 		'styles'  => 'ext.proofreadpage.base/ext.proofreadpage.base.css',
 	),
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'scripts' => 'ext.proofreadpage.page/ext.proofreadpage.page.js',
 		'styles'  => 'ext.proofreadpage.page/ext.proofreadpage.page.css',
-		'dependencies' => array( 'ext.proofreadpage.base', 'mediawiki.legacy.wikibits', 'mediawiki.util' ),
+		'dependencies' => array( 'ext.proofreadpage.base', 'mediawiki.legacy.wikibits', 'mediawiki.util', 'jquery.panZoom' ),
 		'messages' => array(
 			'proofreadpage_header',
 			'proofreadpage_body',
