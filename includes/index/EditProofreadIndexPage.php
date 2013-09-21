@@ -33,7 +33,7 @@ class EditProofreadIndexPage extends EditPage {
 
 		$pageLang = $this->mTitle->getPageLanguage();
 		$inputAttributes = array( 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() );
-		if( wfReadOnly() === true ) {
+		if ( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
 
@@ -130,26 +130,27 @@ class EditProofreadIndexPage extends EditPage {
 	}
 
 	/**
-	 * Init $this->textbox1 from form content
+	 * Extract the page content data from the posted form
 	 *
 	 * @param $request WebRequest
+	 * @return string
 	 */
 	protected function importContentFormData( &$request ) {
 		if ( $this->textbox1 !== '' ) {
-			return;
+			return $this->textbox1;
 		}
 
 		$config = ProofreadIndexPage::getDataConfig();
-		$this->textbox1 = "{{:MediaWiki:Proofreadpage_index_template";
+		$text = "{{:MediaWiki:Proofreadpage_index_template";
 		foreach( $config as $key => $params ) {
 			$field = $this->getFieldNameForEntry( $key );
 			$value = $this->cleanInputtedContent( $this->safeUnicodeInput( $request, $field ) );
 			$entry = new ProofreadIndexEntry( $key, $value, $params );
 			if( !$entry->isHidden() ) {
-				$this->textbox1 .= "\n|" . $entry->getKey() . "=" . $entry->getStringValue();
+				$text .= "\n|" . $entry->getKey() . "=" . $entry->getStringValue();
 			}
 		}
-		$this->textbox1 .= "\n}}";
+		return $text . "\n}}";
 	}
 
 	/**
@@ -163,22 +164,22 @@ class EditProofreadIndexPage extends EditPage {
 		$value = trim( $value );
 
 		// replace pipe symbol everywhere...
-		$value = preg_replace( '#\|#', '&!&', $value );
+		$value = preg_replace( '/\|/', '&!&', $value );
 
 		// ...except in links...
 		$prev = '';
 		do {
 			$prev = $value;
-			$value = preg_replace( '#\[\[(.*?)&!&(.*?)\]\]#', '[[$1|$2]]', $value );
+			$value = preg_replace( '/\[\[(.*?)&!&(.*?)\]\]/', '[[$1|$2]]', $value );
 		} while ( $value != $prev );
 
 		// ..and in templates
 		do {
 			$prev = $value;
-			$value = preg_replace( '#\{\{(.*?)&!&(.*?)\}\}#', '{{$1|$2}}', $value );
+			$value = preg_replace( '/\{\{(.*?)&!&(.*?)\}\}/s', '{{$1|$2}}', $value );
 		} while ( $value != $prev );
 
-		$value = preg_replace( '#&!&#', '{{!}}', $value );
+		$value = preg_replace( '/&!&/', '{{!}}', $value );
 
 		return $value;
 	}

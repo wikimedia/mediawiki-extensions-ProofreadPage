@@ -23,13 +23,55 @@
  * Special page that lists the texts that have no transclusions
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
  */
-class PagesWithoutScans extends DisambiguationsPage {
+class PagesWithoutScans extends QueryPage {
 	function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
 	}
 
-	function getPageHeader() {
-		return '';
+	function isExpensive() {
+		return true;
+	}
+
+	function isSyndicated() {
+		return false;
+	}
+
+	/**
+	 * Return a clause with the list of disambiguation templates.
+	 * This function was copied verbatim from specials/SpecialDisambiguations.php
+	 * @param $dbr DatabaseBase
+	 * @return mixed
+	 */
+	function disambiguation_templates( $dbr ) {
+		$dMsgText = wfMsgForContent('proofreadpage-disambiguationspage');
+
+		$linkBatch = new LinkBatch;
+
+		# If the text can be treated as a title, use it verbatim.
+		# Otherwise, pull the titles from the links table
+		$dp = Title::newFromText($dMsgText);
+		if( $dp ) {
+			if($dp->getNamespace() != NS_TEMPLATE) {
+				# FIXME we assume the disambiguation message is a template but
+				# the page can potentially be from another namespace :/
+				wfDebug("Mediawiki:proofreadpage-disambiguationspage message does not refer to a template!\n");
+			}
+			$linkBatch->addObj( $dp );
+		} else {
+			# Get all the templates linked from the Mediawiki:Disambiguationspage
+			$disPageObj = Title::makeTitleSafe( NS_MEDIAWIKI, 'disambiguationspage' );
+			$res = $dbr->select(
+				array('pagelinks', 'page'),
+				'pl_title',
+				array('page_id = pl_from', 'pl_namespace' => NS_TEMPLATE,
+					'page_namespace' => $disPageObj->getNamespace(), 'page_title' => $disPageObj->getDBkey()),
+				__METHOD__ );
+
+			foreach ( $res as $row ) {
+				$linkBatch->addObj( Title::makeTitle( NS_TEMPLATE, $row->pl_title ));
+			}
+		}
+		return $linkBatch->constructSet( 'tl', $dbr );
 	}
 
 	function getQueryInfo() {
@@ -47,13 +89,19 @@ class PagesWithoutScans extends DisambiguationsPage {
 		);
 
 		// Exclude disambiguation pages too
+		// FIXME: Update to filter against 'disambiguation' page property
+		// instead. See https://www.mediawiki.org/wiki/Extension:Disambiguator.
+		// May want to verify that wikis using ProofreadPage have implemented
+		// the __DISAMBIG__ magic word for their disambiguation pages before
+		// changing this.
+		$dt = $this->disambiguation_templates( $dbr );
 		$disambigPagesSubquery = $dbr->selectSQLText(
 			array( 'page', 'templatelinks' ),
 			'page_id',
 			array(
 				'page_id=tl_from',
 				'page_namespace' => NS_MAIN,
-				$this->getQueryFromLinkBatch(),
+				$dt
 			)
 		);
 
@@ -73,8 +121,8 @@ class PagesWithoutScans extends DisambiguationsPage {
 		);
 	}
 
-	function getOrderFields() {
-		return array( 'value' );
+	function sortDescending() {
+		return true;
 	}
 
 	function formatResult( $skin, $result ) {

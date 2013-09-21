@@ -49,7 +49,7 @@ $specialPageAliases['de'] = array(
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
 	'IndexPages' => array( 'Pelaİndeks' ),
-	'PagesWithoutScans' => array( 'PeleyêBêCıgeyrayışi' ),
+	'PagesWithoutScans' => array( 'PeréBéCıgeyrayışi' ),
 );
 
 /** Estonian (eesti) */
@@ -77,7 +77,7 @@ $specialPageAliases['ia'] = array(
 
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
-	'IndexPages' => array( 'PagineIndicizzate' ),
+	'IndexPages' => array( 'PagineIndice' ),
 	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
 );
 
@@ -90,7 +90,7 @@ $specialPageAliases['ja'] = array(
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'IndexPages' => array( '색인문서' ),
-	'PagesWithoutScans' => array( '스캔안한문서' ),
+	'PagesWithoutScans' => array( '스캔안된문서', '스캔안한문서' ),
 	'ProofreadIndexOai' => array( '색인교정Oai' ),
 	'ProofreadIndexOaiSchema' => array( '색인교정Oai스키마' ),
 );
@@ -123,8 +123,8 @@ $specialPageAliases['nb'] = array(
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
-	'IndexPages' => array( 'Indexpagina\'s' ),
-	'PagesWithoutScans' => array( 'Pagina\'s_zonder_deurlochting' ),
+	'IndexPages' => array( 'Indexziejen' ),
+	'PagesWithoutScans' => array( 'Ziejen_zonder_deurlochting' ),
 );
 
 /** Dutch (Nederlands) */
