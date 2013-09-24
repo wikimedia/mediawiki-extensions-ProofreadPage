@@ -482,19 +482,3 @@
 	}
 
 })( jQuery );
-
-function initPanZoom() {
-	$('.prp-page-image img').panZoom({
-		'zoomIn'	:	$('#zoomin'),
-		'zoomOut'	:	$('#zoomout'),
-		'panUp'		:	$('#panup'),
-		'panDown'	:	$('#pandown'),
-		'panLeft'	:	$('#panleft'),
-		'panRight'	:	$('#panright'),
-		'debug'     :   true
-	});
-}
-
-( function( $, mw ) {
-	initPanZoom();
-} ( jQuery, mediaWiki ) );

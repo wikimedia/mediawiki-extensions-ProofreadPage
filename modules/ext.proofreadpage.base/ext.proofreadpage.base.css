@@ -26,12 +26,14 @@
 	width: 50%;
 	vertical-align: top;
 	overflow: hidden;
+	position: absolute;
 }
 .prp-page-content {
 	display: table-cell;
 	width: 50%;
 	padding-right: 0.5em;
 	vertical-align: top;
+	position: relative;
 }
 #prp-page-qualityheader {
 	width: 100%;
