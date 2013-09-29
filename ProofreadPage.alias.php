@@ -61,7 +61,7 @@ $specialPageAliases['et'] = array(
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'IndexPages' => array( 'فهرست_صفحه‌ها' ),
-	'PagesWithoutScans' => array( 'صفحه‌های_اسکن_نشده' ),
+	'PagesWithoutScans' => array( 'صفحه‌های_بدون_پویش‌ها' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */

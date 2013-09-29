@@ -134,7 +134,7 @@ The title for this error is {{msg-mw|Proofreadpage notallowed}}.',
 	'proofreadpage_dataconfig_badformatted' => 'Title of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_dataconfig_badformattedtext' => 'Content of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON',
 	'proofreadpage_number_expected' => 'The place where the data entry should be in numeric form',
-	'proofreadpage_interval_too_large' => 'See also:
+	'proofreadpage_interval_too_large' => 'Error message displayed in content language when the "step" interval is too large (number of pages/step > 1000). See also:
 * {{msg-mw|Proofreadpage invalid interval}}',
 	'proofreadpage_invalid_interval' => 'See also:
 * {{msg-mw|Proofreadpage interval too large}}',
@@ -8257,6 +8257,7 @@ $messages['zh-hans'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author Shirayuki
+ * @author TianyinLee
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -8276,6 +8277,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_nologintext' => '您必須[[Special:UserLogin|先登入]]才能修改頁面的校對狀態。',
 	'proofreadpage_notallowed' => '不允許修改',
 	'proofreadpage_notallowedtext' => '您沒有獲得修改這個頁面校對狀態的許可。',
+	'proofreadpage_dataconfig_badformatted' => '設定數據中的Bug',
 	'proofreadpage_number_expected' => '錯誤：不為數值',
 	'proofreadpage_interval_too_large' => '錯誤：間隔過大',
 	'proofreadpage_invalid_interval' => '錯誤：無法識別間隔',
