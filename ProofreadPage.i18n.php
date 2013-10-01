@@ -4607,6 +4607,7 @@ $messages['la'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'indexpages' => 'Lëscht vun Index-Säiten',
@@ -4665,7 +4666,7 @@ Bemierkungen||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|Säit|Säiten}}',
 	'proofreadpage_specialpage_legend' => 'An den Index-Säite sichen',
 	'proofreadpage_specialpage_searcherror' => 'Feeler an der Sich-Maschine',
-	'proofreadpage_specialpage_searcherrortext' => "D'Sichmaschinn fonctionnéiert net. Entschëllegt w.e.g. d'Ëmstänn.",
+	'proofreadpage_specialpage_searcherrortext' => "D'Sichmaschinn funktionéiert net. Entschëllegt w.e.g. d'Ëmstänn.",
 	'proofreadpage_source' => 'Quell',
 	'proofreadpage_source_message' => 'Gescannten Editioun déi benotzt gouf fir dësen Text ze schreiwen',
 	'right-pagequality' => 'Qualitéitsindice vun der Säit änneren',
