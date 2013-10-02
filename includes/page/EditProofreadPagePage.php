@@ -83,20 +83,21 @@ class EditProofreadPagePage extends EditPage {
 
 		$wgOut->addHTML(
 			$page->createPageContainer(
-				Html::openElement( 'div', array( 'class' => 'wpHeader') ) .
-				Html::element( 'label', array( 'for' => 'wpHeaderTextbox'), wfMessage( 'proofreadpage_header' ) ) .
+				Html::openElement( 'div', array( 'class' => 'prp-page-edit-header' ) ) .
+				Html::element( 'label', array( 'for' => 'wpHeaderTextbox' ), wfMessage( 'proofreadpage_header' )->text() ) .
 				Html::textarea( 'wpHeaderTextbox', $content->getHeader()->serialize(), $headerAttributes ) .
-				Html::element( 'button', array( 'name' => 'hideHeader', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() ) .
 				Html::closeElement( 'div' ) .
-				Html::element( 'label', array( 'for' => 'wpTextbox1'), wfMessage( 'proofreadpage_body' ) ) .
+				Html::openElement( 'div', array( 'class' => 'prp-page-edit-body' ) ) .
+				Html::element( 'label', array( 'for' => 'wpTextbox1' ), wfMessage( 'proofreadpage_body' )->text() ) .
 				Html::textarea( 'wpTextbox1', $content->getBody()->serialize(), $bodyAttributes ) .
-				Html::openElement( 'div', array( 'class' => 'wpFooter') ) .
-				Html::element( 'label', array( 'for' => 'wpFooterTextbox'), wfMessage( 'proofreadpage_footer' ) ) .
 				Html::closeElement( 'div' ) .
+				Html::openElement( 'div', array( 'class' => 'prp-page-edit-footer' ) ) .
+				Html::element( 'label', array( 'for' => 'wpFooterTextbox' ), wfMessage( 'proofreadpage_footer' )->text() ) .
 				Html::textarea( 'wpFooterTextbox', $content->getFooter()->serialize(), $footerAttributes ) .
-				Html::element( 'button', array( 'name' => 'hideFooter', 'type' => 'button' ), wfMessage( 'proofreadpage-toggle-headerfooter' )->plain() )
+				Html::closeElement( 'div' )
 			)
 		);
+		$wgOut->addModules( 'ext.proofreadpage.page.edit' );
 	}
 
 	/**

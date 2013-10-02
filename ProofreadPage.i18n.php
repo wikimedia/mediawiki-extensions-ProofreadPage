@@ -89,7 +89,6 @@ Remarks||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadata of books managed by ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema not found',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'The $1 schema have not been found.',
-	'proofreadpage-toggle-headerfooter' => 'Toggle this area',
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
@@ -191,7 +190,6 @@ This phrase is confusing: Modify 'page quality flag' or 'Modify page quality' fl
 	'proofreadpage-indexoai-error-schemanotfound' => 'Title of the error when a requested XML Schema does not exist.',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Text of the error when a requested XML schema does not exist. Parameters:
 * $1 is name of the schema.',
-	'proofreadpage-toggle-headerfooter' => 'Toggle the visibility of header/footer input area',
 	'proofreadpage-disambiguationspage' => 'This message is the name of the template used for marking disambiguation pages. It is used to find all pages which link to disambiguation pages.
 
 {{doc-important|Don\'t translate the "Template:" part!}}

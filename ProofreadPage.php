@@ -104,21 +104,22 @@ $prpResourceTemplate = array(
 );
 $wgResourceModules += array(
 	'jquery.panZoom' => $prpResourceTemplate + array(
-		'scripts' => 'jquery.panZoom/jquery.panZoom.js'
+		'scripts' => 'jquery/jquery.panZoom.js',
+		'dependencies' => array( 'jquery.ui.draggable' )
 	),
 	'ext.proofreadpage.base' => $prpResourceTemplate + array(
-		'styles'  => 'ext.proofreadpage.base/ext.proofreadpage.base.css',
+		'styles'  => 'ext.proofreadpage.base.css',
 	),
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.page/ext.proofreadpage.page.js',
-		'styles'  => 'ext.proofreadpage.page/ext.proofreadpage.page.css',
-		'dependencies' => array( 'ext.proofreadpage.base', 'mediawiki.legacy.wikibits', 'mediawiki.util', 'jquery.panZoom' ),
+		'styles'  => 'page/ext.proofreadpage.page.css',
+		'scripts' => 'page/ext.proofreadpage.page.js',
+		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.panZoom' )
+	),
+	'ext.proofreadpage.page.edit' => $prpResourceTemplate + array(
+		'styles'  => 'page/ext.proofreadpage.page.edit.css',
+		'scripts' => 'page/ext.proofreadpage.page.edit.js',
+		'dependencies' => array( 'ext.proofreadpage.page', 'mediawiki.user' ),
 		'messages' => array(
-			'proofreadpage_header',
-			'proofreadpage_body',
-			'proofreadpage_footer',
-			'proofreadpage_toggleheaders',
-			'proofreadpage_page_status',
 			'proofreadpage_quality0_category',
 			'proofreadpage_quality1_category',
 			'proofreadpage_quality2_category',
@@ -133,16 +134,15 @@ $wgResourceModules += array(
 			'proofreadpage-button-zoom-in-label',
 			'proofreadpage-button-toggle-layout-label',
 			'proofreadpage-preferences-showheaders-label',
-			'proofreadpage-toggle-headerfooter',
 		)
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.article/ext.proofreadpage.article.js',
+		'scripts' => 'article/ext.proofreadpage.article.js',
 		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 	'ext.proofreadpage.index' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.index/ext.proofreadpage.index.js',
-		'styles'  => 'ext.proofreadpage.index/ext.proofreadpage.index.css',
+		'scripts' => 'index/ext.proofreadpage.index.js',
+		'styles'  => 'index/ext.proofreadpage.index.css',
 		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.tipsy' )
 	),
 );
