@@ -721,10 +721,12 @@ $messages['avk'] = array(
 
 /** Azerbaijani (azərbaycanca)
  * @author Cekli829
+ * @author Khan27
  */
 $messages['az'] = array(
 	'proofreadpage_image' => 'Şəkil',
 	'proofreadpage_index' => 'İndeks',
+	'proofreadpage_badpage' => 'Yanlış format',
 	'proofreadpage_nextpage' => 'Növbəti səhifə',
 	'proofreadpage_source' => 'Mənbə',
 	'proofreadpage-button-reset-zoom-label' => 'Orijinal ölçü',
@@ -2338,7 +2340,7 @@ $messages['et'] = array(
 	'proofreadpage_index_size' => 'Lehekülgede arv',
 	'proofreadpage_specialpage_label_orderby' => 'Järjestusalus:',
 	'proofreadpage_specialpage_label_key' => 'Otsitav:',
-	'proofreadpage_specialpage_label_sortascending' => 'Järjesta kasvavalt',
+	'proofreadpage_specialpage_label_sortascending' => 'Järjesta tõusvalt',
 	'proofreadpage_alphabeticalorder' => 'Tähestikuline',
 	'proofreadpage_index_listofpages' => 'Lehekülgede loend',
 	'proofreadpage_image_message' => 'Link registrilehele',
@@ -4035,6 +4037,7 @@ $messages['ja'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|ページ}}',
 	'proofreadpage_specialpage_legend' => '書誌情報ページの検索',
 	'proofreadpage_specialpage_searcherror' => '検索エンジンでのエラー',
+	'proofreadpage_specialpage_searcherrortext' => '検索エンジンは動作しません。ご不便をおかけして申し訳ありません。',
 	'proofreadpage_source' => '底本',
 	'proofreadpage_source_message' => '底本となった出版物等のスキャンデータ',
 	'right-pagequality' => 'ページ品質フラグの変更',
@@ -6194,7 +6197,7 @@ $messages['pt-br'] = array(
 	'proofreadpage_nosuch_index' => 'Erro: índice inexistente',
 	'proofreadpage_nosuch_file' => 'Erro: arquivo inexistente',
 	'proofreadpage_badpage' => 'Formato errôneo',
-	'proofreadpage_badpagetext' => 'Você tentou salvar em um formato incorreto.',
+	'proofreadpage_badpagetext' => 'Você tentou salvar a página em um formato incorreto.',
 	'proofreadpage_indexdupe' => 'Link duplicado',
 	'proofreadpage_indexdupetext' => 'As páginas não podem ser listadas mais de uma vez em uma página de índice.',
 	'proofreadpage_nologin' => 'Você não está autenticado',
@@ -6211,7 +6214,7 @@ $messages['pt-br'] = array(
 	'proofreadpage_header' => 'Cabeçalho (em modo noinclude):',
 	'proofreadpage_body' => 'Corpo de página (em modo de transclusão):',
 	'proofreadpage_footer' => 'Rodapé (em modo noinclude):',
-	'proofreadpage_toggleheaders' => 'tornar as seções noinclude visíveis',
+	'proofreadpage_toggleheaders' => 'alterar a visibilidade das seções noinclude',
 	'proofreadpage_quality0_category' => 'Sem texto',
 	'proofreadpage_quality1_category' => 'Não revisadas',
 	'proofreadpage_quality2_category' => 'Problemáticas',
@@ -6243,20 +6246,25 @@ Notas||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|página|páginas}}',
 	'proofreadpage_specialpage_legend' => 'Pesquisar nas páginas de índice',
 	'proofreadpage_specialpage_searcherror' => 'Erro na ferramenta de busca',
-	'proofreadpage_specialpage_searcherrortext' => 'A ferramenta de busca não está funcionando. Sentimos muito.',
+	'proofreadpage_specialpage_searcherrortext' => 'Desculpe-nos, a ferramenta de busca não está funcionando.',
 	'proofreadpage_source' => 'Fonte',
 	'proofreadpage_source_message' => 'Edição digitalizada utilizada para estabelecer este texto',
 	'right-pagequality' => 'Modificar o indicador da qualidade da página',
 	'proofreadpage-section-tools' => 'Ferramentas de revisão',
-	'proofreadpage-group-zoom' => 'Ampliar',
-	'proofreadpage-group-other' => 'Outro',
+	'proofreadpage-group-zoom' => 'Zoom',
+	'proofreadpage-group-other' => 'Outras',
 	'proofreadpage-button-toggle-visibility-label' => 'Mostrar/ocultar o topo e o rodapé desta página',
 	'proofreadpage-button-zoom-out-label' => 'Afastar',
-	'proofreadpage-button-reset-zoom-label' => 'Redefinir ampliação',
-	'proofreadpage-button-zoom-in-label' => 'Aumentar ampliação',
+	'proofreadpage-button-reset-zoom-label' => 'Tamanho original',
+	'proofreadpage-button-zoom-in-label' => 'Aproximar',
 	'proofreadpage-button-toggle-layout-label' => 'Disposição vertical ou horizontal',
 	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Usar layout horizontal ao editar o espaço nominal {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadados dos livros de {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadados dos livros administrados por ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema não encontrado',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'O schema $1 não foi encontrado.',
+	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
 /** Quechua (Runa Simi)
@@ -7790,7 +7798,7 @@ $messages['uk'] = array(
 	'proofreadpage_dataconfig_badformattedtext' => 'Сторінка [[Mediawiki:Proofreadpage index data config]] не добре відформатована у JSON.',
 	'proofreadpage_number_expected' => 'Помилка: потрібне числове значення',
 	'proofreadpage_interval_too_large' => 'Помилка: інтервал занадто великий',
-	'proofreadpage_invalid_interval' => 'Помилка: неправильній інтервал',
+	'proofreadpage_invalid_interval' => 'Помилка: неправильний інтервал',
 	'proofreadpage_nextpage' => 'Наступна сторінка',
 	'proofreadpage_prevpage' => 'Попередня сторінка',
 	'proofreadpage_header' => 'Заголовок (не включається):',
@@ -7802,11 +7810,11 @@ $messages['uk'] = array(
 	'proofreadpage_quality2_category' => 'Проблематична',
 	'proofreadpage_quality3_category' => 'Вичитана',
 	'proofreadpage_quality4_category' => 'Перевірена',
-	'proofreadpage_quality0_message' => 'Ця сторінка не потребує коректури',
-	'proofreadpage_quality1_message' => 'Ця сторінка ще не пройшла коректури',
-	'proofreadpage_quality2_message' => 'Виникла проблема з коректурою цієї сторінки',
-	'proofreadpage_quality3_message' => 'Ця сторінка пройшла коректуру',
-	'proofreadpage_quality4_message' => 'Ця сторінка була затверджена',
+	'proofreadpage_quality0_message' => 'Ця сторінка не потребує вичитки',
+	'proofreadpage_quality1_message' => 'Ця сторінка ще не вичитана',
+	'proofreadpage_quality2_message' => 'Виникла проблема з вичиткою цієї сторінки',
+	'proofreadpage_quality3_message' => 'Ця сторінка вичитана',
+	'proofreadpage_quality4_message' => 'Цю сторінку перевірено',
 	'proofreadpage_index_status' => 'Статус індексу',
 	'proofreadpage_index_size' => 'Число сторінок',
 	'proofreadpage_specialpage_label_orderby' => 'Сортувати за:',
@@ -8106,6 +8114,89 @@ Küpets|10',
 	'proofreadpage_pages' => '{{PLURAL:$1|pad|pads}}', # Fuzzy
 );
 
+/** Waray (Winaray)
+ * @author JinJian
+ */
+$messages['war'] = array(
+	'indexpages' => 'Talaan hin mga pakli tudlokan',
+	'pageswithoutscans' => 'Mga pakli nga dira naka-scan',
+	'proofreadpage_desc' => 'Natugot hin masayon nga komparison hin mga teksto ha orihinal nga scan',
+	'proofreadpage_image' => 'Imahe',
+	'proofreadpage_index' => 'Tudlokan',
+	'proofreadpage_index_expected' => 'Sayop: Namimiling hin tudlokan',
+	'proofreadpage_nosuch_index' => 'Sayop: Waray sugad nga tudlokan',
+	'proofreadpage_nosuch_file' => 'Sayop: Waray sugad nga paypay',
+	'proofreadpage_badpage' => 'Sayop nga format',
+	'proofreadpage_badpagetext' => 'An format han imo pakli nga imo karuyag igtipig in diri amo.',
+	'proofreadpage_indexdupe' => 'Duplikado nga sumpay',
+	'proofreadpage_indexdupetext' => 'An mga pakli ini diri malilista hin labaw han usa ka bises kada uska tudlokan nga pakli.',
+	'proofreadpage_nologin' => 'Diri naka-log-in',
+	'proofreadpage_nologintext' => 'Kinahanglan nimo maka-[[Special:UserLogin|log-in]] para makaliwat han kahimtang han proofreading han mga pakli.',
+	'proofreadpage_notallowed' => 'Diri gintutugotan an pagsal-iw',
+	'proofreadpage_notallowedtext' => 'Diri ka gintutugotan pagliwat han kahimtang han proofreading hini nga pakli.',
+	'proofreadpage_dataconfig_badformatted' => 'Kompigurasyon han may bug ha datos',
+	'proofreadpage_dataconfig_badformattedtext' => 'An pakli nga [[Mediawiki:Proofreadpage index data config]] in diri naka upay-pagformat nga JSON.',
+	'proofreadpage_number_expected' => 'Sayop: Namimiling hin numero nga balor',
+	'proofreadpage_interval_too_large' => 'Sayop: Kadako hin duro an interval',
+	'proofreadpage_invalid_interval' => 'Sayop: Diri balido nga interval',
+	'proofreadpage_nextpage' => 'Sunod nga pakli',
+	'proofreadpage_prevpage' => 'Nahiuna nga pakli',
+	'proofreadpage_header' => 'Ulohan (dirilakip):',
+	'proofreadpage_body' => 'Lawas han pakli (ig-tatranskluderar)',
+	'proofreadpage_footer' => 'Tiilan (dirilakip):',
+	'proofreadpage_toggleheaders' => 'pagpapakita han toogle nga dirilakip nga mga bahin',
+	'proofreadpage_quality0_category' => 'Waray teksto',
+	'proofreadpage_quality1_category' => 'Waray pa ka-proofread',
+	'proofreadpage_quality2_category' => 'May problema',
+	'proofreadpage_quality3_category' => 'Proofread',
+	'proofreadpage_quality4_category' => 'Ginpadig-on',
+	'proofreadpage_quality0_message' => 'Ini nga pakli in diri nagkikihanglan nga ma-proofread',
+	'proofreadpage_quality1_message' => 'Ini nga pakli in waray ka ma-proofread',
+	'proofreadpage_quality2_message' => 'May-ada problema han pag-proofread hini nga pakli',
+	'proofreadpage_quality3_message' => 'Ini nga pakli in nahuman na ka-proofread',
+	'proofreadpage_quality4_message' => 'Ini nga pakli in badidado na',
+	'proofreadpage_index_status' => 'Kahimtang han tudlokan',
+	'proofreadpage_index_size' => 'Ihap han mga pakli',
+	'proofreadpage_specialpage_label_orderby' => 'Sinugo ni:',
+	'proofreadpage_specialpage_label_key' => 'Pamilnga:',
+	'proofreadpage_specialpage_label_sortascending' => 'Ig-ayos paigbaw',
+	'proofreadpage_alphabeticalorder' => 'Igsunodsunod subay ha abakadahan',
+	'proofreadpage_index_listofpages' => 'Talaan hin mga pakli',
+	'proofreadpage_image_message' => 'Sumpay ha pakli han tudlokan',
+	'proofreadpage_page_status' => 'Kahimatang han pakli',
+	'proofreadpage_js_attributes' => 'Awtor Titulo Tuig Publisher',
+	'proofreadpage_index_attributes' => 'Awtor
+Titulo
+Tuig|Tuig han pagpatik
+Publisher
+Ginkuhaan
+Imahe|Prente nga imahe
+Mga pakli||20
+Mga pahibaro||10',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pakli|mga pakli}}',
+	'proofreadpage_specialpage_legend' => 'Pamilnga an mga pakli han tudlokan',
+	'proofreadpage_specialpage_searcherror' => 'May sayop ha search engine',
+	'proofreadpage_specialpage_searcherrortext' => 'Diri naandar an search engine. Pasensya na ha abereya.',
+	'proofreadpage_source' => 'Ginkuhaan',
+	'proofreadpage_source_message' => 'Na-scan nga edition nga gingamit hin pagestablisar hini nga teksto',
+	'right-pagequality' => 'Igliwat an kalidad han pakli nga bandera',
+	'proofreadpage-section-tools' => 'Mga higamit han pag-proofread',
+	'proofreadpage-group-zoom' => 'Padakoa',
+	'proofreadpage-group-other' => 'Iba',
+	'proofreadpage-button-toggle-visibility-label' => 'Igpakita/Igtago an kanan pakli ulohan ngan tiilan',
+	'proofreadpage-button-zoom-out-label' => 'Pakadoa',
+	'proofreadpage-button-reset-zoom-label' => 'Orihinal nga kadako',
+	'proofreadpage-button-zoom-in-label' => 'Pagutia',
+	'proofreadpage-button-toggle-layout-label' => 'Patukdaw/pahigda nga layout',
+	'proofreadpage-preferences-showheaders-label' => "Igpakita an mga bubutangan han ulohan ngan tiilan kun nagliliwat ha {{ns:page}} ngaran-lat'ang",
+	'proofreadpage-preferences-horizontal-layout-label' => "Gamita an pahigda nga layout kun nagliliwat ha {{ns:page}} ngaran-lat'ang",
+	'proofreadpage-indexoai-repositoryName' => 'Metadata han mga libro tikang ha {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata han mga libro nga gindudumara han ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Waray kabibilngi an schema',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'An $1 nga schema in waray katatad-i.',
+	'proofreadpage-disambiguationspage' => 'Batakan:pansayod',
+);
+
 /** Yiddish (ייִדיש)
  * @author Imre
  * @author פוילישער
@@ -8256,6 +8347,7 @@ $messages['zh-hans'] = array(
  * @author Gaoxuewei
  * @author Horacewai2
  * @author Liangent
+ * @author Liuxinyu970226
  * @author Mark85296341
  * @author Shirayuki
  * @author TianyinLee
@@ -8298,6 +8390,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_quality2_message' => '校對本頁時出現了一個問題',
 	'proofreadpage_quality3_message' => '本頁已經被校對',
 	'proofreadpage_quality4_message' => '本頁已經被認證',
+	'proofreadpage_index_size' => '頁面號碼',
 	'proofreadpage_specialpage_label_key' => '搜尋：',
 	'proofreadpage_index_listofpages' => '頁面清單',
 	'proofreadpage_image_message' => '連到索引頁的連結',
@@ -8324,4 +8417,5 @@ $messages['zh-hant'] = array(
 	'proofreadpage-button-reset-zoom-label' => '原本大小',
 	'proofreadpage-button-zoom-in-label' => '放大',
 	'proofreadpage-button-toggle-layout-label' => '垂直／水平佈局',
+	'proofreadpage-disambiguationspage' => 'Template:消歧義',
 );
