@@ -1763,6 +1763,7 @@ Bemærkninger||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadata for bøger, der forvaltes af ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Skemaet blev ikke fundet',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Skemaet $1 er ikke blevet fundet.',
+	'proofreadpage-disambiguationspage' => 'Template:Flertydig',
 );
 
 /** German (Deutsch)
