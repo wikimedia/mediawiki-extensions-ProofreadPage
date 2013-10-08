@@ -101,6 +101,22 @@ class ProofreadPage {
 	}
 
 	/**
+	 * Set up content handlers
+	 *
+	 * @param Title $title the title page
+	 * @param string $model the content model for the page
+	 * @return boolean if we have to continue the research for a content handler
+	 */
+	public static function onContentHandlerDefaultModelFor( Title $title, &$model ) {
+		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
+			$model = CONTENT_MODEL_PROOFREAD_PAGE;
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
 	 * Set up our custom edition system.
 	 *
 	 * @param Article $article  being edited
@@ -329,7 +345,6 @@ class ProofreadPage {
 		global $wgTitle;
 
 		$page_namespace_id = self::getPageNamespaceId();
-		$page_namespace = MWNamespace::getCanonicalName( $page_namespace_id );
 		$in_index_namespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
 
 		$values = array();
@@ -380,7 +395,6 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onImageOpenShowImageInlineBefore( &$imgpage, &$out ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
 			return true;
@@ -466,34 +480,6 @@ class ProofreadPage {
 			$outputPage->is_toc = false;
 		}
 		return true;
-	}
-
-	/**
-	 * Ouput content of a page page
-	 * @param $text string
-	 * @param $title Title
-	 * @param $out OutputPage
-	 * @return bool
-	 */
-	public static function onArticleViewCustom( $text, Title $title, OutputPage $out ) {
-		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
-			return true;
-		}
-
-		//redirections
-		if ( $text !== null ) {
-			$rt = Title::newFromRedirectArray( $text );
-			if ( $rt ) {
-				return true;
-			}
-		}
-
-		//display
-		$content = ($text !== null) ? ProofreadPageContent::newFromWikitext( $text ) : ProofreadPageContent::newEmpty();
-		$page = new ProofreadPagePage( $title, $content );
-		$page->outputPage( $out );
-
-		return false;
 	}
 
 	/**
@@ -833,25 +819,6 @@ $void_cell
 
 		return true;
 	}
-
-	/**
-	 * Adds an image link from pages in Page namespace, so they appear
-	 * in the file usage.
-	 * @param $linksUpdate LinksUpdate
-	 * @return bool
-	 */
-	public static function onLinksUpdateConstructed( $linksUpdate ) {
-		$title = $linksUpdate->getTitle();
-		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			// Extract title from multipaged documents
-			$parts = explode( '/', $title->getText(), 2 );
-			$imageTitle = Title::makeTitle( NS_FILE, $parts[0] );
-			// Add to list of images
-			$linksUpdate->mImages[$imageTitle->getDBkey()] = 1;
-		}
-		return true;
-	}
-
 
 	/**
 	 * Adds canonical namespaces.

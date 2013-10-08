@@ -150,15 +150,20 @@ class ProofreadPagePage {
 
 	/**
 	 * Return content of the page
-	 * @return ProofreadPageValue
+	 * @return ProofreadPageContent
 	 */
 	public function getContent() {
 		if ( $this->content === null ) {
+			$contentHandler = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
+
 			$rev = Revision::newFromTitle( $this->title );
 			if ( $rev === null ) {
-				$this->content = ProofreadPageContent::newEmpty();
+				$this->content = $contentHandler->makeEmptyContent();
 			} else {
-				$this->content = ProofreadPageContent::newFromWikitext( $rev->getText() );
+				$this->content = $rev->getContent();
+				if( $this->content->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+					$this->content = $contentHandler->unserializeContent( $this->content->serialize() );
+				}
 			}
 		}
 		return $this->content;
@@ -169,15 +174,13 @@ class ProofreadPagePage {
 	 * @return ProofreadPageContent
 	 */
 	public function getContentForEdition() {
-		global $wgContLang;
 		$content = $this->getContent();
 
 		if ( $content->isEmpty() && !$this->title->exists() ) {
 			$index = $this->getIndex();
 			if ( $index ) {
 				list( $header, $footer, $css, $editWidth ) = $index->getIndexDataForPage( $this->title );
-				$content->setHeader( $header );
-				$content->setFooter( $footer );
+				$body = '';
 
 				//Extract text layer
 				$image = $index->getImage();
@@ -186,10 +189,15 @@ class ProofreadPagePage {
 					$text = $image->getHandler()->getPageText( $image, $pageNumber );
 					if ( $text ) {
 						$text = preg_replace( "/(\\\\n)/", "\n", $text );
-						$text = preg_replace( "/(\\\\\d*)/", '', $text );
-						$content->setBody( $text );
+						$body = preg_replace( "/(\\\\\d*)/", '', $text );
 					}
 				}
+				$content = new ProofreadPageContent(
+					new WikitextContent( $header ),
+					new WikitextContent( $body ),
+					new WikitextContent( $footer ),
+					new ProofreadPageLevel()
+				);
 			}
 		}
 		return $content;
@@ -224,64 +232,19 @@ class ProofreadPagePage {
 	}
 
 	/**
-	 * Output page content
-	 * @param OutputPage $out
+	 * Embed the page content into a container and add the image
+	 * @param string $content html content of the page
+	 * @return string
 	 */
-	public function outputPage( OutputPage $out ) {
-		global $wgParser;
-
-		$content = $this->getContent();
-		$parserOptions = $this->createParserOptions( $out );
-
-		//beggining
-		$out->addHtml(
+	public function createPageContainer( $content ) {
+		return
 			Html::openElement( 'div', array( 'class' => 'prp-page-container' )  ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) )
-		);
-
-		//page quality
-		//TODO FIXME: display whether page has been proofread by the user or by someone else
-		$out->addHtml(
-			Html::openElement( 'div', array(
-				'class' => 'prp-page-qualityheader quality' . $content->getProofreadingLevel()
-			) )  .
-			wfMessage( 'proofreadpage_quality' . $content->getProofreadingLevel() . '_message' )->inContentLanguage()->text() .
-			Html::closeElement( 'div' )
-		);
-
-		$headerParserOutput = $wgParser->parse( $content->getHeader(), $this->title, $parserOptions );
-		$out->addParserOutput( $headerParserOutput );
-
-		$bodyParserOutput = $wgParser->parse( $content->getBody(), $this->title, $parserOptions );
-		$bodyParserOutput->addCategory(
-			wfMessage( 'proofreadpage_quality' . $content->getProofreadingLevel() . '_category' )->inContentLanguage()->text(),
-			$this->title->getText()
-		);
-		$out->addParserOutput( $bodyParserOutput );
-
-		$footerParserOutput = $wgParser->parse( $content->getFooter(), $this->title, $parserOptions );
-		$out->addParserOutput( $footerParserOutput );
-
-		//end
-		$out->addHtml(
+			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) ) .
+			$content .
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', array( 'class' => 'prp-page-image' ) ) .
 			$this->getImageHtml( array( 'max-width' => 800 ) ) .
 			Html::closeElement( 'div' ) .
-			Html::closeElement( 'div' )
-		);
-	}
-
-	protected function createParserOptions( OutputPage $out ) {
-		global $wgUser;
-
-		$page = new WikiPage( $this->title );
-		$parserOptions = $page->makeParserOptions( $wgUser );
-		$parserOptions->setEditSection( false );
-
-		if ( $out->isPrintable() ) {
-			$parserOptions->setIsPrintable( true );
-		}
-		return $parserOptions;
+			Html::closeElement( 'div' );
 	}
 }
