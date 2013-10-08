@@ -641,7 +641,7 @@ $messages['ast'] = array(
 	'proofreadpage_badpage' => 'Formatu incorreutu',
 	'proofreadpage_badpagetext' => "El formatu de la páxina qu'intentó guardar ye incorreutu.",
 	'proofreadpage_indexdupe' => 'Enllaz duplicáu',
-	'proofreadpage_indexdupetext' => "Nun se puen llistar les páxines más d'una vez n'una páxina d'índiz.",
+	'proofreadpage_indexdupetext' => "Nun se puen llistar les páxines más d'una vez nuna páxina d'índiz.",
 	'proofreadpage_nologin' => 'Nun anició sesión',
 	'proofreadpage_nologintext' => "Tien d'[[Special:UserLogin|aniciar sesión]] pa camudar l'estáu de correición de les páxines.",
 	'proofreadpage_notallowed' => 'Cambiu nun permitíu',
@@ -4577,7 +4577,7 @@ $messages['kw'] = array(
 	'proofreadpage_namespace' => 'Folen',
 );
 
-/** Kirghiz (Кыргызча)
+/** Kyrgyz (Кыргызча)
  * @author Growingup
  */
 $messages['ky'] = array(
@@ -5405,7 +5405,7 @@ $messages['nah'] = array(
 	'proofreadpage_prevpage' => 'Achto zāzanilli',
 );
 
-/** Neapolitan (Nnapulitano)
+/** Neapolitan (Napulitano)
  * @author Chelin
  */
 $messages['nap'] = array(
