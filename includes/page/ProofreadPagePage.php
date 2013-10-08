@@ -227,6 +227,10 @@ class ProofreadPagePage {
 				$transformAttributes['page'] = $pageNumber;
 			}
 		}
+		$handler = $image->getHandler();
+		if( !$handler || !$handler->normaliseParams( $image, $transformAttributes ) ) {
+			return null;
+		}
 		$thumbnail = $image->transform( $transformAttributes );
 		return $thumbnail->toHtml( $options );
 	}

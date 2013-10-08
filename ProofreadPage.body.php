@@ -894,14 +894,16 @@ $void_cell
 					$transformAttributes['page'] = $pageNumber;
 				}
 			}
-			$image->getHandler()->normaliseParams( $image, $params );
-			$thumbName = $image->thumbName( $params );
-			$imageUrl = $image->getThumbUrl( $thumbName );
-			$links['namespaces']['proofreadPageScanLink'] = array(
-				'class' => '',
-				'href' => $imageUrl,
-				'text' => wfMessage( 'proofreadpage_image')->plain()
-			);
+			$handler = $image->getHandler();
+			if( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
+				$thumbName = $image->thumbName( $transformAttributes );
+				$imageUrl = $image->getThumbUrl( $thumbName );
+				$links['namespaces']['proofreadPageScanLink'] = array(
+					'class' => '',
+					'href' => $imageUrl,
+					'text' => wfMessage( 'proofreadpage_image')->plain()
+				);
+			}
 		}
 
 		return true;
