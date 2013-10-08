@@ -4774,6 +4774,27 @@ $messages['lmo'] = array(
 	'proofreadpage_header' => 'Intestazion (minga inclüsa)',
 );
 
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'indexpages' => 'سيائه بلگيا اصلی',
+	'pageswithoutscans' => 'بلگيا بی وارسی',
+	'proofreadpage_desc' => 'اجازه بيه سی قياس كردنه متن وا وارسی اصلی',
+	'proofreadpage_image' => 'عسگ',
+	'proofreadpage_index_expected' => 'خطا:',
+	'proofreadpage_nosuch_index' => 'خطا:چنو نی يش',
+	'proofreadpage_nosuch_file' => 'خطا:چنو فايلی نی يش',
+	'proofreadpage_badpage' => 'قالو اشتوايی',
+	'proofreadpage_nextpage' => 'بلگه نيايی',
+	'proofreadpage_index_size' => 'شماره بلگيا',
+	'proofreadpage_specialpage_label_key' => 'پی جوری',
+	'proofreadpage_index_listofpages' => 'سيائه بلگيا',
+	'proofreadpage_source' => 'سرچشمه',
+	'proofreadpage-group-zoom' => 'زؤل زئن',
+	'proofreadpage-group-other' => 'كسونا تر',
+);
+
 /** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Matasg
@@ -6459,6 +6480,7 @@ Note||10",
  * @author Ferrer
  * @author Innv
  * @author Lockal
+ * @author Okras
  * @author Sergey kudryavtsev
  * @author Александр Сигачёв
  */
@@ -6498,6 +6520,11 @@ $messages['ru'] = array(
 	'proofreadpage_quality2_message' => 'Есть проблемы при вычитке этой страницы',
 	'proofreadpage_quality3_message' => 'Эта страница была вычитана',
 	'proofreadpage_quality4_message' => 'Эта страница выверена',
+	'proofreadpage_index_size' => 'Количество страниц',
+	'proofreadpage_specialpage_label_orderby' => 'Сортировать по:',
+	'proofreadpage_specialpage_label_key' => 'Поиск:',
+	'proofreadpage_specialpage_label_sortascending' => 'Упорядочить по возрастанию',
+	'proofreadpage_alphabeticalorder' => 'В алфавитном порядке',
 	'proofreadpage_index_listofpages' => 'Список страниц',
 	'proofreadpage_image_message' => 'Ссылка на страницу индекса',
 	'proofreadpage_page_status' => 'Статус страницы',
@@ -6526,6 +6553,7 @@ $messages['ru'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальная/горизонтальная разметка',
 	'proofreadpage-preferences-showheaders-label' => 'Показывать поля верхнего и нижнего колонтитулов при редактировании в пространстве имен {{ns:page}}.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Использовать горизонтальную раскладку при редактировании в пространстве имен {{ns:page}}.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Схема не найдена',
 );
 
 /** Rusyn (русиньскый)
