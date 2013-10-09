@@ -229,9 +229,13 @@ class ProofreadPage {
 				$filePage = $wgContLang->parseFormattedNumber( $m[3] );
 
 				$params = array( 'width' => $width, 'page' => $filePage );
-				$image->getHandler()->normaliseParams( $image, $params );
-				$thumbName = $image->thumbName( $params );
-				$fullURL = $image->getThumbUrl( $thumbName );
+				$handler = $image->getHandler();
+				if ( $handler && $handler->normaliseParams( $image, $params ) ) {
+					$thumbName = $image->thumbName( $params );
+					$fullURL = $image->getThumbUrl( $thumbName );
+				} else {
+					$fullURL = $image->getViewURL();
+				}
 			} else {
 				$fullURL = $image->getViewURL();
 			}
