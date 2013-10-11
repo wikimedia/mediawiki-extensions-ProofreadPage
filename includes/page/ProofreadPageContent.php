@@ -232,12 +232,12 @@ class ProofreadPageContent extends TextContent {
 		if( $this->isRedirect() ) {
 			return $this->body->getParserOutput( $title, $revId, $options, $generateHtml );
 		}
-
 		if ( $options === null ) {
 			$options = $this->getContentHandler()->makeParserOptions( 'canonical' );
 		}
 		$page = new ProofreadPagePage( $title, $this );
 
+		//create content
 		$wikitextContent = new WikitextContent(
 			$this->header->getNativeData() . "\n\n\n" . $this->body->getNativeData() . $this->footer->getNativeData()
 		);
@@ -257,8 +257,8 @@ class ProofreadPageContent extends TextContent {
 		if ( $image ) {
 			$parserOutput->addImage( $image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1() );
 		}
+
 		//page html
-		//TODO FIXME: display whether page has been proofread by the user or by someone else
 		$html = Html::openElement( 'div', array( 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ) ) .
 			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
@@ -266,6 +266,13 @@ class ProofreadPageContent extends TextContent {
 			$parserOutput->getText() .
 			Html::closeElement( 'div' );
 		$parserOutput->setText( $page->createPageContainer( $html ) );
+
+		//add modules
+		$parserOutput->addModules( 'ext.proofreadpage.page' );
+		$parserOutput->addModuleStyles( array(
+			'ext.proofreadpage.base',
+			'ext.proofreadpage.page'
+		) );
 
 		return $parserOutput;
 	}
