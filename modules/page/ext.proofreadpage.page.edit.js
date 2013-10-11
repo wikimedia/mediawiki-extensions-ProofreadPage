@@ -1,19 +1,30 @@
 ( function ( mw, $ ) {
 	'use strict';
 
+	/**
+	 * Show or hide header and footer areas
+	 *
+	 * @param string speed of the toogle. May be 'fast', 'slow' or undefined
+	 */
 	function toggleHeaders( speed ) {
 		$( '.prp-page-edit-header' ).toggle( speed );
 		$( '.prp-page-edit-body label' ).toggle( speed );
 		$( '.prp-page-edit-footer' ).toggle( speed );
 	}
 
+	/**
+	 * Apply user preferences
+	 */
 	function setupPreferences() {
 		if( !mw.user.options.get( 'proofreadpage-showheaders' ) ) {
-			toggleHeaders( undefined );
+			toggleHeaders();
 		}
 		//TODO: scan on top of the edit system
 	}
 
+	/**
+	 * Init the automatic fill of the summary input box
+	 */
 	function setupPageQuality() {
 		$( 'input[name="wpQuality"]' ).click( function() {
 			var text = mw.msg( 'proofreadpage_quality' + this.value + '_category' );
@@ -21,6 +32,9 @@
 		} );
 	}
 
+	/**
+	 * Add some buttons to the toolbar
+	 */
 	function addButtons() {
 		var iconPath = mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/page/images/';
 		var tools = {

@@ -843,46 +843,9 @@ $void_cell
 		if( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
-		
 		$page = ProofreadPagePage::newFromTitle( $title );
-		$indexPage = $page->getIndex();
-		if ( $indexPage ) {
-			list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $page->getTitle() );
 
-			if ( $prevTitle !== null ) {
-				if( !$prevTitle->exists() ) {
-					$prevLink = $prevTitle->getEditURL();
-				} else {
-					$prevLink = $prevTitle->getLinkUrl();
-				}
-				$links['namespaces']['proofreadPagePrevLink'] = array(
-					'class' => '',
-					'href' => $prevLink,
-					'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
-				);
-			}
-
-			$indexLink = $indexPage->getTitle()->getLinkUrl();
-			$links['namespaces']['proofreadPageIndexLink'] = array(
-				'class' => '',
-				'href' => $indexLink,
-				'text' => wfMessage( 'proofreadpage_index' )->plain()
-			);
-
-			if ( $nextTitle !== null ) {
-				if( !$nextTitle->exists() ) {
-					$nextLink = $nextTitle->getEditURL();
-				} else {
-					$nextLink = $nextTitle->getLinkUrl();
-				}
-				$links['namespaces']['proofreadPageNextLink'] = array(
-					'class' => '',
-					'href' => $nextLink,
-					'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
-				);
-			}
-		}
-
+		//Image link
 		$image = $page->getImage();
 		if ( $image ) {
 			$transformAttributes = array(
@@ -895,15 +858,54 @@ $void_cell
 				}
 			}
 			$handler = $image->getHandler();
-			if( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
+			if ( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
 				$thumbName = $image->thumbName( $transformAttributes );
 				$imageUrl = $image->getThumbUrl( $thumbName );
 				$links['namespaces']['proofreadPageScanLink'] = array(
 					'class' => '',
 					'href' => $imageUrl,
-					'text' => wfMessage( 'proofreadpage_image')->plain()
+					'text' => wfMessage( 'proofreadpage_image' )->plain()
 				);
 			}
+		}
+
+		//Prev, Next and Index links
+		$indexPage = $page->getIndex();
+		if ( $indexPage ) {
+			list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $page->getTitle() );
+
+			if ( $prevTitle !== null ) {
+				if ( !$prevTitle->exists() ) {
+					$prevLink = $prevTitle->getEditURL();
+				} else {
+					$prevLink = $prevTitle->getLinkUrl();
+				}
+				$links['namespaces']['proofreadPagePrevLink'] = array(
+					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+					'href' => $prevLink,
+					'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
+				);
+			}
+
+			if ( $nextTitle !== null ) {
+				if ( !$nextTitle->exists() ) {
+					$nextLink = $nextTitle->getEditURL();
+				} else {
+					$nextLink = $nextTitle->getLinkUrl();
+				}
+				$links['namespaces']['proofreadPageNextLink'] = array(
+					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+					'href' => $nextLink,
+					'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
+				);
+			}
+
+			$indexLink = $indexPage->getTitle()->getLinkUrl();
+			$links['namespaces']['proofreadPageIndexLink'] = array(
+				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+				'href' => $indexLink,
+				'text' => wfMessage( 'proofreadpage_index' )->plain()
+			);
 		}
 
 		return true;
