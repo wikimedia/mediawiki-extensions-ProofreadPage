@@ -6564,6 +6564,8 @@ $messages['ru'] = array(
 	'proofreadpage_nologintext' => 'Вы должны [[Special:UserLogin|представиться системе]] для изменения статуса вычитки страниц.',
 	'proofreadpage_notallowed' => 'Изменение не допускается',
 	'proofreadpage_notallowedtext' => 'Вы не можете изменить статус вычитки этой страницы.',
+	'proofreadpage_dataconfig_badformatted' => 'Ошибка в данных конфигурации',
+	'proofreadpage_dataconfig_badformattedtext' => 'Страница [[Mediawiki:Proofreadpage index data config]] не в корректном JSON-формате.',
 	'proofreadpage_number_expected' => 'Ошибка. Ожидается числовое значение.',
 	'proofreadpage_interval_too_large' => 'Ошибка. Слишком большой промежуток.',
 	'proofreadpage_invalid_interval' => 'Ошибка: неправильный интервал',
@@ -6583,6 +6585,7 @@ $messages['ru'] = array(
 	'proofreadpage_quality2_message' => 'Есть проблемы при вычитке этой страницы',
 	'proofreadpage_quality3_message' => 'Эта страница была вычитана',
 	'proofreadpage_quality4_message' => 'Эта страница выверена',
+	'proofreadpage_index_status' => 'Статус индекса',
 	'proofreadpage_index_size' => 'Количество страниц',
 	'proofreadpage_specialpage_label_orderby' => 'Сортировать по:',
 	'proofreadpage_specialpage_label_key' => 'Поиск:',
@@ -6603,6 +6606,7 @@ $messages['ru'] = array(
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страницы|страниц}}',
 	'proofreadpage_specialpage_legend' => 'Поиск индексных страниц',
 	'proofreadpage_specialpage_searcherror' => 'Ошибка в поисковой системе',
+	'proofreadpage_specialpage_searcherrortext' => 'Поисковая система не работает. Извините за причиненные неудобства.',
 	'proofreadpage_source' => 'Источник',
 	'proofreadpage_source_message' => 'Для создания электронной версии текста использовались отсканированные материалы',
 	'right-pagequality' => 'изменять флаг качества страницы',
@@ -6616,7 +6620,11 @@ $messages['ru'] = array(
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальная/горизонтальная разметка',
 	'proofreadpage-preferences-showheaders-label' => 'Показывать поля верхнего и нижнего колонтитулов при редактировании в пространстве имен {{ns:page}}.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Использовать горизонтальную раскладку при редактировании в пространстве имен {{ns:page}}.',
+	'proofreadpage-indexoai-repositoryName' => 'Метаданные книг с сайта {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Метаданные книг, управляемых ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Схема не найдена',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Схема $1 не была найдена.',
+	'proofreadpage-disambiguationspage' => 'Template:неоднозначность',
 );
 
 /** Rusyn (русиньскый)
