@@ -48,7 +48,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).panZoom( 'zoomIn' );
+								$( '#editform .prp-page-image img' ).prpZoom( 'zoomIn' );
 							}
 						}
 					},
@@ -59,7 +59,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).panZoom( 'zoomOut' );
+								$( '#editform .prp-page-image img' ).prpZoom( 'zoomOut' );
 							}
 						}
 					},
@@ -70,51 +70,51 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).panZoom( 'fitWidth' );
+								$( '#editform .prp-page-image img' ).prpZoom( 'reset' );
 							}
 						}
 					},
-					'pan-up': {
+					'move-up': {
 						labelMsg: 'proofreadpage-button-pan-up-label',
 						type: 'button',
 						icon: iconPath + 'Button_pan_up.png',
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).panZoom( 'panUp' );
+								$( '#editform .prp-page-image img' ).prpZoom( 'moveUp' );
 							}
 						}
 					},
-					'pan-down': {
+					'move-down': {
 						labelMsg: 'proofreadpage-button-pan-down-label',
 						type: 'button',
 						icon: iconPath + 'Button_pan_down.png',
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).panZoom( 'panDown' );
+								$( '#editform .prp-page-image img' ).prpZoom( 'moveDown' );
 							}
 						}
 					},
-					'pan-left': {
+					'move-left': {
 						labelMsg: 'proofreadpage-button-pan-left-label',
 						type: 'button',
 						icon: iconPath + 'Button_pan_left.png',
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).panZoom( 'panLeft' );
+								$( '#editform .prp-page-image img' ).prpZoom( 'moveLeft' );
 							}
 						}
 					},
-					'pan-right': {
+					'move-right': {
 						labelMsg: 'proofreadpage-button-pan-right-label',
 						type: 'button',
 						icon: iconPath + 'Button_pan_right.png',
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).panZoom( 'panRight' );
+								$( '#editform .prp-page-image img' ).prpZoom( 'moveRight' );
 							}
 						}
 					}
@@ -203,14 +203,12 @@
 	 * Init the zoom system
 	 */
 	function initZoom() {
-		var $image = $( '.prp-page-image img' );
+		var $image = $( '#editform .prp-page-image img' );
 		if( $image.length === 0 ) {
 			return;
 		}
-		mw.loader.using( 'jquery.panZoom', function() {
-			$image.panZoom();
-			$image.panZoom( 'loadImage' );
-			$image.panZoom( 'fitWidth' );
+		mw.loader.using( 'jquery.prpZoom', function() {
+			$image.prpZoom();
 		} );
 	}
 
@@ -218,8 +216,12 @@
 		setupPreferences();
 		setupWikiEditor();
 		setupPageQuality();
-		initZoom();
 		addButtons();
+	} );
+
+	//zoom should be init after the page is rendered
+	$( window ).load( function() {
+		initZoom();
 	} );
 
 } ( mediaWiki, jQuery ) );

@@ -9,8 +9,6 @@
 .prp-page-image {
 	float: right;
 	width: 49%;
-	position: relative;
-	overflow: auto;
 }
 
 .prp-page-image img {
