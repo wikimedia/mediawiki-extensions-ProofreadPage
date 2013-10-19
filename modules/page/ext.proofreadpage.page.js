@@ -2,21 +2,6 @@
 	'use strict';
 
 	/**
-	 * Init the zoom system
-	 */
-	function initZoom() {
-		var $image = $( '.prp-page-image img' );
-		if( $image.length === 0 ) {
-			return;
-		}
-		mw.loader.using( 'jquery.panZoom', function() {
-			$image.panZoom();
-			$image.panZoom( 'loadImage' );
-			$image.panZoom( 'fitWidth' );
-		} );
-	}
-
-	/**
 	 * Get the selector for the main tabs container
 	 *
 	 * @return string
@@ -52,7 +37,6 @@
 
 	$( document ).ready( function() {
 		initTabs();
-		initZoom();
 	} );
 
 } ( mediaWiki, jQuery ) );

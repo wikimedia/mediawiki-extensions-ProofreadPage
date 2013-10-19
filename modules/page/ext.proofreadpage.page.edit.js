@@ -199,10 +199,26 @@
 		} );
 	}
 
+	/**
+	 * Init the zoom system
+	 */
+	function initZoom() {
+		var $image = $( '.prp-page-image img' );
+		if( $image.length === 0 ) {
+			return;
+		}
+		mw.loader.using( 'jquery.panZoom', function() {
+			$image.panZoom();
+			$image.panZoom( 'loadImage' );
+			$image.panZoom( 'fitWidth' );
+		} );
+	}
+
 	$( document ).ready( function() {
 		setupPreferences();
 		setupWikiEditor();
 		setupPageQuality();
+		initZoom();
 		addButtons();
 	} );
 
