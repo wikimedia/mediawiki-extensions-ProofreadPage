@@ -199,124 +199,19 @@ class ProofreadPage {
 		$title = $out->getTitle();
 
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-			if ( preg_match( "/^$page_namespace:(.*?)(\/(.*?)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
-				ProofreadPage::preparePage( $out, $m, $isEdit );
-			}
+			//TODO move it somewhere better
+			$page = ProofreadPagePage::newFromTitle( $title );
+			$content = $page->getContent();
+			$out->addJsConfigVars( array(
+				'prpPageQuality' => $content->getLevel()->getLevel()
+			) );
 		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			if( !$isEdit ) {
-				$out->addModules( 'ext.proofreadpage.base' );
+				$out->addModuleStyles( 'ext.proofreadpage.base' );
 			}
 		} elseif ( $title->inNamespace( NS_MAIN ) ) {
 			self::prepareArticle( $out );
 		}
-
-		return true;
-	}
-
-	/**
-	 * @param $out OutputPage
-	 * @param $m
-	 * @param $isEdit
-	 * @return bool
-	 */
-	private static function preparePage( $out, $m, $isEdit ) {
-		global $wgUser, $wgExtensionAssetsPath, $wgContLang;
-
-		$pageTitle = $out->getTitle();
-
-		if ( !isset( $pageTitle->prpIndexPage ) ) {
-			self::loadIndex( $pageTitle );
-		}
-
-		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
-		if ( !$imageTitle ) {
-			return true;
-		}
-
-		$fileName = null;
-		$filePage = null;
-
-		$image = wfFindFile( $imageTitle );
-		if ( $image && $image->exists() ) {
-			$fileName = $imageTitle->getPrefixedText();
-
-			$width = $image->getWidth();
-			$height = $image->getHeight();
-			if ( $m[2] ) {
-				$filePage = $wgContLang->parseFormattedNumber( $m[3] );
-
-				$params = array( 'width' => $width, 'page' => $filePage );
-				$image->getHandler()->normaliseParams( $image, $params );
-				$thumbName = $image->thumbName( $params );
-				$fullURL = $image->getThumbUrl( $thumbName );
-			} else {
-				$fullURL = $image->getViewURL();
-			}
-			$scanLink = Html::element( 'a',
-				array(
-					'href' => $fullURL,
-					'title' =>  $out->msg( 'proofreadpage_image' )->text()
-				),
-				$out->msg( 'proofreadpage_image' )->text()
-			);
-		} else {
-			$width = 0;
-			$height = 0;
-			$fullURL = '';
-			$scanLink = '';
-		}
-
-		$path = $wgExtensionAssetsPath . '/ProofreadPage';
-		$jsVars = array(
-			'proofreadPageWidth' => intval( $width ),
-			'proofreadPageHeight' => intval( $height ),
-			'proofreadPageURL' => $fullURL,
-			'proofreadPageFileName' => $fileName,
-			'proofreadPageFilePage' => $filePage,
-			'proofreadPageIsEdit' => intval( $isEdit ),
-			'proofreadPageScanLink' => $scanLink,
-			'proofreadPageAddButtons' => $wgUser->isAllowed( 'pagequality' ),
-			'proofreadPageUserName' => $wgUser->getName(),
-			'proofreadPageIndexLink' => '',
-			'proofreadPageNextLink' => '',
-			'proofreadPagePrevLink' => '',
-			'proofreadPageEditWidth' => '',
-			'proofreadPageHeader' => '',
-			'proofreadPageFooter' => '',
-			'proofreadPageCss' => ''
-		);
-
-		$indexPage = $out->getTitle()->prpIndexPage;
-		if ( $indexPage !== null ) {
-			list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $out->getTitle() );
-			if ( $prevTitle !== null ) {
-				$jsVars['proofreadPagePrevLink'] = Linker::link( $prevTitle,
-					Html::element( 'img', array( 'src' => $path . '/leftarrow.png',
-						'alt' => $out->msg( 'proofreadpage_nextpage' )->text(), 'width' => 15, 'height' => 15 ) ),
-					array( 'title' => $out->msg( 'proofreadpage_prevpage' )->text() ) );
-			}
-			if ( $nextTitle !== null ) {
-				$jsVars['proofreadPageNextLink'] = Linker::link( $nextTitle,
-					Html::element( 'img', array( 'src' => $path . '/rightarrow.png',
-						'alt' => $out->msg( 'proofreadpage_nextpage' )->text(), 'width' => 15, 'height' => 15 ) ),
-					array( 'title' => $out->msg( 'proofreadpage_nextpage' )->text() ) );
-			}
-			$jsVars['proofreadPageIndexLink'] = Linker::link( $indexPage->getTitle(),
-				Html::element( 'img', array(	'src' => $path . '/uparrow.png',
-					'alt' => $out->msg( 'proofreadpage_index' )->text(), 'width' => 15, 'height' => 15 ) ),
-				array( 'title' => $out->msg( 'proofreadpage_index' )->text() ) );
-
-			list( $header, $footer, $css, $editWidth ) = $indexPage->getIndexDataForPage( $pageTitle );
-			$jsVars['editWidth'] = $editWidth;
-			$jsVars['proofreadPageHeader'] = $header;
-			$jsVars['proofreadPageFooter'] = $footer;
-			$jsVars['proofreadPageCss'] = $css;
-		}
-
-		$out->addJsConfigVars( $jsVars );
-
-		$out->addModules( 'ext.proofreadpage.page' );
 
 		return true;
 	}
