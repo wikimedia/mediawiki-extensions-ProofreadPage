@@ -5,8 +5,18 @@
  */
 class ProofreadPagePageTest extends ProofreadPageTestCase {
 
-	public function testNewFromTitle() {
-		$this->assertInstanceOf( 'ProofreadPagePage', ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'Test.djvu' ) ) );
+	/**
+	 * Constructor of a new ProofreadPagePage
+	 * @param $title Title|string
+	 * @param $content ProofreadPageContent|null
+	 * @param $index ProofreadIndexPage|null
+	 * @return ProofreadPagePage
+	 */
+	public static function newPagePage( $title = 'test.jpg', ProofreadPageContent $content = null, ProofreadIndexPage $index = null ) {
+		if ( is_string( $title ) ) {
+			$title = Title::makeTitle( 250, $title );
+		}
+		return new ProofreadPagePage( $title, $content, $index );
 	}
 
 	public function testGetTitle() {
@@ -16,28 +26,31 @@ class ProofreadPagePageTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetPageNumber() {
-		$title = Title::makeTitle( 250, 'Test.djvu' );
-		$page = ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'Test.djvu/1' ) );
-		$this->assertEquals( 1, $page->getPageNumber() );
+		$this->assertEquals( 1, self::newPagePage( 'Test.djvu/1' )->getPageNumber() );
 
-		$page = new ProofreadPagePage( $title, null, null );
-		$this->assertEquals( null, $page->getPageNumber() );
+		$this->assertNull( self::newPagePage( 'Test.djvu' )->getPageNumber() );
 	}
 
 	public function testGetIndex() {
-		$title = Title::makeTitle( 252, 'Test.djvu' );
-		$index = ProofreadIndexPage::newFromTitle( $title );
-		$page = new ProofreadPagePage( $title, null, $index );
-		$this->assertEquals( $index, $page->getIndex() );
+		$index = ProofreadIndexPageTest::newIndexPage();
+		$this->assertEquals( $index, self::newPagePage( 'Test.jpg', null, $index )->getIndex() );
 	}
 
 	public function testGetContent() {
-		$title = Title::makeTitle( 250, 'Test.djvu' );
-		$index = ProofreadIndexPage::newFromTitle( $title );
-
 		$pageContent = ProofreadPageContentTest::newContent( '', 'aaa' );
-		$page = new ProofreadPagePage( $title, $pageContent, $index );
-		$this->assertEquals( $pageContent, $page->getContent() );
+		$this->assertEquals( $pageContent, self::newPagePage( 'Test.jpg', $pageContent )->getContent() );
 	}
 
+	public function testGetImageWidth() {
+		$index = ProofreadIndexPageTest::newIndexPage( 'Test', "{{\n|width= 500 \n}}" );
+		$this->assertEquals( 500, self::newPagePage( 'Test.jpg', null, $index )->getImageWidth() );
+
+		$index = ProofreadIndexPageTest::newIndexPage( 'Test', "{{\n|title=500\n}}" );
+		$this->assertEquals( ProofreadPagePage::DEFAULT_IMAGE_WIDTH, self::newPagePage( 'Test.jpg', null, $index )->getImageWidth() );
+	}
+
+	public function testGetCustomCss() {
+		$index = ProofreadIndexPageTest::newIndexPage( 'Test', "{{\n|CSS= width:300px; \n}}" );
+		$this->assertEquals( 'width:300px;', self::newPagePage( 'Test.jpg', null, $index )->getCustomCss() );
+	}
 }
