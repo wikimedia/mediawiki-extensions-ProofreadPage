@@ -185,8 +185,23 @@
 		}
 	}
 
+	/**
+	 * Improve the WikiEditor interface
+	 */
+	function setupWikiEditor() {
+		if( !mw.user.options.get( 'usebetatoolbar' ) ) {
+			return;
+		}
+		mw.loader.using( 'ext.wikiEditor', function() {
+			$( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
+			$( '.wikiEditor-oldToolbar' ).after( $( '.wikiEditor-ui' ) );
+			$( '.wikiEditor-ui-text' ).append( $( '#editform .prp-page-container' ) );
+		} );
+	}
+
 	$( document ).ready( function() {
 		setupPreferences();
+		setupWikiEditor();
 		setupPageQuality();
 		addButtons();
 	} );
