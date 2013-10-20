@@ -1172,6 +1172,7 @@ $messages['bg'] = array(
 );
 
 /** Bengali (বাংলা)
+ * @author Aftab1995
  * @author Bellayet
  */
 $messages['bn'] = array(
@@ -1202,6 +1203,7 @@ $messages['bn'] = array(
 	'proofreadpage_quality2_message' => 'এই পাতার প্রুফরিডের সময় কোন সমস্যা ছিল',
 	'proofreadpage_quality3_message' => 'এই পাতার প্রুফরিড সম্পন্ন হয়েছে',
 	'proofreadpage_quality4_message' => 'এই পাতা বৈধ হয়েছে',
+	'proofreadpage_index_size' => 'পাতার সংখ্যা',
 	'proofreadpage_specialpage_label_key' => 'অনুসন্ধান:',
 	'proofreadpage_alphabeticalorder' => 'বর্ণানুক্রম',
 	'proofreadpage_index_listofpages' => 'পাতাসমূহের তালিকা',
@@ -1479,6 +1481,7 @@ Sumari||15",
 $messages['ce'] = array(
 	'proofreadpage_image' => 'сурт',
 	'proofreadpage_header' => 'Корта (юкъаяло цатарло):',
+	'proofreadpage_specialpage_label_key' => 'Лаха:',
 	'proofreadpage_source' => 'Хьост',
 	'proofreadpage-group-zoom' => 'Барам',
 	'proofreadpage-group-other' => 'Кхин',
@@ -3209,6 +3212,7 @@ $messages['he'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'מטא־נתונים של ספרים שמנהלת ההרחבה ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'לא נמצאה סכֵמה.',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'לא נמצאה הסכֵמה $1.',
+	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
 /** Hindi (हिन्दी)
@@ -8471,6 +8475,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_notallowed' => '不允許修改',
 	'proofreadpage_notallowedtext' => '您沒有獲得修改這個頁面校對狀態的許可。',
 	'proofreadpage_dataconfig_badformatted' => '設定數據中的Bug',
+	'proofreadpage_dataconfig_badformattedtext' => '頁面[[Mediawiki:Proofreadpage index data config]]並非標準JSON格式。',
 	'proofreadpage_number_expected' => '錯誤：不為數值',
 	'proofreadpage_interval_too_large' => '錯誤：間隔過大',
 	'proofreadpage_invalid_interval' => '錯誤：無法識別間隔',
@@ -8490,8 +8495,12 @@ $messages['zh-hant'] = array(
 	'proofreadpage_quality2_message' => '校對本頁時出現了一個問題',
 	'proofreadpage_quality3_message' => '本頁已經被校對',
 	'proofreadpage_quality4_message' => '本頁已經被認證',
+	'proofreadpage_index_status' => '索引狀態',
 	'proofreadpage_index_size' => '頁面號碼',
+	'proofreadpage_specialpage_label_orderby' => '順序：',
 	'proofreadpage_specialpage_label_key' => '搜尋：',
+	'proofreadpage_specialpage_label_sortascending' => '升序',
+	'proofreadpage_alphabeticalorder' => '依字元排序',
 	'proofreadpage_index_listofpages' => '頁面清單',
 	'proofreadpage_image_message' => '連到索引頁的連結',
 	'proofreadpage_page_status' => '頁面狀態',
@@ -8507,6 +8516,7 @@ $messages['zh-hant'] = array(
 	'proofreadpage_pages' => '$2個{{PLURAL:$1|頁面|頁面}}',
 	'proofreadpage_specialpage_legend' => '搜尋索引頁',
 	'proofreadpage_specialpage_searcherror' => '搜索程式出錯',
+	'proofreadpage_specialpage_searcherrortext' => '搜尋引擎無法工作。抱歉給您帶來不便。',
 	'proofreadpage_source' => '來源',
 	'proofreadpage_source_message' => '掃描版用來建立這個文字',
 	'right-pagequality' => '修改頁面質量標誌',
@@ -8518,5 +8528,11 @@ $messages['zh-hant'] = array(
 	'proofreadpage-button-reset-zoom-label' => '原本大小',
 	'proofreadpage-button-zoom-in-label' => '放大',
 	'proofreadpage-button-toggle-layout-label' => '垂直／水平佈局',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:page}}命名空間中進行編輯時顯示頁眉和頁腳的欄位',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}}命名空間中進行編輯時使用水準佈局',
+	'proofreadpage-indexoai-repositoryName' => '來自{{SITENAME}}的書籍元數據',
+	'proofreadpage-indexoai-eprint-content-text' => '由ProofreadPage管理書目元數據。',
+	'proofreadpage-indexoai-error-schemanotfound' => '無法找尋架構',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1架構無法發現。',
 	'proofreadpage-disambiguationspage' => 'Template:消歧義',
 );
