@@ -198,14 +198,7 @@ class ProofreadPage {
 		$out->proofreadPageDone = true;
 		$title = $out->getTitle();
 
-		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			//TODO move it somewhere better
-			$page = ProofreadPagePage::newFromTitle( $title );
-			$content = $page->getContent();
-			$out->addJsConfigVars( array(
-				'prpPageQuality' => $content->getLevel()->getLevel()
-			) );
-		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			if( !$isEdit ) {
 				$out->addModuleStyles( 'ext.proofreadpage.base' );
 			}

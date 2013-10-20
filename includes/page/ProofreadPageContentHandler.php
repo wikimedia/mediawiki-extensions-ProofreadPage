@@ -110,6 +110,15 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	}
 
 	/**
+	 * @see ContentHandler::getActionOverrides
+	 */
+	public function getActionOverrides() {
+		return array(
+			'view' => 'ProofreadPageViewAction'
+		);
+	}
+
+	/**
 	 * @see ContentHandler::makeEmptyContent
 	 */
 	public function makeEmptyContent() {

@@ -235,7 +235,6 @@ class ProofreadPageContent extends TextContent {
 		if ( $options === null ) {
 			$options = $this->getContentHandler()->makeParserOptions( 'canonical' );
 		}
-		$page = new ProofreadPagePage( $title, $this );
 
 		//create content
 		$wikitextContent = new WikitextContent(
@@ -247,32 +246,18 @@ class ProofreadPageContent extends TextContent {
 			$title->getText()
 		);
 
-		//add dependencies on the image and on the index
-		$index = $page->getIndex();
-		if ( $index ) {
-			$indexTitle = $index->getTitle();
-			$parserOutput->addTemplate( $indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID() );
-		}
-		$image = $page->getImage();
-		if ( $image ) {
-			$parserOutput->addImage( $image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1() );
-		}
 
-		//page html
+		//html container
 		$html = Html::openElement( 'div', array( 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ) ) .
 			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', array( 'class' => 'pagetext' ) ) .
 			$parserOutput->getText() .
 			Html::closeElement( 'div' );
-		$parserOutput->setText( $page->createPageContainer( $html ) );
+		$parserOutput->setText( $html );
 
 		//add modules
-		$parserOutput->addModules( 'ext.proofreadpage.page' );
-		$parserOutput->addModuleStyles( array(
-			'ext.proofreadpage.base',
-			'ext.proofreadpage.page'
-		) );
+		$parserOutput->addModuleStyles( 'ext.proofreadpage.base' );
 
 		return $parserOutput;
 	}

@@ -236,15 +236,21 @@ class ProofreadPagePage {
 	}
 
 	/**
-	 * Embed the page content into a container and add the image
-	 * @param string $content html content of the page
+	 * Return the part of the page container that is before page content
 	 * @return string
 	 */
-	public function createPageContainer( $content ) {
+	public function getPageContainerBegin() {
 		return
 			Html::openElement( 'div', array( 'class' => 'prp-page-container' )  ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) ) .
-			$content .
+			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) );
+	}
+
+	/**
+	 * Return the part of the page container that after page cnotent
+	 * @return string
+	 */
+	public function getPageContainerEnd() {
+		return
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', array( 'class' => 'prp-page-image' ) ) .
 			$this->getImageHtml( array( 'max-width' => 800 ) ) .
