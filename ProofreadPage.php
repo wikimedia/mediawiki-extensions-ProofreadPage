@@ -59,6 +59,8 @@ $wgAutoloadClasses['ProofreadPagePage'] = $dir.'includes/page/ProofreadPagePage.
 $wgAutoloadClasses['ProofreadPageContent'] = $dir.'includes/page/ProofreadPageContent.php';
 $wgAutoloadClasses['ProofreadPageLevel'] = $dir.'includes/page/ProofreadPageLevel.php';
 $wgAutoloadClasses['ProofreadPageContentHandler'] = $dir.'includes/page/ProofreadPageContentHandler.php';
+$wgAutoloadClasses['ProofreadPageEditAction'] = $dir . 'includes/page/ProofreadPageEditAction.php';
+$wgAutoloadClasses['ProofreadPageSubmitAction'] = $dir . 'includes/page/ProofreadPageSubmitAction.php';
 $wgAutoloadClasses['ProofreadPageViewAction'] = $dir . 'includes/page/ProofreadPageViewAction.php';
 
 $wgExtensionCredits['other'][] = array(
@@ -167,6 +169,7 @@ $wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
 $wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
 $wgHooks['SkinTemplateNavigation'][] = 'ProofreadPage::onSkinTemplateNavigation';
 $wgHooks['ContentHandlerDefaultModelFor'][] = 'ProofreadPage::onContentHandlerDefaultModelFor';
+$wgHooks['APIEditBeforeSave'][] = 'ProofreadPage::onAPIEditBeforeSave';
 
 
 /**

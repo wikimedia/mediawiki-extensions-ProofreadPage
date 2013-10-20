@@ -114,6 +114,8 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	 */
 	public function getActionOverrides() {
 		return array(
+			'edit' => 'ProofreadPageEditAction',
+			'submit' => 'ProofreadPageSubmitAction',
 			'view' => 'ProofreadPageViewAction'
 		);
 	}

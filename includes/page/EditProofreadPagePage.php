@@ -22,40 +22,92 @@
 class EditProofreadPagePage extends EditPage {
 
 	/**
-	 * @var ProofreadIndexPage stores the current revision of the page stored in the db
+	 * @var ProofreadPagePage
 	 */
-	protected $currentPage;
+	protected $pagePage;
 
 	/**
-	 * @var ProofreadPageContentHander ContentHandler for Page: pages
+	 * @var Article $article
+	 * @var ProofreadPagePage $pagePage
+	 * @throw MWException
 	 */
-	protected $contentHandler;
-
-	public function __construct( Article $article ) {
+	public function __construct( Article $article, ProofreadPagePage $pagePage ) {
 		parent::__construct( $article );
 
-		$this->currentPage = ProofreadPagePage::newFromTitle( $this->mTitle );
+		$this->pagePage = $pagePage;
 
-		$this->contentModel = CONTENT_MODEL_PROOFREAD_PAGE;
-		$this->contentHandler = ContentHandler::getForModelID( $this->contentModel );
-		$this->contentFormat = $this->contentHandler->getDefaultFormat();
+		if ( $this->contentModel !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+			throw MWException( 'EditProofreadPagePage should only be called on ProofreadPageContent' );
+		}
 	}
 
+	/**
+	 * @see EditPage::isSectionEditSupported
+	 */
 	protected function isSectionEditSupported() {
 		return false; // sections and forms don't mix
 	}
 
-	protected function showContentForm() {
-		global $wgOut;
+	/**
+	 * Load the content before edit
+	 *
+	 * @see EditPage::showContentForm
+	 */
+	protected function getContentObject( $def_content = null ) {
+		//preload content
+		if ( !$this->mTitle->exists() ) {
+			$index = $this->pagePage->getIndex();
+			if ( $index ) {
+				$params = array(
+					'pagenum' => $index->getDisplayedPageNumber( $this->getTitle() )
+				);
+				$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
+				$body = '';
+				$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
 
+				//Extract text layer
+				$image = $index->getImage();
+				$pageNumber = $this->pagePage->getPageNumber();
+				if ( $image && $pageNumber !== null && $image->exists() ) {
+					$text = $image->getHandler()->getPageText( $image, $pageNumber );
+					if ( $text ) {
+						$text = preg_replace( "/(\\\\n)/", "\n", $text );
+						$body = preg_replace( "/(\\\\\d*)/", '', $text );
+					}
+				}
+
+				return new ProofreadPageContent(
+					new WikitextContent( $header ),
+					new WikitextContent( $body ),
+					new WikitextContent( $footer ),
+					new ProofreadPageLevel()
+				);
+			}
+		}
+
+		return parent::getContentObject( $def_content );
+	}
+
+	/**
+	 * @see EditPage::showContentForm
+	 */
+	protected function showContentForm() {
+		$out = $this->mArticle->getContext()->getOutput();
 		$pageLang = $this->mTitle->getPageLanguage();
+
+		//custom CSS for preview
+		$css = $this->pagePage->getCustomCss();
+		if ( $css !== '' ) {
+			$out->addInlineStyle( $css );
+		}
+
 		$inputAttributes = array(
 			'lang' => $pageLang->getCode(),
 			'dir' => $pageLang->getDir(),
 			'cols' => '70'
 		);
 
-		if( wfReadOnly() ) {
+		if ( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
 
@@ -77,12 +129,9 @@ class EditProofreadPagePage extends EditPage {
 			'tabindex' => '1'
 		);
 
-		$content = $this->contentHandler->unserializeContent( $this->textbox1 );
-		$page = new ProofreadPagePage( $this->mTitle, $content );
-		$content = $page->getContentForEdition();
-
-		$wgOut->addHTML(
-			$page->getPageContainerBegin() .
+		$content = $this->toEditContent( $this->textbox1 );
+		$out->addHTML(
+			$this->pagePage->getPageContainerBegin() .
 			Html::openElement( 'div', array( 'class' => 'prp-page-edit-header' ) ) .
 			Html::element( 'label', array( 'for' => 'wpHeaderTextbox' ), wfMessage( 'proofreadpage_header' )->text() ) .
 			Html::textarea( 'wpHeaderTextbox', $content->getHeader()->serialize(), $headerAttributes ) .
@@ -95,29 +144,31 @@ class EditProofreadPagePage extends EditPage {
 			Html::element( 'label', array( 'for' => 'wpFooterTextbox' ), wfMessage( 'proofreadpage_footer' )->text() ) .
 			Html::textarea( 'wpFooterTextbox', $content->getFooter()->serialize(), $footerAttributes ) .
 			Html::closeElement( 'div' ) .
-			$page->getPageContainerEnd()
+			$this->pagePage->getPageContainerEnd()
 		);
-		$wgOut->addModules( 'ext.proofreadpage.page.edit' );
+		$out->addModules( 'ext.proofreadpage.page.edit' );
 	}
 
 	/**
 	 * Sets the checkboxes for the proofreading status of the page.
+	 *
+	 * @see EditPage::getCheckBoxes
 	 */
 	function getCheckBoxes( &$tabindex, $checked ) {
-		global $wgUser;
 
-		$oldLevel = $this->currentPage->getContent()->getLevel();
+		$oldLevel = $this->getCurrentContent()->getLevel();
 
-		$content = $this->contentHandler->unserializeContent( $this->textbox1 );
+		$content = $this->toEditContent( $this->textbox1 );
 		$currentLevel = $content->getLevel();
 
 		$qualityLevels = array( 0, 2, 1, 3, 4 );
 		$html = '';
 		$checkboxes = parent::getCheckBoxes( $tabindex, $checked );
+		$user = $this->mArticle->getContext()->getUser();
 
 		foreach( $qualityLevels as $level ) {
 
-			$newLevel = new ProofreadPageLevel( $level, $wgUser );
+			$newLevel = new ProofreadPageLevel( $level, $user );
 			if( !$oldLevel->isChangeAllowed( $newLevel ) ) {
 				continue;
 			}
@@ -136,7 +187,7 @@ class EditProofreadPagePage extends EditPage {
 		}
 
 		$checkboxes['wpr-pageStatus'] = '';
-		if ( $wgUser->isAllowed( 'pagequality' ) ) {
+		if ( $user->isAllowed( 'pagequality' ) ) {
 			$checkboxes['wpr-pageStatus'] =
 				Html::openElement( 'span', array( 'id' => 'wpQuality-container' ) ) .
 				$html .
@@ -149,7 +200,9 @@ class EditProofreadPagePage extends EditPage {
 		return $checkboxes;
 	}
 
-
+	/**
+	 * @see EditPage::getSummaryInput
+	 */
 	function getSummaryInput( $summary = '', $labelText = null, $inputAttrs = null, $spanLabelAttrs = null ) {
 
 		if ( !$this->mTitle->exists() ) {
@@ -160,21 +213,16 @@ class EditProofreadPagePage extends EditPage {
 	}
 
 	/**
-	 * Extract the page content data from the posted form
-	 *
-	 * @param $request WebRequest
-	 * @todo Support edition by bots.
+	 * @see EditPage::importContentFormData
 	 */
 	protected function importContentFormData( &$request ) {
-		global $wgUser;
-
 		$proofreadingLevel = $request->getInt( 'wpQuality' );
-		$oldLevel = $this->currentPage->getContent()->getLevel();
+		$oldLevel = $this->getCurrentContent()->getLevel();
 		$user = ( $oldLevel->getLevel() === $proofreadingLevel )
 			? $oldLevel->getUser()
-			: $wgUser;
-		if( $oldLevel->getUser() === null ) {
-			$user = $wgUser;
+			: $this->mArticle->getContext()->getUser();
+		if ( $oldLevel->getUser() === null ) {
+			$user = $this->mArticle->getContext()->getUser();
 		}
 
 		$content = new ProofreadPageContent(
@@ -189,13 +237,13 @@ class EditProofreadPagePage extends EditPage {
 
 	/**
 	 * Check the validity of the page
+	 *
+	 * @see EditPage::internalAttemptSave
 	 */
 	public function internalAttemptSave( &$result, $bot = false ) {
-		global $wgOut;
-
 		$error = '';
-		$oldContent = $this->currentPage->getContent();
-		$newContent = $this->contentHandler->unserializeContent( $this->textbox1 );
+		$oldContent = $this->getCurrentContent();
+		$newContent = $this->toEditContent( $this->textbox1 );
 
 		if ( !$newContent->isValid() ) {
 			$error = 'badpage';
@@ -204,9 +252,8 @@ class EditProofreadPagePage extends EditPage {
 		}
 
 		if ( $error !== '' ) {
-			$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
-			$status = Status::newGood();
-			$status->fatal( 'hookaborted' );
+			$this->mArticle->getContext()->getOutput()->showErrorPage( 'proofreadpage_' . $error, 'proofreadpage_' . $error . 'text' );
+			$status = Status::newFatal( 'hookaborted' );
 			$status->value = self::AS_HOOK_ERROR;
 			return $status;
 		}
