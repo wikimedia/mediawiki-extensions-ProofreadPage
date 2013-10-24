@@ -7182,6 +7182,7 @@ Catetan||10',
  * @author Najami
  * @author Per
  * @author Rotsee
+ * @author Skalman
  * @author Thurs
  * @author WikiPhoenix
  */
@@ -7262,6 +7263,7 @@ Anmärkningar||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadata för böcker som hanteras av ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schemat hittades inte',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Schemat $1 har inte hittats.',
+	'proofreadpage-disambiguationspage' => 'Template:förgrening',
 );
 
 /** Swahili (Kiswahili)
