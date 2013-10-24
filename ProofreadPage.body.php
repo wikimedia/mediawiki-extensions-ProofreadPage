@@ -719,6 +719,26 @@ $void_cell
 		return true;
 	}
 
+
+	/**
+	 * @param $updater DatabaseUpdater
+	 * @return bool
+	 */
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+		global $wgContentHandlerUseDB;
+
+		$dir = __DIR__ . '/sql/';
+
+		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql', true );
+
+		//fix issue with content type hardcoded in database
+		if( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
+			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadPagePagesContentModel' );
+		}
+
+		return true;
+	}
+
 	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
 	 * @param $skin SkinTemplate object

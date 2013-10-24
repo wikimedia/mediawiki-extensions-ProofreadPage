@@ -95,6 +95,9 @@ $wgAPIPropModules['proofread'] = 'ApiQueryProofread';
 $wgAutoloadClasses['ApiQueryProofreadInfo'] = $dir . 'ApiQueryProofreadInfo.php';
 $wgAPIMetaModules['proofreadinfo'] = 'ApiQueryProofreadInfo';
 
+//maintenance scripts
+$wgAutoloadClasses['FixProofreadPagePagesContentModel'] = $dir . 'maintenance/fixProofreadPagePagesContentModel.php';
+
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
 
@@ -159,7 +162,7 @@ $wgHooks['ArticleDelete'][] = 'ProofreadPage::onArticleDelete';
 $wgHooks['ArticleUndelete'][] = 'ProofreadPage::onArticleUndelete';
 $wgHooks['ArticlePurge'][] = 'ProofreadPage::onArticlePurge';
 $wgHooks['SpecialMovepageAfterMove'][] = 'ProofreadPage::onSpecialMovepageAfterMove';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadIndexDbConnector::onLoadExtensionSchemaUpdates';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadPage::onLoadExtensionSchemaUpdates';
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
