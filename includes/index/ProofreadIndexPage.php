@@ -21,6 +21,7 @@
 
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\Pagination\PageList;
 
 /**
  * An index page
@@ -73,6 +74,16 @@ class ProofreadIndexPage {
 	 */
 	public function getTitle() {
 		return $this->title;
+	}
+
+	/**
+	 * Check if two ProofreadIndexPage are equals
+	 *
+	 * @param ProofreadIndexPage $that
+	 * @return boolean
+	 */
+	public function equals( ProofreadIndexPage $that ) {
+		return $this->title->equals( $that->getTitle() );
 	}
 
 	/**
@@ -292,35 +303,31 @@ class ProofreadIndexPage {
 	}
 
 	/**
-	 * Return a list of the book pages.
-	 * Depending on whether the index uses pagelist, it will return either a list of links or a list of parameters to pagelist
-	 * @return array
+	 * @return array( Title[], string[] )
 	 */
-	public function getPages() {
-		$text = $this->getText();
-
-		//check if it is using pagelist
-		preg_match_all( "/<pagelist([^<]*?)\/>/is", $text, $m, PREG_PATTERN_ORDER );
-		if ( $m[1] ) {
-			$params_s = '';
-			for( $k = 0; $k < count( $m[1] ); $k++ ) {
-				$params_s = $params_s . $m[1][$k];
-			}
-			$params = Sanitizer::decodeTagAttributes( $params_s );
-			$links = null;
-		} else {
-			$params = null;
-			$links = $this->getLinksToNamespace( $text, ProofreadPage::getPageNamespaceId() );
-		}
-		return array( $links, $params );
+	public function getLinksToPageNamespace() {
+		return $this->getLinksToNamespace( $this->getText(), Context::getDefaultContext()->getPageNamespaceId() );
 	}
 
+	/**
+	 * @return array|null
+	 */
+	public function getPagelistTagContent() {
+		preg_match_all( '/<pagelist([^<]*?)\/>/is', $this->getText(), $m, PREG_PATTERN_ORDER );
+
+		if ( !$m[1] ) {
+			return null;
+		}
+
+		return new PageList( Sanitizer::decodeTagAttributes( implode( $m[1] ) ) );
+	}
 
 	/**
 	 * Return all links in a given namespace
 	 * @param $text string
 	 * @param $namespace integer the default namespace id
 	 * @return array of array( Title title of the pointed page, the label of the link )
+	 * @todo add an abstraction for links (Title + label)
 	 */
 	protected function getLinksToNamespace( $text, $namespace ) {
 		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $text, $textLinks, PREG_PATTERN_ORDER );
@@ -338,72 +345,6 @@ class ProofreadIndexPage {
 			}
 		}
 		return $links;
-	}
-
-	/**
-	 * Return the Title of the previous and the next page pages
-	 * @param $page Title the current page
-	 * @return array
-	 */
-	public function getPreviousAndNextPages( Title $page ) {
-		$image = $this->getImage();
-
-		// if multipage, we use the page order, but we should read pagenum from the index
-		if ( $image && $image->exists() && $image->isMultipage() ) {
-			$pagenr = 1;
-			$parts = explode( '/', $page->getText() );
-			if ( count( $parts ) > 1 ) {
-				$pagenr = intval( $this->title->getPageLanguage()->parseFormattedNumber( array_pop( $parts ) ) );
-			}
-			$count = $image->pageCount();
-			if ( $pagenr < 1 || $pagenr > $count || $count < 1 ) {
-				return array( null, null );
-			}
-			$name = $this->title->getText();
-			$prevTitle = ( $pagenr === 1 ) ? null : ProofreadPage::getPageTitle( $name, $pagenr - 1 );
-			$nextTitle = ( $pagenr === $count ) ? null : ProofreadPage::getPageTitle( $name, $pagenr + 1 );
-			return array( $prevTitle, $nextTitle );
-		} else {
-			//Find the page in the list and so the previous and next pages
-			list( $links, $params ) = $this->getPages();
-			if( $links === null ) {
-				return array( null, null );
-			}
-			foreach( $links as $pagenr => $link ) {
-				if( $page->equals( $link[0] ) ) {
-					$prevTitle = ( $pagenr === 0 ) ? null : $links[$pagenr - 1][0];
-					$nextTitle = ( $pagenr === count( $links ) - 1 ) ? null : $links[$pagenr + 1][0];
-					return array( $prevTitle, $nextTitle );
-				}
-			}
-			return array( null, null );
-		}
-	}
-
-	/**
-	 * Return the page number to display
-	 * @param $page Title the page
-	 * @return string|null
-	 * @todo Move to pager system
-	 */
-	public function getDisplayedPageNumber( Title $page ) {
-		list( $links, $params ) = $this->getPages();
-		if ( $links === null ) {
-			$pagenr = 1; //TODO move it to ProofreadPagePage::getPosition()
-			$parts = explode( '/', $page->getText() );
-			if ( count( $parts ) > 1 ) {
-				$pagenr = intval( $this->title->getPageLanguage()->parseFormattedNumber( array_pop( $parts ) ) );
-				list( $pagenum, $links, $mode ) = ProofreadPage::pageNumber( $pagenr, $params );
-				return $pagenum;
-			}
-		} else {
-			foreach( $links as $pagenr => $link ) {
-				if ( $page->equals( $link[0] ) ) {
-					return $link[1];
-				}
-			}
-		}
-		return null;
 	}
 
 	/**

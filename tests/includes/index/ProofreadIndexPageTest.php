@@ -1,4 +1,8 @@
 <?php
+use ProofreadPage\Pagination\PageNumber;
+use ProofreadPage\Pagination\FilePagination;
+use ProofreadPage\Pagination\PageList;
+use ProofreadPage\Pagination\PagePagination;
 
 /**
  * @group ProofreadPage
@@ -92,6 +96,16 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		return new ProofreadIndexPage( $title, self::$config, $content );
 	}
 
+	public function testEquals() {
+		$page = self::newIndexPage( 'Test.djvu' );
+		$page2 = self::newIndexPage( 'Test.djvu' );
+		$page3 = self::newIndexPage( 'Test2.djvu' );
+		$this->assertTrue( $page->equals( $page2 ) );
+		$this->assertTrue( $page2->equals( $page ) );
+		$this->assertFalse( $page->equals( $page3 ) );
+		$this->assertFalse( $page3->equals( $page ) );
+	}
+
 	public function testGetTitle() {
 		$title = Title::makeTitle( 252, 'Test.djvu' );
 		$page = ProofreadIndexPage::newFromTitle( $title );
@@ -162,29 +176,38 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		$this->assertEquals( $links, $page->getLinksToMainNamespace() );
 	}
 
-	public function testGetPagesWithPagelist() {
-		$page = self::newIndexPage( 'Test.djvu', "{{\n|Pages=<pagelist 1to4=- 5=1 5to24=roman 25=1 1021to1024=- />\n|Author=[[Author:Me]]\n}}" );
-		$links = array( null, array( '1to4' => '-', '5' => '1', '5to24' => 'roman', '25' => '1', '1021to1024' => '-' ) );
-		$this->assertEquals( $links, $page->getPages() );
-	}
-
-	public function testGetPagesWithoutPagelist() {
-		$page = self::newIndexPage( 'Test', "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}" );
-		$links = array( array(
+	public function testGetLinksToPageNamespace() {
+		$page = ProofreadIndexPageTest::newIndexPage( 'Test', "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}" );
+		$links = array(
 			array( Title::newFromText( 'Page:Test 1.jpg' ), 'TOC' ),
 			array( Title::newFromText( 'Page:Test 2.tiff' ), '1' ),
 			array( Title::newFromText( 'Page:Test:3.png' ), '2' )
-        ), null );
-		$this->assertEquals( $links, $page->getPages() );
+		);
+		$this->assertEquals( $links, $page->getLinksToPageNamespace() );
 	}
 
-	public function testGetPreviousAndNextPagesWithoutPagelist() {
-		$page = self::newIndexPage( 'Test', "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]\n|Author=[[Author:Me]]\n}}" );
-		$links = array(
-			Title::newFromText( 'Page:Test 1.jpg' ),
-			Title::newFromText( 'Page:Test 3.png' )
-        );
-		$this->assertEquals( $links, $page->getPreviousAndNextPages( Title::newFromText( 'Page:Test 2.tiff' ) ) );
+	/**
+	 * @dataProvider getPagelistTagContentProvider
+	 */
+	public function testGetPagelistTagContent( ProofreadIndexPage $page, PageList $pageList = null ) {
+		$this->assertEquals( $pageList, $page->getPagelistTagContent() );
+	}
+
+	public function getPagelistTagContentProvider() {
+		return array(
+			array(
+				self::newIndexPage( 'Test.djvu', "{{\n|Pages=<pagelist to=24 1to4=- 5=1 5to24=roman /> <pagelist from=25 25=1 1021to1024=- />\n|Author=[[Author:Me]]\n}}" ),
+				new PageList( array( '1to4' => '-', '5' => '1', '5to24' => 'roman', '25' => '1', '1021to1024' => '-', 'to' => 24, 'from' => 25 ) )
+			),
+			array(
+				self::newIndexPage( 'Test.djvu', "{{\n|Pages=<pagelist/>\n|Author=[[Author:Me]]\n}}" ),
+				new PageList( array() )
+			),
+			array(
+				self::newIndexPage( 'Test.djvu', "{{\n|Pages=\n|Author=[[Author:Me]]\n}}" ),
+				null
+			),
+		);
 	}
 
 	public function replaceVariablesWithIndexEntriesProvider() {

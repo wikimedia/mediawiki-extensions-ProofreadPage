@@ -57,6 +57,14 @@ $wgAutoloadClasses['ProofreadIndexValue'] = $dir . 'includes/index/ProofreadInde
 $wgAutoloadClasses['ProofreadIndexPage'] = $dir . 'includes/index/ProofreadIndexPage.php';
 $wgAutoloadClasses['ProofreadIndexDbConnector'] = $dir . 'includes/index/ProofreadIndexDbConnector.php';
 
+$wgAutoloadClasses['ProofreadPage\Pagination\PaginationFactory'] = $dir . 'includes/Pagination/PaginationFactory.php';
+$wgAutoloadClasses['ProofreadPage\Pagination\PageNumber'] = $dir . 'includes/Pagination/PageNumber.php';
+$wgAutoloadClasses['ProofreadPage\Pagination\PageList'] = $dir . 'includes/Pagination/PageList.php';
+$wgAutoloadClasses['ProofreadPage\Pagination\Pagination'] = $dir . 'includes/Pagination/Pagination.php';
+$wgAutoloadClasses['ProofreadPage\Pagination\FilePagination'] = $dir . 'includes/Pagination/FilePagination.php';
+$wgAutoloadClasses['ProofreadPage\Pagination\PagePagination'] = $dir . 'includes/Pagination/PagePagination.php';
+$wgAutoloadClasses['ProofreadPage\Pagination\PageNotInPaginationException'] = $dir . 'includes/Pagination/PageNotInPaginationException.php';
+
 $wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/ProofreadPageDbConnector.php';
 $wgAutoloadClasses['ProofreadPage\Page\EditPagePage'] = $dir . 'includes/page/EditPagePage.php';
 $wgAutoloadClasses['ProofreadPage\Page\PageContentBuilder'] = $dir . 'includes/page/PageContentBuilder.php';
@@ -212,6 +220,12 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$files[] = $dir . 'FileProviderTest.php';
 
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
+
+	$files[] = $dir . 'Pagination/PageNumberTest.php';
+	$files[] = $dir . 'Pagination/PageListTest.php';
+	$files[] = $dir . 'Pagination/PagePaginationTest.php';
+	$files[] = $dir . 'Pagination/FilePaginationTest.php';
+	$files[] = $dir . 'Pagination/PaginationFactoryTest.php';
 
 	$files[] = $dir . 'page/PageLevelTest.php';
 	$files[] = $dir . 'page/PageContentTest.php';

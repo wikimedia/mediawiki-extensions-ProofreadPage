@@ -61,6 +61,16 @@ class ProofreadPagePage {
 	}
 
 	/**
+	 * Check if two ProofreadPagePage are equals
+	 *
+	 * @param ProofreadPagePage $that
+	 * @return boolean
+	 */
+	public function equals( ProofreadPagePage $that ) {
+		return $this->title->equals( $that->getTitle() );
+	}
+
+	/**
 	 * Returns Title of the index page
 	 * @return Title
 	 */
@@ -73,13 +83,11 @@ class ProofreadPagePage {
 	 * @return integer|null
 	 */
 	public function getPageNumber() {
-		global $wgContLang;
 		$parts = explode( '/', $this->title->getText() );
 		if ( count( $parts ) === 1 ) {
 			return null;
 		}
-		$val = $wgContLang->parseFormattedNumber( $parts[count( $parts ) - 1] );
-		return (int) $val;
+		return (int) $this->title->getPageLanguage()->parseFormattedNumber( $parts[count( $parts ) - 1] );
 	}
 
 	/**

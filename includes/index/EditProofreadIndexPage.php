@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -187,26 +188,25 @@ class EditProofreadIndexPage extends EditPage {
 	 */
 	function internalAttemptSave( &$result, $bot = false ) {
 		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
-		list( $links, $params ) = $index->getPages();
 
-		if ( $links !== null ) {
-			//Get list of pages titles
-			$linksTitle = array();
-			foreach( $links as $link ) {
-				$linksTitle[] = $link[0];
-			}
-
-			if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-				$this->mArticle
-					->getContext()
-					->getOutput()
-					->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
-				$status = Status::newGood();
-				$status->fatal( 'hookaborted' );
-				$status->value = self::AS_HOOK_ERROR;
-				return $status;
-			}
+		//Get list of pages titles
+		$links = $index->getLinksToPageNamespace();
+		$linksTitle = array();
+		foreach( $links as $link ) {
+			$linksTitle[] = $link[0];
 		}
+
+		if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
+			$this->mArticle
+				->getContext()
+				->getOutput()
+				->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
+			$status = Status::newGood();
+			$status->fatal( 'hookaborted' );
+			$status->value = self::AS_HOOK_ERROR;
+			return $status;
+		}
+
 		return parent::internalAttemptSave( $result, $bot );
 	}
 }

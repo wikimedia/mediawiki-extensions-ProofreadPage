@@ -21,6 +21,8 @@
 
 use ProofreadPage\Context;
 use ProofreadPage\Page\PageContentBuilder;
+use ProofreadPage\FileNotFoundException;
+use ProofreadPage\Pagination\PageNotInPaginationException;
 
 /*
  @todo :
@@ -65,28 +67,6 @@ class ProofreadPage {
 			);
 		}
 		return $res;
-	}
-
-	/**
-	 * Returns titles of a page namespace page from name of scan and page number
-	 * If the title with an internationalized number doesn't exist and a page with
-	 * arabic number exists, the title for the arabic number is returned
-	 * @param $scan string scan name
-	 * @param $number int page number
-	 * @return Title|null
-	 */
-	public static function getPageTitle( $scan, $number ) {
-		global $wgContLang;
-
-		$i18nNumber = $wgContLang->formatNum( $number, true );
-		$title = Title::makeTitleSafe( self::getPageNamespaceId(), $scan . '/' . $i18nNumber );
-		if ( $i18nNumber != $number && !$title->exists() ) {
-			$arabicTitle = Title::makeTitleSafe( self::getPageNamespaceId(), $scan . '/' . $number );
-			if ( $arabicTitle->exists() ) {
-				return $arabicTitle;
-			}
-		}
-		return $title;
 	}
 
 	/**
@@ -290,67 +270,6 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $i int
-	 * @param $args array
-	 * @return array
-	 */
-	public static function pageNumber( $i, $args ) {
-		global $wgContLang;
-		$mode = 'normal'; // default
-		$offset = 0;
-		$links = true;
-		foreach ( $args as $num => $param ) {
-			if ( ( preg_match( "/^([0-9]*)to([0-9]*)$/", $num, $m ) && ( $i >= $m[1] && $i <= $m[2] ) )
-			     || ( is_numeric( $num ) && ( $i == $num ) ) ) {
-				$params = explode( ';', $param );
-				foreach ( $params as $iparam ) {
-					switch( $iparam ) {
-					case 'roman':
-						$mode = 'roman';
-						break;
-					case 'highroman':
-						$mode = 'highroman';
-						break;
-					case 'empty':
-						$links = false;
-						break;
-					default:
-						if ( !is_numeric( $iparam ) ) {
-							$mode = $iparam;
-						}
-					}
-				}
-			}
-
-			if ( is_numeric( $num ) && ( $i >= $num ) )  {
-				$params = explode( ';', $param );
-				foreach ( $params as $iparam ) {
-					if ( is_numeric( $iparam ) ) {
-						$offset = $num - $iparam;
-					}
-				}
-			}
-
-		}
-		$view = ( $i - $offset );
-		switch( $mode ) {
-		case 'highroman':
-			$view = Language::romanNumeral( $view );
-			break;
-		case 'roman':
-				$view = strtolower( Language::romanNumeral( $view ) );
-			break;
-		case 'normal':
-		case 'empty':
-			$view = '' . $wgContLang->formatNum( $view, true );
-			break;
-		default:
-			$view = $mode;
-		}
-		return array( $view, $links, $mode );
-	}
-
-	/**
 	 * Set is_toc flag (true if page is a table of contents)
 	 * @param $outputPage OutputPage
 	 * @param $parserOutput ParserOutput
@@ -528,34 +447,17 @@ class ProofreadPage {
 	public static function updatePrIndex( $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
 		$indexId = $index->getID();
-		$pageNamespaceId = self::getPageNamespaceId();
 
 		$n = 0;
 
 		// read the list of pages
 		$pages = array();
-		list( $links, $params ) = ProofreadIndexPage::newFromTitle( $indexTitle )->getPages();
-		if( $links == null ) {
-			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $indexTitle->getText() );
-			if ( $imageTitle ) {
-				$image = wfFindFile( $imageTitle );
-				if ( $image && $image->isMultipage() && $image->pageCount() ) {
-					$n = $image->pageCount();
-					for ( $i = 1; $i <= $n; $i++ ) {
-						$page = self::getPageTitle( $indexTitle->getText(), $i );
-						if( $page !== null && ( $deletedPage === null || !$page->equals( $deletedPage ) ) ) {
-							array_push( $pages, $page->getDBKey() );
-						}
-					}
-				}
-			}
-		} else {
-			$n = count( $links );
-			for ( $i = 0; $i < $n; $i++ ) {
-				$page = $links[$i][0];
-				if( $deletedPage === null || !$page->equals( $deletedPage ) ) {
-					array_push( $pages, $page->getDBKey() );
-				}
+		$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage(
+			ProofreadIndexPage::newFromTitle( $indexTitle )
+		);
+		foreach( $pagination as $page ) {
+			if ( $deletedPage === null || !$page->getTitle()->equals( $deletedPage ) ) {
+				array_push( $pages, $page->getTitle()->getDBKey() );
 			}
 		}
 
@@ -583,7 +485,7 @@ class ProofreadPage {
 		$n4 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality4_category' );
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
-		$replace = ProofreadIndexDbConnector::setIndexData( $n, $n0, $n1, $n2, $n3, $n4, $indexId );
+		ProofreadIndexDbConnector::setIndexData( $n, $n0, $n1, $n2, $n3, $n4, $indexId );
 	}
 
 	/**
@@ -819,8 +721,8 @@ $void_cell
 		$page = ProofreadPagePage::newFromTitle( $title );
 
 		//Image link
-		$image = $page->getImage();
-		if ( $image ) {
+		try {
+			$image = Context::getDefaultContext()->getFileProvider()->getForPagePage( $page );
 			$imageUrl = null;
 			if ( $image->isMultipage() ) {
 				$transformAttributes = array(
@@ -844,31 +746,38 @@ $void_cell
 				$links['namespaces']['proofreadPageScanLink'] = array(
 					'class' => '',
 					'href' => $imageUrl,
-				'text' => wfMessage( 'proofreadpage_image' )->plain()
+					'text' => wfMessage( 'proofreadpage_image' )->plain()
 				);
 			}
-		}
+		} catch( FileNotFoundException $e ) {}
 
 		//Prev, Next and Index links
 		$indexPage = $page->getIndex();
 		if ( $indexPage ) {
-			list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $page->getTitle() );
+			$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
+			try {
+				$pageNumber = $pagination->getPageNumber( $page );
 
-			if ( $prevTitle !== null ) {
-				$links['namespaces']['proofreadPagePrevLink'] = array(
-					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
-					'href' => self::getLinkUrlForTitle( $prevTitle ),
-					'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
-				);
-			}
+				try {
+					$prevPage  = $pagination->getPage( $pageNumber - 1 );
+					$prevTitle = $prevPage->getTitle();
+					$links['namespaces']['proofreadPagePrevLink'] = array(
+						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+						'href' => self::getLinkUrlForTitle( $prevTitle ),
+						'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
+					);
+				} catch( OutOfBoundsException $e ) {} //if the previous page does not exits
 
-			if ( $nextTitle !== null ) {
-				$links['namespaces']['proofreadPageNextLink'] = array(
-					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
-					'href' => self::getLinkUrlForTitle( $nextTitle ),
-					'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
-				);
-			}
+				try {
+					$nextPage  = $pagination->getPage( $pageNumber + 1 );
+					$nextTitle = $nextPage->getTitle();
+					$links['namespaces']['proofreadPageNextLink'] = array(
+						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+						'href' => self::getLinkUrlForTitle( $nextTitle ),
+						'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
+					);
+				} catch( OutOfBoundsException $e ) {} //if the next page does not exits
+			} catch( PageNotInPaginationException $e ) {}
 
 			$links['namespaces']['proofreadPageIndexLink'] = array(
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',

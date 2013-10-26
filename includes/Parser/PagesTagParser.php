@@ -2,9 +2,12 @@
 
 namespace ProofreadPage\Parser;
 
+use OutOfBoundsException;
 use ProofreadIndexPage;
 use ProofreadPage;
+use ProofreadPage\Pagination\FilePagination;
 use ProofreadPageDbConnector;
+use ProofreadPagePage;
 use Title;
 
 /**
@@ -18,8 +21,6 @@ class PagesTagParser extends TagParser {
 	 * @see TagParser::render
 	 */
 	public function render( $input, array $args ) {
-		$pageNamespaceId = $this->context->getPageNamespaceId();
-
 		// abort if this is nested <pages> call
 		if ( isset( $this->parser->proofreadRenderingPages ) && $this->parser->proofreadRenderingPages ) {
 			return '';
@@ -36,12 +37,13 @@ class PagesTagParser extends TagParser {
 		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
 		$onlysection = array_key_exists( 'onlysection', $args ) ? $args['onlysection'] : null;
 
-		// abort if the tag is on an index page
-		if ( $this->parser->getTitle()->inNamespace( $this->context->getIndexNamespaceId() ) ) {
-			return '';
-		}
-		// abort too if the tag is in the page namespace
-		if ( $this->parser->getTitle()->inNamespace( $pageNamespaceId ) ) {
+		$pageTitle = $this->parser->getTitle();
+
+		// abort if the tag is on an index or a page page
+		if (
+			$pageTitle->inNamespace( $this->context->getIndexNamespaceId() ) ||
+			$pageTitle->inNamespace( $this->context->getPageNamespaceId() )
+		) {
 			return '';
 		}
 		// ignore fromsection and tosection arguments if onlysection is specified
@@ -53,36 +55,29 @@ class PagesTagParser extends TagParser {
 		if( !$index ) {
 			return $this->formatError( 'proofreadpage_index_expected' );
 		}
-		$index_title = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $index );
-		if( !$index_title || !$index_title->exists() ) {
+
+		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $index );
+		if( $indexTitle === null || !$indexTitle->exists() ) {
 			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
-		$indexPage = ProofreadIndexPage::newFromTitle( $index_title );
-
-		$this->parser->getOutput()->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
-
-		$out = '';
+		$indexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
+		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
 		$language = $this->parser->getTargetLanguage();
-
-		list( $links, $params ) = $indexPage->getPages();
+		$this->parser->getOutput()->addTemplate( $indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID() );
+		$out = '';
 
 		if( $from || $to || $include ) {
 			$pages = array();
 
-			if( empty( $links ) ) {
+			if( $pagination instanceof FilePagination ) {
 				$from = ( $from === null ) ? null : $language->parseFormattedNumber( $from );
 				$to = ( $to === null ) ? null : $language->parseFormattedNumber( $to );
 				$step = ( $step === null ) ? null : $language->parseFormattedNumber( $step );
 
-				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
-				if ( !$imageTitle ) {
+				$count = $pagination->getNumberOfPages();
+				if ( $count === 0 ) {
 					return $this->formatError( 'proofreadpage_nosuch_file' );
 				}
-				$image = wfFindFile( $imageTitle );
-				if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-					return $this->formatError( 'proofreadpage_nosuch_file' );
-				}
-				$count = $image->pageCount();
 
 				if( !$step ) {
 					$step = 1;
@@ -113,6 +108,7 @@ class PagesTagParser extends TagParser {
 					if( !is_numeric( $from ) || !is_numeric( $to )  || !is_numeric( $step ) ) {
 						return $this->formatError( 'proofreadpage_number_expected' );
 					}
+
 					if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
@@ -131,7 +127,7 @@ class PagesTagParser extends TagParser {
 					$pagenums = array_diff( $pagenums, $excluded );
 				}
 
-				if( count($pagenums)/$step > 1000 ) {
+				if( count( $pagenums ) / $step > 1000 ) {
 					return $this->formatError( 'proofreadpage_interval_too_large' );
 				}
 
@@ -144,43 +140,50 @@ class PagesTagParser extends TagParser {
 				$mod = reset( $pagenums ) % $step;
 				foreach( $pagenums as $num ) {
 					if( $step == 1 || $num % $step == $mod ) {
-						list( $pagenum, $links, $mode ) = ProofreadPage::pageNumber( $num, $params );
-						$pages[] = array( ProofreadPage::getPageTitle( $index, $num ), $pagenum );
+						$pagenum = $pagination->getDisplayedPageNumber( $num )->getFormattedPageNumber( $language );
+						$pages[] = array( $pagination->getPage( $num )->getTitle(), $pagenum );
 					}
 				}
-
-				list( $from_page, $from_pagenum ) = reset( $pages );
-				list( $to_page, $to_pagenum ) = end( $pages );
 
 			} else {
+				$adding = true;
+
+				$fromPage = null;
 				if( $from ) {
-					$adding = false;
-				} else {
-					$adding = true;
-					$from_pagenum = $links[0][1];
+					$fromTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $from );
+					if( $fromTitle !== null ) {
+						$fromPage = ProofreadPagePage::newFromTitle( $fromTitle );
+						$adding = false;
+					}
 				}
 
-				$from_page = Title::makeTitleSafe( $pageNamespaceId, $from );
-				$to_page = Title::makeTitleSafe( $pageNamespaceId, $to );
-				for( $i = 0; $i < count( $links ); $i++ ) {
-					$link = $links[$i][0];
-					$pagenum = $links[$i][1];
-					if( $from_page !== null && $from_page->equals( $link ) ) {
+				$toPage = null;
+				if( $to ) {
+					$toTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $to );
+					if( $toTitle !== null ) {
+						$toPage = ProofreadPagePage::newFromTitle( $toTitle );
+					}
+				}
+
+				$i = 1;
+				foreach( $pagination as $link ) {
+					if( $fromPage !== null && $fromPage->equals( $link ) ) {
 						$adding = true;
-						$from_pagenum = $pagenum;
 					}
 					if( $adding ) {
-						$pages[] = array( $link, $pagenum );
+						$pagenum = $pagination->getDisplayedPageNumber( $i )->getFormattedPageNumber( $language );
+						$pages[] = array( $link->getTitle(), $pagenum );
 					}
-					if( $to_page !== null && $to_page->equals( $link ) ) {
+					if( $toPage !== null && $toPage->equals( $link ) ) {
 						$adding = false;
-						$to_pagenum = $pagenum;
 					}
-				}
-				if( !$to ) {
-					$to_pagenum = $links[count( $links[1] ) - 1][1];
+					$i++;
 				}
 			}
+
+			list( $from_page, $from_pagenum ) = reset( $pages );
+			list( $to_page, $to_pagenum ) = end( $pages );
+
 			// find which pages have quality0
 			$q0_pages = array();
 			if( !empty( $pages ) ) {
@@ -232,18 +235,14 @@ class PagesTagParser extends TagParser {
 		} else {
 			/* table of Contents */
 			$header = 'toc';
-			if( $links == null ) {
-				$firstpage = ProofreadPage::getPageTitle( $index, 1 );
-			} else {
-				$firstpage = $links[0][0];
-			}
-			if ( $firstpage !== null ) {
+			try {
+				$firstpage = $pagination->getPage( 1 )->getTitle();
 				$this->parser->getOutput()->addTemplate(
 					$firstpage,
 					$firstpage->getArticleID(),
 					$firstpage->getLatestRevID()
 				);
-			}
+			} catch( OutOfBoundsException $e ) {} //if the first page does not exists
 		}
 
 		if( $header ) {
@@ -305,7 +304,7 @@ class PagesTagParser extends TagParser {
 			$out = $h_out . $out ;
 		}
 
-		// wrap the output in a div, to prevent the parser from inserting pararaphs
+		// wrap the output in a div, to prevent the parser from inserting paragraphs
 		$out = "<div>\n$out\n</div>";
 		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );

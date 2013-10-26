@@ -14,7 +14,7 @@ use User;
  * @group ProofreadPage
  * @covers \ProofreadPage\Page\PageContentBuilder
  */
-class ProofreadPageContentBuilderTest extends ProofreadPageTestCase {
+class PageContentBuilderTest extends ProofreadPageTestCase {
 
 	/**
 	 * @var IContextSource
@@ -51,7 +51,13 @@ class ProofreadPageContentBuilderTest extends ProofreadPageTestCase {
 				),
 				PageContentTest::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
 			),
-			//TODO: test pagenum argument
+			array(
+				ProofreadPagePageTest::newPagePage(
+					'LoremIpsum.djvu/2',
+					ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Title=Test book\n|Pages=<pagelist/>\n|Header={{{pagenum}}}\n}}" )
+				),
+				PageContentTest::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
+			),
 		);
 	}
 

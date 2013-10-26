@@ -3,9 +3,10 @@
 namespace ProofreadPage\Page;
 
 use IContextSource;
+use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
-use ProofreadPage\FileProvider;
+use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPagePage;
 use WikitextContent;
 
@@ -19,20 +20,20 @@ class PageContentBuilder {
 	/**
 	 * @var IContextSource
 	 */
-	private $context;
+	private $contextSource;
 
 	/**
-	 * @var FileProvider
+	 * @var Context
 	 */
-	private $fileProvider;
+	private $context;
 
 	/**
 	 * @param IContextSource $context
 	 * @param Context $context
 	 */
 	public function __construct( IContextSource $contextSource, Context $context ) {
-		$this->context = $contextSource;
-		$this->fileProvider = $context->getFileProvider();
+		$this->contextSource = $contextSource;
+		$this->context = $context;
 	}
 
 	/**
@@ -45,19 +46,25 @@ class PageContentBuilder {
 
 		//default header and footer
 		if ( $index ) {
-			$params = array(
-				'pagenum' => $index->getDisplayedPageNumber( $page->getTitle() )
-			);
+			$params = array();
+			try {
+				$pagination = $this->context->getPaginationFactory()->getPaginationForIndexPage( $index );
+				$pageNumber = $pagination->getPageNumber( $page );
+				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
+				$params['pagenum'] = $displayedPageNumber->getFormattedPageNumber( $page->getTitle()->getPageLanguage() );
+			} catch( PageNotInPaginationException $e ) {
+			} catch( OutOfBoundsException $e ) {} //should not happen
+
 			$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
 			$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
 		} else {
-			$header = $this->context->msg( 'proofreadpage_default_header' )->inContentLanguage()->plain();
-			$footer = $this->context->msg( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
+			$header = $this->contextSource->msg( 'proofreadpage_default_header' )->inContentLanguage()->plain();
+			$footer = $this->contextSource->msg( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
 		}
 
 		//Extract text layer
 		try {
-			$image = $this->fileProvider->getForPagePage( $page );
+			$image = $this->context->getFileProvider()->getForPagePage( $page );
 			$pageNumber = $page->getPageNumber();
 			if ( $image->exists() ) {
 				if ( $pageNumber !== null && $image->isMultipage() ) {
@@ -91,9 +98,9 @@ class PageContentBuilder {
 		$oldLevel = $oldContent->getLevel();
 		$user = ( $oldLevel->getLevel() === $level )
 			? $oldLevel->getUser()
-			: $this->context->getUser();
+			: $this->contextSource->getUser();
 		if ( $oldLevel->getUser() === null ) {
-			$user = $this->context->getUser();
+			$user = $this->contextSource->getUser();
 		}
 
 		return new PageContent(

@@ -21,7 +21,7 @@ class ParserEntryPoint {
 	 * @return string
 	 */
 	public static function renderPagelistTag( $input, array $args, Parser $parser ) {
-		$tagParser = new PagelistTagParser( $parser, Context::getDefaultContext() );
+		$tagParser = new PagelistTagParser( $parser, Context::getDefaultContext( true ) );
 		return $tagParser->render( $input, $args );
 	}
 
@@ -34,7 +34,7 @@ class ParserEntryPoint {
 	 * @return string
 	 */
 	public static function renderPagesTag( $input, array $args, Parser $parser ) {
-		$tagParser = new PagesTagParser( $parser, Context::getDefaultContext() );
+		$tagParser = new PagesTagParser( $parser, Context::getDefaultContext( true ) );
 		return $tagParser->render( $input, $args );
 	}
 }

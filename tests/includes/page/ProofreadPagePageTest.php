@@ -22,6 +22,16 @@ class ProofreadPagePageTest extends ProofreadPageTestCase {
 		return new ProofreadPagePage( $title, $index );
 	}
 
+	public function testEquals() {
+		$page = self::newPagePage( 'Test.djvu' );
+		$page2 = self::newPagePage( 'Test.djvu' );
+		$page3 = self::newPagePage( 'Test2.djvu' );
+		$this->assertTrue( $page->equals( $page2 ) );
+		$this->assertTrue( $page2->equals( $page ) );
+		$this->assertFalse( $page->equals( $page3 ) );
+		$this->assertFalse( $page3->equals( $page ) );
+	}
+
 	public function testGetTitle() {
 		$title = Title::makeTitle( 250, 'Test.djvu' );
 		$page = ProofreadPagePage::newFromTitle( $title );

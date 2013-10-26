@@ -2,6 +2,7 @@
 
 namespace ProofreadPage;
 
+use ProofreadPage\Pagination\PaginationFactory;
 use ProofreadPageInit;
 use RepoGroup;
 
@@ -30,10 +31,16 @@ class Context {
 	 */
 	private $fileProvider;
 
+	/**
+	 * @var PaginationFactory
+	 */
+	private $paginationFactory;
+
 	public function __construct( $pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider ) {
 		$this->pageNamespaceId = ProofreadPageInit::getNamespaceId( 'page' );
 		$this->indexNamespaceId = ProofreadPageInit::getNamespaceId( 'index' );
 		$this->fileProvider = $fileProvider;
+		$this->paginationFactory = new PaginationFactory( $this );
 	}
 
 	/**
@@ -58,9 +65,17 @@ class Context {
 	}
 
 	/**
+	 * @return PaginationFactory
+	 */
+	public function getPaginationFactory() {
+		return $this->paginationFactory;
+	}
+
+	/**
+	 * @param bool $purgeFileProvider
 	 * @return Context
 	 */
-	public static function getDefaultContext() {
+	public static function getDefaultContext( $purgeFileProvider = false ) {
 		static $defaultContext;
 
 		if ( $defaultContext === null ) {
@@ -69,6 +84,9 @@ class Context {
 				ProofreadPageInit::getNamespaceId( 'index' ),
 				new FileProvider( RepoGroup::singleton() )
 			);
+		}
+		if ( $purgeFileProvider ) {
+			$defaultContext->fileProvider = new FileProvider( RepoGroup::singleton() );
 		}
 
 		return $defaultContext;
