@@ -25,6 +25,11 @@
 class ProofreadPagePage {
 
 	/**
+	 * @var integer default width for scan image
+	 */
+	const DEFAULT_IMAGE_WIDTH = 1024;
+
+	/**
 	 * @var Title
 	 */
 	protected $title;
@@ -179,8 +184,12 @@ class ProofreadPagePage {
 		if ( $content->isEmpty() && !$this->title->exists() ) {
 			$index = $this->getIndex();
 			if ( $index ) {
-				list( $header, $footer, $css, $editWidth ) = $index->getIndexDataForPage( $this->title );
+				$params = array(
+					'pagenum' => $index->getDisplayedPageNumber( $this->getTitle() )
+				);
+				$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
 				$body = '';
+				$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
 
 				//Extract text layer
 				$image = $index->getImage();
@@ -201,6 +210,43 @@ class ProofreadPagePage {
 			}
 		}
 		return $content;
+	}
+
+
+	/**
+	 * Return the scan image width for display
+	 * @return integer
+	 */
+	public function getImageWidth() {
+		$index = $this->getIndex();
+		if ( $index ) {
+			$width = $index->getIndexEntry( 'width' );
+			if ( $width !== null ) {
+				$width = $width->getStringValue();
+				if ( is_numeric( $width ) ) {
+					return $width;
+				}
+			}
+		}
+
+		return self::DEFAULT_IMAGE_WIDTH;
+	}
+
+	/**
+	 * Return custom CSS for the page
+	 * @return string
+	 * @todo use it with ParserOutput::addInlineStyle but fix possible XSS issue
+	 */
+	public function getCustomCss() {
+		$index = $this->getIndex();
+		if ( $index ) {
+			$css = $index->getIndexEntry( 'css' );
+			if ( $css !== null ) {
+				return trim( $css->getStringValue() );
+			}
+		}
+
+		return '';
 	}
 
 	/**
@@ -253,7 +299,7 @@ class ProofreadPagePage {
 		return
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', array( 'class' => 'prp-page-image' ) ) .
-			$this->getImageHtml( array( 'max-width' => 800 ) ) .
+			$this->getImageHtml( array( 'max-width' => $this->getImageWidth() ) ) .
 			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' );
 	}
