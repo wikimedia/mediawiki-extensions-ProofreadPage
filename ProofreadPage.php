@@ -104,9 +104,9 @@ $prpResourceTemplate = array(
 	'remoteExtPath' => 'ProofreadPage/modules'
 );
 $wgResourceModules += array(
-	'jquery.panZoom' => $prpResourceTemplate + array(
-		'scripts' => 'jquery/jquery.panZoom.js',
-		'dependencies' => array( 'jquery.ui.draggable' )
+	'jquery.prpZoom' => $prpResourceTemplate + array(
+		'scripts' => 'jquery/jquery.prpZoom.js',
+		'dependencies' => array( 'jquery.ui.widget', 'jquery.ui.draggable' )
 	),
 	'ext.proofreadpage.base' => $prpResourceTemplate + array(
 		'styles'  => 'ext.proofreadpage.base.css',
@@ -114,12 +114,12 @@ $wgResourceModules += array(
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'styles'  => 'page/ext.proofreadpage.page.css',
 		'scripts' => 'page/ext.proofreadpage.page.js',
-		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.panZoom' )
+		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 	'ext.proofreadpage.page.edit' => $prpResourceTemplate + array(
 		'styles'  => 'page/ext.proofreadpage.page.edit.css',
 		'scripts' => 'page/ext.proofreadpage.page.edit.js',
-		'dependencies' => array( 'ext.proofreadpage.page', 'mediawiki.user' ),
+		'dependencies' => array( 'ext.proofreadpage.page', 'jquery.prpZoom', 'mediawiki.user' ),
 		'messages' => array(
 			'proofreadpage_quality0_category',
 			'proofreadpage_quality1_category',
