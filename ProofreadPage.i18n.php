@@ -5297,6 +5297,7 @@ $messages['mn'] = array(
  * @author Rahuldeshmukh101
  * @author Sankalpdravid
  * @author Shantanoo
+ * @author V.narsikar
  * @author Vanandf1
  * @author संतोष दहिवळ
  */
@@ -5330,12 +5331,12 @@ $messages['mr'] = array(
 	'proofreadpage_quality0_category' => 'मजकुराविना',
 	'proofreadpage_quality1_category' => 'तपासणी करायचे साहित्य',
 	'proofreadpage_quality2_category' => 'समस्यादायक',
-	'proofreadpage_quality3_category' => 'परीक्षण',
+	'proofreadpage_quality3_category' => 'मुद्रितशोधन',
 	'proofreadpage_quality4_category' => 'प्रमाणित',
-	'proofreadpage_quality0_message' => 'या पानाचे परीक्षण करण्याची गरज नाही',
-	'proofreadpage_quality1_message' => 'या पानाचे परीक्षण झालेले नाही',
-	'proofreadpage_quality2_message' => 'या पानाचे परीक्षण करतांना काही समस्या उद्भवल्या आहेत',
-	'proofreadpage_quality3_message' => 'या पानाचे परीक्षण झाले आहे',
+	'proofreadpage_quality0_message' => 'या पानाचे मुद्रितशोधन करण्याची गरज नाही',
+	'proofreadpage_quality1_message' => 'या पानाचे मुद्रितशोधन झालेले नाही',
+	'proofreadpage_quality2_message' => 'या पानाचे मुद्रितशोधन करतांना काही समस्या उद्भवल्या आहेत',
+	'proofreadpage_quality3_message' => 'या पानाचे मुद्रितशोधन झालेले आहे',
 	'proofreadpage_quality4_message' => 'हे पान प्रमाणित केलेले आहे.',
 	'proofreadpage_index_status' => 'अनुक्रम स्थिती',
 	'proofreadpage_index_size' => 'पानांची संख्या',
@@ -5362,7 +5363,7 @@ $messages['mr'] = array(
 	'proofreadpage_source' => 'स्रोत',
 	'proofreadpage_source_message' => 'ह्या मजकुरास प्रस्थापित करण्यासाठी स्कॅन आवृत्तीचा वापर करण्यात आलेला आहे',
 	'right-pagequality' => 'पृष्ठ गुणवत्ता निशाणास बदला',
-	'proofreadpage-section-tools' => 'परीक्षणाची साधने',
+	'proofreadpage-section-tools' => 'मुद्रितशोधनाची साधने',
 	'proofreadpage-group-zoom' => 'मोठे करा',
 	'proofreadpage-group-other' => 'इतर',
 	'proofreadpage-button-toggle-visibility-label' => 'ह्या पानाची शीर्षणी आणि तळटीप दाखवा/लपवा',
