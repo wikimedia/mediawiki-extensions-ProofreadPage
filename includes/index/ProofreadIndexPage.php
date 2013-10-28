@@ -200,7 +200,7 @@ class ProofreadIndexPage {
 		$text = $this->getText();
 		$values = array();
 		foreach( $this->config as $varName => $property ) {
-			$tagPattern = "/\n\|" . $varName . "=(.*?)\n(\||\}\})/is";
+			$tagPattern = "/\n\|" . preg_quote( $varName, '/' ) . "=(.*?)\n(\||\}\})/is";
 			if ( preg_match( $tagPattern, $text, $matches ) ) {
 				$values[$varName] = $matches[1];
 			}
