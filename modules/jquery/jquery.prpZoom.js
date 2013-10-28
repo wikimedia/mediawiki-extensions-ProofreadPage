@@ -24,8 +24,8 @@
 	$.widget( 'mw.prpZoom', {
 
 		options: {
-			zoomStep: 3,
-			moveStep: 3,
+			zoomStep: 4,
+			moveStep: 4,
 			animationDuration: 200
 		},
 
@@ -144,8 +144,22 @@
 		},
 
 		destroy: function() {
-			this.reset();
-			this.draggable( 'destroy' );
+			this.element
+				.draggable( 'destroy' )
+				.css( {
+					position: 'static',
+					top: '',
+					left: '',
+					width: '',
+					height: ''
+				} )
+				.parent().css( {
+					position: 'static',
+					overflow: '',
+					height: '',
+					cursor: ''
+				} );
+
 			$.Widget.prototype.destroy.call( this );
 		}
 	} );

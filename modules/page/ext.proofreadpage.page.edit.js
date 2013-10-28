@@ -2,14 +2,71 @@
 	'use strict';
 
 	/**
+	 * Is the layout horizontal (ie is the scan image on top of the edit area)
+	 * @type {boolean}
+	 */
+	var isLayoutHorizontal = false;
+
+	/**
+	 * The scan image
+	 * @type {jQuery}
+	 */
+	var $zoomImage;
+
+	/**
 	 * Show or hide header and footer areas
 	 *
-	 * @param string speed of the toogle. May be 'fast', 'slow' or undefined
+	 * @param speed string speed of the toogle. May be 'fast', 'slow' or undefined
 	 */
 	function toggleHeaders( speed ) {
 		$( '.prp-page-edit-header' ).toggle( speed );
 		$( '.prp-page-edit-body label' ).toggle( speed );
 		$( '.prp-page-edit-footer' ).toggle( speed );
+	}
+
+	/**
+	 * Put the scan image on top or on the left of the edit area
+	 */
+	function toogleLayout() {
+		if( $zoomImage.data( 'prpZoom' ) ) {
+			$zoomImage.prpZoom( 'destroy' );
+		}
+
+		var $container = $zoomImage.parent();
+
+		if( isLayoutHorizontal ) {
+			$container.appendTo( '#editform .prp-page-container' );
+
+			$container.css( {
+				width: ''
+			} );
+			$( '#editform' ).find( '.prp-page-content' ).css( {
+				width: ''
+			} );
+
+			$zoomImage.prpZoom();
+
+			isLayoutHorizontal = false;
+
+		} else {
+			$container.insertBefore( '#editform' );
+
+			$container.css( {
+				width: '100%',
+				overflow: 'auto',
+				height: $( window ).height() / 3 + 'px'
+			} );
+			$( '#editform' ).find( '.prp-page-content' ).css( {
+				width: '100%'
+			} );
+
+			$zoomImage.prpZoom();
+			$container.css( {
+				height: $( window ).height() / 3 + 'px'
+			} );
+
+			isLayoutHorizontal = true;
+		}
 	}
 
 	/**
@@ -19,7 +76,9 @@
 		if( !mw.user.options.get( 'proofreadpage-showheaders' ) ) {
 			toggleHeaders();
 		}
-		//TODO: scan on top of the edit system
+		if( mw.user.options.get( 'proofreadpage-horizontal-layout' ) ) {
+			toogleLayout();
+		}
 	}
 
 	/**
@@ -48,7 +107,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).prpZoom( 'zoomIn' );
+								$zoomImage.prpZoom( 'zoomIn' );
 							}
 						}
 					},
@@ -59,7 +118,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).prpZoom( 'zoomOut' );
+								$zoomImage.prpZoom( 'zoomOut' );
 							}
 						}
 					},
@@ -70,7 +129,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).prpZoom( 'reset' );
+								$zoomImage.prpZoom( 'reset' );
 							}
 						}
 					},
@@ -81,7 +140,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).prpZoom( 'moveUp' );
+								$zoomImage.prpZoom( 'moveUp' );
 							}
 						}
 					},
@@ -92,7 +151,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).prpZoom( 'moveDown' );
+								$zoomImage.prpZoom( 'moveDown' );
 							}
 						}
 					},
@@ -103,7 +162,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).prpZoom( 'moveLeft' );
+								$zoomImage.prpZoom( 'moveLeft' );
 							}
 						}
 					},
@@ -114,7 +173,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								$( '#editform .prp-page-image img' ).prpZoom( 'moveRight' );
+								$zoomImage.prpZoom( 'moveRight' );
 							}
 						}
 					}
@@ -141,7 +200,7 @@
 						action: {
 							type: 'callback',
 							execute: function() {
-								//TODO
+								toogleLayout();
 							}
 						}
 					}
@@ -195,32 +254,39 @@
 		mw.loader.using( 'ext.wikiEditor', function() {
 			$( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
 			$( '.wikiEditor-oldToolbar' ).after( $( '.wikiEditor-ui' ) );
-			$( '.wikiEditor-ui-text' ).append( $( '#editform .prp-page-container' ) );
+			$( '.wikiEditor-ui-text' ).append( $( '#editform' ).find( '.prp-page-container' ) );
 		} );
+	}
+
+	/**
+	 * Init global variables of the script
+	 */
+	function initEnvironment() {
+		if( $zoomImage === undefined ) {
+			$zoomImage = $( '#editform' ).find( '.prp-page-image img' );
+		}
 	}
 
 	/**
 	 * Init the zoom system
 	 */
 	function initZoom() {
-		var $image = $( '#editform .prp-page-image img' );
-		if( $image.length === 0 ) {
-			return;
-		}
 		mw.loader.using( 'jquery.prpZoom', function() {
-			$image.prpZoom();
+			$zoomImage.prpZoom();
 		} );
 	}
 
 	$( document ).ready( function() {
-		setupPreferences();
+		initEnvironment();
 		setupWikiEditor();
+		setupPreferences();
 		setupPageQuality();
 		addButtons();
 	} );
 
 	//zoom should be init after the page is rendered
 	$( window ).load( function() {
+		initEnvironment();
 		initZoom();
 	} );
 
