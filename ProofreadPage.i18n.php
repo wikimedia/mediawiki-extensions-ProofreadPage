@@ -8218,7 +8218,7 @@ Fonät
 Magod|Magod tegoda
 Pads|20
 Küpets|10',
-	'proofreadpage_pages' => '{{PLURAL:$1|pad|pads}}', # Fuzzy
+	'proofreadpage_pages' => '{{PLURAL:$1|pad|pads}} $2',
 );
 
 /** Waray (Winaray)
