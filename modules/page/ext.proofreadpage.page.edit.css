@@ -1,7 +1,7 @@
-.prp-page-content {
+#editform .prp-page-content {
 	line-height: 1.5em;
 }
-.prp-page-content label {
+#editform .prp-page-content label {
 	color: gray;
 	font-size: 80%;
 }
