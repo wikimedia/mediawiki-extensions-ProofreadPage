@@ -54,28 +54,39 @@ class ApiQueryProofread extends ApiQueryBase {
 		$qualityLevels = array_flip( $qualityCategories );
 
 		// <Reedy> johnduhart, it'd seem sane rather than duplicating the functionality
-		$params = new FauxRequest(array(
+		$params = new FauxRequest( array(
 			'action' => 'query',
 			'prop' => 'categories',
 			'pageids' => implode( '|', $pageIds ),
 			'clcategories' => implode( '|', $qualityCategories ),
 			'cllimit' => 'max'
-		));
+		) );
 
 		$api = new ApiMain($params);
 		$api->execute();
 		$data = $api->getResultData();
 		unset( $api );
 
+		if ( array_key_exists( 'error', $data ) ) {
+			$this->dieUsageMsg( $data['error'] );
+		}
+
 		$result = $this->getResult();
 		foreach ( $data['query']['pages'] as $pageid => $data) {
-			$title = $data['categories'][0]['title'];
-			if ( !isset( $qualityLevels[ $title ] ) ) {
+			if ( !array_key_exists( 'categories', $data ) ) {
 				continue;
 			}
+			$title = $data['categories'][0]['title'];
 
+			if ( !array_key_exists( $title, $qualityLevels ) ) {
+				continue;
+			}
 			$pageQuality = $qualityLevels[ $title ];
-			$val =  array( 'quality' => $pageQuality, 'quality_text' => $qualityText[ $pageQuality ] );
+
+			$val = array(
+				'quality' => $pageQuality,
+				'quality_text' => $qualityText[ $pageQuality ]
+			);
 			$result->addValue( array( 'query', 'pages', $pageid ), 'proofread', $val );
 		}
 	}
@@ -94,7 +105,7 @@ class ApiQueryProofread extends ApiQueryBase {
 
 	public function getExamples() {
 		return array(
-			'api.php?action=query&generator=allpages&gapnamespace=104&prop=proofread'
+			'api.php?action=query&generator=allpages&gapnamespace=250&prop=proofread'
 		);
 	}
 
