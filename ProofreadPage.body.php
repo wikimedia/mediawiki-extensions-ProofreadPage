@@ -609,7 +609,7 @@ class ProofreadPage {
 		if( $from || $to || $include ) {
 			$pages = array();
 
-			if( empty( $links ) ) {
+			if( $links === null ) {
 				$from = ( $from === null ) ? null : $wgContLang->parseFormattedNumber( $from );
 				$to = ( $to === null ) ? null : $wgContLang->parseFormattedNumber( $to );
 				$step = ( $step === null ) ? null : $wgContLang->parseFormattedNumber( $step );
