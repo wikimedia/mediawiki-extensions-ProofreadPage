@@ -7836,10 +7836,30 @@ $messages['tyv'] = array(
  * @author Tifinaghes
  */
 $messages['tzm'] = array(
+	'indexpages' => 'ⵓⵎⵓⵖ ⵏ ⵜⴰⵙⵏⵉⵡⵉⵏ ⵏ ⵓⵙⴳⴱⴰⵔ',
 	'proofreadpage_image' => 'ⵜⴰⵡⵍⴰⴼⵜ',
+	'proofreadpage_notallowed' => 'ⴰⴱⴷⴷⴻⵍ ⵓⵔ ⵢⴻⵍⵍⴰ',
+	'proofreadpage_dataconfig_badformatted' => 'Bug in data configuration',
+	'proofreadpage_prevpage' => 'ⵜⴰⵙⵏⴰ ⵜⴰⵎⵣⵡⴰⵔⵓⵜ',
+	'proofreadpage_header' => 'ⴰⵣⵡⵉⵍ (ⵓⵔ ⵢⴻⵍⵍⴰ):',
+	'proofreadpage_quality0_category' => 'ⵡⴰⵔ ⴰⴹⵔⵉⵙ',
+	'proofreadpage_quality1_category' => 'ⵓⵔ ⵜⵓⵙⴷⴰⴷ',
+	'proofreadpage_quality2_category' => 'ⴷⵉⵙ ⵉⵎⵓⴽⵔⵉⵙⵏ',
+	'proofreadpage_specialpage_label_key' => 'ⴰⵔⵣⵣⵓ:',
+	'proofreadpage_index_listofpages' => 'ⵓⵎⵓⵖ ⵏ ⵜⴰⵙⵏⵉⵡⵉⵏ',
+	'proofreadpage_image_message' => 'ⴰⵣⴷⴰⵢ ⵖⵔ ⵜⴰⵙⵏⴰ ⵏ ⵓⵎⵓⵖ',
 	'proofreadpage_page_status' => 'ⴰⴷⴷⴰⴷ ⵏ ⵜⴰⵙⵏⴰ',
+	'proofreadpage_index_attributes' => 'ⴰⵎⵙⴽⴰⵔ
+ⴰⵣⵡⵉⵍ
+ⴰⵙⴳⴳⵯⴰⵙ|ⴰⵙⴳⴳⵯⴰⵙ ⵏ ⵓⴼⵙⵙⴰⵔ
+ⴰⵎⴼⵙⴰⵔ
+ⴰⵖⴱⴰⵍⵓ
+ⵜⴰⵙⵏⴰ|Cover image
+Pages||20
+ⵜⴰⵏⵏⴰⵢⵉⵏ||10',
 	'proofreadpage_source' => 'ⴰⵖⴱⴰⵍⵓ',
 	'proofreadpage-section-tools' => 'ⵉⵎⴰⵙⵙⵏ ⵓⵙⵉⵙⴷⵉⴷ',
+	'proofreadpage-group-other' => 'ⵏⵉⴹⵏ',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
