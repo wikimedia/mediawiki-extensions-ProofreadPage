@@ -105,7 +105,7 @@ class ApiQueryProofread extends ApiQueryBase {
 
 	public function getExamples() {
 		return array(
-			'api.php?action=query&generator=allpages&gapnamespace=250&prop=proofread'
+			'api.php?action=query&generator=allpages&gapnamespace=' . ProofreadPage::getPageNamespaceId() . '&prop=proofread'
 		);
 	}
 
