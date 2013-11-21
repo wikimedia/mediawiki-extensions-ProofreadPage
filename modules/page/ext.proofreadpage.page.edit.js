@@ -132,50 +132,6 @@
 								$zoomImage.prpZoom( 'reset' );
 							}
 						}
-					},
-					'move-up': {
-						labelMsg: 'proofreadpage-button-pan-up-label',
-						type: 'button',
-						icon: iconPath + 'Button_pan_up.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								$zoomImage.prpZoom( 'moveUp' );
-							}
-						}
-					},
-					'move-down': {
-						labelMsg: 'proofreadpage-button-pan-down-label',
-						type: 'button',
-						icon: iconPath + 'Button_pan_down.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								$zoomImage.prpZoom( 'moveDown' );
-							}
-						}
-					},
-					'move-left': {
-						labelMsg: 'proofreadpage-button-pan-left-label',
-						type: 'button',
-						icon: iconPath + 'Button_pan_left.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								$zoomImage.prpZoom( 'moveLeft' );
-							}
-						}
-					},
-					'move-right': {
-						labelMsg: 'proofreadpage-button-pan-right-label',
-						type: 'button',
-						icon: iconPath + 'Button_pan_right.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								$zoomImage.prpZoom( 'moveRight' );
-							}
-						}
 					}
 				}
 			},
