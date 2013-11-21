@@ -47,7 +47,7 @@ class ProofreadPageViewAction extends ViewAction {
 			$this->page->view();
 			return;
 		}
-		$page = new ProofreadPagePage( $wikiPage->getTitle(), $content );
+		$page = ProofreadPagePage::newFromTitle( $wikiPage->getTitle() );
 		$out = $this->getOutput();
 
 		//render HTML
@@ -64,5 +64,11 @@ class ProofreadPageViewAction extends ViewAction {
 		$out->addJsConfigVars( array(
 			'prpPageQuality' => $content->getLevel()->getLevel()
 		) );
+
+		//custom CSS
+		$css = $page->getCustomCss();
+		if ( $css !== '' ) {
+			$out->addInlineStyle( $css );
+		}
 	}
 }

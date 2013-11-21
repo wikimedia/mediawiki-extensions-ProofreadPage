@@ -33,12 +33,6 @@ class ProofreadPagePage {
 	 * @var Title
 	 */
 	protected $title;
-
-	/**
-	 * @var ProofreadPageContent content of the page
-	 */
-	protected $content;
-
 	/**
 	 * @var ProofreadIndexPage|null index related to the page
 	 */
@@ -51,13 +45,11 @@ class ProofreadPagePage {
 
 	/**
 	 * Constructor
-	 * @param $title Title Reference to a Title object.
-	 * @param $content ProofreadPageContent content of the page. Warning: only done for EditProofreadPagePage use.
-	 * @param $index ProofreadIndexPage index related to the page.
+	 * @param $title Title Reference to a Title object
+	 * @param $index ProofreadIndexPage index related to the page
 	 */
-	public function __construct( Title $title, ProofreadPageContent $content = null, ProofreadIndexPage $index = null ) {
+	public function __construct( Title $title, ProofreadIndexPage $index = null ) {
 		$this->title = $title;
-		$this->content = $content;
 		$this->index = $index;
 	}
 
@@ -67,8 +59,9 @@ class ProofreadPagePage {
 	 * @return ProofreadPagePage
 	 */
 	public static function newFromTitle( Title $title ) {
-		return new self( $title, null, null );
+		return new self( $title );
 	}
+
 	/**
 	 * Returns Title of the index page
 	 * @return Title
@@ -154,66 +147,6 @@ class ProofreadPagePage {
 	}
 
 	/**
-	 * Return content of the page
-	 * @return ProofreadPageContent
-	 */
-	public function getContent() {
-		if ( $this->content === null ) {
-			$contentHandler = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
-
-			$rev = Revision::newFromTitle( $this->title );
-			if ( $rev === null ) {
-				$this->content = $contentHandler->makeEmptyContent();
-			} else {
-				$this->content = $rev->getContent();
-				if( $this->content->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
-					$this->content = $contentHandler->unserializeContent( $this->content->serialize() );
-				}
-			}
-		}
-		return $this->content;
-	}
-
-	/**
-	 * Return content of the page initialised for edition
-	 * @return ProofreadPageContent
-	 */
-	public function getContentForEdition() {
-		$content = $this->getContent();
-
-		if ( $content->isEmpty() && !$this->title->exists() ) {
-			$index = $this->getIndex();
-			if ( $index ) {
-				$params = array(
-					'pagenum' => $index->getDisplayedPageNumber( $this->getTitle() )
-				);
-				$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
-				$body = '';
-				$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
-
-				//Extract text layer
-				$image = $index->getImage();
-				$pageNumber = $this->getPageNumber();
-				if ( $image && $pageNumber !== null && $image->exists() ) {
-					$text = $image->getHandler()->getPageText( $image, $pageNumber );
-					if ( $text ) {
-						$text = preg_replace( "/(\\\\n)/", "\n", $text );
-						$body = preg_replace( "/(\\\\\d*)/", '', $text );
-					}
-				}
-				$content = new ProofreadPageContent(
-					new WikitextContent( $header ),
-					new WikitextContent( $body ),
-					new WikitextContent( $footer ),
-					new ProofreadPageLevel()
-				);
-			}
-		}
-		return $content;
-	}
-
-
-	/**
 	 * Return the scan image width for display
 	 * @return integer
 	 */
@@ -234,15 +167,15 @@ class ProofreadPagePage {
 
 	/**
 	 * Return custom CSS for the page
+	 * Is protected against XSS
 	 * @return string
-	 * @todo use it with ParserOutput::addInlineStyle but fix possible XSS issue
 	 */
 	public function getCustomCss() {
 		$index = $this->getIndex();
 		if ( $index ) {
 			$css = $index->getIndexEntry( 'css' );
 			if ( $css !== null ) {
-				return trim( $css->getStringValue() );
+				return Sanitizer::escapeHtmlAllowEntities( Sanitizer::checkCss( $css->getStringValue() ) );
 			}
 		}
 

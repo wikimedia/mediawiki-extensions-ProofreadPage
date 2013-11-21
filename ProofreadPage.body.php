@@ -128,10 +128,6 @@ class ProofreadPage {
 			$editor = new EditProofreadIndexPage( $article );
 			$editor->edit();
 			return false;
-		} elseif ( $article->getTitle()->inNamespace( self::getPageNamespaceId() ) ) {
-			$editor = new EditProofreadPagePage( $article );
-			$editor->edit();
-			return false;
 		} else {
 			return true;
 		}
@@ -680,6 +676,42 @@ class ProofreadPage {
 $void_cell
 </tr></table>";
 		$out->setSubtitle( $out->getSubtitle() . $output );
+		return true;
+	}
+
+	/**
+	 * Make validation of the content in the edit API
+	 * @param $editPage EditPage
+	 * @param $text string
+	 * @param $resultArr array
+	 * @return bool
+	 */
+	public static function onAPIEditBeforeSave( EditPage $editPage, $text, array &$resultArr ) {
+		if ( $editPage->contentModel !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+			return true;
+		}
+
+		$article = $editPage->getArticle();
+		$user = $article->getContext()->getUser();
+		$oldContent = $article->getPage()->getContent( Revision::FOR_THIS_USER, $user );
+		$newContent = ContentHandler::makeContent( $text, $editPage->getTitle(), $editPage->contentModel, $editPage->contentFormat );
+
+		if ( !$newContent->isValid() ) {
+			$resultArr['badpage'] = wfMessage( 'proofreadpage_badpagetext' )->text();
+			return false;
+		}
+
+		$oldLevel = $oldContent->getLevel();
+		$newLevel = $newContent->getLevel();
+		//if the user change the level, the change should be allowed and the new User should be the editing user
+		if (
+			!$newLevel->equals( $oldLevel ) &&
+			( $newLevel->getUser()->getName() !== $user->getName() || !$oldLevel->isChangeAllowed( $newLevel ) )
+		) {
+			$resultArr['notallowed'] = wfMessage( 'proofreadpage_notallowedtext' )->text();
+			return false;
+		}
+
 		return true;
 	}
 
