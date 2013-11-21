@@ -120,6 +120,9 @@ $wgResourceModules += array(
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'styles'  => 'page/ext.proofreadpage.page.css',
 		'scripts' => 'page/ext.proofreadpage.page.js',
+		'skinStyles' => array(
+			'vector' => 'page/ext.proofreadpage.page.vector.css',
+		),
 		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 	'ext.proofreadpage.page.edit' => $prpResourceTemplate + array(

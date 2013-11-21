@@ -14,14 +14,20 @@
 	var $zoomImage;
 
 	/**
+	 * The edit form
+	 * @type {jQuery}
+	 */
+	var $editForm;
+
+	/**
 	 * Show or hide header and footer areas
 	 *
 	 * @param speed string speed of the toogle. May be 'fast', 'slow' or undefined
 	 */
 	function toggleHeaders( speed ) {
-		$( '.prp-page-edit-header' ).toggle( speed );
-		$( '.prp-page-edit-body label' ).toggle( speed );
-		$( '.prp-page-edit-footer' ).toggle( speed );
+		$editForm.find( '.prp-page-edit-header' ).toggle( speed );
+		$editForm.find( '.prp-page-edit-body label' ).toggle( speed );
+		$editForm.find( '.prp-page-edit-footer' ).toggle( speed );
 	}
 
 	/**
@@ -35,12 +41,12 @@
 		var $container = $zoomImage.parent();
 
 		if( isLayoutHorizontal ) {
-			$container.appendTo( '#editform .prp-page-container' );
+			$container.appendTo( $editForm.find( '.prp-page-container' ) );
 
 			$container.css( {
 				width: ''
 			} );
-			$( '#editform' ).find( '.prp-page-content' ).css( {
+			$editForm.find( '.prp-page-content' ).css( {
 				width: ''
 			} );
 
@@ -49,14 +55,14 @@
 			isLayoutHorizontal = false;
 
 		} else {
-			$container.insertBefore( '#editform' );
+			$container.insertBefore( $editForm );
 
 			$container.css( {
 				width: '100%',
 				overflow: 'auto',
 				height: $( window ).height() / 3 + 'px'
 			} );
-			$( '#editform' ).find( '.prp-page-content' ).css( {
+			$editForm.find( '.prp-page-content' ).css( {
 				width: '100%'
 			} );
 
@@ -87,7 +93,7 @@
 	function setupPageQuality() {
 		$( 'input[name="wpQuality"]' ).click( function() {
 			var text = mw.msg( 'proofreadpage_quality' + this.value + '_category' );
-			$( 'input#wpSummary' ).val( '/* ' + text + ' */ ' );
+			$( '#wpSummary' ).val( '/* ' + text + ' */ ' );
 		} );
 	}
 
@@ -252,9 +258,9 @@
 			return;
 		}
 		mw.loader.using( 'ext.wikiEditor', function() {
-			$( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
-			$( '.wikiEditor-oldToolbar' ).after( $( '.wikiEditor-ui' ) );
-			$( '.wikiEditor-ui-text' ).append( $( '#editform' ).find( '.prp-page-container' ) );
+			$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
+			$editForm.find( '.wikiEditor-oldToolbar' ).after( $editForm.find( '.wikiEditor-ui' ) );
+			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 		} );
 	}
 
@@ -262,8 +268,11 @@
 	 * Init global variables of the script
 	 */
 	function initEnvironment() {
+		if( $editForm === undefined ) {
+			$editForm = $( '#editform' );
+		}
 		if( $zoomImage === undefined ) {
-			$zoomImage = $( '#editform' ).find( '.prp-page-image img' );
+			$zoomImage = $editForm.find( '.prp-page-image img' );
 		}
 	}
 
