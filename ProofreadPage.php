@@ -115,6 +115,7 @@ $wgResourceModules += array(
 	),
 	'ext.proofreadpage.base' => $prpResourceTemplate + array(
 		'styles'  => 'ext.proofreadpage.base.css',
+		'targets' => array( 'mobile', 'desktop' ),
 	),
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'styles'  => 'page/ext.proofreadpage.page.css',
