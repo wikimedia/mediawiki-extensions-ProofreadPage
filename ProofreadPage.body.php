@@ -101,14 +101,29 @@ class ProofreadPage {
 	}
 
 	/**
+	 * Set up content handlers
+	 *
+	 * @param Title $title the title page
+	 * @param string $model the content model for the page
+	 * @return boolean if we have to continue the research for a content handler
+	 */
+	public static function onContentHandlerDefaultModelFor( Title $title, &$model ) {
+		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
+			$model = CONTENT_MODEL_PROOFREAD_PAGE;
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
 	 * Set up our custom edition system.
 	 *
 	 * @param Article $article  being edited
 	 * @param User $user User performing the edit
 	 * @return boolean hook return value
 	 */
-	public static function onCustomEditor( $article, $user ) {
-		global $request;
+	public static function onCustomEditor( Article $article, User $user ) {
 		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) { //TODO ExternalEditor case
 			$editor = new EditProofreadIndexPage( $article );
 			$editor->edit();
@@ -125,9 +140,8 @@ class ProofreadPage {
 	 * @return boolean hook return value
 	 */
 	public static function onParserFirstCallInit( $parser ) {
-		$parser->setHook( 'pagelist', array( __CLASS__, 'renderPageList' ) );
-		$parser->setHook( 'pages', array( __CLASS__, 'renderPages' ) );
-		$parser->setHook( 'pagequality', array( __CLASS__, 'pageQuality' ) );
+		$parser->setHook( 'pagelist', array( 'ProofreadPageRenderer', 'renderPageList' ) );
+		$parser->setHook( 'pages', array( 'ProofreadPageRenderer', 'renderPages' ) );
 		return true;
 	}
 
@@ -180,129 +194,13 @@ class ProofreadPage {
 		$out->proofreadPageDone = true;
 		$title = $out->getTitle();
 
-		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
-			if ( preg_match( "/^$page_namespace:(.*?)(\/(.*?)|)$/", $out->getTitle()->getPrefixedText(), $m ) ) {
-				self::preparePage( $out, $m, $isEdit );
-			}
-		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			if( !$isEdit ) {
-				$out->addModules( 'ext.proofreadpage.base' );
+				$out->addModuleStyles( 'ext.proofreadpage.base' );
 			}
 		} elseif ( $title->inNamespace( NS_MAIN ) ) {
 			self::prepareArticle( $out );
 		}
-
-		return true;
-	}
-
-	/**
-	 * @param $out OutputPage
-	 * @param $m
-	 * @param $isEdit
-	 * @return bool
-	 */
-	private static function preparePage( $out, $m, $isEdit ) {
-		global $wgUser, $wgExtensionAssetsPath, $wgContLang;
-
-		$pageTitle = $out->getTitle();
-
-		if ( !isset( $pageTitle->prpIndexPage ) ) {
-			self::loadIndex( $pageTitle );
-		}
-
-		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
-		if ( !$imageTitle ) {
-			return true;
-		}
-
-		$fileName = null;
-		$filePage = null;
-
-		$image = wfFindFile( $imageTitle );
-		if ( $image && $image->exists() ) {
-			$fileName = $imageTitle->getPrefixedText();
-
-			$width = $image->getWidth();
-			$height = $image->getHeight();
-			if ( $m[2] ) {
-				$filePage = $wgContLang->parseFormattedNumber( $m[3] );
-
-				$params = array( 'width' => $width, 'page' => $filePage );
-				$handler = $image->getHandler();
-				if ( $handler && $handler->normaliseParams( $image, $params ) ) {
-					$thumbName = $image->thumbName( $params );
-					$fullURL = $image->getThumbUrl( $thumbName );
-				} else {
-					$fullURL = $image->getViewURL();
-				}
-			} else {
-				$fullURL = $image->getViewURL();
-			}
-			$scan_link = Html::element( 'a',
-				array(
-					'href' => $fullURL,
-					'title' =>  $out->msg( 'proofreadpage_image' )->text()
-				),
-				$out->msg( 'proofreadpage_image' )->text()
-			);
-		} else {
-			$width = 0;
-			$height = 0;
-			$fullURL = '';
-			$scan_link = '';
-		}
-
-		$path = $wgExtensionAssetsPath . '/ProofreadPage';
-		$jsVars = array(
-			'proofreadPageWidth' => intval( $width ),
-			'proofreadPageHeight' => intval( $height ),
-			'proofreadPageURL' => $fullURL,
-			'proofreadPageFileName' => $fileName,
-			'proofreadPageFilePage' => $filePage,
-			'proofreadPageIsEdit' => intval( $isEdit ),
-			'proofreadPageScanLink' => $scan_link,
-			'proofreadPageAddButtons' => $wgUser->isAllowed( 'pagequality' ),
-			'proofreadPageUserName' => $wgUser->getName(),
-			'proofreadPageIndexLink' => '',
-			'proofreadPageNextLink' => '',
-			'proofreadPagePrevLink' => '',
-			'proofreadPageEditWidth' => '',
-			'proofreadPageHeader' => '',
-			'proofreadPageFooter' => '',
-			'proofreadPageCss' => ''
-		);
-
-		$indexPage = $out->getTitle()->prpIndexPage;
-		if ( $indexPage !== null ) {
-			list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $out->getTitle() );
-			if ( $prevTitle !== null ) {
-				$jsVars['proofreadPagePrevLink'] = Linker::link( $prevTitle,
-					Html::element( 'img', array( 'src' => $path . '/leftarrow.png',
-						'alt' => $out->msg( 'proofreadpage_nextpage' )->text(), 'width' => 15, 'height' => 15 ) ),
-					array( 'title' => $out->msg( 'proofreadpage_prevpage' )->text() ) );
-			}
-			if ( $nextTitle !== null ) {
-				$jsVars['proofreadPageNextLink'] = Linker::link( $nextTitle,
-					Html::element( 'img', array( 'src' => $path . '/rightarrow.png',
-						'alt' => $out->msg( 'proofreadpage_nextpage' )->text(), 'width' => 15, 'height' => 15 ) ),
-					array( 'title' => $out->msg( 'proofreadpage_nextpage' )->text() ) );
-			}
-			$jsVars['proofreadPageIndexLink'] = Linker::link( $indexPage->getTitle(),
-				Html::element( 'img', array(	'src' => $path . '/uparrow.png',
-					'alt' => $out->msg( 'proofreadpage_index' )->text(), 'width' => 15, 'height' => 15 ) ),
-				array( 'title' => $out->msg( 'proofreadpage_index' )->text() ) );
-
-			list( $header, $footer, $css, $editWidth ) = $indexPage->getIndexDataForPage( $pageTitle );
-			$jsVars['editWidth'] = $editWidth;
-			$jsVars['proofreadPageHeader'] = $header;
-			$jsVars['proofreadPageFooter'] = $footer;
-			$jsVars['proofreadPageCss'] = $css;
-		}
-
-		$out->addJsConfigVars( $jsVars );
-
-		$out->addModules( 'ext.proofreadpage.page' );
 
 		return true;
 	}
@@ -331,7 +229,6 @@ class ProofreadPage {
 		global $wgTitle;
 
 		$page_namespace_id = self::getPageNamespaceId();
-		$page_namespace = MWNamespace::getCanonicalName( $page_namespace_id );
 		$in_index_namespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
 
 		$values = array();
@@ -382,7 +279,6 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onImageOpenShowImageInlineBefore( &$imgpage, &$out ) {
-		list( $page_namespace, $index_namespace ) = self::getPageAndIndexNamespace();
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
 			return true;
@@ -456,435 +352,6 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Add the pagequality category.
-	 * @todo FIXME: display whether page has been proofread by the user or by someone else
-	 * @param $input
-	 * @param $args array
-	 * @param $parser Parser
-	 * @return string
-	 */
-	public static function pageQuality( $input, $args, $parser ) {
-
-		if ( !$parser->getTitle()->inNamespace( self::getPageNamespaceId() ) ) {
-			return '';
-		}
-
-		$q = $args['level'];
-		if( !in_array( $q, array( '0', '1', '2', '3', '4' ) ) ) {
-			return '';
-		}
-		$message = "<div id=\"pagequality\" width=100% class=quality$q>" .
-			wfMessage( "proofreadpage_quality{$q}_message" )->inContentLanguage()->text() . '</div>';
-		$out = '__NOEDITSECTION__[[Category:' .
-			wfMessage( "proofreadpage_quality{$q}_category" )->inContentLanguage()->text() . ']]';
-		return $parser->recursiveTagParse( $out . $message );
-	}
-
-	/**
-	 * Parser hook for index pages
-	 * Display a list of coloured links to pages
-	 * @param $input
-	 * @param $args array
-	 * @param $parser Parser
-	 * @return string
-	 */
-	public static function renderPageList( $input, $args, $parser ) {
-		global $wgContLang;
-
-		$title = $parser->getTitle();
-		if ( !$title->inNamespace( self::getIndexNamespaceId() ) ) {
-			return '';
-		}
-		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $title->getText() );
-		if ( !$imageTitle ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
-		}
-
-		$image = wfFindFile( $imageTitle );
-		if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
-		}
-
-		$return = '';
-
-		$name = $imageTitle->getDBkey();
-		$count = $image->pageCount();
-
-		$from = array_key_exists( 'from', $args ) ? $args['from'] : 1;
-		$to = array_key_exists( 'to', $args ) ? $args['to'] : $count;
-
-		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
-		}
-		if( ( $from > $to ) || ( $from < 1 ) || ( $to < 1 ) || ( $to > $count ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
-		}
-
-		for ( $i = $from; $i < $to + 1; $i++ ) {
-			list( $view, $links, $mode ) = self::pageNumber( $i, $args );
-
-			if ( $mode == 'highroman' || $mode == 'roman' ) {
-				$view = '&#160;' . $view;
-			}
-
-			$n = strlen( $count ) - mb_strlen( $view );
-			if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
-				$txt = '<span style="visibility:hidden;">';
-				$pad = $wgContLang->formatNum( 0, true );
-				for ( $j = 0; $j < $n; $j++ ) {
-					$txt = $txt . $pad;
-				}
-				$view = $txt . '</span>' . $view;
-			}
-			$title = self::getPageTitle( $name, $i );
-
-			if ( !$links || !$title ) {
-				$return .= $view . ' ';
-			} else {
-				$return .= '[[' . $title->getPrefixedText() . '|' . $view . ']] ';
-			}
-		}
-		$return = $parser->recursiveTagParse( $return );
-		return $return;
-	}
-
-	/**
-	 * Parser hook that includes a list of pages.
-	 *  parameters : index, from, to, header
-	 * @param $input
-	 * @param $args array
-	 * @param $parser Parser
-	 * @return string
-	 */
-	public static function renderPages( $input, $args, $parser ) {
-		global $wgContLang;
-
-		$pageNamespaceId = self::getPageNamespaceId();
-
-		// abort if this is nested <pages> call
-		if ( isset( $parser->proofreadRenderingPages ) && $parser->proofreadRenderingPages ) {
-			return '';
-		}
-
-		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
-		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
-		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
-		$include = array_key_exists( 'include', $args ) ? $args['include'] : null;
-		$exclude = array_key_exists( 'exclude', $args ) ? $args['exclude'] : null;
-		$step = array_key_exists( 'step', $args ) ? $args['step'] : null;
-		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
-		$tosection = array_key_exists( 'tosection', $args ) ? $args['tosection'] : null;
-		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
-		$onlysection = array_key_exists( 'onlysection', $args ) ? $args['onlysection'] : null;
-
-		// abort if the tag is on an index page
-		if ( $parser->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) {
-			return '';
-		}
-		// abort too if the tag is in the page namespace
-		if ( $parser->getTitle()->inNamespace( $pageNamespaceId ) ) {
-			return '';
-		}
-		// ignore fromsection and tosection arguments if onlysection is specified
-		if ( $onlysection !== null ) {
-			$fromsection = null;
-			$tosection = null;
-		}
-
-		if( !$index ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_index_expected' )->inContentLanguage()->escaped() . '</strong>';
-		}
-		$index_title = Title::makeTitleSafe( self::getIndexNamespaceId(), $index );
-		if( !$index_title || !$index_title->exists() ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_index' )->inContentLanguage()->escaped() . '</strong>';
-		}
-		$indexPage = ProofreadIndexPage::newFromTitle( $index_title );
-
-		$parser->getOutput()->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
-
-		$out = '';
-
-		list( $links, $params ) = $indexPage->getPages();
-
-		if( $from || $to || $include ) {
-			$pages = array();
-
-			if( $links === null ) {
-				$from = ( $from === null ) ? null : $wgContLang->parseFormattedNumber( $from );
-				$to = ( $to === null ) ? null : $wgContLang->parseFormattedNumber( $to );
-				$step = ( $step === null ) ? null : $wgContLang->parseFormattedNumber( $step );
-
-				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
-				if ( !$imageTitle ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
-				}
-				$image = wfFindFile( $imageTitle );
-				if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
-				}
-				$count = $image->pageCount();
-
-				if( !$step ) {
-					$step = 1;
-				}
-				if( !is_numeric( $step ) || $step < 1 ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
-				}
-
-				$pagenums = array();
-
-				//add page selected with $include in pagenums
-				if( $include ) {
-					$list = self::parse_num_list( $include );
-					if( $list  == null ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
-					}
-					$pagenums = $list;
-				}
-
-				//ad pages selected with from and to in pagenums
-				if( $from || $to ) {
-					if( !$from ) {
-						$from = 1;
-					}
-					if( !$to ) {
-						$to = $count;
-					}
-					if( !is_numeric( $from ) || !is_numeric( $to )  || !is_numeric( $step ) ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
-					}
-					if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
-					}
-
-					for( $i = $from; $i <= $to; $i++ ) {
-						$pagenums[$i] = $i;
-					}
-				}
-
-				//remove excluded pages form $pagenums
-				if( $exclude ) {
-					$excluded = self::parse_num_list( $exclude );
-					if( $excluded  == null ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
-					}
-					$pagenums = array_diff( $pagenums, $excluded );
-				}
-
-				if( count($pagenums)/$step > 1000 ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_interval_too_large' )->inContentLanguage()->escaped() . '</strong>';
-				}
-
-				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order.
-				if( reset( $pagenums ) > $count ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
-				}
-
-				//Create the list of pages to translude. the step system start with the smaller pagenum
-				$mod = reset( $pagenums ) % $step;
-				foreach( $pagenums as $num ) {
-					if( $step == 1 || $num % $step == $mod ) {
-						list( $pagenum, $links, $mode ) = self::pageNumber( $num, $params );
-						$pages[] = array( self::getPageTitle( $index, $num ), $pagenum );
-					}
-				}
-
-				list( $from_page, $from_pagenum ) = reset( $pages );
-				list( $to_page, $to_pagenum ) = end( $pages );
-
-			} else {
-				if( $from ) {
-					$adding = false;
-				} else {
-					$adding = true;
-					$from_pagenum = $links[0][1];
-				}
-
-				$from_page = Title::makeTitleSafe( $pageNamespaceId, $from );
-				$to_page = Title::makeTitleSafe( $pageNamespaceId, $to );
-				for( $i = 0; $i < count( $links ); $i++ ) {
-					$link = $links[$i][0];
-					$pagenum = $links[$i][1];
-					if( $from_page !== null && $from_page->equals( $link ) ) {
-						$adding = true;
-						$from_pagenum = $pagenum;
-					}
-					if( $adding ) {
-						$pages[] = array( $link, $pagenum );
-					}
-					if( $to_page !== null && $to_page->equals( $link ) ) {
-						$adding = false;
-						$to_pagenum = $pagenum;
-					}
-				}
-				if( !$to ) {
-					$to_pagenum = $links[count( $links[1] ) - 1][1];
-				}
-			}
-			// find which pages have quality0
-			$q0_pages = array();
-			if( !empty( $pages ) ) {
-				$pp = array();
-				foreach( $pages as $item ) {
-					list( $page, $pagenum ) = $item;
-					$pp[] = $page->getDBkey();
-				}
-				$cat = str_replace( ' ' , '_' , wfMessage( 'proofreadpage_quality0_category' )->inContentLanguage()->escaped() );
-				$res = ProofreadPageDbConnector::getPagesNameInCategory( $pp, $cat );
-
-				if( $res ) {
-					foreach ( $res as $o ) {
-						$q0_pages[] = $o->page_title;
-					}
-				}
-			}
-
-			// write the output
-			foreach( $pages as $item ) {
-				list( $page, $pagenum ) = $item;
-				if( in_array( $page->getDBKey(), $q0_pages ) ) {
-					$is_q0 = true;
-				} else {
-					$is_q0 = false;
-				}
-				$text = $page->getPrefixedText();
-				if( !$is_q0 ) {
-					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text . "|num=$pagenum}}</span>";
-				}
-				if( $from_page !== null && $page->equals( $from_page ) && $fromsection !== null ) {
-					$ts = '';
-					// Check if it is single page transclusion
-					if ( $to_page !== null && $page->equals( $to_page ) && $tosection !== null ) {
-						$ts = $tosection;
-					}
-					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts .'}}';
-				} elseif( $to_page !== null && $page->equals( $to_page ) && $tosection !== null ) {
-					$out .= '{{#lst:' . $text . '||' . $tosection . '}}';
-				} elseif ( $onlysection !== null ) {
-					$out .= '{{#lst:' . $text . '|' . $onlysection . '}}';
-				} else {
-					$out .= '{{:' . $text . '}}';
-				}
-				if( !$is_q0 ) {
-					$out.= "&#32;";
-				}
-			}
-		} else {
-			/* table of Contents */
-			$header = 'toc';
-			if( $links == null ) {
-				$firstpage = self::getPageTitle( $index, 1 );
-			} else {
-				$firstpage = $links[0][0];
-			}
-			if ( $firstpage !== null ) {
-				$parser->getOutput()->addTemplate(
-					$firstpage,
-					$firstpage->getArticleID(),
-					$firstpage->getLatestRevID()
-				);
-			}
-		}
-
-		if( $header ) {
-			if( $header == 'toc') {
-				$parser->getOutput()->is_toc = true;
-			}
-			$indexLinks = $indexPage->getLinksToMainNamespace();
-			$pageTitle = $parser->getTitle();
-			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
-			$h_out .= "|value=$header";
-			// find next and previous pages in list
-			for( $i = 0; $i < count( $indexLinks ); $i++ ) {
-				if( $pageTitle->equals( $indexLinks[$i][0] ) ) {
-					$current = '[[' . $indexLinks[$i][0]->getFullText() . '|' . $indexLinks[$i][1] . ']]';
-					break;
-				}
-			}
-			if( $i > 1 ) {
-				$prev = '[[' . $indexLinks[$i - 1][0]->getFullText() . '|' . $indexLinks[$i - 1][1] . ']]';
-			}
-			if( $i + 1 < count( $indexLinks ) ) {
-				$next = '[[' . $indexLinks[$i + 1][0]->getFullText() . '|' . $indexLinks[$i + 1][1] . ']]';
-			}
-			if( isset( $args['current'] ) ) {
-				$current = $args['current'];
-			}
-			if( isset( $args['prev'] ) ) {
-				$prev = $args['prev'];
-			}
-			if( isset( $args['next'] ) ) {
-				$next = $args['next'];
-			}
-			if( isset( $current ) ) {
-				$h_out .= "|current=$current";
-			}
-			if( isset( $prev ) ) {
-				$h_out .= "|prev=$prev";
-			}
-			if( isset( $next ) ) {
-				$h_out .= "|next=$next";
-			}
-			if( isset( $from_pagenum ) ) {
-				$h_out .= "|from=$from_pagenum";
-			}
-			if( isset( $to_pagenum ) ) {
-				$h_out .= "|to=$to_pagenum";
-			}
-			$attributes = $indexPage->getIndexEntriesForHeader();
-			foreach( $attributes as $attribute ) {
-				$key = strtolower( $attribute->getKey() );
-				if( array_key_exists( $key, $args ) ) {
-					$val = $args[$key];
-				} else {
-					$val = $attribute->getStringValue();
-				}
-				$h_out .= "|$key=$val";
-			}
-			$h_out .= '}}';
-			$out = $h_out . $out ;
-		}
-
-		// wrap the output in a div, to prevent the parser from inserting pararaphs
-		$out = "<div>\n$out\n</div>";
-		$parser->proofreadRenderingPages = true;
-		$out = $parser->recursiveTagParse( $out );
-		$parser->proofreadRenderingPages = false;
-		return $out;
-	}
-
-	/**
-	 * Parse a comma-separated list of pages. A dash indicates an interval of pages
-	 * example: 1-10,23,38
-	 * Return an array of pages, or null if the input does not comply to the syntax
-	 * @param $input string
-	 * @return array|null
-	 */
-	private static function parse_num_list($input) {
-		$input = str_replace(array(' ', '\t', '\n'), '', $input);
-		$list = explode( ',', $input );
-		$nums = array();
-		foreach( $list as $item ) {
-			if( is_numeric( $item ) ) {
-				$nums[$item] = $item;
-			} else {
-				$interval = explode( '-', $item );
-				if( count( $interval ) != 2
-					|| !is_numeric( $interval[0] )
-					|| !is_numeric( $interval[1] )
-					|| $interval[1] < $interval[0]
-				) {
-					return null;
-				}
-				for( $i = $interval[0]; $i <= $interval[1]; $i += 1 ) {
-					$nums[$i] = $i;
-				}
-			}
-		}
-		return $nums;
-	}
-
-	/**
 	 * Set is_toc flag (true if page is a table of contents)
 	 * @param $outputPage OutputPage
 	 * @param $parserOutput ParserOutput
@@ -900,51 +367,9 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Try to parse a page.
-	 * Return quality status of the page and username of the proofreader
-	 * Return -1 if the page cannot be parsed
-	 */
-	public static function parsePage( $text, $title ) {
-		global $wgUser;
-
-		$username = $wgUser->getName();
-		$page_regexp = "/^<noinclude>(.*?)<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s";
-		if( !preg_match( $page_regexp, $text, $m ) ) {
-			self::loadIndex( $title );
-			if ( $title->prpIndexPage !== null ) {
-				list( $header, $footer, $css, $editWidth ) = $title->prpIndexPage->getIndexDataForPage( $title );
-			} else {
-				$header = '';
-				$footer = '';
-			}
-			$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" /><div class=\"pagetext\">"
-				."$header\n\n\n</noinclude>$text<noinclude>\n$footer</div></noinclude>";
-			return array( -1, null, $new_text );
-		}
-
-		$header = $m[1];
-		$body = $m[2];
-		$footer = $m[3];
-
-		$header_regexp = "/^<pagequality level=\"(0|1|2|3|4)\" user=\"(.*?)\" \/>/";
-		if( preg_match( $header_regexp, $header, $m2 ) ) {
-			return array( intval($m2[1]), $m2[2], null );
-		}
-
-		$old_header_regexp = "/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}/is";
-		if( preg_match( $old_header_regexp, $header, $m3 ) ) {
-			return array( intval($m3[1]), $m3[3], null );
-		}
-
-		$new_text = "<noinclude><pagequality level=\"1\" user=\"$username\" />"
-			. "$header\n\n\n</noinclude>$body<noinclude>\n$footer</noinclude>";
-		return array( -1, null, $new_text );
-	}
-
-	/**
 	 * Updates index data for an index referencing the specified page.
-	 * @param $title Title: page title object
-	 * @param $deleted Boolean: indicates whether the page was deleted
+	 * @param $title Title page title object
+	 * @param $deleted boolean indicates whether the page was deleted
 	 */
 	private static function updateIndexOfPage( $title, $deleted = false ) {
 		self::loadIndex( $title );
@@ -953,9 +378,52 @@ class ProofreadPage {
 			$indexTitle->invalidateCache();
 			$index = new Article( $indexTitle );
 			if ( $index ) {
-				self::update_pr_index( $index, $deleted ? $title : null );
+				self::updatePrIndex( $index, $deleted ? $title : null );
 			}
 		}
+	}
+
+	/**
+	 * @param $article WikiPage
+	 * @return bool
+	 */
+	public static function onArticleSaveComplete( WikiPage &$article ) {
+		$title = $article->getTitle();
+
+		// if it's an index, update pr_index table
+		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {	//Move this part to EditProofreadIndexPage
+			ProofreadPage::updatePrIndex( $article );
+			return true;
+		}
+
+		// return if it is not a page
+		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
+			return true;
+		}
+
+		/* check if there is an index */
+		if ( !isset( $title->prpIndexPage ) ) {
+			ProofreadPage::loadIndex( $title );
+		}
+		if( $title->prpIndexPage === null ) {
+			return true;
+		}
+
+		/**
+		 * invalidate the cache of the index page
+		 */
+		$title->prpIndexPage->getTitle()->invalidateCache();
+
+		/**
+		 * update pr_index iteratively
+		 */
+		$indexId = $title->prpIndexPage->getTitle()->getArticleID();
+		$x = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
+		if( $x ) {
+			$a = ProofreadIndexDbConnector::replaceIndexById( $x, $indexId, $article );
+		}
+
+		return true;
 	}
 
 	/**
@@ -990,7 +458,7 @@ class ProofreadPage {
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$index = new Article( $title );
 			if ( $index ) {
-				self::update_pr_index( $index );
+				self::updatePrIndex( $index );
 			}
 
 		// Process Page restoration.
@@ -1033,7 +501,7 @@ class ProofreadPage {
 			// Update index data.
 			$article = new Article( $nt );
 			if( $article ) {
-				self::update_pr_index( $article );
+				self::updatePrIndex( $article );
 			}
 		}
 		return true;
@@ -1047,7 +515,7 @@ class ProofreadPage {
 	public static function onArticlePurge( $article ) {
 		$title = $article->getTitle();
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			self::update_pr_index( $article );
+			self::updatePrIndex( $article );
 			return true;
 		}
 		return true;
@@ -1058,7 +526,7 @@ class ProofreadPage {
 	 * @param $index Article
 	 * @param $deletedpage Title|null
 	 */
-	public static function update_pr_index( $index, $deletedPage = null ) {
+	public static function updatePrIndex( $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
 		$indexId = $index->getID();
 		$pageNamespaceId = self::getPageNamespaceId();
@@ -1212,6 +680,42 @@ $void_cell
 	}
 
 	/**
+	 * Make validation of the content in the edit API
+	 * @param $editPage EditPage
+	 * @param $text string
+	 * @param $resultArr array
+	 * @return bool
+	 */
+	public static function onAPIEditBeforeSave( EditPage $editPage, $text, array &$resultArr ) {
+		if ( $editPage->contentModel !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+			return true;
+		}
+
+		$article = $editPage->getArticle();
+		$user = $article->getContext()->getUser();
+		$oldContent = $article->getPage()->getContent( Revision::FOR_THIS_USER, $user );
+		$newContent = ContentHandler::makeContent( $text, $editPage->getTitle(), $editPage->contentModel, $editPage->contentFormat );
+
+		if ( !$newContent->isValid() ) {
+			$resultArr['badpage'] = wfMessage( 'proofreadpage_badpagetext' )->text();
+			return false;
+		}
+
+		$oldLevel = $oldContent->getLevel();
+		$newLevel = $newContent->getLevel();
+		//if the user change the level, the change should be allowed and the new User should be the editing user
+		if (
+			!$newLevel->equals( $oldLevel ) &&
+			( $newLevel->getUser()->getName() !== $user->getName() || !$oldLevel->isChangeAllowed( $newLevel ) )
+		) {
+			$resultArr['notallowed'] = wfMessage( 'proofreadpage_notallowedtext' )->text();
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Add ProofreadPage preferences to the preferences menu
 	 * @param $user
 	 * @param $preferences array
@@ -1237,25 +741,6 @@ $void_cell
 	}
 
 	/**
-	 * Adds an image link from pages in Page namespace, so they appear
-	 * in the file usage.
-	 * @param $linksUpdate LinksUpdate
-	 * @return bool
-	 */
-	public static function onLinksUpdateConstructed( $linksUpdate ) {
-		$title = $linksUpdate->getTitle();
-		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			// Extract title from multipaged documents
-			$parts = explode( '/', $title->getText(), 2 );
-			$imageTitle = Title::makeTitle( NS_FILE, $parts[0] );
-			// Add to list of images
-			$linksUpdate->mImages[$imageTitle->getDBkey()] = 1;
-		}
-		return true;
-	}
-
-
-	/**
 	 * Adds canonical namespaces.
 	 */
 	public static function addCanonicalNamespaces( &$list ) {
@@ -1263,6 +748,106 @@ $void_cell
 		$list[self::getPageNamespaceId() + 1] = 'Page_talk';
 		$list[self::getIndexNamespaceId()] = 'Index';
 		$list[self::getIndexNamespaceId() + 1] = 'Index_talk';
+		return true;
+	}
+
+
+	/**
+	 * @param $updater DatabaseUpdater
+	 * @return bool
+	 */
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+		global $wgContentHandlerUseDB;
+
+		$dir = __DIR__ . '/sql/';
+
+		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql', true );
+
+		//fix issue with content type hardcoded in database
+		if( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
+			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadPagePagesContentModel' );
+		}
+
+		return true;
+	}
+
+	/**
+	 * Add the links to previous, next, index page and scan image to Page: pages.
+	 * @param $skin SkinTemplate object
+	 * @param $links Structured navigation links
+	 */
+	public static function onSkinTemplateNavigation( &$skin, &$links ) {
+		global $wgOut;
+
+		$title = $wgOut->getTitle();
+		if( !$title->inNamespace( self::getPageNamespaceId() ) ) {
+			return true;
+		}
+		$page = ProofreadPagePage::newFromTitle( $title );
+
+		//Image link
+		$image = $page->getImage();
+		if ( $image ) {
+			$transformAttributes = array(
+				'width' => $image->getWidth()
+			);
+			if ( $image->isMultipage() ) {
+				$pageNumber = $page->getPageNumber();
+				if ( $pageNumber !== null ) {
+					$transformAttributes['page'] = $pageNumber;
+				}
+			}
+			$handler = $image->getHandler();
+			if ( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
+				$thumbName = $image->thumbName( $transformAttributes );
+				$imageUrl = $image->getThumbUrl( $thumbName );
+				$links['namespaces']['proofreadPageScanLink'] = array(
+					'class' => '',
+					'href' => $imageUrl,
+					'text' => wfMessage( 'proofreadpage_image' )->plain()
+				);
+			}
+		}
+
+		//Prev, Next and Index links
+		$indexPage = $page->getIndex();
+		if ( $indexPage ) {
+			list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $page->getTitle() );
+
+			if ( $prevTitle !== null ) {
+				if ( !$prevTitle->exists() ) {
+					$prevLink = $prevTitle->getEditURL();
+				} else {
+					$prevLink = $prevTitle->getLinkUrl();
+				}
+				$links['namespaces']['proofreadPagePrevLink'] = array(
+					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+					'href' => $prevLink,
+					'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
+				);
+			}
+
+			if ( $nextTitle !== null ) {
+				if ( !$nextTitle->exists() ) {
+					$nextLink = $nextTitle->getEditURL();
+				} else {
+					$nextLink = $nextTitle->getLinkUrl();
+				}
+				$links['namespaces']['proofreadPageNextLink'] = array(
+					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+					'href' => $nextLink,
+					'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
+				);
+			}
+
+			$indexLink = $indexPage->getTitle()->getLinkUrl();
+			$links['namespaces']['proofreadPageIndexLink'] = array(
+				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+				'href' => $indexLink,
+				'text' => wfMessage( 'proofreadpage_index' )->plain()
+			);
+		}
+
 		return true;
 	}
 }

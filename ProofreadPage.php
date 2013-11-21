@@ -29,26 +29,38 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * Exemple (with default namespace ids):
  * $wgProofreadPageNamespaceIds = array(
  * 	'page' => 250,
- * 	'page' => 252
+ * 	'index' => 252
  * );
  */
 $wgProofreadPageNamespaceIds = array();
 
+
+//Constants
+define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
 
 $dir = __DIR__ . '/';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
-$wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/ProofreadPageDbConnector.php';
 $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
+$wgAutoloadClasses['ProofreadPageRenderer'] = $dir . 'includes/ProofreadPageRenderer.php';
 
 $wgAutoloadClasses['EditProofreadIndexPage'] = $dir . 'includes/index/EditProofreadIndexPage.php';
-$wgAutoloadClasses['EditProofreadPagePage'] = $dir . 'includes/page/EditProofreadPagePage.php';
 $wgAutoloadClasses['ProofreadIndexEntry'] = $dir . 'includes/index/ProofreadIndexEntry.php';
 $wgAutoloadClasses['ProofreadIndexValue'] = $dir . 'includes/index/ProofreadIndexValue.php';
 $wgAutoloadClasses['ProofreadIndexPage'] = $dir . 'includes/index/ProofreadIndexPage.php';
 $wgAutoloadClasses['ProofreadIndexDbConnector'] = $dir . 'includes/index/ProofreadIndexDbConnector.php';
+
+$wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/ProofreadPageDbConnector.php';
+$wgAutoloadClasses['EditProofreadPagePage'] = $dir . 'includes/page/EditProofreadPagePage.php';
+$wgAutoloadClasses['ProofreadPagePage'] = $dir.'includes/page/ProofreadPagePage.php';
+$wgAutoloadClasses['ProofreadPageContent'] = $dir.'includes/page/ProofreadPageContent.php';
+$wgAutoloadClasses['ProofreadPageLevel'] = $dir.'includes/page/ProofreadPageLevel.php';
+$wgAutoloadClasses['ProofreadPageContentHandler'] = $dir.'includes/page/ProofreadPageContentHandler.php';
+$wgAutoloadClasses['ProofreadPageEditAction'] = $dir . 'includes/page/ProofreadPageEditAction.php';
+$wgAutoloadClasses['ProofreadPageSubmitAction'] = $dir . 'includes/page/ProofreadPageSubmitAction.php';
+$wgAutoloadClasses['ProofreadPageViewAction'] = $dir . 'includes/page/ProofreadPageViewAction.php';
 
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
@@ -84,6 +96,9 @@ $wgAPIPropModules['proofread'] = 'ApiQueryProofread';
 $wgAutoloadClasses['ApiQueryProofreadInfo'] = $dir . 'ApiQueryProofreadInfo.php';
 $wgAPIMetaModules['proofreadinfo'] = 'ApiQueryProofreadInfo';
 
+//maintenance scripts
+$wgAutoloadClasses['FixProofreadPagePagesContentModel'] = $dir . 'maintenance/fixProofreadPagePagesContentModel.php';
+
 # Group allowed to modify pagequality
 $wgGroupPermissions['user']['pagequality'] = true;
 
@@ -93,19 +108,27 @@ $prpResourceTemplate = array(
 	'remoteExtPath' => 'ProofreadPage/modules'
 );
 $wgResourceModules += array(
+	'jquery.prpZoom' => $prpResourceTemplate + array(
+		'scripts' => 'jquery/jquery.prpZoom.js',
+		'dependencies' => array( 'jquery.ui.widget', 'jquery.ui.draggable' )
+	),
 	'ext.proofreadpage.base' => $prpResourceTemplate + array(
-		'styles'  => 'ext.proofreadpage.base/ext.proofreadpage.base.css',
+		'styles'  => 'ext.proofreadpage.base.css',
+		'targets' => array( 'mobile', 'desktop' ),
 	),
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.page/ext.proofreadpage.page.js',
-		'styles'  => 'ext.proofreadpage.page/ext.proofreadpage.page.css',
-		'dependencies' => array( 'ext.proofreadpage.base', 'mediawiki.legacy.wikibits', 'mediawiki.util' ),
+		'styles'  => 'page/ext.proofreadpage.page.css',
+		'scripts' => 'page/ext.proofreadpage.page.js',
+		'skinStyles' => array(
+			'vector' => 'page/ext.proofreadpage.page.vector.css',
+		),
+		'dependencies' => array( 'ext.proofreadpage.base' )
+	),
+	'ext.proofreadpage.page.edit' => $prpResourceTemplate + array(
+		'styles'  => 'page/ext.proofreadpage.page.edit.css',
+		'scripts' => 'page/ext.proofreadpage.page.edit.js',
+		'dependencies' => array( 'ext.proofreadpage.page', 'jquery.prpZoom', 'mediawiki.user' ),
 		'messages' => array(
-			'proofreadpage_header',
-			'proofreadpage_body',
-			'proofreadpage_footer',
-			'proofreadpage_toggleheaders',
-			'proofreadpage_page_status',
 			'proofreadpage_quality0_category',
 			'proofreadpage_quality1_category',
 			'proofreadpage_quality2_category',
@@ -123,36 +146,36 @@ $wgResourceModules += array(
 		)
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.article/ext.proofreadpage.article.js',
+		'scripts' => 'article/ext.proofreadpage.article.js',
 		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 	'ext.proofreadpage.index' => $prpResourceTemplate + array(
-		'scripts' => 'ext.proofreadpage.index/ext.proofreadpage.index.js',
-		'styles'  => 'ext.proofreadpage.index/ext.proofreadpage.index.css',
+		'scripts' => 'index/ext.proofreadpage.index.js',
+		'styles'  => 'index/ext.proofreadpage.index.css',
 		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.tipsy' )
 	),
 );
 
+//Hooks
 $wgHooks['SetupAfterCache'][] = 'ProofreadPageInit::initNamespaces';
 $wgHooks['ParserFirstCallInit'][] = 'ProofreadPage::onParserFirstCallInit';
 $wgHooks['BeforePageDisplay'][] = 'ProofreadPage::onBeforePageDisplay';
 $wgHooks['GetLinkColours'][] = 'ProofreadPage::onGetLinkColours';
 $wgHooks['ImageOpenShowImageInlineBefore'][] = 'ProofreadPage::onImageOpenShowImageInlineBefore';
-$wgHooks['EditPage::attemptSave'][] = 'EditProofreadPagePage::onEditPageAttemptSave';
-$wgHooks['ArticleSaveComplete'][] = 'EditProofreadPagePage::onArticleSaveComplete';
+$wgHooks['ArticleSaveComplete'][] = 'ProofreadPage::onArticleSaveComplete';
 $wgHooks['ArticleDelete'][] = 'ProofreadPage::onArticleDelete';
 $wgHooks['ArticleUndelete'][] = 'ProofreadPage::onArticleUndelete';
-$wgHooks['EditFormPreloadText'][] = 'EditProofreadPagePage::onEditFormPreloadText';
 $wgHooks['ArticlePurge'][] = 'ProofreadPage::onArticlePurge';
 $wgHooks['SpecialMovepageAfterMove'][] = 'ProofreadPage::onSpecialMovepageAfterMove';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadIndexDbConnector::onLoadExtensionSchemaUpdates';
-$wgHooks['EditPage::importFormData'][] = 'EditProofreadPagePage::onEditPageImportFormData';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'ProofreadPage::onLoadExtensionSchemaUpdates';
 $wgHooks['OutputPageParserOutput'][] = 'ProofreadPage::onOutputPageParserOutput';
 $wgHooks['wgQueryPages'][] = 'ProofreadPage::onwgQueryPages';
 $wgHooks['GetPreferences'][] = 'ProofreadPage::onGetPreferences';
-$wgHooks['LinksUpdateConstructed'][] = 'ProofreadPage::onLinksUpdateConstructed';
 $wgHooks['CustomEditor'][] = 'ProofreadPage::onCustomEditor';
 $wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
+$wgHooks['SkinTemplateNavigation'][] = 'ProofreadPage::onSkinTemplateNavigation';
+$wgHooks['ContentHandlerDefaultModelFor'][] = 'ProofreadPage::onContentHandlerDefaultModelFor';
+$wgHooks['APIEditBeforeSave'][] = 'ProofreadPage::onAPIEditBeforeSave';
 
 
 /**
@@ -163,11 +186,20 @@ $wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
 $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$dir = __DIR__ . '/tests/includes/';
 
+	$files[] = $dir . 'ProofreadPageTestCase.php';
+
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
+
+	$files[] = $dir . 'page/ProofreadPageLevelTest.php';
+	$files[] = $dir . 'page/ProofreadPageContentTest.php';
+	$files[] = $dir . 'page/ProofreadPageContentHandlerTest.php';
+	$files[] = $dir . 'page/ProofreadPagePageTest.php';
 
 	return true;
 };
 
+//Handlers
+$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = 'ProofreadPageContentHandler';
 
 //inclusion of i18n file. $wgExtensionMessagesFiles[] doesn't works
 include_once( $dir . 'ProofreadPage.namespaces.php' );

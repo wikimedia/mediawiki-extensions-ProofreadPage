@@ -1,18 +1,17 @@
-#prp_header,
-#prp_footer {
+#editform .prp-page-content {
 	line-height: 1.5em;
 }
-
-#prp_header label,
-#prp_footer label {
+#editform .prp-page-content label {
 	color: gray;
 	font-size: 80%;
 }
 
+.editOptions {
+	clear: both;
+}
+
 /* Adjustments for WikiEditor extension */
-.wikiEditor-ui-text #wpTextbox1,
-.wikiEditor-ui-text #wpHeaderTextbox,
-.wikiEditor-ui-text #wpFooterTextbox {
+.wikiEditor-ui-text textarea {
 	border: none;
 	padding: 0;
 	line-height: 1.5em;

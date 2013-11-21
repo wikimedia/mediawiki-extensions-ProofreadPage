@@ -35,6 +35,11 @@ class ProofreadIndexPage {
 	protected $text;
 
 	/**
+	 * @var ProofreadIndexEntry[] entries of the page
+	 */
+	protected $entries;
+
+	/**
 	 * @var array configuration array
 	 */
 	protected $config = array();
@@ -197,15 +202,18 @@ class ProofreadIndexPage {
 	 * @return array of ProofreadIndexEntry
 	 */
 	public function getIndexEntries() {
-		$text = $this->getText();
-		$values = array();
-		foreach( $this->config as $varName => $property ) {
-			$tagPattern = "/\n\|" . preg_quote( $varName, '/' ) . "=(.*?)\n(\||\}\})/is";
-			if ( preg_match( $tagPattern, $text, $matches ) ) {
-				$values[$varName] = $matches[1];
+		if ( $this->entries === null ) {
+			$text = $this->getText();
+			$values = array();
+			foreach( $this->config as $varName => $property ) {
+				$tagPattern = "/\n\|" . preg_quote( $varName, '/' ) . "=(.*?)\n(\||\}\})/is";
+				if ( preg_match( $tagPattern, $text, $matches ) ) {
+					$values[$varName] = $matches[1];
+				}
 			}
+			$this->entries = $this->getIndexEntriesFromIndexContent( $values );
 		}
-		return $this->getIndexEntriesFromIndexContent( $values );
+		return $this->entries;
 	}
 
 	/**
@@ -228,12 +236,28 @@ class ProofreadIndexPage {
 	public function getIndexEntriesForHeader() {
 		$entries = $this->getIndexEntries();
 		$headerEntries = array();
-		foreach( $entries as $key => $entry ) {
+		foreach( $entries as $entry ) {
 			if ( $entry->isHeader() ) {
-				$headerEntries[$key] = $entry;
+				$headerEntries[$entry->getKey()] = $entry;
 			}
 		}
 		return $headerEntries;
+	}
+
+	/*
+	 * Return the index entry with the same name or null if it's not found
+	 * Note: the comparison is case insensitive
+	 * @return ProofreadIndexEntry|null
+	 */
+	public function getIndexEntry( $name ) {
+		$name = strtolower( $name );
+		$entries = $this->getIndexEntries();
+		foreach( $entries as $entry ) {
+			if ( strtolower( $entry->getKey() ) === $name ) {
+				return $entry;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -259,7 +283,6 @@ class ProofreadIndexPage {
 	 * @return array
 	 */
 	public function getPages() {
-		list( $pageNamespace, $indexNamespace ) = ProofreadPage::getPageAndIndexNamespace();
 		$text = $this->getText();
 
 		//check if it is using pagelist
@@ -374,38 +397,35 @@ class ProofreadIndexPage {
 	}
 
 	/**
-	 * Return metadata from the index pages that will be used by a page page.
-	 * @param $page Title the page (TODO: move to ProofreadPagePage)
-	 * @return array( header, footer, css, editWidth ) as string
+	 * Return the value of an entry as wikitext with variable replaced with index entries and $otherParams
+	 * Example: if 'header' entry is 'Page of {{title}} number {{pagenum}}' with $otherParams = array( 'pagenum' => 23 )
+	 * the function called for 'header' will returns 'Page page my book number 23'
+	 * @param $name string entry name
+	 * @param $otherParams array associative array other possible values to replace
+	 * @return string the value with variables replaced
 	 */
-	public function getIndexDataForPage( Title $page ) {
-		$entries = $this->getIndexEntriesForHeader();
-		$attributes = array();
-		foreach( $entries as $key => $attribute ) { //We use here only values as text
-			$attributes[strtolower( $key )] = $attribute->getStringValue();
-		}
-		$attributes['pagenum'] = $this->getDisplayedPageNumber( $page );
+	public function replaceVariablesWithIndexEntries( $name, $otherParams ) {
+		global $wgParser;
 
-		if( isset( $attributes['header'] ) ) {
-			$header = $attributes['header'];
-		} else {
-			$header = wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain();
+		$entry = $this->getIndexEntry( $name );
+		if ( $entry === null ) {
+			return null;
 		}
 
-		if ( isset( $attributes['footer'] ) ) {
-			$footer = $attributes['footer'];
-		} else {
-			$footer = wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
+		$params = $this->getIndexEntriesForHeaderAsTemplateParams() + $otherParams;
+		return $wgParser->replaceVariables( $entry->getStringValue(), $params, true );
+	}
+
+	/**
+	 * Returns the index entries formatted in order to be transcluded in templates
+	 * @return string[]
+	 */
+	protected function getIndexEntriesForHeaderAsTemplateParams() {
+		$indexEntries = $this->getIndexEntriesForHeader();
+		$params = array();
+		foreach( $indexEntries as $entry ) {
+			$params[strtolower( $entry->getKey() )] = $entry->getStringValue();
 		}
-
-		foreach( $attributes as $key => $val ) {
-			$header = str_replace( '{{{' . $key . '}}}', $val, $header );
-			$footer = str_replace( '{{{' . $key . '}}}', $val, $footer );
-		}
-
-		$css = isset( $attributes['css'] ) ? $attributes['css'] : '';
-		$editWidth = isset( $attributes['width'] ) ? $attributes['width'] : '';
-
-		return array( $header, $footer, $css, $editWidth );
+		return $params;
 	}
 }

@@ -1,0 +1,22 @@
+.prp-page-container {
+	width: 100%;
+}
+
+.prp-page-content {
+	float: left;
+	width: 50%;
+}
+
+.prp-page-image {
+	float: right;
+	width: 49%;
+}
+
+.prp-page-image img {
+	width: 100%;
+	height: auto;
+}
+
+#prp-page-qualityheader {
+	width: 100%;
+}

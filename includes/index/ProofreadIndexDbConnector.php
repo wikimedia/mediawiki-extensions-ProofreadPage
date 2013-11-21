@@ -19,21 +19,7 @@
  * @ingroup ProofreadPage
  */
 
-class ProofreadIndexDbConnector{
-
-	/**
-	 * @param $updater DatabaseUpdater
-	 * @return bool
-	 */
-	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$updater->addExtensionUpdate( array(
-			'addTable',
-			'pr_index',
-			__DIR__ . '/ProofreadIndex.sql',
-			true
-		) );
-		return true;
-	}
+class ProofreadIndexDbConnector {
 
 	/**
 	 * Query the database to find if the current page is referred in an Index page.

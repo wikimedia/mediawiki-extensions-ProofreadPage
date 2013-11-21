@@ -19,182 +19,245 @@
  * @ingroup ProofreadPage
  */
 
-class EditProofreadPagePage {
+class EditProofreadPagePage extends EditPage {
 
 	/**
-	 * Preload text layer from multipage formats
-	 * @param $textbox1
-	 * @param $mTitle Title
-	 * @return bool
+	 * @var ProofreadPagePage
 	 */
-	public static function onEditFormPreloadText( &$textbox1, $mTitle ) {
-		global $wgContLang;
+	protected $pagePage;
 
-		list( $pageNamespaceId, $indexNamespaceId ) = ProofreadPage::getPageAndIndexNamespace();
-		if ( preg_match( "/^$pageNamespaceId:(.*?)\/(.*?)$/", $mTitle->getPrefixedText(), $m ) ) {
-			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[1] );
-			if ( !$imageTitle ) {
-				return true;
-			}
+	/**
+	 * @var Article $article
+	 * @var ProofreadPagePage $pagePage
+	 * @throw MWException
+	 */
+	public function __construct( Article $article, ProofreadPagePage $pagePage ) {
+		parent::__construct( $article );
 
-			$image = wfFindFile( $imageTitle );
-			if ( $image && $image->exists() ) {
-				$text = $image->getHandler()->getPageText( $image, $wgContLang->parseFormattedNumber( $m[2] ) );
-				if ( $text ) {
-					$text = preg_replace( "/(\\\\n)/", "\n", $text );
-					$text = preg_replace( "/(\\\\\d*)/", '', $text );
-					$textbox1 = $text;
-				}
-			}
+		$this->pagePage = $pagePage;
+
+		if ( $this->contentModel !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+			throw MWException( 'EditProofreadPagePage should only be called on ProofreadPageContent' );
 		}
-		return true;
 	}
 
 	/**
-	 * @param $editpage EditPage
-	 * @param $request WebRequest
-	 * @return bool
+	 * @see EditPage::isSectionEditSupported
 	 */
-	public static function onEditPageImportFormData( $editpage, $request ) {
-		$title = $editpage->getTitle();
-		// abort if we are not a page
-		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
-			return true;
-		}
-		if ( !$request->wasPosted() ) {
-			return true;
-		}
-		$editpage->quality = $request->getVal( 'wpQuality' );
-		$editpage->username = $editpage->safeUnicodeInput( $request, 'wpProofreader' );
-		$editpage->header = $editpage->safeUnicodeInput( $request, 'wpHeaderTextbox' );
-		$editpage->footer = $editpage->safeUnicodeInput( $request, 'wpFooterTextbox' );
-
-		// we want to keep ordinary spaces at the end of the main textbox
-		$text = rtrim( $request->getText( 'wpTextbox1' ), "\t\n\r\0\x0B" );
-		$editpage->textbox1 = $request->getBool( 'safemode' )
-			? $editpage->unmakesafe( $text )
-			: $text;
-
-		if( in_array( $editpage->quality, array( '0', '1', '2', '3', '4' ) ) ) {
-			// format the page
-			$text = '<noinclude><pagequality level="' . $editpage->quality . '" user="' . $editpage->username . '" />' .
-				'<div class="pagetext">' . $editpage->header."\n\n\n</noinclude>" .
-				$editpage->textbox1 .
-				"<noinclude>" . $editpage->footer . '</div></noinclude>';
-			$editpage->textbox1 = $text;
-		} else {
-			// replace deprecated template
-			$text = $editpage->textbox1;
-			$text = preg_replace(
-				"/\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}/is",
-				"<pagequality level=\"\\1\" user=\"\\3\" />",
-				$text
-			);
-			$editpage->textbox1 = $text;
-		}
-		return true;
+	protected function isSectionEditSupported() {
+		return false; // sections and forms don't mix
 	}
 
 	/**
-	 * Check the format of pages in "Page" namespace.
+	 * Load the content before edit
 	 *
-	 * @param $editpage EditPage
-	 * @return Boolean
+	 * @see EditPage::showContentForm
 	 */
-	public static function onEditPageAttemptSave( $editpage ) {
-		global $wgOut, $wgUser;
+	protected function getContentObject( $def_content = null ) {
+		//preload content
+		if ( !$this->mTitle->exists() ) {
+			$index = $this->pagePage->getIndex();
+			if ( $index ) {
+				$params = array(
+					'pagenum' => $index->getDisplayedPageNumber( $this->getTitle() )
+				);
+				$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
+				$body = '';
+				$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
 
-		$title = $editpage->mTitle;
-
-		// abort if we are not a page
-		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
-			return true;
-		}
-
-		$text = $editpage->textbox1;
-		// parse the page
-		list( $q, $username, $ptext ) = ProofreadPage::parsePage( $text, $title );
-		if( $q == -1 ) {
-			$editpage->textbox1 = $ptext;
-			$q = 1;
-		}
-
-		// read previous revision, so that I know how much I need to add to pr_index
-		$rev = Revision::newFromTitle( $title, false, Revision::READ_LATEST );
-		if( $rev ) {
-			$old_text = $rev->getText();
-			list( $old_q, $old_username, $old_ptext ) = ProofreadPage::parsePage( $old_text, $title );
-			if( $old_q != -1 ) {
-				// check usernames
-				if( ( $old_q != $q ) && !$wgUser->isAllowed( 'pagequality' ) ) {
-					$wgOut->showErrorPage( 'proofreadpage_nologin', 'proofreadpage_nologintext' );
-					return false;
+				//Extract text layer
+				$image = $index->getImage();
+				$pageNumber = $this->pagePage->getPageNumber();
+				if ( $image && $pageNumber !== null && $image->exists() ) {
+					$text = $image->getHandler()->getPageText( $image, $pageNumber );
+					if ( $text ) {
+						$text = preg_replace( "/(\\\\n)/", "\n", $text );
+						$body = preg_replace( "/(\\\\\d*)/", '', $text );
+					}
 				}
-				if ( ( ( $old_username != $username ) || ( $old_q != $q ) ) && ( $wgUser->getName() != $username ) ) {
-					$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
-					return false;
-				}
-				if( ( ( $q == 4 ) && ( $old_q < 3 ) ) || ( ( $q == 4 ) && ( $old_q == 3 ) && ( $old_username == $username ) ) ) {
-					$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
-					return false;
-				}
-			} else {
-				$old_q = 1;
+
+				return new ProofreadPageContent(
+					new WikitextContent( $header ),
+					new WikitextContent( $body ),
+					new WikitextContent( $footer ),
+					new ProofreadPageLevel()
+				);
 			}
-		} else {
-			if( $q == 4 ) {
-				$wgOut->showErrorPage( 'proofreadpage_notallowed', 'proofreadpage_notallowedtext' );
-				return false;
-			}
-			$old_q = -1;
 		}
 
-		$editpage->getArticle()->new_q = $q;
-		$editpage->getArticle()->old_q = $old_q;
-
-		return true;
+		return parent::getContentObject( $def_content );
 	}
 
 	/**
-	 * @param $article WikiPage
-	 * @return bool
+	 * @see EditPage::showContentForm
 	 */
-	public static function onArticleSaveComplete( WikiPage &$article ) {
-		$title = $article->getTitle();
+	protected function showContentForm() {
+		$out = $this->mArticle->getContext()->getOutput();
+		$pageLang = $this->mTitle->getPageLanguage();
 
-		// if it's an index, update pr_index table
-		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {	//Move this part to EditProofreadIndexPage
-			ProofreadPage::update_pr_index( $article );
-			return true;
+		//custom CSS for preview
+		$css = $this->pagePage->getCustomCss();
+		if ( $css !== '' ) {
+			$out->addInlineStyle( $css );
 		}
 
-		// return if it is not a page
-		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
-			return true;
+		$inputAttributes = array(
+			'lang' => $pageLang->getCode(),
+			'dir' => $pageLang->getDir(),
+			'cols' => '70'
+		);
+
+		if ( wfReadOnly() ) {
+			$inputAttributes['readonly'] = '';
 		}
 
-		/* check if there is an index */
-		if ( !isset( $title->prpIndexPage ) ) {
-			ProofreadPage::loadIndex( $title );
-		}
-		if( $title->prpIndexPage === null ) {
-			return true;
+		$headerAttributes = $inputAttributes + array(
+			'id' => 'wpHeaderTextbox',
+			'rows' => '2',
+			'tabindex' => '1'
+		);
+		$bodyAttributes = $inputAttributes + array(
+			'tabindex' => '1',
+			'accesskey' =>',',
+			'id' => 'wpTextbox1',
+			'rows' => '51',
+			'style' =>''
+		);
+		$footerAttributes = $inputAttributes + array(
+			'id' => 'wpFooterTextbox',
+			'rows' => '2',
+			'tabindex' => '1'
+		);
+
+		$content = $this->toEditContent( $this->textbox1 );
+		$out->addHTML(
+			$this->pagePage->getPageContainerBegin() .
+			Html::openElement( 'div', array( 'class' => 'prp-page-edit-header' ) ) .
+			Html::element( 'label', array( 'for' => 'wpHeaderTextbox' ), wfMessage( 'proofreadpage_header' )->text() ) .
+			Html::textarea( 'wpHeaderTextbox', $content->getHeader()->serialize(), $headerAttributes ) .
+			Html::closeElement( 'div' ) .
+			Html::openElement( 'div', array( 'class' => 'prp-page-edit-body' ) ) .
+			Html::element( 'label', array( 'for' => 'wpTextbox1' ), wfMessage( 'proofreadpage_body' )->text() ) .
+			Html::textarea( 'wpTextbox1', $content->getBody()->serialize(), $bodyAttributes ) .
+			Html::closeElement( 'div' ) .
+			Html::openElement( 'div', array( 'class' => 'prp-page-edit-footer' ) ) .
+			Html::element( 'label', array( 'for' => 'wpFooterTextbox' ), wfMessage( 'proofreadpage_footer' )->text() ) .
+			Html::textarea( 'wpFooterTextbox', $content->getFooter()->serialize(), $footerAttributes ) .
+			Html::closeElement( 'div' ) .
+			$this->pagePage->getPageContainerEnd()
+		);
+		$out->addModules( 'ext.proofreadpage.page.edit' );
+	}
+
+	/**
+	 * Sets the checkboxes for the proofreading status of the page.
+	 *
+	 * @see EditPage::getCheckBoxes
+	 */
+	function getCheckBoxes( &$tabindex, $checked ) {
+
+		$oldLevel = $this->getCurrentContent()->getLevel();
+
+		$content = $this->toEditContent( $this->textbox1 );
+		$currentLevel = $content->getLevel();
+
+		$qualityLevels = array( 0, 2, 1, 3, 4 );
+		$html = '';
+		$checkboxes = parent::getCheckBoxes( $tabindex, $checked );
+		$user = $this->mArticle->getContext()->getUser();
+
+		foreach( $qualityLevels as $level ) {
+
+			$newLevel = new ProofreadPageLevel( $level, $user );
+			if( !$oldLevel->isChangeAllowed( $newLevel ) ) {
+				continue;
+			}
+
+			$msg = 'proofreadpage_quality' . $level . '_category';
+			$cls = 'quality' . $level;
+
+			$attributes = array( 'tabindex' => ++$tabindex, 'title' => wfMessage( $msg )->plain() );
+			if( $level == $currentLevel->getLevel() ) {
+				$attributes[] = 'checked';
+			}
+
+			$html .= Html::openElement( 'span', array( 'class' => $cls ) ) .
+				Html::input( 'wpQuality', $level, 'radio', $attributes ) .
+				Html::closeElement( 'span' );
 		}
 
-		/**
-		 * invalidate the cache of the index page
-		 */
-		$title->prpIndexPage->getTitle()->invalidateCache();
-
-		/**
-		 * update pr_index iteratively
-		 */
-		$indexId = $title->prpIndexPage->getTitle()->getArticleID();
-		$x = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
-		if( $x ) {
-			$a = ProofreadIndexDbConnector::replaceIndexById( $x, $indexId, $article );
+		$checkboxes['wpr-pageStatus'] = '';
+		if ( $user->isAllowed( 'pagequality' ) ) {
+			$checkboxes['wpr-pageStatus'] =
+				Html::openElement( 'span', array( 'id' => 'wpQuality-container' ) ) .
+				$html .
+				Html::closeElement( 'span' ) .
+				Html::OpenElement( 'label', array( 'for' => 'wpQuality-container' ) ) .
+				wfMessage( 'proofreadpage_page_status' )->parse() .
+				Html::closeElement( 'label' );
 		}
 
-		return true;
+		return $checkboxes;
+	}
+
+	/**
+	 * @see EditPage::getSummaryInput
+	 */
+	function getSummaryInput( $summary = '', $labelText = null, $inputAttrs = null, $spanLabelAttrs = null ) {
+
+		if ( !$this->mTitle->exists() ) {
+			$summary = '/*' . wfMessage( 'proofreadpage_quality1_category' )->plain() . '*/ ' . $summary;
+		}
+
+		return parent::getSummaryInput( $summary, $labelText, $inputAttrs, $spanLabelAttrs );
+	}
+
+	/**
+	 * @see EditPage::importContentFormData
+	 */
+	protected function importContentFormData( &$request ) {
+		$proofreadingLevel = $request->getInt( 'wpQuality' );
+		$oldLevel = $this->getCurrentContent()->getLevel();
+		$user = ( $oldLevel->getLevel() === $proofreadingLevel )
+			? $oldLevel->getUser()
+			: $this->mArticle->getContext()->getUser();
+		if ( $oldLevel->getUser() === null ) {
+			$user = $this->mArticle->getContext()->getUser();
+		}
+
+		$content = new ProofreadPageContent(
+			new WikitextContent( $this->safeUnicodeInput( $request, 'wpHeaderTextbox' ) ),
+			new WikitextContent( $this->safeUnicodeInput( $request, 'wpTextbox1') ),
+			new WikitextContent( $this->safeUnicodeInput( $request, 'wpFooterTextbox' ) ),
+			new ProofreadPageLevel( $proofreadingLevel, $user )
+		);
+
+		return $content->serialize();
+	}
+
+	/**
+	 * Check the validity of the page
+	 *
+	 * @see EditPage::internalAttemptSave
+	 */
+	public function internalAttemptSave( &$result, $bot = false ) {
+		$error = '';
+		$oldContent = $this->getCurrentContent();
+		$newContent = $this->toEditContent( $this->textbox1 );
+
+		if ( !$newContent->isValid() ) {
+			$error = 'badpage';
+		} elseif ( !$oldContent->getLevel()->isChangeAllowed( $newContent->getLevel() ) ) {
+			$error = 'notallowed';
+		}
+
+		if ( $error !== '' ) {
+			$this->mArticle->getContext()->getOutput()->showErrorPage( 'proofreadpage_' . $error, 'proofreadpage_' . $error . 'text' );
+			$status = Status::newFatal( 'hookaborted' );
+			$status->value = self::AS_HOOK_ERROR;
+			return $status;
+		}
+
+		return parent::internalAttemptSave( $result, $bot );
 	}
 }
