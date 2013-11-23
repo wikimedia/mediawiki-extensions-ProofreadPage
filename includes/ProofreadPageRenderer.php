@@ -30,8 +30,6 @@ class ProofreadPageRenderer {
 	 * @return string
 	 */
 	public static function renderPageList( $input, $args, $parser ) {
-		global $wgContLang;
-
 		$title = $parser->getTitle();
 		if ( !$title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
 			return '';
@@ -69,9 +67,10 @@ class ProofreadPageRenderer {
 			}
 
 			$n = strlen( $count ) - mb_strlen( $view );
+			$language = $parser->getTargetLanguage();
 			if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
 				$txt = '<span style="visibility:hidden;">';
-				$pad = $wgContLang->formatNum( 0, true );
+				$pad = $language->formatNum( 0, true );
 				for ( $j = 0; $j < $n; $j++ ) {
 					$txt = $txt . $pad;
 				}
@@ -98,8 +97,6 @@ class ProofreadPageRenderer {
 	 * @return string
 	 */
 	public static function renderPages( $input, $args, $parser ) {
-		global $wgContLang;
-
 		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
 
 		// abort if this is nested <pages> call
@@ -144,6 +141,7 @@ class ProofreadPageRenderer {
 		$parser->getOutput()->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
 
 		$out = '';
+		$language = $parser->getTargetLanguage();
 
 		list( $links, $params ) = $indexPage->getPages();
 
@@ -151,9 +149,9 @@ class ProofreadPageRenderer {
 			$pages = array();
 
 			if( empty( $links ) ) {
-				$from = ( $from === null ) ? null : $wgContLang->parseFormattedNumber( $from );
-				$to = ( $to === null ) ? null : $wgContLang->parseFormattedNumber( $to );
-				$step = ( $step === null ) ? null : $wgContLang->parseFormattedNumber( $step );
+				$from = ( $from === null ) ? null : $language->parseFormattedNumber( $from );
+				$to = ( $to === null ) ? null : $language->parseFormattedNumber( $to );
+				$step = ( $step === null ) ? null : $language->parseFormattedNumber( $step );
 
 				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
 				if ( !$imageTitle ) {
