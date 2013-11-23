@@ -2,13 +2,14 @@
 
 /**
  * @group ProofreadPage
+ * @covers ProofreadPageContentHandler
  */
 class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
 
 	/**
 	 * @var ContentHandler
 	 */
-	var $handler;
+	protected $handler;
 
 	public function setUp() {
 		parent::setUp();

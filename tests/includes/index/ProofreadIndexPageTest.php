@@ -2,6 +2,7 @@
 
 /**
  * @group ProofreadPage
+ * @covers ProofreadIndexPage
  */
 class ProofreadIndexPageTest extends ProofreadPageTestCase {
 
