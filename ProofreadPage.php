@@ -64,6 +64,11 @@ $wgAutoloadClasses['ProofreadPageSubmitAction'] = $dir . 'includes/page/Proofrea
 $wgAutoloadClasses['ProofreadPageViewAction'] = $dir . 'includes/page/ProofreadPageViewAction.php';
 $wgAutoloadClasses['ProofreadPageDifferenceEngine'] = $dir . 'includes/page/ProofreadPageDifferenceEngine.php';
 
+$wgAutoloadClasses['ProofreadPage\Parser\ParserEntryPoint'] = $dir . 'includes/Parser/ParserEntryPoint.php';
+$wgAutoloadClasses['ProofreadPage\Parser\TagParser'] = $dir . 'includes/Parser/TagParser.php';
+$wgAutoloadClasses['ProofreadPage\Parser\PagelistTagParser'] = $dir . 'includes/Parser/PagelistTagParser.php';
+$wgAutoloadClasses['ProofreadPage\Parser\PagesTagParser'] = $dir . 'includes/Parser/PagesTagParser.php';
+
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',

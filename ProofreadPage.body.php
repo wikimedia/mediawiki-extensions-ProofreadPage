@@ -139,9 +139,9 @@ class ProofreadPage {
 	 * @param Parser $parser
 	 * @return boolean hook return value
 	 */
-	public static function onParserFirstCallInit( $parser ) {
-		$parser->setHook( 'pagelist', array( 'ProofreadPageRenderer', 'renderPageList' ) );
-		$parser->setHook( 'pages', array( 'ProofreadPageRenderer', 'renderPages' ) );
+	public static function onParserFirstCallInit( Parser $parser ) {
+		$parser->setHook( 'pagelist', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagelistTag' ) );
+		$parser->setHook( 'pages', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagesTag' ) );
 		return true;
 	}
 
