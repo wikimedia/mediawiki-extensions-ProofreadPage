@@ -37,7 +37,7 @@ class EditProofreadPagePage extends EditPage {
 		$this->pagePage = $pagePage;
 
 		if ( $this->contentModel !== CONTENT_MODEL_PROOFREAD_PAGE ) {
-			throw MWException( 'EditProofreadPagePage should only be called on ProofreadPageContent' );
+			throw new MWException( 'EditProofreadPagePage should only be called on ProofreadPageContent' );
 		}
 	}
 
