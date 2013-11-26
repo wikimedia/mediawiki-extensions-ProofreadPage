@@ -40,11 +40,6 @@ class ProofreadPageContent extends TextContent {
 	protected $footer;
 
 	/**
-	 * @var User|null last proofreader of the page
-	 */
-	protected $proofreader;
-
-	/**
 	 * @var ProofreadPageLevel proofreading level of the page
 	 */
 	protected $level;
