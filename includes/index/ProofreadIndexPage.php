@@ -265,15 +265,7 @@ class ProofreadIndexPage {
 	 * @return array of array( Title title of the pointed page, the label of the link )
 	 */
 	public function getLinksToMainNamespace() {
-		// Instanciate a new parser object to avoid side effects of $parser->replaceVariables
-		static $indexParser;
-
-		if ( $indexParser === null ) {
-			$indexParser = new Parser();
-		}
-		$text = $this->getText();
-		$options = new ParserOptions();
-		$rtext = $indexParser->preprocess( $text, $this->title, $options );
+		$rtext = self::getParser()->preprocess( $this->getText(), $this->title, new ParserOptions() );
 		return $this->getLinksToNamespace( $rtext, NS_MAIN );
 	}
 
@@ -405,15 +397,15 @@ class ProofreadIndexPage {
 	 * @return string the value with variables replaced
 	 */
 	public function replaceVariablesWithIndexEntries( $name, $otherParams ) {
-		global $wgParser;
-
 		$entry = $this->getIndexEntry( $name );
 		if ( $entry === null ) {
 			return null;
 		}
 
 		$params = $this->getIndexEntriesForHeaderAsTemplateParams() + $otherParams;
-		return $wgParser->replaceVariables( $entry->getStringValue(), $params, true );
+		$parser = self::getParser();
+		$parser->startExternalParse( $this->title, new ParserOptions(), Parser::OT_PREPROCESS );
+		return $parser->replaceVariables( $entry->getStringValue(), $params, true );
 	}
 
 	/**
@@ -427,5 +419,22 @@ class ProofreadIndexPage {
 			$params[strtolower( $entry->getKey() )] = $entry->getStringValue();
 		}
 		return $params;
+	}
+
+	/**
+	 * Return the Parser object done to be used for Index pages internal use
+	 * Needed to avoid side effects of $parser->replaceVariables
+	 *
+	 * @return Parser
+	 */
+	protected static function getParser() {
+		global $wgParser;
+		static $parser = null;
+
+		if ( $parser === null ) {
+			$parser = clone $wgParser;
+		}
+
+		return $parser;
 	}
 }

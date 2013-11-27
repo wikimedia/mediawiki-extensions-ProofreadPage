@@ -180,11 +180,8 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 	}
 
 	public function testReplaceVariablesWithIndexEntries() {
-		$this->markTestIncomplete( 'TODO Parser fails' ); //TODO
-		return;
-
-		$page = self::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Header='Page of {{{title}}} by {{{author|}}} number {{{pagenum}}}'\n}}" );
-		$this->assertEquals( 'Page of Test book by number 22', $page->replaceVariablesWithIndexEntries( 'header', array( 'pagenum' => 22 ) ) );
+		$page = self::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Header=Page of {{{title}}} by {{{author|}}} {{number}} {{{pagenum}}}\n}}" );
+		$this->assertEquals( 'Page of Test book by  {{number}} 22', $page->replaceVariablesWithIndexEntries( 'header', array( 'pagenum' => 22 ) ) );
 
 		$this->assertNull( $page->replaceVariablesWithIndexEntries( 'headers', array() ) );
 	}
