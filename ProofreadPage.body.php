@@ -212,8 +212,8 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onGetLinkColours( $page_ids, &$colours ) {
-		global $wgTitle;
-		if ( !isset( $wgTitle ) ) {
+		global $wgParser;
+		if ( !isset( $wgParser ) ) {
 			return true;
 		}
 		self::getLinkColours( $page_ids, $colours );
@@ -226,10 +226,10 @@ class ProofreadPage {
 	 * @param $colours array
 	 */
 	private static function getLinkColours( $page_ids, &$colours ) {
-		global $wgTitle;
+		global $wgParser;
 
 		$page_namespace_id = self::getPageNamespaceId();
-		$in_index_namespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
+		$in_index_namespace = $wgParser->getTitle()->inNamespace( self::getIndexNamespaceId() );
 
 		$values = array();
 		foreach ( $page_ids as $id => $pdbk ) {
