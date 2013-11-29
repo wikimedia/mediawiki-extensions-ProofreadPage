@@ -1395,6 +1395,7 @@ Napomene||10',
 /** Catalan (català)
  * @author Aleator
  * @author Jordi Roqué
+ * @author Papapep
  * @author Paucabot
  * @author Qllach
  * @author SMP
@@ -1434,8 +1435,8 @@ $messages['ca'] = array(
 	'proofreadpage_quality0_message' => 'Aquesta pàgina no necessita ser revisada.',
 	'proofreadpage_quality1_message' => "Aquesta pàgina no s'ha revisat",
 	'proofreadpage_quality2_message' => "Hi ha un problema amb la revisió d'aquesta pàgina.",
-	'proofreadpage_quality3_message' => 'Aquesta pàgina ha estat revisada.',
-	'proofreadpage_quality4_message' => 'Aquesta pàgina ha estat validada',
+	'proofreadpage_quality3_message' => "S'ha revisat aquesta pàgina.",
+	'proofreadpage_quality4_message' => "S'ha validat aquesta pàgina",
 	'proofreadpage_index_status' => 'Estat del llibre',
 	'proofreadpage_index_size' => 'Nombre de pàgines',
 	'proofreadpage_specialpage_label_orderby' => 'Ordenar per:',
@@ -1873,6 +1874,7 @@ $messages['de-formal'] = array(
  * @author Aspar
  * @author Erdemaslancan
  * @author Gorizon
+ * @author Marmase
  * @author Mirzali
  */
 $messages['diq'] = array(
@@ -1897,7 +1899,7 @@ $messages['diq'] = array(
 	'proofreadpage_number_expected' => 'Xeta:Amarin weziyet pawéno',
 	'proofreadpage_interval_too_large' => 'xeta: benate/mabên zaf hêrayo',
 	'proofreadpage_invalid_interval' => 'xeta: benateyo nemeqbul',
-	'proofreadpage_nextpage' => 'Pela peyêne',
+	'proofreadpage_nextpage' => 'Pera ke biro',
 	'proofreadpage_prevpage' => 'pelo ke pey de mend',
 	'proofreadpage_header' => 'sername (ihtiwa)',
 	'proofreadpage_body' => 'miyaneyê peli (çepraşt têarê beno):',
@@ -1940,7 +1942,7 @@ beyanati||10',
 	'right-pagequality' => 'Vurnayışté pela ré desmal çek',
 	'proofreadpage-section-tools' => 'Hacetê raştkerdışê ğeletan',
 	'proofreadpage-group-zoom' => 'Nêzdikerdış',
-	'proofreadpage-group-other' => 'Sewbi',
+	'proofreadpage-group-other' => 'Zewbi',
 	'proofreadpage-button-toggle-visibility-label' => 'Ena pelaya bımocne/bınımni  wanena u asınena',
 	'proofreadpage-button-zoom-out-label' => 'Duri fi',
 	'proofreadpage-button-reset-zoom-label' => 'Ebado oricinal',
