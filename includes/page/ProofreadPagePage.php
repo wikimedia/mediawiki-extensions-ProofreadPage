@@ -141,7 +141,8 @@ class ProofreadPagePage {
 		}
 
 		//try to get an image with the same name as the file
-		$imageTitle = Title::makeTitle( NS_IMAGE, $this->title->getText() );
+		//TODO: tests including the case there it's a page of a DjVu file and the index hasn't the name of the DjVu file
+		$imageTitle = Title::makeTitle( NS_IMAGE, strtok( $this->title->getText(), '/' ) );
 		$this->image = wfFindFile( $imageTitle );
 		return $this->image;
 	}
