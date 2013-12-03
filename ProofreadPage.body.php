@@ -691,14 +691,19 @@ $void_cell
 			return true;
 		}
 
+		$contentHandler = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
 		$article = $editPage->getArticle();
 		$user = $article->getContext()->getUser();
 		$oldContent = $article->getPage()->getContent( Revision::FOR_THIS_USER, $user );
-		$newContent = ContentHandler::makeContent( $text, $editPage->getTitle(), $editPage->contentModel, $editPage->contentFormat );
+		$newContent = $contentHandler->unserializeContent( $text, $editPage->getTitle(), $editPage->contentFormat );
 
 		if ( !$newContent->isValid() ) {
 			$resultArr['badpage'] = wfMessage( 'proofreadpage_badpagetext' )->text();
 			return false;
+		}
+
+		if ( $oldContent === null ) {
+			$oldContent = $contentHandler->makeEmptyContent();
 		}
 
 		$oldLevel = $oldContent->getLevel();
