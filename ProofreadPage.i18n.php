@@ -5772,6 +5772,7 @@ Opmerkingen||10",
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadata voor boeken beheerd via ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema niet gevonden',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Het schema $1 is niet aangetroffen.',
+	'proofreadpage-disambiguationspage' => 'Template:Doorverwijspagina',
 );
 
 /** Norwegian Nynorsk (norsk nynorsk)
