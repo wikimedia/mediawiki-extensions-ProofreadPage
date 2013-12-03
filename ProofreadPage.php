@@ -46,6 +46,8 @@ $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
 $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
 $wgAutoloadClasses['ProofreadPageRenderer'] = $dir . 'includes/ProofreadPageRenderer.php';
 $wgAutoloadClasses['ProofreadDiffFormatterUtils'] = $dir . 'includes/ProofreadDiffFormatterUtils.php';
+$wgAutoloadClasses['ProofreadPage\FileNotFoundException'] = $dir . 'includes/FileNotFoundException.php';
+$wgAutoloadClasses['ProofreadPage\FileProvider'] = $dir . 'includes/FileProvider.php';
 
 $wgAutoloadClasses['EditProofreadIndexPage'] = $dir . 'includes/index/EditProofreadIndexPage.php';
 $wgAutoloadClasses['ProofreadIndexEntry'] = $dir . 'includes/index/ProofreadIndexEntry.php';
@@ -199,6 +201,8 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$dir = __DIR__ . '/tests/includes/';
 
 	$files[] = $dir . 'ProofreadPageTestCase.php';
+	$files[] = $dir . 'FileProviderMock.php';
+	$files[] = $dir . 'FileProviderTest.php';
 
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
 

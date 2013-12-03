@@ -19,6 +19,9 @@
  * @ingroup ProofreadPage
  */
 
+use ProofreadPage\FileNotFoundException;
+use ProofreadPage\FileProvider;
+
 /**
  * An index page
  */
@@ -45,7 +48,6 @@ class ProofreadIndexPage {
 	protected $config = array();
 
 	/**
-	 * Constructor
 	 * @param $title Title Reference to a Title object.
 	 * @param $config array the configuration array (see ProofreadIndexPage::getDataConfig)
 	 * @param $text string content of the page. Warning: only done for EditProofreadIndexPage use.
@@ -75,11 +77,15 @@ class ProofreadIndexPage {
 
 	/**
 	 * Return Scan of the book if it exist or false.
-	 * @return Image|false
+	 * @return File|false
 	 */
 	public function getImage() {
-		$imageTitle = Title::makeTitle( NS_IMAGE, $this->title->getText() );
-		return wfFindFile( $imageTitle );
+		try {
+			$provider = new FileProvider( RepoGroup::singleton() );
+			return $provider->getForIndexPage( $this );
+		} catch( FileNotFoundException $e ) {
+			return false;
+		}
 	}
 
 	/**
