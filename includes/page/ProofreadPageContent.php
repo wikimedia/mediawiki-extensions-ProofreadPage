@@ -238,7 +238,7 @@ class ProofreadPageContent extends TextContent {
 
 		//create content
 		$wikitextContent = new WikitextContent(
-			$this->header->getNativeData() . "\n\n\n" . $this->body->getNativeData() . $this->footer->getNativeData()
+			$this->header->getNativeData() . "\n\n" . $this->body->getNativeData() . $this->footer->getNativeData()
 		);
 		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
 		$parserOutput->addCategory(
