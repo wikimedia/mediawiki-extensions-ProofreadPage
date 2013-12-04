@@ -21,7 +21,8 @@ class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
 			array( 'Experimental header', 'Experimental body', 'Experimental footer', 2, '1.2.3.4', '<noinclude>{{PageQuality|2|1.2.3.4}}<div class="pagetext">Experimental header' . "\n\n\n" . '</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>' ),
 			array( 'Experimental header', 'Experimental body', '', 2, 'Woot', '<noinclude>{{PageQuality|2|Woot}}<div>Experimental header' . "\n\n\n" . '</noinclude>Experimental body</div>'),
 			array( 'Experimental header', 'Experimental body', 'Experimental footer', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">Experimental header' . "\n\n\n" . '</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>' ),
-			array( 'Experimental header', 'Experimental body', '', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div>Experimental header' . "\n\n\n" . '</noinclude>Experimental body</div>' )
+			array( 'Experimental header', 'Experimental body', '', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div>Experimental header' . "\n\n\n" . '</noinclude>Experimental body</div>' ),
+			array( 'Experimental header', 'Experimental <noinclude>body</noinclude>', 'Experimental footer', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">Experimental header' . "\n\n\n" . '</noinclude>Experimental <noinclude>body</noinclude><noinclude>Experimental footer</div></noinclude>' ),
 		);
 	}
 

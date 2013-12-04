@@ -63,7 +63,7 @@ class ProofreadPageContentHandler extends TextContentHandler {
 		$proofreader = '';
 		$level = 1;
 
-		if ( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*?)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
+		if ( preg_match( '/^<noinclude>(.*?)\n\n\n<\/noinclude>(.*)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
 			$header = $m[1];
 			$body = $m[2];
 			$footer = $this->cleanTrailingDivTag( $m[3] );
