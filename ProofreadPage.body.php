@@ -697,7 +697,7 @@ $void_cell
 		$oldContent = $article->getPage()->getContent( Revision::FOR_THIS_USER, $user );
 		$newContent = $contentHandler->unserializeContent( $text, $editPage->getTitle(), $editPage->contentFormat );
 
-		if ( !$newContent->isValid() ) {
+		if ( !$newContent->isValid() || $newContent->getLevel()->getUser() === null ) {
 			$resultArr['badpage'] = wfMessage( 'proofreadpage_badpagetext' )->text();
 			return false;
 		}
