@@ -7841,10 +7841,14 @@ $messages['tyv'] = array(
 $messages['tzm'] = array(
 	'indexpages' => 'ⵓⵎⵓⵖ ⵏ ⵜⴰⵙⵏⵉⵡⵉⵏ ⵏ ⵓⵙⴳⴱⴰⵔ',
 	'proofreadpage_image' => 'ⵜⴰⵡⵍⴰⴼⵜ',
+	'proofreadpage_nologin' => 'ⵓⵔ ⵜⴽⵛⵎⴷ',
 	'proofreadpage_notallowed' => 'ⴰⴱⴷⴷⴻⵍ ⵓⵔ ⵢⴻⵍⵍⴰ',
 	'proofreadpage_dataconfig_badformatted' => 'Bug in data configuration',
+	'proofreadpage_invalid_interval' => 'ⴰⵣⴳⴰⵍ: Invalid interval',
+	'proofreadpage_nextpage' => 'ⵜⴰⵙⵏⴰ ⵜⴰⵏⴹⴼⴰⵔⵜ',
 	'proofreadpage_prevpage' => 'ⵜⴰⵙⵏⴰ ⵜⴰⵎⵣⵡⴰⵔⵓⵜ',
 	'proofreadpage_header' => 'ⴰⵣⵡⵉⵍ (ⵓⵔ ⵢⴻⵍⵍⴰ):',
+	'proofreadpage_footer' => 'ⴰⵣⵡⵉⵍ (ⵓⵔ ⵢⴻⵍⵍⴰ):',
 	'proofreadpage_quality0_category' => 'ⵡⴰⵔ ⴰⴹⵔⵉⵙ',
 	'proofreadpage_quality1_category' => 'ⵓⵔ ⵜⵓⵙⴷⴰⴷ',
 	'proofreadpage_quality2_category' => 'ⴷⵉⵙ ⵉⵎⵓⴽⵔⵉⵙⵏ',
@@ -7862,7 +7866,17 @@ Pages||20
 ⵜⴰⵏⵏⴰⵢⵉⵏ||10',
 	'proofreadpage_source' => 'ⴰⵖⴱⴰⵍⵓ',
 	'proofreadpage-section-tools' => 'ⵉⵎⴰⵙⵙⵏ ⵓⵙⵉⵙⴷⵉⴷ',
+	'proofreadpage-group-zoom' => 'ⴰⵙⵎⵖⵔ ⴷ ⵓⵙⵎⵥⵉⵢ',
 	'proofreadpage-group-other' => 'ⵏⵉⴹⵏ',
+	'proofreadpage-button-zoom-out-label' => 'ⴰⵙⵎⵥⵉⵢ',
+	'proofreadpage-button-zoom-in-label' => 'ⴰⵙⵎⵖⵔ',
+	'proofreadpage-button-toggle-layout-label' => 'Vertical/horizontal layout',
+	'proofreadpage-preferences-horizontal-layout-label' => 'Use horizontal layout when editing in the {{ns:page}} namespace',
+	'proofreadpage-indexoai-repositoryName' => 'Metadata of books from {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadata of books managed by ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema not found',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'The $1 schema have not been found.',
+	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
