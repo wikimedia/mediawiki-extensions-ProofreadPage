@@ -24,8 +24,8 @@
 	$.widget( 'mw.prpZoom', {
 
 		options: {
-			zoomStep: 4,
-			moveStep: 4,
+			zoomStep: 6,
+			moveStep: 6,
 			animationDuration: 200
 		},
 
@@ -90,6 +90,22 @@
 			} );
 
 			this.reset();
+
+			var element = this.element;
+			$.each( this._events, function( event, handler ) {
+				element.bind( event, handler );
+			} );
+		},
+
+		_events: {
+			//depends on jquery.mousewheel.js
+			'mousewheel': function( event ) {
+				if( event.deltaY > 0 ) {
+					$( this ).prpZoom( 'zoomOut' );
+				} else if( event.deltaY < 0 ) {
+					$( this ).prpZoom( 'zoomIn' );
+				}
+			}
 		},
 
 		reset: function() {
@@ -102,20 +118,19 @@
 		},
 
 		zoomIn: function() {
-			var position = this._getPosition();
-			position.left -= this.zoomStep.width;
-			position.top -= this.zoomStep.height;
-			position.width += 2 * this.zoomStep.width;
-			position.height += 2 * this.zoomStep.height;
-			this._applyPosition( position );
+			this._zoom( 1 );
 		},
 
 		zoomOut: function() {
+			this._zoom( -1 );
+		},
+
+		_zoom: function( proportion ) {
 			var position = this._getPosition();
-			position.left += this.zoomStep.width;
-			position.top += this.zoomStep.height;
-			position.width -= 2 * this.zoomStep.width;
-			position.height -= 2 * this.zoomStep.height;
+			position.left -= proportion * this.zoomStep.width;
+			position.top -=  proportion * this.zoomStep.height;
+			position.width += 2 *  proportion * this.zoomStep.width;
+			position.height += 2 *  proportion * this.zoomStep.height;
 			this._applyPosition( position );
 		},
 
@@ -159,6 +174,11 @@
 					height: '',
 					cursor: ''
 				} );
+
+			var element = this.element;
+			$.each( this._events, function( event, handler ) {
+				element.unbind( event, handler );
+			} );
 
 			$.Widget.prototype.destroy.call( this );
 		}
