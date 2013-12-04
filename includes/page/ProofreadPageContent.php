@@ -242,7 +242,10 @@ class ProofreadPageContent extends TextContent {
 		);
 		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
 		$parserOutput->addCategory(
-			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_category' )->inContentLanguage()->text(),
+			Title::makeTitleSafe(
+				NS_CATEGORY,
+				wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_category' )->inContentLanguage()->text()
+			)->getDBkey(),
 			$title->getText()
 		);
 
