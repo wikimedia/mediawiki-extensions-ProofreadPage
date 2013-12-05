@@ -179,10 +179,64 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		$this->assertEquals( $links, $page->getPreviousAndNextPages( Title::newFromText( 'Page:Test 2.tiff' ) ) );
 	}
 
-	public function testReplaceVariablesWithIndexEntries() {
-		$page = self::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Header=Page of {{{title}}} by {{{author|}}} {{number}} {{{pagenum}}}\n}}" );
-		$this->assertEquals( 'Page of Test book by  {{number}} 22', $page->replaceVariablesWithIndexEntries( 'header', array( 'pagenum' => 22 ) ) );
+	public function replaceVariablesWithIndexEntriesProvider() {
+		return array(
+			array(
+				"{{\n|Title=Test book\n|Header={{{title}}}\n}}",
+				'Test book',
+				'header',
+				array()
+			),
+			array(
+				"{{\n|Title=Test book\n|Header={{{ Pagenum }}}\n}}",
+				'22',
+				'header',
+				array( 'pagenum' => 22 )
+			),
+			array(
+				"{{\n|Title=Test book\n|Header={{{authors}}}\n}}",
+				'{{{authors}}}',
+				'header',
+				array()
+			),
+			array(
+				"{{\n|Title=Test book\n|Header={{{authors |a}}}\n}}",
+				'a',
+				'header',
+				array()
+			),
+			array(
+				"{{\n|Title=Test book\n|Header={{template|a=b}}\n}}",
+				'{{template|a=b}}',
+				'header',
+				array()
+			),
+			array(
+				"{{\n|Title=Test book\n|Header={{template|a={{{Title |}}}}}\n}}",
+				'{{template|a=Test book}}',
+				'header',
+				array()
+			),
+			array(
+				"{{\n|Title=Test book\n|Header=<references/>\n}}",
+				'<references/>',
+				'header',
+				array()
+			),
+			array(
+				"{{\n|Title=Test book\n|Header={{{Pagenum}}}\n}}",
+				null,
+				'headers',
+				array()
+			),
+		);
+	}
 
-		$this->assertNull( $page->replaceVariablesWithIndexEntries( 'headers', array() ) );
+	/**
+	 * @dataProvider replaceVariablesWithIndexEntriesProvider
+	 */
+	public function testReplaceVariablesWithIndexEntries( $pageContent, $result, $entry, $extraparams ) {
+		$page = self::newIndexPage( 'Test.djvu', $pageContent );
+		$this->assertEquals( $result, $page->replaceVariablesWithIndexEntries( $entry, $extraparams ) );
 	}
 }
