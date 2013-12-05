@@ -36,8 +36,10 @@ class EditProofreadPagePage extends EditPage {
 
 		$this->pagePage = $pagePage;
 
-		if ( $this->contentModel !== CONTENT_MODEL_PROOFREAD_PAGE ) {
-			throw new MWException( 'EditProofreadPagePage should only be called on ProofreadPageContent' );
+		if ( !$this->isSupportedContentModel( $this->contentModel ) ) {
+			throw new MWException(
+				'The content model ' . ContentHandler::getLocalizedName( $this->contentModel ) . ' is not supported'
+			);
 		}
 	}
 
@@ -46,6 +48,13 @@ class EditProofreadPagePage extends EditPage {
 	 */
 	protected function isSectionEditSupported() {
 		return false; // sections and forms don't mix
+	}
+
+	/**
+	 * @see EditPage::isSupportedContentModel
+	 */
+	public function isSupportedContentModel( $modelId ) {
+		return $modelId === CONTENT_MODEL_PROOFREAD_PAGE;
 	}
 
 	/**
