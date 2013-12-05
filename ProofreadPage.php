@@ -118,10 +118,6 @@ $wgResourceModules += array(
 	),
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
 		'styles'  => 'page/ext.proofreadpage.page.css',
-		'scripts' => 'page/ext.proofreadpage.page.js',
-		'skinStyles' => array(
-			'vector' => 'page/ext.proofreadpage.page.vector.css',
-		),
 		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 	'ext.proofreadpage.page.edit' => $prpResourceTemplate + array(
@@ -143,6 +139,12 @@ $wgResourceModules += array(
 			'proofreadpage-button-zoom-in-label',
 			'proofreadpage-button-toggle-layout-label',
 			'proofreadpage-preferences-showheaders-label',
+		)
+	),
+	'ext.proofreadpage.page.navigation' => $prpResourceTemplate + array(
+		'scripts' => 'page/ext.proofreadpage.page.navigation.js',
+		'skinStyles' => array(
+			'vector' => 'page/ext.proofreadpage.page.navigation.vector.css',
 		)
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(

@@ -184,21 +184,21 @@ class ProofreadPage {
 	 * @param $out OutputPage
 	 * @return bool
 	 */
-	public static function onBeforePageDisplay( $out ) {
+	public static function onBeforePageDisplay( OutputPage $out ) {
 		$action = $out->getRequest()->getVal( 'action' );
-		$isEdit = ( $action == 'submit' || $action == 'edit' );
-
-		if ( ( !$out->isArticle() && !$isEdit ) || isset( $out->proofreadPageDone ) ) {
-			return true;
-		}
-		$out->proofreadPageDone = true;
+		$isEdit = ( $action === 'submit' || $action === 'edit' );
 		$title = $out->getTitle();
 
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			if( !$isEdit ) {
-				$out->addModuleStyles( 'ext.proofreadpage.base' );
-			}
-		} elseif ( $title->inNamespace( NS_MAIN ) ) {
+			$out->addModuleStyles( 'ext.proofreadpage.base' );
+		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
+			$out->addModules( 'ext.proofreadpage.page.navigation' );
+		} elseif (
+			$title->inNamespace( NS_MAIN ) &&
+			( $out->isArticle() || $isEdit ) &&
+			!isset( $out->proofreadPageDone )
+		) {
+			$out->proofreadPageDone = true;
 			self::prepareArticle( $out );
 		}
 
