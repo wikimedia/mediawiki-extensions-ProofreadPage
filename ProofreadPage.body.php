@@ -793,23 +793,30 @@ $void_cell
 		//Image link
 		$image = $page->getImage();
 		if ( $image ) {
-			$transformAttributes = array(
-				'width' => $image->getWidth()
-			);
+			$imageUrl = null;
 			if ( $image->isMultipage() ) {
+				$transformAttributes = array(
+					'width' => $image->getWidth()
+				);
 				$pageNumber = $page->getPageNumber();
 				if ( $pageNumber !== null ) {
 					$transformAttributes['page'] = $pageNumber;
 				}
+				$handler = $image->getHandler();
+				if ( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
+					$thumbName = $image->thumbName( $transformAttributes );
+					$imageUrl = $image->getThumbUrl( $thumbName );
+				}
+			} else {
+				//The thumb returned is invalid for not multipage pages when the width requested is the image width
+				$imageUrl = $image->getViewURL();
 			}
-			$handler = $image->getHandler();
-			if ( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
-				$thumbName = $image->thumbName( $transformAttributes );
-				$imageUrl = $image->getThumbUrl( $thumbName );
+
+			if ( $imageUrl !== null ) {
 				$links['namespaces']['proofreadPageScanLink'] = array(
 					'class' => '',
 					'href' => $imageUrl,
-					'text' => wfMessage( 'proofreadpage_image' )->plain()
+				'text' => wfMessage( 'proofreadpage_image' )->plain()
 				);
 			}
 		}
