@@ -205,18 +205,6 @@ class EditProofreadPagePage extends EditPage {
 	}
 
 	/**
-	 * @see EditPage::getSummaryInput
-	 */
-	function getSummaryInput( $summary = '', $labelText = null, $inputAttrs = null, $spanLabelAttrs = null ) {
-
-		if ( !$this->mTitle->exists() ) {
-			$summary = '/*' . wfMessage( 'proofreadpage_quality1_category' )->plain() . '*/ ' . $summary;
-		}
-
-		return parent::getSummaryInput( $summary, $labelText, $inputAttrs, $spanLabelAttrs );
-	}
-
-	/**
 	 * @see EditPage::importContentFormData
 	 */
 	protected function importContentFormData( &$request ) {

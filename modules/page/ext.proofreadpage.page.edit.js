@@ -88,16 +88,6 @@
 	}
 
 	/**
-	 * Init the automatic fill of the summary input box
-	 */
-	function setupPageQuality() {
-		$( 'input[name="wpQuality"]' ).click( function() {
-			var text = mw.msg( 'proofreadpage_quality' + this.value + '_category' );
-			$( '#wpSummary' ).val( '/* ' + text + ' */ ' );
-		} );
-	}
-
-	/**
 	 * Add some buttons to the toolbar
 	 */
 	function addButtons() {
@@ -245,7 +235,6 @@
 		initEnvironment();
 		setupWikiEditor();
 		setupPreferences();
-		setupPageQuality();
 		addButtons();
 	} );
 
