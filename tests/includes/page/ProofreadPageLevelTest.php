@@ -72,6 +72,11 @@ class ProofreadPageLevelTest extends ProofreadPageTestCase {
 				new ProofreadPageLevel( 4, $test2User ),
 				false
 			),
+			array(
+				new ProofreadPageLevel( 1, null ),
+				new ProofreadPageLevel( 4, $testUser ),
+				false
+			),
 		);
 	}
 

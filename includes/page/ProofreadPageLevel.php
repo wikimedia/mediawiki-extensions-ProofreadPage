@@ -98,7 +98,8 @@ class ProofreadPageLevel {
 			return false;
 		}
 
-		if ( $to->getLevel() === 4 && ( $this->level < 3 || $this->level === 3 && $this->user->getName() === $to->getUser()->getName() ) ) {
+		$fromUser = ( $this->user instanceof User ) ? $this->user : $to->getUser();
+		if ( $to->getLevel() === 4 && ( $this->level < 3 || $this->level === 3 && $fromUser->getName() === $to->getUser()->getName() ) ) {
 			return false;
 		}
 
