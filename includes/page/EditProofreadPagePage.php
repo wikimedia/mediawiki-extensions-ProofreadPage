@@ -93,7 +93,6 @@ class EditProofreadPagePage extends EditPage {
 	 */
 	protected function showContentForm() {
 		$out = $this->mArticle->getContext()->getOutput();
-		$pageLang = $this->mTitle->getPageLanguage();
 
 		//custom CSS for preview
 		$css = $this->pagePage->getCustomCss();
@@ -101,52 +100,57 @@ class EditProofreadPagePage extends EditPage {
 			$out->addInlineStyle( $css );
 		}
 
-		$inputAttributes = array(
-			'lang' => $pageLang->getCode(),
-			'dir' => $pageLang->getDir(),
-			'cols' => '70'
-		);
-
+		$inputAttributes = array();
 		if ( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
 
-		$headerAttributes = $inputAttributes + array(
-			'id' => 'wpHeaderTextbox',
-			'rows' => '2',
-			'tabindex' => '1'
-		);
-		$bodyAttributes = $inputAttributes + array(
-			'tabindex' => '1',
-			'accesskey' =>',',
-			'id' => 'wpTextbox1',
-			'rows' => '51',
-			'style' =>''
-		);
-		$footerAttributes = $inputAttributes + array(
-			'id' => 'wpFooterTextbox',
-			'rows' => '2',
-			'tabindex' => '1'
-		);
-
 		$content = $this->toEditContent( $this->textbox1 );
-		$out->addHTML(
-			$this->pagePage->getPageContainerBegin() .
-			Html::openElement( 'div', array( 'class' => 'prp-page-edit-header' ) ) .
-			Html::element( 'label', array( 'for' => 'wpHeaderTextbox' ), wfMessage( 'proofreadpage_header' )->text() ) .
-			Html::textarea( 'wpHeaderTextbox', $content->getHeader()->serialize(), $headerAttributes ) .
-			Html::closeElement( 'div' ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-edit-body' ) ) .
-			Html::element( 'label', array( 'for' => 'wpTextbox1' ), wfMessage( 'proofreadpage_body' )->text() ) .
-			Html::textarea( 'wpTextbox1', $content->getBody()->serialize(), $bodyAttributes ) .
-			Html::closeElement( 'div' ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-edit-footer' ) ) .
-			Html::element( 'label', array( 'for' => 'wpFooterTextbox' ), wfMessage( 'proofreadpage_footer' )->text() ) .
-			Html::textarea( 'wpFooterTextbox', $content->getFooter()->serialize(), $footerAttributes ) .
-			Html::closeElement( 'div' ) .
-			$this->pagePage->getPageContainerEnd()
+
+		$out->addHTML( $this->pagePage->getPageContainerBegin() );
+		$this->showEditArea(
+			'wpHeaderTextbox',
+			'prp-page-edit-header',
+			'proofreadpage_header',
+			$content->getHeader()->serialize(),
+			$inputAttributes + array( 'rows' => '2' )
 		);
+		$this->showEditArea(
+			'wpTextbox1',
+			'prp-page-edit-body',
+			'proofreadpage_body',
+			$content->getBody()->serialize(),
+			$inputAttributes
+		);
+		$this->showEditArea(
+			'wpFooterTextbox',
+			'prp-page-edit-footer',
+			'proofreadpage_footer',
+			$content->getFooter()->serialize(),
+			$inputAttributes + array( 'rows' => '2' )
+		);
+		$out->addHTML( $this->pagePage->getPageContainerEnd() );
+
 		$out->addModules( 'ext.proofreadpage.page.edit' );
+	}
+
+	/**
+	 * Outputs an edit area to edition
+	 *
+	 * @param $textareaName string the name of the textarea node (used also as id)
+	 * @param $areaClass string the class of the div container
+	 * @param $labelMsg string the label of the area
+	 * @param $content string the text to edit
+	 * @param $textareaAttributes array attributes to add to textarea node
+	 */
+	protected function showEditArea( $textareaName, $areaClass, $labelMsg, $content, $textareaAttributes ) {
+		$out = $this->mArticle->getContext()->getOutput();
+		$out->addHTML(
+			Html::openElement( 'div', array( 'class' => $areaClass ) ) .
+			Html::element( 'label', array( 'for' => $textareaName ), wfMessage( $labelMsg )->text() )
+		);
+		$this->showTextbox( $content, $textareaName, $textareaAttributes );
+		$out->addHTML( Html::closeElement( 'div' ) );
 	}
 
 	/**
