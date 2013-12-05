@@ -131,7 +131,7 @@ class ProofreadIndexPage {
 			}
 		} else {
 			$attributes = explode( "\n", wfMessage( 'proofreadpage_index_attributes' )->inContentLanguage()->text() );
-			$indexAttributes = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )->inContentLanguage()->text() );
+			$headerAttributes = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )->inContentLanguage()->text() );
 			$config = array();
 			foreach( $attributes as $attribute ) {
 				$m = explode( '|', $attribute );
@@ -160,7 +160,7 @@ class ProofreadIndexPage {
 				$config[$m[0]] = $params;
 			}
 
-			foreach( $indexAttributes as $attribute ) {
+			foreach( $headerAttributes as $attribute ) {
 				if ( isset( $config[$attribute] ) ) {
 					$config[$attribute]['header'] = true;
 				} else {
@@ -175,6 +175,21 @@ class ProofreadIndexPage {
 					);
 				}
 			}
+		}
+
+		if( !array_key_exists( 'Header', $config ) ) {
+			$config['Header'] = array(
+				'default' => wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain(),
+				'header' => true,
+				'hidden' => true
+			);
+		}
+		if( !array_key_exists( 'Footer', $config ) ) {
+			$config['Footer'] = array(
+				'default' => wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain(),
+				'header' => true,
+				'hidden' => true
+			);
 		}
 
 		return $config;
