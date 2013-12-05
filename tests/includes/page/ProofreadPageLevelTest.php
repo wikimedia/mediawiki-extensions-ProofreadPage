@@ -2,6 +2,7 @@
 
 /**
  * @group ProofreadPage
+ * @covers ProofreadPageLevel
  */
 class ProofreadPageLevelTest extends ProofreadPageTestCase {
 
