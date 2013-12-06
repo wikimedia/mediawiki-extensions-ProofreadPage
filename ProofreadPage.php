@@ -108,9 +108,12 @@ $prpResourceTemplate = array(
 	'remoteExtPath' => 'ProofreadPage/modules'
 );
 $wgResourceModules += array(
+	'jquery.mousewheel' => $prpResourceTemplate + array(
+		'scripts' => 'jquery/jquery.mousewheel.js'
+	),
 	'jquery.prpZoom' => $prpResourceTemplate + array(
 		'scripts' => 'jquery/jquery.prpZoom.js',
-		'dependencies' => array( 'jquery.ui.widget', 'jquery.ui.draggable' )
+		'dependencies' => array( 'jquery.ui.widget', 'jquery.ui.draggable', 'jquery.mousewheel' )
 	),
 	'ext.proofreadpage.base' => $prpResourceTemplate + array(
 		'styles'  => 'ext.proofreadpage.base.css',
