@@ -63,38 +63,47 @@ class EditProofreadPagePage extends EditPage {
 	 * @see EditPage::showContentForm
 	 */
 	protected function getContentObject( $def_content = null ) {
+		if ( $this->mTitle->exists() ) {
+			return parent::getContentObject( $def_content );
+		}
+
 		//preload content
-		if ( !$this->mTitle->exists() ) {
-			$index = $this->pagePage->getIndex();
-			if ( $index ) {
-				$params = array(
-					'pagenum' => $index->getDisplayedPageNumber( $this->getTitle() )
-				);
-				$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
-				$body = '';
-				$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
+		$index = $this->pagePage->getIndex();
+		$body = '';
 
-				//Extract text layer
-				$image = $index->getImage();
-				$pageNumber = $this->pagePage->getPageNumber();
-				if ( $image && $pageNumber !== null && $image->exists() ) {
-					$text = $image->getHandler()->getPageText( $image, $pageNumber );
-					if ( $text ) {
-						$text = preg_replace( "/(\\\\n)/", "\n", $text );
-						$body = preg_replace( "/(\\\\\d*)/", '', $text );
-					}
-				}
+		//default header and footer
+		if ( $index ) {
+			$params = array(
+				'pagenum' => $index->getDisplayedPageNumber( $this->getTitle() )
+			);
+			$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
+			$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
+		} else {
+			$header = wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain();
+			$footer = wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
+		}
 
-				return new ProofreadPageContent(
-					new WikitextContent( $header ),
-					new WikitextContent( $body ),
-					new WikitextContent( $footer ),
-					new ProofreadPageLevel()
-				);
+		//Extract text layer
+		$image = $this->pagePage->getImage();
+		$pageNumber = $this->pagePage->getPageNumber();
+		if ( $image && $image->exists() ) {
+			if ( $pageNumber !== null && $image->isMultipage() ) {
+				$text = $image->getHandler()->getPageText( $image, $pageNumber );
+			} else {
+				$text = $image->getHandler()->getPageText( $image, 1 );
+			}
+			if ( $text ) {
+				$text = preg_replace( "/(\\\\n)/", "\n", $text );
+				$body = preg_replace( "/(\\\\\d*)/", '', $text );
 			}
 		}
 
-		return parent::getContentObject( $def_content );
+		return new ProofreadPageContent(
+			new WikitextContent( $header ),
+			new WikitextContent( $body ),
+			new WikitextContent( $footer ),
+			new ProofreadPageLevel()
+		);
 	}
 
 	/**
