@@ -26,7 +26,7 @@
 		options: {
 			zoomStep: 6,
 			moveStep: 6,
-			animationDuration: 200
+			animationDuration: 10
 		},
 
 		default: {
@@ -105,6 +105,7 @@
 				} else if( event.deltaY < 0 ) {
 					$( this ).prpZoom( 'zoomIn' );
 				}
+				event.preventDefault(); //Don't scroll while zooming
 			}
 		},
 
