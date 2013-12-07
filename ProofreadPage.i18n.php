@@ -1519,7 +1519,7 @@ $messages['ckb'] = array(
 	'proofreadpage-button-zoom-in-label' => 'گەورەکردنەوە',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Jkjk
  * @author Matěj Grabovský
  * @author Mormegil
@@ -1595,7 +1595,7 @@ Poznámky||10',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Při editaci ve jmenném prostoru {{ns:page}} používat vodorovné rozložení',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
