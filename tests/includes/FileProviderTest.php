@@ -11,7 +11,7 @@ use UnregisteredLocalFile;
 
 /**
  * @group ProofreadPage
- * @covers FileProvider
+ * @covers \ProofreadPage\FileProvider
  */
 class FileProviderTest extends ProofreadPageTestCase {
 

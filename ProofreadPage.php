@@ -56,13 +56,14 @@ $wgAutoloadClasses['ProofreadIndexPage'] = $dir . 'includes/index/ProofreadIndex
 $wgAutoloadClasses['ProofreadIndexDbConnector'] = $dir . 'includes/index/ProofreadIndexDbConnector.php';
 
 $wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/ProofreadPageDbConnector.php';
-$wgAutoloadClasses['EditProofreadPagePage'] = $dir . 'includes/page/EditProofreadPagePage.php';
+$wgAutoloadClasses['ProofreadPage\Page\EditPagePage'] = $dir . 'includes/page/EditPagePage.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageContentBuilder'] = $dir . 'includes/page/PageContentBuilder.php';
 $wgAutoloadClasses['ProofreadPagePage'] = $dir.'includes/page/ProofreadPagePage.php';
 $wgAutoloadClasses['ProofreadPageContent'] = $dir.'includes/page/ProofreadPageContent.php';
 $wgAutoloadClasses['ProofreadPageLevel'] = $dir.'includes/page/ProofreadPageLevel.php';
 $wgAutoloadClasses['ProofreadPageContentHandler'] = $dir.'includes/page/ProofreadPageContentHandler.php';
-$wgAutoloadClasses['ProofreadPageEditAction'] = $dir . 'includes/page/ProofreadPageEditAction.php';
-$wgAutoloadClasses['ProofreadPageSubmitAction'] = $dir . 'includes/page/ProofreadPageSubmitAction.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageEditAction'] = $dir . 'includes/page/PageEditAction.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageSubmitAction'] = $dir . 'includes/page/PageSubmitAction.php';
 $wgAutoloadClasses['ProofreadPageViewAction'] = $dir . 'includes/page/ProofreadPageViewAction.php';
 $wgAutoloadClasses['ProofreadPageDifferenceEngine'] = $dir . 'includes/page/ProofreadPageDifferenceEngine.php';
 
@@ -210,6 +211,7 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$files[] = $dir . 'page/ProofreadPageContentTest.php';
 	$files[] = $dir . 'page/ProofreadPageContentHandlerTest.php';
 	$files[] = $dir . 'page/ProofreadPagePageTest.php';
+	$files[] = $dir . 'page/PageContentBuilderTest.php';
 	$files[] = $dir . 'ProofreadDiffFormatterUtilsTest.php';
 
 	return true;

@@ -50,6 +50,11 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			'values' => null,
 			'header' => false
 		),
+		'Footer' => array(
+			'default' => '<references />',
+			'header' => true,
+			'hidden' => true
+		),
 		'TOC' => array(
 			'type' => 'string',
 			'size' => 1,
@@ -94,13 +99,14 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetIndexEntries() {
-		$page = self::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Author=[[Author:Me]]\n|Year=2012 or 2013\n|Pages=<pagelist />\n|TOC=* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]\n}}" );
+		$page = self::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Author=[[Author:Me]]\n|Year=2012 or 2013\n|Header={{{Title}}}\n|Pages=<pagelist />\n|TOC=* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]\n}}" );
 		$entries = array(
 			'Title' => new ProofreadIndexEntry( 'Title', 'Test book', self::$config['Title'] ),
 			'Author' => new ProofreadIndexEntry( 'Author', '[[Author:Me]]', self::$config['Author'] ),
 			'Year' => new ProofreadIndexEntry( 'Year', '2012 or 2013', self::$config['Year'] ),
 			'Pages' => new ProofreadIndexEntry( 'Pages', '<pagelist />', self::$config['Pages'] ),
-			'Header' => new ProofreadIndexEntry( 'Header', '', self::$config['Header'] ),
+			'Header' => new ProofreadIndexEntry( 'Header', '{{{Title}}}', self::$config['Header'] ),
+			'Footer' => new ProofreadIndexEntry( 'Footer', '', self::$config['Footer'] ),
 			'TOC' => new ProofreadIndexEntry( 'TOC', "* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]", self::$config['TOC'] ),
 			'Comment' => new ProofreadIndexEntry( 'Comment', '', self::$config['Comment'] ),
 			'width' => new ProofreadIndexEntry( 'width', '', self::$config['width'] ),
@@ -131,6 +137,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			'Author' => new ProofreadIndexEntry( 'Author', '[[Author:Me]]', self::$config['Author'] ),
 			'Comment' => new ProofreadIndexEntry( 'Comment', '', self::$config['Comment'] ),
 			'Header' => new ProofreadIndexEntry( 'Header', '', self::$config['Header'] ),
+			'Footer' => new ProofreadIndexEntry( 'Footer', '', self::$config['Footer'] ),
 			'width' => new ProofreadIndexEntry( 'width', '', self::$config['width'] ),
 			'CSS' => new ProofreadIndexEntry( 'CSS', '', self::$config['CSS'] )
 		);
