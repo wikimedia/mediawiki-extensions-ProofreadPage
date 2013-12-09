@@ -196,7 +196,7 @@
 								src: def.icon,
 								alt: mw.msg( def.labelMsg ),
 								title: mw.msg( def.labelMsg ),
-								class: 'mw-toolbar-editbutton'
+								'class': 'mw-toolbar-editbutton' //quotes needed for IE
 							} )
 							.click( def.action.execute )
 							.appendTo( $toolbar );
