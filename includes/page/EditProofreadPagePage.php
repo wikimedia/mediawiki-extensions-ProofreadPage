@@ -131,22 +131,23 @@ class EditProofreadPagePage extends EditPage {
 			'prp-page-edit-header',
 			'proofreadpage_header',
 			$content->getHeader()->serialize(),
-			$inputAttributes + array( 'rows' => '2' )
+			$inputAttributes + array( 'rows' => '2', 'tabindex' => '1' )
 		);
 		$this->showEditArea(
 			'wpTextbox1',
 			'prp-page-edit-body',
 			'proofreadpage_body',
 			$content->getBody()->serialize(),
-			$inputAttributes
+			$inputAttributes + array( 'tabindex' => '1' )
 		);
 		$this->showEditArea(
 			'wpFooterTextbox',
 			'prp-page-edit-footer',
 			'proofreadpage_footer',
 			$content->getFooter()->serialize(),
-			$inputAttributes + array( 'rows' => '2' )
+			$inputAttributes + array( 'rows' => '2', 'tabindex' => '1' )
 		);
+		//the 3 textarea tabindex are set to 1 because summary tabindex is 1 too
 		$out->addHTML( $this->pagePage->getPageContainerEnd() );
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );
