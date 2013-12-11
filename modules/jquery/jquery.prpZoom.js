@@ -29,7 +29,7 @@
 			animationDuration: 10
 		},
 
-		default: {
+		'default': { //quotes needed for IE
 			width: 0,
 			height: 0
 		},
