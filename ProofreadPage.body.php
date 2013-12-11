@@ -697,13 +697,15 @@ $void_cell
 		$oldContent = $article->getPage()->getContent( Revision::FOR_THIS_USER, $user );
 		$newContent = $contentHandler->unserializeContent( $text, $editPage->getTitle(), $editPage->contentFormat );
 
-		if ( !$newContent->isValid() || $newContent->getLevel()->getUser() === null ) {
-			$resultArr['badpage'] = wfMessage( 'proofreadpage_badpagetext' )->text();
-			return false;
-		}
-
 		if ( $oldContent === null ) {
 			$oldContent = $contentHandler->makeEmptyContent();
+		}
+		$oldLevel = $oldContent->getLevel();
+		$newLevel = $newContent->getLevel();
+
+		if ( !$newContent->isValid() || $newLevel->getUser() === null && $oldLevel->getUser() !== null ) {
+			$resultArr['badpage'] = wfMessage( 'proofreadpage_badpagetext' )->text();
+			return false;
 		}
 
 		$oldLevel = $oldContent->getLevel();
@@ -711,7 +713,7 @@ $void_cell
 		//if the user change the level, the change should be allowed and the new User should be the editing user
 		if (
 			!$newLevel->equals( $oldLevel ) &&
-			( $newLevel->getUser()->getName() !== $user->getName() || !$oldLevel->isChangeAllowed( $newLevel ) )
+			( $newLevel->getUser() === null || $newLevel->getUser()->getName() !== $user->getName() || !$oldLevel->isChangeAllowed( $newLevel ) )
 		) {
 			$resultArr['notallowed'] = wfMessage( 'proofreadpage_notallowedtext' )->text();
 			return false;
