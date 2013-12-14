@@ -25,7 +25,6 @@
 
 		options: {
 			zoomStep: 6,
-			moveStep: 6,
 			animationDuration: 10
 		},
 
@@ -35,11 +34,6 @@
 		},
 
 		zoomStep: {
-			width: 0,
-			height: 0
-		},
-
-		moveStep: {
 			width: 0,
 			height: 0
 		},
@@ -69,10 +63,6 @@
 			this.zoomStep = {
 				width: this.options.zoomStep * this.default.width / 100,
 				height: this.options.zoomStep * this.default.height / 100
-			};
-			this.moveStep = {
-				width: this.options.moveStep * this.default.width / 100,
-				height: this.options.moveStep * this.default.height / 100
 			};
 
 			//setup area
@@ -132,30 +122,6 @@
 			position.top -=  proportion * this.zoomStep.height;
 			position.width += 2 *  proportion * this.zoomStep.width;
 			position.height += 2 *  proportion * this.zoomStep.height;
-			this._applyPosition( position );
-		},
-
-		moveLeft: function () {
-			var position = this._getPosition();
-			position.left -= this.moveStep.width;
-			this._applyPosition( position );
-		},
-
-		moveRight: function () {
-			var position = this._getPosition();
-			position.left += this.moveStep.width;
-			this._applyPosition( position );
-		},
-
-		moveUp: function () {
-			var position = this._getPosition();
-			position.top -= this.moveStep.height;
-			this._applyPosition( position );
-		},
-
-		moveDown: function () {
-			var position = this._getPosition();
-			position.top += this.moveStep.height;
 			this._applyPosition( position );
 		},
 
