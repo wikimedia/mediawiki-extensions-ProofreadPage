@@ -38,6 +38,8 @@
 			height: 0
 		},
 
+		zoomOnMouseWheelActivated: false,
+
 		_getPosition: function() {
 			var position = this.element.position();
 			position.width = this.element.width();
@@ -82,20 +84,30 @@
 			this.reset();
 
 			var element = this.element;
-			$.each( this._events, function( event, handler ) {
-				element.bind( event, handler );
+			$.each( this._events(), function( event, handler ) {
+				element.bind( event + '.prpZoom', handler );
 			} );
 		},
 
-		_events: {
-			//depends on jquery.mousewheel.js
-			'mousewheel': function( event ) {
-				if( event.deltaY > 0 ) {
-					$( this ).prpZoom( 'zoomOut' );
-				} else if( event.deltaY < 0 ) {
-					$( this ).prpZoom( 'zoomIn' );
+		_events: function() {
+			var prpZoom = this;
+			return {
+				'click': function( event ) {
+					prpZoom.zoomOnMouseWheelActivated = !prpZoom.zoomOnMouseWheelActivated;
+				},
+				//depends on jquery.mousewheel.js
+				'mousewheel': function( event ) {
+					if( !prpZoom.zoomOnMouseWheelActivated ) {
+						return;
+					}
+
+					if( event.deltaY > 0 ) {
+						prpZoom.zoomOut();
+					} else if( event.deltaY < 0 ) {
+						prpZoom.zoomIn();
+					}
+					event.preventDefault(); //Don't scroll while zooming
 				}
-				event.preventDefault(); //Don't scroll while zooming
 			}
 		},
 
@@ -143,8 +155,8 @@
 				} );
 
 			var element = this.element;
-			$.each( this._events, function( event, handler ) {
-				element.unbind( event, handler );
+			$.each( this._events(), function( event, handler ) {
+				element.unbind( event + '.prpZoom' );
 			} );
 
 			$.Widget.prototype.destroy.call( this );
