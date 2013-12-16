@@ -21,6 +21,8 @@ $specialPageAliases['en'] = array(
 $specialPageAliases['ar'] = array(
 	'IndexPages' => array( 'صفحات_الفهرس' ),
 	'PagesWithoutScans' => array( 'صفحات_بدون_فحص' ),
+	'ProofreadIndexOai' => array( 'فهرس_التصحيح_أو_إيه_آي' ),
+	'ProofreadIndexOaiSchema' => array( 'سكيما_فهرس_تصحيح_أو_إيه_آي' ),
 );
 
 /** Assamese (অসমীয়া) */

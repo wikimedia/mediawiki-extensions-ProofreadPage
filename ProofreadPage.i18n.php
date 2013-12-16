@@ -3132,6 +3132,7 @@ $messages['haw'] = array(
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author Guycn2
  * @author Rotem Liss
  * @author Rotemliss
  * @author YaronSh
@@ -3150,10 +3151,10 @@ $messages['he'] = array(
 	'proofreadpage_badpagetext' => 'תסדיר הדף שניסיתם לשמור אינו נכון.',
 	'proofreadpage_indexdupe' => 'קישור כפול',
 	'proofreadpage_indexdupetext' => 'לא ניתן להציג את הדפים יותר מפעם אחת בדף מפתח.',
-	'proofreadpage_nologin' => 'לא נכנסתם לחשבון',
-	'proofreadpage_nologintext' => 'עליכם [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של דפים.',
+	'proofreadpage_nologin' => 'לא נכנסת לחשבון',
+	'proofreadpage_nologintext' => 'יש [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של דפים.',
 	'proofreadpage_notallowed' => 'לא ניתן לבצע את השינוי',
-	'proofreadpage_notallowedtext' => 'אינכם מורשים לשנות את מצב ההגהה של דף זה.',
+	'proofreadpage_notallowedtext' => 'אינך מורשה לשנות את מצב ההגהה של דף זה.',
 	'proofreadpage_dataconfig_badformatted' => 'באג בהגדרות נתונים',
 	'proofreadpage_dataconfig_badformattedtext' => 'הדף [[Mediawiki:Proofreadpage index data config]] אינו כתוב בתסדיר JSON תקין.',
 	'proofreadpage_number_expected' => 'שגיאה: נדרש ערך מספרי',
@@ -3209,7 +3210,7 @@ $messages['he'] = array(
 	'proofreadpage-button-zoom-in-label' => 'תקריב',
 	'proofreadpage-button-toggle-layout-label' => 'פריסה אופקית או אנכית',
 	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "{{ns:page}}".',
-	'proofreadpage-preferences-horizontal-layout-label' => 'להשתמש בתצוגה אופקית בעת עריכה ב מרחב השם {{ns:page}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'להשתמש בתצוגה אופקית בעת עריכה במרחב השם {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'מטא־נתונים של ספרים מאתר {{SITENAME}}',
 	'proofreadpage-indexoai-eprint-content-text' => 'מטא־נתונים של ספרים שמנהלת ההרחבה ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'לא נמצאה סכֵמה.',
@@ -7753,6 +7754,8 @@ $messages['tr'] = array(
 	'proofreadpage_nologintext' => 'Sayfaların düzeltme durumunu değiştirmek için [[Special:UserLogin|giriş yapmış]] olmalısınız.',
 	'proofreadpage_notallowed' => 'Değişikliğe izin verilmiyor',
 	'proofreadpage_notallowedtext' => 'Bu sayfanın düzeltme durumunu değiştirmenize izin verilmiyor.',
+	'proofreadpage_dataconfig_badformatted' => 'Veri yapılandırmasında hata',
+	'proofreadpage_dataconfig_badformattedtext' => '[[Mediawiki:Proofreadpage index data config]] sayfası iyi biçimlendirilmiş JSON biçiminde değil.',
 	'proofreadpage_number_expected' => 'Hata: sayısal değer bekleniyordu',
 	'proofreadpage_interval_too_large' => 'Hata: aralık çok büyük',
 	'proofreadpage_invalid_interval' => 'Hata: geçersiz aralık',
@@ -7774,6 +7777,7 @@ $messages['tr'] = array(
 	'proofreadpage_quality4_message' => 'Bu sayfa doğrulanmış',
 	'proofreadpage_index_status' => 'Dizin durumu',
 	'proofreadpage_index_size' => 'Sayfa sayısı',
+	'proofreadpage_specialpage_label_orderby' => 'Sırala:',
 	'proofreadpage_specialpage_label_key' => 'Ara:',
 	'proofreadpage_specialpage_label_sortascending' => 'Artan sıralama',
 	'proofreadpage_alphabeticalorder' => 'Alfabetik sıraya göre',
@@ -7795,6 +7799,7 @@ Açıklamalar||10',
 	'proofreadpage_specialpage_searcherrortext' => 'Arama motoru çalışmıyor. Verdiğimiz rahatsızlıktan dolayı özür dileriz.',
 	'proofreadpage_source' => 'Kaynak',
 	'proofreadpage_source_message' => 'Bu metni oluşturmak için kullanılan taranmış sürüm',
+	'right-pagequality' => 'Sayfa kalite bayrağını değiştirme',
 	'proofreadpage-section-tools' => 'Redaksiyon araçları',
 	'proofreadpage-group-zoom' => 'Yakınlaştır',
 	'proofreadpage-group-other' => 'Diğer',
@@ -7805,6 +7810,11 @@ Açıklamalar||10',
 	'proofreadpage-button-toggle-layout-label' => 'Yatay/dikey düzen',
 	'proofreadpage-preferences-showheaders-label' => '{{Ns:page}} ad alanında düzenlerken üstbilgi ve altbilgi alanlarını göster',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{Ns:page}} ad alanında düzenlerken yatay düzen kullan:',
+	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}} sitesindeki kitapların üst verileri',
+	'proofreadpage-indexoai-eprint-content-text' => 'ProofreadPage tarafından yönetilen kitapların üst verileri.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Şema bulunamadı',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 şeması bulunamadı.',
+	'proofreadpage-disambiguationspage' => 'Template:anlam_ayrımı',
 );
 
 /** Tsonga (Xitsonga)
