@@ -6155,6 +6155,7 @@ Nòte||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadat dij lìber gestì da ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nen trovà',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "Lë schema $1 a l'é pa stàit trovà.",
+	'proofreadpage-disambiguationspage' => "Stamp:Gestion dj'omònim",
 );
 
 /** Pashto (پښتو)
