@@ -28,7 +28,7 @@
 			animationDuration: 10
 		},
 
-		'default': { //quotes needed for IE
+		defaultDimensions: {
 			width: 0,
 			height: 0
 		},
@@ -58,20 +58,20 @@
 
 		_create: function() {
 			//config params
-			this.default = {
+			this.defaultDimensions = {
 				width: this.element.width(),
 				height: this.element.height()
 			};
 			this.zoomStep = {
-				width: this.options.zoomStep * this.default.width / 100,
-				height: this.options.zoomStep * this.default.height / 100
+				width: this.options.zoomStep * this.defaultDimensions.width / 100,
+				height: this.options.zoomStep * this.defaultDimensions.height / 100
 			};
 
 			//setup area
 			this.element.parent().css( {
 				position: 'relative',
 				overflow: 'auto',
-				height: this.default.height,
+				height: this.defaultDimensions.height,
 				cursor: 'move'
 			} );
 
@@ -115,8 +115,8 @@
 			this._applyPosition( {
 				top: 0,
 				left: 0,
-				width: this.default.width,
-				height: this.default.height
+				width: this.defaultDimensions.width,
+				height: this.defaultDimensions.height
 			} );
 		},
 
