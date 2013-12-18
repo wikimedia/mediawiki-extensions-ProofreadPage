@@ -67,6 +67,12 @@ $specialPageAliases['fa'] = array(
 	'PagesWithoutScans' => array( 'صفحه‌های_بدون_پویش‌ها' ),
 );
 
+/** Hebrew (עברית) */
+$specialPageAliases['he'] = array(
+	'IndexPages' => array( 'דפי_מפתח', 'רשימת_דפי_מפתח' ),
+	'PagesWithoutScans' => array( 'דפים_ללא_סריקות' ),
+);
+
 /** Haitian (Kreyòl ayisyen) */
 $specialPageAliases['ht'] = array(
 	'IndexPages' => array( 'PajEndèks' ),
