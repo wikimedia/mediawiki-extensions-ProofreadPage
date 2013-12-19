@@ -1088,6 +1088,7 @@ $messages['be-tarask'] = array(
 /** Bulgarian (български)
  * @author Borislav
  * @author DCLXVI
+ * @author MegaAlex
  * @author Spiritia
  * @author Stanqo
  * @author Turin
@@ -1114,8 +1115,8 @@ $messages['bg'] = array(
 	'proofreadpage_number_expected' => 'Грешка: очаква се цифрова стойност',
 	'proofreadpage_interval_too_large' => 'Грешка: обхватът е твърде голям',
 	'proofreadpage_invalid_interval' => 'Грешка: недопустим интервал',
-	'proofreadpage_nextpage' => 'Следваща',
-	'proofreadpage_prevpage' => 'Предишна',
+	'proofreadpage_nextpage' => 'Следваща страница',
+	'proofreadpage_prevpage' => 'Предишна страница',
 	'proofreadpage_header' => 'Горен колонтитул (не се включва):',
 	'proofreadpage_body' => 'Тяло на страницата (за вграждане):',
 	'proofreadpage_footer' => 'Долен колонтитул (не се включва):',
