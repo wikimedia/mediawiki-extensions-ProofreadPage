@@ -6202,14 +6202,14 @@ $messages['ps'] = array(
  */
 $messages['pt'] = array(
 	'indexpages' => 'Lista de páginas de índice',
-	'pageswithoutscans' => 'Páginas não transcluídas',
+	'pageswithoutscans' => 'Páginas sem digitalizações de originais',
 	'proofreadpage_desc' => 'Permite a comparação fácil de um texto com a sua digitalização original',
 	'proofreadpage_image' => 'Imagem',
 	'proofreadpage_index' => 'Índice',
 	'proofreadpage_index_expected' => 'Erro: índice esperado',
 	'proofreadpage_nosuch_index' => 'Erro: índice não existe',
 	'proofreadpage_nosuch_file' => 'Erro: ficheiro não existe',
-	'proofreadpage_badpage' => 'Formato Errado',
+	'proofreadpage_badpage' => 'Formato errado',
 	'proofreadpage_badpagetext' => 'O formato da página que tentou gravar é incorreto.',
 	'proofreadpage_indexdupe' => 'Link duplicado',
 	'proofreadpage_indexdupetext' => 'As páginas não podem ser listadas mais do que uma vez numa página de índice.',
@@ -6273,6 +6273,11 @@ Notas||10',
 	'proofreadpage-button-toggle-layout-label' => 'Orientação vertical ou horizontal',
 	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Usar "layout" horizontal ao editar o espaço nominal {{ns:page}}',
+	'proofreadpage-indexoai-repositoryName' => 'Metadados dos livros de {{SITENAME}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Metadados dos livros administrados por ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Schema não encontrado',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'O schema $1 não foi encontrado.',
+	'proofreadpage-disambiguationspage' => 'Template:disambig',
 );
 
 /** Brazilian Portuguese (português do Brasil)
@@ -6285,7 +6290,7 @@ Notas||10',
  */
 $messages['pt-br'] = array(
 	'indexpages' => 'Lista de páginas de índice',
-	'pageswithoutscans' => 'Páginas sem imagens',
+	'pageswithoutscans' => 'Páginas sem digitalizações de originais',
 	'proofreadpage_desc' => 'Permite uma fácil comparação de textos e suas digitalizações originais',
 	'proofreadpage_image' => 'Imagem',
 	'proofreadpage_index' => 'Índice',
