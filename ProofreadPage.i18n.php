@@ -612,7 +612,7 @@ $messages['as'] = array(
 	'proofreadpage_specialpage_searcherrortext' => 'অনুসন্ধান যন্ত্ৰই কাম কৰা নাই। অসুবিধাৰ বাবে দুঃখিত।',
 	'proofreadpage_source' => 'উৎস',
 	'proofreadpage_source_message' => 'এই পাঠ্য প্ৰতিষ্ঠা কৰিবলৈ ব্যৱহৃত স্কেন কৰা সংস্কৰণ',
-	'right-pagequality' => 'পৃষ্ঠা গুণাগুণ নিচান পৰিৱৰ্তন কৰক',
+	'right-pagequality' => 'পৃষ্ঠা গুণাগুণ সংকেত সলাওক',
 	'proofreadpage-section-tools' => 'মূদ্ৰন সংশোধনৰ সঁজুলি',
 	'proofreadpage-group-zoom' => 'ডাঙৰ কৰক',
 	'proofreadpage-group-other' => 'অন্য',
@@ -621,7 +621,7 @@ $messages['as'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'মূল আকাৰ',
 	'proofreadpage-button-zoom-in-label' => 'ডাঙৰ কৰক',
 	'proofreadpage-button-toggle-layout-label' => 'থিয়/পথালি সজ্জা',
-	'proofreadpage-preferences-showheaders-label' => 'পৃষ্ঠা নামস্থানত সম্পাদনা কৰোঁতে শিৰোনামা আৰু পাদটীকা স্থান দেখুৱাওক',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:page}} নামস্থানত সম্পাদনা কৰোঁতে শিৰোনামা আৰু পাদটীকা স্থান দেখুৱাওক',
 	'proofreadpage-preferences-horizontal-layout-label' => "{{ns:page}} নামস্থানত সম্পাদনা কৰোঁতে আনুভূমিক লে'আউট ব্যৱহাৰ কৰক।",
 );
 
@@ -5977,6 +5977,21 @@ $messages['os'] = array(
 	'proofreadpage_image' => 'ныв',
 	'proofreadpage_nextpage' => 'Фæдылдзог фарс',
 	'proofreadpage_prevpage' => 'Раздæры фарс',
+);
+
+/** Punjabi (ਪੰਜਾਬੀ)
+ * @author Satdeep gill
+ */
+$messages['pa'] = array(
+	'proofreadpage_badpage' => 'ਗਲਤ ਫਾਰਮੈਟ',
+	'proofreadpage_nologin' => 'ਲਾਗਇਨ ਨਹੀਂ ਹੋ',
+	'proofreadpage_specialpage_label_key' => 'ਖੋਜ:',
+	'proofreadpage_specialpage_label_sortascending' => 'ਵਧਦਾ ਕ੍ਰਮ',
+	'proofreadpage_index_listofpages' => 'ਸਫ਼ਿਆਂ ਦੀ ਸੂਚੀ',
+	'proofreadpage_source' => 'ਸਰੋਤ',
+	'proofreadpage-group-zoom' => 'ਜ਼ੂਮ ਕਰੋ',
+	'proofreadpage-button-zoom-out-label' => 'ਬਾਹਰ ਨੂੰ ਜ਼ੂਮ ਕਰੋ',
+	'proofreadpage-button-zoom-in-label' => 'ਅੰਦਰ ਨੂੰ ਜ਼ੂਮ ਕਰੋ',
 );
 
 /** Deitsch (Deitsch)
