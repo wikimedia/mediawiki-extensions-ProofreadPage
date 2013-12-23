@@ -122,4 +122,11 @@ class ProofreadPageLevel {
 			return ( $user === false ) ? null : $user;
 		}
 	}
+
+	/**
+	 * @return string
+	 */
+	public function getLevelCategoryName() {
+		return wfMessage( 'proofreadpage_quality' . $this->level . '_category' )->inContentLanguage()->plain();
+	}
 }

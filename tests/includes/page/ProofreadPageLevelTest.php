@@ -104,4 +104,11 @@ class ProofreadPageLevelTest extends ProofreadPageTestCase {
 		$this->assertEquals( $user, ProofreadPageLevel::getUserFromUserName( $name ) );
 	}
 
+	/**
+	 * @dataProvider nameProvider
+	 */
+	public function testGetLevelCategoryName() {
+		$level = new ProofreadPageLevel( 1, null );
+		$this->assertEquals( 'Not proofread', $level->getLevelCategoryName() );
+	}
 }

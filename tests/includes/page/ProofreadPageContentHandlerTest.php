@@ -105,13 +105,13 @@ class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
 			),
 			array(
 				null,
-				ProofreadPageContentTest::newContent( '', '', '', 1 ),
-				'/*Not proofread*/'
+				ProofreadPageContentTest::newContent( '', 'aaa', '', 1 ),
+				'/* Not proofread */'
 			),
 			array(
 				ProofreadPageContentTest::newContent( '', '', '', 2 ),
 				ProofreadPageContentTest::newContent( '', '', '', 1 ),
-				'/*Not proofread*/'
+				'/* Not proofread */'
 			)
 		);
 	}
