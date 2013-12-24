@@ -239,7 +239,7 @@ class ProofreadPageContent extends TextContent {
 		$parserOutput->addCategory(
 			Title::makeTitleSafe(
 				NS_CATEGORY,
-				wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_category' )->inContentLanguage()->text()
+				$this->level->getLevelCategoryName()
 			)->getDBkey(),
 			$title->getText()
 		);

@@ -174,11 +174,10 @@ class ProofreadPageContentHandler extends TextContentHandler {
 		$summary = parent::getAutosummary( $oldContent, $newContent, $flags );
 
 		if (
-			$summary === '' &&
 			$newContent instanceof ProofreadPageContent &&
 			( $oldContent === null || $oldContent instanceof ProofreadPageContent && !$newContent->getLevel()->equals( $oldContent->getLevel() ) )
 		) {
-			$summary = '/*' . wfMessage( 'proofreadpage_quality' . $newContent->getLevel()->getLevel() . '_category' )->plain() . '*/';
+			$summary = trim( '/* ' . $newContent->getLevel()->getLevelCategoryName() . ' */ ' . $summary );
 		}
 
 		return $summary;
