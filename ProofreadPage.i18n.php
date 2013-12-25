@@ -5578,6 +5578,7 @@ Note||10",
 	'proofreadpage-indexoai-eprint-content-text' => "Metadati dde libbri 'e ProofreadPage.",
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nun truvato',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "'O schema $1 nun è stato truovato.",
+	'proofreadpage-disambiguationspage' => 'Template:disambigua',
 );
 
 /** Norwegian Bokmål (norsk bokmål)
