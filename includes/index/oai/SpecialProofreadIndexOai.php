@@ -45,7 +45,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'ProofreadIndexOai' );
-		$this->baseUrl = $this->getTitle()->getCanonicalUrl();
+		$this->baseUrl = $this->getPageTitle()->getCanonicalUrl();
 	}
 
 	public function execute( $par ) {

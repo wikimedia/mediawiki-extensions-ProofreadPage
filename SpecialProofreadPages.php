@@ -52,7 +52,7 @@ class ProofreadPages extends QueryPage {
 
 			$output->addHTML(
 				Html::openElement( 'form', array( 'action' => $wgScript) ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::input( 'limit', $this->limit, 'hidden', array() ) .
 				Html::openElement('fieldset', array() ) .
 				Html::element('legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
