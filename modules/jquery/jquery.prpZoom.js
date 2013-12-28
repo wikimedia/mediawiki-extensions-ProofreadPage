@@ -25,7 +25,9 @@
 
 		options: {
 			zoomStep: 6,
-			animationDuration: 10
+			animationDuration: 10,
+			minScaleFactor: 0.2,
+			maxScaleFactor: 10
 		},
 
 		defaultDimensions: {
@@ -54,6 +56,10 @@
 				width: Math.round( position.width ),
 				height: Math.round( position.height )
 			}, this.options.animationDuration );
+		},
+
+		_getScaleFactor: function( position ) {
+			return position.width / this.defaultDimensions.width;
 		},
 
 		_create: function() {
@@ -134,6 +140,12 @@
 			position.top -=  proportion * this.zoomStep.height;
 			position.width += 2 *  proportion * this.zoomStep.width;
 			position.height += 2 *  proportion * this.zoomStep.height;
+
+			var scaleFactor = this._getScaleFactor( position );
+			if( this.options.minScaleFactor > scaleFactor || scaleFactor > this.options.maxScaleFactor ) {
+				return;
+			}
+
 			this._applyPosition( position );
 		},
 
