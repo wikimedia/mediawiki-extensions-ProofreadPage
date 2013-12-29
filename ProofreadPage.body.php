@@ -829,39 +829,36 @@ $void_cell
 			list( $prevTitle, $nextTitle ) = $indexPage->getPreviousAndNextPages( $page->getTitle() );
 
 			if ( $prevTitle !== null ) {
-				if ( !$prevTitle->exists() ) {
-					$prevLink = $prevTitle->getEditURL();
-				} else {
-					$prevLink = $prevTitle->getLinkUrl();
-				}
 				$links['namespaces']['proofreadPagePrevLink'] = array(
 					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
-					'href' => $prevLink,
+					'href' => self::getLinkUrlForTitle( $prevTitle ),
 					'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
 				);
 			}
 
 			if ( $nextTitle !== null ) {
-				if ( !$nextTitle->exists() ) {
-					$nextLink = $nextTitle->getEditURL();
-				} else {
-					$nextLink = $nextTitle->getLinkUrl();
-				}
 				$links['namespaces']['proofreadPageNextLink'] = array(
 					'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
-					'href' => $nextLink,
+					'href' => self::getLinkUrlForTitle( $nextTitle ),
 					'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
 				);
 			}
 
-			$indexLink = $indexPage->getTitle()->getLinkUrl();
 			$links['namespaces']['proofreadPageIndexLink'] = array(
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
-				'href' => $indexLink,
+				'href' => $indexPage->getTitle()->getLinkUrl(),
 				'text' => wfMessage( 'proofreadpage_index' )->plain()
 			);
 		}
 
 		return true;
+	}
+
+	protected static function getLinkUrlForTitle( Title $title ) {
+		if ( $title->exists() ) {
+			return $title->getLinkUrl();
+		} else {
+			return $title->getLinkUrl( 'action=edit&redlink=1' );
+		}
 	}
 }
