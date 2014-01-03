@@ -871,7 +871,7 @@ $messages['ba'] = array(
 Рәсем|Тышлығының рәсеме
 Биттәр||20
 Иҫкәрмәләр||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|бит}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|бит}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Индекс биттәрен эҙләү',
 	'proofreadpage_source' => 'Сығанаҡ',
 	'proofreadpage_source_message' => 'Был текстты булдырыу өсөн сканланған материалдар ҡулланылған',
@@ -6645,7 +6645,7 @@ $messages['ru'] = array(
 Изображение|Изображение обложки
 Страниц||20
 Примечания||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страницы|страниц}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|страница|страниц|страницы}}', # Fuzzy
 	'proofreadpage_specialpage_legend' => 'Поиск индексных страниц',
 	'proofreadpage_specialpage_searcherror' => 'Ошибка в поисковой системе',
 	'proofreadpage_specialpage_searcherrortext' => 'Поисковая система не работает. Извините за причиненные неудобства.',
@@ -7875,7 +7875,7 @@ $messages['tyv'] = array(
 	'proofreadpage_badpage' => 'Меге формат',
 	'proofreadpage_nextpage' => 'Соонда арын',
 	'proofreadpage_prevpage' => 'Бурунгу арын',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|арын|арын}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|1=арын|арын}}', # Fuzzy
 );
 
 /** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
