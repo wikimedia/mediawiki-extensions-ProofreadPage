@@ -1988,6 +1988,8 @@ $messages['dsb'] = array(
 	'proofreadpage_nologintext' => 'Musyš [[Special:UserLogin|pśizjawjony]] byś, aby status kontrolnego cytanja bokow změnił.',
 	'proofreadpage_notallowed' => 'Změna njedowólona',
 	'proofreadpage_notallowedtext' => 'Njesmějoš status kontrolnego cytanja toś togo boka změniś.',
+	'proofreadpage_dataconfig_badformatted' => 'Zmólka w konfiguraciji datow',
+	'proofreadpage_dataconfig_badformattedtext' => 'Bok [[Mediawiki:Proofreadpage index data config]] njejo w derje wuformowanem JSON.',
 	'proofreadpage_number_expected' => 'Zmólka: numeriska gódnota wócakowana',
 	'proofreadpage_interval_too_large' => 'Zmólka: interwal pśewjeliki',
 	'proofreadpage_invalid_interval' => 'Zmólka: njepłaśiwy interwal',
@@ -2042,6 +2044,11 @@ Pśispomnjeśa||10',
 	'proofreadpage-button-toggle-layout-label' => 'Padorowny/Wódorowny layout',
 	'proofreadpage-preferences-showheaders-label' => 'Głowowe a nogowe póla pokazaś, gaž wobźěłujo se w mjenjowem rumje {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Horicontalne wugótowanje wužywaś, gaž se w mjenjowem rumje {{ns:page}} wobźěłujo',
+	'proofreadpage-indexoai-repositoryName' => 'Knigłowe metadaty z {{GRAMMAR:genitiw|{{SITENAME}}}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'Knigłowe metadaty zastojane pśez ProofreadPage.',
+	'proofreadpage-indexoai-error-schemanotfound' => 'Šema njejo se namakała',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'Šema $1 njejo se namakała.',
+	'proofreadpage-disambiguationspage' => 'Template:Wěcejzmysłowosć',
 );
 
 /** Ewe (eʋegbe) */
@@ -3498,6 +3505,7 @@ Přispomnjenki||10',
 	'proofreadpage-indexoai-eprint-content-text' => 'Knižne metadaty zrjadowane přez ProofreadPage.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Šema njeje so namakał',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Šema $1 njeje so namakał.',
+	'proofreadpage-disambiguationspage' => 'Template:Wjacezmyslnosć',
 );
 
 /** Hungarian (magyar)
@@ -4337,7 +4345,7 @@ $messages['kiu'] = array(
 	'proofreadpage_prevpage' => 'Pelo ke pey de mend',
 	'proofreadpage_header' => 'Sername (ihtiwa):',
 	'proofreadpage_body' => 'Miyaneyê peli (çepraşt têarê beno):',
-	'proofreadpage_footer' => 'Bın zanışe (ihtiwa):',
+	'proofreadpage_footer' => 'Sernuşte (ihtiwa):',
 	'proofreadpage_toggleheaders' => 'asayişê qısmi yê ke ihtiwa nıbeni bıvurn',
 	'proofreadpage_quality0_category' => 'Metn tede çino',
 	'proofreadpage_quality1_category' => 'Raşt nıbiyo',
