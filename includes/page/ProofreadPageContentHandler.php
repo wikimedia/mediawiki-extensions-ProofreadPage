@@ -121,6 +121,13 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	}
 
 	/**
+	 * @see ContentHandler::getDiffEngineClass
+	 */
+	protected function getDiffEngineClass() {
+		return 'ProofreadPageDifferenceEngine';
+	}
+
+	/**
 	 * @see ContentHandler::makeEmptyContent
 	 */
 	public function makeEmptyContent() {

@@ -45,6 +45,7 @@ $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.ph
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
 $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
 $wgAutoloadClasses['ProofreadPageRenderer'] = $dir . 'includes/ProofreadPageRenderer.php';
+$wgAutoloadClasses['ProofreadDiffFormatterUtils'] = $dir . 'includes/ProofreadDiffFormatterUtils.php';
 
 $wgAutoloadClasses['EditProofreadIndexPage'] = $dir . 'includes/index/EditProofreadIndexPage.php';
 $wgAutoloadClasses['ProofreadIndexEntry'] = $dir . 'includes/index/ProofreadIndexEntry.php';
@@ -61,6 +62,7 @@ $wgAutoloadClasses['ProofreadPageContentHandler'] = $dir.'includes/page/Proofrea
 $wgAutoloadClasses['ProofreadPageEditAction'] = $dir . 'includes/page/ProofreadPageEditAction.php';
 $wgAutoloadClasses['ProofreadPageSubmitAction'] = $dir . 'includes/page/ProofreadPageSubmitAction.php';
 $wgAutoloadClasses['ProofreadPageViewAction'] = $dir . 'includes/page/ProofreadPageViewAction.php';
+$wgAutoloadClasses['ProofreadPageDifferenceEngine'] = $dir . 'includes/page/ProofreadPageDifferenceEngine.php';
 
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
@@ -199,6 +201,7 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$files[] = $dir . 'page/ProofreadPageContentTest.php';
 	$files[] = $dir . 'page/ProofreadPageContentHandlerTest.php';
 	$files[] = $dir . 'page/ProofreadPagePageTest.php';
+	$files[] = $dir . 'ProofreadDiffFormatterUtilsTest.php';
 
 	return true;
 };
