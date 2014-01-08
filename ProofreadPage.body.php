@@ -781,12 +781,10 @@ $void_cell
 	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
 	 * @param $skin SkinTemplate object
-	 * @param $links Structured navigation links
+	 * @param $links array structured navigation links
 	 */
 	public static function onSkinTemplateNavigation( &$skin, &$links ) {
-		global $wgOut;
-
-		$title = $wgOut->getTitle();
+		$title = $skin->getTitle();
 		if( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}

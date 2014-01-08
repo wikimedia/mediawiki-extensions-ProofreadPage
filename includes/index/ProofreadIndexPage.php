@@ -339,8 +339,6 @@ class ProofreadIndexPage {
 	 * @return array
 	 */
 	public function getPreviousAndNextPages( Title $page ) {
-		global $wgContLang;
-
 		$image = $this->getImage();
 
 		// if multipage, we use the page order, but we should read pagenum from the index
@@ -348,7 +346,7 @@ class ProofreadIndexPage {
 			$pagenr = 1;
 			$parts = explode( '/', $page->getText() );
 			if ( count( $parts ) > 1 ) {
-				$pagenr = intval( $wgContLang->parseFormattedNumber( array_pop( $parts ) ) );
+				$pagenr = intval( $this->title->getPageLanguage()->parseFormattedNumber( array_pop( $parts ) ) );
 			}
 			$count = $image->pageCount();
 			if ( $pagenr < 1 || $pagenr > $count || $count < 1 ) {
@@ -376,20 +374,18 @@ class ProofreadIndexPage {
 	}
 
 	/**
-	 * Return the Title of the previous and the next page pages
+	 * Return the page number to display
 	 * @param $page Title the page
 	 * @return string|null
 	 * @todo Move to pager system
 	 */
 	public function getDisplayedPageNumber( Title $page ) {
-		global $wgContLang;
-
 		list( $links, $params ) = $this->getPages();
 		if ( $links === null ) {
 			$pagenr = 1; //TODO move it to ProofreadPagePage::getPosition()
 			$parts = explode( '/', $page->getText() );
 			if ( count( $parts ) > 1 ) {
-				$pagenr = intval( $wgContLang->parseFormattedNumber( array_pop( $parts ) ) );
+				$pagenr = intval( $this->title->getPageLanguage()->parseFormattedNumber( array_pop( $parts ) ) );
 				list( $pagenum, $links, $mode ) = ProofreadPage::pageNumber( $pagenr, $params );
 				return $pagenum;
 			}

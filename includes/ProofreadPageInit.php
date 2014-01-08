@@ -116,10 +116,9 @@ class ProofreadPageInit {
 	 * @return array
 	 */
 	protected static function getNamespaceName( $key, $lang = '' ) {
-		global $proofreadPageNamespacesNames;
+		global $proofreadPageNamespacesNames, $wgLanguageCode;
 
 		if ( $lang === '' ) {
-			global $wgLanguageCode;
 			$lang = $wgLanguageCode;
 		}
 		return isset( $proofreadPageNamespacesNames[$lang][$key] )

@@ -29,9 +29,8 @@ class EditProofreadIndexPage extends EditPage {
 	 * Add custom fields
 	 */
 	protected function showContentForm() {
-		global $wgOut;
-
 		$pageLang = $this->mTitle->getPageLanguage();
+		$out = $this->mArticle->getContext()->getOutput();
 		$inputAttributes = array( 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() );
 		if ( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
@@ -40,16 +39,16 @@ class EditProofreadIndexPage extends EditPage {
 		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
 		$entries = $index->getIndexEntries();
 
-		$wgOut->addHTML( Html::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
+		$out->addHTML( Html::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
 		$i = 10;
 		foreach( $entries as $entry ) {
 			$inputAttributes['tabindex'] = $i;
-			$this->addEntry( $entry, $inputAttributes );
+			$this->addEntry( $entry, $inputAttributes, $out );
 			$i++;
 		}
-		$wgOut->addHTML( Html::closeElement( 'table' ) );
+		$out->addHTML( Html::closeElement( 'table' ) );
 
-		$wgOut->addModules( 'ext.proofreadpage.index' );
+		$out->addModules( 'ext.proofreadpage.index' );
 	}
 
 	/**
@@ -58,16 +57,14 @@ class EditProofreadIndexPage extends EditPage {
 	 * @param $entry ProofreadIndexEntry
 	 * @param $inputAttributes array
 	 */
-	protected function addEntry( ProofreadIndexEntry $entry, $inputAttributes = array() ) {
-		global $wgOut;
-
+	protected function addEntry( ProofreadIndexEntry $entry, $inputAttributes, OutputPage $out ) {
 		if ( $entry->isHidden() ) {
 			return;
 		}
 		$key = $this->getFieldNameForEntry( $entry->getKey() );
 		$val = $this->safeUnicodeOutput( $entry->getStringValue() );
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			Html::openElement( 'tr' ) .
 				Html::openElement( 'th', array( 'scope' => 'row' ) ) .
 					Xml::label( $entry->getLabel(), $key )
@@ -76,10 +73,10 @@ class EditProofreadIndexPage extends EditPage {
 
 		$help = $entry->getHelp();
 		if ( $help !== '' ) {
-			$wgOut->addHTML( Html::element( 'span', array( 'title' => $help, 'class' => 'prp-help-field' ) ) );
+			$out->addHTML( Html::element( 'span', array( 'title' => $help, 'class' => 'prp-help-field' ) ) );
 		}
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			Html::closeElement( 'th' ) .
 			Html::openElement( 'td' )
 		);
@@ -93,7 +90,7 @@ class EditProofreadIndexPage extends EditPage {
 			if ( !isset( $values[$val] ) && $val !== '' ) { //compatiblity with already set data that aren't in the list
 				$select->addOption( $val, $val );
 			}
-			$wgOut->addHTML( $select->getHtml() );
+			$out->addHTML( $select->getHtml() );
 		} else {
 			$type = $entry->getType();
 			$inputType = ( $type === 'number' ) ? 'number' : 'text';
@@ -104,16 +101,16 @@ class EditProofreadIndexPage extends EditPage {
 				$inputAttributes['type'] = $inputType;
 				$inputAttributes['id'] = $key;
 				$inputAttributes['size'] = 60;
-				$wgOut->addHTML( Html::input( $key, $val, $inputType, $inputAttributes ) );
+				$out->addHTML( Html::input( $key, $val, $inputType, $inputAttributes ) );
 			}
 			else {
 				$inputAttributes['cols'] = 60;
 				$inputAttributes['rows'] = $size;
-				$wgOut->addHTML( Html::textarea( $key, $val, $inputAttributes ) );
+				$out->addHTML( Html::textarea( $key, $val, $inputAttributes ) );
 			}
 		}
 
-		$wgOut->addHTML(
+		$out->addHTML(
 				Html::closeElement( 'td' ) .
 			Html::closeElement( 'tr' )
 		);
@@ -189,8 +186,6 @@ class EditProofreadIndexPage extends EditPage {
 	 * Check the validity of the page
 	 */
 	function internalAttemptSave( &$result, $bot = false ) {
-		global $wgOut;
-
 		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
 		list( $links, $params ) = $index->getPages();
 
@@ -202,7 +197,10 @@ class EditProofreadIndexPage extends EditPage {
 			}
 
 			if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-				$wgOut->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
+				$this->mArticle
+					->getContext()
+					->getOutput()
+					->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
 				$status = Status::newGood();
 				$status->fatal( 'hookaborted' );
 				$status->value = self::AS_HOOK_ERROR;
