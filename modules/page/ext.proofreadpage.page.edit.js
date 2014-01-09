@@ -60,7 +60,7 @@
 			$container.css( {
 				width: '100%',
 				overflow: 'auto',
-				height: $( window ).height() / 3 + 'px'
+				height: $( window ).height() / 2.7 + 'px'
 			} );
 			$editForm.find( '.prp-page-content' ).css( {
 				width: '100%'
