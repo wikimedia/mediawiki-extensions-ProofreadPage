@@ -1,106 +1,27 @@
 <?php
+
+namespace ProofreadPage\Parser;
+
+use ProofreadIndexPage;
+use ProofreadPage;
+use ProofreadPageDbConnector;
+use Title;
+
 /**
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
+ * @licence GNU GPL v2+
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * http://www.gnu.org/copyleft/gpl.html
- *
- * @file
- * @ingroup ProofreadPage
+ * Parser for the <pages> tag
  */
-
-class ProofreadPageRenderer {
-
-	/**
-	 * Parser hook for index pages
-	 * Display a list of coloured links to pages
-	 * @param $input
-	 * @param $args array
-	 * @param $parser Parser
-	 * @return string
-	 */
-	public static function renderPageList( $input, $args, $parser ) {
-		$title = $parser->getTitle();
-		if ( !$title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
-			return '';
-		}
-		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $title->getText() );
-		if ( !$imageTitle ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
-		}
-
-		$image = wfFindFile( $imageTitle );
-		if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
-		}
-
-		$return = '';
-
-		$name = $imageTitle->getDBkey();
-		$count = $image->pageCount();
-
-		$from = array_key_exists( 'from', $args ) ? $args['from'] : 1;
-		$to = array_key_exists( 'to', $args ) ? $args['to'] : $count;
-
-		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
-		}
-		if( ( $from > $to ) || ( $from < 1 ) || ( $to < 1 ) || ( $to > $count ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
-		}
-
-		for ( $i = $from; $i < $to + 1; $i++ ) {
-			list( $view, $links, $mode ) = ProofreadPage::pageNumber( $i, $args );
-
-			if ( $mode == 'highroman' || $mode == 'roman' ) {
-				$view = '&#160;' . $view;
-			}
-
-			$n = strlen( $count ) - mb_strlen( $view );
-			$language = $parser->getTargetLanguage();
-			if ( $n && ( $mode == 'normal' || $mode == 'empty' ) ) {
-				$txt = '<span style="visibility:hidden;">';
-				$pad = $language->formatNum( 0, true );
-				for ( $j = 0; $j < $n; $j++ ) {
-					$txt = $txt . $pad;
-				}
-				$view = $txt . '</span>' . $view;
-			}
-			$title = ProofreadPage::getPageTitle( $name, $i );
-
-			if ( !$links || !$title ) {
-				$return .= $view . ' ';
-			} else {
-				$return .= '[[' . $title->getPrefixedText() . '|' . $view . ']] ';
-			}
-		}
-		$return = $parser->recursiveTagParse( $return );
-		return $return;
-	}
+class PagesTagParser extends TagParser {
 
 	/**
-	 * Parser hook that includes a list of pages.
-	 *  parameters : index, from, to, header
-	 * @param $input
-	 * @param $args array
-	 * @param $parser Parser
-	 * @return string
+	 * @see TagParser::render
 	 */
-	public static function renderPages( $input, $args, $parser ) {
+	public function render( $input, array $args ) {
 		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
 
 		// abort if this is nested <pages> call
-		if ( isset( $parser->proofreadRenderingPages ) && $parser->proofreadRenderingPages ) {
+		if ( isset( $this->parser->proofreadRenderingPages ) && $this->parser->proofreadRenderingPages ) {
 			return '';
 		}
 
@@ -116,11 +37,11 @@ class ProofreadPageRenderer {
 		$onlysection = array_key_exists( 'onlysection', $args ) ? $args['onlysection'] : null;
 
 		// abort if the tag is on an index page
-		if ( $parser->getTitle()->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
+		if ( $this->parser->getTitle()->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
 			return '';
 		}
 		// abort too if the tag is in the page namespace
-		if ( $parser->getTitle()->inNamespace( $pageNamespaceId ) ) {
+		if ( $this->parser->getTitle()->inNamespace( $pageNamespaceId ) ) {
 			return '';
 		}
 		// ignore fromsection and tosection arguments if onlysection is specified
@@ -138,10 +59,10 @@ class ProofreadPageRenderer {
 		}
 		$indexPage = ProofreadIndexPage::newFromTitle( $index_title );
 
-		$parser->getOutput()->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
+		$this->parser->getOutput()->addTemplate( $index_title, $index_title->getArticleID(), $index_title->getLatestRevID() );
 
 		$out = '';
-		$language = $parser->getTargetLanguage();
+		$language = $this->parser->getTargetLanguage();
 
 		list( $links, $params ) = $indexPage->getPages();
 
@@ -174,7 +95,7 @@ class ProofreadPageRenderer {
 
 				//add page selected with $include in pagenums
 				if( $include ) {
-					$list = self::parseNumList( $include );
+					$list = $this->parseNumList( $include );
 					if( $list  == null ) {
 						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
 					}
@@ -203,7 +124,7 @@ class ProofreadPageRenderer {
 
 				//remove excluded pages form $pagenums
 				if( $exclude ) {
-					$excluded = self::parseNumList( $exclude );
+					$excluded = $this->parseNumList( $exclude );
 					if( $excluded  == null ) {
 						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
 					}
@@ -317,7 +238,7 @@ class ProofreadPageRenderer {
 				$firstpage = $links[0][0];
 			}
 			if ( $firstpage !== null ) {
-				$parser->getOutput()->addTemplate(
+				$this->parser->getOutput()->addTemplate(
 					$firstpage,
 					$firstpage->getArticleID(),
 					$firstpage->getLatestRevID()
@@ -327,10 +248,10 @@ class ProofreadPageRenderer {
 
 		if( $header ) {
 			if( $header == 'toc') {
-				$parser->getOutput()->is_toc = true;
+				$this->parser->getOutput()->is_toc = true;
 			}
 			$indexLinks = $indexPage->getLinksToMainNamespace();
-			$pageTitle = $parser->getTitle();
+			$pageTitle = $this->parser->getTitle();
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
 			// find next and previous pages in list
@@ -386,20 +307,20 @@ class ProofreadPageRenderer {
 
 		// wrap the output in a div, to prevent the parser from inserting pararaphs
 		$out = "<div>\n$out\n</div>";
-		$parser->proofreadRenderingPages = true;
-		$out = $parser->recursiveTagParse( $out );
-		$parser->proofreadRenderingPages = false;
+		$this->parser->proofreadRenderingPages = true;
+		$out = $this->parser->recursiveTagParse( $out );
+		$this->parser->proofreadRenderingPages = false;
 		return $out;
 	}
 
 	/**
 	 * Parse a comma-separated list of pages. A dash indicates an interval of pages
 	 * example: 1-10,23,38
-	 * Return an array of pages, or null if the input does not comply to the syntax
+	 *
 	 * @param $input string
-	 * @return array|null
+	 * @return array|null an array of pages, or null if the input does not comply to the syntax
 	 */
-	public static function parseNumList($input) {
+	public function parseNumList($input) {
 		$input = str_replace(array(' ', '\t', '\n'), '', $input);
 		$list = explode( ',', $input );
 		$nums = array();
