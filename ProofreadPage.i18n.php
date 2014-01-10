@@ -90,6 +90,7 @@ Remarks||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema not found',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'The $1 schema have not been found.',
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
+	'content-model-proofread-page' => 'Page: page',
 );
 
 /** Message documentation (Message documentation)
@@ -194,6 +195,7 @@ This phrase is confusing: Modify 'page quality flag' or 'Modify page quality' fl
 
 {{doc-important|Don\'t translate the "Template:" part!}}
 {{Identical|Template:disambig}}',
+	'content-model-proofread-page' => 'The name for Page: pages item content model, used when describing what type of content a page contains.',
 );
 
 /** Achinese (Acèh)
