@@ -64,7 +64,7 @@ class ProofreadPageDifferenceEngine extends DifferenceEngine {
 			return '';
 		}
 
-		return $this->diffFormatterUtils->createHeader( $this->msg( 'pproofreadpage_page_status' )->text() ) .
+		return $this->diffFormatterUtils->createHeader( $this->msg( 'proofreadpage_page_status' )->text() ) .
 			Html::openElement( 'tr' ) .
 			$this->diffFormatterUtils->createDeletedLine(
 				$this->msg( 'proofreadpage_quality' . $old->getLevel() . '_category' )->plain(),
