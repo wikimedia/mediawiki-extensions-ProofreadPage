@@ -4664,6 +4664,16 @@ $messages['la'] = array(
 	'proofreadpage_source' => 'Fons',
 );
 
+/** Ladino (Ladino)
+ * @author Menachem.Moreira
+ */
+$messages['lad'] = array(
+	'proofreadpage_quality0_category' => 'Sin teksto',
+	'proofreadpage_specialpage_label_key' => 'Bushkar:',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|pajina|pajinas}}',
+	'proofreadpage-group-other' => 'Otro',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  * @author Soued031
