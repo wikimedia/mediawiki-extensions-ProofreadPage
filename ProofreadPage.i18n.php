@@ -1870,6 +1870,7 @@ Bemerkungen||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nicht gefunden',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Das Schema „$1“ wurde nicht gefunden',
 	'proofreadpage-disambiguationspage' => 'Template:Begriffsklärung',
+	'content-model-proofread-page' => 'Seite: Seite',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -2855,6 +2856,7 @@ Komentaaren||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Skemsidj ei fünjen',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Det skemsidj „$1“ as ei fünjen wurden.',
 	'proofreadpage-disambiguationspage' => 'Template:Muardüüdag artiikel',
+	'content-model-proofread-page' => 'Seite: sidj',
 );
 
 /** Friulian (furlan)
@@ -5262,6 +5264,7 @@ $messages['mk'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => 'Шемата не е пронајдена',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Шемите $1 не се пронајдени.',
 	'proofreadpage-disambiguationspage' => 'Template:Појаснување',
+	'content-model-proofread-page' => 'Страница: страница',
 );
 
 /** Malayalam (മലയാളം)
@@ -8489,6 +8492,7 @@ $messages['yue'] = array(
  * @author Hydra
  * @author Jimmy xu wrk
  * @author Liangent
+ * @author Liuxinyu970226
  * @author Mark85296341
  * @author PhiLiP
  * @author Shirayuki
@@ -8574,6 +8578,7 @@ $messages['zh-hans'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema未找到',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1架构未找到。',
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
+	'content-model-proofread-page' => '页面：页面',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
@@ -8665,4 +8670,5 @@ $messages['zh-hant'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => '無法找尋架構',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1架構無法發現。',
 	'proofreadpage-disambiguationspage' => 'Template:消歧義',
+	'content-model-proofread-page' => '頁面：頁面',
 );
