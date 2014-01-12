@@ -4756,6 +4756,7 @@ Bemierkungen||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema net fonnt',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'De Schema "$1" gouf net fonnt.',
 	'proofreadpage-disambiguationspage' => 'Template:Homonymie',
+	'content-model-proofread-page' => 'Säit: Säit',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -7378,6 +7379,7 @@ $messages['szl'] = array(
  * @author Karthi.dr
  * @author Logicwiki
  * @author Shanmugamp7
+ * @author Shrikarsan
  * @author TRYPPN
  * @author மதனாஹரன்
  */
@@ -7436,6 +7438,7 @@ $messages['ta'] = array(
 	'proofreadpage-button-zoom-in-label' => 'உருவ அளவு பெரிதாக்கு',
 	'proofreadpage-button-toggle-layout-label' => 'கிடை/செங்குத்து வடிவமைப்பு',
 	'proofreadpage-indexoai-error-schemanotfound' => 'கருத்தேற்ற முறைமை காணப்படவில்லை',
+	'content-model-proofread-page' => 'பக்கம்: பக்கம்',
 );
 
 /** Telugu (తెలుగు)
@@ -8092,6 +8095,7 @@ $messages['uk'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => 'Схеми не знайдено',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Схему $1 не знайдено.',
 	'proofreadpage-disambiguationspage' => 'Template:неоднозначність',
+	'content-model-proofread-page' => 'Сторінки: сторінка',
 );
 
 /** Urdu (اردو)
