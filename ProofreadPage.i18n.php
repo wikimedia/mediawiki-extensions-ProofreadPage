@@ -2052,6 +2052,7 @@ Pśispomnjeśa||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Šema njejo se namakała',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Šema $1 njejo se namakała.',
 	'proofreadpage-disambiguationspage' => 'Template:Wěcejzmysłowosć',
+	'content-model-proofread-page' => 'Bok: bok',
 );
 
 /** Ewe (eʋegbe) */
@@ -2707,6 +2708,7 @@ Remarques||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schéma introuvable',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Le schéma $1 est introuvable.',
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
+	'content-model-proofread-page' => 'Page : page',
 );
 
 /** Franco-Provençal (arpetan)
@@ -3510,6 +3512,7 @@ Přispomnjenki||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Šema njeje so namakał',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Šema $1 njeje so namakał.',
 	'proofreadpage-disambiguationspage' => 'Template:Wjacezmyslnosć',
+	'content-model-proofread-page' => 'Strona: strona',
 );
 
 /** Hungarian (magyar)
@@ -4002,6 +4005,7 @@ Note||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema non trovato',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Lo schema $1 non è stato trovato.',
 	'proofreadpage-disambiguationspage' => 'Template:Disambigua',
+	'content-model-proofread-page' => 'Pagina: pagina',
 );
 
 /** Japanese (日本語)
@@ -6233,6 +6237,7 @@ Nòte||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema nen trovà',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "Lë schema $1 a l'é pa stàit trovà.",
 	'proofreadpage-disambiguationspage' => "Stamp:Gestion dj'omònim",
+	'content-model-proofread-page' => 'Pàgina: pàgina',
 );
 
 /** Pashto (پښتو)
@@ -8329,6 +8334,7 @@ Ghi chú||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Không tìm thấy lược đồ',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Không tìm thấy lược đồ $1.',
 	'proofreadpage-disambiguationspage' => 'Template:Trang_định_hướng',
+	'content-model-proofread-page' => 'trang Trang:',
 );
 
 /** Volapük (Volapük)
