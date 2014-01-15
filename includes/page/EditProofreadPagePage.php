@@ -227,8 +227,8 @@ class EditProofreadPagePage extends EditPage {
 	 * @see EditPage::importContentFormData
 	 */
 	protected function importContentFormData( &$request ) {
-		$proofreadingLevel = $request->getInt( 'wpQuality' );
 		$oldLevel = $this->getCurrentContent()->getLevel();
+		$proofreadingLevel = $request->getInt( 'wpQuality', $oldLevel->getLevel() );
 		$user = ( $oldLevel->getLevel() === $proofreadingLevel )
 			? $oldLevel->getUser()
 			: $this->mArticle->getContext()->getUser();
