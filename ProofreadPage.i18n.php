@@ -709,6 +709,7 @@ Comentarios||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Esquema no encontráu',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "Nun s'alcontró l'esquema $1.",
 	'proofreadpage-disambiguationspage' => 'Template:dixebra',
+	'content-model-proofread-page' => 'Páxina: páxina',
 );
 
 /** Kotava (Kotava)
@@ -3240,6 +3241,7 @@ $messages['he'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => 'לא נמצאה סכֵמה.',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'לא נמצאה הסכֵמה $1.',
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
+	'content-model-proofread-page' => 'דף: דף',
 );
 
 /** Hindi (हिन्दी)
@@ -4472,6 +4474,7 @@ $messages['kn'] = array(
  * @author Klutzy
  * @author Kwj2772
  * @author Pakman
+ * @author Priviet
  * @author ToePeu
  * @author Yknok29
  * @author 아라
@@ -4554,6 +4557,7 @@ $messages['ko'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => '스키마를 찾을 수 없음',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 스키마를 찾지 못했습니다.',
 	'proofreadpage-disambiguationspage' => 'Template:동음이의',
+	'content-model-proofread-page' => '페이지: 문서',
 );
 
 /** Kinaray-a (Kinaray-a)
@@ -6634,6 +6638,7 @@ Note||10",
 	'proofreadpage-indexoai-error-schemanotfound' => 'Scheme non acchiate',
 	'proofreadpage-indexoai-error-schemanotfound-text' => "'U scheme $1 non g'ha state acchiate.",
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
+	'content-model-proofread-page' => 'Page: pàgene',
 );
 
 /** Russian (русский)
