@@ -19,6 +19,9 @@
  * @ingroup ProofreadPage
  */
 
+use ProofreadPage\FileNotFoundException;
+use ProofreadPage\FileProvider;
+
 /**
  * The content of a page page
  */
@@ -39,12 +42,6 @@ class ProofreadPagePage {
 	protected $index;
 
 	/**
-	 * @var File|null image related to the page
-	 */
-	protected $image;
-
-	/**
-	 * Constructor
 	 * @param $title Title Reference to a Title object
 	 * @param $index ProofreadIndexPage index related to the page
 	 */
@@ -127,24 +124,12 @@ class ProofreadPagePage {
 	 * @return File|false
 	 */
 	public function getImage() {
-		if ( $this->image !== null ) {
-			return $this->image;
+		try {
+			$provider = new FileProvider( RepoGroup::singleton() );
+			return $provider->getForPagePage( $this );
+		} catch( FileNotFoundException $e ) {
+			return false;
 		}
-
-		//try to get the file related to the index
-		$index = $this->getIndex();
-		if( $index ) {
-			$this->image = $index->getImage();
-			if ( $this->image ) {
-				return $this->image;
-			}
-		}
-
-		//try to get an image with the same name as the file
-		//TODO: tests including the case there it's a page of a DjVu file and the index hasn't the name of the DjVu file
-		$imageTitle = Title::makeTitle( NS_IMAGE, strtok( $this->title->getText(), '/' ) );
-		$this->image = wfFindFile( $imageTitle );
-		return $this->image;
 	}
 
 	/**
