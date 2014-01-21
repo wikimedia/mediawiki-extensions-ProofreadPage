@@ -19,6 +19,7 @@
  * @ingroup ProofreadPage
  */
 
+use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\FileProvider;
 
@@ -76,13 +77,14 @@ class ProofreadIndexPage {
 	}
 
 	/**
+	 * @depreciated use FileProvider::getForIndexPage
+	 *
 	 * Return Scan of the book if it exist or false.
 	 * @return File|false
 	 */
 	public function getImage() {
 		try {
-			$provider = new FileProvider( RepoGroup::singleton() );
-			return $provider->getForIndexPage( $this );
+			return Context::getDefaultContext()->getFileProvider()->getForIndexPage( $this );
 		} catch( FileNotFoundException $e ) {
 			return false;
 		}

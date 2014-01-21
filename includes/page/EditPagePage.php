@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use Article;
+use ProofreadPage\Context;
 use ProofreadPage\FileProvider;
 use RepoGroup;
 use Status;
@@ -34,11 +35,11 @@ class EditPagePage extends EditPage {
 	 * @param ProofreadPagePage $pagePage
 	 * @throw MWException
 	 */
-	public function __construct( Article $article, ProofreadPagePage $pagePage ) {
+	public function __construct( Article $article, ProofreadPagePage $pagePage, Context $context ) {
 		parent::__construct( $article );
 
 		$this->pagePage = $pagePage;
-		$this->pageContentBuilder = new PageContentBuilder( $this->mArticle->getContext(), new FileProvider( RepoGroup::singleton() ) );
+		$this->pageContentBuilder = new PageContentBuilder( $this->mArticle->getContext(), $context );
 
 		if ( !$this->isSupportedContentModel( $this->contentModel ) ) {
 			throw new MWException(

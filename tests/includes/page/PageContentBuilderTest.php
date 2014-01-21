@@ -2,20 +2,14 @@
 
 namespace ProofreadPage\Page;
 
-use FileRepo;
-use FSFileBackend;
-use FSRepo;
 use IContextSource;
 use ProofreadIndexPageTest;
-use ProofreadPage\FileProvider;
-use ProofreadPage\FileProviderMock;
 use ProofreadPageContent;
 use ProofreadPageContentTest;
 use ProofreadPagePage;
 use ProofreadPagePageTest;
 use ProofreadPageTestCase;
 use RequestContext;
-use UnregisteredLocalFile;
 use User;
 
 /**
@@ -29,52 +23,18 @@ class ProofreadPageContentBuilderTest extends ProofreadPageTestCase {
 	 */
 	private $context;
 
-	/**
-	 * @var FileRepo
-	 */
-	private $fileRepo;
-
-	/**
-	 * @var FileProvider
-	 */
-	private $fileProvider;
-
 	protected function setUp() {
 		parent::setUp();
 
 		$this->context = new RequestContext();
 		$this->context->setUser( User::newFromName( 'Test' ) );
-
-		$backend = new FSFileBackend( array(
-			'name' => 'localtesting',
-			'wikiId' => wfWikiId(),
-			'containerPaths' => array( 'data' => __DIR__ . '/../../data/media/' )
-		) );
-		$this->fileRepo = new FSRepo( array(
-			'name' => 'temp',
-			'url' => 'http://localhost/thumbtest',
-			'backend' => $backend
-		) );
-
-		$this->fileProvider = new FileProviderMock( array(
-			$this->getDataFile( 'LoremIpsum.djvu', 'image/x.djvu' )
-		) );
-	}
-
-	protected function getDataFile( $name, $type ) {
-		return new UnregisteredLocalFile(
-			false,
-			$this->fileRepo,
-			'mwstore://localtesting/data/' . $name,
-			$type
-		);
 	}
 
 	/**
 	 * @dataProvider buildDefaultContentForPageProvider
 	 */
 	public function testBuildDefaultContentForPage( ProofreadPagePage $page, ProofreadPageContent $defaultContent ) {
-		$contentBuilder = new PageContentBuilder( $this->context, $this->fileProvider );
+		$contentBuilder = new PageContentBuilder( $this->context, $this->getContext() );
 		$this->assertEquals( $defaultContent, $contentBuilder->buildDefaultContentForPage( $page ) );
 	}
 
@@ -101,7 +61,7 @@ class ProofreadPageContentBuilderTest extends ProofreadPageTestCase {
 	 * @dataProvider buildContentFromInputProvider
 	 */
 	public function testBuildContentFromInput( $header, $body, $footer, $level, ProofreadPageContent $oldContent, ProofreadPageContent $newContent ) {
-		$contentBuilder = new PageContentBuilder( $this->context, $this->fileProvider );
+		$contentBuilder = new PageContentBuilder( $this->context, $this->getContext() );
 		$this->assertEquals( $newContent, $contentBuilder->buildContentFromInput( $header, $body, $footer, $level, $oldContent ) );
 	}
 

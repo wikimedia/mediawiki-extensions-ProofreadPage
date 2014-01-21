@@ -28,6 +28,19 @@ class FileProvider {
 	}
 
 	/**
+	 * @param Title $title
+	 * @return File
+	 * @throws FileNotFoundException
+	 */
+	public function getFileFromTitle( Title $title ) {
+		$result = $this->repoGroup->findFile( $title );
+		if ( $result === false ) {
+			throw new FileNotFoundException();
+		}
+		return $result;
+	}
+
+	/**
 	 * @param ProofreadIndexPage $page
 	 * @return File
 	 * @throws FileNotFoundException
@@ -39,7 +52,7 @@ class FileProvider {
 	}
 
 	/**
-	 * @param ProofreadIndexPage $page
+	 * @param ProofreadPagePage $page
 	 * @return File
 	 * @throws FileNotFoundException
 	 */
@@ -48,18 +61,5 @@ class FileProvider {
 		return $this->getFileFromTitle(
 			Title::makeTitle( NS_IMAGE, strtok( $page->getTitle()->getText(), '/' ) ) //use the base name as file name
 		);
-	}
-
-	/**
-	 * @param Title $title
-	 * @return File
-	 * @throws FileNotFoundException
-	 */
-	protected function getFileFromTitle( Title $title ) {
-		$result = $this->repoGroup->findFile( $title );
-		if ( $result === false ) {
-			throw new FileNotFoundException();
-		}
-		return $result;
 	}
 }

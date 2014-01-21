@@ -26,7 +26,10 @@ class FileProviderMock extends FileProvider {
 		}
 	}
 
-	protected function getFileFromTitle( Title $title ) {
+	/**
+	 * @see FileProvider::getFileFromTitle
+	 */
+	public function getFileFromTitle( Title $title ) {
 		$key = $title->getDBkey();
 
 		if ( !array_key_exists( $key, $this->files ) ) {
