@@ -6037,6 +6037,8 @@ $messages['or'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'ପ୍ରମାଣପତ୍ର ପୃଷ୍ଠାଗୁଡିକଦ୍ଵାରା ପରିଚାଳିତ ହୋଇଥିବା ବହିଗୁଡିକର ମେଟାଡାଟା ।',
 	'proofreadpage-indexoai-error-schemanotfound' => 'ସ୍କିମା ମିଳିଲା ନାହିଁ',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'ଏହି $1 ସ୍କିମା ମିଳିଲା ନାହିଁ ।',
+	'proofreadpage-disambiguationspage' => 'ଛାଞ୍ଚ:disambig',
+	'content-model-proofread-page' => 'ପୃଷ୍ଠା: ପୃଷ୍ଠା',
 );
 
 /** Ossetic (Ирон)
@@ -7363,6 +7365,7 @@ Anmärkningar||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schemat hittades inte',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Schemat $1 har inte hittats.',
 	'proofreadpage-disambiguationspage' => 'Template:förgrening',
+	'content-model-proofread-page' => 'Sida: sida',
 );
 
 /** Swahili (Kiswahili)
