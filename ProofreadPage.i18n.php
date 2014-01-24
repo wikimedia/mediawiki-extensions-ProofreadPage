@@ -2440,6 +2440,7 @@ Oharrak||10',
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author E THP
  * @author Ebraminio
  * @author Huji
@@ -2528,6 +2529,7 @@ $messages['fa'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'فراداده کتاب‌ها مدیریت‌شده توسط ابزار بازبینی صفحات.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'طرح کلی یافت نشد',
 	'proofreadpage-indexoai-error-schemanotfound-text' => ' $1  طرح یافت نشد.',
+	'content-model-proofread-page' => 'صفحه: صفحه',
 );
 
 /** Finnish (suomi)
@@ -4931,6 +4933,7 @@ $messages['lrc'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => 'طرح ون پيدا نبی',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'طرح ون $1 اصلا پيدا نبی .',
 	'proofreadpage-disambiguationspage' => 'پيش قالو:disambig',
+	'content-model-proofread-page' => 'بلگه:بلگه',
 );
 
 /** Lithuanian (lietuvių)
