@@ -1783,6 +1783,7 @@ Bemærkninger||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Skemaet blev ikke fundet',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Skemaet $1 er ikke blevet fundet.',
 	'proofreadpage-disambiguationspage' => 'Template:Flertydig',
+	'content-model-proofread-page' => 'Side: side',
 );
 
 /** German (Deutsch)
@@ -2979,6 +2980,7 @@ Comentarios||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Non se atopou o esquema',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Non se atopou o esquema "$1".',
 	'proofreadpage-disambiguationspage' => 'Template:Homónimos',
+	'content-model-proofread-page' => 'Páxina: páxina',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
