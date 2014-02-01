@@ -608,7 +608,7 @@ $messages['as'] = array(
 চিত্ৰ|প্ৰচ্ছদ
 পৃষ্ঠা||20
 মন্তব্য||10',
-	'proofreadpage_pages' => '$2 {{PLURAL:$1|খন পৃষ্ঠা| খন পৃষ্ঠা}}',
+	'proofreadpage_pages' => '$2 {{PLURAL:$1|টা পৃষ্ঠা}}',
 	'proofreadpage_specialpage_legend' => 'সূচী পৃষ্ঠাসমূহ অনুসন্ধান কৰক',
 	'proofreadpage_specialpage_searcherror' => 'অনুসন্ধান যন্ত্ৰত ত্ৰুটী',
 	'proofreadpage_specialpage_searcherrortext' => 'অনুসন্ধান যন্ত্ৰই কাম কৰা নাই। অসুবিধাৰ বাবে দুঃখিত।',
