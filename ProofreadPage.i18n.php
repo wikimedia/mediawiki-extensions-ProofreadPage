@@ -6735,6 +6735,7 @@ $messages['ru'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => 'Схема не найдена',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Схема $1 не была найдена.',
 	'proofreadpage-disambiguationspage' => 'Template:неоднозначность',
+	'content-model-proofread-page' => 'Страница: страница',
 );
 
 /** Rusyn (русиньскый)
