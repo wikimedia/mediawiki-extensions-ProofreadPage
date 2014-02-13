@@ -3,6 +3,7 @@
 namespace ProofreadPage\Parser;
 
 use Parser;
+use ProofreadPage\Context;
 
 /**
  * @licence GNU GPL v2+
@@ -20,7 +21,7 @@ class ParserEntryPoint {
 	 * @return string
 	 */
 	public static function renderPagelistTag( $input, array $args, Parser $parser ) {
-		$tagParser = new PagelistTagParser( $parser );
+		$tagParser = new PagelistTagParser( $parser, Context::getDefaultContext() );
 		return $tagParser->render( $input, $args );
 	}
 
@@ -33,7 +34,7 @@ class ParserEntryPoint {
 	 * @return string
 	 */
 	public static function renderPagesTag( $input, array $args, Parser $parser ) {
-		$tagParser = new PagesTagParser( $parser );
+		$tagParser = new PagesTagParser( $parser, Context::getDefaultContext() );
 		return $tagParser->render( $input, $args );
 	}
 }

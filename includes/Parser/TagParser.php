@@ -3,6 +3,7 @@
 namespace ProofreadPage\Parser;
 
 use Parser;
+use ProofreadPage\Context;
 
 /**
  * @licence GNU GPL v2+
@@ -17,10 +18,16 @@ abstract class TagParser {
 	protected $parser;
 
 	/**
+	 * @var Context
+	 */
+	protected $context;
+
+	/**
 	 * @param Parser $parser the current parser
 	 */
-	public function __construct( Parser $parser ) {
+	public function __construct( Parser $parser, Context $context ) {
 		$this->parser = $parser;
+		$this->context = $context;
 	}
 
 	/**
@@ -31,4 +38,12 @@ abstract class TagParser {
 	 * @return string
 	 */
 	public abstract function render( $input, array $args );
+
+	/**
+	 * @param string $errorMsg
+	 * @return string
+	 */
+	protected function formatError( $errorMsg ) {
+		return '<strong class="error">' . wfMessage( $errorMsg )->inContentLanguage()->escaped() . '</strong>';
+	}
 }

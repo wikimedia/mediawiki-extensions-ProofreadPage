@@ -18,7 +18,7 @@ class PagesTagParser extends TagParser {
 	 * @see TagParser::render
 	 */
 	public function render( $input, array $args ) {
-		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
+		$pageNamespaceId = $this->context->getPageNamespaceId();
 
 		// abort if this is nested <pages> call
 		if ( isset( $this->parser->proofreadRenderingPages ) && $this->parser->proofreadRenderingPages ) {
@@ -37,7 +37,7 @@ class PagesTagParser extends TagParser {
 		$onlysection = array_key_exists( 'onlysection', $args ) ? $args['onlysection'] : null;
 
 		// abort if the tag is on an index page
-		if ( $this->parser->getTitle()->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
+		if ( $this->parser->getTitle()->inNamespace( $this->context->getIndexNamespaceId() ) ) {
 			return '';
 		}
 		// abort too if the tag is in the page namespace
@@ -51,11 +51,11 @@ class PagesTagParser extends TagParser {
 		}
 
 		if( !$index ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_index_expected' )->inContentLanguage()->escaped() . '</strong>';
+			return $this->formatError( 'proofreadpage_index_expected' );
 		}
-		$index_title = Title::makeTitleSafe( ProofreadPage::getIndexNamespaceId(), $index );
+		$index_title = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $index );
 		if( !$index_title || !$index_title->exists() ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_index' )->inContentLanguage()->escaped() . '</strong>';
+			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
 		$indexPage = ProofreadIndexPage::newFromTitle( $index_title );
 
@@ -76,11 +76,11 @@ class PagesTagParser extends TagParser {
 
 				$imageTitle = Title::makeTitleSafe( NS_IMAGE, $index );
 				if ( !$imageTitle ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
+					return $this->formatError( 'proofreadpage_nosuch_file' );
 				}
 				$image = wfFindFile( $imageTitle );
 				if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
+					return $this->formatError( 'proofreadpage_nosuch_file' );
 				}
 				$count = $image->pageCount();
 
@@ -88,7 +88,7 @@ class PagesTagParser extends TagParser {
 					$step = 1;
 				}
 				if( !is_numeric( $step ) || $step < 1 ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
+					return $this->formatError( 'proofreadpage_number_expected' );
 				}
 
 				$pagenums = array();
@@ -97,7 +97,7 @@ class PagesTagParser extends TagParser {
 				if( $include ) {
 					$list = $this->parseNumList( $include );
 					if( $list  == null ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
+						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 					$pagenums = $list;
 				}
@@ -111,10 +111,10 @@ class PagesTagParser extends TagParser {
 						$to = $count;
 					}
 					if( !is_numeric( $from ) || !is_numeric( $to )  || !is_numeric( $step ) ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
+						return $this->formatError( 'proofreadpage_number_expected' );
 					}
 					if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
+						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 
 					for( $i = $from; $i <= $to; $i++ ) {
@@ -126,18 +126,18 @@ class PagesTagParser extends TagParser {
 				if( $exclude ) {
 					$excluded = $this->parseNumList( $exclude );
 					if( $excluded  == null ) {
-						return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
+						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 					$pagenums = array_diff( $pagenums, $excluded );
 				}
 
 				if( count($pagenums)/$step > 1000 ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_interval_too_large' )->inContentLanguage()->escaped() . '</strong>';
+					return $this->formatError( 'proofreadpage_interval_too_large' );
 				}
 
 				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order.
 				if( reset( $pagenums ) > $count ) {
-					return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
+					return $this->formatError( 'proofreadpage_invalid_interval' );
 				}
 
 				//Create the list of pages to translude. the step system start with the smaller pagenum

@@ -17,17 +17,17 @@ class PagelistTagParser extends TagParser {
 	 */
 	public function render( $input, array $args ) {
 		$title = $this->parser->getTitle();
-		if ( !$title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
+		if ( !$title->inNamespace( $this->context->getIndexNamespaceId() ) ) {
 			return '';
 		}
 		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $title->getText() );
 		if ( !$imageTitle ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
+			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
 
 		$image = wfFindFile( $imageTitle );
 		if ( !( $image && $image->isMultipage() && $image->pageCount() ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_nosuch_file' )->inContentLanguage()->escaped() . '</strong>';
+			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
 
 		$return = '';
@@ -39,10 +39,10 @@ class PagelistTagParser extends TagParser {
 		$to = array_key_exists( 'to', $args ) ? $args['to'] : $count;
 
 		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_number_expected' )->inContentLanguage()->escaped() . '</strong>';
+			return $this->formatError( 'proofreadpage_number_expected' );
 		}
 		if( ( $from > $to ) || ( $from < 1 ) || ( $to < 1 ) || ( $to > $count ) ) {
-			return '<strong class="error">' . wfMessage( 'proofreadpage_invalid_interval' )->inContentLanguage()->escaped() . '</strong>';
+			return $this->formatError( 'proofreadpage_invalid_interval' );
 		}
 
 		for ( $i = $from; $i < $to + 1; $i++ ) {
