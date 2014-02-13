@@ -20,6 +20,7 @@
  */
 
 use ProofreadPage\Context;
+use ProofreadPage\Page\PageContentBuilder;
 
 /*
  @todo :
@@ -716,6 +717,25 @@ $void_cell
 			$resultArr['notallowed'] = wfMessage( 'proofreadpage_notallowedtext' )->text();
 			return false;
 		}
+
+		return true;
+	}
+
+	/**
+	 * Provides text for preload API
+	 *
+	 * @param string $text
+	 * @param Title $title
+	 * @return bool
+	 */
+	public static function onEditFormPreloadText( &$text, Title $title ) {
+		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
+			return true;
+		}
+
+		$pageContentBuilder = new PageContentBuilder( RequestContext::getMain(), Context::getDefaultContext() );
+		$content = $pageContentBuilder->buildDefaultContentForPage( new ProofreadPagePage( $title ) );
+		$text = $content->serialize();
 
 		return true;
 	}

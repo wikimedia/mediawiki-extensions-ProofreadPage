@@ -192,6 +192,7 @@ $wgHooks['CanonicalNamespaces'][] = 'ProofreadPage::addCanonicalNamespaces';
 $wgHooks['SkinTemplateNavigation'][] = 'ProofreadPage::onSkinTemplateNavigation';
 $wgHooks['ContentHandlerDefaultModelFor'][] = 'ProofreadPage::onContentHandlerDefaultModelFor';
 $wgHooks['APIEditBeforeSave'][] = 'ProofreadPage::onAPIEditBeforeSave';
+$wgHooks['EditFormPreloadText'][] = 'ProofreadPage::onEditFormPreloadText';
 
 
 /**
