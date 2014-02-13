@@ -1,25 +1,23 @@
 <?php
+
+namespace ProofreadPage\Page;
+
+use Article;
+use ProofreadPage\FileProvider;
+use RepoGroup;
+use Status;
+use ProofreadPageLevel;
+use ContentHandler;
+use ProofreadPagePage;
+use EditPage;
+use Html;
+use MWException;
+
 /**
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * http://www.gnu.org/copyleft/gpl.html
- *
- * @file
- * @ingroup ProofreadPage
+ * @licence GNU GPL v2+
  */
 
-class EditProofreadPagePage extends EditPage {
+class EditPagePage extends EditPage {
 
 	/**
 	 * @var ProofreadPagePage
@@ -27,14 +25,20 @@ class EditProofreadPagePage extends EditPage {
 	protected $pagePage;
 
 	/**
-	 * @var Article $article
-	 * @var ProofreadPagePage $pagePage
+	 * @var PageContentBuilder
+	 */
+	protected $pageContentBuilder;
+
+	/**
+	 * @param Article $article
+	 * @param ProofreadPagePage $pagePage
 	 * @throw MWException
 	 */
 	public function __construct( Article $article, ProofreadPagePage $pagePage ) {
 		parent::__construct( $article );
 
 		$this->pagePage = $pagePage;
+		$this->pageContentBuilder = new PageContentBuilder( $this->mArticle->getContext(), new FileProvider( RepoGroup::singleton() ) );
 
 		if ( !$this->isSupportedContentModel( $this->contentModel ) ) {
 			throw new MWException(
@@ -63,47 +67,10 @@ class EditProofreadPagePage extends EditPage {
 	 * @see EditPage::showContentForm
 	 */
 	protected function getContentObject( $def_content = null ) {
-		if ( $this->mTitle->exists() ) {
-			return parent::getContentObject( $def_content );
+		if ( !$this->mTitle->exists() ) {
+			return $this->pageContentBuilder->buildDefaultContentForPage( $this->pagePage );
 		}
-
-		//preload content
-		$index = $this->pagePage->getIndex();
-		$body = '';
-
-		//default header and footer
-		if ( $index ) {
-			$params = array(
-				'pagenum' => $index->getDisplayedPageNumber( $this->getTitle() )
-			);
-			$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
-			$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
-		} else {
-			$header = wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain();
-			$footer = wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
-		}
-
-		//Extract text layer
-		$image = $this->pagePage->getImage();
-		$pageNumber = $this->pagePage->getPageNumber();
-		if ( $image && $image->exists() ) {
-			if ( $pageNumber !== null && $image->isMultipage() ) {
-				$text = $image->getHandler()->getPageText( $image, $pageNumber );
-			} else {
-				$text = $image->getHandler()->getPageText( $image, 1 );
-			}
-			if ( $text ) {
-				$text = preg_replace( "/(\\\\n)/", "\n", $text );
-				$body = preg_replace( "/(\\\\\d*)/", '', $text );
-			}
-		}
-
-		return new ProofreadPageContent(
-			new WikitextContent( $header ),
-			new WikitextContent( $body ),
-			new WikitextContent( $footer ),
-			new ProofreadPageLevel()
-		);
+		return parent::getContentObject( $def_content );
 	}
 
 	/**
@@ -156,13 +123,13 @@ class EditProofreadPagePage extends EditPage {
 	/**
 	 * Outputs an edit area to edition
 	 *
-	 * @param $textareaName string the name of the textarea node (used also as id)
-	 * @param $areaClass string the class of the div container
-	 * @param $labelMsg string the label of the area
-	 * @param $content string the text to edit
-	 * @param $textareaAttributes array attributes to add to textarea node
+	 * @param string $textareaName the name of the textarea node (used also as id)
+	 * @param string $areaClass the class of the div container
+	 * @param string $labelMsg the label of the area
+	 * @param string $content the text to edit
+	 * @param string[] $textareaAttributes attributes to add to textarea node
 	 */
-	protected function showEditArea( $textareaName, $areaClass, $labelMsg, $content, $textareaAttributes ) {
+	protected function showEditArea( $textareaName, $areaClass, $labelMsg, $content, array $textareaAttributes ) {
 		$out = $this->mArticle->getContext()->getOutput();
 		$out->addHTML(
 			Html::openElement( 'div', array( 'class' => $areaClass ) ) .
@@ -189,10 +156,10 @@ class EditProofreadPagePage extends EditPage {
 		$checkboxes = parent::getCheckBoxes( $tabindex, $checked );
 		$user = $this->mArticle->getContext()->getUser();
 
-		foreach( $qualityLevels as $level ) {
+		foreach ( $qualityLevels as $level ) {
 
 			$newLevel = new ProofreadPageLevel( $level, $user );
-			if( !$oldLevel->isChangeAllowed( $newLevel ) ) {
+			if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
 				continue;
 			}
 
@@ -200,7 +167,7 @@ class EditProofreadPagePage extends EditPage {
 			$cls = 'quality' . $level;
 
 			$attributes = array( 'tabindex' => ++$tabindex, 'title' => wfMessage( $msg )->plain() );
-			if( $level == $currentLevel->getLevel() ) {
+			if ( $level == $currentLevel->getLevel() ) {
 				$attributes[] = 'checked';
 			}
 
@@ -227,23 +194,15 @@ class EditProofreadPagePage extends EditPage {
 	 * @see EditPage::importContentFormData
 	 */
 	protected function importContentFormData( &$request ) {
-		$oldLevel = $this->getCurrentContent()->getLevel();
-		$proofreadingLevel = $request->getInt( 'wpQuality', $oldLevel->getLevel() );
-		$user = ( $oldLevel->getLevel() === $proofreadingLevel )
-			? $oldLevel->getUser()
-			: $this->mArticle->getContext()->getUser();
-		if ( $oldLevel->getUser() === null ) {
-			$user = $this->mArticle->getContext()->getUser();
-		}
+		$currentContent = $this->getCurrentContent();
 
-		$content = new ProofreadPageContent(
-			new WikitextContent( $this->safeUnicodeInput( $request, 'wpHeaderTextbox' ) ),
-			new WikitextContent( $this->safeUnicodeInput( $request, 'wpTextbox1') ),
-			new WikitextContent( $this->safeUnicodeInput( $request, 'wpFooterTextbox' ) ),
-			new ProofreadPageLevel( $proofreadingLevel, $user )
-		);
-
-		return $content->serialize();
+		return $this->pageContentBuilder->buildContentFromInput(
+			$this->safeUnicodeInput( $request, 'wpHeaderTextbox' ),
+			$this->safeUnicodeInput( $request, 'wpTextbox1' ),
+			$this->safeUnicodeInput( $request, 'wpFooterTextbox' ),
+			$request->getInt( 'wpQuality', $currentContent->getLevel()->getLevel() ),
+			$currentContent
+		)->serialize();
 	}
 
 	/**
