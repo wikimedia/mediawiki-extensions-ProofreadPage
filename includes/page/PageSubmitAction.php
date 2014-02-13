@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Page;
 
+use ProofreadPage\Context;
 use ProofreadPagePage;
 use SubmitAction;
 
@@ -17,7 +18,7 @@ class PageSubmitAction extends SubmitAction {
 	 */
 	public function show() {
 		$pagePage = ProofreadPagePage::newFromTitle( $this->getTitle() );
-		$editor = new EditPagePage( $this->page, $pagePage );
+		$editor = new EditPagePage( $this->page, $pagePage, Context::getDefaultContext() );
 		$editor->edit();
 	}
 }

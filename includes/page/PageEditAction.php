@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use EditAction;
+use ProofreadPage\Context;
 use ProofreadPagePage;
 
 /**
@@ -17,7 +18,7 @@ class PageEditAction extends EditAction {
 	 */
 	public function show() {
 		$pagePage = ProofreadPagePage::newFromTitle( $this->getTitle() );
-		$editor = new EditPagePage( $this->page, $pagePage );
+		$editor = new EditPagePage( $this->page, $pagePage, Context::getDefaultContext() );
 		$editor->edit();
 	}
 }

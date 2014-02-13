@@ -7,7 +7,6 @@ use ProofreadIndexPage;
 use ProofreadPagePage;
 use ProofreadPageTestCase;
 use Title;
-use UnregisteredLocalFile;
 
 /**
  * @group ProofreadPage
@@ -24,18 +23,13 @@ class FileProviderTest extends ProofreadPageTestCase {
 		parent::setUp();
 
 		$this->fileProvider = new FileProviderMock( array(
-			$this->getDataFile( 'LoremIpsum.djvu', 'image/x.djvu' ),
-			$this->getDataFile( 'Test.jpg', 'image/jpg' )
+			$this->getFileFromName( 'LoremIpsum.djvu' ),
+			$this->getFileFromName( 'Test.jpg' )
 		) );
 	}
 
-	protected function getDataFile( $name, $type ) {
-		return new UnregisteredLocalFile(
-			false,
-			null,
-			'mwstore://localtesting/data/' . $name,
-			$type
-		);
+	private function getFileFromName( $fileName ) {
+		return $this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, $fileName ) );
 	}
 
 	/**
@@ -52,7 +46,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 		return array(
 			array(
 				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum.djvu' ) ),
-				$this->getDataFile( 'LoremIpsum.djvu', 'image/x.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' )
 			),
 		);
 	}
@@ -90,19 +84,19 @@ class FileProviderTest extends ProofreadPageTestCase {
 		return array(
 			array(
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/4' ) ),
-				$this->getDataFile( 'LoremIpsum.djvu', 'image/x.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' )
 			),
 			array(
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/djvu/1' ) ),
-				$this->getDataFile( 'LoremIpsum.djvu', 'image/x.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' )
 			),
 			array(
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu' ) ),
-				$this->getDataFile( 'LoremIpsum.djvu', 'image/x.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' )
 			),
 			array(
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'Test.jpg' ) ),
-				$this->getDataFile( 'Test.jpg', 'image/jpg' )
+				$this->getFileFromName( 'Test.jpg' )
 			),
 		);
 	}

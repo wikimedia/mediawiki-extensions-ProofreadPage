@@ -43,6 +43,7 @@ $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
+$wgAutoloadClasses['ProofreadPage\Context'] = $dir . 'includes/Context.php';
 $wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
 $wgAutoloadClasses['ProofreadPageRenderer'] = $dir . 'includes/ProofreadPageRenderer.php';
 $wgAutoloadClasses['ProofreadDiffFormatterUtils'] = $dir . 'includes/ProofreadDiffFormatterUtils.php';
@@ -201,8 +202,8 @@ $wgHooks['APIEditBeforeSave'][] = 'ProofreadPage::onAPIEditBeforeSave';
 $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$dir = __DIR__ . '/tests/includes/';
 
-	$files[] = $dir . 'ProofreadPageTestCase.php';
 	$files[] = $dir . 'FileProviderMock.php';
+	$files[] = $dir . 'ProofreadPageTestCase.php';
 	$files[] = $dir . 'FileProviderTest.php';
 
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';

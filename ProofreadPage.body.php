@@ -19,6 +19,8 @@
  * @ingroup ProofreadPage
  */
 
+use ProofreadPage\Context;
+
 /*
  @todo :
  - check unicity of the index page : when index is saved too
@@ -27,29 +29,25 @@
 class ProofreadPage {
 
 	/**
+	 * @depreciated use Context::getPageNamespaceId
+	 *
 	 * Returns id of Page namespace.
 	 *
-	 * @return integer namespace id
+	 * @return integer
 	 */
 	public static function getPageNamespaceId() {
-		static $namespace;
-		if ( $namespace === null ) {
-			$namespace = ProofreadPageInit::getNamespaceId( 'page' );
-		}
-		return $namespace;
+		return Context::getDefaultContext()->getPageNamespaceId();
 	}
 
 	/**
+	 * @depreciated use Context::getIndexNamespaceId
+	 *
 	 * Returns id of Index namespace.
 	 *
-	 * @return integer namespace id
+	 * @return integer
 	 */
 	public static function getIndexNamespaceId() {
-		static $namespace;
-		if ( $namespace === null ) {
-			$namespace = ProofreadPageInit::getNamespaceId( 'index' );
-		}
-		return $namespace;
+		return Context::getDefaultContext()->getIndexNamespaceId();
 	}
 
 	/**

@@ -19,6 +19,7 @@
  * @ingroup ProofreadPage
  */
 
+use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\FileProvider;
 
@@ -36,6 +37,7 @@ class ProofreadPagePage {
 	 * @var Title
 	 */
 	protected $title;
+
 	/**
 	 * @var ProofreadIndexPage|null index related to the page
 	 */
@@ -120,13 +122,14 @@ class ProofreadPagePage {
 	}
 
 	/**
+	 * @depreciated use FileProvider::getForPagePage
+	 *
 	 * Return image of the page if it exist or false.
 	 * @return File|false
 	 */
 	public function getImage() {
 		try {
-			$provider = new FileProvider( RepoGroup::singleton() );
-			return $provider->getForPagePage( $this );
+			return Context::getDefaultContext()->getFileProvider()->getForPagePage( $this );
 		} catch( FileNotFoundException $e ) {
 			return false;
 		}

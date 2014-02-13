@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Page;
 
+use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\FileProvider;
 use ProofreadPagePage;
@@ -29,11 +30,11 @@ class PageContentBuilder {
 
 	/**
 	 * @param IContextSource $context
-	 * @param FileProvider $fileProvider
+	 * @param Context $context
 	 */
-	public function __construct( IContextSource $context, FileProvider $fileProvider ) {
-		$this->context = $context;
-		$this->fileProvider = $fileProvider;
+	public function __construct( IContextSource $contextSource, Context $context ) {
+		$this->context = $contextSource;
+		$this->fileProvider = $context->getFileProvider();
 	}
 
 	/**
