@@ -797,6 +797,16 @@ $void_cell
 	}
 
 	/**
+	 * @param array $tables
+	 * @return bool
+	 */
+	public static function onParserTestTables( array &$tables ) {
+		$tables[] = 'pr_index';
+
+		return true;
+	}
+
+	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
 	 * @param $skin SkinTemplate object
 	 * @param $links array structured navigation links

@@ -1,0 +1,172 @@
+!! hooks
+pages
+!! endhooks
+
+!!article
+MediaWiki:Proofreadpage pagenum template
+!!text
+[[{{{page}}}|{{{num}}}]]
+!!endarticle
+
+!!article
+MediaWiki:Proofreadpage header template
+!!text
+{{{title}}} -- {{{author}}}
+{{{from}}} -- {{{to}}}
+{{{prev}}} -- {{{next}}}
+!!endarticle
+
+!!article
+Index:Test
+!!text
+{{
+|Title=Title
+|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]
+|Author=[[Author:Me]]
+|TOC=* [[Test/Chapter 1]]
+* [[Test/Chapter 2|Chapter 2]]
+* [[Test/Chapter 3|Chapter 3]]
+}}
+!!endarticle
+
+!!article
+Page:Test 1.jpg
+!!text
+Test 1
+!!endarticle
+
+!!article
+Page:Test 2.tiff
+!!text
+Test 2
+!!endarticle
+
+!!article
+Page:Test 3.png
+!!text
+<nowiki />
+
+Test 3
+!!endarticle
+
+!!article
+Author:Me
+!!text
+!!endarticle
+
+!!article
+Test/Chapter 1
+!!text
+!!endarticle
+
+!!article
+Test/Chapter 2
+!!text
+!!endarticle
+
+!!article
+Test/Chapter 3
+!!text
+!!endarticle
+
+!! test
+pages: without index
+!! input
+<pages />
+!! result
+<p><strong class="error">Error: Index expected</strong>
+</p>
+!! end
+
+!! test
+pages: with non existing index
+!! input
+<pages index="RootOf42" />
+!! result
+<p><strong class="error">Error: No such index</strong>
+</p>
+!! end
+
+!! test
+pages: without file: Simple transclusion
+!! input
+<pages index="Test" from="Test 1.jpg" to="Test 3.png" />
+!! result
+<div>
+<p><span><a href="/wiki/Page:Test_1.jpg" title="Page:Test 1.jpg">TOC</a></span>Test 1&#32;<span><a href="/wiki/Page:Test_2.tiff" title="Page:Test 2.tiff">1</a></span>Test 2&#32;<span><a href="/wiki/Page:Test_3.png" title="Page:Test 3.png">2</a></span>
+</p><p>Test 3&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: without file: Simple transclusion without from
+!! input
+<pages index="Test" to="Test 2.tiff" />
+!! result
+<div>
+<p><span><a href="/wiki/Page:Test_1.jpg" title="Page:Test 1.jpg">TOC</a></span>Test 1&#32;<span><a href="/wiki/Page:Test_2.tiff" title="Page:Test 2.tiff">1</a></span>Test 2&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: without file: Simple transclusion without to
+!! input
+<pages index="Test" from="Test 2.tiff" />
+!! result
+<div>
+<p><span><a href="/wiki/Page:Test_2.tiff" title="Page:Test 2.tiff">1</a></span>Test 2&#32;<span><a href="/wiki/Page:Test_3.png" title="Page:Test 3.png">2</a></span>
+</p><p>Test 3&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: without file: Header
+!! options
+title=Test/Chapter 2
+!! input
+<pages index="Test" from="Test 1.jpg" to="Test 2.tiff" header=1 />
+!! result
+<div>
+<p>Title -- <a href="/wiki/Author:Me" title="Author:Me">Author:Me</a>
+TOC -- 1
+<a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a> -- {{{next}}}<span><a href="/wiki/Page:Test_1.jpg" title="Page:Test 1.jpg">TOC</a></span>Test 1&#32;<span><a href="/wiki/Page:Test_2.tiff" title="Page:Test 2.tiff">1</a></span>Test 2&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: without file: TOC
+!! options
+title=Test
+!! input
+<pages index="Test" />
+!! result
+<div>
+<p>Title -- <a href="/wiki/Author:Me" title="Author:Me">Author:Me</a>
+{{{from}}} -- {{{to}}}
+<a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a> -- {{{next}}}
+</p>
+</div>
+
+!! end
+
+!! test
+pages: recursion
+!! input
+<pages index="Test"><pages index="Test" /></pages>
+!! result
+<div>
+<p>Title -- <a href="/wiki/Author:Me" title="Author:Me">Author:Me</a>
+{{{from}}} -- {{{to}}}
+<a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a> -- {{{next}}}
+</p>
+</div>
+
+!! end
