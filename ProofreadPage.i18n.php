@@ -1988,6 +1988,7 @@ beyanati||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Şema nêvineyê',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 şema nêvineyaya.',
 	'proofreadpage-disambiguationspage' => 'Şablon:Maneyo bin',
+	'content-model-proofread-page' => 'Per: per',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -5787,6 +5788,7 @@ Opmarkingen||10',
  * @author McDutchie
  * @author SPQRobin
  * @author Siebrand
+ * @author Sjoerddebruin
  */
 $messages['nl'] = array(
 	'indexpages' => "Lijst van index-pagina's",
@@ -5866,6 +5868,7 @@ Opmerkingen||10",
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schema niet gevonden',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Het schema $1 is niet aangetroffen.',
 	'proofreadpage-disambiguationspage' => 'Template:Doorverwijspagina',
+	'content-model-proofread-page' => 'Pagina: pagina',
 );
 
 /** Norwegian Nynorsk (norsk nynorsk)
@@ -6109,6 +6112,7 @@ $messages['pfl'] = array(
 /** Polish (polski)
  * @author Beau
  * @author BeginaFelicysym
+ * @author Chrumps
  * @author Olgak85
  * @author Przemub
  * @author Sp5uhe
@@ -6149,6 +6153,9 @@ $messages['pl'] = array(
 	'proofreadpage_quality2_message' => 'Wystąpił problem przy korekcie tej stronie',
 	'proofreadpage_quality3_message' => 'Ta strona została skorygowana',
 	'proofreadpage_quality4_message' => 'Ta strona została zatwierdzona',
+	'proofreadpage_index_size' => 'Liczba stron',
+	'proofreadpage_specialpage_label_sortascending' => 'Sortuj rosnąco',
+	'proofreadpage_alphabeticalorder' => 'Kolejność alfabetyczna',
 	'proofreadpage_index_listofpages' => 'Spis stron',
 	'proofreadpage_image_message' => 'Link do strony indeksowej',
 	'proofreadpage_page_status' => 'Status strony',
