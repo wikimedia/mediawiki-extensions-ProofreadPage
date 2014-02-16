@@ -1932,7 +1932,7 @@ $messages['diq'] = array(
 	'proofreadpage_number_expected' => 'Xeta:Amarin weziyet pawéno',
 	'proofreadpage_interval_too_large' => 'xeta: benate/mabên zaf hêrayo',
 	'proofreadpage_invalid_interval' => 'xeta: benateyo nemeqbul',
-	'proofreadpage_nextpage' => 'Pera ke biro',
+	'proofreadpage_nextpage' => 'Pela peyêne',
 	'proofreadpage_prevpage' => 'pelo ke pey de mend',
 	'proofreadpage_header' => 'sername (ihtiwa)',
 	'proofreadpage_body' => 'miyaneyê peli (çepraşt têarê beno):',
@@ -1988,7 +1988,7 @@ beyanati||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Şema nêvineyê',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 şema nêvineyaya.',
 	'proofreadpage-disambiguationspage' => 'Şablon:Maneyo bin',
-	'content-model-proofread-page' => 'Per: per',
+	'content-model-proofread-page' => 'Pele: pele',
 );
 
 /** Lower Sorbian (dolnoserbski)
