@@ -25,6 +25,14 @@ $specialPageAliases['ar'] = array(
 	'ProofreadIndexOaiSchema' => array( 'سكيما_فهرس_تصحيح_أو_إيه_آي' ),
 );
 
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'IndexPages' => array( 'صفحات_الفهرس' ),
+	'PagesWithoutScans' => array( 'صفحات_من_غير_فحص' ),
+	'ProofreadIndexOai' => array( 'فهرس_التصحيح_او_ايه_ىى' ),
+	'ProofreadIndexOaiSchema' => array( 'سكيما_فهرس_تصحيح_او_ايه_اى' ),
+);
+
 /** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'IndexPages' => array( 'সমল_পৃষ্ঠাসমূহ' ),
