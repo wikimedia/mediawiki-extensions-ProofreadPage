@@ -1,8 +1,9 @@
-// Author : ThomasV - License : GPL
+( function ( mw, $ ) {
+	'use strict';
 
-/* add backlink to index page */
-function prAddSource() {
-	$( '#ca-nstab-main' ).after( '<li id="ca-proofread-source"><span>' + proofreadpage_source_href + '</span></li>' );
-}
+	$( document ).ready( function() {
+		/* add backlink to index page */
+		$( '#ca-nstab-main' ).after( '<li id="ca-proofread-source"><span>' + mw.config.get( 'proofreadpage_source_href' ) + '</span></li>' );
+	} );
 
-jQuery( prAddSource );
+} ( mediaWiki, jQuery ) );

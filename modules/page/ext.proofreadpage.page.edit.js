@@ -92,10 +92,10 @@
 	 */
 	function setupPageQuality() {
 		$( 'input[name="wpQuality"]' ).click( function() {
+			var $summary = $( '#wpSummary' );
 			var pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_category').plain();
-			var currentSummary = $( '#wpSummary' ).val();
-			currentSummary = currentSummary.replace( /\/\*.*\*\/\s?/, '' );
-			$( '#wpSummary' ).val( '/* ' + pageQuality + ' */ '  + currentSummary );
+			var summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
+			$summary.val( '/* ' + pageQuality + ' */ ' + summary );
 		} );
 	}
 
