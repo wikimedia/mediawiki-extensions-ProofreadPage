@@ -114,7 +114,7 @@
 					}
 					event.preventDefault(); //Don't scroll while zooming
 				}
-			}
+			};
 		},
 
 		reset: function() {
