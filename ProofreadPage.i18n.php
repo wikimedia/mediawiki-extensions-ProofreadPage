@@ -2548,6 +2548,7 @@ $messages['fa'] = array(
 	'proofreadpage-indexoai-eprint-content-text' => 'فراداده کتاب‌ها مدیریت‌شده توسط ابزار بازبینی صفحات.',
 	'proofreadpage-indexoai-error-schemanotfound' => 'طرح کلی یافت نشد',
 	'proofreadpage-indexoai-error-schemanotfound-text' => ' $1  طرح یافت نشد.',
+	'proofreadpage-disambiguationspage' => 'الگو:ابهام‌زدایی',
 	'content-model-proofread-page' => 'صفحه: صفحه',
 );
 
@@ -6350,11 +6351,11 @@ $messages['pt'] = array(
 	'proofreadpage_quality3_category' => 'Revistas e corrigidas',
 	'proofreadpage_quality4_category' => 'Validadas',
 	'proofreadpage_quality0_message' => 'Esta página não necessita de ser revista',
-	'proofreadpage_quality1_message' => 'Esta página não foi ainda revista',
+	'proofreadpage_quality1_message' => 'Esta página ainda não foi revista',
 	'proofreadpage_quality2_message' => 'Ocorreu um problema ao fazer a revisão desta página',
 	'proofreadpage_quality3_message' => 'Esta página foi revista',
 	'proofreadpage_quality4_message' => 'Esta página foi validada',
-	'proofreadpage_index_status' => 'Status do índice',
+	'proofreadpage_index_status' => 'Estado do índice',
 	'proofreadpage_index_size' => 'Número de páginas',
 	'proofreadpage_specialpage_label_orderby' => 'Ordenar por:',
 	'proofreadpage_specialpage_label_key' => 'Pesquisar:',
@@ -6391,9 +6392,10 @@ Notas||10',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Usar "layout" horizontal ao editar o espaço nominal {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'Metadados dos livros de {{SITENAME}}',
 	'proofreadpage-indexoai-eprint-content-text' => 'Metadados dos livros administrados por ProofreadPage.',
-	'proofreadpage-indexoai-error-schemanotfound' => 'Schema não encontrado',
-	'proofreadpage-indexoai-error-schemanotfound-text' => 'O schema $1 não foi encontrado.',
+	'proofreadpage-indexoai-error-schemanotfound' => "Modelo da base de dados (''schema'') não encontrado",
+	'proofreadpage-indexoai-error-schemanotfound-text' => "O modelo da base de dados (''schema'') $1 não foi encontrado.",
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
+	'content-model-proofread-page' => 'Página: página',
 );
 
 /** Brazilian Portuguese (português do Brasil)
