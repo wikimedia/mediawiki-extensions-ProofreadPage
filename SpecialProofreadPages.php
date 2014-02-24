@@ -57,11 +57,11 @@ class ProofreadPages extends QueryPage {
 				Html::openElement('fieldset', array() ) .
 				Html::element('legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
 				Html::openElement( 'p' ) .
-				Xml::label( $this->msg( 'proofreadpage_specialpage_label_key' )->text(), 'key' )  . ' ' .
-				Html::input( 'key', $this->searchTerm ) .
+				Html::element( 'label', array( 'for' => 'key' ), $this->msg( 'proofreadpage_specialpage_label_key' )->text() )  . ' ' .
+				Html::input( 'key', $this->searchTerm, 'search', array( 'id' => 'key', 'size' => '50' ) ) .
 				Html::closeElement( 'p' ) .
 				Html::openElement( 'p' ) .
-				Xml::label( $this->msg( 'proofreadpage_specialpage_label_orderby' )->text(), 'order' ) . ' ' . $orderSelect->getHtml() . ' ' .
+				Html::element( 'label', array( 'for' => 'order' ), $this->msg( 'proofreadpage_specialpage_label_orderby' )->text() ) . ' ' . $orderSelect->getHtml() . ' ' .
 				Xml::checkLabel( $this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
 				Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
 				Html::closeElement( 'p' ) .
