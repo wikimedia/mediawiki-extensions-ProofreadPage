@@ -185,7 +185,7 @@
 					}
 				} );
 			} );
-		} else {
+		} else if( mw.user.options.get( 'showtoolbar' ) ) {
 			mw.loader.using( 'mediawiki.action.edit', function() {
 				var $toolbar = $( '#toolbar' );
 
@@ -212,7 +212,7 @@
 	 * Improve the WikiEditor interface
 	 */
 	function setupWikiEditor() {
-		if( !mw.user.options.get( 'usebetatoolbar' ) ) {
+		if( !mw.user.options.get( 'showtoolbar' ) || !mw.user.options.get( 'usebetatoolbar' ) ) {
 			return;
 		}
 		mw.loader.using( 'ext.wikiEditor', function() {
