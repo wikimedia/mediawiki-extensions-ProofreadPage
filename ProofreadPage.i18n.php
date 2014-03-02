@@ -7487,6 +7487,8 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Arjunaraoc
+ * @author Chaduvari
  * @author Kiranmayee
  * @author Mpradeep
  * @author Veeven
@@ -7494,11 +7496,12 @@ $messages['ta'] = array(
  */
 $messages['te'] = array(
 	'indexpages' => 'సూచిక పుటల జాబితా',
-	'proofreadpage_desc' => 'గద్యానికీ అసలు బొమ్మకు (స్కాన్) మధ్యన తేలికగా పోల్చిచూపడాన్ని అనుమతించు',
+	'pageswithoutscans' => 'స్కాన్లు లేని పేజీలు',
+	'proofreadpage_desc' => 'పాఠ్యానికీ అసలు బొమ్మకు (స్కాన్) మధ్యన సులభమైన పోలికనుఅనుమతించు',
 	'proofreadpage_image' => 'బొమ్మ',
 	'proofreadpage_index' => 'సూచిక',
 	'proofreadpage_index_expected' => 'పొరపాటు: సూచిక వుండవలసినది',
-	'proofreadpage_nosuch_index' => 'పొరపాటు: అటువంటి సూచిక లేదు',
+	'proofreadpage_nosuch_index' => 'లోపం: అటువంటి సూచిక లేదు',
 	'proofreadpage_nosuch_file' => 'పొరపాటు: అటువంటి దస్త్రం లేదు',
 	'proofreadpage_badpage' => 'తప్పుడు రూపము(format)',
 	'proofreadpage_badpagetext' => 'మీరు భద్రపరచడానికి ప్రయత్నించిన పుట యొక్క రూపం చెల్లదు.',
@@ -7507,27 +7510,32 @@ $messages['te'] = array(
 	'proofreadpage_nologin' => 'లోనికి ప్రవేశించిలేరు',
 	'proofreadpage_nologintext' => 'పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[ప్రత్యేక:వాడుకరిప్రవేశం|లోనికి ప్రవేశించి]] వుండాలి.', # Fuzzy
 	'proofreadpage_notallowed' => 'మార్పడానికి అనుమతి లేదు',
-	'proofreadpage_notallowedtext' => 'ఈ పుటయొక్క అచ్చుదిద్దుస్థితిని మార్చడానికి మీరు తగరు.',
+	'proofreadpage_notallowedtext' => 'ఈ పుటయొక్క అచ్చుదిద్దుస్థితిని మార్చడానికి మీకు అనుమతిలేదు.',
 	'proofreadpage_number_expected' => 'పొరబాటు: సంఖ్య వుండవలెను',
 	'proofreadpage_interval_too_large' => 'పొరబాటు: గడువు మఱీ ఎక్కువగా వున్నది',
 	'proofreadpage_invalid_interval' => 'పొరబాటు: గడువు చెల్లదు',
 	'proofreadpage_nextpage' => 'తరువాతి పుట',
 	'proofreadpage_prevpage' => 'క్రిత పుట',
 	'proofreadpage_header' => 'శీర్షిక (కలుపకు):',
-	'proofreadpage_body' => 'పుటావస్తువు (పుట నుండి లాక్కోబడవలసిన వస్తువు):',
+	'proofreadpage_body' => 'పుట రూపము (చేర్చబడేది ):',
 	'proofreadpage_footer' => 'పాదము (కలుపకు):',
 	'proofreadpage_toggleheaders' => 'చూపించకూడని భాగాలను(noinclude sections) చూపించడం లేదా చూపించకపోవడాన్ని మార్చండి',
 	'proofreadpage_quality0_category' => 'పాఠ్యం లేనివి',
-	'proofreadpage_quality1_category' => 'అచ్చుదిద్దబడలేదు.',
-	'proofreadpage_quality2_category' => 'అచ్చుదిద్దుడు సమస్యాత్మకం',
-	'proofreadpage_quality3_category' => 'అచ్చుదిద్దబడినవి',
-	'proofreadpage_quality4_category' => 'ఆమోదించబడ్డవి',
+	'proofreadpage_quality1_category' => 'అచ్చుదిద్దబడని',
+	'proofreadpage_quality2_category' => 'సమస్యాత్మకం',
+	'proofreadpage_quality3_category' => 'అచ్చుదిద్దబడిన',
+	'proofreadpage_quality4_category' => 'ఆమోదించబడిన',
 	'proofreadpage_quality0_message' => 'ఈ పుటను అచ్చుదిద్దనక్కరలేదు',
 	'proofreadpage_quality1_message' => 'ఈ పుట అచ్చుదిద్దబడలేదు',
 	'proofreadpage_quality2_message' => 'ఈ పుటను అచ్చుదిద్దుతున్నప్పుడు తెలియని సమస్య ఎదురైనది',
 	'proofreadpage_quality3_message' => 'ఈ పుట అచ్చుదిద్దబడ్డది',
 	'proofreadpage_quality4_message' => 'ఈ పుట ఆమోదించబడ్డది',
+	'proofreadpage_index_status' => 'సూచిక స్థితి',
 	'proofreadpage_index_size' => 'పేజీల సంఖ్య',
+	'proofreadpage_specialpage_label_orderby' => 'ఇలా పేర్చు:',
+	'proofreadpage_specialpage_label_key' => 'వెతుకు:',
+	'proofreadpage_specialpage_label_sortascending' => 'ఆరోహణ క్రమంలో పేర్చు',
+	'proofreadpage_alphabeticalorder' => 'అక్షర క్రమం',
 	'proofreadpage_index_listofpages' => 'పుటల జాబితా',
 	'proofreadpage_image_message' => 'సూచిక పుటకు లంకె',
 	'proofreadpage_page_status' => 'పుట స్థితి',
@@ -7541,11 +7549,28 @@ $messages['te'] = array(
 పుటలు||20
 వ్యాఖ్యలు||10',
 	'proofreadpage_pages' => '$2 {{PLURAL:$1|పేజీ|పేజీలు}}',
-	'proofreadpage_specialpage_legend' => 'సూచీపుటలు వెదకు',
+	'proofreadpage_specialpage_legend' => 'సూచీపుటలు వెతుకు',
+	'proofreadpage_specialpage_searcherror' => 'వెతుకు యంత్రంలో లోపం',
+	'proofreadpage_specialpage_searcherrortext' => 'వెతుకు యంత్రం పనిచేయదు. అసౌకర్యానికి చింతిస్తున్నాము.',
 	'proofreadpage_source' => 'మూలము',
 	'proofreadpage_source_message' => 'ఈ పాఠ్య నిర్ధారణకు ఛాయాచిత్రసంగ్రహణకూర్పు(scanned edition) వాడబడ్డది.',
+	'right-pagequality' => 'పేజీ నాణ్యత జెండాను మార్చు',
+	'proofreadpage-section-tools' => 'అచ్చుదిద్దు ఉపకరణాలు',
+	'proofreadpage-group-zoom' => 'పెద్దది చేయి',
 	'proofreadpage-group-other' => 'ఇతర',
+	'proofreadpage-button-toggle-visibility-label' => 'పేజీ శీర్షం, పీఠాలను చూపు/దాచు',
+	'proofreadpage-button-zoom-out-label' => 'చిన్నది చేయి',
 	'proofreadpage-button-reset-zoom-label' => 'అసలు పరిమాణం',
+	'proofreadpage-button-zoom-in-label' => 'పెద్దది చేయి',
+	'proofreadpage-button-toggle-layout-label' => 'నిలువు/అడ్డం రూపం',
+	'proofreadpage-preferences-showheaders-label' => '{{ns:page}} పేరుబరిలో పీఠిక మరియు భూమిక క్షేత్రాలను సవరించునపుడు చూపు',
+	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} పేరుబరిలో సవరణకు క్షితిజ సమాంతర రూపాన్ని  వాడు',
+	'proofreadpage-indexoai-repositoryName' => ' {{SITENAME}} నుండి పుస్తకాల వివరాలు',
+	'proofreadpage-indexoai-eprint-content-text' => 'అచ్చుదిద్దుపేజీ ద్వారా నిర్వహించబడే పుస్తకాల వివరాలు',
+	'proofreadpage-indexoai-error-schemanotfound' => 'స్కీమా కనబడలేదు',
+	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 స్కీమా కనబడలేదు.',
+	'proofreadpage-disambiguationspage' => 'Template:అయోమయనివృత్తి',
+	'content-model-proofread-page' => 'పుట: పుట',
 );
 
 /** Tetum (tetun)
