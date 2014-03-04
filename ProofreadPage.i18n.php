@@ -1952,7 +1952,7 @@ $messages['diq'] = array(
 	'proofreadpage_index_size' => 'Amariya pelan',
 	'proofreadpage_specialpage_label_orderby' => 'Ratnen:',
 	'proofreadpage_specialpage_label_key' => 'Cı geyre:',
-	'proofreadpage_specialpage_label_sortascending' => 'Ratnayışo zeydnayış',
+	'proofreadpage_specialpage_label_sortascending' => 'Rêzkerdışo zêdiyaye',
 	'proofreadpage_alphabeticalorder' => 'Alfabetik ratnayış',
 	'proofreadpage_index_listofpages' => 'listeya pelan',
 	'proofreadpage_image_message' => 'gıreyo ke erziyayo pelê endeksi',
@@ -7491,6 +7491,7 @@ $messages['ta'] = array(
  * @author Chaduvari
  * @author Kiranmayee
  * @author Mpradeep
+ * @author Ravichandra
  * @author Veeven
  * @author రాకేశ్వర
  */
@@ -7508,7 +7509,7 @@ $messages['te'] = array(
 	'proofreadpage_indexdupe' => 'నకిలీ లంకె',
 	'proofreadpage_indexdupetext' => 'ఒక సూచికలో ఒక పుటను ఒక్క సారి కంటే ఎక్కువ ఎక్కించరాదు.',
 	'proofreadpage_nologin' => 'లోనికి ప్రవేశించిలేరు',
-	'proofreadpage_nologintext' => 'పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[ప్రత్యేక:వాడుకరిప్రవేశం|లోనికి ప్రవేశించి]] వుండాలి.', # Fuzzy
+	'proofreadpage_nologintext' => 'పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[Special:UserLogin|గా ప్రవేశించి]] వుండాలి.',
 	'proofreadpage_notallowed' => 'మార్పడానికి అనుమతి లేదు',
 	'proofreadpage_notallowedtext' => 'ఈ పుటయొక్క అచ్చుదిద్దుస్థితిని మార్చడానికి మీకు అనుమతిలేదు.',
 	'proofreadpage_number_expected' => 'పొరబాటు: సంఖ్య వుండవలెను',
