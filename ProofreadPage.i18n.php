@@ -7509,7 +7509,7 @@ $messages['te'] = array(
 	'proofreadpage_indexdupe' => 'నకిలీ లంకె',
 	'proofreadpage_indexdupetext' => 'ఒక సూచికలో ఒక పుటను ఒక్క సారి కంటే ఎక్కువ ఎక్కించరాదు.',
 	'proofreadpage_nologin' => 'లోనికి ప్రవేశించిలేరు',
-	'proofreadpage_nologintext' => 'పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[Special:UserLogin|గా ప్రవేశించి]] వుండాలి.',
+	'proofreadpage_nologintext' => 'పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[Special:UserLogin|గా లాగినయి]] వుండాలి.',
 	'proofreadpage_notallowed' => 'మార్పడానికి అనుమతి లేదు',
 	'proofreadpage_notallowedtext' => 'ఈ పుటయొక్క అచ్చుదిద్దుస్థితిని మార్చడానికి మీకు అనుమతిలేదు.',
 	'proofreadpage_number_expected' => 'పొరబాటు: సంఖ్య వుండవలెను',
@@ -7518,7 +7518,7 @@ $messages['te'] = array(
 	'proofreadpage_nextpage' => 'తరువాతి పుట',
 	'proofreadpage_prevpage' => 'క్రిత పుట',
 	'proofreadpage_header' => 'శీర్షిక (కలుపకు):',
-	'proofreadpage_body' => 'పుట రూపము (చేర్చబడేది ):',
+	'proofreadpage_body' => 'పేజీ దేహం (ట్రాన్‍‍స్‍క్లూడు చేసేది):',
 	'proofreadpage_footer' => 'పాదము (కలుపకు):',
 	'proofreadpage_toggleheaders' => 'చూపించకూడని భాగాలను(noinclude sections) చూపించడం లేదా చూపించకపోవడాన్ని మార్చండి',
 	'proofreadpage_quality0_category' => 'పాఠ్యం లేనివి',
@@ -7571,7 +7571,7 @@ $messages['te'] = array(
 	'proofreadpage-indexoai-error-schemanotfound' => 'స్కీమా కనబడలేదు',
 	'proofreadpage-indexoai-error-schemanotfound-text' => '$1 స్కీమా కనబడలేదు.',
 	'proofreadpage-disambiguationspage' => 'Template:అయోమయనివృత్తి',
-	'content-model-proofread-page' => 'పుట: పుట',
+	'content-model-proofread-page' => 'పేజీ: పేజీ',
 );
 
 /** Tetum (tetun)
