@@ -193,6 +193,8 @@ $wgHooks['SkinTemplateNavigation'][] = 'ProofreadPage::onSkinTemplateNavigation'
 $wgHooks['ContentHandlerDefaultModelFor'][] = 'ProofreadPage::onContentHandlerDefaultModelFor';
 $wgHooks['APIEditBeforeSave'][] = 'ProofreadPage::onAPIEditBeforeSave';
 $wgHooks['EditFormPreloadText'][] = 'ProofreadPage::onEditFormPreloadText';
+$wgHooks['ParserTestTables'][] = 'ProofreadPage::onParserTestTables';
+
 
 
 /**
@@ -218,6 +220,9 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 
 	return true;
 };
+
+//Parser tests
+$wgParserTestFiles[] = __DIR__ . '/tests/parser/pages.txt';
 
 //Handlers
 $wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = 'ProofreadPageContentHandler';
