@@ -880,6 +880,48 @@ $void_cell
 		return true;
 	}
 
+	/**
+	 * Add proofreading status to action=info
+	 * @param $context IContextSource object
+	 * @param &$pageinfo array of information
+	 */
+	public static function onInfoAction( $context, &$pageInfo ) {
+		if ( !$context->canUseWikiPage() ) {
+			return true;
+		}
+		$page = $context->getWikiPage();
+		$title = $page->getTitle();
+		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
+			return true;
+		}
+		$pageid = $page->getId();
+
+		$params = new FauxRequest( array(
+			'action' => 'query',
+			'prop' => 'proofread',
+			'pageids' => $pageid,
+		) );
+
+		$api = new ApiMain( $params );
+		$api->execute();
+		$data = $api->getResultData();
+		unset( $api );
+
+		if ( array_key_exists( 'error', $data ) ) {
+			return true;
+		}
+
+		$info = $data['query']['pages'][$pageid];
+		if ( array_key_exists( 'proofread', $info ) ) {
+			$pageInfo['header-basic'][] = array(
+				wfMessage( 'proofreadpage-pageinfo-status' ),
+				wfMessage( "proofreadpage_quality{$info['proofread']['quality']}_category" ),
+			);
+		}
+
+		return true;
+	}
+
 	protected static function getLinkUrlForTitle( Title $title ) {
 		if ( $title->exists() ) {
 			return $title->getLinkUrl();
