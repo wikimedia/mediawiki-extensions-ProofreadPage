@@ -184,7 +184,7 @@ This phrase is confusing: Modify 'page quality flag' or 'Modify page quality' fl
 	'proofreadpage-button-zoom-in-label' => 'Tooltip text in button for zoom in, only visible in edit mode.
 {{Identical|Zoom in}}',
 	'proofreadpage-button-toggle-layout-label' => 'Tooltip text in button for horizontal or vertical layout toggle, only visible in edit mode.',
-	'proofreadpage-pageinfo-status'                => 'The proofreading status (e.g., "Validated", "Problematic") of the page. Used on action=info for pages.',
+	'proofreadpage-pageinfo-status' => 'The proofreading status (e.g., "Validated", "Problematic") of the page. Used on action=info for pages.',
 	'proofreadpage-preferences-showheaders-label' => 'Description of the checkbox preference to show/hide the header and footer fields in the edit form of the Page namespace.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.',
 	'proofreadpage-indexoai-repositoryName' => 'Name of the OAI-PMH API.',
@@ -1884,6 +1884,7 @@ Bemerkungen||10',
 	'proofreadpage-button-reset-zoom-label' => 'Zoom zurücksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergrößern',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikale/horizontale Ausrichtung',
+	'proofreadpage-pageinfo-status' => 'Korrekturlesungsstatus',
 	'proofreadpage-preferences-showheaders-label' => 'Beim Bearbeiten von Seiten im Namensraum {{ns:page}} die Felder für die Kopf- und die Fußzeile anzeigen',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Beim Bearbeiten von Seiten im Namensraum {{ns:page}} ein horizontales Layout verwenden',
 	'proofreadpage-indexoai-repositoryName' => 'Buchmetadaten von {{SITENAME}}',
@@ -2733,7 +2734,7 @@ Remarques||10',
 	'proofreadpage-indexoai-error-schemanotfound' => 'Schéma introuvable',
 	'proofreadpage-indexoai-error-schemanotfound-text' => 'Le schéma $1 est introuvable.',
 	'proofreadpage-disambiguationspage' => 'Template:disambig',
-	'content-model-proofread-page' => 'Page : page',
+	'content-model-proofread-page' => 'page Page:',
 );
 
 /** Franco-Provençal (arpetan)
@@ -4782,6 +4783,7 @@ Bemierkungen||10',
 	'proofreadpage-button-reset-zoom-label' => 'Zoom zerécksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergréisseren',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikalen/horizontale Layout',
+	'proofreadpage-pageinfo-status' => 'Status Iwwerliesen',
 	'proofreadpage-preferences-showheaders-label' => "D'Entête an de Pied de page weise beim Ännerungen am {{ns:page}}-Nummraum",
 	'proofreadpage-preferences-horizontal-layout-label' => 'Benotzt en horizontale Layout wann Dir am {{ns:Page}}-Nummraum ännert',
 	'proofreadpage-indexoai-repositoryName' => 'Meta-Donnéeë vu Bicher vu(n) {{SITENAME}}',
@@ -5292,6 +5294,7 @@ $messages['mk'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Врати размер',
 	'proofreadpage-button-zoom-in-label' => 'Приближи',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикален/хоризонтален распоред',
+	'proofreadpage-pageinfo-status' => 'Состојба на провереност',
 	'proofreadpage-preferences-showheaders-label' => 'Прикажувај заглавје и подножне при уредување на именскиот простор „{{ns:page}}“',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Користи хоризонтален распоред при уредување во именскиот простор „{{ns:page}}“',
 	'proofreadpage-indexoai-repositoryName' => 'Метаподатоци за книги од {{SITENAME}}',
@@ -5593,6 +5596,7 @@ $messages['nah'] = array(
 );
 
 /** Neapolitan (Napulitano)
+ * @author C.R.
  * @author Chelin
  */
 $messages['nap'] = array(
@@ -5666,6 +5670,7 @@ Note||10",
 	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoom avanzato',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizzuntale',
+	'proofreadpage-pageinfo-status' => "Stato 'e cuntrollo d&#39;'a lettura",
 	'proofreadpage-preferences-showheaders-label' => "Vere a testata e 'o piè dda paggena durante o' càgnamento ddo namespace {{ns:page}}",
 	'proofreadpage-preferences-horizontal-layout-label' => "Usa 'o layout orrizzontale durante 'o càgnamento dint'ô namespace {{ns:page}}",
 	'proofreadpage-indexoai-repositoryName' => "Metadati dde libbri 'e {{SITENAME}}",
@@ -6756,6 +6761,7 @@ $messages['ru'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Сбросить увеличение',
 	'proofreadpage-button-zoom-in-label' => 'Приблизить',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальная/горизонтальная разметка',
+	'proofreadpage-pageinfo-status' => 'Статус вычитки',
 	'proofreadpage-preferences-showheaders-label' => 'Показывать поля верхнего и нижнего колонтитулов при редактировании в пространстве имен {{ns:page}}.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Использовать горизонтальную раскладку при редактировании в пространстве имен {{ns:page}}.',
 	'proofreadpage-indexoai-repositoryName' => 'Метаданные книг с сайта {{SITENAME}}',
@@ -8161,6 +8167,7 @@ $messages['uk'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'Скинути збільшення',
 	'proofreadpage-button-zoom-in-label' => 'Збільшити',
 	'proofreadpage-button-toggle-layout-label' => 'Вертикальна / горизонтальна розмітка',
+	'proofreadpage-pageinfo-status' => 'Стан перевірки правопису',
 	'proofreadpage-preferences-showheaders-label' => 'Показувати поля верхнього і нижнього колонтитулів при редагуванні в просторі імен {{ns:page}}.',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Використовувати горизонтальну розкладку при редагуванні в просторі імен {{ns:page}}.',
 	'proofreadpage-indexoai-repositoryName' => 'Метадані книг з {{SITENAME}}',
