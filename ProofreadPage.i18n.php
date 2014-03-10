@@ -2545,6 +2545,7 @@ $messages['fa'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'بازنشانی اندازه‌نمایی',
 	'proofreadpage-button-zoom-in-label' => 'بزرگ‌نمایی',
 	'proofreadpage-button-toggle-layout-label' => 'طرح عمودی/افقی',
+	'proofreadpage-pageinfo-status' => 'وضعیت غلطگیری',
 	'proofreadpage-preferences-showheaders-label' => 'در زمان ویرایش در فضای نام {{ns:page}} سرصفحه و پانویس زمینه را نشان بده',
 	'proofreadpage-preferences-horizontal-layout-label' => 'استفاده از چیدمان افقی در هنگام ویرایش در فضای نام {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'فراداده کتاب از {{SITENAME}}',
@@ -2727,6 +2728,7 @@ Remarques||10',
 	'proofreadpage-button-reset-zoom-label' => 'Réinitialiser le zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoomer',
 	'proofreadpage-button-toggle-layout-label' => 'Disposition verticale/horizontale',
+	'proofreadpage-pageinfo-status' => 'État de la relecture',
 	'proofreadpage-preferences-showheaders-label' => "Afficher des champs d'en-tête et de pied de page lors de l'édition dans l'espace de nommage {{ns:page}}",
 	'proofreadpage-preferences-horizontal-layout-label' => "Utiliser une disposition horizontale lors d'une modification dans l'espace de noms {{ns:page}}",
 	'proofreadpage-indexoai-repositoryName' => 'Métadonnées des livres de {{SITENAME}}',
@@ -3260,6 +3262,7 @@ $messages['he'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'גודל מקורי',
 	'proofreadpage-button-zoom-in-label' => 'תקריב',
 	'proofreadpage-button-toggle-layout-label' => 'פריסה אופקית או אנכית',
+	'proofreadpage-pageinfo-status' => 'מצב ההגהה',
 	'proofreadpage-preferences-showheaders-label' => 'הצגת כותרת עליונה וכותרת תחתונה בעת עריכה במרחב השמות "{{ns:page}}".',
 	'proofreadpage-preferences-horizontal-layout-label' => 'להשתמש בתצוגה אופקית בעת עריכה במרחב השם {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'מטא־נתונים של ספרים מאתר {{SITENAME}}',
@@ -3271,6 +3274,7 @@ $messages['he'] = array(
 );
 
 /** Hindi (हिन्दी)
+ * @author Adithyavr
  * @author Ansumang
  * @author Kaustubh
  * @author Siddhartha Ghai
@@ -3311,6 +3315,7 @@ $messages['hi'] = array(
 	'proofreadpage-group-zoom' => 'ज़ूम',
 	'proofreadpage-group-other' => 'अन्य',
 	'proofreadpage-button-reset-zoom-label' => 'मूल आकार',
+	'proofreadpage-pageinfo-status' => 'प्रूफ शोधन की प्रस्तुत स्थिति',
 );
 
 /** Fiji Hindi (Latin script) (Fiji Hindi)
@@ -3969,9 +3974,9 @@ $messages['it'] = array(
 	'proofreadpage_indexdupe' => 'Collegamento duplicato',
 	'proofreadpage_indexdupetext' => 'Le pagine non possono essere elencate più di una volta su una pagina di indice.',
 	'proofreadpage_nologin' => 'Accesso non effettuato',
-	'proofreadpage_nologintext' => "Per modificare lo stato di verifica delle pagine, è necessario aver effettuato [[Special:UserLogin|l'accesso]].",
+	'proofreadpage_nologintext' => "Per modificare lo stato di correzione delle pagine, è necessario aver effettuato [[Special:UserLogin|l'accesso]].",
 	'proofreadpage_notallowed' => 'Modifica non consentita',
-	'proofreadpage_notallowedtext' => 'Non sei autorizzato a modificare lo stato di verifica di questa pagina.',
+	'proofreadpage_notallowedtext' => 'Non sei autorizzato a modificare lo stato di correzione di questa pagina.',
 	'proofreadpage_dataconfig_badformatted' => 'Problema nella configurazione dei dati',
 	'proofreadpage_dataconfig_badformattedtext' => 'La pagina [[Mediawiki:Proofreadpage index data config]] non è in un formato JSON corretto.',
 	'proofreadpage_number_expected' => 'Errore: previsto valore numerico',
@@ -4026,6 +4031,7 @@ Note||10',
 	'proofreadpage-button-reset-zoom-label' => 'Ripristina zoom',
 	'proofreadpage-button-zoom-in-label' => 'Zoom avanti',
 	'proofreadpage-button-toggle-layout-label' => 'Layout verticale/orizzontale',
+	'proofreadpage-pageinfo-status' => 'Stato di correzione',
 	'proofreadpage-preferences-showheaders-label' => "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace {{ns:page}}",
 	'proofreadpage-preferences-horizontal-layout-label' => 'Usa il layout orizzontale durante la modifica nel namespace {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'Metadati dei libri da {{SITENAME}}',
@@ -4083,6 +4089,7 @@ $messages['ja'] = array(
 	'proofreadpage_quality3_message' => 'このページは校正済みです',
 	'proofreadpage_quality4_message' => 'このページは検証済みです',
 	'proofreadpage_index_size' => 'ページ数',
+	'proofreadpage_specialpage_label_orderby' => '並び順:',
 	'proofreadpage_specialpage_label_key' => '検索:',
 	'proofreadpage_specialpage_label_sortascending' => '昇順に並べ替え',
 	'proofreadpage_alphabeticalorder' => '辞書順',
@@ -4113,6 +4120,7 @@ $messages['ja'] = array(
 	'proofreadpage-button-reset-zoom-label' => '元の大きさ',
 	'proofreadpage-button-zoom-in-label' => '拡大',
 	'proofreadpage-button-toggle-layout-label' => '垂直方向/水平方向のレイアウト',
+	'proofreadpage-pageinfo-status' => '校正の状態',
 	'proofreadpage-preferences-showheaders-label' => '{{ns:Page}}名前空間での編集中にヘッダー/フッター フィールドを表示',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}}名前空間の編集の際に、水平レイアウトを使用',
 	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}}からの書籍のメタデータ',
@@ -5386,9 +5394,11 @@ $messages['ml'] = array(
 
 /** Mongolian (монгол)
  * @author Chinneeb
+ * @author Mongol
  */
 $messages['mn'] = array(
 	'proofreadpage_pages' => '{{PLURAL:$1|хуудас}}', # Fuzzy
+	'proofreadpage-pageinfo-status' => 'Баталгаажуулахаар хянагдаж байгаа горим',
 );
 
 /** Marathi (मराठी)
@@ -6318,6 +6328,7 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Imperadeiro98
  * @author Lijealso
  * @author Luckas
  * @author Malafaya
@@ -6395,6 +6406,7 @@ Notas||10',
 	'proofreadpage-button-reset-zoom-label' => 'Reiniciar ampliação',
 	'proofreadpage-button-zoom-in-label' => 'Aumentar ampliação',
 	'proofreadpage-button-toggle-layout-label' => 'Orientação vertical ou horizontal',
+	'proofreadpage-pageinfo-status' => 'Estado da revisão',
 	'proofreadpage-preferences-showheaders-label' => 'Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Usar "layout" horizontal ao editar o espaço nominal {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'Metadados dos livros de {{SITENAME}}',
@@ -6988,6 +7000,13 @@ $messages['scn'] = array(
 	'proofreadpage_header' => 'Ntistazzioni (nun inclusa)',
 );
 
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'proofreadpage-pageinfo-status' => 'Pruifreadin status',
+);
+
 /** Sinhala (සිංහල)
  * @author Singhalawap
  * @author පසිඳු කාවින්ද
@@ -7530,10 +7549,10 @@ $messages['te'] = array(
 	'proofreadpage_footer' => 'పాదము (కలుపకు):',
 	'proofreadpage_toggleheaders' => 'చూపించకూడని భాగాలను(noinclude sections) చూపించడం లేదా చూపించకపోవడాన్ని మార్చండి',
 	'proofreadpage_quality0_category' => 'పాఠ్యం లేనివి',
-	'proofreadpage_quality1_category' => 'అచ్చుదిద్దబడని',
+	'proofreadpage_quality1_category' => 'అచ్చుదిద్దబడలేదు.',
 	'proofreadpage_quality2_category' => 'సమస్యాత్మకం',
-	'proofreadpage_quality3_category' => 'అచ్చుదిద్దబడిన',
-	'proofreadpage_quality4_category' => 'ఆమోదించబడిన',
+	'proofreadpage_quality3_category' => 'అచ్చుదిద్దబడినవి',
+	'proofreadpage_quality4_category' => 'ఆమోదించబడ్డవి',
 	'proofreadpage_quality0_message' => 'ఈ పుటను అచ్చుదిద్దనక్కరలేదు',
 	'proofreadpage_quality1_message' => 'ఈ పుట అచ్చుదిద్దబడలేదు',
 	'proofreadpage_quality2_message' => 'ఈ పుటను అచ్చుదిద్దుతున్నప్పుడు తెలియని సమస్య ఎదురైనది',
@@ -8402,6 +8421,7 @@ Ghi chú||10',
 	'proofreadpage-button-reset-zoom-label' => 'Cỡ bình thường',
 	'proofreadpage-button-zoom-in-label' => 'Phóng to',
 	'proofreadpage-button-toggle-layout-label' => 'Đứng thẳng/ngang',
+	'proofreadpage-pageinfo-status' => 'Trạng thái hiệu đính',
 	'proofreadpage-preferences-showheaders-label' => 'Hiện các hộp đầu/chân khi sửa đổi trong không gian tên {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Bố trí ngang các trang sửa đổi trong không gian tên {{ns:page}}',
 	'proofreadpage-indexoai-repositoryName' => 'Siêu dữ liệu sách {{SITENAME}}',
