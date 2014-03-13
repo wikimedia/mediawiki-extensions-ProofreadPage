@@ -3178,11 +3178,17 @@ $messages['ha'] = array(
 
 /** Hawaiian (Hawai`i)
  * @author Kalani
+ * @author Kolonahe
  * @author Singularity
  */
 $messages['haw'] = array(
-	'proofreadpage_nextpage' => 'Mea aʻe',
-	'proofreadpage_prevpage' => 'Mea ma mua aʻe',
+	'proofreadpage_image' => 'Kiʻi',
+	'proofreadpage_nextpage' => 'ʻAoʻao hou aʻe',
+	'proofreadpage_prevpage' => 'ʻAoʻao aku nei',
+	'proofreadpage_specialpage_label_key' => 'Huli:',
+	'proofreadpage_source' => 'Kūmole',
+	'proofreadpage-disambiguationspage' => 'Template:huaʻōlelo puana like',
+	'content-model-proofread-page' => 'ʻAoʻao: ʻaoʻao',
 );
 
 /** Hebrew (עברית)
