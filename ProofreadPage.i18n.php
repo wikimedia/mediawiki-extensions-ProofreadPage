@@ -2422,6 +2422,7 @@ Märkused||10',
 	'proofreadpage-button-reset-zoom-label' => 'Algsuurus',
 	'proofreadpage-button-zoom-in-label' => 'Suurenda',
 	'proofreadpage-button-toggle-layout-label' => 'Püst- või rõhtpaigutus',
+	'proofreadpage-pageinfo-status' => 'Tõendamisolek',
 	'proofreadpage-preferences-showheaders-label' => 'Nimeruumis {{ns:page}} redigeerides näita päise- ja jalusevälja',
 	'proofreadpage-preferences-horizontal-layout-label' => 'Nimeruumis {{ns:page}} redigeerides kasuta rõhtpaigutust',
 	'proofreadpage-disambiguationspage' => 'Template:täpsustus',
@@ -3323,7 +3324,7 @@ $messages['hi'] = array(
 	'proofreadpage-group-zoom' => 'ज़ूम',
 	'proofreadpage-group-other' => 'अन्य',
 	'proofreadpage-button-reset-zoom-label' => 'मूल आकार',
-	'proofreadpage-pageinfo-status' => 'प्रूफ शोधन की प्रस्तुत स्थिति',
+	'proofreadpage-pageinfo-status' => 'प्रूफ़रीड स्थिति',
 );
 
 /** Fiji Hindi (Latin script) (Fiji Hindi)
@@ -4512,6 +4513,7 @@ $messages['kn'] = array(
 );
 
 /** Korean (한국어)
+ * @author Hym411
  * @author Ilovesabbath
  * @author Klutzy
  * @author Kwj2772
@@ -4592,6 +4594,7 @@ $messages['ko'] = array(
 	'proofreadpage-button-reset-zoom-label' => '원본 크기',
 	'proofreadpage-button-zoom-in-label' => '확대',
 	'proofreadpage-button-toggle-layout-label' => '수직/수평 레이아웃',
+	'proofreadpage-pageinfo-status' => '교정 상태',
 	'proofreadpage-preferences-showheaders-label' => '{{ns:page}} 이름공간에서 편집할 때 머릿글 및 바닥글 필드 보이기',
 	'proofreadpage-preferences-horizontal-layout-label' => '{{ns:page}} 이름공간에서 편집할 때 수평 레이아웃 사용',
 	'proofreadpage-indexoai-repositoryName' => '{{SITENAME}} 책의 메타데이터',
@@ -5036,6 +5039,41 @@ Pastabos||10',
 	'proofreadpage-button-reset-zoom-label' => 'Perkrauti priartinimą',
 	'proofreadpage-button-zoom-in-label' => 'Priartinti',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikalus/horizontalus išdėstymas',
+);
+
+/** لری جنووی  (لری جنووی )
+ * @author علی ساکی لرستانی
+ */
+$messages['luz'] = array(
+	'indexpages' => 'سیائل بلگیل اصلی',
+	'pageswithoutscans' => 'پیجئل بدون اسکن',
+	'proofreadpage_image' => 'عسگ',
+	'proofreadpage_index' => 'سیائه',
+	'proofreadpage_nologin' => 'نوایته',
+	'proofreadpage_notallowed' => 'تغییر مجاز نوابی',
+	'proofreadpage_nextpage' => 'پیج بعد',
+	'proofreadpage_prevpage' => 'پیج قبل',
+	'proofreadpage_header' => 'سرورق',
+	'proofreadpage_quality0_category' => 'بدون نشته',
+	'proofreadpage_quality1_category' => 'ویرایش نوابیه',
+	'proofreadpage_quality3_category' => 'ویرایش وابیه',
+	'proofreadpage_quality0_message' => 'ای پیج ویرایش نیخا',
+	'proofreadpage_quality1_message' => 'ای پیج هنی ویرایش نبیه',
+	'proofreadpage_quality2_message' => 'یه مشکل هسی سی ویرایش ای پیج',
+	'proofreadpage_quality3_message' => 'ای پیج ویرایش بیه',
+	'proofreadpage_index_size' => 'شماره هنه پیجئل',
+	'proofreadpage_specialpage_label_orderby' => 'ترتیب د لحاظ',
+	'proofreadpage_specialpage_label_key' => 'سل کردن',
+	'proofreadpage_index_listofpages' => 'سیائه هنه پیجئل',
+	'proofreadpage_page_status' => 'وضعیت پیج',
+	'proofreadpage_specialpage_legend' => 'پیج اول هنه سل کردن',
+	'proofreadpage_source' => 'سرچشمه',
+	'proofreadpage-section-tools' => 'ابزاریل سی ویرایش',
+	'proofreadpage-group-zoom' => 'زوم',
+	'proofreadpage-button-zoom-out-label' => 'کوچر کردن',
+	'proofreadpage-button-zoom-in-label' => 'گپ کردن',
+	'proofreadpage-pageinfo-status' => 'وضعیت ینه ویرایش',
+	'content-model-proofread-page' => 'پیج',
 );
 
 /** Latvian (latviešu)
