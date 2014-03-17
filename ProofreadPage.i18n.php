@@ -4730,6 +4730,7 @@ $messages['lad'] = array(
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Les Meloures
  * @author Robby
  * @author Soued031
  */
@@ -4799,7 +4800,7 @@ Bemierkungen||10',
 	'proofreadpage-group-other' => 'Aner',
 	'proofreadpage-button-toggle-visibility-label' => "D'Entête an de Fouss vun dëser Säit weisen/verstoppen",
 	'proofreadpage-button-zoom-out-label' => ' Verklengeren',
-	'proofreadpage-button-reset-zoom-label' => 'Zoom zerécksetzen',
+	'proofreadpage-button-reset-zoom-label' => 'Zoom zrécksetzen',
 	'proofreadpage-button-zoom-in-label' => 'Vergréisseren',
 	'proofreadpage-button-toggle-layout-label' => 'Vertikalen/horizontale Layout',
 	'proofreadpage-pageinfo-status' => 'Status Iwwerliesen',
@@ -4898,6 +4899,7 @@ $messages['lmo'] = array(
 
 /** لوری (لوری)
  * @author Mogoeilor
+ * @author علی ساکی لرستانی
  */
 $messages['lrc'] = array(
 	'indexpages' => 'سيائه بلگيا اصلی',
@@ -4970,6 +4972,7 @@ $messages['lrc'] = array(
 	'proofreadpage-button-reset-zoom-label' => 'انازه اصلی',
 	'proofreadpage-button-zoom-in-label' => 'گپ كردن',
 	'proofreadpage-button-toggle-layout-label' => 'چينشت سر وه هار،يا سر وه بالا',
+	'proofreadpage-pageinfo-status' => 'وضعیت ویرگار',
 	'proofreadpage-preferences-showheaders-label' => 'نشون بيه سربلگ و ديندابلگ وختی كه د ويرايشت بوئه {{ns:page}}',
 	'proofreadpage-preferences-horizontal-layout-label' => 'د چينشت هار ون وختی كه د{{ns:page}} ويرايشت ميكيد استفاده بوئه',
 	'proofreadpage-indexoai-repositoryName' => 'گپ دونسمنديا كتاو د{{SITENAME}}',
@@ -5047,33 +5050,83 @@ Pastabos||10',
 $messages['luz'] = array(
 	'indexpages' => 'سیائل بلگیل اصلی',
 	'pageswithoutscans' => 'پیجئل بدون اسکن',
+	'proofreadpage_desc' => 'امکان آسون مقایسه نشته وا اسکن اصلیس',
 	'proofreadpage_image' => 'عسگ',
 	'proofreadpage_index' => 'سیائه',
+	'proofreadpage_index_expected' => 'خطا:بلگه اول انتظار ایره',
+	'proofreadpage_nosuch_index' => 'خطا:ایچنین بلگه ینه',
+	'proofreadpage_nosuch_file' => 'خطا:ایچنین فایلی',
+	'proofreadpage_badpage' => 'فرمت نادرست',
+	'proofreadpage_badpagetext' => 'فرمت ای بلگنه ک ایسه ایخی ذخیرس کنی ، نادرست بیه',
+	'proofreadpage_indexdupe' => 'لینک تکراری',
+	'proofreadpage_indexdupetext' => 'بلگه یل نیترن بیش از یه بار مئن بلگه اول ذکر بوان',
 	'proofreadpage_nologin' => 'نوایته',
-	'proofreadpage_notallowed' => 'تغییر مجاز نوابی',
-	'proofreadpage_nextpage' => 'پیج بعد',
-	'proofreadpage_prevpage' => 'پیج قبل',
+	'proofreadpage_nologintext' => 'ایسه واس بوی[[مخصوص:کارور وارد بیده|وایته]] تا وضعیت ویرایشگرنه داشه بوی', # Fuzzy
+	'proofreadpage_notallowed' => 'تغییر مجاز نبیه',
+	'proofreadpage_notallowedtext' => 'ایسه مجاز نبیت سی تغییر ینه وضعیت ویرایشت ای بلگه',
+	'proofreadpage_dataconfig_badformatted' => 'گرتاری مئن پیکربنی داده یل',
+	'proofreadpage_dataconfig_badformattedtext' => 'بلگه[[مدیاویکی: شاخص ینه ویرایش بلگه پیکربنی داده یل]] هنی خو نیس مئن فرمت JASON', # Fuzzy
+	'proofreadpage_number_expected' => 'خطا: ارزش عددی مورد انتظار',
+	'proofreadpage_interval_too_large' => 'خطا: فاصله گپ بیش از حد',
+	'proofreadpage_invalid_interval' => 'خطا: فاصله نامعتبر',
+	'proofreadpage_nextpage' => 'بلگه بعد',
+	'proofreadpage_prevpage' => 'بلگه قبل',
 	'proofreadpage_header' => 'سرورق',
+	'proofreadpage_body' => 'قالب ینه سی بلگه',
+	'proofreadpage_footer' => 'پاورق',
+	'proofreadpage_toggleheaders' => 'سل کردن ضامن بشخ ناینکلود',
 	'proofreadpage_quality0_category' => 'بدون نشته',
-	'proofreadpage_quality1_category' => 'ویرایش نوابیه',
+	'proofreadpage_quality1_category' => 'ویرایش نبیه',
+	'proofreadpage_quality2_category' => 'حیرت آور',
 	'proofreadpage_quality3_category' => 'ویرایش وابیه',
-	'proofreadpage_quality0_message' => 'ای پیج ویرایش نیخا',
-	'proofreadpage_quality1_message' => 'ای پیج هنی ویرایش نبیه',
-	'proofreadpage_quality2_message' => 'یه مشکل هسی سی ویرایش ای پیج',
-	'proofreadpage_quality3_message' => 'ای پیج ویرایش بیه',
-	'proofreadpage_index_size' => 'شماره هنه پیجئل',
+	'proofreadpage_quality4_category' => 'معتبر',
+	'proofreadpage_quality0_message' => 'ای بلگه ویرایش نیخا',
+	'proofreadpage_quality1_message' => 'ای بلگه هنی ویرایش نبیه',
+	'proofreadpage_quality2_message' => 'یه مشکل هسی سی ویرایش ای بلگه',
+	'proofreadpage_quality3_message' => 'ای بلگه ویرایش بیه',
+	'proofreadpage_quality4_message' => 'ای بلگه هنی بیه معتبر',
+	'proofreadpage_index_status' => 'وضعیت سیائل',
+	'proofreadpage_index_size' => 'شماره هنه بلگه یل',
 	'proofreadpage_specialpage_label_orderby' => 'ترتیب د لحاظ',
-	'proofreadpage_specialpage_label_key' => 'سل کردن',
-	'proofreadpage_index_listofpages' => 'سیائه هنه پیجئل',
-	'proofreadpage_page_status' => 'وضعیت پیج',
-	'proofreadpage_specialpage_legend' => 'پیج اول هنه سل کردن',
+	'proofreadpage_specialpage_label_key' => 'جستن',
+	'proofreadpage_specialpage_label_sortascending' => 'مرتب سازی وا صعودی',
+	'proofreadpage_alphabeticalorder' => 'ترتیو الفبایی',
+	'proofreadpage_index_listofpages' => 'سیائه هنه بلگه یل',
+	'proofreadpage_image_message' => 'لینک ینه سی سیائل بلگه',
+	'proofreadpage_page_status' => 'وضعیت بلگه',
+	'proofreadpage_js_attributes' => 'نویسنه سال عنوان ناشر',
+	'proofreadpage_index_attributes' => 'نویسنه
+عنوان
+سال|سال ینه سی انتشار
+ناشر
+سرچشمه
+عسگ|عسگ کاور
+بلگه یل||20
+گپل||10',
+	'proofreadpage_pages' => '$2{{PLURAL:$1|بلگه|بلگه یل}}',
+	'proofreadpage_specialpage_legend' => 'بلگه اول هنه سل کردن',
+	'proofreadpage_specialpage_searcherror' => 'خطا مئن موتور ینه جستن',
+	'proofreadpage_specialpage_searcherrortext' => 'موتور جستن کار نیکنه.وبشبد سی ناراحتی',
 	'proofreadpage_source' => 'سرچشمه',
-	'proofreadpage-section-tools' => 'ابزاریل سی ویرایش',
+	'proofreadpage_source_message' => 'اسکن ویرگارنه استفاده بیه تا درست کردن نشته',
+	'right-pagequality' => 'تغییر کیفیت بلگه پرچم',
+	'proofreadpage-section-tools' => 'اوزارگه یل سی ویرایش',
 	'proofreadpage-group-zoom' => 'زوم',
+	'proofreadpage-group-other' => 'دیه',
+	'proofreadpage-button-toggle-visibility-label' => 'نشو/پنهو کردن سرورق و پاورق ای بلگه',
 	'proofreadpage-button-zoom-out-label' => 'کوچر کردن',
+	'proofreadpage-button-reset-zoom-label' => 'اندازه اصلی',
 	'proofreadpage-button-zoom-in-label' => 'گپ کردن',
+	'proofreadpage-button-toggle-layout-label' => 'طرح افقی/عمودی',
 	'proofreadpage-pageinfo-status' => 'وضعیت ینه ویرایش',
-	'content-model-proofread-page' => 'پیج',
+	'proofreadpage-preferences-showheaders-label' => 'نشو دائن سرورق و پاورق جا وقتی ک داری ویرایشس ایکنی مئن {{ns:بلگه}}',
+	'proofreadpage-preferences-horizontal-layout-label' => 'دوس هنی',
+	'proofreadpage-indexoai-repositoryName' => 'متاداده متاوا از {{نوم جا}}',
+	'proofreadpage-indexoai-eprint-content-text' => 'متاداده کتاوا اداره بینه توسط بلگه یل ویرایش وابیده',
+	'proofreadpage-indexoai-error-schemanotfound' => 'طرحواره پیدا نبی',
+	'proofreadpage-indexoai-error-schemanotfound-text' => 'طرحواره$1 پیدا هنی نبیه',
+	'proofreadpage-disambiguationspage' => 'الگو:دیزامبیگ',
+	'content-model-proofread-page' => 'بلگه:بلگه',
 );
 
 /** Latvian (latviešu)
