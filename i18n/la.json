@@ -1,0 +1,25 @@
+{
+    "@metadata": {
+        "authors": [
+            "Candalua",
+            "John Vandenberg",
+            "SPQRobin",
+            "UV"
+        ]
+    },
+    "proofreadpage_image": "Fasciculus",
+    "proofreadpage_index": "Liber",
+    "proofreadpage_quality0_category": "Vacuus",
+    "proofreadpage_quality1_category": "Nondum emendata",
+    "proofreadpage_quality2_category": "Emendatio difficilis",
+    "proofreadpage_quality3_category": "Emendata",
+    "proofreadpage_quality4_category": "Bis lecta",
+    "proofreadpage_quality0_message": "Haec pagina emendanda non est",
+    "proofreadpage_quality1_message": "Haec pagina nondum emendata est",
+    "proofreadpage_quality2_message": "Emendatio difficilis",
+    "proofreadpage_quality3_message": "Haec pagina emendata est",
+    "proofreadpage_quality4_message": "Haec pagina emendata et bis lecta est",
+    "proofreadpage_page_status": "Paginae status",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|pagina|paginae}}",
+    "proofreadpage_source": "Fons"
+}

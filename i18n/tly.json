@@ -1,0 +1,16 @@
+{
+    "@metadata": {
+        "authors": [
+            "Erdemaslancan"
+        ]
+    },
+    "proofreadpage_image": "Шикил",
+    "proofreadpage_index": "Индекс",
+    "proofreadpage_nextpage": "Думотоно шә сәһифә",
+    "proofreadpage_specialpage_label_key": "Нәве",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|бајт|бајтон}}",
+    "proofreadpage_source": "Сәвон",
+    "proofreadpage-group-zoom": "Мигјос",
+    "proofreadpage-group-other": "ҹо",
+    "proofreadpage-button-reset-zoom-label": "Сыфтәнә памјә"
+}

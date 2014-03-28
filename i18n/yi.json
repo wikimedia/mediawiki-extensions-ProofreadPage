@@ -1,0 +1,23 @@
+{
+    "@metadata": {
+        "authors": [
+            "Imre",
+            "פוילישער"
+        ]
+    },
+    "proofreadpage_image": "בילד",
+    "proofreadpage_index": "אינדעקס",
+    "proofreadpage_nologin": "נישט אַרײַנלאגירט",
+    "proofreadpage_nextpage": "קומענדיגער בלאַט",
+    "proofreadpage_prevpage": "פֿריערדיגער בלאַט",
+    "proofreadpage_quality0_category": "אן טעקסט",
+    "proofreadpage_quality1_category": "קארעקטור נישט געליינט",
+    "proofreadpage_quality2_category": "פראבלעמאטיש",
+    "proofreadpage_quality3_category": "קארעקטור געליינט",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|בלאַט|בלעטער}}",
+    "proofreadpage_specialpage_legend": "זוכן אינדעקס־זײַטן",
+    "proofreadpage_source": "מקור",
+    "proofreadpage-group-zoom": "זום",
+    "proofreadpage-group-other": "אַנדער",
+    "proofreadpage-button-reset-zoom-label": "אריגינעלע גרייס"
+}

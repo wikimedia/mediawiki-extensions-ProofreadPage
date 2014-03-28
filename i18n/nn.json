@@ -1,0 +1,39 @@
+{
+    "@metadata": {
+        "authors": [
+            "Diupwijk",
+            "Gunnernett",
+            "Harald Khan",
+            "Jon Harald Søby",
+            "Njardarlogar"
+        ]
+    },
+    "proofreadpage_desc": "Tillèt enkel samanlikning av tekst med originalskanning.",
+    "proofreadpage_image": "Bilete",
+    "proofreadpage_index": "Indeks",
+    "proofreadpage_index_expected": "Feil: Indeks forventa",
+    "proofreadpage_nosuch_index": "Feil: ingen slik indeks",
+    "proofreadpage_nosuch_file": "Feil: inga slik fil",
+    "proofreadpage_nologin": "Ikkje innlogga",
+    "proofreadpage_number_expected": "Feil: Talverdi forventa",
+    "proofreadpage_interval_too_large": "Feil: for stort intervall",
+    "proofreadpage_invalid_interval": "Feil: ugyldig intervall",
+    "proofreadpage_nextpage": "Neste sida",
+    "proofreadpage_prevpage": "Førre sida",
+    "proofreadpage_header": "Hovudseksjon (ikkje inkludert):",
+    "proofreadpage_body": "Hovuddel (inkludert):",
+    "proofreadpage_footer": "Fotseksjon (ikkje inludert):",
+    "proofreadpage_toggleheaders": "syna/ikkje syna seksjonar ikkje inkluderte på sida",
+    "proofreadpage_quality0_category": "Utan tekst",
+    "proofreadpage_quality1_category": "Ikkje korrekturlest",
+    "proofreadpage_quality2_category": "Problematisk",
+    "proofreadpage_quality3_category": "Korrekturlest",
+    "proofreadpage_quality4_category": "Validert",
+    "proofreadpage_index_listofpages": "Lista over sider",
+    "proofreadpage_image_message": "Lenkja til indekssida",
+    "proofreadpage_page_status": "Sidestatus",
+    "proofreadpage_js_attributes": "Forfattar Tittel År Utgjevar",
+    "proofreadpage_index_attributes": "Forfattar\nTittel\nÅr|Utgjeve år\nUtgjevar\nKjelde\nBilete|Omslagsbilete\nSider||20\nMerknader||10",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|side|sider}}",
+    "proofreadpage_source": "Kjelde"
+}

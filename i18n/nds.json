@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Slomox"
+        ]
+    },
+    "proofreadpage_desc": "Verlöövt dat bequeme Verglieken vun Text mit’n Original-Scan",
+    "proofreadpage_image": "Bild",
+    "proofreadpage_index": "Index",
+    "proofreadpage_nextpage": "Nächste Siet",
+    "proofreadpage_prevpage": "Vörige Siet",
+    "proofreadpage_header": "Koppreeg (noinclude):",
+    "proofreadpage_body": "Hööfttext (warrt inbunnen):",
+    "proofreadpage_footer": "Footreeg (noinclude):",
+    "proofreadpage_toggleheaders": "noinclude-Afsneed in-/utblennen",
+    "proofreadpage_quality0_category": "Ahn Text",
+    "proofreadpage_quality1_category": "nich korrekturleest",
+    "proofreadpage_quality2_category": "problemaatsch",
+    "proofreadpage_quality3_category": "korrekturleest",
+    "proofreadpage_quality4_category": "Fertig",
+    "proofreadpage_index_listofpages": "Siedenlist",
+    "proofreadpage_image_message": "Lenk na de Indexsiet",
+    "proofreadpage_page_status": "Siedenstatus",
+    "proofreadpage_js_attributes": "Schriever Titel Johr Verlag",
+    "proofreadpage_index_attributes": "Schriever\nTitel\nJohr|Johr, dat dat rutkamen is\nVerlag\nBorn\nBild|Titelbild\nSieden||20\nAnmarkungen||10"
+}

@@ -1,0 +1,13 @@
+{
+    "@metadata": {
+        "authors": [
+            "Nayvik",
+            "Omshivaprakash"
+        ]
+    },
+    "proofreadpage_image": "ಚಿತ್ರ",
+    "proofreadpage_index": "Index",
+    "proofreadpage_nextpage": "ಮುಂದಿನ ಪುಟ",
+    "proofreadpage_prevpage": "ಹಿಂದಿನ ಪುಟ",
+    "proofreadpage_pages": "{{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}"
+}

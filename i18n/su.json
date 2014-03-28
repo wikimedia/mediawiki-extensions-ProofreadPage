@@ -1,0 +1,16 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kandar"
+        ]
+    },
+    "proofreadpage_image": "Gambar",
+    "proofreadpage_index": "Béréndélan",
+    "proofreadpage_nextpage": "Kaca salajengna",
+    "proofreadpage_prevpage": "Kaca saméméhna",
+    "proofreadpage_index_listofpages": "Béréndélan kaca",
+    "proofreadpage_image_message": "Tumbu ka kaca béréndélan",
+    "proofreadpage_page_status": "Status kaca",
+    "proofreadpage_js_attributes": "Pangarang Judul Taun Pamedal",
+    "proofreadpage_index_attributes": "Pangarang\nJudul\nTaun|Taun medal\nPamedal\nSumber\nGambar|Gambar jilid\nKaca||20\nCatetan||10"
+}

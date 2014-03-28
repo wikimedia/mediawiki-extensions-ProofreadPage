@@ -1,0 +1,22 @@
+{
+    "@metadata": {
+        "authors": [
+            "Sahran"
+        ]
+    },
+    "proofreadpage_image": "سۈرەت",
+    "proofreadpage_index": "مۇندەرىجە",
+    "proofreadpage_nologin": "تىزىمغا كىرمىدى",
+    "proofreadpage_nextpage": "كېيىنكى بەت",
+    "proofreadpage_prevpage": "ئالدىنقى بەت",
+    "proofreadpage_quality3_category": "تۈزەت",
+    "proofreadpage_specialpage_label_orderby": "تەرتىپى:",
+    "proofreadpage_specialpage_label_key": "ئىزدە:",
+    "proofreadpage_specialpage_label_sortascending": "ئۆسكۈچى تەرتىپ",
+    "proofreadpage_source": "مەنبە",
+    "proofreadpage-group-zoom": "كېڭەيت-تارايت",
+    "proofreadpage-group-other": "باشقا",
+    "proofreadpage-button-zoom-out-label": "كىچىكلەت",
+    "proofreadpage-button-reset-zoom-label": "ئەسلى چوڭلۇق",
+    "proofreadpage-button-zoom-in-label": "چوڭايت"
+}

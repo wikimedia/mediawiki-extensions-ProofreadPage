@@ -1,0 +1,22 @@
+{
+    "@metadata": {
+        "authors": [
+            "Papuass",
+            "Xil",
+            "Yyy"
+        ]
+    },
+    "proofreadpage_image": "Attēls",
+    "proofreadpage_index": "Saturs",
+    "proofreadpage_nextpage": "Nākamā lapa",
+    "proofreadpage_prevpage": "Iepriekšējā lapa",
+    "proofreadpage_quality0_category": "Bez teksta",
+    "proofreadpage_quality1_category": "Nav pārlasīts",
+    "proofreadpage_quality2_category": "Problemātisks",
+    "proofreadpage_quality3_category": "Pārlasīts",
+    "proofreadpage_index_listofpages": "Lapu saraksts",
+    "proofreadpage_page_status": "Lapas statuss",
+    "proofreadpage_js_attributes": "Autors Nosaukums Gads Izdevējs",
+    "proofreadpage_index_attributes": "Autors\nNosaukums\nGads|Publikācijas gads\nIzdevējs\nAvots\nAttēls|Vāka attēls\nLapas||20\nPiezīmes||10",
+    "proofreadpage_source": "Avots"
+}

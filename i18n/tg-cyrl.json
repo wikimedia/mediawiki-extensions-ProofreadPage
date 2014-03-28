@@ -1,0 +1,25 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ibrahim"
+        ]
+    },
+    "proofreadpage_desc": "Имкони муқоисаи осони матн бо нусхаи аслии пӯйишшударо фароҳам меоварад",
+    "proofreadpage_image": "акс",
+    "proofreadpage_index": "Индекс",
+    "proofreadpage_nextpage": "Саҳифаи баъдӣ",
+    "proofreadpage_prevpage": "Саҳифаи қаблӣ",
+    "proofreadpage_header": "Унвон (noinclude):",
+    "proofreadpage_body": "Тани саҳифа (барои ғунҷонида шудан):",
+    "proofreadpage_footer": "Понавис (noinclude):",
+    "proofreadpage_toggleheaders": "тағйири намоёнии бахшҳои noinclude",
+    "proofreadpage_quality1_category": "Бозбинӣ нашуда",
+    "proofreadpage_quality2_category": "Мушкилдор",
+    "proofreadpage_quality3_category": "Бозбинишуда",
+    "proofreadpage_quality4_category": "Таъйидшуда",
+    "proofreadpage_index_listofpages": "Феҳристи саҳифаҳо",
+    "proofreadpage_image_message": "Пайванд ба саҳифаи индекс",
+    "proofreadpage_page_status": "Вазъияти саҳифа",
+    "proofreadpage_js_attributes": "Муаллиф Унвон Сол Нашриёт",
+    "proofreadpage_index_attributes": "Муаллиф\nУнвон\nСол|Соли интишор\nНашриёт\nМанбаъ\nАкс|Акси рӯи ҷилд\nСаҳифаҳо||20\nМулоҳизот||10"
+}

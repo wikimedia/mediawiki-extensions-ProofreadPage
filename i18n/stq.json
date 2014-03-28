@@ -1,0 +1,25 @@
+{
+    "@metadata": {
+        "authors": [
+            "Pyt"
+        ]
+    },
+    "proofreadpage_desc": "Moaket dät mäkkelk Ferglieken muugelk fon Text mäd dän Originoalscan",
+    "proofreadpage_image": "Scan",
+    "proofreadpage_index": "Index",
+    "proofreadpage_nextpage": "Naiste Siede",
+    "proofreadpage_prevpage": "Foarige Siede",
+    "proofreadpage_header": "Kopriege (noinclude):",
+    "proofreadpage_body": "Textköärper (Transklusion):",
+    "proofreadpage_footer": "Foutriege (noinclude):",
+    "proofreadpage_toggleheaders": "noinclude-Ousnitte ien-/uutbländje",
+    "proofreadpage_quality1_category": "Uunkorrigierd",
+    "proofreadpage_quality2_category": "Nit fulboodich",
+    "proofreadpage_quality3_category": "Korrigierd",
+    "proofreadpage_quality4_category": "Kloor",
+    "proofreadpage_index_listofpages": "Siedenlieste",
+    "proofreadpage_image_message": "Ferbiendenge tou ju Indexsiede",
+    "proofreadpage_page_status": "Siedenstoatus",
+    "proofreadpage_js_attributes": "Autor Tittel Jier Ferlaach",
+    "proofreadpage_index_attributes": "Autor\nTittel\nJier|Ärskienengsjier\nFerlaach\nWälle\nBielde|Tittelbielde\nSieden||20\nBemäärkengen||10"
+}

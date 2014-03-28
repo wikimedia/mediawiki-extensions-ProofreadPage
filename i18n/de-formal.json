@@ -1,0 +1,12 @@
+{
+    "@metadata": {
+        "authors": [
+            "Imre",
+            "Kghbln"
+        ]
+    },
+    "proofreadpage_badpagetext": "Das Format der Seite, die Sie versuchen zu speichern, ist falsch.",
+    "proofreadpage_nologintext": "Sie müssen [[Special:UserLogin|angemeldet sein]], um den Status des Korrekturlesens von Seiten ändern zu können.",
+    "proofreadpage_notallowedtext": "Sie sind nicht berechtigt, den Status des Korrekturlesens dieser Seite zu ändern.",
+    "proofreadpage_specialpage_searcherrortext": "Die Suchmaschine funktioniert leider nicht. Entschuldigen Sie die Unannehmlichkeiten."
+}

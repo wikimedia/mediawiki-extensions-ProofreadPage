@@ -1,0 +1,34 @@
+{
+    "@metadata": {
+        "authors": [
+            "Michaello",
+            "Жељко Тодоровић"
+        ]
+    },
+    "proofreadpage_desc": "Omogući lako upoređivanje teksta i originalnog skena.",
+    "proofreadpage_image": "Slika",
+    "proofreadpage_index": "Indeks",
+    "proofreadpage_badpage": "Pogrešan Format",
+    "proofreadpage_notallowed": "Promena nije dozvoljena",
+    "proofreadpage_nextpage": "Sledeća strana",
+    "proofreadpage_prevpage": "Prethodna strana",
+    "proofreadpage_header": "Zaglavlje (bez uključivanja):",
+    "proofreadpage_body": "Telo strane (za uključivanje):",
+    "proofreadpage_footer": "Podnožje (bez uključivanja):",
+    "proofreadpage_toggleheaders": "upravljanje vidljivošću delova koji se ne uključuju",
+    "proofreadpage_quality0_category": "Bez teksta",
+    "proofreadpage_quality1_category": "Nepregledano",
+    "proofreadpage_quality2_category": "Problematično",
+    "proofreadpage_quality3_category": "Pregledano",
+    "proofreadpage_quality4_category": "Overeno",
+    "proofreadpage_index_listofpages": "Spisak strana",
+    "proofreadpage_image_message": "Veza ka indeksu strane.",
+    "proofreadpage_page_status": "Status strane",
+    "proofreadpage_js_attributes": "autor naslov godina izdavač",
+    "proofreadpage_index_attributes": "autor\nnaslov\ngodina|godina publikacije\nizdavač\nizvor\nslika|naslovna strana\nstrana||20\nprimedbe||10",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|stranica|stranice|stranica}}",
+    "proofreadpage_source": "Izvor",
+    "proofreadpage-section-tools": "Lektorske alatke",
+    "proofreadpage-group-zoom": "Razmera",
+    "proofreadpage-group-other": "Drugo"
+}

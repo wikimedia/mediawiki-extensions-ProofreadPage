@@ -1,0 +1,39 @@
+{
+    "@metadata": {
+        "authors": [
+            "Adithyavr",
+            "Ansumang",
+            "Kaustubh",
+            "Siddhartha Ghai"
+        ]
+    },
+    "proofreadpage_desc": "मूल पाठ और सद्य पाठ में फर्क आसानी से दर्शाती हैं",
+    "proofreadpage_image": "चित्र",
+    "proofreadpage_index": "अनुक्रम",
+    "proofreadpage_badpage": "गलत फ़ारमैट",
+    "proofreadpage_indexdupe": "नकली लिंक",
+    "proofreadpage_nologin": "लॉग इन नहीं किया है",
+    "proofreadpage_nextpage": "अगला पन्ना",
+    "proofreadpage_prevpage": "पिछला पन्ना",
+    "proofreadpage_header": "पन्ने का उपरी पाठ (noinclude):",
+    "proofreadpage_body": "पन्ने का मुख्य पाठ (जो इस्तेमाल में आयेगा):",
+    "proofreadpage_footer": "पन्ने का निचला पाठ (noinclude):",
+    "proofreadpage_toggleheaders": "noinclude विभांगोंका दृष्य स्तर बदलें",
+    "proofreadpage_quality0_category": "लेख के बिना",
+    "proofreadpage_quality1_category": "परिक्षण हुआ नहीं",
+    "proofreadpage_quality2_category": "समस्याकारक",
+    "proofreadpage_quality3_category": "परिक्षण करें",
+    "proofreadpage_quality4_category": "प्रमाणित",
+    "proofreadpage_index_listofpages": "पन्नों की सूची",
+    "proofreadpage_image_message": "अनुक्रम पन्ने के लिये कड़ी",
+    "proofreadpage_page_status": "पन्नेकी स्थिती",
+    "proofreadpage_js_attributes": "लेखक शीर्षक वर्ष प्रकाशक",
+    "proofreadpage_index_attributes": "लेखक\nशीर्षक\nवर्ष|प्रकाशन वर्ष\nप्रकाशक\nस्रोत\nचित्र|मुखपृष्ठ चित्र\nपन्ने||२०\nटिप्पणी||१०",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|पृष्ठ|पृष्ठ}}",
+    "proofreadpage_specialpage_legend": "इंडेक्स पृष्ठ खोजें",
+    "proofreadpage_source": "स्रोत",
+    "proofreadpage-group-zoom": "ज़ूम",
+    "proofreadpage-group-other": "अन्य",
+    "proofreadpage-button-reset-zoom-label": "मूल आकार",
+    "proofreadpage-pageinfo-status": "प्रूफ़रीड स्थिति"
+}

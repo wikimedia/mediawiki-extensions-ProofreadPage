@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Basharh",
+            "Michaelovic"
+        ]
+    },
+    "proofreadpage_image": "ܨܘܪܬܐ",
+    "proofreadpage_index": "ܩܘܕܝܟܘܣ",
+    "proofreadpage_indexdupe": "ܐܣܘܪܐ ܥܦܝܦܐ",
+    "proofreadpage_nologin": "ܠܐ ܥܠܝܠܐ",
+    "proofreadpage_nextpage": "ܦܐܬܐ ܕܒܬܪ",
+    "proofreadpage_prevpage": "ܦܐܬܐ ܕܩܕܡ",
+    "proofreadpage_quality0_category": "ܕܠܐ ܟܬܒܬܐ",
+    "proofreadpage_quality1_category": "ܟܬܒܬܐ ܠܐ ܢܘܩܕܬܐ",
+    "proofreadpage_quality3_category": "ܟܬܒܬܐ ܢܘܩܕܬܐ",
+    "proofreadpage_index_listofpages": "ܡܟܬܒܘܬܐ ܕܦܐܬܬ̈ܐ",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|ܦܐܬܐ|ܦܐܬܬܐ}}",
+    "proofreadpage_source": "ܡܒܘܥܐ",
+    "proofreadpage-section-tools": "ܡܐܢ̈ܐ ܕܢܩܕܘܬܐ",
+    "proofreadpage-group-zoom": "ܡܩܪܒ/ܡܙܥܪ",
+    "proofreadpage-group-other": "ܐܚܪܢܐ",
+    "proofreadpage-button-zoom-out-label": "ܡܙܥܪ",
+    "proofreadpage-button-reset-zoom-label": "ܥܓܪܐ ܫܪܫܝܐ",
+    "proofreadpage-button-zoom-in-label": "ܡܩܪܒ"
+}

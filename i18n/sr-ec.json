@@ -1,0 +1,37 @@
+{
+    "@metadata": {
+        "authors": [
+            "Millosh",
+            "Rancher",
+            "Sasa Stefanovic",
+            "Жељко Тодоровић",
+            "Михајло Анђелковић"
+        ]
+    },
+    "proofreadpage_desc": "Омогући лако упоређивање текста и оригиналног скена.",
+    "proofreadpage_image": "слика",
+    "proofreadpage_index": "индекс",
+    "proofreadpage_badpage": "Погрешан Формат",
+    "proofreadpage_notallowed": "Промена није дозвољена",
+    "proofreadpage_nextpage": "Следећа страница",
+    "proofreadpage_prevpage": "Претходна страница",
+    "proofreadpage_header": "Заглавље (без укључивања):",
+    "proofreadpage_body": "Тело стране (за укључивање):",
+    "proofreadpage_footer": "Подножје (без укључивања):",
+    "proofreadpage_toggleheaders": "управљање видљивошћу делова који се не укључују",
+    "proofreadpage_quality0_category": "Без текста",
+    "proofreadpage_quality1_category": "Непрегледано",
+    "proofreadpage_quality2_category": "Проблематично",
+    "proofreadpage_quality3_category": "Прегледано",
+    "proofreadpage_quality4_category": "Оверено",
+    "proofreadpage_index_listofpages": "Списак страница",
+    "proofreadpage_image_message": "Веза ка индексу стране.",
+    "proofreadpage_page_status": "Статус стране",
+    "proofreadpage_js_attributes": "аутор наслов година издавач",
+    "proofreadpage_index_attributes": "аутор\nнаслов\nгодина|година публикације\nиздавач\nизвор\nслика|насловна страна\nстрана||20\nпримедбе||10",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|страница|странице|страница}}",
+    "proofreadpage_source": "Извор",
+    "proofreadpage-section-tools": "Лекторске алатке",
+    "proofreadpage-group-zoom": "Размера",
+    "proofreadpage-group-other": "Друго"
+}

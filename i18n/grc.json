@@ -1,0 +1,18 @@
+{
+    "@metadata": {
+        "authors": [
+            "Crazymadlover",
+            "Omnipaedista"
+        ]
+    },
+    "proofreadpage_image": "εἰκών",
+    "proofreadpage_index": "Δείκτης",
+    "proofreadpage_nextpage": "ἡ δέλτος ἡ ἑπομένη",
+    "proofreadpage_prevpage": "ἡ δέλτος ἡ προτέρα",
+    "proofreadpage_quality1_category": "Μὴ ἠλεγμένη",
+    "proofreadpage_quality2_category": "Προβληματική",
+    "proofreadpage_index_listofpages": "Καταλογὴ δέλτων",
+    "proofreadpage_page_status": "Κατάστασις δέλτου",
+    "proofreadpage_pages": "{{PLURAL:$1|δέλτος|δέλτοι}}",
+    "proofreadpage_source": "Πηγή"
+}

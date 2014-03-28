@@ -39,6 +39,7 @@ $wgProofreadPageNamespaceIds = array();
 define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
 
 $dir = __DIR__ . '/';
+$wgMessagesDirs['ProofreadPage'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ProofreadPage'] = $dir . 'ProofreadPage.i18n.php';
 $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.php';
 

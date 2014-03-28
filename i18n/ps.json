@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ahmed-Najib-Biabani-Ibrahimkhel"
+        ]
+    },
+    "indexpages": "د ليکلړ مخونو لړليک",
+    "proofreadpage_image": "انځور",
+    "proofreadpage_index": "ليکلړ",
+    "proofreadpage_badpage": "ناسمه بڼه",
+    "proofreadpage_notallowed": "د بدلون پرېښه نشته",
+    "proofreadpage_nextpage": "بل مخ",
+    "proofreadpage_prevpage": "تېر مخ",
+    "proofreadpage_quality0_category": "بې متنه",
+    "proofreadpage_specialpage_label_key": "پلټل:",
+    "proofreadpage_index_listofpages": "د مخونو لړليک",
+    "proofreadpage_image_message": "د ليکلړ مخ ته تړنه",
+    "proofreadpage_page_status": "د مخ دريځ",
+    "proofreadpage_js_attributes": "ليکوال سرليک کال خپرونکی",
+    "proofreadpage_index_attributes": "ليکوال\nسرليک\nکال|د خپرېدو کال\nخپرونکی\nسرچينه\nانځور|د پښتۍ انځور\nمخونه||20\nتبصرې||10",
+    "proofreadpage_pages": "$2 {{PLURAL:$1|مخ|مخونه}}",
+    "proofreadpage_specialpage_legend": "ليکلړ مخونه پلټل",
+    "proofreadpage_source": "سرچينه",
+    "proofreadpage-group-other": "بل",
+    "proofreadpage-button-reset-zoom-label": "آر کچه"
+}
