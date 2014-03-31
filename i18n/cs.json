@@ -69,11 +69,13 @@
     "proofreadpage-button-reset-zoom-label": "Původní velikost",
     "proofreadpage-button-zoom-in-label": "Přiblížit",
     "proofreadpage-button-toggle-layout-label": "Vertikální/horizontální uspořádání",
+    "proofreadpage-pageinfo-status": "Stav kontroly",
     "proofreadpage-preferences-showheaders-label": "Při editaci ve jmenném prostoru {{ns:page}} zobrazovat hlavičku a patičku",
     "proofreadpage-preferences-horizontal-layout-label": "Při editaci ve jmenném prostoru {{ns:page}} používat vodorovné rozložení",
     "proofreadpage-indexoai-repositoryName": "Metadata knih z {{grammar:2sg|{{SITENAME}}}}",
     "proofreadpage-indexoai-eprint-content-text": "Metadata knih spravovaných rozšířením ProofreadPage.",
     "proofreadpage-indexoai-error-schemanotfound": "Schéma nenalezeno",
     "proofreadpage-indexoai-error-schemanotfound-text": "Schéma $1 nenalezeno.",
-    "proofreadpage-disambiguationspage": "Template:rozcestník"
+    "proofreadpage-disambiguationspage": "Template:rozcestník",
+    "content-model-proofread-page": "Stránka: stránka"
 }
