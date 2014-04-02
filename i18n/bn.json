@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Aftab1995",
-            "Bellayet"
+            "Bellayet",
+            "Jayantanth"
         ]
     },
     "indexpages": "নির্ঘণ্ট পাতার তালিকা",
@@ -43,6 +44,7 @@
     "proofreadpage_pages": "$2 {{PLURAL:$1|পাতাট|পাতাগুলো}}",
     "proofreadpage_specialpage_legend": "নির্ঘণ্ট পাতাসমূহ অনুসন্ধান",
     "proofreadpage_source": "উৎস",
+    "proofreadpage_source_message": "এই লেখা প্রতিষ্ঠা করতে স্ক্যান করা সংস্করণ ব্যবহার করা হয়েছে",
     "proofreadpage-section-tools": "প্রুফরিড টুলসমূহ",
     "proofreadpage-group-zoom": "বড় করো",
     "proofreadpage-group-other": "অন্য",
