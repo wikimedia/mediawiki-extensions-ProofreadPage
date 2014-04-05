@@ -1,0 +1,199 @@
+!! hooks
+pagelist
+!! endhooks
+
+!!article
+Page:LoremIpsum.djvu/2
+!!text
+Lorem ipsum dolor sic amet
+!!endarticle
+
+!!article
+Page:LoremIpsum.djvu/1
+!!text
+Page 1
+!!endarticle
+
+!!article
+Page:LoremIpsum.djvu/2
+!!text
+<nowiki />
+
+Page 2
+!!endarticle
+
+!!article
+Page:LoremIpsum.djvu/3
+!!text
+Page 3
+!!endarticle
+
+!!article
+Page:LoremIpsum.djvu/4
+!!text
+Page 4
+!!endarticle
+
+!! test
+pagelist: in a not Index: page
+!! options
+title=Test
+!! wikitext
+<pagelist />
+!! html
+!! end
+
+!! test
+pagelist: without file
+!! options
+title="Index:Test"
+!! wikitext
+<pagelist />
+!! html
+<p><strong class="error">Error: No such file</strong>
+</p>
+!! end
+
+!! test
+pagelist: with single page file
+!! options
+title="Index:Thumb.png"
+!! wikitext
+<pagelist />
+!! html
+<p><strong class="error">Error: No such file</strong>
+</p>
+!! end
+
+!! test
+pagelist: default
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist />
+!! html
+<p><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">1</a> <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">2</a> <a href="/wiki/Page:LoremIpsum.djvu/3" title="Page:LoremIpsum.djvu/3">3</a> <a href="/wiki/Page:LoremIpsum.djvu/4" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a>
+</p>
+!! end
+
+!! test
+pagelist: from
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist from=4/>
+!! html
+<p><a href="/wiki/Page:LoremIpsum.djvu/4" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a>
+</p>
+!! end
+
+!! test
+pagelist: to
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist to=2/>
+!! html
+<p><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">1</a> <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">2</a>
+</p>
+!! end
+
+!! test
+pagelist: invalid from/to interval
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist from=3 to=2/>
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pagelist: invalid from
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist from=test/>
+!! html
+<p><strong class="error">Error: Numeric value expected</strong>
+</p>
+!! end
+
+!! test
+pagelist: invalid to
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist from=test/>
+!! html
+<p><strong class="error">Error: Numeric value expected</strong>
+</p>
+!! end
+
+!! test
+pagelist: (high)roman
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist 1to1=roman 2to2=highroman to=2/>
+!! html
+<p><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">&#160;i</a> <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">&#160;II</a>
+</p>
+!! end
+
+!! test
+pagelist: special characters
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist 1=- 2to3=- to=3/>
+!! html
+<p><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">-</a> <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">-</a> <a href="/wiki/Page:LoremIpsum.djvu/3" title="Page:LoremIpsum.djvu/3">-</a>
+</p>
+!! end
+
+!! test
+pagelist: shift
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist 1=3 to=2/>
+!! html
+<p><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">3</a> <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">4</a>
+</p>
+!! end
+
+!! test
+pagelist: empty
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist 1=empty to=2/>
+!! html
+<p>1 <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">2</a>
+</p>
+!! end
+
+!! test
+pagelist: language with special characters
+!! options
+djvu
+language=gu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist to=2/>
+!! html
+<p><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">૧</a> <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">૨</a>
+</p>
+!! end
