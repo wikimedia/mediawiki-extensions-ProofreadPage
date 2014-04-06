@@ -3,7 +3,8 @@
         "authors": [
             "Michawiki",
             "Yekrats",
-            "Zhang212"
+            "Zhang212",
+            "KuboF"
         ]
     },
     "indexpages": "Listo de indeksaj paĝoj",
@@ -23,7 +24,7 @@
     "proofreadpage_notallowed": "Ŝanĝo ne permesiĝis",
     "proofreadpage_notallowedtext": "Vi ne estas permesata ŝanĝi la pruvlegadan statuson de ĉi tiu paĝo.",
     "proofreadpage_dataconfig_badformatted": "Insekto en datumoj agordo",
-    "proofreadpage_dataconfig_badformattedtext": "La paĝo [[MediaWiki: Proofreadpage indekso datumoj config]] ne estas en ĝust-formatan JSON",
+    "proofreadpage_dataconfig_badformattedtext": "La paĝo [[Mediawiki:Proofreadpage index data config]] ne estas en ĝust-formata JSON.",
     "proofreadpage_number_expected": "Eraro: numera valoro atentita",
     "proofreadpage_interval_too_large": "Eraro: intervalo tro granda",
     "proofreadpage_invalid_interval": "Eraro: malvalida intervalo",
@@ -69,11 +70,13 @@
     "proofreadpage-button-reset-zoom-label": "Refreŝi zomnivelon",
     "proofreadpage-button-zoom-in-label": "Zomi",
     "proofreadpage-button-toggle-layout-label": "Vertikala/horizonta aspekto",
+    "proofreadpage-pageinfo-status": "Stato de revizio",
     "proofreadpage-preferences-showheaders-label": "Montru header kaj footer kampoj dum redaktado en la {{ns: paĝo}} nomspaco",
     "proofreadpage-preferences-horizontal-layout-label": "Uzu horizontala aranĝo dum redaktado en la {{ns: paĝo}} nomspaco",
     "proofreadpage-indexoai-repositoryName": "Metadatumoj de libroj de {{SITENAME}}",
     "proofreadpage-indexoai-eprint-content-text": "Metadatumoj de libroj administrata de ProofreadPage",
     "proofreadpage-indexoai-error-schemanotfound": "Schema ne trovita",
-    "proofreadpage-indexoai-error-schemanotfound-text": "La $ 1 skemo ne estis trovitaj.",
-    "proofreadpage-disambiguationspage": "Template:Apartigilo"
+    "proofreadpage-indexoai-error-schemanotfound-text": "La skemo $1 ne estis trovita.",
+    "proofreadpage-disambiguationspage": "Template:Apartigilo",
+    "content-model-proofread-page": "Paĝo: paĝo"
 }
