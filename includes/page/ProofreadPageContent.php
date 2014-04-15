@@ -163,9 +163,9 @@ class ProofreadPageContent extends TextContent {
 	 */
 	public function preloadTransform( Title $title, ParserOptions $popts, $params = array() ) {
 		return new self(
-			$this->header->preloadTransform( $title, $popts ),
-			$this->body->preloadTransform( $title, $popts ),
-			$this->footer->preloadTransform( $title, $popts ),
+			$this->header->preloadTransform( $title, $popts, $params ),
+			$this->body->preloadTransform( $title, $popts, $params ),
+			$this->footer->preloadTransform( $title, $popts, $params ),
 			$this->level
 		);
 	}
