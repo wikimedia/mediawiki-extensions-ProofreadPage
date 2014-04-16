@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "CoderSI"
-        ]
-    },
-    "proofreadpage_quality1_category": "Tuzatilmadi",
-    "proofreadpage_quality3_category": "Ko'zdan kechirildi",
-    "proofreadpage-section-tools": "Tuzatish asboblari",
-    "proofreadpage-group-other": "Boshqa"
+	"@metadata": {
+		"authors": [
+			"CoderSI"
+		]
+	},
+	"proofreadpage_quality1_category": "Tuzatilmadi",
+	"proofreadpage_quality3_category": "Ko'zdan kechirildi",
+	"proofreadpage-section-tools": "Tuzatish asboblari",
+	"proofreadpage-group-other": "Boshqa"
 }

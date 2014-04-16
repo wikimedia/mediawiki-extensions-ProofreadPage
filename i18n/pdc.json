@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xqt"
-        ]
-    },
-    "proofreadpage_image": "Bild",
-    "proofreadpage_nextpage": "Neegschtes Blatt",
-    "proofreadpage_prevpage": "Letscht Blatt",
-    "proofreadpage_index_listofpages": "Lischt vun Bledder",
-    "proofreadpage_pages": "$2 {{PLURAL:$1|Blatt|Bledder}}",
-    "proofreadpage-group-other": "Anneres"
+	"@metadata": {
+		"authors": [
+			"Xqt"
+		]
+	},
+	"proofreadpage_image": "Bild",
+	"proofreadpage_nextpage": "Neegschtes Blatt",
+	"proofreadpage_prevpage": "Letscht Blatt",
+	"proofreadpage_index_listofpages": "Lischt vun Bledder",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|Blatt|Bledder}}",
+	"proofreadpage-group-other": "Anneres"
 }

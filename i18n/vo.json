@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Malafaya",
-            "Smeira"
-        ]
-    },
-    "proofreadpage_image": "Magod",
-    "proofreadpage_nextpage": "Pad sököl",
-    "proofreadpage_prevpage": "Pad büik",
-    "proofreadpage_quality0_category": "Nen vödem",
-    "proofreadpage_quality2_category": "Säkädik",
-    "proofreadpage_index_listofpages": "Padalised",
-    "proofreadpage_page_status": "Stad pada",
-    "proofreadpage_js_attributes": "Lautan Tiäd Yel Püban",
-    "proofreadpage_index_attributes": "Lautan\nTiäd\nYel|Pübayel\nPüban\nFonät\nMagod|Magod tegoda\nPads|20\nKüpets|10",
-    "proofreadpage_pages": "{{PLURAL:$1|pad|pads}} $2"
+	"@metadata": {
+		"authors": [
+			"Malafaya",
+			"Smeira"
+		]
+	},
+	"proofreadpage_image": "Magod",
+	"proofreadpage_nextpage": "Pad sököl",
+	"proofreadpage_prevpage": "Pad büik",
+	"proofreadpage_quality0_category": "Nen vödem",
+	"proofreadpage_quality2_category": "Säkädik",
+	"proofreadpage_index_listofpages": "Padalised",
+	"proofreadpage_page_status": "Stad pada",
+	"proofreadpage_js_attributes": "Lautan Tiäd Yel Püban",
+	"proofreadpage_index_attributes": "Lautan\nTiäd\nYel|Pübayel\nPüban\nFonät\nMagod|Magod tegoda\nPads|20\nKüpets|10",
+	"proofreadpage_pages": "{{PLURAL:$1|pad|pads}} $2"
 }

@@ -1,25 +1,25 @@
 {
-    "@metadata": {
-        "authors": [
-            "Liangent"
-        ]
-    },
-    "proofreadpage_desc": "Imkoni muqoisai osoni matn bo nusxai asliji pūjişşudaro faroham meovarad",
-    "proofreadpage_image": "Aks",
-    "proofreadpage_index": "Indeks",
-    "proofreadpage_nextpage": "Sahifai ba'dī",
-    "proofreadpage_prevpage": "Sahifai qablī",
-    "proofreadpage_header": "Unvon (noinclude):",
-    "proofreadpage_body": "Tani sahifa (baroi ƣunçonida şudan):",
-    "proofreadpage_footer": "Ponavis (noinclude):",
-    "proofreadpage_toggleheaders": "taƣjiri namojoniji baxşhoi noinclude",
-    "proofreadpage_quality1_category": "Bozbinī naşuda",
-    "proofreadpage_quality2_category": "Muşkildor",
-    "proofreadpage_quality3_category": "Bozbinişuda",
-    "proofreadpage_quality4_category": "Ta'jidşuda",
-    "proofreadpage_index_listofpages": "Fehristi sahifaho",
-    "proofreadpage_image_message": "Pajvand ba sahifai indeks",
-    "proofreadpage_page_status": "Vaz'ijati sahifa",
-    "proofreadpage_js_attributes": "Muallif Unvon Sol Naşrijot",
-    "proofreadpage_index_attributes": "Muallif\nUnvon\nSol|Soli intişor\nNaşrijot\nManba'\nAks|Aksi rūi çild\nSahifaho||20\nMulohizot||10"
+	"@metadata": {
+		"authors": [
+			"Liangent"
+		]
+	},
+	"proofreadpage_desc": "Imkoni muqoisai osoni matn bo nusxai asliji pūjişşudaro faroham meovarad",
+	"proofreadpage_image": "Aks",
+	"proofreadpage_index": "Indeks",
+	"proofreadpage_nextpage": "Sahifai ba'dī",
+	"proofreadpage_prevpage": "Sahifai qablī",
+	"proofreadpage_header": "Unvon (noinclude):",
+	"proofreadpage_body": "Tani sahifa (baroi ƣunçonida şudan):",
+	"proofreadpage_footer": "Ponavis (noinclude):",
+	"proofreadpage_toggleheaders": "taƣjiri namojoniji baxşhoi noinclude",
+	"proofreadpage_quality1_category": "Bozbinī naşuda",
+	"proofreadpage_quality2_category": "Muşkildor",
+	"proofreadpage_quality3_category": "Bozbinişuda",
+	"proofreadpage_quality4_category": "Ta'jidşuda",
+	"proofreadpage_index_listofpages": "Fehristi sahifaho",
+	"proofreadpage_image_message": "Pajvand ba sahifai indeks",
+	"proofreadpage_page_status": "Vaz'ijati sahifa",
+	"proofreadpage_js_attributes": "Muallif Unvon Sol Naşrijot",
+	"proofreadpage_index_attributes": "Muallif\nUnvon\nSol|Soli intişor\nNaşrijot\nManba'\nAks|Aksi rūi çild\nSahifaho||20\nMulohizot||10"
 }
