@@ -59,8 +59,10 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'IndexPages' => array( 'Pelaİndeks' ),
-	'PagesWithoutScans' => array( 'PeréBéCıgeyrayışi' ),
+	'IndexPages' => array( 'Perraİndeks' ),
+	'PagesWithoutScans' => array( 'PerréBéCıgeyrayışi' ),
+	'ProofreadIndexOai' => array( 'TimarkerdışaİndeksOai' ),
+	'ProofreadIndexOaiSchema' => array( 'TimarkerdışaİndeksOaiŞema' ),
 );
 
 /** Estonian (eesti) */
