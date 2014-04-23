@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mogoeilor"
+		]
+	},
+	"proofreadpage_image": "عسگ",
+	"proofreadpage_index": "سیائه",
+	"proofreadpage_index_expected": "خطا:",
+	"proofreadpage_nosuch_index": "خطا:چینو سیائه ای نیدس",
+	"proofreadpage_nosuch_file": "چینو فایلی نیڎس",
+	"proofreadpage_badpage": "قالو اشتوايی",
+	"proofreadpage_badpagetext": "حالت بلگه ای كه ایسا ایخاین ذخيرس کونین درست نیڎ",
+	"proofreadpage_indexdupe": "هوم پیوند تکراری",
+	"proofreadpage_nextpage": "بلگه نيايی",
+	"proofreadpage_prevpage": "بلگه دیندایی",
+	"proofreadpage_specialpage_label_orderby": "منظم وابیه وا:",
+	"proofreadpage_specialpage_label_key": "پی جوری",
+	"proofreadpage_index_listofpages": "نوم گه بلگه آ",
+	"proofreadpage_page_status": "حال و بال بلگه",
+	"proofreadpage_source": "سرچشمه",
+	"proofreadpage-group-zoom": "زول زیڎن",
+	"proofreadpage-group-other": "دیه رون",
+	"proofreadpage-button-zoom-out-label": "کوچیر کردن",
+	"proofreadpage-button-zoom-in-label": "گپ كردن",
+	"content-model-proofread-page": "بلگه:بلگه"
+}
