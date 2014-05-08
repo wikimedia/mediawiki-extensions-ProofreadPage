@@ -224,6 +224,7 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 };
 
 //Parser tests
+$wgParserTestFiles[] = __DIR__ . '/tests/parser/pagelist.txt';
 $wgParserTestFiles[] = __DIR__ . '/tests/parser/pages.txt';
 
 //Handlers

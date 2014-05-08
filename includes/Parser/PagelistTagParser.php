@@ -70,7 +70,6 @@ class PagelistTagParser extends TagParser {
 				$return .= '[[' . $title->getPrefixedText() . '|' . $view . ']] ';
 			}
 		}
-		$return = $this->parser->recursiveTagParse( $return );
-		return $return;
+		return trim( $this->parser->recursiveTagParse( $return ) );
 	}
 }
