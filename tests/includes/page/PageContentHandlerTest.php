@@ -1,10 +1,16 @@
 <?php
 
+namespace ProofreadPage\Page;
+
+use ContentHandler;
+use ProofreadPageTestCase;
+use Title;
+
 /**
  * @group ProofreadPage
  * @covers ProofreadPageContentHandler
  */
-class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
+class PageContentHandlerTest extends ProofreadPageTestCase {
 
 	/**
 	 * @var ContentHandler
@@ -32,7 +38,7 @@ class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider pageProvider
 	 */
 	public function testSerializeContent( $header, $body, $footer, $level, $proofreader ) {
-		$pageContent = ProofreadPageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
+		$pageContent = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
 
 		$serializedString = '<noinclude><pagequality level="' . $level . '" user="';
 		$serializedString .= $proofreader;
@@ -48,7 +54,7 @@ class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
 	 */
 	public function testUnserializeContent( $header, $body, $footer, $level, $proofreader, $text ) {
 		$this->assertEquals(
-			ProofreadPageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
+			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
 			$this->handler->unserializeContent( $text )
 		);
 	}
@@ -61,27 +67,27 @@ class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
 	public static function merge3Provider() {
 		return array(
 			array(
-				ProofreadPageContentTest::newContent( '', "first paragraph\n\nsecond paragraph\n" ),
-				ProofreadPageContentTest::newContent( '', "FIRST paragraph\n\nsecond paragraph\n" ),
-				ProofreadPageContentTest::newContent( '', "first paragraph\n\nSECOND paragraph\n" ),
-				ProofreadPageContentTest::newContent( '', "FIRST paragraph\n\nSECOND paragraph\n" )
+				PageContentTest::newContent( '', "first paragraph\n\nsecond paragraph\n" ),
+				PageContentTest::newContent( '', "FIRST paragraph\n\nsecond paragraph\n" ),
+				PageContentTest::newContent( '', "first paragraph\n\nSECOND paragraph\n" ),
+				PageContentTest::newContent( '', "FIRST paragraph\n\nSECOND paragraph\n" )
 			),
 			array(
-				ProofreadPageContentTest::newContent( '', "test\n" ),
-				ProofreadPageContentTest::newContent( '', "dddd\n" ),
-				ProofreadPageContentTest::newContent( '', "ffff\n" ),
+				PageContentTest::newContent( '', "test\n" ),
+				PageContentTest::newContent( '', "dddd\n" ),
+				PageContentTest::newContent( '', "ffff\n" ),
 				false
 			),
 			array(
-				ProofreadPageContentTest::newContent( '', "test\n", '', 1, 'John' ),
-				ProofreadPageContentTest::newContent( '', "test2\n", '', 2, 'Jack' ),
-				ProofreadPageContentTest::newContent( '', "test\n", '', 2, 'Bob' ),
-				ProofreadPageContentTest::newContent( '', "test2\n", '', 2, 'Bob' ),
+				PageContentTest::newContent( '', "test\n", '', 1, 'John' ),
+				PageContentTest::newContent( '', "test2\n", '', 2, 'Jack' ),
+				PageContentTest::newContent( '', "test\n", '', 2, 'Bob' ),
+				PageContentTest::newContent( '', "test2\n", '', 2, 'Bob' ),
 			),
 			array(
-				ProofreadPageContentTest::newContent( '', "test\n", '', 1, 'John' ),
-				ProofreadPageContentTest::newContent( '', "test\n", '', 2, 'Jack' ),
-				ProofreadPageContentTest::newContent( '', "test\n", '', 1, 'Bob' ),
+				PageContentTest::newContent( '', "test\n", '', 1, 'John' ),
+				PageContentTest::newContent( '', "test\n", '', 2, 'Jack' ),
+				PageContentTest::newContent( '', "test\n", '', 1, 'Bob' ),
 				false
 			),
 		);
@@ -99,18 +105,18 @@ class ProofreadPageContentHandlerTest extends ProofreadPageTestCase {
 	public static function getAutosummaryProvider() {
 		return array(
 			array(
-				ProofreadPageContentTest::newContent( '', '', '', 1 ),
-				ProofreadPageContentTest::newContent( 'aa', 'aa', 'aa', 1 ),
+				PageContentTest::newContent( '', '', '', 1 ),
+				PageContentTest::newContent( 'aa', 'aa', 'aa', 1 ),
 				''
 			),
 			array(
 				null,
-				ProofreadPageContentTest::newContent( '', 'aaa', '', 1 ),
+				PageContentTest::newContent( '', 'aaa', '', 1 ),
 				'/* Not proofread */'
 			),
 			array(
-				ProofreadPageContentTest::newContent( '', '', '', 2 ),
-				ProofreadPageContentTest::newContent( '', '', '', 1 ),
+				PageContentTest::newContent( '', '', '', 2 ),
+				PageContentTest::newContent( '', '', '', 1 ),
 				'/* Not proofread */'
 			)
 		);

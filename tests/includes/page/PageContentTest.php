@@ -1,10 +1,25 @@
 <?php
 
+namespace ProofreadPage\Page;
+
+use FauxRequest;
+use ParserOptions;
+use ProofreadPageTestCase;
+use RequestContext;
+use Title;
+use User;
+use WikitextContent;
+
 /**
  * @group ProofreadPage
  * @covers ProofreadPageContent
  */
-class ProofreadPageContentTest extends ProofreadPageTestCase {
+class PageContentTest extends ProofreadPageTestCase {
+
+	/**
+	 * @var RequestContext
+	 */
+	private $requestContext;
 
 	protected function setUp() {
 		parent::setUp();
@@ -21,18 +36,19 @@ class ProofreadPageContentTest extends ProofreadPageTestCase {
 		) );
 
 
-		$this->context = new RequestContext( new FauxRequest() );
-		$this->context->setTitle( Title::makeTitle( 250, 'Test.jpg' ) );
-		$this->context->setUser( $user );
+		$this->requestContext = new RequestContext( new FauxRequest() );
+		$this->requestContext->setTitle( Title::makeTitle( 250, 'Test.jpg' ) );
+		$this->requestContext->setUser( $user );
 	}
 
 	/**
-	 * Constructor of a new ProofreadPageContent
+	 * Constructor of a new PageContent
 	 * @param $header WikitextContent|string
 	 * @param $body WikitextContent|string
 	 * @param $footer WikitextContent|string
 	 * @param $level integer
 	 * @param $proofreader User
+	 * @return PageContent
 	 */
 	public static function newContent( $header = '', $body = '', $footer = '', $level = 1, $proofreader = null ) {
 		if ( is_string( $header ) ) {
@@ -45,9 +61,9 @@ class ProofreadPageContentTest extends ProofreadPageTestCase {
 			$footer = new WikitextContent( $footer );
 		}
 		if ( is_string( $proofreader ) ) {
-			$proofreader = ProofreadPageLevel::getUserFromUserName( $proofreader );
+			$proofreader = PageLevel::getUserFromUserName( $proofreader );
 		}
-		return new ProofreadPageContent( $header, $body, $footer, new ProofreadPageLevel( $level, $proofreader ) );
+		return new PageContent( $header, $body, $footer, new PageLevel( $level, $proofreader ) );
 	}
 
 	public function testGetModel() {
@@ -74,7 +90,7 @@ class ProofreadPageContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetLevel() {
-		$level = new ProofreadPageLevel( 2, null );
+		$level = new PageLevel( 2, null );
 		$pageContent = self::newContent( '', '', '', 2, null );
 		$this->assertEquals( $level, $pageContent->getLevel() );
 	}
@@ -162,9 +178,9 @@ class ProofreadPageContentTest extends ProofreadPageTestCase {
 	public function testPreSaveTransform( $content, $expectedContent ) {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->context->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
 
-		$content = $content->preSaveTransform( $this->context->getTitle(), $this->context->getUser(), $options );
+		$content = $content->preSaveTransform( $this->requestContext->getTitle(), $this->requestContext->getUser(), $options );
 
 		$this->assertEquals( $expectedContent, $content );
 	}
@@ -186,9 +202,9 @@ class ProofreadPageContentTest extends ProofreadPageTestCase {
 	public function testPreloadTransform( $content, $expectedContent ) {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->context->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
 
-		$content = $content->preloadTransform( $this->context->getTitle(), $options );
+		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );
 
 		$this->assertEquals( $expectedContent, $content );
 	}

@@ -61,13 +61,13 @@ $wgAutoloadClasses['ProofreadPageDbConnector'] = $dir . 'includes/page/Proofread
 $wgAutoloadClasses['ProofreadPage\Page\EditPagePage'] = $dir . 'includes/page/EditPagePage.php';
 $wgAutoloadClasses['ProofreadPage\Page\PageContentBuilder'] = $dir . 'includes/page/PageContentBuilder.php';
 $wgAutoloadClasses['ProofreadPagePage'] = $dir.'includes/page/ProofreadPagePage.php';
-$wgAutoloadClasses['ProofreadPageContent'] = $dir.'includes/page/ProofreadPageContent.php';
-$wgAutoloadClasses['ProofreadPageLevel'] = $dir.'includes/page/ProofreadPageLevel.php';
-$wgAutoloadClasses['ProofreadPageContentHandler'] = $dir.'includes/page/ProofreadPageContentHandler.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageContent'] = $dir.'includes/page/PageContent.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageLevel'] = $dir.'includes/page/PageLevel.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageContentHandler'] = $dir.'includes/page/PageContentHandler.php';
 $wgAutoloadClasses['ProofreadPage\Page\PageEditAction'] = $dir . 'includes/page/PageEditAction.php';
 $wgAutoloadClasses['ProofreadPage\Page\PageSubmitAction'] = $dir . 'includes/page/PageSubmitAction.php';
-$wgAutoloadClasses['ProofreadPageViewAction'] = $dir . 'includes/page/ProofreadPageViewAction.php';
-$wgAutoloadClasses['ProofreadPageDifferenceEngine'] = $dir . 'includes/page/ProofreadPageDifferenceEngine.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageViewAction'] = $dir . 'includes/page/PageViewAction.php';
+$wgAutoloadClasses['ProofreadPage\Page\PageDifferenceEngine'] = $dir . 'includes/page/PageDifferenceEngine.php';
 
 $wgAutoloadClasses['ProofreadPage\Parser\ParserEntryPoint'] = $dir . 'includes/Parser/ParserEntryPoint.php';
 $wgAutoloadClasses['ProofreadPage\Parser\TagParser'] = $dir . 'includes/Parser/TagParser.php';
@@ -213,9 +213,9 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
 
-	$files[] = $dir . 'page/ProofreadPageLevelTest.php';
-	$files[] = $dir . 'page/ProofreadPageContentTest.php';
-	$files[] = $dir . 'page/ProofreadPageContentHandlerTest.php';
+	$files[] = $dir . 'page/PageLevelTest.php';
+	$files[] = $dir . 'page/PageContentTest.php';
+	$files[] = $dir . 'page/PageContentHandlerTest.php';
 	$files[] = $dir . 'page/ProofreadPagePageTest.php';
 	$files[] = $dir . 'page/PageContentBuilderTest.php';
 	$files[] = $dir . 'ProofreadDiffFormatterUtilsTest.php';
@@ -228,7 +228,7 @@ $wgParserTestFiles[] = __DIR__ . '/tests/parser/pagelist.txt';
 $wgParserTestFiles[] = __DIR__ . '/tests/parser/pages.txt';
 
 //Handlers
-$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = 'ProofreadPageContentHandler';
+$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = '\ProofreadPage\Page\PageContentHandler';
 
 //inclusion of i18n file. $wgExtensionMessagesFiles[] doesn't works
 include_once( $dir . 'ProofreadPage.namespaces.php' );

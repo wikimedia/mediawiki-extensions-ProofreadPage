@@ -1,7 +1,6 @@
 <?php
 
 use ProofreadPage\Context;
-use ProofreadPage\FileNotFoundException;
 use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
 

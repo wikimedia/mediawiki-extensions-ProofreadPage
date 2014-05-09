@@ -1,28 +1,20 @@
 <?php
-/**
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * http://www.gnu.org/copyleft/gpl.html
- *
- * @file
- * @ingroup ProofreadPage
- */
+
+namespace ProofreadPage\Page;
+
+use Content;
+use ContentHandler;
+use TextContentHandler;
+use Title;
+use User;
+use WikitextContentHandler;
 
 /**
+ * @licence GNU GPL v2+
+ *
  * Content handler for a Page: pages
  */
-class ProofreadPageContentHandler extends TextContentHandler {
+class PageContentHandler extends TextContentHandler {
 
 	/**
 	 * @var WikitextContentHandler
@@ -51,6 +43,7 @@ class ProofreadPageContentHandler extends TextContentHandler {
 		$text .= '" /><div class="pagetext">' . $content->getHeader()->serialize() . "\n\n\n" . '</noinclude>';
 		$text .= $content->getBody()->serialize();
 		$text .= '<noinclude>' . $content->getFooter()->serialize() . '</div></noinclude>';
+
 		return $text;
 	}
 
@@ -84,28 +77,29 @@ class ProofreadPageContentHandler extends TextContentHandler {
 			$header = $this->cleanHeader( $m[4] );
 		}
 
-		return new ProofreadPageContent(
+		return new PageContent(
 			$this->wikitextContentHandler->unserializeContent( $header ),
 			$this->wikitextContentHandler->unserializeContent( $body ),
 			$this->wikitextContentHandler->unserializeContent( $footer ),
-			new ProofreadPageLevel( $level, ProofreadPageLevel::getUserFromUserName( $proofreader ) )
+			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
 		);
 	}
 
 	protected function cleanTrailingDivTag( $text ) {
 		if ( preg_match( '/^(.*?)<\/div>$/s', $text, $m2 ) ) {
-			return  $m2[1];
+			return $m2[1];
 		} else {
 			return $text;
 		}
 	}
 
 	protected function cleanHeader( $header ) {
-		if ( preg_match('/^(.*?)<div class="pagetext">(.*?)$/s', $header, $mt) ) {
+		if ( preg_match( '/^(.*?)<div class="pagetext">(.*?)$/s', $header, $mt ) ) {
 			$header = $mt[2];
-		} elseif ( preg_match('/^(.*?)<div>(.*?)$/s', $header, $mt) ) {
+		} elseif ( preg_match( '/^(.*?)<div>(.*?)$/s', $header, $mt ) ) {
 			$header = $mt[2];
 		}
+
 		return $header;
 	}
 
@@ -114,9 +108,9 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	 */
 	public function getActionOverrides() {
 		return array(
-			'edit' => 'ProofreadPage\Page\PageEditAction',
-			'submit' => 'ProofreadPage\Page\PageSubmitAction',
-			'view' => 'ProofreadPageViewAction'
+			'edit' => '\ProofreadPage\Page\PageEditAction',
+			'submit' => '\ProofreadPage\Page\PageSubmitAction',
+			'view' => '\ProofreadPage\Page\PageViewAction'
 		);
 	}
 
@@ -124,18 +118,18 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	 * @see ContentHandler::getDiffEngineClass
 	 */
 	protected function getDiffEngineClass() {
-		return 'ProofreadPageDifferenceEngine';
+		return '\ProofreadPage\Page\PageDifferenceEngine';
 	}
 
 	/**
 	 * @see ContentHandler::makeEmptyContent
 	 */
 	public function makeEmptyContent() {
-		return new ProofreadPageContent(
+		return new PageContent(
 			$this->wikitextContentHandler->makeEmptyContent(),
 			$this->wikitextContentHandler->makeEmptyContent(),
 			$this->wikitextContentHandler->makeEmptyContent(),
-			new ProofreadPageLevel()
+			new PageLevel()
 		);
 	}
 
@@ -166,12 +160,7 @@ class ProofreadPageContentHandler extends TextContentHandler {
 			return false;
 		}
 
-		return new ProofreadPageContent(
-			$mergedHeader,
-			$mergedBody,
-			$mergedFooter,
-			$yourContent->getLevel()
-		);
+		return new PageContent( $mergedHeader, $mergedBody, $mergedFooter, $yourContent->getLevel() );
 	}
 
 	/**
@@ -180,9 +169,8 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	public function getAutosummary( Content $oldContent = null, Content $newContent = null, $flags ) {
 		$summary = parent::getAutosummary( $oldContent, $newContent, $flags );
 
-		if (
-			$newContent instanceof ProofreadPageContent &&
-			( $oldContent === null || $oldContent instanceof ProofreadPageContent && !$newContent->getLevel()->equals( $oldContent->getLevel() ) )
+		if ( $newContent instanceof PageContent &&
+			( $oldContent === null || $oldContent instanceof PageContent && !$newContent->getLevel()->equals( $oldContent->getLevel() ) )
 		) {
 			$summary = trim( '/* ' . $newContent->getLevel()->getLevelCategoryName() . ' */ ' . $summary );
 		}
@@ -196,6 +184,7 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	public function makeParserOptions( $context ) {
 		$parserOptions = parent::makeParserOptions( $context );
 		$parserOptions->setEditSection( false );
+
 		return $parserOptions;
 	}
 
@@ -204,11 +193,11 @@ class ProofreadPageContentHandler extends TextContentHandler {
 	 * @todo is it the right content for redirects?
 	 */
 	public function makeRedirectContent( Title $destination, $text = '' ) {
-		return new ProofreadPageContent(
+		return new PageContent(
 			$this->wikitextContentHandler->makeEmptyContent(),
 			$this->wikitextContentHandler->makeRedirectContent( $destination, $text ),
 			$this->wikitextContentHandler->makeEmptyContent(),
-			new ProofreadPageLevel()
+			new PageLevel()
 		);
 	}
 
