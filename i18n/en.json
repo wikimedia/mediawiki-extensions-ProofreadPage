@@ -84,5 +84,10 @@
 	"apihelp-query+proofreadinfo-description": "Return information about configuration of ProofreadPage extension.",
 	"apihelp-query+proofreadinfo-param-prop": "Which proofread properties to get:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
 	"apihelp-query+proofreadinfo-example-1": "Return default information",
-	"apihelp-query+proofreadinfo-example-3": "Return namespace information"
+	"apihelp-query+proofreadinfo-example-3": "Return namespace information",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Page selection",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pages",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion of $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Yes",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }

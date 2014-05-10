@@ -202,7 +202,26 @@ $wgResourceModules += array(
 		'styles'  => 'special/indexpages/ext.proofreadpage.special.indexpages.css',
 		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
+	'ext.proofreadpage.ve.node.pages' => $prpResourceTemplate + array(
+		'scripts' => array(
+			've/node/ve.dm.MWPagesNode.js',
+			've/node/ve.ce.MWPagesNode.js',
+			've/node/ve.ui.MWPagesInspector.js',
+			've/node/ve.ui.MWPagesInspectorTool.js'
+		),
+		'dependencies' => array( 'ext.visualEditor.mwcore' ),
+		'messages' => array(
+			'proofreadpage-visualeditor-node-pages-inspector-tooltip',
+			'proofreadpage-visualeditor-node-pages-inspector-title',
+			'proofreadpage-visualeditor-node-pages-inspector-description',
+			'proofreadpage-visualeditor-node-pages-inspector-indexselector-yes',
+			'proofreadpage-visualeditor-node-pages-inspector-indexselector-no'
+		),
+		'targets' => array( 'desktop', 'mobile' )
+	),
 );
+
+$wgVisualEditorPluginModules[] = 'ext.proofreadpage.ve.node.pages';
 
 //Hooks
 $wgHooks['SetupAfterCache'][] = 'ProofreadPage\ProofreadPageInit::initNamespaces';
