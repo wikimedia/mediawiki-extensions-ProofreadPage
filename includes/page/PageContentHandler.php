@@ -4,6 +4,8 @@ namespace ProofreadPage\Page;
 
 use Content;
 use ContentHandler;
+use FormatJson;
+use MWContentSerializationException;
 use TextContentHandler;
 use Title;
 use User;
@@ -25,7 +27,7 @@ class PageContentHandler extends TextContentHandler {
 	 * @param string $modelId
 	 */
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_PAGE ) {
-		parent::__construct( $modelId, array( CONTENT_FORMAT_WIKITEXT ) );
+		parent::__construct( $modelId, array( CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ) );
 		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
 	}
 
@@ -35,6 +37,37 @@ class PageContentHandler extends TextContentHandler {
 	public function serializeContent( Content $content, $format = null ) {
 		$this->checkFormat( $format );
 
+		switch( $format ) {
+			case CONTENT_FORMAT_JSON:
+				return $this->serializeContentInJson( $content );
+			default:
+				return $this->serializeContentInWikitext( $content );
+		}
+	}
+
+	/**
+	 * @param PageContent $content
+	 * @return string
+	 */
+	private function serializeContentInJson( PageContent $content ) {
+		$level = $content->getLevel();
+
+		return FormatJson::encode( array(
+			'header' => $content->getHeader()->serialize(),
+			'body' => $content->getBody()->serialize(),
+			'footer' => $content->getFooter()->serialize(),
+			'level' => array(
+				'level' => $level->getLevel(),
+				'user' => $level->getUser()->getName()
+			)
+		) );
+	}
+
+	/**
+	 * @param PageContent $content
+	 * @return string
+	 */
+	private function serializeContentInWikitext( PageContent $content ) {
 		$level = $content->getLevel();
 		$text = '<noinclude><pagequality level="' . $level->getLevel() . '" user="';
 		if ( $level->getUser() instanceof User ) {
@@ -51,6 +84,55 @@ class PageContentHandler extends TextContentHandler {
 	 * @see ContentHandler::unserializeContent
 	 */
 	public function unserializeContent( $text, $format = null ) {
+		$this->checkFormat( $format );
+
+		switch( $format ) {
+			case CONTENT_FORMAT_JSON:
+				return $this->unserializeContentInJson( $text );
+			default:
+				return $this->unserializeContentInWikitext( $text );
+		}
+	}
+
+	/**
+	 * @param $text
+	 * @return PageContent
+	 */
+	private function unserializeContentInJson( $text ) {
+		$array = FormatJson::decode( $text, true );
+
+		if ( $array === null || !is_array( $array ) ) {
+			throw new MWContentSerializationException( 'The serialization is an invalid JSON array.' );
+		}
+		$this->assertArrayKeyExistsInSerialization( 'header', $array );
+		$this->assertArrayKeyExistsInSerialization( 'body', $array );
+		$this->assertArrayKeyExistsInSerialization( 'footer', $array );
+		$this->assertArrayKeyExistsInSerialization( 'level', $array );
+		$this->assertArrayKeyExistsInSerialization( 'level', $array['level'] );
+
+		$user = array_key_exists( 'user', $array['level'] )
+			? PageLevel::getUserFromUserName(  $array['level']['user'] )
+			: null;
+
+		return new PageContent(
+			$this->wikitextContentHandler->unserializeContent( $array['header'] ),
+			$this->wikitextContentHandler->unserializeContent( $array['body'] ),
+			$this->wikitextContentHandler->unserializeContent( $array['footer'] ),
+			new PageLevel( $array['level']['level'], $user )
+		);
+	}
+
+	private function assertArrayKeyExistsInSerialization( $key, array $serialization ) {
+		if ( !array_key_exists( $key, $serialization ) ) {
+			throw new MWContentSerializationException( "The serialization should contain an $key entry." );
+		}
+	}
+
+	/**
+	 * @param $text
+	 * @return PageContent
+	 */
+	private function unserializeContentInWikitext( $text ) {
 		$header = '';
 		$footer = '';
 		$proofreader = '';
