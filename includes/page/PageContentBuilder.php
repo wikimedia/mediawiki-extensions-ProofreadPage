@@ -2,14 +2,12 @@
 
 namespace ProofreadPage\Page;
 
+use IContextSource;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\FileProvider;
 use ProofreadPagePage;
-use ProofreadPageLevel;
 use WikitextContent;
-use ProofreadPageContent;
-use IContextSource;
 
 /**
  * @licence GNU GPL v2+
@@ -39,7 +37,7 @@ class PageContentBuilder {
 
 	/**
 	 * @param ProofreadPagePage $page
-	 * @return ProofreadPageContent
+	 * @return PageContent
 	 */
 	public function buildDefaultContentForPage( ProofreadPagePage $page ) {
 		$index = $page->getIndex();
@@ -74,11 +72,11 @@ class PageContentBuilder {
 			}
 		} catch( FileNotFoundException $e ) {}
 
-		return new ProofreadPageContent(
+		return new PageContent(
 			new WikitextContent( $header ),
 			new WikitextContent( $body ),
 			new WikitextContent( $footer ),
-			new ProofreadPageLevel()
+			new PageLevel()
 		);
 	}
 
@@ -87,9 +85,9 @@ class PageContentBuilder {
 	 * @param string $body
 	 * @param string $footer
 	 * @param integer $level
-	 * @param ProofreadPageContent $oldContent the old content used as base for the new content
+	 * @param PageContent $oldContent the old content used as base for the new content
 	 */
-	public function buildContentFromInput( $header, $body, $footer, $level, ProofreadPageContent $oldContent ) {
+	public function buildContentFromInput( $header, $body, $footer, $level, PageContent $oldContent ) {
 		$oldLevel = $oldContent->getLevel();
 		$user = ( $oldLevel->getLevel() === $level )
 			? $oldLevel->getUser()
@@ -98,11 +96,11 @@ class PageContentBuilder {
 			$user = $this->context->getUser();
 		}
 
-		return new ProofreadPageContent(
+		return new PageContent(
 			new WikitextContent( $header ),
 			new WikitextContent( $body ),
 			new WikitextContent( $footer ),
-			new ProofreadPageLevel( $level, $user )
+			new PageLevel( $level, $user )
 		);
 	}
 }

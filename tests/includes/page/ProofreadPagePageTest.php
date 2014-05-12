@@ -1,5 +1,7 @@
 <?php
 
+use ProofreadPage\Page\PageContent;
+
 /**
  * @group ProofreadPage
  * @covers ProofreadPagePage
@@ -9,7 +11,7 @@ class ProofreadPagePageTest extends ProofreadPageTestCase {
 	/**
 	 * Constructor of a new ProofreadPagePage
 	 * @param $title Title|string
-	 * @param $content ProofreadPageContent|null
+	 * @param $content PageContent|null
 	 * @param $index ProofreadIndexPage|null
 	 * @return ProofreadPagePage
 	 */

@@ -3,16 +3,13 @@
 namespace ProofreadPage\Page;
 
 use Article;
-use ProofreadPage\Context;
-use ProofreadPage\FileProvider;
-use RepoGroup;
-use Status;
-use ProofreadPageLevel;
 use ContentHandler;
-use ProofreadPagePage;
 use EditPage;
 use Html;
 use MWException;
+use ProofreadPage\Context;
+use ProofreadPagePage;
+use Status;
 
 /**
  * @licence GNU GPL v2+
@@ -159,7 +156,7 @@ class EditPagePage extends EditPage {
 
 		foreach ( $qualityLevels as $level ) {
 
-			$newLevel = new ProofreadPageLevel( $level, $user );
+			$newLevel = new PageLevel( $level, $user );
 			if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
 				continue;
 			}

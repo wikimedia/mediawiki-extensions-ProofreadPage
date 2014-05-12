@@ -21,7 +21,6 @@
 
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
-use ProofreadPage\FileProvider;
 
 /**
  * An index page
