@@ -82,5 +82,6 @@
 	"proofreadpage-indexoai-repositoryName": "Metadatos de libros de {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Metadatos de libros gestionados por ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Esquema no encontrado",
-	"proofreadpage-indexoai-error-schemanotfound-text": "El esquema $1 no ha sido encontrado."
+	"proofreadpage-indexoai-error-schemanotfound-text": "El esquema $1 no ha sido encontrado.",
+	"content-model-proofread-page": "Página: página"
 }
