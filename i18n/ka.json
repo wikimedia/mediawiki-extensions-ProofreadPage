@@ -78,5 +78,7 @@
 	"proofreadpage-indexoai-repositoryName": "წიგნების მეტამონაცემები საიტისათვის {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "წიგნების მეტამონაცემები დალაგებულია წაკითხვის მიხედვით.",
 	"proofreadpage-indexoai-error-schemanotfound": "სქემა ვერ მოიძებნა",
-	"proofreadpage-indexoai-error-schemanotfound-text": "სქემა „$1“ ვერ მოიძებნა."
+	"proofreadpage-indexoai-error-schemanotfound-text": "სქემა „$1“ ვერ მოიძებნა.",
+	"proofreadpage-disambiguationspage": "Template:მრავალმნიშვნელოვანი",
+	"content-model-proofread-page": "გვერდი: გვერდი"
 }
