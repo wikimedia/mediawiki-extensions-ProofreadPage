@@ -3,8 +3,6 @@
 namespace ProofreadPage\Page;
 
 use ContentHandler;
-use FormatJson;
-use MWContentSerializationException;
 use ProofreadPageTestCase;
 use Title;
 
@@ -25,7 +23,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$this->handler = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
 	}
 
-	public function pageWikitextSerializationProvider() {
+	public function pageProvider( ) {
 		return array(
 			array( 'Experimental header', 'Experimental body', 'Experimental footer', 2, '1.2.3.4', '<noinclude>{{PageQuality|2|1.2.3.4}}<div class="pagetext">Experimental header' . "\n\n\n" . '</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>' ),
 			array( 'Experimental header', 'Experimental body', '', 2, 'Woot', '<noinclude>{{PageQuality|2|Woot}}<div>Experimental header' . "\n\n\n" . '</noinclude>Experimental body</div>'),
@@ -37,9 +35,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	}
 
 	/**
-	 * @dataProvider pageWikitextSerializationProvider
+	 * @dataProvider pageProvider
 	 */
-	public function testSerializeContentInWikitext( $header, $body, $footer, $level, $proofreader ) {
+	public function testSerializeContent( $header, $body, $footer, $level, $proofreader ) {
 		$pageContent = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
 
 		$serializedString = '<noinclude><pagequality level="' . $level . '" user="';
@@ -52,97 +50,13 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	}
 
 	/**
-	 * @dataProvider pageWikitextSerializationProvider
+	 * @dataProvider pageProvider
 	 */
-	public function testUnserializeContentInWikitext( $header, $body, $footer, $level, $proofreader, $text ) {
+	public function testUnserializeContent( $header, $body, $footer, $level, $proofreader, $text ) {
 		$this->assertEquals(
 			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
 			$this->handler->unserializeContent( $text )
 		);
-	}
-
-	public function testSerializeContentInJson() {
-		$pageContent = PageContentTest::newContent( 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4' );
-
-		$this->assertEquals(
-			FormatJson::encode( array(
-				'header' => 'Foo',
-				'body' => 'Bar',
-				'footer' => 'FooBar',
-				'level' => array(
-					'level' => 2,
-					'user' => '1.2.3.4'
-				)
-			) ),
-			$this->handler->serializeContent( $pageContent, CONTENT_FORMAT_JSON )
-		);
-	}
-
-	public function pageJsonSerializationProvider() {
-		return array(
-			array( 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4', FormatJson::encode( array(
-				'header' => 'Foo',
-				'body' => 'Bar',
-				'footer' => 'FooBar',
-				'level' => array(
-					'level' => 2,
-					'user' => '1.2.3.4'
-				)
-			) ) ),
-			array( 'Foo', 'Bar', 'FooBar', 2, null, FormatJson::encode( array(
-				'header' => 'Foo',
-				'body' => 'Bar',
-				'footer' => 'FooBar',
-				'level' => array(
-					'level' => '2'
-				)
-			) ) )
-		);
-	}
-
-	/**
-	 * @dataProvider pageJsonSerializationProvider
-	 */
-	public function testUnserializeContentInJson( $header, $body, $footer, $level, $proofreader, $text ) {
-		$this->assertEquals(
-			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
-			$this->handler->unserializeContent( $text, CONTENT_FORMAT_JSON )
-		);
-	}
-
-	public function badPageJsonSerializationProvider() {
-		return array(
-			array( '' ),
-			array( '{}' ),
-			array( FormatJson::encode( array(
-				'body' => 'Bar',
-				'footer' => 'FooBar',
-				'level' => array( 'level' => 2 )
-			) ) ),
-			array( FormatJson::encode( array(
-				'header' => 'Foo',
-				'footer' => 'FooBar',
-				'level' => array( 'level' => 2 )
-			) ) ),
-			array( FormatJson::encode( array(
-				'header' => 'Foo',
-				'body' => 'Bar',
-				'level' => array( 'level' => 2 )
-			) ) ),
-			array( FormatJson::encode( array(
-				'header' => 'Foo',
-				'body' => 'Bar',
-				'footer' => 'FooBar'
-			) ) ),
-		);
-	}
-
-	/**
-	 * @dataProvider badPageJsonSerializationProvider
-	 * @expectedException MWContentSerializationException
-	 */
-	public function testUnserializeBadContentInJson( $text ) {
-		$this->handler->unserializeContent( $text, CONTENT_FORMAT_JSON );
 	}
 
 	public function testMakeEmptyContent() {
