@@ -6,7 +6,7 @@ use Content;
 use DifferenceEngine;
 use Html;
 use MWException;
-use ProofreadDiffFormatterUtils;
+use ProofreadPage\DiffFormatterUtils;
 use TextContent;
 
 /**
@@ -15,7 +15,7 @@ use TextContent;
 class PageDifferenceEngine extends DifferenceEngine {
 
 	/**
-	 * @var ProofreadDiffFormatterUtils
+	 * @var DiffFormatterUtils
 	 */
 	protected $diffFormatterUtils;
 
@@ -25,7 +25,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 	public function __construct( $context = null, $old = 0, $new = 0, $rcid = 0, $refreshCache = false, $unhide = false ) {
 		parent::__construct( $context, $old, $new, $rcid, $refreshCache, $unhide );
 
-		$this->diffFormatterUtils = new ProofreadDiffFormatterUtils();
+		$this->diffFormatterUtils = new DiffFormatterUtils();
 	}
 
 	/**

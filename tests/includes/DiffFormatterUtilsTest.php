@@ -1,20 +1,24 @@
 <?php
 
+namespace ProofreadPage;
+
+use ProofreadPageTestCase;
+
 /**
  * @group ProofreadPage
  * @covers ProofreadDiffFormatterUtils
  */
-class ProofreadDiffFormatterUtilsTest extends ProofreadPageTestCase {
+class DiffFormatterUtilsTest extends ProofreadPageTestCase {
 
 	/**
-	 * @var ProofreadDiffFormatterUtils
+	 * @var DiffFormatterUtils
 	 */
 	protected $diffFormatterUtils;
 
 	public function setUp() {
 		parent::setUp();
 
-		$this->diffFormatterUtils = new ProofreadDiffFormatterUtils();
+		$this->diffFormatterUtils = new DiffFormatterUtils();
 	}
 
 	public function testCreateHeader() {

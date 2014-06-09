@@ -45,9 +45,8 @@ $wgExtensionMessagesFiles['ProofreadPageAlias'] = $dir . 'ProofreadPage.alias.ph
 
 $wgAutoloadClasses['ProofreadPage'] = $dir . 'ProofreadPage.body.php';
 $wgAutoloadClasses['ProofreadPage\Context'] = $dir . 'includes/Context.php';
-$wgAutoloadClasses['ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
-$wgAutoloadClasses['ProofreadPageRenderer'] = $dir . 'includes/ProofreadPageRenderer.php';
-$wgAutoloadClasses['ProofreadDiffFormatterUtils'] = $dir . 'includes/ProofreadDiffFormatterUtils.php';
+$wgAutoloadClasses['ProofreadPage\ProofreadPageInit'] = $dir . 'includes/ProofreadPageInit.php';
+$wgAutoloadClasses['ProofreadPage\DiffFormatterUtils'] = $dir . 'includes/DiffFormatterUtils.php';
 $wgAutoloadClasses['ProofreadPage\FileNotFoundException'] = $dir . 'includes/FileNotFoundException.php';
 $wgAutoloadClasses['ProofreadPage\FileProvider'] = $dir . 'includes/FileProvider.php';
 
@@ -182,7 +181,7 @@ $wgResourceModules += array(
 );
 
 //Hooks
-$wgHooks['SetupAfterCache'][] = 'ProofreadPageInit::initNamespaces';
+$wgHooks['SetupAfterCache'][] = 'ProofreadPage\ProofreadPageInit::initNamespaces';
 $wgHooks['ParserFirstCallInit'][] = 'ProofreadPage::onParserFirstCallInit';
 $wgHooks['BeforePageDisplay'][] = 'ProofreadPage::onBeforePageDisplay';
 $wgHooks['GetLinkColours'][] = 'ProofreadPage::onGetLinkColours';
@@ -218,6 +217,7 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$files[] = $dir . 'FileProviderMock.php';
 	$files[] = $dir . 'ProofreadPageTestCase.php';
 	$files[] = $dir . 'FileProviderTest.php';
+	$files[] = $dir . 'DiffFormatterUtilsTest.php';
 
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
 
@@ -232,7 +232,6 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$files[] = $dir . 'page/PageContentHandlerTest.php';
 	$files[] = $dir . 'page/ProofreadPagePageTest.php';
 	$files[] = $dir . 'page/PageContentBuilderTest.php';
-	$files[] = $dir . 'ProofreadDiffFormatterUtilsTest.php';
 
 	return true;
 };

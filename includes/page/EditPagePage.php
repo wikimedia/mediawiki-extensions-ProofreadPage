@@ -14,7 +14,6 @@ use Status;
 /**
  * @licence GNU GPL v2+
  */
-
 class EditPagePage extends EditPage {
 
 	/**
@@ -30,7 +29,8 @@ class EditPagePage extends EditPage {
 	/**
 	 * @param Article $article
 	 * @param ProofreadPagePage $pagePage
-	 * @throw MWException
+	 * @param Context $context
+	 * @throws MWException
 	 */
 	public function __construct( Article $article, ProofreadPagePage $pagePage, Context $context ) {
 		parent::__construct( $article );
@@ -64,11 +64,11 @@ class EditPagePage extends EditPage {
 	 *
 	 * @see EditPage::showContentForm
 	 */
-	protected function getContentObject( $def_content = null ) {
+	protected function getContentObject( $defContent = null ) {
 		if ( !$this->mTitle->exists() ) {
 			return $this->pageContentBuilder->buildDefaultContentForPage( $this->pagePage );
 		}
-		return parent::getContentObject( $def_content );
+		return parent::getContentObject( $defContent );
 	}
 
 	/**

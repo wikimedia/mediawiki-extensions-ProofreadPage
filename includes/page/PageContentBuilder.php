@@ -28,7 +28,7 @@ class PageContentBuilder {
 	private $context;
 
 	/**
-	 * @param IContextSource $context
+	 * @param IContextSource $contextSource
 	 * @param Context $context
 	 */
 	public function __construct( IContextSource $contextSource, Context $context ) {
@@ -93,6 +93,7 @@ class PageContentBuilder {
 	 * @param string $footer
 	 * @param integer $level
 	 * @param PageContent $oldContent the old content used as base for the new content
+	 * @return PageContent
 	 */
 	public function buildContentFromInput( $header, $body, $footer, $level, PageContent $oldContent ) {
 		$oldLevel = $oldContent->getLevel();
