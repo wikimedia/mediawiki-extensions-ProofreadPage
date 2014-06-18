@@ -61,12 +61,12 @@ class PagelistTagParser extends TagParser {
 				$view = '&#160;' . $view;
 			}
 
-			$n = strlen( $count ) - mb_strlen( $view );
-			if ( $n && $mode == PageNumber::DISPLAY_NORMAL ) {
+			$paddingSize = strlen( $count ) - mb_strlen( $view );
+			if ( $paddingSize > 0 && $mode == PageNumber::DISPLAY_NORMAL && $pageNumber->isNumeric() ) {
 				$txt = '<span style="visibility:hidden;">';
 				$pad = $title->getPageLanguage()->formatNum( 0, true );
-				for ( $j = 0; $j < $n; $j++ ) {
-					$txt = $txt . $pad;
+				for ( $j = 0; $j < $paddingSize; $j++ ) {
+					$txt .= $pad;
 				}
 				$view = $txt . '</span>' . $view;
 			}

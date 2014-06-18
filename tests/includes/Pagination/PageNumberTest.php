@@ -44,4 +44,12 @@ class ProofreadPageNumberTest extends ProofreadPageTestCase {
 		$number = new PageNumber( '10' );
 		$this->assertEquals( $number->getDisplayMode(), PageNumber::DISPLAY_NORMAL );
 	}
+
+	public function testIsNumerci() {
+		$number = new PageNumber( '10', PageNumber::DISPLAY_ROMAN );
+		$this->assertTrue( $number->isNumeric() );
+
+		$number = new PageNumber( 'a' );
+		$this->assertFalse( $number->isNumeric() );
+	}
 }
