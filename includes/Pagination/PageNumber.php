@@ -83,6 +83,13 @@ class PageNumber {
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function isNumeric() {
+		return is_numeric( $this->number );
+	}
+
+	/**
 	 * @return array
 	 */
 	public static function getDisplayModes() {
