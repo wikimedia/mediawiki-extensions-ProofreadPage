@@ -448,8 +448,6 @@ class ProofreadPage {
 		$indexTitle = $index->getTitle();
 		$indexId = $index->getID();
 
-		$n = 0;
-
 		// read the list of pages
 		$pages = array();
 		$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage(
@@ -485,7 +483,7 @@ class ProofreadPage {
 		$n4 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality4_category' );
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
-		ProofreadIndexDbConnector::setIndexData( $n, $n0, $n1, $n2, $n3, $n4, $indexId );
+		ProofreadIndexDbConnector::setIndexData( $pagination->getNumberOfPages(), $n0, $n1, $n2, $n3, $n4, $indexId );
 	}
 
 	/**
