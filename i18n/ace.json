@@ -4,5 +4,15 @@
 			"Si Gam Acèh"
 		]
 	},
+	"indexpages": "Dapeuta laman indèks",
+	"pageswithoutscans": "Laman hana geukalön",
+	"proofreadpage_image": "Gamba",
+	"proofreadpage_index": "Indèks",
+	"proofreadpage_index_expected": "Seunalah: Peureulèë indèks",
+	"proofreadpage_nosuch_index": "Seunalah: Hana indèks",
+	"proofreadpage_nosuch_file": "Seunalah: Hana beureukaih",
+	"proofreadpage_badpage": "Salah format",
+	"proofreadpage_badpagetext": "Format laman nyang keumeung neukeubah salah.",
+	"proofreadpage_indexdupe": "Peuganda peunawôt",
 	"proofreadpage_specialpage_label_key": "Mita:"
 }
