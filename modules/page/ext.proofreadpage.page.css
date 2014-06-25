@@ -7,6 +7,10 @@
 	width: 50%;
 }
 
+.prp-page-content .pagetext {
+	margin-bottom: 0.5em;
+}
+
 .prp-page-image {
 	float: right;
 	width: 49%;
