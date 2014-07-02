@@ -3,7 +3,8 @@
 		"authors": [
 			"Gombang",
 			"Naval Scene",
-			"VoteITP"
+			"VoteITP",
+			"Iwan Novirion"
 		]
 	},
 	"indexpages": "Daftar laman indeks",
@@ -54,7 +55,7 @@
 	"proofreadpage_page_status": "↓Status laman",
 	"proofreadpage_js_attributes": "↓Pangarang Judul Tahun Panabik",
 	"proofreadpage_index_attributes": "Pangarang\nJudul\nTaun|Taun tabik\nPanabik\nSumber\nGamba|Gamba muko\nAlaman||20\nCatatan||10",
-	"proofreadpage_pages": "↓$2 {{PLURAL:$1|laman|laman}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|laman|laman}}",
 	"proofreadpage_specialpage_legend": "Cari alaman indeks",
 	"proofreadpage_specialpage_searcherror": "↓Kasalahan di masin pancari",
 	"proofreadpage_specialpage_searcherrortext": "↓Masin pancari indak bakarajo. Maaf dek indak saleso ko.",
@@ -69,10 +70,13 @@
 	"proofreadpage-button-reset-zoom-label": "Ukuran asali",
 	"proofreadpage-button-zoom-in-label": "Gadangkan",
 	"proofreadpage-button-toggle-layout-label": "↓Tata letak managak/mandata",
+	"proofreadpage-pageinfo-status": "Statuih pamaresoan",
 	"proofreadpage-preferences-showheaders-label": "↓Tayang bidang kapalo jo kaki katiko manyuntiang {{ns:page}} ruangnamo",
 	"proofreadpage-preferences-horizontal-layout-label": "↓Gunoan tata letak managak katiko manyuntiang {{ns:page}} ruangnamo",
 	"proofreadpage-indexoai-repositoryName": "↓Metadata buku dari {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "↓Metadata buku diupayoan dek laman pangujian baco.",
 	"proofreadpage-indexoai-error-schemanotfound": "Skema indak ditamui",
-	"proofreadpage-indexoai-error-schemanotfound-text": "↓Skema $1 alun basobok."
+	"proofreadpage-indexoai-error-schemanotfound-text": "↓Skema $1 alun basobok.",
+	"proofreadpage-disambiguationspage": "Templat:disambiguasi",
+	"content-model-proofread-page": "Laman: laman"
 }
