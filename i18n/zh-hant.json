@@ -9,7 +9,8 @@
 			"Mark85296341",
 			"Shirayuki",
 			"TianyinLee",
-			"Wrightbus"
+			"Wrightbus",
+			"LNDDYL"
 		]
 	},
 	"indexpages": "索引頁列表",
@@ -19,7 +20,7 @@
 	"proofreadpage_index": "索引",
 	"proofreadpage_index_expected": "錯誤：需要索引",
 	"proofreadpage_nosuch_index": "錯誤：沒有此類索引",
-	"proofreadpage_nosuch_file": "錯誤：沒有這種文件",
+	"proofreadpage_nosuch_file": "錯誤：沒有這種檔案",
 	"proofreadpage_badpage": "格式錯誤",
 	"proofreadpage_badpagetext": "您試圖儲存的頁面的格式不正確。",
 	"proofreadpage_indexdupe": "重複連結",
@@ -62,7 +63,7 @@
 	"proofreadpage_index_attributes": "作者\n標題\n年份|出版年份\n出版者\n來源\n圖片|封面照\n頁數||20\n備註||10",
 	"proofreadpage_pages": "$2個{{PLURAL:$1|頁面|頁面}}",
 	"proofreadpage_specialpage_legend": "搜尋索引頁",
-	"proofreadpage_specialpage_searcherror": "搜索程式出錯",
+	"proofreadpage_specialpage_searcherror": "搜尋程式出錯",
 	"proofreadpage_specialpage_searcherrortext": "搜尋引擎無法工作。抱歉給您帶來不便。",
 	"proofreadpage_source": "來源",
 	"proofreadpage_source_message": "掃描版用來建立這個文字",
