@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Filipinayzd"
+		]
+	},
+	"proofreadpage_badpage": "Salang format",
+	"proofreadpage_nologin": "Diri nakaloog",
+	"proofreadpage_nextpage": "Sunod na pahina",
+	"proofreadpage_prevpage": "Sinundan na pahina",
+	"proofreadpage_quality0_category": "Udang teksto",
+	"proofreadpage_index_size": "Bilang ka mga pahina",
+	"proofreadpage_specialpage_label_key": "Pag-anapon:",
+	"proofreadpage_page_status": "Estado ka pahina",
+	"proofreadpage_js_attributes": "Awtor Titulo Taon Publisher",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|pahina|mga pahina}}",
+	"proofreadpage_source": "Ginikanan",
+	"proofreadpage-group-other": "Iba pa",
+	"proofreadpage-button-reset-zoom-label": "Orihinal na sukol",
+	"content-model-proofread-page": "Pahina: pahina"
+}
