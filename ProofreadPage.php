@@ -237,8 +237,8 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 };
 
 //Parser tests
-$wgParserTestFiles[] = __DIR__ . '/tests/parser/pagelist.txt';
-$wgParserTestFiles[] = __DIR__ . '/tests/parser/pages.txt';
+$wgParserTestFiles[] = __DIR__ . '/tests/parser/proofreadpage_pagelist.txt';
+$wgParserTestFiles[] = __DIR__ . '/tests/parser/proofreadpage_pages.txt';
 
 //Handlers
 $wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = '\ProofreadPage\Page\PageContentHandler';
