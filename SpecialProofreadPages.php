@@ -159,7 +159,7 @@ class ProofreadPages extends QueryPage {
 			'pr_q0', 'pr_q1', 'pr_q2' ,'pr_q3', 'pr_q4' ),
 			'conds' => $conds,
 			'options' => array(),
-			'join_conds' => array( 'page' => array( 'LEFT JOIN', 'page_id=pr_page_id' ) )
+			'join_conds' => array( 'page' => array( 'INNER JOIN', 'page_id=pr_page_id' ) )
 		);
 	}
 
