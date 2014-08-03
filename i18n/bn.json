@@ -41,7 +41,7 @@
 	"proofreadpage_page_status": "পাতার অবস্থা",
 	"proofreadpage_js_attributes": "লেখক শিরোনাম বছর প্রকাশক",
 	"proofreadpage_index_attributes": "ধরন\nশিরোনাম\nখণ্ড\nলেখক\nঅনুবাদক\nসম্পাদক\nঅলঙ্করণ\nস্কুল\nপ্রকাশক\nঠিকানা|স্থান\nবছর|প্রকাশের বছর\nKey|Sort key\nউৎস|স্ক্যান\nচিত্র|প্রচ্ছদ\nঅগ্রগতি\nপাতাসমূহ||15\nখণ্ডসমূহ||5\nমন্তব্য|সূচী|15\nপ্রস্থ|সম্পাদনা মোডে স্ক্যান রেজুলুশন\nসিএসএস(Css)\nহেডার\nপাদটীকা",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|পাতাট|পাতাগুলো}}",
+	"proofreadpage_pages": "$2টি {{PLURAL:$1|পাতা}}",
 	"proofreadpage_specialpage_legend": "নির্ঘণ্ট পাতাসমূহ অনুসন্ধান",
 	"proofreadpage_source": "উৎস",
 	"proofreadpage_source_message": "এই লেখা প্রতিষ্ঠা করতে স্ক্যান করা সংস্করণ ব্যবহার করা হয়েছে",
