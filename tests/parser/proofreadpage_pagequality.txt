@@ -1,0 +1,36 @@
+!! hooks
+pagequality
+!! endhooks
+
+!! test
+pagequality simple
+!! wikitext
+<pagequality level=3 />
+!! html
+<div class="prp-page-qualityheader quality3">This page has been proofread</div>
+
+!! end
+
+!! test
+pagesquality empty
+!! wikitext
+<pagequality />
+!! html
+
+!! end
+
+!! test
+pagesquality empty
+!! wikitext
+<pagequality level=42 />
+!! html
+
+!! end
+
+!! test
+pagesquality empty
+!! wikitext
+<pagequality level=root />
+!! html
+
+!! end

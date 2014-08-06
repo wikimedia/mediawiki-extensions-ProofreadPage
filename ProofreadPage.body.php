@@ -121,6 +121,7 @@ class ProofreadPage {
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setHook( 'pagelist', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagelistTag' ) );
 		$parser->setHook( 'pages', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagesTag' ) );
+		$parser->setHook( 'pagequality', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagequalityTag' ) );
 		return true;
 	}
 

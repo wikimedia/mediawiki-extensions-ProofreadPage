@@ -80,6 +80,7 @@ $wgAutoloadClasses['ProofreadPage\Parser\ParserEntryPoint'] = $dir . 'includes/P
 $wgAutoloadClasses['ProofreadPage\Parser\TagParser'] = $dir . 'includes/Parser/TagParser.php';
 $wgAutoloadClasses['ProofreadPage\Parser\PagelistTagParser'] = $dir . 'includes/Parser/PagelistTagParser.php';
 $wgAutoloadClasses['ProofreadPage\Parser\PagesTagParser'] = $dir . 'includes/Parser/PagesTagParser.php';
+$wgAutoloadClasses['ProofreadPage\Parser\PagequalityTagParser'] = $dir . 'includes/Parser/PagequalityTagParser.php';
 
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
@@ -239,6 +240,7 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 //Parser tests
 $wgParserTestFiles[] = __DIR__ . '/tests/parser/proofreadpage_pagelist.txt';
 $wgParserTestFiles[] = __DIR__ . '/tests/parser/proofreadpage_pages.txt';
+$wgParserTestFiles[] = __DIR__ . '/tests/parser/proofreadpage_pagequality.txt';
 
 //Handlers
 $wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = '\ProofreadPage\Page\PageContentHandler';
