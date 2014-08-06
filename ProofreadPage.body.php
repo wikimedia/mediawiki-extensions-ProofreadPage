@@ -507,6 +507,8 @@ class ProofreadPage {
 		$indextitle = ProofreadPageDbConnector::getIndexTitleForPageId( $id );
 
 		if( isset( $out->is_toc ) && $out->is_toc ) {
+			$n = 0;
+
 			if ( $indextitle ) {
 				$row = ProofreadIndexDbConnector::getIndexDataFromIndexTitle( $indextitle );
 				if( $row ) {
