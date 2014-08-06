@@ -217,7 +217,7 @@
 		}
 		mw.loader.using( 'ext.wikiEditor', function() {
 			$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
-			$editForm.find( '.wikiEditor-oldToolbar' ).after( $editForm.find( '.wikiEditor-ui' ) );
+			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
 			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 		} );
 	}
