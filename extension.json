@@ -206,11 +206,16 @@
 		},
 		"ext.proofreadpage.ve.pageTarget": {
 			"scripts": [
+				"ve/node/ve.dm.MWPagequalityNode.js",
+				"ve/node/ve.ce.MWPagequalityNode.js",
+				"ve/node/ve.ui.MWPagequalityInspector.js",
+				"ve/node/ve.ui.MWPagequalityInspectorTool.js",
 				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.js",
 				"ve/pageTarget/ve.dm.MWPagesSectionNode.js",
 				"ve/pageTarget/ve.ce.MWPagesSectionNode.js"
 			],
 			"styles": [
+				"ve/node/ve.ui.WMPagequalityInspector.css",
 				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.css"
 			],
 			"dependencies": [
@@ -223,7 +228,14 @@
 				"proofreadpage-button-zoom-in-label",
 				"proofreadpage_body",
 				"proofreadpage_footer",
-				"proofreadpage_header"
+				"proofreadpage_header",
+				"proofreadpage-visualeditor-node-pagequality-inspector-tooltip",
+				"proofreadpage-visualeditor-node-pagequality-inspector-title",
+				"proofreadpage_quality0_category",
+				"proofreadpage_quality1_category",
+				"proofreadpage_quality2_category",
+				"proofreadpage_quality3_category",
+				"proofreadpage_quality4_category"
 			],
 			"targets": [
 				"desktop"
