@@ -152,10 +152,10 @@ class PageContentHandler extends TextContentHandler {
 			$body = $text;
 		}
 
-		if ( preg_match( '/^<pagequality level="(0|1|2|3|4)" user="(.*?)" \/>(.*?)$/s', $header, $m ) ) {
+		if ( preg_match( '/^<pagequality level="(0|1|2|3|4)" user="(.*?)" *(\/>|> *<\/pagequality>)(.*?)$/s', $header, $m ) ) {
 			$level = intval( $m[1] );
 			$proofreader = $m[2];
-			$header = $this->cleanHeader( $m[3] );
+			$header = $this->cleanHeader( $m[4] );
 		} elseif ( preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m ) ) {
 			$level = intval( $m[1] );
 			$proofreader = $m[3];
