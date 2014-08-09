@@ -152,6 +152,12 @@ $specialPageAliases['nl'] = array(
 	'PagesWithoutScans' => array( 'PaginasZonderScans', 'Pagina\'sZonderScans' ),
 );
 
+/** Portuguese (português) */
+$specialPageAliases['pt'] = array(
+	'IndexPages' => array( 'Páginas_índice' ),
+	'PagesWithoutScans' => array( 'Páginas_sem_digitalizações' ),
+);
+
 /** Sicilian (sicilianu) */
 $specialPageAliases['scn'] = array(
 	'IndexPages' => array( 'PagineIndicizzate' ),
