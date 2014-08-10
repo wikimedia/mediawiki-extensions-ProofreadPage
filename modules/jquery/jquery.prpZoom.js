@@ -108,9 +108,9 @@
 					}
 
 					if( event.deltaY > 0 ) {
-						prpZoom.zoomOut();
-					} else if( event.deltaY < 0 ) {
 						prpZoom.zoomIn();
+					} else if( event.deltaY < 0 ) {
+						prpZoom.zoomOut();
 					}
 					event.preventDefault(); //Don't scroll while zooming
 				}
