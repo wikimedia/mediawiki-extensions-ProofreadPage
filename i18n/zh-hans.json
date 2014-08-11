@@ -63,7 +63,7 @@
 	"proofreadpage_page_status": "页面状态",
 	"proofreadpage_js_attributes": "作者 标题 年份 出版者",
 	"proofreadpage_index_attributes": "作者\n标题\n年份|出版年份\n出版\n来源\n图像|封面图像\n页数||20\n评论||10",
-	"proofreadpage_pages": "$2个{{PLURAL:$1|页面|页面}}",
+	"proofreadpage_pages": "$2个{{PLURAL:$1|页面}}",
 	"proofreadpage_specialpage_legend": "搜索索引页",
 	"proofreadpage_specialpage_searcherror": "搜索引擎错误",
 	"proofreadpage_specialpage_searcherrortext": "搜索引擎无法工作。很抱歉给您带来的不便。",
@@ -83,7 +83,7 @@
 	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}命名空间编辑时使用水平线",
 	"proofreadpage-indexoai-repositoryName": "来自{{SITENAME}}的书籍元数据",
 	"proofreadpage-indexoai-eprint-content-text": "由ProofreadPage管理书籍元数据。",
-	"proofreadpage-indexoai-error-schemanotfound": "Schema未找到",
+	"proofreadpage-indexoai-error-schemanotfound": "架构未找到",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1架构未找到。",
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"content-model-proofread-page": "页面：页面"
