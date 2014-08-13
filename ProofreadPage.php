@@ -146,7 +146,12 @@ $wgResourceModules += array(
 	'ext.proofreadpage.page.edit' => $prpResourceTemplate + array(
 		'styles'  => 'page/ext.proofreadpage.page.edit.css',
 		'scripts' => 'page/ext.proofreadpage.page.edit.js',
-		'dependencies' => array( 'ext.proofreadpage.page', 'jquery.prpZoom', 'mediawiki.user' ),
+		'dependencies' => array(
+			'ext.proofreadpage.page',
+			'jquery.prpZoom',
+			'mediawiki.user',
+			'user.options'
+		),
 		'messages' => array(
 			'proofreadpage_quality0_category',
 			'proofreadpage_quality1_category',
