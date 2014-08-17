@@ -51,7 +51,7 @@ class PageLevel {
 	/**
 	 * Returns if the level is valid
 	 *
-	 * @returns boolean
+	 * @return boolean
 	 */
 	public function isValid() {
 		return is_integer( $this->level ) && 0 <= $this->level && $this->level <= 4;
@@ -62,7 +62,7 @@ class PageLevel {
 	 *
 	 * @params $that PageLevel
 	 * @param PageLevel $that
-	 * @returns boolean
+	 * @return boolean
 	 */
 	public function equals( PageLevel $that = null ) {
 		if ( $that === null ) {
@@ -81,7 +81,7 @@ class PageLevel {
 	 *
 	 * @params $to PageLevel
 	 * @param PageLevel $to
-	 * @returns boolean
+	 * @return boolean
 	 */
 	public function isChangeAllowed( PageLevel $to ) {
 		if ( $this->level !== $to->getLevel() && ( $to->getUser() === null || !$to->getUser()->isAllowed( 'pagequality' ) ) ) {
