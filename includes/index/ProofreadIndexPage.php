@@ -255,7 +255,7 @@ class ProofreadIndexPage {
 	 */
 	public function getMimeType() {
 		if( preg_match( "/^.*\.(.{2,5})$/", $this->title->getText(), $m ) ) {
-			$mimeMagic = new MimeMagic();
+			$mimeMagic = MimeMagic::singleton();
 			return $mimeMagic->guessTypesForExtension( $m[1] );
 		} else {
 			return null;
