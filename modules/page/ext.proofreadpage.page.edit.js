@@ -163,9 +163,7 @@
 						icon: iconPath + 'Button_multicol.png',
 						action: {
 							type: 'callback',
-							execute: function() {
-								toogleLayout();
-							}
+							execute: toogleLayout
 						}
 					}
 				}
@@ -173,38 +171,40 @@
 		};
 
 		var $edit = $( '#wpTextbox1' );
-		if( mw.user.options.get( 'usebetatoolbar' ) ) {
-			mw.loader.using( 'ext.wikiEditor.toolbar', function() {
-				$edit.wikiEditor( 'addToToolbar', {
-					sections: {
-						'proofreadpage-tools': {
-							type: 'toolbar',
-							labelMsg: 'proofreadpage-section-tools',
-							groups: tools
+		if( mw.user.options.get( 'showtoolbar' ) == 1 ) {
+			if( mw.user.options.get( 'usebetatoolbar' ) == 1 ) {
+				mw.loader.using( 'ext.wikiEditor.toolbar', function() {
+					$edit.wikiEditor( 'addToToolbar', {
+						sections: {
+							'proofreadpage-tools': {
+								type: 'toolbar',
+								labelMsg: 'proofreadpage-section-tools',
+								groups: tools
+							}
 						}
-					}
-				} );
-			} );
-		} else if( mw.user.options.get( 'showtoolbar' ) ) {
-			mw.loader.using( 'mediawiki.action.edit', function() {
-				var $toolbar = $( '#toolbar' );
-
-				$.each( tools, function( group, list ) {
-					$.each( list.tools, function( id, def ) {
-						$( '<img>' )
-							.attr( {
-								width: 23,
-								height: 22,
-								src: def.icon,
-								alt: mw.msg( def.labelMsg ),
-								title: mw.msg( def.labelMsg ),
-								'class': 'mw-toolbar-editbutton' //quotes needed for IE
-							} )
-							.click( def.action.execute )
-							.appendTo( $toolbar );
 					} );
 				} );
-			} );
+			} else {
+				mw.loader.using( 'mediawiki.action.edit', function() {
+					var $toolbar = $( '#toolbar' );
+
+					$.each( tools, function( group, list ) {
+						$.each( list.tools, function( id, def ) {
+							$( '<img>' )
+								.attr( {
+									width: 23,
+									height: 22,
+									src: def.icon,
+									alt: mw.msg( def.labelMsg ),
+									title: mw.msg( def.labelMsg ),
+									'class': 'mw-toolbar-editbutton' //quotes needed for IE
+								} )
+								.click( def.action.execute )
+								.appendTo( $toolbar );
+						} );
+					} );
+				} );
+			}
 		}
 	}
 
