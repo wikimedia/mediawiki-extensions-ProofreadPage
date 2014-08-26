@@ -22,7 +22,7 @@
 	/**
 	 * Show or hide header and footer areas
 	 *
-	 * @param speed string speed of the toogle. May be 'fast', 'slow' or undefined
+	 * @param speed string speed of the toggle. May be 'fast', 'slow' or undefined
 	 */
 	function toggleHeaders( speed ) {
 		$editForm.find( '.prp-page-edit-header' ).toggle( speed );
@@ -33,7 +33,7 @@
 	/**
 	 * Put the scan image on top or on the left of the edit area
 	 */
-	function toogleLayout() {
+	function toggleLayout() {
 		if( $zoomImage.data( 'prpZoom' ) ) {
 			$zoomImage.prpZoom( 'destroy' );
 		}
@@ -83,7 +83,7 @@
 			toggleHeaders();
 		}
 		if( mw.user.options.get( 'proofreadpage-horizontal-layout' ) ) {
-			toogleLayout();
+			toggleLayout();
 		}
 	}
 
@@ -163,7 +163,7 @@
 						icon: iconPath + 'Button_multicol.png',
 						action: {
 							type: 'callback',
-							execute: toogleLayout
+							execute: toggleLayout
 						}
 					}
 				}
