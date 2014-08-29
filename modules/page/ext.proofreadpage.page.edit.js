@@ -111,7 +111,8 @@
 					'zoom-in': {
 						labelMsg: 'proofreadpage-button-zoom-in-label',
 						type: 'button',
-						icon: iconPath + 'Button_zoom_in.png',
+						icon: iconPath + 'wikieditor-zoom-in.png',
+						oldIcon: iconPath + 'Button_zoom_in.png',
 						action: {
 							type: 'callback',
 							execute: function() {
@@ -122,7 +123,8 @@
 					'zoom-out': {
 						labelMsg: 'proofreadpage-button-zoom-out-label',
 						type: 'button',
-						icon: iconPath + 'Button_zoom_out.png',
+						icon: iconPath + 'wikieditor-zoom-out.png',
+						oldIcon: iconPath + 'Button_zoom_out.png',
 						action: {
 							type: 'callback',
 							execute: function() {
@@ -133,7 +135,8 @@
 					'reset-zoom': {
 						labelMsg: 'proofreadpage-button-reset-zoom-label',
 						type: 'button',
-						icon: iconPath + 'Button_examine.png',
+						icon: iconPath + 'wikieditor-zoom-reset.png',
+						oldIcon: iconPath + 'Button_examine.png',
 						action: {
 							type: 'callback',
 							execute: function() {
@@ -149,7 +152,8 @@
 					'toggle-visibility': {
 						labelMsg: 'proofreadpage-button-toggle-visibility-label',
 						type: 'button',
-						icon: iconPath + 'Button_category_plus.png',
+						icon: iconPath + 'wikieditor-visibility.png',
+						oldIcon: iconPath + 'Button_category_plus.png',
 						action: {
 							type: 'callback',
 							execute: function() {
@@ -160,7 +164,8 @@
 					'toggle-layout': {
 						labelMsg: 'proofreadpage-button-toggle-layout-label',
 						type: 'button',
-						icon: iconPath + 'Button_multicol.png',
+						icon: iconPath + 'wikieditor-layout.png',
+						oldIcon: iconPath + 'Button_multicol.png',
 						action: {
 							type: 'callback',
 							execute: toggleLayout
@@ -171,7 +176,7 @@
 		};
 
 		var $edit = $( '#wpTextbox1' );
-		if ( mw.user.options.get( 'usebetatoolbar' ) == 1 ) {
+		if ( mw.user.options.get( 'usebetatoolbar' ) == 1 ) { //"== 1" in order to disallow both 0 and "0"
 			mw.loader.using( 'ext.wikiEditor.toolbar', function() {
 				$edit.wikiEditor( 'addToToolbar', {
 					sections: {
@@ -183,7 +188,7 @@
 					}
 				} );
 			} );
-		} else if ( mw.user.options.get( 'showtoolbar' ) == 1 ){
+		} else if ( mw.user.options.get( 'showtoolbar' ) == 1 ) {
 			mw.loader.using( 'mediawiki.action.edit', function() {
 				var $toolbar = $( '#toolbar' );
 
@@ -193,7 +198,7 @@
 							.attr( {
 								width: 23,
 								height: 22,
-								src: def.icon,
+								src: def.oldIcon,
 								alt: mw.msg( def.labelMsg ),
 								title: mw.msg( def.labelMsg ),
 								'class': 'mw-toolbar-editbutton' //quotes needed for IE
