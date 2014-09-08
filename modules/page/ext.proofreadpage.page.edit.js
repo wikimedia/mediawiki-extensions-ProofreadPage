@@ -210,7 +210,8 @@
 	 * Improve the WikiEditor interface
 	 */
 	function setupWikiEditor() {
-		if( !mw.user.options.get( 'showtoolbar' ) || !mw.user.options.get( 'usebetatoolbar' ) ) {
+		// Ignore "showtoolbar", for consistency with the default behavior (bug 30795)
+		if( !mw.user.options.get( 'usebetatoolbar' ) ) {
 			return;
 		}
 		mw.loader.using( 'ext.wikiEditor', function() {
