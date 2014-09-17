@@ -597,7 +597,7 @@ $void_cell
 		$article = $editPage->getArticle();
 		$user = $article->getContext()->getUser();
 		$oldContent = $article->getPage()->getContent( Revision::FOR_THIS_USER, $user );
-		$newContent = $contentHandler->unserializeContent( $text, $editPage->getTitle(), $editPage->contentFormat );
+		$newContent = $contentHandler->unserializeContent( $text, $editPage->contentFormat );
 
 		if ( $oldContent === null ) {
 			$oldContent = $contentHandler->makeEmptyContent();
