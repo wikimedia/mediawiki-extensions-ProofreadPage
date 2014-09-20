@@ -58,6 +58,13 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				),
 				PageContentTest::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			),
+			array(
+				ProofreadPagePageTest::newPagePage(
+					'LoremIpsum.djvu/2',
+					ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Title=Test book\n|Pages=<pagelist 1to5=roman />\n|Header={{{pagenum}}}\n}}" )
+				),
+				PageContentTest::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
+			),
 		);
 	}
 
