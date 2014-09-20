@@ -224,6 +224,7 @@ $wgHooks['UnitTestsList'][] = function( array &$files ) {
 	$files[] = $dir . 'ProofreadPageTestCase.php';
 	$files[] = $dir . 'FileProviderTest.php';
 	$files[] = $dir . 'DiffFormatterUtilsTest.php';
+	$files[] = $dir . 'ContextTest.php';
 
 	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
 

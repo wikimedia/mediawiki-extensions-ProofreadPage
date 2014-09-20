@@ -6,7 +6,7 @@ use ProofreadPageTestCase;
 
 /**
  * @group ProofreadPage
- * @covers ProofreadDiffFormatterUtils
+ * @covers \ProofreadPage\DiffFormatterUtils
  */
 class DiffFormatterUtilsTest extends ProofreadPageTestCase {
 

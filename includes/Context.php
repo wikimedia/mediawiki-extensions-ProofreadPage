@@ -36,9 +36,14 @@ class Context {
 	 */
 	private $paginationFactory;
 
+	/**
+	 * @param int $pageNamespaceId
+	 * @param int $indexNamespaceId
+	 * @param FileProvider $fileProvider
+	 */
 	public function __construct( $pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider ) {
-		$this->pageNamespaceId = ProofreadPageInit::getNamespaceId( 'page' );
-		$this->indexNamespaceId = ProofreadPageInit::getNamespaceId( 'index' );
+		$this->pageNamespaceId = $pageNamespaceId;
+		$this->indexNamespaceId = $indexNamespaceId;
 		$this->fileProvider = $fileProvider;
 		$this->paginationFactory = new PaginationFactory( $this );
 	}
