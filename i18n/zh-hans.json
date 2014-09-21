@@ -12,7 +12,8 @@
 			"Shirayuki",
 			"Xiaomingyan",
 			"Yfdyh000",
-			"Zhuyifei1999"
+			"Zhuyifei1999",
+			"Duolaimi"
 		]
 	},
 	"indexpages": "索引页列表",
@@ -81,8 +82,8 @@
 	"proofreadpage-pageinfo-status": "校对状态",
 	"proofreadpage-preferences-showheaders-label": "在{{ns:page}}命名空间编辑时显示页眉和页脚字段",
 	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}命名空间编辑时使用水平线",
-	"proofreadpage-indexoai-repositoryName": "来自{{SITENAME}}的书籍元数据",
-	"proofreadpage-indexoai-eprint-content-text": "由ProofreadPage管理书籍元数据。",
+	"proofreadpage-indexoai-repositoryName": "来自{{SITENAME}}的图书元数据",
+	"proofreadpage-indexoai-eprint-content-text": "ProofreadPage管理的图书元数据。",
 	"proofreadpage-indexoai-error-schemanotfound": "架构未找到",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1架构未找到。",
 	"proofreadpage-disambiguationspage": "Template:disambig",
