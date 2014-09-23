@@ -175,7 +175,7 @@ $specialPageAliases['tr'] = array(
 	'PagesWithoutScans' => array( 'TaramasızSayfalar' ),
 );
 
-/** vèneto (vèneto) */
+/** Venetian (vèneto) */
 $specialPageAliases['vec'] = array(
 	'IndexPages' => array( 'PagineDeIndice' ),
 	'PagesWithoutScans' => array( 'PagineSensaScansion' ),
