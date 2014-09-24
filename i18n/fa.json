@@ -12,7 +12,8 @@
 			"Wayiran",
 			"ZxxZxxZ",
 			"جواد",
-			"Alirezaaa"
+			"Alirezaaa",
+			"MohandesWiki"
 		]
 	},
 	"indexpages": "فهرست صفحه‌های نمایه",
@@ -62,7 +63,7 @@
 	"proofreadpage_image_message": "پیوند به صفحهٔ اندیس",
 	"proofreadpage_page_status": "وضعیت صفحه",
 	"proofreadpage_js_attributes": "نویسنده عنوان سال ناشر",
-	"proofreadpage_index_attributes": "نویسنده\nعنوان\nسال|سال انتشار\nناشر\nمنبع\nتصویر|تصویر روی جلد\nصفحه||20\nملاحظات||10",
+	"proofreadpage_index_attributes": "نویسنده\nعنوان\nYear|سال انتشار\nناشر\nمنبع\nImage|تصویر جلد\nPages||20\nRemarks||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|برگه|برگه}}",
 	"proofreadpage_specialpage_legend": "جستجو در صفحه‌های شاخص",
 	"proofreadpage_specialpage_searcherror": "خطا در موتور جستجو",
