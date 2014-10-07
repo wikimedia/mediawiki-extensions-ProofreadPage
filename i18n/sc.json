@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Andria",
-			"Marzedu"
+			"Marzedu",
+			"Taxandru"
 		]
 	},
 	"proofreadpage_image": "Immàgine",
 	"proofreadpage_index_listofpages": "Lista de is pàginas",
-	"proofreadpage_pages": "{{PLURAL:$1|pàgina|pàginas}}"
+	"proofreadpage_pages": "$2 {{PLURAL:$1|pàgina|pàginas}}"
 }
