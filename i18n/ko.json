@@ -9,7 +9,8 @@
 			"Priviet",
 			"ToePeu",
 			"Yknok29",
-			"아라"
+			"아라",
+			"Revi"
 		]
 	},
 	"indexpages": "목차 문서의 목록",
@@ -48,7 +49,7 @@
 	"proofreadpage_quality1_message": "이 문서는 아직 교정을 보지 않았습니다.",
 	"proofreadpage_quality2_message": "이 문서를 교정하는 중 문제가 있었습니다.",
 	"proofreadpage_quality3_message": "이 문서는 교정 작업을 거쳤습니다.",
-	"proofreadpage_quality4_message": "이 문서는 검증되었습니다.",
+	"proofreadpage_quality4_message": "이 문서는 검증되었습니다",
 	"proofreadpage_index_status": "색인 상테",
 	"proofreadpage_index_size": "문서 수",
 	"proofreadpage_specialpage_label_orderby": "정렬 기준:",
