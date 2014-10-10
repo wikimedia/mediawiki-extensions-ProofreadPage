@@ -274,6 +274,14 @@ $proofreadPageNamespacesNames['no'] = array(
 	'index_talk' => 'Indeksdiskusjon'
 );
 
+/** Oriya (ଓଡ଼ିଆ) */
+$proofreadPageNamespacesNames['or'] = array(
+	'page' => 'ପୃଷ୍ଠା',
+	'page_talk' => 'ପୃଷ୍ଠା_ଆଲୋଚନା',
+	'index' => 'ସୂଚୀ',
+	'index_talk' => 'ସୂଚୀ_ଆଲୋଚନା'
+);
+
 /** Polish (polski) */
 $proofreadPageNamespacesNames['pl'] = array(
 	'page' => 'Strona',
