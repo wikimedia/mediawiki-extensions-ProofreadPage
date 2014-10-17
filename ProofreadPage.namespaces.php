@@ -234,6 +234,14 @@ $proofreadPageNamespacesNames['kn'] = array(
 	'index_talk' =>  'ಪರಿವಿಡಿ_ಚರ್ಚೆ'
 );
 
+/** Korean (한국어) */
+$proofreadPageNamespacesNames['ko'] = array(
+	'page' => '페이지',
+	'page_talk' => '페이지토론',
+	'index' => '색인',
+	'index_talk' => '색인토론',
+);
+
 /** Latin (Latina) */
 $proofreadPageNamespacesNames['la'] = array(
 	'page' => 'Pagina',
