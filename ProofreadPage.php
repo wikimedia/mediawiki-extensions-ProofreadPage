@@ -85,7 +85,7 @@ $wgAutoloadClasses['ProofreadPage\Parser\PagequalityTagParser'] = $dir . 'includ
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'ProofreadPage',
-	'author'         => 'ThomasV',
+	'author'         => array( 'ThomasV', 'Thomas Pellissier Tanon' ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Proofread_Page',
 	'descriptionmsg' => 'proofreadpage_desc',
 );
