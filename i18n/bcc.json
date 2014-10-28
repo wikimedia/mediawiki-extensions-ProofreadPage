@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Mostafadaneshvar",
-			"RigiMahnoor"
+			"RigiMahnoor",
+			"Baloch Afghanistan"
 		]
 	},
 	"indexpages": "لیستء چه اولی تاکان",
 	"pageswithoutscans": "تاکان بئ اسکنء",
 	"proofreadpage_desc": "اجازه دن مقایسه متن گون اصلی اسکن",
-	"proofreadpage_image": "عکس",
+	"proofreadpage_image": "اکس",
 	"proofreadpage_index": "ایندکس",
 	"proofreadpage_index_expected": "ارور: بن تاکء لوٹیت",
 	"proofreadpage_nosuch_index": "ارور: چوشین بن تاکئ پیداگ نبوت",
@@ -48,7 +49,7 @@
 	"proofreadpage_specialpage_label_key": "شوهاز:",
 	"proofreadpage_specialpage_label_sortascending": "صعودی نز آرتن",
 	"proofreadpage_alphabeticalorder": "نز آرتن آلفابتء درورء",
-	"proofreadpage_index_listofpages": "لیست صفحات",
+	"proofreadpage_index_listofpages": "تاکدیمانی لیست",
 	"proofreadpage_image_message": "لینک په صفحه اول",
 	"proofreadpage_page_status": "وضعیت صفحه",
 	"proofreadpage_js_attributes": "نویسوک عنوان سال ناشر کنوک",
@@ -76,5 +77,5 @@
 	"proofreadpage-indexoai-error-schemanotfound": "سرجمین طرح پیداگ نبوت",
 	"proofreadpage-indexoai-error-schemanotfound-text": " $1  سرجمین طرح پیداگ نبوت.",
 	"proofreadpage-disambiguationspage": "Template:رفع ناسرپدی",
-	"content-model-proofread-page": "تاک: تاک"
+	"content-model-proofread-page": "تاکدیم: تاکدیم"
 }

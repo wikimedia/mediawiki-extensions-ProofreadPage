@@ -58,7 +58,7 @@
 	"proofreadpage_page_status": "Статус страницы",
 	"proofreadpage_js_attributes": "Автор Название Год Издательство",
 	"proofreadpage_index_attributes": "Автор\nЗаголовок\nГод|Год публикации\nИздатель\nИсточник\nИзображение|Изображение обложки\nСтраниц||20\nПримечания||10",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|страница|страниц|страницы}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|страница|страницы|страниц}}",
 	"proofreadpage_specialpage_legend": "Поиск индексных страниц",
 	"proofreadpage_specialpage_searcherror": "Ошибка в поисковой системе",
 	"proofreadpage_specialpage_searcherrortext": "Поисковая система не работает. Извините за причиненные неудобства.",
