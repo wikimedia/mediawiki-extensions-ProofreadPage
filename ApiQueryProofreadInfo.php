@@ -86,6 +86,9 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'prop' => array(
@@ -96,10 +99,16 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Return information about configuration of ProofreadPage extension';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&meta=proofreadinfo',
@@ -108,7 +117,15 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&meta=proofreadinfo'
+				=> 'apihelp-query+proofreadinfo-example-1',
+			'action=query&meta=proofreadinfo&piprop=namespaces'
+				=> 'apihelp-query+proofreadinfo-example-3',
+		);
 	}
 }

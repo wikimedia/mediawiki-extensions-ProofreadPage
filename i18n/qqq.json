@@ -81,5 +81,11 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Title of the error when a requested XML Schema does not exist.",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Text of the error when a requested XML schema does not exist. Parameters:\n* $1 is name of the schema.",
 	"proofreadpage-disambiguationspage": "This message is the name of the template used for marking disambiguation pages. It is used to find all pages which link to disambiguation pages.\n\n{{doc-important|Don't translate the \"Template:\" part!}}\n{{Identical|Template:disambig}}",
-	"content-model-proofread-page": "The name for Page: pages item content model, used when describing what type of content a page contains."
+	"content-model-proofread-page": "The name for Page: pages item content model, used when describing what type of content a page contains.",
+	"apihelp-query+proofread-description": "{{doc-apihelp-description|query+proofread}}",
+	"apihelp-query+proofread-example-1": "{{doc-apihelp-example|query+proofread}}",
+	"apihelp-query+proofreadinfo-description": "{{doc-apihelp-description|query+proofreadinfo}}",
+	"apihelp-query+proofreadinfo-param-prop": "{{doc-apihelp-param|query+proofreadinfo|prop}}",
+	"apihelp-query+proofreadinfo-example-1": "{{doc-apihelp-example|query+proofreadinfo}}",
+	"apihelp-query+proofreadinfo-example-3": "{{doc-apihelp-example|query+proofreadinfo}}"
 }
