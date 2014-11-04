@@ -63,12 +63,12 @@
 	"proofreadpage-section-tools": "Strumiente proofread",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Atro",
-	"proofreadpage-button-toggle-visibility-label": "Vere/nasconde testata e piè dda paggena",
+	"proofreadpage-button-toggle-visibility-label": "Fà verè/annascunne testata e piere paggena",
 	"proofreadpage-button-zoom-out-label": "Zoom a vascio",
 	"proofreadpage-button-reset-zoom-label": "Arrepiglia 'o zoom origgenale",
 	"proofreadpage-button-zoom-in-label": "Zoom avanzato",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizzuntale",
-	"proofreadpage-pageinfo-status": "Stato 'e cuntrollo d&#39;'a lettura",
+	"proofreadpage-pageinfo-status": "Stato 'e cuntrollo d' 'a lettura",
 	"proofreadpage-preferences-showheaders-label": "Vere a testata e 'o piè dda paggena durante o' càgnamento ddo namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usa 'o layout orrizzontale durante 'o càgnamento dint'ô namespace {{ns:page}}",
 	"proofreadpage-indexoai-repositoryName": "Metadati dde libbri 'e {{SITENAME}}",
@@ -76,5 +76,11 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema nun truvato",
 	"proofreadpage-indexoai-error-schemanotfound-text": "'O schema $1 nun è stato truovato.",
 	"proofreadpage-disambiguationspage": "Template:disambigua",
-	"content-model-proofread-page": "Paggena: paggena"
+	"content-model-proofread-page": "Paggena: paggena",
+	"apihelp-query+proofread-description": "Tuorna nfurmaziune ncopp' 'o stato 'e proofread 'e mò d' 'e paggene date.",
+	"apihelp-query+proofread-example-1": "Tuorna 'o stato 'e proofread p' 'e paggene dint' 'o namespace 250",
+	"apihelp-query+proofreadinfo-description": "Tuorna nfurmaziune ncopp' 'e mpustaziune d' 'a extension ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Quale proprietà proofread se tuorneno:\n;namespaces:Nfurmaziune ncopp' 'o namespace Page e Index.\n;qualitylevels:Elenco d' 'e livell' 'e qualità d' 'o proofread.",
+	"apihelp-query+proofreadinfo-example-1": "Tuorna nfurmaziune predeterminate",
+	"apihelp-query+proofreadinfo-example-3": "Tuorna nfurmaziune predeterminate"
 }

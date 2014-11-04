@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Max20091"
 		]
 	},
 	"indexpages": "Danh sách các trang mục lục",
@@ -76,5 +77,6 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Không tìm thấy lược đồ",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Không tìm thấy lược đồ $1.",
 	"proofreadpage-disambiguationspage": "Template:Trang_định_hướng",
-	"content-model-proofread-page": "trang Trang:"
+	"content-model-proofread-page": "trang Trang:",
+	"apihelp-query+proofreadinfo-example-1": "Trở lại thông tin mặc định"
 }

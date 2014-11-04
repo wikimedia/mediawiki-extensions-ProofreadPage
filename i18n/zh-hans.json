@@ -87,5 +87,11 @@
 	"proofreadpage-indexoai-error-schemanotfound": "架构未找到",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1架构未找到。",
 	"proofreadpage-disambiguationspage": "Template:disambig",
-	"content-model-proofread-page": "页面：页面"
+	"content-model-proofread-page": "页面：页面",
+	"apihelp-query+proofread-description": "返回有关指定页面当前校对状态的信息。",
+	"apihelp-query+proofread-example-1": "返回250名字空间页面的校对状态",
+	"apihelp-query+proofreadinfo-description": "返回有关ProofreadPage扩展配置的信息。",
+	"apihelp-query+proofreadinfo-param-prop": "要获取的校对属性：\n;namespaces:有关Page和Index名字空间的信息。\n;qualitylevels:校对质量等级列表。",
+	"apihelp-query+proofreadinfo-example-1": "返回默认信息",
+	"apihelp-query+proofreadinfo-example-3": "返回名字空间信息"
 }
