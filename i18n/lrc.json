@@ -18,7 +18,7 @@
 	"proofreadpage_indexdupe": "چسب ون تكرار بيه",
 	"proofreadpage_indexdupetext": "بلگيا نتونن بيشتر د يكی د بلگه اصلی ليست بوئن",
 	"proofreadpage_nologin": "نبوئه وارد بوئيد",
-	"proofreadpage_nologintext": "شما واس [[ویجه:وامین اومائن کارور|وامین اومائه]]بويئت سی آلشت كردن شلك غلط گئری ای بلگه.",
+	"proofreadpage_nologintext": "شما واس [[ویجه:وامین اومائن کاریار|وامین اومائه]]بويئت سی آلشت كردن شلك غلط گئری ای بلگه.",
 	"proofreadpage_notallowed": "اجازه سی آلشت دئن نئ",
 	"proofreadpage_notallowedtext": "شما اجازه ناريت شلك غلط گئری ای بلگه نه آلشت بكيد",
 	"proofreadpage_dataconfig_badformatted": "اشتوا د راست كرن دونسمنيا",
@@ -76,5 +76,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "طرح ون پيدا نبی",
 	"proofreadpage-indexoai-error-schemanotfound-text": "طرح ون $1 اصلا پيدا نبی .",
 	"proofreadpage-disambiguationspage": "پيش قالو:disambig",
-	"content-model-proofread-page": "بلگه:بلگه"
+	"content-model-proofread-page": "بلگه:بلگه",
+	"apihelp-query+proofreadinfo-example-1": "ؤرئشت دئن دونسمنیا پیش فرض",
+	"apihelp-query+proofreadinfo-example-3": "ؤرئشت دئن دونسمنیا نومجا"
 }

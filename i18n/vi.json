@@ -78,5 +78,5 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Không tìm thấy lược đồ $1.",
 	"proofreadpage-disambiguationspage": "Template:Trang_định_hướng",
 	"content-model-proofread-page": "trang Trang:",
-	"apihelp-query+proofreadinfo-example-1": "Trở lại thông tin mặc định"
+	"apihelp-query+proofreadinfo-example-1": "Cho ra thông tin mặc định"
 }
