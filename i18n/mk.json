@@ -76,5 +76,11 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Шемата не е пронајдена",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Шемите $1 не се пронајдени.",
 	"proofreadpage-disambiguationspage": "Template:Појаснување",
-	"content-model-proofread-page": "Страница: страница"
+	"content-model-proofread-page": "Страница: страница",
+	"apihelp-query+proofread-description": "Дава информации за тековната состојба на проверката на дадени страници.",
+	"apihelp-query+proofread-example-1": "Дај состојба на проверката на страниците во именскиот простор 250",
+	"apihelp-query+proofreadinfo-description": "Дај информации за поставеноста на додатокот ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Кои својства на проверката да се дадат:\n;namespaces: Информации за именските простори Страница и Индекс.\n;qualitylevels: Список на степените на квалитет на проверка.",
+	"apihelp-query+proofreadinfo-example-1": "Дај стандардни информации",
+	"apihelp-query+proofreadinfo-example-3": "Дај информации за именскиот простор"
 }
