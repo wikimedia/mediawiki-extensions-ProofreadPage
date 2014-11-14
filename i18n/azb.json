@@ -4,7 +4,8 @@
 			"Amir a57",
 			"E THP",
 			"Ebrahimi-amir",
-			"Mousa"
+			"Mousa",
+			"Koroğlu"
 		]
 	},
 	"indexpages": "ایندکس صحیفه‌لری‌نین لیستی",
@@ -78,5 +79,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "سئچمه تاپمادی",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 شئماسی آشکار ائدیلمه‌میشدیر.",
 	"proofreadpage-disambiguationspage": "Template:دقیقلشدیرمه",
-	"content-model-proofread-page": "صحیفه: صحیفه"
+	"content-model-proofread-page": "صحیفه: صحیفه",
+	"apihelp-query+proofreadinfo-example-1": "ایلکین بیلگی‌لری قایتار",
+	"apihelp-query+proofreadinfo-example-3": "آد فضاسی بیلگی‌لرینی قایتار"
 }
