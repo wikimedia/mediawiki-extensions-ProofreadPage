@@ -12,7 +12,8 @@
 			"Olli",
 			"Str4nd",
 			"VezonThunder",
-			"ZeiP"
+			"ZeiP",
+			"Pxos"
 		]
 	},
 	"indexpages": "Luettelo hakemistosivuista",
@@ -74,5 +75,7 @@
 	"proofreadpage-button-zoom-out-label": "Loitonna",
 	"proofreadpage-button-reset-zoom-label": "Alkuperäinen koko",
 	"proofreadpage-button-zoom-in-label": "Lähennä",
-	"proofreadpage-button-toggle-layout-label": "Pystysuora/vaakasuora ulkoasu"
+	"proofreadpage-button-toggle-layout-label": "Pystysuora/vaakasuora ulkoasu",
+	"proofreadpage-preferences-showheaders-label": "Näytä ylätunniste ja alatunniste kun muokataan nimiavaruudessa {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "Käytä vaakatasoista (allekkaista) näkymää kun muokataan nimiavaruudessa {{ns:page}}"
 }
