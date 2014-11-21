@@ -224,6 +224,12 @@
 			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
 			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 		} );
+
+		// load the "dialogs" module of WikiEditor if enabled , bug: 72960
+		if( mw.user.options.get( 'usebetatoolbar-cgd' ) ) {
+			mw.loader.load('ext.wikiEditor.dialogs');
+		}
+		// TODO: other modules of WikiEditor may miss, see bug 72960.
 	}
 
 	/**
