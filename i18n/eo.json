@@ -78,5 +78,10 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema ne trovita",
 	"proofreadpage-indexoai-error-schemanotfound-text": "La skemo $1 ne estis trovita.",
 	"proofreadpage-disambiguationspage": "Template:Apartigilo",
-	"content-model-proofread-page": "Paĝo: paĝo"
+	"content-model-proofread-page": "Paĝo: paĝo",
+	"apihelp-query+proofread-description": "Redonas informon pri nuntempa stato de provlegado de la liverita paĝo.",
+	"apihelp-query+proofread-example-1": "Redonas staton de provlegado de paĝoj en la nomspaco 250",
+	"apihelp-query+proofreadinfo-description": "Redonas informon pri konfiguro de la etendaĵo ProvlegPaĝo",
+	"apihelp-query+proofreadinfo-example-1": "Redonas defaŭltan informon",
+	"apihelp-query+proofreadinfo-example-3": "Redonas informon pri nomspaco"
 }
