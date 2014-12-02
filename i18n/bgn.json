@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Baloch Afghanistan"
+		]
+	},
+	"indexpages": "نمایه ئی تاکدیمانی لڑ\t لیست",
+	"pageswithoutscans": "بی سکنین تاکدیمان",
+	"proofreadpage_image": "اکس",
+	"proofreadpage_index": "ایندیکس",
+	"proofreadpage_index_expected": "خطا: شاخصی موجودیت پیش‌بینی‌بوته اینت",
+	"proofreadpage_nosuch_index": "خطا: جوانین ایندیکسی نه اینت",
+	"proofreadpage_nosuch_file": "حطا: ای جوانین فایلی نه اینت",
+	"proofreadpage_badpage": "جوانین فرمتی نه اینت",
+	"proofreadpage_badpagetext": "تاکدیمی که شمائا لوٹیت ذخیره بکنیت٬ جوان نه اینت.",
+	"proofreadpage_indexdupe": "مثنی ئین لینک",
+	"proofreadpage_nextpage": "دیگرین تاکدیم",
+	"proofreadpage_prevpage": "دیمتیرین تاکدیم",
+	"proofreadpage_header": "عنوان (noinclude):",
+	"proofreadpage_footer": "ورئکی جهلگ نوشت (noinclude):",
+	"proofreadpage_quality0_category": "بی متن",
+	"proofreadpage_quality1_category": "دیسته نه بوته",
+	"proofreadpage_quality2_category": "مشکل‌والا",
+	"proofreadpage_quality3_category": "دیسته بوته",
+	"proofreadpage_quality4_category": "تأییدبوته",
+	"proofreadpage_index_size": "تاکدیمانی نمبر",
+	"proofreadpage_specialpage_label_key": "گشتین:",
+	"proofreadpage-group-other": "دیگرین",
+	"content-model-proofread-page": "تاکدیم: تاکدیم"
+}
