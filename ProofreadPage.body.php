@@ -567,16 +567,15 @@ class ProofreadPage {
 		$q3 = $n3 * 100 / $n;
 		$q4 = $n4 * 100 / $n;
 		$qe = $ne * 100 / $n;
-		$void_cell = $ne ? "<td align=center style='border-style:dotted;border-width:1px;' width=\"{$qe}\"></td>" : '';
-		$output = "<table class=\"pr_quality\" style=\"line-height:40%;\" border=0 cellpadding=0 cellspacing=0 ><tr>
-<td align=center >&#160;</td>
-<td align=center class='quality4' width=\"$q4\"></td>
-<td align=center class='quality3' width=\"$q3\"></td>
-<td align=center class='quality2' width=\"$q2\"></td>
-<td align=center class='quality1' width=\"$q1\"></td>
-<td align=center class='quality0' width=\"$q0\"></td>
-$void_cell
-</tr></table>";
+		$void_cell = $ne ? '<td style="width:' . $qe . 'px;"></td>' : '';
+		$output = '<table class="pr_quality"><tr>
+<td class="quality4" style="width:' . $q4 . 'px;"></td>
+<td class="quality3" style="width:' . $q3 . 'px;"></td>
+<td class="quality2" style="width:' . $q2 . 'px;"></td>
+<td class="quality1" style="width:' . $q1 . 'px;"></td>
+<td class="quality0" style="width:' . $q0 . 'px;"></td>
+' . $void_cell . '
+</tr></table>';
 		$out->setSubtitle( $out->getSubtitle() . $output );
 		return true;
 	}

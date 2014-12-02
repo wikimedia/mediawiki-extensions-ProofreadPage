@@ -177,6 +177,7 @@ $wgResourceModules += array(
 	),
 	'ext.proofreadpage.article' => $prpResourceTemplate + array(
 		'scripts' => 'article/ext.proofreadpage.article.js',
+		'styles' => 'article/ext.proofreadpage.article.css',
 		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
 	'ext.proofreadpage.index' => $prpResourceTemplate + array(
