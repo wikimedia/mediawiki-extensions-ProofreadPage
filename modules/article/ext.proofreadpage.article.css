@@ -1,14 +1,12 @@
 .pr_quality {
 	border-collapse: separate;
 	border-spacing: 0px 0px;
-	border-width: 1px;
-	border-style: dotted;
-	line-height: 2em;
-	margin: -0.45em 0.00em 0.00em 0.01em;
+	border: 1px dotted #B8B8B8;
 	text-align: center;
+	width: 100px;
 }
 
 .pr_quality td {
 	padding: 0;
-	height: 0.2em;
+	height: 0.4em;
 }

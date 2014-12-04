@@ -567,15 +567,17 @@ class ProofreadPage {
 		$q3 = $n3 * 100 / $n;
 		$q4 = $n4 * 100 / $n;
 		$qe = $ne * 100 / $n;
-		$void_cell = $ne ? '<td style="width:' . $qe . 'px;"></td>' : '';
-		$output = '<table class="pr_quality"><tr>
-<td class="quality4" style="width:' . $q4 . 'px;"></td>
-<td class="quality3" style="width:' . $q3 . 'px;"></td>
-<td class="quality2" style="width:' . $q2 . 'px;"></td>
-<td class="quality1" style="width:' . $q1 . 'px;"></td>
-<td class="quality0" style="width:' . $q0 . 'px;"></td>
+		$void_cell = $ne ? '<td class="qualitye" style="width:' . $qe . '%;"></td>' : '';
+		$output = '<table class="pr_quality">
+<tr>
+<td class="quality4" style="width:' . $q4 . '%;"></td>
+<td class="quality3" style="width:' . $q3 . '%;"></td>
+<td class="quality2" style="width:' . $q2 . '%;"></td>
+<td class="quality1" style="width:' . $q1 . '%;"></td>
+<td class="quality0" style="width:' . $q0 . '%;"></td>
 ' . $void_cell . '
-</tr></table>';
+</tr>
+</table>';
 		$out->setSubtitle( $out->getSubtitle() . $output );
 		return true;
 	}
