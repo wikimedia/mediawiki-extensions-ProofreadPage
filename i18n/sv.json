@@ -87,5 +87,11 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schemat hittades inte",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Schemat $1 har inte hittats.",
 	"proofreadpage-disambiguationspage": "Template:förgrening",
-	"content-model-proofread-page": "Sida: sida"
+	"content-model-proofread-page": "Sida: sida",
+	"apihelp-query+proofread-description": "Returnerar information om den aktuella korrekturläsningsstatusen för den angivna sidan.",
+	"apihelp-query+proofread-example-1": "Returnerar korrekturläsningsstatusen för sidor i namnrymd 250",
+	"apihelp-query+proofreadinfo-description": "Returnerar information om konfigurationen av ProofreadPage-tillägget.",
+	"apihelp-query+proofreadinfo-param-prop": "Vilka korrekturläsningsegenskaper som ska hämtas:\n;namespaces:Information om sid- och indexnamnrymder.\n;qualitylevels:Lista över nivåer för korrekturläsningskvalitet.",
+	"apihelp-query+proofreadinfo-example-1": "Returnera standardinformation",
+	"apihelp-query+proofreadinfo-example-3": "Returnera namnrymdsinformation"
 }
