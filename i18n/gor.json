@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Si Gam Acèh"
+		]
+	},
+	"indexpages": "Dapeuta laman indèks",
+	"pageswithoutscans": "Laman hana geukalön",
+	"proofreadpage_image": "Gamba",
+	"proofreadpage_index": "Indèks",
+	"proofreadpage_index_expected": "Seunalah: Peureulèë indèks",
+	"proofreadpage_nosuch_index": "Seunalah: Hana indèks",
+	"proofreadpage_nosuch_file": "Seunalah: Hana beureukaih",
+	"proofreadpage_badpage": "Salah format",
+	"proofreadpage_badpagetext": "Format laman nyang keumeung neukeubah salah.",
+	"proofreadpage_indexdupe": "Peuganda peunawôt",
+	"proofreadpage_nologin": "Goh tamöng log",
+	"proofreadpage_notallowed": "Neuubah hana geupeuidin",
+	"proofreadpage_dataconfig_badformatted": "Bug lam konfigurasi data",
+	"proofreadpage_number_expected": "Seunalah: Neupasoë angka",
+	"proofreadpage_interval_too_large": "Seunalah: Interval rayek that"
+}
