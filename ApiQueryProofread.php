@@ -64,7 +64,15 @@ class ApiQueryProofread extends ApiQueryBase {
 
 		$api = new ApiMain($params);
 		$api->execute();
-		$data = $api->getResultData();
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$data = $api->getResult()->getResultData();
+			$pages = ApiResult::removeMetadataNonRecursive(
+				(array)$data['query']['pages']
+			);
+		} else {
+			$data = $api->getResultData();
+			$pages = $data['query']['pages'];
+		}
 		unset( $api );
 
 		if ( array_key_exists( 'error', $data ) ) {
@@ -72,7 +80,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		}
 
 		$result = $this->getResult();
-		foreach ( $data['query']['pages'] as $pageid => $data) {
+		foreach ( $pages as $pageid => $data) {
 			if ( !array_key_exists( 'categories', $data ) ) {
 				continue;
 			}

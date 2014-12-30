@@ -815,7 +815,11 @@ class ProofreadPage {
 
 		$api = new ApiMain( $params );
 		$api->execute();
-		$data = $api->getResultData();
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$data = $api->getResult()->getResultData();
+		} else {
+			$data = $api->getResultData();
+		}
 		unset( $api );
 
 		if ( array_key_exists( 'error', $data ) ) {
