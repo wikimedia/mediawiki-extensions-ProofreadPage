@@ -5,7 +5,8 @@
 			"Meno25",
 			"Orango",
 			"OsamaK",
-			"زكريا"
+			"زكريا",
+			"Abanima"
 		]
 	},
 	"indexpages": "قائمة صفحات الفهرس",
@@ -71,6 +72,7 @@
 	"proofreadpage-button-reset-zoom-label": "حجم أصلي",
 	"proofreadpage-button-zoom-in-label": "تكبير",
 	"proofreadpage-button-toggle-layout-label": "تخطيط أفقي أو رأسي",
+	"proofreadpage-pageinfo-status": "وضع عملية التحقق",
 	"proofreadpage-preferences-showheaders-label": "أظهر ترويس الصفحة وتذييلها عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "استخدم الواجهة الأفقية عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-indexoai-repositoryName": "بيانات ميتا للكتب من {{SITENAME}}",
@@ -78,5 +80,11 @@
 	"proofreadpage-indexoai-error-schemanotfound": "المخطط لم يتم العثور عليه",
 	"proofreadpage-indexoai-error-schemanotfound-text": "المخطط $1 لم يتم العثور عليه.",
 	"proofreadpage-disambiguationspage": "Template:توضيح",
-	"content-model-proofread-page": "الصفحة: صفحة"
+	"content-model-proofread-page": "الصفحة: صفحة",
+	"apihelp-query+proofread-description": "يعطي المعلومات حول وضع عملية التحقق للصفحات المختارة.",
+	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
+	"apihelp-query+proofreadinfo-description": "إعطاء المعلومات عن إعدادات امتداد ProofreadPage",
+	"apihelp-query+proofreadinfo-param-prop": "ما هي خصائص عملية التحقق المطلوب الحصول عليها:\n;namespaces:Information عن نطاقي الصفحة والدليل.\n;qualitylevels:List عن مستويات جودة عملية التحقق.",
+	"apihelp-query+proofreadinfo-example-1": "إعطاء المعلومات الافتراضية",
+	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات"
 }
