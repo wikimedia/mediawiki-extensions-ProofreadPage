@@ -9,7 +9,8 @@
 			"Glavkos",
 			"Konsnos",
 			"Omnipaedista",
-			"ZaDiak"
+			"ZaDiak",
+			"Αντιγόνη"
 		]
 	},
 	"indexpages": "Κατάλογος σελίδων ευρετηρίου",
@@ -70,5 +71,6 @@
 	"proofreadpage-button-zoom-out-label": "Σμίκρυνση",
 	"proofreadpage-button-reset-zoom-label": "Επαναφορά ζουμ",
 	"proofreadpage-button-zoom-in-label": "Μεγέθυνση",
-	"proofreadpage-button-toggle-layout-label": "Κάθετη / οριζόντια διάταξη"
+	"proofreadpage-button-toggle-layout-label": "Κάθετη / οριζόντια διάταξη",
+	"proofreadpage-preferences-showheaders-label": "Να εμφανίζεται η κεφαλίδα και το υποσέλιδο όταν επεξεργάζεστε σελίδες με πρόθεμα {{ns:page}}"
 }
