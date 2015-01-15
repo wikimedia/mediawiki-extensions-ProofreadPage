@@ -68,6 +68,7 @@
 	"proofreadpage-button-reset-zoom-label": "Dimenzione origgenale",
 	"proofreadpage-button-zoom-in-label": "Cchiù granne",
 	"proofreadpage-button-toggle-layout-label": "Disposizione verticale/orizzondale",
+	"proofreadpage-pageinfo-status": "State d'a verifiche",
 	"proofreadpage-preferences-showheaders-label": "Fà vedè testate e piè pàgene quanne cange jndr'à 'u namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Ause 'a disposizione orizzondale quanne cange jndr'à 'u namespace {{ns:page}}",
 	"proofreadpage-indexoai-repositoryName": "Metadate de libbre da {{SITENAME}}",
@@ -75,5 +76,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Scheme non acchiate",
 	"proofreadpage-indexoai-error-schemanotfound-text": "'U scheme $1 non g'ha state acchiate.",
 	"proofreadpage-disambiguationspage": "Template:disambig",
-	"content-model-proofread-page": "Page: pàgene"
+	"content-model-proofread-page": "Page: pàgene",
+	"apihelp-query+proofreadinfo-example-1": "Tuèrne 'mbormaziune de base",
+	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base"
 }
