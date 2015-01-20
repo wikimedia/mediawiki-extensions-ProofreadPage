@@ -77,6 +77,10 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "'U scheme $1 non g'ha state acchiate.",
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"content-model-proofread-page": "Page: pàgene",
+	"apihelp-query+proofread-description": "Torne le 'mbormaziune sus a 'u state de mò de le verifiche pe le pàggene scacchiate.",
+	"apihelp-query+proofread-example-1": "Torne 'u state d'a verifiche pe le pàggene jndr'à 'u namespace 250",
+	"apihelp-query+proofreadinfo-description": "Torne le 'mbormaziune sus a configurazione de l'estenzione ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Quale probbietà de verifiche da pigghià:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels.",
 	"apihelp-query+proofreadinfo-example-1": "Tuèrne 'mbormaziune de base",
 	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base"
 }
