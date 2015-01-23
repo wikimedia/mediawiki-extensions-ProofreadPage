@@ -60,7 +60,7 @@
 	"proofreadpage_image_message": "목차 페이지로",
 	"proofreadpage_page_status": "문서 상태",
 	"proofreadpage_js_attributes": "저자 제목 출판년도 출판사",
-	"proofreadpage_index_attributes": "저자\n제목\n연도|출판년도\n출판사\n출처\n그림|표지 그림\n쪽수||20\n주석||10",
+	"proofreadpage_index_attributes": "저자\n제목\n발행년도|출판년도\n출판사\n출처\n그림|표지 그림\n쪽별 색인||20\n책갈피||10",
 	"proofreadpage_pages": "{{PLURAL:$1|문서}} $2개",
 	"proofreadpage_specialpage_legend": "목차 문서 검색",
 	"proofreadpage_specialpage_searcherror": "검색 엔진에 오류",
