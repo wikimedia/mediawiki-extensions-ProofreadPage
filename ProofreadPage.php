@@ -99,6 +99,7 @@ $wgExtensionCredits['other'][] = array(
 	'author'         => array( 'ThomasV', 'Thomas Pellissier Tanon' ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Proofread_Page',
 	'descriptionmsg' => 'proofreadpage_desc',
+	'license-name'   => 'GPL-2.0+',
 );
 
 # OAI-PMH
