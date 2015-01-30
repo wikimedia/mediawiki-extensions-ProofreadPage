@@ -706,19 +706,3 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		return $this->db->select( $tables, $fields, $conds, __METHOD__, $options );
 	}
 }
-
-
-/**
- * OAI error
- */
-class ProofreadIndexOaiError extends Exception {
-
-	public function __construct( $message = '', $code = '' ) {
-		$this->message = $message;
-		$this->code = $code;
-	}
-
-	public function getXML() {
-		return Xml::element( 'error', array( 'code' => $this->getCode() ), $this->getMessage() ) . "\n";
-	}
-}
