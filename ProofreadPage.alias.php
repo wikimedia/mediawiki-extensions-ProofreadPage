@@ -118,6 +118,7 @@ $specialPageAliases['ko'] = array(
 $specialPageAliases['lb'] = array(
 	'IndexPages' => array( 'Säiten_indexéieren' ),
 	'PagesWithoutScans' => array( 'Säiten_ouni_Scan' ),
+	'ProofreadIndexOai' => array( 'Index_iwwerliesen' ),
 );
 
 /** Macedonian (македонски) */
