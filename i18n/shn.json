@@ -4,6 +4,9 @@
 			"Khun Sar"
 		]
 	},
+	"indexpages": "သဵၼ်ႈမၢႆၼႃႈလိၵ်ႈၸီႉၼႄ",
+	"pageswithoutscans": "ၼႃႈလိၵ်ႈဢၼ်ပႆႇလႆႈသၵႅၼ်ႇ",
+	"proofreadpage_image": "ၶႅပ်းႁၢင်ႊ",
 	"proofreadpage_index": "တူဝ်ၸီႉၼႄ",
 	"proofreadpage_index_expected": "ၽိတ်းပိူင်ႈ :   တူဝ်ၸီႉၼႄဢၼ်မုင်ႈလၢမ်းဝႆႉ",
 	"proofreadpage_nosuch_index": "ၽိတ်းပိူင်ႈ : ဢမ်ႇမီးတူဝ်ၸီႉၼႄၸိူင်ႉၼၼ်",
@@ -16,10 +19,15 @@
 	"proofreadpage_nologintext": "သူတေလႆႈပဵၼ် [[Special:UserLogin|ၶဝ်ႈၸႂ်ႉတိုဝ်းဝႆႉ]] တႃႇတေမူၼ်ႉမႄးၵၢၼ်ၵုမ်းဢၢၼ်ႇၼႃႈလိၵ်ႈတင်းလၢႆ",
 	"proofreadpage_notallowed": "ဢမ်ႇပၼ်လႅၵ်ႈလၢႆႊ",
 	"proofreadpage_notallowedtext": "ဢမ်ႇပၼ်မူၼ်ႉမႄးလႅၵ်ႈလၢႆႊၵၢၼ်ၵုမ်းဢၢၼ်ႇၼႃႈလိၵ်ႈဢၼ်ၼႆႉ",
+	"proofreadpage_dataconfig_badformatted": "မီးၿၵ်ႉဝႆႉ ၼႂ်းၵၢၼ်ဝၢင်းပိူင်ၻေႊထႃႇ",
 	"proofreadpage_number_expected": "ၽိတ်းပိူင်ႈ : ၵႃႊၶၼ်တူဝ်ၼပ်ႉဢၼ်ၶၢတ်ႈလၢမ်းဝႆႉ",
+	"proofreadpage_interval_too_large": "ၽိတ်းပိူင်ႈ: ၶၢဝ်းယၢမ်းၼႂ်းၵႄႈမၼ်းယၢဝ်းပူၼ်ႉတီႈ",
+	"proofreadpage_nextpage": "ၼႃႈလိၵ်ႈမႂ်ႇ",
+	"proofreadpage_prevpage": "ၼႃႈလိၵ်ႈဢၼ်ပူၼ်ႉမႃး",
 	"proofreadpage_header": "ႁူဝ်ၼႃႈလိၵ်ႈ(ဢမ်ႇပႆႇမီးဝႆႉ)",
 	"proofreadpage_body": "တွၼ်ႊတူဝ်ၼႃႈလိၵ်ႈ",
 	"proofreadpage_footer": "တိၼ်ၼႃႈလိၵ်ႈ (ဢမ်ႇပႆႇမီးဝႆႉ)",
+	"proofreadpage_quality0_category": "ဢမ်ႇမီးတူဝ်လိၵ်ႈ",
 	"proofreadpage_quality1_category": "ဢမ်ႇလႆႈၵုမ်းဢၢၼ်ႇဝႆႉ",
 	"proofreadpage_quality2_category": "မီးလွင်ႈၶွင်ႈၶမ်ဝႆႉ",
 	"proofreadpage_quality3_category": "ၵုမ်းဢၢၼ်ႇ",
@@ -63,5 +71,5 @@
 	"apihelp-query+proofread-description": "သူင်ႇၶိုၼ်းၶေႃႈမုၼ်းလွင်ႈတၢင်း ငဝ်းလၢႆးၵၢၼ်ၵုမ်းဢၢၼ်ႁင်းၼႃႈလိၵ်ႈဢၼ်ၼႄဝႆႉၸင်ႇၼႆႉ",
 	"apihelp-query+proofread-example-1": "သူင်ႇၶိုၼ်း ငဝ်းလၢႆးၵၢၼ်ၵုမ်းဢၢၼ်ႇ တႃႇၼႃႈလိၵ်ႈၸိူဝ်းဢၼ်မီးၼႂ်းဢွင်ႇတီႈၸိုဝ်ႈသဵင် 250",
 	"apihelp-query+proofreadinfo-example-1": "သူင်ႇၶိုၼ်းၶေႃႈမုၼ်းလၢႆးပၵ်းၵဝ်ႇပိူင်ႇၵဝ်ႇ",
-	"apihelp-query+proofreadinfo-example-3": "သူင်ႇၶိုၼ်းၶေႃႈမုၼ်းဢွင်ႇတီႈၸိုဝ်ႈသဵင်"
+	"apihelp-query+proofreadinfo-example-3": "သူင်ႇၶိုၼ်းၶေႃႈမုၼ်းဢွင်ႈတီႈၸိုဝ်ႈသဵင်"
 }
