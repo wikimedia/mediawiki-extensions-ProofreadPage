@@ -75,5 +75,11 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Skemsidj ei fünjen",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Det skemsidj „$1“ as ei fünjen wurden.",
 	"proofreadpage-disambiguationspage": "Template:Muardüüdag artiikel",
-	"content-model-proofread-page": "Seite: sidj"
+	"content-model-proofread-page": "Seite: sidj",
+	"apihelp-query+proofread-description": "Dää informatjuun auer di uugenblakelk stant faan jodiar sidjen",
+	"apihelp-query+proofread-example-1": "Dää di uugenblakelk stant faan sidjen uun nöömrüm 250",
+	"apihelp-query+proofreadinfo-description": "Dää informatjuun auer't konfiguratjuun faan't ProofreadPage-ütjwidjang.",
+	"apihelp-query+proofreadinfo-param-prop": "Hük Proofread-dooten för\n;namespaces:Informatjuun auer Sidj- an Index-nöömrümer\n;qualitylevels:List faan Proofread-kwaliteeten",
+	"apihelp-query+proofreadinfo-example-1": "Dää standard-informatjuun",
+	"apihelp-query+proofreadinfo-example-3": "Dää informatjuun auer nöömrüm"
 }
