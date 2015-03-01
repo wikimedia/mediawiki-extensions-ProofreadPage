@@ -9,5 +9,10 @@
 	"proofreadpage_index": "Index",
 	"proofreadpage_nextpage": "ಮುಂದಿನ ಪುಟ",
 	"proofreadpage_prevpage": "ಹಿಂದಿನ ಪುಟ",
+	"proofreadpage_quality0_category": "ಪಠ್ಯವಿಲ್ಲದ",
+	"proofreadpage_quality1_category": "ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ",
+	"proofreadpage_quality3_category": "ಪರಿಶೀಲಿಸಿ",
+	"proofreadpage_quality4_category": "ಮಾನ್ಯ ಮಾಡಿದ",
+	"proofreadpage_quality1_message": "ಈ ಪುಟವನ್ನು ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ.",
 	"proofreadpage_pages": "{{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}"
 }
