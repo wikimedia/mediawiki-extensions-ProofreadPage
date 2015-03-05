@@ -15,10 +15,11 @@
 			"Urhixidur",
 			"VIGNERON",
 			"Verdy p",
-			"Wyz"
+			"Wyz",
+			"Weft"
 		]
 	},
-	"indexpages": "Liste des pages d'index",
+	"indexpages": "Liste des livres",
 	"pageswithoutscans": "Pages sans fac-similés",
 	"proofreadpage_desc": "Permet une comparaison facile entre le texte et sa numérisation originale",
 	"proofreadpage_image": "Fichier",
@@ -69,7 +70,7 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|page|pages}}",
 	"proofreadpage_specialpage_legend": "Rechercher dans les pages d’index",
 	"proofreadpage_specialpage_searcherror": "Erreur dans le moteur de recherche",
-	"proofreadpage_specialpage_searcherrortext": "Le moteur de recherche ne fonctionne pas. Désolé pour les inconvénients.",
+	"proofreadpage_specialpage_searcherrortext": "Le moteur de recherche ne fonctionne pas. Désolé pour la gêne occasionnée.",
 	"proofreadpage_source": "Source",
 	"proofreadpage_source_message": "Édition numérisée dont est issu ce texte",
 	"right-pagequality": "Modifier le drapeau de qualité de la page",
