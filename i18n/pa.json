@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Satdeep gill"
+			"Satdeep gill",
+			"Babanwalia"
 		]
 	},
 	"proofreadpage_image": "ਤਸਵੀਰ",
 	"proofreadpage_badpage": "ਗਲਤ ਫਾਰਮੈਟ",
 	"proofreadpage_nologin": "ਲਾਗਇਨ ਨਹੀਂ ਹੋ",
+	"proofreadpage_quality0_category": "ਲਿਖਤ ਤੋਂ ਬਿਨਾਂ",
 	"proofreadpage_specialpage_label_key": "ਖੋਜ:",
 	"proofreadpage_specialpage_label_sortascending": "ਵਧਦਾ ਕ੍ਰਮ",
 	"proofreadpage_index_listofpages": "ਸਫ਼ਿਆਂ ਦੀ ਸੂਚੀ",
