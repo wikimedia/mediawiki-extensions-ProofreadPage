@@ -2,13 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Cekli829",
-			"Khan27"
+			"Khan27",
+			"Dağlı95"
 		]
 	},
 	"proofreadpage_image": "Şəkil",
 	"proofreadpage_index": "İndeks",
 	"proofreadpage_badpage": "Yanlış format",
 	"proofreadpage_nextpage": "Növbəti səhifə",
+	"proofreadpage_quality0_category": "Mətnsiz",
+	"proofreadpage_quality2_category": "Problemli",
+	"proofreadpage_quality3_category": "Səhvlərin yoxlanması",
+	"proofreadpage_quality4_category": "Yoxlanılmış",
 	"proofreadpage_source": "Mənbə",
 	"proofreadpage-button-reset-zoom-label": "Orijinal ölçü"
 }
