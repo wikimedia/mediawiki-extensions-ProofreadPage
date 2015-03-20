@@ -5,5 +5,10 @@
 		]
 	},
 	"indexpages": "ليستة تاع باجات تاع الفهراس",
-	"pageswithoutscans": "صفحات بلا نسخة مصوّرة"
+	"pageswithoutscans": "صفحات بلا نسخة مصوّرة",
+	"proofreadpage_quality0_category": "بلا نصّ",
+	"proofreadpage_quality1_category": "ماشي مأكّدة",
+	"proofreadpage_quality2_category": "فيه مشكل",
+	"proofreadpage_quality3_category": "مصحّحة",
+	"proofreadpage_quality4_category": "مقبولة"
 }
