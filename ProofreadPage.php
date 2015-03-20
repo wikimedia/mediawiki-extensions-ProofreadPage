@@ -133,6 +133,7 @@ $wgAPIMetaModules['proofreadinfo'] = 'ApiQueryProofreadInfo';
 $wgAutoloadClasses['FixProofreadPagePagesContentModel'] = $dir . 'maintenance/fixProofreadPagePagesContentModel.php';
 
 # Group allowed to modify pagequality
+$wgAvailableRights[] = 'pagequality';
 $wgGroupPermissions['user']['pagequality'] = true;
 
 # Client-side resources
