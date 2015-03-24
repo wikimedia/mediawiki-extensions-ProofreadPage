@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Timming"
+			"Timming",
+			"Derslek"
 		]
 	},
-	"proofreadpage_nextpage": "алдагы бит"
+	"proofreadpage_nextpage": "алдагы бит",
+	"proofreadpage_quality1_category": "Укылмаган"
 }
