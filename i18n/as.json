@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bishnu Saikia",
-			"Gitartha.bordoloi"
+			"Gitartha.bordoloi",
+			"IKHazarika"
 		]
 	},
 	"indexpages": "সূচীৰ পৃষ্ঠাৰ তালিকা",
@@ -21,6 +22,8 @@
 	"proofreadpage_nologintext": "পৃষ্ঠাখনৰ প্ৰুফৰিডিং অৱস্থা সলাবলৈ আপুনি [[Special:UserLogin|লগ্‌ ইন]] কৰিব লাগিব।",
 	"proofreadpage_notallowed": "পৰিৱৰ্তনৰ অনুমতি নাই",
 	"proofreadpage_notallowedtext": "এই পৃষ্ঠাৰ প্ৰুফৰিডিং অৱস্থা সলাবলৈ আপোনাৰ অনুমতি নাই।",
+	"proofreadpage_dataconfig_badformatted": "তথ্যত বাগ (bug) সজ্জা",
+	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] পৃষ্ঠাটো ভালকৈ ফৰ্মেট JSON কৰা হোৱা নাই।",
 	"proofreadpage_number_expected": "ত্ৰুটি: সাংখ্যিক মূল্য আশা কৰা হৈছে",
 	"proofreadpage_interval_too_large": "ত্ৰুটি: ব্যৱধান অতি বেছি",
 	"proofreadpage_invalid_interval": "ত্ৰুটি: অবৈধ ব্যৱধান",
@@ -66,6 +69,17 @@
 	"proofreadpage-button-reset-zoom-label": "মূল আকাৰ",
 	"proofreadpage-button-zoom-in-label": "ডাঙৰ কৰক",
 	"proofreadpage-button-toggle-layout-label": "থিয়/পথালি সজ্জা",
+	"proofreadpage-pageinfo-status": "প্ৰুফৰিডিং স্থিতাৱস্থা",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} নামস্থানত সম্পাদনা কৰোঁতে শিৰোনামা আৰু পাদটীকা স্থান দেখুৱাওক",
-	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} নামস্থানত সম্পাদনা কৰোঁতে আনুভূমিক লে'আউট ব্যৱহাৰ কৰক।"
+	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} নামস্থানত সম্পাদনা কৰোঁতে আনুভূমিক লে'আউট ব্যৱহাৰ কৰক।",
+	"proofreadpage-indexoai-repositoryName": "{{SITENAME}}ৰ পৰা কিতাপৰ মেটাডেটা",
+	"proofreadpage-indexoai-eprint-content-text": "প্ৰুফৰিড পৃষ্টাৰ দ্বাৰা পৰিচালিত কিতাপৰ মেটাডেটা।",
+	"proofreadpage-indexoai-error-schemanotfound": "স্কেমা (schema) বিচাৰি পোৱা নগ'ল",
+	"proofreadpage-indexoai-error-schemanotfound-text": "$1 স্কেমা (schema) বিচাৰি পোৱা নগ'ল।",
+	"proofreadpage-disambiguationspage": "Template:দ্বৈৰ্থতা দূৰিকৰণ পৃষ্ঠা",
+	"content-model-proofread-page": "পৃষ্ঠা:পৃষ্ঠা",
+	"apihelp-query+proofread-description": "প্ৰদান কৰা পৃষ্ঠাসমূহৰ বৰ্তমান প্ৰুফৰিড স্থিতাৱস্থা বিষয়ে তথ্য প্ৰদান কৰে।",
+	"apihelp-query+proofread-example-1": "নামস্থান ২৫০ত থকা পৃষ্ঠাসমূহৰ প্ৰুফৰিড স্থিতাৱস্থা প্ৰদান কৰে",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage extensionৰ সজ্জাৰ বিষয়ে তথ্য প্ৰদান কৰে।",
+	"apihelp-query+proofreadinfo-param-prop": "কি কি প্ৰুফৰিড বিশেষত্ব পাব লাগে:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels ।"
 }
