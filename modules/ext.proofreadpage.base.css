@@ -14,3 +14,16 @@
 .quality0 {
 	background-color: #ddd;
 }
+
+.pr_quality {
+	border-collapse: separate;
+	border-spacing: 0 0;
+	border: 1px dotted #B8B8B8;
+	text-align: center;
+	max-width: 100%;
+}
+
+.pr_quality td {
+	padding: 0;
+	height: 0.6em;
+}

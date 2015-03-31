@@ -1,0 +1,14 @@
+.prp-indexpages-row {
+	display: table;
+	border-spacing: 10px 0;
+	white-space: nowrap;
+}
+
+.prp-indexpages-row > span {
+	display: table-cell;
+}
+
+.prp-indexpages-row .pr_quality {
+	display: inline-block;
+	height: 0.6em;
+}
