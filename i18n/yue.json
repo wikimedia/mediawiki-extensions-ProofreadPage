@@ -1,5 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Yueman"
+		]
+	},
 	"proofreadpage_desc": "容許簡易噉去比較原掃瞄同埋文字",
 	"proofreadpage_image": "圖像",
 	"proofreadpage_index": "索引",
@@ -9,10 +13,12 @@
 	"proofreadpage_body": "頁身 (去包含):",
 	"proofreadpage_footer": "尾 (唔包含):",
 	"proofreadpage_toggleheaders": "較唔包含小節可見性",
+	"proofreadpage_quality0_category": "無字",
 	"proofreadpage_quality1_category": "未校對",
 	"proofreadpage_quality2_category": "有問題",
 	"proofreadpage_quality3_category": "已校對",
 	"proofreadpage_quality4_category": "已認證",
+	"proofreadpage_quality1_message": "呢頁未有人校對過",
 	"proofreadpage_index_listofpages": "頁一覽",
 	"proofreadpage_image_message": "連到索引頁嘅連結",
 	"proofreadpage_page_status": "頁狀態",
