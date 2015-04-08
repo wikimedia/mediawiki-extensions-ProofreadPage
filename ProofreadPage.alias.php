@@ -38,6 +38,12 @@ $specialPageAliases['as'] = array(
 	'IndexPages' => array( 'সমল_পৃষ্ঠাসমূহ' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'IndexPages' => array( 'تاکدیمانی_لڑلیست' ),
+	'PagesWithoutScans' => array( 'بی_سکن_ئین_دیمان' ),
+);
+
 /** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'IndexPages' => array( 'PajennoùMeneger' ),
