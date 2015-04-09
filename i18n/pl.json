@@ -6,7 +6,8 @@
 			"Chrumps",
 			"Olgak85",
 			"Przemub",
-			"Sp5uhe"
+			"Sp5uhe",
+			"Ankry"
 		]
 	},
 	"indexpages": "Spis stron indeksów",
@@ -79,6 +80,6 @@
 	"proofreadpage-indexoai-eprint-content-text": "Metadane książek obsługiwanych przez ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Schematu nie znaleziono",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Schemat $1 nie został znaleziony.",
-	"proofreadpage-disambiguationspage": "Template:Ujednoznacznienie",
+	"proofreadpage-disambiguationspage": "Template:Disambig",
 	"content-model-proofread-page": "Strona: strona"
 }
