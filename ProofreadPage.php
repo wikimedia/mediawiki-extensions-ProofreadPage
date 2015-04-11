@@ -224,6 +224,7 @@ $wgHooks['APIEditBeforeSave'][] = 'ProofreadPage::onAPIEditBeforeSave';
 $wgHooks['EditFormPreloadText'][] = 'ProofreadPage::onEditFormPreloadText';
 $wgHooks['ParserTestTables'][] = 'ProofreadPage::onParserTestTables';
 $wgHooks['InfoAction'][] = 'ProofreadPage::onInfoAction';
+$wgHooks['SkinMinervaDefaultModules'][] = 'ProofreadPage::onSkinMinervaDefaultModules';
 
 
 

@@ -844,4 +844,15 @@ class ProofreadPage {
 			return $title->getLinkUrl( 'action=edit&redlink=1' );
 		}
 	}
+
+	public static function onSkinMinervaDefaultModules( Skin $skin, array& $modules ) {
+		if(
+			$skin->getTitle()->inNamespace( self::getIndexNamespaceId() ) ||
+			$skin->getTitle()->inNamespace( self::getPageNamespaceId() )
+		) {
+			unset( $modules['editor'] );
+		}
+
+		return true;
+	}
 }
