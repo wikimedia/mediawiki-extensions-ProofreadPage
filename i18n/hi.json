@@ -4,7 +4,8 @@
 			"Adithyavr",
 			"Ansumang",
 			"Kaustubh",
-			"Siddhartha Ghai"
+			"Siddhartha Ghai",
+			"రహ్మానుద్దీన్"
 		]
 	},
 	"proofreadpage_desc": "मूल पाठ और सद्य पाठ में फर्क आसानी से दर्शाती हैं",
@@ -24,6 +25,7 @@
 	"proofreadpage_quality2_category": "समस्याकारक",
 	"proofreadpage_quality3_category": "परिक्षण करें",
 	"proofreadpage_quality4_category": "प्रमाणित",
+	"proofreadpage_quality1_message": "यह पृष्ठ शोधित नही है",
 	"proofreadpage_index_listofpages": "पन्नों की सूची",
 	"proofreadpage_image_message": "अनुक्रम पन्ने के लिये कड़ी",
 	"proofreadpage_page_status": "पन्नेकी स्थिती",
