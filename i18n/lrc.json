@@ -80,6 +80,7 @@
 	"apihelp-query+proofread-description": "دونسمنیا نه د حال و بار وانئری بلگه یا نشو میه.",
 	"apihelp-query+proofread-example-1": "حال و بار وانئری بلگه یا نه د نوم جا ۲۵۰ نشو میه.",
 	"apihelp-query+proofreadinfo-description": "دونسمنیا نه د اندوم دیار کنی وانئری بلگه یا نشو میه.",
+	"apihelp-query+proofreadinfo-param-prop": "کو یکی د خصوصیات نه میهایت وانئری بکیت:\n;namespaces: دونسمنیا د نوم جا بلگه و نشونجا.\n;qualitylevels: یه گل نوم گه د ریتراز کیفی وانئریا.",
 	"apihelp-query+proofreadinfo-example-1": "ؤرئشت دئن دونسمنیا پیش فرض",
 	"apihelp-query+proofreadinfo-example-3": "ؤرئشت دئن دونسمنیا نومجا"
 }
