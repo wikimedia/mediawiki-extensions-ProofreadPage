@@ -66,7 +66,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		$api->execute();
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
 			$data = $api->getResult()->getResultData();
-			$pages = ApiResult::removeMetadataNonRecursive(
+			$pages = ApiResult::stripMetadataNonRecursive(
 				(array)$data['query']['pages']
 			);
 		} else {
