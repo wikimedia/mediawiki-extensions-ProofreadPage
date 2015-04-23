@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Calak",
-			"Muhammed taha"
+			"Muhammed taha",
+			"Asoxor"
 		]
 	},
 	"proofreadpage_image": "وێنە",
@@ -10,6 +11,7 @@
 	"proofreadpage_nologin": "لەژوورەوە نیت",
 	"proofreadpage_nextpage": "پەڕەی دواتر",
 	"proofreadpage_prevpage": "پەڕەی پێشوو",
+	"proofreadpage_quality0_category": "بەبێ دەق",
 	"proofreadpage_index_status": "چۆنێتیی پێرست",
 	"proofreadpage_index_size": "ژمارەی پەڕەکان",
 	"proofreadpage_specialpage_label_key": "گەڕان",
