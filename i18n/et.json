@@ -22,6 +22,7 @@
 	"proofreadpage_nologintext": "Pead lehekülje tõendusoleku muutmiseks [[Special:UserLogin|sisse logima]].",
 	"proofreadpage_notallowed": "Muudatus ei ole lubatud",
 	"proofreadpage_notallowedtext": "Sul pole lubatud lehekülje tõendusolekut muuta.",
+	"proofreadpage_dataconfig_badformatted": "Viga andmehäälestuses",
 	"proofreadpage_number_expected": "Tõrge: sisesta arv",
 	"proofreadpage_interval_too_large": "Tõrge: liiga suur vahemik",
 	"proofreadpage_invalid_interval": "Tõrge: vigane vahemik",

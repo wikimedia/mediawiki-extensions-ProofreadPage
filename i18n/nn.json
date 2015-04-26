@@ -29,6 +29,7 @@
 	"proofreadpage_quality2_category": "Problematisk",
 	"proofreadpage_quality3_category": "Korrekturlest",
 	"proofreadpage_quality4_category": "Validert",
+	"proofreadpage_quality1_message": "Sida er ikkje vorten korrekturlesen",
 	"proofreadpage_index_listofpages": "Lista over sider",
 	"proofreadpage_image_message": "Lenkja til indekssida",
 	"proofreadpage_page_status": "Sidestatus",
