@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"පසිඳු කාවින්ද",
-			"عثمان خان شاہ"
+			"عثمان خان شاہ",
+			"Syedalinaqinaqvi"
 		]
 	},
 	"indexpages": "فہرست صفحات کی فہرست",
@@ -13,6 +14,7 @@
 	"proofreadpage_nextpage": "اگلا صفحہ",
 	"proofreadpage_prevpage": "سابق صفحہ",
 	"proofreadpage_quality0_category": "ٹیکسٹ کے بغیر",
+	"proofreadpage_quality1_category": "غیر ترمیم شدہ",
 	"proofreadpage_quality2_category": "پریشانکن",
 	"proofreadpage_quality3_category": "پروفریڈ",
 	"proofreadpage_quality4_category": "پاتی",
