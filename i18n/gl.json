@@ -3,7 +3,8 @@
 		"authors": [
 			"Alma",
 			"Toliño",
-			"Xosé"
+			"Xosé",
+			"Elisardojm"
 		]
 	},
 	"indexpages": "Lista de páxinas índice",
@@ -77,5 +78,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Non se atopou o esquema",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Non se atopou o esquema \"$1\".",
 	"proofreadpage-disambiguationspage": "Template:Homónimos",
-	"content-model-proofread-page": "Páxina: páxina"
+	"content-model-proofread-page": "Páxina: páxina",
+	"apihelp-query+proofreadinfo-example-1": "Devolve información por defecto",
+	"apihelp-query+proofreadinfo-example-3": "Devolve información do espazo de nomes"
 }

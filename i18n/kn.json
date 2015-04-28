@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nayvik",
-			"Omshivaprakash"
+			"Omshivaprakash",
+			"VASANTH S.N."
 		]
 	},
 	"proofreadpage_image": "ಚಿತ್ರ",
@@ -11,6 +12,7 @@
 	"proofreadpage_prevpage": "ಹಿಂದಿನ ಪುಟ",
 	"proofreadpage_quality0_category": "ಪಠ್ಯವಿಲ್ಲದ",
 	"proofreadpage_quality1_category": "ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ",
+	"proofreadpage_quality2_category": "ಸಮಸ್ಯಾಪೂರ್ಣ",
 	"proofreadpage_quality3_category": "ಪರಿಶೀಲಿಸಿ",
 	"proofreadpage_quality4_category": "ಮಾನ್ಯ ಮಾಡಿದ",
 	"proofreadpage_quality1_message": "ಈ ಪುಟವನ್ನು ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ.",
