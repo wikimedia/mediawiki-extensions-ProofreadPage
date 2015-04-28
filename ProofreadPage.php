@@ -150,10 +150,12 @@ $wgResourceModules += array(
 		'dependencies' => array( 'jquery.ui.widget', 'jquery.ui.draggable', 'jquery.mousewheel' )
 	),
 	'ext.proofreadpage.base' => $prpResourceTemplate + array(
+		'position' => 'top',
 		'styles'  => 'ext.proofreadpage.base.css',
 		'targets' => array( 'mobile', 'desktop' ),
 	),
 	'ext.proofreadpage.page' => $prpResourceTemplate + array(
+		'position' => 'top',
 		'styles'  => 'page/ext.proofreadpage.page.css',
 		'dependencies' => array( 'ext.proofreadpage.base' )
 	),
