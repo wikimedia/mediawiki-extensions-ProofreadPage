@@ -1,10 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Herr Kriss"
+			"Herr Kriss",
+			"Krol111"
 		]
 	},
 	"proofreadpage_image": "Uobrozek",
 	"proofreadpage_nextpage": "Nostympno zajta",
-	"proofreadpage_prevpage": "Popředńo zajta"
+	"proofreadpage_prevpage": "Popředńo zajta",
+	"proofreadpage_quality0_category": "Bez tekstu",
+	"proofreadpage_quality2_category": "Problymy",
+	"proofreadpage_quality3_category": "Skorygowano",
+	"proofreadpage_quality4_category": "Fertich",
+	"proofreadpage_quality1_message": "Ta zajta ńy uostała skorygowano"
 }

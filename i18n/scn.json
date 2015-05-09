@@ -2,11 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Aushulz",
-			"Gmelfi"
+			"Gmelfi",
+			"Pippinu"
 		]
 	},
 	"proofreadpage_image": "Immaggini",
 	"proofreadpage_nextpage": "Pàggina appressu",
 	"proofreadpage_prevpage": "Pàggina d'antura",
-	"proofreadpage_header": "Ntistazzioni (nun inclusa)"
+	"proofreadpage_header": "Ntistazzioni (nun inclusa)",
+	"proofreadpage_quality0_category": "Senza testu",
+	"proofreadpage_quality1_category": "Di currèggiri",
+	"proofreadpage_quality2_category": "Di rivìdiri",
+	"proofreadpage_quality3_category": "Curriggiuta",
+	"proofreadpage_quality4_category": "Cunvalidata",
+	"proofreadpage_quality1_message": "Sta pàggina nun havi statu curriggiuta"
 }
