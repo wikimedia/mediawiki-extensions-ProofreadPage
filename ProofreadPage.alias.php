@@ -25,7 +25,7 @@ $specialPageAliases['ar'] = array(
 	'ProofreadIndexOaiSchema' => array( 'سكيما_فهرس_تصحيح_أو_إيه_آي' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'IndexPages' => array( 'صفحات_الفهرس' ),
 	'PagesWithoutScans' => array( 'صفحات_من_غير_فحص' ),
