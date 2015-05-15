@@ -79,7 +79,7 @@
 	"apihelp-query+proofread-description": "Jiff Dahte övver der aktoälle Zohschtand vom Jähjejelässe för di aanjejovve Sigge.",
 	"apihelp-query+proofread-example-1": "Jif der Zohschtand vom Jähjejelässe för Sigge em Appachtemang 250.",
 	"apihelp-query+proofreadinfo-description": "Jif Dahte övver de Enschtällonge vom Zohsazprojramm för et Jähjejelässeuß.",
-	"apihelp-query+proofreadinfo-param-prop": "Which proofread properties to get:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels.\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-query%2Bproofreadinfo-param-prop/ksh\n-->",
+	"apihelp-query+proofreadinfo-param-prop": "Wat för en Eijeschaffte vum Jähjelässe ze holle:\n;namespaces:Anjahbe övver de  Page and Index namespaces.\n;qualitylevels:Leß met de Nivohs vun de Qualiteite vum Jähjelässe.\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-query%2Bproofreadinfo-param-prop/ksh\nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-query%2Bproofreadinfo-param-prop/ksh_(3)\n!FUZZY!!\n-->",
 	"apihelp-query+proofreadinfo-example-1": "Jif de Schtandatt_Aanjahbe uß",
 	"apihelp-query+proofreadinfo-example-3": "Jif Aanjahbe zom Appachtemang uß"
 }
