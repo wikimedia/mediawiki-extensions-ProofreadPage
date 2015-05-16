@@ -223,4 +223,8 @@ $void_cell
 
 		return $output;
 	}
+
+	protected function getGroupName() {
+		return 'pages';
+	}
 }

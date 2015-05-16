@@ -114,12 +114,10 @@ $wgSpecialPages['ProofreadIndexOaiSchema'] = 'SpecialProofreadIndexOaiSchema';
 # special page
 $wgAutoloadClasses['ProofreadPages'] = $dir . 'SpecialProofreadPages.php';
 $wgSpecialPages['IndexPages'] = 'ProofreadPages';
-$wgSpecialPageGroups['IndexPages'] = 'pages';
 
 # special page
 $wgAutoloadClasses['PagesWithoutScans'] = $dir . 'SpecialPagesWithoutScans.php';
 $wgSpecialPages['PagesWithoutScans'] = 'PagesWithoutScans';
-$wgSpecialPageGroups['PagesWithoutScans'] = 'maintenance';
 
 # api prop
 $wgAutoloadClasses['ApiQueryProofread'] = $dir . 'ApiQueryProofread.php';

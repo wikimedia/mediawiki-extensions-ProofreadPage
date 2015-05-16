@@ -146,4 +146,8 @@ class PagesWithoutScans extends QueryPage {
 				? "({$hlink}) {$dm}{$plink} {$dm}[{$size}]"
 				: "<s>({$hlink}) {$dm}{$plink} {$dm}[{$size}]</s>";
 	}
+
+	protected function getGroupName() {
+		return 'maintenance';
+	}
 }
