@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Võrok"
+		]
+	},
+	"proofreadpage_quality0_category": "Ilma tekstildä",
+	"proofreadpage_quality1_category": "Üle lugõmalda",
+	"proofreadpage_quality2_category": "Hädäline",
+	"proofreadpage_quality3_category": "Üle loet",
+	"proofreadpage_quality4_category": "Hääs kitet",
+	"proofreadpage_quality1_message": "Seod lehte olõ-õi üle loet"
+}
