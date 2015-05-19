@@ -204,22 +204,47 @@ class ProofreadPages extends QueryPage {
 		$dirmark = $lang->getDirMark();
 		$pages = $this->msg( 'proofreadpage_pages', $size )->numParams( $size )->text();
 
-		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
-<tr valign=\"bottom\">
-<td style=\"white-space:nowrap;overflow:hidden;\">{$plink} {$dirmark}[$pages]</td>
-<td>
-<table style=\"line-height:70%;\" border=0 cellpadding=0 cellspacing=0 >
-<tr>
-<td width=\"2\">&#160;</td>
-<td align=center class='quality4' width=\"$q4\"></td>
-<td align=center class='quality3' width=\"$q3\"></td>
-<td align=center class='quality2' width=\"$q2\"></td>
-<td align=center class='quality1' width=\"$q1\"></td>
-<td align=center class='quality0' width=\"$q0\"></td>
-$void_cell
-</tr></table>
-</td>
-</tr></table>";
+# Get the file for this document
+    $imageTitle = Title::makeTitle( NS_IMAGE, $result->title );
+    $cover = wfFindFile($imageTitle);
+
+# TODO use the page number from the index metadata
+    $params = array( 'width' => 100, 'page' => 1 );
+# If the file exist, get the thumbnail url
+    if ($cover and $cover->exists()) {
+      $thumbName = $cover->thumbName($params);
+      $fullURL = $cover->getThumbUrl( $thumbName );
+    } else {
+# TODO set URL for unknown cover (?)
+      $fullURL = "";
+    }
+
+# Free memory
+    unset($cover);
+
+# Use media styles from bootstrap...
+		$output = "
+    <div class=\"media clearfix\">
+      <a class=\"pull-left\" href=\"{$title}\">
+        <img class=\"media-object\" src=\"{$fullURL}\" />
+      </a>
+      <div class=\"media-body\">
+        <h4 class=\"media-heading\">{$plink}</h4>
+        <p>{$dirmark}</p>
+        <p>{$pages}</p>
+        <table style=\"line-height:70%;\" border=0 cellpadding=0 cellspacing=0 >
+          <tr>
+            <td width=\"2\">&#160;</td>
+            <td align=center class=\"quality4\" width=\"$q4\"></td>
+            <td align=center class=\"quality3\" width=\"$q3\"></td>
+            <td align=center class=\"quality2\" width=\"$q2\"></td>
+            <td align=center class=\"quality1\" width=\"$q1\"></td>
+            <td align=center class=\"quality0\" width=\"$q0\"></td>
+            $void_cell
+          </tr>
+        </table>
+      </div>
+    </div>";
 
 		return $output;
 	}
