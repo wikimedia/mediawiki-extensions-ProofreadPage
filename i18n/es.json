@@ -12,7 +12,8 @@
 			"Remember the dot",
 			"Sanbec",
 			"Translationista",
-			"Ryo567"
+			"Ryo567",
+			"Macofe"
 		]
 	},
 	"indexpages": "Lista de páginas indexadas",
@@ -85,5 +86,10 @@
 	"proofreadpage-indexoai-eprint-content-text": "Metadatos de libros gestionados por ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Esquema no encontrado",
 	"proofreadpage-indexoai-error-schemanotfound-text": "El esquema $1 no ha sido encontrado.",
-	"content-model-proofread-page": "Página: página"
+	"content-model-proofread-page": "Página: página",
+	"apihelp-query+proofread-description": "Devuelve información acerca del estado actual de revisión de las páginas dadas.",
+	"apihelp-query+proofread-example-1": "Devolver el estado de revisión de las páginas en el espacio de nombres 250",
+	"apihelp-query+proofreadinfo-description": "Devolver información acerca de la configuración de la extensión ProofreadPage.",
+	"apihelp-query+proofreadinfo-example-1": "Devolver la información predeterminada",
+	"apihelp-query+proofreadinfo-example-3": "Devolver la información del espacio de nombres"
 }
