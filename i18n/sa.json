@@ -4,7 +4,8 @@
 			"Abhirama",
 			"Ansumang",
 			"Shreekant Hegde",
-			"Shubha"
+			"Shubha",
+			"NehalDaveND"
 		]
 	},
 	"indexpages": "अनुक्रमणिका पुटावली",
@@ -42,8 +43,10 @@
 	"proofreadpage_quality2_message": "पुटपरिशीलयितुं काचित् समस्या अस्ति",
 	"proofreadpage_quality3_message": "एतत् पृष्ठम् परिष्कृतम् अस्ति",
 	"proofreadpage_quality4_message": "पुटमेतत् सुपुष्टितम्",
+	"proofreadpage_specialpage_label_key": "अन्विष्यताम् :",
+	"proofreadpage_specialpage_label_sortascending": "अवरोहक्रमेण सज्जयतु",
 	"proofreadpage_index_listofpages": "पृष्ठानाम् आवली",
-	"proofreadpage_image_message": "अनुक्रमणिकापुटस्य अनुबन्धः",
+	"proofreadpage_image_message": "अनुक्रमणिकापुटस्य परिसन्धिः",
 	"proofreadpage_page_status": "पुटस्थितिः",
 	"proofreadpage_js_attributes": "ग्रन्थकर्ता शिर्षिका वर्षम् प्रकाशकः",
 	"proofreadpage_index_attributes": "ग्रन्थकर्ता\nशीर्षिका\nवर्षम् | प्रकाशनवर्षम्\nप्रकाशकः\nस्रोतः\nचित्रम् | रक्षापुटचित्रम्\nपुटानि || २०\nटीका || १०",
