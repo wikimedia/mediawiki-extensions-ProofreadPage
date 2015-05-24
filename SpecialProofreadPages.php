@@ -35,7 +35,7 @@ class ProofreadPages extends QueryPage {
 		}
 		$output = $this->getOutput();
 		$request = $this->getRequest();
-		$output->addModules( 'ext.proofreadpage.base' );
+		$output->addModules( 'ext.proofreadpage.special.indexpages' );
 		$output->addWikiText( $this->msg( 'proofreadpage_specialpage_text' )->inContentLanguage()->plain() );
 
 		$this->searchList = null;
@@ -198,30 +198,22 @@ class ProofreadPages extends QueryPage {
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 		$num_void = $size-$q1-$q2-$q3-$q4-$q0;
-		$void_cell = $num_void ? "<td align=center style='border-style:dotted;background:#ffffff;border-width:1px;' width=\"{$num_void}\"></td>" : '';
+		$void_cell = $num_void ? '<td class="qualitye" style="width:' . $num_void . 'px;"></td>' : '';
+		$qualityOutput = '<table class="pr_quality">
+<tr>
+<td class="quality4" style="width:' . $q4 . 'px;"></td>
+<td class="quality3" style="width:' . $q3 . 'px;"></td>
+<td class="quality2" style="width:' . $q2 . 'px;"></td>
+<td class="quality1" style="width:' . $q1 . 'px;"></td>
+<td class="quality0" style="width:' . $q0 . 'px;"></td>
+' . $void_cell . '
+</tr>
+</table>';
 
-		$lang = $this->getLanguage();
-		$dirmark = $lang->getDirMark();
+		$dirmark = $this->getLanguage()->getDirMark();
 		$pages = $this->msg( 'proofreadpage_pages', $size )->numParams( $size )->text();
 
-		$output = "<table style=\"line-height:70%;\" border=0 cellpadding=5 cellspacing=0 >
-<tr valign=\"bottom\">
-<td style=\"white-space:nowrap;overflow:hidden;\">{$plink} {$dirmark}[$pages]</td>
-<td>
-<table style=\"line-height:70%;\" border=0 cellpadding=0 cellspacing=0 >
-<tr>
-<td width=\"2\">&#160;</td>
-<td align=center class='quality4' width=\"$q4\"></td>
-<td align=center class='quality3' width=\"$q3\"></td>
-<td align=center class='quality2' width=\"$q2\"></td>
-<td align=center class='quality1' width=\"$q1\"></td>
-<td align=center class='quality0' width=\"$q0\"></td>
-$void_cell
-</tr></table>
-</td>
-</tr></table>";
-
-		return $output;
+		return "<div class=\"prp-indexpages-row\"><span>{$plink} {$dirmark}[$pages]</span><span>{$qualityOutput}</span></div>";
 	}
 
 	protected function getGroupName() {

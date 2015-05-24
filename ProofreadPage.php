@@ -199,6 +199,10 @@ $wgResourceModules += array(
 		'styles'  => 'index/ext.proofreadpage.index.css',
 		'dependencies' => array( 'ext.proofreadpage.base', 'jquery.tipsy' )
 	),
+	'ext.proofreadpage.special.indexpages' => $prpResourceTemplate + array(
+		'styles'  => 'special/indexpages/ext.proofreadpage.special.indexpages.css',
+		'dependencies' => array( 'ext.proofreadpage.base' )
+	),
 );
 
 //Hooks
