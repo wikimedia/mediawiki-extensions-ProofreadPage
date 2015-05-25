@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"बिप्लब आनन्द",
-			"Nirjal stha"
+			"Nirjal stha",
+			"NehalDaveND"
 		]
 	},
+	"proofreadpage_image": "चित्र",
 	"proofreadpage_quality0_category": "पाठ बिना",
-	"proofreadpage_quality2_category": "समस्यायुक्त"
+	"proofreadpage_quality2_category": "समस्यायुक्त",
+	"proofreadpage-group-other": "अन्य"
 }
