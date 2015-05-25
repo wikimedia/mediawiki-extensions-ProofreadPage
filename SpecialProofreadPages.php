@@ -199,7 +199,8 @@ class ProofreadPages extends QueryPage {
 		$q4 = $result->pr_q4;
 		$num_void = $size-$q1-$q2-$q3-$q4-$q0;
 		$void_cell = $num_void ? '<td class="qualitye" style="width:' . $num_void . 'px;"></td>' : '';
-		$qualityOutput = '<table class="pr_quality">
+		$textualAlternative = $this->msg( 'proofreadpage-indexquality-alt', $q4, $q3, $q1 );
+		$qualityOutput = '<table class="pr_quality" title="' . $textualAlternative . '">
 <tr>
 <td class="quality4" style="width:' . $q4 . 'px;"></td>
 <td class="quality3" style="width:' . $q3 . 'px;"></td>
