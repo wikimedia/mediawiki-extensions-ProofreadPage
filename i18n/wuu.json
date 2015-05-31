@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Poiuyt"
+		]
+	},
+	"proofreadpage_quality0_category": "呒不文字",
+	"proofreadpage_quality1_category": "朆校对",
+	"proofreadpage_quality2_category": "有问题",
+	"proofreadpage_quality3_category": "已校对",
+	"proofreadpage_quality4_category": "已认证",
+	"proofreadpage_quality1_message": "本页还朆校对"
+}
