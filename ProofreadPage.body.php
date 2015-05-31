@@ -568,7 +568,8 @@ class ProofreadPage {
 		$q4 = $n4 * 100 / $n;
 		$qe = $ne * 100 / $n;
 		$void_cell = $ne ? '<td class="qualitye" style="width:' . $qe . '%;"></td>' : '';
-		$output = '<table class="pr_quality">
+		$textualAlternative = wfMessage( 'proofreadpage-indexquality-alt', $q4, $q3, $q1 );
+		$output = '<table class="pr_quality" title="' . $textualAlternative . '">
 <tr>
 <td class="quality4" style="width:' . $q4 . '%;"></td>
 <td class="quality3" style="width:' . $q3 . '%;"></td>
