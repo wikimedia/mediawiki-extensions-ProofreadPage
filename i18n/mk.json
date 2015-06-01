@@ -76,6 +76,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Шемата не е пронајдена",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Шемите $1 не се пронајдени.",
 	"proofreadpage-disambiguationspage": "Template:Појаснување",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|заверена страница|заверени страници}}, $2 само {{PLURAL:$2|прегледана|прегледани}} и $3 {{PLURAL:$3|некоригирана|некоригирани}}",
 	"content-model-proofread-page": "Страница: страница",
 	"apihelp-query+proofread-description": "Дава информации за тековната состојба на проверката на дадени страници.",
 	"apihelp-query+proofread-example-1": "Дај состојба на проверката на страниците во именскиот простор 250",

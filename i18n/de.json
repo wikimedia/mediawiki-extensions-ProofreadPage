@@ -80,6 +80,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema nicht gefunden",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Das Schema „$1“ wurde nicht gefunden",
 	"proofreadpage-disambiguationspage": "Template:Begriffsklärung",
+	"proofreadpage-indexquality-alt": "{{PLURAL:$1|Eine bestätigte Seite|$1 bestätigte Seiten}}, {{PLURAL:$2|eine nur korrekturgelesene Seite|$2 nur korrekturgelesene Seiten}} und {{PLURAL:$3|eine nicht korrekturgelesene Seite|$3 nicht korrekturgelesene Seiten}}",
 	"content-model-proofread-page": "Seite: Seite",
 	"apihelp-query+proofreadinfo-example-3": "Gibt Namensrauminformationen zurück"
 }

@@ -86,6 +86,7 @@
 	"proofreadpage-indexoai-eprint-content-text": "Metadatos de libros gestionados por ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Esquema no encontrado",
 	"proofreadpage-indexoai-error-schemanotfound-text": "El esquema $1 no ha sido encontrado.",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|página validada|páginas validadas}}, $2 {{PLURAL:$2|página solo corregida|páginas solo corregidas}} y $3 {{PLURAL:$3|página|páginas}} sin corregir.",
 	"content-model-proofread-page": "Página: página",
 	"apihelp-query+proofread-description": "Devuelve información acerca del estado actual de revisión de las páginas dadas.",
 	"apihelp-query+proofread-example-1": "Devolver el estado de revisión de las páginas en el espacio de nombres 250",

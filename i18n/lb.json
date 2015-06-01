@@ -75,5 +75,6 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema net fonnt",
 	"proofreadpage-indexoai-error-schemanotfound-text": "De Schema \"$1\" gouf net fonnt.",
 	"proofreadpage-disambiguationspage": "Template:Homonymie",
+	"proofreadpage-indexquality-alt": "$1 validéiert {{PLURAL:$1|Säit|Säiten}}, nëmmen {{PLURAL:$2|eng iwwerliest Säit|$2 iwwerliest Säiten}} an {{PLURAL:$3|an eng net iwwerliest Säit|a(n) $3 net iwwerliest Säiten}}",
 	"content-model-proofread-page": "Säit: Säit"
 }
