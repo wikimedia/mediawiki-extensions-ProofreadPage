@@ -76,6 +76,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Scheme non acchiate",
 	"proofreadpage-indexoai-error-schemanotfound-text": "'U scheme $1 non g'ha state acchiate.",
 	"proofreadpage-disambiguationspage": "Template:disambig",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pàgene|pàggene}} validate, $2 {{PLURAL:$2|pàgene|pàggene}} revisitate e $3 {{PLURAL:$3|pàgene|pàggene}} non revisitate",
 	"content-model-proofread-page": "Page: pàgene",
 	"apihelp-query+proofread-description": "Torne le 'mbormaziune sus a 'u state de mò de le verifiche pe le pàggene scacchiate.",
 	"apihelp-query+proofread-example-1": "Torne 'u state d'a verifiche pe le pàggene jndr'à 'u namespace 250",
