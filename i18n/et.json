@@ -71,5 +71,7 @@
 	"proofreadpage-pageinfo-status": "Tõendamisolek",
 	"proofreadpage-preferences-showheaders-label": "Nimeruumis {{ns:page}} redigeerides näita päise- ja jalusevälja",
 	"proofreadpage-preferences-horizontal-layout-label": "Nimeruumis {{ns:page}} redigeerides kasuta rõhtpaigutust",
-	"proofreadpage-disambiguationspage": "Template:täpsustus"
+	"proofreadpage-disambiguationspage": "Template:täpsustus",
+	"proofreadpage-indexquality-alt": "$1 heakskiidetud {{PLURAL:$1|lehekülg|lehekülge}}, $2 tõendatud õigsusega {{PLURAL:$2|lehekülg|lehekülge}} ja $3 tõendamata õigsusega {{PLURAL:$3|lehekülg|lehekülge}}",
+	"content-model-proofread-page": "nimeruumi \"Lehekülg\" leht"
 }

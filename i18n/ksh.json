@@ -75,6 +75,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Dat Schehma vum <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Extensible Markup Language\">XML</i> wohd nit jevonge.",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Dat Schehma vum <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Extensible Markup Language\">XML</i> mem Nahme „$1“ wohd nit jevonge.",
 	"proofreadpage-disambiguationspage": "Template:disambig",
+	"proofreadpage-indexquality-alt": "{{PLURAL:$1|Ein johjdjeheijße Sigg|$1 johjdjeheijße Sigge|Kein johjdjeheijße Sigge}}, {{PLURAL:$2|ein Sigg jähjejelässe|$2 Sigge jähjejelässe|kein Sigge jähjejelässe}} und {{PLURAL:$3|ein nit jähjejelässe Sigg|$3 nit jähjejelässe Sigge|kein Sigg nit winneschsdens jähjejelässe}}",
 	"content-model-proofread-page": "Sigg: Sigg",
 	"apihelp-query+proofread-description": "Jiff Dahte övver der aktoälle Zohschtand vom Jähjejelässe för di aanjejovve Sigge.",
 	"apihelp-query+proofread-example-1": "Jif der Zohschtand vom Jähjejelässe för Sigge em Appachtemang 250.",

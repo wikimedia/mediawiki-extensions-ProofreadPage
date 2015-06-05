@@ -76,6 +76,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema nun truvato",
 	"proofreadpage-indexoai-error-schemanotfound-text": "'O schema $1 nun è stato truovato.",
 	"proofreadpage-disambiguationspage": "Template:disambigua",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|paggena|paggene}} validate, $2 surtanto {{PLURAL:$2|paggena|paggene}} liggiute (proofread) e $3 {{PLURAL:$3|paggena|paggene}} ca nun se so' liggiute",
 	"content-model-proofread-page": "Paggena: paggena",
 	"apihelp-query+proofread-description": "Tuorna nfurmaziune ncopp' 'o stato 'e proofread 'e mò d' 'e paggene date.",
 	"apihelp-query+proofread-example-1": "Tuorna 'o stato 'e proofread p' 'e paggene dint' 'o namespace 250",
