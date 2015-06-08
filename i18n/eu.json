@@ -4,7 +4,8 @@
 			"An13sa",
 			"Joxemai",
 			"Unai Fdz. de Betoño",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Subi"
 		]
 	},
 	"proofreadpage_image": "Irudi",
@@ -15,8 +16,11 @@
 	"proofreadpage_nextpage": "Hurrengo orria",
 	"proofreadpage_prevpage": "Aurreko orria",
 	"proofreadpage_quality0_category": "Testurik gabe",
+	"proofreadpage_quality1_category": "Berrikusi gabe",
 	"proofreadpage_quality2_category": "Arazoak dakartza",
+	"proofreadpage_quality3_category": "Berrikusita",
 	"proofreadpage_quality4_category": "Balioztatua.",
+	"proofreadpage_quality1_message": "Orrialde hau ez da berrikusi oraindik",
 	"proofreadpage_quality4_message": "Balioztatu egin da orri hau",
 	"proofreadpage_specialpage_label_key": "Bilatu:",
 	"proofreadpage_index_listofpages": "Orri zerrenda",
