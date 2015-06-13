@@ -11,7 +11,8 @@
 			"Prima klasy4na",
 			"Steve.rusyn",
 			"SteveR",
-			"Тест"
+			"Тест",
+			"Ата"
 		]
 	},
 	"indexpages": "Список індексових сторінок",
@@ -85,5 +86,12 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Схеми не знайдено",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Схему $1 не знайдено.",
 	"proofreadpage-disambiguationspage": "Template:неоднозначність",
-	"content-model-proofread-page": "Сторінки: сторінка"
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|перевірена сторінка|перевірені сторінки|перевірених сторінок}}, $2 лише {{PLURAL:$2|вичитана сторінка|вичитані сторінки|вичитаних сторінок}} і $3 не {{PLURAL:$3|вичитана сторінки|вичитані сторінки|вичитаних сторінок}}",
+	"content-model-proofread-page": "Сторінки: сторінка",
+	"apihelp-query+proofread-description": "Видає інформацію про поточний статус вичитки даних сторінок.",
+	"apihelp-query+proofread-example-1": "Видає статус вичитки сторінок у просторі назв 250",
+	"apihelp-query+proofreadinfo-description": "Видає інформацію про налаштування розширення ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Які властивості вичитки видавати:\n;namespaces:Інформація про простори назв Сторінка та Індекс.\n;qualitylevels:Список рівнів якості вичитки.",
+	"apihelp-query+proofreadinfo-example-1": "Вивести інформацію за замовчуванням",
+	"apihelp-query+proofreadinfo-example-3": "Вивести інформацію простору назв"
 }
