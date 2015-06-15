@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dbc334"
+			"Dbc334",
+			"Yerpo"
 		]
 	},
 	"indexpages": "Seznam kazalnih strani",
@@ -46,6 +47,7 @@
 	"proofreadpage_index_attributes": "Avtor\nNaslov\nLeto|Leto izida\nZaložba\nVir\nSlika|Naslovnica\nStrani||20\nPripombe||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|stran|strani}}",
 	"proofreadpage_specialpage_legend": "Iskanje kazalnih strani",
+	"proofreadpage_specialpage_searcherror": "Napaka iskalnega pogona",
 	"proofreadpage_source": "Vir",
 	"proofreadpage_source_message": "Preslikana izdaja, uporabljena za nastanek tega besedila",
 	"right-pagequality": "Spremeni označbo kakovosti strani",
