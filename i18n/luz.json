@@ -17,11 +17,11 @@
 	"proofreadpage_indexdupe": "لینک تکراری",
 	"proofreadpage_indexdupetext": "بلگه یل نیترن بیش از یه بار مئن بلگه اول ذکر بوان",
 	"proofreadpage_nologin": "نوایته",
-	"proofreadpage_nologintext": "ایسه واس بوی[[مخصوص:کارور وارد بیده|وایته]] تا وضعیت ویرایشگرنه داشه بوی",
+	"proofreadpage_nologintext": "ایسه واس بوی[[Special:UserLogin|ورود وابیده]] تا وضعیت ویرایشگرنه داشه بوی",
 	"proofreadpage_notallowed": "تغییر مجاز نبیه",
 	"proofreadpage_notallowedtext": "ایسه مجاز نبیت سی تغییر ینه وضعیت ویرایشت ای بلگه",
 	"proofreadpage_dataconfig_badformatted": "گرتاری مئن پیکربنی داده یل",
-	"proofreadpage_dataconfig_badformattedtext": "بلگه[[مدیاویکی: شاخص ینه ویرایش بلگه پیکربنی داده یل]] هنی خو نیس مئن فرمت JASON",
+	"proofreadpage_dataconfig_badformattedtext": "بلگه[[Mediawiki:Proofreadpage index data config]] خو نیس مئن فرمت JASON",
 	"proofreadpage_number_expected": "خطا: ارزش عددی مورد انتظار",
 	"proofreadpage_interval_too_large": "خطا: فاصله گپ بیش از حد",
 	"proofreadpage_invalid_interval": "خطا: فاصله نامعتبر",
@@ -75,5 +75,12 @@
 	"proofreadpage-indexoai-error-schemanotfound": "طرحواره پیدا نبی",
 	"proofreadpage-indexoai-error-schemanotfound-text": "طرحواره$1 پیدا هنی نبیه",
 	"proofreadpage-disambiguationspage": "الگو:دیزامبیگ",
-	"content-model-proofread-page": "بلگه:بلگه"
+	"proofreadpage-indexquality-alt": "$1 معتبر {{PLURAL:$1|بلگه|بلگل}}, $2 تنها اصلاح {{PLURAL:$2|بلگه|بلگل}} و $3 اصلاح نوابیده {{PLURAL:$3|بلگه|بلگل}}",
+	"content-model-proofread-page": "بلگه:بلگه",
+	"apihelp-query+proofread-description": "اطاعاته داده شدنه درباره وضعیت اصلاح جاری د بلگل داده شدنه ورایگردونه.",
+	"apihelp-query+proofread-example-1": "وضعیت اصلاحنه سی بلگل مئنه 250 همدرنگل ورایگردونه.",
+	"apihelp-query+proofreadinfo-description": "اطلاعاتنه درباره پیکربنی از فرمت اصلاح بلگه ورایگردونه.",
+	"apihelp-query+proofreadinfo-param-prop": "کمی خاصیتل اصلاحل سی گرتن:\n;همدرنگل:اطلاعات درباه بگله و همدرنگل بلگه اول.\n;سطح کیفیت:لیست سطح کیفیتل اصلاح وابیده.",
+	"apihelp-query+proofreadinfo-example-1": "اصلاعات پیش فرضنه ورایگردونه",
+	"apihelp-query+proofreadinfo-example-3": "اطلاعات همدرنگلنه ورایگردونه"
 }
