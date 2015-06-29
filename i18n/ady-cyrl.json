@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Highlander45temp",
-			"SmartNart12"
+			"SmartNart12",
+			"GR44 Luc"
 		]
 	},
 	"indexpages": "Индекс нэк1убгъомэ ячэзыу",
@@ -49,7 +50,7 @@
 	"proofreadpage_page_status": "Нэк1убгъом истатус",
 	"proofreadpage_js_attributes": "Аутор Ц1э Илъэс Тедзап1э",
 	"proofreadpage_index_attributes": "Аутор\nЦ1э\nИлъэс|Зытрадзагъэ илъэс\nТедзап1э\nКъыздик1рэ\nСурэт|Сурэт шъхьа1\nНэк1убгъохэр|20\nРемаркэхэр|10",
-	"proofreadpage_pages": "$2{{PLURAL:$1|нэк1убгъор|нэк1убгъохэр}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|нэк1убгъо|нэк1убгъо}}",
 	"proofreadpage_specialpage_legend": "Индекс нэк1убгъо ялъыхъун",
 	"proofreadpage_specialpage_searcherror": "Лъыхъун системэм ихэукъоныгъэ",
 	"proofreadpage_specialpage_searcherrortext": "Лъыхъун системэр лажьэрэп. Къытфэжъугъэгъу.",
