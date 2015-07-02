@@ -88,6 +88,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "طرح کلی یافت نشد",
 	"proofreadpage-indexoai-error-schemanotfound-text": " $1  طرح یافت نشد.",
 	"proofreadpage-disambiguationspage": "الگو:ابهام‌زدایی",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|صفحه}} صحیح دانسته شده، $2 {{PLURAL:$2|صفحهٔ}} فقط ویراست شده و $3 {{PLURAL:$3|صفحهٔ}} ویراست نشده",
 	"content-model-proofread-page": "صفحه: صفحه",
 	"apihelp-query+proofread-description": "اطلاعاتی را از وضع بازبینی صفحات نشان می‌دهد.",
 	"apihelp-query+proofread-example-1": "وضع بازبینی صفحات را در فضای نام ۲۵۰ نشان می‌دهد.",
