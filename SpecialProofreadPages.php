@@ -214,7 +214,7 @@ class ProofreadPages extends QueryPage {
 		$dirmark = $this->getLanguage()->getDirMark();
 		$pages = $this->msg( 'proofreadpage_pages', $size )->numParams( $size )->text();
 
-		return "<div class=\"prp-indexpages-row\"><span>{$plink} {$dirmark}[$pages]</span><span>{$qualityOutput}</span></div>";
+		return "<div class=\"prp-indexpages-row\"><span>{$plink} {$dirmark}[$pages]</span><div>{$qualityOutput}</div></div>";
 	}
 
 	protected function getGroupName() {

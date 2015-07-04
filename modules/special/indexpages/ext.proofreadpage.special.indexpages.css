@@ -1,7 +1,11 @@
 .prp-indexpages-row {
-	display: table;
+	display: inline-table;
 	border-spacing: 10px 0;
 	white-space: nowrap;
+}
+
+.prp-indexpages-row > div {
+	display: table-cell;
 }
 
 .prp-indexpages-row > span {
