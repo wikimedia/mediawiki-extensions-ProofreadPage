@@ -54,7 +54,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		$qualityLevels = array_flip( $qualityCategories );
 
 		// <Reedy> johnduhart, it'd seem sane rather than duplicating the functionality
-		$params = new FauxRequest( array(
+		$params = new DerivativeRequest( $this->getRequest(), array(
 			'action' => 'query',
 			'prop' => 'categories',
 			'pageids' => implode( '|', $pageIds ),
