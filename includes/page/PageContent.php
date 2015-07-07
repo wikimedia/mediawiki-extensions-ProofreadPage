@@ -251,6 +251,9 @@ class PageContent extends TextContent {
 		//add modules
 		$parserOutput->addModuleStyles( 'ext.proofreadpage.base' );
 
+		//add scan image to dependencies
+		$parserOutput->addImage( strtok( $title->getDBkey(), '/' ) );
+
 		return $parserOutput;
 	}
 }
