@@ -75,6 +75,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Skemsidj ei fünjen",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Det skemsidj „$1“ as ei fünjen wurden.",
 	"proofreadpage-disambiguationspage": "Template:Muardüüdag artiikel",
+	"proofreadpage-indexquality-alt": "{{PLURAL:$1|Ian gudkäänd sidj|$1 gudkäänd sidjen}}, {{PLURAL:$2|ian bluas efterluket sidj|$2 bluas efterluket sidjen}} an {{PLURAL:$3|ian ei efterluket sidj|$3 ei efterluket sidjen}}",
 	"content-model-proofread-page": "Seite: sidj",
 	"apihelp-query+proofread-description": "Dää informatjuun auer di uugenblakelk stant faan jodiar sidjen",
 	"apihelp-query+proofread-example-1": "Dää di uugenblakelk stant faan sidjen uun nöömrüm 250",
