@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Growingup"
+			"Growingup",
+			"Janatkg"
 		]
 	},
 	"proofreadpage_nextpage": "кийинки барак",
-	"proofreadpage_prevpage": "мурунку барак"
+	"proofreadpage_prevpage": "мурунку барак",
+	"proofreadpage_quality0_category": "Текстсиз",
+	"proofreadpage_quality3_category": "Окуп текшерүү",
+	"proofreadpage_quality4_category": "Тастыкталган"
 }
