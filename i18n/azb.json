@@ -30,7 +30,7 @@
 	"proofreadpage_interval_too_large": "خطا:بازاسی چوخ بویوک",
 	"proofreadpage_invalid_interval": "خطا: اعتبار سیز بازا",
 	"proofreadpage_nextpage": "سونراکی صفحه",
-	"proofreadpage_prevpage": "قاباغکی صحیفه",
+	"proofreadpage_prevpage": "قاباقکی صفحه",
 	"proofreadpage_header": "موضوع (ایچئرمئ):",
 	"proofreadpage_body": "صحیفه گؤوده‌سی (چارپاز علاوه اولونا‌جاق):",
 	"proofreadpage_footer": "آلت بیلگی(noinclude):",
@@ -56,7 +56,7 @@
 	"proofreadpage_page_status": "صحیفه دورومو",
 	"proofreadpage_js_attributes": "یارادان باشلیق ایل یایین ائوی",
 	"proofreadpage_index_attributes": "یارادان\nباشلیق\nایل|یایین ایلی\nیایین ائوی\nقایناق\nشکیل|قابیق شکیلی\nصحیفه‌لر||20\nآچیقلامالار||10",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|صحیفه|صحیفه‌لر}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|صفحه|صفحه‌لر}}",
 	"proofreadpage_specialpage_legend": "ایندکس صحیفه‌لرینده آختار",
 	"proofreadpage_specialpage_searcherror": "آرما موهرریکی خاطاسی",
 	"proofreadpage_specialpage_searcherrortext": "آختاریش موهرریکی ایشلمیر. وئردیگیمیز ناراهات‌لیق‌دان اؤتری اوزر دیلییریک.",
@@ -79,7 +79,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "سئچمه تاپمادی",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 شئماسی آشکار ائدیلمه‌میشدیر.",
 	"proofreadpage-disambiguationspage": "Template:دقیقلشدیرمه",
-	"content-model-proofread-page": "صحیفه: صحیفه",
+	"content-model-proofread-page": "صفحه: صفحه",
 	"apihelp-query+proofreadinfo-example-1": "ایلکین بیلگی‌لری قایتار",
 	"apihelp-query+proofreadinfo-example-3": "آد فضاسی بیلگی‌لرینی قایتار"
 }
