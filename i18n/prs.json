@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mjbmr"
+		]
+	},
+	"indexpages": "فهرست صفحه‌های نمایان",
+	"proofreadpage_desc": "اجازهٔ مقایسهٔ آسان متن با اسکن اصلی را می‌دهد",
+	"proofreadpage_image": "عکس",
+	"proofreadpage_index": "شماره",
+	"proofreadpage_index_expected": "خطا: شماره انتظار می‌رود",
+	"proofreadpage_nosuch_index": "خطا: چنین شماره‌ای وجود ندارد",
+	"proofreadpage_nosuch_file": "خطا: چنین فایلی وجود ندارد",
+	"proofreadpage_badpage": "قالب نادرست",
+	"proofreadpage_badpagetext": "قالب صفحه‌ای که می‌خواهید ذخیره کنید، نادرست است.",
+	"proofreadpage_indexdupe": "پیوند تکراری"
+}
