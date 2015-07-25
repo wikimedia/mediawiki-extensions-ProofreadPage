@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"AnakngAraw",
-			"Sky Harbor"
+			"Sky Harbor",
+			"Stranger195"
 		]
 	},
 	"indexpages": "Talaan ng mga pahina ng talatuntunan",
@@ -13,7 +14,7 @@
 	"proofreadpage_index_expected": "Kamalian: inaasahan ang talatuntunan",
 	"proofreadpage_nosuch_index": "Kamalian: walang ganyang talatuntunan",
 	"proofreadpage_nosuch_file": "Kamalian: walang ganyang talaksan",
-	"proofreadpage_badpage": "Maling Anyo",
+	"proofreadpage_badpage": "Maling anyo",
 	"proofreadpage_badpagetext": "Mali ang anyo ng pahinang sinubok mong sagipin.",
 	"proofreadpage_indexdupe": "Katulad na kawing",
 	"proofreadpage_indexdupetext": "Hindi maaaring itala ang mga pahina nang higit sa isa sa ibabaw ng pahina ng talatuntunan.",
@@ -22,6 +23,7 @@
 	"proofreadpage_notallowed": "Hindi pinapayagan ang pagbabago",
 	"proofreadpage_notallowedtext": "Hindi ka pinahihintulutang magbago ng katayuan ng pagwawasto ng pahinang ito.",
 	"proofreadpage_dataconfig_badformatted": "Kamalian sa kaayusan ng datos.",
+	"proofreadpage_dataconfig_badformattedtext": "Ang pahinang [[Mediawiki:Proofreadpage index data config]] ay hindi nasa JSON na nakapormat nang maayos.",
 	"proofreadpage_number_expected": "Kamalian: inaasahan ang halagang maka-bilang",
 	"proofreadpage_interval_too_large": "Kamalian: napakalaki ng agwat",
 	"proofreadpage_invalid_interval": "Kamalian: hindi tanggap na agwat",
@@ -67,10 +69,16 @@
 	"proofreadpage-button-reset-zoom-label": "Orihinal na sukat",
 	"proofreadpage-button-zoom-in-label": "Lumapit at tumutok",
 	"proofreadpage-button-toggle-layout-label": "Kalatagang patindig/pahalang",
+	"proofreadpage-pageinfo-status": "Status sa pagwawasto",
 	"proofreadpage-preferences-showheaders-label": "Ipakita ang mga kahanayan ng paulo at pampaanan kapag namamatnugot sa loob ng puwang ng pangalan ng {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gamitin ang kalatagang pahalang kapag namamatnugot sa loob ng puwang ng pangalan ng {{ns:page}}",
 	"proofreadpage-indexoai-repositoryName": "Metadatos ng mga aklat mula sa {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Metadatos ng mga aklat na pinamamahala ng ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Hindi mahanap ang eskema",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Hindi mahanap ang mga eskemang $1."
+	"proofreadpage-indexoai-error-schemanotfound-text": "Hindi mahanap ang mga eskemang $1.",
+	"proofreadpage-disambiguationspage": "Template:paglilinaw",
+	"proofreadpage-indexquality-alt": "$1 na {{PLURAL:$1||mga}} napatunayang pahina, $2 (na) {{PLURAL:$2|pahinang|mga pahinang}} na nawasto at $3 (na) hindi pa na wastong {{PLURAL:$3|pahina|mga pahina}}",
+	"content-model-proofread-page": "Pahina: pahina",
+	"apihelp-query+proofread-description": "Nagbabalik ang impormasyon tungkol sa kasalukuyang katayuan proofread ng ibinigay na pahina.",
+	"apihelp-query+proofread-example-1": "Ilabas ang status sa pagwawasto sa mga pahinang nasa namespace 250"
 }

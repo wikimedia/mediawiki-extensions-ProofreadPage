@@ -5,7 +5,8 @@
 			"Rancher",
 			"Sasa Stefanovic",
 			"Жељко Тодоровић",
-			"Михајло Анђелковић"
+			"Михајло Анђелковић",
+			"Srdjan m"
 		]
 	},
 	"proofreadpage_desc": "Омогући лако упоређивање текста и оригиналног скена.",
@@ -24,6 +25,7 @@
 	"proofreadpage_quality2_category": "Проблематично",
 	"proofreadpage_quality3_category": "Прегледано",
 	"proofreadpage_quality4_category": "Оверено",
+	"proofreadpage_quality1_message": "Ова страница није лекторисана",
 	"proofreadpage_index_listofpages": "Списак страница",
 	"proofreadpage_image_message": "Веза ка индексу стране.",
 	"proofreadpage_page_status": "Статус стране",
