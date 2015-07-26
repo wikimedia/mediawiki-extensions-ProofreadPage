@@ -77,6 +77,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Không tìm thấy lược đồ",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Không tìm thấy lược đồ $1.",
 	"proofreadpage-disambiguationspage": "Template:Trang_định_hướng",
+	"proofreadpage-indexquality-alt": "$1 trang được phê chuẩn, $2 trang chỉ được hiệu đính, và $3 trang chưa được hiệu đính",
 	"content-model-proofread-page": "trang Trang:",
 	"apihelp-query+proofreadinfo-example-1": "Cho ra thông tin mặc định",
 	"apihelp-query+proofreadinfo-example-3": "Cho ra thông tin về không gian tên"
