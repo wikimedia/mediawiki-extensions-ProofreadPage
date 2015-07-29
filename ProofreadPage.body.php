@@ -858,6 +858,20 @@ class ProofreadPage {
 	}
 
 	/**
+	 * Extension registration callback
+	 */
+	public static function onRegister() {
+		global $wgContentHandlers;
+
+		// L10n
+		include_once( __DIR__ . '/ProofreadPage.namespaces.php' );
+
+		// Content handler
+		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
+		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = '\ProofreadPage\Page\PageContentHandler';
+	}
+
+	/**
 	 * Allow the extension to extend core's PHPUnit test suite
 	 * @param $files string[] The test files
 	 */

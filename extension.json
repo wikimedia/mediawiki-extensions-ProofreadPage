@@ -1,0 +1,293 @@
+{
+	"name": "ProofreadPage",
+	"author": [
+		"ThomasV",
+		"Thomas Pellissier Tanon"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Proofread_Page",
+	"descriptionmsg": "proofreadpage_desc",
+	"license-name": "GPL-2.0+",
+	"type": "other",
+	"@GroupPermissions": "Group allowed to modify pagequality",
+	"GroupPermissions": {
+		"user": {
+			"pagequality": true
+		}
+	},
+	"AvailableRights": [
+		"pagequality"
+	],
+	"SpecialPages": {
+		"ProofreadIndexOai": "SpecialProofreadIndexOai",
+		"ProofreadIndexOaiSchema": "SpecialProofreadIndexOaiSchema",
+		"IndexPages": "ProofreadPages",
+		"PagesWithoutScans": "PagesWithoutScans"
+	},
+	"APIMetaModules": {
+		"proofreadinfo": "ApiQueryProofreadInfo"
+	},
+	"APIPropModules": {
+		"proofread": "ApiQueryProofread"
+	},
+	"MessagesDirs": {
+		"ProofreadPage": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"ProofreadPageAlias": "ProofreadPage.alias.php"
+	},
+	"AutoloadClasses": {
+		"ProofreadPage": "ProofreadPage.body.php",
+		"ProofreadPage\\Context": "includes/Context.php",
+		"ProofreadPage\\ProofreadPageInit": "includes/ProofreadPageInit.php",
+		"ProofreadPage\\DiffFormatterUtils": "includes/DiffFormatterUtils.php",
+		"ProofreadPage\\FileNotFoundException": "includes/FileNotFoundException.php",
+		"ProofreadPage\\FileProvider": "includes/FileProvider.php",
+		"EditProofreadIndexPage": "includes/index/EditProofreadIndexPage.php",
+		"ProofreadIndexEntry": "includes/index/ProofreadIndexEntry.php",
+		"ProofreadIndexValue": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueString": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueNumber": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValuePage": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueLangcode": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueIdentifier": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueIsbn": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueIssn": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueOclc": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueLccn": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueArc": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexValueArk": "includes/index/ProofreadIndexValue.php",
+		"ProofreadIndexPage": "includes/index/ProofreadIndexPage.php",
+		"ProofreadIndexDbConnector": "includes/index/ProofreadIndexDbConnector.php",
+		"ProofreadPage\\Pagination\\PaginationFactory": "includes/Pagination/PaginationFactory.php",
+		"ProofreadPage\\Pagination\\PageNumber": "includes/Pagination/PageNumber.php",
+		"ProofreadPage\\Pagination\\PageList": "includes/Pagination/PageList.php",
+		"ProofreadPage\\Pagination\\Pagination": "includes/Pagination/Pagination.php",
+		"ProofreadPage\\Pagination\\FilePagination": "includes/Pagination/FilePagination.php",
+		"ProofreadPage\\Pagination\\PagePagination": "includes/Pagination/PagePagination.php",
+		"ProofreadPage\\Pagination\\PageNotInPaginationException": "includes/Pagination/PageNotInPaginationException.php",
+		"ProofreadPageDbConnector": "includes/page/ProofreadPageDbConnector.php",
+		"ProofreadPage\\Page\\EditPagePage": "includes/page/EditPagePage.php",
+		"ProofreadPage\\Page\\PageContentBuilder": "includes/page/PageContentBuilder.php",
+		"ProofreadPagePage": "includes/page/ProofreadPagePage.php",
+		"ProofreadPage\\Page\\PageContent": "includes/page/PageContent.php",
+		"ProofreadPage\\Page\\PageLevel": "includes/page/PageLevel.php",
+		"ProofreadPage\\Page\\PageContentHandler": "includes/page/PageContentHandler.php",
+		"ProofreadPage\\Page\\PageEditAction": "includes/page/PageEditAction.php",
+		"ProofreadPage\\Page\\PageSubmitAction": "includes/page/PageSubmitAction.php",
+		"ProofreadPage\\Page\\PageViewAction": "includes/page/PageViewAction.php",
+		"ProofreadPage\\Page\\PageDifferenceEngine": "includes/page/PageDifferenceEngine.php",
+		"ProofreadPage\\Parser\\ParserEntryPoint": "includes/Parser/ParserEntryPoint.php",
+		"ProofreadPage\\Parser\\TagParser": "includes/Parser/TagParser.php",
+		"ProofreadPage\\Parser\\PagelistTagParser": "includes/Parser/PagelistTagParser.php",
+		"ProofreadPage\\Parser\\PagesTagParser": "includes/Parser/PagesTagParser.php",
+		"ProofreadPage\\Parser\\PagequalityTagParser": "includes/Parser/PagequalityTagParser.php",
+		"SpecialProofreadIndexOai": "includes/index/oai/SpecialProofreadIndexOai.php",
+		"ProofreadIndexOaiRecord": "includes/index/oai/ProofreadIndexOaiRecord.php",
+		"ProofreadIndexOaiSets": "includes/index/oai/ProofreadIndexOaiSets.php",
+		"ProofreadIndexOaiError": "includes/index/oai/ProofreadIndexOaiError.php",
+		"SpecialProofreadIndexOaiSchema": "includes/index/oai/SpecialProofreadIndexOaiSchema.php",
+		"ProofreadPages": "SpecialProofreadPages.php",
+		"PagesWithoutScans": "SpecialPagesWithoutScans.php",
+		"ApiQueryProofread": "ApiQueryProofread.php",
+		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
+		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php"
+	},
+	"ResourceModules": {
+		"jquery.mousewheel": {
+			"scripts": "jquery/jquery.mousewheel.js"
+		},
+		"jquery.prpZoom": {
+			"scripts": "jquery/jquery.prpZoom.js",
+			"dependencies": [
+				"jquery.ui.widget",
+				"jquery.ui.draggable",
+				"jquery.mousewheel"
+			]
+		},
+		"ext.proofreadpage.base": {
+			"position": "top",
+			"styles": "ext.proofreadpage.base.css",
+			"targets": [
+				"mobile",
+				"desktop"
+			]
+		},
+		"ext.proofreadpage.page": {
+			"position": "top",
+			"styles": "page/ext.proofreadpage.page.css",
+			"dependencies": [
+				"ext.proofreadpage.base"
+			]
+		},
+		"ext.proofreadpage.page.edit": {
+			"styles": "page/ext.proofreadpage.page.edit.css",
+			"scripts": "page/ext.proofreadpage.page.edit.js",
+			"dependencies": [
+				"ext.proofreadpage.page",
+				"jquery.prpZoom",
+				"mediawiki.user",
+				"user.options"
+			],
+			"messages": [
+				"proofreadpage_quality0_category",
+				"proofreadpage_quality1_category",
+				"proofreadpage_quality2_category",
+				"proofreadpage_quality3_category",
+				"proofreadpage_quality4_category",
+				"proofreadpage-section-tools",
+				"proofreadpage-group-zoom",
+				"proofreadpage-group-other",
+				"proofreadpage-button-toggle-visibility-label",
+				"proofreadpage-button-zoom-out-label",
+				"proofreadpage-button-reset-zoom-label",
+				"proofreadpage-button-zoom-in-label",
+				"proofreadpage-button-toggle-layout-label",
+				"proofreadpage-preferences-showheaders-label"
+			]
+		},
+		"ext.proofreadpage.page.navigation": {
+			"scripts": "page/ext.proofreadpage.page.navigation.js",
+			"skinStyles": {
+				"vector": "page/ext.proofreadpage.page.navigation.vector.css"
+			}
+		},
+		"ext.proofreadpage.article": {
+			"scripts": "article/ext.proofreadpage.article.js",
+			"styles": "article/ext.proofreadpage.article.css",
+			"dependencies": [
+				"ext.proofreadpage.base"
+			]
+		},
+		"ext.proofreadpage.index": {
+			"scripts": "index/ext.proofreadpage.index.js",
+			"styles": "index/ext.proofreadpage.index.css",
+			"dependencies": [
+				"ext.proofreadpage.base",
+				"jquery.tipsy"
+			]
+		},
+		"ext.proofreadpage.special.indexpages": {
+			"styles": "special/indexpages/ext.proofreadpage.special.indexpages.css",
+			"dependencies": [
+				"ext.proofreadpage.base"
+			]
+		},
+		"ext.proofreadpage.ve.node.pages": {
+			"scripts": [
+				"ve/node/ve.dm.MWPagesNode.js",
+				"ve/node/ve.ce.MWPagesNode.js",
+				"ve/node/ve.ui.MWPagesInspector.js",
+				"ve/node/ve.ui.MWPagesInspectorTool.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore"
+			],
+			"messages": [
+				"proofreadpage-visualeditor-node-pages-inspector-tooltip",
+				"proofreadpage-visualeditor-node-pages-inspector-title",
+				"proofreadpage-visualeditor-node-pages-inspector-description",
+				"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes",
+				"proofreadpage-visualeditor-node-pages-inspector-indexselector-no"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "ProofreadPage/modules"
+	},
+	"Hooks": {
+		"SetupAfterCache": [
+			"ProofreadPage\\ProofreadPageInit::initNamespaces"
+		],
+		"ParserFirstCallInit": [
+			"ProofreadPage::onParserFirstCallInit"
+		],
+		"BeforePageDisplay": [
+			"ProofreadPage::onBeforePageDisplay"
+		],
+		"GetLinkColours": [
+			"ProofreadPage::onGetLinkColours"
+		],
+		"ImageOpenShowImageInlineBefore": [
+			"ProofreadPage::onImageOpenShowImageInlineBefore"
+		],
+		"ArticleSaveComplete": [
+			"ProofreadPage::onArticleSaveComplete"
+		],
+		"ArticleDelete": [
+			"ProofreadPage::onArticleDelete"
+		],
+		"ArticleUndelete": [
+			"ProofreadPage::onArticleUndelete"
+		],
+		"ArticlePurge": [
+			"ProofreadPage::onArticlePurge"
+		],
+		"SpecialMovepageAfterMove": [
+			"ProofreadPage::onSpecialMovepageAfterMove"
+		],
+		"LoadExtensionSchemaUpdates": [
+			"ProofreadPage::onLoadExtensionSchemaUpdates"
+		],
+		"OutputPageParserOutput": [
+			"ProofreadPage::onOutputPageParserOutput"
+		],
+		"wgQueryPages": [
+			"ProofreadPage::onwgQueryPages"
+		],
+		"GetPreferences": [
+			"ProofreadPage::onGetPreferences"
+		],
+		"CustomEditor": [
+			"ProofreadPage::onCustomEditor"
+		],
+		"CanonicalNamespaces": [
+			"ProofreadPage::addCanonicalNamespaces"
+		],
+		"SkinTemplateNavigation": [
+			"ProofreadPage::onSkinTemplateNavigation"
+		],
+		"ContentHandlerDefaultModelFor": [
+			"ProofreadPage::onContentHandlerDefaultModelFor"
+		],
+		"APIEditBeforeSave": [
+			"ProofreadPage::onAPIEditBeforeSave"
+		],
+		"EditFormPreloadText": [
+			"ProofreadPage::onEditFormPreloadText"
+		],
+		"ParserTestTables": [
+			"ProofreadPage::onParserTestTables"
+		],
+		"InfoAction": [
+			"ProofreadPage::onInfoAction"
+		],
+		"SkinMinervaDefaultModules": [
+			"ProofreadPage::onSkinMinervaDefaultModules"
+		],
+		"UnitTestsList": [
+			"ProofreadPage::onUnitTestsList"
+		]
+	},
+	"ParserTestFiles": [
+		"tests/parser/proofreadpage_pagelist.txt",
+		"tests/parser/proofreadpage_pages.txt",
+		"tests/parser/proofreadpage_pagequality.txt"
+	],
+	"VisualEditorPluginModules": [
+		"ext.proofreadpage.ve.node.pages"
+	],
+	"config": {
+		"@ProofreadPageNamespaceIds": "Array that contain the ids of namespaces used by ProofreadPage",
+		"ProofreadPageNamespaceIds": []
+	},
+	"callback": "ProofreadPage::onRegister",
+	"load_composer_autoloader": true,
+	"manifest_version": 1
+}
