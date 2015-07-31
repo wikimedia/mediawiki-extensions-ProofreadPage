@@ -80,7 +80,7 @@
 	"proofreadpage-button-toggle-layout-label": "Вертикальна / горизонтальна розмітка",
 	"proofreadpage-pageinfo-status": "Стан перевірки правопису",
 	"proofreadpage-preferences-showheaders-label": "Показувати поля верхнього і нижнього колонтитулів при редагуванні в просторі імен {{ns:page}}.",
-	"proofreadpage-preferences-horizontal-layout-label": "Використовувати горизонтальну розкладку при редагуванні в просторі імен {{ns:page}}.",
+	"proofreadpage-preferences-horizontal-layout-label": "Використовувати горизонтальну розкладку при редагуванні в просторі назв {{ns:page}}.",
 	"proofreadpage-indexoai-repositoryName": "Метадані книг з {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Метадані книг, підтримуваних ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Схеми не знайдено",
