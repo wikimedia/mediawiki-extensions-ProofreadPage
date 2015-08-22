@@ -79,5 +79,6 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Skemaet blev ikke fundet",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Skemaet $1 er ikke blevet fundet.",
 	"proofreadpage-disambiguationspage": "Template:Flertydig",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|valideret side|validerede sider}}, $2 {{PLURAL:$2|side|sider}}, der kun er korrekturlæst, og $3 {{PLURAL:$3|side|sider}}, der ikke er korrekturlæst",
 	"content-model-proofread-page": "Side: side"
 }
