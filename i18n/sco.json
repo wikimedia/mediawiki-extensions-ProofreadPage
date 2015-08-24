@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Reid"
+			"John Reid",
+			"AmaryllisGardener"
 		]
 	},
+	"proofreadpage_quality0_category": "Wioot text",
+	"proofreadpage_quality1_category": "Nae pruifread",
+	"proofreadpage_quality2_category": "Problematic",
+	"proofreadpage_quality3_category": "Pruifread",
+	"proofreadpage_quality4_category": "Validatit",
+	"proofreadpage_quality1_message": "This page haes nae been pruifread",
 	"proofreadpage-pageinfo-status": "Pruifreadin status"
 }
