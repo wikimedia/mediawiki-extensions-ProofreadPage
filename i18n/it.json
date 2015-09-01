@@ -82,5 +82,9 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema non trovato",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Lo schema $1 non è stato trovato.",
 	"proofreadpage-disambiguationspage": "Template:Disambigua",
-	"content-model-proofread-page": "Pagina: pagina"
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina riletta|pagine rilette}}, $2 {{PLURAL:$2|pagina solo trascritta|pagine solo trascritte}} e $3 {{PLURAL:$3|pagina incompleta|pagine incomplete}}",
+	"content-model-proofread-page": "Pagina: pagina",
+	"apihelp-query+proofread-description": "Restituisce informazioni circa l'attuale stato di rilettura delle pagine fornite.",
+	"apihelp-query+proofread-example-1": "Ritorna lo stato di rilettura per le pagine nel namespace 250",
+	"apihelp-query+proofreadinfo-example-3": "Ritorna informazioni sul namespace"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"Aftab1995",
 			"Bellayet",
-			"Jayantanth"
+			"Jayantanth",
+			"Aftabuzzaman"
 		]
 	},
 	"indexpages": "নির্ঘণ্ট পাতার তালিকা",
@@ -18,6 +19,11 @@
 	"proofreadpage_nologin": "লগইন করা হয়নি",
 	"proofreadpage_notallowed": "পরিবর্তনের অনুমতি নাই",
 	"proofreadpage_notallowedtext": "আপনার এই পাতার প্রুফরিডিং অবস্থা পরিবর্তনের অনুমতি নাই।",
+	"proofreadpage_dataconfig_badformatted": "তথ্য কনফিগারেশনে বাগ  আছে",
+	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] পাতাটিকে ঠিকভাবে JSON ফরম্যাট  করা হয় নি।",
+	"proofreadpage_number_expected": "ত্রুটি: সংখ্যা প্রদান আশা করা হচ্ছে",
+	"proofreadpage_interval_too_large": "ত্রুটি: খুব বড় ব্যবধান",
+	"proofreadpage_invalid_interval": "ত্রুটি: অবৈধ ব্যবধান",
 	"proofreadpage_nextpage": "পরবর্তী পাতা",
 	"proofreadpage_prevpage": "পূর্ববর্তী পাতা",
 	"proofreadpage_header": "শিরোনাম (noinclude):",
@@ -33,8 +39,11 @@
 	"proofreadpage_quality2_message": "এই পাতার প্রুফরিডের সময় কোন সমস্যা ছিল",
 	"proofreadpage_quality3_message": "এই পাতার প্রুফরিড সম্পন্ন হয়েছে",
 	"proofreadpage_quality4_message": "এই পাতা বৈধ হয়েছে",
+	"proofreadpage_index_status": "নির্ঘণ্ট অবস্থা",
 	"proofreadpage_index_size": "পাতার সংখ্যা",
+	"proofreadpage_specialpage_label_orderby": "ক্রম অনুসারে:",
 	"proofreadpage_specialpage_label_key": "অনুসন্ধান:",
+	"proofreadpage_specialpage_label_sortascending": "বর্ণানুক্রমে সাজাও",
 	"proofreadpage_alphabeticalorder": "বর্ণানুক্রম",
 	"proofreadpage_index_listofpages": "পাতাসমূহের তালিকা",
 	"proofreadpage_image_message": "নির্ঘণ্ট পাতায় লিঙ্ক করো",
@@ -43,8 +52,11 @@
 	"proofreadpage_index_attributes": "ধরন\nশিরোনাম\nখণ্ড\nলেখক\nঅনুবাদক\nসম্পাদক\nঅলঙ্করণ\nস্কুল\nপ্রকাশক\nঠিকানা|স্থান\nবছর|প্রকাশের বছর\nKey|Sort key\nউৎস|স্ক্যান\nচিত্র|প্রচ্ছদ\nঅগ্রগতি\nপাতাসমূহ||15\nখণ্ডসমূহ||5\nমন্তব্য|সূচী|15\nপ্রস্থ|সম্পাদনা মোডে স্ক্যান রেজুলুশন\nসিএসএস(Css)\nহেডার\nপাদটীকা",
 	"proofreadpage_pages": "$2টি {{PLURAL:$1|পাতা}}",
 	"proofreadpage_specialpage_legend": "নির্ঘণ্ট পাতাসমূহ অনুসন্ধান",
+	"proofreadpage_specialpage_searcherror": "সার্চ ইঞ্জিনে ত্রুটি",
+	"proofreadpage_specialpage_searcherrortext": "সার্চ ইঞ্জিন কাজ করছে না। অসুবিধার জন্য দুঃখিত।",
 	"proofreadpage_source": "উৎস",
 	"proofreadpage_source_message": "এই লেখা প্রতিষ্ঠা করতে স্ক্যান করা সংস্করণ ব্যবহার করা হয়েছে",
+	"right-pagequality": "পাতা মানের পতাকা পরিবর্তন",
 	"proofreadpage-section-tools": "প্রুফরিড টুলসমূহ",
 	"proofreadpage-group-zoom": "বড় করো",
 	"proofreadpage-group-other": "অন্য",
@@ -53,5 +65,6 @@
 	"proofreadpage-button-reset-zoom-label": "মূল আকার",
 	"proofreadpage-button-zoom-in-label": "আরও বড়",
 	"proofreadpage-button-toggle-layout-label": "উল্লম্ব/অনুভূমিক বিন্যাস",
+	"proofreadpage-pageinfo-status": "প্রুফরিডিং অবস্থা",
 	"proofreadpage-preferences-showheaders-label": "পাতা {{ns:page}} সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও"
 }

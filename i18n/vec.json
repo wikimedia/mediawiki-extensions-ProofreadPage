@@ -69,11 +69,16 @@
 	"proofreadpage-button-reset-zoom-label": "Dimension orixenal",
 	"proofreadpage-button-zoom-in-label": "Zoom avanti",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizontale",
+	"proofreadpage-pageinfo-status": "Stato de coresion",
 	"proofreadpage-preferences-showheaders-label": "Mostra l'intestasion e 'l pie de pàjina durante ła modifega inte'l namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Dopara el layout orixontałe có te modifeghi inte'l namespace {{ns:page}}",
 	"proofreadpage-indexoai-repositoryName": "Metadati de i libri da {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Metadati de i libri gestìi da ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Schema mia catà",
 	"proofreadpage-indexoai-error-schemanotfound-text": "El schema $1 no'l xe stà catà.",
-	"proofreadpage-disambiguationspage": "Template:Disambigua"
+	"proofreadpage-disambiguationspage": "Template:Disambigua",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina rileta|pagine rilete}}, $2 {{PLURAL:$2|pagina solo trascrita|pagine solo trascrite}} e $3 {{PLURAL:$3|pagina inconpleta|pagine inconplete}}",
+	"content-model-proofread-page": "Pagina: pagina",
+	"apihelp-query+proofread-example-1": "Ritorna el stato de rilettura par le pagine nel namespace 250",
+	"apihelp-query+proofreadinfo-example-3": "Ritorna informasion sul namespace"
 }
