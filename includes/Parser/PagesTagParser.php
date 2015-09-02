@@ -109,7 +109,7 @@ class PagesTagParser extends TagParser {
 						return $this->formatError( 'proofreadpage_number_expected' );
 					}
 
-					if( ($from > $to) || ($from < 1) || ($to < 1 ) || ($to > $count) ) {
+					if( !( 1 <= $from && $from <= $to && $to <= $count ) ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 
@@ -132,7 +132,7 @@ class PagesTagParser extends TagParser {
 				}
 
 				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order.
-				if( reset( $pagenums ) > $count ) {
+				if( end( $pagenums ) > $count ) {
 					return $this->formatError( 'proofreadpage_invalid_interval' );
 				}
 

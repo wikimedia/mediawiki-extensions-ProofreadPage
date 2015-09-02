@@ -262,6 +262,28 @@ djvu
 !! end
 
 !! test
+pages: with file: Invalid range
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="4" to="3" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Invalid include
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="42" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
 pages: with file: Simple transclusion without to
 !! options
 djvu
