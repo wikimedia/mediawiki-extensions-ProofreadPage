@@ -87,7 +87,7 @@
 	"apihelp-query+proofread-description": "{{doc-apihelp-description|query+proofread}}",
 	"apihelp-query+proofread-example-1": "{{doc-apihelp-example|query+proofread}}",
 	"apihelp-query+proofreadinfo-description": "{{doc-apihelp-description|query+proofreadinfo}}",
-	"apihelp-query+proofreadinfo-param-prop": "{{doc-apihelp-param|query+proofreadinfo|prop}}",
+	"apihelp-query+proofreadinfo-param-prop": "Use \"{{ns:Page}}\" and \"{{ns:Index}}\" with quotes instead of Page and Index namespaces.\n\n{{doc-apihelp-param|query+proofreadinfo|prop}}",
 	"apihelp-query+proofreadinfo-example-1": "{{doc-apihelp-example|query+proofreadinfo}}",
 	"apihelp-query+proofreadinfo-example-3": "{{doc-apihelp-example|query+proofreadinfo}}"
 }
