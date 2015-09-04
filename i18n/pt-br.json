@@ -6,7 +6,8 @@
 			"Luckas",
 			"Luckas Blade",
 			"MetalBrasil",
-			"555"
+			"555",
+			"Cainamarques"
 		]
 	},
 	"indexpages": "Lista de páginas de índice",
@@ -39,7 +40,7 @@
 	"proofreadpage_quality0_category": "Sem texto",
 	"proofreadpage_quality1_category": "Não revisadas",
 	"proofreadpage_quality2_category": "Problemáticas",
-	"proofreadpage_quality3_category": "Revisadas e corrigidas",
+	"proofreadpage_quality3_category": "Revisadas",
 	"proofreadpage_quality4_category": "Validadas",
 	"proofreadpage_quality0_message": "Esta página não precisa ser revisada",
 	"proofreadpage_quality1_message": "Esta página ainda não foi revisada",
