@@ -2,14 +2,19 @@
 	"@metadata": {
 		"authors": [
 			"रमेश सिंह बोहरा",
-			"जनक राज भट्ट"
+			"जनक राज भट्ट",
+			"राम प्रसाद जोशी"
 		]
 	},
+	"indexpages": "सूचकांक पानाको सूची",
+	"pageswithoutscans": "स्क्यान बिनाईका पाना",
 	"proofreadpage_image": "चित्र",
 	"proofreadpage_index": "अनुक्रम",
+	"proofreadpage_index_expected": "त्रुटि: सूचकांकको अपेक्षा",
+	"proofreadpage_nosuch_index": "त्रुटि : यस्तो कोई सूचकांक नाई",
 	"proofreadpage_badpage": "गलत फरम्याट",
-	"proofreadpage_nologin": "प्रवेश (लग ईन) नगरिएको",
-	"proofreadpage_nextpage": "अर्खो पानो",
+	"proofreadpage_nologin": "प्रवेश (लग ईन) नगर्याको",
+	"proofreadpage_nextpage": "अर्को पानो",
 	"proofreadpage_prevpage": "पैल्लीको पानो",
 	"proofreadpage_quality0_category": "पाठ बिना",
 	"proofreadpage_quality1_category": "प्रुफरिड नभया",
@@ -17,11 +22,11 @@
 	"proofreadpage_quality3_category": "प्रुफरिड",
 	"proofreadpage_quality4_category": "प्रमाणित अद्दु",
 	"proofreadpage_quality1_message": "ये पृष्ठमी थपघट गर्न सकिन्या छैन |",
-	"proofreadpage_specialpage_label_key": "खोजी अर",
+	"proofreadpage_specialpage_label_key": "खोज",
 	"proofreadpage_specialpage_label_sortascending": "आरोहण क्रममी मिलाउन्या",
-	"proofreadpage_page_status": "पाना स्थिती",
+	"proofreadpage_page_status": "पानाको स्थिती",
 	"proofreadpage_js_attributes": "लेखक शीर्षक वर्ष प्रकाशक",
-	"proofreadpage_index_attributes": "लेखक\nशीर्षक\nवर्ष|प्रकाशन वर्ष\nप्रकाशक\nस्रोत\nचित्र|मुखपृष्ठ चित्र\nपानो||२०\nटिप्पणी||१०",
+	"proofreadpage_index_attributes": "लेखक\nशीर्षक\nवर्ष|प्रकाशन वर्ष\nप्रकाशक\nस्रोत\nचित्र|मुखपृष्ठ चित्र\nपानाहरू||२०\nटिप्पणी||१०",
 	"proofreadpage_pages": "{{PLURAL:$1|पाना|पानाहरू}}",
 	"proofreadpage_source": "स्रोत",
 	"proofreadpage-group-zoom": "जूम",

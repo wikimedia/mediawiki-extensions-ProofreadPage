@@ -4,6 +4,10 @@
 			"Mashoi7"
 		]
 	},
+	"proofreadpage_quality0_category": "Tekstattah",
 	"proofreadpage_quality1_category": "Ei tarkistusluvettu",
-	"proofreadpage_quality3_category": "Tarkistusluvettu"
+	"proofreadpage_quality2_category": "Probliemakas",
+	"proofreadpage_quality3_category": "Tarkistusluvettu",
+	"proofreadpage_quality4_category": "Lujitettu",
+	"proofreadpage_quality1_message": "Tädä sivuu ei ole tarkistusluvettu"
 }
