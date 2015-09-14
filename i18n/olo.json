@@ -4,10 +4,23 @@
 			"Mashoi7"
 		]
 	},
+	"proofreadpage_image": "Kuva",
+	"proofreadpage_nologin": "Ei kirjutannuhes",
+	"proofreadpage_nextpage": "Tulii sivu",
+	"proofreadpage_prevpage": "Ielline sivu",
 	"proofreadpage_quality0_category": "Tekstattah",
 	"proofreadpage_quality1_category": "Ei tarkistusluvettu",
 	"proofreadpage_quality2_category": "Probliemakas",
 	"proofreadpage_quality3_category": "Tarkistusluvettu",
 	"proofreadpage_quality4_category": "Lujitettu",
-	"proofreadpage_quality1_message": "Tädä sivuu ei ole tarkistusluvettu"
+	"proofreadpage_quality1_message": "Tädä sivuu ei ole tarkistusluvettu",
+	"proofreadpage_index_size": "Sivuloi kaikkiedah",
+	"proofreadpage_specialpage_label_orderby": "Jälletys:",
+	"proofreadpage_specialpage_label_key": "Eči:",
+	"proofreadpage_specialpage_label_sortascending": "Pane nouzies jälletykseh",
+	"proofreadpage_alphabeticalorder": "Pane jälletykseh kirjaimikon vuoh",
+	"proofreadpage_index_listofpages": "Sivuluvettelo",
+	"proofreadpage_page_status": "Sivun stuatussu",
+	"proofreadpage_js_attributes": "Luadii Rubriekku Vuozi Ilmahpiästäi",
+	"proofreadpage_source": "Lähteh"
 }
