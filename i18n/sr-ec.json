@@ -6,13 +6,15 @@
 			"Sasa Stefanovic",
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
-			"Srdjan m"
+			"Srdjan m",
+			"Milicevic01"
 		]
 	},
 	"proofreadpage_desc": "Омогући лако упоређивање текста и оригиналног скена.",
 	"proofreadpage_image": "слика",
 	"proofreadpage_index": "индекс",
 	"proofreadpage_badpage": "Погрешан Формат",
+	"proofreadpage_nologin": "Нисте пријављени",
 	"proofreadpage_notallowed": "Промена није дозвољена",
 	"proofreadpage_nextpage": "Следећа страница",
 	"proofreadpage_prevpage": "Претходна страница",

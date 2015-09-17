@@ -3,7 +3,8 @@
 		"authors": [
 			"Aushulz",
 			"Gmelfi",
-			"Pippinu"
+			"Pippinu",
+			"Sarvaturi"
 		]
 	},
 	"proofreadpage_image": "Immaggini",
@@ -15,5 +16,5 @@
 	"proofreadpage_quality2_category": "Di rivìdiri",
 	"proofreadpage_quality3_category": "Curriggiuta",
 	"proofreadpage_quality4_category": "Cunvalidata",
-	"proofreadpage_quality1_message": "Sta pàggina nun havi statu curriggiuta"
+	"proofreadpage_quality1_message": "Sta pàggina nun fu curriggiuta"
 }
