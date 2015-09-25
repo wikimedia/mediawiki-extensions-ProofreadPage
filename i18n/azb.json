@@ -5,7 +5,8 @@
 			"E THP",
 			"Ebrahimi-amir",
 			"Mousa",
-			"Koroğlu"
+			"Koroğlu",
+			"Arjanizary"
 		]
 	},
 	"indexpages": "ایندکس صحیفه‌لری‌نین لیستی",
@@ -80,6 +81,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 شئماسی آشکار ائدیلمه‌میشدیر.",
 	"proofreadpage-disambiguationspage": "Template:دقیقلشدیرمه",
 	"content-model-proofread-page": "صفحه: صفحه",
+	"apihelp-query+proofread-example-1": "آد آلانی 250ده‌کی صحیفه‌لری ایصلاح اولونموش دوروما قایتار",
 	"apihelp-query+proofreadinfo-example-1": "ایلکین بیلگی‌لری قایتار",
 	"apihelp-query+proofreadinfo-example-3": "آد فضاسی بیلگی‌لرینی قایتار"
 }
