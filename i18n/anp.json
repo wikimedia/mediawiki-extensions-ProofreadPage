@@ -8,5 +8,9 @@
 	"pageswithoutscans": "स्कैन रहित पन्ना",
 	"proofreadpage_desc": "मूल पाठ आरू सद्य पाठ मं॑ फर्क आसानी सं॑ दर्शाबै छै",
 	"proofreadpage_image": "चित्र",
-	"proofreadpage_index": "अनुक्रम"
+	"proofreadpage_index": "अनुक्रम",
+	"proofreadpage_quality0_category": "पाठऽ के बिना",
+	"proofreadpage_quality2_category": "समस्याकारक",
+	"proofreadpage_quality3_category": "मुद्रितशोधन",
+	"proofreadpage_quality4_category": "प्रमाणित"
 }
