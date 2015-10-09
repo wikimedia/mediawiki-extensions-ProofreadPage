@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Baloch Afghanistan"
+			"Baloch Afghanistan",
+			"Ibrahim khashrowdi"
 		]
 	},
 	"indexpages": "نمایه ئی تاکدیمانی لڑ\t لیست",
@@ -52,7 +53,7 @@
 	"proofreadpage_page_status": "تاکدیمئ وضیئت",
 	"proofreadpage_js_attributes": "ئنوان نویسوک سال ناشر",
 	"proofreadpage_index_attributes": "نویسوک\nئنوان\nYear|سال انتشار\nناشر\nمنبه\nImage|پوشئ اکس\nPages||20\nRemarks||10",
-	"proofreadpage_pages": "{{PLURAL:$1|تاکدیم}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|دیم|تاکدیمان}}",
 	"proofreadpage_specialpage_legend": "گشتین بی ایندیکسئ تاکدیمانئ تا",
 	"proofreadpage_specialpage_searcherror": "خطا بی گردگئ ماشینی تا",
 	"proofreadpage_specialpage_searcherrortext": "گردگئ ماشین کار ئه نه کنت . بخشش ئه لوٹن.",
