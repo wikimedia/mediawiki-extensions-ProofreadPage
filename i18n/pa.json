@@ -8,6 +8,9 @@
 	"proofreadpage_image": "ਤਸਵੀਰ",
 	"proofreadpage_badpage": "ਗਲਤ ਫਾਰਮੈਟ",
 	"proofreadpage_nologin": "ਲਾਗਇਨ ਨਹੀਂ ਹੋ",
+	"proofreadpage_notallowed": "ਤਬਦੀਲੀ ਨਹੀਂ ਹੋ ਸਕਦੀ",
+	"proofreadpage_nextpage": "ਅਗਲਾ ਸਫ਼ਾ",
+	"proofreadpage_prevpage": "ਪਿਛਲਾ ਸਫ਼ਾ",
 	"proofreadpage_quality0_category": "ਲਿਖਤ ਤੋਂ ਬਿਨਾਂ",
 	"proofreadpage_quality1_category": "ਗਲਤੀਆਂ ਨਹੀਂ ਲਾਈਆਂ",
 	"proofreadpage_quality2_category": "ਸਮੱਸਿਆਤਮਕ",
@@ -19,6 +22,9 @@
 	"proofreadpage_index_listofpages": "ਸਫ਼ਿਆਂ ਦੀ ਸੂਚੀ",
 	"proofreadpage_source": "ਸਰੋਤ",
 	"proofreadpage-group-zoom": "ਜ਼ੂਮ ਕਰੋ",
+	"proofreadpage-group-other": "ਹੋਰ",
 	"proofreadpage-button-zoom-out-label": "ਬਾਹਰ ਨੂੰ ਜ਼ੂਮ ਕਰੋ",
-	"proofreadpage-button-zoom-in-label": "ਅੰਦਰ ਨੂੰ ਜ਼ੂਮ ਕਰੋ"
+	"proofreadpage-button-reset-zoom-label": "ਮੂਲ ਆਕਾਰ",
+	"proofreadpage-button-zoom-in-label": "ਅੰਦਰ ਨੂੰ ਜ਼ੂਮ ਕਰੋ",
+	"content-model-proofread-page": "ਸਫ਼ਾ: ਸਫ਼ਾ"
 }
