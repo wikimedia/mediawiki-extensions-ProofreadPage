@@ -19,8 +19,8 @@ class ProofreadPageInit {
 	);
 
 	/**
-	 * init namespaces used by ProofreadPage
-	 * @return bool false if there is an error, true if not
+	 * Initialize namespaces used by ProofreadPage
+	 * @return bool true
 	 */
 	public static function initNamespaces() {
 		self::initNamespace( 'page' );
@@ -34,7 +34,7 @@ class ProofreadPageInit {
 	 * @param $key string the key of the namespace in the i18n file
 	 */
 	protected static function initNamespace( $key ) {
-		global $wgExtraNamespaces, $wgProofreadPageNamespaceIds;
+		global $wgContentNamespaces, $wgExtraNamespaces, $wgProofreadPageNamespaceIds;
 
 		if ( isset( $wgProofreadPageNamespaceIds[$key] ) ) {
 			if ( !is_numeric( $wgProofreadPageNamespaceIds[$key] ) ) {
@@ -53,6 +53,13 @@ class ProofreadPageInit {
 					$wgProofreadPageNamespaceIds[$key] = self::$defaultNamespaceIds[$key];
 				} //else: the relevant error message is output by getNamespaceId
 			}
+		}
+
+		// Also Add Page/Index namespace to $wgContentNamespaces
+		// Temporary to prevent duplicate values in $wgContentNamespaces
+		// can be removed when wmf-config is sorted out
+		if ( !in_array( $wgProofreadPageNamespaceIds[$key], $wgContentNamespaces ) ) {
+			$wgContentNamespaces[] = $wgProofreadPageNamespaceIds[$key];
 		}
 	}
 
