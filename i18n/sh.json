@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"OC Ripper"
+		]
+	},
+	"proofreadpage_quality0_category": "Bez teksta",
+	"proofreadpage_quality1_category": "Nije provjerena",
+	"proofreadpage_quality2_category": "Problematično",
+	"proofreadpage_quality3_category": "Provjereno",
+	"proofreadpage_quality4_category": "Potvrđeno",
+	"proofreadpage_quality1_message": "Ova stranica nije bila lektorisana"
+}
