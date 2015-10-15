@@ -7,5 +7,9 @@
 	"proofreadpage_quality0_category": "Min ğīr tēkst",
 	"proofreadpage_quality1_category": "Mē tŧabtitc",
 	"proofreadpage_quality3_category": "Tŧebbit",
-	"proofreadpage_quality4_category": "Tvālīde"
+	"proofreadpage_quality4_category": "Tvālīde",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|ss'af7a|ss'afa7at}}",
+	"proofreadpage-group-zoom": "kabber",
+	"proofreadpage-preferences-showheaders-label": "warri plaiss' el entête wel pied de page wa9t il edition fil faragh mte3 el page {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "ista3mel i5raj ofo9i wa9t tekteb fil misse7a mte3 ess'af7a {{ns:page}}"
 }
