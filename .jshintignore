@@ -1,2 +1,3 @@
-modules/jquery/
-node_modules/
+modules/jquery/**
+node_modules/**
+vendor/**

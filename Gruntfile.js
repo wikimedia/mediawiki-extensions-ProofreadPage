@@ -12,7 +12,8 @@ module.exports = function ( grunt ) {
 		jsonlint: {
 			all: [
 				'**/*.json',
-				'!node_modules/**'
+				'!node_modules/**',
+				'!vendor/**'
 			]
 		},
 		jshint: {
@@ -20,9 +21,10 @@ module.exports = function ( grunt ) {
 				jshintrc: true
 			},
 			all: [
-				'*.js',
+				'**/*.js',
 				'modules/**/*.js',
-				'!modules/jquery/*.js'
+				'!modules/jquery/*.js',
+				'!vendor/**'
 			]
 		},
 		jscs: {
