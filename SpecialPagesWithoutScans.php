@@ -43,7 +43,7 @@ class PagesWithoutScans extends QueryPage {
 	 * @return mixed
 	 */
 	function disambiguation_templates( $dbr ) {
-		$dMsgText = wfMsgForContent('proofreadpage-disambiguationspage');
+		$dMsgText = wfMessage( 'proofreadpage-disambiguationspage' )->inContentLanguage()->text();
 
 		$linkBatch = new LinkBatch;
 
