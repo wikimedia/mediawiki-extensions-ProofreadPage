@@ -76,6 +76,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "کلی طرح ودی نه بوت",
 	"proofreadpage-indexoai-error-schemanotfound-text": " $1  طرح ودی نه بوت.",
 	"proofreadpage-disambiguationspage": "تراشوان: شک و شبهه ئی دور کورتین",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|تاکدیم}} جووان زانته بوته، $2 {{PLURAL:$2|تاکدیم}} فقط تصحیح املاء بوته و $3 {{PLURAL:$3|تاکدیم}} تصحیح املاء نه بوته",
 	"content-model-proofread-page": "تاکدیم: تاکدیم",
 	"apihelp-query+proofread-description": "بیئرگشت داتین مئلوماتان بی تاکدیمانی ایڈیٹی انونین وضیئتا که داته بوته انت.",
 	"apihelp-query+proofread-example-1": "بیئرگشت داتین ایڈیٹی وضیئت په تاکدیمان بی ۲۵۰ فضای نامی تا",
