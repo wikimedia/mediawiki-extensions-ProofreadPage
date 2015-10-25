@@ -67,11 +67,19 @@
 	"proofreadpage-button-reset-zoom-label": "Orihinal nga kadako",
 	"proofreadpage-button-zoom-in-label": "Pagutia",
 	"proofreadpage-button-toggle-layout-label": "Patukdaw/pahigda nga layout",
+	"proofreadpage-pageinfo-status": "Kahimtang han Proofreading",
 	"proofreadpage-preferences-showheaders-label": "Igpakita an mga bubutangan han ulohan ngan tiilan kun nagliliwat ha {{ns:page}} ngaran-lat'ang",
 	"proofreadpage-preferences-horizontal-layout-label": "Gamita an pahigda nga layout kun nagliliwat ha {{ns:page}} ngaran-lat'ang",
 	"proofreadpage-indexoai-repositoryName": "Metadata han mga libro tikang ha {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Metadata han mga libro nga gindudumara han ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Waray kabibilngi an schema",
 	"proofreadpage-indexoai-error-schemanotfound-text": "An $1 nga schema in waray katatad-i.",
-	"proofreadpage-disambiguationspage": "Batakan:pansayod"
+	"proofreadpage-disambiguationspage": "Batakan:pansayod",
+	"proofreadpage-indexquality-alt": "$1 gin-validate {{PLURAL:$1|ka pakli|ka mga pakli}}, $2 la an gin-proofread {{PLURAL:$2|ka pakli|ka mga pakli}} ngan $3 waray pa gin-proofread {{PLURAL:$3|ka pakli|ka mga pakli}}",
+	"content-model-proofread-page": "Pakli: pakli",
+	"apihelp-query+proofread-description": "Igbalik an mga impormasyon hiunong han kahimtang han proofread yana ha mga ginhatag nga mga pakli.",
+	"apihelp-query+proofread-example-1": "Igbalik an kahimtang han proofread para han mga pakli ha ngaran-latáng 250",
+	"apihelp-query+proofreadinfo-description": "Igbalik an impormasyon hiunong han configuration han ProofreadPage extension.",
+	"apihelp-query+proofreadinfo-example-1": "Igbalik an default nga impormasyon",
+	"apihelp-query+proofreadinfo-example-3": "Igbalik an impormasyon han ngaran-lat'ang"
 }
