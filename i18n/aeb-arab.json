@@ -1,4 +1,7 @@
 {
+	"@metadata": {
+		"authors": []
+	},
 	"indexpages": "قائمة صفحات الفهرس",
 	"pageswithoutscans": "صفحات من دون تفحص",
 	"proofreadpage_desc": "يسمح بمقارنة سهلة للنص مع المسح الأصلي",
