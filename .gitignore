@@ -4,3 +4,4 @@
 .*.swp
 .htaccess
 
+node_modules/
