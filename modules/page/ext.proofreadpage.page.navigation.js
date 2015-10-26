@@ -4,10 +4,10 @@
 	/**
 	 * Get the selector for the main tabs container
 	 *
-	 * @return string
+	 * @return {string}
 	 */
 	function getTabsContainerSelector() {
-		switch( mw.config.get( 'skin' ) ) {
+		switch ( mw.config.get( 'skin' ) ) {
 			case 'vector':
 				return '#p-namespaces ul';
 			case 'monobook':
@@ -22,21 +22,22 @@
 	 * Improve the tabs presentation
 	 */
 	function initTabs() {
-		//Move prev and next links
-		$( getTabsContainerSelector() )
-			.prepend( $( '#ca-proofreadPageNextLink') )
-			.prepend( $( '#ca-proofreadPagePrevLink') );
-
-		//add title attribute to links move to icon
 		var tabsToIcon = [ 'proofreadPagePrevLink', 'proofreadPageNextLink', 'proofreadPageIndexLink' ];
-		$.each( tabsToIcon, function( i, id ) {
+
+		// Move prev and next links
+		$( getTabsContainerSelector() )
+			.prepend( $( '#ca-proofreadPageNextLink' ) )
+			.prepend( $( '#ca-proofreadPagePrevLink' ) );
+
+		// add title attribute to links move to icon
+		$.each( tabsToIcon, function ( i, id ) {
 			var $link = $( '#ca-' + id + '.icon a' );
 			$link.attr( 'title', $link.text() );
 		} );
 	}
 
-	$( document ).ready( function() {
+	$( document ).ready( function () {
 		initTabs();
 	} );
 
-} ( mediaWiki, jQuery ) );
+}( mediaWiki, jQuery ) );

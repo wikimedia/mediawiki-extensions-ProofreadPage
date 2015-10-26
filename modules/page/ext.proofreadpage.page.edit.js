@@ -5,24 +5,24 @@
 	 * Is the layout horizontal (ie is the scan image on top of the edit area)
 	 * @type {boolean}
 	 */
-	var isLayoutHorizontal = false;
+	var isLayoutHorizontal = false,
 
 	/**
 	 * The scan image
 	 * @type {jQuery}
 	 */
-	var $zoomImage;
+	$zoomImage,
 
 	/**
 	 * The edit form
 	 * @type {jQuery}
 	 */
-	var $editForm;
+	$editForm;
 
 	/**
 	 * Show or hide header and footer areas
 	 *
-	 * @param speed string speed of the toggle. May be 'fast', 'slow' or undefined
+	 * @param {string} speed string speed of the toggle. May be 'fast', 'slow' or undefined
 	 */
 	function toggleHeaders( speed ) {
 		$editForm.find( '.prp-page-edit-header' ).toggle( speed );
@@ -34,13 +34,14 @@
 	 * Put the scan image on top or on the left of the edit area
 	 */
 	function toggleLayout() {
-		if( $zoomImage.data( 'prpZoom' ) ) {
+		var $container;
+		if ( $zoomImage.data( 'prpZoom' ) ) {
 			$zoomImage.prpZoom( 'destroy' );
 		}
 
-		var $container = $zoomImage.parent();
+		$container = $zoomImage.parent();
 
-		if( isLayoutHorizontal ) {
+		if ( isLayoutHorizontal ) {
 			$container.appendTo( $editForm.find( '.prp-page-container' ) );
 
 			$container.css( {
@@ -79,10 +80,10 @@
 	 * Apply user preferences
 	 */
 	function setupPreferences() {
-		if( !mw.user.options.get( 'proofreadpage-showheaders' ) ) {
+		if ( !mw.user.options.get( 'proofreadpage-showheaders' ) ) {
 			toggleHeaders();
 		}
-		if( mw.user.options.get( 'proofreadpage-horizontal-layout' ) ) {
+		if ( mw.user.options.get( 'proofreadpage-horizontal-layout' ) ) {
 			toggleLayout();
 		}
 	}
@@ -91,10 +92,10 @@
 	 * Init the automatic fill of the summary input box
 	 */
 	function setupPageQuality() {
-		$( 'input[name="wpQuality"]' ).click( function() {
-			var $summary = $( '#wpSummary' );
-			var pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_category').plain();
-			var summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
+		$( 'input[name="wpQuality"]' ).click( function () {
+			var $summary = $( '#wpSummary' ),
+				pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_category' ).plain(),
+				summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
 			$summary.val( '/* ' + pageQuality + ' */ ' + summary );
 		} );
 	}
@@ -103,81 +104,81 @@
 	 * Add some buttons to the toolbar
 	 */
 	function addButtons() {
-		var iconPath = mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/page/images/';
-		var tools = {
-			zoom: {
-				labelMsg: 'proofreadpage-group-zoom',
-				tools: {
-					'zoom-in': {
-						labelMsg: 'proofreadpage-button-zoom-in-label',
-						type: 'button',
-						icon: iconPath + 'wikieditor-zoom-in.png',
-						oldIcon: iconPath + 'Button_zoom_in.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								$zoomImage.prpZoom( 'zoomIn' );
+		var iconPath = mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/page/images/',
+			tools = {
+				zoom: {
+					labelMsg: 'proofreadpage-group-zoom',
+					tools: {
+						'zoom-in': {
+							labelMsg: 'proofreadpage-button-zoom-in-label',
+							type: 'button',
+							icon: iconPath + 'wikieditor-zoom-in.png',
+							oldIcon: iconPath + 'Button_zoom_in.png',
+							action: {
+								type: 'callback',
+								execute: function () {
+									$zoomImage.prpZoom( 'zoomIn' );
+								}
+							}
+						},
+						'zoom-out': {
+							labelMsg: 'proofreadpage-button-zoom-out-label',
+							type: 'button',
+							icon: iconPath + 'wikieditor-zoom-out.png',
+							oldIcon: iconPath + 'Button_zoom_out.png',
+							action: {
+								type: 'callback',
+								execute: function () {
+									$zoomImage.prpZoom( 'zoomOut' );
+								}
+							}
+						},
+						'reset-zoom': {
+							labelMsg: 'proofreadpage-button-reset-zoom-label',
+							type: 'button',
+							icon: iconPath + 'wikieditor-zoom-reset.png',
+							oldIcon: iconPath + 'Button_examine.png',
+							action: {
+								type: 'callback',
+								execute: function () {
+									$zoomImage.prpZoom( 'reset' );
+								}
 							}
 						}
-					},
-					'zoom-out': {
-						labelMsg: 'proofreadpage-button-zoom-out-label',
-						type: 'button',
-						icon: iconPath + 'wikieditor-zoom-out.png',
-						oldIcon: iconPath + 'Button_zoom_out.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								$zoomImage.prpZoom( 'zoomOut' );
+					}
+				},
+				other: {
+					labelMsg: 'proofreadpage-group-other',
+					tools: {
+						'toggle-visibility': {
+							labelMsg: 'proofreadpage-button-toggle-visibility-label',
+							type: 'button',
+							icon: iconPath + 'wikieditor-visibility.png',
+							oldIcon: iconPath + 'Button_category_plus.png',
+							action: {
+								type: 'callback',
+								execute: function () {
+									toggleHeaders( 'fast' );
+								}
 							}
-						}
-					},
-					'reset-zoom': {
-						labelMsg: 'proofreadpage-button-reset-zoom-label',
-						type: 'button',
-						icon: iconPath + 'wikieditor-zoom-reset.png',
-						oldIcon: iconPath + 'Button_examine.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								$zoomImage.prpZoom( 'reset' );
+						},
+						'toggle-layout': {
+							labelMsg: 'proofreadpage-button-toggle-layout-label',
+							type: 'button',
+							icon: iconPath + 'wikieditor-layout.png',
+							oldIcon: iconPath + 'Button_multicol.png',
+							action: {
+								type: 'callback',
+								execute: toggleLayout
 							}
 						}
 					}
 				}
 			},
-			other: {
-				labelMsg: 'proofreadpage-group-other',
-				tools: {
-					'toggle-visibility': {
-						labelMsg: 'proofreadpage-button-toggle-visibility-label',
-						type: 'button',
-						icon: iconPath + 'wikieditor-visibility.png',
-						oldIcon: iconPath + 'Button_category_plus.png',
-						action: {
-							type: 'callback',
-							execute: function() {
-								toggleHeaders( 'fast' );
-							}
-						}
-					},
-					'toggle-layout': {
-						labelMsg: 'proofreadpage-button-toggle-layout-label',
-						type: 'button',
-						icon: iconPath + 'wikieditor-layout.png',
-						oldIcon: iconPath + 'Button_multicol.png',
-						action: {
-							type: 'callback',
-							execute: toggleLayout
-						}
-					}
-				}
-			}
-		};
+			$edit = $( '#wpTextbox1' );
 
-		var $edit = $( '#wpTextbox1' );
-		if ( mw.user.options.get( 'usebetatoolbar' ) == 1 ) { //"== 1" in order to disallow both 0 and "0"
-			mw.loader.using( 'ext.wikiEditor.toolbar', function() {
+		if ( mw.user.options.get( 'usebetatoolbar' ) === 1 ) {
+			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
 				$edit.wikiEditor( 'addToToolbar', {
 					sections: {
 						'proofreadpage-tools': {
@@ -188,12 +189,12 @@
 					}
 				} );
 			} );
-		} else if ( mw.user.options.get( 'showtoolbar' ) == 1 ) {
-			mw.loader.using( 'mediawiki.action.edit', function() {
+		} else if ( mw.user.options.get( 'showtoolbar' ) === 1 ) {
+			mw.loader.using( 'mediawiki.action.edit', function () {
 				var $toolbar = $( '#toolbar' );
 
-				$.each( tools, function( group, list ) {
-					$.each( list.tools, function( id, def ) {
+				$.each( tools, function ( group, list ) {
+					$.each( list.tools, function ( id, def ) {
 						$( '<img>' )
 							.attr( {
 								width: 23,
@@ -201,7 +202,7 @@
 								src: def.oldIcon,
 								alt: mw.msg( def.labelMsg ),
 								title: mw.msg( def.labelMsg ),
-								'class': 'mw-toolbar-editbutton' //quotes needed for IE
+								'class': 'mw-toolbar-editbutton' // quotes needed for IE
 							} )
 							.click( def.action.execute )
 							.appendTo( $toolbar );
@@ -216,18 +217,18 @@
 	 */
 	function setupWikiEditor() {
 		// Ignore "showtoolbar", for consistency with the default behavior (bug 30795)
-		if( !mw.user.options.get( 'usebetatoolbar' ) ) {
+		if ( !mw.user.options.get( 'usebetatoolbar' ) ) {
 			return;
 		}
-		mw.loader.using( 'ext.wikiEditor', function() {
+		mw.loader.using( 'ext.wikiEditor', function () {
 			$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
 			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
 			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 		} );
 
 		// load the "dialogs" module of WikiEditor if enabled , bug: 72960
-		if( mw.user.options.get( 'usebetatoolbar-cgd' ) ) {
-			mw.loader.load('ext.wikiEditor.dialogs');
+		if ( mw.user.options.get( 'usebetatoolbar-cgd' ) ) {
+			mw.loader.load( 'ext.wikiEditor.dialogs' );
 		}
 		// TODO: other modules of WikiEditor may miss, see bug 72960.
 	}
@@ -236,10 +237,10 @@
 	 * Init global variables of the script
 	 */
 	function initEnvironment() {
-		if( $editForm === undefined ) {
+		if ( $editForm === undefined ) {
 			$editForm = $( '#editform' );
 		}
-		if( $zoomImage === undefined ) {
+		if ( $zoomImage === undefined ) {
 			$zoomImage = $editForm.find( '.prp-page-image img' );
 		}
 	}
@@ -248,12 +249,12 @@
 	 * Init the zoom system
 	 */
 	function initZoom() {
-		mw.loader.using( 'jquery.prpZoom', function() {
+		mw.loader.using( 'jquery.prpZoom', function () {
 			$zoomImage.prpZoom();
 		} );
 	}
 
-	$( document ).ready( function() {
+	$( document ).ready( function () {
 		initEnvironment();
 		setupWikiEditor();
 		setupPreferences();
@@ -261,10 +262,10 @@
 		addButtons();
 	} );
 
-	//zoom should be init after the page is rendered
-	$( window ).load( function() {
+	// zoom should be init after the page is rendered
+	$( window ).load( function () {
 		initEnvironment();
 		initZoom();
 	} );
 
-} ( mediaWiki, jQuery ) );
+}( mediaWiki, jQuery ) );
