@@ -56,11 +56,8 @@ class ProofreadPageInit {
 		}
 
 		// Also Add Page/Index namespace to $wgContentNamespaces
-		// Temporary to prevent duplicate values in $wgContentNamespaces
-		// can be removed when wmf-config is sorted out
-		if ( !in_array( $wgProofreadPageNamespaceIds[$key], $wgContentNamespaces ) ) {
-			$wgContentNamespaces[] = $wgProofreadPageNamespaceIds[$key];
-		}
+		$wgContentNamespaces[] = $wgProofreadPageNamespaceIds[$key];
+
 	}
 
 	/**
