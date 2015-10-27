@@ -1,11 +1,11 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	$( document ).ready( function() {
+	$( document ).ready( function () {
 		// Set up the help system
 		$( '.prp-help-field' ).tipsy( {
-			'gravity': 'nw'
+			gravity: 'nw'
 		} );
 	} );
 
-} ( mediaWiki, jQuery ) );
+}( mediaWiki, jQuery ) );
