@@ -82,5 +82,10 @@
 	"proofreadpage-disambiguationspage": "Template:Begriffsklärung",
 	"proofreadpage-indexquality-alt": "{{PLURAL:$1|Eine bestätigte Seite|$1 bestätigte Seiten}}, {{PLURAL:$2|eine nur korrekturgelesene Seite|$2 nur korrekturgelesene Seiten}} und {{PLURAL:$3|eine nicht korrekturgelesene Seite|$3 nicht korrekturgelesene Seiten}}",
 	"content-model-proofread-page": "Seite: Seite",
+	"apihelp-query+proofread-description": "Gibt Informationen über den Korrekturlesungsstatus der Seiten zurück.",
+	"apihelp-query+proofread-example-1": "Gibt den Korrekturlesungsstatus der Seiten im Namensraum 250 zurück",
+	"apihelp-query+proofreadinfo-description": "Gibt Informationen zur Einstellung der Erweiterung „ProofreadPage“ zurück.",
+	"apihelp-query+proofreadinfo-param-prop": "Welche Eigenschaften zurückgegeben werden sollen:\n;namespaces:Information über die Namensräume „Seite“ und „Index“.\n;qualitylevels:Liste der Korrekturlesungs-Qualitätsstufen.",
+	"apihelp-query+proofreadinfo-example-1": "Gibt Standardinformationen zurück",
 	"apihelp-query+proofreadinfo-example-3": "Gibt Namensrauminformationen zurück"
 }
