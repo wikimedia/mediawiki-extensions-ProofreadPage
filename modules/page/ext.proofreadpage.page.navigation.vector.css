@@ -8,7 +8,6 @@
 	width: 26px;
 	/* This hides the text but shows the background image */
 	padding-top: 3.1em;
-	margin-top: 0;
 	/* Only applied in IE6 */
 	margin-top: -0.8em !ie;
 	height: 0;
@@ -16,12 +15,14 @@
 	background-position: 50% 70%;
 }
 
-#ca-proofreadPagePrevLink.icon a {
+.ltr #ca-proofreadPagePrevLink.icon a,
+.rtl #ca-proofreadPageNextLink.icon a {
 	/* @embed */
 	background-image: url( 'images/leftarrow.png' );
 }
 
-#ca-proofreadPageNextLink.icon a {
+.ltr #ca-proofreadPageNextLink.icon a,
+.rtl #ca-proofreadPagePrevLink.icon a {
 	/* @embed */
 	background-image: url( 'images/rightarrow.png' );
 }

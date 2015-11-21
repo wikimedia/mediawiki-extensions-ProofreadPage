@@ -24,10 +24,16 @@
 	function initTabs() {
 		var tabsToIcon = [ 'proofreadPagePrevLink', 'proofreadPageNextLink', 'proofreadPageIndexLink' ];
 
-		// Move prev and next links
-		$( getTabsContainerSelector() )
-			.prepend( $( '#ca-proofreadPageNextLink' ) )
-			.prepend( $( '#ca-proofreadPagePrevLink' ) );
+		// Move prev and next links (swapped for rtl languages)
+		if ( $( 'html' ).attr( 'dir' ) === 'rtl' ) {
+			$( getTabsContainerSelector() )
+				.append( $( '#ca-proofreadPageNextLink' ) )
+				.append( $( '#ca-proofreadPagePrevLink' ) );
+		} else {
+			$( getTabsContainerSelector() )
+				.prepend( $( '#ca-proofreadPageNextLink' ) )
+				.prepend( $( '#ca-proofreadPagePrevLink' ) );
+		}
 
 		// add title attribute to links move to icon
 		$.each( tabsToIcon, function ( i, id ) {
