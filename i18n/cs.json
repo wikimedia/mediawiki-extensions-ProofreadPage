@@ -77,5 +77,6 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schéma nenalezeno",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Schéma $1 nenalezeno.",
 	"proofreadpage-disambiguationspage": "Template:rozcestník",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|ověřená stránka|ověřené stránky|ověřených stránek}}, $2 jen {{PLURAL:$2|zkontrolovaná stránka|zkontrolované stránky|zkontrolovaných stránek}} a $3 {{PLURAL:$3|nezkontrolovaná stránka|nezkontrolované stránky|nezkontrolovaných stránek}}",
 	"content-model-proofread-page": "Stránka: stránka"
 }
