@@ -19,7 +19,7 @@
 	"proofreadpage_indexdupe": "প্ৰতিলিপি সংযোগ",
 	"proofreadpage_indexdupetext": "সূচীত পৃষ্ঠাসমূহ এবাৰতকৈ বেছি তালিকাভুক্ত কৰিব নোৱাৰি",
 	"proofreadpage_nologin": "প্ৰৱেশ কৰা নাই",
-	"proofreadpage_nologintext": "পৃষ্ঠাখনৰ প্ৰুফৰিডিং অৱস্থা সলাবলৈ আপুনি [[Special:UserLogin|লগ্‌ ইন]] কৰিব লাগিব।",
+	"proofreadpage_nologintext": "পৃষ্ঠাটোৰ প্ৰুফৰিডিং অৱস্থা সলাবলৈ আপুনি [[Special:UserLogin|প্ৰৱেশ]] কৰিব লাগিব।",
 	"proofreadpage_notallowed": "পৰিৱৰ্তনৰ অনুমতি নাই",
 	"proofreadpage_notallowedtext": "এই পৃষ্ঠাৰ প্ৰুফৰিডিং অৱস্থা সলাবলৈ আপোনাৰ অনুমতি নাই।",
 	"proofreadpage_dataconfig_badformatted": "তথ্যত বাগ (bug) সজ্জা",
