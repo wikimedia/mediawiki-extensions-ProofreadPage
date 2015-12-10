@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mogoeilor",
-			"Hosseinblue"
+			"Hosseinblue",
+			"Arash71"
 		]
 	},
 	"indexpages": "لیست وۀلگۀل نمایه",
@@ -60,7 +61,7 @@
 	"proofreadpage_source": "بِنچۀک/مۀنبۀع",
 	"proofreadpage_source_message": "برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده",
 	"right-pagequality": "تغییر پرچم کیفیت صفحه",
-	"proofreadpage-section-tools": "ابزارۀل دۀسکاری",
+	"proofreadpage-section-tools": "ابزارةل دةسکاری",
 	"proofreadpage-group-zoom": "اندازه‌نمایی",
 	"proofreadpage-group-other": "بۀقیۀ",
 	"proofreadpage-button-toggle-visibility-label": "نمایش/نهفتن سرصفحه و پاورقی این صفحه",
