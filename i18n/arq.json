@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Oldstoneage",
-			"Bachounda"
+			"Bachounda",
+			"GeekEmad"
 		]
 	},
 	"indexpages": "ليستة تاع باجات تاع الفهراس",
@@ -52,7 +53,7 @@
 	"proofreadpage_page_status": "حالت الباجه",
 	"proofreadpage_js_attributes": "المؤلف العنوان السنة الناشر",
 	"proofreadpage_index_attributes": "المؤلف\nالعنوان\nالعام |سنة النشر\nالناشر\nالمصدر\nالتصويره|تصويرت الغلاف\nالباجات||20\nالملاحظات||10",
-	"proofreadpage_pages": "$1 {{PLURAL:$1|باجة|باجات}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|باجة|باجات}}",
 	"proofreadpage_specialpage_legend": "بحث باجات الفهرست",
 	"proofreadpage_specialpage_searcherror": "غلطه في موتور البحث",
 	"proofreadpage_specialpage_searcherrortext": "موتور البحث  ما يخدمش. السماح على هذا.",
