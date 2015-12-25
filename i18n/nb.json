@@ -3,7 +3,8 @@
 		"authors": [
 			"Laaknor",
 			"Nghtwlkr",
-			"Simny"
+			"Simny",
+			"Danmichaelo"
 		]
 	},
 	"indexpages": "Liste over innholdsfortegnelser",
@@ -41,6 +42,12 @@
 	"proofreadpage_quality2_message": "Det oppsto et problem når denne siden skulle korrekturleses",
 	"proofreadpage_quality3_message": "Denne siden er korrekturlest",
 	"proofreadpage_quality4_message": "Denne siden er godkjent",
+	"proofreadpage_index_status": "Indekseringsstatus",
+	"proofreadpage_index_size": "Antall sider",
+	"proofreadpage_specialpage_label_orderby": "Sorter etter:",
+	"proofreadpage_specialpage_label_key": "Søk:",
+	"proofreadpage_specialpage_label_sortascending": "Sorter stigende",
+	"proofreadpage_alphabeticalorder": "Alfabetisk rekkefølge",
 	"proofreadpage_index_listofpages": "Liste over sider",
 	"proofreadpage_image_message": "Lenke til indekssiden",
 	"proofreadpage_page_status": "Sidestatus",
@@ -48,12 +55,27 @@
 	"proofreadpage_index_attributes": "Forfatter\nTittel\nÅr|Utgivelsesår\nUtgiver\nKilde\nBilde|Omslagsbilde\nSider||20\nMerknader||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|side|sider}}",
 	"proofreadpage_specialpage_legend": "Søk i indekssider",
+	"proofreadpage_specialpage_searcherror": "Feil i søkemotoren",
+	"proofreadpage_specialpage_searcherrortext": "Søkemotoren virker ikke enda. Beklager dette.",
 	"proofreadpage_source": "Kilde",
 	"proofreadpage_source_message": "Scannet utgave brukt for å etablere denne teksten",
 	"right-pagequality": "Endre sidens kvalitetsflagg",
+	"proofreadpage-section-tools": "Korrekturlesingsverktøy",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Annet",
+	"proofreadpage-button-toggle-visibility-label": "Vis/skjul denne sidens topptekst og bunntekst",
 	"proofreadpage-button-zoom-out-label": "Zoom ut",
 	"proofreadpage-button-reset-zoom-label": "Tilbakestill zoom",
-	"proofreadpage-button-zoom-in-label": "Zoom inn"
+	"proofreadpage-button-zoom-in-label": "Zoom inn",
+	"proofreadpage-button-toggle-layout-label": "Vertikalt/horisontalt oppsett",
+	"proofreadpage-pageinfo-status": "Status for korrekturlesing",
+	"proofreadpage-preferences-showheaders-label": "Vis felt for topptekst og bunntekst ved redigering i {{ns:page}}-navnerommet",
+	"proofreadpage-preferences-horizontal-layout-label": "Bruk horisontalt oppsett ved redigering i {{ns:page}}-navnerommet",
+	"proofreadpage-indexoai-repositoryName": "Metadata for bøker fra {{SITENAME}}",
+	"proofreadpage-indexoai-eprint-content-text": "Metadata for bøker håndtert av ProofreadPage.",
+	"proofreadpage-indexoai-error-schemanotfound": "Fant ikke skjema",
+	"proofreadpage-indexoai-error-schemanotfound-text": "Skjemaet $1 ble ikke funnet.",
+	"proofreadpage-disambiguationspage": "Template:peker",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|godkjent side|godkjente sider}}, $2 {{PLURAL:$2|korrekturlest side|korrekturleste sider}} og $3 {{PLURAL:$3|side|sider}} som ikke har blitt korrekturlest enda",
+	"content-model-proofread-page": "Side: side"
 }
