@@ -92,7 +92,7 @@
 	"apihelp-query+proofread-description": "Devuelve información acerca del estado actual de revisión de las páginas dadas.",
 	"apihelp-query+proofread-example-1": "Devolver el estado de revisión de las páginas en el espacio de nombres 250",
 	"apihelp-query+proofreadinfo-description": "Devolver información acerca de la configuración de la extensión ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Qué propiedades de corrección se obtendrán:\n;namespaces: información sobre los espacios de nombre \"Template:Ns:Page\" y \"Template:Ns:Index\" .\n;qualitylevels: lista de niveles de calidad de corrección.",
+	"apihelp-query+proofreadinfo-param-prop": "Qué propiedades de corrección se obtendrán:\n;namespaces: información sobre los espacios de nombres \"{{ns:Page}}\" y \"{{ns:Index}}\".\n;qualitylevels: lista de niveles de calidad de corrección.",
 	"apihelp-query+proofreadinfo-example-1": "Devolver la información predeterminada",
 	"apihelp-query+proofreadinfo-example-3": "Devolver la información del espacio de nombres"
 }
