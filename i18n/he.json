@@ -85,7 +85,7 @@
 	"apihelp-query+proofread-description": "החזרת מידע על מצב ההגהה הנוכחי של הדפים הנתונים.",
 	"apihelp-query+proofread-example-1": "החזרת מצב ההגהה לדפים במרחב 250",
 	"apihelp-query+proofreadinfo-description": "החזרת מידע על הגדרות ההרחבה ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "אילו מאפייני הגהה לקבל:\n;namespaces:מידע על מרחבי השם Page ו־Index.\n;qualitylevels:רשימת רמות איכות הגהה.",
+	"apihelp-query+proofreadinfo-param-prop": "אילו מאפייני הגהה לקבל:\n;namespaces:מידע על מרחבי השם \"{{ns:Page}}\"ֿֿ ו־{{ns:Index}}.\n;qualitylevels:רשימת רמות איכות הגהה.",
 	"apihelp-query+proofreadinfo-example-1": "החזרת מידע בררת מחדל",
 	"apihelp-query+proofreadinfo-example-3": "החזרת מידע על מרחב שם"
 }
