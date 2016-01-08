@@ -3,7 +3,8 @@
 		"authors": [
 			"Mogoeilor",
 			"Hosseinblue",
-			"Arash71"
+			"Arash71",
+			"Lakzon"
 		]
 	},
 	"indexpages": "لیست وۀلگۀل نمایه",
@@ -39,9 +40,9 @@
 	"proofreadpage_quality3_category": "إ  دووارۀ دیین",
 	"proofreadpage_quality4_category": "تأییدبی",
 	"proofreadpage_quality0_message": "این صفحه نیازی به نمونه‌خوانی شدن ندارد",
-	"proofreadpage_quality1_message": "ئئ وۀلگۀ بازخوانی نؤیۀ",
+	"proofreadpage_quality1_message": "ئێ وەڵگە پِشؤیی(بررسی)نؤیە",
 	"proofreadpage_quality2_message": "هنگام بازخوانی این صفحه مشکلی وجود داشت",
-	"proofreadpage_quality3_message": "ئئ وۀلگۀ بازخوانی نؤیۀ",
+	"proofreadpage_quality3_message": "ئێ وەڵگە پشؤیی(بررسی)بیە",
 	"proofreadpage_quality4_message": "این صفحه اعتباردهی شده‌است",
 	"proofreadpage_index_status": "وضعیت فهرست",
 	"proofreadpage_index_size": "تعداد وۀلگۀل",
