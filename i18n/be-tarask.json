@@ -40,10 +40,10 @@
 	"proofreadpage_quality2_category": "Праблематычная",
 	"proofreadpage_quality3_category": "Вычытаная",
 	"proofreadpage_quality4_category": "Правераная",
-	"proofreadpage_quality0_message": "Гэта старонка не патрабуе вычыткі",
-	"proofreadpage_quality1_message": "Гэта старонка не была вычытаная",
+	"proofreadpage_quality0_message": "Гэтая старонка не патрабуе вычыткі",
+	"proofreadpage_quality1_message": "Гэтая старонка не была вычытаная",
 	"proofreadpage_quality2_message": "Узьнікла праблема ў вычытцы гэтай старонкі",
-	"proofreadpage_quality3_message": "Гэта старонка была вычытаная",
+	"proofreadpage_quality3_message": "Гэтая старонка была вычытаная",
 	"proofreadpage_quality4_message": "Гэта старонка была правераная",
 	"proofreadpage_index_status": "стану індэкса",
 	"proofreadpage_index_size": "колькасьці старонак",
@@ -76,5 +76,9 @@
 	"proofreadpage-indexoai-repositoryName": "Мэтазьвесткі кнігі з {{GRAMMAR:родны|{{SITENAME}}}}",
 	"proofreadpage-indexoai-eprint-content-text": "Мэтазьвесткі для кніг паводле ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Схема ня знойдзеная",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Схема «$1» ня знойдзеная."
+	"proofreadpage-indexoai-error-schemanotfound-text": "Схема «$1» ня знойдзеная.",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|правераная старонка|правераныя старонкі|правераных старонак}}, $2 {{PLURAL:$2|вычытаная старонка|вычытаныя старонкі|вычытаных старонак}} і $3 ня {{PLURAL:$3|вычытаная старонка|вычытаныя старонкі|вычытаных старонак}}",
+	"apihelp-query+proofread-description": "Вяртае інфармацыю пра актуальны статус вычыткі дадзеных старонак.",
+	"apihelp-query+proofread-example-1": "Вяртае статус вычыткі старонак у прасторы назваў 250",
+	"apihelp-query+proofreadinfo-param-prop": "Якія ўласьцівасьці вычыткі выдаваць:\n;namespaces:Інфармацыя пра прасторы назваў «{{ns:Page}}» і «{{ns:Index}}».\n;qualitylevels:Сьпіс узроўняў якасьці вычыткі."
 }
