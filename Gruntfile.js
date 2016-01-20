@@ -6,6 +6,20 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-jscs' );
 
 	grunt.initConfig( {
+		jshint: {
+			options: {
+				jshintrc: true
+			},
+			all: [
+				'**/*.js',
+				'!modules/jquery/*.js',
+				'!node_modules/**',
+				'!vendor/**'
+			]
+		},
+		jscs: {
+			src: '<%= jshint.all %>'
+		},
 		banana: {
 			all: 'i18n/'
 		},
@@ -15,23 +29,9 @@ module.exports = function ( grunt ) {
 				'!node_modules/**',
 				'!vendor/**'
 			]
-		},
-		jshint: {
-			options: {
-				jshintrc: true
-			},
-			all: [
-				'**/*.js',
-				'modules/**/*.js',
-				'!modules/jquery/*.js',
-				'!vendor/**'
-			]
-		},
-		jscs: {
-			src: '<%= jshint.all %>'
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'jsonlint', 'banana', 'jshint', 'jscs' ] );
+	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'banana' ] );
 	grunt.registerTask( 'default', 'test' );
 };
