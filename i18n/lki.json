@@ -28,7 +28,7 @@
 	"proofreadpage_number_expected": ".خطا:مقدار عددی مورد انتظار است",
 	"proofreadpage_interval_too_large": "خطا:بازهٔ بسیار بزرگ",
 	"proofreadpage_invalid_interval": "خطا: بازهٔ نامعتبر",
-	"proofreadpage_nextpage": "وةڵگة تِر/بعدی",
+	"proofreadpage_nextpage": "وەڵگە تِر(هەنی)",
 	"proofreadpage_prevpage": "وەڵگە دؤماێن",
 	"proofreadpage_header": ":عنوان (noinclude)",
 	"proofreadpage_body": ":)متن صفحه (برای گنجانده شدن",
