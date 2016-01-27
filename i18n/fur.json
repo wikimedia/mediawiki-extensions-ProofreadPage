@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Klenje"
+			"Klenje",
+			"Tocaibon"
 		]
 	},
+	"proofreadpage_quality0_category": "Al mancje il test.",
+	"proofreadpage_quality1_category": "Di corezi",
+	"proofreadpage_quality2_category": "Di riviodi.",
+	"proofreadpage_quality3_category": "Corezût.",
+	"proofreadpage_quality4_category": "Verificât.",
+	"proofreadpage_quality1_message": "Cheste pagjine no je stade corete",
 	"proofreadpage_index_listofpages": "Liste des pagjinis"
 }
