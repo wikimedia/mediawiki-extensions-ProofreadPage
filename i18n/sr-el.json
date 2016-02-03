@@ -3,13 +3,15 @@
 		"authors": [
 			"Michaello",
 			"Жељко Тодоровић",
-			"Srdjan m"
+			"Srdjan m",
+			"Milicevic01"
 		]
 	},
 	"proofreadpage_desc": "Omogući lako upoređivanje teksta i originalnog skena.",
 	"proofreadpage_image": "Slika",
 	"proofreadpage_index": "Indeks",
 	"proofreadpage_badpage": "Pogrešan Format",
+	"proofreadpage_nologin": "Niste prijavljeni",
 	"proofreadpage_notallowed": "Promena nije dozvoljena",
 	"proofreadpage_nextpage": "Sledeća strana",
 	"proofreadpage_prevpage": "Prethodna strana",
