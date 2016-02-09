@@ -80,6 +80,7 @@
 	"apihelp-query+proofread-description": "Igbalik an mga impormasyon hiunong han kahimtang han proofread yana ha mga ginhatag nga mga pakli.",
 	"apihelp-query+proofread-example-1": "Igbalik an kahimtang han proofread para han mga pakli ha ngaran-latáng 250",
 	"apihelp-query+proofreadinfo-description": "Igbalik an impormasyon hiunong han configuration han ProofreadPage extension.",
+	"apihelp-query+proofreadinfo-param-prop": "Ano nga mga proofread properties iton kukuhaon:\n;namespaces:Impormasyon hiunong han \"{{ns:Page}}\" ngan \"{{ns:Index}}\" nga mga ngaran-lat'ang.\n;qualitylevels:Listahan han mga proofread quality level.",
 	"apihelp-query+proofreadinfo-example-1": "Igbalik an default nga impormasyon",
 	"apihelp-query+proofreadinfo-example-3": "Igbalik an impormasyon han ngaran-lat'ang"
 }
