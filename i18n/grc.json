@@ -2,17 +2,44 @@
 	"@metadata": {
 		"authors": [
 			"Crazymadlover",
-			"Omnipaedista"
+			"Omnipaedista",
+			"Gts-tg"
 		]
 	},
+	"indexpages": "Καταλογή δελτών ἐυρετηρίων",
+	"pageswithoutscans": "Δέλτες ἄνευ ἐπισκοπήσεως",
+	"proofreadpage_desc": "ἐφίέναι ἄπονη παραβολή λόγου προς ἐξ ἀρχῆς λόγο",
 	"proofreadpage_image": "εἰκών",
 	"proofreadpage_index": "Δείκτης",
+	"proofreadpage_index_expected": "Σφάλμα: Ἄναμονή ἐυρετηρίου",
+	"proofreadpage_nosuch_index": "Σφάλμα: Οὐδὲν τοιόσδε ἐυρετήριο",
+	"proofreadpage_nosuch_file": "Σφάλμα: Οὐδὲν τοιόσδε ἄρχείον",
+	"proofreadpage_badpage": "Οὐ ὀρθή σύνταξις",
+	"proofreadpage_indexdupe": "Διπλότυπος σύνδεσμος",
+	"proofreadpage_nologin": "Οὐ συνδεδεμένος",
+	"proofreadpage_notallowed": "Μεταβολή ὀυκ ἐγγίγνεται",
 	"proofreadpage_nextpage": "ἡ δέλτος ἡ ἑπομένη",
 	"proofreadpage_prevpage": "ἡ δέλτος ἡ προτέρα",
+	"proofreadpage_quality0_category": "Ἀνευ κειμένου",
 	"proofreadpage_quality1_category": "Μὴ ἠλεγμένη",
 	"proofreadpage_quality2_category": "Προβληματική",
+	"proofreadpage_quality3_category": "Βεβαιοῦν",
+	"proofreadpage_quality4_category": "Ἔγκυρον",
+	"proofreadpage_quality1_message": "Δέλτος ταύτη μή ἠλεγμένη",
+	"proofreadpage_specialpage_label_orderby": "Ταξινόμισης διά:",
+	"proofreadpage_specialpage_label_key": "Ζητεῖν:",
+	"proofreadpage_specialpage_label_sortascending": "Ταξινόμισης αὔξουσα:",
+	"proofreadpage_alphabeticalorder": "Ταξινόμισης ἀλφαβητική",
 	"proofreadpage_index_listofpages": "Καταλογὴ δέλτων",
 	"proofreadpage_page_status": "Κατάστασις δέλτου",
-	"proofreadpage_pages": "{{PLURAL:$1|δέλτος|δέλτοι}}",
-	"proofreadpage_source": "Πηγή"
+	"proofreadpage_pages": "$2 {{PLURAL:$1|δέλτος|δέλτοι}}",
+	"proofreadpage_source": "Πηγή",
+	"proofreadpage-group-zoom": "Ἐστίασις",
+	"proofreadpage-group-other": "Ἄλλον",
+	"proofreadpage-button-zoom-out-label": "Ἀφεστίασις",
+	"proofreadpage-button-zoom-in-label": "Ἑστίασις",
+	"proofreadpage-indexoai-error-schemanotfound": "Σχήμα οὔ εὐρέθη",
+	"proofreadpage-indexoai-error-schemanotfound-text": "Σχήμα $1 οὔ εὐρέθη.",
+	"proofreadpage-disambiguationspage": "Template:ἀποσαφ",
+	"content-model-proofread-page": "Δέλτος: δέλτος"
 }
