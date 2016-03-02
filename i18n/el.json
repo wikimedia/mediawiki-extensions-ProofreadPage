@@ -10,7 +10,8 @@
 			"Konsnos",
 			"Omnipaedista",
 			"ZaDiak",
-			"Αντιγόνη"
+			"Αντιγόνη",
+			"Gts-tg"
 		]
 	},
 	"indexpages": "Κατάλογος σελίδων ευρετηρίου",
@@ -29,6 +30,8 @@
 	"proofreadpage_nologintext": "Πρέπει να είστε [[Special:UserLogin|συνδεδεμένος]] για να αλλάξετε την κατάσταση επαλήθευσης σελίδων.",
 	"proofreadpage_notallowed": "Αλλαγή δεν επιτρέπεται",
 	"proofreadpage_notallowedtext": "Δεν επιτρέπεται να αλλάξετε την κατάσταση διόρθωσης κειμένου αυτής της σελίδας.",
+	"proofreadpage_dataconfig_badformatted": "Σφάλμα στις ρυθμίσεις δεδομένων",
+	"proofreadpage_dataconfig_badformattedtext": "Η σελίδα [[Mediawiki:Proofreadpage ευρετηρίου ρυθμίσεων δεδομένων]] δεν είναι σε καλά μορφοποιημένο JSON.",
 	"proofreadpage_number_expected": "Σφάλμα: αναμενόταν αριθμητικό μέγεθος",
 	"proofreadpage_interval_too_large": "Σφάλμα: υπερβολικά μεγάλο διάστημα",
 	"proofreadpage_invalid_interval": "Σφάλμα: άκυρο διάστημα",
@@ -48,6 +51,7 @@
 	"proofreadpage_quality2_message": "Υπήρξε ένα πρόβλημα στον έλεγχο για πιθανά λάθη αυτής της σελίδας",
 	"proofreadpage_quality3_message": "Η σελίδα αυτή έχει ελεγθεί για πιθανά λάθη",
 	"proofreadpage_quality4_message": "Αυτή η σελίδα έχει εγκριθεί",
+	"proofreadpage_index_status": "Κατάσταση δείκτη",
 	"proofreadpage_index_size": "Αριθμός σελίδων",
 	"proofreadpage_specialpage_label_orderby": "Ταξινόμηση με:",
 	"proofreadpage_specialpage_label_key": "Αναζήτηση:",
@@ -64,6 +68,7 @@
 	"proofreadpage_specialpage_searcherrortext": "Η μηχανή αναζήτησης δεν λειτουργεί. Συγγνώμη για την ενόχληση.",
 	"proofreadpage_source": "Πηγή",
 	"proofreadpage_source_message": "Αυτό το κείμενο προέκυψε από σκαναρισμένη έκδοση",
+	"right-pagequality": "Μετατροπή της σήμανσης ποιότητας σελίδας",
 	"proofreadpage-section-tools": "Εργαλεία διόρθωσης κειμένου",
 	"proofreadpage-group-zoom": "Εστίαση",
 	"proofreadpage-group-other": "Άλλο",
@@ -72,5 +77,13 @@
 	"proofreadpage-button-reset-zoom-label": "Επαναφορά ζουμ",
 	"proofreadpage-button-zoom-in-label": "Μεγέθυνση",
 	"proofreadpage-button-toggle-layout-label": "Κάθετη / οριζόντια διάταξη",
-	"proofreadpage-preferences-showheaders-label": "Να εμφανίζεται η κεφαλίδα και το υποσέλιδο όταν επεξεργάζεστε σελίδες με πρόθεμα {{ns:page}}"
+	"proofreadpage-pageinfo-status": "Κατάσταση τυπογραφικού ελέγχου",
+	"proofreadpage-preferences-showheaders-label": "Να εμφανίζεται η κεφαλίδα και το υποσέλιδο όταν επεξεργάζεστε σελίδες με πρόθεμα {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "Χρησιμοποιήστε οριζόντια διάταξη όταν επεξεργάζεστε εντός του ονοματοχώρου {{ns:page}}",
+	"proofreadpage-indexoai-repositoryName": "Μεταδεδομένα βιβλίων από το {{SITENAME}}",
+	"proofreadpage-indexoai-eprint-content-text": "Μεταδεδομένα βιβλίων που διαχειρίζονται από το ProofreadPage.",
+	"proofreadpage-indexoai-error-schemanotfound": "Δεν βρέθηκε το Σχήμα",
+	"proofreadpage-indexoai-error-schemanotfound-text": "Το Σχήμα $1 δεν βρέθηκε.",
+	"proofreadpage-disambiguationspage": "Template:αποσαφ",
+	"apihelp-query+proofreadinfo-example-3": "Επιστροφή πληροφοριών ονοματοχώρου"
 }
