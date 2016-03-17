@@ -20,7 +20,7 @@
 	"proofreadpage_image": "εικόνα",
 	"proofreadpage_index": "Ευρετήριο",
 	"proofreadpage_index_expected": "Σφάλμα: αναμενόταν δείκτης",
-	"proofreadpage_nosuch_index": "Σφάλμα: δεν υπάρχει αυτός ο δείκτης",
+	"proofreadpage_nosuch_index": "Σφάλμα: Δεν υπάρχει αυτό το βιβλίο",
 	"proofreadpage_nosuch_file": "Σφάλμα: δεν υπάρχει αυτό το αρχείο",
 	"proofreadpage_badpage": "Λανθασμένη μορφοποίηση",
 	"proofreadpage_badpagetext": "Η μορφοποίηση της σελίδας που προσπαθήσατε να αποθηκεύσετε είναι λανθασμένη.",

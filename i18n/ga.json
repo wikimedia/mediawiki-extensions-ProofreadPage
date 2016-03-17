@@ -2,9 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Alison",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Tem"
 		]
 	},
+	"proofreadpage_quality1_category": "Gan a bheith profáilte",
+	"proofreadpage_quality3_category": "Profáilte",
+	"proofreadpage_quality1_message": "Níl an leathanach seo profáilte",
 	"proofreadpage_specialpage_label_key": "Cuardaigh:",
 	"proofreadpage_index_attributes": "Údar\nTeideal\nBlian|Blian foilseacháin\nFoilsitheoir\nFoinse\nÍomhá|Íomhá clúdaigh\nLeathanaigh||20\nNótaí",
 	"proofreadpage_source": "Foinse",
