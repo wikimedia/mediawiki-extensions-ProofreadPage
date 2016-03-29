@@ -85,5 +85,6 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Δεν βρέθηκε το Σχήμα",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Το Σχήμα $1 δεν βρέθηκε.",
 	"proofreadpage-disambiguationspage": "Template:αποσαφ",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|εγκεκριμένη|εγκεκριμένες}} {{PLURAL:$1|σελίδα|σελίδες}}, $2 {{PLURAL:$2|ελεγμένη|ελεγμένες}} {{PLURAL:$2|σελίδα|σελίδες}} και $3 μη {{PLURAL:$3|ελεγμένη|ελεγμένες}} {{PLURAL:$3|σελίδα|σελίδες}}",
 	"apihelp-query+proofreadinfo-example-3": "Επιστροφή πληροφοριών ονοματοχώρου"
 }
