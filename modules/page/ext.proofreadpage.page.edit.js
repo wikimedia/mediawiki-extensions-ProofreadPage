@@ -268,4 +268,4 @@
 		initZoom();
 	} );
 
-}( mediaWiki, jQuery ) );
+}( mw, jQuery ) );

@@ -11,11 +11,10 @@
 	"unused": true,
 
 	// Environment
+	"jquery": true,
 	"browser": true,
 
 	"globals": {
-		"mediaWiki": false,
-		"jQuery": false
+		"mw": false
 	}
 }
-

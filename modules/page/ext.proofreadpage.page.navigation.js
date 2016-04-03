@@ -46,4 +46,4 @@
 		initTabs();
 	} );
 
-}( mediaWiki, jQuery ) );
+}( mw, jQuery ) );
