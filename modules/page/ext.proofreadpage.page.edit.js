@@ -190,22 +190,14 @@
 				} );
 			} );
 		} else if ( mw.user.options.get( 'showtoolbar' ) === 1 ) {
-			mw.loader.using( 'mediawiki.action.edit', function () {
-				var $toolbar = $( '#toolbar' );
-
+			mw.loader.using( 'mediawiki.toolbar', function () {
 				$.each( tools, function ( group, list ) {
 					$.each( list.tools, function ( id, def ) {
-						$( '<img>' )
-							.attr( {
-								width: 23,
-								height: 22,
-								src: def.oldIcon,
-								alt: mw.msg( def.labelMsg ),
-								title: mw.msg( def.labelMsg ),
-								'class': 'mw-toolbar-editbutton' // quotes needed for IE
-							} )
-							.click( def.action.execute )
-							.appendTo( $toolbar );
+						mw.toolbar.addButton( {
+							imageFile: def.oldIcon,
+							speedTip: mw.msg( def.labelMsg ),
+							onClick: def.action.execute
+						} );
 					} );
 				} );
 			} );
