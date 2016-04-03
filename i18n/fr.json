@@ -17,7 +17,8 @@
 			"Verdy p",
 			"Wyz",
 			"Weft",
-			"Wladek92"
+			"Wladek92",
+			"Lbayle"
 		]
 	},
 	"indexpages": "Liste des livres",
@@ -98,5 +99,9 @@
 	"apihelp-query+proofreadinfo-description": "Renvoyer des informations sur la configuration de l’extension ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quelles preuves de correction obtenir :\n;namespaces:Informations sur les espaces de nom « {{ns:Page}} » et « {{ns:Index}} ».\n;qualitylevels:Liste des niveaux de qualité des preuves de correction.",
 	"apihelp-query+proofreadinfo-example-1": "Information rendue par défaut",
-	"apihelp-query+proofreadinfo-example-3": "Retourner les informations de l'espace des noms"
+	"apihelp-query+proofreadinfo-example-3": "Retourner les informations de l'espace des noms",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Sélection de la Page",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pages",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Oui",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non"
 }

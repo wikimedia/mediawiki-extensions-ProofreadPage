@@ -84,5 +84,10 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "O modelo da base de dados (''schema'') $1 não foi encontrado.",
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|página validade|páginas validadas}}, $2 {{PLURAL:$2|página para revisão de texto|páginas para revisão de texo}} e $3 {{PLURAL:$3|página sem marcação para revisão|páginas sem marcação para revisão}}",
-	"content-model-proofread-page": "Página: página"
+	"content-model-proofread-page": "Página: página",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Seleção de página",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páginas",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusão de $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sim",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Não"
 }
