@@ -247,39 +247,7 @@ $wgHooks['EditFormPreloadText'][] = 'ProofreadPage::onEditFormPreloadText';
 $wgHooks['ParserTestTables'][] = 'ProofreadPage::onParserTestTables';
 $wgHooks['InfoAction'][] = 'ProofreadPage::onInfoAction';
 $wgHooks['SkinMinervaDefaultModules'][] = 'ProofreadPage::onSkinMinervaDefaultModules';
-
-
-
-/**
- * Hook to add PHPUnit test cases
- * @param array $files
- * @return boolean
- */
-$wgHooks['UnitTestsList'][] = function( array &$files ) {
-	$dir = __DIR__ . '/tests/includes/';
-
-	$files[] = $dir . 'FileProviderMock.php';
-	$files[] = $dir . 'ProofreadPageTestCase.php';
-	$files[] = $dir . 'FileProviderTest.php';
-	$files[] = $dir . 'DiffFormatterUtilsTest.php';
-	$files[] = $dir . 'ContextTest.php';
-
-	$files[] = $dir . 'index/ProofreadIndexPageTest.php';
-
-	$files[] = $dir . 'Pagination/PageNumberTest.php';
-	$files[] = $dir . 'Pagination/PageListTest.php';
-	$files[] = $dir . 'Pagination/PagePaginationTest.php';
-	$files[] = $dir . 'Pagination/FilePaginationTest.php';
-	$files[] = $dir . 'Pagination/PaginationFactoryTest.php';
-
-	$files[] = $dir . 'page/PageLevelTest.php';
-	$files[] = $dir . 'page/PageContentTest.php';
-	$files[] = $dir . 'page/PageContentHandlerTest.php';
-	$files[] = $dir . 'page/ProofreadPagePageTest.php';
-	$files[] = $dir . 'page/PageContentBuilderTest.php';
-
-	return true;
-};
+$wgHooks['UnitTestsList'][] = 'ProofreadPage::onUnitTestsList';
 
 //Parser tests
 $wgParserTestFiles[] = __DIR__ . '/tests/parser/proofreadpage_pagelist.txt';
