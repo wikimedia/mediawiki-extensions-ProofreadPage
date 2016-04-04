@@ -85,5 +85,10 @@
 	"apihelp-query+proofreadinfo-description": "Devolver información acerca da configuración da extensión ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Que propiedades de revisións obter:\n;namespaces:Información sobre espazos de nomes \"{{ns:Page}}\" e \"{{ns:Index}}\" .\n;qualitylevels:Lista de niveis de cualidade de revisión.",
 	"apihelp-query+proofreadinfo-example-1": "Devolve información por defecto",
-	"apihelp-query+proofreadinfo-example-3": "Devolve información do espazo de nomes"
+	"apihelp-query+proofreadinfo-example-3": "Devolve información do espazo de nomes",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Sección de páxinas",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páxinas",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusión de $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Si",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non"
 }

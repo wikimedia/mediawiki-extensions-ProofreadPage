@@ -88,5 +88,10 @@
 	"apihelp-query+proofreadinfo-description": "Gibt Informationen zur Einstellung der Erweiterung „ProofreadPage“ zurück.",
 	"apihelp-query+proofreadinfo-param-prop": "Zurückzugebende Eigenschaften:\n;namespaces:Information über die Namensräume „{{ns:Page}}“ und „{{ns:Index}}“.\n;qualitylevels:Liste der Korrekturlesungs-Qualitätsstufen.",
 	"apihelp-query+proofreadinfo-example-1": "Gibt Standardinformationen zurück",
-	"apihelp-query+proofreadinfo-example-3": "Gibt Namensrauminformationen zurück"
+	"apihelp-query+proofreadinfo-example-3": "Gibt Namensrauminformationen zurück",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Seitenauswahl",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Seiten",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Einbindung von $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nein"
 }

@@ -87,5 +87,10 @@
 	"apihelp-query+proofread-description": "Restituisce informazioni circa l'attuale stato di rilettura delle pagine fornite.",
 	"apihelp-query+proofread-example-1": "Ritorna lo stato di rilettura per le pagine nel namespace 250",
 	"apihelp-query+proofreadinfo-description": "Restituisce informazioni sulla configurazione dell'estensione ProofreadPage.",
-	"apihelp-query+proofreadinfo-example-3": "Ritorna informazioni sul namespace"
+	"apihelp-query+proofreadinfo-example-3": "Ritorna informazioni sul namespace",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Seleziona pagina",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagine",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Inclusione di $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }
