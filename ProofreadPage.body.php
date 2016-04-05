@@ -856,4 +856,34 @@ class ProofreadPage {
 
 		return true;
 	}
+
+	/**
+	 * Allow the extension to extend core's PHPUnit test suite
+	 * @param $files string[] The test files
+	 */
+	public static function onUnitTestsList( array &$files ) {
+		$dir = __DIR__ . '/tests/includes/';
+
+		$files[] = $dir . 'FileProviderMock.php';
+		$files[] = $dir . 'ProofreadPageTestCase.php';
+		$files[] = $dir . 'FileProviderTest.php';
+		$files[] = $dir . 'DiffFormatterUtilsTest.php';
+		$files[] = $dir . 'ContextTest.php';
+
+		$files[] = $dir . 'index/ProofreadIndexPageTest.php';
+
+		$files[] = $dir . 'Pagination/PageNumberTest.php';
+		$files[] = $dir . 'Pagination/PageListTest.php';
+		$files[] = $dir . 'Pagination/PagePaginationTest.php';
+		$files[] = $dir . 'Pagination/FilePaginationTest.php';
+		$files[] = $dir . 'Pagination/PaginationFactoryTest.php';
+
+		$files[] = $dir . 'page/PageLevelTest.php';
+		$files[] = $dir . 'page/PageContentTest.php';
+		$files[] = $dir . 'page/PageContentHandlerTest.php';
+		$files[] = $dir . 'page/ProofreadPagePageTest.php';
+		$files[] = $dir . 'page/PageContentBuilderTest.php';
+
+		return true;
+	}
 }
