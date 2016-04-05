@@ -7,7 +7,8 @@
 			"Lockal",
 			"Okras",
 			"Sergey kudryavtsev",
-			"Александр Сигачёв"
+			"Александр Сигачёв",
+			"Гизатуллина"
 		]
 	},
 	"indexpages": "Список индексных страниц",
@@ -81,5 +82,8 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Схема не найдена",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Схема $1 не была найдена.",
 	"proofreadpage-disambiguationspage": "Template:неоднозначность",
-	"content-model-proofread-page": "Страница: страница"
+	"content-model-proofread-page": "Страница: страница",
+	"proofreadpage-visualeditor-node-pages-inspector-title": " Биттәрҙе юҡ итеү",
+	"proofreadpage-visualeditor-node-pages-inspector-description": " $1 тапшырыу",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Юҡ"
 }

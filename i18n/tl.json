@@ -3,7 +3,8 @@
 		"authors": [
 			"AnakngAraw",
 			"Sky Harbor",
-			"Stranger195"
+			"Stranger195",
+			"Jojit fb"
 		]
 	},
 	"indexpages": "Talaan ng mga pahina ng talatuntunan",
@@ -13,7 +14,7 @@
 	"proofreadpage_index": "Indeks",
 	"proofreadpage_index_expected": "Kamalian: inaasahan ang talatuntunan",
 	"proofreadpage_nosuch_index": "Kamalian: walang ganyang talatuntunan",
-	"proofreadpage_nosuch_file": "Kamalian: walang ganyang talaksan",
+	"proofreadpage_nosuch_file": "Kamalian: walang ganyang file",
 	"proofreadpage_badpage": "Maling anyo",
 	"proofreadpage_badpagetext": "Mali ang anyo ng pahinang sinubok mong sagipin.",
 	"proofreadpage_indexdupe": "Katulad na kawing",

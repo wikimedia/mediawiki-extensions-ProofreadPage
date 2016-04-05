@@ -81,5 +81,8 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schematu nie znaleziono",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Schemat $1 nie został znaleziony.",
 	"proofreadpage-disambiguationspage": "Template:Disambig",
-	"content-model-proofread-page": "Strona: strona"
+	"content-model-proofread-page": "Strona: strona",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Strony",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Tak",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nie"
 }
