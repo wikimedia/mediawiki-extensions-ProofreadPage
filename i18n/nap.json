@@ -83,5 +83,10 @@
 	"apihelp-query+proofreadinfo-description": "Tuorna nfurmaziune ncopp' 'e mpustaziune d' 'a extension ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quale proprietà proofread se tuorneno:\n;namespaces:Nfurmaziune ncopp' 'o namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Elenco d' 'e livell' 'e qualità d' 'o proofread.",
 	"apihelp-query+proofreadinfo-example-1": "Tuorna nfurmaziune predeterminate",
-	"apihelp-query+proofreadinfo-example-3": "Tuorna nfurmaziune predeterminate"
+	"apihelp-query+proofreadinfo-example-3": "Tuorna nfurmaziune predeterminate",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Selezione 'e paggena",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Paggene",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusione 'e $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }

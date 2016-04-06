@@ -87,5 +87,10 @@
 	"apihelp-query+proofreadinfo-description": "החזרת מידע על הגדרות ההרחבה ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "אילו מאפייני הגהה לקבל:\n;namespaces:מידע על מרחבי השם \"{{ns:Page}}\"ֿֿ ו־{{ns:Index}}.\n;qualitylevels:רשימת רמות איכות הגהה.",
 	"apihelp-query+proofreadinfo-example-1": "החזרת מידע בררת מחדל",
-	"apihelp-query+proofreadinfo-example-3": "החזרת מידע על מרחב שם"
+	"apihelp-query+proofreadinfo-example-3": "החזרת מידע על מרחב שם",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "בחירת דף",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "דפים",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "הכללה של $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "כן",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "לא"
 }

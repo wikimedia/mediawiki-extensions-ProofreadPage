@@ -6,7 +6,8 @@
 			"Likibp",
 			"Schu",
 			"Shirayuki",
-			"青子守歌"
+			"青子守歌",
+			"Otokoume"
 		]
 	},
 	"indexpages": "書誌情報ページの一覧",
@@ -78,5 +79,7 @@
 	"proofreadpage-indexoai-eprint-content-text": "ProofreadPage で管理されている書籍のメタデータ",
 	"proofreadpage-indexoai-error-schemanotfound": "XML スキーマが見つかりません",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 スキーマが見つかりませんでした。",
-	"proofreadpage-disambiguationspage": "Template:Aimai"
+	"proofreadpage-disambiguationspage": "Template:Aimai",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "はい",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "いいえ"
 }
