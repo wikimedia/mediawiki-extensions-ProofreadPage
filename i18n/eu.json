@@ -6,7 +6,8 @@
 			"Unai Fdz. de Betoño",
 			"පසිඳු කාවින්ද",
 			"Subi",
-			"Xabier Armendaritz"
+			"Xabier Armendaritz",
+			"Sator"
 		]
 	},
 	"proofreadpage_image": "Irudi",
@@ -30,5 +31,7 @@
 	"proofreadpage_js_attributes": "Egilea Izenburua Urtea Argitaratzailea",
 	"proofreadpage_index_attributes": "Egilea\nIzenburua\nUrtea|Argitalpen urtea\nArgitaratzailea\nIturria\nIrudia|estalki irudia\nOrriak||20\nOharrak||10",
 	"proofreadpage_source": "Jatorria",
-	"proofreadpage-group-other": "Bestelakoa"
+	"proofreadpage-group-other": "Bestelakoa",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Orrialdeak",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Bai"
 }
