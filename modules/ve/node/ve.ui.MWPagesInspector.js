@@ -16,7 +16,7 @@ OO.inheritClass( ve.ui.MWPagesInspector, ve.ui.MWExtensionInspector );
 /* Static properties */
 ve.ui.MWPagesInspector.static.name = 'pages';
 
-ve.ui.MWPagesInspector.static.icon = 'article';
+ve.ui.MWPagesInspector.static.icon = 'articles';
 
 ve.ui.MWPagesInspector.static.title = OO.ui.deferMsg( 'proofreadpage-visualeditor-node-pages-inspector-title' );
 

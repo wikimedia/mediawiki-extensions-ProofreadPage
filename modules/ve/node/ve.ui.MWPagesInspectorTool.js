@@ -18,7 +18,7 @@ ve.ui.MWPagesInspectorTool.static.name = 'pages';
 
 ve.ui.MWPagesInspectorTool.static.group = 'object';
 
-ve.ui.MWPagesInspectorTool.static.icon = 'article';
+ve.ui.MWPagesInspectorTool.static.icon = 'articles';
 
 ve.ui.MWPagesInspectorTool.static.title = OO.ui.deferMsg( 'proofreadpage-visualeditor-node-pages-inspector-tooltip' );
 

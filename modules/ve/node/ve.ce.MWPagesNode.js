@@ -20,7 +20,7 @@ ve.ce.MWPagesNode.static.tagName = 'div';
 
 ve.ce.MWPagesNode.static.primaryCommandName = 'pages';
 
-ve.ce.MWPagesNode.static.iconWhenInvisible = 'article';
+ve.ce.MWPagesNode.static.iconWhenInvisible = 'articles';
 
 ve.ce.MWPagesNode.static.rendersEmpty = true;
 
