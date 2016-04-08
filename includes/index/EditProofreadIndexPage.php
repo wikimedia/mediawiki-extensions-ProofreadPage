@@ -94,7 +94,7 @@ class EditProofreadIndexPage extends EditPage {
 			$out->addHTML( $select->getHtml() );
 		} else {
 			$type = $entry->getType();
-			$inputType = ( $type === 'number' ) ? 'number' : 'text';
+			$inputType = ( $type === 'number' && ( $val === '' || is_numeric( $val ) ) ) ? 'number' : 'text';
 			$size = $entry->getSize();
 			$inputAttributes['class'] = 'prp-input-' . $type;
 
