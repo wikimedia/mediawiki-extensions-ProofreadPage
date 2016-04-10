@@ -81,7 +81,12 @@
 	"apihelp-query+proofread-description": "Дава информации за тековната состојба на проверката на дадени страници.",
 	"apihelp-query+proofread-example-1": "Дај состојба на проверката на страниците во именскиот простор 250",
 	"apihelp-query+proofreadinfo-description": "Дај информации за поставеноста на додатокот ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Кои својства на проверката да се дадат:\n;namespaces: Информации за именските простори Страница и Индекс.\n;qualitylevels: Список на степените на квалитет на проверка.",
+	"apihelp-query+proofreadinfo-param-prop": "Кои својства на проверката да се дадат:\n;namespaces: Информации за именските простори „{{ns:Page}}“ и „{{ns:Index}}“.\n;qualitylevels: Список на степените на квалитет на проверка.",
 	"apihelp-query+proofreadinfo-example-1": "Дај стандардни информации",
-	"apihelp-query+proofreadinfo-example-3": "Дај информации за именскиот простор"
+	"apihelp-query+proofreadinfo-example-3": "Дај информации за именскиот простор",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Избор од страницата",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Страници",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Превемтнување на $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не"
 }

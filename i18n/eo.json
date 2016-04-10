@@ -4,7 +4,8 @@
 			"Michawiki",
 			"Yekrats",
 			"Zhang212",
-			"KuboF"
+			"KuboF",
+			"Robin van der Vliet"
 		]
 	},
 	"indexpages": "Listo de indeksaj paĝoj",
@@ -85,5 +86,8 @@
 	"apihelp-query+proofreadinfo-description": "Redonas informon pri konfiguro de la etendaĵo ProvlegPaĝo",
 	"apihelp-query+proofreadinfo-param-prop": "Kiujn provlegajn ecojn ricevi:\n;namespaces:Informo pri la nomspacoj \"{{ns:Page}}\" kaj \"{{ns:Index}}\".\n;qualitylevels:Listo de niveloj de provlega kvalito.",
 	"apihelp-query+proofreadinfo-example-1": "Redonas defaŭltan informon",
-	"apihelp-query+proofreadinfo-example-3": "Redonas informon pri nomspaco"
+	"apihelp-query+proofreadinfo-example-3": "Redonas informon pri nomspaco",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Paĝoj",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jes",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne"
 }

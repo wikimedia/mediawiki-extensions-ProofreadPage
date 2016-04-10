@@ -33,5 +33,6 @@
 	"proofreadpage_source": "Jatorria",
 	"proofreadpage-group-other": "Bestelakoa",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Orrialdeak",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Bai"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Bai",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ez"
 }

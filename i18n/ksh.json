@@ -83,6 +83,7 @@
 	"apihelp-query+proofreadinfo-param-prop": "Wat för en Eijeschaffte vum Jähjelässe ze holle:\n;<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">namespaces</code >:Anjahbe övver de Appachtemangs „{{ns:Page}}“ un „{{ns:Index}}“.\n;<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">qualitylevels</code >:Leß met de Nivohs vun de Qualiteite vum Jähjelässe.",
 	"apihelp-query+proofreadinfo-example-1": "Jif de Schtandatt_Aanjahbe uß",
 	"apihelp-query+proofreadinfo-example-3": "Jif Aanjahbe zom Appachtemang uß",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Sigge-Ußwahl",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sigge",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Joh",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nää"
