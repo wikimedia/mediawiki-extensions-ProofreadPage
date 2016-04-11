@@ -79,5 +79,8 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema niet gevonden",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Het schema $1 is niet aangetroffen.",
 	"proofreadpage-disambiguationspage": "Template:Doorverwijspagina",
-	"content-model-proofread-page": "Pagina: pagina"
+	"content-model-proofread-page": "Pagina: pagina",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagina's",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee"
 }

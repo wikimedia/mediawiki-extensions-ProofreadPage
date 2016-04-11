@@ -80,5 +80,10 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Skemaet $1 er ikke blevet fundet.",
 	"proofreadpage-disambiguationspage": "Template:Flertydig",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|valideret side|validerede sider}}, $2 {{PLURAL:$2|side|sider}}, der kun er korrekturlæst, og $3 {{PLURAL:$3|side|sider}}, der ikke er korrekturlæst",
-	"content-model-proofread-page": "Side: side"
+	"content-model-proofread-page": "Side: side",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Sideudvalg",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sider",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Indlejring af $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej"
 }

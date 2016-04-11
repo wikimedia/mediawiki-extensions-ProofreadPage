@@ -6,7 +6,8 @@
 			"Orango",
 			"OsamaK",
 			"زكريا",
-			"Abanima"
+			"Abanima",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"indexpages": "قائمة صفحات الفهرس",
@@ -87,5 +88,6 @@
 	"apihelp-query+proofreadinfo-description": "إعطاء المعلومات عن إعدادات امتداد ProofreadPage",
 	"apihelp-query+proofreadinfo-param-prop": "ما هي خصائص عملية التحقق المطلوب الحصول عليها:\n;namespaces:Information عن نطاقي الصفحة والدليل.\n;qualitylevels:List عن مستويات جودة عملية التحقق.",
 	"apihelp-query+proofreadinfo-example-1": "إعطاء المعلومات الافتراضية",
-	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات"
+	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "اختيار الصفحة"
 }
