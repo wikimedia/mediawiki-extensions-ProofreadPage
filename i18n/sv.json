@@ -93,5 +93,7 @@
 	"apihelp-query+proofreadinfo-description": "Returnerar information om konfigurationen av ProofreadPage-tillägget.",
 	"apihelp-query+proofreadinfo-param-prop": "Vilka korrekturläsningsegenskaper som ska hämtas:\n;namespaces:Information om sid- och indexnamnrymder.\n;qualitylevels:Lista över nivåer för korrekturläsningskvalitet.",
 	"apihelp-query+proofreadinfo-example-1": "Returnera standardinformation",
-	"apihelp-query+proofreadinfo-example-3": "Returnera namnrymdsinformation"
+	"apihelp-query+proofreadinfo-example-3": "Returnera namnrymdsinformation",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej"
 }
