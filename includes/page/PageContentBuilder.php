@@ -70,7 +70,7 @@ class PageContentBuilder {
 				if ( $pageNumber !== null && $image->isMultipage() ) {
 					$text = $image->getHandler()->getPageText( $image, $pageNumber );
 				} else {
-					$text = $image->getHandler()->getPageText( $image, 1 );
+					$text = $image->getHandler() ? $image->getHandler()->getPageText( $image, 1 ) : '';
 				}
 				if ( $text ) {
 					$text = preg_replace( "/(\\\\n)/", "\n", $text );
