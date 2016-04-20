@@ -72,5 +72,7 @@
 	"proofreadpage-button-zoom-in-label": "Amplia",
 	"proofreadpage-button-toggle-layout-label": "Presentació vertical/horitzontal",
 	"proofreadpage-preferences-showheaders-label": "Mostra camps de capçalera i peu en editar en el nom d'espai {{ns:page}}",
-	"proofreadpage-preferences-horizontal-layout-label": "Utilitza la presentació horitzontal en editar en el nom d'espai {{ns:page}}"
+	"proofreadpage-preferences-horizontal-layout-label": "Utilitza la presentació horitzontal en editar en el nom d'espai {{ns:page}}",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sí",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }
