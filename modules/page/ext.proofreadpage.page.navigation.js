@@ -22,23 +22,32 @@
 	 * Improve the tabs presentation
 	 */
 	function initTabs() {
-		var tabsToIcon = [ 'proofreadPagePrevLink', 'proofreadPageNextLink', 'proofreadPageIndexLink' ];
+		var id, $link,
+			tabs = {
+				proofreadPagePrevLink: 'previous',
+				proofreadPageNextLink: 'next',
+				proofreadPageIndexLink: 'collapse'
+			};
 
-		// Move prev and next links (swapped for rtl languages)
-		if ( $( 'html' ).attr( 'dir' ) === 'rtl' ) {
-			$( getTabsContainerSelector() )
-				.append( $( '#ca-proofreadPageNextLink' ) )
-				.append( $( '#ca-proofreadPagePrevLink' ) );
-		} else {
-			$( getTabsContainerSelector() )
-				.prepend( $( '#ca-proofreadPageNextLink' ) )
-				.prepend( $( '#ca-proofreadPagePrevLink' ) );
-		}
+		mw.loader.using( 'oojs-ui.styles.icons' ).then( function () {
 
-		// add title attribute to links move to icon
-		$.each( tabsToIcon, function ( i, id ) {
-			var $link = $( '#ca-' + id + '.icon a' );
-			$link.attr( 'title', $link.text() );
+			// Move prev and next links (swapped for rtl languages)
+			if ( $( 'html' ).attr( 'dir' ) === 'rtl' ) {
+				$( getTabsContainerSelector() )
+					.append( $( '#ca-proofreadPageNextLink' ) )
+					.append( $( '#ca-proofreadPagePrevLink' ) );
+			} else {
+				$( getTabsContainerSelector() )
+					.prepend( $( '#ca-proofreadPageNextLink' ) )
+					.prepend( $( '#ca-proofreadPagePrevLink' ) );
+			}
+
+			// add title attribute to links move to icon
+			for ( id in tabs ) {
+				$link = $( '#ca-' + id + '.icon a' );
+				$link.attr( 'title', $link.text() )
+					.addClass( 'oo-ui-icon-' + tabs[ id ] );
+			}
 		} );
 	}
 

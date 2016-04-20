@@ -12,22 +12,5 @@
 	margin-top: -0.8em !ie;
 	height: 0;
 	overflow: hidden;
-	background-position: 50% 70%;
-}
-
-.ltr #ca-proofreadPagePrevLink.icon a,
-.rtl #ca-proofreadPageNextLink.icon a {
-	/* @embed */
-	background-image: url( 'images/leftarrow.png' );
-}
-
-.ltr #ca-proofreadPageNextLink.icon a,
-.rtl #ca-proofreadPagePrevLink.icon a {
-	/* @embed */
-	background-image: url( 'images/rightarrow.png' );
-}
-
-#ca-proofreadPageIndexLink.icon a {
-	/* @embed */
-	background-image: url( 'images/uparrow.png' );
+	background-position: 50% 75%;
 }
