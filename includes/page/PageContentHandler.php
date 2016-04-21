@@ -69,13 +69,16 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	private function serializeContentInWikitext( PageContent $content ) {
 		$level = $content->getLevel();
-		$text = '<noinclude><pagequality level="' . $level->getLevel() . '" user="';
-		if ( $level->getUser() instanceof User ) {
-			$text .= $level->getUser()->getName();
-		}
-		$text .= '" /><div class="pagetext">' . $content->getHeader()->serialize() . "\n\n\n" . '</noinclude>';
-		$text .= $content->getBody()->serialize();
-		$text .= '<noinclude>' . $content->getFooter()->serialize() . '</div></noinclude>';
+		$userName = $level->getUser() instanceof User ? $level->getUser()->getName() : '';
+		$text =
+			'<noinclude>'.
+				'<pagequality level="' . $level->getLevel() . '" user="' . $userName .'" />' .
+				$content->getHeader()->serialize() .
+			'</noinclude>' .
+			$content->getBody()->serialize() .
+			'<noinclude>' .
+				$content->getFooter()->serialize() .
+			'</noinclude>';
 
 		return $text;
 	}
@@ -176,6 +179,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	protected function cleanHeader( $header ) {
+		// Remove deprecated wrappers which may still exist
 		if ( preg_match( '/^(.*?)<div class="pagetext">(.*?)$/s', $header, $mt ) ) {
 			$header = $mt[2];
 		} elseif ( preg_match( '/^(.*?)<div>(.*?)$/s', $header, $mt ) ) {
