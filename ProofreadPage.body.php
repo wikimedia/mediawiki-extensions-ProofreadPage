@@ -173,6 +173,7 @@ class ProofreadPage {
 			$out->addModuleStyles( 'ext.proofreadpage.base' );
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			$out->addModules( 'ext.proofreadpage.page.navigation' );
+			$out->addModules( 'ext.proofreadpage.ve.pageTarget.init' );
 		} elseif (
 			$title->inNamespace( NS_MAIN ) &&
 			( $out->isArticle() || $isEdit ) &&

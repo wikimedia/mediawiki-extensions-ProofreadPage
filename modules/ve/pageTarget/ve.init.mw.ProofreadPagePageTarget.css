@@ -1,0 +1,54 @@
+/*!
+ * ProofreadPage VE target styles
+ *
+ * @copyright 2011-2016 VisualEditor Team and others; see http://ve.mit-license.org
+ */
+
+.ve-init-mw-proofreadPagePageTarget .ve-init-mw-target-surface {
+	float: left;
+	width: calc( 50% + 1em );
+}
+
+.ve-init-mw-target-surface .ve-ce-documentNode,
+.ve-init-mw-target-surface .ve-ui-surface-placeholder {
+	padding-right: 0;
+}
+
+.ve-init-mw-target-surface > .ve-ui-debugBar {
+	margin-right: -100%;
+}
+
+.ve-init-mw-proofreadPagePageTarget-zoomContainer {
+	float: right;
+	font-size: 0.914286em;
+	width: 49%;
+	text-align: center;
+	margin-bottom: 0.5em;
+}
+
+.ve-init-mw-proofreadPagePageTarget-zoom {
+	margin-right: 0;
+}
+
+.ve-ce-sectionNode:before {
+	pointer-events: none;
+	content: attr( data-title );
+	font-weight: bold;
+	overflow: visible;
+	height: auto;
+	border-bottom: 1px solid #ccc;
+}
+
+.ve-ce-sectionNode:not( :last-child ) {
+	padding-bottom: 1em;
+}
+
+/* TODO: Move these upstream and provide RTL */
+
+.oo-ui-icon-zoomOut {
+	background-image: url( images/zoomOut.svg );
+}
+
+.oo-ui-icon-zoomIn {
+	background-image: url( images/zoomIn.svg );
+}
