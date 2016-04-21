@@ -151,7 +151,10 @@
 			"scripts": "page/ext.proofreadpage.page.navigation.js",
 			"skinStyles": {
 				"vector": "page/ext.proofreadpage.page.navigation.vector.css"
-			}
+			},
+			"dependencies": [
+				"oojs-ui.styles.icons"
+			]
 		},
 		"ext.proofreadpage.article": {
 			"scripts": "article/ext.proofreadpage.article.js",

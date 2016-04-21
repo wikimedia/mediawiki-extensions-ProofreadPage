@@ -23,32 +23,32 @@
 	 */
 	function initTabs() {
 		var id, $link,
-			tabs = {
+			tabIcons = {
 				proofreadPagePrevLink: 'previous',
 				proofreadPageNextLink: 'next',
 				proofreadPageIndexLink: 'collapse'
-			};
+			},
+			$tabs = $( getTabsContainerSelector() );
 
-		mw.loader.using( 'oojs-ui.styles.icons' ).then( function () {
+		// Move prev and next links (swapped for rtl languages)
+		if ( $( 'html' ).attr( 'dir' ) === 'rtl' ) {
+			$tabs
+				.append( $( '#ca-proofreadPageNextLink' ) )
+				.append( $( '#ca-proofreadPagePrevLink' ) );
+		} else {
+			$tabs
+				.prepend( $( '#ca-proofreadPageNextLink' ) )
+				.prepend( $( '#ca-proofreadPagePrevLink' ) );
+		}
 
-			// Move prev and next links (swapped for rtl languages)
-			if ( $( 'html' ).attr( 'dir' ) === 'rtl' ) {
-				$( getTabsContainerSelector() )
-					.append( $( '#ca-proofreadPageNextLink' ) )
-					.append( $( '#ca-proofreadPagePrevLink' ) );
-			} else {
-				$( getTabsContainerSelector() )
-					.prepend( $( '#ca-proofreadPageNextLink' ) )
-					.prepend( $( '#ca-proofreadPagePrevLink' ) );
-			}
+		// add title attribute to links move to icon
+		for ( id in tabIcons ) {
+			$link = $( '#ca-' + id + '.icon a' );
+			$link.attr( 'title', $link.text() )
+				.addClass( 'oo-ui-icon-' + tabIcons[ id ] );
+		}
 
-			// add title attribute to links move to icon
-			for ( id in tabs ) {
-				$link = $( '#ca-' + id + '.icon a' );
-				$link.attr( 'title', $link.text() )
-					.addClass( 'oo-ui-icon-' + tabs[ id ] );
-			}
-		} );
+		$tabs.addClass( 'prp-tabs' );
 	}
 
 	$( document ).ready( function () {

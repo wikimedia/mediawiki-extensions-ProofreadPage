@@ -1,6 +1,6 @@
-#ca-proofreadPagePrevLink.icon a,
-#ca-proofreadPageNextLink.icon a,
-#ca-proofreadPageIndexLink.icon a {
+.prp-tabs #ca-proofreadPagePrevLink.icon a,
+.prp-tabs #ca-proofreadPageNextLink.icon a,
+.prp-tabs #ca-proofreadPageIndexLink.icon a {
 	margin: 0;
 	padding: 0;
 	outline: none;
