@@ -58,7 +58,7 @@ class PageContentHandler extends TextContentHandler {
 			'footer' => $content->getFooter()->serialize(),
 			'level' => array(
 				'level' => $level->getLevel(),
-				'user' => $level->getUser()->getName()
+				'user' => $level->getUser() instanceof User ? $level->getUser()->getName() : null
 			)
 		) );
 	}

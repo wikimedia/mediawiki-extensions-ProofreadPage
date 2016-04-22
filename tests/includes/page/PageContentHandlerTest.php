@@ -61,6 +61,17 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		);
 	}
 
+	/**
+	 * @dataProvider pageWikitextSerializationProvider
+	 */
+	public function testRoundTripSerializeContentInWikitext( $header, $body, $footer, $level, $proofreader, $text ) {
+		$content = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
+		$this->assertEquals(
+			$content,
+			$this->handler->unserializeContent( $this->handler->serializeContent( $content ) )
+		);
+	}
+
 	public function testSerializeContentInJson() {
 		$pageContent = PageContentTest::newContent( 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4' );
 
@@ -143,6 +154,20 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 */
 	public function testUnserializeBadContentInJson( $text ) {
 		$this->handler->unserializeContent( $text, CONTENT_FORMAT_JSON );
+	}
+
+	/**
+	 * @dataProvider pageJsonSerializationProvider
+	 */
+	public function testRoundTripSerializeContentInJson( $header, $body, $footer, $level, $proofreader, $text ) {
+		$content = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
+		$this->assertEquals(
+			$content,
+			$this->handler->unserializeContent(
+				$this->handler->serializeContent( $content, CONTENT_FORMAT_JSON ),
+				CONTENT_FORMAT_JSON
+			)
+		);
 	}
 
 	public function testMakeEmptyContent() {
