@@ -82,5 +82,10 @@
 	"apihelp-query+proofreadinfo-description": "Igbalik an impormasyon hiunong han configuration han ProofreadPage extension.",
 	"apihelp-query+proofreadinfo-param-prop": "Ano nga mga proofread properties iton kukuhaon:\n;namespaces:Impormasyon hiunong han \"{{ns:Page}}\" ngan \"{{ns:Index}}\" nga mga ngaran-lat'ang.\n;qualitylevels:Listahan han mga proofread quality level.",
 	"apihelp-query+proofreadinfo-example-1": "Igbalik an default nga impormasyon",
-	"apihelp-query+proofreadinfo-example-3": "Igbalik an impormasyon han ngaran-lat'ang"
+	"apihelp-query+proofreadinfo-example-3": "Igbalik an impormasyon han ngaran-lat'ang",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Pagpipilian han pakli",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Mga pakli",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion han $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Oo",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Diri"
 }
