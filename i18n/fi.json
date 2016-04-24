@@ -13,7 +13,8 @@
 			"Str4nd",
 			"VezonThunder",
 			"ZeiP",
-			"Pxos"
+			"Pxos",
+			"Silvonen"
 		]
 	},
 	"indexpages": "Luettelo hakemistosivuista",
@@ -77,5 +78,7 @@
 	"proofreadpage-button-zoom-in-label": "Lähennä",
 	"proofreadpage-button-toggle-layout-label": "Pystysuora/vaakasuora ulkoasu",
 	"proofreadpage-preferences-showheaders-label": "Näytä ylätunniste ja alatunniste kun muokataan nimiavaruudessa {{ns:page}}",
-	"proofreadpage-preferences-horizontal-layout-label": "Käytä vaakatasoista (allekkaista) näkymää kun muokataan nimiavaruudessa {{ns:page}}"
+	"proofreadpage-preferences-horizontal-layout-label": "Käytä vaakatasoista (allekkaista) näkymää kun muokataan nimiavaruudessa {{ns:page}}",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Kyllä",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei"
 }
