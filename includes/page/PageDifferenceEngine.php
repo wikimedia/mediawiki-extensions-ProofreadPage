@@ -51,7 +51,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 			return '';
 		}
 
-		return $this->diffFormatterUtils->createHeader( $this->msg( 'proofreadpage_page_status' )->text() ) . Html::openElement( 'tr' ) . $this->diffFormatterUtils->createDeletedLine( $this->msg( 'proofreadpage_quality' . $old->getLevel() . '_category' )->plain(), 'diff-deletedline', '-' ) . $this->diffFormatterUtils->createAddedLine( $this->msg( 'proofreadpage_quality' . $new->getLevel() . '_category' )->plain(), 'diff-addedline', '+' ) . Html::closeElement( 'tr' );
+		return $this->diffFormatterUtils->createHeader( $this->msg( 'proofreadpage_page_status' )->parse() ) . Html::openElement( 'tr' ) . $this->diffFormatterUtils->createDeletedLine( $this->msg( 'proofreadpage_quality' . $old->getLevel() . '_category' )->plain(), 'diff-deletedline', '-' ) . $this->diffFormatterUtils->createAddedLine( $this->msg( 'proofreadpage_quality' . $new->getLevel() . '_category' )->plain(), 'diff-addedline', '+' ) . Html::closeElement( 'tr' );
 	}
 
 	/**
