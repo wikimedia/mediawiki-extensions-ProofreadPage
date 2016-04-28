@@ -30,5 +30,8 @@ ve.ui.MWPagesInspectorTool.static.commandName = 'pages';
 ve.ui.toolFactory.register( ve.ui.MWPagesInspectorTool );
 
 ve.ui.commandRegistry.register(
-	new ve.ui.Command( 'pages', 'window', 'open', { args: [ 'pages' ] } )
+	new ve.ui.Command(
+		'pages', 'window', 'open',
+		{ args: [ 'pages' ], supportedSelections: [ 'linear' ] }
+	)
 );
