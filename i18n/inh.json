@@ -4,5 +4,11 @@
 			"Adam-Yourist"
 		]
 	},
+	"pageswithoutscans": "Сканаш йоаца оагIонаш",
+	"proofreadpage_image": "сурт",
+	"proofreadpage_index": "индекс",
+	"proofreadpage_index_expected": "ГIалат: Индекс хьалаханзар.",
+	"proofreadpage_nosuch_index": "ГIалат: Цу тайпа индекс йолаш яц.",
+	"proofreadpage_nosuch_file": "ГIалат: Цу тайпа файл яц",
 	"proofreadpage_specialpage_label_key": "Лахар:"
 }
