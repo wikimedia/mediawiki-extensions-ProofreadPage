@@ -14,13 +14,13 @@ class DiffFormatterUtils {
 	/**
 	 * Create an header in the two columns
 	 *
-	 * @param $text string the header text
+	 * @param $text string the header HTML
 	 * @return string
 	 */
 	public function createHeader( $text ) {
 		return Html::openElement( 'tr' ) .
-			Html::element( 'td', array( 'colspan' => '2', 'class' => 'diff-lineno' ), $text ) .
-			Html::element( 'td', array( 'colspan' => '2', 'class' => 'diff-lineno' ), $text ) .
+			Html::rawElement( 'td', array( 'colspan' => '2', 'class' => 'diff-lineno' ), $text ) .
+			Html::rawElement( 'td', array( 'colspan' => '2', 'class' => 'diff-lineno' ), $text ) .
 			Html::closeElement( 'tr' );
 	}
 
