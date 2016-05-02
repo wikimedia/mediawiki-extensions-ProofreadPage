@@ -68,6 +68,6 @@ class PageDifferenceEngine extends DifferenceEngine {
 			return '';
 		}
 
-		return $this->diffFormatterUtils->createHeader( $this->msg( $headerMsg )->text() ) . $diff;
+		return $this->diffFormatterUtils->createHeader( $this->msg( $headerMsg )->escaped() ) . $diff;
 	}
 }
