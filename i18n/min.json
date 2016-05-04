@@ -55,7 +55,7 @@
 	"proofreadpage_page_status": "↓Status laman",
 	"proofreadpage_js_attributes": "↓Pangarang Judul Tahun Panabik",
 	"proofreadpage_index_attributes": "Pangarang\nJudul\nTaun|Taun tabik\nPanabik\nSumber\nGamba|Gamba muko\nAlaman||20\nCatatan||10",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|laman|laman}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|laman}}",
 	"proofreadpage_specialpage_legend": "Cari alaman indeks",
 	"proofreadpage_specialpage_searcherror": "↓Kasalahan di masin pancari",
 	"proofreadpage_specialpage_searcherrortext": "↓Masin pancari indak bakarajo. Maaf dek indak saleso ko.",
