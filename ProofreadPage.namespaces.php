@@ -161,6 +161,14 @@ $proofreadPageNamespacesNames['frr'] = array(
 	'index_talk' => 'Index_Diskussion'
 );
 
+/** Galician (Galego) */
+$proofreadPageNamespacesNames['gl'] = array(
+	'page' => 'Páxina',
+	'page_talk' => 'Conversa_páxina',
+	'index' => 'Índice',
+	'index_talk' => 'Conversa_índice'
+);
+
 /** Gujarati (ગુજરાતી) */
 $proofreadPageNamespacesNames['gu'] = array(
 	'page' => 'પૃષ્ઠ',
