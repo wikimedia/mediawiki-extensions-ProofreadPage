@@ -70,7 +70,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $queryPages array
+	 * @param array $queryPages
 	 * @return bool
 	 */
 	public static function onwgQueryPages( &$queryPages ) {
@@ -127,7 +127,7 @@ class ProofreadPage {
 
 	/**
 	 * Query the database to find if the current page is referred in an Index page.
-	 * @param $title Title
+	 * @param Title $title
 	 */
 	public static function loadIndex( $title ) {
 		$title->prpIndexPage = null;
@@ -161,7 +161,7 @@ class ProofreadPage {
 
 	/**
 	 * Append javascript variables and code to the page.
-	 * @param $out OutputPage
+	 * @param OutputPage $out
 	 * @return bool
 	 */
 	public static function onBeforePageDisplay( OutputPage $out ) {
@@ -202,8 +202,8 @@ class ProofreadPage {
 
 	/**
 	 * Return the quality colour codes to pages linked from an index page
-	 * @param $page_ids array
-	 * @param $colours array
+	 * @param array $page_ids
+	 * @param array $colours
 	 */
 	private static function getLinkColours( $page_ids, &$colours ) {
 		global $wgTitle;
@@ -254,8 +254,8 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $imgpage ImagePage
-	 * @param $out OutputPage
+	 * @param ImagePage $imgpage
+	 * @param OutputPage $out
 	 * @return bool
 	 */
 	public static function onImageOpenShowImageInlineBefore( &$imgpage, &$out ) {
@@ -272,8 +272,8 @@ class ProofreadPage {
 
 	/**
 	 * Set is_toc flag (true if page is a table of contents)
-	 * @param $outputPage OutputPage
-	 * @param $parserOutput ParserOutput
+	 * @param OutputPage $outputPage
+	 * @param ParserOutput $parserOutput
 	 * @return bool
 	 */
 	public static function onOutputPageParserOutput( $outputPage, $parserOutput ) {
@@ -287,8 +287,8 @@ class ProofreadPage {
 
 	/**
 	 * Updates index data for an index referencing the specified page.
-	 * @param $title Title page title object
-	 * @param $deleted boolean indicates whether the page was deleted
+	 * @param Title $title page title object
+	 * @param boolean $deleted indicates whether the page was deleted
 	 */
 	private static function updateIndexOfPage( $title, $deleted = false ) {
 		self::loadIndex( $title );
@@ -303,7 +303,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $article WikiPage
+	 * @param WikiPage $article
 	 * @return bool
 	 */
 	public static function onArticleSaveComplete( WikiPage &$article ) {

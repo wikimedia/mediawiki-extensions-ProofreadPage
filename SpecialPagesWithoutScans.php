@@ -39,7 +39,7 @@ class PagesWithoutScans extends QueryPage {
 	/**
 	 * Return a clause with the list of disambiguation templates.
 	 * This function was copied verbatim from specials/SpecialDisambiguations.php
-	 * @param $dbr DatabaseBase
+	 * @param DatabaseBase $dbr
 	 * @return mixed
 	 */
 	function disambiguation_templates( $dbr ) {

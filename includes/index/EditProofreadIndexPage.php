@@ -55,8 +55,8 @@ class EditProofreadIndexPage extends EditPage {
 	/**
 	 * Add an entry to the form
 	 *
-	 * @param $entry ProofreadIndexEntry
-	 * @param $inputAttributes array
+	 * @param ProofreadIndexEntry $entry
+	 * @param array $inputAttributes
 	 */
 	protected function addEntry( ProofreadIndexEntry $entry, $inputAttributes, OutputPage $out ) {
 		if ( $entry->isHidden() ) {
@@ -120,7 +120,7 @@ class EditProofreadIndexPage extends EditPage {
 	/**
 	 * Return the name of the edit field for an entry
 	 *
-	 * @param $key string the entry key
+	 * @param string $key the entry key
 	 * @return string
 	 */
 	protected function getFieldNameForEntry( $key ) {
@@ -130,7 +130,7 @@ class EditProofreadIndexPage extends EditPage {
 	/**
 	 * Extract the page content data from the posted form
 	 *
-	 * @param $request WebRequest
+	 * @param WebRequest $request
 	 * @return string
 	 */
 	protected function importContentFormData( &$request ) {
@@ -154,7 +154,7 @@ class EditProofreadIndexPage extends EditPage {
 	/**
 	 * Clean a text before inclusion into a template
 	 *
-	 * @param $value string
+	 * @param string $value
 	 * @return string
 	 */
 	protected function cleanInputtedContent( $value ) {

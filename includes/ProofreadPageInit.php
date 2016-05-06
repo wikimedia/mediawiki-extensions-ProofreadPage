@@ -31,7 +31,7 @@ class ProofreadPageInit {
 
 	/**
 	 * Create a namespace and his discussion one
-	 * @param $key string the key of the namespace in the i18n file
+	 * @param string $key the key of the namespace in the i18n file
 	 */
 	protected static function initNamespace( $key ) {
 		global $wgContentNamespaces, $wgExtraNamespaces, $wgProofreadPageNamespaceIds;
@@ -62,7 +62,7 @@ class ProofreadPageInit {
 
 	/**
 	 * Find if a namespace with the default name is already set (for backward compatibility) and return his id
-	 * @param $key string the key of the namespace in the i18n file
+	 * @param string $key the key of the namespace in the i18n file
 	 * @return int|bool the id of the namespace or false if it doesn't exist
 	 */
 	protected static function getNamespaceIdForDefaultName( $key ) {
@@ -80,8 +80,8 @@ class ProofreadPageInit {
 
 	/**
 	 * Create a namespace and his discussion one
-	 * @param $id integer the namespace id
-	 * @param $key string the key of the namespace in the i18n file
+	 * @param integer $id the namespace id
+	 * @param string $key the key of the namespace in the i18n file
 	 * @return bool false if there is an error, true if not
 	 */
 	protected static function createNamespace( $id, $key ) {
@@ -102,8 +102,8 @@ class ProofreadPageInit {
 	/**
 	 * Return the internationalized name of a namespace as set in proofreadPageNamespacesNames.
 	 * The english language is used as fallback.
-	 * @param $key string namespace key in the array
-	 * @param $lang string language code by default the wiki language
+	 * @param string $key namespace key in the array
+	 * @param string $lang language code by default the wiki language
 	 * @return array
 	 */
 	protected static function getNamespaceName( $key, $lang = '' ) {
@@ -121,7 +121,7 @@ class ProofreadPageInit {
 	/**
 	 * Get the id of the namespace. Required that Mediawiki is loaded and ProofreadPageInit::initNamespace has been executed for the relevant namespace.
 	 * Warning: It's not the function you search. If you want to know the index or page namespace id use ProofreadPage::getIndexNamespaceId() or ProofreadPage::getPageNamespaceId()
-	 * @param $key string the key of the namespace in the i18n file
+	 * @param string $key the key of the namespace in the i18n file
 	 * @return integer
 	 */
 	public static function getNamespaceId( $key ) {

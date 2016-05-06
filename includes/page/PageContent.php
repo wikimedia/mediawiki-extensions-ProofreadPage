@@ -41,10 +41,10 @@ class PageContent extends TextContent {
 	/**
 	 * Constructor
 	 *
-	 * @param $header WikitextContent
-	 * @param $body WikitextContent
-	 * @param $footer WikitextContent
-	 * @param $level PageLevel
+	 * @param WikitextContent $header
+	 * @param WikitextContent $body
+	 * @param WikitextContent $footer
+	 * @param PageLevel $level
 	 */
 	public function __construct( WikitextContent $header, WikitextContent $body, WikitextContent $footer, PageLevel $level ) {
 		$this->header = $header;

@@ -43,11 +43,11 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	/**
 	 * Constructor of a new PageContent
-	 * @param $header WikitextContent|string
-	 * @param $body WikitextContent|string
-	 * @param $footer WikitextContent|string
-	 * @param $level integer
-	 * @param $proofreader User
+	 * @param WikitextContent|string $header
+	 * @param WikitextContent|string $body
+	 * @param WikitextContent|string $footer
+	 * @param integer $level
+	 * @param User|string $proofreader
 	 * @return PageContent
 	 */
 	public static function newContent( $header = '', $body = '', $footer = '', $level = 1, $proofreader = null ) {

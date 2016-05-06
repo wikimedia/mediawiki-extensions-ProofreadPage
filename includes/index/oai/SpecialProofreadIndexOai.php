@@ -57,8 +57,8 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Return OAI datestamp
-	 * @param $datestamp string MW Timestamp
-	 * @param $granularity string OAI ganularity ('YYYY-MM-DDThh:mm:ssZ' or 'YYY-MM-DD')
+	 * @param string $datestamp MW Timestamp
+	 * @param string $granularity OAI ganularity ('YYYY-MM-DDThh:mm:ssZ' or 'YYY-MM-DD')
 	 * @throws MWException
 	 * @return string
 	 */
@@ -192,7 +192,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Output the main OAI content
-	 * @param $verb string
+	 * @param string $verb
 	 * @throws MWException
 	 */
 	protected function doResponse( $verb ) {
@@ -369,7 +369,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Add if needed the base URL or the sheme
-	 * @param $url string
+	 * @param string $url
 	 * @return string
 	 */
 	protected static function normalizeFullUrl( $url ) {
@@ -486,7 +486,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * check if the parameter is a valid metadata format and return it
-	 * @param $var string Request parameter that contain a metadata format
+	 * @param string $var Request parameter that contain a metadata format
 	 * @throws ProofreadIndexOaiError
 	 * @return string|null
 	 */
@@ -517,7 +517,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Get the Title page for a record
-	 * @param $identifier string
+	 * @param string $identifier
 	 * @throws ProofreadIndexOaiError
 	 * @return ProofreadIndexPage
 	 */
@@ -534,7 +534,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Return the datestamp for a record
-	 * @param $title Title
+	 * @param Title $title
 	 * @throws MWException
 	 * @return string rev_timestamp
 	 */
@@ -556,8 +556,8 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Check if an OAI datestamp is valid
-	 * @param $var string Request parameter that contain a datestamp
-	 * @param $defaultTime string default time for a date-only datestamp as HHMMSS
+	 * @param string $var Request parameter that contain a datestamp
+	 * @param string $defaultTime default time for a date-only datestamp as HHMMSS
 	 * @throws ProofreadIndexOaiError
 	 * @return string|null timestamp in MW format
 	 */
@@ -578,7 +578,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Check if a token is valid
-	 * @param $var string Request parameter that contain a token
+	 * @param string $var Request parameter that contain a token
 	 * @throws ProofreadIndexOaiError
 	 * @return array|null the token content
 	 */

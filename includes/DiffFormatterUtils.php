@@ -14,7 +14,7 @@ class DiffFormatterUtils {
 	/**
 	 * Create an header in the two columns
 	 *
-	 * @param $text string the header HTML
+	 * @param string $text the header HTML
 	 * @return string
 	 */
 	public function createHeader( $text ) {
@@ -27,7 +27,7 @@ class DiffFormatterUtils {
 	/**
 	 * Output an added line
 	 *
-	 * @param $content string the content of the line
+	 * @param string $content the content of the line
 	 * @return string
 	 */
 	public function createAddedLine( $content ) {
@@ -41,7 +41,7 @@ class DiffFormatterUtils {
 	/**
 	 * Output a deleted line
 	 *
-	 * @param $content string the content of the line
+	 * @param string $content the content of the line
 	 * @return string
 	 */
 	public function createDeletedLine( $content ) {
@@ -55,9 +55,9 @@ class DiffFormatterUtils {
 	/**
 	 * Create the container for a line
 	 *
-	 * @param $line string the line
-	 * @param $class string the container class (diff-deletedline or diff-addedline)
-	 * @param $marker string the diff marker (+ or -)
+	 * @param string $line the line
+	 * @param string $class the container class (diff-deletedline or diff-addedline)
+	 * @param string $marker the diff marker (+ or -)
 	 * @return string
 	 */
 	protected function createLineWrapper( $line, $class, $marker ) {

@@ -43,8 +43,8 @@ class ProofreadPagePage {
 	protected $index;
 
 	/**
-	 * @param $title Title Reference to a Title object
-	 * @param $index ProofreadIndexPage index related to the page
+	 * @param Title $title Reference to a Title object
+	 * @param ProofreadIndexPage $index index related to the page
 	 */
 	public function __construct( Title $title, ProofreadIndexPage $index = null ) {
 		$this->title = $title;
@@ -53,7 +53,7 @@ class ProofreadPagePage {
 
 	/**
 	 * Create a new ProofreadPagePage from a Title object
-	 * @param $title Title
+	 * @param Title $title
 	 * @return ProofreadPagePage
 	 */
 	public static function newFromTitle( Title $title ) {
@@ -180,7 +180,7 @@ class ProofreadPagePage {
 
 	/**
 	 * Return HTML for the image
-	 * @param $options array
+	 * @param array $options
 	 * @return string|null
 	 */
 	public function getImageHtml( $options ) {

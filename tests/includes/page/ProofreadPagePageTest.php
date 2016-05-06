@@ -10,9 +10,9 @@ class ProofreadPagePageTest extends ProofreadPageTestCase {
 
 	/**
 	 * Constructor of a new ProofreadPagePage
-	 * @param $title Title|string
-	 * @param $content PageContent|null
-	 * @param $index ProofreadIndexPage|null
+	 * @param Title|string $title
+	 * @param PageContent|null $content
+	 * @param ProofreadIndexPage|null $index
 	 * @return ProofreadPagePage
 	 */
 	public static function newPagePage( $title = 'test.jpg', ProofreadIndexPage $index = null ) {

@@ -21,7 +21,7 @@ class FileProvider {
 	private $repoGroup;
 
 	/**
-	 * @param $repoGroup $repoGroup the repositories to use
+	 * @param RepoGroup $repoGroup the repositories to use
 	 */
 	public function __construct( RepoGroup $repoGroup ) {
 		$this->repoGroup = $repoGroup;

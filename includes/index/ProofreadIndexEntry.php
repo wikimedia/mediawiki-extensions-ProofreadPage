@@ -43,9 +43,9 @@ class ProofreadIndexEntry {
 	protected $config;
 
 	/**
-	 * @param $key string
-	 * @param $value string
-	 * @param $config array
+	 * @param string $key
+	 * @param string $value
+	 * @param array $config
 	 */
 	public function __construct( $key, $value, $config ) {
 		$this->key = $key;
@@ -118,7 +118,7 @@ class ProofreadIndexEntry {
 
 	/**
 	 * Return typed value. If the value doesn't match the value pattern a ProofreadIndexValueString is return.
-	 * @param $value string
+	 * @param string $value
 	 * @return ProofreadIndexValue
 	 */
 	protected function getTypedValue( $value ) {

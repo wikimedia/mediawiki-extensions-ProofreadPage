@@ -32,8 +32,8 @@ class ProofreadIndexOaiRecord {
 	protected $lastEditionTimestamp;
 
 	/**
-	 * @param $index ProofreadIndexPage
-	 * @param $lastEditionTimestamp string MW timestamp of the last edition
+	 * @param ProofreadIndexPage $index
+	 * @param string $lastEditionTimestamp MW timestamp of the last edition
 	 */
 	public function __construct( ProofreadIndexPage $index, $lastEditionTimestamp ) {
 		$this->index = $index;
@@ -43,7 +43,7 @@ class ProofreadIndexOaiRecord {
 
 	/**
 	 * Return OAI record of an index page.
-	 * @param $format string
+	 * @param string $format
 	 * @throws MWException
 	 * @return string
 	 */
@@ -122,7 +122,7 @@ class ProofreadIndexOaiRecord {
 
 	/**
 	 * Return Dublin Core entry
-	 * @param $entry ProofreadIndexEntry
+	 * @param ProofreadIndexEntry $entry
 	 * @throws MWException
 	 * @return string
 	 */
@@ -190,7 +190,7 @@ class ProofreadIndexOaiRecord {
 
 	/**
 	 * Return Qualified Dublin Core entry
-	 * @param $entry ProofreadIndexEntry
+	 * @param ProofreadIndexEntry $entry
 	 * @throws MWException
 	 * @return string
 	 */

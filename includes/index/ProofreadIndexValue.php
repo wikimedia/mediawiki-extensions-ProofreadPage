@@ -28,8 +28,8 @@ abstract class ProofreadIndexValue {
 	protected $config;
 
 	/**
-	 * @param $value string
-	 * @param $config array
+	 * @param string $value
+	 * @param array $config
 	 * @throws MWException
 	 */
 	public function __construct( $value, $config ) {
@@ -42,7 +42,7 @@ abstract class ProofreadIndexValue {
 
 	/**
 	 * Set the value
-	 * @param $value string
+	 * @param string $value
 	 */
 	protected abstract function setValue( $value );
 
@@ -68,7 +68,7 @@ abstract class ProofreadIndexValue {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -77,7 +77,7 @@ abstract class ProofreadIndexValue {
 
 	/**
 	 * Return name of the ProofreadIndexValue class for a type
-	 * @param $type string
+	 * @param string $type
 	 * @throws MWException
 	 * @return string
 	 */
@@ -131,7 +131,7 @@ class ProofreadIndexValueString extends ProofreadIndexValue {
 
 	/**
 	 * Set the value
-	 * @param $value string
+	 * @param string $value
 	 */
 	protected function setValue( $value ) {
 		$this->wikiValue = (string) $value;
@@ -190,7 +190,7 @@ class ProofreadIndexValueNumber extends ProofreadIndexValue {
 
 	/**
 	 * Set the value
-	 * @param $value string
+	 * @param string $value
 	 */
 	protected function setValue( $value ) {
 		$this->value = (float) $value;
@@ -238,7 +238,7 @@ class ProofreadIndexValueNumber extends ProofreadIndexValue {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -260,7 +260,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 
 	/**
 	 * Set the value
-	 * @param $value string
+	 * @param string $value
 	 */
 	protected function setValue( $value ) {
 		$value = trim( $value, " '\t\n\r\0\x0B" );
@@ -311,7 +311,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -339,7 +339,7 @@ class ProofreadIndexValueLangcode extends ProofreadIndexValue {
 
 	/**
 	 * Set the value
-	 * @param $value string
+	 * @param string $value
 	 */
 	protected function setValue( $value ) {
 		$this->value = $value;
@@ -363,7 +363,7 @@ class ProofreadIndexValueLangcode extends ProofreadIndexValue {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -385,7 +385,7 @@ abstract class ProofreadIndexValueIdentifier extends ProofreadIndexValue {
 
 	/**
 	 * Set the value
-	 * @param $value string
+	 * @param string $value
 	 */
 	protected function setValue( $value ) {
 		$this->value = $value;
@@ -437,7 +437,7 @@ class ProofreadIndexValueIsbn extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -517,7 +517,7 @@ class ProofreadIndexValueLccn extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -558,7 +558,7 @@ class ProofreadIndexValueOclc extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -598,7 +598,7 @@ class ProofreadIndexValueArc extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) {
@@ -619,8 +619,8 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 	protected $naan = 0;
 
 	/**
-	 * @param $value string
-	 * @param $config array
+	 * @param string $value
+	 * @param array $config
 	 */
 	public function __construct( $value, $config ) {
 		if( isset( $config['naan'] ) &&  $config['naan'] ) {
@@ -659,7 +659,7 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 
 	/**
 	 * Return if $value is valid string
-	 * @param $value string
+	 * @param string $value
 	 * @return bool
 	 */
 	public function isValid( $value ) { //TODO to improve

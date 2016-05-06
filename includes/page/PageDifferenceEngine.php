@@ -42,8 +42,8 @@ class PageDifferenceEngine extends DifferenceEngine {
 	/**
 	 * Create the diffs for a PageLevel
 	 *
-	 * @param $old PageLevel
-	 * @param $new PageLevel
+	 * @param PageLevel $old
+	 * @param PageLevel $new
 	 * @return string
 	 */
 	protected function createLevelDiffs( PageLevel $old, PageLevel $new ) {
@@ -57,9 +57,9 @@ class PageDifferenceEngine extends DifferenceEngine {
 	/**
 	 * Create the diffs for a textual content
 	 *
-	 * @param $old TextContent $old
-	 * @param $new TextContent $new
-	 * @param $headerMsg string the message to use for header
+	 * @param TextContent $old
+	 * @param TextContent $new
+	 * @param string $headerMsg the message to use for header
 	 * @return string
 	 */
 	protected function createTextDiffOutput( TextContent $old, TextContent $new, $headerMsg ) {

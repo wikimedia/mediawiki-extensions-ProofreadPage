@@ -24,8 +24,8 @@ class PageLevel {
 
 	/**
 	 * Constructor
-	 * @param $level integer
-	 * @param $user User|null
+	 * @param integer $level
+	 * @param User|null $user
 	 */
 	public function __construct( $level = 1, User $user = null ) {
 		$this->level = $level;
@@ -99,7 +99,7 @@ class PageLevel {
 	/**
 	 * Parse an user name
 	 *
-	 * @param $name string
+	 * @param string $name
 	 * @return User|null
 	 */
 	public static function getUserFromUserName( $name = '' ) {

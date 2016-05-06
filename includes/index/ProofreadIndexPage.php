@@ -49,9 +49,9 @@ class ProofreadIndexPage {
 	protected $config = array();
 
 	/**
-	 * @param $title Title Reference to a Title object.
-	 * @param $config array the configuration array (see ProofreadIndexPage::getDataConfig)
-	 * @param $text string content of the page. Warning: only done for EditProofreadIndexPage use.
+	 * @param Title $title Reference to a Title object.
+	 * @param array $config the configuration array (see ProofreadIndexPage::getDataConfig)
+	 * @param string $text content of the page. Warning: only done for EditProofreadIndexPage use.
 	 */
 	public function __construct( Title $title, $config, $text = null ) {
 		$this->title = $title;
@@ -61,7 +61,7 @@ class ProofreadIndexPage {
 
 	/**
 	 * Create a new ProofreadIndexPage from a Title object
-	 * @param $title Title
+	 * @param Title $title
 	 * @return ProofreadIndexPage
 	 */
 	public static function newFromTitle( Title $title ) {
@@ -215,7 +215,7 @@ class ProofreadIndexPage {
 
 	/**
 	 * Return metadata from an index page.
-	 * @param $values array key => value
+	 * @param array $values key => value
 	 * @return array of ProofreadIndexEntry
 	 */
 	protected function getIndexEntriesFromIndexContent( $values ) {
@@ -324,8 +324,8 @@ class ProofreadIndexPage {
 
 	/**
 	 * Return all links in a given namespace
-	 * @param $text string
-	 * @param $namespace integer the default namespace id
+	 * @param string $text
+	 * @param integer $namespace the default namespace id
 	 * @return array of array( Title title of the pointed page, the label of the link )
 	 * @todo add an abstraction for links (Title + label)
 	 */
@@ -351,8 +351,8 @@ class ProofreadIndexPage {
 	 * Return the value of an entry as wikitext with variable replaced with index entries and $otherParams
 	 * Example: if 'header' entry is 'Page of {{title}} number {{pagenum}}' with $otherParams = array( 'pagenum' => 23 )
 	 * the function called for 'header' will returns 'Page page my book number 23'
-	 * @param $name string entry name
-	 * @param $otherParams array associative array other possible values to replace
+	 * @param string $name entry name
+	 * @param array $otherParams associative array other possible values to replace
 	 * @return string the value with variables replaced
 	 */
 	public function replaceVariablesWithIndexEntries( $name, $otherParams ) {

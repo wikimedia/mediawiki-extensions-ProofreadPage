@@ -85,8 +85,8 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 
 	/**
 	 * Constructor of a new ProofreadIndexPage
-	 * @param $title Title|string
-	 * @param $content string|null
+	 * @param Title|string $title
+	 * @param string|null $content
 	 * @return ProofreadIndexPage
 	 */
 	public static function newIndexPage( $title = 'test.djvu', $content = null ) {

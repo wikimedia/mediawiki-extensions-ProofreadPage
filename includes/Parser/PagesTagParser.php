@@ -316,7 +316,7 @@ class PagesTagParser extends TagParser {
 	 * Parse a comma-separated list of pages. A dash indicates an interval of pages
 	 * example: 1-10,23,38
 	 *
-	 * @param $input string
+	 * @param string $input
 	 * @return array|null an array of pages, or null if the input does not comply to the syntax
 	 */
 	public function parseNumList($input) {

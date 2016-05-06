@@ -22,7 +22,7 @@
 class ProofreadPageDbConnector {
 
 	/**
-	 * @param $values array
+	 * @param array $values
 	 * @param ResultWrapper
 	 */
 	public static function getCategoryNamesForPageIds( $pageIds ) {
@@ -36,8 +36,8 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param $pp array
-	 * @param $cat array
+	 * @param array $pp
+	 * @param array $cat
 	 * @return ResultWrapper
 	 */
 	public static function getPagesNameInCategory( $pp, $cat ) {
@@ -57,8 +57,8 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param $query array
-	 * @param $cat string
+	 * @param array $query
+	 * @param string $cat
 	 * @return integer
 	 */
 	public static function queryCount( $query, $cat ) {
@@ -75,7 +75,7 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param $pages string
+	 * @param string $pages
 	 * @return integer|null
 	 */
 	public static function getNumberOfExistingPagesFromPageTitle( $pages ) {
