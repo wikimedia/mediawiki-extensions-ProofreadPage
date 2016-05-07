@@ -93,7 +93,12 @@
 	"apihelp-query+proofread-description": "اطلاعاتی را از وضع بازبینی صفحات نشان می‌دهد.",
 	"apihelp-query+proofread-example-1": "وضع بازبینی صفحات را در فضای نام ۲۵۰ نشان می‌دهد.",
 	"apihelp-query+proofreadinfo-description": "اطلاعاتی را از پیکربندی بازبینی صفحات نشان می‌دهد.",
-	"apihelp-query+proofreadinfo-param-prop": "کدام ویژگی‌ها را در مورد بازبینی می‌خواهید:\n;namespaces: اطلاعاتی از فضای نام صفحه و نمایه.\n;qualitylevels: فهرستی از سطح کیفی بازبینی‌ها.",
+	"apihelp-query+proofreadinfo-param-prop": "کدام ویژگی‌ها را در مورد بازبینی می‌خواهید:\n;namespaces: اطلاعاتی از فضای نام :«{{ns:Page}}» و «{{ns:Index}}».\n;qualitylevels: فهرستی از سطح کیفی بازبینی‌ها.",
 	"apihelp-query+proofreadinfo-example-1": "برگشت اطلاعات به حالت پیشفرض",
-	"apihelp-query+proofreadinfo-example-3": "برگشت اطلاعات فضای نام"
+	"apihelp-query+proofreadinfo-example-3": "برگشت اطلاعات فضای نام",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "صفحهٔ انتخابی",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "صفحه‌ها",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "تراگنجایش $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "بله",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "خیر"
 }
