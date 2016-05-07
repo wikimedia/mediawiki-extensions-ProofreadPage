@@ -66,25 +66,7 @@
 	<rule ref="PSR2.Methods.MethodDeclaration.AbstractAfterVisibility">
 		<severity>0</severity>
 	</rule>
-	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing.Incorrect">
-		<severity>0</severity>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing.TooMuchSpaceAfter">
-		<severity>0</severity>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing.TooMuchSpaceBefore">
-		<severity>0</severity>
-	</rule>
 	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore">
-		<severity>0</severity>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace.Indent">
-		<severity>0</severity>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.SemicolonSpacing.Incorrect">
-		<severity>0</severity>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine">
 		<severity>0</severity>
 	</rule>
 	<file>.</file>

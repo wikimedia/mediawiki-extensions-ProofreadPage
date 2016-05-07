@@ -864,7 +864,7 @@ class ProofreadPage {
 		global $wgContentHandlers;
 
 		// L10n
-		include_once( __DIR__ . '/ProofreadPage.namespaces.php' );
+		include_once ( __DIR__ . '/ProofreadPage.namespaces.php' );
 
 		// Content handler
 		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );

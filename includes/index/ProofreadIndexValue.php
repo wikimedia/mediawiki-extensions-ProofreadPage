@@ -285,7 +285,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 	public function getMainText() {
 		$val = $this->value->getBaseText();
 		$parts = explode( ':', $this->value->getBaseText() );
-        if( count( $parts ) > 1 && $parts[0] == $this->value->getNsText() ) {
+		if( count( $parts ) > 1 && $parts[0] == $this->value->getNsText() ) {
 			unset( $parts[0] );
 			return implode( '/', $parts );
 		} else {
@@ -623,7 +623,7 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 	 * @param array $config
 	 */
 	public function __construct( $value, $config ) {
-		if( isset( $config['naan'] ) &&  $config['naan'] ) {
+		if( isset( $config['naan'] ) && $config['naan'] ) {
 			$this->naan = $config['naan'];
 		}
 		parent::__construct( $value, $config );

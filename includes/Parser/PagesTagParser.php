@@ -105,7 +105,7 @@ class PagesTagParser extends TagParser {
 					if( !$to ) {
 						$to = $count;
 					}
-					if( !is_numeric( $from ) || !is_numeric( $to )  || !is_numeric( $step ) ) {
+					if( !is_numeric( $from ) || !is_numeric( $to ) || !is_numeric( $step ) ) {
 						return $this->formatError( 'proofreadpage_number_expected' );
 					}
 
@@ -301,7 +301,7 @@ class PagesTagParser extends TagParser {
 				$h_out .= "|$key=$val";
 			}
 			$h_out .= '}}';
-			$out = $h_out . $out ;
+			$out = $h_out . $out;
 		}
 
 		// wrap the output in a div, to prevent the parser from inserting paragraphs

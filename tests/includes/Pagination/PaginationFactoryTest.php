@@ -42,4 +42,4 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		);
 		$this->assertEquals( $pagination, $this->getContext()->getPaginationFactory()->getPaginationForIndexPage( $page ) );
 	}
-} 
+}
