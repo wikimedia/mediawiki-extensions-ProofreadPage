@@ -332,10 +332,16 @@ $proofreadPageNamespacesNames['ru'] = [
 
 /** Sanskrit (संस्कृतम्) */
 $proofreadPageNamespacesNames['sa'] = [
-	'page' => 'पुटम्',
-	'page_talk' => 'पुटसंवाद',
+	'page' => 'पृष्ठम्',
+	'page_talk' => 'पृष्ठसम्भाषणम्',
 	'index' => 'अनुक्रमणिका',
-	'index_talk' => 'अनुक्रमणिकासंवाद'
+	'index_talk' => 'अनुक्रमणिकासम्भाषणम्',
+];
+
+$proofreadPageNamespacesAliases['sa'] = [
+	'page' => [ 'पुटम्' ],
+	'page_talk' => [ 'पुटसंवाद' ],
+	'index_talk' => [ 'अनुक्रमणिकासंवाद' ],
 ];
 
 /** Slovenian (slovenščina) */
