@@ -44,7 +44,7 @@ class ProofreadPages extends QueryPage {
 		$this->sortAscending = $request->getBool( 'sortascending' );
 		$this->suppressSqlOffset = false;
 
-		if( !$wgDisableTextSearch ) {
+		if ( !$wgDisableTextSearch ) {
 			$orderSelect = new XmlSelect( 'order', 'order', $this->queryOrder );
 			$orderSelect->addOption( $this->msg( 'proofreadpage_index_status' )->text(), 'quality' );
 			$orderSelect->addOption( $this->msg( 'proofreadpage_index_size' )->text(), 'size' );
@@ -68,21 +68,21 @@ class ProofreadPages extends QueryPage {
 				Html::closeElement( 'fieldset' ) .
 				Html::closeElement( 'form' )
 			);
-			if( $this->searchTerm ) {
+			if ( $this->searchTerm ) {
 				$indexNamespaceId = ProofreadPage::getIndexNamespaceId();
 				$searchEngine = SearchEngine::create();
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
 				$searchEngine->setNamespaces( array( $indexNamespaceId ) );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
-				if( !( $textMatches instanceof SearchResultSet ) ) {
+				if ( !( $textMatches instanceof SearchResultSet ) ) {
 					// TODO: $searchEngine->searchText() can return status objects
 					// Might want to extract some information from them
 					global $wgOut;
 					$wgOut->showErrorPage( 'proofreadpage_specialpage_searcherror', 'proofreadpage_specialpage_searcherrortext' );
 				} else {
 					$this->searchList = array();
-					while( $result = $textMatches->next() ) {
+					while ( $result = $textMatches->next() ) {
 						$title = $result->getTitle();
 						if ( $title->inNamespace( $indexNamespaceId ) ) {
 							array_push( $this->searchList, $title->getDBkey() );
@@ -97,7 +97,7 @@ class ProofreadPages extends QueryPage {
 
 	function reallyDoQuery( $limit, $offset = false ) {
 		$count = sizeof( $this->searchList );
-		if( $count > $this->limit ) { //Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
+		if ( $count > $this->limit ) { //Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
 			$this->addOne = true;
 			unset( $this->searchList[ $count - 1 ] );
 		}
@@ -110,7 +110,7 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function preprocessResults( $dbr, $res ) {
-		if( $this->addOne !== null) {
+		if ( $this->addOne !== null) {
 			$this->numRows++; //there is a deleted item
 		}
 	}
@@ -164,7 +164,7 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function getOrderFields() {
-		switch( $this->queryOrder ) {
+		switch ( $this->queryOrder ) {
 			case 'size':
 				return array( 'pr_count' );
 			case 'alpha':

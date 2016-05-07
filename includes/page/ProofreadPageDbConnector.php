@@ -66,7 +66,7 @@ class ProofreadPageDbConnector {
 		$query['conds']['cl_to'] = str_replace( ' ' , '_' , wfMessage( $cat )->inContentLanguage()->text() );
 		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, array(), $query['joins'] );
 
-		if( $res && $dbr->numRows( $res ) > 0 ) {
+		if ( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			$n = $row->count;
 			return $n;
@@ -87,7 +87,7 @@ class ProofreadPageDbConnector {
 				__METHOD__
 			);
 
-		if( $res && $dbr->numRows( $res ) > 0 ) {
+		if ( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			return $row->count;
 		}
@@ -107,7 +107,7 @@ class ProofreadPageDbConnector {
 			__METHOD__,
 			array( 'LIMIT' => 1 )
 		);
-		if( $res ) {
+		if ( $res ) {
 			$res2 = $dbr->selectRow(
 				array( 'pagelinks', 'page' ),
 				array( 'page_title AS title' ),
@@ -120,7 +120,7 @@ class ProofreadPageDbConnector {
 				array( 'LIMIT' => 1 ),
 				array( 'page' => array( 'LEFT JOIN', 'page_id=pl_from' ) )
 			);
-			if( $res2 ) {
+			if ( $res2 ) {
 				return $res2->title;
 			}
 		}
@@ -141,7 +141,7 @@ class ProofreadPageDbConnector {
 			null,
 			array( 'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ) )
 		);
-		if( $res && $dbr->numRows( $res ) > 0 ) {
+		if ( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
 			return $row->count;
 		} else {

@@ -121,7 +121,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		/* Required parameters must all be present if no exclusive was found */
 		if ( isset( $params['required'] ) ) {
-			foreach( $params['required'] as $name ) {
+			foreach ( $params['required'] as $name ) {
 				$val = $request->getVal( $name );
 				if ( is_null( $val ) ) {
 					throw new ProofreadIndexOaiError( 'Missing required argument "' . $name . '"', 'badArgument' );
@@ -133,7 +133,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		/* Optionals are, well, optional. */
 		if ( isset( $params['optional'] ) ) {
-			foreach( $params['optional'] as $name ) {
+			foreach ( $params['optional'] as $name ) {
 				$val = $request->getVal( $name );
 				if ( !is_null( $val ) ) {
 					$req[$name] = $val;
@@ -196,7 +196,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * @throws MWException
 	 */
 	protected function doResponse( $verb ) {
-		switch( $verb ) {
+		switch ( $verb ) {
 			case 'Identify':
 				$this->identify();
 				break;
@@ -425,7 +425,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		$sets = ProofreadIndexOaiSets::getSetsBySpec();
 		echo Xml::openElement( 'ListSets' ) . "\n";
-		foreach( $sets as $set ) {
+		foreach ( $sets as $set ) {
 			echo Xml::openElement( 'set' ) . "\n";
 			echo Xml::element( 'setSpec', null, $set['spec'] ) . "\n";
 			echo Xml::element( 'setName', null, $set['name'] ) . "\n";
@@ -457,7 +457,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		$formats = $this->metadataFormats();
 		echo Xml::openElement( 'ListMetadataFormats' ) . "\n";
-		foreach( $formats as $prefix => $format ) {
+		foreach ( $formats as $prefix => $format ) {
 			echo Xml::openElement( 'metadataFormat' ) . "\n";
 			echo Xml::element( 'metadataPrefix', null, $prefix ) . "\n";
 			echo Xml::element( 'schema', null, $format['schema'] ) . "\n";
@@ -643,7 +643,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		// buffer everything up
 		$rows = array();
-		for( $i = 0; $i < $count; $i++ ) {
+		for ( $i = 0; $i < $count; $i++ ) {
 			$row = $resultSet->fetchObject();
 			$rows[] = $row;
 		}
@@ -660,7 +660,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		// render
 		echo Xml::openElement( $verb ) . "\n";
-		foreach( $rows as $row ) {
+		foreach ( $rows as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 			if ( $title !== null ) {
 				$item = new ProofreadIndexOaiRecord( ProofreadIndexPage::newFromTitle( $title ), $row->rev_timestamp );

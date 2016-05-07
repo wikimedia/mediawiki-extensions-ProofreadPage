@@ -88,29 +88,29 @@ class ProofreadIndexEntry {
 	public function getStringValues() {
 		$value = $this->getStringValue();
 
-		if( $value === '' ) {
+		if ( $value === '' ) {
 			return array();
 		}
 
-		if( !isset( $this->config['delimiter'] ) || !$this->config['delimiter'] ) {
+		if ( !isset( $this->config['delimiter'] ) || !$this->config['delimiter'] ) {
 			return array( $value );
 		}
 
 		$delimiters = $this->config['delimiter'];
-		if( !is_array( $delimiters ) ) {
+		if ( !is_array( $delimiters ) ) {
 			$delimiters = array( $delimiters );
 		}
 
 		$values = array( $value );
-		foreach( $delimiters as $delimiter ) {
+		foreach ( $delimiters as $delimiter ) {
 			$values2 = array();
-			foreach( $values as $val) {
+			foreach ( $values as $val) {
 				$values2 = array_merge( $values2, explode( $delimiter, $val ) );
 			}
 			$values = $values2;
 		}
 
-		foreach( $values as $id => $value) {
+		foreach ( $values as $id => $value) {
 			$values[$id] = trim( $value );
 		}
 		return $values;
@@ -125,7 +125,7 @@ class ProofreadIndexEntry {
 		try {
 			$class = ProofreadIndexValue::getIndexValueClassNameForType( $this->getType() );
 			$val = new $class( $value, $this->config );
-		} catch( MWException $e ) {
+		} catch ( MWException $e ) {
 			$class = ProofreadIndexValue::getIndexValueClassNameForType( 'string' );
 			$val = new $class( $value, $this->config );
 		}
@@ -139,7 +139,7 @@ class ProofreadIndexEntry {
 	public function getTypedValues() {
 		$values = $this->getStringValues();
 
-		foreach( $values as $id => $value) {
+		foreach ( $values as $id => $value) {
 			$values[$id] = $this->getTypedValue( $value );
 		}
 		return $values;
@@ -229,7 +229,7 @@ class ProofreadIndexEntry {
 		if ( in_array( strtolower( $this->key ), array( 'header', 'footer', 'css', 'width' ) ) ) {
 			return true;
 		} else {
-			if( isset( $this->config['header'] ) ) {
+			if ( isset( $this->config['header'] ) ) {
 				if ( is_bool( $this->config['header'] ) ) {
 					return $this->config['header'];
 				} else {
@@ -247,10 +247,10 @@ class ProofreadIndexEntry {
 	 * @return string
 	 */
 	public function getQualifiedDublinCoreProperty() {
-		if( !isset( $this->config['data'] ) || !$this->config['data'] )
+		if ( !isset( $this->config['data'] ) || !$this->config['data'] )
 			return null;
 
-		switch( $this->config['data'] ) {
+		switch ( $this->config['data'] ) {
 			case 'year':
 				return 'dcterms:issued';
 			case 'place':
@@ -266,11 +266,11 @@ class ProofreadIndexEntry {
 	 * @return string
 	 */
 	public function getSimpleDublinCoreProperty() {
-		if( !isset( $this->config['data'] ) || !$this->config['data'] ) {
+		if ( !isset( $this->config['data'] ) || !$this->config['data'] ) {
 			return null;
 		}
 
-		switch( $this->config['data'] ) {
+		switch ( $this->config['data'] ) {
 			case 'language':
 				return 'dc:language';
 			case 'identifier':

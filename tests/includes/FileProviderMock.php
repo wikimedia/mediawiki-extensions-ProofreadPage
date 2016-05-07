@@ -21,7 +21,7 @@ class FileProviderMock extends FileProvider {
 	 * @param File[] $files
 	 */
 	public function __construct( array $files ) {
-		foreach( $files as $file ) {
+		foreach ( $files as $file ) {
 			$this->files[$file->getTitle()->getDBkey()] = $file;
 		}
 	}

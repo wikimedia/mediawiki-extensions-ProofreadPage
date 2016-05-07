@@ -51,7 +51,7 @@ class ProofreadIndexOaiRecord {
 		$record = Xml::openElement( 'record' ) . "\n";
 		$record .= $this->renderHeader();
 		$record .= Xml::openElement( 'metadata' ) . "\n";
-		switch( $format ) {
+		switch ( $format ) {
 			case 'oai_dc':
 				$record .= $this->renderOaiDc();
 				break;
@@ -75,7 +75,7 @@ class ProofreadIndexOaiRecord {
 		$text .= Xml::element( 'identifier', null, $this->getIdentifier() ) . "\n";
 		$text .= Xml::element( 'datestamp',  null, SpecialProofreadIndexOai::datestamp( $this->lastEditionTimestamp ) ) . "\n";
 		$sets = ProofreadIndexOaiSets::getSetSpecsForTitle( $this->index->getTitle() );
-		foreach( $sets as $set ) {
+		foreach ( $sets as $set ) {
 			$text .= Xml::element( 'setSpec',  null, $set ) . "\n";
 		}
 		$text .= Xml::closeElement( 'header' ) . "\n";
@@ -113,7 +113,7 @@ class ProofreadIndexOaiRecord {
 		}
 
 		$metadata = $this->index->getIndexEntries();
-		foreach( $metadata as $entry ) {
+		foreach ( $metadata as $entry ) {
 			$record .= $this->getOaiDcEntry( $entry );
 		}
 		$record .= Xml::closeElement( 'oai_dc:dc' );
@@ -134,8 +134,8 @@ class ProofreadIndexOaiRecord {
 
 		$text = '';
 		$values = $entry->getTypedValues();
-		foreach( $values as $value ) {
-			switch( $value->getMainType() ) {
+		foreach ( $values as $value ) {
+			switch ( $value->getMainType() ) {
 				case 'string':
 					$text .= Xml::element( $key, array( 'xml:lang' => $this->lang->getHtmlCode() ), $value ) . "\n";
 					break;
@@ -181,7 +181,7 @@ class ProofreadIndexOaiRecord {
 		}
 
 		$metadata = $this->index->getIndexEntries();
-		foreach( $metadata as $entry ) {
+		foreach ( $metadata as $entry ) {
 			$record .= $this->getDcQdcEntry( $entry );
 		}
 		$record .= Xml::closeElement( 'prp_qdc:qdc' );
@@ -202,8 +202,8 @@ class ProofreadIndexOaiRecord {
 
 		$text = '';
 		$values = $entry->getTypedValues();
-		foreach( $values as $value ) {
-			switch( $value->getMainType() ) {
+		foreach ( $values as $value ) {
+			switch ( $value->getMainType() ) {
 				case 'string':
 					$text .= Xml::element( $key, array( 'xml:lang' => $this->lang->getHtmlCode() ), $value ) . "\n";
 					break;

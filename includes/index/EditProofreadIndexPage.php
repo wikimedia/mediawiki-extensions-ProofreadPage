@@ -42,7 +42,7 @@ class EditProofreadIndexPage extends EditPage {
 
 		$out->addHTML( Html::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
 		$i = 10;
-		foreach( $entries as $entry ) {
+		foreach ( $entries as $entry ) {
 			$inputAttributes['tabindex'] = $i;
 			$this->addEntry( $entry, $inputAttributes, $out );
 			$i++;
@@ -85,7 +85,7 @@ class EditProofreadIndexPage extends EditPage {
 		$values = $entry->getPossibleValues();
 		if ( $values !== null ) {
 			$select = new XmlSelect( $key, $key, $val );
-			foreach( $values as $value => $label ) {
+			foreach ( $values as $value => $label ) {
 				$select->addOption( $label, $value );
 			}
 			if ( !isset( $values[$val] ) && $val !== '' ) { //compatiblity with already set data that aren't in the list
@@ -140,11 +140,11 @@ class EditProofreadIndexPage extends EditPage {
 
 		$config = ProofreadIndexPage::getDataConfig();
 		$text = "{{:MediaWiki:Proofreadpage_index_template";
-		foreach( $config as $key => $params ) {
+		foreach ( $config as $key => $params ) {
 			$field = $this->getFieldNameForEntry( $key );
 			$value = $this->cleanInputtedContent( $this->safeUnicodeInput( $request, $field ) );
 			$entry = new ProofreadIndexEntry( $key, $value, $params );
-			if( !$entry->isHidden() ) {
+			if ( !$entry->isHidden() ) {
 				$text .= "\n|" . $entry->getKey() . "=" . $entry->getStringValue();
 			}
 		}
@@ -192,7 +192,7 @@ class EditProofreadIndexPage extends EditPage {
 		//Get list of pages titles
 		$links = $index->getLinksToPageNamespace();
 		$linksTitle = array();
-		foreach( $links as $link ) {
+		foreach ( $links as $link ) {
 			$linksTitle[] = $link[0];
 		}
 

@@ -47,7 +47,7 @@ class PaginationFactory {
 	private function buildPaginationForIndexPage( ProofreadIndexPage $indexPage ) {
 		try {
 			$file = $this->context->getFileProvider()->getForIndexPage( $indexPage );
-		} catch( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException $e ) {
 			$file = false;
 		}
 
@@ -64,7 +64,7 @@ class PaginationFactory {
 			$links = $indexPage->getLinksToPageNamespace();
 			$pages = array();
 			$pageNumbers = array();
-			foreach( $links as $link ) {
+			foreach ( $links as $link ) {
 				$pages[] = new ProofreadPagePage( $link[0], $indexPage );
 				$pageNumbers[] = new PageNumber( $link[1] );
 			}

@@ -55,7 +55,7 @@ class ProofreadIndexOaiSets {
 			return $setsBySpec;
 		}
 		$setsBySpec = array();
-		foreach( $config as $spec => $set ) {
+		foreach ( $config as $spec => $set ) {
 			if ( !isset( $set['category'] ) || strstr( $spec, ':' ) !== false ) {
 				continue;
 			}
@@ -81,7 +81,7 @@ class ProofreadIndexOaiSets {
 
 		$setsBySpec = self::getSetsBySpec();
 		$setsByCategory = array();
-		foreach( $setsBySpec as $set ) {
+		foreach ( $setsBySpec as $set ) {
 			$setsByCategory[$set['category']] = $set;
 		}
 		return $setsByCategory;
@@ -115,7 +115,7 @@ class ProofreadIndexOaiSets {
 			__METHOD__
 		);
 
-		foreach( $results as $result ) {
+		foreach ( $results as $result ) {
 			if ( isset( $sets[$result->cl_to] ) ) {
 				$list[] = $sets[$result->cl_to]['spec'];
 			}

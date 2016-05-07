@@ -95,7 +95,7 @@ class ProofreadPagePage {
 	 * @return ProofreadIndexPage|false
 	 */
 	public function getIndex() {
-		if( $this->index !== null ) {
+		if ( $this->index !== null ) {
 			return $this->index;
 		}
 
@@ -137,7 +137,7 @@ class ProofreadPagePage {
 	public function getImage() {
 		try {
 			return Context::getDefaultContext()->getFileProvider()->getForPagePage( $this );
-		} catch( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException $e ) {
 			return false;
 		}
 	}
@@ -203,7 +203,7 @@ class ProofreadPagePage {
 			}
 		}
 		$handler = $image->getHandler();
-		if( !$handler || !$handler->normaliseParams( $image, $transformAttributes ) ) {
+		if ( !$handler || !$handler->normaliseParams( $image, $transformAttributes ) ) {
 			return null;
 		}
 		$thumbnail = $image->transform( $transformAttributes );

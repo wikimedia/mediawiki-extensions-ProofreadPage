@@ -218,7 +218,7 @@ class PageContent extends TextContent {
 	 * @see Content::getParserOutput
 	 */
 	public function getParserOutput( Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true ) {
-		if( $this->isRedirect() ) {
+		if ( $this->isRedirect() ) {
 			return $this->body->getParserOutput( $title, $revId, $options, $generateHtml );
 		}
 		if ( $options === null ) {

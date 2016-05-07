@@ -37,7 +37,7 @@ class PageContentHandler extends TextContentHandler {
 	public function serializeContent( Content $content, $format = null ) {
 		$this->checkFormat( $format );
 
-		switch( $format ) {
+		switch ( $format ) {
 			case CONTENT_FORMAT_JSON:
 				return $this->serializeContentInJson( $content );
 			default:
@@ -86,7 +86,7 @@ class PageContentHandler extends TextContentHandler {
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
 
-		switch( $format ) {
+		switch ( $format ) {
 			case CONTENT_FORMAT_JSON:
 				return $this->unserializeContentInJson( $text );
 			default:

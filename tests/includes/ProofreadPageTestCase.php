@@ -29,7 +29,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @return Context
 	 */
 	protected function getContext() {
-		if( $this->context === null ) {
+		if ( $this->context === null ) {
 			$this->context = new Context(
 				250,
 				252,

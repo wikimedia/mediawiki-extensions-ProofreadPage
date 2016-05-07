@@ -48,9 +48,6 @@
 	<rule ref="MediaWiki.WhiteSpace.MultipleEmptyLines.MultipleEmptyLines">
 		<severity>0</severity>
 	</rule>
-	<rule ref="MediaWiki.WhiteSpace.SpaceAfterControlStructure.Incorrect">
-		<severity>0</severity>
-	</rule>
 	<rule ref="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.SingleSpaceBeforeSingleLineComment">
 		<severity>0</severity>
 	</rule>

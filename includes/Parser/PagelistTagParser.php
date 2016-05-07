@@ -28,10 +28,10 @@ class PagelistTagParser extends TagParser {
 		$pageList = new PageList( $args );
 		try {
 			$image = $this->context->getFileProvider()->getForIndexPage( $index );
-		} catch( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException $e ) {
 			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
-		if( !$image->isMultipage() ) {
+		if ( !$image->isMultipage() ) {
 			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
 
@@ -42,10 +42,10 @@ class PagelistTagParser extends TagParser {
 		$from = array_key_exists( 'from', $args ) ? $args['from'] : 1;
 		$to = array_key_exists( 'to', $args ) ? $args['to'] : $count;
 
-		if( !is_numeric( $from ) || !is_numeric( $to ) ) {
+		if ( !is_numeric( $from ) || !is_numeric( $to ) ) {
 			return $this->formatError( 'proofreadpage_number_expected' );
 		}
-		if( ( $from > $to ) || ( $from < 1 ) || ( $to < 1 ) || ( $to > $count ) ) {
+		if ( ( $from > $to ) || ( $from < 1 ) || ( $to < 1 ) || ( $to > $count ) ) {
 			return $this->formatError( 'proofreadpage_invalid_interval' );
 		}
 

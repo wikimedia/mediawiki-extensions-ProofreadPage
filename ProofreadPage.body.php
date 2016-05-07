@@ -277,7 +277,7 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onOutputPageParserOutput( $outputPage, $parserOutput ) {
-		if( isset( $parserOutput->is_toc ) ) {
+		if ( isset( $parserOutput->is_toc ) ) {
 			$outputPage->is_toc = $parserOutput->is_toc;
 		} else {
 			$outputPage->is_toc = false;
@@ -324,7 +324,7 @@ class ProofreadPage {
 		if ( !isset( $title->prpIndexPage ) ) {
 			ProofreadPage::loadIndex( $title );
 		}
-		if( $title->prpIndexPage === null ) {
+		if ( $title->prpIndexPage === null ) {
 			return true;
 		}
 
@@ -338,7 +338,7 @@ class ProofreadPage {
 		 */
 		$indexId = $title->prpIndexPage->getTitle()->getArticleID();
 		$x = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
-		if( $x ) {
+		if ( $x ) {
 			$a = ProofreadIndexDbConnector::replaceIndexById( $x, $indexId, $article );
 		}
 
@@ -405,21 +405,21 @@ class ProofreadPage {
 			// $nt is used here on purpose, as we need to get the page id.
 			// There is no page under the old title or it is a redirect.
 			$article = new Article( $nt );
-			if( $article ) {
+			if ( $article ) {
 				ProofreadIndexDbConnector::removeIndexData( $article->getId() );
 			}
 		}
 
 		if ( $nt->inNamespace( self::getPageNamespaceId() ) ) {
 			self::loadIndex( $nt );
-			if( $nt->prpIndexPage !== null
+			if ( $nt->prpIndexPage !== null
 				&& ( !isset( $ot->prpIndexPage ) || ( $nt->prpIndexPage->getTitle()->equals( $ot->prpIndexPage->getTitle() ) ) ) ) {
 				self::updateIndexOfPage( $nt );
 			}
 		} elseif ( $nt->inNamespace( self::getIndexNamespaceId() ) ) {
 			// Update index data.
 			$article = new Article( $nt );
-			if( $article ) {
+			if ( $article ) {
 				self::updatePrIndex( $article );
 			}
 		}
@@ -454,19 +454,19 @@ class ProofreadPage {
 		$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage(
 			ProofreadIndexPage::newFromTitle( $indexTitle )
 		);
-		foreach( $pagination as $page ) {
+		foreach ( $pagination as $page ) {
 			if ( $deletedPage === null || !$page->getTitle()->equals( $deletedPage ) ) {
 				array_push( $pages, $page->getTitle()->getDBKey() );
 			}
 		}
 
-		if( !count( $pages ) ) {
+		if ( !count( $pages ) ) {
 			return;
 		}
 
 		$total = ProofreadPageDbConnector::getNumberOfExistingPagesFromPageTitle( $pages );
 
-		if( $total === null ) {
+		if ( $total === null ) {
 			return;
 		}
 
@@ -495,24 +495,24 @@ class ProofreadPage {
 	 */
 	private static function prepareArticle( $out ) {
 		$id = $out->getTitle()->getArticleID();
-		if( $id == -1 ) {
+		if ( $id == -1 ) {
 			return true;
 		}
 		$pageNamespaceId = self::getPageNamespaceId();
 		$indexNamespaceId = self::getIndexNamespaceId();
-		if( $pageNamespaceId == null || $indexNamespaceId == null ) {
+		if ( $pageNamespaceId == null || $indexNamespaceId == null ) {
 			return true;
 		}
 
 		// find the index page
 		$indextitle = ProofreadPageDbConnector::getIndexTitleForPageId( $id );
 
-		if( isset( $out->is_toc ) && $out->is_toc ) {
+		if ( isset( $out->is_toc ) && $out->is_toc ) {
 			$n = 0;
 
 			if ( $indextitle ) {
 				$row = ProofreadIndexDbConnector::getIndexDataFromIndexTitle( $indextitle );
-				if( $row ) {
+				if ( $row ) {
 					$n0 = $row->pr_q0;
 					$n1 = $row->pr_q1;
 					$n2 = $row->pr_q2;
@@ -525,7 +525,7 @@ class ProofreadPage {
 		} else {
 			// count transclusions from page namespace
 			$n = ProofreadPageDbConnector::countTransclusionFromPageId( $id );
-			if( $n === null ) {
+			if ( $n === null ) {
 				return true;
 			}
 
@@ -549,11 +549,11 @@ class ProofreadPage {
 			$ne = 0;
 		}
 
-		if( $n == 0 ) {
+		if ( $n == 0 ) {
 			return true;
 		}
 
-		if( $indextitle ) {
+		if ( $indextitle ) {
 			$nt = Title::makeTitleSafe( $indexNamespaceId, $indextitle );
 			$indexlink = Linker::link( $nt, $out->msg( 'proofreadpage_source' )->text(),
 						array( 'title' => $out->msg( 'proofreadpage_source_message' )->text() ) );
@@ -694,7 +694,7 @@ class ProofreadPage {
 		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql', true );
 
 		//fix issue with content type hardcoded in database
-		if( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
+		if ( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
 			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadPagePagesContentModel' );
 		}
 
@@ -718,7 +718,7 @@ class ProofreadPage {
 	 */
 	public static function onSkinTemplateNavigation( &$skin, &$links ) {
 		$title = $skin->getTitle();
-		if( !$title->inNamespace( self::getPageNamespaceId() ) ) {
+		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
 		$page = ProofreadPagePage::newFromTitle( $title );
@@ -752,7 +752,7 @@ class ProofreadPage {
 					'text' => wfMessage( 'proofreadpage_image' )->plain()
 				);
 			}
-		} catch( FileNotFoundException $e ) {}
+		} catch ( FileNotFoundException $e ) {}
 
 		//Prev, Next and Index links
 		$indexPage = $page->getIndex();
@@ -769,7 +769,7 @@ class ProofreadPage {
 						'href' => self::getLinkUrlForTitle( $prevTitle ),
 						'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
 					);
-				} catch( OutOfBoundsException $e ) {} //if the previous page does not exits
+				} catch ( OutOfBoundsException $e ) {} //if the previous page does not exits
 
 				try {
 					$nextPage  = $pagination->getPage( $pageNumber + 1 );
@@ -779,8 +779,8 @@ class ProofreadPage {
 						'href' => self::getLinkUrlForTitle( $nextTitle ),
 						'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
 					);
-				} catch( OutOfBoundsException $e ) {} //if the next page does not exits
-			} catch( PageNotInPaginationException $e ) {}
+				} catch ( OutOfBoundsException $e ) {} //if the next page does not exits
+			} catch ( PageNotInPaginationException $e ) {}
 
 			$links['namespaces']['proofreadPageIndexLink'] = array(
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
@@ -847,7 +847,7 @@ class ProofreadPage {
 	}
 
 	public static function onSkinMinervaDefaultModules( Skin $skin, array& $modules ) {
-		if(
+		if (
 			$skin->getTitle()->inNamespace( self::getIndexNamespaceId() ) ||
 			$skin->getTitle()->inNamespace( self::getPageNamespaceId() )
 		) {

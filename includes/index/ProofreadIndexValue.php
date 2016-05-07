@@ -33,7 +33,7 @@ abstract class ProofreadIndexValue {
 	 * @throws MWException
 	 */
 	public function __construct( $value, $config ) {
-		if( !$this->isValid( $value ) ) {
+		if ( !$this->isValid( $value ) ) {
 			throw new MWException( 'Initialisation value ' . $value . ' is not valid for type ' . $this->getType() );
 		}
 		$this->setValue( $value );
@@ -82,7 +82,7 @@ abstract class ProofreadIndexValue {
 	 * @return string
 	 */
 	public static function getIndexValueClassNameForType( $type ) {
-		switch( $type ) {
+		switch ( $type ) {
 			case 'string':
 				return 'ProofreadIndexValueString';
 			case 'page':
@@ -142,14 +142,14 @@ class ProofreadIndexValueString extends ProofreadIndexValue {
 	 * @return string
 	 */
 	public function __toString() { //TODO improve by removing all tags.
-		if( $this->value !== null ) {
+		if ( $this->value !== null ) {
 			return $this->value;
 		}
 
 		$value = $this->wikiValue;
 		$value = trim( $value, " '\t\n\r\0\x0B" );
-		if( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
-			if( $m[2] ) {
+		if ( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
+			if ( $m[2] ) {
 				$value = $m[2];
 			} else {
 				$value = $m[1];
@@ -264,7 +264,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 	 */
 	protected function setValue( $value ) {
 		$value = trim( $value, " '\t\n\r\0\x0B" );
-		if( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
+		if ( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
 			$value = $m[1];
 		}
 		$this->value = Title::newFromText( $value );
@@ -285,7 +285,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 	public function getMainText() {
 		$val = $this->value->getBaseText();
 		$parts = explode( ':', $this->value->getBaseText() );
-		if( count( $parts ) > 1 && $parts[0] == $this->value->getNsText() ) {
+		if ( count( $parts ) > 1 && $parts[0] == $this->value->getNsText() ) {
 			unset( $parts[0] );
 			return implode( '/', $parts );
 		} else {
@@ -316,7 +316,7 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 	 */
 	public function isValid( $value ) {
 		$value = trim( $value, " '\t\n\r\0\x0B" );
-		if( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
+		if ( preg_match( "/^\[\[([^\|]*)\|?(.*)\]\]$/", $value, $m ) ) {
 			$value = $m[1];
 		}
 		$title = Title::newFromText( $value );
@@ -623,7 +623,7 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 	 * @param array $config
 	 */
 	public function __construct( $value, $config ) {
-		if( isset( $config['naan'] ) && $config['naan'] ) {
+		if ( isset( $config['naan'] ) && $config['naan'] ) {
 			$this->naan = $config['naan'];
 		}
 		parent::__construct( $value, $config );
@@ -642,7 +642,7 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 	 * @return string
 	 */
 	public function getUri() { //TODO add the canonical NMA
-		if( $this->naan ) {
+		if ( $this->naan ) {
 			return 'ark:/' . $this->naan . '/' . $this->value;
 		} else {
 			return 'ark:/' . $this->value;
@@ -663,7 +663,7 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 	 * @return bool
 	 */
 	public function isValid( $value ) { //TODO to improve
-		if( $this->naan ) {
+		if ( $this->naan ) {
 			return true;
 		} else {
 			return preg_match( "/^\d{5}\/.+$/", $value );

@@ -50,8 +50,8 @@ class PagesWithoutScans extends QueryPage {
 		# If the text can be treated as a title, use it verbatim.
 		# Otherwise, pull the titles from the links table
 		$dp = Title::newFromText($dMsgText);
-		if( $dp ) {
-			if($dp->getNamespace() != NS_TEMPLATE) {
+		if ( $dp ) {
+			if ($dp->getNamespace() != NS_TEMPLATE) {
 				# FIXME we assume the disambiguation message is a template but
 				# the page can potentially be from another namespace :/
 				wfDebug("Mediawiki:proofreadpage-disambiguationspage message does not refer to a template!\n");

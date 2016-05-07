@@ -95,7 +95,7 @@ class ProofreadIndexPage {
 	public function getImage() {
 		try {
 			return Context::getDefaultContext()->getFileProvider()->getForIndexPage( $this );
-		} catch( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException $e ) {
 			return false;
 		}
 	}
@@ -151,7 +151,7 @@ class ProofreadIndexPage {
 			$attributes = explode( "\n", wfMessage( 'proofreadpage_index_attributes' )->inContentLanguage()->text() );
 			$headerAttributes = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )->inContentLanguage()->text() );
 			$config = array();
-			foreach( $attributes as $attribute ) {
+			foreach ( $attributes as $attribute ) {
 				$m = explode( '|', $attribute );
 				$params = array(
 					'type' => 'string',
@@ -178,7 +178,7 @@ class ProofreadIndexPage {
 				$config[$m[0]] = $params;
 			}
 
-			foreach( $headerAttributes as $attribute ) {
+			foreach ( $headerAttributes as $attribute ) {
 				if ( isset( $config[$attribute] ) ) {
 					$config[$attribute]['header'] = true;
 				} else {
@@ -195,14 +195,14 @@ class ProofreadIndexPage {
 			}
 		}
 
-		if( !array_key_exists( 'Header', $config ) ) {
+		if ( !array_key_exists( 'Header', $config ) ) {
 			$config['Header'] = array(
 				'default' => wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain(),
 				'header' => true,
 				'hidden' => true
 			);
 		}
-		if( !array_key_exists( 'Footer', $config ) ) {
+		if ( !array_key_exists( 'Footer', $config ) ) {
 			$config['Footer'] = array(
 				'default' => wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain(),
 				'header' => true,
@@ -220,7 +220,7 @@ class ProofreadIndexPage {
 	 */
 	protected function getIndexEntriesFromIndexContent( $values ) {
 		$metadata = array();
-		foreach( $this->config as $varName => $property ) {
+		foreach ( $this->config as $varName => $property ) {
 			if ( isset( $values[$varName] ) ) {
 				$metadata[$varName] = new ProofreadIndexEntry( $varName, $values[$varName], $property );
 			} else {
@@ -238,7 +238,7 @@ class ProofreadIndexPage {
 		if ( $this->entries === null ) {
 			$text = $this->getText();
 			$values = array();
-			foreach( $this->config as $varName => $property ) {
+			foreach ( $this->config as $varName => $property ) {
 				$tagPattern = "/\n\|" . preg_quote( $varName, '/' ) . "=(.*?)\n(\||\}\})/is";
 				if ( preg_match( $tagPattern, $text, $matches ) ) {
 					$values[$varName] = $matches[1];
@@ -254,7 +254,7 @@ class ProofreadIndexPage {
 	 * @return string|null
 	 */
 	public function getMimeType() {
-		if( preg_match( "/^.*\.(.{2,5})$/", $this->title->getText(), $m ) ) {
+		if ( preg_match( "/^.*\.(.{2,5})$/", $this->title->getText(), $m ) ) {
 			$mimeMagic = MimeMagic::singleton();
 			return $mimeMagic->guessTypesForExtension( $m[1] );
 		} else {
@@ -269,7 +269,7 @@ class ProofreadIndexPage {
 	public function getIndexEntriesForHeader() {
 		$entries = $this->getIndexEntries();
 		$headerEntries = array();
-		foreach( $entries as $entry ) {
+		foreach ( $entries as $entry ) {
 			if ( $entry->isHeader() ) {
 				$headerEntries[$entry->getKey()] = $entry;
 			}
@@ -285,7 +285,7 @@ class ProofreadIndexPage {
 	public function getIndexEntry( $name ) {
 		$name = strtolower( $name );
 		$entries = $this->getIndexEntries();
-		foreach( $entries as $entry ) {
+		foreach ( $entries as $entry ) {
 			if ( strtolower( $entry->getKey() ) === $name ) {
 				return $entry;
 			}
@@ -333,7 +333,7 @@ class ProofreadIndexPage {
 		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $text, $textLinks, PREG_PATTERN_ORDER );
 		$links = array();
 		$num = 0;
-		for( $i = 0; $i < count( $textLinks[1] ); $i++ ) {
+		for ( $i = 0; $i < count( $textLinks[1] ); $i++ ) {
 			$title = Title::newFromText( $textLinks[1][$i] );
 			if ( $title !== null && $title->inNamespace( $namespace ) ) {
 				if ( $textLinks[3][$i] === '' ) {
@@ -367,7 +367,7 @@ class ProofreadIndexPage {
 			$paramKey = trim( strtolower( $matches[1] ) );
 			if ( array_key_exists( $paramKey, $params ) ) {
 				return $params[$paramKey];
-			} elseif( array_key_exists( 3, $matches ) ) {
+			} elseif ( array_key_exists( 3, $matches ) ) {
 				return trim( $matches[3] );
 			} else {
 				return $matches[0];
@@ -382,7 +382,7 @@ class ProofreadIndexPage {
 	protected function getIndexEntriesForHeaderAsTemplateParams() {
 		$indexEntries = $this->getIndexEntriesForHeader();
 		$params = array();
-		foreach( $indexEntries as $entry ) {
+		foreach ( $indexEntries as $entry ) {
 			$params[strtolower( $entry->getKey() )] = $entry->getStringValue();
 		}
 		return $params;
