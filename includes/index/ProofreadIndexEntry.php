@@ -104,13 +104,13 @@ class ProofreadIndexEntry {
 		$values = array( $value );
 		foreach ( $delimiters as $delimiter ) {
 			$values2 = array();
-			foreach ( $values as $val) {
+			foreach ( $values as $val ) {
 				$values2 = array_merge( $values2, explode( $delimiter, $val ) );
 			}
 			$values = $values2;
 		}
 
-		foreach ( $values as $id => $value) {
+		foreach ( $values as $id => $value ) {
 			$values[$id] = trim( $value );
 		}
 		return $values;
@@ -139,7 +139,7 @@ class ProofreadIndexEntry {
 	public function getTypedValues() {
 		$values = $this->getStringValues();
 
-		foreach ( $values as $id => $value) {
+		foreach ( $values as $id => $value ) {
 			$values[$id] = $this->getTypedValue( $value );
 		}
 		return $values;

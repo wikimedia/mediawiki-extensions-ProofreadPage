@@ -32,7 +32,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 			)
 		);
 		$this->assertEquals( 2, $pagination->getPageNumber(
-			new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index)
+			new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index )
 		) );
 	}
 
@@ -72,9 +72,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$pagination = new PagePagination(
 			$index,
 			array(
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 2.jpg' ), $index),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index)
+				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ),
+				new ProofreadPagePage( Title::newFromText( 'Page:Test 2.jpg' ), $index ),
+				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index )
 			),
 			array(
 				new PageNumber( 'TOC' ),

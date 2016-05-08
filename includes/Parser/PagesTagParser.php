@@ -246,7 +246,7 @@ class PagesTagParser extends TagParser {
 		}
 
 		if ( $header ) {
-			if ( $header == 'toc') {
+			if ( $header == 'toc' ) {
 				$this->parser->getOutput()->is_toc = true;
 			}
 			$indexLinks = $indexPage->getLinksToMainNamespace();
@@ -319,8 +319,8 @@ class PagesTagParser extends TagParser {
 	 * @param string $input
 	 * @return array|null an array of pages, or null if the input does not comply to the syntax
 	 */
-	public function parseNumList($input) {
-		$input = str_replace(array(' ', '\t', '\n'), '', $input);
+	public function parseNumList( $input ) {
+		$input = str_replace( array( ' ', '\t', '\n' ), '', $input );
 		$list = explode( ',', $input );
 		$nums = array();
 		foreach ( $list as $item ) {

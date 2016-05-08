@@ -157,21 +157,21 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		$error = '';
 		try {
 			$this->request = $this->parseRequest();
-		} catch (ProofreadIndexOaiError $e ) {
+		} catch ( ProofreadIndexOaiError $e ) {
 			$error = $e->getXML();
 		}
 		echo $this->responseDate();
 		echo $this->regurgitateRequest();
-		if ( $error === '') {
+		if ( $error === '' ) {
 			try {
 				$this->doResponse( $this->request['verb'] );
-			} catch (ProofreadIndexOaiError $e ) {
+			} catch ( ProofreadIndexOaiError $e ) {
 				echo $e->getXML();
 			}
 		} else {
 			echo $error;
 		}
-		echo Xml::closeElement( 'OAI-PMH');
+		echo Xml::closeElement( 'OAI-PMH' );
 	}
 
 	/**
@@ -613,7 +613,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * Output the ListRecords or ListIdentifiers action
 	 */
 	protected function listRecords( $verb ) {
-		$withData = ($verb == 'ListRecords');
+		$withData = ( $verb == 'ListRecords' );
 
 		$category = null;
 		$startToken = $this->validateToken( 'resumptionToken' );
@@ -651,9 +651,9 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		if ( $row ) {
 			$limit = $until;
 			if ( $until ) {
-				$nextToken = $metadataPrefix . ':' . ':' . $row->page_id . ':' . ($startToken['cursor'] + $count) . $limit;
+				$nextToken = $metadataPrefix . ':' . ':' . $row->page_id . ':' . ( $startToken['cursor'] + $count ) . $limit;
 			} else {
-				$nextToken = $metadataPrefix . ':' . $row->page_id . ':' . ($startToken['cursor'] + $count);
+				$nextToken = $metadataPrefix . ':' . $row->page_id . ':' . ( $startToken['cursor'] + $count );
 			}
 		}
 		$resultSet->free();

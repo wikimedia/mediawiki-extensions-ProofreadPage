@@ -77,7 +77,7 @@ class PageList {
 			}
 		}
 
-		$displayedpageNumber = ($displayedpageNumber === '') ? $pageNumber - $offset : $displayedpageNumber;
+		$displayedpageNumber = ( $displayedpageNumber === '' ) ? $pageNumber - $offset : $displayedpageNumber;
 		return new PageNumber( $displayedpageNumber, $mode, $isEmpty );
 	}
 

@@ -82,7 +82,7 @@ class ProofreadPageDbConnector {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 				array( 'page' ),
-				array( 'COUNT(page_id) AS count'),
+				array( 'COUNT(page_id) AS count' ),
 				array( 'page_namespace' => ProofreadPage::getPageNamespaceId(), 'page_title' => $pages ),
 				__METHOD__
 			);

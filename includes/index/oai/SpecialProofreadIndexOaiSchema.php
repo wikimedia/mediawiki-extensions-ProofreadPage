@@ -35,7 +35,7 @@ class SpecialProofreadIndexOaiSchema extends UnlistedSpecialPage {
 	public function execute( $namespace ) {
 		$output = $this->getOutput();
 
-		if ( $namespace === '' || !in_array($namespace, $this->namespaces) ) {
+		if ( $namespace === '' || !in_array( $namespace, $this->namespaces ) ) {
 			$this->getRequest()->response()->header( 'HTTP/1.1 404 Not Found' );
 			$output->showErrorPage( 'proofreadpage-indexoai-error-schemanotfound', 'proofreadpage-indexoai-error-schemanotfound-text', array( $namespace ) );
 		} else {

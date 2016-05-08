@@ -62,7 +62,7 @@ class ApiQueryProofread extends ApiQueryBase {
 			'cllimit' => 'max'
 		) );
 
-		$api = new ApiMain($params);
+		$api = new ApiMain( $params );
 		$api->execute();
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
 			$data = $api->getResult()->getResultData();
@@ -80,7 +80,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		}
 
 		$result = $this->getResult();
-		foreach ( $pages as $pageid => $data) {
+		foreach ( $pages as $pageid => $data ) {
 			if ( !array_key_exists( 'categories', $data ) ) {
 				continue;
 			}

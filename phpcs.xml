@@ -51,15 +51,6 @@
 	<rule ref="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.SingleSpaceBeforeSingleLineComment">
 		<severity>0</severity>
 	</rule>
-	<rule ref="MediaWiki.WhiteSpace.SpaceyParenthesis.SingleSpaceAfterOpenParenthesis">
-		<severity>0</severity>
-	</rule>
-	<rule ref="MediaWiki.WhiteSpace.SpaceyParenthesis.SingleSpaceBeforeCloseParenthesis">
-		<severity>0</severity>
-	</rule>
-	<rule ref="MediaWiki.WhiteSpace.SpaceyParenthesis.UnnecessarySpaceBetweenParentheses">
-		<severity>0</severity>
-	</rule>
 	<rule ref="PSR2.Methods.MethodDeclaration.AbstractAfterVisibility">
 		<severity>0</severity>
 	</rule>

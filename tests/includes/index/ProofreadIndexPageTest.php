@@ -129,7 +129,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		$this->assertEquals( $entries, $page->getIndexEntries() );
 	}
 
-	public function mimeTypesProvider( ) {
+	public function mimeTypesProvider() {
 		return array(
 			array( 'image/vnd.djvu', 'Test.djvu' ),
 			array( 'application/pdf', 'Test.pdf' ),

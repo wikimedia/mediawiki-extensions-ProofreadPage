@@ -71,7 +71,7 @@ class ProofreadIndexOaiRecord {
 	 * @return string
 	 */
 	public function renderHeader() {
-		$text = Xml::openElement('header') . "\n";
+		$text = Xml::openElement( 'header' ) . "\n";
 		$text .= Xml::element( 'identifier', null, $this->getIdentifier() ) . "\n";
 		$text .= Xml::element( 'datestamp',  null, SpecialProofreadIndexOai::datestamp( $this->lastEditionTimestamp ) ) . "\n";
 		$sets = ProofreadIndexOaiSets::getSetSpecsForTitle( $this->index->getTitle() );
@@ -169,7 +169,7 @@ class ProofreadIndexOaiRecord {
 			'xmlns:dc' => 'http://purl.org/dc/elements/1.1/',
 			'xmlns:dcterms' => 'http://purl.org/dc/terms/',
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://mediawiki.org/xml/proofreadpage/qdc/ ' . Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc')->getFullURL() ) )
+			'xsi:schemaLocation' => 'http://mediawiki.org/xml/proofreadpage/qdc/ ' . Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc' )->getFullURL() ) )
 			. "\n";
 
 		$record .= Xml::element( 'dc:type', array( 'xsi:type' => 'dcterms:DCMIType' ), 'Text' );

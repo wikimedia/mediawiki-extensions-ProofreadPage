@@ -51,11 +51,11 @@ class ProofreadPages extends QueryPage {
 			$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
 
 			$output->addHTML(
-				Html::openElement( 'form', array( 'action' => $wgScript) ) .
+				Html::openElement( 'form', array( 'action' => $wgScript ) ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::input( 'limit', $this->limit, 'hidden', array() ) .
-				Html::openElement('fieldset', array() ) .
-				Html::element('legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
+				Html::openElement( 'fieldset', array() ) .
+				Html::element( 'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
 				Html::openElement( 'p' ) .
 				Html::element( 'label', array( 'for' => 'key' ), $this->msg( 'proofreadpage_specialpage_label_key' )->text() )  . ' ' .
 				Html::input( 'key', $this->searchTerm, 'search', array( 'id' => 'key', 'size' => '50' ) ) .
@@ -110,7 +110,7 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function preprocessResults( $dbr, $res ) {
-		if ( $this->addOne !== null) {
+		if ( $this->addOne !== null ) {
 			$this->numRows++; //there is a deleted item
 		}
 	}

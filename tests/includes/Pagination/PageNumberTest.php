@@ -17,7 +17,7 @@ class ProofreadPageNumberTest extends ProofreadPageTestCase {
 			array( 'X', new PageNumber( '10', PageNumber::DISPLAY_HIGHROMAN ), null ),
 			array( 'x', new PageNumber( '10', PageNumber::DISPLAY_ROMAN ), null ),
 			array( 'test', new PageNumber( 'test', PageNumber::DISPLAY_ROMAN ), null ),
-			array( '૮', new PageNumber( '8'), Language::factory( 'gu' ) ),
+			array( '૮', new PageNumber( '8' ), Language::factory( 'gu' ) ),
 		);
 	}
 

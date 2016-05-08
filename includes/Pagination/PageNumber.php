@@ -38,7 +38,7 @@ class PageNumber {
 	 */
 	public function __construct( $number, $displayMode = self::DISPLAY_NORMAL, $isEmpty = false ) {
 		if ( !in_array( $displayMode, self::getDisplayModes() ) ) {
-			throw new InvalidArgumentException('$displayMode in invalid');
+			throw new InvalidArgumentException( '$displayMode in invalid' );
 		}
 		$this->number = $number;
 		$this->displayMode = $displayMode;

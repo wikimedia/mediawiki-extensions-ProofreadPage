@@ -111,7 +111,7 @@ class PageContentHandler extends TextContentHandler {
 		$this->assertArrayKeyExistsInSerialization( 'level', $array['level'] );
 
 		$user = array_key_exists( 'user', $array['level'] )
-			? PageLevel::getUserFromUserName(  $array['level']['user'] )
+			? PageLevel::getUserFromUserName( $array['level']['user'] )
 			: null;
 
 		return new PageContent(

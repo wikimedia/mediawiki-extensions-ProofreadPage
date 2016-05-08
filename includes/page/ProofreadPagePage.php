@@ -116,7 +116,7 @@ class ProofreadPagePage {
 				$image = wfFindFile( $imageTitle );
 				// if it is multipage, we use the page order of the file
 				if ( $image && $image->exists() && $image->isMultipage() ) {
-					$indexTitle = Title::makeTitle( ProofreadPage::getIndexNamespaceId(), $image->getTitle()->getText());
+					$indexTitle = Title::makeTitle( ProofreadPage::getIndexNamespaceId(), $image->getTitle()->getText() );
 					if ( $indexTitle !== null ) {
 						$this->index = ProofreadIndexPage::newFromTitle( $indexTitle );
 						return $this->index;
@@ -216,7 +216,7 @@ class ProofreadPagePage {
 	 */
 	public function getPageContainerBegin() {
 		return
-			Html::openElement( 'div', array( 'class' => 'prp-page-container' )  ) .
+			Html::openElement( 'div', array( 'class' => 'prp-page-container' ) ) .
 			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) );
 	}
 

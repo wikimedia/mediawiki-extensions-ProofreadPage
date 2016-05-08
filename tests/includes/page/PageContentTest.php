@@ -187,7 +187,7 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function preloadTransformProvider() {
 		return array(
-			array( self::newContent(  'hello this is ~~~' ),
+			array( self::newContent( 'hello this is ~~~' ),
 				self::newContent( "hello this is ~~~" )
 			),
 			array( self::newContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>' ),
