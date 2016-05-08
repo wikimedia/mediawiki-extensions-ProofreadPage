@@ -4,7 +4,8 @@
 			"Assele",
 			"Comp1089",
 			"Ebe123",
-			"ҒатаУлла"
+			"ҒатаУлла",
+			"Ләйсән"
 		]
 	},
 	"indexpages": "Индекс биттәренең исемлеге",
@@ -59,5 +60,8 @@
 	"proofreadpage-button-zoom-out-label": "Йырағайтырға",
 	"proofreadpage-button-reset-zoom-label": "Сығанаҡ ҙурлыҡ",
 	"proofreadpage-button-zoom-in-label": "Яҡынайтырға",
-	"proofreadpage-button-toggle-layout-label": "Текә/арҡыры билдә"
+	"proofreadpage-button-toggle-layout-label": "Текә/арҡыры билдә",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Биттәр",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Эйе",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Юҡ"
 }
