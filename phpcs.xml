@@ -31,9 +31,6 @@
 	<rule ref="Generic.PHP.ForbiddenFunctions.FoundWithAlternative">
 		<severity>0</severity>
 	</rule>
-	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed">
-		<severity>0</severity>
-	</rule>
 	<rule ref="MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures">
 		<severity>0</severity>
 	</rule>
@@ -58,6 +55,7 @@
 		<severity>0</severity>
 	</rule>
 	<file>.</file>
+	<arg name="extensions" value="php" />
 	<exclude-pattern>node_modules/</exclude-pattern>
 	<exclude-pattern>vendor/</exclude-pattern>
 </ruleset>
