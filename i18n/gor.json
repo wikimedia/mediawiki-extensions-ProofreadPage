@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Si Gam Acèh"
+			"Si Gam Acèh",
+			"Marwan Mohamad"
 		]
 	},
 	"indexpages": "Dapeuta laman indèks",
@@ -14,9 +15,16 @@
 	"proofreadpage_badpage": "Salah format",
 	"proofreadpage_badpagetext": "Format laman nyang keumeung neukeubah salah.",
 	"proofreadpage_indexdupe": "Peuganda peunawôt",
+	"proofreadpage_indexdupetext": "Halaman jamowali daputariyolo limbata lo'u pe'eenta to halaman indeks.",
 	"proofreadpage_nologin": "Goh tamöng log",
 	"proofreadpage_notallowed": "Neuubah hana geupeuidin",
+	"proofreadpage_notallowedtext": "Yi'o jamowali moruba status uji-baca lo halaman botiye.",
 	"proofreadpage_dataconfig_badformatted": "Bug lam konfigurasi data",
+	"proofreadpage_dataconfig_badformattedtext": "Halaman [[Mediawiki:Proofreadpage index data config]] diila to delomo format JSON u banari.",
 	"proofreadpage_number_expected": "Seunalah: Neupasoë angka",
-	"proofreadpage_interval_too_large": "Seunalah: Interval rayek that"
+	"proofreadpage_interval_too_large": "Seunalah: Interval rayek that",
+	"proofreadpage_invalid_interval": "Tilala:interval diila sah",
+	"proofreadpage_nextpage": "Halaman bohu",
+	"proofreadpage_header": "Lunggongo (noinlude)",
+	"proofreadpage_quality0_category": "Halaman diila o tuladu"
 }
