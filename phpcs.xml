@@ -13,25 +13,13 @@
 	<rule ref="Generic.Files.LineLength.TooLong">
 		<severity>0</severity>
 	</rule>
-	<rule ref="Generic.Formatting.MultipleStatementAlignment.IncorrectWarning">
-		<severity>0</severity>
-	</rule>
-	<rule ref="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma">
-		<severity>0</severity>
-	</rule>
 	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace">
-		<severity>0</severity>
-	</rule>
-	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.SpaceAfterBracket">
 		<severity>0</severity>
 	</rule>
 	<rule ref="Generic.PHP.ForbiddenFunctions.FoundWithAlternative">
 		<severity>0</severity>
 	</rule>
 	<rule ref="MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures">
-		<severity>0</severity>
-	</rule>
-	<rule ref="MediaWiki.ControlStructures.IfElseStructure.SpaceBeforeElse">
 		<severity>0</severity>
 	</rule>
 	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">

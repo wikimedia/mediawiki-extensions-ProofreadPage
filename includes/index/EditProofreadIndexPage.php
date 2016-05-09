@@ -103,8 +103,7 @@ class EditProofreadIndexPage extends EditPage {
 				$inputAttributes['id'] = $key;
 				$inputAttributes['size'] = 60;
 				$out->addHTML( Html::input( $key, $val, $inputType, $inputAttributes ) );
-			}
-			else {
+			} else {
 				$inputAttributes['cols'] = 60;
 				$inputAttributes['rows'] = $size;
 				$out->addHTML( Html::textarea( $key, $val, $inputAttributes ) );

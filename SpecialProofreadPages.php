@@ -184,8 +184,8 @@ class ProofreadPages extends QueryPage {
 			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
 		$plink = $this->isCached()
-			? Linker::link( $title , htmlspecialchars( $title->getText() ) )
-			: Linker::linkKnown( $title , htmlspecialchars( $title->getText() ) );
+			? Linker::link( $title, htmlspecialchars( $title->getText() ) )
+			: Linker::linkKnown( $title, htmlspecialchars( $title->getText() ) );
 
 		if ( !$title->exists() ) {
 			return "<del>{$plink}</del>";

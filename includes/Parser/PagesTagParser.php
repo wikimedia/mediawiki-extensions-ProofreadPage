@@ -192,7 +192,7 @@ class PagesTagParser extends TagParser {
 					list( $page, $pagenum ) = $item;
 					$pp[] = $page->getDBkey();
 				}
-				$cat = str_replace( ' ' , '_' , wfMessage( 'proofreadpage_quality0_category' )->inContentLanguage()->escaped() );
+				$cat = str_replace( ' ', '_', wfMessage( 'proofreadpage_quality0_category' )->inContentLanguage()->escaped() );
 				$res = ProofreadPageDbConnector::getPagesNameInCategory( $pp, $cat );
 
 				if ( $res ) {
@@ -229,7 +229,7 @@ class PagesTagParser extends TagParser {
 					$out .= '{{:' . $text . '}}';
 				}
 				if ( !$is_q0 ) {
-					$out.= "&#32;";
+					$out .= "&#32;";
 				}
 			}
 		} else {

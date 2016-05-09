@@ -67,7 +67,7 @@ class PageContent extends TextContent {
 	 * returns the body of the page
 	 * @return WikitextContent
 	 */
-	public function getBody(){
+	public function getBody() {
 		return $this->body;
 	}
 
