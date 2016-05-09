@@ -44,19 +44,19 @@ abstract class ProofreadIndexValue {
 	 * Set the value
 	 * @param string $value
 	 */
-	protected abstract function setValue( $value );
+	abstract protected function setValue( $value );
 
 	/**
 	 * Return the value of the entry as string
 	 * @return string
 	 */
-	public abstract function __toString();
+	abstract public function __toString();
 
 	/**
 	 * Return the type of the entry
 	 * @return string
 	 */
-	public abstract function getType();
+	abstract public function getType();
 
 	/**
 	 * Return the "main" type of the entry (all identifiers are regrouped under the name identifier)
@@ -395,7 +395,7 @@ abstract class ProofreadIndexValueIdentifier extends ProofreadIndexValue {
 	 * Return the value of the entry as URI
 	 * @return string
 	 */
-	public abstract function getUri();
+	abstract public function getUri();
 
 	/**
 	 * Return the "main" type of the entry (all identifiers are regrouped under the name identifier)

@@ -47,7 +47,7 @@ abstract class Pagination implements Iterator {
 	 * @return integer
 	 * @throws PageNotInPaginationException
 	 */
-	public abstract function getPageNumber( ProofreadPagePage $page );
+	abstract public function getPageNumber( ProofreadPagePage $page );
 
 	/**
 	 * Returns the page number as it should be displayed from an internal page number
@@ -56,14 +56,14 @@ abstract class Pagination implements Iterator {
 	 * @return PageNumber
 	 * @throws OutOfBoundsException
 	 */
-	public abstract function getDisplayedPageNumber( $pageNumber );
+	abstract public function getDisplayedPageNumber( $pageNumber );
 
 	/**
 	 * Returns the number of pages
 	 *
 	 * @return integer
 	 */
-	public abstract function getNumberOfPages();
+	abstract public function getNumberOfPages();
 
 	/**
 	 * Returns the page number $pageNumber of the book
@@ -72,7 +72,7 @@ abstract class Pagination implements Iterator {
 	 * @return ProofreadPagePage
 	 * @throws OutOfBoundsException
 	 */
-	public abstract function getPage( $pageNumber );
+	abstract public function getPage( $pageNumber );
 
 	/**
 	 * Returns if a page number $pageNumber exits
@@ -80,7 +80,7 @@ abstract class Pagination implements Iterator {
 	 * @param integer $pageNumber page number
 	 * @return boolean
 	 */
-	protected abstract function pageNumberExists( $pageNumber );
+	abstract protected function pageNumberExists( $pageNumber );
 
 	/**
 	 * @see Iterator::rewind

@@ -45,9 +45,6 @@
 	<rule ref="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.SingleSpaceBeforeSingleLineComment">
 		<severity>0</severity>
 	</rule>
-	<rule ref="PSR2.Methods.MethodDeclaration.AbstractAfterVisibility">
-		<severity>0</severity>
-	</rule>
 	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore">
 		<severity>0</severity>
 	</rule>

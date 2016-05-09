@@ -37,7 +37,7 @@ abstract class TagParser {
 	 * @param array $args tags arguments
 	 * @return string
 	 */
-	public abstract function render( $input, array $args );
+	abstract public function render( $input, array $args );
 
 	/**
 	 * @param string $errorMsg
