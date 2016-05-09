@@ -12,12 +12,12 @@ class PageList {
 	/**
 	 * @var array parameters of the <pagelist> tag
 	 */
-	private $params = array();
+	private $params = [];
 
 	/**
 	 * @var PageNumber[] PageNumber already computed
 	 */
-	private $pageNumbers = array();
+	private $pageNumbers = [];
 
 	/**
 	 * @param array $params parameters of the <pagelist> tag

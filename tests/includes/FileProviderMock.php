@@ -15,7 +15,7 @@ class FileProviderMock extends FileProvider {
 	/**
 	 * @var File[]
 	 */
-	private $files = array();
+	private $files = [];
 
 	/**
 	 * @param File[] $files

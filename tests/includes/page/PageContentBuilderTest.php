@@ -37,35 +37,35 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	}
 
 	public function buildDefaultContentForPageProvider() {
-		return array(
-			array(
+		return [
+			[
 				ProofreadPagePageTest::newPagePage(
 					'Test.djvu/1',
 					ProofreadIndexPageTest::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Header={{{title}}}\n}}" )
 				),
 				PageContentTest::newContent( 'Test book', '', '<references />', 1 ),
-			),
-			array(
+			],
+			[
 				ProofreadPagePageTest::newPagePage(
 					'LoremIpsum.djvu/2'
 				),
 				PageContentTest::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
-			),
-			array(
+			],
+			[
 				ProofreadPagePageTest::newPagePage(
 					'LoremIpsum.djvu/2',
 					ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Title=Test book\n|Pages=<pagelist/>\n|Header={{{pagenum}}}\n}}" )
 				),
 				PageContentTest::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
-			),
-			array(
+			],
+			[
 				ProofreadPagePageTest::newPagePage(
 					'LoremIpsum.djvu/2',
 					ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Title=Test book\n|Pages=<pagelist 1to5=roman />\n|Header={{{pagenum}}}\n}}" )
 				),
 				PageContentTest::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -77,31 +77,31 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	}
 
 	public function buildContentFromInputProvider() {
-		return array(
-			array(
+		return [
+			[
 				'42',
 				'42',
 				'42',
 				2,
 				PageContentTest::newContent( '22', '22', '22', 2, 'Test2' ),
 				PageContentTest::newContent( '42', '42', '42', 2, 'Test2' ),
-			),
-			array(
+			],
+			[
 				'42',
 				'42',
 				'42',
 				2,
 				PageContentTest::newContent( '22', '22', '22', 2, null ),
 				PageContentTest::newContent( '42', '42', '42', 2, 'Test' ),
-			),
-			array(
+			],
+			[
 				'42',
 				'42',
 				'42',
 				3,
 				PageContentTest::newContent( '22', '22', '22', 2, 'Test2' ),
 				PageContentTest::newContent( '42', '42', '42', 3, 'Test' ),
-			),
-		);
+			],
+		];
 	}
 }

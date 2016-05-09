@@ -31,7 +31,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	/**
 	 * @var array Parameters of the request
 	 */
-	protected $request = array();
+	protected $request = [];
 
 	/**
 	 * @var DatabaseBase Slave database
@@ -81,25 +81,25 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	protected function parseRequest() {
 		$request = $this->getRequest();
 
-		$verbs = array(
-			'GetRecord' => array(
-				'required'  => array( 'identifier', 'metadataPrefix' ) ),
-			'Identify' => array(),
-			'ListIdentifiers' => array(
+		$verbs = [
+			'GetRecord' => [
+				'required'  => [ 'identifier', 'metadataPrefix' ] ],
+			'Identify' => [],
+			'ListIdentifiers' => [
 				'exclusive' =>        'resumptionToken',
-				'required'  => array( 'metadataPrefix' ),
-				'optional'  => array( 'from', 'until', 'set' ) ),
-			'ListMetadataFormats' => array(
-				'optional'  => array( 'identifier' ) ),
-			'ListRecords' => array(
+				'required'  => [ 'metadataPrefix' ],
+				'optional'  => [ 'from', 'until', 'set' ] ],
+			'ListMetadataFormats' => [
+				'optional'  => [ 'identifier' ] ],
+			'ListRecords' => [
 				'exclusive' =>        'resumptionToken',
-				'required'  => array( 'metadataPrefix' ),
-				'optional'  => array( 'from', 'until', 'set' ) ),
-			'ListSets' => array(
-				'exclusive' => 'resumptionToken' )
-			);
+				'required'  => [ 'metadataPrefix' ],
+				'optional'  => [ 'from', 'until', 'set' ] ],
+			'ListSets' => [
+				'exclusive' => 'resumptionToken' ]
+			];
 
-		$req = array();
+		$req = [];
 
 		$verb = $request->getVal( 'verb' );
 		$req['verb'] = $verb;
@@ -149,10 +149,10 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	public function outputOai() {
 		header( 'Content-type: text/xml; charset=utf-8' );
 		echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
-		echo Xml::openElement( 'OAI-PMH', array(
+		echo Xml::openElement( 'OAI-PMH', [
 			'xmlns' => 'http://www.openarchives.org/OAI/2.0/',
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd' ) )
+			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd' ] )
 			. "\n";
 		$error = '';
 		try {
@@ -256,10 +256,10 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 */
 	protected function identifierDescription() {
 		echo Xml::openElement( 'description' ) . "\n";
-		echo Xml::openElement( 'oai-identifier', array(
+		echo Xml::openElement( 'oai-identifier', [
 			'xmlns' => 'http://www.openarchives.org/OAI/2.0/oai-identifier',
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai-identifier http://www.openarchives.org/OAI/2.0/oai-identifier.xsd' ) )
+			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai-identifier http://www.openarchives.org/OAI/2.0/oai-identifier.xsd' ] )
 			. "\n";
 		echo Xml::element( 'scheme', null, 'oai' ) . "\n";
 		echo Xml::element( 'repositoryIdentifier', null, $this->repositoryIdentifier() ) . "\n";
@@ -275,10 +275,10 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 */
 	protected function eprintDescription() {
 		echo Xml::openElement( 'description' ) . "\n";
-		echo Xml::openElement( 'eprints', array(
+		echo Xml::openElement( 'eprints', [
 			'xmlns' => 'http://www.openarchives.org/OAI/1.1/eprints',
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/1.1/eprints http://www.openarchives.org/OAI/1.1/eprints.xsd' ) )
+			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/1.1/eprints http://www.openarchives.org/OAI/1.1/eprints.xsd' ] )
 			. "\n";
 
 		$url = $this->msg( 'proofreadpage-indexoai-eprint-content-url' )->inContentLanguage()->text();
@@ -324,10 +324,10 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		}
 
 		echo Xml::openElement( 'description' ) . "\n";
-		echo Xml::openElement( 'branding', array(
+		echo Xml::openElement( 'branding', [
 			'xmlns' => 'http://www.openarchives.org/OAI/2.0/branding/',
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/branding/ http://www.openarchives.org/OAI/2.0/branding.xsd' ) )
+			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/branding/ http://www.openarchives.org/OAI/2.0/branding.xsd' ] )
 			. "\n";
 		echo Xml::openElement( 'collectionIcon' ) . "\n";
 		echo Xml::element( 'url', null, self::normalizeFullUrl( $wgLogo ) ) . "\n";
@@ -400,9 +400,9 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		if ( $datestamp === false ) {
 			$row = $this->db->selectRow(
-				array( 'revision', 'page' ),
-				array( 'MIN(rev_timestamp) AS min' ),
-				array( 'rev_id = page_latest' ) + array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() ),
+				[ 'revision', 'page' ],
+				[ 'MIN(rev_timestamp) AS min' ],
+				[ 'rev_id = page_latest' ] + [ 'page_namespace' => ProofreadPage::getIndexNamespaceId() ],
 				__METHOD__
 			);
 			if ( $row->min ) {
@@ -433,11 +433,11 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 			echo Xml::element( 'setName', null, $set['name'] ) . "\n";
 			if ( isset( $set['description'] ) ) {
 				echo Xml::openElement( 'setDescription' ) . "\n";
-				echo Xml::openElement( 'oai_dc:dc', array(
+				echo Xml::openElement( 'oai_dc:dc', [
 					'xmlns:oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/',
 					'xmlns:dc' => 'http://purl.org/dc/elements/1.1/',
 					'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-					'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd' ) )
+					'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd' ] )
 					. "\n";
 				echo Xml::element( 'dc:description', null, $set['description'] ) . "\n";
 				echo Xml::closeElement( 'oai_dc:dc' ) . "\n";
@@ -474,16 +474,16 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * @return string
 	 */
 	protected function metadataFormats() {
-		return array(
-			'oai_dc' => array(
+		return [
+			'oai_dc' => [
 				'namespace' => 'http://www.openarchives.org/OAI/2.0/oai_dc/',
 				'schema'    => 'http://www.openarchives.org/OAI/2.0/oai_dc.xsd'
-			),
-			'prp_qdc' => array(
+			],
+			'prp_qdc' => [
 				'namespace' => 'http://mediawiki.org/xml/proofreadpage/qdc/',
 				'schema'    => Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc' )->getFullURL()
-			)
-		);
+			]
+		];
 	}
 
 	/**
@@ -542,12 +542,12 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 */
 	protected function getRecordDatestamp( Title $title ) {
 		$row = $this->db->selectRow(
-			array( 'page', 'revision' ),
-			array( 'rev_timestamp' ),
+			[ 'page', 'revision' ],
+			[ 'rev_timestamp' ],
 			$title->pageCond(),
 			__METHOD__,
-			array(),
-			array( 'page' => array( 'JOIN', 'rev_id = page_latest' ) )
+			[],
+			[ 'page' => [ 'JOIN', 'rev_id = page_latest' ] ]
 		);
 		if ( $row->rev_timestamp ) {
 			return $row->rev_timestamp;
@@ -568,7 +568,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 			return null;
 		}
 		$time = $this->request[$var];
-		$matches = array();
+		$matches = [];
 		if ( preg_match( '/^(\d\d\d\d)-(\d\d)-(\d\d)$/', $time, $matches ) ) {
 			return wfTimestamp( TS_MW, $matches[1] . $matches[2] . $matches[3] . $defaultTime );
 		} elseif ( preg_match( '/^(\d\d\d\d)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)Z$/', $time, $matches ) ) {
@@ -588,9 +588,9 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		if ( !isset( $this->request[$var] ) ) {
 			return null;
 		}
-		$matches = array();
+		$matches = [];
 		if ( preg_match( '/^([a-z_]+):(\d+):(\d+)(?:|:(\d{14}))$/', $this->request[$var], $matches ) ) {
-			$token = array();
+			$token = [];
 			$token['metadataPrefix'] = $matches[1];
 			$token['resume_id'] = isset( $matches[2] ) ? intval( $matches[2] ) : null;
 			$token['cursor'] = isset( $matches[3] ) ? intval( $matches[3] ) : null;
@@ -644,7 +644,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		}
 
 		// buffer everything up
-		$rows = array();
+		$rows = [];
 		for ( $i = 0; $i < $count; $i++ ) {
 			$row = $resultSet->fetchObject();
 			$rows[] = $row;
@@ -676,17 +676,17 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 		if ( isset( $nextToken ) ) {
 			$cursor = isset( $startToken['cursor'] ) ? $startToken['cursor'] : 0;
-			echo Xml::element( 'resumptionToken', array( 'cursor' => $cursor ), $nextToken ) . "\n";
+			echo Xml::element( 'resumptionToken', [ 'cursor' => $cursor ], $nextToken ) . "\n";
 		} //TODO Add <resumptionToken completeListSize="6" cursor="4"/> http://www.openarchives.org/OAI/openarchivesprotocol.html#ListIdentifiers
 		echo Xml::closeElement( $verb ) . "\n";
 	}
 
 	protected function getIndexRows( $from, $until, $chunk, $token = null, $category = null ) {
-		$tables = array( 'page', 'revision' );
-		$fields = array( 'page_namespace', 'page_title', 'page_id', 'rev_timestamp', 'rev_id' );
-		$conds = array( 'rev_id = page_latest' );
+		$tables = [ 'page', 'revision' ];
+		$fields = [ 'page_namespace', 'page_title', 'page_id', 'rev_timestamp', 'rev_id' ];
+		$conds = [ 'rev_id = page_latest' ];
 		$conds['page_namespace'] = ProofreadPage::getIndexNamespaceId();
-		$options = array( 'LIMIT' => $chunk, 'ORDER BY' => array( 'page_id ASC' ) );
+		$options = [ 'LIMIT' => $chunk, 'ORDER BY' => [ 'page_id ASC' ] ];
 
 		if ( $token !== null ) {
 			$conds[] = 'page_id >= ' . $this->db->addQuotes( $token['resume_id'] );

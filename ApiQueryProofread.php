@@ -28,7 +28,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		}
 
 		$pageNamespaceId = ProofreadPage::getPageNamespaceId();
-		$pageIds = array();
+		$pageIds = [];
 		foreach ( $pages as $pageId => $title ) {
 			if ( $title->inNamespace( $pageNamespaceId ) ) {
 				$pageIds[] = $pageId;
@@ -40,7 +40,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		}
 
 		// Determine the categories defined in MediaWiki: pages
-		$qualityCategories = $qualityText = array();
+		$qualityCategories = $qualityText = [];
 		for ( $i = 0; $i < 5; $i++ ) {
 			$cat = Title::makeTitleSafe(
 				NS_CATEGORY,
@@ -54,13 +54,13 @@ class ApiQueryProofread extends ApiQueryBase {
 		$qualityLevels = array_flip( $qualityCategories );
 
 		// <Reedy> johnduhart, it'd seem sane rather than duplicating the functionality
-		$params = new DerivativeRequest( $this->getRequest(), array(
+		$params = new DerivativeRequest( $this->getRequest(), [
 			'action' => 'query',
 			'prop' => 'categories',
 			'pageids' => implode( '|', $pageIds ),
 			'clcategories' => implode( '|', $qualityCategories ),
 			'cllimit' => 'max'
-		) );
+		] );
 
 		$api = new ApiMain( $params );
 		$api->execute();
@@ -91,11 +91,11 @@ class ApiQueryProofread extends ApiQueryBase {
 			}
 			$pageQuality = $qualityLevels[ $title ];
 
-			$val = array(
+			$val = [
 				'quality' => $pageQuality,
 				'quality_text' => $qualityText[ $pageQuality ]
-			);
-			$result->addValue( array( 'query', 'pages', $pageid ), 'proofread', $val );
+			];
+			$result->addValue( [ 'query', 'pages', $pageid ], 'proofread', $val );
 		}
 	}
 
@@ -104,7 +104,7 @@ class ApiQueryProofread extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array();
+		return [];
 	}
 
 	/**
@@ -118,18 +118,18 @@ class ApiQueryProofread extends ApiQueryBase {
 	 * @deprecated since MediaWiki core 1.25
 	 */
 	public function getExamples() {
-		return array(
+		return [
 			'api.php?action=query&generator=allpages&gapnamespace=' . ProofreadPage::getPageNamespaceId() . '&prop=proofread'
-		);
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&generator=allpages&gapnamespace=250&prop=proofread'
 				=> 'apihelp-query+proofread-example-1',
-		);
+		];
 	}
 }

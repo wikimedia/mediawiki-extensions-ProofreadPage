@@ -192,9 +192,9 @@ class ProofreadPagePage {
 		if ( isset( $options['max-width'] ) && $width > $options['max-width'] ) {
 			$width = $options['max-width'];
 		}
-		$transformAttributes = array(
+		$transformAttributes = [
 			'width' => $width
-		);
+		];
 
 		if ( $image->isMultipage() ) {
 			$pageNumber = $this->getPageNumber();
@@ -216,8 +216,8 @@ class ProofreadPagePage {
 	 */
 	public function getPageContainerBegin() {
 		return
-			Html::openElement( 'div', array( 'class' => 'prp-page-container' ) ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-content' ) );
+			Html::openElement( 'div', [ 'class' => 'prp-page-container' ] ) .
+			Html::openElement( 'div', [ 'class' => 'prp-page-content' ] );
 	}
 
 	/**
@@ -227,8 +227,8 @@ class ProofreadPagePage {
 	public function getPageContainerEnd() {
 		return
 			Html::closeElement( 'div' ) .
-			Html::openElement( 'div', array( 'class' => 'prp-page-image' ) ) .
-			$this->getImageHtml( array( 'max-width' => $this->getImageWidth() ) ) .
+			Html::openElement( 'div', [ 'class' => 'prp-page-image' ] ) .
+			$this->getImageHtml( [ 'max-width' => $this->getImageWidth() ] ) .
 			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' );
 	}

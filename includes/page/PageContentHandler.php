@@ -27,7 +27,7 @@ class PageContentHandler extends TextContentHandler {
 	 * @param string $modelId
 	 */
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_PAGE ) {
-		parent::__construct( $modelId, array( CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ) );
+		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ] );
 		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
 	}
 
@@ -52,15 +52,15 @@ class PageContentHandler extends TextContentHandler {
 	private function serializeContentInJson( PageContent $content ) {
 		$level = $content->getLevel();
 
-		return FormatJson::encode( array(
+		return FormatJson::encode( [
 			'header' => $content->getHeader()->serialize(),
 			'body' => $content->getBody()->serialize(),
 			'footer' => $content->getFooter()->serialize(),
-			'level' => array(
+			'level' => [
 				'level' => $level->getLevel(),
 				'user' => $level->getUser() instanceof User ? $level->getUser()->getName() : null
-			)
-		) );
+			]
+		] );
 	}
 
 	/**
@@ -189,11 +189,11 @@ class PageContentHandler extends TextContentHandler {
 	 * @see ContentHandler::getActionOverrides
 	 */
 	public function getActionOverrides() {
-		return array(
+		return [
 			'edit' => '\ProofreadPage\Page\PageEditAction',
 			'submit' => '\ProofreadPage\Page\PageSubmitAction',
 			'view' => '\ProofreadPage\Page\PageViewAction'
-		);
+		];
 	}
 
 	/**

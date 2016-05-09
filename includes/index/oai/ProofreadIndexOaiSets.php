@@ -46,15 +46,15 @@ class ProofreadIndexOaiSets {
 
 		$data = wfMessage( 'proofreadpage_index_oai_sets' )->inContentLanguage();
 		if ( !$data->exists() || $data->plain() == '' ) {
-			$setsBySpec = array();
+			$setsBySpec = [];
 			return $setsBySpec;
 		}
 		$config = FormatJson::decode( $data->plain(), true );
 		if ( $config === null ) {
-			$setsBySpec = array();
+			$setsBySpec = [];
 			return $setsBySpec;
 		}
-		$setsBySpec = array();
+		$setsBySpec = [];
 		foreach ( $config as $spec => $set ) {
 			if ( !isset( $set['category'] ) || strstr( $spec, ':' ) !== false ) {
 				continue;
@@ -80,7 +80,7 @@ class ProofreadIndexOaiSets {
 		}
 
 		$setsBySpec = self::getSetsBySpec();
-		$setsByCategory = array();
+		$setsByCategory = [];
 		foreach ( $setsBySpec as $set ) {
 			$setsByCategory[$set['category']] = $set;
 		}
@@ -92,7 +92,7 @@ class ProofreadIndexOaiSets {
 	 * @return bool
 	 */
 	public static function withSets() {
-		return self::getSetsBySpec() !== array();
+		return self::getSetsBySpec() !== [];
 	}
 
 	/**
@@ -102,16 +102,16 @@ class ProofreadIndexOaiSets {
 	 */
 	public static function getSetSpecsForTitle( Title $title ) {
 		if ( !self::withSets() ) {
-			return array();
+			return [];
 		}
 		$sets = self::getSetsByCategory();
-		$list = array();
+		$list = [];
 
 		$db = wfGetDB( DB_SLAVE );
 		$results = $db->select(
-			array( 'page', 'categorylinks' ),
-			array( 'cl_to' ),
-			$title->pageCond() + array( 'cl_from = page_id' ),
+			[ 'page', 'categorylinks' ],
+			[ 'cl_to' ],
+			$title->pageCond() + [ 'cl_from = page_id' ],
 			__METHOD__
 		);
 

@@ -61,10 +61,10 @@ class ProofreadPage {
 		static $res;
 		if ( $res === null ) {
 			global $wgExtraNamespaces;
-			$res = array(
+			$res = [
 				preg_quote( $wgExtraNamespaces[self::getPageNamespaceId()], '/' ),
 				preg_quote( $wgExtraNamespaces[self::getIndexNamespaceId()], '/' ),
-			);
+			];
 		}
 		return $res;
 	}
@@ -74,8 +74,8 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onwgQueryPages( &$queryPages ) {
-		$queryPages[] = array( 'ProofreadPages', 'IndexPages' );
-		$queryPages[] = array( 'PagesWithoutScans', 'PagesWithoutScans' );
+		$queryPages[] = [ 'ProofreadPages', 'IndexPages' ];
+		$queryPages[] = [ 'PagesWithoutScans', 'PagesWithoutScans' ];
 		return true;
 	}
 
@@ -119,9 +119,9 @@ class ProofreadPage {
 	 * @return boolean hook return value
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook( 'pagelist', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagelistTag' ) );
-		$parser->setHook( 'pages', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagesTag' ) );
-		$parser->setHook( 'pagequality', array( 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagequalityTag' ) );
+		$parser->setHook( 'pagelist', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagelistTag' ] );
+		$parser->setHook( 'pages', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagesTag' ] );
+		$parser->setHook( 'pagequality', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagequalityTag' ] );
 		return true;
 	}
 
@@ -211,7 +211,7 @@ class ProofreadPage {
 		$page_namespace_id = self::getPageNamespaceId();
 		$in_index_namespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
 
-		$values = array();
+		$values = [];
 		foreach ( $page_ids as $id => $pdbk ) {
 			$title = Title::newFromText( $pdbk );
 			// consider only link in page namespace
@@ -230,7 +230,7 @@ class ProofreadPage {
 		// ISSUE: Should the number of quality levels be adjustable?
 		// ISSUE 2: Should this array be saved as a member variable?
 		// How often is this code called anyway?
-		$qualityCategories = array();
+		$qualityCategories = [];
 		for ( $i = 0; $i < 5; $i++ ) {
 			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMessage( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text() );
 			if ( $cat ) {
@@ -265,7 +265,7 @@ class ProofreadPage {
 		}
 		$name = $image->getTitle()->getText();
 		$title = Title::makeTitle( self::getIndexNamespaceId(), $name );
-		$link = Linker::link( $title, $out->msg( 'proofreadpage_image_message' )->text(), array(), array(), 'known' );
+		$link = Linker::link( $title, $out->msg( 'proofreadpage_image_message' )->text(), [], [], 'known' );
 		$out->addHTML( $link );
 		return true;
 	}
@@ -450,7 +450,7 @@ class ProofreadPage {
 		$indexId = $index->getID();
 
 		// read the list of pages
-		$pages = array();
+		$pages = [];
 		$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage(
 			ProofreadIndexPage::newFromTitle( $indexTitle )
 		);
@@ -471,12 +471,12 @@ class ProofreadPage {
 		}
 
 		// proofreading status of pages
-		$queryArr = array(
-			'tables' => array( 'page', 'categorylinks' ),
-			'fields' => array( 'COUNT(page_id) AS count' ),
-			'conds' => array( 'cl_to' => '', 'page_namespace' => self::getPageNamespaceId(), 'page_title' => $pages ),
-			'joins' => array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
-		);
+		$queryArr = [
+			'tables' => [ 'page', 'categorylinks' ],
+			'fields' => [ 'COUNT(page_id) AS count' ],
+			'conds' => [ 'cl_to' => '', 'page_namespace' => self::getPageNamespaceId(), 'page_title' => $pages ],
+			'joins' => [ 'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ] ]
+		];
 
 		$n0 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality0_category' );
 		$n2 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality2_category' );
@@ -530,15 +530,15 @@ class ProofreadPage {
 			}
 
 			// find the proofreading status of transclusions
-			$queryArr = array(
-				'tables' => array( 'templatelinks', 'page', 'categorylinks' ),
-				'fields' => array( 'COUNT(page_id) AS count' ),
-				'conds' => array( 'tl_from' => $id, 'tl_namespace' => $pageNamespaceId, 'cl_to' => '' ),
-				'joins' => array(
-					'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ),
-					'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ),
-				)
-			);
+			$queryArr = [
+				'tables' => [ 'templatelinks', 'page', 'categorylinks' ],
+				'fields' => [ 'COUNT(page_id) AS count' ],
+				'conds' => [ 'tl_from' => $id, 'tl_namespace' => $pageNamespaceId, 'cl_to' => '' ],
+				'joins' => [
+					'page' => [ 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ],
+					'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ],
+				]
+			];
 
 			$n0 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality0_category' );
 			$n2 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality2_category' );
@@ -556,7 +556,7 @@ class ProofreadPage {
 		if ( $indextitle ) {
 			$nt = Title::makeTitleSafe( $indexNamespaceId, $indextitle );
 			$indexlink = Linker::link( $nt, $out->msg( 'proofreadpage_source' )->text(),
-						array( 'title' => $out->msg( 'proofreadpage_source_message' )->text() ) );
+						[ 'title' => $out->msg( 'proofreadpage_source_message' )->text() ] );
 			$out->addJsConfigVars( 'proofreadpage_source_href', $indexlink );
 			$out->addModules( 'ext.proofreadpage.article' );
 		}
@@ -654,18 +654,18 @@ class ProofreadPage {
 	public static function onGetPreferences( $user, &$preferences ) {
 
 		//Show header and footer fields when editing in the Page namespace
-		$preferences['proofreadpage-showheaders'] = array(
+		$preferences['proofreadpage-showheaders'] = [
 			'type'           => 'toggle',
 			'label-message'  => 'proofreadpage-preferences-showheaders-label',
 			'section'        => 'editing/advancedediting',
-		);
+		];
 
 		//Use horizontal layout when editing in the Page namespace
-		$preferences['proofreadpage-horizontal-layout'] = array(
+		$preferences['proofreadpage-horizontal-layout'] = [
 			'type'           => 'toggle',
 			'label-message'  => 'proofreadpage-preferences-horizontal-layout-label',
 			'section'        => 'editing/advancedediting',
-		);
+		];
 
 		return true;
 	}
@@ -728,9 +728,9 @@ class ProofreadPage {
 			$image = Context::getDefaultContext()->getFileProvider()->getForPagePage( $page );
 			$imageUrl = null;
 			if ( $image->isMultipage() ) {
-				$transformAttributes = array(
+				$transformAttributes = [
 					'width' => $image->getWidth()
-				);
+				];
 				$pageNumber = $page->getPageNumber();
 				if ( $pageNumber !== null ) {
 					$transformAttributes['page'] = $pageNumber;
@@ -746,11 +746,11 @@ class ProofreadPage {
 			}
 
 			if ( $imageUrl !== null ) {
-				$links['namespaces']['proofreadPageScanLink'] = array(
+				$links['namespaces']['proofreadPageScanLink'] = [
 					'class' => '',
 					'href' => $imageUrl,
 					'text' => wfMessage( 'proofreadpage_image' )->plain()
-				);
+				];
 			}
 		} catch ( FileNotFoundException $e ) {}
 
@@ -764,29 +764,29 @@ class ProofreadPage {
 				try {
 					$prevPage  = $pagination->getPage( $pageNumber - 1 );
 					$prevTitle = $prevPage->getTitle();
-					$links['namespaces']['proofreadPagePrevLink'] = array(
+					$links['namespaces']['proofreadPagePrevLink'] = [
 						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $prevTitle ),
 						'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
-					);
+					];
 				} catch ( OutOfBoundsException $e ) {} //if the previous page does not exits
 
 				try {
 					$nextPage  = $pagination->getPage( $pageNumber + 1 );
 					$nextTitle = $nextPage->getTitle();
-					$links['namespaces']['proofreadPageNextLink'] = array(
+					$links['namespaces']['proofreadPageNextLink'] = [
 						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $nextTitle ),
 						'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
-					);
+					];
 				} catch ( OutOfBoundsException $e ) {} //if the next page does not exits
 			} catch ( PageNotInPaginationException $e ) {}
 
-			$links['namespaces']['proofreadPageIndexLink'] = array(
+			$links['namespaces']['proofreadPageIndexLink'] = [
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
 				'href' => $indexPage->getTitle()->getLinkUrl(),
 				'text' => wfMessage( 'proofreadpage_index' )->plain()
-			);
+			];
 		}
 
 		return true;
@@ -808,11 +808,11 @@ class ProofreadPage {
 		}
 		$pageid = $page->getId();
 
-		$params = new FauxRequest( array(
+		$params = new FauxRequest( [
 			'action' => 'query',
 			'prop' => 'proofread',
 			'pageids' => $pageid,
-		) );
+		] );
 
 		$api = new ApiMain( $params );
 		$api->execute();
@@ -829,10 +829,10 @@ class ProofreadPage {
 
 		$info = $data['query']['pages'][$pageid];
 		if ( array_key_exists( 'proofread', $info ) ) {
-			$pageInfo['header-basic'][] = array(
+			$pageInfo['header-basic'][] = [
 				wfMessage( 'proofreadpage-pageinfo-status' ),
 				wfMessage( "proofreadpage_quality{$info['proofread']['quality']}_category" ),
-			);
+			];
 		}
 
 		return true;

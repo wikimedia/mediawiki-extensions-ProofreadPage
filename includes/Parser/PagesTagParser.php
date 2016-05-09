@@ -67,7 +67,7 @@ class PagesTagParser extends TagParser {
 		$out = '';
 
 		if ( $from || $to || $include ) {
-			$pages = array();
+			$pages = [];
 
 			if ( $pagination instanceof FilePagination ) {
 				$from = ( $from === null ) ? null : $language->parseFormattedNumber( $from );
@@ -86,7 +86,7 @@ class PagesTagParser extends TagParser {
 					return $this->formatError( 'proofreadpage_number_expected' );
 				}
 
-				$pagenums = array();
+				$pagenums = [];
 
 				//add page selected with $include in pagenums
 				if ( $include ) {
@@ -141,7 +141,7 @@ class PagesTagParser extends TagParser {
 				foreach ( $pagenums as $num ) {
 					if ( $step == 1 || $num % $step == $mod ) {
 						$pagenum = $pagination->getDisplayedPageNumber( $num )->getFormattedPageNumber( $language );
-						$pages[] = array( $pagination->getPage( $num )->getTitle(), $pagenum );
+						$pages[] = [ $pagination->getPage( $num )->getTitle(), $pagenum ];
 					}
 				}
 
@@ -172,7 +172,7 @@ class PagesTagParser extends TagParser {
 					}
 					if ( $adding ) {
 						$pagenum = $pagination->getDisplayedPageNumber( $i )->getFormattedPageNumber( $language );
-						$pages[] = array( $link->getTitle(), $pagenum );
+						$pages[] = [ $link->getTitle(), $pagenum ];
 					}
 					if ( $toPage !== null && $toPage->equals( $link ) ) {
 						$adding = false;
@@ -185,9 +185,9 @@ class PagesTagParser extends TagParser {
 			list( $to_page, $to_pagenum ) = end( $pages );
 
 			// find which pages have quality0
-			$q0_pages = array();
+			$q0_pages = [];
 			if ( !empty( $pages ) ) {
-				$pp = array();
+				$pp = [];
 				foreach ( $pages as $item ) {
 					list( $page, $pagenum ) = $item;
 					$pp[] = $page->getDBkey();
@@ -321,9 +321,9 @@ class PagesTagParser extends TagParser {
 	 * @return array|null an array of pages, or null if the input does not comply to the syntax
 	 */
 	public function parseNumList( $input ) {
-		$input = str_replace( array( ' ', '\t', '\n' ), '', $input );
+		$input = str_replace( [ ' ', '\t', '\n' ], '', $input );
 		$list = explode( ',', $input );
-		$nums = array();
+		$nums = [];
 		foreach ( $list as $item ) {
 			if ( is_numeric( $item ) ) {
 				$nums[$item] = $item;

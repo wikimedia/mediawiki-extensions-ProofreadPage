@@ -26,7 +26,7 @@
  * A special page to return XML schema used by ProofreadPage OAi-PMH API
  */
 class SpecialProofreadIndexOaiSchema extends UnlistedSpecialPage {
-	protected $namespaces = array( 'qdc' );
+	protected $namespaces = [ 'qdc' ];
 
 	public function __construct() {
 		parent::__construct( 'ProofreadIndexOaiSchema' );
@@ -37,7 +37,7 @@ class SpecialProofreadIndexOaiSchema extends UnlistedSpecialPage {
 
 		if ( $namespace === '' || !in_array( $namespace, $this->namespaces ) ) {
 			$this->getRequest()->response()->header( 'HTTP/1.1 404 Not Found' );
-			$output->showErrorPage( 'proofreadpage-indexoai-error-schemanotfound', 'proofreadpage-indexoai-error-schemanotfound-text', array( $namespace ) );
+			$output->showErrorPage( 'proofreadpage-indexoai-error-schemanotfound', 'proofreadpage-indexoai-error-schemanotfound-text', [ $namespace ] );
 		} else {
 			$output->disable();
 			header( 'Content-type: text/xml; charset=utf-8' );

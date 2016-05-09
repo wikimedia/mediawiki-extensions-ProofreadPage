@@ -13,10 +13,10 @@ class ProofreadPageInit {
 	 * the default namespace id for each namespaces
 	 * Called by the SetupAfterCache hook
 	 */
-	protected static $defaultNamespaceIds = array(
+	protected static $defaultNamespaceIds = [
 		'page' => 250,
 		'index' => 252
-	);
+	];
 
 	/**
 	 * Initialize namespaces used by ProofreadPage
@@ -68,7 +68,7 @@ class ProofreadPageInit {
 	protected static function getNamespaceIdForDefaultName( $key ) {
 		global $wgExtraNamespaces;
 
-		$xNamespaces = array();
+		$xNamespaces = [];
 		foreach ( $wgExtraNamespaces as $i => $text ) {
 			$xNamespaces[strtolower( $text )] = $i;
 		}

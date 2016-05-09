@@ -28,7 +28,7 @@
 class ProofreadIndexOaiRecord {
 	protected $index;
 	protected $lang;
-	protected $entries = array();
+	protected $entries = [];
 	protected $lastEditionTimestamp;
 
 	/**
@@ -97,11 +97,11 @@ class ProofreadIndexOaiRecord {
 	protected function renderOaiDc() {
 		global $wgMimeType;
 
-		$record = Xml::openElement( 'oai_dc:dc', array(
+		$record = Xml::openElement( 'oai_dc:dc', [
 			'xmlns:oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/',
 			'xmlns:dc' => 'http://purl.org/dc/elements/1.1/',
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd' ) )
+			'xsi:schemaLocation' => 'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd' ] )
 			. "\n";
 
 		$record .= Xml::element( 'dc:type', null, 'Text' );
@@ -137,7 +137,7 @@ class ProofreadIndexOaiRecord {
 		foreach ( $values as $value ) {
 			switch ( $value->getMainType() ) {
 				case 'string':
-					$text .= Xml::element( $key, array( 'xml:lang' => $this->lang->getHtmlCode() ), $value ) . "\n";
+					$text .= Xml::element( $key, [ 'xml:lang' => $this->lang->getHtmlCode() ], $value ) . "\n";
 					break;
 				case 'page':
 					$text .= Xml::element( $key, null, $value->getMainText() ) . "\n";
@@ -164,20 +164,20 @@ class ProofreadIndexOaiRecord {
 	 */
 	protected function renderDcQdc() {
 		global $wgMimeType;
-		$record = Xml::openElement( 'prp_qdc:qdc', array(
+		$record = Xml::openElement( 'prp_qdc:qdc', [
 			'xmlns:prp_qdc' => 'http://mediawiki.org/xml/proofreadpage/qdc/',
 			'xmlns:dc' => 'http://purl.org/dc/elements/1.1/',
 			'xmlns:dcterms' => 'http://purl.org/dc/terms/',
 			'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-			'xsi:schemaLocation' => 'http://mediawiki.org/xml/proofreadpage/qdc/ ' . Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc' )->getFullURL() ) )
+			'xsi:schemaLocation' => 'http://mediawiki.org/xml/proofreadpage/qdc/ ' . Title::makeTitle( NS_SPECIAL, 'ProofreadIndexOaiSchema/qdc' )->getFullURL() ] )
 			. "\n";
 
-		$record .= Xml::element( 'dc:type', array( 'xsi:type' => 'dcterms:DCMIType' ), 'Text' );
-		$record .= Xml::element( 'dc:format', array( 'xsi:type' => 'dcterms:IMT' ), $wgMimeType );
+		$record .= Xml::element( 'dc:type', [ 'xsi:type' => 'dcterms:DCMIType' ], 'Text' );
+		$record .= Xml::element( 'dc:format', [ 'xsi:type' => 'dcterms:IMT' ], $wgMimeType );
 
 		$mime = $this->index->getMimeType();
 		if ( $mime ) {
-			$record .= Xml::element( 'dc:format', array( 'xsi:type' => 'dcterms:IMT' ), $mime );
+			$record .= Xml::element( 'dc:format', [ 'xsi:type' => 'dcterms:IMT' ], $mime );
 		}
 
 		$metadata = $this->index->getIndexEntries();
@@ -205,19 +205,19 @@ class ProofreadIndexOaiRecord {
 		foreach ( $values as $value ) {
 			switch ( $value->getMainType() ) {
 				case 'string':
-					$text .= Xml::element( $key, array( 'xml:lang' => $this->lang->getHtmlCode() ), $value ) . "\n";
+					$text .= Xml::element( $key, [ 'xml:lang' => $this->lang->getHtmlCode() ], $value ) . "\n";
 					break;
 				case 'page':
 					$text .= Xml::element( $key, null, $value->getMainText() ) . "\n";
 					break;
 				case 'number':
-					$text .= Xml::element( $key, array( 'xsi:type' => 'xsi:decimal' ), $value ) . "\n";
+					$text .= Xml::element( $key, [ 'xsi:type' => 'xsi:decimal' ], $value ) . "\n";
 					break;
 				case 'identifier':
-					$text .= Xml::element( $key, array( 'xsi:type' => 'dcterms:URI' ), $value->getUri() ) . "\n";
+					$text .= Xml::element( $key, [ 'xsi:type' => 'dcterms:URI' ], $value->getUri() ) . "\n";
 					break;
 				case 'langcode':
-					$text .= Xml::element( $key, array( 'xsi:type' => 'dcterms:RFC5646' ), $value ) . "\n";
+					$text .= Xml::element( $key, [ 'xsi:type' => 'dcterms:RFC5646' ], $value ) . "\n";
 					break;
 				default:
 					throw new MWException( 'Unknown type: ' . $entry->getType() );

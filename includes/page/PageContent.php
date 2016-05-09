@@ -155,7 +155,7 @@ class PageContent extends TextContent {
 	/**
 	 * @see Content::preloadTransform
 	 */
-	public function preloadTransform( Title $title, ParserOptions $popts, $params = array() ) {
+	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
 		return new self(
 			$this->header->preloadTransform( $title, $popts, $params ),
 			$this->body->preloadTransform( $title, $popts, $params ),
@@ -240,10 +240,10 @@ class PageContent extends TextContent {
 
 
 		//html container
-		$html = Html::openElement( 'div', array( 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ) ) .
+		$html = Html::openElement( 'div', [ 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ] ) .
 			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
-			Html::openElement( 'div', array( 'class' => 'pagetext' ) ) .
+			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
 			$parserOutput->getText() .
 			Html::closeElement( 'div' );
 		$parserOutput->setText( $html );

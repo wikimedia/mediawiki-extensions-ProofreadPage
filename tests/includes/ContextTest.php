@@ -11,22 +11,22 @@ use ProofreadPageTestCase;
 class ContextTest extends ProofreadPageTestCase {
 
 	public function testGetPageNamespaceId() {
-		$context = new Context( 42, 44, new FileProviderMock( array() ) );
+		$context = new Context( 42, 44, new FileProviderMock( [] ) );
 		$this->assertEquals( 42, $context->getPageNamespaceId() );
 	}
 
 	public function testGetIndexNamespaceId() {
-		$context = new Context( 42, 44, new FileProviderMock( array() ) );
+		$context = new Context( 42, 44, new FileProviderMock( [] ) );
 		$this->assertEquals( 44, $context->getIndexNamespaceId() );
 	}
 
 	public function testGetFileProvider() {
-		$context = new Context( 42, 44, new FileProviderMock( array() ) );
+		$context = new Context( 42, 44, new FileProviderMock( [] ) );
 		$this->assertInstanceOf( '\ProofreadPage\FileProvider', $context->getFileProvider() );
 	}
 
 	public function testGetPaginationFactory() {
-		$context = new Context( 42, 44, new FileProviderMock( array() ) );
+		$context = new Context( 42, 44, new FileProviderMock( [] ) );
 		$this->assertInstanceOf( '\ProofreadPage\Pagination\PaginationFactory', $context->getPaginationFactory() );
 	}
 }

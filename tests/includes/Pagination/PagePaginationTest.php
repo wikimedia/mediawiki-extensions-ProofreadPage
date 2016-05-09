@@ -20,16 +20,16 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$page = new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index );
 		$pagination = new PagePagination(
 			$index,
-			array(
+			[
 				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ),
 				$page,
 				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index )
-			),
-			array(
+			],
+			[
 				new PageNumber( 'TOC' ),
 				new PageNumber( '1' ),
 				new PageNumber( '2' )
-			)
+			]
 		);
 		$this->assertEquals( 2, $pagination->getPageNumber(
 			new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index )
@@ -41,7 +41,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 */
 	public function testGetPageNumberWithFailure() {
 		$index = ProofreadIndexPageTest::newIndexPage();
-		$pagination = new PagePagination( $index, array(), array() );
+		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getPageNumber(
 			new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index )
 		);
@@ -52,8 +52,8 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new PagePagination(
 			$index,
-			array( new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ) ),
-			array( $pageNumber )
+			[ new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ) ],
+			[ $pageNumber ]
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
 	}
@@ -63,7 +63,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 */
 	public function testGetDisplayedPageNumberWithFailure() {
 		$index = ProofreadIndexPageTest::newIndexPage();
-		$pagination = new PagePagination( $index, array(), array() );
+		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getDisplayedPageNumber( 3 );
 	}
 
@@ -71,16 +71,16 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$index = ProofreadIndexPageTest::newIndexPage();
 		$pagination = new PagePagination(
 			$index,
-			array(
+			[
 				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ),
 				new ProofreadPagePage( Title::newFromText( 'Page:Test 2.jpg' ), $index ),
 				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index )
-			),
-			array(
+			],
+			[
 				new PageNumber( 'TOC' ),
 				new PageNumber( '1' ),
 				new PageNumber( '2' )
-			)
+			]
 		);
 		$this->assertEquals( 3, $pagination->getNumberOfPages() );
 	}
@@ -90,16 +90,16 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$page = new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index );
 		$pagination = new PagePagination(
 			$index,
-			array(
+			[
 				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ),
 				new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index ),
 				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index )
-			),
-			array(
+			],
+			[
 				new PageNumber( 'TOC' ),
 				new PageNumber( '1' ),
 				new PageNumber( '2' )
-			)
+			]
 		);
 		$this->assertEquals( $page, $pagination->getPage( 1 ) );
 	}
@@ -109,7 +109,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 */
 	public function testGetPageWithFailure() {
 		$index = ProofreadIndexPageTest::newIndexPage();
-		$pagination = new PagePagination( $index, array(), array() );
+		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getPage( 3 );
 	}
 
@@ -119,8 +119,8 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$page2 = new ProofreadPagePage( Title::newFromText( 'Page:Test 2.jpg' ), $index );
 		$pagination = new PagePagination(
 			$index,
-			array( $page1, $page2 ),
-			array( new PageNumber( '1' ), new PageNumber( '2' ) )
+			[ $page1, $page2 ],
+			[ new PageNumber( '1' ), new PageNumber( '2' ) ]
 		);
 
 		$this->assertEquals( 1, $pagination->key() );

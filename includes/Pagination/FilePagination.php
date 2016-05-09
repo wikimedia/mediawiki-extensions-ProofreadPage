@@ -29,7 +29,7 @@ class FilePagination extends Pagination {
 	/**
 	 * @var ProofreadPagePage[] cache of build pages of the pagination as $pageNumber => $page array
 	 */
-	private $pages = array();
+	private $pages = [];
 
 	/**
 	 * @var Context

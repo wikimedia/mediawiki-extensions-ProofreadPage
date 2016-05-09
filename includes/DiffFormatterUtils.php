@@ -19,8 +19,8 @@ class DiffFormatterUtils {
 	 */
 	public function createHeader( $text ) {
 		return Html::openElement( 'tr' ) .
-			Html::rawElement( 'td', array( 'colspan' => '2', 'class' => 'diff-lineno' ), $text ) .
-			Html::rawElement( 'td', array( 'colspan' => '2', 'class' => 'diff-lineno' ), $text ) .
+			Html::rawElement( 'td', [ 'colspan' => '2', 'class' => 'diff-lineno' ], $text ) .
+			Html::rawElement( 'td', [ 'colspan' => '2', 'class' => 'diff-lineno' ], $text ) .
 			Html::closeElement( 'tr' );
 	}
 
@@ -32,7 +32,7 @@ class DiffFormatterUtils {
 	 */
 	public function createAddedLine( $content ) {
 		return $this->createLineWrapper(
-			Html::element( 'ins',  array( 'class' => 'diffchange diffchange-inline' ), $content ),
+			Html::element( 'ins',  [ 'class' => 'diffchange diffchange-inline' ], $content ),
 			'diff-addedline',
 			'+'
 		);
@@ -46,7 +46,7 @@ class DiffFormatterUtils {
 	 */
 	public function createDeletedLine( $content ) {
 		return $this->createLineWrapper(
-			Html::element( 'del',  array( 'class' => 'diffchange diffchange-inline' ), $content ),
+			Html::element( 'del',  [ 'class' => 'diffchange diffchange-inline' ], $content ),
 			'diff-deletedline',
 			'-'
 		);
@@ -61,9 +61,9 @@ class DiffFormatterUtils {
 	 * @return string
 	 */
 	protected function createLineWrapper( $line, $class, $marker ) {
-		return Html::element( 'td', array( 'class' => 'diff-marker' ), $marker ) .
-			Html::openElement( 'td', array( 'class' => $class ) ).
-			Html::rawelement( 'div', array(), $line ) .
+		return Html::element( 'td', [ 'class' => 'diff-marker' ], $marker ) .
+			Html::openElement( 'td', [ 'class' => $class ] ).
+			Html::rawelement( 'div', [], $line ) .
 			Html::closeElement( 'td' );
 	}
 }

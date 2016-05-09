@@ -93,10 +93,10 @@ class PageNumber {
 	 * @return array
 	 */
 	public static function getDisplayModes() {
-		return array(
+		return [
 			self::DISPLAY_NORMAL,
 			self::DISPLAY_ROMAN,
 			self::DISPLAY_HIGHROMAN
-		);
+		];
 	}
 }

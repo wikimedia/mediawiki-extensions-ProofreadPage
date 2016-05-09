@@ -18,10 +18,10 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 		global $wgProofreadPageNamespaceIds, $wgNamespacesWithSubpages;
 		parent::setUp();
 
-		$wgProofreadPageNamespaceIds = array(
+		$wgProofreadPageNamespaceIds = [
 			'page' => 250,
 			'index' => 252
-		);
+		];
 		$wgNamespacesWithSubpages[NS_MAIN] = true;
 	}
 
@@ -53,18 +53,18 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @return File[]
 	 */
 	private function buildFileList() {
-		$backend = new FSFileBackend( array(
+		$backend = new FSFileBackend( [
 			'name' => 'localtesting',
 			'wikiId' => wfWikiId(),
-			'containerPaths' => array( 'data' => __DIR__ . '/../data/media/' )
-		) );
-		$fileRepo = new FSRepo( array(
+			'containerPaths' => [ 'data' => __DIR__ . '/../data/media/' ]
+		] );
+		$fileRepo = new FSRepo( [
 			'name' => 'temp',
 			'url' => 'http://localhost/thumbtest',
 			'backend' => $backend
-		) );
+		] );
 
-		return array(
+		return [
 			new UnregisteredLocalFile(
 				false,
 				$fileRepo,
@@ -77,6 +77,6 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 				'mwstore://localtesting/data/Test.jpg',
 				'image/jpg'
 			)
-		);
+		];
 	}
 }

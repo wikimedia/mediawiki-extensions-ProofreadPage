@@ -28,12 +28,12 @@ class PageContentTest extends ProofreadPageTestCase {
 		$user = new User();
 		$user->setName( '127.0.0.1' );
 
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgUser' => $user,
-			'wgTextModelsToParse' => array(
+			'wgTextModelsToParse' => [
 				CONTENT_MODEL_PROOFREAD_PAGE
-			)
-		) );
+			]
+		] );
 
 
 		$this->requestContext = new RequestContext( new FauxRequest() );
@@ -106,14 +106,14 @@ class PageContentTest extends ProofreadPageTestCase {
 	}
 
 	public function equalsProvider() {
-		return array(
-			array( self::newContent(), null, false ),
-			array( self::newContent( 'a', 'hallo' ), self::newContent( 'a', 'hallo' ), true ),
-			array( self::newContent( 'a', 'hallo' ), self::newContent( 'A', 'hallo' ), false ),
-			array( self::newContent( '', 'a', '', 1, 'test' ), self::newContent( '', 'a', '', 1, null ), false ),
-			array( self::newContent( '', 'a', '', 1, 'ater_ir' ), self::newContent( '', 'a', '', 1, 'ater ir' ), true ),
-			array( self::newContent( '', 'hallo' ), new WikitextContent( 'hallo' ), false )
-		);
+		return [
+			[ self::newContent(), null, false ],
+			[ self::newContent( 'a', 'hallo' ), self::newContent( 'a', 'hallo' ), true ],
+			[ self::newContent( 'a', 'hallo' ), self::newContent( 'A', 'hallo' ), false ],
+			[ self::newContent( '', 'a', '', 1, 'test' ), self::newContent( '', 'a', '', 1, null ), false ],
+			[ self::newContent( '', 'a', '', 1, 'ater_ir' ), self::newContent( '', 'a', '', 1, 'ater ir' ), true ],
+			[ self::newContent( '', 'hallo' ), new WikitextContent( 'hallo' ), false ]
+		];
 	}
 
 	/**
@@ -129,23 +129,23 @@ class PageContentTest extends ProofreadPageTestCase {
 	}
 
 	public function getTextForSummaryProvider() {
-		return array(
-			array(
+		return [
+			[
 				self::newContent( 'aaaa', "hello\nworld.", '', 1, 'test' ),
 				16,
 				'hello world.'
-			),
-			array(
+			],
+			[
 				self::newContent( 'aaaa', "hello world." ),
 				8,
 				'hello...'
-			),
-			array(
+			],
+			[
 				self::newContent( 'aaaa', "[[hello world]]." ),
 				8,
 				'hel...'
-			)
-		);
+			]
+		];
 	}
 
 	/**
@@ -156,20 +156,20 @@ class PageContentTest extends ProofreadPageTestCase {
 	}
 
 	public function preSaveTransformProvider() {
-		return array(
-			array(
+		return [
+			[
 				self::newContent( 'hello this is ~~~', '~~~' ),
 				self::newContent( 'hello this is [[Special:Contributions/127.0.0.1|127.0.0.1]]', '[[Special:Contributions/127.0.0.1|127.0.0.1]]' )
-			),
-			array(
+			],
+			[
 				self::newContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" ),
 				self::newContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" )
-			),
-			array( // rtrim
+			],
+			[ // rtrim
 				self::newContent( '\n ', 'foo \n ', '  ' ),
 				self::newContent( '\n', 'foo \n', '' )
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -186,14 +186,14 @@ class PageContentTest extends ProofreadPageTestCase {
 	}
 
 	public function preloadTransformProvider() {
-		return array(
-			array( self::newContent( 'hello this is ~~~' ),
+		return [
+			[ self::newContent( 'hello this is ~~~' ),
 				self::newContent( "hello this is ~~~" )
-			),
-			array( self::newContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>' ),
+			],
+			[ self::newContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>' ),
 				self::newContent( 'hello \'\'this\'\' is bar' )
-			),
-		);
+			],
+		];
 	}
 
 	/**

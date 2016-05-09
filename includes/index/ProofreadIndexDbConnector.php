@@ -29,13 +29,13 @@ class ProofreadIndexDbConnector {
 	public static function getRowsFromTitle( Title $title ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select(
-			array( 'page', 'pagelinks' ),
-			array( 'page_namespace', 'page_title' ),
-			array(
+			[ 'page', 'pagelinks' ],
+			[ 'page_namespace', 'page_title' ],
+			[
 				'pl_namespace' => $title->getNamespace(),
 				'pl_title' => $title->getDBkey(),
 				'pl_from=page_id'
-			),
+			],
 			__METHOD__
 		);
 		return $result;
@@ -95,8 +95,8 @@ class ProofreadIndexDbConnector {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->replace(
 			'pr_index',
-			array( 'pr_page_id' ),
-			array(
+			[ 'pr_page_id' ],
+			[
 				'pr_page_id' => $indexId,
 				'pr_count' => $n,
 				'pr_q0' => $n0,
@@ -104,7 +104,7 @@ class ProofreadIndexDbConnector {
 				'pr_q2' => $n2,
 				'pr_q3' => $n3,
 				'pr_q4' => $n4
-			),
+			],
 			__METHOD__
 		);
 	}
@@ -122,8 +122,8 @@ class ProofreadIndexDbConnector {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->replace(
 			'pr_index',
-			array( 'pr_page_id' ),
-			array(
+			[ 'pr_page_id' ],
+			[
 				'pr_page_id' => $indexId,
 				'pr_count' => $n,
 				'pr_q0' => $n0,
@@ -131,7 +131,7 @@ class ProofreadIndexDbConnector {
 				'pr_q2' => $n2,
 				'pr_q3' => $n3,
 				'pr_q4' => $n4
-			),
+			],
 			__METHOD__
 		);
 	}
@@ -142,7 +142,7 @@ class ProofreadIndexDbConnector {
 	 */
 	public static function removeIndexData( $pageId ) {
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( 'pr_index', array( 'pr_page_id' => $pageId ), __METHOD__ );
+		$dbw->delete( 'pr_index', [ 'pr_page_id' => $pageId ], __METHOD__ );
 	}
 
 	/**
@@ -152,12 +152,12 @@ class ProofreadIndexDbConnector {
 	public static function getIndexDataFromIndexTitle( $indexTitle ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->selectRow(
-				array( 'pr_index', 'page' ),
-				array( 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ),
-				array( 'page_title' => $indexTitle, 'page_namespace' => ProofreadPage::getIndexNamespaceId() ),
+				[ 'pr_index', 'page' ],
+				[ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
+				[ 'page_title' => $indexTitle, 'page_namespace' => ProofreadPage::getIndexNamespaceId() ],
 				__METHOD__,
 				null,
-				array( 'page' => array( 'LEFT JOIN', 'page_id=pr_page_id' ) )
+				[ 'page' => [ 'LEFT JOIN', 'page_id=pr_page_id' ] ]
 				);
 		return $res;
 	}
@@ -169,9 +169,9 @@ class ProofreadIndexDbConnector {
 	public static function getIndexDataFromIndexPageId( $indexId ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->selectRow(
-				array( 'pr_index' ),
-				array( 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ),
-				array( 'pr_page_id' => $indexId ),
+				[ 'pr_index' ],
+				[ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
+				[ 'pr_page_id' => $indexId ],
 				__METHOD__
 			);
 		return $res;

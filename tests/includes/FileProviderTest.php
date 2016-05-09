@@ -22,10 +22,10 @@ class FileProviderTest extends ProofreadPageTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		$this->fileProvider = new FileProviderMock( array(
+		$this->fileProvider = new FileProviderMock( [
 			$this->getFileFromName( 'LoremIpsum.djvu' ),
 			$this->getFileFromName( 'Test.jpg' )
-		) );
+		] );
 	}
 
 	private function getFileFromName( $fileName ) {
@@ -43,12 +43,12 @@ class FileProviderTest extends ProofreadPageTestCase {
 	}
 
 	public function indexFileProvider() {
-		return array(
-			array(
+		return [
+			[
 				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum.djvu' ) ),
 				$this->getFileFromName( 'LoremIpsum.djvu' )
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -60,14 +60,14 @@ class FileProviderTest extends ProofreadPageTestCase {
 	}
 
 	public function indexFileNotFoundProvider() {
-		return array(
-			array(
+		return [
+			[
 				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu' ) )
-			),
-			array(
+			],
+			[
 				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'Test' ) )
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -81,24 +81,24 @@ class FileProviderTest extends ProofreadPageTestCase {
 	}
 
 	public function pageFileProvider() {
-		return array(
-			array(
+		return [
+			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/4' ) ),
 				$this->getFileFromName( 'LoremIpsum.djvu' )
-			),
-			array(
+			],
+			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/djvu/1' ) ),
 				$this->getFileFromName( 'LoremIpsum.djvu' )
-			),
-			array(
+			],
+			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu' ) ),
 				$this->getFileFromName( 'LoremIpsum.djvu' )
-			),
-			array(
+			],
+			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'Test.jpg' ) ),
 				$this->getFileFromName( 'Test.jpg' )
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -110,13 +110,13 @@ class FileProviderTest extends ProofreadPageTestCase {
 	}
 
 	public function pageFileNotFoundProvider() {
-		return array(
-			array(
+		return [
+			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu/4' ) )
-			),
-			array(
+			],
+			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'Test' ) )
-			),
-		);
+			],
+		];
 	}
 }

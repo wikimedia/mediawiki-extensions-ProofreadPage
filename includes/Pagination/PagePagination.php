@@ -16,12 +16,12 @@ class PagePagination extends Pagination {
 	/**
 	 * @var ProofreadPagePage[]
 	 */
-	private $pages = array();
+	private $pages = [];
 
 	/**
 	 * @var PageNumber[]
 	 */
-	private $pageNumbers = array();
+	private $pageNumbers = [];
 
 	/**
 	 * @param ProofreadIndexPage $index

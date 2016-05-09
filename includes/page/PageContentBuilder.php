@@ -46,7 +46,7 @@ class PageContentBuilder {
 
 		//default header and footer
 		if ( $index ) {
-			$params = array();
+			$params = [];
 			try {
 				$pagination = $this->context->getPaginationFactory()->getPaginationForIndexPage( $index );
 				$pageNumber = $pagination->getPageNumber( $page );

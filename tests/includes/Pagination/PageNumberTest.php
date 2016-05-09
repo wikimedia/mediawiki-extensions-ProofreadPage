@@ -12,13 +12,13 @@ use ProofreadPageTestCase;
 class ProofreadPageNumberTest extends ProofreadPageTestCase {
 
 	public function formattedPageNumberProvider() {
-		return array(
-			array( '1', new PageNumber( '1' ), null ),
-			array( 'X', new PageNumber( '10', PageNumber::DISPLAY_HIGHROMAN ), null ),
-			array( 'x', new PageNumber( '10', PageNumber::DISPLAY_ROMAN ), null ),
-			array( 'test', new PageNumber( 'test', PageNumber::DISPLAY_ROMAN ), null ),
-			array( '૮', new PageNumber( '8' ), Language::factory( 'gu' ) ),
-		);
+		return [
+			[ '1', new PageNumber( '1' ), null ],
+			[ 'X', new PageNumber( '10', PageNumber::DISPLAY_HIGHROMAN ), null ],
+			[ 'x', new PageNumber( '10', PageNumber::DISPLAY_ROMAN ), null ],
+			[ 'test', new PageNumber( 'test', PageNumber::DISPLAY_ROMAN ), null ],
+			[ '૮', new PageNumber( '8' ), Language::factory( 'gu' ) ],
+		];
 	}
 
 	/**

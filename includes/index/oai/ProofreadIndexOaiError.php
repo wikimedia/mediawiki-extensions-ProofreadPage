@@ -30,6 +30,6 @@ class ProofreadIndexOaiError extends Exception {
 	}
 
 	public function getXML() {
-		return Xml::element( 'error', array( 'code' => $this->getCode() ), $this->getMessage() ) . "\n";
+		return Xml::element( 'error', [ 'code' => $this->getCode() ], $this->getMessage() ) . "\n";
 	}
 }

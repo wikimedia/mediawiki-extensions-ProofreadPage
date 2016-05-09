@@ -47,13 +47,13 @@ class FixProofreadPagePagesContentModel extends LoggedUpdateMaintenance {
 
 		$db->update(
 			'page',
-			array(
+			[
 				'page_content_model' => CONTENT_MODEL_PROOFREAD_PAGE
-			),
-			array(
+			],
+			[
 				'page_namespace' => ProofreadPage::getPageNamespaceId(),
 				'page_content_model' => CONTENT_MODEL_WIKITEXT
-			),
+			],
 			__METHOD__
 		);
 

@@ -10,8 +10,8 @@ use ProofreadPage\Pagination\PagePagination;
  */
 class ProofreadIndexPageTest extends ProofreadPageTestCase {
 
-	protected static $config = array(
-		'Title' => array(
+	protected static $config = [
+		'Title' => [
 			'type' => 'string',
 			'size' => 1,
 			'default' => '',
@@ -19,8 +19,8 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			'values' => null,
 			'header' => true,
 			'data' => 'title'
-		),
-		'Author' => array(
+		],
+		'Author' => [
 			'type' => 'page',
 			'size' => 1,
 			'default' => '',
@@ -28,8 +28,8 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			'values' => null,
 			'header' => true,
 			'data' => 'author'
-		),
-		'Year' => array(
+		],
+		'Year' => [
 			'type' => 'number',
 			'size' => 1,
 			'default' => '',
@@ -37,51 +37,51 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			'values' => null,
 			'header' => false,
 			'data' => 'year'
-		),
-		'Pages' => array(
+		],
+		'Pages' => [
 			'type' => 'string',
 			'size' => 20,
 			'default' => '',
 			'label' => 'Pages',
 			'values' => null,
 			'header' => false
-		),
-		'Header' => array(
+		],
+		'Header' => [
 			'type' => 'string',
 			'size' => 10,
 			'default' => 'head',
 			'label' => 'Header',
 			'values' => null,
 			'header' => false
-		),
-		'Footer' => array(
+		],
+		'Footer' => [
 			'default' => '<references />',
 			'header' => true,
 			'hidden' => true
-		),
-		'TOC' => array(
+		],
+		'TOC' => [
 			'type' => 'string',
 			'size' => 1,
 			'default' => '',
 			'label' => 'Table of content',
 			'values' => null,
 			'header' => false
-		),
-		'Comment' => array(
+		],
+		'Comment' => [
 			'header' => true,
 			'hidden' => true
-		),
-		'width' => array(
+		],
+		'width' => [
 			'type' => 'number',
 			'label' => 'Image width',
 			'header' => false
-		),
-		'CSS' => array(
+		],
+		'CSS' => [
 			'type' => 'string',
 			'label' => 'CSS',
 			'header' => false
-		),
-	);
+		],
+	];
 
 	/**
 	 * Constructor of a new ProofreadIndexPage
@@ -114,7 +114,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 
 	public function testGetIndexEntries() {
 		$page = self::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Author=[[Author:Me]]\n|Year=2012 or 2013\n|Header={{{Title}}}\n|Pages=<pagelist />\n|TOC=* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]\n}}" );
-		$entries = array(
+		$entries = [
 			'Title' => new ProofreadIndexEntry( 'Title', 'Test book', self::$config['Title'] ),
 			'Author' => new ProofreadIndexEntry( 'Author', '[[Author:Me]]', self::$config['Author'] ),
 			'Year' => new ProofreadIndexEntry( 'Year', '2012 or 2013', self::$config['Year'] ),
@@ -125,16 +125,16 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			'Comment' => new ProofreadIndexEntry( 'Comment', '', self::$config['Comment'] ),
 			'width' => new ProofreadIndexEntry( 'width', '', self::$config['width'] ),
 			'CSS' => new ProofreadIndexEntry( 'CSS', '', self::$config['CSS'] )
-		);
+		];
 		$this->assertEquals( $entries, $page->getIndexEntries() );
 	}
 
 	public function mimeTypesProvider() {
-		return array(
-			array( 'image/vnd.djvu', 'Test.djvu' ),
-			array( 'application/pdf', 'Test.pdf' ),
-			array( null, 'Test' )
-		);
+		return [
+			[ 'image/vnd.djvu', 'Test.djvu' ],
+			[ 'application/pdf', 'Test.pdf' ],
+			[ null, 'Test' ]
+		];
 	}
 
 	/**
@@ -146,7 +146,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 
 	public function testGetIndexEntriesForHeader() {
 		$page = self::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Author=[[Author:Me]]\n|Year=2012 or 2013\n|Pages=<pagelist />\n|TOC=* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]\n}}" );
-		$entries = array(
+		$entries = [
 			'Title' => new ProofreadIndexEntry( 'Title', 'Test book', self::$config['Title'] ),
 			'Author' => new ProofreadIndexEntry( 'Author', '[[Author:Me]]', self::$config['Author'] ),
 			'Comment' => new ProofreadIndexEntry( 'Comment', '', self::$config['Comment'] ),
@@ -154,7 +154,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			'Footer' => new ProofreadIndexEntry( 'Footer', '', self::$config['Footer'] ),
 			'width' => new ProofreadIndexEntry( 'width', '', self::$config['width'] ),
 			'CSS' => new ProofreadIndexEntry( 'CSS', '', self::$config['CSS'] )
-		);
+		];
 		$this->assertEquals( $entries, $page->getIndexEntriesForHeader() );
 	}
 
@@ -169,20 +169,20 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 
 	public function testGetLinksToMainNamespace() {
 		$page = self::newIndexPage( 'Test.djvu', "{{\n|Pages=[[Page:Test.jpg]]\n|TOC=* [[Test/Chapter 1]]\n* [[Azerty:Test/Chapter_2|Chapter 2]]\n}}" );
-		$links = array(
-			array( Title::newFromText( 'Test/Chapter 1' ), 'Chapter 1' ),
-			array( Title::newFromText( 'Azerty:Test/Chapter_2' ), 'Chapter 2' )
-		);
+		$links = [
+			[ Title::newFromText( 'Test/Chapter 1' ), 'Chapter 1' ],
+			[ Title::newFromText( 'Azerty:Test/Chapter_2' ), 'Chapter 2' ]
+		];
 		$this->assertEquals( $links, $page->getLinksToMainNamespace() );
 	}
 
 	public function testGetLinksToPageNamespace() {
 		$page = ProofreadIndexPageTest::newIndexPage( 'Test', "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}" );
-		$links = array(
-			array( Title::newFromText( 'Page:Test 1.jpg' ), 'TOC' ),
-			array( Title::newFromText( 'Page:Test 2.tiff' ), '1' ),
-			array( Title::newFromText( 'Page:Test:3.png' ), '2' )
-		);
+		$links = [
+			[ Title::newFromText( 'Page:Test 1.jpg' ), 'TOC' ],
+			[ Title::newFromText( 'Page:Test 2.tiff' ), '1' ],
+			[ Title::newFromText( 'Page:Test:3.png' ), '2' ]
+		];
 		$this->assertEquals( $links, $page->getLinksToPageNamespace() );
 	}
 
@@ -194,73 +194,73 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 	}
 
 	public function getPagelistTagContentProvider() {
-		return array(
-			array(
+		return [
+			[
 				self::newIndexPage( 'Test.djvu', "{{\n|Pages=<pagelist to=24 1to4=- 5=1 5to24=roman /> <pagelist from=25 25=1 1021to1024=- />\n|Author=[[Author:Me]]\n}}" ),
-				new PageList( array( '1to4' => '-', '5' => '1', '5to24' => 'roman', '25' => '1', '1021to1024' => '-', 'to' => 24, 'from' => 25 ) )
-			),
-			array(
+				new PageList( [ '1to4' => '-', '5' => '1', '5to24' => 'roman', '25' => '1', '1021to1024' => '-', 'to' => 24, 'from' => 25 ] )
+			],
+			[
 				self::newIndexPage( 'Test.djvu', "{{\n|Pages=<pagelist/>\n|Author=[[Author:Me]]\n}}" ),
-				new PageList( array() )
-			),
-			array(
+				new PageList( [] )
+			],
+			[
 				self::newIndexPage( 'Test.djvu', "{{\n|Pages=\n|Author=[[Author:Me]]\n}}" ),
 				null
-			),
-		);
+			],
+		];
 	}
 
 	public function replaceVariablesWithIndexEntriesProvider() {
-		return array(
-			array(
+		return [
+			[
 				"{{\n|Title=Test book\n|Header={{{title}}}\n}}",
 				'Test book',
 				'header',
-				array()
-			),
-			array(
+				[]
+			],
+			[
 				"{{\n|Title=Test book\n|Header={{{ Pagenum }}}\n}}",
 				'22',
 				'header',
-				array( 'pagenum' => 22 )
-			),
-			array(
+				[ 'pagenum' => 22 ]
+			],
+			[
 				"{{\n|Title=Test book\n|Header={{{authors}}}\n}}",
 				'{{{authors}}}',
 				'header',
-				array()
-			),
-			array(
+				[]
+			],
+			[
 				"{{\n|Title=Test book\n|Header={{{authors |a}}}\n}}",
 				'a',
 				'header',
-				array()
-			),
-			array(
+				[]
+			],
+			[
 				"{{\n|Title=Test book\n|Header={{template|a=b}}\n}}",
 				'{{template|a=b}}',
 				'header',
-				array()
-			),
-			array(
+				[]
+			],
+			[
 				"{{\n|Title=Test book\n|Header={{template|a={{{Title |}}}}}\n}}",
 				'{{template|a=Test book}}',
 				'header',
-				array()
-			),
-			array(
+				[]
+			],
+			[
 				"{{\n|Title=Test book\n|Header=<references/>\n}}",
 				'<references/>',
 				'header',
-				array()
-			),
-			array(
+				[]
+			],
+			[
 				"{{\n|Title=Test book\n|Header={{{Pagenum}}}\n}}",
 				null,
 				'headers',
-				array()
-			),
-		);
+				[]
+			],
+		];
 	}
 
 	/**

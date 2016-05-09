@@ -46,7 +46,7 @@ class ProofreadIndexPage {
 	/**
 	 * @var array configuration array
 	 */
-	protected $config = array();
+	protected $config = [];
 
 	/**
 	 * @param Title $title Reference to a Title object.
@@ -145,15 +145,15 @@ class ProofreadIndexPage {
 			if ( $config === null ) {
 				global $wgOut;
 				$wgOut->showErrorPage( 'proofreadpage_dataconfig_badformatted', 'proofreadpage_dataconfig_badformattedtext' );
-				$config = array();
+				$config = [];
 			}
 		} else {
 			$attributes = explode( "\n", wfMessage( 'proofreadpage_index_attributes' )->inContentLanguage()->text() );
 			$headerAttributes = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )->inContentLanguage()->text() );
-			$config = array();
+			$config = [];
 			foreach ( $attributes as $attribute ) {
 				$m = explode( '|', $attribute );
-				$params = array(
+				$params = [
 					'type' => 'string',
 					'size' => 1,
 					'default' => '',
@@ -161,7 +161,7 @@ class ProofreadIndexPage {
 					'help' => '',
 					'values' => null,
 					'header' => false
-				);
+				];
 
 				if ( $m[0] == 'Header' ) {
 					$params['default'] = wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain();
@@ -182,7 +182,7 @@ class ProofreadIndexPage {
 				if ( isset( $config[$attribute] ) ) {
 					$config[$attribute]['header'] = true;
 				} else {
-					$config[$attribute] = array(
+					$config[$attribute] = [
 						'type' => 'string',
 						'size' => 1,
 						'default' => '',
@@ -190,24 +190,24 @@ class ProofreadIndexPage {
 						'values' => null,
 						'header' => true,
 						'hidden' => true
-					);
+					];
 				}
 			}
 		}
 
 		if ( !array_key_exists( 'Header', $config ) ) {
-			$config['Header'] = array(
+			$config['Header'] = [
 				'default' => wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain(),
 				'header' => true,
 				'hidden' => true
-			);
+			];
 		}
 		if ( !array_key_exists( 'Footer', $config ) ) {
-			$config['Footer'] = array(
+			$config['Footer'] = [
 				'default' => wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain(),
 				'header' => true,
 				'hidden' => true
-			);
+			];
 		}
 
 		return $config;
@@ -219,7 +219,7 @@ class ProofreadIndexPage {
 	 * @return array of ProofreadIndexEntry
 	 */
 	protected function getIndexEntriesFromIndexContent( $values ) {
-		$metadata = array();
+		$metadata = [];
 		foreach ( $this->config as $varName => $property ) {
 			if ( isset( $values[$varName] ) ) {
 				$metadata[$varName] = new ProofreadIndexEntry( $varName, $values[$varName], $property );
@@ -237,7 +237,7 @@ class ProofreadIndexPage {
 	public function getIndexEntries() {
 		if ( $this->entries === null ) {
 			$text = $this->getText();
-			$values = array();
+			$values = [];
 			foreach ( $this->config as $varName => $property ) {
 				$tagPattern = "/\n\|" . preg_quote( $varName, '/' ) . "=(.*?)\n(\||\}\})/is";
 				if ( preg_match( $tagPattern, $text, $matches ) ) {
@@ -268,7 +268,7 @@ class ProofreadIndexPage {
 	 */
 	public function getIndexEntriesForHeader() {
 		$entries = $this->getIndexEntries();
-		$headerEntries = array();
+		$headerEntries = [];
 		foreach ( $entries as $entry ) {
 			if ( $entry->isHeader() ) {
 				$headerEntries[$entry->getKey()] = $entry;
@@ -331,16 +331,16 @@ class ProofreadIndexPage {
 	 */
 	protected function getLinksToNamespace( $text, $namespace ) {
 		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $text, $textLinks, PREG_PATTERN_ORDER );
-		$links = array();
+		$links = [];
 		$num = 0;
 		$textLinksCount = count( $textLinks[1] );
 		for ( $i = 0; $i < $textLinksCount; $i++ ) {
 			$title = Title::newFromText( $textLinks[1][$i] );
 			if ( $title !== null && $title->inNamespace( $namespace ) ) {
 				if ( $textLinks[3][$i] === '' ) {
-					$links[$num] = array( $title, $title->getSubpageText() );
+					$links[$num] = [ $title, $title->getSubpageText() ];
 				} else {
-					$links[$num] = array( $title, $textLinks[3][$i] );
+					$links[$num] = [ $title, $textLinks[3][$i] ];
 				}
 				$num++;
 			}
@@ -382,7 +382,7 @@ class ProofreadIndexPage {
 	 */
 	protected function getIndexEntriesForHeaderAsTemplateParams() {
 		$indexEntries = $this->getIndexEntriesForHeader();
-		$params = array();
+		$params = [];
 		foreach ( $indexEntries as $entry ) {
 			$params[strtolower( $entry->getKey() )] = $entry->getStringValue();
 		}

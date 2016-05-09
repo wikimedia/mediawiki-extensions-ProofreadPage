@@ -91,21 +91,21 @@ class ProofreadIndexEntry {
 		$value = $this->getStringValue();
 
 		if ( $value === '' ) {
-			return array();
+			return [];
 		}
 
 		if ( !isset( $this->config['delimiter'] ) || !$this->config['delimiter'] ) {
-			return array( $value );
+			return [ $value ];
 		}
 
 		$delimiters = $this->config['delimiter'];
 		if ( !is_array( $delimiters ) ) {
-			$delimiters = array( $delimiters );
+			$delimiters = [ $delimiters ];
 		}
 
-		$values = array( $value );
+		$values = [ $value ];
 		foreach ( $delimiters as $delimiter ) {
-			$values2 = array();
+			$values2 = [];
 			foreach ( $values as $val ) {
 				$values2 = array_merge( $values2, explode( $delimiter, $val ) );
 			}
@@ -228,7 +228,7 @@ class ProofreadIndexEntry {
 	 * @return bool
 	 */
 	public function isHeader() {
-		if ( in_array( strtolower( $this->key ), array( 'header', 'footer', 'css', 'width' ) ) ) {
+		if ( in_array( strtolower( $this->key ), [ 'header', 'footer', 'css', 'width' ] ) ) {
 			return true;
 		} else {
 			if ( isset( $this->config['header'] ) ) {

@@ -51,17 +51,17 @@ class ProofreadPages extends QueryPage {
 			$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
 
 			$output->addHTML(
-				Html::openElement( 'form', array( 'action' => $wgScript ) ) .
+				Html::openElement( 'form', [ 'action' => $wgScript ] ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-				Html::input( 'limit', $this->limit, 'hidden', array() ) .
-				Html::openElement( 'fieldset', array() ) .
+				Html::input( 'limit', $this->limit, 'hidden', [] ) .
+				Html::openElement( 'fieldset', [] ) .
 				Html::element( 'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
 				Html::openElement( 'p' ) .
-				Html::element( 'label', array( 'for' => 'key' ), $this->msg( 'proofreadpage_specialpage_label_key' )->text() )  . ' ' .
-				Html::input( 'key', $this->searchTerm, 'search', array( 'id' => 'key', 'size' => '50' ) ) .
+				Html::element( 'label', [ 'for' => 'key' ], $this->msg( 'proofreadpage_specialpage_label_key' )->text() )  . ' ' .
+				Html::input( 'key', $this->searchTerm, 'search', [ 'id' => 'key', 'size' => '50' ] ) .
 				Html::closeElement( 'p' ) .
 				Html::openElement( 'p' ) .
-				Html::element( 'label', array( 'for' => 'order' ), $this->msg( 'proofreadpage_specialpage_label_orderby' )->text() ) . ' ' . $orderSelect->getHtml() . ' ' .
+				Html::element( 'label', [ 'for' => 'order' ], $this->msg( 'proofreadpage_specialpage_label_orderby' )->text() ) . ' ' . $orderSelect->getHtml() . ' ' .
 				Xml::checkLabel( $this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
 				Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
 				Html::closeElement( 'p' ) .
@@ -72,7 +72,7 @@ class ProofreadPages extends QueryPage {
 				$indexNamespaceId = ProofreadPage::getIndexNamespaceId();
 				$searchEngine = SearchEngine::create();
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
-				$searchEngine->setNamespaces( array( $indexNamespaceId ) );
+				$searchEngine->setNamespaces( [ $indexNamespaceId ] );
 				$searchEngine->showRedirects = false;
 				$textMatches = $searchEngine->searchText( $this->searchTerm );
 				if ( !( $textMatches instanceof SearchResultSet ) ) {
@@ -81,7 +81,7 @@ class ProofreadPages extends QueryPage {
 					global $wgOut;
 					$wgOut->showErrorPage( 'proofreadpage_specialpage_searcherror', 'proofreadpage_specialpage_searcherrortext' );
 				} else {
-					$this->searchList = array();
+					$this->searchList = [];
 					while ( $result = $textMatches->next() ) {
 						$title = $result->getTitle();
 						if ( $title->inNamespace( $indexNamespaceId ) ) {
@@ -130,18 +130,18 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function linkParameters() {
-		return array(
+		return [
 			'key' => $this->searchTerm,
 			'order' => $this->queryOrder,
 			'sortascending' => $this->sortAscending
-		);
+		];
 	}
 
 	public function getQueryInfo() {
-		$conds = array();
+		$conds = [];
 		if ( $this->searchTerm ) {
 			if ( $this->searchList !== null ) {
-				$conds = array( 'page_namespace' => ProofreadPage::getIndexNamespaceId() );
+				$conds = [ 'page_namespace' => ProofreadPage::getIndexNamespaceId() ];
 				if ( $this->searchList ) {
 					$conds['page_title'] = $this->searchList;
 				} else {
@@ -153,24 +153,24 @@ class ProofreadPages extends QueryPage {
 			}
 		}
 
-		return array(
-			'tables' => array( 'pr_index', 'page' ),
-			'fields' => array( 'page_namespace AS namespace', 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
-			'pr_q0', 'pr_q1', 'pr_q2' ,'pr_q3', 'pr_q4' ),
+		return [
+			'tables' => [ 'pr_index', 'page' ],
+			'fields' => [ 'page_namespace AS namespace', 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
+			'pr_q0', 'pr_q1', 'pr_q2' ,'pr_q3', 'pr_q4' ],
 			'conds' => $conds,
-			'options' => array(),
-			'join_conds' => array( 'page' => array( 'INNER JOIN', 'page_id=pr_page_id' ) )
-		);
+			'options' => [],
+			'join_conds' => [ 'page' => [ 'INNER JOIN', 'page_id=pr_page_id' ] ]
+		];
 	}
 
 	function getOrderFields() {
 		switch ( $this->queryOrder ) {
 			case 'size':
-				return array( 'pr_count' );
+				return [ 'pr_count' ];
 			case 'alpha':
-				return array( 'page_title' );
+				return [ 'page_title' ];
 			default:
-				return array( 'value' );
+				return [ 'value' ];
 		}
 	}
 

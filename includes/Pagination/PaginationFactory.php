@@ -20,7 +20,7 @@ class PaginationFactory {
 	/**
 	 * @var Pagination[]
 	 */
-	private $paginations = array();
+	private $paginations = [];
 
 	public function __construct( Context $context ) {
 		$this->context = $context;
@@ -62,8 +62,8 @@ class PaginationFactory {
 			);
 		} else {
 			$links = $indexPage->getLinksToPageNamespace();
-			$pages = array();
-			$pageNumbers = array();
+			$pages = [];
+			$pageNumbers = [];
 			foreach ( $links as $link ) {
 				$pages[] = new ProofreadPagePage( $link[0], $indexPage );
 				$pageNumbers[] = new PageNumber( $link[1] );

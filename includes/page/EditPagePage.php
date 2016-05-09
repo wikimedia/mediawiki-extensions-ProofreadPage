@@ -83,7 +83,7 @@ class EditPagePage extends EditPage {
 			$out->addInlineStyle( $css );
 		}
 
-		$inputAttributes = array();
+		$inputAttributes = [];
 		if ( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
@@ -96,21 +96,21 @@ class EditPagePage extends EditPage {
 			'prp-page-edit-header',
 			'proofreadpage_header',
 			$content->getHeader()->serialize(),
-			$inputAttributes + array( 'rows' => '2', 'tabindex' => '1' )
+			$inputAttributes + [ 'rows' => '2', 'tabindex' => '1' ]
 		);
 		$this->showEditArea(
 			'wpTextbox1',
 			'prp-page-edit-body',
 			'proofreadpage_body',
 			$content->getBody()->serialize(),
-			$inputAttributes + array( 'tabindex' => '1' )
+			$inputAttributes + [ 'tabindex' => '1' ]
 		);
 		$this->showEditArea(
 			'wpFooterTextbox',
 			'prp-page-edit-footer',
 			'proofreadpage_footer',
 			$content->getFooter()->serialize(),
-			$inputAttributes + array( 'rows' => '2', 'tabindex' => '1' )
+			$inputAttributes + [ 'rows' => '2', 'tabindex' => '1' ]
 		);
 		//the 3 textarea tabindex are set to 1 because summary tabindex is 1 too
 		$out->addHTML( $this->pagePage->getPageContainerEnd() );
@@ -130,8 +130,8 @@ class EditPagePage extends EditPage {
 	protected function showEditArea( $textareaName, $areaClass, $labelMsg, $content, array $textareaAttributes ) {
 		$out = $this->mArticle->getContext()->getOutput();
 		$out->addHTML(
-			Html::openElement( 'div', array( 'class' => $areaClass ) ) .
-			Html::element( 'label', array( 'for' => $textareaName ), wfMessage( $labelMsg )->text() )
+			Html::openElement( 'div', [ 'class' => $areaClass ] ) .
+			Html::element( 'label', [ 'for' => $textareaName ], wfMessage( $labelMsg )->text() )
 		);
 		$this->showTextbox( $content, $textareaName, $textareaAttributes );
 		$out->addHTML( Html::closeElement( 'div' ) );
@@ -149,7 +149,7 @@ class EditPagePage extends EditPage {
 		$content = $this->toEditContent( $this->textbox1 );
 		$currentLevel = $content->getLevel();
 
-		$qualityLevels = array( 0, 2, 1, 3, 4 );
+		$qualityLevels = [ 0, 2, 1, 3, 4 ];
 		$html = '';
 		$checkboxes = parent::getCheckBoxes( $tabindex, $checked );
 		$user = $this->mArticle->getContext()->getUser();
@@ -164,12 +164,12 @@ class EditPagePage extends EditPage {
 			$msg = 'proofreadpage_quality' . $level . '_category';
 			$cls = 'quality' . $level;
 
-			$attributes = array( 'tabindex' => ++$tabindex, 'title' => wfMessage( $msg )->plain() );
+			$attributes = [ 'tabindex' => ++$tabindex, 'title' => wfMessage( $msg )->plain() ];
 			if ( $level == $currentLevel->getLevel() ) {
 				$attributes[] = 'checked';
 			}
 
-			$html .= Html::openElement( 'span', array( 'class' => $cls ) ) .
+			$html .= Html::openElement( 'span', [ 'class' => $cls ] ) .
 				Html::input( 'wpQuality', $level, 'radio', $attributes ) .
 				Html::closeElement( 'span' );
 		}
@@ -177,10 +177,10 @@ class EditPagePage extends EditPage {
 		$checkboxes['wpr-pageStatus'] = '';
 		if ( $user->isAllowed( 'pagequality' ) ) {
 			$checkboxes['wpr-pageStatus'] =
-				Html::openElement( 'span', array( 'id' => 'wpQuality-container' ) ) .
+				Html::openElement( 'span', [ 'id' => 'wpQuality-container' ] ) .
 				$html .
 				Html::closeElement( 'span' ) .
-				Html::OpenElement( 'label', array( 'for' => 'wpQuality-container' ) ) .
+				Html::OpenElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
 				wfMessage( 'proofreadpage_page_status' )->parse() .
 				Html::closeElement( 'label' );
 		}

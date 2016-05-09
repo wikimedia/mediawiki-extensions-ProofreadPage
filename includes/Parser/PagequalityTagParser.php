@@ -19,7 +19,7 @@ class PagequalityTagParser extends TagParser {
 			return '';
 		}
 
-		return Html::openElement( 'div', array( 'class' => 'prp-page-qualityheader quality' . $args['level'] ) ) .
+		return Html::openElement( 'div', [ 'class' => 'prp-page-qualityheader quality' . $args['level'] ] ) .
 			wfMessage( 'proofreadpage_quality' . $args['level'] . '_message' )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' );
 	}

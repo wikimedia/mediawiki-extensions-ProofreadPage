@@ -44,12 +44,12 @@ class PageViewAction extends ViewAction {
 
 		//add modules
 		$out->addModules( 'ext.proofreadpage.page' );
-		$out->addModuleStyles( array(
+		$out->addModuleStyles( [
 			'ext.proofreadpage.base', 'ext.proofreadpage.page'
-		) );
-		$out->addJsConfigVars( array(
+		] );
+		$out->addJsConfigVars( [
 			'prpPageQuality' => $content->getLevel()->getLevel()
-		) );
+		] );
 
 		//custom CSS
 		$css = $page->getCustomCss();

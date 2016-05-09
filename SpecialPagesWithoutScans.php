@@ -61,10 +61,10 @@ class PagesWithoutScans extends QueryPage {
 			# Get all the templates linked from the Mediawiki:Disambiguationspage
 			$disPageObj = Title::makeTitleSafe( NS_MEDIAWIKI, 'disambiguationspage' );
 			$res = $dbr->select(
-				array( 'pagelinks', 'page' ),
+				[ 'pagelinks', 'page' ],
 				'pl_title',
-				array( 'page_id = pl_from', 'pl_namespace' => NS_TEMPLATE,
-					'page_namespace' => $disPageObj->getNamespace(), 'page_title' => $disPageObj->getDBkey() ),
+				[ 'page_id = pl_from', 'pl_namespace' => NS_TEMPLATE,
+					'page_namespace' => $disPageObj->getNamespace(), 'page_title' => $disPageObj->getDBkey() ],
 				__METHOD__ );
 
 			foreach ( $res as $row ) {
@@ -79,13 +79,13 @@ class PagesWithoutScans extends QueryPage {
 
 		// Construct subqueries
 		$pagesWithScansSubquery = $dbr->selectSQLText(
-			array( 'templatelinks', 'page' ),
+			[ 'templatelinks', 'page' ],
 			'DISTINCT tl_from',
-			array(
+			[
 				'page_id=tl_from',
 				'tl_namespace' => ProofreadPage::getPageNamespaceId(),
 				'page_namespace' => NS_MAIN
-			)
+			]
 		);
 
 		// Exclude disambiguation pages too
@@ -96,29 +96,29 @@ class PagesWithoutScans extends QueryPage {
 		// changing this.
 		$dt = $this->disambiguation_templates( $dbr );
 		$disambigPagesSubquery = $dbr->selectSQLText(
-			array( 'page', 'templatelinks' ),
+			[ 'page', 'templatelinks' ],
 			'page_id',
-			array(
+			[
 				'page_id=tl_from',
 				'page_namespace' => NS_MAIN,
 				$dt
-			)
+			]
 		);
 
-		return array(
+		return [
 			'tables' => 'page',
-			'fields' => array(
+			'fields' => [
 				"'PagesWithoutScans' AS type",
 				'page_namespace AS namespace',
 				'page_title AS title',
-				'page_len AS value' ),
-			'conds' => array(
+				'page_len AS value' ],
+			'conds' => [
 				'page_namespace' => NS_MAIN,
 				'page_is_redirect' => 0,
 				"page_id NOT IN ($pagesWithScansSubquery)",
-				"page_id NOT IN ($disambigPagesSubquery)" ),
-			'options' => array( 'USE INDEX' => 'page_len' )
-		);
+				"page_id NOT IN ($disambigPagesSubquery)" ],
+			'options' => [ 'USE INDEX' => 'page_len' ]
+		];
 	}
 
 	function sortDescending() {
@@ -136,8 +136,8 @@ class PagesWithoutScans extends QueryPage {
 		$hlink = Linker::linkKnown(
 			$title,
 			$this->msg( 'hist' )->escaped(),
-			array(),
-			array( 'action' => 'history' )
+			[],
+			[ 'action' => 'history' ]
 		);
 		$plink = $this->isCached() ? Linker::link( $title ) : Linker::linkKnown( $title );
 		$size = $this->msg( 'nbytes', $result->value )->escaped();

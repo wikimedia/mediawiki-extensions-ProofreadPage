@@ -28,9 +28,9 @@ class ProofreadPageDbConnector {
 	public static function getCategoryNamesForPageIds( $pageIds ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		return $dbr->select(
-			array( 'categorylinks' ),
-			array( 'cl_from', 'cl_to' ),
-			array( 'cl_from IN(' . implode( ',', $pageIds ) . ')' ),
+			[ 'categorylinks' ],
+			[ 'cl_from', 'cl_to' ],
+			[ 'cl_from IN(' . implode( ',', $pageIds ) . ')' ],
 			__METHOD__
 		);
 	}
@@ -43,16 +43,16 @@ class ProofreadPageDbConnector {
 	public static function getPagesNameInCategory( $pp, $cat ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		return $dbr->select(
-			array( 'page', 'categorylinks' ),
-			array( 'page_title' ),
-			array(
+			[ 'page', 'categorylinks' ],
+			[ 'page_title' ],
+			[
 				'page_title' => $pp,
 				'cl_to' => $cat,
 				'page_namespace' => ProofreadPage::getPageNamespaceId()
-			),
+			],
 			__METHOD__,
 			null,
-			array( 'categorylinks' => array( 'LEFT JOIN', 'cl_from=page_id' ) )
+			[ 'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ] ]
 		);
 	}
 
@@ -64,7 +64,7 @@ class ProofreadPageDbConnector {
 	public static function queryCount( $query, $cat ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$query['conds']['cl_to'] = str_replace( ' ', '_', wfMessage( $cat )->inContentLanguage()->text() );
-		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, array(), $query['joins'] );
+		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, [], $query['joins'] );
 
 		if ( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );
@@ -81,9 +81,9 @@ class ProofreadPageDbConnector {
 	public static function getNumberOfExistingPagesFromPageTitle( $pages ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
-				array( 'page' ),
-				array( 'COUNT(page_id) AS count' ),
-				array( 'page_namespace' => ProofreadPage::getPageNamespaceId(), 'page_title' => $pages ),
+				[ 'page' ],
+				[ 'COUNT(page_id) AS count' ],
+				[ 'page_namespace' => ProofreadPage::getPageNamespaceId(), 'page_title' => $pages ],
 				__METHOD__
 			);
 
@@ -101,24 +101,24 @@ class ProofreadPageDbConnector {
 	public static function  getIndexTitleForPageId( $id ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->selectRow(
-			array( 'templatelinks' ),
-			array( 'tl_title AS title' ),
-			array( 'tl_from' => $id, 'tl_namespace' => ProofreadPage::getPageNamespaceId() ),
+			[ 'templatelinks' ],
+			[ 'tl_title AS title' ],
+			[ 'tl_from' => $id, 'tl_namespace' => ProofreadPage::getPageNamespaceId() ],
 			__METHOD__,
-			array( 'LIMIT' => 1 )
+			[ 'LIMIT' => 1 ]
 		);
 		if ( $res ) {
 			$res2 = $dbr->selectRow(
-				array( 'pagelinks', 'page' ),
-				array( 'page_title AS title' ),
-				array(
+				[ 'pagelinks', 'page' ],
+				[ 'page_title AS title' ],
+				[
 					'pl_title' => $res->title,
 					'pl_namespace' => ProofreadPage::getPageNamespaceId(),
 					'page_namespace' => ProofreadPage::getIndexNamespaceId()
-				),
+				],
 				__METHOD__,
-				array( 'LIMIT' => 1 ),
-				array( 'page' => array( 'LEFT JOIN', 'page_id=pl_from' ) )
+				[ 'LIMIT' => 1 ],
+				[ 'page' => [ 'LEFT JOIN', 'page_id=pl_from' ] ]
 			);
 			if ( $res2 ) {
 				return $res2->title;
@@ -134,12 +134,12 @@ class ProofreadPageDbConnector {
 	public static function countTransclusionFromPageId( $id ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
-			array( 'templatelinks', 'page' ),
-			array( 'COUNT(page_id) AS count' ),
-			array( 'tl_from' => $id, 'tl_namespace' => ProofreadPage::getPageNamespaceId() ),
+			[ 'templatelinks', 'page' ],
+			[ 'COUNT(page_id) AS count' ],
+			[ 'tl_from' => $id, 'tl_namespace' => ProofreadPage::getPageNamespaceId() ],
 			__METHOD__,
 			null,
-			array( 'page' => array( 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ) )
+			[ 'page' => [ 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ] ]
 		);
 		if ( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );

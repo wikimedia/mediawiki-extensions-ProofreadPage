@@ -32,7 +32,7 @@ class EditProofreadIndexPage extends EditPage {
 	protected function showContentForm() {
 		$pageLang = $this->mTitle->getPageLanguage();
 		$out = $this->mArticle->getContext()->getOutput();
-		$inputAttributes = array( 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() );
+		$inputAttributes = [ 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() ];
 		if ( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
@@ -40,7 +40,7 @@ class EditProofreadIndexPage extends EditPage {
 		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
 		$entries = $index->getIndexEntries();
 
-		$out->addHTML( Html::openElement( 'table', array( 'id' => 'prp-formTable' ) ) );
+		$out->addHTML( Html::openElement( 'table', [ 'id' => 'prp-formTable' ] ) );
 		$i = 10;
 		foreach ( $entries as $entry ) {
 			$inputAttributes['tabindex'] = $i;
@@ -67,14 +67,14 @@ class EditProofreadIndexPage extends EditPage {
 
 		$out->addHTML(
 			Html::openElement( 'tr' ) .
-				Html::openElement( 'th', array( 'scope' => 'row' ) ) .
+				Html::openElement( 'th', [ 'scope' => 'row' ] ) .
 					Xml::label( $entry->getLabel(), $key )
 		);
 
 
 		$help = $entry->getHelp();
 		if ( $help !== '' ) {
-			$out->addHTML( Html::element( 'span', array( 'title' => $help, 'class' => 'prp-help-field' ) ) );
+			$out->addHTML( Html::element( 'span', [ 'title' => $help, 'class' => 'prp-help-field' ] ) );
 		}
 
 		$out->addHTML(
@@ -190,7 +190,7 @@ class EditProofreadIndexPage extends EditPage {
 
 		//Get list of pages titles
 		$links = $index->getLinksToPageNamespace();
-		$linksTitle = array();
+		$linksTitle = [];
 		foreach ( $links as $link ) {
 			$linksTitle[] = $link[0];
 		}

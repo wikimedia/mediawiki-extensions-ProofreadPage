@@ -20,7 +20,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
 			$index,
-			new PageList( array() ),
+			new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
@@ -40,31 +40,31 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	public function getPageNumberWithFailureProvider() {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
-			$index, new PageList( array() ),
+			$index, new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
-		return array(
-			array(
+		return [
+			[
 				$pagination,
 				new ProofreadPagePage( Title::makeTitle( 250, 'Test.djvu/2' ) )
-			),
-			array(
+			],
+			[
 				$pagination,
 				new ProofreadPagePage( Title::makeTitle( 250, 'Test2.djvu/2' ) )
-			),
-			array(
+			],
+			[
 				$pagination,
 				new ProofreadPagePage( Title::makeTitle( 250, '42.jpg' ), $index )
-			),
-		);
+			],
+		];
 	}
 
 	public function testGetDisplayedPageNumberBasic() {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new FilePagination(
-			$index, new PageList( array( '1' => 'TOC' ) ),
+			$index, new PageList( [ '1' => 'TOC' ] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
@@ -75,7 +75,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pageNumber = new PageNumber( 1 );
 		$pagination = new FilePagination(
-			$index, new PageList( array() ),
+			$index, new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
@@ -87,14 +87,14 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	 */
 	public function testGetDisplayedPageNumberWithFailure() {
 		$index = ProofreadIndexPageTest::newIndexPage();
-		$pagination = new PagePagination( $index, array(), array() );
+		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getDisplayedPageNumber( 3 );
 	}
 
 	public function testGetNumberOfPages() {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
-			$index, new PageList( array() ),
+			$index, new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
@@ -105,7 +105,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$page = new ProofreadPagePage( Title::makeTitle( 250, 'LoremIpsum.djvu/2' ), $index );
 		$pagination = new FilePagination(
-			$index, new PageList( array() ),
+			$index, new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
@@ -118,7 +118,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	public function testGetPageWithFailure() {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
-			$index, new PageList( array() ),
+			$index, new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
@@ -130,7 +130,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$page1 = new ProofreadPagePage( Title::makeTitle( 250, 'LoremIpsum.djvu/1' ), $index );
 		$page2 = new ProofreadPagePage( Title::makeTitle( 250, 'LoremIpsum.djvu/2' ), $index );
 		$pagination = new FilePagination(
-			$index, new PageList( array() ),
+			$index, new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
 			$this->getContext()
 		);
