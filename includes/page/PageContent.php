@@ -12,10 +12,10 @@ use User;
 use WikitextContent;
 
 /**
-  * @licence GNU GPL v2+
-  *
-  * Content of a Page: page
-  */
+ * @licence GNU GPL v2+
+ *
+ * Content of a Page: page
+ */
 class PageContent extends TextContent {
 
 	/**

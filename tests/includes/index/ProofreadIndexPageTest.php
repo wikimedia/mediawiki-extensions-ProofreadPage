@@ -172,7 +172,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		$links = array(
 			array( Title::newFromText( 'Test/Chapter 1' ), 'Chapter 1' ),
 			array( Title::newFromText( 'Azerty:Test/Chapter_2' ), 'Chapter 2' )
-        );
+		);
 		$this->assertEquals( $links, $page->getLinksToMainNamespace() );
 	}
 

@@ -24,9 +24,9 @@ if ( !class_exists( 'LoggedUpdateMaintenance' ) ) {
 	require_once $basePath . '/maintenance/Maintenance.php';
 }
 
- /**
-  * Set the content model type for Page: pages
-  */
+/**
+ * Set the content model type for Page: pages
+ */
 class FixProofreadPagePagesContentModel extends LoggedUpdateMaintenance {
 
 	public function __construct() {
