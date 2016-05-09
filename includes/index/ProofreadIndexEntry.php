@@ -51,10 +51,12 @@ class ProofreadIndexEntry {
 		$this->key = $key;
 		$this->value = trim( $value );
 		$this->config = $config;
-		if ( isset( $this->config['type'] ) )
+		if ( isset( $this->config['type'] ) ) {
 			$this->config['type'] = strtolower( $this->config['type'] );
-		if ( isset( $this->config['data'] ) )
+		}
+		if ( isset( $this->config['data'] ) ) {
 			$this->config['data'] = strtolower( $this->config['data'] );
+		}
 	}
 
 	/**
@@ -247,8 +249,9 @@ class ProofreadIndexEntry {
 	 * @return string
 	 */
 	public function getQualifiedDublinCoreProperty() {
-		if ( !isset( $this->config['data'] ) || !$this->config['data'] )
+		if ( !isset( $this->config['data'] ) || !$this->config['data'] ) {
 			return null;
+		}
 
 		switch ( $this->config['data'] ) {
 			case 'year':

@@ -242,10 +242,12 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		echo Xml::element( 'earliestDatestamp', null, self::datestamp( $this->earliestDatestamp() ) ) . "\n";
 		echo Xml::element( 'deletedRecord', null, 'no' ) . "\n";
 		echo Xml::element( 'granularity', null, 'YYYY-MM-DDThh:mm:ssZ' ) . "\n";
-		if ( isset( $_SERVER['HTTP_ACCEPT_ENCODING'] ) && strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) !== false )
+		if ( isset( $_SERVER['HTTP_ACCEPT_ENCODING'] ) && strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) !== false ) {
 			echo Xml::element( 'compression', null, 'gzip' ) . "\n";
-		if ( isset( $_SERVER['HTTP_ACCEPT_ENCODING'] ) && strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'deflate' ) !== false )
+		}
+		if ( isset( $_SERVER['HTTP_ACCEPT_ENCODING'] ) && strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'deflate' ) !== false ) {
 			echo Xml::element( 'compression', null, 'deflate' ) . "\n";
+		}
 	}
 
 	/**
