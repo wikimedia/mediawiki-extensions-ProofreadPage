@@ -96,7 +96,7 @@ class ProofreadPages extends QueryPage {
 	}
 
 	function reallyDoQuery( $limit, $offset = false ) {
-		$count = sizeof( $this->searchList );
+		$count = count( $this->searchList );
 		if ( $count > $this->limit ) { //Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
 			$this->addOne = true;
 			unset( $this->searchList[ $count - 1 ] );

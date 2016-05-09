@@ -333,7 +333,8 @@ class ProofreadIndexPage {
 		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $text, $textLinks, PREG_PATTERN_ORDER );
 		$links = array();
 		$num = 0;
-		for ( $i = 0; $i < count( $textLinks[1] ); $i++ ) {
+		$textLinksCount = count( $textLinks[1] );
+		for ( $i = 0; $i < $textLinksCount; $i++ ) {
 			$title = Title::newFromText( $textLinks[1][$i] );
 			if ( $title !== null && $title->inNamespace( $namespace ) ) {
 				if ( $textLinks[3][$i] === '' ) {

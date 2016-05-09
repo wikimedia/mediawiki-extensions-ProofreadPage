@@ -254,7 +254,8 @@ class PagesTagParser extends TagParser {
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
 			// find next and previous pages in list
-			for ( $i = 0; $i < count( $indexLinks ); $i++ ) {
+			$indexLinksCount = count( $indexLinks );
+			for ( $i = 0; $i < $indexLinksCount; $i++ ) {
 				if ( $pageTitle->equals( $indexLinks[$i][0] ) ) {
 					$current = '[[' . $indexLinks[$i][0]->getFullText() . '|' . $indexLinks[$i][1] . ']]';
 					break;
