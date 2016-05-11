@@ -26,5 +26,16 @@
 	"proofreadpage_invalid_interval": "Tilala:interval diila sah",
 	"proofreadpage_nextpage": "Halaman bohu",
 	"proofreadpage_header": "Lunggongo (noinlude)",
-	"proofreadpage_quality0_category": "Halaman diila o tuladu"
+	"proofreadpage_footer": "U'ato (noinclude)",
+	"proofreadpage_quality0_category": "Halaman diila o tuladu",
+	"proofreadpage_index_status": "Status indeks",
+	"proofreadpage_index_size": "Jumula lo halaman",
+	"proofreadpage_specialpage_label_key": "Lolohe",
+	"proofreadpage_specialpage_label_sortascending": "Urutiya deyitaato",
+	"proofreadpage_index_listofpages": "Daputari lo halaman",
+	"proofreadpage_image_message": "Wumbuta ode halaman indeks",
+	"proofreadpage_page_status": "Status lo halaman",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|halaman}}",
+	"proofreadpage_specialpage_legend": "Lolohe halaman indeks",
+	"proofreadpage_source": "Bungo"
 }
