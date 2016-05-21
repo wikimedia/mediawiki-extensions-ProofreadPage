@@ -6,7 +6,8 @@
 			"Farras",
 			"Irwangatot",
 			"IvanLanin",
-			"Iwan Novirion"
+			"Iwan Novirion",
+			"Marwan Mohamad"
 		]
 	},
 	"indexpages": "Daftar halaman indeks",
@@ -77,5 +78,6 @@
 	"proofreadpage-indexoai-repositoryName": "Metadata buku dari {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Metadata dari buku-buku yang dikelola oleh ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Skema tidak ditemukan",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Skema $1 tidak ditemukan."
+	"proofreadpage-indexoai-error-schemanotfound-text": "Skema $1 tidak ditemukan.",
+	"apihelp-query+proofread-example-1": "Mengembalikan status koreksi untuk halaman di ruangnama 250"
 }
