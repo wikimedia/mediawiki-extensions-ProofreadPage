@@ -21,6 +21,7 @@
 	height: auto;
 }
 
-#prp-page-qualityheader {
+/* TODO: Don't use IDs */
+#prp-page-qualityheader { /* stylelint-disable-line selector-no-id */
 	width: 100%;
 }

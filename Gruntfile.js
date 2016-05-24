@@ -4,6 +4,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-jscs' );
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
+	grunt.loadNpmTasks( 'grunt-stylelint' );
 
 	grunt.initConfig( {
 		jshint: {
@@ -13,13 +14,16 @@ module.exports = function ( grunt ) {
 			all: [
 				'*.js',
 				'modules/**/*.js',
-				'!modules/jquery/*.js',
-				'!node_modules/**',
-				'!vendor/**'
+				'!modules/jquery/*.js'
 			]
 		},
 		jscs: {
 			src: '<%= jshint.all %>'
+		},
+		stylelint: {
+			all: [
+				'modules/**/*.css'
+			]
 		},
 		banana: {
 			all: 'i18n/'
@@ -33,6 +37,6 @@ module.exports = function ( grunt ) {
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'banana' ] );
+	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'stylelint', 'jsonlint', 'banana' ] );
 	grunt.registerTask( 'default', 'test' );
 };

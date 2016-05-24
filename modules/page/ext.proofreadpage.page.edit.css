@@ -1,8 +1,9 @@
-#editform .prp-page-content {
+/* TODO: Don't use IDs */
+#editform .prp-page-content { /* stylelint-disable-line selector-no-id */
 	line-height: 1.5em;
 }
-#editform .prp-page-content label {
-	color: gray;
+#editform .prp-page-content label { /* stylelint-disable-line selector-no-id */
+	color: #808080;
 	font-size: 80%;
 }
 
@@ -12,9 +13,10 @@
 
 /* Adjustments for WikiEditor extension */
 .wikiEditor-ui-text textarea {
-	border: none;
+	border: 0;
 	padding: 0;
 	line-height: 1.5em;
-	margin: 0 !important;
+	/* TODO: Is this required? Does it need to be important? */
+	margin: 0 !important; /* stylelint-disable-line declaration-no-important */
 	resize: vertical;
 }
