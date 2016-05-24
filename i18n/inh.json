@@ -11,5 +11,13 @@
 	"proofreadpage_nosuch_index": "ГIалат: Цу тайпа индекс йолаш яц.",
 	"proofreadpage_nosuch_file": "ГIалат: Цу тайпа файл яц",
 	"proofreadpage_quality0_category": "Текст йоацаш",
-	"proofreadpage_specialpage_label_key": "Лахар:"
+	"proofreadpage_quality1_category": "Дешаш нийсдар даь яц",
+	"proofreadpage_quality1_message": "Дешаш нийсдар даь яц ер оагIув",
+	"proofreadpage_specialpage_label_key": "Лахар:",
+	"content-model-proofread-page": "ОагIув: оагIув",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "ОагIув харжар",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ОагIонаш",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 гIолла",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "XӀа-а",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "A"
 }
