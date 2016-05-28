@@ -14,20 +14,6 @@ use Title;
  */
 class FileProviderTest extends ProofreadPageTestCase {
 
-	/**
-	 * @var FileProvider
-	 */
-	protected $fileProvider;
-
-	protected function setUp() {
-		parent::setUp();
-
-		$this->fileProvider = new FileProviderMock( [
-			$this->getFileFromName( 'LoremIpsum.djvu' ),
-			$this->getFileFromName( 'Test.jpg' )
-		] );
-	}
-
 	private function getFileFromName( $fileName ) {
 		return $this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, $fileName ) );
 	}
@@ -35,18 +21,21 @@ class FileProviderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider indexFileProvider
 	 */
-	public function testGetForIndexPage( ProofreadIndexPage $index, File $file ) {
-		$this->assertEquals(
-			$file,
-			$this->fileProvider->getForIndexPage( $index )
-		);
+	public function testGetForIndexPage( ProofreadIndexPage $index, File $file, FileProvider $fileProvider ) {
+		$this->assertEquals( $file, $fileProvider->getForIndexPage( $index ) );
 	}
 
 	public function indexFileProvider() {
+		$fileProvider = new FileProviderMock( [
+			$this->getFileFromName( 'LoremIpsum.djvu' ),
+			$this->getFileFromName( 'Test.jpg' )
+		] );
+
 		return [
 			[
 				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum.djvu' ) ),
-				$this->getFileFromName( 'LoremIpsum.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				$fileProvider
 			],
 		];
 	}
@@ -55,17 +44,24 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 * @expectedException \ProofreadPage\FileNotFoundException
 	 * @dataProvider indexFileNotFoundProvider
 	 */
-	public function testGetForIndexPageWithFileNotFound( ProofreadIndexPage  $index ) {
-		$this->fileProvider->getForIndexPage( $index );
+	public function testGetForIndexPageWithFileNotFound( ProofreadIndexPage $index, FileProvider $fileProvider ) {
+		$fileProvider->getForIndexPage( $index );
 	}
 
 	public function indexFileNotFoundProvider() {
+		$fileProvider = new FileProviderMock( [
+			$this->getFileFromName( 'LoremIpsum.djvu' ),
+			$this->getFileFromName( 'Test.jpg' )
+		] );
+
 		return [
 			[
-				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu' ) )
+				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu' ) ),
+				$fileProvider
 			],
 			[
-				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'Test' ) )
+				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'Test' ) ),
+				$fileProvider
 			],
 		];
 	}
@@ -73,30 +69,36 @@ class FileProviderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider pageFileProvider
 	 */
-	public function testGetForPagePage( ProofreadPagePage $page, File $file ) {
-		$this->assertEquals(
-			$file,
-			$this->fileProvider->getForPagePage( $page )
-		);
+	public function testGetForPagePage( ProofreadPagePage $page, File $file, FileProvider $fileProvider ) {
+		$this->assertEquals( $file, $fileProvider->getForPagePage( $page ) );
 	}
 
 	public function pageFileProvider() {
+		$fileProvider = new FileProviderMock( [
+			$this->getFileFromName( 'LoremIpsum.djvu' ),
+			$this->getFileFromName( 'Test.jpg' )
+		] );
+
 		return [
 			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/4' ) ),
-				$this->getFileFromName( 'LoremIpsum.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				$fileProvider
 			],
 			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/djvu/1' ) ),
-				$this->getFileFromName( 'LoremIpsum.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				$fileProvider
 			],
 			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu' ) ),
-				$this->getFileFromName( 'LoremIpsum.djvu' )
+				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				$fileProvider
 			],
 			[
 				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'Test.jpg' ) ),
-				$this->getFileFromName( 'Test.jpg' )
+				$this->getFileFromName( 'Test.jpg' ),
+				$fileProvider
 			],
 		];
 	}
@@ -105,17 +107,24 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 * @expectedException \ProofreadPage\FileNotFoundException
 	 * @dataProvider pageFileNotFoundProvider
 	 */
-	public function testGetForPagePageWithFileNotFound( ProofreadPagePage  $page ) {
-		$this->fileProvider->getForPagePage( $page );
+	public function testGetForPagePageWithFileNotFound( ProofreadPagePage $page, FileProvider $fileProvider ) {
+		$fileProvider->getForPagePage( $page );
 	}
 
 	public function pageFileNotFoundProvider() {
+		$fileProvider = new FileProviderMock( [
+			$this->getFileFromName( 'LoremIpsum.djvu' ),
+			$this->getFileFromName( 'Test.jpg' )
+		] );
+
 		return [
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu/4' ) )
+				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu/4' ) ),
+				$fileProvider
 			],
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'Test' ) )
+				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'Test' ) ),
+				$fileProvider
 			],
 		];
 	}
