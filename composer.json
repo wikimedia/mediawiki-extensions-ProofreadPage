@@ -9,12 +9,15 @@
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2",
-		"mediawiki/mediawiki-codesniffer": "0.7.1"
+		"mediawiki/mediawiki-codesniffer": "0.7.2"
 	},
 	"scripts": {
 		"test": [
 			"parallel-lint . --exclude node_modules --exclude vendor",
 			"phpcs"
+		],
+		"fix": [
+			"phpcbf"
 		]
 	}
 }
