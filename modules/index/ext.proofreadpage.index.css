@@ -1,4 +1,5 @@
-table#prp-formTable th {
+/* TODO: Don't use IDs */
+table#prp-formTable th { /* stylelint-disable-line selector-no-id */
 	text-align: left;
 	font-weight: normal;
 }
@@ -8,7 +9,7 @@ table#prp-formTable th {
 	padding: 0 0 0 15px;
 
 	/* @embed */
-	background-image: url('images/help-question.gif');
+	background-image: url( images/help-question.gif );
 	background-position: left center;
 	background-repeat: no-repeat;
 	cursor: pointer;
