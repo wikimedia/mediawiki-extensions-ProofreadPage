@@ -70,5 +70,9 @@
 	"proofreadpage-button-toggle-layout-label": "Kinnig a-sav/a-led",
 	"proofreadpage-preferences-showheaders-label": "Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù e mod Pajenn",
 	"proofreadpage-indexoai-error-schemanotfound": "N'eo ket bet kavet ar brastres",
-	"proofreadpage-indexoai-error-schemanotfound-text": "N'eo ket bet kavet ar brastres $1."
+	"proofreadpage-indexoai-error-schemanotfound-text": "N'eo ket bet kavet ar brastres $1.",
+	"content-model-proofread-page": "Pajenn: pajenn",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pajennoù",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ya",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ket"
 }
