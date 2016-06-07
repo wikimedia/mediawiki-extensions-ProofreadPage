@@ -3,12 +3,15 @@
 		"authors": [
 			"Likopiän tyttö",
 			"Mashoi7",
-			"Ilja.mos"
+			"Ilja.mos",
+			"Varvana"
 		]
 	},
 	"proofreadpage_image": "Kuva",
 	"proofreadpage_quality0_category": "Ilman tekstie",
 	"proofreadpage_quality1_category": "Ei tarkiššusluvettu",
 	"proofreadpage_quality2_category": "Ongelmallini",
-	"proofreadpage_quality3_category": "Tarkiššusluvettu"
+	"proofreadpage_quality3_category": "Tarkiššusluvettu",
+	"proofreadpage_quality4_category": "Hyväkšytty",
+	"proofreadpage_quality1_message": "Tätä šivuo ei ole tarkissušluvettu"
 }

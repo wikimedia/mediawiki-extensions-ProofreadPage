@@ -7,7 +7,8 @@
 			"Irwangatot",
 			"IvanLanin",
 			"Iwan Novirion",
-			"Marwan Mohamad"
+			"Marwan Mohamad",
+			"Rachmat.Wahidi"
 		]
 	},
 	"indexpages": "Daftar halaman indeks",
@@ -73,11 +74,25 @@
 	"proofreadpage-button-reset-zoom-label": "Ukuran asli",
 	"proofreadpage-button-zoom-in-label": "Perbesar",
 	"proofreadpage-button-toggle-layout-label": "Tata letak vertikal/horizontal",
+	"proofreadpage-pageinfo-status": "Status uji-baca",
 	"proofreadpage-preferences-showheaders-label": "Menunjukkan bidang header dan footer saat menyunting dalam ruangnama {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Menggunakan tampilan horizontal saat menyunting dalam ruangnama {{ns:page}}",
 	"proofreadpage-indexoai-repositoryName": "Metadata buku dari {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Metadata dari buku-buku yang dikelola oleh ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Skema tidak ditemukan",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Skema $1 tidak ditemukan.",
-	"apihelp-query+proofread-example-1": "Mengembalikan status koreksi untuk halaman di ruangnama 250"
+	"proofreadpage-disambiguationspage": "Templat:disambig",
+	"proofreadpage-indexquality-alt": "$1 memvalidasi {{PLURAL:$1|halaman|halaman}}, $2 hanya menguji-baca {{PLURAL:$2|halaman|halaman}} dan $3 tidak menguji-baca {{PLURAL:$3|halaman|halaman}}",
+	"content-model-proofread-page": "Halaman: halaman",
+	"apihelp-query+proofread-description": "Mengembalikan informasi tentang status uji-baca saat ini dari halaman yang ditentukan.",
+	"apihelp-query+proofread-example-1": "Mengembalikan status koreksi untuk halaman di ruangnama 250",
+	"apihelp-query+proofreadinfo-description": "Mengembalikan informasi tentang setelah ekstensi ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Atribut uji-baca manakan untuk mendapatkan:\n;namespaces:Informasi tentang ruangnama \"{{ns:Page}}\" dan \"{{ns:Index}}\".\n;qualitylevels:daftar tingkatan kualitas uji-baca.",
+	"apihelp-query+proofreadinfo-example-1": "Mengembalikan informasi baku",
+	"apihelp-query+proofreadinfo-example-3": "Mengembalikan informasi ruangnama",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Pemilihan halaman",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Halaman",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transklusi dari $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ya",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Tidak"
 }
