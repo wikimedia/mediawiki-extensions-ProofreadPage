@@ -22,7 +22,8 @@
 			"Umherirrender",
 			"Yknok29",
 			"Nemo bis",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Guycn2"
 		]
 	},
 	"indexpages": "{{doc-special|IndexPages}}",
@@ -82,7 +83,7 @@
 	"proofreadpage_specialpage_searcherrortext": "Content of the error page when the search engine does not work",
 	"proofreadpage_source": "{{Identical|Source}}",
 	"proofreadpage_source_message": "Used as text of a link",
-	"right-pagequality": "{{doc-right|pagequality}}\nThis phrase is confusing: Modify 'page quality flag' or 'Modify page quality' flag ?",
+	"right-pagequality": "{{doc-right|pagequality}}",
 	"proofreadpage-section-tools": "Used as label (javascript)",
 	"proofreadpage-group-zoom": "{{Identical|Zoom}}",
 	"proofreadpage-group-other": "This is a group header in the Proofread Page extension preferences panel for \"miscellaneous\" settings.\n{{Identical|Other}}",
