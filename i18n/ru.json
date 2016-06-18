@@ -8,7 +8,8 @@
 			"Okras",
 			"Sergey kudryavtsev",
 			"Александр Сигачёв",
-			"Гизатуллина"
+			"Гизатуллина",
+			"Ole Yves"
 		]
 	},
 	"indexpages": "Список индексных страниц",
@@ -82,8 +83,16 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Схема не найдена",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Схема $1 не была найдена.",
 	"proofreadpage-disambiguationspage": "Template:неоднозначность",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|проверенная страница|проверенные страницы|проверенных страниц}}, $2 {{PLURAL:$2|вычитанная страница|вычитанные страницы|вычитанных страниц}} и $3 {{PLURAL:$3|невычитанная страница|невычитанные страницы|невычитанных страниц}}.",
 	"content-model-proofread-page": "Страница: страница",
+	"apihelp-query+proofread-description": "Возвращает информацию о текущем статусе вычитки данных страниц.",
+	"apihelp-query+proofread-example-1": "Вернуть информацию о вычитке для страниц в пространстве имён 250",
+	"apihelp-query+proofreadinfo-description": "Вернуть информацию о настройках расширения ProofreadPage.",
+	"apihelp-query+proofreadinfo-example-1": "Вернуть информацию по умолчанию",
+	"apihelp-query+proofreadinfo-example-3": "Вернуть информацию о пространстве имён",
 	"proofreadpage-visualeditor-node-pages-inspector-title": " Биттәрҙе юҡ итеү",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Страницы",
 	"proofreadpage-visualeditor-node-pages-inspector-description": " $1 тапшырыу",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Юҡ"
 }
