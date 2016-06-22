@@ -207,6 +207,9 @@ class ProofreadPagePage {
 			return null;
 		}
 		$thumbnail = $image->transform( $transformAttributes );
+		if ( !$thumbnail ) {
+			return null;
+		}
 		return $thumbnail->toHtml( $options );
 	}
 
