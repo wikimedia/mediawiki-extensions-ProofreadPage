@@ -44,9 +44,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 		$serializedString = '<noinclude><pagequality level="' . $level . '" user="';
 		$serializedString .= $proofreader;
-		$serializedString .= '" /><div class="pagetext">' . $header ."\n\n\n" . '</noinclude>';
+		$serializedString .= '" />' . $header . '</noinclude>';
 		$serializedString .= $body;
-		$serializedString .= '<noinclude>' . $footer . '</div></noinclude>';
+		$serializedString .= '<noinclude>' . $footer . '</noinclude>';
 
 		$this->assertEquals( $serializedString, $this->handler->serializeContent( $pageContent ) );
 	}
