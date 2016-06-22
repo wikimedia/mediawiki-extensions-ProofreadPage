@@ -198,6 +198,36 @@
 				"desktop",
 				"mobile"
 			]
+		},
+		"ext.proofreadpage.ve.pageTarget.init": {
+			"scripts": [
+				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.init.js"
+			]
+		},
+		"ext.proofreadpage.ve.pageTarget": {
+			"scripts": [
+				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.js",
+				"ve/pageTarget/ve.dm.MWPagesSectionNode.js",
+				"ve/pageTarget/ve.ce.MWPagesSectionNode.js"
+			],
+			"styles": [
+				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.css"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore",
+				"jquery.prpZoom"
+			],
+			"messages": [
+				"proofreadpage-button-zoom-out-label",
+				"proofreadpage-button-reset-zoom-label",
+				"proofreadpage-button-zoom-in-label",
+				"proofreadpage_body",
+				"proofreadpage_footer",
+				"proofreadpage_header"
+			],
+			"targets": [
+				"desktop"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -286,6 +316,12 @@
 	"VisualEditorPluginModules": [
 		"ext.proofreadpage.ve.node.pages"
 	],
+	"VisualEditorAvailableNamespaces": {
+		"Page": true
+	},
+	"VisualEditorAvailableContentModels": {
+		"proofread-page": true
+	},
 	"config": {
 		"@ProofreadPageNamespaceIds": "Array that contain the ids of namespaces used by ProofreadPage",
 		"ProofreadPageNamespaceIds": []
