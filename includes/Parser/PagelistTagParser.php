@@ -75,7 +75,7 @@ class PagelistTagParser extends TagParser {
 			if ( $pageNumber->isEmpty() || !$title ) {
 				$return .= $view . ' ';
 			} else {
-				$return .= '[[' . $pageTitle->getPrefixedText() . '|' . $view . ']] '; //TODO: use linker?
+				$return .= '[[' . $pageTitle->getPrefixedText() . '|' . $view . ']] '; // TODO: use linker?
 			}
 		}
 

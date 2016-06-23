@@ -97,7 +97,7 @@ class ProofreadPages extends QueryPage {
 
 	function reallyDoQuery( $limit, $offset = false ) {
 		$count = count( $this->searchList );
-		if ( $count > $this->limit ) { //Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
+		if ( $count > $this->limit ) { // Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
 			$this->addOne = true;
 			unset( $this->searchList[ $count - 1 ] );
 		}
@@ -111,7 +111,7 @@ class ProofreadPages extends QueryPage {
 
 	function preprocessResults( $dbr, $res ) {
 		if ( $this->addOne !== null ) {
-			$this->numRows++; //there is a deleted item
+			$this->numRows++; // there is a deleted item
 		}
 	}
 

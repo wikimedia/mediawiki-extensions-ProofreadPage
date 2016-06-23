@@ -225,7 +225,7 @@ class PageContent extends TextContent {
 			$options = $this->getContentHandler()->makeParserOptions( 'canonical' );
 		}
 
-		//create content
+		// create content
 		$wikitextContent = new WikitextContent(
 			$this->header->getNativeData() . "\n\n" . $this->body->getNativeData() . $this->footer->getNativeData()
 		);
@@ -239,7 +239,7 @@ class PageContent extends TextContent {
 		);
 
 
-		//html container
+		// html container
 		$html = Html::openElement( 'div', [ 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ] ) .
 			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
@@ -248,10 +248,10 @@ class PageContent extends TextContent {
 			Html::closeElement( 'div' );
 		$parserOutput->setText( $html );
 
-		//add modules
+		// add modules
 		$parserOutput->addModuleStyles( 'ext.proofreadpage.base' );
 
-		//add scan image to dependencies
+		// add scan image to dependencies
 		$parserOutput->addImage( strtok( $title->getDBkey(), '/' ) );
 
 		return $parserOutput;

@@ -44,14 +44,14 @@ class ProofreadPageInit {
 			if ( !isset( $wgExtraNamespaces[$wgProofreadPageNamespaceIds[$key]] ) ) {
 				self::createNamespace( $wgProofreadPageNamespaceIds[$key], $key );
 			}
-		} else { //try to find if a namespace with a known name is set (for backward compatibility)
+		} else { // try to find if a namespace with a known name is set (for backward compatibility)
 			$id = self::getNamespaceIdForDefaultName( $key );
 			if ( $id !== false ) {
 				$wgProofreadPageNamespaceIds[$key] = $id;
 			} else {
 				if ( self::createNamespace( self::$defaultNamespaceIds[$key], $key ) ) {
 					$wgProofreadPageNamespaceIds[$key] = self::$defaultNamespaceIds[$key];
-				} //else: the relevant error message is output by getNamespaceId
+				} // else: the relevant error message is output by getNamespaceId
 			}
 		}
 
@@ -93,7 +93,7 @@ class ProofreadPageInit {
 
 		$wgExtraNamespaces[$id] = self::getNamespaceName( $key );
 		$wgExtraNamespaces[$id + 1] = self::getNamespaceName( $key . '_talk' );
-		$wgCanonicalNamespaceNames[$id] = $wgExtraNamespaces[$id]; //Very hugly but needed because initNamespaces() is called after the add of $wgExtraNamespaces into $wgCanonicalNamespaceNames
+		$wgCanonicalNamespaceNames[$id] = $wgExtraNamespaces[$id]; // Very hugly but needed because initNamespaces() is called after the add of $wgExtraNamespaces into $wgCanonicalNamespaceNames
 		$wgCanonicalNamespaceNames[$id + 1] = $wgExtraNamespaces[$id + 1];
 
 		return true;
@@ -128,7 +128,7 @@ class ProofreadPageInit {
 		global $wgProofreadPageNamespaceIds;
 
 		if ( !isset( $wgProofreadPageNamespaceIds[$key] ) ) {
-			die( 'Namespace with id ' . self::$defaultNamespaceIds[$key] . ' is already set ! ProofreadPage can\'t use his id in order to create ' . self::getNamespaceName( $key, 'en' ) . ' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page' ); //The only case where $wgProofreadPageNamespaceIds is not set is when a namespace with the default id already exist and is not a prp namespace.
+			die( 'Namespace with id ' . self::$defaultNamespaceIds[$key] . ' is already set ! ProofreadPage can\'t use his id in order to create ' . self::getNamespaceName( $key, 'en' ) . ' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page' ); // The only case where $wgProofreadPageNamespaceIds is not set is when a namespace with the default id already exist and is not a prp namespace.
 		}
 
 		return $wgProofreadPageNamespaceIds[$key];

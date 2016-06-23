@@ -51,7 +51,7 @@ class PaginationFactory {
 			$file = false;
 		}
 
-		//check if it is using pagelist
+		// check if it is using pagelist
 		$pagelist = $indexPage->getPagelistTagContent();
 		if ( $pagelist !== null && $file && $file->isMultipage() ) {
 			return new FilePagination(

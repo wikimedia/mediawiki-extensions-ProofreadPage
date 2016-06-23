@@ -44,7 +44,7 @@ class PageContentBuilder {
 		$index = $page->getIndex();
 		$body = '';
 
-		//default header and footer
+		// default header and footer
 		if ( $index ) {
 			$params = [];
 			try {
@@ -54,7 +54,7 @@ class PageContentBuilder {
 				$params['pagenum'] = $displayedPageNumber->getFormattedPageNumber( $page->getTitle()->getPageLanguage() );
 			} catch ( PageNotInPaginationException $e ) {
 			} catch ( OutOfBoundsException $e ) {
-	  } //should not happen
+	  } // should not happen
 
 			$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
 			$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
@@ -63,7 +63,7 @@ class PageContentBuilder {
 			$footer = $this->contextSource->msg( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
 		}
 
-		//Extract text layer
+		// Extract text layer
 		try {
 			$image = $this->context->getFileProvider()->getForPagePage( $page );
 			$pageNumber = $page->getPageNumber();

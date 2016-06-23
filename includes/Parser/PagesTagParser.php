@@ -88,7 +88,7 @@ class PagesTagParser extends TagParser {
 
 				$pagenums = [];
 
-				//add page selected with $include in pagenums
+				// add page selected with $include in pagenums
 				if ( $include ) {
 					$list = $this->parseNumList( $include );
 					if ( $list  == null ) {
@@ -97,7 +97,7 @@ class PagesTagParser extends TagParser {
 					$pagenums = $list;
 				}
 
-				//ad pages selected with from and to in pagenums
+				// ad pages selected with from and to in pagenums
 				if ( $from || $to ) {
 					if ( !$from ) {
 						$from = 1;
@@ -118,7 +118,7 @@ class PagesTagParser extends TagParser {
 					}
 				}
 
-				//remove excluded pages form $pagenums
+				// remove excluded pages form $pagenums
 				if ( $exclude ) {
 					$excluded = $this->parseNumList( $exclude );
 					if ( $excluded  == null ) {
@@ -131,12 +131,12 @@ class PagesTagParser extends TagParser {
 					return $this->formatError( 'proofreadpage_interval_too_large' );
 				}
 
-				ksort( $pagenums ); //we must sort the array even if the numerical keys are in a good order.
+				ksort( $pagenums ); // we must sort the array even if the numerical keys are in a good order.
 				if ( end( $pagenums ) > $count ) {
 					return $this->formatError( 'proofreadpage_invalid_interval' );
 				}
 
-				//Create the list of pages to translude. the step system start with the smaller pagenum
+				// Create the list of pages to translude. the step system start with the smaller pagenum
 				$mod = reset( $pagenums ) % $step;
 				foreach ( $pagenums as $num ) {
 					if ( $step == 1 || $num % $step == $mod ) {
@@ -244,7 +244,7 @@ class PagesTagParser extends TagParser {
 				);
 			}
 			catch ( OutOfBoundsException $e ) {
-	  } //if the first page does not exists
+	  } // if the first page does not exists
 		}
 
 		if ( $header ) {

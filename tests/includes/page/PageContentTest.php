@@ -220,7 +220,7 @@ class PageContentTest extends ProofreadPageTestCase {
 
 		$content = self::newContent( '', 'RRRR' );
 		$newContent = $content->updateRedirect( $title );
-		$this->assertEquals( $content, $newContent ); //no update
+		$this->assertEquals( $content, $newContent ); // no update
 
 		$content = self::newContent( '', '#REDIRECT [[Test]]' );
 		$newContent = $content->updateRedirect( $title );

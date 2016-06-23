@@ -362,7 +362,7 @@ class ProofreadIndexPage {
 			return null;
 		}
 
-		//we can't use the parser here because it replace tags like <references /> by strange UIDs
+		// we can't use the parser here because it replace tags like <references /> by strange UIDs
 		$params = $this->getIndexEntriesForHeaderAsTemplateParams() + $otherParams;
 		return preg_replace_callback( '/{\{\{(.*)(\|(.*))?\}\}\}/U', function( $matches ) use ( $params ) {
 			$paramKey = trim( strtolower( $matches[1] ) );

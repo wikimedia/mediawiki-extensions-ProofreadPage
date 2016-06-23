@@ -103,7 +103,7 @@ class ProofreadPage {
 	 * @return boolean hook return value
 	 */
 	public static function onCustomEditor( Article $article, User $user ) {
-		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) { //TODO ExternalEditor case
+		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) { // TODO ExternalEditor case
 			$editor = new EditProofreadIndexPage( $article );
 			$editor->edit();
 			return false;
@@ -311,7 +311,7 @@ class ProofreadPage {
 		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table
-		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {	//Move this part to EditProofreadIndexPage
+		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {	// Move this part to EditProofreadIndexPage
 			ProofreadPage::updatePrIndex( $article );
 			return true;
 		}
@@ -661,14 +661,14 @@ class ProofreadPage {
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
 
-		//Show header and footer fields when editing in the Page namespace
+		// Show header and footer fields when editing in the Page namespace
 		$preferences['proofreadpage-showheaders'] = [
 			'type'           => 'toggle',
 			'label-message'  => 'proofreadpage-preferences-showheaders-label',
 			'section'        => 'editing/advancedediting',
 		];
 
-		//Use horizontal layout when editing in the Page namespace
+		// Use horizontal layout when editing in the Page namespace
 		$preferences['proofreadpage-horizontal-layout'] = [
 			'type'           => 'toggle',
 			'label-message'  => 'proofreadpage-preferences-horizontal-layout-label',
@@ -701,7 +701,7 @@ class ProofreadPage {
 
 		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql', true );
 
-		//fix issue with content type hardcoded in database
+		// fix issue with content type hardcoded in database
 		if ( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
 			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadPagePagesContentModel' );
 		}
@@ -731,7 +731,7 @@ class ProofreadPage {
 		}
 		$page = ProofreadPagePage::newFromTitle( $title );
 
-		//Image link
+		// Image link
 		try {
 			$image = Context::getDefaultContext()->getFileProvider()->getForPagePage( $page );
 			$imageUrl = null;
@@ -749,7 +749,7 @@ class ProofreadPage {
 					$imageUrl = $image->getThumbUrl( $thumbName );
 				}
 			} else {
-				//The thumb returned is invalid for not multipage pages when the width requested is the image width
+				// The thumb returned is invalid for not multipage pages when the width requested is the image width
 				$imageUrl = $image->getViewURL();
 			}
 
@@ -764,7 +764,7 @@ class ProofreadPage {
 		catch ( FileNotFoundException $e ) {
 	 }
 
-		//Prev, Next and Index links
+		// Prev, Next and Index links
 		$indexPage = $page->getIndex();
 		if ( $indexPage ) {
 			$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
@@ -781,7 +781,7 @@ class ProofreadPage {
 					];
 				}
 				catch ( OutOfBoundsException $e ) {
-	   } //if the previous page does not exits
+	   } // if the previous page does not exits
 
 				try {
 					$nextPage  = $pagination->getPage( $pageNumber + 1 );
@@ -793,7 +793,7 @@ class ProofreadPage {
 					];
 				}
 				catch ( OutOfBoundsException $e ) {
-	   } //if the next page does not exits
+	   } // if the next page does not exits
 			}
 			catch ( PageNotInPaginationException $e ) {
 	  }

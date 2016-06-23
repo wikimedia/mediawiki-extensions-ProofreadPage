@@ -57,9 +57,9 @@ class FileProvider {
 	 * @throws FileNotFoundException
 	 */
 	public function getForPagePage( ProofreadPagePage $page ) {
-		//try to get an image with the same name as the file
+		// try to get an image with the same name as the file
 		return $this->getFileFromTitle(
-			Title::makeTitle( NS_IMAGE, strtok( $page->getTitle()->getText(), '/' ) ) //use the base name as file name
+			Title::makeTitle( NS_IMAGE, strtok( $page->getTitle()->getText(), '/' ) ) // use the base name as file name
 		);
 	}
 }
