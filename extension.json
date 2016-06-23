@@ -301,8 +301,8 @@
 		"ContentHandlerDefaultModelFor": [
 			"ProofreadPage::onContentHandlerDefaultModelFor"
 		],
-		"APIEditBeforeSave": [
-			"ProofreadPage::onAPIEditBeforeSave"
+		"EditFilterMergedContent": [
+			"ProofreadPage::onEditFilterMergedContent"
 		],
 		"EditFormPreloadText": [
 			"ProofreadPage::onEditFormPreloadText"
