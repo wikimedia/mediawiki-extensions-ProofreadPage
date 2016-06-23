@@ -53,7 +53,8 @@ class PageContentBuilder {
 				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
 				$params['pagenum'] = $displayedPageNumber->getFormattedPageNumber( $page->getTitle()->getPageLanguage() );
 			} catch ( PageNotInPaginationException $e ) {
-			} catch ( OutOfBoundsException $e ) {} //should not happen
+			} catch ( OutOfBoundsException $e ) {
+	  } //should not happen
 
 			$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
 			$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
@@ -77,7 +78,8 @@ class PageContentBuilder {
 					$body = preg_replace( "/(\\\\\d*)/", '', $text );
 				}
 			}
-		} catch ( FileNotFoundException $e ) {}
+		} catch ( FileNotFoundException $e ) {
+	 }
 
 		return new PageContent(
 			new WikitextContent( $header ),

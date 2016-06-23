@@ -760,7 +760,9 @@ class ProofreadPage {
 					'text' => wfMessage( 'proofreadpage_image' )->plain()
 				];
 			}
-		} catch ( FileNotFoundException $e ) {}
+		}
+		catch ( FileNotFoundException $e ) {
+	 }
 
 		//Prev, Next and Index links
 		$indexPage = $page->getIndex();
@@ -777,7 +779,9 @@ class ProofreadPage {
 						'href' => self::getLinkUrlForTitle( $prevTitle ),
 						'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
 					];
-				} catch ( OutOfBoundsException $e ) {} //if the previous page does not exits
+				}
+				catch ( OutOfBoundsException $e ) {
+	   } //if the previous page does not exits
 
 				try {
 					$nextPage  = $pagination->getPage( $pageNumber + 1 );
@@ -787,8 +791,12 @@ class ProofreadPage {
 						'href' => self::getLinkUrlForTitle( $nextTitle ),
 						'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
 					];
-				} catch ( OutOfBoundsException $e ) {} //if the next page does not exits
-			} catch ( PageNotInPaginationException $e ) {}
+				}
+				catch ( OutOfBoundsException $e ) {
+	   } //if the next page does not exits
+			}
+			catch ( PageNotInPaginationException $e ) {
+	  }
 
 			$links['namespaces']['proofreadPageIndexLink'] = [
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',

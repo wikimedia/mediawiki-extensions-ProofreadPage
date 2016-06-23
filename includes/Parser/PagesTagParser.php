@@ -242,7 +242,9 @@ class PagesTagParser extends TagParser {
 					$firstpage->getArticleID(),
 					$firstpage->getLatestRevID()
 				);
-			} catch ( OutOfBoundsException $e ) {} //if the first page does not exists
+			}
+			catch ( OutOfBoundsException $e ) {
+	  } //if the first page does not exists
 		}
 
 		if ( $header ) {
