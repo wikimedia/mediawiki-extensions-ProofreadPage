@@ -18,9 +18,6 @@
 	<rule ref="MediaWiki.WhiteSpace.MultipleEmptyLines.MultipleEmptyLines">
 		<severity>0</severity>
 	</rule>
-	<rule ref="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.SingleSpaceBeforeSingleLineComment">
-		<severity>0</severity>
-	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php" />
 	<exclude-pattern>node_modules/</exclude-pattern>

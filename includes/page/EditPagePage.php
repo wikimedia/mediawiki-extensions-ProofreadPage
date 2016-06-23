@@ -77,7 +77,7 @@ class EditPagePage extends EditPage {
 	protected function showContentForm() {
 		$out = $this->mArticle->getContext()->getOutput();
 
-		//custom CSS for preview
+		// custom CSS for preview
 		$css = $this->pagePage->getCustomCss();
 		if ( $css !== '' ) {
 			$out->addInlineStyle( $css );
@@ -112,7 +112,7 @@ class EditPagePage extends EditPage {
 			$content->getFooter()->serialize(),
 			$inputAttributes + [ 'rows' => '2', 'tabindex' => '1' ]
 		);
-		//the 3 textarea tabindex are set to 1 because summary tabindex is 1 too
+		// the 3 textarea tabindex are set to 1 because summary tabindex is 1 too
 		$out->addHTML( $this->pagePage->getPageContainerEnd() );
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );

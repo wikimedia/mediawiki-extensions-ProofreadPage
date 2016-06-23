@@ -420,7 +420,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * Output the ListSets action
 	 */
 	protected function listSets() {
-		//try if the page exist (required by specification)
+		// try if the page exist (required by specification)
 		if ( !ProofreadIndexOaiSets::withSets() ) {
 			throw new ProofreadIndexOaiError( "This repository doesn't support sets.", 'noSetHierarchy' );
 		}
@@ -452,7 +452,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 	 * Output the ListMetadataFormats action
 	 */
 	protected function listMetadataFormats() {
-		//try if the page exist (required by specification)
+		// try if the page exist (required by specification)
 		if ( isset( $this->request['identifier'] ) ) {
 			$page = $this->getRecordPage( $this->request['identifier'] );
 		}
@@ -677,7 +677,7 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 		if ( isset( $nextToken ) ) {
 			$cursor = isset( $startToken['cursor'] ) ? $startToken['cursor'] : 0;
 			echo Xml::element( 'resumptionToken', [ 'cursor' => $cursor ], $nextToken ) . "\n";
-		} //TODO Add <resumptionToken completeListSize="6" cursor="4"/> http://www.openarchives.org/OAI/openarchivesprotocol.html#ListIdentifiers
+		} // TODO Add <resumptionToken completeListSize="6" cursor="4"/> http://www.openarchives.org/OAI/openarchivesprotocol.html#ListIdentifiers
 		echo Xml::closeElement( $verb ) . "\n";
 	}
 

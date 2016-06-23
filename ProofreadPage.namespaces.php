@@ -6,7 +6,7 @@
  * @ingroup Extensions
  */
 
-global $proofreadPageNamespacesNames; //needed in order to be used inside of ProofreadPageInit
+global $proofreadPageNamespacesNames; // needed in order to be used inside of ProofreadPageInit
 $proofreadPageNamespacesNames = [];
 
 /** English (English) */

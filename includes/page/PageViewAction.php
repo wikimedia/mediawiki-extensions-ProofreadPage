@@ -37,12 +37,12 @@ class PageViewAction extends ViewAction {
 		$page = ProofreadPagePage::newFromTitle( $wikiPage->getTitle() );
 		$out = $this->getOutput();
 
-		//render HTML
+		// render HTML
 		$out->addHTML( $page->getPageContainerBegin() );
 		$this->page->view();
 		$out->addHTML( $page->getPageContainerEnd() );
 
-		//add modules
+		// add modules
 		$out->addModules( 'ext.proofreadpage.page' );
 		$out->addModuleStyles( [
 			'ext.proofreadpage.base', 'ext.proofreadpage.page'
@@ -51,7 +51,7 @@ class PageViewAction extends ViewAction {
 			'prpPageQuality' => $content->getLevel()->getLevel()
 		] );
 
-		//custom CSS
+		// custom CSS
 		$css = $page->getCustomCss();
 		if ( $css !== '' ) {
 			$out->addInlineStyle( $css );

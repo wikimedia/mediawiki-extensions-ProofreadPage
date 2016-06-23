@@ -88,7 +88,7 @@ class EditProofreadIndexPage extends EditPage {
 			foreach ( $values as $value => $label ) {
 				$select->addOption( $label, $value );
 			}
-			if ( !isset( $values[$val] ) && $val !== '' ) { //compatiblity with already set data that aren't in the list
+			if ( !isset( $values[$val] ) && $val !== '' ) { // compatiblity with already set data that aren't in the list
 				$select->addOption( $val, $val );
 			}
 			$out->addHTML( $select->getHtml() );
@@ -188,7 +188,7 @@ class EditProofreadIndexPage extends EditPage {
 	function internalAttemptSave( &$result, $bot = false ) {
 		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
 
-		//Get list of pages titles
+		// Get list of pages titles
 		$links = $index->getLinksToPageNamespace();
 		$linksTitle = [];
 		foreach ( $links as $link ) {
