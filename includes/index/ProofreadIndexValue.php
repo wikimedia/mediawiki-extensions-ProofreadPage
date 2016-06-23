@@ -141,7 +141,8 @@ class ProofreadIndexValueString extends ProofreadIndexValue {
 	 * Return the value of the entry as string
 	 * @return string
 	 */
-	public function __toString() { // TODO improve by removing all tags.
+	public function __toString() {
+	// TODO improve by removing all tags.
 		if ( $this->value !== null ) {
 			return $this->value;
 		}
@@ -641,7 +642,8 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 	 * Return the value of the entry as URI
 	 * @return string
 	 */
-	public function getUri() { // TODO add the canonical NMA
+	public function getUri() {
+	// TODO add the canonical NMA
 		if ( $this->naan ) {
 			return 'ark:/' . $this->naan . '/' . $this->value;
 		} else {
@@ -662,7 +664,8 @@ class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 	 * @param string $value
 	 * @return bool
 	 */
-	public function isValid( $value ) { // TODO to improve
+	public function isValid( $value ) {
+	// TODO to improve
 		if ( $this->naan ) {
 			return true;
 		} else {
