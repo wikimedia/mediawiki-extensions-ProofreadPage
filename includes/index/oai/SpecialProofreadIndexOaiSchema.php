@@ -21,7 +21,6 @@
  * @ingroup SpecialPage
  */
 
-
 /**
  * A special page to return XML schema used by ProofreadPage OAi-PMH API
  */
