@@ -586,41 +586,48 @@ class ProofreadPage {
 
 	/**
 	 * Make validation of the content in the edit API
-	 * @param $editPage EditPage
-	 * @param $text string
-	 * @param $resultArr array
+	 *
+	 * @param $context Object implementing the IContextSource interface.
+	 * @param $content Content of the edit box, as a Content object.
+	 * @param $status  Status object to represent errors, etc.
+	 * @param $summary  Edit summary for page
+	 * @param $user  The User object representing the user whois performing the edit.
+	 * @param $minoredit  Whether the edit was marked as minor by the user.
 	 * @return bool
 	 */
-	public static function onAPIEditBeforeSave( EditPage $editPage, $text, array &$resultArr ) {
-		if ( $editPage->contentModel !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
+		Status $status, string $summary, User $user, boolean $minoredit ) {
+
+		// If the content's model isn't ours, ignore this; there's nothing for us to do here.
+		if ( ! ( $content->contentModel instanceof ProofreadPageContent ) ) {
 			return true;
 		}
 
-		$contentHandler = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
-		$article = $editPage->getArticle();
-		$user = $article->getContext()->getUser();
-		$oldContent = $article->getPage()->getContent( Revision::FOR_THIS_USER, $user );
-		$newContent = $contentHandler->unserializeContent( $text, $editPage->contentFormat );
-
+		$oldContent = $context->getWikiPage()->getContent( Revision::FOR_THIS_USER, $user );
 		if ( $oldContent === null ) {
-			$oldContent = $contentHandler->makeEmptyContent();
-		}
-		$oldLevel = $oldContent->getLevel();
-		$newLevel = $newContent->getLevel();
-
-		if ( !$newContent->isValid() || $newLevel->getUser() === null && $oldLevel->getUser() !== null ) {
-			$resultArr['badpage'] = wfMessage( 'proofreadpage_badpagetext' )->text();
-			return false;
+			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )->makeEmptyContent();
 		}
 
-		$oldLevel = $oldContent->getLevel();
-		$newLevel = $newContent->getLevel();
-		//if the user change the level, the change should be allowed and the new User should be the editing user
+		// Fail if the content is invalid, or the level is being removed.
 		if (
-			!$newLevel->equals( $oldLevel ) &&
-			( $newLevel->getUser() === null || $newLevel->getUser()->getName() !== $user->getName() || !$oldLevel->isChangeAllowed( $newLevel ) )
+			!$content->isValid()
 		) {
-			$resultArr['notallowed'] = wfMessage( 'proofreadpage_notallowedtext' )->text();
+			$ourStatus = Status::newFatal( 'proofreadpage_badpagetext' );
+		}
+
+		$oldLevel = $oldContent->getLevel();
+		$newLevel = $content->getLevel();
+
+		// Fail if the user changed the level and the change isn't allowed
+		if (
+			!$newLevel->equals( $oldLevel ) && !$oldLevel->isChangeAllowed( $newLevel )
+		) {
+			$ourStatus = Status::newFatal( 'proofreadpage_notallowedtext' );
+		}
+
+		if ( isset( $ourStatus ) ) {
+			$ourStatus->value = self::AS_HOOK_ERROR;
+			$status->merge( $ourStatus );
 			return false;
 		}
 
