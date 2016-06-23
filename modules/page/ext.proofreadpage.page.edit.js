@@ -177,7 +177,7 @@
 			},
 			$edit = $( '#wpTextbox1' );
 
-		if ( mw.user.options.get( 'usebetatoolbar' ) === 1 ) {
+		if ( mw.user.options.get( 'usebetatoolbar' ) ) {
 			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
 				$edit.wikiEditor( 'addToToolbar', {
 					sections: {
@@ -189,7 +189,7 @@
 					}
 				} );
 			} );
-		} else if ( mw.user.options.get( 'showtoolbar' ) === 1 ) {
+		} else if ( mw.user.options.get( 'showtoolbar' ) ) {
 			mw.loader.using( 'mediawiki.toolbar', function () {
 				$.each( tools, function ( group, list ) {
 					$.each( list.tools, function ( id, def ) {
