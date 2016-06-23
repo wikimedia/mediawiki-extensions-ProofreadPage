@@ -12,9 +12,6 @@
 			<property name="ignoreList" type="array" value="$proofreadPageNamespacesNames" />
 		</properties>
 	</rule>
-	<rule ref="MediaWiki.WhiteSpace.MultipleEmptyLines.MultipleEmptyLines">
-		<severity>0</severity>
-	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php" />
 	<exclude-pattern>node_modules/</exclude-pattern>

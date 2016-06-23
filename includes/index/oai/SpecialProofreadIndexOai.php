@@ -21,7 +21,6 @@
  * @ingroup SpecialPage
  */
 
-
 /**
  * A special page to return metadata of index pages in RDF/XML
  * @see http://www.openarchives.org/OAI/openarchivesprotocol.html

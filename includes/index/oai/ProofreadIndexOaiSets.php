@@ -20,7 +20,6 @@
  * @file
  */
 
-
 /**
  * Manage sets-related features
  */

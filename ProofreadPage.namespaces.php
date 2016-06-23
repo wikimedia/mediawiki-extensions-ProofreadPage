@@ -233,7 +233,6 @@ $proofreadPageNamespacesNames['it'] = [
 	'index_talk' => 'Discussioni_indice'
 ];
 
-
 /** Kannada (ಕನ್ನಡ) */
 $proofreadPageNamespacesNames['kn'] = [
 	'page' => 'ಪುಟ',

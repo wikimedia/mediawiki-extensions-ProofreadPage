@@ -18,7 +18,6 @@
  * The content of this file use some code from OAIRepo Mediawiki extension.
  */
 
-
 /**
  * OAI error
  */

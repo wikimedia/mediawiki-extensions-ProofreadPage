@@ -111,7 +111,6 @@ abstract class ProofreadIndexValue {
 	}
 }
 
-
 /**
  * A string value of an index entry
  */
@@ -176,7 +175,6 @@ class ProofreadIndexValueString extends ProofreadIndexValue {
 		return 'string';
 	}
 }
-
 
 /**
  * A number value of an index entry
@@ -246,7 +244,6 @@ class ProofreadIndexValueNumber extends ProofreadIndexValue {
 		return is_numeric( $value );
 	}
 }
-
 
 /**
  * A page value of an index entry
@@ -325,7 +322,6 @@ class ProofreadIndexValuePage extends ProofreadIndexValue {
 	}
 }
 
-
 /**
  * A Langcode value of an index entry
  */
@@ -336,7 +332,6 @@ class ProofreadIndexValueLangcode extends ProofreadIndexValue {
 	 * @var string
 	 */
 	protected $value;
-
 
 	/**
 	 * Set the value
@@ -371,7 +366,6 @@ class ProofreadIndexValueLangcode extends ProofreadIndexValue {
 		return Language::isValidBuiltInCode( $value );
 	}
 }
-
 
 /**
  * An identifier value of an index entry
@@ -446,7 +440,6 @@ class ProofreadIndexValueIsbn extends ProofreadIndexValueIdentifier {
 	}
 }
 
-
 /**
  * An ISSN value of an index entry
  */
@@ -485,7 +478,6 @@ class ProofreadIndexValueIssn extends ProofreadIndexValueIdentifier {
 		return preg_match( self::VALIDATION_REGEX, $value );
 	}
 }
-
 
 /**
  * An LCCN value of an index entry
@@ -527,7 +519,6 @@ class ProofreadIndexValueLccn extends ProofreadIndexValueIdentifier {
 	}
 }
 
-
 /**
  * An LCCN value of an index entry
  */
@@ -567,7 +558,6 @@ class ProofreadIndexValueOclc extends ProofreadIndexValueIdentifier {
 	}
 }
 
-
 /**
  * An ARC value of an index entry
  */
@@ -606,7 +596,6 @@ class ProofreadIndexValueArc extends ProofreadIndexValueIdentifier {
 		return is_numeric( $value );
 	}
 }
-
 
 /**
  * An ARK value of an index entry

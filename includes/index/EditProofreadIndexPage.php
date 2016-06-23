@@ -71,7 +71,6 @@ class EditProofreadIndexPage extends EditPage {
 					Xml::label( $entry->getLabel(), $key )
 		);
 
-
 		$help = $entry->getHelp();
 		if ( $help !== '' ) {
 			$out->addHTML( Html::element( 'span', [ 'title' => $help, 'class' => 'prp-help-field' ] ) );
@@ -180,7 +179,6 @@ class EditProofreadIndexPage extends EditPage {
 
 		return $value;
 	}
-
 
 	/**
 	 * Check the validity of the page

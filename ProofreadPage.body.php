@@ -689,7 +689,6 @@ class ProofreadPage {
 		return true;
 	}
 
-
 	/**
 	 * @param $updater DatabaseUpdater
 	 * @return bool

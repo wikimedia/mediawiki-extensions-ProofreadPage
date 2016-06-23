@@ -21,7 +21,6 @@
  * @ingroup SpecialPage
  */
 
-
 /**
  * Provide OAI record of an index page
  */
