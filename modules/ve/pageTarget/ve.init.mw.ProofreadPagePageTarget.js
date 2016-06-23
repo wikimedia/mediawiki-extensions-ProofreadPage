@@ -154,8 +154,6 @@ ve.init.mw.ProofreadPagePageTarget.static.splitSections = function ( doc ) {
 			doc.createElement( 'footer' )
 		];
 
-	sectionNodes[ 0 ].setAttribute( 'title', 'Hello' );
-
 	function bubbleUp( node ) {
 		var anchor;
 		while ( node.parentNode !== doc.body ) {
