@@ -45,6 +45,13 @@ ve.init.mw.ProofreadPagePageTarget = function VeInitMwProofreadPagePageTarget() 
 
 OO.inheritClass( ve.init.mw.ProofreadPagePageTarget, ve.init.mw.DesktopArticleTarget );
 
+/* Static Properties */
+
+/**
+ * @inheritdoc
+ */
+ve.init.mw.ProofreadPagePageTarget.static.name = 'proofread-page';
+
 /* Methods */
 
 /**

@@ -332,7 +332,7 @@
 		"Page": true
 	},
 	"VisualEditorAvailableContentModels": {
-		"proofread-page": true
+		"proofread-page": "proofread-page"
 	},
 	"config": {
 		"@ProofreadPageNamespaceIds": "Array that contain the ids of namespaces used by ProofreadPage",
