@@ -20,6 +20,7 @@
  */
 
 use ProofreadPage\Context;
+use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
@@ -590,16 +591,16 @@ class ProofreadPage {
 	 * @param $context Object implementing the IContextSource interface.
 	 * @param $content Content of the edit box, as a Content object.
 	 * @param $status  Status object to represent errors, etc.
-	 * @param $summary  Edit summary for page
+	 * @param $summary Edit summary for page
 	 * @param $user  The User object representing the user whois performing the edit.
 	 * @param $minoredit  Whether the edit was marked as minor by the user.
 	 * @return bool
 	 */
 	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
-		Status $status, string $summary, User $user, boolean $minoredit ) {
+		Status $status, $summary, User $user, $minoredit ) {
 
 		// If the content's model isn't ours, ignore this; there's nothing for us to do here.
-		if ( ! ( $content->contentModel instanceof ProofreadPageContent ) ) {
+		if ( ! ( $content instanceof PageContent ) ) {
 			return true;
 		}
 
@@ -609,9 +610,7 @@ class ProofreadPage {
 		}
 
 		// Fail if the content is invalid, or the level is being removed.
-		if (
-			!$content->isValid()
-		) {
+		if ( !$content->isValid() ) {
 			$ourStatus = Status::newFatal( 'proofreadpage_badpagetext' );
 		}
 
@@ -619,9 +618,7 @@ class ProofreadPage {
 		$newLevel = $content->getLevel();
 
 		// Fail if the user changed the level and the change isn't allowed
-		if (
-			!$newLevel->equals( $oldLevel ) && !$oldLevel->isChangeAllowed( $newLevel )
-		) {
+		if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
 			$ourStatus = Status::newFatal( 'proofreadpage_notallowedtext' );
 		}
 
