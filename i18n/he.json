@@ -92,5 +92,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "דפים",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "הכללה של $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "כן",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "לא"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "לא",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "איכות הגהה",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "איכות הגהה"
 }

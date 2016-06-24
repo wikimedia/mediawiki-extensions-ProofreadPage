@@ -93,5 +93,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Seiten",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Einbindung von $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nein"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nein",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesungsqualität",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesungsqualität"
 }

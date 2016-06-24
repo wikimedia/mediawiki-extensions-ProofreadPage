@@ -104,5 +104,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pages",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Oui",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualité de la relecture",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualité de la relecture"
 }

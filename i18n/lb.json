@@ -80,5 +80,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Eraussiche vun der Säit",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Säiten",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jo",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Neen"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Neen",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualitéitsniveau Iwwerliesen",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualitéitsniveau Iwwerliesen"
 }
