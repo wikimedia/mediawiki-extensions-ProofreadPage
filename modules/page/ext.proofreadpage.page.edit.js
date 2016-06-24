@@ -20,6 +20,16 @@
 	$editForm;
 
 	/**
+	 * Returns the value of a user option as boolean
+	 *
+	 * @param {string} optionId
+	 * @return {boolean}
+	 */
+	function getBooleanUserOption( optionId ) {
+		return Number( mw.user.options.get( optionId ) ) === 1;
+	}
+
+	/**
 	 * Show or hide header and footer areas
 	 *
 	 * @param {string} speed string speed of the toggle. May be 'fast', 'slow' or undefined
@@ -80,10 +90,10 @@
 	 * Apply user preferences
 	 */
 	function setupPreferences() {
-		if ( !mw.user.options.get( 'proofreadpage-showheaders' ) ) {
+		if ( !getBooleanUserOption( 'proofreadpage-showheaders' ) ) {
 			toggleHeaders();
 		}
-		if ( mw.user.options.get( 'proofreadpage-horizontal-layout' ) ) {
+		if ( getBooleanUserOption( 'proofreadpage-horizontal-layout' ) ) {
 			toggleLayout();
 		}
 	}
@@ -177,7 +187,7 @@
 			},
 			$edit = $( '#wpTextbox1' );
 
-		if ( mw.user.options.get( 'usebetatoolbar' ) ) {
+		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
 			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
 				$edit.wikiEditor( 'addToToolbar', {
 					sections: {
@@ -189,7 +199,7 @@
 					}
 				} );
 			} );
-		} else if ( mw.user.options.get( 'showtoolbar' ) ) {
+		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
 			mw.loader.using( 'mediawiki.toolbar', function () {
 				$.each( tools, function ( group, list ) {
 					$.each( list.tools, function ( id, def ) {
@@ -209,7 +219,7 @@
 	 */
 	function setupWikiEditor() {
 		// Ignore "showtoolbar", for consistency with the default behavior (bug 30795)
-		if ( !mw.user.options.get( 'usebetatoolbar' ) ) {
+		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
 			return;
 		}
 		mw.loader.using( 'ext.wikiEditor', function () {
@@ -219,7 +229,7 @@
 		} );
 
 		// load the "dialogs" module of WikiEditor if enabled , bug: 72960
-		if ( mw.user.options.get( 'usebetatoolbar-cgd' ) ) {
+		if ( getBooleanUserOption( 'usebetatoolbar-cgd' ) ) {
 			mw.loader.load( 'ext.wikiEditor.dialogs' );
 		}
 		// TODO: other modules of WikiEditor may miss, see bug 72960.
