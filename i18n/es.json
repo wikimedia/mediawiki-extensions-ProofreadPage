@@ -13,7 +13,8 @@
 			"Sanbec",
 			"Translationista",
 			"Ryo567",
-			"Macofe"
+			"Macofe",
+			"Indiralena"
 		]
 	},
 	"indexpages": "Lista de páginas de índices",
@@ -99,5 +100,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páginas",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusión de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sí",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Calidad de corrección",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidad de corrección"
 }

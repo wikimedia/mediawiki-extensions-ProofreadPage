@@ -100,5 +100,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "页面",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1的嵌入",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "是",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "否"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "否",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校对质量",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校对质量"
 }
