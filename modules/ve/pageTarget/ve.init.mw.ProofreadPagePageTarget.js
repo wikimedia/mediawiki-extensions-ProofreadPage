@@ -15,12 +15,16 @@
  * @param {Object} config Configuration options
  */
 ve.init.mw.ProofreadPagePageTarget = function VeInitMwProofreadPagePageTarget() {
-	var zoomIn, zoomReset, zoomOut;
+	var zoomIn, zoomReset, zoomOut, $contentText, $pageContainer;
 
 	// Parent method
 	ve.init.mw.ProofreadPagePageTarget.super.apply( this, arguments );
 
-	this.$element.addClass( 've-init-mw-proofreadPagePageTarget' );
+	if ( [ 'edit', 'submit' ].indexOf( mw.config.get( 'wgAction' ) ) !== -1 ) {
+		$contentText = $( '#mw-content-text' );
+		$pageContainer = $contentText.find( '.prp-page-container' );
+		$contentText.empty().append( $pageContainer );
+	}
 
 	this.$zoomContainer = $( '<div>' ).addClass( 've-init-mw-proofreadPagePageTarget-zoomContainer' );
 

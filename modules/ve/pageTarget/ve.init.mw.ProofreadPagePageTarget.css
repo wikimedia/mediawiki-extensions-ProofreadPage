@@ -4,7 +4,7 @@
  * @copyright 2011-2016 VisualEditor Team and others; see http://ve.mit-license.org
  */
 
-.ve-init-mw-proofreadPagePageTarget .ve-init-mw-target-surface {
+.prp-page-container .ve-init-mw-target-surface {
 	float: left;
 	width: calc( 50% + 1em );
 }
