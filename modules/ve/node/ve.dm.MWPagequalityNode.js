@@ -26,6 +26,13 @@ ve.dm.MWPagequalityNode.static.isDeletable = false;
 /**
  * @inheritdoc
  */
+ve.dm.MWPagequalityNode.prototype.canHaveSlugBefore = function () {
+	return false;
+};
+
+/**
+ * @inheritdoc
+ */
 ve.dm.MWPagequalityNode.prototype.isEditable = function () {
 	// TODO: check editing right with mw.user.getRights() ?
 	return !mw.user.isAnon();
