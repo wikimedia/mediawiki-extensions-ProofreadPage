@@ -149,6 +149,60 @@ ve.init.mw.ProofreadPagePageTarget.prototype.getHtml = function ( newDoc, oldDoc
 };
 
 /**
+ * @inheritdoc
+ */
+ve.init.mw.ProofreadPagePageTarget.prototype.submit = function ( wikitext, fields ) {
+	var content;
+	if ( this.submitting ) {
+		return false;
+	}
+
+	content = this.parseWikitext( wikitext );
+	ve.extendObject( fields, {
+		model: 'proofread-page',
+		wpHeaderTextbox: content.header,
+		wpTextbox1: content.body,
+		wpFooterTextbox: content.footer,
+		wpQuality: content.level.level
+	} );
+
+	return ve.init.mw.ProofreadPagePageTarget.super.prototype.submit.call( this, wikitext, fields );
+};
+
+/**
+ * Parse Wikitext into the JSON serialization
+ */
+ve.init.mw.ProofreadPagePageTarget.prototype.parseWikitext = function ( wikitext ) {
+	var structureMatchResult, headerMatchResult, result = {
+		header: '',
+		body: '',
+		footer: '',
+		level: {
+			level: 1,
+			user: null
+		}
+	};
+
+	structureMatchResult = wikitext.match( /^<noinclude>([\s\S]*)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*)<\/noinclude>$/ );
+	if ( structureMatchResult === null ) {
+		result.body = wikitext;
+		return result;
+	}
+	result.body = structureMatchResult[ 2 ];
+	result.footer = structureMatchResult[ 3 ];
+
+	headerMatchResult = structureMatchResult[ 1 ].match( /^<pagequality level="([0-4])" user="(.*)" *(\/>|> *<\/pagequality>)([\s\S]*)$/ );
+	if ( headerMatchResult === null ) {
+		result.header = structureMatchResult[ 1 ];
+		return result;
+	}
+	result.level.level = parseInt( headerMatchResult[ 1 ] );
+	result.level.user = headerMatchResult[ 2 ];
+	result.header = headerMatchResult[ 4 ];
+	return result;
+};
+
+/**
  * Split a document into balanced header, body and footer sections
  *
  * @param {HTMLDocument} doc Document
