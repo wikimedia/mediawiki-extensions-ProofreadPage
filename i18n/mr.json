@@ -77,5 +77,6 @@
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} या नामविश्वात संपादन करताना हेडर आणि फूटर दाखवा",
 	"proofreadpage-indexoai-repositoryName": "पुस्तकाचा मेटाडाटा {{SITENAME}} पासून",
 	"proofreadpage-indexoai-error-schemanotfound": "स्किमा सापडत नाही",
-	"proofreadpage-indexoai-error-schemanotfound-text": "$1 स्किमा सापडत नाही."
+	"proofreadpage-indexoai-error-schemanotfound-text": "$1 स्किमा सापडत नाही.",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "मुद्रितशोधनाचा दर्जा"
 }

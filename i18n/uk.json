@@ -99,5 +99,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Сторінки",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Включення $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Так",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ні"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ні",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Якість вичитки",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Якість вичитки"
 }
