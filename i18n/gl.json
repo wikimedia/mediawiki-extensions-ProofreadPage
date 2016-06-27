@@ -90,5 +90,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páxinas",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusión de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Si",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Calidade de corrección",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidade de corrección"
 }
