@@ -84,5 +84,7 @@
 	"content-model-proofread-page": "Strona: strona",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Strony",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Tak",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nie"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nie",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Jakość korekty",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Jakość korekty"
 }
