@@ -199,11 +199,6 @@
 				"mobile"
 			]
 		},
-		"ext.proofreadpage.ve.pageTarget.init": {
-			"scripts": [
-				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.init.js"
-			]
-		},
 		"ext.proofreadpage.ve.pageTarget": {
 			"scripts": [
 				"ve/node/ve.dm.MWPagequalityNode.js",
@@ -326,7 +321,8 @@
 		"tests/parser/proofreadpage_pagequality.txt"
 	],
 	"VisualEditorPluginModules": [
-		"ext.proofreadpage.ve.node.pages"
+		"ext.proofreadpage.ve.node.pages",
+		"ext.proofreadpage.ve.pageTarget"
 	],
 	"VisualEditorAvailableNamespaces": {
 		"Page": true
