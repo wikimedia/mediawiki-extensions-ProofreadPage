@@ -10,7 +10,8 @@
 			"ToePeu",
 			"Yknok29",
 			"아라",
-			"Revi"
+			"Revi",
+			"Ykhwong"
 		]
 	},
 	"indexpages": "목차 문서의 목록",
@@ -41,7 +42,7 @@
 	"proofreadpage_footer": "꼬리말 (표시안함):",
 	"proofreadpage_toggleheaders": "noinclude 부분의 보이기 여부 선택",
 	"proofreadpage_quality0_category": "비었음",
-	"proofreadpage_quality1_category": "교정 안됨",
+	"proofreadpage_quality1_category": "교정 안 됨",
 	"proofreadpage_quality2_category": "문제 있음",
 	"proofreadpage_quality3_category": "교정",
 	"proofreadpage_quality4_category": "확인됨",

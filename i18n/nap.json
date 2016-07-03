@@ -88,5 +88,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Paggene",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusione 'e $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità 'e proofread",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità 'e proofread"
 }

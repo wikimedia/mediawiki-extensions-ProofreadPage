@@ -5,7 +5,9 @@
 		]
 	},
 	"proofreadpage_quality0_category": "Mò vùn-sṳ",
+	"proofreadpage_quality1_category": "Hàn-mò káu-tui",
 	"proofreadpage_quality2_category": "Yû mun-thì",
 	"proofreadpage_quality3_category": "Káu-tui",
-	"proofreadpage_quality4_category": "yí-kîn ngin-chṳn"
+	"proofreadpage_quality4_category": "yí-kîn ngin-chṳn",
+	"proofreadpage_quality1_message": "Pún ya̍p-mien hàn-mò chin-hàng káu-tui"
 }
