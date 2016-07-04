@@ -78,5 +78,6 @@
 	"proofreadpage-indexoai-repositoryName": "पुस्तकाचा मेटाडाटा {{SITENAME}} पासून",
 	"proofreadpage-indexoai-error-schemanotfound": "स्किमा सापडत नाही",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 स्किमा सापडत नाही.",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "मुद्रितशोधनाचा दर्जा",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "मुद्रितशोधनाचा दर्जा"
 }
