@@ -4,7 +4,8 @@
 			"Mogoeilor",
 			"Hosseinblue",
 			"Arash71",
-			"Lakzon"
+			"Lakzon",
+			"Miladrahimi"
 		]
 	},
 	"indexpages": "لیست وەڵگەل نمایه",
@@ -85,5 +86,12 @@
 	"apihelp-query+proofreadinfo-description": "اطلاعاتی را از پیکربندی بازبینی صفحات نشان می‌دهد.",
 	"apihelp-query+proofreadinfo-param-prop": ":کدام ویژگی‌ها را در مورد بازبینی می‌خواهید\n.اطلاعاتی از فضای نام صفحه و نمایه:namespaces; \n .فهرستی از سطح کیفی بازبینی‌ها:download;",
 	"apihelp-query+proofreadinfo-example-1": "برگشت اطلاعات به حالت پیشفرض",
-	"apihelp-query+proofreadinfo-example-3": "برگشت اطلاعات فضای نام"
+	"apihelp-query+proofreadinfo-example-3": "برگشت اطلاعات فضای نام",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "گلچین ولگه‌ل",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ولگه‌ل",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "پیوند ئرا $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "أری",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نه",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "کیفیت خلط‌‌گرتن",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "کیفیت خلط‌‌گرتن"
 }
