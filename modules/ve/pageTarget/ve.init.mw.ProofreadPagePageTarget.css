@@ -4,17 +4,17 @@
  * @copyright 2011-2016 VisualEditor Team and others; see http://ve.mit-license.org
  */
 
-.prp-page-container .ve-init-mw-target-surface {
+.ve-init-mw-proofreadPagePageTarget .ve-init-mw-target-surface {
 	float: left;
 	width: calc( 50% + 1em );
 }
 
-.ve-init-mw-target-surface .ve-ce-documentNode,
-.ve-init-mw-target-surface .ve-ui-surface-placeholder {
+.ve-init-mw-proofreadPagePageTarget .ve-init-mw-target-surface .ve-ce-documentNode,
+.ve-init-mw-proofreadPagePageTarget .ve-init-mw-target-surface .ve-ui-surface-placeholder {
 	padding-right: 0;
 }
 
-.ve-init-mw-target-surface > .ve-ui-debugBar {
+.ve-init-mw-proofreadPagePageTarget .ve-init-mw-target-surface > .ve-ui-debugBar {
 	margin-right: -100%;
 }
 
@@ -30,7 +30,7 @@
 	margin-right: 0;
 }
 
-.ve-ce-sectionNode:before {
+.ve-init-mw-proofreadPagePageTarget .ve-ce-sectionNode:before {
 	pointer-events: none;
 	content: attr( data-title );
 	font-weight: bold;
@@ -39,7 +39,7 @@
 	border-bottom: 1px solid #ccc;
 }
 
-.ve-ce-sectionNode:not( :last-child ) {
+.ve-init-mw-proofreadPagePageTarget .ve-ce-sectionNode:not( :last-child ) {
 	padding-bottom: 1em;
 }
 
