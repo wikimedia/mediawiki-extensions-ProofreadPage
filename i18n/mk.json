@@ -6,8 +6,8 @@
 		]
 	},
 	"indexpages": "Список на индексни страници",
-	"pageswithoutscans": "Страници без скенови",
-	"proofreadpage_desc": "Овозможува едноставна споредба на текстот со скенираниот оригинал",
+	"pageswithoutscans": "Страници без отслици",
+	"proofreadpage_desc": "Овозможува едноставна споредба на текстот со отсликаниот оригинал",
 	"proofreadpage_image": "Слика",
 	"proofreadpage_index": "Индекс",
 	"proofreadpage_index_expected": "Грешка: се очекува индекс",
@@ -88,5 +88,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Страници",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Превемтнување на $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Квалитет на коректурата",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Квалитет на коректурата"
 }
