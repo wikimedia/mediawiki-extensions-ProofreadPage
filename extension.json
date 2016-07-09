@@ -210,7 +210,7 @@
 				"ve/pageTarget/ve.ce.MWPagesSectionNode.js"
 			],
 			"styles": [
-				"ve/node/ve.ui.WMPagequalityInspector.css",
+				"ve/node/ve.ui.MWPagequalityInspector.css",
 				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.css"
 			],
 			"dependencies": [
