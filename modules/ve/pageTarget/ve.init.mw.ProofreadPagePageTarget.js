@@ -214,10 +214,12 @@ ve.init.mw.ProofreadPagePageTarget.prototype.parseWikitext = function ( wikitext
 ve.init.mw.ProofreadPagePageTarget.static.cleanHtml = function ( doc ) {
 	var pagetext = doc.querySelector( 'div.pagetext' );
 
-	while ( pagetext.childNodes.length > 0 ) {
-		pagetext.parentNode.insertBefore( pagetext.firstChild, pagetext );
+	if ( pagetext ) {
+		while ( pagetext.childNodes.length > 0 ) {
+			pagetext.parentNode.insertBefore( pagetext.firstChild, pagetext );
+		}
+		pagetext.parentNode.removeChild( pagetext );
 	}
-	pagetext.parentNode.removeChild( pagetext );
 };
 
 /**
