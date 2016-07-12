@@ -8,7 +8,8 @@
 			"Darth Kule",
 			"F. Cosoleto",
 			"Gianfranco",
-			"Stefano-c"
+			"Stefano-c",
+			"Macofe"
 		]
 	},
 	"indexpages": "Elenco delle pagine di indice",
@@ -92,5 +93,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagine",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Inclusione di $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità di correzione",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità di correzione"
 }
