@@ -92,7 +92,7 @@ ve.ui.MWPagequalityInspector.prototype.couldNotValidatePage = function ( current
 /**
  * @inheritdoc
  */
-ve.ui.MWPagesInspector.prototype.getTeardownProcess = function ( data ) {
+ve.ui.MWPagequalityInspector.prototype.getTeardownProcess = function ( data ) {
 	return this.constructor.super.prototype.getTeardownProcess.call( this, data )
 		.next( function () {
 			if ( this.validatedLevelRemoved ) {

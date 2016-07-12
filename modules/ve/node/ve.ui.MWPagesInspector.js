@@ -1,5 +1,5 @@
 /**
- * mw pages tag inspector.
+ * Pages tag inspector.
  *
  * @class
  * @extends ve.ui.MWExtensionInspector
@@ -11,9 +11,11 @@ ve.ui.MWPagesInspector = function VeUiMWPagesInspector() {
 };
 
 /* Inheritance */
+
 OO.inheritClass( ve.ui.MWPagesInspector, ve.ui.MWExtensionInspector );
 
 /* Static properties */
+
 ve.ui.MWPagesInspector.static.name = 'pages';
 
 ve.ui.MWPagesInspector.static.icon = 'articles';
@@ -27,11 +29,13 @@ ve.ui.MWPagesInspector.static.allowedEmpty = true;
 ve.ui.MWPagesInspector.static.delayForIndexInput = 2000;
 
 /* Methods */
+
 /**
  * @inheritdoc
  */
 ve.ui.MWPagesInspector.prototype.initialize = function () {
-	this.constructor.super.prototype.initialize.apply( this, arguments );
+	// Parent method
+	ve.ui.MWPagesInspector.super.prototype.initialize.apply( this, arguments );
 
 	this.attributeInputs = {};
 	this.$attributes = $( '<div>' );
@@ -42,10 +46,12 @@ ve.ui.MWPagesInspector.prototype.initialize = function () {
  * @inheritdoc
  */
 ve.ui.MWPagesInspector.prototype.getSetupProcess = function ( data ) {
-	return this.constructor.super.prototype.getSetupProcess.call( this, data )
+	// Parent method
+	return ve.ui.MWPagesInspector.super.prototype.getSetupProcess.call( this, data )
 		.next( function () {
 			this.mwData = ( this.selectedNode !== null && this.selectedNode.getAttribute( 'mw' ) ) || {
-				attrs: {}
+				attrs: {},
+				body: { extsrc: '' }
 			};
 
 			this.setupForm();
@@ -220,7 +226,8 @@ ve.ui.MWPagesInspector.prototype.teardownForm = function () {
  * @inheritdoc
  */
 ve.ui.MWPagesInspector.prototype.getTeardownProcess = function ( data ) {
-	return this.constructor.super.prototype.getTeardownProcess.call( this, data )
+	// Parent method
+	return ve.ui.MWPagesInspector.super.prototype.getTeardownProcess.call( this, data )
 		.next( function () {
 			this.teardownForm();
 		}, this );
@@ -232,7 +239,8 @@ ve.ui.MWPagesInspector.prototype.getTeardownProcess = function ( data ) {
 ve.ui.MWPagesInspector.prototype.updateMwData = function ( mwData ) {
 	var key;
 
-	this.constructor.super.prototype.updateMwData.call( this, mwData );
+	// Parent method
+	ve.ui.MWPagesInspector.super.prototype.updateMwData.call( this, mwData );
 
 	mwData.attrs = mwData.attrs || {};
 	for ( key in this.attributeInputs ) {
@@ -241,4 +249,5 @@ ve.ui.MWPagesInspector.prototype.updateMwData = function ( mwData ) {
 };
 
 /* Registration */
+
 ve.ui.windowFactory.register( ve.ui.MWPagesInspector );
