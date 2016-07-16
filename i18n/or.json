@@ -86,5 +86,11 @@
 	"apihelp-query+proofreadinfo-param-prop": "କେଉଁ ପରଖ ତଥ୍ୟ ଦେଖିବେ:\n;namespaces: \"{{ns:Page}}\" ଏବଂ \"{{ns:Index}}\"ର ନେମସ୍ପେସ ତଥ୍ୟ ।\n;qualitylevels: ପରଖ ମାତ୍ରାର ତାଲିକା ଦେଖନ୍ତୁ ।",
 	"apihelp-query+proofreadinfo-example-1": "ଡିଫଲ୍ଟ ତଥ୍ୟ ଦେଖିବେ",
 	"apihelp-query+proofreadinfo-example-3": "ନେମସ୍ପେସ ତଥ୍ୟ ଦେଖିବେ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ପ୍ରମାଣବୈଧତାର ମାନଦଣ୍ଡ"
+	"proofreadpage-visualeditor-node-pages-inspector-title": "ପୃଷ୍ଠା ବଛା",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ପୃଷ୍ଠାଗୁଡିକ",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "$1ର ମୂଲ୍ୟ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ହଁ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ନାଁ",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ପ୍ରମାଣବୈଧତାର ମାନଦଣ୍ଡ",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ସଂଶୋଧନ ମାତ୍ରା"
 }
