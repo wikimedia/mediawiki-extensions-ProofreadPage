@@ -79,6 +79,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "ସ୍କିମା ମିଳିଲା ନାହିଁ",
 	"proofreadpage-indexoai-error-schemanotfound-text": "ଏହି $1 ସ୍କିମା ମିଳିଲା ନାହିଁ ।",
 	"proofreadpage-disambiguationspage": "ଛାଞ୍ଚ:disambig",
+	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|ପୃଷ୍ଠା|ପୃଷ୍ଠାଗୁଡିକୁ}} ବୈଧ କଲା, $2 କେବଳ{{PLURAL:$2|ପୃଷ୍ଠା|ପୃଷ୍ଠାଗୁଡିକୁ}} ସଂଶୋଧନ କଲା ଆଉ $3 {{PLURAL:$3|ପୃଷ୍ଠାକୁ|ପୃଷ୍ଠାଗୁଡିକୁ}} ସଂଶୋଧିତ କଲା ନାହିଁ ।",
 	"content-model-proofread-page": "ପୃଷ୍ଠା: ପୃଷ୍ଠା",
 	"apihelp-query+proofread-description": "ଦିଆ ଯାଇଥିବା ପୃଷ୍ଠା ଗୁଡିକର ବର୍ତମାନର ପରଖ ତଥ୍ୟ ଦେଖିବେ ।",
 	"apihelp-query+proofread-example-1": "ନେମସ୍ପେସ ୨୫୦ରେ ଥିବା ପୃଷ୍ଠାଗୁଡିକର ପରଖ ସ୍ଥିତି ଦେଖିବେ",

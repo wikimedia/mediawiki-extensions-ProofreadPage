@@ -84,5 +84,7 @@
 	"apihelp-query+proofreadinfo-description": "Pateikia informaciją apie ProofreadPage plėtinio konfigūraciją.",
 	"apihelp-query+proofreadinfo-param-prop": "Kurią tinkamumo savybę naudoti:\n;namespaces:Informacija apie Page ir Index vardų sritis.\n;qualitylevels:Sąrašas tinkamų kokybės lygių.",
 	"apihelp-query+proofreadinfo-example-1": "Pateikti numatytąją informaciją",
-	"apihelp-query+proofreadinfo-example-3": "Pateikti vardų srities informaciją"
+	"apihelp-query+proofreadinfo-example-3": "Pateikti vardų srities informaciją",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korektūros kokybė",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korektūros kokybė"
 }
