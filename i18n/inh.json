@@ -88,5 +88,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ОагIонаш",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 гIолла",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "XӀа-а",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "A"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "A",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Корректурай тIех дикал",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Корректурай тIех дикал"
 }
