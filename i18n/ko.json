@@ -85,5 +85,7 @@
 	"proofreadpage-indexoai-error-schemanotfound": "스키마를 찾을 수 없음",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 스키마를 찾지 못했습니다.",
 	"proofreadpage-disambiguationspage": "Template:동음이의",
-	"content-model-proofread-page": "페이지: 문서"
+	"content-model-proofread-page": "페이지: 문서",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "교정 품질",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "교정 품질"
 }
