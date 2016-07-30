@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"CERminator",
-			"Codbih"
+			"Codbih",
+			"Srdjan m"
 		]
 	},
 	"indexpages": "Spisak stranica indeksa",
@@ -45,7 +46,7 @@
 	"proofreadpage_page_status": "Status stranice",
 	"proofreadpage_js_attributes": "Autor Naslov Godina Izdavač",
 	"proofreadpage_index_attributes": "Autor\nNaslov\nGodina|Godina izdavanja\nIzdavač\nIzvor\nSlika|Naslovna slika\nStranica||20\nNapomene||10",
-	"proofreadpage_pages": "{{PLURAL:$2|stranica|stranice|stranica}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|stranica|stranice|stranica}}",
 	"proofreadpage_specialpage_legend": "Ptretraga indeksnih stranica",
 	"proofreadpage_source": "Izvor",
 	"proofreadpage_source_message": "Skenirana varijanta korištena za nastanak ovog teksta",
