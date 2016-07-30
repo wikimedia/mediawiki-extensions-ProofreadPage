@@ -75,6 +75,12 @@ class PagelistTagParser extends TagParser {
 			if ( $pageNumber->isEmpty() || !$title ) {
 				$return .= $view . ' ';
 			} else {
+				// Adds the page as a dependency in order to make sure that the Index: page is purged if the status of the Page: page changes
+				$this->parser->getOutput()->addTemplate(
+					$pageTitle,
+					$pageTitle->getArticleID(),
+					$pageTitle->getLatestRevID()
+				);
 				$return .= '[[' . $pageTitle->getPrefixedText() . '|' . $view . ']] '; // TODO: use linker?
 			}
 		}
