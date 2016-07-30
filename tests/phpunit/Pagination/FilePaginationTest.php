@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Pagination;
 
-use File;
 use InvalidArgumentException;
 use MediaHandler;
 use OutOfBoundsException;

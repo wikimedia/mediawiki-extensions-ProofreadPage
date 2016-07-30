@@ -3,7 +3,6 @@
 namespace ProofreadPage\Parser;
 
 use ProofreadIndexPage;
-use ProofreadPage;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;

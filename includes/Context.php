@@ -3,7 +3,6 @@
 namespace ProofreadPage;
 
 use ProofreadPage\Pagination\PaginationFactory;
-use ProofreadPage\ProofreadPageInit;
 use RepoGroup;
 
 /**
