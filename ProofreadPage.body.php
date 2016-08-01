@@ -33,7 +33,7 @@ use ProofreadPage\Pagination\PageNotInPaginationException;
 class ProofreadPage {
 
 	/**
-	 * @depreciated use Context::getPageNamespaceId
+	 * @deprecated use Context::getPageNamespaceId
 	 *
 	 * Returns id of Page namespace.
 	 *
@@ -44,7 +44,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @depreciated use Context::getIndexNamespaceId
+	 * @deprecated use Context::getIndexNamespaceId
 	 *
 	 * Returns id of Index namespace.
 	 *

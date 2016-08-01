@@ -129,7 +129,7 @@ class ProofreadPagePage {
 	}
 
 	/**
-	 * @depreciated use FileProvider::getForPagePage
+	 * @deprecated use FileProvider::getForPagePage
 	 *
 	 * Return image of the page if it exist or false.
 	 * @return File|false

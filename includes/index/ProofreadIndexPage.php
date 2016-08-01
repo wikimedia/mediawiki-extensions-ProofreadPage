@@ -87,7 +87,7 @@ class ProofreadIndexPage {
 	}
 
 	/**
-	 * @depreciated use FileProvider::getForIndexPage
+	 * @deprecated use FileProvider::getForIndexPage
 	 *
 	 * Return Scan of the book if it exist or false.
 	 * @return File|false
