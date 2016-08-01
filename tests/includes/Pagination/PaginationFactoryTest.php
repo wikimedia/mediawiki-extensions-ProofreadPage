@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Pagination;
 
+use MediaHandler;
 use ProofreadIndexPageTest;
 use ProofreadPagePage;
 use ProofreadPageTestCase;
@@ -14,6 +15,9 @@ use Title;
 class PaginationFactoryTest extends ProofreadPageTestCase {
 
 	public function testGetPaginationWithPagelist() {
+		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
+			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
+		}
 		$page = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Pages=<pagelist 1to2=-/> <pagelist 3=1 4to5=roman />\n|Author=[[Author:Me]]\n}}" );
 		$pageList = new PageList( [ '1to2' => '-', '3' => '1', '4to5' => 'roman' ] );
 		$pagination = new FilePagination(
