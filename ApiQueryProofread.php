@@ -64,15 +64,10 @@ class ApiQueryProofread extends ApiQueryBase {
 
 		$api = new ApiMain( $params );
 		$api->execute();
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$data = $api->getResult()->getResultData();
-			$pages = ApiResult::stripMetadataNonRecursive(
-				(array)$data['query']['pages']
-			);
-		} else {
-			$data = $api->getResultData();
-			$pages = $data['query']['pages'];
-		}
+		$data = $api->getResult()->getResultData();
+		$pages = ApiResult::stripMetadataNonRecursive(
+			(array)$data['query']['pages']
+		);
 		unset( $api );
 
 		if ( array_key_exists( 'error', $data ) ) {
@@ -105,22 +100,6 @@ class ApiQueryProofread extends ApiQueryBase {
 
 	public function getAllowedParams() {
 		return [];
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Returns information about the current proofread status of the given pages.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return [
-			'api.php?action=query&generator=allpages&gapnamespace=' . ProofreadPage::getPageNamespaceId() . '&prop=proofread'
-		];
 	}
 
 	/**

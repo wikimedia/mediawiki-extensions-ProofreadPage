@@ -448,7 +448,7 @@ class ProofreadPage {
 	 */
 	public static function updatePrIndex( $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
-		$indexId = $index->getID();
+		$indexId = $index->getId();
 
 		// read the list of pages
 		$pages = [];
@@ -457,7 +457,7 @@ class ProofreadPage {
 		);
 		foreach ( $pagination as $page ) {
 			if ( $deletedPage === null || !$page->getTitle()->equals( $deletedPage ) ) {
-				array_push( $pages, $page->getTitle()->getDBKey() );
+				array_push( $pages, $page->getTitle()->getDBkey() );
 			}
 		}
 
@@ -694,7 +694,7 @@ class ProofreadPage {
 
 		$dir = __DIR__ . '/sql/';
 
-		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql', true );
+		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql' );
 
 		// fix issue with content type hardcoded in database
 		if ( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
@@ -795,7 +795,7 @@ class ProofreadPage {
 
 			$links['namespaces']['proofreadPageIndexLink'] = [
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
-				'href' => $indexPage->getTitle()->getLinkUrl(),
+				'href' => $indexPage->getTitle()->getLinkURL(),
 				'text' => wfMessage( 'proofreadpage_index' )->plain()
 			];
 		}
@@ -827,12 +827,7 @@ class ProofreadPage {
 
 		$api = new ApiMain( $params );
 		$api->execute();
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$data = $api->getResult()->getResultData();
-		} else {
-			$data = $api->getResultData();
-		}
-		unset( $api );
+		$data = $api->getResult()->getResultData();
 
 		if ( array_key_exists( 'error', $data ) ) {
 			return true;
@@ -851,9 +846,9 @@ class ProofreadPage {
 
 	protected static function getLinkUrlForTitle( Title $title ) {
 		if ( $title->exists() ) {
-			return $title->getLinkUrl();
+			return $title->getLinkURL();
 		} else {
-			return $title->getLinkUrl( 'action=edit&redlink=1' );
+			return $title->getLinkURL( 'action=edit&redlink=1' );
 		}
 	}
 
