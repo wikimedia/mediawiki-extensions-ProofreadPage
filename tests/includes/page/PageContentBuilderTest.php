@@ -3,10 +3,12 @@
 namespace ProofreadPage\Page;
 
 use IContextSource;
+use MediaHandler;
 use ProofreadIndexPageTest;
 use ProofreadPagePage;
 use ProofreadPagePageTest;
 use ProofreadPageTestCase;
+use ProofreadPage\FileNotFoundException;
 use RequestContext;
 use User;
 
@@ -32,6 +34,15 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	 * @dataProvider buildDefaultContentForPageProvider
 	 */
 	public function testBuildDefaultContentForPage( ProofreadPagePage $page, PageContent $defaultContent ) {
+		try {
+			$image = $this->getContext()->getFileProvider()->getForPagePage( $page );
+		} catch ( FileNotFoundException $e ) {
+			$image = false;
+		}
+		// Skip when the file exists but there is no support for DjVu files
+		if ( $image && MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
+			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
+		}
 		$contentBuilder = new PageContentBuilder( $this->context, $this->getContext() );
 		$this->assertEquals( $defaultContent, $contentBuilder->buildDefaultContentForPage( $page ) );
 	}
