@@ -5,7 +5,8 @@
 			"Erdemaslancan",
 			"Gorizon",
 			"Marmase",
-			"Mirzali"
+			"Mirzali",
+			"Kumkumuk"
 		]
 	},
 	"indexpages": "Lista pelanê zerreki",
@@ -79,5 +80,17 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Şema nêvineyê",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 şema nêvineyaya.",
 	"proofreadpage-disambiguationspage": "Şablon:Maneyo bin",
-	"content-model-proofread-page": "Pele: pele"
+	"proofreadpage-indexquality-alt": "$1 esas  {{PLURAL:$1|pera}}, $2 teyna timar {{PLURAL:$2|pera}} u $3 timar {{PLURAL:$3|per}} niya",
+	"content-model-proofread-page": "Pele: pele",
+	"apihelp-query+proofread-description": "Perrê deyaye weziyeta timari ra peyd şo malumat",
+	"apihelp-query+proofread-example-1": "Peyd şo 250ca nemayê weziyeta pere",
+	"apihelp-query+proofreadinfo-example-1": "Peyser şo hesıbyaye malumati",
+	"apihelp-query+proofreadinfo-example-3": "Peyser şo malumata caynaman",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Per weçinayış",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Peri",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Dekerdenê $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "E",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nê",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qeliteya timar kerdışi",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qeliteya timar kerdışi"
 }
