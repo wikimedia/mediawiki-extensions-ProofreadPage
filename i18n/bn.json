@@ -39,7 +39,7 @@
 	"proofreadpage_quality1_category": "মুদ্রণ সংশোধন করা হয়নি",
 	"proofreadpage_quality2_category": "সমস্যাসঙ্কুল",
 	"proofreadpage_quality3_category": "মুদ্রণ সংশোধন করা হয়েছে",
-	"proofreadpage_quality4_category": "বৈধকরণ",
+	"proofreadpage_quality4_category": "বৈধকৃত",
 	"proofreadpage_quality0_message": "এই পাতার মুদ্রণ সংশোধন করার প্রয়োজন নেই",
 	"proofreadpage_quality1_message": "এই পাতার মুদ্রণ সংশোধন করা হয়নি",
 	"proofreadpage_quality2_message": "এই পাতার মুদ্রণ সংশোধন করার সময় কোন সমস্যা ছিল",
@@ -86,5 +86,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "পাতাগুলি",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1-এর অন্তর্ভুক্তি",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "হ্যাঁ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "না"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "না",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "মুদ্রণ সংশোধনের গুণমান",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "মুদ্রণ সংশোধনের গুণমান"
 }
