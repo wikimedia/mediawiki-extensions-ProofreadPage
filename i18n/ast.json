@@ -88,5 +88,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páxines",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Tresclusión de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sí",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Calidá de correición",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidá de correición"
 }
