@@ -2,6 +2,8 @@
 
 namespace ProofreadPage;
 
+use MWException;
+
 /**
  * @licence GNU GPL v2+
  *
@@ -38,7 +40,7 @@ class ProofreadPageInit {
 
 		if ( isset( $wgProofreadPageNamespaceIds[$key] ) ) {
 			if ( !is_numeric( $wgProofreadPageNamespaceIds[$key] ) ) {
-				die( '$wgProofreadPageNamespaceIds[' . $key . '] must be a number.' );
+				throw new MWException( '$wgProofreadPageNamespaceIds[' . $key . '] must be a number.' );
 			}
 
 			if ( !isset( $wgExtraNamespaces[$wgProofreadPageNamespaceIds[$key]] ) ) {
@@ -128,7 +130,10 @@ class ProofreadPageInit {
 		global $wgProofreadPageNamespaceIds;
 
 		if ( !isset( $wgProofreadPageNamespaceIds[$key] ) ) {
-			die( 'Namespace with id ' . self::$defaultNamespaceIds[$key] . ' is already set ! ProofreadPage can\'t use his id in order to create ' . self::getNamespaceName( $key, 'en' ) . ' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page' ); // The only case where $wgProofreadPageNamespaceIds is not set is when a namespace with the default id already exist and is not a prp namespace.
+			// The only case where $wgProofreadPageNamespaceIds is not set is
+			// when a namespace with the default id already exist
+			// and is not a prp namespace.
+			throw new MWException( 'Namespace with id ' . self::$defaultNamespaceIds[$key] . ' is already set ! ProofreadPage can\'t use his id in order to create ' . self::getNamespaceName( $key, 'en' ) . ' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page' );
 		}
 
 		return $wgProofreadPageNamespaceIds[$key];
