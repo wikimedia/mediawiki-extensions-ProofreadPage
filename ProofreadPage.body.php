@@ -338,9 +338,9 @@ class ProofreadPage {
 		 * update pr_index iteratively
 		 */
 		$indexId = $title->prpIndexPage->getTitle()->getArticleID();
-		$x = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
-		if ( $x ) {
-			$a = ProofreadIndexDbConnector::replaceIndexById( $x, $indexId, $article );
+		$indexData = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
+		if ( $indexData ) {
+			ProofreadIndexDbConnector::replaceIndexById( $indexData, $indexId, $article );
 		}
 
 		return true;
