@@ -42,7 +42,7 @@ class PagesWithoutScans extends QueryPage {
 	 * @param DatabaseBase $dbr
 	 * @return mixed
 	 */
-	public function disambiguation_templates( $dbr ) {
+	public function getDisambiguationTemplates( $dbr ) {
 		$dMsgText = wfMessage( 'proofreadpage-disambiguationspage' )->inContentLanguage()->text();
 
 		$linkBatch = new LinkBatch;
@@ -94,7 +94,7 @@ class PagesWithoutScans extends QueryPage {
 		// May want to verify that wikis using ProofreadPage have implemented
 		// the __DISAMBIG__ magic word for their disambiguation pages before
 		// changing this.
-		$dt = $this->disambiguation_templates( $dbr );
+		$dt = $this->getDisambiguationTemplates( $dbr );
 		$disambigPagesSubquery = $dbr->selectSQLText(
 			[ 'page', 'templatelinks' ],
 			'page_id',
