@@ -449,11 +449,12 @@ class SpecialProofreadIndexOai extends UnlistedSpecialPage {
 
 	/**
 	 * Output the ListMetadataFormats action
+	 * @throws ProofreadIndexOaiError
 	 */
 	protected function listMetadataFormats() {
 		// try if the page exist (required by specification)
 		if ( isset( $this->request['identifier'] ) ) {
-			$page = $this->getRecordPage( $this->request['identifier'] );
+			$this->getRecordPage( $this->request['identifier'] );
 		}
 
 		$formats = $this->metadataFormats();
