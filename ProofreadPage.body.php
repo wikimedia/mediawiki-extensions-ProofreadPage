@@ -259,7 +259,7 @@ class ProofreadPage {
 	 * @param OutputPage $out
 	 * @return bool
 	 */
-	public static function onImageOpenShowImageInlineBefore( &$imgpage, &$out ) {
+	public static function onImageOpenShowImageInlineBefore( ImagePage &$imgpage, OutputPage &$out ) {
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
 			return true;
@@ -277,7 +277,7 @@ class ProofreadPage {
 	 * @param ParserOutput $parserOutput
 	 * @return bool
 	 */
-	public static function onOutputPageParserOutput( $outputPage, $parserOutput ) {
+	public static function onOutputPageParserOutput( OutputPage $outputPage, ParserOutput $parserOutput ) {
 		if ( isset( $parserOutput->is_toc ) ) {
 			$outputPage->is_toc = $parserOutput->is_toc;
 		} else {
@@ -291,7 +291,7 @@ class ProofreadPage {
 	 * @param Title $title page title object
 	 * @param boolean $deleted indicates whether the page was deleted
 	 */
-	private static function updateIndexOfPage( $title, $deleted = false ) {
+	private static function updateIndexOfPage( Title $title, $deleted = false ) {
 		self::loadIndex( $title );
 		if ( $title->prpIndexPage !== null ) {
 			$indexTitle = $title->prpIndexPage->getTitle();
@@ -353,7 +353,7 @@ class ProofreadPage {
 	 * @param $article Article object
 	 * @return Boolean: true
 	 */
-	public static function onArticleDelete( $article ) {
+	public static function onArticleDelete( Article $article ) {
 		$title = $article->getTitle();
 
 		// Process Index removal.
@@ -369,11 +369,13 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $title Title
-	 * @param $create
+	 * @param Title $title Title corresponding to the article restored
+	 * @param bool $create If true, the restored page didn't exist before
+	 * @param string $comment Comment explaining the undeletion
+	 * @param int $oldPageId ID of page previously deleted from archive table
 	 * @return bool
 	 */
-	public static function onArticleUndelete( $title, $create ) {
+	public static function onArticleUndelete( Title $title, $create, $comment, $oldPageId ) {
 		// Process Index restoration.
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$index = new Article( $title );
@@ -390,12 +392,12 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $form
-	 * @param $ot Title
-	 * @param $nt Title
+	 * @param MovePageForm $form
+	 * @param Title $ot
+	 * @param Title $nt
 	 * @return bool
 	 */
-	public static function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
+	public static function onSpecialMovepageAfterMove( MovePageForm &$form, Title &$ot, Title &$nt ) {
 		if ( $ot->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $ot );
 		} elseif ( $ot->inNamespace( self::getIndexNamespaceId() )
@@ -429,10 +431,10 @@ class ProofreadPage {
 
 	/**
 	 * When an index page is created or purged, recompute pr_index values
-	 * @param $article Article
+	 * @param Article $article
 	 * @return bool
 	 */
-	public static function onArticlePurge( $article ) {
+	public static function onArticlePurge( Article $article ) {
 		$title = $article->getTitle();
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::updatePrIndex( $article );
@@ -443,10 +445,10 @@ class ProofreadPage {
 
 	/**
 	 * Update the pr_index entry of an article
-	 * @param $index Article
-	 * @param $deletedpage Title|null
+	 * @param Article $index
+	 * @param Title|null $deletedpage
 	 */
-	public static function updatePrIndex( $index, $deletedPage = null ) {
+	public static function updatePrIndex( Article $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
 		$indexId = $index->getID();
 
@@ -491,10 +493,10 @@ class ProofreadPage {
 	/**
 	 * In main namespace, display the proofreading status of transcluded pages.
 	 *
-	 * @param $out OutputPage object
+	 * @param OutputPage $out
 	 * @return bool
 	 */
-	private static function prepareArticle( $out ) {
+	private static function prepareArticle( OutputPage $out ) {
 		$id = $out->getTitle()->getArticleID();
 		if ( $id == -1 ) {
 			return true;
@@ -716,10 +718,10 @@ class ProofreadPage {
 
 	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
-	 * @param $skin SkinTemplate object
-	 * @param $links array structured navigation links
+	 * @param SkinTemplate $skin
+	 * @param array $links Structured navigation links
 	 */
-	public static function onSkinTemplateNavigation( &$skin, &$links ) {
+	public static function onSkinTemplateNavigation( SkinTemplate &$skin, array &$links ) {
 		$title = $skin->getTitle();
 		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
@@ -805,10 +807,10 @@ class ProofreadPage {
 
 	/**
 	 * Add proofreading status to action=info
-	 * @param $context IContextSource object
-	 * @param &$pageinfo array of information
+	 * @param IContextSource $context
+	 * @param array &$pageinfo The page information
 	 */
-	public static function onInfoAction( $context, &$pageInfo ) {
+	public static function onInfoAction( IContextSource $context, array &$pageInfo ) {
 		if ( !$context->canUseWikiPage() ) {
 			return true;
 		}
@@ -857,7 +859,7 @@ class ProofreadPage {
 		}
 	}
 
-	public static function onSkinMinervaDefaultModules( Skin $skin, array& $modules ) {
+	public static function onSkinMinervaDefaultModules( Skin $skin, array &$modules ) {
 		if (
 			$skin->getTitle()->inNamespace( self::getIndexNamespaceId() ) ||
 			$skin->getTitle()->inNamespace( self::getPageNamespaceId() )
