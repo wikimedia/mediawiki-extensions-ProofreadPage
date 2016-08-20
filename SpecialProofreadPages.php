@@ -95,7 +95,7 @@ class ProofreadPages extends QueryPage {
 		parent::execute( $parameters );
 	}
 
-	function reallyDoQuery( $limit, $offset = false ) {
+	public function reallyDoQuery( $limit, $offset = false ) {
 		$count = count( $this->searchList );
 		if ( $count > $this->limit ) { // Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
 			$this->addOne = true;
@@ -109,27 +109,27 @@ class ProofreadPages extends QueryPage {
 		return parent::reallyDoQuery( $limit, $offset );
 	}
 
-	function preprocessResults( $dbr, $res ) {
+	public function preprocessResults( $dbr, $res ) {
 		if ( $this->addOne !== null ) {
 			$this->numRows++; // there is a deleted item
 		}
 	}
 
-	function isExpensive() {
+	public function isExpensive() {
 		// FIXME: the query does filesort, so we're kinda lying here right now
 		return false;
 	}
 
-	function isSyndicated() {
+	public function isSyndicated() {
 		return false;
 	}
 
-	function isCacheable() {
+	public function isCacheable() {
 		// The page is not cacheable due to its search capabilities
 		return false;
 	}
 
-	function linkParameters() {
+	public function linkParameters() {
 		return [
 			'key' => $this->searchTerm,
 			'order' => $this->queryOrder,
@@ -163,7 +163,7 @@ class ProofreadPages extends QueryPage {
 		];
 	}
 
-	function getOrderFields() {
+	public function getOrderFields() {
 		switch ( $this->queryOrder ) {
 			case 'size':
 				return [ 'pr_count' ];
@@ -174,11 +174,11 @@ class ProofreadPages extends QueryPage {
 		}
 	}
 
-	function sortDescending() {
+	public function sortDescending() {
 		return !$this->sortAscending;
 	}
 
-	function formatResult( $skin, $result ) {
+	public function formatResult( $skin, $result ) {
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {
 			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';

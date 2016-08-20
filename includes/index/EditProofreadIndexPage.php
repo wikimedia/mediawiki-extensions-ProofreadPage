@@ -183,7 +183,7 @@ class EditProofreadIndexPage extends EditPage {
 	/**
 	 * Check the validity of the page
 	 */
-	function internalAttemptSave( &$result, $bot = false ) {
+	public function internalAttemptSave( &$result, $bot = false ) {
 		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
 
 		// Get list of pages titles

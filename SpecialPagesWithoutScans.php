@@ -24,15 +24,15 @@
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
  */
 class PagesWithoutScans extends QueryPage {
-	function __construct( $name = 'PagesWithoutScans' ) {
+	public function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
 	}
 
-	function isExpensive() {
+	public function isExpensive() {
 		return true;
 	}
 
-	function isSyndicated() {
+	public function isSyndicated() {
 		return false;
 	}
 
@@ -42,7 +42,7 @@ class PagesWithoutScans extends QueryPage {
 	 * @param DatabaseBase $dbr
 	 * @return mixed
 	 */
-	function disambiguation_templates( $dbr ) {
+	public function disambiguation_templates( $dbr ) {
 		$dMsgText = wfMessage( 'proofreadpage-disambiguationspage' )->inContentLanguage()->text();
 
 		$linkBatch = new LinkBatch;
@@ -74,7 +74,7 @@ class PagesWithoutScans extends QueryPage {
 		return $linkBatch->constructSet( 'tl', $dbr );
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		// Construct subqueries
@@ -121,11 +121,11 @@ class PagesWithoutScans extends QueryPage {
 		];
 	}
 
-	function sortDescending() {
+	public function sortDescending() {
 		return true;
 	}
 
-	function formatResult( $skin, $result ) {
+	public function formatResult( $skin, $result ) {
 		global $wgContLang;
 		$dm = $wgContLang->getDirMark();
 
