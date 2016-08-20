@@ -622,7 +622,7 @@ class ProofreadPage {
 		}
 
 		if ( isset( $ourStatus ) ) {
-			$ourStatus->value = self::AS_HOOK_ERROR;
+			$ourStatus->value = EditPage::AS_HOOK_ERROR;
 			$status->merge( $ourStatus );
 			return false;
 		}
