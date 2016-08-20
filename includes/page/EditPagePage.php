@@ -142,7 +142,7 @@ class EditPagePage extends EditPage {
 	 *
 	 * @see EditPage::getCheckBoxes
 	 */
-	function getCheckBoxes( &$tabindex, $checked ) {
+	public function getCheckBoxes( &$tabindex, $checked ) {
 
 		$oldLevel = $this->getCurrentContent()->getLevel();
 
