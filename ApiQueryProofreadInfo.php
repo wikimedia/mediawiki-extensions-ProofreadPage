@@ -87,37 +87,6 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 	}
 
 	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return [
-			'prop' => [
-				'Which proofread properties to get:',
-				' namespaces            - Information about Page and Index namespaces',
-				' qualitylevels         - List of proofread quality levels'
-			]
-		];
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Return information about configuration of ProofreadPage extension';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return [
-			'api.php?action=query&meta=proofreadinfo',
-			'api.php?action=query&meta=proofreadinfo&piprop=namespaces|qualitylevels',
-			'api.php?action=query&meta=proofreadinfo&piprop=namespaces',
-		];
-	}
-
-	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
