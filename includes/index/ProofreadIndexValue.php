@@ -598,12 +598,12 @@ class ProofreadIndexValueArc extends ProofreadIndexValueIdentifier {
 }
 
 /**
- * An ARK value of an index entry
+ * An Archival Resource Key (ARK) value of an index entry
  */
 class ProofreadIndexValueArk extends ProofreadIndexValueIdentifier {
 
 	/**
-	 * The naan
+	 * The Name Assigning Authority Number (NAAN)
 	 * @var integer
 	 */
 	protected $naan = 0;
