@@ -4,7 +4,6 @@ namespace ProofreadPage\Parser;
 
 use OutOfBoundsException;
 use ProofreadIndexPage;
-use ProofreadPage;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPageDbConnector;
 use ProofreadPagePage;

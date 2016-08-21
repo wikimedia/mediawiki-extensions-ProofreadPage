@@ -1,8 +1,5 @@
 <?php
-use ProofreadPage\Pagination\PageNumber;
-use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;
-use ProofreadPage\Pagination\PagePagination;
 
 /**
  * @group ProofreadPage
