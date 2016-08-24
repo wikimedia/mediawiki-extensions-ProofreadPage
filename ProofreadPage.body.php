@@ -350,10 +350,10 @@ class ProofreadPage {
 	 * if I delete a page, I need to update the index table
 	 * if I delete an index page too...
 	 *
-	 * @param $article Article object
+	 * @param $article WikiPage object
 	 * @return Boolean: true
 	 */
-	public static function onArticleDelete( Article $article ) {
+	public static function onArticleDelete( WikiPage $article ) {
 		$title = $article->getTitle();
 
 		// Process Index removal.
@@ -431,10 +431,10 @@ class ProofreadPage {
 
 	/**
 	 * When an index page is created or purged, recompute pr_index values
-	 * @param Article $article
+	 * @param WikiPage $article
 	 * @return bool
 	 */
-	public static function onArticlePurge( Article $article ) {
+	public static function onArticlePurge( WikiPage $article ) {
 		$title = $article->getTitle();
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::updatePrIndex( $article );
@@ -445,10 +445,10 @@ class ProofreadPage {
 
 	/**
 	 * Update the pr_index entry of an article
-	 * @param Article $index
+	 * @param WikiPage $index
 	 * @param Title|null $deletedpage
 	 */
-	public static function updatePrIndex( Article $index, $deletedPage = null ) {
+	public static function updatePrIndex( WikiPage $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
 		$indexId = $index->getId();
 
