@@ -80,5 +80,12 @@
 	"proofreadpage-indexquality-alt": "$1 trang được phê chuẩn, $2 trang chỉ được hiệu đính, và $3 trang chưa được hiệu đính",
 	"content-model-proofread-page": "trang Trang:",
 	"apihelp-query+proofreadinfo-example-1": "Cho ra thông tin mặc định",
-	"apihelp-query+proofreadinfo-example-3": "Cho ra thông tin về không gian tên"
+	"apihelp-query+proofreadinfo-example-3": "Cho ra thông tin về không gian tên",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Lựa chọn trang",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Trang",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Chuyển tải $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Có",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Không",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Chất lượng hiệu đính",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Chất lượng hiệu đính"
 }
