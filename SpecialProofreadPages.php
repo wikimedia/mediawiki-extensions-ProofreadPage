@@ -156,7 +156,7 @@ class ProofreadPages extends QueryPage {
 		return [
 			'tables' => [ 'pr_index', 'page' ],
 			'fields' => [ 'page_namespace AS namespace', 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
-			'pr_q0', 'pr_q1', 'pr_q2' ,'pr_q3', 'pr_q4' ],
+			'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
 			'conds' => $conds,
 			'options' => [],
 			'join_conds' => [ 'page' => [ 'INNER JOIN', 'page_id=pr_page_id' ] ]
@@ -197,7 +197,7 @@ class ProofreadPages extends QueryPage {
 		$q2 = $result->pr_q2;
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
-		$num_void = $size-$q1-$q2-$q3-$q4-$q0;
+		$num_void = $size - $q1 - $q2 - $q3 - $q4 - $q0;
 		$void_cell = $num_void ? '<td class="qualitye" style="width:' . $num_void . 'px;"></td>' : '';
 		$textualAlternative = $this->msg( 'proofreadpage-indexquality-alt', $q4, $q3, $q1 );
 		$qualityOutput = '<table class="pr_quality" title="' . $textualAlternative . '">
