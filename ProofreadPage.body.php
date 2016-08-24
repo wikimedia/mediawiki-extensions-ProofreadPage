@@ -445,10 +445,10 @@ class ProofreadPage {
 
 	/**
 	 * Update the pr_index entry of an article
-	 * @param WikiPage $index
+	 * @param Page $index
 	 * @param Title|null $deletedpage
 	 */
-	public static function updatePrIndex( WikiPage $index, $deletedPage = null ) {
+	public static function updatePrIndex( Page $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
 		$indexId = $index->getId();
 
