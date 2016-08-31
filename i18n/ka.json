@@ -73,6 +73,7 @@
 	"proofreadpage-button-reset-zoom-label": "თავდაპირველი ზომა",
 	"proofreadpage-button-zoom-in-label": "გადიდება",
 	"proofreadpage-button-toggle-layout-label": "ვერტიკალური/ჰორიზონტალური განლაგება",
+	"proofreadpage-pageinfo-status": "კორექტურის კითხვის სტატუსი",
 	"proofreadpage-preferences-showheaders-label": "სახელთა სივრცის {{ns:გვერდის}} რედაქტირებისას აჩვენე ზედა და ქვედა ველები.",
 	"proofreadpage-preferences-horizontal-layout-label": "ჰორიზონტალური განლაგების გამოყენება {{ns:page}} სახელთა სივრცის რედაქტირებისას",
 	"proofreadpage-indexoai-repositoryName": "წიგნების მეტამონაცემები საიტისათვის {{SITENAME}}",
@@ -80,5 +81,17 @@
 	"proofreadpage-indexoai-error-schemanotfound": "სქემა ვერ მოიძებნა",
 	"proofreadpage-indexoai-error-schemanotfound-text": "სქემა „$1“ ვერ მოიძებნა.",
 	"proofreadpage-disambiguationspage": "Template:მრავალმნიშვნელოვანი",
-	"content-model-proofread-page": "გვერდი: გვერდი"
+	"content-model-proofread-page": "გვერდი: გვერდი",
+	"apihelp-query+proofread-description": "გამოაქვს ინფორმაცია მოცემული გვერდების ამჟამინდელი კორექტურის სტატუსის შესახებ.",
+	"apihelp-query+proofread-example-1": "კორექტურის კითხვის სტატუსის გამოტანა გვერდებისთვის სახელთა სივრცეში 250",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage გაფართოების კონფიგურაციის შესახებ ინფორმაციის გამოტანა.",
+	"apihelp-query+proofreadinfo-example-1": "საწყისი ინფორმაციის დაბრუნება",
+	"apihelp-query+proofreadinfo-example-3": "სახელთა სივრცის ინფორმაციის დაბრუნება",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "გვერდის შერჩევა",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "გვერდები",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "$1-ის ჩართვა",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "დიახ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "არა",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "კორექტურის კითხვის ხარისხი",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "კორექტურის კითხვის ხარისხი"
 }
