@@ -40,7 +40,7 @@ class EditPagePage extends EditPage {
 
 		if ( !$this->isSupportedContentModel( $this->contentModel ) ) {
 			throw new MWException(
-				'The content model ' . ContentHandler::getLocalizedName( $this->contentModel ) . ' is not supported'
+				"The content model {$this->contentModel} is not supported"
 			);
 		}
 	}
