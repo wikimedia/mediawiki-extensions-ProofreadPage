@@ -36,7 +36,7 @@ class EditPagePage extends EditPage {
 		parent::__construct( $article );
 
 		$this->pagePage = $pagePage;
-		$this->pageContentBuilder = new PageContentBuilder( $this->mArticle->getContext(), $context );
+		$this->pageContentBuilder = new PageContentBuilder( $this->context, $context );
 
 		if ( !$this->isSupportedContentModel( $this->contentModel ) ) {
 			throw new MWException(
@@ -75,7 +75,7 @@ class EditPagePage extends EditPage {
 	 * @see EditPage::showContentForm
 	 */
 	protected function showContentForm() {
-		$out = $this->mArticle->getContext()->getOutput();
+		$out = $this->context->getOutput();
 
 		// custom CSS for preview
 		$css = $this->pagePage->getCustomCss();
@@ -128,7 +128,7 @@ class EditPagePage extends EditPage {
 	 * @param string[] $textareaAttributes attributes to add to textarea node
 	 */
 	protected function showEditArea( $textareaName, $areaClass, $labelMsg, $content, array $textareaAttributes ) {
-		$out = $this->mArticle->getContext()->getOutput();
+		$out = $this->context->getOutput();
 		$out->addHTML(
 			Html::openElement( 'div', [ 'class' => $areaClass ] ) .
 			Html::element( 'label', [ 'for' => $textareaName ], wfMessage( $labelMsg )->text() )
@@ -152,7 +152,7 @@ class EditPagePage extends EditPage {
 		$qualityLevels = [ 0, 2, 1, 3, 4 ];
 		$html = '';
 		$checkboxes = parent::getCheckBoxes( $tabindex, $checked );
-		$user = $this->mArticle->getContext()->getUser();
+		$user = $this->context->getUser();
 
 		foreach ( $qualityLevels as $level ) {
 
@@ -220,7 +220,7 @@ class EditPagePage extends EditPage {
 		}
 
 		if ( $error !== '' ) {
-			$this->mArticle->getContext()->getOutput()->showErrorPage( 'proofreadpage_' . $error, 'proofreadpage_' . $error . 'text' );
+			$this->context->getOutput()->showErrorPage( 'proofreadpage_' . $error, 'proofreadpage_' . $error . 'text' );
 			$status = Status::newFatal( 'hookaborted' );
 			$status->value = self::AS_HOOK_ERROR;
 			return $status;

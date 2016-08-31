@@ -31,7 +31,7 @@ class EditProofreadIndexPage extends EditPage {
 	 */
 	protected function showContentForm() {
 		$pageLang = $this->mTitle->getPageLanguage();
-		$out = $this->mArticle->getContext()->getOutput();
+		$out = $this->context->getOutput();
 		$inputAttributes = [ 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() ];
 		if ( wfReadOnly() ) {
 			$inputAttributes['readonly'] = '';
@@ -194,8 +194,7 @@ class EditProofreadIndexPage extends EditPage {
 		}
 
 		if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-			$this->mArticle
-				->getContext()
+			$this->context
 				->getOutput()
 				->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
 			$status = Status::newGood();
