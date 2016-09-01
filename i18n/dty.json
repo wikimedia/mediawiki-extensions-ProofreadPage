@@ -3,7 +3,8 @@
 		"authors": [
 			"रमेश सिंह बोहरा",
 			"जनक राज भट्ट",
-			"राम प्रसाद जोशी"
+			"राम प्रसाद जोशी",
+			"Nirajan pant"
 		]
 	},
 	"indexpages": "सूचकांक पानाको सूची",
@@ -27,7 +28,7 @@
 	"proofreadpage_page_status": "पानाको स्थिती",
 	"proofreadpage_js_attributes": "लेखक शीर्षक वर्ष प्रकाशक",
 	"proofreadpage_index_attributes": "लेखक\nशीर्षक\nवर्ष|प्रकाशन वर्ष\nप्रकाशक\nस्रोत\nचित्र|मुखपृष्ठ चित्र\nपानाहरू||२०\nटिप्पणी||१०",
-	"proofreadpage_pages": "{{PLURAL:$1|पाना|पानाहरू}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|पान्नो|पन्नाअन}}",
 	"proofreadpage_source": "स्रोत",
 	"proofreadpage-group-zoom": "जूम",
 	"proofreadpage-group-other": "और",
