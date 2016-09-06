@@ -181,7 +181,7 @@ class EditPagePage extends EditPage {
 				$html .
 				Html::closeElement( 'span' ) .
 				Html::OpenElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
-				wfMessage( 'proofreadpage_page_status' )->parse() .
+				wfMessage( 'proofreadpage_page_status' )->title( $this->getTitle() )->parse() .
 				Html::closeElement( 'label' );
 		}
 
