@@ -240,7 +240,8 @@ class PageContent extends TextContent {
 
 		// html container
 		$html = Html::openElement( 'div', [ 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ] ) .
-			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )->inContentLanguage()->parse() .
+			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )
+				->title( $title )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
 			$parserOutput->getText() .
