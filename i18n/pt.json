@@ -10,7 +10,8 @@
 			"Waldir",
 			"555",
 			"Vitorvicentevalente",
-			"Luan"
+			"Luan",
+			"Mansil"
 		]
 	},
 	"indexpages": "Lista de páginas de índice",
@@ -91,6 +92,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusão de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sim",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Não",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualidade de correção",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualidade de revisão",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualidade de correção"
 }
