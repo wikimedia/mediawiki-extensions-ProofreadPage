@@ -21,7 +21,7 @@
 	"proofreadpage_nosuch_file": "خطأ: لا ملف كهذا",
 	"proofreadpage_badpage": "تنسيق خاطئ",
 	"proofreadpage_badpagetext": "تنسيق الصفحة التي تحاول حفظها غير صحيح.",
-	"proofreadpage_indexdupe": "رابط نظير",
+	"proofreadpage_indexdupe": "وصلة مكررة",
 	"proofreadpage_indexdupetext": "لا يمكن سرد الصفحة أكثر من في صفحة الفهرس.",
 	"proofreadpage_nologin": "غير مسجل الدخول",
 	"proofreadpage_nologintext": "يجب أن تكون [[Special:UserLogin|مُسجلًا الدخول]] لتعدّل حالة تدقيق الصفحات.",
