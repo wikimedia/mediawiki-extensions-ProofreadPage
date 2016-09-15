@@ -319,8 +319,7 @@
 		]
 	},
 	"ParserTestFiles": [
-		"tests/parser/proofreadpage_pagelist.txt",
-		"tests/parser/proofreadpage_pages.txt",
+		"tests/parser/proofreadpage_pages_pagelist.txt",
 		"tests/parser/proofreadpage_pagequality.txt"
 	],
 	"VisualEditorPluginModules": [
