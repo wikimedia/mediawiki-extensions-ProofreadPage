@@ -220,6 +220,7 @@
 			],
 			"dependencies": [
 				"ext.visualEditor.mwcore",
+				"ext.visualEditor.desktopArticleTarget",
 				"jquery.prpZoom"
 			],
 			"messages": [
