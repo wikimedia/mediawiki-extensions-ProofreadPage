@@ -31,18 +31,22 @@
 
 	/**
 	 * Ensure that the zoom system is properly initialized
-     *
-	 * @param {Function} callback a function to use after making sure that the zoom system is activate
+	 *
+	 * @param {Function} success a function to use after making sure that the zoom system is activate
 	 */
-	function withImageZoom( callback ) {
+	function ensureImageZoomInitialization( success ) {
 		if ( $zoomImage.data( 'prpZoom' ) ) {
-			callback();
+			if ( success ) {
+				success();
+			}
 			return;
 		}
 
 		mw.loader.using( 'jquery.prpZoom', function () {
 			$zoomImage.prpZoom();
-			callback();
+			if ( success ) {
+				success();
+			}
 		} );
 	}
 
@@ -77,6 +81,7 @@
 			$editForm.find( '.prp-page-content' ).css( {
 				width: ''
 			} );
+			ensureImageZoomInitialization();
 
 			isLayoutHorizontal = false;
 
@@ -95,6 +100,7 @@
 			$container.css( {
 				height: $( window ).height() / 3 + 'px'
 			} );
+			ensureImageZoomInitialization();
 
 			isLayoutHorizontal = true;
 		}
@@ -141,7 +147,7 @@
 							action: {
 								type: 'callback',
 								execute: function () {
-									withImageZoom( function () {
+									ensureImageZoomInitialization( function () {
 										$zoomImage.prpZoom( 'zoomIn' );
 									} );
 								}
@@ -155,7 +161,7 @@
 							action: {
 								type: 'callback',
 								execute: function () {
-									withImageZoom( function () {
+									ensureImageZoomInitialization( function () {
 										$zoomImage.prpZoom( 'zoomOut' );
 									} );
 								}
@@ -169,7 +175,7 @@
 							action: {
 								type: 'callback',
 								execute: function () {
-									withImageZoom( function () {
+									ensureImageZoomInitialization( function () {
 										$zoomImage.prpZoom( 'reset' );
 									} );
 								}
@@ -273,6 +279,12 @@
 		setupPreferences();
 		setupPageQuality();
 		addButtons();
+	} );
+
+	// zoom should be initialized after the page is rendered
+	$( window ).load( function () {
+		initEnvironment();
+		ensureImageZoomInitialization();
 	} );
 
 }( mw, jQuery ) );
