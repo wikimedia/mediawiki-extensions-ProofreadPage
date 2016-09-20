@@ -30,6 +30,23 @@
 	}
 
 	/**
+	 * Ensure that the zoom system is properly initialized
+     *
+	 * @param {Function} callback a function to use after making sure that the zoom system is activate
+	 */
+	function withImageZoom( callback ) {
+		if ( $zoomImage.data( 'prpZoom' ) ) {
+			callback();
+			return;
+		}
+
+		mw.loader.using( 'jquery.prpZoom', function () {
+			$zoomImage.prpZoom();
+			callback();
+		} );
+	}
+
+	/**
 	 * Show or hide header and footer areas
 	 *
 	 * @param {string} speed string speed of the toggle. May be 'fast', 'slow' or undefined
@@ -61,8 +78,6 @@
 				width: ''
 			} );
 
-			$zoomImage.prpZoom();
-
 			isLayoutHorizontal = false;
 
 		} else {
@@ -77,7 +92,6 @@
 				width: '100%'
 			} );
 
-			$zoomImage.prpZoom();
 			$container.css( {
 				height: $( window ).height() / 3 + 'px'
 			} );
@@ -127,7 +141,9 @@
 							action: {
 								type: 'callback',
 								execute: function () {
-									$zoomImage.prpZoom( 'zoomIn' );
+									withImageZoom( function () {
+										$zoomImage.prpZoom( 'zoomIn' );
+									} );
 								}
 							}
 						},
@@ -139,7 +155,9 @@
 							action: {
 								type: 'callback',
 								execute: function () {
-									$zoomImage.prpZoom( 'zoomOut' );
+									withImageZoom( function () {
+										$zoomImage.prpZoom( 'zoomOut' );
+									} );
 								}
 							}
 						},
@@ -151,7 +169,9 @@
 							action: {
 								type: 'callback',
 								execute: function () {
-									$zoomImage.prpZoom( 'reset' );
+									withImageZoom( function () {
+										$zoomImage.prpZoom( 'reset' );
+									} );
 								}
 							}
 						}
@@ -247,27 +267,12 @@
 		}
 	}
 
-	/**
-	 * Init the zoom system
-	 */
-	function initZoom() {
-		mw.loader.using( 'jquery.prpZoom', function () {
-			$zoomImage.prpZoom();
-		} );
-	}
-
-	$( document ).ready( function () {
+	$( function () {
 		initEnvironment();
 		setupWikiEditor();
 		setupPreferences();
 		setupPageQuality();
 		addButtons();
-	} );
-
-	// zoom should be init after the page is rendered
-	$( window ).load( function () {
-		initEnvironment();
-		initZoom();
 	} );
 
 }( mw, jQuery ) );
