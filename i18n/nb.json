@@ -4,7 +4,8 @@
 			"Laaknor",
 			"Nghtwlkr",
 			"Simny",
-			"Danmichaelo"
+			"Danmichaelo",
+			"Jon Harald Søby"
 		]
 	},
 	"indexpages": "Liste over innholdsfortegnelser",
@@ -23,6 +24,8 @@
 	"proofreadpage_nologintext": "Du må være [[Special:UserLogin|innlogget]] for å kunne forandre status på korrekturlesningen på sider.",
 	"proofreadpage_notallowed": "Å gjøre en forandring er ikke lov",
 	"proofreadpage_notallowedtext": "Du har ikke rettigheter til å endre korrekturlesningen på denne siden.",
+	"proofreadpage_dataconfig_badformatted": "Programfeil i datakonfigurasjonen",
+	"proofreadpage_dataconfig_badformattedtext": "Siden [[MediaWiki:Proofreadpage index data config]] er ikke velformatert JSON.",
 	"proofreadpage_number_expected": "Feil: Numerisk verdi forventet",
 	"proofreadpage_interval_too_large": "Feil: Intervall for stort",
 	"proofreadpage_invalid_interval": "Feil: ugyldig intervall",
@@ -77,5 +80,18 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Skjemaet $1 ble ikke funnet.",
 	"proofreadpage-disambiguationspage": "Template:peker",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|godkjent side|godkjente sider}}, $2 {{PLURAL:$2|korrekturlest side|korrekturleste sider}} og $3 {{PLURAL:$3|side|sider}} som ikke har blitt korrekturlest enda",
-	"content-model-proofread-page": "Side: side"
+	"content-model-proofread-page": "Side: side",
+	"apihelp-query+proofread-description": "Returnerer informasjon om den nåværende korrekturlesingsstatusen til de gitte sidene.",
+	"apihelp-query+proofread-example-1": "Returnerer korrekturlesingsstatus i navneromm 250",
+	"apihelp-query+proofreadinfo-description": "Returnerer informasjon om konfigurasjonen av ProofreadPage-utvidelsen.",
+	"apihelp-query+proofreadinfo-param-prop": "Hvilke korrekturlesingsegenskaper som hentes:\n;namespaces:Informasjon om navnerommene «{{ns:Page}}» og «{{ns:Index}}»\n;qualitylevels:Liste over kvalitetsnivåer for korrekturlesing.",
+	"apihelp-query+proofreadinfo-example-1": "Returnerer standardinformasjon",
+	"apihelp-query+proofreadinfo-example-3": "Returnerer navneromsinformasjon",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Sideutvalg",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sider",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Inkludering av $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nei",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesingskvalitet",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesingskvalitet"
 }

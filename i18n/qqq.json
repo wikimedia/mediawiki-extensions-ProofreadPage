@@ -57,7 +57,7 @@
 	"proofreadpage_quality1_category": "Category name where quality level 1 pages are added to",
 	"proofreadpage_quality2_category": "Category name where quality level 2 pages are added to",
 	"proofreadpage_quality3_category": "Category name where quality level 3 pages are added to. Read as in \"proofRED\" (past participle).\n{{Identical|Proofread}}",
-	"proofreadpage_quality4_category": "Category name where quality level 4 pages are added to",
+	"proofreadpage_quality4_category": "Category name where quality level 4 pages are added to\n{{Identical|Validated}}",
 	"proofreadpage_quality0_message": "Description of pages marked as a level 0 quality",
 	"proofreadpage_quality1_message": "Description of pages marked as a level 1 quality",
 	"proofreadpage_quality2_message": "Description of pages marked as a level 2 quality",
