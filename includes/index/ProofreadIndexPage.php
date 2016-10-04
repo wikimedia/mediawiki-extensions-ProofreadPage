@@ -110,7 +110,7 @@ class ProofreadIndexPage {
 			if ( $rev === null ) {
 				$this->text = '';
 			} else {
-				$this->text = $rev->getText();
+				$this->text = ContentHandler::getContentText( $rev->getContent() );
 			}
 		}
 		return $this->text;
