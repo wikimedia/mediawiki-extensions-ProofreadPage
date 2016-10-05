@@ -131,7 +131,8 @@ class EditPagePage extends EditPage {
 		$out = $this->context->getOutput();
 		$out->addHTML(
 			Html::openElement( 'div', [ 'class' => $areaClass ] ) .
-			Html::element( 'label', [ 'for' => $textareaName ], wfMessage( $labelMsg )->text() )
+			Html::element( 'label', [ 'for' => $textareaName ],
+				$this->context->msg( $labelMsg )->text() )
 		);
 		$this->showTextbox( $content, $textareaName, $textareaAttributes );
 		$out->addHTML( Html::closeElement( 'div' ) );
@@ -164,7 +165,10 @@ class EditPagePage extends EditPage {
 			$msg = 'proofreadpage_quality' . $level . '_category';
 			$cls = 'quality' . $level;
 
-			$attributes = [ 'tabindex' => ++$tabindex, 'title' => wfMessage( $msg )->plain() ];
+			$attributes = [
+				'tabindex' => ++$tabindex,
+				'title' => $this->context->msg( $msg )->plain()
+			];
 			if ( $level == $currentLevel->getLevel() ) {
 				$attributes[] = 'checked';
 			}
@@ -181,7 +185,7 @@ class EditPagePage extends EditPage {
 				$html .
 				Html::closeElement( 'span' ) .
 				Html::OpenElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
-				wfMessage( 'proofreadpage_page_status' )->title( $this->getTitle() )->parse() .
+				$this->context->msg( 'proofreadpage_page_status' )->title( $this->getTitle() )->parse() .
 				Html::closeElement( 'label' );
 		}
 
