@@ -65,7 +65,7 @@
 	 * Put the scan image on top or on the left of the edit area
 	 */
 	function toggleLayout() {
-		var $container;
+		var $container, newHeight;
 		if ( $zoomImage.data( 'prpZoom' ) ) {
 			$zoomImage.prpZoom( 'destroy' );
 		}
@@ -75,12 +75,15 @@
 		if ( isLayoutHorizontal ) {
 			$container.appendTo( $editForm.find( '.prp-page-container' ) );
 
+			// Switch CSS widths and heights back to the default side-by-size layout.
 			$container.css( {
-				width: ''
+				width: '',
+				height: ''
 			} );
 			$editForm.find( '.prp-page-content' ).css( {
 				width: ''
 			} );
+			$( '#wpTextbox1' ).css( { height: '' } );
 			ensureImageZoomInitialization();
 
 			isLayoutHorizontal = false;
@@ -88,6 +91,7 @@
 		} else {
 			$container.insertBefore( $editForm );
 
+			// Set the width and height of the image and form.
 			$container.css( {
 				width: '100%',
 				overflow: 'auto',
@@ -97,10 +101,13 @@
 				width: '100%'
 			} );
 
-			$container.css( {
-				height: $( window ).height() / 3 + 'px'
-			} );
+			// Turn on image zoom before setting the image height, or it'll be overridden.
 			ensureImageZoomInitialization();
+
+			// Set the image and the edit box to the same height (of 1/3 of the window each).
+			newHeight = $( window ).height() / 3 + 'px';
+			$container.css( { height: newHeight } );
+			$( '#wpTextbox1' ).css( { height: newHeight } );
 
 			isLayoutHorizontal = true;
 		}
