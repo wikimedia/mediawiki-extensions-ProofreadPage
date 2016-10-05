@@ -146,7 +146,7 @@ class ProofreadPage {
 		if ( !isset( $m[1] ) ) {
 			return;
 		}
-		$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[0] );
+		$imageTitle = Title::makeTitleSafe( NS_FILE, $m[0] );
 		if ( $imageTitle === null ) {
 			return;
 		}

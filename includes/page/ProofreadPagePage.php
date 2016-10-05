@@ -111,7 +111,7 @@ class ProofreadPagePage {
 
 		$m = explode( '/', $this->title->getText(), 2 );
 		if ( isset( $m[1] ) ) {
-			$imageTitle = Title::makeTitleSafe( NS_IMAGE, $m[0] );
+			$imageTitle = Title::makeTitleSafe( NS_FILE, $m[0] );
 			if ( $imageTitle !== null ) {
 				$image = wfFindFile( $imageTitle );
 				// if it is multipage, we use the page order of the file
