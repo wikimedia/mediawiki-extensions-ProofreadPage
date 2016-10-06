@@ -307,7 +307,7 @@ class ProofreadPage {
 	 * @param WikiPage $article
 	 * @return bool
 	 */
-	public static function onArticleSaveComplete( WikiPage &$article ) {
+	public static function onPageContentSaveComplete( WikiPage &$article ) {
 		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table

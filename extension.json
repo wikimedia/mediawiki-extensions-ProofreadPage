@@ -263,8 +263,8 @@
 		"ImageOpenShowImageInlineBefore": [
 			"ProofreadPage::onImageOpenShowImageInlineBefore"
 		],
-		"ArticleSaveComplete": [
-			"ProofreadPage::onArticleSaveComplete"
+		"PageContentSaveComplete": [
+			"ProofreadPage::onPageContentSaveComplete"
 		],
 		"ArticleDelete": [
 			"ProofreadPage::onArticleDelete"
