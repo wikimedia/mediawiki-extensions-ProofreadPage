@@ -5,7 +5,8 @@
 			"Nghtwlkr",
 			"Simny",
 			"Danmichaelo",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Jon Harald Søby (WMNO)"
 		]
 	},
 	"indexpages": "Liste over innholdsfortegnelser",
@@ -25,7 +26,7 @@
 	"proofreadpage_notallowed": "Å gjøre en forandring er ikke lov",
 	"proofreadpage_notallowedtext": "Du har ikke rettigheter til å endre korrekturlesningen på denne siden.",
 	"proofreadpage_dataconfig_badformatted": "Programfeil i datakonfigurasjonen",
-	"proofreadpage_dataconfig_badformattedtext": "Siden [[MediaWiki:Proofreadpage index data config]] er ikke velformatert JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Siden [[Mediawiki:Proofreadpage index data config]] er ikke velformatert JSON.",
 	"proofreadpage_number_expected": "Feil: Numerisk verdi forventet",
 	"proofreadpage_interval_too_large": "Feil: Intervall for stort",
 	"proofreadpage_invalid_interval": "Feil: ugyldig intervall",

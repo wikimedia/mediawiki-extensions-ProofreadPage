@@ -5,7 +5,8 @@
 			"Praveenp",
 			"Shijualex",
 			"Vssun",
-			"Harshanh"
+			"Harshanh",
+			"Manojk"
 		]
 	},
 	"indexpages": "സൂചികാ താളുകളുടെ പട്ടിക",
@@ -24,6 +25,8 @@
 	"proofreadpage_nologintext": "താളുകളുടെ തെറ്റുതിരുത്തൽ വായനയുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്താൻ താങ്കൾ [[Special:UserLogin|പ്രവേശിച്ചിരിക്കേണ്ടതാണ്]].",
 	"proofreadpage_notallowed": "മാറ്റം വരുത്താൻ അനുവാദമില്ല",
 	"proofreadpage_notallowedtext": "ഈ താളിന്റെ തെറ്റുതിരുത്തൽ വായനയുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്താൻ താങ്കൾക്ക് അനുമതിയില്ല.",
+	"proofreadpage_dataconfig_badformatted": "ഡാറ്റ ക്രമീകരണത്തിൽ പിഴവുണ്ട്",
+	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] എന്ന താൾ JSON ഉപയോഗിച്ച് കൃത്യമായി വിന്യസിച്ചിട്ടില്ല",
 	"proofreadpage_number_expected": "പിഴവ്: സംഖ്യയായുള്ള മൂല്യമാണ് പ്രതീക്ഷിക്കുന്നത്",
 	"proofreadpage_interval_too_large": "പിഴവ്: വളരെ വലിയ ഇടവേള",
 	"proofreadpage_invalid_interval": "പിഴവ്: അസാധുവായ ഇടവേള",
@@ -69,6 +72,18 @@
 	"proofreadpage-button-reset-zoom-label": "യഥാർത്ഥ വലിപ്പം",
 	"proofreadpage-button-zoom-in-label": "വലുതാക്കുക",
 	"proofreadpage-button-toggle-layout-label": "തിരശ്ചീന/ലംബ രൂപകല്പന",
+	"proofreadpage-pageinfo-status": "തെറ്റുതിരുത്തൽ വായനയുടെ സ്ഥിതി",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} നാമമേഖല തിരുത്തുമ്പോൾ തലക്കുറിപ്പ്, അടിക്കുറിപ്പ് മണ്ഡലങ്ങൾ പ്രദർശിപ്പിക്കുക",
-	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} നാമമേഖല തിരുത്തുമ്പോൾ തിരശ്ചീന രൂപകല്പന ഉപയോഗിക്കുക"
+	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} നാമമേഖല തിരുത്തുമ്പോൾ തിരശ്ചീന രൂപകല്പന ഉപയോഗിക്കുക",
+	"proofreadpage-indexoai-repositoryName": "{{SITENAME}} പദ്ധതിയിൽ നിന്നുള്ള പുസ്തകത്തിന്റെ മെറ്റാഡാറ്റ",
+	"proofreadpage-indexoai-eprint-content-text": "തെറ്റുതിരുത്തൽ താൾ നിയന്ത്രിയ്ക്കുന്ന പുസ്തകങ്ങളുടെ മെറ്റാഡാറ്റ",
+	"proofreadpage-indexoai-error-schemanotfound": "സ്കീമ കണ്ടെത്താനായില്ല",
+	"content-model-proofread-page": "താൾ: താൾ",
+	"apihelp-query+proofreadinfo-example-1": "സ്വതവേയുള്ള വിവരങ്ങളിലേയ്ക്ക് മടങ്ങുക",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "താൾ തിരഞ്ഞെടുക്കൽ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "താളുകൾ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "അതെ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "അല്ല",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "തെറ്റുതിരുത്തൽ വായനയുടെ ഗുണനിലവാരം",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "തെറ്റുതിരുത്തൽ വായനയുടെ ഗുണനിലവാരം"
 }
