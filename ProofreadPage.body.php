@@ -296,7 +296,7 @@ class ProofreadPage {
 		if ( $title->prpIndexPage !== null ) {
 			$indexTitle = $title->prpIndexPage->getTitle();
 			$indexTitle->invalidateCache();
-			$index = new Article( $indexTitle );
+			$index = WikiPage::factory( $indexTitle );
 			if ( $index ) {
 				self::updatePrIndex( $index, $deleted ? $title : null );
 			}
@@ -407,9 +407,9 @@ class ProofreadPage {
 
 			// $nt is used here on purpose, as we need to get the page id.
 			// There is no page under the old title or it is a redirect.
-			$article = new Article( $nt );
-			if ( $article ) {
-				ProofreadIndexDbConnector::removeIndexData( $article->getId() );
+			$wikipage = WikiPage::factory( $nt );
+			if ( $wikipage ) {
+				ProofreadIndexDbConnector::removeIndexData( $wikipage->getId() );
 			}
 		}
 
@@ -421,9 +421,9 @@ class ProofreadPage {
 			}
 		} elseif ( $nt->inNamespace( self::getIndexNamespaceId() ) ) {
 			// Update index data.
-			$article = new Article( $nt );
-			if ( $article ) {
-				self::updatePrIndex( $article );
+			$wikipage = WikiPage::factory( $nt );
+			if ( $wikipage ) {
+				self::updatePrIndex( $wikipage );
 			}
 		}
 		return true;
