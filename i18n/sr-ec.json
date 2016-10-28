@@ -7,7 +7,8 @@
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
 			"Srdjan m",
-			"Milicevic01"
+			"Milicevic01",
+			"Сербијана"
 		]
 	},
 	"proofreadpage_desc": "Омогући лако упоређивање текста и оригиналног скена.",
@@ -32,7 +33,7 @@
 	"proofreadpage_image_message": "Веза ка индексу стране.",
 	"proofreadpage_page_status": "Статус стране",
 	"proofreadpage_js_attributes": "аутор наслов година издавач",
-	"proofreadpage_index_attributes": "аутор\nнаслов\nгодина|година публикације\nиздавач\nизвор\nслика|насловна страна\nстрана||20\nпримедбе||10",
+	"proofreadpage_index_attributes": "Аутор\nНаслов\nГодина|Година издања\nИздавач\nИзвор\nСлика|Насловна слика\nСтранице||20\nПримедбе||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|страница|странице|страница}}",
 	"proofreadpage_source": "Извор",
 	"proofreadpage-section-tools": "Лекторске алатке",
