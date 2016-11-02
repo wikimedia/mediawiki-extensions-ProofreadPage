@@ -87,7 +87,11 @@
 	"apihelp-query+proofreadinfo-param-prop": "Kiujn provlegajn ecojn ricevi:\n;namespaces:Informo pri la nomspacoj \"{{ns:Page}}\" kaj \"{{ns:Index}}\".\n;qualitylevels:Listo de niveloj de provlega kvalito.",
 	"apihelp-query+proofreadinfo-example-1": "Redonas defaŭltan informon",
 	"apihelp-query+proofreadinfo-example-3": "Redonas informon pri nomspaco",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Paĝ-elekto",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Paĝoj",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transkludo de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jes",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kvalito de provlegado",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kvalito de provlegado"
 }
