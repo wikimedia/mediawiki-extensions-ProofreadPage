@@ -74,7 +74,15 @@ class ProofreadPages extends QueryPage {
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
 				$searchEngine->setNamespaces( [ $indexNamespaceId ] );
 				$searchEngine->showRedirects = false;
-				$textMatches = $searchEngine->searchText( $this->searchTerm );
+				$status = $searchEngine->searchText( $this->searchTerm );
+				if ( $status instanceof SearchResultSet ) {
+					$textMatches = $status;
+					$status = null;
+				} elseif ( $status->isOK() ) {
+					$textMatches = $status->getValue();
+				} else {
+					$textMatches = null;
+				}
 				if ( !( $textMatches instanceof SearchResultSet ) ) {
 					// TODO: $searchEngine->searchText() can return status objects
 					// Might want to extract some information from them
