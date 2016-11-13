@@ -80,7 +80,7 @@
 	"proofreadpage-pageinfo-status": "Estado da revisão",
 	"proofreadpage-preferences-showheaders-label": "Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar \"layout\" horizontal ao editar o espaço nominal {{ns:page}}",
-	"proofreadpage-indexoai-repositoryName": "Metadados dos livros de {{SITENAME}}",
+	"proofreadpage-indexoai-repositoryName": "Metadados dos livros da wiki {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Metadados dos livros administrados por ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Modelo da base de dados (''schema'') não encontrado",
 	"proofreadpage-indexoai-error-schemanotfound-text": "O modelo da base de dados (''schema'') $1 não foi encontrado.",
