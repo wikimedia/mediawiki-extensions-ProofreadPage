@@ -87,11 +87,17 @@
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|página validade|páginas validadas}}, $2 {{PLURAL:$2|página para revisão de texto|páginas para revisão de texo}} e $3 {{PLURAL:$3|página sem marcação para revisão|páginas sem marcação para revisão}}",
 	"content-model-proofread-page": "Página: página",
+	"apihelp-query+proofread-description": "Devolve informação sobre o estado de revisão atual das páginas indicadas",
+	"apihelp-query+proofread-example-1": "Devolver o estado de revisão das páginas no espaço nominal 250",
+	"apihelp-query+proofreadinfo-description": "Devolver informação sobre a configuração da extensão ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "As propriedades de revisão a serem obtidas:\n;namespaces:Informação sobre os espaços nominais \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista dos níveis de qualidade de revisão.",
+	"apihelp-query+proofreadinfo-example-1": "Devolver a informação padrão",
+	"apihelp-query+proofreadinfo-example-3": "Devolver informação do espaço nominal",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Seleção de página",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páginas",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusão de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sim",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Não",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualidade de revisão",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualidade de correção"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualidade de revisão"
 }
