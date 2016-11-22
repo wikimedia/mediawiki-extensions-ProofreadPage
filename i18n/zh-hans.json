@@ -19,7 +19,7 @@
 		]
 	},
 	"indexpages": "索引页列表",
-	"pageswithoutscans": "没有扫描的页面",
+	"pageswithoutscans": "未受嵌入包含的页面",
 	"proofreadpage_desc": "允许简易地比较原始扫描稿和识别文本",
 	"proofreadpage_image": "图像",
 	"proofreadpage_index": "索引",
