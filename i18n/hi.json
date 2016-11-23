@@ -93,5 +93,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पृष्ठ",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 का मूल",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नहीं"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नहीं",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "पढ़ने की गुणवत्ता",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "पढ़ने की गुणवत्ता"
 }
