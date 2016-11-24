@@ -24,10 +24,11 @@ class ProofreadPages extends QueryPage {
 
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
+		$this->mIncludable = true;
 	}
 
 	public function execute( $parameters ) {
-		global $wgDisableTextSearch, $wgScript;
+		global $wgDisableTextSearch;
 
 		$this->setHeaders();
 		if ( $this->limit == 0 && $this->offset == 0 ) {
@@ -45,29 +46,12 @@ class ProofreadPages extends QueryPage {
 		$this->suppressSqlOffset = false;
 
 		if ( !$wgDisableTextSearch ) {
-			$orderSelect = new XmlSelect( 'order', 'order', $this->queryOrder );
-			$orderSelect->addOption( $this->msg( 'proofreadpage_index_status' )->text(), 'quality' );
-			$orderSelect->addOption( $this->msg( 'proofreadpage_index_size' )->text(), 'size' );
-			$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
 
-			$output->addHTML(
-				Html::openElement( 'form', [ 'action' => $wgScript ] ) .
-				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-				Html::input( 'limit', $this->limit, 'hidden', [] ) .
-				Html::openElement( 'fieldset', [] ) .
-				Html::element( 'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
-				Html::openElement( 'p' ) .
-				Html::element( 'label', [ 'for' => 'key' ], $this->msg( 'proofreadpage_specialpage_label_key' )->text() )  . ' ' .
-				Html::input( 'key', $this->searchTerm, 'search', [ 'id' => 'key', 'size' => '50' ] ) .
-				Html::closeElement( 'p' ) .
-				Html::openElement( 'p' ) .
-				Html::element( 'label', [ 'for' => 'order' ], $this->msg( 'proofreadpage_specialpage_label_orderby' )->text() ) . ' ' . $orderSelect->getHtml() . ' ' .
-				Xml::checkLabel( $this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
-				Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
-				Html::closeElement( 'p' ) .
-				Html::closeElement( 'fieldset' ) .
-				Html::closeElement( 'form' )
-			);
+			if ( !$this->including() ) {
+				// Only show the search form when not including in another page.
+				$output->addHTML( $this->getSearchForm() );
+			}
+
 			if ( $this->searchTerm ) {
 				$indexNamespaceId = ProofreadPage::getIndexNamespaceId();
 				$searchEngine = SearchEngine::create();
@@ -143,6 +127,37 @@ class ProofreadPages extends QueryPage {
 			'order' => $this->queryOrder,
 			'sortascending' => $this->sortAscending
 		];
+	}
+
+	/**
+	 * Get the HTML of the search form.
+	 * @return string The HTML, with the <form> as the outermost element.
+	 */
+	protected function getSearchForm() {
+		$config = RequestContext::getMain()->getConfig();
+
+		$orderSelect = new XmlSelect( 'order', 'order', $this->queryOrder );
+		$orderSelect->addOption( $this->msg( 'proofreadpage_index_status' )->text(), 'quality' );
+		$orderSelect->addOption( $this->msg( 'proofreadpage_index_size' )->text(), 'size' );
+		$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
+
+		$searchForm = Html::openElement( 'form', [ 'action' => $config->get( 'Script' ) ] ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
+			Html::input( 'limit', $this->limit, 'hidden', [] ) .
+			Html::openElement( 'fieldset', [] ) .
+			Html::element( 'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
+			Html::openElement( 'p' ) .
+			Html::element( 'label', [ 'for' => 'key' ], $this->msg( 'proofreadpage_specialpage_label_key' )->text() )  . ' ' .
+			Html::input( 'key', $this->searchTerm, 'search', [ 'id' => 'key', 'size' => '50' ] ) .
+			Html::closeElement( 'p' ) .
+			Html::openElement( 'p' ) .
+			Html::element( 'label', [ 'for' => 'order' ], $this->msg( 'proofreadpage_specialpage_label_orderby' )->text() ) . ' ' . $orderSelect->getHtml() . ' ' .
+			Xml::checkLabel( $this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
+			Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
+			Html::closeElement( 'p' ) .
+			Html::closeElement( 'fieldset' ) .
+			Html::closeElement( 'form' );
+		return $searchForm;
 	}
 
 	public function getQueryInfo() {
