@@ -55,10 +55,10 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	private function buildFileList() {
 		$backend = new FSFileBackend( [
 			'name' => 'localtesting',
-			'wikiId' => wfWikiId(),
+			'wikiId' => wfWikiID(),
 			'containerPaths' => [ 'data' => __DIR__ . '/../data/media/' ]
 		] );
-		$fileRepo = new FSRepo( [
+		$fileRepo = new FileRepo( [
 			'name' => 'temp',
 			'url' => 'http://localhost/thumbtest',
 			'backend' => $backend
