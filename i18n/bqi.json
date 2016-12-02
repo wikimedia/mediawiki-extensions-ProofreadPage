@@ -17,7 +17,7 @@
 	"proofreadpage_indexdupe": "هوم پیوند تکراری",
 	"proofreadpage_indexdupetext": "بلگه آ نترن بیشتر ز بلگه اصلی لیست وابون",
 	"proofreadpage_nologin": "نیبو وارد وابوین",
-	"proofreadpage_nologintext": "ایسا وا[[ویجه:وارد وابیڎن کاریار|وارد وابیڎه]]وابوین سی آلشت كردن شلك غلط گئری ای بلگه.",
+	"proofreadpage_nologintext": "ایسا وا[[ویجه:وارد وابیڎن کاریار|وارد وابیڌه]]وابوین سی آلشت كردن شلك غلط گئری ای بلگه.",
 	"proofreadpage_notallowed": "سی آلشت اجازه نارین",
 	"proofreadpage_notallowedtext": "ایسا اجازه نارین شلگ غلط گیری ای بلگه نه آلشت بڎین.",
 	"proofreadpage_dataconfig_badformatted": "اشتوا مئن راست کردن دونسمندیا",
@@ -52,7 +52,7 @@
 	"proofreadpage_page_status": "حال و بال بلگه",
 	"proofreadpage_js_attributes": "موضو نويسنده سال چاپ وابیڎن",
 	"proofreadpage_index_attributes": "نویسنده\nعنوان\nسال|سال چاپ وابیڎن\nناشر\nسرچشمه\nعسگ|پوششت عسگ\nبلگه آ||20\nتوضيح آ||10",
-	"proofreadpage_pages": "$1 {{جمی:$1|بلگه|بلگه آ}}",
+	"proofreadpage_pages": "$1 {{PLURAL:$1|بألگأ|بألگإآ}}",
 	"proofreadpage_specialpage_legend": "مئن بلگه سيائه نه بگرد",
 	"proofreadpage_specialpage_searcherror": "خطا مئن موتور پی جوری",
 	"proofreadpage_specialpage_searcherrortext": "موتور پی جوری كار نی کنه. متاسفيم سی ناراحت وابیڎنتون",
@@ -75,5 +75,9 @@
 	"proofreadpage-indexoai-error-schemanotfound": "طرح وند جسته نه وابی",
 	"proofreadpage-indexoai-error-schemanotfound-text": "طرح وند $1 اصلا جسته نوابی.",
 	"proofreadpage-disambiguationspage": "پيش قالو:disambig",
-	"content-model-proofread-page": "بلگه:بلگه"
+	"content-model-proofread-page": "بلگه:بلگه",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "گوزينشت بألگأ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "بألگإ آ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "هرإ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نأ"
 }
