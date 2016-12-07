@@ -59,7 +59,8 @@ class ApiQueryProofread extends ApiQueryBase {
 			'prop' => 'categories',
 			'pageids' => implode( '|', $pageIds ),
 			'clcategories' => implode( '|', $qualityCategories ),
-			'cllimit' => 'max'
+			'cllimit' => 'max',
+			'errorformat' => 'raw',
 		] );
 
 		$api = new ApiMain( $params );
@@ -70,8 +71,16 @@ class ApiQueryProofread extends ApiQueryBase {
 		);
 		unset( $api );
 
-		if ( array_key_exists( 'error', $data ) ) {
-			$this->dieUsageMsg( $data['error'] );
+		if ( array_key_exists( 'errors', $data ) ) {
+			$status = StatusValue::newGood();
+			foreach ( $data['errors'] as $error ) {
+				$status->fatal( ApiMessage::create(
+					array_merge( [ $data['key'] ], $data['params'] ),
+					$data['code'],
+					isset( $data['data'] ) ? $data['data'] : []
+				) );
+			}
+			$this->dieStatus( $status );
 		}
 
 		$result = $this->getResult();
