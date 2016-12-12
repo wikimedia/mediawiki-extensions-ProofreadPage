@@ -7,7 +7,8 @@
 			"Marmase",
 			"Mirzali",
 			"Kumkumuk",
-			"Asmen"
+			"Asmen",
+			"Gırd"
 		]
 	},
 	"indexpages": "Lista pelanê zerreki",
@@ -37,7 +38,7 @@
 	"proofreadpage_body": "miyaneyê peli (çepraşt têarê beno):",
 	"proofreadpage_footer": "Footer (ihtiwa):",
 	"proofreadpage_toggleheaders": "asayişê qısmi yê ke ihtiwa nıbeni bıvurn",
-	"proofreadpage_quality0_category": "metın tede çino",
+	"proofreadpage_quality0_category": "Bênuşte",
 	"proofreadpage_quality1_category": "raşt nıbiyo",
 	"proofreadpage_quality2_category": "problemın",
 	"proofreadpage_quality3_category": "raşt ker",

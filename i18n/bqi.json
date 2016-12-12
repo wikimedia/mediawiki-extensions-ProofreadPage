@@ -17,7 +17,7 @@
 	"proofreadpage_indexdupe": "هوم پیوند تکراری",
 	"proofreadpage_indexdupetext": "بلگه آ نترن بیشتر ز بلگه اصلی لیست وابون",
 	"proofreadpage_nologin": "نیبو وارد وابوین",
-	"proofreadpage_nologintext": "ایسا وا[[ویجه:وارد وابیڎن کاریار|وارد وابیڌه]]وابوین سی آلشت كردن شلك غلط گئری ای بلگه.",
+	"proofreadpage_nologintext": "ایسا وا[[ویجه:ڤامإن أڤوڌن کاريار|ڤامإن إڤوڌإ]]ڤایۈین سي آلشد كردن شلك غلط گئری ای بلگه.",
 	"proofreadpage_notallowed": "سی آلشت اجازه نارین",
 	"proofreadpage_notallowedtext": "ایسا اجازه نارین شلگ غلط گیری ای بلگه نه آلشت بڎین.",
 	"proofreadpage_dataconfig_badformatted": "اشتوا مئن راست کردن دونسمندیا",
@@ -76,8 +76,16 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "طرح وند $1 اصلا جسته نوابی.",
 	"proofreadpage-disambiguationspage": "پيش قالو:disambig",
 	"content-model-proofread-page": "بلگه:بلگه",
+	"apihelp-query+proofread-description": "دۈنسمأنديا نأ مإن هال و بال ڤانيأري بألگإ آ نشۈن دياري إکنإ.",
+	"apihelp-query+proofread-example-1": "حال و بال ڤانيأري بألگإ آنأ سي نومجا۲۵۰ نشۈن دياري إکنإ.",
+	"apihelp-query+proofreadinfo-description": "دۈنسمأنديا نأ سي أندوم ديار کني ڤانيأري بألگإ آ نشۈن دياري إکنإ.",
+	"apihelp-query+proofreadinfo-example-1": "ڤورگشت داين دۈنسمأنديا پيش فرض",
+	"apihelp-query+proofreadinfo-example-3": "ڤورگشت داين نومجا دۈنسمأنديا",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "گوزينشت بألگأ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "بألگإ آ",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "ڤارو گونجایشت $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "هرإ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نأ"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نأ",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "خۈڤدياري خوندن",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "خۈڤدياري خوندن"
 }
