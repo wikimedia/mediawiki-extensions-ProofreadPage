@@ -138,9 +138,9 @@
 	}
 
 	/**
-	 * Add some buttons to the toolbar
+	 * Setup the editing interface
 	 */
-	function addButtons() {
+	function setupWikitextEditor() {
 		var iconPath = mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/page/images/',
 			tools = {
 				zoom: {
@@ -222,6 +222,10 @@
 
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
 			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
+				$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
+				$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
+				$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
+
 				$edit.wikiEditor( 'addToToolbar', {
 					sections: {
 						'proofreadpage-tools': {
@@ -232,6 +236,13 @@
 					}
 				} );
 			} );
+
+			// load the "dialogs" module of WikiEditor if enabled , bug: 72960
+			if ( getBooleanUserOption( 'usebetatoolbar-cgd' ) ) {
+				mw.loader.load( 'ext.wikiEditor.dialogs' );
+			}
+
+			// TODO: other modules of WikiEditor may miss, see bug 72960.
 		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
 			mw.loader.using( 'mediawiki.toolbar', function () {
 				$.each( tools, function ( group, list ) {
@@ -248,27 +259,6 @@
 	}
 
 	/**
-	 * Improve the WikiEditor interface
-	 */
-	function setupWikiEditor() {
-		// Ignore "showtoolbar", for consistency with the default behavior (bug 30795)
-		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
-			return;
-		}
-		mw.loader.using( 'ext.wikiEditor', function () {
-			$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
-			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
-			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
-		} );
-
-		// load the "dialogs" module of WikiEditor if enabled , bug: 72960
-		if ( getBooleanUserOption( 'usebetatoolbar-cgd' ) ) {
-			mw.loader.load( 'ext.wikiEditor.dialogs' );
-		}
-		// TODO: other modules of WikiEditor may miss, see bug 72960.
-	}
-
-	/**
 	 * Init global variables of the script
 	 */
 	function initEnvironment() {
@@ -282,10 +272,9 @@
 
 	$( function () {
 		initEnvironment();
-		setupWikiEditor();
+		setupWikitextEditor();
 		setupPreferences();
 		setupPageQuality();
-		addButtons();
 	} );
 
 	// zoom should be initialized after the page is rendered
