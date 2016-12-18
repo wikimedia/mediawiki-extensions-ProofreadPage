@@ -23,7 +23,8 @@
 			"Yknok29",
 			"Nemo bis",
 			"Liuxinyu970226",
-			"Guycn2"
+			"Guycn2",
+			"Pikne"
 		]
 	},
 	"indexpages": "{{doc-special|IndexPages}}",
@@ -109,7 +110,7 @@
 	"apihelp-query+proofreadinfo-param-prop": "Use \"{{ns:Page}}\" and \"{{ns:Index}}\" with quotes instead of Page and Index namespaces.\n\n{{doc-apihelp-param|query+proofreadinfo|prop}}",
 	"apihelp-query+proofreadinfo-example-1": "{{doc-apihelp-example|query+proofreadinfo}}",
 	"apihelp-query+proofreadinfo-example-3": "{{doc-apihelp-example|query+proofreadinfo}}",
-	"proofreadpage-visualeditor-node-pages-inspector-title": "Title of the button to open the inspector to edit <nowiki><pages></nowiki> blocks.",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Title of the dialog box to edit <nowiki><pages></nowiki> blocks.",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Title for the inspector to edit <nowiki><pages></nowiki> blocks.\n{{Identical|Page}}",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Description of the inspector to edit <nowiki><pages></nowiki> blocks.\n$1 is the title of the transcluded index (like 'My nice book.djvu').",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Label of the option that allows to include an header on top of the transluded pages.\n{{Identical|Yes}}",
