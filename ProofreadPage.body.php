@@ -20,9 +20,10 @@
  */
 
 use ProofreadPage\Context;
+use ProofreadPage\FileNotFoundException;
+use ProofreadPage\Index\EditIndexPage;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageContentBuilder;
-use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 
 /*
@@ -93,23 +94,6 @@ class ProofreadPage {
 			return false;
 		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$model = CONTENT_MODEL_PROOFREAD_INDEX;
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-	/**
-	 * Set up our custom edition system.
-	 *
-	 * @param Article $article  being edited
-	 * @param User $user User performing the edit
-	 * @return boolean hook return value
-	 */
-	public static function onCustomEditor( Article $article, User $user ) {
-		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) { // TODO ExternalEditor case
-			$editor = new EditProofreadIndexPage( $article );
-			$editor->edit();
 			return false;
 		} else {
 			return true;

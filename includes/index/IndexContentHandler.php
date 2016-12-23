@@ -107,6 +107,16 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
+	 * @see ContentHandler::getActionOverrides
+	 */
+	public function getActionOverrides() {
+		return [
+			'edit' => '\ProofreadPage\Index\IndexEditAction',
+			'submit' => '\ProofreadPage\Index\IndexSubmitAction'
+		];
+	}
+
+	/**
 	 * @see ContentHandler::makeEmptyContent
 	 */
 	public function makeEmptyContent() {
