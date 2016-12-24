@@ -4,6 +4,15 @@ pagelist
 !! endhooks
 
 !!article
+MediaWiki:Proofreadpage index template
+!!text
+Title: {{{Title}}}
+Author: {{{Author}}}
+Pages: {{{Pages}}}
+TOC: {{{TOC}}}
+!!endarticle
+
+!!article
 MediaWiki:Proofreadpage pagenum template
 !!text
 [[{{{page}}}|{{{num}}}]]
@@ -20,7 +29,7 @@ MediaWiki:Proofreadpage header template
 !!article
 Index:Test
 !!text
-{{
+{{:MediaWiki:Proofreadpage_index_template
 |Title=Title
 |Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]
 |Author=[[Author:Me]]
@@ -33,7 +42,7 @@ Index:Test
 !!article
 Index:LoremIpsum.djvu
 !!text
-{{
+{{:MediaWiki:Proofreadpage_index_template
 |Title=Lorem Ipsum
 |Pages=<pagelist 1to1=roman 2to2=highroman to=2/> <pagelist from=3 3=1 5=empty />
 |Author=[[Author:Me]]
@@ -238,7 +247,7 @@ section
 !!article
 Index:TestSection
 !!text
-{{
+{{:MediaWiki:Proofreadpage_index_template
 |Pages=[[Page:TestSection 1|TOC]] [[Page:TestSection 2|1]] [[Page:TestSection 3|2]]
 }}
 !!endarticle
@@ -485,4 +494,185 @@ title="Index:LoremIpsum.djvu"
 !! html
 <p><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">૧</a> <a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">૨</a>
 </p>
+!! end
+
+!! test
+pages: with file: Simple transclusion
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="4" to="5" />
+!! html
+<div>
+<p><span><a href="/wiki/Page:LoremIpsum.djvu/4" title="Page:LoremIpsum.djvu/4">2</a></span>Page 4&#32;<span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">3</a></span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">Page:LoremIpsum.djvu/5</a>&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: with file: Simple transclusion without from
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" to="2" />
+!! html
+<div>
+<p><span><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">i</a></span>Page 1&#32;<span><a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">II</a></span>
+</p><p>Page 2&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: with file: Invalid from
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="-1" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Invalid to
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" to="42" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Invalid range
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="4" to="3" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Invalid include
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="42" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Simple transclusion without to
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="4" />
+!! html
+<div>
+<p><span><a href="/wiki/Page:LoremIpsum.djvu/4" title="Page:LoremIpsum.djvu/4">2</a></span>Page 4&#32;<span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">3</a></span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">Page:LoremIpsum.djvu/5</a>&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: with file: step
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="3" step=2 />
+!! html
+<div>
+<p><span><a href="/wiki/Page:LoremIpsum.djvu/3" title="Page:LoremIpsum.djvu/3">1</a></span>Page 3&#32;<span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">3</a></span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">Page:LoremIpsum.djvu/5</a>&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: with file: Invalid step
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="4" step="-1" />
+!! html
+<p><strong class="error">Error: Numeric value expected</strong>
+</p>
+!! end
+
+!! test
+pages: with file: exclude
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="3" exclude=4 />
+!! html
+<div>
+<p><span><a href="/wiki/Page:LoremIpsum.djvu/3" title="Page:LoremIpsum.djvu/3">1</a></span>Page 3&#32;<span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">3</a></span><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">Page:LoremIpsum.djvu/5</a>&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: with file: include
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="1-2,4" />
+!! html
+<div>
+<p><span><a href="/wiki/Page:LoremIpsum.djvu/1" title="Page:LoremIpsum.djvu/1">i</a></span>Page 1&#32;<span><a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">II</a></span>
+</p><p>Page 2&#32;<span><a href="/wiki/Page:LoremIpsum.djvu/4" title="Page:LoremIpsum.djvu/4">2</a></span>Page 4&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: with file: invalid include (1)
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="2-1,4" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: invalid include (2)
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="." />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Header
+!! options
+djvu
+title="Test/Chapter 2"
+!! wikitext
+<pages index="LoremIpsum.djvu" from="2" to="3" header=1 />
+!! html
+<div>
+<p>Lorem Ipsum -- <a href="/wiki/Author:Me" title="Author:Me">Author:Me</a>
+II -- 1
+<a href="/wiki/Test/Chapter_1" title="Test/Chapter 1">Test/Chapter 1</a> -- <a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a><span><a href="/wiki/Page:LoremIpsum.djvu/2" title="Page:LoremIpsum.djvu/2">II</a></span>
+</p><p>Page 2&#32;<span><a href="/wiki/Page:LoremIpsum.djvu/3" title="Page:LoremIpsum.djvu/3">1</a></span>Page 3&#32;
+</p>
+</div>
+
 !! end

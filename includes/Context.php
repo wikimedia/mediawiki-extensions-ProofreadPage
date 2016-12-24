@@ -31,11 +31,6 @@ class Context {
 	private $fileProvider;
 
 	/**
-	 * @var PaginationFactory
-	 */
-	private $paginationFactory;
-
-	/**
 	 * @param int $pageNamespaceId
 	 * @param int $indexNamespaceId
 	 * @param FileProvider $fileProvider
@@ -44,7 +39,6 @@ class Context {
 		$this->pageNamespaceId = $pageNamespaceId;
 		$this->indexNamespaceId = $indexNamespaceId;
 		$this->fileProvider = $fileProvider;
-		$this->paginationFactory = new PaginationFactory( $this );
 	}
 
 	/**
@@ -72,7 +66,7 @@ class Context {
 	 * @return PaginationFactory
 	 */
 	public function getPaginationFactory() {
-		return $this->paginationFactory;
+		return new PaginationFactory( $this );
 	}
 
 	/**
