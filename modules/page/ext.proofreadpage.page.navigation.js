@@ -51,7 +51,7 @@
 		$tabs.addClass( 'prp-tabs' );
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		initTabs();
 	} );
 
