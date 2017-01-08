@@ -1,4 +1,5 @@
 <?php
+use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Pagination\PageList;
 
 /**
@@ -83,12 +84,15 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 	/**
 	 * Constructor of a new ProofreadIndexPage
 	 * @param Title|string $title
-	 * @param string|null $content
+	 * @param string|IndexContent|null $content
 	 * @return ProofreadIndexPage
 	 */
 	public static function newIndexPage( $title = 'test.djvu', $content = null ) {
 		if ( is_string( $title ) ) {
 			$title = Title::makeTitle( 252, $title );
+		}
+		if ( is_string( $content ) ) {
+			$content = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_INDEX )->unserializeContent( $content );
 		}
 		return new ProofreadIndexPage( $title, self::$config, $content );
 	}
@@ -265,6 +269,6 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 	 */
 	public function testReplaceVariablesWithIndexEntries( $pageContent, $result, $entry, $extraparams ) {
 		$page = self::newIndexPage( 'Test.djvu', $pageContent );
-		$this->assertEquals( $result, $page->replaceVariablesWithIndexEntries( $entry, $extraparams ) );
+		$this->assertEquals( $result, $page->getIndexEntryWithVariablesReplacedWithIndexEntries( $entry, $extraparams ) );
 	}
 }

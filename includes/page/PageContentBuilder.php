@@ -56,8 +56,8 @@ class PageContentBuilder {
 			} catch ( OutOfBoundsException $e ) {
 	  } // should not happen
 
-			$header = $index->replaceVariablesWithIndexEntries( 'header', $params );
-			$footer = $index->replaceVariablesWithIndexEntries( 'footer', $params );
+			$header = $index->getIndexEntryWithVariablesReplacedWithIndexEntries( 'header', $params );
+			$footer = $index->getIndexEntryWithVariablesReplacedWithIndexEntries( 'footer', $params );
 		} else {
 			$header = $this->contextSource->msg( 'proofreadpage_default_header' )->inContentLanguage()->plain();
 			$footer = $this->contextSource->msg( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
