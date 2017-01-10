@@ -190,7 +190,8 @@
 				"ve/node/ve.ui.MWPagesInspectorTool.js"
 			],
 			"dependencies": [
-				"ext.visualEditor.mwcore"
+				"ext.visualEditor.mwcore",
+				"oojs-ui.styles.icons-content"
 			],
 			"messages": [
 				"proofreadpage-visualeditor-node-pages-inspector-tooltip",
