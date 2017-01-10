@@ -7,7 +7,8 @@
  * @constructor
  */
 ve.ui.MWPagequalityInspector = function VeUiMWPagequalityInspector() {
-	ve.ui.MWExtensionInspector.apply( this, arguments );
+	// Parent constructor
+	ve.ui.MWPagequalityInspector.super.apply( this, arguments );
 
 	this.validatedLevelRemoved = false;
 };
@@ -31,7 +32,8 @@ ve.ui.MWPagequalityInspector.static.allowedEmpty = true;
  * @inheritdoc
  */
 ve.ui.MWPagequalityInspector.prototype.initialize = function () {
-	this.constructor.super.prototype.initialize.apply( this, arguments );
+	// Parent method
+	ve.ui.MWPagequalityInspector.super.prototype.initialize.apply( this, arguments );
 
 	this.buildQualitySelector();
 	this.form.$element.html( this.qualitySelector.$element );
@@ -62,7 +64,8 @@ ve.ui.MWPagequalityInspector.prototype.buildQualitySelector = function () {
  * @inheritdoc
  */
 ve.ui.MWPagequalityInspector.prototype.getSetupProcess = function ( data ) {
-	return this.constructor.super.prototype.getSetupProcess.call( this, data )
+	// Parent method
+	return ve.ui.MWPagequalityInspector.super.prototype.getSetupProcess.call( this, data )
 		.next( function () {
 			var currentLevel;
 			this.mwData = ( this.selectedNode !== null && this.selectedNode.getAttribute( 'mw' ) ) || {
@@ -93,7 +96,8 @@ ve.ui.MWPagequalityInspector.prototype.couldNotValidatePage = function ( current
  * @inheritdoc
  */
 ve.ui.MWPagequalityInspector.prototype.getTeardownProcess = function ( data ) {
-	return this.constructor.super.prototype.getTeardownProcess.call( this, data )
+	// Parent method
+	return ve.ui.MWPagequalityInspector.super.prototype.getTeardownProcess.call( this, data )
 		.next( function () {
 			if ( this.validatedLevelRemoved ) {
 				this.qualitySelector.addItems( [ this.qualityOptions[ 4 ] ] );
@@ -108,7 +112,8 @@ ve.ui.MWPagequalityInspector.prototype.getTeardownProcess = function ( data ) {
 ve.ui.MWPagequalityInspector.prototype.updateMwData = function ( mwData ) {
 	var selectedQualityLevel = this.getSelectedQualityLevel();
 
-	this.constructor.super.prototype.updateMwData.call( this, mwData );
+	// Parent method
+	ve.ui.MWPagequalityInspector.super.prototype.updateMwData.call( this, mwData );
 
 	mwData.attrs = mwData.attrs || {};
 
