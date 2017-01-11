@@ -169,13 +169,13 @@ ve.ui.MWPagesInspector.prototype.buildHeaderFieldSelectorOptions = function ( he
 ve.ui.MWPagesInspector.prototype.getFileInfo = function ( fileName ) {
 	if ( fileName !== '' ) {
 		return ( new mw.Api() ).get( {
+			formatversion: 2,
 			action: 'query',
 			prop: 'imageinfo',
 			titles: 'File:' + fileName,
-			iiprop: 'size',
-			indexpageids: 1
+			iiprop: 'size'
 		} ).then( function ( data ) {
-			var file = data.query.pages[ data.query.pageids[ 0 ] ];
+			var file = data.query.pages[ 0 ];
 			return file.imageinfo && file.imageinfo[ 0 ] || {};
 		}, function () {
 			return $.Deferred().resolve( {} );
