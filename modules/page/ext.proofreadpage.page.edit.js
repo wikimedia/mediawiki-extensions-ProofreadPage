@@ -256,6 +256,26 @@
 				} );
 			} );
 		}
+
+		// Users can call $('#wpTextbox1').textSelection( 'getContents' ) to get the full wikitext
+		// of the page, instead of just the body section.
+		$edit.textSelection(
+			'register',
+			{
+				getContents: function () {
+					var level = +$( 'input[name=wpQuality][checked]' ).val();
+					return '<noinclude>' +
+						// The user attribute is populated later
+						( !isNaN( level ) ? '<pagequality level="' + level + '" user="" />' : '' ) +
+						$( '#wpHeaderTextbox' ).val() +
+					'</noinclude>' +
+					$( this ).val() +
+					'<noinclude>' +
+						$( '#wpFooterTextbox' ).val() +
+					'</noinclude>';
+				}
+			}
+		);
 	}
 
 	/**

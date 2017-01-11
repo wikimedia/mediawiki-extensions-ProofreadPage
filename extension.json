@@ -133,7 +133,8 @@
 				"ext.proofreadpage.page",
 				"jquery.prpZoom",
 				"mediawiki.user",
-				"user.options"
+				"user.options",
+				"jquery.textSelection"
 			],
 			"messages": [
 				"proofreadpage_quality0_category",
