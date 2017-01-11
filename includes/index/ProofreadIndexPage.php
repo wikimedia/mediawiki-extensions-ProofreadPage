@@ -413,6 +413,7 @@ class ProofreadIndexPage {
 		static $parser = null;
 
 		if ( $parser === null ) {
+			StubObject::unstub( $wgParser );
 			$parser = clone $wgParser;
 		}
 
