@@ -267,7 +267,7 @@ ve.init.mw.ProofreadPagePageTarget.static.splitSections = function ( doc ) {
 		articleNode.appendChild( sectionNodes[ i ] );
 	}
 
-	sectionIndex = 0;
+	sectionIndex = endHeader ? 0 : 1;
 	while ( doc.body.firstChild ) {
 		sectionNodes[ sectionIndex ].appendChild( doc.body.firstChild );
 		if ( sectionNodes[ sectionIndex ].lastChild === endHeader ) {
