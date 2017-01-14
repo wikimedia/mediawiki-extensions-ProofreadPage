@@ -353,6 +353,14 @@ $proofreadPageNamespacesNames['sv'] = [
 	'index_talk' => 'Indexdiskussion'
 ];
 
+/** Tamil (தமிழ்) */
+$proofreadPageNamespacesNames['ta'] = [
+	'page' => 'பக்கம்',
+	'page_talk' => 'பக்கம்_பேச்சு',
+	'index' => 'அட்டவணை',
+	'index_talk' => 'அட்டவணை_பேச்சு'
+];
+
 /** Telugu (తెలుగు) */
 $proofreadPageNamespacesNames['te'] = [
 	'page' => 'పుట',
