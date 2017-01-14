@@ -2,6 +2,10 @@
 	"@metadata": {
 		"authors": []
 	},
+	"nstab-page": "Page",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "View the book page",
+	"tooltip-ca-nstab-index": "View the book index",
 	"indexpages": "List of index pages",
 	"pageswithoutscans": "Pages without scans",
 	"proofreadpage_desc": "Allow easy comparison of text to the original scan",

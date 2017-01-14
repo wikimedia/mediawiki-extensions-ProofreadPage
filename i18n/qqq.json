@@ -27,6 +27,10 @@
 			"Pikne"
 		]
 	},
+	"nstab-page": "Text on the tab of book pages in the \"Page\" namespace on Wikisource",
+	"nstab-index": "Text on the tab of book indexes in the \"Index\" namespace on Wikisource",
+	"tooltip-ca-nstab-page": "Used as tooltip for tab of Page namespace.\n\nSee also:\n* {{msg-mw|Nstab-page}}",
+	"tooltip-ca-nstab-index": "Used as tooltip for tab of Index namespace.\n\nSee also:\n* {{msg-mw|Nstab-index}}",
 	"indexpages": "{{doc-special|IndexPages}}",
 	"pageswithoutscans": "{{doc-special|PagesWithoutScans}}\nThe special page lists texts without scans; that is, the texts that have not been transcluded into any other page.",
 	"proofreadpage_desc": "{{desc|name=Proofread Page|url=https://www.mediawiki.org/wiki/Extension:Proofread_Page}}",
