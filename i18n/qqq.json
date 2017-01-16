@@ -27,8 +27,8 @@
 			"Pikne"
 		]
 	},
-	"nstab-page": "Text on the tab of book pages in the \"Page\" namespace on Wikisource",
-	"nstab-index": "Text on the tab of book indexes in the \"Index\" namespace on Wikisource",
+	"nstab-page": "Text on the tab of book pages in the \"Page\" namespace on Wikisource\n{{Identical|Page}}",
+	"nstab-index": "Text on the tab of book indexes in the \"Index\" namespace on Wikisource\n{{Identical|Index}}",
 	"tooltip-ca-nstab-page": "Used as tooltip for tab of Page namespace.\n\nSee also:\n* {{msg-mw|Nstab-page}}",
 	"tooltip-ca-nstab-index": "Used as tooltip for tab of Index namespace.\n\nSee also:\n* {{msg-mw|Nstab-index}}",
 	"indexpages": "{{doc-special|IndexPages}}",

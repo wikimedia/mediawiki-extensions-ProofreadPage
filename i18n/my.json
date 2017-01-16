@@ -7,5 +7,7 @@
 	"proofreadpage_quality0_category": "စာသားမပါဘဲနှင့်",
 	"proofreadpage_quality1_category": "ပရုမဖတ်ရသေး",
 	"proofreadpage_quality1_message": "ဤစာမျက်နှာကို ပရုမဖတ်ရသေးပါ",
-	"proofreadpage_specialpage_label_key": "ရှာဖွေရန်:"
+	"proofreadpage_specialpage_label_key": "ရှာဖွေရန်:",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|စာမျက်နှာ|စာမျက်နှာများ}}",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "စာမျက်နှာများ"
 }

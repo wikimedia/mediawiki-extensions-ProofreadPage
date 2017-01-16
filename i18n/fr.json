@@ -21,6 +21,10 @@
 			"Lbayle"
 		]
 	},
+	"nstab-page": "Page",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "Voir la page du livre",
+	"tooltip-ca-nstab-index": "Afficher l'index du livre",
 	"indexpages": "Liste des livres",
 	"pageswithoutscans": "Pages sans fac-similés",
 	"proofreadpage_desc": "Permet une comparaison facile entre le texte et sa numérisation originale",

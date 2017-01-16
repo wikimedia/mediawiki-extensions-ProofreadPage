@@ -17,6 +17,9 @@
 			"Indiralena"
 		]
 	},
+	"nstab-page": "Página",
+	"nstab-index": "Índice",
+	"tooltip-ca-nstab-page": "Ver la página del libro",
 	"indexpages": "Lista de páginas de índices",
 	"pageswithoutscans": "Páginas sin exploraciones",
 	"proofreadpage_desc": "Permitir una fácil comparación de un texto con el escaneado original",

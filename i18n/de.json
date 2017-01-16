@@ -10,6 +10,10 @@
 			"Inkowik"
 		]
 	},
+	"nstab-page": "Seite",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "Die Buchseite ansehen",
+	"tooltip-ca-nstab-index": "Den Buchindex ansehen",
 	"indexpages": "Liste von Indexseiten",
 	"pageswithoutscans": "Seiten ohne Scans",
 	"proofreadpage_desc": "Ermöglicht das bequeme Vergleichen von Text mit dem Originalscan",

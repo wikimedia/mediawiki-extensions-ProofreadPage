@@ -18,6 +18,10 @@
 			"Shizhao"
 		]
 	},
+	"nstab-page": "页面",
+	"nstab-index": "索引",
+	"tooltip-ca-nstab-page": "查看图书页面",
+	"tooltip-ca-nstab-index": "查看图书索引",
 	"indexpages": "索引页列表",
 	"pageswithoutscans": "未受嵌入包含的页面",
 	"proofreadpage_desc": "允许简易地比较原始扫描稿和识别文本",

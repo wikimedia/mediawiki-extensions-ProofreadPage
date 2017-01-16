@@ -5,6 +5,10 @@
 			"Brest"
 		]
 	},
+	"nstab-page": "Страница",
+	"nstab-index": "Индекс",
+	"tooltip-ca-nstab-page": "Преглед на страницата на книгата",
+	"tooltip-ca-nstab-index": "Преглед на индексот на книгата",
 	"indexpages": "Список на индексни страници",
 	"pageswithoutscans": "Страници без отслици",
 	"proofreadpage_desc": "Овозможува едноставна споредба на текстот со отсликаниот оригинал",

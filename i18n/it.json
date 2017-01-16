@@ -12,6 +12,10 @@
 			"Macofe"
 		]
 	},
+	"nstab-page": "Pagina",
+	"nstab-index": "Indice",
+	"tooltip-ca-nstab-page": "Vedi la pagina del libro",
+	"tooltip-ca-nstab-index": "Vedi l'indice del libro",
 	"indexpages": "Elenco delle pagine di indice",
 	"pageswithoutscans": "Pagine senza scansioni",
 	"proofreadpage_desc": "Consente un facile confronto tra un testo e la sua scansione originale",

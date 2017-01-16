@@ -7,9 +7,13 @@
 			"Paucabot",
 			"Qllach",
 			"SMP",
-			"Solde"
+			"Solde",
+			"Fitoschido"
 		]
 	},
+	"nstab-page": "Pàgina",
+	"nstab-index": "Índex",
+	"tooltip-ca-nstab-page": "Mostra la pàgina del llibre",
 	"indexpages": "Llista de pàgines d'índex",
 	"pageswithoutscans": "Pàgines sense escanejos",
 	"proofreadpage_desc": "Permetre una fàcil comparació d'un text amb l'escanejat original",
