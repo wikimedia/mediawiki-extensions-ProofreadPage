@@ -11,6 +11,10 @@
 			"Maroen1990"
 		]
 	},
+	"nstab-page": "صفحة",
+	"nstab-index": "فهرس",
+	"tooltip-ca-nstab-page": "عرض صفحة الكتاب",
+	"tooltip-ca-nstab-index": "عرض فهرس الكتاب",
 	"indexpages": "قائمة صفحات الفهرس",
 	"pageswithoutscans": "صفحات من دون تفحص",
 	"proofreadpage_desc": "يسمح بمقارنة سهلة للنص مع المسح الأصلي",

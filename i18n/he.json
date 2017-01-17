@@ -9,6 +9,10 @@
 			"ערן"
 		]
 	},
+	"nstab-page": "דף",
+	"nstab-index": "מפתח",
+	"tooltip-ca-nstab-page": "הצגת דף הספר",
+	"tooltip-ca-nstab-index": "הצגת מפתח הספר",
 	"indexpages": "רשימת דפי מפתח",
 	"pageswithoutscans": "דפים ללא סריקות",
 	"proofreadpage_desc": "השוואה קלה של טקסט לסריקה המקורית שלו",

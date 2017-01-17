@@ -6,6 +6,9 @@
 			"Soued031"
 		]
 	},
+	"nstab-page": "Säit",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "D'Buchsäit weisen",
 	"indexpages": "Lëscht vun Index-Säiten",
 	"pageswithoutscans": "Säiten ouni Scan",
 	"proofreadpage_desc": "Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen",
