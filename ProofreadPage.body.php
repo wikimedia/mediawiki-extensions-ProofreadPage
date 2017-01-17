@@ -589,30 +589,39 @@ class ProofreadPage {
 	/**
 	 * Make validation of the content in the edit API
 	 *
-	 * @param $context Object implementing the IContextSource interface.
+	 * @param $context IContextSource implementing the IContextSource interface.
 	 * @param $content Content of the edit box, as a Content object.
 	 * @param $status  Status object to represent errors, etc.
-	 * @param $summary Edit summary for page
-	 * @param $user  The User object representing the user whois performing the edit.
-	 * @param $minoredit  Whether the edit was marked as minor by the user.
+	 * @param $summary string Edit summary for page
+	 * @param $user User The User object representing the user whois performing the edit.
+	 * @param $minoredit boolean Whether the edit was marked as minor by the user.
 	 * @return bool
 	 */
 	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
 		Status $status, $summary, User $user, $minoredit ) {
 
 		// If the content's model isn't ours, ignore this; there's nothing for us to do here.
-		if ( ! ( $content instanceof PageContent ) ) {
+		if ( !( $content instanceof PageContent ) ) {
 			return true;
+		}
+
+		// Fail if the content is invalid, or the level is being removed.
+		if ( !$content->isValid() ) {
+			$status->fatal( 'proofreadpage_badpagetext' );
+			return false;
 		}
 
 		$oldContent = $context->getWikiPage()->getContent( Revision::FOR_THIS_USER, $user );
 		if ( $oldContent === null ) {
 			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )->makeEmptyContent();
 		}
-
-		// Fail if the content is invalid, or the level is being removed.
-		if ( !$content->isValid() ) {
-			$ourStatus = Status::newFatal( 'proofreadpage_badpagetext' );
+		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+			// Let's convert it to Page: page content
+			$oldContent = $oldContent->convert( CONTENT_MODEL_PROOFREAD_PAGE );
+		}
+		if ( !( $oldContent instanceof PageContent ) ) {
+			// We consider it as a page creation
+			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )->makeEmptyContent();
 		}
 
 		$oldLevel = $oldContent->getLevel();
@@ -620,12 +629,7 @@ class ProofreadPage {
 
 		// Fail if the user changed the level and the change isn't allowed
 		if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
-			$ourStatus = Status::newFatal( 'proofreadpage_notallowedtext' );
-		}
-
-		if ( isset( $ourStatus ) ) {
-			$ourStatus->value = EditPage::AS_HOOK_ERROR;
-			$status->merge( $ourStatus );
+			$status->fatal( 'proofreadpage_notallowedtext' );
 			return false;
 		}
 
