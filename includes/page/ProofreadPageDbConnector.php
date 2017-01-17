@@ -95,7 +95,7 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param $id
+	 * @param integer $id
 	 * @return string|null
 	 */
 	public static function  getIndexTitleForPageId( $id ) {
@@ -128,7 +128,7 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param $id
+	 * @param integer $id
 	 * @return integer|null
 	 */
 	public static function countTransclusionFromPageId( $id ) {
