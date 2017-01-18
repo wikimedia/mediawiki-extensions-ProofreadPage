@@ -235,27 +235,14 @@ class ProofreadIndexPage {
 	 * @return array of ProofreadIndexEntry
 	 */
 	public function getIndexEntries() {
-		global $wgUser, $wgContLang;
 		if ( $this->entries === null ) {
 			$text = $this->getText();
 			$values = [];
-
-			$parser = self::getParser();
-			$options = new ParserOptions( $wgUser, $wgContLang );
-			$parser->startExternalParse( $this->title, $options, Parser::OT_PLAIN, true );
-
-			$dom = $parser->preprocessToDom( $text );
-			$frame = $parser->getPreprocessor()->newFrame();
-			$dom = $dom->getFirstChild();
-			$childframe = $frame->newChild( $dom->getChildrenOfType( 'part' ) );
-
 			foreach ( $this->config as $varName => $property ) {
-				if ( !array_key_exists( $varName, $childframe->namedArgs ) ) {
-					continue;
+				$tagPattern = "/\n\|" . preg_quote( $varName, '/' ) . "=(.*?)\n(\||\}\})/is";
+				if ( preg_match( $tagPattern, $text, $matches ) ) {
+					$values[$varName] = $matches[1];
 				}
-				$values[$varName] = $parser->mStripState->unstripBoth( $parser->getPreprocessor()->newFrame()->expand(
-					$childframe->namedArgs[$varName], PPFrame::RECOVER_ORIG
-				) );
 			}
 			$this->entries = $this->getIndexEntriesFromIndexContent( $values );
 		}
