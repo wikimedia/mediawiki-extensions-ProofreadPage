@@ -98,7 +98,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @param $text
+	 * @param string $text
 	 * @return PageContent
 	 */
 	private function unserializeContentInJson( $text ) {
@@ -132,7 +132,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @param $text
+	 * @param string $text
 	 * @return PageContent
 	 */
 	private function unserializeContentInWikitext( $text ) {

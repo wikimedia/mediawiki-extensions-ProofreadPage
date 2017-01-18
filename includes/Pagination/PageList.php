@@ -82,11 +82,11 @@ class PageList {
 	}
 
 	/**
-	 * Returns if a number is in a range as definded by <pagelist>
+	 * Returns if a number is in a range as defined by <pagelist>
 	 * Such range may be a single integer or something in the format XXtoYY
 	 *
-	 * @param $range
-	 * @param $number
+	 * @param string $range
+	 * @param integer $number
 	 * @return boolean
 	 */
 	protected function numberInRange( $range, $number ) {

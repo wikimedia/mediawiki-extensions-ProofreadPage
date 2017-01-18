@@ -23,7 +23,7 @@ class ProofreadIndexDbConnector {
 
 	/**
 	 * Query the database to find if the current page is referred in an Index page.
-	 * @param $title Title
+	 * @param Title $title
 	 * @return ResultWrapper
 	 */
 	public static function getRowsFromTitle( Title $title ) {
@@ -42,9 +42,9 @@ class ProofreadIndexDbConnector {
 	}
 
 	/**
-	 * @param $x Object
-	 * @param $indexId integer
-	 * @param $article WikiPage
+	 * @param Object $x
+	 * @param integer $indexId
+	 * @param WikiPage $article
 	 */
 	public static function replaceIndexById( $x, $indexId, WikiPage $article ) {
 		$n  = $x->pr_count;
@@ -110,13 +110,13 @@ class ProofreadIndexDbConnector {
 	}
 
 	/**
-	 * @param $n integer
-	 * @param $n0 integer
-	 * @param $n1 integer
-	 * @param $n2 integer
-	 * @param $n3 integer
-	 * @param $n4 integer
-	 * @param $indexId integer
+	 * @param integer $n
+	 * @param integer $n0
+	 * @param integer $n1
+	 * @param integer $n2
+	 * @param integer $n3
+	 * @param integer $n4
+	 * @param integer $indexId
 	 */
 	public static function setIndexData( $n, $n0, $n1, $n2, $n3, $n4, $indexId ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -138,7 +138,7 @@ class ProofreadIndexDbConnector {
 
 	/**
 	 * Remove index data from pr_index table.
-	 * @param $pageId integer page identifier
+	 * @param integer $pageId page identifier
 	 */
 	public static function removeIndexData( $pageId ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -146,7 +146,7 @@ class ProofreadIndexDbConnector {
 	}
 
 	/**
-	 * @param $indexTitle
+	 * @param string $indexTitle
 	 * @return Object
 	 */
 	public static function getIndexDataFromIndexTitle( $indexTitle ) {
@@ -163,7 +163,7 @@ class ProofreadIndexDbConnector {
 	}
 
 	/**
-	 * @param $indexId integer
+	 * @param integer $indexId
 	 * @return Object
 	 */
 	public static function getIndexDataFromIndexPageId( $indexId ) {

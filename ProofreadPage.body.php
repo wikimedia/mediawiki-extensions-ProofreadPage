@@ -27,7 +27,7 @@ use ProofreadPage\Pagination\PageNotInPaginationException;
 
 /*
  @todo :
- - check unicity of the index page : when index is saved too
+ - check uniqueness of the index page : when index is saved too
 */
 
 class ProofreadPage {
@@ -188,8 +188,8 @@ class ProofreadPage {
 
 	/**
 	 * Hook function
-	 * @param $page_ids
-	 * @param $colours
+	 * @param array $page_ids Prefixed DB keys of the pages linked to, indexed by page_id
+	 * @param array $colours CSS classes, indexed by prefixed DB keys
 	 * @return bool
 	 */
 	public static function onGetLinkColours( $page_ids, &$colours ) {
@@ -203,8 +203,8 @@ class ProofreadPage {
 
 	/**
 	 * Return the quality colour codes to pages linked from an index page
-	 * @param array $page_ids
-	 * @param array $colours
+	 * @param array $page_ids Prefixed DB keys of the pages linked to, indexed by page_id
+	 * @param array $colours CSS classes, indexed by prefixed DB keys
 	 */
 	private static function getLinkColours( $page_ids, &$colours ) {
 		global $wgTitle;
@@ -350,8 +350,8 @@ class ProofreadPage {
 	 * if I delete a page, I need to update the index table
 	 * if I delete an index page too...
 	 *
-	 * @param $article WikiPage object
-	 * @return Boolean: true
+	 * @param WikiPage $article
+	 * @return bool true
 	 */
 	public static function onArticleDelete( WikiPage $article ) {
 		$title = $article->getTitle();
@@ -589,12 +589,12 @@ class ProofreadPage {
 	/**
 	 * Make validation of the content in the edit API
 	 *
-	 * @param $context IContextSource implementing the IContextSource interface.
-	 * @param $content Content of the edit box, as a Content object.
-	 * @param $status  Status object to represent errors, etc.
-	 * @param $summary string Edit summary for page
-	 * @param $user User The User object representing the user whois performing the edit.
-	 * @param $minoredit boolean Whether the edit was marked as minor by the user.
+	 * @param IContextSource $context
+	 * @param Content $content Content of the edit box.
+	 * @param Status $status Status object to represent errors, etc.
+	 * @param string $summary Edit summary for page.
+	 * @param User $user User who is performing the edit.
+	 * @param bool $minoredit Whether the edit was marked as minor by the user.
 	 * @return bool
 	 */
 	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
@@ -657,8 +657,8 @@ class ProofreadPage {
 
 	/**
 	 * Add ProofreadPage preferences to the preferences menu
-	 * @param $user
-	 * @param $preferences array
+	 * @param User $user
+	 * @param array $preferences
 	 * @return bool
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
@@ -692,7 +692,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param $updater DatabaseUpdater
+	 * @param DatabaseUpdater $updater
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
