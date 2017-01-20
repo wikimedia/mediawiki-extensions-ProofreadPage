@@ -8,6 +8,10 @@
 			"Sarrus"
 		]
 	},
+	"nstab-page": "Side",
+	"nstab-index": "Indeks",
+	"tooltip-ca-nstab-page": "Se bogsiden",
+	"tooltip-ca-nstab-index": "Se bogens indeksside",
 	"indexpages": "Liste over indekssider",
 	"pageswithoutscans": "Sider uden indskannede billeder",
 	"proofreadpage_desc": "Muliggør nem sammenligning af tekst med den indscannede original",
@@ -81,9 +85,17 @@
 	"proofreadpage-disambiguationspage": "Template:Flertydig",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|valideret side|validerede sider}}, $2 {{PLURAL:$2|side|sider}}, der kun er korrekturlæst, og $3 {{PLURAL:$3|side|sider}}, der ikke er korrekturlæst",
 	"content-model-proofread-page": "Side: side",
+	"apihelp-query+proofread-description": "Returnerer oplysninger om korrekturlæsningsstatus for de givne sider.",
+	"apihelp-query+proofread-example-1": "Returner korrekturlæsningsstatus for sider i navnerum 250",
+	"apihelp-query+proofreadinfo-description": "Returner oplysninger om opsætningen af ProofreadPage-udvidelsen.",
+	"apihelp-query+proofreadinfo-param-prop": "Hvilke korrekturlæsningsegenskaber, der skal hentes:\n;namespaces:Oplysninger om \"{{ns:Page}}\"- og \"{{ns:Index}}\"-navnerummene.\n;qualitylevels:Liste over niveauer for kvalitetsniveauer for korrekturlæsning.",
+	"apihelp-query+proofreadinfo-example-1": "Returner standardinformation",
+	"apihelp-query+proofreadinfo-example-3": "Returner navnerumsinformation",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Sideudvalg",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sider",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Indlejring af $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlæsningsstatus",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlæsningsstatus"
 }

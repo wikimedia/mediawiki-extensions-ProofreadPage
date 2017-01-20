@@ -6,6 +6,10 @@
 			"WikedKentaur"
 		]
 	},
+	"nstab-page": "Lehekülg",
+	"nstab-index": "Register",
+	"tooltip-ca-nstab-page": "Vaata raamatu lehekülge",
+	"tooltip-ca-nstab-index": "Vaata raamatu registrit",
 	"indexpages": "Registrilehtede loetelu",
 	"pageswithoutscans": "Skannimata tekstidega leheküljed",
 	"proofreadpage_desc": "Võimaldab teksti kõrvutada skannitud lehega.",

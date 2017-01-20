@@ -5,6 +5,10 @@
 			"Xuacu"
 		]
 	},
+	"nstab-page": "Páxina",
+	"nstab-index": "Índiz",
+	"tooltip-ca-nstab-page": "Ver la páxina del llibru",
+	"tooltip-ca-nstab-index": "Ver l'índiz del llibru",
 	"indexpages": "Llista de páxines índiz",
 	"pageswithoutscans": "Páxines ensin escaneos",
 	"proofreadpage_desc": "Permite una comparanza cenciella del testu col escaniáu orixinal",
