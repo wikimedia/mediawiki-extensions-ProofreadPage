@@ -9,9 +9,11 @@
 			"Sergey kudryavtsev",
 			"Александр Сигачёв",
 			"Гизатуллина",
-			"Ole Yves"
+			"Ole Yves",
+			"Kareyac"
 		]
 	},
+	"nstab-page": "Страница",
 	"indexpages": "Список индексных страниц",
 	"pageswithoutscans": "Страницы без сканов",
 	"proofreadpage_desc": "Позволяет в удобном виде сравнивать текст и отсканированное изображение оригинала",
