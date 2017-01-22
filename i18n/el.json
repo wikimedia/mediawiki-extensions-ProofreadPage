@@ -14,6 +14,8 @@
 			"Gts-tg"
 		]
 	},
+	"nstab-page": "Σελίδα",
+	"nstab-index": "Βιβλίο",
 	"indexpages": "Κατάλογος σελίδων ευρετηρίου",
 	"pageswithoutscans": "Σελίδες χωρίς σάρωση",
 	"proofreadpage_desc": "Επίτρεψε εύκολη σύγκριση κειμένου με την πρωτότυπη σάρωση",
@@ -31,7 +33,7 @@
 	"proofreadpage_notallowed": "Αλλαγή δεν επιτρέπεται",
 	"proofreadpage_notallowedtext": "Δεν επιτρέπεται να αλλάξετε την κατάσταση διόρθωσης κειμένου αυτής της σελίδας.",
 	"proofreadpage_dataconfig_badformatted": "Σφάλμα στις ρυθμίσεις δεδομένων",
-	"proofreadpage_dataconfig_badformattedtext": "Η σελίδα [[Mediawiki:Proofreadpage ευρετηρίου ρυθμίσεων δεδομένων]] δεν είναι σε καλά μορφοποιημένο JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Η σελίδα [[Mediawiki:Proofreadpage index data config]] δεν είναι σε καλά μορφοποιημένο JSON.",
 	"proofreadpage_number_expected": "Σφάλμα: αναμενόταν αριθμητικό μέγεθος",
 	"proofreadpage_interval_too_large": "Σφάλμα: υπερβολικά μεγάλο διάστημα",
 	"proofreadpage_invalid_interval": "Σφάλμα: άκυρο διάστημα",
