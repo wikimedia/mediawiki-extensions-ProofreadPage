@@ -4,9 +4,12 @@
 			"Alma",
 			"Toliño",
 			"Xosé",
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
+	"nstab-page": "Páxina",
+	"nstab-index": "Índice",
 	"indexpages": "Lista de páxinas índice",
 	"pageswithoutscans": "Páxinas sen exames",
 	"proofreadpage_desc": "Permite a comparación sinxela do texto coa dixitalización orixinal",
