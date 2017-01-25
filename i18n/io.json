@@ -1,13 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malafaya"
+			"Malafaya",
+			"Joao Xavier"
 		]
 	},
 	"proofreadpage_image": "Imajo",
 	"proofreadpage_index": "Indexo",
 	"proofreadpage_nextpage": "Sequanta pagino",
 	"proofreadpage_prevpage": "Antea pagino",
+	"proofreadpage_quality0_category": "Sen texto",
+	"proofreadpage_quality2_category": "Problematra",
+	"proofreadpage_quality3_category": "Proofread",
+	"proofreadpage_quality4_category": "Konfirmita",
 	"proofreadpage_index_listofpages": "Pagino-listo",
 	"proofreadpage_page_status": "Stando di pagino",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pagino|pagini}}"
