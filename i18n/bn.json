@@ -5,9 +5,13 @@
 			"Bellayet",
 			"Jayantanth",
 			"Aftabuzzaman",
-			"Bodhisattwa"
+			"Bodhisattwa",
+			"Elias Ahmmad"
 		]
 	},
+	"nstab-page": "পাতা",
+	"nstab-index": "নির্ঘন্ট",
+	"tooltip-ca-nstab-page": "বইয়ের পৃষ্ঠা দেখুন",
 	"indexpages": "নির্ঘণ্ট পাতার তালিকা",
 	"pageswithoutscans": "স্ক্যান ছাড়া পাতাসমূহ",
 	"proofreadpage_desc": "মূল স্ক্যানের সাথে লেখার সহজ তুলনা অনুমোদন করো",

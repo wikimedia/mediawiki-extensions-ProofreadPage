@@ -5,9 +5,14 @@
 			"McDutchie",
 			"SPQRobin",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Robin van der Vliet"
 		]
 	},
+	"nstab-page": "Pagina",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "De boekpagina bekijken",
+	"tooltip-ca-nstab-index": "De boekindex bekijken",
 	"indexpages": "Lijst van index-pagina's",
 	"pageswithoutscans": "Pagina's zonder scans",
 	"proofreadpage_desc": "Maakt het mogelijk teksten eenvoudig te vergelijken met de oorspronkelijke scan",
@@ -80,6 +85,8 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Het schema $1 is niet aangetroffen.",
 	"proofreadpage-disambiguationspage": "Template:Doorverwijspagina",
 	"content-model-proofread-page": "Pagina: pagina",
+	"apihelp-query+proofreadinfo-example-1": "Standaardinformatie teruggeven",
+	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagina's",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee"
