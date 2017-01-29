@@ -9,6 +9,10 @@
 			"Jon Harald Søby (WMNO)"
 		]
 	},
+	"nstab-page": "Side",
+	"nstab-index": "Indeks",
+	"tooltip-ca-nstab-page": "Vis boksiden",
+	"tooltip-ca-nstab-index": "Vis bokindeksen",
 	"indexpages": "Liste over innholdsfortegnelser",
 	"pageswithoutscans": "Sider uten skanninger",
 	"proofreadpage_desc": "Tillat lett sammenligning av tekst med originalskanningen",
