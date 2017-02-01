@@ -99,16 +99,44 @@ class ProofreadPagePage {
 			return $this->index;
 		}
 
-		$result = ProofreadIndexDbConnector::getRowsFromTitle( $this->title );
+		$indexTitle = $this->findIndexTitle();
+		if ( $indexTitle === null ) {
+			$this->index = false;
+			return false;
+		} else {
+			$this->index = ProofreadIndexPage::newFromTitle( $indexTitle );
+			return $this->index;
+		}
+	}
 
+	private function findIndexTitle() {
+		$possibleIndexTitle = $this->findPossibleIndexTitleBasedOnName();
+
+		// Try to find links from Index: pages
+		$result = ProofreadIndexDbConnector::getRowsFromTitle( $this->title );
+		$indexesThatLinksHere = [];
 		foreach ( $result as $x ) {
 			$refTitle = Title::makeTitle( $x->page_namespace, $x->page_title );
 			if ( $refTitle !== null && $refTitle->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
-				$this->index = ProofreadIndexPage::newFromTitle( $refTitle );
-				return $this->index;
+				if ( $refTitle->equals( $possibleIndexTitle ) ) { // It is the same as the linked file, we know it's this Index:
+					return $refTitle;
+				}
+				$indexesThatLinksHere[] = $refTitle;
 			}
 		}
+		if ( !empty( $indexesThatLinksHere ) ) {
+			// TODO: what should we do if there are more than 1 possible index?
+			$this->index = ProofreadIndexPage::newFromTitle( $indexesThatLinksHere[0] );
+			return $this->index;
+		}
 
+		return $possibleIndexTitle;
+	}
+
+	/**
+	 * @return Title|null the index page based on the name of the Page: page and the existence of a file with the same name
+	 */
+	private function findPossibleIndexTitleBasedOnName() {
 		$m = explode( '/', $this->title->getText(), 2 );
 		if ( isset( $m[1] ) ) {
 			$imageTitle = Title::makeTitleSafe( NS_FILE, $m[0] );
@@ -116,16 +144,11 @@ class ProofreadPagePage {
 				$image = wfFindFile( $imageTitle );
 				// if it is multipage, we use the page order of the file
 				if ( $image && $image->exists() && $image->isMultipage() ) {
-					$indexTitle = Title::makeTitle( ProofreadPage::getIndexNamespaceId(), $image->getTitle()->getText() );
-					if ( $indexTitle !== null ) {
-						$this->index = ProofreadIndexPage::newFromTitle( $indexTitle );
-						return $this->index;
-					}
+					return Title::makeTitle( ProofreadPage::getIndexNamespaceId(), $image->getTitle()->getText() );
 				}
 			}
 		}
-		$this->index = false;
-		return false;
+		return null;
 	}
 
 	/**
