@@ -9,7 +9,7 @@ use User;
  * @group ProofreadPage
  * @covers ProofreadPageLevel
  */
-class ProofreadPageLevelTest extends ProofreadPageTestCase {
+class PageLevelTest extends ProofreadPageTestCase {
 
 	public function setUp() {
 		parent::setUp();
@@ -47,8 +47,10 @@ class ProofreadPageLevelTest extends ProofreadPageTestCase {
 
 	public function isChangeAllowedProvider() {
 		$testUser = User::newFromName( 'Test' );
+		$testUser->addToDatabase();
 		$testUser->addGroup( 'user' );
 		$test2User =  User::newFromName( 'Test2' );
+		$test2User->addToDatabase();
 		$test2User->addGroup( 'user' );
 		$ipUser = User::newFromName( '172.16.254.7', false );
 
