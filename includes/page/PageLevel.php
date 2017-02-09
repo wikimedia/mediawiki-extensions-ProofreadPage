@@ -60,7 +60,6 @@ class PageLevel {
 	/**
 	 * Returns if the level is the same as the level $that
 	 *
-	 * @params $that PageLevel
 	 * @param PageLevel $that
 	 * @return boolean
 	 */
@@ -79,7 +78,6 @@ class PageLevel {
 	/**
 	 * Returns if the change of level to level $to is allowed
 	 *
-	 * @params $to PageLevel
 	 * @param PageLevel $to
 	 * @return boolean
 	 */
