@@ -13,9 +13,14 @@
 			"SteveR",
 			"Тест",
 			"Ата",
-			"Piramidion"
+			"Piramidion",
+			"NickK"
 		]
 	},
+	"nstab-page": "Сторінка",
+	"nstab-index": "Індекс",
+	"tooltip-ca-nstab-page": "Переглянути сторінку книги",
+	"tooltip-ca-nstab-index": "Переглянути індекс книги",
 	"indexpages": "Список індексових сторінок",
 	"pageswithoutscans": "Сторінки без сканувань",
 	"proofreadpage_desc": "Дозволяє легко порівнювати текст і відскановане зображення оригіналу",
