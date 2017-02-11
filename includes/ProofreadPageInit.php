@@ -93,12 +93,40 @@ class ProofreadPageInit {
 			return false;
 		}
 
+		$talkKey = $key . '_talk';
+
 		$wgExtraNamespaces[$id] = self::getNamespaceName( $key );
-		$wgExtraNamespaces[$id + 1] = self::getNamespaceName( $key . '_talk' );
+		$wgExtraNamespaces[$id + 1] = self::getNamespaceName( $talkKey );
+
 		$wgCanonicalNamespaceNames[$id] = $wgExtraNamespaces[$id]; // Very hugly but needed because initNamespaces() is called after the add of $wgExtraNamespaces into $wgCanonicalNamespaceNames
 		$wgCanonicalNamespaceNames[$id + 1] = $wgExtraNamespaces[$id + 1];
 
+		self::createNamespaceAliases( $key, $id );
+		self::createNamespaceAliases( $talkKey, $id + 1 );
+
 		return true;
+	}
+
+	private static function createNamespaceAliases( $key, $id ) {
+		global $wgNamespaceAliases;
+
+		$aliases = self::getNamespaceAliases( $key );
+		foreach ( $aliases as $alias ) {
+			$wgNamespaceAliases[$alias] = $id;
+		}
+	}
+
+	/**
+	 * @return array
+	 */
+	private static function getNamespaceAliases( $key ) {
+		global $proofreadPageNamespacesAliases, $wgLanguageCode;
+
+		if ( !isset( $proofreadPageNamespacesAliases[$wgLanguageCode][$key] ) ) {
+			return [];
+		}
+
+		return $proofreadPageNamespacesAliases[$wgLanguageCode][$key];
 	}
 
 	/**
