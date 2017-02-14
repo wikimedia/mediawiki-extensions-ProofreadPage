@@ -7,9 +7,14 @@
 			"Siddhartha Ghai",
 			"రహ్మానుద్దీన్",
 			"जनक राज भट्ट",
-			"Sfic"
+			"Sfic",
+			"Jayprakash12345"
 		]
 	},
+	"nstab-page": "पृष्ठ",
+	"nstab-index": "अनुक्रम",
+	"tooltip-ca-nstab-page": "पुस्तक का पृष्ठ देखें",
+	"tooltip-ca-nstab-index": "पुस्तक का अनुक्रम देखें",
 	"indexpages": "सूचकांक पृष्ठों की सूची",
 	"pageswithoutscans": "स्कैन के बिना पन्ने",
 	"proofreadpage_desc": "मूल पाठ और सद्य पाठ में फर्क आसानी से दर्शाती हैं",
@@ -17,7 +22,7 @@
 	"proofreadpage_index": "अनुक्रम",
 	"proofreadpage_index_expected": "त्रुटि: सूचकांक की उम्मीद",
 	"proofreadpage_nosuch_index": "त्रुटि : ऐसा कोई सूचकांक",
-	"proofreadpage_nosuch_file": "त्रुटि: ऐसा कोई फ़ाइल",
+	"proofreadpage_nosuch_file": "त्रुटि: ऐसा कोई फ़ाइल नहीं",
 	"proofreadpage_badpage": "गलत फ़ारमैट",
 	"proofreadpage_badpagetext": "जिस प्रारूप में अप इस पृष्ठ को सहेज रहे हैं, वह गलत है।",
 	"proofreadpage_indexdupe": "नकली लिंक",
