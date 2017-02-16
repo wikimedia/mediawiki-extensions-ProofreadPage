@@ -8,9 +8,14 @@
 			"Mirzali",
 			"Kumkumuk",
 			"Asmen",
-			"Gırd"
+			"Gırd",
+			"Archaeodontosaurus"
 		]
 	},
+	"nstab-page": "Perre",
+	"nstab-index": "Zerrek",
+	"tooltip-ca-nstab-page": "Perra kıtabi bıvin",
+	"tooltip-ca-nstab-index": "Zerrekê kıtabi bıvin",
 	"indexpages": "Lista pelanê zerreki",
 	"pageswithoutscans": "Pelê ke geyrayışê cı çıniyo",
 	"proofreadpage_desc": "Destur bıde wa nuşte pê cıgerayışê oricinali rehet u asan têver şaniyo",
