@@ -4,7 +4,7 @@
 .prp-tabs #ca-proofreadPageIndexLink.icon a {
 	margin: 0;
 	padding: 0;
-	outline: none;
+	outline: 0;
 	display: block;
 	width: 26px;
 	/* This hides the text but shows the background image */
