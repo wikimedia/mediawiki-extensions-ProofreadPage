@@ -6,7 +6,8 @@
 			"SPQRobin",
 			"Siebrand",
 			"Sjoerddebruin",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Huhbakker"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -84,10 +85,18 @@
 	"proofreadpage-indexoai-error-schemanotfound": "Schema niet gevonden",
 	"proofreadpage-indexoai-error-schemanotfound-text": "Het schema $1 is niet aangetroffen.",
 	"proofreadpage-disambiguationspage": "Template:Doorverwijspagina",
+	"proofreadpage-indexquality-alt": "$1 gevalideerd {{PLURAL:$1|pagina|pagina's}}, $2 alleen proeflees {{PLURAL:$2|pagina|pagina's}} en $3 niet nagelezen {{PLURAL:$3|pagina|pagina's}}",
 	"content-model-proofread-page": "Pagina: pagina",
+	"apihelp-query+proofread-description": "Geeft informatie over de huidige proeflees status van de gegeven pagina's.",
+	"apihelp-query+proofread-example-1": "Terug proeflees status voor pagina's in de naamruimte 250",
+	"apihelp-query+proofreadinfo-description": "Informatie over de configuratie van ProofreadPage extensie.",
 	"apihelp-query+proofreadinfo-example-1": "Standaardinformatie teruggeven",
 	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Pagina selectie",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagina's",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion van $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Proeflezen kwaliteit",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proeflezen kwaliteit"
 }
