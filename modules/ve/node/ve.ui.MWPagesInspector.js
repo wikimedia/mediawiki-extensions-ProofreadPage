@@ -73,40 +73,40 @@ ve.ui.MWPagesInspector.prototype.setupForm = function () {
 
 	this.pushPending();
 	this.getFileInfo( attributes.index ).done( function ( imageInfo ) {
-		inspector.addAttributeToWidget( inspector.createIndexWidget(), 'index' );
+		inspector.addAttributeWidgetToForm( inspector.createIndexWidget(), 'index' );
 
-		inspector.addAttributeToWidget( new OO.ui.DropdownInputWidget( {
+		inspector.addAttributeWidgetToForm( new OO.ui.DropdownInputWidget( {
 			options: inspector.buildHeaderFieldSelectorOptions( attributes.header )
 		} ), 'header' );
 
 		if ( imageInfo.pagecount !== undefined ) {
-			inspector.addAttributeToWidget( new OO.ui.NumberInputWidget( {
+			inspector.addAttributeWidgetToForm( new OO.ui.NumberInputWidget( {
 				isInteger: true,
 				min: 1,
 				max: imageInfo.pagecount
 			} ), 'from' );
-			inspector.addAttributeToWidget( new OO.ui.NumberInputWidget( {
+			inspector.addAttributeWidgetToForm( new OO.ui.NumberInputWidget( {
 				isInteger: true,
 				min: 1,
 				max: imageInfo.pagecount
 			} ), 'to' );
 		} else {
-			inspector.addAttributeToWidget( new mw.widgets.TitleInputWidget( {
+			inspector.addAttributeWidgetToForm( new mw.widgets.TitleInputWidget( {
 				namespace: inspector.getIdForNamespace( 'page' )
 			} ), 'from' );
-			inspector.addAttributeToWidget( new mw.widgets.TitleInputWidget( {
+			inspector.addAttributeWidgetToForm( new mw.widgets.TitleInputWidget( {
 				namespace: inspector.getIdForNamespace( 'page' )
 			} ), 'to' );
 		}
 
-		inspector.addAttributeToWidget( new OO.ui.TextInputWidget(), 'fromsection' );
-		inspector.addAttributeToWidget( new OO.ui.TextInputWidget(), 'tosection' );
+		inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'fromsection' );
+		inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'tosection' );
 
 		for ( key in attributes ) {
 			if ( key in inspector.attributeInputs ) {
 				inspector.attributeInputs[ key ].setValue( attributes[ key ] );
 			} else {
-				inspector.addAttributeToWidget( new OO.ui.TextInputWidget( {
+				inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget( {
 					value: attributes[ key ]
 				} ), key );
 			}
@@ -191,7 +191,7 @@ ve.ui.MWPagesInspector.prototype.getFileInfo = function ( fileName ) {
  * @param {OO.ui.Widget} attributeInput
  * @param {string} attributeKey the key of the attribute like "from"
  */
-ve.ui.MWPagesInspector.prototype.addAttributeToWidget = function ( attributeInput, attributeKey ) {
+ve.ui.MWPagesInspector.prototype.addAttributeWidgetToForm = function ( attributeInput, attributeKey ) {
 	var field = new OO.ui.FieldLayout(
 		attributeInput,
 		{
@@ -201,6 +201,7 @@ ve.ui.MWPagesInspector.prototype.addAttributeToWidget = function ( attributeInpu
 	);
 	this.$attributes.append( field.$element );
 	this.attributeInputs[ attributeKey ] = attributeInput;
+	attributeInput.connect( this, { change: 'onChangeHandler' } );
 };
 
 /**
@@ -211,6 +212,7 @@ ve.ui.MWPagesInspector.prototype.onIndexChange = function () {
 		this.updateMwData( this.mwData );
 		this.teardownForm();
 		this.setupForm();
+		this.onChangeHandler();
 	}
 };
 
