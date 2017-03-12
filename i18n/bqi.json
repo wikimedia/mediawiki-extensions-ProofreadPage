@@ -4,6 +4,10 @@
 			"Mogoeilor"
 		]
 	},
+	"nstab-page": "بألگأ",
+	"nstab-index": "سياأ",
+	"tooltip-ca-nstab-page": "ديڌن بألگإ کتاڤ",
+	"tooltip-ca-nstab-index": "ديڌن سياإ کتاڤ",
 	"indexpages": "سيائه بلگه آ اصلی",
 	"pageswithoutscans": "بلگه آیی که وارسی نوابینه",
 	"proofreadpage_desc": "سی کنار یک نهاڎن متن و وارسی اول",
@@ -17,7 +21,7 @@
 	"proofreadpage_indexdupe": "هوم پیوند تکراری",
 	"proofreadpage_indexdupetext": "بلگه آ نترن بیشتر ز بلگه اصلی لیست وابون",
 	"proofreadpage_nologin": "نیبو وارد وابوین",
-	"proofreadpage_nologintext": "ایسا وا[[ویجه:ڤامإن أڤوڌن کاريار|ڤامإن إڤوڌإ]]ڤایۈین سي آلشد كردن شلك غلط گئری ای بلگه.",
+	"proofreadpage_nologintext": "ایسا وا[[ویجه:ڤامإن أڤوڌن کاريار|ڤامإن إڤوڌإ]]ڤایۈین سي آلشد كردن شلك غلط گئری ای بلگأ.",
 	"proofreadpage_notallowed": "سی آلشت اجازه نارین",
 	"proofreadpage_notallowedtext": "ایسا اجازه نارین شلگ غلط گیری ای بلگه نه آلشت بڎین.",
 	"proofreadpage_dataconfig_badformatted": "اشتوا مئن راست کردن دونسمندیا",

@@ -6,6 +6,10 @@
 			"GeekEmad"
 		]
 	},
+	"nstab-page": "پاجة",
+	"nstab-index": "فهرس",
+	"tooltip-ca-nstab-page": "شوف الباجة تاع الكتاب",
+	"tooltip-ca-nstab-index": "شوف الفهرس تاع الكتاب",
 	"indexpages": "ليستة تاع باجات تاع الفهراس",
 	"pageswithoutscans": "صفحات بلا نسخة مصوّرة",
 	"proofreadpage_desc": "يخلّي تكون مقارنة ساهلة تاع النصّ معا التصويرة الرقميّة المصداريّة.",
@@ -82,11 +86,14 @@
 	"apihelp-query+proofread-description": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-example-1": "Return proofread status for pages in namespace 250",
 	"apihelp-query+proofreadinfo-description": "Return information about configuration of ProofreadPage extension.",
-	"apihelp-query+proofreadinfo-param-prop": "Which proofread properties to get:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels.",
+	"apihelp-query+proofreadinfo-param-prop": "واش هيّا الدالايل تاع التصحاح الّي مطلوبة:\n;namespaces:معلومات على الباجات و الهرس namespaces.\n;qualitylevels:ليسنة تاع النيفوّات تاع الجودة تاع الدالايل تاع التصحاح.",
 	"apihelp-query+proofreadinfo-example-1": "Return default information",
 	"apihelp-query+proofreadinfo-example-3": "Return namespace information",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "اختيار الپاجة",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "الپاجات",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "تسياع تاع $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "نعم",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "لا"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "لا",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "الجودة تاع التحقاق (المعاودة تاع القراية)",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "الجودة تاع التحقاق (المعاودة تاع القراية)"
 }

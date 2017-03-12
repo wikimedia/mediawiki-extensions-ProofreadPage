@@ -4,9 +4,11 @@
 			"Chaojoker",
 			"Teak",
 			"Xelgen",
-			"Vahe Gharakhanyan"
+			"Vahe Gharakhanyan",
+			"Դավիթ Սարոյան"
 		]
 	},
+	"tooltip-ca-nstab-page": "Տեսնել գրքի էջը",
 	"indexpages": "Ինդեքս էջերի ցանկ",
 	"pageswithoutscans": "Էջեր առանց տեսածրած բնօրինակի",
 	"proofreadpage_desc": "Թույլ է տալիս տեքստի և բնօրինակի տեսածրված պատկերի հեշտ համեմատում",
