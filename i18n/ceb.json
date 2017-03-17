@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abastillas"
+			"Abastillas",
+			"Bentong Isles"
 		]
 	},
 	"proofreadpage_nextpage": "Sunod nga panid",
-	"proofreadpage_prevpage": "Miaging panid"
+	"proofreadpage_prevpage": "Miaging panid",
+	"proofreadpage_quality1_message": "Kining maong panid wala pa masuhid"
 }
