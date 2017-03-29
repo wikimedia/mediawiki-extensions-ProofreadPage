@@ -10,6 +10,8 @@
 	},
 	"nstab-page": "Páxina",
 	"nstab-index": "Índice",
+	"tooltip-ca-nstab-page": "Ver a páxina do libro",
+	"tooltip-ca-nstab-index": "Ver o índice do libro",
 	"indexpages": "Lista de páxinas índice",
 	"pageswithoutscans": "Páxinas sen exames",
 	"proofreadpage_desc": "Permite a comparación sinxela do texto coa dixitalización orixinal",
