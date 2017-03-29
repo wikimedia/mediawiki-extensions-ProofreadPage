@@ -118,7 +118,7 @@ class ProofreadPagePage {
 		foreach ( $result as $x ) {
 			$refTitle = Title::makeTitle( $x->page_namespace, $x->page_title );
 			if ( $refTitle !== null && $refTitle->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
-				if ( $refTitle->equals( $possibleIndexTitle ) ) { // It is the same as the linked file, we know it's this Index:
+				if ( $possibleIndexTitle !== null && $refTitle->equals( $possibleIndexTitle ) ) { // It is the same as the linked file, we know it's this Index:
 					return $refTitle;
 				}
 				$indexesThatLinksHere[] = $refTitle;
@@ -126,8 +126,7 @@ class ProofreadPagePage {
 		}
 		if ( !empty( $indexesThatLinksHere ) ) {
 			// TODO: what should we do if there are more than 1 possible index?
-			$this->index = ProofreadIndexPage::newFromTitle( $indexesThatLinksHere[0] );
-			return $this->index;
+			return reset( $indexesThatLinksHere );
 		}
 
 		return $possibleIndexTitle;
