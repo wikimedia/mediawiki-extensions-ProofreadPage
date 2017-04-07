@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kandar"
+			"Kandar",
+			"Uchup19"
 		]
 	},
 	"proofreadpage_image": "Gambar",
@@ -12,6 +13,7 @@
 	"proofreadpage_quality1_category": "Can diuji-baca",
 	"proofreadpage_quality2_category": "Problematik",
 	"proofreadpage_quality3_category": "Geus diuji-baca",
+	"proofreadpage_quality4_category": "Geus divalidasi",
 	"proofreadpage_quality1_message": "Ieu kaca can diuji-baca",
 	"proofreadpage_index_listofpages": "Béréndélan kaca",
 	"proofreadpage_image_message": "Tutumbu ka kaca béréndélan",
