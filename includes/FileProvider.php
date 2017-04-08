@@ -47,7 +47,7 @@ class FileProvider {
 	 */
 	public function getForIndexPage( ProofreadIndexPage $page ) {
 		return $this->getFileFromTitle(
-			Title::makeTitle( NS_IMAGE, $page->getTitle()->getText() )
+			Title::makeTitle( NS_FILE, $page->getTitle()->getText() )
 		);
 	}
 
@@ -59,7 +59,7 @@ class FileProvider {
 	public function getForPagePage( ProofreadPagePage $page ) {
 		// try to get an image with the same name as the file
 		return $this->getFileFromTitle(
-			Title::makeTitle( NS_IMAGE, strtok( $page->getTitle()->getText(), '/' ) ) // use the base name as file name
+			Title::makeTitle( NS_FILE, strtok( $page->getTitle()->getText(), '/' ) ) // use the base name as file name
 		);
 	}
 }
