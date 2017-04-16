@@ -7,9 +7,12 @@
 			"Luckas Blade",
 			"MetalBrasil",
 			"555",
-			"Cainamarques"
+			"Cainamarques",
+			"Felipe L. Ewald"
 		]
 	},
+	"nstab-page": "Página",
+	"nstab-index": "Índice",
 	"indexpages": "Lista de páginas de índice",
 	"pageswithoutscans": "Páginas sem digitalizações de originais",
 	"proofreadpage_desc": "Permite uma fácil comparação de textos e suas digitalizações originais",
@@ -79,5 +82,9 @@
 	"proofreadpage-indexoai-eprint-content-text": "Metadados dos livros administrados por ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Schema não encontrado",
 	"proofreadpage-indexoai-error-schemanotfound-text": "O schema $1 não foi encontrado.",
-	"proofreadpage-disambiguationspage": "Template:disambig"
+	"proofreadpage-disambiguationspage": "Template:disambig",
+	"content-model-proofread-page": "Página: página",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páginas",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sim",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Não"
 }

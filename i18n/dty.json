@@ -7,13 +7,20 @@
 			"Nirajan pant"
 		]
 	},
+	"nstab-page": "पन्ना",
+	"nstab-index": "अनुक्रम",
+	"tooltip-ca-nstab-page": "किताप पन्‍ना तकः",
+	"tooltip-ca-nstab-index": "किताप अनुक्रम तकः",
 	"indexpages": "सूचकांक पानाको सूची",
 	"pageswithoutscans": "स्क्यान बिनाईका पाना",
 	"proofreadpage_image": "चित्र",
 	"proofreadpage_index": "अनुक्रम",
 	"proofreadpage_index_expected": "त्रुटि: सूचकांकको अपेक्षा",
 	"proofreadpage_nosuch_index": "त्रुटि : यस्तो कोई सूचकांक नाई",
+	"proofreadpage_nosuch_file": "त्रुटीः इसो कोइ फाइल आथिन",
 	"proofreadpage_badpage": "गलत फरम्याट",
+	"proofreadpage_badpagetext": "तमले बचत अद्दाइ प्रयास अर्‍याः पन्नाः फर्म्याट गलत छ।",
+	"proofreadpage_indexdupe": "डुप्लिकेट लिङ्क",
 	"proofreadpage_nologin": "प्रवेश (लग ईन) नगर्याको",
 	"proofreadpage_nextpage": "अर्को पानो",
 	"proofreadpage_prevpage": "पैल्लीको पानो",
@@ -33,5 +40,10 @@
 	"proofreadpage-group-zoom": "जूम",
 	"proofreadpage-group-other": "और",
 	"proofreadpage-button-reset-zoom-label": "मूल आकार",
-	"content-model-proofread-page": "पानो:पानो"
+	"content-model-proofread-page": "पानो:पानो",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पन्‍नान",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नाइँ",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "प्रूफरीडिङ गुणस्तर",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "प्रूफरीडिङ गुणस्तर"
 }
