@@ -4,7 +4,8 @@
 			"Horus",
 			"Nullzero",
 			"Octahedron80",
-			"Passawuth"
+			"Passawuth",
+			"Aefgh39622"
 		]
 	},
 	"indexpages": "รายการหน้าดัชนี",
@@ -70,10 +71,13 @@
 	"proofreadpage-button-reset-zoom-label": "ขนาดเดิม",
 	"proofreadpage-button-zoom-in-label": "ซูมเข้า",
 	"proofreadpage-button-toggle-layout-label": "เค้าโครงแนวตั้ง/แนวนอน",
+	"proofreadpage-pageinfo-status": "สถานะการพิสูจน์อักษร",
 	"proofreadpage-preferences-showheaders-label": "แสดงเขตข้อมูลหัวเรื่องและท้ายเรื่องเมื่อแก้ไขในเนมสเปซ {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "ใช้เค้าโครงแนวนอนเมื่อแก้ไขในเนมสเปซ {{ns:page}}",
 	"proofreadpage-indexoai-repositoryName": "เมทาเดตาของหนังสือจาก {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "เมทาเดตาของหนังสือที่จัดการโดย ProofreadPage",
 	"proofreadpage-indexoai-error-schemanotfound": "ไม่พบเค้าร่าง",
-	"proofreadpage-indexoai-error-schemanotfound-text": "ไม่พบเค้าร่าง $1"
+	"proofreadpage-indexoai-error-schemanotfound-text": "ไม่พบเค้าร่าง $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ใช่",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ไม่"
 }
