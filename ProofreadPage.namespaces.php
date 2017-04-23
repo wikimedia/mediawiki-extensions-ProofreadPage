@@ -274,20 +274,20 @@ $proofreadPageNamespacesNames['mr'] = [
 	'index_talk' =>  'अनुक्रमणिका_चर्चा'
 ];
 
+/** Norwegian (bokmål)‬ (‪norsk (bokmål)‬) */
+$proofreadPageNamespacesNames['nb'] = [
+	'page' => 'Side',
+	'page_talk' => 'Sidediskusjon',
+	'index' => 'Indeks',
+	'index_talk' => 'Indeksdiskusjon'
+];
+
 /** Dutch (Nederlands) */
 $proofreadPageNamespacesNames['nl'] = [
 	'page' => 'Pagina',
 	'page_talk' => 'Overleg_pagina',
 	'index' => 'Index',
 	'index_talk' => 'Overleg_index'
-];
-
-/** Norwegian (bokmål)‬ (‪norsk (bokmål)‬) */
-$proofreadPageNamespacesNames['no'] = [
-	'page' => 'Side',
-	'page_talk' => 'Sidediskusjon',
-	'index' => 'Indeks',
-	'index_talk' => 'Indeksdiskusjon'
 ];
 
 /** Oriya (ଓଡ଼ିଆ) */
