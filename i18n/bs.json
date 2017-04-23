@@ -50,5 +50,6 @@
 	"proofreadpage_specialpage_legend": "Ptretraga indeksnih stranica",
 	"proofreadpage_source": "Izvor",
 	"proofreadpage_source_message": "Skenirana varijanta korištena za nastanak ovog teksta",
-	"right-pagequality": "Izmijeni zastavu kvalitete stranice"
+	"right-pagequality": "Izmijeni zastavu kvalitete stranice",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Stranice"
 }
