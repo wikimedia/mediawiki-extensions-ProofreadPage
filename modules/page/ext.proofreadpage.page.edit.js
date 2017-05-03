@@ -130,7 +130,7 @@
 	 */
 	function setupPageQuality() {
 		$( 'input[name="wpQuality"]' ).click( function () {
-			var $summary = $( '#wpSummary' ),
+			var $summary = $( 'input#wpSummary, #wpSummary > input' ),
 				pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_category' ).plain(),
 				summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
 			$summary.val( '/* ' + pageQuality + ' */ ' + summary );
