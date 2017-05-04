@@ -92,5 +92,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Halaman",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transklusi $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jo",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "De'e"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "De'e",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kualitas proofreading",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kualitas proofreading"
 }
