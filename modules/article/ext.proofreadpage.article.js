@@ -6,4 +6,4 @@
 		$( '#ca-nstab-main' ).after( '<li id="ca-proofread-source"><span>' + mw.config.get( 'proofreadpage_source_href' ) + '</span></li>' );
 	} );
 
-}( mw, jQuery ) );
+}( mediaWiki, jQuery ) );

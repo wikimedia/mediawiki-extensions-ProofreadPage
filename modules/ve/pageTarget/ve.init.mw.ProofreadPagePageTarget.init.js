@@ -12,4 +12,4 @@
 		// list here, only on pages that have loaded 'ext.proofreadpage.page' first.
 		mw.libs.ve.addPlugin( 'ext.proofreadpage.ve.pageTarget' );
 	} );
-} )();
+}() );
