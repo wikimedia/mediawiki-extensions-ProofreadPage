@@ -174,17 +174,21 @@ ve.init.mw.ProofreadPagePageTarget.prototype.submit = function ( wikitext, field
 
 /**
  * Parse Wikitext into the JSON serialization
+ *
+ * @param {string} wikitext Wikitext to parse
+ * @return {Object} Parsed data, containing header, body, footer & level
  */
 ve.init.mw.ProofreadPagePageTarget.prototype.parseWikitext = function ( wikitext ) {
-	var structureMatchResult, headerMatchResult, result = {
-		header: '',
-		body: '',
-		footer: '',
-		level: {
-			level: 1,
-			user: null
-		}
-	};
+	var structureMatchResult, headerMatchResult,
+		result = {
+			header: '',
+			body: '',
+			footer: '',
+			level: {
+				level: 1,
+				user: null
+			}
+		};
 
 	structureMatchResult = wikitext.match( /^<noinclude>([\s\S]*)\n*<\/noinclude>([\s\S]*)<noinclude>([\s\S]*)<\/noinclude>$/ );
 	if ( structureMatchResult === null ) {

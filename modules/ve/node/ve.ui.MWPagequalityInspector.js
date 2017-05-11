@@ -68,9 +68,8 @@ ve.ui.MWPagequalityInspector.prototype.getSetupProcess = function ( data ) {
 	return ve.ui.MWPagequalityInspector.super.prototype.getSetupProcess.call( this, data )
 		.next( function () {
 			var currentLevel;
-			this.mwData = ( this.selectedNode !== null && this.selectedNode.getAttribute( 'mw' ) ) || {
-					attrs: {}
-				};
+			this.mwData = ( this.selectedNode !== null && this.selectedNode.getAttribute( 'mw' ) ) ||
+				{ attrs: {} };
 			currentLevel = parseInt( this.mwData.attrs.level );
 
 			if ( this.couldNotValidatePage( currentLevel, this.mwData.attrs.user ) ) {

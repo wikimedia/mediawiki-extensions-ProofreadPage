@@ -8,4 +8,4 @@
 		} );
 	} );
 
-}( mw, jQuery ) );
+}( mediaWiki, jQuery ) );
