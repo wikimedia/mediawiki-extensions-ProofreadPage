@@ -45,6 +45,9 @@
 		"EditProofreadIndexPage": "includes/index/EditProofreadIndexPage.php",
 		"ProofreadIndexEntry": "includes/index/ProofreadIndexEntry.php",
 		"ProofreadIndexPage": "includes/index/ProofreadIndexPage.php",
+		"ProofreadPage\\Index\\IndexContent": "includes/index/IndexContent.php",
+		"ProofreadPage\\Index\\IndexRedirectContent": "includes/index/IndexRedirectContent.php",
+		"ProofreadPage\\Index\\IndexContentHandler": "includes/index/IndexContentHandler.php",
 		"ProofreadIndexDbConnector": "includes/index/ProofreadIndexDbConnector.php",
 		"ProofreadPage\\Pagination\\PaginationFactory": "includes/Pagination/PaginationFactory.php",
 		"ProofreadPage\\Pagination\\PageNumber": "includes/Pagination/PageNumber.php",
@@ -73,12 +76,13 @@
 		"PagesWithoutScans": "SpecialPagesWithoutScans.php",
 		"ApiQueryProofread": "ApiQueryProofread.php",
 		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
-		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
 		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php",
 		"ProofreadIndexPageTest": "tests/phpunit/index/ProofreadIndexPageTest.php",
 		"ProofreadPagePageTest": "tests/phpunit/page/ProofreadPagePageTest.php",
-		"ProofreadPage\\Page\\PageContentTest": "tests/phpunit/page/PageContentTest.php"
+		"ProofreadPage\\Page\\PageContentTest": "tests/phpunit/page/PageContentTest.php",
+		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
+		"FixProofreadIndexPagesContentModel": "maintenance/fixProofreadIndexPagesContentModel.php"
 	},
 	"ResourceModules": {
 		"jquery.mousewheel": {

@@ -91,6 +91,9 @@ class ProofreadPage {
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			$model = CONTENT_MODEL_PROOFREAD_PAGE;
 			return false;
+		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
+			$model = CONTENT_MODEL_PROOFREAD_INDEX;
+			return false;
 		} else {
 			return true;
 		}
@@ -705,6 +708,7 @@ class ProofreadPage {
 		// fix issue with content type hardcoded in database
 		if ( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
 			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadPagePagesContentModel' );
+			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadIndexPagesContentModel' );
 		}
 
 		return true;
@@ -880,6 +884,8 @@ class ProofreadPage {
 
 		// Content handler
 		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
+		define( 'CONTENT_MODEL_PROOFREAD_INDEX', 'proofread-index' );
 		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = '\ProofreadPage\Page\PageContentHandler';
+		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_INDEX] = '\ProofreadPage\Index\IndexContentHandler';
 	}
 }
