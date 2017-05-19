@@ -84,6 +84,8 @@ class PagelistTagParser extends TagParser {
 			}
 		}
 
+		$this->parser->getOutput()->addImage( $image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1() );
+
 		return trim( $this->parser->recursiveTagParse( $return ) );
 	}
 }
