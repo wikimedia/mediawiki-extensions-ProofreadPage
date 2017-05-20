@@ -47,7 +47,7 @@
 	"proofreadpage_quality4_category": "Validert",
 	"proofreadpage_quality0_message": "Denne siden trenger ikke korrekturleses",
 	"proofreadpage_quality1_message": "Denne siden er ikke korrekturlest",
-	"proofreadpage_quality2_message": "Det oppsto et problem når denne siden skulle korrekturleses",
+	"proofreadpage_quality2_message": "Det var problemer med korrekturlesingen av denne siden.",
 	"proofreadpage_quality3_message": "Denne siden er korrekturlest",
 	"proofreadpage_quality4_message": "Denne siden er godkjent",
 	"proofreadpage_index_status": "Indekseringsstatus",
