@@ -116,6 +116,9 @@ class EditPagePage extends EditPage {
 		$out->addHTML( $this->pagePage->getPageContainerEnd() );
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );
+		$out->addModuleStyles( [
+			'ext.proofreadpage.page.edit', 'ext.proofreadpage.page', 'ext.proofreadpage.base'
+		] );
 	}
 
 	/**
