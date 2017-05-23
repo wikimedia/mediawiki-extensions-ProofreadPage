@@ -86,7 +86,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Het schema $1 is niet aangetroffen.",
 	"proofreadpage-disambiguationspage": "Template:Doorverwijspagina",
 	"proofreadpage-indexquality-alt": "$1 gevalideerd {{PLURAL:$1|pagina|pagina's}}, $2 alleen proeflees {{PLURAL:$2|pagina|pagina's}} en $3 niet nagelezen {{PLURAL:$3|pagina|pagina's}}",
-	"content-model-proofread-page": "Pagina: pagina",
+	"content-model-proofread-page": "Boekpagina",
 	"apihelp-query+proofread-description": "Geeft informatie over de huidige proeflees status van de gegeven pagina's.",
 	"apihelp-query+proofread-example-1": "Terug proeflees status voor pagina's in de naamruimte 250",
 	"apihelp-query+proofreadinfo-description": "Informatie over de configuratie van ProofreadPage extensie.",

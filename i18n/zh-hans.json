@@ -15,7 +15,8 @@
 			"Zhuyifei1999",
 			"Duolaimi",
 			"Wmr89502270",
-			"Shizhao"
+			"Shizhao",
+			"Wmr"
 		]
 	},
 	"nstab-page": "页面",
@@ -94,7 +95,8 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1架构未找到。",
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"proofreadpage-indexquality-alt": "$1个已确认{{PLURAL:$1|页面}}，$2个仅已校对{{PLURAL:$2|页面}}和$3个未校对{{PLURAL:$3|页面}}",
-	"content-model-proofread-page": "页面：页面",
+	"content-model-proofread-page": "图书页面",
+	"content-model-proofread-index": "图书索引",
 	"apihelp-query+proofread-description": "返回有关指定页面当前校对状态的信息。",
 	"apihelp-query+proofread-example-1": "返回250名字空间页面的校对状态",
 	"apihelp-query+proofreadinfo-description": "返回有关ProofreadPage扩展配置的信息。",

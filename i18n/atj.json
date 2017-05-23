@@ -3,7 +3,8 @@
 		"authors": [
 			"Ninmeka",
 			"Benoit Rochon",
-			"Jeannette Coocoo"
+			"Jeannette Coocoo",
+			"Nehirowisiw"
 		]
 	},
 	"nstab-page": "Masinhikan",
@@ -16,8 +17,8 @@
 	"proofreadpage_specialpage_label_key": "Nantokiskeritcikatek:",
 	"proofreadpage_source": "Ite wetciparik",
 	"proofreadpage-group-other": "Kotak",
-	"content-model-proofread-page": "Masinahikan: masinahikan",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Masinahikana",
+	"content-model-proofread-page": "Paskickwemakan masinahikanik",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Paskickwemakana",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ehe",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nama"
 }
