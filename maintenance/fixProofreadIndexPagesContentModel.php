@@ -50,9 +50,9 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 		$total = 0;
 		$namespaceId = ProofreadPage::getIndexNamespaceId();
 		do {
-			$dbw->update(
+			$pageIds = $dbw->selectFieldValues(
 				'page',
-				[ 'page_content_model' => CONTENT_MODEL_PROOFREAD_INDEX ],
+				'page_id',
 				[
 					'page_namespace' => $namespaceId,
 					'page_content_model' => CONTENT_MODEL_WIKITEXT
@@ -60,10 +60,19 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 				__METHOD__,
 				[ 'LIMIT' => $this->mBatchSize ]
 			);
+			if ( !$pageIds ) {
+				break;
+			}
+			$dbw->update(
+				'page',
+				[ 'page_content_model' => CONTENT_MODEL_PROOFREAD_INDEX ],
+				[ 'page_id' => $pageIds ],
+				__METHOD__
+			);
 			wfWaitForSlaves();
 			$total += $dbw->affectedRows();
 			$this->output( "$total\n" );
-		} while ( $dbw->affectedRows() > 0 );
+		} while ( true );
 
 		$this->output( "Update of the content model for Index: pages is done.\n" );
 
