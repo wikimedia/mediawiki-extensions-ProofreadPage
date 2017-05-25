@@ -6,7 +6,8 @@
 			"MegaAlex",
 			"Spiritia",
 			"Stanqo",
-			"Turin"
+			"Turin",
+			"StanProg"
 		]
 	},
 	"indexpages": "Списък на индексните страници",
@@ -77,5 +78,7 @@
 	"proofreadpage-indexoai-repositoryName": "Метаданни на книги от {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Метаданни на книги, управлявани от ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Схемата не беше открита",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Схемата $1 не беше открита."
+	"proofreadpage-indexoai-error-schemanotfound-text": "Схемата $1 не беше открита.",
+	"content-model-proofread-page": "Страница от книгата",
+	"content-model-proofread-index": "Индекс на книгата"
 }

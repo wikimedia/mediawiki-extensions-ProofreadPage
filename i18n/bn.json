@@ -85,7 +85,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 স্কিমাটি পাওয়া যায়নি।",
 	"proofreadpage-disambiguationspage": "Template:দ্ব্যর্থতা নিরসন",
 	"proofreadpage-indexquality-alt": "$1টি বৈধকৃত {{PLURAL:$1|পাতা}}, $2টি মুদ্রণ সংশোধিত {{PLURAL:$2|পাতা}} এবং $3টি {{PLURAL:$3|পাতার}} মুদ্রণ সংশোধন করা হয়নি",
-	"content-model-proofread-page": "পাতা: পাতা",
+	"content-model-proofread-page": "বইয়ের পাতা",
 	"apihelp-query+proofreadinfo-example-3": "নামস্থানের তথ্য ফেরত দেয়",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "পাতার নির্বাচন",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "পাতাগুলি",
