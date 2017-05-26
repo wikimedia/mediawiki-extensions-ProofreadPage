@@ -80,6 +80,7 @@
 	"proofreadpage-disambiguationspage": "Template:Homonymie",
 	"proofreadpage-indexquality-alt": "$1 validéiert {{PLURAL:$1|Säit|Säiten}}, nëmmen {{PLURAL:$2|eng iwwerliest Säit|$2 iwwerliest Säiten}} an {{PLURAL:$3|an eng net iwwerliest Säit|a(n) $3 net iwwerliest Säiten}}",
 	"content-model-proofread-page": "Buchsäit",
+	"content-model-proofread-index": "Buchindex",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Eraussiche vun der Säit",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Säiten",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jo",
