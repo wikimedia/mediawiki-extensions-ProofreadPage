@@ -53,53 +53,55 @@ class ApiQueryProofread extends ApiQueryBase {
 		}
 		$qualityLevels = array_flip( $qualityCategories );
 
-		// <Reedy> johnduhart, it'd seem sane rather than duplicating the functionality
-		$params = new DerivativeRequest( $this->getRequest(), [
-			'action' => 'query',
-			'prop' => 'categories',
-			'pageids' => implode( '|', $pageIds ),
-			'clcategories' => implode( '|', $qualityCategories ),
-			'cllimit' => 'max',
-			'errorformat' => 'raw',
-		] );
+		foreach ( array_chunk( $pageIds, ApiBase::LIMIT_SML1 ) as $chunk ) {
+			// <Reedy> johnduhart, it'd seem sane rather than duplicating the functionality
+			$params = new DerivativeRequest( $this->getRequest(), [
+				'action' => 'query',
+				'prop' => 'categories',
+				'pageids' => implode( '|', $chunk ),
+				'clcategories' => implode( '|', $qualityCategories ),
+				'cllimit' => 'max',
+				'errorformat' => 'raw',
+			] );
 
-		$api = new ApiMain( $params );
-		$api->execute();
-		$data = $api->getResult()->getResultData();
-		$pages = ApiResult::stripMetadataNonRecursive(
-			(array)$data['query']['pages']
-		);
-		unset( $api );
+			$api = new ApiMain( $params );
+			$api->execute();
+			$data = $api->getResult()->getResultData();
+			$pages = ApiResult::stripMetadataNonRecursive(
+				(array)$data['query']['pages']
+			);
+			unset( $api );
 
-		if ( array_key_exists( 'errors', $data ) ) {
-			$status = StatusValue::newGood();
-			foreach ( $data['errors'] as $error ) {
-				$status->fatal( ApiMessage::create(
-					array_merge( [ $data['key'] ], $data['params'] ),
-					$data['code'],
-					isset( $data['data'] ) ? $data['data'] : []
-				) );
+			if ( array_key_exists( 'errors', $data ) ) {
+				$status = StatusValue::newGood();
+				foreach ( $data['errors'] as $error ) {
+					$status->fatal( ApiMessage::create(
+						array_merge( [ $data['key'] ], $data['params'] ),
+						$data['code'],
+						isset( $data['data'] ) ? $data['data'] : []
+					) );
+				}
+				$this->dieStatus( $status );
 			}
-			$this->dieStatus( $status );
-		}
 
-		$result = $this->getResult();
-		foreach ( $pages as $pageid => $data ) {
-			if ( !array_key_exists( 'categories', $data ) ) {
-				continue;
+			$result = $this->getResult();
+			foreach ( $pages as $pageid => $data ) {
+				if ( !array_key_exists( 'categories', $data ) ) {
+					continue;
+				}
+				$title = $data['categories'][0]['title'];
+
+				if ( !array_key_exists( $title, $qualityLevels ) ) {
+					continue;
+				}
+				$pageQuality = $qualityLevels[ $title ];
+
+				$val = [
+					'quality' => $pageQuality,
+					'quality_text' => $qualityText[ $pageQuality ]
+				];
+				$result->addValue( [ 'query', 'pages', $pageid ], 'proofread', $val );
 			}
-			$title = $data['categories'][0]['title'];
-
-			if ( !array_key_exists( $title, $qualityLevels ) ) {
-				continue;
-			}
-			$pageQuality = $qualityLevels[ $title ];
-
-			$val = [
-				'quality' => $pageQuality,
-				'quality_text' => $qualityText[ $pageQuality ]
-			];
-			$result->addValue( [ 'query', 'pages', $pageid ], 'proofread', $val );
 		}
 	}
 
