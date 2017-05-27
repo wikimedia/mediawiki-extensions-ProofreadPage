@@ -42,12 +42,14 @@
 		"ProofreadPage\\DiffFormatterUtils": "includes/DiffFormatterUtils.php",
 		"ProofreadPage\\FileNotFoundException": "includes/FileNotFoundException.php",
 		"ProofreadPage\\FileProvider": "includes/FileProvider.php",
-		"EditProofreadIndexPage": "includes/index/EditProofreadIndexPage.php",
 		"ProofreadIndexEntry": "includes/index/ProofreadIndexEntry.php",
 		"ProofreadIndexPage": "includes/index/ProofreadIndexPage.php",
 		"ProofreadPage\\Index\\IndexContent": "includes/index/IndexContent.php",
 		"ProofreadPage\\Index\\IndexRedirectContent": "includes/index/IndexRedirectContent.php",
 		"ProofreadPage\\Index\\IndexContentHandler": "includes/index/IndexContentHandler.php",
+		"ProofreadPage\\Index\\IndexEditAction": "includes/index/IndexEditAction.php",
+		"ProofreadPage\\Index\\IndexSubmitAction": "includes/index/IndexSubmitAction.php",
+		"ProofreadPage\\Index\\EditIndexPage": "includes/index/EditIndexPage.php",
 		"ProofreadIndexDbConnector": "includes/index/ProofreadIndexDbConnector.php",
 		"ProofreadPage\\Pagination\\PaginationFactory": "includes/Pagination/PaginationFactory.php",
 		"ProofreadPage\\Pagination\\PageNumber": "includes/Pagination/PageNumber.php",
@@ -282,9 +284,6 @@
 		],
 		"GetPreferences": [
 			"ProofreadPage::onGetPreferences"
-		],
-		"CustomEditor": [
-			"ProofreadPage::onCustomEditor"
 		],
 		"CanonicalNamespaces": [
 			"ProofreadPage::addCanonicalNamespaces"

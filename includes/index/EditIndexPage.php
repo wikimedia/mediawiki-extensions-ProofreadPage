@@ -1,33 +1,37 @@
 <?php
 
+namespace ProofreadPage\Index;
+
+use EditPage;
+use Html;
+use OutputPage;
+use ProofreadIndexEntry;
+use ProofreadIndexPage;
+use Status;
+use Xml;
+use XmlSelect;
+
 /**
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * http://www.gnu.org/copyleft/gpl.html
- *
- * @file
- * @ingroup ProofreadPage
+ * @licence GNU GPL v2+
  */
+class EditIndexPage extends EditPage {
 
-class EditProofreadIndexPage extends EditPage {
-
+	/**
+	 * @see EditPage::isSectionEditSupported
+	 */
 	protected function isSectionEditSupported() {
 		return false; // sections and forms don't mix
 	}
 
 	/**
-	 * Add custom fields
+	 * @see EditPage::isSupportedContentModel
+	 */
+	public function isSupportedContentModel( $modelId ) {
+		return $modelId === CONTENT_MODEL_PROOFREAD_INDEX;
+	}
+
+	/**
+	 * @see EditPage::showContentForm
 	 */
 	protected function showContentForm() {
 		$pageLang = $this->mTitle->getPageLanguage();
@@ -65,21 +69,14 @@ class EditProofreadIndexPage extends EditPage {
 		$key = $this->getFieldNameForEntry( $entry->getKey() );
 		$val = $this->safeUnicodeOutput( $entry->getStringValue() );
 
-		$out->addHTML(
-			Html::openElement( 'tr' ) .
-				Html::openElement( 'th', [ 'scope' => 'row' ] ) .
-					Xml::label( $entry->getLabel(), $key )
-		);
+		$out->addHTML( Html::openElement( 'tr' ) . Html::openElement( 'th', [ 'scope' => 'row' ] ) . Xml::label( $entry->getLabel(), $key ) );
 
 		$help = $entry->getHelp();
 		if ( $help !== '' ) {
 			$out->addHTML( Html::element( 'span', [ 'title' => $help, 'class' => 'prp-help-field' ] ) );
 		}
 
-		$out->addHTML(
-			Html::closeElement( 'th' ) .
-			Html::openElement( 'td' )
-		);
+		$out->addHTML( Html::closeElement( 'th' ) . Html::openElement( 'td' ) );
 
 		$values = $entry->getPossibleValues();
 		if ( $values !== null ) {
@@ -109,10 +106,7 @@ class EditProofreadIndexPage extends EditPage {
 			}
 		}
 
-		$out->addHTML(
-				Html::closeElement( 'td' ) .
-			Html::closeElement( 'tr' )
-		);
+		$out->addHTML( Html::closeElement( 'td' ) . Html::closeElement( 'tr' ) );
 	}
 
 	/**
@@ -126,10 +120,7 @@ class EditProofreadIndexPage extends EditPage {
 	}
 
 	/**
-	 * Extract the page content data from the posted form
-	 *
-	 * @param WebRequest $request
-	 * @return string
+	 * @see EditPage::importContentFormData
 	 */
 	protected function importContentFormData( &$request ) {
 		if ( $this->textbox1 !== '' ) {
@@ -146,6 +137,7 @@ class EditProofreadIndexPage extends EditPage {
 				$text .= "\n|" . $entry->getKey() . "=" . $entry->getStringValue();
 			}
 		}
+
 		return $text . "\n}}";
 	}
 
@@ -182,6 +174,8 @@ class EditProofreadIndexPage extends EditPage {
 
 	/**
 	 * Check the validity of the page
+	 *
+	 * @see EditPage::internalAttemptSave
 	 */
 	public function internalAttemptSave( &$result, $bot = false ) {
 		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
@@ -194,12 +188,11 @@ class EditProofreadIndexPage extends EditPage {
 		}
 
 		if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-			$this->context
-				->getOutput()
-				->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
+			$this->context->getOutput()->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
 			$status = Status::newGood();
 			$status->fatal( 'hookaborted' );
 			$status->value = self::AS_HOOK_ERROR;
+
 			return $status;
 		}
 
