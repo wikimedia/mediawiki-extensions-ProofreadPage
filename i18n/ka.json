@@ -7,9 +7,14 @@
 			"ITshnik",
 			"Malafaya",
 			"Sopho",
-			"გიორგიმელა"
+			"გიორგიმელა",
+			"OpusDEI"
 		]
 	},
+	"nstab-page": "გვერდი",
+	"nstab-index": "ინდექსი",
+	"tooltip-ca-nstab-page": "წიგნის გვერდის ჩვენება",
+	"tooltip-ca-nstab-index": "წიგნის ინდექსის ჩვენება",
 	"indexpages": "მთავარი გვერდების სია",
 	"pageswithoutscans": "გვერდები სკანების გარეშე",
 	"proofreadpage_desc": "საშუალებას იძლევა კომფორტულად შეადაროთ ტექსტი ორიგინალის დასკანერებული სურათი",
@@ -81,7 +86,9 @@
 	"proofreadpage-indexoai-error-schemanotfound": "სქემა ვერ მოიძებნა",
 	"proofreadpage-indexoai-error-schemanotfound-text": "სქემა „$1“ ვერ მოიძებნა.",
 	"proofreadpage-disambiguationspage": "Template:მრავალმნიშვნელოვანი",
-	"content-model-proofread-page": "გვერდი: გვერდი",
+	"proofreadpage-indexquality-alt": "$1 შემოწმებული {{PLURAL:$1|გვერდი|გვერდები}}, $2 მხოლოდ კორექტირებული {{PLURAL:$2|გვერდი|გვერდები}} და $3 არაკორექტირებული {{PLURAL:$3|გვერდი|გვერდები}}",
+	"content-model-proofread-page": "წიგნის გვერდი",
+	"content-model-proofread-index": "წიგნის იდექსი",
 	"apihelp-query+proofread-description": "გამოაქვს ინფორმაცია მოცემული გვერდების ამჟამინდელი კორექტურის სტატუსის შესახებ.",
 	"apihelp-query+proofread-example-1": "კორექტურის კითხვის სტატუსის გამოტანა გვერდებისთვის სახელთა სივრცეში 250",
 	"apihelp-query+proofreadinfo-description": "ProofreadPage გაფართოების კონფიგურაციის შესახებ ინფორმაციის გამოტანა.",

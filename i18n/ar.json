@@ -8,7 +8,8 @@
 			"زكريا",
 			"Abanima",
 			"محمد أحمد عبد الفتاح",
-			"Maroen1990"
+			"Maroen1990",
+			"Mido"
 		]
 	},
 	"nstab-page": "صفحة",
@@ -87,7 +88,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "المخطط $1 لم يتم العثور عليه.",
 	"proofreadpage-disambiguationspage": "Template:توضيح",
 	"proofreadpage-indexquality-alt": "$1 حقق {{PLURAL:$1|صفحة|صفحات}}، فقط $2 {{PLURAL:$2|صفحة|صفحات}} تمت مراجعتها و $3 {{PLURAL:$3|صفحة|صفحات}} لم تتم مراجعتها",
-	"content-model-proofread-page": "الصفحة: صفحة",
+	"content-model-proofread-page": "صفحة كتاب",
 	"apihelp-query+proofread-description": "يعطي المعلومات حول وضع عملية التحقق للصفحات المختارة.",
 	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
 	"apihelp-query+proofreadinfo-description": "إعطاء المعلومات عن إعدادات امتداد ProofreadPage",
