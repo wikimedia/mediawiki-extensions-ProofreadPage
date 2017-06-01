@@ -11,7 +11,8 @@
 			"TianyinLee",
 			"Wrightbus",
 			"LNDDYL",
-			"Cwlin0416"
+			"Cwlin0416",
+			"Wwycheuk"
 		]
 	},
 	"indexpages": "索引頁清單",
@@ -85,5 +86,5 @@
 	"proofreadpage-indexoai-error-schemanotfound": "無法找尋架構",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 架構無法發現。",
 	"proofreadpage-disambiguationspage": "Template:消歧義",
-	"content-model-proofread-page": "頁面：頁面"
+	"content-model-proofread-page": "圖書頁面"
 }
