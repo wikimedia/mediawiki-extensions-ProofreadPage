@@ -87,7 +87,7 @@ class PageLevel {
 		}
 
 		$fromUser = ( $this->user instanceof User ) ? $this->user : $to->getUser();
-		if ( $to->getLevel() === 4 && ( $this->level < 3 || $this->level === 3 && $fromUser->getName() === $to->getUser()->getName() ) ) {
+		if ( $to->getLevel() === 4 && ( $this->level < 3 || $this->level === 3 && $fromUser->getName() === $to->getUser()->getName() ) && !$to->getUser()->isAllowed( 'pagequality-admin' ) ) {
 			return false;
 		}
 

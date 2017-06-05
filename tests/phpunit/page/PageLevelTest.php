@@ -16,6 +16,8 @@ class PageLevelTest extends ProofreadPageTestCase {
 
 		$wgGroupPermissions['*']['pagequality'] = false;
 		$wgGroupPermissions['user']['pagequality'] = true;
+		$wgGroupPermissions['*']['pagequality-admin'] = false;
+		$wgGroupPermissions['sysop']['pagequality-admin'] = true;
 	}
 
 	public function testGetLevel() {
@@ -52,6 +54,9 @@ class PageLevelTest extends ProofreadPageTestCase {
 		$test2User =  User::newFromName( 'Test2' );
 		$test2User->addToDatabase();
 		$test2User->addGroup( 'user' );
+		$test3User =  User::newFromName( 'Test3' );
+		$test3User->addToDatabase();
+		$test3User->addGroup( 'sysop' );
 		$ipUser = User::newFromName( '172.16.254.7', false );
 
 		return [
@@ -84,6 +89,26 @@ class PageLevelTest extends ProofreadPageTestCase {
 				new PageLevel( 1, null ),
 				new PageLevel( 4, $testUser ),
 				false
+			],
+			[
+				new PageLevel( 3, $testUser ),
+				new PageLevel( 4, $test3User ),
+				true
+			],
+			[
+				new PageLevel( 3, $test3User ),
+				new PageLevel( 4, $test3User ),
+				true
+			],
+			[
+				new PageLevel( 3, null ),
+				new PageLevel( 4, $test3User ),
+				true
+			],
+			[
+				new PageLevel( 1, $test3User ),
+				new PageLevel( 4, $test3User ),
+				true
 			],
 		];
 	}
