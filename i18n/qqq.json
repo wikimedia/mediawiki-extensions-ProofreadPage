@@ -24,7 +24,8 @@
 			"Nemo bis",
 			"Liuxinyu970226",
 			"Guycn2",
-			"Pikne"
+			"Pikne",
+			"Amritsreekumar"
 		]
 	},
 	"nstab-page": "Text on the tab of book pages in the \"Page\" namespace on Wikisource\n{{Identical|Page}}",
@@ -89,6 +90,7 @@
 	"proofreadpage_source": "{{Identical|Source}}",
 	"proofreadpage_source_message": "Used as text of a link",
 	"right-pagequality": "{{doc-right|pagequality}}",
+	"right-pagequality-admin": "{{doc-right|pagequality-admin}}",
 	"proofreadpage-section-tools": "Used as label (javascript)",
 	"proofreadpage-group-zoom": "{{Identical|Zoom}}",
 	"proofreadpage-group-other": "This is a group header in the Proofread Page extension preferences panel for \"miscellaneous\" settings.\n{{Identical|Other}}",

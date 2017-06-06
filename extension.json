@@ -8,14 +8,21 @@
 	"descriptionmsg": "proofreadpage_desc",
 	"license-name": "GPL-2.0+",
 	"type": "other",
-	"@GroupPermissions": "Group allowed to modify pagequality",
+	"@GroupPermissions": [
+		"Group allowed to modify pagequality",
+		"Group allowed to use pagequality-admin privilege"
+	],
 	"GroupPermissions": {
 		"user": {
 			"pagequality": true
+		},
+		"sysop": {
+			"pagequality-admin": true
 		}
 	},
 	"AvailableRights": [
-		"pagequality"
+		"pagequality",
+		"pagequality-admin"
 	],
 	"SpecialPages": {
 		"IndexPages": "ProofreadPages",
