@@ -147,7 +147,7 @@
 				"vector": "page/ext.proofreadpage.page.navigation.vector.css"
 			},
 			"dependencies": [
-				"oojs-ui.styles.icons"
+				"oojs-ui.styles.icons-movement"
 			]
 		},
 		"ext.proofreadpage.article": {
