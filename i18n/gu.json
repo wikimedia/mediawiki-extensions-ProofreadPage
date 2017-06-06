@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dsvyas",
-			"Sushant savla"
+			"Sushant savla",
+			"KartikMistry"
 		]
 	},
 	"indexpages": "સૂચિ પૃષ્ઠોની યાદી",
@@ -33,7 +34,7 @@
 	"proofreadpage_quality0_category": "લખાણ રહિત",
 	"proofreadpage_quality1_category": "ભૂલશુદ્ધિ બાકી",
 	"proofreadpage_quality2_category": "સમસ્યારૂપ",
-	"proofreadpage_quality3_category": "ભૂલશુદ્ધિ પૂર્ણ",
+	"proofreadpage_quality3_category": "ભૂલશુદ્ધિ",
 	"proofreadpage_quality4_category": "પ્રમાણિત",
 	"proofreadpage_quality0_message": "આ પાનાનું પ્રુફરીડ જરૂરી નથી.",
 	"proofreadpage_quality1_message": "આ પાનાનું પ્રુફરીડિંગ બાકી છે",
