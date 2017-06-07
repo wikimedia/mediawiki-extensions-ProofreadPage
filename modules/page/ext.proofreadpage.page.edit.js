@@ -2,6 +2,8 @@
 	'use strict';
 
 	var
+		toolbarDependencies,
+
 		/**
 		 * Is the layout horizontal (ie is the scan image on top of the edit area)
 		 * @type {boolean}
@@ -222,31 +224,29 @@
 			$edit = $( '#wpTextbox1' );
 
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
-			mw.loader.using( 'ext.wikiEditor', function () {
-				$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
-				$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
-				$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
+			// 'ext.wikiEditor' was loaded before calling this function
+			$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
+			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
+			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 
-				$edit.wikiEditor( 'addToToolbar', {
-					sections: {
-						'proofreadpage-tools': {
-							type: 'toolbar',
-							labelMsg: 'proofreadpage-section-tools',
-							groups: tools
-						}
+			$edit.wikiEditor( 'addToToolbar', {
+				sections: {
+					'proofreadpage-tools': {
+						type: 'toolbar',
+						labelMsg: 'proofreadpage-section-tools',
+						groups: tools
 					}
-				} );
+				}
 			} );
 
 		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
-			mw.loader.using( 'mediawiki.toolbar', function () {
-				$.each( tools, function ( group, list ) {
-					$.each( list.tools, function ( id, def ) {
-						mw.toolbar.addButton( {
-							imageFile: def.oldIcon,
-							speedTip: mw.msg( def.labelMsg ),
-							onClick: def.action.execute
-						} );
+			// 'mediawiki.toolbar' was loaded before calling this function
+			$.each( tools, function ( group, list ) {
+				$.each( list.tools, function ( id, def ) {
+					mw.toolbar.addButton( {
+						imageFile: def.oldIcon,
+						speedTip: mw.msg( def.labelMsg ),
+						onClick: def.action.execute
 					} );
 				} );
 			} );
@@ -287,9 +287,21 @@
 
 	$( function () {
 		initEnvironment();
-		setupWikitextEditor();
 		setupPreferences();
 		setupPageQuality();
+	} );
+
+	toolbarDependencies = [];
+	if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
+		toolbarDependencies.push( 'ext.wikiEditor' );
+	} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
+		toolbarDependencies.push( 'mediawiki.toolbar' );
+	}
+
+	mw.loader.using( toolbarDependencies ).done( function () {
+		$( function () {
+			setupWikitextEditor();
+		} );
 	} );
 
 	// zoom should be initialized after the page is rendered
