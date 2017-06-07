@@ -222,7 +222,7 @@
 			$edit = $( '#wpTextbox1' );
 
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
-			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
+			mw.loader.using( 'ext.wikiEditor', function () {
 				$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
 				$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
 				$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
@@ -238,12 +238,6 @@
 				} );
 			} );
 
-			// load the "dialogs" module of WikiEditor if enabled , bug: 72960
-			if ( getBooleanUserOption( 'usebetatoolbar-cgd' ) ) {
-				mw.loader.load( 'ext.wikiEditor.dialogs' );
-			}
-
-			// TODO: other modules of WikiEditor may miss, see bug 72960.
 		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
 			mw.loader.using( 'mediawiki.toolbar', function () {
 				$.each( tools, function ( group, list ) {
