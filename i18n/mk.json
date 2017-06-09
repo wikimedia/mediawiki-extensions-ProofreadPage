@@ -64,6 +64,7 @@
 	"proofreadpage_source": "Извор",
 	"proofreadpage_source_message": "Отсликано издание што се користи за востановување на овој текст",
 	"right-pagequality": "Измени ознака за квалитет на страницата",
+	"right-pagequality-admin": "Неограничени измени во ознаката за квалитет на страница",
 	"proofreadpage-section-tools": "Лекторски алатки",
 	"proofreadpage-group-zoom": "Размер",
 	"proofreadpage-group-other": "Други",
