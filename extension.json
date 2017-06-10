@@ -115,21 +115,19 @@
 		},
 		"ext.proofreadpage.page": {
 			"position": "top",
-			"styles": "page/ext.proofreadpage.page.css",
-			"dependencies": [
-				"ext.proofreadpage.base",
-				"ext.proofreadpage.ve.pageTarget.init"
-			]
+			"styles": "page/ext.proofreadpage.page.css"
 		},
 		"ext.proofreadpage.page.edit": {
 			"styles": "page/ext.proofreadpage.page.edit.css",
 			"scripts": "page/ext.proofreadpage.page.edit.js",
 			"dependencies": [
+				"ext.proofreadpage.base",
 				"ext.proofreadpage.page",
 				"jquery.prpZoom",
 				"mediawiki.user",
 				"user.options",
-				"jquery.textSelection"
+				"jquery.textSelection",
+				"ext.proofreadpage.ve.pageTarget.init"
 			],
 			"messages": [
 				"proofreadpage_quality0_category",
