@@ -12,6 +12,7 @@ use User;
 class PageLevelTest extends ProofreadPageTestCase {
 
 	public function setUp() {
+		global $wgGroupPermissions;
 		parent::setUp();
 
 		$wgGroupPermissions['*']['pagequality'] = false;
