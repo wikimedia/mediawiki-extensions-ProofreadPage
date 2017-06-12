@@ -43,10 +43,8 @@ class PageViewAction extends ViewAction {
 		$out->addHTML( $page->getPageContainerEnd() );
 
 		// add modules
-		$out->addModules( 'ext.proofreadpage.page' );
-		$out->addModuleStyles( [
-			'ext.proofreadpage.base', 'ext.proofreadpage.page'
-		] );
+		$out->addModules( 'ext.proofreadpage.ve.pageTarget.init' );
+		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
 		$out->addJsConfigVars( [
 			'prpPageQuality' => $content->getLevel()->getLevel()
 		] );
