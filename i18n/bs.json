@@ -30,7 +30,7 @@
 	"proofreadpage_header": "Zaglavlje (bez uključivanja):",
 	"proofreadpage_body": "Tijelo stranice (koje će biti uključeno):",
 	"proofreadpage_footer": "Podnožje (neuključuje):",
-	"proofreadpage_toggleheaders": "pokaži/sakrij vidljivost sekcija koje se ne uključuju",
+	"proofreadpage_toggleheaders": "promijeni vidljivost odlomaka s \"noinclude\"",
 	"proofreadpage_quality0_category": "Bez teksta",
 	"proofreadpage_quality1_category": "Nije provjerena",
 	"proofreadpage_quality2_category": "Problematično",
