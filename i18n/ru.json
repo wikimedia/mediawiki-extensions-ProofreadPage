@@ -86,7 +86,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Схема $1 не была найдена.",
 	"proofreadpage-disambiguationspage": "Template:неоднозначность",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|проверенная страница|проверенные страницы|проверенных страниц}}, $2 {{PLURAL:$2|вычитанная страница|вычитанные страницы|вычитанных страниц}} и $3 {{PLURAL:$3|невычитанная страница|невычитанные страницы|невычитанных страниц}}.",
-	"content-model-proofread-page": "Страница: страница",
+	"content-model-proofread-page": "Страница книги",
 	"apihelp-query+proofread-description": "Возвращает информацию о текущем статусе вычитки данных страниц.",
 	"apihelp-query+proofread-example-1": "Вернуть информацию о вычитке для страниц в пространстве имён 250",
 	"apihelp-query+proofreadinfo-description": "Вернуть информацию о настройках расширения ProofreadPage.",

@@ -91,6 +91,7 @@
 	"content-model-proofread-page": "Pagina del libro",
 	"content-model-proofread-index": "Indice del libro",
 	"apihelp-query+proofread-description": "Restituisce informazioni circa l'attuale stato di rilettura delle pagine fornite.",
+	"apihelp-query+proofread-summary": "Restituisce informazioni circa l'attuale stato di rilettura delle pagine fornite.",
 	"apihelp-query+proofread-example-1": "Ritorna lo stato di rilettura per le pagine nel namespace 250",
 	"apihelp-query+proofreadinfo-description": "Restituisce informazioni sulla configurazione dell'estensione ProofreadPage.",
 	"apihelp-query+proofreadinfo-example-3": "Ritorna informazioni sul namespace",
