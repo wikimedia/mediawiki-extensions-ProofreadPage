@@ -5,205 +5,204 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'IndexPages' => array( 'IndexPages' ),
-	'PagesWithoutScans' => array( 'PagesWithoutScans' ),
-	'ProofreadIndexOai' => array( 'ProofreadIndexOai' ),
-	'ProofreadIndexOaiSchema' => array( 'ProofreadIndexOaiSchema' ),
-);
+$specialPageAliases['en'] = [
+	'IndexPages' => [ 'IndexPages' ],
+	'PagesWithoutScans' => [ 'PagesWithoutScans' ],
+	'ProofreadIndexOai' => [ 'ProofreadIndexOai' ],
+	'ProofreadIndexOaiSchema' => [ 'ProofreadIndexOaiSchema' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'IndexPages' => array( 'صفحات_الفهرس' ),
-	'PagesWithoutScans' => array( 'صفحات_بدون_فحص' ),
-	'ProofreadIndexOai' => array( 'فهرس_التصحيح_أو_إيه_آي' ),
-	'ProofreadIndexOaiSchema' => array( 'سكيما_فهرس_تصحيح_أو_إيه_آي' ),
-);
+$specialPageAliases['ar'] = [
+	'IndexPages' => [ 'صفحات_الفهرس' ],
+	'PagesWithoutScans' => [ 'صفحات_بدون_فحص' ],
+	'ProofreadIndexOai' => [ 'فهرس_التصحيح_أو_إيه_آي' ],
+	'ProofreadIndexOaiSchema' => [ 'سكيما_فهرس_تصحيح_أو_إيه_آي' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$specialPageAliases['arz'] = array(
-	'IndexPages' => array( 'صفحات_الفهرس' ),
-	'PagesWithoutScans' => array( 'صفحات_من_غير_فحص' ),
-	'ProofreadIndexOai' => array( 'فهرس_التصحيح_او_ايه_ىى' ),
-	'ProofreadIndexOaiSchema' => array( 'سكيما_فهرس_تصحيح_او_ايه_اى' ),
-);
+$specialPageAliases['arz'] = [
+	'IndexPages' => [ 'صفحات_الفهرس' ],
+	'PagesWithoutScans' => [ 'صفحات_من_غير_فحص' ],
+	'ProofreadIndexOai' => [ 'فهرس_التصحيح_او_ايه_ىى' ],
+	'ProofreadIndexOaiSchema' => [ 'سكيما_فهرس_تصحيح_او_ايه_اى' ],
+];
 
 /** Assamese (অসমীয়া) */
-$specialPageAliases['as'] = array(
-	'IndexPages' => array( 'সমল_পৃষ্ঠাসমূহ' ),
-);
+$specialPageAliases['as'] = [
+	'IndexPages' => [ 'সমল_পৃষ্ঠাসমূহ' ],
+];
 
 /** Western Balochi (بلوچی رخشانی) */
-$specialPageAliases['bgn'] = array(
-	'IndexPages' => array( 'تاکدیمانی_لڑلیست' ),
-	'PagesWithoutScans' => array( 'بی_سکن_ئین_دیمان' ),
-);
+$specialPageAliases['bgn'] = [
+	'IndexPages' => [ 'تاکدیمانی_لڑلیست' ],
+	'PagesWithoutScans' => [ 'بی_سکن_ئین_دیمان' ],
+];
 
 /** Breton (brezhoneg) */
-$specialPageAliases['br'] = array(
-	'IndexPages' => array( 'PajennoùMeneger' ),
-);
+$specialPageAliases['br'] = [
+	'IndexPages' => [ 'PajennoùMeneger' ],
+];
 
 /** Danish (dansk) */
-$specialPageAliases['da'] = array(
-	'IndexPages' => array( 'Indekssider' ),
-	'PagesWithoutScans' => array( 'Sider_uden_billeder' ),
-);
+$specialPageAliases['da'] = [
+	'IndexPages' => [ 'Indekssider' ],
+	'PagesWithoutScans' => [ 'Sider_uden_billeder' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'IndexPages' => array( 'Seiten_indexieren' ),
-	'PagesWithoutScans' => array( 'Seiten_ohne_Scans' ),
-	'ProofreadIndexOai' => array( 'Index_korrekturlesen_OAI' ),
-	'ProofreadIndexOaiSchema' => array( 'Index_korrekturlesen_OAI-Schema' ),
-);
+$specialPageAliases['de'] = [
+	'IndexPages' => [ 'Seiten_indexieren' ],
+	'PagesWithoutScans' => [ 'Seiten_ohne_Scans' ],
+	'ProofreadIndexOai' => [ 'Index_korrekturlesen_OAI' ],
+	'ProofreadIndexOaiSchema' => [ 'Index_korrekturlesen_OAI-Schema' ],
+];
 
 /** Zazaki (Zazaki) */
-$specialPageAliases['diq'] = array(
-	'IndexPages' => array( 'Perraİndeks' ),
-	'PagesWithoutScans' => array( 'PerréBéCıgeyrayışi' ),
-	'ProofreadIndexOai' => array( 'TimarkerdışaİndeksOai' ),
-	'ProofreadIndexOaiSchema' => array( 'TimarkerdışaİndeksOaiŞema' ),
-);
+$specialPageAliases['diq'] = [
+	'IndexPages' => [ 'Perraİndeks' ],
+	'PagesWithoutScans' => [ 'PerréBéCıgeyrayışi' ],
+	'ProofreadIndexOai' => [ 'TimarkerdışaİndeksOai' ],
+	'ProofreadIndexOaiSchema' => [ 'TimarkerdışaİndeksOaiŞema' ],
+];
 
 /** Estonian (eesti) */
-$specialPageAliases['et'] = array(
-	'IndexPages' => array( 'Registrid' ),
-	'PagesWithoutScans' => array( 'Skannimata_tekstid' ),
-);
+$specialPageAliases['et'] = [
+	'IndexPages' => [ 'Registrid' ],
+	'PagesWithoutScans' => [ 'Skannimata_tekstid' ],
+];
 
 /** Persian (فارسی) */
-$specialPageAliases['fa'] = array(
-	'IndexPages' => array( 'فهرست_صفحه‌ها' ),
-	'PagesWithoutScans' => array( 'صفحه‌های_بدون_پویش‌ها' ),
-);
+$specialPageAliases['fa'] = [
+	'IndexPages' => [ 'فهرست_صفحه‌ها' ],
+	'PagesWithoutScans' => [ 'صفحه‌های_بدون_پویش‌ها' ],
+];
 
 /** Hebrew (עברית) */
-$specialPageAliases['he'] = array(
-	'IndexPages' => array( 'דפי_מפתח', 'רשימת_דפי_מפתח' ),
-	'PagesWithoutScans' => array( 'דפים_ללא_סריקות' ),
-);
+$specialPageAliases['he'] = [
+	'IndexPages' => [ 'דפי_מפתח', 'רשימת_דפי_מפתח' ],
+	'PagesWithoutScans' => [ 'דפים_ללא_סריקות' ],
+];
 
 /** Haitian (Kreyòl ayisyen) */
-$specialPageAliases['ht'] = array(
-	'IndexPages' => array( 'PajEndèks' ),
-);
+$specialPageAliases['ht'] = [
+	'IndexPages' => [ 'PajEndèks' ],
+];
 
 /** Interlingua (interlingua) */
-$specialPageAliases['ia'] = array(
-	'IndexPages' => array( 'Paginas_de_indice' ),
-	'PagesWithoutScans' => array( 'Paginas_non_transcludite' ),
-);
+$specialPageAliases['ia'] = [
+	'IndexPages' => [ 'Paginas_de_indice' ],
+	'PagesWithoutScans' => [ 'Paginas_non_transcludite' ],
+];
 
 /** Italian (italiano) */
-$specialPageAliases['it'] = array(
-	'IndexPages' => array( 'PagineIndice' ),
-	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
-);
+$specialPageAliases['it'] = [
+	'IndexPages' => [ 'PagineIndice' ],
+	'PagesWithoutScans' => [ 'PagineSenzaScansioni' ],
+];
 
 /** Japanese (日本語) */
-$specialPageAliases['ja'] = array(
-	'IndexPages' => array( '索引ページ' ),
-	'PagesWithoutScans' => array( 'スキャンのないページ' ),
-);
+$specialPageAliases['ja'] = [
+	'IndexPages' => [ '索引ページ' ],
+	'PagesWithoutScans' => [ 'スキャンのないページ' ],
+];
 
 /** Korean (한국어) */
-$specialPageAliases['ko'] = array(
-	'IndexPages' => array( '색인문서' ),
-	'PagesWithoutScans' => array( '스캔안된문서', '스캔안한문서' ),
-	'ProofreadIndexOai' => array( '색인교정Oai' ),
-	'ProofreadIndexOaiSchema' => array( '색인교정Oai스키마' ),
-);
+$specialPageAliases['ko'] = [
+	'IndexPages' => [ '색인문서' ],
+	'PagesWithoutScans' => [ '스캔안된문서', '스캔안한문서' ],
+	'ProofreadIndexOai' => [ '색인교정Oai' ],
+	'ProofreadIndexOaiSchema' => [ '색인교정Oai스키마' ],
+];
 
 /** Luxembourgish (Lëtzebuergesch) */
-$specialPageAliases['lb'] = array(
-	'IndexPages' => array( 'Säiten_indexéieren' ),
-	'PagesWithoutScans' => array( 'Säiten_ouni_Scan' ),
-	'ProofreadIndexOai' => array( 'Index_iwwerliesen' ),
-);
+$specialPageAliases['lb'] = [
+	'IndexPages' => [ 'Säiten_indexéieren' ],
+	'PagesWithoutScans' => [ 'Säiten_ouni_Scan' ],
+	'ProofreadIndexOai' => [ 'Index_iwwerliesen' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'IndexPages' => array( 'ИндексираниСтраници' ),
-	'PagesWithoutScans' => array( 'СтранициБезПроверки' ),
-	'ProofreadIndexOai' => array( 'ИндексПроверениOai' ),
-	'ProofreadIndexOaiSchema' => array( 'ИндексПроверениOaiШема' ),
-);
+$specialPageAliases['mk'] = [
+	'IndexPages' => [ 'ИндексираниСтраници' ],
+	'PagesWithoutScans' => [ 'СтранициБезПроверки' ],
+	'ProofreadIndexOai' => [ 'ИндексПроверениOai' ],
+	'ProofreadIndexOaiSchema' => [ 'ИндексПроверениOaiШема' ],
+];
 
 /** Malayalam (മലയാളം) */
-$specialPageAliases['ml'] = array(
-	'IndexPages' => array( 'സൂചികാതാളുകൾ' ),
-	'PagesWithoutScans' => array( 'സ്കാൻലഭ്യമല്ലാത്തതാളുകൾ' ),
-);
+$specialPageAliases['ml'] = [
+	'IndexPages' => [ 'സൂചികാതാളുകൾ' ],
+	'PagesWithoutScans' => [ 'സ്കാൻലഭ്യമല്ലാത്തതാളുകൾ' ],
+];
 
 /** Norwegian Bokmål (norsk bokmål) */
-$specialPageAliases['nb'] = array(
-	'IndexPages' => array( 'Indekssider' ),
-	'PagesWithoutScans' => array( 'Sider_uten_skanninger' ),
-);
+$specialPageAliases['nb'] = [
+	'IndexPages' => [ 'Indekssider' ],
+	'PagesWithoutScans' => [ 'Sider_uten_skanninger' ],
+];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
-$specialPageAliases['nds-nl'] = array(
-	'IndexPages' => array( 'Indexziejen' ),
-	'PagesWithoutScans' => array( 'Ziejen_zonder_deurlochting' ),
-);
+$specialPageAliases['nds-nl'] = [
+	'IndexPages' => [ 'Indexziejen' ],
+	'PagesWithoutScans' => [ 'Ziejen_zonder_deurlochting' ],
+];
 
 /** Dutch (Nederlands) */
-$specialPageAliases['nl'] = array(
-	'IndexPages' => array( 'Indexpaginas', 'Indexpagina\'s' ),
-	'PagesWithoutScans' => array( 'PaginasZonderScans', 'Pagina\'sZonderScans' ),
-);
+$specialPageAliases['nl'] = [
+	'IndexPages' => [ 'Indexpaginas', 'Indexpagina\'s' ],
+	'PagesWithoutScans' => [ 'PaginasZonderScans', 'Pagina\'sZonderScans' ],
+];
 
 /** Portuguese (português) */
-$specialPageAliases['pt'] = array(
-	'IndexPages' => array( 'Páginas_índice' ),
-	'PagesWithoutScans' => array( 'Páginas_sem_digitalizações' ),
-);
+$specialPageAliases['pt'] = [
+	'IndexPages' => [ 'Páginas_índice' ],
+	'PagesWithoutScans' => [ 'Páginas_sem_digitalizações' ],
+];
 
 /** Sicilian (sicilianu) */
-$specialPageAliases['scn'] = array(
-	'IndexPages' => array( 'PagineIndicizzate' ),
-	'PagesWithoutScans' => array( 'PagineSenzaScansioni' ),
-);
+$specialPageAliases['scn'] = [
+	'IndexPages' => [ 'PagineIndicizzate' ],
+	'PagesWithoutScans' => [ 'PagineSenzaScansioni' ],
+];
 
 /** Swedish (svenska) */
-$specialPageAliases['sv'] = array(
-	'IndexPages' => array( 'Indexsidor' ),
-);
+$specialPageAliases['sv'] = [
+	'IndexPages' => [ 'Indexsidor' ],
+];
 
 /** Turkish (Türkçe) */
-$specialPageAliases['tr'] = array(
-	'IndexPages' => array( 'SayfaEndeksle' ),
-	'PagesWithoutScans' => array( 'TaramasızSayfalar' ),
-);
+$specialPageAliases['tr'] = [
+	'IndexPages' => [ 'SayfaEndeksle' ],
+	'PagesWithoutScans' => [ 'TaramasızSayfalar' ],
+];
 
 /** Venetian (vèneto) */
-$specialPageAliases['vec'] = array(
-	'IndexPages' => array( 'PagineDeIndice' ),
-	'PagesWithoutScans' => array( 'PagineSensaScansion' ),
-);
+$specialPageAliases['vec'] = [
+	'IndexPages' => [ 'PagineDeIndice' ],
+	'PagesWithoutScans' => [ 'PagineSensaScansion' ],
+];
 
 /** Vietnamese (Tiếng Việt) */
-$specialPageAliases['vi'] = array(
-	'IndexPages' => array( 'Trang_mục_lục' ),
-	'PagesWithoutScans' => array( 'Trang_không_có_hình_quét' ),
-);
+$specialPageAliases['vi'] = [
+	'IndexPages' => [ 'Trang_mục_lục' ],
+	'PagesWithoutScans' => [ 'Trang_không_có_hình_quét' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'IndexPages' => array( '索引页面' ),
-	'PagesWithoutScans' => array( '未扫描页面' ),
-	'ProofreadIndexOai' => array( '校对索引OAI' ),
-	'ProofreadIndexOaiSchema' => array( '校对索引OAI图表' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'IndexPages' => [ '索引页面' ],
+	'PagesWithoutScans' => [ '未扫描页面' ],
+	'ProofreadIndexOai' => [ '校对索引OAI' ],
+	'ProofreadIndexOaiSchema' => [ '校对索引OAI图表' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$specialPageAliases['zh-hant'] = array(
-	'IndexPages' => array( '索引頁面' ),
-	'PagesWithoutScans' => array( '未掃描頁面' ),
-);
+$specialPageAliases['zh-hant'] = [
+	'IndexPages' => [ '索引頁面' ],
+	'PagesWithoutScans' => [ '未掃描頁面' ],
+];
