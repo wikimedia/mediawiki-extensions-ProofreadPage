@@ -9,6 +9,7 @@ use OutputPage;
 use ProofreadIndexEntry;
 use ProofreadIndexPage;
 use Status;
+use WikitextContent;
 use Xml;
 use XmlSelect;
 
@@ -128,17 +129,16 @@ class EditIndexPage extends EditPage {
 		}
 
 		$config = ProofreadIndexPage::getDataConfig();
-		$text = "{{:MediaWiki:Proofreadpage_index_template";
+		$fields = [];
 		foreach ( $config as $key => $params ) {
 			$field = $this->getFieldNameForEntry( $key );
 			$value = $this->cleanInputtedContent( $this->safeUnicodeInput( $request, $field ) );
 			$entry = new ProofreadIndexEntry( $key, $value, $params );
 			if ( !$entry->isHidden() ) {
-				$text .= "\n|" . $entry->getKey() . "=" . $entry->getStringValue();
+				$fields[$entry->getKey()] = new WikitextContent( $entry->getStringValue() );
 			}
 		}
-
-		return $text . "\n}}";
+		return ( new IndexContent( $fields ) )->serialize( $this->contentFormat );
 	}
 
 	/**
