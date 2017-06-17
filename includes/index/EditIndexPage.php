@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Index;
 
+use ContentHandler;
 use EditPage;
 use Html;
 use OutputPage;
@@ -41,8 +42,7 @@ class EditIndexPage extends EditPage {
 			$inputAttributes['readonly'] = '';
 		}
 
-		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
-		$entries = $index->getIndexEntries();
+		$entries = $this->getActualContent()->getIndexEntries();
 
 		$out->addHTML( Html::openElement( 'table', [ 'id' => 'prp-formTable' ] ) );
 		$i = 10;
@@ -178,7 +178,7 @@ class EditIndexPage extends EditPage {
 	 * @see EditPage::internalAttemptSave
 	 */
 	public function internalAttemptSave( &$result, $bot = false ) {
-		$index = new ProofreadIndexPage( $this->mTitle, ProofreadIndexPage::getDataConfig(), $this->textbox1 );
+		$index = $this->getActualContent();
 
 		// Get list of pages titles
 		$links = $index->getLinksToPageNamespace();
@@ -197,5 +197,13 @@ class EditIndexPage extends EditPage {
 		}
 
 		return parent::internalAttemptSave( $result, $bot );
+	}
+
+	private function getActualContent() {
+		return new ProofreadIndexPage(
+			$this->mTitle,
+			ProofreadIndexPage::getDataConfig(),
+			ContentHandler::getForModelID( $this->contentModel )->unserializeContent( $this->textbox1, $this->contentFormat )
+		);
 	}
 }

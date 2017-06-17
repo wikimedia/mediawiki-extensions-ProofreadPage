@@ -21,6 +21,7 @@
 
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Pagination\PageList;
 
 /**
@@ -34,14 +35,9 @@ class ProofreadIndexPage {
 	protected $title;
 
 	/**
-	 * @var string content of the page
+	 * @var IndexContent|null content of the page
 	 */
-	protected $text;
-
-	/**
-	 * @var ProofreadIndexEntry[] entries of the page
-	 */
-	protected $entries;
+	protected $content;
 
 	/**
 	 * @var array configuration array
@@ -51,12 +47,12 @@ class ProofreadIndexPage {
 	/**
 	 * @param Title $title Reference to a Title object.
 	 * @param array $config the configuration array (see ProofreadIndexPage::getDataConfig)
-	 * @param string $text content of the page. Warning: only done for EditProofreadIndexPage use.
+	 * @param IndexContent|null $content content of the page. Warning: only done for EditProofreadIndexPage use.
 	 */
-	public function __construct( Title $title, $config, $text = null ) {
+	public function __construct( Title $title, $config, IndexContent $content = null ) {
 		$this->title = $title;
 		$this->config = $config;
-		$this->text = $text;
+		$this->content = $content;
 	}
 
 	/**
@@ -65,7 +61,7 @@ class ProofreadIndexPage {
 	 * @return ProofreadIndexPage
 	 */
 	public static function newFromTitle( Title $title ) {
-		return new self( $title, self::getDataConfig(), null );
+		return new self( $title, self::getDataConfig() );
 	}
 
 	/**
@@ -102,18 +98,23 @@ class ProofreadIndexPage {
 
 	/**
 	 * Return content of the page
-	 * @return string
+	 * @return IndexContent
 	 */
-	protected function getText() {
-		if ( $this->text === null ) {
+	private function getContent() {
+		if ( $this->content === null ) {
 			$rev = Revision::newFromTitle( $this->title );
 			if ( $rev === null ) {
-				$this->text = '';
+				$this->content = new IndexContent( [] );
 			} else {
-				$this->text = ContentHandler::getContentText( $rev->getContent() );
+				$content = $rev->getContent();
+				if ( $content instanceof IndexContent ) {
+					$this->content = $content;
+				} else {
+					$this->content = new IndexContent( [] );
+				}
 			}
 		}
-		return $this->text;
+		return $this->content;
 	}
 
 	/**
@@ -215,38 +216,24 @@ class ProofreadIndexPage {
 
 	/**
 	 * Return metadata from an index page.
-	 * @param array $values key => value
-	 * @return array of ProofreadIndexEntry
-	 */
-	protected function getIndexEntriesFromIndexContent( $values ) {
-		$metadata = [];
-		foreach ( $this->config as $varName => $property ) {
-			if ( isset( $values[$varName] ) ) {
-				$metadata[$varName] = new ProofreadIndexEntry( $varName, $values[$varName], $property );
-			} else {
-				$metadata[$varName] = new ProofreadIndexEntry( $varName, '', $property );
-			}
-		}
-		return $metadata;
-	}
-
-	/**
-	 * Return metadata from an index page.
 	 * @return array of ProofreadIndexEntry
 	 */
 	public function getIndexEntries() {
-		if ( $this->entries === null ) {
-			$text = $this->getText();
-			$values = [];
-			foreach ( $this->config as $varName => $property ) {
-				$tagPattern = "/\n\|" . preg_quote( $varName, '/' ) . "=(.*?)\n(\||\}\})/is";
-				if ( preg_match( $tagPattern, $text, $matches ) ) {
-					$values[$varName] = $matches[1];
-				}
-			}
-			$this->entries = $this->getIndexEntriesFromIndexContent( $values );
+		$contentFields = [];
+		foreach ( $this->getContent()->getFields() as $key => $value ) {
+			$contentFields[strtolower( $key )] = $value;
 		}
-		return $this->entries;
+
+		$values = [];
+		foreach ( $this->config as $varName => $property ) {
+			$key = strtolower( $varName );
+			if ( array_key_exists( $key, $contentFields ) ) {
+				$values[$varName] = new ProofreadIndexEntry( $varName, $contentFields[$key]->getNativeData(), $property );
+			} else {
+				$values[$varName] = new ProofreadIndexEntry( $varName, '', $property );
+			}
+		}
+		return $values;
 	}
 
 	/**
@@ -298,39 +285,59 @@ class ProofreadIndexPage {
 	 * @return array of array( Title title of the pointed page, the label of the link )
 	 */
 	public function getLinksToMainNamespace() {
-		$rtext = self::getParser()->preprocess( $this->getText(), $this->title, new ParserOptions() );
-		return $this->getLinksToNamespace( $rtext, NS_MAIN );
+		return $this->getLinksToNamespaceFromContent( NS_MAIN );
 	}
 
 	/**
-	 * @return array( Title[], string[] )
+	 * @return array of array( Title title of the pointed page, the label of the link )
 	 */
 	public function getLinksToPageNamespace() {
-		return $this->getLinksToNamespace( $this->getText(), Context::getDefaultContext()->getPageNamespaceId() );
+		return $this->getLinksToNamespaceFromContent( Context::getDefaultContext()->getPageNamespaceId() );
 	}
 
 	/**
-	 * @return array|null
+	 * @return PageList|null
 	 */
 	public function getPagelistTagContent() {
-		preg_match_all( '/<pagelist([^<]*?)\/>/is', $this->getText(), $m, PREG_PATTERN_ORDER );
-
-		if ( !$m[1] ) {
-			return null;
+		$tagParameters = null;
+		foreach ( $this->getContent()->getFields() as $field ) {
+			preg_match_all( '/<pagelist([^<]*?)\/>/is', $field->serialize( CONTENT_FORMAT_WIKITEXT ), $m, PREG_PATTERN_ORDER );
+			if ( $m[1] ) {
+				if ( $tagParameters === null ) {
+					$tagParameters = $m[1];
+				} else {
+					$tagParameters = array_merge( $tagParameters, $m[1] );
+				}
+			}
+		}
+		if ( $tagParameters === null ) {
+			return $tagParameters;
 		}
 
-		return new PageList( Sanitizer::decodeTagAttributes( implode( $m[1] ) ) );
+		return new PageList( Sanitizer::decodeTagAttributes( implode( $tagParameters ) ) );
 	}
 
 	/**
 	 * Return all links in a given namespace
-	 * @param string $text
 	 * @param integer $namespace the default namespace id
+	 * @param bool $withPrepossessing apply preprocessor before looking for links
 	 * @return array of array( Title title of the pointed page, the label of the link )
 	 * @todo add an abstraction for links (Title + label)
 	 */
-	protected function getLinksToNamespace( $text, $namespace ) {
-		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $text, $textLinks, PREG_PATTERN_ORDER );
+	private function getLinksToNamespaceFromContent( $namespace, $withPrepossessing = false ) {
+		$links = [];
+		foreach ( $this->getContent()->getFields() as $field ) {
+			$wikitext = $field->serialize( CONTENT_FORMAT_WIKITEXT );
+			if ( $withPrepossessing ) {
+				$wikitext = self::getParser()->preprocess( $wikitext, $this->title, new ParserOptions() );
+			}
+			$links = array_merge( $links, $this->getLinksToNamespaceFromWikitext( $wikitext, $namespace ) );
+		}
+		return $links;
+	}
+
+	private function getLinksToNamespaceFromWikitext( $wikitext, $namespace ) {
+		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $wikitext, $textLinks, PREG_PATTERN_ORDER );
 		$links = [];
 		$num = 0;
 		$textLinksCount = count( $textLinks[1] );
@@ -354,9 +361,9 @@ class ProofreadIndexPage {
 	 * the function called for 'header' will returns 'Page page my book number 23'
 	 * @param string $name entry name
 	 * @param array $otherParams associative array other possible values to replace
-	 * @return string the value with variables replaced
+	 * @return string|null the value with variables replaced or null if the entry does not exists
 	 */
-	public function replaceVariablesWithIndexEntries( $name, $otherParams ) {
+	public function getIndexEntryWithVariablesReplacedWithIndexEntries( $name, $otherParams ) {
 		$entry = $this->getIndexEntry( $name );
 		if ( $entry === null ) {
 			return null;
