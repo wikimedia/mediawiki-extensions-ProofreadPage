@@ -4,14 +4,16 @@ namespace ProofreadPage\Index;
 
 use ContentHandler;
 use EditPage;
-use Html;
-use OutputPage;
+use OOUI\ButtonWidget;
+use OOUI\DropdownInputWidget;
+use OOUI\FieldLayout;
+use OOUI\FieldsetLayout;
+use OOUI\HtmlSnippet;
+use OOUI\TextInputWidget;
 use ProofreadIndexEntry;
 use ProofreadIndexPage;
 use Status;
 use WikitextContent;
-use Xml;
-use XmlSelect;
 
 /**
  * @licence GNU GPL v2+
@@ -38,76 +40,74 @@ class EditIndexPage extends EditPage {
 	protected function showContentForm() {
 		$pageLang = $this->mTitle->getPageLanguage();
 		$out = $this->context->getOutput();
-		$inputAttributes = [ 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() ];
+		$out->enableOOUI();
+		$inputOptions = [ 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() ];
 		if ( wfReadOnly() ) {
-			$inputAttributes['readonly'] = '';
+			$inputOptions['readOnly'] = '';
 		}
 
-		$entries = $this->getActualContent()->getIndexEntries();
-
-		$out->addHTML( Html::openElement( 'table', [ 'id' => 'prp-formTable' ] ) );
+		$fields = [];
 		$i = 10;
-		foreach ( $entries as $entry ) {
-			$inputAttributes['tabindex'] = $i;
-			$this->addEntry( $entry, $inputAttributes, $out );
+		/** @var ProofreadIndexEntry $entry */
+		foreach ( $this->getActualContent()->getIndexEntries() as $entry ) {
+			$inputOptions['tabIndex'] = $i;
+			if ( !$entry->isHidden() ) {
+				$fields[] = $this->buildEntry( $entry, $inputOptions );
+			}
 			$i++;
 		}
-		$out->addHTML( Html::closeElement( 'table' ) );
+
+		$out->addHTML( new FieldsetLayout( [
+			'items' => $fields,
+			'classes' => [ 'prp-index-fieldLayout' ]
+		] ) );
 
 		$out->addModules( 'ext.proofreadpage.index' );
 	}
 
-	/**
-	 * Add an entry to the form
-	 *
-	 * @param ProofreadIndexEntry $entry
-	 * @param array $inputAttributes
-	 */
-	protected function addEntry( ProofreadIndexEntry $entry, $inputAttributes, OutputPage $out ) {
-		if ( $entry->isHidden() ) {
-			return;
-		}
+	private function buildEntry( ProofreadIndexEntry $entry, $inputOptions ) {
 		$key = $this->getFieldNameForEntry( $entry->getKey() );
 		$val = $this->safeUnicodeOutput( $entry->getStringValue() );
 
-		$out->addHTML( Html::openElement( 'tr' ) . Html::openElement( 'th', [ 'scope' => 'row' ] ) . Xml::label( $entry->getLabel(), $key ) );
-
-		$help = $entry->getHelp();
-		if ( $help !== '' ) {
-			$out->addHTML( Html::element( 'span', [ 'title' => $help, 'class' => 'prp-help-field' ] ) );
-		}
-
-		$out->addHTML( Html::closeElement( 'th' ) . Html::openElement( 'td' ) );
+		$inputOptions['name'] = $key;
+		$inputOptions['value'] = $val;
+		$inputOptions['inputId'] = $key;
 
 		$values = $entry->getPossibleValues();
 		if ( $values !== null ) {
-			$select = new XmlSelect( $key, $key, $val );
-			foreach ( $values as $value => $label ) {
-				$select->addOption( $label, $value );
+			$options = [];
+			foreach ( $values as $data => $label ) {
+				$options[] = [ 'data' => $data, 'label' => $label ];
 			}
-			if ( !isset( $values[$val] ) && $val !== '' ) { // compatiblity with already set data that aren't in the list
-				$select->addOption( $val, $val );
+			if ( !array_key_exists( $val, $values ) && $val !== '' ) {
+				$options[] = [ 'data' => $val, 'label' => $val ];
 			}
-			$out->addHTML( $select->getHtml() );
+			$input = new DropdownInputWidget( $inputOptions + [
+				'options' => $options
+			] );
 		} else {
-			$type = $entry->getType();
-			$inputType = ( $type === 'number' && ( $val === '' || is_numeric( $val ) ) ) ? 'number' : 'text';
-			$size = $entry->getSize();
-			$inputAttributes['class'] = 'prp-input-' . $type;
-
-			if ( $size === 1 ) {
-				$inputAttributes['type'] = $inputType;
-				$inputAttributes['id'] = $key;
-				$inputAttributes['size'] = 60;
-				$out->addHTML( Html::input( $key, $val, $inputType, $inputAttributes ) );
-			} else {
-				$inputAttributes['cols'] = 60;
-				$inputAttributes['rows'] = $size;
-				$out->addHTML( Html::textarea( $key, $val, $inputAttributes ) );
-			}
+			$inputAttributes['classes'][] = 'prp-input-' . $entry->getType();
+			$input = new TextInputWidget( $inputOptions + [
+				'type' => ( $entry->getType() === 'number' && ( $val === '' || is_numeric( $val ) ) ) ? 'number' : 'text',
+				'multiline' => $entry->getSize() > 1,
+				'rows' => $entry->getSize()
+			] );
 		}
 
-		$out->addHTML( Html::closeElement( 'td' ) . Html::closeElement( 'tr' ) );
+		if ( !$entry->getHelp() ) {
+			$fieldLayoutArgs = [
+				'label' => $entry->getLabel()
+			];
+		} else {
+			$fieldLayoutArgs = [
+				'label' => $entry->getLabel(),
+				'help' => $entry->getHelp(),
+				'infusable' => true,
+				'classes' => [ 'prp-fieldLayout-help' ]
+			];
+		}
+
+		return new FieldLayout( $input, $fieldLayoutArgs );
 	}
 
 	/**

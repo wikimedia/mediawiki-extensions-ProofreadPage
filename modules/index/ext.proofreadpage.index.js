@@ -1,11 +1,7 @@
-( function ( mw, $ ) {
-	'use strict';
-
+mw.loader.using( 'oojs-ui-core' ).done( function () {
 	$( function () {
-		// Set up the help system
-		$( '.prp-help-field' ).tipsy( {
-			gravity: 'nw'
+		$( '.prp-fieldLayout-help' ).map( function ( _, e ) {
+			return OO.ui.infuse( e.id );
 		} );
 	} );
-
-}( mediaWiki, jQuery ) );
+} );
