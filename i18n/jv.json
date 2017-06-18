@@ -26,7 +26,7 @@
 	"proofreadpage_nologintext": "Sampéyan kudu [[Special:UserLogin|mlebu log]] kanggo ngowah status korèksi kaca.",
 	"proofreadpage_notallowed": "Owahan ora dililakaké",
 	"proofreadpage_notallowedtext": "Sampéyan ora dililakaké ngowah status korèksi kaca iki.",
-	"proofreadpage_dataconfig_badformatted": "Ana kesalahan ing konfigurasi data",
+	"proofreadpage_dataconfig_badformatted": "Ana ama ing konfigurasi dhata",
 	"proofreadpage_dataconfig_badformattedtext": "Kaca [[Mediawiki:Proofreadpage index data config]] ora diformat nganggo JSON.",
 	"proofreadpage_number_expected": "Masalah: Butuh aji awujud angka",
 	"proofreadpage_interval_too_large": "Masalah: Kegedhèn let",
