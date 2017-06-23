@@ -2,13 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Amara-Amaziɣ",
-			"ⵕⴰⵊⵉ"
+			"ⵕⴰⵊⵉ",
+			"YesIn"
 		]
 	},
 	"proofreadpage_image": "ⵜⴰⵡⵍⴰⴼⵜ",
 	"proofreadpage_nologin": "ⵓⵔ ⵢⵓⴷⵉⴼ",
 	"proofreadpage_quality0_category": "ⴱⵍⴰ ⴰⴹⵔⵉⵙ",
+	"proofreadpage_quality1_category": "ⵓⵔ ⵜⵖⵜⵉ",
+	"proofreadpage_quality3_category": "ⵜⵖⵜⴰ",
 	"proofreadpage_quality4_category": "ⵉⵜⵜⵓⵙⵖⵣⵏⴻⵏ",
+	"proofreadpage_quality1_message": "ⵓⵔ ⵜⴰ ⵜⵖⵜⵉ ⵜⴰⵙⵏⴰ ⴰ",
 	"proofreadpage_specialpage_label_key": "ⵔⵣⵓ:",
 	"proofreadpage_source": "ⴰⵙⴰⴳⵎ",
 	"proofreadpage-group-other": "ⵢⴰⴹⵏ",

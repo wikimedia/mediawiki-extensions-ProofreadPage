@@ -12,6 +12,8 @@
 	"proofreadpage_image": "ရုပ်ပုံ",
 	"proofreadpage_index": "မာတိကာ",
 	"proofreadpage_nologin": "အကောင့် မဝင်ထားပါ",
+	"proofreadpage_nextpage": "နောက်စာမျက်နှာ",
+	"proofreadpage_prevpage": "ပြီးခဲ့သော စာမျက်နှာ",
 	"proofreadpage_quality0_category": "စာသားမပါဘဲနှင့်",
 	"proofreadpage_quality1_category": "ပရုမဖတ်ရသေး",
 	"proofreadpage_quality2_category": "ခက်ခဲသော",
@@ -19,6 +21,11 @@
 	"proofreadpage_quality4_category": "အတည်ပြုထားပြီး",
 	"proofreadpage_quality1_message": "ဤစာမျက်နှာကို ပရုမဖတ်ရသေးပါ",
 	"proofreadpage_specialpage_label_key": "ရှာဖွေရန်:",
+	"proofreadpage_index_listofpages": "စာမျက်နှာစာရင်းများ",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|စာမျက်နှာ|စာမျက်နှာများ}}",
+	"proofreadpage_source": "ရင်းမြစ်",
+	"proofreadpage-group-other": "အခြား",
+	"proofreadpage-button-reset-zoom-label": "မူလအရွယ်",
+	"proofreadpage-button-zoom-in-label": "အကျယ်ချဲ့ရန်",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "စာမျက်နှာများ"
 }
