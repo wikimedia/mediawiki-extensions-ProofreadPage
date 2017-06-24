@@ -4,6 +4,10 @@
 			"Murma174"
 		]
 	},
+	"nstab-page": "Sidj",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "Buksidj uunluke",
+	"tooltip-ca-nstab-index": "Bukindex uunluke",
 	"indexpages": "Index sidjen",
 	"pageswithoutscans": "Sidjen saner scans",
 	"proofreadpage_desc": "Diar könst dü di tekst an di scan mäenööder ferglik",
@@ -59,6 +63,7 @@
 	"proofreadpage_source": "Kwel",
 	"proofreadpage_source_message": "För didiar tekst as en scan brükt wurden.",
 	"right-pagequality": "Wäärs faan det sidj feranre",
+	"right-pagequality-admin": "Frei bewerkin faan't sidjenkwaliteet",
 	"proofreadpage-section-tools": "Halep bi't korektuur",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Ööders wat",
@@ -76,11 +81,21 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Det skemsidj „$1“ as ei fünjen wurden.",
 	"proofreadpage-disambiguationspage": "Template:Muardüüdag artiikel",
 	"proofreadpage-indexquality-alt": "{{PLURAL:$1|Ian gudkäänd sidj|$1 gudkäänd sidjen}}, {{PLURAL:$2|ian bluas efterluket sidj|$2 bluas efterluket sidjen}} an {{PLURAL:$3|ian ei efterluket sidj|$3 ei efterluket sidjen}}",
-	"content-model-proofread-page": "Seite: sidj",
+	"content-model-proofread-page": "Buksidj",
+	"content-model-proofread-index": "Bukindex",
 	"apihelp-query+proofread-description": "Dää informatjuun auer di uugenblakelk stant faan jodiar sidjen",
+	"apihelp-query+proofread-summary": "Dää informatjuun auer di uugenblakelk stant faan jodiar sidjen",
 	"apihelp-query+proofread-example-1": "Dää di uugenblakelk stant faan sidjen uun nöömrüm 250",
 	"apihelp-query+proofreadinfo-description": "Dää informatjuun auer't konfiguratjuun faan't ProofreadPage-ütjwidjang.",
-	"apihelp-query+proofreadinfo-param-prop": "Hük Proofread-dooten för\n;namespaces:Informatjuun auer Sidj- an Index-nöömrümer\n;qualitylevels:List faan Proofread-kwaliteeten",
+	"apihelp-query+proofreadinfo-summary": "Dää informatjuun auer't konfiguratjuun faan't ProofreadPage-ütjwidjang.",
+	"apihelp-query+proofreadinfo-param-prop": "Hük proofread dooten turagdu:\n;namespaces:Informatjuun auer nöömrümer „{{ns:Page}}“ an „{{ns:Index}}“.\n;qualitylevels:List faan korektuur-straaler.",
 	"apihelp-query+proofreadinfo-example-1": "Dää standard-informatjuun",
-	"apihelp-query+proofreadinfo-example-3": "Dää informatjuun auer nöömrüm"
+	"apihelp-query+proofreadinfo-example-3": "Dää informatjuun auer nöömrüm",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Sidjenütjwool",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sidjen",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Iinbinjang faan $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Naan",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korektuurkwaliteet",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korektuurkwaliteet"
 }
