@@ -27,15 +27,22 @@ MediaWiki:Proofreadpage header template
 !!endarticle
 
 !!article
+Index TOC
+!!text
+* [[Test/Chapter 2|Chapter 2]]
+* [[Test/Chapter 3|Chapter 3]]
+!!endarticle
+
+!!article
 Index:Test
 !!text
 {{:MediaWiki:Proofreadpage_index_template
 |Title=Title
 |Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]
 |Author=[[Author:Me]]
-|TOC=* [[Test/Chapter 1]]
-* [[Test/Chapter 2|Chapter 2]]
-* [[Test/Chapter 3|Chapter 3]]
+|TOC=
+* [[Test/Chapter 1]]
+{{:Index TOC}}
 }}
 !!endarticle
 

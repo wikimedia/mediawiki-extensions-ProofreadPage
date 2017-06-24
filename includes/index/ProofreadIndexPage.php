@@ -285,7 +285,7 @@ class ProofreadIndexPage {
 	 * @return array of array( Title title of the pointed page, the label of the link )
 	 */
 	public function getLinksToMainNamespace() {
-		return $this->getLinksToNamespaceFromContent( NS_MAIN );
+		return $this->getLinksToNamespaceFromContent( NS_MAIN, true );
 	}
 
 	/**
