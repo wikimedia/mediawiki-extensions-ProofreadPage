@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hitaypayan"
+		]
+	},
+	"nstab-page": "qutux qutux gnyahan",
+	"nstab-index": "binkgan sa biru’ na ana nanu’ binrwan",
+	"indexpages": "binkgan sa hhkangi’ biru’ na ggyahan llpgan binrwan ana nanu’",
+	"pageswithoutscans": "ini’  sken na gnyahan llpgan",
+	"proofreadpage_desc": "musa’ blaq pspngun biru’ na minsken squ biru’ na ’nalan sken",
+	"proofreadpage_image": "Pinzga’",
+	"proofreadpage_index": "hhkangi’ sa binrwan",
+	"proofreadpage_index_expected": "min’uqu’：siga skahul sa hhkangi’ binrwan",
+	"proofreadpage_nosuch_index": "min’uqu’：ungat qu gluw na yan qaniy hhkangi’ sa binrwan",
+	"proofreadpage_nosuch_file": "min’uqu’： ungat yaqaniy na biru’",
+	"proofreadpage_badpage": "min’uqu’ ksu’ qaniy",
+	"proofreadpage_badpagetext": "iyat yasa ksu’ nquw aki’ su’ cucun yemyen qasa",
+	"proofreadpage_indexdupe": "wal su’ minpaypusal msbzih p’ubuy la",
+	"proofreadpage_indexdupetext": "maki’ squ ggyahan lpgan na hhkangi’ binrwan ga ini nbah minpaypusal psbzih pkita’ quw binkgan na llpgan hya’.",
+	"proofreadpage_nologin": "ini’ kzyup",
+	"proofreadpage_nologintext": "nanu’ siga [[Special:UserLogin|mzyup su’ qsahuy niya’]] lga, musa’ su’ baqun smbah bniru’ naha’ sa qsahuy qasa.",
+	"proofreadpage_notallowed": "laxiy sbahiy",
+	"proofreadpage_notallowedtext": "ini’ su’ niya’ swaliy musa’ smbah sa binrwan naha’ sa qsahuy qaniy.",
+	"proofreadpage_dataconfig_badformatted": "pin’qwan sa qsahuy na “kinbalay biru’ ”",
+	"proofreadpage_dataconfig_badformattedtext": "biru’ llpgan na [[Mediawiki:Proofreadpage index data config]] ga, iyat yasa quw spzyang ksu’ na JSON.",
+	"proofreadpage_number_expected": "min’uqu’：iyat yasa quw biru’ na llpgan",
+	"proofreadpage_interval_too_large": "min’uqu’：krahu’ iyal hriq niya’",
+	"proofreadpage_invalid_interval": "min’uqu’：ini’ baqiy mita’ hriq niya’",
+	"proofreadpage_nextpage": "llpgan tay suruw",
+	"proofreadpage_prevpage": "llpgan tay glaing",
+	"proofreadpage_header": "tay atu’ na llpgan (iyat kin kwara’) ：",
+	"proofreadpage_body": "gnyahan sa llpgan (kin kwara’ ) ：",
+	"proofreadpage_footer": "tay klbing na llpgan (iyat kin kwara’ ) ：",
+	"proofreadpage_quality3_category": "cyawtue",
+	"proofreadpage_specialpage_label_key": "hhkangi’:",
+	"proofreadpage_source": "tkhulan",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "qutux qutux gnyahan"
+}
