@@ -160,11 +160,10 @@
 			]
 		},
 		"ext.proofreadpage.index": {
-			"scripts": "index/ext.proofreadpage.index.js",
 			"styles": "index/ext.proofreadpage.index.css",
+			"scripts": "index/ext.proofreadpage.index.js",
 			"dependencies": [
-				"ext.proofreadpage.base",
-				"jquery.tipsy"
+				"oojs-ui-core"
 			]
 		},
 		"ext.proofreadpage.special.indexpages": {
