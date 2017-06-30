@@ -3,7 +3,8 @@
 		"authors": [
 			"VASANTH S.N.",
 			"Vishwanatha Badikana",
-			"BHARATHESHA ALASANDEMAJALU"
+			"BHARATHESHA ALASANDEMAJALU",
+			"Kiranpoojary"
 		]
 	},
 	"nstab-page": "ಪುಟೊ",
@@ -35,9 +36,9 @@
 	"proofreadpage_body": "ಪುಟೊತ ಬಾಗೊ(ಅಂಚಿಡ್ ಸೇರ್‍ನಂಚ):",
 	"proofreadpage_footer": "ಅಡಿಟಿಪ್ಪಣಿ(ಸೇರಾವೊಡ್ಚಿ):",
 	"proofreadpage_toggleheaders": "ತೋಜುನ ಪುಟೊತ ಸ್ತಿತಿ ಬದಲಾವಣೆ ಮಲ್ಪೊಡ್ಚಿ",
-	"proofreadpage_quality0_category": "ಪಟ್ಯೊ ಇದ್ಯಂದೆ",
-	"proofreadpage_quality1_category": "ಪರಿಶೀಲನೆ ಮಲ್ತ್‌ಜಿ",
-	"proofreadpage_quality2_category": "ಸಮಸ್ಯೆ ಆವು",
+	"proofreadpage_quality0_category": "ಪಟ್ಯೊ ಇಜ್ಜಾಂದೆ",
+	"proofreadpage_quality1_category": "ಪರಿಶೀಲನೆ ಮಲ್ತಿಜಿ",
+	"proofreadpage_quality2_category": "ಸಮಸ್ಯೆ ಇತ್ತಿನ",
 	"proofreadpage_quality3_category": "ಪರಿಶೀಲನೆ ಮಲ್ಪುಲೆ",
 	"proofreadpage_quality4_category": "ಮಾನ್ಯೊ ಮಲ್ತಿನ",
 	"proofreadpage_quality0_message": "ಈ ಪುಟೊತ ಕರಡಚ್ಚುದ ಅಗತ್ಯೊ ಇದ್ದಿ",

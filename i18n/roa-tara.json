@@ -5,6 +5,10 @@
 			"Reder"
 		]
 	},
+	"nstab-page": "Pàgene",
+	"nstab-index": "Indice",
+	"tooltip-ca-nstab-page": "?mdruche 'a pàgene d'u libbre",
+	"tooltip-ca-nstab-index": "'Ndruche l'indice d'u libbre",
 	"indexpages": "Elenghe de le pàggene de indice",
 	"pageswithoutscans": "Pàggene senze scansiune",
 	"proofreadpage_desc": "Permette combronde facele de teste cu 'a scanzione origgenale",
@@ -60,6 +64,7 @@
 	"proofreadpage_source": "Sorgende",
 	"proofreadpage_source_message": "Edizione scanzionate ausate pe definì stu teste",
 	"right-pagequality": "Cange 'a bandiere d'a qualità d'a pàgene",
+	"right-pagequality-admin": "Cangiaminde illimitate a 'a bandiere d'a qualitate d'a pàgene",
 	"proofreadpage-section-tools": "Struminde de revisione",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Otre",
@@ -77,11 +82,21 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "'U scheme $1 non g'ha state acchiate.",
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pàgene|pàggene}} validate, $2 {{PLURAL:$2|pàgene|pàggene}} revisitate e $3 {{PLURAL:$3|pàgene|pàggene}} non revisitate",
-	"content-model-proofread-page": "Page: pàgene",
+	"content-model-proofread-page": "Pàgene d'u libbre",
+	"content-model-proofread-index": "Indice d'u libbre",
 	"apihelp-query+proofread-description": "Torne le 'mbormaziune sus a 'u state de mò de le verifiche pe le pàggene scacchiate.",
+	"apihelp-query+proofread-summary": "Torne le 'mbormaziune sus a 'u state de mò de le verifiche pe le pàggene scacchiate.",
 	"apihelp-query+proofread-example-1": "Torne 'u state d'a verifiche pe le pàggene jndr'à 'u namespace 250",
 	"apihelp-query+proofreadinfo-description": "Torne le 'mbormaziune sus a configurazione de l'estenzione ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Quale probbietà de verifiche da pigghià:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels.",
+	"apihelp-query+proofreadinfo-summary": "Torne le 'mbormaziune sus a configurazione de l'estenzione ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Quale probbietà de verifiche a pigghià:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
 	"apihelp-query+proofreadinfo-example-1": "Tuèrne 'mbormaziune de base",
-	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base"
+	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Scacchie 'a pàgene",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pàggene",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "'Nglusione de $1",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sìne",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "None",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualitate d'a correzzione",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualitate d'a correzzione"
 }

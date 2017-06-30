@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hitaypayan"
+			"Hitaypayan",
+			"Akamycoco"
 		]
 	},
 	"nstab-page": "qutux qutux gnyahan",
@@ -33,6 +34,7 @@
 	"proofreadpage_body": "gnyahan sa llpgan (kin kwara’ ) ：",
 	"proofreadpage_footer": "tay klbing na llpgan (iyat kin kwara’ ) ：",
 	"proofreadpage_quality3_category": "cyawtue",
+	"proofreadpage_quality4_category": "minsinhzyayan",
 	"proofreadpage_specialpage_label_key": "hhkangi’:",
 	"proofreadpage_source": "tkhulan",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "qutux qutux gnyahan"
