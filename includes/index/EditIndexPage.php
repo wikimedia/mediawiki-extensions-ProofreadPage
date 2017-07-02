@@ -94,13 +94,11 @@ class EditIndexPage extends EditPage {
 			] );
 		}
 
-		if ( !$entry->getHelp() ) {
-			$fieldLayoutArgs = [
-				'label' => $entry->getLabel()
-			];
-		} else {
-			$fieldLayoutArgs = [
-				'label' => $entry->getLabel(),
+		$fieldLayoutArgs = [
+			'label' => $entry->getLabel()
+		];
+		if ( $entry->getHelp() ) {
+			$fieldLayoutArgs += [
 				'help' => $entry->getHelp(),
 				'infusable' => true,
 				'classes' => [ 'prp-fieldLayout-help' ]

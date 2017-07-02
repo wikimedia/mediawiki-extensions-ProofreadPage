@@ -1,3 +1,7 @@
 .prp-index-fieldLayout {
-	max-width: 750px;
+	max-width: 60em;
+}
+
+.prp-index-fieldLayout textarea {
+	resize: both;
 }
