@@ -35,7 +35,15 @@
 	"proofreadpage_footer": "tay klbing na llpgan (iyat kin kwara’ ) ：",
 	"proofreadpage_quality3_category": "cyawtue",
 	"proofreadpage_quality4_category": "minsinhzyayan",
+	"proofreadpage_quality1_message": "ini’ naha’ aniy cyawtue na’ llpgan biru’ qaniy hya’",
+	"proofreadpage_quality2_message": "cyawtue naha’ quw gnyahan llpgan qaniy ga, ktan naha’ kya quw ’zzyuwaw na zyuwaw",
 	"proofreadpage_specialpage_label_key": "hhkangi’:",
+	"proofreadpage_specialpage_legend": "gnyahan biru’ na hhkangi’ binkgan sa biru’",
 	"proofreadpage_source": "tkhulan",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "qutux qutux gnyahan"
+	"proofreadpage-group-zoom": "pinspngan niya’ sa piri’ na pkcikuy squ pkrahu’",
+	"proofreadpage-button-zoom-out-label": "Pkcikuy",
+	"proofreadpage-button-zoom-in-label": "pkrhun",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "qutux qutux gnyahan",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "aw’",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "iyat"
 }
