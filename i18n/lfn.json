@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Malafaya",
-			"Cgboeree"
+			"Cgboeree",
+			"Katxis"
 		]
 	},
 	"proofreadpage_image": "Imaje",
 	"proofreadpage_quality0_category": "Sin testo",
 	"proofreadpage_quality1_category": "No coretida",
 	"proofreadpage_quality2_category": "Problemosa",
-	"proofreadpage_quality3_category": "Coreta",
+	"proofreadpage_quality3_category": "Coreti",
 	"proofreadpage_quality4_category": "Validida",
-	"proofreadpage_quality1_message": "Esta paje no ia es coretida"
+	"proofreadpage_quality1_message": "On no ia coreti esta paje"
 }
