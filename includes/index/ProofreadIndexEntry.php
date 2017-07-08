@@ -74,7 +74,7 @@ class ProofreadIndexEntry {
 	public function getStringValue() {
 		if ( $this->value === '' ) {
 			if ( isset( $this->config['default'] ) ) {
-				return (string) $this->config['default'];
+				return (string)$this->config['default'];
 			} else {
 				return '';
 			}
@@ -148,7 +148,7 @@ class ProofreadIndexEntry {
 	 */
 	public function getSize() {
 		if ( isset( $this->config['size'] ) && is_numeric( $this->config['size'] ) && $this->config['size'] >= 1 ) {
-				return (int) $this->config['size'];
+			return (int)$this->config['size'];
 		} else {
 			return 1;
 		}

@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <ruleset name="ProofreadPage">
-	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki" />
-	<rule ref="Generic.Files.LineLength.TooLong">
-		<severity>0</severity>
-	</rule>
-	<rule ref="MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures">
-		<severity>0</severity>
+	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
+		<exclude name="Generic.Files.LineLength.TooLong" />
+		<exclude name="MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures" />
+		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment"/>
+		<exclude name="MediaWiki.Commenting.FunctionComment"/>
 	</rule>
 	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">
 		<properties>
@@ -14,6 +13,7 @@
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php" />
+	<arg name="encoding" value="UTF-8" />
 	<exclude-pattern>node_modules/</exclude-pattern>
 	<exclude-pattern>vendor/</exclude-pattern>
 </ruleset>

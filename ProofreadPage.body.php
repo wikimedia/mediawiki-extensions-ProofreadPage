@@ -388,7 +388,8 @@ class ProofreadPage {
 		if ( $ot->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $ot );
 		} elseif ( $ot->inNamespace( self::getIndexNamespaceId() )
-			  && !$nt->inNamespace( self::getIndexNamespaceId() ) ) {
+			&& !$nt->inNamespace( self::getIndexNamespaceId() )
+		) {
 			// The page is moved out of the Index namespace.
 			// Remove all index data associated with that page.
 
@@ -585,8 +586,8 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
-		Status $status, $summary, User $user, $minoredit ) {
-
+		Status $status, $summary, User $user, $minoredit
+	) {
 		// If the content's model isn't ours, ignore this; there's nothing for us to do here.
 		if ( !( $content instanceof PageContent ) ) {
 			return true;
@@ -649,7 +650,6 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
-
 		// Show header and footer fields when editing in the Page namespace
 		$preferences['proofreadpage-showheaders'] = [
 			'type'           => 'toggle',
@@ -751,7 +751,7 @@ class ProofreadPage {
 			}
 		}
 		catch ( FileNotFoundException $e ) {
-	 }
+		}
 
 		// Prev, Next and Index links
 		$indexPage = $page->getIndex();
@@ -770,7 +770,7 @@ class ProofreadPage {
 					];
 				}
 				catch ( OutOfBoundsException $e ) {
-	   } // if the previous page does not exits
+				} // if the previous page does not exits
 
 				try {
 					$nextPage  = $pagination->getPage( $pageNumber + 1 );
@@ -782,10 +782,10 @@ class ProofreadPage {
 					];
 				}
 				catch ( OutOfBoundsException $e ) {
-	   } // if the next page does not exits
+				} // if the next page does not exits
 			}
 			catch ( PageNotInPaginationException $e ) {
-	  }
+			}
 
 			$links['namespaces']['proofreadPageIndexLink'] = [
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
@@ -864,7 +864,7 @@ class ProofreadPage {
 		global $wgContentHandlers;
 
 		// L10n
-		include_once ( __DIR__ . '/ProofreadPage.namespaces.php' );
+		include_once __DIR__ . '/ProofreadPage.namespaces.php';
 
 		// Content handler
 		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );

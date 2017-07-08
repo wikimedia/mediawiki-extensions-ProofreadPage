@@ -54,7 +54,7 @@ class PageContentBuilder {
 				$params['pagenum'] = $displayedPageNumber->getFormattedPageNumber( $page->getTitle()->getPageLanguage() );
 			} catch ( PageNotInPaginationException $e ) {
 			} catch ( OutOfBoundsException $e ) {
-	  } // should not happen
+			} // should not happen
 
 			$header = $index->getIndexEntryWithVariablesReplacedWithIndexEntries( 'header', $params );
 			$footer = $index->getIndexEntryWithVariablesReplacedWithIndexEntries( 'footer', $params );
@@ -79,7 +79,7 @@ class PageContentBuilder {
 				}
 			}
 		} catch ( FileNotFoundException $e ) {
-	 }
+		}
 
 		return new PageContent(
 			new WikitextContent( $header ),

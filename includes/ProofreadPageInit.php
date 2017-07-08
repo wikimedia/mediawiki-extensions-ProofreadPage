@@ -59,7 +59,6 @@ class ProofreadPageInit {
 
 		// Also Add Page/Index namespace to $wgContentNamespaces
 		$wgContentNamespaces[] = $wgProofreadPageNamespaceIds[$key];
-
 	}
 
 	/**

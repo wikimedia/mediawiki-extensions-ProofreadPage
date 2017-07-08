@@ -87,7 +87,7 @@ class ProofreadPagePage {
 		if ( count( $parts ) === 1 ) {
 			return null;
 		}
-		return (int) $this->title->getPageLanguage()->parseFormattedNumber( $parts[count( $parts ) - 1] );
+		return (int)$this->title->getPageLanguage()->parseFormattedNumber( $parts[count( $parts ) - 1] );
 	}
 
 	/**

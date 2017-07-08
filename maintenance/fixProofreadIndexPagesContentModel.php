@@ -89,4 +89,4 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 }
 
 $maintClass = 'FixProofreadIndexPagesContentModel';
-require_once ( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

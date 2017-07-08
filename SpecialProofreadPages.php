@@ -46,7 +46,6 @@ class ProofreadPages extends QueryPage {
 		$this->suppressSqlOffset = false;
 
 		if ( !$wgDisableTextSearch ) {
-
 			if ( !$this->including() ) {
 				// Only show the search form when not including in another page.
 				$output->addHTML( $this->getSearchForm() );

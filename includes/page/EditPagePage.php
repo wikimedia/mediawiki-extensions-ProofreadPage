@@ -145,7 +145,6 @@ class EditPagePage extends EditPage {
 	 * @see EditPage::getCheckBoxes
 	 */
 	public function getCheckBoxes( &$tabindex, $checked ) {
-
 		$oldLevel = $this->getCurrentContent()->getLevel();
 
 		$content = $this->toEditContent( $this->textbox1 );
@@ -157,7 +156,6 @@ class EditPagePage extends EditPage {
 		$user = $this->context->getUser();
 
 		foreach ( $qualityLevels as $level ) {
-
 			$newLevel = new PageLevel( $level, $user );
 			if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
 				continue;
