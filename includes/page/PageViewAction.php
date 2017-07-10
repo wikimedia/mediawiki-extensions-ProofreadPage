@@ -20,7 +20,9 @@ class PageViewAction extends ViewAction {
 	public function show() {
 		$out = $this->getOutput();
 		$title = $this->page->getTitle();
-		if ( !$title->inNamespace( Context::getDefaultContext()->getPageNamespaceId() ) || $out->isPrintable() || $this->getContext()->getRequest()->getCheck( 'diff' ) ) {
+		if ( !$title->inNamespace( Context::getDefaultContext()->getPageNamespaceId() ) ||
+			$out->isPrintable() || $this->getContext()->getRequest()->getCheck( 'diff' )
+		) {
 			$this->page->view();
 
 			return;
@@ -28,7 +30,8 @@ class PageViewAction extends ViewAction {
 
 		$wikiPage = $this->page->getPage();
 		$content = $wikiPage->getContent( Revision::FOR_THIS_USER, $this->getUser() );
-		if ( $content === null || $content->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE || $content->isRedirect()
+		if ( $content === null || $content->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ||
+			$content->isRedirect()
 		) {
 			$this->page->view();
 

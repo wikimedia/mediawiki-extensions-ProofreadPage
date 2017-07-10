@@ -48,19 +48,27 @@ class PageContentBuilder {
 		if ( $index ) {
 			$params = [];
 			try {
-				$pagination = $this->context->getPaginationFactory()->getPaginationForIndexPage( $index );
+				$pagination = $this->context->getPaginationFactory()
+					->getPaginationForIndexPage( $index );
 				$pageNumber = $pagination->getPageNumber( $page );
 				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
-				$params['pagenum'] = $displayedPageNumber->getFormattedPageNumber( $page->getTitle()->getPageLanguage() );
+				$params['pagenum'] = $displayedPageNumber
+					->getFormattedPageNumber( $page->getTitle()->getPageLanguage() );
 			} catch ( PageNotInPaginationException $e ) {
 			} catch ( OutOfBoundsException $e ) {
 			} // should not happen
 
-			$header = $index->getIndexEntryWithVariablesReplacedWithIndexEntries( 'header', $params );
-			$footer = $index->getIndexEntryWithVariablesReplacedWithIndexEntries( 'footer', $params );
+			$header = $index->getIndexEntryWithVariablesReplacedWithIndexEntries(
+				'header', $params
+			);
+			$footer = $index->getIndexEntryWithVariablesReplacedWithIndexEntries(
+				'footer', $params
+			);
 		} else {
-			$header = $this->contextSource->msg( 'proofreadpage_default_header' )->inContentLanguage()->plain();
-			$footer = $this->contextSource->msg( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
+			$header = $this->contextSource->msg( 'proofreadpage_default_header' )
+				->inContentLanguage()->plain();
+			$footer = $this->contextSource->msg( 'proofreadpage_default_footer' )
+				->inContentLanguage()->plain();
 		}
 
 		// Extract text layer
@@ -71,7 +79,9 @@ class PageContentBuilder {
 				if ( $pageNumber !== null && $image->isMultipage() ) {
 					$text = $image->getHandler()->getPageText( $image, $pageNumber );
 				} else {
-					$text = $image->getHandler() ? $image->getHandler()->getPageText( $image, 1 ) : '';
+					$text = $image->getHandler()
+						? $image->getHandler()->getPageText( $image, 1 )
+						: '';
 				}
 				if ( $text ) {
 					$text = preg_replace( "/(\\\\n)/", "\n", $text );
@@ -97,7 +107,9 @@ class PageContentBuilder {
 	 * @param PageContent $oldContent the old content used as base for the new content
 	 * @return PageContent
 	 */
-	public function buildContentFromInput( $header, $body, $footer, $level, PageContent $oldContent ) {
+	public function buildContentFromInput(
+		$header, $body, $footer, $level, PageContent $oldContent
+	) {
 		$oldLevel = $oldContent->getLevel();
 		$user = ( $oldLevel->getLevel() === $level )
 			? $oldLevel->getUser()

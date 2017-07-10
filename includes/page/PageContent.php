@@ -46,7 +46,9 @@ class PageContent extends TextContent {
 	 * @param WikitextContent $footer
 	 * @param PageLevel $level
 	 */
-	public function __construct( WikitextContent $header, WikitextContent $body, WikitextContent $footer, PageLevel $level ) {
+	public function __construct(
+		WikitextContent $header, WikitextContent $body, WikitextContent $footer, PageLevel $level
+	) {
 		$this->header = $header;
 		$this->body = $body;
 		$this->footer = $footer;
@@ -217,7 +219,9 @@ class PageContent extends TextContent {
 	/**
 	 * @see Content::getParserOutput
 	 */
-	public function getParserOutput( Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true ) {
+	public function getParserOutput(
+		Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true
+	) {
 		if ( $this->isRedirect() ) {
 			return $this->body->getParserOutput( $title, $revId, $options, $generateHtml );
 		}
@@ -227,7 +231,8 @@ class PageContent extends TextContent {
 
 		// create content
 		$wikitextContent = new WikitextContent(
-			$this->header->getNativeData() . "\n\n" . $this->body->getNativeData() . $this->footer->getNativeData()
+			$this->header->getNativeData() . "\n\n" . $this->body->getNativeData() .
+				$this->footer->getNativeData()
 		);
 		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
 		$parserOutput->addCategory(
@@ -239,7 +244,8 @@ class PageContent extends TextContent {
 		);
 
 		// html container
-		$html = Html::openElement( 'div', [ 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ] ) .
+		$html = Html::openElement( 'div',
+			[ 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ] ) .
 			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )
 				->title( $title )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .

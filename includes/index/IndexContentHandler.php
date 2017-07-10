@@ -41,7 +41,9 @@ class IndexContentHandler extends TextContentHandler {
 		global $wgParser;
 		StubObject::unstub( $wgParser );
 		$parser = clone $wgParser;
-		$parser->startExternalParse( null, $this->makeParserOptions( 'canonical' ), Parser::OT_PLAIN, true );
+		$parser->startExternalParse(
+			null, $this->makeParserOptions( 'canonical' ), Parser::OT_PLAIN, true
+		);
 		return $parser;
 	}
 
@@ -59,7 +61,9 @@ class IndexContentHandler extends TextContentHandler {
 			return '#REDIRECT [[' . $content->getRedirectTarget()->getFullText() . ']]';
 		}
 		if ( !( $content instanceof IndexContent ) ) {
-			throw new MWContentSerializationException( 'IndexContentHandler could only serialize IndexContent' );
+			throw new MWContentSerializationException(
+				'IndexContentHandler could only serialize IndexContent'
+			);
 		}
 
 		$text = "{{:MediaWiki:Proofreadpage_index_template";
@@ -97,7 +101,9 @@ class IndexContentHandler extends TextContentHandler {
 		$childFrame = $frame->newChild( $dom->getChildrenOfType( 'part' ) );
 		$values = [];
 		foreach ( $childFrame->namedArgs as $varName => $value ) {
-			$value = $this->parser->mStripState->unstripBoth( $frame->expand( $value, PPFrame::RECOVER_ORIG ) );
+			$value = $this->parser->mStripState->unstripBoth(
+				$frame->expand( $value, PPFrame::RECOVER_ORIG )
+			);
 			if ( substr( $value, -1 ) === "\n" ) { // We strip one "\n"
 				$value = substr( $value, 0, -1 );
 			}
@@ -131,7 +137,9 @@ class IndexContentHandler extends TextContentHandler {
 		$this->checkModelID( $myContent->getModel() );
 		$this->checkModelID( $yourContent->getModel() );
 
-		if ( !( $oldContent instanceof IndexContent && $myContent instanceof IndexContent && $yourContent instanceof IndexContent ) ) {
+		if ( !( $oldContent instanceof IndexContent && $myContent instanceof IndexContent &&
+			$yourContent instanceof IndexContent )
+		) {
 			return false;
 		}
 
@@ -142,8 +150,12 @@ class IndexContentHandler extends TextContentHandler {
 		// We adds yourFields to myFields
 		foreach ( $yourFields as $key => $yourValue ) {
 			if ( array_key_exists( $key, $myFields ) ) {
-				$oldValue  = array_key_exists( $key, $oldFields ) ? $oldFields[$key] : $this->wikitextContentHandler->makeEmptyContent();
-				$myFields[$key] = $this->wikitextContentHandler->merge3( $oldValue, $myFields[$key], $yourValue );
+				$oldValue  = array_key_exists( $key, $oldFields )
+					? $oldFields[$key]
+					: $this->wikitextContentHandler->makeEmptyContent();
+				$myFields[$key] = $this->wikitextContentHandler->merge3(
+					$oldValue, $myFields[$key], $yourValue
+				);
 
 				if ( $myFields[$key] === false ) {
 					return false;

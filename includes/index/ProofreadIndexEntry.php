@@ -147,7 +147,9 @@ class ProofreadIndexEntry {
 	 * @return int
 	 */
 	public function getSize() {
-		if ( isset( $this->config['size'] ) && is_numeric( $this->config['size'] ) && $this->config['size'] >= 1 ) {
+		if ( isset( $this->config['size'] ) && is_numeric( $this->config['size'] ) &&
+			$this->config['size'] >= 1
+		) {
 			return (int)$this->config['size'];
 		} else {
 			return 1;

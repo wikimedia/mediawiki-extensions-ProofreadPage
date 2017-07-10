@@ -82,12 +82,17 @@ class PageLevel {
 	 * @return boolean
 	 */
 	public function isChangeAllowed( PageLevel $to ) {
-		if ( $this->level !== $to->getLevel() && ( $to->getUser() === null || !$to->getUser()->isAllowed( 'pagequality' ) ) ) {
+		if ( $this->level !== $to->getLevel() && ( $to->getUser() === null ||
+			!$to->getUser()->isAllowed( 'pagequality' ) )
+		) {
 			return false;
 		}
 
 		$fromUser = ( $this->user instanceof User ) ? $this->user : $to->getUser();
-		if ( $to->getLevel() === 4 && ( $this->level < 3 || $this->level === 3 && $fromUser->getName() === $to->getUser()->getName() ) && !$to->getUser()->isAllowed( 'pagequality-admin' ) ) {
+		if ( $to->getLevel() === 4 && ( $this->level < 3 || $this->level === 3 &&
+			$fromUser->getName() === $to->getUser()->getName() ) &&
+			!$to->getUser()->isAllowed( 'pagequality-admin' )
+		) {
 			return false;
 		}
 
@@ -115,6 +120,7 @@ class PageLevel {
 	 * @return string
 	 */
 	public function getLevelCategoryName() {
-		return wfMessage( 'proofreadpage_quality' . $this->level . '_category' )->inContentLanguage()->plain();
+		return wfMessage( 'proofreadpage_quality' . $this->level . '_category' )
+			->inContentLanguage()->plain();
 	}
 }

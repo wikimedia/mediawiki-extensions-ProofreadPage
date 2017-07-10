@@ -61,13 +61,17 @@ class IndexContent extends TextContent {
 		}
 
 		foreach ( $this->fields as $key => $value ) {
-			if ( !array_key_exists( $key, $that->fields ) || !$value->equals( $that->fields[$key] ) ) {
+			if ( !array_key_exists( $key, $that->fields ) ||
+				!$value->equals( $that->fields[$key] )
+			) {
 				return false;
 			}
 		}
 
 		foreach ( $that->fields as $key => $value ) {
-			if ( !array_key_exists( $key, $this->fields ) || !$value->equals( $this->fields[$key] ) ) {
+			if ( !array_key_exists( $key, $this->fields ) ||
+				!$value->equals( $this->fields[$key] )
+			) {
 				return false;
 			}
 		}
@@ -164,7 +168,9 @@ class IndexContent extends TextContent {
 	/**
 	 * @see Content::getParserOutput
 	 */
-	public function getParserOutput( Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true ) {
+	public function getParserOutput(
+		Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true
+	) {
 		$wikitextContent = new WikitextContent( $this->serialize( CONTENT_FORMAT_WIKITEXT ) );
 		return $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
 	}

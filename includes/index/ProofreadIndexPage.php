@@ -47,7 +47,8 @@ class ProofreadIndexPage {
 	/**
 	 * @param Title $title Reference to a Title object.
 	 * @param array $config the configuration array (see ProofreadIndexPage::getDataConfig)
-	 * @param IndexContent|null $content content of the page. Warning: only done for EditProofreadIndexPage use.
+	 * @param IndexContent|null $content content of the page. Warning: only done for
+	 *   EditProofreadIndexPage use.
 	 */
 	public function __construct( Title $title, $config, IndexContent $content = null ) {
 		$this->title = $title;
@@ -122,14 +123,19 @@ class ProofreadIndexPage {
 	 * The configuration is a list of properties like this :
 	 * array(
 	 * 	'ID' => array( //the property id
-	 *		'type' => 'string', //the property type (for compatibility reasons the values have not to be of this type). Possible values: string, number, page
+	 *		'type' => 'string', //the property type (for compatibility reasons the values have not
+	 *               //to be of this type). Possible values: string, number, page
 	 *		'size' => 1, //for type = string : the size of the form input
 	 *		'default' => '', //the default value
 	 *		'label' => 'ID', //the label of the property
 	 *		'help' => '', //a short help text
-	 *		'values' => null, //an array value => label that list the possible values (for compatibility reasons the stored values have not to be one of these)
-	 *		'header' => false, //give the content of this property to Mediawiki:Proofreadpage_header_template as template parameter
-	 *		'hidden' => false //don't show the property in the index pages form. Useful for data that have always the same value (as language=en for en Wikisource) or are only set at the <pages> tag level.
+	 *		'values' => null, //an array value => label that list the possible values
+	 *               //(for compatibility reasons the stored values have not to be one of these)
+	 *		'header' => false, //give the content of this property to
+	 *               //Mediawiki:Proofreadpage_header_template as template parameter
+	 *		'hidden' => false //don't show the property in the index pages form. Useful for data
+	 *               //that have always the same value (as language=en for en Wikisource) or are
+	 *               //only set at the <pages> tag level.
 	 *		)
 	 * );
 	 *  NB: The values set are the default values
@@ -145,12 +151,17 @@ class ProofreadIndexPage {
 			$config = FormatJson::decode( $data->plain(), true );
 			if ( $config === null ) {
 				global $wgOut;
-				$wgOut->showErrorPage( 'proofreadpage_dataconfig_badformatted', 'proofreadpage_dataconfig_badformattedtext' );
+				$wgOut->showErrorPage(
+					'proofreadpage_dataconfig_badformatted',
+					'proofreadpage_dataconfig_badformattedtext'
+				);
 				$config = [];
 			}
 		} else {
-			$attributes = explode( "\n", wfMessage( 'proofreadpage_index_attributes' )->inContentLanguage()->text() );
-			$headerAttributes = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )->inContentLanguage()->text() );
+			$attributes = explode( "\n", wfMessage( 'proofreadpage_index_attributes' )
+				->inContentLanguage()->text() );
+			$headerAttributes = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )
+				->inContentLanguage()->text() );
 			$config = [];
 			foreach ( $attributes as $attribute ) {
 				$m = explode( '|', $attribute );
@@ -165,10 +176,12 @@ class ProofreadIndexPage {
 				];
 
 				if ( $m[0] == 'Header' ) {
-					$params['default'] = wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain();
+					$params['default'] = wfMessage( 'proofreadpage_default_header' )
+						->inContentLanguage()->plain();
 				}
 				if ( $m[0] == 'Footer' ) {
-					$params['default'] = wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain();
+					$params['default'] = wfMessage( 'proofreadpage_default_footer' )
+						->inContentLanguage()->plain();
 				}
 				if ( isset( $m[1] ) && $m[1] !== '' ) {
 					$params['label'] = $m[1];
@@ -198,14 +211,16 @@ class ProofreadIndexPage {
 
 		if ( !array_key_exists( 'Header', $config ) ) {
 			$config['Header'] = [
-				'default' => wfMessage( 'proofreadpage_default_header' )->inContentLanguage()->plain(),
+				'default' => wfMessage( 'proofreadpage_default_header' )
+					->inContentLanguage()->plain(),
 				'header' => true,
 				'hidden' => true
 			];
 		}
 		if ( !array_key_exists( 'Footer', $config ) ) {
 			$config['Footer'] = [
-				'default' => wfMessage( 'proofreadpage_default_footer' )->inContentLanguage()->plain(),
+				'default' => wfMessage( 'proofreadpage_default_footer' )
+					->inContentLanguage()->plain(),
 				'header' => true,
 				'hidden' => true
 			];
@@ -228,7 +243,9 @@ class ProofreadIndexPage {
 		foreach ( $this->config as $varName => $property ) {
 			$key = strtolower( $varName );
 			if ( array_key_exists( $key, $contentFields ) ) {
-				$values[$varName] = new ProofreadIndexEntry( $varName, $contentFields[$key]->getNativeData(), $property );
+				$values[$varName] = new ProofreadIndexEntry(
+					$varName, $contentFields[$key]->getNativeData(), $property
+				);
 			} else {
 				$values[$varName] = new ProofreadIndexEntry( $varName, '', $property );
 			}
@@ -292,7 +309,9 @@ class ProofreadIndexPage {
 	 * @return array of array( Title title of the pointed page, the label of the link )
 	 */
 	public function getLinksToPageNamespace() {
-		return $this->getLinksToNamespaceFromContent( Context::getDefaultContext()->getPageNamespaceId() );
+		return $this->getLinksToNamespaceFromContent(
+			Context::getDefaultContext()->getPageNamespaceId()
+		);
 	}
 
 	/**
@@ -301,7 +320,9 @@ class ProofreadIndexPage {
 	public function getPagelistTagContent() {
 		$tagParameters = null;
 		foreach ( $this->getContent()->getFields() as $field ) {
-			preg_match_all( '/<pagelist([^<]*?)\/>/is', $field->serialize( CONTENT_FORMAT_WIKITEXT ), $m, PREG_PATTERN_ORDER );
+			preg_match_all( '/<pagelist([^<]*?)\/>/is',
+				$field->serialize( CONTENT_FORMAT_WIKITEXT ), $m, PREG_PATTERN_ORDER
+			);
 			if ( $m[1] ) {
 				if ( $tagParameters === null ) {
 					$tagParameters = $m[1];
@@ -329,9 +350,13 @@ class ProofreadIndexPage {
 		foreach ( $this->getContent()->getFields() as $field ) {
 			$wikitext = $field->serialize( CONTENT_FORMAT_WIKITEXT );
 			if ( $withPrepossessing ) {
-				$wikitext = self::getParser()->preprocess( $wikitext, $this->title, new ParserOptions() );
+				$wikitext = self::getParser()->preprocess(
+					$wikitext, $this->title, new ParserOptions()
+				);
 			}
-			$links = array_merge( $links, $this->getLinksToNamespaceFromWikitext( $wikitext, $namespace ) );
+			$links = array_merge(
+				$links, $this->getLinksToNamespaceFromWikitext( $wikitext, $namespace )
+			);
 		}
 		return $links;
 	}
@@ -356,8 +381,10 @@ class ProofreadIndexPage {
 	}
 
 	/**
-	 * Return the value of an entry as wikitext with variable replaced with index entries and $otherParams
-	 * Example: if 'header' entry is 'Page of {{title}} number {{pagenum}}' with $otherParams = array( 'pagenum' => 23 )
+	 * Return the value of an entry as wikitext with variable replaced with index entries and
+	 * $otherParams
+	 * Example: if 'header' entry is 'Page of {{title}} number {{pagenum}}' with
+	 * $otherParams = array( 'pagenum' => 23 )
 	 * the function called for 'header' will returns 'Page page my book number 23'
 	 * @param string $name entry name
 	 * @param array $otherParams associative array other possible values to replace
@@ -371,16 +398,20 @@ class ProofreadIndexPage {
 
 		// we can't use the parser here because it replace tags like <references /> by strange UIDs
 		$params = $this->getIndexEntriesForHeaderAsTemplateParams() + $otherParams;
-		return preg_replace_callback( '/{\{\{(.*)(\|(.*))?\}\}\}/U', function ( $matches ) use ( $params ) {
-			$paramKey = trim( strtolower( $matches[1] ) );
-			if ( array_key_exists( $paramKey, $params ) ) {
-				return $params[$paramKey];
-			} elseif ( array_key_exists( 3, $matches ) ) {
-				return trim( $matches[3] );
-			} else {
-				return $matches[0];
-			}
-		}, $entry->getStringValue() );
+		return preg_replace_callback(
+			'/{\{\{(.*)(\|(.*))?\}\}\}/U',
+			function ( $matches ) use ( $params ) {
+				$paramKey = trim( strtolower( $matches[1] ) );
+				if ( array_key_exists( $paramKey, $params ) ) {
+					return $params[$paramKey];
+				} elseif ( array_key_exists( 3, $matches ) ) {
+					return trim( $matches[3] );
+				} else {
+					return $matches[0];
+				}
+			},
+			$entry->getStringValue()
+		);
 	}
 
 	/**

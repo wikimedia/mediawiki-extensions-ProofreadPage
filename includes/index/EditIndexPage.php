@@ -88,7 +88,9 @@ class EditIndexPage extends EditPage {
 		} else {
 			$inputAttributes['classes'][] = 'prp-input-' . $entry->getType();
 			$input = new TextInputWidget( $inputOptions + [
-				'type' => ( $entry->getType() === 'number' && ( $val === '' || is_numeric( $val ) ) ) ? 'number' : 'text',
+				'type' => $entry->getType() === 'number' && ( $val === '' || is_numeric( $val ) )
+					? 'number'
+					: 'text',
 				'multiline' => $entry->getSize() > 1,
 				'rows' => $entry->getSize()
 			] );
@@ -186,7 +188,9 @@ class EditIndexPage extends EditPage {
 		}
 
 		if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-			$this->context->getOutput()->showErrorPage( 'proofreadpage_indexdupe', 'proofreadpage_indexdupetext' );
+			$this->context->getOutput()->showErrorPage(
+				'proofreadpage_indexdupe', 'proofreadpage_indexdupetext'
+			);
 			$status = Status::newGood();
 			$status->fatal( 'hookaborted' );
 			$status->value = self::AS_HOOK_ERROR;
@@ -201,7 +205,8 @@ class EditIndexPage extends EditPage {
 		return new ProofreadIndexPage(
 			$this->mTitle,
 			ProofreadIndexPage::getDataConfig(),
-			ContentHandler::getForModelID( $this->contentModel )->unserializeContent( $this->textbox1, $this->contentFormat )
+			ContentHandler::getForModelID( $this->contentModel )
+				->unserializeContent( $this->textbox1, $this->contentFormat )
 		);
 	}
 }

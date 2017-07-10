@@ -87,7 +87,8 @@ class ProofreadPagePage {
 		if ( count( $parts ) === 1 ) {
 			return null;
 		}
-		return (int)$this->title->getPageLanguage()->parseFormattedNumber( $parts[count( $parts ) - 1] );
+		return (int)$this->title->getPageLanguage()
+			->parseFormattedNumber( $parts[count( $parts ) - 1] );
 	}
 
 	/**
@@ -117,8 +118,13 @@ class ProofreadPagePage {
 		$indexesThatLinksHere = [];
 		foreach ( $result as $x ) {
 			$refTitle = Title::makeTitle( $x->page_namespace, $x->page_title );
-			if ( $refTitle !== null && $refTitle->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
-				if ( $possibleIndexTitle !== null && $refTitle->equals( $possibleIndexTitle ) ) { // It is the same as the linked file, we know it's this Index:
+			if ( $refTitle !== null &&
+				$refTitle->inNamespace( ProofreadPage::getIndexNamespaceId() )
+			) {
+				if ( $possibleIndexTitle !== null &&
+					// It is the same as the linked file, we know it's this Index:
+					$refTitle->equals( $possibleIndexTitle )
+				) {
 					return $refTitle;
 				}
 				$indexesThatLinksHere[] = $refTitle;
@@ -133,7 +139,8 @@ class ProofreadPagePage {
 	}
 
 	/**
-	 * @return Title|null the index page based on the name of the Page: page and the existence of a file with the same name
+	 * @return Title|null the index page based on the name of the Page: page and the existence
+	 *   of a file with the same name
 	 */
 	private function findPossibleIndexTitleBasedOnName() {
 		$m = explode( '/', $this->title->getText(), 2 );
@@ -143,7 +150,9 @@ class ProofreadPagePage {
 				$image = wfFindFile( $imageTitle );
 				// if it is multipage, we use the page order of the file
 				if ( $image && $image->exists() && $image->isMultipage() ) {
-					return Title::makeTitle( ProofreadPage::getIndexNamespaceId(), $image->getTitle()->getText() );
+					return Title::makeTitle(
+						ProofreadPage::getIndexNamespaceId(), $image->getTitle()->getText()
+					);
 				}
 			}
 		}
@@ -193,7 +202,9 @@ class ProofreadPagePage {
 		if ( $index ) {
 			$css = $index->getIndexEntry( 'css' );
 			if ( $css !== null ) {
-				return Sanitizer::escapeHtmlAllowEntities( Sanitizer::checkCss( $css->getStringValue() ) );
+				return Sanitizer::escapeHtmlAllowEntities(
+					Sanitizer::checkCss( $css->getStringValue() )
+				);
 			}
 		}
 

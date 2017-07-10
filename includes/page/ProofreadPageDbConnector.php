@@ -63,8 +63,16 @@ class ProofreadPageDbConnector {
 	 */
 	public static function queryCount( $query, $cat ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$query['conds']['cl_to'] = str_replace( ' ', '_', wfMessage( $cat )->inContentLanguage()->text() );
-		$res = $dbr->select( $query['tables'], $query['fields'], $query['conds'], __METHOD__, [], $query['joins'] );
+		$query['conds']['cl_to'] = str_replace( ' ', '_',
+			wfMessage( $cat )->inContentLanguage()->text() );
+		$res = $dbr->select(
+			$query['tables'],
+			$query['fields'],
+			$query['conds'],
+			__METHOD__,
+			[],
+			$query['joins']
+		);
 
 		if ( $res && $dbr->numRows( $res ) > 0 ) {
 			$row = $dbr->fetchObject( $res );

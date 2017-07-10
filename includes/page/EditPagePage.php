@@ -128,7 +128,9 @@ class EditPagePage extends EditPage {
 	 * @param string $content the text to edit
 	 * @param string[] $textareaAttributes attributes to add to textarea node
 	 */
-	protected function showEditArea( $textareaName, $areaClass, $labelMsg, $content, array $textareaAttributes ) {
+	protected function showEditArea(
+		$textareaName, $areaClass, $labelMsg, $content, array $textareaAttributes
+	) {
 		$out = $this->context->getOutput();
 		$out->addHTML(
 			Html::openElement( 'div', [ 'class' => $areaClass ] ) .
@@ -184,7 +186,8 @@ class EditPagePage extends EditPage {
 				$html .
 				Html::closeElement( 'span' ) .
 				Html::OpenElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
-				$this->context->msg( 'proofreadpage_page_status' )->title( $this->getTitle() )->parse() .
+				$this->context->msg( 'proofreadpage_page_status' )
+					->title( $this->getTitle() )->parse() .
 				Html::closeElement( 'label' );
 		}
 
@@ -223,7 +226,9 @@ class EditPagePage extends EditPage {
 		}
 
 		if ( $error !== '' ) {
-			$this->context->getOutput()->showErrorPage( 'proofreadpage_' . $error, 'proofreadpage_' . $error . 'text' );
+			$this->context->getOutput()->showErrorPage(
+				'proofreadpage_' . $error, 'proofreadpage_' . $error . 'text'
+			);
 			$status = Status::newFatal( 'hookaborted' );
 			$status->value = self::AS_HOOK_ERROR;
 			return $status;

@@ -31,7 +31,10 @@ class IndexRedirectContent extends TextContent {
 			throw new MWException( $redirectionTarget . ' should be a valid redirection target' );
 		}
 		$this->redirectionTarget = $redirectionTarget;
-		parent::__construct( '#REDIRECT [[' . $redirectionTarget->getFullText() . ']]', CONTENT_MODEL_PROOFREAD_INDEX );
+		parent::__construct(
+			'#REDIRECT [[' . $redirectionTarget->getFullText() . ']]',
+			CONTENT_MODEL_PROOFREAD_INDEX
+		);
 	}
 
 	/**
@@ -52,7 +55,8 @@ class IndexRedirectContent extends TextContent {
 	 * @see Content::equals
 	 */
 	public function equals( Content $that = null ) {
-		return $that instanceof IndexRedirectContent && $this->redirectionTarget->equals( $that->getRedirectTarget() );
+		return $that instanceof IndexRedirectContent &&
+			$this->redirectionTarget->equals( $that->getRedirectTarget() );
 	}
 
 	/**
@@ -85,7 +89,9 @@ class IndexRedirectContent extends TextContent {
 	) {
 		$output->addLink( $this->getRedirectTarget() );
 		if ( $generateHtml ) {
-			$output->setText( Article::getRedirectHeaderHtml( $title->getPageLanguage(), $this->getRedirectChain() ) );
+			$output->setText( Article::getRedirectHeaderHtml(
+				$title->getPageLanguage(), $this->getRedirectChain()
+			) );
 			$output->addModuleStyles( 'mediawiki.action.view.redirectPage' );
 		}
 	}

@@ -105,7 +105,9 @@ class PageContentHandler extends TextContentHandler {
 		$array = FormatJson::decode( $text, true );
 
 		if ( $array === null || !is_array( $array ) ) {
-			throw new MWContentSerializationException( 'The serialization is an invalid JSON array.' );
+			throw new MWContentSerializationException(
+				'The serialization is an invalid JSON array.'
+			);
 		}
 		$this->assertArrayKeyExistsInSerialization( 'header', $array );
 		$this->assertArrayKeyExistsInSerialization( 'body', $array );
@@ -127,7 +129,9 @@ class PageContentHandler extends TextContentHandler {
 
 	private function assertArrayKeyExistsInSerialization( $key, array $serialization ) {
 		if ( !array_key_exists( $key, $serialization ) ) {
-			throw new MWContentSerializationException( "The serialization should contain an $key entry." );
+			throw new MWContentSerializationException(
+				"The serialization should contain an $key entry."
+			);
 		}
 	}
 
@@ -141,7 +145,9 @@ class PageContentHandler extends TextContentHandler {
 		$proofreader = '';
 		$level = 1;
 
-		if ( preg_match( '/^<noinclude>(.*?)\n*<\/noinclude>(.*)<noinclude>(.*?)<\/noinclude>$/s', $text, $m ) ) {
+		if ( preg_match( '/^<noinclude>(.*?)\n*<\/noinclude>(.*)<noinclude>(.*?)<\/noinclude>$/s',
+			$text, $m )
+		) {
 			$header = $m[1];
 			$body = $m[2];
 			$footer = $this->cleanTrailingDivTag( $m[3] );
@@ -152,11 +158,16 @@ class PageContentHandler extends TextContentHandler {
 			$body = $text;
 		}
 
-		if ( preg_match( '/^<pagequality level="(0|1|2|3|4)" user="(.*?)" *(\/>|> *<\/pagequality>)(.*?)$/s', $header, $m ) ) {
+		if ( preg_match(
+			'/^<pagequality level="(0|1|2|3|4)" user="(.*?)" *(\/>|> *<\/pagequality>)(.*?)$/s',
+			$header, $m )
+		) {
 			$level = intval( $m[1] );
 			$proofreader = $m[2];
 			$header = $this->cleanHeader( $m[4] );
-		} elseif ( preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m ) ) {
+		} elseif (
+			preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m )
+		) {
 			$level = intval( $m[1] );
 			$proofreader = $m[3];
 			$header = $this->cleanHeader( $m[4] );
@@ -234,31 +245,43 @@ class PageContentHandler extends TextContentHandler {
 		$wikitextHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
 		$mergedHeader = $myContent->getHeader()->equals( $yourContent->getHeader() )
 			? $myContent->getHeader()
-			: $wikitextHandler->merge3( $oldContent->getHeader(), $myContent->getHeader(), $yourContent->getHeader() );
+			: $wikitextHandler->merge3(
+				$oldContent->getHeader(), $myContent->getHeader(), $yourContent->getHeader()
+			);
 		$mergedBody = $myContent->getBody()->equals( $yourContent->getBody() )
 			? $myContent->getBody()
-			: $wikitextHandler->merge3( $oldContent->getBody(), $myContent->getBody(), $yourContent->getBody() );
+			: $wikitextHandler->merge3(
+				$oldContent->getBody(), $myContent->getBody(), $yourContent->getBody()
+			);
 		$mergedFooter = $myContent->getFooter()->equals( $yourContent->getFooter() )
 			? $yourContent->getFooter()
-			: $wikitextHandler->merge3( $oldContent->getFooter(), $myContent->getFooter(), $yourContent->getFooter() );
+			: $wikitextHandler->merge3(
+				$oldContent->getFooter(), $myContent->getFooter(), $yourContent->getFooter()
+			);
 
 		if ( !$mergedHeader || !$mergedBody || !$mergedFooter ) {
 			return false;
 		}
 
-		return new PageContent( $mergedHeader, $mergedBody, $mergedFooter, $yourContent->getLevel() );
+		return new PageContent(
+			$mergedHeader, $mergedBody, $mergedFooter, $yourContent->getLevel()
+		);
 	}
 
 	/**
 	 * @see ContentHandler::getAutosummary
 	 */
-	public function getAutosummary( Content $oldContent = null, Content $newContent = null, $flags ) {
+	public function getAutosummary(
+		Content $oldContent = null, Content $newContent = null, $flags
+	) {
 		$summary = parent::getAutosummary( $oldContent, $newContent, $flags );
 
 		if ( $newContent instanceof PageContent &&
-			( $oldContent === null || $oldContent instanceof PageContent && !$newContent->getLevel()->equals( $oldContent->getLevel() ) )
+			( $oldContent === null || $oldContent instanceof PageContent &&
+			!$newContent->getLevel()->equals( $oldContent->getLevel() ) )
 		) {
-			$summary = trim( '/* ' . $newContent->getLevel()->getLevelCategoryName() . ' */ ' . $summary );
+			$summary = trim( '/* ' . $newContent->getLevel()->getLevelCategoryName() .
+				' */ ' . $summary );
 		}
 
 		return $summary;

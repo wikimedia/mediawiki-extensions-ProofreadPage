@@ -22,7 +22,9 @@ class PageDifferenceEngine extends DifferenceEngine {
 	/**
 	 * @see DifferenceEngine::__construct
 	 */
-	public function __construct( $context = null, $old = 0, $new = 0, $rcid = 0, $refreshCache = false, $unhide = false ) {
+	public function __construct(
+		$context = null, $old = 0, $new = 0, $rcid = 0, $refreshCache = false, $unhide = false
+	) {
 		parent::__construct( $context, $old, $new, $rcid, $refreshCache, $unhide );
 
 		$this->diffFormatterUtils = new DiffFormatterUtils();
@@ -36,7 +38,15 @@ class PageDifferenceEngine extends DifferenceEngine {
 			throw new MWException( "PageDifferenceEngine works only for PageContent." );
 		}
 
-		return $this->createLevelDiffs( $old->getLevel(), $new->getLevel() ) . $this->createTextDiffOutput( $old->getHeader(), $new->getHeader(), 'proofreadpage_header' ) . $this->createTextDiffOutput( $old->getBody(), $new->getBody(), 'proofreadpage_body' ) . $this->createTextDiffOutput( $old->getFooter(), $new->getFooter(), 'proofreadpage_footer' );
+		return $this->createLevelDiffs(
+				$old->getLevel(), $new->getLevel()
+			) . $this->createTextDiffOutput(
+				$old->getHeader(), $new->getHeader(), 'proofreadpage_header'
+			) . $this->createTextDiffOutput(
+				$old->getBody(), $new->getBody(), 'proofreadpage_body'
+			) . $this->createTextDiffOutput(
+				$old->getFooter(), $new->getFooter(), 'proofreadpage_footer'
+			);
 	}
 
 	/**
@@ -51,7 +61,17 @@ class PageDifferenceEngine extends DifferenceEngine {
 			return '';
 		}
 
-		return $this->diffFormatterUtils->createHeader( $this->msg( 'proofreadpage_page_status' )->parse() ) . Html::openElement( 'tr' ) . $this->diffFormatterUtils->createDeletedLine( $this->msg( 'proofreadpage_quality' . $old->getLevel() . '_category' )->plain(), 'diff-deletedline', '-' ) . $this->diffFormatterUtils->createAddedLine( $this->msg( 'proofreadpage_quality' . $new->getLevel() . '_category' )->plain(), 'diff-addedline', '+' ) . Html::closeElement( 'tr' );
+		return $this->diffFormatterUtils->createHeader(
+				$this->msg( 'proofreadpage_page_status' )->parse()
+			) . Html::openElement( 'tr' ) . $this->diffFormatterUtils->createDeletedLine(
+				$this->msg( 'proofreadpage_quality' . $old->getLevel() . '_category' )->plain(),
+				'diff-deletedline',
+				'-'
+			) . $this->diffFormatterUtils->createAddedLine(
+				$this->msg( 'proofreadpage_quality' . $new->getLevel() . '_category' )->plain(),
+				'diff-addedline',
+				'+'
+			) . Html::closeElement( 'tr' );
 	}
 
 	/**
@@ -68,6 +88,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 			return '';
 		}
 
-		return $this->diffFormatterUtils->createHeader( $this->msg( $headerMsg )->escaped() ) . $diff;
+		return $this->diffFormatterUtils->createHeader( $this->msg( $headerMsg )->escaped() ) .
+			$diff;
 	}
 }
