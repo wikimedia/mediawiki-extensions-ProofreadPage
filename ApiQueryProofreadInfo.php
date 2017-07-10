@@ -62,7 +62,8 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		for ( $i = 0; $i < 5; $i++ ) {
 			$level = [];
 			$level['id'] = $i;
-			$level['category'] = $this->msg( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text();
+			$level['category'] = $this->msg( "proofreadpage_quality{$i}_category" )
+				->inContentLanguage()->text();
 			$data[$i] = $level;
 		}
 		$this->getResult()->setIndexedTagName( $data, 'level' );

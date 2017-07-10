@@ -54,7 +54,8 @@ class PagesWithoutScans extends QueryPage {
 			if ( $dp->getNamespace() != NS_TEMPLATE ) {
 				# FIXME we assume the disambiguation message is a template but
 				# the page can potentially be from another namespace :/
-				wfDebug( "Mediawiki:proofreadpage-disambiguationspage message does not refer to a template!\n" );
+				wfDebug( "Mediawiki:proofreadpage-disambiguationspage message " .
+					"does not refer to a template!\n" );
 			}
 			$linkBatch->addObj( $dp );
 		} else {
@@ -64,7 +65,8 @@ class PagesWithoutScans extends QueryPage {
 				[ 'pagelinks', 'page' ],
 				'pl_title',
 				[ 'page_id = pl_from', 'pl_namespace' => NS_TEMPLATE,
-					'page_namespace' => $disPageObj->getNamespace(), 'page_title' => $disPageObj->getDBkey() ],
+					'page_namespace' => $disPageObj->getNamespace(),
+					'page_title' => $disPageObj->getDBkey() ],
 				__METHOD__ );
 
 			foreach ( $res as $row ) {
@@ -131,7 +133,8 @@ class PagesWithoutScans extends QueryPage {
 
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {
-			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
+			return '<!-- Invalid title ' .
+				htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
 		$hlink = Linker::linkKnown(
 			$title,

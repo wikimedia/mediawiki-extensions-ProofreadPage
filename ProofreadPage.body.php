@@ -107,9 +107,13 @@ class ProofreadPage {
 	 * @return boolean hook return value
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook( 'pagelist', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagelistTag' ] );
+		$parser->setHook(
+			'pagelist', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagelistTag' ]
+		);
 		$parser->setHook( 'pages', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagesTag' ] );
-		$parser->setHook( 'pagequality', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagequalityTag' ] );
+		$parser->setHook(
+			'pagequality', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagequalityTag' ]
+		);
 		return true;
 	}
 
@@ -140,7 +144,9 @@ class ProofreadPage {
 		$image = wfFindFile( $imageTitle );
 		// if it is multipage, we use the page order of the file
 		if ( $image && $image->exists() && $image->isMultipage() ) {
-			$indexTitle = Title::makeTitle( self::getIndexNamespaceId(), $image->getTitle()->getText() );
+			$indexTitle = Title::makeTitle(
+				self::getIndexNamespaceId(), $image->getTitle()->getText()
+			);
 			if ( $indexTitle !== null ) {
 				$title->prpIndexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
 			}
@@ -220,10 +226,12 @@ class ProofreadPage {
 		// How often is this code called anyway?
 		$qualityCategories = [];
 		for ( $i = 0; $i < 5; $i++ ) {
-			$cat = Title::makeTitleSafe( NS_CATEGORY, wfMessage( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text() );
+			$cat = Title::makeTitleSafe( NS_CATEGORY,
+				wfMessage( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text() );
 			if ( $cat ) {
 				if ( $in_index_namespace ) {
-					$qualityCategories[$cat->getDBkey()] = 'quality' . $i . ' prp-pagequality-' . $i;
+					$qualityCategories[$cat->getDBkey()] =
+						'quality' . $i . ' prp-pagequality-' . $i;
 				} else {
 					$qualityCategories[$cat->getDBkey()] = 'prp-pagequality-' . $i;
 				}
@@ -246,14 +254,18 @@ class ProofreadPage {
 	 * @param OutputPage $out
 	 * @return bool
 	 */
-	public static function onImageOpenShowImageInlineBefore( ImagePage &$imgpage, OutputPage &$out ) {
+	public static function onImageOpenShowImageInlineBefore(
+		ImagePage &$imgpage, OutputPage &$out
+	) {
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
 			return true;
 		}
 		$name = $image->getTitle()->getText();
 		$title = Title::makeTitle( self::getIndexNamespaceId(), $name );
-		$link = Linker::link( $title, $out->msg( 'proofreadpage_image_message' )->text(), [], [], 'known' );
+		$link = Linker::link(
+			$title, $out->msg( 'proofreadpage_image_message' )->text(), [], [], 'known'
+		);
 		$out->addHTML( $link );
 		return true;
 	}
@@ -264,7 +276,9 @@ class ProofreadPage {
 	 * @param ParserOutput $parserOutput
 	 * @return bool
 	 */
-	public static function onOutputPageParserOutput( OutputPage $outputPage, ParserOutput $parserOutput ) {
+	public static function onOutputPageParserOutput(
+		OutputPage $outputPage, ParserOutput $parserOutput
+	) {
 		if ( isset( $parserOutput->is_toc ) ) {
 			$outputPage->is_toc = $parserOutput->is_toc;
 		} else {
@@ -298,7 +312,8 @@ class ProofreadPage {
 		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table
-		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {	// Move this part to EditProofreadIndexPage
+		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
+			// Move this part to EditProofreadIndexPage
 			ProofreadPage::updatePrIndex( $article );
 			return true;
 		}
@@ -384,7 +399,9 @@ class ProofreadPage {
 	 * @param Title $nt
 	 * @return bool
 	 */
-	public static function onSpecialMovepageAfterMove( MovePageForm &$form, Title &$ot, Title &$nt ) {
+	public static function onSpecialMovepageAfterMove(
+		MovePageForm &$form, Title &$ot, Title &$nt
+	) {
 		if ( $ot->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $ot );
 		} elseif ( $ot->inNamespace( self::getIndexNamespaceId() )
@@ -404,7 +421,9 @@ class ProofreadPage {
 		if ( $nt->inNamespace( self::getPageNamespaceId() ) ) {
 			self::loadIndex( $nt );
 			if ( $nt->prpIndexPage !== null
-				&& ( !isset( $ot->prpIndexPage ) || ( $nt->prpIndexPage->getTitle()->equals( $ot->prpIndexPage->getTitle() ) ) ) ) {
+				&& ( !isset( $ot->prpIndexPage ) ||
+				( $nt->prpIndexPage->getTitle()->equals( $ot->prpIndexPage->getTitle() ) ) )
+			) {
 				self::updateIndexOfPage( $nt );
 			}
 		} elseif ( $nt->inNamespace( self::getIndexNamespaceId() ) ) {
@@ -442,7 +461,8 @@ class ProofreadPage {
 
 		// read the list of pages
 		$pages = [];
-		$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage(
+		$pagination =
+		Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage(
 			ProofreadIndexPage::newFromTitle( $indexTitle )
 		);
 		foreach ( $pagination as $page ) {
@@ -465,7 +485,8 @@ class ProofreadPage {
 		$queryArr = [
 			'tables' => [ 'page', 'categorylinks' ],
 			'fields' => [ 'COUNT(page_id) AS count' ],
-			'conds' => [ 'cl_to' => '', 'page_namespace' => self::getPageNamespaceId(), 'page_title' => $pages ],
+			'conds' => [ 'cl_to' => '', 'page_namespace' => self::getPageNamespaceId(),
+				'page_title' => $pages ],
 			'joins' => [ 'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ] ]
 		];
 
@@ -475,7 +496,8 @@ class ProofreadPage {
 		$n4 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality4_category' );
 		$n1 = $total - $n0 - $n2 - $n3 - $n4;
 
-		ProofreadIndexDbConnector::setIndexData( $pagination->getNumberOfPages(), $n0, $n1, $n2, $n3, $n4, $indexId );
+		ProofreadIndexDbConnector::setIndexData( $pagination->getNumberOfPages(),
+			$n0, $n1, $n2, $n3, $n4, $indexId );
 	}
 
 	/**
@@ -526,15 +548,25 @@ class ProofreadPage {
 				'fields' => [ 'COUNT(page_id) AS count' ],
 				'conds' => [ 'tl_from' => $id, 'tl_namespace' => $pageNamespaceId, 'cl_to' => '' ],
 				'joins' => [
-					'page' => [ 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ],
+					'page' => [ 'LEFT JOIN',
+						'page_title=tl_title AND page_namespace=tl_namespace'
+					],
 					'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ],
 				]
 			];
 
-			$n0 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality0_category' );
-			$n2 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality2_category' );
-			$n3 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality3_category' );
-			$n4 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality4_category' );
+			$n0 = ProofreadPageDbConnector::queryCount(
+				$queryArr, 'proofreadpage_quality0_category'
+			);
+			$n2 = ProofreadPageDbConnector::queryCount(
+				$queryArr, 'proofreadpage_quality2_category'
+			);
+			$n3 = ProofreadPageDbConnector::queryCount(
+				$queryArr, 'proofreadpage_quality3_category'
+			);
+			$n4 = ProofreadPageDbConnector::queryCount(
+				$queryArr, 'proofreadpage_quality4_category'
+			);
 			// quality1 is the default value
 			$n1 = $n - $n0 - $n2 - $n3 - $n4;
 			$ne = 0;
@@ -601,7 +633,8 @@ class ProofreadPage {
 
 		$oldContent = $context->getWikiPage()->getContent( Revision::FOR_THIS_USER, $user );
 		if ( $oldContent === null ) {
-			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )->makeEmptyContent();
+			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )
+				->makeEmptyContent();
 		}
 		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
 			// Let's convert it to Page: page content
@@ -609,7 +642,8 @@ class ProofreadPage {
 		}
 		if ( !( $oldContent instanceof PageContent ) ) {
 			// We consider it as a page creation
-			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )->makeEmptyContent();
+			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )
+				->makeEmptyContent();
 		}
 
 		$oldLevel = $oldContent->getLevel();
@@ -636,8 +670,12 @@ class ProofreadPage {
 			return true;
 		}
 
-		$pageContentBuilder = new PageContentBuilder( RequestContext::getMain(), Context::getDefaultContext() );
-		$content = $pageContentBuilder->buildDefaultContentForPage( new ProofreadPagePage( $title ) );
+		$pageContentBuilder = new PageContentBuilder(
+			RequestContext::getMain(), Context::getDefaultContext()
+		);
+		$content = $pageContentBuilder->buildDefaultContentForPage(
+			new ProofreadPagePage( $title )
+		);
 		$text = $content->serialize();
 
 		return true;
@@ -738,7 +776,8 @@ class ProofreadPage {
 					$imageUrl = $image->getThumbUrl( $thumbName );
 				}
 			} else {
-				// The thumb returned is invalid for not multipage pages when the width requested is the image width
+				// The thumb returned is invalid for not multipage pages when the width
+				// requested is the image width
 				$imageUrl = $image->getViewURL();
 			}
 
@@ -756,7 +795,8 @@ class ProofreadPage {
 		// Prev, Next and Index links
 		$indexPage = $page->getIndex();
 		if ( $indexPage ) {
-			$pagination = Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
+			$pagination = Context::getDefaultContext()
+				->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
 			try {
 				$pageNumber = $pagination->getPageNumber( $page );
 
@@ -870,6 +910,7 @@ class ProofreadPage {
 		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
 		define( 'CONTENT_MODEL_PROOFREAD_INDEX', 'proofread-index' );
 		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = '\ProofreadPage\Page\PageContentHandler';
-		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_INDEX] = '\ProofreadPage\Index\IndexContentHandler';
+		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_INDEX] =
+			'\ProofreadPage\Index\IndexContentHandler';
 	}
 }

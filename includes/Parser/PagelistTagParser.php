@@ -61,7 +61,9 @@ class PagelistTagParser extends TagParser {
 			}
 
 			$paddingSize = strlen( $count ) - mb_strlen( $view );
-			if ( $paddingSize > 0 && $mode == PageNumber::DISPLAY_NORMAL && $pageNumber->isNumeric() ) {
+			if ( $paddingSize > 0 && $mode == PageNumber::DISPLAY_NORMAL &&
+				$pageNumber->isNumeric()
+			) {
 				$txt = '<span style="visibility:hidden;">';
 				$pad = $title->getPageLanguage()->formatNum( 0, true );
 				for ( $j = 0; $j < $paddingSize; $j++ ) {
@@ -74,17 +76,21 @@ class PagelistTagParser extends TagParser {
 			if ( $pageNumber->isEmpty() || !$title ) {
 				$return .= $view . ' ';
 			} else {
-				// Adds the page as a dependency in order to make sure that the Index: page is purged if the status of the Page: page changes
+				// Adds the page as a dependency in order to make sure that the Index: page is
+				// purged if the status of the Page: page changes
 				$this->parser->getOutput()->addTemplate(
 					$pageTitle,
 					$pageTitle->getArticleID(),
 					$pageTitle->getLatestRevID()
 				);
-				$return .= '[[' . $pageTitle->getPrefixedText() . '|' . $view . ']] '; // TODO: use linker?
+				// TODO: use linker?
+				$return .= '[[' . $pageTitle->getPrefixedText() . '|' . $view . ']] ';
 			}
 		}
 
-		$this->parser->getOutput()->addImage( $image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1() );
+		$this->parser->getOutput()->addImage(
+			$image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1()
+		);
 
 		return trim( $this->parser->recursiveTagParse( $return ) );
 	}

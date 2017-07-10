@@ -33,7 +33,9 @@ class PagePagination extends Pagination {
 		parent::__construct( $index );
 
 		if ( count( $pages ) !== count( $pageNumbers ) ) {
-			throw new InvalidArgumentException( 'The number of page numbers is not the same as the number of pages' );
+			throw new InvalidArgumentException(
+				'The number of page numbers is not the same as the number of pages'
+			);
 		}
 
 		$this->pages = $pages;
@@ -57,7 +59,9 @@ class PagePagination extends Pagination {
 	 */
 	public function getDisplayedPageNumber( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
-			throw new OutOfBoundsException( 'There is no page number ' . $pageNumber . ' in the pagination.' );
+			throw new OutOfBoundsException(
+				'There is no page number ' . $pageNumber . ' in the pagination.'
+			);
 		}
 		return $this->pageNumbers[$pageNumber - 1];
 	}
@@ -74,7 +78,9 @@ class PagePagination extends Pagination {
 	 */
 	public function getPage( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
-			throw new OutOfBoundsException( 'There is no page number ' . $pageNumber . ' in the pagination.' );
+			throw new OutOfBoundsException(
+				'There is no page number ' . $pageNumber . ' in the pagination.'
+			);
 		}
 		return $this->pages[$pageNumber - 1];
 	}

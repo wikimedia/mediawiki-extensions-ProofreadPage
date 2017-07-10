@@ -40,7 +40,9 @@ class ProofreadPageInit {
 
 		if ( isset( $wgProofreadPageNamespaceIds[$key] ) ) {
 			if ( !is_numeric( $wgProofreadPageNamespaceIds[$key] ) ) {
-				throw new MWException( '$wgProofreadPageNamespaceIds[' . $key . '] must be a number.' );
+				throw new MWException(
+					'$wgProofreadPageNamespaceIds[' . $key . '] must be a number.'
+				);
 			}
 
 			if ( !isset( $wgExtraNamespaces[$wgProofreadPageNamespaceIds[$key]] ) ) {
@@ -62,7 +64,8 @@ class ProofreadPageInit {
 	}
 
 	/**
-	 * Find if a namespace with the default name is already set (for backward compatibility) and return his id
+	 * Find if a namespace with the default name is already set (for backward compatibility) and
+	 * return his id
 	 * @param string $key the key of the namespace in the i18n file
 	 * @return int|bool the id of the namespace or false if it doesn't exist
 	 */
@@ -97,7 +100,9 @@ class ProofreadPageInit {
 		$wgExtraNamespaces[$id] = self::getNamespaceName( $key );
 		$wgExtraNamespaces[$id + 1] = self::getNamespaceName( $talkKey );
 
-		$wgCanonicalNamespaceNames[$id] = $wgExtraNamespaces[$id]; // Very hugly but needed because initNamespaces() is called after the add of $wgExtraNamespaces into $wgCanonicalNamespaceNames
+		// Very hugly but needed because initNamespaces() is called after the add of
+		// $wgExtraNamespaces into $wgCanonicalNamespaceNames
+		$wgCanonicalNamespaceNames[$id] = $wgExtraNamespaces[$id];
 		$wgCanonicalNamespaceNames[$id + 1] = $wgExtraNamespaces[$id + 1];
 
 		self::createNamespaceAliases( $key, $id );
@@ -148,8 +153,10 @@ class ProofreadPageInit {
 	}
 
 	/**
-	 * Get the id of the namespace. Required that Mediawiki is loaded and ProofreadPageInit::initNamespace has been executed for the relevant namespace.
-	 * Warning: It's not the function you search. If you want to know the index or page namespace id use ProofreadPage::getIndexNamespaceId() or ProofreadPage::getPageNamespaceId()
+	 * Get the id of the namespace. Required that Mediawiki is loaded and
+	 * ProofreadPageInit::initNamespace has been executed for the relevant namespace.
+	 * Warning: It's not the function you search. If you want to know the index or page namespace
+	 * id use ProofreadPage::getIndexNamespaceId() or ProofreadPage::getPageNamespaceId()
 	 * @param string $key the key of the namespace in the i18n file
 	 * @return integer
 	 */
@@ -160,7 +167,12 @@ class ProofreadPageInit {
 			// The only case where $wgProofreadPageNamespaceIds is not set is
 			// when a namespace with the default id already exist
 			// and is not a prp namespace.
-			throw new MWException( 'Namespace with id ' . self::$defaultNamespaceIds[$key] . ' is already set ! ProofreadPage can\'t use his id in order to create ' . self::getNamespaceName( $key, 'en' ) . ' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' . $key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) . ' NAMESPACE */; AFTER the inclusion of Proofread Page' );
+			throw new MWException( 'Namespace with id ' . self::$defaultNamespaceIds[$key] .
+				' is already set ! ProofreadPage can\'t use his id in order to create ' .
+				self::getNamespaceName( $key, 'en' ) .
+				' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' .
+				$key . '] = /* NUMERICAL ID OF THE ' . self::getNamespaceName( $key, 'en' ) .
+				' NAMESPACE */; AFTER the inclusion of Proofread Page' );
 		}
 
 		return $wgProofreadPageNamespaceIds[$key];

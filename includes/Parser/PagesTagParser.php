@@ -21,7 +21,9 @@ class PagesTagParser extends TagParser {
 	 */
 	public function render( $input, array $args ) {
 		// abort if this is nested <pages> call
-		if ( isset( $this->parser->proofreadRenderingPages ) && $this->parser->proofreadRenderingPages ) {
+		if ( isset( $this->parser->proofreadRenderingPages ) &&
+			$this->parser->proofreadRenderingPages
+		) {
 			return '';
 		}
 
@@ -60,9 +62,12 @@ class PagesTagParser extends TagParser {
 			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
 		$indexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
-		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
+		$pagination = $this->context->getPaginationFactory()
+			->getPaginationForIndexPage( $indexPage );
 		$language = $this->parser->getTargetLanguage();
-		$this->parser->getOutput()->addTemplate( $indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID() );
+		$this->parser->getOutput()->addTemplate(
+			$indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID()
+		);
 		$out = '';
 
 		if ( $from || $to || $include ) {
@@ -130,16 +135,19 @@ class PagesTagParser extends TagParser {
 					return $this->formatError( 'proofreadpage_interval_too_large' );
 				}
 
-				ksort( $pagenums ); // we must sort the array even if the numerical keys are in a good order.
+				// we must sort the array even if the numerical keys are in a good order.
+				ksort( $pagenums );
 				if ( end( $pagenums ) > $count ) {
 					return $this->formatError( 'proofreadpage_invalid_interval' );
 				}
 
-				// Create the list of pages to translude. the step system start with the smaller pagenum
+				// Create the list of pages to translude.
+				// the step system start with the smaller pagenum
 				$mod = reset( $pagenums ) % $step;
 				foreach ( $pagenums as $num ) {
 					if ( $step == 1 || $num % $step == $mod ) {
-						$pagenum = $pagination->getDisplayedPageNumber( $num )->getFormattedPageNumber( $language );
+						$pagenum = $pagination->getDisplayedPageNumber( $num )
+							->getFormattedPageNumber( $language );
 						$pages[] = [ $pagination->getPage( $num )->getTitle(), $pagenum ];
 					}
 				}
@@ -149,7 +157,9 @@ class PagesTagParser extends TagParser {
 
 				$fromPage = null;
 				if ( $from ) {
-					$fromTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $from );
+					$fromTitle = Title::makeTitleSafe(
+						$this->context->getPageNamespaceId(), $from
+					);
 					if ( $fromTitle !== null ) {
 						$fromPage = ProofreadPagePage::newFromTitle( $fromTitle );
 						$adding = false;
@@ -170,7 +180,8 @@ class PagesTagParser extends TagParser {
 						$adding = true;
 					}
 					if ( $adding ) {
-						$pagenum = $pagination->getDisplayedPageNumber( $i )->getFormattedPageNumber( $language );
+						$pagenum = $pagination->getDisplayedPageNumber( $i )
+							->getFormattedPageNumber( $language );
 						$pages[] = [ $link->getTitle(), $pagenum ];
 					}
 					if ( $toPage !== null && $toPage->equals( $link ) ) {
@@ -191,7 +202,8 @@ class PagesTagParser extends TagParser {
 					list( $page, $pagenum ) = $item;
 					$pp[] = $page->getDBkey();
 				}
-				$cat = str_replace( ' ', '_', wfMessage( 'proofreadpage_quality0_category' )->inContentLanguage()->escaped() );
+				$cat = str_replace( ' ', '_', wfMessage( 'proofreadpage_quality0_category' )
+					->inContentLanguage()->escaped() );
 				$res = ProofreadPageDbConnector::getPagesNameInCategory( $pp, $cat );
 
 				if ( $res ) {
@@ -211,7 +223,8 @@ class PagesTagParser extends TagParser {
 				}
 				$text = $page->getPrefixedText();
 				if ( !$is_q0 ) {
-					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text . "|num=$pagenum}}</span>";
+					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text .
+						"|num=$pagenum}}</span>";
 				}
 				if ( $from_page !== null && $page->equals( $from_page ) && $fromsection !== null ) {
 					$ts = '';
@@ -258,15 +271,18 @@ class PagesTagParser extends TagParser {
 			$indexLinksCount = count( $indexLinks );
 			for ( $i = 0; $i < $indexLinksCount; $i++ ) {
 				if ( $pageTitle->equals( $indexLinks[$i][0] ) ) {
-					$current = '[[' . $indexLinks[$i][0]->getFullText() . '|' . $indexLinks[$i][1] . ']]';
+					$current = '[[' . $indexLinks[$i][0]->getFullText() . '|' .
+						$indexLinks[$i][1] . ']]';
 					break;
 				}
 			}
 			if ( $i > 1 ) {
-				$prev = '[[' . $indexLinks[$i - 1][0]->getFullText() . '|' . $indexLinks[$i - 1][1] . ']]';
+				$prev = '[[' . $indexLinks[$i - 1][0]->getFullText() . '|' .
+					$indexLinks[$i - 1][1] . ']]';
 			}
 			if ( $i + 1 < count( $indexLinks ) ) {
-				$next = '[[' . $indexLinks[$i + 1][0]->getFullText() . '|' . $indexLinks[$i + 1][1] . ']]';
+				$next = '[[' . $indexLinks[$i + 1][0]->getFullText() . '|' .
+					$indexLinks[$i + 1][1] . ']]';
 			}
 			if ( isset( $args['current'] ) ) {
 				$current = $args['current'];

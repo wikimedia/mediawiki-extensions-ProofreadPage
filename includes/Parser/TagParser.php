@@ -44,6 +44,7 @@ abstract class TagParser {
 	 * @return string
 	 */
 	protected function formatError( $errorMsg ) {
-		return '<strong class="error">' . wfMessage( $errorMsg )->inContentLanguage()->escaped() . '</strong>';
+		return '<strong class="error">' . wfMessage( $errorMsg )->inContentLanguage()->escaped() .
+			'</strong>';
 	}
 }

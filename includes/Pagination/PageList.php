@@ -77,7 +77,9 @@ class PageList {
 			}
 		}
 
-		$displayedpageNumber = ( $displayedpageNumber === '' ) ? $pageNumber - $offset : $displayedpageNumber;
+		$displayedpageNumber = ( $displayedpageNumber === '' )
+			? $pageNumber - $offset
+			: $displayedpageNumber;
 		return new PageNumber( $displayedpageNumber, $mode, $isEmpty );
 	}
 
@@ -92,6 +94,7 @@ class PageList {
 	protected function numberInRange( $range, $number ) {
 		return
 			is_numeric( $range ) && $range == $number ||
-			preg_match( '/^([0-9]*)to([0-9]*)$/', $range, $m ) && $m[1] <= $number && $number <= $m[2];
+			preg_match( '/^([0-9]*)to([0-9]*)$/', $range, $m ) &&
+			$m[1] <= $number && $number <= $m[2];
 	}
 }

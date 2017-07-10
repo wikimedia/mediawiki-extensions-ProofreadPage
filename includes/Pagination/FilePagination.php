@@ -42,7 +42,9 @@ class FilePagination extends Pagination {
 	 * @param File $file the pagination file
 	 * @param Context $context the current context
 	 */
-	public function __construct( ProofreadIndexPage $index, PageList $pageList, File $file, Context $context ) {
+	public function __construct(
+		ProofreadIndexPage $index, PageList $pageList, File $file, Context $context
+	) {
 		parent::__construct( $index );
 
 		$this->pageList = $pageList;
@@ -70,7 +72,9 @@ class FilePagination extends Pagination {
 	 */
 	public function getDisplayedPageNumber( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
-			throw new OutOfBoundsException( 'There is no page number ' . $pageNumber . ' in the pagination.' );
+			throw new OutOfBoundsException(
+				'There is no page number ' . $pageNumber . ' in the pagination.'
+			);
 		}
 		return $this->pageList->getNumber( $pageNumber );
 	}
@@ -87,7 +91,9 @@ class FilePagination extends Pagination {
 	 */
 	public function getPage( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
-			throw new OutOfBoundsException( 'There is no page number ' . $pageNumber . ' in the pagination.' );
+			throw new OutOfBoundsException(
+				'There is no page number ' . $pageNumber . ' in the pagination.'
+			);
 		}
 
 		if ( !array_key_exists( $pageNumber, $this->pages ) ) {

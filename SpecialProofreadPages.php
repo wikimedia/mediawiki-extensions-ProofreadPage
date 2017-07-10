@@ -37,7 +37,9 @@ class ProofreadPages extends QueryPage {
 		$output = $this->getOutput();
 		$request = $this->getRequest();
 		$output->addModules( 'ext.proofreadpage.special.indexpages' );
-		$output->addWikiText( $this->msg( 'proofreadpage_specialpage_text' )->inContentLanguage()->plain() );
+		$output->addWikiText(
+			$this->msg( 'proofreadpage_specialpage_text' )->inContentLanguage()->plain()
+		);
 
 		$this->searchList = null;
 		$this->searchTerm = $request->getText( 'key' );
@@ -70,7 +72,10 @@ class ProofreadPages extends QueryPage {
 					// TODO: $searchEngine->searchText() can return status objects
 					// Might want to extract some information from them
 					global $wgOut;
-					$wgOut->showErrorPage( 'proofreadpage_specialpage_searcherror', 'proofreadpage_specialpage_searcherrortext' );
+					$wgOut->showErrorPage(
+						'proofreadpage_specialpage_searcherror',
+						'proofreadpage_specialpage_searcherrortext'
+					);
 				} else {
 					$this->searchList = [];
 					while ( $result = $textMatches->next() ) {
@@ -88,7 +93,9 @@ class ProofreadPages extends QueryPage {
 
 	public function reallyDoQuery( $limit, $offset = false ) {
 		$count = count( $this->searchList );
-		if ( $count > $this->limit ) { // Delete the last item to avoid the sort done by reallyDoQuery move it to another position than the last
+		if ( $count > $this->limit ) {
+			// Delete the last item to avoid the sort done by reallyDoQuery move it
+			// to another position than the last
 			$this->addOne = true;
 			unset( $this->searchList[ $count - 1 ] );
 		}
@@ -144,14 +151,23 @@ class ProofreadPages extends QueryPage {
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::input( 'limit', $this->limit, 'hidden', [] ) .
 			Html::openElement( 'fieldset', [] ) .
-			Html::element( 'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text() ) .
+			Html::element(
+				'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text()
+			) .
 			Html::openElement( 'p' ) .
-			Html::element( 'label', [ 'for' => 'key' ], $this->msg( 'proofreadpage_specialpage_label_key' )->text() )  . ' ' .
+			Html::element( 'label', [ 'for' => 'key' ],
+				$this->msg( 'proofreadpage_specialpage_label_key' )->text()
+			)  . ' ' .
 			Html::input( 'key', $this->searchTerm, 'search', [ 'id' => 'key', 'size' => '50' ] ) .
 			Html::closeElement( 'p' ) .
 			Html::openElement( 'p' ) .
-			Html::element( 'label', [ 'for' => 'order' ], $this->msg( 'proofreadpage_specialpage_label_orderby' )->text() ) . ' ' . $orderSelect->getHtml() . ' ' .
-			Xml::checkLabel( $this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(), 'sortascending', 'sortascending', $this->sortAscending ) . ' ' .
+			Html::element( 'label', [ 'for' => 'order' ],
+				$this->msg( 'proofreadpage_specialpage_label_orderby' )->text()
+			) . ' ' . $orderSelect->getHtml() . ' ' .
+			Xml::checkLabel(
+				$this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(),
+				'sortascending', 'sortascending', $this->sortAscending
+			) . ' ' .
 			Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
 			Html::closeElement( 'p' ) .
 			Html::closeElement( 'fieldset' ) .
@@ -177,8 +193,8 @@ class ProofreadPages extends QueryPage {
 
 		return [
 			'tables' => [ 'pr_index', 'page' ],
-			'fields' => [ 'page_namespace AS namespace', 'page_title AS title', '2*pr_q4+pr_q3 AS value', 'pr_count',
-			'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
+			'fields' => [ 'page_namespace AS namespace', 'page_title AS title',
+			'2*pr_q4+pr_q3 AS value', 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
 			'conds' => $conds,
 			'options' => [],
 			'join_conds' => [ 'page' => [ 'INNER JOIN', 'page_id=pr_page_id' ] ]
@@ -203,7 +219,8 @@ class ProofreadPages extends QueryPage {
 	public function formatResult( $skin, $result ) {
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {
-			return '<!-- Invalid title ' .  htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
+			return '<!-- Invalid title ' .
+				htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
 		$plink = $this->isCached()
 			? Linker::link( $title, htmlspecialchars( $title->getText() ) )
@@ -220,7 +237,9 @@ class ProofreadPages extends QueryPage {
 		$q3 = $result->pr_q3;
 		$q4 = $result->pr_q4;
 		$num_void = $size - $q1 - $q2 - $q3 - $q4 - $q0;
-		$void_cell = $num_void ? '<td class="qualitye" style="width:' . $num_void . 'px;"></td>' : '';
+		$void_cell = $num_void
+			? '<td class="qualitye" style="width:' . $num_void . 'px;"></td>'
+			: '';
 		$textualAlternative = $this->msg( 'proofreadpage-indexquality-alt', $q4, $q3, $q1 );
 		$qualityOutput = '<table class="pr_quality" title="' . $textualAlternative . '">
 <tr>
@@ -236,7 +255,8 @@ class ProofreadPages extends QueryPage {
 		$dirmark = $this->getLanguage()->getDirMark();
 		$pages = $this->msg( 'proofreadpage_pages', $size )->numParams( $size )->text();
 
-		return "<div class=\"prp-indexpages-row\"><span>{$plink} {$dirmark}[$pages]</span><div>{$qualityOutput}</div></div>";
+		return "<div class=\"prp-indexpages-row\"><span>{$plink} {$dirmark}[$pages]</span>" .
+			"<div>{$qualityOutput}</div></div>";
 	}
 
 	protected function getGroupName() {

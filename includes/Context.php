@@ -10,7 +10,8 @@ use RepoGroup;
  *
  * Extension context
  *
- * You should only get it with Context::getDefaultContext in extension entry points and then inject it in objects that requires it
+ * You should only get it with Context::getDefaultContext in extension entry points and then inject
+ * it in objects that requires it
  * For testing, get a test compatible version with ProofreadPageTextCase::getContext()
  */
 class Context {
