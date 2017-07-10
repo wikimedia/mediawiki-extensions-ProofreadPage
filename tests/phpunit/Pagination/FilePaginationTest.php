@@ -21,7 +21,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$pagination = new FilePagination(
 			$index,
 			new PageList( [] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 		$this->assertEquals( 2, $pagination->getPageNumber(
@@ -33,7 +35,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	 * @expectedException InvalidArgumentException
 	 * @dataProvider getPageNumberWithFailureProvider
 	 */
-	public function testGetPageNumberWithFailure( Pagination $pagination, ProofreadPagePage $page ) {
+	public function testGetPageNumberWithFailure(
+		Pagination $pagination, ProofreadPagePage $page
+	) {
 		$pagination->getPageNumber( $page );
 	}
 
@@ -41,7 +45,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
 			$index, new PageList( [] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 		return [
@@ -68,7 +74,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new FilePagination(
 			$index, new PageList( [ '1' => 'TOC' ] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
@@ -82,7 +90,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$pageNumber = new PageNumber( 1 );
 		$pagination = new FilePagination(
 			$index, new PageList( [] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
@@ -104,7 +114,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
 			$index, new PageList( [] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 		$this->assertEquals( 5, $pagination->getNumberOfPages() );
@@ -118,7 +130,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$page = new ProofreadPagePage( Title::makeTitle( 250, 'LoremIpsum.djvu/2' ), $index );
 		$pagination = new FilePagination(
 			$index, new PageList( [] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 		$this->assertEquals( $page, $pagination->getPage( 2 ) );
@@ -134,7 +148,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$index = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
 			$index, new PageList( [] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 		$pagination->getPage( 42 );
@@ -149,7 +165,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$page2 = new ProofreadPagePage( Title::makeTitle( 250, 'LoremIpsum.djvu/2' ), $index );
 		$pagination = new FilePagination(
 			$index, new PageList( [] ),
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
 

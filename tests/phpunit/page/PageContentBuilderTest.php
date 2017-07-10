@@ -33,7 +33,9 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider buildDefaultContentForPageProvider
 	 */
-	public function testBuildDefaultContentForPage( ProofreadPagePage $page, PageContent $defaultContent ) {
+	public function testBuildDefaultContentForPage(
+		ProofreadPagePage $page, PageContent $defaultContent
+	) {
 		try {
 			$image = $this->getContext()->getFileProvider()->getForPagePage( $page );
 		} catch ( FileNotFoundException $e ) {
@@ -44,7 +46,9 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
 		$contentBuilder = new PageContentBuilder( $this->context, $this->getContext() );
-		$this->assertEquals( $defaultContent, $contentBuilder->buildDefaultContentForPage( $page ) );
+		$this->assertEquals(
+			$defaultContent, $contentBuilder->buildDefaultContentForPage( $page )
+		);
 	}
 
 	public function buildDefaultContentForPageProvider() {
@@ -52,7 +56,9 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 			[
 				ProofreadPagePageTest::newPagePage(
 					'Test.djvu/1',
-					ProofreadIndexPageTest::newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Header={{{title}}}\n}}" )
+					ProofreadIndexPageTest::newIndexPage(
+						'Test.djvu', "{{\n|Title=Test book\n|Header={{{title}}}\n}}"
+					)
 				),
 				PageContentTest::newContent( 'Test book', '', '<references />', 1 ),
 			],
@@ -65,14 +71,21 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 			[
 				ProofreadPagePageTest::newPagePage(
 					'LoremIpsum.djvu/2',
-					ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Title=Test book\n|Pages=<pagelist/>\n|Header={{{pagenum}}}\n}}" )
+					ProofreadIndexPageTest::newIndexPage(
+						'LoremIpsum.djvu',
+						"{{\n|Title=Test book\n|Pages=<pagelist/>\n|Header={{{pagenum}}}\n}}"
+					)
 				),
 				PageContentTest::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 			[
 				ProofreadPagePageTest::newPagePage(
 					'LoremIpsum.djvu/2',
-					ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Title=Test book\n|Pages=<pagelist 1to5=roman />\n|Header={{{pagenum}}}\n}}" )
+					ProofreadIndexPageTest::newIndexPage(
+						'LoremIpsum.djvu',
+						"{{\n|Title=Test book\n|Pages=<pagelist 1to5=roman />\n" .
+							"|Header={{{pagenum}}}\n}}"
+					)
 				),
 				PageContentTest::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
@@ -82,9 +95,14 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider buildContentFromInputProvider
 	 */
-	public function testBuildContentFromInput( $header, $body, $footer, $level, PageContent $oldContent, PageContent $newContent ) {
+	public function testBuildContentFromInput(
+		$header, $body, $footer, $level, PageContent $oldContent, PageContent $newContent
+	) {
 		$contentBuilder = new PageContentBuilder( $this->context, $this->getContext() );
-		$this->assertEquals( $newContent, $contentBuilder->buildContentFromInput( $header, $body, $footer, $level, $oldContent ) );
+		$this->assertEquals(
+			$newContent,
+			$contentBuilder->buildContentFromInput( $header, $body, $footer, $level, $oldContent )
+		);
 	}
 
 	public function buildContentFromInputProvider() {

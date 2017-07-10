@@ -27,6 +27,8 @@ class ContextTest extends ProofreadPageTestCase {
 
 	public function testGetPaginationFactory() {
 		$context = new Context( 42, 44, new FileProviderMock( [] ) );
-		$this->assertInstanceOf( '\ProofreadPage\Pagination\PaginationFactory', $context->getPaginationFactory() );
+		$this->assertInstanceOf(
+			'\ProofreadPage\Pagination\PaginationFactory', $context->getPaginationFactory()
+		);
 	}
 }

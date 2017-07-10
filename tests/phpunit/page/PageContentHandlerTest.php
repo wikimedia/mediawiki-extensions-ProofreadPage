@@ -27,21 +27,92 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 	public function pageWikitextSerializationProvider() {
 		return [
-			[ 'Experimental header', 'Experimental body', 'Experimental footer', 2, '1.2.3.4', '<noinclude>{{PageQuality|2|1.2.3.4}}<div class="pagetext">Experimental header' . "\n\n\n" . '</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>' ],
-			[ 'Experimental header', 'Experimental body', '', 2, 'Woot', '<noinclude>{{PageQuality|2|Woot}}<div>Experimental header' . "\n\n\n" . '</noinclude>Experimental body</div>' ],
-			[ 'Experimental header', 'Experimental body', 'Experimental footer', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">Experimental header' . "\n\n\n" . '</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>' ],
-			[ 'Experimental header', 'Experimental body', '', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div>Experimental header' . "\n\n\n" . '</noinclude>Experimental body</div>' ],
-			[ 'Experimental header', 'Experimental <noinclude>body</noinclude>', 'Experimental footer', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">Experimental header' . "\n\n\n" . '</noinclude>Experimental <noinclude>body</noinclude><noinclude>Experimental footer</div></noinclude>' ],
-			[ 'Experimental header', 'Experimental body', 'Experimental footer', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">Experimental header' . "\n" . '</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>' ],
-			[ 'Experimental header', 'Experimental body', 'Experimental footer', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot" />Experimental header' . "\n" . '</noinclude>Experimental body<noinclude>Experimental footer</noinclude>' ],
-			[ 'Experimental header', 'Experimental body', 'Experimental footer', 2, 'Woot', '<noinclude><pagequality level="2" user="Woot"></pagequality>Experimental header' . "\n" . '</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>' ]
+			[
+				'Experimental header',
+				'Experimental body',
+				'Experimental footer',
+				2,
+				'1.2.3.4',
+				'<noinclude>{{PageQuality|2|1.2.3.4}}<div class="pagetext">Experimental header' .
+					"\n\n\n" .
+					'</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>'
+			],
+			[
+				'Experimental header',
+				'Experimental body',
+				'',
+				2,
+				'Woot',
+				'<noinclude>{{PageQuality|2|Woot}}<div>Experimental header' . "\n\n\n" .
+					'</noinclude>Experimental body</div>'
+			],
+			[
+				'Experimental header',
+				'Experimental body',
+				'Experimental footer',
+				2,
+				'Woot',
+				'<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">' .
+					'Experimental header' . "\n\n\n" .
+					'</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>'
+			],
+			[
+				'Experimental header',
+				'Experimental body',
+				'',
+				2,
+				'Woot',
+				'<noinclude><pagequality level="2" user="Woot" /><div>Experimental header' .
+					"\n\n\n" . '</noinclude>Experimental body</div>'
+			],
+			[
+				'Experimental header',
+				'Experimental <noinclude>body</noinclude>',
+				'Experimental footer',
+				2,
+				'Woot',
+				'<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">' .
+					'Experimental header' . "\n\n\n" . '</noinclude>Experimental <noinclude>' .
+					'body</noinclude><noinclude>Experimental footer</div></noinclude>'
+			],
+			[
+				'Experimental header',
+				'Experimental body',
+				'Experimental footer',
+				2,
+				'Woot',
+				'<noinclude><pagequality level="2" user="Woot" /><div class="pagetext">' .
+					'Experimental header' . "\n" . '</noinclude>Experimental body<noinclude>' .
+					'Experimental footer</div></noinclude>'
+			],
+			[
+				'Experimental header',
+				'Experimental body',
+				'Experimental footer',
+				2,
+				'Woot',
+				'<noinclude><pagequality level="2" user="Woot" />Experimental header' . "\n" .
+					'</noinclude>Experimental body<noinclude>Experimental footer</noinclude>'
+			],
+			[
+				'Experimental header',
+				'Experimental body',
+				'Experimental footer',
+				2,
+				'Woot',
+				'<noinclude><pagequality level="2" user="Woot"></pagequality>Experimental header' .
+					"\n" .
+					'</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>'
+			]
 		];
 	}
 
 	/**
 	 * @dataProvider pageWikitextSerializationProvider
 	 */
-	public function testSerializeContentInWikitext( $header, $body, $footer, $level, $proofreader ) {
+	public function testSerializeContentInWikitext(
+		$header, $body, $footer, $level, $proofreader
+	) {
 		$pageContent = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
 
 		$serializedString = '<noinclude><pagequality level="' . $level . '" user="';
@@ -56,7 +127,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider pageWikitextSerializationProvider
 	 */
-	public function testUnserializeContentInWikitext( $header, $body, $footer, $level, $proofreader, $text ) {
+	public function testUnserializeContentInWikitext(
+		$header, $body, $footer, $level, $proofreader, $text
+	) {
 		$this->assertEquals(
 			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
 			$this->handler->unserializeContent( $text )
@@ -66,7 +139,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider pageWikitextSerializationProvider
 	 */
-	public function testRoundTripSerializeContentInWikitext( $header, $body, $footer, $level, $proofreader, $text ) {
+	public function testRoundTripSerializeContentInWikitext(
+		$header, $body, $footer, $level, $proofreader, $text
+	) {
 		$content = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
 		$this->assertEquals(
 			$content,
@@ -116,7 +191,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider pageJsonSerializationProvider
 	 */
-	public function testUnserializeContentInJson( $header, $body, $footer, $level, $proofreader, $text ) {
+	public function testUnserializeContentInJson(
+		$header, $body, $footer, $level, $proofreader, $text
+	) {
 		$this->assertEquals(
 			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
 			$this->handler->unserializeContent( $text, CONTENT_FORMAT_JSON )
@@ -161,7 +238,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider pageJsonSerializationProvider
 	 */
-	public function testRoundTripSerializeContentInJson( $header, $body, $footer, $level, $proofreader, $text ) {
+	public function testRoundTripSerializeContentInJson(
+		$header, $body, $footer, $level, $proofreader, $text
+	) {
 		$content = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
 		$this->assertEquals(
 			$content,
@@ -239,11 +318,15 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider getAutosummaryProvider
 	 */
 	public function testGetAutosummary( $oldContent, $newContent, $expected ) {
-		$this->assertEquals( $expected, $this->handler->getAutosummary( $oldContent, $newContent, [] ) );
+		$this->assertEquals(
+			$expected, $this->handler->getAutosummary( $oldContent, $newContent, [] )
+		);
 	}
 
 	public function testMakeRedirectContent() {
 		$title = Title::makeTitle( NS_MAIN, 'Test' );
-		$this->assertTrue( $title->equals( $this->handler->makeRedirectContent( $title )->getRedirectTarget() ) );
+		$this->assertTrue(
+			$title->equals( $this->handler->makeRedirectContent( $title )->getRedirectTarget() )
+		);
 	}
 }

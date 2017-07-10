@@ -35,7 +35,9 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 
 	public function testGetContentHandler() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$this->assertEquals( CONTENT_MODEL_PROOFREAD_INDEX, $content->getContentHandler()->getModelID() );
+		$this->assertEquals(
+			CONTENT_MODEL_PROOFREAD_INDEX, $content->getContentHandler()->getModelID()
+		);
 	}
 
 	public function testCopy() {
@@ -76,15 +78,21 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetTextForSummary() {
-		$this->assertEquals( '', ( new IndexRedirectContent( Title::newFromText( 'Foo' ) ) )->getTextForSummary( 16 ) );
+		$this->assertEquals(
+			'', ( new IndexRedirectContent( Title::newFromText( 'Foo' ) ) )->getTextForSummary( 16 )
+		);
 	}
 
 	public function testPreSaveTransform() {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang(
+			$this->requestContext->getUser(), $wgContLang
+		);
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$content = $originalContent->preSaveTransform( $this->requestContext->getTitle(), $this->requestContext->getUser(), $options );
+		$content = $originalContent->preSaveTransform(
+			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
+		);
 
 		$this->assertEquals( $originalContent, $content );
 	}
@@ -92,9 +100,13 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	public function testPreloadTransform() {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang(
+			$this->requestContext->getUser(), $wgContLang
+		);
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$content = $originalContent->preloadTransform( $this->requestContext->getTitle(), $options );
+		$content = $originalContent->preloadTransform(
+			$this->requestContext->getTitle(), $options
+		);
 
 		$this->assertEquals( $originalContent, $content );
 	}

@@ -49,7 +49,9 @@ class PageContentTest extends ProofreadPageTestCase {
 	 * @param User|string $proofreader
 	 * @return PageContent
 	 */
-	public static function newContent( $header = '', $body = '', $footer = '', $level = 1, $proofreader = null ) {
+	public static function newContent(
+		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
+	) {
 		if ( is_string( $header ) ) {
 			$header = new WikitextContent( $header );
 		}
@@ -96,7 +98,9 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function testGetContentHandler() {
 		$content = self::newContent();
-		$this->assertEquals( CONTENT_MODEL_PROOFREAD_PAGE, $content->getContentHandler()->getModelID() );
+		$this->assertEquals(
+			CONTENT_MODEL_PROOFREAD_PAGE, $content->getContentHandler()->getModelID()
+		);
 	}
 
 	public function testCopy() {
@@ -106,12 +110,36 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function equalsProvider() {
 		return [
-			[ self::newContent(), null, false ],
-			[ self::newContent( 'a', 'hallo' ), self::newContent( 'a', 'hallo' ), true ],
-			[ self::newContent( 'a', 'hallo' ), self::newContent( 'A', 'hallo' ), false ],
-			[ self::newContent( '', 'a', '', 1, 'test' ), self::newContent( '', 'a', '', 1, null ), false ],
-			[ self::newContent( '', 'a', '', 1, 'ater_ir' ), self::newContent( '', 'a', '', 1, 'ater ir' ), true ],
-			[ self::newContent( '', 'hallo' ), new WikitextContent( 'hallo' ), false ]
+			[
+				self::newContent(),
+				null,
+				false
+			],
+			[
+				self::newContent( 'a', 'hallo' ),
+				self::newContent( 'a', 'hallo' ),
+				true
+			],
+			[
+				self::newContent( 'a', 'hallo' ),
+				self::newContent( 'A', 'hallo' ),
+				false
+			],
+			[
+				self::newContent( '', 'a', '', 1, 'test' ),
+				self::newContent( '', 'a', '', 1, null ),
+				false
+			],
+			[
+				self::newContent( '', 'a', '', 1, 'ater_ir' ),
+				self::newContent( '', 'a', '', 1, 'ater ir' ),
+				true
+			],
+			[
+				self::newContent( '', 'hallo' ),
+				new WikitextContent( 'hallo' ),
+				false
+			]
 		];
 	}
 
@@ -158,7 +186,10 @@ class PageContentTest extends ProofreadPageTestCase {
 		return [
 			[
 				self::newContent( 'hello this is ~~~', '~~~' ),
-				self::newContent( 'hello this is [[Special:Contributions/127.0.0.1|127.0.0.1]]', '[[Special:Contributions/127.0.0.1|127.0.0.1]]' )
+				self::newContent(
+					'hello this is [[Special:Contributions/127.0.0.1|127.0.0.1]]',
+					'[[Special:Contributions/127.0.0.1|127.0.0.1]]'
+				)
 			],
 			[
 				self::newContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" ),
@@ -177,9 +208,13 @@ class PageContentTest extends ProofreadPageTestCase {
 	public function testPreSaveTransform( $content, $expectedContent ) {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang(
+			$this->requestContext->getUser(), $wgContLang
+		);
 
-		$content = $content->preSaveTransform( $this->requestContext->getTitle(), $this->requestContext->getUser(), $options );
+		$content = $content->preSaveTransform(
+			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
+		);
 
 		$this->assertEquals( $expectedContent, $content );
 	}
@@ -189,7 +224,9 @@ class PageContentTest extends ProofreadPageTestCase {
 			[ self::newContent( 'hello this is ~~~' ),
 				self::newContent( "hello this is ~~~" )
 			],
-			[ self::newContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>' ),
+			[
+				self::newContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude>' .
+					'<includeonly>bar</includeonly>' ),
 				self::newContent( 'hello \'\'this\'\' is bar' )
 			],
 		];
@@ -201,7 +238,9 @@ class PageContentTest extends ProofreadPageTestCase {
 	public function testPreloadTransform( $content, $expectedContent ) {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang(
+			$this->requestContext->getUser(), $wgContLang
+		);
 
 		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );
 

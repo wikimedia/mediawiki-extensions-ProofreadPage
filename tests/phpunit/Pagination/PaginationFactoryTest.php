@@ -18,19 +18,31 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$page = ProofreadIndexPageTest::newIndexPage( 'LoremIpsum.djvu', "{{\n|Pages=<pagelist 1to2=-/> <pagelist 3=1 4to5=roman />\n|Author=[[Author:Me]]\n}}" );
+		$page = ProofreadIndexPageTest::newIndexPage(
+			'LoremIpsum.djvu',
+			"{{\n|Pages=<pagelist 1to2=-/> <pagelist 3=1 4to5=roman />\n|Author=[[Author:Me]]\n}}"
+		);
 		$pageList = new PageList( [ '1to2' => '-', '3' => '1', '4to5' => 'roman' ] );
 		$pagination = new FilePagination(
 			$page,
 			$pageList,
-			$this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' ) ),
+			$this->getContext()->getFileProvider()->getFileFromTitle(
+				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
+			),
 			$this->getContext()
 		);
-		$this->assertEquals( $pagination, $this->getContext()->getPaginationFactory()->getPaginationForIndexPage( $page ) );
+		$this->assertEquals(
+			$pagination,
+			$this->getContext()->getPaginationFactory()->getPaginationForIndexPage( $page )
+		);
 	}
 
 	public function testGetPaginationWithoutPagelist() {
-		$page = ProofreadIndexPageTest::newIndexPage( 'Test', "{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}" );
+		$page = ProofreadIndexPageTest::newIndexPage(
+			'Test',
+			"{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] " .
+			"[[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}"
+		);
 		$pagination = new PagePagination(
 			$page,
 			[
@@ -44,6 +56,9 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 				new PageNumber( '2' )
 			]
 		);
-		$this->assertEquals( $pagination, $this->getContext()->getPaginationFactory()->getPaginationForIndexPage( $page ) );
+		$this->assertEquals(
+			$pagination,
+			$this->getContext()->getPaginationFactory()->getPaginationForIndexPage( $page )
+		);
 	}
 }

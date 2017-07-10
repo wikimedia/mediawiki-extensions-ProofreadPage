@@ -15,13 +15,17 @@ use Title;
 class FileProviderTest extends ProofreadPageTestCase {
 
 	private function getFileFromName( $fileName ) {
-		return $this->getContext()->getFileProvider()->getFileFromTitle( Title::makeTitle( NS_MEDIA, $fileName ) );
+		return $this->getContext()->getFileProvider()->getFileFromTitle(
+			Title::makeTitle( NS_MEDIA, $fileName )
+		);
 	}
 
 	/**
 	 * @dataProvider indexFileProvider
 	 */
-	public function testGetForIndexPage( ProofreadIndexPage $index, File $file, FileProvider $fileProvider ) {
+	public function testGetForIndexPage(
+		ProofreadIndexPage $index, File $file, FileProvider $fileProvider
+	) {
 		$this->assertEquals( $file, $fileProvider->getForIndexPage( $index ) );
 	}
 
@@ -44,7 +48,9 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 * @expectedException \ProofreadPage\FileNotFoundException
 	 * @dataProvider indexFileNotFoundProvider
 	 */
-	public function testGetForIndexPageWithFileNotFound( ProofreadIndexPage $index, FileProvider $fileProvider ) {
+	public function testGetForIndexPageWithFileNotFound(
+		ProofreadIndexPage $index, FileProvider $fileProvider
+	) {
 		$fileProvider->getForIndexPage( $index );
 	}
 
@@ -69,7 +75,9 @@ class FileProviderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider pageFileProvider
 	 */
-	public function testGetForPagePage( ProofreadPagePage $page, File $file, FileProvider $fileProvider ) {
+	public function testGetForPagePage(
+		ProofreadPagePage $page, File $file, FileProvider $fileProvider
+	) {
 		$this->assertEquals( $file, $fileProvider->getForPagePage( $page ) );
 	}
 
@@ -86,7 +94,9 @@ class FileProviderTest extends ProofreadPageTestCase {
 				$fileProvider
 			],
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/djvu/1' ) ),
+				ProofreadPagePage::newFromTitle(
+					Title::makeTitle( 250, 'LoremIpsum.djvu/djvu/1' )
+				),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
@@ -107,7 +117,9 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 * @expectedException \ProofreadPage\FileNotFoundException
 	 * @dataProvider pageFileNotFoundProvider
 	 */
-	public function testGetForPagePageWithFileNotFound( ProofreadPagePage $page, FileProvider $fileProvider ) {
+	public function testGetForPagePageWithFileNotFound(
+		ProofreadPagePage $page, FileProvider $fileProvider
+	) {
 		$fileProvider->getForPagePage( $page );
 	}
 

@@ -41,7 +41,9 @@ class IndexContentTest extends ProofreadPageTestCase {
 
 	public function testGetContentHandler() {
 		$content = new IndexContent( [] );
-		$this->assertEquals( CONTENT_MODEL_PROOFREAD_INDEX, $content->getContentHandler()->getModelID() );
+		$this->assertEquals(
+			CONTENT_MODEL_PROOFREAD_INDEX, $content->getContentHandler()->getModelID()
+		);
 	}
 
 	public function testCopy() {
@@ -57,8 +59,14 @@ class IndexContentTest extends ProofreadPageTestCase {
 				true
 			],
 			[
-				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ), 'bar' => new WikitextContent( 'foo' ) ] ),
-				new IndexContent( [ 'bar' => new WikitextContent( 'foo' ), 'foo' => new WikitextContent( 'bar' ) ] ),
+				new IndexContent( [
+					'foo' => new WikitextContent( 'bar' ),
+					'bar' => new WikitextContent( 'foo' )
+				] ),
+				new IndexContent( [
+					'bar' => new WikitextContent( 'foo' ),
+					'foo' => new WikitextContent( 'bar' )
+				] ),
 				true
 			],
 			[
@@ -88,7 +96,10 @@ class IndexContentTest extends ProofreadPageTestCase {
 
 	public function testGetWikitextForTransclusion() {
 		$content = new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] );
-		return $this->assertEquals( "{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}", $content->getWikitextForTransclusion() );
+		return $this->assertEquals(
+			"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}",
+			$content->getWikitextForTransclusion()
+		);
 	}
 
 	public function getTextForSummaryProvider() {
@@ -112,7 +123,11 @@ class IndexContentTest extends ProofreadPageTestCase {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'Hello ~~~' ) ] ),
-				new IndexContent( [ 'foo' => new WikitextContent( 'Hello [[Special:Contributions/127.0.0.1|127.0.0.1]]' ) ] )
+				new IndexContent( [
+					'foo' => new WikitextContent(
+						'Hello [[Special:Contributions/127.0.0.1|127.0.0.1]]'
+					)
+				] )
 			],
 		];
 	}
@@ -123,9 +138,13 @@ class IndexContentTest extends ProofreadPageTestCase {
 	public function testPreSaveTransform( IndexContent $content, IndexContent $expectedContent ) {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang(
+			$this->requestContext->getUser(), $wgContLang
+		);
 
-		$content = $content->preSaveTransform( $this->requestContext->getTitle(), $this->requestContext->getUser(), $options );
+		$content = $content->preSaveTransform(
+			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
+		);
 
 		$this->assertEquals( $expectedContent, $content );
 	}
@@ -137,7 +156,9 @@ class IndexContentTest extends ProofreadPageTestCase {
 				new IndexContent( [ 'foo' => new WikitextContent( 'hello this is ~~~' ) ] )
 			],
 			[
-				new IndexContent( [ 'foo' => new WikitextContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>' ) ] ),
+				new IndexContent( [ 'foo' => new WikitextContent(
+					'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>'
+				) ] ),
 				new IndexContent( [ 'foo' => new WikitextContent( 'hello \'\'this\'\' is bar' ) ] )
 			],
 		];
@@ -149,7 +170,9 @@ class IndexContentTest extends ProofreadPageTestCase {
 	public function testPreloadTransform( IndexContent $content, IndexContent $expectedContent ) {
 		global $wgContLang;
 
-		$options = ParserOptions::newFromUserAndLang( $this->requestContext->getUser(), $wgContLang );
+		$options = ParserOptions::newFromUserAndLang(
+			$this->requestContext->getUser(), $wgContLang
+		);
 
 		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );
 
