@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hitaypayan",
-			"Akamycoco"
+			"Akamycoco",
+			"Translatealcd"
 		]
 	},
 	"nstab-page": "Qutux qutux gnyahan",
@@ -46,6 +47,7 @@
 	"proofreadpage_quality4_message": "Wayal naha' sinhzyazyun lquw binrwan na gnyahan llpgan qaniy",
 	"proofreadpage_index_status": "Birwan naha’ ka hhkangi’ sa binkgan naha’ biru’",
 	"proofreadpage_index_size": "Banggo’ na qutux qutux llpgan",
+	"proofreadpage_specialpage_label_orderby": "zyuzyo’：",
 	"proofreadpage_specialpage_label_key": "Hhkangi’:",
 	"proofreadpage_specialpage_label_sortascending": "Pkkrawn mkuw tay bbawiq",
 	"proofreadpage_alphabeticalorder": "Spgluw sa puqing na kay paybkuw sa gaga’ na paybkuw",
