@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Ibrahim",
-			"AryanSogd"
+			"AryanSogd",
+			"ToJack"
 		]
 	},
 	"proofreadpage_desc": "Имкони муқоисаи осони матн бо нусхаи аслии пӯйишшударо фароҳам меоварад",
 	"proofreadpage_image": "акс",
-	"proofreadpage_index": "Индекс",
+	"proofreadpage_index": "индекс",
 	"proofreadpage_nextpage": "Саҳифаи баъдӣ",
 	"proofreadpage_prevpage": "Саҳифаи қаблӣ",
 	"proofreadpage_header": "Унвон (noinclude):",
