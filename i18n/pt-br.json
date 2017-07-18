@@ -72,9 +72,9 @@
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Outros",
 	"proofreadpage-button-toggle-visibility-label": "Mostrar/ocultar o topo e o rodapé desta página",
-	"proofreadpage-button-zoom-out-label": "Afastar",
+	"proofreadpage-button-zoom-out-label": "Diminuir o zoom",
 	"proofreadpage-button-reset-zoom-label": "Tamanho original",
-	"proofreadpage-button-zoom-in-label": "Aproximar",
+	"proofreadpage-button-zoom-in-label": "Aumentar o zoom",
 	"proofreadpage-button-toggle-layout-label": "Disposição vertical ou horizontal",
 	"proofreadpage-preferences-showheaders-label": "Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar layout horizontal ao editar o espaço nominal {{ns:page}}",
@@ -86,5 +86,7 @@
 	"content-model-proofread-page": "Página do livro",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páginas",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sim",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Não"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Não",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualidade de revisão",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualidade de revisão"
 }
