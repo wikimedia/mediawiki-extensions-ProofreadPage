@@ -84,6 +84,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "O schema $1 não foi encontrado.",
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"content-model-proofread-page": "Página do livro",
+	"content-model-proofread-index": "Índice do livro",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páginas",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sim",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Não",
