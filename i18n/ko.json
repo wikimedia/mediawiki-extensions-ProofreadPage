@@ -44,7 +44,7 @@
 	"proofreadpage_nextpage": "다음 페이지",
 	"proofreadpage_prevpage": "이전 페이지",
 	"proofreadpage_header": "머리말 (문서에서 제외됨):",
-	"proofreadpage_body": "페이지 본문 (문서에 포함됨):",
+	"proofreadpage_body": "페이지 본문 (문서에 끼워넣음):",
 	"proofreadpage_footer": "꼬리말 (문서에서 제외됨):",
 	"proofreadpage_toggleheaders": "끼워넣지 않을 부분의 보이기 여부 선택",
 	"proofreadpage_quality0_category": "비었음",
