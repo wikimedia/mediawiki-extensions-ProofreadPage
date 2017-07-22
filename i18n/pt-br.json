@@ -88,6 +88,7 @@
 	"proofreadpage-disambiguationspage": "Template:disambig",
 	"content-model-proofread-page": "Página do livro",
 	"content-model-proofread-index": "Índice do livro",
+	"apihelp-query+proofreadinfo-example-1": "Retornar a informação padrão.",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Seleções de página",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páginas",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusão de $1",
