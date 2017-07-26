@@ -312,20 +312,20 @@ class ProofreadPage {
 		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table
-		if ( $title->inNamespace( ProofreadPage::getIndexNamespaceId() ) ) {
+		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			// Move this part to EditProofreadIndexPage
-			ProofreadPage::updatePrIndex( $article );
+			self::updatePrIndex( $article );
 			return true;
 		}
 
 		// return if it is not a page
-		if ( !$title->inNamespace( ProofreadPage::getPageNamespaceId() ) ) {
+		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
 
 		/* check if there is an index */
 		if ( !isset( $title->prpIndexPage ) ) {
-			ProofreadPage::loadIndex( $title );
+			self::loadIndex( $title );
 		}
 		if ( $title->prpIndexPage === null ) {
 			return true;

@@ -200,7 +200,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetLinksToPageNamespace() {
-		$page = ProofreadIndexPageTest::newIndexPage(
+		$page = self::newIndexPage(
 			'Test',
 			"{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]" .
 				"\n|Author=[[Author:Me]]\n}}"
