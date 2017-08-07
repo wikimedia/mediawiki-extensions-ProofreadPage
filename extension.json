@@ -53,6 +53,7 @@
 		"ProofreadPage\\Index\\IndexContent": "includes/index/IndexContent.php",
 		"ProofreadPage\\Index\\IndexRedirectContent": "includes/index/IndexRedirectContent.php",
 		"ProofreadPage\\Index\\IndexContentHandler": "includes/index/IndexContentHandler.php",
+		"ProofreadPage\\Index\\IndexDifferenceEngine": "includes/index/IndexDifferenceEngine.php",
 		"ProofreadPage\\Index\\IndexEditAction": "includes/index/IndexEditAction.php",
 		"ProofreadPage\\Index\\IndexSubmitAction": "includes/index/IndexSubmitAction.php",
 		"ProofreadPage\\Index\\EditIndexPage": "includes/index/EditIndexPage.php",

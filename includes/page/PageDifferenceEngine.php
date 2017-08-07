@@ -17,7 +17,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 	/**
 	 * @var DiffFormatterUtils
 	 */
-	protected $diffFormatterUtils;
+	private $diffFormatterUtils;
 
 	/**
 	 * @see DifferenceEngine::__construct
@@ -56,7 +56,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 	 * @param PageLevel $new
 	 * @return string
 	 */
-	protected function createLevelDiffs( PageLevel $old, PageLevel $new ) {
+	private function createLevelDiffs( PageLevel $old, PageLevel $new ) {
 		if ( $old->equals( $new ) ) {
 			return '';
 		}
@@ -82,7 +82,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 	 * @param string $headerMsg the message to use for header
 	 * @return string
 	 */
-	protected function createTextDiffOutput( TextContent $old, TextContent $new, $headerMsg ) {
+	private function createTextDiffOutput( TextContent $old, TextContent $new, $headerMsg ) {
 		$diff = parent::generateContentDiffBody( $old, $new );
 		if ( $diff === '' ) {
 			return '';
