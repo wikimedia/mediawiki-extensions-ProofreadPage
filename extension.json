@@ -74,6 +74,7 @@
 		"ProofreadPage\\Page\\PageSubmitAction": "includes/page/PageSubmitAction.php",
 		"ProofreadPage\\Page\\PageViewAction": "includes/page/PageViewAction.php",
 		"ProofreadPage\\Page\\PageDifferenceEngine": "includes/page/PageDifferenceEngine.php",
+		"ProofreadPage\\Page\\PageDisplayHandler": "includes/page/PageDisplayHandler.php",
 		"ProofreadPage\\Parser\\ParserEntryPoint": "includes/Parser/ParserEntryPoint.php",
 		"ProofreadPage\\Parser\\TagParser": "includes/Parser/TagParser.php",
 		"ProofreadPage\\Parser\\PagelistTagParser": "includes/Parser/PagelistTagParser.php",

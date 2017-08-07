@@ -19,12 +19,17 @@ class EditPagePage extends EditPage {
 	/**
 	 * @var ProofreadPagePage
 	 */
-	protected $pagePage;
+	private $pagePage;
 
 	/**
 	 * @var PageContentBuilder
 	 */
-	protected $pageContentBuilder;
+	private $pageContentBuilder;
+
+	/**
+	 * @var PageDisplayHandler
+	 */
+	private $pageDisplayHandler;
 
 	/**
 	 * @param Article $article
@@ -37,12 +42,7 @@ class EditPagePage extends EditPage {
 
 		$this->pagePage = $pagePage;
 		$this->pageContentBuilder = new PageContentBuilder( $this->context, $context );
-
-		if ( !$this->isSupportedContentModel( $this->contentModel ) ) {
-			throw new MWException(
-				"The content model {$this->contentModel} is not supported"
-			);
-		}
+		$this->pageDisplayHandler = new PageDisplayHandler( $context );
 	}
 
 	/**
@@ -78,7 +78,7 @@ class EditPagePage extends EditPage {
 		$out = $this->context->getOutput();
 
 		// custom CSS for preview
-		$css = $this->pagePage->getCustomCss();
+		$css = $this->pageDisplayHandler->getCustomCss( $this->pagePage );
 		if ( $css !== '' ) {
 			$out->addInlineStyle( $css );
 		}
@@ -88,9 +88,10 @@ class EditPagePage extends EditPage {
 			$inputAttributes['readonly'] = '';
 		}
 
+		/** @var PageContent $content */
 		$content = $this->toEditContent( $this->textbox1 );
 
-		$out->addHTML( $this->pagePage->getPageContainerBegin() );
+		$out->addHTML( $this->pageDisplayHandler->buildPageContainerBegin() );
 		$this->showEditArea(
 			'wpHeaderTextbox',
 			'prp-page-edit-header',
@@ -113,7 +114,7 @@ class EditPagePage extends EditPage {
 			$inputAttributes + [ 'rows' => '2', 'tabindex' => '1' ]
 		);
 		// the 3 textarea tabindex are set to 1 because summary tabindex is 1 too
-		$out->addHTML( $this->pagePage->getPageContainerEnd() );
+		$out->addHTML( $this->pageDisplayHandler->buildPageContainerEnd( $this->pagePage ) );
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
@@ -198,6 +199,7 @@ class EditPagePage extends EditPage {
 	 * @see EditPage::importContentFormData
 	 */
 	protected function importContentFormData( &$request ) {
+		/** @var PageContent $currentContent */
 		$currentContent = $this->getCurrentContent();
 
 		return $this->pageContentBuilder->buildContentFromInput(

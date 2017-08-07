@@ -28,11 +28,6 @@ use ProofreadPage\FileNotFoundException;
 class ProofreadPagePage {
 
 	/**
-	 * @var integer default width for scan image
-	 */
-	const DEFAULT_IMAGE_WIDTH = 1024;
-
-	/**
 	 * @var Title
 	 */
 	protected $title;
@@ -157,115 +152,5 @@ class ProofreadPagePage {
 			}
 		}
 		return null;
-	}
-
-	/**
-	 * @deprecated use FileProvider::getForPagePage
-	 *
-	 * Return image of the page if it exist or false.
-	 * @return File|false
-	 */
-	public function getImage() {
-		try {
-			return Context::getDefaultContext()->getFileProvider()->getForPagePage( $this );
-		} catch ( FileNotFoundException $e ) {
-			return false;
-		}
-	}
-
-	/**
-	 * Return the scan image width for display
-	 * @return integer
-	 */
-	public function getImageWidth() {
-		$index = $this->getIndex();
-		if ( $index ) {
-			$width = $index->getIndexEntry( 'width' );
-			if ( $width !== null ) {
-				$width = $width->getStringValue();
-				if ( is_numeric( $width ) ) {
-					return $width;
-				}
-			}
-		}
-
-		return self::DEFAULT_IMAGE_WIDTH;
-	}
-
-	/**
-	 * Return custom CSS for the page
-	 * Is protected against XSS
-	 * @return string
-	 */
-	public function getCustomCss() {
-		$index = $this->getIndex();
-		if ( $index ) {
-			$css = $index->getIndexEntry( 'css' );
-			if ( $css !== null ) {
-				return Sanitizer::escapeHtmlAllowEntities(
-					Sanitizer::checkCss( $css->getStringValue() )
-				);
-			}
-		}
-
-		return '';
-	}
-
-	/**
-	 * Return HTML for the image
-	 * @param array $options
-	 * @return string|null
-	 */
-	public function getImageHtml( $options ) {
-		$image = $this->getImage();
-		if ( !$image || !$image->exists() ) {
-			return null;
-		}
-		$width = $image->getWidth();
-		if ( isset( $options['max-width'] ) && $width > $options['max-width'] ) {
-			$width = $options['max-width'];
-		}
-		$transformAttributes = [
-			'width' => $width
-		];
-
-		if ( $image->isMultipage() ) {
-			$pageNumber = $this->getPageNumber();
-			if ( $pageNumber !== null ) {
-				$transformAttributes['page'] = $pageNumber;
-			}
-		}
-		$handler = $image->getHandler();
-		if ( !$handler || !$handler->normaliseParams( $image, $transformAttributes ) ) {
-			return null;
-		}
-		$thumbnail = $image->transform( $transformAttributes );
-		if ( !$thumbnail ) {
-			return null;
-		}
-		return $thumbnail->toHtml( $options );
-	}
-
-	/**
-	 * Return the part of the page container that is before page content
-	 * @return string
-	 */
-	public function getPageContainerBegin() {
-		return
-			Html::openElement( 'div', [ 'class' => 'prp-page-container' ] ) .
-			Html::openElement( 'div', [ 'class' => 'prp-page-content' ] );
-	}
-
-	/**
-	 * Return the part of the page container that after page cnotent
-	 * @return string
-	 */
-	public function getPageContainerEnd() {
-		return
-			Html::closeElement( 'div' ) .
-			Html::openElement( 'div', [ 'class' => 'prp-page-image' ] ) .
-			$this->getImageHtml( [ 'max-width' => $this->getImageWidth() ] ) .
-			Html::closeElement( 'div' ) .
-			Html::closeElement( 'div' );
 	}
 }

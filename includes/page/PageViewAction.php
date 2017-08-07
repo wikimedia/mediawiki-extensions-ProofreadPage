@@ -38,12 +38,12 @@ class PageViewAction extends ViewAction {
 			return;
 		}
 		$page = ProofreadPagePage::newFromTitle( $wikiPage->getTitle() );
-		$out = $this->getOutput();
+		$pageDisplayHandler = new PageDisplayHandler( Context::getDefaultContext() );
 
 		// render HTML
-		$out->addHTML( $page->getPageContainerBegin() );
+		$out->addHTML( $pageDisplayHandler->buildPageContainerBegin() );
 		$this->page->view();
-		$out->addHTML( $page->getPageContainerEnd() );
+		$out->addHTML( $pageDisplayHandler->buildPageContainerEnd( $page ) );
 
 		// add modules
 		$out->addModules( 'ext.proofreadpage.ve.pageTarget.init' );
@@ -53,7 +53,7 @@ class PageViewAction extends ViewAction {
 		] );
 
 		// custom CSS
-		$css = $page->getCustomCss();
+		$css = $pageDisplayHandler->getCustomCss( $page );
 		if ( $css !== '' ) {
 			$out->addInlineStyle( $css );
 		}
