@@ -4,6 +4,7 @@ namespace ProofreadPage\Parser;
 
 use OutOfBoundsException;
 use ProofreadIndexPage;
+use ProofreadPage\Context;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPageDbConnector;
 use ProofreadPagePage;
@@ -62,6 +63,7 @@ class PagesTagParser extends TagParser {
 			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
 		$indexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
+		$indexContent = $indexPage->getContent();
 		$pagination = $this->context->getPaginationFactory()
 			->getPaginationForIndexPage( $indexPage );
 		$language = $this->parser->getTargetLanguage();
@@ -263,7 +265,7 @@ class PagesTagParser extends TagParser {
 			if ( $header == 'toc' ) {
 				$this->parser->getOutput()->is_toc = true;
 			}
-			$indexLinks = $indexPage->getContent()->getLinksToNamespace(
+			$indexLinks = $indexContent->getLinksToNamespace(
 				NS_MAIN, $indexTitle, true
 			);
 			$pageTitle = $this->parser->getTitle();
@@ -310,7 +312,8 @@ class PagesTagParser extends TagParser {
 			if ( isset( $to_pagenum ) ) {
 				$h_out .= "|to=$to_pagenum";
 			}
-			$attributes = $indexPage->getIndexEntriesForHeader();
+			$attributes = $this->context->getCustomIndexFieldsParser()
+				->parseCustomIndexFieldsForHeader( $indexContent );
 			foreach ( $attributes as $attribute ) {
 				$key = strtolower( $attribute->getKey() );
 				if ( array_key_exists( $key, $args ) ) {

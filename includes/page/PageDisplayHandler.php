@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use Html;
+use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPagePage;
@@ -40,12 +41,15 @@ class PageDisplayHandler {
 	public function getImageWidth( ProofreadPagePage $page ) {
 		$index = $page->getIndex();
 		if ( $index ) {
-			$width = $index->getIndexEntry( 'width' );
-			if ( $width !== null ) {
-				$width = $width->getStringValue();
+			try {
+				$width = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
+					$index->getContent(), 'width'
+				)->getStringValue();
 				if ( is_numeric( $width ) ) {
 					return $width;
 				}
+			} catch ( OutOfBoundsException $e ) {
+				return self::DEFAULT_IMAGE_WIDTH;
 			}
 		}
 		return self::DEFAULT_IMAGE_WIDTH;
@@ -59,15 +63,19 @@ class PageDisplayHandler {
 	 */
 	public function getCustomCss( ProofreadPagePage $page ) {
 		$index = $page->getIndex();
-		if ( $index ) {
-			$css = $index->getIndexEntry( 'css' );
-			if ( $css !== null ) {
-				return Sanitizer::escapeHtmlAllowEntities(
-					Sanitizer::checkCss( $css->getStringValue() )
-				);
-			}
+		if ( !$index ) {
+			return '';
 		}
-		return '';
+		try {
+			$css = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
+				$index->getContent(), 'css'
+			);
+			return Sanitizer::escapeHtmlAllowEntities(
+				Sanitizer::checkCss( $css->getStringValue() )
+			);
+		} catch ( OutOfBoundsException $e ) {
+			return '';
+		}
 	}
 
 	/**

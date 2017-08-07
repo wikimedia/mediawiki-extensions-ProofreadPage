@@ -2,6 +2,7 @@
 
 namespace ProofreadPage;
 
+use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Pagination\PaginationFactory;
 use RepoGroup;
 
@@ -32,14 +33,24 @@ class Context {
 	private $fileProvider;
 
 	/**
+	 * @var CustomIndexFieldsParser
+	 */
+	private $customIndexFieldsParser;
+
+	/**
 	 * @param int $pageNamespaceId
 	 * @param int $indexNamespaceId
 	 * @param FileProvider $fileProvider
+	 * @param CustomIndexFieldsParser $customIndexFieldsParser
 	 */
-	public function __construct( $pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider ) {
+	public function __construct(
+		$pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider,
+		CustomIndexFieldsParser $customIndexFieldsParser
+	) {
 		$this->pageNamespaceId = $pageNamespaceId;
 		$this->indexNamespaceId = $indexNamespaceId;
 		$this->fileProvider = $fileProvider;
+		$this->customIndexFieldsParser = $customIndexFieldsParser;
 	}
 
 	/**
@@ -71,6 +82,13 @@ class Context {
 	}
 
 	/**
+	 * @return CustomIndexFieldsParser
+	 */
+	public function getCustomIndexFieldsParser() {
+		return $this->customIndexFieldsParser;
+	}
+
+	/**
 	 * @param bool $purgeFileProvider
 	 * @return Context
 	 */
@@ -81,7 +99,8 @@ class Context {
 			$defaultContext = new self(
 				ProofreadPageInit::getNamespaceId( 'page' ),
 				ProofreadPageInit::getNamespaceId( 'index' ),
-				new FileProvider( RepoGroup::singleton() )
+				new FileProvider( RepoGroup::singleton() ),
+				new CustomIndexFieldsParser()
 			);
 		}
 		if ( $purgeFileProvider ) {

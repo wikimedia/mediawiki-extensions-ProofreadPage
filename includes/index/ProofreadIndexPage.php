@@ -19,10 +19,7 @@
  * @ingroup ProofreadPage
  */
 
-use ProofreadPage\Context;
-use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Index\IndexContent;
-use ProofreadPage\Pagination\PageList;
 
 /**
  * An index page
@@ -40,19 +37,12 @@ class ProofreadIndexPage {
 	protected $content;
 
 	/**
-	 * @var array configuration array
-	 */
-	protected $config = [];
-
-	/**
 	 * @param Title $title Reference to a Title object.
-	 * @param array $config the configuration array (see ProofreadIndexPage::getDataConfig)
 	 * @param IndexContent|null $content content of the page. Warning: only done for
 	 *   EditProofreadIndexPage use.
 	 */
-	public function __construct( Title $title, $config, IndexContent $content = null ) {
+	public function __construct( Title $title, IndexContent $content = null ) {
 		$this->title = $title;
-		$this->config = $config;
 		$this->content = $content;
 	}
 
@@ -62,7 +52,7 @@ class ProofreadIndexPage {
 	 * @return ProofreadIndexPage
 	 */
 	public static function newFromTitle( Title $title ) {
-		return new self( $title, self::getDataConfig() );
+		return new self( $title );
 	}
 
 	/**
@@ -81,20 +71,6 @@ class ProofreadIndexPage {
 	 */
 	public function equals( ProofreadIndexPage $that ) {
 		return $this->title->equals( $that->getTitle() );
-	}
-
-	/**
-	 * @deprecated use FileProvider::getForIndexPage
-	 *
-	 * Return Scan of the book if it exist or false.
-	 * @return File|false
-	 */
-	public function getImage() {
-		try {
-			return Context::getDefaultContext()->getFileProvider()->getForIndexPage( $this );
-		} catch ( FileNotFoundException $e ) {
-			return false;
-		}
 	}
 
 	/**
@@ -119,141 +95,6 @@ class ProofreadIndexPage {
 	}
 
 	/**
-	 * @return array the configuration
-	 * The configuration is a list of properties like this :
-	 * array(
-	 * 	'ID' => array( //the property id
-	 *		'type' => 'string', //the property type (for compatibility reasons the values have not
-	 *               //to be of this type). Possible values: string, number, page
-	 *		'size' => 1, //for type = string : the size of the form input
-	 *		'default' => '', //the default value
-	 *		'label' => 'ID', //the label of the property
-	 *		'help' => '', //a short help text
-	 *		'values' => null, //an array value => label that list the possible values
-	 *               //(for compatibility reasons the stored values have not to be one of these)
-	 *		'header' => false, //give the content of this property to
-	 *               //Mediawiki:Proofreadpage_header_template as template parameter
-	 *		'hidden' => false //don't show the property in the index pages form. Useful for data
-	 *               //that have always the same value (as language=en for en Wikisource) or are
-	 *               //only set at the <pages> tag level.
-	 *		)
-	 * );
-	 *  NB: The values set are the default values
-	 */
-	public static function getDataConfig() {
-		static $config = null;
-		if ( $config !== null ) {
-			return $config;
-		}
-
-		$data = wfMessage( 'proofreadpage_index_data_config' )->inContentLanguage();
-		if ( $data->exists() &&	$data->plain() != '' ) {
-			$config = FormatJson::decode( $data->plain(), true );
-			if ( $config === null ) {
-				global $wgOut;
-				$wgOut->showErrorPage(
-					'proofreadpage_dataconfig_badformatted',
-					'proofreadpage_dataconfig_badformattedtext'
-				);
-				$config = [];
-			}
-		} else {
-			$attributes = explode( "\n", wfMessage( 'proofreadpage_index_attributes' )
-				->inContentLanguage()->text() );
-			$headerAttributes = explode( ' ', wfMessage( 'proofreadpage_js_attributes' )
-				->inContentLanguage()->text() );
-			$config = [];
-			foreach ( $attributes as $attribute ) {
-				$m = explode( '|', $attribute );
-				$params = [
-					'type' => 'string',
-					'size' => 1,
-					'default' => '',
-					'label' => $m[0],
-					'help' => '',
-					'values' => null,
-					'header' => false
-				];
-
-				if ( $m[0] == 'Header' ) {
-					$params['default'] = wfMessage( 'proofreadpage_default_header' )
-						->inContentLanguage()->plain();
-				}
-				if ( $m[0] == 'Footer' ) {
-					$params['default'] = wfMessage( 'proofreadpage_default_footer' )
-						->inContentLanguage()->plain();
-				}
-				if ( isset( $m[1] ) && $m[1] !== '' ) {
-					$params['label'] = $m[1];
-				}
-				if ( isset( $m[2] ) ) {
-					$params['size'] = intval( $m[2] );
-				}
-				$config[$m[0]] = $params;
-			}
-
-			foreach ( $headerAttributes as $attribute ) {
-				if ( isset( $config[$attribute] ) ) {
-					$config[$attribute]['header'] = true;
-				} else {
-					$config[$attribute] = [
-						'type' => 'string',
-						'size' => 1,
-						'default' => '',
-						'label' => $attribute,
-						'values' => null,
-						'header' => true,
-						'hidden' => true
-					];
-				}
-			}
-		}
-
-		if ( !array_key_exists( 'Header', $config ) ) {
-			$config['Header'] = [
-				'default' => wfMessage( 'proofreadpage_default_header' )
-					->inContentLanguage()->plain(),
-				'header' => true,
-				'hidden' => true
-			];
-		}
-		if ( !array_key_exists( 'Footer', $config ) ) {
-			$config['Footer'] = [
-				'default' => wfMessage( 'proofreadpage_default_footer' )
-					->inContentLanguage()->plain(),
-				'header' => true,
-				'hidden' => true
-			];
-		}
-
-		return $config;
-	}
-
-	/**
-	 * Return metadata from an index page.
-	 * @return array of ProofreadIndexEntry
-	 */
-	public function getIndexEntries() {
-		$contentFields = [];
-		foreach ( $this->getContent()->getFields() as $key => $value ) {
-			$contentFields[strtolower( $key )] = $value;
-		}
-
-		$values = [];
-		foreach ( $this->config as $varName => $property ) {
-			$key = strtolower( $varName );
-			if ( array_key_exists( $key, $contentFields ) ) {
-				$values[$varName] = new ProofreadIndexEntry(
-					$varName, $contentFields[$key]->getNativeData(), $property
-				);
-			} else {
-				$values[$varName] = new ProofreadIndexEntry( $varName, '', $property );
-			}
-		}
-		return $values;
-	}
-
-	/**
 	 * Return mime type of the file linked to the index page
 	 * @return string|null
 	 */
@@ -264,83 +105,5 @@ class ProofreadIndexPage {
 		} else {
 			return null;
 		}
-	}
-
-	/*
-	 * Return metadata from the index page that have to be given to header template.
-	 * @return array of ProofreadIndexEntry
-	 */
-	public function getIndexEntriesForHeader() {
-		$entries = $this->getIndexEntries();
-		$headerEntries = [];
-		foreach ( $entries as $entry ) {
-			if ( $entry->isHeader() ) {
-				$headerEntries[$entry->getKey()] = $entry;
-			}
-		}
-		return $headerEntries;
-	}
-
-	/*
-	 * Return the index entry with the same name or null if it's not found
-	 * Note: the comparison is case insensitive
-	 * @return ProofreadIndexEntry|null
-	 */
-	public function getIndexEntry( $name ) {
-		$name = strtolower( $name );
-		$entries = $this->getIndexEntries();
-		foreach ( $entries as $entry ) {
-			if ( strtolower( $entry->getKey() ) === $name ) {
-				return $entry;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Return the value of an entry as wikitext with variable replaced with index entries and
-	 * $otherParams
-	 * Example: if 'header' entry is 'Page of {{title}} number {{pagenum}}' with
-	 * $otherParams = array( 'pagenum' => 23 )
-	 * the function called for 'header' will returns 'Page page my book number 23'
-	 * @param string $name entry name
-	 * @param array $otherParams associative array other possible values to replace
-	 * @return string|null the value with variables replaced or null if the entry does not exists
-	 */
-	public function getIndexEntryWithVariablesReplacedWithIndexEntries( $name, $otherParams ) {
-		$entry = $this->getIndexEntry( $name );
-		if ( $entry === null ) {
-			return null;
-		}
-
-		// we can't use the parser here because it replace tags like <references /> by strange UIDs
-		$params = $this->getIndexEntriesForHeaderAsTemplateParams() + $otherParams;
-		return preg_replace_callback(
-			'/{\{\{(.*)(\|(.*))?\}\}\}/U',
-			function ( $matches ) use ( $params ) {
-				$paramKey = trim( strtolower( $matches[1] ) );
-				if ( array_key_exists( $paramKey, $params ) ) {
-					return $params[$paramKey];
-				} elseif ( array_key_exists( 3, $matches ) ) {
-					return trim( $matches[3] );
-				} else {
-					return $matches[0];
-				}
-			},
-			$entry->getStringValue()
-		);
-	}
-
-	/**
-	 * Returns the index entries formatted in order to be transcluded in templates
-	 * @return string[]
-	 */
-	protected function getIndexEntriesForHeaderAsTemplateParams() {
-		$indexEntries = $this->getIndexEntriesForHeader();
-		$params = [];
-		foreach ( $indexEntries as $entry ) {
-			$params[strtolower( $entry->getKey() )] = $entry->getStringValue();
-		}
-		return $params;
 	}
 }

@@ -1,4 +1,6 @@
 <?php
+
+use ProofreadPage\Index\CustomIndexField;
 use ProofreadPage\Index\IndexContent;
 
 /**
@@ -6,79 +8,6 @@ use ProofreadPage\Index\IndexContent;
  * @covers ProofreadIndexPage
  */
 class ProofreadIndexPageTest extends ProofreadPageTestCase {
-
-	protected static $config = [
-		'Title' => [
-			'type' => 'string',
-			'size' => 1,
-			'default' => '',
-			'label' => 'Title',
-			'values' => null,
-			'header' => true,
-			'data' => 'title'
-		],
-		'Author' => [
-			'type' => 'page',
-			'size' => 1,
-			'default' => '',
-			'label' => 'Author',
-			'values' => null,
-			'header' => true,
-			'data' => 'author'
-		],
-		'Year' => [
-			'type' => 'number',
-			'size' => 1,
-			'default' => '',
-			'label' => 'Year of publication',
-			'values' => null,
-			'header' => false,
-			'data' => 'year'
-		],
-		'Pages' => [
-			'type' => 'string',
-			'size' => 20,
-			'default' => '',
-			'label' => 'Pages',
-			'values' => null,
-			'header' => false
-		],
-		'Header' => [
-			'type' => 'string',
-			'size' => 10,
-			'default' => 'head',
-			'label' => 'Header',
-			'values' => null,
-			'header' => false
-		],
-		'Footer' => [
-			'default' => '<references />',
-			'header' => true,
-			'hidden' => true
-		],
-		'TOC' => [
-			'type' => 'string',
-			'size' => 1,
-			'default' => '',
-			'label' => 'Table of content',
-			'values' => null,
-			'header' => false
-		],
-		'Comment' => [
-			'header' => true,
-			'hidden' => true
-		],
-		'width' => [
-			'type' => 'number',
-			'label' => 'Image width',
-			'header' => false
-		],
-		'CSS' => [
-			'type' => 'string',
-			'label' => 'CSS',
-			'header' => false
-		],
-	];
 
 	/**
 	 * Constructor of a new ProofreadIndexPage
@@ -94,7 +23,7 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 			$content = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_INDEX )
 				->unserializeContent( $content );
 		}
-		return new ProofreadIndexPage( $title, self::$config, $content );
+		return new ProofreadIndexPage( $title, $content );
 	}
 
 	public function testEquals() {
@@ -113,34 +42,6 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		$this->assertEquals( $title, $page->getTitle() );
 	}
 
-	public function testGetIndexEntries() {
-		$page = self::newIndexPage(
-			'Test.djvu',
-			"{{\n|Title=Test book\n|Author=[[Author:Me]]\n|Year=2012 or 2013\n|Header={{{Title}}}" .
-				"\n|Pages=<pagelist />\n|TOC=* [[Test/Chapter 1|Chapter 1]]" .
-				"\n* [[Test/Chapter 2|Chapter 2]]\n}}"
-		);
-		$entries = [
-			'Title' => new ProofreadIndexEntry( 'Title', 'Test book', self::$config['Title'] ),
-			'Author' => new ProofreadIndexEntry(
-				'Author', '[[Author:Me]]', self::$config['Author']
-			),
-			'Year' => new ProofreadIndexEntry( 'Year', '2012 or 2013', self::$config['Year'] ),
-			'Pages' => new ProofreadIndexEntry( 'Pages', '<pagelist />', self::$config['Pages'] ),
-			'Header' => new ProofreadIndexEntry( 'Header', '{{{Title}}}', self::$config['Header'] ),
-			'Footer' => new ProofreadIndexEntry( 'Footer', '', self::$config['Footer'] ),
-			'TOC' => new ProofreadIndexEntry(
-				'TOC',
-				"* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]",
-				self::$config['TOC']
-			),
-			'Comment' => new ProofreadIndexEntry( 'Comment', '', self::$config['Comment'] ),
-			'width' => new ProofreadIndexEntry( 'width', '', self::$config['width'] ),
-			'CSS' => new ProofreadIndexEntry( 'CSS', '', self::$config['CSS'] )
-		];
-		$this->assertEquals( $entries, $page->getIndexEntries() );
-	}
-
 	public function mimeTypesProvider() {
 		return [
 			[ 'image/vnd.djvu', 'Test.djvu' ],
@@ -154,100 +55,5 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 	 */
 	public function testGetMimeType( $mime, $name ) {
 		$this->assertEquals( $mime, self::newIndexPage( $name )->getMimeType() );
-	}
-
-	public function testGetIndexEntriesForHeader() {
-		$page = self::newIndexPage(
-			'Test.djvu',
-			"{{\n|Title=Test book\n|Author=[[Author:Me]]\n|Year=2012 or 2013\n|Pages=<pagelist />" .
-				"\n|TOC=* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]\n}}"
-		);
-		$entries = [
-			'Title' => new ProofreadIndexEntry( 'Title', 'Test book', self::$config['Title'] ),
-			'Author' => new ProofreadIndexEntry(
-				'Author', '[[Author:Me]]', self::$config['Author']
-			),
-			'Comment' => new ProofreadIndexEntry( 'Comment', '', self::$config['Comment'] ),
-			'Header' => new ProofreadIndexEntry( 'Header', '', self::$config['Header'] ),
-			'Footer' => new ProofreadIndexEntry( 'Footer', '', self::$config['Footer'] ),
-			'width' => new ProofreadIndexEntry( 'width', '', self::$config['width'] ),
-			'CSS' => new ProofreadIndexEntry( 'CSS', '', self::$config['CSS'] )
-		];
-		$this->assertEquals( $entries, $page->getIndexEntriesForHeader() );
-	}
-
-	public function testGetIndexEntry() {
-		$page = self::newIndexPage( 'Test.djvu', "{{\n|Year=2012 or 2013\n}}" );
-
-		$entry = new ProofreadIndexEntry( 'Year', '2012 or 2013', self::$config['Year'] );
-		$this->assertEquals( $entry, $page->getIndexEntry( 'year' ) );
-
-		$this->assertNull( $page->getIndexEntry( 'years' ) );
-	}
-
-	public function replaceVariablesWithIndexEntriesProvider() {
-		return [
-			[
-				"{{\n|Title=Test book\n|Header={{{title}}}\n}}",
-				'Test book',
-				'header',
-				[]
-			],
-			[
-				"{{\n|Title=Test book\n|Header={{{ Pagenum }}}\n}}",
-				'22',
-				'header',
-				[ 'pagenum' => 22 ]
-			],
-			[
-				"{{\n|Title=Test book\n|Header={{{authors}}}\n}}",
-				'{{{authors}}}',
-				'header',
-				[]
-			],
-			[
-				"{{\n|Title=Test book\n|Header={{{authors |a}}}\n}}",
-				'a',
-				'header',
-				[]
-			],
-			[
-				"{{\n|Title=Test book\n|Header={{template|a=b}}\n}}",
-				'{{template|a=b}}',
-				'header',
-				[]
-			],
-			[
-				"{{\n|Title=Test book\n|Header={{template|a={{{Title |}}}}}\n}}",
-				'{{template|a=Test book}}',
-				'header',
-				[]
-			],
-			[
-				"{{\n|Title=Test book\n|Header=<references/>\n}}",
-				'<references/>',
-				'header',
-				[]
-			],
-			[
-				"{{\n|Title=Test book\n|Header={{{Pagenum}}}\n}}",
-				null,
-				'headers',
-				[]
-			],
-		];
-	}
-
-	/**
-	 * @dataProvider replaceVariablesWithIndexEntriesProvider
-	 */
-	public function testReplaceVariablesWithIndexEntries(
-		$pageContent, $result, $entry, $extraparams
-	) {
-		$page = self::newIndexPage( 'Test.djvu', $pageContent );
-		$this->assertEquals(
-			$result,
-			$page->getIndexEntryWithVariablesReplacedWithIndexEntries( $entry, $extraparams )
-		);
 	}
 }

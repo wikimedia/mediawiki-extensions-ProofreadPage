@@ -3,11 +3,85 @@
 use ProofreadPage\Context;
 use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
+use ProofreadPage\Index\CustomIndexFieldsParser;
 
 /**
  * @group ProofreadPage
  */
 abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
+
+	protected static $customIndexFieldsConfiguration = [
+		'Title' => [
+			'type' => 'string',
+			'size' => 1,
+			'default' => '',
+			'label' => 'Title',
+			'values' => null,
+			'header' => true,
+			'data' => 'title'
+		],
+		'Author' => [
+			'type' => 'page',
+			'size' => 1,
+			'default' => '',
+			'label' => 'Author',
+			'values' => null,
+			'header' => true,
+			'data' => 'author'
+		],
+		'Year' => [
+			'type' => 'number',
+			'size' => 1,
+			'default' => '',
+			'label' => 'Year of publication',
+			'values' => null,
+			'header' => false,
+			'data' => 'year'
+		],
+		'Pages' => [
+			'type' => 'string',
+			'size' => 20,
+			'default' => '',
+			'label' => 'Pages',
+			'values' => null,
+			'header' => false
+		],
+		'Header' => [
+			'type' => 'string',
+			'size' => 10,
+			'default' => 'head',
+			'label' => 'Header',
+			'values' => null,
+			'header' => false
+		],
+		'Footer' => [
+			'default' => '<references />',
+			'header' => true,
+			'hidden' => true
+		],
+		'TOC' => [
+			'type' => 'string',
+			'size' => 1,
+			'default' => '',
+			'label' => 'Table of content',
+			'values' => null,
+			'header' => false
+		],
+		'Comment' => [
+			'header' => true,
+			'hidden' => true
+		],
+		'width' => [
+			'type' => 'number',
+			'label' => 'Image width',
+			'header' => false
+		],
+		'CSS' => [
+			'type' => 'string',
+			'label' => 'CSS',
+			'header' => false
+		],
+	];
 
 	/**
 	 * @var Context
@@ -33,7 +107,8 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			$this->context = new Context(
 				250,
 				252,
-				$this->getFileProvider()
+				$this->getFileProvider(),
+				new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration )
 			);
 		}
 

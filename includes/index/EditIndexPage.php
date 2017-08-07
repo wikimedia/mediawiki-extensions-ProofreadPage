@@ -2,16 +2,13 @@
 
 namespace ProofreadPage\Index;
 
-use ContentHandler;
+use Article;
 use EditPage;
-use OOUI\ButtonWidget;
+use MWException;
 use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
-use OOUI\HtmlSnippet;
 use OOUI\TextInputWidget;
-use ProofreadIndexEntry;
-use ProofreadIndexPage;
 use ProofreadPage\Context;
 use Status;
 use WikitextContent;
@@ -20,6 +17,17 @@ use WikitextContent;
  * @licence GNU GPL v2+
  */
 class EditIndexPage extends EditPage {
+
+	/**
+	 * @var Context
+	 */
+	private $extContext;
+
+	public function __construct( Article $article ) {
+		parent::__construct( $article );
+
+		$this->extContext = Context::getDefaultContext();
+	}
 
 	/**
 	 * @see EditPage::isSectionEditSupported
@@ -47,13 +55,18 @@ class EditIndexPage extends EditPage {
 			$inputOptions['readOnly'] = '';
 		}
 
+		$content = $this->toEditContent( $this->textbox1 );
+		if ( !( $content instanceof IndexContent ) ) {
+			throw new MWException( 'EditIndexPage is only able to display a form for IndexContent' );
+		}
+
 		$fields = [];
 		$i = 10;
-		/** @var ProofreadIndexEntry $entry */
-		foreach ( $this->getActualContent()->getIndexEntries() as $entry ) {
+		$entries = $this->extContext->getCustomIndexFieldsParser()->parseCustomIndexFields( $content );
+		foreach ( $entries as $entry ) {
 			$inputOptions['tabIndex'] = $i;
 			if ( !$entry->isHidden() ) {
-				$fields[] = $this->buildEntry( $entry, $inputOptions );
+				$fields[] = $this->buildField( $entry, $inputOptions );
 			}
 			$i++;
 		}
@@ -66,15 +79,15 @@ class EditIndexPage extends EditPage {
 		$out->addModules( 'ext.proofreadpage.index' );
 	}
 
-	private function buildEntry( ProofreadIndexEntry $entry, $inputOptions ) {
-		$key = $this->getFieldNameForEntry( $entry->getKey() );
-		$val = $this->safeUnicodeOutput( $entry->getStringValue() );
+	private function buildField( CustomIndexField $field, $inputOptions ) {
+		$key = $this->getFieldNameForEntry( $field->getKey() );
+		$val = $this->safeUnicodeOutput( $field->getStringValue() );
 
 		$inputOptions['name'] = $key;
 		$inputOptions['value'] = $val;
 		$inputOptions['inputId'] = $key;
 
-		$values = $entry->getPossibleValues();
+		$values = $field->getPossibleValues();
 		if ( $values !== null ) {
 			$options = [];
 			foreach ( $values as $data => $label ) {
@@ -87,22 +100,22 @@ class EditIndexPage extends EditPage {
 				'options' => $options
 			] );
 		} else {
-			$inputAttributes['classes'][] = 'prp-input-' . $entry->getType();
+			$inputAttributes['classes'][] = 'prp-input-' . $field->getType();
 			$input = new TextInputWidget( $inputOptions + [
-				'type' => $entry->getType() === 'number' && ( $val === '' || is_numeric( $val ) )
+				'type' => $field->getType() === 'number' && ( $val === '' || is_numeric( $val ) )
 					? 'number'
 					: 'text',
-				'multiline' => $entry->getSize() > 1,
-				'rows' => $entry->getSize()
+				'multiline' => $field->getSize() > 1,
+				'rows' => $field->getSize()
 			] );
 		}
 
 		$fieldLayoutArgs = [
-			'label' => $entry->getLabel()
+			'label' => $field->getLabel()
 		];
-		if ( $entry->getHelp() ) {
+		if ( $field->getHelp() ) {
 			$fieldLayoutArgs += [
-				'help' => $entry->getHelp(),
+				'help' => $field->getHelp(),
 				'infusable' => true,
 				'classes' => [ 'prp-fieldLayout-help' ]
 			];
@@ -129,12 +142,12 @@ class EditIndexPage extends EditPage {
 			return $this->textbox1;
 		}
 
-		$config = ProofreadIndexPage::getDataConfig();
+		$config = $this->extContext->getCustomIndexFieldsParser()->getCustomIndexFieldsConfiguration();
 		$fields = [];
 		foreach ( $config as $key => $params ) {
 			$field = $this->getFieldNameForEntry( $key );
 			$value = $this->cleanInputtedContent( $this->safeUnicodeInput( $request, $field ) );
-			$entry = new ProofreadIndexEntry( $key, $value, $params );
+			$entry = new CustomIndexField( $key, $value, $params );
 			if ( !$entry->isHidden() ) {
 				$fields[$entry->getKey()] = new WikitextContent( $entry->getStringValue() );
 			}
@@ -183,7 +196,7 @@ class EditIndexPage extends EditPage {
 		if ( $content instanceof IndexContent ) {
 			// Get list of pages titles
 			$links = $content->getLinksToNamespace(
-				Context::getDefaultContext()->getPageNamespaceId(), $this->getTitle()
+				$this->extContext->getPageNamespaceId(), $this->getTitle()
 			);
 			$linksTitle = [];
 			foreach ( $links as $link ) {
@@ -204,13 +217,5 @@ class EditIndexPage extends EditPage {
 		}
 
 		return parent::internalAttemptSave( $result, $bot );
-	}
-
-	private function getActualContent() {
-		return new ProofreadIndexPage(
-			$this->mTitle,
-			ProofreadIndexPage::getDataConfig(),
-			$this->toEditContent( $this->textbox1 )
-		);
 	}
 }

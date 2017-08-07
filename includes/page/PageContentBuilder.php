@@ -58,11 +58,12 @@ class PageContentBuilder {
 			} catch ( OutOfBoundsException $e ) {
 			} // should not happen
 
-			$header = $index->getIndexEntryWithVariablesReplacedWithIndexEntries(
-				'header', $params
-			);
-			$footer = $index->getIndexEntryWithVariablesReplacedWithIndexEntries(
-				'footer', $params
+			$indexFieldsParser = $this->context->getCustomIndexFieldsParser();
+			$header = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+					$index->getContent(), 'header', $params
+				);
+			$footer = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+				$index->getContent(), 'footer', $params
 			);
 		} else {
 			$header = $this->contextSource->msg( 'proofreadpage_default_header' )
