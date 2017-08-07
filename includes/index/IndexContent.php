@@ -4,7 +4,11 @@ namespace ProofreadPage\Index;
 
 use Content;
 use MagicWord;
+use MalformedTitleException;
 use ParserOptions;
+use ProofreadPage\Link;
+use ProofreadPage\Pagination\PageList;
+use Sanitizer;
 use TextContent;
 use Title;
 use User;
@@ -173,5 +177,78 @@ class IndexContent extends TextContent {
 	) {
 		$wikitextContent = new WikitextContent( $this->serialize( CONTENT_FORMAT_WIKITEXT ) );
 		return $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
+	}
+
+	/**
+	 * @return PageList|null
+	 */
+	public function getPagelistTagContent() {
+		$tagParameters = null;
+		foreach ( $this->fields as $field ) {
+			preg_match_all( '/<pagelist([^<]*?)\/>/is',
+				$field->serialize( CONTENT_FORMAT_WIKITEXT ), $m, PREG_PATTERN_ORDER
+			);
+			if ( $m[1] ) {
+				if ( $tagParameters === null ) {
+					$tagParameters = $m[1];
+				} else {
+					$tagParameters = array_merge( $tagParameters, $m[1] );
+				}
+			}
+		}
+		if ( $tagParameters === null ) {
+			return $tagParameters;
+		}
+
+		return new PageList( Sanitizer::decodeTagAttributes( implode( $tagParameters ) ) );
+	}
+
+	/**
+	 * Returns all links in a given namespace
+	 *
+	 * @param integer $namespace the default namespace id
+	 * @param Title $title the Index: page title
+	 * @param bool $withPrepossessing apply preprocessor before looking for links
+	 * @return Link[]
+	 */
+	public function getLinksToNamespace(
+		$namespace, Title $title = null, $withPrepossessing = false
+	) {
+		$links = [];
+		foreach ( $this->fields as $field ) {
+			$wikitext = $field->serialize( CONTENT_FORMAT_WIKITEXT );
+			if ( $withPrepossessing ) {
+				/** @var IndexContentHandler $contentHandler */
+				$contentHandler = $this->getContentHandler();
+				$wikitext = $contentHandler->getParser()->preprocess(
+					$wikitext, $title, new ParserOptions()
+				);
+			}
+			$links = array_merge(
+				$links, $this->getLinksToNamespaceFromWikitext( $wikitext, $namespace )
+			);
+		}
+		return $links;
+	}
+
+	private function getLinksToNamespaceFromWikitext( $wikitext, $namespace ) {
+		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $wikitext, $textLinks, PREG_PATTERN_ORDER );
+		$links = [];
+		$textLinksCount = count( $textLinks[1] );
+		for ( $i = 0; $i < $textLinksCount; $i++ ) {
+			try {
+				$title = Title::newFromTextThrow( $textLinks[1][$i] );
+				if ( $title->inNamespace( $namespace ) ) {
+					if ( $textLinks[3][$i] === '' ) {
+						$links[] = new Link( $title, $title->getSubpageText() );
+					} else {
+						$links[] = new Link( $title, $textLinks[3][$i] );
+					}
+				}
+			} catch ( MalformedTitleException $e ) {
+				// We ignore invalid links
+			}
+		}
+		return $links;
 	}
 }

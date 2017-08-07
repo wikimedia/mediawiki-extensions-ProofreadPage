@@ -1,6 +1,5 @@
 <?php
 use ProofreadPage\Index\IndexContent;
-use ProofreadPage\Pagination\PageList;
 
 /**
  * @group ProofreadPage
@@ -184,73 +183,6 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		$this->assertEquals( $entry, $page->getIndexEntry( 'year' ) );
 
 		$this->assertNull( $page->getIndexEntry( 'years' ) );
-	}
-
-	public function testGetLinksToMainNamespace() {
-		$page = self::newIndexPage(
-			'Test.djvu',
-			"{{\n|Pages=[[Page:Test.jpg]]\n|TOC=* [[Test/Chapter 1]]" .
-				"\n* [[Azerty:Test/Chapter_2|Chapter 2]]\n}}"
-		);
-		$links = [
-			[ Title::newFromText( 'Test/Chapter 1' ), 'Chapter 1' ],
-			[ Title::newFromText( 'Azerty:Test/Chapter_2' ), 'Chapter 2' ]
-		];
-		$this->assertEquals( $links, $page->getLinksToMainNamespace() );
-	}
-
-	public function testGetLinksToPageNamespace() {
-		$page = self::newIndexPage(
-			'Test',
-			"{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]" .
-				"\n|Author=[[Author:Me]]\n}}"
-		);
-		$links = [
-			[ Title::newFromText( 'Page:Test 1.jpg' ), 'TOC' ],
-			[ Title::newFromText( 'Page:Test 2.tiff' ), '1' ],
-			[ Title::newFromText( 'Page:Test:3.png' ), '2' ]
-		];
-		$this->assertEquals( $links, $page->getLinksToPageNamespace() );
-	}
-
-	/**
-	 * @dataProvider getPagelistTagContentProvider
-	 */
-	public function testGetPagelistTagContent(
-		ProofreadIndexPage $page, PageList $pageList = null
-	) {
-		$this->assertEquals( $pageList, $page->getPagelistTagContent() );
-	}
-
-	public function getPagelistTagContentProvider() {
-		return [
-			[
-				self::newIndexPage(
-					'Test.djvu',
-					"{{\n|Pages=<pagelist to=24 1to4=- 5=1 5to24=roman /> " .
-						"<pagelist from=25 25=1 1021to1024=- />\n|Author=[[Author:Me]]\n}}"
-				),
-				new PageList( [
-					'1to4' => '-',
-					'5' => '1',
-					'5to24' => 'roman',
-					'25' => '1',
-					'1021to1024' => '-',
-					'to' => 24,
-					'from' => 25
-				] )
-			],
-			[
-				self::newIndexPage(
-					'Test.djvu', "{{\n|Pages=<pagelist/>\n|Author=[[Author:Me]]\n}}"
-				),
-				new PageList( [] )
-			],
-			[
-				self::newIndexPage( 'Test.djvu', "{{\n|Pages=\n|Author=[[Author:Me]]\n}}" ),
-				null
-			],
-		];
 	}
 
 	public function replaceVariablesWithIndexEntriesProvider() {

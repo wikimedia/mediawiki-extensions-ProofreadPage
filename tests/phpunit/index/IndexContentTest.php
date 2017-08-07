@@ -4,6 +4,9 @@ namespace ProofreadPage\Index;
 
 use FauxRequest;
 use ParserOptions;
+use ProofreadPage\Context;
+use ProofreadPage\Link;
+use ProofreadPage\Pagination\PageList;
 use ProofreadPageTestCase;
 use RequestContext;
 use Title;
@@ -96,7 +99,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 
 	public function testGetWikitextForTransclusion() {
 		$content = new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] );
-		return $this->assertEquals(
+		$this->assertEquals(
 			"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}",
 			$content->getWikitextForTransclusion()
 		);
@@ -182,5 +185,84 @@ class IndexContentTest extends ProofreadPageTestCase {
 	public function testGetSize() {
 		$content = new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] );
 		$this->assertEquals( 3, $content->getSize() );
+	}
+
+	public function testGetLinksToMainNamespace() {
+		$content = new IndexContent( [
+			'Pages' => new WikitextContent( '[[Page:Test.jpg]]' ),
+			'TOC' => new WikitextContent( "* [[Test/Chapter 1]]\n* [[Azerty:Test/Chapter_2|Chapter 2]]" ),
+		] );
+		$links = [
+			new Link( Title::newFromText( 'Test/Chapter 1' ), 'Chapter 1' ),
+			new Link( Title::newFromText( 'Azerty:Test/Chapter_2' ), 'Chapter 2' )
+		];
+		$this->assertEquals(
+			$links,
+			$content->getLinksToNamespace( NS_MAIN, null, true )
+		);
+	}
+
+	public function testGetLinksToPageNamespace() {
+		$content = new IndexContent( [
+			'Pages' => new WikitextContent(
+				'[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test:3.png|2]]'
+			),
+			'Author' => new WikitextContent( '[[Author:Me]]' ),
+		] );
+		$links = [
+			new Link( Title::newFromText( 'Page:Test 1.jpg' ), 'TOC' ),
+			new Link( Title::newFromText( 'Page:Test 2.tiff' ), '1' ),
+			new Link( Title::newFromText( 'Page:Test:3.png' ), '2' )
+		];
+		$this->assertEquals(
+			$links,
+			$content->getLinksToNamespace(
+				Context::getDefaultContext()->getPageNamespaceId(),
+				Title::makeTitle( 252, 'Test' )
+			)
+		);
+	}
+
+	/**
+	 * @dataProvider getPagelistTagContentProvider
+	 */
+	public function testGetPagelistTagContent(
+		IndexContent $content, PageList $pageList = null
+	) {
+		$this->assertEquals( $pageList, $content->getPagelistTagContent() );
+	}
+
+	public function getPagelistTagContentProvider() {
+		return [
+			[
+				new IndexContent( [ 'Pages' => new WikitextContent(
+					'<pagelist to=24 1to4=- 5=1 5to24=roman />' .
+					'<pagelist from=25 25=1 1021to1024=- />\n|Author=[[Author:Me]]\n}}'
+				) ] ),
+				new PageList( [
+					'1to4' => '-',
+					'5' => '1',
+					'5to24' => 'roman',
+					'25' => '1',
+					'1021to1024' => '-',
+					'to' => 24,
+					'from' => 25
+				] )
+			],
+			[
+				new IndexContent( [
+					'Pages' => new WikitextContent( '<pagelist/>' ),
+					'Author' => new WikitextContent( '[[Author:Me]]' )
+				] ),
+				new PageList( [] )
+			],
+			[
+				new IndexContent( [
+					'Pages' => new WikitextContent( '' ),
+					'Author'=> new WikitextContent( '[[Author:Me]]' )
+				] ),
+				null
+			]
+		];
 	}
 }

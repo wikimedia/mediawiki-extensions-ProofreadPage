@@ -101,7 +101,7 @@ class ProofreadIndexPage {
 	 * Return content of the page
 	 * @return IndexContent
 	 */
-	private function getContent() {
+	public function getContent() {
 		if ( $this->content === null ) {
 			$rev = Revision::newFromTitle( $this->title );
 			if ( $rev === null ) {
@@ -298,89 +298,6 @@ class ProofreadIndexPage {
 	}
 
 	/**
-	 * Return the ordered list of links to ns-0 from the index page.
-	 * @return array of array( Title title of the pointed page, the label of the link )
-	 */
-	public function getLinksToMainNamespace() {
-		return $this->getLinksToNamespaceFromContent( NS_MAIN, true );
-	}
-
-	/**
-	 * @return array of array( Title title of the pointed page, the label of the link )
-	 */
-	public function getLinksToPageNamespace() {
-		return $this->getLinksToNamespaceFromContent(
-			Context::getDefaultContext()->getPageNamespaceId()
-		);
-	}
-
-	/**
-	 * @return PageList|null
-	 */
-	public function getPagelistTagContent() {
-		$tagParameters = null;
-		foreach ( $this->getContent()->getFields() as $field ) {
-			preg_match_all( '/<pagelist([^<]*?)\/>/is',
-				$field->serialize( CONTENT_FORMAT_WIKITEXT ), $m, PREG_PATTERN_ORDER
-			);
-			if ( $m[1] ) {
-				if ( $tagParameters === null ) {
-					$tagParameters = $m[1];
-				} else {
-					$tagParameters = array_merge( $tagParameters, $m[1] );
-				}
-			}
-		}
-		if ( $tagParameters === null ) {
-			return $tagParameters;
-		}
-
-		return new PageList( Sanitizer::decodeTagAttributes( implode( $tagParameters ) ) );
-	}
-
-	/**
-	 * Return all links in a given namespace
-	 * @param integer $namespace the default namespace id
-	 * @param bool $withPrepossessing apply preprocessor before looking for links
-	 * @return array of array( Title title of the pointed page, the label of the link )
-	 * @todo add an abstraction for links (Title + label)
-	 */
-	private function getLinksToNamespaceFromContent( $namespace, $withPrepossessing = false ) {
-		$links = [];
-		foreach ( $this->getContent()->getFields() as $field ) {
-			$wikitext = $field->serialize( CONTENT_FORMAT_WIKITEXT );
-			if ( $withPrepossessing ) {
-				$wikitext = self::getParser()->preprocess(
-					$wikitext, $this->title, new ParserOptions()
-				);
-			}
-			$links = array_merge(
-				$links, $this->getLinksToNamespaceFromWikitext( $wikitext, $namespace )
-			);
-		}
-		return $links;
-	}
-
-	private function getLinksToNamespaceFromWikitext( $wikitext, $namespace ) {
-		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $wikitext, $textLinks, PREG_PATTERN_ORDER );
-		$links = [];
-		$num = 0;
-		$textLinksCount = count( $textLinks[1] );
-		for ( $i = 0; $i < $textLinksCount; $i++ ) {
-			$title = Title::newFromText( $textLinks[1][$i] );
-			if ( $title !== null && $title->inNamespace( $namespace ) ) {
-				if ( $textLinks[3][$i] === '' ) {
-					$links[$num] = [ $title, $title->getSubpageText() ];
-				} else {
-					$links[$num] = [ $title, $textLinks[3][$i] ];
-				}
-				$num++;
-			}
-		}
-		return $links;
-	}
-
-	/**
 	 * Return the value of an entry as wikitext with variable replaced with index entries and
 	 * $otherParams
 	 * Example: if 'header' entry is 'Page of {{title}} number {{pagenum}}' with
@@ -425,23 +342,5 @@ class ProofreadIndexPage {
 			$params[strtolower( $entry->getKey() )] = $entry->getStringValue();
 		}
 		return $params;
-	}
-
-	/**
-	 * Return the Parser object done to be used for Index pages internal use
-	 * Needed to avoid side effects of $parser->replaceVariables
-	 *
-	 * @return Parser
-	 */
-	protected static function getParser() {
-		global $wgParser;
-		static $parser = null;
-
-		if ( $parser === null ) {
-			StubObject::unstub( $wgParser );
-			$parser = clone $wgParser;
-		}
-
-		return $parser;
 	}
 }

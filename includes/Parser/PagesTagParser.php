@@ -263,26 +263,28 @@ class PagesTagParser extends TagParser {
 			if ( $header == 'toc' ) {
 				$this->parser->getOutput()->is_toc = true;
 			}
-			$indexLinks = $indexPage->getLinksToMainNamespace();
+			$indexLinks = $indexPage->getContent()->getLinksToNamespace(
+				NS_MAIN, $indexTitle, true
+			);
 			$pageTitle = $this->parser->getTitle();
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
 			// find next and previous pages in list
 			$indexLinksCount = count( $indexLinks );
 			for ( $i = 0; $i < $indexLinksCount; $i++ ) {
-				if ( $pageTitle->equals( $indexLinks[$i][0] ) ) {
-					$current = '[[' . $indexLinks[$i][0]->getFullText() . '|' .
-						$indexLinks[$i][1] . ']]';
+				if ( $pageTitle->equals( $indexLinks[$i]->getTarget() ) ) {
+					$current = '[[' . $indexLinks[$i]->getTarget()->getFullText() . '|' .
+						$indexLinks[$i]->getLabel() . ']]';
 					break;
 				}
 			}
 			if ( $i > 1 ) {
-				$prev = '[[' . $indexLinks[$i - 1][0]->getFullText() . '|' .
-					$indexLinks[$i - 1][1] . ']]';
+				$prev = '[[' . $indexLinks[$i - 1]->getTarget()->getFullText() . '|' .
+					$indexLinks[$i - 1]->getLabel() . ']]';
 			}
-			if ( $i + 1 < count( $indexLinks ) ) {
-				$next = '[[' . $indexLinks[$i + 1][0]->getFullText() . '|' .
-					$indexLinks[$i + 1][1] . ']]';
+			if ( $i + 1 < $indexLinksCount ) {
+				$next = '[[' . $indexLinks[$i + 1]->getTarget()->getFullText() . '|' .
+					$indexLinks[$i + 1]->getLabel() . ']]';
 			}
 			if ( isset( $args['current'] ) ) {
 				$current = $args['current'];

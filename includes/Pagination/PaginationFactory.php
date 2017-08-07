@@ -52,7 +52,7 @@ class PaginationFactory {
 		}
 
 		// check if it is using pagelist
-		$pagelist = $indexPage->getPagelistTagContent();
+		$pagelist = $indexPage->getContent()->getPagelistTagContent();
 		if ( $pagelist !== null && $file && $file->isMultipage() ) {
 			return new FilePagination(
 				$indexPage,
@@ -61,12 +61,14 @@ class PaginationFactory {
 				$this->context
 			);
 		} else {
-			$links = $indexPage->getLinksToPageNamespace();
+			$links = $indexPage->getContent()->getLinksToNamespace(
+				Context::getDefaultContext()->getPageNamespaceId()
+			);
 			$pages = [];
 			$pageNumbers = [];
 			foreach ( $links as $link ) {
-				$pages[] = new ProofreadPagePage( $link[0], $indexPage );
-				$pageNumbers[] = new PageNumber( $link[1] );
+				$pages[] = new ProofreadPagePage( $link->getTarget(), $indexPage );
+				$pageNumbers[] = new PageNumber( $link->getLabel() );
 			}
 			return new PagePagination( $indexPage, $pages, $pageNumbers );
 		}

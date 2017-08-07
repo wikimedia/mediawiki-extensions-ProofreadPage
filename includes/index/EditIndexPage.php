@@ -12,6 +12,7 @@ use OOUI\HtmlSnippet;
 use OOUI\TextInputWidget;
 use ProofreadIndexEntry;
 use ProofreadIndexPage;
+use ProofreadPage\Context;
 use Status;
 use WikitextContent;
 
@@ -178,24 +179,28 @@ class EditIndexPage extends EditPage {
 	 * @see EditPage::internalAttemptSave
 	 */
 	public function internalAttemptSave( &$result, $bot = false ) {
-		$index = $this->getActualContent();
-
-		// Get list of pages titles
-		$links = $index->getLinksToPageNamespace();
-		$linksTitle = [];
-		foreach ( $links as $link ) {
-			$linksTitle[] = $link[0];
-		}
-
-		if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-			$this->context->getOutput()->showErrorPage(
-				'proofreadpage_indexdupe', 'proofreadpage_indexdupetext'
+		$content = $this->toEditContent( $this->textbox1 );
+		if ( $content instanceof IndexContent ) {
+			// Get list of pages titles
+			$links = $content->getLinksToNamespace(
+				Context::getDefaultContext()->getPageNamespaceId(), $this->getTitle()
 			);
-			$status = Status::newGood();
-			$status->fatal( 'hookaborted' );
-			$status->value = self::AS_HOOK_ERROR;
+			$linksTitle = [];
+			foreach ( $links as $link ) {
+				$linksTitle[] = $link->getTarget();
+			}
 
-			return $status;
+			if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
+				$this->context->getOutput()->showErrorPage(
+					'proofreadpage_indexdupe',
+					'proofreadpage_indexdupetext'
+				);
+				$status = Status::newGood();
+				$status->fatal( 'hookaborted' );
+				$status->value = self::AS_HOOK_ERROR;
+
+				return $status;
+			}
 		}
 
 		return parent::internalAttemptSave( $result, $bot );
@@ -205,8 +210,7 @@ class EditIndexPage extends EditPage {
 		return new ProofreadIndexPage(
 			$this->mTitle,
 			ProofreadIndexPage::getDataConfig(),
-			ContentHandler::getForModelID( $this->contentModel )
-				->unserializeContent( $this->textbox1, $this->contentFormat )
+			$this->toEditContent( $this->textbox1 )
 		);
 	}
 }

@@ -37,6 +37,14 @@ class IndexContentHandler extends TextContentHandler {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT ] );
 	}
 
+	/**
+	 * Warning: should not be used outside of IndexContent
+	 * @return Parser
+	 */
+	public function getParser() {
+		return $this->parser;
+	}
+
 	private function buildParser() {
 		$parser = new Parser();
 		$parser->startExternalParse(
