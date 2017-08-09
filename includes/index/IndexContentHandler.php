@@ -38,11 +38,9 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	private function buildParser() {
-		global $wgParser;
-		StubObject::unstub( $wgParser );
-		$parser = clone $wgParser;
+		$parser = new Parser();
 		$parser->startExternalParse(
-			null, $this->makeParserOptions( 'canonical' ), Parser::OT_PLAIN, true
+			null, $this->makeParserOptions( 'canonical' ), Parser::OT_PLAIN
 		);
 		return $parser;
 	}
