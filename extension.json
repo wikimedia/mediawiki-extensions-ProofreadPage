@@ -56,6 +56,7 @@
 		"ProofreadPage\\Index\\IndexDifferenceEngine": "includes/index/IndexDifferenceEngine.php",
 		"ProofreadPage\\Index\\IndexEditAction": "includes/index/IndexEditAction.php",
 		"ProofreadPage\\Index\\IndexSubmitAction": "includes/index/IndexSubmitAction.php",
+		"ProofreadPage\\Index\\ParserHelper": "includes/index/ParserHelper.php",
 		"ProofreadPage\\Index\\EditIndexPage": "includes/index/EditIndexPage.php",
 		"ProofreadIndexDbConnector": "includes/index/ProofreadIndexDbConnector.php",
 		"ProofreadPage\\Pagination\\PaginationFactory": "includes/Pagination/PaginationFactory.php",
