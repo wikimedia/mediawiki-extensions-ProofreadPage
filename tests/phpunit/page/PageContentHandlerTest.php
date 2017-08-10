@@ -196,7 +196,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	) {
 		$this->assertEquals(
 			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
-			$this->handler->unserializeContent( $text, CONTENT_FORMAT_JSON )
+			$this->handler->unserializeContent( $text )
 		);
 	}
 
