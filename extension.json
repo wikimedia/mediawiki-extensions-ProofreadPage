@@ -55,6 +55,8 @@
 		"ProofreadIndexPage": "includes/index/ProofreadIndexPage.php",
 		"ProofreadPage\\Index\\CustomIndexField": "includes/index/CustomIndexField.php",
 		"ProofreadPage\\Index\\CustomIndexFieldsParser": "includes/index/CustomIndexFieldsParser.php",
+		"ProofreadPage\\Index\\IndexContentLookup": "includes/index/IndexContentLookup.php",
+		"ProofreadPage\\Index\\DatabaseIndexContentLookup": "includes/index/DatabaseIndexContentLookup.php",
 		"ProofreadPage\\Index\\IndexContent": "includes/index/IndexContent.php",
 		"ProofreadPage\\Index\\IndexRedirectContent": "includes/index/IndexRedirectContent.php",
 		"ProofreadPage\\Index\\IndexContentHandler": "includes/index/IndexContentHandler.php",
@@ -96,6 +98,7 @@
 		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
 		"ProofreadPage\\Page\\IndexForPageLookupMock": "tests/phpunit/page/IndexForPageLookupMock.php",
+		"ProofreadPage\\Index\\IndexContentLookupMock": "tests/phpunit/index/IndexContentLookupMock.php",
 		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php",
 		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
 		"FixProofreadIndexPagesContentModel": "maintenance/fixProofreadIndexPagesContentModel.php"

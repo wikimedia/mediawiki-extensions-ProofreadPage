@@ -63,7 +63,7 @@ class PagesTagParser extends TagParser {
 			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
 		$indexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
-		$indexContent = $indexPage->getContent();
+		$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $indexPage );
 		$pagination = $this->context->getPaginationFactory()
 			->getPaginationForIndexPage( $indexPage );
 		$language = $this->parser->getTargetLanguage();

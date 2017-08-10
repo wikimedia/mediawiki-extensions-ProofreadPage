@@ -60,11 +60,12 @@ class PageContentBuilder {
 			} // should not happen
 
 			$indexFieldsParser = $this->context->getCustomIndexFieldsParser();
+			$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $index );
 			$header = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
-					$index->getContent(), 'header', $params
-				);
+				$indexContent, 'header', $params
+			);
 			$footer = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
-				$index->getContent(), 'footer', $params
+				$indexContent, 'footer', $params
 			);
 		} else {
 			$header = $this->contextSource->msg( 'proofreadpage_default_header' )

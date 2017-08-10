@@ -5,6 +5,7 @@ use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContent;
+use ProofreadPage\Index\IndexContentLookupMock;
 use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPage\ProofreadPageInit;
 
@@ -101,15 +102,17 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 
 	/**
 	 * @param ProofreadIndexPage[] $indexForPage
+	 * @param IndexContent[] $indexContent
 	 * @return Context
 	 */
-	protected function getContext( array $indexForPage = [] ) {
+	protected function getContext( array $indexForPage = [], array $indexContent = [] ) {
 		return new Context(
 			ProofreadPageInit::getNamespaceId( 'page' ),
 			ProofreadPageInit::getNamespaceId( 'index' ),
 			$this->getFileProvider(),
 			new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration ),
-			new IndexForPageLookupMock( $indexForPage )
+			new IndexForPageLookupMock( $indexForPage ),
+			new IndexContentLookupMock( $indexContent )
 		);
 	}
 
@@ -128,18 +131,13 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	/**
 	 * Constructor of a new ProofreadIndexPage
 	 * @param Title|string $title
-	 * @param string|IndexContent|null $content
 	 * @return ProofreadIndexPage
 	 */
-	protected function newIndexPage( $title = 'test.djvu', $content = null ) {
+	protected function newIndexPage( $title = 'test.djvu' ) {
 		if ( is_string( $title ) ) {
 			$title = Title::makeTitle( $this->getIndexNamespaceId(), $title );
 		}
-		if ( is_string( $content ) ) {
-			$content = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_INDEX )
-				->unserializeContent( $content );
-		}
-		return new ProofreadIndexPage( $title, $content );
+		return new ProofreadIndexPage( $title );
 	}
 
 	/**

@@ -3,6 +3,7 @@
 namespace ProofreadPage;
 
 use ProofreadPage\Index\CustomIndexFieldsParser;
+use ProofreadPage\Index\IndexContentLookupMock;
 use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPageTestCase;
 
@@ -50,7 +51,8 @@ class ContextTest extends ProofreadPageTestCase {
 
 	private function buildDummyContext() {
 		return new Context( 42, 44,
-			new FileProviderMock( [] ), new CustomIndexFieldsParser(), new IndexForPageLookupMock( [] )
+			new FileProviderMock( [] ), new CustomIndexFieldsParser(), new IndexForPageLookupMock( [] ),
+			new IndexContentLookupMock( [] )
 		);
 	}
 }

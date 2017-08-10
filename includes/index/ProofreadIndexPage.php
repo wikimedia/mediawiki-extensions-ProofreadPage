@@ -19,8 +19,6 @@
  * @ingroup ProofreadPage
  */
 
-use ProofreadPage\Index\IndexContent;
-
 /**
  * An index page
  */
@@ -32,18 +30,10 @@ class ProofreadIndexPage {
 	protected $title;
 
 	/**
-	 * @var IndexContent|null content of the page
-	 */
-	protected $content;
-
-	/**
 	 * @param Title $title Reference to a Title object.
-	 * @param IndexContent|null $content content of the page. Warning: only done for
-	 *   EditProofreadIndexPage use.
 	 */
-	public function __construct( Title $title, IndexContent $content = null ) {
+	public function __construct( Title $title ) {
 		$this->title = $title;
-		$this->content = $content;
 	}
 
 	/**
@@ -71,39 +61,5 @@ class ProofreadIndexPage {
 	 */
 	public function equals( ProofreadIndexPage $that ) {
 		return $this->title->equals( $that->getTitle() );
-	}
-
-	/**
-	 * Return content of the page
-	 * @return IndexContent
-	 */
-	public function getContent() {
-		if ( $this->content === null ) {
-			$rev = Revision::newFromTitle( $this->title );
-			if ( $rev === null ) {
-				$this->content = new IndexContent( [] );
-			} else {
-				$content = $rev->getContent();
-				if ( $content instanceof IndexContent ) {
-					$this->content = $content;
-				} else {
-					$this->content = new IndexContent( [] );
-				}
-			}
-		}
-		return $this->content;
-	}
-
-	/**
-	 * Return mime type of the file linked to the index page
-	 * @return string|null
-	 */
-	public function getMimeType() {
-		if ( preg_match( "/^.*\.(.{2,5})$/", $this->title->getText(), $m ) ) {
-			$mimeMagic = MimeMagic::singleton();
-			return $mimeMagic->guessTypesForExtension( $m[1] );
-		} else {
-			return null;
-		}
 	}
 }

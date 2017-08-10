@@ -3,6 +3,8 @@
 namespace ProofreadPage;
 
 use ProofreadPage\Index\CustomIndexFieldsParser;
+use ProofreadPage\Index\DatabaseIndexContentLookup;
+use ProofreadPage\Index\IndexContentLookup;
 use ProofreadPage\Page\DatabaseIndexForPageLookup;
 use ProofreadPage\Page\IndexForPageLookup;
 use ProofreadPage\Pagination\PaginationFactory;
@@ -45,21 +47,29 @@ class Context {
 	private $indexForPageLookup;
 
 	/**
+	 * @var IndexContentLookup
+	 */
+	private $indexContentLookup;
+
+	/**
 	 * @param int $pageNamespaceId
 	 * @param int $indexNamespaceId
 	 * @param FileProvider $fileProvider
 	 * @param CustomIndexFieldsParser $customIndexFieldsParser
 	 * @param IndexForPageLookup $indexForPageLookup
+	 * @param IndexContentLookup $indexContentLookup
 	 */
 	public function __construct(
 		$pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider,
-		CustomIndexFieldsParser $customIndexFieldsParser, IndexForPageLookup $indexForPageLookup
+		CustomIndexFieldsParser $customIndexFieldsParser, IndexForPageLookup $indexForPageLookup,
+		IndexContentLookup $indexContentLookup
 	) {
 		$this->pageNamespaceId = $pageNamespaceId;
 		$this->indexNamespaceId = $indexNamespaceId;
 		$this->fileProvider = $fileProvider;
 		$this->customIndexFieldsParser = $customIndexFieldsParser;
 		$this->indexForPageLookup = $indexForPageLookup;
+		$this->indexContentLookup = $indexContentLookup;
 	}
 
 	/**
@@ -105,6 +115,13 @@ class Context {
 	}
 
 	/**
+	 * @return IndexContentLookup
+	 */
+	public function getIndexContentLookup() {
+		return $this->indexContentLookup;
+	}
+
+	/**
 	 * @param bool $purge
 	 * @return Context
 	 */
@@ -118,7 +135,8 @@ class Context {
 			$defaultContext = new self( $pageNamespaceId, $indexNamespaceId,
 				new FileProvider( $repoGroup ),
 				new CustomIndexFieldsParser(),
-				new DatabaseIndexForPageLookup( $indexNamespaceId, $repoGroup )
+				new DatabaseIndexForPageLookup( $indexNamespaceId, $repoGroup ),
+				new DatabaseIndexContentLookup()
 			);
 		}
 

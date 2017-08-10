@@ -6,6 +6,7 @@ use IContextSource;
 use MediaHandler;
 use ProofreadIndexPage;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\Index\IndexContent;
 use ProofreadPagePage;
 use ProofreadPageTestCase;
 use RequestContext;
@@ -43,11 +44,16 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	 * @dataProvider buildDefaultContentForPageProvider
 	 */
 	public function testBuildDefaultContentForPage(
-		ProofreadPagePage $page, ProofreadIndexPage $index = null, PageContent $defaultContent
+		ProofreadPagePage $page, ProofreadIndexPage $index = null,
+		IndexContent $indexContent = null, PageContent $defaultContent
 	) {
+		$indexContents = [];
+		if ( $indexContent !== null ) {
+			$indexContents[$index->getTitle()->getDBkey()] = $indexContent;
+		}
 		$context = $this->getContext( [
 			$page->getTitle()->getDBkey() => $index
-		] );
+		], $indexContents );
 		try {
 			$image = $context->getFileProvider()->getForPagePage( $page );
 		} catch ( FileNotFoundException $e ) {
@@ -67,28 +73,37 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 		return [
 			[
 				$this->newPagePage( 'Test.djvu/1' ),
-				$this->newIndexPage( 'Test.djvu', "{{\n|Title=Test book\n|Header={{{title}}}\n}}" ),
+				$this->newIndexPage( 'Test.djvu' ),
+				new IndexContent( [
+					'Title' => new WikitextContent( 'Test book' ),
+					'Header' => new WikitextContent( '{{{title}}}' )
+				] ),
 				self::newContent( 'Test book', '', '<references />', 1 ),
 			],
 			[
 				$this->newPagePage( 'LoremIpsum.djvu/2' ),
 				null,
+				null,
 				self::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
 			],
 			[
 				$this->newPagePage( 'LoremIpsum.djvu/2' ),
-				$this->newIndexPage( 'LoremIpsum.djvu',
-					"{{\n|Title=Test book\n|Pages=<pagelist/>\n|Header={{{pagenum}}}\n}}"
-				),
+				$this->newIndexPage( 'LoremIpsum.djvu' ),
+				new IndexContent( [
+					'Title' => new WikitextContent( 'Test book' ),
+					'Pages' => new WikitextContent( '<pagelist/>' ),
+					'Header' => new WikitextContent( '{{{pagenum}}}' )
+				] ),
 				self::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 			[
 				$this->newPagePage( 'LoremIpsum.djvu/2' ),
-				$this->newIndexPage(
-					'LoremIpsum.djvu',
-					"{{\n|Title=Test book\n|Pages=<pagelist 1to5=roman />\n" .
-					"|Header={{{pagenum}}}\n}}"
-				),
+				$this->newIndexPage( 'LoremIpsum.djvu' ),
+				new IndexContent( [
+					'Title' => new WikitextContent( 'Test book' ),
+					'Pages' => new WikitextContent( '<pagelist 1to5=roman />' ),
+					'Header' => new WikitextContent( '{{{pagenum}}}' )
+				] ),
 				self::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 		];

@@ -43,8 +43,9 @@ class PageDisplayHandler {
 		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
 		if ( $index !== null ) {
 			try {
+				$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $index );
 				$width = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
-					$index->getContent(), 'width'
+					$indexContent, 'width'
 				)->getStringValue();
 				if ( is_numeric( $width ) ) {
 					return $width;
@@ -68,8 +69,9 @@ class PageDisplayHandler {
 			return '';
 		}
 		try {
+			$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $index );
 			$css = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
-				$index->getContent(), 'css'
+				$indexContent, 'css'
 			);
 			return Sanitizer::escapeHtmlAllowEntities(
 				Sanitizer::checkCss( $css->getStringValue() )

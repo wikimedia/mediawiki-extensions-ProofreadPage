@@ -52,7 +52,8 @@ class PaginationFactory {
 		}
 
 		// check if it is using pagelist
-		$pagelist = $indexPage->getContent()->getPagelistTagContent();
+		$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $indexPage );
+		$pagelist = $indexContent->getPagelistTagContent();
 		if ( $pagelist !== null && $file && $file->isMultipage() ) {
 			return new FilePagination(
 				$indexPage,
@@ -61,7 +62,7 @@ class PaginationFactory {
 				$this->context
 			);
 		} else {
-			$links = $indexPage->getContent()->getLinksToNamespace(
+			$links = $indexContent->getLinksToNamespace(
 				Context::getDefaultContext()->getPageNamespaceId()
 			);
 			$pages = [];

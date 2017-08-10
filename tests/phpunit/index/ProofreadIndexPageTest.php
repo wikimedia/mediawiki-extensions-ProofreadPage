@@ -21,19 +21,4 @@ class ProofreadIndexPageTest extends ProofreadPageTestCase {
 		$page = ProofreadIndexPage::newFromTitle( $title );
 		$this->assertEquals( $title, $page->getTitle() );
 	}
-
-	public function mimeTypesProvider() {
-		return [
-			[ 'image/vnd.djvu', 'Test.djvu' ],
-			[ 'application/pdf', 'Test.pdf' ],
-			[ null, 'Test' ]
-		];
-	}
-
-	/**
-	 * @dataProvider mimeTypesProvider
-	 */
-	public function testGetMimeType( $mime, $name ) {
-		$this->assertEquals( $mime, $this->newIndexPage( $name )->getMimeType() );
-	}
 }

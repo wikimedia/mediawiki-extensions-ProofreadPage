@@ -3,8 +3,10 @@
 namespace ProofreadPage\Pagination;
 
 use MediaHandler;
+use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
 use Title;
+use WikitextContent;
 
 /**
  * @group ProofreadPage
@@ -16,31 +18,31 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$page = $this->newIndexPage(
-			'LoremIpsum.djvu',
-			"{{\n|Pages=<pagelist 1to2=-/> <pagelist 3=1 4to5=roman />\n|Author=[[Author:Me]]\n}}"
-		);
+		$context = $this->getContext( [], [
+			'LoremIpsum.djvu' => new IndexContent( [
+				'Pages' => new WikitextContent( '<pagelist 1to2=-/> <pagelist 3=1 4to5=roman />' ),
+				'Author' => new WikitextContent( '[[Author:Me]]' )
+			] )
+		] );
 		$pageList = new PageList( [ '1to2' => '-', '3' => '1', '4to5' => 'roman' ] );
 		$pagination = new FilePagination(
-			$page,
+			$this->newIndexPage( 'LoremIpsum.djvu' ),
 			$pageList,
-			$this->getContext()->getFileProvider()->getFileFromTitle(
+			$context->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
-			$this->getContext()
+			$context
 		);
 		$this->assertEquals(
 			$pagination,
-			$this->getContext()->getPaginationFactory()->getPaginationForIndexPage( $page )
+			$context->getPaginationFactory()->getPaginationForIndexPage(
+				$this->newIndexPage( 'LoremIpsum.djvu' )
+			)
 		);
 	}
 
 	public function testGetPaginationWithoutPagelist() {
-		$index = $this->newIndexPage(
-			'Test',
-			"{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] " .
-			"[[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}"
-		);
+		$index = $this->newIndexPage( 'Test' );
 		$pagination = new PagePagination(
 			$index,
 			[
@@ -56,10 +58,13 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		);
 		$this->assertEquals(
 			$pagination,
-			$this->getContext( [
-				'Page:Test_1.jpg' => $index,
-				'Page:Test_2.tiff' => $index,
-				'Page:Test:3.png' => $index,
+			$this->getContext( [], [
+				'Test' => new IndexContent( [
+					'Pages' => new WikitextContent(
+						'[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]][[Page:Test:3.png|2]]'
+					),
+					'Author' => new WikitextContent( '[[Author:Me]]' )
+				] )
 			] )->getPaginationFactory()->getPaginationForIndexPage( $index )
 		);
 	}
