@@ -49,6 +49,7 @@
 		"ProofreadPage\\ProofreadPageInit": "includes/ProofreadPageInit.php",
 		"ProofreadPage\\DiffFormatterUtils": "includes/DiffFormatterUtils.php",
 		"ProofreadPage\\FileNotFoundException": "includes/FileNotFoundException.php",
+		"ProofreadPage\\PageNumberNotFoundException": "includes/PageNumberNotFoundException.php",
 		"ProofreadPage\\FileProvider": "includes/FileProvider.php",
 		"ProofreadPage\\Link": "includes/Link.php",
 		"ProofreadIndexPage": "includes/index/ProofreadIndexPage.php",

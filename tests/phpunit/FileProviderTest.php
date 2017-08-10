@@ -138,4 +138,35 @@ class FileProviderTest extends ProofreadPageTestCase {
 			],
 		];
 	}
+
+	public function testGetPageNumberForPagePage() {
+		$fileProvider = new FileProviderMock( [] );
+		$this->assertEquals( 1, $fileProvider->getPageNumberForPagePage(
+			$this->newPagePage( 'Test.djvu/1' )
+		) );
+	}
+
+	/**
+	 * @expectedException \ProofreadPage\PageNumberNotFoundException
+	 */
+	public function testGetPageNumberForPageNumberNotFound() {
+		$fileProvider = new FileProviderMock( [] );
+		$fileProvider->getPageNumberForPagePage( $this->newPagePage( 'Test.djvu' ) );
+	}
+
+	/**
+	 * @expectedException \ProofreadPage\PageNumberNotFoundException
+	 */
+	public function testGetPageNumberForPageNotANumber() {
+		$fileProvider = new FileProviderMock( [] );
+		$fileProvider->getPageNumberForPagePage( $this->newPagePage( 'Test.djvu/foo' ) );
+	}
+
+	/**
+	 * @expectedException \ProofreadPage\PageNumberNotFoundException
+	 */
+	public function testGetPageNumberForPageBadNumber() {
+		$fileProvider = new FileProviderMock( [] );
+		$fileProvider->getPageNumberForPagePage( $this->newPagePage( 'Test.djvu/-1' ) );
+	}
 }

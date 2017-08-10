@@ -6,6 +6,7 @@ use File;
 use OutOfBoundsException;
 use ProofreadIndexPage;
 use ProofreadPage\Context;
+use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPagePage;
 use Title;
 
@@ -59,14 +60,19 @@ class FilePagination extends Pagination {
 	 * @see ProofreadPagination::getPageNumber
 	 */
 	public function getPageNumber( ProofreadPagePage $page ) {
-		$pageNumber = $page->getPageNumber();
 		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
-		if ( $pageNumber === null || $index === null || !$this->index->equals( $index ) ) {
+		if ( $index === null || !$this->index->equals( $index ) ) {
 			throw new PageNotInPaginationException(
 				$page->getTitle()->getFullText() . ' does not belong to the pagination'
 			);
 		}
-		return $pageNumber;
+		try {
+			return $this->context->getFileProvider()->getPageNumberForPagePage( $page );
+		} catch ( PageNumberNotFoundException $e ) {
+			throw new PageNotInPaginationException(
+				$page->getTitle()->getFullText() . ' does not have page numbers'
+			);
+		}
 	}
 
 	/**

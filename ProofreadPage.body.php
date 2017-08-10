@@ -22,6 +22,7 @@
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Page\PageContentBuilder;
+use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\ProofreadPageInit;
 
@@ -708,16 +709,19 @@ class ProofreadPage {
 
 		// Image link
 		try {
-			$image = Context::getDefaultContext()->getFileProvider()->getForPagePage( $page );
+			$fileProvider = Context::getDefaultContext()->getFileProvider();
+			$image = $fileProvider->getForPagePage( $page );
 			$imageUrl = null;
 			if ( $image->isMultipage() ) {
 				$transformAttributes = [
 					'width' => $image->getWidth()
 				];
-				$pageNumber = $page->getPageNumber();
-				if ( $pageNumber !== null ) {
-					$transformAttributes['page'] = $pageNumber;
+				try {
+					$transformAttributes['page'] = $fileProvider->getPageNumberForPagePage( $page );
+				} catch ( PageNumberNotFoundException $e ) {
+					// We do not care
 				}
+
 				$handler = $image->getHandler();
 				if ( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
 					$thumbName = $image->thumbName( $transformAttributes );
@@ -736,8 +740,7 @@ class ProofreadPage {
 					'text' => wfMessage( 'proofreadpage_image' )->plain()
 				];
 			}
-		}
-		catch ( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException $e ) {
 		}
 
 		// Prev, Next and Index links

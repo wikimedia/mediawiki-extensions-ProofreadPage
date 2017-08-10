@@ -21,10 +21,4 @@ class ProofreadPagePageTest extends ProofreadPageTestCase {
 		$page = $this->newPagePage( $title );
 		$this->assertEquals( $title, $page->getTitle() );
 	}
-
-	public function testGetPageNumber() {
-		$this->assertEquals( 1, $this->newPagePage( 'Test.djvu/1' )->getPageNumber() );
-
-		$this->assertNull( $this->newPagePage( 'Test.djvu' )->getPageNumber() );
-	}
 }

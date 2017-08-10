@@ -63,4 +63,26 @@ class FileProvider {
 			Title::makeTitle( NS_FILE, strtok( $page->getTitle()->getText(), '/' ) )
 		);
 	}
+
+	/**
+	 * @param ProofreadPagePage $page
+	 * @return int
+	 * @throws PageNumberNotFoundException
+	 */
+	public function getPageNumberForPagePage( ProofreadPagePage $page ) {
+		$parts = explode( '/', $page->getTitle()->getText() );
+		if ( count( $parts ) === 1 ) {
+			throw new PageNumberNotFoundException(
+				$page->getTitle()->getFullText() . ' does not provide a page number.'
+			);
+		}
+		$number = $page->getTitle()->getPageLanguage()->parseFormattedNumber( end( $parts ) );
+		if ( $number > 0 ) {
+			// Valid page numbers are integer > 0.
+			return (int)$number;
+		}
+		throw new PageNumberNotFoundException(
+			$page->getTitle()->getFullText() . ' does not provide a valid page number.'
+		);
+	}
 }

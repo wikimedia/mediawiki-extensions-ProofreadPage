@@ -6,6 +6,7 @@ use Html;
 use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPagePage;
 use Sanitizer;
 
@@ -108,8 +109,9 @@ class PageDisplayHandler {
 	 * @return null|string
 	 */
 	private function buildImageHtml( ProofreadPagePage $page, $options ) {
+		$fileProvider = $this->context->getFileProvider();
 		try {
-			$image = $this->context->getFileProvider()->getForPagePage( $page );
+			$image = $fileProvider->getForPagePage( $page );
 		} catch ( FileNotFoundException $e ) {
 			return null;
 		}
@@ -125,9 +127,9 @@ class PageDisplayHandler {
 		];
 
 		if ( $image->isMultipage() ) {
-			$pageNumber = $page->getPageNumber();
-			if ( $pageNumber !== null ) {
-				$transformAttributes['page'] = $pageNumber;
+			try {
+				$transformAttributes['page'] = $fileProvider->getPageNumberForPagePage( $page );
+			} catch ( PageNumberNotFoundException $e ) {
 			}
 		}
 		$handler = $image->getHandler();

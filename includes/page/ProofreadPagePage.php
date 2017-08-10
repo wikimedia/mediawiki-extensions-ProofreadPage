@@ -62,17 +62,4 @@ class ProofreadPagePage {
 	public function getTitle() {
 		return $this->title;
 	}
-
-	/**
-	 * Returns number of the page in the file if it's a multi-page file or null
-	 * @return int|null
-	 */
-	public function getPageNumber() {
-		$parts = explode( '/', $this->title->getText() );
-		if ( count( $parts ) === 1 ) {
-			return null;
-		}
-		return (int)$this->title->getPageLanguage()
-			->parseFormattedNumber( $parts[count( $parts ) - 1] );
-	}
 }

@@ -6,6 +6,7 @@ use IContextSource;
 use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPagePage;
 use WikitextContent;
@@ -74,16 +75,19 @@ class PageContentBuilder {
 
 		// Extract text layer
 		try {
-			$image = $this->context->getFileProvider()->getForPagePage( $page );
-			$pageNumber = $page->getPageNumber();
+			$fileProvider = $this->context->getFileProvider();
+			$image = $fileProvider->getForPagePage( $page );
 			if ( $image->exists() ) {
-				if ( $pageNumber !== null && $image->isMultipage() ) {
-					$text = $image->getHandler()->getPageText( $image, $pageNumber );
-				} else {
-					$text = $image->getHandler()
-						? $image->getHandler()->getPageText( $image, 1 )
-						: '';
+				$pageNumber = 1;
+				if ( $image->isMultipage() ) {
+					try {
+						$pageNumber = $fileProvider->getPageNumberForPagePage( $page );
+					} catch ( PageNumberNotFoundException $e ) {
+					}
 				}
+				$text = $image->getHandler()
+					? $image->getHandler()->getPageText( $image, $pageNumber )
+					: '';
 				if ( $text ) {
 					$text = preg_replace( "/(\\\\n)/", "\n", $text );
 					$body = preg_replace( "/(\\\\\d*)/", '', $text );
