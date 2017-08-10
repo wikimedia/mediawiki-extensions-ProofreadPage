@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sahran"
+			"Sahran",
+			"Uzdil"
 		]
 	},
 	"proofreadpage_image": "سۈرەت",
@@ -9,7 +10,7 @@
 	"proofreadpage_nologin": "تىزىمغا كىرمىدى",
 	"proofreadpage_nextpage": "كېيىنكى بەت",
 	"proofreadpage_prevpage": "ئالدىنقى بەت",
-	"proofreadpage_quality3_category": "تۈزەت",
+	"proofreadpage_quality3_category": "ئىملا توغرىلاندى",
 	"proofreadpage_specialpage_label_orderby": "تەرتىپى:",
 	"proofreadpage_specialpage_label_key": "ئىزدە:",
 	"proofreadpage_specialpage_label_sortascending": "ئۆسكۈچى تەرتىپ",
