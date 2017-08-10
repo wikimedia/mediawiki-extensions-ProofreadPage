@@ -3,6 +3,8 @@
 namespace ProofreadPage;
 
 use ProofreadPage\Index\CustomIndexFieldsParser;
+use ProofreadPage\Page\DatabaseIndexForPageLookup;
+use ProofreadPage\Page\IndexForPageLookup;
 use ProofreadPage\Pagination\PaginationFactory;
 use RepoGroup;
 
@@ -38,19 +40,26 @@ class Context {
 	private $customIndexFieldsParser;
 
 	/**
+	 * @var IndexForPageLookup
+	 */
+	private $indexForPageLookup;
+
+	/**
 	 * @param int $pageNamespaceId
 	 * @param int $indexNamespaceId
 	 * @param FileProvider $fileProvider
 	 * @param CustomIndexFieldsParser $customIndexFieldsParser
+	 * @param IndexForPageLookup $indexForPageLookup
 	 */
 	public function __construct(
 		$pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider,
-		CustomIndexFieldsParser $customIndexFieldsParser
+		CustomIndexFieldsParser $customIndexFieldsParser, IndexForPageLookup $indexForPageLookup
 	) {
 		$this->pageNamespaceId = $pageNamespaceId;
 		$this->indexNamespaceId = $indexNamespaceId;
 		$this->fileProvider = $fileProvider;
 		$this->customIndexFieldsParser = $customIndexFieldsParser;
+		$this->indexForPageLookup = $indexForPageLookup;
 	}
 
 	/**
@@ -89,22 +98,28 @@ class Context {
 	}
 
 	/**
-	 * @param bool $purgeFileProvider
+	 * @return IndexForPageLookup
+	 */
+	public function getIndexForPageLookup() {
+		return $this->indexForPageLookup;
+	}
+
+	/**
+	 * @param bool $purge
 	 * @return Context
 	 */
-	public static function getDefaultContext( $purgeFileProvider = false ) {
+	public static function getDefaultContext( $purge = false ) {
 		static $defaultContext;
 
-		if ( $defaultContext === null ) {
-			$defaultContext = new self(
-				ProofreadPageInit::getNamespaceId( 'page' ),
-				ProofreadPageInit::getNamespaceId( 'index' ),
-				new FileProvider( RepoGroup::singleton() ),
-				new CustomIndexFieldsParser()
+		if ( $defaultContext === null || $purge ) {
+			$repoGroup = RepoGroup::singleton();
+			$pageNamespaceId = ProofreadPageInit::getNamespaceId( 'page' );
+			$indexNamespaceId = ProofreadPageInit::getNamespaceId( 'index' );
+			$defaultContext = new self( $pageNamespaceId, $indexNamespaceId,
+				new FileProvider( $repoGroup ),
+				new CustomIndexFieldsParser(),
+				new DatabaseIndexForPageLookup( $indexNamespaceId, $repoGroup )
 			);
-		}
-		if ( $purgeFileProvider ) {
-			$defaultContext->fileProvider = new FileProvider( RepoGroup::singleton() );
 		}
 
 		return $defaultContext;

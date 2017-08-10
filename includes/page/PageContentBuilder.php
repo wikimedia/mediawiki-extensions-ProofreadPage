@@ -41,11 +41,11 @@ class PageContentBuilder {
 	 * @return PageContent
 	 */
 	public function buildDefaultContentForPage( ProofreadPagePage $page ) {
-		$index = $page->getIndex();
+		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
 		$body = '';
 
 		// default header and footer
-		if ( $index ) {
+		if ( $index !== null ) {
 			$params = [];
 			try {
 				$pagination = $this->context->getPaginationFactory()

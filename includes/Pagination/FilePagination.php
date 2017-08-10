@@ -60,9 +60,11 @@ class FilePagination extends Pagination {
 	 */
 	public function getPageNumber( ProofreadPagePage $page ) {
 		$pageNumber = $page->getPageNumber();
-		$index = $page->getIndex();
-		if ( $pageNumber === null || $index === false || !$this->index->equals( $index ) ) {
-			throw new PageNotInPaginationException( '$page does not belong to the pagination' );
+		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
+		if ( $pageNumber === null || $index === null || !$this->index->equals( $index ) ) {
+			throw new PageNotInPaginationException(
+				$page->getTitle()->getFullText() . ' does not belong to the pagination'
+			);
 		}
 		return $pageNumber;
 	}
@@ -115,11 +117,11 @@ class FilePagination extends Pagination {
 		if ( $i18nNumber !== $pageNumber && !$title->exists() ) {
 			$arabicTitle = $this->buildPageTitleFromPageNumber( $pageNumber );
 			if ( $arabicTitle->exists() ) {
-				return new ProofreadPagePage( $arabicTitle, $this->index );
+				return ProofreadPagePage::newFromTitle( $arabicTitle );
 			}
 		}
 
-		return new ProofreadPagePage( $title, $this->index );
+		return ProofreadPagePage::newFromTitle( $title );
 	}
 
 	/**

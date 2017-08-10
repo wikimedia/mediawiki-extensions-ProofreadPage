@@ -741,8 +741,8 @@ class ProofreadPage {
 		}
 
 		// Prev, Next and Index links
-		$indexPage = $page->getIndex();
-		if ( $indexPage ) {
+		$indexPage = Context::getDefaultContext()->getIndexForPageLookup()->getIndexForPage( $page );
+		if ( $indexPage !== null ) {
 			$pagination = Context::getDefaultContext()
 				->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
 			try {

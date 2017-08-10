@@ -5,6 +5,7 @@ use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContent;
+use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPage\ProofreadPageInit;
 
 /**
@@ -86,9 +87,9 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	];
 
 	/**
-	 * @var Context
+	 * @var FileProvider
 	 */
-	private $context;
+	private $fileProvider;
 
 	protected function setUp() {
 		parent::setUp();
@@ -99,32 +100,29 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	}
 
 	/**
+	 * @param ProofreadIndexPage[] $indexForPage
 	 * @return Context
 	 */
-	protected function getContext() {
-		if ( $this->context === null ) {
-			$this->context = new Context(
-				ProofreadPageInit::getNamespaceId( 'page' ),
-				ProofreadPageInit::getNamespaceId( 'index' ),
-				$this->getFileProvider(),
-				new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration )
-			);
-		}
-
-		return $this->context;
+	protected function getContext( array $indexForPage = [] ) {
+		return new Context(
+			ProofreadPageInit::getNamespaceId( 'page' ),
+			ProofreadPageInit::getNamespaceId( 'index' ),
+			$this->getFileProvider(),
+			new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration ),
+			new IndexForPageLookupMock( $indexForPage )
+		);
 	}
 
 	/**
 	 * Constructor of a new ProofreadPagePage
 	 * @param Title|string $title
-	 * @param ProofreadIndexPage|null $index
 	 * @return ProofreadPagePage
 	 */
-	public function newPagePage( $title = 'test.jpg', ProofreadIndexPage $index = null ) {
+	public function newPagePage( $title = 'test.jpg' ) {
 		if ( is_string( $title ) ) {
 			$title = Title::makeTitle( $this->getPageNamespaceId(), $title );
 		}
-		return new ProofreadPagePage( $title, $index );
+		return ProofreadPagePage::newFromTitle( $title );
 	}
 
 	/**
@@ -164,13 +162,16 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @return FileProvider
 	 */
 	private function getFileProvider() {
-		return new FileProviderMock( $this->buildFileList() );
+		if ( $this->fileProvider === null ) {
+			$this->fileProvider = new FileProviderMock( $this->buildFileList() );
+		}
+		return $this->fileProvider;
 	}
 
 	/**
 	 * @return File[]
 	 */
-	private function buildFileList() {
+	protected function buildFileList() {
 		$backend = new FSFileBackend( [
 			'name' => 'localtesting',
 			'wikiId' => wfWikiID(),

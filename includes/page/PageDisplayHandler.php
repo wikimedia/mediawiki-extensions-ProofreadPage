@@ -39,8 +39,8 @@ class PageDisplayHandler {
 	 * @return int
 	 */
 	public function getImageWidth( ProofreadPagePage $page ) {
-		$index = $page->getIndex();
-		if ( $index ) {
+		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
+		if ( $index !== null ) {
 			try {
 				$width = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
 					$index->getContent(), 'width'
@@ -62,8 +62,8 @@ class PageDisplayHandler {
 	 * @return string
 	 */
 	public function getCustomCss( ProofreadPagePage $page ) {
-		$index = $page->getIndex();
-		if ( !$index ) {
+		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
+		if ( $index === null ) {
 			return '';
 		}
 		try {
