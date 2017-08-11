@@ -4,6 +4,9 @@ use ProofreadPage\Context;
 use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
 use ProofreadPage\Index\CustomIndexFieldsParser;
+use ProofreadPage\Index\IndexContent;
+use ProofreadPage\Page\PageContent;
+use ProofreadPage\ProofreadPageInit;
 
 /**
  * @group ProofreadPage
@@ -89,14 +92,11 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	private $context;
 
 	protected function setUp() {
-		global $wgProofreadPageNamespaceIds, $wgNamespacesWithSubpages;
 		parent::setUp();
 
-		$wgProofreadPageNamespaceIds = [
-			'page' => 250,
-			'index' => 252
-		];
+		global $wgNamespacesWithSubpages;
 		$wgNamespacesWithSubpages[NS_MAIN] = true;
+		ProofreadPageInit::initNamespaces();
 	}
 
 	/**
@@ -105,14 +105,58 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	protected function getContext() {
 		if ( $this->context === null ) {
 			$this->context = new Context(
-				250,
-				252,
+				ProofreadPageInit::getNamespaceId( 'page' ),
+				ProofreadPageInit::getNamespaceId( 'index' ),
 				$this->getFileProvider(),
 				new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration )
 			);
 		}
 
 		return $this->context;
+	}
+
+	/**
+	 * Constructor of a new ProofreadPagePage
+	 * @param Title|string $title
+	 * @param ProofreadIndexPage|null $index
+	 * @return ProofreadPagePage
+	 */
+	public function newPagePage( $title = 'test.jpg', ProofreadIndexPage $index = null ) {
+		if ( is_string( $title ) ) {
+			$title = Title::makeTitle( $this->getPageNamespaceId(), $title );
+		}
+		return new ProofreadPagePage( $title, $index );
+	}
+
+	/**
+	 * Constructor of a new ProofreadIndexPage
+	 * @param Title|string $title
+	 * @param string|IndexContent|null $content
+	 * @return ProofreadIndexPage
+	 */
+	protected function newIndexPage( $title = 'test.djvu', $content = null ) {
+		if ( is_string( $title ) ) {
+			$title = Title::makeTitle( $this->getIndexNamespaceId(), $title );
+		}
+		if ( is_string( $content ) ) {
+			$content = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_INDEX )
+				->unserializeContent( $content );
+		}
+		return new ProofreadIndexPage( $title, $content );
+	}
+
+	/**
+	 * @return int
+	 */
+	protected function getPageNamespaceId() {
+		return $this->getContext()->getPageNamespaceId();
+	}
+
+	/**
+	 * @return int
+	 */
+	protected function getIndexNamespaceId() {
+		return $this->getContext()->getIndexNamespaceId();
 	}
 
 	/**

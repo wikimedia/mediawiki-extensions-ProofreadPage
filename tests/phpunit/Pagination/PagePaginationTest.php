@@ -4,7 +4,6 @@ namespace ProofreadPage\Pagination;
 
 use InvalidArgumentException;
 use OutOfBoundsException;
-use ProofreadIndexPageTest;
 use ProofreadPagePage;
 use ProofreadPageTestCase;
 use Title;
@@ -16,7 +15,7 @@ use Title;
 class PagePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumber() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$page = new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index );
 		$pagination = new PagePagination(
 			$index,
@@ -40,7 +39,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testGetPageNumberWithFailure() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getPageNumber(
 			new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index )
@@ -48,7 +47,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetDisplayedPageNumber() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new PagePagination(
 			$index,
@@ -62,13 +61,13 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 * @expectedException OutOfBoundsException
 	 */
 	public function testGetDisplayedPageNumberWithFailure() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getDisplayedPageNumber( 3 );
 	}
 
 	public function testGetNumberOfPages() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$pagination = new PagePagination(
 			$index,
 			[
@@ -86,7 +85,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetPage() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$page = new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index );
 		$pagination = new PagePagination(
 			$index,
@@ -108,13 +107,13 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 * @expectedException OutOfBoundsException
 	 */
 	public function testGetPageWithFailure() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getPage( 3 );
 	}
 
 	public function testIterator() {
-		$index = ProofreadIndexPageTest::newIndexPage();
+		$index = $this->newIndexPage();
 		$page1 = new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index );
 		$page2 = new ProofreadPagePage( Title::newFromText( 'Page:Test 2.jpg' ), $index );
 		$pagination = new PagePagination(

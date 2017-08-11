@@ -4,11 +4,9 @@ namespace ProofreadPage\Page;
 
 use IContextSource;
 use MediaHandler;
-use ProofreadIndexPageTest;
-use ProofreadPagePage;
-use ProofreadPagePageTest;
-use ProofreadPageTestCase;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPagePage;
+use ProofreadPageTestCase;
 use RequestContext;
 use User;
 
@@ -54,24 +52,24 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	public function buildDefaultContentForPageProvider() {
 		return [
 			[
-				ProofreadPagePageTest::newPagePage(
+				$this->newPagePage(
 					'Test.djvu/1',
-					ProofreadIndexPageTest::newIndexPage(
+					$this->newIndexPage(
 						'Test.djvu', "{{\n|Title=Test book\n|Header={{{title}}}\n}}"
 					)
 				),
 				PageContentTest::newContent( 'Test book', '', '<references />', 1 ),
 			],
 			[
-				ProofreadPagePageTest::newPagePage(
+				$this->newPagePage(
 					'LoremIpsum.djvu/2'
 				),
 				PageContentTest::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
 			],
 			[
-				ProofreadPagePageTest::newPagePage(
+				$this->newPagePage(
 					'LoremIpsum.djvu/2',
-					ProofreadIndexPageTest::newIndexPage(
+					$this->newIndexPage(
 						'LoremIpsum.djvu',
 						"{{\n|Title=Test book\n|Pages=<pagelist/>\n|Header={{{pagenum}}}\n}}"
 					)
@@ -79,9 +77,9 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				PageContentTest::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 			[
-				ProofreadPagePageTest::newPagePage(
+				$this->newPagePage(
 					'LoremIpsum.djvu/2',
-					ProofreadIndexPageTest::newIndexPage(
+					$this->newIndexPage(
 						'LoremIpsum.djvu',
 						"{{\n|Title=Test book\n|Pages=<pagelist 1to5=roman />\n" .
 							"|Header={{{pagenum}}}\n}}"

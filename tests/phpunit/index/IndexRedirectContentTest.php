@@ -24,7 +24,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 		parent::setUp();
 
 		$this->requestContext = new RequestContext( new FauxRequest() );
-		$this->requestContext->setTitle( Title::makeTitle( 252, 'Test.pdf' ) );
+		$this->requestContext->setTitle( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.pdf' ) );
 		$this->requestContext->setUser( new User() );
 	}
 

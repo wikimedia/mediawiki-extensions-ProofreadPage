@@ -28,7 +28,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		parent::setUp();
 
 		$this->requestContext = new RequestContext( new FauxRequest() );
-		$this->requestContext->setTitle( Title::makeTitle( 252, 'Test.pdf' ) );
+		$this->requestContext->setTitle( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.pdf' ) );
 		$this->requestContext->setUser( new User() );
 	}
 
@@ -218,7 +218,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 			$links,
 			$content->getLinksToNamespace(
 				Context::getDefaultContext()->getPageNamespaceId(),
-				Title::makeTitle( 252, 'Test' )
+				Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
 			)
 		);
 	}
