@@ -54,14 +54,14 @@ class Context {
 	}
 
 	/**
-	 * @return integer
+	 * @return int
 	 */
 	public function getPageNamespaceId() {
 		return $this->pageNamespaceId;
 	}
 
 	/**
-	 * @return integer
+	 * @return int
 	 */
 	public function getIndexNamespaceId() {
 		return $this->indexNamespaceId;

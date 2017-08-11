@@ -43,7 +43,7 @@ class ProofreadIndexDbConnector {
 
 	/**
 	 * @param Object $x
-	 * @param integer $indexId
+	 * @param int $indexId
 	 * @param WikiPage $article
 	 */
 	public static function replaceIndexById( $x, $indexId, WikiPage $article ) {
@@ -110,13 +110,13 @@ class ProofreadIndexDbConnector {
 	}
 
 	/**
-	 * @param integer $n
-	 * @param integer $n0
-	 * @param integer $n1
-	 * @param integer $n2
-	 * @param integer $n3
-	 * @param integer $n4
-	 * @param integer $indexId
+	 * @param int $n
+	 * @param int $n0
+	 * @param int $n1
+	 * @param int $n2
+	 * @param int $n3
+	 * @param int $n4
+	 * @param int $indexId
 	 */
 	public static function setIndexData( $n, $n0, $n1, $n2, $n3, $n4, $indexId ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -138,7 +138,7 @@ class ProofreadIndexDbConnector {
 
 	/**
 	 * Remove index data from pr_index table.
-	 * @param integer $pageId page identifier
+	 * @param int $pageId page identifier
 	 */
 	public static function removeIndexData( $pageId ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -163,7 +163,7 @@ class ProofreadIndexDbConnector {
 	}
 
 	/**
-	 * @param integer $indexId
+	 * @param int $indexId
 	 * @return Object
 	 */
 	public static function getIndexDataFromIndexPageId( $indexId ) {

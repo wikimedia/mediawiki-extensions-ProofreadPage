@@ -24,7 +24,7 @@ class PageLevel {
 
 	/**
 	 * Constructor
-	 * @param integer $level
+	 * @param int $level
 	 * @param User|null $user
 	 */
 	public function __construct( $level = 1, User $user = null ) {
@@ -34,7 +34,7 @@ class PageLevel {
 
 	/**
 	 * returns the proofreading level
-	 * @return integer
+	 * @return int
 	 */
 	public function getLevel() {
 		return $this->level;
@@ -51,7 +51,7 @@ class PageLevel {
 	/**
 	 * Returns if the level is valid
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isValid() {
 		return is_integer( $this->level ) && 0 <= $this->level && $this->level <= 4;
@@ -61,7 +61,7 @@ class PageLevel {
 	 * Returns if the level is the same as the level $that
 	 *
 	 * @param PageLevel $that
-	 * @return boolean
+	 * @return bool
 	 */
 	public function equals( PageLevel $that = null ) {
 		if ( $that === null ) {
@@ -79,7 +79,7 @@ class PageLevel {
 	 * Returns if the change of level to level $to is allowed
 	 *
 	 * @param PageLevel $to
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isChangeAllowed( PageLevel $to ) {
 		if ( $this->level !== $to->getLevel() && ( $to->getUser() === null ||

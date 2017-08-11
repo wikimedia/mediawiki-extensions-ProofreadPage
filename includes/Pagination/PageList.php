@@ -29,7 +29,7 @@ class PageList {
 	/**
 	 * Returns the PageNumber for the page number $pageNumber
 	 *
-	 * @param integer $pageNumber
+	 * @param int $pageNumber
 	 * @return PageNumber
 	 */
 	public function getNumber( $pageNumber ) {
@@ -88,8 +88,8 @@ class PageList {
 	 * Such range may be a single integer or something in the format XXtoYY
 	 *
 	 * @param string $range
-	 * @param integer $number
-	 * @return boolean
+	 * @param int $number
+	 * @return bool
 	 */
 	protected function numberInRange( $range, $number ) {
 		return

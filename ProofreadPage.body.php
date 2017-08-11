@@ -38,7 +38,7 @@ class ProofreadPage {
 	 *
 	 * Returns id of Page namespace.
 	 *
-	 * @return integer
+	 * @return int
 	 */
 	public static function getPageNamespaceId() {
 		return Context::getDefaultContext()->getPageNamespaceId();
@@ -49,7 +49,7 @@ class ProofreadPage {
 	 *
 	 * Returns id of Index namespace.
 	 *
-	 * @return integer
+	 * @return int
 	 */
 	public static function getIndexNamespaceId() {
 		return Context::getDefaultContext()->getIndexNamespaceId();
@@ -86,7 +86,7 @@ class ProofreadPage {
 	 *
 	 * @param Title $title the title page
 	 * @param string $model the content model for the page
-	 * @return boolean if we have to continue the research for a content handler
+	 * @return bool if we have to continue the research for a content handler
 	 */
 	public static function onContentHandlerDefaultModelFor( Title $title, &$model ) {
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
@@ -104,7 +104,7 @@ class ProofreadPage {
 	 * Set up our custom parser hooks when initializing parser.
 	 *
 	 * @param Parser $parser
-	 * @return boolean hook return value
+	 * @return bool hook return value
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setHook(

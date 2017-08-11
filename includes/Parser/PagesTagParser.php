@@ -97,7 +97,7 @@ class PagesTagParser extends TagParser {
 				// add page selected with $include in pagenums
 				if ( $include ) {
 					$list = $this->parseNumList( $include );
-					if ( $list  == null ) {
+					if ( $list == null ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 					$pagenums = $list;
@@ -127,7 +127,7 @@ class PagesTagParser extends TagParser {
 				// remove excluded pages form $pagenums
 				if ( $exclude ) {
 					$excluded = $this->parseNumList( $exclude );
-					if ( $excluded  == null ) {
+					if ( $excluded == null ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 					$pagenums = array_diff( $pagenums, $excluded );

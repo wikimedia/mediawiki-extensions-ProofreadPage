@@ -104,7 +104,7 @@ class PageContentBuilder {
 	 * @param string $header
 	 * @param string $body
 	 * @param string $footer
-	 * @param integer $level
+	 * @param int $level
 	 * @param PageContent $oldContent the old content used as base for the new content
 	 * @return PageContent
 	 */

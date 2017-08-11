@@ -84,7 +84,7 @@ class ProofreadPageInit {
 
 	/**
 	 * Create a namespace and his discussion one
-	 * @param integer $id the namespace id
+	 * @param int $id the namespace id
 	 * @param string $key the key of the namespace in the i18n file
 	 * @return bool false if there is an error, true if not
 	 */
@@ -158,7 +158,7 @@ class ProofreadPageInit {
 	 * Warning: It's not the function you search. If you want to know the index or page namespace
 	 * id use ProofreadPage::getIndexNamespaceId() or ProofreadPage::getPageNamespaceId()
 	 * @param string $key the key of the namespace in the i18n file
-	 * @return integer
+	 * @return int
 	 */
 	public static function getNamespaceId( $key ) {
 		global $wgProofreadPageNamespaceIds;

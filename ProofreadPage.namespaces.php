@@ -240,7 +240,7 @@ $proofreadPageNamespacesNames['kn'] = [
 	'page' => 'ಪುಟ',
 	'page_talk' => 'ಪುಟ_ಚರ್ಚೆ',
 	'index' => 'ಪರಿವಿಡಿ',
-	'index_talk' =>  'ಪರಿವಿಡಿ_ಚರ್ಚೆ'
+	'index_talk' => 'ಪರಿವಿಡಿ_ಚರ್ಚೆ'
 ];
 
 /** Korean (한국어) */
@@ -264,7 +264,7 @@ $proofreadPageNamespacesNames['ml'] = [
 	'page' => 'താൾ',
 	'page_talk' => 'താളിന്റെ_സംവാദം',
 	'index' => 'സൂചിക',
-	'index_talk' =>  'സൂചികയുടെ_സംവാദം'
+	'index_talk' => 'സൂചികയുടെ_സംവാദം'
 ];
 
 /** Marathi (मराठी) */
@@ -272,7 +272,7 @@ $proofreadPageNamespacesNames['mr'] = [
 	'page' => 'पान',
 	'page_talk' => 'पान_चर्चा',
 	'index' => 'अनुक्रमणिका',
-	'index_talk' =>  'अनुक्रमणिका_चर्चा'
+	'index_talk' => 'अनुक्रमणिका_चर्चा'
 ];
 
 /** Norwegian (bokmål)‬ (‪norsk (bokmål)‬) */
@@ -320,7 +320,7 @@ $proofreadPageNamespacesNames['ro'] = [
 	'page' => 'Pagină',
 	'page_talk' => 'Discuție_Pagină',
 	'index' => 'Index',
-	'index_talk' =>  'Discuție_Index'
+	'index_talk' => 'Discuție_Index'
 ];
 
 /** Russian (русский) */

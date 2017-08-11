@@ -259,7 +259,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 			[
 				new IndexContent( [
 					'Pages' => new WikitextContent( '' ),
-					'Author'=> new WikitextContent( '[[Author:Me]]' )
+					'Author' => new WikitextContent( '[[Author:Me]]' )
 				] ),
 				null
 			]

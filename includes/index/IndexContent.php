@@ -206,7 +206,7 @@ class IndexContent extends TextContent {
 	/**
 	 * Returns all links in a given namespace
 	 *
-	 * @param integer $namespace the default namespace id
+	 * @param int $namespace the default namespace id
 	 * @param Title $title the Index: page title
 	 * @param bool $withPrepossessing apply preprocessor before looking for links
 	 * @return Link[]

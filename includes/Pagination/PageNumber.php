@@ -32,8 +32,8 @@ class PageNumber {
 
 	/**
 	 * @param string $number the page number
-	 * @param string  $displayMode the display mode (one of the DISPLAY_* constant)
-	 * @param boolean $isEmpty
+	 * @param string $displayMode the display mode (one of the DISPLAY_* constant)
+	 * @param bool $isEmpty
 	 * @throws InvalidArgumentException
 	 */
 	public function __construct( $number, $displayMode = self::DISPLAY_NORMAL, $isEmpty = false ) {
@@ -69,7 +69,7 @@ class PageNumber {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isEmpty() {
 		return $this->isEmpty;

@@ -59,7 +59,7 @@ class ProofreadPageDbConnector {
 	/**
 	 * @param array $query
 	 * @param string $cat
-	 * @return integer
+	 * @return int
 	 */
 	public static function queryCount( $query, $cat ) {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -103,7 +103,7 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param integer $id
+	 * @param int $id
 	 * @return string|null
 	 */
 	public static function  getIndexTitleForPageId( $id ) {
@@ -136,7 +136,7 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param integer $id
+	 * @param int $id
 	 * @return integer|null
 	 */
 	public static function countTransclusionFromPageId( $id ) {

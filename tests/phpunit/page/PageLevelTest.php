@@ -68,10 +68,10 @@ class PageLevelTest extends ProofreadPageTestCase {
 		$testUser = User::newFromName( 'Test' );
 		$testUser->addToDatabase();
 		$testUser->addGroup( 'user' );
-		$test2User =  User::newFromName( 'Test2' );
+		$test2User = User::newFromName( 'Test2' );
 		$test2User->addToDatabase();
 		$test2User->addGroup( 'user' );
-		$test3User =  User::newFromName( 'Test3' );
+		$test3User = User::newFromName( 'Test3' );
 		$test3User->addToDatabase();
 		$test3User->addGroup( 'sysop' );
 		$ipUser = User::newFromName( '172.16.254.7', false );

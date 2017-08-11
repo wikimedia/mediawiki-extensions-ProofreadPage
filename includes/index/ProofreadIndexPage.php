@@ -67,7 +67,7 @@ class ProofreadIndexPage {
 	 * Check if two ProofreadIndexPage are equals
 	 *
 	 * @param ProofreadIndexPage $that
-	 * @return boolean
+	 * @return bool
 	 */
 	public function equals( ProofreadIndexPage $that ) {
 		return $this->title->equals( $that->getTitle() );

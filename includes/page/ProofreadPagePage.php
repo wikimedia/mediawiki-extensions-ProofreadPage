@@ -59,7 +59,7 @@ class ProofreadPagePage {
 	 * Check if two ProofreadPagePage are equals
 	 *
 	 * @param ProofreadPagePage $that
-	 * @return boolean
+	 * @return bool
 	 */
 	public function equals( ProofreadPagePage $that ) {
 		return $this->title->equals( $that->getTitle() );
