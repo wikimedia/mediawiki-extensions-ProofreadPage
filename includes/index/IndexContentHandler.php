@@ -129,6 +129,13 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
+	 * @see ContentHandler::getDiffEngineClass
+	 */
+	protected function getDiffEngineClass() {
+		return '\ProofreadPage\Index\IndexDifferenceEngine';
+	}
+
+	/**
 	 * @see ContentHandler::makeEmptyContent
 	 */
 	public function makeEmptyContent() {
