@@ -24,6 +24,9 @@ use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
+use ProofreadPage\Parser\PagelistTagParser;
+use ProofreadPage\Parser\PagequalityTagParser;
+use ProofreadPage\Parser\PagesTagParser;
 use ProofreadPage\ProofreadPageInit;
 
 /*
@@ -108,13 +111,20 @@ class ProofreadPage {
 	 * @return bool hook return value
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook(
-			'pagelist', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagelistTag' ]
-		);
-		$parser->setHook( 'pages', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagesTag' ] );
-		$parser->setHook(
-			'pagequality', [ 'ProofreadPage\Parser\ParserEntryPoint', 'renderPagequalityTag' ]
-		);
+		$parser->setHook( 'pagelist', function ( $input, array $args, Parser $parser ) {
+			$context = Context::getDefaultContext( true );
+			$tagParser = new PagelistTagParser( $parser, $context );
+			return $tagParser->render( $input, $args );
+		} );
+		$parser->setHook( 'pages', function ( $input, array $args, Parser $parser ) {
+			$context = Context::getDefaultContext( true );
+			$tagParser = new PagesTagParser( $parser, $context );
+			return $tagParser->render( $input, $args );
+		} );
+		$parser->setHook( 'pagequality', function ( $input, array $args, Parser $parser ) {
+				$tagParser = new PagequalityTagParser();
+				return $tagParser->render( $input, $args );
+		} );
 		return true;
 	}
 

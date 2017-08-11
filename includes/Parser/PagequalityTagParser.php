@@ -9,10 +9,14 @@ use Html;
  *
  * Parser for the <pagequality> tag
  */
-class PagequalityTagParser extends TagParser {
+class PagequalityTagParser {
 
 	/**
-	 * @inheritDoc
+	 * Render a <pagequality> tag
+	 *
+	 * @param string $input the content between opening and closing tags
+	 * @param array $args tags arguments
+	 * @return string
 	 */
 	public function render( $input, array $args ) {
 		if ( !array_key_exists( 'level', $args ) || !is_numeric( $args['level'] ) ||
