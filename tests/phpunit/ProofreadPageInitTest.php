@@ -12,8 +12,14 @@ class ProofreadPageInitTest extends ProofreadPageTestCase {
 	public function testInitNamespaceThrowsExceptionWhenNamespaceValueIsNotNumeric() {
 		global $wgProofreadPageNamespaceIds;
 
-		$wgProofreadPageNamespaceIds['page'] = 'quux';
-		ProofreadPageInit::initNamespaces();
+		$oldValue = $wgProofreadPageNamespaceIds;
+
+		try {
+			$wgProofreadPageNamespaceIds['page'] = 'quux';
+			ProofreadPageInit::initNamespaces();
+		} finally {
+			$wgProofreadPageNamespaceIds = $oldValue;
+		}
 	}
 
 	/**
@@ -22,8 +28,13 @@ class ProofreadPageInitTest extends ProofreadPageTestCase {
 	public function testGetNamespaceIdThrowsExceptionWhenKeyDoesNotExist() {
 		global $wgProofreadPageNamespaceIds;
 
-		$wgProofreadPageNamespaceIds = [];
-		ProofreadPageInit::getNamespaceId( 'page' );
+		$oldValue = $wgProofreadPageNamespaceIds;
+		try {
+			$wgProofreadPageNamespaceIds = [];
+			ProofreadPageInit::getNamespaceId( 'page' );
+		} finally {
+			$wgProofreadPageNamespaceIds = $oldValue;
+		}
 	}
 
 }

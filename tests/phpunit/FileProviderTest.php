@@ -37,7 +37,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum.djvu' ) ),
+				$this->newIndexPage( 'LoremIpsum.djvu' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
@@ -62,11 +62,11 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu' ) ),
+				$this->newIndexPage( 'LoremIpsum2.djvu' ),
 				$fileProvider
 			],
 			[
-				ProofreadIndexPage::newFromTitle( Title::makeTitle( 252, 'Test' ) ),
+				$this->newIndexPage( 'Test' ),
 				$fileProvider
 			],
 		];
@@ -89,24 +89,22 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu/4' ) ),
+				$this->newPagePage( 'LoremIpsum.djvu/4' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				ProofreadPagePage::newFromTitle(
-					Title::makeTitle( 250, 'LoremIpsum.djvu/djvu/1' )
-				),
+				$this->newPagePage( 'LoremIpsum.djvu/djvu/1' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'LoremIpsum.djvu' ) ),
+				$this->newPagePage( 'LoremIpsum.djvu' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 250, 'Test.jpg' ) ),
+				$this->newPagePage( 'Test.jpg' ),
 				$this->getFileFromName( 'Test.jpg' ),
 				$fileProvider
 			],
@@ -131,11 +129,11 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'LoremIpsum2.djvu/4' ) ),
+				$this->newPagePage( 'LoremIpsum2.djvu/4' ),
 				$fileProvider
 			],
 			[
-				ProofreadPagePage::newFromTitle( Title::makeTitle( 252, 'Test' ) ),
+				$this->newPagePage( 'Test' ),
 				$fileProvider
 			],
 		];
