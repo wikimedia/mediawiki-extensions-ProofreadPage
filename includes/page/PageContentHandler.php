@@ -7,6 +7,7 @@ use ContentHandler;
 use FormatJson;
 use MWContentSerializationException;
 use MWException;
+use ProofreadPage\Context;
 use TextContentHandler;
 use Title;
 use User;
@@ -30,6 +31,14 @@ class PageContentHandler extends TextContentHandler {
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_PAGE ) {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ] );
 		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
+	}
+
+	/**
+	 * @see ContentHandler::canBeUsedOn
+	 */
+	public function canBeUsedOn( Title $title ) {
+		return parent::canBeUsedOn( $title ) &&
+			$title->getNamespace() === Context::getDefaultContext()->getPageNamespaceId();
 	}
 
 	/**
@@ -217,7 +226,7 @@ class PageContentHandler extends TextContentHandler {
 		return [
 			'edit' => PageEditAction::class,
 			'submit' => PageSubmitAction::class,
-			'view' => PageViewAction::class,
+			'view' => PageViewAction::class
 		];
 	}
 

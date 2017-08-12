@@ -31,6 +31,10 @@
 	"APIPropModules": {
 		"proofread": "ApiQueryProofread"
 	},
+	"ContentHandlers": {
+		"proofread-page": "\\ProofreadPage\\Page\\PageContentHandler",
+		"proofread-index": "\\ProofreadPage\\Index\\IndexContentHandler"
+	},
 	"MessagesDirs": {
 		"ProofreadPage": [
 			"i18n"
@@ -89,9 +93,6 @@
 		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
 		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php",
-		"ProofreadIndexPageTest": "tests/phpunit/index/ProofreadIndexPageTest.php",
-		"ProofreadPagePageTest": "tests/phpunit/page/ProofreadPagePageTest.php",
-		"ProofreadPage\\Page\\PageContentTest": "tests/phpunit/page/PageContentTest.php",
 		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
 		"FixProofreadIndexPagesContentModel": "maintenance/fixProofreadIndexPagesContentModel.php"
 	},
@@ -300,9 +301,6 @@
 		],
 		"ContentHandlerDefaultModelFor": [
 			"ProofreadPage::onContentHandlerDefaultModelFor"
-		],
-		"EditFilterMergedContent": [
-			"ProofreadPage::onEditFilterMergedContent"
 		],
 		"EditFormPreloadText": [
 			"ProofreadPage::onEditFormPreloadText"

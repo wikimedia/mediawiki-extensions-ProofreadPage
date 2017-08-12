@@ -7,6 +7,7 @@ use ContentHandler;
 use MWContentSerializationException;
 use Parser;
 use PPFrame;
+use ProofreadPage\Context;
 use TextContentHandler;
 use Title;
 use WikitextContent;
@@ -50,6 +51,14 @@ class IndexContentHandler extends TextContentHandler {
 			null, $this->makeParserOptions( 'canonical' ), Parser::OT_PLAIN
 		);
 		return $parser;
+	}
+
+	/**
+	 * @see ContentHandler::canBeUsedOn
+	 */
+	public function canBeUsedOn( Title $title ) {
+		return parent::canBeUsedOn( $title ) &&
+			$title->getNamespace() === Context::getDefaultContext()->getIndexNamespaceId();
 	}
 
 	/**
@@ -123,7 +132,7 @@ class IndexContentHandler extends TextContentHandler {
 	public function getActionOverrides() {
 		return [
 			'edit' => IndexEditAction::class,
-			'submit' => IndexSubmitAction::class,
+			'submit' => IndexSubmitAction::class
 		];
 	}
 

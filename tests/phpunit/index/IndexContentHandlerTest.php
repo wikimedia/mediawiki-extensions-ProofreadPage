@@ -25,6 +25,16 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->handler = new IndexContentHandler();
 	}
 
+	public function testCanBeUsedOn() {
+		$this->assertTrue( $this->handler->canBeUsedOn(
+			Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+		) );
+		$this->assertFalse( $this->handler->canBeUsedOn(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+		) );
+		$this->assertFalse( $this->handler->canBeUsedOn( Title::makeTitle( NS_MAIN, 'Test' ) ) );
+	}
+
 	public function wikitextSerializationProvider() {
 		return [
 			[

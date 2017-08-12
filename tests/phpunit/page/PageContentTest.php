@@ -6,13 +6,14 @@ use FauxRequest;
 use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
+use Status;
 use Title;
 use User;
 use WikitextContent;
 
 /**
  * @group ProofreadPage
- * @covers ProofreadPageContent
+ * @covers \ProofreadPage\Page\PageContent
  */
 class PageContentTest extends ProofreadPageTestCase {
 
@@ -40,31 +41,13 @@ class PageContentTest extends ProofreadPageTestCase {
 		$this->requestContext->setUser( $user );
 	}
 
-	/**
-	 * Constructor of a new PageContent
-	 * @param WikitextContent|string $header
-	 * @param WikitextContent|string $body
-	 * @param WikitextContent|string $footer
-	 * @param integer $level
-	 * @param User|string $proofreader
-	 * @return PageContent
-	 */
-	public static function newContent(
+	private static function newContent(
 		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
 	) {
-		if ( is_string( $header ) ) {
-			$header = new WikitextContent( $header );
-		}
-		if ( is_string( $body ) ) {
-			$body = new WikitextContent( $body );
-		}
-		if ( is_string( $footer ) ) {
-			$footer = new WikitextContent( $footer );
-		}
-		if ( is_string( $proofreader ) ) {
-			$proofreader = PageLevel::getUserFromUserName( $proofreader );
-		}
-		return new PageContent( $header, $body, $footer, new PageLevel( $level, $proofreader ) );
+		return new PageContent(
+			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
+			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
+		);
 	}
 
 	public function testGetModel() {
@@ -73,21 +56,18 @@ class PageContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetHeader() {
-		$header = new WikitextContent( "testString" );
-		$pageContent = self::newContent( $header );
-		$this->assertEquals( $header, $pageContent->getHeader() );
+		$pageContent = self::newContent( 'testString' );
+		$this->assertEquals( new WikitextContent( 'testString' ), $pageContent->getHeader() );
 	}
 
 	public function testGetFooter() {
-		$footer = new WikitextContent( "testString" );
-		$pageContent = self::newContent( '', '', $footer );
-		$this->assertEquals( $footer, $pageContent->getFooter() );
+		$pageContent = self::newContent( '', '', 'testString' );
+		$this->assertEquals( new WikitextContent( 'testString' ), $pageContent->getFooter() );
 	}
 
 	public function testGetBody() {
-		$body = new WikitextContent( "testString" );
-		$pageContent = self::newContent( '', $body );
-		$this->assertEquals( $body, $pageContent->getBody() );
+		$pageContent = self::newContent( '', 'testString' );
+		$this->assertEquals( new WikitextContent( 'testString' ), $pageContent->getBody() );
 	}
 
 	public function testGetLevel() {
@@ -152,7 +132,7 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function testGetWikitextForTransclusion() {
 		$content = self::newContent( 'aa', 'test', 'bb', 2, 'ater' );
-		return $this->assertEquals( 'test', $content->getWikitextForTransclusion() );
+		$this->assertEquals( 'test', $content->getWikitextForTransclusion() );
 	}
 
 	public function getTextForSummaryProvider() {
@@ -178,7 +158,7 @@ class PageContentTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider getTextForSummaryProvider
 	 */
-	public function testGetTextForSummary( $content, $length, $result ) {
+	public function testGetTextForSummary( PageContent $content, $length, $result ) {
 		$this->assertEquals( $result, $content->getTextForSummary( $length ) );
 	}
 
@@ -205,7 +185,7 @@ class PageContentTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider preSaveTransformProvider
 	 */
-	public function testPreSaveTransform( $content, $expectedContent ) {
+	public function testPreSaveTransform( PageContent $content, $expectedContent ) {
 		global $wgContLang;
 
 		$options = ParserOptions::newFromUserAndLang(
@@ -235,7 +215,7 @@ class PageContentTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider preloadTransformProvider
 	 */
-	public function testPreloadTransform( $content, $expectedContent ) {
+	public function testPreloadTransform( PageContent $content, $expectedContent ) {
 		global $wgContLang;
 
 		$options = ParserOptions::newFromUserAndLang(
@@ -245,6 +225,32 @@ class PageContentTest extends ProofreadPageTestCase {
 		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );
 
 		$this->assertEquals( $expectedContent, $content );
+	}
+
+	public function prepareSaveProvider() {
+		return [
+			[
+				Status::newGood(),
+				self::newContent()
+			],
+			[
+				Status::newFatal( 'invalid-content-data' ),
+				self::newContent( '', '', '', 5 )
+			],
+			[
+				Status::newFatal( 'proofreadpage_notallowedtext' ),
+				self::newContent( '', '', '', 4 )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider prepareSaveProvider
+	 */
+	public function testPrepareSave( Status $expectedResult, PageContent $content ) {
+		$this->assertEquals( $expectedResult, $content->prepareSave(
+			$this->requestContext->getWikiPage(), 0, -1, $this->requestContext->getUser()
+		) );
 	}
 
 	public function testRedirectTarget() {

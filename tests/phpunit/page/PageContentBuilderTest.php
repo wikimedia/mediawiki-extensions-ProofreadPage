@@ -9,6 +9,7 @@ use ProofreadPagePage;
 use ProofreadPageTestCase;
 use RequestContext;
 use User;
+use WikitextContent;
 
 /**
  * @group ProofreadPage
@@ -26,6 +27,15 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 
 		$this->context = new RequestContext();
 		$this->context->setUser( User::newFromName( 'Test' ) );
+	}
+
+	private static function newContent(
+		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
+	) {
+		return new PageContent(
+			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
+			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
+		);
 	}
 
 	/**
@@ -58,13 +68,13 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 						'Test.djvu', "{{\n|Title=Test book\n|Header={{{title}}}\n}}"
 					)
 				),
-				PageContentTest::newContent( 'Test book', '', '<references />', 1 ),
+				self::newContent( 'Test book', '', '<references />', 1 ),
 			],
 			[
 				$this->newPagePage(
 					'LoremIpsum.djvu/2'
 				),
-				PageContentTest::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
+				self::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
 			],
 			[
 				$this->newPagePage(
@@ -74,7 +84,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 						"{{\n|Title=Test book\n|Pages=<pagelist/>\n|Header={{{pagenum}}}\n}}"
 					)
 				),
-				PageContentTest::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
+				self::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 			[
 				$this->newPagePage(
@@ -85,7 +95,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 							"|Header={{{pagenum}}}\n}}"
 					)
 				),
-				PageContentTest::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
+				self::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 		];
 	}
@@ -110,24 +120,24 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				'42',
 				'42',
 				2,
-				PageContentTest::newContent( '22', '22', '22', 2, 'Test2' ),
-				PageContentTest::newContent( '42', '42', '42', 2, 'Test2' ),
+				self::newContent( '22', '22', '22', 2, 'Test2' ),
+				self::newContent( '42', '42', '42', 2, 'Test2' ),
 			],
 			[
 				'42',
 				'42',
 				'42',
 				2,
-				PageContentTest::newContent( '22', '22', '22', 2, null ),
-				PageContentTest::newContent( '42', '42', '42', 2, 'Test' ),
+				self::newContent( '22', '22', '22', 2, null ),
+				self::newContent( '42', '42', '42', 2, 'Test' ),
 			],
 			[
 				'42',
 				'42',
 				'42',
 				3,
-				PageContentTest::newContent( '22', '22', '22', 2, 'Test2' ),
-				PageContentTest::newContent( '42', '42', '42', 3, 'Test' ),
+				self::newContent( '22', '22', '22', 2, 'Test2' ),
+				self::newContent( '42', '42', '42', 3, 'Test' ),
 			],
 		];
 	}

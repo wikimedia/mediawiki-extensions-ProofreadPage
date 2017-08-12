@@ -6,9 +6,12 @@ use Content;
 use Html;
 use MagicWord;
 use ParserOptions;
+use Revision;
+use Status;
 use TextContent;
 use Title;
 use User;
+use WikiPage;
 use WikitextContent;
 
 /**
@@ -164,6 +167,42 @@ class PageContent extends TextContent {
 			$this->footer->preloadTransform( $title, $popts, $params ),
 			$this->level
 		);
+	}
+
+	/**
+	 * @see Content::prepareSave
+	 */
+	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
+		if ( !$this->isValid() ) {
+			return Status::newFatal( 'invalid-content-data' );
+		}
+
+		$oldContent = $this->getContentForRevId( $parentRevId );
+		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+			// Let's convert it to Page: page content
+			$oldContent = $oldContent->convert( CONTENT_MODEL_PROOFREAD_PAGE );
+		}
+		if ( !( $oldContent instanceof self ) ) {
+			return Status::newFatal( 'invalid-content-data' );
+		}
+		if ( !$oldContent->getLevel()->isChangeAllowed( $this->getLevel() ) ) {
+			return Status::newFatal( 'proofreadpage_notallowedtext' );
+		}
+
+		return Status::newGood();
+	}
+
+	private function getContentForRevId( $revId ) {
+		if ( $revId !== -1 ) {
+			$revision = Revision::newFromId( $revId );
+			if ( $revision !== null ) {
+				$content = $revision->getContent();
+				if ( $content !== null ) {
+					return $content;
+				}
+			}
+		}
+		return $this->getContentHandler()->makeEmptyContent();
 	}
 
 	/**

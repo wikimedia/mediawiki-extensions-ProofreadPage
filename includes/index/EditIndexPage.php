@@ -11,7 +11,6 @@ use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
 use OOUI\MultilineTextInputWidget;
 use ProofreadPage\Context;
-use Status;
 use WikitextContent;
 
 /**
@@ -188,38 +187,5 @@ class EditIndexPage extends EditPage {
 		$value = preg_replace( '/&!&/', '{{!}}', $value );
 
 		return $value;
-	}
-
-	/**
-	 * Check the validity of the page
-	 *
-	 * @see EditPage::internalAttemptSave
-	 */
-	public function internalAttemptSave( &$result, $bot = false ) {
-		$content = $this->toEditContent( $this->textbox1 );
-		if ( $content instanceof IndexContent ) {
-			// Get list of pages titles
-			$links = $content->getLinksToNamespace(
-				$this->extContext->getPageNamespaceId(), $this->getTitle()
-			);
-			$linksTitle = [];
-			foreach ( $links as $link ) {
-				$linksTitle[] = $link->getTarget();
-			}
-
-			if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-				$this->context->getOutput()->showErrorPage(
-					'proofreadpage_indexdupe',
-					'proofreadpage_indexdupetext'
-				);
-				$status = Status::newGood();
-				$status->fatal( 'hookaborted' );
-				$status->value = self::AS_HOOK_ERROR;
-
-				return $status;
-			}
-		}
-
-		return parent::internalAttemptSave( $result, $bot );
 	}
 }

@@ -7,10 +7,11 @@ use FormatJson;
 use MWContentSerializationException;
 use ProofreadPageTestCase;
 use Title;
+use WikitextContent;
 
 /**
  * @group ProofreadPage
- * @covers ProofreadPageContentHandler
+ * @covers PageContentHandler
  */
 class PageContentHandlerTest extends ProofreadPageTestCase {
 
@@ -23,6 +24,25 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		parent::setUp();
 
 		$this->handler = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
+	}
+
+	private static function newContent(
+		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
+	) {
+		return new PageContent(
+			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
+			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
+		);
+	}
+
+	public function testCanBeUsedOn() {
+		$this->assertTrue( $this->handler->canBeUsedOn(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+		) );
+		$this->assertFalse( $this->handler->canBeUsedOn(
+			Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+		) );
+		$this->assertFalse( $this->handler->canBeUsedOn( Title::makeTitle( NS_MAIN, 'Test' ) ) );
 	}
 
 	public function pageWikitextSerializationProvider() {
@@ -113,7 +133,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public function testSerializeContentInWikitext(
 		$header, $body, $footer, $level, $proofreader
 	) {
-		$pageContent = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
+		$pageContent = self::newContent( $header, $body, $footer, $level, $proofreader );
 
 		$serializedString = '<noinclude><pagequality level="' . $level . '" user="';
 		$serializedString .= $proofreader;
@@ -131,7 +151,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$header, $body, $footer, $level, $proofreader, $text
 	) {
 		$this->assertEquals(
-			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
+			self::newContent( $header, $body, $footer, $level, $proofreader ),
 			$this->handler->unserializeContent( $text )
 		);
 	}
@@ -142,7 +162,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public function testRoundTripSerializeContentInWikitext(
 		$header, $body, $footer, $level, $proofreader, $text
 	) {
-		$content = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
+		$content = self::newContent( $header, $body, $footer, $level, $proofreader );
 		$this->assertEquals(
 			$content,
 			$this->handler->unserializeContent( $this->handler->serializeContent( $content ) )
@@ -150,7 +170,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	}
 
 	public function testSerializeContentInJson() {
-		$pageContent = PageContentTest::newContent( 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4' );
+		$pageContent = self::newContent( 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4' );
 
 		$this->assertEquals(
 			FormatJson::encode( [
@@ -195,7 +215,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$header, $body, $footer, $level, $proofreader, $text
 	) {
 		$this->assertEquals(
-			PageContentTest::newContent( $header, $body, $footer, $level, $proofreader ),
+			self::newContent( $header, $body, $footer, $level, $proofreader ),
 			$this->handler->unserializeContent( $text )
 		);
 	}
@@ -241,7 +261,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public function testRoundTripSerializeContentInJson(
 		$header, $body, $footer, $level, $proofreader, $text
 	) {
-		$content = PageContentTest::newContent( $header, $body, $footer, $level, $proofreader );
+		$content = self::newContent( $header, $body, $footer, $level, $proofreader );
 		$this->assertEquals(
 			$content,
 			$this->handler->unserializeContent(
@@ -259,27 +279,27 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public static function merge3Provider() {
 		return [
 			[
-				PageContentTest::newContent( '', "first paragraph\n\nsecond paragraph\n" ),
-				PageContentTest::newContent( '', "FIRST paragraph\n\nsecond paragraph\n" ),
-				PageContentTest::newContent( '', "first paragraph\n\nSECOND paragraph\n" ),
-				PageContentTest::newContent( '', "FIRST paragraph\n\nSECOND paragraph\n" )
+				self::newContent( '', "first paragraph\n\nsecond paragraph\n" ),
+				self::newContent( '', "FIRST paragraph\n\nsecond paragraph\n" ),
+				self::newContent( '', "first paragraph\n\nSECOND paragraph\n" ),
+				self::newContent( '', "FIRST paragraph\n\nSECOND paragraph\n" )
 			],
 			[
-				PageContentTest::newContent( '', "test\n" ),
-				PageContentTest::newContent( '', "dddd\n" ),
-				PageContentTest::newContent( '', "ffff\n" ),
+				self::newContent( '', "test\n" ),
+				self::newContent( '', "dddd\n" ),
+				self::newContent( '', "ffff\n" ),
 				false
 			],
 			[
-				PageContentTest::newContent( '', "test\n", '', 1, 'John' ),
-				PageContentTest::newContent( '', "test2\n", '', 2, 'Jack' ),
-				PageContentTest::newContent( '', "test\n", '', 2, 'Bob' ),
-				PageContentTest::newContent( '', "test2\n", '', 2, 'Bob' ),
+				self::newContent( '', "test\n", '', 1, 'John' ),
+				self::newContent( '', "test2\n", '', 2, 'Jack' ),
+				self::newContent( '', "test\n", '', 2, 'Bob' ),
+				self::newContent( '', "test2\n", '', 2, 'Bob' ),
 			],
 			[
-				PageContentTest::newContent( '', "test\n", '', 1, 'John' ),
-				PageContentTest::newContent( '', "test\n", '', 2, 'Jack' ),
-				PageContentTest::newContent( '', "test\n", '', 1, 'Bob' ),
+				self::newContent( '', "test\n", '', 1, 'John' ),
+				self::newContent( '', "test\n", '', 2, 'Jack' ),
+				self::newContent( '', "test\n", '', 1, 'Bob' ),
 				false
 			],
 		];
@@ -297,18 +317,18 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public static function getAutosummaryProvider() {
 		return [
 			[
-				PageContentTest::newContent( '', '', '', 1 ),
-				PageContentTest::newContent( 'aa', 'aa', 'aa', 1 ),
+				self::newContent( '', '', '', 1 ),
+				self::newContent( 'aa', 'aa', 'aa', 1 ),
 				''
 			],
 			[
 				null,
-				PageContentTest::newContent( '', 'aaa', '', 1 ),
+				self::newContent( '', 'aaa', '', 1 ),
 				'/* Not proofread */'
 			],
 			[
-				PageContentTest::newContent( '', '', '', 2 ),
-				PageContentTest::newContent( '', '', '', 1 ),
+				self::newContent( '', '', '', 2 ),
+				self::newContent( '', '', '', 1 ),
 				'/* Not proofread */'
 			]
 		];

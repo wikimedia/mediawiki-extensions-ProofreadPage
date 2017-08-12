@@ -9,6 +9,7 @@ use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use ProofreadPageTestCase;
 use RequestContext;
+use Status;
 use Title;
 use User;
 use WikitextContent;
@@ -180,6 +181,30 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );
 
 		$this->assertEquals( $expectedContent, $content );
+	}
+
+	public function prepareSaveProvider() {
+		return [
+			[
+				Status::newGood(),
+				new IndexContent( [] )
+			],
+			[
+				Status::newFatal( 'proofreadpage_indexdupetext' ),
+				new IndexContent( [
+					'page' => new WikitextContent( '[[Page:Foo]] [[Page:Bar]] [[Page:Foo]]' )
+				] )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider prepareSaveProvider
+	 */
+	public function testPrepareSave( Status $expectedResult, IndexContent $content ) {
+		$this->assertEquals( $expectedResult, $content->prepareSave(
+			$this->requestContext->getWikiPage(), 0, -1, $this->requestContext->getUser()
+		) );
 	}
 
 	public function testGetSize() {

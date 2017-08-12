@@ -21,7 +21,6 @@
 
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
-use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\ProofreadPageInit;
@@ -608,58 +607,6 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Make validation of the content in the edit API
-	 *
-	 * @param IContextSource $context
-	 * @param Content $content Content of the edit box.
-	 * @param Status $status Status object to represent errors, etc.
-	 * @param string $summary Edit summary for page.
-	 * @param User $user User who is performing the edit.
-	 * @param bool $minoredit Whether the edit was marked as minor by the user.
-	 * @return bool
-	 */
-	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
-		Status $status, $summary, User $user, $minoredit
-	) {
-		// If the content's model isn't ours, ignore this; there's nothing for us to do here.
-		if ( !( $content instanceof PageContent ) ) {
-			return true;
-		}
-
-		// Fail if the content is invalid, or the level is being removed.
-		if ( !$content->isValid() ) {
-			$status->fatal( 'proofreadpage_badpagetext' );
-			return false;
-		}
-
-		$oldContent = $context->getWikiPage()->getContent( Revision::FOR_THIS_USER, $user );
-		if ( $oldContent === null ) {
-			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )
-				->makeEmptyContent();
-		}
-		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
-			// Let's convert it to Page: page content
-			$oldContent = $oldContent->convert( CONTENT_MODEL_PROOFREAD_PAGE );
-		}
-		if ( !( $oldContent instanceof PageContent ) ) {
-			// We consider it as a page creation
-			$oldContent = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE )
-				->makeEmptyContent();
-		}
-
-		$oldLevel = $oldContent->getLevel();
-		$newLevel = $content->getLevel();
-
-		// Fail if the user changed the level and the change isn't allowed
-		if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
-			$status->fatal( 'proofreadpage_notallowedtext' );
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
 	 * Provides text for preload API
 	 *
 	 * @param string &$text
@@ -902,16 +849,11 @@ class ProofreadPage {
 	 * Extension registration callback
 	 */
 	public static function onRegister() {
-		global $wgContentHandlers;
-
 		// L10n
 		include_once __DIR__ . '/ProofreadPage.namespaces.php';
 
 		// Content handler
 		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
 		define( 'CONTENT_MODEL_PROOFREAD_INDEX', 'proofread-index' );
-		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_PAGE] = '\ProofreadPage\Page\PageContentHandler';
-		$wgContentHandlers[CONTENT_MODEL_PROOFREAD_INDEX] =
-			'\ProofreadPage\Index\IndexContentHandler';
 	}
 }

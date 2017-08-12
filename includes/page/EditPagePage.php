@@ -9,7 +9,6 @@ use MWException;
 use OOUI;
 use ProofreadPage\Context;
 use ProofreadPagePage;
-use Status;
 use User;
 
 /**
@@ -214,33 +213,5 @@ class EditPagePage extends EditPage {
 			$request->getInt( 'wpQuality', $currentContent->getLevel()->getLevel() ),
 			$currentContent
 		)->serialize();
-	}
-
-	/**
-	 * Check the validity of the page
-	 *
-	 * @see EditPage::internalAttemptSave
-	 */
-	public function internalAttemptSave( &$result, $bot = false ) {
-		$error = '';
-		$oldContent = $this->getCurrentContent();
-		$newContent = $this->toEditContent( $this->textbox1 );
-
-		if ( !$newContent->isValid() ) {
-			$error = 'badpage';
-		} elseif ( !$oldContent->getLevel()->isChangeAllowed( $newContent->getLevel() ) ) {
-			$error = 'notallowed';
-		}
-
-		if ( $error !== '' ) {
-			$this->context->getOutput()->showErrorPage(
-				'proofreadpage_' . $error, 'proofreadpage_' . $error . 'text'
-			);
-			$status = Status::newFatal( 'hookaborted' );
-			$status->value = self::AS_HOOK_ERROR;
-			return $status;
-		}
-
-		return parent::internalAttemptSave( $result, $bot );
 	}
 }
