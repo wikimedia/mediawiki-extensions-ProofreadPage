@@ -242,6 +242,7 @@ class PageContent extends TextContent {
 			)->getDBkey(),
 			$title->getText()
 		);
+		$parserOutput->setProperty( 'proofread_page_quality_level', $this->level->getLevel() );
 
 		// html container
 		$html = Html::openElement( 'div',
