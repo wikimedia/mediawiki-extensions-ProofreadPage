@@ -19,8 +19,6 @@ OO.inheritClass( ve.ui.MWPagequalityInspector, ve.ui.MWExtensionInspector );
 /* Static properties */
 ve.ui.MWPagequalityInspector.static.name = 'pagequality';
 
-ve.ui.MWPagequalityInspector.static.icon = 'alienextension';
-
 ve.ui.MWPagequalityInspector.static.title = OO.ui.deferMsg( 'proofreadpage-visualeditor-node-pagequality-inspector-title' );
 
 ve.ui.MWPagequalityInspector.static.modelClasses = [ ve.dm.MWPagequalityNode ];

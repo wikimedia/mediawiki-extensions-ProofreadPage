@@ -221,6 +221,7 @@
 			"dependencies": [
 				"ext.visualEditor.mwcore",
 				"ext.visualEditor.desktopArticleTarget",
+				"oojs-ui.styles.icons-moderation",
 				"jquery.prpZoom"
 			],
 			"messages": [

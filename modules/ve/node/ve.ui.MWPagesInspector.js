@@ -18,8 +18,6 @@ OO.inheritClass( ve.ui.MWPagesInspector, ve.ui.MWExtensionInspector );
 
 ve.ui.MWPagesInspector.static.name = 'pages';
 
-ve.ui.MWPagesInspector.static.icon = 'articles';
-
 ve.ui.MWPagesInspector.static.title = OO.ui.deferMsg( 'proofreadpage-visualeditor-node-pages-inspector-title' );
 
 ve.ui.MWPagesInspector.static.modelClasses = [ ve.dm.MWPagesNode ];
