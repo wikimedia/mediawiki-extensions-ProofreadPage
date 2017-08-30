@@ -25,6 +25,7 @@ use ProofreadPage\Index\EditIndexPage;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Pagination\PageNotInPaginationException;
+use ProofreadPage\ProofreadPageInit;
 
 /*
  @todo :
@@ -41,7 +42,7 @@ class ProofreadPage {
 	 * @return int
 	 */
 	public static function getPageNamespaceId() {
-		return Context::getDefaultContext()->getPageNamespaceId();
+		return ProofreadPageInit::getNamespaceId( 'page' );
 	}
 
 	/**
@@ -52,7 +53,7 @@ class ProofreadPage {
 	 * @return int
 	 */
 	public static function getIndexNamespaceId() {
-		return Context::getDefaultContext()->getIndexNamespaceId();
+		return ProofreadPageInit::getNamespaceId( 'index' );
 	}
 
 	/**
@@ -89,6 +90,7 @@ class ProofreadPage {
 	 * @return bool if we have to continue the research for a content handler
 	 */
 	public static function onContentHandlerDefaultModelFor( Title $title, &$model ) {
+		// Warning: do not use Context here because it assumes ContentHandler is already initialized
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			$model = CONTENT_MODEL_PROOFREAD_PAGE;
 			return false;
