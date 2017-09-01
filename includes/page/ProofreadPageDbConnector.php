@@ -84,7 +84,7 @@ class ProofreadPageDbConnector {
 
 	/**
 	 * @param string $pages
-	 * @return integer|null
+	 * @return int|null
 	 */
 	public static function getNumberOfExistingPagesFromPageTitle( $pages ) {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -137,7 +137,7 @@ class ProofreadPageDbConnector {
 
 	/**
 	 * @param int $id
-	 * @return integer|null
+	 * @return int|null
 	 */
 	public static function countTransclusionFromPageId( $id ) {
 		$dbr = wfGetDB( DB_SLAVE );

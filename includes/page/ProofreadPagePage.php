@@ -75,7 +75,7 @@ class ProofreadPagePage {
 
 	/**
 	 * Returns number of the page in the file if it's a multi-page file or null
-	 * @return integer|null
+	 * @return int|null
 	 */
 	public function getPageNumber() {
 		$parts = explode( '/', $this->title->getText() );
