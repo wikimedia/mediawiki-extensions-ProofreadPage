@@ -7,6 +7,7 @@ use ContentHandler;
 use EditPage;
 use Html;
 use MWException;
+use OOUI;
 use ProofreadPage\Context;
 use ProofreadPagePage;
 use Status;
@@ -145,9 +146,9 @@ class EditPagePage extends EditPage {
 	/**
 	 * Sets the checkboxes for the proofreading status of the page.
 	 *
-	 * @see EditPage::getCheckBoxes
+	 * @see EditPage::getCheckboxesWidget
 	 */
-	public function getCheckBoxes( &$tabindex, $checked ) {
+	public function getCheckboxesWidget( &$tabindex, $checked ) {
 		$oldLevel = $this->getCurrentContent()->getLevel();
 
 		$content = $this->toEditContent( $this->textbox1 );
@@ -155,7 +156,7 @@ class EditPagePage extends EditPage {
 
 		$qualityLevels = [ 0, 2, 1, 3, 4 ];
 		$html = '';
-		$checkboxes = parent::getCheckBoxes( $tabindex, $checked );
+		$checkboxes = parent::getCheckboxesWidget( $tabindex, $checked );
 		$user = $this->context->getUser();
 
 		foreach ( $qualityLevels as $level ) {
@@ -180,9 +181,9 @@ class EditPagePage extends EditPage {
 				Html::closeElement( 'span' );
 		}
 
-		$checkboxes['wpr-pageStatus'] = '';
+		$checkboxes['wpr-pageStatus'] = new OOUI\Widget( [ 'content' => new OOUI\HtmlSnippet( '' ) ] );
 		if ( $user->isAllowed( 'pagequality' ) ) {
-			$checkboxes['wpr-pageStatus'] =
+			$content =
 				Html::openElement( 'span', [ 'id' => 'wpQuality-container' ] ) .
 				$html .
 				Html::closeElement( 'span' ) .
@@ -190,6 +191,9 @@ class EditPagePage extends EditPage {
 				$this->context->msg( 'proofreadpage_page_status' )
 					->title( $this->getTitle() )->parse() .
 				Html::closeElement( 'label' );
+			$checkboxes['wpr-pageStatus'] = new OOUI\Widget(
+				[ 'content' => new OOUI\HtmlSnippet( $content ) ]
+			);
 		}
 
 		return $checkboxes;
