@@ -11,6 +11,7 @@ use OOUI;
 use ProofreadPage\Context;
 use ProofreadPagePage;
 use Status;
+use User;
 
 /**
  * @licence GNU GPL v2+
@@ -149,17 +150,23 @@ class EditPagePage extends EditPage {
 	 * @see EditPage::getCheckboxesWidget
 	 */
 	public function getCheckboxesWidget( &$tabindex, $checked ) {
-		$oldLevel = $this->getCurrentContent()->getLevel();
-
-		$content = $this->toEditContent( $this->textbox1 );
-		$currentLevel = $content->getLevel();
-
-		$qualityLevels = [ 0, 2, 1, 3, 4 ];
-		$html = '';
 		$checkboxes = parent::getCheckboxesWidget( $tabindex, $checked );
 		$user = $this->context->getUser();
 
-		foreach ( $qualityLevels as $level ) {
+		if ( $user->isAllowed( 'pagequality' ) ) {
+			$checkboxes['wpr-pageStatus'] = $this->buildQualityEditWidget( $user, $tabindex );
+		}
+
+		return $checkboxes;
+	}
+
+	private function buildQualityEditWidget( User $user, &$tabindex ) {
+		$oldLevel = $this->getCurrentContent()->getLevel();
+		$content = $this->toEditContent( $this->textbox1 );
+		$currentLevel = $content->getLevel();
+
+		$html = '';
+		for ( $level = 0; $level <= 4; $level++ ) {
 			$newLevel = new PageLevel( $level, $user );
 			if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
 				continue;
@@ -181,22 +188,17 @@ class EditPagePage extends EditPage {
 				Html::closeElement( 'span' );
 		}
 
-		$checkboxes['wpr-pageStatus'] = new OOUI\Widget( [ 'content' => new OOUI\HtmlSnippet( '' ) ] );
-		if ( $user->isAllowed( 'pagequality' ) ) {
-			$content =
-				Html::openElement( 'span', [ 'id' => 'wpQuality-container' ] ) .
-				$html .
-				Html::closeElement( 'span' ) .
-				Html::OpenElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
-				$this->context->msg( 'proofreadpage_page_status' )
-					->title( $this->getTitle() )->parse() .
-				Html::closeElement( 'label' );
-			$checkboxes['wpr-pageStatus'] = new OOUI\Widget(
-				[ 'content' => new OOUI\HtmlSnippet( $content ) ]
-			);
-		}
-
-		return $checkboxes;
+		$content =
+			Html::openElement( 'span', [ 'id' => 'wpQuality-container' ] ) .
+			$html .
+			Html::closeElement( 'span' ) .
+			Html::OpenElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
+			$this->context->msg( 'proofreadpage_page_status' )
+				->title( $this->getTitle() )->parse() .
+			Html::closeElement( 'label' );
+		return new OOUI\Widget(
+			[ 'content' => new OOUI\HtmlSnippet( $content ) ]
+		);
 	}
 
 	/**
