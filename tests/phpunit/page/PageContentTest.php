@@ -239,7 +239,7 @@ class PageContentTest extends ProofreadPageTestCase {
 			],
 			[
 				Status::newFatal( 'proofreadpage_notallowedtext' ),
-				self::newContent( '', '', '', 4 )
+				self::newContent( '', '', '', PageLevel::VALIDATED )
 			]
 		];
 	}

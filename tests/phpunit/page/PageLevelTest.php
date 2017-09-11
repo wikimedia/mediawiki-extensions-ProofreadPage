@@ -7,7 +7,7 @@ use User;
 
 /**
  * @group ProofreadPage
- * @covers ProofreadPageLevel
+ * @covers PageLevel
  */
 class PageLevelTest extends ProofreadPageTestCase {
 
@@ -78,53 +78,63 @@ class PageLevelTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				new PageLevel( 1, $testUser ),
-				new PageLevel( 2, $ipUser ),
+				new PageLevel( PageLevel::NOT_PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::NOT_PROOFREAD, $ipUser ),
+				true
+			],
+			[
+				new PageLevel( PageLevel::NOT_PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::NOT_PROOFREAD, $test2User ),
+				true
+			],
+			[
+				new PageLevel( PageLevel::NOT_PROOFREAD, null ),
+				new PageLevel( PageLevel::NOT_PROOFREAD, $ipUser ),
+				true
+			],
+			[
+				new PageLevel( PageLevel::PROOFREAD, null ),
+				new PageLevel( PageLevel::PROOFREAD, $ipUser ),
+				true
+			],
+			[
+				new PageLevel( PageLevel::PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::VALIDATED, $testUser ),
 				false
 			],
 			[
-				new PageLevel( 1, $testUser ),
-				new PageLevel( 2, $test2User ),
-				true
-			],
-			[
-				new PageLevel( 1, null ),
-				new PageLevel( 1, $ipUser ),
-				true
-			],
-			[
-				new PageLevel( 3, $testUser ),
-				new PageLevel( 4, $testUser ),
+				new PageLevel( PageLevel::NOT_PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::VALIDATED, $test2User ),
 				false
 			],
 			[
-				new PageLevel( 1, $testUser ),
-				new PageLevel( 4, $test2User ),
+				new PageLevel( PageLevel::NOT_PROOFREAD, null ),
+				new PageLevel( PageLevel::VALIDATED, $testUser ),
 				false
 			],
 			[
-				new PageLevel( 1, null ),
-				new PageLevel( 4, $testUser ),
-				false
-			],
-			[
-				new PageLevel( 3, $testUser ),
-				new PageLevel( 4, $test3User ),
+				new PageLevel( PageLevel::PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::VALIDATED, $test3User ),
 				true
 			],
 			[
-				new PageLevel( 3, $test3User ),
-				new PageLevel( 4, $test3User ),
+				new PageLevel( PageLevel::PROOFREAD, $test3User ),
+				new PageLevel( PageLevel::VALIDATED, $test3User ),
 				true
 			],
 			[
-				new PageLevel( 3, null ),
-				new PageLevel( 4, $test3User ),
+				new PageLevel( PageLevel::PROOFREAD, null ),
+				new PageLevel( PageLevel::VALIDATED, $test3User ),
 				true
 			],
 			[
-				new PageLevel( 1, $test3User ),
-				new PageLevel( 4, $test3User ),
+				new PageLevel( PageLevel::NOT_PROOFREAD, $test3User ),
+				new PageLevel( PageLevel::VALIDATED, $test3User ),
+				true
+			],
+			[
+				new PageLevel( PageLevel::VALIDATED, $testUser ),
+				new PageLevel( PageLevel::VALIDATED, $testUser ),
 				true
 			],
 		];
@@ -133,7 +143,7 @@ class PageLevelTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider isChangeAllowedProvider
 	 */
-	public function testIsChangeAllowed( $old, $new, $result ) {
+	public function testIsChangeAllowed( PageLevel $old, PageLevel $new, $result ) {
 		$this->assertEquals( $result, $old->isChangeAllowed( $new ) );
 	}
 

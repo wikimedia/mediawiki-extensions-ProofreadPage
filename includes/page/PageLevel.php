@@ -12,10 +12,16 @@ use User;
  */
 class PageLevel {
 
+	const WITHOUT_TEXT = 0;
+	const NOT_PROOFREAD = 1;
+	const PROBLEMATIC = 2;
+	const PROOFREAD = 3;
+	const VALIDATED = 4;
+
 	/**
 	 * @var integer proofreading level of the page
 	 */
-	protected $level = 1;
+	protected $level = self::NOT_PROOFREAD;
 
 	/**
 	 * @var User|null last user of the page
@@ -27,7 +33,7 @@ class PageLevel {
 	 * @param int $level
 	 * @param User|null $user
 	 */
-	public function __construct( $level = 1, User $user = null ) {
+	public function __construct( $level = self::NOT_PROOFREAD, User $user = null ) {
 		$this->level = $level;
 		$this->user = $user;
 	}
@@ -54,7 +60,7 @@ class PageLevel {
 	 * @return bool
 	 */
 	public function isValid() {
-		return is_integer( $this->level ) && 0 <= $this->level && $this->level <= 4;
+		return is_int( $this->level ) && 0 <= $this->level && $this->level <= 4;
 	}
 
 	/**
@@ -68,11 +74,14 @@ class PageLevel {
 			return false;
 		}
 
-		return
-			$this->level === $that->getLevel() &&
-			( $this->user === null && $that->getUser() === null ||
-				$this->user instanceof User && $that->getUser() instanceof User &&
-				$this->user->getName() === $that->getUser()->getName() );
+		return $this->level === $that->getLevel() &&
+			(
+				( $this->user === null && $that->getUser() === null ) ||
+				(
+					( $this->user instanceof User && $that->getUser() instanceof User ) &&
+					( $this->user->getName() === $that->getUser()->getName() )
+				)
+			);
 	}
 
 	/**
@@ -89,14 +98,17 @@ class PageLevel {
 		}
 
 		$fromUser = ( $this->user instanceof User ) ? $this->user : $to->getUser();
-		if ( $to->getLevel() === 4 && ( $this->level < 3 || $this->level === 3 &&
-			$fromUser->getName() === $to->getUser()->getName() ) &&
+		return !(
+			$to->getLevel() === self::VALIDATED &&
+			(
+				$this->level < self::PROOFREAD ||
+				(
+					$this->level === self::PROOFREAD &&
+					$fromUser !== null && $fromUser->getName() === $to->getUser()->getName()
+				)
+			) &&
 			!$to->getUser()->isAllowed( 'pagequality-admin' )
-		) {
-			return false;
-		}
-
-		return true;
+		);
 	}
 
 	/**
