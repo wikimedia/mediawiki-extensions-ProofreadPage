@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saraiki",
+			"محمد جنید حفیظ کھوسہ"
+		]
+	},
+	"nstab-page": "ورقہ",
+	"nstab-index": "فہرست",
+	"tooltip-ca-nstab-page": "کتاب دا ورقہ ݙیکھو",
+	"tooltip-ca-nstab-index": "کتاب دی فہرست ݙیکھو",
+	"pageswithoutscans": "غیر تجرباتی ورقے",
+	"proofreadpage_image": "تصویر، مورت",
+	"proofreadpage_index": "فہرست",
+	"proofreadpage_index_expected": "متوقع فہرست",
+	"proofreadpage_nosuch_index": "خرابی: اینجھی کوئی فہرست کائنی",
+	"proofreadpage_nosuch_file": "خرابی: اینجھی کوئی فائل کائنی",
+	"proofreadpage_badpage": "غلط فارمیٹ",
+	"proofreadpage_badpagetext": "تساں جیہڑی صورت صفحہ سانبھݨ دی کوشش کیتی او غلط ہے",
+	"proofreadpage_indexdupe": "نقل ربط",
+	"proofreadpage_indexdupetext": "فہرست صفحے تے ہک کولو زیادہ صفحے نہیں چݨیے ون سگدے",
+	"proofreadpage_nologin": "لاگ ان نہوے تھئے",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "جیا",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "کو"
+}
