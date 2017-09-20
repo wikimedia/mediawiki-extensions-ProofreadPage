@@ -123,8 +123,8 @@ class IndexContentHandler extends TextContentHandler {
 	 */
 	public function getActionOverrides() {
 		return [
-			'edit' => '\ProofreadPage\Index\IndexEditAction',
-			'submit' => '\ProofreadPage\Index\IndexSubmitAction'
+			'edit' => IndexEditAction::class,
+			'submit' => IndexSubmitAction::class,
 		];
 	}
 
@@ -132,7 +132,7 @@ class IndexContentHandler extends TextContentHandler {
 	 * @see ContentHandler::getDiffEngineClass
 	 */
 	protected function getDiffEngineClass() {
-		return '\ProofreadPage\Index\IndexDifferenceEngine';
+		return IndexDifferenceEngine::class;
 	}
 
 	/**

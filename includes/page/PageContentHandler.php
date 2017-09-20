@@ -205,9 +205,9 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	public function getActionOverrides() {
 		return [
-			'edit' => '\ProofreadPage\Page\PageEditAction',
-			'submit' => '\ProofreadPage\Page\PageSubmitAction',
-			'view' => '\ProofreadPage\Page\PageViewAction'
+			'edit' => PageEditAction::class,
+			'submit' => PageSubmitAction::class,
+			'view' => PageViewAction::class,
 		];
 	}
 
@@ -215,7 +215,7 @@ class PageContentHandler extends TextContentHandler {
 	 * @see ContentHandler::getDiffEngineClass
 	 */
 	protected function getDiffEngineClass() {
-		return '\ProofreadPage\Page\PageDifferenceEngine';
+		return PageDifferenceEngine::class;
 	}
 
 	/**
