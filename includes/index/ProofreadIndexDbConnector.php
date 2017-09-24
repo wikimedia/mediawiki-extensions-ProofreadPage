@@ -27,7 +27,7 @@ class ProofreadIndexDbConnector {
 	 * @return ResultWrapper
 	 */
 	public static function getRowsFromTitle( Title $title ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->select(
 			[ 'page', 'pagelinks' ],
 			[ 'page_namespace', 'page_title' ],
@@ -150,7 +150,7 @@ class ProofreadIndexDbConnector {
 	 * @return Object
 	 */
 	public static function getIndexDataFromIndexTitle( $indexTitle ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->selectRow(
 				[ 'pr_index', 'page' ],
 				[ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
@@ -167,7 +167,7 @@ class ProofreadIndexDbConnector {
 	 * @return Object
 	 */
 	public static function getIndexDataFromIndexPageId( $indexId ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->selectRow(
 				[ 'pr_index' ],
 				[ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],

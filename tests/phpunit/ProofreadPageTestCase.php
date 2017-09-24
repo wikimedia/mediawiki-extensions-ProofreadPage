@@ -5,7 +5,6 @@ use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContent;
-use ProofreadPage\Page\PageContent;
 use ProofreadPage\ProofreadPageInit;
 
 /**

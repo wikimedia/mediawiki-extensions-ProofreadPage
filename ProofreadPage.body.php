@@ -21,7 +21,6 @@
 
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
-use ProofreadPage\Index\EditIndexPage;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Pagination\PageNotInPaginationException;

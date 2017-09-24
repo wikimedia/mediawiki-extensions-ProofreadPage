@@ -7,7 +7,6 @@ use ContentHandler;
 use MWContentSerializationException;
 use Parser;
 use PPFrame;
-use StubObject;
 use TextContentHandler;
 use Title;
 use WikitextContent;

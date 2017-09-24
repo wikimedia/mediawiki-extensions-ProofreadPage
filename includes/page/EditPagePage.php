@@ -3,7 +3,6 @@
 namespace ProofreadPage\Page;
 
 use Article;
-use ContentHandler;
 use EditPage;
 use Html;
 use MWException;

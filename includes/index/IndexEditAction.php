@@ -3,8 +3,6 @@
 namespace ProofreadPage\Index;
 
 use EditAction;
-use ProofreadPage\Context;
-use ProofreadPagePage;
 
 /**
  * @licence GNU GPL v2+

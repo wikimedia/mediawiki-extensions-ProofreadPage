@@ -19,9 +19,6 @@
  * @ingroup ProofreadPage
  */
 
-use ProofreadPage\Context;
-use ProofreadPage\FileNotFoundException;
-
 /**
  * The content of a page page
  */

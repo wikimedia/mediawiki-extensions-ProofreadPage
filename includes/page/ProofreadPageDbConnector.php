@@ -26,7 +26,7 @@ class ProofreadPageDbConnector {
 	 * @param ResultWrapper
 	 */
 	public static function getCategoryNamesForPageIds( $pageIds ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		return $dbr->select(
 			[ 'categorylinks' ],
 			[ 'cl_from', 'cl_to' ],
@@ -41,7 +41,7 @@ class ProofreadPageDbConnector {
 	 * @return ResultWrapper
 	 */
 	public static function getPagesNameInCategory( $pp, $cat ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		return $dbr->select(
 			[ 'page', 'categorylinks' ],
 			[ 'page_title' ],
@@ -62,7 +62,7 @@ class ProofreadPageDbConnector {
 	 * @return int
 	 */
 	public static function queryCount( $query, $cat ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$query['conds']['cl_to'] = str_replace( ' ', '_',
 			wfMessage( $cat )->inContentLanguage()->text() );
 		$res = $dbr->select(
@@ -87,7 +87,7 @@ class ProofreadPageDbConnector {
 	 * @return int|null
 	 */
 	public static function getNumberOfExistingPagesFromPageTitle( $pages ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 				[ 'page' ],
 				[ 'COUNT(page_id) AS count' ],
@@ -107,7 +107,7 @@ class ProofreadPageDbConnector {
 	 * @return string|null
 	 */
 	public static function  getIndexTitleForPageId( $id ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->selectRow(
 			[ 'templatelinks' ],
 			[ 'tl_title AS title' ],
@@ -140,7 +140,7 @@ class ProofreadPageDbConnector {
 	 * @return int|null
 	 */
 	public static function countTransclusionFromPageId( $id ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			[ 'templatelinks', 'page' ],
 			[ 'COUNT(page_id) AS count' ],
