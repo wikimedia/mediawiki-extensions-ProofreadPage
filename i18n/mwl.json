@@ -6,5 +6,11 @@
 		]
 	},
 	"nstab-page": "Páigina",
-	"nstab-index": "Índice"
+	"nstab-index": "Índice",
+	"proofreadpage_quality0_category": "Sin testo",
+	"proofreadpage_quality1_category": "Nun rebistas",
+	"proofreadpage_quality2_category": "Problemáticas",
+	"proofreadpage_quality3_category": "Rebistas i corregidas",
+	"proofreadpage_quality4_category": "Balidadas",
+	"proofreadpage_quality1_message": "Esta páigina inda nun fui rebista"
 }
