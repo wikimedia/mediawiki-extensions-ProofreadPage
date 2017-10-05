@@ -154,7 +154,7 @@ class CustomIndexFieldsParser {
 		return $values;
 	}
 
-	/*
+	/**
 	 * Return metadata from the index page that have to be given to header template.
 	 * @return CustomIndexField[]
 	 */
@@ -193,7 +193,7 @@ class CustomIndexFieldsParser {
 	 * $otherParams = array( 'pagenum' => 23 )
 	 * the function called for 'header' will returns 'Page page my book number 23'
 	 * @param IndexContent $content
-	 * @param $fieldName
+	 * @param string $fieldName
 	 * @param array $otherParams associative array other possible values to replace
 	 * @return string the value with variables replaced
 	 * @throws OutOfBoundsException

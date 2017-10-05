@@ -72,7 +72,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param array $queryPages
+	 * @param array &$queryPages
 	 * @return bool
 	 */
 	public static function onwgQueryPages( &$queryPages ) {
@@ -85,7 +85,7 @@ class ProofreadPage {
 	 * Set up content handlers
 	 *
 	 * @param Title $title the title page
-	 * @param string $model the content model for the page
+	 * @param string &$model the content model for the page
 	 * @return bool if we have to continue the research for a content handler
 	 */
 	public static function onContentHandlerDefaultModelFor( Title $title, &$model ) {
@@ -183,7 +183,7 @@ class ProofreadPage {
 	/**
 	 * Hook function
 	 * @param array $page_ids Prefixed DB keys of the pages linked to, indexed by page_id
-	 * @param array $colours CSS classes, indexed by prefixed DB keys
+	 * @param array &$colours CSS classes, indexed by prefixed DB keys
 	 * @return bool
 	 */
 	public static function onGetLinkColours( $page_ids, &$colours ) {
@@ -251,8 +251,8 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param ImagePage $imgpage
-	 * @param OutputPage $out
+	 * @param ImagePage &$imgpage
+	 * @param OutputPage &$out
 	 * @return bool
 	 */
 	public static function onImageOpenShowImageInlineBefore(
@@ -306,7 +306,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param WikiPage $article
+	 * @param WikiPage &$article
 	 * @return bool
 	 */
 	public static function onPageContentSaveComplete( WikiPage &$article ) {
@@ -395,9 +395,9 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param MovePageForm $form
-	 * @param Title $ot
-	 * @param Title $nt
+	 * @param MovePageForm &$form
+	 * @param Title &$ot
+	 * @param Title &$nt
 	 * @return bool
 	 */
 	public static function onSpecialMovepageAfterMove(
@@ -454,7 +454,7 @@ class ProofreadPage {
 	/**
 	 * Update the pr_index entry of an article
 	 * @param Page $index
-	 * @param Title|null $deletedpage
+	 * @param Title|null $deletedPage
 	 */
 	public static function updatePrIndex( Page $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
@@ -662,7 +662,7 @@ class ProofreadPage {
 	/**
 	 * Provides text for preload API
 	 *
-	 * @param string $text
+	 * @param string &$text
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -685,7 +685,7 @@ class ProofreadPage {
 	/**
 	 * Add ProofreadPage preferences to the preferences menu
 	 * @param User $user
-	 * @param array $preferences
+	 * @param array &$preferences
 	 * @return bool
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
@@ -738,7 +738,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param array $tables
+	 * @param array &$tables
 	 * @return bool
 	 */
 	public static function onParserTestTables( array &$tables ) {
@@ -749,8 +749,8 @@ class ProofreadPage {
 
 	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
-	 * @param SkinTemplate $skin
-	 * @param array $links Structured navigation links
+	 * @param SkinTemplate &$skin
+	 * @param array &$links Structured navigation links
 	 */
 	public static function onSkinTemplateNavigation( SkinTemplate &$skin, array &$links ) {
 		$title = $skin->getTitle();
@@ -841,7 +841,7 @@ class ProofreadPage {
 	/**
 	 * Add proofreading status to action=info
 	 * @param IContextSource $context
-	 * @param array &$pageinfo The page information
+	 * @param array &$pageInfo The page information
 	 */
 	public static function onInfoAction( IContextSource $context, array &$pageInfo ) {
 		if ( !$context->canUseWikiPage() ) {

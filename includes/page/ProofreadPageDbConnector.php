@@ -22,8 +22,8 @@
 class ProofreadPageDbConnector {
 
 	/**
-	 * @param array $values
-	 * @param ResultWrapper
+	 * @param array $pageIds
+	 * @return ResultWrapper
 	 */
 	public static function getCategoryNamesForPageIds( $pageIds ) {
 		$dbr = wfGetDB( DB_REPLICA );
