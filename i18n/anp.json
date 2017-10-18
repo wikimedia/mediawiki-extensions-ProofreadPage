@@ -4,6 +4,10 @@
 			"Angpradesh"
 		]
 	},
+	"nstab-page": "पन्ना",
+	"nstab-index": "अनुक्रम",
+	"tooltip-ca-nstab-page": "पुस्तक के पृष्ठ देखऽ",
+	"tooltip-ca-nstab-index": "पुस्तक के अनुक्रम देखऽ",
 	"indexpages": "सूचकांक पन्ना के सूची",
 	"pageswithoutscans": "स्कैन रहित पन्ना",
 	"proofreadpage_desc": "मूल पाठ आरू सद्य पाठ मं॑ फर्क आसानी सं॑ दर्शाबै छै",
@@ -59,6 +63,7 @@
 	"proofreadpage_source": "स्रोत",
 	"proofreadpage_source_message": "इ पाठ क॑ प्रस्थापित करै ल॑ स्कैन संस्करण प्रयोग करलऽ गेलै",
 	"right-pagequality": "पृष्ठ गुणवत्ता निशानी सुधारऽ",
+	"right-pagequality-admin": "पृष्ठ गुणवत्ता धजा लेली अप्रतिबंधित संपादन",
 	"proofreadpage-section-tools": "प्रूफरीडिंग टूल",
 	"proofreadpage-group-zoom": "ज़ूम",
 	"proofreadpage-group-other": "दोसरऽ",
@@ -76,11 +81,21 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 स्किमा नै मिललै.",
 	"proofreadpage-disambiguationspage": "साँचा: disambig",
 	"proofreadpage-indexquality-alt": "$1 द्वारा मान्य {{PLURAL:$1|पन्ना|पन्ना सब}}, $2 खाली प्रूफरीड {{PLURAL:$2|पन्ना|पन्ना सब}} आरू $3 बिना प्रूफरीड  {{PLURAL:$3|पन्ना|पन्ना सब}}",
-	"content-model-proofread-page": "पृष्ठ:पृष्ठ",
+	"content-model-proofread-page": "पुस्तक पृष्ठ",
+	"content-model-proofread-index": "पुस्तक निर्देशांक",
 	"apihelp-query+proofread-description": "पन्ना सब केरऽ वर्तमान प्रूफरीडिंग स्थिति केरऽ बारे मं॑ जानकारी दै छै",
+	"apihelp-query+proofread-summary": "पन्ना सब केरऽ वर्तमान प्रूफरीडिंग स्थिति केरऽ बारे मं॑ जानकारी दै छै",
 	"apihelp-query+proofread-example-1": "पन्ना सब केरऽ नामस्थल २५० मं॑ प्रूफरीडिंग स्थिति केरऽ बारे मं॑ जानकारी दै छै",
 	"apihelp-query+proofreadinfo-description": "प्रूफरीडपन्ना केरऽ विस्तार केरऽ विन्यास के बारे मं॑ जानकारी दै छै",
+	"apihelp-query+proofreadinfo-summary": "प्रूफरीडपन्ना केरऽ विस्तार केरऽ विन्यास के बारे मं॑ जानकारी दै छै",
 	"apihelp-query+proofreadinfo-param-prop": "प्रूफरीड केरऽ कोन गुण क॑ पाना छै :\n;नामस्थल : पेज आरू सूचकांक नामस्थलऽ के बारे मं॑ जानकारी.\n;गुणवत्तास्तर : प्रूफरीड गुणवत्ता केरऽ स्तर के सूची.",
 	"apihelp-query+proofreadinfo-example-1": "वापसी डिफ़ॉल्ट जानकारी",
-	"apihelp-query+proofreadinfo-example-3": "वापसी नामस्थान जानकारी"
+	"apihelp-query+proofreadinfo-example-3": "वापसी नामस्थान जानकारी",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "पृष्ठ चुनना",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पृष्ठ",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 केरऽ मूल",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नै",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "मुद्रित शोधन केरऽ गुणवत्ता",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "मुद्रितशोधना केरऽ गुणवत्ता"
 }
