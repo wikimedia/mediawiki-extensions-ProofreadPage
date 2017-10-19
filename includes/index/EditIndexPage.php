@@ -101,13 +101,17 @@ class EditIndexPage extends EditPage {
 			] );
 		} else {
 			$inputAttributes['classes'][] = 'prp-input-' . $field->getType();
-			$input = new TextInputWidget( $inputOptions + [
-				'type' => $field->getType() === 'number' && ( $val === '' || is_numeric( $val ) )
-					? 'number'
-					: 'text',
-				'multiline' => $field->getSize() > 1,
-				'rows' => $field->getSize()
-			] );
+			if ( $field->getSize() > 1 ) {
+				$input = new MultilineTextInputWidget( $inputOptions + [
+					'rows' => $field->getSize()
+				] );
+			} else {
+				$input = new TextInputWidget( $inputOptions + [
+					'type' => $field->getType() === 'number' && ( $val === '' || is_numeric( $val ) )
+						? 'number'
+						: 'text',
+				] );
+			}
 		}
 
 		$fieldLayoutArgs = [
