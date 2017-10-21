@@ -25,20 +25,20 @@ class CustomIndexFieldsParser {
 	 * The configuration is a list of properties like this :
 	 * array(
 	 * 	'ID' => array( //the property id
-	 *		'type' => 'string', //the property type (for compatibility reasons the values have not
+	 * 		'type' => 'string', //the property type (for compatibility reasons the values have not
 	 *               //to be of this type). Possible values: string, number, page
-	 *		'size' => 1, //for type = string : the size of the form input
-	 *		'default' => '', //the default value
-	 *		'label' => 'ID', //the label of the property
-	 *		'help' => '', //a short help text
-	 *		'values' => null, //an array value => label that list the possible values
+	 * 		'size' => 1, //for type = string : the size of the form input
+	 * 		'default' => '', //the default value
+	 * 		'label' => 'ID', //the label of the property
+	 * 		'help' => '', //a short help text
+	 * 		'values' => null, //an array value => label that list the possible values
 	 *               //(for compatibility reasons the stored values have not to be one of these)
-	 *		'header' => false, //give the content of this property to
+	 * 		'header' => false, //give the content of this property to
 	 *               //Mediawiki:Proofreadpage_header_template as template parameter
-	 *		'hidden' => false //don't show the property in the index pages form. Useful for data
+	 * 		'hidden' => false //don't show the property in the index pages form. Useful for data
 	 *               //that have always the same value (as language=en for en Wikisource) or are
 	 *               //only set at the <pages> tag level.
-	 *		)
+	 * 		)
 	 * );
 	 *  NB: The values set are the default values
 	 */
