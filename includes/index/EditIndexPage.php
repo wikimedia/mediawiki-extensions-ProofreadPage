@@ -9,6 +9,7 @@ use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
+use OOUI\MultilineTextInputWidget;
 use ProofreadPage\Context;
 use Status;
 use WikitextContent;
