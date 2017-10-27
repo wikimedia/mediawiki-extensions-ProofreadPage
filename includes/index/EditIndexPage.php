@@ -101,7 +101,6 @@ class EditIndexPage extends EditPage {
 				'options' => $options
 			] );
 		} else {
-			$inputAttributes['classes'][] = 'prp-input-' . $field->getType();
 			if ( $field->getSize() > 1 ) {
 				$input = new MultilineTextInputWidget( $inputOptions + [
 					'rows' => $field->getSize()
