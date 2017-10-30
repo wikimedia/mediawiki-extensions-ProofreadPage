@@ -94,7 +94,7 @@
 	"apihelp-query+proofreadinfo-example-3": "Вернуть информацию о пространстве имён",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Выбор страницы",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Страницы",
-	"proofreadpage-visualeditor-node-pages-inspector-description": "Включение $ 1",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Включение $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "нет"
 }
