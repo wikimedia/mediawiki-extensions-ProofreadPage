@@ -5,6 +5,10 @@
 			"ElizaMag"
 		]
 	},
+	"nstab-page": "ОагIув",
+	"nstab-index": "индекс",
+	"tooltip-ca-nstab-page": "Джейна оагIонга хьажар",
+	"tooltip-ca-nstab-index": "Джейна индексага хьажар",
 	"indexpages": "Индекс йола оагIонаш",
 	"pageswithoutscans": "Сканаш йоаца оагIонаш",
 	"proofreadpage_desc": "Укхо аьттув хулийтта текст а скан яьккха оригинл а шоайла тарде хьажа.",
@@ -60,6 +64,7 @@
 	"proofreadpage_source": "Хьаст",
 	"proofreadpage_source_message": "Текстий электронни верси хьакхоллара пайда эцаш хиннай сканаца кеп яьккха материалаш",
 	"right-pagequality": "хувцаш лелае оагIон тIехдикала байракх",
+	"right-pagequality-admin": "ОагIон дикала белгало хувцар",
 	"proofreadpage-section-tools": "Корректора гIирсаш",
 	"proofreadpage-group-zoom": "Доккхахилар",
 	"proofreadpage-group-other": "Кхыдар",
@@ -77,7 +82,8 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Схема $1 корайинзар.",
 	"proofreadpage-disambiguationspage": "Template:цхьа маIан доацар",
 	"proofreadpage-indexquality-alt": "$1 бакъяьй {{PLURAL:$1|оагIув|оагIонаш}}, $2 къаьстта éшаш нийсъяьй {{PLURAL:$2|оагIув|оагIонаш}}, иштта $3 éшаш нийсъяь яц {{PLURAL:$3|оагIув|оагIонаш}}",
-	"content-model-proofread-page": "ОагIув: оагIув",
+	"content-model-proofread-page": "Джейна оагIув",
+	"content-model-proofread-index": "Джейна индекс",
 	"apihelp-query+proofread-description": "ОагIонай дарашагара дéшаш нийсдара хIанзара статусах бола хоам юхабаккхар.",
 	"apihelp-query+proofread-example-1": "Дéшаш нийсдара статус юхаяккхар оагIонашта цIерий мотта чу.",
 	"apihelp-query+proofreadinfo-description": "ProofreadPage конфигурацех бола хоам юхабаккхар.",
@@ -87,7 +93,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-title": "ОагIув харжар",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ОагIонаш",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 гIолла",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "XӀа-а",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "XӀаа",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "A",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Корректурай тIех дикал",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Корректурай тIех дикал"
