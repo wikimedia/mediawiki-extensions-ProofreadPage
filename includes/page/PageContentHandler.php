@@ -6,6 +6,7 @@ use Content;
 use ContentHandler;
 use FormatJson;
 use MWContentSerializationException;
+use MWException;
 use TextContentHandler;
 use Title;
 use User;
@@ -87,19 +88,28 @@ class PageContentHandler extends TextContentHandler {
 	 * @see ContentHandler::unserializeContent
 	 */
 	public function unserializeContent( $text, $format = null ) {
-		$this->checkFormat( $format );
+		if ( $format === null ) {
+			$format = ( FormatJson::decode( $text, true ) === null )
+				? CONTENT_FORMAT_WIKITEXT
+				: CONTENT_FORMAT_JSON;
+		}
 
 		switch ( $format ) {
 			case CONTENT_FORMAT_JSON:
 				return $this->unserializeContentInJson( $text );
-			default:
+			case CONTENT_FORMAT_WIKITEXT:
 				return $this->unserializeContentInWikitext( $text );
+			default:
+				throw new MWException(
+					"Format ' . $format . ' is not supported for content model " . $this->getModelID()
+				);
 		}
 	}
 
 	/**
 	 * @param string $text
 	 * @return PageContent
+	 * @throws MWContentSerializationException
 	 */
 	private function unserializeContentInJson( $text ) {
 		$array = FormatJson::decode( $text, true );
