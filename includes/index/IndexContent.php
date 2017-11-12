@@ -5,10 +5,12 @@ namespace ProofreadPage\Index;
 use Content;
 use MagicWord;
 use MalformedTitleException;
+use Parser;
 use ParserOptions;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use Sanitizer;
+use ParserOutput;
 use TextContent;
 use Title;
 use User;
@@ -170,13 +172,34 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getParserOutput
+	 * @see AbstractContent::fillParserOutput
 	 */
-	public function getParserOutput(
-		Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true
+	protected function fillParserOutput( Title $title, $revId,
+		ParserOptions $options, $generateHtml, ParserOutput &$output
 	) {
-		$wikitextContent = new WikitextContent( $this->serialize( CONTENT_FORMAT_WIKITEXT ) );
-		return $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
+		/** @var Parser $wgParser */
+		global $wgParser;
+		$parserHelper = new ParserHelper( $title, $options );
+
+		// We retrieve the view template
+		list( $templateText, $templateTitle ) = $parserHelper->fetchTemplateTextAndTitle(
+			Title::makeTitle( NS_MEDIAWIKI, 'Proofreadpage index template' )
+		);
+
+		// We replace the arguments calls by their values
+		$text = $parserHelper->expandTemplateArgs(
+			$templateText,
+			array_map( function ( Content $content ) {
+				return $content->serialize( CONTENT_FORMAT_WIKITEXT );
+			}, $this->fields )
+		);
+
+		// We do the final rendering
+		$output = $wgParser->parse( $text, $title, $options, true, true, $revId );
+		$output->addTemplate( $templateTitle,
+			$templateTitle->getArticleID(),
+			$templateTitle->getLatestRevID()
+		);
 	}
 
 	/**
