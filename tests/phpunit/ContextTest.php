@@ -4,10 +4,13 @@ namespace ProofreadPage;
 
 use Config;
 use ProofreadPage\Index\CustomIndexFieldsParser;
+use ProofreadPage\Index\IndexContentLookup;
 use ProofreadPage\Index\IndexContentLookupMock;
+use ProofreadPage\Page\IndexForPageLookup;
 use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPage\Pagination\PaginationFactory;
-use ProofreadPage\Page\IndexForPageLookup;
+use ProofreadPage\Page\PageQualityLevelLookup;
+use ProofreadPage\Page\PageQualityLevelLookupMock;
 use ProofreadPageTestCase;
 
 /**
@@ -24,7 +27,7 @@ class ContextTest extends ProofreadPageTestCase {
 		$this->assertEquals( 44, $this->buildDummyContext()->getIndexNamespaceId() );
 	}
 
-	public function testGetCOnfig() {
+	public function testGetConfig() {
 		$this->assertInstanceOf(
 			Config::class,
 			$this->buildDummyContext()->getConfig()
@@ -45,24 +48,39 @@ class ContextTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function testCustomIndexFieldsParser() {
+	public function testGetCustomIndexFieldsParser() {
 		$this->assertInstanceOf(
 			CustomIndexFieldsParser::class,
 			$this->buildDummyContext()->getCustomIndexFieldsParser()
 		);
 	}
 
-	public function testIndexForPageLookup() {
+	public function testGetIndexForPageLookup() {
 		$this->assertInstanceOf(
 			IndexForPageLookup::class,
 			$this->buildDummyContext()->getIndexForPageLookup()
 		);
 	}
 
+	public function testGetIndexContentLookup() {
+		$this->assertInstanceOf(
+			IndexContentLookup::class,
+			$this->buildDummyContext()->getIndexContentLookup()
+		);
+	}
+
+	public function testGetPageQualityLevelLookup() {
+		$this->assertInstanceOf(
+			PageQualityLevelLookup::class,
+			$this->buildDummyContext()->getPageQualityLevelLookup()
+		);
+	}
+
 	private function buildDummyContext() {
 		return new Context( 42, 44,
-			new FileProviderMock( [] ), new CustomIndexFieldsParser(), new IndexForPageLookupMock( [] ),
-			new IndexContentLookupMock( [] )
+			new FileProviderMock( [] ), new CustomIndexFieldsParser(),
+			new IndexForPageLookupMock( [] ), new IndexContentLookupMock( [] ),
+			new PageQualityLevelLookupMock( [] )
 		);
 	}
 }

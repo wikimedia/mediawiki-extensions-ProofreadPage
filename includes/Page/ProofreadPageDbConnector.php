@@ -22,44 +22,8 @@
 namespace ProofreadPage\Page;
 
 use ProofreadPage;
-use Wikimedia\Rdbms\IResultWrapper;
 
 class ProofreadPageDbConnector {
-
-	/**
-	 * @param array $pageIds
-	 * @return IResultWrapper
-	 */
-	public static function getCategoryNamesForPageIds( $pageIds ) {
-		$dbr = wfGetDB( DB_REPLICA );
-		return $dbr->select(
-			[ 'categorylinks' ],
-			[ 'cl_from', 'cl_to' ],
-			[ 'cl_from IN(' . implode( ',', $pageIds ) . ')' ],
-			__METHOD__
-		);
-	}
-
-	/**
-	 * @param array $pp
-	 * @param array $cat
-	 * @return IResultWrapper
-	 */
-	public static function getPagesNameInCategory( $pp, $cat ) {
-		$dbr = wfGetDB( DB_REPLICA );
-		return $dbr->select(
-			[ 'page', 'categorylinks' ],
-			[ 'page_title' ],
-			[
-				'page_title' => $pp,
-				'cl_to' => $cat,
-				'page_namespace' => ProofreadPage::getPageNamespaceId()
-			],
-			__METHOD__,
-			null,
-			[ 'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ] ]
-		);
-	}
 
 	/**
 	 * @param array $query

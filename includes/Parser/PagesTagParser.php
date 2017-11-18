@@ -5,7 +5,7 @@ namespace ProofreadPage\Parser;
 use OutOfBoundsException;
 use Parser;
 use ProofreadPage\Context;
-use ProofreadPage\Page\ProofreadPageDbConnector;
+use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\FilePagination;
 use Title;
 
@@ -202,39 +202,20 @@ class PagesTagParser {
 			list( $from_page, $from_pagenum ) = reset( $pages );
 			list( $to_page, $to_pagenum ) = end( $pages );
 
-			// find which pages have quality0
-			$q0_pages = [];
-			if ( !empty( $pages ) ) {
-				$pp = [];
-				foreach ( $pages as $item ) {
-					list( $page, $pageNumber ) = $item;
-					$pp[] = $page->getDBkey();
-				}
-				$cat = str_replace( ' ', '_', wfMessage( 'proofreadpage_quality0_category' )
-					->inContentLanguage()->escaped() );
-				$res = ProofreadPageDbConnector::getPagesNameInCategory( $pp, $cat );
-
-				if ( $res ) {
-					foreach ( $res as $o ) {
-						$q0_pages[] = $o->page_title;
-					}
-				}
-			}
+			$pageQualityLevelLookup = $this->context->getPageQualityLevelLookup();
+			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_map( function ( $item ) {
+				return $item[0];
+			}, $pages ) );
 
 			$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
 
 			// write the output
-			foreach ( $pages as $item ) {
-				list( $page, $pageNumber ) = $item;
+			foreach ( $pages as list( $page, $pageNumber ) ) {
 				$pagenum = $pageNumber->getRawPageNumber( $language );
 				$formattedNum = $pageNumber->getFormattedPageNumber( $language );
-				if ( in_array( $page->getDBKey(), $q0_pages ) ) {
-					$is_q0 = true;
-				} else {
-					$is_q0 = false;
-				}
+				$qualityLevel = $pageQualityLevelLookup->getQualityLevelForPageTitle( $page );
 				$text = $page->getPrefixedText();
-				if ( !$is_q0 ) {
+				if ( $qualityLevel !== PageLevel::WITHOUT_TEXT ) {
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text .
 						"|num=$pagenum|formatted=$formattedNum}}</span>";
 				}
@@ -252,7 +233,7 @@ class PagesTagParser {
 				} else {
 					$out .= '{{:' . $text . '}}';
 				}
-				if ( !$is_q0 ) {
+				if ( $qualityLevel !== PageLevel::WITHOUT_TEXT ) {
 					$out .= $separator;
 				}
 			}

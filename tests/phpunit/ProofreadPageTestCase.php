@@ -7,6 +7,7 @@ use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Index\IndexContentLookupMock;
 use ProofreadPage\Page\IndexForPageLookupMock;
+use ProofreadPage\Page\PageQualityLevelLookupMock;
 use ProofreadPage\ProofreadPageInit;
 
 /**
@@ -103,16 +104,20 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	/**
 	 * @param Title[] $indexForPage
 	 * @param IndexContent[] $indexContent
+	 * @param int[] $levelForPage
 	 * @return Context
 	 */
-	protected function getContext( array $indexForPage = [], array $indexContent = [] ) {
+	protected function getContext(
+		array $indexForPage = [], array $indexContent = [], array $levelForPage = []
+	) {
 		return new Context(
 			ProofreadPageInit::getNamespaceId( 'page' ),
 			ProofreadPageInit::getNamespaceId( 'index' ),
 			$this->getFileProvider(),
 			new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration ),
 			new IndexForPageLookupMock( $indexForPage ),
-			new IndexContentLookupMock( $indexContent )
+			new IndexContentLookupMock( $indexContent ),
+			new PageQualityLevelLookupMock( $levelForPage )
 		);
 	}
 

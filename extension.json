@@ -57,6 +57,7 @@
 		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
 		"ProofreadPage\\Page\\IndexForPageLookupMock": "tests/phpunit/Page/IndexForPageLookupMock.php",
+		"ProofreadPage\\Page\\PageQualityLevelLookupMock": "tests/phpunit/Page/PageQualityLevelLookupMock.php",
 		"ProofreadPage\\Index\\IndexContentLookupMock": "tests/phpunit/Index/IndexContentLookupMock.php",
 		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php",
 		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
