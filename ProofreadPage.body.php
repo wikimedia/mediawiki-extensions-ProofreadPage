@@ -119,42 +119,6 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Query the database to find if the current page is referred in an Index page.
-	 * @param Title $title
-	 */
-	public static function loadIndex( $title ) {
-		$title->prpIndexTitle = null;
-		$result = ProofreadIndexDbConnector::getRowsFromTitle( $title );
-
-		foreach ( $result as $x ) {
-			$refTitle = Title::makeTitle( $x->page_namespace, $x->page_title );
-			if ( $refTitle !== null && $refTitle->inNamespace( self::getIndexNamespaceId() ) ) {
-				$title->prpIndexTitle = $refTitle;
-				return;
-			}
-		}
-
-		$m = explode( '/', $title->getText(), 2 );
-		if ( !isset( $m[1] ) ) {
-			return;
-		}
-		$imageTitle = Title::makeTitleSafe( NS_FILE, $m[0] );
-		if ( $imageTitle === null ) {
-			return;
-		}
-		$image = wfFindFile( $imageTitle );
-		// if it is multipage, we use the page order of the file
-		if ( $image && $image->exists() && $image->isMultipage() ) {
-			$indexTitle = Title::makeTitle(
-				self::getIndexNamespaceId(), $image->getTitle()->getText()
-			);
-			if ( $indexTitle !== null ) {
-				$title->prpIndexTitle = $indexTitle;
-			}
-		}
-	}
-
-	/**
 	 * Append javascript variables and code to the page.
 	 * @param OutputPage $out
 	 * @return bool
@@ -294,9 +258,9 @@ class ProofreadPage {
 	 * @param boolean $deleted indicates whether the page was deleted
 	 */
 	private static function updateIndexOfPage( Title $title, $deleted = false ) {
-		self::loadIndex( $title );
-		if ( $title->prpIndexTitle !== null ) {
-			$indexTitle = $title->prpIndexTitle;
+		$indexTitle = Context::getDefaultContext()
+			->getIndexForPageLookup()->getIndexForPageTitle( $title );
+		if ( $indexTitle !== null ) {
 			$indexTitle->invalidateCache();
 			$index = WikiPage::factory( $indexTitle );
 			if ( $index ) {
@@ -325,22 +289,21 @@ class ProofreadPage {
 		}
 
 		/* check if there is an index */
-		if ( !isset( $title->prpIndexTitle ) ) {
-			self::loadIndex( $title );
-		}
-		if ( $title->prpIndexTitle === null ) {
+		$indexTitle = Context::getDefaultContext()
+			->getIndexForPageLookup()->getIndexForPageTitle( $title );
+		if ( $indexTitle === null ) {
 			return true;
 		}
 
 		/**
 		 * invalidate the cache of the index page
 		 */
-		$title->prpIndexTitle->invalidateCache();
+		$indexTitle->invalidateCache();
 
 		/**
 		 * update pr_index iteratively
 		 */
-		$indexId = $title->prpIndexTitle->getArticleID();
+		$indexId = $indexTitle->getArticleID();
 		$indexData = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
 		if ( $indexData ) {
 			ProofreadIndexDbConnector::replaceIndexById( $indexData, $indexId, $article );
@@ -420,10 +383,13 @@ class ProofreadPage {
 		}
 
 		if ( $nt->inNamespace( self::getPageNamespaceId() ) ) {
-			self::loadIndex( $nt );
-			if ( $nt->prpIndexTitle !== null
-				&& ( !isset( $ot->prpIndexTitle ) ||
-				( $nt->prpIndexTitle->equals( $ot->prpIndexTitle ) ) )
+			$oldIndexTitle = Context::getDefaultContext()
+				->getIndexForPageLookup()->getIndexForPageTitle( $ot );
+			$newIndexTitle = Context::getDefaultContext()
+				->getIndexForPageLookup()->getIndexForPageTitle( $nt );
+			if ( $newIndexTitle !== null
+				&& ( $oldIndexTitle === null ||
+				( $newIndexTitle->equals( $oldIndexTitle ) ) )
 			) {
 				self::updateIndexOfPage( $nt );
 			}
