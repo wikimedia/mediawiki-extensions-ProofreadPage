@@ -67,7 +67,7 @@ class PaginationFactory {
 			$pages = [];
 			$pageNumbers = [];
 			foreach ( $links as $link ) {
-				$pages[] = new ProofreadPagePage( $link->getTarget(), $indexPage );
+				$pages[] = ProofreadPagePage::newFromTitle( $link->getTarget() );
 				$pageNumbers[] = new PageNumber( $link->getLabel() );
 			}
 			return new PagePagination( $indexPage, $pages, $pageNumbers );

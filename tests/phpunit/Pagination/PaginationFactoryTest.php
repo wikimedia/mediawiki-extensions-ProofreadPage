@@ -3,7 +3,6 @@
 namespace ProofreadPage\Pagination;
 
 use MediaHandler;
-use ProofreadPagePage;
 use ProofreadPageTestCase;
 use Title;
 
@@ -37,17 +36,17 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetPaginationWithoutPagelist() {
-		$page = $this->newIndexPage(
+		$index = $this->newIndexPage(
 			'Test',
 			"{{\n|Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] " .
 			"[[Page:Test:3.png|2]]\n|Author=[[Author:Me]]\n}}"
 		);
 		$pagination = new PagePagination(
-			$page,
+			$index,
 			[
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $page ),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $page ),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $page )
+				$this->newPagePage( Title::newFromText( 'Page:Test 1.jpg' ) ),
+				$this->newPagePage( Title::newFromText( 'Page:Test 2.tiff' ) ),
+				$this->newPagePage( Title::newFromText( 'Page:Test:3.png' ) )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -57,7 +56,11 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		);
 		$this->assertEquals(
 			$pagination,
-			$this->getContext()->getPaginationFactory()->getPaginationForIndexPage( $page )
+			$this->getContext( [
+				'Page:Test_1.jpg' => $index,
+				'Page:Test_2.tiff' => $index,
+				'Page:Test:3.png' => $index,
+			] )->getPaginationFactory()->getPaginationForIndexPage( $index )
 		);
 	}
 }

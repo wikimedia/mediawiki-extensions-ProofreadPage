@@ -27,9 +27,4 @@ class ProofreadPagePageTest extends ProofreadPageTestCase {
 
 		$this->assertNull( $this->newPagePage( 'Test.djvu' )->getPageNumber() );
 	}
-
-	public function testGetIndex() {
-		$index = $this->newIndexPage();
-		$this->assertEquals( $index, $this->newPagePage( 'Test.jpg', $index )->getIndex() );
-	}
 }

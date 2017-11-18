@@ -4,9 +4,7 @@ namespace ProofreadPage\Pagination;
 
 use InvalidArgumentException;
 use OutOfBoundsException;
-use ProofreadPagePage;
 use ProofreadPageTestCase;
-use Title;
 
 /**
  * @group ProofreadPage
@@ -16,13 +14,13 @@ class PagePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumber() {
 		$index = $this->newIndexPage();
-		$page = new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index );
+		$page = $this->newPagePage( 'Test 2.tiff' );
 		$pagination = new PagePagination(
 			$index,
 			[
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ),
+				$this->newPagePage( 'Test 1.jpg' ),
 				$page,
-				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index )
+				$this->newPagePage( 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -31,7 +29,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 			]
 		);
 		$this->assertEquals( 2, $pagination->getPageNumber(
-			new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index )
+			$this->newPagePage( 'Test 2.tiff' )
 		) );
 	}
 
@@ -42,7 +40,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$index = $this->newIndexPage();
 		$pagination = new PagePagination( $index, [], [] );
 		$pagination->getPageNumber(
-			new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index )
+			$this->newPagePage( 'Test 2.tiff' )
 		);
 	}
 
@@ -51,7 +49,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new PagePagination(
 			$index,
-			[ new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ) ],
+			[ $this->newPagePage( 'Test 1.jpg' ) ],
 			[ $pageNumber ]
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
@@ -71,9 +69,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$pagination = new PagePagination(
 			$index,
 			[
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 2.jpg' ), $index ),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index )
+				$this->newPagePage( 'Test 1.jpg' ),
+				$this->newPagePage( 'Test 2.jpg' ),
+				$this->newPagePage( 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -86,13 +84,13 @@ class PagePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPage() {
 		$index = $this->newIndexPage();
-		$page = new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index );
+		$page = $this->newPagePage( 'Test 1.jpg' );
 		$pagination = new PagePagination(
 			$index,
 			[
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index ),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test 2.tiff' ), $index ),
-				new ProofreadPagePage( Title::newFromText( 'Page:Test:3.png' ), $index )
+				$this->newPagePage( 'Test 1.jpg' ),
+				$this->newPagePage( 'Test 2.tiff' ),
+				$this->newPagePage( 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -114,8 +112,8 @@ class PagePaginationTest extends ProofreadPageTestCase {
 
 	public function testIterator() {
 		$index = $this->newIndexPage();
-		$page1 = new ProofreadPagePage( Title::newFromText( 'Page:Test 1.jpg' ), $index );
-		$page2 = new ProofreadPagePage( Title::newFromText( 'Page:Test 2.jpg' ), $index );
+		$page1 = $this->newPagePage( 'Test 1.jpg' );
+		$page2 = $this->newPagePage( 'Test 2.jpg' );
 		$pagination = new PagePagination(
 			$index,
 			[ $page1, $page2 ],

@@ -3,6 +3,7 @@
 namespace ProofreadPage;
 
 use ProofreadPage\Index\CustomIndexFieldsParser;
+use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPageTestCase;
 
 /**
@@ -12,31 +13,44 @@ use ProofreadPageTestCase;
 class ContextTest extends ProofreadPageTestCase {
 
 	public function testGetPageNamespaceId() {
-		$context = new Context( 42, 44, new FileProviderMock( [] ), new CustomIndexFieldsParser() );
-		$this->assertEquals( 42, $context->getPageNamespaceId() );
+		$this->assertEquals( 42, $this->buildDummyContext()->getPageNamespaceId() );
 	}
 
 	public function testGetIndexNamespaceId() {
-		$context = new Context( 42, 44, new FileProviderMock( [] ), new CustomIndexFieldsParser() );
-		$this->assertEquals( 44, $context->getIndexNamespaceId() );
+		$this->assertEquals( 44, $this->buildDummyContext()->getIndexNamespaceId() );
 	}
 
 	public function testGetFileProvider() {
-		$context = new Context( 42, 44, new FileProviderMock( [] ), new CustomIndexFieldsParser() );
-		$this->assertInstanceOf( '\ProofreadPage\FileProvider', $context->getFileProvider() );
+		$this->assertInstanceOf(
+			'\ProofreadPage\FileProvider',
+			$this->buildDummyContext()->getFileProvider()
+		);
 	}
 
 	public function testGetPaginationFactory() {
-		$context = new Context( 42, 44, new FileProviderMock( [] ), new CustomIndexFieldsParser() );
 		$this->assertInstanceOf(
-			'\ProofreadPage\Pagination\PaginationFactory', $context->getPaginationFactory()
+			'\ProofreadPage\Pagination\PaginationFactory',
+			$this->buildDummyContext()->getPaginationFactory()
 		);
 	}
 
 	public function testCustomIndexFieldsParser() {
-		$context = new Context( 42, 44, new FileProviderMock( [] ), new CustomIndexFieldsParser() );
 		$this->assertInstanceOf(
-			'\ProofreadPage\Index\CustomIndexFieldsParser', $context->getCustomIndexFieldsParser()
+			'\ProofreadPage\Index\CustomIndexFieldsParser',
+			$this->buildDummyContext()->getCustomIndexFieldsParser()
+		);
+	}
+
+	public function testIndexForPageLookup() {
+		$this->assertInstanceOf(
+			'\ProofreadPage\Page\IndexForPageLookup',
+			$this->buildDummyContext()->getIndexForPageLookup()
+		);
+	}
+
+	private function buildDummyContext() {
+		return new Context( 42, 44,
+			new FileProviderMock( [] ), new CustomIndexFieldsParser(), new IndexForPageLookupMock( [] )
 		);
 	}
 }

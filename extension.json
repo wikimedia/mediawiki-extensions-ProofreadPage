@@ -82,6 +82,8 @@
 		"ProofreadPage\\Page\\PageViewAction": "includes/page/PageViewAction.php",
 		"ProofreadPage\\Page\\PageDifferenceEngine": "includes/page/PageDifferenceEngine.php",
 		"ProofreadPage\\Page\\PageDisplayHandler": "includes/page/PageDisplayHandler.php",
+		"ProofreadPage\\Page\\IndexForPageLookup": "includes/page/IndexForPageLookup.php",
+		"ProofreadPage\\Page\\DatabaseIndexForPageLookup": "includes/page/DatabaseIndexForPageLookup.php",
 		"ProofreadPage\\Parser\\ParserEntryPoint": "includes/Parser/ParserEntryPoint.php",
 		"ProofreadPage\\Parser\\TagParser": "includes/Parser/TagParser.php",
 		"ProofreadPage\\Parser\\PagelistTagParser": "includes/Parser/PagelistTagParser.php",
@@ -92,6 +94,7 @@
 		"ApiQueryProofread": "ApiQueryProofread.php",
 		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
+		"ProofreadPage\\Page\\IndexForPageLookupMock": "tests/phpunit/page/IndexForPageLookupMock.php",
 		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php",
 		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
 		"FixProofreadIndexPagesContentModel": "maintenance/fixProofreadIndexPagesContentModel.php"
