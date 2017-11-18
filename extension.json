@@ -29,10 +29,10 @@
 		"PagesWithoutScans": "SpecialPagesWithoutScans"
 	},
 	"APIMetaModules": {
-		"proofreadinfo": "ApiQueryProofreadInfo"
+		"proofreadinfo": "\\ProofreadPage\\Api\\ApiQueryProofreadInfo"
 	},
 	"APIPropModules": {
-		"proofread": "ApiQueryProofread"
+		"proofread": "\\ProofreadPage\\Api\\ApiQueryProofread"
 	},
 	"ContentHandlers": {
 		"proofread-page": "\\ProofreadPage\\Page\\PageContentHandler",
@@ -53,8 +53,6 @@
 		"ProofreadPage": "ProofreadPage.body.php",
 		"SpecialProofreadPages": "SpecialProofreadPages.php",
 		"SpecialPagesWithoutScans": "SpecialPagesWithoutScans.php",
-		"ApiQueryProofread": "ApiQueryProofread.php",
-		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
 		"ProofreadPage\\Page\\IndexForPageLookupMock": "tests/phpunit/Page/IndexForPageLookupMock.php",
 		"ProofreadPage\\Page\\PageQualityLevelLookupMock": "tests/phpunit/Page/PageQualityLevelLookupMock.php",

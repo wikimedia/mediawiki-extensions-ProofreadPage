@@ -1,25 +1,14 @@
 <?php
-/**
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * http://www.gnu.org/copyleft/gpl.html
- *
- * @file
- * @ingroup API
- */
+
+namespace ProofreadPage\Api;
+
+use ApiBase;
+use ApiQueryBase;
+use ProofreadPage\Context;
 
 /**
+ * @license GPL-2.0-or-later
+ *
  * A query action to return meta information about the proofread extension.
  */
 class ApiQueryProofreadInfo extends ApiQueryBase {
@@ -42,32 +31,33 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 	}
 
 	protected function appendNamespaces() {
-		$data = [];
-
-		$index = ProofreadPage::getIndexNamespaceId();
-		if ( $index != null ) {
-			$data['index']['id'] = $index;
-		}
-
-		$page = ProofreadPage::getPageNamespaceId();
-		if ( $page != null ) {
-			$data['page']['id'] = $page;
-		}
-
+		$context = Context::getDefaultContext();
+		$data = [
+			'index' => [
+				'id' => $context->getIndexNamespaceId()
+			],
+			'page' => [
+				'id' => $context->getPageNamespaceId()
+			]
+		];
 		return $this->getResult()->addValue( 'query', 'proofreadnamespaces', $data );
 	}
 
 	protected function appendQualityLevels() {
 		$data = [];
 		for ( $i = 0; $i < 5; $i++ ) {
-			$level = [];
-			$level['id'] = $i;
-			$level['category'] = $this->msg( "proofreadpage_quality{$i}_category" )
-				->inContentLanguage()->text();
-			$data[$i] = $level;
+			$data[$i] = [
+				'id' => $i,
+				'category' => $this->getQualityLevelCategory( $i )
+			];
 		}
 		$this->getResult()->setIndexedTagName( $data, 'level' );
 		return $this->getResult()->addValue( 'query', 'proofreadqualitylevels', $data );
+	}
+
+	private function getQualityLevelCategory( $level ) {
+		$messageName = "proofreadpage_quality{$level}_category";
+		return $this->msg( $messageName )->inContentLanguage()->text();
 	}
 
 	public function getCacheMode( $params ) {
