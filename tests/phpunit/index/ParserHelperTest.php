@@ -23,7 +23,7 @@ class ParserHelperTest extends ProofreadPageTestCase {
 			[
 				'{{{foo|}}}',
 				[ 'bar' => 'baz' ],
-				'{{{foo|}}}'
+				''
 			],
 			[
 				'{{{bar|}}}',
@@ -39,6 +39,16 @@ class ParserHelperTest extends ProofreadPageTestCase {
 				'{{{bar|}}}',
 				[ 'bar' => '<indicator name="foo"/>baz' ],
 				'<indicator name="foo"/>baz'
+			],
+			[
+				'<noinclude>foo</noinclude>',
+				[ 'bar' => 'baz' ],
+				''
+			],
+			[
+				'<includeonly>foo</includeonly>',
+				[ 'bar' => 'baz' ],
+				'foo'
 			],
 		];
 	}

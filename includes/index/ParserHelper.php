@@ -20,7 +20,7 @@ class ParserHelper {
 
 	public function __construct( Title $title = null, ParserOptions $options ) {
 		$this->parser = new Parser();
-		$this->parser->startExternalParse( $title, $options, Parser::OT_PLAIN );
+		$this->parser->startExternalParse( $title, $options, Parser::OT_PREPROCESS );
 	}
 
 	/**
