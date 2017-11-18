@@ -4,12 +4,11 @@ namespace ProofreadPage\Page;
 
 use IContextSource;
 use MediaHandler;
-use ProofreadIndexPage;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Index\IndexContent;
-use ProofreadPagePage;
 use ProofreadPageTestCase;
 use RequestContext;
+use Title;
 use User;
 use WikitextContent;
 
@@ -43,19 +42,23 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider buildDefaultContentForPageProvider
 	 */
-	public function testBuildDefaultContentForPage(
-		ProofreadPagePage $page, ProofreadIndexPage $index = null,
+	public function testBuildDefaultContentForPageTitle(
+		$pageTitle, $indexTitle = null,
 		IndexContent $indexContent = null, PageContent $defaultContent
 	) {
-		$indexContents = [];
-		if ( $indexContent !== null ) {
-			$indexContents[$index->getTitle()->getDBkey()] = $indexContent;
+		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), $pageTitle );
+		if ( $indexTitle !== null ) {
+			$indexTitle = Title::makeTitle( $this->getIndexNamespaceId(), $indexTitle );
+			$context = $this->getContext( [
+				$pageTitle->getDBkey() => $indexTitle
+			], [
+				$indexTitle->getDBkey() => $indexContent
+			] );
+		} else {
+			$context = $this->getContext();
 		}
-		$context = $this->getContext( [
-			$page->getTitle()->getDBkey() => $index
-		], $indexContents );
 		try {
-			$image = $context->getFileProvider()->getForPagePage( $page );
+			$image = $context->getFileProvider()->getFileForPageTitle( $pageTitle );
 		} catch ( FileNotFoundException $e ) {
 			$image = false;
 		}
@@ -65,15 +68,15 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 		}
 		$contentBuilder = new PageContentBuilder( $this->context, $context );
 		$this->assertEquals(
-			$defaultContent, $contentBuilder->buildDefaultContentForPage( $page )
+			$defaultContent, $contentBuilder->buildDefaultContentForPageTitle( $pageTitle )
 		);
 	}
 
 	public function buildDefaultContentForPageProvider() {
 		return [
 			[
-				$this->newPagePage( 'Test.djvu/1' ),
-				$this->newIndexPage( 'Test.djvu' ),
+				 'Test.djvu/1',
+				 'Test.djvu',
 				new IndexContent( [
 					'Title' => new WikitextContent( 'Test book' ),
 					'Header' => new WikitextContent( '{{{title}}}' )
@@ -81,14 +84,14 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				self::newContent( 'Test book', '', '<references />', 1 ),
 			],
 			[
-				$this->newPagePage( 'LoremIpsum.djvu/2' ),
+				'LoremIpsum.djvu/2',
 				null,
 				null,
 				self::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
 			],
 			[
-				$this->newPagePage( 'LoremIpsum.djvu/2' ),
-				$this->newIndexPage( 'LoremIpsum.djvu' ),
+				'LoremIpsum.djvu/2' ,
+				'LoremIpsum.djvu' ,
 				new IndexContent( [
 					'Title' => new WikitextContent( 'Test book' ),
 					'Pages' => new WikitextContent( '<pagelist/>' ),
@@ -97,8 +100,8 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				self::newContent( '2', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 			[
-				$this->newPagePage( 'LoremIpsum.djvu/2' ),
-				$this->newIndexPage( 'LoremIpsum.djvu' ),
+				'LoremIpsum.djvu/2',
+				 'LoremIpsum.djvu',
 				new IndexContent( [
 					'Title' => new WikitextContent( 'Test book' ),
 					'Pages' => new WikitextContent( '<pagelist 1to5=roman />' ),

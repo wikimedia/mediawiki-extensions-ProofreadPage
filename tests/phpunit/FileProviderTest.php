@@ -3,8 +3,6 @@
 namespace ProofreadPage;
 
 use File;
-use ProofreadIndexPage;
-use ProofreadPagePage;
 use ProofreadPageTestCase;
 use Title;
 
@@ -23,10 +21,10 @@ class FileProviderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider indexFileProvider
 	 */
-	public function testGetForIndexPage(
-		ProofreadIndexPage $index, File $file, FileProvider $fileProvider
+	public function testGetFileForIndexTitle(
+		Title $indexTitle, File $file, FileProvider $fileProvider
 	) {
-		$this->assertEquals( $file, $fileProvider->getForIndexPage( $index ) );
+		$this->assertEquals( $file, $fileProvider->getFileForIndexTitle( $indexTitle ) );
 	}
 
 	public function indexFileProvider() {
@@ -37,7 +35,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				$this->newIndexPage( 'LoremIpsum.djvu' ),
+				Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
@@ -48,10 +46,10 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 * @expectedException \ProofreadPage\FileNotFoundException
 	 * @dataProvider indexFileNotFoundProvider
 	 */
-	public function testGetForIndexPageWithFileNotFound(
-		ProofreadIndexPage $index, FileProvider $fileProvider
+	public function testGetFileForIndexPageWithFileNotFound(
+		Title $indexTitle, FileProvider $fileProvider
 	) {
-		$fileProvider->getForIndexPage( $index );
+		$fileProvider->getFileForIndexTitle( $indexTitle );
 	}
 
 	public function indexFileNotFoundProvider() {
@@ -62,11 +60,11 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				$this->newIndexPage( 'LoremIpsum2.djvu' ),
+				Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum2.djvu' ),
 				$fileProvider
 			],
 			[
-				$this->newIndexPage( 'Test' ),
+				Title::makeTitle( $this->getIndexNamespaceId(), 'Test' ),
 				$fileProvider
 			],
 		];
@@ -75,10 +73,10 @@ class FileProviderTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider pageFileProvider
 	 */
-	public function testGetForPagePage(
-		ProofreadPagePage $page, File $file, FileProvider $fileProvider
+	public function testFileGetForPageTitle(
+		Title $pageTitle, File $file, FileProvider $fileProvider
 	) {
-		$this->assertEquals( $file, $fileProvider->getForPagePage( $page ) );
+		$this->assertEquals( $file, $fileProvider->getFileForPageTitle( $pageTitle ) );
 	}
 
 	public function pageFileProvider() {
@@ -89,22 +87,22 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				$this->newPagePage( 'LoremIpsum.djvu/4' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/4' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				$this->newPagePage( 'LoremIpsum.djvu/djvu/1' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/djvu/1' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				$this->newPagePage( 'LoremIpsum.djvu' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu' ),
 				$this->getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				$this->newPagePage( 'Test.jpg' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ),
 				$this->getFileFromName( 'Test.jpg' ),
 				$fileProvider
 			],
@@ -116,9 +114,9 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 * @dataProvider pageFileNotFoundProvider
 	 */
 	public function testGetForPagePageWithFileNotFound(
-		ProofreadPagePage $page, FileProvider $fileProvider
+		Title $pageTitle, FileProvider $fileProvider
 	) {
-		$fileProvider->getForPagePage( $page );
+		$fileProvider->getFileForPageTitle( $pageTitle );
 	}
 
 	public function pageFileNotFoundProvider() {
@@ -129,20 +127,20 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 		return [
 			[
-				$this->newPagePage( 'LoremIpsum2.djvu/4' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum2.djvu/4' ),
 				$fileProvider
 			],
 			[
-				$this->newPagePage( 'Test' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test' ),
 				$fileProvider
 			],
 		];
 	}
 
-	public function testGetPageNumberForPagePage() {
+	public function testGetPageNumberForPageTitle() {
 		$fileProvider = new FileProviderMock( [] );
-		$this->assertEquals( 1, $fileProvider->getPageNumberForPagePage(
-			$this->newPagePage( 'Test.djvu/1' )
+		$this->assertEquals( 1, $fileProvider->getPageNumberForPageTitle(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/1' )
 		) );
 	}
 
@@ -151,7 +149,9 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 */
 	public function testGetPageNumberForPageNumberNotFound() {
 		$fileProvider = new FileProviderMock( [] );
-		$fileProvider->getPageNumberForPagePage( $this->newPagePage( 'Test.djvu' ) );
+		$fileProvider->getPageNumberForPageTitle(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu' )
+		);
 	}
 
 	/**
@@ -159,7 +159,9 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 */
 	public function testGetPageNumberForPageNotANumber() {
 		$fileProvider = new FileProviderMock( [] );
-		$fileProvider->getPageNumberForPagePage( $this->newPagePage( 'Test.djvu/foo' ) );
+		$fileProvider->getPageNumberForPageTitle(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/foo' )
+		);
 	}
 
 	/**
@@ -167,6 +169,8 @@ class FileProviderTest extends ProofreadPageTestCase {
 	 */
 	public function testGetPageNumberForPageBadNumber() {
 		$fileProvider = new FileProviderMock( [] );
-		$fileProvider->getPageNumberForPagePage( $this->newPagePage( 'Test.djvu/-1' ) );
+		$fileProvider->getPageNumberForPageTitle(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/-1' )
+		);
 	}
 }

@@ -3,7 +3,6 @@
 namespace ProofreadPage\Page;
 
 use ProofreadPage\Context;
-use ProofreadPagePage;
 use Revision;
 use ViewAction;
 
@@ -37,13 +36,12 @@ class PageViewAction extends ViewAction {
 
 			return;
 		}
-		$page = ProofreadPagePage::newFromTitle( $wikiPage->getTitle() );
 		$pageDisplayHandler = new PageDisplayHandler( Context::getDefaultContext() );
 
 		// render HTML
 		$out->addHTML( $pageDisplayHandler->buildPageContainerBegin() );
 		$this->page->view();
-		$out->addHTML( $pageDisplayHandler->buildPageContainerEnd( $page ) );
+		$out->addHTML( $pageDisplayHandler->buildPageContainerEnd( $title ) );
 
 		// add modules
 		$out->addModules( 'ext.proofreadpage.ve.pageTarget.init' );
@@ -53,7 +51,7 @@ class PageViewAction extends ViewAction {
 		] );
 
 		// custom CSS
-		$css = $pageDisplayHandler->getCustomCss( $page );
+		$css = $pageDisplayHandler->getCustomCss( $title );
 		if ( $css !== '' ) {
 			$out->addInlineStyle( $css );
 		}

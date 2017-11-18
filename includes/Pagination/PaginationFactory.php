@@ -2,10 +2,9 @@
 
 namespace ProofreadPage\Pagination;
 
-use ProofreadIndexPage;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
-use ProofreadPagePage;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -27,40 +26,35 @@ class PaginationFactory {
 	}
 
 	/**
-	 * @param ProofreadIndexPage $indexPage
+	 * @param Title $indexTitle
 	 * @return Pagination
 	 */
-	public function getPaginationForIndexPage( ProofreadIndexPage $indexPage ) {
-		$key = $indexPage->getTitle()->getDBkey();
+	public function getPaginationForIndexTitle( Title $indexTitle ) {
+		$key = $indexTitle->getDBkey();
 
 		if ( !array_key_exists( $key, $this->paginations ) ) {
-			$this->paginations[$key] = $this->buildPaginationForIndexPage( $indexPage );
+			$this->paginations[$key] = $this->buildPaginationForIndexTitle( $indexTitle );
 		}
 
 		return $this->paginations[$key];
 	}
 
 	/**
-	 * @param ProofreadIndexPage $indexPage
+	 * @param Title $indexTitle
 	 * @return Pagination
 	 */
-	private function buildPaginationForIndexPage( ProofreadIndexPage $indexPage ) {
+	private function buildPaginationForIndexTitle( Title $indexTitle ) {
 		try {
-			$file = $this->context->getFileProvider()->getForIndexPage( $indexPage );
+			$file = $this->context->getFileProvider()->getFileForIndexTitle( $indexTitle );
 		} catch ( FileNotFoundException $e ) {
 			$file = false;
 		}
 
 		// check if it is using pagelist
-		$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $indexPage );
+		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 		$pagelist = $indexContent->getPagelistTagContent();
 		if ( $pagelist !== null && $file && $file->isMultipage() ) {
-			return new FilePagination(
-				$indexPage,
-				$pagelist,
-				$file,
-				$this->context
-			);
+			return new FilePagination( $indexTitle, $pagelist, $file, $this->context );
 		} else {
 			$links = $indexContent->getLinksToNamespace(
 				Context::getDefaultContext()->getPageNamespaceId()
@@ -68,10 +62,10 @@ class PaginationFactory {
 			$pages = [];
 			$pageNumbers = [];
 			foreach ( $links as $link ) {
-				$pages[] = ProofreadPagePage::newFromTitle( $link->getTarget() );
+				$pages[] = $link->getTarget();
 				$pageNumbers[] = new PageNumber( $link->getLabel() );
 			}
-			return new PagePagination( $indexPage, $pages, $pageNumbers );
+			return new PagePagination( $pages, $pageNumbers );
 		}
 	}
 }

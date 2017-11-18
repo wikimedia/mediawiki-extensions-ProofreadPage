@@ -2,8 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use ProofreadIndexPage;
-use ProofreadPagePage;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -14,8 +13,7 @@ interface IndexForPageLookup {
 
 	/**
 	 * Return index of the page
-	 * @param ProofreadPagePage $page
-	 * @return ProofreadIndexPage|null
+	 * @return Title|null
 	 */
-	public function getIndexForPage( ProofreadPagePage $page );
+	public function getIndexForPageTitle( Title $pageTitle );
 }

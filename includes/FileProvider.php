@@ -3,8 +3,6 @@
 namespace ProofreadPage;
 
 use File;
-use ProofreadIndexPage;
-use ProofreadPagePage;
 use RepoGroup;
 use Title;
 
@@ -41,48 +39,48 @@ class FileProvider {
 	}
 
 	/**
-	 * @param ProofreadIndexPage $page
+	 * @param Title $indexTitle
 	 * @return File
 	 * @throws FileNotFoundException
 	 */
-	public function getForIndexPage( ProofreadIndexPage $page ) {
+	public function getFileForIndexTitle( Title $indexTitle ) {
 		return $this->getFileFromTitle(
-			Title::makeTitle( NS_FILE, $page->getTitle()->getText() )
+			Title::makeTitle( NS_FILE, $indexTitle->getText() )
 		);
 	}
 
 	/**
-	 * @param ProofreadPagePage $page
+	 * @param Title $pageTitle
 	 * @return File
 	 * @throws FileNotFoundException
 	 */
-	public function getForPagePage( ProofreadPagePage $page ) {
+	public function getFileForPageTitle( Title $pageTitle ) {
 		// try to get an image with the same name as the file
 		return $this->getFileFromTitle(
-			// use the base name as file name
-			Title::makeTitle( NS_FILE, strtok( $page->getTitle()->getText(), '/' ) )
+		// use the base name as file name
+			Title::makeTitle( NS_FILE, strtok( $pageTitle->getText(), '/' ) )
 		);
 	}
 
 	/**
-	 * @param ProofreadPagePage $page
+	 * @param Title $pageTitle
 	 * @return int
 	 * @throws PageNumberNotFoundException
 	 */
-	public function getPageNumberForPagePage( ProofreadPagePage $page ) {
-		$parts = explode( '/', $page->getTitle()->getText() );
+	public function getPageNumberForPageTitle( Title $pageTitle ) {
+		$parts = explode( '/', $pageTitle->getText() );
 		if ( count( $parts ) === 1 ) {
 			throw new PageNumberNotFoundException(
-				$page->getTitle()->getFullText() . ' does not provide a page number.'
+				$pageTitle->getFullText() . ' does not provide a page number.'
 			);
 		}
-		$number = $page->getTitle()->getPageLanguage()->parseFormattedNumber( end( $parts ) );
+		$number = $pageTitle->getPageLanguage()->parseFormattedNumber( end( $parts ) );
 		if ( $number > 0 ) {
 			// Valid page numbers are integer > 0.
 			return (int)$number;
 		}
 		throw new PageNumberNotFoundException(
-			$page->getTitle()->getFullText() . ' does not provide a valid page number.'
+			$pageTitle->getFullText() . ' does not provide a valid page number.'
 		);
 	}
 }

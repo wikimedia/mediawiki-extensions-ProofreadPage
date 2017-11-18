@@ -7,8 +7,8 @@ use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\PageNumberNotFoundException;
-use ProofreadPagePage;
 use Sanitizer;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -36,14 +36,14 @@ class PageDisplayHandler {
 
 	/**
 	 * Return the scan image width for display
-	 * @param ProofreadPagePage $page
+	 * @param Title $pageTitle
 	 * @return int
 	 */
-	public function getImageWidth( ProofreadPagePage $page ) {
-		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
-		if ( $index !== null ) {
+	public function getImageWidth( Title $pageTitle ) {
+		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
+		if ( $indexTitle !== null ) {
 			try {
-				$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $index );
+				$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 				$width = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
 					$indexContent, 'width'
 				)->getStringValue();
@@ -60,16 +60,16 @@ class PageDisplayHandler {
 	/**
 	 * Return custom CSS for the page
 	 * Is protected against XSS
-	 * @param ProofreadPagePage $page
+	 * @param Title $pageTitle
 	 * @return string
 	 */
-	public function getCustomCss( ProofreadPagePage $page ) {
-		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
-		if ( $index === null ) {
+	public function getCustomCss( Title $pageTitle ) {
+		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
+		if ( $indexTitle === null ) {
 			return '';
 		}
 		try {
-			$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $index );
+			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 			$css = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
 				$indexContent, 'css'
 			);
@@ -95,25 +95,25 @@ class PageDisplayHandler {
 	 * Return the part of the page container that after page cnotent
 	 * @return string
 	 */
-	public function buildPageContainerEnd( ProofreadPagePage $page ) {
+	public function buildPageContainerEnd( Title $pageTitle ) {
 		return
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'prp-page-image' ] ) .
-			$this->buildImageHtml( $page, [ 'max-width' => $this->getImageWidth( $page ) ] ) .
+			$this->buildImageHtml( $pageTitle, [ 'max-width' => $this->getImageWidth( $pageTitle ) ] ) .
 			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' );
 	}
 
 	/**
 	 * Return HTML for the image
-	 * @param ProofreadPagePage $page
+	 * @param Title $pageTitle
 	 * @param array $options
 	 * @return null|string
 	 */
-	private function buildImageHtml( ProofreadPagePage $page, $options ) {
+	private function buildImageHtml( Title $pageTitle, $options ) {
 		$fileProvider = $this->context->getFileProvider();
 		try {
-			$image = $fileProvider->getForPagePage( $page );
+			$image = $fileProvider->getFileForPageTitle( $pageTitle );
 		} catch ( FileNotFoundException $e ) {
 			return null;
 		}
@@ -130,7 +130,7 @@ class PageDisplayHandler {
 
 		if ( $image->isMultipage() ) {
 			try {
-				$transformAttributes['page'] = $fileProvider->getPageNumberForPagePage( $page );
+				$transformAttributes['page'] = $fileProvider->getPageNumberForPageTitle( $pageTitle );
 			} catch ( PageNumberNotFoundException $e ) {
 			}
 		}

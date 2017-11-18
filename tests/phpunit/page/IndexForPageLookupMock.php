@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use ProofreadPagePage;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -18,12 +18,12 @@ class IndexForPageLookupMock implements IndexForPageLookup {
 	}
 
 	/**
-	 * @see IndexForPageLookup::getIndexForPage
+	 * @see IndexForPageLookup::getIndexForPageTitle
 	 */
-	public function getIndexForPage( ProofreadPagePage $page ) {
-		if ( !array_key_exists( $page->getTitle()->getDBkey(), $this->indexForPage ) ) {
+	public function getIndexForPageTitle( Title $pageTitle ) {
+		if ( !array_key_exists( $pageTitle->getDBkey(), $this->indexForPage ) ) {
 			return null;
 		}
-		return $this->indexForPage[ $page->getTitle()->getDBkey() ];
+		return $this->indexForPage[ $pageTitle->getDBkey() ];
 	}
 }

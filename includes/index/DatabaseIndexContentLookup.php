@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Index;
 
-use ProofreadIndexPage;
 use Revision;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -15,13 +15,13 @@ class DatabaseIndexContentLookup implements IndexContentLookup {
 	private $cache = [];
 
 	/**
-	 * @see IndexContentLookup::getIndexContent
+	 * @see IndexContentLookup::getIndexContentForTitle
 	 */
-	public function getIndexContent( ProofreadIndexPage $index ) {
-		$cacheKey = $index->getTitle()->getDBkey();
+	public function getIndexContentForTitle( Title $indexTitle ) {
+		$cacheKey = $indexTitle->getDBkey();
 
 		if ( !array_key_exists( $cacheKey, $this->cache ) ) {
-			$rev = Revision::newFromTitle( $index->getTitle() );
+			$rev = Revision::newFromTitle( $indexTitle );
 			if ( $rev === null ) {
 				$this->cache[$cacheKey] = new IndexContent( [] );
 			} else {

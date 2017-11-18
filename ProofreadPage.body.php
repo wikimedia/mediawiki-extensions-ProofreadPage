@@ -123,13 +123,13 @@ class ProofreadPage {
 	 * @param Title $title
 	 */
 	public static function loadIndex( $title ) {
-		$title->prpIndexPage = null;
+		$title->prpIndexTitle = null;
 		$result = ProofreadIndexDbConnector::getRowsFromTitle( $title );
 
 		foreach ( $result as $x ) {
 			$refTitle = Title::makeTitle( $x->page_namespace, $x->page_title );
 			if ( $refTitle !== null && $refTitle->inNamespace( self::getIndexNamespaceId() ) ) {
-				$title->prpIndexPage = ProofreadIndexPage::newFromTitle( $refTitle );
+				$title->prpIndexTitle = $refTitle;
 				return;
 			}
 		}
@@ -149,7 +149,7 @@ class ProofreadPage {
 				self::getIndexNamespaceId(), $image->getTitle()->getText()
 			);
 			if ( $indexTitle !== null ) {
-				$title->prpIndexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
+				$title->prpIndexTitle = $indexTitle;
 			}
 		}
 	}
@@ -295,8 +295,8 @@ class ProofreadPage {
 	 */
 	private static function updateIndexOfPage( Title $title, $deleted = false ) {
 		self::loadIndex( $title );
-		if ( $title->prpIndexPage !== null ) {
-			$indexTitle = $title->prpIndexPage->getTitle();
+		if ( $title->prpIndexTitle !== null ) {
+			$indexTitle = $title->prpIndexTitle;
 			$indexTitle->invalidateCache();
 			$index = WikiPage::factory( $indexTitle );
 			if ( $index ) {
@@ -325,22 +325,22 @@ class ProofreadPage {
 		}
 
 		/* check if there is an index */
-		if ( !isset( $title->prpIndexPage ) ) {
+		if ( !isset( $title->prpIndexTitle ) ) {
 			self::loadIndex( $title );
 		}
-		if ( $title->prpIndexPage === null ) {
+		if ( $title->prpIndexTitle === null ) {
 			return true;
 		}
 
 		/**
 		 * invalidate the cache of the index page
 		 */
-		$title->prpIndexPage->getTitle()->invalidateCache();
+		$title->prpIndexTitle->invalidateCache();
 
 		/**
 		 * update pr_index iteratively
 		 */
-		$indexId = $title->prpIndexPage->getTitle()->getArticleID();
+		$indexId = $title->prpIndexTitle->getArticleID();
 		$indexData = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
 		if ( $indexData ) {
 			ProofreadIndexDbConnector::replaceIndexById( $indexData, $indexId, $article );
@@ -421,9 +421,9 @@ class ProofreadPage {
 
 		if ( $nt->inNamespace( self::getPageNamespaceId() ) ) {
 			self::loadIndex( $nt );
-			if ( $nt->prpIndexPage !== null
-				&& ( !isset( $ot->prpIndexPage ) ||
-				( $nt->prpIndexPage->getTitle()->equals( $ot->prpIndexPage->getTitle() ) ) )
+			if ( $nt->prpIndexTitle !== null
+				&& ( !isset( $ot->prpIndexTitle ) ||
+				( $nt->prpIndexTitle->equals( $ot->prpIndexTitle ) ) )
 			) {
 				self::updateIndexOfPage( $nt );
 			}
@@ -463,12 +463,10 @@ class ProofreadPage {
 		// read the list of pages
 		$pages = [];
 		$pagination =
-		Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexPage(
-			ProofreadIndexPage::newFromTitle( $indexTitle )
-		);
+		Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 		foreach ( $pagination as $page ) {
-			if ( $deletedPage === null || !$page->getTitle()->equals( $deletedPage ) ) {
-				array_push( $pages, $page->getTitle()->getDBkey() );
+			if ( $deletedPage === null || !$page->equals( $deletedPage ) ) {
+				$pages[] = $page->getDBkey();
 			}
 		}
 
@@ -622,9 +620,7 @@ class ProofreadPage {
 		$pageContentBuilder = new PageContentBuilder(
 			RequestContext::getMain(), Context::getDefaultContext()
 		);
-		$content = $pageContentBuilder->buildDefaultContentForPage(
-			new ProofreadPagePage( $title )
-		);
+		$content = $pageContentBuilder->buildDefaultContentForPageTitle( $title );
 		$text = $content->serialize();
 
 		return true;
@@ -702,22 +698,21 @@ class ProofreadPage {
 	 */
 	public static function onSkinTemplateNavigation( SkinTemplate &$skin, array &$links ) {
 		$title = $skin->getTitle();
-		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
+		if ( $title === null || !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
-		$page = ProofreadPagePage::newFromTitle( $title );
 
 		// Image link
 		try {
 			$fileProvider = Context::getDefaultContext()->getFileProvider();
-			$image = $fileProvider->getForPagePage( $page );
+			$image = $fileProvider->getFileForPageTitle( $title );
 			$imageUrl = null;
 			if ( $image->isMultipage() ) {
 				$transformAttributes = [
 					'width' => $image->getWidth()
 				];
 				try {
-					$transformAttributes['page'] = $fileProvider->getPageNumberForPagePage( $page );
+					$transformAttributes['page'] = $fileProvider->getPageNumberForPageTitle( $title );
 				} catch ( PageNumberNotFoundException $e ) {
 					// We do not care
 				}
@@ -744,16 +739,16 @@ class ProofreadPage {
 		}
 
 		// Prev, Next and Index links
-		$indexPage = Context::getDefaultContext()->getIndexForPageLookup()->getIndexForPage( $page );
-		if ( $indexPage !== null ) {
+		$indexTitle = Context::getDefaultContext()
+			->getIndexForPageLookup()->getIndexForPageTitle( $title );
+		if ( $indexTitle !== null ) {
 			$pagination = Context::getDefaultContext()
-				->getPaginationFactory()->getPaginationForIndexPage( $indexPage );
+				->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 			try {
-				$pageNumber = $pagination->getPageNumber( $page );
+				$pageNumber = $pagination->getPageNumber( $title );
 
 				try {
-					$prevPage  = $pagination->getPage( $pageNumber - 1 );
-					$prevTitle = $prevPage->getTitle();
+					$prevTitle  = $pagination->getPageTitle( $pageNumber - 1 );
 					$links['namespaces']['proofreadPagePrevLink'] = [
 						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $prevTitle ),
@@ -764,8 +759,7 @@ class ProofreadPage {
 				} // if the previous page does not exits
 
 				try {
-					$nextPage  = $pagination->getPage( $pageNumber + 1 );
-					$nextTitle = $nextPage->getTitle();
+					$nextTitle  = $pagination->getPageTitle( $pageNumber + 1 );
 					$links['namespaces']['proofreadPageNextLink'] = [
 						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $nextTitle ),
@@ -774,13 +768,12 @@ class ProofreadPage {
 				}
 				catch ( OutOfBoundsException $e ) {
 				} // if the next page does not exits
-			}
-			catch ( PageNotInPaginationException $e ) {
+			} catch ( PageNotInPaginationException $e ) {
 			}
 
 			$links['namespaces']['proofreadPageIndexLink'] = [
 				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
-				'href' => $indexPage->getTitle()->getLinkURL(),
+				'href' => $indexTitle->getLinkURL(),
 				'text' => wfMessage( 'proofreadpage_index' )->plain()
 			];
 		}

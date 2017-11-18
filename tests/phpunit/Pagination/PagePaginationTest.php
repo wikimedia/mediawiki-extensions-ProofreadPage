@@ -5,6 +5,7 @@ namespace ProofreadPage\Pagination;
 use InvalidArgumentException;
 use OutOfBoundsException;
 use ProofreadPageTestCase;
+use Title;
 
 /**
  * @group ProofreadPage
@@ -13,14 +14,11 @@ use ProofreadPageTestCase;
 class PagePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumber() {
-		$index = $this->newIndexPage();
-		$page = $this->newPagePage( 'Test 2.tiff' );
 		$pagination = new PagePagination(
-			$index,
 			[
-				$this->newPagePage( 'Test 1.jpg' ),
-				$page,
-				$this->newPagePage( 'Test:3.png' )
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -29,7 +27,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 			]
 		);
 		$this->assertEquals( 2, $pagination->getPageNumber(
-			$this->newPagePage( 'Test 2.tiff' )
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' )
 		) );
 	}
 
@@ -37,19 +35,16 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testGetPageNumberWithFailure() {
-		$index = $this->newIndexPage();
-		$pagination = new PagePagination( $index, [], [] );
+		$pagination = new PagePagination( [], [] );
 		$pagination->getPageNumber(
-			$this->newPagePage( 'Test 2.tiff' )
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' )
 		);
 	}
 
 	public function testGetDisplayedPageNumber() {
-		$index = $this->newIndexPage();
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new PagePagination(
-			$index,
-			[ $this->newPagePage( 'Test 1.jpg' ) ],
+			[ Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ) ],
 			[ $pageNumber ]
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
@@ -59,19 +54,16 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	 * @expectedException OutOfBoundsException
 	 */
 	public function testGetDisplayedPageNumberWithFailure() {
-		$index = $this->newIndexPage();
-		$pagination = new PagePagination( $index, [], [] );
+		$pagination = new PagePagination( [], [] );
 		$pagination->getDisplayedPageNumber( 3 );
 	}
 
 	public function testGetNumberOfPages() {
-		$index = $this->newIndexPage();
 		$pagination = new PagePagination(
-			$index,
 			[
-				$this->newPagePage( 'Test 1.jpg' ),
-				$this->newPagePage( 'Test 2.jpg' ),
-				$this->newPagePage( 'Test:3.png' )
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.jpg' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -82,15 +74,12 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$this->assertEquals( 3, $pagination->getNumberOfPages() );
 	}
 
-	public function testGetPage() {
-		$index = $this->newIndexPage();
-		$page = $this->newPagePage( 'Test 1.jpg' );
+	public function testGetPageTitle() {
 		$pagination = new PagePagination(
-			$index,
 			[
-				$this->newPagePage( 'Test 1.jpg' ),
-				$this->newPagePage( 'Test 2.tiff' ),
-				$this->newPagePage( 'Test:3.png' )
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -98,25 +87,26 @@ class PagePaginationTest extends ProofreadPageTestCase {
 				new PageNumber( '2' )
 			]
 		);
-		$this->assertEquals( $page, $pagination->getPage( 1 ) );
+		$this->assertEquals(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+			$pagination->getPageTitle( 1 )
+		);
 	}
 
 	/**
 	 * @expectedException OutOfBoundsException
 	 */
-	public function testGetPageWithFailure() {
-		$index = $this->newIndexPage();
-		$pagination = new PagePagination( $index, [], [] );
-		$pagination->getPage( 3 );
+	public function testGetPageTitleWithFailure() {
+		$pagination = new PagePagination( [], [] );
+		$pagination->getPageTitle( 3 );
 	}
 
 	public function testIterator() {
-		$index = $this->newIndexPage();
-		$page1 = $this->newPagePage( 'Test 1.jpg' );
-		$page2 = $this->newPagePage( 'Test 2.jpg' );
 		$pagination = new PagePagination(
-			$index,
-			[ $page1, $page2 ],
+			[
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.jpg' )
+			],
 			[ new PageNumber( '1' ), new PageNumber( '2' ) ]
 		);
 
@@ -128,6 +118,8 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$this->assertFalse( $pagination->valid() );
 		$pagination->rewind();
 		$this->assertEquals( 1, $pagination->key() );
-		$this->assertEquals( $page1, $pagination->current() );
+		$this->assertEquals(
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ), $pagination->current()
+		);
 	}
 }

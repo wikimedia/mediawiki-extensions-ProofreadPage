@@ -8,18 +8,12 @@ use Html;
 use MWException;
 use OOUI;
 use ProofreadPage\Context;
-use ProofreadPagePage;
 use User;
 
 /**
  * @licence GNU GPL v2+
  */
 class EditPagePage extends EditPage {
-
-	/**
-	 * @var ProofreadPagePage
-	 */
-	private $pagePage;
 
 	/**
 	 * @var PageContentBuilder
@@ -33,14 +27,12 @@ class EditPagePage extends EditPage {
 
 	/**
 	 * @param Article $article
-	 * @param ProofreadPagePage $pagePage
 	 * @param Context $context
 	 * @throws MWException
 	 */
-	public function __construct( Article $article, ProofreadPagePage $pagePage, Context $context ) {
+	public function __construct( Article $article, Context $context ) {
 		parent::__construct( $article );
 
-		$this->pagePage = $pagePage;
 		$this->pageContentBuilder = new PageContentBuilder( $this->context, $context );
 		$this->pageDisplayHandler = new PageDisplayHandler( $context );
 	}
@@ -66,7 +58,7 @@ class EditPagePage extends EditPage {
 	 */
 	protected function getContentObject( $defContent = null ) {
 		if ( !$this->mTitle->exists() ) {
-			return $this->pageContentBuilder->buildDefaultContentForPage( $this->pagePage );
+			return $this->pageContentBuilder->buildDefaultContentForPageTitle( $this->getTitle() );
 		}
 		return parent::getContentObject( $defContent );
 	}
@@ -78,7 +70,7 @@ class EditPagePage extends EditPage {
 		$out = $this->context->getOutput();
 
 		// custom CSS for preview
-		$css = $this->pageDisplayHandler->getCustomCss( $this->pagePage );
+		$css = $this->pageDisplayHandler->getCustomCss( $this->getTitle() );
 		if ( $css !== '' ) {
 			$out->addInlineStyle( $css );
 		}
@@ -114,7 +106,7 @@ class EditPagePage extends EditPage {
 			$inputAttributes + [ 'rows' => '2', 'tabindex' => '1' ]
 		);
 		// the 3 textarea tabindex are set to 1 because summary tabindex is 1 too
-		$out->addHTML( $this->pageDisplayHandler->buildPageContainerEnd( $this->pagePage ) );
+		$out->addHTML( $this->pageDisplayHandler->buildPageContainerEnd( $this->getTitle() ) );
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );

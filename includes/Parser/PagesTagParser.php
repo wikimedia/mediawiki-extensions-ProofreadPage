@@ -3,11 +3,9 @@
 namespace ProofreadPage\Parser;
 
 use OutOfBoundsException;
-use ProofreadIndexPage;
 use ProofreadPage\Context;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPageDbConnector;
-use ProofreadPagePage;
 use Title;
 
 /**
@@ -62,10 +60,8 @@ class PagesTagParser extends TagParser {
 		if ( $indexTitle === null || !$indexTitle->exists() ) {
 			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
-		$indexPage = ProofreadIndexPage::newFromTitle( $indexTitle );
-		$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $indexPage );
-		$pagination = $this->context->getPaginationFactory()
-			->getPaginationForIndexPage( $indexPage );
+		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 		$language = $this->parser->getTargetLanguage();
 		$this->parser->getOutput()->addTemplate(
 			$indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID()
@@ -150,43 +146,35 @@ class PagesTagParser extends TagParser {
 					if ( $step == 1 || $num % $step == $mod ) {
 						$pagenum = $pagination->getDisplayedPageNumber( $num )
 							->getFormattedPageNumber( $language );
-						$pages[] = [ $pagination->getPage( $num )->getTitle(), $pagenum ];
+						$pages[] = [ $pagination->getPageTitle( $num ), $pagenum ];
 					}
 				}
 
 			} else {
-				$adding = true;
-
-				$fromPage = null;
+				$fromTitle = null;
 				if ( $from ) {
 					$fromTitle = Title::makeTitleSafe(
 						$this->context->getPageNamespaceId(), $from
 					);
-					if ( $fromTitle !== null ) {
-						$fromPage = ProofreadPagePage::newFromTitle( $fromTitle );
-						$adding = false;
-					}
 				}
 
-				$toPage = null;
+				$toTitle = null;
 				if ( $to ) {
 					$toTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $to );
-					if ( $toTitle !== null ) {
-						$toPage = ProofreadPagePage::newFromTitle( $toTitle );
-					}
 				}
 
+				$adding = ( $fromTitle === null );
 				$i = 1;
 				foreach ( $pagination as $link ) {
-					if ( $fromPage !== null && $fromPage->equals( $link ) ) {
+					if ( $fromTitle !== null && $fromTitle->equals( $link ) ) {
 						$adding = true;
 					}
 					if ( $adding ) {
 						$pagenum = $pagination->getDisplayedPageNumber( $i )
 							->getFormattedPageNumber( $language );
-						$pages[] = [ $link->getTitle(), $pagenum ];
+						$pages[] = [ $link, $pagenum ];
 					}
-					if ( $toPage !== null && $toPage->equals( $link ) ) {
+					if ( $toTitle !== null && $toTitle->equals( $link ) ) {
 						$adding = false;
 					}
 					$i++;
@@ -250,7 +238,7 @@ class PagesTagParser extends TagParser {
 			/* table of Contents */
 			$header = 'toc';
 			try {
-				$firstpage = $pagination->getPage( 1 )->getTitle();
+				$firstpage = $pagination->getPageTitle( 1 );
 				$this->parser->getOutput()->addTemplate(
 					$firstpage,
 					$firstpage->getArticleID(),

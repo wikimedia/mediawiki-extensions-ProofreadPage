@@ -8,7 +8,7 @@ use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
-use ProofreadPagePage;
+use Title;
 use WikitextContent;
 
 /**
@@ -38,29 +38,28 @@ class PageContentBuilder {
 	}
 
 	/**
-	 * @param ProofreadPagePage $page
+	 * @param Title $pageTitle
 	 * @return PageContent
 	 */
-	public function buildDefaultContentForPage( ProofreadPagePage $page ) {
-		$index = $this->context->getIndexForPageLookup()->getIndexForPage( $page );
+	public function buildDefaultContentForPageTitle( Title $pageTitle ) {
+		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
 		$body = '';
 
 		// default header and footer
-		if ( $index !== null ) {
+		if ( $indexTitle !== null ) {
 			$params = [];
 			try {
-				$pagination = $this->context->getPaginationFactory()
-					->getPaginationForIndexPage( $index );
-				$pageNumber = $pagination->getPageNumber( $page );
+				$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
+				$pageNumber = $pagination->getPageNumber( $pageTitle );
 				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
 				$params['pagenum'] = $displayedPageNumber
-					->getFormattedPageNumber( $page->getTitle()->getPageLanguage() );
+					->getFormattedPageNumber( $pageTitle->getPageLanguage() );
 			} catch ( PageNotInPaginationException $e ) {
 			} catch ( OutOfBoundsException $e ) {
 			} // should not happen
 
 			$indexFieldsParser = $this->context->getCustomIndexFieldsParser();
-			$indexContent = $this->context->getIndexContentLookup()->getIndexContent( $index );
+			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 			$header = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
 				$indexContent, 'header', $params
 			);
@@ -77,12 +76,12 @@ class PageContentBuilder {
 		// Extract text layer
 		try {
 			$fileProvider = $this->context->getFileProvider();
-			$image = $fileProvider->getForPagePage( $page );
+			$image = $fileProvider->getFileForPageTitle( $pageTitle );
 			if ( $image->exists() ) {
 				$pageNumber = 1;
 				if ( $image->isMultipage() ) {
 					try {
-						$pageNumber = $fileProvider->getPageNumberForPagePage( $page );
+						$pageNumber = $fileProvider->getPageNumberForPageTitle( $pageTitle );
 					} catch ( PageNumberNotFoundException $e ) {
 					}
 				}

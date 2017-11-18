@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use ProofreadIndexPage;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -16,13 +16,12 @@ class IndexContentLookupMock implements IndexContentLookup {
 	}
 
 	/**
-	 * Returns content of the page
-	 * @return IndexContent
+	 * @see IndexContentLookup::getIndexContentForTitle
 	 */
-	public function getIndexContent( ProofreadIndexPage $index ) {
-		if ( !array_key_exists( $index->getTitle()->getDBkey(), $this->contentForIndex ) ) {
+	public function getIndexContentForTitle( Title $indexTitle ) {
+		if ( !array_key_exists( $indexTitle->getDBkey(), $this->contentForIndex ) ) {
 			return null;
 		}
-		return $this->contentForIndex[ $index->getTitle()->getDBkey() ];
+		return $this->contentForIndex[ $indexTitle->getDBkey() ];
 	}
 }

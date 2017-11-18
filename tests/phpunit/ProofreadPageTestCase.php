@@ -101,7 +101,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	}
 
 	/**
-	 * @param ProofreadIndexPage[] $indexForPage
+	 * @param Title[] $indexForPage
 	 * @param IndexContent[] $indexContent
 	 * @return Context
 	 */
@@ -114,30 +114,6 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			new IndexForPageLookupMock( $indexForPage ),
 			new IndexContentLookupMock( $indexContent )
 		);
-	}
-
-	/**
-	 * Constructor of a new ProofreadPagePage
-	 * @param Title|string $title
-	 * @return ProofreadPagePage
-	 */
-	public function newPagePage( $title = 'test.jpg' ) {
-		if ( is_string( $title ) ) {
-			$title = Title::makeTitle( $this->getPageNamespaceId(), $title );
-		}
-		return ProofreadPagePage::newFromTitle( $title );
-	}
-
-	/**
-	 * Constructor of a new ProofreadIndexPage
-	 * @param Title|string $title
-	 * @return ProofreadIndexPage
-	 */
-	protected function newIndexPage( $title = 'test.djvu' ) {
-		if ( is_string( $title ) ) {
-			$title = Title::makeTitle( $this->getIndexNamespaceId(), $title );
-		}
-		return new ProofreadIndexPage( $title );
 	}
 
 	/**

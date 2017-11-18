@@ -5,7 +5,6 @@ namespace ProofreadPage\Pagination;
 use InvalidArgumentException;
 use MediaHandler;
 use OutOfBoundsException;
-use ProofreadPagePage;
 use ProofreadPageTestCase;
 use Title;
 
@@ -16,12 +15,11 @@ use Title;
 class FilePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumber() {
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
 		$context = $this->getContext( [
-			'LoremIpsum.djvu/2' => $index
+			'LoremIpsum.djvu/2' => Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' )
 		] );
 		$pagination = new FilePagination(
-			$index,
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			$context->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
@@ -29,7 +27,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$context
 		);
 		$this->assertEquals( 2, $pagination->getPageNumber(
-			$this->newPagePage( 'LoremIpsum.djvu/2' )
+			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' )
 		) );
 	}
 
@@ -38,15 +36,15 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	 * @dataProvider getPageNumberWithFailureProvider
 	 */
 	public function testGetPageNumberWithFailure(
-		Pagination $pagination, ProofreadPagePage $page
+		Pagination $pagination, Title $pageTitle
 	) {
-		$pagination->getPageNumber( $page );
+		$pagination->getPageNumber( $pageTitle );
 	}
 
 	public function getPageNumberWithFailureProvider() {
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
-			$index, new PageList( [] ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
@@ -55,15 +53,15 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		return [
 			[
 				$pagination,
-				$this->newPagePage( 'Test.djvu/2' )
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/2' )
 			],
 			[
 				$pagination,
-				$this->newPagePage( 'Test2.djvu/2' )
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test2.djvu/2' )
 			],
 			[
 				$pagination,
-				$this->newPagePage( '42.jpg' )
+				Title::makeTitle( $this->getPageNamespaceId(), '42.jpg' )
 			],
 		];
 	}
@@ -72,10 +70,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new FilePagination(
-			$index, new PageList( [ '1' => 'TOC' ] ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			new PageList( [ '1' => 'TOC' ] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
@@ -88,10 +86,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
 		$pageNumber = new PageNumber( 1 );
 		$pagination = new FilePagination(
-			$index, new PageList( [] ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
@@ -104,8 +102,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	 * @expectedException OutOfBoundsException
 	 */
 	public function testGetDisplayedPageNumberWithFailure() {
-		$index = $this->newIndexPage();
-		$pagination = new PagePagination( $index, [], [] );
+		$pagination = new PagePagination( [], [] );
 		$pagination->getDisplayedPageNumber( 3 );
 	}
 
@@ -113,9 +110,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
-			$index, new PageList( [] ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
@@ -124,49 +121,49 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$this->assertEquals( 5, $pagination->getNumberOfPages() );
 	}
 
-	public function testGetPage() {
+	public function testGetPageTitle() {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
-		$page = $this->newPagePage( 'LoremIpsum.djvu/2' );
 		$pagination = new FilePagination(
-			$index, new PageList( [] ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
 			$this->getContext()
 		);
-		$this->assertEquals( $page, $pagination->getPage( 2 ) );
+		$this->assertEquals(
+			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' ),
+			$pagination->getPageTitle( 2 )
+		);
 	}
 
 	/**
 	 * @expectedException OutOfBoundsException
 	 */
-	public function testGetPageWithFailure() {
+	public function testGetPageTitleWithFailure() {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
 		$pagination = new FilePagination(
-			$index, new PageList( [] ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
 			$this->getContext()
 		);
-		$pagination->getPage( 42 );
+		$pagination->getPageTitle( 42 );
 	}
 
 	public function testIterator() {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
-		$index = $this->newIndexPage( 'LoremIpsum.djvu' );
-		$page1 = $this->newPagePage( 'LoremIpsum.djvu/1' );
-		$page2 = $this->newPagePage( 'LoremIpsum.djvu/2' );
 		$pagination = new FilePagination(
-			$index, new PageList( [] ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			new PageList( [] ),
 			$this->getContext()->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
 			),
@@ -177,9 +174,15 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$pagination->next();
 		$this->assertEquals( 2, $pagination->key() );
 		$this->assertTrue( $pagination->valid() );
-		$this->assertEquals( $page2, $pagination->current() );
+		$this->assertEquals(
+			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' ),
+			$pagination->current()
+		);
 		$pagination->rewind();
 		$this->assertEquals( 1, $pagination->key() );
-		$this->assertEquals( $page1, $pagination->current() );
+		$this->assertEquals(
+			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/1' ),
+			$pagination->current()
+		);
 	}
 }

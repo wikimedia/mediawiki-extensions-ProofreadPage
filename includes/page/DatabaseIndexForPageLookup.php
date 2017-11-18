@@ -3,8 +3,6 @@
 namespace ProofreadPage\Page;
 
 use ProofreadIndexDbConnector;
-use ProofreadIndexPage;
-use ProofreadPagePage;
 use RepoGroup;
 use Title;
 
@@ -37,17 +35,17 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	}
 
 	/**
-	 * @see IndexForPageLookup::getIndexForPage
+	 * @see IndexForPageLookup::getIndexForPageTitle
 	 */
-	public function getIndexForPage( ProofreadPagePage $page ) {
-		$cacheKey = $page->getTitle()->getDBkey();
+	public function getIndexForPageTitle( Title $pageTitle ) {
+		$cacheKey = $pageTitle->getDBkey();
 
 		if ( !array_key_exists( $cacheKey, $this->cache ) ) {
-			$indexTitle = $this->findIndexTitle( $page->getTitle() );
+			$indexTitle = $this->findIndexTitle( $pageTitle );
 			if ( $indexTitle === null ) {
 				$this->cache[$cacheKey] = null;
 			} else {
-				$this->cache[$cacheKey] = ProofreadIndexPage::newFromTitle( $indexTitle );
+				$this->cache[$cacheKey] = $indexTitle;
 			}
 		}
 		return $this->cache[$cacheKey];

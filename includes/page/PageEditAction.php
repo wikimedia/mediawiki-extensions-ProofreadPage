@@ -4,7 +4,6 @@ namespace ProofreadPage\Page;
 
 use EditAction;
 use ProofreadPage\Context;
-use ProofreadPagePage;
 
 /**
  * @licence GNU GPL v2+
@@ -17,8 +16,7 @@ class PageEditAction extends EditAction {
 	 * @see FormlessAction:show
 	 */
 	public function show() {
-		$pagePage = ProofreadPagePage::newFromTitle( $this->getTitle() );
-		$editor = new EditPagePage( $this->page, $pagePage, Context::getDefaultContext() );
+		$editor = new EditPagePage( $this->page, Context::getDefaultContext() );
 		$editor->edit();
 	}
 }

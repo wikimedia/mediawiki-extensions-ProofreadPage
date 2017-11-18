@@ -26,7 +26,7 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		] );
 		$pageList = new PageList( [ '1to2' => '-', '3' => '1', '4to5' => 'roman' ] );
 		$pagination = new FilePagination(
-			$this->newIndexPage( 'LoremIpsum.djvu' ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			$pageList,
 			$context->getFileProvider()->getFileFromTitle(
 				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
@@ -35,20 +35,19 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		);
 		$this->assertEquals(
 			$pagination,
-			$context->getPaginationFactory()->getPaginationForIndexPage(
-				$this->newIndexPage( 'LoremIpsum.djvu' )
+			$context->getPaginationFactory()->getPaginationForIndexTitle(
+				Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' )
 			)
 		);
 	}
 
 	public function testGetPaginationWithoutPagelist() {
-		$index = $this->newIndexPage( 'Test' );
+		$indexTitle = Title::makeTitle( $this->getIndexNamespaceId(), 'Test' );
 		$pagination = new PagePagination(
-			$index,
 			[
-				$this->newPagePage( Title::newFromText( 'Page:Test 1.jpg' ) ),
-				$this->newPagePage( Title::newFromText( 'Page:Test 2.tiff' ) ),
-				$this->newPagePage( Title::newFromText( 'Page:Test:3.png' ) )
+				Title::newFromText( 'Page:Test 1.jpg' ),
+				Title::newFromText( 'Page:Test 2.tiff' ),
+				Title::newFromText( 'Page:Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -59,13 +58,13 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		$this->assertEquals(
 			$pagination,
 			$this->getContext( [], [
-				'Test' => new IndexContent( [
+				$indexTitle->getDBkey() => new IndexContent( [
 					'Pages' => new WikitextContent(
 						'[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]][[Page:Test:3.png|2]]'
 					),
 					'Author' => new WikitextContent( '[[Author:Me]]' )
 				] )
-			] )->getPaginationFactory()->getPaginationForIndexPage( $index )
+			] )->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle )
 		);
 	}
 }

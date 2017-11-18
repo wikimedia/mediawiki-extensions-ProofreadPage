@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use ProofreadIndexPage;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -15,5 +15,5 @@ interface IndexContentLookup {
 	 * Returns content of the page
 	 * @return IndexContent
 	 */
-	public function getIndexContent( ProofreadIndexPage $index );
+	public function getIndexContentForTitle( Title $indexTitle );
 }

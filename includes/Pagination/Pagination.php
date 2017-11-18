@@ -4,8 +4,7 @@ namespace ProofreadPage\Pagination;
 
 use Iterator;
 use OutOfBoundsException;
-use ProofreadIndexPage;
-use ProofreadPagePage;
+use Title;
 
 /**
  * @licence GNU GPL v2+
@@ -15,39 +14,18 @@ use ProofreadPagePage;
 abstract class Pagination implements Iterator {
 
 	/**
-	 * @var ProofreadIndexPage
-	 */
-	protected $index;
-
-	/**
 	 * @var integer position of the iterator
 	 */
 	private $position = 1;
 
 	/**
-	 * @param ProofreadIndexPage $index
-	 */
-	public function __construct( ProofreadIndexPage $index ) {
-		$this->index = $index;
-	}
-
-	/**
-	 * Returns the index page
-	 *
-	 * @return ProofreadIndexPage
-	 */
-	public function getIndex() {
-		return $this->index;
-	}
-
-	/**
 	 * Returns the internal page number
 	 *
-	 * @param ProofreadPagePage $page
+	 * @param Title $pageTitle
 	 * @return integer
 	 * @throws PageNotInPaginationException
 	 */
-	abstract public function getPageNumber( ProofreadPagePage $page );
+	abstract public function getPageNumber( Title $pageTitle );
 
 	/**
 	 * Returns the page number as it should be displayed from an internal page number
@@ -69,10 +47,10 @@ abstract class Pagination implements Iterator {
 	 * Returns the page number $pageNumber of the book
 	 *
 	 * @param int $pageNumber page number
-	 * @return ProofreadPagePage
+	 * @return Title
 	 * @throws OutOfBoundsException
 	 */
-	abstract public function getPage( $pageNumber );
+	abstract public function getPageTitle( $pageNumber );
 
 	/**
 	 * Returns if a page number $pageNumber exits
@@ -106,10 +84,10 @@ abstract class Pagination implements Iterator {
 	/**
 	 * @see Iterator::current
 	 *
-	 * @return ProofreadPagePage
+	 * @return Title
 	 */
 	public function current() {
-		return $this->getPage( $this->position );
+		return $this->getPageTitle( $this->position );
 	}
 
 	/**

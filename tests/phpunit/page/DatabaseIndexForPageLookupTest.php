@@ -4,6 +4,7 @@ namespace ProofreadPage\Page;
 
 use ProofreadPageTestCase;
 use RepoGroup;
+use Title;
 
 /**
  * @group ProofreadPage
@@ -21,13 +22,17 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 			$repoGroupMock
 		);
 		$this->assertEquals(
-			$this->newIndexPage( 'LoremIpsum.djvu' ),
-			$lookup->getIndexForPage( $this->newPagePage( 'LoremIpsum.djvu/2' ) )
+			Title::makeTitle( $this->getIndexNamespaceId(),  'LoremIpsum.djvu' ),
+			$lookup->getIndexForPageTitle(
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' )
+			)
 		);
 	}
 
 	public function testGetIndexForPageNotFound() {
 		$lookup = new DatabaseIndexForPageLookup( $this->getIndexNamespaceId(), RepoGroup::singleton() );
-		$this->assertNull( $lookup->getIndexForPage( $this->newPagePage( 'FooBar' ) ) );
+		$this->assertNull( $lookup->getIndexForPageTitle(
+			Title::makeTitle( $this->getPageNamespaceId(), 'FooBar' )
+		) );
 	}
 }

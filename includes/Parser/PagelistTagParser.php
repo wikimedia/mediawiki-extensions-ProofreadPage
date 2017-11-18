@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Parser;
 
-use ProofreadIndexPage;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;
@@ -23,10 +22,9 @@ class PagelistTagParser extends TagParser {
 		if ( !$title->inNamespace( $this->context->getIndexNamespaceId() ) ) {
 			return '';
 		}
-		$index = ProofreadIndexPage::newFromTitle( $title );
 		$pageList = new PageList( $args );
 		try {
-			$image = $this->context->getFileProvider()->getForIndexPage( $index );
+			$image = $this->context->getFileProvider()->getFileForIndexTitle( $title );
 		} catch ( FileNotFoundException $e ) {
 			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
@@ -34,7 +32,7 @@ class PagelistTagParser extends TagParser {
 			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
 
-		$pagination = new FilePagination( $index, $pageList, $image, $this->context );
+		$pagination = new FilePagination( $title, $pageList, $image, $this->context );
 		$count = $pagination->getNumberOfPages();
 
 		$return = '';
@@ -71,7 +69,7 @@ class PagelistTagParser extends TagParser {
 				}
 				$view = $txt . '</span>' . $view;
 			}
-			$pageTitle = $pagination->getPage( $i )->getTitle();
+			$pageTitle = $pagination->getPageTitle( $i );
 
 			if ( $pageNumber->isEmpty() || !$title ) {
 				$return .= $view . ' ';
