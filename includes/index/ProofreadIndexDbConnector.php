@@ -22,26 +22,6 @@
 class ProofreadIndexDbConnector {
 
 	/**
-	 * Query the database to find if the current page is referred in an Index page.
-	 * @param Title $title
-	 * @return ResultWrapper
-	 */
-	public static function getRowsFromTitle( Title $title ) {
-		$dbr = wfGetDB( DB_REPLICA );
-		$result = $dbr->select(
-			[ 'page', 'pagelinks' ],
-			[ 'page_namespace', 'page_title' ],
-			[
-				'pl_namespace' => $title->getNamespace(),
-				'pl_title' => $title->getDBkey(),
-				'pl_from=page_id'
-			],
-			__METHOD__
-		);
-		return $result;
-	}
-
-	/**
 	 * @param Object $x
 	 * @param int $indexId
 	 * @param WikiPage $article

@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Page;
 
-use ProofreadIndexDbConnector;
 use RepoGroup;
 use Title;
 
@@ -39,14 +38,8 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	 */
 	public function getIndexForPageTitle( Title $pageTitle ) {
 		$cacheKey = $pageTitle->getDBkey();
-
 		if ( !array_key_exists( $cacheKey, $this->cache ) ) {
-			$indexTitle = $this->findIndexTitle( $pageTitle );
-			if ( $indexTitle === null ) {
-				$this->cache[$cacheKey] = null;
-			} else {
-				$this->cache[$cacheKey] = $indexTitle;
-			}
+			$this->cache[$cacheKey] = $this->findIndexTitle( $pageTitle );
 		}
 		return $this->cache[$cacheKey];
 	}
@@ -55,21 +48,13 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 		$possibleIndexTitle = $this->findPossibleIndexTitleBasedOnName( $pageTitle );
 
 		// Try to find links from Index: pages
-		$result = ProofreadIndexDbConnector::getRowsFromTitle( $pageTitle );
 		$indexesThatLinksHere = [];
-		foreach ( $result as $x ) {
-			$refTitle = Title::makeTitle( $x->page_namespace, $x->page_title );
-			if ( $refTitle !== null &&
-				$refTitle->inNamespace( $this->indexNamespaceId )
-			) {
-				if ( $possibleIndexTitle !== null &&
-					// It is the same as the linked file, we know it's this Index:
-					$refTitle->equals( $possibleIndexTitle )
-				) {
-					return $refTitle;
-				}
-				$indexesThatLinksHere[] = $refTitle;
+		foreach ( $this->findIndexesWhichLinkTo( $pageTitle ) as $indexTitle ) {
+			// It is the same as the linked file, we know it's this Index:
+			if ( $possibleIndexTitle !== null && $indexTitle->equals( $possibleIndexTitle ) ) {
+				return $indexTitle;
 			}
+			$indexesThatLinksHere[] = $indexTitle;
 		}
 		if ( !empty( $indexesThatLinksHere ) ) {
 			// TODO: what should we do if there are more than 1 possible index?
@@ -98,5 +83,25 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 			}
 		}
 		return null;
+	}
+
+	private function findIndexesWhichLinkTo( Title $title ) {
+		$results = wfGetDB( DB_REPLICA )->select(
+			[ 'page', 'pagelinks' ],
+			[ 'page_namespace', 'page_title' ],
+			[
+				'pl_namespace' => $title->getNamespace(),
+				'pl_title' => $title->getDBkey(),
+				'pl_from=page_id',
+				'pl_from_namespace' => $this->indexNamespaceId
+			],
+			__METHOD__
+		);
+		foreach ( $results as $row ) {
+			$indexTitle = Title::makeTitle( $row->page_namespace, $row->page_title );
+			if ( $indexTitle !== null ) {
+				yield $indexTitle;
+			}
+		}
 	}
 }
