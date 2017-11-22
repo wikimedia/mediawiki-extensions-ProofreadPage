@@ -190,15 +190,6 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::makeParserOptions
-	 */
-	public function makeParserOptions( $context ) {
-		$parserOptions = parent::makeParserOptions( $context );
-		$parserOptions->setEditSection( false );
-		return $parserOptions;
-	}
-
-	/**
 	 * @see ContentHandler::makeRedirectContent
 	 */
 	public function makeRedirectContent( Title $destination, $text = '' ) {

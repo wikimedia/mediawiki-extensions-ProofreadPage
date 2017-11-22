@@ -221,6 +221,9 @@ class IndexContent extends TextContent {
 			}, $this->fields )
 		);
 
+		// Force no section edit links
+		$text = '__NOEDITSECTION__' . $text;
+
 		// We do the final rendering
 		$output = $wgParser->parse( $text, $title, $options, true, true, $revId );
 		$output->addTemplate( $templateTitle,
