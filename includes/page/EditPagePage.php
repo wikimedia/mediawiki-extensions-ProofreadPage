@@ -199,9 +199,9 @@ class EditPagePage extends EditPage {
 		$currentContent = $this->getCurrentContent();
 
 		return $this->pageContentBuilder->buildContentFromInput(
-			$this->safeUnicodeInput( $request, 'wpHeaderTextbox' ),
-			$this->safeUnicodeInput( $request, 'wpTextbox1' ),
-			$this->safeUnicodeInput( $request, 'wpFooterTextbox' ),
+			$request->getText( 'wpHeaderTextbox' ),
+			$request->getText( 'wpTextbox1' ),
+			$request->getText( 'wpFooterTextbox' ),
 			$request->getInt( 'wpQuality', $currentContent->getLevel()->getLevel() ),
 			$currentContent
 		)->serialize();
