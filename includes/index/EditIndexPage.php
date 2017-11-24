@@ -47,7 +47,7 @@ class EditIndexPage extends EditPage {
 	 * @see EditPage::showContentForm
 	 */
 	protected function showContentForm() {
-		$pageLang = $this->mTitle->getPageLanguage();
+		$pageLang = $this->getTitle()->getPageLanguage();
 		$out = $this->context->getOutput();
 		$out->enableOOUI();
 		$inputOptions = [ 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() ];
@@ -81,7 +81,7 @@ class EditIndexPage extends EditPage {
 
 	private function buildField( CustomIndexField $field, $inputOptions ) {
 		$key = $this->getFieldNameForEntry( $field->getKey() );
-		$val = $this->safeUnicodeOutput( $field->getStringValue() );
+		$val = $field->getStringValue();
 
 		$inputOptions['name'] = $key;
 		$inputOptions['value'] = $val;
@@ -149,7 +149,7 @@ class EditIndexPage extends EditPage {
 		$fields = [];
 		foreach ( $config as $key => $params ) {
 			$field = $this->getFieldNameForEntry( $key );
-			$value = $this->cleanInputtedContent( $this->safeUnicodeInput( $request, $field ) );
+			$value = $this->cleanInputtedContent( $request->getText( $field ) );
 			$entry = new CustomIndexField( $key, $value, $params );
 			if ( !$entry->isHidden() ) {
 				$fields[$entry->getKey()] = new WikitextContent( $entry->getStringValue() );
@@ -172,17 +172,16 @@ class EditIndexPage extends EditPage {
 		$value = preg_replace( '/\|/', '&!&', $value );
 
 		// ...except in links...
-		$prev = '';
 		do {
 			$prev = $value;
 			$value = preg_replace( '/\[\[(.*?)&!&(.*?)\]\]/', '[[$1|$2]]', $value );
-		} while ( $value != $prev );
+		} while ( $value !== $prev );
 
 		// ..and in templates
 		do {
 			$prev = $value;
 			$value = preg_replace( '/\{\{(.*?)&!&(.*?)\}\}/s', '{{$1|$2}}', $value );
-		} while ( $value != $prev );
+		} while ( $value !== $prev );
 
 		$value = preg_replace( '/&!&/', '{{!}}', $value );
 
