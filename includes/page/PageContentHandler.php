@@ -291,7 +291,7 @@ class PageContentHandler extends TextContentHandler {
 	 * @see ContentHandler::getAutosummary
 	 */
 	public function getAutosummary(
-		Content $oldContent = null, Content $newContent = null, $flags
+		Content $oldContent = null, Content $newContent = null, $flags = 0
 	) {
 		$summary = parent::getAutosummary( $oldContent, $newContent, $flags );
 
