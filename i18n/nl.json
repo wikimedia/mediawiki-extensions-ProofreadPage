@@ -7,7 +7,8 @@
 			"Siebrand",
 			"Sjoerddebruin",
 			"Robin van der Vliet",
-			"Huhbakker"
+			"Huhbakker",
+			"Mar(c)"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -22,13 +23,9 @@
 	"proofreadpage_index_expected": "Fout: er werd een index verwacht",
 	"proofreadpage_nosuch_index": "Fout: de index bestaat niet",
 	"proofreadpage_nosuch_file": "Fout: het opgegeven bestand bestaat niet",
-	"proofreadpage_badpage": "Verkeerde formaat",
-	"proofreadpage_badpagetext": "Het formaat van de pagina die u probeerde op te slaan is onjuist.",
-	"proofreadpage_indexdupe": "Dubbele koppeling",
 	"proofreadpage_indexdupetext": "Pagina's kunnen niet meer dan één keer op een indexpagina weergegeven worden.",
 	"proofreadpage_nologin": "Niet aangemeld",
 	"proofreadpage_nologintext": "U moet [[Special:UserLogin|aanmelden]] om de proefleesstatus van pagina's te kunnen wijzigen.",
-	"proofreadpage_notallowed": "Wijzigen is niet toegestaan",
 	"proofreadpage_notallowedtext": "U mag de proefleesstatus van deze pagina niet wijzigen.",
 	"proofreadpage_dataconfig_badformatted": "Probleem met de gegevensinstellingen",
 	"proofreadpage_dataconfig_badformattedtext": "De pagina \"[[Mediawiki:Proofreadpage index data config]]\" bevat ongeldige JSON-gegevens.",
@@ -92,7 +89,7 @@
 	"apihelp-query+proofreadinfo-description": "Informatie over de configuratie van ProofreadPage extensie.",
 	"apihelp-query+proofreadinfo-example-1": "Standaardinformatie teruggeven",
 	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven",
-	"proofreadpage-visualeditor-node-pages-inspector-title": "Pagina selectie",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Paginaselectie",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagina's",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion van $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
