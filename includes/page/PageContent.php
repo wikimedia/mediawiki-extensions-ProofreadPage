@@ -290,7 +290,7 @@ class PageContent extends TextContent {
 				->title( $title )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
-			$parserOutput->getText() .
+			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] ) .
 			Html::closeElement( 'div' );
 		$parserOutput->setText( $html );
 

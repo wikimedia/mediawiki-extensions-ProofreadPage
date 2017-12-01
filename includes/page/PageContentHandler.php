@@ -307,16 +307,6 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::makeParserOptions
-	 */
-	public function makeParserOptions( $context ) {
-		$parserOptions = parent::makeParserOptions( $context );
-		$parserOptions->setEditSection( false );
-
-		return $parserOptions;
-	}
-
-	/**
 	 * @see ContentHandler::makeRedirectContent
 	 * @todo is it the right content for redirects?
 	 */
