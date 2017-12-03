@@ -75,7 +75,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 			if ( $imageTitle !== null ) {
 				$image = $this->repoGroup->findFile( $imageTitle );
 				// if it is multipage, we use the page order of the file
-				if ( $image->exists() && $image->isMultipage() ) {
+				if ( $image && $image->exists() && $image->isMultipage() ) {
 					return Title::makeTitle(
 						$this->indexNamespaceId, $image->getTitle()->getText()
 					);
