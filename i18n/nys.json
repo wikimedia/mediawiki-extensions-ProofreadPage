@@ -5,5 +5,9 @@
 		]
 	},
 	"proofreadpage_quality0_category": "Yel-ang warryn",
-	"proofreadpage_quality1_category": "Uart proofread"
+	"proofreadpage_quality1_category": "Uart proofread",
+	"proofreadpage_quality2_category": "patpatan",
+	"proofreadpage_quality3_category": "Proofread",
+	"proofreadpage_quality4_category": "kaya Validated",
+	"proofreadpage_quality1_message": "Nidja bibol uart proofread"
 }
