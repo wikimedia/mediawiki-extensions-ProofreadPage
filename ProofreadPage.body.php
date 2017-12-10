@@ -76,8 +76,8 @@ class ProofreadPage {
 	 * @return bool
 	 */
 	public static function onwgQueryPages( &$queryPages ) {
-		$queryPages[] = [ 'ProofreadPages', 'IndexPages' ];
-		$queryPages[] = [ 'PagesWithoutScans', 'PagesWithoutScans' ];
+		$queryPages[] = [ 'SpecialProofreadPages', 'IndexPages' ];
+		$queryPages[] = [ 'SpecialPagesWithoutScans', 'PagesWithoutScans' ];
 		return true;
 	}
 
