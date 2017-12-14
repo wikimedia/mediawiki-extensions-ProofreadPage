@@ -134,8 +134,8 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->getContext()
 		);
 		$this->assertEquals(
-			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' ),
-			$pagination->getPageTitle( 2 )
+			'Page:LoremIpsum.djvu/2',
+			$pagination->getPageTitle( 2 )->getFullText()
 		);
 	}
 
@@ -175,14 +175,14 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$this->assertEquals( 2, $pagination->key() );
 		$this->assertTrue( $pagination->valid() );
 		$this->assertEquals(
-			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' ),
-			$pagination->current()
+			'Page:LoremIpsum.djvu/2',
+			$pagination->current()->getFullText()
 		);
 		$pagination->rewind();
 		$this->assertEquals( 1, $pagination->key() );
 		$this->assertEquals(
-			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/1' ),
-			$pagination->current()
+			 'Page:LoremIpsum.djvu/1',
+			$pagination->current()->getFullText()
 		);
 	}
 }
