@@ -9,7 +9,7 @@ use ProofreadPageTestCase;
  * @group ProofreadPage
  * @covers \ProofreadPage\Pagination\PageNumber
  */
-class ProofreadPageNumberTest extends ProofreadPageTestCase {
+class PageNumberTest extends ProofreadPageTestCase {
 
 	public function formattedPageNumberProvider() {
 		return [

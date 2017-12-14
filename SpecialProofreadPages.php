@@ -19,7 +19,7 @@
  * @ingroup SpecialPage
  */
 
-class ProofreadPages extends QueryPage {
+class SpecialProofreadPages extends QueryPage {
 	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending, $addOne;
 
 	public function __construct( $name = 'IndexPages' ) {

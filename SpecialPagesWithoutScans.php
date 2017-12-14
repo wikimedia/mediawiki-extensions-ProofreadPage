@@ -23,7 +23,7 @@
  * Special page that lists the texts that have no transclusions
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.
  */
-class PagesWithoutScans extends QueryPage {
+class SpecialPagesWithoutScans extends QueryPage {
 	public function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
 	}

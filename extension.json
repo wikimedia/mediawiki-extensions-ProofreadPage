@@ -22,8 +22,8 @@
 		"pagequality-admin"
 	],
 	"SpecialPages": {
-		"IndexPages": "ProofreadPages",
-		"PagesWithoutScans": "PagesWithoutScans"
+		"IndexPages": "SpecialProofreadPages",
+		"PagesWithoutScans": "SpecialPagesWithoutScans"
 	},
 	"APIMetaModules": {
 		"proofreadinfo": "ApiQueryProofreadInfo"
@@ -90,8 +90,8 @@
 		"ProofreadPage\\Parser\\PagelistTagParser": "includes/Parser/PagelistTagParser.php",
 		"ProofreadPage\\Parser\\PagesTagParser": "includes/Parser/PagesTagParser.php",
 		"ProofreadPage\\Parser\\PagequalityTagParser": "includes/Parser/PagequalityTagParser.php",
-		"ProofreadPages": "SpecialProofreadPages.php",
-		"PagesWithoutScans": "SpecialPagesWithoutScans.php",
+		"SpecialProofreadPages": "SpecialProofreadPages.php",
+		"SpecialPagesWithoutScans": "SpecialPagesWithoutScans.php",
 		"ApiQueryProofread": "ApiQueryProofread.php",
 		"ApiQueryProofreadInfo": "ApiQueryProofreadInfo.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
