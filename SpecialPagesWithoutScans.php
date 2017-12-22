@@ -39,7 +39,7 @@ class SpecialPagesWithoutScans extends QueryPage {
 	/**
 	 * Return a clause with the list of disambiguation templates.
 	 * This function was copied verbatim from specials/SpecialDisambiguations.php
-	 * @param DatabaseBase $dbr
+	 * @param \Wikimedia\Rdbms\IDatabase $dbr
 	 * @return mixed
 	 */
 	public function getDisambiguationTemplates( $dbr ) {
