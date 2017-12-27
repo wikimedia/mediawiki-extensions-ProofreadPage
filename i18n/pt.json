@@ -60,7 +60,7 @@
 	"proofreadpage_specialpage_label_sortascending": "Classificação crescente",
 	"proofreadpage_alphabeticalorder": "Ordem alfabética",
 	"proofreadpage_index_listofpages": "Lista de páginas",
-	"proofreadpage_image_message": "Ligação para a página de índice",
+	"proofreadpage_image_message": "Hiperligação para a página de índice",
 	"proofreadpage_page_status": "Estado da página",
 	"proofreadpage_js_attributes": "Autor Título Ano Editora",
 	"proofreadpage_index_attributes": "Autor\nTítulo\nAno|Ano de publicação\nEditora\nFonte\nImagem|Imagem de capa\nPáginas||20\nNotas||10",
