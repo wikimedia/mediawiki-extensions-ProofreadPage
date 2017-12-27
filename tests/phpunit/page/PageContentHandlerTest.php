@@ -309,6 +309,8 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider merge3Provider
 	 */
 	public function testMerge3( $oldContent, $myContent, $yourContent, $expected ) {
+		$this->markTestSkippedIfNoDiff3();
+
 		$merged = $this->handler->merge3( $oldContent, $myContent, $yourContent );
 
 		$this->assertEquals( $expected, $merged );
