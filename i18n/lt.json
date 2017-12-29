@@ -3,7 +3,8 @@
 		"authors": [
 			"Eitvys200",
 			"Matasg",
-			"Albertas"
+			"Albertas",
+			"Manvydasz"
 		]
 	},
 	"indexpages": "Indeksuotų puslapių sąrašas",
@@ -74,7 +75,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 schema nerasta.",
 	"proofreadpage-disambiguationspage": "Template:dviprasmiški",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|validuotas puslapis|validuoti puslapiai}}, $2 tik {{PLURAL:$2|tinkamas puslapis|tinkami puslapiai}} ir $3 {{PLURAL:$3|netinkamas puslapis|netinkami puslapiai}}",
-	"content-model-proofread-page": "Page: puslapis",
+	"content-model-proofread-page": "Knygos puslapis",
 	"apihelp-query+proofread-description": "Pateikia nurodyto puslapio informaciją apie dabartinį koregavimo statusą.",
 	"apihelp-query+proofread-example-1": "Pateikia tinkamumo statusą puslapių, esančių vardų srityje 250",
 	"apihelp-query+proofreadinfo-description": "Pateikia informaciją apie ProofreadPage plėtinio konfigūraciją.",
