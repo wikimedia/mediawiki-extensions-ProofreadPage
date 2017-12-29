@@ -11,7 +11,7 @@ use WikitextContent;
 
 /**
  * @group ProofreadPage
- * @covers PageContentHandler
+ * @covers \ProofreadPage\Page\PageContentHandler
  */
 class PageContentHandlerTest extends ProofreadPageTestCase {
 

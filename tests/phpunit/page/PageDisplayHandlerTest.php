@@ -9,7 +9,7 @@ use WikitextContent;
 
 /**
  * @group ProofreadPage
- * @covers PageDisplayHandler
+ * @covers \ProofreadPage\Page\PageDisplayHandler
  */
 class PageDisplayHandlerTest extends ProofreadPageTestCase {
 

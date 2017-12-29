@@ -7,7 +7,7 @@ use User;
 
 /**
  * @group ProofreadPage
- * @covers PageLevel
+ * @covers \ProofreadPage\Page\PageLevel
  */
 class PageLevelTest extends ProofreadPageTestCase {
 

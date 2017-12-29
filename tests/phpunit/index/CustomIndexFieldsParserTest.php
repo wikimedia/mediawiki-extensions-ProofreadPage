@@ -8,7 +8,7 @@ use ProofreadPageTestCase;
 
 /**
  * @group ProofreadPage
- * @covers CustomIndexFieldsParser
+ * @covers \ProofreadPage\Index\CustomIndexFieldsParser
  */
 class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 	/**
