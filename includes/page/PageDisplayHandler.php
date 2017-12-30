@@ -86,8 +86,7 @@ class PageDisplayHandler {
 	 * @return string
 	 */
 	public function buildPageContainerBegin() {
-		return
-			Html::openElement( 'div', [ 'class' => 'prp-page-container' ] ) .
+		return Html::openElement( 'div', [ 'class' => 'prp-page-container' ] ) .
 			Html::openElement( 'div', [ 'class' => 'prp-page-content' ] );
 	}
 
@@ -96,8 +95,7 @@ class PageDisplayHandler {
 	 * @return string
 	 */
 	public function buildPageContainerEnd( Title $pageTitle ) {
-		return
-			Html::closeElement( 'div' ) .
+		return Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'prp-page-image' ] ) .
 			$this->buildImageHtml( $pageTitle, [ 'max-width' => $this->getImageWidth( $pageTitle ) ] ) .
 			Html::closeElement( 'div' ) .

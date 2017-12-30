@@ -92,8 +92,7 @@ class PageList {
 	 * @return bool
 	 */
 	protected function numberInRange( $range, $number ) {
-		return
-			is_numeric( $range ) && $range == $number ||
+		return is_numeric( $range ) && $range == $number ||
 			preg_match( '/^([0-9]*)to([0-9]*)$/', $range, $m ) &&
 			$m[1] <= $number && $number <= $m[2];
 	}

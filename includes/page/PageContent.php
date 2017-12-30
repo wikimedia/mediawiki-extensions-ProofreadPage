@@ -117,8 +117,7 @@ class PageContent extends TextContent {
 			return false;
 		}
 
-		return
-			$this->header->equals( $that->getHeader() ) &&
+		return $this->header->equals( $that->getHeader() ) &&
 			$this->body->equals( $that->getBody() ) &&
 			$this->footer->equals( $that->getFooter() ) &&
 			$this->level->equals( $that->getLevel() );
