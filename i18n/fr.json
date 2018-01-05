@@ -54,7 +54,7 @@
 	"proofreadpage_quality3_category": "Corrigée",
 	"proofreadpage_quality4_category": "Validée",
 	"proofreadpage_quality0_message": "Cette page n’est pas destinée à être corrigée.",
-	"proofreadpage_quality1_message": "Cette page n’a pas encore été corrigée.",
+	"proofreadpage_quality1_message": "Cette page n’a pas encore été corrigée",
 	"proofreadpage_quality2_message": "Cette page n’a pas pu être corrigée, à cause d’un problème décrit en page de discussion.",
 	"proofreadpage_quality3_message": "Cette page a été corrigée et est conforme au fac-similé.",
 	"proofreadpage_quality4_message": "Cette page a été validée par deux contributeurs.",
