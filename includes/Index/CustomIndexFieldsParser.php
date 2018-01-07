@@ -156,6 +156,7 @@ class CustomIndexFieldsParser {
 
 	/**
 	 * Return metadata from the index page that have to be given to header template.
+	 * @param IndexContent $content
 	 * @return CustomIndexField[]
 	 */
 	public function parseCustomIndexFieldsForHeader( IndexContent $content ) {
@@ -172,6 +173,8 @@ class CustomIndexFieldsParser {
 	/**
 	 * Return the index entry with the same name or null if it's not found
 	 * Note: the comparison is case insensitive
+	 * @param IndexContent $content
+	 * @param string $fieldName
 	 * @return CustomIndexField
 	 * @throws OutOfBoundsException
 	 */

@@ -12,7 +12,7 @@ use Html;
 class PagequalityTagParser extends TagParser {
 
 	/**
-	 * @see TagParser::render
+	 * @inheritDoc
 	 */
 	public function render( $input, array $args ) {
 		if ( !array_key_exists( 'level', $args ) || !is_numeric( $args['level'] ) ||

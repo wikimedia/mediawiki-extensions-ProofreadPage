@@ -20,7 +20,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 	private $diffFormatterUtils;
 
 	/**
-	 * @see DifferenceEngine::__construct
+	 * @inheritDoc
 	 */
 	public function __construct(
 		$context = null, $old = 0, $new = 0, $rcid = 0, $refreshCache = false, $unhide = false
@@ -31,7 +31,7 @@ class PageDifferenceEngine extends DifferenceEngine {
 	}
 
 	/**
-	 * @see DifferenceEngine::generateContentDiffBody
+	 * @inheritDoc
 	 */
 	public function generateContentDiffBody( Content $old, Content $new ) {
 		if ( !( $old instanceof PageContent ) || !( $new instanceof PageContent ) ) {

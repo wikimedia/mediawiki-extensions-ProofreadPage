@@ -30,21 +30,21 @@ class EditIndexPage extends EditPage {
 	}
 
 	/**
-	 * @see EditPage::isSectionEditSupported
+	 * @inheritDoc
 	 */
 	protected function isSectionEditSupported() {
 		return false; // sections and forms don't mix
 	}
 
 	/**
-	 * @see EditPage::isSupportedContentModel
+	 * @inheritDoc
 	 */
 	public function isSupportedContentModel( $modelId ) {
 		return $modelId === CONTENT_MODEL_PROOFREAD_INDEX;
 	}
 
 	/**
-	 * @see EditPage::showContentForm
+	 * @inheritDoc
 	 */
 	protected function showContentForm() {
 		$pageLang = $this->getTitle()->getPageLanguage();
@@ -138,7 +138,7 @@ class EditIndexPage extends EditPage {
 	}
 
 	/**
-	 * @see EditPage::importContentFormData
+	 * @inheritDoc
 	 */
 	protected function importContentFormData( &$request ) {
 		if ( $this->textbox1 !== '' ) {

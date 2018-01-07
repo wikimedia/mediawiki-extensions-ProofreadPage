@@ -39,7 +39,7 @@ class PagePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::getPageNumber
+	 * @inheritDoc
 	 */
 	public function getPageNumber( Title $pageTitle ) {
 		foreach ( $this->pages as $i => $pageTitle2 ) {
@@ -51,7 +51,7 @@ class PagePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::getDisplayedPageNumber
+	 * @inheritDoc
 	 */
 	public function getDisplayedPageNumber( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
@@ -63,14 +63,14 @@ class PagePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::getNumberOfPages
+	 * @inheritDoc
 	 */
 	public function getNumberOfPages() {
 		return count( $this->pages );
 	}
 
 	/**
-	 * @see ProofreadPagination::getPageTitle
+	 * @inheritDoc
 	 */
 	public function getPageTitle( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
@@ -82,7 +82,7 @@ class PagePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::pageNumExists
+	 * @inheritDoc
 	 */
 	protected function pageNumberExists( $pageNumber ) {
 		return array_key_exists( $pageNumber - 1, $this->pages );

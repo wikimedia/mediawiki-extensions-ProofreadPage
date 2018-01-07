@@ -93,7 +93,7 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content:isValid
+	 * @inheritDoc
 	 */
 	public function isValid() {
 		return $this->header->isValid() &&
@@ -103,14 +103,14 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content:isEmpty
+	 * @inheritDoc
 	 */
 	public function isEmpty() {
 		return $this->body->isEmpty();
 	}
 
 	/**
-	 * @see Content::equals
+	 * @inheritDoc
 	 */
 	public function equals( Content $that = null ) {
 		if ( !( $that instanceof PageContent ) || $that->getModel() !== $this->getModel() ) {
@@ -124,28 +124,28 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getWikitextForTransclusion
+	 * @inheritDoc
 	 */
 	public function getWikitextForTransclusion() {
 		return $this->body->getWikitextForTransclusion();
 	}
 
 	/**
-	 * @see Content::getNativeData
+	 * @inheritDoc
 	 */
 	public function getNativeData() {
 		return $this->serialize();
 	}
 
 	/**
-	 * @see Content::getTextForSummary
+	 * @inheritDoc
 	 */
 	public function getTextForSummary( $maxlength = 250 ) {
 		return $this->body->getTextForSummary( $maxlength );
 	}
 
 	/**
-	 * @see Content::preSaveTransform
+	 * @inheritDoc
 	 */
 	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
 		return new self(
@@ -157,7 +157,7 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::preloadTransform
+	 * @inheritDoc
 	 */
 	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
 		return new self(
@@ -169,7 +169,7 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::prepareSave
+	 * @inheritDoc
 	 */
 	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
 		if ( !$this->isValid() ) {
@@ -205,14 +205,14 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getRedirectTarget
+	 * @inheritDoc
 	 */
 	public function getRedirectTarget() {
 		return $this->body->getRedirectTarget();
 	}
 
 	/**
-	 * @see Content::updateRedirect
+	 * @inheritDoc
 	 */
 	public function updateRedirect( Title $target ) {
 		if ( !$this->isRedirect() ) {
@@ -228,7 +228,7 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getSize
+	 * @inheritDoc
 	 */
 	public function getSize() {
 		return $this->header->getSize() +
@@ -237,7 +237,7 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::isCountable
+	 * @inheritDoc
 	 */
 	public function isCountable( $hasLinks = null, Title $title = null ) {
 		return $this->header->isCountable( $hasLinks, $title ) ||
@@ -246,7 +246,7 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::matchMagicWord
+	 * @inheritDoc
 	 */
 	public function matchMagicWord( MagicWord $word ) {
 		return $this->header->matchMagicWord( $word ) ||
@@ -255,7 +255,7 @@ class PageContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getParserOutput
+	 * @inheritDoc
 	 */
 	public function getParserOutput(
 		Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true

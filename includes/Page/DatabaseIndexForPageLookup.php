@@ -34,7 +34,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	}
 
 	/**
-	 * @see IndexForPageLookup::getIndexForPageTitle
+	 * @inheritDoc
 	 */
 	public function getIndexForPageTitle( Title $pageTitle ) {
 		$cacheKey = $pageTitle->getDBkey();

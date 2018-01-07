@@ -39,7 +39,7 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 * @see LoggedUpdateMaintenance::doDBUpdates
+	 * @inheritDoc
 	 */
 	public function doDBUpdates() {
 		$dbw = wfGetDB( DB_MASTER );
@@ -82,7 +82,7 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 * @see LoggedUpdateMaintenance::getUpdateKey
+	 * @inheritDoc
 	 */
 	public function getUpdateKey() {
 		return 'FixIndexPagesContentModel';

@@ -18,7 +18,7 @@ class IndexForPageLookupMock implements IndexForPageLookup {
 	}
 
 	/**
-	 * @see IndexForPageLookup::getIndexForPageTitle
+	 * @inheritDoc
 	 */
 	public function getIndexForPageTitle( Title $pageTitle ) {
 		if ( !array_key_exists( $pageTitle->getDBkey(), $this->indexForPage ) ) {

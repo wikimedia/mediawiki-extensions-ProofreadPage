@@ -54,7 +54,7 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::canBeUsedOn
+	 * @inheritDoc
 	 */
 	public function canBeUsedOn( Title $title ) {
 		return parent::canBeUsedOn( $title ) &&
@@ -62,7 +62,7 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::serializeContent
+	 * @inheritDoc
 	 */
 	public function serializeContent( Content $content, $format = null ) {
 		$this->checkFormat( $format );
@@ -91,7 +91,7 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::unserializeContent
+	 * @inheritDoc
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
@@ -127,7 +127,7 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::getActionOverrides
+	 * @inheritDoc
 	 */
 	public function getActionOverrides() {
 		return [
@@ -137,21 +137,21 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::getDiffEngineClass
+	 * @inheritDoc
 	 */
 	protected function getDiffEngineClass() {
 		return IndexDifferenceEngine::class;
 	}
 
 	/**
-	 * @see ContentHandler::makeEmptyContent
+	 * @inheritDoc
 	 */
 	public function makeEmptyContent() {
 		return new IndexContent( [] );
 	}
 
 	/**
-	 * @see ContentHandler::merge3
+	 * @inheritDoc
 	 */
 	public function merge3( Content $oldContent, Content $myContent, Content $yourContent ) {
 		$this->checkModelID( $oldContent->getModel() );
@@ -190,21 +190,21 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::makeRedirectContent
+	 * @inheritDoc
 	 */
 	public function makeRedirectContent( Title $destination, $text = '' ) {
 		return new IndexRedirectContent( $destination );
 	}
 
 	/**
-	 * @see ContentHandler::supportsRedirects
+	 * @inheritDoc
 	 */
 	public function supportsRedirects() {
 		return true;
 	}
 
 	/**
-	 * @see ContentHandler::isParserCacheSupported
+	 * @inheritDoc
 	 */
 	public function isParserCacheSupported() {
 		return true;

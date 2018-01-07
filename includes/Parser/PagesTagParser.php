@@ -16,7 +16,7 @@ use Title;
 class PagesTagParser extends TagParser {
 
 	/**
-	 * @see TagParser::render
+	 * @inheritDoc
 	 */
 	public function render( $input, array $args ) {
 		// abort if this is nested <pages> call

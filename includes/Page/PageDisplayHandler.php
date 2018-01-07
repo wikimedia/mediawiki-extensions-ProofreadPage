@@ -91,7 +91,8 @@ class PageDisplayHandler {
 	}
 
 	/**
-	 * Return the part of the page container that after page cnotent
+	 * Return the part of the page container that after page content
+	 * @param Title $pageTitle
 	 * @return string
 	 */
 	public function buildPageContainerEnd( Title $pageTitle ) {

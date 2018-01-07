@@ -34,7 +34,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::canBeUsedOn
+	 * @inheritDoc
 	 */
 	public function canBeUsedOn( Title $title ) {
 		return parent::canBeUsedOn( $title ) &&
@@ -42,7 +42,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::serializeContent
+	 * @inheritDoc
 	 */
 	public function serializeContent( Content $content, $format = null ) {
 		$this->checkFormat( $format );
@@ -94,7 +94,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::unserializeContent
+	 * @inheritDoc
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		if ( $format === null ) {
@@ -220,7 +220,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::getActionOverrides
+	 * @inheritDoc
 	 */
 	public function getActionOverrides() {
 		return [
@@ -231,14 +231,14 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::getDiffEngineClass
+	 * @inheritDoc
 	 */
 	protected function getDiffEngineClass() {
 		return PageDifferenceEngine::class;
 	}
 
 	/**
-	 * @see ContentHandler::makeEmptyContent
+	 * @inheritDoc
 	 */
 	public function makeEmptyContent() {
 		return new PageContent(
@@ -250,7 +250,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::merge3
+	 * @inheritDoc
 	 */
 	public function merge3( Content $oldContent, Content $myContent, Content $yourContent ) {
 		$this->checkModelID( $oldContent->getModel() );
@@ -288,7 +288,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::getAutosummary
+	 * @inheritDoc
 	 */
 	public function getAutosummary(
 		Content $oldContent = null, Content $newContent = null, $flags = 0
@@ -307,7 +307,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::makeRedirectContent
+	 * @inheritDoc
 	 * @todo is it the right content for redirects?
 	 */
 	public function makeRedirectContent( Title $destination, $text = '' ) {
@@ -320,14 +320,14 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @see ContentHandler::supportsRedirects
+	 * @inheritDoc
 	 */
 	public function supportsRedirects() {
 		return true;
 	}
 
 	/**
-	 * @see ContentHandler::isParserCacheSupported
+	 * @inheritDoc
 	 */
 	public function isParserCacheSupported() {
 		return true;

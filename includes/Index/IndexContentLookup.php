@@ -13,6 +13,7 @@ interface IndexContentLookup {
 
 	/**
 	 * Returns content of the page
+	 * @param Title $indexTitle
 	 * @return IndexContent
 	 */
 	public function getIndexContentForTitle( Title $indexTitle );

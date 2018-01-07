@@ -16,7 +16,7 @@ class IndexContentLookupMock implements IndexContentLookup {
 	}
 
 	/**
-	 * @see IndexContentLookup::getIndexContentForTitle
+	 * @inheritDoc
 	 */
 	public function getIndexContentForTitle( Title $indexTitle ) {
 		if ( !array_key_exists( $indexTitle->getDBkey(), $this->contentForIndex ) ) {

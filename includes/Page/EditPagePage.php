@@ -38,14 +38,14 @@ class EditPagePage extends EditPage {
 	}
 
 	/**
-	 * @see EditPage::isSectionEditSupported
+	 * @inheritDoc
 	 */
 	protected function isSectionEditSupported() {
 		return false; // sections and forms don't mix
 	}
 
 	/**
-	 * @see EditPage::isSupportedContentModel
+	 * @inheritDoc
 	 */
 	public function isSupportedContentModel( $modelId ) {
 		return $modelId === CONTENT_MODEL_PROOFREAD_PAGE;
@@ -54,7 +54,7 @@ class EditPagePage extends EditPage {
 	/**
 	 * Load the content before edit
 	 *
-	 * @see EditPage::showContentForm
+	 * @inheritDoc
 	 */
 	protected function getContentObject( $defContent = null ) {
 		if ( !$this->mTitle->exists() ) {
@@ -64,7 +64,7 @@ class EditPagePage extends EditPage {
 	}
 
 	/**
-	 * @see EditPage::showContentForm
+	 * @inheritDoc
 	 */
 	protected function showContentForm() {
 		$out = $this->context->getOutput();
@@ -137,7 +137,7 @@ class EditPagePage extends EditPage {
 	/**
 	 * Sets the checkboxes for the proofreading status of the page.
 	 *
-	 * @see EditPage::getCheckboxesWidget
+	 * @inheritDoc
 	 */
 	public function getCheckboxesWidget( &$tabindex, $checked ) {
 		$checkboxes = parent::getCheckboxesWidget( $tabindex, $checked );
@@ -192,7 +192,7 @@ class EditPagePage extends EditPage {
 	}
 
 	/**
-	 * @see EditPage::importContentFormData
+	 * @inheritDoc
 	 */
 	protected function importContentFormData( &$request ) {
 		/** @var PageContent $currentContent */

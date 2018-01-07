@@ -38,7 +38,7 @@ class FixProofreadPagePagesContentModel extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 * @see LoggedUpdateMaintenance::doDBUpdates
+	 * @inheritDoc
 	 */
 	public function doDBUpdates() {
 		$db = wfGetDB( DB_MASTER );
@@ -65,7 +65,7 @@ class FixProofreadPagePagesContentModel extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 * @see LoggedUpdateMaintenance::getUpdateKey
+	 * @inheritDoc
 	 */
 	public function getUpdateKey() {
 		return 'FixPagePagesContentModel';

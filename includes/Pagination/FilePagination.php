@@ -59,7 +59,7 @@ class FilePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::getPageNumber
+	 * @inheritDoc
 	 */
 	public function getPageNumber( Title $pageTitle ) {
 		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
@@ -78,7 +78,7 @@ class FilePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::getDisplayedPageNumber
+	 * @inheritDoc
 	 */
 	public function getDisplayedPageNumber( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
@@ -90,14 +90,14 @@ class FilePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::getNumberOfPages
+	 * @inheritDoc
 	 */
 	public function getNumberOfPages() {
 		return $this->numberOfPages;
 	}
 
 	/**
-	 * @see ProofreadPagination::getPageTitle
+	 * @inheritDoc
 	 */
 	public function getPageTitle( $pageNumber ) {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
@@ -144,7 +144,7 @@ class FilePagination extends Pagination {
 	}
 
 	/**
-	 * @see ProofreadPagination::pageNumExists
+	 * @inheritDoc
 	 */
 	protected function pageNumberExists( $pageNumber ) {
 		return 1 <= $pageNumber && $pageNumber <= $this->numberOfPages;

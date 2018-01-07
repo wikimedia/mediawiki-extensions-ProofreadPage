@@ -15,7 +15,7 @@ class DatabaseIndexContentLookup implements IndexContentLookup {
 	private $cache = [];
 
 	/**
-	 * @see IndexContentLookup::getIndexContentForTitle
+	 * @inheritDoc
 	 */
 	public function getIndexContentForTitle( Title $indexTitle ) {
 		$cacheKey = $indexTitle->getDBkey();

@@ -38,21 +38,21 @@ class IndexRedirectContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::isValid
+	 * @inheritDoc
 	 */
 	public function isValid() {
 		return true;
 	}
 
 	/**
-	 * @see Content::getSize
+	 * @inheritDoc
 	 */
 	public function getSize() {
 		return strlen( $this->redirectionTarget->getFullText() );
 	}
 
 	/**
-	 * @see Content::equals
+	 * @inheritDoc
 	 */
 	public function equals( Content $that = null ) {
 		return $that instanceof IndexRedirectContent &&
@@ -60,14 +60,14 @@ class IndexRedirectContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getTextForSummary
+	 * @inheritDoc
 	 */
 	public function getTextForSummary( $maxlength = 250 ) {
 		return '';
 	}
 
 	/**
-	 * @see Content::getRedirectTarget
+	 * @inheritDoc
 	 * @return Title
 	 */
 	public function getRedirectTarget() {
@@ -75,14 +75,14 @@ class IndexRedirectContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::updateRedirect
+	 * @inheritDoc
 	 */
 	public function updateRedirect( Title $target ) {
 		return new self( $target );
 	}
 
 	/**
-	 * @see AbstractContent::fillParserOutput
+	 * @inheritDoc
 	 */
 	protected function fillParserOutput( Title $title, $revId,
 		ParserOptions $options, $generateHtml, ParserOutput &$output

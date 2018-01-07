@@ -27,7 +27,7 @@ class FileProviderMock extends FileProvider {
 	}
 
 	/**
-	 * @see FileProvider::getFileFromTitle
+	 * @inheritDoc
 	 */
 	public function getFileFromTitle( Title $title ) {
 		$key = $title->getDBkey();

@@ -49,7 +49,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content:isEmpty
+	 * @inheritDoc
 	 */
 	public function isEmpty() {
 		foreach ( $this->fields as $value ) {
@@ -62,7 +62,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::equals
+	 * @inheritDoc
 	 */
 	public function equals( Content $that = null ) {
 		if ( !( $that instanceof IndexContent ) || $that->getModel() !== $this->getModel() ) {
@@ -89,28 +89,28 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getWikitextForTransclusion
+	 * @inheritDoc
 	 */
 	public function getWikitextForTransclusion() {
 		return $this->serialize( CONTENT_FORMAT_WIKITEXT );
 	}
 
 	/**
-	 * @see Content::getNativeData
+	 * @inheritDoc
 	 */
 	public function getNativeData() {
 		return $this->serialize();
 	}
 
 	/**
-	 * @see Content::getTextForSummary
+	 * @inheritDoc
 	 */
 	public function getTextForSummary( $maxlength = 250 ) {
 		return '';
 	}
 
 	/**
-	 * @see Content::preSaveTransform
+	 * @inheritDoc
 	 */
 	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
 		$fields = [];
@@ -123,7 +123,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::preloadTransform
+	 * @inheritDoc
 	 */
 	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
 		$fields = [];
@@ -136,7 +136,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::prepareSave
+	 * @inheritDoc
 	 */
 	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
 		if ( !$this->isValid() ) {
@@ -160,7 +160,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::getSize
+	 * @inheritDoc
 	 */
 	public function getSize() {
 		$size = 0;
@@ -173,7 +173,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::isCountable
+	 * @inheritDoc
 	 */
 	public function isCountable( $hasLinks = null, Title $title = null ) {
 		foreach ( $this->fields as $value ) {
@@ -186,7 +186,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see Content::matchMagicWord
+	 * @inheritDoc
 	 */
 	public function matchMagicWord( MagicWord $word ) {
 		foreach ( $this->fields as $value ) {
@@ -199,7 +199,7 @@ class IndexContent extends TextContent {
 	}
 
 	/**
-	 * @see AbstractContent::fillParserOutput
+	 * @inheritDoc
 	 */
 	protected function fillParserOutput( Title $title, $revId,
 		ParserOptions $options, $generateHtml, ParserOutput &$output

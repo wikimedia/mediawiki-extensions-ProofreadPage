@@ -15,7 +15,7 @@ use ProofreadPage\Pagination\PageNumber;
 class PagelistTagParser extends TagParser {
 
 	/**
-	 * @see TagParser::render
+	 * @inheritDoc
 	 */
 	public function render( $input, array $args ) {
 		$title = $this->parser->getTitle();

@@ -24,6 +24,7 @@ abstract class TagParser {
 
 	/**
 	 * @param Parser $parser the current parser
+	 * @param Context $context
 	 */
 	public function __construct( Parser $parser, Context $context ) {
 		$this->parser = $parser;

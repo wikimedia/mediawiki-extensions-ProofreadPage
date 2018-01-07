@@ -61,28 +61,28 @@ abstract class Pagination implements Iterator {
 	abstract protected function pageNumberExists( $pageNumber );
 
 	/**
-	 * @see Iterator::rewind
+	 * @inheritDoc
 	 */
 	public function rewind() {
 		$this->position = 1; // pages numbers starts with 1
 	}
 
 	/**
-	 * @see Iterator::key
+	 * @inheritDoc
 	 */
 	public function key() {
 		return $this->position;
 	}
 
 	/**
-	 * @see Iterator::next
+	 * @inheritDoc
 	 */
 	public function next() {
 		$this->position++;
 	}
 
 	/**
-	 * @see Iterator::current
+	 * @inheritDoc
 	 *
 	 * @return Title
 	 */
@@ -91,7 +91,7 @@ abstract class Pagination implements Iterator {
 	}
 
 	/**
-	 * @see Iterator::valid
+	 * @inheritDoc
 	 */
 	public function valid() {
 		return $this->pageNumberExists( $this->position );

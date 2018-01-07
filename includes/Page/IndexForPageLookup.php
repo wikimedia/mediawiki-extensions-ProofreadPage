@@ -13,6 +13,7 @@ interface IndexForPageLookup {
 
 	/**
 	 * Return index of the page
+	 * @param Title $pageTitle
 	 * @return Title|null
 	 */
 	public function getIndexForPageTitle( Title $pageTitle );

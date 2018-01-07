@@ -618,6 +618,8 @@ class ProofreadPage {
 
 	/**
 	 * Adds canonical namespaces.
+	 * @param array &$list
+	 * @return true
 	 */
 	public static function addCanonicalNamespaces( &$list ) {
 		$list[self::getPageNamespaceId()] = 'Page';
@@ -661,6 +663,7 @@ class ProofreadPage {
 	 * Add the links to previous, next, index page and scan image to Page: pages.
 	 * @param SkinTemplate &$skin
 	 * @param array &$links Structured navigation links
+	 * @return true
 	 */
 	public static function onSkinTemplateNavigation( SkinTemplate &$skin, array &$links ) {
 		$title = $skin->getTitle();
@@ -751,6 +754,7 @@ class ProofreadPage {
 	 * Add proofreading status to action=info
 	 * @param IContextSource $context
 	 * @param array &$pageInfo The page information
+	 * @return true
 	 */
 	public static function onInfoAction( IContextSource $context, array &$pageInfo ) {
 		if ( !$context->canUseWikiPage() ) {
