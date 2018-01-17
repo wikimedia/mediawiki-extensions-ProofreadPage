@@ -128,7 +128,7 @@ ve.ui.MWPagequalityInspector.prototype.updateMwData = function ( mwData ) {
  * @return {int|null}
  */
 ve.ui.MWPagequalityInspector.prototype.getSelectedQualityLevel = function () {
-	var selectedQualityOption = this.qualitySelector.getSelectedItem();
+	var selectedQualityOption = this.qualitySelector.findSelectedItem();
 	if ( selectedQualityOption === null ) {
 		return null;
 	}
