@@ -4,6 +4,8 @@ namespace ProofreadPage\Index;
 
 use Content;
 use ContentHandler;
+use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Revision\SlotRenderingProvider;
 use ProofreadPageTestCase;
 use RequestContext;
 use SlotDiffRenderer;
@@ -324,4 +326,26 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 			$this->handler->getSlotDiffRenderer( RequestContext::getMain() )
 		);
 	}
+
+	public function testGetSecondaryDataUpdates() {
+		$title = $this->createMock( Title::class );
+		$content = new IndexContent( [] );
+		$srp = $this->createMock( SlotRenderingProvider::class );
+		$handler = new IndexContentHandler();
+
+		$updates = $handler->getSecondaryDataUpdates( $title, $content, SlotRecord::MAIN, $srp );
+		$this->assertInstanceOf( UpdateIndexQualityStats::class, $updates[0] );
+
+		$updates = $handler->getSecondaryDataUpdates( $title, new WikitextContent( '' ), SlotRecord::MAIN, $srp );
+		$this->assertInstanceOf( DeleteIndexQualityStats::class, $updates[0] );
+	}
+
+	public function testGetDeletionUpdates() {
+		$title = $this->createMock( Title::class );
+		$handler = new IndexContentHandler();
+
+		$updates = $handler->getDeletionUpdates( $title, SlotRecord::MAIN );
+		$this->assertInstanceOf( DeleteIndexQualityStats::class, $updates[0] );
+	}
+
 }

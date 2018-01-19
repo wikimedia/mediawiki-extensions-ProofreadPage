@@ -6,6 +6,7 @@ use Content;
 use ContentHandler;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
 use Parser;
 use ParserOptions;
@@ -269,5 +270,53 @@ class IndexContentHandler extends TextContentHandler {
 	 */
 	public function isParserCacheSupported() {
 		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getSecondaryDataUpdates(
+		Title $title,
+		Content $content,
+		$role,
+		SlotRenderingProvider $slotOutput
+	) {
+		$updates = parent::getSecondaryDataUpdates( $title, $content, $role, $slotOutput );
+		$updates[] = ( $content instanceof IndexContent )
+			? $this->buildIndexQualityStatsUpdate( $title, $content )
+			: $this->buildIndexQualityStatsDelete( $title );
+		return $updates;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getDeletionUpdates( Title $title, $role ) {
+		$updates = parent::getDeletionUpdates( $title, $role );
+		$updates[] = $this->buildIndexQualityStatsDelete( $title );
+		return $updates;
+	}
+
+	/**
+	 * @param Title $title
+	 * @param IndexContent $content
+	 * @return UpdateIndexQualityStats
+	 */
+	private function buildIndexQualityStatsUpdate( Title $title, IndexContent $content ) : UpdateIndexQualityStats {
+		$context = Context::getDefaultContext();
+		return new UpdateIndexQualityStats(
+			MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			$context->getPageQualityLevelLookup(),
+			$context->getPaginationFactory()->buildPaginationForIndexContent( $title, $content ),
+			$title
+		);
+	}
+
+	/**
+	 * @param Title $title
+	 * @return DeleteIndexQualityStats
+	 */
+	private function buildIndexQualityStatsDelete( Title $title ) : DeleteIndexQualityStats {
+		return new DeleteIndexQualityStats( MediaWikiServices::getInstance()->getDBLoadBalancer(), $title );
 	}
 }

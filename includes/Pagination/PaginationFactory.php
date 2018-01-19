@@ -4,6 +4,7 @@ namespace ProofreadPage\Pagination;
 
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\Index\IndexContent;
 use Title;
 
 /**
@@ -36,7 +37,8 @@ class PaginationFactory {
 		$key = $indexTitle->getDBkey();
 
 		if ( !array_key_exists( $key, $this->paginations ) ) {
-			$this->paginations[$key] = $this->buildPaginationForIndexTitle( $indexTitle );
+			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+			$this->paginations[$key] = $this->buildPaginationForIndexContent( $indexTitle, $indexContent );
 		}
 
 		return $this->paginations[$key];
@@ -44,9 +46,10 @@ class PaginationFactory {
 
 	/**
 	 * @param Title $indexTitle
+	 * @param IndexContent $indexContent
 	 * @return Pagination
 	 */
-	private function buildPaginationForIndexTitle( Title $indexTitle ) {
+	public function buildPaginationForIndexContent( Title $indexTitle, IndexContent $indexContent ) {
 		try {
 			$file = $this->context->getFileProvider()->getFileForIndexTitle( $indexTitle );
 		} catch ( FileNotFoundException $e ) {
@@ -54,7 +57,6 @@ class PaginationFactory {
 		}
 
 		// check if it is using pagelist
-		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 		$pagelist = $indexContent->getPagelistTagContent();
 		if ( $pagelist !== null && $file ) {
 			if ( $file->isMultipage() ) {

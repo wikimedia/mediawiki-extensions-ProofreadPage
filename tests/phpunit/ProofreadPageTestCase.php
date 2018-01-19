@@ -1,11 +1,14 @@
 <?php
 
+use PHPUnit\Framework\MockObject\MockObject;
 use ProofreadPage\Context;
 use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Index\IndexContentLookupMock;
+use ProofreadPage\Index\IndexQualityStatsLookup;
+use ProofreadPage\Index\PagesQualityStats;
 use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPage\Page\PageQualityLevelLookupMock;
 use ProofreadPage\ProofreadPageInit;
@@ -106,10 +109,11 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @param Title[] $indexForPage
 	 * @param IndexContent[] $indexContent
 	 * @param int[] $levelForPage
+	 * @param array $qualityStatsForIndex
 	 * @return Context
 	 */
 	protected function getContext(
-		array $indexForPage = [], array $indexContent = [], array $levelForPage = []
+		array $indexForPage = [], array $indexContent = [], array $levelForPage = [], array $qualityStatsForIndex = []
 	) {
 		return new Context(
 			ProofreadPageInit::getNamespaceId( 'page' ),
@@ -118,8 +122,26 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration ),
 			new IndexForPageLookupMock( $indexForPage ),
 			new IndexContentLookupMock( $indexContent ),
-			new PageQualityLevelLookupMock( $levelForPage )
+			new PageQualityLevelLookupMock( $levelForPage ),
+			$this->getMockStatsLookup( $qualityStatsForIndex )
 		);
+	}
+
+	/**
+	 * @param PagesQualityStats[] $qualityStatsForIndex
+	 * @return IndexQualityStatsLookup|MockObject
+	 */
+	private function getMockStatsLookup( array $qualityStatsForIndex ) {
+		$mock = $this->createMock( IndexQualityStatsLookup::class );
+		$mock->method( 'getStatsForIndexTitle' )->willReturnCallback(
+			static function ( Title $indexTitle ) use ( $qualityStatsForIndex ) {
+				if ( !array_key_exists( $indexTitle->getPrefixedDBkey(), $qualityStatsForIndex ) ) {
+					return new PagesQualityStats( 0, [] );
+				}
+				return $qualityStatsForIndex[$indexTitle->getPrefixedDBkey()];
+			}
+		);
+		return $mock;
 	}
 
 	/**

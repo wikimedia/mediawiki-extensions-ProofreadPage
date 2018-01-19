@@ -28,24 +28,21 @@ use FixProofreadPagePagesContentModel;
 use IContextSource;
 use ImagePage;
 use MediaWiki\MediaWikiServices;
-use MovePageForm;
 use OutOfBoundsException;
 use OutputPage;
 use Parser;
 use ParserOutput;
 use ProofreadPage\Index\IndexTemplateStyles;
-use ProofreadPage\Index\ProofreadIndexDbConnector;
 use ProofreadPage\Page\PageContentBuilder;
-use ProofreadPage\Page\ProofreadPageDbConnector;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\Parser\PagelistTagParser;
 use ProofreadPage\Parser\PagequalityTagParser;
 use ProofreadPage\Parser\PagesTagParser;
+use ProofreadPage\Parser\TranslusionPagesModifier;
 use RequestContext;
 use SkinTemplate;
 use Title;
 use User;
-use WikiPage;
 
 /*
  @todo :
@@ -146,28 +143,18 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Append javascript variables and code to the page.
+	 * Loads JS modules
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
 	 *
 	 * @param OutputPage $out
-	 * @suppress PhanUndeclaredProperty $out->proofreadPageDone
 	 */
 	public static function onBeforePageDisplay( OutputPage $out ) {
-		$action = $out->getRequest()->getVal( 'action' );
-		$isEdit = ( $action === 'submit' || $action === 'edit' );
 		$title = $out->getTitle();
 
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$out->addModuleStyles( 'ext.proofreadpage.base' );
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			$out->addModuleStyles( 'ext.proofreadpage.page.navigation' );
-		} elseif (
-			$title->inNamespace( NS_MAIN ) &&
-			( $out->isArticle() || $isEdit ) &&
-			!isset( $out->proofreadPageDone )
-		) {
-			$out->proofreadPageDone = true;
-			self::prepareArticle( $out );
 		}
 	}
 
@@ -179,8 +166,9 @@ class ProofreadPage {
 	 * @param Title $title Title of the page being parsed, on which the links will be shown
 	 */
 	public static function onGetLinkColours( array $pageIds, array &$colours, Title $title ) {
-		$inIndexNamespace = $title->inNamespace( self::getIndexNamespaceId() );
-		$pageQualityLevelLookup = Context::getDefaultContext()->getPageQualityLevelLookup();
+		$context = Context::getDefaultContext();
+		$inIndexNamespace = $title->inNamespace( $context->getIndexNamespaceId() );
+		$pageQualityLevelLookup = $context->getPageQualityLevelLookup();
 
 		$pageTitles = array_map( static function ( $prefixedDbKey ) {
 			return Title::newFromText( $prefixedDbKey );
@@ -189,7 +177,7 @@ class ProofreadPage {
 
 		/** @var Title|null $pageTitle */
 		foreach ( $pageTitles as $pageTitle ) {
-			if ( $pageTitle !== null && $pageTitle->inNamespace( self::getPageNamespaceId() ) ) {
+			if ( $pageTitle !== null && $pageTitle->inNamespace( $context->getPageNamespaceId() ) ) {
 				$pageLevel = $pageQualityLevelLookup->getQualityLevelForPageTitle( $pageTitle );
 				if ( $pageLevel !== null ) {
 					$classes = "prp-pagequality-{$pageLevel}";
@@ -226,335 +214,25 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Set is_toc flag (true if page is a table of contents)
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/OutputPageParserOutput
 	 *
 	 * @param OutputPage $outputPage
 	 * @param ParserOutput $parserOutput
-	 * @suppress PhanUndeclaredProperty
 	 */
 	public static function onOutputPageParserOutput(
 		OutputPage $outputPage, ParserOutput $parserOutput
 	) {
-		if ( $parserOutput->getExtensionData( 'proofreadpage_is_toc' ) ) {
-			$outputPage->is_toc = true;
-		}
-	}
-
-	/**
-	 * Updates index data for an index referencing the specified page.
-	 * @param Title $title page title object
-	 * @param bool $deleted indicates whether the page was deleted
-	 */
-	private static function updateIndexOfPage( Title $title, $deleted = false ) {
-		$indexTitle = Context::getDefaultContext()
-			->getIndexForPageLookup()->getIndexForPageTitle( $title );
-		if ( $indexTitle !== null ) {
-			$indexTitle->invalidateCache();
-			$index = WikiPage::factory( $indexTitle );
-			self::updatePrIndex( $index, $deleted ? $title : null );
-		}
-	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageSaveComplete
-	 *
-	 * @note other parameters are available but aren't used
-	 *
-	 * @param WikiPage $article
-	 */
-	public static function onPageSaveComplete( WikiPage $article ) {
-		$title = $article->getTitle();
-
-		// if it's an index, update pr_index table
-		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			// Move this part to EditProofreadIndexPage
-			self::updatePrIndex( $article );
-			return;
-		}
-
-		// return if it is not a page
-		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
-			return;
-		}
-
-		/* check if there is an index */
-		$indexTitle = Context::getDefaultContext()
-			->getIndexForPageLookup()->getIndexForPageTitle( $title );
-		if ( $indexTitle === null ) {
-			return;
-		}
-
-		/**
-		 * invalidate the cache of the index page
-		 */
-		$indexTitle->invalidateCache();
-
-		/**
-		 * update pr_index iteratively
-		 */
-		$indexId = $indexTitle->getArticleID();
-		$indexData = ProofreadIndexDbConnector::getIndexDataFromIndexPageId( $indexId );
-		if ( $indexData ) {
-			ProofreadIndexDbConnector::replaceIndexById( $indexData, $indexId, $article );
-		}
-	}
-
-	/**
-	 * if I delete a page, I need to update the index table
-	 * if I delete an index page too...
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDelete
-	 *
-	 * @param WikiPage $article
-	 */
-	public static function onArticleDelete( WikiPage $article ) {
-		$title = $article->getTitle();
-
-		// Process Index removal.
-		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			ProofreadIndexDbConnector::removeIndexData( $article->getId() );
-
-		// Process Page removal.
-		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			self::updateIndexOfPage( $title, true );
-		}
-	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticleUndelete
-	 *
-	 * @param Title $title Title corresponding to the article restored
-	 * @param bool $create If true, the restored page didn't exist before
-	 * @param string $comment Comment explaining the undeletion
-	 * @param int $oldPageId ID of page previously deleted from archive table
-	 */
-	public static function onArticleUndelete( Title $title, $create, $comment, $oldPageId ) {
-		// Process Index restoration.
-		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			self::updatePrIndex( WikiPage::factory( $title ) );
-		// Process Page restoration.
-		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			self::updateIndexOfPage( $title );
-		}
-	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SpecialMovepageAfterMove
-	 *
-	 * @param MovePageForm $form
-	 * @param Title $ot
-	 * @param Title $nt
-	 */
-	public static function onSpecialMovepageAfterMove(
-		MovePageForm $form, Title $ot, Title $nt
-	) {
-		if ( $ot->inNamespace( self::getPageNamespaceId() ) ) {
-			self::updateIndexOfPage( $ot );
-		} elseif ( $ot->inNamespace( self::getIndexNamespaceId() )
-			&& !$nt->inNamespace( self::getIndexNamespaceId() )
-		) {
-			// The page is moved out of the Index namespace.
-			// Remove all index data associated with that page.
-
-			// $nt is used here on purpose, as we need to get the page id.
-			// There is no page under the old title or it is a redirect.
-			$wikipage = WikiPage::factory( $nt );
-			if ( $wikipage ) {
-				ProofreadIndexDbConnector::removeIndexData( $wikipage->getId() );
-			}
-		}
-
-		if ( $nt->inNamespace( self::getPageNamespaceId() ) ) {
-			$oldIndexTitle = Context::getDefaultContext()
-				->getIndexForPageLookup()->getIndexForPageTitle( $ot );
-			$newIndexTitle = Context::getDefaultContext()
-				->getIndexForPageLookup()->getIndexForPageTitle( $nt );
-			if ( $newIndexTitle !== null
-				&& ( $oldIndexTitle === null ||
-				( $newIndexTitle->equals( $oldIndexTitle ) ) )
-			) {
-				self::updateIndexOfPage( $nt );
-			}
-		} elseif ( $nt->inNamespace( self::getIndexNamespaceId() ) ) {
-			// Update index data.
-			self::updatePrIndex( WikiPage::factory( $nt ) );
-		}
-	}
-
-	/**
-	 * When an index page is created or purged, recompute pr_index values
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticlePurge
-	 *
-	 * @param WikiPage $article
-	 */
-	public static function onArticlePurge( WikiPage $article ) {
-		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) {
-			self::updatePrIndex( $article );
-		}
-	}
-
-	/**
-	 * Update the pr_index entry of an article
-	 * @param WikiPage $wikiPage
-	 * @param Title|null $deletedPage
-	 */
-	private static function updatePrIndex( WikiPage $wikiPage, $deletedPage = null ) {
-		$indexTitle = $wikiPage->getTitle();
-		$indexId = $wikiPage->getId();
-
-		// read the list of pages
-		$pages = [];
-		$pagination =
-		Context::getDefaultContext()->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
-		foreach ( $pagination as $page ) {
-			if ( $deletedPage === null || !$page->equals( $deletedPage ) ) {
-				$pages[] = $page->getDBkey();
-			}
-		}
-
-		if ( !count( $pages ) ) {
-			return;
-		}
-
-		$total = ProofreadPageDbConnector::getNumberOfExistingPagesFromPageTitle( $pages );
-
-		if ( $total === null ) {
-			return;
-		}
-
-		// proofreading status of pages
-		$queryArr = [
-			'tables' => [ 'page', 'categorylinks' ],
-			'fields' => [ 'COUNT(page_id) AS count' ],
-			'conds' => [ 'cl_to' => '', 'page_namespace' => self::getPageNamespaceId(),
-				'page_title' => $pages ],
-			'joins' => [ 'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ] ]
-		];
-
-		$n0 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality0_category' );
-		$n2 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality2_category' );
-		$n3 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality3_category' );
-		$n4 = ProofreadPageDbConnector::queryCount( $queryArr, 'proofreadpage_quality4_category' );
-		$n1 = $total - $n0 - $n2 - $n3 - $n4;
-
-		ProofreadIndexDbConnector::setIndexData( $pagination->getNumberOfPages(),
-			$n0, $n1, $n2, $n3, $n4, $indexId );
-	}
-
-	/**
-	 * In main namespace, display the proofreading status of transcluded pages.
-	 *
-	 * @param OutputPage $out
-	 * @return bool
-	 */
-	private static function prepareArticle( OutputPage $out ) {
-		$id = $out->getTitle()->getArticleID();
-		if ( $id == -1 ) {
-			return true;
-		}
-		$pageNamespaceId = self::getPageNamespaceId();
-		$indexNamespaceId = self::getIndexNamespaceId();
-		if ( $pageNamespaceId == null || $indexNamespaceId == null ) {
-			return true;
-		}
-
-		// find the index page
-		$indextitle = ProofreadPageDbConnector::getIndexTitleForPageId( $id );
-
-		// @phan-suppress-next-line PhanUndeclaredProperty
-		if ( $out->is_toc ?? false ) {
-			$n = 0;
-			$n0 = 0;
-			$n1 = 0;
-			$n2 = 0;
-			$n3 = 0;
-			$n4 = 0;
-			$ne = 0;
-
-			if ( $indextitle ) {
-				$row = ProofreadIndexDbConnector::getIndexDataFromIndexTitle( $indextitle );
-				if ( $row ) {
-					$n0 = $row->pr_q0;
-					$n1 = $row->pr_q1;
-					$n2 = $row->pr_q2;
-					$n3 = $row->pr_q3;
-					$n4 = $row->pr_q4;
-					$n = $row->pr_count;
-					$ne = $n - ( $n0 + $n1 + $n2 + $n3 + $n4 );
-				}
-			}
-		} else {
-			// count transclusions from page namespace
-			$n = ProofreadPageDbConnector::countTransclusionFromPageId( $id );
-			if ( $n === null ) {
-				return true;
-			}
-
-			// find the proofreading status of transclusions
-			$queryArr = [
-				'tables' => [ 'templatelinks', 'page', 'categorylinks' ],
-				'fields' => [ 'COUNT(page_id) AS count' ],
-				'conds' => [ 'tl_from' => $id, 'tl_namespace' => $pageNamespaceId, 'cl_to' => '' ],
-				'joins' => [
-					'page' => [ 'LEFT JOIN',
-						'page_title=tl_title AND page_namespace=tl_namespace'
-					],
-					'categorylinks' => [ 'LEFT JOIN', 'cl_from=page_id' ],
-				]
-			];
-
-			$n0 = ProofreadPageDbConnector::queryCount(
-				$queryArr, 'proofreadpage_quality0_category'
+		if ( $outputPage->getTitle()->inNamespace( NS_MAIN ) ) {
+			$context = Context::getDefaultContext();
+			$modifier = new TranslusionPagesModifier(
+				$context->getPageQualityLevelLookup(),
+				$context->getIndexQualityStatsLookup(),
+				$context->getIndexForPageLookup(),
+				MediaWikiServices::getInstance()->getLinkRenderer(),
+				$context->getPageNamespaceId()
 			);
-			$n2 = ProofreadPageDbConnector::queryCount(
-				$queryArr, 'proofreadpage_quality2_category'
-			);
-			$n3 = ProofreadPageDbConnector::queryCount(
-				$queryArr, 'proofreadpage_quality3_category'
-			);
-			$n4 = ProofreadPageDbConnector::queryCount(
-				$queryArr, 'proofreadpage_quality4_category'
-			);
-			// quality1 is the default value
-			$n1 = $n - $n0 - $n2 - $n3 - $n4;
-			$ne = 0;
+			$modifier->modifyPage( $parserOutput, $outputPage );
 		}
-
-		if ( $n == 0 ) {
-			return true;
-		}
-
-		if ( $indextitle ) {
-			$nt = Title::makeTitleSafe( $indexNamespaceId, $indextitle );
-			if ( $nt !== null ) {
-				$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-				$indexlink = $linkRenderer->makeLink( $nt, $out->msg( 'proofreadpage_source' )->text(),
-					[ 'title' => $out->msg( 'proofreadpage_source_message' )->text() ] );
-				$out->addJsConfigVars( 'proofreadpage_source_href', $indexlink );
-				$out->addModules( 'ext.proofreadpage.article' );
-			}
-		}
-
-		$q0 = $n0 * 100 / $n;
-		$q1 = $n1 * 100 / $n;
-		$q2 = $n2 * 100 / $n;
-		$q3 = $n3 * 100 / $n;
-		$q4 = $n4 * 100 / $n;
-		$qe = $ne * 100 / $n;
-		$void_cell = $ne ? '<td class="qualitye" style="width:' . $qe . '%;"></td>' : '';
-		$textualAlternative = wfMessage( 'proofreadpage-indexquality-alt', $n4, $n3, $n1 )->escaped();
-		$output = '<table class="pr_quality noprint" title="' . $textualAlternative . '">
-<tr>
-<td class="quality4" style="width:' . $q4 . '%;"></td>
-<td class="quality3" style="width:' . $q3 . '%;"></td>
-<td class="quality2" style="width:' . $q2 . '%;"></td>
-<td class="quality1" style="width:' . $q1 . '%;"></td>
-<td class="quality0" style="width:' . $q0 . '%;"></td>
-' . $void_cell . '
-</tr>
-</table>';
-		$out->setSubtitle( $out->getSubtitle() . $output );
-		return true;
 	}
 
 	/**
