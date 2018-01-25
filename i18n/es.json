@@ -38,7 +38,7 @@
 	"proofreadpage_dataconfig_badformattedtext": "El formato de JSON de la página [[Mediawiki:Proofreadpage index data config]] no es válido.",
 	"proofreadpage_number_expected": "Error: se esperaba un valor numérico",
 	"proofreadpage_interval_too_large": "Error: intervalo demasiado grande",
-	"proofreadpage_invalid_interval": "Error: intervalo inválido",
+	"proofreadpage_invalid_interval": "Error: intervalo no válido",
 	"proofreadpage_nextpage": "Página siguiente",
 	"proofreadpage_prevpage": "Página anterior",
 	"proofreadpage_header": "Cabecera (noinclude):",
