@@ -3,9 +3,9 @@
 	"type": "mediawiki-extension",
 	"description": "The ProofreadPage extension adds book proofreading capacity to MediaWiki. It can render a book either as a column of OCR text beside a column of scanned images, or broken into its logical organization (such as chapters or poems) using transclusion.",
 	"homepage": "https://www.mediawiki.org/wiki/Extension:ProofreadPage",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"require": {
-		"composer/installers": "*"
+		"composer/installers": "~1.0"
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2",
