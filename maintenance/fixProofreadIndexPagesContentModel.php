@@ -36,6 +36,8 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 
 		$this->mDescription = 'Set the content model type for Index: pages';
 		$this->setBatchSize( 1000 );
+
+		$this->requireExtension( 'ProofreadPage' );
 	}
 
 	/**
