@@ -18,7 +18,7 @@
 	"proofreadpage_nosuch_index": "Error: nun esiste esi índiz",
 	"proofreadpage_nosuch_file": "Error: nun esiste esi ficheru",
 	"proofreadpage_indexdupetext": "Nun se puen llistar les páxines más d'una vez nuna páxina d'índiz.",
-	"proofreadpage_nologin": "Nun anició sesión",
+	"proofreadpage_nologin": "Nun aniciasti sesión",
 	"proofreadpage_nologintext": "Tien d'[[Special:UserLogin|aniciar sesión]] pa camudar l'estáu de correición de les páxines.",
 	"proofreadpage_notallowedtext": "Nun ta autorizáu a camudar l'estáu de revisión d'esta páxina.",
 	"proofreadpage_dataconfig_badformatted": "Error na configuración de los datos",
