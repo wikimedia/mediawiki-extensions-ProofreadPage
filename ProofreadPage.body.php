@@ -721,6 +721,7 @@ class ProofreadPage {
 					$links['namespaces']['proofreadPagePrevLink'] = [
 						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $prevTitle ),
+						'rel' => 'prev',
 						'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
 					];
 				}
@@ -732,6 +733,7 @@ class ProofreadPage {
 					$links['namespaces']['proofreadPageNextLink'] = [
 						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $nextTitle ),
+						'rel' => 'next',
 						'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
 					];
 				}
