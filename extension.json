@@ -77,7 +77,6 @@
 			]
 		},
 		"ext.proofreadpage.base": {
-			"position": "top",
 			"styles": "ext.proofreadpage.base.css",
 			"targets": [
 				"mobile",
@@ -85,7 +84,6 @@
 			]
 		},
 		"ext.proofreadpage.page": {
-			"position": "top",
 			"styles": "page/ext.proofreadpage.page.css"
 		},
 		"ext.proofreadpage.page.edit": {
