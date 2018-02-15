@@ -254,6 +254,10 @@
 
 		// Users can call $('#wpTextbox1').textSelection( 'getContents' ) to get the full wikitext
 		// of the page, instead of just the body section.
+		//
+		// FIXME This is missing overrides for setContents, getSelection, getCaretPosition, setSelection
+		// and so the textSelection API is really inconsistent. getContents behaves as if this textbox
+		// contained the entire page wikitext (with header and footer), but the other methods don't. :(
 		$edit.textSelection(
 			'register',
 			{
@@ -268,6 +272,145 @@
 					'<noinclude>' +
 						$( '#wpFooterTextbox' ).val() +
 					'</noinclude>';
+				},
+
+				// FIXME This is brutally copypasted from MediaWiki core jquery.textSelection,
+				// with all calls to `.textSelection( 'getContents' )` replaced with `.val()`
+				// and all calls to `.textSelection( 'setContents', ... )` replaced with `.val( ... )`.
+				// Ideally, we would not have these and instead implement matching overrides
+				// also for setContents, getSelection, getCaretPosition, setSelection; but I think
+				// no one really cares to have them.
+				replaceSelection: function ( value ) {
+					return this.each( function () {
+						var allText, currSelection, startPos, endPos;
+
+						allText = $( this ).val();
+						currSelection = $( this ).textSelection( 'getCaretPosition', { startAndEnd: true } );
+						startPos = currSelection[ 0 ];
+						endPos = currSelection[ 1 ];
+
+						$( this ).val( allText.slice( 0, startPos ) + value +
+							allText.slice( endPos ) );
+						$( this ).textSelection( 'setSelection', {
+							start: startPos,
+							end: startPos + value.length
+						} );
+					} );
+				},
+				encapsulateSelection: function ( options ) {
+					return this.each( function () {
+						var selText, allText, currSelection, insertText,
+							combiningCharSelectionBug = false,
+							isSample, startPos, endPos,
+							pre = options.pre,
+							post = options.post;
+
+						/**
+						 * @ignore
+						 * Check if the selected text is the same as the insert text
+						 */
+						function checkSelectedText() {
+							if ( !selText ) {
+								selText = options.peri;
+								isSample = true;
+							} else if ( options.replace ) {
+								selText = options.peri;
+							} else {
+								while ( selText.charAt( selText.length - 1 ) === ' ' ) {
+									// Exclude ending space char
+									selText = selText.slice( 0, -1 );
+									post += ' ';
+								}
+								while ( selText.charAt( 0 ) === ' ' ) {
+									// Exclude prepending space char
+									selText = selText.slice( 1 );
+									pre = ' ' + pre;
+								}
+							}
+						}
+
+						/**
+						 * @ignore
+						 * Do the splitlines stuff.
+						 *
+						 * Wrap each line of the selected text with pre and post
+						 *
+						 * @param {string} selText Selected text
+						 * @param {string} pre Text before
+						 * @param {string} post Text after
+						 * @return {string} Wrapped text
+						 */
+						function doSplitLines( selText, pre, post ) {
+							var i,
+								insertText = '',
+								selTextArr = selText.split( '\n' );
+							for ( i = 0; i < selTextArr.length; i++ ) {
+								insertText += pre + selTextArr[ i ] + post;
+								if ( i !== selTextArr.length - 1 ) {
+									insertText += '\n';
+								}
+							}
+							return insertText;
+						}
+
+						isSample = false;
+						$( this ).focus();
+						if ( options.selectionStart !== undefined ) {
+							$( this ).textSelection( 'setSelection', { start: options.selectionStart, end: options.selectionEnd } );
+						}
+
+						selText = $( this ).textSelection( 'getSelection' );
+						allText = $( this ).val();
+						currSelection = $( this ).textSelection( 'getCaretPosition', { startAndEnd: true } );
+						startPos = currSelection[ 0 ];
+						endPos = currSelection[ 1 ];
+						checkSelectedText();
+						if (
+							options.selectionStart !== undefined &&
+							endPos - startPos !== options.selectionEnd - options.selectionStart
+						) {
+							// This means there is a difference in the selection range returned by browser and what we passed.
+							// This happens for Safari 5.1, Chrome 12 in the case of composite characters. Ref T32130
+							// Set the startPos to the correct position.
+							startPos = options.selectionStart;
+							combiningCharSelectionBug = true;
+							// TODO: The comment above is from 2011. Is this still a problem for browsers we support today?
+							// Minimal test case: https://jsfiddle.net/z4q7a2ko/
+						}
+
+						insertText = pre + selText + post;
+						if ( options.splitlines ) {
+							insertText = doSplitLines( selText, pre, post );
+						}
+						if ( options.ownline ) {
+							if ( startPos !== 0 && allText.charAt( startPos - 1 ) !== '\n' && allText.charAt( startPos - 1 ) !== '\r' ) {
+								insertText = '\n' + insertText;
+								pre += '\n';
+							}
+							if ( allText.charAt( endPos ) !== '\n' && allText.charAt( endPos ) !== '\r' ) {
+								insertText += '\n';
+								post += '\n';
+							}
+						}
+						if ( combiningCharSelectionBug ) {
+							$( this ).val( allText.slice( 0, startPos ) + insertText +
+								allText.slice( endPos ) );
+						} else {
+							$( this ).textSelection( 'replaceSelection', insertText );
+						}
+						if ( isSample && options.selectPeri && ( !options.splitlines || ( options.splitlines && selText.indexOf( '\n' ) === -1 ) ) ) {
+							$( this ).textSelection( 'setSelection', {
+								start: startPos + pre.length,
+								end: startPos + pre.length + selText.length
+							} );
+						} else {
+							$( this ).textSelection( 'setSelection', {
+								start: startPos + insertText.length
+							} );
+						}
+						$( this ).trigger( 'encapsulateSelection', [ options.pre, options.peri, options.post, options.ownline,
+							options.replace, options.splitlines ] );
+					} );
 				}
 			}
 		);
