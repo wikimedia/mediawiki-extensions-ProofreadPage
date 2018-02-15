@@ -56,6 +56,8 @@ ve.ui.MWPagequalityInspector.prototype.buildQualitySelector = function () {
 		items: this.qualityOptions,
 		classes: [ 'center' ]
 	} );
+
+	this.qualitySelector.on( 'choose', this.onChangeHandler );
 };
 
 /**
