@@ -15,6 +15,7 @@
 			"Wwycheuk"
 		]
 	},
+	"nstab-page": "頁面",
 	"indexpages": "索引頁清單",
 	"pageswithoutscans": "沒有掃瞄的頁面",
 	"proofreadpage_desc": "允許簡易地去比較原掃瞄和文字",
@@ -82,5 +83,6 @@
 	"proofreadpage-indexoai-error-schemanotfound": "無法找尋架構",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 架構無法發現。",
 	"proofreadpage-disambiguationspage": "Template:消歧義",
-	"content-model-proofread-page": "圖書頁面"
+	"content-model-proofread-page": "圖書頁面",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "頁面"
 }

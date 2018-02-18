@@ -5,6 +5,10 @@
 			"علی ساکی لرستانی"
 		]
 	},
+	"nstab-page": "بلگٱ",
+	"nstab-index": "سیائٱ",
+	"tooltip-ca-nstab-page": "دیاٛن بلگٱ کتۉ",
+	"tooltip-ca-nstab-index": "دیاٛن سیائٱ کتۉ",
 	"indexpages": "سيائه بلگيا اصلی",
 	"pageswithoutscans": "بلگيا بی وارسی",
 	"proofreadpage_desc": "اجازه بيه سی کنار یک نیائن نیسسه وا وارسی اصلی",
@@ -72,11 +76,15 @@
 	"proofreadpage-indexoai-error-schemanotfound": "طرح ون پيدا نبی",
 	"proofreadpage-indexoai-error-schemanotfound-text": "طرح ون $1 اصلا پيدا نبی .",
 	"proofreadpage-disambiguationspage": "چوئه:disambig",
-	"content-model-proofread-page": "بلگه:بلگه",
+	"content-model-proofread-page": "بلگٱ کتۉ",
+	"content-model-proofread-index": "سیائٱ کتۉ",
 	"apihelp-query+proofread-description": "دونسمنیا نه د حال و بار وانئری بلگه یا نشو میه.",
 	"apihelp-query+proofread-example-1": "حال و بار وانئری بلگه یا نه د نوم جا ۲۵۰ نشو میه.",
 	"apihelp-query+proofreadinfo-description": "دونسمنیا نه د اندوم دیار کنی وانئری بلگه یا نشو میه.",
 	"apihelp-query+proofreadinfo-param-prop": "کو یکی د خصوصیات نه میهایت وانئری بکیت:\n;namespaces: دونسمنیا د نوم جا بلگه و نشونجا.\n;qualitylevels: یه گل نوم گه د ریتراز کیفی وانئریا.",
 	"apihelp-query+proofreadinfo-example-1": "ؤرئشت دئن دونسمنیا پیش فرض",
-	"apihelp-query+proofreadinfo-example-3": "ؤرئشت دئن دونسمنیا نومجا"
+	"apihelp-query+proofreadinfo-example-3": "ؤرئشت دئن دونسمنیا نومجا",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "بلگٱیا",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ٱ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نٱ"
 }
