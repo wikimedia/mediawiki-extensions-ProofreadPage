@@ -3,9 +3,12 @@
 		"authors": [
 			"Bjarki S",
 			"S.Örvarr.S",
-			"Snævar"
+			"Snævar",
+			"Sveinn í Felli"
 		]
 	},
+	"nstab-page": "Síða",
+	"nstab-index": "Yfirlit",
 	"indexpages": "Listi yfir frumritasíður",
 	"pageswithoutscans": "Síður án skönnunar",
 	"proofreadpage_desc": "Leyfa einfaldan samanburð á texta við upphaflega skönnun",
@@ -70,5 +73,9 @@
 	"proofreadpage-indexoai-repositoryName": "Lýsigögn bóka frá {{SITENAME}}",
 	"proofreadpage-indexoai-eprint-content-text": "Lýsigögn bóka sem stjórnað er með ProofreadPage.",
 	"proofreadpage-indexoai-error-schemanotfound": "Fann enga gerðarlýsingu.",
-	"proofreadpage-indexoai-error-schemanotfound-text": "$1-gerðarlýsingin fannst ekki."
+	"proofreadpage-indexoai-error-schemanotfound-text": "$1-gerðarlýsingin fannst ekki.",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Síðuval",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Síður",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Já",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nei"
 }
