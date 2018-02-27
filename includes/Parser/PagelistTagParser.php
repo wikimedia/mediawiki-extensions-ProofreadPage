@@ -2,6 +2,8 @@
 
 namespace ProofreadPage\Parser;
 
+use Parser;
+use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;
@@ -12,10 +14,29 @@ use ProofreadPage\Pagination\PageNumber;
  *
  * Parser for the <pagelist> tag
  */
-class PagelistTagParser extends TagParser {
+class PagelistTagParser {
 
 	/**
-	 * @inheritDoc
+	 * @var Parser
+	 */
+	private $parser;
+
+	/**
+	 * @var Context
+	 */
+	private $context;
+
+	public function __construct( Parser $parser, Context $context ) {
+		$this->parser = $parser;
+		$this->context = $context;
+	}
+
+	/**
+	 * Render a <pagelist> tag
+	 *
+	 * @param string $input the content between opening and closing tags
+	 * @param array $args tags arguments
+	 * @return string
 	 */
 	public function render( $input, array $args ) {
 		$title = $this->parser->getTitle();
@@ -59,7 +80,7 @@ class PagelistTagParser extends TagParser {
 			}
 
 			$paddingSize = strlen( $count ) - mb_strlen( $view );
-			if ( $paddingSize > 0 && $mode == PageNumber::DISPLAY_NORMAL &&
+			if ( $paddingSize > 0 && $mode === PageNumber::DISPLAY_NORMAL &&
 				$pageNumber->isNumeric()
 			) {
 				$txt = '<span style="visibility:hidden;">';
@@ -91,5 +112,14 @@ class PagelistTagParser extends TagParser {
 		);
 
 		return trim( $this->parser->recursiveTagParse( $return ) );
+	}
+
+	/**
+	 * @param string $errorMsg
+	 * @return string
+	 */
+	private function formatError( $errorMsg ) {
+		return '<strong class="error">' . wfMessage( $errorMsg )->inContentLanguage()->escaped() .
+			'</strong>';
 	}
 }

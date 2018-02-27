@@ -3,6 +3,7 @@
 namespace ProofreadPage\Parser;
 
 use OutOfBoundsException;
+use Parser;
 use ProofreadPage\Context;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPageDbConnector;
@@ -13,10 +14,29 @@ use Title;
  *
  * Parser for the <pages> tag
  */
-class PagesTagParser extends TagParser {
+class PagesTagParser {
 
 	/**
-	 * @inheritDoc
+	 * @var Parser
+	 */
+	private $parser;
+
+	/**
+	 * @var Context
+	 */
+	private $context;
+
+	public function __construct( Parser $parser, Context $context ) {
+		$this->parser = $parser;
+		$this->context = $context;
+	}
+
+	/**
+	 * Render a <pages> tag
+	 *
+	 * @param string $input the content between opening and closing tags
+	 * @param array $args tags arguments
+	 * @return string
 	 */
 	public function render( $input, array $args ) {
 		// abort if this is nested <pages> call
@@ -352,5 +372,14 @@ class PagesTagParser extends TagParser {
 			}
 		}
 		return $nums;
+	}
+
+	/**
+	 * @param string $errorMsg
+	 * @return string
+	 */
+	private function formatError( $errorMsg ) {
+		return '<strong class="error">' . wfMessage( $errorMsg )->inContentLanguage()->escaped() .
+			'</strong>';
 	}
 }
