@@ -15,7 +15,8 @@
 			"Ryo567",
 			"Macofe",
 			"Indiralena",
-			"Dgstranz"
+			"Dgstranz",
+			"Themasterriot"
 		]
 	},
 	"nstab-page": "Página",
@@ -73,6 +74,7 @@
 	"proofreadpage_source": "Fuente",
 	"proofreadpage_source_message": "Edición escaneada usada para establecer este texto",
 	"right-pagequality": "Modificar la marca de calidad de la página",
+	"right-pagequality-admin": "Ediciones sin restricción a la etiqueta de calidad de la página",
 	"proofreadpage-section-tools": "Herramientas de corrección",
 	"proofreadpage-group-zoom": "Ampliación",
 	"proofreadpage-group-other": "Otro",
