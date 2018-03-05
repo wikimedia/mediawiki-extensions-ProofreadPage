@@ -9,9 +9,18 @@
 			"Épine"
 		]
 	},
+	"nstab-page": "پەڕە",
+	"nstab-index": "پێڕست",
+	"tooltip-ca-nstab-page": "پەڕەی پەرتووک تەماشا بکە",
+	"tooltip-ca-nstab-index": "پێڕستی پەرتووک تەماشا بکە",
+	"indexpages": "پێڕستی پەڕە پێڕستەکان",
+	"proofreadpage_desc": "ڕێگە بە بەراوردکردنی ئاسانی دەق بدە بە سکانی ڕەسەن",
 	"proofreadpage_image": "وێنە",
 	"proofreadpage_index": "پێڕست",
+	"proofreadpage_nosuch_file": "ھەڵە: پەڕگەیەکی وا نییە",
+	"proofreadpage_indexdupetext": "ناتوانرێت زیاتر لە یەک جار پەڕەکان دابنرێن لە پەڕەی پێڕستدا.",
 	"proofreadpage_nologin": "لەژوورەوە نیت",
+	"proofreadpage_nologintext": "دەبێت [[Special:UserLogin|چووبیتە ژوورەوە]] تاکوو دەستکاری حاڵەتی پرووفڕیدی پەڕەکان بکەیت.",
 	"proofreadpage_nextpage": "پەڕەی دواتر",
 	"proofreadpage_prevpage": "پەڕەی پێشوو",
 	"proofreadpage_quality0_category": "بەبێ دەق",
