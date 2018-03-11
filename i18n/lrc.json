@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mogoeilor",
-			"علی ساکی لرستانی"
+			"علی ساکی لرستانی",
+			"Beyronvan"
 		]
 	},
 	"nstab-page": "بلگٱ",
@@ -15,8 +16,8 @@
 	"proofreadpage_image": "ٱسگ",
 	"proofreadpage_index": "سیائٱ",
 	"proofreadpage_index_expected": "خٱتا:",
-	"proofreadpage_nosuch_index": "خطا:چنو سیائه ای نی يش",
-	"proofreadpage_nosuch_file": "خطا:چنو جانیایی نی يش",
+	"proofreadpage_nosuch_index": "خٱتا:چاٛنی سیائٱیی ڤوجۊد نارٱ",
+	"proofreadpage_nosuch_file": "خٱتا:چاٛنی جانیایی ڤوجۊد نارٱ",
 	"proofreadpage_indexdupetext": "بلگيا نتونن بيشتر د يكی د بلگه اصلی نومجا بوئن",
 	"proofreadpage_nologin": "نبوئه بیاییت وامین",
 	"proofreadpage_nologintext": "شوما باید [[ویجه:وامین اومائن کاریار|وامین اومائه]]بويئت سی آلشت كردن شلك غلط گئری ای بلگه .",
@@ -57,7 +58,7 @@
 	"proofreadpage_specialpage_legend": "نیسسه بلگيا سيائه نه بگرد",
 	"proofreadpage_specialpage_searcherror": "خطا د موتور پی جوری",
 	"proofreadpage_specialpage_searcherrortext": "موتور پی جوری كار نمی كه. متاسفیم سی ناراحت بی ينتو",
-	"proofreadpage_source": "سرچشمه",
+	"proofreadpage_source": "سرچشمٱ",
 	"proofreadpage_source_message": "ويرايشت وارسی بيه سی نیائن ای نیسسه وه کار گرته بوئه",
 	"right-pagequality": "خوئی بيرق بلگه نه آلشت بكيد",
 	"proofreadpage-section-tools": "اوزاريا غلط گئری",
