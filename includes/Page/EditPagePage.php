@@ -163,19 +163,15 @@ class EditPagePage extends EditPage {
 			}
 
 			$msg = 'proofreadpage_quality' . $level . '_category';
-			$cls = 'quality' . $level;
 
-			$attributes = [
-				'tabindex' => ++$tabindex,
-				'title' => $this->context->msg( $msg )->plain()
-			];
-			if ( $level == $currentLevel->getLevel() ) {
-				$attributes[] = 'checked';
-			}
-
-			$html .= Html::openElement( 'span', [ 'class' => $cls ] ) .
-				Html::input( 'wpQuality', $level, 'radio', $attributes ) .
-				Html::closeElement( 'span' );
+			$html .= new OOUI\RadioInputWidget( [
+				'name' => 'wpQuality',
+				'classes' => [ 'prp-quality-radio quality' . $level ],
+				'value' => $level,
+				'tabIndex' => ++$tabindex,
+				'title' => $this->context->msg( $msg )->plain(),
+				'selected' => $level === $currentLevel->getLevel(),
+			] );
 		}
 
 		$content =
@@ -187,7 +183,10 @@ class EditPagePage extends EditPage {
 				->title( $this->getTitle() )->parse() .
 			Html::closeElement( 'label' );
 		return new OOUI\Widget(
-			[ 'content' => new OOUI\HtmlSnippet( $content ) ]
+			[
+				'classes' => [ 'prp-quality-widget' ],
+				'content' => new OOUI\HtmlSnippet( $content )
+			]
 		);
 	}
 
