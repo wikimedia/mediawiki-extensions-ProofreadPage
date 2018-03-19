@@ -16,5 +16,7 @@
 	"proofreadpage_quality1_message": "Ev rûpel nehate lêkolînkirin",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|rûpel}}",
 	"proofreadpage-group-other": "Yê din",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Rûpel"
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Rûpel",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Erê",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Na"
 }
