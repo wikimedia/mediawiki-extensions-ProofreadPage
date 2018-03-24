@@ -41,13 +41,3 @@
 .ve-init-mw-proofreadPagePageTarget .ve-ce-sectionNode:not( :last-child ) {
 	padding-bottom: 1em;
 }
-
-/* TODO: Move these upstream and provide RTL */
-
-.oo-ui-icon-zoomOut {
-	background-image: url( images/zoomOut.svg );
-}
-
-.oo-ui-icon-zoomIn {
-	background-image: url( images/zoomIn.svg );
-}

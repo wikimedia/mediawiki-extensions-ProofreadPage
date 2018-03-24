@@ -96,6 +96,7 @@
 				"mediawiki.user",
 				"user.options",
 				"jquery.textSelection",
+				"ext.proofreadpage.icons",
 				"ext.proofreadpage.ve.pageTarget.init"
 			],
 			"messages": [
@@ -144,6 +145,35 @@
 				"ext.proofreadpage.base"
 			]
 		},
+		"ext.proofreadpage.icons": {
+			"class": "ResourceLoaderImageModule",
+			"selectorWithoutVariant": ".oo-ui-icon-{name}",
+			"selectorWithVariant": ".oo-ui-image-{variant}.oo-ui-icon-{name}",
+			"variants": {
+				"progressive": {
+					"color": "#36c"
+				}
+			},
+			"images": {
+				"zoomIn": {
+					"file": "page/images/zoomIn.svg"
+				},
+				"zoomOut": {
+					"file": "page/images/zoomOut.svg"
+				},
+				"zoomReset": {
+					"file": "page/images/zoomReset.svg"
+				},
+				"headerFooter": {
+					"file": "page/images/headerFooter.svg",
+					"variants": [ "progressive" ]
+				},
+				"switchLayout": {
+					"file": "page/images/switchLayout.svg",
+					"variants": [ "progressive" ]
+				}
+			}
+		},
 		"ext.proofreadpage.ve.node.pages": {
 			"scripts": [
 				"ve/node/ve.dm.MWPagesNode.js",
@@ -190,7 +220,8 @@
 				"ext.visualEditor.mwcore",
 				"ext.visualEditor.desktopArticleTarget",
 				"oojs-ui.styles.icons-moderation",
-				"jquery.prpZoom"
+				"jquery.prpZoom",
+				"ext.proofreadpage.icons"
 			],
 			"messages": [
 				"proofreadpage-button-zoom-out-label",

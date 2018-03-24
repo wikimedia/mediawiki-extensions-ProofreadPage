@@ -16,6 +16,8 @@
 		 */
 		$zoomImage,
 
+		headersVisible = true,
+
 		/**
 		 * The edit form
 		 * @type {jQuery}
@@ -56,26 +58,40 @@
 	/**
 	 * Show or hide header and footer areas
 	 *
-	 * @param {string} speed string speed of the toggle. May be 'fast', 'slow' or undefined
+	 * @param {boolean} [visible] Visibility, inverts if undefined
+	 * @param {string} [speed] Speed of the toggle. May be 'fast', 'slow' or undefined
 	 */
-	function toggleHeaders( speed ) {
-		$editForm.find( '.prp-page-edit-header' ).toggle( speed );
-		$editForm.find( '.prp-page-edit-body label' ).toggle( speed );
-		$editForm.find( '.prp-page-edit-footer' ).toggle( speed );
+	function toggleHeaders( visible, speed ) {
+		var method;
+		headersVisible = visible === undefined ? !headersVisible : visible;
+
+		method = headersVisible ? 'show' : 'hide';
+		$editForm.find( '.prp-page-edit-header' )[ method ]( speed );
+		$editForm.find( '.prp-page-edit-body label' )[ method ]( speed );
+		$editForm.find( '.prp-page-edit-footer' )[ method ]( speed );
+
+		if ( $( '.tool[rel=toggle-visibility]' ).data( 'setActive' ) ) {
+			$( '.tool[rel=toggle-visibility]' ).data( 'setActive' )( headersVisible );
+		}
 	}
 
 	/**
 	 * Put the scan image on top or on the left of the edit area
+	 *
+	 * @param {boolean} [horizontal] Use horizontal layout, inverts if undefined
 	 */
-	function toggleLayout() {
+	function toggleLayout( horizontal ) {
 		var $container, newHeight;
+
+		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
+
 		if ( $zoomImage.data( 'prpZoom' ) ) {
 			$zoomImage.prpZoom( 'destroy' );
 		}
 
 		$container = $zoomImage.parent();
 
-		if ( isLayoutHorizontal ) {
+		if ( !isLayoutHorizontal ) {
 			$container.appendTo( $editForm.find( '.prp-page-container' ) );
 
 			// Switch CSS widths and heights back to the default side-by-size layout.
@@ -88,9 +104,6 @@
 			} );
 			$( '#wpTextbox1' ).css( { height: '' } );
 			ensureImageZoomInitialization();
-
-			isLayoutHorizontal = false;
-
 		} else {
 			$container.insertBefore( $editForm );
 
@@ -111,8 +124,9 @@
 			newHeight = $( window ).height() / 3 + 'px';
 			$container.css( { height: newHeight } );
 			$( '#wpTextbox1' ).css( { height: newHeight } );
-
-			isLayoutHorizontal = true;
+		}
+		if ( $( '.tool[rel=toggle-layout]' ).data( 'setActive' ) ) {
+			$( '.tool[rel=toggle-layout]' ).data( 'setActive' )( isLayoutHorizontal );
 		}
 	}
 
@@ -120,12 +134,8 @@
 	 * Apply user preferences
 	 */
 	function setupPreferences() {
-		if ( !getBooleanUserOption( 'proofreadpage-showheaders' ) ) {
-			toggleHeaders();
-		}
-		if ( getBooleanUserOption( 'proofreadpage-horizontal-layout' ) ) {
-			toggleLayout();
-		}
+		toggleHeaders( getBooleanUserOption( 'proofreadpage-showheaders' ) );
+		toggleLayout( getBooleanUserOption( 'proofreadpage-horizontal-layout' ) );
 	}
 
 	/**
@@ -152,7 +162,7 @@
 						'zoom-in': {
 							labelMsg: 'proofreadpage-button-zoom-in-label',
 							type: 'button',
-							icon: iconPath + 'wikieditor-zoom-in.png',
+							oouiIcon: 'zoomIn',
 							oldIcon: iconPath + 'Button_zoom_in.png',
 							action: {
 								type: 'callback',
@@ -166,7 +176,7 @@
 						'zoom-out': {
 							labelMsg: 'proofreadpage-button-zoom-out-label',
 							type: 'button',
-							icon: iconPath + 'wikieditor-zoom-out.png',
+							oouiIcon: 'zoomOut',
 							oldIcon: iconPath + 'Button_zoom_out.png',
 							action: {
 								type: 'callback',
@@ -180,7 +190,7 @@
 						'reset-zoom': {
 							labelMsg: 'proofreadpage-button-reset-zoom-label',
 							type: 'button',
-							icon: iconPath + 'wikieditor-zoom-reset.png',
+							oouiIcon: 'zoomReset',
 							oldIcon: iconPath + 'Button_examine.png',
 							action: {
 								type: 'callback',
@@ -199,23 +209,23 @@
 						'toggle-visibility': {
 							labelMsg: 'proofreadpage-button-toggle-visibility-label',
 							type: 'button',
-							icon: iconPath + 'wikieditor-visibility.png',
+							oouiIcon: 'headerFooter',
 							oldIcon: iconPath + 'Button_category_plus.png',
 							action: {
 								type: 'callback',
 								execute: function () {
-									toggleHeaders( 'fast' );
+									toggleHeaders( undefined, 'fast' );
 								}
 							}
 						},
 						'toggle-layout': {
 							labelMsg: 'proofreadpage-button-toggle-layout-label',
 							type: 'button',
-							icon: iconPath + 'wikieditor-layout.png',
+							oouiIcon: 'switchLayout',
 							oldIcon: iconPath + 'Button_multicol.png',
 							action: {
 								type: 'callback',
-								execute: toggleLayout
+								execute: toggleLayout.bind( this, undefined )
 							}
 						}
 					}
@@ -238,6 +248,8 @@
 					}
 				}
 			} );
+
+			setupPreferences();
 
 		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
 			// 'mediawiki.toolbar' was loaded before calling this function
