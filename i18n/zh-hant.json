@@ -84,5 +84,7 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 架構無法發現。",
 	"proofreadpage-disambiguationspage": "Template:消歧義",
 	"content-model-proofread-page": "圖書頁面",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "頁面"
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "頁面",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "是",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "否"
 }
