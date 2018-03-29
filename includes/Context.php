@@ -11,7 +11,7 @@ use ProofreadPage\Pagination\PaginationFactory;
 use RepoGroup;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Extension context
  *

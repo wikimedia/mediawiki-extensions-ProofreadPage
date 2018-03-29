@@ -3,7 +3,7 @@
 namespace ProofreadPage\Index;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * An index entry.
  */

@@ -6,7 +6,7 @@ use IP;
 use User;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Proofreading level of a Page: page
  */

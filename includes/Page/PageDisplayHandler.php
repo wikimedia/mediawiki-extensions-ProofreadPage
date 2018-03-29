@@ -11,7 +11,7 @@ use Sanitizer;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Utility class to do operations related to Page: page display
  */

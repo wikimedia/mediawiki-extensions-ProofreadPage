@@ -5,7 +5,7 @@ namespace ProofreadPage;
 use MWException;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Class that contain init system of the ProofreadPage extension
  */

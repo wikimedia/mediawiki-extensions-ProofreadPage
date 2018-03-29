@@ -6,7 +6,7 @@ use RepoGroup;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Allows to retrieve the Index: page for a Page: page
  */

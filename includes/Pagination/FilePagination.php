@@ -9,7 +9,7 @@ use ProofreadPage\PageNumberNotFoundException;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Pagination of a book based on a multipage file
  */

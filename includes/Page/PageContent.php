@@ -15,7 +15,7 @@ use WikiPage;
 use WikitextContent;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Content of a Page: page
  */

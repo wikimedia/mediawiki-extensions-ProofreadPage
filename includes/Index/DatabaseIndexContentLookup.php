@@ -6,7 +6,7 @@ use Revision;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Allows to retrieve the content of the Index: page
  */

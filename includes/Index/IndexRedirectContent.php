@@ -11,7 +11,7 @@ use TextContent;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * A redirection in an Index: page
  */

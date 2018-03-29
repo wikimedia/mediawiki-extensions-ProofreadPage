@@ -14,7 +14,7 @@ use WikitextContent;
 use WikitextContentHandler;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Content handler for a Index: pages
  */

@@ -10,7 +10,7 @@ use ProofreadPage\Pagination\PageList;
 use ProofreadPage\Pagination\PageNumber;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Parser for the <pagelist> tag
  */

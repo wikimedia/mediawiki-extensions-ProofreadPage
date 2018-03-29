@@ -12,7 +12,7 @@ use Title;
 use WikitextContent;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Utility class to build a Page: page content
  */

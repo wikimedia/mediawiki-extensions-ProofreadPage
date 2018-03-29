@@ -6,7 +6,7 @@ use ProofreadPage\Context;
 use SubmitAction;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * SubmitAction for a Page: page
  */

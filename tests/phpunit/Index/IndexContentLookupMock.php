@@ -5,7 +5,7 @@ namespace ProofreadPage\Index;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  */
 class IndexContentLookupMock implements IndexContentLookup {
 

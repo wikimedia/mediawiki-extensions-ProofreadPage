@@ -6,7 +6,7 @@ use OutOfBoundsException;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Pagination of a book based on a set of independants pages
  */

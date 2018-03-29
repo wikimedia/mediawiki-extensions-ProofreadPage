@@ -6,7 +6,7 @@ use File;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Provide a FileProvider mock based on a list of files
  */

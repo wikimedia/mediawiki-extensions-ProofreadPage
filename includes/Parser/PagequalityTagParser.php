@@ -5,7 +5,7 @@ namespace ProofreadPage\Parser;
 use Html;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Parser for the <pagequality> tag
  */

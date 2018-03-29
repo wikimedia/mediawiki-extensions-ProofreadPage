@@ -5,7 +5,7 @@ namespace ProofreadPage\Page;
 use Title;
 
 /**
- * @licence GNU GPL v2+
+ * @license GNU GPL v2+
  *
  * Provide a FileProviderMock mock based on a mapping
  */
