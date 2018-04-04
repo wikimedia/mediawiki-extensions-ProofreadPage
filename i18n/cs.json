@@ -7,6 +7,10 @@
 			"Dvorapa"
 		]
 	},
+	"nstab-page": "Stránka",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "Zobrazit stránku knihy",
+	"tooltip-ca-nstab-index": "Zobrazit index knihy",
 	"indexpages": "Seznam indexových stránek",
 	"pageswithoutscans": "Stránky bez skenů",
 	"proofreadpage_desc": "Umožňuje jednoduché porovnání textu s předlohou",
@@ -75,5 +79,6 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "Schéma $1 nenalezeno.",
 	"proofreadpage-disambiguationspage": "Template:rozcestník",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|ověřená stránka|ověřené stránky|ověřených stránek}}, $2 jen {{PLURAL:$2|zkontrolovaná stránka|zkontrolované stránky|zkontrolovaných stránek}} a $3 {{PLURAL:$3|nezkontrolovaná stránka|nezkontrolované stránky|nezkontrolovaných stránek}}",
-	"content-model-proofread-page": "Stránka knihy"
+	"content-model-proofread-page": "Stránka knihy",
+	"content-model-proofread-index": "Index knihy"
 }
