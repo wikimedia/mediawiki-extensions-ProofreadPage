@@ -19,11 +19,13 @@
  * @ingroup ProofreadPage
  */
 
+use Wikimedia\Rdbms\IResultWrapper;
+
 class ProofreadPageDbConnector {
 
 	/**
 	 * @param array $pageIds
-	 * @return ResultWrapper
+	 * @return IResultWrapper
 	 */
 	public static function getCategoryNamesForPageIds( $pageIds ) {
 		$dbr = wfGetDB( DB_REPLICA );
@@ -38,7 +40,7 @@ class ProofreadPageDbConnector {
 	/**
 	 * @param array $pp
 	 * @param array $cat
-	 * @return ResultWrapper
+	 * @return IResultWrapper
 	 */
 	public static function getPagesNameInCategory( $pp, $cat ) {
 		$dbr = wfGetDB( DB_REPLICA );
