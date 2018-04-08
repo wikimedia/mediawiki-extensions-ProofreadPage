@@ -63,7 +63,7 @@ class PagelistTagParser {
 		if ( !is_numeric( $from ) || !is_numeric( $to ) ) {
 			return $this->formatError( 'proofreadpage_number_expected' );
 		}
-		if ( ( $from > $to ) || ( $from < 1 ) || ( $to < 1 ) || ( $to > $count ) ) {
+		if ( !FilePagination::isValidInterval( $from, $to, $count ) ) {
 			return $this->formatError( 'proofreadpage_invalid_interval' );
 		}
 

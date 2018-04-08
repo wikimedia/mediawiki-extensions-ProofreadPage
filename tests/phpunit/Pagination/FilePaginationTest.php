@@ -185,4 +185,27 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$pagination->current()->getFullText()
 		);
 	}
+
+	/**
+	 * @dataProvider provideIntervals
+	 */
+	public function testIsValidInterval( $isValid, $from, $to, $count ) {
+		$this->assertEquals(
+			$isValid,
+			FilePagination::isValidInterval( $from, $to, $count )
+		);
+	}
+
+	public function provideIntervals() {
+		return [
+			[ true, 1, 3, 3 ],
+			[ true, 1, 3, 5 ],
+			[ false, 1, 3, 2 ],
+			[ true, 1, 1, 1 ],
+			[ false, 3, 1, 3 ],
+			[ false, 0, 4, 5 ],
+			[ false, 0, 0, 0 ],
+		];
+	}
+
 }
