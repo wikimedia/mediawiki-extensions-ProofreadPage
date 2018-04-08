@@ -131,6 +131,14 @@ $proofreadPageNamespacesNames['et'] = [
 	'index_talk' => 'Registri_arutelu'
 ];
 
+/** Basque (Euskara) */
+$proofreadPageNamespacesNames['eu'] = [
+	'page' => 'Orrialde',
+	'page_talk' => 'Orrialde_eztabaida',
+	'index' => 'Aurkibide',
+	'index_talk' => 'Aurkibide_eztabaida',
+];
+
 /** Persian (فارسی) */
 $proofreadPageNamespacesNames['fa'] = [
 	'page' => 'برگه',
