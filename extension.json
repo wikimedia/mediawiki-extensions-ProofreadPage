@@ -312,10 +312,6 @@
 			"ProofreadPage::onSkinMinervaDefaultModules"
 		]
 	},
-	"ParserTestFiles": [
-		"tests/parser/proofreadpage_pages_pagelist.txt",
-		"tests/parser/proofreadpage_pagequality.txt"
-	],
 	"VisualEditorPluginModules": [
 		"ext.proofreadpage.ve.node.pages"
 	],
