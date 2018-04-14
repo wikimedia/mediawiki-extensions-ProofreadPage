@@ -1,4 +1,8 @@
 /* Adjustments for WikiEditor extension */
+.wikiEditor-ui-view {
+	background-color: #e8f2f8;
+}
+
 .wikiEditor-ui-text textarea {
 	border: 0;
 	padding: 0;
