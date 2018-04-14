@@ -7,7 +7,7 @@ use RepoGroup;
 use Title;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * Provide related file for various kind of pages
  */

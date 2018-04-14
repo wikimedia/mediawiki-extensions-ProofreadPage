@@ -5,7 +5,7 @@ namespace ProofreadPage;
 use Title;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * A link to a MediaWiki page. It is composed by a target and a label
  */

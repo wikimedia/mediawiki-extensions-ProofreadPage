@@ -20,7 +20,7 @@ use WikiPage;
 use WikitextContent;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * Content of a Index: page
  */

@@ -5,7 +5,7 @@ namespace ProofreadPage\Index;
 use SubmitAction;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * SubmitAction for a Index: page
  */

@@ -14,7 +14,7 @@ use ProofreadPage\Context;
 use WikitextContent;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  */
 class EditIndexPage extends EditPage {
 

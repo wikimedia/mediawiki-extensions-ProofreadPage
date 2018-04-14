@@ -5,7 +5,7 @@ namespace ProofreadPage;
 use RuntimeException;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * An exception thrown if a page number is not found
  */

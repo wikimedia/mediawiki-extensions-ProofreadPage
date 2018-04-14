@@ -5,7 +5,7 @@ namespace ProofreadPage\Index;
 use EditAction;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * EditAction for a Index: page
  */

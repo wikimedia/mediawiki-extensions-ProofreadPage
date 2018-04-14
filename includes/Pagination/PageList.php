@@ -3,7 +3,7 @@
 namespace ProofreadPage\Pagination;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * Representation for a <pagelist> tag
  */

@@ -6,7 +6,7 @@ use FormatJson;
 use OutOfBoundsException;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * Returns the custom index entries from an IndexContent
  */

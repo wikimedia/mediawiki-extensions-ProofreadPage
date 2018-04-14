@@ -5,7 +5,7 @@ namespace ProofreadPage\Page;
 use Title;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  *
  * Allows to retrieve the Index: page for a Page: page
  */

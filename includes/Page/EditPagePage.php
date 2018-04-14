@@ -11,7 +11,7 @@ use ProofreadPage\Context;
 use User;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  */
 class EditPagePage extends EditPage {
 
