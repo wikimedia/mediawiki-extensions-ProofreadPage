@@ -249,8 +249,6 @@
 				}
 			} );
 
-			setupPreferences();
-
 		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
 			// 'mediawiki.toolbar' was loaded before calling this function
 			$.each( tools, function ( group, list ) {
