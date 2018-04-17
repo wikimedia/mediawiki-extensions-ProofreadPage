@@ -18,7 +18,7 @@
 	"proofreadpage_nosuch_index": "ข้อผิดพลาด: ไม่มีดัชนีเช่นนั้น",
 	"proofreadpage_nosuch_file": "ข้อผิดพลาด: ไม่มีแฟ้มเช่นนั้น",
 	"proofreadpage_indexdupetext": "หน้าต่าง ๆ ไม่สามารถแสดงรายการได้เกินหนึ่งครั้งในหน้าดัชนี",
-	"proofreadpage_nologin": "ยังไม่ลงชื่อเข้า",
+	"proofreadpage_nologin": "ยังไม่ได้เข้าสู่ระบบ",
 	"proofreadpage_nologintext": "คุณต้อง[[Special:UserLogin|ล็อกอิน]]เพื่อเปลี่ยนสถานะการพิสูจน์อักษรของหน้าต่าง ๆ",
 	"proofreadpage_notallowedtext": "คุณไม่สามารถเปลี่ยนสถานะการพิสูจน์อักษรของหน้านี้",
 	"proofreadpage_dataconfig_badformatted": "ข้อบกพร่องในการกำหนดค่าข้อมูล",
