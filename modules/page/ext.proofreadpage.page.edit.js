@@ -1,10 +1,7 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	var
-		toolbarDependencies,
-
-		/**
+	var /**
 		 * Is the layout horizontal (ie is the scan image on top of the edit area)
 		 * @type {boolean}
 		 */
@@ -438,23 +435,25 @@
 		}
 	}
 
+	function getLoadedEditorPromise() {
+		var deferred = $.Deferred();
+		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
+			mw.loader.using( 'ext.wikiEditor' ).done( function () {
+				$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', deferred.resolve.bind( deferred ) );
+			} );
+			return deferred.promise();
+		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
+			return mw.loader.using( 'mediawiki.toolbar' );
+		} else {
+			return deferred.resolve().promise();
+		}
+	}
+
 	$( function () {
 		initEnvironment();
 		setupPreferences();
 		setupPageQuality();
-	} );
-
-	toolbarDependencies = [];
-	if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
-		toolbarDependencies.push( 'ext.wikiEditor' );
-	} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
-		toolbarDependencies.push( 'mediawiki.toolbar' );
-	}
-
-	mw.loader.using( toolbarDependencies ).done( function () {
-		$( function () {
-			setupWikitextEditor();
-		} );
+		getLoadedEditorPromise().done( setupWikitextEditor );
 	} );
 
 	// zoom should be initialized after the page is rendered
