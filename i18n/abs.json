@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Anok kutai jang"
+		]
+	},
+	"proofreadpage_quality0_category": "Deng seng ada teks",
+	"proofreadpage_quality1_category": "Balong diuji deng dibaca",
+	"proofreadpage_quality2_category": "Barmasalah",
+	"proofreadpage_quality3_category": "Yang su dibaca deng diuji",
+	"proofreadpage_quality4_category": "Su divalidasi",
+	"proofreadpage_quality1_message": "Akang kintal balom diuji deng dibaca"
+}
