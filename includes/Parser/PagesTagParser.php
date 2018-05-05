@@ -8,7 +8,6 @@ use ProofreadPage\Context;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPageDbConnector;
 use Title;
-use MediaWiki\MediaWikiServices;
 
 /**
  * @license GPL-2.0-or-later
@@ -224,8 +223,7 @@ class PagesTagParser {
 				}
 			}
 
-			$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'proofreadpage' );
-			$separator = $config->get( 'ProofreadPagePageSeparator' );
+			$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
 
 			// write the output
 			foreach ( $pages as $item ) {

@@ -2,6 +2,9 @@
 
 namespace ProofreadPage;
 
+use Config;
+use ConfigException;
+use MediaWiki\MediaWikiServices;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\DatabaseIndexContentLookup;
 use ProofreadPage\Index\IndexContentLookup;
@@ -84,6 +87,14 @@ class Context {
 	 */
 	public function getIndexNamespaceId() {
 		return $this->indexNamespaceId;
+	}
+
+	/**
+	 * @return Config
+	 * @throws ConfigException
+	 */
+	public function getConfig() {
+		return MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'proofreadpage' );
 	}
 
 	/**
