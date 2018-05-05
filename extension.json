@@ -321,9 +321,14 @@
 	"VisualEditorAvailableContentModels": {
 		"proofread-page": "proofread-page"
 	},
+	"ConfigRegistry": {
+		"proofreadpage": "GlobalVarConfig::newInstance"
+	},
 	"config": {
 		"@ProofreadPageNamespaceIds": "Array that contain the ids of namespaces used by ProofreadPage",
-		"ProofreadPageNamespaceIds": []
+		"ProofreadPageNamespaceIds": [],
+		"@ProofreadPagePageSeparator": "The separator between transcluded pages",
+		"ProofreadPagePageSeparator": "&#32;"
 	},
 	"callback": "ProofreadPage::onRegister",
 	"load_composer_autoloader": true,
