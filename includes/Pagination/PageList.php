@@ -51,7 +51,19 @@ class PageList {
 		$offset = 0;
 		$displayedpageNumber = '';
 		$isEmpty = false;
+		$isRecto = true;
+
 		foreach ( $this->params as $num => $parameters ) {
+
+			if ( is_numeric( $num ) && $num <= $pageNumber ) {
+				$params = explode( ';', $parameters );
+				foreach ( $params as $param ) {
+					if ( is_numeric( $param ) ) {
+						$offset = $num - $param;
+					}
+				}
+			}
+
 			if ( $this->numberInRange( $num, $pageNumber ) ) {
 				$params = explode( ';', $parameters );
 				foreach ( $params as $param ) {
@@ -65,14 +77,16 @@ class PageList {
 						}
 					}
 				}
-			}
 
-			if ( is_numeric( $num ) && $num <= $pageNumber ) {
-				$params = explode( ';', $parameters );
-				foreach ( $params as $param ) {
-					if ( is_numeric( $param ) ) {
-						$offset = $num - $param;
-					}
+				if ( $param == PageNumber::DISPLAY_FOLIO
+					|| $param == PageNumber::DISPLAY_FOLIOHIGHROMAN
+					|| $param == PageNumber::DISPLAY_FOLIOROMAN ) {
+
+					$folioStart = $this->getRangeStart( $num );
+					$displayedpageNumber = $folioStart - $offset
+						+ (int)( ( $pageNumber - $folioStart ) / 2 );
+
+					$isRecto = ( $pageNumber - $folioStart ) % 2 === 0;
 				}
 			}
 		}
@@ -80,7 +94,7 @@ class PageList {
 		$displayedpageNumber = ( $displayedpageNumber === '' )
 			? $pageNumber - $offset
 			: $displayedpageNumber;
-		return new PageNumber( $displayedpageNumber, $mode, $isEmpty );
+		return new PageNumber( $displayedpageNumber, $mode, $isEmpty, $isRecto );
 	}
 
 	/**
@@ -95,5 +109,17 @@ class PageList {
 		return is_numeric( $range ) && $range == $number ||
 			preg_match( '/^([0-9]*)to([0-9]*)$/', $range, $m ) &&
 			$m[1] <= $number && $number <= $m[2];
+	}
+
+	private function getRangeStart( $range ) {
+		if ( is_numeric( $range ) ) {
+			return $range;
+		} elseif ( preg_match( '/^([0-9]*)to([0-9]*)$/', $range, $m ) ) {
+			return $m[1];
+		} else {
+			throw new RuntimeException(
+				$range . ' is not a valid range.'
+			);
+		}
 	}
 }

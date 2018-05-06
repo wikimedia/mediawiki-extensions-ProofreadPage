@@ -56,6 +56,41 @@ class PageListTest extends ProofreadPageTestCase {
 				new PageNumber( '1', PageNumber::DISPLAY_HIGHROMAN ),
 				[ '4' => '1;highroman' ],
 				4
+			],
+			[
+				new PageNumber( '7', PageNumber::DISPLAY_FOLIO, false, false ),
+				[ '7to10' => 'folio' ],
+				8
+			],
+			[
+				new PageNumber( '8', PageNumber::DISPLAY_FOLIO, false, true ),
+				[ '7to10' => 'folio' ],
+				9
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIOROMAN, false, true ),
+				[ '1to20' => 'folioroman' ],
+				5
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIOHIGHROMAN, false, false ),
+				[ '1to20' => 'foliohighroman' ],
+				6
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIO, false, true ),
+				[ '7' => '2', '7to10' => 'folio' ],
+				9
+			],
+			[
+				new PageNumber( '7', PageNumber::DISPLAY_FOLIO, false, true ),
+				[ '7' => 'folio' ],
+				7
+			],
+			[
+				new PageNumber( '21', PageNumber::DISPLAY_NORMAL ),
+				[ '1to20' => 'folio' ],
+				21
 			]
 		];
 	}
