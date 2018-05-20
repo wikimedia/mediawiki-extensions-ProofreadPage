@@ -19,6 +19,7 @@
  * @ingroup ProofreadPage
  */
 
+use MediaWiki\MediaWikiServices;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Page\PageContentBuilder;
@@ -238,8 +239,9 @@ class ProofreadPage {
 		}
 		$name = $image->getTitle()->getText();
 		$title = Title::makeTitle( self::getIndexNamespaceId(), $name );
-		$link = Linker::link(
-			$title, $out->msg( 'proofreadpage_image_message' )->text(), [], [], 'known'
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$link = $linkRenderer->makeKnownLink(
+			$title, $out->msg( 'proofreadpage_image_message' )->text()
 		);
 		$out->addHTML( $link );
 		return true;
