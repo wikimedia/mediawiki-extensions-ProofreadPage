@@ -45,9 +45,18 @@
 		}
 
 		mw.loader.using( 'jquery.prpZoom', function () {
-			$zoomImage.prpZoom();
-			if ( success ) {
-				success();
+			if ( $zoomImage.prop( 'complete' ) ) {
+				$zoomImage.prpZoom();
+				if ( success ) {
+					success();
+				}
+			} else {
+				$zoomImage.load( function () {
+					$zoomImage.prpZoom();
+					if ( success ) {
+						success();
+					}
+				} );
 			}
 		} );
 	}
