@@ -164,9 +164,8 @@ class PagesTagParser {
 				$mod = reset( $pagenums ) % $step;
 				foreach ( $pagenums as $num ) {
 					if ( $step == 1 || $num % $step == $mod ) {
-						$pagenum = $pagination->getDisplayedPageNumber( $num )
-							->getFormattedPageNumber( $language );
-						$pages[] = [ $pagination->getPageTitle( $num ), $pagenum ];
+						$pageNumber = $pagination->getDisplayedPageNumber( $num );
+						$pages[] = [ $pagination->getPageTitle( $num ), $pageNumber ];
 					}
 				}
 
@@ -190,9 +189,8 @@ class PagesTagParser {
 						$adding = true;
 					}
 					if ( $adding ) {
-						$pagenum = $pagination->getDisplayedPageNumber( $i )
-							->getFormattedPageNumber( $language );
-						$pages[] = [ $link, $pagenum ];
+						$pageNumber = $pagination->getDisplayedPageNumber( $i );
+						$pages[] = [ $link, $pageNumber ];
 					}
 					if ( $toTitle !== null && $toTitle->equals( $link ) ) {
 						$adding = false;
@@ -209,7 +207,7 @@ class PagesTagParser {
 			if ( !empty( $pages ) ) {
 				$pp = [];
 				foreach ( $pages as $item ) {
-					list( $page, $pagenum ) = $item;
+					list( $page, $pageNumber ) = $item;
 					$pp[] = $page->getDBkey();
 				}
 				$cat = str_replace( ' ', '_', wfMessage( 'proofreadpage_quality0_category' )
@@ -227,7 +225,9 @@ class PagesTagParser {
 
 			// write the output
 			foreach ( $pages as $item ) {
-				list( $page, $pagenum ) = $item;
+				list( $page, $pageNumber ) = $item;
+				$pagenum = $pageNumber->getRawPageNumber( $language );
+				$formattedNum = $pageNumber->getFormattedPageNumber( $language );
 				if ( in_array( $page->getDBKey(), $q0_pages ) ) {
 					$is_q0 = true;
 				} else {
@@ -236,7 +236,7 @@ class PagesTagParser {
 				$text = $page->getPrefixedText();
 				if ( !$is_q0 ) {
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text .
-						"|num=$pagenum}}</span>";
+						"|num=$pagenum|formatted=$formattedNum}}</span>";
 				}
 				if ( $from_page !== null && $page->equals( $from_page ) && $fromsection !== null ) {
 					$ts = '';
@@ -268,7 +268,7 @@ class PagesTagParser {
 				);
 			}
 			catch ( OutOfBoundsException $e ) {
-	  } // if the first page does not exists
+			} // if the first page does not exists
 		}
 
 		if ( $header ) {
@@ -317,10 +317,12 @@ class PagesTagParser {
 				$h_out .= "|next=$next";
 			}
 			if ( isset( $from_pagenum ) ) {
-				$h_out .= "|from=$from_pagenum";
+				$formattedFrom = $from_pagenum->getFormattedPageNumber( $language );
+				$h_out .= "|from=$formattedFrom";
 			}
 			if ( isset( $to_pagenum ) ) {
-				$h_out .= "|to=$to_pagenum";
+				$formattedTo = $to_pagenum->getFormattedPageNumber( $language );
+				$h_out .= "|to=$formattedTo";
 			}
 			$attributes = $this->context->getCustomIndexFieldsParser()
 				->parseCustomIndexFieldsForHeader( $indexContent );
