@@ -66,7 +66,7 @@ class PageLevel {
 	/**
 	 * Returns if the level is the same as the level $that
 	 *
-	 * @param PageLevel $that
+	 * @param PageLevel|null $that
 	 * @return bool
 	 */
 	public function equals( PageLevel $that = null ) {
