@@ -89,6 +89,38 @@ class PageNumber {
 	}
 
 	/**
+	 * Returns the raw page number, without any formatting
+	 *
+	 * @param Language $language
+	 * @return string
+	 */
+	public function getRawPageNumber( Language $language ) {
+		if ( !is_numeric( $this->number ) ) {
+			return $this->number;
+		}
+
+		switch ( $this->displayMode ) {
+			case self::DISPLAY_HIGHROMAN:
+				return Language::romanNumeral( $this->number );
+			case self::DISPLAY_ROMAN:
+				return strtolower( Language::romanNumeral( $this->number ) );
+			case self::DISPLAY_NORMAL:
+				return $language->formatNum( $this->number, true );
+			case self::DISPLAY_FOLIO:
+				return $language->formatNum( $this->number, true ) .
+					$this->rawRectoVerso( $this->isRecto );
+			case self::DISPLAY_FOLIOHIGHROMAN:
+				return Language::romanNumeral( $this->number ) .
+					$this->rawRectoVerso( $this->isRecto );
+			case self::DISPLAY_FOLIOROMAN:
+				return strtolower( Language::romanNumeral( $this->number ) ) .
+					$this->rawRectoVerso( $this->isRecto );
+			default:
+				return $this->number;
+		}
+	}
+
+	/**
 	 * @return bool
 	 */
 	public function isEmpty() {
@@ -121,6 +153,13 @@ class PageNumber {
 	 */
 	private function formatRectoVerso() {
 		return $this->isRecto ? '<sup>r</sup>' : '<sup>v</sup>';
+	}
+
+	/**
+	 * @return string
+	 */
+	private function rawRectoVerso() {
+		return $this->isRecto ? 'r' : 'v';
 	}
 
 	/**

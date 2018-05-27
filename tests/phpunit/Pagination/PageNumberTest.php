@@ -13,28 +13,30 @@ class PageNumberTest extends ProofreadPageTestCase {
 
 	public function formattedPageNumberProvider() {
 		return [
-			[ '1', new PageNumber( '1' ), null ],
-			[ 'X', new PageNumber( '10', PageNumber::DISPLAY_HIGHROMAN ), null ],
-			[ 'x', new PageNumber( '10', PageNumber::DISPLAY_ROMAN ), null ],
-			[ '12<sup>r</sup>',
+			[ '1', '1', new PageNumber( '1' ), null ],
+			[ 'X', 'X', new PageNumber( '10', PageNumber::DISPLAY_HIGHROMAN ), null ],
+			[ 'x', 'x', new PageNumber( '10', PageNumber::DISPLAY_ROMAN ), null ],
+			[ '12<sup>r</sup>', '12r',
 				new PageNumber( '12', PageNumber::DISPLAY_FOLIO, false, true ), null ],
-			[ '12<sup>v</sup>',
+			[ '12<sup>v</sup>', '12v',
 				new PageNumber( '12', PageNumber::DISPLAY_FOLIO, false, false ), null ],
-			[ 'XIII<sup>r</sup>',
+			[ 'XIII<sup>r</sup>', 'XIIIr',
 				new PageNumber( '13', PageNumber::DISPLAY_FOLIOHIGHROMAN, false, true ), null ],
-			[ 'xiv<sup>v</sup>',
+			[ 'xiv<sup>v</sup>', 'xivv',
 				new PageNumber( '14', PageNumber::DISPLAY_FOLIOROMAN, false, false ), null ],
-			[ 'test', new PageNumber( 'test', PageNumber::DISPLAY_ROMAN ), null ],
-			[ '૮', new PageNumber( '8' ), Language::factory( 'gu' ) ],
+			[ 'test', 'test', new PageNumber( 'test', PageNumber::DISPLAY_ROMAN ), null ],
+			[ '૮', '૮', new PageNumber( '8' ), Language::factory( 'gu' ) ],
 		];
 	}
 
 	/**
 	 * @dataProvider formattedPageNumberProvider
 	 */
-	public function testGetFormattedPageNumber( $result, PageNumber $number, $language = null ) {
+	public function testGetFormattedPageNumber( $formattedResult, $rawResult, PageNumber $number,
+			$language = null ) {
 		$language = ( $language === null ) ? Language::factory( 'en' ) : $language;
-		$this->assertEquals( $result, $number->getFormattedPageNumber( $language ) );
+		$this->assertEquals( $formattedResult, $number->getFormattedPageNumber( $language ) );
+		$this->assertEquals( $rawResult, $number->getRawPageNumber( $language ) );
 	}
 
 	public function testIsEmpty() {
