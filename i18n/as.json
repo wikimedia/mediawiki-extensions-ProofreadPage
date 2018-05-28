@@ -6,6 +6,10 @@
 			"IKHazarika"
 		]
 	},
+	"nstab-page": "পৃষ্ঠা",
+	"nstab-index": "সূচী",
+	"tooltip-ca-nstab-page": "গ্ৰন্থখনৰ পৃষ্ঠা চাওক",
+	"tooltip-ca-nstab-index": "গ্ৰন্থখনৰ সূচী চাওক",
 	"indexpages": "সূচীৰ পৃষ্ঠাৰ তালিকা",
 	"pageswithoutscans": "স্কেন নকৰা পৃষ্ঠাসমূহ",
 	"proofreadpage_desc": "মূল স্কেনৰ লগত পাঠ্যৰ সহজ তুলনা অনুমোদন কৰক",
@@ -73,9 +77,16 @@
 	"proofreadpage-indexoai-error-schemanotfound": "স্কেমা (schema) বিচাৰি পোৱা নগ'ল",
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1 স্কেমা (schema) বিচাৰি পোৱা নগ'ল।",
 	"proofreadpage-disambiguationspage": "Template:দ্বৈৰ্থতা দূৰিকৰণ পৃষ্ঠা",
-	"content-model-proofread-page": "পৃষ্ঠা:পৃষ্ঠা",
+	"content-model-proofread-page": "গ্ৰন্থৰ পৃষ্ঠা",
+	"content-model-proofread-index": "গ্ৰন্থৰ সূচী",
 	"apihelp-query+proofread-description": "প্ৰদান কৰা পৃষ্ঠাসমূহৰ বৰ্তমান প্ৰুফৰিড স্থিতাৱস্থা বিষয়ে তথ্য প্ৰদান কৰে।",
 	"apihelp-query+proofread-example-1": "নামস্থান ২৫০ত থকা পৃষ্ঠাসমূহৰ প্ৰুফৰিড স্থিতাৱস্থা প্ৰদান কৰে",
 	"apihelp-query+proofreadinfo-description": "ProofreadPage extensionৰ সজ্জাৰ বিষয়ে তথ্য প্ৰদান কৰে।",
-	"apihelp-query+proofreadinfo-param-prop": "কি কি প্ৰুফৰিড বিশেষত্ব পাব লাগে:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels ।"
+	"apihelp-query+proofreadinfo-param-prop": "কি কি প্ৰুফৰিড বিশেষত্ব পাব লাগে:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels ।",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "পৃষ্ঠা নিৰ্বাচন",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "পৃষ্ঠাসমূহ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "হয়",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "নহয়",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "মুদ্ৰণ সংশোধনৰ মান",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "মুদ্ৰণ সংশোধনৰ মান"
 }

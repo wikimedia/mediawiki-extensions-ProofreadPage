@@ -3,7 +3,8 @@
 		"authors": [
 			"C.R.",
 			"Chelin",
-			"Candalua"
+			"Candalua",
+			"Ruthven"
 		]
 	},
 	"nstab-page": "Paggena",
@@ -77,7 +78,7 @@
 	"proofreadpage-disambiguationspage": "Template:disambigua",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|paggena|paggene}} validate, $2 surtanto {{PLURAL:$2|paggena|paggene}} liggiute (proofread) e $3 {{PLURAL:$3|paggena|paggene}} ca nun se so' liggiute",
 	"content-model-proofread-page": "Paggena: paggena",
-	"apihelp-query+proofread-description": "Tuorna nfurmaziune ncopp' 'o stato 'e proofread 'e mò d' 'e paggene date.",
+	"apihelp-query+proofread-description": "Tuorna nfurmaziune ncopp' 'o stato 'e proofread 'e mo d'ê paggene date.",
 	"apihelp-query+proofread-example-1": "Tuorna 'o stato 'e proofread p' 'e paggene dint' 'o namespace 250",
 	"apihelp-query+proofreadinfo-description": "Tuorna nfurmaziune ncopp' 'e mpustaziune d' 'a extension ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quale proprietà proofread se tuorneno:\n;namespaces:Nfurmaziune ncopp' 'o namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Elenco d' 'e livell' 'e qualità d' 'o proofread.",
