@@ -5,8 +5,8 @@ namespace ProofreadPage\Parser;
 use OutOfBoundsException;
 use Parser;
 use ProofreadPage\Context;
+use ProofreadPage\Page\ProofreadPageDbConnector;
 use ProofreadPage\Pagination\FilePagination;
-use ProofreadPageDbConnector;
 use Title;
 
 /**

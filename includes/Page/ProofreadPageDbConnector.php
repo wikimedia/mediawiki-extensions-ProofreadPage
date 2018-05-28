@@ -19,6 +19,9 @@
  * @ingroup ProofreadPage
  */
 
+namespace ProofreadPage\Page;
+
+use ProofreadPage;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class ProofreadPageDbConnector {

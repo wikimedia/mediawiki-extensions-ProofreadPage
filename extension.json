@@ -51,8 +51,6 @@
 	},
 	"AutoloadClasses": {
 		"ProofreadPage": "ProofreadPage.body.php",
-		"ProofreadIndexDbConnector": "includes/Index/ProofreadIndexDbConnector.php",
-		"ProofreadPageDbConnector": "includes/Page/ProofreadPageDbConnector.php",
 		"SpecialProofreadPages": "SpecialProofreadPages.php",
 		"SpecialPagesWithoutScans": "SpecialPagesWithoutScans.php",
 		"ApiQueryProofread": "ApiQueryProofread.php",
