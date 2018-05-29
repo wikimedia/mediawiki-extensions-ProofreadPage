@@ -22,7 +22,9 @@
 use MediaWiki\MediaWikiServices;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\Index\ProofreadIndexDbConnector;
 use ProofreadPage\Page\PageContentBuilder;
+use ProofreadPage\Page\ProofreadPageDbConnector;
 use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\Parser\PagelistTagParser;
