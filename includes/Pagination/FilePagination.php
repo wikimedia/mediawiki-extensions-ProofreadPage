@@ -149,4 +149,15 @@ class FilePagination extends Pagination {
 	protected function pageNumberExists( $pageNumber ) {
 		return 1 <= $pageNumber && $pageNumber <= $this->numberOfPages;
 	}
+
+	/**
+	 * @param int $from
+	 * @param int $to
+	 * @param int $count
+	 * @return bool
+	 */
+	public static function isValidInterval( $from, $to, $count ) {
+		return 1 <= $from && $from <= $to && $to <= $count;
+	}
+
 }
