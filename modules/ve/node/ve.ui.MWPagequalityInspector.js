@@ -48,7 +48,7 @@ ve.ui.MWPagequalityInspector.prototype.buildQualitySelector = function () {
 		this.qualityOptions[ i ] = new OO.ui.ButtonOptionWidget( {
 			data: i,
 			icon: 'prp-quality' + i,
-			title: OO.ui.msg( 'proofreadpage_quality' + i + '_category' )
+			title: OO.ui.msg( 'proofreadpage_quality' + i + '_summary' )
 		} );
 	}
 
