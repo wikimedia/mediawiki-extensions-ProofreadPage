@@ -107,14 +107,17 @@ class PageList {
 	 */
 	protected function numberInRange( $range, $number ) {
 		return is_numeric( $range ) && $range == $number ||
-			preg_match( '/^([0-9]*)to([0-9]*)$/', $range, $m ) &&
-			$m[1] <= $number && $number <= $m[2];
+			preg_match( '/^([0-9]*)to([0-9]*)((even|odd)?)$/', $range, $m ) &&
+			$m[1] <= $number && $number <= $m[2] &&
+				( $m[3] === ''
+				|| ( $m[3] === 'even' && $number % 2 === 0 )
+				|| ( $m[3] === 'odd' && $number % 2 === 1 ) );
 	}
 
 	private function getRangeStart( $range ) {
 		if ( is_numeric( $range ) ) {
 			return $range;
-		} elseif ( preg_match( '/^([0-9]*)to([0-9]*)$/', $range, $m ) ) {
+		} elseif ( preg_match( '/^([0-9]*)to([0-9]*)((even|odd)?)$/', $range, $m ) ) {
 			return $m[1];
 		} else {
 			throw new RuntimeException(
