@@ -9,7 +9,8 @@
 			"Abanima",
 			"محمد أحمد عبد الفتاح",
 			"Maroen1990",
-			"Mido"
+			"Mido",
+			"ديفيد"
 		]
 	},
 	"nstab-page": "صفحة",
@@ -44,6 +45,11 @@
 	"proofreadpage_quality2_category": "به مشاكل",
 	"proofreadpage_quality3_category": "مُدقّقة",
 	"proofreadpage_quality4_category": "مُصحّحة",
+	"proofreadpage_quality0_summary": "بدون نص",
+	"proofreadpage_quality1_summary": "بلا تدقيق",
+	"proofreadpage_quality2_summary": "إشكالية",
+	"proofreadpage_quality3_summary": "مدققة",
+	"proofreadpage_quality4_summary": "تم التحقق منها",
 	"proofreadpage_quality0_message": "لا تحتاج هذه الصفحة إلى تدقيق",
 	"proofreadpage_quality1_message": "لم تدقّق هذه الصفحة",
 	"proofreadpage_quality2_message": "ثمة مشكلة عند تدقيق هذه الصفحة",
