@@ -91,6 +91,91 @@ class PageListTest extends ProofreadPageTestCase {
 				new PageNumber( '21', PageNumber::DISPLAY_NORMAL ),
 				[ '1to20' => 'folio' ],
 				21
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_ROMAN ),
+				[ '3to10odd' => 'roman' ],
+				3
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIO, false, true ),
+				[ '3to10odd' => 'folio' ],
+				3
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIOROMAN, false, true ),
+				[ '3to10odd' => 'folioroman' ],
+				3
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIOHIGHROMAN, false, true ),
+				[ '3to10odd' => 'foliohighroman' ],
+				3
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_NORMAL ),
+				[ '3to10even' => 'roman' ],
+				3
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_NORMAL ),
+				[ '3to10even' => 'folio' ],
+				3
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_NORMAL ),
+				[ '3to10even' => 'folioroman' ],
+				3
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_NORMAL ),
+				[ '3to10even' => 'foliohighroman' ],
+				3
+			],
+			[
+				new PageNumber( '4', PageNumber::DISPLAY_NORMAL, false, true ),
+				[ '3to10odd' => 'roman' ],
+				4
+			],
+			[
+				new PageNumber( '4', PageNumber::DISPLAY_NORMAL, false, true ),
+				[ '3to10odd' => 'folio' ],
+				4
+			],
+			[
+				new PageNumber( '4', PageNumber::DISPLAY_NORMAL, false, true ),
+				[ '3to10odd' => 'folioroman' ],
+				4
+			],
+			[
+				new PageNumber( '4', PageNumber::DISPLAY_NORMAL, false, true ),
+				[ '3to10odd' => 'foliohighroman' ],
+				4
+			],
+			[
+				new PageNumber( '4', PageNumber::DISPLAY_ROMAN, false, true ),
+				[ '3to10even' => 'roman' ],
+				4
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIO, false, false ),
+				[ '3to10even' => 'folio' ],
+				4
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIOROMAN, false, false ),
+				[ '3to10even' => 'folioroman' ],
+				4
+			],
+			[
+				new PageNumber( '3', PageNumber::DISPLAY_FOLIOHIGHROMAN, false, false ),
+				[ '3to10even' => 'foliohighroman' ],
+				4
+			],
+			[
+				new PageNumber( '4', PageNumber::DISPLAY_FOLIO, false, true ),
+				[ '3to10odd' => 'folio' ],
+				5
 			]
 		];
 	}
