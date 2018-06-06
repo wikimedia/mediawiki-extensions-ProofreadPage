@@ -18,7 +18,8 @@
 			"Wyz",
 			"Weft",
 			"Wladek92",
-			"Lbayle"
+			"Lbayle",
+			"Candalua"
 		]
 	},
 	"nstab-page": "Page",
@@ -53,6 +54,11 @@
 	"proofreadpage_quality2_category": "Problématique",
 	"proofreadpage_quality3_category": "Corrigée",
 	"proofreadpage_quality4_category": "Validée",
+	"proofreadpage_quality0_summary": "Sans texte",
+	"proofreadpage_quality1_summary": "Non corrigée",
+	"proofreadpage_quality2_summary": "Problématique",
+	"proofreadpage_quality3_summary": "Corrigée",
+	"proofreadpage_quality4_summary": "Validée",
 	"proofreadpage_quality0_message": "Cette page n’est pas destinée à être corrigée.",
 	"proofreadpage_quality1_message": "Cette page n’a pas encore été corrigée",
 	"proofreadpage_quality2_message": "Cette page n’a pas pu être corrigée, à cause d’un problème décrit en page de discussion.",
