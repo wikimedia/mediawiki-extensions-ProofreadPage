@@ -113,14 +113,19 @@ ve.init.mw.ProofreadPagePageTarget.prototype.surfaceReady = function () {
 
 	// Move the cursor to the body section
 	surface.getView().once( 'focus', function () {
-		var surfaceModel = surface.getModel(),
+		var sectionNodeOffset, contentOffset,
+			surfaceModel = surface.getModel(),
 			documentModel = surfaceModel.getDocument(),
-			sectionOffset = documentModel.getDocumentNode().children[ 0 ].children[ 1 ].getRange().start,
-			contentOffset = documentModel.data.getNearestContentOffset( sectionOffset, 1 );
+			articleNode = documentModel.getDocumentNode().children[ 0 ];
 
-		if ( contentOffset !== -1 ) {
-			// Found a content offset
-			surfaceModel.setLinearSelection( new ve.Range( contentOffset ) );
+		if ( articleNode instanceof ve.dm.ArticleNode ) {
+			sectionNodeOffset = articleNode.children[ 1 ].getRange().start;
+			contentOffset = documentModel.data.getNearestContentOffset( sectionNodeOffset, 1 );
+
+			if ( contentOffset !== -1 ) {
+				// Found a content offset
+				surfaceModel.setLinearSelection( new ve.Range( contentOffset ) );
+			}
 		}
 	} );
 
@@ -132,19 +137,23 @@ ve.init.mw.ProofreadPagePageTarget.prototype.surfaceReady = function () {
  * @inheritdoc
  */
 ve.init.mw.ProofreadPagePageTarget.prototype.getHtml = function ( newDoc, oldDoc ) {
-	var sectionNode,
-		articleNode = newDoc.body.children[ 0 ];
+	var i,
+		wrapperNodes = newDoc.body.querySelectorAll(
+			'article[data-mw-proofreadPage-wrapper], ' +
+			'header[data-mw-proofreadPage-wrapper], ' +
+			'section[data-mw-proofreadPage-wrapper], ' +
+			'footer[data-mw-proofreadPage-wrapper]'
+		);
 
-	// Unwrap section and article tags, and check it hasn't already been unwrapped.
-	if ( articleNode && articleNode.tagName.toLowerCase() === 'article' ) {
-		while ( ( sectionNode = articleNode.firstChild ) ) {
-			while ( sectionNode.firstChild ) {
-				newDoc.body.insertBefore( sectionNode.firstChild, articleNode );
-			}
-			articleNode.removeChild( sectionNode );
+	// Unwrap nodes.
+	// There should be only one of each type, but in case the user somehow managed to duplicate it,
+	// unwrap every instance (otherwise they would end up as `<article>` etc. in Parsoid HTML and then
+	// in wikitext).
+	for ( i = 0; i < wrapperNodes.length; i++ ) {
+		while ( wrapperNodes[ i ].firstChild ) {
+			wrapperNodes[ i ].parentNode.insertBefore( wrapperNodes[ i ].firstChild, wrapperNodes[ i ] );
 		}
-
-		newDoc.body.removeChild( articleNode );
+		wrapperNodes[ i ].parentNode.removeChild( wrapperNodes[ i ] );
 	}
 
 	// Parent method
@@ -243,27 +252,18 @@ ve.init.mw.ProofreadPagePageTarget.static.splitSections = function ( doc ) {
 			doc.createElement( 'footer' )
 		];
 
-	function bubbleUp( node ) {
-		var anchor;
-		while ( node.parentNode !== doc.body ) {
-			anchor = node.parentNode.nextSibling;
-			// Reparent the siblings after node up one level
-			while ( node.nextSibling ) {
-				node.parentNode.parentNode.insertBefore( node.nextSibling, anchor );
-			}
-			// Reparent node itself
-			node.parentNode.parentNode.insertBefore( node, node.parentNode.nextSibling );
-		}
+	// Alas, if some formatting spans the header/section or section/footer boundary,
+	// we can't wrap other stuff around it.
+	if ( endHeader && endHeader.parentNode !== doc.body ) {
+		return;
+	}
+	if ( endBody && endBody.parentNode !== doc.body ) {
+		return;
 	}
 
-	if ( endHeader ) {
-		bubbleUp( endHeader );
-	}
-	if ( endBody ) {
-		bubbleUp( endBody );
-	}
-
+	articleNode.setAttribute( 'data-mw-proofreadPage-wrapper', '' );
 	for ( i = 0; i < sectionNodes.length; i++ ) {
+		sectionNodes[ i ].setAttribute( 'data-mw-proofreadPage-wrapper', '' );
 		articleNode.appendChild( sectionNodes[ i ] );
 	}
 
