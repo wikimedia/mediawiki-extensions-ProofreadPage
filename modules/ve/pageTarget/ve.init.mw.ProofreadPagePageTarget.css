@@ -14,10 +14,6 @@
 	padding-right: 0;
 }
 
-.ve-init-mw-proofreadPagePageTarget .ve-init-mw-target-surface > .ve-ui-debugBar {
-	margin-right: -100%;
-}
-
 .ve-init-mw-proofreadPagePageTarget-zoomContainer {
 	float: right;
 	width: 49%;
