@@ -164,15 +164,21 @@ class PageContentHandler extends TextContentHandler {
 		$proofreader = '';
 		$level = 1;
 
+		$cleanHeader = false;
+		$cleanBody = false;
+		$cleanFooter = false;
+
 		if ( preg_match( '/^<noinclude>(.*?)\n*<\/noinclude>(.*)<noinclude>(.*?)<\/noinclude>$/s',
 			$text, $m )
 		) {
 			$header = $m[1];
 			$body = $m[2];
-			$footer = $this->cleanTrailingDivTag( $m[3] );
+			$footer = $m[3];
+			$cleanFooter = true;
 		} elseif ( preg_match( '/^<noinclude>(.*?)\n*<\/noinclude>(.*?)$/s', $text, $m ) ) {
 			$header = $m[1];
-			$body = $this->cleanTrailingDivTag( $m[2] );
+			$body = $m[2];
+			$cleanBody = true;
 		} else {
 			$body = $text;
 		}
@@ -183,13 +189,25 @@ class PageContentHandler extends TextContentHandler {
 		) {
 			$level = intval( $m[1] );
 			$proofreader = $m[2];
-			$header = $this->cleanHeader( $m[4] );
+			$header = $m[4];
+			$cleanHeader = true;
 		} elseif (
 			preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m )
 		) {
 			$level = intval( $m[1] );
 			$proofreader = $m[3];
-			$header = $this->cleanHeader( $m[4] );
+			$header = $m[4];
+			$cleanHeader = true;
+		}
+
+		if ( $cleanHeader ) {
+			if ( $cleanFooter ) {
+				list( $header, $footer ) = $this->cleanDeprecatedWrappers( $header, $footer );
+			} elseif ( $cleanBody ) {
+				list( $header, $body ) = $this->cleanDeprecatedWrappers( $header, $body );
+			} else {
+				list( $header, /*unused*/ ) = $this->cleanDeprecatedWrappers( $header, '' );
+			}
 		}
 
 		return new PageContent(
@@ -200,23 +218,21 @@ class PageContentHandler extends TextContentHandler {
 		);
 	}
 
-	protected function cleanTrailingDivTag( $text ) {
-		if ( preg_match( '/^(.*?)<\/div>$/s', $text, $m2 ) ) {
-			return $m2[1];
-		} else {
-			return $text;
-		}
-	}
-
-	protected function cleanHeader( $header ) {
-		// Remove deprecated wrappers which may still exist
+	protected function cleanDeprecatedWrappers( $header, $footer ) {
+		$cleanedHeader = false;
 		if ( preg_match( '/^(.*?)<div class="pagetext">(.*?)$/s', $header, $mt ) ) {
 			$header = $mt[2];
+			$cleanedHeader = true;
 		} elseif ( preg_match( '/^(.*?)<div>(.*?)$/s', $header, $mt ) ) {
 			$header = $mt[2];
+			$cleanedHeader = true;
 		}
 
-		return $header;
+		if ( $cleanedHeader && preg_match( '/^(.*?)<\/div>$/s', $footer, $mt ) ) {
+			$footer = $mt[1];
+		}
+
+		return [ $header, $footer ];
 	}
 
 	/**
