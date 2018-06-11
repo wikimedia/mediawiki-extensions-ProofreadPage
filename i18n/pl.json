@@ -8,7 +8,8 @@
 			"Przemub",
 			"Sp5uhe",
 			"Ankry",
-			"Zdzislaw"
+			"Zdzislaw",
+			"Matma Rex"
 		]
 	},
 	"nstab-page": "Strona",
@@ -37,10 +38,15 @@
 	"proofreadpage_footer": "Stopka (noinclude):",
 	"proofreadpage_toggleheaders": "zmień widoczność sekcji noinclude",
 	"proofreadpage_quality0_category": "Bez treści",
-	"proofreadpage_quality1_category": "Nieskorygowana",
+	"proofreadpage_quality1_category": "Przepisana",
 	"proofreadpage_quality2_category": "Problemy",
 	"proofreadpage_quality3_category": "Skorygowana",
 	"proofreadpage_quality4_category": "Uwierzytelniona",
+	"proofreadpage_quality0_summary": "Bez treści",
+	"proofreadpage_quality1_summary": "Przepisana",
+	"proofreadpage_quality2_summary": "Problemy",
+	"proofreadpage_quality3_summary": "Skorygowana",
+	"proofreadpage_quality4_summary": "Uwierzytelniona",
 	"proofreadpage_quality0_message": "Ta strona nie wymaga korekty",
 	"proofreadpage_quality1_message": "Ta strona nie została skorygowana",
 	"proofreadpage_quality2_message": "Wystąpił problem przy korekcie tej stronie",

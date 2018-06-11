@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"ArmenBakkalian"
+		]
+	},
+	"proofreadpage_quality1_category": "Չէ սրբագրուած",
+	"proofreadpage_quality3_category": "Սրբագրուած",
+	"proofreadpage_quality4_category": "Հաստատուած",
+	"proofreadpage_quality1_message": "Այս էջը սրբագրուած չէ"
+}

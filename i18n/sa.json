@@ -5,7 +5,8 @@
 			"Ansumang",
 			"Shreekant Hegde",
 			"Shubha",
-			"NehalDaveND"
+			"NehalDaveND",
+			"Charunandan16"
 		]
 	},
 	"indexpages": "अनुक्रमणिका पुटावली",
@@ -34,6 +35,11 @@
 	"proofreadpage_quality2_category": "समस्यात्मकः",
 	"proofreadpage_quality3_category": "परिष्कृतम्",
 	"proofreadpage_quality4_category": "पुष्टितम्",
+	"proofreadpage_quality0_summary": "लेखरहितम्",
+	"proofreadpage_quality1_summary": "अशोधितम्",
+	"proofreadpage_quality2_summary": "समस्यात्मकः",
+	"proofreadpage_quality3_summary": "शोधितम्",
+	"proofreadpage_quality4_summary": "प्रमाणितम्",
 	"proofreadpage_quality0_message": "अस्य पुटस्य पुटपरिशीलनं न आवश्यकम् ।",
 	"proofreadpage_quality1_message": "एतत् पृष्ठम् अपरिष्कृतम् अस्ति",
 	"proofreadpage_quality2_message": "पुटपरिशीलयितुं काचित् समस्या अस्ति",

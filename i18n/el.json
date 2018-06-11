@@ -11,7 +11,8 @@
 			"Omnipaedista",
 			"ZaDiak",
 			"Αντιγόνη",
-			"Gts-tg"
+			"Gts-tg",
+			"Nikosgranturismogt"
 		]
 	},
 	"nstab-page": "Σελίδα",
@@ -44,6 +45,11 @@
 	"proofreadpage_quality2_category": "Προβληματική",
 	"proofreadpage_quality3_category": "Έχει γίνει proofreading",
 	"proofreadpage_quality4_category": "Εγκρίθηκε",
+	"proofreadpage_quality0_summary": "Χωρίς κείμενο",
+	"proofreadpage_quality1_summary": "Δεν έχει γίνει proofreading",
+	"proofreadpage_quality2_summary": "Προβληματική",
+	"proofreadpage_quality3_summary": "Επιμέλεια",
+	"proofreadpage_quality4_summary": "Επικυρωμένη",
 	"proofreadpage_quality0_message": "Αυτή η σελίδα δεν χρειάζεται να ελεγχθεί για πιθανά λάθη",
 	"proofreadpage_quality1_message": "Αυτή η σελίδα δεν έχει ελεγχθεί ακόμη για πιθανά λάθη.",
 	"proofreadpage_quality2_message": "Υπήρξε ένα πρόβλημα στον έλεγχο για πιθανά λάθη αυτής της σελίδας",
