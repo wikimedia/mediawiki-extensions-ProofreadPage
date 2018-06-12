@@ -16,6 +16,7 @@ class IndexSubmitAction extends SubmitAction {
 	 */
 	public function show() {
 		$editor = new EditIndexPage( $this->page );
+		$editor->setContextTitle( $this->getTitle() );
 		$editor->edit();
 	}
 }

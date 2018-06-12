@@ -17,6 +17,7 @@ class PageSubmitAction extends SubmitAction {
 	 */
 	public function show() {
 		$editor = new EditPagePage( $this->page, Context::getDefaultContext() );
+		$editor->setContextTitle( $this->getTitle() );
 		$editor->edit();
 	}
 }

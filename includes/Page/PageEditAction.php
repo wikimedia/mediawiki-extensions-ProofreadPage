@@ -17,6 +17,7 @@ class PageEditAction extends EditAction {
 	 */
 	public function show() {
 		$editor = new EditPagePage( $this->page, Context::getDefaultContext() );
+		$editor->setContextTitle( $this->getTitle() );
 		$editor->edit();
 	}
 }

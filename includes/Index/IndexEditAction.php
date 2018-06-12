@@ -16,6 +16,7 @@ class IndexEditAction extends EditAction {
 	 */
 	public function show() {
 		$editor = new EditIndexPage( $this->page );
+		$editor->setContextTitle( $this->getTitle() );
 		$editor->edit();
 	}
 }
