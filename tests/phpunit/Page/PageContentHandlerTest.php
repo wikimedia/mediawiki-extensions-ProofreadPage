@@ -115,9 +115,19 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 					'</noinclude>Experimental body<noinclude>Experimental footer</noinclude>'
 			],
 			[
+				'<div style="color: red;">',
+				'Experimental body',
+				'</div>',
+				2,
+				'Woot',
+				'<noinclude><pagequality level="2" user="Woot"></pagequality><div style="color: red;">' .
+					"\n" .
+					'</noinclude>Experimental body<noinclude></div></noinclude>'
+			],
+			[
 				'Experimental header',
 				'Experimental body',
-				'Experimental footer',
+				'Experimental footer</div>',
 				2,
 				'Woot',
 				'<noinclude><pagequality level="2" user="Woot"></pagequality>Experimental header' .
