@@ -315,6 +315,14 @@ $proofreadPageNamespacesNames['pl'] = [
 	'index_talk' => 'Dyskusja_indeksu'
 ];
 
+/** Piedmontese (Piemontèis) */
+$proofreadPageNamespacesNames['pms'] = [
+	'page' => 'Pàgina',
+	'page_talk' => 'Discussion_ëd_la_pàgina',
+	'index' => 'Tàula',
+	'index_talk' => 'Discussion_ëd_la_tàula'
+];
+
 /** Portuguese (português) */
 $proofreadPageNamespacesNames['pt'] = [
 	'page' => 'Página',
