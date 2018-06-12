@@ -159,72 +159,39 @@ class ProofreadPage {
 
 	/**
 	 * Hook function
-	 * @param array $page_ids Prefixed DB keys of the pages linked to, indexed by page_id
+	 * @param array $pageIds Prefixed DB keys of the pages linked to, indexed by page_id
 	 * @param array &$colours CSS classes, indexed by prefixed DB keys
 	 * @return bool
 	 */
-	public static function onGetLinkColours( $page_ids, &$colours ) {
+	public static function onGetLinkColours( $pageIds, &$colours ) {
 		global $wgTitle;
 		if ( !isset( $wgTitle ) ) {
 			return true;
 		}
-		self::getLinkColours( $page_ids, $colours );
+
+		$inIndexNamespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
+		$pageQualityLevelLookup = Context::getDefaultContext()->getPageQualityLevelLookup();
+
+		$pageTitles = array_map( function ( $prefixedDbKey ) {
+			return Title::newFromText( $prefixedDbKey );
+		}, $pageIds );
+		$pageQualityLevelLookup->prefetchQualityLevelForTitles( $pageTitles );
+
+		/** @var Title|null $pageTitle */
+		foreach ( $pageTitles as $pageTitle ) {
+			if ( $pageTitle !== null && $pageTitle->inNamespace( self::getPageNamespaceId() ) ) {
+				$pageLevel = $pageQualityLevelLookup->getQualityLevelForPageTitle( $pageTitle );
+				if ( $pageLevel !== null ) {
+					$classes = "prp-pagequality-{$pageLevel}";
+					if ( $inIndexNamespace ) {
+						$classes .= " quality{$pageLevel}";
+					}
+					$colours[$pageTitle->getPrefixedDBkey()] = $classes;
+				}
+			}
+		}
+
 		return true;
-	}
-
-	/**
-	 * Return the quality colour codes to pages linked from an index page
-	 * @param array $page_ids Prefixed DB keys of the pages linked to, indexed by page_id
-	 * @param array $colours CSS classes, indexed by prefixed DB keys
-	 */
-	private static function getLinkColours( $page_ids, &$colours ) {
-		global $wgTitle;
-
-		$page_namespace_id = self::getPageNamespaceId();
-		$in_index_namespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
-
-		$values = [];
-		foreach ( $page_ids as $id => $pdbk ) {
-			$title = Title::newFromText( $pdbk );
-			// consider only link in page namespace
-			if ( $title->inNamespace( $page_namespace_id ) ) {
-				if ( $in_index_namespace ) {
-					$colours[$pdbk] = 'quality1 prp-pagequality-1';
-				} else {
-					$colours[$pdbk] = 'prp-pagequality-1';
-				}
-				$values[] = intval( $id );
-			}
-		}
-
-		// Get the names of the quality categories.  Replaces earlier code which
-		// called wfMessage()->inContentLanguagE() 5 times for each page.
-		// ISSUE: Should the number of quality levels be adjustable?
-		// ISSUE 2: Should this array be saved as a member variable?
-		// How often is this code called anyway?
-		$qualityCategories = [];
-		for ( $i = 0; $i < 5; $i++ ) {
-			$cat = Title::makeTitleSafe( NS_CATEGORY,
-				wfMessage( "proofreadpage_quality{$i}_category" )->inContentLanguage()->text() );
-			if ( $cat ) {
-				if ( $in_index_namespace ) {
-					$qualityCategories[$cat->getDBkey()] =
-						'quality' . $i . ' prp-pagequality-' . $i;
-				} else {
-					$qualityCategories[$cat->getDBkey()] = 'prp-pagequality-' . $i;
-				}
-			}
-		}
-
-		if ( count( $values ) ) {
-			$res = ProofreadPageDbConnector::getCategoryNamesForPageIds( $values );
-			foreach ( $res as $x ) {
-				$pdbk = $page_ids[$x->cl_from];
-				if ( array_key_exists( $x->cl_to, $qualityCategories ) ) {
-					$colours[$pdbk] = $qualityCategories[$x->cl_to];
-				}
-			}
-		}
 	}
 
 	/**
@@ -781,27 +748,13 @@ class ProofreadPage {
 		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
 		}
-		$pageid = $page->getId();
 
-		$params = new FauxRequest( [
-			'action' => 'query',
-			'prop' => 'proofread',
-			'pageids' => $pageid,
-		] );
-
-		$api = new ApiMain( $params );
-		$api->execute();
-		$data = $api->getResult()->getResultData();
-
-		if ( array_key_exists( 'error', $data ) ) {
-			return true;
-		}
-
-		$info = $data['query']['pages'][$pageid];
-		if ( array_key_exists( 'proofread', $info ) ) {
+		$pageQualityLevelLookup = Context::getDefaultContext()->getPageQualityLevelLookup();
+		$pageQualityLevel = $pageQualityLevelLookup->getQualityLevelForPageTitle( $title );
+		if ( $pageQualityLevel !== null ) {
 			$pageInfo['header-basic'][] = [
 				wfMessage( 'proofreadpage-pageinfo-status' ),
-				wfMessage( "proofreadpage_quality{$info['proofread']['quality']}_category" ),
+				wfMessage( "proofreadpage_quality{$pageQualityLevel}_category" ),
 			];
 		}
 

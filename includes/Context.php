@@ -9,7 +9,9 @@ use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\DatabaseIndexContentLookup;
 use ProofreadPage\Index\IndexContentLookup;
 use ProofreadPage\Page\DatabaseIndexForPageLookup;
+use ProofreadPage\Page\DatabasePageQualityLevelLookup;
 use ProofreadPage\Page\IndexForPageLookup;
+use ProofreadPage\Page\PageQualityLevelLookup;
 use ProofreadPage\Pagination\PaginationFactory;
 use RepoGroup;
 
@@ -55,17 +57,23 @@ class Context {
 	private $indexContentLookup;
 
 	/**
+	 * @var PageQualityLevelLookup
+	 */
+	private $pageQualityLevelLookup;
+
+	/**
 	 * @param int $pageNamespaceId
 	 * @param int $indexNamespaceId
 	 * @param FileProvider $fileProvider
 	 * @param CustomIndexFieldsParser $customIndexFieldsParser
 	 * @param IndexForPageLookup $indexForPageLookup
 	 * @param IndexContentLookup $indexContentLookup
+	 * @param PageQualityLevelLookup $pageQualityLevelLookup
 	 */
 	public function __construct(
 		$pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider,
 		CustomIndexFieldsParser $customIndexFieldsParser, IndexForPageLookup $indexForPageLookup,
-		IndexContentLookup $indexContentLookup
+		IndexContentLookup $indexContentLookup, PageQualityLevelLookup $pageQualityLevelLookup
 	) {
 		$this->pageNamespaceId = $pageNamespaceId;
 		$this->indexNamespaceId = $indexNamespaceId;
@@ -73,6 +81,7 @@ class Context {
 		$this->customIndexFieldsParser = $customIndexFieldsParser;
 		$this->indexForPageLookup = $indexForPageLookup;
 		$this->indexContentLookup = $indexContentLookup;
+		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
 	}
 
 	/**
@@ -133,6 +142,13 @@ class Context {
 	}
 
 	/**
+	 * @return PageQualityLevelLookup
+	 */
+	public function getPageQualityLevelLookup() {
+		return $this->pageQualityLevelLookup;
+	}
+
+	/**
 	 * @param bool $purge
 	 * @return Context
 	 */
@@ -147,7 +163,8 @@ class Context {
 				new FileProvider( $repoGroup ),
 				new CustomIndexFieldsParser(),
 				new DatabaseIndexForPageLookup( $indexNamespaceId, $repoGroup ),
-				new DatabaseIndexContentLookup()
+				new DatabaseIndexContentLookup(),
+				new DatabasePageQualityLevelLookup( $pageNamespaceId )
 			);
 		}
 
