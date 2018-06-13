@@ -6,7 +6,8 @@
 			"Simny",
 			"Danmichaelo",
 			"Jon Harald Søby",
-			"Jon Harald Søby (WMNO)"
+			"Jon Harald Søby (WMNO)",
+			"Citadell"
 		]
 	},
 	"nstab-page": "Side",
@@ -41,6 +42,10 @@
 	"proofreadpage_quality2_category": "Ufullstendig",
 	"proofreadpage_quality3_category": "Korrekturlest",
 	"proofreadpage_quality4_category": "Validert",
+	"proofreadpage_quality0_summary": "Uten tekst",
+	"proofreadpage_quality1_summary": "Ikke korrekturlest",
+	"proofreadpage_quality3_summary": "Korrekturles",
+	"proofreadpage_quality4_summary": "Validert",
 	"proofreadpage_quality0_message": "Denne siden trenger ikke korrekturleses",
 	"proofreadpage_quality1_message": "Denne siden er ikke korrekturlest",
 	"proofreadpage_quality2_message": "Det var problemer med korrekturlesingen av denne siden.",
