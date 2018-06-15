@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"MF-Warburg"
+			"MF-Warburg",
+			"Raphael Merx"
 		]
 	},
 	"proofreadpage_nextpage": "Pájina oinmai",
 	"proofreadpage_prevpage": "Pájina molok",
+	"proofreadpage_quality4_summary": "Loos ona",
 	"proofreadpage_pages": "{{PLURAL:$1|pájina ida|pájina $2}}"
 }
