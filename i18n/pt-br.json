@@ -8,7 +8,8 @@
 			"MetalBrasil",
 			"555",
 			"Cainamarques",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"nstab-page": "Página",
@@ -43,6 +44,11 @@
 	"proofreadpage_quality2_category": "Problemáticas",
 	"proofreadpage_quality3_category": "Revisadas",
 	"proofreadpage_quality4_category": "Validadas",
+	"proofreadpage_quality0_summary": "Sem texto",
+	"proofreadpage_quality1_summary": "Não revisadas",
+	"proofreadpage_quality2_summary": "Problemáticas",
+	"proofreadpage_quality3_summary": "Revisão de traduções",
+	"proofreadpage_quality4_summary": "Validado",
 	"proofreadpage_quality0_message": "Esta página não precisa ser revisada",
 	"proofreadpage_quality1_message": "Esta página ainda não foi revisada",
 	"proofreadpage_quality2_message": "Ocorreu um erro ao revisar esta página",
