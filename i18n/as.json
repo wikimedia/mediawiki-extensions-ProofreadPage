@@ -3,7 +3,8 @@
 		"authors": [
 			"Bishnu Saikia",
 			"Gitartha.bordoloi",
-			"IKHazarika"
+			"IKHazarika",
+			"Sagsag"
 		]
 	},
 	"nstab-page": "পৃষ্ঠা",
@@ -38,6 +39,8 @@
 	"proofreadpage_quality2_category": "সমস্যাজৰ্জৰ",
 	"proofreadpage_quality3_category": "মুদ্ৰণ সংশোধন",
 	"proofreadpage_quality4_category": "বৈধকৰণ",
+	"proofreadpage_quality0_summary": "লিখা নথকা",
+	"proofreadpage_quality2_summary": "সমস্যা থকা",
 	"proofreadpage_quality0_message": "এই পৃষ্ঠাটোৰ প্ৰুফ সংশোধনৰ প্ৰয়োজন নাই",
 	"proofreadpage_quality1_message": "এই পৃষ্ঠাটোৰ মুদ্ৰণ সংশোধন কৰা হোৱা নাই",
 	"proofreadpage_quality2_message": "এই পৃষ্ঠাটোৰ মুদ্ৰণ সংশোধনত এটা সমস্যা হৈছে",
