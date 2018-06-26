@@ -12,7 +12,8 @@ module.exports = function ( grunt ) {
 			all: [
 				'**/*.js',
 				'!node_modules/**',
-				'!modules/jquery/*.js'
+				'!modules/jquery/*.js',
+				'!vendor/**'
 			]
 		},
 		stylelint: {
