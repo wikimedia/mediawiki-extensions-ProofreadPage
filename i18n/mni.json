@@ -4,8 +4,26 @@
 			"Awangba Mangang"
 		]
 	},
+	"nstab-page": "ꯂꯥꯃꯥꯏ",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "ꯂꯥꯏꯔꯤꯛꯇꯨꯒꯤ ꯂꯥꯃꯥꯏꯗꯨ ꯎꯨꯠꯂꯨ",
+	"tooltip-ca-nstab-index": "ꯂꯥꯏꯔꯤꯛꯇꯨꯒꯤ ꯏꯟꯗꯦꯀꯁ ꯎꯨꯠꯂꯨ",
+	"proofreadpage_image": "ꯃꯃꯤ",
+	"proofreadpage_index": "Index",
+	"proofreadpage_nextpage": "ꯃꯊꯪꯒꯤ ꯂꯥꯃꯥꯏ",
+	"proofreadpage_prevpage": "ꯃꯥꯃꯥꯡꯒꯤ ꯂꯥꯃꯥꯏ",
 	"proofreadpage_quality0_category": "text ꯌꯥꯑꯣꯗꯕꯤꯗꯥ",
 	"proofreadpage_quality2_category": "ꯈꯨꯔꯧ ꯊꯥꯡꯕꯥ",
 	"proofreadpage_quality3_category": "Proofread",
-	"proofreadpage_quality4_category": "ꯆꯠꯅꯕꯥ ꯌꯥꯕꯥ ꯃꯇꯝ"
+	"proofreadpage_quality4_category": "ꯆꯠꯅꯕꯥ ꯌꯥꯕꯥ ꯃꯇꯝ",
+	"proofreadpage_quality0_summary": "ꯑꯌꯤꯕꯥ ꯋꯥꯔꯦꯡ ꯌꯥꯑꯣꯗꯅꯥ",
+	"proofreadpage_specialpage_label_key": "ꯊꯤꯕꯥ",
+	"proofreadpage_source": "ꯍꯧꯔꯛꯐꯛ",
+	"proofreadpage-group-zoom": "ꯆꯥꯎꯊꯣꯛꯍꯟꯕꯥ",
+	"proofreadpage-group-other": "ꯑꯇꯩ",
+	"content-model-proofread-page": "ꯂꯥꯏꯔꯤꯛꯀꯤ ꯂꯥꯃꯥꯏ",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "ꯂꯥꯃꯥꯏ ꯈꯟꯕꯥ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ꯂꯥꯃꯥꯏꯁꯤꯡ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ꯍꯣꯏ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ꯅꯠꯇꯦ"
 }
