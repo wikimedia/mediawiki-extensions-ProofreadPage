@@ -145,6 +145,7 @@ class SpecialProofreadPages extends QueryPage {
 		$orderSelect = new XmlSelect( 'order', 'order', $this->queryOrder );
 		$orderSelect->addOption( $this->msg( 'proofreadpage_index_status' )->text(), 'quality' );
 		$orderSelect->addOption( $this->msg( 'proofreadpage_index_size' )->text(), 'size' );
+		$orderSelect->addOption( $this->msg( 'proofreadpage_pages_to_validate' )->text(), 'toValidate' );
 		$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
 
 		$searchForm = Html::openElement( 'form', [ 'action' => $config->get( 'Script' ) ] ) .
@@ -207,6 +208,8 @@ class SpecialProofreadPages extends QueryPage {
 				return [ 'pr_count' ];
 			case 'alpha':
 				return [ 'page_title' ];
+			case 'toValidate':
+				return [ 'pr_q3' ];
 			default:
 				return [ 'value' ];
 		}
