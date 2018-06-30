@@ -57,6 +57,7 @@
 	"proofreadpage_quality4_message": "صُحّحت هذه الصفحة",
 	"proofreadpage_index_status": "حالة الفهرس",
 	"proofreadpage_index_size": "عدد الصفحات",
+	"proofreadpage_pages_to_validate": "عدد الصفحات المراد التحقق منها",
 	"proofreadpage_specialpage_label_orderby": "ترتيب حسب:",
 	"proofreadpage_specialpage_label_key": "بحث:",
 	"proofreadpage_specialpage_label_sortascending": "رتب تصاعديا",

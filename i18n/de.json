@@ -54,6 +54,7 @@
 	"proofreadpage_quality4_message": "Fertig. Dieser Text wurde zweimal anhand der Quelle korrekturgelesen. Die Schreibweise folgt dem Originaltext.",
 	"proofreadpage_index_status": "Indexstatus",
 	"proofreadpage_index_size": "Anzahl der Seiten",
+	"proofreadpage_pages_to_validate": "Anzahl der zu validierenden Seiten",
 	"proofreadpage_specialpage_label_orderby": "Sortieren nach:",
 	"proofreadpage_specialpage_label_key": "Suchen:",
 	"proofreadpage_specialpage_label_sortascending": "Aufsteigend sortieren",

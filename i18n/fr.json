@@ -66,6 +66,7 @@
 	"proofreadpage_quality4_message": "Cette page a été validée par deux contributeurs.",
 	"proofreadpage_index_status": "État de l’index",
 	"proofreadpage_index_size": "Nombre de pages",
+	"proofreadpage_pages_to_validate": "Nombre de pages à valider",
 	"proofreadpage_specialpage_label_orderby": "Trier par :",
 	"proofreadpage_specialpage_label_key": "Recherche :",
 	"proofreadpage_specialpage_label_sortascending": "Tri croissant.",

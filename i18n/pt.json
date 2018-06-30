@@ -60,6 +60,7 @@
 	"proofreadpage_quality4_message": "Esta página foi validada",
 	"proofreadpage_index_status": "Estado do índice",
 	"proofreadpage_index_size": "Número de páginas",
+	"proofreadpage_pages_to_validate": "Número de páginas a aguardar validação",
 	"proofreadpage_specialpage_label_orderby": "Ordenar por:",
 	"proofreadpage_specialpage_label_key": "Pesquisar:",
 	"proofreadpage_specialpage_label_sortascending": "Classificação crescente",
