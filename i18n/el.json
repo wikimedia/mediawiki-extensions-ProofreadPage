@@ -57,6 +57,7 @@
 	"proofreadpage_quality4_message": "Αυτή η σελίδα έχει εγκριθεί",
 	"proofreadpage_index_status": "Κατάσταση ευρετηρίου",
 	"proofreadpage_index_size": "Αριθμός σελίδων",
+	"proofreadpage_pages_to_validate": "Αριθμός σελίδων για επικύρωση",
 	"proofreadpage_specialpage_label_orderby": "Ταξινόμηση με:",
 	"proofreadpage_specialpage_label_key": "Αναζήτηση:",
 	"proofreadpage_specialpage_label_sortascending": "Αύξουσα ταξινόμηση",

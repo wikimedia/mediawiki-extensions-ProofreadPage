@@ -60,6 +60,7 @@
 	"proofreadpage_quality4_message": "本頁已確認",
 	"proofreadpage_index_status": "索引狀態",
 	"proofreadpage_index_size": "頁面號碼",
+	"proofreadpage_pages_to_validate": "已確認頁面數量",
 	"proofreadpage_specialpage_label_orderby": "順序：",
 	"proofreadpage_specialpage_label_key": "搜尋：",
 	"proofreadpage_specialpage_label_sortascending": "升序",
