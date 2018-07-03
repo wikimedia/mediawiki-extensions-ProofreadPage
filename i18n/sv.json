@@ -61,6 +61,7 @@
 	"proofreadpage_quality4_message": "Den här sidan har godkänts",
 	"proofreadpage_index_status": "Indexstatus",
 	"proofreadpage_index_size": "Antal sidor",
+	"proofreadpage_pages_to_validate": "Antal sidor att validera",
 	"proofreadpage_specialpage_label_orderby": "Sortera efter:",
 	"proofreadpage_specialpage_label_key": "Sök:",
 	"proofreadpage_specialpage_label_sortascending": "Sortera stigande",
