@@ -63,6 +63,7 @@
 	"proofreadpage_quality4_message": "本页面已复核",
 	"proofreadpage_index_status": "索引状态",
 	"proofreadpage_index_size": "页面数",
+	"proofreadpage_pages_to_validate": "待校对的页面数量",
 	"proofreadpage_specialpage_label_orderby": "排序方式：",
 	"proofreadpage_specialpage_label_key": "搜索：",
 	"proofreadpage_specialpage_label_sortascending": "升序",
