@@ -47,6 +47,7 @@
 	"proofreadpage_index_status": "Index status",
 	"proofreadpage_index_size": "Number of pages",
 	"proofreadpage_pages_to_validate": "Number of pages to be validated",
+	"proofreadpage_pages_to_proofread_or_validate": "Number of pages to be proofread or validated",
 	"proofreadpage_specialpage_label_orderby": "Order by:",
 	"proofreadpage_specialpage_label_key": "Search:",
 	"proofreadpage_specialpage_label_sortascending": "Sort ascending",
