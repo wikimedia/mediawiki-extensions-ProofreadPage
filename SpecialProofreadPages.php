@@ -146,6 +146,8 @@ class SpecialProofreadPages extends QueryPage {
 		$orderSelect->addOption( $this->msg( 'proofreadpage_index_status' )->text(), 'quality' );
 		$orderSelect->addOption( $this->msg( 'proofreadpage_index_size' )->text(), 'size' );
 		$orderSelect->addOption( $this->msg( 'proofreadpage_pages_to_validate' )->text(), 'toValidate' );
+		$orderSelect->addOption( $this->msg( 'proofreadpage_pages_to_proofread_or_validate' )->text(),
+			'toProofreadOrValidate' );
 		$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
 
 		$searchForm = Html::openElement( 'form', [ 'action' => $config->get( 'Script' ) ] ) .
@@ -195,7 +197,8 @@ class SpecialProofreadPages extends QueryPage {
 		return [
 			'tables' => [ 'pr_index', 'page' ],
 			'fields' => [ 'page_namespace AS namespace', 'page_title AS title',
-			'2*pr_q4+pr_q3 AS value', 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
+			'2 * pr_q4 + pr_q3 AS status', 'pr_count - pr_q4 - pr_q0 as work_todo',
+			'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
 			'conds' => $conds,
 			'options' => [],
 			'join_conds' => [ 'page' => [ 'INNER JOIN', 'page_id=pr_page_id' ] ]
@@ -210,8 +213,10 @@ class SpecialProofreadPages extends QueryPage {
 				return [ 'page_title' ];
 			case 'toValidate':
 				return [ 'pr_q3' ];
+			case 'toProofreadOrValidate':
+				return [ 'work_todo' ];
 			default:
-				return [ 'value' ];
+				return [ 'status' ];
 		}
 	}
 
