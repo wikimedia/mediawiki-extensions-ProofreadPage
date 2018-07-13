@@ -37,7 +37,7 @@ class ApiQueryProofread extends ApiQueryBase {
 	}
 
 	private function getQualityLevelCategory( $level ) {
-		if ( !in_array( $level, $this->qualityLevelCategoryCache ) ) {
+		if ( !array_key_exists( $level, $this->qualityLevelCategoryCache ) ) {
 			$messageName = "proofreadpage_quality{$level}_category";
 			$category = $this->msg( $messageName )->inContentLanguage()->text();
 			$this->qualityLevelCategoryCache[$level] = $category;
