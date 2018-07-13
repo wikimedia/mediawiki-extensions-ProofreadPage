@@ -264,7 +264,7 @@ class PageContent extends TextContent {
 			return $this->body->getParserOutput( $title, $revId, $options, $generateHtml );
 		}
 		if ( $options === null ) {
-			$options = $this->getContentHandler()->makeParserOptions( 'canonical' );
+			$options = ParserOptions::newCanonical( 'canonical' );
 		}
 
 		// create content

@@ -6,6 +6,7 @@ use Content;
 use ContentHandler;
 use MWContentSerializationException;
 use Parser;
+use ParserOptions;
 use PPFrame;
 use ProofreadPage\Context;
 use TextContentHandler;
@@ -48,7 +49,7 @@ class IndexContentHandler extends TextContentHandler {
 	private function buildParser() {
 		$parser = new Parser();
 		$parser->startExternalParse(
-			null, $this->makeParserOptions( 'canonical' ), Parser::OT_PLAIN
+			null, ParserOptions::newCanonical( 'canonical' ), Parser::OT_PLAIN
 		);
 		return $parser;
 	}
