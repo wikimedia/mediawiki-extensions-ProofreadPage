@@ -67,6 +67,7 @@
 	"proofreadpage_index_status": "État de l’index",
 	"proofreadpage_index_size": "Nombre de pages",
 	"proofreadpage_pages_to_validate": "Nombre de pages à valider",
+	"proofreadpage_pages_to_proofread_or_validate": "Nombre de pages à relire ou validées",
 	"proofreadpage_specialpage_label_orderby": "Trier par :",
 	"proofreadpage_specialpage_label_key": "Recherche :",
 	"proofreadpage_specialpage_label_sortascending": "Tri croissant.",

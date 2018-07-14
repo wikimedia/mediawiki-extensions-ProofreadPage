@@ -62,6 +62,7 @@
 	"proofreadpage_index_status": "Indexstatus",
 	"proofreadpage_index_size": "Antal sidor",
 	"proofreadpage_pages_to_validate": "Antal sidor att validera",
+	"proofreadpage_pages_to_proofread_or_validate": "Antal sidor att korrekturläsa eller validera",
 	"proofreadpage_specialpage_label_orderby": "Sortera efter:",
 	"proofreadpage_specialpage_label_key": "Sök:",
 	"proofreadpage_specialpage_label_sortascending": "Sortera stigande",
