@@ -5,7 +5,8 @@
 			"Жељко Тодоровић",
 			"Srdjan m",
 			"Milicevic01",
-			"Сербијана"
+			"Сербијана",
+			"Zoranzoki21"
 		]
 	},
 	"proofreadpage_desc": "Omogući lako upoređivanje teksta i originalnog skena.",
@@ -19,7 +20,7 @@
 	"proofreadpage_footer": "Podnožje (bez uključivanja):",
 	"proofreadpage_toggleheaders": "upravljanje vidljivošću delova koji se ne uključuju",
 	"proofreadpage_quality0_category": "Bez teksta",
-	"proofreadpage_quality1_category": "Nepregledano",
+	"proofreadpage_quality1_category": "Nelektorisano",
 	"proofreadpage_quality2_category": "Problematično",
 	"proofreadpage_quality3_category": "Pregledano",
 	"proofreadpage_quality4_category": "Overeno",
