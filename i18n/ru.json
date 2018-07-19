@@ -11,7 +11,8 @@
 			"Гизатуллина",
 			"Ole Yves",
 			"Kareyac",
-			"Stjn"
+			"Stjn",
+			"Vlad5250"
 		]
 	},
 	"nstab-page": "Страница",
@@ -50,6 +51,7 @@
 	"proofreadpage_quality4_message": "Эта страница выверена",
 	"proofreadpage_index_status": "Статус индекса",
 	"proofreadpage_index_size": "Количество страниц",
+	"proofreadpage_pages_to_proofread_or_validate": "Число страниц для проверки или утверждения",
 	"proofreadpage_specialpage_label_orderby": "Сортировать по:",
 	"proofreadpage_specialpage_label_key": "Поиск:",
 	"proofreadpage_specialpage_label_sortascending": "Упорядочить по возрастанию",

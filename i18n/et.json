@@ -37,6 +37,11 @@
 	"proofreadpage_quality2_category": "Probleemne",
 	"proofreadpage_quality3_category": "Õigsus tõendatud",
 	"proofreadpage_quality4_category": "Heakskiidetud",
+	"proofreadpage_quality0_summary": "Ilma tekstita",
+	"proofreadpage_quality1_summary": "Õigsus tõendamata",
+	"proofreadpage_quality2_summary": "Probleemne‎",
+	"proofreadpage_quality3_summary": "Õigsus tõendatud",
+	"proofreadpage_quality4_summary": "Heakskiidetud",
 	"proofreadpage_quality0_message": "Selle lehekülje õigsus ei vaja tõendamist.",
 	"proofreadpage_quality1_message": "Selle lehekülje õigsus on tõendamata.",
 	"proofreadpage_quality2_message": "Selle lehekülje õigsuse tõendamisega on probleeme.",
@@ -44,6 +49,8 @@
 	"proofreadpage_quality4_message": "See lehekülg on heaks kiidetud.",
 	"proofreadpage_index_status": "Olek",
 	"proofreadpage_index_size": "Lehekülgede arv",
+	"proofreadpage_pages_to_validate": "Heakskiitmist ootavate lehekülgede arv",
+	"proofreadpage_pages_to_proofread_or_validate": "Õiguse tõendamist või heakskiitmist ootavate lehekülgede arv",
 	"proofreadpage_specialpage_label_orderby": "Järjestusalus:",
 	"proofreadpage_specialpage_label_key": "Otsitav:",
 	"proofreadpage_specialpage_label_sortascending": "Järjesta tõusvalt",
@@ -79,5 +86,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Leheküljed",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Registri \"$1\" kasutamine mallina",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jah",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrektuuri olek",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektuuri olek"
 }
