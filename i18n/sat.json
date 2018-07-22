@@ -4,7 +4,8 @@
 			"Albinus",
 			"Ramjit Tudu",
 			"Manik Soren",
-			"Fagunkoyel Hansdah"
+			"Fagunkoyel Hansdah",
+			"R Ashwani Banjan Murmu"
 		]
 	},
 	"nstab-page": "ᱥᱟᱦᱴᱟ",
@@ -51,6 +52,8 @@
 	"proofreadpage_quality4_message": "ᱱᱚᱭᱟ ᱥᱟᱦᱟᱴᱟ ᱫᱟ ᱡᱟᱹᱪᱟᱹᱭ ᱦᱩᱭᱠᱟᱱᱟ",
 	"proofreadpage_index_status": "ᱩᱱᱩᱫᱩᱜ ᱥᱛᱷᱤᱛᱤ",
 	"proofreadpage_index_size": "ᱥᱟᱦᱴᱟ ᱨᱮᱱᱟᱜ ᱮᱞ",
+	"proofreadpage_pages_to_validate": "ᱱᱤᱱᱟᱝ ᱮᱞ ᱥᱟᱦᱴᱟ ᱥᱤᱫ ᱦᱩᱭᱩᱜᱼᱟ",
+	"proofreadpage_pages_to_proofread_or_validate": "ᱱᱤᱱᱟᱹᱜ ᱜᱚᱴᱟᱜᱝ ᱥᱟᱦᱴᱟ ᱥᱩᱦᱤᱛ ᱦᱩᱭᱩᱜᱼᱟ",
 	"proofreadpage_specialpage_label_orderby": "ᱥᱟᱡᱟᱣ ᱠᱮᱫᱟᱭ :",
 	"proofreadpage_specialpage_label_key": "ᱥᱮᱸᱫᱽᱨᱟ:",
 	"proofreadpage_specialpage_label_sortascending": "ᱥᱟᱢᱴᱟᱣ ᱛᱮ",
