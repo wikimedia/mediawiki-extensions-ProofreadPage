@@ -57,6 +57,7 @@
 	"proofreadpage_index_status": "Stato avanzamento",
 	"proofreadpage_index_size": "Numero di pagine",
 	"proofreadpage_pages_to_validate": "Numero di pagine da rileggere",
+	"proofreadpage_pages_to_proofread_or_validate": "Numero di pagine da trascrivere o rileggere",
 	"proofreadpage_specialpage_label_orderby": "Ordina per:",
 	"proofreadpage_specialpage_label_key": "Ricerca:",
 	"proofreadpage_specialpage_label_sortascending": "Ordinamento crescente",
