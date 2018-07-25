@@ -31,7 +31,7 @@
 	font-weight: bold;
 	overflow: visible;
 	height: auto;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #c8ccd1;
 }
 
 .ve-init-mw-proofreadPagePageTarget .ve-ce-sectionNode:not( :last-child ) {
