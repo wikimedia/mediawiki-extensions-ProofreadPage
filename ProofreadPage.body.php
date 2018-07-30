@@ -161,15 +161,11 @@ class ProofreadPage {
 	 * Hook function
 	 * @param array $pageIds Prefixed DB keys of the pages linked to, indexed by page_id
 	 * @param array &$colours CSS classes, indexed by prefixed DB keys
+	 * @param Title $title Title of the page being parsed, on which the links will be shown
 	 * @return bool
 	 */
-	public static function onGetLinkColours( $pageIds, &$colours ) {
-		global $wgTitle;
-		if ( !isset( $wgTitle ) ) {
-			return true;
-		}
-
-		$inIndexNamespace = $wgTitle->inNamespace( self::getIndexNamespaceId() );
+	public static function onGetLinkColours( $pageIds, &$colours, Title $title ) {
+		$inIndexNamespace = $title->inNamespace( self::getIndexNamespaceId() );
 		$pageQualityLevelLookup = Context::getDefaultContext()->getPageQualityLevelLookup();
 
 		$pageTitles = array_map( function ( $prefixedDbKey ) {
