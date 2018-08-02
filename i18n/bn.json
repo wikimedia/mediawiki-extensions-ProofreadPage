@@ -55,6 +55,7 @@
 	"proofreadpage_index_status": "নির্ঘণ্টের অবস্থা",
 	"proofreadpage_index_size": "পাতার সংখ্যা",
 	"proofreadpage_pages_to_validate": "বৈধকরণ প্রয়োজন এমন পাতার সংখ্যা",
+	"proofreadpage_pages_to_proofread_or_validate": "মুদ্রণ সংশোধন ও বৈধকরণ প্রয়োজন এমন পাতার সংখ্যা",
 	"proofreadpage_specialpage_label_orderby": "সাজান",
 	"proofreadpage_specialpage_label_key": "অনুসন্ধান:",
 	"proofreadpage_specialpage_label_sortascending": "বর্ণানুক্রমে সাজান",
