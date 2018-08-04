@@ -231,8 +231,8 @@ class SpecialProofreadPages extends QueryPage {
 				htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
 		$plink = $this->isCached()
-			? Linker::link( $title, htmlspecialchars( $title->getText() ) )
-			: Linker::linkKnown( $title, htmlspecialchars( $title->getText() ) );
+			? $this->getLinkRenderer()->makeLink( $title, $title->getText() )
+			: $this->getLinkRenderer()->makeKnownLink( $title, $title->getText() );
 
 		if ( !$title->exists() ) {
 			return "<del>{$plink}</del>";

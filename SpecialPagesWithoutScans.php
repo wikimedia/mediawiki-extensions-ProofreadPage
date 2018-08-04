@@ -136,13 +136,16 @@ class SpecialPagesWithoutScans extends QueryPage {
 			return '<!-- Invalid title ' .
 				htmlspecialchars( "{$result->namespace}:{$result->title}" ) . '-->';
 		}
-		$hlink = Linker::linkKnown(
+		$linkRenderer = $this->getLinkRenderer();
+		$hlink = $linkRenderer->makeKnownLink(
 			$title,
-			$this->msg( 'hist' )->escaped(),
+			$this->msg( 'hist' )->text(),
 			[],
 			[ 'action' => 'history' ]
 		);
-		$plink = $this->isCached() ? Linker::link( $title ) : Linker::linkKnown( $title );
+		$plink = $this->isCached()
+			? $linkRenderer->makeLink( $title )
+			: $linkRenderer->makeKnownLink( $title );
 		$size = $this->msg( 'nbytes', $result->value )->escaped();
 
 		return $title->exists()
