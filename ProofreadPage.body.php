@@ -520,10 +520,13 @@ class ProofreadPage {
 
 		if ( $indextitle ) {
 			$nt = Title::makeTitleSafe( $indexNamespaceId, $indextitle );
-			$indexlink = Linker::link( $nt, $out->msg( 'proofreadpage_source' )->text(),
-						[ 'title' => $out->msg( 'proofreadpage_source_message' )->text() ] );
-			$out->addJsConfigVars( 'proofreadpage_source_href', $indexlink );
-			$out->addModules( 'ext.proofreadpage.article' );
+			if ( $nt !== null ) {
+				$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+				$indexlink = $linkRenderer->makeLink( $nt, $out->msg( 'proofreadpage_source' )->text(),
+					[ 'title' => $out->msg( 'proofreadpage_source_message' )->text() ] );
+				$out->addJsConfigVars( 'proofreadpage_source_href', $indexlink );
+				$out->addModules( 'ext.proofreadpage.article' );
+			}
 		}
 
 		$q0 = $n0 * 100 / $n;
