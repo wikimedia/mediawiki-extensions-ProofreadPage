@@ -49,6 +49,8 @@
 	"proofreadpage_quality4_message": "Esta páxina ta validada",
 	"proofreadpage_index_status": "Estáu del índiz",
 	"proofreadpage_index_size": "Númberu de páxines",
+	"proofreadpage_pages_to_validate": "Númberu de páxines a validar",
+	"proofreadpage_pages_to_proofread_or_validate": "Númberu de páxines a correxir o validar",
 	"proofreadpage_specialpage_label_orderby": "Ordenar por:",
 	"proofreadpage_specialpage_label_key": "Guetar:",
 	"proofreadpage_specialpage_label_sortascending": "Orde ascendente",
