@@ -3,7 +3,6 @@
 namespace ProofreadPage\Page;
 
 use ContentHandler;
-use FormatJson;
 use MWContentSerializationException;
 use ProofreadPageTestCase;
 use Title;
@@ -133,7 +132,15 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 				'<noinclude><pagequality level="2" user="Woot"></pagequality>Experimental header' .
 					"\n" .
 					'</noinclude>Experimental body<noinclude>Experimental footer</div></noinclude>'
-			]
+			],
+			[
+				'',
+				'123',
+				'',
+				1,
+				null,
+				'123'
+			],
 		];
 	}
 
@@ -183,7 +190,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$pageContent = self::newContent( 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4' );
 
 		$this->assertEquals(
-			FormatJson::encode( [
+			json_encode( [
 				'header' => 'Foo',
 				'body' => 'Bar',
 				'footer' => 'FooBar',
@@ -198,7 +205,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 	public function pageJsonSerializationProvider() {
 		return [
-			[ 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4', FormatJson::encode( [
+			[ 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4', json_encode( [
 				'header' => 'Foo',
 				'body' => 'Bar',
 				'footer' => 'FooBar',
@@ -207,7 +214,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 					'user' => '1.2.3.4'
 				]
 			] ) ],
-			[ 'Foo', 'Bar', 'FooBar', 2, null, FormatJson::encode( [
+			[ 'Foo', 'Bar', 'FooBar', 2, null, json_encode( [
 				'header' => 'Foo',
 				'body' => 'Bar',
 				'footer' => 'FooBar',
@@ -233,23 +240,24 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public function badPageJsonSerializationProvider() {
 		return [
 			[ '' ],
+			[ '124' ],
 			[ '{}' ],
-			[ FormatJson::encode( [
+			[ json_encode( [
 				'body' => 'Bar',
 				'footer' => 'FooBar',
 				'level' => [ 'level' => 2 ]
 			] ) ],
-			[ FormatJson::encode( [
+			[ json_encode( [
 				'header' => 'Foo',
 				'footer' => 'FooBar',
 				'level' => [ 'level' => 2 ]
 			] ) ],
-			[ FormatJson::encode( [
+			[ json_encode( [
 				'header' => 'Foo',
 				'body' => 'Bar',
 				'level' => [ 'level' => 2 ]
 			] ) ],
-			[ FormatJson::encode( [
+			[ json_encode( [
 				'header' => 'Foo',
 				'body' => 'Bar',
 				'footer' => 'FooBar'

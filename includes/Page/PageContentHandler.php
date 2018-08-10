@@ -4,7 +4,6 @@ namespace ProofreadPage\Page;
 
 use Content;
 use ContentHandler;
-use FormatJson;
 use MWContentSerializationException;
 use MWException;
 use ProofreadPage\Context;
@@ -62,7 +61,7 @@ class PageContentHandler extends TextContentHandler {
 	private function serializeContentInJson( PageContent $content ) {
 		$level = $content->getLevel();
 
-		return FormatJson::encode( [
+		return json_encode( [
 			'header' => $content->getHeader()->serialize(),
 			'body' => $content->getBody()->serialize(),
 			'footer' => $content->getFooter()->serialize(),
@@ -98,9 +97,7 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		if ( $format === null ) {
-			$format = ( FormatJson::decode( $text, true ) === null )
-				? CONTENT_FORMAT_WIKITEXT
-				: CONTENT_FORMAT_JSON;
+			$format = $this->guessFormat( $text );
 		}
 
 		switch ( $format ) {
@@ -115,15 +112,21 @@ class PageContentHandler extends TextContentHandler {
 		}
 	}
 
+	private function guessFormat( $text ) {
+		return is_array( json_decode( $text, true ) )
+			? CONTENT_FORMAT_JSON
+			: CONTENT_FORMAT_WIKITEXT;
+	}
+
 	/**
 	 * @param string $text
 	 * @return PageContent
 	 * @throws MWContentSerializationException
 	 */
 	private function unserializeContentInJson( $text ) {
-		$array = FormatJson::decode( $text, true );
+		$array = json_decode( $text, true );
 
-		if ( $array === null || !is_array( $array ) ) {
+		if ( !is_array( $array ) ) {
 			throw new MWContentSerializationException(
 				'The serialization is an invalid JSON array.'
 			);
