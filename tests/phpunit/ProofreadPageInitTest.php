@@ -4,6 +4,10 @@ namespace ProofreadPage;
 
 use ProofreadPageTestCase;
 
+/**
+ * @group ProofreadPage
+ * @covers \ProofreadPage\ProofreadPageInit
+ */
 class ProofreadPageInitTest extends ProofreadPageTestCase {
 
 	/**
