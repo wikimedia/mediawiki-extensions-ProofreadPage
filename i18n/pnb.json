@@ -1,13 +1,32 @@
 {
 	"@metadata": {
 		"authors": [
-			"Khalid Mahmood"
+			"Khalid Mahmood",
+			"Satdeep gill"
 		]
 	},
+	"nstab-page": "صفہ",
+	"nstab-index": "انڈیکس",
+	"tooltip-ca-nstab-page": "کتاب دا صفہ ویکھو",
+	"tooltip-ca-nstab-index": "کتاب دا انڈیکس ویکھو",
+	"proofreadpage_image": "تصویر",
+	"proofreadpage_index": "انڈیکس",
+	"proofreadpage_nextpage": "اگلا صفہ",
+	"proofreadpage_prevpage": "پچھلا صفہ",
 	"proofreadpage_quality0_category": "لکھت بغیر",
 	"proofreadpage_quality1_category": "ایہنوں ہجے پڑھیا نہیں گیا",
 	"proofreadpage_quality2_category": "رپھڑی",
 	"proofreadpage_quality3_category": "پڑھے گۓ",
 	"proofreadpage_quality4_category": "منظور",
-	"proofreadpage_quality1_message": "ایہ صفہ ہجے پڑھیا نہیں گیا۔"
+	"proofreadpage_quality0_summary": "لکھت بغیر",
+	"proofreadpage_quality3_summary": "پروف ریڈ",
+	"proofreadpage_quality4_summary": "منظور",
+	"proofreadpage_quality1_message": "ایہ صفہ ہجے پڑھیا نہیں گیا۔",
+	"proofreadpage_index_listofpages": "صفیاں دی لسٹ",
+	"proofreadpage_source": "سورس",
+	"content-model-proofread-page": "کتاب صفحہ",
+	"content-model-proofread-index": "کتاب انڈیکس",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "صفحے",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ہاں",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نئیں"
 }
