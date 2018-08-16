@@ -196,7 +196,7 @@ class PageContentTest extends ProofreadPageTestCase {
 			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
 		);
 
-		$this->assertEquals( $expectedContent, $content );
+		$this->assertTrue( $content->equals( $expectedContent ) );
 	}
 
 	public function preloadTransformProvider() {

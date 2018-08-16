@@ -94,7 +94,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
 		);
 
-		$this->assertEquals( $originalContent, $content );
+		$this->assertTrue( $content->equals( $originalContent ) );
 	}
 
 	public function testPreloadTransform() {
