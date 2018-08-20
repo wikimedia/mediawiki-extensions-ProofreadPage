@@ -18,7 +18,7 @@ ve.ui.MWPagequalityInspectorTool.static.name = 'pagequality';
 
 ve.ui.MWPagequalityInspectorTool.static.autoAddToCatchall = false;
 
-ve.ui.MWPagequalityInspectorTool.static.icon = 'clip';
+ve.ui.MWPagequalityInspectorTool.static.icon = 'bookmarkOutline';
 
 ve.ui.MWPagequalityInspectorTool.static.title = OO.ui.deferMsg( 'proofreadpage-visualeditor-node-pagequality-inspector-tooltip' );
 
