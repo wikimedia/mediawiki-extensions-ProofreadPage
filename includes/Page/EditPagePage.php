@@ -110,6 +110,10 @@ class EditPagePage extends EditPage {
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
+		$out->addJsConfigVars( [
+			'prpPageQualityUser' =>
+				$content->getLevel()->getUser() ? $content->getLevel()->getUser()->getName() : null
+		] );
 	}
 
 	/**
