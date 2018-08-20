@@ -29,6 +29,7 @@ class ProofreadPageDbConnector {
 	 * @param array $query
 	 * @param string $cat
 	 * @return int
+	 * @suppress SecurityCheck-SQLInjection See T201806 for more information
 	 */
 	public static function queryCount( $query, $cat ) {
 		$dbr = wfGetDB( DB_REPLICA );

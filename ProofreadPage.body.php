@@ -447,6 +447,7 @@ class ProofreadPage {
 	 *
 	 * @param OutputPage $out
 	 * @return bool
+	 * @suppress SecurityCheck-SQLInjection See T201806 for more information
 	 */
 	private static function prepareArticle( OutputPage $out ) {
 		$id = $out->getTitle()->getArticleID();
