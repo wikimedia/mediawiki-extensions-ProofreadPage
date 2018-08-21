@@ -78,7 +78,7 @@ class SpecialProofreadPages extends QueryPage {
 					);
 				} else {
 					$this->searchList = [];
-					while ( $result = $textMatches->next() ) {
+					foreach ( $textMatches as $result ) {
 						$title = $result->getTitle();
 						if ( $title->inNamespace( $indexNamespaceId ) ) {
 							array_push( $this->searchList, $title->getDBkey() );
