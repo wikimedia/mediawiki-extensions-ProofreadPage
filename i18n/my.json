@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"Dr Lotus Black"
 		]
 	},
 	"nstab-page": "စာမျက်နှာ",
@@ -27,5 +28,6 @@
 	"proofreadpage-group-other": "အခြား",
 	"proofreadpage-button-reset-zoom-label": "မူလအရွယ်",
 	"proofreadpage-button-zoom-in-label": "အကျယ်ချဲ့ရန်",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "စာမျက်နှာများ"
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "စာမျက်နှာများ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "လုပ်မည်"
 }
