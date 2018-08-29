@@ -278,10 +278,15 @@
 			'register',
 			{
 				getContents: function () {
-					var level = +$( 'input[name=wpQuality][checked]' ).val();
+					var
+						// "[checked]" selector refers to the original state (the HTML attribute).
+						origLevel = +$( 'input[name=wpQuality][checked]' ).val(),
+						// ":checked" selector refers to the current state (the DOM property).
+						level = +$( 'input[name=wpQuality]:checked' ).val(),
+						origUser = mw.config.get( 'prpPageQualityUser' ),
+						user = ( origLevel === level ? origUser : mw.config.get( 'wgUserName' ) ) || '';
 					return '<noinclude>' +
-						// The user attribute is populated later
-						( !isNaN( level ) ? '<pagequality level="' + level + '" user="" />' : '' ) +
+						( !isNaN( level ) ? '<pagequality level="' + level + '" user="' + user + '" />' : '' ) +
 						$( '#wpHeaderTextbox' ).val() +
 					'</noinclude>' +
 					$( this ).val() +
