@@ -6,6 +6,8 @@
 			"Yyy"
 		]
 	},
+	"nstab-page": "Lapa",
+	"nstab-index": "Saturs",
 	"proofreadpage_image": "Attēls",
 	"proofreadpage_index": "Saturs",
 	"proofreadpage_nextpage": "Nākamā lapa",
@@ -20,5 +22,7 @@
 	"proofreadpage_page_status": "Lapas statuss",
 	"proofreadpage_js_attributes": "Autors Nosaukums Gads Izdevējs",
 	"proofreadpage_index_attributes": "Autors\nNosaukums\nGads|Publikācijas gads\nIzdevējs\nAvots\nAttēls|Vāka attēls\nLapas||20\nPiezīmes||10",
-	"proofreadpage_source": "Avots"
+	"proofreadpage_source": "Avots",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jā",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nē"
 }
