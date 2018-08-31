@@ -101,7 +101,7 @@ class SpecialProofreadPages extends QueryPage {
 		}
 		if ( $this->suppressSqlOffset ) {
 			// Bug #27678: Do not use offset here, because it was already used in
-			// search perfomed by execute method
+			// search performed by execute method
 			return parent::reallyDoQuery( $limit, false );
 		}
 		return parent::reallyDoQuery( $limit, $offset );
