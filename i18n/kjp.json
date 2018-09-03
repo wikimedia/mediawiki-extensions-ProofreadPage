@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rul1902"
+		]
+	},
+	"nstab-page": "လိက်မေံ",
+	"nstab-index": "ပ်ုယုံ့ခေါဟ်တင်",
+	"tooltip-ca-nstab-page": "လိက်အုဂ် လိက်မေံမ်ုယောဝ်ႋ",
+	"tooltip-ca-nstab-index": "မ်ုယောဝ်ႋ လိက်အုဂ်ပ်ုယုံ့ခေါဟ်တင်",
+	"indexpages": "ပ်ုယုံ့ခေါဟ်တင် လိက်မေံသယ်",
+	"pageswithoutscans": "ၮ်ုလိက်မေံ အွးလင်ထါ့အေ့",
+	"proofreadpage_image": "ၯင်",
+	"proofreadpage_index": "ပ်ုယုံ့ခေါဟ်တင်",
+	"proofreadpage_nologin": "အွးလင်ထါ့အေ့",
+	"proofreadpage_quality3_category": "ပရုဖ်ဖတ်",
+	"content-model-proofread-page": "လိက်အုဂ်မေံ",
+	"content-model-proofread-index": "လိက်အုဂ် ပ်ုယုံ့ခေါဟ်တင်",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "ပ်ုကုံးထါ့ လက်မေံသး",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "လိက်မေံသးသယ်",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "မွာဲ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "မွာဲအေး"
+}
