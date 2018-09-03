@@ -62,7 +62,7 @@ class DiffFormatterUtils {
 	 */
 	protected function createLineWrapper( $line, $class, $marker ) {
 		return Html::element( 'td', [ 'class' => 'diff-marker' ], $marker ) .
-			Html::openElement( 'td', [ 'class' => $class ] ).
+			Html::openElement( 'td', [ 'class' => $class ] ) .
 			Html::rawElement( 'div', [], $line ) .
 			Html::closeElement( 'td' );
 	}

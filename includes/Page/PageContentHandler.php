@@ -80,8 +80,8 @@ class PageContentHandler extends TextContentHandler {
 		$level = $content->getLevel();
 		$userName = $level->getUser() instanceof User ? $level->getUser()->getName() : '';
 		$text =
-			'<noinclude>'.
-				'<pagequality level="' . $level->getLevel() . '" user="' . $userName .'" />' .
+			'<noinclude>' .
+				'<pagequality level="' . $level->getLevel() . '" user="' . $userName . '" />' .
 				$content->getHeader()->serialize() .
 			'</noinclude>' .
 			$content->getBody()->serialize() .

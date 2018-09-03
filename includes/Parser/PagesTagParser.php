@@ -225,7 +225,7 @@ class PagesTagParser {
 					if ( $to_page !== null && $page->equals( $to_page ) && $tosection !== null ) {
 						$ts = $tosection;
 					}
-					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts .'}}';
+					$out .= '{{#lst:' . $text . '|' . $fromsection . '|' . $ts . '}}';
 				} elseif ( $to_page !== null && $page->equals( $to_page ) && $tosection !== null ) {
 					$out .= '{{#lst:' . $text . '||' . $tosection . '}}';
 				} elseif ( $onlysection !== null ) {

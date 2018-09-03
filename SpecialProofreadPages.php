@@ -160,7 +160,7 @@ class SpecialProofreadPages extends QueryPage {
 			Html::openElement( 'p' ) .
 			Html::element( 'label', [ 'for' => 'key' ],
 				$this->msg( 'proofreadpage_specialpage_label_key' )->text()
-			)  . ' ' .
+			) . ' ' .
 			Html::input( 'key', $this->searchTerm, 'search', [ 'id' => 'key', 'size' => '50' ] ) .
 			Html::closeElement( 'p' ) .
 			Html::openElement( 'p' ) .
