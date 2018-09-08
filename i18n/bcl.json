@@ -6,7 +6,9 @@
 		]
 	},
 	"proofreadpage_quality0_category": "Mayong teksto",
+	"proofreadpage_quality1_category": "Dae patotoong-basa",
 	"proofreadpage_quality2_category": "Problemado",
 	"proofreadpage_quality3_category": "Pangkarhay na pagbasa",
-	"proofreadpage_quality4_category": "Pigbalido"
+	"proofreadpage_quality4_category": "Pigbalido",
+	"proofreadpage_quality1_message": "Dae pa napatotoong-basa an pahina na ini"
 }
