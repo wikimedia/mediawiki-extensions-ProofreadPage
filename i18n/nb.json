@@ -54,6 +54,8 @@
 	"proofreadpage_quality4_message": "Denne siden er godkjent",
 	"proofreadpage_index_status": "Indekseringsstatus",
 	"proofreadpage_index_size": "Antall sider",
+	"proofreadpage_pages_to_validate": "Antall sider som skal valideres",
+	"proofreadpage_pages_to_proofread_or_validate": "Antall sider som skal korrekturleses eller valideres",
 	"proofreadpage_specialpage_label_orderby": "Sorter etter:",
 	"proofreadpage_specialpage_label_key": "Søk:",
 	"proofreadpage_specialpage_label_sortascending": "Sorter stigende",
