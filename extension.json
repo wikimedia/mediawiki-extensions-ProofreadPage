@@ -94,7 +94,8 @@
 				"user.options",
 				"jquery.textSelection",
 				"ext.proofreadpage.icons",
-				"ext.proofreadpage.ve.pageTarget.init"
+				"ext.proofreadpage.ve.pageTarget.init",
+				"oojs-ui.styles.icons-media"
 			],
 			"messages": [
 				"proofreadpage_quality0_category",
@@ -157,12 +158,6 @@
 				}
 			},
 			"images": {
-				"zoomIn": {
-					"file": "page/images/zoomIn.svg"
-				},
-				"zoomOut": {
-					"file": "page/images/zoomOut.svg"
-				},
 				"zoomReset": {
 					"file": "page/images/zoomReset.svg"
 				},
@@ -222,6 +217,7 @@
 				"ext.visualEditor.mwcore",
 				"ext.visualEditor.desktopArticleTarget",
 				"oojs-ui.styles.icons-moderation",
+				"oojs-ui.styles.icons-media",
 				"jquery.prpZoom",
 				"ext.proofreadpage.icons"
 			],
