@@ -68,6 +68,7 @@
 	"proofreadpage_source": "Источник",
 	"proofreadpage_source_message": "Для создания электронной версии текста использовались отсканированные материалы",
 	"right-pagequality": "изменять флаг качества страницы",
+	"right-pagequality-admin": "неограниченные изменения флага качества страницы",
 	"proofreadpage-section-tools": "Инструменты корректора",
 	"proofreadpage-group-zoom": "Увеличение",
 	"proofreadpage-group-other": "Иное",
