@@ -52,6 +52,8 @@
 	"proofreadpage_quality4_message": "Chesta paggena è stata cunvalidata",
 	"proofreadpage_index_status": "Stato avanzzamiento",
 	"proofreadpage_index_size": "Nummero 'e ppaggene",
+	"proofreadpage_pages_to_validate": "Nummere 'e paggene a cuntrullà",
+	"proofreadpage_pages_to_proofread_or_validate": "Nummere 'e paggena a lieggere o cuntrullà",
 	"proofreadpage_specialpage_label_orderby": "Ordina ppe:",
 	"proofreadpage_specialpage_label_key": "Circa:",
 	"proofreadpage_specialpage_label_sortascending": "Ordinamento crescente",
