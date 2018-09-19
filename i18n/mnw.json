@@ -1,13 +1,36 @@
 {
 	"@metadata": {
 		"authors": [
-			"Htawmonzel"
+			"Htawmonzel",
+			"Aue Nai"
 		]
 	},
+	"nstab-page": "မုက်လိက်",
+	"nstab-index": "စၞောန်",
+	"tooltip-ca-nstab-page": "ဗဵု မုက်လိက်",
+	"tooltip-ca-nstab-index": "ဗဵု စၞောန်လိက်အုပ်",
+	"indexpages": "စရၚ် စၞောန်မုက်လိက်ဂမၠိုၚ်",
+	"pageswithoutscans": "မုက်လိက် ဟွံဗှ်scans",
+	"proofreadpage_image": "သၞိၚ်ရုပ်",
+	"proofreadpage_index": "စၞောန်",
+	"proofreadpage_nologin": "ဟွံ လုပ်လံက်အေန်လဝ်",
+	"proofreadpage_nextpage": "မုက်လိက် ဂတ",
+	"proofreadpage_prevpage": "မုက်လိက် ကြဴ",
 	"proofreadpage_quality0_category": "သက္ကု မလိက်",
 	"proofreadpage_quality1_category": "ဟွံဂွံ ဗွဟ်မပဒတန်",
 	"proofreadpage_quality2_category": "မဝါတ်ဂါတ်",
 	"proofreadpage_quality3_category": "ဗွဟ်မပဒတန်",
 	"proofreadpage_quality4_category": "မပစၟတ်သမ္တီတုဲ",
-	"proofreadpage_quality1_message": "မုက်လိက်ဏအ် ဟွံဂွံ ဗွဟ်မပဒတန်ဏီ"
+	"proofreadpage_quality1_message": "မုက်လိက်ဏအ် ဟွံဂွံ ဗွဟ်မပဒတန်ဏီ",
+	"proofreadpage_index_status": "ကဆံၚ် စၞောန်",
+	"proofreadpage_index_size": "လၟိုဟ်မုက်လိက်ဂမၠိုၚ်",
+	"proofreadpage_specialpage_label_key": "ဂၠာဲ:",
+	"proofreadpage_index_listofpages": "စရၚ်မုက်လိက်ဂမၠိုၚ်",
+	"proofreadpage_page_status": "ကဆံၚ် မုက်လိက်",
+	"proofreadpage_source": "တမ်ရိုဟ်",
+	"proofreadpage-group-other": "တၞဟ်",
+	"proofreadpage-button-reset-zoom-label": "အဝဲ တမ်မူလ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "မုက်လိက်ဂမၠိုင်",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ယွံ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ဟအှ်ေ"
 }
