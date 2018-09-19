@@ -330,7 +330,11 @@
 		"@ProofreadPageNamespaceIds": "Array that contain the ids of namespaces used by ProofreadPage",
 		"ProofreadPageNamespaceIds": [],
 		"@ProofreadPagePageSeparator": "The separator between transcluded pages",
-		"ProofreadPagePageSeparator": "&#32;"
+		"ProofreadPagePageSeparator": "&#32;",
+		"@ProofreadPagePageJoiner": "A character which causes words split over different pages to be joined",
+		"ProofreadPagePageJoiner": "-",
+		"@ProofreadPagePageSeparatorPlaceholder": "Placeholder to mark the position of the page separator",
+		"ProofreadPagePageSeparatorPlaceholder": "__PAGESEPARATOR__"
 	},
 	"callback": "ProofreadPage::onRegister",
 	"load_composer_autoloader": true,

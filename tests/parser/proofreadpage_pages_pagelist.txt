@@ -60,6 +60,17 @@ Index:LoremIpsum.djvu
 !!endarticle
 
 !!article
+Index:TestSep
+!!text
+{{:MediaWiki:Proofreadpage_index_template
+|Title=Title
+|Pages=[[Page:TestSep 1.jpg|1]] [[Page:TestSep 2.jpg|2]] [[Page:TestSep 3.jpg|3]] [[Page:TestSep 4.jpg|4]]
+|Author=[[Author:Me]]
+|TOC=
+}}
+!!endarticle
+
+!!article
 Page:Test 1.jpg
 !!text
 Test 1
@@ -103,6 +114,30 @@ Page 3
 Page:LoremIpsum.djvu/4
 !!text
 Page 4
+!!endarticle
+
+!!article
+Page:TestSep 1.jpg
+!!text
+The first page must be connect-
+!!endarticle
+
+!!article
+Page:TestSep 2.jpg
+!!text
+ed with the second
+!!endarticle
+
+!!article
+Page:TestSep 3.jpg
+!!text
+but the third and
+!!endarticle
+
+!!article
+Page:TestSep 4.jpg
+!!text
+the fourth does not.
 !!endarticle
 
 !!article
@@ -679,6 +714,20 @@ title="Test/Chapter 2"
 II -- 1
 <a href="/wiki/Test/Chapter_1" title="Test/Chapter 1">Test/Chapter 1</a> -- <a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a><span><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1" title="Page:LoremIpsum.djvu/2">II</a></span>
 </p><p>Page 2&#32;<span><a href="/wiki/Page:LoremIpsum.djvu/3" class="prp-pagequality-1" title="Page:LoremIpsum.djvu/3">1</a></span>Page 3&#32;
+</p>
+</div>
+
+!! end
+
+!! test
+pages: with hyphenated word across pages
+!! options
+djvu
+!! wikitext
+<pages index="TestSep" from="TestSep 1.jpg" to="TestSep 4.jpg" />
+!! html
+<div>
+<p><span><a href="/wiki/Page:TestSep_1.jpg" class="prp-pagequality-1" title="Page:TestSep 1.jpg">1</a></span>The first page must be connect<span><a href="/wiki/Page:TestSep_2.jpg" class="prp-pagequality-1" title="Page:TestSep 2.jpg">2</a></span>ed with the second&#32;<span><a href="/wiki/Page:TestSep_3.jpg" class="prp-pagequality-1" title="Page:TestSep 3.jpg">3</a></span>but the third and&#32;<span><a href="/wiki/Page:TestSep_4.jpg" class="prp-pagequality-1" title="Page:TestSep 4.jpg">4</a></span>the fourth does not.&#32;
 </p>
 </div>
 

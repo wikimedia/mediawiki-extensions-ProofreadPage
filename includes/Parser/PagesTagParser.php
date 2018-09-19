@@ -88,6 +88,10 @@ class PagesTagParser {
 		);
 		$out = '';
 
+		$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
+		$joiner = $this->context->getConfig()->get( 'ProofreadPagePageJoiner' );
+		$placeholder = $this->context->getConfig()->get( 'ProofreadPagePageSeparatorPlaceholder' );
+
 		if ( $from || $to || $include ) {
 			$pages = [];
 
@@ -207,8 +211,6 @@ class PagesTagParser {
 				return $item[0];
 			}, $pages ) );
 
-			$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
-
 			// write the output
 			foreach ( $pages as list( $page, $pageNumber ) ) {
 				$pagenum = $pageNumber->getRawPageNumber( $language );
@@ -234,7 +236,7 @@ class PagesTagParser {
 					$out .= '{{:' . $text . '}}';
 				}
 				if ( $qualityLevel !== PageLevel::WITHOUT_TEXT ) {
-					$out .= $separator;
+					$out .= $placeholder;
 				}
 			}
 		} else {
@@ -324,6 +326,11 @@ class PagesTagParser {
 		$out = "<div>\n$out\n</div>";
 		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );
+
+		// remove separator after the word-joiner character
+		$out = str_replace( $joiner . $placeholder, '', $out );
+		$out = str_replace( $placeholder, $separator, $out );
+
 		$this->parser->proofreadRenderingPages = false;
 		return $out;
 	}
