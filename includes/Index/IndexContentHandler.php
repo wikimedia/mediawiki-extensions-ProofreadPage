@@ -4,6 +4,7 @@ namespace ProofreadPage\Index;
 
 use Content;
 use ContentHandler;
+use IContextSource;
 use MWContentSerializationException;
 use Parser;
 use ParserOptions;
@@ -140,8 +141,12 @@ class IndexContentHandler extends TextContentHandler {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getDiffEngineClass() {
-		return IndexDifferenceEngine::class;
+	protected function getSlotDiffRendererInternal( IContextSource $context ) {
+		return new IndexSlotDiffRenderer(
+			$context,
+			Context::getDefaultContext()->getCustomIndexFieldsParser(),
+			$this->wikitextContentHandler->getSlotDiffRenderer( $context )
+		);
 	}
 
 	/**
