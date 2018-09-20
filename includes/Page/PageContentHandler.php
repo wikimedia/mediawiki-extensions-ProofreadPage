@@ -4,6 +4,7 @@ namespace ProofreadPage\Page;
 
 use Content;
 use ContentHandler;
+use IContextSource;
 use MWContentSerializationException;
 use MWException;
 use ProofreadPage\Context;
@@ -252,8 +253,8 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getDiffEngineClass() {
-		return PageDifferenceEngine::class;
+	protected function getSlotDiffRendererInternal( IContextSource $context ) {
+		return new PageSlotDiffRenderer( $context );
 	}
 
 	/**
