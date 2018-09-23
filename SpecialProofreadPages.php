@@ -37,7 +37,7 @@ class SpecialProofreadPages extends QueryPage {
 		$output = $this->getOutput();
 		$request = $this->getRequest();
 		$output->addModules( 'ext.proofreadpage.special.indexpages' );
-		$output->addWikiText(
+		$output->addWikiTextTidy(
 			$this->msg( 'proofreadpage_specialpage_text' )->inContentLanguage()->plain()
 		);
 
