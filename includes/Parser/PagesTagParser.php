@@ -323,7 +323,7 @@ class PagesTagParser {
 		}
 
 		// wrap the output in a div, to prevent the parser from inserting paragraphs
-		$out = "<div>\n$out\n</div>";
+		$out = "<div class=\"prp-pages-output\">\n$out\n</div>";
 		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );
 
