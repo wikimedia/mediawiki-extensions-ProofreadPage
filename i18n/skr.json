@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Saraiki",
-			"محمد جنید حفیظ کھوسہ"
+			"محمد جنید حفیظ کھوسہ",
+			"Rachitrali"
 		]
 	},
 	"nstab-page": "ورقہ",
@@ -17,6 +18,12 @@
 	"proofreadpage_nosuch_file": "خرابی: اینجھی کوئی فائل کائنی",
 	"proofreadpage_indexdupetext": "فہرست صفحے تے ہک کولو زیادہ صفحے نہیں چݨیے ون سگدے",
 	"proofreadpage_nologin": "لاگ ان نہوے تھئے",
+	"proofreadpage_quality0_category": "لکھت بغیر",
+	"proofreadpage_quality1_category": "غیر ترمیم شدہ",
+	"proofreadpage_quality2_category": "رپھڑی",
+	"proofreadpage_quality3_category": "پروف خوانی",
+	"proofreadpage_quality4_category": "منظور",
+	"proofreadpage_quality1_message": "ایں ورقے دی پروف ریڈ کائنی تھئی۔",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "جیا",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "کو"
 }
