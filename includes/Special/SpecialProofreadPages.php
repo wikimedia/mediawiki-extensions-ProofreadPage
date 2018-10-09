@@ -19,6 +19,18 @@
  * @ingroup SpecialPage
  */
 
+namespace ProofreadPage\Special;
+
+use Html;
+use ProofreadPage;
+use QueryPage;
+use RequestContext;
+use SearchEngine;
+use SearchResultSet;
+use Title;
+use XmlSelect;
+use Xml;
+
 class SpecialProofreadPages extends QueryPage {
 	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending, $addOne;
 

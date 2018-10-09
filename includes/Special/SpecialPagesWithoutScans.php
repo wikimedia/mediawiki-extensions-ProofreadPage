@@ -19,6 +19,13 @@
  * @ingroup SpecialPage
  */
 
+namespace ProofreadPage\Special;
+
+use LinkBatch;
+use ProofreadPage;
+use QueryPage;
+use Title;
+
 /**
  * Special page that lists the texts that have no transclusions
  * Pages in MediaWiki:Proofreadpage_notnaked_category are excluded.

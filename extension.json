@@ -25,8 +25,8 @@
 		"pagequality-admin"
 	],
 	"SpecialPages": {
-		"IndexPages": "SpecialProofreadPages",
-		"PagesWithoutScans": "SpecialPagesWithoutScans"
+		"IndexPages": "\\ProofreadPage\\Special\\SpecialProofreadPages",
+		"PagesWithoutScans": "\\ProofreadPage\\Special\\SpecialPagesWithoutScans"
 	},
 	"APIMetaModules": {
 		"proofreadinfo": "\\ProofreadPage\\Api\\ApiQueryProofreadInfo"
@@ -51,8 +51,6 @@
 	},
 	"AutoloadClasses": {
 		"ProofreadPage": "ProofreadPage.body.php",
-		"SpecialProofreadPages": "SpecialProofreadPages.php",
-		"SpecialPagesWithoutScans": "SpecialPagesWithoutScans.php",
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
 		"ProofreadPage\\Page\\IndexForPageLookupMock": "tests/phpunit/Page/IndexForPageLookupMock.php",
 		"ProofreadPage\\Page\\PageQualityLevelLookupMock": "tests/phpunit/Page/PageQualityLevelLookupMock.php",
