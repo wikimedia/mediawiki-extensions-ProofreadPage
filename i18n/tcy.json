@@ -4,11 +4,14 @@
 			"VASANTH S.N.",
 			"Vishwanatha Badikana",
 			"BHARATHESHA ALASANDEMAJALU",
-			"Kiranpoojary"
+			"Kiranpoojary",
+			"Lokesha kunchadka"
 		]
 	},
 	"nstab-page": "ಪುಟೊ",
 	"nstab-index": "ಪರಿವಿಡಿ",
+	"tooltip-ca-nstab-page": "ಸದಸ್ಯೆರ್ನ ಪುಟೊನು ತೂಲೆ",
+	"tooltip-ca-nstab-index": "ಪರಿವಿಡಿ ಇಪ್ಪುನ ಪುಟೊಕುಲು",
 	"indexpages": "ಪರಿವಿಡಿ ಪುಟೊಕುಲೆ ಪಟ್ಟಿ",
 	"pageswithoutscans": "ಪುಟೊದೊಟ್ಟುಗು ಚಿತ್ರ ಉಂಡು",
 	"proofreadpage_desc": "ಮೂಲೊ ಸ್ಕ್ಯಾನ್‍ಡ್ದ್ ಪಟ್ಯೊದ ಹೋಲಿಕೆಗ್ ಸುಲಬೊ ಅವಕಾಸೊ ಕೊರ್ಲೆ",
@@ -37,6 +40,11 @@
 	"proofreadpage_quality2_category": "ಸಮಸ್ಯೆ ಇತ್ತಿನ",
 	"proofreadpage_quality3_category": "ಪರಿಶೀಲನೆ ಮಲ್ಪುಲೆ",
 	"proofreadpage_quality4_category": "ಮಾನ್ಯೊ ಮಲ್ತಿನ",
+	"proofreadpage_quality0_summary": "ಪಟ್ಯೊ ಇಜ್ಜಾಂದೆ",
+	"proofreadpage_quality1_summary": "ಪರಿಶೀಲನೆ ಮಲ್ತಿಜಿ",
+	"proofreadpage_quality2_summary": "ಸಮಸ್ಯೆ ಇತ್ತಿನ",
+	"proofreadpage_quality3_summary": "ಪರಿಶೀಲನೆ ಮಲ್ಪುಲೆ",
+	"proofreadpage_quality4_summary": "ಮಾನ್ಯೊ ಮಲ್ತಿನ",
 	"proofreadpage_quality0_message": "ಈ ಪುಟೊತ ಕರಡಚ್ಚುದ ಅಗತ್ಯೊ ಇದ್ದಿ",
 	"proofreadpage_quality1_message": "ಈ ಪುಟೊದ ಪರಿಶೀಲನೆ ಆತ್‍ಜಿ",
 	"proofreadpage_quality2_message": "ಈ ಪುಟೊನು ಪರಿಶೀಲಿಸನಗ  ದೋಸೊ ತೋಜಿದ್ ಬತ್ತ್‌ಂಡ್",
@@ -44,6 +52,7 @@
 	"proofreadpage_quality4_message": "ಈ ಪುಟೊನು ಪ್ರಕಟಿಸದ್ ಆಂಡ್",
 	"proofreadpage_index_status": "ಪರಿವಿಡಿದ ಸ್ಥಿತಿ",
 	"proofreadpage_index_size": "ಪುಟೊಕುಲೆ ಸಂಕ್ಯೆ",
+	"proofreadpage_pages_to_validate": "ಮಾನ್ಯೊ ಮಾಲ್ತಿನೊ ಪುಟೊಕುಲು",
 	"proofreadpage_specialpage_label_orderby": "ಅದೇಸೊದಂಚ:",
 	"proofreadpage_specialpage_label_key": "ನಾಡ್‍ಲೆ:",
 	"proofreadpage_specialpage_label_sortascending": "ಏರಿಕೆ ಕ್ರಮೊಟ್ಟು ಜೋಡಿಸಾಲ",
@@ -77,7 +86,8 @@
 	"proofreadpage-indexoai-error-schemanotfound-text": "$1ದ ಲಕ್ಸನೊ ಇವರೊ ತೋಜಿದ್ ಬರ್ಪುಜಿ",
 	"proofreadpage-disambiguationspage": "ಟೆಂಪ್ಲೇಟ್:ಸ್ತಿರೊಇದ್ದಿ",
 	"proofreadpage-indexquality-alt": "$1 ಪ್ರಕಟಿಸಯಿನ {{PLURAL:$1|ಪುಟೊ|ಪುಟೊಕುಲು}}, $2 ಕೇವಲೊ ಪರಿಸೀಲಿಸಯಿನ {{PLURAL:$2|ಪುಟೊ|ಪುಟೊಕುಲು}} ಬುಕ್ಕೊ $3 ಪರಿಸೀಲಿಸಯರೆ ಆವಂದಿನ {{PLURAL:$3|ಪುಟೊ|ಪುಟೊಕುಲು}}",
-	"content-model-proofread-page": "ಪುಟೊ: ಪುಟೊ",
+	"content-model-proofread-page": "ಪುಟೊ",
+	"content-model-proofread-index": "ಪುಟೊತ ಪರಿವಿಡಿ",
 	"apihelp-query+proofread-description": "ಇತ್ತೆ ಕೊರ್ತಿನ ಕರಡಚ್ಚು ಪುಟೊತ ಸ್ತಿತಿದ ಬಗೆಟ್ ಮಾಹಿತಿನ್ ಪಿರಕೊರ್ಪುಂಡು",
 	"apihelp-query+proofread-example-1": "ಪುದರ್ದನ ಜಾಗೆದ ೨೫೦ ಪುಟೊಲೆನ ಕರಡಚ್ಚು ಸ್ತಿತಿನ್ ಪಿರಕೊರು",
 	"apihelp-query+proofreadinfo-description": "ವಿಸ್ತರನೆ ಆತಿನ ಕರಡಚ್ಚು ಪುಟೊತ ಸಂರಚನೆದ ಮಾಹಿತಿನ್ ಪಿರಕೊರು.",
@@ -88,5 +98,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ಪುಟಕುಲು",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 ಅಂಚಿಡ್ ಸೇರ್‍ನಂಚ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ಅಂದ್",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ಅತ್ತ್"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ಅತ್ತ್",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ಪರಿಶೀಲನೆ ಮಲ್ತಿನ ಗುಣಮಟ್ಟೊ",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ಪರಿಶೀಲನೆತ  ಗುಣಮಟ್ಟ"
 }
