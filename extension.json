@@ -11,10 +11,6 @@
 	"requires": {
 		"MediaWiki": ">= 1.32.0"
 	},
-	"@GroupPermissions": [
-		"Group allowed to modify pagequality",
-		"Group allowed to use pagequality-admin privilege"
-	],
 	"GroupPermissions": {
 		"user": {
 			"pagequality": true
@@ -308,29 +304,41 @@
 			"ProofreadPage::onSkinMinervaDefaultModules"
 		]
 	},
-	"VisualEditorPluginModules": [
-		"ext.proofreadpage.ve.node.pages"
-	],
-	"VisualEditorAvailableNamespaces": {
-		"Page": true
-	},
-	"VisualEditorAvailableContentModels": {
-		"proofread-page": "proofread-page"
-	},
+	"attributes": {
+		"VisualEditor": {
+			"PluginModules": [
+				"ext.proofreadpage.ve.node.pages"
+			],
+			"AvailableNamespaces": {
+				"Page": true
+			},
+			"AvailableContentModels": {
+				"proofread-page": "proofread-page"
+			}
+		}
+        },
 	"ConfigRegistry": {
 		"proofreadpage": "GlobalVarConfig::newInstance"
 	},
 	"config": {
-		"@ProofreadPageNamespaceIds": "Array that contain the ids of namespaces used by ProofreadPage",
-		"ProofreadPageNamespaceIds": [],
-		"@ProofreadPagePageSeparator": "The separator between transcluded pages",
-		"ProofreadPagePageSeparator": "&#32;",
-		"@ProofreadPagePageJoiner": "A character which causes words split over different pages to be joined",
-		"ProofreadPagePageJoiner": "-",
-		"@ProofreadPagePageSeparatorPlaceholder": "Placeholder to mark the position of the page separator",
-		"ProofreadPagePageSeparatorPlaceholder": "__PAGESEPARATOR__"
+		"ProofreadPageNamespaceIds": {
+			"value": [],
+			"description": "Array that contain the ids of namespaces used by ProofreadPage"
+		},
+		"ProofreadPagePageSeparator": {
+			"value": "&#32;",
+			"description": "The separator between transcluded pages"
+		},
+		"ProofreadPagePageJoiner": {
+			"value": "-",
+			"description": "A character which causes words split over different pages to be joined"
+		},
+		"ProofreadPagePageSeparatorPlaceholder": {
+			"value": "__PAGESEPARATOR__",
+			"description": "Placeholder to mark the position of the page separator"
+		}
 	},
 	"callback": "ProofreadPage::onRegister",
 	"load_composer_autoloader": true,
-	"manifest_version": 1
+	"manifest_version": 2
 }
