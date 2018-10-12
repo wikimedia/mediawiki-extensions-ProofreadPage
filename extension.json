@@ -316,7 +316,7 @@
 				"proofread-page": "proofread-page"
 			}
 		}
-        },
+	},
 	"ConfigRegistry": {
 		"proofreadpage": "GlobalVarConfig::newInstance"
 	},
