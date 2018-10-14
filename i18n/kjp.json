@@ -32,6 +32,7 @@
 	"proofreadpage_index_size": "လိက်မေံအ်ုၮါင်း",
 	"proofreadpage_specialpage_label_key": "အင်းၰူ့:",
 	"proofreadpage_index_listofpages": "လိက်မေံသး စ်ုရင့်လ်ုဖး",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|လိက်မေံၜၠါ်|လိက်မေံၜၠါ်လ်ုဖး}}",
 	"proofreadpage_source": "အ်ုထိုဝ်",
 	"proofreadpage-section-tools": "ပ်ုရိုဖ်ုလဲါတ်ု ခြီခြာ့လ်ုဖး",
 	"proofreadpage-group-zoom": "မာလဲါအိင်း",
@@ -44,6 +45,7 @@
 	"content-model-proofread-index": "လိက်အုဂ် ပ်ုယုံ့ခေါဟ်တင်",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "ပ်ုကုံးထါ့ လက်မေံသး",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "လိက်မေံသးသယ်",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion of $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "မွာဲ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "မွာဲအေး"
 }

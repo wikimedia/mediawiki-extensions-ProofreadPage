@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Asenoner"
+		]
+	},
+	"nstab-page": "Plata",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "Cëlti a la plata dl liber",
+	"tooltip-ca-nstab-index": "Cëlti al index dl liber",
+	"indexpages": "Lista de plates dl index",
+	"pageswithoutscans": "Plates zënza scans",
+	"proofreadpage_image": "Ilustrazion",
+	"proofreadpage_index": "Index",
+	"proofreadpage_index_expected": "Fal: n se aspitëssa n index",
+	"proofreadpage_nosuch_index": "Fal: L ne da nia n tel index",
+	"proofreadpage_nosuch_file": "Fal: l ne da nia chësc documënt",
+	"proofreadpage_nologin": "Te ne ies nia culegà"
+}
