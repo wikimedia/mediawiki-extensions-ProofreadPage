@@ -16,6 +16,11 @@
 			"pagequality": true
 		}
 	},
+	"GrantPermissions": {
+		"editpage": {
+			"pagequality": true
+		}
+	},
 	"AvailableRights": [
 		"pagequality",
 		"pagequality-admin"
