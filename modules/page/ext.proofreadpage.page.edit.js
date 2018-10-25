@@ -160,8 +160,7 @@
 	 * Setup the editing interface
 	 */
 	function setupWikitextEditor() {
-		var iconPath = mw.config.get( 'wgExtensionAssetsPath' ) + '/ProofreadPage/modules/page/images/',
-			tools = {
+		var tools = {
 				zoom: {
 					labelMsg: 'proofreadpage-group-zoom',
 					tools: {
@@ -169,7 +168,6 @@
 							labelMsg: 'proofreadpage-button-zoom-in-label',
 							type: 'button',
 							oouiIcon: 'zoomIn',
-							oldIcon: iconPath + 'Button_zoom_in.png',
 							action: {
 								type: 'callback',
 								execute: function () {
@@ -183,7 +181,6 @@
 							labelMsg: 'proofreadpage-button-zoom-out-label',
 							type: 'button',
 							oouiIcon: 'zoomOut',
-							oldIcon: iconPath + 'Button_zoom_out.png',
 							action: {
 								type: 'callback',
 								execute: function () {
@@ -197,7 +194,6 @@
 							labelMsg: 'proofreadpage-button-reset-zoom-label',
 							type: 'button',
 							oouiIcon: 'zoomReset',
-							oldIcon: iconPath + 'Button_examine.png',
 							action: {
 								type: 'callback',
 								execute: function () {
@@ -216,7 +212,6 @@
 							labelMsg: 'proofreadpage-button-toggle-visibility-label',
 							type: 'button',
 							oouiIcon: 'headerFooter',
-							oldIcon: iconPath + 'Button_category_plus.png',
 							action: {
 								type: 'callback',
 								execute: function () {
@@ -228,7 +223,6 @@
 							labelMsg: 'proofreadpage-button-toggle-layout-label',
 							type: 'button',
 							oouiIcon: 'switchLayout',
-							oldIcon: iconPath + 'Button_multicol.png',
 							action: {
 								type: 'callback',
 								execute: toggleLayout.bind( this, undefined )
@@ -253,18 +247,6 @@
 						groups: tools
 					}
 				}
-			} );
-
-		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
-			// 'mediawiki.toolbar' was loaded before calling this function
-			$.each( tools, function ( group, list ) {
-				$.each( list.tools, function ( id, def ) {
-					mw.toolbar.addButton( {
-						imageFile: def.oldIcon,
-						speedTip: mw.msg( def.labelMsg ),
-						onClick: def.action.execute
-					} );
-				} );
 			} );
 		}
 
@@ -456,11 +438,9 @@
 				$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', deferred.resolve.bind( deferred ) );
 			} );
 			return deferred.promise();
-		} else if ( getBooleanUserOption( 'showtoolbar' ) ) {
-			return mw.loader.using( 'mediawiki.toolbar' );
-		} else {
-			return deferred.resolve().promise();
 		}
+
+		return deferred.resolve().promise();
 	}
 
 	$( function () {
