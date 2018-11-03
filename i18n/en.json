@@ -98,5 +98,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Yes",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Proofreading quality",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proofreading quality"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proofreading quality",
+	"proofreadpage-index-field-category-label": "Categories",
+	"proofreadpage-index-edit-category-help": "Categories are written without the Category: prefix and are separated by a pipe \"|\" character."
 }

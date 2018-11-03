@@ -52,6 +52,17 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}"
 			],
 			[
+				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY,  'Foo' ) ] ),
+				"{{:MediaWiki:Proofreadpage_index_template\n}}\n[[Category:Foo]]"
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
+					[ Title::makeTitle( NS_CATEGORY,  'Foo' ) ]
+				),
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}\n[[Category:Foo]]"
+			],
+			[
 				new IndexRedirectContent( Title::newFromText( 'Foo' ) ),
 				'#REDIRECT [[Foo]]'
 			]
@@ -98,7 +109,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}[[Category:XXX]]"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}"
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
@@ -185,7 +196,54 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 				new IndexContent( [ 'foo' => new WikitextContent( '#REDIRECT [[Foo]]' ) ] ),
 				"{{:MediaWiki:Proofreadpage_index_template\n|foo=#REDIRECT [[Foo]]\n}}"
 			],
-
+			[
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo Bar' ) ] ),
+				'[[Category:Foo Bar]]'
+			],
+			[
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo Bar' ) ] ),
+				'[[Category:Foo_Bar]]'
+			],
+			[
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo' ) ] ),
+				"{{:MediaWiki:Proofreadpage_index_template\n}}\n[[Category:Foo]]"
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
+					[ Title::newFromText( 'Category:Foo' ) ]
+				),
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}\n[[Category:Foo]]"
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
+					[ Title::newFromText( 'Category:Foo' ) ]
+				),
+				"[[Category:Foo]]\n{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}"
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
+					[ Title::newFromText( 'Category:Foo' ), Title::newFromText( 'Category:Bar' ) ]
+				),
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}" .
+				"\n[[Category:Foo]]\n[[Category:Bar]]"
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '[[Category:Foo]]' ) ],
+					[]
+				),
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=[[Category:Foo]]\n}}"
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( 'foo' ) ],
+					[]
+				),
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=foo\n}}\nblabla"
+			],
 		];
 	}
 
@@ -229,6 +287,15 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 				new IndexContent( [ 'foo' => new WikitextContent( "test2\n" ) ] ),
 				new IndexContent( [ 'foo' => new WikitextContent( "test\n" ) ] ),
 				new IndexContent( [ 'foo' => new WikitextContent( "test2\n" ) ] )
+			],
+			[
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo' ) ] ),
+				new IndexContent( [], [ Title::newFromText( 'Category:Bar' ) ] ),
+				new IndexContent( [], [ Title::newFromText( 'Category:Baz' ) ] ),
+				new IndexContent( [], [
+					Title::newFromText( 'Category:Bar' ),
+					Title::newFromText( 'Category:Baz' )
+				] ),
 			],
 		];
 	}

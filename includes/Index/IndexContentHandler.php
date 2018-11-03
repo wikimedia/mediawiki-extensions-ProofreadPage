@@ -10,6 +10,7 @@ use Parser;
 use ParserOptions;
 use PPFrame;
 use ProofreadPage\Context;
+use ProofreadPage\Link;
 use TextContentHandler;
 use Title;
 use WikitextContent;
@@ -32,9 +33,15 @@ class IndexContentHandler extends TextContentHandler {
 	 */
 	private $parser;
 
+	/**
+	 * @var WikitextLinksExtractor
+	 */
+	private $wikitextLinksExtractor;
+
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_INDEX ) {
 		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
 		$this->parser = $this->buildParser();
+		$this->wikitextLinksExtractor = new WikitextLinksExtractor();
 
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT ] );
 	}
@@ -82,14 +89,18 @@ class IndexContentHandler extends TextContentHandler {
 			);
 		}
 
-		$text = "{{:MediaWiki:Proofreadpage_index_template";
-
+		$text = '{{:MediaWiki:Proofreadpage_index_template';
 		/** @var WikitextContent $value */
 		foreach ( $content->getFields() as $key => $value ) {
-			$text .= "\n|" . $key . "=" . $value->serialize();
+			$text .= "\n|" . $key . '=' . $value->serialize();
+		}
+		$text .= "\n}}";
+
+		foreach ( $content->getCategories() as $category ) {
+			$text .= "\n[[" . $category->getFullText() . ']]';
 		}
 
-		return $text . "\n}}";
+		return $text;
 	}
 
 	/**
@@ -108,25 +119,35 @@ class IndexContentHandler extends TextContentHandler {
 		}
 
 		$dom = $this->parser->preprocessToDom( $text );
-		$dom = $dom->getFirstChild();
-		if ( $dom === false ) {
-			return new IndexContent( [] );
-		}
-
-		$frame = $this->parser->getPreprocessor()->newFrame();
-		$childFrame = $frame->newChild( $dom->getChildrenOfType( 'part' ) );
-		$values = [];
-		// @phan-suppress-next-line PhanUndeclaredProperty
-		foreach ( $childFrame->namedArgs as $varName => $value ) {
-			$value = $this->parser->mStripState->unstripBoth(
-				$frame->expand( $value, PPFrame::RECOVER_ORIG )
-			);
-			if ( substr( $value, -1 ) === "\n" ) { // We strip one "\n"
-				$value = substr( $value, 0, -1 );
+		$customFieldsValues = [];
+		$categories = [];
+		// We iterate on the main components of the Wikitext serialization
+		for ( $child = $dom->getFirstChild(); $child; $child = $child->getNextSibling() ) {
+			if ( $child->getName() === 'template' ) {
+				// It's a template call, we extract the fields
+				$frame = $this->parser->getPreprocessor()->newFrame();
+				$childFrame = $frame->newChild( $child->getChildrenOfType( 'part' ) );
+				// @phan-suppress-next-line PhanUndeclaredProperty
+				foreach ( $childFrame->namedArgs as $varName => $value ) {
+					$value = $this->parser->mStripState->unstripBoth(
+						$frame->expand( $value, PPFrame::RECOVER_ORIG )
+					);
+					if ( substr( $value, -1 ) === "\n" ) { // We strip one "\n"
+						$value = substr( $value, 0, -1 );
+					}
+					$customFieldsValues[$varName] = new WikitextContent( $value );
+				}
+			} elseif ( $child->getName() === '#text' ) {
+				// It's some text, we look for category links
+				$text = $this->parser->mStripState->unstripBoth( strval( $child ) );
+				$categoryLinks = $this->wikitextLinksExtractor->getLinksToNamespace( $text, NS_CATEGORY );
+				/** @var Link $categoryLink */
+				foreach ( $categoryLinks as $categoryLink ) {
+					$categories[] = $categoryLink->getTarget();
+				}
 			}
-			$values[$varName] = new WikitextContent( $value );
 		}
-		return new IndexContent( $values );
+		return new IndexContent( $customFieldsValues, $categories );
 	}
 
 	/**
@@ -193,7 +214,25 @@ class IndexContentHandler extends TextContentHandler {
 			}
 		}
 
-		return new IndexContent( $myFields );
+		// Categories
+		$categories = $this->arrayMerge3(
+			$oldContent->getCategories(),
+			$myContent->getCategories(),
+			$yourContent->getCategories()
+		);
+
+		return new IndexContent( $myFields, $categories );
+	}
+
+	/**
+	 * @param array $old
+	 * @param array $my
+	 * @param array $your
+	 * @return array
+	 */
+	private function arrayMerge3( array $old, array $my, array $your ) {
+		// TODO: detection of deletions
+		return array_unique( array_merge( $my, $your ) );
 	}
 
 	/**

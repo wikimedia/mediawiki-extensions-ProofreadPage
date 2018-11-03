@@ -37,4 +37,12 @@ class Link {
 	public function getLabel() {
 		return $this->label;
 	}
+
+	/**
+	 * @param Link $other
+	 * @return bool
+	 */
+	public function equals( Link $other ) {
+		return $this->target->equals( $other->target ) && $this->label === $other->label;
+	}
 }

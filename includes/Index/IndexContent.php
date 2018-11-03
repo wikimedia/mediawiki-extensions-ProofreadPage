@@ -4,7 +4,7 @@ namespace ProofreadPage\Index;
 
 use Content;
 use MagicWord;
-use MalformedTitleException;
+use MWException;
 use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
@@ -29,13 +29,21 @@ class IndexContent extends TextContent {
 	/**
 	 * @var WikitextContent[]
 	 */
-	private $fields = [];
+	private $fields;
+
+	/**
+	 * @var Title[]
+	 */
+	private $categories;
 
 	/**
 	 * @param WikitextContent[] $fields
+	 * @param Title[] $categories
+	 * @throws MWException
 	 */
-	public function __construct( array $fields ) {
+	public function __construct( array $fields, array $categories = [] ) {
 		$this->fields = $fields;
+		$this->categories = $categories;
 
 		parent::__construct( '', CONTENT_MODEL_PROOFREAD_INDEX );
 	}
@@ -49,6 +57,22 @@ class IndexContent extends TextContent {
 	}
 
 	/**
+	 * @return Title[]
+	 */
+	public function getCategories() {
+		return $this->categories;
+	}
+
+	/**
+	 * @return string[]
+	 */
+	private function getCategoriesText() {
+		return array_map( function ( Title $title ) {
+			return $title->getText();
+		}, $this->categories );
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	public function isEmpty() {
@@ -58,6 +82,18 @@ class IndexContent extends TextContent {
 			}
 		}
 
+		return empty( $this->categories );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function isValid() {
+		foreach ( $this->categories as $category ) {
+			if ( !$category->isValid() || !$category->inNamespace( NS_CATEGORY ) ) {
+				return false;
+			}
+		}
 		return true;
 	}
 
@@ -85,7 +121,11 @@ class IndexContent extends TextContent {
 			}
 		}
 
-		return true;
+		$thisCategories = $this->getCategoriesText();
+		sort( $thisCategories );
+		$thatCategories = $that->getCategoriesText();
+		sort( $thatCategories );
+		return $thisCategories === $thatCategories;
 	}
 
 	/**
@@ -119,7 +159,7 @@ class IndexContent extends TextContent {
 			$fields[$key] = $value->preSaveTransform( $title, $user, $popts );
 		}
 
-		return new IndexContent( $fields );
+		return new IndexContent( $fields, $this->categories );
 	}
 
 	/**
@@ -132,7 +172,7 @@ class IndexContent extends TextContent {
 			$fields[$key] = $value->preloadTransform( $title, $popts, $params );
 		}
 
-		return new IndexContent( $fields );
+		return new IndexContent( $fields, $this->categories );
 	}
 
 	/**
@@ -167,6 +207,10 @@ class IndexContent extends TextContent {
 
 		foreach ( $this->fields as $value ) {
 			$size += $value->getSize();
+		}
+
+		foreach ( $this->categories as $category ) {
+			$size += strlen( $category->getText() );
 		}
 
 		return $size;
@@ -229,6 +273,10 @@ class IndexContent extends TextContent {
 			$templateTitle->getArticleID(),
 			$templateTitle->getLatestRevID()
 		);
+
+		foreach ( $this->categories as $category ) {
+			$output->addCategory( $category->getDBkey(), $category->getText() );
+		}
 	}
 
 	/**
@@ -266,6 +314,7 @@ class IndexContent extends TextContent {
 	public function getLinksToNamespace(
 		$namespace, Title $title = null, $withPrepossessing = false
 	) {
+		$linksExtractor = new WikitextLinksExtractor();
 		$links = [];
 		foreach ( $this->fields as $field ) {
 			$wikitext = $field->serialize( CONTENT_FORMAT_WIKITEXT );
@@ -278,29 +327,8 @@ class IndexContent extends TextContent {
 				);
 			}
 			$links = array_merge(
-				$links, $this->getLinksToNamespaceFromWikitext( $wikitext, $namespace )
+				$links, $linksExtractor->getLinksToNamespace( $wikitext, $namespace )
 			);
-		}
-		return $links;
-	}
-
-	private function getLinksToNamespaceFromWikitext( $wikitext, $namespace ) {
-		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $wikitext, $textLinks, PREG_PATTERN_ORDER );
-		$links = [];
-		$textLinksCount = count( $textLinks[1] );
-		for ( $i = 0; $i < $textLinksCount; $i++ ) {
-			try {
-				$title = Title::newFromTextThrow( $textLinks[1][$i] );
-				if ( $title->inNamespace( $namespace ) ) {
-					if ( $textLinks[3][$i] === '' ) {
-						$links[] = new Link( $title, $title->getSubpageText() );
-					} else {
-						$links[] = new Link( $title, $textLinks[3][$i] );
-					}
-				}
-			} catch ( MalformedTitleException $e ) {
-				// We ignore invalid links
-			}
 		}
 		return $links;
 	}

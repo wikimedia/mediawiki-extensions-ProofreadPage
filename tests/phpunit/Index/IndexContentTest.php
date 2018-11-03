@@ -43,6 +43,12 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertEquals( [ 'foo' => new WikitextContent( 'bar' ) ], $content->getFields() );
 	}
 
+	public function testGetCategoriesText() {
+		$category = Title::makeTitle( NS_CATEGORY,  'Foo' );
+		$content = new IndexContent( [], [ $category ] );
+		$this->assertEquals( [ $category ], $content->getCategories() );
+	}
+
 	public function testGetContentHandler() {
 		$content = new IndexContent( [] );
 		$this->assertEquals(
@@ -51,16 +57,84 @@ class IndexContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testCopy() {
-		$content = new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] );
+		$content = new IndexContent(
+			[ 'foo' => new WikitextContent( 'bar' ) ],
+			[ Title::makeTitle( NS_CATEGORY,  'Cat' ) ]
+		);
 		$this->assertEquals( $content, $content->copy() );
+	}
+
+	public function isEmptyProvider() {
+		return [
+			[
+				new IndexContent( [] )
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( '' ) ] )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider isEmptyProvider
+	 */
+	public function testIsEmpty( IndexContent $content ) {
+		$this->assertTrue( $content->isEmpty() );
+	}
+
+	public function isNotEmptyProvider() {
+		return [
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'Bar' ) ] )
+			],
+			[
+				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY, 'Foo' ) ] )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider isNotEmptyProvider
+	 */
+	public function testIsNotEmpty( IndexContent $content ) {
+		$this->assertFalse( $content->isEmpty() );
+	}
+
+	public function isValidProvider() {
+		return [
+			[
+				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY, 'Foo' ) ] )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider isValidProvider
+	 */
+	public function testIsValid( IndexContent $content ) {
+		$this->assertTrue( $content->isValid() );
+	}
+
+	public function isNotValidProvider() {
+		return [
+			[
+				new IndexContent( [], [ Title::makeTitle( -4, 'Foo' ) ] )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider isNotValidProvider
+	 */
+	public function testIsNotValid( IndexContent $content ) {
+		$this->assertFalse( $content->isValid() );
 	}
 
 	public function equalsProvider() {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				true
+				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] )
 			],
 			[
 				new IndexContent( [
@@ -70,23 +144,23 @@ class IndexContentTest extends ProofreadPageTestCase {
 				new IndexContent( [
 					'bar' => new WikitextContent( 'foo' ),
 					'foo' => new WikitextContent( 'bar' )
-				] ),
-				true
+				] )
 			],
 			[
-				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				new IndexContent( [ 'foo' => new WikitextContent( 'baz' ) ] ),
-				false
-			],
-			[
-				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				new IndexContent( [] ),
-				false
-			],
-			[
-				new IndexContent( [] ),
-				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				false
+				new IndexContent(
+					[ 'foo' => new WikitextContent( 'bar' ) ],
+					[
+						Title::makeTitle( NS_CATEGORY, 'Foo' ),
+						Title::makeTitle( NS_CATEGORY, 'Bar' )
+					]
+				),
+				new IndexContent(
+					[ 'foo' => new WikitextContent( 'bar' ) ],
+					[
+						Title::makeTitle( NS_CATEGORY, 'Bar' ),
+						Title::makeTitle( NS_CATEGORY, 'Foo' )
+					]
+				)
 			],
 		];
 	}
@@ -94,8 +168,36 @@ class IndexContentTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider equalsProvider
 	 */
-	public function testEquals( IndexContent $a, IndexContent $b, $equal ) {
-		$this->assertEquals( $equal, $a->equals( $b ) );
+	public function testEquals( IndexContent $a, IndexContent $b ) {
+		$this->assertTrue( $a->equals( $b ) );
+	}
+
+	public function notEqualsProvider() {
+		return [
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
+				new IndexContent( [ 'foo' => new WikitextContent( 'baz' ) ] )
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
+				new IndexContent( [] )
+			],
+			[
+				new IndexContent( [] ),
+				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] )
+			],
+			[
+				new IndexContent( [], [] ),
+				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY, 'Foo' ) ] )
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider notEqualsProvider
+	 */
+	public function testNotEquals( IndexContent $a, IndexContent $b ) {
+		$this->assertFalse( $a->equals( $b ) );
 	}
 
 	public function testGetWikitextForTransclusion() {
