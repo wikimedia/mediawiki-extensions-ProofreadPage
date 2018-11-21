@@ -7,7 +7,6 @@
 	border: 0;
 	padding: 0;
 	line-height: 1.5em;
-	/* TODO: Is this required? Does it need to be important? */
-	margin: 0 !important; /* stylelint-disable-line declaration-no-important */
+	margin: 0;
 	resize: vertical;
 }
