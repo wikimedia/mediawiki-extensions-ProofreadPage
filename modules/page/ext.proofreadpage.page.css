@@ -5,6 +5,7 @@
 .prp-page-content {
 	float: left;
 	width: 50%;
+	min-width: 15em;
 }
 
 .prp-page-content .pagetext {
@@ -29,6 +30,48 @@
 /* CSS only editing interface */
 #editform .prp-page-content { /* stylelint-disable-line selector-max-id */
 	line-height: 1.5em;
+
+}
+
+@supports (display:flex) {
+	.prp-page-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.prp-page-content {
+		float: none;
+		flex: 1 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.prp-page-content > * {
+		display: flex;
+		flex-direction: column;
+	}
+	.prp-page-edit-header,
+	.prp-page-edit-footer {
+		flex: 1 1;
+	}
+	.prp-page-edit-body {
+		flex: 1 1 auto;
+	}
+	.prp-page-content > * > *:not( textarea ) {
+		flex: 0 0;
+	}
+	.prp-page-content > * > textarea {
+		flex: 1 1;
+	}
+
+	.prp-page-image {
+		float: none;
+		width: auto;
+		min-width: 50%;
+		flex: 1 1;
+		box-sizing: border-box;
+		border-left: 1px solid #c8ccd1;
+	}
 }
 
 #editform .prp-page-content label { /* stylelint-disable-line selector-max-id */
