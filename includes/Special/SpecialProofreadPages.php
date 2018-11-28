@@ -21,15 +21,12 @@
 
 namespace ProofreadPage\Special;
 
-use Html;
+use HTMLForm;
 use ProofreadPage;
 use QueryPage;
-use RequestContext;
 use SearchEngine;
 use SearchResultSet;
 use Title;
-use XmlSelect;
-use Xml;
 
 class SpecialProofreadPages extends QueryPage {
 	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending, $addOne;
@@ -62,7 +59,7 @@ class SpecialProofreadPages extends QueryPage {
 		if ( !$wgDisableTextSearch ) {
 			if ( !$this->including() ) {
 				// Only show the search form when not including in another page.
-				$output->addHTML( $this->getSearchForm() );
+				$this->displaySearchForm();
 			}
 
 			if ( $this->searchTerm ) {
@@ -148,46 +145,50 @@ class SpecialProofreadPages extends QueryPage {
 	}
 
 	/**
-	 * Get the HTML of the search form.
-	 * @return string The HTML, with the <form> as the outermost element.
+	 * Display the HTMLForm of the search form.
 	 */
-	protected function getSearchForm() {
-		$config = RequestContext::getMain()->getConfig();
+	protected function displaySearchForm() {
+		$formDescriptor = [
+			'key' => [
+				'type' => 'text',
+				'name' => 'key',
+				'id' => 'key',
+				'label-message' => 'proofreadpage_specialpage_label_key',
+				'size' => 50,
+				'default' => $this->searchTerm,
+			],
+			'order' => [
+				'type' => 'select',
+				'name' => 'order',
+				'id' => 'order',
+				'label-message' => 'proofreadpage_specialpage_label_orderby',
+				'default' => $this->queryOrder,
+				'options' => [
+					$this->msg( 'proofreadpage_index_status' )->text() => 'quality',
+					$this->msg( 'proofreadpage_index_size' )->text() => 'size',
+					$this->msg( 'proofreadpage_pages_to_validate' )->text() => 'toValidate',
+					$this->msg( 'proofreadpage_pages_to_proofread_or_validate' )->text() =>
+						'toProofreadOrValidate',
+					$this->msg( 'proofreadpage_alphabeticalorder' )->text() => 'alpha',
+				]
+			],
+			'sortascending' => [
+				'type' => 'check',
+				'name' => 'sortascending',
+				'id' => 'sortascending',
+				'label-message' => 'proofreadpage_specialpage_label_sortascending',
+				'selected' => $this->sortAscending,
+			]
+		];
 
-		$orderSelect = new XmlSelect( 'order', 'order', $this->queryOrder );
-		$orderSelect->addOption( $this->msg( 'proofreadpage_index_status' )->text(), 'quality' );
-		$orderSelect->addOption( $this->msg( 'proofreadpage_index_size' )->text(), 'size' );
-		$orderSelect->addOption( $this->msg( 'proofreadpage_pages_to_validate' )->text(), 'toValidate' );
-		$orderSelect->addOption( $this->msg( 'proofreadpage_pages_to_proofread_or_validate' )->text(),
-			'toProofreadOrValidate' );
-		$orderSelect->addOption( $this->msg( 'proofreadpage_alphabeticalorder' )->text(), 'alpha' );
-
-		$searchForm = Html::openElement( 'form', [ 'action' => $config->get( 'Script' ) ] ) .
-			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-			Html::input( 'limit', $this->limit, 'hidden', [] ) .
-			Html::openElement( 'fieldset', [] ) .
-			Html::element(
-				'legend', null, $this->msg( 'proofreadpage_specialpage_legend' )->text()
-			) .
-			Html::openElement( 'p' ) .
-			Html::element( 'label', [ 'for' => 'key' ],
-				$this->msg( 'proofreadpage_specialpage_label_key' )->text()
-			) . ' ' .
-			Html::input( 'key', $this->searchTerm, 'search', [ 'id' => 'key', 'size' => '50' ] ) .
-			Html::closeElement( 'p' ) .
-			Html::openElement( 'p' ) .
-			Html::element( 'label', [ 'for' => 'order' ],
-				$this->msg( 'proofreadpage_specialpage_label_orderby' )->text()
-			) . ' ' . $orderSelect->getHtml() . ' ' .
-			Xml::checkLabel(
-				$this->msg( 'proofreadpage_specialpage_label_sortascending' )->text(),
-				'sortascending', 'sortascending', $this->sortAscending
-			) . ' ' .
-			Xml::submitButton( $this->msg( 'ilsubmit' )->text() ) .
-			Html::closeElement( 'p' ) .
-			Html::closeElement( 'fieldset' ) .
-			Html::closeElement( 'form' );
-		return $searchForm;
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->addHiddenField( 'limit', $this->limit )
+			->setMethod( 'get' )
+			->setSubmitTextMsg( 'ilsubmit' )
+			->setWrapperLegendMsg( 'proofreadpage_specialpage_legend' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	public function getQueryInfo() {
