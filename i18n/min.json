@@ -69,10 +69,6 @@
 	"proofreadpage-pageinfo-status": "Statuih pamaresoan",
 	"proofreadpage-preferences-showheaders-label": "↓Tayang bidang kapalo jo kaki katiko manyuntiang {{ns:page}} ruangnamo",
 	"proofreadpage-preferences-horizontal-layout-label": "↓Gunoan tata letak managak katiko manyuntiang {{ns:page}} ruangnamo",
-	"proofreadpage-indexoai-repositoryName": "↓Metadata buku dari {{SITENAME}}",
-	"proofreadpage-indexoai-eprint-content-text": "↓Metadata buku diupayoan dek laman pangujian baco.",
-	"proofreadpage-indexoai-error-schemanotfound": "Skema indak ditamui",
-	"proofreadpage-indexoai-error-schemanotfound-text": "↓Skema $1 alun basobok.",
 	"proofreadpage-disambiguationspage": "Templat:disambiguasi",
 	"content-model-proofread-page": "Laman: laman"
 }

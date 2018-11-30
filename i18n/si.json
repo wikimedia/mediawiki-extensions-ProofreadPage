@@ -55,7 +55,5 @@
 	"proofreadpage-button-zoom-out-label": "විශාලනයෙන් ඉවත් වෙන්න",
 	"proofreadpage-button-reset-zoom-label": "නියම ප්‍රමාණය",
 	"proofreadpage-button-zoom-in-label": "විශාලනය කරන්න",
-	"proofreadpage-button-toggle-layout-label": "සිරස්/තිරස් සැලැස්ම",
-	"proofreadpage-indexoai-error-schemanotfound": "සංක්ෂිප්ත නිරූපණය හමු නොවුණි",
-	"proofreadpage-indexoai-error-schemanotfound-text": "$1 සංක්ෂිප්ත නිරූපණය හමු නොවුණි."
+	"proofreadpage-button-toggle-layout-label": "සිරස්/තිරස් සැලැස්ම"
 }

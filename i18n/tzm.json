@@ -29,9 +29,5 @@
 	"proofreadpage-button-zoom-in-label": "ⴰⵙⵎⵖⵔ",
 	"proofreadpage-button-toggle-layout-label": "Vertical/horizontal layout",
 	"proofreadpage-preferences-horizontal-layout-label": "Use horizontal layout when editing in the {{ns:page}} namespace",
-	"proofreadpage-indexoai-repositoryName": "Metadata of books from {{SITENAME}}",
-	"proofreadpage-indexoai-eprint-content-text": "Metadata of books managed by ProofreadPage.",
-	"proofreadpage-indexoai-error-schemanotfound": "Schema not found",
-	"proofreadpage-indexoai-error-schemanotfound-text": "The $1 schema have not been found.",
 	"proofreadpage-disambiguationspage": "Template:disambig"
 }

@@ -67,10 +67,6 @@
 	"proofreadpage-pageinfo-status": "Korigowanski status",
 	"proofreadpage-preferences-showheaders-label": "Hłowowe a nohowe pola pokazać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje",
 	"proofreadpage-preferences-horizontal-layout-label": "Horicontalne wuhotowanje wužiwać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje",
-	"proofreadpage-indexoai-repositoryName": "Knižne metadaty z {{GRAMMAR:genitiw|{{SITENAME}}}}",
-	"proofreadpage-indexoai-eprint-content-text": "Knižne metadaty zrjadowane přez ProofreadPage.",
-	"proofreadpage-indexoai-error-schemanotfound": "Šema njeje so namakał",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Šema $1 njeje so namakał.",
 	"proofreadpage-disambiguationspage": "Template:Wjacezmyslnosć",
 	"content-model-proofread-page": "Strona: strona"
 }

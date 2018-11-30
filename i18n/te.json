@@ -71,10 +71,6 @@
 	"proofreadpage-button-toggle-layout-label": "నిలువు/అడ్డం రూపం",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} పేరుబరిలో పీఠిక మరియు భూమిక క్షేత్రాలను సవరించునపుడు చూపు",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} పేరుబరిలో సవరణకు క్షితిజ సమాంతర రూపాన్ని  వాడు",
-	"proofreadpage-indexoai-repositoryName": " {{SITENAME}} నుండి పుస్తకాల వివరాలు",
-	"proofreadpage-indexoai-eprint-content-text": "అచ్చుదిద్దుపేజీ ద్వారా నిర్వహించబడే పుస్తకాల వివరాలు",
-	"proofreadpage-indexoai-error-schemanotfound": "స్కీమా కనబడలేదు",
-	"proofreadpage-indexoai-error-schemanotfound-text": "$1 స్కీమా కనబడలేదు.",
 	"proofreadpage-disambiguationspage": "Template:అయోమయనివృత్తి",
 	"content-model-proofread-page": "పేజీ: పేజీ"
 }

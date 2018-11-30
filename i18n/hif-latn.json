@@ -65,9 +65,5 @@
 	"proofreadpage-button-zoom-in-label": "Barraa karo",
 	"proofreadpage-button-toggle-layout-label": "Vertical/horizontal layout",
 	"proofreadpage-preferences-showheaders-label": "Panna ke {{ns:page}} namespace me badle ke time header aur footer ke dekhao",
-	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} namespace me badle ke khatir horizontal layout ke kaam me laao.",
-	"proofreadpage-indexoai-repositoryName": "{{SITENAME}} se book ke metadata",
-	"proofreadpage-indexoai-eprint-content-text": "Book ke metadata jiske ProofreadPanna manage kare hae.",
-	"proofreadpage-indexoai-error-schemanotfound": "Schema nai milaa",
-	"proofreadpage-indexoai-error-schemanotfound-text": "$1 schema nai mila hae."
+	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} namespace me badle ke khatir horizontal layout ke kaam me laao."
 }

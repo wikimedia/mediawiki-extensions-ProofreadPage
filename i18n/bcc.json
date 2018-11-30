@@ -68,10 +68,6 @@
 	"proofreadpage-pageinfo-status": "ویرایشی حالت",
 	"proofreadpage-preferences-showheaders-label": "مان ویرایشی درگتء مان نامء جاگاه {{ns:page}} سرتاک و جهلتاکء رء پیش بدار",
 	"proofreadpage-preferences-horizontal-layout-label": "کارمرز چه چیدمان افقی مان ویرایشء درگتء مان نامء جاگاه {{ns:page}}",
-	"proofreadpage-indexoai-repositoryName": "کتابء متادیتا چه {{SITENAME}}",
-	"proofreadpage-indexoai-eprint-content-text": "کتابانی متادیتا ماسٹر بیتگ تاکانی دوبارگ چاریءابزارء واسته.",
-	"proofreadpage-indexoai-error-schemanotfound": "سرجمین طرح پیداگ نبوت",
-	"proofreadpage-indexoai-error-schemanotfound-text": " $1  سرجمین طرح پیداگ نبوت.",
 	"proofreadpage-disambiguationspage": "Template:رفع ناسرپدی",
 	"content-model-proofread-page": "تاکدیم: تاکدیم"
 }

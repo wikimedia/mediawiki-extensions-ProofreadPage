@@ -67,10 +67,6 @@
 	"proofreadpage-pageinfo-status": "Укъэбзын статус",
 	"proofreadpage-preferences-showheaders-label": "Къэгъэлъагъу шъхьагъыцӀэрэ чӀэгъыцӀэрэ, цӀэчӀыпӀэу {{ns:page}} ухэӀэзыхьэн зыхъукӀэ.",
 	"proofreadpage-preferences-horizontal-layout-label": "Горизонтал теплъэ гъэфед цӀэчӀыпӀэу {{ns:page}} ухэӀэзыхьэ зыхъукӀэ",
-	"proofreadpage-indexoai-repositoryName": "Тхылъ метадатэр сайтым щыщых {{SITENAME}}",
-	"proofreadpage-indexoai-eprint-content-text": "Тхалъхэм яметадатэхэр ProofreadPage-м зэрефэ.",
-	"proofreadpage-indexoai-error-schemanotfound": "Схемэр гъотыгъэп",
-	"proofreadpage-indexoai-error-schemanotfound-text": "$1 схемэр гъотыгъэп.",
 	"proofreadpage-disambiguationspage": "Template:зэшӀомыгъэкӀыгъэ",
 	"content-model-proofread-page": "НэкӀубгъо: нэкӀубгъо"
 }

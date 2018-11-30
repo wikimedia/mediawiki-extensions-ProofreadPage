@@ -66,10 +66,6 @@
 	"proofreadpage-pageinfo-status": "प्रुफरीड स्थिति",
 	"proofreadpage-preferences-showheaders-label": "पन्नाके उपरका शिर्षक आ निचल्का शिर्षक देखाउ जखन संपादन {{ns:पृष्ठ}} नाम",
 	"proofreadpage-preferences-horizontal-layout-label": "जखन {{ns:page}} होएत रहत तखन क्षैतिज नक्सा देखाउ",
-	"proofreadpage-indexoai-repositoryName": "मेटाडाटा किताब {{SITENAME}} सँ",
-	"proofreadpage-indexoai-eprint-content-text": "मेटाडाटा किताब प्रुफरिडपन्ना स ब्यबस्थित करल गएल अछि",
-	"proofreadpage-indexoai-error-schemanotfound": "स्कीमा नै भेटल",
-	"proofreadpage-indexoai-error-schemanotfound-text": "$1 स्कीमा नै भेटल",
 	"proofreadpage-disambiguationspage": "ढाँचा:बहुबिकल्पी",
 	"content-model-proofread-page": "पृष्ठ:पृष्ठ"
 }

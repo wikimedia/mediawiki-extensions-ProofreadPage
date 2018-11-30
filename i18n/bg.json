@@ -71,10 +71,6 @@
 	"proofreadpage-button-toggle-layout-label": "Вертикално/хоризонтално оформление",
 	"proofreadpage-preferences-showheaders-label": "Покажи горен и долен колонтитул при редактиране в именно пространство {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Ползване на хоризонтално оформление при редактиране в именното пространство {{ns:page}}",
-	"proofreadpage-indexoai-repositoryName": "Метаданни на книги от {{SITENAME}}",
-	"proofreadpage-indexoai-eprint-content-text": "Метаданни на книги, управлявани от ProofreadPage.",
-	"proofreadpage-indexoai-error-schemanotfound": "Схемата не беше открита",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Схемата $1 не беше открита.",
 	"content-model-proofread-page": "Страница от книгата",
 	"content-model-proofread-index": "Индекс на книгата"
 }

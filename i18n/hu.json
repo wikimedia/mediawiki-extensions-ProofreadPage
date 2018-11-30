@@ -80,8 +80,6 @@
 	"proofreadpage-pageinfo-status": "Korrektúrázási állapot",
 	"proofreadpage-preferences-showheaders-label": "Fejléc- és láblécmezők megjelenítése szerkesztés közben az {{ns:page}} névtérben",
 	"proofreadpage-preferences-horizontal-layout-label": "Vízszintes elrendezés használata szerkesztés közben az {{ns:page}} névtérben",
-	"proofreadpage-indexoai-repositoryName": "{{SITENAME}} wikiről származó könyvek metaadatai",
-	"proofreadpage-indexoai-eprint-content-text": "A ProofeadPage által kezelt könyvek metaadatai.",
 	"proofreadpage-disambiguationspage": "Template:egyért",
 	"proofreadpage-indexquality-alt": "$1 jóváhagyott oldal, $2 csak korrektúrázott oldal és $3 nem korrektúrázott oldal",
 	"content-model-proofread-page": "Könyvoldal",

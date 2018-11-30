@@ -65,10 +65,6 @@
 	"proofreadpage-button-toggle-layout-label": "Padorowny/Wódorowny layout",
 	"proofreadpage-preferences-showheaders-label": "Głowowe a nogowe póla pokazaś, gaž wobźěłujo se w mjenjowem rumje {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Horicontalne wugótowanje wužywaś, gaž se w mjenjowem rumje {{ns:page}} wobźěłujo",
-	"proofreadpage-indexoai-repositoryName": "Knigłowe metadaty z {{GRAMMAR:genitiw|{{SITENAME}}}}",
-	"proofreadpage-indexoai-eprint-content-text": "Knigłowe metadaty zastojane pśez ProofreadPage.",
-	"proofreadpage-indexoai-error-schemanotfound": "Šema njejo se namakała",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Šema $1 njejo se namakała.",
 	"proofreadpage-disambiguationspage": "Template:Wěcejzmysłowosć",
 	"content-model-proofread-page": "Bok: bok"
 }

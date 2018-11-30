@@ -67,9 +67,5 @@
 	"proofreadpage-button-toggle-layout-label": "Susun atur menegak/melintang",
 	"proofreadpage-preferences-showheaders-label": "Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}",
-	"proofreadpage-indexoai-repositoryName": "Metadata buku-buku dari {{SITENAME}}",
-	"proofreadpage-indexoai-eprint-content-text": "Metadata buku-buku yang diuruskan oleh ProofreadPage.",
-	"proofreadpage-indexoai-error-schemanotfound": "Skema tidak dijumpai",
-	"proofreadpage-indexoai-error-schemanotfound-text": "Skema $1 tidak dijumpai.",
 	"proofreadpage-disambiguationspage": "Template:nyahkekaburan"
 }
