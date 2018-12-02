@@ -283,6 +283,14 @@ $proofreadPageNamespacesNames['mr'] = [
 	'index_talk' => 'अनुक्रमणिका_चर्चा'
 ];
 
+/** Neapolitan (Napulitano) **/
+$proofreadPageNamespacesNames['nap'] = [
+	'page' => 'Paggena',
+	'page_talk' => 'Paggena_chiacchiera',
+	'index' => 'Ennece',
+	'index_talk' => 'Ennece_chiacchiera'
+];
+
 /** Norwegian (bokmål)‬ (‪norsk (bokmål)‬) */
 $proofreadPageNamespacesNames['nb'] = [
 	'page' => 'Side',
