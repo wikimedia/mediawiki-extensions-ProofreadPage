@@ -7,7 +7,8 @@
 			"Raimond Spekking",
 			"Tbleher",
 			"ThomasV",
-			"Inkowik"
+			"Inkowik",
+			"Hwboehm"
 		]
 	},
 	"nstab-page": "Seite",
@@ -89,6 +90,7 @@
 	"content-model-proofread-page": "Buchseite",
 	"content-model-proofread-index": "Buchindex",
 	"apihelp-query+proofread-description": "Gibt Informationen über den Korrekturlesungsstatus der Seiten zurück.",
+	"apihelp-query+proofread-summary": "Liefert Informationen über den aktuellen Status des Korrekturlesens der angegebenen Seiten.",
 	"apihelp-query+proofread-example-1": "Gibt den Korrekturlesungsstatus der Seiten im Namensraum 250 zurück",
 	"apihelp-query+proofreadinfo-description": "Gibt Informationen zur Einstellung der Erweiterung „ProofreadPage“ zurück.",
 	"apihelp-query+proofreadinfo-summary": "Gibt Informationen zur Konfiguration der Erweiterung „ProofreadPage“ zurück.",
