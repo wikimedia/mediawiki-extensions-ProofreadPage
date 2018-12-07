@@ -140,6 +140,14 @@ $specialPageAliases['ml'] = [
 	'PagesWithoutScans' => [ 'സ്കാൻലഭ്യമല്ലാത്തതാളുകൾ' ],
 ];
 
+/** Neapolitan (Napulitano) */
+$specialPageAliases['nap'] = [
+	'IndexPages' => [ 'PaggeneEnnece' ],
+	'PagesWithoutScans' => [ 'PaggeneSenzaScan' ],
+	'ProofreadIndexOai' => [ 'EnneceLeggiutoOai' ],
+	'ProofreadIndexOaiSchema' => [ 'EnneceLeggiutoSistemaOai' ],
+];
+
 /** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = [
 	'IndexPages' => [ 'Indekssider' ],
