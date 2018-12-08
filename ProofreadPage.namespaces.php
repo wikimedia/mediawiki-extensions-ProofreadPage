@@ -286,9 +286,9 @@ $proofreadPageNamespacesNames['mr'] = [
 /** Neapolitan (Napulitano) **/
 $proofreadPageNamespacesNames['nap'] = [
 	'page' => 'Paggena',
-	'page_talk' => 'Paggena_chiacchiera',
+	'page_talk' => 'Paggena_chiàcchiera',
 	'index' => 'Ennece',
-	'index_talk' => 'Ennece_chiacchiera'
+	'index_talk' => 'Ennece_chiàcchiera'
 ];
 
 /** Norwegian (bokmål)‬ (‪norsk (bokmål)‬) */
