@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	var /**
@@ -456,4 +456,4 @@
 		ensureImageZoomInitialization();
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );

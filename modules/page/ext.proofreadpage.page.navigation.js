@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	/**
@@ -55,4 +55,4 @@
 		initTabs();
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );
