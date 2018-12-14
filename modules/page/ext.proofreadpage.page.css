@@ -45,17 +45,21 @@
 		flex-direction: column;
 	}
 
-	.prp-page-content > * {
+	.prp-page-content .mw-parser-output {
 		display: flex;
 		flex-direction: column;
 	}
 
 	.prp-page-edit-header,
 	.prp-page-edit-footer {
+		display: flex;
+		flex-direction: column;
 		flex: 1 1;
 	}
 
 	.prp-page-edit-body {
+		display: flex;
+		flex-direction: column;
 		flex: 8 8 auto;
 	}
 
