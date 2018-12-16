@@ -5,6 +5,8 @@ namespace ProofreadPage\Index;
 use Content;
 use ContentHandler;
 use ProofreadPageTestCase;
+use RequestContext;
+use SlotDiffRenderer;
 use Title;
 use WikitextContent;
 
@@ -246,6 +248,13 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$title = Title::makeTitle( NS_MAIN, 'Test' );
 		$this->assertTrue(
 			$title->equals( $this->handler->makeRedirectContent( $title )->getRedirectTarget() )
+		);
+	}
+
+	public function testGetSlotDiffRenderer() {
+		$this->assertInstanceOf(
+			SlotDiffRenderer::class,
+			$this->handler->getSlotDiffRenderer( RequestContext::getMain() )
 		);
 	}
 }

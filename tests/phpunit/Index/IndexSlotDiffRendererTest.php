@@ -1,0 +1,105 @@
+<?php
+
+namespace ProofreadPage\Index;
+
+use ProofreadPageTestCase;
+use RequestContext;
+use TextSlotDiffRenderer;
+use Title;
+use WikitextContent;
+
+/**
+ * @group ProofreadPage
+ * @covers \ProofreadPage\Index\IndexSlotDiffRenderer
+ */
+class IndexSlotDiffRendererTest extends ProofreadPageTestCase {
+
+	public function getDiffProvider() {
+		return [
+			[
+				new IndexContent( [
+					'Title' => new WikitextContent( 'bar' )
+				] ),
+				new IndexContent( [
+					'Title' => new WikitextContent( 'bar' )
+				] ),
+				''
+			],
+			[
+				new IndexContent( [
+					'Title' => new WikitextContent( 'bar' )
+				] ),
+				null,
+				'TitleTitle -bar+ '
+			],
+			[
+				null,
+				new IndexContent( [
+					'Title' => new WikitextContent( 'bar' )
+				] ),
+				'TitleTitle - +bar '
+			],
+			[
+				new IndexRedirectContent( Title::newFromText( 'Index:Foo' ) ),
+				null,
+				'redirect pageredirect page -Index:Foo+ '
+			],
+			[
+				null,
+				new IndexRedirectContent( Title::newFromText( 'Index:Foo' ) ),
+				'redirect pageredirect page - +Index:Foo '
+			],
+			[
+				new IndexContent( [
+					'Title' => new WikitextContent( 'bar' )
+				] ),
+				new IndexRedirectContent( Title::newFromText( 'Index:Foo' ) ),
+				'redirect pageredirect page - +Index:Foo TitleTitle -bar+ '
+			],
+			[
+				new IndexRedirectContent( Title::newFromText( 'Index:Foo' ) ),
+				new IndexContent( [
+					'Title' => new WikitextContent( 'bar' )
+				] ),
+				'redirect pageredirect page -Index:Foo+ TitleTitle - +bar '
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider getDiffProvider
+	 */
+	public function testGetDiff( $oldContent, $newContent, $result ) {
+		$textDiffRenderer = new TextSlotDiffRenderer();
+		$textDiffRenderer->setEngine( TextSlotDiffRenderer::ENGINE_PHP );
+
+		$diffRender = new IndexSlotDiffRenderer(
+			RequestContext::getMain(),
+			$this->getContext()->getCustomIndexFieldsParser(),
+			$textDiffRenderer
+		);
+		$this->assertEquals(
+			$result,
+			$this->getPlainDiff( $diffRender->getDiff( $oldContent, $newContent ) )
+		);
+	}
+
+	/**
+	 * Convert a HTML diff to a human-readable format and hopefully make the test less fragile.
+	 *
+	 * Copied from TextSlotDiffRendererTest
+	 *
+	 * @param string $diff
+	 * @return string
+	 */
+	private function getPlainDiff( $diff ) {
+		$replacements = [
+			html_entity_decode( '&nbsp;' ) => ' ',
+			'&#160;' => ' ',
+			html_entity_decode( '&minus;' ) => '-'
+		];
+		$diff = strip_tags( $diff );
+		$diff = str_replace( array_keys( $replacements ), array_values( $replacements ), $diff );
+		return preg_replace( '/\s+/', ' ', $diff );
+	}
+}
