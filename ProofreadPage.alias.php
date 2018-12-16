@@ -12,24 +12,18 @@ $specialPageAliases = [];
 $specialPageAliases['en'] = [
 	'IndexPages' => [ 'IndexPages' ],
 	'PagesWithoutScans' => [ 'PagesWithoutScans' ],
-	'ProofreadIndexOai' => [ 'ProofreadIndexOai' ],
-	'ProofreadIndexOaiSchema' => [ 'ProofreadIndexOaiSchema' ],
 ];
 
 /** Arabic (العربية) */
 $specialPageAliases['ar'] = [
 	'IndexPages' => [ 'صفحات_الفهرس' ],
 	'PagesWithoutScans' => [ 'صفحات_بدون_فحص' ],
-	'ProofreadIndexOai' => [ 'فهرس_التصحيح_أو_إيه_آي' ],
-	'ProofreadIndexOaiSchema' => [ 'سكيما_فهرس_تصحيح_أو_إيه_آي' ],
 ];
 
 /** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = [
 	'IndexPages' => [ 'صفحات_الفهرس' ],
 	'PagesWithoutScans' => [ 'صفحات_من_غير_فحص' ],
-	'ProofreadIndexOai' => [ 'فهرس_التصحيح_او_ايه_ىى' ],
-	'ProofreadIndexOaiSchema' => [ 'سكيما_فهرس_تصحيح_او_ايه_اى' ],
 ];
 
 /** Assamese (অসমীয়া) */
@@ -58,16 +52,12 @@ $specialPageAliases['da'] = [
 $specialPageAliases['de'] = [
 	'IndexPages' => [ 'Seiten_indexieren' ],
 	'PagesWithoutScans' => [ 'Seiten_ohne_Scans' ],
-	'ProofreadIndexOai' => [ 'Index_korrekturlesen_OAI' ],
-	'ProofreadIndexOaiSchema' => [ 'Index_korrekturlesen_OAI-Schema' ],
 ];
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = [
 	'IndexPages' => [ 'Perraİndeks' ],
 	'PagesWithoutScans' => [ 'PerréBéCıgeyrayışi' ],
-	'ProofreadIndexOai' => [ 'TimarkerdışaİndeksOai' ],
-	'ProofreadIndexOaiSchema' => [ 'TimarkerdışaİndeksOaiŞema' ],
 ];
 
 /** Estonian (eesti) */
@@ -115,23 +105,18 @@ $specialPageAliases['ja'] = [
 $specialPageAliases['ko'] = [
 	'IndexPages' => [ '색인문서' ],
 	'PagesWithoutScans' => [ '스캔안된문서', '스캔안한문서' ],
-	'ProofreadIndexOai' => [ '색인교정Oai' ],
-	'ProofreadIndexOaiSchema' => [ '색인교정Oai스키마' ],
 ];
 
 /** Luxembourgish (Lëtzebuergesch) */
 $specialPageAliases['lb'] = [
 	'IndexPages' => [ 'Säiten_indexéieren' ],
 	'PagesWithoutScans' => [ 'Säiten_ouni_Scan' ],
-	'ProofreadIndexOai' => [ 'Index_iwwerliesen' ],
 ];
 
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = [
 	'IndexPages' => [ 'ИндексираниСтраници' ],
 	'PagesWithoutScans' => [ 'СтранициБезПроверки' ],
-	'ProofreadIndexOai' => [ 'ИндексПроверениOai' ],
-	'ProofreadIndexOaiSchema' => [ 'ИндексПроверениOaiШема' ],
 ];
 
 /** Malayalam (മലയാളം) */
@@ -144,8 +129,6 @@ $specialPageAliases['ml'] = [
 $specialPageAliases['nap'] = [
 	'IndexPages' => [ 'PaggeneEnnece' ],
 	'PagesWithoutScans' => [ 'PaggeneSenzaScan' ],
-	'ProofreadIndexOai' => [ 'EnneceLeggiutoOai' ],
-	'ProofreadIndexOaiSchema' => [ 'EnneceLeggiutoSistemaOai' ],
 ];
 
 /** Norwegian Bokmål (norsk bokmål) */
@@ -205,8 +188,6 @@ $specialPageAliases['vi'] = [
 $specialPageAliases['zh-hans'] = [
 	'IndexPages' => [ '索引页面' ],
 	'PagesWithoutScans' => [ '未扫描页面' ],
-	'ProofreadIndexOai' => [ '校对索引OAI' ],
-	'ProofreadIndexOaiSchema' => [ '校对索引OAI图表' ],
 ];
 
 /** Traditional Chinese (中文（繁體）‎) */
