@@ -101,12 +101,11 @@ class SpecialProofreadPages extends QueryPage {
 	}
 
 	public function reallyDoQuery( $limit, $offset = false ) {
-		$count = count( $this->searchList );
-		if ( $count > $this->limit ) {
+		if ( $this->searchList && count( $this->searchList ) > $this->limit ) {
 			// Delete the last item to avoid the sort done by reallyDoQuery move it
 			// to another position than the last
 			$this->addOne = true;
-			unset( $this->searchList[ $count - 1 ] );
+			array_pop( $this->searchList );
 		}
 		if ( $this->suppressSqlOffset ) {
 			// Bug #27678: Do not use offset here, because it was already used in
