@@ -2,6 +2,8 @@
 
 namespace ProofreadPage\Pagination;
 
+use RuntimeException;
+
 /**
  * @license GPL-2.0-or-later
  *
