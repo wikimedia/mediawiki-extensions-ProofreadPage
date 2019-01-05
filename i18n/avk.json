@@ -10,6 +10,9 @@
 	"proofreadpage_prevpage": "Abduebu",
 	"proofreadpage_header": "Kroj (noinclude) :",
 	"proofreadpage_quality0_category": "Krentiskon",
+	"proofreadpage_quality1_category": "Me wazdesa belira",
 	"proofreadpage_quality2_category": "Zvakkirafa",
-	"proofreadpage_quality4_category": "Tuenayana"
+	"proofreadpage_quality3_category": "Wazdesa belira",
+	"proofreadpage_quality4_category": "Tuenayana",
+	"proofreadpage_quality1_message": "Batu bu men wazdeson al zo belir"
 }
