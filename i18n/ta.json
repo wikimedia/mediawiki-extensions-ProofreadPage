@@ -8,7 +8,8 @@
 			"Shrikarsan",
 			"TRYPPN",
 			"மதனாஹரன்",
-			"ElangoRamanujam"
+			"ElangoRamanujam",
+			"Fahimrazick"
 		]
 	},
 	"nstab-page": "பக்கம்",
@@ -43,7 +44,7 @@
 	"proofreadpage_quality3_category": "மெய்ப்புப் பார்க்கப்பட்டவை",
 	"proofreadpage_quality4_category": "சரிபார்க்கப்பட்டவை",
 	"proofreadpage_quality0_summary": "உரை இல்லாமல்",
-	"proofreadpage_quality1_summary": "மெய்ப்பு பார்க்கப்படாதவை",
+	"proofreadpage_quality1_summary": "மெய்ப்புப் பார்க்கப்படாதவை",
 	"proofreadpage_quality2_summary": "சிக்கலானவை",
 	"proofreadpage_quality3_summary": "மெய்ப்புப் பார்க்கப்பட்டவை",
 	"proofreadpage_quality4_summary": "சரிபார்க்கப்பட்டது",
@@ -85,7 +86,7 @@
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} பெயர்வெளியில் தொகுக்கும் பொழுது மேலடி மற்றும் கீழடி புலத்தை காட்டவும்",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} பெயர்வெளியில் மெய்ப்பு பார்க்கும் பொழுது கிடைமட்ட வடிவமைப்பை பயன்படுத்தவும்",
 	"proofreadpage-disambiguationspage": "வார்ப்புரு:பக்கவழி நெறிப்படுத்தல்",
-	"proofreadpage-indexquality-alt": "$1 சரிபார்க்கப்பட்ட {{PLURAL:$1|பக்கம்|பக்கங்கள்}}, $2 மெய்ப்பு மட்டும் செய்யப்பட்ட {{PLURAL:$2|பக்கம்|பக்கங்கள்}} and $3 மெய்ப்பு பார்க்கப்படாத {{PLURAL:$3|பக்கம்|பக்கங்கள்}}",
+	"proofreadpage-indexquality-alt": "$1 சரிபார்க்கப்பட்ட {{PLURAL:$1|பக்கம்|பக்கங்கள்}}, $2 மெய்ப்பு மட்டும் செய்யப்பட்ட {{PLURAL:$2|பக்கம்|பக்கங்கள்}} and $3 மெய்ப்புப் பார்க்கப்படாத {{PLURAL:$3|பக்கம்|பக்கங்கள்}}",
 	"content-model-proofread-page": "புத்தக பக்கம்",
 	"content-model-proofread-index": "புத்தக அட்டவணை",
 	"apihelp-query+proofread-example-1": "பெயர்வழி 250 இல் மெய்ப்புபார்ப்பு நிலையை காட்டவும்",

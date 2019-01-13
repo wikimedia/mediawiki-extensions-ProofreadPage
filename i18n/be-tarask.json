@@ -52,6 +52,8 @@
 	"proofreadpage_quality4_message": "Гэтая старонка была правераная",
 	"proofreadpage_index_status": "Статус індэкса",
 	"proofreadpage_index_size": "колькасьці старонак",
+	"proofreadpage_pages_to_validate": "Колькасьць старонак для праверкі",
+	"proofreadpage_pages_to_proofread_or_validate": "Колькасьць старонак для вычыткі ці праверкі",
 	"proofreadpage_specialpage_label_orderby": "Адсартаваць паводле:",
 	"proofreadpage_specialpage_label_key": "Шукаць:",
 	"proofreadpage_specialpage_label_sortascending": "Наўпростая сартыроўка",
