@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jaeminlovetaejoon"
+		]
+	},
+	"nstab-page": "ကဘျံးပၤ",
+	"nstab-index": "လံာ်ရဲၣ်ထံး",
+	"tooltip-ca-nstab-page": "ကွၢ်ဂီၤလံာ်ကဘျံးပၤတဘ့ၣ်န့ၢ်",
+	"tooltip-ca-nstab-index": "ကွၢ်ဂီလံာ်ရဲၣ်ထံးတဘ့ၣ်န့ၢ်",
+	"indexpages": "လံာ်ရဲၣ်ထံးအစရီ",
+	"pageswithoutscans": "ကဘျံးပၤလၢတအိၣ်လၢတၢ်ကွၢ်တၢ်ထံထံဆးဆးဘၣ်",
+	"proofreadpage_desc": "တူၢ်လိာ်လံာ်တၢ်ထိၣ်သတြီၤလၢအအိရ့ၤကၠ့နိတၢ်ကွၢ်တၢ်ထံထံဆးဆးလီၤ",
+	"proofreadpage_image": "တၢ်ဂီၤ",
+	"proofreadpage_index": "လံာ်ရဲၣ်ထံး",
+	"proofreadpage_index_expected": "တၢ်ကမၣ်: တၢ်ဆိကမိၣ်လၢလံာ်ရဲၣ်ထံးကမၤအသး",
+	"proofreadpage_nosuch_index": "တၢ်ကမၣ်: လံာ်ရဲၣ်ထံးတအိၣ်ဘၣ်",
+	"proofreadpage_nosuch_file": "တၢ်ကမၣ်: လံာ်တြံာ် တအိၣ်ဘၣ်",
+	"proofreadpage_indexdupetext": "ကဘျံးပၤရဲၣ်လီၤအသးအါန့ၢ်ဒံးတဂီန့ၤတန့ၢ်ဘၣ် လၢလံာ်ရဲၣ်ထံးအပူၤအံၤ.",
+	"proofreadpage_nologin": "တဝၣ်နုာ်ဘၣ်",
+	"proofreadpage_nologintext": "နကဘၣ်ကဲ [[Special:UserLogin|logged in]] လၢနကဖးလီၤတံၢ်က့းကဘျံးပၤတဘ့ၣ်အံၤ.",
+	"proofreadpage_notallowedtext": "နဆီတလဲတၢ်ဖးလီၤတံၢ်ကဘျံးပၤတခါအံၤတန့ၢ်ဘၣ်",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "မ့ၢ်",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "တမ့ၢ်ဘၣ်"
+}
