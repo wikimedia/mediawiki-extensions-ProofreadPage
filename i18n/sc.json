@@ -3,10 +3,13 @@
 		"authors": [
 			"Andria",
 			"Marzedu",
-			"Taxandru"
+			"Taxandru",
+			"L2212"
 		]
 	},
 	"proofreadpage_image": "Immàgine",
+	"proofreadpage_quality0_category": "Chene testu",
+	"proofreadpage_quality2_category": "Problemàtica",
 	"proofreadpage_index_listofpages": "Lista de is pàginas",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pàgina|pàginas}}"
 }
