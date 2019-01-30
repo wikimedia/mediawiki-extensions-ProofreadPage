@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ukabia"
+			"Ukabia",
+			"Uzoma Ozurumba"
 		]
 	},
 	"proofreadpage_image": "Nhuunuche",
 	"proofreadpage_nextpage": "Ihü sò",
 	"proofreadpage_prevpage": "Ihü na àzú",
+	"proofreadpage_quality2_category": "Na enye nsogbu",
 	"proofreadpage_quality3_category": "Gụzàra",
 	"proofreadpage_specialpage_label_key": "Tùwe:",
 	"proofreadpage_index_listofpages": "Ndétu ihü",
