@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bjankuloski06",
-			"Brest"
+			"Brest",
+			"Vlad5250"
 		]
 	},
 	"nstab-page": "Страница",
@@ -93,7 +94,7 @@
 	"apihelp-query+proofreadinfo-example-3": "Дај информации за именскиот простор",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Избор од страницата",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Страници",
-	"proofreadpage-visualeditor-node-pages-inspector-description": "Превемтнување на $1",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Превметнување на $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Квалитет на коректурата",
