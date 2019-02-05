@@ -71,7 +71,6 @@
 	"proofreadpage-pageinfo-status": "प्रूफ़रीडिंग स्थिति",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} नामजग्घऽ मं॑ संपादन करै घड़ियाँ हेडर आरू फूटर देखाबऽ",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} नामस्थल मं॑ आड़ा अभिविन्यास प्रयोग करऽ",
-	"proofreadpage-disambiguationspage": "साँचा: disambig",
 	"proofreadpage-indexquality-alt": "$1 द्वारा मान्य {{PLURAL:$1|पन्ना|पन्ना सब}}, $2 खाली प्रूफरीड {{PLURAL:$2|पन्ना|पन्ना सब}} आरू $3 बिना प्रूफरीड  {{PLURAL:$3|पन्ना|पन्ना सब}}",
 	"content-model-proofread-page": "पुस्तक पृष्ठ",
 	"content-model-proofread-index": "पुस्तक निर्देशांक",

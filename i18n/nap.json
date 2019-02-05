@@ -82,7 +82,6 @@
 	"proofreadpage-pageinfo-status": "Stato 'e cuntrollo d' 'a lettura",
 	"proofreadpage-preferences-showheaders-label": "Vire a testata e 'o piere 'e paggena pe' tramente ca se fà 'o cagnamento d' 'o namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usa 'o layout orrizzontale durante 'o càgnamento dint'ô namespace {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Template:disambigua",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|paggena|paggene}} validate, $2 surtanto {{PLURAL:$2|paggena|paggene}} liggiute (proofread) e $3 {{PLURAL:$3|paggena|paggene}} ca nun se so' liggiute",
 	"content-model-proofread-page": "Paggena",
 	"content-model-proofread-index": "Innece",

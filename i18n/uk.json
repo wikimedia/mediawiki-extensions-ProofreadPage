@@ -91,7 +91,6 @@
 	"proofreadpage-pageinfo-status": "Стан перевірки правопису",
 	"proofreadpage-preferences-showheaders-label": "Показувати поля верхнього і нижнього колонтитулів при редагуванні в просторі імен {{ns:page}}.",
 	"proofreadpage-preferences-horizontal-layout-label": "Використовувати горизонтальну розкладку при редагуванні в просторі назв {{ns:page}}.",
-	"proofreadpage-disambiguationspage": "Template:неоднозначність",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|схвалена сторінка|схвалені сторінки|схвалених сторінок}}, $2 лише {{PLURAL:$2|вичитана|вичитані|вичитаних}} і $3 {{PLURAL:$3|невичитана|невичитані|невичитаних}}",
 	"content-model-proofread-page": "Сторінка книги",
 	"content-model-proofread-index": "Зміст книги",

@@ -64,7 +64,6 @@
 	"proofreadpage-button-toggle-layout-label": "Κάθετη/ὀριζόντια διάταξις",
 	"proofreadpage-pageinfo-status": "Κατάσταση ἐπαληθεύσεως",
 	"proofreadpage-preferences-horizontal-layout-label": "Χρήση ὀριζοντίας διατάξεως κατά την ἐπεξεργασίαν εἴς τον ὀνοματοχώρον {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Template:ἀποσαφ",
 	"proofreadpage-indexquality-alt": "$1 ἐπαληθευμένοι {{PLURAL:$1|δέλτος|δέλτοι}}, $2 μόνον ἐπαληθευμένοι {{PLURAL:$2|δέλτος|δέλτοι}} καί $3 μη ἐπαληθευμένοι {{PLURAL:$3|δέλτος|δέλτοι}}",
 	"content-model-proofread-page": "Δέλτος: δέλτος",
 	"apihelp-query+proofread-description": "Ἐπιστρέφει πληροφορίες διά την τωρινή κατάσταση ἐπαληθεύσεως των δωθέντων δέλτων.",

@@ -90,7 +90,6 @@
 	"proofreadpage-pageinfo-status": "وضعیت نمونه‌خوانی",
 	"proofreadpage-preferences-showheaders-label": "هنگام ویرایش در فضای نام {{ns:page}}، سرایند و پسایند را نشان بده",
 	"proofreadpage-preferences-horizontal-layout-label": "استفاده از چیدمان افقی هنگام ویرایش در فضای نام {{ns:page}}",
-	"proofreadpage-disambiguationspage": "الگو:ابهام‌زدایی",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|برگ}} هم‌سنجی شده، $2 {{PLURAL:$2|برگ}} فقط نمونه‌خوانی شده و $3 {{PLURAL:$3|برگ}} نمونه‌خوانی نشده",
 	"content-model-proofread-page": "برگ کتاب",
 	"content-model-proofread-index": "فهرست کتاب",

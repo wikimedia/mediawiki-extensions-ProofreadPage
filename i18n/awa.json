@@ -66,7 +66,6 @@
 	"proofreadpage-pageinfo-status": "परिक्षण स्थिती",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} नेमस्पेस मे सम्पादन करत कय हेडर अव फुटर जगह देखाओ",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} नेमस्पेस सम्पादन मे सिधा खाका इस्तेमाल करो",
-	"proofreadpage-disambiguationspage": "साँचा:disambig",
 	"content-model-proofread-page": "पन्ना:पन्ना",
 	"apihelp-query+proofread-description": "अभिन कय परिक्षित पन्नन कय स्थिती जानकारी लौटाइ",
 	"apihelp-query+proofread-example-1": "नेमस्पेस 250 कय पन्नन मे परिक्षित स्थिती मे लौटो",

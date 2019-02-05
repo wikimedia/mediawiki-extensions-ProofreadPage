@@ -77,7 +77,6 @@
 	"proofreadpage-pageinfo-status": "Controlestatus",
 	"proofreadpage-preferences-showheaders-label": "Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt",
 	"proofreadpage-preferences-horizontal-layout-label": "Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Template:Doorverwijspagina",
 	"proofreadpage-indexquality-alt": "$1 gevalideerde {{PLURAL:$1|pagina|pagina's}}, $2 alleen proefgelezen {{PLURAL:$2|pagina|pagina's}} en $3 niet proefgelezen {{PLURAL:$3|pagina|pagina's}}",
 	"content-model-proofread-page": "Boekpagina",
 	"apihelp-query+proofread-description": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",

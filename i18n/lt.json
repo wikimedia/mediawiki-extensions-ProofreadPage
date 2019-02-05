@@ -69,7 +69,6 @@
 	"proofreadpage-pageinfo-status": "Koregavimo statusas",
 	"proofreadpage-preferences-showheaders-label": "Rodyti antraštės ir poraštės laukus, kai redaguojama {{ns:page}} vardų sritis",
 	"proofreadpage-preferences-horizontal-layout-label": "Naudoti horizontalų išdėstymą, kai redaguojama {{ns:page}} vardų sritis",
-	"proofreadpage-disambiguationspage": "Template:dviprasmiški",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|validuotas puslapis|validuoti puslapiai}}, $2 tik {{PLURAL:$2|tinkamas puslapis|tinkami puslapiai}} ir $3 {{PLURAL:$3|netinkamas puslapis|netinkami puslapiai}}",
 	"content-model-proofread-page": "Knygos puslapis",
 	"apihelp-query+proofread-description": "Pateikia nurodyto puslapio informaciją apie dabartinį koregavimo statusą.",

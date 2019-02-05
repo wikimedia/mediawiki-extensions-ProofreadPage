@@ -85,7 +85,6 @@
 	"proofreadpage-pageinfo-status": "Korrekturlesungsstatus",
 	"proofreadpage-preferences-showheaders-label": "Beim Bearbeiten von Seiten im Namensraum {{ns:page}} die Felder für die Kopf- und die Fußzeile anzeigen",
 	"proofreadpage-preferences-horizontal-layout-label": "Beim Bearbeiten von Seiten im Namensraum {{ns:page}} ein horizontales Layout verwenden",
-	"proofreadpage-disambiguationspage": "Template:Begriffsklärung",
 	"proofreadpage-indexquality-alt": "{{PLURAL:$1|Eine bestätigte Seite|$1 bestätigte Seiten}}, {{PLURAL:$2|eine nur korrekturgelesene Seite|$2 nur korrekturgelesene Seiten}} und {{PLURAL:$3|eine nicht korrekturgelesene Seite|$3 nicht korrekturgelesene Seiten}}",
 	"content-model-proofread-page": "Buchseite",
 	"content-model-proofread-index": "Buchindex",

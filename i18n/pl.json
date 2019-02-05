@@ -85,7 +85,6 @@
 	"proofreadpage-pageinfo-status": "Status przepisywania",
 	"proofreadpage-preferences-showheaders-label": "Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Użyj poziomego układu podczas edycji w przestrzeni nazw {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Template:Disambig",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|strona uwierzytelniona|strony uwierzytelnione|stron uwierzytelnionych}}, $2 {{PLURAL:$2|strona skorygowana|strony skorygowane|stron skorygowanych}} i $3 {{PLURAL:$3|strona przepisana|strony przepisane|stron przepisanych}}",
 	"content-model-proofread-page": "Strona książki",
 	"content-model-proofread-index": "Indeks książki",

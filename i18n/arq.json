@@ -72,7 +72,6 @@
 	"proofreadpage-pageinfo-status": "حالت عمليت التحقق",
 	"proofreadpage-preferences-showheaders-label": "بين رويس الباجة و رجيلتها عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "استعمل الواجهه الأفقية عند ما تكتب في نطاق {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Template:توضيح",
 	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|باجة|باجات}}, $2 only proofread {{PLURAL:$2|باجة|باجات}} and $3 not proofread {{PLURAL:$3|page|باجات}}",
 	"content-model-proofread-page": "الباجه: باجه",
 	"apihelp-query+proofread-description": "Returns information about the current proofread status of the given pages.",

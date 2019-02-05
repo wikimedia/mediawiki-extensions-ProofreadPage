@@ -80,7 +80,6 @@
 	"proofreadpage-pageinfo-status": "Stato de coresion",
 	"proofreadpage-preferences-showheaders-label": "Mostra l'intestasion e 'l pie de pàjina durante ła modifega inte'l namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Dopara el layout orixontałe có te modifeghi inte'l namespace {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Template:Disambigua",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina rileta|pagine rilete}}, $2 {{PLURAL:$2|pagina solo trascrita|pagine solo trascrite}} e $3 {{PLURAL:$3|pagina inconpleta|pagine inconplete}}",
 	"content-model-proofread-page": "Pagina del libro",
 	"content-model-proofread-index": "Indice del libro",

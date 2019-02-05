@@ -80,7 +80,6 @@
 	"proofreadpage-pageinfo-status": "मुद्रितशोधनाची स्थिती",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} या नामविश्वात संपादन करताना हेडर आणि फूटर दाखवा",
 	"proofreadpage-preferences-horizontal-layout-label": "{{Ns:page}} नामविश्वात संपादन करताना आडवी मांडणी वापरा",
-	"proofreadpage-disambiguationspage": "Template:नि:संदिग्धी",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|पान|पाने}} मुल्यांकित, $2 फक्त मुद्रितशोधित {{PLURAL:$2|पान|पाने}} व $3 अ-मुद्रितशोधित {{PLURAL:$3|पान|पाने}}",
 	"content-model-proofread-page": "पुस्तकाचे पान",
 	"content-model-proofread-index": "पुस्तक निर्देशांक",

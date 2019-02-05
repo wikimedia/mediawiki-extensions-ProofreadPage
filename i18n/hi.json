@@ -86,7 +86,6 @@
 	"proofreadpage-pageinfo-status": "प्रूफ़रीड स्थिति",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} नामस्थान पर सम्पादन करते समय शीर्षक और तल क्षेत्र दिखाएँ।",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} नामस्थान पर सम्पादन करते समय सीधा रूप का उपयोग करें।",
-	"proofreadpage-disambiguationspage": "Template:बहुवि",
 	"proofreadpage-indexquality-alt": "$1 सत्यापित {{PLURAL:$1|पृष्ठ}}, $2 केवल शोधकपृष्ठ {{PLURAL:$2|पृष्ठ}} और $3 गैर शोधक {{PLURAL:$3|पृष्ठ}}",
 	"content-model-proofread-page": "पुस्तक पृष्ठ",
 	"content-model-proofread-index": "पुस्तक सामग्री",

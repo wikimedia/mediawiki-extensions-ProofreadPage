@@ -84,7 +84,6 @@
 	"proofreadpage-pageinfo-status": "মুদ্রণ সংশোধনের অবস্থা",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} নামস্থানে সম্পাদনা করার সময় অনুভূমিক বিন্যাস ব্যবহার করুন",
-	"proofreadpage-disambiguationspage": "Template:দ্ব্যর্থতা নিরসন",
 	"proofreadpage-indexquality-alt": "$1টি বৈধকৃত {{PLURAL:$1|পাতা}}, $2টি মুদ্রণ সংশোধিত {{PLURAL:$2|পাতা}} এবং $3টি {{PLURAL:$3|পাতার}} মুদ্রণ সংশোধন করা হয়নি",
 	"content-model-proofread-page": "বইয়ের পাতা",
 	"content-model-proofread-index": "বইয়ের নির্ঘণ্ট",

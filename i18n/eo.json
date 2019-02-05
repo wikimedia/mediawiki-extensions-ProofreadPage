@@ -70,7 +70,6 @@
 	"proofreadpage-pageinfo-status": "Stato de revizio",
 	"proofreadpage-preferences-showheaders-label": "Montru header kaj footer kampoj dum redaktado en la {{ns: paĝo}} nomspaco",
 	"proofreadpage-preferences-horizontal-layout-label": "Uzu horizontala aranĝo dum redaktado en la {{ns: paĝo}} nomspaco",
-	"proofreadpage-disambiguationspage": "Template:Apartigilo",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|validigita paĝo|validigitaj paĝoj}}, $2 nure {{PLURAL:$2|provlegita paĝo|provlegitaj paĝoj}} kaj $3 {{PLURAL:$3|neprovlegita paĝo|neprovlegitaj paĝoj}}",
 	"content-model-proofread-page": "Paĝo: paĝo",
 	"apihelp-query+proofread-description": "Redonas informon pri nuntempa stato de provlegado de la liverita paĝo.",

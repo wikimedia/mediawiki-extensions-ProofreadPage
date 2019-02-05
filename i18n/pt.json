@@ -90,7 +90,6 @@
 	"proofreadpage-pageinfo-status": "Estado da revisão",
 	"proofreadpage-preferences-showheaders-label": "Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar \"layout\" horizontal ao editar o espaço nominal {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Template:disambig",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|página validada|páginas validadas}}, $2 {{PLURAL:$2|página para revisão de texto|páginas para revisão de texto}} e $3 {{PLURAL:$3|página sem marcação para revisão|páginas sem marcação para revisão}}",
 	"content-model-proofread-page": "Página do livro",
 	"content-model-proofread-index": "Índice do livro",

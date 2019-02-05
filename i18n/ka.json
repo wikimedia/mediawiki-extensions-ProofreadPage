@@ -77,7 +77,6 @@
 	"proofreadpage-pageinfo-status": "კორექტურის კითხვის სტატუსი",
 	"proofreadpage-preferences-showheaders-label": "სახელთა სივრცის {{ns:გვერდის}} რედაქტირებისას აჩვენე ზედა და ქვედა ველები.",
 	"proofreadpage-preferences-horizontal-layout-label": "ჰორიზონტალური განლაგების გამოყენება {{ns:page}} სახელთა სივრცის რედაქტირებისას",
-	"proofreadpage-disambiguationspage": "Template:მრავალმნიშვნელოვანი",
 	"proofreadpage-indexquality-alt": "$1 შემოწმებული {{PLURAL:$1|გვერდი|გვერდები}}, $2 მხოლოდ კორექტირებული {{PLURAL:$2|გვერდი|გვერდები}} და $3 არაკორექტირებული {{PLURAL:$3|გვერდი|გვერდები}}",
 	"content-model-proofread-page": "წიგნის გვერდი",
 	"content-model-proofread-index": "წიგნის იდექსი",

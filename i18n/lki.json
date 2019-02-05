@@ -70,7 +70,6 @@
 	"proofreadpage-pageinfo-status": "وضعیت غلطگیری",
 	"proofreadpage-preferences-showheaders-label": "در زمان ویرایش در فضای نام {{ns:page}} سرصفحه و پانویس زمینه را نشان بده",
 	"proofreadpage-preferences-horizontal-layout-label": "استفاده از چیدمان افقی در هنگام ویرایش در فضای نام {{ns:page}}",
-	"proofreadpage-disambiguationspage": "الگو:ابهام‌زدایی",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|صفحه}} صحیح دانسته شده، $2 {{PLURAL:$2|صفحهٔ}} فقط ویراست شده و $3 {{PLURAL:$3|صفحهٔ}} ویراست نشده",
 	"content-model-proofread-page": "وەڵگە : وەڵگە",
 	"apihelp-query+proofread-description": "اطلاعاتی را از وضع بازبینی صفحات نشان می‌دهد.",

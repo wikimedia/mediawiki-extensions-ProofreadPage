@@ -78,7 +78,6 @@
 	"proofreadpage-pageinfo-status": "Tõendamisolek",
 	"proofreadpage-preferences-showheaders-label": "Nimeruumis {{ns:page}} redigeerides näita päise- ja jalusevälja",
 	"proofreadpage-preferences-horizontal-layout-label": "Nimeruumis {{ns:page}} redigeerides kasuta rõhtpaigutust",
-	"proofreadpage-disambiguationspage": "Template:täpsustus",
 	"proofreadpage-indexquality-alt": "Heaks kiidetud $1, tõendatud õigsusega $2 ja tõendamata õigsusega $3 {{PLURAL:$3|lehekülg|lehekülge}}",
 	"content-model-proofread-page": "Raamatu lehekülg",
 	"content-model-proofread-index": "Raamatu register",

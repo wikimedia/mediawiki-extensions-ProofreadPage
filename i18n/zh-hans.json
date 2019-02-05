@@ -93,7 +93,6 @@
 	"proofreadpage-pageinfo-status": "校对状态",
 	"proofreadpage-preferences-showheaders-label": "在{{ns:page}}名字空间编辑时显示页眉和页脚字段",
 	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}名字空间编辑时使用水平线",
-	"proofreadpage-disambiguationspage": "Template:disambig",
 	"proofreadpage-indexquality-alt": "$1个已确认{{PLURAL:$1|页面}}，$2个仅已校对{{PLURAL:$2|页面}}和$3个未校对{{PLURAL:$3|页面}}",
 	"content-model-proofread-page": "图书页面",
 	"content-model-proofread-index": "图书索引",

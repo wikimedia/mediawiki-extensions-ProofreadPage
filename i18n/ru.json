@@ -89,7 +89,6 @@
 	"proofreadpage-pageinfo-status": "Статус вычитки",
 	"proofreadpage-preferences-showheaders-label": "Показывать поля верхнего и нижнего колонтитулов при редактировании в пространстве имен {{ns:page}}.",
 	"proofreadpage-preferences-horizontal-layout-label": "Использовать горизонтальную раскладку при редактировании в пространстве имен {{ns:page}}.",
-	"proofreadpage-disambiguationspage": "Template:неоднозначность",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|проверенная страница|проверенные страницы|проверенных страниц}}, $2 {{PLURAL:$2|вычитанная страница|вычитанные страницы|вычитанных страниц}} и $3 {{PLURAL:$3|невычитанная страница|невычитанные страницы|невычитанных страниц}}.",
 	"content-model-proofread-page": "Страница книги",
 	"content-model-proofread-index": "Индекс книги",

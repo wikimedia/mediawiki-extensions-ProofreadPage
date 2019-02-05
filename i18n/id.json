@@ -79,7 +79,6 @@
 	"proofreadpage-pageinfo-status": "Status uji-baca",
 	"proofreadpage-preferences-showheaders-label": "Menunjukkan bidang header dan footer saat menyunting dalam ruangnama {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Menggunakan tampilan horizontal saat menyunting dalam ruangnama {{ns:page}}",
-	"proofreadpage-disambiguationspage": "Templat:disambig",
 	"proofreadpage-indexquality-alt": "$1 memvalidasi {{PLURAL:$1|halaman|halaman}}, $2 hanya menguji-baca {{PLURAL:$2|halaman|halaman}} dan $3 tidak menguji-baca {{PLURAL:$3|halaman|halaman}}",
 	"content-model-proofread-page": "Halaman buku",
 	"content-model-proofread-index": "Indeks buku",

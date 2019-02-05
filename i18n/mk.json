@@ -80,7 +80,6 @@
 	"proofreadpage-pageinfo-status": "Состојба на провереност",
 	"proofreadpage-preferences-showheaders-label": "Прикажувај заглавје и подножне при уредување на именскиот простор „{{ns:page}}“",
 	"proofreadpage-preferences-horizontal-layout-label": "Користи хоризонтален распоред при уредување во именскиот простор „{{ns:page}}“",
-	"proofreadpage-disambiguationspage": "Template:Појаснување",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|заверена страница|заверени страници}}, $2 само {{PLURAL:$2|прегледана|прегледани}} и $3 {{PLURAL:$3|некоригирана|некоригирани}}",
 	"content-model-proofread-page": "Страница од книгата",
 	"content-model-proofread-index": "Индекс на книгата",

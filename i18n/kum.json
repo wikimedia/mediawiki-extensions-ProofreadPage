@@ -79,7 +79,6 @@
 	"proofreadpage-pageinfo-status": "Тюзелтохув турушу",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} атаралыкъда тюзлейгенде башлыкъ ва тюплюк орунларын гёрсетмеге/яшырмагъа",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} атаралыкъда тюзлейгенде гёнделен тизимни къолламагъа",
-	"proofreadpage-disambiguationspage": "Template:экиякълылыкъ",
 	"proofreadpage-indexquality-alt": "$1 тергелген {{PLURAL:$1|сагьифа|сагьифалар}}, $2 тюзелтохулгъан {{PLURAL:$2|сагьифа|сагьифалар}} ва $3 тюзелтохулмагъан {{PLURAL:$3|сагьифа|сагьифалар}}",
 	"content-model-proofread-page": "Китапны сагьифасы",
 	"content-model-proofread-index": "Китапны ичделиги",

@@ -79,7 +79,6 @@
 	"proofreadpage-pageinfo-status": "ਪਰੂਫ਼ਰੀਡਿੰਗ ਦਾ ਦਰਜਾ",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ਨਾਮਸਥਾਨ ਵਿੱਚ ਹੈਡਰ ਅਤੇ ਫ਼ੁਟਰ ਦੀ ਜਗ੍ਹਾ ਦਿਖਾਓ",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ਨਾਮਸਥਾਨ ਵਿੱਚ ਸੋਧ ਕਰਦੇ ਸਮੇਂ ਲੇਟਵੇਂ ਖਾਕੇ ਦੀ ਵਰਤੋਂ ਕਰੋ",
-	"proofreadpage-disambiguationspage": "ਫਰਮਾ:ਗੁੰਝਲ-ਖੋਲ੍ਹ",
 	"proofreadpage-indexquality-alt": "$1 ਪ੍ਰਮਾਣਿਤ {{PLURAL:$1|ਸਫ਼ਾ|ਸਫ਼ੇ}}, $2 ਸਿਰਫ਼ ਪਰੂਫ਼ਰੀਡ {{PLURAL:$2|ਕੀਤਾ ਸਫ਼ਾ| ਕੀਤੇ ਸਫ਼ੇ}} ਅਤੇ $3 ਬਗੈਰ ਪਰੂਫ਼ਰੀਡ {{PLURAL:$3|ਕੀਤਾ ਸਫ਼ਾ|ਕੀਤੇ ਸਫ਼ੇ}}",
 	"content-model-proofread-page": "ਕਿਤਾਬ ਦਾ ਸਫ਼ਾ",
 	"content-model-proofread-index": "ਕਿਤਾਬ ਇੰਡੈਕਸ",
