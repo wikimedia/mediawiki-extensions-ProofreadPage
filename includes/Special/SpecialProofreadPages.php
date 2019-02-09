@@ -22,9 +22,9 @@
 namespace ProofreadPage\Special;
 
 use HTMLForm;
+use MediaWiki\MediaWikiServices;
 use ProofreadPage;
 use QueryPage;
-use SearchEngine;
 use SearchResultSet;
 use Title;
 
@@ -64,7 +64,7 @@ class SpecialProofreadPages extends QueryPage {
 
 			if ( $this->searchTerm ) {
 				$indexNamespaceId = ProofreadPage::getIndexNamespaceId();
-				$searchEngine = SearchEngine::create();
+				$searchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
 				$searchEngine->setNamespaces( [ $indexNamespaceId ] );
 				$searchEngine->showRedirects = false;
