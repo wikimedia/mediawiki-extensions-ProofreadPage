@@ -51,7 +51,7 @@
 					success();
 				}
 			} else {
-				$zoomImage.load( function () {
+				$zoomImage.on( 'load', function () {
 					$zoomImage.prpZoom();
 					if ( success ) {
 						success();
@@ -148,7 +148,7 @@
 	 * Init the automatic fill of the summary input box
 	 */
 	function setupPageQuality() {
-		$( 'input[name="wpQuality"]' ).click( function () {
+		$( 'input[name="wpQuality"]' ).on( 'click', function () {
 			var $summary = $( 'input#wpSummary, #wpSummary > input' ),
 				pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_summary' ).plain(),
 				summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
@@ -357,7 +357,7 @@
 						}
 
 						isSample = false;
-						$( this ).focus();
+						$( this ).trigger( 'focus' );
 						if ( options.selectionStart !== undefined ) {
 							$( this ).textSelection( 'setSelection', { start: options.selectionStart, end: options.selectionEnd } );
 						}
@@ -451,7 +451,7 @@
 	} );
 
 	// zoom should be initialized after the page is rendered
-	$( window ).load( function () {
+	$( window ).on( 'load', function () {
 		initEnvironment();
 		ensureImageZoomInitialization();
 	} );
