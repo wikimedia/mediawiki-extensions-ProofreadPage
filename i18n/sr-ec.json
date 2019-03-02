@@ -34,6 +34,7 @@
 	"proofreadpage_quality1_summary": "Нелекторисано",
 	"proofreadpage_quality0_message": "Ова страница не мора да буде лекторисана",
 	"proofreadpage_quality1_message": "Ова страница није лекторисана",
+	"proofreadpage_quality3_message": "Ова страница је лекторисана",
 	"proofreadpage_specialpage_label_key": "Претражи:",
 	"proofreadpage_index_listofpages": "Списак страница",
 	"proofreadpage_image_message": "Веза ка индексу стране.",
