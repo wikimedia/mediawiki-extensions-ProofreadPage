@@ -19,12 +19,10 @@
  * @ingroup ProofreadPage
  */
 
-if ( !class_exists( 'LoggedUpdateMaintenance' ) ) {
-	$basePath = getenv( 'MW_INSTALL_PATH' ) !== false
-		? getenv( 'MW_INSTALL_PATH' )
-		: __DIR__ . '/../../..';
-	require_once $basePath . '/maintenance/Maintenance.php';
-}
+$basePath = getenv( 'MW_INSTALL_PATH' ) !== false
+	? getenv( 'MW_INSTALL_PATH' )
+	: __DIR__ . '/../../..';
+require_once $basePath . '/maintenance/Maintenance.php';
 
 /**
  * Set the content model type for Page: pages
@@ -92,5 +90,5 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 
 }
 
-$maintClass = 'FixProofreadIndexPagesContentModel';
+$maintClass = FixProofreadIndexPagesContentModel::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
