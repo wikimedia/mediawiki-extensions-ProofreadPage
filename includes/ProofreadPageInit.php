@@ -147,9 +147,8 @@ class ProofreadPageInit {
 			$lang = $wgLanguageCode;
 		}
 
-		return isset( $proofreadPageNamespacesNames[$lang][$key] )
-				? $proofreadPageNamespacesNames[$lang][$key]
-				: $proofreadPageNamespacesNames['en'][$key];
+		return $proofreadPageNamespacesNames[$lang][$key]
+			?? $proofreadPageNamespacesNames['en'][$key];
 	}
 
 	/**
