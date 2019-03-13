@@ -109,6 +109,9 @@ class EditPagePage extends EditPage {
 		$out->addHTML( $this->pageDisplayHandler->buildPageContainerEnd( $this->getTitle() ) );
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );
+		if ( $this->context->getUser()->getOption( 'usebetatoolbar' ) ) {
+			$out->addModules( 'ext.wikiEditor' );
+		}
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
 		$out->addJsConfigVars( [
 			'prpPageQualityUser' =>
