@@ -623,8 +623,8 @@ class ProofreadPage {
 
 		// fix issue with content type hardcoded in database
 		if ( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
-			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadPagePagesContentModel' );
-			$updater->addPostDatabaseUpdateMaintenance( 'FixProofreadIndexPagesContentModel' );
+			$updater->addPostDatabaseUpdateMaintenance( FixProofreadPagePagesContentModel::class );
+			$updater->addPostDatabaseUpdateMaintenance( FixProofreadIndexPagesContentModel::class );
 		}
 
 		return true;
