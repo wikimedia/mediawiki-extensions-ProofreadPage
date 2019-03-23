@@ -13,6 +13,7 @@
 	},
 	"nstab-page": "ページ",
 	"nstab-index": "目次",
+	"tooltip-ca-nstab-page": "書籍ページを表示",
 	"indexpages": "書誌情報ページの一覧",
 	"pageswithoutscans": "スキャン画像と関連付けていないページ",
 	"proofreadpage_desc": "底本のスキャン画像と写本の本文の比較を容易にさせる",
