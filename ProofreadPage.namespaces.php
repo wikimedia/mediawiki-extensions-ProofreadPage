@@ -307,6 +307,14 @@ $proofreadPageNamespacesNames['nl'] = [
 	'index_talk' => 'Overleg_index'
 ];
 
+/** N'Ko (ߒߞߏ) */
+$proofreadPageNamespacesNames['nqo'] = [
+	'page' => 'ߞߐߜߍ',
+	'page_talk' => 'ߞߐߜߍ ߢߊߝߐߞߣߍ',
+	'index' => 'ߓߊߕߐ߲ߛߐ߲',
+	'index_talk' => 'ߓߊߕߐ߲ߛߐ߲ ߢߊߝߐߞߣߍ',
+];
+
 /** Oriya (ଓଡ଼ିଆ) */
 $proofreadPageNamespacesNames['or'] = [
 	'page' => 'ପୃଷ୍ଠା',
