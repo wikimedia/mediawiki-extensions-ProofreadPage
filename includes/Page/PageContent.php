@@ -133,7 +133,7 @@ class PageContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function getNativeData() {
+	public function getText() {
 		return $this->serialize();
 	}
 
