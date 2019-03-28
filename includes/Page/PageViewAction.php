@@ -47,6 +47,7 @@ class PageViewAction extends ViewAction {
 		$out->addModules( 'ext.proofreadpage.ve.pageTarget.init' );
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
 		$out->addJsConfigVars( [
+			// @phan-suppress-next-line PhanUndeclaredMethod Content doesn't have getLevel
 			'prpPageQuality' => $content->getLevel()->getLevel()
 		] );
 

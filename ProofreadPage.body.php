@@ -135,6 +135,7 @@ class ProofreadPage {
 	 * Append javascript variables and code to the page.
 	 * @param OutputPage $out
 	 * @return bool
+	 * @suppress PhanUndeclaredProperty $out->proofreadPageDone
 	 */
 	public static function onBeforePageDisplay( OutputPage $out ) {
 		$action = $out->getRequest()->getVal( 'action' );
@@ -217,6 +218,7 @@ class ProofreadPage {
 	 * @param OutputPage $outputPage
 	 * @param ParserOutput $parserOutput
 	 * @return bool
+	 * @suppress PhanUndeclaredProperty $out->is_toc
 	 */
 	public static function onOutputPageParserOutput(
 		OutputPage $outputPage, ParserOutput $parserOutput
@@ -398,6 +400,7 @@ class ProofreadPage {
 	 * Update the pr_index entry of an article
 	 * @param Page $index
 	 * @param Title|null $deletedPage
+	 * @suppress PhanUndeclaredMethod Page interface doesn't declare any method
 	 */
 	public static function updatePrIndex( Page $index, $deletedPage = null ) {
 		$indexTitle = $index->getTitle();
@@ -463,6 +466,7 @@ class ProofreadPage {
 		// find the index page
 		$indextitle = ProofreadPageDbConnector::getIndexTitleForPageId( $id );
 
+		// @phan-suppress-next-line PhanUndeclaredProperty
 		if ( isset( $out->is_toc ) && $out->is_toc ) {
 			$n = 0;
 

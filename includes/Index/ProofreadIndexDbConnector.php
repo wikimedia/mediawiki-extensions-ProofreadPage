@@ -31,6 +31,7 @@ class ProofreadIndexDbConnector {
 	 * @param Object $x
 	 * @param int $indexId
 	 * @param WikiPage $article
+	 * @suppress PhanUndeclaredProperty For new_q and old_q
 	 */
 	public static function replaceIndexById( $x, $indexId, WikiPage $article ) {
 		$n  = $x->pr_count;

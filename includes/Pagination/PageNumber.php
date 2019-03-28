@@ -76,13 +76,13 @@ class PageNumber {
 				return $language->formatNum( $this->number, true );
 			case self::DISPLAY_FOLIO:
 				return $language->formatNum( $this->number, true ) .
-					$this->formatRectoVerso( $this->isRecto );
+					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
 				return Language::romanNumeral( $this->number ) .
-					$this->formatRectoVerso( $this->isRecto );
+					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOROMAN:
 				return strtolower( Language::romanNumeral( $this->number ) ) .
-					$this->formatRectoVerso( $this->isRecto );
+					$this->formatRectoVerso();
 			default:
 				return $this->number;
 		}
@@ -108,13 +108,13 @@ class PageNumber {
 				return $language->formatNum( $this->number, true );
 			case self::DISPLAY_FOLIO:
 				return $language->formatNum( $this->number, true ) .
-					$this->rawRectoVerso( $this->isRecto );
+					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
 				return Language::romanNumeral( $this->number ) .
-					$this->rawRectoVerso( $this->isRecto );
+					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOROMAN:
 				return strtolower( Language::romanNumeral( $this->number ) ) .
-					$this->rawRectoVerso( $this->isRecto );
+					$this->rawRectoVerso();
 			default:
 				return $this->number;
 		}

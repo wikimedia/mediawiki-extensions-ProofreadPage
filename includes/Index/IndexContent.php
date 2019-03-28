@@ -272,6 +272,7 @@ class IndexContent extends TextContent {
 			if ( $withPrepossessing ) {
 				/** @var IndexContentHandler $contentHandler */
 				$contentHandler = $this->getContentHandler();
+				// @phan-suppress-next-line PhanUndeclaredMethod Phan doesn't understand the hint above
 				$wikitext = $contentHandler->getParser()->preprocess(
 					$wikitext, $title, new ParserOptions()
 				);
