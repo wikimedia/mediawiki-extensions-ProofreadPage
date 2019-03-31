@@ -67,7 +67,7 @@
 	"proofreadpage_page_status": "Κατάσταση σελίδας",
 	"proofreadpage_js_attributes": "Συγγραφέας Τίτλος Έτος Εκδότης",
 	"proofreadpage_index_attributes": "Συγγραφέας\n\nΤίτλος\n\nΈτος|Έτος έκδοσης\n\nΕκδότης\n\nΠηγή\n\nΕικόνα|Εξώφυλλο\n\nΣελίδες||20\n\nΣχόλια||10",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|Σελίδα|Σελίδες}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|σελίδα|σελίδες}}",
 	"proofreadpage_specialpage_legend": "Αναζήτηση σελίδων ευρετηρίου",
 	"proofreadpage_specialpage_searcherror": "Σφάλμα στη μηχανή αναζήτησης",
 	"proofreadpage_specialpage_searcherrortext": "Η μηχανή αναζήτησης δεν λειτουργεί. Συγγνώμη για την ενόχληση.",
