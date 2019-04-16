@@ -76,7 +76,7 @@ ve.ui.MWPagequalityInspector.prototype.getSetupProcess = function ( data ) {
 				this.validatedLevelRemoved = true;
 				this.qualitySelector.removeItems( [ this.qualityOptions[ 4 ] ] );
 			}
-			this.qualitySelector.selectItem( this.qualityOptions[ currentLevel ] );
+			this.qualitySelector.selectItem( this.qualityOptions[ currentLevel ] ).setDisabled( this.isReadOnly() );
 		}, this );
 };
 

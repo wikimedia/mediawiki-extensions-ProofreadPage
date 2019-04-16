@@ -66,6 +66,7 @@ ve.ui.MWPagesInspector.prototype.getSetupProcess = function ( data ) {
  */
 ve.ui.MWPagesInspector.prototype.setupForm = function () {
 	var key,
+		isReadOnly = this.isReadOnly(),
 		attributes = this.mwData.attrs,
 		inspector = this;
 
@@ -107,6 +108,14 @@ ve.ui.MWPagesInspector.prototype.setupForm = function () {
 				inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget( {
 					value: attributes[ key ]
 				} ), key );
+			}
+		}
+
+		for ( key in inspector.attributeInputs ) {
+			if ( inspector.attributeInputs[ key ].setReadOnly ) {
+				inspector.attributeInputs[ key ].setReadOnly( isReadOnly );
+			} else {
+				inspector.attributeInputs[ key ].setDisabled( isReadOnly );
 			}
 		}
 
