@@ -700,7 +700,7 @@ class ProofreadPage {
 				try {
 					$prevTitle  = $pagination->getPageTitle( $pageNumber - 1 );
 					$links['namespaces']['proofreadPagePrevLink'] = [
-						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $prevTitle ),
 						'rel' => 'prev',
 						'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
@@ -712,7 +712,7 @@ class ProofreadPage {
 				try {
 					$nextTitle  = $pagination->getPageTitle( $pageNumber + 1 );
 					$links['namespaces']['proofreadPageNextLink'] = [
-						'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $nextTitle ),
 						'rel' => 'next',
 						'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
@@ -724,7 +724,7 @@ class ProofreadPage {
 			}
 
 			$links['namespaces']['proofreadPageIndexLink'] = [
-				'class' => ( $skin->skinname === 'vector' ) ? 'icon' : '',
+				'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
 				'href' => $indexTitle->getLinkURL(),
 				'text' => wfMessage( 'proofreadpage_index' )->plain()
 			];
