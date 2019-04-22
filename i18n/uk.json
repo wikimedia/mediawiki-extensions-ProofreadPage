@@ -14,7 +14,8 @@
 			"Тест",
 			"Ата",
 			"Piramidion",
-			"NickK"
+			"NickK",
+			"Vlad5250"
 		]
 	},
 	"nstab-page": "Сторінка",
@@ -78,7 +79,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Пошукова система не працює. Вибачте за незручності.",
 	"proofreadpage_source": "Джерело",
 	"proofreadpage_source_message": "Для створення цього тексту використані відскановані видання",
+	"action-pagequality": "змінювати статус якості сторінки",
 	"right-pagequality": "Змінювати статус якості сторінки",
+	"action-pagequality-admin": "необмежені редагування прапорця якості сторінки",
 	"right-pagequality-admin": "необмежені редагування прапорця якості сторінки",
 	"proofreadpage-section-tools": "Інструменти коректури",
 	"proofreadpage-group-zoom": "Масштаб",
