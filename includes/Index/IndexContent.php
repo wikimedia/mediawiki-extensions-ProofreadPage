@@ -5,7 +5,6 @@ namespace ProofreadPage\Index;
 use Content;
 use MagicWord;
 use MalformedTitleException;
-use Parser;
 use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
@@ -18,6 +17,7 @@ use Title;
 use User;
 use WikiPage;
 use WikitextContent;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @license GPL-2.0-or-later
@@ -204,8 +204,6 @@ class IndexContent extends TextContent {
 	protected function fillParserOutput( Title $title, $revId,
 		ParserOptions $options, $generateHtml, ParserOutput &$output
 	) {
-		/** @var Parser $wgParser */
-		global $wgParser;
 		$parserHelper = new ParserHelper( $title, $options );
 
 		// We retrieve the view template
@@ -225,7 +223,8 @@ class IndexContent extends TextContent {
 		$text = '__NOEDITSECTION__' . $text;
 
 		// We do the final rendering
-		$output = $wgParser->parse( $text, $title, $options, true, true, $revId );
+		$output = MediaWikiServices::getInstance()->getParser()
+			->parse( $text, $title, $options, true, true, $revId );
 		$output->addTemplate( $templateTitle,
 			$templateTitle->getArticleID(),
 			$templateTitle->getLatestRevID()
