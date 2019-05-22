@@ -4,10 +4,10 @@
 			"Ezagren"
 		]
 	},
-	"proofreadpage_quality0_category": "Tungkaran kadada banaskah",
-	"proofreadpage_quality1_category": "Tungkaran nang balum diuji-baca",
-	"proofreadpage_quality2_category": "Tungkaran bamasalah",
-	"proofreadpage_quality3_category": "Tungkaran nang sudah diuji-baca",
-	"proofreadpage_quality4_category": "Tungkaran nang sudah divalidasi",
-	"proofreadpage_quality1_message": "Tungkaran ngini balum diuji-baca"
+	"proofreadpage_quality0_category": "Halaman kadada banaskah",
+	"proofreadpage_quality1_category": "Halaman nang balum diuji-baca",
+	"proofreadpage_quality2_category": "Halaman bamasalah",
+	"proofreadpage_quality3_category": "Halaman nang sudah diuji-baca",
+	"proofreadpage_quality4_category": "Halaman nang sudah divalidasi",
+	"proofreadpage_quality1_message": "Halaman ngini balum diuji-baca"
 }
