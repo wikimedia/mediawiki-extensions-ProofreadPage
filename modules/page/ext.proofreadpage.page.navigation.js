@@ -31,15 +31,8 @@
 			$tabs = $( getTabsContainerSelector() );
 
 		// Move prev and next links (swapped for rtl languages)
-		if ( $( 'html' ).attr( 'dir' ) === 'rtl' ) {
-			$tabs
-				.append( $( '#ca-proofreadPageNextLink' ) )
-				.append( $( '#ca-proofreadPagePrevLink' ) );
-		} else {
-			$tabs
-				.prepend( $( '#ca-proofreadPageNextLink' ) )
-				.prepend( $( '#ca-proofreadPagePrevLink' ) );
-		}
+		$tabs.prepend( $( '#ca-proofreadPageNextLink' ) )
+			.prepend( $( '#ca-proofreadPagePrevLink' ) );
 
 		// add title attribute to links move to icon
 		for ( id in tabIcons ) {
