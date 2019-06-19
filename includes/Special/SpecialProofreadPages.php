@@ -208,27 +208,30 @@ class SpecialProofreadPages extends QueryPage {
 
 		return [
 			'tables' => [ 'pr_index', 'page' ],
-			'fields' => [ 'page_namespace AS namespace', 'page_title AS title',
-			'2 * pr_q4 + pr_q3 AS status', 'pr_count - pr_q4 - pr_q0 as work_todo',
-			'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
+			'fields' => [
+				'page_namespace AS namespace',
+				'page_title AS title',
+				$this->buildValueField() . ' AS value',
+				'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4'
+			],
 			'conds' => $conds,
 			'options' => [],
 			'join_conds' => [ 'page' => [ 'INNER JOIN', 'page_id=pr_page_id' ] ]
 		];
 	}
 
-	public function getOrderFields() {
+	private function buildValueField() {
 		switch ( $this->queryOrder ) {
 			case 'size':
-				return [ 'pr_count' ];
+				return 'pr_count';
 			case 'alpha':
-				return [ 'page_title' ];
+				return 'page_title';
 			case 'toValidate':
-				return [ 'pr_q3' ];
+				return 'pr_q3';
 			case 'toProofreadOrValidate':
-				return [ 'work_todo' ];
+				return 'pr_count - pr_q4 - pr_q0';
 			default:
-				return [ 'status' ];
+				return '2 * pr_q4 + pr_q3';
 		}
 	}
 
