@@ -14,7 +14,8 @@
 			"Skalman",
 			"Thurs",
 			"WikiPhoenix",
-			"Magol"
+			"Magol",
+			"Mjälten"
 		]
 	},
 	"nstab-page": "Sida",
@@ -90,7 +91,7 @@
 	"proofreadpage-button-toggle-layout-label": "Vertikal/horisontell layout",
 	"proofreadpage-pageinfo-status": "Korrekturläsningsstatus",
 	"proofreadpage-preferences-showheaders-label": "Visa fälten för sidhuvud och sidfot vid redigering i namnrymden {{ns:page}}",
-	"proofreadpage-preferences-horizontal-layout-label": "Använd vågrät layout vid redigering i namnrymden {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "Använd vågrät utformning vid redigering i namnrymden {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|validerad sida|validerade sidor}}, $2 endast {{PLURAL:$2|korrekturläst sida|korrekturlästa sidor}} och $3 ej {{PLURAL:$3|korrekturläst sida|korrekturlästa sidor}}",
 	"content-model-proofread-page": "Boksida",
 	"content-model-proofread-index": "Bokindex",
