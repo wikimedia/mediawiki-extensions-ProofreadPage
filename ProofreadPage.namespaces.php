@@ -323,6 +323,14 @@ $proofreadPageNamespacesNames['or'] = [
 	'index_talk' => 'ସୂଚୀ_ଆଲୋଚନା'
 ];
 
+/** Punjabi (ਪੰਜਾਬੀ) */
+$proofreadPageNamespacesNames['pa'] = [
+	'page' => 'ਪੰਨਾ',
+	'page_talk' => 'ਪੰਨਾ_ਗੱਲ-ਬਾਤ',
+	'index' => 'ਇੰਡੈਕਸ',
+	'index_talk' => 'ਇੰਡੈਕਸ_ਗੱਲ-ਬਾਤ'
+];
+
 /** Polish (polski) */
 $proofreadPageNamespacesNames['pl'] = [
 	'page' => 'Strona',
