@@ -16,7 +16,8 @@
 			"Duolaimi",
 			"Wmr89502270",
 			"Shizhao",
-			"Wmr"
+			"Wmr",
+			"神樂坂秀吉"
 		]
 	},
 	"nstab-page": "页面",
@@ -59,7 +60,7 @@
 	"proofreadpage_quality0_message": "本页面不需要校对",
 	"proofreadpage_quality1_message": "此页尚未校对",
 	"proofreadpage_quality2_message": "校对本页时出现了一个问题",
-	"proofreadpage_quality3_message": "本页已经被校对",
+	"proofreadpage_quality3_message": "本页已校对",
 	"proofreadpage_quality4_message": "本页面已复核",
 	"proofreadpage_index_status": "索引状态",
 	"proofreadpage_index_size": "页面数",
