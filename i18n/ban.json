@@ -2,9 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"NoiX180",
-			"Joseagush"
+			"Joseagush",
+			"Luh Gede Krismayanti"
 		]
 	},
 	"indexpages": "Daptar kaca indèks",
-	"proofreadpage_quality0_category": "Tusing wenten teks"
+	"proofreadpage_quality0_category": "Tusing wenten teks",
+	"proofreadpage_quality2_category": "Kaca madué pikobet",
+	"proofreadpage_quality3_category": "Kaca sané sampun kauji",
+	"proofreadpage_quality4_category": "Kaca sané sampun kavalidasi"
 }

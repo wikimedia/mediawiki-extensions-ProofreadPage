@@ -3,7 +3,8 @@
 		"authors": [
 			"Mostafadaneshvar",
 			"RigiMahnoor",
-			"Baloch Afghanistan"
+			"Baloch Afghanistan",
+			"Sultanselim baloch"
 		]
 	},
 	"indexpages": "لیستء چه اولی تاکان",
@@ -23,7 +24,7 @@
 	"proofreadpage_number_expected": "ارور: عددی درورء لوٹ انت",
 	"proofreadpage_interval_too_large": "ارور: باز ٹوهین اندازگ",
 	"proofreadpage_invalid_interval": "ارور: نامهتبرین اندازگ",
-	"proofreadpage_nextpage": "صفحه بعدی",
+	"proofreadpage_nextpage": "اݔدگہ تاک",
 	"proofreadpage_prevpage": "پیشگین صفحه",
 	"proofreadpage_header": "سرتاک(شامل نه):",
 	"proofreadpage_body": "بدنه صفحه (به ):",
