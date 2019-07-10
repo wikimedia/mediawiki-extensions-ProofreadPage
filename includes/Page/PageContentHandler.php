@@ -43,6 +43,7 @@ class PageContentHandler extends TextContentHandler {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanTypeMismatchArgument False positive due to parent signature
 	 */
 	public function serializeContent( Content $content, $format = null ) {
 		$this->checkFormat( $format );
@@ -123,6 +124,7 @@ class PageContentHandler extends TextContentHandler {
 	 * @param string $text
 	 * @return PageContent
 	 * @throws MWContentSerializationException
+	 * @suppress PhanTypeMismatchArgument
 	 */
 	private function unserializeContentInJson( $text ) {
 		$array = json_decode( $text, true );
@@ -161,6 +163,7 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @param string $text
 	 * @return PageContent
+	 * @suppress PhanTypeMismatchArgument
 	 */
 	private function unserializeContentInWikitext( $text ) {
 		$header = '';
@@ -259,6 +262,7 @@ class PageContentHandler extends TextContentHandler {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanTypeMismatchArgument
 	 */
 	public function makeEmptyContent() {
 		return new PageContent(
@@ -271,6 +275,7 @@ class PageContentHandler extends TextContentHandler {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanUndeclaredMethod Content doesn't have getLevel etc.
 	 */
 	public function merge3( Content $oldContent, Content $myContent, Content $yourContent ) {
 		$this->checkModelID( $oldContent->getModel() );
@@ -329,6 +334,7 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @inheritDoc
 	 * @todo is it the right content for redirects?
+	 * @suppress PhanTypeMismatchArgument
 	 */
 	public function makeRedirectContent( Title $destination, $text = '' ) {
 		return new PageContent(

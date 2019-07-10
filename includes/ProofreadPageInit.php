@@ -138,7 +138,7 @@ class ProofreadPageInit {
 	 * The english language is used as fallback.
 	 * @param string $key namespace key in the array
 	 * @param string $lang language code by default the wiki language
-	 * @return array
+	 * @return string
 	 */
 	protected static function getNamespaceName( $key, $lang = '' ) {
 		global $proofreadPageNamespacesNames, $wgLanguageCode;

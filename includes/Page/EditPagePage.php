@@ -65,6 +65,7 @@ class EditPagePage extends EditPage {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanUndeclaredMethod Phan doesn't understand that $content is PageContent
 	 */
 	protected function showContentForm() {
 		$out = $this->context->getOutput();
@@ -157,6 +158,11 @@ class EditPagePage extends EditPage {
 		return $checkboxes;
 	}
 
+	/**
+	 * @param User $user
+	 * @param int &$tabindex
+	 * @suppress PhanUndeclaredMethod getLevel
+	 */
 	private function buildQualityEditWidget( User $user, &$tabindex ) {
 		$oldLevel = $this->getCurrentContent()->getLevel();
 		$content = $this->toEditContent( $this->textbox1 );
@@ -199,6 +205,7 @@ class EditPagePage extends EditPage {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanTypeMismatchArgument
 	 */
 	protected function importContentFormData( &$request ) {
 		/** @var PageContent $currentContent */
@@ -208,6 +215,7 @@ class EditPagePage extends EditPage {
 			$request->getText( 'wpHeaderTextbox' ),
 			$request->getText( 'wpTextbox1' ),
 			$request->getText( 'wpFooterTextbox' ),
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$request->getInt( 'wpQuality', $currentContent->getLevel()->getLevel() ),
 			$currentContent
 		)->serialize();

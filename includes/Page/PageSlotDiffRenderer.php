@@ -33,6 +33,7 @@ class PageSlotDiffRenderer extends SlotDiffRenderer {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanUndeclaredMethod Content doesn't have getLevel etc.
 	 */
 	public function getDiff( Content $oldContent = null, Content $newContent = null ) {
 		$this->normalizeContents( $oldContent, $newContent, PageContent::class );

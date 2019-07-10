@@ -53,7 +53,7 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param string $pages
+	 * @param array $pages
 	 * @return int|null
 	 */
 	public static function getNumberOfExistingPagesFromPageTitle( $pages ) {

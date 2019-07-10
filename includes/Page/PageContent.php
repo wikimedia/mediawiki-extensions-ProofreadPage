@@ -146,6 +146,7 @@ class PageContent extends TextContent {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanTypeMismatchArgument False positive
 	 */
 	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
 		return new self(
@@ -158,6 +159,7 @@ class PageContent extends TextContent {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanTypeMismatchArgument False positive
 	 */
 	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
 		return new self(
@@ -213,6 +215,7 @@ class PageContent extends TextContent {
 
 	/**
 	 * @inheritDoc
+	 * @suppress PhanTypeMismatchArgument
 	 */
 	public function updateRedirect( Title $target ) {
 		if ( !$this->isRedirect() ) {

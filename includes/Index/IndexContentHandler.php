@@ -116,6 +116,7 @@ class IndexContentHandler extends TextContentHandler {
 		$frame = $this->parser->getPreprocessor()->newFrame();
 		$childFrame = $frame->newChild( $dom->getChildrenOfType( 'part' ) );
 		$values = [];
+		// @phan-suppress-next-line PhanUndeclaredProperty
 		foreach ( $childFrame->namedArgs as $varName => $value ) {
 			$value = $this->parser->mStripState->unstripBoth(
 				$frame->expand( $value, PPFrame::RECOVER_ORIG )

@@ -37,6 +37,7 @@ class PagesTagParser {
 	 * @param string $input the content between opening and closing tags
 	 * @param array $args tags arguments
 	 * @return string
+	 * @suppress PhanUndeclaredProperty Several undeclared properties
 	 */
 	public function render( $input, array $args ) {
 		// abort if this is nested <pages> call
