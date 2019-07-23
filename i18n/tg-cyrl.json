@@ -6,6 +6,8 @@
 			"ToJack"
 		]
 	},
+	"nstab-page": "Саҳифа",
+	"nstab-index": "Индекс",
 	"proofreadpage_desc": "Имкони муқоисаи осони матн бо нусхаи аслии пӯйишшударо фароҳам меоварад",
 	"proofreadpage_image": "акс",
 	"proofreadpage_index": "индекс",
@@ -21,9 +23,13 @@
 	"proofreadpage_quality3_category": "Бозбинишуда",
 	"proofreadpage_quality4_category": "Таъйидшуда",
 	"proofreadpage_quality1_message": "Ин саҳифа аз назар гузаронида нашудааст",
+	"proofreadpage_specialpage_label_key": "Ҷустан:",
 	"proofreadpage_index_listofpages": "Феҳристи саҳифаҳо",
 	"proofreadpage_image_message": "Пайванд ба саҳифаи индекс",
 	"proofreadpage_page_status": "Вазъияти саҳифа",
 	"proofreadpage_js_attributes": "Муаллиф Унвон Сол Нашриёт",
-	"proofreadpage_index_attributes": "Муаллиф\nУнвон\nСол|Соли интишор\nНашриёт\nМанбаъ\nАкс|Акси рӯи ҷилд\nСаҳифаҳо||20\nМулоҳизот||10"
+	"proofreadpage_index_attributes": "Муаллиф\nУнвон\nСол|Соли интишор\nНашриёт\nМанбаъ\nАкс|Акси рӯи ҷилд\nСаҳифаҳо||20\nМулоҳизот||10",
+	"proofreadpage-group-other": "Дигар",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Саҳифаҳо",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "На"
 }
