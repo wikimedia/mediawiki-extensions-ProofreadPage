@@ -448,12 +448,13 @@
 		setupPreferences();
 		setupPageQuality();
 		getLoadedEditorPromise().done( setupWikitextEditor );
-	} );
 
-	// zoom should be initialized after the page is rendered
-	$( window ).on( 'load', function () {
-		initEnvironment();
-		ensureImageZoomInitialization();
+		// zoom should be initialized after the page is rendered
+		if ( document.readyState === 'complete' ) {
+			ensureImageZoomInitialization();
+		} else {
+			$( window ).on( 'load', ensureImageZoomInitialization );
+		}
 	} );
 
 }() );
