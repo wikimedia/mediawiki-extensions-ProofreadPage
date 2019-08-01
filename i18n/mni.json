@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Awangba Mangang"
+			"Awangba Mangang",
+			"Amire80"
 		]
 	},
-	"nstab-page": "ꯂꯥꯃꯥꯏ",
-	"nstab-index": "Index",
-	"tooltip-ca-nstab-page": "ꯂꯥꯏꯔꯤꯛꯇꯨꯒꯤ ꯂꯥꯃꯥꯏꯗꯨ ꯎꯨꯠꯂꯨ",
+	"nstab-page": "ꯂꯃꯥꯏ",
+	"nstab-index": "ꯏꯟꯗꯦꯛꯁ",
+	"tooltip-ca-nstab-page": "ꯂꯥꯏꯔꯤꯛꯇꯨꯒꯤ ꯂꯃꯥꯏꯗꯨ ꯎꯨꯠꯂꯨ",
 	"tooltip-ca-nstab-index": "ꯂꯥꯏꯔꯤꯛꯇꯨꯒꯤ ꯏꯟꯗꯦꯀꯁ ꯎꯨꯠꯂꯨ",
 	"indexpages": "ꯏꯟꯗꯦꯀꯁ ꯂꯥꯃꯥꯏꯁꯤꯡꯒꯤ ꯄꯔꯦꯡ",
 	"pageswithoutscans": "ꯏꯁꯀꯥꯟ ꯇꯧꯗꯕꯥ ꯂꯥꯃꯥꯏꯁꯤꯡ",
@@ -19,7 +20,7 @@
 	"proofreadpage_indexdupetext": "ꯏꯟꯗꯦꯀꯁ ꯂꯥꯃꯥꯏꯗꯥ ꯂꯥꯃꯥꯏꯁꯤꯡꯁꯤ ꯄꯥꯔꯦꯡ ꯑꯃꯨꯛꯇꯒꯤ ꯍꯦꯟꯅꯥ ꯂꯦꯡꯕꯥ ꯌꯥꯗꯦ",
 	"proofreadpage_nologin": "ꯂꯦꯒ ꯏꯟ ꯇꯧꯗꯦ",
 	"proofreadpage_nologintext": "You must be [[Special:UserLogin|logged in]] to modify the proofreading status of pages.",
-	"proofreadpage_notallowedtext": "ꯅꯪ ꯅꯥ ꯃꯁꯤ ꯒꯤ ꯈꯨꯗꯝ ꯇꯥꯛꯂꯤꯕꯥ status ꯁꯤ ꯒꯤ ꯂꯥꯃꯥꯏꯁꯤ ꯁꯦꯝꯗꯣꯛꯄꯥ ꯌꯥꯗꯦ",
+	"proofreadpage_notallowedtext": "ꯅꯪ ꯅꯥ ꯃꯁꯤ ꯒꯤ ꯈꯨꯗꯝ ꯇꯥꯛꯂꯤꯕꯥ ꯊꯥꯛ ꯁꯤ ꯒꯤ ꯂꯃꯥꯏꯁꯤ ꯁꯦꯝꯗꯣꯛꯄꯥ ꯌꯥꯗꯦ",
 	"proofreadpage_dataconfig_badformatted": "ꯕꯨꯛ ꯏꯟ ꯗꯥꯇꯥ ꯀꯟꯐꯌꯤꯒꯔꯦꯁꯟ",
 	"proofreadpage_dataconfig_badformattedtext": "The page [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON.",
 	"proofreadpage_number_expected": "ꯑꯔꯥꯟꯕꯥ: ꯃꯁꯤꯡ ꯂꯣꯝꯗꯥ ꯑꯣꯏꯅꯥ ꯊꯥꯖꯩ",
@@ -46,7 +47,7 @@
 	"proofreadpage_quality2_message": "ꯃꯁꯤꯒꯤ ꯂꯥꯃꯥꯏꯁꯤ ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯄꯥꯕꯗꯥ ꯈꯨꯔꯧ ꯊꯥꯡꯉꯤ",
 	"proofreadpage_quality3_message": "ꯃꯁꯤꯒꯤ ꯂꯥꯃꯥꯏꯁꯤ ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯄꯥꯔꯦ",
 	"proofreadpage_quality4_message": "ꯃꯁꯤꯒꯤ ꯂꯥꯃꯥꯏꯁꯤ ꯍꯥꯟꯅꯗꯒꯤ ꯆꯠꯅꯕꯥ ꯌꯥꯔꯦ",
-	"proofreadpage_index_status": "ꯏꯟꯗꯦꯀꯁ",
+	"proofreadpage_index_status": "ꯏꯟꯗꯦꯛꯁꯔ ꯋꯊꯥꯛ",
 	"proofreadpage_index_size": "ꯂꯥꯃꯥꯏꯁꯤꯡꯒꯤ ꯃꯁꯤꯡ",
 	"proofreadpage_pages_to_validate": "Number of pages to be validated",
 	"proofreadpage_pages_to_proofread_or_validate": "ꯈꯨꯗꯝ ꯄꯤꯗꯨꯅ /ꯑꯌꯥꯕꯥ ꯄꯤꯗꯨꯅ ꯌꯦꯡꯒꯗꯕ ꯂꯥꯃꯥꯏꯁꯤꯡꯒꯤ ꯃꯁꯤꯡ",
@@ -81,7 +82,7 @@
 	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|page|pages}}, $2 only proofread {{PLURAL:$2|page|pages}} and $3 not proofread {{PLURAL:$3|page|pages}}",
 	"content-model-proofread-page": "ꯂꯥꯏꯔꯤꯛꯀꯤ ꯂꯥꯃꯥꯏ",
 	"content-model-proofread-index": "ꯂꯥꯏꯔꯤꯛꯀꯤ ꯏꯟꯗꯦꯀꯁ",
-	"apihelp-query+proofread-description": "ꯄꯤꯔꯤꯕꯥ ꯂꯥꯃꯥꯏꯁꯤꯒꯤ ꯍꯧꯖꯤꯛꯀꯤ ꯑꯣꯏꯕꯥ ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯌꯦꯡꯕꯥ status ‍ꯀꯤ ꯋꯥꯔꯣꯟꯁꯤ ꯑꯃꯨꯛ ꯍꯟꯅꯥ ꯍꯥꯏꯔꯛ ꯎ",
+	"apihelp-query+proofread-description": "ꯄꯤꯔꯤꯕꯥ ꯂꯃꯥꯏꯁꯤꯒꯤ ꯍꯧꯖꯤꯛꯀꯤ ꯑꯣꯏꯕꯥ ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯌꯦꯡꯕꯥ ꯊꯥꯛ ‍ꯀꯤ ꯋꯥꯔꯣꯟꯁꯤ ꯑꯃꯨꯛ ꯍꯟꯅꯥ ꯍꯥꯏꯔꯛ ꯎ",
 	"apihelp-query+proofread-summary": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-example-1": "Return proofread status for pages in namespace 250",
 	"apihelp-query+proofreadinfo-description": "Return information about configuration of ProofreadPage extension.",
