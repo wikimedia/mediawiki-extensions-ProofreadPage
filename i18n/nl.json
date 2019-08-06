@@ -9,7 +9,8 @@
 			"Robin van der Vliet",
 			"Huhbakker",
 			"Mar(c)",
-			"Mainframe98"
+			"Mainframe98",
+			"Romaine"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -45,7 +46,10 @@
 	"proofreadpage_quality3_category": "Proefgelezen",
 	"proofreadpage_quality4_category": "Gecontroleerd",
 	"proofreadpage_quality0_summary": "Zonder tekst",
+	"proofreadpage_quality1_summary": "Niet proefgelezen",
 	"proofreadpage_quality2_summary": "Problematisch",
+	"proofreadpage_quality3_summary": "Proefgelezen",
+	"proofreadpage_quality4_summary": "Gevalideerd",
 	"proofreadpage_quality0_message": "Deze pagina hoeft niet te worden proefgelezen",
 	"proofreadpage_quality1_message": "Deze pagina is niet proefgelezen",
 	"proofreadpage_quality2_message": "Er was een probleem tijdens het controleren van deze pagina",
