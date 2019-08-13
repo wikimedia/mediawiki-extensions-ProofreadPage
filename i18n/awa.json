@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"1AnuraagPandey"
+			"1AnuraagPandey",
+			"Ajeetsinghawadh"
 		]
 	},
+	"nstab-page": "पन्ना",
+	"nstab-index": "अनुक्रम",
+	"tooltip-ca-nstab-page": "किताब कय पन्ना देखा जाय",
+	"tooltip-ca-nstab-index": "पुस्तक कय अनुक्रम देखा जाय",
 	"indexpages": "अनुक्रम पन्नन कय सुची",
 	"pageswithoutscans": "बिना जाँच वाले कुल पन्ना",
 	"proofreadpage_desc": "मूल पाठ अव सद्य पाठ में फरक आसानी से देखावत हय",
@@ -32,6 +37,11 @@
 	"proofreadpage_quality2_category": "समस्याकारक",
 	"proofreadpage_quality3_category": "परिक्षण करा जाय",
 	"proofreadpage_quality4_category": "प्रमाणित",
+	"proofreadpage_quality0_summary": "बिना लेख कय",
+	"proofreadpage_quality1_summary": "परिक्षण नाई भवा है",
+	"proofreadpage_quality2_summary": "समस्याकारक",
+	"proofreadpage_quality3_summary": "परिक्षण करा जाय",
+	"proofreadpage_quality4_summary": "प्रमाणित",
 	"proofreadpage_quality0_message": "ई पन्ना कय परिक्षित होब नाइ जरुरी है",
 	"proofreadpage_quality1_message": "ई पन्ना परिक्षित नाई है",
 	"proofreadpage_quality2_message": "ई पन्ना कय परिक्षित करै मे समस्या रहा",
@@ -39,6 +49,8 @@
 	"proofreadpage_quality4_message": "ई पन्ना वैध बनि गवा है",
 	"proofreadpage_index_status": "अनुक्रम स्थिती",
 	"proofreadpage_index_size": "पन्नन कय सङ्ख्या",
+	"proofreadpage_pages_to_validate": "मान्य हुवय बरे पृष्ठऽन् कय संख्या",
+	"proofreadpage_pages_to_proofread_or_validate": "प्रूफरीड या मान्य हुवय बरे पृष्ठऽन् कय संख्या",
 	"proofreadpage_specialpage_label_orderby": "हिँया से मिलावा जाय:",
 	"proofreadpage_specialpage_label_key": "खोजो",
 	"proofreadpage_specialpage_label_sortascending": "बढे कय क्रम में मिलाओ",
@@ -54,7 +66,10 @@
 	"proofreadpage_specialpage_searcherrortext": "खोज मशीन नाइ काम करत हय। असुविधा कय लिए क्षमा।",
 	"proofreadpage_source": "स्रोत",
 	"proofreadpage_source_message": "ई पाठ कय बनावे मे स्कैन करल संस्करण इस्तेमाल भा है",
+	"action-pagequality": "पन्ना कय गुणस्तर ध्वज बदला जाय",
 	"right-pagequality": "पन्ना कय गुणस्तर ध्वज बदला जाय",
+	"action-pagequality-admin": "पृष्ठ गुणवत्ता फ्लैग मा अप्रतिबंधित संपादन",
+	"right-pagequality-admin": "पृष्ठ गुणवत्ता फ्लैग मा प्रतिबंधित संपादन",
 	"proofreadpage-section-tools": "परिक्षण औजार",
 	"proofreadpage-group-zoom": "ज़ूम",
 	"proofreadpage-group-other": "अउर",
@@ -66,11 +81,22 @@
 	"proofreadpage-pageinfo-status": "परिक्षण स्थिती",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} नेमस्पेस मे सम्पादन करत कय हेडर अव फुटर जगह देखाओ",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} नेमस्पेस सम्पादन मे सिधा खाका इस्तेमाल करो",
-	"content-model-proofread-page": "पन्ना:पन्ना",
+	"proofreadpage-indexquality-alt": "$1 सत्यापित {{PLURAL:$1|पृष्ठ}}, $2 केवल शोधकपृष्ठ {{PLURAL:$2|पृष्ठ}} अउर $3 गैर शोधक {{PLURAL:$3|पृष्ठ}}",
+	"content-model-proofread-page": "किताब कय पन्ना",
+	"content-model-proofread-index": "पुस्तक अनुक्रम",
 	"apihelp-query+proofread-description": "अभिन कय परिक्षित पन्नन कय स्थिती जानकारी लौटाइ",
+	"apihelp-query+proofread-summary": "अभिन कय परिक्षित पन्नन कय स्थिती जानकारी लौटाइ",
 	"apihelp-query+proofread-example-1": "नेमस्पेस 250 कय पन्नन मे परिक्षित स्थिती मे लौटो",
 	"apihelp-query+proofreadinfo-description": "परिक्षित पन्नन कय विन्यास कय जानकारी लौटो",
-	"apihelp-query+proofreadinfo-param-prop": "कवन परिक्षण जानकारी पावय:\n;नेम्स्पेस:पन्नन कय अव अनुक्रम नेमस्पेस कय जानकारी\n;गुणस्तरस्थिती:परिक्षण गुणस्तर स्थिती कय सुची।",
+	"apihelp-query+proofreadinfo-summary": "परिक्षित पन्नन कय विन्यास कय जानकारी देखावा",
+	"apihelp-query+proofreadinfo-param-prop": "कवन परिक्षण जानकारी पावय:\n;नामस्थान:\"{{ns:पेज}}\" अउर \"{{ns:अनुक्रम}}\" नामस्थान के बारे मा जानकारी।\n;गुणस्तरस्थिती:परिक्षण गुणस्तर स्थिती कय सुची।",
 	"apihelp-query+proofreadinfo-example-1": "डिफाल्ट जानकारी मे लौटो",
-	"apihelp-query+proofreadinfo-example-3": "नेमस्पेस जानकारी मे लौटो"
+	"apihelp-query+proofreadinfo-example-3": "नेमस्पेस जानकारी मे लौटो",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "पृष्ठ चुनना",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पन्ना",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 का मूल",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नाहीं",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "पढ़य कय गुणवत्ता",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "पढ़य कय गुणवत्ता"
 }
