@@ -11,6 +11,7 @@ use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
 use OOUI\MultilineTextInputWidget;
 use ProofreadPage\Context;
+use Title;
 use WikitextContent;
 
 /**
@@ -71,6 +72,9 @@ class EditIndexPage extends EditPage {
 			$i++;
 		}
 
+		$inputOptions['tabIndex'] = $i;
+		$fields[] = $this->buildCategoriesField( $content->getCategories(), $inputOptions );
+
 		$out->addHTML( new FieldsetLayout( [
 			'items' => $fields,
 			'classes' => [ 'prp-index-fieldLayout' ]
@@ -127,6 +131,23 @@ class EditIndexPage extends EditPage {
 		return new FieldLayout( $input, $fieldLayoutArgs );
 	}
 
+	private function buildCategoriesField( array $categories, $inputOptions ) {
+		$input = new TextInputWidget( $inputOptions + [
+			'type' => 'text',
+			'name' => 'wpPrpCategories',
+			'value' => implode( '|', array_map( function ( Title $title ) {
+				return $title->getText();
+			}, $categories ) ),
+			'inputId' => 'wpPrpCategories'
+		] );
+		return new FieldLayout( $input, [
+			'label' => $this->context->msg( 'proofreadpage-index-field-category-label' )->text(),
+			'help' => $this->context->msg( 'proofreadpage-index-edit-category-help' )->text(),
+			'infusable' => true,
+			'classes' => [ 'prp-fieldLayout-help' ]
+		] );
+	}
+
 	/**
 	 * Return the name of the edit field for an entry
 	 *
@@ -155,7 +176,16 @@ class EditIndexPage extends EditPage {
 				$fields[$entry->getKey()] = new WikitextContent( $entry->getStringValue() );
 			}
 		}
-		return ( new IndexContent( $fields ) )->serialize( $this->contentFormat );
+		$content = new IndexContent( $fields, $this->importCategoryList( $request ) );
+		return $content->serialize( $this->contentFormat );
+	}
+
+	private function importCategoryList( $request ) {
+		return array_filter( array_map( function ( $text ) {
+			return Title::makeTitleSafe( NS_CATEGORY, trim( $text ) );
+		}, explode( '|', $request->getText( 'wpPrpCategories' ) ) ), function ( $title ) {
+			return $title !== null;
+		} );
 	}
 
 	/**

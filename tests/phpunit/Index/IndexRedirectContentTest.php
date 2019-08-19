@@ -112,17 +112,17 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetSize() {
-		$content = $originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
+		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$this->assertEquals( 3, $content->getSize() );
 	}
 
 	public function testGetRedirectTarget() {
-		$content = $originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
+		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$this->assertEquals( Title::newFromText( 'Foo' ), $content->getRedirectTarget() );
 	}
 
 	public function testUpdateRedirect() {
-		$content = $originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
+		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$this->assertEquals(
 			new IndexRedirectContent( Title::newFromText( 'Bar' ) ),
 			$content->updateRedirect( Title::newFromText( 'Bar' ) )

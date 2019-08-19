@@ -90,6 +90,7 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 		$oldCustomFields = $this->customIndexFieldsParser->parseCustomIndexFields( $old );
 		$newCustomFields = $this->customIndexFieldsParser->parseCustomIndexFields( $new );
 		$diff = '';
+
 		foreach ( $oldCustomFields as $oldField ) {
 			$diff .= $this->createTextDiffOutput(
 				$oldField->getStringValue(),
@@ -97,6 +98,13 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 				$oldField->getLabel()
 			);
 		}
+
+		$diff .= $this->createTextDiffOutput(
+			implode( "\n", $old->getCategories() ),
+			implode( "\n", $new->getCategories() ),
+			$this->context->msg( 'proofreadpage-index-field-category-label' )->escaped()
+		);
+
 		return $diff;
 	}
 
