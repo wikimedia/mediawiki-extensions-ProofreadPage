@@ -138,7 +138,8 @@
 			"styles": "index/ext.proofreadpage.index.css",
 			"scripts": "index/ext.proofreadpage.index.js",
 			"dependencies": [
-				"oojs-ui-core"
+				"oojs-ui-core",
+				"mediawiki.widgets.CategoryMultiselectWidget"
 			]
 		},
 		"ext.proofreadpage.special.indexpages": {
