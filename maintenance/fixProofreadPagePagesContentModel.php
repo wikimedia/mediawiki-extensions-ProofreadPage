@@ -32,7 +32,7 @@ class FixProofreadPagePagesContentModel extends LoggedUpdateMaintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->mDescription = 'Set the content model type for Page: pages';
+		$this->addDescription( 'Set the content model type for Page: pages' );
 
 		$this->requireExtension( 'ProofreadPage' );
 	}
