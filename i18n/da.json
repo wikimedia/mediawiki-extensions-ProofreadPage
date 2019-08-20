@@ -5,7 +5,8 @@
 			"Dferg",
 			"Jon Harald Søby",
 			"Peter Alberti",
-			"Sarrus"
+			"Sarrus",
+			"Saederup92"
 		]
 	},
 	"nstab-page": "Side",
@@ -97,5 +98,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlæsningsstatus",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlæsningsstatus"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlæsningsstatus",
+	"proofreadpage-index-field-category-label": "Kategorier"
 }

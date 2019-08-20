@@ -115,5 +115,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Oui",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualité de la relecture",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualité de la relecture"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualité de la relecture",
+	"proofreadpage-index-field-category-label": "Catégories",
+	"proofreadpage-index-edit-category-help": "Les catégories sont écrites sans le préfixe Catégorie: et sont séparées par un caractère barre verticale « | »."
 }

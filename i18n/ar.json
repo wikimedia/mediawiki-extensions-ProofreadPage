@@ -106,5 +106,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "نعم",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "لا",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "جودة التدقيق",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "جودة التدقيق"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "جودة التدقيق",
+	"proofreadpage-index-field-category-label": "تصنيفات",
+	"proofreadpage-index-edit-category-help": "تتم كتابة التصنيفات بدون البادئة تصنيف: ويتم فصلها عن طريق حرف الأنبوب \"|\"."
 }
