@@ -25,7 +25,8 @@
 			"Liuxinyu970226",
 			"Guycn2",
 			"Pikne",
-			"Amritsreekumar"
+			"Amritsreekumar",
+			"Robby"
 		]
 	},
 	"nstab-page": "Text on the tab of book pages in the \"Page\" namespace on Wikisource\n{{Identical|Page}}",
@@ -125,6 +126,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Label of the option that disallows to include an header on top of the transluded pages.\n{{Identical|No}}",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Title of the button to open the inspector to edit the Page: pages proofreading level block.",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Title for the inspector to edit the Page: pages proofreading level block.",
-	"proofreadpage-index-field-category-label": "Title of the field containing the categories of an Index: page.",
+	"proofreadpage-index-field-category-label": "Title of the field containing the categories of an Index: page.\n{{Identical|Categories}}",
 	"proofreadpage-index-edit-category-help": "Help about the editing field containing the categories of an Index: page."
 }

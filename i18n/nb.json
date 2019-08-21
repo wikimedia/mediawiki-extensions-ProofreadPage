@@ -71,7 +71,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Søkemotoren virker ikke enda. Beklager dette.",
 	"proofreadpage_source": "Kilde",
 	"proofreadpage_source_message": "Skannet utgave brukt for å etablere denne teksten",
+	"action-pagequality": "modifisere sidekvalitetsflagget",
 	"right-pagequality": "Endre sidens kvalitetsflagg",
+	"action-pagequality-admin": "gjøre ubegrensede redigeringer i sidekvalitetsflagget",
 	"right-pagequality-admin": "Ubegrensede redigeringer i sidekvalitetsflagget",
 	"proofreadpage-section-tools": "Korrekturlesingsverktøy",
 	"proofreadpage-group-zoom": "Zoom",
@@ -101,5 +103,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nei",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesingskvalitet",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesingskvalitet"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesingskvalitet",
+	"proofreadpage-index-field-category-label": "Kategorier",
+	"proofreadpage-index-edit-category-help": "Kategorier skrives uten Kategori:-prefikset og atskilles med tegnet «|»."
 }

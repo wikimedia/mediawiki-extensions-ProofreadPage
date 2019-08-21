@@ -25,7 +25,10 @@
 	"proofreadpage_quality4_summary": "Kaca sané sampun ka-validasi",
 	"proofreadpage_quality1_message": "Kaca punika durung kauji-waca",
 	"proofreadpage_specialpage_label_key": "Rereh",
+	"proofreadpage_index_listofpages": "Bacakan kaca",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|kaca}}",
 	"proofreadpage_source": "Wit",
+	"proofreadpage-group-other": "Lianan",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Kaca",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Inggih",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nénten"
