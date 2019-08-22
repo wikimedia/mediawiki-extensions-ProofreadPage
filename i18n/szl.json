@@ -11,8 +11,8 @@
 	"proofreadpage_prevpage": "Popředńo zajta",
 	"proofreadpage_quality0_category": "Bez tekstu",
 	"proofreadpage_quality1_category": "Niyskorygowanŏ",
-	"proofreadpage_quality2_category": "Problymy",
-	"proofreadpage_quality3_category": "Skorygowano",
-	"proofreadpage_quality4_category": "Fertich",
-	"proofreadpage_quality1_message": "Ta zajta ńy uostała skorygowano"
+	"proofreadpage_quality2_category": "Problymatyczne",
+	"proofreadpage_quality3_category": "Skorygowanŏ",
+	"proofreadpage_quality4_category": "Zweryfikowanŏ",
+	"proofreadpage_quality1_message": "Ta strōna niy była zweryfikowanŏ"
 }
