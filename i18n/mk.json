@@ -99,5 +99,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Квалитет на коректурата",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Квалитет на коректурата"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Квалитет на коректурата",
+	"proofreadpage-index-field-category-label": "Категории",
+	"proofreadpage-index-edit-category-help": "Категориите се пишуваат без претставката Категорија и се одвојуваат со исправена црта — „|“."
 }
