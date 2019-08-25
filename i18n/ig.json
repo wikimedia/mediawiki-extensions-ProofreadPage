@@ -2,10 +2,19 @@
 	"@metadata": {
 		"authors": [
 			"Ukabia",
-			"Uzoma Ozurumba"
+			"Uzoma Ozurumba",
+			"Oby Ezeilo"
 		]
 	},
+	"nstab-page": "ihu akwụkwọ",
+	"nstab-index": "ede a na-edebe ihe ndi edere n'usoro n'usoro",
+	"tooltip-ca-nstab-page": "lele ihu akwụkwọ",
+	"tooltip-ca-nstab-index": "lee ede/otu esi debe akwụkwọ n'usoro n'usoro",
+	"pageswithoutscans": "ihu akwụkwọ ndị enyochaghị",
+	"proofreadpage_desc": "hapụ ntụle dị mfe n'etiti ederede enyochara na nke a na-enyocha",
 	"proofreadpage_image": "Nhuunuche",
+	"proofreadpage_index": "usoro idebe akwụkwọ di iche iche",
+	"proofreadpage_index_expected": "ndeghe: a chọrọ usoro idebe akwụkwọ ebe a",
 	"proofreadpage_nextpage": "Ihü sò",
 	"proofreadpage_prevpage": "Ihü na àzú",
 	"proofreadpage_quality2_category": "Na enye nsogbu",

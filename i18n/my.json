@@ -29,5 +29,6 @@
 	"proofreadpage-button-reset-zoom-label": "မူလအရွယ်",
 	"proofreadpage-button-zoom-in-label": "အကျယ်ချဲ့ရန်",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "စာမျက်နှာများ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "လုပ်မည်"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "လုပ်မည်",
+	"proofreadpage-index-field-category-label": "ကဏ္ဍများ"
 }

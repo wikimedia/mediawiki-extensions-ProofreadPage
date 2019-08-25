@@ -109,5 +109,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturläsningskvalitet",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturläsningskvalitet"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturläsningskvalitet",
+	"proofreadpage-index-field-category-label": "Kategorier"
 }
