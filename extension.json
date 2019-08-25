@@ -41,7 +41,8 @@
 	},
 	"MessagesDirs": {
 		"ProofreadPage": [
-			"i18n"
+			"i18n",
+			"i18n/api"
 		]
 	},
 	"ExtensionMessagesFiles": {
@@ -163,11 +164,15 @@
 				},
 				"headerFooter": {
 					"file": "page/images/headerFooter.svg",
-					"variants": [ "progressive" ]
+					"variants": [
+						"progressive"
+					]
 				},
 				"switchLayout": {
 					"file": "page/images/switchLayout.svg",
-					"variants": [ "progressive" ]
+					"variants": [
+						"progressive"
+					]
 				}
 			}
 		},
