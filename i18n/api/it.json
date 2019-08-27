@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16",
+			"Candalua"
+		]
+	},
+	"apihelp-query+proofread-description": "Restituisce informazioni circa l'attuale stato di rilettura delle pagine fornite.",
+	"apihelp-query+proofread-summary": "Restituisce informazioni circa l'attuale stato di rilettura delle pagine fornite.",
+	"apihelp-query+proofread-example-1": "Ritorna lo stato di rilettura per le pagine nel namespace 250",
+	"apihelp-query+proofreadinfo-description": "Restituisce informazioni sulla configurazione dell'estensione ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Restituisce informazioni sulla configurazione dell'estensione ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Che proprietà di correzione ottenere:\n;namespaces: informazione sui namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels: elenco dei livelli di qualità di correzione.",
+	"apihelp-query+proofreadinfo-example-1": "Restituire l'informazione di default",
+	"apihelp-query+proofreadinfo-example-3": "Ritorna informazioni sul namespace"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"IKHazarika"
+		]
+	},
+	"apihelp-query+proofread-description": "প্ৰদান কৰা পৃষ্ঠাসমূহৰ বৰ্তমান প্ৰুফৰিড স্থিতাৱস্থা বিষয়ে তথ্য প্ৰদান কৰে।",
+	"apihelp-query+proofread-example-1": "নামস্থান ২৫০ত থকা পৃষ্ঠাসমূহৰ প্ৰুফৰিড স্থিতাৱস্থা প্ৰদান কৰে",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage extensionৰ সজ্জাৰ বিষয়ে তথ্য প্ৰদান কৰে।",
+	"apihelp-query+proofreadinfo-param-prop": "কি কি প্ৰুফৰিড বিশেষত্ব পাব লাগে:\n;namespaces:Information about Page and Index namespaces.\n;qualitylevels:List of proofread quality levels ।"
+}

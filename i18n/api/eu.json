@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sator",
+			"Theklan"
+		]
+	},
+	"apihelp-query+proofread-description": "Osatutako orrien berrikuspen egoerari buruzko informazioa ematen du.",
+	"apihelp-query+proofread-summary": "Osatutako orrien berrikuspen egoerari buruzko informazioa ematen du.",
+	"apihelp-query+proofread-example-1": "250 izen-tarteko orrien berrikuspen egoera ematen du",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage hedapenaren konfigurazioari buruzko informazioa ematen du.",
+	"apihelp-query+proofreadinfo-summary": "ProofreadPage hedapenaren konfigurazioari buruzko informazioa ematen du.",
+	"apihelp-query+proofreadinfo-param-prop": "Lortuko diren berrikuspen propietateak:\n;namespaces:\"{{ns:Page}}\" eta \"{{ns:Index}}\" izen-tarteen informazioa.\n;qualitylevels:Berrikuspen kalitate mailen zerrenda.",
+	"apihelp-query+proofreadinfo-example-1": "Berezko informazioa eman",
+	"apihelp-query+proofreadinfo-example-3": "Izen-tartearen informazioa ematen du"
+}

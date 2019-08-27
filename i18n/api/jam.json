@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yocahuna"
+		]
+	},
+	"apihelp-query+proofread-description": "Ritoern infamieshan bout di korant pruufriid stietos a di sed piej.",
+	"apihelp-query+proofread-example-1": "Ritoern infamieshan stietos fi piej ina niemspies 250",
+	"apihelp-query+proofreadinfo-description": "Ritoern infamieshan bout kanfigarieshan a PruufriidPiej extenshan.",
+	"apihelp-query+proofreadinfo-example-1": "Ritoern difaalt infamieshan",
+	"apihelp-query+proofreadinfo-example-3": "Ritoern niemspies infamieshan"
+}

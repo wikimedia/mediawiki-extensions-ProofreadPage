@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hosseinblue"
+		]
+	},
+	"apihelp-query+proofread-description": "اطلاعاتی را از وضع بازبینی صفحات نشان می‌دهد.",
+	"apihelp-query+proofread-example-1": "وضع بازبینی صفحات را در فضای نام ۲۵۰ نشان می‌دهد.",
+	"apihelp-query+proofreadinfo-description": "اطلاعاتی را از پیکربندی بازبینی صفحات نشان می‌دهد.",
+	"apihelp-query+proofreadinfo-param-prop": ":کدام ویژگی‌ها را در مورد بازبینی می‌خواهید\n.اطلاعاتی از فضای نام صفحه و نمایه:namespaces; \n .فهرستی از سطح کیفی بازبینی‌ها:download;",
+	"apihelp-query+proofreadinfo-example-1": "برگشت اطلاعات به حالت پیشفرض",
+	"apihelp-query+proofreadinfo-example-3": "برگشت اطلاعات فضای نام"
+}

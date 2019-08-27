@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion",
+			"Ата"
+		]
+	},
+	"apihelp-query+proofread-description": "Видає інформацію про поточний статус вичитки даних сторінок.",
+	"apihelp-query+proofread-summary": "Видає інформацію про поточний статус вичитки вказаних сторінок.",
+	"apihelp-query+proofread-example-1": "Видає статус вичитки сторінок у просторі назв 250",
+	"apihelp-query+proofreadinfo-description": "Видає інформацію про налаштування розширення ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Видає інформацію про налаштування розширення ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Які властивості вичитки видавати:\n;namespaces:Інформація про простори «{{ns:Page}}» та «{{ns:Index}}».\n;qualitylevels:Список рівнів якості вичитки.",
+	"apihelp-query+proofreadinfo-example-1": "Вивести інформацію за замовчуванням",
+	"apihelp-query+proofreadinfo-example-3": "Вивести інформацію простору назв"
+}

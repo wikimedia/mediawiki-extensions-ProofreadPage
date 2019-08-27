@@ -74,7 +74,6 @@
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pådje acertinêye|pådjes acertinêyes}}, $2 {{PLURAL:$2|pådje fok coridjeye|pådjes fok coridjeyes}} et $3 {{PLURAL:$3|pådje nén coridjeye|pådjes nén coridjeyes}}",
 	"content-model-proofread-page": "Pådje di live",
 	"content-model-proofread-index": "Indecse di live",
-	"apihelp-query+proofreadinfo-example-3": "Rinde les infôrmåcions d' l' espåce di lomaedje",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pådjes",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transcluzion di $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Oyi",

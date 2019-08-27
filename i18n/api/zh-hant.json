@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"apihelp-query+proofread-description": "回傳指定頁面的目前校對狀態相關資訊。",
+	"apihelp-query+proofread-summary": "回傳指定頁面的目前校對狀態相關資訊。",
+	"apihelp-query+proofread-example-1": "回傳在命名空間 250 之頁面的校對狀態",
+	"apihelp-query+proofreadinfo-description": "回傳 ProofreadPage 擴充功能設置的相關資訊。",
+	"apihelp-query+proofreadinfo-summary": "回傳 ProofreadPage 擴充功能設置的相關資訊。",
+	"apihelp-query+proofreadinfo-param-prop": "要取得的校對屬性：\n;namespaces：有關「{{ns:Page}}」以及「{{ns:Index}}」命名空間的資訊。\n;qualitylevels：校對品質等級清單。",
+	"apihelp-query+proofreadinfo-example-1": "回傳預設資訊",
+	"apihelp-query+proofreadinfo-example-3": "回傳命名空間資訊"
+}

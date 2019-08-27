@@ -86,7 +86,6 @@
 	"proofreadpage-preferences-showheaders-label": "Να εμφανίζεται η κεφαλίδα και το υποσέλιδο όταν επεξεργάζεστε σελίδες στον ονοματοχώρο {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Χρησιμοποιήστε οριζόντια διάταξη όταν επεξεργάζεστε εντός του ονοματοχώρου {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|εγκεκριμένη|εγκεκριμένες}} {{PLURAL:$1|σελίδα|σελίδες}}, $2 {{PLURAL:$2|ελεγμένη|ελεγμένες}} {{PLURAL:$2|σελίδα|σελίδες}} και $3 μη {{PLURAL:$3|ελεγμένη|ελεγμένες}} {{PLURAL:$3|σελίδα|σελίδες}}",
-	"apihelp-query+proofreadinfo-example-3": "Επιστροφή πληροφοριών ονοματοχώρου",
 	"proofreadpage-index-field-category-label": "Κατηγορίες",
 	"proofreadpage-index-edit-category-help": "Οι κατηγορίες γράφονται χωρίς το πρόθεμα «Κατηγορία:» και διαχωρίζονται με τον χαρακτήρα «|»."
 }

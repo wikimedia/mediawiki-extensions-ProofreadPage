@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Felipe L. Ewald"
+		]
+	},
+	"apihelp-query+proofread-description": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
+	"apihelp-query+proofread-summary": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
+	"apihelp-query+proofread-example-1": "Retornar status de revisão para páginas no namespace 250",
+	"apihelp-query+proofreadinfo-description": "Retorna informações sobre a configuração da extensão ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Retorna informações sobre a configuração da extensão ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Que propriedades de revisão obter:\n; namespaces: Informações sobre os espaços nominais \"{{ns:Page}}\" e \"{{ns:Index}}\" .\n;qualitylevels: Lista de níveis de qualidade de revisão de texto.",
+	"apihelp-query+proofreadinfo-example-1": "Retornar a informação padrão.",
+	"apihelp-query+proofreadinfo-example-3": "Retornar informações do espaço nominal"
+}

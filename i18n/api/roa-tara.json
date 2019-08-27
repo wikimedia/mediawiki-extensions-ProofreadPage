@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"apihelp-query+proofread-description": "Torne le 'mbormaziune sus a 'u state de mò de le verifiche pe le pàggene scacchiate.",
+	"apihelp-query+proofread-summary": "Torne le 'mbormaziune sus a 'u state de mò de le verifiche pe le pàggene scacchiate.",
+	"apihelp-query+proofread-example-1": "Torne 'u state d'a verifiche pe le pàggene jndr'à 'u namespace 250",
+	"apihelp-query+proofreadinfo-description": "Torne le 'mbormaziune sus a configurazione de l'estenzione ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Torne le 'mbormaziune sus a configurazione de l'estenzione ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Quale probbietà de verifiche a pigghià:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
+	"apihelp-query+proofreadinfo-example-1": "Tuèrne 'mbormaziune de base",
+	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base"
+}

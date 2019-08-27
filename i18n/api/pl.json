@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Woytecr"
+		]
+	},
+	"apihelp-query+proofread-description": "Zwraca informacje o aktualnym stanie przepisywania podanych stron.",
+	"apihelp-query+proofread-summary": "Zwraca informacje o aktualnym stanie przepisywania podanych stron.",
+	"apihelp-query+proofread-example-1": "Zwraca informacje o stanie przepisywania stron z przestrzeni nazw 250",
+	"apihelp-query+proofreadinfo-description": "Zwraca informacje o konfiguracji rozszerzenia ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Zwraca informacje o konfiguracji rozszerzenia ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Jakie właściwości proofread zwrócić:\n;namespaces:Informacje o przestrzeniach nazw \"{{ns:Page}}\" i \"{{ns:Index}}\".\n;qualitylevels:Lista poziomów proofread.",
+	"apihelp-query+proofreadinfo-example-1": "Zwróć domyślne informacje",
+	"apihelp-query+proofreadinfo-example-3": "Zwróć informacje o przestrzeniach nazw"
+}

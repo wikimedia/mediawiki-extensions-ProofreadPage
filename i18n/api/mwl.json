@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Athena in Wonderland"
+		]
+	},
+	"apihelp-query+proofread-description": "Debolbe anformaçon subre l stado de rebison atual de las páiginas andicadas.",
+	"apihelp-query+proofread-summary": "Debolbe anformaçon subre l stado de rebison atual de las páiginas andicadas.",
+	"apihelp-query+proofread-example-1": "Debolber l stado de rebison de las páiginas ne l spácio nominal 250",
+	"apihelp-query+proofreadinfo-description": "Debolber anformaçon subre la cunfiguraçon de la stenson ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Debolber anformaçon subre la cunfiguraçon de la stenson ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Que propiadades de rebison oubtener:\n;namespaces:Anformaçon subre ls spácios nominales \"{{ns:Page}}\" i \"{{ns:Index}}\".\n;qualitylevels:Lhista de ls nibles de culidade de rebison.",
+	"apihelp-query+proofreadinfo-example-1": "Debolber la anformaçon padron",
+	"apihelp-query+proofreadinfo-example-3": "Debolber anformaçon de l spácio nominal"
+}

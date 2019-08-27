@@ -65,10 +65,5 @@
 	"proofreadpage-pageinfo-status": "Κατάσταση ἐπαληθεύσεως",
 	"proofreadpage-preferences-horizontal-layout-label": "Χρήση ὀριζοντίας διατάξεως κατά την ἐπεξεργασίαν εἴς τον ὀνοματοχώρον {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 ἐπαληθευμένοι {{PLURAL:$1|δέλτος|δέλτοι}}, $2 μόνον ἐπαληθευμένοι {{PLURAL:$2|δέλτος|δέλτοι}} καί $3 μη ἐπαληθευμένοι {{PLURAL:$3|δέλτος|δέλτοι}}",
-	"content-model-proofread-page": "Δέλτος: δέλτος",
-	"apihelp-query+proofread-description": "Ἐπιστρέφει πληροφορίες διά την τωρινή κατάσταση ἐπαληθεύσεως των δωθέντων δέλτων.",
-	"apihelp-query+proofread-example-1": "Ἐπιστρέφει την τωρινή κατάσταση ἐπαληθεύσεως διά τις δέλτους εἴς τον ὀνοματοχώρον 250",
-	"apihelp-query+proofreadinfo-description": "Ἐπιστρέφει πληροφορίαι δια τις ρυθμίσεις της ἐπεκτάσεως ProofreadPage",
-	"apihelp-query+proofreadinfo-example-1": "Ἐπιστροφή προκαθορισμένων πληροφοριών",
-	"apihelp-query+proofreadinfo-example-3": "Ἐπιστροφή πληροφοριών ὀνοματοχώρου"
+	"content-model-proofread-page": "Δέλτος: δέλτος"
 }

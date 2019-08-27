@@ -67,11 +67,5 @@
 	"proofreadpage-preferences-showheaders-label": "نشۉ دائن سرۉرق و پاۉرق جا ۉقتی کھ داری اصلاحس ایکنی مئن {{ns:بلگه}}",
 	"proofreadpage-preferences-horizontal-layout-label": "مئن چينشت لم گه ۉختی كه مئن {{ns:page}} اصلاح ایشا اکنین استفادھ ۉابۉ",
 	"proofreadpage-indexquality-alt": "$1 معتبر {{PLURAL:$1|بلگه|بلگل}}, $2 تنها اصلاح {{PLURAL:$2|بلگه|بلگل}} ۉ $3 اصلاح نۉابیدھ {{PLURAL:$3|بلگه|بلگل}}",
-	"content-model-proofread-page": "بلگه:بلگه",
-	"apihelp-query+proofread-description": "اطاعاته دادھ شدنه دربارھ ۉضعیت اصلاح جاری د بلگل دادھ شدنه ۉرایگردۉنه.",
-	"apihelp-query+proofread-example-1": "ۉضعیت اصلاحنه سی بلگل مئنه 250 همدرنگل ۉرایگردۉنه.",
-	"apihelp-query+proofreadinfo-description": "اطلاعاتنه دربارھ پیکربنی زھ فرمت اصلاح بلگه ۉرایگردۉنه.",
-	"apihelp-query+proofreadinfo-param-prop": "یھ کمی خاصیتل اصلاحل سی گرتن:\n;همدرنگل:اطلاعات دربارھ بلگه ۉ همدرنگل بلگه اۉل.\n;سطح کیفیت:لیست سطح کیفیتل اصلاح ۉابیدھ.",
-	"apihelp-query+proofreadinfo-example-1": "اصلاعات پیش فرضنه ۉرایگردۉنه",
-	"apihelp-query+proofreadinfo-example-3": "اطلاعات همدرنگلنه ۉرایگردۉنه"
+	"content-model-proofread-page": "بلگه:بلگه"
 }

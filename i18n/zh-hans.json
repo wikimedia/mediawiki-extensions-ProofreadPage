@@ -17,7 +17,8 @@
 			"Wmr89502270",
 			"Shizhao",
 			"Wmr",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"予弦"
 		]
 	},
 	"nstab-page": "页面",
@@ -97,14 +98,6 @@
 	"proofreadpage-indexquality-alt": "$1个已确认{{PLURAL:$1|页面}}，$2个仅已校对{{PLURAL:$2|页面}}和$3个未校对{{PLURAL:$3|页面}}",
 	"content-model-proofread-page": "图书页面",
 	"content-model-proofread-index": "图书索引",
-	"apihelp-query+proofread-description": "返回有关指定页面当前校对状态的信息。",
-	"apihelp-query+proofread-summary": "返回有关指定页面当前校对状态的信息。",
-	"apihelp-query+proofread-example-1": "返回250名字空间页面的校对状态",
-	"apihelp-query+proofreadinfo-description": "返回有关ProofreadPage扩展配置的信息。",
-	"apihelp-query+proofreadinfo-summary": "返回有关ProofreadPage扩展配置的信息。",
-	"apihelp-query+proofreadinfo-param-prop": "要获取的校对属性：\n;namespaces:有关“{{ns:Page}}”和“{{ns:Index}}”名字空间的信息。\n;qualitylevels:校对质量等级列表。",
-	"apihelp-query+proofreadinfo-example-1": "返回默认信息",
-	"apihelp-query+proofreadinfo-example-3": "返回名字空间信息",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "页面选择",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "页面",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1的嵌入",

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"C.R.",
+			"Ruthven",
+			"Sannita"
+		]
+	},
+	"apihelp-query+proofread-description": "Tuorna nfurmaziune ncopp' 'o stato 'e proofread 'e mo d'ê paggene date.",
+	"apihelp-query+proofread-summary": "Pe' sapè 'o stato 'e mo d'e paggene liggiute ca vuò.",
+	"apihelp-query+proofread-example-1": "Tuorna 'o stato 'e proofread p' 'e paggene dint' 'o namespace 250",
+	"apihelp-query+proofreadinfo-description": "Tuorna nfurmaziune ncopp' 'e mpustaziune d' 'a extension ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Pe' sapè 'o stato 'e mo d''e mpustaziune 'e l'estenzione ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Quale proprietà proofread se tuorneno:\n;namespaces:Nfurmaziune ncopp' 'o namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Elenco d' 'e livell' 'e qualità d' 'o proofread.",
+	"apihelp-query+proofreadinfo-example-1": "Tuorna nfurmaziune predeterminate",
+	"apihelp-query+proofreadinfo-example-3": "Tuorna nfurmaziune predeterminate"
+}

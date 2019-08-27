@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aleator"
+		]
+	},
+	"apihelp-query+proofread-description": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
+	"apihelp-query+proofread-summary": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
+	"apihelp-query+proofread-example-1": "Retorna l'estat de revisió de les pàgines de l'espai de noms 250",
+	"apihelp-query+proofreadinfo-description": "Retorna informació sobre la configuració de l'extensió ProofreadPage",
+	"apihelp-query+proofreadinfo-summary": "Retorna informació sobre la configuració de l'extensió ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Quines propietats de revisió obtenir:\n;namespaces:Informació sobre els espais de nom \" {{ns:Page}} \" i \" {{ns:Index}} \".\n;qualitylevels:Llista de nivells de qualitat de les revisions.",
+	"apihelp-query+proofreadinfo-example-1": "Retorna la informació per defecte",
+	"apihelp-query+proofreadinfo-example-3": "Retorna informació de l'espai de noms"
+}

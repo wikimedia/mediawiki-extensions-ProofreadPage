@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"KuboF",
+			"Mirin"
+		]
+	},
+	"apihelp-query+proofread-description": "Redonas informon pri nuntempa stato de provlegado de la liverita paĝo.",
+	"apihelp-query+proofread-summary": "Liveri informon pri aktuala provlega stato de la donitaj paĝoj.",
+	"apihelp-query+proofread-example-1": "Redonas staton de provlegado de paĝoj en la nomspaco 250",
+	"apihelp-query+proofreadinfo-description": "Redonas informon pri konfiguro de la etendaĵo ProvlegPaĝo",
+	"apihelp-query+proofreadinfo-summary": "Liveri informon pri la agordado de la ProofreadPage-etendaĵo.",
+	"apihelp-query+proofreadinfo-param-prop": "Kiujn provlegajn ecojn ricevi:\n;namespaces:Informo pri la nomspacoj \"{{ns:Page}}\" kaj \"{{ns:Index}}\".\n;qualitylevels:Listo de niveloj de provlega kvalito.",
+	"apihelp-query+proofreadinfo-example-1": "Redonas defaŭltan informon",
+	"apihelp-query+proofreadinfo-example-3": "Redonas informon pri nomspaco"
+}

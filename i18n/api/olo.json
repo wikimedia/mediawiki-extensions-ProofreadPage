@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ilja.mos",
+			"Mashoi7"
+		]
+	},
+	"apihelp-query+proofread-description": "Andau tieduo annettuloin sivuloin nygözes tarkistusluvendustuatusas",
+	"apihelp-query+proofread-example-1": "Anna nimitilan 250 sivuloin tarkistusluvendustuatussu",
+	"apihelp-query+proofreadinfo-description": "Andau tieduo tarkistusluvendusivun levendyksen kogohpanos.",
+	"apihelp-query+proofreadinfo-param-prop": "Kudamat tarkistusluvenduominažuot suaja:\n;namespaces:Tieduo sivu- da indeksunimitiloih näh.\n;qualitylevels:Tarkistusluvendan luavun tazojen luvettelo.",
+	"apihelp-query+proofreadinfo-example-1": "Tuo järilleh oletustiijot",
+	"apihelp-query+proofreadinfo-example-3": "Anna nimitilan tiijot"
+}

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Adam-Yourist",
+			"ElizaMag"
+		]
+	},
+	"apihelp-query+proofread-description": "ОагIоний дарий вычиткай хIанзарча статусах бола хоам юхабаккхар.",
+	"apihelp-query+proofread-example-1": "Дéшаш нийсдара статус юхаяккхар оагIонашта цIерий мотта чу.",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage конфигурацех бола хоам юхабаккхар.",
+	"apihelp-query+proofreadinfo-param-prop": "Which proofread properties to get:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
+	"apihelp-query+proofreadinfo-example-1": "Массаза хинна бола хоам (информаци) юхабаккхар",
+	"apihelp-query+proofreadinfo-example-3": "ЦIерий мотта хоам юхабаккхар"
+}

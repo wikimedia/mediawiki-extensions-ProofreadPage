@@ -45,6 +45,5 @@
 	"proofreadpage-button-reset-zoom-label": "ಮೂಲ ಗಾತ್ರ",
 	"proofreadpage-pageinfo-status": "ಪರಿಶೀಲನೆಯ ಸ್ಥಿತಿ",
 	"proofreadpage-indexquality-alt": "$1 ಪ್ರಕಟಿಸಲಾದ {{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}, $2 ಕೇವಲ ಪರಿಶೀಲಿಸಲಾದ {{PLURAL:$2|ಪುಟ|ಪುಟಗಳು}} ಮತ್ತು $3 ಪರಿಶೀಲಿಸಲಾಗದ {{PLURAL:$3|ಪುಟ|ಪುಟಗಳು}}",
-	"content-model-proofread-page": "ಪುಟ: ಪುಟ",
-	"apihelp-query+proofreadinfo-example-1": "ಪೂರ್ವನಿಯೋಜಿತ ಮಾಹಿತಿ ಹಿಂದಿರುಗಿಸು"
+	"content-model-proofread-page": "ಪುಟ: ಪುಟ"
 }

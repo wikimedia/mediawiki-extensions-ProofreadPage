@@ -70,7 +70,5 @@
 	"proofreadpage-preferences-showheaders-label": "Ipakita ang mga kahanayan ng paulo at pampaanan kapag namamatnugot sa loob ng puwang ng pangalan ng {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gamitin ang kalatagang pahalang kapag namamatnugot sa loob ng puwang ng pangalan ng {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 na {{PLURAL:$1||mga}} napatunayang pahina, $2 (na) {{PLURAL:$2|pahinang|mga pahinang}} na nawasto at $3 (na) hindi pa na wastong {{PLURAL:$3|pahina|mga pahina}}",
-	"content-model-proofread-page": "Pahina: pahina",
-	"apihelp-query+proofread-description": "Nagbabalik ang impormasyon tungkol sa kasalukuyang katayuan proofread ng ibinigay na pahina.",
-	"apihelp-query+proofread-example-1": "Ilabas ang status sa pagwawasto sa mga pahinang nasa namespace 250"
+	"content-model-proofread-page": "Pahina: pahina"
 }

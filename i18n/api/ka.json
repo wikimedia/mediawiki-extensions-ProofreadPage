@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"BRUTE"
+		]
+	},
+	"apihelp-query+proofread-description": "გამოაქვს ინფორმაცია მოცემული გვერდების ამჟამინდელი კორექტურის სტატუსის შესახებ.",
+	"apihelp-query+proofread-example-1": "კორექტურის კითხვის სტატუსის გამოტანა გვერდებისთვის სახელთა სივრცეში 250",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage გაფართოების კონფიგურაციის შესახებ ინფორმაციის გამოტანა.",
+	"apihelp-query+proofreadinfo-example-1": "საწყისი ინფორმაციის დაბრუნება",
+	"apihelp-query+proofreadinfo-example-3": "სახელთა სივრცის ინფორმაციის დაბრუნება"
+}

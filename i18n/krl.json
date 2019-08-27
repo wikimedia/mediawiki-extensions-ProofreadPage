@@ -59,8 +59,6 @@
 	"proofreadpage-button-zoom-in-label": "Lähennä",
 	"content-model-proofread-page": "Kirjan šivu",
 	"content-model-proofread-index": "Kirjan indeksi",
-	"apihelp-query+proofreadinfo-example-1": "Palauta alkuperäset tiijot",
-	"apihelp-query+proofreadinfo-example-3": "Palauta nimitilan tiijot",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Šivun valinta",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Šivut",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Kyllä",

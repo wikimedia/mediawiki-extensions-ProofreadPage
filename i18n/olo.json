@@ -69,12 +69,6 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Käytä horizontualistu ulgonägyö ku edituija nimitilas {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 lujitettu {{PLURAL:$1|sivu|sivuu}}, $2 vaiku tarkistusluvettu {{PLURAL:$2|sivu|sivuu}} da $3 ei tarkistusluvettu {{PLURAL:$3|sivu|sivuu}}",
 	"content-model-proofread-page": "Sivu: sivu",
-	"apihelp-query+proofread-description": "Andau tieduo annettuloin sivuloin nygözes tarkistusluvendustuatusas",
-	"apihelp-query+proofread-example-1": "Anna nimitilan 250 sivuloin tarkistusluvendustuatussu",
-	"apihelp-query+proofreadinfo-description": "Andau tieduo tarkistusluvendusivun levendyksen kogohpanos.",
-	"apihelp-query+proofreadinfo-param-prop": "Kudamat tarkistusluvenduominažuot suaja:\n;namespaces:Tieduo sivu- da indeksunimitiloih näh.\n;qualitylevels:Tarkistusluvendan luavun tazojen luvettelo.",
-	"apihelp-query+proofreadinfo-example-1": "Tuo järilleh oletustiijot",
-	"apihelp-query+proofreadinfo-example-3": "Anna nimitilan tiijot",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sivut",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Muga",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei"

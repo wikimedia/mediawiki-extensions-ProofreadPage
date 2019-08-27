@@ -10,7 +10,8 @@
 			"Huhbakker",
 			"Mar(c)",
 			"Mainframe98",
-			"Romaine"
+			"Romaine",
+			"RadioAzureus"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -86,16 +87,12 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 gevalideerde {{PLURAL:$1|pagina|pagina's}}, $2 alleen proefgelezen {{PLURAL:$2|pagina|pagina's}} en $3 niet proefgelezen {{PLURAL:$3|pagina|pagina's}}",
 	"content-model-proofread-page": "Boekpagina",
-	"apihelp-query+proofread-description": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",
-	"apihelp-query+proofread-example-1": "Geeft proefleesstatus voor pagina's in naamruimte 250",
-	"apihelp-query+proofreadinfo-description": "Geeft informatie over de configuratie van de ProofreadPage-extensie.",
-	"apihelp-query+proofreadinfo-example-1": "Standaardinformatie teruggeven",
-	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Paginaselectie",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagina's",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion van $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Proefleeskwaliteit",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proefleeskwaliteit"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proefleeskwaliteit",
+	"proofreadpage-index-field-category-label": "Categorieën"
 }

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hwboehm",
+			"Inkowik",
+			"Metalhead64"
+		]
+	},
+	"apihelp-query+proofread-description": "Gibt Informationen über den Korrekturlesungsstatus der Seiten zurück.",
+	"apihelp-query+proofread-summary": "Liefert Informationen über den aktuellen Status des Korrekturlesens der angegebenen Seiten.",
+	"apihelp-query+proofread-example-1": "Gibt den Korrekturlesungsstatus der Seiten im Namensraum 250 zurück",
+	"apihelp-query+proofreadinfo-description": "Gibt Informationen zur Einstellung der Erweiterung „ProofreadPage“ zurück.",
+	"apihelp-query+proofreadinfo-summary": "Gibt Informationen zur Konfiguration der Erweiterung „ProofreadPage“ zurück.",
+	"apihelp-query+proofreadinfo-param-prop": "Zurückzugebende Eigenschaften:\n;namespaces:Information über die Namensräume „{{ns:Page}}“ und „{{ns:Index}}“.\n;qualitylevels:Liste der Korrekturlesungs-Qualitätsstufen.",
+	"apihelp-query+proofreadinfo-example-1": "Gibt Standardinformationen zurück",
+	"apihelp-query+proofreadinfo-example-3": "Gibt Namensrauminformationen zurück"
+}

@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirzali",
+			"Vito Genovese"
+		]
+	},
+	"apihelp-query+proofread-description": "Belirli sayfaların güncel düzeltme durumu hakkında bilgiler getirir.",
+	"apihelp-query+proofread-example-1": "250 ad alanındaki sayfalar için düzeltme durumunu getir",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage eklentisinin yapılandırması hakkındaki bilgileri getir",
+	"apihelp-query+proofreadinfo-summary": "ProofreadPage uzantısının yapılandırması hakkındaki bilgileri geri getir.",
+	"apihelp-query+proofreadinfo-param-prop": "Alınacak düzeltme özellikleri:\n;namespaces:\"{{ns:Page}}\" ve \"{{ns:Index}}\" ad alanları hakkındaki bilgiler.\n;qualitylevels:Düzeltme kalite düzeyleri listesi.",
+	"apihelp-query+proofreadinfo-example-1": "Varsayılan bilgileri getir",
+	"apihelp-query+proofreadinfo-example-3": "Ad alanı bilgilerini getir"
+}

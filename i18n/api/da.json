@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Peter Alberti"
+		]
+	},
+	"apihelp-query+proofread-description": "Returnerer oplysninger om korrekturlæsningsstatus for de givne sider.",
+	"apihelp-query+proofread-summary": "Returnerer oplysninger om korrekturlæsningsstatus for de givne sider.",
+	"apihelp-query+proofread-example-1": "Returner korrekturlæsningsstatus for sider i navnerum 250",
+	"apihelp-query+proofreadinfo-description": "Returner oplysninger om opsætningen af ProofreadPage-udvidelsen.",
+	"apihelp-query+proofreadinfo-summary": "Returnerer oplysninger om opsætningen af ProofreadPage-udvidelsen.",
+	"apihelp-query+proofreadinfo-param-prop": "Hvilke korrekturlæsningsegenskaber, der skal hentes:\n;namespaces:Oplysninger om \"{{ns:Page}}\"- og \"{{ns:Index}}\"-navnerummene.\n;qualitylevels:Liste over niveauer for kvalitetsniveauer for korrekturlæsning.",
+	"apihelp-query+proofreadinfo-example-1": "Returner standardinformation",
+	"apihelp-query+proofreadinfo-example-3": "Returner navnerumsinformation"
+}

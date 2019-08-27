@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mdb897"
+		]
+	},
+	"apihelp-query+proofread-description": "ⴰⵔ ⴷ ⵉⵜⵔⴰⵔⴰ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵖⴼ ⵡⴰⴷⴷⴰⴷ ⴰⵎⵉⵔⴰⵏ ⵏ ⵓⵙⵙⴰⵖⴷ ⵏ ⵜⴰⵙⵏⵉⵡⵉⵏ ⵉⵜⵜⵓⴼⴽⴰⵏ.",
+	"apihelp-query+proofread-summary": "ⴰⵔ ⴷ ⵉⵜⵔⴰⵔⴰ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵖⴼ ⵡⴰⴷⴷⴰⴷ ⴰⵎⵉⵔⴰⵏ ⵏ ⵓⵙⵙⴰⵖⴷ ⵏ ⵜⴰⵙⵏⵉⵡⵉⵏ ⵉⵜⵜⵓⴼⴽⴰⵏ.",
+	"apihelp-query+proofread-example-1": "ⴰⵔ ⴷ ⵉⵜⵔⴰⵔⴰ ⴰⴷⴷⴰⴷ ⵏ ⵓⵙⵙⴰⵖⴷ ⵉ ⵜⴰⵙⵏⵉⵡⵉⵏ ⵉⵍⵍⴰⵏ ⴳ ⵜⵉⵔⵉⵡⵜ ⵏ ⵉⵙⵎ 250.",
+	"apihelp-query+proofreadinfo-description": "ⴰⵔ ⴷ ⵉⵜⵔⴰⵔⴰ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵖⴼ ⵓⵙⵏⴰⵎ ⵏ ⵜⵍⵇⵇⵉⵎⵜ ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "ⴰⵔ ⴷ ⵉⵜⵔⴰⵔⴰ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵖⴼ ⵓⵙⵏⴰⵎ ⵏ ⵜⵍⵇⵇⵉⵎⵜ ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "ⵎⴰⵏ ⵜⵉⵍⵉⵜⵉⵏ ⵏ ⵓⵙⵙⴰⵖⴷ ⴰⴷ ⵜⵔⵉⴷ:\n;namespaces:ⵉⵏⵖⵎⵉⵙⵏ ⵖⴼ ⵜⵉⵔⵉⵡⵉⵏ ⵏ ⵉⵙⵎⴰⵡⵏ ⵏ \"{{ns:Page}}\" ⴷ \"{{ns:Index}}\".\n;qualitylevels:ⵜⴰⵍⴳⴰⵎⵜ ⵏ ⵉⵙⵡⵉⵔⵏ ⵏ ⵜⴰⵖⴰⴷⴰ ⵏ ⵉⵙⵙⴰⵖⴷⵏ.",
+	"apihelp-query+proofreadinfo-example-1": "ⴰⵔ ⴷ ⵉⵜⵔⴰⵔⴰ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵙ ⵓⵎⵕⴰⴹ",
+	"apihelp-query+proofreadinfo-example-3": "ⴰⵔ ⴷ ⵉⵜⵔⴰⵔⴰ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵏ ⵉⵙⵎ ⵏ ⵜⵉⵔⴰⵡⵜ"
+}

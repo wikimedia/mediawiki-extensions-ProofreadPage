@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Baloch Afghanistan",
+			"Ibrahim khashrowdi"
+		]
+	},
+	"apihelp-query+proofread-description": "بیئرگشت داتین مئلوماتان بی تاکدیمانی ایڈیٹی انونین وضیئتا که داته بوته انت.",
+	"apihelp-query+proofread-example-1": "بیئرگشت داتین ایڈیٹی وضیئت په تاکدیمان بی ۲۵۰ فضای نامی تا",
+	"apihelp-query+proofreadinfo-description": "بیئرگشت داتین مئلوماتان بی تاکدیمی ایڈیٹی پیکربندی ئا.",
+	"apihelp-query+proofreadinfo-param-prop": "گوجام خواص په تصحیح املاء ئا ضرور انت:\n;نامئ اورکجاه:مالومات په \"{{ns:تادکدیم}}\" و \"{{ns:ایندکس}}\" نامئ اورکجاه‌ئان.\n;کیفیتئ اندازه‌گ:لڑلیست په غط‌‌گیرین کیفیتئ اندازه‌گا.",
+	"apihelp-query+proofreadinfo-example-1": "بیئرگشت بی پیش فرض مئلومات",
+	"apihelp-query+proofreadinfo-example-3": "بیئرگشتئ نامی فضای مئلومات"
+}

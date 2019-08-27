@@ -88,8 +88,6 @@
 	"proofreadpage-indexquality-alt": "$1 சரிபார்க்கப்பட்ட {{PLURAL:$1|பக்கம்|பக்கங்கள்}}, $2 மெய்ப்பு மட்டும் செய்யப்பட்ட {{PLURAL:$2|பக்கம்|பக்கங்கள்}} and $3 மெய்ப்புப் பார்க்கப்படாத {{PLURAL:$3|பக்கம்|பக்கங்கள்}}",
 	"content-model-proofread-page": "புத்தக பக்கம்",
 	"content-model-proofread-index": "புத்தக அட்டவணை",
-	"apihelp-query+proofread-example-1": "பெயர்வழி 250 இல் மெய்ப்புபார்ப்பு நிலையை காட்டவும்",
-	"apihelp-query+proofreadinfo-example-3": "பெயர்வெளி தகவலை காட்டவும்",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "பக்கத் தேர்வு",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "பக்கங்கள்",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ஆம்",
