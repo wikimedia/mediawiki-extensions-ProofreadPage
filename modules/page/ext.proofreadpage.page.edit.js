@@ -68,7 +68,7 @@
 	 * @param {string} [speed] Speed of the toggle. May be 'fast', 'slow' or undefined
 	 */
 	function toggleHeaders( visible, speed ) {
-		var method;
+		var method, setActive;
 		headersVisible = visible === undefined ? !headersVisible : visible;
 
 		method = headersVisible ? 'show' : 'hide';
@@ -76,8 +76,10 @@
 		$editForm.find( '.prp-page-edit-body label' )[ method ]( speed );
 		$editForm.find( '.prp-page-edit-footer' )[ method ]( speed );
 
-		if ( $( '.tool[rel=toggle-visibility]' ).data( 'setActive' ) ) {
-			$( '.tool[rel=toggle-visibility]' ).data( 'setActive' )( headersVisible );
+		// eslint-disable-next-line no-jquery/no-global-selector
+		setActive = $( '.tool[rel=toggle-visibility]' ).data( 'setActive' );
+		if ( setActive ) {
+			setActive( headersVisible );
 		}
 	}
 
@@ -87,7 +89,7 @@
 	 * @param {boolean} [horizontal] Use horizontal layout, inverts if undefined
 	 */
 	function toggleLayout( horizontal ) {
-		var $container, newHeight;
+		var $container, newHeight, setActive;
 
 		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
 
@@ -108,6 +110,7 @@
 			$editForm.find( '.prp-page-content' ).css( {
 				width: ''
 			} );
+			// eslint-disable-next-line no-jquery/no-global-selector
 			$( '#wpTextbox1' ).css( { height: '' } );
 			ensureImageZoomInitialization();
 		} else {
@@ -129,10 +132,13 @@
 			// Set the image and the edit box to the same height (of 1/3 of the window each).
 			newHeight = $( window ).height() / 3 + 'px';
 			$container.css( { height: newHeight } );
+			// eslint-disable-next-line no-jquery/no-global-selector
 			$( '#wpTextbox1' ).css( { height: newHeight } );
 		}
-		if ( $( '.tool[rel=toggle-layout]' ).data( 'setActive' ) ) {
-			$( '.tool[rel=toggle-layout]' ).data( 'setActive' )( isLayoutHorizontal );
+		// eslint-disable-next-line no-jquery/no-global-selector
+		setActive = $( '.tool[rel=toggle-layout]' ).data( 'setActive' );
+		if ( setActive ) {
+			setActive( isLayoutHorizontal );
 		}
 	}
 
@@ -148,7 +154,9 @@
 	 * Init the automatic fill of the summary input box
 	 */
 	function setupPageQuality() {
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( 'input[name="wpQuality"]' ).on( 'click', function () {
+			// eslint-disable-next-line no-jquery/no-global-selector
 			var $summary = $( 'input#wpSummary, #wpSummary > input' ),
 				// The following messages are used here:
 				// * proofreadpage_quality0_summary
@@ -237,11 +245,12 @@
 					}
 				}
 			},
+			// eslint-disable-next-line no-jquery/no-global-selector
 			$edit = $( '#wpTextbox1' );
 
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
 			// 'ext.wikiEditor' was loaded before calling this function
-			$editForm.find( '.prp-page-edit-body' ).append( $( '#wpTextbox1' ) );
+			$editForm.find( '.prp-page-edit-body' ).append( $edit );
 			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
 			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 
@@ -268,17 +277,21 @@
 				getContents: function () {
 					var
 						// "[checked]" selector refers to the original state (the HTML attribute).
+						// eslint-disable-next-line no-jquery/no-global-selector
 						origLevel = +$( 'input[name=wpQuality][checked]' ).val(),
 						// ":checked" selector refers to the current state (the DOM property).
+						// eslint-disable-next-line no-jquery/no-global-selector
 						level = +$( 'input[name=wpQuality]:checked' ).val(),
 						origUser = mw.config.get( 'prpPageQualityUser' ),
 						user = ( origLevel === level ? origUser : mw.config.get( 'wgUserName' ) ) || '';
 					return '<noinclude>' +
 						( !isNaN( level ) ? '<pagequality level="' + level + '" user="' + user + '" />' : '' ) +
+						// eslint-disable-next-line no-jquery/no-global-selector
 						$( '#wpHeaderTextbox' ).val() +
 					'</noinclude>' +
 					$( this ).val() +
 					'<noinclude>' +
+						// eslint-disable-next-line no-jquery/no-global-selector
 						$( '#wpFooterTextbox' ).val() +
 					'</noinclude>';
 				},
@@ -430,6 +443,7 @@
 	 */
 	function initEnvironment() {
 		if ( $editForm === undefined ) {
+			// eslint-disable-next-line no-jquery/no-global-selector
 			$editForm = $( '#editform' );
 		}
 		if ( $zoomImage === undefined ) {
@@ -441,6 +455,7 @@
 		var deferred = $.Deferred();
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
 			mw.loader.using( 'ext.wikiEditor' ).done( function () {
+				// eslint-disable-next-line no-jquery/no-global-selector
 				$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', deferred.resolve.bind( deferred ) );
 			} );
 			return deferred.promise();

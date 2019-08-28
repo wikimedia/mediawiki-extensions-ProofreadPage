@@ -10,7 +10,6 @@
 		"ve": false
 	},
 	"rules": {
-		"max-len": "off",
-		"no-jquery/no-global-selector": "off"
+		"max-len": "off"
 	}
 }

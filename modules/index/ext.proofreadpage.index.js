@@ -1,10 +1,12 @@
 mw.loader.using( 'mediawiki.widgets.CategoryMultiselectWidget' ).done( function () {
 	$( function () {
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '.prp-fieldLayout-help' ).each( function () {
 			OO.ui.infuse( this );
 		} );
 
 		// Categories
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '#wpPrpCategories' ).each( function () {
 			var categoryInputWidget = OO.ui.infuse( this.parentNode ),
 				categorySelector = new mw.widgets.CategoryMultiselectWidget( {} );

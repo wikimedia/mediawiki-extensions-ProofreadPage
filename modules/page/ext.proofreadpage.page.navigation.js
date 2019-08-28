@@ -31,7 +31,10 @@
 			$tabs = $( getTabsContainerSelector() );
 
 		// Move prev and next links (swapped for rtl languages)
-		$tabs.prepend( $( '#ca-proofreadPageNextLink' ) )
+		$tabs
+			// eslint-disable-next-line no-jquery/no-global-selector
+			.prepend( $( '#ca-proofreadPageNextLink' ) )
+			// eslint-disable-next-line no-jquery/no-global-selector
 			.prepend( $( '#ca-proofreadPagePrevLink' ) );
 
 		// add title attribute to links move to icon

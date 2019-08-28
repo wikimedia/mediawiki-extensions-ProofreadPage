@@ -23,6 +23,7 @@ ve.init.mw.ProofreadPagePageTarget = function VeInitMwProofreadPagePageTarget() 
 	this.$element.addClass( 've-init-mw-proofreadPagePageTarget' );
 
 	if ( [ 'edit', 'submit' ].indexOf( mw.config.get( 'wgAction' ) ) !== -1 ) {
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$contentText = $( '#mw-content-text' );
 		$pageContainer = $contentText.find( '.prp-page-container' );
 		$contentText.empty().append( $pageContainer );
@@ -30,6 +31,7 @@ ve.init.mw.ProofreadPagePageTarget = function VeInitMwProofreadPagePageTarget() 
 
 	this.$zoomContainer = $( '<div>' ).addClass( 've-init-mw-proofreadPagePageTarget-zoomContainer' );
 
+	// eslint-disable-next-line no-jquery/no-global-selector
 	this.$zoomImage = $( '.prp-page-image img' );
 
 	zoomOut = new OO.ui.ButtonWidget( { icon: 'zoomOut', title: ve.msg( 'proofreadpage-button-zoom-out-label' ) } )
@@ -64,6 +66,7 @@ ve.init.mw.ProofreadPagePageTarget.static.name = 'proofread-page';
  * @inheritdoc
  */
 ve.init.mw.ProofreadPagePageTarget.prototype.getEditableContent = function () {
+	// eslint-disable-next-line no-jquery/no-global-selector
 	return $( '.prp-page-content' );
 };
 
@@ -85,6 +88,7 @@ ve.init.mw.ProofreadPagePageTarget.prototype.afterActivate = function () {
 	// Parent method
 	ve.init.mw.ProofreadPagePageTarget.super.prototype.afterActivate.apply( this, arguments );
 
+	// eslint-disable-next-line no-jquery/no-global-selector
 	$( '.prp-page-image' )
 		.removeClass( 've-init-mw-desktopArticleTarget-uneditableContent' )
 		.before( this.$zoomContainer );
