@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joseagush"
+		]
+	},
+	"apihelp-query+proofread-description": "Mengembalikan informasi tentang status uji-baca saat ini dari halaman yang ditentukan.",
+	"apihelp-query+proofread-summary": "Dapatkan informasi mengenai status uji-baca saat ini pada halaman yang ditentukan.",
+	"apihelp-query+proofread-example-1": "Mengembalikan status koreksi untuk halaman di ruangnama 250"
+}

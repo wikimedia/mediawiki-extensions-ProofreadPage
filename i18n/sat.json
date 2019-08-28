@@ -70,7 +70,9 @@
 	"proofreadpage_specialpage_searcherrortext": "ᱥᱮᱸᱫᱽᱨᱟ ᱡᱚᱱᱛᱚᱨ ᱵᱟᱭ ᱠᱟᱹᱢᱤᱭᱫᱟ ᱾ ᱚᱱᱟ ᱞᱟᱹᱜᱤᱛ ᱤᱠᱟᱹᱞᱮ ᱠᱷᱚᱡᱚᱜ ᱠᱟᱱᱟ᱾",
 	"proofreadpage_source": "ᱯᱷᱮᱰᱟᱛ",
 	"proofreadpage_source_message": "ᱥᱠᱟᱱᱟᱜ ᱨᱟᱫᱟ ᱵᱮᱵᱷᱟᱨ ᱟᱠᱟᱱᱟ ᱱᱚᱶᱟ ᱚᱞ ᱛᱷᱟᱯᱚᱱ ᱞᱟᱹᱜᱤᱫ",
+	"action-pagequality": "ᱥᱟᱦᱴᱟ ᱨᱮᱱᱟᱜ ᱜᱩᱱ ᱪᱤᱨ ᱵᱚᱫᱚᱞ",
 	"right-pagequality": "ᱥᱟᱦᱴᱟ ᱨᱮᱱᱟᱜ ᱜᱩᱱ ᱪᱤᱨ ᱵᱚᱫᱚᱞ",
+	"action-pagequality-admin": "ᱥᱟᱦᱴᱟ ᱜᱩᱱ ᱪᱤᱨ ᱵᱤᱱ ᱵᱟᱫᱷᱟᱛᱮ ᱥᱟᱯᱲᱟᱣ",
 	"right-pagequality-admin": "ᱥᱟᱦᱴᱟ ᱜᱩᱱ ᱪᱤᱨ ᱵᱤᱱ ᱵᱟᱫᱷᱟᱛᱮ ᱥᱟᱯᱲᱟᱣ",
 	"proofreadpage-section-tools": "ᱯᱟᱲᱦᱟᱣ ᱥᱩᱫᱷᱟᱹᱨ ᱦᱟᱹᱛᱤᱭᱟᱹᱨᱠᱩ",
 	"proofreadpage-group-zoom": "ᱞᱟᱹᱴᱩ",
@@ -92,5 +94,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ᱦᱮᱸ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ᱵᱟᱝ",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ᱯᱟᱲᱦᱟᱣ ᱯᱩᱥᱴᱟᱹᱣ ᱜᱩᱱ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ᱯᱟᱲᱦᱟᱣ ᱯᱩᱥᱴᱟᱹᱣ ᱜᱩᱱ"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ᱯᱟᱲᱦᱟᱣ ᱯᱩᱥᱴᱟᱹᱣ ᱜᱩᱱ",
+	"proofreadpage-index-field-category-label": "ᱛᱷᱚᱠ"
 }
