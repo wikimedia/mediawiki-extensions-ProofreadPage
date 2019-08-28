@@ -150,6 +150,12 @@
 	function setupPageQuality() {
 		$( 'input[name="wpQuality"]' ).on( 'click', function () {
 			var $summary = $( 'input#wpSummary, #wpSummary > input' ),
+				// The following messages are used here:
+				// * proofreadpage_quality0_summary
+				// * proofreadpage_quality1_summary
+				// * proofreadpage_quality2_summary
+				// * proofreadpage_quality3_summary
+				// * proofreadpage_quality4_summary
 				pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_summary' ).plain(),
 				summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
 			$summary.val( '/* ' + pageQuality + ' */ ' + summary );
