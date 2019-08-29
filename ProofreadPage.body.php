@@ -145,7 +145,7 @@ class ProofreadPage {
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$out->addModuleStyles( 'ext.proofreadpage.base' );
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
-			$out->addModules( 'ext.proofreadpage.page.navigation' );
+			$out->addModuleStyles( 'ext.proofreadpage.page.navigation' );
 		} elseif (
 			$title->inNamespace( NS_MAIN ) &&
 			( $out->isArticle() || $isEdit ) &&
@@ -698,16 +698,20 @@ class ProofreadPage {
 		if ( $indexTitle !== null ) {
 			$pagination = Context::getDefaultContext()
 				->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
+
+			$firstLinks = [];
 			try {
 				$pageNumber = $pagination->getPageNumber( $title );
 
 				try {
 					$prevTitle  = $pagination->getPageTitle( $pageNumber - 1 );
-					$links['namespaces']['proofreadPagePrevLink'] = [
+					$prevText = wfMessage( 'proofreadpage_prevpage' )->plain();
+					$firstLinks['proofreadPagePrevLink'] = [
 						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $prevTitle ),
 						'rel' => 'prev',
-						'text' => wfMessage( 'proofreadpage_prevpage' )->plain()
+						'text' => $prevText,
+						'title' => $prevText
 					];
 				}
 				catch ( OutOfBoundsException $e ) {
@@ -715,11 +719,13 @@ class ProofreadPage {
 
 				try {
 					$nextTitle  = $pagination->getPageTitle( $pageNumber + 1 );
-					$links['namespaces']['proofreadPageNextLink'] = [
+					$nextText = wfMessage( 'proofreadpage_nextpage' )->plain();
+					$firstLinks['proofreadPageNextLink'] = [
 						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
 						'href' => self::getLinkUrlForTitle( $nextTitle ),
 						'rel' => 'next',
-						'text' => wfMessage( 'proofreadpage_nextpage' )->plain()
+						'text' => $nextText,
+						'title' => $nextText
 					];
 				}
 				catch ( OutOfBoundsException $e ) {
@@ -727,10 +733,14 @@ class ProofreadPage {
 			} catch ( PageNotInPaginationException $e ) {
 			}
 
+			// Prepend Prev, Next to namespaces tabs
+			$links['namespaces'] = array_merge( $firstLinks, $links['namespaces'] );
+
 			$links['namespaces']['proofreadPageIndexLink'] = [
 				'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
 				'href' => $indexTitle->getLinkURL(),
-				'text' => wfMessage( 'proofreadpage_index' )->plain()
+				'text' => wfMessage( 'proofreadpage_index' )->plain(),
+				'title' => wfMessage( 'proofreadpage_index' )->plain()
 			];
 		}
 
