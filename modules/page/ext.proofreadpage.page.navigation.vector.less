@@ -1,0 +1,30 @@
+@import 'mediawiki.mixins';
+
+#ca-proofreadPagePrevLink.icon,
+#ca-proofreadPageNextLink.icon,
+#ca-proofreadPageIndexLink.icon {
+	a {
+		margin: 0;
+		padding: 0;
+		outline: 0;
+		display: block;
+		width: 26px;
+		/* This hides the text but shows the background image */
+		padding-top: 3.1em;
+		height: 0;
+		overflow: hidden;
+		background-position: 50% 75%;
+	}
+}
+
+#ca-proofreadPagePrevLink.icon a {
+	.background-image-svg( 'images/next-rtl.svg', 'images/next-rtl.png' );
+}
+
+#ca-proofreadPageNextLink.icon a {
+	.background-image-svg( 'images/next-ltr.svg', 'images/next-ltr.png' );
+}
+
+#ca-proofreadPageIndexLink.icon a {
+	.background-image-svg( 'images/collapse.svg', 'images/collapse.png' );
+}

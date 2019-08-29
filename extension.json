@@ -119,13 +119,9 @@
 			]
 		},
 		"ext.proofreadpage.page.navigation": {
-			"scripts": "page/ext.proofreadpage.page.navigation.js",
 			"skinStyles": {
-				"vector": "page/ext.proofreadpage.page.navigation.vector.css"
-			},
-			"dependencies": [
-				"oojs-ui.styles.icons-movement"
-			]
+				"vector": "page/ext.proofreadpage.page.navigation.vector.less"
+			}
 		},
 		"ext.proofreadpage.article": {
 			"scripts": "article/ext.proofreadpage.article.js",
