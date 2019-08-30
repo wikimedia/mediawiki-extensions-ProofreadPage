@@ -93,5 +93,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "হ্যাঁ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "না",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "মুদ্রণ সংশোধনের গুণমান",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "মুদ্রণ সংশোধনের গুণমান"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "মুদ্রণ সংশোধনের গুণমান",
+	"proofreadpage-index-field-category-label": "বিষয়শ্রেণীসমূহ"
 }
