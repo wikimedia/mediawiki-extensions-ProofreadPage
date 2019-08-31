@@ -63,6 +63,8 @@
 	"proofreadpage_quality4_message": "Esta página ha sido validada",
 	"proofreadpage_index_status": "Estado del índice",
 	"proofreadpage_index_size": "Número de páginas",
+	"proofreadpage_pages_to_validate": "Número de páginas pendientes de validar",
+	"proofreadpage_pages_to_proofread_or_validate": "Número de páginas pendientes de corregir o validar",
 	"proofreadpage_specialpage_label_orderby": "Ordenar por:",
 	"proofreadpage_specialpage_label_key": "Buscar:",
 	"proofreadpage_specialpage_label_sortascending": "Orden ascendente",
@@ -78,7 +80,9 @@
 	"proofreadpage_specialpage_searcherrortext": "No funciona el motor de búsqueda. Disculpen las molestias.",
 	"proofreadpage_source": "Fuente",
 	"proofreadpage_source_message": "Edición escaneada usada para establecer este texto",
+	"action-pagequality": "modificar el nivel de calidad de la página",
 	"right-pagequality": "Modificar la marca de calidad de la página",
+	"action-pagequality-admin": "modificaciones no limitadas al nivel de calidad de la página",
 	"right-pagequality-admin": "Ediciones sin restricción a la etiqueta de calidad de la página",
 	"proofreadpage-section-tools": "Herramientas de corrección",
 	"proofreadpage-group-zoom": "Ampliación",
@@ -100,5 +104,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sí",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Calidad de corrección",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidad de corrección"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidad de corrección",
+	"proofreadpage-index-field-category-label": "Categorías",
+	"proofreadpage-index-edit-category-help": "Las categorías se añaden sin el prefijo Categoría: y separadas por el carácter de barra vertical \"|\"."
 }

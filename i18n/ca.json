@@ -72,7 +72,9 @@
 	"proofreadpage_specialpage_searcherrortext": "El motor de cerca no funciona. Disculpeu les molèsties.",
 	"proofreadpage_source": "Font",
 	"proofreadpage_source_message": "Edició digitalitzada d'on s'ha extret aquest text",
+	"action-pagequality": "modificar l'indicador de qualitat de la pàgina",
 	"right-pagequality": "Modificar l'indicador de qualitat de la pàgina",
+	"action-pagequality-admin": "modificacions no limitades a l'indicador de qualitat de la pàgina",
 	"right-pagequality-admin": "Edicions sense restricció a l'etiqueta de qualitat de les pàgines",
 	"proofreadpage-section-tools": "Eines de correcció",
 	"proofreadpage-group-zoom": "Zoom",
@@ -94,5 +96,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sí",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualitat de la revisió",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualitat de la revisió"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualitat de la revisió",
+	"proofreadpage-index-field-category-label": "Categories",
+	"proofreadpage-index-edit-category-help": "Les categories s'afegeixen sense el prefix Categoria: i separades pel caràcter de barra vertical \"|\"."
 }
