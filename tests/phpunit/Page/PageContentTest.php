@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use FauxRequest;
+use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
@@ -186,10 +187,10 @@ class PageContentTest extends ProofreadPageTestCase {
 	 * @dataProvider preSaveTransformProvider
 	 */
 	public function testPreSaveTransform( PageContent $content, $expectedContent ) {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $wgContLang
+			$this->requestContext->getUser(), $contLang
 		);
 
 		$content = $content->preSaveTransform(
@@ -216,10 +217,10 @@ class PageContentTest extends ProofreadPageTestCase {
 	 * @dataProvider preloadTransformProvider
 	 */
 	public function testPreloadTransform( PageContent $content, $expectedContent ) {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $wgContLang
+			$this->requestContext->getUser(), $contLang
 		);
 
 		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );

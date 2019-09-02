@@ -3,6 +3,7 @@
 namespace ProofreadPage\Index;
 
 use FauxRequest;
+use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
@@ -242,10 +243,10 @@ class IndexContentTest extends ProofreadPageTestCase {
 	 * @dataProvider preSaveTransformProvider
 	 */
 	public function testPreSaveTransform( IndexContent $content, IndexContent $expectedContent ) {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $wgContLang
+			$this->requestContext->getUser(), $contLang
 		);
 
 		$content = $content->preSaveTransform(
@@ -274,10 +275,10 @@ class IndexContentTest extends ProofreadPageTestCase {
 	 * @dataProvider preloadTransformProvider
 	 */
 	public function testPreloadTransform( IndexContent $content, IndexContent $expectedContent ) {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $wgContLang
+			$this->requestContext->getUser(), $contLang
 		);
 
 		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );

@@ -3,6 +3,7 @@
 namespace ProofreadPage\Index;
 
 use FauxRequest;
+use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
@@ -84,10 +85,10 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testPreSaveTransform() {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $wgContLang
+			$this->requestContext->getUser(), $contLang
 		);
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$content = $originalContent->preSaveTransform(
@@ -98,10 +99,10 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testPreloadTransform() {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $wgContLang
+			$this->requestContext->getUser(), $contLang
 		);
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$content = $originalContent->preloadTransform(
