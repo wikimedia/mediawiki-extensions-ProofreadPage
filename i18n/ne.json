@@ -5,7 +5,8 @@
 			"Nirjal stha",
 			"NehalDaveND",
 			"जनक राज भट्ट",
-			"राम प्रसाद जोशी"
+			"राम प्रसाद जोशी",
+			"पर्वत सुबेदी"
 		]
 	},
 	"indexpages": "सूचकांक पानाको सूची",
@@ -15,7 +16,7 @@
 	"proofreadpage_index": "अनुक्रम",
 	"proofreadpage_index_expected": "त्रुटि: सूचकांकको अपेक्षा",
 	"proofreadpage_nosuch_index": "त्रुटी: यस्तो कुनै सूचकांक छैन",
-	"proofreadpage_nologin": "प्रवेश (लग ईन) नगरिएको",
+	"proofreadpage_nologin": "प्रवेश नगरिएको",
 	"proofreadpage_prevpage": "पहिलो पृष्ठ",
 	"proofreadpage_quality0_category": "पाठ बिना",
 	"proofreadpage_quality1_category": "परिक्षण भएको छैन",
