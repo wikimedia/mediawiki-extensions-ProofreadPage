@@ -15,7 +15,8 @@
 			"Ата",
 			"Piramidion",
 			"NickK",
-			"Vlad5250"
+			"Vlad5250",
+			"Movses"
 		]
 	},
 	"nstab-page": "Сторінка",
@@ -103,5 +104,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Так",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ні",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Якість вичитки",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Якість вичитки"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Якість вичитки",
+	"proofreadpage-index-field-category-label": "Категорії",
+	"proofreadpage-index-edit-category-help": "Категорії вказуються без префіксу \"Category:\" та розділяються вертикальною рискою \"|\"."
 }

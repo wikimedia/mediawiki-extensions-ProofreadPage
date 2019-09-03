@@ -18,7 +18,8 @@
 			"Shizhao",
 			"Wmr",
 			"神樂坂秀吉",
-			"予弦"
+			"予弦",
+			"A Chinese Wikipedian"
 		]
 	},
 	"nstab-page": "页面",
@@ -104,5 +105,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "是",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "否",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校对质量",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校对质量"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校对质量",
+	"proofreadpage-index-field-category-label": "分类"
 }

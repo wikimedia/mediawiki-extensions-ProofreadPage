@@ -9,7 +9,8 @@
 			"555",
 			"Cainamarques",
 			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Fitoschido"
 		]
 	},
 	"nstab-page": "Página",
@@ -99,5 +100,5 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualidade de revisão",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualidade de revisão",
 	"proofreadpage-index-field-category-label": "Categorias",
-	"proofreadpage-index-edit-category-help": "As categorias são escritas sem o prefixo Categoria: e são separadas por um pipe \"|\" personagem."
+	"proofreadpage-index-edit-category-help": "As categorias são escritas sem o prefixo Categoria: e são separadas por um \"|\"."
 }
