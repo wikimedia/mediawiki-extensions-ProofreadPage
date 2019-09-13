@@ -109,5 +109,5 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualité de la relecture",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualité de la relecture",
 	"proofreadpage-index-field-category-label": "Catégories",
-	"proofreadpage-index-edit-category-help": "Les catégories sont écrites sans le préfixe Catégorie: et sont séparées par un caractère barre verticale « | »."
+	"proofreadpage-index-edit-category-help": "Les catégories sont écrites sans le préfixe <code>Category:</code> et sont séparées par une barre verticale <code>|</code>."
 }

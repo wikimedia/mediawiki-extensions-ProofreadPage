@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rachitrali"
+		]
+	},
+	"apihelp-query+proofread-description": "دیے گئے صفحات کی حالیہ پروف‌ خوانی کیفیت کے متعلق معلومات فراہم کرتا ہے۔",
+	"apihelp-query+proofread-summary": "دیے گئے صفحات کی حالیہ پروف‌خوانی کیفیت کے متعلق معلومات فراہم کرتا ہے۔",
+	"apihelp-query+proofread-example-1": "نام فضا 250 میں صفحات کی پروف‌خوانی کیفیت فراہم کرتا ہے",
+	"apihelp-query+proofreadinfo-description": "توسیع برائے پروف‌خوانیٔ صفحات کی ترتیبات کے متعلق معلومات فراہم کرتا ہے۔",
+	"apihelp-query+proofreadinfo-summary": "توسیع برائے پروف‌خوانیٔ صفحات کی ترتیبات کے متعلق معلومات فراہم کرتا ہے۔",
+	"apihelp-query+proofreadinfo-param-prop": "پروف خوانی کی کونسی خاصیتیں حاصل کرنی ہونگی:\n;namespaces:«{{ns:Page}}» اور «{{ns:Index}}» نام فضاؤں کے متعلق معلومات۔\n;qualitylevels:پروف‌خوانی کے معیار کے درجوں کی فہرست۔",
+	"apihelp-query+proofreadinfo-example-1": "ابتدائی معلومات فراہم کرتا ہے",
+	"apihelp-query+proofreadinfo-example-3": "نام فضا معلومات پر واپس جائیں"
+}

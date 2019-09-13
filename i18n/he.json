@@ -94,5 +94,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "כן",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "לא",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "איכות הגהה",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "איכות הגהה"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "איכות הגהה",
+	"proofreadpage-index-field-category-label": "קטגוריות",
+	"proofreadpage-index-edit-category-help": "הקטגוריות נכתבנות ללא התחילית Category: (קטגוריה:) ומופרדות במקל אנכי (|)."
 }
