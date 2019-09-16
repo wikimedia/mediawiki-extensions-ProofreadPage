@@ -33,5 +33,6 @@
 	"proofreadpage_source": "Avots",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Lapas",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jā",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nē"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nē",
+	"proofreadpage-index-field-category-label": "Kategorijas"
 }

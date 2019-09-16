@@ -13,7 +13,8 @@
 			"Kareyac",
 			"Stjn",
 			"Vlad5250",
-			"Diralik"
+			"Diralik",
+			"Movses"
 		]
 	},
 	"nstab-page": "Страница",
@@ -77,7 +78,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Поисковая система не работает. Извините за причиненные неудобства.",
 	"proofreadpage_source": "Источник",
 	"proofreadpage_source_message": "Для создания электронной версии текста использовались отсканированные материалы",
+	"action-pagequality": "изменение маркера качества страницы",
 	"right-pagequality": "изменять флаг качества страницы",
+	"action-pagequality-admin": "неограниченные правки маркера качества страницы",
 	"right-pagequality-admin": "неограниченные изменения флага качества страницы",
 	"proofreadpage-section-tools": "Инструменты корректора",
 	"proofreadpage-group-zoom": "Увеличение",
@@ -100,5 +103,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "нет",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Качество вычитки",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Качество вычитки",
-	"proofreadpage-index-field-category-label": "Категории"
+	"proofreadpage-index-field-category-label": "Категории",
+	"proofreadpage-index-edit-category-help": "Категории указываются без префикса \"Category:\" и разделяются вертикальной чертой \"|\"."
 }
