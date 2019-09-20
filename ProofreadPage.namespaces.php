@@ -195,6 +195,14 @@ $proofreadPageNamespacesNames['he'] = [
 	'index_talk' => 'שיחת_מפתח'
 ];
 
+/** Hindi (हिन्दी) */
+$proofreadPageNamespacesNames['hi'] = [
+	'page' => 'पृष्ठ',
+	'page_talk' => 'पृष्ठ_वार्ता',
+	'index' => 'विषयसूची',
+	'index_talk' => 'विषयसूची_वार्ता'
+];
+
 /** Croatian (hrvatski) */
 $proofreadPageNamespacesNames['hr'] = [
 	'page' => 'Stranica',
