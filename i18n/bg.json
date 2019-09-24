@@ -72,7 +72,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Търсачката не работи. Извиняваме се за неудобството.",
 	"proofreadpage_source": "Източник",
 	"proofreadpage_source_message": "Текстът е от сканирано издание",
+	"action-pagequality": "промяна на флага за качество на страницата",
 	"right-pagequality": "Промяна на флага за качество на страницата",
+	"action-pagequality-admin": "неограничени редакции на флага за качество на страницата",
 	"right-pagequality-admin": "Неограничени редакции на флага за качество на страницата",
 	"proofreadpage-section-tools": "Инструменти за корекция",
 	"proofreadpage-group-zoom": "Мащабиране",
@@ -94,5 +96,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Качество на коректурата",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Качество на корекцията"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Качество на корекцията",
+	"proofreadpage-index-field-category-label": "Категории",
+	"proofreadpage-index-edit-category-help": "Категориите се пишат през представката „Категория:“ и се разделят с вертикална черта „|“."
 }
