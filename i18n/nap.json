@@ -36,13 +36,13 @@
 	"proofreadpage_footer": "Per' 'e paggena (nun incluso)",
 	"proofreadpage_toggleheaders": "attiva/disattiva a visibilità dde sezzione nun incluse",
 	"proofreadpage_quality0_category": "Senza testo",
-	"proofreadpage_quality1_category": "A corregge",
-	"proofreadpage_quality2_category": "Prublemateco",
+	"proofreadpage_quality1_category": "'a corregge",
+	"proofreadpage_quality2_category": "Prubblemateco",
 	"proofreadpage_quality3_category": "Liggiuta",
 	"proofreadpage_quality4_category": "Verificata",
 	"proofreadpage_quality0_summary": "Nun tene testo",
 	"proofreadpage_quality1_summary": "Nunn'è liggiuta perzì",
-	"proofreadpage_quality2_summary": "Prublemateco",
+	"proofreadpage_quality2_summary": "Prubblemateco",
 	"proofreadpage_quality3_summary": "Liggiuta",
 	"proofreadpage_quality4_summary": "Verificata",
 	"proofreadpage_quality0_message": "Chesta paggena nun necessita 'e essere lejuta",
@@ -91,5 +91,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità 'e proofread",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità 'e proofread"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità 'e proofread",
+	"proofreadpage-index-field-category-label": "Categurìe",
+	"proofreadpage-index-edit-category-help": "'E categurìe stanne scritte senza 'o prefisse \"Categurìa\" e so' spartute cu 'nu \"|\"."
 }
