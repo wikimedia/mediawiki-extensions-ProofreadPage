@@ -90,5 +90,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नाहीं",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "पढ़य कय गुणवत्ता",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "पढ़य कय गुणवत्ता"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "पढ़य कय गुणवत्ता",
+	"proofreadpage-index-field-category-label": "श्रेणी",
+	"proofreadpage-index-edit-category-help": "श्रेणियां श्रेणी के बिना लिखी जाथीं: उपसर्ग अउर एक पाइप से अलग कीन जाति हैं \"|\" चरित्र।"
 }

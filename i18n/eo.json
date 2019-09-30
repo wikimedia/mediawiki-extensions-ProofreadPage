@@ -95,5 +95,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jes",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kvalito de provlegado",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kvalito de provlegado"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kvalito de provlegado",
+	"proofreadpage-index-field-category-label": "Kategorioj",
+	"proofreadpage-index-edit-category-help": "Kategorioj estas skribataj sen la prefikso Category: kaj estas apartigataj per signo vertikalo \"|\"."
 }
