@@ -8,7 +8,8 @@
 			"Stanqo",
 			"Turin",
 			"StanProg",
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
 	"nstab-page": "Страница",
@@ -26,7 +27,7 @@
 	"proofreadpage_indexdupetext": "Страниците не могат да се показват повече от веднъж на индексната страница.",
 	"proofreadpage_nologin": "Не сте влезли",
 	"proofreadpage_nologintext": "Трябва да [[Special:UserLogin|влезете]], за да може да променяте състоянието на коректурата на страниците.",
-	"proofreadpage_notallowedtext": "Не ви е позволено да променяте състоянието на коректурата на страницата.",
+	"proofreadpage_notallowedtext": "Не Ви е позволено да променяте състоянието на коректурата на страницата.",
 	"proofreadpage_dataconfig_badformatted": "Грешка в конфигурацията на данните",
 	"proofreadpage_dataconfig_badformattedtext": "Страницата [[Mediawiki:Proofreadpage index data config]] не съдържа правилно структуриран JSON.",
 	"proofreadpage_number_expected": "Грешка: Очаква се числова стойност",
