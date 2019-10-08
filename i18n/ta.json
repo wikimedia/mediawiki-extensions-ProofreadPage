@@ -72,7 +72,9 @@
 	"proofreadpage_specialpage_searcherrortext": "தேடு பொறி இயங்கவில்லை. வசதிக்குறைவுக்கு மன்னிக்கவும்.",
 	"proofreadpage_source": "மூலம்",
 	"proofreadpage_source_message": "இந்த உரையை நிறுவ மின்வருடப்பட்ட பதிப்பு பயன்படுத்தப்பட்டுள்ளது.",
+	"action-pagequality": "பக்க தர கொடியை மாற்றவும்",
 	"right-pagequality": "பக்க தர கொடியை மாற்றவும்",
+	"action-pagequality-admin": "பக்க தர கொடிக்கு கட்டுப்படுத்தப்படாத தொகுக்கள்",
 	"right-pagequality-admin": "பக்க தர கொடிக்கு கட்டுப்படுத்தப்படாத தொகுக்கள்",
 	"proofreadpage-section-tools": "மெய்ப்பு பார்க்கும் கருவிகள்",
 	"proofreadpage-group-zoom": "பெரிதாக்கு",
@@ -93,5 +95,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ஆம்",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "இல்லை",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "மெய்ப்பு தரம்",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "மெய்ப்பு தரம்"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "மெய்ப்பு தரம்",
+	"proofreadpage-index-field-category-label": "பகுப்புகள்",
+	"proofreadpage-index-edit-category-help": "பகுப்புகள், பகுப்பு: என்ன முன்னொட்டு இல்லாமல் வெவ்வேறு பகுப்புகள் குழாய் \"|\" குறியீட்டால் பிரிக்கப்படுகிறது."
 }

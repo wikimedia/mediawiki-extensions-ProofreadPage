@@ -4,6 +4,8 @@
 			"Balajijagadesh"
 		]
 	},
+	"apihelp-query+proofread-description": "கொடுக்கப்பட்ட பக்கங்களின் தற்பொழுதைய மெய்ப்பு பார்ப்பு தகவல்.",
+	"apihelp-query+proofread-summary": "கொடுக்கப்பட்ட பக்கங்களின் தற்பொழுதைய மெய்ப்பு பார்ப்பு தகவல்",
 	"apihelp-query+proofread-example-1": "பெயர்வழி 250 இல் மெய்ப்புபார்ப்பு நிலையை காட்டவும்",
 	"apihelp-query+proofreadinfo-example-3": "பெயர்வெளி தகவலை காட்டவும்"
 }
