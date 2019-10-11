@@ -43,12 +43,12 @@ class FileProviderTest extends ProofreadPageTestCase {
 	}
 
 	/**
-	 * @expectedException \ProofreadPage\FileNotFoundException
 	 * @dataProvider indexFileNotFoundProvider
 	 */
 	public function testGetFileForIndexPageWithFileNotFound(
 		Title $indexTitle, FileProvider $fileProvider
 	) {
+		$this->expectException( \ProofreadPage\FileNotFoundException::class );
 		$fileProvider->getFileForIndexTitle( $indexTitle );
 	}
 
@@ -110,12 +110,12 @@ class FileProviderTest extends ProofreadPageTestCase {
 	}
 
 	/**
-	 * @expectedException \ProofreadPage\FileNotFoundException
 	 * @dataProvider pageFileNotFoundProvider
 	 */
 	public function testGetForPagePageWithFileNotFound(
 		Title $pageTitle, FileProvider $fileProvider
 	) {
+		$this->expectException( \ProofreadPage\FileNotFoundException::class );
 		$fileProvider->getFileForPageTitle( $pageTitle );
 	}
 
@@ -144,31 +144,25 @@ class FileProviderTest extends ProofreadPageTestCase {
 		) );
 	}
 
-	/**
-	 * @expectedException \ProofreadPage\PageNumberNotFoundException
-	 */
 	public function testGetPageNumberForPageNumberNotFound() {
 		$fileProvider = new FileProviderMock( [] );
+		$this->expectException( \ProofreadPage\PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu' )
 		);
 	}
 
-	/**
-	 * @expectedException \ProofreadPage\PageNumberNotFoundException
-	 */
 	public function testGetPageNumberForPageNotANumber() {
 		$fileProvider = new FileProviderMock( [] );
+		$this->expectException( \ProofreadPage\PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/foo' )
 		);
 	}
 
-	/**
-	 * @expectedException \ProofreadPage\PageNumberNotFoundException
-	 */
 	public function testGetPageNumberForPageBadNumber() {
 		$fileProvider = new FileProviderMock( [] );
+		$this->expectException( \ProofreadPage\PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/-1' )
 		);

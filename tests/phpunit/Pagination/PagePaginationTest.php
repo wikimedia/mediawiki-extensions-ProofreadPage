@@ -31,11 +31,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		) );
 	}
 
-	/**
-	 * @expectedException InvalidArgumentException
-	 */
 	public function testGetPageNumberWithFailure() {
 		$pagination = new PagePagination( [], [] );
+		$this->expectException( InvalidArgumentException::class );
 		$pagination->getPageNumber(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' )
 		);
@@ -50,11 +48,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
 	}
 
-	/**
-	 * @expectedException OutOfBoundsException
-	 */
 	public function testGetDisplayedPageNumberWithFailure() {
 		$pagination = new PagePagination( [], [] );
+		$this->expectException( OutOfBoundsException::class );
 		$pagination->getDisplayedPageNumber( 3 );
 	}
 
@@ -93,11 +89,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		);
 	}
 
-	/**
-	 * @expectedException OutOfBoundsException
-	 */
 	public function testGetPageTitleWithFailure() {
 		$pagination = new PagePagination( [], [] );
+		$this->expectException( OutOfBoundsException::class );
 		$pagination->getPageTitle( 3 );
 	}
 

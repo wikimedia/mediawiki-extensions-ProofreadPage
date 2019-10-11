@@ -269,9 +269,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 	/**
 	 * @dataProvider badPageJsonSerializationProvider
-	 * @expectedException MWContentSerializationException
 	 */
 	public function testUnserializeBadContentInJson( $text ) {
+		$this->expectException( MWContentSerializationException::class );
 		$this->handler->unserializeContent( $text, CONTENT_FORMAT_JSON );
 	}
 

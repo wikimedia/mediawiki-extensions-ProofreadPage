@@ -32,12 +32,12 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
 	 * @dataProvider getPageNumberWithFailureProvider
 	 */
 	public function testGetPageNumberWithFailure(
 		Pagination $pagination, Title $pageTitle
 	) {
+		$this->expectException( InvalidArgumentException::class );
 		$pagination->getPageNumber( $pageTitle );
 	}
 
@@ -98,11 +98,9 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
 	}
 
-	/**
-	 * @expectedException OutOfBoundsException
-	 */
 	public function testGetDisplayedPageNumberWithFailure() {
 		$pagination = new PagePagination( [], [] );
+		$this->expectException( OutOfBoundsException::class );
 		$pagination->getDisplayedPageNumber( 3 );
 	}
 
@@ -139,9 +137,6 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		);
 	}
 
-	/**
-	 * @expectedException OutOfBoundsException
-	 */
 	public function testGetPageTitleWithFailure() {
 		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
@@ -154,6 +149,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			),
 			$this->getContext()
 		);
+		$this->expectException( OutOfBoundsException::class );
 		$pagination->getPageTitle( 42 );
 	}
 
