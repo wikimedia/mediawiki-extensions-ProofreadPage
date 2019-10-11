@@ -93,7 +93,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 */
 	private $fileProvider;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		global $wgNamespacesWithSubpages;

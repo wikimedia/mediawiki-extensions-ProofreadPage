@@ -21,7 +21,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	 */
 	private $requestContext;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->requestContext = new RequestContext( new FauxRequest() );

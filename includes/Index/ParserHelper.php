@@ -21,9 +21,8 @@ class ParserHelper {
 	/**
 	 * @param Title|null $title
 	 * @param ParserOptions $options
-	 * @suppress PhanParamReqAfterOpt Not optional but nullable
 	 */
-	public function __construct( Title $title = null, ParserOptions $options ) {
+	public function __construct( ?Title $title, ParserOptions $options ) {
 		$this->parser = new Parser();
 		$this->parser->startExternalParse( $title, $options, Parser::OT_PREPROCESS );
 	}

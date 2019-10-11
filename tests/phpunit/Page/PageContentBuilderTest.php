@@ -23,7 +23,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	 */
 	private $context;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->context = new RequestContext();
@@ -44,7 +44,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	 */
 	public function testBuildDefaultContentForPageTitle(
 		$pageTitle, $indexTitle = null,
-		IndexContent $indexContent = null, PageContent $defaultContent
+		?IndexContent $indexContent, PageContent $defaultContent
 	) {
 		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), $pageTitle );
 		if ( $indexTitle !== null ) {

@@ -11,7 +11,7 @@ use User;
  */
 class PageLevelTest extends ProofreadPageTestCase {
 
-	public function setUp() {
+	public function setUp() : void {
 		global $wgGroupPermissions;
 		parent::setUp();
 
