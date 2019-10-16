@@ -6,12 +6,12 @@
 			"Sannita"
 		]
 	},
-	"apihelp-query+proofread-description": "Torna ll'infurmaziune ncopp''o stato d''a liggiuta 'e cheste paggene.",
-	"apihelp-query+proofread-summary": "Torna ll'infurmaziune ncopp''o stato d''a liggiuta 'e cheste paggene.",
-	"apihelp-query+proofread-example-1": "Torna ll'infurmaziune ncopp''o stato d''a liggiuta d''e paggene dint''o namespace 250",
-	"apihelp-query+proofreadinfo-description": "Torna ll'infurmaziune ncopp''e 'mpustaziune 'e l'estenzione ProofreadPage.",
-	"apihelp-query+proofreadinfo-summary": "Torna ll'infurmaziune ncopp''e 'mpustaziune 'e l'estenzione ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Quali proprietà 'e liggiuta te serveno:\n;namespaces:Nfurmaziune ncopp''e namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Elenco d''e livelle 'e qualità d''e liggiute.",
-	"apihelp-query+proofreadinfo-example-1": "Tuorna ll'infurmaziune predeterminate",
-	"apihelp-query+proofreadinfo-example-3": "Tuorna ll'infurmaziune d''o namespace"
+	"apihelp-query+proofread-description": "Torna 'e nfurmaziune ncopp' 'o stato d' 'a qualità 'e ccheste paggene.",
+	"apihelp-query+proofread-summary": "Torna 'e nfurmaziune ncopp' 'o stato d' 'a qualità 'e ccheste paggene.",
+	"apihelp-query+proofread-example-1": "Torna 'e nfurmaziune ncopp' 'o stato d' 'a liggiuta d' 'e ppaggene dint' 'o namespace 250",
+	"apihelp-query+proofreadinfo-description": "Torna 'e nfurmaziune ncopp' 'e 'mpustaziune 'e l'estenzione ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Torna 'e nfurmaziune ncopp' 'e 'mpustaziune 'e l'estenzione ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Quà proprietà 'e qualità te sirveno:\n;namespaces:Nfurmaziune ncopp' 'e namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Elenco d' 'e leviell' 'e qualità d' 'e ppaggene liggiute.",
+	"apihelp-query+proofreadinfo-example-1": "Tuorna 'e nfurmaziune predeterminate",
+	"apihelp-query+proofreadinfo-example-3": "Tuorna ll'infurmaziune d' 'o namespace"
 }
