@@ -103,8 +103,8 @@ $proofreadPageNamespacesNames['de'] = [
 $proofreadPageNamespacesNames['el'] = [
 	'page' => 'Σελίδα',
 	'page_talk' => 'Συζήτηση_σελίδας',
-	'index' => 'Βιβλίο',
-	'index_talk' => 'Συζήτηση_βιβλίου'
+	'index' => 'Μεταγραφή',
+	'index_talk' => 'Συζήτηση_μεταγραφής'
 ];
 
 /** Esperanto (Esperanto) */
