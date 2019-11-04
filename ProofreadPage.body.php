@@ -324,10 +324,7 @@ class ProofreadPage {
 		// Process Index restoration.
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			$index = new Article( $title );
-			if ( $index ) {
-				self::updatePrIndex( $index );
-			}
-
+			self::updatePrIndex( $index );
 		// Process Page restoration.
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $title );
