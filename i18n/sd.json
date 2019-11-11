@@ -6,6 +6,7 @@
 			"Tweety"
 		]
 	},
+	"nstab-page": "صفحو",
 	"proofreadpage_nextpage": "اڳيون صفحو",
 	"proofreadpage_prevpage": "پويون صفحو",
 	"proofreadpage_quality0_category": "بنان متن",
@@ -14,5 +15,6 @@
 	"proofreadpage_quality3_category": "چڪون چڪاسيل",
 	"proofreadpage_quality4_category": "توثيق شده",
 	"proofreadpage_quality1_message": "هن صفحي جي چُڪَ چڪاس ڪا نہ ٿي آهي",
+	"content-model-proofread-page": "ڪتابي صفحو",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "صفحا"
 }
