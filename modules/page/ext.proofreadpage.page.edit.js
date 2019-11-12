@@ -474,7 +474,9 @@
 		if ( document.readyState === 'complete' ) {
 			ensureImageZoomInitialization();
 		} else {
-			$( window ).on( 'load', ensureImageZoomInitialization );
+			$( window ).on( 'load', function () {
+				ensureImageZoomInitialization();
+			} );
 		}
 	} );
 
