@@ -22,10 +22,10 @@
 namespace ProofreadPage\Special;
 
 use HTMLForm;
+use ISearchResultSet;
 use MediaWiki\MediaWikiServices;
 use ProofreadPage;
 use QueryPage;
-use SearchResultSet;
 use Title;
 
 class SpecialProofreadPages extends QueryPage {
@@ -70,7 +70,7 @@ class SpecialProofreadPages extends QueryPage {
 				// @phan-suppress-next-line PhanUndeclaredProperty
 				$searchEngine->showRedirects = false;
 				$status = $searchEngine->searchText( $this->searchTerm );
-				if ( $status instanceof SearchResultSet ) {
+				if ( $status instanceof ISearchResultSet ) {
 					$textMatches = $status;
 					$status = null;
 				} elseif ( $status->isOK() ) {
@@ -78,7 +78,7 @@ class SpecialProofreadPages extends QueryPage {
 				} else {
 					$textMatches = null;
 				}
-				if ( !( $textMatches instanceof SearchResultSet ) ) {
+				if ( !( $textMatches instanceof ISearchResultSet ) ) {
 					// TODO: $searchEngine->searchText() can return status objects
 					// Might want to extract some information from them
 					global $wgOut;
