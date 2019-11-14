@@ -2,10 +2,8 @@
 
 namespace ProofreadPage\Index;
 
-use Language;
 use ParserOptions;
 use ProofreadPageTestCase;
-use User;
 
 /**
  * @group ProofreadPage
@@ -57,10 +55,7 @@ class ParserHelperTest extends ProofreadPageTestCase {
 	 * @dataProvider expandTemplateArgsProvider
 	 */
 	public function testExpandTemplateArgsProvider( $inputText, $args, $outputText ) {
-		$parserHelper = new ParserHelper(
-			null,
-			ParserOptions::newCanonical( new User(), Language::factory( 'en' ) )
-		);
+		$parserHelper = new ParserHelper( null, ParserOptions::newCanonical() );
 		$this->assertEquals( $outputText, $parserHelper->expandTemplateArgs( $inputText, $args ) );
 	}
 }

@@ -13,7 +13,6 @@ use ProofreadPage\Page\DatabasePageQualityLevelLookup;
 use ProofreadPage\Page\IndexForPageLookup;
 use ProofreadPage\Page\PageQualityLevelLookup;
 use ProofreadPage\Pagination\PaginationFactory;
-use RepoGroup;
 
 /**
  * @license GPL-2.0-or-later
@@ -156,7 +155,7 @@ class Context {
 		static $defaultContext;
 
 		if ( $defaultContext === null || $purge ) {
-			$repoGroup = RepoGroup::singleton();
+			$repoGroup = MediaWikiServices::getInstance()->getRepoGroup();
 			$pageNamespaceId = ProofreadPageInit::getNamespaceId( 'page' );
 			$indexNamespaceId = ProofreadPageInit::getNamespaceId( 'index' );
 			$defaultContext = new self( $pageNamespaceId, $indexNamespaceId,

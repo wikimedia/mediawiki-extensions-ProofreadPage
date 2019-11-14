@@ -5,8 +5,9 @@ namespace ProofreadPage\Page;
 use Content;
 use Html;
 use MagicWord;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
-use Revision;
 use Status;
 use TextContent;
 use Title;
@@ -195,9 +196,9 @@ class PageContent extends TextContent {
 
 	private function getContentForRevId( $revId ) {
 		if ( $revId !== -1 ) {
-			$revision = Revision::newFromId( $revId );
+			$revision = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById( $revId );
 			if ( $revision !== null ) {
-				$content = $revision->getContent();
+				$content = $revision->getContent( SlotRecord::MAIN );
 				if ( $content !== null ) {
 					return $content;
 				}
@@ -272,8 +273,8 @@ class PageContent extends TextContent {
 
 		// create content
 		$wikitextContent = new WikitextContent(
-			$this->header->getNativeData() . "\n\n" . $this->body->getNativeData() .
-				$this->footer->getNativeData()
+			$this->header->getText() . "\n\n" . $this->body->getText() .
+				$this->footer->getText()
 		);
 		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
 		$parserOutput->addCategory(

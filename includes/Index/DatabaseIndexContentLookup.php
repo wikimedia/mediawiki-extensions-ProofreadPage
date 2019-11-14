@@ -2,7 +2,8 @@
 
 namespace ProofreadPage\Index;
 
-use Revision;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use Title;
 
 /**
@@ -21,11 +22,12 @@ class DatabaseIndexContentLookup implements IndexContentLookup {
 		$cacheKey = $indexTitle->getDBkey();
 
 		if ( !array_key_exists( $cacheKey, $this->cache ) ) {
-			$rev = Revision::newFromTitle( $indexTitle );
-			if ( $rev === null ) {
+			$revision = MediaWikiServices::getInstance()->getRevisionStore()
+				->getRevisionByTitle( $indexTitle );
+			if ( $revision === null ) {
 				$this->cache[$cacheKey] = new IndexContent( [] );
 			} else {
-				$content = $rev->getContent();
+				$content = $revision->getContent( SlotRecord::MAIN );
 				if ( $content instanceof IndexContent ) {
 					$this->cache[$cacheKey] = $content;
 				} else {
