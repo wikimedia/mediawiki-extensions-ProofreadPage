@@ -192,12 +192,12 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param ImagePage &$imgpage
-	 * @param OutputPage &$out
+	 * @param ImagePage $imgpage
+	 * @param OutputPage $out
 	 * @return bool
 	 */
 	public static function onImageOpenShowImageInlineBefore(
-		ImagePage &$imgpage, OutputPage &$out
+		ImagePage $imgpage, OutputPage $out
 	) {
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
@@ -249,10 +249,10 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param WikiPage &$article
+	 * @param WikiPage $article
 	 * @return bool
 	 */
-	public static function onPageContentSaveComplete( WikiPage &$article ) {
+	public static function onPageContentSaveComplete( WikiPage $article ) {
 		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table
@@ -334,13 +334,13 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param MovePageForm &$form
-	 * @param Title &$ot
-	 * @param Title &$nt
+	 * @param MovePageForm $form
+	 * @param Title $ot
+	 * @param Title $nt
 	 * @return bool
 	 */
 	public static function onSpecialMovepageAfterMove(
-		MovePageForm &$form, Title &$ot, Title &$nt
+		MovePageForm $form, Title $ot, Title $nt
 	) {
 		if ( $ot->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $ot );
@@ -643,11 +643,11 @@ class ProofreadPage {
 
 	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
-	 * @param SkinTemplate &$skin
+	 * @param SkinTemplate $skin
 	 * @param array &$links Structured navigation links
 	 * @return true
 	 */
-	public static function onSkinTemplateNavigation( SkinTemplate &$skin, array &$links ) {
+	public static function onSkinTemplateNavigation( SkinTemplate $skin, array &$links ) {
 		$title = $skin->getTitle();
 		if ( $title === null || !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return true;
