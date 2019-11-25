@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Pagination;
 
-use Language;
+use MediaWiki\MediaWikiServices;
 use ProofreadPageTestCase;
 
 /**
@@ -25,16 +25,18 @@ class PageNumberTest extends ProofreadPageTestCase {
 			[ 'xiv<sup>v</sup>', 'xivv',
 				new PageNumber( '14', PageNumber::DISPLAY_FOLIOROMAN, false, false ), null ],
 			[ 'test', 'test', new PageNumber( 'test', PageNumber::DISPLAY_ROMAN ), null ],
-			[ '૮', '૮', new PageNumber( '8' ), Language::factory( 'gu' ) ],
+			[ '૮', '૮', new PageNumber( '8' ), 'gu' ],
 		];
 	}
 
 	/**
 	 * @dataProvider formattedPageNumberProvider
 	 */
-	public function testGetFormattedPageNumber( $formattedResult, $rawResult, PageNumber $number,
-			$language = null ) {
-		$language = ( $language === null ) ? Language::factory( 'en' ) : $language;
+	public function testGetFormattedPageNumber(
+		$formattedResult, $rawResult, PageNumber $number, $language = null
+	) {
+		$language = ( $language === null ) ? 'en' : $language;
+		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $language );
 		$this->assertEquals( $formattedResult, $number->getFormattedPageNumber( $language ) );
 		$this->assertEquals( $rawResult, $number->getRawPageNumber( $language ) );
 	}

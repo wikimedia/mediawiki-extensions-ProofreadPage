@@ -5,6 +5,7 @@ namespace ProofreadPage\Page;
 use Article;
 use EditPage;
 use Html;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use OOUI;
 use ProofreadPage\Context;
@@ -57,7 +58,7 @@ class EditPagePage extends EditPage {
 	 * @inheritDoc
 	 */
 	protected function getContentObject( $defContent = null ) {
-		if ( !$this->mTitle->exists() ) {
+		if ( !$this->getTitle()->exists() ) {
 			return $this->pageContentBuilder->buildDefaultContentForPageTitle( $this->getTitle() );
 		}
 		return parent::getContentObject( $defContent );
@@ -151,7 +152,8 @@ class EditPagePage extends EditPage {
 		$checkboxes = parent::getCheckboxesWidget( $tabindex, $checked );
 		$user = $this->context->getUser();
 
-		if ( $user->isAllowed( 'pagequality' ) ) {
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		if ( $permissionManager->userHasRight( $user, 'pagequality' ) ) {
 			$checkboxes['wpr-pageStatus'] = $this->buildQualityEditWidget( $user, $tabindex );
 		}
 

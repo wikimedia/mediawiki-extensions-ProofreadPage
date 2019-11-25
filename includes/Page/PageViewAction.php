@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Revision\RevisionRecord;
 use ProofreadPage\Context;
-use Revision;
 use ViewAction;
 
 /**
@@ -28,7 +28,7 @@ class PageViewAction extends ViewAction {
 		}
 
 		$wikiPage = $this->page->getPage();
-		$content = $wikiPage->getContent( Revision::FOR_THIS_USER, $this->getUser() );
+		$content = $wikiPage->getContent( RevisionRecord::FOR_THIS_USER, $this->getUser() );
 		if ( $content === null || $content->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ||
 			$content->isRedirect()
 		) {

@@ -24,7 +24,7 @@ namespace ProofreadPage\Special;
 use HTMLForm;
 use ISearchResultSet;
 use MediaWiki\MediaWikiServices;
-use ProofreadPage;
+use ProofreadPage\Context;
 use QueryPage;
 use Title;
 
@@ -63,7 +63,7 @@ class SpecialProofreadPages extends QueryPage {
 			}
 
 			if ( $this->searchTerm ) {
-				$indexNamespaceId = ProofreadPage::getIndexNamespaceId();
+				$indexNamespaceId = Context::getDefaultContext()->getIndexNamespaceId();
 				$searchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
 				$searchEngine->setNamespaces( [ $indexNamespaceId ] );
@@ -195,7 +195,7 @@ class SpecialProofreadPages extends QueryPage {
 		$conds = [];
 		if ( $this->searchTerm ) {
 			if ( $this->searchList !== null ) {
-				$conds = [ 'page_namespace' => ProofreadPage::getIndexNamespaceId() ];
+				$conds = [ 'page_namespace' => Context::getDefaultContext()->getIndexNamespaceId() ];
 				if ( $this->searchList ) {
 					$conds['page_title'] = $this->searchList;
 				} else {

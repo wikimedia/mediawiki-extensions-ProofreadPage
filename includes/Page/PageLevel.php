@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use IP;
+use MediaWiki\MediaWikiServices;
 use User;
 
 /**
@@ -91,8 +92,10 @@ class PageLevel {
 	 * @return bool
 	 */
 	public function isChangeAllowed( PageLevel $to ) {
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+
 		if ( $this->level !== $to->getLevel() && ( $to->getUser() === null ||
-			!$to->getUser()->isAllowed( 'pagequality' ) )
+			!$permissionManager->userHasRight( $to->getUser(), 'pagequality' ) )
 		) {
 			return false;
 		}
@@ -107,7 +110,7 @@ class PageLevel {
 					$fromUser !== null && $fromUser->getName() === $to->getUser()->getName()
 				)
 			) &&
-			!$to->getUser()->isAllowed( 'pagequality-admin' )
+			!$permissionManager->userHasRight( $to->getUser(), 'pagequality-admin' )
 		);
 	}
 
