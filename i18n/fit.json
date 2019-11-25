@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pyscowicz"
+			"Pyscowicz",
+			"Palmtree222"
 		]
 	},
+	"proofreadpage_quality0_category": "Ilman tekstiä",
+	"proofreadpage_quality1_category": "Oikolukematta",
+	"proofreadpage_quality2_category": "prubleemalinen",
+	"proofreadpage_quality3_category": "Oikoluettu",
+	"proofreadpage_quality4_category": "Hyäksytty",
+	"proofreadpage_quality1_message": "Tätä sivua ei ole oikoluettu",
 	"proofreadpage_source": "Lähe"
 }
