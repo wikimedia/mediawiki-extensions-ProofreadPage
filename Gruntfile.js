@@ -22,7 +22,7 @@ module.exports = function ( grunt ) {
 		},
 		stylelint: {
 			all: [
-				'modules/**/*.css'
+				'modules/**/*.{css,less}'
 			]
 		},
 		banana: conf.MessagesDirs
