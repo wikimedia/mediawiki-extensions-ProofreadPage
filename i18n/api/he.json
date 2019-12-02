@@ -11,6 +11,6 @@
 	"apihelp-query+proofreadinfo-description": "החזרת מידע על הגדרות ההרחבה ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "החזרת מידע על הגדרות התצורה של ההרחבה ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "אילו מאפייני הגהה לקבל:\n;namespaces:מידע על מרחבי השם \"{{ns:Page}}\"ֿֿ ו־{{ns:Index}}.\n;qualitylevels:רשימת רמות איכות הגהה.",
-	"apihelp-query+proofreadinfo-example-1": "החזרת מידע בררת מחדל",
+	"apihelp-query+proofreadinfo-example-1": "החזרת מידע ברירת מחדל",
 	"apihelp-query+proofreadinfo-example-3": "החזרת מידע על מרחב שם"
 }
