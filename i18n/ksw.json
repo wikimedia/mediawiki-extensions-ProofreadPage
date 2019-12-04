@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jaeminlovetaejoon",
-			"Khing"
+			"Khing",
+			"SawJaemin"
 		]
 	},
 	"nstab-page": "ကဘျံးပၤ",
@@ -22,6 +23,7 @@
 	"proofreadpage_nologintext": "နကဘၣ်ကဲ [[Special:UserLogin|logged in]] လၢနကဖးလီၤတံၢ်က့းကဘျံးပၤတဘ့ၣ်အံၤ.",
 	"proofreadpage_notallowedtext": "နဆီတလဲတၢ်ဖးလီၤတံၢ်ကဘျံးပၤတခါအံၤတန့ၢ်ဘၣ်",
 	"proofreadpage_quality0_category": "တအိၣ်ဒီးတၢ်ကွဲး",
+	"proofreadpage_quality2_category": "အိၣ်ဒီးတၢ်ကီတၢ်ခဲ",
 	"proofreadpage_quality3_category": "ဖးဘျ့လံာ်",
 	"proofreadpage_quality4_category": "မၤဘၣ်ဘျီဘၣ်ဒါ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ကဘျံးပၤ",
