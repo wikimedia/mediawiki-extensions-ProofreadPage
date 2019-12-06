@@ -14,7 +14,7 @@
 	"proofreadpage_nosuch_index": "Error: non existe tal indice",
 	"proofreadpage_nosuch_file": "Error: non existe tal file",
 	"proofreadpage_indexdupetext": "Paginas non pote figurar plus de un vice in un pagina de indice.",
-	"proofreadpage_nologin": "Tu non ha aperite un session",
+	"proofreadpage_nologin": "Tu non ha aperite session",
 	"proofreadpage_nologintext": "Tu debe [[Special:UserLogin|aperir un session]] pro modificar le stato de correction de paginas.",
 	"proofreadpage_notallowedtext": "Tu non ha le permission de cambiar le stato de correction de iste pagina.",
 	"proofreadpage_number_expected": "Error: valor numeric expectate",

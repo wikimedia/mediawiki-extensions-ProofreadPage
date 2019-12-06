@@ -10,7 +10,8 @@
 			"Vito Genovese",
 			"Stultiwikia",
 			"Orbot707",
-			"Mirzali"
+			"Mirzali",
+			"BaRaN6161 TURK"
 		]
 	},
 	"nstab-page": "Sayfa",
@@ -57,6 +58,8 @@
 	"proofreadpage_quality4_message": "Bu sayfa doğrulanmış",
 	"proofreadpage_index_status": "Dizin durumu",
 	"proofreadpage_index_size": "Sayfa sayısı",
+	"proofreadpage_pages_to_validate": "Doğrulanacak sayfa sayısı",
+	"proofreadpage_pages_to_proofread_or_validate": "Düzeltilecek veya doğrulanacak sayfa sayısı",
 	"proofreadpage_specialpage_label_orderby": "Sırala:",
 	"proofreadpage_specialpage_label_key": "Ara:",
 	"proofreadpage_specialpage_label_sortascending": "Artan sıralama",
@@ -72,7 +75,10 @@
 	"proofreadpage_specialpage_searcherrortext": "Arama motoru çalışmıyor. Verdiğimiz rahatsızlıktan dolayı özür dileriz.",
 	"proofreadpage_source": "Kaynak",
 	"proofreadpage_source_message": "Bu metni oluşturmak için kullanılan taranmış sürüm",
+	"action-pagequality": "sayfa kalitesi bayrağını değiştir",
 	"right-pagequality": "Sayfa kalite bayrağını değiştirme",
+	"action-pagequality-admin": "sayfa kalitesi bayrağına sınırsız düzenleme",
+	"right-pagequality-admin": "Sayfa kalitesi bayrağına sınırsız düzenleme",
 	"proofreadpage-section-tools": "Redaksiyon araçları",
 	"proofreadpage-group-zoom": "Yakınlaştır",
 	"proofreadpage-group-other": "Diğer",
@@ -93,5 +99,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Evet",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Hayır",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Düzeltme kalitesi",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Düzeltme kalitesi"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Düzeltme kalitesi",
+	"proofreadpage-index-field-category-label": "Kategoriler",
+	"proofreadpage-index-edit-category-help": "Kategoriler Kategori: olmadan yazılır, önek ve \"|\" karakter."
 }
