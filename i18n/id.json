@@ -9,7 +9,8 @@
 			"Iwan Novirion",
 			"Marwan Mohamad",
 			"Rachmat.Wahidi",
-			"Rachmat04"
+			"Rachmat04",
+			"Sonic Speedy"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -44,6 +45,11 @@
 	"proofreadpage_quality2_category": "Halaman bermasalah",
 	"proofreadpage_quality3_category": "Halaman yang telah diuji-baca",
 	"proofreadpage_quality4_category": "Halaman yang telah divalidasi",
+	"proofreadpage_quality0_summary": "Halaman tanpa naskah",
+	"proofreadpage_quality1_summary": "Halaman yang belum diuji-baca",
+	"proofreadpage_quality2_summary": "Halaman bermasalah",
+	"proofreadpage_quality3_summary": "Pemeriksaan",
+	"proofreadpage_quality4_summary": "Divalidasi",
 	"proofreadpage_quality0_message": "Halaman ini tidak perlu diuji-baca",
 	"proofreadpage_quality1_message": "Halaman ini belum diuji-baca",
 	"proofreadpage_quality2_message": "Ada masalah ketika menguji-baca halaman ini",
@@ -51,6 +57,8 @@
 	"proofreadpage_quality4_message": "Halaman ini telah divalidasi",
 	"proofreadpage_index_status": "|Satus indeks",
 	"proofreadpage_index_size": "Jumlah halaman",
+	"proofreadpage_pages_to_validate": "Jumlah halaman yang akan divalidasi",
+	"proofreadpage_pages_to_proofread_or_validate": "Jumlah halaman yang akan di koreksi atau divalidasi",
 	"proofreadpage_specialpage_label_orderby": "Urut berdasarkan:",
 	"proofreadpage_specialpage_label_key": "Cari:",
 	"proofreadpage_specialpage_label_sortascending": "Urut naik",
@@ -66,7 +74,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Mesin pencari tidak bekerja. Maaf atas ketidaknyamanan ini.",
 	"proofreadpage_source": "Sumber",
 	"proofreadpage_source_message": "Versi pindai yang digunakan untuk membuat naskah ini",
+	"action-pagequality": "Memodifikasi tanda kualitas halaman",
 	"right-pagequality": "Memodifikasi tanda kualitas halaman",
+	"action-pagequality-admin": "Suntingan tak dibatasi pada tanda kualitas halaman",
 	"right-pagequality-admin": "Suntingan tak dibatasi pada tanda kualitas halaman",
 	"proofreadpage-section-tools": "Peralatan uji-baca",
 	"proofreadpage-group-zoom": "Ukuran",
@@ -88,5 +98,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ya",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Tidak",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kualitas uji-baca",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kualitas uji-baca"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kualitas uji-baca",
+	"proofreadpage-index-field-category-label": "Kategori",
+	"proofreadpage-index-edit-category-help": "Kategori ditulis tanpa Kategori: awalan dan dipisahkan oleh pipa \"|\"."
 }
