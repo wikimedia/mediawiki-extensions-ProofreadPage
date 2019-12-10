@@ -9,7 +9,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.34.0"
+		"MediaWiki": ">= 1.35.0"
 	},
 	"GroupPermissions": {
 		"user": {
@@ -53,13 +53,15 @@
 	},
 	"AutoloadClasses": {
 		"ProofreadPage": "ProofreadPage.body.php",
+		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
+		"FixProofreadIndexPagesContentModel": "maintenance/fixProofreadIndexPagesContentModel.php"
+	},
+	"TestAutoloadClasses": {
 		"ProofreadPage\\FileProviderMock": "tests/phpunit/FileProviderMock.php",
 		"ProofreadPage\\Page\\IndexForPageLookupMock": "tests/phpunit/Page/IndexForPageLookupMock.php",
 		"ProofreadPage\\Page\\PageQualityLevelLookupMock": "tests/phpunit/Page/PageQualityLevelLookupMock.php",
 		"ProofreadPage\\Index\\IndexContentLookupMock": "tests/phpunit/Index/IndexContentLookupMock.php",
-		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php",
-		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
-		"FixProofreadIndexPagesContentModel": "maintenance/fixProofreadIndexPagesContentModel.php"
+		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php"
 	},
 	"ResourceModules": {
 		"jquery.mousewheel": {
