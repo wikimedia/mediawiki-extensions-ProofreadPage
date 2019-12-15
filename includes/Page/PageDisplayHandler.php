@@ -48,7 +48,7 @@ class PageDisplayHandler {
 					$indexContent, 'width'
 				)->getStringValue();
 				if ( is_numeric( $width ) ) {
-					return $width;
+					return (int)$width;
 				}
 			} catch ( OutOfBoundsException $e ) {
 				return self::DEFAULT_IMAGE_WIDTH;
