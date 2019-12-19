@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Helix84"
+			"Helix84",
+			"Luky001"
 		]
 	},
 	"indexpages": "Zoznam indexových stránok",
@@ -40,7 +41,7 @@
 	"proofreadpage_page_status": "Stav stránky",
 	"proofreadpage_js_attributes": "Autor Názov Rok Vydavateľ",
 	"proofreadpage_index_attributes": "Autor\nNázov\nRok|Rok vydania\nVydavateľstvo\nZdroj\nObrázok|Obálka\nStrán||20\nPoznámky||10",
-	"proofreadpage_pages": "{{PLURAL:$1|stránka|stránky|stránok}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|stránka|stránky|stránok}}",
 	"proofreadpage_specialpage_legend": "Hľadať v stránkach indexu",
 	"proofreadpage_source": "Zdroj",
 	"proofreadpage_source_message": "Naskenované vydanie použité pri vzniku tohto textu",
