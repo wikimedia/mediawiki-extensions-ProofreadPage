@@ -67,21 +67,22 @@ class PageNumber {
 			return $this->number;
 		}
 
+		$number = (int)$this->number;
 		switch ( $this->displayMode ) {
 			case self::DISPLAY_HIGHROMAN:
-				return Language::romanNumeral( $this->number );
+				return Language::romanNumeral( $number );
 			case self::DISPLAY_ROMAN:
-				return strtolower( Language::romanNumeral( $this->number ) );
+				return strtolower( Language::romanNumeral( $number ) );
 			case self::DISPLAY_NORMAL:
-				return $language->formatNum( $this->number, true );
+				return $language->formatNum( $number, true );
 			case self::DISPLAY_FOLIO:
-				return $language->formatNum( $this->number, true ) .
+				return $language->formatNum( $number, true ) .
 					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
-				return Language::romanNumeral( $this->number ) .
+				return Language::romanNumeral( $number ) .
 					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOROMAN:
-				return strtolower( Language::romanNumeral( $this->number ) ) .
+				return strtolower( Language::romanNumeral( $number ) ) .
 					$this->formatRectoVerso();
 			default:
 				return $this->number;
@@ -99,21 +100,22 @@ class PageNumber {
 			return $this->number;
 		}
 
+		$number = (int)$this->number;
 		switch ( $this->displayMode ) {
 			case self::DISPLAY_HIGHROMAN:
-				return Language::romanNumeral( $this->number );
+				return Language::romanNumeral( $number );
 			case self::DISPLAY_ROMAN:
-				return strtolower( Language::romanNumeral( $this->number ) );
+				return strtolower( Language::romanNumeral( $number ) );
 			case self::DISPLAY_NORMAL:
-				return $language->formatNum( $this->number, true );
+				return $language->formatNum( $number, true );
 			case self::DISPLAY_FOLIO:
-				return $language->formatNum( $this->number, true ) .
+				return $language->formatNum( $number, true ) .
 					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
-				return Language::romanNumeral( $this->number ) .
+				return Language::romanNumeral( $number ) .
 					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOROMAN:
-				return strtolower( Language::romanNumeral( $this->number ) ) .
+				return strtolower( Language::romanNumeral( $number ) ) .
 					$this->rawRectoVerso();
 			default:
 				return $this->number;

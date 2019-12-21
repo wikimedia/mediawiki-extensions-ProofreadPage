@@ -123,7 +123,7 @@ class FilePagination extends Pagination {
 
 		// fallback to arabic number
 		if ( $i18nNumber !== $pageNumber && !$title->exists() ) {
-			$arabicTitle = $this->buildPageTitleFromPageNumber( $pageNumber );
+			$arabicTitle = $this->buildPageTitleFromPageNumber( (string)$pageNumber );
 			if ( $arabicTitle->exists() ) {
 				return $arabicTitle;
 			}

@@ -116,7 +116,7 @@ class ProofreadPageDbConnector {
 			[ 'COUNT(page_id) AS count' ],
 			[ 'tl_from' => $id, 'tl_namespace' => ProofreadPage::getPageNamespaceId() ],
 			__METHOD__,
-			null,
+			[],
 			[ 'page' => [ 'LEFT JOIN', 'page_title=tl_title AND page_namespace=tl_namespace' ] ]
 		);
 		if ( $res && $dbr->numRows( $res ) > 0 ) {
