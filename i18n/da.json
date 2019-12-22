@@ -53,6 +53,8 @@
 	"proofreadpage_quality4_message": "Denne side er valideret",
 	"proofreadpage_index_status": "Indeksstatus",
 	"proofreadpage_index_size": "Antal sider",
+	"proofreadpage_pages_to_validate": "Antal sider, som mangler validering",
+	"proofreadpage_pages_to_proofread_or_validate": "Antal sider, som mangler korrekturlæsning eller validering",
 	"proofreadpage_specialpage_label_orderby": "Sorter efter:",
 	"proofreadpage_specialpage_label_key": "Søg:",
 	"proofreadpage_specialpage_label_sortascending": "Sorter stigende",
@@ -68,7 +70,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Søgemaskinen virker ikke. Vi beklager ulejligheden.",
 	"proofreadpage_source": "Kilde",
 	"proofreadpage_source_message": "Indscannet original, der blev brugt som grundlag for denne tekst",
+	"action-pagequality": "ændre en sides kvalitetsstatus",
 	"right-pagequality": "Ændre en sides kvalititetsflag",
+	"action-pagequality-admin": "ubegrænsede ændringer til en sides kvalitetsstatus",
 	"right-pagequality-admin": "Ubegrænsede redigeringer til sidekvalitetsmærkningen",
 	"proofreadpage-section-tools": "Korrekturlæsning",
 	"proofreadpage-group-zoom": "Zoom",
@@ -91,5 +95,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlæsningsstatus",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlæsningsstatus",
-	"proofreadpage-index-field-category-label": "Kategorier"
+	"proofreadpage-index-field-category-label": "Kategorier",
+	"proofreadpage-index-edit-category-help": "Kategorier skrives uden Kategori:-forstavelsen og adskilles med lodret streg, \"|\"-tegnet."
 }
