@@ -13,7 +13,8 @@
 			"LNDDYL",
 			"Cwlin0416",
 			"Wwycheuk",
-			"Kly"
+			"Kly",
+			"Wmr"
 		]
 	},
 	"nstab-page": "頁面",
@@ -76,7 +77,7 @@
 	"proofreadpage_specialpage_searcherror": "搜尋程式出錯",
 	"proofreadpage_specialpage_searcherrortext": "搜尋引擎無法工作。抱歉給您帶來不便。",
 	"proofreadpage_source": "來源",
-	"proofreadpage_source_message": "掃描版用來建立這個文字",
+	"proofreadpage_source_message": "用以建立此文本的掃描版",
 	"action-pagequality": "修改頁面品質標誌",
 	"right-pagequality": "修改頁面品質標誌",
 	"action-pagequality-admin": "不受限編輯頁面品質標誌",
