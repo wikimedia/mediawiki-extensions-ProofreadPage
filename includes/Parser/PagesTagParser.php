@@ -108,9 +108,10 @@ class PagesTagParser {
 
 				if ( !$step ) {
 					$step = 1;
-				}
-				if ( !is_numeric( $step ) || $step < 1 ) {
+				} elseif ( !is_numeric( $step ) || $step < 1 ) {
 					return $this->formatError( 'proofreadpage_number_expected' );
+				} else {
+					$step = (int)$step;
 				}
 
 				$pagenums = [];
@@ -132,7 +133,7 @@ class PagesTagParser {
 					if ( !$to ) {
 						$to = $count;
 					}
-					if ( !is_numeric( $from ) || !is_numeric( $to ) || !is_numeric( $step ) ) {
+					if ( !is_numeric( $from ) || !is_numeric( $to ) ) {
 						return $this->formatError( 'proofreadpage_number_expected' );
 					}
 

@@ -143,7 +143,7 @@ class ProofreadIndexDbConnector {
 				[ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
 				[ 'page_title' => $indexTitle, 'page_namespace' => ProofreadPage::getIndexNamespaceId() ],
 				__METHOD__,
-				null,
+				[],
 				[ 'page' => [ 'LEFT JOIN', 'page_id=pr_page_id' ] ]
 				);
 		return $res;

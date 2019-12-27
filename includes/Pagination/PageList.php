@@ -45,7 +45,7 @@ class PageList {
 	/**
 	 * Returns the PageNumber for the page number $pageNumber
 	 *
-	 * @param integer $pageNumber
+	 * @param int $pageNumber
 	 * @return PageNumber
 	 */
 	private function buildNumber( $pageNumber ) {
@@ -61,7 +61,7 @@ class PageList {
 				$params = explode( ';', $parameters );
 				foreach ( $params as $param ) {
 					if ( is_numeric( $param ) ) {
-						$offset = $num - $param;
+						$offset = $num - (int)$param;
 					}
 				}
 			}

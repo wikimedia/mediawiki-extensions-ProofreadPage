@@ -79,7 +79,7 @@ class PagelistTagParser {
 				$view = '&#160;' . $view;
 			}
 
-			$paddingSize = strlen( $count ) - mb_strlen( $view );
+			$paddingSize = strlen( (string)$count ) - mb_strlen( $view );
 			if ( $paddingSize > 0 && $mode === PageNumber::DISPLAY_NORMAL &&
 				$pageNumber->isNumeric()
 			) {
