@@ -96,5 +96,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nein",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesungsqualität",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesungsqualität"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesungsqualität",
+	"proofreadpage-index-field-category-label": "Kategorien",
+	"proofreadpage-index-edit-category-help": "Kategorien werden ohne den Category-Präfix geschrieben und durch das \"|\"-Zeichen von einander getrennt."
 }
