@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dundak",
-			"Michawiki"
+			"Michawiki",
+			"J budissin"
 		]
 	},
 	"indexpages": "Lisćina indeksowych stronow",
@@ -67,5 +68,6 @@
 	"proofreadpage-pageinfo-status": "Korigowanski status",
 	"proofreadpage-preferences-showheaders-label": "Hłowowe a nohowe pola pokazać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje",
 	"proofreadpage-preferences-horizontal-layout-label": "Horicontalne wuhotowanje wužiwać, hdyž so w mjenowym rumje {{ns:page}} wobdźěłuje",
-	"content-model-proofread-page": "Strona: strona"
+	"content-model-proofread-page": "Strona: strona",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Strony"
 }
