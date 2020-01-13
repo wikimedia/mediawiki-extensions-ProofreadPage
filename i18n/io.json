@@ -5,6 +5,7 @@
 			"Joao Xavier"
 		]
 	},
+	"nstab-page": "Pagino",
 	"proofreadpage_image": "Imajo",
 	"proofreadpage_index": "Indexo",
 	"proofreadpage_nextpage": "Sequanta pagino",
@@ -20,5 +21,6 @@
 	"proofreadpage_page_status": "Stando di pagino",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pagino|pagini}}",
 	"proofreadpage-button-toggle-visibility-label": "Montrez/celez la titulo o la pedo di la pagino",
-	"content-model-proofread-page": "Pagino di libro"
+	"content-model-proofread-page": "Pagino di libro",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagini"
 }

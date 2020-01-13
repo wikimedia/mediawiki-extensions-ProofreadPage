@@ -3,10 +3,11 @@
 		"authors": [
 			"Candalua",
 			"GatoSelvadego",
-			"Vajotwo"
+			"Vajotwo",
+			"Conky77"
 		]
 	},
-	"nstab-page": "Pàjina",
+	"nstab-page": "Pàgina",
 	"nstab-index": "Índice",
 	"tooltip-ca-nstab-page": "Varda la pagina del libro",
 	"tooltip-ca-nstab-index": "Varda l'indice del libro",
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "Te ghè da èssar [[Special:UserLogin|autenticà]] par canbiar el stato de revision de le pagine.",
 	"proofreadpage_notallowedtext": "No te ghè el parmesso de canbiar el stato de revision de le pagine.",
 	"proofreadpage_dataconfig_badformatted": "Problema inte ła configurasion de i dati",
-	"proofreadpage_dataconfig_badformattedtext": "Ła pàjina [[Mediawiki:Proofreadpage index data config]] nó ła xe inte un formà JSON coreto.",
+	"proofreadpage_dataconfig_badformattedtext": "Ƚa pàgina [[Mediawiki:Proofreadpage index data config]] no ƚa xe inte on formà JSON coreto.",
 	"proofreadpage_number_expected": "Eròr: me spetavo un valor numerico",
 	"proofreadpage_interval_too_large": "Eròr: intervalo massa grando",
 	"proofreadpage_invalid_interval": "Eròr: intervalo mia valido",
@@ -49,7 +50,7 @@
 	"proofreadpage_quality3_message": "Sta pagina la xe stà trascrita da l'originale",
 	"proofreadpage_quality4_message": "Sta pagina la xe stà verificà da almanco do utenti",
 	"proofreadpage_index_status": "Stato avansamento",
-	"proofreadpage_index_size": "Nùmaro de pàjine",
+	"proofreadpage_index_size": "Nùmaro de pàgine",
 	"proofreadpage_pages_to_validate": "Nùmaro de pagine da rilèzar",
 	"proofreadpage_pages_to_proofread_or_validate": "Nùmaro de pagine da trascrìvar o rilèzar",
 	"proofreadpage_specialpage_label_orderby": "Ordena par:",
@@ -78,7 +79,7 @@
 	"proofreadpage-button-zoom-in-label": "Zoom avanti",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizontale",
 	"proofreadpage-pageinfo-status": "Stato de coresion",
-	"proofreadpage-preferences-showheaders-label": "Mostra l'intestasion e 'l pie de pàjina durante ła modifega inte'l namespace {{ns:page}}",
+	"proofreadpage-preferences-showheaders-label": "Mostra l'intestasion e 'l pie de pàgina durante ƚa modifega inte'l namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Dopara el layout orixontałe có te modifeghi inte'l namespace {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina rileta|pagine rilete}}, $2 {{PLURAL:$2|pagina solo trascrita|pagine solo trascrite}} e $3 {{PLURAL:$3|pagina inconpleta|pagine inconplete}}",
 	"content-model-proofread-page": "Pagina del libro",
