@@ -8,9 +8,9 @@ use ProofreadPage\Index\IndexContentLookup;
 use ProofreadPage\Index\IndexContentLookupMock;
 use ProofreadPage\Page\IndexForPageLookup;
 use ProofreadPage\Page\IndexForPageLookupMock;
-use ProofreadPage\Pagination\PaginationFactory;
 use ProofreadPage\Page\PageQualityLevelLookup;
 use ProofreadPage\Page\PageQualityLevelLookupMock;
+use ProofreadPage\Pagination\PaginationFactory;
 use ProofreadPageTestCase;
 
 /**

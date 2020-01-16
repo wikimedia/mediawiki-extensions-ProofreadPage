@@ -291,7 +291,7 @@ $proofreadPageNamespacesNames['mr'] = [
 	'index_talk' => 'अनुक्रमणिका_चर्चा'
 ];
 
-/** Neapolitan (Napulitano) **/
+/** Neapolitan (Napulitano) */
 $proofreadPageNamespacesNames['nap'] = [
 	'page' => 'Paggena',
 	'page_talk' => 'Paggena_chiàcchiera',

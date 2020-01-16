@@ -79,7 +79,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetTextForSummary() {
-		$this->assertEquals(
+		$this->assertSame(
 			'', ( new IndexRedirectContent( Title::newFromText( 'Foo' ) ) )->getTextForSummary( 16 )
 		);
 	}

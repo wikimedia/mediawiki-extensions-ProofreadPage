@@ -4,20 +4,20 @@ namespace ProofreadPage\Index;
 
 use Content;
 use MagicWord;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use ParserOptions;
+use ParserOutput;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use Sanitizer;
-use ParserOutput;
 use Status;
 use TextContent;
 use Title;
 use User;
 use WikiPage;
 use WikitextContent;
-use MediaWiki\MediaWikiServices;
 
 /**
  * @license GPL-2.0-or-later

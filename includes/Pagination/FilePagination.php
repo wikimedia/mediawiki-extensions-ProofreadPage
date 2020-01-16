@@ -114,7 +114,7 @@ class FilePagination extends Pagination {
 	}
 
 	/**
-	 * @param integer $pageNumber
+	 * @param int $pageNumber
 	 * @return Title
 	 */
 	private function buildPageTitle( $pageNumber ) {

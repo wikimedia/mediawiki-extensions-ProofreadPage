@@ -234,7 +234,7 @@ class ProofreadPage {
 	/**
 	 * Updates index data for an index referencing the specified page.
 	 * @param Title $title page title object
-	 * @param boolean $deleted indicates whether the page was deleted
+	 * @param bool $deleted indicates whether the page was deleted
 	 */
 	private static function updateIndexOfPage( Title $title, $deleted = false ) {
 		$indexTitle = Context::getDefaultContext()
