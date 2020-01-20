@@ -9,7 +9,8 @@
 			"जनक राज भट्ट",
 			"Sfic",
 			"Jayprakash12345",
-			"Jayantanth"
+			"Jayantanth",
+			"आलोक"
 		]
 	},
 	"nstab-page": "पृष्ठ",
@@ -40,7 +41,7 @@
 	"proofreadpage_footer": "पन्ने का निचला पाठ (noinclude):",
 	"proofreadpage_toggleheaders": "noinclude विभांगोंका दृष्य स्तर बदलें",
 	"proofreadpage_quality0_category": "लेख के बिना",
-	"proofreadpage_quality1_category": "परिक्षण हुआ नहीं",
+	"proofreadpage_quality1_category": "परीक्षण हुआ नहीं",
 	"proofreadpage_quality2_category": "समस्याकारक",
 	"proofreadpage_quality3_category": "परिक्षण करें",
 	"proofreadpage_quality4_category": "प्रमाणित",
@@ -64,7 +65,7 @@
 	"proofreadpage_alphabeticalorder": "वर्णानुक्रम",
 	"proofreadpage_index_listofpages": "पन्नों की सूची",
 	"proofreadpage_image_message": "अनुक्रम पन्ने के लिये कड़ी",
-	"proofreadpage_page_status": "पन्नेकी स्थिती",
+	"proofreadpage_page_status": "पन्ने की स्थिति",
 	"proofreadpage_js_attributes": "लेखक शीर्षक वर्ष प्रकाशक",
 	"proofreadpage_index_attributes": "लेखक\nशीर्षक\nवर्ष|प्रकाशन वर्ष\nप्रकाशक\nस्रोत\nचित्र|मुखपृष्ठ चित्र\nपन्ने||२०\nटिप्पणी||१०",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|पृष्ठ|पृष्ठ}}",

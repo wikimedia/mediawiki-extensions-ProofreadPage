@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"MirrorWuu"
+		]
+	},
+	"apihelp-query+proofread-description": "返回有关指定页面当前校对状态个信息。",
+	"apihelp-query+proofread-summary": "返回有关指定页面当前校对状态个信息。",
+	"apihelp-query+proofread-example-1": "返回250名字空间页面个校对状态",
+	"apihelp-query+proofreadinfo-description": "返回有关ProofreadPage扩展配置个信息。",
+	"apihelp-query+proofreadinfo-summary": "返回有关ProofreadPage扩展配置个信息。",
+	"apihelp-query+proofreadinfo-param-prop": "要获取个校对属性：\n;namespaces:有关“{{ns:Page}}”搭“{{ns:Index}}”名字空间个信息。\n;qualitylevels:校对质量等级列表。",
+	"apihelp-query+proofreadinfo-example-1": "返回默认信息",
+	"apihelp-query+proofreadinfo-example-3": "返回名字空间信息"
+}
