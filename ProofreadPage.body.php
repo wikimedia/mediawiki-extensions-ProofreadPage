@@ -455,6 +455,12 @@ class ProofreadPage {
 		// @phan-suppress-next-line PhanUndeclaredProperty
 		if ( $out->is_toc ?? false ) {
 			$n = 0;
+			$n0 = 0;
+			$n1 = 0;
+			$n2 = 0;
+			$n3 = 0;
+			$n4 = 0;
+			$ne = 0;
 
 			if ( $indextitle ) {
 				$row = ProofreadIndexDbConnector::getIndexDataFromIndexTitle( $indextitle );
