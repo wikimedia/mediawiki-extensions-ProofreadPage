@@ -66,6 +66,7 @@
 	"proofreadpage_specialpage_searcherrortext": "Otsimootor ei tööta. Palume vabandust.",
 	"proofreadpage_source": "Allikas",
 	"proofreadpage_source_message": "Selle teksti aluseks olev skannitud versioon",
+	"action-pagequality": "muuta lehekülje tõendusolekut",
 	"right-pagequality": "Muuta lehekülje tõendusolekut",
 	"proofreadpage-section-tools": "Tõendusriistad",
 	"proofreadpage-group-zoom": "Suurendus",
@@ -87,5 +88,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jah",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrektuuri olek",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektuuri olek"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektuuri olek",
+	"proofreadpage-index-field-category-label": "Kategooriad",
+	"proofreadpage-index-edit-category-help": "Kategooriad kirjutatuna ilma eesliiteta Kategooria: ja eraldatuna märgiga \"|\" (püstkriips)."
 }
