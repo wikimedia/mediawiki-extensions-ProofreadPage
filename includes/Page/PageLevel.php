@@ -13,11 +13,11 @@ use User;
  */
 class PageLevel {
 
-	const WITHOUT_TEXT = 0;
-	const NOT_PROOFREAD = 1;
-	const PROBLEMATIC = 2;
-	const PROOFREAD = 3;
-	const VALIDATED = 4;
+	public const WITHOUT_TEXT = 0;
+	public const NOT_PROOFREAD = 1;
+	public const PROBLEMATIC = 2;
+	public const PROOFREAD = 3;
+	public const VALIDATED = 4;
 
 	/**
 	 * @var integer proofreading level of the page

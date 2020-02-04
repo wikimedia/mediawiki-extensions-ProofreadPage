@@ -65,6 +65,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	}
 
 	/**
+	 * @param Title $pageTitle
 	 * @return Title|null the index page based on the name of the Page: page and the existence
 	 *   of a file with the same name
 	 */

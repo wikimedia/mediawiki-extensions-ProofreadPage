@@ -10,13 +10,13 @@ use Language;
  */
 class PageNumber {
 
-	const DISPLAY_NORMAL = 'normal';
-	const DISPLAY_HIGHROMAN = 'highroman';
-	const DISPLAY_ROMAN = 'roman';
-	const DISPLAY_FOLIO = 'folio';
-	const DISPLAY_FOLIOHIGHROMAN = 'foliohighroman';
-	const DISPLAY_FOLIOROMAN = 'folioroman';
-	const DISPLAY_EMPTY = 'empty';
+	public const DISPLAY_NORMAL = 'normal';
+	public const DISPLAY_HIGHROMAN = 'highroman';
+	public const DISPLAY_ROMAN = 'roman';
+	public const DISPLAY_FOLIO = 'folio';
+	public const DISPLAY_FOLIOHIGHROMAN = 'foliohighroman';
+	public const DISPLAY_FOLIOROMAN = 'folioroman';
+	public const DISPLAY_EMPTY = 'empty';
 
 	/**
 	 * @var string

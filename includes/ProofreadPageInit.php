@@ -121,7 +121,9 @@ class ProofreadPageInit {
 	}
 
 	/**
-	 * @return array
+	 * @param string $key
+	 *
+	 * @return string[]
 	 */
 	private static function getNamespaceAliases( $key ) {
 		global $proofreadPageNamespacesAliases, $wgLanguageCode;

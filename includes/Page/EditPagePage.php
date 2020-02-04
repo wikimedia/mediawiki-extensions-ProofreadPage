@@ -163,6 +163,7 @@ class EditPagePage extends EditPage {
 	/**
 	 * @param User $user
 	 * @param int &$tabindex
+	 * @return OOUI\Widget
 	 * @suppress PhanUndeclaredMethod getLevel
 	 */
 	private function buildQualityEditWidget( User $user, &$tabindex ) {
