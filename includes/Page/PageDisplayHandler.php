@@ -20,7 +20,7 @@ class PageDisplayHandler {
 	/**
 	 * @var integer default width for scan image
 	 */
-	const DEFAULT_IMAGE_WIDTH = 1024;
+	public const DEFAULT_IMAGE_WIDTH = 1024;
 
 	/**
 	 * @var Context

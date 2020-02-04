@@ -226,6 +226,8 @@ class CustomIndexFieldsParser {
 
 	/**
 	 * Returns the index entries formatted in order to be transcluded in templates
+	 *
+	 * @param IndexContent $content
 	 * @return string[]
 	 */
 	private function parseCustomIndexFieldsAsTemplateParams( IndexContent $content ) {
