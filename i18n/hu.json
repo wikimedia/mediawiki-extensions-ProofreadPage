@@ -52,6 +52,8 @@
 	"proofreadpage_quality4_message": "A lap jóváhagyva",
 	"proofreadpage_index_status": "Index státusza",
 	"proofreadpage_index_size": "Lapok száma",
+	"proofreadpage_pages_to_validate": "Jóváhagyandó oldalak száma",
+	"proofreadpage_pages_to_proofread_or_validate": "Korrektúrázandó vagy jóváhagyandó oldalak száma",
 	"proofreadpage_specialpage_label_orderby": "Rendezés:",
 	"proofreadpage_specialpage_label_key": "Keresés:",
 	"proofreadpage_specialpage_label_sortascending": "Növekvő sorrend",
@@ -67,7 +69,9 @@
 	"proofreadpage_specialpage_searcherrortext": "A keresőmotor nem működik. Elnézést a kellemetlenségért.",
 	"proofreadpage_source": "Forrás",
 	"proofreadpage_source_message": "A szkennelt változat, amin a szöveg alapszik",
+	"action-pagequality": "a lap minőségi besorolásának módosítása",
 	"right-pagequality": "lapok minőség szerinti értékelésének módosítása",
+	"action-pagequality-admin": "a lap minőségi besorolásának korlátlan szerkesztése",
 	"right-pagequality-admin": "az oldalminőség-jelzések korlátozás nélküli szerkesztése",
 	"proofreadpage-section-tools": "Korrektúrázóeszközök",
 	"proofreadpage-group-zoom": "Nagyítás",
@@ -89,5 +93,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Igen",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nem",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrektúrázási minőség",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektúrázási minőség"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektúrázási minőség",
+	"proofreadpage-index-field-category-label": "Kategóriák",
+	"proofreadpage-index-edit-category-help": "Az indexlap kategóriái a Kategória: előtag nélkül, függőleges vonallal („|”) elválasztva."
 }

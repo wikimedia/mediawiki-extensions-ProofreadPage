@@ -3,7 +3,8 @@
 		"authors": [
 			"Als-Chlämens",
 			"Als-Holder",
-			"J. 'mach' wust"
+			"J. 'mach' wust",
+			"Tacsipacsi"
 		]
 	},
 	"indexpages": "Lischte vu Indexsyte",
@@ -55,5 +56,5 @@
 	"proofreadpage-button-reset-zoom-label": "Orginalgrößi",
 	"proofreadpage-button-zoom-in-label": "Dryy suume",
 	"proofreadpage-button-toggle-layout-label": "Vertikali/horizontali Ussrichtig",
-	"proofreadpage-preferences-showheaders-label": "Bim Bearbeite vo Syte im Sytenamensruum d Fälder für d Chopf- un Fuesszyyle aazeige."
+	"proofreadpage-preferences-showheaders-label": "Bim Bearbeite vo Syte im „{{ns:page}}“-Namensruum d Fälder für d Chopf- un Fuesszyyle aazeige."
 }
