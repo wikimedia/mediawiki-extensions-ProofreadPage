@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Page;
 
-use IP;
 use MediaWiki\MediaWikiServices;
 use User;
+use Wikimedia\IPUtils;
 
 /**
  * @license GPL-2.0-or-later
@@ -123,8 +123,8 @@ class PageLevel {
 	public static function getUserFromUserName( $name = '' ) {
 		if ( $name === '' ) {
 			return null;
-		} elseif ( IP::isValid( $name ) ) {
-			return User::newFromName( IP::sanitizeIP( $name ), false );
+		} elseif ( IPUtils::isValid( $name ) ) {
+			return User::newFromName( IPUtils::sanitizeIP( $name ), false );
 		} else {
 			$user = User::newFromName( $name );
 			return ( $user === false ) ? null : $user;
