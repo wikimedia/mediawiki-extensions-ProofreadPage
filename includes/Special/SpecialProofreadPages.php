@@ -283,6 +283,9 @@ class SpecialProofreadPages extends QueryPage {
 			"<div>{$qualityOutput}</div></div>";
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function getGroupName() {
 		return 'pages';
 	}

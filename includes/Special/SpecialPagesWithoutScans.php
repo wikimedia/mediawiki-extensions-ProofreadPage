@@ -51,6 +51,9 @@ class SpecialPagesWithoutScans extends PageQueryPage {
 		];
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function getGroupName() {
 		return 'maintenance';
 	}

@@ -772,6 +772,11 @@ class ProofreadPage {
 		return true;
 	}
 
+	/**
+	 * Get URL for particular title
+	 * @param Title $title
+	 * @return string
+	 */
 	protected static function getLinkUrlForTitle( Title $title ) {
 		if ( $title->exists() ) {
 			return $title->getLinkURL();

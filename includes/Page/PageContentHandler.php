@@ -225,6 +225,11 @@ class PageContentHandler extends TextContentHandler {
 		);
 	}
 
+	/**
+	 * @param string $header
+	 * @param string $footer
+	 * @return array
+	 */
 	protected function cleanDeprecatedWrappers( $header, $footer ) {
 		$cleanedHeader = false;
 		if ( preg_match( '/^(.*?)<div class="pagetext">(.*?)$/s', $header, $mt ) ) {
