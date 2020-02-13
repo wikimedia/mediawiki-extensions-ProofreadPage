@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stavanger7"
+			"Stavanger7",
+			"OIS"
 		]
 	},
 	"proofreadpage_quality0_category": "Sin textu",
+	"proofreadpage_quality1_category": "Ne prov-leet",
 	"proofreadpage_quality2_category": "Problematic",
+	"proofreadpage_quality3_category": "Prov-leet",
 	"proofreadpage_quality4_category": "Validat"
 }
