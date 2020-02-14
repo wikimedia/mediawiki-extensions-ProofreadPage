@@ -56,7 +56,6 @@ class PageList {
 		$isRecto = true;
 
 		foreach ( $this->params as $num => $parameters ) {
-
 			if ( is_numeric( $num ) && $num <= $pageNumber ) {
 				$params = explode( ';', $parameters );
 				foreach ( $params as $param ) {

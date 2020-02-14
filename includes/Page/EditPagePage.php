@@ -6,7 +6,6 @@ use Article;
 use EditPage;
 use Html;
 use MediaWiki\MediaWikiServices;
-use MWException;
 use OOUI;
 use ProofreadPage\Context;
 use User;
@@ -29,7 +28,6 @@ class EditPagePage extends EditPage {
 	/**
 	 * @param Article $article
 	 * @param Context $context
-	 * @throws MWException
 	 */
 	public function __construct( Article $article, Context $context ) {
 		parent::__construct( $article );

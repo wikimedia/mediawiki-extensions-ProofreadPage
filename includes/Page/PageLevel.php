@@ -30,7 +30,6 @@ class PageLevel {
 	protected $user = null;
 
 	/**
-	 * Constructor
 	 * @param int $level
 	 * @param User|null $user
 	 */

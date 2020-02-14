@@ -43,8 +43,6 @@ class PageContent extends TextContent {
 	protected $level;
 
 	/**
-	 * Constructor
-	 *
 	 * @param WikitextContent $header
 	 * @param WikitextContent $body
 	 * @param WikitextContent $footer
