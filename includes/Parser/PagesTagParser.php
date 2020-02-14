@@ -41,9 +41,7 @@ class PagesTagParser {
 	 */
 	public function render( $input, array $args ) {
 		// abort if this is nested <pages> call
-		if ( isset( $this->parser->proofreadRenderingPages ) &&
-			$this->parser->proofreadRenderingPages
-		) {
+		if ( $this->parser->proofreadRenderingPages ?? false ) {
 			return '';
 		}
 
@@ -333,7 +331,7 @@ class PagesTagParser {
 		$out = str_replace( $joiner . $placeholder, '', $out );
 		$out = str_replace( $placeholder, $separator, $out );
 
-		$this->parser->proofreadRenderingPages = false;
+		unset( $this->parser->proofreadRenderingPages );
 		return $out;
 	}
 
