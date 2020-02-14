@@ -48,7 +48,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 	public function testGetFileForIndexPageWithFileNotFound(
 		Title $indexTitle, FileProvider $fileProvider
 	) {
-		$this->expectException( \ProofreadPage\FileNotFoundException::class );
+		$this->expectException( FileNotFoundException::class );
 		$fileProvider->getFileForIndexTitle( $indexTitle );
 	}
 
@@ -115,7 +115,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 	public function testGetForPagePageWithFileNotFound(
 		Title $pageTitle, FileProvider $fileProvider
 	) {
-		$this->expectException( \ProofreadPage\FileNotFoundException::class );
+		$this->expectException( FileNotFoundException::class );
 		$fileProvider->getFileForPageTitle( $pageTitle );
 	}
 
@@ -146,7 +146,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumberForPageNumberNotFound() {
 		$fileProvider = new FileProviderMock( [] );
-		$this->expectException( \ProofreadPage\PageNumberNotFoundException::class );
+		$this->expectException( PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu' )
 		);
@@ -154,7 +154,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumberForPageNotANumber() {
 		$fileProvider = new FileProviderMock( [] );
-		$this->expectException( \ProofreadPage\PageNumberNotFoundException::class );
+		$this->expectException( PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/foo' )
 		);
@@ -162,7 +162,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumberForPageBadNumber() {
 		$fileProvider = new FileProviderMock( [] );
-		$this->expectException( \ProofreadPage\PageNumberNotFoundException::class );
+		$this->expectException( PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/-1' )
 		);

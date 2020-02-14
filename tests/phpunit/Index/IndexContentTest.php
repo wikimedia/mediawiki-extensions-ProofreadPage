@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Index;
 
-use FauxRequest;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ProofreadPage\Context;
@@ -29,7 +28,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 
-		$this->requestContext = new RequestContext( new FauxRequest() );
+		$this->requestContext = new RequestContext();
 		$this->requestContext->setTitle( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.pdf' ) );
 		$this->requestContext->setUser( new User() );
 	}

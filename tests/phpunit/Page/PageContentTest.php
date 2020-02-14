@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use FauxRequest;
+use Content;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ProofreadPageTestCase;
@@ -37,7 +37,7 @@ class PageContentTest extends ProofreadPageTestCase {
 			]
 		] );
 
-		$this->requestContext = new RequestContext( new FauxRequest() );
+		$this->requestContext = new RequestContext();
 		$this->requestContext->setTitle( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) );
 		$this->requestContext->setUser( $user );
 	}
@@ -127,7 +127,7 @@ class PageContentTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider equalsProvider
 	 */
-	public function testEquals( $a, $b, $equal ) {
+	public function testEquals( Content $a, ?Content $b, bool $equal ) {
 		$this->assertSame( $equal, $a->equals( $b ) );
 	}
 

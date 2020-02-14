@@ -217,18 +217,12 @@ class ProofreadPage {
 	 * Set is_toc flag (true if page is a table of contents)
 	 * @param OutputPage $outputPage
 	 * @param ParserOutput $parserOutput
-	 * @return bool
 	 * @suppress PhanUndeclaredProperty $out->is_toc
 	 */
 	public static function onOutputPageParserOutput(
 		OutputPage $outputPage, ParserOutput $parserOutput
 	) {
-		if ( isset( $parserOutput->is_toc ) ) {
-			$outputPage->is_toc = $parserOutput->is_toc;
-		} else {
-			$outputPage->is_toc = false;
-		}
-		return true;
+		$outputPage->is_toc = $parserOutput->is_toc ?? false;
 	}
 
 	/**

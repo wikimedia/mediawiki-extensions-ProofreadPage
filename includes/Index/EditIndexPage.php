@@ -12,6 +12,7 @@ use OOUI\MultilineTextInputWidget;
 use OOUI\TextInputWidget;
 use ProofreadPage\Context;
 use Title;
+use WebRequest;
 use WikitextContent;
 
 /**
@@ -180,7 +181,7 @@ class EditIndexPage extends EditPage {
 		return $content->serialize( $this->contentFormat );
 	}
 
-	private function importCategoryList( $request ) {
+	private function importCategoryList( WebRequest $request ) {
 		return array_filter( array_map( function ( $text ) {
 			return Title::makeTitleSafe( NS_CATEGORY, trim( $text ) );
 		}, explode( '|', $request->getText( 'wpPrpCategories' ) ) ), function ( $title ) {

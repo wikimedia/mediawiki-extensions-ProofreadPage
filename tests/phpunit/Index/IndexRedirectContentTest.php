@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Index;
 
-use FauxRequest;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ProofreadPageTestCase;
@@ -24,7 +23,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 
-		$this->requestContext = new RequestContext( new FauxRequest() );
+		$this->requestContext = new RequestContext();
 		$this->requestContext->setTitle( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.pdf' ) );
 		$this->requestContext->setUser( new User() );
 	}
@@ -75,7 +74,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 
 	public function testGetWikitextForTransclusion() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		return $this->assertSame( '#REDIRECT [[Foo]]', $content->getWikitextForTransclusion() );
+		$this->assertSame( '#REDIRECT [[Foo]]', $content->getWikitextForTransclusion() );
 	}
 
 	public function testGetTextForSummary() {

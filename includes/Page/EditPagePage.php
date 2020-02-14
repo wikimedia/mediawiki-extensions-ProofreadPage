@@ -194,7 +194,7 @@ class EditPagePage extends EditPage {
 			Html::openElement( 'span', [ 'id' => 'wpQuality-container' ] ) .
 			$html .
 			Html::closeElement( 'span' ) .
-			Html::OpenElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
+			Html::openElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
 			$this->context->msg( 'proofreadpage_page_status' )
 				->title( $this->getTitle() )->parse() .
 			Html::closeElement( 'label' );
