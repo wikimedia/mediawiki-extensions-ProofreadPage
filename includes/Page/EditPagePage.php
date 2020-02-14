@@ -167,7 +167,9 @@ class EditPagePage extends EditPage {
 	 * @suppress PhanUndeclaredMethod getLevel
 	 */
 	private function buildQualityEditWidget( User $user, &$tabindex ) {
+		/** @var PageLevel $oldLevel */
 		$oldLevel = $this->getCurrentContent()->getLevel();
+		/** @var PageContent $content */
 		$content = $this->toEditContent( $this->textbox1 );
 		$currentLevel = $content->getLevel();
 

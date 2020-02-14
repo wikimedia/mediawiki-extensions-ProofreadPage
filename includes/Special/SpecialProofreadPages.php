@@ -26,6 +26,7 @@ use ISearchResultSet;
 use MediaWiki\MediaWikiServices;
 use ProofreadPage\Context;
 use QueryPage;
+use SearchResult;
 use Title;
 
 class SpecialProofreadPages extends QueryPage {
@@ -88,6 +89,7 @@ class SpecialProofreadPages extends QueryPage {
 					);
 				} else {
 					$this->searchList = [];
+					/** @var SearchResult $result */
 					foreach ( $textMatches as $result ) {
 						$title = $result->getTitle();
 						if ( $title->inNamespace( $indexNamespaceId ) ) {
