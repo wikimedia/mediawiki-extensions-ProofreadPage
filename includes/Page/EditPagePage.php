@@ -215,9 +215,9 @@ class EditPagePage extends EditPage {
 		$currentContent = $this->getCurrentContent();
 
 		return $this->pageContentBuilder->buildContentFromInput(
-			$request->getText( 'wpHeaderTextbox' ),
-			$request->getText( 'wpTextbox1' ),
-			$request->getText( 'wpFooterTextbox' ),
+			rtrim( $request->getText( 'wpHeaderTextbox' ) ),
+			rtrim( $request->getText( 'wpTextbox1' ) ),
+			rtrim( $request->getText( 'wpFooterTextbox' ) ),
 			// @phan-suppress-next-line PhanUndeclaredMethod
 			$request->getInt( 'wpQuality', $currentContent->getLevel()->getLevel() ),
 			$currentContent
