@@ -192,6 +192,10 @@ class PageContent extends TextContent {
 		return Status::newGood();
 	}
 
+	/**
+	 * @param int $revId
+	 * @return Object
+	 */
 	private function getContentForRevId( $revId ) {
 		if ( $revId !== -1 ) {
 			$revision = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById( $revId );

@@ -129,12 +129,19 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 		}
 	}
 
+	/**
+	 * @param array $pageTitles
+	 * @return array $pagetitles
+	 */
 	private function filterPagesWithoutKnownQuality( array $pageTitles ) {
 		return array_filter( $pageTitles, function ( Title $pageTitle ) {
 			return $this->cache[$pageTitle->getDBkey()] === null;
 		} );
 	}
 
+	/**
+	 * @return array categoryForQualityLevel
+	 */
 	private function getCategoryForQualityLevels() {
 		if ( $this->categoryForQualityLevel === null ) {
 			$this->categoryForQualityLevel = $this->computeCategoryForQualityLevels();

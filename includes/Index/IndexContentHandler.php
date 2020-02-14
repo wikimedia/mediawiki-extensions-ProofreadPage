@@ -80,6 +80,11 @@ class IndexContentHandler extends TextContentHandler {
 		return $this->serializeContentInWikitext( $content );
 	}
 
+	/**
+	 * @param Content $content
+	 * @throws MWContentSerializationException
+	 * @return string
+	 */
 	private function serializeContentInWikitext( Content $content ) {
 		if ( $content instanceof IndexRedirectContent ) {
 			return '#REDIRECT [[' . $content->getRedirectTarget()->getFullText() . ']]';
@@ -113,6 +118,10 @@ class IndexContentHandler extends TextContentHandler {
 		return $this->unserializeContentInWikitext( $text );
 	}
 
+	 /**
+	  * @param string $text
+	  * @return IndexRedirectContent|IndexContent
+	  */
 	private function unserializeContentInWikitext( $text ) {
 		$fullWikitext = new WikitextContent( $text );
 		if ( $fullWikitext->isRedirect() ) {

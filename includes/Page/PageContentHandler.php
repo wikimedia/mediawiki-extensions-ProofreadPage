@@ -160,6 +160,11 @@ class PageContentHandler extends TextContentHandler {
 		);
 	}
 
+	/**
+	 * @param int $key
+	 * @param array $serialization
+	 * @throws MWContentSerializationException
+	 */
 	private function assertArrayKeyExistsInSerialization( $key, array $serialization ) {
 		if ( !array_key_exists( $key, $serialization ) ) {
 			throw new MWContentSerializationException(

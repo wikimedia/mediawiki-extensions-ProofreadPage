@@ -55,6 +55,12 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		return $this->getResult()->addValue( 'query', 'proofreadqualitylevels', $data );
 	}
 
+	/**
+	 * Get the category name (in the wiki's content language, and without 'Category:' prefix)
+	 * for a given quality level.
+	 * @param int $level
+	 * @return string
+	 */
 	private function getQualityLevelCategory( $level ) {
 		$messageName = "proofreadpage_quality{$level}_category";
 		return $this->msg( $messageName )->inContentLanguage()->text();
