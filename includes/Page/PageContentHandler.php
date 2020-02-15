@@ -199,19 +199,19 @@ class PageContentHandler extends TextContentHandler {
 		}
 
 		if ( preg_match(
-			'/^<pagequality level="(0|1|2|3|4)" user="(.*?)" *(\/>|> *<\/pagequality>)(.*?)$/s',
+			'/^<pagequality level="([0-4])" user="(.*?)" *(?:\/>|> *<\/pagequality>)(.*?)$/s',
 			$header, $m )
 		) {
 			$level = intval( $m[1] );
 			$proofreader = $m[2];
-			$header = $m[4];
+			$header = $m[3];
 			$cleanHeader = true;
 		} elseif (
-			preg_match( '/^\{\{PageQuality\|(0|1|2|3|4)(|\|(.*?))\}\}(.*)/is', $header, $m )
+			preg_match( '/^\{\{PageQuality\|([0-4])(?:\|(.*?))?\}\}(.*)/is', $header, $m )
 		) {
 			$level = intval( $m[1] );
-			$proofreader = $m[3];
-			$header = $m[4];
+			$proofreader = $m[2];
+			$header = $m[3];
 			$cleanHeader = true;
 		}
 
