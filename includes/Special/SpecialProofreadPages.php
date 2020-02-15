@@ -67,8 +67,6 @@ class SpecialProofreadPages extends QueryPage {
 				$searchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
 				$searchEngine->setNamespaces( [ $indexNamespaceId ] );
-				// @phan-suppress-next-line PhanUndeclaredProperty
-				$searchEngine->showRedirects = false;
 				$status = $searchEngine->searchText( $this->searchTerm );
 				if ( $status instanceof ISearchResultSet ) {
 					$textMatches = $status;
