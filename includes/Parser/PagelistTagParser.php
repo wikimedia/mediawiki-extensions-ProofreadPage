@@ -34,11 +34,10 @@ class PagelistTagParser {
 	/**
 	 * Render a <pagelist> tag
 	 *
-	 * @param string $input the content between opening and closing tags
 	 * @param array $args tags arguments
 	 * @return string
 	 */
-	public function render( $input, array $args ) {
+	public function render( array $args ) {
 		$title = $this->parser->getTitle();
 		if ( !$title->inNamespace( $this->context->getIndexNamespaceId() ) ) {
 			return '';
