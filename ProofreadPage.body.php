@@ -117,16 +117,16 @@ class ProofreadPage {
 		$parser->setHook( 'pagelist', function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
 			$tagParser = new PagelistTagParser( $parser, $context );
-			return $tagParser->render( $input, $args );
+			return $tagParser->render( $args );
 		} );
 		$parser->setHook( 'pages', function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
 			$tagParser = new PagesTagParser( $parser, $context );
-			return $tagParser->render( $input, $args );
+			return $tagParser->render( $args );
 		} );
 		$parser->setHook( 'pagequality', function ( $input, array $args, Parser $parser ) {
 				$tagParser = new PagequalityTagParser();
-				return $tagParser->render( $input, $args );
+				return $tagParser->render( $args );
 		} );
 		return true;
 	}
