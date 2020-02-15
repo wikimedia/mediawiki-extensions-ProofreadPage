@@ -42,8 +42,10 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @inheritDoc
-	 * @suppress PhanTypeMismatchArgument False positive due to parent signature
+	 * @param PageContent $content
+	 * @param string|null $format
+	 * @return string
+	 * @suppress PhanParamSignatureMismatch Intentional mismatching Content
 	 */
 	public function serializeContent( Content $content, $format = null ) {
 		$this->checkFormat( $format );
@@ -95,7 +97,9 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @inheritDoc
+	 * @param string $text
+	 * @param string|null $format
+	 * @return PageContent
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		if ( $format === null ) {
@@ -114,6 +118,10 @@ class PageContentHandler extends TextContentHandler {
 		}
 	}
 
+	/**
+	 * @param string $text
+	 * @return string
+	 */
 	private function guessFormat( $text ) {
 		return is_array( json_decode( $text, true ) )
 			? CONTENT_FORMAT_JSON
@@ -279,8 +287,11 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @inheritDoc
-	 * @suppress PhanUndeclaredMethod Content doesn't have getLevel etc.
+	 * @param PageContent $oldContent
+	 * @param PageContent $myContent
+	 * @param PageContent $yourContent
+	 * @return PageContent|false
+	 * @suppress PhanParamSignatureMismatch Intentional mismatching Content
 	 */
 	public function merge3( Content $oldContent, Content $myContent, Content $yourContent ) {
 		$this->checkModelID( $oldContent->getModel() );

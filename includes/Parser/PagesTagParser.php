@@ -203,7 +203,9 @@ class PagesTagParser {
 				}
 			}
 
+			/** @var PageNumber $from_pagenum */
 			list( $from_page, $from_pagenum ) = reset( $pages );
+			/** @var PageNumber $to_pagenum */
 			list( $to_page, $to_pagenum ) = end( $pages );
 
 			$pageQualityLevelLookup = $this->context->getPageQualityLevelLookup();
@@ -212,6 +214,7 @@ class PagesTagParser {
 			}, $pages ) );
 
 			// write the output
+			/** @var Title $page */
 			foreach ( $pages as list( $page, $pageNumber ) ) {
 				$pagenum = $pageNumber->getRawPageNumber( $language );
 				$formattedNum = $pageNumber->getFormattedPageNumber( $language );
