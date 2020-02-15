@@ -31,19 +31,19 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 
 	public function testGetModel() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$this->assertEquals( CONTENT_MODEL_PROOFREAD_INDEX, $content->getModel() );
+		$this->assertSame( CONTENT_MODEL_PROOFREAD_INDEX, $content->getModel() );
 	}
 
 	public function testGetContentHandler() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$this->assertEquals(
+		$this->assertSame(
 			CONTENT_MODEL_PROOFREAD_INDEX, $content->getContentHandler()->getModelID()
 		);
 	}
 
 	public function testCopy() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$this->assertEquals( $content, $content->copy() );
+		$this->assertSame( $content, $content->copy() );
 	}
 
 	public function equalsProvider() {
@@ -70,12 +70,12 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	 * @dataProvider equalsProvider
 	 */
 	public function testEquals( IndexRedirectContent $a, $b, $equal ) {
-		$this->assertEquals( $equal, $a->equals( $b ) );
+		$this->assertSame( $equal, $a->equals( $b ) );
 	}
 
 	public function testGetWikitextForTransclusion() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		return $this->assertEquals( '#REDIRECT [[Foo]]', $content->getWikitextForTransclusion() );
+		return $this->assertSame( '#REDIRECT [[Foo]]', $content->getWikitextForTransclusion() );
 	}
 
 	public function testGetTextForSummary() {
@@ -109,17 +109,17 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 			$this->requestContext->getTitle(), $options
 		);
 
-		$this->assertEquals( $originalContent, $content );
+		$this->assertSame( $originalContent, $content );
 	}
 
 	public function testGetSize() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$this->assertEquals( 3, $content->getSize() );
+		$this->assertSame( 3, $content->getSize() );
 	}
 
 	public function testGetRedirectTarget() {
 		$content = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$this->assertEquals( Title::newFromText( 'Foo' ), $content->getRedirectTarget() );
+		$this->assertSame( Title::newFromText( 'Foo' ), $content->getRedirectTarget() );
 	}
 
 	public function testUpdateRedirect() {

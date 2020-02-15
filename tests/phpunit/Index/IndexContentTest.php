@@ -36,7 +36,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 
 	public function testGetModel() {
 		$content = new IndexContent( [] );
-		$this->assertEquals( CONTENT_MODEL_PROOFREAD_INDEX, $content->getModel() );
+		$this->assertSame( CONTENT_MODEL_PROOFREAD_INDEX, $content->getModel() );
 	}
 
 	public function testGetFields() {
@@ -47,12 +47,12 @@ class IndexContentTest extends ProofreadPageTestCase {
 	public function testGetCategoriesText() {
 		$category = Title::makeTitle( NS_CATEGORY,  'Foo' );
 		$content = new IndexContent( [], [ $category ] );
-		$this->assertEquals( [ $category ], $content->getCategories() );
+		$this->assertSame( [ $category ], $content->getCategories() );
 	}
 
 	public function testGetContentHandler() {
 		$content = new IndexContent( [] );
-		$this->assertEquals(
+		$this->assertSame(
 			CONTENT_MODEL_PROOFREAD_INDEX, $content->getContentHandler()->getModelID()
 		);
 	}
@@ -62,7 +62,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 			[ 'foo' => new WikitextContent( 'bar' ) ],
 			[ Title::makeTitle( NS_CATEGORY,  'Cat' ) ]
 		);
-		$this->assertEquals( $content, $content->copy() );
+		$this->assertSame( $content, $content->copy() );
 	}
 
 	public function isEmptyProvider() {
@@ -203,7 +203,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 
 	public function testGetWikitextForTransclusion() {
 		$content = new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] );
-		$this->assertEquals(
+		$this->assertSame(
 			"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}",
 			$content->getWikitextForTransclusion()
 		);
@@ -223,7 +223,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 	 * @dataProvider getTextForSummaryProvider
 	 */
 	public function testGetTextForSummary( IndexContent $content, $length, $result ) {
-		$this->assertEquals( $result, $content->getTextForSummary( $length ) );
+		$this->assertSame( $result, $content->getTextForSummary( $length ) );
 	}
 
 	public function preSaveTransformProvider() {
@@ -312,7 +312,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 
 	public function testGetSize() {
 		$content = new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] );
-		$this->assertEquals( 3, $content->getSize() );
+		$this->assertSame( 3, $content->getSize() );
 	}
 
 	public function testGetLinksToMainNamespace() {

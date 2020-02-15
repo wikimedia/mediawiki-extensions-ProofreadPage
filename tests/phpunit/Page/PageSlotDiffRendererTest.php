@@ -47,7 +47,7 @@ class PageSlotDiffRendererTest extends ProofreadPageTestCase {
 		}
 
 		$diffRender = new PageSlotDiffRenderer( RequestContext::getMain() );
-		$this->assertEquals(
+		$this->assertSame(
 			$result,
 			$this->getPlainDiff( $diffRender->getDiff( $oldContent, $newContent ) )
 		);

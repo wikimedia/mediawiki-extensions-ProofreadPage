@@ -78,7 +78,7 @@ class IndexSlotDiffRendererTest extends ProofreadPageTestCase {
 			$this->getContext()->getCustomIndexFieldsParser(),
 			$textDiffRenderer
 		);
-		$this->assertEquals(
+		$this->assertSame(
 			$result,
 			$this->getPlainDiff( $diffRender->getDiff( $oldContent, $newContent ) )
 		);

@@ -37,8 +37,8 @@ class PageNumberTest extends ProofreadPageTestCase {
 	) {
 		$language = ( $language === null ) ? 'en' : $language;
 		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $language );
-		$this->assertEquals( $formattedResult, $number->getFormattedPageNumber( $language ) );
-		$this->assertEquals( $rawResult, $number->getRawPageNumber( $language ) );
+		$this->assertSame( $formattedResult, $number->getFormattedPageNumber( $language ) );
+		$this->assertSame( $rawResult, $number->getRawPageNumber( $language ) );
 	}
 
 	public function testIsEmpty() {
@@ -51,13 +51,13 @@ class PageNumberTest extends ProofreadPageTestCase {
 
 	public function testGetDisplayMode() {
 		$number = new PageNumber( '10', PageNumber::DISPLAY_ROMAN );
-		$this->assertEquals( $number->getDisplayMode(), PageNumber::DISPLAY_ROMAN );
+		$this->assertSame( PageNumber::DISPLAY_ROMAN, $number->getDisplayMode() );
 
 		$number = new PageNumber( '10' );
-		$this->assertEquals( $number->getDisplayMode(), PageNumber::DISPLAY_NORMAL );
+		$this->assertSame( PageNumber::DISPLAY_NORMAL, $number->getDisplayMode() );
 
 		$number = new PageNumber( '10', PageNumber::DISPLAY_FOLIO );
-		$this->assertEquals( $number->getDisplayMode(), PageNumber::DISPLAY_FOLIO );
+		$this->assertSame( PageNumber::DISPLAY_FOLIO, $number->getDisplayMode() );
 	}
 
 	public function testIsNumeric() {

@@ -56,6 +56,6 @@ class ParserHelperTest extends ProofreadPageTestCase {
 	 */
 	public function testExpandTemplateArgsProvider( $inputText, $args, $outputText ) {
 		$parserHelper = new ParserHelper( null, ParserOptions::newCanonical() );
-		$this->assertEquals( $outputText, $parserHelper->expandTemplateArgs( $inputText, $args ) );
+		$this->assertSame( $outputText, $parserHelper->expandTemplateArgs( $inputText, $args ) );
 	}
 }

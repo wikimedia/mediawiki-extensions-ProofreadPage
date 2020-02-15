@@ -53,7 +53,7 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function testGetModel() {
 		$content = self::newContent();
-		$this->assertEquals( CONTENT_MODEL_PROOFREAD_PAGE, $content->getModel() );
+		$this->assertSame( CONTENT_MODEL_PROOFREAD_PAGE, $content->getModel() );
 	}
 
 	public function testGetHeader() {
@@ -79,14 +79,14 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function testGetContentHandler() {
 		$content = self::newContent();
-		$this->assertEquals(
+		$this->assertSame(
 			CONTENT_MODEL_PROOFREAD_PAGE, $content->getContentHandler()->getModelID()
 		);
 	}
 
 	public function testCopy() {
 		$content = self::newContent( '123', 'aert', '', 1, 'Test' );
-		$this->assertEquals( $content, $content->copy() );
+		$this->assertSame( $content, $content->copy() );
 	}
 
 	public function equalsProvider() {
@@ -128,12 +128,12 @@ class PageContentTest extends ProofreadPageTestCase {
 	 * @dataProvider equalsProvider
 	 */
 	public function testEquals( $a, $b, $equal ) {
-		$this->assertEquals( $equal, $a->equals( $b ) );
+		$this->assertSame( $equal, $a->equals( $b ) );
 	}
 
 	public function testGetWikitextForTransclusion() {
 		$content = self::newContent( 'aa', 'test', 'bb', 2, 'ater' );
-		$this->assertEquals( 'test', $content->getWikitextForTransclusion() );
+		$this->assertSame( 'test', $content->getWikitextForTransclusion() );
 	}
 
 	public function getTextForSummaryProvider() {
@@ -160,7 +160,7 @@ class PageContentTest extends ProofreadPageTestCase {
 	 * @dataProvider getTextForSummaryProvider
 	 */
 	public function testGetTextForSummary( PageContent $content, $length, $result ) {
-		$this->assertEquals( $result, $content->getTextForSummary( $length ) );
+		$this->assertSame( $result, $content->getTextForSummary( $length ) );
 	}
 
 	public function preSaveTransformProvider() {
@@ -265,7 +265,7 @@ class PageContentTest extends ProofreadPageTestCase {
 
 		$content = self::newContent( '', 'RRRR' );
 		$newContent = $content->updateRedirect( $title );
-		$this->assertEquals( $content, $newContent ); // no update
+		$this->assertSame( $content, $newContent ); // no update
 
 		$content = self::newContent( '', '#REDIRECT [[Test]]' );
 		$newContent = $content->updateRedirect( $title );
@@ -274,6 +274,6 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function testGetSize() {
 		$content = self::newContent( 'aa', 'Test', 'éè' );
-		$this->assertEquals( 10, $content->getSize() );
+		$this->assertSame( 10, $content->getSize() );
 	}
 }

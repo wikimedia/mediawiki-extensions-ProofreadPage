@@ -169,7 +169,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		$pageContent, $result, $entry, $extraparams
 	) {
 		$content = self::buildContent( $pageContent );
-		$this->assertEquals(
+		$this->assertSame(
 			$result,
 			$this->getContext()->getCustomIndexFieldsParser()
 				->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries( $content, $entry, $extraparams )

@@ -17,8 +17,9 @@ class DatabasePageQualityLevelLookupTest extends ProofreadPageTestCase {
 	public function testprefetchQualityLevelForTitles( array $titles ) {
 		$lookup = new DatabasePageQualityLevelLookup( $this->getPageNamespaceId() );
 		$lookup->prefetchQualityLevelForTitles( $titles );
-		$this->assertTrue( true );
-		// The execution succeed
+
+		// FIXME: The only thing this test does is testing if the code does not fail :-(
+		$this->addToAssertionCount( 1 );
 	}
 
 	public function prefetchQualityLevelForTitlesProvider() {
