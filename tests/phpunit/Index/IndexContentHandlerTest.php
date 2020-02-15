@@ -73,7 +73,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider wikitextSerializationProvider
 	 */
 	public function testSerializeContentInWikitext( Content $content, $serialization ) {
-		$this->assertEquals( $serialization, $this->handler->serializeContent( $content ) );
+		$this->assertSame( $serialization, $this->handler->serializeContent( $content ) );
 	}
 
 	public function wikitextUnserializationProvider() {

@@ -23,13 +23,13 @@ class PageLevelTest extends ProofreadPageTestCase {
 
 	public function testGetLevel() {
 		$level = new PageLevel( 1, null );
-		$this->assertEquals( 1, $level->getLevel() );
+		$this->assertSame( 1, $level->getLevel() );
 	}
 
 	public function testGetUser() {
 		$user = User::newFromName( 'aaa' );
 		$level = new PageLevel( 1, $user );
-		$this->assertEquals( $user, $level->getUser() );
+		$this->assertSame( $user, $level->getUser() );
 	}
 
 	public function equalsProvider() {
@@ -61,7 +61,7 @@ class PageLevelTest extends ProofreadPageTestCase {
 	 * @dataProvider equalsProvider
 	 */
 	public function testEquals( $a, $b, $equal ) {
-		$this->assertEquals( $equal, $a->equals( $b ) );
+		$this->assertSame( $equal, $a->equals( $b ) );
 	}
 
 	public function isChangeAllowedProvider() {
@@ -144,7 +144,7 @@ class PageLevelTest extends ProofreadPageTestCase {
 	 * @dataProvider isChangeAllowedProvider
 	 */
 	public function testIsChangeAllowed( PageLevel $old, PageLevel $new, $result ) {
-		$this->assertEquals( $result, $old->isChangeAllowed( $new ) );
+		$this->assertSame( $result, $old->isChangeAllowed( $new ) );
 	}
 
 	public function nameProvider() {
@@ -180,6 +180,6 @@ class PageLevelTest extends ProofreadPageTestCase {
 	 */
 	public function testGetLevelCategoryName() {
 		$level = new PageLevel( 1, null );
-		$this->assertEquals( 'Not proofread', $level->getLevelCategoryName() );
+		$this->assertSame( 'Not proofread', $level->getLevelCategoryName() );
 	}
 }

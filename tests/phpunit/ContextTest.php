@@ -20,11 +20,11 @@ use ProofreadPageTestCase;
 class ContextTest extends ProofreadPageTestCase {
 
 	public function testGetPageNamespaceId() {
-		$this->assertEquals( 42, $this->buildDummyContext()->getPageNamespaceId() );
+		$this->assertSame( 42, $this->buildDummyContext()->getPageNamespaceId() );
 	}
 
 	public function testGetIndexNamespaceId() {
-		$this->assertEquals( 44, $this->buildDummyContext()->getIndexNamespaceId() );
+		$this->assertSame( 44, $this->buildDummyContext()->getIndexNamespaceId() );
 	}
 
 	public function testGetConfig() {

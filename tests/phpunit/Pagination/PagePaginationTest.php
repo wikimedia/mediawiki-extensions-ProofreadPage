@@ -26,7 +26,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 				new PageNumber( '2' )
 			]
 		);
-		$this->assertEquals( 2, $pagination->getPageNumber(
+		$this->assertSame( 2, $pagination->getPageNumber(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' )
 		) );
 	}
@@ -45,7 +45,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 			[ Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ) ],
 			[ $pageNumber ]
 		);
-		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
+		$this->assertSame( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
 	}
 
 	public function testGetDisplayedPageNumberWithFailure() {
@@ -67,7 +67,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 				new PageNumber( '2' )
 			]
 		);
-		$this->assertEquals( 3, $pagination->getNumberOfPages() );
+		$this->assertSame( 3, $pagination->getNumberOfPages() );
 	}
 
 	public function testGetPageTitle() {
@@ -104,14 +104,14 @@ class PagePaginationTest extends ProofreadPageTestCase {
 			[ new PageNumber( '1' ), new PageNumber( '2' ) ]
 		);
 
-		$this->assertEquals( 1, $pagination->key() );
+		$this->assertSame( 1, $pagination->key() );
 		$pagination->next();
-		$this->assertEquals( 2, $pagination->key() );
+		$this->assertSame( 2, $pagination->key() );
 		$this->assertTrue( $pagination->valid() );
 		$pagination->next();
 		$this->assertFalse( $pagination->valid() );
 		$pagination->rewind();
-		$this->assertEquals( 1, $pagination->key() );
+		$this->assertSame( 1, $pagination->key() );
 		$this->assertEquals(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ), $pagination->current()
 		);

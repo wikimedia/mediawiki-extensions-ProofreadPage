@@ -26,7 +26,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			),
 			$context
 		);
-		$this->assertEquals( 2, $pagination->getPageNumber(
+		$this->assertSame( 2, $pagination->getPageNumber(
 			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' )
 		) );
 	}
@@ -116,7 +116,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			),
 			$this->getContext()
 		);
-		$this->assertEquals( 5, $pagination->getNumberOfPages() );
+		$this->assertSame( 5, $pagination->getNumberOfPages() );
 	}
 
 	public function testGetPageTitle() {
@@ -131,7 +131,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			),
 			$this->getContext()
 		);
-		$this->assertEquals(
+		$this->assertSame(
 			'Page:LoremIpsum.djvu/2',
 			$pagination->getPageTitle( 2 )->getFullText()
 		);
@@ -166,17 +166,17 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->getContext()
 		);
 
-		$this->assertEquals( 1, $pagination->key() );
+		$this->assertSame( 1, $pagination->key() );
 		$pagination->next();
-		$this->assertEquals( 2, $pagination->key() );
+		$this->assertSame( 2, $pagination->key() );
 		$this->assertTrue( $pagination->valid() );
-		$this->assertEquals(
+		$this->assertSame(
 			'Page:LoremIpsum.djvu/2',
 			$pagination->current()->getFullText()
 		);
 		$pagination->rewind();
-		$this->assertEquals( 1, $pagination->key() );
-		$this->assertEquals(
+		$this->assertSame( 1, $pagination->key() );
+		$this->assertSame(
 			 'Page:LoremIpsum.djvu/1',
 			$pagination->current()->getFullText()
 		);
@@ -186,7 +186,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	 * @dataProvider provideIntervals
 	 */
 	public function testIsValidInterval( $isValid, $from, $to, $count ) {
-		$this->assertEquals(
+		$this->assertSame(
 			$isValid,
 			FilePagination::isValidInterval( $from, $to, $count )
 		);

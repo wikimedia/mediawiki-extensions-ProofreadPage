@@ -24,7 +24,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 	public function testGetFileForIndexTitle(
 		Title $indexTitle, File $file, FileProvider $fileProvider
 	) {
-		$this->assertEquals( $file, $fileProvider->getFileForIndexTitle( $indexTitle ) );
+		$this->assertSame( $file, $fileProvider->getFileForIndexTitle( $indexTitle ) );
 	}
 
 	public function indexFileProvider() {
@@ -76,7 +76,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 	public function testFileGetForPageTitle(
 		Title $pageTitle, File $file, FileProvider $fileProvider
 	) {
-		$this->assertEquals( $file, $fileProvider->getFileForPageTitle( $pageTitle ) );
+		$this->assertSame( $file, $fileProvider->getFileForPageTitle( $pageTitle ) );
 	}
 
 	public function pageFileProvider() {
@@ -139,7 +139,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumberForPageTitle() {
 		$fileProvider = new FileProviderMock( [] );
-		$this->assertEquals( 1, $fileProvider->getPageNumberForPageTitle(
+		$this->assertSame( 1, $fileProvider->getPageNumberForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/1' )
 		) );
 	}

@@ -19,7 +19,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		], [
 			'Test' => new IndexContent( [ 'width' => new WikitextContent( '500' ) ] )
 		] ) );
-		$this->assertEquals(
+		$this->assertSame(
 			500,
 			$handler->getImageWidth( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
 		);
@@ -31,7 +31,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		], [
 			'Test' => new IndexContent( [ 'title' => new WikitextContent( '500' ) ] )
 		] ) );
-		$this->assertEquals(
+		$this->assertSame(
 			PageDisplayHandler::DEFAULT_IMAGE_WIDTH,
 			$handler->getImageWidth( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
 		);
@@ -45,7 +45,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 				'CSS' => new WikitextContent( 'width:300px;' )
 			] )
 		] ) );
-		$this->assertEquals(
+		$this->assertSame(
 			'width:300px;',
 			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
 		);
@@ -59,7 +59,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 				'CSS' => new WikitextContent( 'background: url(\'/my-bad-url.jpg\');' )
 			] )
 		] ) );
-		$this->assertEquals(
+		$this->assertSame(
 			'/* insecure input */',
 			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(),  'Test.jpg' ) )
 		);
@@ -73,7 +73,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 				'CSS' => new WikitextContent( 'width:300px;<style>' )
 			] )
 		] ) );
-		$this->assertEquals(
+		$this->assertSame(
 			'width:300px;&lt;style&gt;',
 			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
 		);

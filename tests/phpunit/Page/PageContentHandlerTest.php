@@ -160,7 +160,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$serializedString .= $body;
 		$serializedString .= '<noinclude>' . $footer . '</noinclude>';
 
-		$this->assertEquals( $serializedString, $this->handler->serializeContent( $pageContent ) );
+		$this->assertSame( $serializedString, $this->handler->serializeContent( $pageContent ) );
 	}
 
 	/**
@@ -191,7 +191,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public function testSerializeContentInJson() {
 		$pageContent = self::newContent( 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4' );
 
-		$this->assertEquals(
+		$this->assertSame(
 			json_encode( [
 				'header' => 'Foo',
 				'body' => 'Bar',
@@ -360,7 +360,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider getAutosummaryProvider
 	 */
 	public function testGetAutosummary( $oldContent, $newContent, $expected ) {
-		$this->assertEquals(
+		$this->assertSame(
 			$expected, $this->handler->getAutosummary( $oldContent, $newContent, [] )
 		);
 	}
