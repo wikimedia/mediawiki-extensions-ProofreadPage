@@ -78,17 +78,17 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @param array &$queryPages
-	 * @return bool
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/wgQueryPages
+	 *
+	 * @param array[] &$queryPages
 	 */
-	public static function onwgQueryPages( &$queryPages ) {
+	public static function onwgQueryPages( array &$queryPages ) {
 		$queryPages[] = [ 'SpecialProofreadPages', 'IndexPages' ];
 		$queryPages[] = [ 'SpecialPagesWithoutScans', 'PagesWithoutScans' ];
-		return true;
 	}
 
 	/**
-	 * Set up content handlers
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ContentHandlerDefaultModelFor
 	 *
 	 * @param Title $title the title page
 	 * @param string &$model the content model for the page
@@ -109,9 +109,9 @@ class ProofreadPage {
 
 	/**
 	 * Set up our custom parser hooks when initializing parser.
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ParserFirstCallInit
 	 *
 	 * @param Parser $parser
-	 * @return bool hook return value
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setHook( 'pagelist', function ( $input, array $args, Parser $parser ) {
@@ -125,16 +125,16 @@ class ProofreadPage {
 			return $tagParser->render( $args );
 		} );
 		$parser->setHook( 'pagequality', function ( $input, array $args, Parser $parser ) {
-				$tagParser = new PagequalityTagParser();
-				return $tagParser->render( $args );
+			$tagParser = new PagequalityTagParser();
+			return $tagParser->render( $args );
 		} );
-		return true;
 	}
 
 	/**
 	 * Append javascript variables and code to the page.
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
+	 *
 	 * @param OutputPage $out
-	 * @return bool
 	 * @suppress PhanUndeclaredProperty $out->proofreadPageDone
 	 */
 	public static function onBeforePageDisplay( OutputPage $out ) {
@@ -154,18 +154,16 @@ class ProofreadPage {
 			$out->proofreadPageDone = true;
 			self::prepareArticle( $out );
 		}
-
-		return true;
 	}
 
 	/**
-	 * Hook function
-	 * @param array $pageIds Prefixed DB keys of the pages linked to, indexed by page_id
-	 * @param array &$colours CSS classes, indexed by prefixed DB keys
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetLinkColours
+	 *
+	 * @param string[] $pageIds Prefixed DB keys of the pages linked to, indexed by page_id
+	 * @param string[] &$colours CSS classes, indexed by prefixed DB keys
 	 * @param Title $title Title of the page being parsed, on which the links will be shown
-	 * @return bool
 	 */
-	public static function onGetLinkColours( $pageIds, &$colours, Title $title ) {
+	public static function onGetLinkColours( array $pageIds, array &$colours, Title $title ) {
 		$inIndexNamespace = $title->inNamespace( self::getIndexNamespaceId() );
 		$pageQualityLevelLookup = Context::getDefaultContext()->getPageQualityLevelLookup();
 
@@ -187,22 +185,22 @@ class ProofreadPage {
 				}
 			}
 		}
-
-		return true;
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ImageOpenShowImageInlineBefore
+	 *
 	 * @param ImagePage $imgpage
 	 * @param OutputPage $out
-	 * @return bool
 	 */
 	public static function onImageOpenShowImageInlineBefore(
 		ImagePage $imgpage, OutputPage $out
 	) {
 		$image = $imgpage->getFile();
 		if ( !$image->isMultipage() ) {
-			return true;
+			return;
 		}
+
 		$name = $image->getTitle()->getText();
 		$title = Title::makeTitle( self::getIndexNamespaceId(), $name );
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
@@ -210,11 +208,12 @@ class ProofreadPage {
 			$title, $out->msg( 'proofreadpage_image_message' )->text()
 		);
 		$out->addHTML( $link );
-		return true;
 	}
 
 	/**
 	 * Set is_toc flag (true if page is a table of contents)
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/OutputPageParserOutput
+	 *
 	 * @param OutputPage $outputPage
 	 * @param ParserOutput $parserOutput
 	 * @suppress PhanUndeclaredProperty $out->is_toc
@@ -243,8 +242,9 @@ class ProofreadPage {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageContentSaveComplete
+	 *
 	 * @param WikiPage $article
-	 * @return bool
 	 */
 	public static function onPageContentSaveComplete( WikiPage $article ) {
 		$title = $article->getTitle();
@@ -253,19 +253,19 @@ class ProofreadPage {
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			// Move this part to EditProofreadIndexPage
 			self::updatePrIndex( $article );
-			return true;
+			return;
 		}
 
 		// return if it is not a page
 		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
-			return true;
+			return;
 		}
 
 		/* check if there is an index */
 		$indexTitle = Context::getDefaultContext()
 			->getIndexForPageLookup()->getIndexForPageTitle( $title );
 		if ( $indexTitle === null ) {
-			return true;
+			return;
 		}
 
 		/**
@@ -281,16 +281,14 @@ class ProofreadPage {
 		if ( $indexData ) {
 			ProofreadIndexDbConnector::replaceIndexById( $indexData, $indexId, $article );
 		}
-
-		return true;
 	}
 
 	/**
 	 * if I delete a page, I need to update the index table
 	 * if I delete an index page too...
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDelete
 	 *
 	 * @param WikiPage $article
-	 * @return bool true
 	 */
 	public static function onArticleDelete( WikiPage $article ) {
 		$title = $article->getTitle();
@@ -303,16 +301,15 @@ class ProofreadPage {
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $title, true );
 		}
-
-		return true;
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticleUndelete
+	 *
 	 * @param Title $title Title corresponding to the article restored
 	 * @param bool $create If true, the restored page didn't exist before
 	 * @param string $comment Comment explaining the undeletion
 	 * @param int $oldPageId ID of page previously deleted from archive table
-	 * @return bool
 	 */
 	public static function onArticleUndelete( Title $title, $create, $comment, $oldPageId ) {
 		// Process Index restoration.
@@ -323,15 +320,14 @@ class ProofreadPage {
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $title );
 		}
-
-		return true;
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SpecialMovepageAfterMove
+	 *
 	 * @param MovePageForm $form
 	 * @param Title $ot
 	 * @param Title $nt
-	 * @return bool
 	 */
 	public static function onSpecialMovepageAfterMove(
 		MovePageForm $form, Title $ot, Title $nt
@@ -370,21 +366,18 @@ class ProofreadPage {
 				self::updatePrIndex( $wikipage );
 			}
 		}
-		return true;
 	}
 
 	/**
 	 * When an index page is created or purged, recompute pr_index values
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticlePurge
+	 *
 	 * @param WikiPage $article
-	 * @return bool
 	 */
 	public static function onArticlePurge( WikiPage $article ) {
-		$title = $article->getTitle();
-		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
+		if ( $article->getTitle()->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::updatePrIndex( $article );
-			return true;
 		}
-		return true;
 	}
 
 	/**
@@ -549,14 +542,14 @@ class ProofreadPage {
 
 	/**
 	 * Provides text for preload API
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditFormPreloadText
 	 *
 	 * @param string &$text
 	 * @param Title $title
-	 * @return bool
 	 */
 	public static function onEditFormPreloadText( &$text, Title $title ) {
 		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
-			return true;
+			return;
 		}
 
 		$pageContentBuilder = new PageContentBuilder(
@@ -564,17 +557,16 @@ class ProofreadPage {
 		);
 		$content = $pageContentBuilder->buildDefaultContentForPageTitle( $title );
 		$text = $content->serialize();
-
-		return true;
 	}
 
 	/**
 	 * Add ProofreadPage preferences to the preferences menu
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetPreferences
+	 *
 	 * @param User $user
-	 * @param array &$preferences
-	 * @return bool
+	 * @param array[] &$preferences
 	 */
-	public static function onGetPreferences( $user, &$preferences ) {
+	public static function onGetPreferences( $user, array &$preferences ) {
 		// Show header and footer fields when editing in the Page namespace
 		$preferences['proofreadpage-showheaders'] = [
 			'type'           => 'toggle',
@@ -588,26 +580,27 @@ class ProofreadPage {
 			'label-message'  => 'proofreadpage-preferences-horizontal-layout-label',
 			'section'        => 'editing/advancedediting',
 		];
-
-		return true;
 	}
 
 	/**
-	 * Adds canonical namespaces.
-	 * @param array &$list
-	 * @return true
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/CanonicalNamespaces
+	 *
+	 * @param string[] &$namespaces
 	 */
-	public static function addCanonicalNamespaces( &$list ) {
-		$list[self::getPageNamespaceId()] = 'Page';
-		$list[self::getPageNamespaceId() + 1] = 'Page_talk';
-		$list[self::getIndexNamespaceId()] = 'Index';
-		$list[self::getIndexNamespaceId() + 1] = 'Index_talk';
-		return true;
+	public static function onCanonicalNamespaces( array &$namespaces ) {
+		$pageNamespaceId = self::getPageNamespaceId();
+		$indexNamespaceId = self::getIndexNamespaceId();
+
+		$namespaces[$pageNamespaceId] = 'Page';
+		$namespaces[$pageNamespaceId + 1] = 'Page_talk';
+		$namespaces[$indexNamespaceId] = 'Index';
+		$namespaces[$indexNamespaceId + 1] = 'Index_talk';
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/LoadExtensionSchemaUpdates
+	 *
 	 * @param DatabaseUpdater $updater
-	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		global $wgContentHandlerUseDB;
@@ -621,30 +614,28 @@ class ProofreadPage {
 			$updater->addPostDatabaseUpdateMaintenance( FixProofreadPagePagesContentModel::class );
 			$updater->addPostDatabaseUpdateMaintenance( FixProofreadIndexPagesContentModel::class );
 		}
-
-		return true;
 	}
 
 	/**
-	 * @param array &$tables
-	 * @return bool
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ParserTestTables
+	 *
+	 * @param string[] &$tables
 	 */
 	public static function onParserTestTables( array &$tables ) {
 		$tables[] = 'pr_index';
-
-		return true;
 	}
 
 	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
+	 *
 	 * @param SkinTemplate $skin
-	 * @param array &$links Structured navigation links
-	 * @return true
+	 * @param array[] &$links Structured navigation links
 	 */
 	public static function onSkinTemplateNavigation( SkinTemplate $skin, array &$links ) {
 		$title = $skin->getTitle();
 		if ( $title === null || !$title->inNamespace( self::getPageNamespaceId() ) ) {
-			return true;
+			return;
 		}
 
 		// Image link
@@ -734,24 +725,24 @@ class ProofreadPage {
 				'title' => wfMessage( 'proofreadpage_index' )->plain()
 			];
 		}
-
-		return true;
 	}
 
 	/**
 	 * Add proofreading status to action=info
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/InfoAction
+	 *
 	 * @param IContextSource $context
-	 * @param array &$pageInfo The page information
-	 * @return true
+	 * @param array[] &$pageInfo The page information
 	 */
 	public static function onInfoAction( IContextSource $context, array &$pageInfo ) {
 		if ( !$context->canUseWikiPage() ) {
-			return true;
+			return;
 		}
+
 		$page = $context->getWikiPage();
 		$title = $page->getTitle();
 		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
-			return true;
+			return;
 		}
 
 		$pageQualityLevelLookup = Context::getDefaultContext()->getPageQualityLevelLookup();
@@ -762,8 +753,6 @@ class ProofreadPage {
 				wfMessage( "proofreadpage_quality{$pageQualityLevel}_category" ),
 			];
 		}
-
-		return true;
 	}
 
 	/**
@@ -779,6 +768,12 @@ class ProofreadPage {
 		}
 	}
 
+	/**
+	 * @see https://www.mediawiki.org/wiki/Skin:Minerva_Neue/SkinMinervaDefaultModules
+	 *
+	 * @param Skin $skin
+	 * @param array &$modules
+	 */
 	public static function onSkinMinervaDefaultModules( Skin $skin, array &$modules ) {
 		if (
 			$skin->getTitle()->inNamespace( self::getIndexNamespaceId() ) ||
@@ -786,14 +781,12 @@ class ProofreadPage {
 		) {
 			unset( $modules['editor'] );
 		}
-
-		return true;
 	}
 
 	/**
-	 * Extension registration callback
+	 * @see https://www.mediawiki.org/wiki/Manual:Extension_registration#Customizing_registration
 	 */
-	public static function onRegister() {
+	public static function onRegistration() {
 		// L10n
 		include_once __DIR__ . '/ProofreadPage.namespaces.php';
 

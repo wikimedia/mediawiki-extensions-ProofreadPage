@@ -262,7 +262,7 @@
 		"OutputPageParserOutput": "ProofreadPage::onOutputPageParserOutput",
 		"wgQueryPages": "ProofreadPage::onwgQueryPages",
 		"GetPreferences": "ProofreadPage::onGetPreferences",
-		"CanonicalNamespaces": "ProofreadPage::addCanonicalNamespaces",
+		"CanonicalNamespaces": "ProofreadPage::onCanonicalNamespaces",
 		"SkinTemplateNavigation": "ProofreadPage::onSkinTemplateNavigation",
 		"ContentHandlerDefaultModelFor": "ProofreadPage::onContentHandlerDefaultModelFor",
 		"EditFormPreloadText": "ProofreadPage::onEditFormPreloadText",
@@ -304,7 +304,7 @@
 			"description": "Placeholder to mark the position of the page separator"
 		}
 	},
-	"callback": "ProofreadPage::onRegister",
+	"callback": "ProofreadPage::onRegistration",
 	"load_composer_autoloader": true,
 	"manifest_version": 2
 }

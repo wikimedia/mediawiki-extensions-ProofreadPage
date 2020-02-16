@@ -21,14 +21,11 @@ class ProofreadPageInit {
 	];
 
 	/**
-	 * Initialize namespaces used by ProofreadPage
-	 * @return bool true
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SetupAfterCache
 	 */
 	public static function initNamespaces() {
 		self::initNamespace( 'page' );
 		self::initNamespace( 'index' );
-
-		return true;
 	}
 
 	/**
