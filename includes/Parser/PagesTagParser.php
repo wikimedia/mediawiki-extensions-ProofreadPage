@@ -115,11 +115,10 @@ class PagesTagParser {
 
 				// add page selected with $include in pagenums
 				if ( $include ) {
-					$list = $this->parseNumList( $include );
-					if ( $list == null ) {
+					$pagenums = $this->parseNumList( $include );
+					if ( !$pagenums ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
-					$pagenums = $list;
 				}
 
 				// ad pages selected with from and to in pagenums
@@ -342,7 +341,7 @@ class PagesTagParser {
 	 * example: 1-10,23,38
 	 *
 	 * @param string $input
-	 * @return array|null an array of pages, or null if the input does not comply to the syntax
+	 * @return int[]|null an array of pages, or null if the input does not comply to the syntax
 	 */
 	public function parseNumList( $input ) {
 		$input = str_replace( [ ' ', '\t', '\n' ], '', $input );

@@ -236,7 +236,7 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @param string $header
 	 * @param string $footer
-	 * @return array
+	 * @return string[]
 	 */
 	protected function cleanDeprecatedWrappers( $header, $footer ) {
 		$cleanedHeader = false;

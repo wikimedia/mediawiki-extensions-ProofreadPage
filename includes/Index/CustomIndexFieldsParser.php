@@ -202,7 +202,7 @@ class CustomIndexFieldsParser {
 	 * @throws OutOfBoundsException
 	 */
 	public function parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
-		IndexContent $content, $fieldName, $otherParams
+		IndexContent $content, $fieldName, array $otherParams
 	) {
 		$entry = $this->parseCustomIndexField( $content, $fieldName );
 
