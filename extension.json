@@ -248,69 +248,27 @@
 		"remoteExtPath": "ProofreadPage/modules"
 	},
 	"Hooks": {
-		"SetupAfterCache": [
-			"ProofreadPage\\ProofreadPageInit::initNamespaces"
-		],
-		"ParserFirstCallInit": [
-			"ProofreadPage::onParserFirstCallInit"
-		],
-		"BeforePageDisplay": [
-			"ProofreadPage::onBeforePageDisplay"
-		],
-		"GetLinkColours": [
-			"ProofreadPage::onGetLinkColours"
-		],
-		"ImageOpenShowImageInlineBefore": [
-			"ProofreadPage::onImageOpenShowImageInlineBefore"
-		],
-		"PageContentSaveComplete": [
-			"ProofreadPage::onPageContentSaveComplete"
-		],
-		"ArticleDelete": [
-			"ProofreadPage::onArticleDelete"
-		],
-		"ArticleUndelete": [
-			"ProofreadPage::onArticleUndelete"
-		],
-		"ArticlePurge": [
-			"ProofreadPage::onArticlePurge"
-		],
-		"SpecialMovepageAfterMove": [
-			"ProofreadPage::onSpecialMovepageAfterMove"
-		],
-		"LoadExtensionSchemaUpdates": [
-			"ProofreadPage::onLoadExtensionSchemaUpdates"
-		],
-		"OutputPageParserOutput": [
-			"ProofreadPage::onOutputPageParserOutput"
-		],
-		"wgQueryPages": [
-			"ProofreadPage::onwgQueryPages"
-		],
-		"GetPreferences": [
-			"ProofreadPage::onGetPreferences"
-		],
-		"CanonicalNamespaces": [
-			"ProofreadPage::addCanonicalNamespaces"
-		],
-		"SkinTemplateNavigation": [
-			"ProofreadPage::onSkinTemplateNavigation"
-		],
-		"ContentHandlerDefaultModelFor": [
-			"ProofreadPage::onContentHandlerDefaultModelFor"
-		],
-		"EditFormPreloadText": [
-			"ProofreadPage::onEditFormPreloadText"
-		],
-		"ParserTestTables": [
-			"ProofreadPage::onParserTestTables"
-		],
-		"InfoAction": [
-			"ProofreadPage::onInfoAction"
-		],
-		"SkinMinervaDefaultModules": [
-			"ProofreadPage::onSkinMinervaDefaultModules"
-		]
+		"SetupAfterCache": "ProofreadPage\\ProofreadPageInit::initNamespaces",
+		"ParserFirstCallInit": "ProofreadPage::onParserFirstCallInit",
+		"BeforePageDisplay": "ProofreadPage::onBeforePageDisplay",
+		"GetLinkColours": "ProofreadPage::onGetLinkColours",
+		"ImageOpenShowImageInlineBefore": "ProofreadPage::onImageOpenShowImageInlineBefore",
+		"PageContentSaveComplete": "ProofreadPage::onPageContentSaveComplete",
+		"ArticleDelete": "ProofreadPage::onArticleDelete",
+		"ArticleUndelete": "ProofreadPage::onArticleUndelete",
+		"ArticlePurge": "ProofreadPage::onArticlePurge",
+		"SpecialMovepageAfterMove": "ProofreadPage::onSpecialMovepageAfterMove",
+		"LoadExtensionSchemaUpdates": "ProofreadPage::onLoadExtensionSchemaUpdates",
+		"OutputPageParserOutput": "ProofreadPage::onOutputPageParserOutput",
+		"wgQueryPages": "ProofreadPage::onwgQueryPages",
+		"GetPreferences": "ProofreadPage::onGetPreferences",
+		"CanonicalNamespaces": "ProofreadPage::addCanonicalNamespaces",
+		"SkinTemplateNavigation": "ProofreadPage::onSkinTemplateNavigation",
+		"ContentHandlerDefaultModelFor": "ProofreadPage::onContentHandlerDefaultModelFor",
+		"EditFormPreloadText": "ProofreadPage::onEditFormPreloadText",
+		"ParserTestTables": "ProofreadPage::onParserTestTables",
+		"InfoAction": "ProofreadPage::onInfoAction",
+		"SkinMinervaDefaultModules": "ProofreadPage::onSkinMinervaDefaultModules"
 	},
 	"attributes": {
 		"VisualEditor": {
