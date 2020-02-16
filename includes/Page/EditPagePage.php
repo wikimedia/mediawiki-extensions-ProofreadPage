@@ -64,7 +64,6 @@ class EditPagePage extends EditPage {
 
 	/**
 	 * @inheritDoc
-	 * @suppress PhanUndeclaredMethod Phan doesn't understand that $content is PageContent
 	 */
 	protected function showContentForm() {
 		$out = $this->context->getOutput();
@@ -82,6 +81,7 @@ class EditPagePage extends EditPage {
 
 		/** @var PageContent $content */
 		$content = $this->toEditContent( $this->textbox1 );
+		'@phan-var PageContent $content';
 
 		$out->addHTML( $this->pageDisplayHandler->buildPageContainerBegin() );
 		$this->showEditArea(
@@ -208,19 +208,19 @@ class EditPagePage extends EditPage {
 
 	/**
 	 * @inheritDoc
-	 * @suppress PhanTypeMismatchArgument
 	 */
 	protected function importContentFormData( &$request ) {
-		/** @var PageContent $currentContent */
-		$currentContent = $this->getCurrentContent();
+		/** @var PageContent $content */
+		$content = $this->getCurrentContent();
+		// @phan-suppress-next-line PhanUndeclaredMethod
+		$oldLevel = $content->getLevel();
 
 		return $this->pageContentBuilder->buildContentFromInput(
-			rtrim( $request->getText( 'wpHeaderTextbox' ) ),
-			rtrim( $request->getText( 'wpTextbox1' ) ),
-			rtrim( $request->getText( 'wpFooterTextbox' ) ),
-			// @phan-suppress-next-line PhanUndeclaredMethod
-			$request->getInt( 'wpQuality', $currentContent->getLevel()->getLevel() ),
-			$currentContent
+			$request->getText( 'wpHeaderTextbox' ),
+			$request->getText( 'wpTextbox1' ),
+			$request->getText( 'wpFooterTextbox' ),
+			$request->getInt( 'wpQuality', $oldLevel->getLevel() ),
+			$oldLevel
 		)->serialize();
 	}
 }
