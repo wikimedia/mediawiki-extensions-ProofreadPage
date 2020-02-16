@@ -44,16 +44,16 @@ class PagesTagParser {
 			return '';
 		}
 
-		$index = array_key_exists( 'index', $args ) ? $args['index'] : null;
-		$from = array_key_exists( 'from', $args ) ? $args['from'] : null;
-		$to = array_key_exists( 'to', $args ) ? $args['to'] : null;
-		$include = array_key_exists( 'include', $args ) ? $args['include'] : null;
-		$exclude = array_key_exists( 'exclude', $args ) ? $args['exclude'] : null;
-		$step = array_key_exists( 'step', $args ) ? $args['step'] : null;
-		$header = array_key_exists( 'header', $args ) ? $args['header'] : null;
-		$tosection = array_key_exists( 'tosection', $args ) ? $args['tosection'] : null;
-		$fromsection = array_key_exists( 'fromsection', $args ) ? $args['fromsection'] : null;
-		$onlysection = array_key_exists( 'onlysection', $args ) ? $args['onlysection'] : null;
+		$index = $args['index'] ?? null;
+		$from = $args['from'] ?? null;
+		$to = $args['to'] ?? null;
+		$include = $args['include'] ?? null;
+		$exclude = $args['exclude'] ?? null;
+		$step = $args['step'] ?? null;
+		$header = $args['header'] ?? null;
+		$tosection = $args['tosection'] ?? null;
+		$fromsection = $args['fromsection'] ?? null;
+		$onlysection = $args['onlysection'] ?? null;
 
 		$pageTitle = $this->parser->getTitle();
 

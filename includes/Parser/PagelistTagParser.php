@@ -56,8 +56,8 @@ class PagelistTagParser {
 		$count = $pagination->getNumberOfPages();
 
 		$return = '';
-		$from = array_key_exists( 'from', $args ) ? $args['from'] : 1;
-		$to = array_key_exists( 'to', $args ) ? $args['to'] : $count;
+		$from = $args['from'] ?? 1;
+		$to = $args['to'] ?? $count;
 
 		if ( !is_numeric( $from ) || !is_numeric( $to ) ) {
 			return $this->formatError( 'proofreadpage_number_expected' );
