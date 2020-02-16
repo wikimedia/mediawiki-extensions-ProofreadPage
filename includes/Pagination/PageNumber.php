@@ -165,7 +165,7 @@ class PageNumber {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public static function getDisplayModes() {
 		return [

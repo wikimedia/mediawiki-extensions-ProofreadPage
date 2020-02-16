@@ -109,7 +109,7 @@ class PageDisplayHandler {
 	 * @param array $options
 	 * @return null|string
 	 */
-	private function buildImageHtml( Title $pageTitle, $options ) {
+	private function buildImageHtml( Title $pageTitle, array $options ) {
 		$fileProvider = $this->context->getFileProvider();
 		try {
 			$image = $fileProvider->getFileForPageTitle( $pageTitle );

@@ -32,7 +32,7 @@ class CustomIndexField {
 	 * @param string $value
 	 * @param array $config
 	 */
-	public function __construct( $key, $value, $config ) {
+	public function __construct( $key, $value, array $config ) {
 		$this->key = $key;
 		$this->value = trim( $value );
 		$this->config = $config;
@@ -110,7 +110,7 @@ class CustomIndexField {
 
 	/**
 	 * Return the possible values of the entry as an array value => label of null
-	 * @return array|null
+	 * @return string[]|null
 	 */
 	public function getPossibleValues() {
 		if ( isset( $this->config['values'] ) && is_array( $this->config['values'] ) ) {

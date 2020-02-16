@@ -31,7 +31,7 @@ class ProofreadPageDbConnector {
 	 * @return int
 	 * @suppress SecurityCheck-SQLInjection See T201806 for more information
 	 */
-	public static function queryCount( $query, $cat ) {
+	public static function queryCount( array $query, $cat ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$query['conds']['cl_to'] = str_replace( ' ', '_',
 			wfMessage( $cat )->inContentLanguage()->text() );
@@ -53,10 +53,10 @@ class ProofreadPageDbConnector {
 	}
 
 	/**
-	 * @param array $pages
+	 * @param string[] $pages
 	 * @return int|null
 	 */
-	public static function getNumberOfExistingPagesFromPageTitle( $pages ) {
+	public static function getNumberOfExistingPagesFromPageTitle( array $pages ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 				[ 'page' ],

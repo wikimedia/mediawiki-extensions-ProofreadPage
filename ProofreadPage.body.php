@@ -63,7 +63,7 @@ class ProofreadPage {
 
 	/**
 	 * @deprecated
-	 * @return array
+	 * @return string[]
 	 */
 	public static function getPageAndIndexNamespace() {
 		static $res;
