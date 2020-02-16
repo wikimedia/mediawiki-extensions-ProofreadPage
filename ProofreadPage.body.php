@@ -216,12 +216,14 @@ class ProofreadPage {
 	 *
 	 * @param OutputPage $outputPage
 	 * @param ParserOutput $parserOutput
-	 * @suppress PhanUndeclaredProperty $out->is_toc
+	 * @suppress PhanUndeclaredProperty
 	 */
 	public static function onOutputPageParserOutput(
 		OutputPage $outputPage, ParserOutput $parserOutput
 	) {
-		$outputPage->is_toc = $parserOutput->is_toc ?? false;
+		if ( $parserOutput->is_toc ?? false ) {
+			$outputPage->is_toc = true;
+		}
 	}
 
 	/**
@@ -451,7 +453,7 @@ class ProofreadPage {
 		$indextitle = ProofreadPageDbConnector::getIndexTitleForPageId( $id );
 
 		// @phan-suppress-next-line PhanUndeclaredProperty
-		if ( isset( $out->is_toc ) && $out->is_toc ) {
+		if ( $out->is_toc ?? false ) {
 			$n = 0;
 
 			if ( $indextitle ) {
