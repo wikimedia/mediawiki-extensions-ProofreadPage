@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"JinJian"
+			"JinJian",
+			"Harvzsf"
 		]
 	},
+	"nstab-page": "Pakli",
+	"nstab-index": "Tudlokan",
+	"tooltip-ca-nstab-page": "Kitaa an pakli han barasahon",
+	"tooltip-ca-nstab-index": "Kitaa an tudlokan han barasahon",
 	"indexpages": "Talaan hin mga pakli tudlokan",
 	"pageswithoutscans": "Mga pakli nga dira naka-scan",
 	"proofreadpage_desc": "Natugot hin masayon nga komparison hin mga teksto ha orihinal nga scan",
@@ -32,6 +37,11 @@
 	"proofreadpage_quality2_category": "May problema",
 	"proofreadpage_quality3_category": "Proofread",
 	"proofreadpage_quality4_category": "Ginpadig-on",
+	"proofreadpage_quality0_summary": "Waray texto",
+	"proofreadpage_quality1_summary": "Waray ka-proofread",
+	"proofreadpage_quality2_summary": "May problema",
+	"proofreadpage_quality3_summary": "Pagbasa kun asya",
+	"proofreadpage_quality4_summary": "Ginpadig-on",
 	"proofreadpage_quality0_message": "Ini nga pakli in diri nagkikihanglan nga ma-proofread",
 	"proofreadpage_quality1_message": "Ini nga pakli in waray ka ma-proofread",
 	"proofreadpage_quality2_message": "May-ada problema han pag-proofread hini nga pakli",
@@ -39,6 +49,8 @@
 	"proofreadpage_quality4_message": "Ini nga pakli in badidado na",
 	"proofreadpage_index_status": "Kahimtang han tudlokan",
 	"proofreadpage_index_size": "Ihap han mga pakli",
+	"proofreadpage_pages_to_validate": "Ihap hin mga pakli nga kiritaon kun asya",
+	"proofreadpage_pages_to_proofread_or_validate": "Ihap hin mga pakli nga kikitaon o babasahon nga makita kun waray sayop.",
 	"proofreadpage_specialpage_label_orderby": "Sinugo ni:",
 	"proofreadpage_specialpage_label_key": "Pamilnga:",
 	"proofreadpage_specialpage_label_sortascending": "Ig-ayos paigbaw",
@@ -54,7 +66,10 @@
 	"proofreadpage_specialpage_searcherrortext": "Diri naandar an search engine. Pasensya na ha abereya.",
 	"proofreadpage_source": "Ginkuhaan",
 	"proofreadpage_source_message": "Na-scan nga edition nga gingamit hin pagestablisar hini nga teksto",
+	"action-pagequality": "igliwat an bandira han kalidad han pakli",
 	"right-pagequality": "Igliwat an kalidad han pakli nga bandera",
+	"action-pagequality-admin": "waray-pagdiri nga mga pagliwat han bandira han kalidad han pakli",
+	"right-pagequality-admin": "Waray-pagdiri nga mga pagliwat han bandira han kalidad han pakli",
 	"proofreadpage-section-tools": "Mga higamit han pag-proofread",
 	"proofreadpage-group-zoom": "Padakoa",
 	"proofreadpage-group-other": "Iba",
@@ -67,10 +82,15 @@
 	"proofreadpage-preferences-showheaders-label": "Igpakita an mga bubutangan han ulohan ngan tiilan kun nagliliwat ha {{ns:page}} ngaran-lat'ang",
 	"proofreadpage-preferences-horizontal-layout-label": "Gamita an pahigda nga layout kun nagliliwat ha {{ns:page}} ngaran-lat'ang",
 	"proofreadpage-indexquality-alt": "$1 gin-validate {{PLURAL:$1|ka pakli|ka mga pakli}}, $2 la an gin-proofread {{PLURAL:$2|ka pakli|ka mga pakli}} ngan $3 waray pa gin-proofread {{PLURAL:$3|ka pakli|ka mga pakli}}",
-	"content-model-proofread-page": "Pakli: pakli",
+	"content-model-proofread-page": "Pakli hin barasahon",
+	"content-model-proofread-index": "Tudlokan hin barasahon",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Pagpipilian han pakli",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Mga pakli",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion han $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Oo",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Diri"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Diri",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kalidad hin pagbasa-kun-maysayop",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kalidad hin pagbasa-kun-maysayop",
+	"proofreadpage-index-field-category-label": "Mga kaarangay",
+	"proofreadpage-index-edit-category-help": "Ginsusurat an mga kaarangay hin waray an Mga kaarangay: prefix ngan ginbubulag hin pipe \"|\" nga agi."
 }
