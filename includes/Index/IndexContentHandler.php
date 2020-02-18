@@ -5,6 +5,7 @@ namespace ProofreadPage\Index;
 use Content;
 use ContentHandler;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use MWContentSerializationException;
 use Parser;
 use ParserOptions;
@@ -55,7 +56,7 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	private function buildParser() {
-		$parser = new Parser();
+		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$parser->startExternalParse(
 			null, ParserOptions::newCanonical( 'canonical' ), Parser::OT_PLAIN
 		);
