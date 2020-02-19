@@ -42,7 +42,8 @@ class SpecialProofreadPages extends QueryPage {
 
 		$this->setHeaders();
 		if ( $this->limit == 0 && $this->offset == 0 ) {
-			list( $this->limit, $this->offset ) = $this->getRequest()->getLimitOffset();
+			list( $this->limit, $this->offset ) = $this->getRequest()
+				->getLimitOffsetForUser( $this->getUser() );
 		}
 		$output = $this->getOutput();
 		$request = $this->getRequest();
