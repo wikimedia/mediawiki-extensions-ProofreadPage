@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\MediaWikiServices;
 use Parser;
 use ParserOptions;
 use Title;
@@ -23,7 +24,7 @@ class ParserHelper {
 	 * @param ParserOptions $options
 	 */
 	public function __construct( ?Title $title, ParserOptions $options ) {
-		$this->parser = new Parser();
+		$this->parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$this->parser->startExternalParse( $title, $options, Parser::OT_PREPROCESS );
 	}
 
