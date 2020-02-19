@@ -7,6 +7,7 @@ use Parser;
 use ProofreadPage\Context;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\FilePagination;
+use ProofreadPage\Pagination\PageNumber;
 use Title;
 
 /**

@@ -109,24 +109,25 @@ class PageContentBuilder {
 	 * @param string $body
 	 * @param string $footer
 	 * @param int $level
-	 * @param PageContent $oldContent the old content used as base for the new content
+	 * @param PageLevel $oldLevel
 	 * @return PageContent
 	 */
 	public function buildContentFromInput(
-		$header, $body, $footer, $level, PageContent $oldContent
+		string $header,
+		string $body,
+		string $footer,
+		int $level,
+		PageLevel $oldLevel
 	) {
-		$oldLevel = $oldContent->getLevel();
-		$user = ( $oldLevel->getLevel() === $level )
-			? $oldLevel->getUser()
-			: $this->contextSource->getUser();
-		if ( $oldLevel->getUser() === null ) {
+		$user = $oldLevel->getLevel() === $level ? $oldLevel->getUser() : null;
+		if ( !$user ) {
 			$user = $this->contextSource->getUser();
 		}
 
 		return new PageContent(
-			new WikitextContent( $header ),
-			new WikitextContent( $body ),
-			new WikitextContent( $footer ),
+			new WikitextContent( rtrim( $header ) ),
+			new WikitextContent( rtrim( $body ) ),
+			new WikitextContent( rtrim( $footer ) ),
 			new PageLevel( $level, $user )
 		);
 	}

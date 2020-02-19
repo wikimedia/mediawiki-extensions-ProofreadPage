@@ -116,12 +116,12 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	 * @dataProvider buildContentFromInputProvider
 	 */
 	public function testBuildContentFromInput(
-		$header, $body, $footer, $level, PageContent $oldContent, PageContent $newContent
+		$header, $body, $footer, $level, PageLevel $oldLevel, PageContent $newContent
 	) {
 		$contentBuilder = new PageContentBuilder( $this->context, $this->getContext() );
 		$this->assertEquals(
 			$newContent,
-			$contentBuilder->buildContentFromInput( $header, $body, $footer, $level, $oldContent )
+			$contentBuilder->buildContentFromInput( $header, $body, $footer, $level, $oldLevel )
 		);
 	}
 
@@ -132,7 +132,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				'42',
 				'42',
 				2,
-				self::newContent( '22', '22', '22', 2, 'Test2' ),
+				new PageLevel( 2, User::newFromName( 'Test2' ) ),
 				self::newContent( '42', '42', '42', 2, 'Test2' ),
 			],
 			[
@@ -140,7 +140,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				'42',
 				'42',
 				2,
-				self::newContent( '22', '22', '22', 2, null ),
+				new PageLevel( 2 ),
 				self::newContent( '42', '42', '42', 2, 'Test' ),
 			],
 			[
@@ -148,7 +148,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				'42',
 				'42',
 				3,
-				self::newContent( '22', '22', '22', 2, 'Test2' ),
+				new PageLevel( 2 ),
 				self::newContent( '42', '42', '42', 3, 'Test' ),
 			],
 		];
