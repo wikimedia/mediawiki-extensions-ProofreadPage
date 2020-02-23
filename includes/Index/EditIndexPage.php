@@ -25,6 +25,9 @@ class EditIndexPage extends EditPage {
 	 */
 	private $extContext;
 
+	/**
+	 * @param Article $article Article of page to be edited
+	 */
 	public function __construct( Article $article ) {
 		parent::__construct( $article );
 

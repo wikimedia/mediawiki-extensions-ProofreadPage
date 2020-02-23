@@ -13,10 +13,17 @@ use ProofreadPage\Context;
  */
 class ApiQueryProofreadInfo extends ApiQueryBase {
 
+	/**
+	 * @param \ApiQuery $query
+	 * @param string $moduleName
+	 */
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'pi' );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$prop = array_flip( $params['prop'] );
@@ -66,10 +73,20 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		return $this->msg( $messageName )->inContentLanguage()->text();
 	}
 
+	/**
+	 * @param array $params [optional] Parameters (unused parameter)
+	 * @see ApiQueryBase::getCacheMode()
+	 * @return string
+	 */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}
 
+	/**
+	 * Returns list of allowed parameters
+	 * @see ApiBase::getAllowedParams()
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return [
 			'prop' => [

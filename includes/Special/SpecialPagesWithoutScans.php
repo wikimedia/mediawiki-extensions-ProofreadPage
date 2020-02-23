@@ -11,6 +11,10 @@ use ProofreadPage\Context;
  * Special page that lists the texts that have no transclusions
  */
 class SpecialPagesWithoutScans extends PageQueryPage {
+
+	/**
+	 * @param string $name
+	 */
 	public function __construct( $name = 'PagesWithoutScans' ) {
 		parent::__construct( $name );
 	}
@@ -23,6 +27,9 @@ class SpecialPagesWithoutScans extends PageQueryPage {
 		return false;
 	}
 
+	/**
+	 * @return mixed[]
+	 */
 	public function getQueryInfo() {
 		$context = Context::getDefaultContext();
 		return [

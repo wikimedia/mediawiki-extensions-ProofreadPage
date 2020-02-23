@@ -13,6 +13,9 @@ class IndexForPageLookupMock implements IndexForPageLookup {
 
 	private $indexForPage = [];
 
+	/**
+	 * @param array $indexForPage
+	 */
 	public function __construct( $indexForPage ) {
 		$this->indexForPage = $indexForPage;
 	}

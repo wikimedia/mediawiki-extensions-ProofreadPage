@@ -27,6 +27,10 @@ class PagesTagParser {
 	 */
 	private $context;
 
+	/**
+	 * @param Parser $parser
+	 * @param Context $context
+	 */
 	public function __construct( Parser $parser, Context $context ) {
 		$this->parser = $parser;
 		$this->context = $context;

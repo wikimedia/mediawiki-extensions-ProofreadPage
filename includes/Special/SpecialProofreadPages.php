@@ -32,11 +32,17 @@ use Title;
 class SpecialProofreadPages extends QueryPage {
 	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending, $addOne;
 
+	/**
+	 * @param string $name
+	 */
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
 		$this->mIncludable = true;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function execute( $parameters ) {
 		global $wgDisableTextSearch;
 
@@ -102,6 +108,12 @@ class SpecialProofreadPages extends QueryPage {
 		parent::execute( $parameters );
 	}
 
+	/**
+	 * Wrapper function for parent function in QueryPage class
+	 * @param int|bool $limit
+	 * @param int|bool $offset
+	 * @return \Wikimedia\Rdbms\IResultWrapper
+	 */
 	public function reallyDoQuery( $limit, $offset = false ) {
 		if ( $this->searchList && count( $this->searchList ) > $this->limit ) {
 			// Delete the last item to avoid the sort done by reallyDoQuery move it
@@ -117,6 +129,11 @@ class SpecialProofreadPages extends QueryPage {
 		return parent::reallyDoQuery( $limit, $offset );
 	}
 
+	/**
+	 * Increments $numRows if the last item of the result has been deleted
+	 * @param \Wikimedia\Rdbms\IDatabase $dbr [optional] (unused parameter)
+	 * @param \Wikimedia\Rdbms\IResultWrapper $res [optional] (unused parameter)
+	 */
 	public function preprocessResults( $dbr, $res ) {
 		if ( $this->addOne !== null ) {
 			// there is a deleted item
@@ -193,6 +210,9 @@ class SpecialProofreadPages extends QueryPage {
 			->displayForm( false );
 	}
 
+	/**
+	 * @return mixed[]
+	 */
 	public function getQueryInfo() {
 		$conds = [];
 		if ( $this->searchTerm ) {
@@ -242,6 +262,11 @@ class SpecialProofreadPages extends QueryPage {
 		return !$this->sortAscending;
 	}
 
+	/**
+	 * @param \Skin $skin
+	 * @param object $result Result row
+	 * @return string|bool false to skip the row
+	 */
 	public function formatResult( $skin, $result ) {
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );
 		if ( !$title ) {

@@ -14,6 +14,10 @@ class CustomIndexFieldsParser {
 
 	private $configuration;
 
+	/**
+	 * Loads custom configuration
+	 * @param array|null $customIndexFieldsConfiguration (optional)
+	 */
 	public function __construct( array $customIndexFieldsConfiguration = null ) {
 		$this->configuration = ( $customIndexFieldsConfiguration === null )
 			? $this->loadCustomIndexFieldsConfiguration()

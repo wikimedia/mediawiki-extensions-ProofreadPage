@@ -11,6 +11,9 @@ use ProofreadPage\Context;
 class ApiQueryProofread extends ApiQueryBase {
 	private $qualityLevelCategoryCache = [];
 
+	/**
+	 * Executes query and formats data
+	 */
 	public function execute() {
 		$context = Context::getDefaultContext();
 		$pages = $this->getPageSet()->getGoodTitles();
@@ -49,10 +52,19 @@ class ApiQueryProofread extends ApiQueryBase {
 		return $this->qualityLevelCategoryCache[$level];
 	}
 
+	/**
+	 * @param array $params [optional] Parameters (unused parameter)
+	 * @see ApiQueryBase::getCacheMode()
+	 * @return string
+	 */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}
 
+	/**
+	 * @see ApiBase::getAllowedParams()
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return [];
 	}
