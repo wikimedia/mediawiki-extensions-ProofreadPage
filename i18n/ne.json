@@ -6,9 +6,12 @@
 			"NehalDaveND",
 			"जनक राज भट्ट",
 			"राम प्रसाद जोशी",
-			"पर्वत सुबेदी"
+			"पर्वत सुबेदी",
+			"हिमाल सुबेदी"
 		]
 	},
+	"nstab-page": "पृष्ठ",
+	"nstab-index": "अनुक्रम",
 	"indexpages": "सूचकांक पानाको सूची",
 	"pageswithoutscans": "स्क्यान बिनाका पेज",
 	"proofreadpage_desc": "मूल पाठ र सद्य पाठमा फरक सजिलो संग देखिन्छ |",
@@ -16,7 +19,9 @@
 	"proofreadpage_index": "अनुक्रम",
 	"proofreadpage_index_expected": "त्रुटि: सूचकांकको अपेक्षा",
 	"proofreadpage_nosuch_index": "त्रुटी: यस्तो कुनै सूचकांक छैन",
+	"proofreadpage_nosuch_file": "त्रुटी: यस्तो कुनै फाइल छैन",
 	"proofreadpage_nologin": "प्रवेश नगरिएको",
+	"proofreadpage_nextpage": "अर्को पृष्ठ",
 	"proofreadpage_prevpage": "पहिलो पृष्ठ",
 	"proofreadpage_quality0_category": "पाठ बिना",
 	"proofreadpage_quality1_category": "परिक्षण भएको छैन",
@@ -25,10 +30,16 @@
 	"proofreadpage_quality4_category": "प्रमाणित",
 	"proofreadpage_quality1_message": "यो पृष्ठ शोधित छैन ।",
 	"proofreadpage_specialpage_label_key": "खोज",
+	"proofreadpage_index_listofpages": "पृष्ठहरूको सूची",
 	"proofreadpage_page_status": "पृष्ठको स्थिती",
 	"proofreadpage_js_attributes": "लेखक शीर्षक वर्ष प्रकाशक",
 	"proofreadpage_index_attributes": "लेखक\nशीर्षक\nवर्ष|प्रकाशन वर्ष\nप्रकाशक\nस्रोत\nचित्र|मुख्यपृष्ठ चित्र\nपृष्ठहरू||२०\nटिप्पणीहरू||१०",
 	"proofreadpage-group-other": "अन्य",
 	"proofreadpage-button-reset-zoom-label": "मूल आकार",
-	"content-model-proofread-page": "पृष्ठ:पृष्ठ"
+	"content-model-proofread-page": "पुस्तक पृष्ठ",
+	"content-model-proofread-index": "पुस्तक सूचकाङ्क",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पृष्ठहरू",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हो",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "होइन",
+	"proofreadpage-index-field-category-label": "श्रेणीहरू"
 }
