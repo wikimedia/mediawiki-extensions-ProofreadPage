@@ -401,6 +401,22 @@ $proofreadPageNamespacesNames['sl'] = [
 	'index_talk' => 'Pogovor_o_kazalu'
 ];
 
+/** Serbian Cyrillic (српски (ћирилица)) */
+$proofreadPageNamespacesNames['sr-ec'] = [
+	'page' => 'Страница',
+	'page_talk' => 'Разговор_о_страници',
+	'index' => 'Индекс',
+	'index_talk' => 'Разговор_о_индексу'
+];
+
+/** Serbian Latin (srpski (latinica)) */
+$proofreadPageNamespacesNames['sr-el'] = [
+	'page' => 'Stranica',
+	'page_talk' => 'Razgovor_o_stranici',
+	'index' => 'Indeks',
+	'index_talk' => 'Razgovor_o_indeksu'
+];
+
 /** Swedish (svenska) */
 $proofreadPageNamespacesNames['sv'] = [
 	'page' => 'Sida',
