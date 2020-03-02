@@ -59,5 +59,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Избор страница",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Странице",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
+	"proofreadpage-index-field-category-label": "Категорије"
 }
