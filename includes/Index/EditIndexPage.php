@@ -84,6 +84,11 @@ class EditIndexPage extends EditPage {
 		$out->addModules( 'ext.proofreadpage.index' );
 	}
 
+	/**
+	 * @param CustomIndexField $field
+	 * @param array $inputOptions
+	 * @return FieldLayout
+	 */
 	private function buildField( CustomIndexField $field, $inputOptions ) {
 		$key = $this->getFieldNameForEntry( $field->getKey() );
 		$val = $field->getStringValue();
@@ -132,6 +137,11 @@ class EditIndexPage extends EditPage {
 		return new FieldLayout( $input, $fieldLayoutArgs );
 	}
 
+	/**
+	 * @param array $categories
+	 * @param array $inputOptions
+	 * @return FieldLayout
+	 */
 	private function buildCategoriesField( array $categories, $inputOptions ) {
 		$input = new TextInputWidget( $inputOptions + [
 			'type' => 'text',
@@ -181,6 +191,11 @@ class EditIndexPage extends EditPage {
 		return $content->serialize( $this->contentFormat );
 	}
 
+	/**
+	 * Returns filtered list of categories from a web request.
+	 * @param WebRequest $request
+	 * @return Title[]
+	 */
 	private function importCategoryList( WebRequest $request ) {
 		return array_filter( array_map( function ( $text ) {
 			return Title::makeTitleSafe( NS_CATEGORY, trim( $text ) );

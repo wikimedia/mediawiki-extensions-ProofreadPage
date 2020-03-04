@@ -44,6 +44,10 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 		return $this->cache[$cacheKey];
 	}
 
+	/**
+	 * @param Title $pageTitle
+	 * @return ?\Title
+	 */
 	private function findIndexTitle( Title $pageTitle ) {
 		$possibleIndexTitle = $this->findPossibleIndexTitleBasedOnName( $pageTitle );
 
@@ -86,6 +90,10 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 		return null;
 	}
 
+	/**
+	 * @param Title $title
+	 * @return Title[]
+	 */
 	private function findIndexesWhichLinkTo( Title $title ) {
 		$results = wfGetDB( DB_REPLICA )->select(
 			[ 'page', 'pagelinks' ],

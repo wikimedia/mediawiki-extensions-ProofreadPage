@@ -108,6 +108,10 @@ class ProofreadPageInit {
 		return true;
 	}
 
+	/**
+	 * @param string $key
+	 * @param int $id
+	 */
 	private static function createNamespaceAliases( $key, $id ) {
 		global $wgNamespaceAliases;
 

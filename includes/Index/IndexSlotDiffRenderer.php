@@ -78,6 +78,12 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 		return $diff;
 	}
 
+	/**
+	 * @param Title|null $oldTitle
+	 * @param Title|null $newTitle
+	 * @return string
+	 *
+	 */
 	private function createRedirectionDiff( Title $oldTitle = null, Title $newTitle = null ) {
 		$old = ( $oldTitle === null ) ? '' : $oldTitle->getFullText();
 		$new = ( $newTitle === null ) ? '' : $newTitle->getFullText();
@@ -86,6 +92,11 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 		);
 	}
 
+	/**
+	 * @param IndexContent $old
+	 * @param IndexContent $new
+	 * @return string
+	 */
 	private function createIndexContentDiff( IndexContent $old, IndexContent $new ) {
 		$oldCustomFields = $this->customIndexFieldsParser->parseCustomIndexFields( $old );
 		$newCustomFields = $this->customIndexFieldsParser->parseCustomIndexFields( $new );
@@ -108,6 +119,12 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 		return $diff;
 	}
 
+	/**
+	 * @param string $oldText
+	 * @param string $newText
+	 * @param string $header
+	 * @return string
+	 */
 	private function createTextDiffOutput( $oldText, $newText, $header ) {
 		$diff = $this->wikitextSlotDiffRenderer->getDiff(
 			new WikitextContent( $oldText ),

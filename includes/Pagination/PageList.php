@@ -84,10 +84,10 @@ class PageList {
 					|| $param == PageNumber::DISPLAY_FOLIOROMAN ) {
 
 					$folioStart = $this->getRangeStart( $num );
-					$displayedpageNumber = $folioStart - $offset
-						+ (int)( ( $pageNumber - $folioStart ) / 2 );
+					$displayedpageNumber = (int)$folioStart - $offset
+						+ (int)( ( $pageNumber - (int)$folioStart ) / 2 );
 
-					$isRecto = ( $pageNumber - $folioStart ) % 2 === 0;
+					$isRecto = ( $pageNumber - (int)$folioStart ) % 2 === 0;
 				}
 			}
 		}
@@ -115,6 +115,11 @@ class PageList {
 				|| ( $m[3] === 'odd' && $number % 2 === 1 ) );
 	}
 
+	/**
+	 * @param string $range
+	 * @return string
+	 * @throws RuntimeException
+	 */
 	private function getRangeStart( $range ) {
 		if ( is_numeric( $range ) ) {
 			return $range;
