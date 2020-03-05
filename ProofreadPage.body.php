@@ -196,7 +196,7 @@ class ProofreadPage {
 	public static function onImageOpenShowImageInlineBefore(
 		ImagePage $imgpage, OutputPage $out
 	) {
-		$image = $imgpage->getFile();
+		$image = $imgpage->getPage()->getFile();
 		if ( !$image->isMultipage() ) {
 			return;
 		}
@@ -237,9 +237,7 @@ class ProofreadPage {
 		if ( $indexTitle !== null ) {
 			$indexTitle->invalidateCache();
 			$index = WikiPage::factory( $indexTitle );
-			if ( $index ) {
-				self::updatePrIndex( $index, $deleted ? $title : null );
-			}
+			self::updatePrIndex( $index, $deleted ? $title : null );
 		}
 	}
 
@@ -316,8 +314,7 @@ class ProofreadPage {
 	public static function onArticleUndelete( Title $title, $create, $comment, $oldPageId ) {
 		// Process Index restoration.
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
-			$index = new Article( $title );
-			self::updatePrIndex( $index );
+			self::updatePrIndex( WikiPage::factory( $title ) );
 		// Process Page restoration.
 		} elseif ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			self::updateIndexOfPage( $title );
@@ -363,10 +360,7 @@ class ProofreadPage {
 			}
 		} elseif ( $nt->inNamespace( self::getIndexNamespaceId() ) ) {
 			// Update index data.
-			$wikipage = WikiPage::factory( $nt );
-			if ( $wikipage ) {
-				self::updatePrIndex( $wikipage );
-			}
+			self::updatePrIndex( WikiPage::factory( $nt ) );
 		}
 	}
 
@@ -384,13 +378,12 @@ class ProofreadPage {
 
 	/**
 	 * Update the pr_index entry of an article
-	 * @param Page $index
+	 * @param WikiPage $wikiPage
 	 * @param Title|null $deletedPage
-	 * @suppress PhanUndeclaredMethod Page interface doesn't declare any method
 	 */
-	public static function updatePrIndex( Page $index, $deletedPage = null ) {
-		$indexTitle = $index->getTitle();
-		$indexId = $index->getId();
+	private static function updatePrIndex( WikiPage $wikiPage, $deletedPage = null ) {
+		$indexTitle = $wikiPage->getTitle();
+		$indexId = $wikiPage->getId();
 
 		// read the list of pages
 		$pages = [];
