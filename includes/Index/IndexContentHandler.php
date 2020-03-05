@@ -142,7 +142,9 @@ class IndexContentHandler extends TextContentHandler {
 					$value = $this->parser->mStripState->unstripBoth(
 						$frame->expand( $value, PPFrame::RECOVER_ORIG )
 					);
-					if ( substr( $value, -1 ) === "\n" ) { // We strip one "\n"
+
+					if ( substr( $value, -1 ) === "\n" ) {
+						// We strip one "\n"
 						$value = substr( $value, 0, -1 );
 					}
 					$customFieldsValues[$varName] = new WikitextContent( $value );

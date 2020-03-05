@@ -64,7 +64,8 @@ abstract class Pagination implements Iterator {
 	 * @inheritDoc
 	 */
 	public function rewind() {
-		$this->position = 1; // pages numbers starts with 1
+		// pages numbers starts with 1
+		$this->position = 1;
 	}
 
 	/**

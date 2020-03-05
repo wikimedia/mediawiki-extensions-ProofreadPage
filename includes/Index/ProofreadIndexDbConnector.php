@@ -41,7 +41,8 @@ class ProofreadIndexDbConnector {
 		$n3 = $x->pr_q3;
 		$n4 = $x->pr_q4;
 
-		if ( isset( $article->new_q ) ) { // new_q is undefined in parser tests
+		if ( isset( $article->new_q ) ) {
+			// new_q is undefined in parser tests
 			switch ( $article->new_q ) {
 				case 0:
 					$n0++;
@@ -60,7 +61,8 @@ class ProofreadIndexDbConnector {
 					break;
 			}
 		}
-		if ( isset( $article->old_q ) ) { // old_q is undefined in parser tests
+		if ( isset( $article->old_q ) ) {
+			// old_q is undefined in parser tests
 			switch ( $article->old_q ) {
 				case 0:
 					$n0--;

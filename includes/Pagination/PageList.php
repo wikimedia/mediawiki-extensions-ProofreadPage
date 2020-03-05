@@ -49,7 +49,8 @@ class PageList {
 	 * @return PageNumber
 	 */
 	private function buildNumber( $pageNumber ) {
-		$mode = PageNumber::DISPLAY_NORMAL; // default mode
+		// default mode
+		$mode = PageNumber::DISPLAY_NORMAL;
 		$offset = 0;
 		$displayedpageNumber = '';
 		$isEmpty = false;
