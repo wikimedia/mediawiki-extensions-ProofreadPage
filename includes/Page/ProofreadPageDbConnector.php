@@ -21,7 +21,7 @@
 
 namespace ProofreadPage\Page;
 
-use ProofreadPage;
+use ProofreadPage\ProofreadPage;
 
 class ProofreadPageDbConnector {
 

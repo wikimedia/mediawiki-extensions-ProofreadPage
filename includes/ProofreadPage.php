@@ -19,18 +19,32 @@
  * @ingroup ProofreadPage
  */
 
+namespace ProofreadPage;
+
+use DatabaseUpdater;
+use FixProofreadIndexPagesContentModel;
+use FixProofreadPagePagesContentModel;
+use IContextSource;
+use ImagePage;
 use MediaWiki\MediaWikiServices;
-use ProofreadPage\Context;
-use ProofreadPage\FileNotFoundException;
+use MovePageForm;
+use OutOfBoundsException;
+use OutputPage;
+use Parser;
+use ParserOutput;
 use ProofreadPage\Index\ProofreadIndexDbConnector;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Page\ProofreadPageDbConnector;
-use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\Parser\PagelistTagParser;
 use ProofreadPage\Parser\PagequalityTagParser;
 use ProofreadPage\Parser\PagesTagParser;
-use ProofreadPage\ProofreadPageInit;
+use RequestContext;
+use Skin;
+use SkinTemplate;
+use Title;
+use User;
+use WikiPage;
 
 /*
  @todo :
@@ -122,10 +136,12 @@ class ProofreadPage {
 		$parser->setHook( 'pages', function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
 			$tagParser = new PagesTagParser( $parser, $context );
+			// @phan-suppress-next-line SecurityCheck-XSS
 			return $tagParser->render( $args );
 		} );
 		$parser->setHook( 'pagequality', function ( $input, array $args, Parser $parser ) {
 			$tagParser = new PagequalityTagParser();
+			// @phan-suppress-next-line SecurityCheck-XSS
 			return $tagParser->render( $args );
 		} );
 	}
@@ -606,7 +622,7 @@ class ProofreadPage {
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		global $wgContentHandlerUseDB;
 
-		$dir = __DIR__ . '/sql/';
+		$dir = __DIR__ . '/../sql/';
 
 		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql' );
 
@@ -791,7 +807,7 @@ class ProofreadPage {
 	 */
 	public static function onRegistration() {
 		// L10n
-		include_once __DIR__ . '/ProofreadPage.namespaces.php';
+		include_once __DIR__ . '/../ProofreadPage.namespaces.php';
 
 		// Content handler
 		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );

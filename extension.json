@@ -52,7 +52,6 @@
 		"ProofreadPage\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"ProofreadPage": "ProofreadPage.body.php",
 		"FixProofreadPagePagesContentModel": "maintenance/fixProofreadPagePagesContentModel.php",
 		"FixProofreadIndexPagesContentModel": "maintenance/fixProofreadIndexPagesContentModel.php"
 	},
@@ -249,26 +248,26 @@
 	},
 	"Hooks": {
 		"SetupAfterCache": "ProofreadPage\\ProofreadPageInit::initNamespaces",
-		"ParserFirstCallInit": "ProofreadPage::onParserFirstCallInit",
-		"BeforePageDisplay": "ProofreadPage::onBeforePageDisplay",
-		"GetLinkColours": "ProofreadPage::onGetLinkColours",
-		"ImageOpenShowImageInlineBefore": "ProofreadPage::onImageOpenShowImageInlineBefore",
-		"PageContentSaveComplete": "ProofreadPage::onPageContentSaveComplete",
-		"ArticleDelete": "ProofreadPage::onArticleDelete",
-		"ArticleUndelete": "ProofreadPage::onArticleUndelete",
-		"ArticlePurge": "ProofreadPage::onArticlePurge",
-		"SpecialMovepageAfterMove": "ProofreadPage::onSpecialMovepageAfterMove",
-		"LoadExtensionSchemaUpdates": "ProofreadPage::onLoadExtensionSchemaUpdates",
-		"OutputPageParserOutput": "ProofreadPage::onOutputPageParserOutput",
-		"wgQueryPages": "ProofreadPage::onwgQueryPages",
-		"GetPreferences": "ProofreadPage::onGetPreferences",
-		"CanonicalNamespaces": "ProofreadPage::onCanonicalNamespaces",
-		"SkinTemplateNavigation": "ProofreadPage::onSkinTemplateNavigation",
-		"ContentHandlerDefaultModelFor": "ProofreadPage::onContentHandlerDefaultModelFor",
-		"EditFormPreloadText": "ProofreadPage::onEditFormPreloadText",
-		"ParserTestTables": "ProofreadPage::onParserTestTables",
-		"InfoAction": "ProofreadPage::onInfoAction",
-		"SkinMinervaDefaultModules": "ProofreadPage::onSkinMinervaDefaultModules"
+		"ParserFirstCallInit": "ProofreadPage\\ProofreadPage::onParserFirstCallInit",
+		"BeforePageDisplay": "ProofreadPage\\ProofreadPage::onBeforePageDisplay",
+		"GetLinkColours": "ProofreadPage\\ProofreadPage::onGetLinkColours",
+		"ImageOpenShowImageInlineBefore": "ProofreadPage\\ProofreadPage::onImageOpenShowImageInlineBefore",
+		"PageContentSaveComplete": "ProofreadPage\\ProofreadPage::onPageContentSaveComplete",
+		"ArticleDelete": "ProofreadPage\\ProofreadPage::onArticleDelete",
+		"ArticleUndelete": "ProofreadPage\\ProofreadPage::onArticleUndelete",
+		"ArticlePurge": "ProofreadPage\\ProofreadPage::onArticlePurge",
+		"SpecialMovepageAfterMove": "ProofreadPage\\ProofreadPage::onSpecialMovepageAfterMove",
+		"LoadExtensionSchemaUpdates": "ProofreadPage\\ProofreadPage::onLoadExtensionSchemaUpdates",
+		"OutputPageParserOutput": "ProofreadPage\\ProofreadPage::onOutputPageParserOutput",
+		"wgQueryPages": "ProofreadPage\\ProofreadPage::onwgQueryPages",
+		"GetPreferences": "ProofreadPage\\ProofreadPage::onGetPreferences",
+		"CanonicalNamespaces": "ProofreadPage\\ProofreadPage::onCanonicalNamespaces",
+		"SkinTemplateNavigation": "ProofreadPage\\ProofreadPage::onSkinTemplateNavigation",
+		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",
+		"EditFormPreloadText": "ProofreadPage\\ProofreadPage::onEditFormPreloadText",
+		"ParserTestTables": "ProofreadPage\\ProofreadPage::onParserTestTables",
+		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction",
+		"SkinMinervaDefaultModules": "ProofreadPage\\ProofreadPage::onSkinMinervaDefaultModules"
 	},
 	"attributes": {
 		"VisualEditor": {
@@ -304,7 +303,7 @@
 			"description": "Placeholder to mark the position of the page separator"
 		}
 	},
-	"callback": "ProofreadPage::onRegistration",
+	"callback": "ProofreadPage\\ProofreadPage::onRegistration",
 	"load_composer_autoloader": true,
 	"manifest_version": 2
 }

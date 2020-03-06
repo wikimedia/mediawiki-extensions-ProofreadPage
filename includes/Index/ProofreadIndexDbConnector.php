@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use ProofreadPage;
+use ProofreadPage\ProofreadPage;
 use WikiPage;
 
 /**
