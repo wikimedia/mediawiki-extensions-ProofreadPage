@@ -15,7 +15,7 @@ class IndexEditAction extends EditAction {
 	 * @see FormlessAction:show
 	 */
 	public function show() {
-		$editor = new EditIndexPage( $this->page );
+		$editor = new EditIndexPage( $this->getArticle() );
 		$editor->setContextTitle( $this->getTitle() );
 		$editor->edit();
 	}

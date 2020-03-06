@@ -18,21 +18,22 @@ class PageViewAction extends ViewAction {
 	 */
 	public function show() {
 		$out = $this->getOutput();
-		$title = $this->page->getTitle();
+		$title = $this->getTitle();
+
 		if ( !$title->inNamespace( Context::getDefaultContext()->getPageNamespaceId() ) ||
 			$out->isPrintable() || $this->getContext()->getRequest()->getCheck( 'diff' )
 		) {
-			$this->page->view();
+			$this->getArticle()->view();
 
 			return;
 		}
 
-		$wikiPage = $this->page->getPage();
+		$wikiPage = $this->getWikiPage();
 		$content = $wikiPage->getContent( RevisionRecord::FOR_THIS_USER, $this->getUser() );
 		if ( $content === null || $content->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ||
 			$content->isRedirect()
 		) {
-			$this->page->view();
+			$this->getArticle()->view();
 
 			return;
 		}
@@ -40,7 +41,7 @@ class PageViewAction extends ViewAction {
 
 		// render HTML
 		$out->addHTML( $pageDisplayHandler->buildPageContainerBegin() );
-		$this->page->view();
+		$this->getArticle()->view();
 		$out->addHTML( $pageDisplayHandler->buildPageContainerEnd( $title ) );
 
 		// add modules

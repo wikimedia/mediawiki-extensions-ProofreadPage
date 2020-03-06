@@ -16,7 +16,10 @@ class PageSubmitAction extends SubmitAction {
 	 * @see FormlessAction:show
 	 */
 	public function show() {
-		$editor = new EditPagePage( $this->page, Context::getDefaultContext() );
+		$editor = new EditPagePage(
+			$this->getArticle(),
+			Context::getDefaultContext()
+		);
 		$editor->setContextTitle( $this->getTitle() );
 		$editor->edit();
 	}
