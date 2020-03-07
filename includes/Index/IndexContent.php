@@ -323,7 +323,9 @@ class IndexContent extends TextContent {
 				$contentHandler = $this->getContentHandler();
 				// @phan-suppress-next-line PhanUndeclaredMethod Phan doesn't understand the hint above
 				$wikitext = $contentHandler->getParser()->preprocess(
-					$wikitext, $title, new ParserOptions()
+					$wikitext,
+					$title,
+					ParserOptions::newFromAnon()
 				);
 			}
 			$links = array_merge(
