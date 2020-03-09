@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"1917 Ekim Devrimi"
+		]
+	},
+	"apihelp-query+proofread-description": "Pelê deyaye weziyeta vurnayışi ra peyd şırên melumati",
+	"apihelp-query+proofread-summary": "Pelê ke asenê, weziyetê vurnayışê dinano rocane sero melumat peyser ano.",
+	"apihelp-query+proofread-example-1": "Peyd şo 250 ca nemayê weziyeta pere",
+	"apihelp-query+proofreadinfo-description": "Derganiya heqa pela vurnayışi melumati çerx keno",
+	"apihelp-query+proofreadinfo-summary": "Sazkerdışê derganiya ProofreadPage sero melumat peyser biya.",
+	"apihelp-query+proofreadinfo-param-prop": "Kamci xısusiyeta timar kerdışi şiyayış:\n;caynaman:heqdê cı malumat  \"{{ns:Page}}\" u \"{{ns:Index}}\" namey estê. \n;sewiya ya qeliteyın:Listeya sewiyanê vurnayışiya",
+	"apihelp-query+proofreadinfo-example-1": "Peyser şo hesıbyaye malumati",
+	"apihelp-query+proofreadinfo-example-3": "Peyser şırên malumata caê naman"
+}
