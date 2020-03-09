@@ -119,7 +119,8 @@ class SpecialProofreadPages extends QueryPage {
 
 	public function preprocessResults( $dbr, $res ) {
 		if ( $this->addOne !== null ) {
-			$this->numRows++; // there is a deleted item
+			// there is a deleted item
+			$this->numRows++;
 		}
 	}
 

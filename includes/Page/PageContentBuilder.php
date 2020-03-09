@@ -56,7 +56,8 @@ class PageContentBuilder {
 					->getFormattedPageNumber( $pageTitle->getPageLanguage() );
 			} catch ( PageNotInPaginationException $e ) {
 			} catch ( OutOfBoundsException $e ) {
-			} // should not happen
+				// should not happen
+			}
 
 			$indexFieldsParser = $this->context->getCustomIndexFieldsParser();
 			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );

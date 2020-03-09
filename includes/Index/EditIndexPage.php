@@ -35,7 +35,8 @@ class EditIndexPage extends EditPage {
 	 * @inheritDoc
 	 */
 	protected function isSectionEditSupported() {
-		return false; // sections and forms don't mix
+		// sections and forms don't mix
+		return false;
 	}
 
 	/**

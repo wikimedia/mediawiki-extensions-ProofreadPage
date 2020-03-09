@@ -45,14 +45,17 @@ class ProofreadPageInit {
 			if ( !isset( $wgExtraNamespaces[$wgProofreadPageNamespaceIds[$key]] ) ) {
 				self::createNamespace( $wgProofreadPageNamespaceIds[$key], $key );
 			}
-		} else { // try to find if a namespace with a known name is set (for backward compatibility)
+		} else {
+			 // try to find if a namespace with a known name is set (for backward compatibility)
 			$id = self::getNamespaceIdForDefaultName( $key );
 			if ( $id !== false ) {
 				$wgProofreadPageNamespaceIds[$key] = $id;
 			} else {
+
 				if ( self::createNamespace( self::$defaultNamespaceIds[$key], $key ) ) {
 					$wgProofreadPageNamespaceIds[$key] = self::$defaultNamespaceIds[$key];
-				} // else: the relevant error message is output by getNamespaceId
+				}
+				// else: the relevant error message is output by getNamespaceId
 			}
 		}
 

@@ -697,8 +697,9 @@ class ProofreadPage {
 						'title' => $prevText
 					];
 				}
+				// if the previous page does not exist
 				catch ( OutOfBoundsException $e ) {
-				} // if the previous page does not exits
+				}
 
 				try {
 					$nextTitle  = $pagination->getPageTitle( $pageNumber + 1 );
@@ -711,8 +712,9 @@ class ProofreadPage {
 						'title' => $nextText
 					];
 				}
+				// if the next page does not exist
 				catch ( OutOfBoundsException $e ) {
-				} // if the next page does not exits
+				}
 			} catch ( PageNotInPaginationException $e ) {
 			}
 

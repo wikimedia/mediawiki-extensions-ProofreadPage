@@ -226,7 +226,8 @@ class PageContentHandler extends TextContentHandler {
 			} elseif ( $cleanBody ) {
 				list( $header, $body ) = $this->cleanDeprecatedWrappers( $header, $body );
 			} else {
-				list( $header, /*unused*/ ) = $this->cleanDeprecatedWrappers( $header, '' );
+				// notice that second parameter is unused
+				list( $header, ) = $this->cleanDeprecatedWrappers( $header, '' );
 			}
 		}
 

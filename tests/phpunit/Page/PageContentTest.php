@@ -176,7 +176,8 @@ class PageContentTest extends ProofreadPageTestCase {
 				self::newContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" ),
 				self::newContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" )
 			],
-			[ // rtrim
+			[
+				// rtrim
 				self::newContent( '\n ', 'foo \n ', '  ' ),
 				self::newContent( '\n', 'foo \n', '' )
 			],
@@ -265,8 +266,8 @@ class PageContentTest extends ProofreadPageTestCase {
 
 		$content = self::newContent( '', 'RRRR' );
 		$newContent = $content->updateRedirect( $title );
-		$this->assertSame( $content, $newContent ); // no update
-
+		// no update
+		$this->assertSame( $content, $newContent );
 		$content = self::newContent( '', '#REDIRECT [[Test]]' );
 		$newContent = $content->updateRedirect( $title );
 		$this->assertTrue( $title->equals( $newContent->getRedirectTarget() ) );
