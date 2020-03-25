@@ -19,6 +19,8 @@
  * @ingroup ProofreadPage
  */
 
+use ProofreadPage\ProofreadPage;
+
 $basePath = getenv( 'MW_INSTALL_PATH' ) !== false
 	? getenv( 'MW_INSTALL_PATH' )
 	: __DIR__ . '/../../..';

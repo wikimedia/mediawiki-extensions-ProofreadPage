@@ -5,7 +5,6 @@ $cfg = require __DIR__ . '/../vendor/mediawiki/mediawiki-phan-config/src/config.
 $cfg['file_list'] = array_merge(
 	$cfg['file_list'],
 	[
-		'ProofreadPage.body.php',
 		'ProofreadPage.namespaces.php',
 	]
 );

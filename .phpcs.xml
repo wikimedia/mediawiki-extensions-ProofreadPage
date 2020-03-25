@@ -2,7 +2,6 @@
 <ruleset name="ProofreadPage">
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
-		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 	</rule>
 	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">
 		<properties>
