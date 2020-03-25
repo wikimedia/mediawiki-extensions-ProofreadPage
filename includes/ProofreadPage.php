@@ -620,17 +620,13 @@ class ProofreadPage {
 	 * @param DatabaseUpdater $updater
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		global $wgContentHandlerUseDB;
-
 		$dir = __DIR__ . '/../sql/';
 
 		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql' );
 
 		// fix issue with content type hardcoded in database
-		if ( isset( $wgContentHandlerUseDB ) && $wgContentHandlerUseDB ) {
-			$updater->addPostDatabaseUpdateMaintenance( FixProofreadPagePagesContentModel::class );
-			$updater->addPostDatabaseUpdateMaintenance( FixProofreadIndexPagesContentModel::class );
-		}
+		$updater->addPostDatabaseUpdateMaintenance( FixProofreadPagePagesContentModel::class );
+		$updater->addPostDatabaseUpdateMaintenance( FixProofreadIndexPagesContentModel::class );
 	}
 
 	/**
