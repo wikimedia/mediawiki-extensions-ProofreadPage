@@ -449,6 +449,14 @@ $proofreadPageNamespacesNames['th'] = [
 	'index_talk' => 'คุยเรื่องดัชนี'
 ];
 
+/** Turkish (Türkçe) */
+$proofreadPageNamespacesNames['tr'] = [
+	'page' => 'Dizin',
+	'page_talk' => 'Dizin_tartışma',
+	'index' => 'Sayfa',
+	'index_talk' => 'Sayfa_tartışma'
+];
+
 /** Ukrainian (украї́нська) */
 $proofreadPageNamespacesNames['uk'] = [
 	'page' => 'Сторінка',

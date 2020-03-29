@@ -168,8 +168,8 @@ $specialPageAliases['sv'] = [
 
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = [
-	'IndexPages' => [ 'SayfaEndeksle' ],
-	'PagesWithoutScans' => [ 'TaramasızSayfalar' ],
+	'IndexPages' => [ 'DizinSayfaları', 'SayfaEndeksle' ],
+	'PagesWithoutScans' => [ 'TaranmamışSayfalar', 'TaramasızSayfalar' ],
 ];
 
 /** Venetian (vèneto) */
