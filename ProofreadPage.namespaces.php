@@ -451,10 +451,10 @@ $proofreadPageNamespacesNames['th'] = [
 
 /** Turkish (Türkçe) */
 $proofreadPageNamespacesNames['tr'] = [
-	'page' => 'Dizin',
-	'page_talk' => 'Dizin_tartışma',
-	'index' => 'Sayfa',
-	'index_talk' => 'Sayfa_tartışma'
+	'page' => 'Sayfa',
+	'page_talk' => 'Sayfa_tartışma',
+	'index' => 'Dizin',
+	'index_talk' => 'Dizin_tartışma'
 ];
 
 /** Ukrainian (украї́нська) */
