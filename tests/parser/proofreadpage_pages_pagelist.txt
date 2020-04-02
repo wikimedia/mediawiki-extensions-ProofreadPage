@@ -1,41 +1,43 @@
+!! Version 2
+
 !! hooks
 pages
 pagelist
 !! endhooks
 
-!!article
+!! article
 MediaWiki:Proofreadpage index template
-!!text
+!! text
 Title: {{{Title}}}
 Author: {{{Author}}}
 Pages: {{{Pages}}}
 TOC: {{{TOC}}}
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 MediaWiki:Proofreadpage pagenum template
-!!text
+!! text
 [[{{{page}}}|{{{num}}}]]
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 MediaWiki:Proofreadpage header template
-!!text
+!! text
 {{{title}}} -- {{{author}}}
 {{{from}}} -- {{{to}}}
 {{{prev}}} -- {{{next}}}
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Index TOC
-!!text
+!! text
 * [[Test/Chapter 2|Chapter 2]]
 * [[Test/Chapter 3|Chapter 3]]
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Index:Test
-!!text
+!! text
 {{:MediaWiki:Proofreadpage_index_template
 |Title=Title
 |Pages=[[Page:Test 1.jpg|TOC]] [[Page:Test 2.tiff|1]] [[Page:Test 3.png|2]]
@@ -44,11 +46,11 @@ Index:Test
 * [[Test/Chapter 1]]
 {{:Index TOC}}
 }}
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Index:LoremIpsum.djvu
-!!text
+!! text
 {{:MediaWiki:Proofreadpage_index_template
 |Title=Lorem Ipsum
 |Pages=<pagelist 1to1=roman 2to2=highroman to=2/> <pagelist from=3 3=1 5=empty />
@@ -57,108 +59,108 @@ Index:LoremIpsum.djvu
 * [[Test/Chapter 2|Chapter 2]]
 * [[Test/Chapter 3|Chapter 3]]
 }}
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Index:TestSep
-!!text
+!! text
 {{:MediaWiki:Proofreadpage_index_template
 |Title=Title
 |Pages=[[Page:TestSep 1.jpg|1]] [[Page:TestSep 2.jpg|2]] [[Page:TestSep 3.jpg|3]] [[Page:TestSep 4.jpg|4]]
 |Author=[[Author:Me]]
 |TOC=
 }}
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:Test 1.jpg
-!!text
+!! text
 Test 1
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:Test 2.tiff
-!!text
+!! text
 Test 2
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:Test 3.png
-!!text
+!! text
 <nowiki />
 
 Test 3
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:LoremIpsum.djvu/1
-!!text
+!! text
 Page 1
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:LoremIpsum.djvu/2
-!!text
+!! text
 <nowiki />
 
 Page 2
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:LoremIpsum.djvu/3
-!!text
+!! text
 Page 3
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:LoremIpsum.djvu/4
-!!text
+!! text
 Page 4
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:TestSep 1.jpg
-!!text
+!! text
 The first page must be connect-
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:TestSep 2.jpg
-!!text
+!! text
 ed with the second
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:TestSep 3.jpg
-!!text
+!! text
 but the third and
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:TestSep 4.jpg
-!!text
+!! text
 the fourth does not.
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Author:Me
-!!text
-!!endarticle
+!! text
+!! endarticle
 
-!!article
+!! article
 Test/Chapter 1
-!!text
-!!endarticle
+!! text
+!! endarticle
 
-!!article
+!! article
 Test/Chapter 2
-!!text
-!!endarticle
+!! text
+!! endarticle
 
-!!article
+!! article
 Test/Chapter 3
-!!text
-!!endarticle
+!! text
+!! endarticle
 
 !! test
 pages: without index
@@ -279,43 +281,43 @@ pages
 section
 !! endhooks
 
-!!article
+!! article
 Index:TestSection
-!!text
+!! text
 {{:MediaWiki:Proofreadpage_index_template
 |Pages=[[Page:TestSection 1|TOC]] [[Page:TestSection 2|1]] [[Page:TestSection 3|2]]
 }}
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:TestSection 1
-!!text
+!! text
 Test 10
 <section begin="Foo"/>
 Test 11
 <section end="Foo"/>
 Test 12
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:TestSection 2
-!!text
+!! text
 Test 20
 <section begin="Foo"/>
 Test 21
 <section end="Foo"/>
 Test 22
-!!endarticle
+!! endarticle
 
-!!article
+!! article
 Page:TestSection 3
-!!text
+!! text
 Test 30
 <section begin="Bar"/>
 Test 31
 <section end="Bar"/>
 Test 32
-!!endarticle
+!! endarticle
 
 !! test
 pages: fromsection
