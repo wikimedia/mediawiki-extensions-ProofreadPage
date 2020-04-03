@@ -84,7 +84,7 @@ class ProofreadIndexDbConnector {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->replace(
 			'pr_index',
-			[ 'pr_page_id' ],
+			'pr_page_id',
 			[
 				'pr_page_id' => $indexId,
 				'pr_count' => $n,
@@ -111,7 +111,7 @@ class ProofreadIndexDbConnector {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->replace(
 			'pr_index',
-			[ 'pr_page_id' ],
+			'pr_page_id',
 			[
 				'pr_page_id' => $indexId,
 				'pr_count' => $n,
