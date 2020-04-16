@@ -27,7 +27,7 @@
 	"proofreadpage_nosuch_index": "Hata: böyle bir dizin yok",
 	"proofreadpage_nosuch_file": "Hata: Böyle bir dosya yok",
 	"proofreadpage_indexdupetext": "Bir dizin sayfasında, sayfalar birden fazla listelenemez.",
-	"proofreadpage_nologin": "Giriş yapılmamış",
+	"proofreadpage_nologin": "Oturum açık değil",
 	"proofreadpage_nologintext": "Sayfaların düzeltme durumunu değiştirmek için [[Special:UserLogin|giriş yapmış]] olmalısınız.",
 	"proofreadpage_notallowedtext": "Bu sayfanın düzeltme durumunu değiştirmenize izin verilmiyor.",
 	"proofreadpage_dataconfig_badformatted": "Veri yapılandırmasında hata",
