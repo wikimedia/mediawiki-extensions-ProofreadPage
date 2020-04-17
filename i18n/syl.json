@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"এম আবু সাঈদ"
+		]
+	},
+	"nstab-page": "ꠙꠣꠔꠣ",
+	"nstab-index": "ꠡꠥꠌꠤ",
+	"indexpages": "ꠡꠥꠌꠤ ꠙꠣꠔꠣꠞ ꠟꠤꠍ꠆ꠐ",
+	"pageswithoutscans": "ꠍ꠆ꠇꠦꠘ ꠍꠣꠠꠣ ꠙꠣꠔꠣ",
+	"proofreadpage_image": "ꠍꠛꠤ",
+	"proofreadpage_index": "ꠡꠥꠌꠤ",
+	"proofreadpage_index_expected": "ꠜꠥꠟ: ꠡꠥꠌꠤ ꠌꠣꠁꠀꠞ",
+	"proofreadpage_nosuch_index": "ꠜꠥꠟ: ꠁꠎꠣꠔ ꠡꠥꠌꠤ ꠘꠣꠁ",
+	"proofreadpage_nosuch_file": "ꠜꠥꠟ: ꠁꠎꠣꠔ ꠚꠣꠁꠟ ꠘꠣꠁ",
+	"proofreadpage_nologin": "ꠟꠉ ꠁꠘ ꠇꠞꠣ ꠘꠣꠄ",
+	"proofreadpage_notallowedtext": "ꠀꠙꠘꠦ ꠁ ꠙꠣꠔꠣꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒꠤꠋ ꠃꠛꠍ꠆ꠔ ꠛꠖꠟꠣꠁꠔꠣ ꠙꠣꠞꠔꠣ ꠘꠣꠣꠄ",
+	"proofreadpage_number_expected": "ꠜꠥꠟ: ꠡꠋꠇꠣ ꠝꠣꠘ ꠌꠣꠃꠀ ꠃꠞ",
+	"proofreadpage_interval_too_large": "ꠜꠥꠟ: ꠛꠦꠡꠤ ꠛꠠ ꠚꠣꠈ",
+	"proofreadpage_nextpage": "ꠛꠣꠖꠧꠞ ꠙꠣꠔꠣ",
+	"proofreadpage_prevpage": "ꠀꠉꠧꠞ ꠙꠣꠔꠣ",
+	"proofreadpage_quality0_category": "ꠟꠦꠈꠣ ꠍꠣꠠꠣ",
+	"proofreadpage_quality1_category": "ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠘꠣꠄ",
+	"proofreadpage_quality2_category": "ꠡꠝꠡ꠆ꠡꠣ ꠀꠍꠦ",
+	"proofreadpage_quality3_category": "ꠙ꠆ꠞꠥꠥꠚꠞꠤꠒ ꠇꠞꠣ",
+	"proofreadpage_quality4_category": "ꠛꠂꠗ ꠀꠍꠦ",
+	"proofreadpage_quality0_summary": "ꠟꠦꠈꠣ ꠍꠣꠠꠣ",
+	"proofreadpage_quality1_summary": "ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠘꠣꠄ",
+	"proofreadpage_quality2_summary": "ꠡꠝꠡ꠆ꠡꠣ ꠀꠍꠦ",
+	"proofreadpage_quality3_summary": "ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠇꠞꠣ",
+	"proofreadpage_quality4_summary": "ꠛꠂꠗ ꠀꠍꠦ",
+	"proofreadpage_source": "ꠃꠔꠡ",
+	"proofreadpage-group-zoom": "ꠎꠥꠝ"
+}
