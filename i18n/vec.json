@@ -62,7 +62,7 @@
 	"proofreadpage_image_message": "Colegamento a la pagina indice",
 	"proofreadpage_page_status": "Qualità de la pagina",
 	"proofreadpage_js_attributes": "Autor Titolo Ano Editor",
-	"proofreadpage_index_attributes": "Autor\nTitolo\nAno|Ano de pubblicazion\nEditor\nFonte\nImagine|Imagine de copertina\nPagine||20\nNote||10",
+	"proofreadpage_index_attributes": "Autor\nTitoło\nAno|Ano de publegasion\nEditor\nFonte\nImàjine|Imàjine de coertina\nPàjine||20\nNote||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pagina|pagine}}",
 	"proofreadpage_specialpage_legend": "Serca in te le pagine de indice",
 	"proofreadpage_specialpage_searcherror": "Eror inte'l motor de riserca",
