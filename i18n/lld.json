@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Asenoner"
+			"Asenoner",
+			"Starladin"
 		]
 	},
 	"nstab-page": "Plata",
@@ -15,5 +16,10 @@
 	"proofreadpage_index_expected": "Fal: n se aspitëssa n index",
 	"proofreadpage_nosuch_index": "Fal: L ne da nia n tel index",
 	"proofreadpage_nosuch_file": "Fal: l ne da nia chësc documënt",
-	"proofreadpage_nologin": "Te ne ies nia culegà"
+	"proofreadpage_nologin": "Te ne ies nia culegà",
+	"proofreadpage_quality0_category": "Zënza test",
+	"proofreadpage_quality1_category": "Da ciaré do",
+	"proofreadpage_quality2_category": "Da ciaré do",
+	"proofreadpage_quality3_category": "Coret",
+	"proofreadpage_quality4_category": "Verifiché"
 }
