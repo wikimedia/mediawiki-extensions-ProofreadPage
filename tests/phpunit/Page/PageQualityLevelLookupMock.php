@@ -13,6 +13,9 @@ class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 
 	private $levelForPage = [];
 
+	/**
+	 * @param array $levelForPage
+	 */
 	public function __construct( $levelForPage ) {
 		$this->levelForPage = $levelForPage;
 	}

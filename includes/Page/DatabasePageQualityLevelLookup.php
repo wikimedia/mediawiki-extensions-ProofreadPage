@@ -26,6 +26,9 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 
 	private $cache = [];
 
+	/**
+	 * @param int $pageNamespaceId
+	 */
 	public function __construct( $pageNamespaceId ) {
 		$this->pageNamespaceId = $pageNamespaceId;
 	}

@@ -12,6 +12,12 @@ use Title;
  * Utility class to extract links for wikitext pages
  */
 class WikitextLinksExtractor {
+
+	/**
+	 * @param string $wikitext unparsed wikitext
+	 * @param int $namespace namespace of the page from which the wikitext was passed
+	 * @return Link[] array of links in the text
+	 */
 	public function getLinksToNamespace( $wikitext, $namespace ) {
 		preg_match_all( '/\[\[(.*?)(\|(.*?)|)\]\]/i', $wikitext, $textLinks, PREG_PATTERN_ORDER );
 		$links = [];

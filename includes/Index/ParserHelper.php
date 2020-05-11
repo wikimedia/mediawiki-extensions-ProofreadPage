@@ -45,6 +45,12 @@ class ParserHelper {
 		return $this->parser->mStripState->unstripBoth( $text );
 	}
 
+	/**
+	 * Fetches unparsed text of a template
+	 * @param Title $title
+	 * @see \Parser::fetchTemplateAndTitle()
+	 * @return array (string|bool, Title)
+	 */
 	public function fetchTemplateTextAndTitle( Title $title ) {
 		return $this->parser->fetchTemplateAndTitle( $title );
 	}

@@ -11,6 +11,9 @@ class IndexContentLookupMock implements IndexContentLookup {
 
 	private $contentForIndex = [];
 
+	/**
+	 * @param array $contentForIndex
+	 */
 	public function __construct( $contentForIndex ) {
 		$this->contentForIndex = $contentForIndex;
 	}

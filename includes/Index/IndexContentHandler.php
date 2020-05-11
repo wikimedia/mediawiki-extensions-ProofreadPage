@@ -39,6 +39,9 @@ class IndexContentHandler extends TextContentHandler {
 	 */
 	private $wikitextLinksExtractor;
 
+	/**
+	 * @inheritDoc
+	 */
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_INDEX ) {
 		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
 		$this->parser = $this->buildParser();
