@@ -99,5 +99,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "होय",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नाही",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "मुद्रितशोधनाचा दर्जा",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "मुद्रितशोधनाचा दर्जा"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "मुद्रितशोधनाचा दर्जा",
+	"proofreadpage-index-field-category-label": "वर्ग",
+	"proofreadpage-index-edit-category-help": "वर्ग लिहिताना ते सुरुवातीला वर्ग:उदाहरण अश्या प्रकारे लिहिले जातात. आणि अनेक वर्ग लिहिताना त्यांमध्ये  \"|\" दिला जातो."
 }
