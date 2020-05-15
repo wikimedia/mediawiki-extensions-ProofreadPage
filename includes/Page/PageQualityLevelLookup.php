@@ -1,4 +1,5 @@
 <?php
+
 namespace ProofreadPage\Page;
 
 use Title;

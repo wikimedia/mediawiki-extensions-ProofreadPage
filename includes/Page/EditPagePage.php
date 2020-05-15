@@ -149,8 +149,14 @@ class EditPagePage extends EditPage {
 	 */
 	public function getCheckboxesWidget( &$tabindex, $checked ) {
 		$checkboxes = parent::getCheckboxesWidget( $tabindex, $checked );
-		$user = $this->context->getUser();
+		if ( $this->isConflict ) {
+			// EditPage::showEditForm() does not call showContentForm() in case of a conflict
+			// because "conflicts can't be resolved […] using the custom edit ui." Don't show the
+			// rest of the custom UI (the quality radio buttons) as well.
+			return $checkboxes;
+		}
 
+		$user = $this->context->getUser();
 		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( $permissionManager->userHasRight( $user, 'pagequality' ) ) {
 			$checkboxes['wpr-pageStatus'] = $this->buildQualityEditWidget( $user, $tabindex );
