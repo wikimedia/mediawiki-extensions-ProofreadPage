@@ -43,7 +43,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	 * @dataProvider buildDefaultContentForPageProvider
 	 */
 	public function testBuildDefaultContentForPageTitle(
-		$pageTitle, $indexTitle = null,
+		$pageTitle, $indexTitle,
 		?IndexContent $indexContent, PageContent $defaultContent
 	) {
 		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), $pageTitle );
