@@ -291,7 +291,7 @@ class SpecialProofreadPages extends QueryPage {
 		$void_cell = $num_void
 			? '<td class="qualitye" style="width:' . $num_void . 'px;"></td>'
 			: '';
-		$textualAlternative = $this->msg( 'proofreadpage-indexquality-alt', $q4, $q3, $q1 );
+		$textualAlternative = $this->msg( 'proofreadpage-indexquality-alt', $q4, $q3, $q1 )->escaped();
 		$qualityOutput = '<table class="pr_quality" title="' . $textualAlternative . '">
 <tr>
 <td class="quality4" style="width:' . $q4 . 'px;"></td>

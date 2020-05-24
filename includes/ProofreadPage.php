@@ -542,7 +542,7 @@ class ProofreadPage {
 		$q4 = $n4 * 100 / $n;
 		$qe = $ne * 100 / $n;
 		$void_cell = $ne ? '<td class="qualitye" style="width:' . $qe . '%;"></td>' : '';
-		$textualAlternative = wfMessage( 'proofreadpage-indexquality-alt', $n4, $n3, $n1 );
+		$textualAlternative = wfMessage( 'proofreadpage-indexquality-alt', $n4, $n3, $n1 )->escaped();
 		$output = '<table class="pr_quality noprint" title="' . $textualAlternative . '">
 <tr>
 <td class="quality4" style="width:' . $q4 . '%;"></td>
