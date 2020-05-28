@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Diki Ananta",
 			"Meursault2004",
 			"NoiX180"
 		]
@@ -18,7 +19,7 @@
 	"proofreadpage_index_expected": "Masalah: Butuh indhèks",
 	"proofreadpage_nosuch_index": "Masalah: Ora ana indhèks kaya mangkono",
 	"proofreadpage_nosuch_file": "Masalah: Ora ana barkas kaya mangkono",
-	"proofreadpage_indexdupetext": "Kaca ora bisa didaptar punjul saka siji nèng kaca indeks.",
+	"proofreadpage_indexdupetext": "Kaca ora bisa didhaptar punjul saka siji nèng kaca indhèks.",
 	"proofreadpage_nologin": "Durung mlebu log",
 	"proofreadpage_nologintext": "Panjenengan kudu [[Special:UserLogin|mlebu log]] kanggo ngowah status korèksi kaca.",
 	"proofreadpage_notallowedtext": "Panjenengan ora dililakaké ngowah status korèksi kaca iki.",
@@ -48,7 +49,7 @@
 	"proofreadpage_quality2_message": "Ana masalah nalika ngorèksi kaca iki",
 	"proofreadpage_quality3_message": "Kaca iki wis dikorèksi",
 	"proofreadpage_quality4_message": "Kaca iki wis divalidasi",
-	"proofreadpage_index_status": "Status indeks",
+	"proofreadpage_index_status": "Status indhèks",
 	"proofreadpage_index_size": "Cacahing kacak",
 	"proofreadpage_pages_to_validate": "Cacah kaca kang kudu ingabsahan",
 	"proofreadpage_pages_to_proofread_or_validate": "Cacah kaca kang kudu katitiwaca utawa ingabsahan",
@@ -62,7 +63,7 @@
 	"proofreadpage_js_attributes": "Pangripta Sesirah Taun Pangecapan",
 	"proofreadpage_index_attributes": "Pangripta\nIrah-irahan\nTaun|Taun olèhe mbabar\nPanerbit\nSumber\nGambar|Gambar samak\nKaca||20\nCathetan||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|kaca}}",
-	"proofreadpage_specialpage_legend": "Golèk kaca indeks",
+	"proofreadpage_specialpage_legend": "Golèk kaca indhèks",
 	"proofreadpage_specialpage_searcherror": "Masalah ing mesin panggolèk",
 	"proofreadpage_specialpage_searcherrortext": "Mesin panggolèk ora mlaku. Ngapunten sanget.",
 	"proofreadpage_source": "Sumber",
