@@ -141,7 +141,6 @@ class ProofreadPage {
 		} );
 		$parser->setHook( 'pagequality', function ( $input, array $args, Parser $parser ) {
 			$tagParser = new PagequalityTagParser();
-			// @phan-suppress-next-line SecurityCheck-XSS
 			return $tagParser->render( $args );
 		} );
 	}
@@ -445,7 +444,6 @@ class ProofreadPage {
 	 *
 	 * @param OutputPage $out
 	 * @return bool
-	 * @suppress SecurityCheck-SQLInjection See T201806 for more information
 	 */
 	private static function prepareArticle( OutputPage $out ) {
 		$id = $out->getTitle()->getArticleID();
