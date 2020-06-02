@@ -9,6 +9,9 @@
 		"mw": "readonly",
 		"ve": "readonly"
 	},
+	"env": {
+		"commonjs": true
+	},
 	"rules": {
 		"max-len": "off"
 	}

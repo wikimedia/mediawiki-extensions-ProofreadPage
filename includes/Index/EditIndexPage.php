@@ -11,6 +11,7 @@ use OOUI\FieldsetLayout;
 use OOUI\MultilineTextInputWidget;
 use OOUI\TextInputWidget;
 use ProofreadPage\Context;
+use ProofreadPage\OOUI\PagelistInputWidget;
 use Title;
 use WebRequest;
 use WikitextContent;
@@ -113,6 +114,10 @@ class EditIndexPage extends EditPage {
 			$input = new DropdownInputWidget( $inputOptions + [
 				'options' => $options
 			] );
+		} elseif ( $field->isPagelist() ) {
+			$input = new PagelistInputWidget( array_merge( [
+				'templateParameter' => $field->getKey() ], $inputOptions ) );
+			$this->context->getOutput()->addModules( 'ext.proofreadpage.index.pagelist' );
 		} else {
 			if ( $field->getSize() > 1 ) {
 				$input = new MultilineTextInputWidget( $inputOptions + [

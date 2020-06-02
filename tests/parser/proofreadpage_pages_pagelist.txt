@@ -382,7 +382,7 @@ title="Index:Test"
 !! wikitext
 <pagelist />
 !! html
-<p><strong class="error">Error: No such file</strong>
+<p><span class="prp-index-pagelist"><strong class="error">Error: No such file</strong></span>
 </p>
 !! end
 
@@ -393,7 +393,7 @@ title="Index:Thumb.png"
 !! wikitext
 <pagelist />
 !! html
-<p><strong class="error">Error: No such file</strong>
+<p><span class="prp-index-pagelist"><strong class="error">Error: No such file</strong></span>
 </p>
 !! end
 
@@ -441,7 +441,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist from=3 to=2/>
 !! html
-<p><strong class="error">Error: Invalid interval</strong>
+<p><span class="prp-index-pagelist"><strong class="error">Error: Invalid interval</strong></span>
 </p>
 !! end
 
@@ -453,7 +453,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist from=test/>
 !! html
-<p><strong class="error">Error: Numeric value expected</strong>
+<p><span class="prp-index-pagelist"><strong class="error">Error: Numeric value expected</strong></span>
 </p>
 !! end
 
@@ -465,7 +465,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist from=test/>
 !! html
-<p><strong class="error">Error: Numeric value expected</strong>
+<p><span class="prp-index-pagelist"><strong class="error">Error: Numeric value expected</strong></span>
 </p>
 !! end
 

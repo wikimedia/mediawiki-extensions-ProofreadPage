@@ -167,4 +167,12 @@ class CustomIndexField {
 			}
 		}
 	}
+
+	/**
+	 * Say if entry expects a pagelist
+	 * @return bool
+	 */
+	public function isPagelist() {
+		return isset( $this->config['data'] ) && strtolower( $this->config['data'] ) === 'pagelist';
+	}
 }
