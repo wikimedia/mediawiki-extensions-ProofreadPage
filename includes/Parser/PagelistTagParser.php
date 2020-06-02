@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Parser;
 
+use Html;
 use Parser;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
@@ -114,7 +115,9 @@ class PagelistTagParser {
 			$image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1()
 		);
 
-		return trim( $this->parser->recursiveTagParse( $return ) );
+		return Html::rawElement( 'span',
+			[ 'class' => 'prp-index-pagelist' ],
+			trim( $this->parser->recursiveTagParse( $return ) ) );
 	}
 
 	/**
