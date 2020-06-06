@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use User;
 use Wikimedia\IPUtils;
 
@@ -88,11 +88,10 @@ class PageLevel {
 	 * Returns if the change of level to level $to is allowed
 	 *
 	 * @param PageLevel $to
+	 * @param PermissionManager $permissionManager
 	 * @return bool
 	 */
-	public function isChangeAllowed( PageLevel $to ) {
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-
+	public function isChangeAllowed( PageLevel $to, PermissionManager $permissionManager ) {
 		if ( $this->level !== $to->getLevel() && ( $to->getUser() === null ||
 			!$permissionManager->userHasRight( $to->getUser(), 'pagequality' ) )
 		) {

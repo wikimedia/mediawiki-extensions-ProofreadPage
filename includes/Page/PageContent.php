@@ -177,6 +177,7 @@ class PageContent extends TextContent {
 			return Status::newFatal( 'invalid-content-data' );
 		}
 
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 		$oldContent = $this->getContentForRevId( $parentRevId );
 		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
 			// Let's convert it to Page: page content
@@ -185,7 +186,7 @@ class PageContent extends TextContent {
 		if ( !( $oldContent instanceof self ) ) {
 			return Status::newFatal( 'invalid-content-data' );
 		}
-		if ( !$oldContent->getLevel()->isChangeAllowed( $this->getLevel() ) ) {
+		if ( !$oldContent->getLevel()->isChangeAllowed( $this->getLevel(), $permissionManager ) ) {
 			return Status::newFatal( 'proofreadpage_notallowedtext' );
 		}
 

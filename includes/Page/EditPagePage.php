@@ -6,6 +6,7 @@ use Article;
 use EditPage;
 use Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use OOUI;
 use ProofreadPage\Context;
 use User;
@@ -26,6 +27,11 @@ class EditPagePage extends EditPage {
 	private $pageDisplayHandler;
 
 	/**
+	 * @var PermissionManager
+	 */
+	private $permissionManager;
+
+	/**
 	 * @param Article $article
 	 * @param Context $context
 	 */
@@ -34,6 +40,7 @@ class EditPagePage extends EditPage {
 
 		$this->pageContentBuilder = new PageContentBuilder( $this->context, $context );
 		$this->pageDisplayHandler = new PageDisplayHandler( $context );
+		$this->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 	}
 
 	/**
@@ -157,8 +164,7 @@ class EditPagePage extends EditPage {
 		}
 
 		$user = $this->context->getUser();
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-		if ( $permissionManager->userHasRight( $user, 'pagequality' ) ) {
+		if ( $this->permissionManager->userHasRight( $user, 'pagequality' ) ) {
 			$checkboxes['wpr-pageStatus'] = $this->buildQualityEditWidget( $user, $tabindex );
 		}
 
@@ -181,7 +187,7 @@ class EditPagePage extends EditPage {
 		$html = '';
 		for ( $level = 0; $level <= 4; $level++ ) {
 			$newLevel = new PageLevel( $level, $user );
-			if ( !$oldLevel->isChangeAllowed( $newLevel ) ) {
+			if ( !$oldLevel->isChangeAllowed( $newLevel, $this->permissionManager ) ) {
 				continue;
 			}
 

@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Permissions\PermissionManager;
 use ProofreadPageTestCase;
 use User;
 
@@ -10,16 +11,6 @@ use User;
  * @covers \ProofreadPage\Page\PageLevel
  */
 class PageLevelTest extends ProofreadPageTestCase {
-
-	public function setUp() : void {
-		global $wgGroupPermissions;
-		parent::setUp();
-
-		$wgGroupPermissions['*']['pagequality'] = false;
-		$wgGroupPermissions['user']['pagequality'] = true;
-		$wgGroupPermissions['*']['pagequality-admin'] = false;
-		$wgGroupPermissions['sysop']['pagequality-admin'] = true;
-	}
 
 	public function testGetLevel() {
 		$level = new PageLevel( 1, null );
@@ -66,76 +57,88 @@ class PageLevelTest extends ProofreadPageTestCase {
 
 	public function isChangeAllowedProvider() {
 		$testUser = User::newFromName( 'Test' );
-		$testUser->addToDatabase();
-		$testUser->addGroup( 'user' );
 		$test2User = User::newFromName( 'Test2' );
-		$test2User->addToDatabase();
-		$test2User->addGroup( 'user' );
 		$test3User = User::newFromName( 'Test3' );
-		$test3User->addToDatabase();
-		$test3User->addGroup( 'sysop' );
 		$ipUser = User::newFromName( '172.16.254.7', false );
+
+		$rights = [
+			'Test' => [ 'pagequality' ],
+			'Test2' => [ 'pagequality' ],
+			'Test3' => [ 'pagequality', 'pagequality-admin' ],
+		];
 
 		return [
 			[
 				new PageLevel( PageLevel::NOT_PROOFREAD, $testUser ),
 				new PageLevel( PageLevel::NOT_PROOFREAD, $ipUser ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::NOT_PROOFREAD, $testUser ),
 				new PageLevel( PageLevel::NOT_PROOFREAD, $test2User ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::NOT_PROOFREAD, null ),
 				new PageLevel( PageLevel::NOT_PROOFREAD, $ipUser ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::PROOFREAD, null ),
 				new PageLevel( PageLevel::PROOFREAD, $ipUser ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::PROOFREAD, $testUser ),
 				new PageLevel( PageLevel::VALIDATED, $testUser ),
-				false
+				false,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::NOT_PROOFREAD, $testUser ),
 				new PageLevel( PageLevel::VALIDATED, $test2User ),
-				false
+				false,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::NOT_PROOFREAD, null ),
 				new PageLevel( PageLevel::VALIDATED, $testUser ),
-				false
+				false,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::PROOFREAD, $testUser ),
 				new PageLevel( PageLevel::VALIDATED, $test3User ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::PROOFREAD, $test3User ),
 				new PageLevel( PageLevel::VALIDATED, $test3User ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::PROOFREAD, null ),
 				new PageLevel( PageLevel::VALIDATED, $test3User ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::NOT_PROOFREAD, $test3User ),
 				new PageLevel( PageLevel::VALIDATED, $test3User ),
-				true
+				true,
+				$rights
 			],
 			[
 				new PageLevel( PageLevel::VALIDATED, $testUser ),
 				new PageLevel( PageLevel::VALIDATED, $testUser ),
-				true
+				true,
+				$rights
 			],
 		];
 	}
@@ -143,8 +146,16 @@ class PageLevelTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider isChangeAllowedProvider
 	 */
-	public function testIsChangeAllowed( PageLevel $old, PageLevel $new, $result ) {
-		$this->assertSame( $result, $old->isChangeAllowed( $new ) );
+	public function testIsChangeAllowed( PageLevel $old, PageLevel $new, $result, array $rights ) {
+		$permissionManager = $this->createMock( PermissionManager::class );
+		$permissionManager
+			->expects( $this->any() )
+			->method( 'userHasRight' )
+			->willReturnCallback( function ( User $user, string $right ) use ( $rights ) {
+				return in_array( $right, $rights[$user->getName()] );
+			} );
+
+		$this->assertSame( $result, $old->isChangeAllowed( $new, $permissionManager ) );
 	}
 
 	public function nameProvider() {
