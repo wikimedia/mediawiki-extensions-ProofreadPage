@@ -9,6 +9,7 @@ module.exports = function ( grunt ) {
 	grunt.initConfig( {
 		eslint: {
 			options: {
+				extensions: [ '.js', '.json' ],
 				cache: true,
 				fix: grunt.option( 'fix' )
 			},
@@ -20,6 +21,9 @@ module.exports = function ( grunt ) {
 			]
 		},
 		stylelint: {
+			options: {
+				fix: grunt.option( 'fix' )
+			},
 			all: [
 				'modules/**/*.{css,less}'
 			]
@@ -28,5 +32,10 @@ module.exports = function ( grunt ) {
 	} );
 
 	grunt.registerTask( 'test', [ 'eslint', 'stylelint', 'banana' ] );
+	grunt.registerTask( 'fix', function () {
+		grunt.config.set( 'eslint.options.fix', true );
+		grunt.config.set( 'stylelint.options.fix', true );
+		grunt.task.run( [ 'eslint', 'stylelint' ] );
+	} );
 	grunt.registerTask( 'default', 'test' );
 };
