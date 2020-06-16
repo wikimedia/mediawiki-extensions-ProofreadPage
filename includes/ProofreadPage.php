@@ -257,11 +257,13 @@ class ProofreadPage {
 	}
 
 	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageContentSaveComplete
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageSaveComplete
+	 *
+	 * @note other parameters are available but aren't used
 	 *
 	 * @param WikiPage $article
 	 */
-	public static function onPageContentSaveComplete( WikiPage $article ) {
+	public static function onPageSaveComplete( WikiPage $article ) {
 		$title = $article->getTitle();
 
 		// if it's an index, update pr_index table

@@ -252,7 +252,7 @@
 		"BeforePageDisplay": "ProofreadPage\\ProofreadPage::onBeforePageDisplay",
 		"GetLinkColours": "ProofreadPage\\ProofreadPage::onGetLinkColours",
 		"ImageOpenShowImageInlineBefore": "ProofreadPage\\ProofreadPage::onImageOpenShowImageInlineBefore",
-		"PageContentSaveComplete": "ProofreadPage\\ProofreadPage::onPageContentSaveComplete",
+		"PageSaveComplete": "ProofreadPage\\ProofreadPage::onPageSaveComplete",
 		"ArticleDelete": "ProofreadPage\\ProofreadPage::onArticleDelete",
 		"ArticleUndelete": "ProofreadPage\\ProofreadPage::onArticleUndelete",
 		"ArticlePurge": "ProofreadPage\\ProofreadPage::onArticlePurge",
