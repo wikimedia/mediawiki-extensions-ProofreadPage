@@ -87,7 +87,7 @@
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} നാമമേഖല തിരുത്തുമ്പോൾ തലക്കുറിപ്പ്, അടിക്കുറിപ്പ് മണ്ഡലങ്ങൾ പ്രദർശിപ്പിക്കുക",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} നാമമേഖല തിരുത്തുമ്പോൾ തിരശ്ചീന രൂപകല്പന ഉപയോഗിക്കുക",
 	"proofreadpage-indexquality-alt": "* $1 - സാധൂകരിച്ച താളുകളുടെ എണ്ണം \n* $2 - തെറ്റുതിരുത്തൽ വായന മാത്രം കഴിഞ്ഞ താളുകളുടെ എണ്ണം \n* $3 - തെറ്റുതിരുത്തൽ വായന കഴിയാത്ത താളുകളുടെ എണ്ണം",
-	"content-model-proofread-page": "താൾ: താൾ",
+	"content-model-proofread-page": "പുസ്തക താൾ",
 	"content-model-proofread-index": "സൂചിക",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "താൾ തിരഞ്ഞെടുക്കൽ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "താളുകൾ",
