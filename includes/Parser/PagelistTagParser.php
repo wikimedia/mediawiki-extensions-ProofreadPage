@@ -125,7 +125,13 @@ class PagelistTagParser {
 	 * @return string
 	 */
 	private function formatError( $errorMsg ) {
-		return '<strong class="error">' . wfMessage( $errorMsg )->inContentLanguage()->escaped() .
-			'</strong>';
+		$error = Html::element( 'strong',
+				[ 'class' => 'error' ],
+				wfMessage( $errorMsg )->inContentLanguage()->text()
+			);
+		return Html::rawElement( 'span',
+			[ 'class' => 'prp-index-pagelist' ],
+			$error
+		);
 	}
 }

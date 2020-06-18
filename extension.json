@@ -139,6 +139,28 @@
 				"mediawiki.widgets.CategoryMultiselectWidget"
 			]
 		},
+		"ext.proofreadpage.index.pagelist": {
+			"styles": [
+				"index.pagelist/styles/index.css"
+			],
+			"packageFiles": [
+				"index.pagelist/init.js",
+				"index.pagelist/PagelistInputWidget.js",
+				"index.pagelist/PagelistInputWidget.Model.js",
+				"index.pagelist/PagelistInputWidget.PagelistPreview.js"
+			],
+			"messages": [
+				"proofreadpage-pagelist-input-preview-button",
+				"proofreadpage-pagelist-parsing-error-morethanone",
+				"proofreadpage-pagelist-parsing-error-pagelistnotdetected",
+				"proofreadpage-pagelist-parsing-error-php",
+				"proofreadpage-pagelist-parsing-error-unknown"
+			],
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-widgets"
+			]
+		},
 		"ext.proofreadpage.special.indexpages": {
 			"styles": "special/indexpages/ext.proofreadpage.special.indexpages.css",
 			"dependencies": [
