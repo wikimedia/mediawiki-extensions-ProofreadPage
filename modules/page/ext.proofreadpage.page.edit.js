@@ -32,6 +32,18 @@
 	}
 
 	/**
+	 * Sets the value of a user option based on input
+	 * @param {string} optionId name of user option
+	 * @param {boolean|null} value value to be set
+	 */
+	function setBooleanUserOption( optionId, value ) {
+		var convertedValue = value ? 1 : 0;
+		if ( getBooleanUserOption( optionId ) !== value ) {
+			mw.user.options.set( optionId, convertedValue );
+			new mw.Api().saveOption( optionId, convertedValue );
+		}
+	}
+	/**
 	 * Ensure that the zoom system is properly initialized
 	 *
 	 * @param {Function} success a function to use after making sure that the zoom system is activate
@@ -81,6 +93,8 @@
 		if ( setActive ) {
 			setActive( headersVisible );
 		}
+
+		setBooleanUserOption( 'proofreadpage-showheaders', headersVisible );
 	}
 
 	/**
@@ -140,6 +154,8 @@
 		if ( setActive ) {
 			setActive( isLayoutHorizontal );
 		}
+
+		setBooleanUserOption( 'proofreadpage-horizontal-layout', isLayoutHorizontal );
 	}
 
 	/**

@@ -22,6 +22,7 @@
 namespace ProofreadPage;
 
 use DatabaseUpdater;
+use ExtensionRegistry;
 use FixProofreadIndexPagesContentModel;
 use FixProofreadPagePagesContentModel;
 use IContextSource;
@@ -582,16 +583,22 @@ class ProofreadPage {
 	 * @param array[] &$preferences
 	 */
 	public static function onGetPreferences( $user, array &$preferences ) {
+		$type = 'toggle';
+		// Hide the option from the preferences tab if WikiEditor is loaded
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiEditor' )
+			&& $user->getBoolOption( 'usebetatoolbar' ) ) {
+			$type = 'hidden';
+		}
 		// Show header and footer fields when editing in the Page namespace
 		$preferences['proofreadpage-showheaders'] = [
-			'type'           => 'toggle',
+			'type'           => $type,
 			'label-message'  => 'proofreadpage-preferences-showheaders-label',
 			'section'        => 'editing/advancedediting',
 		];
 
 		// Use horizontal layout when editing in the Page namespace
 		$preferences['proofreadpage-horizontal-layout'] = [
-			'type'           => 'toggle',
+			'type'           => $type,
 			'label-message'  => 'proofreadpage-preferences-horizontal-layout-label',
 			'section'        => 'editing/advancedediting',
 		];
