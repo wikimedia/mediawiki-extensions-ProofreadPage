@@ -96,6 +96,7 @@
 	"proofreadpage-button-zoom-in-label": "Zoomer",
 	"proofreadpage-button-toggle-layout-label": "Disposition verticale/horizontale",
 	"proofreadpage-pageinfo-status": "État de la relecture",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Pas de balise <pagelist /> trouvées.",
 	"proofreadpage-preferences-showheaders-label": "Afficher des champs d'en-tête et de pied de page lors de l'édition dans l'espace de nommage {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Utiliser une disposition horizontale lors d'une modification dans l'espace de noms {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|page validée|pages validées}}, $2 {{PLURAL:$2|page seulement corrigée|pages seulement corrigées}} et $3 {{PLURAL:$3|page non corrigée|pages non corrigées}}",
