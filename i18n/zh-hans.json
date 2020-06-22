@@ -34,7 +34,7 @@
 	"proofreadpage_index": "索引",
 	"proofreadpage_index_expected": "错误：需要索引",
 	"proofreadpage_nosuch_index": "错误：没有此类索引",
-	"proofreadpage_nosuch_file": "错误：没有这种文件",
+	"proofreadpage_nosuch_file": "错误：无此文件",
 	"proofreadpage_indexdupetext": "在索引页中，页面不会被重复列出。",
 	"proofreadpage_nologin": "未登录",
 	"proofreadpage_nologintext": "您必须[[Special:UserLogin|先登录]]才能修改页面的校对状态。",

@@ -6,6 +6,7 @@
 			"Rotem Liss",
 			"Rotemliss",
 			"YaronSh",
+			"דגש חזק",
 			"ערן"
 		]
 	},
@@ -83,6 +84,11 @@
 	"proofreadpage-button-zoom-in-label": "תקריב",
 	"proofreadpage-button-toggle-layout-label": "פריסה אופקית או אנכית",
 	"proofreadpage-pageinfo-status": "מצב ההגהה",
+	"proofreadpage-pagelist-input-preview-button": "תצוגה מקדימה של רשימת הדפים",
+	"proofreadpage-pagelist-parsing-error-morethanone": "יותר מתג <pagelist /> אחד נמצא בקוד המקור של דף הוויקי.",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "לא נמצאו תגי <pagelist />.",
+	"proofreadpage-pagelist-parsing-error-php": "בזמן פענוח תג pagelist בשרת, אירעה השגיאה הבאה $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "אירעה שגיאה בלתי־צפויה. נא לדווח על השגיאה הזאת באתר phabricator.wikimedia.org עם הודעות יומן מהמסוף.",
 	"proofreadpage-preferences-showheaders-label": "הצגת כותרת עליונה וכותרת תחתונה בעת עריכת דפים במרחב השם \"{{ns:page}}\"",
 	"proofreadpage-preferences-horizontal-layout-label": "שימוש בתצוגה אופקית בעת עריכת דפים במרחב השם \"{{ns:page}}\"",
 	"proofreadpage-indexquality-alt": "{{PLURAL:$1|דף מאומת אחד|$1 דפים מאומתים}}, {{PLURAL:$2|אחד רק מוגה|$1 רק מוגהים}} {{PLURAL:$3|ואחד לא מוגה|ו־$3 לא מוגהים}}",
