@@ -1,14 +1,17 @@
 ( function () {
 	'use strict';
 
-	var /**
+	var
+		/**
 		 * Is the layout horizontal (ie is the scan image on top of the edit area)
+		 *
 		 * @type {boolean}
 		 */
 		isLayoutHorizontal = false,
 
 		/**
 		 * The scan image
+		 *
 		 * @type {jQuery}
 		 */
 		$zoomImage,
@@ -17,6 +20,7 @@
 
 		/**
 		 * The edit form
+		 *
 		 * @type {jQuery}
 		 */
 		$editForm;
@@ -33,6 +37,7 @@
 
 	/**
 	 * Sets the value of a user option based on input
+	 *
 	 * @param {string} optionId name of user option
 	 * @param {boolean|null} value value to be set
 	 */

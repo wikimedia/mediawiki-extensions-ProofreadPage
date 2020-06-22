@@ -2,6 +2,7 @@ var PagelistInputWidgetModel = require( './PagelistInputWidget.Model.js' );
 var PagelistPreview = require( './PagelistInputWidget.PagelistPreview.js' );
 /**
  * A widget aimed at making the job of creating pagelists easier
+ *
  * @param {Object} config configuration variables for OO.ui.Widget and OO.ui.MultilineInputWidget
  * @class
  */
@@ -38,6 +39,7 @@ function PagelistInputWidget( config ) {
 
 OO.inheritClass( PagelistInputWidget, OO.ui.Widget );
 OO.mixinClass( PagelistInputWidget, OO.ui.mixin.PendingElement );
+
 /**
  * Handles clicks on this.buttonWidget
  */
@@ -47,6 +49,7 @@ PagelistInputWidget.prototype.onButtonClick = function () {
 
 	this.model.updateWikitext( this.textInputWidget.getValue() );
 };
+
 /**
  * Handles tasks to be performed once the preview/errors have been displayed
  */

@@ -1,5 +1,6 @@
 /**
  * A module to display parsed pagelists and error messages on the same
+ *
  * @param {Object} model Instance of PagelistInputWidget.Model
  * @param {Object} config configurations for the parent OO.ui.Widget class
  * @class
@@ -30,6 +31,7 @@ OO.inheritClass( PagelistPreview, OO.ui.Widget );
 
 /**
  * Updates the preview of pagelist
+ *
  * @param  {Array} parameters list of Objects containing info for generating preview
  * @event previewDisplayed preview displayed succesfully
  */
@@ -58,6 +60,7 @@ PagelistPreview.prototype.updatePreview = function ( parameters ) {
 
 /**
  * Dislay error messages as a result of parsing pagelist
+ *
  * @param  {string} message message id
  * @event errorDisplayed Error message displayed succesfully
  */

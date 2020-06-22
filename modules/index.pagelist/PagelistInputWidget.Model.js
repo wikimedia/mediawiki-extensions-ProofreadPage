@@ -1,6 +1,7 @@
 /**
  * A model which keeps track of the parameters, wikitext and a list of Objects
  * containing useful information for displaying a pagelist.
+ *
  * @param {string} templateParameter template parameter to be used for api call
  * @param {string} wikitext          wikitext
  * @class
@@ -21,6 +22,7 @@ OO.mixinClass( PagelistInputWidgetModel, OO.EventEmitter );
 
 /**
  * Updates the wikitext parameter. Also updates the parameters and enumeratedLists
+ *
  * @param  {string} wikitext Updated wikitext
  */
 PagelistInputWidgetModel.prototype.updateWikitext = function ( wikitext ) {
@@ -30,6 +32,7 @@ PagelistInputWidgetModel.prototype.updateWikitext = function ( wikitext ) {
 
 /**
  * Generates parameters from raw wikitext
+ *
  * @event parsingerror Error in parsing pagelist
  */
 PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function () {
@@ -102,6 +105,7 @@ PagelistInputWidgetModel.prototype.generateWikitext = function () {
 /**
  * Generates list of Objects containing information usable for rendering the pagelist from
  * the current parameters based on responses from API
+ *
  * @event parsingerror Error in parsing pagelist
  * @event enumeratedListCreated List of pages was created
  */
@@ -136,6 +140,7 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function () {
 };
 /**
  * Parses Api response to enumerated list
+ *
  * @param  {Object} response API response
  */
 PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( response ) {

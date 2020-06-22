@@ -83,7 +83,7 @@ ve.ui.MWPagequalityInspector.prototype.getSetupProcess = function ( data ) {
 /**
  * Does the user could not validate the page
  *
- * @param {int} currentLevel current proofreading level
+ * @param {number} currentLevel current proofreading level
  * @param {string} currentUser last user who set the proofreading level
  * @return {boolean}
  */
@@ -127,7 +127,7 @@ ve.ui.MWPagequalityInspector.prototype.updateMwData = function ( mwData ) {
 /**
  * Retrieve the selected level
  *
- * @return {int|null}
+ * @return {number|null}
  */
 ve.ui.MWPagequalityInspector.prototype.getSelectedQualityLevel = function () {
 	var selectedQualityOption = this.qualitySelector.findSelectedItem();

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * See also: http://webdriver.io/guide/testrunner/configurationfile.html
  */
@@ -84,9 +86,8 @@ exports.config = {
 	 * @param {Object<string, Object>} result dictionary
 	 */
 	afterTest: function ( test, context, result ) {
-		var filePath;
 		if ( !result.passed ) {
-			filePath = saveScreenshot( test.title );
+			const filePath = saveScreenshot( test.title );
 			console.log( '\n\tScreenshot: ' + filePath + '\n' );
 		}
 	}

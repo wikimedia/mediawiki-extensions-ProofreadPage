@@ -138,7 +138,7 @@ ve.ui.MWPagesInspector.prototype.createIndexWidget = function () {
 
 /**
  * @param {string} namespaceName the name of the namespace like "Index" or "Page"
- * @return {int} the namespace id like 252
+ * @return {number} the namespace id like 252
  */
 ve.ui.MWPagesInspector.prototype.getIdForNamespace = function ( namespaceName ) {
 	var namespaceIds = mw.config.get( 'wgNamespaceIds' );
