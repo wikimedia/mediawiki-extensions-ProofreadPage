@@ -141,24 +141,38 @@
 		},
 		"ext.proofreadpage.index.pagelist": {
 			"styles": [
+				"index.pagelist/styles/dialog.css",
 				"index.pagelist/styles/index.css"
 			],
 			"packageFiles": [
 				"index.pagelist/init.js",
+				"index.pagelist/PagelistInputWidget.Dialog.js",
+				"index.pagelist/PagelistInputWidget.FormPanel.js",
+				"index.pagelist/PagelistInputWidget.ImagePanel.js",
 				"index.pagelist/PagelistInputWidget.js",
+				"index.pagelist/PagelistInputWidget.MainPanel.js",
 				"index.pagelist/PagelistInputWidget.Model.js",
-				"index.pagelist/PagelistInputWidget.PagelistPreview.js"
+				"index.pagelist/PagelistInputWidget.PagelistPreview.js",
+				"index.pagelist/PagelistInputWidget.PageModel.js"
 			],
 			"messages": [
+				"proofreadpage-pagelist-assignedpagenumber",
+				"proofreadpage-pagelist-dialog-insertchanges",
+				"proofreadpage-pagelist-dialog-title",
+				"proofreadpage-pagelist-imageurlnotfound",
 				"proofreadpage-pagelist-input-preview-button",
+				"proofreadpage-pagelist-notcreated",
 				"proofreadpage-pagelist-parsing-error-morethanone",
 				"proofreadpage-pagelist-parsing-error-pagelistnotdetected",
 				"proofreadpage-pagelist-parsing-error-php",
-				"proofreadpage-pagelist-parsing-error-unknown"
+				"proofreadpage-pagelist-parsing-error-unknown",
+				"proofreadpage-pagelist-quality",
+				"proofreadpage-pagelist-type"
 			],
 			"dependencies": [
 				"oojs-ui-core",
-				"oojs-ui-widgets"
+				"oojs-ui-widgets",
+				"oojs-ui-windows"
 			]
 		},
 		"ext.proofreadpage.special.indexpages": {
