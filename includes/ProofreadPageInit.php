@@ -89,7 +89,7 @@ class ProofreadPageInit {
 	 * @return bool false if there is an error, true if not
 	 */
 	protected static function createNamespace( $id, $key ) {
-		global $wgCanonicalNamespaceNames, $wgExtraNamespaces;
+		global $wgCanonicalNamespaceNames, $wgExtraNamespaces, $wgNamespacesWithSubpages;
 
 		if ( isset( $wgExtraNamespaces[$id] ) || isset( $wgExtraNamespaces[$id + 1] ) ) {
 			return false;
@@ -104,6 +104,10 @@ class ProofreadPageInit {
 		// $wgExtraNamespaces into $wgCanonicalNamespaceNames
 		$wgCanonicalNamespaceNames[$id] = $wgExtraNamespaces[$id];
 		$wgCanonicalNamespaceNames[$id + 1] = $wgExtraNamespaces[$id + 1];
+
+		// ProofreadPage's namespaces should have subpages - T256410
+		$wgNamespacesWithSubpages[$id] = true;
+		$wgNamespacesWithSubpages[$id + 1] = true;
 
 		self::createNamespaceAliases( $key, $id );
 		self::createNamespaceAliases( $talkKey, $id + 1 );
