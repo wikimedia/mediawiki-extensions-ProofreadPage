@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Aue Nai",
+			"BaRaN6161 TURK",
 			"Htawmonzel"
 		]
 	},
@@ -10,7 +11,7 @@
 	"apihelp-query+proofread-example-1": "ကဆံၚ်ဗွဟ်မပဒတန်စၟတ်သမ္တီကလၚ်ကၠုၚ်သွက်မုက်လိက်ဂမၠိုၚ် ပ္ဍဲဒၞာဲယၟု ၂၅၀",
 	"apihelp-query+proofreadinfo-description": "တၚ်နၚ်ကလၚ်ကၠုၚ်သွက်မဒက်ပတန်အဝဲလစှ်ေမုက်လိက်ဗွဟ်မပဒတန်စၟတ်သမ္တီသၠာဲတြး",
 	"apihelp-query+proofreadinfo-summary": "တၚ်နၚ်ကလၚ်ကၠုၚ်သွက်မဒက်ပတန်အဝဲလစှ်ေမုက်လိက်ဗွဟ်မပဒတန်စၟတ်သမ္တီသၠာဲတြး",
-	"apihelp-query+proofreadinfo-param-prop": "မုကပေါတ်ဗွဟ်မပဒတန်စၟတ်သမ္တီသ္ဂောံကလိဂွံ:\n;ဒၞာဲယၟဒ: တၚ်နၚ်ပရူ\"{{ns:မုက်လိက်}}\"ကေုာံ\"{{ns:စၞောန်}}\"ဒၞဲါယၟုဂမၠိုၚ်.",
+	"apihelp-query+proofreadinfo-param-prop": "မုကပေါတ်ဗွဟ်မပဒတန်စၟတ်သမ္တီသ္ဂောံကလိဂွံ:\n;ဒၞာဲယၟဒ: တၚ်နၚ်ပရူ\"{{ns:Page}}\"ကေုာံ\"{{ns:Index}}\"ဒၞဲါယၟုဂမၠိုၚ်.",
 	"apihelp-query+proofreadinfo-example-1": "တၚ်နၚ်ဗိုန်ဇၟအ်ကလေၚ်",
 	"apihelp-query+proofreadinfo-example-3": "တၚ်နၚ်မကလေၚ်ဒၞဲါယၟု"
 }
