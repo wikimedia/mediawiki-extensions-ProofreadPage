@@ -10,6 +10,7 @@
 			"Luckas",
 			"Luckas Blade",
 			"MetalBrasil",
+			"Rafaelff",
 			555
 		]
 	},
@@ -88,6 +89,7 @@
 	"proofreadpage-button-toggle-layout-label": "Disposição vertical ou horizontal",
 	"proofreadpage-pageinfo-status": "Status da revisão",
 	"proofreadpage-pagelist-input-preview-button": "Visualizar lista de páginas",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Mais de uma tag <pagelist /> foi detectada no wikitexto fonte.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Nenhuma etiqueta <pagelist/> detectada.",
 	"proofreadpage-pagelist-parsing-error-php": "O seguinte erro foi encontrado ao analisar a etiqueta da lista de páginas no back-end, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Um erro inesperado foi detectado. Por favor, reporte esse erro ao phabricator.wikimedia.org com os logs do console.",

@@ -67,7 +67,9 @@
 	"proofreadpage_specialpage_searcherrortext": "စက်ဂၠာဲ ဟွံကၠောန်ကမၠောန်. သၠးအခေါၚ်ညိ လ္တူပရေၚ်ဟွံပေၚ်ပၟိက်.",
 	"proofreadpage_source": "တမ်ရိုဟ်",
 	"proofreadpage_source_message": " လၟေၚ် ဒါန်မဗှ်သကာမ် သုၚ်စောဲကေတ် သွက်ဂွံဗဒှ်တိုန် လိက်ဏအ်",
+	"action-pagequality": "ပခိုဟ်ပတိုန် မုက်လိက် ဍာ်ဒကေဝ် အလာံ",
 	"right-pagequality": "ပြုပြေၚ် မုက်လိက် မၞုံဍာ်ဒကေဝ် အလာံ",
+	"action-pagequality-admin": "သက္ကုပိုင်ခြာ ပ္ဍဲအရာမပလေဝ်ဒါန် မုက်လိက်ဍာ်ဒကေဝ် အလာံ",
 	"right-pagequality-admin": "ဟွံပြုပြေၚ် မုက်လိက် မၞုံဍာ်ဒကေဝ် အလာံ",
 	"proofreadpage-section-tools": "ကြိယာ မဗှ်ပဒတန်",
 	"proofreadpage-group-zoom": "မသၠဲ",
@@ -78,6 +80,11 @@
 	"proofreadpage-button-zoom-in-label": "တြးဇၞော်",
 	"proofreadpage-button-toggle-layout-label": "သရုၚ် ပစူ/အနာံ",
 	"proofreadpage-pageinfo-status": "ကဆံၚ် မဗှ်ပဒတန်",
+	"proofreadpage-pagelist-input-preview-button": "ကလေင်ရံင် စရင်မုက်လိက်",
+	"proofreadpage-pagelist-parsing-error-morethanone": "စာမ်လဝ် <pagelist /> ဂၠိုင်နူ မွဲမုက် ပ္ဍဲကဵု တမ်ရိုဟ်ဝဳကဳ။",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "မုက်လိက်<pagelist />စာမ်လဝ် ဟွံမဲ။",
+	"proofreadpage-pagelist-parsing-error-php": "အရာမဗၠေတ် မထ္ၜးလဝ် ဗွဲသၟဝ်ဝွံ မံက်တိုန်ကၠုင် သီုဟိုတ် စၟဳလဝ် မွဲသာ် ပ္ဍဲအခိင် မစုတ်စာမ်ဒၟံင် မုက်လိက်ရ။ $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "အရာမဗၠေတ် မမံက်ကၠုင်ဂှ် ပလီုထောအ်လဝ်ရ။ ပဂုန်တုဲ ဂရင်ဗ္တီ ကု အစာဝေပ်သာ် phabricator.wikimedia.org နကဵု မဍဵု ပ္ဍဲကောန်ဍေင်ညိ။",
 	"proofreadpage-preferences-showheaders-label": "ထ္ၜးဝှာၚ်က္ဍိုပ် ကေုာံ ဇိုၚ် အခိၚ်မဒါန်ဒၟံၚ်ပ္ဍဲ{{ns:page}} ဒၞဲါယၟု",
 	"proofreadpage-preferences-horizontal-layout-label": "သုၚ်စောဲကေတ် သ္ၚိခံက်အၚ် ဗွဲလနၚ် အခိၚ်မဒါန်ဒၟံၚ်ပ္ဍဲ{{ns:မုက်}} ဒၞဲါယၟု",
 	"proofreadpage-indexquality-alt": "$1 ဒတန်လဝ် {{PLURAL:$1|မုက်လိက်|မုက်လိက်ဂမၠိုၚ်}}, $2 ဗွဟ်မပဒတန်ဟေၚ်{{PLURAL:$2|မုက်|မုက်လိက်ဂမၠိုၚ်}} and $3 ဟွံ ဗွဟ်မပဒတန် {{PLURAL:$3|မုက်|မုက်လိက်ဂမၠိုၚ်}}",
@@ -89,5 +96,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ယွံ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ဟအှ်ေ",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ဍာ်ဒကေဝ် မဗှ်ပဒတန်",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ဍာ်ဒကေဝ် မဗှ်ပဒတန်"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ဍာ်ဒကေဝ် မဗှ်ပဒတန်",
+	"proofreadpage-index-field-category-label": "ကဏ္ဍဂမၠိုင်",
+	"proofreadpage-index-edit-category-help": "ကဏ္ဍတအ်ဂှ် ချူလဝ် နကဵု သက္ကုကဏ္ဍ၊ ဖျေဟ်ဒၞာဲ တုဲပၠန် တန်ခြာလဝ် နကဵု မလိက်\"|\" ညိ။"
 }
