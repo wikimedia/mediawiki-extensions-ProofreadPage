@@ -48,6 +48,12 @@ ve.ui.MWPagequalityInspector.prototype.buildQualitySelector = function () {
 		this.qualityOptions[ i ] = new OO.ui.ButtonOptionWidget( {
 			data: i,
 			icon: 'prp-quality' + i,
+			// The following messages are used here:
+			// * proofreadpage_quality0_summary
+			// * proofreadpage_quality1_summary
+			// * proofreadpage_quality2_summary
+			// * proofreadpage_quality3_summary
+			// * proofreadpage_quality4_summary
 			title: OO.ui.msg( 'proofreadpage_quality' + i + '_summary' )
 		} );
 	}

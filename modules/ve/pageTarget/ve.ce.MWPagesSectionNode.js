@@ -23,6 +23,8 @@ ve.ce.MWPagesSectionNode = function VeCeMwPagesSectionNode() {
 	ve.ce.MWPagesSectionNode.super.apply( this, arguments );
 
 	this.$element.attr( 'data-title',
+		// Messages are documented above
+		// eslint-disable-next-line mediawiki/msg-doc
 		ve.msg( messages[ this.model.getAttribute( 'style' ) ] )
 	);
 };
