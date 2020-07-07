@@ -23,7 +23,7 @@
 	"proofreadpage_specialpage_label_key": "Nəve:",
 	"proofreadpage_page_status": "Səhifə statusi",
 	"proofreadpage_js_attributes": "Author Title Sor Publisher",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|бајт|бајтон}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|səhifə|səhifon}}",
 	"proofreadpage_source": "Səvon",
 	"proofreadpage-group-zoom": "Perosniyə",
 	"proofreadpage-group-other": "Co",
