@@ -86,6 +86,7 @@
 	"proofreadpage-button-zoom-in-label": "확대",
 	"proofreadpage-button-toggle-layout-label": "수직/수평 레이아웃",
 	"proofreadpage-pageinfo-status": "교정 상태",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<pagelist /> 태그가 발견되지 않았습니다.",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} 이름공간에서 편집할 때 머리글 및 꼬리글 영역 보이기",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} 이름공간에서 편집할 때 수평 레이아웃 사용",
 	"proofreadpage-indexquality-alt": "검증된 {{PLURAL:$1|페이지}} $1개, 교정된 {{PLURAL:$2|페이지}} $2개, 교정 안 된 {{PLURAL:$3|페이지}} $3개",
