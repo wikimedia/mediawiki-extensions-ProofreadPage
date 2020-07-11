@@ -688,6 +688,28 @@ djvu
 !! end
 
 !! test
+pages: with file: invalid include (3)
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="-25" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: invalid include (4)
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="0-0" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
 pages: with file: Header
 !! options
 djvu

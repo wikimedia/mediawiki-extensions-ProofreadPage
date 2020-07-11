@@ -355,12 +355,16 @@ class PagesTagParser {
 		$nums = [];
 		foreach ( $list as $item ) {
 			if ( is_numeric( $item ) ) {
+				if ( $item < 1 ) {
+					return null;
+				}
 				$nums[$item] = $item;
 			} else {
 				$interval = explode( '-', $item );
 				if ( count( $interval ) != 2
 					|| !is_numeric( $interval[0] )
 					|| !is_numeric( $interval[1] )
+					|| $interval[0] < 1
 					|| $interval[1] < $interval[0]
 				) {
 					return null;
