@@ -1,5 +1,7 @@
 .prp-index-fieldLayout {
-	max-width: 60em;
+	/* Arbitrarily chosen so as to leave enough room
+	 to properly display the PagelistInputWidget */
+	max-width: 90em;
 }
 
 .prp-index-fieldLayout textarea {

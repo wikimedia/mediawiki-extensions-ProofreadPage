@@ -1,0 +1,32 @@
+.prp-pagelist-dialog-main-panel {
+	display: flex;
+	justify-content: space-between;
+}
+
+.prp-pagelist-dialog-main-panel > .oo-ui-panelLayout {
+	position: relative;
+	width: 50%;
+}
+
+.prp-pagelist-dialog-stack-layout {
+	display: flex;
+	flex-wrap: wrap;
+	border-left: 1px solid #c8ccd1;
+}
+
+.prp-pagelist-dialog-stack-layout > .oo-ui-panelLayout {
+	border-bottom: 1px solid #c8ccd1;
+}
+
+.prp-pagelist-dialog-image-panel img {
+	width: 100%;
+}
+
+.prp-pagelist-dialog-stack-layout > .prp-pagelist-dialog-form-panel {
+	position: sticky;
+	background: #fff;
+	top: 0;
+	z-index: 2;
+	width: 100%;
+	box-shadow: 0 1px 4px 1px rgba( 0, 0, 0, 0.25 );
+}

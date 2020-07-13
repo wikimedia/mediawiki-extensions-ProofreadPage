@@ -1,13 +1,12 @@
 /**
  * A module to display parsed pagelists and error messages on the same
  *
- * @param {Object} model Instance of PagelistInputWidget.Model
+ * @param {mw.proofreadpage.PagelistInputWidget.Model} model
  * @param {Object} config configurations for the parent OO.ui.Widget class
  * @class
  */
 function PagelistPreview( model, config ) {
 	PagelistPreview.super.call( this, config );
-
 	this.model = model;
 	this.buttonSelectWidget = new OO.ui.ButtonSelectWidget( {
 		classes: [ 'prp-pagelist-preview' ]
@@ -20,6 +19,9 @@ function PagelistPreview( model, config ) {
 	this.model.connect( this, {
 		parsingerror: 'displayError',
 		enumeratedListCreated: 'updatePreview'
+	} );
+	this.buttonSelectWidget.connect( this, {
+		select: 'onSelect'
 	} );
 
 	this.$element.append( this.messages.$element, this.buttonSelectWidget.$element );
@@ -46,9 +48,7 @@ PagelistPreview.prototype.updatePreview = function ( parameters ) {
 		button = new OO.ui.ButtonOptionWidget( {
 			label: $( '<span>' ).html( parameters[ i ].text ),
 			data: parameters[ i ],
-			title: parameters[ i ].type,
-			flags: [ 'progressive' ],
-			framed: false
+			title: parameters[ i ].type
 		} );
 
 		buttonArray.push( button );
@@ -72,4 +72,38 @@ PagelistPreview.prototype.displayError = function () {
 	this.messages.setLabel( mw.msg.apply( null, args ) );
 	this.emit( 'errorDisplayed' );
 };
+
+/**
+ * Wrapper event handler that fires on a select event and
+ * emits a 'pageselected' event. The pageselected event
+ * has the same attributes as the select event.
+ *
+ * @event pageselected Page number selected
+ */
+PagelistPreview.prototype.onSelect = function () {
+	// Apply takes all parameters as a array, so
+	// we take the `arguments` variable and turn that
+	// into a Array and then insert 'pageselected' in
+	// position 0.
+	var args = [].slice.call( arguments, 0 );
+	args.splice( 0, 0, 'pageselected' );
+	this.emit.apply( this, args );
+};
+
+/**
+ * Convienience method to select a particular item without
+ * triggering a 'pageselected' event
+ *
+ * @param {Object} data Data to select item
+ */
+PagelistPreview.prototype.selectItemByDataWithoutEvent = function ( data ) {
+	this.buttonSelectWidget.disconnect( this, {
+		select: 'onSelect'
+	} );
+	this.buttonSelectWidget.selectItemByData( data );
+	this.buttonSelectWidget.connect( this, {
+		select: 'onSelect'
+	} );
+};
+
 module.exports = PagelistPreview;
