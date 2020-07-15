@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Narazeni",
 			"Silovan"
 		]
 	},
@@ -9,5 +10,7 @@
 	"proofreadpage_quality2_category": "პრობლემატური",
 	"proofreadpage_quality3_category": "გიშითინჷ",
 	"proofreadpage_quality4_category": "შემოწმაფილი",
-	"proofreadpage_quality1_message": "თე ხასჷლა ვა რდჷ გიშათინილი"
+	"proofreadpage_quality1_message": "თე ხასჷლა ვა რდჷ გიშათინილი",
+	"proofreadpage-pagelist-notcreated": "ხასჷლა ვა რე დორსხუალი.",
+	"proofreadpage-pagelist-quality": "ხარისხი: $1"
 }
