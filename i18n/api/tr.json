@@ -3,15 +3,16 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Mirzali",
+			"Satirdan kahraman",
 			"Vito Genovese"
 		]
 	},
-	"apihelp-query+proofread-description": "Belirli sayfaların güncel düzeltme durumu hakkında bilgiler getirir.",
-	"apihelp-query+proofread-summary": "Verilen sayfaların geçerli prova durumu hakkında bilgi döndürür.",
-	"apihelp-query+proofread-example-1": "250 ad alanındaki sayfalar için düzeltme durumunu getir",
-	"apihelp-query+proofreadinfo-description": "ProofreadPage eklentisinin yapılandırması hakkındaki bilgileri getir",
-	"apihelp-query+proofreadinfo-summary": "ProofreadPage uzantısının yapılandırması hakkındaki bilgileri geri getir.",
-	"apihelp-query+proofreadinfo-param-prop": "Alınacak düzeltme özellikleri:\n;namespaces:\"{{ns:Page}}\" ve \"{{ns:Index}}\" ad alanları hakkındaki bilgiler.\n;qualitylevels:Düzeltme kalite düzeyleri listesi.",
+	"apihelp-query+proofread-description": "Belirli sayfaların güncel istinsah durumları hakkında bilgiler getirir.",
+	"apihelp-query+proofread-summary": "Belirli sayfaların geçerli istinsah durumu hakkında bilgi getirir.",
+	"apihelp-query+proofread-example-1": "250 ad alanındaki sayfalar için istinsah durumunu ver.",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage eklentisinin yapılandırması hakkındaki bilgileri getirin.",
+	"apihelp-query+proofreadinfo-summary": "ProofreadPage uzantısının yapılandırması hakkındaki bilgileri getir.",
+	"apihelp-query+proofreadinfo-param-prop": "Alınacak istinsah özellikleri:\n;namespaces:\"{{ns:Page}}\" ve \"{{ns:Index}}\" ad alanları hakkındaki bilgiler.\n;qualitylevels:İstinsah kalitesi düzeylerinin listesi.",
 	"apihelp-query+proofreadinfo-example-1": "Varsayılan bilgileri getir",
 	"apihelp-query+proofreadinfo-example-3": "Ad alanı bilgilerini getir"
 }

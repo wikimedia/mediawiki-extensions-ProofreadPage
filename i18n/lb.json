@@ -73,6 +73,8 @@
 	"proofreadpage-button-zoom-in-label": "Vergréisseren",
 	"proofreadpage-button-toggle-layout-label": "Vertikalen/horizontale Layout",
 	"proofreadpage-pageinfo-status": "Status Iwwerliesen",
+	"proofreadpage-pagelist-dialog-insertchanges": "Ännerungen drasetuzen",
+	"proofreadpage-pagelist-quality": "Qualitéit: $1",
 	"proofreadpage-preferences-showheaders-label": "D'Entête an de Pied de page weise beim Ännerungen am {{ns:page}}-Nummraum",
 	"proofreadpage-preferences-horizontal-layout-label": "Benotzt en horizontale Layout wann Dir am {{ns:Page}}-Nummraum ännert",
 	"proofreadpage-indexquality-alt": "$1 validéiert {{PLURAL:$1|Säit|Säiten}}, nëmmen {{PLURAL:$2|eng iwwerliest Säit|$2 iwwerliest Säiten}} an {{PLURAL:$3|an eng net iwwerliest Säit|a(n) $3 net iwwerliest Säiten}}",
