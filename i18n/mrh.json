@@ -8,5 +8,11 @@
 	"proofreadpage_quality1_category": "Proofread châ leipa",
 	"proofreadpage_quality2_category": "Runahna",
 	"proofreadpage_quality3_category": "Proofread",
-	"proofreadpage_quality4_category": "Pa-i"
+	"proofreadpage_quality4_category": "Pa-i",
+	"proofreadpage-pagelist-dialog-title": "$1 châta châhmiali taopathina",
+	"proofreadpage-pagelist-dialog-insertchanges": "A pathlainazy khô teih",
+	"proofreadpage-pagelist-type": "Châhmia nuby pho: $1",
+	"proofreadpage-pagelist-notcreated": "He châhmia he taopa châ mâh vei.",
+	"proofreadpage-pagelist-quality": "Phazie: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "He châhmia he châhmia nuby: $1 ta â pyh"
 }
