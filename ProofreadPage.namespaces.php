@@ -275,6 +275,14 @@ $proofreadPageNamespacesNames['la'] = [
 	'index_talk' => 'Disputatio_Libri'
 ];
 
+/** Ligurian (ligure) */
+$proofreadPageNamespacesNames['lij'] = [
+	'page' => 'Pagina',
+	'page_talk' => 'Discuscion_pagina',
+	'index' => 'Ìndiçe',
+	'index_talk' => 'Discuscion_ìndiçe',
+];
+
 /** Malayalam (മലയാളം) */
 $proofreadPageNamespacesNames['ml'] = [
 	'page' => 'താൾ',
