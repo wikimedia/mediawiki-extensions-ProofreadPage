@@ -7,6 +7,7 @@
 			"Otokoume",
 			"Schu",
 			"Shirayuki",
+			"Tmv",
 			"夢蝶葬花",
 			"青子守歌"
 		]
@@ -73,6 +74,7 @@
 	"proofreadpage-button-zoom-in-label": "拡大",
 	"proofreadpage-button-toggle-layout-label": "垂直方向/水平方向のレイアウト",
 	"proofreadpage-pageinfo-status": "校正の状態",
+	"proofreadpage-pagelist-dialog-insertchanges": "変更を挿入",
 	"proofreadpage-preferences-showheaders-label": "{{ns:Page}}名前空間での編集中にヘッダー/フッター フィールドを表示",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}}名前空間の編集の際に、水平レイアウトを使用",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "はい",
