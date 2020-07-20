@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Aleator",
+			"Bombolla",
 			"Fitoschido",
 			"Jordi Roqué",
 			"Papapep",
@@ -85,6 +86,13 @@
 	"proofreadpage-button-zoom-in-label": "Amplia",
 	"proofreadpage-button-toggle-layout-label": "Presentació vertical/horitzontal",
 	"proofreadpage-pageinfo-status": "Estat de correcció",
+	"proofreadpage-pagelist-input-preview-button": "Visualitzar la llista de pàgines.",
+	"proofreadpage-pagelist-parsing-error-morethanone": "S'ha detectat més d'una etiqueta <pagelist/> a la font de viquitexts.",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "No s'ha detectat cap etiqueta <pagelist/>.",
+	"proofreadpage-pagelist-parsing-error-php": "Mentre s'analitzava l'etiqueta pagelist en el servidor, s'ha trobat el següent error: $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "S'ha detectat un error inesperat. Si us plau, reporteu aquest error a phabricator.wikimedia.org mitjançant els registres de la consola.",
+	"proofreadpage-pagelist-dialog-title": "Editant llista de pàgines per $1",
+	"proofreadpage-pagelist-dialog-insertchanges": "Introduïu els canvis",
 	"proofreadpage-preferences-showheaders-label": "Mostra camps de capçalera i peu en editar en el nom d'espai {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Utilitza la presentació horitzontal en editar en el nom d'espai {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pàgina validada|pàgines validades}}, $2 {{PLURAL:$2|pàgina només corregida|pàginas només corregides}} i $3 {{PLURAL:$3|pàgina|pàgines}} sense corregir.",

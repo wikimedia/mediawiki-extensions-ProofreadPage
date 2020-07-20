@@ -83,6 +83,7 @@
 	"proofreadpage-button-zoom-in-label": "Zoom ind",
 	"proofreadpage-button-toggle-layout-label": "Lodret/vandret opsætning",
 	"proofreadpage-pageinfo-status": "Korrekturlæsningsstatus",
+	"proofreadpage-pagelist-quality": "Kvalitet: $1",
 	"proofreadpage-preferences-showheaders-label": "Åbn automatisk felterne for sidehoved og sidefod under redigering i {{ns:page}}navnerummet",
 	"proofreadpage-preferences-horizontal-layout-label": "Brug vandret opsætning, når du redigerer i {{ns:page}}-navnerummet",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|valideret side|validerede sider}}, $2 {{PLURAL:$2|side|sider}}, der kun er korrekturlæst, og $3 {{PLURAL:$3|side|sider}}, der ikke er korrekturlæst",
