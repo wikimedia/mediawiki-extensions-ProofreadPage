@@ -3,7 +3,8 @@
 		"authors": [
 			"Erdemaslancan",
 			"Ganbarzada",
-			"Patriot Kur"
+			"Patriot Kur",
+			"Гусейн"
 		]
 	},
 	"nstab-page": "Səhifə",
@@ -14,7 +15,9 @@
 	"proofreadpage_index": "İndeks",
 	"proofreadpage_nextpage": "Esənə səhifə",
 	"proofreadpage_quality0_category": "Bemətn",
+	"proofreadpage_quality1_category": "Hisob beydəni",
 	"proofreadpage_quality2_category": "Problemin",
+	"proofreadpage_quality3_category": "Handə bıə",
 	"proofreadpage_quality4_category": "Osəğande",
 	"proofreadpage_quality0_summary": "Bemətn",
 	"proofreadpage_quality2_summary": "Problemin",
