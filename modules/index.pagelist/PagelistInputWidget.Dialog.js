@@ -1,5 +1,5 @@
 var MainPanel = require( './PagelistInputWidget.MainPanel.js' );
-var PageModel = require( './PagelistInputWidget.PageModel.js' );
+var DialogModel = require( './PagelistInputWidget.WikitextDialogModel.js' );
 var PagelistPreview = require( './PagelistInputWidget.PagelistPreview.js' );
 
 /**
@@ -14,8 +14,10 @@ function Dialog( model, config ) {
 	this.preview = new PagelistPreview( model, {
 		classes: [ 'prp-pagelist-dialog-pagelist-preview' ]
 	} );
-	this.pageModel = new PageModel( null, model );
-	this.mainPanel = new MainPanel( this.pageModel, this.preview );
+	// should be visual mode once that stuff has been built and finalized
+	// this.editMode = mw.user.options.get( 'proofreadpage-pagelist-edit-mode' ) || 'wikitext';
+	this.dialogModel = new DialogModel( null, model );
+	this.mainPanel = new MainPanel( this.dialogModel, this.preview );
 
 	Dialog.super.call( this, config );
 }
@@ -52,14 +54,39 @@ Dialog.prototype.initialize = function () {
 
 /**
  * @inheritDoc
+ */
+Dialog.prototype.showErrors = function ( errors ) {
+	Dialog.super.prototype.showErrors.call( this, errors );
+	if ( this.currentAction === 'dialogcancel' ) {
+		this.dismissButton.setLabel( mw.msg( 'proofreadpage-pagelist-dialog-cancel' ) );
+		this.retryButton.clearFlags().setFlags( 'destructive' );
+		this.$errorsTitle.text( mw.msg( 'proofreadpage-pagelist-dialog-unsaved-progress-title' ) );
+		this.retryButton.setLabel( mw.msg( 'proofreadpage-pagelist-dialog-discard-changes' ) );
+	}
+};
+
+/**
+ * @inheritDoc
+ */
+Dialog.prototype.onRetryButtonClick = function () {
+	if ( this.currentAction === 'dialogcancel' ) {
+		// Set the changed flag and unload everything
+		this.dialogModel.setChangedFlag( false );
+		this.dialogModel.unloadCachedData();
+	}
+	Dialog.super.prototype.onRetryButtonClick.call( this );
+};
+/**
+ * @inheritDoc
  * @param  {Object} data Data to setup intial view
  */
 Dialog.prototype.getSetupProcess = function ( data ) {
 	data = data || {};
-	this.pageModel.setData( data );
+	this.dialogModel.setData( data );
 	return Dialog.super.prototype.getSetupProcess.call( this, data )
 		.next( function () {
 			this.preview.selectItemByDataWithoutEvent( data );
+			this.dialogModel.dialogOpened();
 		}, this );
 };
 
@@ -70,18 +97,30 @@ Dialog.prototype.getSetupProcess = function ( data ) {
 Dialog.prototype.getActionProcess = function ( action ) {
 	// this function should do more than just close the dialog once we add the form
 	// logic to FormPanel
-	var dialog = this;
 	this.emit( 'dialogclose', this.preview.buttonSelectWidget.findSelectedItem() );
-	if ( action === 'dialogcancel' ) {
-		return new OO.ui.Process( function () {
-			dialog.close( { action: action } );
-		} );
-	} else if ( action === 'dialogsave' ) {
-		return new OO.ui.Process( function () {
-			dialog.close( { action: action } );
-		} );
-	}
-	return Dialog.super.prototype.getActionProcess.call( this, action );
+	return Dialog.super.prototype.getActionProcess.call( this, action ).next( function () {
+		if ( action === 'dialogcancel' ) {
+			if ( !this.dialogModel.unloadCachedData() ) {
+				return new OO.ui.Error( mw.msg( 'proofreadpage-pagelist-dialog-unsaved-progress' ) );
+			} else {
+				this.close( { action: action } );
+			}
+		} else if ( action === 'dialogsave' ) {
+			this.dialogModel.setCachedData();
+			this.close( { action: action } );
+		}
+		return Dialog.super.prototype.getActionProcess.call( this, action );
+	}, this );
 };
 
+/**
+ * @inheritDoc
+ */
+Dialog.prototype.onDialogKeyDown = function ( e ) {
+	if ( e.which === OO.ui.Keys.ESCAPE ) {
+		this.executeAction( 'dialogcancel' );
+		e.preventDefault();
+		e.stopPropagation();
+	}
+};
 module.exports = Dialog;

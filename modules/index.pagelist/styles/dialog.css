@@ -9,8 +9,6 @@
 }
 
 .prp-pagelist-dialog-stack-layout {
-	display: flex;
-	flex-wrap: wrap;
 	border-left: 1px solid #c8ccd1;
 }
 
@@ -22,11 +20,18 @@
 	width: 100%;
 }
 
-.prp-pagelist-dialog-stack-layout > .prp-pagelist-dialog-form-panel {
+.prp-pagelist-dialog-stack-layout > .oo-ui-panelLayout:first-child {
 	position: sticky;
 	background: #fff;
 	top: 0;
 	z-index: 2;
-	width: 100%;
 	box-shadow: 0 1px 4px 1px rgba( 0, 0, 0, 0.25 );
+}
+
+.prp-pagelist-dialog-wikitext-form-panel > .prp-pagelist-dialog-update-button {
+	margin-top: 0.5em;
+}
+
+.prp-pagelist-dialog-wikitext-form-panel > .prp-pagelist-dialog-text-input {
+	max-width: 100%;
 }

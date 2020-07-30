@@ -1,11 +1,12 @@
 /**
- * A model to store currently used page data.
+ * An interface class containing methods that will be used by both the WikitextDialogModel
+ * and the VisualDialogModel as well as certain template methods that should be overriden.
  *
  * @param {Object} data Page data
  * @param {mw.proofreadpage.PagelistInputWidget.Model} mainModel
  * @class
  */
-function PageModel( data, mainModel ) {
+function DialogModel( data, mainModel ) {
 	OO.EventEmitter.call( this );
 
 	this.data = data || {};
@@ -14,7 +15,7 @@ function PageModel( data, mainModel ) {
 	this.canonicalImageLink = null;
 }
 
-OO.mixinClass( PageModel, OO.EventEmitter );
+OO.mixinClass( DialogModel, OO.EventEmitter );
 
 /**
  * Sets data for model
@@ -23,7 +24,7 @@ OO.mixinClass( PageModel, OO.EventEmitter );
  * @event aftersetpagedata
  * @event aftersetimageurl
  */
-PageModel.prototype.setData = function ( data ) {
+DialogModel.prototype.setData = function ( data ) {
 	this.data = data;
 	if ( !this.canonicalImageLink ) {
 		this.generateImageLink( data );
@@ -41,7 +42,7 @@ PageModel.prototype.setData = function ( data ) {
  *
  * @param  {Object} data Data for current subpage
  */
-PageModel.prototype.generateImageLink = function ( data ) {
+DialogModel.prototype.generateImageLink = function ( data ) {
 	var pageTitle = mw.config.get( 'wgFormattedNamespaces' )[ 6 ] + ':' + mw.config.get( 'wgTitle' ),
 		subpage = data.subPage || 1,
 		imageSize = 1024; // arbitrary number, same as used at PageDisplayHandler.php
@@ -78,4 +79,34 @@ PageModel.prototype.generateImageLink = function ( data ) {
 	} );
 };
 
-module.exports = PageModel;
+/**
+ * Placeholder method to be overriden
+ */
+DialogModel.prototype.updateCachedDataFromMainModel = function () {
+};
+
+/**
+ * Placeholder method to be overriden
+ */
+DialogModel.prototype.updateCachedData = function () {
+};
+
+/**
+ * Placeholder method to be overriden
+ */
+DialogModel.prototype.setCachedData = function () {
+};
+
+/**
+ * Placeholder method to be overriden
+ */
+DialogModel.prototype.unloadCachedData = function () {
+};
+
+/**
+ * Placeholder method to be overriden
+ */
+DialogModel.prototype.setCachedDataChanged = function () {
+};
+
+module.exports = DialogModel;
