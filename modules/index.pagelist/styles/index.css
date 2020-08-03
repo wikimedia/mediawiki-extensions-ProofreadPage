@@ -5,3 +5,16 @@
 .prp-pagelist-input-preview-output {
 	margin-top: 0.5em;
 }
+
+.prp-pagelist-preview {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.prp-pagelist-preview > .oo-ui-widget {
+	flex-grow: 1;
+}
+
+.prp-pagelist-preview > .oo-ui-widget > .oo-ui-buttonElement-button {
+	width: 100%;
+}
