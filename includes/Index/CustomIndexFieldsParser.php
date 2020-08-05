@@ -242,4 +242,21 @@ class CustomIndexFieldsParser {
 		}
 		return $params;
 	}
+
+	/**
+	 * @param IndexContent $content
+	 * @return string|null
+	 */
+	public function getContentLanguage( IndexContent $content ) {
+		$entries = $this->parseCustomIndexFields( $content );
+
+		foreach ( $entries as $entry ) {
+			if ( $entry->getType() === 'langcode' && $entry->getData() === 'language' ) {
+				return $entry->getStringValue();
+			}
+		}
+
+		return null;
+	}
+
 }

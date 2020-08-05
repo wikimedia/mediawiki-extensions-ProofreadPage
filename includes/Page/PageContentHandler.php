@@ -380,4 +380,21 @@ class PageContentHandler extends TextContentHandler {
 	public function isParserCacheSupported() {
 		return true;
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getPageLanguage( Title $title, Content $content = null ) {
+		$context = Context::getDefaultContext();
+		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
+		if ( $indexTitle ) {
+			$indexContent = $context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+			$indexLang = $context->getCustomIndexFieldsParser()->getContentLanguage( $indexContent );
+			if ( $indexLang ) {
+				// if unrecognized, uses $wgContentLanguage
+				return wfGetLangObj( $indexLang );
+			}
+		}
+		return parent::getPageLanguage( $title, $content );
+	}
 }
