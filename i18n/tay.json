@@ -40,6 +40,9 @@
 	"proofreadpage_quality4_category": "Minsinhzyayan",
 	"proofreadpage_quality0_summary": "Ungat biru’",
 	"proofreadpage_quality1_summary": "Iyat mincyawtue",
+	"proofreadpage_quality2_summary": "Kiya ’zzyuwaw niya’",
+	"proofreadpage_quality3_summary": "Cyawtue",
+	"proofreadpage_quality4_summary": "Minsinhzyayan",
 	"proofreadpage_quality0_message": "Ana ini’ cyawtue gnyahan llpgan qaniy hya’",
 	"proofreadpage_quality1_message": "Ini’ naha’ aniy cyawtue na’ llpgan biru’ qaniy hya’",
 	"proofreadpage_quality2_message": "Cyawtue naha’ quw gnyahan llpgan qaniy ga, ktan naha’ kya quw ’zzyuwaw na zyuwaw",
@@ -73,6 +76,7 @@
 	"proofreadpage-button-zoom-in-label": "Pkrhun",
 	"proofreadpage-button-toggle-layout-label": "Mshzyu’ na pinslubay / pspngan kinmtnaq ktan na rawziq",
 	"proofreadpage-pageinfo-status": "Cyawtue cwangtay",
+	"proofreadpage-pagelist-notcreated": "iyat pins’rux na’ quw zngazyan qaniy.",
 	"proofreadpage-preferences-showheaders-label": "Maki’ sa {{ns:page}}minspes iy musa’ mtzyuwaw smr’zyut miru’ ga, spkita’ niya’ qu snyan sa bbrwan tay atu’ na llpgan squ tay klbing na llpgan.",
 	"proofreadpage-preferences-horizontal-layout-label": "Maki’ sa {{ns:page}}minspes iy musa’ mtzyuwaw smr’zyut miru’ ga, mutuw niya’ s’agal Swecun pucyu’.",
 	"proofreadpage-indexquality-alt": "$1wal snhzyazyun smwal {{PLURAL:$1|zzngayan}},\n$2 wal snhzyazyun smwal {{PLURAL:$2|zzngayan}}\nruw $ wal ini’ snhzyaziy na \n{{PLURAL:$3|zzngayan}}",
@@ -84,5 +88,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Aw’",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Iyat",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "cyawtuepinc",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "cyawtuepinc"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "cyawtuepinc",
+	"proofreadpage-index-field-category-label": "Pintbcyan"
 }
