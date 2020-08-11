@@ -34,6 +34,10 @@ function PagelistInputWidget( config ) {
 
 	OO.ui.getWindowManager().addWindows( [ this.dialog ] );
 
+	this.model.connect( this, {
+		wikitextUpdated: 'updateTextInput'
+	} );
+
 	this.buttonWidget.connect( this, {
 		click: 'onButtonClick'
 	} );
@@ -59,8 +63,6 @@ OO.mixinClass( PagelistInputWidget, OO.ui.mixin.PendingElement );
  */
 PagelistInputWidget.prototype.onButtonClick = function () {
 	this.buttonWidget.setDisabled( true );
-	this.textInputWidget.pushPending();
-	this.textInputWidget.setDisabled( true );
 
 	this.model.updateWikitext( this.textInputWidget.getValue() );
 };
@@ -70,8 +72,6 @@ PagelistInputWidget.prototype.onButtonClick = function () {
  */
 PagelistInputWidget.prototype.onPreviewResolution = function () {
 	this.buttonWidget.setDisabled( false );
-	this.textInputWidget.popPending();
-	this.textInputWidget.setDisabled( false );
 };
 
 /**
@@ -85,6 +85,10 @@ PagelistInputWidget.prototype.openWindow = function ( selectedOption ) {
 		return;
 	}
 	OO.ui.getWindowManager().openWindow( 'PagelistInputDialog', selectedOption.getData() || {} );
+};
+
+PagelistInputWidget.prototype.updateTextInput = function ( wikitext ) {
+	this.textInputWidget.setValue( wikitext );
 };
 
 /**

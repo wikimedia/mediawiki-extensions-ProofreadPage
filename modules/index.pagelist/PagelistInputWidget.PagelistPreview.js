@@ -8,6 +8,8 @@
 function PagelistPreview( model, config ) {
 	PagelistPreview.super.call( this, config );
 	this.model = model;
+	this.selected = null;
+	this.buttonArray = [];
 	this.buttonSelectWidget = new OO.ui.ButtonSelectWidget( {
 		classes: [ 'prp-pagelist-preview' ]
 	} );
@@ -16,15 +18,30 @@ function PagelistPreview( model, config ) {
 		type: 'error',
 		classes: [ 'prp-pagelist-preview-parsing-error' ]
 	} );
-	this.model.connect( this, {
-		parsingerror: 'displayError',
-		enumeratedListCreated: 'updatePreview'
-	} );
-	this.buttonSelectWidget.connect( this, {
-		select: 'onSelect'
+	this.progressBar = new OO.ui.ProgressBarWidget( {
+		progress: false
 	} );
 
-	this.$element.append( this.messages.$element, this.buttonSelectWidget.$element );
+	this.model.connect( this, {
+		parsingerror: 'displayError',
+		enumeratedListCreated: 'updatePreview',
+		enumeratedListGenerationStarted: 'showProgressBar'
+	} );
+	this.buttonSelectWidget.connect( this, {
+		select: 'onSelect',
+		add: 'restoreSelected'
+	} );
+	// hack to connect two functions to same widget and event
+	this.buttonSelectWidget.connect( this, {
+		select: 'saveSelected',
+		add: 'hideProgressBar'
+	} );
+	this.model.connect( this, {
+		parsingerror: 'hideProgressBar'
+	} );
+
+	this.$element.append( this.progressBar.$element, this.messages.$element, this.buttonSelectWidget.$element );
+	this.progressBar.toggle( false );
 	this.buttonSelectWidget.toggle( false );
 	this.messages.toggle( false );
 }
@@ -48,12 +65,13 @@ PagelistPreview.prototype.updatePreview = function ( parameters ) {
 		button = new OO.ui.ButtonOptionWidget( {
 			label: $( '<span>' ).html( parameters[ i ].text ),
 			data: parameters[ i ],
-			title: parameters[ i ].type
+			title: String( parameters[ i ].subPage )
 		} );
 
 		buttonArray.push( button );
 	}
 
+	this.buttonArray = buttonArray;
 	this.buttonSelectWidget.addItems( buttonArray );
 	this.emit( 'previewDisplayed' );
 };
@@ -90,6 +108,10 @@ PagelistPreview.prototype.onSelect = function () {
 	this.emit.apply( this, args );
 };
 
+PagelistPreview.prototype.saveSelected = function ( selectedItem ) {
+	this.selected = selectedItem.getData();
+};
+
 /**
  * Convienience method to select a particular item without
  * triggering a 'pageselected' event
@@ -104,6 +126,40 @@ PagelistPreview.prototype.selectItemByDataWithoutEvent = function ( data ) {
 	this.buttonSelectWidget.connect( this, {
 		select: 'onSelect'
 	} );
+};
+
+/**
+ * Restore the selected page number after regenerating the pagelist
+ */
+PagelistPreview.prototype.restoreSelected = function () {
+	var i, buttonArray = this.buttonArray, selected = this.selected;
+
+	if ( !selected ) {
+		return;
+	}
+
+	for ( i = 0; i < buttonArray.length; i++ ) {
+		if ( buttonArray[ i ].getData().subPage === selected.subPage ) {
+			this.selectItemByDataWithoutEvent( buttonArray[ i ].getData() );
+			return;
+		}
+	}
+};
+
+/**
+ * Shows progress bar while the pagelist data is being fetched.
+ */
+PagelistPreview.prototype.showProgressBar = function () {
+	this.progressBar.toggle( true );
+	this.buttonSelectWidget.toggle( false );
+	this.messages.toggle( false );
+};
+
+/**
+ * Hides the progress bar after update process has completed.
+ */
+PagelistPreview.prototype.hideProgressBar = function () {
+	this.progressBar.toggle( false );
 };
 
 module.exports = PagelistPreview;

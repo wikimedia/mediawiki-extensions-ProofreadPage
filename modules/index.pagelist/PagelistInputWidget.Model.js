@@ -23,30 +23,33 @@ OO.mixinClass( PagelistInputWidgetModel, OO.EventEmitter );
 /**
  * Updates the wikitext parameter. Also updates the parameters and enumeratedLists
  *
- * @param  {string} wikitext Updated wikitext
+ * @param {string} wikitext Updated wikitext
  */
 PagelistInputWidgetModel.prototype.updateWikitext = function ( wikitext ) {
 	this.wikitext = wikitext;
+	this.emit( 'wikitextUpdated', wikitext );
 	this.generateParametersFromWikitext();
 };
 
 /**
  * Generates parameters from raw wikitext
  *
+ * @param {string} wikitext
  * @event parsingerror Error in parsing pagelist
  */
-PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function () {
+PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( wikitext ) {
 	// https://regex101.com/r/rWhPy6/10
 	// Try a naive way of extracting one pagelist tag and then put whatever we got
 	// into a XML parser which should sort the parameters stuff for us
 	var pagelistRegex = /<pagelist[^<]*?\/>/gmi,
 		pagelistText,
 		tagEndMatches,
-		wikitext = this.wikitext,
 		parsedPagelist,
 		attrs,
 		parameters = {},
 		i;
+
+	wikitext = wikitext || this.wikitext;
 
 	if ( pagelistRegex.test( wikitext ) ) {
 		if ( wikitext.match( pagelistRegex ).length > 1 ) {
@@ -61,7 +64,8 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function () 
 			// hack to deal with <pagelist 1=2/> type stuff which
 			// makes the first element render as 2/ when using DOMParser.
 			if ( tagEndMatches.length ) {
-				pagelistText = pagelistText.substring( 0, tagEndMatches.index ) + ' ' + pagelistText.substring( tagEndMatches.index );
+				pagelistText = pagelistText.substring( 0, tagEndMatches.index ) +
+					' ' + pagelistText.substring( tagEndMatches.index );
 			}
 
 			parsedPagelist = ( new DOMParser() )
@@ -79,21 +83,38 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function () 
 			}
 
 			this.moreThanOne = false;
-			this.parameters = parameters;
-			this.generateEnumeratedList();
+			if ( !arguments.length ) {
+				this.parameters = parameters;
+				this.generateEnumeratedList();
+			} else {
+				this.generateEnumeratedList( parameters );
+			}
 		}
 	} else {
 		this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-pagelistnotdetected' );
 	}
 };
 
-//
-PagelistInputWidgetModel.prototype.generateParametersFromEnumeratedList = function () {
-	// TODO: Make this do something later
+/**
+ * Gets wikitext
+ *
+ * @return {string} wikitext
+ */
+PagelistInputWidgetModel.prototype.getWikitext = function () {
+	return this.wikitext;
+};
+
+/**
+ * Gets parameters
+ *
+ * @return {Object} parameters
+ */
+PagelistInputWidgetModel.prototype.getParameters = function () {
+	return this.parameters;
 };
 
 //
-PagelistInputWidgetModel.prototype.updateEnumeratedList = function () {
+PagelistInputWidgetModel.prototype.updateParameters = function () {
 	// TODO: Make this do something later
 };
 
@@ -106,17 +127,21 @@ PagelistInputWidgetModel.prototype.generateWikitext = function () {
  * Generates list of Objects containing information usable for rendering the pagelist from
  * the current parameters based on responses from API
  *
+ * @param {Object} parameters
  * @event parsingerror Error in parsing pagelist
  * @event enumeratedListCreated List of pages was created
  */
-PagelistInputWidgetModel.prototype.generateEnumeratedList = function () {
+PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameters ) {
 	// Create a template (per T252706) and then pass it to the parsing api
 	// parse the resulting output and create a array of associative arrays each containing
 	// info about a particular page number
 	var apiWikitext = '{{MediaWiki:Proofreadpage index template|' + this.templateParameter + '=$2}}',
-		parameters = this.parameters,
 		pagelistText = '<pagelist ',
 		index;
+
+	this.emit( 'enumeratedListGenerationStarted' );
+
+	parameters = parameters || this.parameters;
 
 	if ( this.moreThanOne ) {
 		this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-morethanone' );
@@ -138,6 +163,7 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function () {
 		mw.log.error( err );
 	} );
 };
+
 /**
  * Parses Api response to enumerated list
  *
@@ -149,9 +175,6 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 		parsedPagelist,
 		enumeratedList = [],
 		i, ranges = [],
-		classes,
-		notCreated,
-		quality,
 		index;
 	parsedText.innerHTML = response.parse.text[ '*' ];
 
@@ -180,21 +203,9 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 	}
 
 	for ( i = 0; i < parsedPagelist.length; i++ ) {
-		classes = parsedPagelist[ i ].attributes.class.value.split( ' ' );
-
-		notCreated = classes.filter( function ( data ) {
-			return data === 'new';
-		} );
-
-		quality = classes.filter( function ( data ) {
-			return /quality/.test( data );
-		} );
 
 		enumeratedList.push( {
 			subPage: ( i + 1 ),
-			notCreated: !!notCreated.length,
-			// really bad hack to get page quality ( ES5 compatibility reasons )
-			quality: quality.length && quality[ 0 ].split( 'prp-pagequality-' )[ 1 ] || null,
 			text: parsedPagelist[ i ].innerHTML,
 			type: ranges[ ( i + 1 ) ] || 'Number',
 			assignedPageNumber: parameters[ ( i + 1 ) ] || null

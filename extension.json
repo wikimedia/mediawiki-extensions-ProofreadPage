@@ -153,7 +153,10 @@
 				"index.pagelist/PagelistInputWidget.MainPanel.js",
 				"index.pagelist/PagelistInputWidget.Model.js",
 				"index.pagelist/PagelistInputWidget.PagelistPreview.js",
-				"index.pagelist/PagelistInputWidget.PageModel.js"
+				"index.pagelist/PagelistInputWidget.WikitextDialogModel.js",
+				"index.pagelist/PagelistInputWidget.DialogModel.js",
+				"index.pagelist/PagelistInputWidget.WikitextFormPanel.js",
+				"index.pagelist/PagelistInputWidget.TopPanel.js"
 			],
 			"messages": [
 				"proofreadpage-pagelist-assignedpagenumber",
@@ -161,13 +164,17 @@
 				"proofreadpage-pagelist-dialog-title",
 				"proofreadpage-pagelist-imageurlnotfound",
 				"proofreadpage-pagelist-input-preview-button",
-				"proofreadpage-pagelist-notcreated",
 				"proofreadpage-pagelist-parsing-error-morethanone",
 				"proofreadpage-pagelist-parsing-error-pagelistnotdetected",
 				"proofreadpage-pagelist-parsing-error-php",
 				"proofreadpage-pagelist-parsing-error-unknown",
-				"proofreadpage-pagelist-quality",
-				"proofreadpage-pagelist-type"
+				"proofreadpage-pagelist-type",
+				"proofreadpage-pagelist-scan-number",
+				"proofreadpage-pagelist-dialog-update-button",
+				"proofreadpage-pagelist-dialog-unsaved-progress",
+				"proofreadpage-pagelist-dialog-unsaved-progress-title",
+				"proofreadpage-pagelist-dialog-cancel",
+				"proofreadpage-pagelist-dialog-discard-changes"
 			],
 			"dependencies": [
 				"oojs-ui-core",
