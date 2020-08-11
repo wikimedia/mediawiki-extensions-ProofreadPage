@@ -159,7 +159,9 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 		action: 'parse',
 		title: mw.config.get( 'wgPageName' ),
 		text: apiWikitext
-	} ).done( this.parseAPItoEnumeratedList.bind( this ) ).catch( function ( err ) {
+	} ).done( function ( response ) {
+		this.parseAPItoEnumeratedList( response, parameters );
+	}.bind( this ) ).catch( function ( err ) {
 		mw.log.error( err );
 	} );
 };
@@ -168,14 +170,15 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
  * Parses Api response to enumerated list
  *
  * @param  {Object} response API response
+ * @param  {Object} parameters
  */
-PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( response ) {
+PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( response, parameters ) {
 	var parsedText = document.createElement( 'body' ),
-		parameters = this.parameters,
 		parsedPagelist,
 		enumeratedList = [],
 		i, ranges = [],
 		index;
+	parameters = parameters || this.parameters;
 	parsedText.innerHTML = response.parse.text[ '*' ];
 
 	// extract all the ranges being set by the pagelist
