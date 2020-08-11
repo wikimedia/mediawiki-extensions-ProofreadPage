@@ -81,6 +81,18 @@ class CustomIndexField {
 	}
 
 	/**
+	 * Return the data value of the entry
+	 * @return string|null
+	 */
+	public function getData() {
+		if ( isset( $this->config['data'] ) && $this->config['data'] != '' ) {
+			return $this->config['data'];
+		} else {
+			return null;
+		}
+	}
+
+	/**
 	 * Return the label of the entry
 	 * @return string
 	 */

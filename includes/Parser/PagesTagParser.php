@@ -95,6 +95,8 @@ class PagesTagParser {
 		$joiner = $this->context->getConfig()->get( 'ProofreadPagePageJoiner' );
 		$placeholder = $this->context->getConfig()->get( 'ProofreadPagePageSeparatorPlaceholder' );
 
+		$contentLang = null;
+
 		if ( $from || $to || $include ) {
 			$pages = [];
 
@@ -219,11 +221,19 @@ class PagesTagParser {
 			// write the output
 			/** @var Title $page */
 			foreach ( $pages as list( $page, $pageNumber ) ) {
-				$pagenum = $pageNumber->getRawPageNumber( $language );
-				$formattedNum = $pageNumber->getFormattedPageNumber( $language );
+				if ( $contentLang !== 'mixed' ) {
+					$pageLang = $page->getPageLanguage()->getHtmlCode();
+					if ( !$contentLang ) {
+						$contentLang = $pageLang;
+					} elseif ( $contentLang !== $pageLang ) {
+						$contentLang = 'mixed';
+					}
+				}
 				$qualityLevel = $pageQualityLevelLookup->getQualityLevelForPageTitle( $page );
 				$text = $page->getPrefixedText();
 				if ( $qualityLevel !== PageLevel::WITHOUT_TEXT ) {
+					$pagenum = $pageNumber->getRawPageNumber( $language );
+					$formattedNum = $pageNumber->getFormattedPageNumber( $language );
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text .
 						"|num=$pagenum|formatted=$formattedNum}}</span>";
 				}
@@ -330,7 +340,11 @@ class PagesTagParser {
 		}
 
 		// wrap the output in a div, to prevent the parser from inserting paragraphs
-		$out = "<div class=\"prp-pages-output\">\n$out\n</div>";
+		// and to set the content language
+		$langAttr = $contentLang && $contentLang !== 'mixed'
+			? " lang=\"$contentLang\""
+			: "";
+		$out = "<div class=\"prp-pages-output\"$langAttr>\n$out\n</div>";
 		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );
 
