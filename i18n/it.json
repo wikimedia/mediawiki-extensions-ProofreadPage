@@ -84,7 +84,6 @@
 	"proofreadpage-button-zoom-in-label": "Zoom avanti",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizzontale",
 	"proofreadpage-pageinfo-status": "Stato di correzione",
-	"proofreadpage-pagelist-quality": "Qualità: $1",
 	"proofreadpage-preferences-showheaders-label": "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usa il layout orizzontale durante la modifica nel namespace {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina riletta|pagine rilette}}, $2 {{PLURAL:$2|pagina solo trascritta|pagine solo trascritte}} e $3 {{PLURAL:$3|pagina incompleta|pagine incomplete}}",

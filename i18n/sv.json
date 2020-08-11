@@ -93,8 +93,6 @@
 	"proofreadpage-pageinfo-status": "Korrekturläsningsstatus",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Fler än en <pagelist/>-tagg hittades i källtexten.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Ingen <pagelist/>-tagg hittades.",
-	"proofreadpage-pagelist-notcreated": "Den här sidan har inte skapats.",
-	"proofreadpage-pagelist-quality": "Kvalitet: $1",
 	"proofreadpage-preferences-showheaders-label": "Visa fälten för sidhuvud och sidfot vid redigering i namnrymden {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Använd vågrät utformning vid redigering i namnrymden {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|validerad sida|validerade sidor}}, $2 endast {{PLURAL:$2|korrekturläst sida|korrekturlästa sidor}} och $3 ej {{PLURAL:$3|korrekturläst sida|korrekturlästa sidor}}",

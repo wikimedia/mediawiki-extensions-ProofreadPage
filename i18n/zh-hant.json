@@ -100,8 +100,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "插入更改",
 	"proofreadpage-pagelist-imageurlnotfound": "找不到此掃描的縮圖來源。",
 	"proofreadpage-pagelist-type": "頁面號碼類型：$1",
-	"proofreadpage-pagelist-notcreated": "此頁面尚未被建立。",
-	"proofreadpage-pagelist-quality": "品質：$1",
 	"proofreadpage-pagelist-assignedpagenumber": "此頁面已被分配到頁面號碼：$1",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}}命名空間中進行編輯時顯示頁眉和頁腳的欄位",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}}命名空間中進行編輯時使用水準佈局",

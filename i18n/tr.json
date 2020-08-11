@@ -99,8 +99,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Değişiklikleri Ekle",
 	"proofreadpage-pagelist-imageurlnotfound": "Bu tarama için küçük resim kaynağı bulunamadı.",
 	"proofreadpage-pagelist-type": "Sayfa Numarası Türü: $1",
-	"proofreadpage-pagelist-notcreated": "Bu sayfa oluşturulmadı.",
-	"proofreadpage-pagelist-quality": "Kalite: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Bu sayfaya sayfa numarası atandı: $1",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ad alanını düzenlerken üstbilgi ve altbilgi alanlarını göster",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ad alanında düzenlerken yatay düzen kullan:",

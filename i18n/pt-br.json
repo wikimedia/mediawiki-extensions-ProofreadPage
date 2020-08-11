@@ -97,8 +97,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Inserir mudanças",
 	"proofreadpage-pagelist-imageurlnotfound": "Não foi possível encontrar a fonte de miniaturas para esta verificação.",
 	"proofreadpage-pagelist-type": "Tipo de número da página: $1",
-	"proofreadpage-pagelist-notcreated": "Esta página não foi criada.",
-	"proofreadpage-pagelist-quality": "Qualidade: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Esta página recebeu o número da página: $1",
 	"proofreadpage-preferences-showheaders-label": "Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar layout horizontal ao editar o espaço nominal {{ns:page}}",

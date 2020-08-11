@@ -89,8 +89,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Вметни промени",
 	"proofreadpage-pagelist-imageurlnotfound": "Не можев да го пронајдам минијатурниот извор за овој отслик.",
 	"proofreadpage-pagelist-type": "Вид на број на страница: $1",
-	"proofreadpage-pagelist-notcreated": "Оваа страница не е создадена.",
-	"proofreadpage-pagelist-quality": "Квалитет: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "На страницава ѝ е доделен бројот: $1",
 	"proofreadpage-preferences-showheaders-label": "Прикажувај заглавје и подножне при уредување на именскиот простор „{{ns:page}}“",
 	"proofreadpage-preferences-horizontal-layout-label": "Користи хоризонтален распоред при уредување во именскиот простор „{{ns:page}}“",

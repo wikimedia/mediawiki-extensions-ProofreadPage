@@ -102,8 +102,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Вставити зміни",
 	"proofreadpage-pagelist-imageurlnotfound": "Джерело мініатюри для цього скану не знайдено.",
 	"proofreadpage-pagelist-type": "Тип номеру сторінки: $1",
-	"proofreadpage-pagelist-notcreated": "Цю сторінку не створено.",
-	"proofreadpage-pagelist-quality": "Якість: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Цій сторінці призначено номер: $1",
 	"proofreadpage-preferences-showheaders-label": "Показувати поля верхнього і нижнього колонтитулів при редагуванні в просторі імен {{ns:page}}.",
 	"proofreadpage-preferences-horizontal-layout-label": "Використовувати горизонтальну розкладку при редагуванні в просторі назв {{ns:page}}.",

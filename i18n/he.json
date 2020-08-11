@@ -93,8 +93,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "הוספת שינויים",
 	"proofreadpage-pagelist-imageurlnotfound": "לא היה אפשר למצוא את מקור התמונה הממוזערת עבור הסריקה הזאת.",
 	"proofreadpage-pagelist-type": "סוג מספר דף: $1",
-	"proofreadpage-pagelist-notcreated": "הדף הזה לא נוצר.",
-	"proofreadpage-pagelist-quality": "איכות: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "לדף הזה שויך מספר דף: $1",
 	"proofreadpage-preferences-showheaders-label": "הצגת כותרת עליונה וכותרת תחתונה בעת עריכת דפים במרחב השם \"{{ns:page}}\"",
 	"proofreadpage-preferences-horizontal-layout-label": "שימוש בתצוגה אופקית בעת עריכת דפים במרחב השם \"{{ns:page}}\"",

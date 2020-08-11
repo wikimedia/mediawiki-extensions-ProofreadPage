@@ -105,8 +105,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Insérer les modifications",
 	"proofreadpage-pagelist-imageurlnotfound": "La vignette source pour ce scan n’a pas pu être trouvée.",
 	"proofreadpage-pagelist-type": "Type de numéro de page : $1",
-	"proofreadpage-pagelist-notcreated": "La page n’a pas été créée.",
-	"proofreadpage-pagelist-quality": "Qualité : $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Le numéro de page $1 a été affecté à cette page.",
 	"proofreadpage-preferences-showheaders-label": "Afficher des champs d'en-tête et de pied de page lors de l'édition dans l'espace de nommage {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Utiliser une disposition horizontale lors d'une modification dans l'espace de noms {{ns:page}}",

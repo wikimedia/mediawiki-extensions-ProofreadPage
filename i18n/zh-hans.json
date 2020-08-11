@@ -101,8 +101,6 @@
 	"proofreadpage-pagelist-dialog-title": "为$1编辑页面清单",
 	"proofreadpage-pagelist-dialog-insertchanges": "插入更改",
 	"proofreadpage-pagelist-type": "页码类型：$1",
-	"proofreadpage-pagelist-notcreated": "此页面尚未被创建。",
-	"proofreadpage-pagelist-quality": "数量：$1",
 	"proofreadpage-preferences-showheaders-label": "在{{ns:page}}名字空间编辑时显示页眉和页脚字段",
 	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}名字空间编辑时使用水平线",
 	"proofreadpage-indexquality-alt": "$1个已确认{{PLURAL:$1|页面}}，$2个仅已校对{{PLURAL:$2|页面}}和$3个未校对{{PLURAL:$3|页面}}",

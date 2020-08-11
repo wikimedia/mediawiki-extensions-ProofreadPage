@@ -93,8 +93,6 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Sett inn endringer",
 	"proofreadpage-pagelist-imageurlnotfound": "Miniatyrkilden for denne skanningen ble ikke funnet.",
 	"proofreadpage-pagelist-type": "Talltype for side: $1",
-	"proofreadpage-pagelist-notcreated": "Denne siden har ikke blitt opprettet.",
-	"proofreadpage-pagelist-quality": "Kvalitet: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Denne siden har blitt tildelt sidetallet: $1",
 	"proofreadpage-preferences-showheaders-label": "Vis felt for topptekst og bunntekst ved redigering i {{ns:page}}-navnerommet",
 	"proofreadpage-preferences-horizontal-layout-label": "Bruk horisontalt oppsett ved redigering i {{ns:page}}-navnerommet",

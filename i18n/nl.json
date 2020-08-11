@@ -86,7 +86,6 @@
 	"proofreadpage-pageinfo-status": "Controlestatus",
 	"proofreadpage-pagelist-dialog-insertchanges": "Veranderingen invoegen",
 	"proofreadpage-pagelist-type": "Pagina Nummer Type:$1",
-	"proofreadpage-pagelist-notcreated": "De pagina is niet aangemaakt.",
 	"proofreadpage-pagelist-assignedpagenumber": "Aan deze pagina is paginanummer $1 toegekend",
 	"proofreadpage-preferences-showheaders-label": "Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt",
 	"proofreadpage-preferences-horizontal-layout-label": "Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}",
