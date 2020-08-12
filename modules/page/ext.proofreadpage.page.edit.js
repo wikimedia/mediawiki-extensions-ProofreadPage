@@ -457,6 +457,10 @@
 				}
 			}
 		);
+		// Store the original value for the whole wpTextbox1
+		// so that it can be checked against in core's mediawiki.action.edit.editWarning.js
+		// and not get a false positive.
+		$edit.data( 'origtext', $edit.textSelection( 'getContents' ) );
 	}
 
 	/**
