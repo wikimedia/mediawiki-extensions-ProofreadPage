@@ -97,6 +97,8 @@
 	"proofreadpage-button-toggle-layout-label": "Disposition verticale/horizontale",
 	"proofreadpage-pageinfo-status": "État de la relecture",
 	"proofreadpage-pagelist-input-preview-button": "Aperçu de la liste des pages",
+	"proofreadpage-pagelist-dialog-discard-changes": "Annuler les modifications",
+	"proofreadpage-pagelist-dialog-cancel": "Annuler",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Plus d'une balise <pagelist /> a été trouvée dans le wikicode du source.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Pas de balise <pagelist /> trouvées.",
 	"proofreadpage-pagelist-parsing-error-php": "L’erreur suivante s’est produite en analysant la balise pagelist dans le serveur, $1",

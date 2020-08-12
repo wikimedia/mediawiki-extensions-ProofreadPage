@@ -73,6 +73,8 @@
 	"proofreadpage-button-zoom-in-label": "Vergréisseren",
 	"proofreadpage-button-toggle-layout-label": "Vertikalen/horizontale Layout",
 	"proofreadpage-pageinfo-status": "Status Iwwerliesen",
+	"proofreadpage-pagelist-dialog-discard-changes": "Ännerungen annuléieren",
+	"proofreadpage-pagelist-dialog-cancel": "Ofbriechen",
 	"proofreadpage-pagelist-dialog-insertchanges": "Ännerungen drasetuzen",
 	"proofreadpage-preferences-showheaders-label": "D'Entête an de Pied de page weise beim Ännerungen am {{ns:page}}-Nummraum",
 	"proofreadpage-preferences-horizontal-layout-label": "Benotzt en horizontale Layout wann Dir am {{ns:Page}}-Nummraum ännert",

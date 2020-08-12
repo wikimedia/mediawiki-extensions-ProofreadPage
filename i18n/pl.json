@@ -8,6 +8,7 @@
 			"Matma Rex",
 			"Olgak85",
 			"Przemub",
+			"Rail",
 			"Sp5uhe",
 			"Woytecr",
 			"Zdzislaw"
@@ -85,6 +86,9 @@
 	"proofreadpage-button-zoom-in-label": "Powiększ",
 	"proofreadpage-button-toggle-layout-label": "Zmień układ na poziomy lub pionowy",
 	"proofreadpage-pageinfo-status": "Status przepisywania",
+	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Niezapisany postęp",
+	"proofreadpage-pagelist-dialog-discard-changes": "Porzuć zmiany",
+	"proofreadpage-pagelist-dialog-cancel": "Anuluj",
 	"proofreadpage-preferences-showheaders-label": "Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Użyj poziomego układu podczas edycji w przestrzeni nazw {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|strona uwierzytelniona|strony uwierzytelnione|stron uwierzytelnionych}}, $2 {{PLURAL:$2|strona skorygowana|strony skorygowane|stron skorygowanych}} i $3 {{PLURAL:$3|strona przepisana|strony przepisane|stron przepisanych}}",
@@ -96,5 +100,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Tak",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nie",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Jakość korekty",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Jakość korekty"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Jakość korekty",
+	"proofreadpage-index-field-category-label": "Kategorie"
 }
