@@ -20,6 +20,10 @@ function MainPanel( dialogModel, preview, config ) {
 	this.pagelistPreview.connect( this, {
 		pageselected: 'onSetData'
 	} );
+	// Listen even for non pageselect page selection
+	this.pagelistPreview.buttonSelectWidget.connect( this, {
+		select: 'onSetData'
+	} );
 	this.dialogModel = dialogModel;
 	this.imagePanel = new ImagePanel( this.dialogModel );
 	this.topPanel = new TopPanel( this.dialogModel );
