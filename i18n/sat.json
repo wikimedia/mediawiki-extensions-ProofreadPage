@@ -3,6 +3,7 @@
 		"authors": [
 			"Albinus",
 			"Amire80",
+			"Durga Soren",
 			"Fagunkoyel Hansdah",
 			"Manik Soren",
 			"R Ashwani Banjan Murmu",
@@ -83,6 +84,7 @@
 	"proofreadpage-button-zoom-in-label": "ᱞᱟᱹᱴᱩᱭ ᱢᱮ",
 	"proofreadpage-button-toggle-layout-label": "ᱛᱤᱸᱜᱩ/ᱜᱤᱛᱤᱪ ᱥᱟᱡᱟᱣ",
 	"proofreadpage-pageinfo-status": "ᱥᱟᱯᱲᱟᱣ ᱚᱵᱚᱥᱛᱷᱟ",
+	"proofreadpage-pagelist-dialog-discard-changes": "ᱵᱚᱫᱚᱞᱠᱚ ᱵᱟ.ᱬᱤᱡᱽ ᱢᱮ",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ᱨᱟᱠᱷᱟ ᱧᱤᱛᱩᱢ ᱥᱟᱯᱲᱟᱣ ᱡᱚᱠᱷᱚᱡ ᱪᱮᱛᱟᱱ ᱞᱟᱛᱟᱨ ᱨᱮᱱᱟᱜ ᱚᱞᱚᱜ ᱡᱟᱜᱟ ᱩᱫᱩᱜ ᱢᱮ",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ᱧᱤᱛᱩᱢ ᱡᱟᱜᱟ ᱥᱚᱞᱦᱮ ᱡᱚᱠᱷᱚᱡ ᱜᱤᱛᱤᱪ ᱛᱮ ᱢᱮᱱᱟᱜ ᱡᱟᱜᱟ ᱵᱮᱵᱦᱟᱨ ᱢᱮ",
 	"proofreadpage-indexquality-alt": "$1 ᱜᱩᱱᱟᱹᱱ {{PLURAL:$1|ᱥᱟᱦᱴᱟ|ᱥᱟᱦᱴᱟᱠᱚ}}, $2 ᱥᱩᱢᱩᱝ ᱯᱟᱲᱦᱟᱣ ᱟᱹᱨᱩᱣᱟᱜ {{PLURAL:$2|ᱥᱟᱦᱴᱟ|ᱥᱟᱦᱴᱟᱠᱚ}} ᱟᱨ $3 ᱫᱚ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱟᱹᱨᱩᱣᱟᱜ {{PLURAL:$3|ᱥᱟᱦᱴᱟ|ᱥᱟᱦᱴᱟᱠᱚ}}",

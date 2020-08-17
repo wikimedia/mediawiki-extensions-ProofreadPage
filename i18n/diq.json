@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"1917 Ekim Devrimi",
 			"Archaeodontosaurus",
 			"Asmen",
 			"Aspar",
@@ -88,6 +89,11 @@
 	"proofreadpage-button-toggle-layout-label": "Kewtey/tikey  asayış",
 	"proofreadpage-pageinfo-status": "Weziyetê vurnayışi",
 	"proofreadpage-pagelist-input-preview-button": "Verqaytê lista temaşeyi",
+	"proofreadpage-pagelist-dialog-update-button": "Lista pelan newe ke",
+	"proofreadpage-pagelist-dialog-unsaved-progress": "Na dora irtibati ra veciyayış vınibiyayışê melumati rê sebeb beno",
+	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Qeyd nêbiyaye ravêr",
+	"proofreadpage-pagelist-dialog-discard-changes": "Vurriyayışan vece",
+	"proofreadpage-pagelist-dialog-cancel": "Bıtexelne",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Çıme vikimetin de yew ra zêde etiketê <pagelist /> tesbit biyo.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Etiketê <pagelist /> tesbit nêbiyo",
 	"proofreadpage-pagelist-parsing-error-php": "Kışta peyi de etiketê pagelist'i agoznayış de ena xetaya raştiyayo: $1",
@@ -96,6 +102,7 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Vurnayışa  tede kerê",
 	"proofreadpage-pagelist-imageurlnotfound": "Na geyrayış de çımey resımê qıckeki nêvineya.",
 	"proofreadpage-pagelist-type": "Babeta numrey pela:$1",
+	"proofreadpage-pagelist-scan-number": "Amardışê rovıtışi:$1",
 	"proofreadpage-pagelist-assignedpagenumber": "Ena pela rê numrey pela erziyayo:$1",
 	"proofreadpage-preferences-showheaders-label": "Nameye {{ns:page}} çı vurneyeno heqa cı wendış u asayışi bımocne.",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} bındı timar kerdış dı serte hali karkerdış",

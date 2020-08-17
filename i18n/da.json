@@ -83,6 +83,7 @@
 	"proofreadpage-button-zoom-in-label": "Zoom ind",
 	"proofreadpage-button-toggle-layout-label": "Lodret/vandret opsætning",
 	"proofreadpage-pageinfo-status": "Korrekturlæsningsstatus",
+	"proofreadpage-pagelist-dialog-update-button": "Opdater sideliste",
 	"proofreadpage-pagelist-dialog-cancel": "Annullér",
 	"proofreadpage-pagelist-dialog-insertchanges": "Indsæt ændringer",
 	"proofreadpage-preferences-showheaders-label": "Åbn automatisk felterne for sidehoved og sidefod under redigering i {{ns:page}}navnerummet",
