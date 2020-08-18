@@ -1,5 +1,6 @@
 var MainPanel = require( './PagelistInputWidget.MainPanel.js' );
-var DialogModel = require( './PagelistInputWidget.WikitextDialogModel.js' );
+var WikitextDialogModel = require( './PagelistInputWidget.WikitextDialogModel.js' );
+var VisualDialogModel = require( './PagelistInputWidget.VisualDialogModel.js' );
 var PagelistPreview = require( './PagelistInputWidget.PagelistPreview.js' );
 
 /**
@@ -14,10 +15,12 @@ function Dialog( model, config ) {
 	this.preview = new PagelistPreview( model, {
 		classes: [ 'prp-pagelist-dialog-pagelist-preview' ]
 	} );
-	// should be visual mode once that stuff has been built and finalized
-	// this.editMode = mw.user.options.get( 'proofreadpage-pagelist-edit-mode' ) || 'wikitext';
-	this.dialogModel = new DialogModel( null, model );
-	this.mainPanel = new MainPanel( this.dialogModel, this.preview );
+
+	this.visualMode = !!parseInt( mw.user.options.get( 'proofreadpage-pagelist-use-visual-mode' ) );
+	this.wikitextDialogModel = new WikitextDialogModel( null, model );
+	this.visualDialogModel = new VisualDialogModel( null, model );
+	this.dialogModel = this.visualMode ? this.visualDialogModel : this.wikitextDialogModel;
+	this.mainPanel = new MainPanel( this.visualMode, this.wikitextDialogModel, this.visualDialogModel, this.preview );
 
 	Dialog.super.call( this, config );
 }
@@ -123,4 +126,11 @@ Dialog.prototype.onDialogKeyDown = function ( e ) {
 		e.stopPropagation();
 	}
 };
+
+Dialog.prototype.changeEditMode = function ( mode ) {
+	this.visualMode = !!parseInt( mode );
+	this.dialogModel = this.visualMode ? this.visualDialogModel : this.wikitextDialogModel;
+	this.mainPanel.changeEditMode( this.visualMode );
+};
+
 module.exports = Dialog;

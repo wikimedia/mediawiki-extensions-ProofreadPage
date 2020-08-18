@@ -1,15 +1,19 @@
 var ImagePanel = require( './PagelistInputWidget.ImagePanel.js' );
 var WikitextFormPanel = require( './PagelistInputWidget.WikitextFormPanel.js' );
+var VisualFormPanel = require( './PagelistInputWidget.VisualFormPanel.js' );
 var TopPanel = require( './PagelistInputWidget.TopPanel.js' );
 /**
  * Main view for Wikisource Pagelist Dialog
  *
- * @param {mw.proofreadpage.PagelistInputWidget.DialogModel} dialogModel
+ * @param {boolean} mode Whether the user is in visual mode
+ * @param {mw.proofreadpage.PagelistInputWidget.WikitextDialogModel} wikitextDialogModel
+ * @param {mw.proofreadpage.PagelistInputWidget.VisualDialogModel} visualDialogModel
  * @param {mw.proofreadpage.PagelistInputWidget.PagelistPreview} preview
  * @param {Object} config Configuration variable for PanelLayout
  * @class
  */
-function MainPanel( dialogModel, preview, config ) {
+function MainPanel( mode, wikitextDialogModel, visualDialogModel, preview, config ) {
+	this.visualMode = mode;
 	this.pagelistPreview = preview;
 	this.previewPanel = new OO.ui.PanelLayout( {
 		classes: [ 'prp-pagelist-dialog-preview-panel' ],
@@ -24,10 +28,16 @@ function MainPanel( dialogModel, preview, config ) {
 	this.pagelistPreview.buttonSelectWidget.connect( this, {
 		select: 'onSetData'
 	} );
-	this.dialogModel = dialogModel;
+	this.wikitextDialogModel = wikitextDialogModel;
+	this.visualDialogModel = visualDialogModel;
+	this.dialogModel = this.visualMode ? this.visualDialogModel : this.wikitextDialogModel;
+	// Note: We aren't going to update the dialogModel for TopPanel and ImagePanel
+	// since both of them are dependent on methods of the parent class, DialogModel
 	this.imagePanel = new ImagePanel( this.dialogModel );
 	this.topPanel = new TopPanel( this.dialogModel );
-	this.formPanel = new WikitextFormPanel( this.dialogModel );
+	this.wikitextFormPanel = new WikitextFormPanel( this.wikitextDialogModel );
+	this.visualFormPanel = new VisualFormPanel( this.visualDialogModel );
+	this.formPanel = this.visualMode ? this.visualFormPanel : this.wikitextFormPanel;
 	this.rightStackLayout = new OO.ui.StackLayout( {
 		items: [
 			this.formPanel,
@@ -61,7 +71,16 @@ OO.inheritClass( MainPanel, OO.ui.PanelLayout );
  */
 MainPanel.prototype.onSetData = function ( selectedOption ) {
 	var data = selectedOption.getData() || {};
-	this.dialogModel.setData( data );
+	this.visualDialogModel.setData( data );
+	this.wikitextDialogModel.setData( data );
+};
+
+MainPanel.prototype.changeEditMode = function ( mode ) {
+	this.visualMode = mode;
+	this.dialogModel = mode ? this.visualDialogModel : this.wikitextDialogModel;
+	this.formPanel = mode ? this.visualFormPanel : this.wikitextFormPanel;
+	this.rightStackLayout.clearItems();
+	this.rightStackLayout.addItems( [ this.formPanel, this.previewPanel ] );
 };
 
 module.exports = MainPanel;

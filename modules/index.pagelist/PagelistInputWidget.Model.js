@@ -1,3 +1,4 @@
+var Parameters = require( './PagelistInputWidget.Parameters.js' );
 /**
  * A model which keeps track of the parameters, wikitext and a list of Objects
  * containing useful information for displaying a pagelist.
@@ -40,13 +41,13 @@ PagelistInputWidgetModel.prototype.updateWikitext = function ( wikitext ) {
 PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( wikitext ) {
 	// https://regex101.com/r/rWhPy6/10
 	// Try a naive way of extracting one pagelist tag and then put whatever we got
-	// into a XML parser which should sort the parameters stuff for us
+	// into a XML parser which should sort out the parameters stuff for us
 	var pagelistRegex = /<pagelist[^<]*?\/>/gmi,
 		pagelistText,
 		tagEndMatches,
 		parsedPagelist,
 		attrs,
-		parameters = {},
+		parameters = new Parameters(),
 		i;
 
 	wikitext = wikitext || this.wikitext;
@@ -72,19 +73,21 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 				.parseFromString( pagelistText, 'text/html' );
 
 			if ( !parsedPagelist.body.childNodes[ 0 ].hasAttributes() ) {
-				this.parameters = {};
+				this.parameters = new Parameters();
+				this.emit( 'parametersUpdated', parameters );
 				this.generateEnumeratedList();
 				return;
 			}
 
 			attrs = parsedPagelist.body.childNodes[ 0 ].attributes;
 			for ( i = 0; i < attrs.length; i++ ) {
-				parameters[ attrs[ i ].name ] = attrs[ i ].value;
+				parameters.set( attrs[ i ].name, attrs[ i ].value );
 			}
 
 			this.moreThanOne = false;
 			if ( !arguments.length ) {
 				this.parameters = parameters;
+				this.emit( 'parametersUpdated', parameters );
 				this.generateEnumeratedList();
 			} else {
 				this.generateEnumeratedList( parameters );
@@ -113,21 +116,52 @@ PagelistInputWidgetModel.prototype.getParameters = function () {
 	return this.parameters;
 };
 
-//
-PagelistInputWidgetModel.prototype.updateParameters = function () {
-	// TODO: Make this do something later
+/**
+ * Updates the parameters
+ *
+ * @param  {mw.proofreadpage.PagelistInputWidget.Parameters} parameters
+ */
+PagelistInputWidgetModel.prototype.updateParameters = function ( parameters ) {
+	this.parameters = parameters;
+	this.generateEnumeratedList( parameters );
+	this.generateWikitext( parameters );
 };
 
-//
-PagelistInputWidgetModel.prototype.generateWikitext = function () {
-	// TODO: Make this do something later
+/**
+ * Generates the wikitext from parameters
+ *
+ * @param  {mw.proofreadpage.PagelistInputWidget.Parameters} parameters
+ */
+PagelistInputWidgetModel.prototype.generateWikitext = function ( parameters ) {
+	// refer to generateParametersFromWikitext() function
+	var pagelistRegex = /<pagelist[^<]*?\/>/gmi,
+		linesRegex = /([\n\r][^=<|>]*=)/g,
+		seperator = ' ',
+		pagelistText = '<pagelist';
+
+	if ( ( this.wikitext.match( linesRegex ) || [] ).length > 0 ) {
+		seperator = '\n';
+	}
+
+	parameters.forEach( function ( index, label ) {
+		if ( index.split( /(to|To)/ )[ 0 ] !== index &&
+			index.split( /(to|To)/ )[ 0 ] === index.split( /(to|To)/ )[ 2 ] ) {
+			pagelistText += seperator + index.split( /(to|To)/ )[ 0 ] + '="' + label + '"';
+		} else {
+			pagelistText += seperator + index + '="' + label + '"';
+		}
+	} );
+
+	pagelistText += ' />';
+	this.wikitext = this.wikitext.replace( pagelistRegex, pagelistText );
+	this.emit( 'wikitextUpdated', this.wikitext );
 };
 
 /**
  * Generates list of Objects containing information usable for rendering the pagelist from
  * the current parameters based on responses from API
  *
- * @param {Object} parameters
+ * @param {mw.proofreadpage.PagelistInputWidget.Parameters} parameters
  * @event parsingerror Error in parsing pagelist
  * @event enumeratedListCreated List of pages was created
  */
@@ -136,8 +170,7 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 	// parse the resulting output and create a array of associative arrays each containing
 	// info about a particular page number
 	var apiWikitext = '{{MediaWiki:Proofreadpage index template|' + this.templateParameter + '=$2}}',
-		pagelistText = '<pagelist ',
-		index;
+		pagelistText = '<pagelist ';
 
 	this.emit( 'enumeratedListGenerationStarted' );
 
@@ -148,9 +181,10 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 		return;
 	}
 
-	for ( index in parameters ) {
-		pagelistText += index + '="' + parameters[ index ] + '" ';
-	}
+	parameters.forEach( function ( index, label ) {
+		pagelistText += index + '="' + label + '" ';
+	} );
+
 	pagelistText += ' />';
 
 	apiWikitext = apiWikitext.replace( '$2', pagelistText );
@@ -170,25 +204,27 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
  * Parses Api response to enumerated list
  *
  * @param  {Object} response API response
- * @param  {Object} parameters
+ * @param  {mw.proofreadpage.PagelistInputWidget.Parameters} parameters
  */
 PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( response, parameters ) {
 	var parsedText = document.createElement( 'body' ),
 		parsedPagelist,
 		enumeratedList = [],
-		i, ranges = [],
-		index;
+		i, ranges = [];
+
 	parameters = parameters || this.parameters;
 	parsedText.innerHTML = response.parse.text[ '*' ];
 
 	// extract all the ranges being set by the pagelist
-	for ( index in parameters ) {
-		if ( index.split( 'to' )[ 0 ] !== index ) {
+	parameters.forEach( function ( index, label ) {
+		if ( index.split( /(to|To)/ )[ 0 ] !== index ) {
 			for ( i = parseInt( index.split( 'to' )[ 0 ] ); i <= parseInt( index.split( 'to' )[ 1 ] ); i++ ) {
-				ranges[ i ] = parameters[ index ];
+				ranges[ i ] = label;
 			}
+		} else if ( isNaN( parseInt( label ) ) ) {
+			ranges[ index ] = label;
 		}
-	}
+	} );
 
 	try {
 		parsedPagelist = parsedText.querySelector( '.prp-index-pagelist' ).children;
@@ -211,7 +247,7 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 			subPage: ( i + 1 ),
 			text: parsedPagelist[ i ].innerHTML,
 			type: ranges[ ( i + 1 ) ] || 'Number',
-			assignedPageNumber: parameters[ ( i + 1 ) ] || null
+			assignedPageNumber: parseInt( parameters.get( i + 1 ) ) || null
 		} );
 	}
 

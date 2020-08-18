@@ -27,12 +27,26 @@ function PagelistInputWidget( config ) {
 		classes: [ 'prp-pagelist-input-preview-button' ]
 	} );
 
+	this.useVisualModeToggle = new OO.ui.CheckboxInputWidget( {
+		selected: !!parseInt( mw.user.options.get( 'proofreadpage-pagelist-use-visual-mode' ) )
+	} );
+
+	this.useVisualModeToggleLayout = new OO.ui.FieldLayout( this.useVisualModeToggle, {
+		classes: [ 'prp-pagelist-input-visual-toggle' ],
+		label: mw.msg( 'proofreadpage-preferences-pagelist-use-visual-mode' ),
+		align: 'inline'
+	} );
+
 	this.dialog = new PagelistInputWidgetDialog( this.model );
 	this.dialog.connect( this, {
 		dialogclose: 'onDialogClose'
 	} );
 
 	OO.ui.getWindowManager().addWindows( [ this.dialog ] );
+
+	this.useVisualModeToggle.connect( this, {
+		change: 'changeEditMode'
+	} );
 
 	this.model.connect( this, {
 		wikitextUpdated: 'updateTextInput'
@@ -51,6 +65,7 @@ function PagelistInputWidget( config ) {
 	this.$element.append(
 		this.textInputWidget.$element,
 		this.buttonWidget.$element,
+		this.useVisualModeToggleLayout.$element,
 		this.output.$element
 	);
 }
@@ -84,11 +99,24 @@ PagelistInputWidget.prototype.openWindow = function ( selectedOption ) {
 	if ( !selectedOption ) {
 		return;
 	}
+
 	OO.ui.getWindowManager().openWindow( 'PagelistInputDialog', selectedOption.getData() || {} );
 };
 
+/**
+ * Updates text input
+ *
+ * @param  {Object} wikitext
+ */
 PagelistInputWidget.prototype.updateTextInput = function ( wikitext ) {
 	this.textInputWidget.setValue( wikitext );
+};
+
+PagelistInputWidget.prototype.changeEditMode = function () {
+	var mode = this.useVisualModeToggle.isSelected() ? '1' : '0';
+	mw.user.options.set( 'proofreadpage-pagelist-use-visual-mode', mode );
+	this.api.saveOptions( 'proofreadpage-pagelist-use-visual-mode', mode );
+	this.dialog.changeEditMode( mode );
 };
 
 /**
