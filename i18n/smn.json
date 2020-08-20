@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Trondtr"
+			"Trondtr",
+			"Yupik"
 		]
 	},
 	"nstab-page": "Sijđo",
 	"proofreadpage_image": "Kove",
+	"proofreadpage_nologin": "Jieh lah čälittâm jieijâd siisâ",
 	"proofreadpage_nextpage": "Čuávuvâš sijđo",
 	"proofreadpage_prevpage": "Oovdeb sijđo",
 	"proofreadpage_quality0_category": "Tevstâttáá",
