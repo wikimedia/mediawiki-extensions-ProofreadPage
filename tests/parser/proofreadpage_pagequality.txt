@@ -20,14 +20,14 @@ pagesquality empty
 !! end
 
 !! test
-pagesquality empty
+pagesquality invalid level number
 !! wikitext
 <pagequality level=42 />
 !! html
 !! end
 
 !! test
-pagesquality empty
+pagesquality invalid level value
 !! wikitext
 <pagequality level=root />
 !! html
