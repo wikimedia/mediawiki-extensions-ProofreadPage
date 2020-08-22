@@ -627,9 +627,21 @@ class ProofreadPage {
 	 * @param DatabaseUpdater $updater
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$dir = __DIR__ . '/../sql/';
+		$dbType = $updater->getDB()->getType();
 
-		$updater->addExtensionTable( 'pr_index', $dir . 'ProofreadIndex.sql' );
+		if ( $dbType === 'mysql' ) {
+			$updater->addExtensionTable( 'pr_index',
+				dirname( __DIR__ ) . '/sql/tables-generated.sql'
+			);
+		} elseif ( $dbType === 'sqlite' ) {
+			$updater->addExtensionTable( 'pr_index',
+				dirname( __DIR__ ) . '/sql/sqlite/tables-generated.sql'
+			);
+		} elseif ( $dbType === 'postgres' ) {
+			$updater->addExtensionTable( 'pr_index',
+				dirname( __DIR__ ) . '/sql/postgres/tables-generated.sql'
+			);
+		}
 
 		// fix issue with content type hardcoded in database
 		$updater->addPostDatabaseUpdateMaintenance( FixProofreadPagePagesContentModel::class );
