@@ -13,37 +13,37 @@
 				"name": "pr_count",
 				"comment": "number of pages in index",
 				"type": "integer",
-				"options": { "notnull": false, "default": 0 }
+				"options": { "notnull": true, "default": 0 }
 			},
 			{
 				"name": "pr_q0",
 				"comment": "number of pages in quality level",
 				"type": "integer",
-				"options": { "notnull": false, "default": 0 }
+				"options": { "notnull": true, "default": 0 }
 			},
 			{
 				"name": "pr_q1",
 				"comment": "number of pages in quality leve",
 				"type": "integer",
-				"options": { "notnull": false, "default": 0 }
+				"options": { "notnull": true, "default": 0 }
 			},
 			{
 				"name": "pr_q2",
 				"comment": "number of pages in quality leve",
 				"type": "integer",
-				"options": { "notnull": false, "default": 0 }
+				"options": { "notnull": true, "default": 0 }
 			},
 			{
 				"name": "pr_q3",
 				"comment": "number of pages in quality leve",
 				"type": "integer",
-				"options": { "notnull": false, "default": 0 }
+				"options": { "notnull": true, "default": 0 }
 			},
 			{
 				"name": "pr_q4",
 				"comment": "number of pages in quality leve",
 				"type": "integer",
-				"options": { "notnull": false, "default": 0 }
+				"options": { "notnull": true, "default": 0 }
 			}
 		],
 		"indexes": [],

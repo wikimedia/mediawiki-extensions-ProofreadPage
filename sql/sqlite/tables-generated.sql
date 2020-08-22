@@ -4,11 +4,11 @@
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
 CREATE TABLE /*_*/pr_index (
   pr_page_id INTEGER NOT NULL,
-  pr_count INTEGER DEFAULT 0,
-  pr_q0 INTEGER DEFAULT 0,
-  pr_q1 INTEGER DEFAULT 0,
-  pr_q2 INTEGER DEFAULT 0,
-  pr_q3 INTEGER DEFAULT 0,
-  pr_q4 INTEGER DEFAULT 0,
+  pr_count INTEGER DEFAULT 0 NOT NULL,
+  pr_q0 INTEGER DEFAULT 0 NOT NULL,
+  pr_q1 INTEGER DEFAULT 0 NOT NULL,
+  pr_q2 INTEGER DEFAULT 0 NOT NULL,
+  pr_q3 INTEGER DEFAULT 0 NOT NULL,
+  pr_q4 INTEGER DEFAULT 0 NOT NULL,
   PRIMARY KEY(pr_page_id)
 );
