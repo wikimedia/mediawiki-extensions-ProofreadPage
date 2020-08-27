@@ -147,7 +147,6 @@
 			"packageFiles": [
 				"index.pagelist/init.js",
 				"index.pagelist/PagelistInputWidget.Dialog.js",
-				"index.pagelist/PagelistInputWidget.FormPanel.js",
 				"index.pagelist/PagelistInputWidget.ImagePanel.js",
 				"index.pagelist/PagelistInputWidget.js",
 				"index.pagelist/PagelistInputWidget.MainPanel.js",
