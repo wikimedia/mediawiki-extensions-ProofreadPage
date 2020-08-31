@@ -28,6 +28,7 @@ function ImagePanel( pageModel, config ) {
 
 	this.$image.hide();
 	this.pushPending();
+	this.$element.css( 'min-height', '100%' );
 
 	this.messages = new OO.ui.MessageWidget();
 	this.messages.toggle( false );
