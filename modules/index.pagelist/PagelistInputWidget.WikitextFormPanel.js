@@ -24,6 +24,22 @@ function WikitextFormPanel( dialogModel, config ) {
 		flags: [ 'progressive' ],
 		classes: [ 'prp-pagelist-dialog-update-button' ]
 	} );
+	this.helpButton = new OO.ui.ButtonWidget( {
+		icon: 'helpNotice',
+		framed: false,
+		href: mw.msg( 'proofreadpage-pagelist-dialog-visual-help' ),
+		label: mw.msg( 'proofreadpage-pagelist-dialog-help-invisible-label' ),
+		invisibleLabel: true,
+		target: '_blank'
+	} );
+
+	this.horizontalLayout = new OO.ui.HorizontalLayout( {
+		items: [
+			this.updateButton,
+			this.helpButton
+		],
+		classes: [ 'prp-pagelist-dialog-wikitext-submit-button-row' ]
+	} );
 
 	this.multilineTextInput.connect( this, {
 		change: 'updateCacheStatus',
@@ -44,7 +60,7 @@ function WikitextFormPanel( dialogModel, config ) {
 		click: 'updateCacheStatus'
 	} );
 
-	this.$element.append( this.multilineTextInput.$element, this.updateButton.$element );
+	this.$element.append( this.multilineTextInput.$element, this.horizontalLayout.$element );
 }
 
 OO.inheritClass( WikitextFormPanel, OO.ui.PanelLayout );
