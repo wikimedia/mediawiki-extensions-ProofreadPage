@@ -125,7 +125,7 @@
 	"proofreadpage-pagelist-assignedpagenumber": "Message denoting that a particular scan has been assigned a particular page number. Paramters\n $1 – The assigned page number.",
 	"proofreadpage-pagelist-dialog-visual-help": "Link to a help page regarding the Wikisource Pagelist Widget's visual mode.",
 	"proofreadpage-pagelist-dialog-wikitext-help": "Link to a help page reagarding the pagelist syntax being used",
-	"proofreadpage-pagelist-dialog-help-invisible-label": "Invisible label of a help icon in the dialog that links to the relevant help page",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Invisible label of a help icon in the dialog that links to the relevant help page\n{{identical|Help}}",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Message telling the user that the number field should not contain any input and that any input will be ignored on update.",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Label for input used to input page number types (ex: roman, number, cover, etc)",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "Label for input used to input specific page numbers.",

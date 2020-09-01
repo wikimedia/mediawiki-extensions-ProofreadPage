@@ -76,6 +76,7 @@
 	"proofreadpage-pagelist-dialog-discard-changes": "Ännerungen annuléieren",
 	"proofreadpage-pagelist-dialog-cancel": "Ofbriechen",
 	"proofreadpage-pagelist-dialog-insertchanges": "Ännerungen drasetuzen",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Hëllef",
 	"proofreadpage-preferences-showheaders-label": "D'Entête an de Pied de page weise beim Ännerungen am {{ns:page}}-Nummraum",
 	"proofreadpage-preferences-horizontal-layout-label": "Benotzt en horizontale Layout wann Dir am {{ns:Page}}-Nummraum ännert",
 	"proofreadpage-indexquality-alt": "$1 validéiert {{PLURAL:$1|Säit|Säiten}}, nëmmen {{PLURAL:$2|eng iwwerliest Säit|$2 iwwerliest Säiten}} an {{PLURAL:$3|an eng net iwwerliest Säit|a(n) $3 net iwwerliest Säiten}}",

@@ -91,6 +91,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Niezapisany postęp",
 	"proofreadpage-pagelist-dialog-discard-changes": "Porzuć zmiany",
 	"proofreadpage-pagelist-dialog-cancel": "Anuluj",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Pomoc",
 	"proofreadpage-preferences-showheaders-label": "Pokaż pola nagłówka i stopki podczas edycji w przestrzeni nazw {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Użyj poziomego układu podczas edycji w przestrzeni nazw {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|strona uwierzytelniona|strony uwierzytelnione|stron uwierzytelnionych}}, $2 {{PLURAL:$2|strona skorygowana|strony skorygowane|stron skorygowanych}} i $3 {{PLURAL:$3|strona przepisana|strony przepisane|stron przepisanych}}",

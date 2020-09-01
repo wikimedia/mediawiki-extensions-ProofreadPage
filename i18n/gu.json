@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"CptViraj",
 			"Dsvyas",
 			"KartikMistry",
 			"Sushant savla"
@@ -54,5 +55,6 @@
 	"proofreadpage-button-zoom-out-label": "ઝૂમ આઉટ",
 	"proofreadpage-button-reset-zoom-label": "મૂળ માપ",
 	"proofreadpage-button-zoom-in-label": "ઝૂમ ઇન",
-	"proofreadpage-button-toggle-layout-label": "પાનાંની આડી/ઉભી ગોઠવણ"
+	"proofreadpage-button-toggle-layout-label": "પાનાંની આડી/ઉભી ગોઠવણ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "મદદ"
 }

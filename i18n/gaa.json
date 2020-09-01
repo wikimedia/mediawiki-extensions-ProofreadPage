@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Benebiankie",
+			"Cnii",
 			"Mybluberet"
 		]
 	},
 	"proofreadpage_quality0_category": "Niŋmaa bɛ",
 	"proofreadpage_quality2_category": "Naagba",
 	"proofreadpage_quality3_category": "Kanemɔ ɛkoŋŋ",
-	"proofreadpage_quality1_message": "Atsakeko baafa nɛɛ"
+	"proofreadpage_quality1_message": "Atsakeko baafa nɛɛ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Wamɔ"
 }

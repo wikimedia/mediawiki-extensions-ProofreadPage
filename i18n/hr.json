@@ -70,6 +70,7 @@
 	"proofreadpage-pageinfo-status": "Stanje jezikoispravljanja",
 	"proofreadpage-pagelist-dialog-title": "Uređivanje straničnoga popisa s naslovom $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Uvrsti promjene",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Pomoć",
 	"proofreadpage-preferences-showheaders-label": "Pokaži polja zaglavlja i podnožja tijekom uređivanja u imenskom prostoru {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Upotrijebi horizontalni raspored pri uređivanju u imenskom prostoru {{ns:page}}",
 	"content-model-proofread-page": "Knjižna stranica",
