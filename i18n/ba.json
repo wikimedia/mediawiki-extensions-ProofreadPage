@@ -4,6 +4,7 @@
 			"Assele",
 			"Comp1089",
 			"Ebe123",
+			"MR973",
 			"Ләйсән",
 			"ҒатаУлла"
 		]
@@ -57,6 +58,14 @@
 	"proofreadpage-button-reset-zoom-label": "Сығанаҡ ҙурлыҡ",
 	"proofreadpage-button-zoom-in-label": "Яҡынайтырға",
 	"proofreadpage-button-toggle-layout-label": "Текә/арҡыры билдә",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Ярҙам",
+	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Номер тибы нумерацияны үҙгәртергә мөмкинлек бирмәй. Яңыртҡанда был майҙандағы теләһә ниндәй мәғлүмәт иғтибарһыҙ ҡаласаҡ.",
+	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Биттең номерын яҙығыҙ:",
+	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "Бит нумерацияһы башлана:",
+	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "Был бит өсөн генә номерын үҙгәртегеҙ",
+	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "Бит номерен сканер номерынан  $ 1 ҡуйыу һәм артабан",
+	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Йыш ҡулланылған биттәр исемлеге номер тамғаһы кәрәк. Зинһар, тамғаларҙы көйләү өсөн үҙегеҙҙең локаль интерфейс администраторына мөрәжәғәт итегеҙ.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Яңы биттәр исемлеген мөхәррирләү өсөн визуаль эксперименталь режим ҡулланығыҙ.",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Биттәр",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Эйе",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Юҡ"
