@@ -77,10 +77,6 @@ function VisualFormPanel( VisualDialogModel, config ) {
 		changedToNumberingIncompatibleValue: 'disableNumberField'
 	} );
 
-	this.numberInput.connect( this, {
-		change: 'disableNumberField'
-	} );
-
 	this.updateButton.connect( this, {
 		click: 'onUpdate'
 	} );
@@ -143,6 +139,7 @@ VisualFormPanel.prototype.disableNumberField = function () {
 		this.numberInputLayout.setWarnings( [
 			mw.msg( 'proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active' )
 		] );
+		this.numberInput.once( 'change', this.disableNumberField.bind( this ) );
 	}
 
 	this.enableUpdateButton();
