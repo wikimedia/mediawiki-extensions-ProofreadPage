@@ -115,7 +115,7 @@ PagelistInputWidget.prototype.updateTextInput = function ( wikitext ) {
 PagelistInputWidget.prototype.changeEditMode = function () {
 	var mode = this.useVisualModeToggle.isSelected() ? '1' : '0';
 	mw.user.options.set( 'proofreadpage-pagelist-use-visual-mode', mode );
-	this.api.saveOptions( 'proofreadpage-pagelist-use-visual-mode', mode );
+	this.api.saveOption( 'proofreadpage-pagelist-use-visual-mode', mode );
 	this.dialog.changeEditMode( mode );
 };
 

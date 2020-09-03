@@ -608,7 +608,6 @@ class ProofreadPage {
 		// Mode selection for the new PagelistInputWidget
 		$preferences['proofreadpage-pagelist-use-visual-mode'] = [
 			'type'           => 'toggle',
-			'default' => '1',
 			'label-message'  => 'proofreadpage-preferences-pagelist-use-visual-mode',
 			'section'        => 'editing/advancedediting',
 		];
