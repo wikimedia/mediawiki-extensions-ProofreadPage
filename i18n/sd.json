@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Aursani",
+			"Kaleem Bhatti",
 			"Mehtab ahmed",
 			"Tweety"
 		]
@@ -15,6 +16,7 @@
 	"proofreadpage_quality3_category": "چڪون چڪاسيل",
 	"proofreadpage_quality4_category": "توثيق شده",
 	"proofreadpage_quality1_message": "هن صفحي جي چُڪَ چڪاس ڪا نہ ٿي آهي",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "مدد",
 	"content-model-proofread-page": "ڪتابي صفحو",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "صفحا"
 }

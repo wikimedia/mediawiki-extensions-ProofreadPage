@@ -85,7 +85,6 @@
 	"proofreadpage-button-zoom-in-label": "Μεγέθυνση",
 	"proofreadpage-button-toggle-layout-label": "Κάθετη / οριζόντια διάταξη",
 	"proofreadpage-pageinfo-status": "Κατάσταση τυπογραφικού ελέγχου",
-	"proofreadpage-pagelist-dialog-visual-help": "https://www.mediawiki.org/wiki/Help:Extension:ProofreadPage/Pagelist_widget",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Βοήθεια",
 	"proofreadpage-preferences-showheaders-label": "Να εμφανίζεται η κεφαλίδα και το υποσέλιδο όταν επεξεργάζεστε σελίδες στον ονοματοχώρο {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Χρησιμοποιήστε οριζόντια διάταξη όταν επεξεργάζεστε εντός του ονοματοχώρου {{ns:page}}",

@@ -96,7 +96,7 @@
 	"proofreadpage-button-toggle-layout-label": "Disposición vertical/horizontal",
 	"proofreadpage-pageinfo-status": "Estado de corrección",
 	"proofreadpage-pagelist-dialog-discard-changes": "Descartar los cambios",
-	"proofreadpage-pagelist-dialog-cancel": "cancelar",
+	"proofreadpage-pagelist-dialog-cancel": "Cancelar",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Ayuda",
 	"proofreadpage-preferences-showheaders-label": "Mostrar campos de cabecera y pie de página cuando se edita en el espacio de nombres {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar diseño horizontal cuando se edita en el espacio de nombres {{ns:page}}",
