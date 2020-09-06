@@ -3,7 +3,8 @@
 		"authors": [
 			"Anakmalaysia",
 			"Aurora",
-			"Aviator"
+			"Aviator",
+			"Tofeiku"
 		]
 	},
 	"indexpages": "Senarai laman indeks",
@@ -65,6 +66,7 @@
 	"proofreadpage-button-reset-zoom-label": "Set semula zum",
 	"proofreadpage-button-zoom-in-label": "Zum dekat",
 	"proofreadpage-button-toggle-layout-label": "Susun atur menegak/melintang",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Bantuan",
 	"proofreadpage-preferences-showheaders-label": "Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}"
 }
