@@ -25,6 +25,9 @@
 		"pagequality",
 		"pagequality-admin"
 	],
+	"DefaultUserOptions": {
+		"proofreadpage-pagelist-use-visual-mode": "1"
+	},
 	"SpecialPages": {
 		"IndexPages": "\\ProofreadPage\\Special\\SpecialProofreadPages",
 		"PagesWithoutScans": "\\ProofreadPage\\Special\\SpecialPagesWithoutScans"
