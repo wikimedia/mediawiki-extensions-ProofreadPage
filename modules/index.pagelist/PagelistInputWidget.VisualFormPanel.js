@@ -76,6 +76,9 @@ function VisualFormPanel( VisualDialogModel, config ) {
 		changedToNumberingCompatibleValue: 'enableNumberField',
 		changedToNumberingIncompatibleValue: 'disableNumberField'
 	} );
+	this.numberInput.connect( this, {
+		change: 'enableUpdateButton'
+	} );
 
 	this.updateButton.connect( this, {
 		click: 'onUpdate'
