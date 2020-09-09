@@ -118,7 +118,7 @@ class FilePagination extends Pagination {
 	 * @return Title
 	 */
 	private function buildPageTitle( $pageNumber ) {
-		$i18nNumber = $this->indexTitle->getPageLanguage()->formatNum( $pageNumber, true );
+		$i18nNumber = $this->indexTitle->getPageLanguage()->formatNumNoSeparators( $pageNumber );
 		$title = $this->buildPageTitleFromPageNumber( $i18nNumber );
 
 		// fallback to arabic number
