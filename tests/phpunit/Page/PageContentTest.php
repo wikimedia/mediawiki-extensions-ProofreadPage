@@ -31,7 +31,6 @@ class PageContentTest extends ProofreadPageTestCase {
 		$user->setName( '127.0.0.1' );
 
 		$this->setMwGlobals( [
-			'wgUser' => $user,
 			'wgTextModelsToParse' => [
 				CONTENT_MODEL_PROOFREAD_PAGE
 			]
