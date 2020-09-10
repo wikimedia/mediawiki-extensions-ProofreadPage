@@ -88,7 +88,7 @@ class PagelistTagParser {
 				$pageNumber->isNumeric()
 			) {
 				$txt = '<span style="visibility:hidden;">';
-				$pad = $title->getPageLanguage()->formatNum( 0, true );
+				$pad = $title->getPageLanguage()->formatNumNoSeparators( 0 );
 				for ( $j = 0; $j < $paddingSize; $j++ ) {
 					$txt .= $pad;
 				}

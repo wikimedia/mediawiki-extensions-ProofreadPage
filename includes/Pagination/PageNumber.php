@@ -74,9 +74,9 @@ class PageNumber {
 			case self::DISPLAY_ROMAN:
 				return strtolower( Language::romanNumeral( $number ) );
 			case self::DISPLAY_NORMAL:
-				return $language->formatNum( $number, true );
+				return $language->formatNumNoSeparators( $number );
 			case self::DISPLAY_FOLIO:
-				return $language->formatNum( $number, true ) .
+				return $language->formatNumNoSeparators( $number ) .
 					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
 				return Language::romanNumeral( $number ) .
@@ -107,9 +107,9 @@ class PageNumber {
 			case self::DISPLAY_ROMAN:
 				return strtolower( Language::romanNumeral( $number ) );
 			case self::DISPLAY_NORMAL:
-				return $language->formatNum( $number, true );
+				return $language->formatNumNoSeparators( $number );
 			case self::DISPLAY_FOLIO:
-				return $language->formatNum( $number, true ) .
+				return $language->formatNumNoSeparators( $number ) .
 					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
 				return Language::romanNumeral( $number ) .
