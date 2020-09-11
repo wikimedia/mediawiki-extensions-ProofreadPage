@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chaojoker",
+			"Kareyac",
 			"Teak",
 			"Vahe Gharakhanyan",
 			"Xelgen",
@@ -57,5 +58,6 @@
 	"proofreadpage-button-zoom-out-label": "Հեռվացնել",
 	"proofreadpage-button-reset-zoom-label": "Բնօրինակ չափը",
 	"proofreadpage-button-zoom-in-label": "Խոշորացնել",
-	"proofreadpage-button-toggle-layout-label": "Պատկերը կողքից/վերևից"
+	"proofreadpage-button-toggle-layout-label": "Պատկերը կողքից/վերևից",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Օգնություն"
 }
