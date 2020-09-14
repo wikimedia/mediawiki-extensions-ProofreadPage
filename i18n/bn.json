@@ -8,6 +8,7 @@
 			"Elias Ahmmad",
 			"Jayantanth",
 			"Sibabrata Banerjee",
+			"Sohom Datta",
 			"Titodutta",
 			"আফতাবুজ্জামান"
 		]
@@ -84,6 +85,8 @@
 	"proofreadpage-button-zoom-in-label": "আরও বড়",
 	"proofreadpage-button-toggle-layout-label": "উল্লম্ব/অনুভূমিক বিন্যাস",
 	"proofreadpage-pageinfo-status": "মুদ্রণ সংশোধনের অবস্থা",
+	"proofreadpage-pagelist-dialog-discard-changes": "পরিবর্তন বাতিল করুন",
+	"proofreadpage-pagelist-dialog-cancel": "বাতিল",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "সাহায্য",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "পৃষ্ঠা সংখ্যার প্রকৃতি:",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও",

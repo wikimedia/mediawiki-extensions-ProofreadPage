@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Katxis",
+			"MuratTheTurkish",
 			"Yocahuna"
 		]
 	},
@@ -66,7 +67,7 @@
 	"proofreadpage-button-toggle-layout-label": "Voertikal/arizantal lieyout",
 	"proofreadpage-pageinfo-status": "Pruufriidn stietos",
 	"proofreadpage-preferences-showheaders-label": "Shuo eda ah futa fiil wen di {{ns:piej}} niemspies a-edit",
-	"proofreadpage-preferences-horizontal-layout-label": "Yuuz arizantal lieyout wen di {{ns:piej}} a-edit",
+	"proofreadpage-preferences-horizontal-layout-label": "Yuuz arizantal lieyout wen di {{ns:page}} a-edit",
 	"proofreadpage-indexquality-alt": "$1 validiet {{PLURAL:$1|piej|piejdem}}, $2 onggl pruufriid {{PLURAL:$2|piej|piejdem}} ah $3 no pruufriid {{PLURAL:$3|piej|piejdem}}",
 	"content-model-proofread-page": "Piej: piej"
 }

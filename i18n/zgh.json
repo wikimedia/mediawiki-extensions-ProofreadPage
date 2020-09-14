@@ -3,6 +3,7 @@
 		"authors": [
 			"Amara-Amaziɣ",
 			"Aslmad mohamed belarhzali",
+			"Hakim1bal",
 			"Mdb897",
 			"YesIn",
 			"ⵕⴰⵊⵉ"
@@ -80,6 +81,7 @@
 	"proofreadpage-button-zoom-in-label": "ⵙⴽⵔ ⵓⵣⵓⵎ",
 	"proofreadpage-button-toggle-layout-label": "ⵜⴰⵎⴰⵎⴽⵜ ⵜⴰⴱⴷⴷⴰⵢⵜ/ⵜⴰⵛⴰⵛⴼⴰⵍⵜ",
 	"proofreadpage-pageinfo-status": "ⴰⴷⴷⴰⴷ ⵏ ⵓⵙⵙⴰⵖⴷ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "ⵜⵉⵡⵉⵙⵉ",
 	"proofreadpage-preferences-showheaders-label": "ⵙⴽⵏ ⵉⴳⵔⴰⵏ ⵏ ⵜⵓⴽⵟ ⴷ ⵜⴼⵏⵣⴰ ⴽⵓⴷ ⵏⵏⴰ ⵜⵙⵏⴼⴰⵍⵜ ⴳ ⵜⵉⵔⵉⵡⵜ ⵏ ⵉⵙⵎ {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "ⵙⵙⵎⵔⵙ ⵜⴰⵎⴰⵎⴽⵜ ⵜⴰⵛⴰⵛⴼⵍⵜ ⴽⵓⴷ ⵏⵏⴰ ⵜⵙⵏⴼⴰⵍⵜ ⴳ ⵜⵉⵔⵉⵡⵜ ⵏⵉⵙⵎ {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|ⵜⴰⵙⵏⴰ ⵜⵜⵡⴰⵙⵖⵥⵏ|ⵜⴰⵙⵏⵉⵡⵉⵏ ⵜⵜⵡⴰⵙⵖⵥⵏⵜ}}, $2 {{PLURAL:$2|ⵜⴰⵙⵏⴰ ⴽⴰ ⵉⵜⵜⵡⴰⵙⵙⴰⵖⴷⵏ|ⵜⴰⵙⵏⵉⵡⵉⵏ ⴽⴰ ⵉⵜⵜⵡⴰⵙⵙⴰⵖⴷⵏ}} ⴷ $3 {{PLURAL:$3|ⵜⴰⵙⵏⴰ ⵓⵔ ⵜⵜⵡⴰⵙⵙⴰⵖⴷ|ⵜⴰⵙⵏⵉⵡⵉⵏ ⵓⵔ ⵜⵜⵡⴰⵙⵙⴰⵖⴷⵏⵜ}}",
