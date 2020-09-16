@@ -3,7 +3,8 @@
 		"authors": [
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
-			"Baloch Khan"
+			"Baloch Khan",
+			"MuratTheTurkish"
 		]
 	},
 	"nstab-page": "مخ",
@@ -71,8 +72,8 @@
 	"proofreadpage-button-zoom-in-label": "غټونه",
 	"proofreadpage-button-toggle-layout-label": "عمودی / افقی ترتیب",
 	"proofreadpage-pageinfo-status": "د اصلاحاتو راوستلو په حالت کي",
-	"proofreadpage-preferences-showheaders-label": "کله چې د {{ns: page}} نومځای کې سم سمبال کړئ د سر او فوټ فیلډونه وښایاست",
-	"proofreadpage-preferences-horizontal-layout-label": "د {{ns: page}} نومځای کې سمول کله چې افقی ترتیب بدل کړئ",
+	"proofreadpage-preferences-showheaders-label": "کله چې د {{ns:page}} نومځای کې سم سمبال کړئ د سر او فوټ فیلډونه وښایاست",
+	"proofreadpage-preferences-horizontal-layout-label": "د {{ns:page}} نومځای کې سمول کله چې افقی ترتیب بدل کړئ",
 	"proofreadpage-indexquality-alt": "$1 اعتبار لرنه {{PLURAL:$1|page|پاڼې}}, $2 يواځې اصلاح {{PLURAL:$2|page|pages}} او $3 نه اصلاح شوي  {{PLURAL:$3|page|مخونه}}",
 	"content-model-proofread-page": "کتاب مخ",
 	"content-model-proofread-index": "کتاب لړلیک",
