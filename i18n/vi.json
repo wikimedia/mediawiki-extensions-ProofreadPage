@@ -3,7 +3,8 @@
 		"authors": [
 			"Max20091",
 			"Minh Nguyen",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Yosari101"
 		]
 	},
 	"nstab-page": "Trang",
@@ -69,8 +70,8 @@
 	"proofreadpage_source_message": "Bản quét được dùng để tạo ra văn bản này",
 	"action-pagequality": "sửa cờ chất lượng trang",
 	"right-pagequality": "Sửa cờ chất lượng trang",
-	"action-pagequality-admin": "sửa đổi không hạn chế cờ chất lượng trang",
-	"right-pagequality-admin": "Sửa đổi không hạn chế cờ chất lượng trang",
+	"action-pagequality-admin": "sửa đổi cờ chất lượng trang không hạn chế",
+	"right-pagequality-admin": "Sửa đổi cờ chất lượng trang không hạn chế",
 	"proofreadpage-section-tools": "Hiệu đính",
 	"proofreadpage-group-zoom": "Thu phóng",
 	"proofreadpage-group-other": "Khác",
@@ -80,7 +81,7 @@
 	"proofreadpage-button-zoom-in-label": "Phóng to",
 	"proofreadpage-button-toggle-layout-label": "Đứng thẳng/ngang",
 	"proofreadpage-pageinfo-status": "Trạng thái hiệu đính",
-	"proofreadpage-pagelist-input-preview-button": "Xem thử danh sách trang",
+	"proofreadpage-pagelist-input-preview-button": "Xem trước danh sách trang",
 	"proofreadpage-pagelist-dialog-update-button": "Cập nhật danh sách trang",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Rời khỏi hộp thoại này có thể làm mất tác vụ chưa được lưu.",
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Chưa lưu tác vụ",
@@ -102,7 +103,7 @@
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Kiểu đánh số trang không cho phép thay đổi con số trên trang. Các giá trị trong trường này sẽ bị bỏ qua khi cập nhật.",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Kiểu đánh số trang:",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "Trang được đánh số từ:",
-	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "Chỉ thay đổi đánh số trang cho trang này",
+	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "Chỉ thay đổi số trang cho trang này",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "Thiết lập số trang từ trang $1 trên bản scan trở về sau",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Thiết lập số trang cho trang $1 trên bản scan",
 	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Cần cung cấp danh sách các nhãn trang thường dùng. Vui lòng liên hệ với bảo quản viên giao diện của dự án để tạo nhãn.",
