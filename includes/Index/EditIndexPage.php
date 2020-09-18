@@ -116,7 +116,9 @@ class EditIndexPage extends EditPage {
 			] );
 		} elseif ( $field->isPagelist() ) {
 			$input = new PagelistInputWidget( array_merge( [
-				'templateParameter' => $field->getKey() ], $inputOptions ) );
+				'templateParameter' => $field->getKey(),
+				'rows' => $field->getSize()
+			], $inputOptions ) );
 			$this->context->getOutput()->addModules( 'ext.proofreadpage.index.pagelist' );
 		} else {
 			if ( $field->getSize() > 1 ) {
