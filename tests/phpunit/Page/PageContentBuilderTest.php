@@ -4,7 +4,9 @@ namespace ProofreadPage\Page;
 
 use IContextSource;
 use MediaHandler;
+use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\FileProvider;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
 use RequestContext;
@@ -110,6 +112,30 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				self::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
 		];
+	}
+
+	public function testBuildDefaultContentForPageTitle_htmlEscaping() {
+		$handler = $this->createMock( MediaHandler::class );
+		$handler->method( 'getPageText' )->willReturn( '<script>alert(1)</script>' );
+		$image = $this->createMock( \File::class );
+		$image->method( 'exists' )->willReturn( true );
+		$image->method( 'getHandler' )->willReturn( $handler );
+		$fileProvider = $this->createMock( FileProvider::class );
+		$fileProvider->method( 'getFileForPageTitle' )->willReturn( $image );
+
+		$context = $this->createMock( Context::class );
+		$context->method( 'getIndexForPageLookup' )->willReturn( new IndexForPageLookupMock( [] ) );
+		$context->method( 'getFileProvider' )->willReturn( $fileProvider );
+
+		$builder = new PageContentBuilder( $this->context, $context );
+		$content = $builder->buildDefaultContentForPageTitle( $this->createMock( Title::class ) );
+
+		$this->assertEquals( new PageContent(
+			new WikitextContent( '' ),
+			new WikitextContent( '&#60;script&#62;alert(1)&#60;/script&#62;' ),
+			new WikitextContent( '<references/>' ),
+			new PageLevel()
+		), $content );
 	}
 
 	/**
