@@ -273,8 +273,10 @@ class PagesTagParser {
 
 		if ( $header ) {
 			if ( $header == 'toc' ) {
-				$this->parser->getOutput()->is_toc = true;
+				$this->parser->getOutput()
+					->setExtensionData( 'proofreadpage_is_toc', true );
 			}
+
 			$indexLinks = $indexContent->getLinksToNamespace(
 				NS_MAIN, $indexTitle, true
 			);
