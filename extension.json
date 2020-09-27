@@ -177,6 +177,7 @@
 				"proofreadpage-pagelist-display-number",
 				"proofreadpage-pagelist-imageurlnotfound",
 				"proofreadpage-pagelist-input-preview-button",
+				"proofreadpage-pagelist-parsing-error-empty-page-numbering",
 				"proofreadpage-pagelist-parsing-error-morethanone",
 				"proofreadpage-pagelist-parsing-error-pagelistnotdetected",
 				"proofreadpage-pagelist-parsing-error-php",
