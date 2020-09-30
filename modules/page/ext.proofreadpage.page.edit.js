@@ -378,22 +378,19 @@
 						 *
 						 * Wrap each line of the selected text with pre and post
 						 *
-						 * @param {string} selText Selected text
-						 * @param {string} pre Text before
-						 * @param {string} post Text after
 						 * @return {string} Wrapped text
 						 */
-						function doSplitLines( selText, pre, post ) {
+						function doSplitLines() {
 							var i,
-								insertText = '',
+								text = '',
 								selTextArr = selText.split( '\n' );
 							for ( i = 0; i < selTextArr.length; i++ ) {
-								insertText += pre + selTextArr[ i ] + post;
+								text += pre + selTextArr[ i ] + post;
 								if ( i !== selTextArr.length - 1 ) {
-									insertText += '\n';
+									text += '\n';
 								}
 							}
-							return insertText;
+							return text;
 						}
 
 						isSample = false;
@@ -423,7 +420,7 @@
 
 						insertText = pre + selText + post;
 						if ( options.splitlines ) {
-							insertText = doSplitLines( selText, pre, post );
+							insertText = doSplitLines();
 						}
 						if ( options.ownline ) {
 							if ( startPos !== 0 && allText.charAt( startPos - 1 ) !== '\n' && allText.charAt( startPos - 1 ) !== '\r' ) {
