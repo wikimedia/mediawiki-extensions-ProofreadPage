@@ -7,7 +7,10 @@ use Html;
 use MagicWord;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use OutOfBoundsException;
 use ParserOptions;
+use ProofreadPage\Context;
+use ProofreadPage\Pagination\PageNotInPaginationException;
 use Status;
 use TextContent;
 use Title;
@@ -299,6 +302,27 @@ class PageContent extends TextContent {
 			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] ) .
 			Html::closeElement( 'div' );
 		$parserOutput->setText( $html );
+
+		$parserOutput->addJsConfigVars( [
+			'prpPageQuality' => $this->level->getLevel()
+		] );
+
+		$context = Context::getDefaultContext();
+		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
+
+		if ( $indexTitle instanceof Title ) {
+			try {
+				$pagination = $context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
+				$pageNumber = $pagination->getPageNumber( $title );
+				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
+				$formattedPageNumber = $displayedPageNumber->getFormattedPageNumber( $title->getPageLanguage() );
+
+				$parserOutput->addJsConfigVars( [
+					'prpPageNumber' => $formattedPageNumber
+				] );
+			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
+			}
+		}
 
 		// add modules
 		$parserOutput->addModuleStyles( 'ext.proofreadpage.base' );

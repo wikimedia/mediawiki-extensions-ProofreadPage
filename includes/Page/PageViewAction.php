@@ -45,20 +45,9 @@ class PageViewAction extends ViewAction {
 		$this->getArticle()->view();
 		$out->addHTML( $pageDisplayHandler->buildPageContainerEnd( $title ) );
 
-		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
-		$pagination = $context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
-		$pageNumber = $pagination->getPageNumber( $title );
-		$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
-		$formattedPageNumber = $displayedPageNumber->getFormattedPageNumber( $title->getPageLanguage() );
-
 		// add modules
 		$out->addModules( 'ext.proofreadpage.ve.pageTarget.init' );
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
-		$out->addJsConfigVars( [
-			// @phan-suppress-next-line PhanUndeclaredMethod Content doesn't have getLevel
-			'prpPageQuality' => $content->getLevel()->getLevel(),
-			'prpPageNumber' => $formattedPageNumber
-		] );
 
 		// custom CSS
 		$css = $pageDisplayHandler->getCustomCss( $title );
