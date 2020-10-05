@@ -59,5 +59,6 @@
 	"proofreadpage-button-reset-zoom-label": "Բնօրինակ չափը",
 	"proofreadpage-button-zoom-in-label": "Խոշորացնել",
 	"proofreadpage-button-toggle-layout-label": "Պատկերը կողքից/վերևից",
-	"proofreadpage-pagelist-dialog-help-invisible-label": "Օգնություն"
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Օգնություն",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Այո"
 }
