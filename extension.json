@@ -328,8 +328,7 @@
 		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",
 		"EditFormPreloadText": "ProofreadPage\\ProofreadPage::onEditFormPreloadText",
 		"ParserTestTables": "ProofreadPage\\ProofreadPage::onParserTestTables",
-		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction",
-		"SkinMinervaDefaultModules": "ProofreadPage\\ProofreadPage::onSkinMinervaDefaultModules"
+		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction"
 	},
 	"attributes": {
 		"VisualEditor": {

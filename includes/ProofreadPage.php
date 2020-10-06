@@ -41,7 +41,6 @@ use ProofreadPage\Parser\PagelistTagParser;
 use ProofreadPage\Parser\PagequalityTagParser;
 use ProofreadPage\Parser\PagesTagParser;
 use RequestContext;
-use Skin;
 use SkinTemplate;
 use Title;
 use User;
@@ -809,21 +808,6 @@ class ProofreadPage {
 			return $title->getLinkURL();
 		} else {
 			return $title->getLinkURL( 'action=edit&redlink=1' );
-		}
-	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Skin:Minerva_Neue/SkinMinervaDefaultModules
-	 *
-	 * @param Skin $skin
-	 * @param array &$modules
-	 */
-	public static function onSkinMinervaDefaultModules( Skin $skin, array &$modules ) {
-		if (
-			$skin->getTitle()->inNamespace( self::getIndexNamespaceId() ) ||
-			$skin->getTitle()->inNamespace( self::getPageNamespaceId() )
-		) {
-			unset( $modules['editor'] );
 		}
 	}
 
