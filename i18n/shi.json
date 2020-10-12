@@ -1,12 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amara-Amaziɣ"
+			"Amara-Amaziɣ",
+			"Ayour2002",
+			"Lhoussine AIT TAYFST"
 		]
 	},
 	"nstab-page": "ⵜⴰⵙⵏⴰ",
-	"proofreadpage_quality0_category": "ⴱⵍⴰ ⴰⴹⵔⵉⵙ",
-	"proofreadpage_quality2_category": "ⴳⵉⵙ ⴰⵎⵓⴽⵔⵉⵙ",
+	"proofreadpage_quality0_category": "S bla n aḍris",
+	"proofreadpage_quality2_category": "Gis amukris",
+	"proofreadpage_quality4_category": "izri",
 	"proofreadpage_specialpage_label_key": "ⴰⵔⵣⵣⵓ:",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|ⵜⴰⵙⵏⴰ|ⵜⴰⵙⵏⵉⵡⵉⵏ}}",
 	"proofreadpage_source": "ⴰⵙⴰⴳⵎ",
