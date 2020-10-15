@@ -92,7 +92,6 @@ class PageContentBuilder {
 				if ( $text ) {
 					$text = preg_replace( "/(\\\\n)/", "\n", $text );
 					$body = preg_replace( "/(\\\\\d*)/", '', $text );
-					$body = wfEscapeWikiText( $body );
 				}
 			}
 		} catch ( FileNotFoundException $e ) {
