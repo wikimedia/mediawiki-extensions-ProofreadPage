@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Asmani Haz"
+		]
+	},
+	"apihelp-query+proofread-description": "ꠎꠦ ꠚꠣꠔꠣ ꠖꠦꠅꠀ ꠅꠁꠍꠦ ꠅꠈꠐꠣꠞ ꠄꠈꠛꠟꠣꠇꠥꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
+	"apihelp-query+proofread-summary": "ꠎꠦ ꠚꠣꠔꠣ ꠖꠦꠅꠀ ꠅꠁꠍꠦ ꠅꠈꠐꠣꠞ ꠄꠈꠛꠟꠣꠇꠥꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
+	"apihelp-query+proofread-example-1": "namespace 250 ꠚꠣꠔꠣꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ"
+}
