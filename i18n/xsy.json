@@ -13,6 +13,7 @@
 	"pageswithoutscans": "’oka’ ka pinSawmiyaw yemiyen",
 	"proofreadpage_desc": "Somiwa’ pinwaSwaSak rima’ tatihingha’ ka pinSawmiyaw ki kina:at",
 	"proofreadpage_image": "hinoba:ang",
+	"proofreadpage_index": "kaSa’amoehan kina:at",
 	"proofreadpage_index_expected": "’inokay paylal’oz : ’am maray kaSa’amoehan kina:at",
 	"proofreadpage_nosuch_index": "’inokay paylal’oz : ’oka’ ka ’inakhini’an kaSa’amoehan kina:at",
 	"proofreadpage_nosuch_file": "’inokay paylal’oz : ’oka’ ka ’inkhini’an tang’an",
@@ -40,6 +41,7 @@
 	"proofreadpage_quality1_summary": "’i’ini’ paponrowa’",
 	"proofreadpage_quality2_summary": "ima ’awmonza’",
 	"proofreadpage_quality3_summary": "pinonrowa’ ila",
+	"proofreadpage_quality4_summary": "Sa:hael nahan",
 	"proofreadpage_quality0_message": "’isahini kinita’ ’okay paponrowa’ kayzaeh",
 	"proofreadpage_quality1_message": "hini ye:myen ’i’ini’ paponrowa’i",
 	"proofreadpage_quality2_message": "paponrowa’ ka ’isahini kinita’ kas’oehaez ’aehae’ ka ’ima ’awmonza’",
@@ -72,6 +74,8 @@
 	"proofreadpage-button-zoom-in-label": "paksopaloy",
 	"proofreadpage-button-toggle-layout-label": "’ima tileheh／’imatatihingha’ katal’izaeh",
 	"proofreadpage-pageinfo-status": "pinonrowa’ ka zhwangtay",
+	"proofreadpage-pagelist-dialog-cancel": "kayni’",
+	"proofreadpage-pagelist-dialog-help-invisible-label": " kapakSekla’an",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} karo:o’an ’izo’ ’am bienji  pinakita’ ray yeme: ki yejiaw ka lanway",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} karo:o’an ’izo’ ’am bienji  ’ano kahola’an katal’izaeh",
 	"proofreadpage-indexquality-alt": "$1 Sa:haelen nahan ila {{PLURAL:$1| kakiS’alayan }}，$2 paponrowa’en ila{{PLURAL:$2| ye:miyen }}ki $3’i’ini’  paponrowa’i {{PLURAL:$3| ka ye:miyen }}",
@@ -82,5 +86,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "paksilaeh $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "’ihi’",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "’okik ’isa:",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "paponrowa’ ka pinzhe:"
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "paponrowa’ ka pinzhe:",
+	"proofreadpage-index-field-category-label": " ’a’apolen"
 }
