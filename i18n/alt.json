@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ereldej",
+			"Soul Train",
 			"Батыр Комдошев"
 		]
 	},
@@ -66,6 +67,7 @@
 	"proofreadpage-button-zoom-out-label": "Кичинектедийер",
 	"proofreadpage-button-zoom-in-label": "Jаанадыйер",
 	"proofreadpage-pageinfo-status": "Тÿзедÿниҥ айалгазы",
+	"proofreadpage-pagelist-dialog-cancel": "Токтодыш",
 	"content-model-proofread-page": "Бичиктиҥ бÿги",
 	"content-model-proofread-index": "Бичиктиҥ индексы",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Бÿкти талдар",
