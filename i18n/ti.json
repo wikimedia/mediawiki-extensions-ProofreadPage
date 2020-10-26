@@ -5,5 +5,13 @@
 		]
 	},
 	"nstab-page": "ገጽ",
-	"proofreadpage_quality2_category": "ግድላዊ"
+	"proofreadpage_image": "ምስሊ",
+	"proofreadpage_nologin": "ብመንነት ኣይኣተወን",
+	"proofreadpage_quality2_category": "ግድላዊ",
+	"proofreadpage-pagelist-dialog-discard-changes": "ለውጥታት ኣወግድ",
+	"proofreadpage-pagelist-dialog-cancel": "ኣትርፍ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "ሓገዝ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ገጻት",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "እወ",
+	"proofreadpage-index-field-category-label": "መደባት"
 }
