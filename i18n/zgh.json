@@ -70,7 +70,9 @@
 	"proofreadpage_specialpage_searcherrortext": "ⴰⵏⵙⵎⴰⵙⵙⵓ ⵏ ⵓⵔⵣⵣⵓ ⵓⵔ ⵉⵙⵡⵓⵔⵉ. ⵙⵙⵓⵔⴼ ⴰⵖ.",
 	"proofreadpage_source": "ⴰⵙⴰⴳⵎ",
 	"proofreadpage_source_message": "ⵜⴰⵥⵕⵉⴳⵜ ⵉⵜⵜⵡⴰⵙⵎⵓⵟⵟⵏ ⵍⵍⵉ ⴷ ⵉⴽⴽⴰ ⵓⴹⵕⵉⵚ ⴰⴷ",
+	"action-pagequality": "ⵙⵏⴼⵍ ⴰⵛⵏⵢⴰⵍ ⵏ ⵜⴰⵖⴰⵔⴰ ⵏ ⵜⴰⵙⵏⴰ ⴰⴷ",
 	"right-pagequality": "ⵙⵏⴼⵍ ⴰⵛⵏⵢⴰⵍ ⵏ ⵜⴰⵖⴰⵔⴰ ⵏ ⵜⴰⵙⵏⴰ ⴰⴷ",
+	"action-pagequality-admin": "ⵉⵙⵏⴼⵍⵏ ⵓⵔ ⵉⵜⵜⵡⴰⴽⵔⴼⵏ ⵉ ⵓⵛⵏⵢⴰⵍ ⵏ ⵜⴰⵖⴰⵔⴰ ⵏ ⵜⴰⵙⵏⴰ",
 	"right-pagequality-admin": "ⵉⵙⵏⴼⵍⵏ ⵓⵔ ⵉⵜⵜⵡⴰⴽⵔⴼⵏ ⵉ ⵓⵛⵏⵢⴰⵍ ⵏ ⵜⴰⵖⴰⵔⴰ ⵏ ⵜⴰⵙⵏⴰ",
 	"proofreadpage-section-tools": "ⵉⵎⴰⵙⵙⵏ ⵏ ⵓⵙⵙⴰⵖⴷ",
 	"proofreadpage-group-zoom": "ⵓⵣⵓⵎ",
@@ -81,7 +83,12 @@
 	"proofreadpage-button-zoom-in-label": "ⵙⴽⵔ ⵓⵣⵓⵎ",
 	"proofreadpage-button-toggle-layout-label": "ⵜⴰⵎⴰⵎⴽⵜ ⵜⴰⴱⴷⴷⴰⵢⵜ/ⵜⴰⵛⴰⵛⴼⴰⵍⵜ",
 	"proofreadpage-pageinfo-status": "ⴰⴷⴷⴰⴷ ⵏ ⵓⵙⵙⴰⵖⴷ",
+	"proofreadpage-pagelist-dialog-update-button": "ⵙⴷⵖⵉ ⵜⴰⵍⴳⴰⵎⵜ ⵏ ⵜⴰⵙⵏⴰ",
+	"proofreadpage-pagelist-dialog-cancel": "ⵙⵔ",
+	"proofreadpage-pagelist-type": "ⴰⵏⴰⵡ ⵏ ⵓⵎⴰⴹⵏ ⵏ ⵜⴰⵙⵏⴰ: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "ⵜⵉⵡⵉⵙⵉ",
+	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "ⴰⵏⴰⵡ ⵏ ⵓⵎⴹⵏ ⵏ ⵜⴰⵙⵏⴰ:",
+	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "ⵙⵏⴼⵍ ⴰⵎⴹⴰⵏ ⵖⴰⵙ ⵉ ⵜⴰⵙⵏⴰ ⴰ",
 	"proofreadpage-preferences-showheaders-label": "ⵙⴽⵏ ⵉⴳⵔⴰⵏ ⵏ ⵜⵓⴽⵟ ⴷ ⵜⴼⵏⵣⴰ ⴽⵓⴷ ⵏⵏⴰ ⵜⵙⵏⴼⴰⵍⵜ ⴳ ⵜⵉⵔⵉⵡⵜ ⵏ ⵉⵙⵎ {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "ⵙⵙⵎⵔⵙ ⵜⴰⵎⴰⵎⴽⵜ ⵜⴰⵛⴰⵛⴼⵍⵜ ⴽⵓⴷ ⵏⵏⴰ ⵜⵙⵏⴼⴰⵍⵜ ⴳ ⵜⵉⵔⵉⵡⵜ ⵏⵉⵙⵎ {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|ⵜⴰⵙⵏⴰ ⵜⵜⵡⴰⵙⵖⵥⵏ|ⵜⴰⵙⵏⵉⵡⵉⵏ ⵜⵜⵡⴰⵙⵖⵥⵏⵜ}}, $2 {{PLURAL:$2|ⵜⴰⵙⵏⴰ ⴽⴰ ⵉⵜⵜⵡⴰⵙⵙⴰⵖⴷⵏ|ⵜⴰⵙⵏⵉⵡⵉⵏ ⴽⴰ ⵉⵜⵜⵡⴰⵙⵙⴰⵖⴷⵏ}} ⴷ $3 {{PLURAL:$3|ⵜⴰⵙⵏⴰ ⵓⵔ ⵜⵜⵡⴰⵙⵙⴰⵖⴷ|ⵜⴰⵙⵏⵉⵡⵉⵏ ⵓⵔ ⵜⵜⵡⴰⵙⵙⴰⵖⴷⵏⵜ}}",
@@ -93,5 +100,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ⵢⴰⵀ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ⵓⵀⵓ",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ⵜⴰⵖⴰⴷⴰ ⵏ ⵓⵙⵙⴰⵖⴷ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ⵜⴰⵖⴰⴷⴰ ⵏ ⵓⵙⵙⴰⵖⴷ"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ⵜⴰⵖⴰⴷⴰ ⵏ ⵓⵙⵙⴰⵖⴷ",
+	"proofreadpage-index-field-category-label": "ⵜⴰⴳⴳⴰⵢⵉⵏ"
 }
