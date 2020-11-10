@@ -236,10 +236,7 @@ class ProofreadPage {
 	public static function onOutputPageParserOutput(
 		OutputPage $outputPage, ParserOutput $parserOutput
 	) {
-		if ( $parserOutput->getExtensionData( 'proofreadpage_is_toc' )
-			// TODO: drop the fallback one ParserCache expiration period
-			// after merging this change
-			|| ( property_exists( $parserOutput, 'is_toc' ) ) ) {
+		if ( $parserOutput->getExtensionData( 'proofreadpage_is_toc' ) ) {
 			$outputPage->is_toc = true;
 		}
 	}
