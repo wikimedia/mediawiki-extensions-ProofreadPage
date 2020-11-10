@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Iohanen",
 			"Midnight Gambler"
 		]
 	},
@@ -8,6 +9,8 @@
 	"proofreadpage_nologin": "Net oongemeldt",
 	"proofreadpage_nextpage": "Nächste Seit",
 	"proofreadpage_prevpage": "Vorrich Seit",
+	"proofreadpage_quality0_category": "Ohne Text",
+	"proofreadpage_quality4_category": "Fertich",
 	"proofreadpage_specialpage_label_key": "Suche:",
 	"proofreadpage_source": "Quell",
 	"proofreadpage-group-zoom": "Zoom"
