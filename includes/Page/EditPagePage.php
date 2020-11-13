@@ -59,18 +59,6 @@ class EditPagePage extends EditPage {
 	}
 
 	/**
-	 * Load the content before edit
-	 *
-	 * @inheritDoc
-	 */
-	protected function getContentObject( $defContent = null ) {
-		if ( !$this->getTitle()->exists() ) {
-			return $this->pageContentBuilder->buildDefaultContentForPageTitle( $this->getTitle() );
-		}
-		return parent::getContentObject( $defContent );
-	}
-
-	/**
 	 * @inheritDoc
 	 */
 	protected function showContentForm() {
