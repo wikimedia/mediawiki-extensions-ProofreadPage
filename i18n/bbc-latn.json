@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Herryz",
 			"Salomo Christian Hutajulu"
 		]
 	},
-	"proofreadpage_quality0_category": "Soada teks"
+	"proofreadpage_quality0_category": "Soada teks",
+	"proofreadpage_quality1_category": "Dang taruji dope sijahaon",
+	"proofreadpage_quality3_category": "Pamareso",
+	"proofreadpage_quality4_category": "Disahhon"
 }

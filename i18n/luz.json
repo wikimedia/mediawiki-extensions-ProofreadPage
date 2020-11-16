@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Sahh",
 			"علی ساکی لرستانی"
 		]
 	},
+	"nstab-page": "بٱرگٱ",
+	"nstab-index": "فاٛئراٛست",
+	"tooltip-ca-nstab-page": "نشۊناڌٱن بٱرگاٛی کتاب",
+	"tooltip-ca-nstab-index": "نشۊناڌٱن فاٛئراٛست کتاب",
 	"indexpages": "سیائل بلگل اصلی",
 	"pageswithoutscans": "بلگھ یل بدۉن اسکن",
 	"proofreadpage_desc": "امکان ئاسۉن مقایسه نشته ۉا اسکن اصلیس",
@@ -32,6 +37,9 @@
 	"proofreadpage_quality2_category": "حیرت ئاۉر",
 	"proofreadpage_quality3_category": "اصلاح",
 	"proofreadpage_quality4_category": "معتبر",
+	"proofreadpage_quality0_summary": "بی مٱتن",
+	"proofreadpage_quality1_summary": "بی چۊشخٱ",
+	"proofreadpage_quality4_summary": "موئتٱبٱر",
 	"proofreadpage_quality0_message": "ای بلگه اصلاح نیخا",
 	"proofreadpage_quality1_message": "ای بلگه هنی اصلاح نبیه",
 	"proofreadpage_quality2_message": "یه مشکل هسی سی اصلاح ای بلگه",
@@ -39,6 +47,8 @@
 	"proofreadpage_quality4_message": "ای بلگه معتبر بیه",
 	"proofreadpage_index_status": "وضعیت سیائل",
 	"proofreadpage_index_size": "شمارھ هنه بلگه یل",
+	"proofreadpage_pages_to_validate": "شماراٛشت بٱرگیٱلی ک بایاٛستی تٱئید ڤابۊهاٛن",
+	"proofreadpage_pages_to_proofread_or_validate": "شماراٛشت بٱرگیٱلی ک بایاٛستی تٱئید یا اومدروس ڤابۊهاٛن",
 	"proofreadpage_specialpage_label_orderby": "ترتیب د لحاظ",
 	"proofreadpage_specialpage_label_key": "جستن",
 	"proofreadpage_specialpage_label_sortascending": "مرتب سازی ۉا صعودی",
@@ -64,8 +74,15 @@
 	"proofreadpage-button-zoom-in-label": "گپ کردن",
 	"proofreadpage-button-toggle-layout-label": "طرح افقی/عمۉدی",
 	"proofreadpage-pageinfo-status": "ۉضعیت ینه اصلاح",
+	"proofreadpage-pagelist-input-preview-button": "نهاٛینشۊن لیست بٱرگٱ",
+	"proofreadpage-pagelist-dialog-update-button": "لیست بٱرگٱنٱ ڤٱرۊز کٛنیت",
 	"proofreadpage-preferences-showheaders-label": "نشۉ دائن سرۉرق و پاۉرق جا ۉقتی کھ داری اصلاحس ایکنی مئن {{ns:بلگه}}",
 	"proofreadpage-preferences-horizontal-layout-label": "مئن چينشت لم گه ۉختی كه مئن {{ns:page}} اصلاح ایشا اکنین استفادھ ۉابۉ",
 	"proofreadpage-indexquality-alt": "$1 معتبر {{PLURAL:$1|بلگه|بلگل}}, $2 تنها اصلاح {{PLURAL:$2|بلگه|بلگل}} ۉ $3 اصلاح نۉابیدھ {{PLURAL:$3|بلگه|بلگل}}",
-	"content-model-proofread-page": "بلگه:بلگه"
+	"content-model-proofread-page": "بلگه:بلگه",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "اٛنتخاب بٱرگٱ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "بٱرگیٱل",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ها",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نٱ",
+	"proofreadpage-index-field-category-label": "دٱئسیٱل"
 }
