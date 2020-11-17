@@ -1,13 +1,37 @@
 {
 	"@metadata": {
 		"authors": [
+			"Akamycoco",
 			"Vickylin77s"
 		]
 	},
+	"nstab-page": "o felih",
+	"nstab-index": "pikiliman",
+	"proofreadpage_image": "conga",
+	"proofreadpage_index": "pikiliman",
+	"proofreadpage_nextpage": "i salaenoay a felif",
+	"proofreadpage_prevpage": "i faleday a felih",
 	"proofreadpage_quality0_category": "Awaay ko sorit",
 	"proofreadpage_quality1_category": "Caayay ho kasongila’ a misalof",
 	"proofreadpage_quality2_category": "cimondayay",
 	"proofreadpage_quality3_category": "Masongila’ay to misalof",
 	"proofreadpage_quality4_category": "Mapawacayay to",
-	"proofreadpage_quality1_message": "Caay ho ka songila’ misalof konini a felif"
+	"proofreadpage_quality0_summary": "Awaay ko sorit",
+	"proofreadpage_quality1_summary": "Caayay ho kasongila’ a misalof",
+	"proofreadpage_quality2_summary": "cimondayay",
+	"proofreadpage_quality3_summary": "Masongila’ay to misalof",
+	"proofreadpage_quality4_summary": "Mapawacayay to",
+	"proofreadpage_quality1_message": "Caay ho ka songila’ misalof konini a felif",
+	"proofreadpage_specialpage_label_orderby": "silsil",
+	"proofreadpage_specialpage_label_key": "saoo’",
+	"proofreadpage_pages": "$2{{PLURAL:$1|a felih}}",
+	"proofreadpage_source": "lalengatan",
+	"proofreadpage-group-zoom": "kasapisamamang ato pisata’angay",
+	"proofreadpage-group-other": "o roma",
+	"proofreadpage-button-zoom-out-label": "misamamang",
+	"proofreadpage-button-zoom-in-label": "satata’aken",
+	"proofreadpage-pagelist-dialog-cancel": "Sawaden miforic",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "o pakafana’",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "o felih",
+	"proofreadpage-index-field-category-label": "pisakilac"
 }
