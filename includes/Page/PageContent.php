@@ -198,7 +198,7 @@ class PageContent extends TextContent {
 
 	/**
 	 * @param int $revId
-	 * @return Object
+	 * @return Content
 	 */
 	private function getContentForRevId( $revId ) {
 		if ( $revId !== -1 ) {

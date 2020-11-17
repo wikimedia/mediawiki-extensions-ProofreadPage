@@ -110,8 +110,8 @@ class SpecialProofreadPages extends QueryPage {
 
 	/**
 	 * Wrapper function for parent function in QueryPage class
-	 * @param int|bool $limit
-	 * @param int|bool $offset
+	 * @param int|false $limit
+	 * @param int|false $offset
 	 * @return \Wikimedia\Rdbms\IResultWrapper
 	 */
 	public function reallyDoQuery( $limit, $offset = false ) {
@@ -264,8 +264,8 @@ class SpecialProofreadPages extends QueryPage {
 
 	/**
 	 * @param \Skin $skin
-	 * @param object $result Result row
-	 * @return string|bool false to skip the row
+	 * @param \stdClass $result Result row
+	 * @return string|false false to skip the row
 	 */
 	public function formatResult( $skin, $result ) {
 		$title = Title::makeTitleSafe( $result->namespace, $result->title );

@@ -28,7 +28,7 @@ use WikiPage;
 class ProofreadIndexDbConnector {
 
 	/**
-	 * @param Object $x
+	 * @param \stdClass $x
 	 * @param int $indexId
 	 * @param WikiPage $article
 	 * @suppress PhanUndeclaredProperty For new_q and old_q
@@ -136,7 +136,7 @@ class ProofreadIndexDbConnector {
 
 	/**
 	 * @param string $indexTitle
-	 * @return Object
+	 * @return \stdClass
 	 */
 	public static function getIndexDataFromIndexTitle( $indexTitle ) {
 		$dbr = wfGetDB( DB_REPLICA );
@@ -153,7 +153,7 @@ class ProofreadIndexDbConnector {
 
 	/**
 	 * @param int $indexId
-	 * @return Object
+	 * @return \stdClass
 	 */
 	public static function getIndexDataFromIndexPageId( $indexId ) {
 		$dbr = wfGetDB( DB_REPLICA );

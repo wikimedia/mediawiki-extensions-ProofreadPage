@@ -67,7 +67,7 @@ class ProofreadPageInit {
 	 * Find if a namespace with the default name is already set (for backward compatibility) and
 	 * return his id
 	 * @param string $key the key of the namespace in the i18n file
-	 * @return int|bool the id of the namespace or false if it doesn't exist
+	 * @return int|false the id of the namespace or false if it doesn't exist
 	 */
 	protected static function getNamespaceIdForDefaultName( $key ) {
 		global $wgExtraNamespaces;
