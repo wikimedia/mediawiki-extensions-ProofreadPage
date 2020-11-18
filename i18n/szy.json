@@ -79,6 +79,8 @@
 	"proofreadpage-button-zoom-in-label": "patabakien ku azih",
 	"proofreadpage-button-toggle-layout-label": "mitelekay/sasuala lyiawto",
 	"proofreadpage-pageinfo-status": "syawtuy setyitase",
+	"proofreadpage-pagelist-dialog-cancel": "palawpes",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "buhci tu kamu",
 	"proofreadpage-preferences-showheaders-label": "labu nu {{ns:page}} mipangangan mikawaway tu kalumyiti maazih ku byida atu sasaay a lanuyi",
 	"proofreadpage-preferences-horizontal-layout-label": "labu nu {{ns:page}} mipangangan mikawaw tu kalumyiti a lyiawto a suycun",
 	"proofreadpage-indexquality-alt": "$1 ku malucekay {{PLURAL:$1|kasabelih}}, $2 dada’ ku masyawtuyay {{PLURAL:$2|kasabelih}} atu $3caay henay kasyawtuy {{PLURAL:$3|kasabelih}}",

@@ -78,6 +78,7 @@
 	"proofreadpage-pageinfo-status": "Cyawtue cwangtay",
 	"proofreadpage-pagelist-dialog-discard-changes": "Laxan quw sinbah",
 	"proofreadpage-pagelist-dialog-cancel": "Laxan",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Minblaq kmal",
 	"proofreadpage-preferences-showheaders-label": "Maki’ sa {{ns:page}}minspes iy musa’ mtzyuwaw smr’zyut miru’ ga, spkita’ niya’ qu snyan sa bbrwan tay atu’ na llpgan squ tay klbing na llpgan.",
 	"proofreadpage-preferences-horizontal-layout-label": "Maki’ sa {{ns:page}}minspes iy musa’ mtzyuwaw smr’zyut miru’ ga, mutuw niya’ s’agal Swecun pucyu’.",
 	"proofreadpage-indexquality-alt": "$1wal snhzyazyun smwal {{PLURAL:$1|zzngayan}},\n$2 wal snhzyazyun smwal {{PLURAL:$2|zzngayan}}\nruw $ wal ini’ snhzyaziy na \n{{PLURAL:$3|zzngayan}}",
