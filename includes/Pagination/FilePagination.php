@@ -147,7 +147,7 @@ class FilePagination extends Pagination {
 	 * @inheritDoc
 	 */
 	protected function pageNumberExists( $pageNumber ) {
-		return 1 <= $pageNumber && $pageNumber <= $this->numberOfPages;
+		return $pageNumber >= 1 && $pageNumber <= $this->numberOfPages;
 	}
 
 	/**
@@ -157,7 +157,7 @@ class FilePagination extends Pagination {
 	 * @return bool
 	 */
 	public static function isValidInterval( $from, $to, $count ) {
-		return 1 <= $from && $from <= $to && $to <= $count;
+		return $from >= 1 && $from <= $to && $to <= $count;
 	}
 
 }

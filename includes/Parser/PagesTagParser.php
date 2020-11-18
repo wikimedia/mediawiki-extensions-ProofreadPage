@@ -140,7 +140,7 @@ class PagesTagParser {
 						return $this->formatError( 'proofreadpage_number_expected' );
 					}
 
-					if ( !( 1 <= $from && $from <= $to && $to <= $count ) ) {
+					if ( !( $from >= 1 && $from <= $to && $to <= $count ) ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 

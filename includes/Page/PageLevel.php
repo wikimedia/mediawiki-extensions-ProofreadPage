@@ -60,7 +60,7 @@ class PageLevel {
 	 * @return bool
 	 */
 	public function isValid() {
-		return is_int( $this->level ) && 0 <= $this->level && $this->level <= 4;
+		return is_int( $this->level ) && $this->level >= 0 && $this->level <= 4;
 	}
 
 	/**

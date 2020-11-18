@@ -19,7 +19,7 @@ class PagequalityTagParser {
 	 */
 	public function render( array $args ) {
 		if ( !array_key_exists( 'level', $args ) || !is_numeric( $args['level'] ) ||
-			0 > $args['level'] || $args['level'] > 4
+			$args['level'] < 0 || $args['level'] > 4
 		) {
 			return '';
 		}
