@@ -20,7 +20,7 @@ class PageLevel {
 	public const VALIDATED = 4;
 
 	/**
-	 * @var integer proofreading level of the page
+	 * @var int proofreading level of the page
 	 */
 	protected $level = self::NOT_PROOFREAD;
 

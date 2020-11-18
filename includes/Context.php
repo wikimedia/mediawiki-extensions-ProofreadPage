@@ -26,12 +26,12 @@ use ProofreadPage\Pagination\PaginationFactory;
 class Context {
 
 	/**
-	 * @var integer
+	 * @var int
 	 */
 	private $pageNamespaceId;
 
 	/**
-	 * @var integer
+	 * @var int
 	 */
 	private $indexNamespaceId;
 

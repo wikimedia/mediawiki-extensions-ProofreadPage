@@ -29,12 +29,12 @@ class PageNumber {
 	protected $displayMode = self::DISPLAY_NORMAL;
 
 	/**
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $isEmpty = false;
 
 	/**
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $isRecto = true;
 

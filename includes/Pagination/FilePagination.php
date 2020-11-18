@@ -26,7 +26,7 @@ class FilePagination extends Pagination {
 	private $pageList;
 
 	/**
-	 * @var integer
+	 * @var int
 	 */
 	private $numberOfPages = 0;
 

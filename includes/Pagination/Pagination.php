@@ -14,7 +14,7 @@ use Title;
 abstract class Pagination implements Iterator {
 
 	/**
-	 * @var integer position of the iterator
+	 * @var int position of the iterator
 	 */
 	private $position = 1;
 
