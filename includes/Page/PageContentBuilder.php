@@ -54,8 +54,7 @@ class PageContentBuilder {
 				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
 				$params['pagenum'] = $displayedPageNumber
 					->getFormattedPageNumber( $pageTitle->getPageLanguage() );
-			} catch ( PageNotInPaginationException $e ) {
-			} catch ( OutOfBoundsException $e ) {
+			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
 				// should not happen
 			}
 

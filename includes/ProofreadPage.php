@@ -136,7 +136,6 @@ class ProofreadPage {
 		$parser->setHook( 'pages', function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
 			$tagParser = new PagesTagParser( $parser, $context );
-			// @phan-suppress-next-line SecurityCheck-XSS
 			return $tagParser->render( $args );
 		} );
 		$parser->setHook( 'pagequality', function ( $input, array $args, Parser $parser ) {

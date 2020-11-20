@@ -47,6 +47,7 @@ class PageList {
 	 *
 	 * @param int $pageNumber
 	 * @return PageNumber
+	 * @suppress PhanPossiblyUndeclaredVariable
 	 */
 	private function buildNumber( $pageNumber ) {
 		// default mode
