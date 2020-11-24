@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"Kizule",
 			"Michaello",
 			"Milicevic01",
@@ -38,5 +39,6 @@
 	"proofreadpage_source": "Izvor",
 	"proofreadpage-section-tools": "Lektorske alatke",
 	"proofreadpage-group-zoom": "Razmera",
-	"proofreadpage-group-other": "Drugo"
+	"proofreadpage-group-other": "Drugo",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Da"
 }
