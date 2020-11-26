@@ -77,6 +77,8 @@
 	"proofreadpage-button-zoom-in-label": "ꯄꯤꯛꯁꯤꯟꯍꯟꯕꯥ",
 	"proofreadpage-button-toggle-layout-label": "ꯑꯌꯨꯡꯕꯥ/ꯑꯐꯩꯕꯥ‌ ꯎꯨꯠꯐꯝ",
 	"proofreadpage-pageinfo-status": "ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯌꯦꯡꯕꯥꯒꯤ ꯊꯥꯛ",
+	"proofreadpage-pagelist-dialog-cancel": "ꯇꯣꯛꯄ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "ꯃꯇꯦꯡ",
 	"proofreadpage-preferences-showheaders-label": "ꯎꯨꯠꯂꯨ header and footer fields when editing in the {{ns:page}} ꯃꯃꯤꯡꯒꯤ ꯃꯐꯝ",
 	"proofreadpage-preferences-horizontal-layout-label": "ꯍꯣꯔꯟ ꯁꯦꯝꯒꯠꯂꯛꯄꯥ ꯃꯇꯝꯗꯥ ꯑꯐꯩꯕꯥ ꯎꯨꯠꯐꯝꯗꯨ ꯁꯤꯖꯤꯟꯅꯧ {{ꯟꯁ: ꯂꯥꯃꯥꯏ}} ꯃꯃꯤꯡꯒꯤ ꯃꯐꯝ",
 	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|page|pages}}, $2 only proofread {{PLURAL:$2|page|pages}} and $3 not proofread {{PLURAL:$3|page|pages}}",
@@ -88,5 +90,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ꯍꯣꯏ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ꯅꯠꯇꯦ",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯌꯦꯡꯕꯥ ꯆꯥꯡ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯄꯥꯕꯥ ꯀꯨꯋꯥꯂꯤꯇꯤ"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯄꯥꯕꯥ ꯀꯨꯋꯥꯂꯤꯇꯤ",
+	"proofreadpage-index-field-category-label": "ꯃꯆꯥꯈꯥꯏꯕꯁꯤꯡ"
 }
