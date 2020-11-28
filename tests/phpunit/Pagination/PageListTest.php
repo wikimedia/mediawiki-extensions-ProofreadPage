@@ -176,7 +176,12 @@ class PageListTest extends ProofreadPageTestCase {
 				new PageNumber( '4', PageNumber::DISPLAY_FOLIO, false, true ),
 				[ '3to10odd' => 'folio' ],
 				5
-			]
+			],
+			[
+				new PageNumber( '3', 'thai' ),
+				[ '3to10' => 'thai' ],
+				3
+			],
 		];
 	}
 

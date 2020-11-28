@@ -4,6 +4,7 @@ namespace ProofreadPage\Pagination;
 
 use InvalidArgumentException;
 use Language;
+use NumberFormatter;
 
 /**
  * @license GPL-2.0-or-later
@@ -17,6 +18,17 @@ class PageNumber {
 	public const DISPLAY_FOLIOHIGHROMAN = 'foliohighroman';
 	public const DISPLAY_FOLIOROMAN = 'folioroman';
 	public const DISPLAY_EMPTY = 'empty';
+
+	/**
+	 * Mapping between the ProofreadPage number formats ids and the one from ICU.
+	 * The full list of ICU number formats is available here:
+	 * https://github.com/unicode-org/cldr/blob/master/common/supplemental/numberingSystems.xml
+	 */
+	public const DISPLAY_FROM_ICU = [
+		'highroman' => 'roman',
+		'roman' => 'romanlow',
+		'thai' => 'thai',
+	];
 
 	/**
 	 * @var string
@@ -48,7 +60,7 @@ class PageNumber {
 	public function __construct( $number, $displayMode = self::DISPLAY_NORMAL, $isEmpty = false,
 		$isRecto = true ) {
 		if ( !in_array( $displayMode, self::getDisplayModes() ) ) {
-			throw new InvalidArgumentException( '$displayMode is invalid' );
+			throw new InvalidArgumentException( 'PageNumber display mode ' . $displayMode . ' is invalid' );
 		}
 		$this->number = $number;
 		$this->displayMode = $displayMode;
@@ -69,23 +81,23 @@ class PageNumber {
 
 		$number = (int)$this->number;
 		switch ( $this->displayMode ) {
-			case self::DISPLAY_HIGHROMAN:
-				return Language::romanNumeral( $number );
-			case self::DISPLAY_ROMAN:
-				return strtolower( Language::romanNumeral( $number ) );
 			case self::DISPLAY_NORMAL:
 				return $language->formatNumNoSeparators( $number );
 			case self::DISPLAY_FOLIO:
 				return $language->formatNumNoSeparators( $number ) .
 					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
-				return Language::romanNumeral( $number ) .
+				return self::formatICU( $language, 'roman', $number ) .
 					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOROMAN:
-				return strtolower( Language::romanNumeral( $number ) ) .
+				return self::formatICU( $language, 'romanlow', $number ) .
 					$this->formatRectoVerso();
 			default:
-				return $this->number;
+				if ( array_key_exists( $this->displayMode, self::DISPLAY_FROM_ICU ) ) {
+					return self::formatICU( $language, self::DISPLAY_FROM_ICU[$this->displayMode], $number );
+				} else {
+					return $this->number;
+				}
 		}
 	}
 
@@ -102,23 +114,23 @@ class PageNumber {
 
 		$number = (int)$this->number;
 		switch ( $this->displayMode ) {
-			case self::DISPLAY_HIGHROMAN:
-				return Language::romanNumeral( $number );
-			case self::DISPLAY_ROMAN:
-				return strtolower( Language::romanNumeral( $number ) );
 			case self::DISPLAY_NORMAL:
 				return $language->formatNumNoSeparators( $number );
 			case self::DISPLAY_FOLIO:
 				return $language->formatNumNoSeparators( $number ) .
 					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
-				return Language::romanNumeral( $number ) .
+				return self::formatICU( $language, 'roman', $number ) .
 					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOROMAN:
-				return strtolower( Language::romanNumeral( $number ) ) .
+				return self::formatICU( $language, 'romanlow', $number ) .
 					$this->rawRectoVerso();
 			default:
-				return $this->number;
+				if ( array_key_exists( $this->displayMode, self::DISPLAY_FROM_ICU ) ) {
+					return self::formatICU( $language, self::DISPLAY_FROM_ICU[$this->displayMode], $number );
+				} else {
+					return $this->number;
+				}
 		}
 	}
 
@@ -168,13 +180,26 @@ class PageNumber {
 	 * @return string[]
 	 */
 	public static function getDisplayModes() {
-		return [
-			self::DISPLAY_NORMAL,
-			self::DISPLAY_ROMAN,
-			self::DISPLAY_HIGHROMAN,
-			self::DISPLAY_FOLIO,
-			self::DISPLAY_FOLIOHIGHROMAN,
-			self::DISPLAY_FOLIOROMAN
-		];
+		$modes = array_keys( self::DISPLAY_FROM_ICU );
+		$modes[] = self::DISPLAY_NORMAL;
+		$modes[] = self::DISPLAY_FOLIO;
+		$modes[] = self::DISPLAY_FOLIOHIGHROMAN;
+		$modes[] = self::DISPLAY_FOLIOROMAN;
+		return $modes;
+	}
+
+	/**
+	 * Formats a number in $language using the name numbering system using the ICU data
+	 *
+	 * @param Language $language
+	 * @param string $name
+	 * @param int $number
+	 * @return string|false
+	 */
+	private static function formatICU( Language $language, string $name, int $number ) {
+		$locale = $language->getCode() . '-u-nu-' . $name;
+		$formatter = new NumberFormatter( $locale, NumberFormatter::DEFAULT_STYLE );
+		$formatter->setSymbol( NumberFormatter::GROUPING_SEPARATOR_SYMBOL, '' );
+		return $formatter->format( $number );
 	}
 }

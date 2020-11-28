@@ -16,6 +16,8 @@ class PageNumberTest extends ProofreadPageTestCase {
 			[ '1', '1', new PageNumber( '1' ), null ],
 			[ 'X', 'X', new PageNumber( '10', PageNumber::DISPLAY_HIGHROMAN ), null ],
 			[ 'x', 'x', new PageNumber( '10', PageNumber::DISPLAY_ROMAN ), null ],
+			[ '๒๓', '๒๓', new PageNumber( '23', 'thai' ), null ],
+			[ '๑๐๐๐๐๐', '๑๐๐๐๐๐', new PageNumber( '100000', 'thai' ), null ],
 			[ '12<sup>r</sup>', '12r',
 				new PageNumber( '12', PageNumber::DISPLAY_FOLIO, false, true ), null ],
 			[ '12<sup>v</sup>', '12v',
