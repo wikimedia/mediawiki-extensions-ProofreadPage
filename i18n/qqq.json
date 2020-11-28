@@ -123,6 +123,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Error when API request to get image URL for the Index page returns unexpected output.",
 	"proofreadpage-pagelist-type": "Message denoting that a particular scan's page number is of a particular type. Parameters\n* $1 – the type of page number of a page.",
 	"proofreadpage-pagelist-scan-number": "Message denoting a scan's number. Parameters\n* $1 – scan number.",
+	"proofreadpage-pagelist-display-number": "Message denoting a display number. Parameters\n* $1 – display number.",
 	"proofreadpage-pagelist-assignedpagenumber": "Message denoting that a particular scan has been assigned a particular page number. Paramters\n $1 – The assigned page number.",
 	"proofreadpage-pagelist-dialog-visual-help": "{{Optional}}\n\nLink to a help page regarding the Wikisource Pagelist Widget's visual mode.",
 	"proofreadpage-pagelist-dialog-wikitext-help": "{{Optional}}\n\nLink to a help page regarding the pagelist syntax being used.",

@@ -94,6 +94,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "The thumbnail source for this scan could not be found.",
 	"proofreadpage-pagelist-type": "Page Number Type: $1",
 	"proofreadpage-pagelist-scan-number": "Scan number: $1",
+	"proofreadpage-pagelist-display-number": "Display number: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "This page has been assigned the page number: $1",
 	"proofreadpage-pagelist-dialog-visual-help": "https://www.mediawiki.org/wiki/Help:Extension:ProofreadPage/Pagelist_widget",
 	"proofreadpage-pagelist-dialog-wikitext-help": "https://www.mediawiki.org/wiki/Help:Extension:ProofreadPage/Pagelist_syntax",
