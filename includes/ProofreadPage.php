@@ -725,13 +725,21 @@ class ProofreadPage {
 				try {
 					$prevTitle  = $pagination->getPageTitle( $pageNumber - 1 );
 					$prevText = wfMessage( 'proofreadpage_prevpage' )->plain();
+					$prevUrl = self::getLinkUrlForTitle( $prevTitle );
 					$firstLinks['proofreadPagePrevLink'] = [
 						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
-						'href' => self::getLinkUrlForTitle( $prevTitle ),
-						'rel' => 'prev',
+						'href' => $prevUrl,
 						'text' => $prevText,
 						'title' => $prevText
 					];
+					$skin->getOutput()->addLink( [
+						'rel' => 'prev',
+						'href' => $prevUrl
+					] );
+					$skin->getOutput()->addLink( [
+						'rel' => 'prefetch',
+						'href' => $prevUrl
+					] );
 				}
 				// if the previous page does not exist
 				catch ( OutOfBoundsException $e ) {
@@ -740,13 +748,21 @@ class ProofreadPage {
 				try {
 					$nextTitle  = $pagination->getPageTitle( $pageNumber + 1 );
 					$nextText = wfMessage( 'proofreadpage_nextpage' )->plain();
+					$nextUrl = self::getLinkUrlForTitle( $nextTitle );
 					$firstLinks['proofreadPageNextLink'] = [
 						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
-						'href' => self::getLinkUrlForTitle( $nextTitle ),
-						'rel' => 'next',
+						'href' => $nextUrl,
 						'text' => $nextText,
 						'title' => $nextText
 					];
+					$skin->getOutput()->addLink( [
+						'rel' => 'next',
+						'href' => $nextUrl
+					] );
+					$skin->getOutput()->addLink( [
+						'rel' => 'prefetch',
+						'href' => $nextUrl
+					] );
 				}
 				// if the next page does not exist
 				catch ( OutOfBoundsException $e ) {
