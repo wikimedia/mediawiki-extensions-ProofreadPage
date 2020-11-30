@@ -99,6 +99,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "לא היה אפשר למצוא את מקור התמונה הממוזערת עבור הסריקה הזאת.",
 	"proofreadpage-pagelist-type": "סוג מספר דף: $1",
 	"proofreadpage-pagelist-scan-number": "מספר סריקה: $1",
+	"proofreadpage-pagelist-display-number": "המספר שיוצג: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "לדף הזה שויך מספר דף: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "עזרה",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "סוג המספר לא מאפשר לשינוי המספור להתרחש. שום ערך בשדה הזה לא ישפיע בעת העדכון.",

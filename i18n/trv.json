@@ -94,6 +94,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Pnyahan snlbuan patas ka powda samaw mqita o ini hlayi.",
 	"proofreadpage-pagelist-type": "Hnigan klgan spgan ruwahan ：$1",
 	"proofreadpage-pagelist-scan-number": "sspgan powda samaw mqita：$1",
+	"proofreadpage-pagelist-display-number": "pteura pusu ruwahan sspgan: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "ruwahan ptasan nii o wada sgun sspgan ruwahan: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Pgkla",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "The number type doesn't allow a numbering change to occur. Any value in this field will be ignored on update.",

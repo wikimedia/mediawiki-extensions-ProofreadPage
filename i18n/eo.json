@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Javiero",
 			"KuboF",
 			"Marcellus",
 			"Michawiki",
@@ -100,6 +101,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "La fonto de bildeto por ĉi tiu skanaĵo ne povas esti trovita.",
 	"proofreadpage-pagelist-type": "tipo de paĝa numero: $1",
 	"proofreadpage-pagelist-scan-number": "Numero de skanaĵo: $1",
+	"proofreadpage-pagelist-display-number": "Montriĝa nombro:$1",
 	"proofreadpage-pagelist-assignedpagenumber": "Al tiu ĉi paĝo estis asignta paĝa numero: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Helpo",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "La nombra tipo ne permesas okazigi nombradan ŝanĝon. Ajna valoro en ĉi tiu kampo estos ignorita dum ĝisdatigo.",

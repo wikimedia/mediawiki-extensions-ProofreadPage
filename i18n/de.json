@@ -100,6 +100,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Die Miniaturbildquelle für diesen Scan konnte nicht gefunden werden.",
 	"proofreadpage-pagelist-type": "Typ der Seitennummer: $1",
 	"proofreadpage-pagelist-scan-number": "Scan-Nummer: $1",
+	"proofreadpage-pagelist-display-number": "Anzeige Nummer: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Dieser Seite wurde die Seitennummer zugewiesen: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Hilfe",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Der Nummerntyp lässt keine Änderung der Nummerierung zu. Jeder Wert in diesem Feld wird bei der Aktualisierung ignoriert.",
