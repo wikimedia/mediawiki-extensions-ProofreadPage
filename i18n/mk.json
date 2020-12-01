@@ -95,6 +95,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Не можев да го пронајдам минијатурниот извор за овој отслик.",
 	"proofreadpage-pagelist-type": "Вид на број на страница: $1",
 	"proofreadpage-pagelist-scan-number": "Број на отчитување: $1",
+	"proofreadpage-pagelist-display-number": "Приказен број: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "На страницава ѝ е доделен бројот: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Помош",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Видот на број на страница не допушта промена. Секоја вредност во ова поле ќе биде занемарена при поднова.",

@@ -103,6 +103,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Não foi possível encontrar a fonte de miniaturas para esta verificação.",
 	"proofreadpage-pagelist-type": "Tipo de número da página: $1",
 	"proofreadpage-pagelist-scan-number": "Número de digitalização: $1",
+	"proofreadpage-pagelist-display-number": "Número de exibição: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Esta página recebeu o número da página: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Ajuda",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "O tipo de número não permite que ocorra uma alteração na numeração. Qualquer valor neste campo será ignorado na atualização.",
