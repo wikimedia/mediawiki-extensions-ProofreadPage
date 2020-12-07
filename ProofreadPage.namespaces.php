@@ -488,3 +488,11 @@ $proofreadPageNamespacesNames['vi'] = [
 	'index' => 'Mục_lục',
 	'index_talk' => 'Thảo_luận_Mục_lục'
 ];
+
+/** Walloon (walon) */
+$proofreadPageNamespacesNames['wa'] = [
+	'page' => 'Pådje',
+	'page_talk' => 'Pådje_copene',
+	'index' => 'Indek',
+	'index_talk' => 'Indek_copene',
+];
