@@ -189,7 +189,7 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 
 	apiWikitext = apiWikitext.replace( '$2', pagelistText );
 
-	this.api.get( {
+	this.api.post( {
 		action: 'parse',
 		title: mw.config.get( 'wgPageName' ),
 		text: apiWikitext
@@ -197,7 +197,8 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 		this.parseAPItoEnumeratedList( response, parameters );
 	}.bind( this ) ).catch( function ( err ) {
 		mw.log.error( err );
-	} );
+		this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-unknown' );
+	}.bind( this ) );
 };
 
 /**
