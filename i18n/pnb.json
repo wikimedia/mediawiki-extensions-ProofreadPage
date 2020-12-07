@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abbas dhothar",
 			"Khalid Mahmood",
 			"Satdeep gill"
 		]
 	},
-	"nstab-page": "صفہ",
+	"nstab-page": "صفحہ",
 	"nstab-index": "انڈیکس",
-	"tooltip-ca-nstab-page": "کتاب دا صفہ ویکھو",
+	"tooltip-ca-nstab-page": "کتاب دا صفحہ ویکھو",
 	"tooltip-ca-nstab-index": "کتاب دا انڈیکس ویکھو",
 	"proofreadpage_image": "تصویر",
 	"proofreadpage_index": "انڈیکس",
-	"proofreadpage_nextpage": "اگلا صفہ",
-	"proofreadpage_prevpage": "پچھلا صفہ",
+	"proofreadpage_nextpage": "اگلا صفحہ",
+	"proofreadpage_prevpage": "پچھلا صفحہ",
 	"proofreadpage_quality0_category": "لکھت بغیر",
 	"proofreadpage_quality1_category": "ایہنوں ہجے پڑھیا نہیں گیا",
 	"proofreadpage_quality2_category": "رپھڑی",
@@ -21,7 +22,7 @@
 	"proofreadpage_quality0_summary": "لکھت بغیر",
 	"proofreadpage_quality3_summary": "پروف ریڈ",
 	"proofreadpage_quality4_summary": "منظور",
-	"proofreadpage_quality1_message": "ایہ صفہ ہجے پڑھیا نہیں گیا۔",
+	"proofreadpage_quality1_message": "ایہ صفحہ ہجے پڑھیا نہیں گیا۔",
 	"proofreadpage_index_listofpages": "صفیاں دی لسٹ",
 	"proofreadpage_source": "سورس",
 	"content-model-proofread-page": "کتاب صفحہ",
