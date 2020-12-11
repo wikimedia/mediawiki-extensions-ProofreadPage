@@ -161,7 +161,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @param int $key
+	 * @param string $key
 	 * @param array $serialization
 	 * @throws MWContentSerializationException
 	 */
