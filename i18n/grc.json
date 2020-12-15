@@ -7,6 +7,7 @@
 			"PastelKos"
 		]
 	},
+	"nstab-page": "Δέλτος",
 	"indexpages": "Καταλογή δελτών ἐυρετηρίων",
 	"pageswithoutscans": "Δέλτοι ἄνευ ἐπισκοπήσεως",
 	"proofreadpage_desc": "ἐφίέναι ἄπονη παραβολή λόγου προς ἐξ ἀρχῆς λόγο",
@@ -32,6 +33,11 @@
 	"proofreadpage_quality2_category": "Προβληματική",
 	"proofreadpage_quality3_category": "Βεβαιοῦν",
 	"proofreadpage_quality4_category": "Ἔγκυρον",
+	"proofreadpage_quality0_summary": "Ἄνευ κειμένου",
+	"proofreadpage_quality1_summary": "Μὴ ἠλεγμένη",
+	"proofreadpage_quality2_summary": "Προβληματική",
+	"proofreadpage_quality3_summary": "Βεβαιοῦν",
+	"proofreadpage_quality4_summary": "Ἔγκυρον",
 	"proofreadpage_quality0_message": "Ἠ δέλτος ταύτη οὐδέν χρεῖ ἐπαληθεύσεως",
 	"proofreadpage_quality1_message": "Δέλτος ταύτη μή ἠλεγμένη",
 	"proofreadpage_quality2_message": "Ἐμφανίσθη σφάλμα κατά την ἐπαλήθευσιν δέλτου ταύτης",
