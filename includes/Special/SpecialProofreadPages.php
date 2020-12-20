@@ -87,8 +87,7 @@ class SpecialProofreadPages extends QueryPage {
 				if ( !( $textMatches instanceof ISearchResultSet ) ) {
 					// TODO: $searchEngine->searchText() can return status objects
 					// Might want to extract some information from them
-					global $wgOut;
-					$wgOut->showErrorPage(
+					$output->showErrorPage(
 						'proofreadpage_specialpage_searcherror',
 						'proofreadpage_specialpage_searcherrortext'
 					);
