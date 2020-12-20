@@ -15,6 +15,7 @@ use ProofreadPage\ProofreadPageInit;
  */
 abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 
+	/** @var array */
 	protected static $customIndexFieldsConfiguration = [
 		'Title' => [
 			'type' => 'string',

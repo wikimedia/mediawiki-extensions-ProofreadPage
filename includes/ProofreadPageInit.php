@@ -12,7 +12,7 @@ use MWException;
 class ProofreadPageInit {
 
 	/**
-	 * the default namespace id for each namespaces
+	 * @var int[] the default namespace id for each namespaces
 	 * Called by the SetupAfterCache hook
 	 */
 	protected static $defaultNamespaceIds = [

@@ -24,6 +24,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	 */
 	private $categoryForQualityLevel;
 
+	/** @var (int|null)[] */
 	private $cache = [];
 
 	/**

@@ -11,8 +11,10 @@ use Title;
  */
 class Link {
 
+	/** @var Title */
 	private $target;
 
+	/** @var string */
 	private $label;
 
 	/**

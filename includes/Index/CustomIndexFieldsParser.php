@@ -12,6 +12,7 @@ use OutOfBoundsException;
  */
 class CustomIndexFieldsParser {
 
+	/** @var array */
 	private $configuration;
 
 	/**

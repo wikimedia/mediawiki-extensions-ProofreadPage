@@ -22,6 +22,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	 */
 	private $repoGroup;
 
+	/** @var (Title|null)[] */
 	private $cache = [];
 
 	/**

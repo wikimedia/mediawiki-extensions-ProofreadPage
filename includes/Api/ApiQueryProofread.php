@@ -9,6 +9,7 @@ use ProofreadPage\Context;
  * @license GPL-2.0-or-later
  */
 class ApiQueryProofread extends ApiQueryBase {
+	/** @var string[] */
 	private $qualityLevelCategoryCache = [];
 
 	/**

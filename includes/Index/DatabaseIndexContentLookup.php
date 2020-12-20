@@ -13,6 +13,7 @@ use Title;
  */
 class DatabaseIndexContentLookup implements IndexContentLookup {
 
+	/** @var IndexContent[] */
 	private $cache = [];
 
 	/**

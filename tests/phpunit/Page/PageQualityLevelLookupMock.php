@@ -11,6 +11,7 @@ use Title;
  */
 class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 
+	/** @var array */
 	private $levelForPage = [];
 
 	/**

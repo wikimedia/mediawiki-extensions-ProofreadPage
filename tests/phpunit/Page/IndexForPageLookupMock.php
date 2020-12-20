@@ -11,6 +11,7 @@ use Title;
  */
 class IndexForPageLookupMock implements IndexForPageLookup {
 
+	/** @var array */
 	private $indexForPage = [];
 
 	/**

@@ -30,7 +30,18 @@ use SearchResult;
 use Title;
 
 class SpecialProofreadPages extends QueryPage {
-	protected $searchTerm, $searchList, $suppressSqlOffset, $queryOrder, $sortAscending, $addOne;
+	/** @var string|null */
+	protected $searchTerm;
+	/** @var string[]|null */
+	protected $searchList;
+	/** @var bool|null */
+	protected $suppressSqlOffset;
+	/** @var string|null */
+	protected $queryOrder;
+	/** @var bool|null */
+	protected $sortAscending;
+	/** @var true|null */
+	protected $addOne;
 
 	/**
 	 * @param string $name

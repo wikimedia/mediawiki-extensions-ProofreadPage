@@ -9,6 +9,7 @@ use Title;
  */
 class IndexContentLookupMock implements IndexContentLookup {
 
+	/** @var array */
 	private $contentForIndex = [];
 
 	/**
