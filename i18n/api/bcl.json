@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Brazal.dang",
-			"Filipinayzd"
+			"Filipinayzd",
+			"Kunokuno"
 		]
 	},
 	"apihelp-query+proofread-description": "Nagbabalik an impormasyon dapit sa presenteng kamugtakan kan itinaong pahina.",
@@ -10,6 +11,7 @@
 	"apihelp-query+proofread-example-1": "Ibalik an estado kan pagproofread kan pahina sa namespace 250",
 	"apihelp-query+proofreadinfo-description": "Ibalik an impormasyon tungkol sa comfigurasyon kan ProofreadPage extension.",
 	"apihelp-query+proofreadinfo-summary": "Ibalik an impormasyon tungkol sa comfigurasyon kan ProofreadPage extension.",
+	"apihelp-query+proofreadinfo-param-prop": "Arin na proofread properties an kaipuhan makua:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
 	"apihelp-query+proofreadinfo-example-1": "Magbalik sa dating impormasyon",
 	"apihelp-query+proofreadinfo-example-3": "Ibalik an impormasyon kan namespace"
 }
