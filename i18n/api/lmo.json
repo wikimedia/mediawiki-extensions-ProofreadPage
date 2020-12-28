@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Salvemm el lombard"
+		]
+	},
+	"apihelp-query+proofread-description": "El te da i informazzion sora el stat di corezzion finai di pagine fornide.",
+	"apihelp-query+proofread-summary": "El te da i informazzion sora el stat di corezzion finai di pagine fornide.",
+	"apihelp-query+proofread-example-1": "El te dà el stat di correzion di pagine in del spazzi 250",
+	"apihelp-query+proofreadinfo-description": "El te da di informazzion sora i caratteristiche fonzionai de l'estension ProofreadPage",
+	"apihelp-query+proofreadinfo-summary": "El te dà di informazzion sora i caratteristiche fonzionai de l'estension ProofreadPage",
+	"apihelp-query+proofreadinfo-param-prop": "Quai proprietà de corezzion otegnì:\n;namespaces:Informazzion sora i spazi de scrivegh el nom \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista di livei de qualità de la corezzion.",
+	"apihelp-query+proofreadinfo-example-1": "Dà indrée l'informazzion predefinida",
+	"apihelp-query+proofreadinfo-example-3": "Dà indrée di informazzion sora el spazzi de scrivegh el nom"
+}
