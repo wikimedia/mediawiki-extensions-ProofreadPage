@@ -173,6 +173,12 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			new UnregisteredLocalFile(
 				false,
 				$fileRepo,
+				'mwstore://localtesting/data/LoremIpsum.jpg',
+				'image/jpg'
+			),
+			new UnregisteredLocalFile(
+				false,
+				$fileRepo,
 				'mwstore://localtesting/data/Test.jpg',
 				'image/jpg'
 			)

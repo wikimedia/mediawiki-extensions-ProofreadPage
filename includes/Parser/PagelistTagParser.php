@@ -9,6 +9,7 @@ use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;
 use ProofreadPage\Pagination\PageNumber;
+use ProofreadPage\Pagination\SimpleFilePagination;
 
 /**
  * @license GPL-2.0-or-later
@@ -53,11 +54,12 @@ class PagelistTagParser {
 		} catch ( FileNotFoundException $e ) {
 			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
-		if ( !$image->isMultipage() ) {
-			return $this->formatError( 'proofreadpage_nosuch_file' );
-		}
 
-		$pagination = new FilePagination( $title, $pageList, $image, $this->context );
+		if ( $image->isMultipage() ) {
+			$pagination = new FilePagination( $title, $pageList, $image, $this->context );
+		} else {
+			$pagination = new SimpleFilePagination( $title, $pageList, $image, $this->context );
+		}
 		$count = $pagination->getNumberOfPages();
 
 		$return = '';

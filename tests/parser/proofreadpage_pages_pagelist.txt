@@ -393,7 +393,7 @@ title="Index:Thumb.png"
 !! wikitext
 <pagelist />
 !! html
-<p><span class="prp-index-pagelist"><strong class="error">Error: No such file</strong></span>
+<p><span class="prp-index-pagelist"><a href="/index.php?title=Page:Thumb.png&amp;action=edit&amp;redlink=1" class="new" title="Page:Thumb.png (page does not exist)">1</a></span>
 </p>
 !! end
 
