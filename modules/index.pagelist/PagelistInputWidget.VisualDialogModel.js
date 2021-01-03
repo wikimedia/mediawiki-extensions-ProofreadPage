@@ -144,10 +144,12 @@ VisualDialogModel.prototype.setRangesForOverlappingRanges = function ( params, d
  * @return {mw.proofreadpage.PagelistInputWidget.Parameters}
  */
 VisualDialogModel.prototype.setNumbering = function ( params, data ) {
-	// If there is a number, and the ranges are the 3 builtin ranges, go ahead and set
-	// the numbering, else, delete whatever is already there ( if there are any numberings
-	// it will always be in the data... so we don't need to worry about preserving old ones.
-	if ( data.number && ( data.label === 'roman' || data.label === 'highroman' || data.label === 'Number' ) ) {
+	// If there is a number, and the range is in the list of builtin ranges and the range
+	// changes the number format,  go ahead and set the numbering, else, delete whatever
+	// is already there if there are any numberings it will always be in the data...
+	//  so we don't need to worry about preserving old ones.
+	if ( data.number && mw.config.get( 'prpPagelistBuiltinLabels' ) &&
+		mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( data.label ) !== -1 && data.label !== 'empty' ) {
 		params.set( this.data.subPage, data.number );
 	} else {
 		params.delete( this.data.subPage );
@@ -207,7 +209,8 @@ VisualDialogModel.prototype.removeUnecessaryNumbering = function ( params, parti
 		if ( index.split( 'to' )[ 0 ] === index ) {
 			if ( partialList[ index ] ) {
 				label = partialList[ index ][ 0 ].type;
-				if ( label !== 'roman' && label !== 'highroman' && label !== 'Number' ) {
+				if ( mw.config.get( 'prpPagelistBuiltinLabels' ) &&
+				mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( label ) === -1 ) {
 					params.delete( index );
 				}
 			}

@@ -112,8 +112,11 @@ PageNumberInputWidget.prototype.getNumberTypeConfig = function () {
  */
 PageNumberInputWidget.prototype.updateFormPanel = function () {
 	var data = this.pageNumberTypeInput.getValue();
-	// @todo: Improve this implementation
-	if ( data === 'Number' || data === 'roman' || data === 'highroman' ) {
+
+	// Check if the label is one that is provided by ProofreadPage by default
+	// and changes the number format being displayed.
+	if ( mw.config.get( 'prpPagelistBuiltinLabels' ) &&
+	mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( data.label ) === -1 && data.label !== 'empty' ) {
 		if ( data === 'Number' ) {
 			this.emit( 'changedToSinglePageIncompatibleValue' );
 		} else {

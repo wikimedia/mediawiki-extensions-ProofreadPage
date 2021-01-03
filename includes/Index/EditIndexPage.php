@@ -12,6 +12,7 @@ use OOUI\MultilineTextInputWidget;
 use OOUI\TextInputWidget;
 use ProofreadPage\Context;
 use ProofreadPage\OOUI\PagelistInputWidget;
+use ProofreadPage\Pagination\PageNumber;
 use Title;
 use WebRequest;
 use WikitextContent;
@@ -97,6 +98,9 @@ class EditIndexPage extends EditPage {
 	private function buildField( CustomIndexField $field, $inputOptions ) {
 		$key = $this->getFieldNameForEntry( $field->getKey() );
 		$val = $field->getStringValue();
+		$out = $this->context->getOutput();
+
+		$out->addJsConfigVars( 'prpPagelistBuiltinLabels', PageNumber::getDisplayModes() );
 
 		$inputOptions['name'] = $key;
 		$inputOptions['value'] = $val;
@@ -119,7 +123,7 @@ class EditIndexPage extends EditPage {
 				'templateParameter' => $field->getKey(),
 				'rows' => $field->getSize()
 			], $inputOptions ) );
-			$this->context->getOutput()->addModules( 'ext.proofreadpage.index.pagelist' );
+			$out->addModules( 'ext.proofreadpage.index.pagelist' );
 		} else {
 			if ( $field->getSize() > 1 ) {
 				$input = new MultilineTextInputWidget( $inputOptions + [
