@@ -5,10 +5,21 @@
 			"Lanciné.kounfantoh.fofana"
 		]
 	},
+	"nstab-page": "ߞߐߜߍ",
+	"tooltip-ca-nstab-page": "ߞߊ߬ߝߊ ߞߐߜߍ ߦߋ߫",
+	"proofreadpage_image": "ߖߌ߬ߦߊ߬ߓߍ",
+	"proofreadpage_nologin": "ߌ ߜߊ߲߬ߞߎ߲߬ߣߍ߲߬ ߕߍ߫",
+	"proofreadpage_nologintext": "ߌ ߦߴߌ ߞߊߘߊ߲߫ ߞߵߌ ߞߍ߫ [[Special:UserLogin|logged in]] ߘߌ߫ ߞߊ߬ ߞߐߜߍ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲߬ ߘߐߥߛߊ߬ߣߍ߲ ߟߌ߬ߤߟߊ ߟߎ߬ ߡߊߦߟߍ߬ߡߊ߲߫.",
+	"proofreadpage_notallowedtext": "ߌ ߟߊߘߌ߬ߢߍ߬ߣߍ߲߬ ߕߍ߫ ߞߊ߬ ߞߐߜߍ ߣߌ߲߬ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲߬ ߘߐߥߛߊ߬ߣߍ߲ ߟߌ߬ߤߟߊ ߟߎ߬ ߡߊߦߟߍ߬ߡߊ߲߫.",
 	"proofreadpage_quality0_category": "ߛߓߍߟߌ߫ ߕߴߊ߬ ߘߐ߫",
 	"proofreadpage_quality1_category": "ߊ߬ ߕߍ߫ ߞߊ߬ߙߊ߲߬ ߘߐߥߛߊ߬ߣߍ߲߫ ߘߌ߫",
 	"proofreadpage_quality2_category": "ߝߙߋߞߋߡߊ",
 	"proofreadpage_quality3_category": "ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲ ߘߐߥߛߊ߬ߣߍ߲",
 	"proofreadpage_quality4_category": "ߊ߬ ߓߘߊ߫ ߟߊߛߙߋߦߊ߫",
-	"proofreadpage_quality1_message": "ߞߐߜߍ ߡߊ߫ ߞߍ߫ ߞߊ߬ߙߊ߲߬ߕߊ߬ ߘߐߥߛߊ߬ߣߍ߲߫ ߘߌ߫ ߡߎߣߎ߲߬"
+	"proofreadpage_quality1_message": "ߞߐߜߍ ߡߊ߫ ߞߍ߫ ߞߊ߬ߙߊ߲߬ߕߊ߬ ߘߐߥߛߊ߬ߣߍ߲߫ ߘߌ߫ ߡߎߣߎ߲߬",
+	"proofreadpage_index_size": "ߞߐߜߍ ߟߎ߬ ߝߙߍߕߍ",
+	"proofreadpage_pages_to_validate": "ߞߐߜߍ ߝߙߍߕߍ ߟߎ߬ ߓߍ߲߬ߣߍ߲߫ ߦߋ߫ ߞߍ߫",
+	"proofreadpage_specialpage_label_key": "ߢߌߣߌ߲ߠߌ߲",
+	"proofreadpage-pagelist-dialog-unsaved-progress-title": "ߖߊ߲߬ߝߊ߬ߣߍ߲߬ ߠߊߞߎ߲߬ߘߎ߬ߓߊߛߌ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "ߘߍ߬ߡߍ߲߬ߠߌ߲"
 }
