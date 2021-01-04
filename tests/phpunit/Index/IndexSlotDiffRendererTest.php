@@ -98,6 +98,10 @@ class IndexSlotDiffRendererTest extends ProofreadPageTestCase {
 			'&#160;' => ' ',
 			html_entity_decode( '&minus;' ) => '-'
 		];
+		// Preserve markers when stripping tags
+		$diff = str_replace( '<td class="diff-marker"></td>', ' ', $diff );
+		$diff = str_replace( '<td colspan="2"></td>', ' ', $diff );
+		$diff = preg_replace( '/data-marker="([^"]*)">/', '>$1', $diff );
 		$diff = strip_tags( $diff );
 		$diff = str_replace( array_keys( $replacements ), array_values( $replacements ), $diff );
 		return preg_replace( '/\s+/', ' ', $diff );
