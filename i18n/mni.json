@@ -80,6 +80,7 @@
 	"proofreadpage-pagelist-dialog-cancel": "ꯇꯣꯛꯄ",
 	"proofreadpage-pagelist-display-number": "ꯃꯁꯤꯡ ꯎꯠꯂꯨ:$1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "ꯃꯇꯦꯡ",
+	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "ꯂꯃꯥꯏ ꯃꯁꯤꯡ ꯃꯈꯜ:",
 	"proofreadpage-preferences-showheaders-label": "ꯃꯃꯤꯡ ꯏꯐꯝ {{ns:page}}ꯗ ꯁꯦꯝꯇꯒꯠ-ꯁꯥꯒꯠꯂꯤꯉꯩ ꯃꯇꯝꯗ ꯃꯀꯣꯛ ꯑꯃꯡꯁꯨꯡ ꯂꯣꯏꯁꯤꯟꯂꯛꯅꯕ ꯃꯑꯣꯡꯗꯨ ꯎꯠꯂꯨ",
 	"proofreadpage-preferences-horizontal-layout-label": "ꯍꯣꯔꯟ ꯁꯦꯝꯒꯠꯂꯛꯄꯥ ꯃꯇꯝꯗꯥ ꯑꯐꯩꯕꯥ ꯎꯨꯠꯐꯝꯗꯨ ꯁꯤꯖꯤꯟꯅꯧ {{ꯟꯁ: ꯂꯥꯃꯥꯏ}} ꯃꯃꯤꯡꯒꯤ ꯃꯐꯝ",
 	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|page|pages}}, $2 only proofread {{PLURAL:$2|page|pages}} and $3 not proofread {{PLURAL:$3|page|pages}}",
