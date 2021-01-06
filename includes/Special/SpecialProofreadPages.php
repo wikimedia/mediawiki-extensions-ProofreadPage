@@ -73,6 +73,9 @@ class SpecialProofreadPages extends QueryPage {
 		$this->sortAscending = $request->getBool( 'sortascending' );
 		$this->suppressSqlOffset = false;
 
+		// don't show navigation if included in another page
+		$this->shownavigation = !$this->including();
+
 		if ( !$this->getConfig()->get( 'wgDisableTextSearch' ) ) {
 			if ( !$this->including() ) {
 				// Only show the search form when not including in another page.
@@ -113,6 +116,7 @@ class SpecialProofreadPages extends QueryPage {
 				}
 			}
 		}
+
 		parent::execute( $parameters );
 	}
 
