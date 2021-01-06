@@ -55,8 +55,6 @@ class SpecialProofreadPages extends QueryPage {
 	 * @inheritDoc
 	 */
 	public function execute( $parameters ) {
-		global $wgDisableTextSearch;
-
 		$this->setHeaders();
 		if ( $this->limit == 0 && $this->offset == 0 ) {
 			list( $this->limit, $this->offset ) = $this->getRequest()
@@ -75,7 +73,7 @@ class SpecialProofreadPages extends QueryPage {
 		$this->sortAscending = $request->getBool( 'sortascending' );
 		$this->suppressSqlOffset = false;
 
-		if ( !$wgDisableTextSearch ) {
+		if ( !$this->getConfig()->get( 'wgDisableTextSearch' ) ) {
 			if ( !$this->including() ) {
 				// Only show the search form when not including in another page.
 				$this->displaySearchForm();
