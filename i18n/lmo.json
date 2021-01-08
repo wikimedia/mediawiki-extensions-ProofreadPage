@@ -16,7 +16,7 @@
 	"proofreadpage_index": "Indes",
 	"proofreadpage_index_expected": "Eror: a gh'è besogn d'un indes",
 	"proofreadpage_nosuch_index": "Eror: a gh'è minga l'indes",
-	"proofreadpage_nosuch_file": "Eror: el file el gh'è minga",
+	"proofreadpage_nosuch_file": "Eror: el fail el gh'è minga",
 	"proofreadpage_indexdupetext": "I pagine i poden minga vesser presente pussée de una volta ind una pagina de indes.",
 	"proofreadpage_nologin": "Minga coness",
 	"proofreadpage_nologintext": "Ti te gh'hee [[Special:UserLogin|andà dent al sistema]] per portà di cambiament al stat de corezzion di pagine.",
