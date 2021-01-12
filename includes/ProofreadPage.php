@@ -113,7 +113,7 @@ class ProofreadPage {
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			$model = CONTENT_MODEL_PROOFREAD_PAGE;
 			return false;
-		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
+		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) && !$title->isSubpage() ) {
 			$model = CONTENT_MODEL_PROOFREAD_INDEX;
 			return false;
 		} else {
