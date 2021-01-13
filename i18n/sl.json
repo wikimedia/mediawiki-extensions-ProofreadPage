@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
+			"Eleassar",
 			"Janezdrilc",
 			"Yerpo"
 		]
@@ -79,7 +80,7 @@
 	"proofreadpage-button-toggle-layout-label": "Navpična/vodoravna postavitev",
 	"proofreadpage-pageinfo-status": "Stanje pregleda",
 	"proofreadpage-preferences-showheaders-label": "Pokaži glavo in nogo, ko urejaš v imenskem prostoru {{ns:page}}",
-	"proofreadpage-preferences-horizontal-layout-label": "Uporabi horizontalen pogled, ko urejaš v imenskem prostoru {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "Pri urejanju v imenskem prostoru {{ns:page}} uporabi vodoravno postavitev",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|potrjena stran|potrjeni strani|potrjene strani|potrjenih strani}}, $2 samo {{PLURAL:$1|pregledana stran|pregledani strani|pregledane strani|pregledanih strani}} in $3 {{PLURAL:$1|nepregledana stran|nepregledani strani|nepregledane strani|nepregledanih strani}}",
 	"content-model-proofread-page": "Stran knjige",
 	"content-model-proofread-index": "Kazalo knjige",
