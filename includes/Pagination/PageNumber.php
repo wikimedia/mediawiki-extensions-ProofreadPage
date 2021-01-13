@@ -24,31 +24,40 @@ class PageNumber {
 	 * The full list of ICU number formats is available here:
 	 * https://github.com/unicode-org/cldr/blob/master/common/supplemental/numberingSystems.xml
 	 */
-	public const DISPLAY_FROM_ICU = [
+	private const DISPLAY_FROM_ICU = [
+		'beng' => 'beng',
+		'deva' => 'deva',
 		'highroman' => 'roman',
 		'roman' => 'romanlow',
+		'tamldec' => 'tamldec',
+		'guru' => 'guru',
+		'gujr' => 'gujr',
+		'telu' => 'telu',
+		'knda' => 'knda',
+		'mlym' => 'mlym',
+		'orya' => 'orya',
 		'thai' => 'thai',
 	];
 
 	/**
 	 * @var string
 	 */
-	protected $number;
+	private $number;
 
 	/**
 	 * @var string
 	 */
-	protected $displayMode = self::DISPLAY_NORMAL;
+	private $displayMode;
 
 	/**
 	 * @var bool
 	 */
-	protected $isEmpty = false;
+	private $isEmpty;
 
 	/**
 	 * @var bool
 	 */
-	protected $isRecto = true;
+	private $isRecto;
 
 	/**
 	 * @param string $number the page number
@@ -57,11 +66,7 @@ class PageNumber {
 	 * @param bool $isRecto true if recto, false if verso (for folio modes only)
 	 * @throws InvalidArgumentException
 	 */
-	public function __construct( $number, $displayMode = self::DISPLAY_NORMAL, $isEmpty = false,
-		$isRecto = true ) {
-		if ( !in_array( $displayMode, self::getDisplayModes() ) ) {
-			throw new InvalidArgumentException( 'PageNumber display mode ' . $displayMode . ' is invalid' );
-		}
+	public function __construct( $number, $displayMode = self::DISPLAY_NORMAL, $isEmpty = false, $isRecto = true ) {
 		$this->number = $number;
 		$this->displayMode = $displayMode;
 		$this->isEmpty = $isEmpty;
@@ -192,12 +197,15 @@ class PageNumber {
 	 * Formats a number in $language using the name numbering system using the ICU data
 	 *
 	 * @param Language $language
-	 * @param string $name
+	 * @param string|null $name
 	 * @param int $number
 	 * @return string|false
 	 */
-	private static function formatICU( Language $language, string $name, int $number ) {
-		$locale = $language->getCode() . '-u-nu-' . $name;
+	private static function formatICU( Language $language, ?string $name, int $number ) {
+		$locale = $language->getCode();
+		if ( $name !== null ) {
+			$locale .= '-u-nu-' . $name;
+		}
 		$formatter = new NumberFormatter( $locale, NumberFormatter::DEFAULT_STYLE );
 		$formatter->setSymbol( NumberFormatter::GROUPING_SEPARATOR_SYMBOL, '' );
 		return $formatter->format( $number );

@@ -43,6 +43,16 @@ class PageNumberTest extends ProofreadPageTestCase {
 		$this->assertSame( $rawResult, $number->getRawPageNumber( $language ) );
 	}
 
+	public function testCustomPageNumberFormatsAreSupported() {
+		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
+		foreach ( PageNumber::getDisplayModes() as $displayMode ) {
+			if ( $displayMode !== PageNumber::DISPLAY_NORMAL ) {
+				$pageNumber = new PageNumber( '2', $displayMode );
+				$this->assertNotSame( '2', $pageNumber->getFormattedPageNumber( $language ) );
+			}
+		}
+	}
+
 	public function testIsEmpty() {
 		$number = new PageNumber( '10', PageNumber::DISPLAY_ROMAN, true );
 		$this->assertTrue( $number->isEmpty() );
