@@ -76,7 +76,7 @@ class SpecialProofreadPages extends QueryPage {
 		// don't show navigation if included in another page
 		$this->shownavigation = !$this->including();
 
-		if ( !$this->getConfig()->get( 'wgDisableTextSearch' ) ) {
+		if ( !$this->getConfig()->get( 'DisableTextSearch' ) ) {
 			if ( !$this->including() ) {
 				// Only show the search form when not including in another page.
 				$this->displaySearchForm();
