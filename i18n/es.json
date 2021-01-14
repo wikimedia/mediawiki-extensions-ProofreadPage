@@ -111,6 +111,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "No se encontró la miniatura original para esta digitalización",
 	"proofreadpage-pagelist-type": "Tipo de número de la página: $1",
 	"proofreadpage-pagelist-scan-number": "Número del escaneo: $1",
+	"proofreadpage-pagelist-display-number": "Número mostrado: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "A esta página se le asignó el número: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Ayuda",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "El tipo de número no permite que ocurra un cambio en la numeración. Cualquier valor que se agregue en este campo será ignorado.",
