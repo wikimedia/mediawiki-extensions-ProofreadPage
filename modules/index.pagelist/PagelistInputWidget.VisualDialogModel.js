@@ -148,8 +148,8 @@ VisualDialogModel.prototype.setNumbering = function ( params, data ) {
 	// changes the number format,  go ahead and set the numbering, else, delete whatever
 	// is already there if there are any numberings it will always be in the data...
 	//  so we don't need to worry about preserving old ones.
-	if ( data.number && mw.config.get( 'prpPagelistBuiltinLabels' ) &&
-		mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( data.label ) !== -1 && data.label !== 'empty' ) {
+	if ( data.number && ( data.label === 'Number' || ( mw.config.get( 'prpPagelistBuiltinLabels' ) &&
+		mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( data.label ) !== -1 && data.label !== 'empty' ) ) ) {
 		params.set( this.data.subPage, data.number );
 	} else {
 		params.delete( this.data.subPage );

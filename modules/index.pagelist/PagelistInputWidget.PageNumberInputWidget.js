@@ -115,8 +115,8 @@ PageNumberInputWidget.prototype.updateFormPanel = function () {
 
 	// Check if the label is one that is provided by ProofreadPage by default
 	// and changes the number format being displayed.
-	if ( mw.config.get( 'prpPagelistBuiltinLabels' ) &&
-	mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( data.label ) === -1 && data.label !== 'empty' ) {
+	if ( ( data === 'Number' || ( mw.config.get( 'prpPagelistBuiltinLabels' ) &&
+	mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( data ) !== -1 && data !== 'empty' ) ) ) {
 		if ( data === 'Number' ) {
 			this.emit( 'changedToSinglePageIncompatibleValue' );
 		} else {
