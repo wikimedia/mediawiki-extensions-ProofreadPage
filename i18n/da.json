@@ -98,6 +98,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Kilden til miniaturebilleder for denne indskanning kunne ikke findes.",
 	"proofreadpage-pagelist-type": "Sidetalstype: $1",
 	"proofreadpage-pagelist-scan-number": "Indskanningsnummer: $1",
+	"proofreadpage-pagelist-display-number": "Vist sidetal: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Denne side har fået sidetallet: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Hjælp",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Denne nummereringstype tillader ikke en ændring af nummeret. Enhver værdi i dette felt vil blive ignoreret ved opdatering.",
