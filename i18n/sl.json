@@ -65,7 +65,7 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|stran|strani}}",
 	"proofreadpage_specialpage_legend": "Iskanje kazalnih strani",
 	"proofreadpage_specialpage_searcherror": "Napaka iskalnega pogona",
-	"proofreadpage_specialpage_searcherrortext": "Iskalnik ne deluje. Se opravičujemo za nevšečnosti.",
+	"proofreadpage_specialpage_searcherrortext": "Iskalnik ne deluje. Opravičujemo se za nevšečnost.",
 	"proofreadpage_source": "Vir",
 	"proofreadpage_source_message": "Preslikana izdaja, uporabljena za nastanek tega besedila",
 	"right-pagequality": "Spremeni označbo kakovosti strani",
