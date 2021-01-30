@@ -76,7 +76,7 @@ class ProofreadPageDbConnector {
 	 * @param int $id
 	 * @return string|null
 	 */
-	public static function  getIndexTitleForPageId( $id ) {
+	public static function getIndexTitleForPageId( $id ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->selectRow(
 			[ 'templatelinks' ],
