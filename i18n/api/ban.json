@@ -1,10 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Chinamoonroll",
 			"Joseagush"
 		]
 	},
-	"apihelp-query+proofread-description": "Mengembalikan informasi tentang status uji-baca saat ini dari halaman yang ditentukan.",
-	"apihelp-query+proofread-summary": "Dapatkan informasi mengenai status uji-baca saat ini pada halaman yang ditentukan.",
-	"apihelp-query+proofread-example-1": "Mengembalikan status koreksi untuk halaman di ruangnama 250"
+	"apihelp-query+proofread-description": "Ngawalikang inpormasi indik status coba-wacén sané mangkin ring kaca sané katentuang.",
+	"apihelp-query+proofread-summary": "Ngawalikang inpormasi indik status coba-wacén sané mangkin ring kaca sané katentuang.",
+	"apihelp-query+proofread-example-1": "Ngawalikang status pabecikan antuk kaca ring genah aran 250",
+	"apihelp-query+proofreadinfo-description": "Ngawalikang inpormasi indik sesampun éksténsi ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Ngawalikang inpormasi indik setélan éksténsi ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Propérti ngabecikang sané prasida kapolihang:\n;namespaces:Inpormasi indik genaharan \"{{ns:Page}}\" miwah \"{{ns:Index}}\".\n;qualitylevels:Lis tingkatan saking kualitas coba wacenan.",
+	"apihelp-query+proofreadinfo-example-1": "Ngawalikang inpormasi baku",
+	"apihelp-query+proofreadinfo-example-3": "Ngawalikang inpormasi genaharan"
 }
