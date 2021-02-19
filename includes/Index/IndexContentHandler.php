@@ -142,7 +142,7 @@ class IndexContentHandler extends TextContentHandler {
 				$childFrame = $frame->newChild( $child->getChildrenOfType( 'part' ) );
 				// @phan-suppress-next-line PhanUndeclaredProperty
 				foreach ( $childFrame->namedArgs as $varName => $value ) {
-					$value = $this->parser->mStripState->unstripBoth(
+					$value = $this->parser->getStripState()->unstripBoth(
 						$frame->expand( $value, PPFrame::RECOVER_ORIG )
 					);
 
@@ -154,7 +154,7 @@ class IndexContentHandler extends TextContentHandler {
 				}
 			} elseif ( $child->getName() === '#text' ) {
 				// It's some text, we look for category links
-				$text = $this->parser->mStripState->unstripBoth( strval( $child ) );
+				$text = $this->parser->getStripState()->unstripBoth( strval( $child ) );
 				$categoryLinks = $this->wikitextLinksExtractor->getLinksToNamespace( $text, NS_CATEGORY );
 				/** @var Link $categoryLink */
 				foreach ( $categoryLinks as $categoryLink ) {

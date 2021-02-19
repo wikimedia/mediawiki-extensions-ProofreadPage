@@ -42,7 +42,7 @@ class ParserHelper {
 		$text = $frame->expand( $dom );
 
 		// We take care of removing the tags placeholders
-		return $this->parser->mStripState->unstripBoth( $text );
+		return $this->parser->getStripState()->unstripBoth( $text );
 	}
 
 	/**
