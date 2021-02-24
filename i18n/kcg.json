@@ -85,7 +85,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Ya a̱son nwai sak",
 	"proofreadpage-pagelist-dialog-discard-changes": "Ji̱p a̱ka̱shai",
 	"proofreadpage-pagelist-dialog-cancel": "Lyang",
-	"proofreadpage-pagelist-parsing-error-morethanone": "Á̱ ta̱taat si̱ hu ku swak a̱lama <lispeji /> mami a̱vwuoneet wikitext ka.",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Á̱ ta̱taat si̱ hu ku swak a̱lama <pagelist /> mami a̱vwuoneet wikitext ka.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Á̱ ta̱taat a̱yaalama <pagelist /> bah.",
 	"proofreadpage-pagelist-parsing-error-php": "Á̱ ta̱taat ghyuap wu gu khwi ni mami wa̱i a̱lama lispeji wu a̱zama ka, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Á̱ ta̱taat ghyuap wu nang á̱ ku ba̱ng fwuo a̱ na nyia̱ a̱ni bah. Ma̱sa̱kut tywei mat ghyuap wuni da̱ a̱vwuo phabricator.wikimedia.org ma̱ng a̱yaari̱jista neet a̱vwuovwuo ka.",
