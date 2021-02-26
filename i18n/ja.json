@@ -18,7 +18,7 @@
 	"tooltip-ca-nstab-page": "書籍ページを表示",
 	"indexpages": "書誌情報ページの一覧",
 	"pageswithoutscans": "スキャン画像と関連付けていないページ",
-	"proofreadpage_desc": "底本のスキャン画像と写本の本文の比較を容易にさせる",
+	"proofreadpage_desc": "オリジナルスキャンとテキストを簡単に比較します",
 	"proofreadpage_image": "スキャン画像",
 	"proofreadpage_index": "書誌情報",
 	"proofreadpage_index_expected": "エラー: 書誌情報を入力してください",
