@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Likibp"
+		]
+	},
+	"apihelp-query+proofread-description": "指定したページの現在の校正状況に関する情報を返します。",
+	"apihelp-query+proofread-summary": "指定したページの現在の校正状況に関する情報を返します。",
+	"apihelp-query+proofread-example-1": "Return proofread status for pages in namespace 250",
+	"apihelp-query+proofreadinfo-description": "ProofreadPage 拡張機能の設定に関する情報を返します。",
+	"apihelp-query+proofreadinfo-summary": "ProofreadPage 拡張機能の設定に関する情報を返します。",
+	"apihelp-query+proofreadinfo-param-prop": "取得できる校正プロパティ:\n;namespaces:\"{{ns:Page}}\"と\"{{ns:Index}}\"名前空間に関する情報。\n;qualitylevels:校正品質レベルのリスト。",
+	"apihelp-query+proofreadinfo-example-1": "既定値の情報を返します",
+	"apihelp-query+proofreadinfo-example-3": "名前空間の情報を返します"
+}
