@@ -114,6 +114,8 @@
 	"proofreadpage-pagelist-scan-number": "Numéro de lecture : $1",
 	"proofreadpage-pagelist-display-number": "Numéro d’affichage : $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Le numéro de page $1 a été affecté à cette page.",
+	"proofreadpage-pagelist-dialog-visual-help": "https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:ProofreadPage/Pagelist_widget",
+	"proofreadpage-pagelist-dialog-wikitext-help": "https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:ProofreadPage/Pagelist_tag",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Aide",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Le type de numéro ne permet pas d’effectuer une modification de la numérotation. Toute valeur dans ce champ sera ignorée à la mise à jour.",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Type de numéro de page :",
