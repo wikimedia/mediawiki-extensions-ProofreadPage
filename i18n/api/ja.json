@@ -4,9 +4,9 @@
 			"Likibp"
 		]
 	},
-	"apihelp-query+proofread-description": "指定したページの現在の校正状況に関する情報を返します。",
-	"apihelp-query+proofread-summary": "指定したページの現在の校正状況に関する情報を返します。",
-	"apihelp-query+proofread-example-1": "名前空間250のページの校正状況を返します",
+	"apihelp-query+proofread-description": "指定したページにおける現在の校正の状態に関する情報を返します。",
+	"apihelp-query+proofread-summary": "指定したページにおける現在の校正の状態に関する情報を返します。",
+	"apihelp-query+proofread-example-1": "名前空間250のページにおける校正の状態を返します",
 	"apihelp-query+proofreadinfo-description": "ProofreadPage拡張機能の設定に関する情報を返します。",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage拡張機能の設定に関する情報を返します。",
 	"apihelp-query+proofreadinfo-param-prop": "取得できる校正プロパティ:\n;namespaces:「{{ns:Page}}」と「{{ns:Index}}」名前空間に関する情報。\n;qualitylevels:校正品質レベルの一覧。",
