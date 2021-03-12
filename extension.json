@@ -199,7 +199,8 @@
 				"oojs-ui-core",
 				"oojs-ui-widgets",
 				"oojs-ui-windows",
-				"oojs-ui.styles.icons-interactions"
+				"oojs-ui.styles.icons-interactions",
+				"oojs-ui.styles.icons-content"
 			]
 		},
 		"ext.proofreadpage.special.indexpages": {
