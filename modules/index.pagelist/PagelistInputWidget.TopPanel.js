@@ -26,12 +26,15 @@ OO.inheritClass( TopPanel, OO.ui.PanelLayout );
  * Wraps message in a OO.ui.MessageWidget
  *
  * @param  {string|jQuery} msg Message
+ * @param  {string} icon Icon
  * @return {jQuery} $element of the OO.ui.MessageWidget
  */
-TopPanel.prototype.createMessage = function ( msg ) {
+TopPanel.prototype.createMessage = function ( msg, icon ) {
 	return ( new OO.ui.MessageWidget( {
 		label: msg,
-		inline: true
+		inline: true,
+		icon: icon
+
 	} ) ).$element;
 };
 
@@ -44,9 +47,9 @@ TopPanel.prototype.setPageData = function ( data ) {
 	var messageArr = [];
 	this.$messages.empty();
 	this.data = data;
-	messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-scan-number', data.subPage ) ) );
-	messageArr.push( this.createMessage( $( '<div>' ).html( mw.msg( 'proofreadpage-pagelist-display-number', data.text ) ) ) );
-	messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-type', data.type ) ) );
+	messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-scan-number', data.subPage ), 'article' ) );
+	messageArr.push( this.createMessage( $( '<div>' ).html( mw.msg( 'proofreadpage-pagelist-display-number', data.text ) ), 'browser' ) );
+	messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-type', data.type ), 'tag' ) );
 	if ( data.assignedPageNumber ) {
 		messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-assignedpagenumber', data.assignedPageNumber ) ) );
 	}
