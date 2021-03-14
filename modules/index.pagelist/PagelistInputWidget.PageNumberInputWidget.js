@@ -21,7 +21,8 @@ function PageNumberInputWidget( config ) {
 	} );
 
 	this.pageNumberTypeInput.connect( this, {
-		change: 'updateFormPanel'
+		change: 'updateFormPanel',
+		enter: 'onEnter'
 	} );
 
 	this.messageWidget = new OO.ui.MessageWidget( {
@@ -105,6 +106,13 @@ PageNumberInputWidget.prototype.getNumberTypeConfig = function () {
 		}
 	}.bind( this ) );
 	return promise;
+};
+
+/**
+ * Forwards the enter event so that other components can react on it
+ */
+PageNumberInputWidget.prototype.onEnter = function () {
+	this.emit( 'enter' );
 };
 
 /**

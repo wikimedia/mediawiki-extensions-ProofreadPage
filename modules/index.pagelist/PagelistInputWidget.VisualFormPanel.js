@@ -74,10 +74,12 @@ function VisualFormPanel( VisualDialogModel, config ) {
 	this.pageNumberInput.connect( this, {
 		changedToSinglePageIncompatibleValue: 'disableSinglePageToggle',
 		changedToNumberingCompatibleValue: 'enableNumberField',
-		changedToNumberingIncompatibleValue: 'disableNumberField'
+		changedToNumberingIncompatibleValue: 'disableNumberField',
+		enter: 'onEnter'
 	} );
 	this.numberInput.connect( this, {
-		change: 'enableUpdateButton'
+		change: 'enableUpdateButton',
+		enter: 'onUpdate'
 	} );
 
 	this.updateButton.connect( this, {
@@ -105,6 +107,18 @@ VisualFormPanel.prototype.onUpdate = function () {
 		number: pageNumber
 	} );
 	this.updateButton.setDisabled( true );
+};
+
+/**
+ * Handles enter events from pageNumberInput widget, focusses numberInput,
+ * if numberInput is disabled updates pagelist
+ */
+VisualFormPanel.prototype.onEnter = function () {
+	if ( this.numberInput.isDisabled() ) {
+		this.onUpdate();
+	} else {
+		this.numberInput.focus();
+	}
 };
 
 /**
