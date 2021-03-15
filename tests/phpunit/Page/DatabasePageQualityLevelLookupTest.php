@@ -36,4 +36,11 @@ class DatabasePageQualityLevelLookupTest extends ProofreadPageTestCase {
 			]
 		];
 	}
+
+	public function testgetQualityLevelForNotExistingPage() {
+		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), 'Foo' );
+		$lookup = new DatabasePageQualityLevelLookup( $this->getPageNamespaceId() );
+		$this->assertNull( $lookup->getQualityLevelForPageTitle( $pageTitle ) );
+		// FIXME: Need a test for a page with an actual value, rather than null
+	}
 }

@@ -98,7 +98,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 			__METHOD__
 		);
 		foreach ( $results as $result ) {
-			$this->cache[$result->page_title] = $result->pp_value;
+			$this->cache[$result->page_title] = intval( $result->pp_value );
 		}
 	}
 
