@@ -5,6 +5,7 @@ namespace ProofreadPage\Parser;
 use OutOfBoundsException;
 use Parser;
 use ProofreadPage\Context;
+use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageNumber;
@@ -218,6 +219,9 @@ class PagesTagParser {
 			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_map( function ( $item ) {
 				return $item[0];
 			}, $pages ) );
+
+			$indexTs = new IndexTemplateStyles( $indexTitle );
+			$out .= $indexTs->getIndexTemplateStyles( null );
 
 			// write the output
 			/** @var Title $page */
