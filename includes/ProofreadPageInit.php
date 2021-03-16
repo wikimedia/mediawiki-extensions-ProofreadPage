@@ -24,8 +24,16 @@ class ProofreadPageInit {
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SetupAfterCache
 	 */
 	public static function initNamespaces() {
+		global $wgProofreadPageNamespaceIds, $wgTemplateStylesNamespaces;
+
 		self::initNamespace( 'page' );
 		self::initNamespace( 'index' );
+
+		if ( \ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' ) ) {
+			// Also Add Index NS to the TemplateStyles auto-CSS list
+			// so that /styles.css can be created
+			$wgTemplateStylesNamespaces[ $wgProofreadPageNamespaceIds[ 'index' ] ] = true;
+		}
 	}
 
 	/**
