@@ -235,7 +235,7 @@ class PagesTagParser {
 					$pagenum = $pageNumber->getRawPageNumber( $language );
 					$formattedNum = $pageNumber->getFormattedPageNumber( $language );
 					$out .= '<span>{{:MediaWiki:Proofreadpage_pagenum_template|page=' . $text .
-						"|num=$pagenum|formatted=$formattedNum}}</span>";
+						"|num=$pagenum|formatted=$formattedNum|quality=$qualityLevel}}</span>";
 				}
 				if ( $from_page !== null && $page->equals( $from_page ) && $fromsection !== null ) {
 					$ts = '';
