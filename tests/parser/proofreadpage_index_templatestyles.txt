@@ -1,0 +1,60 @@
+!! Version 2
+
+!! hooks
+pages
+pagelist
+templatestyles
+!! endhooks
+
+!! article
+MediaWiki:Proofreadpage index template
+!! text
+!! endarticle
+
+!! article
+MediaWiki:Proofreadpage pagenum template
+!! text
+pg_num
+!! endarticle
+
+!! article
+Index:LoremIpsum.djvu
+!! text
+{{:MediaWiki:Proofreadpage_index_template
+|Title=Lorem Ipsum
+|Pages=<pagelist/>
+}}
+!! endarticle
+
+
+!! article
+Index:LoremIpsum.djvu/styles.css
+!! text
+* {
+  color: red;
+}
+!! endarticle
+
+!! article
+Page:LoremIpsum.djvu/1
+!! text
+TestTsCss p1
+!! endarticle
+
+!! article
+Page:LoremIpsum.djvu/2
+!! text
+TestTsCss p2
+!! endarticle
+
+
+!! test
+Transcluding page with CSS
+!! wikitext
+<pages index="LoremIpsum.djvu" from="1" to="2" />
+!! html
+<div class="prp-pages-output" lang="en">
+<p><style data-mw-deduplicate="TemplateStyles:r11">.mw-parser-output *{color:red}</style><span>pg_num</span>TestTsCss p1&#32;<span>pg_num</span>TestTsCss p2&#32;
+</p>
+</div>
+!! end
