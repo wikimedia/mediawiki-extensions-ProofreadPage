@@ -179,6 +179,7 @@
 				"proofreadpage-pagelist-parsing-error-pagelistnotdetected",
 				"proofreadpage-pagelist-parsing-error-php",
 				"proofreadpage-pagelist-parsing-error-unknown",
+				"proofreadpage-pagelist-parsing-error-network-issues",
 				"proofreadpage-pagelist-scan-number",
 				"proofreadpage-pagelist-type",
 				"proofreadpage-preferences-pagelist-use-visual-mode",

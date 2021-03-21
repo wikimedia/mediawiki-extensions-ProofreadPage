@@ -89,6 +89,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "No <pagelist /> tags detected.",
 	"proofreadpage-pagelist-parsing-error-php": "The following error was encountered while parsing the pagelist tag in the backend, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "An unexpected error was detected. Please report this error to phabricator.wikimedia.org with logs from the console.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Failed to fetch pagelist due to network issues, please try again",
 	"proofreadpage-pagelist-dialog-title": "Editing pagelist for $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Insert Changes",
 	"proofreadpage-pagelist-imageurlnotfound": "The thumbnail source for this scan could not be found.",

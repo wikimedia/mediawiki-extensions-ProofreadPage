@@ -197,7 +197,11 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 		this.parseAPItoEnumeratedList( response, parameters );
 	}.bind( this ) ).catch( function ( err ) {
 		mw.log.error( err );
-		this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-unknown' );
+		if ( err === 'http' ) {
+			this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-network-issues' );
+		} else {
+			this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-unknown' );
+		}
 	}.bind( this ) );
 };
 

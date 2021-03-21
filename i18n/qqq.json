@@ -118,6 +118,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Error when there is no pagelist tag inside a field meant to accept pagelists.",
 	"proofreadpage-pagelist-parsing-error-php": "Error when the pagelist tag cannot be rendered server side.\nShould contain only one $1 which will be replaced with the error message.",
 	"proofreadpage-pagelist-parsing-error-unknown": "Error caused by the API returning unexpected output when parsing pagelist tags. Generic error message about reporting to phabricator.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Error displayed when pagelist cannot be fetched due to network issues",
 	"proofreadpage-pagelist-dialog-title": "Title for dialog that allows users to edit pagelists graphically. Parameters\n* $1 – the current page title.",
 	"proofreadpage-pagelist-dialog-insertchanges": "Label on button for saving changes made while graphically editing the pagelists.",
 	"proofreadpage-pagelist-imageurlnotfound": "Error when API request to get image URL for the Index page returns unexpected output.",
