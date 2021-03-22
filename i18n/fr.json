@@ -107,6 +107,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Pas de balise <pagelist /> trouvées.",
 	"proofreadpage-pagelist-parsing-error-php": "L’erreur suivante s’est produite en analysant la balise pagelist dans le serveur, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Une erreur inattendue est survenue. Veuillez rapporter cette erreur sur phabricator.wikimedia.org avec les journaux de la console.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "La récupération de la liste de pages a échoué à cause de problèmes réseau, veuillez essayer à nouveau",
 	"proofreadpage-pagelist-dialog-title": "Modification de la liste de pages pour $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Insérer les modifications",
 	"proofreadpage-pagelist-imageurlnotfound": "La vignette source pour ce scan n’a pas pu être trouvée.",
