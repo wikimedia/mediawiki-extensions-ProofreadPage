@@ -101,6 +101,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<pagelist /> etiketi algılanmadı.",
 	"proofreadpage-pagelist-parsing-error-php": "Arka uçtaki pagelist etiketi ayrıştırılırken şu hatayla karşılaşıldı: $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Beklenmedik bir hata tespit edildi. Lütfen bu hatayı konsoldan günlüklerle phabricator.wikimedia.org adresine bildirin.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Ağ sorunlarından dolayı sayfa listesi alınamadı, lütfen tekrar deneyin",
 	"proofreadpage-pagelist-dialog-title": "$1 sayfası için sayfa listesine düzenliyorsunuz",
 	"proofreadpage-pagelist-dialog-insertchanges": "Değişiklikleri Ekle",
 	"proofreadpage-pagelist-imageurlnotfound": "Bu tarama için küçük resim kaynağı bulunamadı.",

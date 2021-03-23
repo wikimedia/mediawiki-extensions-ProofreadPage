@@ -89,6 +89,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Nisciune tag <pagelist /> acchiate.",
 	"proofreadpage-pagelist-parsing-error-php": "Ha assute 'n'errore analizzanne 'u tag pagelist jndr'à 'u backend, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Ha assute 'n'errore inaspettate. Pe piacere signale stu errore a phabricator.wikimedia.org cu le archivije da 'a console.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "'U recupere de le elenghe de le pàggene ave fallite pe probbleme de rezze, pruève arrete",
 	"proofreadpage-pagelist-dialog-title": "Stoche a cange 'a pagelist pe $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "'Nzerisce le cangiaminde",
 	"proofreadpage-pagelist-imageurlnotfound": "L'immaggine de sta scanzione non g'ha state acchiate.",

@@ -10,6 +10,7 @@
 			"Giro720",
 			"Luckas",
 			"Luckas Blade",
+			"Mariagarbin",
 			"MetalBrasil",
 			"Rafaelff",
 			555
@@ -99,6 +100,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Nenhuma etiqueta <pagelist/> detectada.",
 	"proofreadpage-pagelist-parsing-error-php": "O seguinte erro foi encontrado ao analisar a etiqueta da lista de páginas no back-end, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Um erro inesperado foi detectado. Por favor, reporte esse erro ao phabricator.wikimedia.org com os logs do console.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Falha ao buscar lista de páginas devido a problemas de rede, por favor tente novamente.",
 	"proofreadpage-pagelist-dialog-title": "Editando lista de páginas para $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Inserir mudanças",
 	"proofreadpage-pagelist-imageurlnotfound": "Não foi possível encontrar a fonte de miniaturas para esta verificação.",
