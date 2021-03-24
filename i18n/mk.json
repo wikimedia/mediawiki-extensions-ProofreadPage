@@ -90,6 +90,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Не пронајдов ознаки <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Се јави следнава грешка при расчленувањето на ознаката за списоко на страници во заднината, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Пронајдена е неочекувана грешка. Пријавете ја на phabricator.wikimedia.org со дневници од управувачницата.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Не успеав да го добијам списокот на страници поради мрежен проблем. Обидете се повторно.",
 	"proofreadpage-pagelist-dialog-title": "Уредување на список на страници за $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Вметни промени",
 	"proofreadpage-pagelist-imageurlnotfound": "Не можев да го пронајдам минијатурниот извор за овој отслик.",
