@@ -10,7 +10,6 @@ use MediaWiki\Revision\SlotRecord;
 use OutOfBoundsException;
 use ParserOptions;
 use ProofreadPage\Context;
-use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use Status;
 use TextContent;
@@ -278,17 +277,11 @@ class PageContent extends TextContent {
 			$options = ParserOptions::newCanonical( 'canonical' );
 		}
 
-		$context = Context::getDefaultContext();
-		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
-
-		$indexTs = new IndexTemplateStyles( $indexTitle );
-		$wikitext = $indexTs->getIndexTemplateStyles( '.pagetext' );
-
-		$wikitext .= $this->header->getText() . "\n\n" . $this->body->getText() . $this->footer->getText();
-
 		// create content
-		$wikitextContent = new WikitextContent( $wikitext );
-
+		$wikitextContent = new WikitextContent(
+			$this->header->getText() . "\n\n" . $this->body->getText() .
+				$this->footer->getText()
+		);
 		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
 		$parserOutput->addCategory(
 			Title::makeTitleSafe(
@@ -314,6 +307,9 @@ class PageContent extends TextContent {
 			'prpPageQuality' => $this->level->getLevel()
 		] );
 
+		$context = Context::getDefaultContext();
+		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
+
 		if ( $indexTitle instanceof Title ) {
 			try {
 				$pagination = $context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
@@ -333,16 +329,6 @@ class PageContent extends TextContent {
 
 		// add scan image to dependencies
 		$parserOutput->addImage( strtok( $title->getDBkey(), '/' ) );
-
-		// add the styles.css as a dependency (even if it doesn't exist yet)S
-		{
-			$stylesPage = $indexTs->getTemplateStylesPage();
-
-			$parserOutput->addTemplate(
-				$stylesPage,
-				$stylesPage->getArticleID(),
-				$stylesPage->getLatestRevID() );
-		}
 
 		return $parserOutput;
 	}
