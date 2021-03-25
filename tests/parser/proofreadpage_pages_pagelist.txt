@@ -544,6 +544,28 @@ djvu
 !! end
 
 !! test
+pages: with file: Simple transclusion with decimal from and to
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="4.9" to="5.2" />
+!! html
+<p><strong class="error">Error: Numeric value expected</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Simple transclusion with negative from and to
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="-1" to="-10" />
+!! html
+<p><strong class="error">Error: Numeric value expected</strong>
+</p>
+!! end
+
+!! test
 pages: with file: Simple transclusion without from
 !! options
 djvu
@@ -562,7 +584,7 @@ pages: with file: Invalid from
 !! options
 djvu
 !! wikitext
-<pages index="LoremIpsum.djvu" from="-1" />
+<pages index="LoremIpsum.djvu" from="42" />
 !! html
 <p><strong class="error">Error: Invalid interval</strong>
 </p>
@@ -591,11 +613,33 @@ djvu
 !! end
 
 !! test
-pages: with file: Invalid include
+pages: with file: Invalid include (out of range)
 !! options
 djvu
 !! wikitext
 <pages index="LoremIpsum.djvu" include="42" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Invalid include (decimal)
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="2.1" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
+</p>
+!! end
+
+!! test
+pages: with file: Invalid include range (decimal)
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" include="1-2.1" />
 !! html
 <p><strong class="error">Error: Invalid interval</strong>
 </p>

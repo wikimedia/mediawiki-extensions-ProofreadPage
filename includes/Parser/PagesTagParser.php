@@ -131,16 +131,17 @@ class PagesTagParser {
 				// ad pages selected with from and to in pagenums
 				if ( $from || $to ) {
 					if ( !$from ) {
-						$from = 1;
+						$from = '1';
 					}
 					if ( !$to ) {
-						$to = $count;
+						$to = (string)$count;
 					}
-					if ( !is_numeric( $from ) || !is_numeric( $to ) ) {
+
+					if ( !ctype_digit( $from ) || !ctype_digit( $to ) ) {
 						return $this->formatError( 'proofreadpage_number_expected' );
 					}
 
-					if ( !( $from >= 1 && $from <= $to && $to <= $count ) ) {
+					if ( !( $from !== 0 && $from <= $to && $to <= $count ) ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 
@@ -370,7 +371,7 @@ class PagesTagParser {
 		$list = explode( ',', $input );
 		$nums = [];
 		foreach ( $list as $item ) {
-			if ( is_numeric( $item ) ) {
+			if ( ctype_digit( $item ) ) {
 				if ( $item < 1 ) {
 					return null;
 				}
@@ -378,8 +379,8 @@ class PagesTagParser {
 			} else {
 				$interval = explode( '-', $item );
 				if ( count( $interval ) != 2
-					|| !is_numeric( $interval[0] )
-					|| !is_numeric( $interval[1] )
+					|| !ctype_digit( $interval[0] )
+					|| !ctype_digit( $interval[1] )
 					|| $interval[0] < 1
 					|| $interval[1] < $interval[0]
 				) {
