@@ -21,11 +21,20 @@ class IndexTemplateStyles {
 
 	/**
 	 * Sets up an index TemplateStyles provider
-	 * @param \Title $indexTitle the title of the index
+	 * @param \Title $indexTitle the title of the index (or the subpage of an
+	 * index)
 	 */
 	public function __construct( \Title $indexTitle ) {
-		$this->indexTitle = $indexTitle;
+		// Use the base page so all subpages of an index share the same stylesheet
+		$this->indexTitle = $indexTitle->getBaseTitle();
 		$this->haveStyleSupport = \ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' );
+	}
+
+	/**
+	 * @return bool whether the given index has styles support
+	 */
+	public function hasStylesSupport() {
+		return $this->haveStyleSupport;
 	}
 
 	/**
@@ -42,6 +51,16 @@ class IndexTemplateStyles {
 		}
 
 		return $stylesPage;
+	}
+
+	/**
+	 * Returns the canonical index page associated with this page. This is the
+	 * root Index page.
+	 *
+	 * @return \Title the main index page
+	 */
+	public function getAssociatedIndexPage() {
+		return $this->indexTitle;
 	}
 
 	/**
