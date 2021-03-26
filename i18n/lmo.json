@@ -89,6 +89,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "L'è stada trovada nissuda eticheta <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Adrée a analizzà la lista di pagine l'è capità quell eror chì: $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "A l'è sortid un eror a l'imprevista. Segnala quell eror chì a phabricator.wikimedia.org per mez di register de la consol.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "A l'è stad minga possibil meter a voltra la lista di pagine per via de problema de la red, per piesè provegh anmò",
 	"proofreadpage-pagelist-dialog-title": "Modifica de la lista di pagine per $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Met dent i cambiament",
 	"proofreadpage-pagelist-imageurlnotfound": "La sorgent de la miniatura per quella scansion chì l'è stada minga trovada",
