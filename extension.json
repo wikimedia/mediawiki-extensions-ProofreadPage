@@ -143,26 +143,27 @@
 			]
 		},
 		"ext.proofreadpage.index.pagelist": {
+			"localBasePath": "modules/index.pagelist",
 			"styles": [
-				"index.pagelist/styles/dialog.css",
-				"index.pagelist/styles/index.css"
+				"styles/dialog.css",
+				"styles/index.css"
 			],
 			"packageFiles": [
-				"index.pagelist/init.js",
-				"index.pagelist/PagelistInputWidget.Dialog.js",
-				"index.pagelist/PagelistInputWidget.ImagePanel.js",
-				"index.pagelist/PagelistInputWidget.js",
-				"index.pagelist/PagelistInputWidget.MainPanel.js",
-				"index.pagelist/PagelistInputWidget.Model.js",
-				"index.pagelist/PagelistInputWidget.PagelistPreview.js",
-				"index.pagelist/PagelistInputWidget.WikitextDialogModel.js",
-				"index.pagelist/PagelistInputWidget.VisualDialogModel.js",
-				"index.pagelist/PagelistInputWidget.DialogModel.js",
-				"index.pagelist/PagelistInputWidget.WikitextFormPanel.js",
-				"index.pagelist/PagelistInputWidget.VisualFormPanel.js",
-				"index.pagelist/PagelistInputWidget.TopPanel.js",
-				"index.pagelist/PagelistInputWidget.PageNumberInputWidget.js",
-				"index.pagelist/PagelistInputWidget.Parameters.js"
+				"init.js",
+				"PagelistInputWidget.Dialog.js",
+				"PagelistInputWidget.ImagePanel.js",
+				"PagelistInputWidget.js",
+				"PagelistInputWidget.MainPanel.js",
+				"PagelistInputWidget.Model.js",
+				"PagelistInputWidget.PagelistPreview.js",
+				"PagelistInputWidget.WikitextDialogModel.js",
+				"PagelistInputWidget.VisualDialogModel.js",
+				"PagelistInputWidget.DialogModel.js",
+				"PagelistInputWidget.WikitextFormPanel.js",
+				"PagelistInputWidget.VisualFormPanel.js",
+				"PagelistInputWidget.TopPanel.js",
+				"PagelistInputWidget.PageNumberInputWidget.js",
+				"PagelistInputWidget.Parameters.js"
 			],
 			"messages": [
 				"proofreadpage-pagelist-dialog-cancel",
