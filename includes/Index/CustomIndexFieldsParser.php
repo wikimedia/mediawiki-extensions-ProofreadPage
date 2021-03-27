@@ -176,6 +176,22 @@ class CustomIndexFieldsParser {
 	}
 
 	/**
+	 * Returns index entries that are to be exposed via mw.config
+	 * @param IndexContent $content
+	 * @return CustomIndexField[]
+	 */
+	public function parseCustomIndexFieldsForJs( IndexContent $content ) {
+		$indexFields = $this->parseCustomIndexFields( $content );
+		$jsIndexFields = [];
+		foreach ( $indexFields as $field ) {
+			if ( $field->isAllowedInJs() ) {
+				$jsIndexFields[$field->getKey()] = $field;
+			}
+		}
+		return $jsIndexFields;
+	}
+
+	/**
 	 * Return the index entry with the same name or null if it's not found
 	 * Note: the comparison is case insensitive
 	 * @param IndexContent $content

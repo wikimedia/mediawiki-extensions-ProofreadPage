@@ -82,6 +82,35 @@ class PageDisplayHandler {
 	}
 
 	/**
+	 * Santizes and serializes the raw index fields of the associated index page so
+	 * that they can be included inside mw.config in the Page namespace.
+	 * @param Title $title
+	 * @return array|null Santized and serialized fields or null if no index page is found
+	 */
+	public function getIndexFieldsForJS( Title $title ) {
+		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $title );
+
+		if ( $indexTitle === null ) {
+			return null;
+		}
+
+		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+
+		$indexFields = $this->context->getCustomIndexFieldsParser()->parseCustomIndexFieldsForJs( $indexContent );
+
+		$serializedFields = [];
+		foreach ( $indexFields as $key => $val ) {
+			// fields may contain raw XSS payloads, santize before putting it in
+			if ( strtolower( $key ) === 'css' ) {
+				$serializedFields[$key] = htmlspecialchars( Sanitizer::checkCss( $val->getStringValue() ), ENT_QUOTES );
+			} else {
+				$serializedFields[$key] = htmlspecialchars( $val->getStringValue() );
+			}
+		}
+		return $serializedFields;
+	}
+
+	/**
 	 * Return the part of the page container that is before page content
 	 * @return string
 	 */

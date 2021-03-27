@@ -54,5 +54,11 @@ class PageViewAction extends ViewAction {
 		if ( $css !== '' ) {
 			$out->addInlineStyle( $css );
 		}
+
+		$indexFields = $pageDisplayHandler->getIndexFieldsForJS( $title );
+
+		$out->addJsConfigVars( [
+			'prpIndexFields' => $indexFields
+		] );
 	}
 }
