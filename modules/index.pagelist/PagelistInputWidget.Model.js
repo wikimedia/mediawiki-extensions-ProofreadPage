@@ -122,6 +122,7 @@ PagelistInputWidgetModel.prototype.getParameters = function () {
  * @param  {mw.proofreadpage.PagelistInputWidget.Parameters} parameters
  */
 PagelistInputWidgetModel.prototype.updateParameters = function ( parameters ) {
+	this.emit( 'startReload' );
 	this.parameters = parameters;
 	this.generateEnumeratedList( parameters );
 	this.generateWikitext( parameters );

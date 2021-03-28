@@ -49,7 +49,9 @@ function PagelistInputWidget( config ) {
 	} );
 
 	this.model.connect( this, {
-		wikitextUpdated: 'updateTextInput'
+		wikitextUpdated: 'updateTextInput',
+		startReload: 'onReloading',
+		enumeratedListGenerationStarted: 'onReloading'
 	} );
 
 	this.buttonWidget.connect( this, {
@@ -87,6 +89,13 @@ PagelistInputWidget.prototype.onButtonClick = function () {
  */
 PagelistInputWidget.prototype.onPreviewResolution = function () {
 	this.buttonWidget.setDisabled( false );
+};
+
+/**
+ * Handles tasks to be performed once the reload starts
+ */
+PagelistInputWidget.prototype.onReloading = function () {
+	this.buttonWidget.setDisabled( true );
 };
 
 /**
