@@ -66,6 +66,8 @@
 	"proofreadpage_specialpage_searcherrortext": "The search engine does not work. Sorry for the inconvenience.",
 	"proofreadpage_source": "Source",
 	"proofreadpage_source_message": "Scanned edition used to establish this text",
+	"proofreadpage_styles": "Styles",
+	"proofreadpage_styles_message": "CSS styles applied to this text",
 	"action-pagequality": "modify page quality flag",
 	"right-pagequality": "Modify page quality flag",
 	"action-pagequality-admin": "unrestricted edits to the page quality flag",

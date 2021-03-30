@@ -33,6 +33,7 @@ use OutOfBoundsException;
 use OutputPage;
 use Parser;
 use ParserOutput;
+use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Index\ProofreadIndexDbConnector;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Page\ProofreadPageDbConnector;
@@ -666,15 +667,11 @@ class ProofreadPage {
 	 * Add the links to previous, next, index page and scan image to Page: pages.
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
 	 *
+	 * @param Title $title the page title
 	 * @param SkinTemplate $skin
 	 * @param array[] &$links Structured navigation links
 	 */
-	public static function onSkinTemplateNavigation( SkinTemplate $skin, array &$links ) {
-		$title = $skin->getTitle();
-		if ( $title === null || !$title->inNamespace( self::getPageNamespaceId() ) ) {
-			return;
-		}
-
+	private static function addPageNsNavigation( Title $title, SkinTemplate $skin, array &$links ) {
 		// Image link
 		try {
 			$fileProvider = Context::getDefaultContext()->getFileProvider();
@@ -779,6 +776,62 @@ class ProofreadPage {
 				'text' => wfMessage( 'proofreadpage_index' )->plain(),
 				'title' => wfMessage( 'proofreadpage_index' )->plain()
 			];
+		}
+	}
+
+	/**
+	 * Add the link the style page (if any) on the Index: pages
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
+	 *
+	 * @param Title $title the page title
+	 * @param SkinTemplate $skin
+	 * @param array[] &$links Structured navigation links
+	 */
+	private static function addIndexNsNavigation( Title $title, SkinTemplate $skin, array &$links ) {
+		$indexTs = new IndexTemplateStyles( $title );
+
+		$stylesTitle = $indexTs->getTemplateStylesPage();
+
+		if ( $stylesTitle !== null ) {
+			// set up styles navigation
+
+			$stylesSelected = $title->equals( $stylesTitle );
+
+			// link to the styles page
+			$links['namespaces']['proofreadPageStylesLink'] = $skin->tabAction(
+				$stylesTitle, 'proofreadpage_styles', $stylesSelected, '', true );
+
+			if ( $stylesSelected ) {
+				// redirect the Index and Talk links to the root page
+				$rootIndex = $indexTs->getAssociatedIndexPage();
+				$links['namespaces']['index'] = $skin->tabAction(
+					$rootIndex, 'index', false, '', true
+				);
+				$links['namespaces']['index_talk'] = $skin->tabAction(
+					$rootIndex->getTalkPage(),
+					'talk', false, '', true
+				);
+			}
+		}
+	}
+
+	/**
+	 * Add links in the navigation menus related the the current page
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
+	 *
+	 * @param SkinTemplate $skin
+	 * @param array[] &$links Structured navigation links
+	 */
+	public static function onSkinTemplateNavigation( SkinTemplate $skin, array &$links ) {
+		$title = $skin->getTitle();
+		if ( $title === null ) {
+			return;
+		}
+
+		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
+			self::addPageNsNavigation( $title, $skin, $links );
+		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
+			self::addIndexNsNavigation( $title, $skin, $links );
 		}
 	}
 

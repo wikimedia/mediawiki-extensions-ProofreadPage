@@ -95,6 +95,8 @@
 	"proofreadpage_specialpage_searcherrortext": "Content of the error page when the search engine does not work",
 	"proofreadpage_source": "{{Identical|Source}}",
 	"proofreadpage_source_message": "Used as text of a link",
+	"proofreadpage_styles": "{{Identical|Styles}}",
+	"proofreadpage_styles_message": "Used as text of a link referring to CSS styles",
 	"action-pagequality": "{{doc-action|pagequality}}",
 	"right-pagequality": "{{doc-right|pagequality}}",
 	"action-pagequality-admin": "{{doc-action|pagequality-admin}}",
