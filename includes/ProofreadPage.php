@@ -586,8 +586,10 @@ class ProofreadPage {
 	public static function onGetPreferences( $user, array &$preferences ) {
 		$type = 'toggle';
 		// Hide the option from the preferences tab if WikiEditor is loaded
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiEditor' )
-			&& $user->getBoolOption( 'usebetatoolbar' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiEditor' ) &&
+			MediaWikiServices::getInstance()->getUserOptionsLookup()
+				->getBoolOption( $user, 'usebetatoolbar' )
+		) {
 			$type = 'hidden';
 		}
 		// Show header and footer fields when editing in the Page namespace
