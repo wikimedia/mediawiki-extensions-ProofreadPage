@@ -93,6 +93,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Der blev ikke fundet et <pagelist />-tag.",
 	"proofreadpage-pagelist-parsing-error-php": "Den følgende fejl opstod under tolkning af pagelist-tagget, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "En uventet fejl opstod. Vær venlig at rapportere denne fejl til phabricator.wikimedia.org inklusive log fra konsollen.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Det lykkedes ikke at hente sidelisten på grund af netværksproblemer. Vær venlig at prøve igen.",
 	"proofreadpage-pagelist-dialog-title": "Redigerer sideliste for $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Indsæt ændringer",
 	"proofreadpage-pagelist-imageurlnotfound": "Kilden til miniaturebilleder for denne indskanning kunne ikke findes.",
