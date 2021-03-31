@@ -77,6 +77,8 @@
 	"proofreadpage_specialpage_searcherrortext": "Desculpe-nos, a ferramenta de busca não está funcionando.",
 	"proofreadpage_source": "Fonte",
 	"proofreadpage_source_message": "Edição digitalizada utilizada para estabelecer este texto",
+	"proofreadpage_styles": "Estilos",
+	"proofreadpage_styles_message": "Estilos CSS aplicados a este texto",
 	"action-pagequality": "modificar sinalizador de qualidade da página",
 	"right-pagequality": "Modificar o indicador da qualidade da página",
 	"action-pagequality-admin": "edições irrestritas na bandeira da qualidade da página",

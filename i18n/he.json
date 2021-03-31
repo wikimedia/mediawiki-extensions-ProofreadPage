@@ -71,6 +71,8 @@
 	"proofreadpage_specialpage_searcherrortext": "מנוע החיפוש אינו עובד. אנו מצטערים על האי־נוחות.",
 	"proofreadpage_source": "מקור",
 	"proofreadpage_source_message": "הגרסה הסרוקה ששימשה להכנת טקסט זה",
+	"proofreadpage_styles": "סגנונות",
+	"proofreadpage_styles_message": "סגנונות CSS שמוּחלים על הטקסט הזה",
 	"action-pagequality": "לשנות את דגל איכות הדף",
 	"right-pagequality": "שינוי דגל האיכות של דפים",
 	"action-pagequality-admin": "לעשות עריכות בלתי־מוגבלות לדגל איכות הדף",

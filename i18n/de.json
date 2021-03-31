@@ -72,6 +72,8 @@
 	"proofreadpage_specialpage_searcherrortext": "Die Suchmaschine funktioniert leider nicht. Entschuldige die Unannehmlichkeiten.",
 	"proofreadpage_source": "Quelle",
 	"proofreadpage_source_message": "Zur Erstellung dieses Texts wurde die gescannte Ausgabe benutzt.",
+	"proofreadpage_styles": "Stile",
+	"proofreadpage_styles_message": "Auf diesen Text angewendete CSS-Stile",
 	"action-pagequality": "die Seitenqualität zu ändern",
 	"right-pagequality": "Seitenqualität ändern",
 	"action-pagequality-admin": "unbeschränkte Bearbeitungen an der Seitenqualitätsmarkierung durchzuführen",
