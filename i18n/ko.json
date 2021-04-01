@@ -76,6 +76,8 @@
 	"proofreadpage_specialpage_searcherrortext": "검색 엔진이 작동하지 않습니다. 불편을 끼쳐 죄송합니다.",
 	"proofreadpage_source": "출처",
 	"proofreadpage_source_message": "이 글을 작성할 때 사용된 스캔본",
+	"proofreadpage_styles": "스타일",
+	"proofreadpage_styles_message": "이 텍스트에 적용되는 CSS 스타일",
 	"right-pagequality": "페이지 품질 표시 수정하기",
 	"right-pagequality-admin": "페이지 품질 표시 제한 없이 편집하기",
 	"proofreadpage-section-tools": "교정 도구",

@@ -5,6 +5,7 @@
 			"Dj",
 			"Dorgan",
 			"Glanthor Reviol",
+			"Hanna Tardos",
 			"KossuthRad",
 			"Tacsipacsi"
 		]
@@ -69,6 +70,7 @@
 	"proofreadpage_specialpage_searcherrortext": "A keresőmotor nem működik. Elnézést a kellemetlenségért.",
 	"proofreadpage_source": "Forrás",
 	"proofreadpage_source_message": "A szkennelt változat, amin a szöveg alapszik",
+	"proofreadpage_styles": "Stílusok",
 	"action-pagequality": "a lap minőségi besorolásának módosítása",
 	"right-pagequality": "lapok minőség szerinti értékelésének módosítása",
 	"action-pagequality-admin": "a lap minőségi besorolásának korlátlan szerkesztése",
