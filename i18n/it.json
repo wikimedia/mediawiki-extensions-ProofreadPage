@@ -73,6 +73,8 @@
 	"proofreadpage_specialpage_searcherrortext": "Il motore di ricerca non funziona. Ci scusiamo per l'inconveniente.",
 	"proofreadpage_source": "Fonte",
 	"proofreadpage_source_message": "Edizione scansionata utilizzata per ricavare questo testo",
+	"proofreadpage_styles": "Stili",
+	"proofreadpage_styles_message": "Stili CSS applicati a questo testo",
 	"action-pagequality": "modificare la qualità della pagina",
 	"right-pagequality": "Modificare la qualità della pagina",
 	"action-pagequality-admin": "modificare senza limiti l'etichetta di qualità della pagina",
