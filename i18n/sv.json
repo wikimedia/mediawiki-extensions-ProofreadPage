@@ -80,6 +80,8 @@
 	"proofreadpage_specialpage_searcherrortext": "Sökmotorn fungerar inte. Vi beklagar för olägenheten.",
 	"proofreadpage_source": "Källa",
 	"proofreadpage_source_message": "Scannat original använt för att skapa denna text",
+	"proofreadpage_styles": "Stilar",
+	"proofreadpage_styles_message": "CSS-stilar som tillämpas på denna text",
 	"right-pagequality": "Ändra sidans kvalitetsflagga",
 	"right-pagequality-admin": "Obegränsade ändringar av sidkvalitetsflaggan",
 	"proofreadpage-section-tools": "Korrekturläsningsverktyg",
