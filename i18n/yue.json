@@ -4,7 +4,8 @@
 			"Asdfugil",
 			"Hello903hello",
 			"Moon0319",
-			"Yueman"
+			"Yueman",
+			"Z423x5c6"
 		]
 	},
 	"nstab-page": "版",
@@ -67,6 +68,7 @@
 	"proofreadpage_specialpage_searcherrortext": "搵嘢引擎壞咗。如果搞到唔方便，請原諒。",
 	"proofreadpage_source": "來源",
 	"proofreadpage_source_message": "用嚟整爾個文本嘅已經掃描嘅版本",
+	"proofreadpage_styles": "風格",
 	"proofreadpage-section-tools": "校對工具",
 	"proofreadpage-group-zoom": "放大",
 	"proofreadpage-group-other": "其他",
@@ -76,6 +78,8 @@
 	"proofreadpage-button-zoom-in-label": "放大",
 	"proofreadpage-button-toggle-layout-label": "橫/直布局",
 	"proofreadpage-pageinfo-status": "校對狀態",
+	"proofreadpage-pagelist-dialog-cancel": "取消",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "幫手",
 	"content-model-proofread-page": "書嘅版",
 	"content-model-proofread-index": "書嘅索引",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "揀版",
@@ -84,5 +88,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "係",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "唔係",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校對質素",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校對質素"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校對質素",
+	"proofreadpage-index-field-category-label": "類"
 }
