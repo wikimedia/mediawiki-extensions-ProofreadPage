@@ -18,7 +18,8 @@ function VisualFormPanel( VisualDialogModel, config ) {
 	this.data = null;
 	this.visualDialogModel = VisualDialogModel;
 	this.visualDialogModel.connect( this, {
-		aftersetpagedata: 'setPageData'
+		aftersetpagedata: 'setPageData',
+		previewError: 'onError'
 	} );
 	this.pageNumberInput = new PageNumberInputWidget();
 	this.numberInput = new OO.ui.NumberInputWidget( {
@@ -107,6 +108,13 @@ VisualFormPanel.prototype.onUpdate = function () {
 		number: pageNumber
 	} );
 	this.updateButton.setDisabled( true );
+};
+
+/**
+ * Enable the update button
+ */
+VisualFormPanel.prototype.onError = function () {
+	this.updateButton.setDisabled( false );
 };
 
 /**
