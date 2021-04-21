@@ -25,7 +25,7 @@
 	"proofreadpage_indexdupetext": "לא ניתן להציג את הדפים יותר מפעם אחת בדף מפתח.",
 	"proofreadpage_nologin": "לא נכנסת לחשבון",
 	"proofreadpage_nologintext": "יש [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של דפים.",
-	"proofreadpage_notallowedtext": "אינך מורשה לשנות את מצב ההגהה של דף זה.",
+	"proofreadpage_notallowedtext": "אינך מורשה לשנות את מצב ההגהה של הדף הזה.",
 	"proofreadpage_dataconfig_badformatted": "באג בהגדרות נתונים",
 	"proofreadpage_dataconfig_badformattedtext": "הדף [[Mediawiki:Proofreadpage index data config]] אינו כתוב בתסדיר JSON תקין.",
 	"proofreadpage_number_expected": "שגיאה: נדרש ערך מספרי",
