@@ -66,6 +66,8 @@
 	"proofreadpage_specialpage_searcherrortext": "El motor de ricerca el va no. Se scusom de l'inconvenient.",
 	"proofreadpage_source": "Sorgent",
 	"proofreadpage_source_message": "Edizion digitalizzada doperada per ottegnì quell test chì.",
+	"proofreadpage_styles": "Stil",
+	"proofreadpage_styles_message": "Stil CSS aplicad a quell test chì",
 	"action-pagequality": "modifegà el nivell de qualità de la pagina",
 	"right-pagequality": "Modifegà el nivell de qualità de la pagina",
 	"action-pagequality-admin": "modifiche senza limit al nivell de qualità de la pagina",
