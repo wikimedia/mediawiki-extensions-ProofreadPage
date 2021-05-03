@@ -20,7 +20,7 @@ function VisualDialogModel( data, mainModel ) {
 	this.mainModel.connect( this, {
 		parametersUpdated: 'updateCachedDataFromMainModel',
 		enumeratedListCreated: 'pagelistPreviewGenerationDone',
-		parsingerror: 'pagelistPreviewGenerationDone'
+		parsingerror: 'handleError'
 	} );
 	this.lengthOfPagelist = 0;
 }
@@ -357,6 +357,13 @@ VisualDialogModel.prototype.updateCachedDataFromMainModel = function ( parameter
 VisualDialogModel.prototype.pagelistPreviewGenerationDone = function ( enumeratedList ) {
 	this.lengthOfPagelist = enumeratedList.length;
 	this.emit( 'pagelistPreviewGenerated' );
+};
+
+/**
+ * Handle the error
+ */
+VisualDialogModel.prototype.handleError = function () {
+	this.emit( 'previewError' );
 };
 
 /**
