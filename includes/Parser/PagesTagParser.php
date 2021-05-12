@@ -216,7 +216,7 @@ class PagesTagParser {
 			list( $to_page, $to_pagenum ) = end( $pages );
 
 			$pageQualityLevelLookup = $this->context->getPageQualityLevelLookup();
-			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_map( function ( $item ) {
+			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_map( static function ( $item ) {
 				return $item[0];
 			}, $pages ) );
 

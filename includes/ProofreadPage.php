@@ -129,17 +129,17 @@ class ProofreadPage {
 	 * @param Parser $parser
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook( 'pagelist', function ( $input, array $args, Parser $parser ) {
+		$parser->setHook( 'pagelist', static function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
 			$tagParser = new PagelistTagParser( $parser, $context );
 			return $tagParser->render( $args );
 		} );
-		$parser->setHook( 'pages', function ( $input, array $args, Parser $parser ) {
+		$parser->setHook( 'pages', static function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
 			$tagParser = new PagesTagParser( $parser, $context );
 			return $tagParser->render( $args );
 		} );
-		$parser->setHook( 'pagequality', function ( $input, array $args, Parser $parser ) {
+		$parser->setHook( 'pagequality', static function ( $input, array $args, Parser $parser ) {
 			$tagParser = new PagequalityTagParser();
 			return $tagParser->render( $args );
 		} );
@@ -182,7 +182,7 @@ class ProofreadPage {
 		$inIndexNamespace = $title->inNamespace( self::getIndexNamespaceId() );
 		$pageQualityLevelLookup = Context::getDefaultContext()->getPageQualityLevelLookup();
 
-		$pageTitles = array_map( function ( $prefixedDbKey ) {
+		$pageTitles = array_map( static function ( $prefixedDbKey ) {
 			return Title::newFromText( $prefixedDbKey );
 		}, $pageIds );
 		$pageQualityLevelLookup->prefetchQualityLevelForTitles( $pageTitles );

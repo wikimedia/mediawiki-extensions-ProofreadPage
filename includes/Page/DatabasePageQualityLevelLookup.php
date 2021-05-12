@@ -91,7 +91,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 				'pp_propname' => 'proofread_page_quality_level',
 				'page_id = pp_page',
 				'page_namespace' => $this->pageNamespaceId,
-				'page_title' => array_map( function ( Title $pageTitle ) {
+				'page_title' => array_map( static function ( Title $pageTitle ) {
 					return $pageTitle->getDBkey();
 				}, $pageTitles )
 			],
@@ -110,7 +110,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 			return;
 		}
 
-		$pageDbKeys = array_map( function ( Title $title ){
+		$pageDbKeys = array_map( static function ( Title $title ){
 			return $title->getDBkey();
 		}, $pageTitles );
 

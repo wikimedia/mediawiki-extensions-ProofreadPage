@@ -161,7 +161,7 @@ class EditIndexPage extends EditPage {
 		$input = new TextInputWidget( $inputOptions + [
 			'type' => 'text',
 			'name' => 'wpPrpCategories',
-			'value' => implode( '|', array_map( function ( Title $title ) {
+			'value' => implode( '|', array_map( static function ( Title $title ) {
 				return $title->getText();
 			}, $categories ) ),
 			'inputId' => 'wpPrpCategories'
@@ -212,9 +212,9 @@ class EditIndexPage extends EditPage {
 	 * @return Title[]
 	 */
 	private function importCategoryList( WebRequest $request ) {
-		return array_filter( array_map( function ( $text ) {
+		return array_filter( array_map( static function ( $text ) {
 			return Title::makeTitleSafe( NS_CATEGORY, trim( $text ) );
-		}, explode( '|', $request->getText( 'wpPrpCategories' ) ) ), function ( $title ) {
+		}, explode( '|', $request->getText( 'wpPrpCategories' ) ) ), static function ( $title ) {
 			return $title !== null;
 		} );
 	}

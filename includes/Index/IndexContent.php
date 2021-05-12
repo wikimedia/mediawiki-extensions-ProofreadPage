@@ -67,7 +67,7 @@ class IndexContent extends TextContent {
 	 * @return string[]
 	 */
 	private function getCategoriesText() {
-		return array_map( function ( Title $title ) {
+		return array_map( static function ( Title $title ) {
 			return $title->getText();
 		}, $this->categories );
 	}
@@ -258,7 +258,7 @@ class IndexContent extends TextContent {
 		// We replace the arguments calls by their values
 		$text = $parserHelper->expandTemplateArgs(
 			$templateText,
-			array_map( function ( Content $content ) {
+			array_map( static function ( Content $content ) {
 				return $content->serialize( CONTENT_FORMAT_WIKITEXT );
 			}, $this->fields )
 		);

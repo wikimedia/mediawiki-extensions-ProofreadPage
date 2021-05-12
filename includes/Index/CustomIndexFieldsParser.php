@@ -215,7 +215,7 @@ class CustomIndexFieldsParser {
 		$params = $this->parseCustomIndexFieldsAsTemplateParams( $content ) + $otherParams;
 		return preg_replace_callback(
 			'/{\{\{(.*)(\|(.*))?\}\}\}/U',
-			function ( $matches ) use ( $params ) {
+			static function ( $matches ) use ( $params ) {
 				$paramKey = trim( strtolower( $matches[1] ) );
 				if ( array_key_exists( $paramKey, $params ) ) {
 					return $params[$paramKey];
