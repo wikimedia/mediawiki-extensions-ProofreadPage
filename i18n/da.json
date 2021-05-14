@@ -70,6 +70,8 @@
 	"proofreadpage_specialpage_searcherrortext": "Søgemaskinen virker ikke. Vi beklager ulejligheden.",
 	"proofreadpage_source": "Kilde",
 	"proofreadpage_source_message": "Indscannet original, der blev brugt som grundlag for denne tekst",
+	"proofreadpage_styles": "Stil",
+	"proofreadpage_styles_message": "CSS-stil, som anvendes på denne tekst",
 	"action-pagequality": "ændre en sides kvalitetsstatus",
 	"right-pagequality": "Ændre en sides kvalititetsflag",
 	"action-pagequality-admin": "ubegrænsede ændringer til en sides kvalitetsstatus",
