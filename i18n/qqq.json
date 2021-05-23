@@ -47,6 +47,8 @@
 	"proofreadpage_nologin": "{{Identical|Not logged in}}",
 	"proofreadpage_nologintext": "Used as error message",
 	"proofreadpage_notallowedtext": "Used as error message.",
+	"proofreadpage_pagesnotallowed": "Used as error message.",
+	"proofreadpage_pagelistnotallowed": "Used as error message.",
 	"proofreadpage_dataconfig_badformatted": "Title of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON",
 	"proofreadpage_dataconfig_badformattedtext": "Content of the error page when [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON",
 	"proofreadpage_number_expected": "The place where the data entry should be in numeric form",

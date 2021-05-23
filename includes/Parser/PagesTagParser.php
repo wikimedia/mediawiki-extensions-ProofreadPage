@@ -68,7 +68,7 @@ class PagesTagParser {
 			$pageTitle->inNamespace( $this->context->getIndexNamespaceId() ) ||
 			$pageTitle->inNamespace( $this->context->getPageNamespaceId() )
 		) {
-			return '';
+			return $this->formatError( 'proofreadpage_pagesnotallowed' );
 		}
 		// ignore fromsection and tosection arguments if onlysection is specified
 		if ( $onlysection !== null ) {

@@ -367,12 +367,14 @@ Test 21
 !! end
 
 !! test
-pagelist: in a not Index: page
+pagelist: not in an Index: page
 !! options
 title=Test
 !! wikitext
 <pagelist />
 !! html
+<p><span class="prp-index-pagelist"><strong class="error">Error: The pagelist tag can only be used in the Index: namespace</strong></span>
+</p>
 !! end
 
 !! test
