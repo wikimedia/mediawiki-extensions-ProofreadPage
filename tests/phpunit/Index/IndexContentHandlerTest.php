@@ -201,7 +201,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 				'[[Category:Foo Bar]]'
 			],
 			[
-				new IndexContent( [], [ Title::newFromText( 'Category:Foo Bar' ) ] ),
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo_Bar' ) ] ),
 				'[[Category:Foo_Bar]]'
 			],
 			[
