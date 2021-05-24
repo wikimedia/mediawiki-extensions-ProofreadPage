@@ -2,9 +2,7 @@
 
 namespace ProofreadPage\Pagination;
 
-use File;
 use OutOfBoundsException;
-use ProofreadPage\Context;
 use ProofreadPage\PageNumberNotFoundException;
 use Title;
 
@@ -15,9 +13,7 @@ use Title;
  */
 class FilePagination extends Pagination {
 
-	/**
-	 * @var Title
-	 */
+	/** @var Title */
 	private $indexTitle;
 
 	/**
@@ -25,62 +21,62 @@ class FilePagination extends Pagination {
 	 */
 	private $pageList;
 
-	/**
-	 * @var int
-	 */
-	private $numberOfPages = 0;
+	/** @var int */
+	private $numberOfPages;
 
 	/**
 	 * @var Title[] cache of build pages of the pagination as $pageNumber => $page array
 	 */
 	private $pages = [];
 
-	/**
-	 * @var Context
-	 */
-	private $context;
+	/** @var int */
+	private $pageNamespaceId;
 
 	/**
 	 * @param Title $indexTitle
 	 * @param PageList $pageList representation of the <pagelist> tag that configure page numbers
-	 * @param File $file the pagination file
-	 * @param Context $context the current context
+	 * @param int $numberOfPages
+	 * @param int $pageNamespaceId
 	 */
 	public function __construct(
-		Title $indexTitle, PageList $pageList, File $file, Context $context
+		Title $indexTitle, PageList $pageList, int $numberOfPages, int $pageNamespaceId
 	) {
 		$this->indexTitle = $indexTitle;
 		$this->pageList = $pageList;
-		$this->context = $context;
-
-		if ( $file->isMultipage() ) {
-			$this->numberOfPages = $file->pageCount();
-		}
+		$this->numberOfPages = $numberOfPages;
+		$this->pageNamespaceId = $pageNamespaceId;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getPageNumber( Title $pageTitle ) {
-		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
-		if ( $indexTitle === null || !$this->indexTitle->equals( $indexTitle ) ) {
-			throw new PageNotInPaginationException(
-				$pageTitle->getFullText() . ' does not belong to the pagination'
-			);
-		}
-		try {
-			return $this->context->getFileProvider()->getPageNumberForPageTitle( $pageTitle );
-		} catch ( PageNumberNotFoundException $e ) {
+	public function getPageNumber( Title $pageTitle ): int {
+		$parts = explode( '/', $pageTitle->getText() );
+		if ( count( $parts ) !== 2 ) {
 			throw new PageNotInPaginationException(
 				$pageTitle->getFullText() . ' does not have page numbers'
 			);
 		}
+		if ( $parts[0] !== $this->indexTitle->getText() ) {
+			throw new PageNotInPaginationException(
+				$pageTitle->getFullText() . ' does not belong to the pagination'
+			);
+		}
+		$number = $pageTitle->getPageLanguage()->parseFormattedNumber( $parts[1] );
+		if ( $number > 0 ) {
+			// Valid page numbers are integer > 0.
+			return (int)$number;
+		} else {
+			throw new PageNumberNotFoundException(
+				$pageTitle->getFullText() . ' provides invalid page number ' . $number
+			);
+		}
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getDisplayedPageNumber( $pageNumber ) {
+	public function getDisplayedPageNumber( int $pageNumber ): PageNumber {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
 			throw new OutOfBoundsException(
 				'There is no page number ' . $pageNumber . ' in the pagination.'
@@ -92,14 +88,14 @@ class FilePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	public function getNumberOfPages() {
+	public function getNumberOfPages(): int {
 		return $this->numberOfPages;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getPageTitle( $pageNumber ) {
+	public function getPageTitle( int $pageNumber ): Title {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
 			throw new OutOfBoundsException(
 				'There is no page number ' . $pageNumber . ' in the pagination.'
@@ -117,12 +113,12 @@ class FilePagination extends Pagination {
 	 * @param int $pageNumber
 	 * @return Title
 	 */
-	private function buildPageTitle( $pageNumber ) {
+	private function buildPageTitle( int $pageNumber ): Title {
 		$i18nNumber = $this->indexTitle->getPageLanguage()->formatNumNoSeparators( $pageNumber );
 		$title = $this->buildPageTitleFromPageNumber( $i18nNumber );
 
 		// fallback to arabic number
-		if ( $i18nNumber !== $pageNumber && !$title->exists() ) {
+		if ( $i18nNumber !== (string)$pageNumber && !$title->exists() ) {
 			$arabicTitle = $this->buildPageTitleFromPageNumber( (string)$pageNumber );
 			if ( $arabicTitle->exists() ) {
 				return $arabicTitle;
@@ -136,9 +132,9 @@ class FilePagination extends Pagination {
 	 * @param string $pageNumber
 	 * @return Title
 	 */
-	private function buildPageTitleFromPageNumber( $pageNumber ) {
+	private function buildPageTitleFromPageNumber( string $pageNumber ): Title {
 		return Title::makeTitle(
-			$this->context->getPageNamespaceId(),
+			$this->pageNamespaceId,
 			$this->indexTitle->getText() . '/' . $pageNumber
 		);
 	}
@@ -146,7 +142,7 @@ class FilePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	protected function pageNumberExists( $pageNumber ) {
+	protected function pageNumberExists( int $pageNumber ): bool {
 		return $pageNumber >= 1 && $pageNumber <= $this->numberOfPages;
 	}
 
@@ -156,7 +152,7 @@ class FilePagination extends Pagination {
 	 * @param int $count
 	 * @return bool
 	 */
-	public static function isValidInterval( $from, $to, $count ) {
+	public static function isValidInterval( int $from, int $to, int $count ): bool {
 		return $from >= 1 && $from <= $to && $to <= $count;
 	}
 

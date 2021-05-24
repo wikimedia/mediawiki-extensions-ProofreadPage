@@ -13,14 +13,10 @@ use Title;
  */
 class PagePagination extends Pagination {
 
-	/**
-	 * @var Title[]
-	 */
+	/** @var Title[] */
 	private $pages = [];
 
-	/**
-	 * @var PageNumber[]
-	 */
+	/** @var PageNumber[] */
 	private $pageNumbers = [];
 
 	/**
@@ -42,7 +38,7 @@ class PagePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	public function getPageNumber( Title $pageTitle ) {
+	public function getPageNumber( Title $pageTitle ): int {
 		foreach ( $this->pages as $i => $pageTitle2 ) {
 			if ( $pageTitle->equals( $pageTitle2 ) ) {
 				return $i + 1;
@@ -54,7 +50,7 @@ class PagePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	public function getDisplayedPageNumber( $pageNumber ) {
+	public function getDisplayedPageNumber( int $pageNumber ): PageNumber {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
 			throw new OutOfBoundsException(
 				'There is no page number ' . $pageNumber . ' in the pagination.'
@@ -66,14 +62,14 @@ class PagePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	public function getNumberOfPages() {
+	public function getNumberOfPages(): int {
 		return count( $this->pages );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getPageTitle( $pageNumber ) {
+	public function getPageTitle( int $pageNumber ): Title {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
 			throw new OutOfBoundsException(
 				'There is no page number ' . $pageNumber . ' in the pagination.'
@@ -85,7 +81,7 @@ class PagePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	protected function pageNumberExists( $pageNumber ) {
+	protected function pageNumberExists( int $pageNumber ): bool {
 		return array_key_exists( $pageNumber - 1, $this->pages );
 	}
 }

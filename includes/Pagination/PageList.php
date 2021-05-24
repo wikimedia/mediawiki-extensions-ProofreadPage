@@ -14,7 +14,7 @@ class PageList {
 	/**
 	 * @var array parameters of the <pagelist> tag
 	 */
-	private $params = [];
+	private $params;
 
 	/**
 	 * @var PageNumber[] PageNumber already computed
@@ -34,7 +34,7 @@ class PageList {
 	 * @param int $pageNumber
 	 * @return PageNumber
 	 */
-	public function getNumber( $pageNumber ) {
+	public function getNumber( int $pageNumber ): PageNumber {
 		if ( !array_key_exists( $pageNumber, $this->pageNumbers ) ) {
 			$this->pageNumbers[$pageNumber] = $this->buildNumber( $pageNumber );
 		}
@@ -47,13 +47,12 @@ class PageList {
 	 *
 	 * @param int $pageNumber
 	 * @return PageNumber
-	 * @suppress PhanPossiblyUndeclaredVariable
 	 */
-	private function buildNumber( $pageNumber ) {
+	private function buildNumber( int $pageNumber ): PageNumber {
 		// default mode
 		$mode = PageNumber::DISPLAY_NORMAL;
 		$offset = 0;
-		$displayedpageNumber = '';
+		$displayedPageNumber = '';
 		$isEmpty = false;
 		$isRecto = true;
 
@@ -76,17 +75,16 @@ class PageList {
 						} elseif ( $param == PageNumber::DISPLAY_EMPTY ) {
 							$isEmpty = true;
 						} else {
-							$displayedpageNumber = $param;
+							$displayedPageNumber = $param;
 						}
 					}
 				}
 
-				if ( $param == PageNumber::DISPLAY_FOLIO
-					|| $param == PageNumber::DISPLAY_FOLIOHIGHROMAN
-					|| $param == PageNumber::DISPLAY_FOLIOROMAN ) {
-
+				if ( $mode == PageNumber::DISPLAY_FOLIO
+					|| $mode == PageNumber::DISPLAY_FOLIOHIGHROMAN
+					|| $mode == PageNumber::DISPLAY_FOLIOROMAN ) {
 					$folioStart = $this->getRangeStart( $num );
-					$displayedpageNumber = (int)$folioStart - $offset
+					$displayedPageNumber = (int)$folioStart - $offset
 						+ (int)( ( $pageNumber - (int)$folioStart ) / 2 );
 
 					$isRecto = ( $pageNumber - (int)$folioStart ) % 2 === 0;
@@ -94,10 +92,10 @@ class PageList {
 			}
 		}
 
-		$displayedpageNumber = ( $displayedpageNumber === '' )
+		$displayedPageNumber = ( $displayedPageNumber === '' )
 			? $pageNumber - $offset
-			: $displayedpageNumber;
-		return new PageNumber( $displayedpageNumber, $mode, $isEmpty, $isRecto );
+			: $displayedPageNumber;
+		return new PageNumber( $displayedPageNumber, $mode, $isEmpty, $isRecto );
 	}
 
 	/**
@@ -108,7 +106,7 @@ class PageList {
 	 * @param int $number
 	 * @return bool
 	 */
-	protected function numberInRange( $range, $number ) {
+	protected function numberInRange( string $range, int $number ): bool {
 		return is_numeric( $range ) && $range == $number ||
 			preg_match( '/^([0-9]*)to([0-9]*)((even|odd)?)$/', $range, $m ) &&
 			$m[1] <= $number && $number <= $m[2] &&
@@ -122,7 +120,7 @@ class PageList {
 	 * @return string
 	 * @throws RuntimeException
 	 */
-	private function getRangeStart( $range ) {
+	private function getRangeStart( string $range ): string {
 		if ( is_numeric( $range ) ) {
 			return $range;
 		} elseif ( preg_match( '/^([0-9]*)to([0-9]*)((even|odd)?)$/', $range, $m ) ) {

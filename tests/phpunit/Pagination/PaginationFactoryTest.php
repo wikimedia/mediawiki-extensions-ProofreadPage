@@ -28,10 +28,8 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		$pagination = new FilePagination(
 			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			$pageList,
-			$context->getFileProvider()->getFileFromTitle(
-				Title::makeTitle( NS_MEDIA, 'LoremIpsum.djvu' )
-			),
-			$context
+			5,
+			$context->getPageNamespaceId()
 		);
 		$this->assertEquals(
 			$pagination,

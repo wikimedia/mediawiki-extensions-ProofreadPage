@@ -125,7 +125,11 @@ class Context {
 	 * @return PaginationFactory
 	 */
 	public function getPaginationFactory() {
-		return new PaginationFactory( $this );
+		return new PaginationFactory(
+			$this->getFileProvider(),
+			$this->getIndexContentLookup(),
+			$this->getPageNamespaceId()
+		);
 	}
 
 	/**

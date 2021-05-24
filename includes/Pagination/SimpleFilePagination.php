@@ -2,9 +2,7 @@
 
 namespace ProofreadPage\Pagination;
 
-use File;
 use OutOfBoundsException;
-use ProofreadPage\Context;
 use Title;
 
 /**
@@ -14,9 +12,7 @@ use Title;
  */
 class SimpleFilePagination extends Pagination {
 
-	/**
-	 * @var Title
-	 */
+	/** @var Title */
 	private $indexTitle;
 
 	/**
@@ -24,36 +20,27 @@ class SimpleFilePagination extends Pagination {
 	 */
 	private $pageList;
 
-	/**
-	 * @var Title
-	 */
+	/** @var Title */
 	private $pageTitle;
-
-	/**
-	 * @var Context
-	 */
-	private $context;
 
 	/**
 	 * @param Title $indexTitle
 	 * @param PageList $pageList representation of the <pagelist> tag that configure page numbers
-	 * @param File $file the pagination file
-	 * @param Context $context the current context
+	 * @param int $pageNamespaceId
 	 */
 	public function __construct(
-		Title $indexTitle, PageList $pageList, File $file, Context $context
+		Title $indexTitle, PageList $pageList, int $pageNamespaceId
 	) {
 		$this->indexTitle = $indexTitle;
+		$this->pageTitle = Title::makeTitle( $pageNamespaceId, $this->indexTitle->getText() );
 		$this->pageList = $pageList;
-		$this->context = $context;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getPageNumber( Title $pageTitle ) {
-		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
-		if ( $indexTitle === null || !$this->indexTitle->equals( $indexTitle ) ) {
+	public function getPageNumber( Title $pageTitle ): int {
+		if ( !$pageTitle->equals( $this->pageTitle ) ) {
 			throw new PageNotInPaginationException(
 				$pageTitle->getFullText() . ' does not belong to the pagination'
 			);
@@ -64,7 +51,7 @@ class SimpleFilePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	public function getDisplayedPageNumber( $pageNumber ) {
+	public function getDisplayedPageNumber( int $pageNumber ): PageNumber {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
 			throw new OutOfBoundsException(
 				'There is no page number ' . $pageNumber . ' in the pagination.'
@@ -76,45 +63,27 @@ class SimpleFilePagination extends Pagination {
 	/**
 	 * @inheritDoc
 	 */
-	public function getNumberOfPages() {
+	public function getNumberOfPages(): int {
 		return 1;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getPageTitle( $pageNumber ) {
+	public function getPageTitle( int $pageNumber ): Title {
 		if ( !$this->pageNumberExists( $pageNumber ) ) {
 			throw new OutOfBoundsException(
 				'There is no page number ' . $pageNumber . ' in the pagination.'
 			);
 		}
-
-		if ( !$this->pageTitle ) {
-			$this->pageTitle = Title::makeTitle(
-				$this->context->getPageNamespaceId(),
-				$this->indexTitle->getText()
-			);
-		}
-
 		return $this->pageTitle;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	protected function pageNumberExists( $pageNumber ) {
-		return $pageNumber == 1;
-	}
-
-	/**
-	 * @param int $from
-	 * @param int $to
-	 * @param int $count
-	 * @return bool
-	 */
-	public static function isValidInterval( $from, $to, $count ) {
-		return $from == 1 && $to == 1 && $count == 1;
+	protected function pageNumberExists( int $pageNumber ): bool {
+		return $pageNumber === 1;
 	}
 
 }
