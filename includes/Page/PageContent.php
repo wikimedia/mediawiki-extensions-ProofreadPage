@@ -286,7 +286,9 @@ class PageContent extends TextContent {
 		$indexTs = null;
 		if ( $indexTitle !== null ) {
 			$indexTs = new IndexTemplateStyles( $indexTitle );
-			$wikitext .= $indexTs->getIndexTemplateStyles( '.pagetext' );
+			// newline so that following wikitext that needs to start on a newline
+			// like tables, lists, etc, can do so.
+			$wikitext .= $indexTs->getIndexTemplateStyles( '.pagetext' ) . "\n";
 		}
 
 		$wikitext .= $this->header->getText() . "\n\n" . $this->body->getText() . $this->footer->getText();
