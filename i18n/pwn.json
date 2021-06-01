@@ -88,7 +88,7 @@
 	"proofreadpage-pagelist-dialog-discard-changes": "tjemaula ta maumaljan",
 	"proofreadpage-pagelist-dialog-cancel": "semucikel",
 	"proofreadpage-pagelist-parsing-error-morethanone": "izua tjaliaw a sinipukeljang na <pagelist/> a puita i kinaizuanan na wikivecik.",
-	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "neka na <lisadayan na sapitj a qaqataman> a sinipukeljangan",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "neka na <pagelist /> a sinipukeljangan",
 	"proofreadpage-pagelist-parsing-error-network-issues": "inika malaing a palap ta lisadayan na sapitj ayatua kipaula ta padjadjaljun tua ljingas, kiqayamu a mumalj",
 	"proofreadpage-pagelist-dialog-title": "venecivecik ta lisadayan na sapitj a qaqataman ta $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "padjuredjur ta maumaljan",
