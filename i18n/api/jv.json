@@ -1,12 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bennylin",
 			"NoiX180"
 		]
 	},
 	"apihelp-query+proofread-description": "Balèkaké katerangan kahanan wacatiti kaca-kaca iki sing saiki.",
+	"apihelp-query+proofread-summary": "Balèkaké katerangan kahanan wacatiti kaca-kaca iki sing saiki.",
 	"apihelp-query+proofread-example-1": "Balèkaké status wacatiti kaca-kaca ing mandhala aran 250",
 	"apihelp-query+proofreadinfo-description": "Balèkaké katerangan ngenani atur-aturaning èkstènsi ProofreadPage",
+	"apihelp-query+proofreadinfo-summary": "Balèkaké katerangan ngenani atur-aturaning èkstènsi ProofreadPage",
 	"apihelp-query+proofreadinfo-param-prop": "Piranti wacatiti kang olèh:\n;namespaces:Katerangan bab mandhala aran \"{{ns:Page}}\" lan \"{{ns:Index}}\".\n;qualitylevels:Pratélaning tataran kwalitèt wacatiti.",
 	"apihelp-query+proofreadinfo-example-1": "Balèkaké katerangan baku",
 	"apihelp-query+proofreadinfo-example-3": "Balèkaké katerangan mandhala aran"
