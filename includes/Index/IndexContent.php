@@ -250,13 +250,23 @@ class IndexContent extends TextContent {
 	) {
 		$parserHelper = new ParserHelper( $title, $options );
 
+		// Start with the default index styles
+		$indexTs = new IndexTemplateStyles( $title );
+		$text = $indexTs->getIndexTemplateStyles( null );
+
+		// make sure the template starts on a new line in case it starts
+		// with something like '{|'
+		if ( $text ) {
+			$text .= "\n";
+		}
+
 		// We retrieve the view template
 		list( $templateText, $templateTitle ) = $parserHelper->fetchTemplateTextAndTitle(
 			Title::makeTitle( NS_MEDIAWIKI, 'Proofreadpage index template' )
 		);
 
 		// We replace the arguments calls by their values
-		$text = $parserHelper->expandTemplateArgs(
+		$text .= $parserHelper->expandTemplateArgs(
 			$templateText,
 			array_map( static function ( Content $content ) {
 				return $content->serialize( CONTENT_FORMAT_WIKITEXT );
