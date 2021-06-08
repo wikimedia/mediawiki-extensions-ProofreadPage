@@ -1,0 +1,29 @@
+!! Version 2
+# Simplest possible test to check the ProofreadPage Lua lib can be loaded and used
+!! functionhooks
+invoke
+!! endfunctionhooks
+
+!! article
+Module:Test
+!! text
+local p = {}
+
+local proofreadPage = require('mw.ext.proofreadPage')
+
+function p.proofreadpage_namespaces ()
+  return proofreadPage.NS_INDEX
+end
+
+return p
+!! endarticle
+
+
+!! test
+ProofreadPage Lua: Default namespaces
+!! wikitext
+{{#invoke:test|proofreadpage_namespaces}}
+!! html
+<p>252
+</p>
+!! end

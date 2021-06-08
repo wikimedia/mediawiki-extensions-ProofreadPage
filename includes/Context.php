@@ -42,6 +42,11 @@ class Context {
 	private $fileProvider;
 
 	/**
+	 * @var PaginationFactory
+	 */
+	private $paginationFactory;
+
+	/**
 	 * @var CustomIndexFieldsParser
 	 */
 	private $customIndexFieldsParser;
@@ -74,13 +79,13 @@ class Context {
 	 * @param IndexForPageLookup $indexForPageLookup
 	 * @param IndexContentLookup $indexContentLookup
 	 * @param PageQualityLevelLookup $pageQualityLevelLookup
-	 * @param IndexQualityStatsLookup $IndexQualityStatsLookup
+	 * @param IndexQualityStatsLookup $indexQualityStatsLookup
 	 */
 	public function __construct(
 		$pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider,
 		CustomIndexFieldsParser $customIndexFieldsParser, IndexForPageLookup $indexForPageLookup,
 		IndexContentLookup $indexContentLookup, PageQualityLevelLookup $pageQualityLevelLookup,
-		IndexQualityStatsLookup $IndexQualityStatsLookup
+		IndexQualityStatsLookup $indexQualityStatsLookup
 	) {
 		$this->pageNamespaceId = $pageNamespaceId;
 		$this->indexNamespaceId = $indexNamespaceId;
@@ -89,7 +94,13 @@ class Context {
 		$this->indexForPageLookup = $indexForPageLookup;
 		$this->indexContentLookup = $indexContentLookup;
 		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
-		$this->indexQualityStatsLookup = $IndexQualityStatsLookup;
+		$this->indexQualityStatsLookup = $indexQualityStatsLookup;
+
+		$this->paginationFactory = new PaginationFactory(
+			$fileProvider,
+			$indexContentLookup,
+			$pageNamespaceId
+		);
 	}
 
 	/**
@@ -125,11 +136,7 @@ class Context {
 	 * @return PaginationFactory
 	 */
 	public function getPaginationFactory() {
-		return new PaginationFactory(
-			$this->getFileProvider(),
-			$this->getIndexContentLookup(),
-			$this->getPageNamespaceId()
-		);
+		return $this->paginationFactory;
 	}
 
 	/**

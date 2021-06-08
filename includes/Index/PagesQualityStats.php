@@ -54,8 +54,15 @@ class PagesQualityStats {
 	/**
 	 * @return int
 	 */
+	public function getNumberOfPagesWithAnyQualityLevel(): int {
+		return array_sum( $this->numberOfPagesByLevel );
+	}
+
+	/**
+	 * @return int
+	 */
 	public function getNumberOfPagesWithoutQualityLevel(): int {
-		return $this->numberOfPages - array_sum( $this->numberOfPagesByLevel );
+		return $this->numberOfPages - $this->getNumberOfPagesWithAnyQualityLevel();
 	}
 
 	/**

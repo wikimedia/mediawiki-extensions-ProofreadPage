@@ -22,6 +22,13 @@ class IndexContentLookupMock implements IndexContentLookup {
 	/**
 	 * @inheritDoc
 	 */
+	public function isIndexTitleInCache( Title $indexTitle ): bool {
+		return array_key_exists( $indexTitle->getDBkey(), $this->cache );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function getIndexContentForTitle( Title $indexTitle ) {
 		if ( !array_key_exists( $indexTitle->getDBkey(), $this->contentForIndex ) ) {
 			return null;

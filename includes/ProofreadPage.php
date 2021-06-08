@@ -605,4 +605,30 @@ class ProofreadPage {
 			}
 		}
 	}
+
+	/**
+	 * Register our extra Lua libraries
+	 * @param string $engine
+	 * @param array &$extraLibraries the array to add to
+	 */
+	public static function onScribuntoExternalLibraries( string $engine, array &$extraLibraries ) {
+		$extraLibraries['mw.ext.proofreadPage'] = ProofreadPageLuaLibrary::class;
+	}
+
+	/**
+	 * Register the Scribunto external libraries for ProofreadPage
+	 * @param string $engine the Lua engine
+	 * @param array &$extraLibraryPaths An array of strings representing the
+	 *                                   filesystem paths to library files.
+	 *                                   Will be merged with core library paths.
+	 * @return bool
+	 */
+	public static function onScribuntoExternalLibraryPaths( $engine, array &$extraLibraryPaths ) {
+		if ( $engine === 'lua' ) {
+			// Path containing pure Lua libraries that don't need to interact with PHP
+			$extraLibraryPaths[] = __DIR__ . '/lualib';
+		}
+
+		return true;
+	}
 }

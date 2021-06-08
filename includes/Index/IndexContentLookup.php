@@ -12,7 +12,14 @@ use Title;
 interface IndexContentLookup {
 
 	/**
-	 * Returns content of the page
+	 * Report if the given index page's content is cached already
+	 * @param Title $indexTitle the title of an index page
+	 * @return bool true if the content for this index is already cached
+	 */
+	public function isIndexTitleInCache( Title $indexTitle ): bool;
+
+	/**
+	 * Returns content of the index page
 	 * @param Title $indexTitle
 	 * @return IndexContent
 	 */

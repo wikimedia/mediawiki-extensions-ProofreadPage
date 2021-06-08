@@ -339,7 +339,9 @@
 		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction",
 		"ListDefinedTags": "ProofreadPage\\ProofreadPage::onListDefinedTags",
 		"ChangeTagsListActive": "ProofreadPage\\ProofreadPage::onListDefinedTags",
-		"RecentChange_save": "ProofreadPage\\ProofreadPage::onRecentChangesave"
+		"RecentChange_save": "ProofreadPage\\ProofreadPage::onRecentChangesave",
+		"ScribuntoExternalLibraries": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraries",
+		"ScribuntoExternalLibraryPaths": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraryPaths"
 	},
 	"attributes": {
 		"VisualEditor": {

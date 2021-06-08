@@ -12,6 +12,13 @@ use Title;
 interface IndexForPageLookup {
 
 	/**
+	 * Check if the given page has a cached index
+	 * @param Title $pageTitle
+	 * @return bool
+	 */
+	public function isPageTitleInCache( Title $pageTitle ): bool;
+
+	/**
 	 * Return index of the page
 	 * @param Title $pageTitle
 	 * @return Title|null
