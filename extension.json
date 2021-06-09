@@ -142,6 +142,11 @@
 				"mediawiki.widgets.CategoryMultiselectWidget"
 			]
 		},
+		"ext.proofreadpage.openseadragon": {
+			"packageFiles": [
+				"lib/openseadragon.js"
+			]
+		},
 		"ext.proofreadpage.index.pagelist": {
 			"localBasePath": "modules/index.pagelist",
 			"styles": [
@@ -198,11 +203,15 @@
 				"proofreadpage-pagelist-dialog-visual-single-page-toggle-label"
 			],
 			"dependencies": [
+				"ext.proofreadpage.openseadragon",
 				"oojs-ui-core",
 				"oojs-ui-widgets",
 				"oojs-ui-windows",
+				"ext.proofreadpage.icons",
 				"oojs-ui.styles.icons-interactions",
-				"oojs-ui.styles.icons-content"
+				"oojs-ui.styles.icons-content",
+				"oojs-ui.styles.icons-media"
+
 			]
 		},
 		"ext.proofreadpage.special.indexpages": {
