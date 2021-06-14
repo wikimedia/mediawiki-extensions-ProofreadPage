@@ -3,6 +3,7 @@
 		"authors": [
 			"Aefgh39622",
 			"Ans",
+			"Bebiezaza",
 			"Geonuch",
 			"Horus",
 			"Nullzero",
@@ -41,6 +42,11 @@
 	"proofreadpage_quality2_category": "เป็นปัญหา",
 	"proofreadpage_quality3_category": "พิสูจน์อักษร",
 	"proofreadpage_quality4_category": "ตรวจสอบแล้ว",
+	"proofreadpage_quality0_summary": "ไม่มีข้อความ",
+	"proofreadpage_quality1_summary": "ยังไม่พิสูจน์อักษร",
+	"proofreadpage_quality2_summary": "เป็นปัญหา",
+	"proofreadpage_quality3_summary": "พิสูจน์อักษร",
+	"proofreadpage_quality4_summary": "ตรวจสอบแล้ว",
 	"proofreadpage_quality0_message": "หน้านี้ไม่จำเป็นต้องพิสูจน์อักษร",
 	"proofreadpage_quality1_message": "หน้านี้ยังไม่ได้พิสูจน์อักษร",
 	"proofreadpage_quality2_message": "มีปัญหาเกิดขึ้นขณะพิสูจน์อักษรหน้านี้",
@@ -63,6 +69,7 @@
 	"proofreadpage_specialpage_searcherrortext": "เสิร์ชเอนจินไม่ทำงาน ขออภัยในความไม่สะดวก",
 	"proofreadpage_source": "แหล่งที่มา",
 	"proofreadpage_source_message": "รุ่นสแกนที่ใช้สร้างข้อความนี้",
+	"proofreadpage_styles": "รูปแบบ",
 	"right-pagequality": "เปลี่ยนแปลงตัวบ่งชี้คุณภาพหน้า",
 	"proofreadpage-section-tools": "เครื่องมือพิสูจน์อักษร",
 	"proofreadpage-group-zoom": "ซูม",
@@ -73,8 +80,14 @@
 	"proofreadpage-button-zoom-in-label": "ซูมเข้า",
 	"proofreadpage-button-toggle-layout-label": "เค้าโครงแนวตั้ง/แนวนอน",
 	"proofreadpage-pageinfo-status": "สถานะการพิสูจน์อักษร",
+	"proofreadpage-pagelist-dialog-discard-changes": "ละทิ้งการเปลี่ยนแปลง",
+	"proofreadpage-pagelist-dialog-cancel": "ยกเลิก",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "วิธีใช้",
 	"proofreadpage-preferences-showheaders-label": "แสดงเขตข้อมูลหัวเรื่องและท้ายเรื่องเมื่อแก้ไขในเนมสเปซ {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "ใช้เค้าโครงแนวนอนเมื่อแก้ไขในเนมสเปซ {{ns:page}}",
+	"content-model-proofread-page": "หน้าหนังสือ",
+	"content-model-proofread-index": "ดัชนีหนังสือ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ใช่",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ไม่"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ไม่",
+	"proofreadpage-index-field-category-label": "หมวดหมู่"
 }
