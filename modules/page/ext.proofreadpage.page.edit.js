@@ -90,7 +90,7 @@
 
 		method = headersVisible ? 'show' : 'hide';
 		$editForm.find( '.prp-page-edit-header' )[ method ]( speed );
-		$editForm.find( '.prp-page-edit-body label' )[ method ]( speed );
+		$editForm.find( '.prp-page-edit-body label.ext-proofreadpage-label' )[ method ]( speed );
 		$editForm.find( '.prp-page-edit-footer' )[ method ]( speed );
 
 		// eslint-disable-next-line no-jquery/no-global-selector
