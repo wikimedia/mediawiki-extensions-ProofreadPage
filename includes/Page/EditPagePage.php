@@ -128,11 +128,12 @@ class EditPagePage extends EditPage {
 		$textareaName, $areaClass, $labelMsg, $content, array $textareaAttributes
 	) {
 		$out = $this->context->getOutput();
-		$out->addHTML(
-			Html::openElement( 'div', [ 'class' => $areaClass ] ) .
-			Html::element( 'label', [ 'for' => $textareaName ],
-				$this->context->msg( $labelMsg )->text() )
+		$label = Html::element(
+			'label',
+			[ 'for' => $textareaName, 'class' => 'ext-proofreadpage-label' ],
+			$this->context->msg( $labelMsg )->text()
 		);
+		$out->addHTML( Html::openElement( 'div', [ 'class' => $areaClass ] ) . $label );
 		$this->showTextbox( $content, $textareaName, $textareaAttributes );
 		$out->addHTML( Html::closeElement( 'div' ) );
 	}

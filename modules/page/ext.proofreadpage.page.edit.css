@@ -10,3 +10,16 @@
 	margin: 0;
 	resize: vertical;
 }
+
+#editform .prp-page-content { /* stylelint-disable-line selector-max-id */
+	line-height: 1.5em;
+}
+
+.ext-proofreadpage-label {
+	color: #808080;
+	font-size: 80%;
+}
+
+.editOptions {
+	clear: both;
+}
