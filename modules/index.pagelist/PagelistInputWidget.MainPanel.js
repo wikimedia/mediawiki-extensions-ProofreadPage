@@ -44,7 +44,7 @@ function MainPanel( mode, wikitextDialogModel, visualDialogModel, preview, confi
 			this.previewPanel
 		],
 		continuous: true,
-		classes: [ 'prp-pagelist-dialog-stack-layout' ]
+		classes: [ 'prp-pagelist-dialog-stack-layout', 'prp-pagelist-dialog-right-panel' ]
 	} );
 	this.leftStackLayout = new OO.ui.StackLayout( {
 		items: [
@@ -52,7 +52,7 @@ function MainPanel( mode, wikitextDialogModel, visualDialogModel, preview, confi
 			this.imagePanel
 		],
 		continuous: true,
-		classes: [ 'prp-pagelist-dialog-stack-layout' ]
+		classes: [ 'prp-pagelist-dialog-stack-layout', 'prp-pagelist-dialog-left-panel' ]
 	} );
 	config = config || {};
 	config.classes = ( config.classes &&

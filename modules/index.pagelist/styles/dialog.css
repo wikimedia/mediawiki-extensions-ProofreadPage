@@ -21,10 +21,7 @@
 }
 
 .prp-pagelist-dialog-stack-layout > .oo-ui-panelLayout:first-child {
-	position: sticky;
 	background: #fff;
-	top: 0;
-	z-index: 2;
 	box-shadow: 0 1px 4px 1px rgba( 0, 0, 0, 0.25 );
 }
 
@@ -42,4 +39,15 @@
 
 .prp-pagelist-dialog-visual-submit-button-row {
 	margin-top: 12px;
+}
+
+.prp-pagelist-dialog-left-panel {
+	display: flex;
+	flex-direction: column;
+}
+
+.prp-pagelist-dialog-right-panel > .oo-ui-panelLayout:first-child {
+	position: sticky;
+	top: 0;
+	z-index: 2;
 }
