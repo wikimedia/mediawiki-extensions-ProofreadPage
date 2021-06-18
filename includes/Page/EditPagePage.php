@@ -133,7 +133,7 @@ class EditPagePage extends EditPage {
 			[ 'for' => $textareaName, 'class' => 'ext-proofreadpage-label' ],
 			$this->context->msg( $labelMsg )->text()
 		);
-		$out->addHTML( Html::openElement( 'div', [ 'class' => $areaClass ] ) . $label );
+		$out->addHTML( Html::openElement( 'div', [ 'class' => "prp-edit-area $areaClass" ] ) . $label );
 		$this->showTextbox( $content, $textareaName, $textareaAttributes );
 		$out->addHTML( Html::closeElement( 'div' ) );
 	}
