@@ -283,18 +283,15 @@ class PageContent extends TextContent {
 		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
 
 		// create content
-		$wikitext = '';
+		$wikitext = trim( $this->header->getText() . "\n\n" . $this->body->getText() . $this->footer->getText() );
+
 		$indexTs = null;
 		if ( $indexTitle !== null ) {
 			$indexTs = new IndexTemplateStyles( $indexTitle );
 			// newline so that following wikitext that needs to start on a newline
 			// like tables, lists, etc, can do so.
-			$wikitext .= $indexTs->getIndexTemplateStyles( '.pagetext' ) . "\n";
+			$wikitext = $indexTs->getIndexTemplateStyles( '.pagetext' ) . "\n" . $wikitext;
 		}
-
-		$wikitext .= $this->header->getText() . "\n\n" . $this->body->getText() . $this->footer->getText();
-
-		// create content
 		$wikitextContent = new WikitextContent( $wikitext );
 
 		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
