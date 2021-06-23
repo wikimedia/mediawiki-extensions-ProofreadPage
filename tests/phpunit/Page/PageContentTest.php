@@ -10,6 +10,7 @@ use RequestContext;
 use Status;
 use Title;
 use User;
+use WikiPage;
 use WikitextContent;
 
 /**
@@ -249,8 +250,11 @@ class PageContentTest extends ProofreadPageTestCase {
 	 * @dataProvider prepareSaveProvider
 	 */
 	public function testPrepareSave( Status $expectedResult, PageContent $content ) {
+		$wikiPage = $this->getMockBuilder( WikiPage::class )
+			->disableOriginalConstructor()
+			->getMock();
 		$this->assertEquals( $expectedResult, $content->prepareSave(
-			$this->requestContext->getWikiPage(), 0, -1, $this->requestContext->getUser()
+			$wikiPage, 0, -1, $this->requestContext->getUser()
 		) );
 	}
 

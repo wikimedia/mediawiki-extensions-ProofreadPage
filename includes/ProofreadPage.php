@@ -845,12 +845,10 @@ class ProofreadPage {
 	 * @param array[] &$pageInfo The page information
 	 */
 	public static function onInfoAction( IContextSource $context, array &$pageInfo ) {
-		if ( !$context->canUseWikiPage() ) {
+		$title = $context->getTitle();
+		if ( !$title || !$title->canExist() ) {
 			return;
 		}
-
-		$page = $context->getWikiPage();
-		$title = $page->getTitle();
 		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return;
 		}
