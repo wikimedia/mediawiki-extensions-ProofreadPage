@@ -280,4 +280,54 @@ class PageContentTest extends ProofreadPageTestCase {
 		$content = self::newContent( 'aa', 'Test', 'éè' );
 		$this->assertSame( 10, $content->getSize() );
 	}
+
+	public function getParserOutputHtmlProvider(): array {
+		return [
+			[
+				self::newContent( '', 'Test', '' ),
+				'<p><br />Test</p><>'
+			],
+			[
+				self::newContent( 'start', 'Test', 'end' ),
+				'<p>start</p><p>Testend</p><>'
+			],
+			[
+				self::newContent( 'start', "\n\nTest", '' ),
+				'<p>start</p><p><br /></p><p>Test</p><>'
+			],
+			[
+				self::newContent( 'start', "<br/>\n\nTest", '' ),
+				'<p>start</p><p><br /></p><p>Test</p><>'
+			],
+			[
+				self::newContent( 'start', '<nowiki/>Test', '' ),
+				'<p>start</p><p>Test</p><>'
+			],
+			[
+				self::newContent( 'start', "<nowiki/>\nTest", '' ),
+				'<p>start</p><p>Test</p><>'
+			],
+			[
+				self::newContent( 'start', "<nowiki/>\n\nTest", '' ),
+				'<p>start</p><p class="mw-empty-elt"></p><p>Test</p><>'
+			],
+			[
+				self::newContent( '', "<nowiki/>\n\nTest", '' ),
+				'<p><br /></p><p>Test</p><>'
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider getParserOutputHtmlProvider
+	 */
+	public function testGetParserOutputHtml( PageContent $content, string $html ) {
+		$expected = '<div class="prp-page-qualityheader quality1">This page has not been proofread</div>' .
+			'<div class="pagetext"><div class="mw-parser-output">' . $html . '</div></div>';
+		$output = $content->getParserOutput(
+			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/1' )
+		);
+		$actual = preg_replace( '<!--.*-->', '', str_replace( "\n", '', $output->mText ) );
+		$this->assertSame( $expected, $actual );
+	}
 }
