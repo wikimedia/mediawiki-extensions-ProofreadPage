@@ -6,6 +6,7 @@
 
 .prp-page-content {
 	flex: 1;
+	padding-right: 12px;
 }
 
 .prp-page-content .pagetext {
@@ -14,6 +15,7 @@
 
 .prp-page-image {
 	flex: 1;
+	padding-left: 12px;
 }
 
 .prp-page-image img {
