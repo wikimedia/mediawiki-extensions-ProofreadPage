@@ -35,6 +35,14 @@ $proofreadPageNamespacesNames['as'] = [
 	'index_talk' => 'সূচী_আলোচনা'
 ];
 
+/** Basa Bali (Basa Bali) */
+$proofreadPageNamespacesNames['ban'] = [
+	'page' => 'Kaca',
+	'page_talk' => 'Pabligbagan_Kaca',
+	'index' => 'Indéks',
+	'index_talk' => 'Pabligbagan_Indéks',
+];
+
 /** Belarusian (беларуская) */
 $proofreadPageNamespacesNames['be'] = [
 	'page' => 'Старонка',
