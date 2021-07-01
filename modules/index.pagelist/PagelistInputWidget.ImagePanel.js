@@ -28,7 +28,6 @@ function ImagePanel( pageModel, config ) {
 
 	this.$image.hide();
 	this.pushPending();
-	this.$element.css( 'min-height', '100%' );
 
 	this.messages = new OO.ui.MessageWidget();
 	this.messages.toggle( false );
@@ -54,8 +53,6 @@ ImagePanel.prototype.setImageSrc = function ( url ) {
 	this.$image.on( 'load', function () {
 		this.$image.show();
 		this.popPending();
-		// stops the scrollbar from jumping around
-		this.$element.css( 'min-height', this.$image.height() + 'px' );
 		// If we have had a 'fail to load' before, clear
 		// the setInterval cause we probably
 		// don't need it anymore
