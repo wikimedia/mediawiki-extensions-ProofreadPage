@@ -98,9 +98,12 @@
 	"proofreadpage-pagelist-dialog-cancel": "বাতিল",
 	"proofreadpage-pagelist-parsing-error-morethanone": "উৎস উইকিপাঠ্যে একাধিক <pagelist /> ট্যাগ শনাক্ত করা হয়েছে।",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "কোনও <pagelist /> ট্যাগ শনাক্ত হয়নি।",
+	"proofreadpage-pagelist-parsing-error-php": "পাতারতালিকা ট্যাগ বিশ্লেষণ করার সময় নিম্নলিখিত ত্রুটি হয়েছে: $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "একটি অপ্রত্যাশিত ত্রুটি শনাক্ত হয়েছে। কনসোল থেকে লগ অনুলিপি করে phabricator.wikimedia.org তে এই ত্রুটিটি জানান।",
+	"proofreadpage-pagelist-parsing-error-network-issues": "নেটওয়ার্ক সমস্যার কারণে পাতারতালিকা আনা ব্যর্থ হয়েছে, অনুগ্রহ করে আবার চেষ্টা করুন",
 	"proofreadpage-pagelist-dialog-title": "$1-এর পাতার তালিকা সম্পাদনা করছেন",
 	"proofreadpage-pagelist-dialog-insertchanges": "পরিবর্তন সন্নিবেশ করুন",
+	"proofreadpage-pagelist-imageurlnotfound": "এই স্ক্যানের জন্য থাম্বনেইল উৎস খুঁজে পাওয়া যায়নি।",
 	"proofreadpage-pagelist-type": "পাতার সংখ্যার প্রকৃতি: $1",
 	"proofreadpage-pagelist-scan-number": "স্ক্যান নম্বর: $1",
 	"proofreadpage-pagelist-display-number": "প্রদর্শন নম্বর: $1",
@@ -109,6 +112,8 @@
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "পৃষ্ঠা সংখ্যার প্রকৃতি:",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "পাতার সংখ্যা শুরু হচ্ছে:",
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "শুধুমাত্র এই পাতার জন্য পৃষ্ঠা সংখ্যা পরিবর্তন করুন",
+	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "স্ক্যান নম্বর $1-এর পরবর্তীগুলির জন্য পাতার নম্বর নির্ধারণ করুন",
+	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "স্ক্যান নম্বর $1-এর জন্য পাতার নম্বর নির্ধারণ করুন",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} নামস্থানে সম্পাদনার সময় শিরোনাম এবং পাদটীকা ফিল্ড দেখাও",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} নামস্থানে সম্পাদনা করার সময় অনুভূমিক বিন্যাস ব্যবহার করুন",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "পাতার তালিকা সম্পাদনা করতে নতুন পরীক্ষামূলক দৃশ্যমান মোড ব্যবহার করুন।",
@@ -122,5 +127,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "না",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "মুদ্রণ সংশোধনের গুণমান",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "মুদ্রণ সংশোধনের গুণমান",
-	"proofreadpage-index-field-category-label": "বিষয়শ্রেণীসমূহ"
+	"proofreadpage-index-field-category-label": "বিষয়শ্রেণীসমূহ",
+	"proofreadpage-index-edit-category-help": "বিষয়শ্রেণীগুলি বিষয়শ্রেণী: উপসর্গ ছাড়াই লেখা হয় এবং একটি পাইপ \"|\" অক্ষর দ্বারা পৃথক করা হয়।"
 }
