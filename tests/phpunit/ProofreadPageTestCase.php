@@ -10,6 +10,8 @@ use ProofreadPage\Index\IndexContentLookupMock;
 use ProofreadPage\Index\IndexQualityStatsLookup;
 use ProofreadPage\Index\PagesQualityStats;
 use ProofreadPage\Page\IndexForPageLookupMock;
+use ProofreadPage\Page\PageContent;
+use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Page\PageQualityLevelLookupMock;
 use ProofreadPage\ProofreadPageInit;
 
@@ -205,5 +207,24 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 				'image/jpg'
 			)
 		];
+	}
+
+	/**
+	 * Build a page content object with the given values and status level
+	 * @param string $header the header wikitext string
+	 * @param string $body the body wikitext string
+	 * @param string $footer the footer wikitext string
+	 * @param int $level the proofreading levelA
+	 * @param string|null $proofreader the proofreading user name
+	 * @return PageContent the built page content
+	 */
+	protected static function buildPageContent(
+		string $header = '', string $body = '', string $footer = '',
+		int $level = PageLevel::NOT_PROOFREAD, ?string $proofreader = null
+	) {
+		return new PageContent(
+			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
+			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
+		);
 	}
 }

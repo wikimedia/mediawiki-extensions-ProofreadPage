@@ -327,7 +327,10 @@
 		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",
 		"EditFormPreloadText": "ProofreadPage\\ProofreadPage::onEditFormPreloadText",
 		"ParserTestTables": "ProofreadPage\\ProofreadPage::onParserTestTables",
-		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction"
+		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction",
+		"ListDefinedTags": "ProofreadPage\\ProofreadPage::onListDefinedTags",
+		"ChangeTagsListActive": "ProofreadPage\\ProofreadPage::onListDefinedTags",
+		"RecentChange_save": "ProofreadPage\\ProofreadPage::onRecentChangesave"
 	},
 	"attributes": {
 		"VisualEditor": {
@@ -361,6 +364,10 @@
 		"ProofreadPagePageSeparatorPlaceholder": {
 			"value": "__PAGESEPARATOR__",
 			"description": "Placeholder to mark the position of the page separator"
+		},
+		"ProofreadPageUseStatusChangeTags": {
+			"value": false,
+			"description": "Use the new change tags for page statuses"
 		}
 	},
 	"callback": "ProofreadPage\\ProofreadPage::onRegistration",

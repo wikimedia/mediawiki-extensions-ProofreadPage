@@ -34,6 +34,7 @@ use Parser;
 use ParserOutput;
 use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Page\PageContentBuilder;
+use ProofreadPage\Page\PageRevisionTagger;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\Parser\PagelistTagParser;
 use ProofreadPage\Parser\PagequalityTagParser;
@@ -564,5 +565,49 @@ class ProofreadPage {
 		// Content handler
 		define( 'CONTENT_MODEL_PROOFREAD_PAGE', 'proofread-page' );
 		define( 'CONTENT_MODEL_PROOFREAD_INDEX', 'proofread-index' );
+	}
+
+	/**
+	 * ListDefinedTags and ChangeTagsListActive hook handler
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ListDefinedTags
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ChangeTagsListActive
+	 *
+	 * @param array &$tags The list of tags. Add your extension's tags to this array.
+	 * @return bool
+	 */
+	public static function onListDefinedTags( &$tags ) {
+		$tags[] = Tags::WITHOUT_TEXT_TAG;
+		$tags[] = Tags::NOT_PROOFREAD_TAG;
+		$tags[] = Tags::PROBLEMATIC_TAG;
+		$tags[] = Tags::PROOFREAD_TAG;
+		$tags[] = Tags::VALIDATED_TAG;
+		return true;
+	}
+
+	/**
+	 * RecentChange_save hook handler that tags changes according to their content
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/RecentChange_save
+	 *
+	 * @param \RecentChange $rc
+	 */
+	public static function onRecentChangeSave( \RecentChange $rc ) {
+		$useTags = Context::getDefaultContext()->getConfig()->get(
+			'ProofreadPageUseStatusChangeTags' );
+
+		// not configured to add tags to revisions
+		if ( !$useTags ) {
+			return;
+		}
+
+		$ns = $rc->getAttribute( 'rc_namespace' );
+
+		if ( $ns === self::getPageNamespaceId() ) {
+			$tagger = new PageRevisionTagger();
+			$tags = $tagger->getTagsForChange( $rc );
+
+			if ( $tags ) {
+				$rc->addTags( $tags );
+			}
+		}
 	}
 }

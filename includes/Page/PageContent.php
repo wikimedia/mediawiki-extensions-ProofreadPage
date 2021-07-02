@@ -182,7 +182,7 @@ class PageContent extends TextContent {
 		}
 
 		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-		$oldContent = $this->getContentForRevId( $parentRevId );
+		$oldContent = self::getContentForRevId( $parentRevId );
 		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
 			// Let's convert it to Page: page content
 			$oldContent = $oldContent->convert( CONTENT_MODEL_PROOFREAD_PAGE );
@@ -201,7 +201,7 @@ class PageContent extends TextContent {
 	 * @param int $revId
 	 * @return Content
 	 */
-	private function getContentForRevId( $revId ) {
+	public static function getContentForRevId( $revId ) {
 		if ( $revId !== -1 ) {
 			$revision = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById( $revId );
 			if ( $revision !== null ) {
@@ -211,7 +211,8 @@ class PageContent extends TextContent {
 				}
 			}
 		}
-		return $this->getContentHandler()->makeEmptyContent();
+		$contentHandler = \ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
+		return $contentHandler->makeEmptyContent();
 	}
 
 	/**

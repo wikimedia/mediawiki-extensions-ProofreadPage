@@ -123,5 +123,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Proofreading quality",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proofreading quality",
 	"proofreadpage-index-field-category-label": "Categories",
-	"proofreadpage-index-edit-category-help": "Categories are written without the Category: prefix and are separated by a pipe \"|\" character."
+	"proofreadpage-index-edit-category-help": "Categories are written without the Category: prefix and are separated by a pipe \"|\" character.",
+	"tag-proofreadpage-quality0": "Without text",
+	"tag-proofreadpage-quality1": "Not proofread",
+	"tag-proofreadpage-quality2": "Problematic",
+	"tag-proofreadpage-quality3": "Proofread",
+	"tag-proofreadpage-quality4": "Validated",
+	"tag-proofreadpage-quality0-description": "Edits that changed page quality to \"Without text\"",
+	"tag-proofreadpage-quality1-description": "Edits that changed page quality to \"Not proofread\"",
+	"tag-proofreadpage-quality2-description": "Edits that changed page quality to \"Problematic\"",
+	"tag-proofreadpage-quality3-description": "Edits that changed page quality to \"Proofread\"",
+	"tag-proofreadpage-quality4-description": "Edits that changed page quality to \"Validated\""
 }
