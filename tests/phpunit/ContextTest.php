@@ -6,6 +6,7 @@ use Config;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContentLookup;
 use ProofreadPage\Index\IndexContentLookupMock;
+use ProofreadPage\Index\IndexQualityStatsLookup;
 use ProofreadPage\Page\IndexForPageLookup;
 use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPage\Page\PageQualityLevelLookup;
@@ -76,11 +77,19 @@ class ContextTest extends ProofreadPageTestCase {
 		);
 	}
 
+	public function testGetIndexQualityStatsLookup() {
+		$this->assertInstanceOf(
+			IndexQualityStatsLookup::class,
+			$this->buildDummyContext()->getIndexQualityStatsLookup()
+		);
+	}
+
 	private function buildDummyContext() {
 		return new Context( 42, 44,
 			new FileProviderMock( [] ), new CustomIndexFieldsParser(),
 			new IndexForPageLookupMock( [] ), new IndexContentLookupMock( [] ),
-			new PageQualityLevelLookupMock( [] )
+			new PageQualityLevelLookupMock( [] ),
+			$this->createMock( IndexQualityStatsLookup::class )
 		);
 	}
 }

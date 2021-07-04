@@ -5,9 +5,12 @@ namespace ProofreadPage\Page;
 use Content;
 use ContentHandler;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
 use MWException;
 use ProofreadPage\Context;
+use ProofreadPage\Index\UpdateIndexQualityStats;
 use TextContentHandler;
 use Title;
 use User;
@@ -379,6 +382,73 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	public function isParserCacheSupported() {
 		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getSecondaryDataUpdates(
+		Title $title,
+		Content $content,
+		$role,
+		SlotRenderingProvider $slotOutput
+	) {
+		$updates = parent::getSecondaryDataUpdates( $title, $content, $role, $slotOutput );
+
+		$indexTitle = $this->getIndexTitle( $title );
+		if ( $indexTitle !== null ) {
+			$indexTitle->invalidateCache();
+			$updates[] = $this->buildIndexQualityStatsUpdate( $title, $indexTitle, $content );
+		}
+
+		return $updates;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getDeletionUpdates( Title $title, $role ) {
+		$updates = parent::getDeletionUpdates( $title, $role );
+
+		$indexTitle = $this->getIndexTitle( $title );
+		if ( $indexTitle !== null ) {
+			$updates[] = $this->buildIndexQualityStatsUpdate( $title, $indexTitle );
+		}
+
+		return $updates;
+	}
+
+	/**
+	 * @param Title $pageTitle
+	 * @return Title|null
+	 */
+	private function getIndexTitle( Title $pageTitle ) : ?Title {
+		return Context::getDefaultContext()->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
+	}
+
+	/**
+	 * @param Title $pageTitle
+	 * @param Title $indexTitle
+	 * @param Content|null $pageContent
+	 * @return UpdateIndexQualityStats
+	 */
+	private function buildIndexQualityStatsUpdate(
+		Title $pageTitle,
+		Title $indexTitle,
+		Content $pageContent = null
+	) : UpdateIndexQualityStats {
+		$context = Context::getDefaultContext();
+		$newLevel = ( $pageContent instanceof PageContent )
+			? $pageContent->getLevel()->getLevel()
+			: null;
+		return new UpdateIndexQualityStats(
+			MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			$context->getPageQualityLevelLookup(),
+			$context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle ),
+			$indexTitle,
+			$pageTitle,
+			$newLevel
+		);
 	}
 
 	/**

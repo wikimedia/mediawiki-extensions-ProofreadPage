@@ -8,6 +8,7 @@ use MediaWiki\MediaWikiServices;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\DatabaseIndexContentLookup;
 use ProofreadPage\Index\IndexContentLookup;
+use ProofreadPage\Index\IndexQualityStatsLookup;
 use ProofreadPage\Page\DatabaseIndexForPageLookup;
 use ProofreadPage\Page\DatabasePageQualityLevelLookup;
 use ProofreadPage\Page\IndexForPageLookup;
@@ -61,6 +62,11 @@ class Context {
 	private $pageQualityLevelLookup;
 
 	/**
+	 * @var IndexQualityStatsLookup
+	 */
+	private $indexQualityStatsLookup;
+
+	/**
 	 * @param int $pageNamespaceId
 	 * @param int $indexNamespaceId
 	 * @param FileProvider $fileProvider
@@ -68,11 +74,13 @@ class Context {
 	 * @param IndexForPageLookup $indexForPageLookup
 	 * @param IndexContentLookup $indexContentLookup
 	 * @param PageQualityLevelLookup $pageQualityLevelLookup
+	 * @param IndexQualityStatsLookup $IndexQualityStatsLookup
 	 */
 	public function __construct(
 		$pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider,
 		CustomIndexFieldsParser $customIndexFieldsParser, IndexForPageLookup $indexForPageLookup,
-		IndexContentLookup $indexContentLookup, PageQualityLevelLookup $pageQualityLevelLookup
+		IndexContentLookup $indexContentLookup, PageQualityLevelLookup $pageQualityLevelLookup,
+		IndexQualityStatsLookup $IndexQualityStatsLookup
 	) {
 		$this->pageNamespaceId = $pageNamespaceId;
 		$this->indexNamespaceId = $indexNamespaceId;
@@ -81,6 +89,7 @@ class Context {
 		$this->indexForPageLookup = $indexForPageLookup;
 		$this->indexContentLookup = $indexContentLookup;
 		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
+		$this->indexQualityStatsLookup = $IndexQualityStatsLookup;
 	}
 
 	/**
@@ -148,6 +157,13 @@ class Context {
 	}
 
 	/**
+	 * @return IndexQualityStatsLookup
+	 */
+	public function getIndexQualityStatsLookup(): IndexQualityStatsLookup {
+		return $this->indexQualityStatsLookup;
+	}
+
+	/**
 	 * @param bool $purge
 	 * @return Context
 	 */
@@ -155,6 +171,7 @@ class Context {
 		static $defaultContext;
 
 		if ( $defaultContext === null || $purge ) {
+			$loadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
 			$repoGroup = MediaWikiServices::getInstance()->getRepoGroup();
 			$pageNamespaceId = ProofreadPageInit::getNamespaceId( 'page' );
 			$indexNamespaceId = ProofreadPageInit::getNamespaceId( 'index' );
@@ -163,7 +180,8 @@ class Context {
 				new CustomIndexFieldsParser(),
 				new DatabaseIndexForPageLookup( $indexNamespaceId, $repoGroup ),
 				new DatabaseIndexContentLookup(),
-				new DatabasePageQualityLevelLookup( $pageNamespaceId )
+				new DatabasePageQualityLevelLookup( $pageNamespaceId ),
+				new IndexQualityStatsLookup( $loadBalancer )
 			);
 		}
 
