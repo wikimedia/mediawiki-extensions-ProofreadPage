@@ -48,6 +48,15 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 		$this->wikitextSlotDiffRenderer = $wikitextSlotDiffRenderer;
 	}
 
+	/** @inheritDoc */
+	public function getExtraCacheKeys() {
+		return [
+			// required because the diff view contains localized strings such
+			// as the section headers
+			$this->context->getLanguage()->getCode()
+		];
+	}
+
 	/**
 	 * @inheritDoc
 	 */
@@ -82,7 +91,6 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 	 * @param Title|null $oldTitle
 	 * @param Title|null $newTitle
 	 * @return string
-	 *
 	 */
 	private function createRedirectionDiff( Title $oldTitle = null, Title $newTitle = null ) {
 		$old = ( $oldTitle === null ) ? '' : $oldTitle->getFullText();

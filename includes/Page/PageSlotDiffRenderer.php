@@ -31,6 +31,15 @@ class PageSlotDiffRenderer extends SlotDiffRenderer {
 		$this->diffFormatterUtils = new DiffFormatterUtils();
 	}
 
+	/** @inheritDoc */
+	public function getExtraCacheKeys() {
+		return [
+			// required because the diff view contains localized strings such
+			// as the section headers
+			$this->context->getLanguage()->getCode()
+		];
+	}
+
 	/**
 	 * @param PageContent|null $oldContent
 	 * @param PageContent|null $newContent
