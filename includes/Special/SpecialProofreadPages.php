@@ -234,7 +234,7 @@ class SpecialProofreadPages extends QueryPage {
 					$conds['page_title'] = $this->searchList;
 				} else {
 					// If not pages were found do not return results
-					$conds[] = 'false';
+					$conds[] = '1=0';
 				}
 			} else {
 				$conds = null;
