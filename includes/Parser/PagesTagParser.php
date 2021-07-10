@@ -86,6 +86,7 @@ class PagesTagParser {
 		}
 		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
+		$outputWrapperClass = 'prp-pages-output';
 		$language = $this->parser->getTargetLanguage();
 		$this->parser->getOutput()->addTemplate(
 			$indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID()
@@ -221,7 +222,7 @@ class PagesTagParser {
 			}, $pages ) );
 
 			$indexTs = new IndexTemplateStyles( $indexTitle );
-			$out .= $indexTs->getIndexTemplateStyles( null );
+			$out .= $indexTs->getIndexTemplateStyles( ".$outputWrapperClass" );
 
 			// write the output
 			/** @var Title $page */
@@ -351,7 +352,7 @@ class PagesTagParser {
 		$langAttr = $contentLang && $contentLang !== 'mixed'
 			? " lang=\"$contentLang\""
 			: "";
-		$out = "<div class=\"prp-pages-output\"$langAttr>\n$out\n</div>";
+		$out = "<div class=\"$outputWrapperClass\"$langAttr>\n$out\n</div>";
 		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );
 
