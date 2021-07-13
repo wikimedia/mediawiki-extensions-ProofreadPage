@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Trondtr",
 			"Yupik"
 		]
@@ -15,5 +16,6 @@
 	"proofreadpage_quality2_category": "Váádduh",
 	"proofreadpage_quality3_category": "Njuálguluhhum",
 	"proofreadpage_quality4_category": "Tuhhiittum",
-	"proofreadpage_quality1_message": "Taat sijđo ij lah njuálguluhhum"
+	"proofreadpage_quality1_message": "Taat sijđo ij lah njuálguluhhum",
+	"proofreadpage_styles": "Stiijlah"
 }
