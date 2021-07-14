@@ -42,82 +42,73 @@ class PageContentTest extends ProofreadPageTestCase {
 		$this->requestContext->setUser( $user );
 	}
 
-	private static function newContent(
-		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
-	) {
-		return new PageContent(
-			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
-			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
-		);
-	}
-
 	public function testGetModel() {
-		$content = self::newContent();
+		$content = self::buildPageContent();
 		$this->assertSame( CONTENT_MODEL_PROOFREAD_PAGE, $content->getModel() );
 	}
 
 	public function testGetHeader() {
-		$pageContent = self::newContent( 'testString' );
+		$pageContent = self::buildPageContent( 'testString' );
 		$this->assertEquals( new WikitextContent( 'testString' ), $pageContent->getHeader() );
 	}
 
 	public function testGetFooter() {
-		$pageContent = self::newContent( '', '', 'testString' );
+		$pageContent = self::buildPageContent( '', '', 'testString' );
 		$this->assertEquals( new WikitextContent( 'testString' ), $pageContent->getFooter() );
 	}
 
 	public function testGetBody() {
-		$pageContent = self::newContent( '', 'testString' );
+		$pageContent = self::buildPageContent( '', 'testString' );
 		$this->assertEquals( new WikitextContent( 'testString' ), $pageContent->getBody() );
 	}
 
 	public function testGetLevel() {
 		$level = new PageLevel( 2, null );
-		$pageContent = self::newContent( '', '', '', 2, null );
+		$pageContent = self::buildPageContent( '', '', '', 2, null );
 		$this->assertEquals( $level, $pageContent->getLevel() );
 	}
 
 	public function testGetContentHandler() {
-		$content = self::newContent();
+		$content = self::buildPageContent();
 		$this->assertSame(
 			CONTENT_MODEL_PROOFREAD_PAGE, $content->getContentHandler()->getModelID()
 		);
 	}
 
 	public function testCopy() {
-		$content = self::newContent( '123', 'aert', '', 1, 'Test' );
+		$content = self::buildPageContent( '123', 'aert', '', 1, 'Test' );
 		$this->assertSame( $content, $content->copy() );
 	}
 
 	public function equalsProvider() {
 		return [
 			[
-				self::newContent(),
+				self::buildPageContent(),
 				null,
 				false
 			],
 			[
-				self::newContent( 'a', 'hallo' ),
-				self::newContent( 'a', 'hallo' ),
+				self::buildPageContent( 'a', 'hallo' ),
+				self::buildPageContent( 'a', 'hallo' ),
 				true
 			],
 			[
-				self::newContent( 'a', 'hallo' ),
-				self::newContent( 'A', 'hallo' ),
+				self::buildPageContent( 'a', 'hallo' ),
+				self::buildPageContent( 'A', 'hallo' ),
 				false
 			],
 			[
-				self::newContent( '', 'a', '', 1, 'test' ),
-				self::newContent( '', 'a', '', 1, null ),
+				self::buildPageContent( '', 'a', '', 1, 'test' ),
+				self::buildPageContent( '', 'a', '', 1, null ),
 				false
 			],
 			[
-				self::newContent( '', 'a', '', 1, 'ater_ir' ),
-				self::newContent( '', 'a', '', 1, 'ater ir' ),
+				self::buildPageContent( '', 'a', '', 1, 'ater_ir' ),
+				self::buildPageContent( '', 'a', '', 1, 'ater ir' ),
 				true
 			],
 			[
-				self::newContent( '', 'hallo' ),
+				self::buildPageContent( '', 'hallo' ),
 				new WikitextContent( 'hallo' ),
 				false
 			]
@@ -132,24 +123,24 @@ class PageContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetWikitextForTransclusion() {
-		$content = self::newContent( 'aa', 'test', 'bb', 2, 'ater' );
+		$content = self::buildPageContent( 'aa', 'test', 'bb', 2, 'ater' );
 		$this->assertSame( 'test', $content->getWikitextForTransclusion() );
 	}
 
 	public function getTextForSummaryProvider() {
 		return [
 			[
-				self::newContent( 'aaaa', "hello\nworld.", '', 1, 'test' ),
+				self::buildPageContent( 'aaaa', "hello\nworld.", '', 1, 'test' ),
 				16,
 				'hello world.'
 			],
 			[
-				self::newContent( 'aaaa', "hello world." ),
+				self::buildPageContent( 'aaaa', "hello world." ),
 				8,
 				'hello...'
 			],
 			[
-				self::newContent( 'aaaa', "[[hello world]]." ),
+				self::buildPageContent( 'aaaa', "[[hello world]]." ),
 				8,
 				'hel...'
 			]
@@ -166,20 +157,20 @@ class PageContentTest extends ProofreadPageTestCase {
 	public function preSaveTransformProvider() {
 		return [
 			[
-				self::newContent( 'hello this is ~~~', '~~~' ),
-				self::newContent(
+				self::buildPageContent( 'hello this is ~~~', '~~~' ),
+				self::buildPageContent(
 					'hello this is [[Special:Contributions/127.0.0.1|127.0.0.1]]',
 					'[[Special:Contributions/127.0.0.1|127.0.0.1]]'
 				)
 			],
 			[
-				self::newContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" ),
-				self::newContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" )
+				self::buildPageContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" ),
+				self::buildPageContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" )
 			],
 			[
 				// rtrim
-				self::newContent( '\n ', 'foo \n ', '  ' ),
-				self::newContent( '\n', 'foo \n', '' )
+				self::buildPageContent( '\n ', 'foo \n ', '  ' ),
+				self::buildPageContent( '\n', 'foo \n', '' )
 			],
 		];
 	}
@@ -203,13 +194,13 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function preloadTransformProvider() {
 		return [
-			[ self::newContent( 'hello this is ~~~' ),
-				self::newContent( "hello this is ~~~" )
+			[ self::buildPageContent( 'hello this is ~~~' ),
+				self::buildPageContent( "hello this is ~~~" )
 			],
 			[
-				self::newContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude>' .
+				self::buildPageContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude>' .
 					'<includeonly>bar</includeonly>' ),
-				self::newContent( 'hello \'\'this\'\' is bar' )
+				self::buildPageContent( 'hello \'\'this\'\' is bar' )
 			],
 		];
 	}
@@ -233,15 +224,15 @@ class PageContentTest extends ProofreadPageTestCase {
 		return [
 			[
 				Status::newGood(),
-				self::newContent()
+				self::buildPageContent()
 			],
 			[
 				Status::newFatal( 'invalid-content-data' ),
-				self::newContent( '', '', '', 5 )
+				self::buildPageContent( '', '', '', 5 )
 			],
 			[
 				Status::newFatal( 'proofreadpage_notallowedtext' ),
-				self::newContent( '', '', '', PageLevel::VALIDATED )
+				self::buildPageContent( '', '', '', PageLevel::VALIDATED )
 			]
 		];
 	}
@@ -260,59 +251,59 @@ class PageContentTest extends ProofreadPageTestCase {
 
 	public function testRedirectTarget() {
 		$title = Title::makeTitle( NS_MAIN, 'Test' );
-		$content = self::newContent( '', '#REDIRECT [[Test]]' );
+		$content = self::buildPageContent( '', '#REDIRECT [[Test]]' );
 		$this->assertTrue( $title->equals( $content->getRedirectTarget() ) );
 	}
 
 	public function testUpdateRedirect() {
 		$title = Title::makeTitle( NS_MAIN, 'Someplace' );
 
-		$content = self::newContent( '', 'RRRR' );
+		$content = self::buildPageContent( '', 'RRRR' );
 		$newContent = $content->updateRedirect( $title );
 		// no update
 		$this->assertSame( $content, $newContent );
-		$content = self::newContent( '', '#REDIRECT [[Test]]' );
+		$content = self::buildPageContent( '', '#REDIRECT [[Test]]' );
 		$newContent = $content->updateRedirect( $title );
 		$this->assertTrue( $title->equals( $newContent->getRedirectTarget() ) );
 	}
 
 	public function testGetSize() {
-		$content = self::newContent( 'aa', 'Test', 'éè' );
+		$content = self::buildPageContent( 'aa', 'Test', 'éè' );
 		$this->assertSame( 10, $content->getSize() );
 	}
 
 	public function getParserOutputHtmlProvider(): array {
 		return [
 			[
-				self::newContent( '', 'Test', '' ),
+				self::buildPageContent( '', 'Test', '' ),
 				'<p><br />Test</p><>'
 			],
 			[
-				self::newContent( 'start', 'Test', 'end' ),
+				self::buildPageContent( 'start', 'Test', 'end' ),
 				'<p>start</p><p>Testend</p><>'
 			],
 			[
-				self::newContent( 'start', "\n\nTest", '' ),
+				self::buildPageContent( 'start', "\n\nTest", '' ),
 				'<p>start</p><p><br /></p><p>Test</p><>'
 			],
 			[
-				self::newContent( 'start', "<br/>\n\nTest", '' ),
+				self::buildPageContent( 'start', "<br/>\n\nTest", '' ),
 				'<p>start</p><p><br /></p><p>Test</p><>'
 			],
 			[
-				self::newContent( 'start', '<nowiki/>Test', '' ),
+				self::buildPageContent( 'start', '<nowiki/>Test', '' ),
 				'<p>start</p><p>Test</p><>'
 			],
 			[
-				self::newContent( 'start', "<nowiki/>\nTest", '' ),
+				self::buildPageContent( 'start', "<nowiki/>\nTest", '' ),
 				'<p>start</p><p>Test</p><>'
 			],
 			[
-				self::newContent( 'start', "<nowiki/>\n\nTest", '' ),
+				self::buildPageContent( 'start', "<nowiki/>\n\nTest", '' ),
 				'<p>start</p><p class="mw-empty-elt"></p><p>Test</p><>'
 			],
 			[
-				self::newContent( '', "<nowiki/>\n\nTest", '' ),
+				self::buildPageContent( '', "<nowiki/>\n\nTest", '' ),
 				'<p><br /></p><p>Test</p><>'
 			]
 		];
