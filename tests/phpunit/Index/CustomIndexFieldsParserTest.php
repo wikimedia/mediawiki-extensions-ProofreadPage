@@ -99,6 +99,28 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		);
 	}
 
+	public function testParseCustomIndexFieldsForJS() {
+		$content = self::buildContent(
+			"{{\n|Title=Test book\n|Author=[[Author:Me]]\n|Year=2012 or 2013\n|Pages=<pagelist />" .
+				"\n|width=500}}"
+		);
+		$entries = [
+			'Author' => new CustomIndexField(
+				'Author', '[[Author:Me]]', self::$customIndexFieldsConfiguration['Author']
+			),
+			'width' => new CustomIndexField(
+				'width', '500', self::$customIndexFieldsConfiguration['width']
+			),
+			'CSS' => new CustomIndexField(
+				'CSS', '', self::$customIndexFieldsConfiguration['CSS']
+			)
+		];
+		$this->assertEquals(
+			$entries,
+			$this->getContext()->getCustomIndexFieldsParser()->parseCustomIndexFieldsForJS( $content )
+		);
+	}
+
 	public function testParseCustomIndexField() {
 		$content = self::buildContent( "{{\n|Year=2012 or 2013\n}}" );
 		$parser = $this->getContext()->getCustomIndexFieldsParser();

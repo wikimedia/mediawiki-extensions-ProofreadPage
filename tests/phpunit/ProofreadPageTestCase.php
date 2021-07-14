@@ -27,7 +27,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			'label' => 'Title',
 			'values' => null,
 			'header' => true,
-			'data' => 'title'
+			'data' => 'title',
 		],
 		'Author' => [
 			'type' => 'page',
@@ -36,7 +36,8 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			'label' => 'Author',
 			'values' => null,
 			'header' => true,
-			'data' => 'author'
+			'data' => 'author',
+			'js' => true
 		],
 		'Year' => [
 			'type' => 'number',
@@ -83,12 +84,14 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 		'width' => [
 			'type' => 'number',
 			'label' => 'Image width',
-			'header' => false
+			'header' => false,
+			'js' => true
 		],
 		'CSS' => [
 			'type' => 'string',
 			'label' => 'CSS',
-			'header' => false
+			'header' => false,
+			'js' => true
 		],
 	];
 

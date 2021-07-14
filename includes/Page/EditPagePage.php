@@ -109,9 +109,13 @@ class EditPagePage extends EditPage {
 			$out->addModules( 'ext.wikiEditor' );
 		}
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
+
+		$indexFields = $this->pageDisplayHandler->getIndexFieldsForJS( $this->getTitle() );
+
 		$out->addJsConfigVars( [
 			'prpPageQualityUser' =>
-				$content->getLevel()->getUser() ? $content->getLevel()->getUser()->getName() : null
+				$content->getLevel()->getUser() ? $content->getLevel()->getUser()->getName() : null,
+			'prpIndexFields' => $indexFields
 		] );
 	}
 

@@ -181,6 +181,22 @@ class CustomIndexField {
 	}
 
 	/**
+	 * Say if entry should be exposed via mw.config
+	 * @return bool
+	 */
+	public function isAllowedInJs() {
+		if ( isset( $this->config['js'] ) ) {
+			if ( is_bool( $this->config['js'] ) ) {
+				return $this->config['js'];
+			} else {
+				return filter_var( $this->config['js'], FILTER_VALIDATE_BOOLEAN );
+			}
+		} else {
+			return false;
+		}
+	}
+
+	/**
 	 * Say if entry expects a pagelist
 	 * @return bool
 	 */
