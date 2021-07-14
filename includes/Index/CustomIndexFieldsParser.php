@@ -211,6 +211,25 @@ class CustomIndexFieldsParser {
 	}
 
 	/**
+	 * Return the index entry with the same "data" attribute value
+	 *
+	 * @param IndexContent $content
+	 * @param string $dataKey
+	 * @return CustomIndexField
+	 * @throws OutOfBoundsException
+	 */
+	public function getCustomIndexFieldForDataKey( IndexContent $content, string $dataKey ): CustomIndexField {
+		$fieldName = strtolower( $dataKey );
+		$entries = $this->parseCustomIndexFields( $content );
+		foreach ( $entries as $entry ) {
+			if ( strtolower( $entry->getKey() ) === $fieldName ) {
+				return $entry;
+			}
+		}
+		throw new OutOfBoundsException( 'Custom index entry ' . $fieldName . ' does not exist.' );
+	}
+
+	/**
 	 * Return the value of an entry as wikitext with variable replaced with index entries and
 	 * $otherParams
 	 * Example: if 'header' entry is 'Page of {{title}} number {{pagenum}}' with
@@ -265,15 +284,12 @@ class CustomIndexFieldsParser {
 	 * @return string|null
 	 */
 	public function getContentLanguage( IndexContent $content ) {
-		$entries = $this->parseCustomIndexFields( $content );
-
-		foreach ( $entries as $entry ) {
-			if ( $entry->getType() === 'langcode' && $entry->getData() === 'language' ) {
-				return $entry->getStringValue();
-			}
+		try {
+			$entry = $this->getCustomIndexFieldForDataKey( $content, 'language' );
+			return $entry->getType() === 'langcode' ? $entry->getStringValue() : null;
+		} catch ( OutOfBoundsException $e ) {
+			return null;
 		}
-
-		return null;
 	}
 
 }

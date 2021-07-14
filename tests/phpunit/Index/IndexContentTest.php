@@ -267,7 +267,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		];
 		$this->assertEquals(
 			$links,
-			$content->getLinksToNamespace( NS_MAIN, null, true )
+			$content->getLinksToNamespace( NS_MAIN )
 		);
 	}
 
@@ -285,10 +285,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		];
 		$this->assertEquals(
 			$links,
-			$content->getLinksToNamespace(
-				Context::getDefaultContext()->getPageNamespaceId(),
-				Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
-			)
+			$content->getLinksToNamespace( Context::getDefaultContext()->getPageNamespaceId() )
 		);
 	}
 

@@ -4,8 +4,11 @@ namespace ProofreadPage\Parser;
 
 use OutOfBoundsException;
 use Parser;
+use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Index\IndexTemplateStyles;
+use ProofreadPage\Index\WikitextLinksExtractor;
+use ProofreadPage\Link;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageNumber;
@@ -84,7 +87,6 @@ class PagesTagParser {
 		if ( $indexTitle === null || !$indexTitle->exists() ) {
 			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
-		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 		$outputWrapperClass = 'prp-pages-output';
 		$language = $this->parser->getTargetLanguage();
@@ -283,9 +285,7 @@ class PagesTagParser {
 					->setExtensionData( 'proofreadpage_is_toc', true );
 			}
 
-			$indexLinks = $indexContent->getLinksToNamespace(
-				NS_MAIN, $indexTitle, true
-			);
+			$indexLinks = $this->getTableOfContentLinks( $indexTitle );
 			$pageTitle = $this->parser->getTitle();
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
@@ -298,7 +298,7 @@ class PagesTagParser {
 					break;
 				}
 			}
-			if ( $i > 1 ) {
+			if ( $i > 0 ) {
 				$prev = '[[' . $indexLinks[$i - 1]->getTarget()->getFullText() . '|' .
 					$indexLinks[$i - 1]->getLabel() . ']]';
 			}
@@ -332,6 +332,7 @@ class PagesTagParser {
 				$formattedTo = $to_pagenum->getFormattedPageNumber( $language );
 				$h_out .= "|to=$formattedTo";
 			}
+			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 			$attributes = $this->context->getCustomIndexFieldsParser()
 				->parseCustomIndexFieldsForHeader( $indexContent );
 			foreach ( $attributes as $attribute ) {
@@ -397,6 +398,45 @@ class PagesTagParser {
 			}
 		}
 		return $nums;
+	}
+
+	/**
+	 * Fetches all the ns0 links from the "toc" field if it exists or considers all fields and skips the first link.
+	 *
+	 * @param Title $indexTitle
+	 * @return Link[]
+	 */
+	private function getTableOfContentLinks( Title $indexTitle ): array {
+		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+		$linksExtractor = new WikitextLinksExtractor();
+		// @phan-suppress-next-line PhanUndeclaredMethod
+		$parser = $indexContent->getContentHandler()->getParser();
+		$parserOptions = ParserOptions::newFromAnon();
+		try  {
+			$toc = $this->context->getCustomIndexFieldsParser()->getCustomIndexFieldForDataKey( $indexContent, 'toc' );
+			$wikitext = $parser->preprocess(
+				$toc->getStringValue(),
+				$indexTitle, $parserOptions
+			);
+			return $linksExtractor->getLinksToNamespace( $wikitext, NS_MAIN );
+		} catch ( OutOfBoundsException $e ) {
+			$links = [];
+			foreach ( $indexContent->getFields() as $field ) {
+				$wikitext = $parser->preprocess(
+					$field->serialize( CONTENT_FORMAT_WIKITEXT ),
+					$indexTitle, $parserOptions
+				);
+				$links = array_merge(
+					$links,
+					$linksExtractor->getLinksToNamespace( $wikitext, NS_MAIN )
+				);
+			}
+
+			// Hack to ignore the book title
+			array_shift( $links );
+
+			return $links;
+		}
 	}
 
 	/**

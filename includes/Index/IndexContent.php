@@ -5,7 +5,6 @@ namespace ProofreadPage\Index;
 use Content;
 use MagicWord;
 use MWException;
-use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
@@ -156,9 +155,7 @@ class IndexContent extends TextContent {
 		}
 
 		// Get list of pages titles
-		$links = $this->getLinksToNamespace(
-			Context::getDefaultContext()->getPageNamespaceId(), $page->getTitle()
-		);
+		$links = $this->getLinksToNamespace( Context::getDefaultContext()->getPageNamespaceId() );
 		$linksTitle = [];
 		foreach ( $links as $link ) {
 			$linksTitle[] = $link->getTarget();
@@ -242,27 +239,13 @@ class IndexContent extends TextContent {
 	 * Returns all links in a given namespace
 	 *
 	 * @param int $namespace the default namespace id
-	 * @param Title|null $title the Index: page title
-	 * @param bool $withPrepossessing apply preprocessor before looking for links
 	 * @return Link[]
 	 */
-	public function getLinksToNamespace(
-		$namespace, Title $title = null, $withPrepossessing = false
-	) {
+	public function getLinksToNamespace( int $namespace ): array {
 		$linksExtractor = new WikitextLinksExtractor();
 		$links = [];
 		foreach ( $this->fields as $field ) {
 			$wikitext = $field->serialize( CONTENT_FORMAT_WIKITEXT );
-			if ( $withPrepossessing ) {
-				/** @var IndexContentHandler $contentHandler */
-				$contentHandler = $this->getContentHandler();
-				// @phan-suppress-next-line PhanUndeclaredMethod Phan doesn't understand the hint above
-				$wikitext = $contentHandler->getParser()->preprocess(
-					$wikitext,
-					$title,
-					ParserOptions::newFromAnon()
-				);
-			}
 			$links = array_merge(
 				$links, $linksExtractor->getLinksToNamespace( $wikitext, $namespace )
 			);
