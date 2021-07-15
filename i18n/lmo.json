@@ -121,5 +121,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità de la verifica e corezzion de la pagina",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità de la verifica e corezzion de la pagina",
 	"proofreadpage-index-field-category-label": "Categorie",
-	"proofreadpage-index-edit-category-help": "I categorie a inn scrivude senza el prefiss Categoria: e inn separade per mezz del carater \"|\"."
+	"proofreadpage-index-edit-category-help": "I categorie a inn scrivude senza el prefiss Categoria: e inn separade per mezz del carater \"|\".",
+	"tag-proofreadpage-quality0": "Senza test",
+	"tag-proofreadpage-quality1": "Sbozz nananmò corregiud",
+	"tag-proofreadpage-quality2": "Problematich",
+	"tag-proofreadpage-quality3": "Version verificada",
+	"tag-proofreadpage-quality4": "Rilegiuda e sistemada",
+	"tag-proofreadpage-quality0-description": "Modifiche che i hann cambiad la qualitò de la pagina in \"Senza test\"",
+	"tag-proofreadpage-quality1-description": "Modifiche che i hann cambiad la qualità de la pagina in \"Sbozz nananmò coregiud\"",
+	"tag-proofreadpage-quality2-description": "Modifiche che i hann cambiad la qualità de la pagina in \"Problematich\"",
+	"tag-proofreadpage-quality3-description": "Modifiche che i hann cambiad la qualità de la pagina in \"Version verificada\"",
+	"tag-proofreadpage-quality4-description": "Modifiche che i hann cambiad la qualità de la pagina in \"Rilegiuda e sistemada\""
 }

@@ -127,5 +127,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesungsqualität",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesungsqualität",
 	"proofreadpage-index-field-category-label": "Kategorien",
-	"proofreadpage-index-edit-category-help": "Kategorien werden ohne den Category-Präfix geschrieben und durch das \"|\"-Zeichen von einander getrennt."
+	"proofreadpage-index-edit-category-help": "Kategorien werden ohne den Category-Präfix geschrieben und durch das \"|\"-Zeichen von einander getrennt.",
+	"tag-proofreadpage-quality0": "Ohne Text",
+	"tag-proofreadpage-quality1": "Nicht korrekturgelesen",
+	"tag-proofreadpage-quality2": "Problematisch",
+	"tag-proofreadpage-quality3": "Korrekturgelesen",
+	"tag-proofreadpage-quality4": "Geprüft",
+	"tag-proofreadpage-quality0-description": "Änderungen, die die Seitenqualität in „Ohne Text“ geändert haben",
+	"tag-proofreadpage-quality1-description": "Änderungen, die die Seitenqualität in „nicht korrekturgelesen“ geändert haben",
+	"tag-proofreadpage-quality2-description": "Änderungen, die die Seitenqualität in \"Problematisch\" geändert haben",
+	"tag-proofreadpage-quality3-description": "Änderungen, die die Seitenqualität in \"Korrekturgelesen\" geändert haben",
+	"tag-proofreadpage-quality4-description": "Änderungen, die die Seitenqualität in „geprüft“ geändert haben"
 }
