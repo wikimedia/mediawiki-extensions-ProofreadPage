@@ -142,5 +142,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualité de la relecture",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualité de la relecture",
 	"proofreadpage-index-field-category-label": "Catégories",
-	"proofreadpage-index-edit-category-help": "Les catégories sont écrites sans le préfixe <code>Category:</code> et sont séparées par une barre verticale <code>|</code>."
+	"proofreadpage-index-edit-category-help": "Les catégories sont écrites sans le préfixe <code>Category:</code> et sont séparées par une barre verticale <code>|</code>.",
+	"tag-proofreadpage-quality0": "Sans texte",
+	"tag-proofreadpage-quality1": "Non corrigé",
+	"tag-proofreadpage-quality2": "Problématique",
+	"tag-proofreadpage-quality3": "Corrigé",
+	"tag-proofreadpage-quality4": "Validé",
+	"tag-proofreadpage-quality0-description": "Modifications qui ont changé la qualité de la page à « Sans texte »",
+	"tag-proofreadpage-quality1-description": "Modifications qui ont changé la qualité de la page à « Non corrigé »",
+	"tag-proofreadpage-quality2-description": "Modifications qui ont changé la qualité de la page à « Problématique »",
+	"tag-proofreadpage-quality3-description": "Modifications qui ont changé la qualité de la page à « Corrigé »",
+	"tag-proofreadpage-quality4-description": "Modifications qui ont changé la qualité de la page à « Validé »"
 }

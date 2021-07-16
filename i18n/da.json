@@ -125,5 +125,8 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlæsningsstatus",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlæsningsstatus",
 	"proofreadpage-index-field-category-label": "Kategorier",
-	"proofreadpage-index-edit-category-help": "Kategorier skrives uden Kategori:-forstavelsen og adskilles med lodret streg, \"|\"-tegnet."
+	"proofreadpage-index-edit-category-help": "Kategorier skrives uden Kategori:-forstavelsen og adskilles med lodret streg, \"|\"-tegnet.",
+	"tag-proofreadpage-quality0": "Uden tekst",
+	"tag-proofreadpage-quality2": "Problematisk",
+	"tag-proofreadpage-quality4": "Valideret"
 }

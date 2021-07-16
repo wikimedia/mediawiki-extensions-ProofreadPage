@@ -12,6 +12,7 @@
 			"Ole Yves",
 			"Sergey kudryavtsev",
 			"Stjn",
+			"Thothsum",
 			"Vlad5250",
 			"Александр Сигачёв",
 			"Гизатуллина"
@@ -104,5 +105,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Качество вычитки",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Качество вычитки",
 	"proofreadpage-index-field-category-label": "Категории",
-	"proofreadpage-index-edit-category-help": "Категории указываются без префикса \"Category:\" и разделяются вертикальной чертой \"|\"."
+	"proofreadpage-index-edit-category-help": "Категории указываются без префикса \"Category:\" и разделяются вертикальной чертой \"|\".",
+	"tag-proofreadpage-quality0": "Без текста",
+	"tag-proofreadpage-quality1": "Не вычитана",
+	"tag-proofreadpage-quality4": "Проверено",
+	"tag-proofreadpage-quality1-description": "Правки, в результате которых качество страницы изменилось на \"Не вычитана\"",
+	"tag-proofreadpage-quality4-description": "Правки, в результате которых качество страницы изменилось на \"Подтверждено\"."
 }
