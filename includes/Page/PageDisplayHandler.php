@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use Html;
+use MediaTransformOutput;
 use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
@@ -127,7 +128,7 @@ class PageDisplayHandler {
 	public function buildPageContainerEnd( Title $pageTitle ) {
 		return Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'prp-page-image' ] ) .
-			$this->buildImageHtml( $pageTitle, [ 'max-width' => $this->getImageWidth( $pageTitle ) ] ) .
+			$this->buildImageHtml( $pageTitle ) .
 			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' );
 	}
@@ -135,10 +136,42 @@ class PageDisplayHandler {
 	/**
 	 * Return HTML for the image
 	 * @param Title $pageTitle
-	 * @param array $options
 	 * @return null|string
 	 */
-	private function buildImageHtml( Title $pageTitle, array $options ) {
+	private function buildImageHtml( Title $pageTitle ) {
+		$thumbnail = $this->getImageThumbnail( $pageTitle );
+		if ( !$thumbnail ) {
+			return null;
+		}
+		return $thumbnail->toHtml();
+	}
+
+	/**
+	 * Get the full-sized image for the given page.
+	 * @param Title $pageTitle
+	 * @return MediaTransformOutput|null
+	 */
+	public function getImageFullSize( Title $pageTitle ): ?MediaTransformOutput {
+		return $this->getImageTransform( $pageTitle, false );
+	}
+
+	/**
+	 * Get a thumbnail image for the given page. This will be of the default width, or the width set in the Index page.
+	 * @param Title $pageTitle
+	 * @return MediaTransformOutput|null
+	 */
+	public function getImageThumbnail( Title $pageTitle ): ?MediaTransformOutput {
+		return $this->getImageTransform( $pageTitle, true );
+	}
+
+	/**
+	 * Get the given Page's image, resized if required.
+	 *
+	 * @param Title $pageTitle The Page title, e.g. `Page:Lorem.pdf/4`.
+	 * @param bool $constrainWidth Reduce the image width to the configured max (1024 px by default).
+	 * @return MediaTransformOutput|null Null if the image could not be determined.
+	 */
+	private function getImageTransform( Title $pageTitle, bool $constrainWidth = true ): ?MediaTransformOutput {
 		$fileProvider = $this->context->getFileProvider();
 		try {
 			$image = $fileProvider->getFileForPageTitle( $pageTitle );
@@ -149,8 +182,11 @@ class PageDisplayHandler {
 			return null;
 		}
 		$width = $image->getWidth();
-		if ( isset( $options['max-width'] ) && $width > $options['max-width'] ) {
-			$width = $options['max-width'];
+		if ( $constrainWidth ) {
+			$maxWidth = $this->getImageWidth( $pageTitle );
+			if ( $width > $maxWidth ) {
+				$width = $maxWidth;
+			}
 		}
 		$transformAttributes = [
 			'width' => $width
@@ -166,10 +202,6 @@ class PageDisplayHandler {
 		if ( !$handler || !$handler->normaliseParams( $image, $transformAttributes ) ) {
 			return null;
 		}
-		$thumbnail = $image->transform( $transformAttributes );
-		if ( !$thumbnail ) {
-			return null;
-		}
-		return $thumbnail->toHtml( $options );
+		return $image->transform( $transformAttributes ) ?: null;
 	}
 }
