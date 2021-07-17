@@ -497,7 +497,7 @@ class ProofreadPage {
 	}
 
 	/**
-	 * Add links in the navigation menus related the the current page
+	 * Add links in the navigation menus related the current page
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
 	 *
 	 * @param SkinTemplate $skin
