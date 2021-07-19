@@ -46,7 +46,7 @@ class PagelistTagParser {
 	public function render( array $args ) {
 		$title = $this->parser->getTitle();
 		if ( !$title->inNamespace( $this->context->getIndexNamespaceId() ) ) {
-			return '';
+			return $this->formatError( 'proofreadpage_pagelistnotallowed' );
 		}
 		$pageList = new PageList( $args );
 		try {

@@ -18,6 +18,8 @@
 	"proofreadpage_nologin": "Not logged in",
 	"proofreadpage_nologintext": "You must be [[Special:UserLogin|logged in]] to modify the proofreading status of pages.",
 	"proofreadpage_notallowedtext": "You are not allowed to change the proofreading status of this page.",
+	"proofreadpage_pagesnotallowed": "Error: The pages tag cannot be used in the Page: and Index: namespaces",
+	"proofreadpage_pagelistnotallowed": "Error: The pagelist tag can only be used in the Index: namespace",
 	"proofreadpage_dataconfig_badformatted": "Bug in data configuration",
 	"proofreadpage_dataconfig_badformattedtext": "The page [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON.",
 	"proofreadpage_number_expected": "Error: Numeric value expected",
