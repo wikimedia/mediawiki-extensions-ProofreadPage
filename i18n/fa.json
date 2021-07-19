@@ -6,6 +6,7 @@
 			"E THP",
 			"Ebraminio",
 			"Huji",
+			"Jeeputer",
 			"Ladsgroup",
 			"Mardetanha",
 			"Mjbmr",
@@ -100,5 +101,14 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "بله",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "خیر",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "کیفیت نمونه‌خوانی",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "کیفیت نمونه‌خوانی"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "کیفیت نمونه‌خوانی",
+	"tag-proofreadpage-quality0": "بدون متن",
+	"tag-proofreadpage-quality2": "مشکل‌دار",
+	"tag-proofreadpage-quality3": "بازخوانی شده",
+	"tag-proofreadpage-quality4": "هم‌سنجی‌شده",
+	"tag-proofreadpage-quality0-description": "ویرایش‌هایی که کیفیت صفحه را به «بدون متن» تغییر داده‌اند",
+	"tag-proofreadpage-quality1-description": "ویرایش‌هایی که کیفیت صفحه را به «بازخوانی نشده» تغییر داده‌اند",
+	"tag-proofreadpage-quality2-description": "ویرایش‌هایی که کیفیت صفحه را به «مشکل‌دار» تغییر داده‌اند",
+	"tag-proofreadpage-quality3-description": "ویرایش‌هایی که کیفیت صفحه را به «بازخوانی شده» تغییر داده‌اند",
+	"tag-proofreadpage-quality4-description": "ویرایش‌هایی که کیفیت صفحه را به «هم‌سنجی‌شده» تغییر داده‌اند"
 }

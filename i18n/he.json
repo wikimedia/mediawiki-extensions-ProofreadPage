@@ -127,5 +127,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "איכות הגהה",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "איכות הגהה",
 	"proofreadpage-index-field-category-label": "קטגוריות",
-	"proofreadpage-index-edit-category-help": "הקטגוריות נכתבנות ללא התחילית Category: (קטגוריה:) ומופרדות במקל אנכי (|)."
+	"proofreadpage-index-edit-category-help": "הקטגוריות נכתבנות ללא התחילית Category: (קטגוריה:) ומופרדות במקל אנכי (|).",
+	"tag-proofreadpage-quality0": "ללא טקסט",
+	"tag-proofreadpage-quality1": "לא בוצעה הגהה",
+	"tag-proofreadpage-quality2": "בעייתי",
+	"tag-proofreadpage-quality3": "בוצעה הגהה",
+	"tag-proofreadpage-quality4": "אומת",
+	"tag-proofreadpage-quality0-description": "עריכות ששינו את איכות הדף ל\"ללא טקסט\"",
+	"tag-proofreadpage-quality1-description": "עריכות ששינו את איכות הדף ל\"לא בוצעה הגהה\"",
+	"tag-proofreadpage-quality2-description": "עריכות ששינו את איכות הדף ל\"בעייתי\"",
+	"tag-proofreadpage-quality3-description": "עריכות ששינו את איכות הדף ל\"בוצעה הגהה\"",
+	"tag-proofreadpage-quality4-description": "עריכות ששינו את איכות הדף ל\"אומת\""
 }

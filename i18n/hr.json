@@ -5,6 +5,7 @@
 			"Dalibor Bosits",
 			"Dnik",
 			"Ex13",
+			"Neptune, the Mystic",
 			"Roberta F.",
 			"SpeedyGonsales"
 		]
@@ -80,5 +81,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Da",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kakvoća jezikoispravka",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kakvoća jezikoispravljanja"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kakvoća jezikoispravljanja",
+	"tag-proofreadpage-quality0": "Bez teksta"
 }

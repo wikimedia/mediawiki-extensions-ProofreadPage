@@ -3,6 +3,7 @@
 		"authors": [
 			"Anakmalaysia",
 			"Cwlin0416",
+			"Emojiwiki",
 			"Gaoxuewei",
 			"Horacewai2",
 			"Kly",
@@ -133,5 +134,7 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校對品質",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校對品質",
 	"proofreadpage-index-field-category-label": "分類",
-	"proofreadpage-index-edit-category-help": "分類以不帶 Category: 前綴寫入，並透過豎線字元 \"|\" 區分。"
+	"proofreadpage-index-edit-category-help": "分類以不帶 Category: 前綴寫入，並透過豎線字元 \"|\" 區分。",
+	"tag-proofreadpage-quality2": "有問題",
+	"tag-proofreadpage-quality4": "已驗證"
 }

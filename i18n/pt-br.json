@@ -132,5 +132,13 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualidade de revisão",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualidade de revisão",
 	"proofreadpage-index-field-category-label": "Categorias",
-	"proofreadpage-index-edit-category-help": "As categorias são escritas sem o prefixo Categoria: e são separadas por um \"|\"."
+	"proofreadpage-index-edit-category-help": "As categorias são escritas sem o prefixo Categoria: e são separadas por um \"|\".",
+	"tag-proofreadpage-quality0": "Sem texto",
+	"tag-proofreadpage-quality1": "Não revisado",
+	"tag-proofreadpage-quality2": "Problemático",
+	"tag-proofreadpage-quality3": "Revisado",
+	"tag-proofreadpage-quality4": "Validado",
+	"tag-proofreadpage-quality1-description": "Edições que alteraram a qualidade da página para \"Não revisado\"",
+	"tag-proofreadpage-quality3-description": "Edições que alteraram a qualidade da página para \"Revisado\"",
+	"tag-proofreadpage-quality4-description": "Edições que alteraram a qualidade da página para \"Validado\""
 }

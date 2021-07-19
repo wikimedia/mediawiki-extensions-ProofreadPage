@@ -9,6 +9,7 @@
 			"Hunsvotti",
 			"Jaakonam",
 			"Kulmalukko",
+			"MITO",
 			"Mediawikitranslator",
 			"Nike",
 			"Olli",
@@ -99,5 +100,9 @@
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Sivujen valinta",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sivut",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Kyllä",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei",
+	"tag-proofreadpage-quality0": "Ilman tekstiä",
+	"tag-proofreadpage-quality1": "Ei oikolukua",
+	"tag-proofreadpage-quality2": "Ongelmallinen",
+	"tag-proofreadpage-quality4": "Hyväksytty"
 }

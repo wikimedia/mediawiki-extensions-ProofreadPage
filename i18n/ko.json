@@ -113,5 +113,15 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "아니오",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "교정 품질",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "교정 품질",
-	"proofreadpage-index-field-category-label": "분류"
+	"proofreadpage-index-field-category-label": "분류",
+	"tag-proofreadpage-quality0": "텍스트 없음",
+	"tag-proofreadpage-quality1": "교정 안 됨",
+	"tag-proofreadpage-quality2": "문제 있음",
+	"tag-proofreadpage-quality3": "교정됨",
+	"tag-proofreadpage-quality4": "검증됨",
+	"tag-proofreadpage-quality0-description": "문서 품질을 \"텍스트 없음\"으로 변경한 편집",
+	"tag-proofreadpage-quality1-description": "문서 품질을 \"교정 안 됨\"으로 변경한 편집",
+	"tag-proofreadpage-quality2-description": "문서 품질을 \"문제 있음\"으로 변경한 편집",
+	"tag-proofreadpage-quality3-description": "문서 품질을 \"교정됨\"으로 변경한 편집",
+	"tag-proofreadpage-quality4-description": "문서 품질을 \"검증됨\"으로 변경한 편집"
 }
