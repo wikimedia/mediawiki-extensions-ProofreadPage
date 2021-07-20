@@ -132,6 +132,8 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校正の品質",
 	"proofreadpage-index-field-category-label": "カテゴリ",
 	"proofreadpage-index-edit-category-help": "カテゴリはカテゴリ:接頭辞を省略して入力し、パイプ記号 \"|\" で区切ります。",
+	"tag-proofreadpage-quality0": "テキストなし",
+	"tag-proofreadpage-quality1": "未校正",
 	"tag-proofreadpage-quality2": "問題あり",
 	"tag-proofreadpage-quality4": "検証済"
 }

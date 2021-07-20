@@ -27,6 +27,8 @@
 	"proofreadpage_nologin": "לא נכנסת לחשבון",
 	"proofreadpage_nologintext": "יש [[Special:UserLogin|להיכנס לחשבון]] כדי לשנות את מצב ההגהה של דפים.",
 	"proofreadpage_notallowedtext": "אינך מורשה לשנות את מצב ההגהה של הדף הזה.",
+	"proofreadpage_pagesnotallowed": "שגיאה: לא ניתן להשתמש בתג pages במרחבי השמות דף (Page) ומפתח (Index)",
+	"proofreadpage_pagelistnotallowed": "שגיאה: ניתן להשתמש בתג pagelist רק במרחב מפתח (Index)",
 	"proofreadpage_dataconfig_badformatted": "באג בהגדרות נתונים",
 	"proofreadpage_dataconfig_badformattedtext": "הדף [[Mediawiki:Proofreadpage index data config]] אינו כתוב בתסדיר JSON תקין.",
 	"proofreadpage_number_expected": "שגיאה: נדרש ערך מספרי",

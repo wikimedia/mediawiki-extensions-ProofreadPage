@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gazeb"
+			"Gazeb",
+			"Gramo6"
 		]
 	},
 	"indexpages": "Список індексовых сторінок",
@@ -52,5 +53,6 @@
 	"proofreadpage-button-zoom-out-label": "Зменшыти",
 	"proofreadpage-button-reset-zoom-label": "Ресет звекшыня",
 	"proofreadpage-button-zoom-in-label": "Звекшыти",
-	"proofreadpage-button-toggle-layout-label": "Вертікалне / горізонтално розложіня"
+	"proofreadpage-button-toggle-layout-label": "Вертікалне / горізонтално розложіня",
+	"tag-proofreadpage-quality0": "Без тексту"
 }

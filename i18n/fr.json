@@ -40,6 +40,8 @@
 	"proofreadpage_nologin": "Non connecté",
 	"proofreadpage_nologintext": "Vous devez être [[Special:UserLogin|connecté]] pour modifier le statut de correction des pages.",
 	"proofreadpage_notallowedtext": "Vous n'êtes pas autorisé à modifier le statut de correction de cette page.",
+	"proofreadpage_pagesnotallowed": "Erreur : La balise pages ne peut pas être utilisée dans les espaces de nom Page: et Index:",
+	"proofreadpage_pagelistnotallowed": "Erreur : La balise pagelist ne peut être utilisée que dans l’espace de noms Index:",
 	"proofreadpage_dataconfig_badformatted": "Bogue dans la configuration des données",
 	"proofreadpage_dataconfig_badformattedtext": "La page [[Mediawiki:Proofreadpage index data config]] n'est pas correctement mise en forme JSON.",
 	"proofreadpage_number_expected": "Erreur : une valeur numérique est attendue",
