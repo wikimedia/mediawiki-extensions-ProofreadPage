@@ -21,6 +21,8 @@
 	"proofreadpage_nologin": "Non ge sì collegate",
 	"proofreadpage_nologintext": "Tu a essere [[Special:UserLogin|collegate]] pe cangià 'u state de verifiche de le pàggene.",
 	"proofreadpage_notallowedtext": "Non ge t'è permesse cangià 'u state de verifiche de sta pàgene.",
+	"proofreadpage_pagesnotallowed": "Errore: 'u tag de le pàggene non ge pò essere ausate jndr'à le namespace Page: e Index:",
+	"proofreadpage_pagelistnotallowed": "Errore: 'u tag pagelist pò essere ausate sulamende jndr'à 'u namespace Index:",
 	"proofreadpage_dataconfig_badformatted": "Errore jndr'à configurazione de le date",
 	"proofreadpage_dataconfig_badformattedtext": "'A pàgene [[Mediawiki:Proofreadpage index data config]] non g'è ben formate pe JSON.",
 	"proofreadpage_number_expected": "Errore: aspettamme 'nu valore numereche",

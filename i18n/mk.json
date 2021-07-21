@@ -22,6 +22,8 @@
 	"proofreadpage_nologin": "Не сте најавени",
 	"proofreadpage_nologintext": "Морате да [[Special:UserLogin|се најавите]] за да можете да го менувате статусот на коректурата на страници.",
 	"proofreadpage_notallowedtext": "Не ви е дозволено да го менувате статусот на коректурата на оваа страница.",
+	"proofreadpage_pagesnotallowed": "Грешка: Ознаката за страници не може да се користи во именските простори Page: и Index:",
+	"proofreadpage_pagelistnotallowed": "Грешка: Ознаката за список на страници може да се користи само во именскиот простор Index:",
 	"proofreadpage_dataconfig_badformatted": "Грешка во поставеноста на податоците",
 	"proofreadpage_dataconfig_badformattedtext": "Страницата [[Mediawiki:Proofreadpage index data config]] не е добро форматирана како JSON.",
 	"proofreadpage_number_expected": "Грешка: се очекува бројчена вредност",

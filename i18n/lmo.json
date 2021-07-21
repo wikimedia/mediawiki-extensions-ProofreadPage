@@ -21,6 +21,8 @@
 	"proofreadpage_nologin": "Minga autenticad",
 	"proofreadpage_nologintext": "Ti te gh'hee [[Special:UserLogin|andà dent al sistema]] per portà di cambiament al stat de corezzion di pagine.",
 	"proofreadpage_notallowedtext": "Te see minga autorizzad a cambià el stat de corezzion de questa pagina chì.",
+	"proofreadpage_pagesnotallowed": "Eror: I etichete di pagine i poden minga vesser drovade in la pagina: and Indes: spazzi di nom",
+	"proofreadpage_pagelistnotallowed": "Erorː L'eticheta \"lista di pagine\" la po vesser drovada domà in de l'Indesː spazzi di nom",
 	"proofreadpage_dataconfig_badformatted": "Problema in la forma di dati",
 	"proofreadpage_dataconfig_badformattedtext": "La pagina [[Mediawiki:Proofreadpage index data config]] a l'è minga in d'un formad JSON sgiust.",
 	"proofreadpage_number_expected": "Eror: A gh'è besogn de un valor numerich",

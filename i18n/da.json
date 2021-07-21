@@ -127,6 +127,8 @@
 	"proofreadpage-index-field-category-label": "Kategorier",
 	"proofreadpage-index-edit-category-help": "Kategorier skrives uden Kategori:-forstavelsen og adskilles med lodret streg, \"|\"-tegnet.",
 	"tag-proofreadpage-quality0": "Uden tekst",
+	"tag-proofreadpage-quality1": "Ikke korrekturlæst",
 	"tag-proofreadpage-quality2": "Problematisk",
+	"tag-proofreadpage-quality3": "Korrekturlæst",
 	"tag-proofreadpage-quality4": "Valideret"
 }
