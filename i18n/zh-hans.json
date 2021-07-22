@@ -21,6 +21,7 @@
 			"Wmr89502270",
 			"Xiaomingyan",
 			"Yfdyh000",
+			"Zhang8569",
 			"Zhuyifei1999",
 			"予弦",
 			"沈澄心",
@@ -43,6 +44,8 @@
 	"proofreadpage_nologin": "未登录",
 	"proofreadpage_nologintext": "您必须[[Special:UserLogin|先登录]]才能修改页面的校对状态。",
 	"proofreadpage_notallowedtext": "您没有获得修改这个页面校对状态的许可。",
+	"proofreadpage_pagesnotallowed": "错误：不能在 Page: 和 Index: 命名空间中使用 pages 标记",
+	"proofreadpage_pagelistnotallowed": "错误：pagelist 标记只能在 Index: 命名空间中使用",
 	"proofreadpage_dataconfig_badformatted": "数据配置错误",
 	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]]页面不是标准的JSON格式。",
 	"proofreadpage_number_expected": "错误：不为数值",
@@ -143,5 +146,14 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校对质量",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校对质量",
 	"proofreadpage-index-field-category-label": "分类",
-	"proofreadpage-index-edit-category-help": "类别的书写没有类别：前缀，并由管道“|”字符分隔。"
+	"proofreadpage-index-edit-category-help": "类别的书写没有类别：前缀，并由管道“|”字符分隔。",
+	"tag-proofreadpage-quality0": "没有文字",
+	"tag-proofreadpage-quality1": "未校对",
+	"tag-proofreadpage-quality2": "有问题的",
+	"tag-proofreadpage-quality4": "已核对",
+	"tag-proofreadpage-quality0-description": "将页面质量更改为“无文本”的编辑",
+	"tag-proofreadpage-quality1-description": "将页面质量更改为“未校对”的编辑",
+	"tag-proofreadpage-quality2-description": "将页面质量更改为“有问题”的编辑",
+	"tag-proofreadpage-quality3-description": "将页面质量更改为“已验证”的编辑",
+	"tag-proofreadpage-quality4-description": "将页面质量更改为“已验证”的编辑"
 }
