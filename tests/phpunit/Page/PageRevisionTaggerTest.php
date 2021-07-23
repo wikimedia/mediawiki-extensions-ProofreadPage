@@ -13,7 +13,7 @@ use ProofreadPageTestCase;
  */
 class PageRevisionTaggerTest extends ProofreadPageTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->tablesUsed[] = 'change_tag';

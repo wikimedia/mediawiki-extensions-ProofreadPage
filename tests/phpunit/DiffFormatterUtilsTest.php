@@ -15,7 +15,7 @@ class DiffFormatterUtilsTest extends ProofreadPageTestCase {
 	 */
 	protected $diffFormatterUtils;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->diffFormatterUtils = new DiffFormatterUtils();

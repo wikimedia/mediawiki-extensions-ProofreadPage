@@ -302,7 +302,7 @@ class IndexContentHandler extends TextContentHandler {
 	 * @param IndexContent $content
 	 * @return UpdateIndexQualityStats
 	 */
-	private function buildIndexQualityStatsUpdate( Title $title, IndexContent $content ) : UpdateIndexQualityStats {
+	private function buildIndexQualityStatsUpdate( Title $title, IndexContent $content ): UpdateIndexQualityStats {
 		$context = Context::getDefaultContext();
 		return new UpdateIndexQualityStats(
 			MediaWikiServices::getInstance()->getDBLoadBalancer(),
@@ -316,7 +316,7 @@ class IndexContentHandler extends TextContentHandler {
 	 * @param Title $title
 	 * @return DeleteIndexQualityStats
 	 */
-	private function buildIndexQualityStatsDelete( Title $title ) : DeleteIndexQualityStats {
+	private function buildIndexQualityStatsDelete( Title $title ): DeleteIndexQualityStats {
 		return new DeleteIndexQualityStats( MediaWikiServices::getInstance()->getDBLoadBalancer(), $title );
 	}
 }

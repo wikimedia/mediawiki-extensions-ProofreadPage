@@ -20,7 +20,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	 */
 	private $requestContext;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->requestContext = new RequestContext();

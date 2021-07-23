@@ -24,7 +24,7 @@ class PageContentTest extends ProofreadPageTestCase {
 	 */
 	private $requestContext;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		// Anon user

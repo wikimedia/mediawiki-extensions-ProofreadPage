@@ -94,7 +94,7 @@ class TranslusionPagesModifier {
 	 * @param ParserOutput $parserOutput
 	 * @return Title[]
 	 */
-	private function getIncludedPagePagesTitles( ParserOutput $parserOutput ) : array {
+	private function getIncludedPagePagesTitles( ParserOutput $parserOutput ): array {
 		$templates = $parserOutput->getTemplates();
 
 		if ( !array_key_exists( $this->pageNamespaceId, $templates ) ) {
@@ -112,7 +112,7 @@ class TranslusionPagesModifier {
 	 * @param array $pages
 	 * @return Title|null
 	 */
-	private function getIndexTitleForPages( array $pages ) : ?Title {
+	private function getIndexTitleForPages( array $pages ): ?Title {
 		foreach ( $pages as $page ) {
 			$indexTitle = $this->indexForPageLookup->getIndexForPageTitle( $page );
 			if ( $indexTitle !== null ) {
@@ -126,7 +126,7 @@ class TranslusionPagesModifier {
 	 * @param Title[] $pages
 	 * @return PagesQualityStats
 	 */
-	private function getQualityStatsForPages( array $pages ) : PagesQualityStats {
+	private function getQualityStatsForPages( array $pages ): PagesQualityStats {
 		$this->pageQualityLevelLookup->prefetchQualityLevelForTitles( $pages );
 
 		$numberOfPagesByLevel = [];
@@ -151,7 +151,7 @@ class TranslusionPagesModifier {
 	private function buildQualityStatsBar(
 		PagesQualityStats $qualityStats,
 		IContextSource $contextSource
-	) : string {
+	): string {
 		$totalPages = $qualityStats->getNumberOfPages();
 		$percentages = [];
 		for ( $i = 4; $i >= 0; $i-- ) {

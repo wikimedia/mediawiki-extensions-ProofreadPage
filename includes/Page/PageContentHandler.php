@@ -422,7 +422,7 @@ class PageContentHandler extends TextContentHandler {
 	 * @param Title $pageTitle
 	 * @return Title|null
 	 */
-	private function getIndexTitle( Title $pageTitle ) : ?Title {
+	private function getIndexTitle( Title $pageTitle ): ?Title {
 		return Context::getDefaultContext()->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
 	}
 
@@ -436,7 +436,7 @@ class PageContentHandler extends TextContentHandler {
 		Title $pageTitle,
 		Title $indexTitle,
 		Content $pageContent = null
-	) : UpdateIndexQualityStats {
+	): UpdateIndexQualityStats {
 		$context = Context::getDefaultContext();
 		$newLevel = ( $pageContent instanceof PageContent )
 			? $pageContent->getLevel()->getLevel()

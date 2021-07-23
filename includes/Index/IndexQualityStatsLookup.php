@@ -27,7 +27,7 @@ class IndexQualityStatsLookup {
 	 * @param Title $indexTitle
 	 * @return PagesQualityStats
 	 */
-	public function getStatsForIndexTitle( Title $indexTitle ) : PagesQualityStats {
+	public function getStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {
 		$cacheKey = $indexTitle->getPrefixedDBkey();
 		if ( !array_key_exists( $cacheKey, $this->cache ) ) {
 			$this->cache[$cacheKey] = $this->fetchStatsForIndexTitle( $indexTitle );
@@ -39,7 +39,7 @@ class IndexQualityStatsLookup {
 	 * @param Title $indexTitle
 	 * @return PagesQualityStats
 	 */
-	private function fetchStatsForIndexTitle( Title $indexTitle ) : PagesQualityStats {
+	private function fetchStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {
 		$row = $this->loadBalancer->getConnection( ILoadBalancer::DB_REPLICA )->selectRow(
 			[ 'pr_index' ],
 			[ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],

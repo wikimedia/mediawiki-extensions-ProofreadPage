@@ -28,7 +28,7 @@ class PagesQualityStats {
 	 * @param PagesQualityStats $other
 	 * @return bool
 	 */
-	public function equals( PagesQualityStats $other ) : bool {
+	public function equals( PagesQualityStats $other ): bool {
 		return $this->numberOfPages == $other->numberOfPages &&
 			$this->numberOfPagesByLevel == $other->numberOfPagesByLevel;
 	}
@@ -36,7 +36,7 @@ class PagesQualityStats {
 	/**
 	 * @return int
 	 */
-	public function getNumberOfPages() : int {
+	public function getNumberOfPages(): int {
 		return $this->numberOfPages;
 	}
 
@@ -44,7 +44,7 @@ class PagesQualityStats {
 	 * @param int $level
 	 * @return int
 	 */
-	public function getNumberOfPagesForQualityLevel( int $level ) : int {
+	public function getNumberOfPagesForQualityLevel( int $level ): int {
 		if ( !array_key_exists( $level, $this->numberOfPagesByLevel ) ) {
 			return 0;
 		}
@@ -54,7 +54,7 @@ class PagesQualityStats {
 	/**
 	 * @return int
 	 */
-	public function getNumberOfPagesWithoutQualityLevel() : int {
+	public function getNumberOfPagesWithoutQualityLevel(): int {
 		return $this->numberOfPages - array_sum( $this->numberOfPagesByLevel );
 	}
 
@@ -63,7 +63,7 @@ class PagesQualityStats {
 	 * @param int $newLevel
 	 * @return self
 	 */
-	public function withLevelChange( int $oldLevel, int $newLevel ) : self {
+	public function withLevelChange( int $oldLevel, int $newLevel ): self {
 		$newNumberOfPagesByLevel = $this->numberOfPagesByLevel;
 		$newNumberOfPagesByLevel[$oldLevel]--;
 		$newNumberOfPagesByLevel[$newLevel]++;
@@ -74,7 +74,7 @@ class PagesQualityStats {
 	 * @param int $newLevel
 	 * @return self
 	 */
-	public function withPageCreation( int $newLevel ) : self {
+	public function withPageCreation( int $newLevel ): self {
 		$newNumberOfPagesByLevel = $this->numberOfPagesByLevel;
 		$newNumberOfPagesByLevel[$newLevel]++;
 		return new PagesQualityStats( $this->numberOfPages, $newNumberOfPagesByLevel );
@@ -84,7 +84,7 @@ class PagesQualityStats {
 	 * @param int $oldLevel
 	 * @return self
 	 */
-	public function withPageDeletion( int $oldLevel ) : self {
+	public function withPageDeletion( int $oldLevel ): self {
 		$newNumberOfPagesByLevel = $this->numberOfPagesByLevel;
 		$newNumberOfPagesByLevel[$oldLevel]--;
 		return new PagesQualityStats( $this->numberOfPages, $newNumberOfPagesByLevel );
