@@ -45,7 +45,7 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 	 * @inheritDoc
 	 */
 	public function doDBUpdates() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		if ( !$dbw->fieldExists( 'page', 'page_content_model', __METHOD__ ) ) {
 			$this->error( 'page_content_model field of page table does not exists.' );
 			return false;
