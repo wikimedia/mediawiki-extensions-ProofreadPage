@@ -89,6 +89,8 @@
 	"proofreadpage-pagelist-dialog-cancel": "semucikel",
 	"proofreadpage-pagelist-parsing-error-morethanone": "izua tjaliaw a sinipukeljang na <pagelist/> a puita i kinaizuanan na wikivecik.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "neka na <pagelist /> a sinipukeljangan",
+	"proofreadpage-pagelist-parsing-error-php": "在後端解析頁面清單標籤時發生以下錯誤，$1",
+	"proofreadpage-pagelist-parsing-error-unknown": "偵測到意外錯誤。請以控制台的日誌來回報此錯誤給 phabricator.wikimedia.org。",
 	"proofreadpage-pagelist-parsing-error-network-issues": "inika malaing a palap ta lisadayan na sapitj ayatua kipaula ta padjadjaljun tua ljingas, kiqayamu a mumalj",
 	"proofreadpage-pagelist-dialog-title": "venecivecik ta lisadayan na sapitj a qaqataman ta $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "padjuredjur ta maumaljan",
@@ -117,5 +119,15 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ini",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "kitjaumalj ta kinananguaq a vinecikan",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "kitjaumalj ta kinananguaq a vinecikan",
-	"proofreadpage-index-field-category-label": "pinakaizuan"
+	"proofreadpage-index-field-category-label": "pinakaizuan",
+	"tag-proofreadpage-quality0": "neka vinecikan",
+	"tag-proofreadpage-quality1": "ini anan a kakitjaumalj ta vinecikan",
+	"tag-proofreadpage-quality2": "izua vangavangan",
+	"tag-proofreadpage-quality3": "kinitjaumaljan anga a vinecikan",
+	"tag-proofreadpage-quality4": "qinayam anga",
+	"tag-proofreadpage-quality0-description": "\"nekanga vecik\" tu aicu a vinecikan nua i sapitj",
+	"tag-proofreadpage-quality1-description": "\"ini anan a kakitjaumalj\" taicu a vinecikan nua i sapitj",
+	"tag-proofreadpage-quality2-description": "\"pazangal\" aicu a vinecikan nua i sapitj",
+	"tag-proofreadpage-quality3-description": "\"kinitjaumaljan anga\" taicu a vinecikan nua i sapitj",
+	"tag-proofreadpage-quality4-description": "\"qinayam anga\" tu aicu a vinecikan nua i sapitj"
 }

@@ -21,6 +21,7 @@
 	"proofreadpage_nologin": "Caay ka pacomod",
 	"proofreadpage_nologintext": "akaka cai kiso pi-[[Special:UserLogin| micomod ]]ta manga’ay misalof toya misongila’an a felih.",
 	"proofreadpage_notallowedtext": "Caay ka hayda kiso a misalof tona i kamayay ho no tao a felih",
+	"proofreadpage_pagesnotallowed": "sampolo",
 	"proofreadpage_dataconfig_badformatted": "O Bug no papatoneken a tatiri’en",
 	"proofreadpage_dataconfig_badformattedtext": "Caay ko hiw-zun-ay JSON [[Mediawiki:Proofreadpage index data config]] nona felih",
 	"proofreadpage_number_expected": "Moraraw: caay ko ditek",
@@ -66,6 +67,8 @@
 	"proofreadpage_specialpage_searcherrortext": "Caay kanga’ay a matayal ko misolapay a ing-cin. Kangodoan kiso.",
 	"proofreadpage_source": "lalengatan",
 	"proofreadpage_source_message": "O sapipatireng tona tilid kona pi-se-kyi-nan",
+	"proofreadpage_styles": "sampolo",
+	"proofreadpage_styles_message": "CSS 樣式已套用到此文字",
 	"action-pagequality": "misalof  to felih  ce-lyang-pyaw-ce",
 	"right-pagequality": "misalof  to felih  ce-lyang-pyaw-ce",
 	"action-pagequality-admin": "mi-pyaw-ci to caay ko lalalangen i felih a pisinanot",
@@ -94,6 +97,7 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Caay ka’araw ko lalengatan nisamamangan a conga nona se-kyin.",
 	"proofreadpage-pagelist-type": "O kahirahira no fangko no felih: $1",
 	"proofreadpage-pagelist-scan-number": "Fangko no se-kyin: $1",
+	"proofreadpage-pagelist-display-number": "顯示號碼：$1",
 	"proofreadpage-pagelist-assignedpagenumber": "Mapasilsil to i $1 a fangko no felih kona felih: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "o pakafana’",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Caay mapahayda ko pifalic to fangko. O maamaan ko mahadakay itini tona lan-wey i, ano misafaeloh i, o mamasorikor.",
@@ -117,5 +121,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "misongila’ to pinangan no…",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "misongila’ to pinangan no…",
 	"proofreadpage-index-field-category-label": "pisakilac",
-	"proofreadpage-index-edit-category-help": "O away ko Category: a sapatongal a tilid ko pikilac, o \"|\" a sorit ko sapalaliyas."
+	"proofreadpage-index-edit-category-help": "O away ko Category: a sapatongal a tilid ko pikilac, o \"|\" a sorit ko sapalaliyas.",
+	"tag-proofreadpage-quality0": "Awaay ko sorit",
+	"tag-proofreadpage-quality1": "Caayay ho kasongila’ a misalof",
+	"tag-proofreadpage-quality2": "cimondayay",
+	"tag-proofreadpage-quality3": "Masongila’ay to misalof",
+	"tag-proofreadpage-quality4": "Mapawacayay to"
 }

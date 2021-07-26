@@ -4,6 +4,7 @@
 			"BaRaN6161 TURK",
 			"Erdemaslancan",
 			"Erkan Yilmaz",
+			"Hedda",
 			"Joseph",
 			"Mach",
 			"Mirzali",
@@ -34,6 +35,8 @@
 	"proofreadpage_nologin": "Oturum açık değil",
 	"proofreadpage_nologintext": "Sayfaların istinsah durumunu değiştirmek için [[Special:UserLogin|oturum açmalısınız]].",
 	"proofreadpage_notallowedtext": "Bu sayfanın istinsah durumunu değiştirmenize izin verilmiyor.",
+	"proofreadpage_pagesnotallowed": "Hata: Sayfa etiketi, Sayfa: ve Dizin: ad alanlarında kullanılamaz",
+	"proofreadpage_pagelistnotallowed": "Hata: Sayfa listesi etiketi, yalnızca Dizin: ad alanında kullanılabilir",
 	"proofreadpage_dataconfig_badformatted": "Veri yapılandırmasında hata",
 	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] sayfası iyi biçimlendirilmiş JSON biçiminde değil.",
 	"proofreadpage_number_expected": "Hata: Sayısal değer bekleniyordu",
@@ -134,5 +137,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "İstinsah kalitesi",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "İstinsah kalitesi",
 	"proofreadpage-index-field-category-label": "Kategoriler",
-	"proofreadpage-index-edit-category-help": "Kategoriler, \"Kategori:\" ön eki olmadan yazılır ve birden fazlaysa her kategorinin arasına \"|\" koyulur."
+	"proofreadpage-index-edit-category-help": "Kategoriler, \"Kategori:\" ön eki olmadan yazılır ve birden fazlaysa her kategorinin arasına \"|\" koyulur.",
+	"tag-proofreadpage-quality0": "Metin olmadan",
+	"tag-proofreadpage-quality1": "İstinsah edilmemiş",
+	"tag-proofreadpage-quality2": "Sorunlu",
+	"tag-proofreadpage-quality3": "İstinsah",
+	"tag-proofreadpage-quality4": "Doğrulanmış",
+	"tag-proofreadpage-quality0-description": "Sayfa kalitesini, \"Metin olmadan\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality1-description": "Sayfa kalitesini, \"İstinsah edilmemiş\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality2-description": "Sayfa kalitesini, \"Sorunlu\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality3-description": "Sayfa kalitesini, \"İstinsah\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality4-description": "Sayfa kalitesini, \"Doğrulandı\" olarak değiştiren düzenlemeler"
 }

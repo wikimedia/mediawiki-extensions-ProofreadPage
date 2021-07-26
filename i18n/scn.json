@@ -1,13 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Aushulz",
 			"Gmelfi",
 			"Pippinu",
 			"Sarvaturi"
 		]
 	},
+	"nstab-page": "Pàggina",
+	"nstab-index": "Ìnnici",
 	"proofreadpage_image": "Mmàggini",
+	"proofreadpage_index": "Ìnnici",
 	"proofreadpage_nextpage": "Pàggina appressu",
 	"proofreadpage_prevpage": "Pàggina d'antura",
 	"proofreadpage_header": "Ntistazzioni (nun inclusa)",
@@ -16,5 +20,9 @@
 	"proofreadpage_quality2_category": "Di rivìdiri",
 	"proofreadpage_quality3_category": "Curriggiuta",
 	"proofreadpage_quality4_category": "Cunvalidata",
-	"proofreadpage_quality1_message": "Sta pàggina nun fu curriggiuta"
+	"proofreadpage_quality1_message": "Sta pàggina nun fu curriggiuta",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|pàggina|pàggini}}",
+	"proofreadpage-group-other": "Àutru",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Aiutu",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pàggini"
 }
