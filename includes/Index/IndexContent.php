@@ -152,19 +152,6 @@ class IndexContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
-		$fields = [];
-
-		foreach ( $this->fields as $key => $value ) {
-			$fields[$key] = $value->preSaveTransform( $title, $user, $popts );
-		}
-
-		return new IndexContent( $fields, $this->categories );
-	}
-
-	/**
-	 * @inheritDoc
-	 */
 	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
 		$fields = [];
 

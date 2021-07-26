@@ -4,11 +4,16 @@ namespace ProofreadPage\Index;
 
 use Content;
 use ContentHandler;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Revision\SlotRenderingProvider;
+use MediaWiki\User\UserIdentityValue;
+use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
 use SlotDiffRenderer;
+use TextContent;
 use Title;
 use WikitextContent;
 
@@ -346,6 +351,38 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 
 		$updates = $handler->getDeletionUpdates( $title, SlotRecord::MAIN );
 		$this->assertInstanceOf( DeleteIndexQualityStats::class, $updates[0] );
+	}
+
+	public function providePreSaveTransform() {
+		return [
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'Hello ~~~' ) ] ),
+				new IndexContent( [
+					'foo' => new WikitextContent(
+						"Hello [[Special:Contributions/123.123.123.123|123.123.123.123]]"
+					)
+				] )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider providePreSaveTransform
+	 */
+	public function testPreSaveTransform( TextContent $content, TextContent $expectedContent ) {
+		$services = MediaWikiServices::getInstance();
+		$user = UserIdentityValue::newAnonymous( '123.123.123.123' );
+		$options = ParserOptions::newFromUser( $user );
+
+		$contentTransformer = $services->getContentTransformer();
+		$newContent = $contentTransformer->preSaveTransform(
+			$content,
+			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			$user,
+			$options
+		);
+
+		$this->assertTrue( $newContent->equals( $expectedContent ) );
 	}
 
 }

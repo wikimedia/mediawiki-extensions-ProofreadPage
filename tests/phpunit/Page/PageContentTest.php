@@ -154,44 +154,6 @@ class PageContentTest extends ProofreadPageTestCase {
 		$this->assertSame( $result, $content->getTextForSummary( $length ) );
 	}
 
-	public function preSaveTransformProvider() {
-		return [
-			[
-				self::buildPageContent( 'hello this is ~~~', '~~~' ),
-				self::buildPageContent(
-					'hello this is [[Special:Contributions/127.0.0.1|127.0.0.1]]',
-					'[[Special:Contributions/127.0.0.1|127.0.0.1]]'
-				)
-			],
-			[
-				self::buildPageContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" ),
-				self::buildPageContent( "hello \'\'this\'\' is <nowiki>~~~</nowiki>" )
-			],
-			[
-				// rtrim
-				self::buildPageContent( '\n ', 'foo \n ', '  ' ),
-				self::buildPageContent( '\n', 'foo \n', '' )
-			],
-		];
-	}
-
-	/**
-	 * @dataProvider preSaveTransformProvider
-	 */
-	public function testPreSaveTransform( PageContent $content, $expectedContent ) {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
-		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $contLang
-		);
-
-		$content = $content->preSaveTransform(
-			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
-		);
-
-		$this->assertTrue( $content->equals( $expectedContent ) );
-	}
-
 	public function preloadTransformProvider() {
 		return [
 			[ self::buildPageContent( 'hello this is ~~~' ),

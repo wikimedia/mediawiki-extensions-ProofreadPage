@@ -3,6 +3,8 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\PageReferenceValue;
+use MediaWiki\User\UserIdentityValue;
 use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
@@ -84,14 +86,15 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testPreSaveTransform() {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
-		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $contLang
-		);
+		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$user = UserIdentityValue::newAnonymous( '123.123.123.123' );
+		$options = ParserOptions::newFromUser( $user );
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$content = $originalContent->preSaveTransform(
-			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
+		$content = $contentTransformer->preSaveTransform(
+			$originalContent,
+			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			$user,
+			$options
 		);
 
 		$this->assertTrue( $content->equals( $originalContent ) );

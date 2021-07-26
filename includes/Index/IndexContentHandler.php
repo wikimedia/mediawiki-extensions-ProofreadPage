@@ -5,6 +5,7 @@ namespace ProofreadPage\Index;
 use Content;
 use ContentHandler;
 use IContextSource;
+use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
@@ -49,6 +50,13 @@ class IndexContentHandler extends TextContentHandler {
 		$this->wikitextLinksExtractor = new WikitextLinksExtractor();
 
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT ] );
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getContentClass() {
+		return IndexContent::class;
 	}
 
 	/**
@@ -295,6 +303,33 @@ class IndexContentHandler extends TextContentHandler {
 		$updates = parent::getDeletionUpdates( $title, $role );
 		$updates[] = $this->buildIndexQualityStatsDelete( $title );
 		return $updates;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function preSaveTransform(
+		Content $content,
+		PreSaveTransformParams $pstParams
+	): Content {
+		$contentHandlerFactory = MediaWikiServices::getInstance()->getContentHandlerFactory();
+
+		if ( $content instanceof IndexRedirectContent ) {
+			return $content;
+		}
+
+		'@phan-var IndexContent $content';
+		$fields = [];
+		foreach ( $content->getFields() as $key => $value ) {
+			$contentHandler = $contentHandlerFactory->getContentHandler( $value->getModel() );
+			$fields[$key] = $contentHandler->preSaveTransform(
+				$value,
+				$pstParams
+			);
+		}
+
+		$contentClass = $this->getContentClass();
+		return new $contentClass( $fields, $content->getCategories() );
 	}
 
 	/**
