@@ -34,6 +34,7 @@ use Parser;
 use ParserOutput;
 use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Page\PageContentBuilder;
+use ProofreadPage\Page\PageDisplayHandler;
 use ProofreadPage\Page\PageRevisionTagger;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\Parser\PagelistTagParser;
@@ -353,40 +354,16 @@ class ProofreadPage {
 	 * @param array[] &$links Structured navigation links
 	 */
 	private static function addPageNsNavigation( Title $title, SkinTemplate $skin, array &$links ) {
+		$pageDisplayHandler = new PageDisplayHandler( Context::getDefaultContext() );
+
 		// Image link
-		try {
-			$fileProvider = Context::getDefaultContext()->getFileProvider();
-			$image = $fileProvider->getFileForPageTitle( $title );
-			$imageUrl = null;
-			if ( $image->isMultipage() ) {
-				$transformAttributes = [
-					'width' => $image->getWidth()
-				];
-				try {
-					$transformAttributes['page'] = $fileProvider->getPageNumberForPageTitle( $title );
-				} catch ( PageNumberNotFoundException $e ) {
-					// We do not care
-				}
-
-				$handler = $image->getHandler();
-				if ( $handler && $handler->normaliseParams( $image, $transformAttributes ) ) {
-					$thumbName = $image->thumbName( $transformAttributes );
-					$imageUrl = $image->getThumbUrl( $thumbName );
-				}
-			} else {
-				// The thumb returned is invalid for not multipage pages when the width
-				// requested is the image width
-				$imageUrl = $image->getViewURL();
-			}
-
-			if ( $imageUrl !== null ) {
-				$links['namespaces']['proofreadPageScanLink'] = [
-					'class' => '',
-					'href' => $imageUrl,
-					'text' => wfMessage( 'proofreadpage_image' )->plain()
-				];
-			}
-		} catch ( FileNotFoundException $e ) {
+		$image = $pageDisplayHandler->getImageFullSize( $title );
+		if ( $image ) {
+			$links['namespaces']['proofreadPageScanLink'] = [
+				'class' => '',
+				'href' => $image->getUrl(),
+				'text' => wfMessage( 'proofreadpage_image' )->plain()
+			];
 		}
 
 		// Prev, Next and Index links
@@ -418,6 +395,15 @@ class ProofreadPage {
 						'rel' => 'prefetch',
 						'href' => $prevUrl
 					] );
+					$prevThumbnail = $pageDisplayHandler->getImageThumbnail( $prevTitle );
+					if ( $prevThumbnail ) {
+						$skin->getOutput()->addLink( [
+							'rel' => 'prefetch',
+							'as' => 'image',
+							'href' => $prevThumbnail->getUrl(),
+							'title' => 'prp-prev-image',
+						] );
+					}
 				}
 				// if the previous page does not exist
 				catch ( OutOfBoundsException $e ) {
@@ -441,6 +427,15 @@ class ProofreadPage {
 						'rel' => 'prefetch',
 						'href' => $nextUrl
 					] );
+					$nextThumbnail = $pageDisplayHandler->getImageThumbnail( $nextTitle );
+					if ( $nextThumbnail ) {
+						$skin->getOutput()->addLink( [
+							'rel' => 'prefetch',
+							'as' => 'image',
+							'href' => $nextThumbnail->getUrl(),
+							'title' => 'prp-next-image',
+						] );
+					}
 				}
 				// if the next page does not exist
 				catch ( OutOfBoundsException $e ) {
