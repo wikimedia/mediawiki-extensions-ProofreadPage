@@ -276,7 +276,7 @@ class PageContentTest extends ProofreadPageTestCase {
 		return [
 			[
 				self::buildPageContent( '', 'Test', '' ),
-				'<p><br />Test</p><>'
+				'<p>Test</p><>'
 			],
 			[
 				self::buildPageContent( 'start', 'Test', 'end' ),
@@ -304,7 +304,7 @@ class PageContentTest extends ProofreadPageTestCase {
 			],
 			[
 				self::buildPageContent( '', "<nowiki/>\n\nTest", '' ),
-				'<p><br /></p><p>Test</p><>'
+				'<p class="mw-empty-elt"></p><p>Test</p><>'
 			]
 		];
 	}

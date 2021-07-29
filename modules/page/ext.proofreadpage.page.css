@@ -27,3 +27,7 @@
 #prp-page-qualityheader { /* stylelint-disable-line selector-max-id */
 	width: 100%;
 }
+
+.pagetext p:first-of-type {
+	text-indent: 0;
+}
