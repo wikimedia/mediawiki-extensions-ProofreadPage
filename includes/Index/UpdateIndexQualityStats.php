@@ -68,7 +68,7 @@ class UpdateIndexQualityStats extends DataUpdate {
 
 		$this->loadBalancer->getConnection( ILoadBalancer::DB_PRIMARY )->replace(
 			'pr_index',
-			[ 'pr_page_id' ],
+			'pr_page_id',
 			[
 				'pr_page_id' => $this->indexTitle->getArticleID( Title::READ_LATEST ),
 				'pr_count' => $stats->getNumberOfPages(),
