@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Pagination;
 
-use InvalidArgumentException;
 use Language;
 use NumberFormatter;
 
@@ -64,7 +63,6 @@ class PageNumber {
 	 * @param string $displayMode the display mode (one of the DISPLAY_* constant)
 	 * @param bool $isEmpty
 	 * @param bool $isRecto true if recto, false if verso (for folio modes only)
-	 * @throws InvalidArgumentException
 	 */
 	public function __construct( $number, $displayMode = self::DISPLAY_NORMAL, $isEmpty = false, $isRecto = true ) {
 		$this->number = $number;
