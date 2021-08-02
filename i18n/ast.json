@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Esbardu",
+			"Tokvo",
 			"Xuacu"
 		]
 	},
@@ -88,5 +89,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sí",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Calidá de correición",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidá de correición"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidá de correición",
+	"tag-proofreadpage-quality0": "Ensin testu"
 }
