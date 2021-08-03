@@ -88,7 +88,7 @@ Dialog.prototype.getSetupProcess = function ( data ) {
 	this.dialogModel.setData( data );
 	return Dialog.super.prototype.getSetupProcess.call( this, data )
 		.next( function () {
-			this.preview.selectItemByDataWithoutEvent( data );
+			this.preview.buttonSelectWidget.selectItemByData( data );
 			this.dialogModel.dialogOpened();
 		}, this );
 };

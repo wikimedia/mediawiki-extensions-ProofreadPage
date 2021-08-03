@@ -24,10 +24,6 @@ function MainPanel( mode, wikitextDialogModel, visualDialogModel, preview, confi
 	this.pagelistPreview.connect( this, {
 		pageselected: 'onSetData'
 	} );
-	// Listen even for non pageselect page selection
-	this.pagelistPreview.buttonSelectWidget.connect( this, {
-		select: 'onSetData'
-	} );
 	this.wikitextDialogModel = wikitextDialogModel;
 	this.visualDialogModel = visualDialogModel;
 	this.dialogModel = this.visualMode ? this.visualDialogModel : this.wikitextDialogModel;
@@ -71,8 +67,12 @@ OO.inheritClass( MainPanel, OO.ui.PanelLayout );
  */
 MainPanel.prototype.onSetData = function ( selectedOption ) {
 	var data = selectedOption.getData() || {};
-	this.visualDialogModel.setData( data );
-	this.wikitextDialogModel.setData( data );
+	// set data on only the model in use
+	if ( this.visualMode ) {
+		this.visualDialogModel.setData( data );
+	} else {
+		this.wikitextDialogModel.setData( data );
+	}
 };
 
 MainPanel.prototype.changeEditMode = function ( mode ) {
