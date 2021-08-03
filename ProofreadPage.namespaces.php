@@ -259,6 +259,14 @@ $proofreadPageNamespacesNames['it'] = [
 	'index_talk' => 'Discussioni_indice'
 ];
 
+/** Javanese (Jawa) */
+$proofreadPageNamespacesNames['jv'] = [
+	'page' => 'Kaca',
+	'page_talk' => 'Parembugan_Kaca',
+	'index' => 'Indhèks',
+	'index_talk' => 'Parembugan_Indhèks',
+];
+
 /** Kannada (ಕನ್ನಡ) */
 $proofreadPageNamespacesNames['kn'] = [
 	'page' => 'ಪುಟ',
