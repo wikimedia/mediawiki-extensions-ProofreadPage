@@ -123,5 +123,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualitate d'a correzzione",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualitate d'a correzzione",
 	"proofreadpage-index-field-category-label": "Categorije",
-	"proofreadpage-index-edit-category-help": "Le categorije sò scritte senze 'u prefisse Category: e sò separate da 'na barre verticale \"|\"."
+	"proofreadpage-index-edit-category-help": "Le categorije sò scritte senze 'u prefisse Category: e sò separate da 'na barre verticale \"|\".",
+	"tag-proofreadpage-quality0": "Senza teste",
+	"tag-proofreadpage-quality1": "Da correggere",
+	"tag-proofreadpage-quality2": "Probblemateche",
+	"tag-proofreadpage-quality3": "Corrette",
+	"tag-proofreadpage-quality4": "Validate",
+	"tag-proofreadpage-quality0-description": "Cangiaminde ca onne cangiate 'a qualitate d'a pàgene a \"Senza teste\"",
+	"tag-proofreadpage-quality1-description": "Cangiaminde ca onne cangiate 'a qualitate d'a pàgene a \"Da correggere\"",
+	"tag-proofreadpage-quality2-description": "Cangiaminde ca onne cangiate 'a qualitate d'a pàgene a \"Probblemateche\"",
+	"tag-proofreadpage-quality3-description": "Cangiaminde ca onne cangiate 'a qualitate d'a pàgene a \"Corrette\"",
+	"tag-proofreadpage-quality4-description": "Cangiaminde ca onne cangiate 'a qualitate d'a pàgene a \"Validate\""
 }
