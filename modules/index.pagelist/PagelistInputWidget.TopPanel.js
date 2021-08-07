@@ -11,14 +11,28 @@ function TopPanel( dialogModel, config ) {
 		config.classes.push( 'prp-pagelist-dialog-top-panel' ) ) ||
 		[ 'prp-pagelist-dialog-top-panel' ];
 	TopPanel.super.call( this, config );
-
 	this.data = null;
 	this.dialogModel = dialogModel;
 	this.dialogModel.connect( this, {
 		aftersetpagedata: 'setPageData'
 	} );
 	this.$messages = $( '<div>' );
-	this.$element.append( this.$messages );
+	this.$buttons = $( '<div>' );
+	this.$buttons.attr( 'class', 'prp-pagelist-openseadragon-nav-div' );
+	this.$zoomIn = new OO.ui.ButtonWidget( {
+		id: 'prp-openseadragon-zoomIn',
+		icon: 'zoomIn'
+	} );
+	this.$zoomOut = new OO.ui.ButtonWidget( {
+		id: 'prp-openseadragon-zoomOut',
+		icon: 'zoomOut'
+	} );
+	this.$home = new OO.ui.ButtonWidget( {
+		id: 'prp-openseadragon-home',
+		icon: 'zoomReset'
+	} );
+	this.$buttons.append( this.$zoomIn.$element, this.$zoomOut.$element, this.$home.$element );
+	this.$element.append( this.$messages, this.$buttons );
 }
 OO.inheritClass( TopPanel, OO.ui.PanelLayout );
 

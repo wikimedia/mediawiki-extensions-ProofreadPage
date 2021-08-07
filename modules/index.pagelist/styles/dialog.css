@@ -20,6 +20,10 @@
 	width: 100%;
 }
 
+.prp-pagelist-dialog-image-panel {
+	height: 100%;
+}
+
 .prp-pagelist-dialog-stack-layout > .oo-ui-panelLayout:first-child {
 	background: #fff;
 	box-shadow: 0 1px 4px 1px rgba( 0, 0, 0, 0.25 );
@@ -50,4 +54,18 @@
 	position: sticky;
 	top: 0;
 	z-index: 2;
+}
+
+.prp-pagelist-dialog-left-panel > .oo-ui-panelLayout:first-child {
+	display: flex;
+	justify-content: space-between;
+}
+
+.prp-pagelist-openseadragon-nav-div {
+	margin-top: auto;
+}
+
+#prp-pagelist-openseadragon { /* stylelint-disable-line selector-max-id */
+	height: 100%;
+	width: auto;
 }

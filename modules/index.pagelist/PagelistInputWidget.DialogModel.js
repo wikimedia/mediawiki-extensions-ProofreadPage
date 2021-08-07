@@ -12,7 +12,12 @@ function DialogModel( data, mainModel ) {
 	this.data = data || {};
 	this.api = new mw.Api();
 	this.mainModel = mainModel;
-	this.canonicalImageLink = null;
+	this.obj = {};
+	this.imageUrl = null;
+	this.imageZoomUrlOnePointFive = null;
+	this.imageZoomUrlTwo = null;
+	this.imageHeight = null;
+	this.imageWidth = null;
 }
 
 OO.mixinClass( DialogModel, OO.EventEmitter );
@@ -26,14 +31,17 @@ OO.mixinClass( DialogModel, OO.EventEmitter );
  */
 DialogModel.prototype.setData = function ( data ) {
 	this.data = data;
-	if ( !this.canonicalImageLink ) {
-		this.generateImageLink( data );
+	if ( this.obj[ data.subPage ] ) {
+		this.imageUrl = this.obj[ data.subPage ].imageUrl;
+		this.imageZoomUrlOnePointFive = this.obj[ data.subPage ].imageZoomUrlOnePointFive;
+		this.imageZoomUrlTwo = this.obj[ data.subPage ].imageZoomUrlTwo;
+		this.imageHeight = this.obj[ data.subPage ].imageHeight;
+		this.imageWidth = this.obj[ data.subPage ].imageWidth;
+		this.emit( 'aftersetimageurl', this.imageUrl, this.imageZoomUrlOnePointFive, this.imageZoomUrlTwo, this.imageWidth, this.imageHeight );
 	} else {
-		this.emit(
-			'aftersetimageurl',
-			this.canonicalImageLink.replace( '$1', String( data.subPage ) )
-		);
+		this.generateImageLink( data );
 	}
+
 	this.emit( 'aftersetpagedata', this.data );
 };
 
@@ -55,11 +63,17 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 		iiurlparam: 'page' + subpage + '-' + imageSize + 'px'
 	} ).done( function ( response ) {
 		var imageUrl = null,
-			canonicalImageLink = null,
-			canonicalRegex = new RegExp( 'page' + subpage + '*-' + imageSize + 'px' ),
-			canonicalText = 'page$1-' + imageSize + 'px';
+			imageZoomUrlOnePointFive = null,
+			imageZoomUrlTwo = null,
+			imageWidth = null,
+			imageHeight = null;
+
 		try {
 			imageUrl = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumburl;
+			imageZoomUrlOnePointFive = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 1.5 ];
+			imageZoomUrlTwo = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 2 ];
+			imageWidth = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbwidth;
+			imageHeight = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbheight;
 		} catch ( e ) {
 			this.emit( 'imageurlnotfound' );
 			mw.log.error( e, response );
@@ -70,9 +84,14 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 			this.emit( 'imageurlnotfound' );
 			return;
 		}
-		canonicalImageLink = imageUrl.replace( canonicalRegex, canonicalText );
-		this.canonicalImageLink = canonicalImageLink;
-		this.emit( 'aftersetimageurl', imageUrl );
+		this.obj[ subpage ] = {
+			imageUrl: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumburl,
+			imageZoomUrlOnePointFive: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 1.5 ],
+			imageZoomUrlTwo: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 2 ],
+			imageWidth: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbwidth,
+			imageHeight: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbheight
+		};
+		this.emit( 'aftersetimageurl', imageUrl, imageZoomUrlOnePointFive, imageZoomUrlTwo, imageWidth, imageHeight );
 	}.bind( this ) ).catch( function ( e ) {
 		this.emit( 'imageurlnotfound' );
 		mw.log.error( e );
