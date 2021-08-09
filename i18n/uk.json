@@ -117,6 +117,8 @@
 	"proofreadpage-pagelist-scan-number": "Номер скану: $1",
 	"proofreadpage-pagelist-display-number": "Номер дисплею: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Цій сторінці призначено номер: $1",
+	"proofreadpage-pagelist-dialog-visual-help": "https://www.mediawiki.org/wiki/Help:Extension:ProofreadPage/Pagelist_widget",
+	"proofreadpage-pagelist-dialog-wikitext-help": "https://www.mediawiki.org/wiki/Help:Extension:ProofreadPage/Pagelist_syntax",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Довідка",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Тип номера не дозволяє змінювати нумерацію. Будь-яке значення в цьому полі буде проігноровано під час оновлення.",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Тип номеру сторінки:",
@@ -139,5 +141,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Якість вичитки",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Якість вичитки",
 	"proofreadpage-index-field-category-label": "Категорії",
-	"proofreadpage-index-edit-category-help": "Категорії вказуються без префіксу \"Category:\" та розділяються вертикальною рискою \"|\"."
+	"proofreadpage-index-edit-category-help": "Категорії вказуються без префіксу \"Category:\" та розділяються вертикальною рискою \"|\".",
+	"tag-proofreadpage-quality0": "Без тексту",
+	"tag-proofreadpage-quality1": "Не вичитано",
+	"tag-proofreadpage-quality2": "Проблематична",
+	"tag-proofreadpage-quality3": "Вичитано",
+	"tag-proofreadpage-quality4": "Схвалена",
+	"tag-proofreadpage-quality0-description": "Зміни, які змінили якість сторінки на \"Без тексту\"",
+	"tag-proofreadpage-quality1-description": "Зміни, які змінили якість сторінки на \"Не вичитано\"",
+	"tag-proofreadpage-quality2-description": "Зміни, які змінили якість сторінки на \"Проблематична\"",
+	"tag-proofreadpage-quality3-description": "Зміни, які змінили якість сторінки на \"Вичитано\"",
+	"tag-proofreadpage-quality4-description": "Зміни, які змінили якість сторінки на \"Схвалена\""
 }

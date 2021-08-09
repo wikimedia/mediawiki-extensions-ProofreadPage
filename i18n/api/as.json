@@ -10,5 +10,7 @@
 	"apihelp-query+proofread-example-1": "নামস্থান ২৫০ত থকা পৃষ্ঠাসমূহৰ প্ৰুফৰিড স্থিতাৱস্থা প্ৰদান কৰে",
 	"apihelp-query+proofreadinfo-description": "ProofreadPage extensionৰ সজ্জাৰ বিষয়ে তথ্য প্ৰদান কৰে।",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage extensionৰ সজ্জাৰ বিষয়ে তথ্য প্ৰদান কৰে।",
-	"apihelp-query+proofreadinfo-param-prop": "কি কি প্ৰুফৰিড বিশেষত্ব পাব লাগে:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels ।"
+	"apihelp-query+proofreadinfo-param-prop": "কি কি প্ৰুফৰিড বিশেষত্ব পাব লাগে:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels ।",
+	"apihelp-query+proofreadinfo-example-1": "পূৰ্বনিৰ্ধাৰিত তথ্য দিয়ক",
+	"apihelp-query+proofreadinfo-example-3": "নামস্থানৰ তথ্য আহৰণ কৰক"
 }

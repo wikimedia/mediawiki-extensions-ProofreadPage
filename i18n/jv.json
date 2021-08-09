@@ -124,5 +124,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kualitas wacatiti",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kualitas wacatiti",
 	"proofreadpage-index-field-category-label": "Katégori",
-	"proofreadpage-index-edit-category-help": "Katégori ditulis ora nganggo Category: lan dipisah marang karakter pipa \"|\"."
+	"proofreadpage-index-edit-category-help": "Katégori ditulis ora nganggo Category: lan dipisah marang karakter pipa \"|\".",
+	"tag-proofreadpage-quality0": "Tanpa tulisan",
+	"tag-proofreadpage-quality1": "Durung katitiwaca",
+	"tag-proofreadpage-quality2": "Masalah",
+	"tag-proofreadpage-quality3": "Titiwaca",
+	"tag-proofreadpage-quality4": "Absah"
 }
