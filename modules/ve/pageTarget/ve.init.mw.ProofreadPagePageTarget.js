@@ -5,6 +5,9 @@
  * @license The MIT License (MIT); see LICENSE.txt
  */
 
+// eslint-disable-next-line  no-implicit-globals
+var OpenSeadragon = require( 'ext.proofreadpage.openseadragon' );
+
 /**
  * ProofreadPage page target
  *
@@ -28,25 +31,35 @@ ve.init.mw.ProofreadPagePageTarget = function VeInitMwProofreadPagePageTarget() 
 		$pageContainer = $contentText.find( '.prp-page-container' );
 		$contentText.empty().append( $pageContainer );
 	}
+	this.$imageZoomDiv = $( '<div>' ).addClass( 've-init-mw-proofreadPageTarget-imageZoom' );
 
-	this.$zoomContainer = $( '<div>' ).addClass( 've-init-mw-proofreadPagePageTarget-zoomContainer' );
+	this.$zoomButtonsCont = $( '<div>' ).addClass( 've-init-mw-proofreadPagePageTarget-zoomContainer' );
 
 	// eslint-disable-next-line no-jquery/no-global-selector
-	this.$zoomImage = $( '.prp-page-image img' );
+	this.$imgCont = $( '.prp-page-image' );
+	this.$imgCont.css( 'display', 'block' );
 
-	zoomOut = new OO.ui.ButtonWidget( { icon: 'zoomOut', title: ve.msg( 'proofreadpage-button-zoom-out-label' ) } )
-		.on( 'click', this.$zoomImage.prpZoom.bind( this.$zoomImage, 'zoomOut' ) );
-	zoomReset = new OO.ui.ButtonWidget( { label: ve.msg( 'proofreadpage-button-reset-zoom-label' ) } )
-		.on( 'click', this.$zoomImage.prpZoom.bind( this.$zoomImage, 'reset' ) );
-	zoomIn = new OO.ui.ButtonWidget( { icon: 'zoomIn', title: ve.msg( 'proofreadpage-button-zoom-out-label' ) } )
-		.on( 'click', this.$zoomImage.prpZoom.bind( this.$zoomImage, 'zoomIn' ) );
+	// eslint-disable-next-line no-jquery/no-global-selector
+	this.$imgOSDCont = $( '#prp-page-image-openseadragon-vertical' );
+	this.$imgOSDCont.css( 'display', 'initial' );
+
+	this.$imgOSDCont.before( this.$imageZoomDiv );
+
+	this.$img = this.$imgCont.find( 'img' );
+
+	this.$imgOSDCont.height( this.$imgCont.height() );
+	this.$imgOSDCont.width( this.$imgCont.width() );
+
+	zoomOut = new OO.ui.ButtonWidget( { id: 'prp-page-ve-zoomOut', icon: 'zoomOut', title: ve.msg( 'proofreadpage-button-zoom-out-label' ) } );
+	zoomReset = new OO.ui.ButtonWidget( { id: 'prp-page-ve-zoomReset', icon: 'zoomReset', title: ve.msg( 'proofreadpage-button-reset-zoom-label' ) } );
+	zoomIn = new OO.ui.ButtonWidget( { id: 'prp-page-ve-zoomIn', icon: 'zoomIn', title: ve.msg( 'proofreadpage-button-zoom-out-label' ) } );
 
 	this.zoomButtons = new OO.ui.ButtonGroupWidget( {
 		classes: [ 've-init-mw-proofreadPagePageTarget-zoom' ],
 		items: [ zoomOut, zoomReset, zoomIn ]
 	} );
 
-	this.$zoomContainer.append( this.zoomButtons.$element );
+	this.$zoomButtonsCont.append( this.zoomButtons.$element );
 };
 
 /* Inheritance */
@@ -91,10 +104,15 @@ ve.init.mw.ProofreadPagePageTarget.prototype.afterActivate = function () {
 	// eslint-disable-next-line no-jquery/no-global-selector
 	$( '.prp-page-image' )
 		.removeClass( 've-init-mw-desktopArticleTarget-uneditableContent' )
-		.before( this.$zoomContainer );
+		.before( this.$zoomButtonsCont );
 
+	this.$imageZoomDiv.removeClass( 've-init-mw-desktopArticleTarget-uneditableContent' ).append( this.$zoomButtonsCont, this.$imgOSDCont );
+
+	// eslint-disable-next-line no-jquery/no-global-selector
+	$( '.openseadragon-container' ).detach();
 	// Make image zoomable
-	this.$zoomImage.prpZoom();
+	this.ensureImageZoomInitialization();
+
 };
 
 /**
@@ -104,11 +122,68 @@ ve.init.mw.ProofreadPagePageTarget.prototype.cancel = function () {
 	// Parent method
 	ve.init.mw.ProofreadPagePageTarget.super.prototype.cancel.apply( this, arguments );
 
-	this.$zoomContainer.detach();
+	this.$zoomButtonsCont.detach();
+	if ( this.viewer ) {
+		this.viewer.destroy();
+		this.viewer = null;
+	}
 
-	this.$zoomImage.prpZoom( 'destroy' );
 };
 
+/**
+ * @inheritdoc
+ */
+ve.init.mw.ProofreadPagePageTarget.prototype.ensureImageZoomInitialization = function () {
+	var url1 = this.$img[ 0 ].getAttribute( 'src' );
+	var srcSet = this.$img[ 0 ].getAttribute( 'srcset' ).split( ' ' );
+	var url2 = srcSet[ 0 ];
+	var url3 = srcSet[ 2 ];
+	var width = this.$img[ 0 ].getAttribute( 'width' );
+	var height = this.$img[ 0 ].getAttribute( 'height' );
+
+	this.$img.hide();
+
+	this.viewer = OpenSeadragon( {
+		id: 'prp-page-image-openseadragon-vertical',
+		zoomInButton: 'prp-page-ve-zoomIn',
+		zoomOutButton: 'prp-page-ve-zoomOut',
+		homeButton: 'prp-page-ve-zoomReset',
+		showFullPageControl: false,
+		preserveViewport: true,
+		animationTime: 0.5,
+		visibilityRatio: 0.5,
+		minZoomLevel: 0.5,
+		maxZoomLevel: 4.5,
+		tileSources: {
+			type: 'legacy-image-pyramid',
+			levels: [ {
+				url: url1,
+				height: height,
+				width: width
+			},
+			{
+				url: url2,
+				height: 1.5 * height,
+				width: 1.5 * width
+			},
+			{
+				url: url3,
+				height: 2 * height,
+				width: 2 * width
+			}
+			]
+		}
+	} );
+
+	this.viewer.viewport.goHome = function () {
+		if ( this.viewer ) {
+			var oldBounds = this.viewer.viewport.getBounds();
+			var newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
+			this.viewer.viewport.fitBounds( newBounds, true );
+		}
+	};
+
+};
 /**
  * @inheritdoc
  */

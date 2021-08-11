@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use Html;
+use Linker;
 use MediaTransformOutput;
 use OutOfBoundsException;
 use ProofreadPage\Context;
@@ -202,6 +203,17 @@ class PageDisplayHandler {
 		if ( !$handler || !$handler->normaliseParams( $image, $transformAttributes ) ) {
 			return null;
 		}
-		return $image->transform( $transformAttributes ) ?: null;
+
+		$transformedImage = $image->transform( $transformAttributes );
+
+		if ( $transformedImage && $constrainWidth ) {
+			Linker::processResponsiveImages( $image, $transformedImage, $transformAttributes );
+
+		}
+
+		if ( $transformedImage ) {
+			return $transformedImage;
+		}
+		return null;
 	}
 }

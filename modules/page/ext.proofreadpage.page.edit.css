@@ -43,6 +43,10 @@
 	flex: 1;
 }
 
+.prp-page-zoom-interface {
+	float: right;
+}
+
 #editform .prp-page-content { /* stylelint-disable-line selector-max-id */
 	line-height: 1.5em;
 }

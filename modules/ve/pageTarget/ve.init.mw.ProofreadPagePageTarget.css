@@ -17,7 +17,7 @@
 
 .ve-init-mw-proofreadPagePageTarget-zoomContainer {
 	float: right;
-	width: 49%;
+	width: 10%;
 	text-align: center;
 	margin-bottom: 0.5em;
 }
@@ -37,4 +37,8 @@
 
 .ve-init-mw-proofreadPagePageTarget .ve-ce-sectionNode:not( :last-child ) {
 	padding-bottom: 1em;
+}
+
+.ve-init-mw-proofreadPageTarget-imageZoom {
+	display: flex;
 }

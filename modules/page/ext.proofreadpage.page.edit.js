@@ -1,6 +1,7 @@
 ( function () {
 	'use strict';
-
+	var OpenSeadragon = require( 'ext.proofreadpage.openseadragon' );
+	mw.proofreadpage = {};
 	var
 		/**
 		 * Is the layout horizontal (ie is the scan image on top of the edit area)
@@ -9,13 +10,6 @@
 		 */
 		isLayoutHorizontal = false,
 
-		/**
-		 * The scan image
-		 *
-		 * @type {jQuery}
-		 */
-		$zoomImage,
-
 		headersVisible = true,
 
 		/**
@@ -23,7 +17,51 @@
 		 *
 		 * @type {jQuery}
 		 */
-		$editForm;
+		$editForm,
+
+		/**
+		 * image parent container, when the page is in "vertical" mode, and
+		 * the image viewer is inside the edit form
+		 *
+		 * @type {jQuery}
+		 */
+		$imgCont,
+
+		/**
+		 * image parent container, when the page is in "horizontal" mode, and
+		 * the image viewer is outside the edit form
+		 *
+		 * @type {jQuery}
+		 */
+		$imgContHorizontal,
+
+		/**
+		 * image element
+		 *
+		 * @type {jQuery}
+		 */
+		$img,
+
+		/**
+		 * image height
+		 *
+		 * @type {string}
+		 */
+		imgHeight,
+
+		/**
+		 * image width
+		 *
+		 * @type {string}
+		 */
+		imgWidth,
+
+		/**
+		 * the OpenSeadragon image viewer
+		 *
+		 * @type {Object}
+		 */
+		viewer = null;
 
 	/**
 	 * Returns the value of a user option as boolean
@@ -51,31 +89,60 @@
 	/**
 	 * Ensure that the zoom system is properly initialized
 	 *
-	 * @param {Function} success a function to use after making sure that the zoom system is activate
+	 * @param {string} id
 	 */
-	function ensureImageZoomInitialization( success ) {
-		if ( $zoomImage.data( 'prpZoom' ) ) {
-			if ( success ) {
-				success();
-			}
-			return;
-		}
+	function ensureImageZoomInitialization( id ) {
+		var url1 = $img[ 0 ].getAttribute( 'src' );
+		var srcSet = $img[ 0 ].getAttribute( 'srcset' ).split( ' ' );
+		var url2 = srcSet[ 0 ];
+		var url3 = srcSet[ 2 ];
+		var width = $img[ 0 ].getAttribute( 'width' );
+		var height = $img[ 0 ].getAttribute( 'height' );
 
-		mw.loader.using( 'jquery.prpZoom', function () {
-			if ( $zoomImage.prop( 'complete' ) ) {
-				$zoomImage.prpZoom();
-				if ( success ) {
-					success();
+		// make space for the OSD viewer
+		$img.hide();
+
+		viewer = OpenSeadragon( {
+			id: id,
+			zoomInButton: 'prp-page-zoomIn',
+			zoomOutButton: 'prp-page-zoomOut',
+			homeButton: 'prp-page-zoomReset',
+			showFullPageControl: false,
+			preserveViewport: true,
+			visibilityRatio: 0.5,
+			minZoomLevel: 0.5,
+			maxZoomLevel: 4.5,
+			tileSources: {
+				type: 'legacy-image-pyramid',
+				levels: [ {
+					url: url1,
+					height: height,
+					width: width
+				},
+				{
+					url: url2,
+					height: 1.5 * height,
+					width: 1.5 * width
+				},
+				{
+					url: url3,
+					height: 2 * height,
+					width: 2 * width
 				}
-			} else {
-				$zoomImage.on( 'load', function () {
-					$zoomImage.prpZoom();
-					if ( success ) {
-						success();
-					}
-				} );
+				]
 			}
 		} );
+
+		viewer.viewport.goHome = function () {
+			if ( viewer ) {
+				var oldBounds = viewer.viewport.getBounds();
+				var newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
+				viewer.viewport.fitBounds( newBounds, true );
+			}
+		};
+
+		mw.proofreadpage.viewer = viewer;
+
 	}
 
 	/**
@@ -108,35 +175,54 @@
 	 * @param {boolean} [horizontal] Use horizontal layout, inverts if undefined
 	 */
 	function toggleLayout( horizontal ) {
-		var $container, newHeight, setActive;
+		var newHeight, setActive;
 
 		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
 
-		if ( $zoomImage.data( 'prpZoom' ) ) {
-			$zoomImage.prpZoom( 'destroy' );
+		if ( viewer ) {
+			viewer.destroy();
+			viewer = null;
 		}
 
-		$container = $zoomImage.parent();
-
 		if ( !isLayoutHorizontal ) {
-			$container.appendTo( $editForm.find( '.prp-page-container' ) );
+			$imgCont.css( 'display', 'block' );
+			if ( $imgContHorizontal ) {
+				$imgContHorizontal.css( 'display', 'none' );
+			}
+			// eslint-disable-next-line no-jquery/no-global-selector
+			$( '.prp-page-image' ).css( 'display', 'block' );
 
 			// Switch CSS widths and heights back to the default side-by-size layout.
-			$container.css( {
-				width: '',
-				height: ''
+			$imgCont.css( {
+				width: imgWidth,
+				height: imgHeight
 			} );
 			$editForm.find( '.prp-page-content' ).css( {
 				width: ''
 			} );
+			$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
+				ensureImageZoomInitialization( 'prp-page-image-openseadragon-vertical' );
+			} );
+
 			// eslint-disable-next-line no-jquery/no-global-selector
 			$( '#wpTextbox1' ).css( { height: '' } );
-			ensureImageZoomInitialization();
+
 		} else {
-			$container.insertBefore( $editForm );
+			if ( !$imgContHorizontal ) {
+				$imgContHorizontal = $imgCont
+					.clone()
+					.attr( 'id', 'prp-page-image-openseadragon-horizontal' );
+				$imgContHorizontal.insertBefore( $editForm );
+			} else {
+				$imgContHorizontal.css( 'display', 'block' );
+			}
+
+			$imgCont.css( 'display', 'none' );
+			// eslint-disable-next-line no-jquery/no-global-selector
+			$( '.prp-page-image' ).css( 'display', 'none' );
 
 			// Set the width and height of the image and form.
-			$container.css( {
+			$imgContHorizontal.css( {
 				width: '100%',
 				overflow: 'auto',
 				height: $( window ).height() / 2.7 + 'px'
@@ -145,12 +231,12 @@
 				width: '100%'
 			} );
 
-			// Turn on image zoom before setting the image height, or it'll be overridden.
-			ensureImageZoomInitialization();
-
 			// Set the image and the edit box to the same height (of 1/3 of the window each).
 			newHeight = $( window ).height() / 3 + 'px';
-			$container.css( { height: newHeight } );
+			$imgContHorizontal.css( { height: newHeight } );
+			$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
+				ensureImageZoomInitialization( 'prp-page-image-openseadragon-horizontal' );
+			} );
 			// eslint-disable-next-line no-jquery/no-global-selector
 			$( '#wpTextbox1' ).css( { height: newHeight } );
 		}
@@ -195,51 +281,34 @@
 	 * Setup the editing interface
 	 */
 	function setupWikitextEditor() {
+		var zoomInterface = {
+			zoomIn: new OO.ui.ButtonWidget( {
+				id: 'prp-page-zoomIn',
+				icon: 'zoomIn',
+				framed: false
+			} ),
+			zoomOut: new OO.ui.ButtonWidget( {
+				id: 'prp-page-zoomOut',
+				icon: 'zoomOut',
+				framed: false
+			} ),
+			zoomReset: new OO.ui.ButtonWidget( {
+				id: 'prp-page-zoomReset',
+				icon: 'zoomReset',
+				framed: false
+			} )
+		};
+
+		var $zoomInterfaceDiv = $( '<div>' );
+		$zoomInterfaceDiv.addClass( 'prp-page-zoom-interface' );
+		$zoomInterfaceDiv.append( zoomInterface.zoomIn.$element, zoomInterface.zoomOut.$element, zoomInterface.zoomReset.$element );
+
+		$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
+			$editForm.find( '.wikiEditor-ui-toolbar .section-main' ).after( $zoomInterfaceDiv );
+
+		} );
+
 		var tools = {
-				zoom: {
-					labelMsg: 'proofreadpage-group-zoom',
-					tools: {
-						'zoom-in': {
-							labelMsg: 'proofreadpage-button-zoom-in-label',
-							type: 'button',
-							oouiIcon: 'zoomIn',
-							action: {
-								type: 'callback',
-								execute: function () {
-									ensureImageZoomInitialization( function () {
-										$zoomImage.prpZoom( 'zoomIn' );
-									} );
-								}
-							}
-						},
-						'zoom-out': {
-							labelMsg: 'proofreadpage-button-zoom-out-label',
-							type: 'button',
-							oouiIcon: 'zoomOut',
-							action: {
-								type: 'callback',
-								execute: function () {
-									ensureImageZoomInitialization( function () {
-										$zoomImage.prpZoom( 'zoomOut' );
-									} );
-								}
-							}
-						},
-						'reset-zoom': {
-							labelMsg: 'proofreadpage-button-reset-zoom-label',
-							type: 'button',
-							oouiIcon: 'zoomReset',
-							action: {
-								type: 'callback',
-								execute: function () {
-									ensureImageZoomInitialization( function () {
-										$zoomImage.prpZoom( 'reset' );
-									} );
-								}
-							}
-						}
-					}
-				},
 				other: {
 					labelMsg: 'proofreadpage-group-other',
 					tools: {
@@ -468,9 +537,25 @@
 			// eslint-disable-next-line no-jquery/no-global-selector
 			$editForm = $( '#editform' );
 		}
-		if ( $zoomImage === undefined ) {
-			$zoomImage = $editForm.find( '.prp-page-image img' );
+
+		if ( $imgCont === undefined ) {
+			$imgCont = $( '<div>' ).attr( 'id', 'prp-page-image-openseadragon-vertical' );
+			$editForm.find( '.prp-page-image' ).append( $imgCont );
 		}
+
+		if ( $img === undefined ) {
+			// eslint-disable-next-line no-jquery/no-global-selector
+			$img = $( '.prp-page-image' ).find( 'img' );
+		}
+
+		if ( imgHeight === undefined ) {
+			imgHeight = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'height' );
+		}
+
+		if ( imgWidth === undefined ) {
+			imgWidth = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'width' );
+		}
+
 	}
 
 	function getLoadedEditorPromise() {
@@ -482,24 +567,14 @@
 			} );
 			return deferred.promise();
 		}
-
 		return deferred.resolve().promise();
 	}
 
 	$( function () {
 		initEnvironment();
-		setupPreferences();
 		setupPageQuality();
-		getLoadedEditorPromise().done( setupWikitextEditor );
+		getLoadedEditorPromise().done( setupWikitextEditor, setupPreferences );
 
-		// zoom should be initialized after the page is rendered
-		if ( document.readyState === 'complete' ) {
-			ensureImageZoomInitialization();
-		} else {
-			$( window ).on( 'load', function () {
-				ensureImageZoomInitialization();
-			} );
-		}
 	} );
 
 }() );

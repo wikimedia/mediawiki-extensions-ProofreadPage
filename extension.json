@@ -66,16 +66,6 @@
 		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php"
 	},
 	"ResourceModules": {
-		"jquery.mousewheel": {
-			"scripts": "jquery/jquery.mousewheel.js"
-		},
-		"jquery.prpZoom": {
-			"scripts": "jquery/jquery.prpZoom.js",
-			"dependencies": [
-				"jquery.ui",
-				"jquery.mousewheel"
-			]
-		},
 		"ext.proofreadpage.base": {
 			"styles": "ext.proofreadpage.base.css",
 			"targets": [
@@ -92,12 +82,13 @@
 			"dependencies": [
 				"ext.proofreadpage.base",
 				"ext.proofreadpage.page",
-				"jquery.prpZoom",
+				"ext.proofreadpage.openseadragon",
 				"mediawiki.user",
 				"user.options",
 				"jquery.textSelection",
 				"ext.proofreadpage.icons",
 				"ext.proofreadpage.ve.pageTarget.init",
+				"oojs-ui-widgets",
 				"oojs-ui.styles.icons-media"
 			],
 			"messages": [
@@ -292,9 +283,9 @@
 			"dependencies": [
 				"ext.visualEditor.mwcore",
 				"ext.visualEditor.desktopArticleTarget",
+				"ext.proofreadpage.openseadragon",
 				"oojs-ui.styles.icons-moderation",
 				"oojs-ui.styles.icons-media",
-				"jquery.prpZoom",
 				"ext.proofreadpage.icons"
 			],
 			"messages": [
