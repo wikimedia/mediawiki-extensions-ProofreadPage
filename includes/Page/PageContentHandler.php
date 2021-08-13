@@ -5,6 +5,7 @@ namespace ProofreadPage\Page;
 use Content;
 use ContentHandler;
 use IContextSource;
+use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
@@ -151,6 +152,31 @@ class PageContentHandler extends TextContentHandler {
 				->preSaveTransform( $body, $pstParams ),
 				$contentHandlerFactory->getContentHandler( $footer->getModel() )
 				->preSaveTransform( $footer, $pstParams ),
+			$content->getLevel()
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function preloadTransform(
+		Content $content,
+		PreloadTransformParams $pltparams
+	): Content {
+		'@phan-var PageContent $content';
+		$contentHandlerFactory = MediaWikiServices::getInstance()->getContentHandlerFactory();
+		$contentClass = $this->getContentClass();
+		$header = $content->getHeader();
+		$body = $content->getBody();
+		$footer = $content->getFooter();
+
+		return new $contentClass(
+			$contentHandlerFactory->getContentHandler( $header->getModel() )
+				->preloadTransform( $header, $pltparams ),
+			$contentHandlerFactory->getContentHandler( $body->getModel() )
+				->preloadTransform( $body, $pltparams ),
+			$contentHandlerFactory->getContentHandler( $footer->getModel() )
+				->preloadTransform( $footer, $pltparams ),
 			$content->getLevel()
 		);
 	}

@@ -385,4 +385,35 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertTrue( $newContent->equals( $expectedContent ) );
 	}
 
+	public function providePreloadTransform() {
+		return [
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'hello this is ~~~' ) ] ),
+				new IndexContent( [ 'foo' => new WikitextContent( 'hello this is ~~~' ) ] )
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent(
+					'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>'
+				) ] ),
+				new IndexContent( [ 'foo' => new WikitextContent( 'hello \'\'this\'\' is bar' ) ] )
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider providePreloadTransform
+	 */
+	public function testPreloadTransform( IndexContent $content, IndexContent $expectedContent ) {
+		$services = MediaWikiServices::getInstance();
+		$options = ParserOptions::newFromAnon();
+
+		$contentTransformer = $services->getContentTransformer();
+		$newContent = $contentTransformer->preloadTransform(
+			$content,
+			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			$options
+		);
+
+		$this->assertEquals( $expectedContent, $newContent );
+	}
 }

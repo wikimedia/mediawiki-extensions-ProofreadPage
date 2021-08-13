@@ -5,6 +5,7 @@ namespace ProofreadPage\Index;
 use Content;
 use ContentHandler;
 use IContextSource;
+use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
@@ -325,6 +326,34 @@ class IndexContentHandler extends TextContentHandler {
 			$fields[$key] = $contentHandler->preSaveTransform(
 				$value,
 				$pstParams
+			);
+		}
+
+		$contentClass = $this->getContentClass();
+		return new $contentClass( $fields, $content->getCategories() );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function preloadTransform(
+		Content $content,
+		PreloadTransformParams $pltParams
+	): Content {
+		$contentHandlerFactory = MediaWikiServices::getInstance()->getContentHandlerFactory();
+
+		if ( $content instanceof IndexRedirectContent ) {
+			return $content;
+		}
+
+		'@phan-var IndexContent $content';
+		$fields = [];
+
+		foreach ( $content->getFields() as $key => $value ) {
+			$contentHandler = $contentHandlerFactory->getContentHandler( $value->getModel() );
+			$fields[$key] = $contentHandler->preloadTransform(
+				$value,
+				$pltParams
 			);
 		}
 

@@ -3,8 +3,6 @@
 namespace ProofreadPage\Page;
 
 use Content;
-use MediaWiki\MediaWikiServices;
-use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
 use Status;
@@ -152,34 +150,6 @@ class PageContentTest extends ProofreadPageTestCase {
 	 */
 	public function testGetTextForSummary( PageContent $content, $length, $result ) {
 		$this->assertSame( $result, $content->getTextForSummary( $length ) );
-	}
-
-	public function preloadTransformProvider() {
-		return [
-			[ self::buildPageContent( 'hello this is ~~~' ),
-				self::buildPageContent( "hello this is ~~~" )
-			],
-			[
-				self::buildPageContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude>' .
-					'<includeonly>bar</includeonly>' ),
-				self::buildPageContent( 'hello \'\'this\'\' is bar' )
-			],
-		];
-	}
-
-	/**
-	 * @dataProvider preloadTransformProvider
-	 */
-	public function testPreloadTransform( PageContent $content, $expectedContent ) {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
-		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $contLang
-		);
-
-		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );
-
-		$this->assertEquals( $expectedContent, $content );
 	}
 
 	public function prepareSaveProvider() {

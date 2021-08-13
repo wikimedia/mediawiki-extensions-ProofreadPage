@@ -149,19 +149,6 @@ class PageContent extends TextContent {
 
 	/**
 	 * @inheritDoc
-	 * @suppress PhanTypeMismatchArgument False positive
-	 */
-	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
-		return new self(
-			$this->header->preloadTransform( $title, $popts, $params ),
-			$this->body->preloadTransform( $title, $popts, $params ),
-			$this->footer->preloadTransform( $title, $popts, $params ),
-			$this->level
-		);
-	}
-
-	/**
-	 * @inheritDoc
 	 */
 	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
 		if ( !$this->isValid() ) {

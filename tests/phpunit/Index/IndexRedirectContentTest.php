@@ -101,14 +101,13 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testPreloadTransform() {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
-		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $contLang
-		);
+		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$options = ParserOptions::newFromAnon();
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
-		$content = $originalContent->preloadTransform(
-			$this->requestContext->getTitle(), $options
+		$content = $contentTransformer->preloadTransform(
+			$originalContent,
+			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			$options
 		);
 
 		$this->assertSame( $originalContent, $content );

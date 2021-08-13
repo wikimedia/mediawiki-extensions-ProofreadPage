@@ -2,8 +2,6 @@
 
 namespace ProofreadPage\Index;
 
-use MediaWiki\MediaWikiServices;
-use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
@@ -224,36 +222,6 @@ class IndexContentTest extends ProofreadPageTestCase {
 	 */
 	public function testGetTextForSummary( IndexContent $content, $length, $result ) {
 		$this->assertSame( $result, $content->getTextForSummary( $length ) );
-	}
-
-	public function preloadTransformProvider() {
-		return [
-			[
-				new IndexContent( [ 'foo' => new WikitextContent( 'hello this is ~~~' ) ] ),
-				new IndexContent( [ 'foo' => new WikitextContent( 'hello this is ~~~' ) ] )
-			],
-			[
-				new IndexContent( [ 'foo' => new WikitextContent(
-					'hello \'\'this\'\' is <noinclude>foo</noinclude><includeonly>bar</includeonly>'
-				) ] ),
-				new IndexContent( [ 'foo' => new WikitextContent( 'hello \'\'this\'\' is bar' ) ] )
-			],
-		];
-	}
-
-	/**
-	 * @dataProvider preloadTransformProvider
-	 */
-	public function testPreloadTransform( IndexContent $content, IndexContent $expectedContent ) {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
-		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $contLang
-		);
-
-		$content = $content->preloadTransform( $this->requestContext->getTitle(), $options );
-
-		$this->assertEquals( $expectedContent, $content );
 	}
 
 	public function prepareSaveProvider() {

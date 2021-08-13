@@ -152,19 +152,6 @@ class IndexContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
-		$fields = [];
-
-		foreach ( $this->fields as $key => $value ) {
-			$fields[$key] = $value->preloadTransform( $title, $popts, $params );
-		}
-
-		return new IndexContent( $fields, $this->categories );
-	}
-
-	/**
-	 * @inheritDoc
-	 */
 	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
 		if ( !$this->isValid() ) {
 			return Status::newFatal( 'invalid-content-data' );

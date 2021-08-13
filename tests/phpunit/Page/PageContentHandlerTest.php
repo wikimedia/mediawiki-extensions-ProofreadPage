@@ -422,4 +422,33 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 		$this->assertTrue( $content->equals( $expectedContent ) );
 	}
+
+	public function providePreloadTransform() {
+		return [
+			[ self::buildPageContent( 'hello this is ~~~' ),
+				self::buildPageContent( "hello this is ~~~" )
+			],
+			[
+				self::buildPageContent( 'hello \'\'this\'\' is <noinclude>foo</noinclude>' .
+					'<includeonly>bar</includeonly>' ),
+				self::buildPageContent( 'hello \'\'this\'\' is bar' )
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider providePreloadTransform
+	 */
+	public function testPreloadTransform( PageContent $content, $expectedContent ) {
+		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$options = ParserOptions::newFromAnon();
+
+		$content = $contentTransformer->preloadTransform(
+			$content,
+			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			$options
+		);
+
+		$this->assertEquals( $expectedContent, $content );
+	}
 }
