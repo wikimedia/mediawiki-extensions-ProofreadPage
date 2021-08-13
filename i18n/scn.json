@@ -24,5 +24,7 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pàggina|pàggini}}",
 	"proofreadpage-group-other": "Àutru",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Aiutu",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pàggini"
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pàggini",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }
