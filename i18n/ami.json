@@ -22,6 +22,7 @@
 	"proofreadpage_nologintext": "akaka cai kiso pi-[[Special:UserLogin| micomod ]]ta manga’ay misalof toya misongila’an a felih.",
 	"proofreadpage_notallowedtext": "Caay ka hayda kiso a misalof tona i kamayay ho no tao a felih",
 	"proofreadpage_pagesnotallowed": "sampolo",
+	"proofreadpage_pagelistnotallowed": "moraraw：dengan i Index:  a pipanganganan manga’ay a micokaymas ko “pagelist” a tahapinangan.",
 	"proofreadpage_dataconfig_badformatted": "O Bug no papatoneken a tatiri’en",
 	"proofreadpage_dataconfig_badformattedtext": "Caay ko hiw-zun-ay JSON [[Mediawiki:Proofreadpage index data config]] nona felih",
 	"proofreadpage_number_expected": "Moraraw: caay ko ditek",
@@ -92,6 +93,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Caay kasolap ko <pagelist /> sakacipinang a dadokap.",
 	"proofreadpage-pagelist-parsing-error-php": "Yo midemak to tyin-naw misafoheci to kamok no felih to  sakacipinang a dadokap i, ira ko moraraway, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Masolap ko safana’ sanay a moraraway. Pakitini i nisoritan no kong-ce-tay to romi’ami’ad a tilid a paca’of to phabricator.wikimedia.org tona moraraway.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Nanisalilan a montay ko sakacaay kanga’ay a miala to felih kamok, piliyaw ho.",
 	"proofreadpage-pagelist-dialog-title": "O misinanotan to $1 a kamok no felih.",
 	"proofreadpage-pagelist-dialog-insertchanges": "Paco’enek a mifalic",
 	"proofreadpage-pagelist-imageurlnotfound": "Caay ka’araw ko lalengatan nisamamangan a conga nona se-kyin.",
@@ -126,5 +128,10 @@
 	"tag-proofreadpage-quality1": "Caayay ho kasongila’ a misalof",
 	"tag-proofreadpage-quality2": "cimondayay",
 	"tag-proofreadpage-quality3": "Masongila’ay to misalof",
-	"tag-proofreadpage-quality4": "Mapawacayay to"
+	"tag-proofreadpage-quality4": "Mapawacayay to",
+	"tag-proofreadpage-quality0-description": "Ona nisomadan a misinanotan a paro no felih i, o “Away ko sorit” ko todong nira.",
+	"tag-proofreadpage-quality1-description": "Ona nisomadan a misinanotan a paro no felih i, o “Caay ho kasalof.” ko todong nira.",
+	"tag-proofreadpage-quality2-description": "Ona nisomadan a misinanotan a paro no felih i, o “Iraay ko montay.” ko todong nira.",
+	"tag-proofreadpage-quality3-description": "Ona nimasomadan a misinanotan a paro no felih i, o “nisalof” ko todong nira.",
+	"tag-proofreadpage-quality4-description": "Ona nimasomadan a misinanotan a paro no felih i, o “nga’ayay” ko todong nira."
 }
