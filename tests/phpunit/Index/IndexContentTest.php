@@ -226,36 +226,6 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertSame( $result, $content->getTextForSummary( $length ) );
 	}
 
-	public function preSaveTransformProvider() {
-		return [
-			[
-				new IndexContent( [ 'foo' => new WikitextContent( 'Hello ~~~' ) ] ),
-				new IndexContent( [
-					'foo' => new WikitextContent(
-						'Hello [[Special:Contributions/127.0.0.1|127.0.0.1]]'
-					)
-				] )
-			],
-		];
-	}
-
-	/**
-	 * @dataProvider preSaveTransformProvider
-	 */
-	public function testPreSaveTransform( IndexContent $content, IndexContent $expectedContent ) {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
-		$options = ParserOptions::newFromUserAndLang(
-			$this->requestContext->getUser(), $contLang
-		);
-
-		$content = $content->preSaveTransform(
-			$this->requestContext->getTitle(), $this->requestContext->getUser(), $options
-		);
-
-		$this->assertTrue( $content->equals( $expectedContent ) );
-	}
-
 	public function preloadTransformProvider() {
 		return [
 			[

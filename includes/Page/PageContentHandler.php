@@ -5,6 +5,7 @@ namespace ProofreadPage\Page;
 use Content;
 use ContentHandler;
 use IContextSource;
+use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
@@ -34,6 +35,13 @@ class PageContentHandler extends TextContentHandler {
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_PAGE ) {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ] );
 		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getContentClass() {
+		return PageContent::class;
 	}
 
 	/**
@@ -119,6 +127,32 @@ class PageContentHandler extends TextContentHandler {
 					"Format ' . $format . ' is not supported for content model " . $this->getModelID()
 				);
 		}
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function preSaveTransform(
+		Content $content,
+		PreSaveTransformParams $pstParams
+	): Content {
+		'@phan-var PageContent $content';
+
+		$contentHandlerFactory = MediaWikiServices::getInstance()->getContentHandlerFactory();
+		$contentClass = $this->getContentClass();
+		$header = $content->getHeader();
+		$body = $content->getBody();
+		$footer = $content->getFooter();
+
+		return new $contentClass(
+			$contentHandlerFactory->getContentHandler( $header->getModel() )
+				->preSaveTransform( $header, $pstParams ),
+			$contentHandlerFactory->getContentHandler( $body->getModel() )
+				->preSaveTransform( $body, $pstParams ),
+				$contentHandlerFactory->getContentHandler( $footer->getModel() )
+				->preSaveTransform( $footer, $pstParams ),
+			$content->getLevel()
+		);
 	}
 
 	/**

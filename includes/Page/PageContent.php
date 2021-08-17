@@ -151,19 +151,6 @@ class PageContent extends TextContent {
 	 * @inheritDoc
 	 * @suppress PhanTypeMismatchArgument False positive
 	 */
-	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
-		return new self(
-			$this->header->preSaveTransform( $title, $user, $popts ),
-			$this->body->preSaveTransform( $title, $user, $popts ),
-			$this->footer->preSaveTransform( $title, $user, $popts ),
-			$this->level
-		);
-	}
-
-	/**
-	 * @inheritDoc
-	 * @suppress PhanTypeMismatchArgument False positive
-	 */
 	public function preloadTransform( Title $title, ParserOptions $popts, $params = [] ) {
 		return new self(
 			$this->header->preloadTransform( $title, $popts, $params ),
