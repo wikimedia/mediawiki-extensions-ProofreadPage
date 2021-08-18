@@ -22,10 +22,10 @@ abstract class Pagination implements Iterator {
 	 * Returns the internal page number
 	 *
 	 * @param Title $pageTitle
-	 * @return integer
+	 * @return int
 	 * @throws PageNotInPaginationException
 	 */
-	abstract public function getPageNumber( Title $pageTitle );
+	abstract public function getPageNumber( Title $pageTitle ): int;
 
 	/**
 	 * Returns the page number as it should be displayed from an internal page number
@@ -34,14 +34,14 @@ abstract class Pagination implements Iterator {
 	 * @return PageNumber
 	 * @throws OutOfBoundsException
 	 */
-	abstract public function getDisplayedPageNumber( $pageNumber );
+	abstract public function getDisplayedPageNumber( int $pageNumber ): PageNumber;
 
 	/**
 	 * Returns the number of pages
 	 *
-	 * @return integer
+	 * @return int
 	 */
-	abstract public function getNumberOfPages();
+	abstract public function getNumberOfPages(): int;
 
 	/**
 	 * Returns the page number $pageNumber of the book
@@ -50,20 +50,20 @@ abstract class Pagination implements Iterator {
 	 * @return Title
 	 * @throws OutOfBoundsException
 	 */
-	abstract public function getPageTitle( $pageNumber );
+	abstract public function getPageTitle( int $pageNumber ): Title;
 
 	/**
 	 * Returns if a page number $pageNumber exits
 	 *
 	 * @param int $pageNumber page number
-	 * @return boolean
+	 * @return bool
 	 */
-	abstract protected function pageNumberExists( $pageNumber );
+	abstract protected function pageNumberExists( int $pageNumber ): bool;
 
 	/**
 	 * @inheritDoc
 	 */
-	public function rewind() {
+	public function rewind(): void {
 		// pages numbers starts with 1
 		$this->position = 1;
 	}
@@ -71,14 +71,14 @@ abstract class Pagination implements Iterator {
 	/**
 	 * @inheritDoc
 	 */
-	public function key() {
+	public function key(): int {
 		return $this->position;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function next() {
+	public function next(): void {
 		$this->position++;
 	}
 
@@ -87,14 +87,14 @@ abstract class Pagination implements Iterator {
 	 *
 	 * @return Title
 	 */
-	public function current() {
+	public function current(): Title {
 		return $this->getPageTitle( $this->position );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function valid() {
+	public function valid(): bool {
 		return $this->pageNumberExists( $this->position );
 	}
 }

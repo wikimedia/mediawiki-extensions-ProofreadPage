@@ -2,9 +2,10 @@
 
 namespace ProofreadPage\Pagination;
 
-use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
+use ProofreadPage\FileProvider;
 use ProofreadPage\Index\IndexContent;
+use ProofreadPage\Index\IndexContentLookup;
 use Title;
 
 /**
@@ -12,21 +13,31 @@ use Title;
  */
 class PaginationFactory {
 
-	/**
-	 * @var Context
-	 */
-	private $context;
+	/** @var FileProvider */
+	private $fileProvider;
 
-	/**
-	 * @var Pagination[]
-	 */
+	/** @var IndexContentLookup */
+	private $indexContentLookup;
+
+	/** @var int */
+	private $pageNamespaceId;
+
+	/** @var Pagination[] */
 	private $paginations = [];
 
 	/**
-	 * @param Context $context
+	 * @param FileProvider $fileProvider
+	 * @param IndexContentLookup $indexContentLookup
+	 * @param int $pageNamespaceId
 	 */
-	public function __construct( Context $context ) {
-		$this->context = $context;
+	public function __construct(
+		FileProvider $fileProvider,
+		IndexContentLookup $indexContentLookup,
+		int $pageNamespaceId
+	) {
+		$this->fileProvider = $fileProvider;
+		$this->indexContentLookup = $indexContentLookup;
+		$this->pageNamespaceId = $pageNamespaceId;
 	}
 
 	/**
@@ -37,7 +48,7 @@ class PaginationFactory {
 		$key = $indexTitle->getDBkey();
 
 		if ( !array_key_exists( $key, $this->paginations ) ) {
-			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+			$indexContent = $this->indexContentLookup->getIndexContentForTitle( $indexTitle );
 			$this->paginations[$key] = $this->buildPaginationForIndexContent( $indexTitle, $indexContent );
 		}
 
@@ -51,7 +62,7 @@ class PaginationFactory {
 	 */
 	public function buildPaginationForIndexContent( Title $indexTitle, IndexContent $indexContent ) {
 		try {
-			$file = $this->context->getFileProvider()->getFileForIndexTitle( $indexTitle );
+			$file = $this->fileProvider->getFileForIndexTitle( $indexTitle );
 		} catch ( FileNotFoundException $e ) {
 			$file = false;
 		}
@@ -60,14 +71,21 @@ class PaginationFactory {
 		$pagelist = $indexContent->getPagelistTagContent();
 		if ( $pagelist !== null && $file ) {
 			if ( $file->isMultipage() ) {
-				return new FilePagination( $indexTitle, $pagelist, $file, $this->context );
+				return new FilePagination(
+					$indexTitle,
+					$pagelist,
+					$file->pageCount(),
+					$this->pageNamespaceId
+				);
 			} else {
-				return new SimpleFilePagination( $indexTitle, $pagelist, $file, $this->context );
+				return new SimpleFilePagination(
+					$indexTitle,
+					$pagelist,
+					$this->pageNamespaceId
+				);
 			}
 		} else {
-			$links = $indexContent->getLinksToNamespace(
-				Context::getDefaultContext()->getPageNamespaceId()
-			);
+			$links = $indexContent->getLinksToNamespace( $this->pageNamespaceId );
 			$pages = [];
 			$pageNumbers = [];
 			foreach ( $links as $link ) {

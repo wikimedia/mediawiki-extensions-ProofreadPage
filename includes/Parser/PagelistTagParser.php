@@ -56,9 +56,14 @@ class PagelistTagParser {
 		}
 
 		if ( $image->isMultipage() ) {
-			$pagination = new FilePagination( $title, $pageList, $image, $this->context );
+			$pagination = new FilePagination(
+				$title,
+				$pageList,
+				$image->pageCount(),
+				$this->context->getPageNamespaceId()
+			);
 		} else {
-			$pagination = new SimpleFilePagination( $title, $pageList, $image, $this->context );
+			$pagination = new SimpleFilePagination( $title, $pageList, $this->context->getPageNamespaceId() );
 		}
 		$count = $pagination->getNumberOfPages();
 

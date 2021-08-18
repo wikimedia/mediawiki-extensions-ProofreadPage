@@ -38,24 +38,16 @@ class PageNumber {
 		'thai' => 'thai',
 	];
 
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	private $number;
 
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	private $displayMode;
 
-	/**
-	 * @var bool
-	 */
+	/** @var bool */
 	private $isEmpty;
 
-	/**
-	 * @var bool
-	 */
+	/** @var bool */
 	private $isRecto;
 
 	/**
@@ -64,7 +56,12 @@ class PageNumber {
 	 * @param bool $isEmpty
 	 * @param bool $isRecto true if recto, false if verso (for folio modes only)
 	 */
-	public function __construct( $number, $displayMode = self::DISPLAY_NORMAL, $isEmpty = false, $isRecto = true ) {
+	public function __construct(
+		string $number,
+		string $displayMode = self::DISPLAY_NORMAL,
+		bool $isEmpty = false,
+		bool $isRecto = true
+	) {
 		$this->number = $number;
 		$this->displayMode = $displayMode;
 		$this->isEmpty = $isEmpty;
@@ -77,7 +74,7 @@ class PageNumber {
 	 * @param Language $language the language used for formatting
 	 * @return string
 	 */
-	public function getFormattedPageNumber( Language $language ) {
+	public function getFormattedPageNumber( Language $language ): string {
 		if ( !is_numeric( $this->number ) ) {
 			return $this->number;
 		}
@@ -110,7 +107,7 @@ class PageNumber {
 	 * @param Language $language
 	 * @return string
 	 */
-	public function getRawPageNumber( Language $language ) {
+	public function getRawPageNumber( Language $language ): string {
 		if ( !is_numeric( $this->number ) ) {
 			return $this->number;
 		}
@@ -140,49 +137,49 @@ class PageNumber {
 	/**
 	 * @return bool
 	 */
-	public function isEmpty() {
+	public function isEmpty(): bool {
 		return $this->isEmpty;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getDisplayMode() {
+	public function getDisplayMode(): string {
 		return $this->displayMode;
 	}
 
 	/**
 	 * @return bool
 	 */
-	public function isNumeric() {
+	public function isNumeric(): bool {
 		return is_numeric( $this->number );
 	}
 
 	/**
 	 * @return bool
 	 */
-	public function isRecto() {
+	public function isRecto(): bool {
 		return $this->isRecto;
 	}
 
 	/**
 	 * @return string
 	 */
-	private function formatRectoVerso() {
+	private function formatRectoVerso(): string {
 		return $this->isRecto ? '<sup>r</sup>' : '<sup>v</sup>';
 	}
 
 	/**
 	 * @return string
 	 */
-	private function rawRectoVerso() {
+	private function rawRectoVerso(): string {
 		return $this->isRecto ? 'r' : 'v';
 	}
 
 	/**
 	 * @return string[]
 	 */
-	public static function getDisplayModes() {
+	public static function getDisplayModes(): array {
 		$modes = array_keys( self::DISPLAY_FROM_ICU );
 		$modes[] = self::DISPLAY_NORMAL;
 		$modes[] = self::DISPLAY_FOLIO;
