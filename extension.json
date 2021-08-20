@@ -332,7 +332,7 @@
 		"wgQueryPages": "ProofreadPage\\ProofreadPage::onwgQueryPages",
 		"GetPreferences": "ProofreadPage\\ProofreadPage::onGetPreferences",
 		"CanonicalNamespaces": "ProofreadPage\\ProofreadPage::onCanonicalNamespaces",
-		"SkinTemplateNavigation": "ProofreadPage\\ProofreadPage::onSkinTemplateNavigation",
+		"SkinTemplateNavigation::Universal": "ProofreadPage\\ProofreadPage::onSkinTemplateNavigationUniversal",
 		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",
 		"EditFormPreloadText": "ProofreadPage\\ProofreadPage::onEditFormPreloadText",
 		"ParserTestTables": "ProofreadPage\\ProofreadPage::onParserTestTables",
