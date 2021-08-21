@@ -493,12 +493,12 @@ class ProofreadPage {
 
 	/**
 	 * Add links in the navigation menus related the current page
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation::Universal
 	 *
 	 * @param SkinTemplate $skin
 	 * @param array[] &$links Structured navigation links
 	 */
-	public static function onSkinTemplateNavigation( SkinTemplate $skin, array &$links ) {
+	public static function onSkinTemplateNavigationUniversal( SkinTemplate $skin, array &$links ) {
 		$title = $skin->getTitle();
 		if ( $title === null ) {
 			return;
