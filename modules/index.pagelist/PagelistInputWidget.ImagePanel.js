@@ -169,8 +169,10 @@ ImagePanel.prototype.zoomPan = function ( url, zoomUrlOnePointFive, zoomUrlTwo, 
 		navigatorHeight: '140px',
 		navigatorWidth: '80px',
 		animationTime: 0.5,
-		visibilityRatio: 1,
-		defaultZoomLevel: 1,
+		preserveViewport: true,
+		visibilityRatio: 0.5,
+		minZoomLevel: 0.5,
+		maxZoomLevel: 4.5,
 		tileSources: {
 			type: 'legacy-image-pyramid',
 			levels: [ {
@@ -193,17 +195,11 @@ ImagePanel.prototype.zoomPan = function ( url, zoomUrlOnePointFive, zoomUrlTwo, 
 
 	} );
 
-	this.viewer.addHandler( 'open', function () {
-		var oldBounds = this.viewer.viewport.getBounds();
-		var newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
-		this.viewer.viewport.fitBounds( newBounds, true );
-	}.bind( this ) );
-
-	this.viewer.viewport.goHome = function ( immediately ) {
+	this.viewer.viewport.goHome = function () {
 		if ( this.viewer ) {
-			this.viewer.raiseEvent( 'open', {
-				immediately: immediately
-			} );
+			var oldBounds = this.viewer.viewport.getBounds();
+			var newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
+			this.viewer.viewport.fitBounds( newBounds, true );
 		}
 	}.bind( this );
 
