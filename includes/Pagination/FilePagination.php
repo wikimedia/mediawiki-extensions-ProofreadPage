@@ -3,7 +3,6 @@
 namespace ProofreadPage\Pagination;
 
 use OutOfBoundsException;
-use ProofreadPage\PageNumberNotFoundException;
 use Title;
 
 /**
@@ -67,7 +66,7 @@ class FilePagination extends Pagination {
 			// Valid page numbers are integer > 0.
 			return (int)$number;
 		} else {
-			throw new PageNumberNotFoundException(
+			throw new PageNotInPaginationException(
 				$pageTitle->getFullText() . ' provides invalid page number ' . $number
 			);
 		}

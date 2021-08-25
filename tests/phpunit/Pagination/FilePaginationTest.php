@@ -59,6 +59,18 @@ class FilePaginationTest extends ProofreadPageTestCase {
 				$pagination,
 				Title::makeTitle( $this->getPageNamespaceId(), '42.jpg' )
 			],
+			[
+				$pagination,
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu' )
+			],
+			[
+				$pagination,
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/' )
+			],
+			[
+				$pagination,
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/foo' )
+			],
 		];
 	}
 
