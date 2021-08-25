@@ -109,6 +109,17 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				] ),
 				self::newContent( 'ii', "Lorem ipsum \n2 \n", '<references />', 1 ),
 			],
+			// Invalid page numbers - should not leak exceptions
+			[
+				'LoremIpsum.djvu/foo',
+				'LoremIpsum.djvu',
+				new IndexContent( [
+					'Title' => new WikitextContent( 'Test book' ),
+					'Pages' => new WikitextContent( '<pagelist/>' ),
+					'Header' => new WikitextContent( '{{{pagenum}}}' )
+				] ),
+				self::newContent( '{{{pagenum}}}', "Lorem ipsum \n1 \n", '<references />', 1 ),
+			],
 		];
 	}
 
