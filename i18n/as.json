@@ -43,7 +43,7 @@
 	"proofreadpage_quality1_category": "মুদ্ৰণ সংশোধন কৰা হোৱা নাই",
 	"proofreadpage_quality2_category": "সমস্যাজৰ্জৰ",
 	"proofreadpage_quality3_category": "মুদ্ৰণ সংশোধন",
-	"proofreadpage_quality4_category": "বৈধকৰণ",
+	"proofreadpage_quality4_category": "বৈধকৰণ হৈছে",
 	"proofreadpage_quality0_summary": "লিখা নথকা",
 	"proofreadpage_quality1_summary": "মুদ্ৰণ সংশোধন কৰা হোৱা নাই",
 	"proofreadpage_quality2_summary": "সমস্যা থকা",
@@ -53,7 +53,7 @@
 	"proofreadpage_quality1_message": "এই পৃষ্ঠাটোৰ মুদ্ৰণ সংশোধন কৰা হোৱা নাই",
 	"proofreadpage_quality2_message": "এই পৃষ্ঠাটোৰ মুদ্ৰণ সংশোধনত এটা সমস্যা হৈছে",
 	"proofreadpage_quality3_message": "এই পৃষ্ঠাটোৰ মুদ্ৰণ সংশোধন কৰা হৈছে",
-	"proofreadpage_quality4_message": "এই পৃষ্ঠাটোৰ বৈধকৰণ কৰা হৈছে",
+	"proofreadpage_quality4_message": "এই পৃষ্ঠাটোৰ বৈধকৰণ হৈছে",
 	"proofreadpage_index_status": "সূচী স্থিতি",
 	"proofreadpage_index_size": "পৃষ্ঠাৰ সংখ্যা",
 	"proofreadpage_pages_to_validate": "বৈধকৰণৰ বাবে পৃষ্ঠাৰ সংখ্যা",
@@ -126,5 +126,5 @@
 	"tag-proofreadpage-quality1-description": "পৃষ্ঠাৰ গুণাগুণ \"মুদ্ৰণ সংশোধন কৰা নাই\"লৈ সলনি কৰা সম্পাদনা",
 	"tag-proofreadpage-quality2-description": "পৃষ্ঠাৰ গুণাগুণ \"সমস্যাজৰ্জৰ\"লৈ সলনি কৰা সম্পাদনা",
 	"tag-proofreadpage-quality3-description": "পৃষ্ঠাৰ গুণাগুণ \"মুদ্ৰণ সংশোধন কৰা হৈছে\"লৈ সলনি কৰা সম্পাদনা",
-	"tag-proofreadpage-quality4-description": "পৃষ্ঠাৰ গুণাগুণ \"বৈধকৰণ কৰা হৈছে\"লৈ সলনি কৰা সম্পাদনা"
+	"tag-proofreadpage-quality4-description": "পৃষ্ঠাৰ স্থিতি \"বৈধকৰণ  হৈছে\"লৈ সলনি কৰা সম্পাদনা"
 }

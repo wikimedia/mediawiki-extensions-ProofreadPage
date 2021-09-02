@@ -28,6 +28,8 @@
 	"proofreadpage_nologin": "Ne ensalutita",
 	"proofreadpage_nologintext": "Vi devas [[Special:UserLogin|ensaluti]] por modifi la provlegan statuson de paĝojn.",
 	"proofreadpage_notallowedtext": "Vi ne estas permesata ŝanĝi la pruvlegadan statuson de ĉi tiu paĝo.",
+	"proofreadpage_pagesnotallowed": "Eraro: La etikedo pages ne povas esti uzita en la nomspacoj Page: kaj Index:",
+	"proofreadpage_pagelistnotallowed": "Eraro: La etikedo pagelist ne povas esti uzita en la nomspaco Index:",
 	"proofreadpage_dataconfig_badformatted": "Insekto en datumoj agordo",
 	"proofreadpage_dataconfig_badformattedtext": "La paĝo [[Mediawiki:Proofreadpage index data config]] ne estas en ĝust-formata JSON.",
 	"proofreadpage_number_expected": "Eraro: numera valoro atentita",
@@ -128,5 +130,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kvalito de provlegado",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kvalito de provlegado",
 	"proofreadpage-index-field-category-label": "Kategorioj",
-	"proofreadpage-index-edit-category-help": "Kategorioj estas skribataj sen la prefikso Category: kaj estas apartigataj per signo vertikalo \"|\"."
+	"proofreadpage-index-edit-category-help": "Kategorioj estas skribataj sen la prefikso Category: kaj estas apartigataj per signo vertikalo \"|\".",
+	"tag-proofreadpage-quality0": "Sen teksto",
+	"tag-proofreadpage-quality1": "Ne provlegita",
+	"tag-proofreadpage-quality2": "Problema",
+	"tag-proofreadpage-quality3": "Provlegita",
+	"tag-proofreadpage-quality4": "Validigita",
+	"tag-proofreadpage-quality0-description": "Redaktoj, kiuj ŝanĝis la paĝan kvaliton al \"Sen teksto\"",
+	"tag-proofreadpage-quality1-description": "Redaktoj, kiuj ŝanĝis la paĝan kvaliton al \"Ne provlegita\"",
+	"tag-proofreadpage-quality2-description": "Redaktoj, kiuj ŝanĝis la paĝan kvaliton al \"Problema\"",
+	"tag-proofreadpage-quality3-description": "Redaktoj, kiuj ŝanĝis la paĝan kvaliton al \"Provlegita\"",
+	"tag-proofreadpage-quality4-description": "Redaktoj, kiuj ŝanĝis la paĝan kvaliton al \"Validigita\""
 }
