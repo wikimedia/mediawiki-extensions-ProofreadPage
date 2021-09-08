@@ -10,6 +10,9 @@ use ProofreadPage\Context;
  * @license GPL-2.0-or-later
  *
  * A query action to return meta information about the proofread extension.
+ *
+ * Note: this used to have the prefix 'pi', which conflicted with PageImages
+ * (T290585), so it was changed to 'prpi'.
  */
 class ApiQueryProofreadInfo extends ApiQueryBase {
 
@@ -18,7 +21,7 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 	 * @param string $moduleName
 	 */
 	public function __construct( $query, $moduleName ) {
-		parent::__construct( $query, $moduleName, 'pi' );
+		parent::__construct( $query, $moduleName, 'prpi' );
 	}
 
 	/**
@@ -26,6 +29,7 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 	 */
 	public function execute() {
 		$params = $this->extractRequestParams();
+
 		$prop = array_flip( $params['prop'] );
 
 		if ( isset( $prop['namespaces'] ) ) {
@@ -107,7 +111,7 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		return [
 			'action=query&meta=proofreadinfo'
 				=> 'apihelp-query+proofreadinfo-example-1',
-			'action=query&meta=proofreadinfo&piprop=namespaces'
+			'action=query&meta=proofreadinfo&prpiprop=namespaces'
 				=> 'apihelp-query+proofreadinfo-example-3',
 		];
 	}
