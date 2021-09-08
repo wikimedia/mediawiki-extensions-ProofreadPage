@@ -13,6 +13,7 @@ use MWContentSerializationException;
 use MWException;
 use ProofreadPage\Context;
 use ProofreadPage\Index\UpdateIndexQualityStats;
+use ProofreadPage\MultiFormatSerializerUtils;
 use TextContentHandler;
 use Title;
 use User;
@@ -24,6 +25,8 @@ use WikitextContentHandler;
  * Content handler for a Page: pages
  */
 class PageContentHandler extends TextContentHandler {
+
+	use MultiFormatSerializerUtils;
 
 	/**
 	 * @var WikitextContentHandler
@@ -115,7 +118,7 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		if ( $format === null ) {
-			$format = $this->guessFormat( $text );
+			$format = self::guessDataFormat( $text, true );
 		}
 
 		switch ( $format ) {
@@ -183,16 +186,6 @@ class PageContentHandler extends TextContentHandler {
 
 	/**
 	 * @param string $text
-	 * @return string
-	 */
-	private function guessFormat( $text ) {
-		return is_array( json_decode( $text, true ) )
-			? CONTENT_FORMAT_JSON
-			: CONTENT_FORMAT_WIKITEXT;
-	}
-
-	/**
-	 * @param string $text
 	 * @return PageContent
 	 * @throws MWContentSerializationException
 	 * @suppress PhanTypeMismatchArgument
@@ -205,11 +198,11 @@ class PageContentHandler extends TextContentHandler {
 				'The serialization is an invalid JSON array.'
 			);
 		}
-		$this->assertArrayKeyExistsInSerialization( 'header', $array );
-		$this->assertArrayKeyExistsInSerialization( 'body', $array );
-		$this->assertArrayKeyExistsInSerialization( 'footer', $array );
-		$this->assertArrayKeyExistsInSerialization( 'level', $array );
-		$this->assertArrayKeyExistsInSerialization( 'level', $array['level'] );
+		self::assertArrayKeyExistsInSerialization( 'header', $array );
+		self::assertArrayKeyExistsInSerialization( 'body', $array );
+		self::assertArrayKeyExistsInSerialization( 'footer', $array );
+		self::assertArrayKeyExistsInSerialization( 'level', $array );
+		self::assertArrayKeyExistsInSerialization( 'level', $array['level'] );
 
 		$user = array_key_exists( 'user', $array['level'] )
 			? PageLevel::getUserFromUserName( $array['level']['user'] )
@@ -221,19 +214,6 @@ class PageContentHandler extends TextContentHandler {
 			$this->wikitextContentHandler->unserializeContent( $array['footer'] ),
 			new PageLevel( $array['level']['level'], $user )
 		);
-	}
-
-	/**
-	 * @param string $key
-	 * @param array $serialization
-	 * @throws MWContentSerializationException
-	 */
-	private function assertArrayKeyExistsInSerialization( $key, array $serialization ) {
-		if ( !array_key_exists( $key, $serialization ) ) {
-			throw new MWContentSerializationException(
-				"The serialization should contain an $key entry."
-			);
-		}
 	}
 
 	/**
