@@ -24,6 +24,13 @@ class IndexForPageLookupMock implements IndexForPageLookup {
 	/**
 	 * @inheritDoc
 	 */
+	public function isPageTitleInCache( Title $pageTitle ): bool {
+		return array_key_exists( $pageTitle->getDBkey(), $this->indexForPage );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function getIndexForPageTitle( Title $pageTitle ) {
 		if ( !array_key_exists( $pageTitle->getDBkey(), $this->indexForPage ) ) {
 			return null;

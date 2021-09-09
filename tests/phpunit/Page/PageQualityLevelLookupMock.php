@@ -24,6 +24,20 @@ class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 	/**
 	 * @inheritDoc
 	 */
+	public function isPageTitleInCache( Title $pageTitle ): bool {
+		return array_key_exists( $pageTitle->getDBkey(), $this->levelForPage );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function flushCacheForPage( Title $pageTitle ) {
+		unset( $this->cache[ $pageTitle->getDBkey() ] );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function getQualityLevelForPageTitle( Title $pageTitle ) {
 		if ( !array_key_exists( $pageTitle->getDBkey(), $this->levelForPage ) ) {
 			return null;

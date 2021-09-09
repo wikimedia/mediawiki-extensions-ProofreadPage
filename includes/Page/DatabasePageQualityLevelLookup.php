@@ -37,6 +37,20 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	/**
 	 * @inheritDoc
 	 */
+	public function isPageTitleInCache( Title $pageTitle ): bool {
+		return array_key_exists( $pageTitle->getDBkey(), $this->cache );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function flushCacheForPage( Title $pageTitle ) {
+		unset( $this->cache[ $pageTitle->getDBkey() ] );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function getQualityLevelForPageTitle( Title $pageTitle ) {
 		if ( !$pageTitle->inNamespace( $this->pageNamespaceId ) ) {
 			throw new InvalidArgumentException( $pageTitle . ' is not in Page: namespace' );

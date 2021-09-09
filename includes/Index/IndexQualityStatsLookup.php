@@ -24,6 +24,15 @@ class IndexQualityStatsLookup {
 	}
 
 	/**
+	 * Report if the given index page's stats are cached already
+	 * @param Title $indexTitle the title of an index page
+	 * @return bool true if the stat for this index are already cached
+	 */
+	public function isIndexTitleInCache( Title $indexTitle ): bool {
+		return array_key_exists( $indexTitle->getPrefixedDBkey(), $this->cache );
+	}
+
+	/**
 	 * @param Title $indexTitle
 	 * @return PagesQualityStats
 	 */

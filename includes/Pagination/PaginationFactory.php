@@ -41,6 +41,15 @@ class PaginationFactory {
 	}
 
 	/**
+	 * Check if the given index has a cached pagination
+	 * @param Title $indexTitle
+	 * @return bool
+	 */
+	public function isIndexTitleInCache( Title $indexTitle ): bool {
+		return array_key_exists( $indexTitle->getDBkey(), $this->paginations );
+	}
+
+	/**
 	 * @param Title $indexTitle
 	 * @return Pagination
 	 */

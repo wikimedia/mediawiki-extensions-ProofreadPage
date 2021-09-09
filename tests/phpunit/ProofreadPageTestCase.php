@@ -118,7 +118,8 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @return Context
 	 */
 	protected function getContext(
-		array $indexForPage = [], array $indexContent = [], array $levelForPage = [], array $qualityStatsForIndex = []
+		array $indexForPage = [], array $indexContent = [], array $levelForPage = [],
+		array $qualityStatsForIndex = []
 	) {
 		return new Context(
 			ProofreadPageInit::getNamespaceId( 'page' ),

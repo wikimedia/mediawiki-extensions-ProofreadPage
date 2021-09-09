@@ -37,6 +37,13 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	/**
 	 * @inheritDoc
 	 */
+	public function isPageTitleInCache( Title $pageTitle ): bool {
+		return array_key_exists( $pageTitle->getDBkey(), $this->cache );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function getIndexForPageTitle( Title $pageTitle ) {
 		$cacheKey = $pageTitle->getDBkey();
 		if ( !array_key_exists( $cacheKey, $this->cache ) ) {
