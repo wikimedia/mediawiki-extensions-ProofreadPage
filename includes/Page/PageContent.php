@@ -3,15 +3,9 @@
 namespace ProofreadPage\Page;
 
 use Content;
-use Html;
 use MagicWord;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use OutOfBoundsException;
-use ParserOptions;
-use ProofreadPage\Context;
-use ProofreadPage\Index\IndexTemplateStyles;
-use ProofreadPage\Pagination\PageNotInPaginationException;
 use Status;
 use TextContent;
 use Title;
@@ -238,95 +232,5 @@ class PageContent extends TextContent {
 		return $this->header->matchMagicWord( $word ) ||
 			$this->body->matchMagicWord( $word ) ||
 			$this->footer->matchMagicWord( $word );
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function getParserOutput(
-		Title $title, $revId = null, ParserOptions $options = null, $generateHtml = true
-	) {
-		if ( $this->isRedirect() ) {
-			return $this->body->getParserOutput( $title, $revId, $options, $generateHtml );
-		}
-		if ( $options === null ) {
-			$options = ParserOptions::newCanonical( 'canonical' );
-		}
-
-		$context = Context::getDefaultContext();
-		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
-
-		// create content
-		$wikitext = trim( $this->header->getText() . "\n\n" . $this->body->getText() . $this->footer->getText() );
-
-		$indexTs = null;
-		if ( $indexTitle !== null ) {
-			$indexTs = new IndexTemplateStyles( $indexTitle );
-			// newline so that following wikitext that needs to start on a newline
-			// like tables, lists, etc, can do so.
-			$wikitext = $indexTs->getIndexTemplateStyles( '.pagetext' ) . "\n" . $wikitext;
-		}
-		$wikitextContent = new WikitextContent( $wikitext );
-
-		$parserOutput = $wikitextContent->getParserOutput( $title, $revId, $options, $generateHtml );
-		$parserOutput->addCategory(
-			Title::makeTitleSafe(
-				NS_CATEGORY,
-				$this->level->getLevelCategoryName()
-			)->getDBkey(),
-			$title->getText()
-		);
-
-		$parserOutput->setPageProperty( 'proofread_page_quality_level', $this->level->getLevel() );
-		$context->getPageQualityLevelLookup()->flushCacheForPage( $title );
-
-		// html container
-		$html = Html::openElement( 'div',
-			[ 'class' => 'prp-page-qualityheader quality' . $this->level->getLevel() ] ) .
-			wfMessage( 'proofreadpage_quality' . $this->level->getLevel() . '_message' )
-				->title( $title )->inContentLanguage()->parse() .
-			Html::closeElement( 'div' ) .
-			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
-			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] ) .
-			Html::closeElement( 'div' );
-		$parserOutput->setText( $html );
-
-		$parserOutput->addJsConfigVars( [
-			'prpPageQuality' => $this->level->getLevel()
-		] );
-
-		if ( $indexTitle instanceof Title ) {
-			try {
-				$pagination = $context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
-				$pageNumber = $pagination->getPageNumber( $title );
-				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
-				$formattedPageNumber = $displayedPageNumber->getFormattedPageNumber( $title->getPageLanguage() );
-
-				$parserOutput->addJsConfigVars( [
-					'prpPageNumber' => $formattedPageNumber
-				] );
-			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
-			}
-		}
-
-		// add modules
-		$parserOutput->addModuleStyles( 'ext.proofreadpage.base' );
-
-		// add scan image to dependencies
-		$parserOutput->addImage( strtok( $title->getDBkey(), '/' ) );
-
-		// add the styles.css as a dependency (even if it doesn't exist yet)
-		if ( $indexTs !== null ) {
-			$stylesPage = $indexTs->getTemplateStylesPage();
-
-			if ( $stylesPage ) {
-				$parserOutput->addTemplate(
-					$stylesPage,
-					$stylesPage->getArticleID(),
-					$stylesPage->getLatestRevID() );
-			}
-		}
-
-		return $parserOutput;
 	}
 }
