@@ -9,6 +9,7 @@ use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MediaWiki\User\UserIdentityValue;
+use MWContentSerializationException;
 use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
@@ -48,186 +49,222 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		return [
 			[
 				new IndexContent( [] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n}}",
+				'{"fields":[],"categories":[]}',
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}",
+				'{"fields":{"foo":"bar"},"categories":[]}',
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( '{{bar|baz}}' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}",
+				'{"fields":{"foo":"{{bar|baz}}"},"categories":[]}'
 			],
 			[
 				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY,  'Foo' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n}}\n[[Category:Foo]]"
+				"{{:MediaWiki:Proofreadpage_index_template\n}}\n[[Category:Foo]]",
+				'{"fields":[],"categories":["Foo"]}'
 			],
 			[
 				new IndexContent(
 					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
 					[ Title::makeTitle( NS_CATEGORY,  'Foo' ) ]
 				),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}\n[[Category:Foo]]"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}\n[[Category:Foo]]",
+				'{"fields":{"foo":"{{bar|baz}}"},"categories":["Foo"]}'
 			],
 			[
 				new IndexRedirectContent( Title::newFromText( 'Foo' ) ),
-				'#REDIRECT [[Foo]]'
+				'#REDIRECT [[Foo]]',
+				/* throws */
+				null
 			]
 		];
 	}
 
 	/**
+	 * Check that IndexContent serialises correctly to wikitext and JSON
 	 * @dataProvider wikitextSerializationProvider
 	 */
-	public function testSerializeContentInWikitext( Content $content, $serialization ) {
-		$this->assertSame( $serialization, $this->handler->serializeContent( $content ) );
+	public function testSerializeContent( Content $content,
+		?string $wikitextSerialization, ?string $jsonSerialization ) {
+		if ( $wikitextSerialization !== null ) {
+			$this->assertSame( $wikitextSerialization,
+				$this->handler->serializeContent( $content ) );
+		}
+
+		if ( $jsonSerialization !== null ) {
+			$this->assertSame( $jsonSerialization,
+				$this->handler->serializeContent( $content, CONTENT_FORMAT_JSON ) );
+		}
+	}
+
+	public function jsonExceptionSerializationProvider() {
+		return [
+			'Redirects not supported in JSON' => [
+				new IndexRedirectContent( Title::newFromText( 'Foo' ) ),
+			],
+		];
+	}
+
+	/**
+	 * Check that IndexContent that should raise an Exception does
+	 * @dataProvider jsonExceptionSerializationProvider
+	 */
+	public function testJsonSerialisationExceptions( TextContent $content ) {
+		$this->expectException( MWContentSerializationException::class );
+		$this->handler->serializeContent( $content, CONTENT_FORMAT_JSON );
 	}
 
 	public function wikitextUnserializationProvider() {
 		return [
 			[
 				new IndexContent( [] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n}}",
 			],
 			[
 				new IndexContent( [] ),
-				'foo'
+				'foo',
 			],
 			[
 				new IndexContent( [] ),
-				''
+				'',
+
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}",
 			],
 			[
 				new IndexContent( [
-					'foo' => new WikitextContent( ' a' ), 'bar' => new WikitextContent( ' z' )
+					'foo' => new WikitextContent( ' a' ),
+					'bar' => new WikitextContent( ' z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n| foo = a\n| bar = z\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n| foo = a\n| bar = z\n}}",
 			],
 			[
 				new IndexContent( [
 					'pagination' => new WikitextContent( '<pagelist />' ),
 					'bar' => new WikitextContent( 'z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|pagination=<pagelist />|bar=z\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|pagination=<pagelist />|bar=z\n}}",
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}",
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}{{foo|bar}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n}}{{foo|bar}}",
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( '{{bar}}' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar}}\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar}}\n}}",
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( '{{bar|baz=foo}}' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz=foo}}\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz=foo}}\n}}",
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( "{{bar|bat=foo}}\n" ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|bat=foo}}\n\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|bat=foo}}\n\n}}",
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n|baz\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=bar\n|baz\n}}",
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( '{{{param|}}}' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{{param|}}}\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{{param|}}}\n}}",
 			],
 			[
 				new IndexContent( [
 					'foo' => new WikitextContent( '{{{param|}}}' ),
 					'baz' => new WikitextContent( 'ddd' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{{param|}}}|baz=ddd\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{{param|}}}|baz=ddd\n}}",
 			],
 			[
 				new IndexContent( [
 					'foo' => new WikitextContent( '{{bar|bat=foo}}' ),
 					'bar' => new WikitextContent( 'z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|bat=foo}}|bar=z\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|bat=foo}}|bar=z\n}}",
 			],
 			[
 				new IndexContent( [
 					'foo' => new WikitextContent( '[[bar]]' ),
 					'bar' => new WikitextContent( 'z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=[[bar]]|bar=z\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=[[bar]]|bar=z\n}}",
 			],
 			[
 				new IndexContent( [
 					'foo' => new WikitextContent( '[[foo|bar]]' ),
 					'bar' => new WikitextContent( 'z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=[[foo|bar]]|bar=z\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=[[foo|bar]]|bar=z\n}}",
 			],
 			[
 				new IndexContent( [
 					'foo' => new WikitextContent( '{{baz|bat=[[foo|bar]]}}' ),
 					'bar' => new WikitextContent( 'z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{baz|bat=[[foo|bar]]}}|bar=z}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{baz|bat=[[foo|bar]]}}|bar=z}}",
 			],
 			[
 				new IndexContent( [
 					'header' => new WikitextContent( '{{{pagenum}}}' ),
 					'bar' => new WikitextContent( 'z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|header={{{pagenum}}}\n|bar=z}}\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|header={{{pagenum}}}\n|bar=z}}\n}}",
 			],
 			[
 				new IndexContent( [
 					'header' => new WikitextContent( '{{{pagenum|}}}' ),
 					'bar' => new WikitextContent( 'z' )
 				] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|header={{{pagenum|}}}\n|bar=z}}\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|header={{{pagenum|}}}\n|bar=z}}\n}}",
 			],
 			[
 				new IndexRedirectContent( Title::newFromText( 'Foo' ) ),
-				'#REDIRECT [[Foo]]'
+				'#REDIRECT [[Foo]]',
 			],
 			[
 				new IndexContent( [] ),
-				'#REDIRECT [[Special:UserLogout]]'
+				'#REDIRECT [[Special:UserLogout]]',
 			],
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( '#REDIRECT [[Foo]]' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=#REDIRECT [[Foo]]\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=#REDIRECT [[Foo]]\n}}",
 			],
 			[
 				new IndexContent( [], [ Title::newFromText( 'Category:Foo Bar' ) ] ),
-				'[[Category:Foo Bar]]'
+				'[[Category:Foo Bar]]',
 			],
 			[
 				new IndexContent( [], [ Title::newFromText( 'Category:Foo_Bar' ) ] ),
-				'[[Category:Foo_Bar]]'
+				'[[Category:Foo_Bar]]',
 			],
 			[
 				new IndexContent( [], [ Title::newFromText( 'Category:Foo' ) ] ),
-				"{{:MediaWiki:Proofreadpage_index_template\n}}\n[[Category:Foo]]"
+				"{{:MediaWiki:Proofreadpage_index_template\n}}\n[[Category:Foo]]",
 			],
 			[
 				new IndexContent(
 					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
 					[ Title::newFromText( 'Category:Foo' ) ]
 				),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}\n[[Category:Foo]]"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}\n[[Category:Foo]]",
 			],
 			[
 				new IndexContent(
 					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
 					[ Title::newFromText( 'Category:Foo' ) ]
 				),
-				"[[Category:Foo]]\n{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}"
+				"[[Category:Foo]]\n{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}",
 			],
 			[
 				new IndexContent(
@@ -235,33 +272,264 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 					[ Title::newFromText( 'Category:Foo' ), Title::newFromText( 'Category:Bar' ) ]
 				),
 				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}" .
-				"\n[[Category:Foo]]\n[[Category:Bar]]"
+				"\n[[Category:Foo]]\n[[Category:Bar]]",
 			],
 			[
 				new IndexContent(
 					[ 'foo' => new WikitextContent( '[[Category:Foo]]' ) ],
 					[]
 				),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=[[Category:Foo]]\n}}"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=[[Category:Foo]]\n}}",
 			],
 			[
 				new IndexContent(
 					[ 'foo' => new WikitextContent( 'foo' ) ],
 					[]
 				),
-				"{{:MediaWiki:Proofreadpage_index_template\n|foo=foo\n}}\nblabla"
+				"{{:MediaWiki:Proofreadpage_index_template\n|foo=foo\n}}\nblabla",
 			],
 		];
 	}
 
 	/**
+	 * Test that content in wikitext unserializes correctly
 	 * @dataProvider wikitextUnserializationProvider
 	 */
-	public function testUnserializeContentInWikitext( Content $content, $serialization ) {
-		$this->assertEquals(
-			$content,
-			$this->handler->unserializeContent( $serialization )
-		);
+	public function testUnserializeWikitextContent( Content $expectedContent, ?string $wikitextSerialization ) {
+		$fromWikitext = $this->handler->unserializeContent( $wikitextSerialization );
+		$this->assertEquals( $expectedContent, $fromWikitext );
+	}
+
+	public function jsonUnserializationProvider() {
+		return [
+			[
+				new IndexContent( [] ),
+				"{}"
+			],
+			[
+				new IndexContent( [] ),
+				'[]'
+
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
+				'{"fields": {"foo": "bar"} }'
+			],
+			[
+				new IndexContent( [
+					'foo' => new WikitextContent( ' a' ),
+					'bar' => new WikitextContent( ' z' )
+				] ),
+				'{"fields": {"foo": " a", "bar": " z"} }'
+			],
+			[
+				new IndexContent( [
+					'pagination' => new WikitextContent( '<pagelist />' ),
+					'bar' => new WikitextContent( 'z' )
+				] ),
+				'{"fields": {"pagination": "<pagelist />", "bar": "z"} }'
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
+				'{"fields": {"foo": "bar" } }'
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
+				'{"fields": {"foo": "bar" } }'
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( '{{bar}}' ) ] ),
+				'{"fields": {"foo": "{{bar}}" } }'
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( '{{bar|baz=foo}}' ) ] ),
+				'{"fields": {"foo": "{{bar|baz=foo}}" } }'
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( "{{bar|bat=foo}}\n" ) ] ),
+				'{"fields": {"foo": "{{bar|bat=foo}}\\n" } }'
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( '{{{param|}}}' ) ] ),
+				'{"fields": {"foo": "{{{param|}}}" } }'
+			],
+			[
+				new IndexContent( [
+					'foo' => new WikitextContent( '{{{param|}}}' ),
+					'baz' => new WikitextContent( 'ddd' )
+				] ),
+				'{"fields": {"foo": "{{{param|}}}", "baz": "ddd" } }'
+			],
+			[
+				new IndexContent( [
+					'foo' => new WikitextContent( '{{bar|bat=foo}}' ),
+					'bar' => new WikitextContent( 'z' )
+				] ),
+				'{"fields": {"foo": "{{bar|bat=foo}}", "bar": "z" } }'
+			],
+			[
+				new IndexContent( [
+					'foo' => new WikitextContent( '[[bar]]' ),
+					'bar' => new WikitextContent( 'z' )
+				] ),
+				'{"fields": {"foo": "[[bar]]", "bar": "z" } }'
+			],
+			[
+				new IndexContent( [
+					'foo' => new WikitextContent( '[[foo|bar]]' ),
+					'bar' => new WikitextContent( 'z' )
+				] ),
+				'{"fields": {"foo": "[[foo|bar]]", "bar": "z" } }'
+			],
+			[
+				new IndexContent( [
+					'foo' => new WikitextContent( '{{baz|bat=[[foo|bar]]}}' ),
+					'bar' => new WikitextContent( 'z' )
+				] ),
+				'{"fields": {"foo": "{{baz|bat=[[foo|bar]]}}", "bar": "z" } }'
+			],
+			[
+				new IndexContent( [
+					'header' => new WikitextContent( '{{{pagenum}}}' ),
+					'bar' => new WikitextContent( 'z' )
+				] ),
+				'{"fields": {"header": "{{{pagenum}}}", "bar": "z" } }'
+			],
+			[
+				new IndexContent( [
+					'header' => new WikitextContent( '{{{pagenum|}}}' ),
+					'bar' => new WikitextContent( 'z' )
+				] ),
+				'{"fields": {"header": "{{{pagenum|}}}", "bar": "z" } }'
+			],
+			[
+				new IndexContent( [ 'foo' => new WikitextContent( '#REDIRECT [[Foo]]' ) ] ),
+				'{"fields": {"foo": "#REDIRECT [[Foo]]" } }'
+			],
+			[
+				/* check empty category list */
+				new IndexContent( [], [] ),
+				'{ "categories": [] }'
+			],
+			[
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo Bar' ) ] ),
+				'{ "categories": [ "Foo Bar" ] }'
+			],
+			[
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo_Bar' ) ] ),
+				'{ "categories": [ "Foo_Bar" ] }'
+			],
+			[
+				new IndexContent( [], [ Title::newFromText( 'Category:Foo' ) ] ),
+				'{ "fields": {}, "categories": [ "Foo" ] }'
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
+					[ Title::newFromText( 'Category:Foo' ) ]
+				),
+				'{ "fields": { "foo": "{{bar|baz}}" }, "categories": [ "Foo" ] }'
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
+					[ Title::newFromText( 'Category:Foo' ) ]
+				),
+				'{ "fields": { "foo": "{{bar|baz}}" }, "categories": [ "Foo" ] }'
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
+					[ Title::newFromText( 'Category:Foo' ), Title::newFromText( 'Category:Bar' ) ]
+				),
+				'{ "fields": { "foo": "{{bar|baz}}" }, "categories": [ "Foo", "Bar" ] }'
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '[[Category:Foo]]' ) ],
+					[]
+				),
+				'{ "fields": { "foo": "[[Category:Foo]]" } }'
+			],
+			[
+				new IndexContent(
+					[ 'foo' => new WikitextContent( 'bar' ) ],
+					[]
+				),
+				'{ "fields": { "foo": "bar" } }'
+			],
+			[
+				/* empty-string field */
+				new IndexContent(
+					[ 'foo' => new WikitextContent( '' ) ],
+					[]
+				),
+				'{ "fields": { "foo": "" } }'
+			],
+		];
+	}
+
+	/**
+	 * Test that content in JSON unserializes correctly
+	 * @dataProvider jsonUnserializationProvider
+	 */
+	public function testUnserializeJsonContent( Content $expectedContent, ?string $jsonSerialization ) {
+		$unserialized = $this->handler->unserializeContent( $jsonSerialization );
+		$this->assertTrue( $expectedContent->equals( $unserialized ) );
+	}
+
+	public function jsonExceptionUnserializationProvider() {
+		return [
+			'Empty string' => [
+				'',
+				"The serialization is an invalid JSON array.",
+			],
+			'Literal' => [
+				'"foo"',
+				"The serialization is an invalid JSON array.",
+			],
+			'Categories as a literal' => [
+				'{ "categories": "foo" }',
+				"The serialization key 'categories' should be an array."
+			],
+			'Categories as an object' => [
+				'{ "categories": { "foo": "bar" } }',
+				"The array 'categories' should be a sequential array."
+			],
+			'Categories not strings' => [
+				'{ "categories": [ [] ] }',
+				"The array 'categories' should contain only non-empty strings."
+			],
+			'Categories contain empty strings' => [
+				'{ "categories": [ "foo", "" ] }',
+				"The array 'categories' should contain only non-empty strings."
+			],
+			'Categories contain illegal categories' => [
+				'{ "categories": [ "foo", "_" ] }',
+				"The category title '_' is invalid."
+			],
+			'Fields as a literal' => [
+				'{ "fields": "foo" }',
+				"The serialization key 'fields' should be an array."
+			],
+			'Invalid field value' => [
+				'{"fields": {"foo": "bar", "baz": null } }',
+				"The array 'fields' should contain only strings."
+			],
+		];
+	}
+
+	/**
+	 * Check that JSON that should provide an exception does so
+	 * @dataProvider jsonExceptionUnserializationProvider
+	 */
+	public function testJsonUnserialisationExceptions( string $jsonSerialization,
+		string $expectedMessage ) {
+		$this->expectException( MWContentSerializationException::class );
+		$this->expectExceptionMessage( $expectedMessage );
+
+		$fromJson = $this->handler->unserializeContent(
+			$jsonSerialization, CONTENT_FORMAT_JSON );
 	}
 
 	public function testMakeEmptyContent() {

@@ -10,11 +10,13 @@ use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
+use MWException;
 use Parser;
 use ParserOptions;
 use PPFrame;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
+use ProofreadPage\MultiFormatSerializerUtils;
 use TextContentHandler;
 use Title;
 use WikitextContent;
@@ -26,6 +28,8 @@ use WikitextContentHandler;
  * Content handler for a Index: pages
  */
 class IndexContentHandler extends TextContentHandler {
+
+	use MultiFormatSerializerUtils;
 
 	/**
 	 * @var WikitextContentHandler
@@ -50,7 +54,7 @@ class IndexContentHandler extends TextContentHandler {
 		$this->parser = $this->buildParser();
 		$this->wikitextLinksExtractor = new WikitextLinksExtractor();
 
-		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT ] );
+		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ] );
 	}
 
 	/**
@@ -88,26 +92,65 @@ class IndexContentHandler extends TextContentHandler {
 	 * @inheritDoc
 	 */
 	public function serializeContent( Content $content, $format = null ) {
+		// if not given, default is Wikitext
+		$format = $format ?: CONTENT_FORMAT_WIKITEXT;
+
 		$this->checkFormat( $format );
 
-		return $this->serializeContentInWikitext( $content );
-	}
-
-	/**
-	 * @param Content $content
-	 * @throws MWContentSerializationException
-	 * @return string
-	 */
-	private function serializeContentInWikitext( Content $content ) {
+		// redirects can only be wikitext
 		if ( $content instanceof IndexRedirectContent ) {
+			self::assertFormatSuitableForRedirect( $format );
 			return '#REDIRECT [[' . $content->getRedirectTarget()->getFullText() . ']]';
 		}
+
 		if ( !( $content instanceof IndexContent ) ) {
 			throw new MWContentSerializationException(
 				'IndexContentHandler could only serialize IndexContent'
 			);
 		}
 
+		switch ( $format ) {
+			case CONTENT_FORMAT_JSON:
+				return $this->serializeContentInJson( $content );
+			case CONTENT_FORMAT_WIKITEXT:
+				return $this->serializeContentInWikitext( $content );
+			default:
+				throw new MWContentSerializationException(
+					"Format '$format' is not supported for serialization of content model " .
+						$this->getModelID()
+				);
+		}
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function unserializeContent( $text, $format = null ) {
+		$this->checkFormat( $format );
+
+		if ( $format === null ) {
+			$format = self::guessDataFormat( $text, false );
+		}
+
+		switch ( $format ) {
+			case CONTENT_FORMAT_JSON:
+				return $this->unserializeContentInJson( $text );
+			case CONTENT_FORMAT_WIKITEXT:
+				return $this->unserializeContentInWikitext( $text );
+			default:
+				throw new MWException(
+					"Format '$format' is not supported for unserialization of content model " .
+						$this->getModelID()
+				);
+		}
+	}
+
+	/**
+	 * @param IndexContent $content
+	 * @throws MWContentSerializationException
+	 * @return string
+	 */
+	private function serializeContentInWikitext( IndexContent $content ): string {
 		$text = '{{:MediaWiki:Proofreadpage_index_template';
 		/** @var WikitextContent $value */
 		foreach ( $content->getFields() as $key => $value ) {
@@ -123,18 +166,9 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @inheritDoc
+	 * @param string $text
+	 * @return IndexRedirectContent|IndexContent
 	 */
-	public function unserializeContent( $text, $format = null ) {
-		$this->checkFormat( $format );
-
-		return $this->unserializeContentInWikitext( $text );
-	}
-
-	 /**
-	  * @param string $text
-	  * @return IndexRedirectContent|IndexContent
-	  */
 	private function unserializeContentInWikitext( $text ) {
 		$fullWikitext = new WikitextContent( $text );
 		if ( $fullWikitext->isRedirect() ) {
@@ -172,6 +206,83 @@ class IndexContentHandler extends TextContentHandler {
 				}
 			}
 		}
+		return new IndexContent( $customFieldsValues, $categories );
+	}
+
+	/**
+	 * @param IndexContent $content
+	 * @throws MWContentSerializationException
+	 * @return string
+	 */
+	public function serializeContentInJson( IndexContent $content ): string {
+		$data = [
+			'fields' => [],
+			'categories' => [],
+		];
+
+		/** @var WikitextContent $value */
+		foreach ( $content->getFields() as $key => $value ) {
+			$data['fields'][ $key ] = $value->serialize();
+		}
+
+		foreach ( $content->getCategories() as $category ) {
+			$data['categories'][] = $category->getText();
+		}
+
+		return json_encode( $data, JSON_UNESCAPED_UNICODE );
+	}
+
+	/**
+	 * @param string $text
+	 * @return IndexContent
+	 * @throws MWContentSerializationException
+	 */
+	private function unserializeContentInJson( $text ): IndexContent {
+		$array = json_decode( $text, true );
+
+		if ( !is_array( $array ) ) {
+			throw new MWContentSerializationException(
+				'The serialization is an invalid JSON array.'
+			);
+		}
+
+		$customFieldsValues = [];
+		$categories = [];
+
+		if ( isset( $array['categories'] ) ) {
+
+			self::assertArrayValueIsArray( $array, 'categories' );
+			self::assertArrayIsSequential( $array['categories'], 'categories' );
+			self::assertContainsOnlyStrings( $array['categories'], false, 'categories' );
+
+			/** @var string $category */
+			foreach ( $array['categories'] as $category ) {
+				$title = Title::makeTitleSafe( NS_CATEGORY, $category );
+
+				if ( $title ) {
+					$categories[] = $title;
+				} else {
+					throw new MWContentSerializationException(
+						"The category title '$category' is invalid."
+					);
+				}
+			}
+		}
+
+		if ( isset( $array['fields'] ) ) {
+			self::assertArrayValueIsArray( $array, 'fields' );
+			// for now, all supported 'type' values are encoded as strings
+			// we may relax this in future if we accept object-type date in fields
+			self::assertContainsOnlyStrings( $array['fields'], true, 'fields' );
+
+			/** @var string $fieldValue */
+			foreach ( $array['fields'] as $fieldKey => $fieldValue ) {
+				if ( $fieldValue !== null ) {
+					$customFieldsValues[$fieldKey] = new WikitextContent( $fieldValue );
+				}
+			}
+		}
+
 		return new IndexContent( $customFieldsValues, $categories );
 	}
 
