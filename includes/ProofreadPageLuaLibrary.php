@@ -24,6 +24,11 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 */
 	private $logger;
 
+	/**
+	 * @var \ParserOutput|null
+	 */
+	private $parserOutput;
+
 	/** @inheritDoc */
 	public function register() {
 		$this->context = Context::getDefaultContext();
@@ -56,6 +61,10 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 
 		$this->logger = LoggerFactory::getInstance( 'ext.proofreadPage.lua' );
 
+		if ( $this->getParser() ) {
+			$this->parserOutput = $this->getParser()->getOutput();
+		}
+
 		return $this->getEngine()->registerInterface( $extensionLuaPath, $lib, $opts );
 	}
 
@@ -64,6 +73,35 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 */
 	public function incrementExpensiveFunctionCount() {
 		$this->getEngine()->incrementExpensiveFunctionCount();
+	}
+
+	/**
+	 * Add a parser dependency on the given page (index or otherwise)
+	 * @param Title|null $pageTitle
+	 */
+	private function addTemplateDependencyOnPage( ?Title $pageTitle ) {
+		if ( $this->parserOutput && $pageTitle ) {
+			$this->parserOutput->addTemplate(
+				$pageTitle,
+				$pageTitle->getArticleID(),
+				$pageTitle->getLatestRevID()
+			);
+		}
+	}
+
+	/**
+	 * Add a parser dependency on every page in the index (and the index itself)
+	 * @param Title|null $indexTitle
+	 */
+	private function addTemplateDependencyOnAllPagesInIndex( ?Title $indexTitle ) {
+		if ( $this->parserOutput && $indexTitle ) {
+			// this depends on the index itself (for the content)
+			$pagination = $this->getPaginationForIndex( $indexTitle );
+
+			foreach ( $pagination as $pageTitle ) {
+				$this->addTemplateDependencyOnPage( $pageTitle );
+			}
+		}
 	}
 
 	/**
@@ -77,12 +115,16 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 */
 	public function doGetIndexProgress( string $indexName ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
+
 		$statsLookup = $this->context->getIndexQualityStatsLookup();
 
 		if ( !$statsLookup->isIndexTitleInCache( $indexTitle ) ) {
 			$this->logger->debug( "Index stats cache miss: " . $indexTitle->getFullText() );
 			$this->incrementExpensiveFunctionCount();
 		}
+
+		// Progress depends on every page in the index
+		$this->addTemplateDependencyOnAllPagesInIndex( $indexTitle );
 
 		$indexStats = $statsLookup->getStatsForIndexTitle( $indexTitle );
 
@@ -115,6 +157,9 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 			$this->logger->debug( "Index content cache miss: " . $indexTitle->getFullText() );
 			$this->incrementExpensiveFunctionCount();
 		}
+
+		// if the index content is needed, there's a dependency on the index
+		$this->addTemplateDependencyOnPage( $indexTitle );
 
 		$indexContent = $contentLookup->getIndexContentForTitle( $indexTitle );
 
@@ -188,7 +233,10 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 			$this->incrementExpensiveFunctionCount();
 		}
 
-		# may be expensive, but cached
+		// the pagination depends on the index content
+		$this->addTemplateDependencyOnPage( $indexTitle );
+
+		// may be expensive, but cached
 		$pagination = $paginationFactory->getPaginationForIndexTitle( $indexTitle );
 		return $pagination;
 	}
@@ -242,6 +290,9 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 			$this->incrementExpensiveFunctionCount();
 		}
 
+		// the page quality depends only on that page
+		$this->addTemplateDependencyOnPage( $pageTitle );
+
 		$pageLevel = $pqLookup->getQualityLevelForPageTitle( $pageTitle );
 
 		return [ [
@@ -276,6 +327,10 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		$pageTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $pageName );
 		$indexTitle = $this->getIndexForPage( $pageTitle );
 
+		// if the page is moved, this could change, and also if the index pagination changes
+		$this->addTemplateDependencyOnPage( $pageTitle );
+		$this->addTemplateDependencyOnPage( $indexTitle );
+
 		if ( $indexTitle == null ) {
 			return [ null ];
 		}
@@ -298,8 +353,8 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 			return [ null ];
 		}
 
-		# this is a cached lookup, so we'll only look this indexes pagination up once
-		# but that first time is expensive
+		// this is a cached lookup, so we'll only look this indexes pagination up once
+		// but that first time is expensive
 		$pagination = $this->getPaginationForIndex( $indexTitle );
 		$language = $indexTitle->getPageLanguage();
 
