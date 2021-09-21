@@ -29,6 +29,7 @@
 			"Yknok29"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "API error when an index title is invalid\n* $1 - the title.",
 	"apihelp-query+proofread-description": "{{doc-apihelp-description|query+proofread}}",
 	"apihelp-query+proofread-summary": "{{doc-apihelp-summary|query+proofread}}",
 	"apihelp-query+proofread-example-1": "{{doc-apihelp-example|query+proofread}}",
@@ -36,5 +37,12 @@
 	"apihelp-query+proofreadinfo-summary": "{{doc-apihelp-summary|query+proofreadinfo}}",
 	"apihelp-query+proofreadinfo-param-prop": "Use \"{{ns:Page}}\" and \"{{ns:Index}}\" with quotes instead of Page and Index namespaces.\n\n{{doc-apihelp-param|query+proofreadinfo|prop}}",
 	"apihelp-query+proofreadinfo-example-1": "{{doc-apihelp-example|query+proofreadinfo}}",
-	"apihelp-query+proofreadinfo-example-3": "{{doc-apihelp-example|query+proofreadinfo}}"
+	"apihelp-query+proofreadinfo-example-3": "{{doc-apihelp-example|query+proofreadinfo}}",
+	"apihelp-query+proofreadpagesinindex-description": "{{doc-apihelp-description|query+proofreadpagesinindex}}",
+	"apihelp-query+proofreadpagesinindex-summary": "{{doc-apihelp-summary|query+proofreadpagesinindex}}",
+	"apihelp-query+proofreadpagesinindex-param-limit": "{{doc-apihelp-param|query+proofreadpagesinindex|limit}}",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "{{doc-apihelp-param|query+proofreadpagesinindex|pageid}}",
+	"apihelp-query+proofreadpagesinindex-param-prop": "{{doc-apihelp-param|query+proofreadpagesinindex|prop}}",
+	"apihelp-query+proofreadpagesinindex-param-title": "{{doc-apihelp-param|query+proofreadpagesinindex|title}}",
+	"apihelp-query+proofreadpagesinindex-example-1": "{{doc-apihelp-example|query+proofreadpagesinindex}}"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": []
 	},
+	"apierror-proofreadpage-invalidindex": "Invalid index title \"$1\".",
 	"apihelp-query+proofread-description": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-summary": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-example-1": "Return proofread status for pages in namespace 250",
@@ -9,5 +10,12 @@
 	"apihelp-query+proofreadinfo-summary": "Return information about configuration of ProofreadPage extension.",
 	"apihelp-query+proofreadinfo-param-prop": "Which proofread properties to get:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
 	"apihelp-query+proofreadinfo-example-1": "Return default information",
-	"apihelp-query+proofreadinfo-example-3": "Return namespace information"
+	"apihelp-query+proofreadinfo-example-3": "Return namespace information",
+	"apihelp-query+proofreadpagesinindex-description": "List the pages in a given index",
+	"apihelp-query+proofreadpagesinindex-summary": "List the pages in a given index",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Limit how many pages will be returned",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "The page ID of the Index page to get pages for",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Which properties to get for each page",
+	"apihelp-query+proofreadpagesinindex-param-title": "The title of the Index page to get pages for",
+	"apihelp-query+proofreadpagesinindex-example-1": "Return default information"
 }

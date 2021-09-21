@@ -53,7 +53,7 @@ abstract class Pagination implements Iterator {
 	abstract public function getPageTitle( int $pageNumber ): Title;
 
 	/**
-	 * Returns if a page number $pageNumber exits
+	 * Returns if a page number $pageNumber exists
 	 *
 	 * @param int $pageNumber page number
 	 * @return bool
