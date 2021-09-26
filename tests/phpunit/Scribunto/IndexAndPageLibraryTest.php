@@ -60,7 +60,7 @@ class IndexAndPageLibraryTest extends Scribunto_LuaEngineTestBase {
 
 	private function addArticle( string $title, Content $newContent ): void {
 		$page = WikiPage::factory( Title::newFromText( $title ) );
-		$page->loadPageData( 'fromdbmaster' );
+		$page->loadPageData( WikiPage::READ_LATEST );
 
 		if ( $page->exists() ) {
 			$content = $page->getContent( RevisionRecord::RAW );
