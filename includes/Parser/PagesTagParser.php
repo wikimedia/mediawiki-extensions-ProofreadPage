@@ -42,6 +42,7 @@ class PagesTagParser {
 	 *
 	 * @param array $args tags arguments
 	 * @return string
+	 * @suppress PhanUndeclaredProperty
 	 */
 	public function render( array $args ) {
 		// abort if this is nested <pages> call
