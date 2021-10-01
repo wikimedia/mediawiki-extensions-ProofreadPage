@@ -82,4 +82,11 @@ class PageNumberTest extends ProofreadPageTestCase {
 		$number = new PageNumber( '10', PageNumber::DISPLAY_FOLIO );
 		$this->assertTrue( $number->isNumeric() );
 	}
+
+	public function testHuge() {
+		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
+		$number = new PageNumber( '1000000000000000000000000000000000000', PageNumber::DISPLAY_NORMAL );
+		$this->assertEquals( $number->getRawPageNumber( $language ), PHP_INT_MAX );
+		$this->assertTrue( $number->isNumeric() );
+	}
 }

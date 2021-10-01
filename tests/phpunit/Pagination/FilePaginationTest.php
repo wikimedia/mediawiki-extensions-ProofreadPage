@@ -71,6 +71,16 @@ class FilePaginationTest extends ProofreadPageTestCase {
 				$pagination,
 				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/foo' )
 			],
+			[
+				// decimal number
+				$pagination,
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/1.2' )
+			],
+			[
+				// number larger than PHP_INT_MAX
+				$pagination,
+				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/10000000000000000000000' )
+			],
 		];
 	}
 

@@ -472,6 +472,30 @@ title="Index:LoremIpsum.djvu"
 !! end
 
 !! test
+pagelist: with to with a decimal
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist to="1.2" />
+!! html
+<p><span class="prp-index-pagelist"><strong class="error">Error: Numeric value expected</strong></span>
+</p>
+!! end
+
+!! test
+pagelist: with to that exceeded PHP_INT_MAX
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist from="1" to="1000000000000000000000000000000000000000" />
+!! html
+<p><span class="prp-index-pagelist"><strong class="error">Error: Invalid interval</strong></span>
+</p>
+!! end
+
+!! test
 pagelist: (high)roman
 !! options
 djvu
@@ -553,6 +577,17 @@ djvu
 <pages index="LoremIpsum.djvu" from="4.9" to="5.2" />
 !! html
 <p><strong class="error">Error: Numeric value expected</strong>
+</p>
+!! end
+
+!! test
+pages: with to that exceeded PHP_INT_MAX
+!! options
+djvu
+!! wikitext
+<pages index="LoremIpsum.djvu" from="1" to="1000000000000000000000000000000000000000" />
+!! html
+<p><strong class="error">Error: Invalid interval</strong>
 </p>
 !! end
 
