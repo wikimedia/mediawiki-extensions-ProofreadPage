@@ -76,10 +76,10 @@ class PageLevel {
 
 		return $this->level === $that->getLevel() &&
 			(
-				( $this->user === null && $that->getUser() === null ) ||
+				( !$this->user && !$that->getUser() ) ||
 				(
-					( $this->user instanceof User && $that->getUser() instanceof User ) &&
-					( $this->user->getName() === $that->getUser()->getName() )
+					$this->user && $that->getUser() &&
+					$this->user->getName() === $that->getUser()->getName()
 				)
 			);
 	}
@@ -98,7 +98,7 @@ class PageLevel {
 			return false;
 		}
 
-		$fromUser = ( $this->user instanceof User ) ? $this->user : $to->getUser();
+		$fromUser = $this->user ?: $to->getUser();
 		return !(
 			$to->getLevel() === self::VALIDATED &&
 			(

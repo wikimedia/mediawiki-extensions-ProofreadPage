@@ -16,7 +16,6 @@ use ProofreadPage\Index\UpdateIndexQualityStats;
 use ProofreadPage\MultiFormatSerializerUtils;
 use TextContentHandler;
 use Title;
-use User;
 use WikitextContentHandler;
 
 /**
@@ -79,6 +78,7 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	private function serializeContentInJson( PageContent $content ) {
 		$level = $content->getLevel();
+		$user = $level->getUser();
 
 		return json_encode( [
 			'header' => $content->getHeader()->serialize(),
@@ -86,7 +86,7 @@ class PageContentHandler extends TextContentHandler {
 			'footer' => $content->getFooter()->serialize(),
 			'level' => [
 				'level' => $level->getLevel(),
-				'user' => $level->getUser() instanceof User ? $level->getUser()->getName() : null
+				'user' => $user ? $user->getName() : null
 			]
 		] );
 	}
@@ -97,7 +97,8 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	private function serializeContentInWikitext( PageContent $content ) {
 		$level = $content->getLevel();
-		$userName = $level->getUser() instanceof User ? $level->getUser()->getName() : '';
+		$user = $level->getUser();
+		$userName = $user ? $user->getName() : '';
 		$text =
 			'<noinclude>' .
 				'<pagequality level="' . $level->getLevel() . '" user="' . $userName . '" />' .
