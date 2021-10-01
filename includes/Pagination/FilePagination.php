@@ -62,7 +62,7 @@ class FilePagination extends Pagination {
 			);
 		}
 		$number = $pageTitle->getPageLanguage()->parseFormattedNumber( $parts[1] );
-		if ( $number > 0 ) {
+		if ( ctype_digit( $number ) && $number > 0 && $number < PHP_INT_MAX ) {
 			// Valid page numbers are integer > 0.
 			return (int)$number;
 		} else {

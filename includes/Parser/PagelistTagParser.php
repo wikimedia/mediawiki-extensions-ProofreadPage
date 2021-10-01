@@ -70,9 +70,17 @@ class PagelistTagParser {
 		$return = '';
 		$from = $args['from'] ?? 1;
 		$to = $args['to'] ?? $count;
-
-		if ( !is_numeric( $from ) || !is_numeric( $to ) ) {
-			return $this->formatError( 'proofreadpage_number_expected' );
+		if ( !is_int( $from ) ) {
+			if ( !ctype_digit( $from ) ) {
+				return $this->formatError( 'proofreadpage_number_expected' );
+			}
+			$from = (int)$from;
+		}
+		if ( !is_int( $to ) ) {
+			if ( !ctype_digit( $to ) ) {
+				return $this->formatError( 'proofreadpage_number_expected' );
+			}
+			$to = (int)$to;
 		}
 		if ( !FilePagination::isValidInterval( $from, $to, $count ) ) {
 			return $this->formatError( 'proofreadpage_invalid_interval' );
