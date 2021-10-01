@@ -9,13 +9,13 @@ use Title;
  */
 class IndexContentLookupMock implements IndexContentLookup {
 
-	/** @var array */
-	private $contentForIndex = [];
+	/** @var IndexContent[] */
+	private $contentForIndex;
 
 	/**
-	 * @param array $contentForIndex
+	 * @param IndexContent[] $contentForIndex
 	 */
-	public function __construct( $contentForIndex ) {
+	public function __construct( array $contentForIndex ) {
 		$this->contentForIndex = $contentForIndex;
 	}
 

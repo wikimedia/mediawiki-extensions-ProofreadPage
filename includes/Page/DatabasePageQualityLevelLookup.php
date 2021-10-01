@@ -149,7 +149,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 
 	/**
 	 * @param array $pageTitles
-	 * @return array $pagetitles
+	 * @return array
 	 */
 	private function filterPagesWithoutKnownQuality( array $pageTitles ) {
 		return array_filter( $pageTitles, function ( Title $pageTitle ) {

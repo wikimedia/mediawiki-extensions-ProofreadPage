@@ -55,7 +55,7 @@ class DiffFormatterUtils {
 	/**
 	 * Create the container for a line
 	 *
-	 * @param string $line the line
+	 * @param string $line
 	 * @param string $class the container class (diff-deletedline or diff-addedline)
 	 * @param string $marker the diff marker (+ or -)
 	 * @return string

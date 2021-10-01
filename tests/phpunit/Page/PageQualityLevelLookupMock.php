@@ -11,13 +11,13 @@ use Title;
  */
 class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 
-	/** @var array */
-	private $levelForPage = [];
+	/** @var int[] */
+	private $levelForPage;
 
 	/**
-	 * @param array $levelForPage
+	 * @param int[] $levelForPage
 	 */
-	public function __construct( $levelForPage ) {
+	public function __construct( array $levelForPage ) {
 		$this->levelForPage = $levelForPage;
 	}
 
