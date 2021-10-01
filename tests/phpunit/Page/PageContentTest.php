@@ -250,7 +250,8 @@ class PageContentTest extends ProofreadPageTestCase {
 		$output = $content->getParserOutput(
 			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/1' )
 		);
-		$actual = preg_replace( '<!--.*-->', '', str_replace( "\n", '', $output->mText ) );
-		$this->assertSame( $expected, $actual );
+		$actual = str_replace( "\n", '', $output->getText() );
+		$actual = preg_replace( '<!--.*-->', '', $actual );
+		$this->assertStringContainsString( $expected, $actual );
 	}
 }
