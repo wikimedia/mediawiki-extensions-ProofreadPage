@@ -11,13 +11,13 @@ use Title;
  */
 class IndexForPageLookupMock implements IndexForPageLookup {
 
-	/** @var array */
-	private $indexForPage = [];
+	/** @var Title[] */
+	private $indexForPage;
 
 	/**
-	 * @param array $indexForPage
+	 * @param Title[] $indexForPage
 	 */
-	public function __construct( $indexForPage ) {
+	public function __construct( array $indexForPage ) {
 		$this->indexForPage = $indexForPage;
 	}
 
