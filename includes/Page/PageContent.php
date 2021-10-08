@@ -277,7 +277,7 @@ class PageContent extends TextContent {
 			$title->getText()
 		);
 
-		$parserOutput->setProperty( 'proofread_page_quality_level', $this->level->getLevel() );
+		$parserOutput->setPageProperty( 'proofread_page_quality_level', $this->level->getLevel() );
 		$context->getPageQualityLevelLookup()->flushCacheForPage( $title );
 
 		// html container
