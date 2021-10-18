@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier",
 			"Malafaya"
 		]
@@ -25,5 +26,7 @@
 	"proofreadpage-button-toggle-visibility-label": "Montrez/celez la titulo o la pedo di la pagino",
 	"proofreadpage-pagelist-parsing-error-php": "La sequanta eroro renkontresis dum vort-analizado, $1",
 	"content-model-proofread-page": "Pagino di libro",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagini"
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagini",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Yes",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }
