@@ -451,4 +451,87 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 		$this->assertEquals( $expectedContent, $content );
 	}
+
+	public function getParserOutputHtmlProvider(): array {
+		return [
+			[
+				self::buildPageContent( '', 'Test', '' ),
+				'<p>Test</p><>'
+			],
+			[
+				self::buildPageContent( 'start', 'Test', 'end' ),
+				'<p>start</p><p>Testend</p><>'
+			],
+			[
+				self::buildPageContent( 'start', "\n\nTest", '' ),
+				'<p>start</p><p><br /></p><p>Test</p><>'
+			],
+			[
+				self::buildPageContent( 'start', "<br/>\n\nTest", '' ),
+				'<p>start</p><p><br /></p><p>Test</p><>'
+			],
+			[
+				self::buildPageContent( 'start', '<nowiki/>Test', '' ),
+				'<p>start</p><p>Test</p><>'
+			],
+			[
+				self::buildPageContent( 'start', "<nowiki/>\nTest", '' ),
+				'<p>start</p><p>Test</p><>'
+			],
+			[
+				self::buildPageContent( 'start', "<nowiki/>\n\nTest", '' ),
+				'<p>start</p><p class="mw-empty-elt"></p><p>Test</p><>'
+			],
+			[
+				self::buildPageContent( '', "<nowiki/>\n\nTest", '' ),
+				'<p class="mw-empty-elt"></p><p>Test</p><>'
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider getParserOutputHtmlProvider
+	 */
+	public function testGetParserOutputHtml( PageContent $content, string $html ) {
+		$expected = '<div class="prp-page-qualityheader quality1">This page has not been proofread</div>' .
+			'<div class="pagetext"><div class="mw-parser-output">' . $html . '</div></div>';
+		$contentRenderer = MediaWikiServices::getInstance()->getContentRenderer();
+		$output = $contentRenderer->getParserOutput(
+			$content,
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+		);
+		$actual = preg_replace( '<!--.*-->', '', str_replace( "\n", '', $output->getRawText() ) );
+		$this->assertSame( $expected, $actual );
+	}
+
+	public function getParserOutputRedirectHtmlProvider(): array {
+		return [
+			[
+				self::buildPageContent( '', '#REDIRECT [[Test]]' ),
+				'<a href="/index.php?title=Test&amp;action=edit&amp;redlink=1" ' .
+				'class="new" title="Test (page does not exist)">Test</a>'
+			],
+			[
+				self::buildPageContent( '', '#REDIRECT [[Special:BlankPage]]' ),
+				'<a href="/index.php/Special:BlankPage" ' .
+				'title="Special:BlankPage">Special:BlankPage</a>'
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider getParserOutputRedirectHtmlProvider
+	 */
+	public function testGetParserOutputRedirectHtml( PageContent $content, string $html ) {
+		$expected = '<div class="redirectMsg"><p>Redirect to:</p><ul class="redirectText"><li>' .
+			$html .
+			'</li></ul></div><>';
+		$contentRenderer = MediaWikiServices::getInstance()->getContentRenderer();
+		$output = $contentRenderer->getParserOutput(
+			$content,
+			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+		);
+		$actual = preg_replace( '<!--.*-->', '', str_replace( "\n", '', $output->getRawText() ) );
+		$this->assertSame( $expected, $actual );
+	}
 }

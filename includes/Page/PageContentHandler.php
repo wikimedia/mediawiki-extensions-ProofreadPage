@@ -4,18 +4,25 @@ namespace ProofreadPage\Page;
 
 use Content;
 use ContentHandler;
+use Html;
 use IContextSource;
+use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
 use MWException;
+use OutOfBoundsException;
+use ParserOutput;
 use ProofreadPage\Context;
+use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Index\UpdateIndexQualityStats;
 use ProofreadPage\MultiFormatSerializerUtils;
+use ProofreadPage\Pagination\PageNotInPaginationException;
 use TextContentHandler;
 use Title;
+use WikitextContent;
 use WikitextContentHandler;
 
 /**
@@ -507,5 +514,101 @@ class PageContentHandler extends TextContentHandler {
 			}
 		}
 		return parent::getPageLanguage( $title, $content );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	protected function fillParserOutput(
+		Content $content,
+		ContentParseParams $cpoParams,
+		ParserOutput &$output
+	) {
+		'@phan-var PageContent $content';
+		$title = Title::castFromPageReference( $cpoParams->getPage() );
+		if ( $content->isRedirect() ) {
+			$output = $this->wikitextContentHandler->getParserOutput( $content->getBody(), $cpoParams );
+			return;
+		}
+
+		$context = Context::getDefaultContext();
+		// @phan-suppress-next-line PhanTypeMismatchArgument
+		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
+
+		// create content
+		$wikitext = trim(
+			$content->getHeader()->getText()
+			. "\n\n"
+			. $content->getBody()->getText()
+			. $content->getFooter()->getText()
+		);
+
+		$indexTs = null;
+		if ( $indexTitle !== null ) {
+			$indexTs = new IndexTemplateStyles( $indexTitle );
+			// newline so that following wikitext that needs to start on a newline
+			// like tables, lists, etc, can do so.
+			$wikitext = $indexTs->getIndexTemplateStyles( '.pagetext' ) . "\n" . $wikitext;
+		}
+		$wikitextContent = new WikitextContent( $wikitext );
+
+		$output = $this->wikitextContentHandler->getParserOutput( $wikitextContent, $cpoParams );
+		$output->addCategory(
+			Title::makeTitleSafe(
+				NS_CATEGORY,
+				$content->getLevel()->getLevelCategoryName()
+			)->getDBkey(),
+			$title->getText()
+		);
+		$output->setPageProperty( 'proofread_page_quality_level', $content->getLevel()->getLevel() );
+
+		// html container
+		$html = Html::openElement( 'div',
+			[ 'class' => 'prp-page-qualityheader quality' . $content->getLevel()->getLevel() ] ) .
+			wfMessage( 'proofreadpage_quality' . $content->getLevel()->getLevel() . '_message' )
+				// @phan-suppress-next-line PhanTypeMismatchArgument
+				->title( $title )->inContentLanguage()->parse() .
+			Html::closeElement( 'div' ) .
+			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
+			$output->getText( [ 'enableSectionEditLinks' => false ] ) .
+			Html::closeElement( 'div' );
+		$output->setText( $html );
+
+		$output->addJsConfigVars( [
+			'prpPageQuality' => $content->getLevel()->getLevel()
+		] );
+
+		if ( $indexTitle instanceof Title ) {
+			try {
+				$pagination = $context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
+				// @phan-suppress-next-line PhanTypeMismatchArgument
+				$pageNumber = $pagination->getPageNumber( $title );
+				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
+				$formattedPageNumber = $displayedPageNumber->getFormattedPageNumber( $title->getPageLanguage() );
+
+				$output->addJsConfigVars( [
+					'prpPageNumber' => $formattedPageNumber
+				] );
+			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
+			}
+		}
+
+		// add modules
+		$output->addModuleStyles( 'ext.proofreadpage.base' );
+
+		// add scan image to dependencies
+		$output->addImage( strtok( $title->getDBkey(), '/' ) );
+
+		// add the styles.css as a dependency (even if it doesn't exist yet)
+		if ( $indexTs !== null ) {
+			$stylesPage = $indexTs->getTemplateStylesPage();
+
+			if ( $stylesPage ) {
+				$output->addTemplate(
+					$stylesPage,
+					$stylesPage->getArticleID(),
+					$stylesPage->getLatestRevID() );
+			}
+		}
 	}
 }

@@ -2,9 +2,11 @@
 
 namespace ProofreadPage\Index;
 
+use Article;
 use Content;
 use ContentHandler;
 use IContextSource;
+use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
@@ -13,6 +15,7 @@ use MWContentSerializationException;
 use MWException;
 use Parser;
 use ParserOptions;
+use ParserOutput;
 use PPFrame;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
@@ -470,6 +473,71 @@ class IndexContentHandler extends TextContentHandler {
 
 		$contentClass = $this->getContentClass();
 		return new $contentClass( $fields, $content->getCategories() );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	protected function fillParserOutput(
+		Content $content,
+		ContentParseParams $cpoParams,
+		ParserOutput &$output
+	) {
+		$title = Title::castFromPageReference( $cpoParams->getPage() );
+		$parserOptions = $cpoParams->getParserOptions();
+
+		if ( $content instanceof IndexRedirectContent ) {
+			$output->addLink( $content->getRedirectTarget() );
+			if ( $cpoParams->getGenerateHtml() ) {
+				$output->setText( Article::getRedirectHeaderHtml(
+					$title->getPageLanguage(), $content->getRedirectChain()
+				) );
+				$output->addModuleStyles( 'mediawiki.action.view.redirectPage' );
+			}
+		} else {
+			'@phan-var IndexContent $content';
+			$parserHelper = new ParserHelper( $title, $parserOptions );
+
+			// Start with the default index styles
+			// @phan-suppress-next-line PhanTypeMismatchArgument
+			$indexTs = new IndexTemplateStyles( $title );
+			$text = $indexTs->getIndexTemplateStyles( null );
+
+			// make sure the template starts on a new line in case it starts
+			// with something like '{|'
+			if ( $text ) {
+				$text .= "\n";
+			}
+
+			// We retrieve the view template
+			list( $templateText, $templateTitle ) = $parserHelper->fetchTemplateTextAndTitle(
+				Title::makeTitle( NS_MEDIAWIKI, 'Proofreadpage index template' )
+			);
+
+			// We replace the arguments calls by their values
+			$text .= $parserHelper->expandTemplateArgs(
+				$templateText,
+				array_map( static function ( Content $content ) {
+					return $content->serialize( CONTENT_FORMAT_WIKITEXT );
+				}, $content->getFields() )
+			);
+
+			// Force no section edit links
+			$text = '__NOEDITSECTION__' . $text;
+
+			// We do the final rendering
+			$output = MediaWikiServices::getInstance()->getParser()
+				// @phan-suppress-next-line PhanTypeMismatchArgument
+				->parse( $text, $title, $parserOptions, true, true, $cpoParams->getRevId() );
+			$output->addTemplate( $templateTitle,
+				$templateTitle->getArticleID(),
+				$templateTitle->getLatestRevID()
+			);
+
+			foreach ( $content->getCategories() as $category ) {
+				$output->addCategory( $category->getDBkey(), $category->getText() );
+			}
+		}
 	}
 
 	/**

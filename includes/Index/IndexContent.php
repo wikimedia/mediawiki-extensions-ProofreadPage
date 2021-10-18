@@ -4,10 +4,8 @@ namespace ProofreadPage\Index;
 
 use Content;
 use MagicWord;
-use MediaWiki\MediaWikiServices;
 use MWException;
 use ParserOptions;
-use ParserOutput;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
@@ -214,53 +212,6 @@ class IndexContent extends TextContent {
 		}
 
 		return false;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	protected function fillParserOutput( Title $title, $revId,
-		ParserOptions $options, $generateHtml, ParserOutput &$output
-	) {
-		$parserHelper = new ParserHelper( $title, $options );
-
-		// Start with the default index styles
-		$indexTs = new IndexTemplateStyles( $title );
-		$text = $indexTs->getIndexTemplateStyles( null );
-
-		// make sure the template starts on a new line in case it starts
-		// with something like '{|'
-		if ( $text ) {
-			$text .= "\n";
-		}
-
-		// We retrieve the view template
-		list( $templateText, $templateTitle ) = $parserHelper->fetchTemplateTextAndTitle(
-			Title::makeTitle( NS_MEDIAWIKI, 'Proofreadpage index template' )
-		);
-
-		// We replace the arguments calls by their values
-		$text .= $parserHelper->expandTemplateArgs(
-			$templateText,
-			array_map( static function ( Content $content ) {
-				return $content->serialize( CONTENT_FORMAT_WIKITEXT );
-			}, $this->fields )
-		);
-
-		// Force no section edit links
-		$text = '__NOEDITSECTION__' . $text;
-
-		// We do the final rendering
-		$output = MediaWikiServices::getInstance()->getParser()
-			->parse( $text, $title, $options, true, true, $revId );
-		$output->addTemplate( $templateTitle,
-			$templateTitle->getArticleID(),
-			$templateTitle->getLatestRevID()
-		);
-
-		foreach ( $this->categories as $category ) {
-			$output->addCategory( $category->getDBkey(), $category->getText() );
-		}
 	}
 
 	/**

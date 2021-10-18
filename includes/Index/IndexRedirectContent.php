@@ -2,11 +2,8 @@
 
 namespace ProofreadPage\Index;
 
-use Article;
 use Content;
 use MWException;
-use ParserOptions;
-use ParserOutput;
 use TextContent;
 use Title;
 
@@ -79,20 +76,5 @@ class IndexRedirectContent extends TextContent {
 	 */
 	public function updateRedirect( Title $target ) {
 		return new self( $target );
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	protected function fillParserOutput( Title $title, $revId,
-		ParserOptions $options, $generateHtml, ParserOutput &$output
-	) {
-		$output->addLink( $this->getRedirectTarget() );
-		if ( $generateHtml ) {
-			$output->setText( Article::getRedirectHeaderHtml(
-				$title->getPageLanguage(), $this->getRedirectChain()
-			) );
-			$output->addModuleStyles( 'mediawiki.action.view.redirectPage' );
-		}
 	}
 }
