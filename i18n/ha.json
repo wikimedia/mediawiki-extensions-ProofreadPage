@@ -1,8 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"DonCamillo"
+			"DonCamillo",
+			"Lamma64"
 		]
 	},
+	"nstab-page": "Shafi",
+	"nstab-index": "Fihirisa",
+	"tooltip-ca-nstab-page": "Duba shafin littafin",
+	"tooltip-ca-nstab-index": "Duba fihirisan littafin",
+	"indexpages": "Kawo fihirisan shafin",
+	"pageswithoutscans": "Shafinan daba a duba su bah",
+	"proofreadpage_image": "Kama/kammani",
+	"proofreadpage_index": "Fihirisa",
+	"proofreadpage_index_expected": "Kuskure: fihirisan da akayi tsammani",
+	"proofreadpage_nosuch_index": "Kuskure: babu irin wannan fihirisan",
+	"proofreadpage_nosuch_file": "Kuskure: babu irin wannan fihirisan",
+	"proofreadpage_indexdupetext": "Shafuna baza a taba kawo su fiye da daya ba a ahafin fihirisan",
+	"proofreadpage_nologin": "Ba'a shiga ba",
+	"proofreadpage_nologintext": "Dole sai ka shiga kafin ka iya tabbatar da sahihancin matsayin shafuna.",
+	"proofreadpage_notallowedtext": "Ba'a yarda ka canza sahihancin matsayin wannan shafi bah",
+	"proofreadpage_pagesnotallowed": "Kuskure: wannan shufunan ba'a amfani dasu a cikin wannan Shafin: da fihiris: namespace",
 	"proofreadpage_quality0_category": "Ban da rubutu"
 }
