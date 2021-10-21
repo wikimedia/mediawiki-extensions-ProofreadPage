@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bashir Gwanki",
 			"DonCamillo",
 			"Lamma64"
 		]
@@ -18,7 +19,7 @@
 	"proofreadpage_nosuch_file": "Kuskure: babu irin wannan fihirisan",
 	"proofreadpage_indexdupetext": "Shafuna baza a taba kawo su fiye da daya ba a ahafin fihirisan",
 	"proofreadpage_nologin": "Ba'a shiga ba",
-	"proofreadpage_nologintext": "Dole sai ka shiga kafin ka iya tabbatar da sahihancin matsayin shafuna.",
+	"proofreadpage_nologintext": "Dole sai ka [[Special:UserLogin|logged in]]kafin ka iya tabbatar da sahihancin matsayin shafuna.",
 	"proofreadpage_notallowedtext": "Ba'a yarda ka canza sahihancin matsayin wannan shafi bah",
 	"proofreadpage_pagesnotallowed": "Kuskure: wannan shufunan ba'a amfani dasu a cikin wannan Shafin: da fihiris: namespace",
 	"proofreadpage_quality0_category": "Ban da rubutu"
