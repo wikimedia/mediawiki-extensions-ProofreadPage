@@ -456,35 +456,35 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		return [
 			[
 				self::buildPageContent( '', 'Test', '' ),
-				'<p>Test</p><>'
+				'<p>Test</p>'
 			],
 			[
 				self::buildPageContent( 'start', 'Test', 'end' ),
-				'<p>start</p><p>Testend</p><>'
+				'<p>start</p><p>Testend</p>'
 			],
 			[
 				self::buildPageContent( 'start', "\n\nTest", '' ),
-				'<p>start</p><p><br /></p><p>Test</p><>'
+				'<p>start</p><p><br /></p><p>Test</p>'
 			],
 			[
 				self::buildPageContent( 'start', "<br/>\n\nTest", '' ),
-				'<p>start</p><p><br /></p><p>Test</p><>'
+				'<p>start</p><p><br /></p><p>Test</p>'
 			],
 			[
 				self::buildPageContent( 'start', '<nowiki/>Test', '' ),
-				'<p>start</p><p>Test</p><>'
+				'<p>start</p><p>Test</p>'
 			],
 			[
 				self::buildPageContent( 'start', "<nowiki/>\nTest", '' ),
-				'<p>start</p><p>Test</p><>'
+				'<p>start</p><p>Test</p>'
 			],
 			[
 				self::buildPageContent( 'start', "<nowiki/>\n\nTest", '' ),
-				'<p>start</p><p class="mw-empty-elt"></p><p>Test</p><>'
+				'<p>start</p><p class="mw-empty-elt"></p><p>Test</p>'
 			],
 			[
 				self::buildPageContent( '', "<nowiki/>\n\nTest", '' ),
-				'<p class="mw-empty-elt"></p><p>Test</p><>'
+				'<p class="mw-empty-elt"></p><p>Test</p>'
 			]
 		];
 	}
@@ -500,7 +500,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 			$content,
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
 		);
-		$actual = preg_replace( '<!--.*-->', '', str_replace( "\n", '', $output->getRawText() ) );
+		$actual = preg_replace( '/<!--.*-->/', '', str_replace( "\n", '', $output->getRawText() ) );
 		$this->assertSame( $expected, $actual );
 	}
 
@@ -525,13 +525,13 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	public function testGetParserOutputRedirectHtml( PageContent $content, string $html ) {
 		$expected = '<div class="redirectMsg"><p>Redirect to:</p><ul class="redirectText"><li>' .
 			$html .
-			'</li></ul></div><>';
+			'</li></ul></div>';
 		$contentRenderer = MediaWikiServices::getInstance()->getContentRenderer();
 		$output = $contentRenderer->getParserOutput(
 			$content,
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
 		);
-		$actual = preg_replace( '<!--.*-->', '', str_replace( "\n", '', $output->getRawText() ) );
+		$actual = preg_replace( '/<!--.*-->/', '', str_replace( "\n", '', $output->getRawText() ) );
 		$this->assertSame( $expected, $actual );
 	}
 }
