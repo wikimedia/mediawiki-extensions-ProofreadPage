@@ -4,6 +4,7 @@ namespace ProofreadPage\Index;
 
 use Content;
 use ContentHandler;
+use MediaWiki\Content\ValidationParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Revision\SlotRecord;
@@ -14,8 +15,10 @@ use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
 use SlotDiffRenderer;
+use StatusValue;
 use TextContent;
 use Title;
+use WikiPage;
 use WikitextContent;
 
 /**
@@ -683,5 +686,40 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		);
 
 		$this->assertEquals( $expectedContent, $newContent );
+	}
+
+	public function provideValidateSave() {
+		return [
+			[
+				StatusValue::newGood(),
+				new IndexContent( [] )
+			],
+			[
+				StatusValue::newFatal( 'proofreadpage_indexdupetext' ),
+				new IndexContent( [
+					'page' => new WikitextContent( '[[Page:Foo]] [[Page:Bar]] [[Page:Foo]]' )
+				] )
+			],
+			[
+				StatusValue::newGood(),
+				new IndexRedirectContent( Title::newFromText( 'Redirect' ) )
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider provideValidateSave
+	 */
+	public function testValidateSave( StatusValue $expectedResult, TextContent $content ) {
+		/** @var MockObject|WikiPage $wikiPage */
+		$wikiPage = $this->getMockBuilder( WikiPage::class )
+			->disableOriginalConstructor()
+			->getMock();
+		$handler = new IndexContentHandler();
+		$validationParams = new ValidationParams( $wikiPage, 0 );
+		$this->assertEquals(
+			$expectedResult,
+			$handler->validateSave( $content, $validationParams )
+		);
 	}
 }

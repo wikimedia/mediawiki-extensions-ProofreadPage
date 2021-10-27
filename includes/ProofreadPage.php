@@ -21,6 +21,7 @@
 
 namespace ProofreadPage;
 
+use CommentStoreComment;
 use DatabaseUpdater;
 use ExtensionRegistry;
 use FixProofreadIndexPagesContentModel;
@@ -28,11 +29,15 @@ use FixProofreadPagePagesContentModel;
 use IContextSource;
 use ImagePage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RenderedRevision;
+use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\UserIdentity;
 use OutOfBoundsException;
 use OutputPage;
 use Parser;
 use ParserOutput;
 use ProofreadPage\Index\IndexTemplateStyles;
+use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Page\PageDisplayHandler;
 use ProofreadPage\Page\PageRevisionTagger;
@@ -43,6 +48,7 @@ use ProofreadPage\Parser\PagesTagParser;
 use ProofreadPage\Parser\TranslusionPagesModifier;
 use RequestContext;
 use SkinTemplate;
+use Status;
 use Title;
 use User;
 
@@ -630,5 +636,52 @@ class ProofreadPage {
 		}
 
 		return true;
+	}
+
+	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/MultiContentSave
+	 *
+	 * @param RenderedRevision $renderedRevision
+	 * @param UserIdentity $user
+	 * @param CommentStoreComment $summary
+	 * @param int $flags
+	 * @param Status $hookStatus
+	 * @return bool|void
+	 */
+	public static function onMultiContentSave(
+		RenderedRevision $renderedRevision,
+		UserIdentity $user,
+		CommentStoreComment $summary,
+		$flags,
+		Status $hookStatus
+	) {
+		$revisionRecord = $renderedRevision->getRevision();
+		$content = $revisionRecord->getContent( SlotRecord::MAIN );
+		if ( !( $content instanceof PageContent ) ) {
+			// We just need to prepare this check for CONTENT_MODEL_PROOFREAD_PAGE (PageContent)
+			return;
+		}
+
+		if ( !( $content->isValid() ) ) {
+			$hookStatus->fatal( 'invalid-content-data' );
+			return;
+		}
+
+		$oldContent = PageContent::getContentForRevId( $revisionRecord->getParentId() );
+		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
+			// Let's convert it to Page: page content
+			$oldContent = $oldContent->convert( CONTENT_MODEL_PROOFREAD_PAGE );
+		}
+
+		if ( !( $oldContent instanceof PageContent ) ) {
+			$hookStatus->fatal( 'invalid-content-data' );
+			return;
+		}
+
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		if ( !$oldContent->getLevel()->isChangeAllowed( $content->getLevel(), $permissionManager ) ) {
+			$hookStatus->fatal( 'proofreadpage_notallowedtext' );
+			return;
+		}
 	}
 }

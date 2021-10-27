@@ -327,6 +327,7 @@
 		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",
 		"EditFormPreloadText": "ProofreadPage\\ProofreadPage::onEditFormPreloadText",
 		"ParserTestTables": "ProofreadPage\\ProofreadPage::onParserTestTables",
+		"MultiContentSave": "ProofreadPage\\ProofreadPage::onMultiContentSave",
 		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction",
 		"ListDefinedTags": "ProofreadPage\\ProofreadPage::onListDefinedTags",
 		"ChangeTagsListActive": "ProofreadPage\\ProofreadPage::onListDefinedTags",

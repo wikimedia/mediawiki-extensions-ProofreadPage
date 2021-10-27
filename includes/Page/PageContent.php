@@ -6,11 +6,8 @@ use Content;
 use MagicWord;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use Status;
 use TextContent;
 use Title;
-use User;
-use WikiPage;
 use WikitextContent;
 
 /**
@@ -139,30 +136,6 @@ class PageContent extends TextContent {
 	 */
 	public function getTextForSummary( $maxlength = 250 ) {
 		return $this->body->getTextForSummary( $maxlength );
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
-		if ( !$this->isValid() ) {
-			return Status::newFatal( 'invalid-content-data' );
-		}
-
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-		$oldContent = self::getContentForRevId( $parentRevId );
-		if ( $oldContent->getModel() !== CONTENT_MODEL_PROOFREAD_PAGE ) {
-			// Let's convert it to Page: page content
-			$oldContent = $oldContent->convert( CONTENT_MODEL_PROOFREAD_PAGE );
-		}
-		if ( !( $oldContent instanceof self ) ) {
-			return Status::newFatal( 'invalid-content-data' );
-		}
-		if ( !$oldContent->getLevel()->isChangeAllowed( $this->getLevel(), $permissionManager ) ) {
-			return Status::newFatal( 'proofreadpage_notallowedtext' );
-		}
-
-		return Status::newGood();
 	}
 
 	/**

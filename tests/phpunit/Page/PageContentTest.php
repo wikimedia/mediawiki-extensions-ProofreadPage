@@ -5,10 +5,8 @@ namespace ProofreadPage\Page;
 use Content;
 use ProofreadPageTestCase;
 use RequestContext;
-use Status;
 use Title;
 use User;
-use WikiPage;
 use WikitextContent;
 
 /**
@@ -150,35 +148,6 @@ class PageContentTest extends ProofreadPageTestCase {
 	 */
 	public function testGetTextForSummary( PageContent $content, $length, $result ) {
 		$this->assertSame( $result, $content->getTextForSummary( $length ) );
-	}
-
-	public function prepareSaveProvider() {
-		return [
-			[
-				Status::newGood(),
-				self::buildPageContent()
-			],
-			[
-				Status::newFatal( 'invalid-content-data' ),
-				self::buildPageContent( '', '', '', 5 )
-			],
-			[
-				Status::newFatal( 'proofreadpage_notallowedtext' ),
-				self::buildPageContent( '', '', '', PageLevel::VALIDATED )
-			]
-		];
-	}
-
-	/**
-	 * @dataProvider prepareSaveProvider
-	 */
-	public function testPrepareSave( Status $expectedResult, PageContent $content ) {
-		$wikiPage = $this->getMockBuilder( WikiPage::class )
-			->disableOriginalConstructor()
-			->getMock();
-		$this->assertEquals( $expectedResult, $content->prepareSave(
-			$wikiPage, 0, -1, $this->requestContext->getUser()
-		) );
 	}
 
 	public function testRedirectTarget() {

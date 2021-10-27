@@ -9,6 +9,7 @@ use IContextSource;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
+use MediaWiki\Content\ValidationParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
@@ -20,6 +21,7 @@ use PPFrame;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\MultiFormatSerializerUtils;
+use StatusValue;
 use TextContentHandler;
 use Title;
 use WikitextContent;
@@ -393,6 +395,38 @@ class IndexContentHandler extends TextContentHandler {
 	 */
 	public function isParserCacheSupported() {
 		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function validateSave(
+		Content $content,
+		ValidationParams $validationParams
+	) {
+		if ( $content instanceof IndexRedirectContent ) {
+			return StatusValue::newGood();
+		} else {
+			'@phan-var IndexContent $content';
+			if ( !$content->isValid() ) {
+				return StatusValue::newFatal( 'invalid-content-data' );
+			}
+
+			// Get list of pages titles
+			$links = $content->getLinksToNamespace(
+				Context::getDefaultContext()->getPageNamespaceId()
+			);
+			$linksTitle = [];
+			foreach ( $links as $link ) {
+				$linksTitle[] = $link->getTarget();
+			}
+
+			if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
+				return StatusValue::newFatal( 'proofreadpage_indexdupetext' );
+			}
+
+			return StatusValue::newGood();
+		}
 	}
 
 	/**

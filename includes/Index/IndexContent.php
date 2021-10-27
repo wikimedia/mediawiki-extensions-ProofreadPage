@@ -5,15 +5,11 @@ namespace ProofreadPage\Index;
 use Content;
 use MagicWord;
 use MWException;
-use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use Sanitizer;
-use Status;
 use TextContent;
 use Title;
-use User;
-use WikiPage;
 use WikitextContent;
 
 /**
@@ -144,28 +140,6 @@ class IndexContent extends TextContent {
 	 */
 	public function getTextForSummary( $maxlength = 250 ) {
 		return '';
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
-		if ( !$this->isValid() ) {
-			return Status::newFatal( 'invalid-content-data' );
-		}
-
-		// Get list of pages titles
-		$links = $this->getLinksToNamespace( Context::getDefaultContext()->getPageNamespaceId() );
-		$linksTitle = [];
-		foreach ( $links as $link ) {
-			$linksTitle[] = $link->getTarget();
-		}
-
-		if ( count( $linksTitle ) !== count( array_unique( $linksTitle ) ) ) {
-			return Status::newFatal( 'proofreadpage_indexdupetext' );
-		}
-
-		return Status::newGood();
 	}
 
 	/**
