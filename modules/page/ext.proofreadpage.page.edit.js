@@ -119,7 +119,10 @@
 			zoomInButton: 'prp-page-zoomIn',
 			zoomOutButton: 'prp-page-zoomOut',
 			homeButton: 'prp-page-zoomReset',
+			rotateLeftButton: 'prp-page-rotateLeft',
+			rotateRightButton: 'prp-page-rotateRight',
 			showFullPageControl: false,
+			showRotationControl: true,
 			preserveViewport: true,
 			animationTime: 0,
 			visibilityRatio: 0.5,
@@ -292,16 +295,33 @@
 				id: 'prp-page-zoomReset',
 				icon: 'zoomReset',
 				framed: false
+			} ),
+			rotateLeft: new OO.ui.ButtonWidget( {
+				id: 'prp-page-rotateLeft',
+				icon: 'undo',
+				framed: false
+			} ),
+			rotateRight: new OO.ui.ButtonWidget( {
+				id: 'prp-page-rotateRight',
+				icon: 'redo',
+				framed: false
 			} )
 		};
 
-		var $zoomInterfaceDiv = $( '<div>' );
-		$zoomInterfaceDiv.addClass( 'prp-page-zoom-interface' );
-		$zoomInterfaceDiv.append( zoomInterface.zoomIn.$element, zoomInterface.zoomOut.$element, zoomInterface.zoomReset.$element );
+		var $viewportControls = $( '<div>' )
+			.addClass( 'prp-page-zoom-interface' )
+			.append(
+				zoomInterface.zoomIn.$element,
+				zoomInterface.zoomOut.$element,
+				zoomInterface.zoomReset.$element,
+				zoomInterface.rotateLeft.$element,
+				zoomInterface.rotateRight.$element
+			);
 
 		$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
-			$editForm.find( '.wikiEditor-ui-toolbar .section-main' ).after( $zoomInterfaceDiv );
-
+			$editForm
+				.find( '.wikiEditor-ui-toolbar .section-main' )
+				.after( $viewportControls );
 		} );
 
 		var tools = {
