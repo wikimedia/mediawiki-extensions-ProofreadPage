@@ -1,5 +1,6 @@
 /* Adjustments for WikiEditor extension */
-.wikiEditor-ui-view {
+.wikiEditor-ui-view,
+.prp-page-image {
 	background-color: #e8f2f8;
 }
 

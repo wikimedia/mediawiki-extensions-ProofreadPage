@@ -10,6 +10,11 @@
 		 */
 		isLayoutHorizontal = false,
 
+		/**
+		 * Are the header/footer fields visible?
+		 *
+		 * @type {boolean}
+		 */
 		headersVisible = true,
 
 		/**
@@ -55,6 +60,13 @@
 		 * @type {string}
 		 */
 		imgWidth,
+
+		/**
+		 * The main edit box
+		 *
+		 * @type {jQuery}
+		 */
+		$wpTextbox,
 
 		/**
 		 * the OpenSeadragon image viewer
@@ -109,6 +121,7 @@
 			homeButton: 'prp-page-zoomReset',
 			showFullPageControl: false,
 			preserveViewport: true,
+			animationTime: 0,
 			visibilityRatio: 0.5,
 			minZoomLevel: 0.5,
 			maxZoomLevel: 4.5,
@@ -185,60 +198,43 @@
 		}
 
 		if ( !isLayoutHorizontal ) {
-			$imgCont.css( 'display', 'block' );
 			if ( $imgContHorizontal ) {
-				$imgContHorizontal.css( 'display', 'none' );
+				$imgContHorizontal.hide();
 			}
-			// eslint-disable-next-line no-jquery/no-global-selector
-			$( '.prp-page-image' ).css( 'display', 'block' );
 
 			// Switch CSS widths and heights back to the default side-by-size layout.
-			$imgCont.css( {
-				width: imgWidth,
-				height: imgHeight
-			} );
-			$editForm.find( '.prp-page-content' ).css( {
-				width: ''
-			} );
+			$imgCont
+				.css( {
+					width: imgWidth,
+					height: imgHeight
+				} )
+				.show();
+
 			$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
 				ensureImageZoomInitialization( 'prp-page-image-openseadragon-vertical' );
 			} );
 
-			// eslint-disable-next-line no-jquery/no-global-selector
-			$( '#wpTextbox1' ).css( { height: '' } );
+			$wpTextbox.css( { height: '' } );
 
 		} else {
 			if ( !$imgContHorizontal ) {
-				$imgContHorizontal = $imgCont
-					.clone()
-					.attr( 'id', 'prp-page-image-openseadragon-horizontal' );
-				$imgContHorizontal.insertBefore( $editForm );
-			} else {
-				$imgContHorizontal.css( 'display', 'block' );
+				$imgContHorizontal = $( '<div>' )
+					.attr( 'id', 'prp-page-image-openseadragon-horizontal' )
+					.addClass( 'prp-page-image' )
+					.insertBefore( $editForm );
 			}
 
-			$imgCont.css( 'display', 'none' );
-			// eslint-disable-next-line no-jquery/no-global-selector
-			$( '.prp-page-image' ).css( 'display', 'none' );
+			$imgCont.hide();
+			$imgContHorizontal.show();
 
-			// Set the width and height of the image and form.
-			$imgContHorizontal.css( {
-				width: '100%',
-				overflow: 'auto',
-				height: $( window ).height() / 2.7 + 'px'
-			} );
-			$editForm.find( '.prp-page-content' ).css( {
-				width: '100%'
-			} );
-
-			// Set the image and the edit box to the same height (of 1/3 of the window each).
-			newHeight = $( window ).height() / 3 + 'px';
+			newHeight = $( window ).height() / 2.7 + 'px';
 			$imgContHorizontal.css( { height: newHeight } );
+
 			$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
 				ensureImageZoomInitialization( 'prp-page-image-openseadragon-horizontal' );
 			} );
-			// eslint-disable-next-line no-jquery/no-global-selector
-			$( '#wpTextbox1' ).css( { height: newHeight } );
+
+			$wpTextbox.css( { height: newHeight } );
 		}
 		// eslint-disable-next-line no-jquery/no-global-selector
 		setActive = $( '.tool[rel=toggle-layout]' ).data( 'setActive' );
@@ -309,42 +305,40 @@
 		} );
 
 		var tools = {
-				other: {
-					labelMsg: 'proofreadpage-group-other',
-					tools: {
-						'toggle-visibility': {
-							labelMsg: 'proofreadpage-button-toggle-visibility-label',
-							type: 'button',
-							oouiIcon: 'headerFooter',
-							action: {
-								type: 'callback',
-								execute: function () {
-									toggleHeaders( undefined, 'fast' );
-								}
+			other: {
+				labelMsg: 'proofreadpage-group-other',
+				tools: {
+					'toggle-visibility': {
+						labelMsg: 'proofreadpage-button-toggle-visibility-label',
+						type: 'button',
+						oouiIcon: 'headerFooter',
+						action: {
+							type: 'callback',
+							execute: function () {
+								toggleHeaders( undefined, 'fast' );
 							}
-						},
-						'toggle-layout': {
-							labelMsg: 'proofreadpage-button-toggle-layout-label',
-							type: 'button',
-							oouiIcon: 'switchLayout',
-							action: {
-								type: 'callback',
-								execute: toggleLayout.bind( this, undefined )
-							}
+						}
+					},
+					'toggle-layout': {
+						labelMsg: 'proofreadpage-button-toggle-layout-label',
+						type: 'button',
+						oouiIcon: 'switchLayout',
+						action: {
+							type: 'callback',
+							execute: toggleLayout.bind( this, undefined )
 						}
 					}
 				}
-			},
-			// eslint-disable-next-line no-jquery/no-global-selector
-			$edit = $( '#wpTextbox1' );
+			}
+		};
 
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
 			// 'ext.wikiEditor' was loaded before calling this function
-			$editForm.find( '.prp-page-edit-body' ).append( $edit );
+			$editForm.find( '.prp-page-edit-body' ).append( $wpTextbox );
 			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
 			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 
-			$edit.wikiEditor( 'addToToolbar', {
+			$wpTextbox.wikiEditor( 'addToToolbar', {
 				sections: {
 					'proofreadpage-tools': {
 						type: 'toolbar',
@@ -361,7 +355,7 @@
 		// FIXME This is missing overrides for setContents, getSelection, getCaretPosition, setSelection
 		// and so the textSelection API is really inconsistent. getContents behaves as if this textbox
 		// contained the entire page wikitext (with header and footer), but the other methods don't. :(
-		$edit.textSelection(
+		$wpTextbox.textSelection(
 			'register',
 			{
 				getContents: function () {
@@ -526,7 +520,7 @@
 		// Store the original value for the whole wpTextbox1
 		// so that it can be checked against in core's mediawiki.action.edit.editWarning.js
 		// and not get a false positive.
-		$edit.data( 'origtext', $edit.textSelection( 'getContents' ) );
+		$wpTextbox.data( 'origtext', $wpTextbox.textSelection( 'getContents' ) );
 	}
 
 	/**
@@ -539,8 +533,9 @@
 		}
 
 		if ( $imgCont === undefined ) {
-			$imgCont = $( '<div>' ).attr( 'id', 'prp-page-image-openseadragon-vertical' );
-			$editForm.find( '.prp-page-image' ).append( $imgCont );
+			$imgCont = $editForm
+				.find( '.prp-page-image' )
+				.attr( 'id', 'prp-page-image-openseadragon-vertical' );
 		}
 
 		if ( $img === undefined ) {
@@ -556,14 +551,18 @@
 			imgWidth = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'width' );
 		}
 
+		if ( $wpTextbox === undefined ) {
+			$wpTextbox = $editForm.find( '#wpTextbox1' );
+		}
 	}
 
 	function getLoadedEditorPromise() {
 		var deferred = $.Deferred();
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
 			mw.loader.using( 'ext.wikiEditor' ).done( function () {
-				// eslint-disable-next-line no-jquery/no-global-selector
-				$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', deferred.resolve.bind( deferred ) );
+				$wpTextbox.on( 'wikiEditor-toolbar-doneInitialSections',
+					deferred.resolve.bind( deferred )
+				);
 			} );
 			return deferred.promise();
 		}

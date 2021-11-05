@@ -150,7 +150,7 @@ ve.init.mw.ProofreadPagePageTarget.prototype.ensureImageZoomInitialization = fun
 		homeButton: 'prp-page-ve-zoomReset',
 		showFullPageControl: false,
 		preserveViewport: true,
-		animationTime: 0.5,
+		animationTime: 0,
 		visibilityRatio: 0.5,
 		minZoomLevel: 0.5,
 		maxZoomLevel: 4.5,
