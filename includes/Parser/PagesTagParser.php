@@ -132,18 +132,16 @@ class PagesTagParser {
 
 				// ad pages selected with from and to in pagenums
 				if ( $from || $to ) {
-					if ( !$from ) {
-						$from = '1';
-					}
-					if ( !$to ) {
-						$to = (string)$count;
-					}
+					$from = $from ?: '1';
+					$to = $to ?: (string)$count;
 
 					if ( !ctype_digit( $from ) || !ctype_digit( $to ) ) {
 						return $this->formatError( 'proofreadpage_number_expected' );
 					}
+					$from = (int)$from;
+					$to = (int)$to;
 
-					if ( !( $from !== 0 && $from <= $to && $to <= $count ) ) {
+					if ( $from === 0 || $from > $to || $to > $count ) {
 						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 

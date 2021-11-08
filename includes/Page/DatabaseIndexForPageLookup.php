@@ -100,7 +100,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 
 	/**
 	 * @param Title $title
-	 * @return Title[]
+	 * @return \Generator<Title>
 	 */
 	private function findIndexesWhichLinkTo( Title $title ) {
 		$results = wfGetDB( DB_REPLICA )->select(
