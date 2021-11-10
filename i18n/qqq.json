@@ -86,6 +86,7 @@
 	"proofreadpage_index_listofpages": "Seems unused in the extension",
 	"proofreadpage_image_message": "Used as link text. The link points to the image file page.",
 	"proofreadpage_page_status": "Used as label and header message",
+	"proofreadpage_page_status_logged_out": "Used as label for the radio control when a user is logged out.",
 	"proofreadpage_js_attributes": "Names of the variables on index pages, separated by spaces.",
 	"proofreadpage_index_attributes": "Used as attribute list",
 	"proofreadpage_default_header": "{{notranslate}}",

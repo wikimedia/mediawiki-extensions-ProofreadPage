@@ -157,9 +157,7 @@ class EditPagePage extends EditPage {
 		}
 
 		$user = $this->context->getUser();
-		if ( $this->permissionManager->userHasRight( $user, 'pagequality' ) ) {
-			$checkboxes['wpr-pageStatus'] = $this->buildQualityEditWidget( $user, $tabindex );
-		}
+		$checkboxes['wpr-pageStatus'] = $this->buildQualityEditWidget( $user, $tabindex );
 
 		return $checkboxes;
 	}
@@ -176,11 +174,17 @@ class EditPagePage extends EditPage {
 		/** @var PageContent $content */
 		$content = $this->toEditContent( $this->textbox1 );
 		$currentLevel = $content->getLevel();
+		/** @var boolean $enabled is the widget enabled? */
+		$enabled = $this->permissionManager->userHasRight( $user, 'pagequality' );
 
 		$html = '';
 		for ( $level = 0; $level <= 4; $level++ ) {
 			$newLevel = new PageLevel( $level, $user );
-			if ( !$oldLevel->isChangeAllowed( $newLevel, $this->permissionManager ) ) {
+			$changeAllowed = $oldLevel->isChangeAllowed( $newLevel, $this->permissionManager );
+
+			// Only show valid transitions for the user, unless the user is logged out
+			// then show them all, but they'll be disabled.
+			if ( !$changeAllowed && $enabled ) {
 				continue;
 			}
 
@@ -191,17 +195,20 @@ class EditPagePage extends EditPage {
 				'classes' => [ 'prp-quality-radio quality' . $level ],
 				'value' => $level,
 				'tabIndex' => ++$tabindex,
-				'title' => $this->context->msg( $msg )->plain(),
+				'title' => $this->context->msg( $msg ),
 				'selected' => $level === $currentLevel->getLevel(),
+				'disabled' => !$enabled,
 			] );
 		}
+
+		$msg = $enabled ? "proofreadpage_page_status" : "proofreadpage_page_status_logged_out";
 
 		$content =
 			Html::openElement( 'span', [ 'id' => 'wpQuality-container' ] ) .
 			$html .
 			Html::closeElement( 'span' ) .
 			Html::openElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
-			$this->context->msg( 'proofreadpage_page_status' )
+			$this->context->msg( $msg )
 				->title( $this->getTitle() )->parse() .
 			Html::closeElement( 'label' );
 		return new OOUI\Widget(
