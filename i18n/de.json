@@ -66,6 +66,7 @@
 	"proofreadpage_index_listofpages": "Seitenliste",
 	"proofreadpage_image_message": "Link zur Indexseite",
 	"proofreadpage_page_status": "Seitenstatus",
+	"proofreadpage_page_status_logged_out": "Seitenstatus (nur angemeldete Benutzer können diesen einstellen)",
 	"proofreadpage_js_attributes": "Autor Titel Jahr Verlag",
 	"proofreadpage_index_attributes": "Autor\nTitel\nJahr|Erscheinungsjahr\nVerlag\nQuelle\nBild|Titelbild\nSeiten||20\nBemerkungen||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|Seite|Seiten}}",

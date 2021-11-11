@@ -66,6 +66,7 @@
 	"proofreadpage_index_listofpages": "רשימת דפים",
 	"proofreadpage_image_message": "קישור לדף המפתח",
 	"proofreadpage_page_status": "מצב הדף",
+	"proofreadpage_page_status_logged_out": "מצב הדף (רק משתמשים שנכנסו לחשבון יכולים להגדיר את זה)",
 	"proofreadpage_js_attributes": "מחבר כותרת שנה מוציא לאור",
 	"proofreadpage_index_attributes": "מחבר\nכותרת\nשנה|שנת פרסום\nמוציא לאור\nמקור\nתמונה|תמונת עטיפה\nדפים||20\nהערות||10",
 	"proofreadpage_pages": "{{PLURAL:$1|דף אחד|$2 דפים}}",
