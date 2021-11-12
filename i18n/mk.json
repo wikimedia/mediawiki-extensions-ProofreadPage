@@ -61,6 +61,7 @@
 	"proofreadpage_index_listofpages": "Список на страници",
 	"proofreadpage_image_message": "Врска до показателската страница",
 	"proofreadpage_page_status": "Статус на страница",
+	"proofreadpage_page_status_logged_out": "Статус на страницата (можат да го зададат само најавени корисници)",
 	"proofreadpage_js_attributes": "Автор Наслов Година Издавач",
 	"proofreadpage_index_attributes": "Автор\nНаслов\nГодина|Година на издавање\nИздавач\nИзвор\nСлика|Корица\nСтраници||20\nБелешки||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|страница|страници}}",

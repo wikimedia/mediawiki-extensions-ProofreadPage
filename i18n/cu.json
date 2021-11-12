@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"NR Deblocked",
 			"ОйЛ"
 		]
 	},
 	"proofreadpage_quality0_category": "бєꙁ напьсании",
 	"proofreadpage_quality2_category": "провлимьнꙑ",
-	"proofreadpage_specialpage_label_key": "исканиѥ :"
+	"proofreadpage_specialpage_label_key": "исканиѥ :",
+	"proofreadpage_page_status_logged_out": "Статꙋсъ ​страни҄цы​ (это мо́гꙋтъ ᲂустановить ​только​ зарегистрированные пользователи)"
 }
