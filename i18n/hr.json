@@ -6,6 +6,7 @@
 			"Dnik",
 			"Ex13",
 			"Neptune, the Mystic",
+			"Ponor",
 			"Roberta F.",
 			"SpeedyGonsales"
 		]
@@ -26,7 +27,7 @@
 	"proofreadpage_nologin": "Niste prijavljeni",
 	"proofreadpage_nologintext": "Morate biti [[Special:UserLogin|prijavljeni]] za izmjenu statusa provjerenosti na stranicama.",
 	"proofreadpage_notallowedtext": "Nije Vam dozvoljeno mijenjati status ispravljenosti ove stranice.",
-	"proofreadpage_dataconfig_badformatted": "Pogrješka u formatiranju podataka",
+	"proofreadpage_dataconfig_badformatted": "Pogreška u formatiranju podataka",
 	"proofreadpage_number_expected": "Pogreška: očekivana je brojčana vrijednost",
 	"proofreadpage_interval_too_large": "Pogreška: interval je prevelik",
 	"proofreadpage_invalid_interval": "Pogreška: interval nije valjan",
@@ -59,7 +60,7 @@
 	"proofreadpage_index_attributes": "Autor\nNaslov\nGodina|Godina izdavanja\nIzdavač\nFormat datot.\nSlika|Naslovnica\nStranica||20\nNapomene||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|stranica|stranice|stranica}}",
 	"proofreadpage_specialpage_legend": "Pretraživanje stranica kataloga",
-	"proofreadpage_specialpage_searcherror": "Pogrješka u pretraživanju",
+	"proofreadpage_specialpage_searcherror": "Pogreška u pretraživanju",
 	"proofreadpage_specialpage_searcherrortext": "Pretraživanje ne radi. Ispričavamo se zbog smetnji.",
 	"proofreadpage_source": "Izvor",
 	"proofreadpage_source_message": "Skenirana inačica rabljena za ovaj tekst",
