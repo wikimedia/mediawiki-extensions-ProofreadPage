@@ -9,6 +9,7 @@ use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\PageNumberNotFoundException;
+use ProofreadPage\Pagination\PageNotInPaginationException;
 use Sanitizer;
 use Title;
 
@@ -89,7 +90,7 @@ class PageDisplayHandler {
 	 * @param Title $title
 	 * @return array|null Santized and serialized fields or null if no index page is found
 	 */
-	public function getIndexFieldsForJS( Title $title ) {
+	public function getIndexFieldsForJS( Title $title ): ?array {
 		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $title );
 
 		if ( $indexTitle === null ) {
@@ -110,6 +111,44 @@ class PageDisplayHandler {
 			}
 		}
 		return $serializedFields;
+	}
+
+	/**
+	 * Add relevant config variables for a Page page
+	 *
+	 * @param Title $title the page title
+	 * @param PageContent $content the page's content
+	 * @return array the array of JS variables
+	 */
+	public function getPageJsConfigVars( Title $title, PageContent $content ): array {
+		$indexFields = $this->getIndexFieldsForJS( $title );
+
+		$jsConfigVars = [
+			'prpPageQualityUser' =>
+				$content->getLevel()->getUser() ? $content->getLevel()->getUser()->getName() : null,
+			'prpPageQuality' =>
+				$content->getLevel()->getLevel(),
+			'prpIndexFields' => $indexFields,
+		];
+
+		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $title );
+
+		if ( $indexTitle !== null ) {
+			$jsConfigVars[ 'prpIndexTitle' ] = $indexTitle->getFullText();
+
+			try {
+				$pagination = $this->context->getPaginationFactory()->
+					getPaginationForIndexTitle( $indexTitle );
+				$pageNumber = $pagination->getPageNumber( $title );
+				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
+				$formattedPageNumber = $displayedPageNumber->getFormattedPageNumber( $title->getPageLanguage() );
+
+				$jsConfigVars[ 'prpFormattedPageNumber' ] = $formattedPageNumber;
+			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
+			}
+		}
+
+		return $jsConfigVars;
 	}
 
 	/**

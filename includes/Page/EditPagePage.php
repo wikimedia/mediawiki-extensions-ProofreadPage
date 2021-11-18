@@ -110,13 +110,8 @@ class EditPagePage extends EditPage {
 		}
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
 
-		$indexFields = $this->pageDisplayHandler->getIndexFieldsForJS( $this->getTitle() );
-
-		$out->addJsConfigVars( [
-			'prpPageQualityUser' =>
-				$content->getLevel()->getUser() ? $content->getLevel()->getUser()->getName() : null,
-			'prpIndexFields' => $indexFields
-		] );
+		$jsVars = $this->pageDisplayHandler->getPageJsConfigVars( $this->getTitle(), $content );
+		$out->addJsConfigVars( $jsVars );
 	}
 
 	/**
