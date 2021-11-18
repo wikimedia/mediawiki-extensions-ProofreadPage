@@ -56,7 +56,8 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			'default' => '',
 			'label' => 'Pages',
 			'values' => null,
-			'header' => false
+			'header' => false,
+			'data' => 'pagelist'
 		],
 		'Header' => [
 			'type' => 'string',

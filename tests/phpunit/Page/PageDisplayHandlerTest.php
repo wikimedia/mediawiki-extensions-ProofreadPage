@@ -157,4 +157,33 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 			$handler->getIndexFieldsForJS( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.jpg' ) )['CSS']
 		);
 	}
+
+	public function testGetJsQualityVarsForPage() {
+		$handler = new PageDisplayHandler( $this->getContext( [
+			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+		], [
+			'Test' => new IndexContent( [
+				'Pages' => new WikitextContent( '[[Page:Test.jpg|42]]' )
+			] )
+		] ) );
+
+		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' );
+		$pageContent = self::buildPageContent(
+			'', '', '',
+			PageLevel::PROOFREAD, 'AUserName' );
+
+		$jsVars = $handler->getPageJsConfigVars( $pageTitle, $pageContent );
+
+		$this->assertEqualsCanonicalizing( $jsVars, [
+			'prpPageQualityUser' => 'AUserName',
+			'prpPageQuality' => PageLevel::PROOFREAD,
+			'prpFormattedPageNumber' => 42,
+			'prpIndexTitle' => 'Index:Test',
+			'prpIndexFields' => [
+				'Author' => '',
+				'width' => '',
+				'CSS' => '',
+			]
+		] );
+	}
 }

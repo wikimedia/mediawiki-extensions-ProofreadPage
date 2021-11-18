@@ -13,13 +13,11 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
 use MWException;
-use OutOfBoundsException;
 use ParserOutput;
 use ProofreadPage\Context;
 use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Index\UpdateIndexQualityStats;
 use ProofreadPage\MultiFormatSerializerUtils;
-use ProofreadPage\Pagination\PageNotInPaginationException;
 use TextContentHandler;
 use Title;
 use WikitextContent;
@@ -526,13 +524,13 @@ class PageContentHandler extends TextContentHandler {
 	) {
 		'@phan-var PageContent $content';
 		$title = Title::castFromPageReference( $cpoParams->getPage() );
+		'@phan-var Title $title';
 		if ( $content->isRedirect() ) {
 			$output = $this->wikitextContentHandler->getParserOutput( $content->getBody(), $cpoParams );
 			return;
 		}
 
 		$context = Context::getDefaultContext();
-		// @phan-suppress-next-line PhanTypeMismatchArgument
 		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
 
 		// create content
@@ -566,7 +564,6 @@ class PageContentHandler extends TextContentHandler {
 		$html = Html::openElement( 'div',
 			[ 'class' => 'prp-page-qualityheader quality' . $content->getLevel()->getLevel() ] ) .
 			wfMessage( 'proofreadpage_quality' . $content->getLevel()->getLevel() . '_message' )
-				// @phan-suppress-next-line PhanTypeMismatchArgument
 				->title( $title )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
@@ -574,24 +571,9 @@ class PageContentHandler extends TextContentHandler {
 			Html::closeElement( 'div' );
 		$output->setText( $html );
 
-		$output->addJsConfigVars( [
-			'prpPageQuality' => $content->getLevel()->getLevel()
-		] );
-
-		if ( $indexTitle instanceof Title ) {
-			try {
-				$pagination = $context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
-				// @phan-suppress-next-line PhanTypeMismatchArgument
-				$pageNumber = $pagination->getPageNumber( $title );
-				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
-				$formattedPageNumber = $displayedPageNumber->getFormattedPageNumber( $title->getPageLanguage() );
-
-				$output->addJsConfigVars( [
-					'prpPageNumber' => $formattedPageNumber
-				] );
-			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
-			}
-		}
+		$pageDisplayHandler = new PageDisplayHandler( $context );
+		$jsVars = $pageDisplayHandler->getPageJsConfigVars( $title, $content );
+		$output->addJsConfigVars( $jsVars );
 
 		// add modules
 		$output->addModuleStyles( 'ext.proofreadpage.base' );
