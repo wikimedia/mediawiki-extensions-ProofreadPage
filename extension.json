@@ -32,6 +32,11 @@
 		"IndexPages": "\\ProofreadPage\\Special\\SpecialProofreadPages",
 		"PagesWithoutScans": "\\ProofreadPage\\Special\\SpecialPagesWithoutScans"
 	},
+	"APIListModules": {
+		"proofreadpagesinindex": {
+			"class": "ProofreadPage\\Api\\ApiQueryPagesInIndex"
+		}
+	},
 	"APIMetaModules": {
 		"proofreadinfo": "\\ProofreadPage\\Api\\ApiQueryProofreadInfo"
 	},
