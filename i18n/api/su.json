@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kandar",
 			"Uchup19"
 		]
 	},
-	"apihelp-query+proofreadinfo-example-3": "Malikkeun informasi ngaranspasi"
+	"apierror-proofreadpage-invalidindex": "Judul indéx teu sohéh \"$1\".",
+	"apihelp-query+proofreadinfo-example-3": "Malikkeun informasi ngaranspasi",
+	"apihelp-query+proofreadpagesinindex-example-1": "Pulangkeun émbaran baku"
 }

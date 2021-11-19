@@ -4,6 +4,7 @@
 			"Bjankuloski06"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "Неважечки индексен наслов „$1“.",
 	"apihelp-query+proofread-description": "Дава информации за тековната состојба на проверката на дадени страници.",
 	"apihelp-query+proofread-summary": "Дава информации за тековната состојба на проверката на дадени страници.",
 	"apihelp-query+proofread-example-1": "Дај состојба на проверката на страниците во именскиот простор 250",
@@ -11,5 +12,12 @@
 	"apihelp-query+proofreadinfo-summary": "Дај информации за поставеноста на додатокот ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Кои својства на проверката да се дадат:\n;namespaces: Информации за именските простори „{{ns:Page}}“ и „{{ns:Index}}“.\n;qualitylevels: Список на степените на квалитет на проверка.",
 	"apihelp-query+proofreadinfo-example-1": "Дај стандардни информации",
-	"apihelp-query+proofreadinfo-example-3": "Дај информации за именскиот простор"
+	"apihelp-query+proofreadinfo-example-3": "Дај информации за именскиот простор",
+	"apihelp-query+proofreadpagesinindex-description": "Дај список на страниците во даден индекс",
+	"apihelp-query+proofreadpagesinindex-summary": "Дај список на страниците во даден индекс",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Ограничи колку страници да е дадат",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Назнака на индексната страница за која ќе се дадат страници",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Кои својства да се дадат за секоја страница",
+	"apihelp-query+proofreadpagesinindex-param-title": "Насловот на индексната страница за која ќе се дадат страници",
+	"apihelp-query+proofreadpagesinindex-example-1": "Дај стандардни информации"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Aleator",
+			"Amire80",
 			"Amritsreekumar",
 			"EugeneZelenko",
 			"Guycn2",
@@ -29,7 +30,7 @@
 			"Yknok29"
 		]
 	},
-	"apierror-proofreadpage-invalidindex": "API error when an index title is invalid\n* $1 - the title.",
+	"apierror-proofreadpage-invalidindex": "{{Doc-apierror}}\nAPI error when an index title is invalid\n* $1 - the title.",
 	"apihelp-query+proofread-description": "{{doc-apihelp-description|query+proofread}}",
 	"apihelp-query+proofread-summary": "{{doc-apihelp-summary|query+proofread}}",
 	"apihelp-query+proofread-example-1": "{{doc-apihelp-example|query+proofread}}",

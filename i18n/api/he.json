@@ -5,6 +5,7 @@
 			"Guycn2"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "כותרת מפתח בלתי־תקינה \"$1\".",
 	"apihelp-query+proofread-description": "החזרת מידע על מצב ההגהה הנוכחי של הדפים הנתונים.",
 	"apihelp-query+proofread-summary": "החזרת מידע על מצב ההגהה הנוכחי של הדפים הנתונים.",
 	"apihelp-query+proofread-example-1": "החזרת מצב ההגהה לדפים במרחב 250",
@@ -12,5 +13,12 @@
 	"apihelp-query+proofreadinfo-summary": "החזרת מידע על הגדרות התצורה של ההרחבה ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "אילו מאפייני הגהה לקבל:\n;namespaces:מידע על מרחבי השם \"{{ns:Page}}\"ֿֿ ו־{{ns:Index}}.\n;qualitylevels:רשימת רמות איכות הגהה.",
 	"apihelp-query+proofreadinfo-example-1": "החזרת מידע ברירת מחדל",
-	"apihelp-query+proofreadinfo-example-3": "החזרת מידע על מרחב שם"
+	"apihelp-query+proofreadinfo-example-3": "החזרת מידע על מרחב שם",
+	"apihelp-query+proofreadpagesinindex-description": "רשימת דפים במפתח נתון",
+	"apihelp-query+proofreadpagesinindex-summary": "רשימת דפים במפתח נתון",
+	"apihelp-query+proofreadpagesinindex-param-limit": "להגביל כמה דפים יוחזרו",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "מזהה הדף של דף המפתח שצריך לקבל דפים עבורו",
+	"apihelp-query+proofreadpagesinindex-param-prop": "אילו מאפיינים לקבל עבור כל דף",
+	"apihelp-query+proofreadpagesinindex-param-title": "כותרת דף המפתח שצריך לקבל דפים עבורו",
+	"apihelp-query+proofreadpagesinindex-example-1": "החזרת מידע ברירת מחדל"
 }
