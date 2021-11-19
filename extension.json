@@ -26,6 +26,8 @@
 		"pagequality-admin"
 	],
 	"DefaultUserOptions": {
+		"proofreadpage-animation-time": 0,
+		"proofreadpage-zoom-factor": 1.2,
 		"proofreadpage-pagelist-use-visual-mode": "1"
 	},
 	"SpecialPages": {

@@ -282,14 +282,32 @@ class ProofreadPage {
 		$preferences['proofreadpage-showheaders'] = [
 			'type'           => $type,
 			'label-message'  => 'proofreadpage-preferences-showheaders-label',
-			'section'        => 'editing/advancedediting',
+			'section'        => 'editing/proofread-pagenamespace',
 		];
 
 		// Use horizontal layout when editing in the Page namespace
 		$preferences['proofreadpage-horizontal-layout'] = [
 			'type'           => $type,
 			'label-message'  => 'proofreadpage-preferences-horizontal-layout-label',
-			'section'        => 'editing/advancedediting',
+			'section'        => 'editing/proofread-pagenamespace',
+		];
+
+		// Page image viewer zoom factor
+		$preferences['proofreadpage-zoom-factor'] = [
+			'type'           => 'float',
+			'min'            => 1.0,
+			'max'            => 2.0,
+			'label-message'  => 'proofreadpage-preferences-zoom-factor-label',
+			'section'        => 'editing/proofread-pagenamespace',
+		];
+
+		// Page image viewer animation time (higher is smoother)
+		$preferences['proofreadpage-animation-time'] = [
+			'type'           => 'float',
+			'min'            => 0,
+			'max'            => 2.0,
+			'label-message'  => 'proofreadpage-preferences-animation-time-label',
+			'section'        => 'editing/proofread-pagenamespace',
 		];
 
 		// Mode selection for the new PagelistInputWidget

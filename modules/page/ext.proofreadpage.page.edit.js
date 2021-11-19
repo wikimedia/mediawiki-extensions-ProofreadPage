@@ -168,15 +168,19 @@
 			OpenSeadragon.setString( mapping[ 0 ], mw.msg( mapping[ 1 ] ) );
 		} );
 
+		var zoomFactor = Number( mw.user.options.get( 'proofreadpage-zoom-factor', 1.2 ) );
+		var animationTime = Number( mw.user.options.get( 'proofreadpage-animation-time', 0 ) );
+
 		var osdParams = {
 			id: id,
 			showFullPageControl: false,
 			preserveViewport: true,
-			animationTime: 0,
+			animationTime: animationTime,
 			visibilityRatio: 0.5,
 			minZoomLevel: 0.5,
 			maxZoomLevel: 4.5,
-			zoomPerClick: 1.2,
+			zoomPerClick: zoomFactor,
+			zoomPerScroll: zoomFactor,
 			tileSources: tileSource
 		};
 
