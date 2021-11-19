@@ -97,6 +97,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		if ( $this->parserOutput && $indexTitle ) {
 			// this depends on the index itself (for the content)
 			$pagination = $this->getPaginationForIndex( $indexTitle );
+			$pagination->prefetchPageLinks();
 
 			foreach ( $pagination as $pageTitle ) {
 				$this->addTemplateDependencyOnPage( $pageTitle );
