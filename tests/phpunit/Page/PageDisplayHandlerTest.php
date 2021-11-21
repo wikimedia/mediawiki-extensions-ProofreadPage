@@ -179,6 +179,10 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 			'prpPageQuality' => PageLevel::PROOFREAD,
 			'prpFormattedPageNumber' => 42,
 			'prpIndexTitle' => 'Index:Test',
+			// It is difficult to get file info for URLs here without a lot of
+			// dependency injection
+			// 'prpImageThumbnail' =>
+			// 'prpImageFullSize' =>
 			'prpIndexFields' => [
 				'Author' => '',
 				'width' => '',

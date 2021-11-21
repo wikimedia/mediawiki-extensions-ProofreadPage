@@ -31,6 +31,16 @@ class PageDisplayHandler {
 	private $context;
 
 	/**
+	 * Cache for image URLs
+	 *
+	 * @var array
+	 */
+	private $imageUrlCache = [
+		'thumb' => [],
+		'full' => []
+	];
+
+	/**
 	 * @param Context $context
 	 */
 	public function __construct( Context $context ) {
@@ -128,8 +138,18 @@ class PageDisplayHandler {
 				$content->getLevel()->getUser() ? $content->getLevel()->getUser()->getName() : null,
 			'prpPageQuality' =>
 				$content->getLevel()->getLevel(),
-			'prpIndexFields' => $indexFields,
+			'prpIndexFields' => $indexFields
 		];
+
+		$mediaTransformThumb = $this->getImageThumbnail( $title );
+		if ( $mediaTransformThumb ) {
+			$jsConfigVars[ 'prpImageThumbnail' ] = $mediaTransformThumb->getUrl();
+		}
+
+		$mediaTransformFull = $this->getImageFullSize( $title );
+		if ( $mediaTransformFull ) {
+			$jsConfigVars[ 'prpImageFullSize' ] = $mediaTransformFull->getUrl();
+		}
 
 		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $title );
 
@@ -192,7 +212,12 @@ class PageDisplayHandler {
 	 * @return MediaTransformOutput|null
 	 */
 	public function getImageFullSize( Title $pageTitle ): ?MediaTransformOutput {
-		return $this->getImageTransform( $pageTitle, false );
+		$key = $pageTitle->getDBkey();
+		if ( !array_key_exists( $key, $this->imageUrlCache[ 'full' ] ) ) {
+			$this->imageUrlCache[ 'full' ][ $key ] = $this->getImageTransform( $pageTitle, false );
+		}
+
+		return $this->imageUrlCache[ 'full' ][ $key ];
 	}
 
 	/**
@@ -201,7 +226,12 @@ class PageDisplayHandler {
 	 * @return MediaTransformOutput|null
 	 */
 	public function getImageThumbnail( Title $pageTitle ): ?MediaTransformOutput {
-		return $this->getImageTransform( $pageTitle, true );
+		$key = $pageTitle->getDBkey();
+		if ( !array_key_exists( $key, $this->imageUrlCache[ 'thumb' ] ) ) {
+			$this->imageUrlCache[ 'thumb' ][ $key ] = $this->getImageTransform( $pageTitle, true );
+		}
+
+		return $this->imageUrlCache[ 'thumb' ][ $key ];
 	}
 
 	/**
@@ -247,7 +277,6 @@ class PageDisplayHandler {
 
 		if ( $transformedImage && $constrainWidth ) {
 			Linker::processResponsiveImages( $image, $transformedImage, $transformAttributes );
-
 		}
 
 		if ( $transformedImage ) {
