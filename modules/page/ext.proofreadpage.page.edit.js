@@ -114,6 +114,20 @@
 		// make space for the OSD viewer
 		$img.hide();
 
+		// Set the OSD strings before setting up the buttons
+		var osdStringMap = [
+			[ 'Tooltips.Home', 'proofreadpage-button-reset-zoom-label' ],
+			[ 'Tooltips.ZoomIn', 'proofreadpage-button-zoom-in-label' ],
+			[ 'Tooltips.ZoomOut', 'proofreadpage-button-zoom-out-label' ],
+			[ 'Tooltips.RotateLeft', 'proofreadpage-button-rotate-left-label' ],
+			[ 'Tooltips.RotateRight', 'proofreadpage-button-rotate-right-label' ]
+		];
+
+		osdStringMap.forEach( function ( mapping ) {
+			// eslint-disable-next-line mediawiki/msg-doc
+			OpenSeadragon.setString( mapping[ 0 ], mw.msg( mapping[ 1 ] ) );
+		} );
+
 		var osdParams = {
 			id: id,
 			showFullPageControl: false,

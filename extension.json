@@ -110,11 +110,13 @@
 				"proofreadpage-section-tools",
 				"proofreadpage-group-zoom",
 				"proofreadpage-group-other",
-				"proofreadpage-button-toggle-visibility-label",
-				"proofreadpage-button-zoom-out-label",
 				"proofreadpage-button-reset-zoom-label",
-				"proofreadpage-button-zoom-in-label",
+				"proofreadpage-button-rotate-left-label",
+				"proofreadpage-button-rotate-right-label",
 				"proofreadpage-button-toggle-layout-label",
+				"proofreadpage-button-toggle-visibility-label",
+				"proofreadpage-button-zoom-in-label",
+				"proofreadpage-button-zoom-out-label",
 				"proofreadpage-preferences-showheaders-label"
 			]
 		},
