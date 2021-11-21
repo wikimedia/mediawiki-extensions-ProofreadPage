@@ -168,7 +168,7 @@
 
 		viewer.addHandler( 'open', function () {
 			// inform any listeners that the OSD viewer is ready
-			mw.hook( 'ext.proofreadpage.zoom-ready' ).fire( viewer );
+			mw.hook( 'ext.proofreadpage.osd-viewer-ready' ).fire( viewer );
 		} );
 
 		mw.proofreadpage.viewer = viewer;
