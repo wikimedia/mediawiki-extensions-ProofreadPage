@@ -25,15 +25,15 @@
 		$editForm,
 
 		/**
-		 * image parent container, when the page is in "vertical" mode, and
+		 * OSD parent container, when the page is in "vertical" mode, and
 		 * the image viewer is inside the edit form
 		 *
 		 * @type {jQuery}
 		 */
-		$imgCont,
+		$imgContVertical,
 
 		/**
-		 * image parent container, when the page is in "horizontal" mode, and
+		 * OSD parent container, when the page is in "horizontal" mode, and
 		 * the image viewer is outside the edit form
 		 *
 		 * @type {jQuery}
@@ -227,7 +227,7 @@
 			}
 
 			// Switch CSS widths and heights back to the default side-by-size layout.
-			$imgCont
+			$imgContVertical
 				.css( {
 					width: imgWidth,
 					height: imgHeight
@@ -241,11 +241,10 @@
 			if ( !$imgContHorizontal ) {
 				$imgContHorizontal = $( '<div>' )
 					.attr( 'id', 'prp-page-image-openseadragon-horizontal' )
-					.addClass( 'prp-page-image' )
 					.insertBefore( $editForm );
 			}
 
-			$imgCont.hide();
+			$imgContVertical.hide();
 			$imgContHorizontal.show();
 
 			newHeight = $( window ).height() / 2.7 + 'px';
@@ -567,10 +566,10 @@
 			$editForm = $( '#editform' );
 		}
 
-		if ( $imgCont === undefined ) {
-			$imgCont = $editForm
-				.find( '.prp-page-image' )
-				.attr( 'id', 'prp-page-image-openseadragon-vertical' );
+		if ( $imgContVertical === undefined ) {
+			$imgContVertical = $( '<div>' )
+				.attr( 'id', 'prp-page-image-openseadragon-vertical' )
+				.appendTo( '.prp-page-image' );
 		}
 
 		if ( $img === undefined ) {
