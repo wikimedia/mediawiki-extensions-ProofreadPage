@@ -122,6 +122,7 @@
 			visibilityRatio: 0.5,
 			minZoomLevel: 0.5,
 			maxZoomLevel: 4.5,
+			zoomPerClick: 1.2,
 			tileSources: {
 				type: 'legacy-image-pyramid',
 				levels: [ {
