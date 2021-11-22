@@ -114,11 +114,8 @@
 		// make space for the OSD viewer
 		$img.hide();
 
-		viewer = OpenSeadragon( {
+		var osdParams = {
 			id: id,
-			zoomInButton: 'prp-page-zoomIn',
-			zoomOutButton: 'prp-page-zoomOut',
-			homeButton: 'prp-page-zoomReset',
 			showFullPageControl: false,
 			preserveViewport: true,
 			animationTime: 0,
@@ -144,7 +141,19 @@
 				}
 				]
 			}
-		} );
+		};
+
+		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
+			$.extend( osdParams, {
+				zoomInButton: 'prp-page-zoomIn',
+				zoomOutButton: 'prp-page-zoomOut',
+				homeButton: 'prp-page-zoomReset'
+			} );
+		} else {
+			osdParams.showNavigationControl = false;
+		}
+
+		viewer = OpenSeadragon( osdParams );
 
 		viewer.viewport.goHome = function () {
 			if ( viewer ) {
@@ -155,7 +164,6 @@
 		};
 
 		mw.proofreadpage.viewer = viewer;
-
 	}
 
 	/**
@@ -190,12 +198,20 @@
 	function toggleLayout( horizontal ) {
 		var newHeight, setActive;
 
+		var wasLayoutHorizontal = isLayoutHorizontal;
 		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
+
+		if ( viewer && wasLayoutHorizontal === isLayoutHorizontal ) {
+			// nothing changed, nothing to do
+			return;
+		}
 
 		if ( viewer ) {
 			viewer.destroy();
 			viewer = null;
 		}
+
+		var idToInitialize;
 
 		if ( !isLayoutHorizontal ) {
 			if ( $imgContHorizontal ) {
@@ -210,12 +226,9 @@
 				} )
 				.show();
 
-			$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
-				ensureImageZoomInitialization( 'prp-page-image-openseadragon-vertical' );
-			} );
-
 			$wpTextbox.css( { height: '' } );
 
+			idToInitialize = 'prp-page-image-openseadragon-vertical';
 		} else {
 			if ( !$imgContHorizontal ) {
 				$imgContHorizontal = $( '<div>' )
@@ -230,12 +243,13 @@
 			newHeight = $( window ).height() / 2.7 + 'px';
 			$imgContHorizontal.css( { height: newHeight } );
 
-			$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
-				ensureImageZoomInitialization( 'prp-page-image-openseadragon-horizontal' );
-			} );
-
 			$wpTextbox.css( { height: newHeight } );
+
+			idToInitialize = 'prp-page-image-openseadragon-horizontal';
 		}
+
+		ensureImageZoomInitialization( idToInitialize );
+
 		// eslint-disable-next-line no-jquery/no-global-selector
 		setActive = $( '.tool[rel=toggle-layout]' ).data( 'setActive' );
 		if ( setActive ) {
@@ -299,10 +313,9 @@
 		$zoomInterfaceDiv.addClass( 'prp-page-zoom-interface' );
 		$zoomInterfaceDiv.append( zoomInterface.zoomIn.$element, zoomInterface.zoomOut.$element, zoomInterface.zoomReset.$element );
 
-		$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready ).then( function () {
-			$editForm.find( '.wikiEditor-ui-toolbar .section-main' ).after( $zoomInterfaceDiv );
-
-		} );
+		$editForm
+			.find( '.wikiEditor-ui-toolbar .section-main' )
+			.after( $zoomInterfaceDiv );
 
 		var tools = {
 			other: {
@@ -332,22 +345,20 @@
 			}
 		};
 
-		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
-			// 'ext.wikiEditor' was loaded before calling this function
-			$editForm.find( '.prp-page-edit-body' ).append( $wpTextbox );
-			$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
-			$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
+		// this function is inside the wikiEditor.toolbar ready hook handler
+		$editForm.find( '.prp-page-edit-body' ).append( $wpTextbox );
+		$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
+		$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 
-			$wpTextbox.wikiEditor( 'addToToolbar', {
-				sections: {
-					'proofreadpage-tools': {
-						type: 'toolbar',
-						labelMsg: 'proofreadpage-section-tools',
-						groups: tools
-					}
+		$wpTextbox.wikiEditor( 'addToToolbar', {
+			sections: {
+				'proofreadpage-tools': {
+					type: 'toolbar',
+					labelMsg: 'proofreadpage-section-tools',
+					groups: tools
 				}
-			} );
-		}
+			}
+		} );
 
 		// Users can call $('#wpTextbox1').textSelection( 'getContents' ) to get the full wikitext
 		// of the page, instead of just the body section.
@@ -556,24 +567,20 @@
 		}
 	}
 
-	function getLoadedEditorPromise() {
-		var deferred = $.Deferred();
-		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
-			mw.loader.using( 'ext.wikiEditor' ).done( function () {
-				$wpTextbox.on( 'wikiEditor-toolbar-doneInitialSections',
-					deferred.resolve.bind( deferred )
-				);
-			} );
-			return deferred.promise();
-		}
-		return deferred.resolve().promise();
-	}
-
 	$( function () {
 		initEnvironment();
 		setupPageQuality();
-		getLoadedEditorPromise().done( setupWikitextEditor, setupPreferences );
 
+		mw.hook( 'wikiEditor.toolbarReady' ).add( function () {
+			setupWikitextEditor();
+			setupPreferences();
+		} );
+
+		// Always initialize the OSD viewer, even if no toolbar for the controls
+		// (otherwise wait for toolbar init so the icons are ready)
+		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
+			ensureImageZoomInitialization( 'prp-page-image-openseadragon-vertical' );
+		}
 	} );
 
 }() );
