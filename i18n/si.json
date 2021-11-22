@@ -51,9 +51,9 @@
 	"proofreadpage-section-tools": "සෝදුපත් බැලීමේ මෙවලම්",
 	"proofreadpage-group-zoom": "විශාලනය",
 	"proofreadpage-group-other": "වෙනත්",
-	"proofreadpage-button-toggle-visibility-label": "මෙම පිටුවේ ශීර්ෂකය සහ පාදතලය පෙන්වන්න/සඟවන්න",
-	"proofreadpage-button-zoom-out-label": "විශාලනයෙන් ඉවත් වෙන්න",
 	"proofreadpage-button-reset-zoom-label": "නියම ප්‍රමාණය",
+	"proofreadpage-button-toggle-layout-label": "සිරස්/තිරස් සැලැස්ම",
+	"proofreadpage-button-toggle-visibility-label": "මෙම පිටුවේ ශීර්ෂකය සහ පාදතලය පෙන්වන්න/සඟවන්න",
 	"proofreadpage-button-zoom-in-label": "විශාලනය කරන්න",
-	"proofreadpage-button-toggle-layout-label": "සිරස්/තිරස් සැලැස්ම"
+	"proofreadpage-button-zoom-out-label": "විශාලනයෙන් ඉවත් වෙන්න"
 }

@@ -54,10 +54,10 @@
 	"proofreadpage-section-tools": "Proofread kare waala tool",
 	"proofreadpage-group-zoom": "Barraa karo",
 	"proofreadpage-group-other": "Duusra",
-	"proofreadpage-button-toggle-visibility-label": "Ii panna ke header aur footer ke dekhao/lukao",
-	"proofreadpage-button-zoom-out-label": "Chhota karo",
 	"proofreadpage-button-reset-zoom-label": "Pahile ke size",
+	"proofreadpage-button-toggle-visibility-label": "Ii panna ke header aur footer ke dekhao/lukao",
 	"proofreadpage-button-zoom-in-label": "Barraa karo",
+	"proofreadpage-button-zoom-out-label": "Chhota karo",
 	"proofreadpage-preferences-showheaders-label": "Panna ke {{ns:page}} namespace me badle ke time header aur footer ke dekhao",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} namespace me badle ke khatir horizontal layout ke kaam me laao."
 }

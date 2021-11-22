@@ -57,11 +57,11 @@
 	"proofreadpage-section-tools": "Instrumentos pro correction de probas",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Altere",
-	"proofreadpage-button-toggle-visibility-label": "Monstrar/celar le capite e le pede de iste pagina",
-	"proofreadpage-button-zoom-out-label": "Diminuer",
 	"proofreadpage-button-reset-zoom-label": "Dimension original",
-	"proofreadpage-button-zoom-in-label": "Aggrandir",
 	"proofreadpage-button-toggle-layout-label": "Disposition vertical/horizontal",
+	"proofreadpage-button-toggle-visibility-label": "Monstrar/celar le capite e le pede de iste pagina",
+	"proofreadpage-button-zoom-in-label": "Aggrandir",
+	"proofreadpage-button-zoom-out-label": "Diminuer",
 	"proofreadpage-preferences-showheaders-label": "Monstrar campos de capite e pede quando modificar in le spatio de nomines \"{{ns:page}}\"",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar le disposition horizontal quando modificar in le spatio de nomines {{ns:page}}"
 }

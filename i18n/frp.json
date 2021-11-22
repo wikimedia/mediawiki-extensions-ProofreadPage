@@ -48,9 +48,9 @@
 	"proofreadpage-section-tools": "Outils d’éde a la rèvision",
 	"proofreadpage-group-zoom": "Zoome",
 	"proofreadpage-group-other": "Ôtra",
-	"proofreadpage-button-toggle-visibility-label": "Fâre vêre / cachiér l’en-téta et lo pied de pâge de ceta pâge",
-	"proofreadpage-button-zoom-out-label": "Rèduire",
 	"proofreadpage-button-reset-zoom-label": "Tornar inicialisar lo zoome",
+	"proofreadpage-button-toggle-layout-label": "Misa en pâge drêta / plana",
+	"proofreadpage-button-toggle-visibility-label": "Fâre vêre / cachiér l’en-téta et lo pied de pâge de ceta pâge",
 	"proofreadpage-button-zoom-in-label": "Agrantir",
-	"proofreadpage-button-toggle-layout-label": "Misa en pâge drêta / plana"
+	"proofreadpage-button-zoom-out-label": "Rèduire"
 }

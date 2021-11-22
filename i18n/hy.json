@@ -54,11 +54,11 @@
 	"proofreadpage-section-tools": "Սրբագրագործիքներ",
 	"proofreadpage-group-zoom": "Խոշորացում",
 	"proofreadpage-group-other": "Այլ",
-	"proofreadpage-button-toggle-visibility-label": "Ցուցադրել/թաքցնել էջի էջագլուխն և էջատակը",
-	"proofreadpage-button-zoom-out-label": "Հեռվացնել",
 	"proofreadpage-button-reset-zoom-label": "Բնօրինակ չափը",
-	"proofreadpage-button-zoom-in-label": "Խոշորացնել",
 	"proofreadpage-button-toggle-layout-label": "Պատկերը կողքից/վերևից",
+	"proofreadpage-button-toggle-visibility-label": "Ցուցադրել/թաքցնել էջի էջագլուխն և էջատակը",
+	"proofreadpage-button-zoom-in-label": "Խոշորացնել",
+	"proofreadpage-button-zoom-out-label": "Հեռվացնել",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Օգնություն",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Այո"
 }

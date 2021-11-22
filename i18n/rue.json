@@ -49,10 +49,10 @@
 	"proofreadpage-section-tools": "Інштрументы коректуры",
 	"proofreadpage-group-zoom": "Зоом",
 	"proofreadpage-group-other": "Інше",
-	"proofreadpage-button-toggle-visibility-label": "Указати/скрыти верьхнї і нижнї тітулы той сторінкы",
-	"proofreadpage-button-zoom-out-label": "Зменшыти",
 	"proofreadpage-button-reset-zoom-label": "Ресет звекшыня",
-	"proofreadpage-button-zoom-in-label": "Звекшыти",
 	"proofreadpage-button-toggle-layout-label": "Вертікалне / горізонтално розложіня",
+	"proofreadpage-button-toggle-visibility-label": "Указати/скрыти верьхнї і нижнї тітулы той сторінкы",
+	"proofreadpage-button-zoom-in-label": "Звекшыти",
+	"proofreadpage-button-zoom-out-label": "Зменшыти",
 	"tag-proofreadpage-quality0": "Без тексту"
 }

@@ -49,9 +49,9 @@
 	"proofreadpage-section-tools": "Інструменты рэдактара",
 	"proofreadpage-group-zoom": "Маштаб",
 	"proofreadpage-group-other": "Іншае",
-	"proofreadpage-button-toggle-visibility-label": "Паказаць/схаваць калантытулы гэтай старонкі",
-	"proofreadpage-button-zoom-out-label": "Паменшыць",
 	"proofreadpage-button-reset-zoom-label": "Арыгінальны памер",
+	"proofreadpage-button-toggle-layout-label": "Вертыкальная/гарызантальная разметка",
+	"proofreadpage-button-toggle-visibility-label": "Паказаць/схаваць калантытулы гэтай старонкі",
 	"proofreadpage-button-zoom-in-label": "Павялічыць",
-	"proofreadpage-button-toggle-layout-label": "Вертыкальная/гарызантальная разметка"
+	"proofreadpage-button-zoom-out-label": "Паменшыць"
 }

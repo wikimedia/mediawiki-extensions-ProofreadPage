@@ -51,10 +51,10 @@
 	"proofreadpage-section-tools": "Hilfsmittel zum Korrekturläse",
 	"proofreadpage-group-zoom": "Zoome",
 	"proofreadpage-group-other": "Anders",
-	"proofreadpage-button-toggle-visibility-label": "Chopf- un Fuesszyyle vo derre Syte yy-/ussblände",
-	"proofreadpage-button-zoom-out-label": "Chleiner mache",
 	"proofreadpage-button-reset-zoom-label": "Orginalgrößi",
-	"proofreadpage-button-zoom-in-label": "Dryy suume",
 	"proofreadpage-button-toggle-layout-label": "Vertikali/horizontali Ussrichtig",
+	"proofreadpage-button-toggle-visibility-label": "Chopf- un Fuesszyyle vo derre Syte yy-/ussblände",
+	"proofreadpage-button-zoom-in-label": "Dryy suume",
+	"proofreadpage-button-zoom-out-label": "Chleiner mache",
 	"proofreadpage-preferences-showheaders-label": "Bim Bearbeite vo Syte im „{{ns:page}}“-Namensruum d Fälder für d Chopf- un Fuesszyyle aazeige."
 }

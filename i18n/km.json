@@ -43,9 +43,9 @@
 	"proofreadpage-section-tools": "ឧបករណ៍ផ្ទៀងផ្ទាត់",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "ផ្សេង​ៗ",
-	"proofreadpage-button-toggle-visibility-label": "បង្ហាញ/លាក់ផ្នែកក្បាលទំព័រ និងកន្ទុយទំព័រនៃទំព័រនេះ",
-	"proofreadpage-button-zoom-out-label": "បង្រួម",
 	"proofreadpage-button-reset-zoom-label": "ទំហំដើម",
+	"proofreadpage-button-toggle-layout-label": "ទម្រង់បញ្ឈរ/ផ្ដេក",
+	"proofreadpage-button-toggle-visibility-label": "បង្ហាញ/លាក់ផ្នែកក្បាលទំព័រ និងកន្ទុយទំព័រនៃទំព័រនេះ",
 	"proofreadpage-button-zoom-in-label": "ពង្រីក",
-	"proofreadpage-button-toggle-layout-label": "ទម្រង់បញ្ឈរ/ផ្ដេក"
+	"proofreadpage-button-zoom-out-label": "បង្រួម"
 }

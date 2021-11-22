@@ -48,9 +48,9 @@
 	"proofreadpage-section-tools": "Ferramientas de corrección",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Atros",
-	"proofreadpage-button-toggle-visibility-label": "Amostrar/amagar o encabezamiento y o piet d'ista pachina",
-	"proofreadpage-button-zoom-out-label": "Zoom out (aluenyar)",
 	"proofreadpage-button-reset-zoom-label": "Grandaria orichinal",
+	"proofreadpage-button-toggle-layout-label": "Disposición vertical/horizontal",
+	"proofreadpage-button-toggle-visibility-label": "Amostrar/amagar o encabezamiento y o piet d'ista pachina",
 	"proofreadpage-button-zoom-in-label": "Zoom in (amanar)",
-	"proofreadpage-button-toggle-layout-label": "Disposición vertical/horizontal"
+	"proofreadpage-button-zoom-out-label": "Zoom out (aluenyar)"
 }

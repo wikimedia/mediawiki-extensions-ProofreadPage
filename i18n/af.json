@@ -50,9 +50,9 @@
 	"proofreadpage-section-tools": "proeflees gereedskap",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Ander",
-	"proofreadpage-button-toggle-visibility-label": "Wys / verberg hierdie bladsy se kop-en voet",
-	"proofreadpage-button-zoom-out-label": "Uitzoom",
 	"proofreadpage-button-reset-zoom-label": "Herstel zoom",
+	"proofreadpage-button-toggle-layout-label": "Vertikale/horisontale uitleg",
+	"proofreadpage-button-toggle-visibility-label": "Wys / verberg hierdie bladsy se kop-en voet",
 	"proofreadpage-button-zoom-in-label": "Inzoom",
-	"proofreadpage-button-toggle-layout-label": "Vertikale/horisontale uitleg"
+	"proofreadpage-button-zoom-out-label": "Uitzoom"
 }

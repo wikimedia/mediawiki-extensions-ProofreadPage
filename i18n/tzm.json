@@ -25,8 +25,8 @@
 	"proofreadpage-section-tools": "ⵉⵎⴰⵙⵙⵏ ⵓⵙⵉⵙⴷⵉⴷ",
 	"proofreadpage-group-zoom": "ⴰⵙⵎⵖⵔ ⴷ ⵓⵙⵎⵥⵉⵢ",
 	"proofreadpage-group-other": "ⵏⵉⴹⵏ",
-	"proofreadpage-button-zoom-out-label": "ⴰⵙⵎⵥⵉⵢ",
-	"proofreadpage-button-zoom-in-label": "ⴰⵙⵎⵖⵔ",
 	"proofreadpage-button-toggle-layout-label": "Vertical/horizontal layout",
+	"proofreadpage-button-zoom-in-label": "ⴰⵙⵎⵖⵔ",
+	"proofreadpage-button-zoom-out-label": "ⴰⵙⵎⵥⵉⵢ",
 	"proofreadpage-preferences-horizontal-layout-label": "Use horizontal layout when editing in the {{ns:page}} namespace"
 }

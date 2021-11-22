@@ -44,9 +44,9 @@
 	"right-pagequality": "عدل علامة جودة الصفحة",
 	"proofreadpage-section-tools": "أدوات تدقيق",
 	"proofreadpage-group-other": "غير ذلك",
-	"proofreadpage-button-toggle-visibility-label": "أظهر أو أخف ترويسة الصفحة وتذييلتها",
-	"proofreadpage-button-zoom-out-label": "تصغير",
 	"proofreadpage-button-reset-zoom-label": "رد التكبير",
+	"proofreadpage-button-toggle-layout-label": "تخطيط أفقي أو رأسي",
+	"proofreadpage-button-toggle-visibility-label": "أظهر أو أخف ترويسة الصفحة وتذييلتها",
 	"proofreadpage-button-zoom-in-label": "تكبير",
-	"proofreadpage-button-toggle-layout-label": "تخطيط أفقي أو رأسي"
+	"proofreadpage-button-zoom-out-label": "تصغير"
 }

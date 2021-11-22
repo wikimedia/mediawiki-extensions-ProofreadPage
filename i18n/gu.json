@@ -51,10 +51,10 @@
 	"proofreadpage-section-tools": "પ્રુફરીડ સાધનો",
 	"proofreadpage-group-zoom": "ઝૂમ",
 	"proofreadpage-group-other": "અન્ય",
-	"proofreadpage-button-toggle-visibility-label": "આ પાનાંનું મથાળું અને અંત બતાવો/છુપાવો",
-	"proofreadpage-button-zoom-out-label": "ઝૂમ આઉટ",
 	"proofreadpage-button-reset-zoom-label": "મૂળ માપ",
-	"proofreadpage-button-zoom-in-label": "ઝૂમ ઇન",
 	"proofreadpage-button-toggle-layout-label": "પાનાંની આડી/ઉભી ગોઠવણ",
+	"proofreadpage-button-toggle-visibility-label": "આ પાનાંનું મથાળું અને અંત બતાવો/છુપાવો",
+	"proofreadpage-button-zoom-in-label": "ઝૂમ ઇન",
+	"proofreadpage-button-zoom-out-label": "ઝૂમ આઉટ",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "મદદ"
 }

@@ -58,11 +58,11 @@
 	"proofreadpage-section-tools": "Видептема кядьёнкст",
 	"proofreadpage-group-zoom": "Ламолгафтомс",
 	"proofreadpage-group-other": "Иля",
-	"proofreadpage-button-toggle-visibility-label": "Няфтемс/кяшемс тя лопать вазец эди алксоц",
-	"proofreadpage-button-zoom-out-label": "Ёмлалгафтомс",
 	"proofreadpage-button-reset-zoom-label": "Эсь ункстамац",
-	"proofreadpage-button-zoom-in-label": "Маласькофтомс",
 	"proofreadpage-button-toggle-layout-label": "Серенц турксонц коряс арафнемась",
+	"proofreadpage-button-toggle-visibility-label": "Няфтемс/кяшемс тя лопать вазец эди алксоц",
+	"proofreadpage-button-zoom-in-label": "Маласькофтомс",
+	"proofreadpage-button-zoom-out-label": "Ёмлалгафтомс",
 	"proofreadpage-preferences-showheaders-label": "Няфтемс лопать вазенц эди алксоц {{ns:page}} лемботмоса видептембачк",
 	"proofreadpage-preferences-horizontal-layout-label": "Нолдак тевс турксонц коряс арафнемать {{ns:page}} лемботмоса видептембачк"
 }

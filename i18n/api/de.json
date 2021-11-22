@@ -6,6 +6,7 @@
 			"Metalhead64"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "Ungültiger Index-Titel „$1“.",
 	"apihelp-query+proofread-description": "Gibt Informationen über den Korrekturlesungsstatus der Seiten zurück.",
 	"apihelp-query+proofread-summary": "Liefert Informationen über den aktuellen Status des Korrekturlesens der angegebenen Seiten.",
 	"apihelp-query+proofread-example-1": "Gibt den Korrekturlesungsstatus der Seiten im Namensraum 250 zurück",
@@ -13,5 +14,12 @@
 	"apihelp-query+proofreadinfo-summary": "Gibt Informationen zur Konfiguration der Erweiterung „ProofreadPage“ zurück.",
 	"apihelp-query+proofreadinfo-param-prop": "Zurückzugebende Eigenschaften:\n;namespaces:Information über die Namensräume „{{ns:Page}}“ und „{{ns:Index}}“.\n;qualitylevels:Liste der Korrekturlesungs-Qualitätsstufen.",
 	"apihelp-query+proofreadinfo-example-1": "Gibt Standardinformationen zurück",
-	"apihelp-query+proofreadinfo-example-3": "Gibt Namensrauminformationen zurück"
+	"apihelp-query+proofreadinfo-example-3": "Gibt Namensrauminformationen zurück",
+	"apihelp-query+proofreadpagesinindex-description": "Auflisten der Seiten in einem bestimmten Index",
+	"apihelp-query+proofreadpagesinindex-summary": "Auflisten der Seiten in einem bestimmten Index",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Begrenzung der Anzahl der Seiten, die zurückgegeben werden",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Die Seiten-ID der Indexseite, für die Seiten abgerufen werden sollen",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Welche Eigenschaften für jede Seite abgerufen werden sollen",
+	"apihelp-query+proofreadpagesinindex-param-title": "Der Titel der Indexseite, für die Seiten abgerufen werden sollen",
+	"apihelp-query+proofreadpagesinindex-example-1": "Gibt Standardinformationen zurück"
 }

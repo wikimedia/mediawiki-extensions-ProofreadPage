@@ -49,9 +49,9 @@
 	"proofreadpage-section-tools": "Prooflaeshölpmiddele",
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Anges",
-	"proofreadpage-button-toggle-visibility-label": "Tuun/verberg de kop- en voottèks van dees pagina.",
-	"proofreadpage-button-zoom-out-label": "Zoom oet",
 	"proofreadpage-button-reset-zoom-label": "Origineel gruuedje",
+	"proofreadpage-button-toggle-layout-label": "Verticale/horinzontale lay-out",
+	"proofreadpage-button-toggle-visibility-label": "Tuun/verberg de kop- en voottèks van dees pagina.",
 	"proofreadpage-button-zoom-in-label": "Zoom in",
-	"proofreadpage-button-toggle-layout-label": "Verticale/horinzontale lay-out"
+	"proofreadpage-button-zoom-out-label": "Zoom oet"
 }

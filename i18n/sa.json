@@ -63,11 +63,11 @@
 	"proofreadpage-section-tools": "पुटपरिशीलनस्य उपकरणानि",
 	"proofreadpage-group-zoom": "वीक्षणम्",
 	"proofreadpage-group-other": "अन्यत्",
-	"proofreadpage-button-toggle-visibility-label": "पुटाग्रस्य पुटतलस्य वा दर्शनं/गोपनम्",
-	"proofreadpage-button-zoom-out-label": "परिवीक्षणम्",
 	"proofreadpage-button-reset-zoom-label": "मूलापरिमाणम्",
-	"proofreadpage-button-zoom-in-label": "उपवीक्षणम्",
 	"proofreadpage-button-toggle-layout-label": "लम्बः/तिर्यक् लुटविन्यासः",
+	"proofreadpage-button-toggle-visibility-label": "पुटाग्रस्य पुटतलस्य वा दर्शनं/गोपनम्",
+	"proofreadpage-button-zoom-in-label": "उपवीक्षणम्",
+	"proofreadpage-button-zoom-out-label": "परिवीक्षणम्",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} नामावकाशे सम्पादनावसरे शीर्षिका अधोटिप्पणी च दर्श्यताम् ।",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} नामावकाशे सम्पादनावसरे समतलप्राकारः उपयुज्यताम् ।"
 }
