@@ -85,6 +85,8 @@
 	"proofreadpage-group-zoom": "תקריב",
 	"proofreadpage-group-other": "אחר",
 	"proofreadpage-button-reset-zoom-label": "גודל מקורי",
+	"proofreadpage-button-rotate-left-label": "לסובב שמאלה",
+	"proofreadpage-button-rotate-right-label": "לסובב ימינה",
 	"proofreadpage-button-toggle-layout-label": "פריסה אופקית או אנכית",
 	"proofreadpage-button-toggle-visibility-label": "להציג או להסתיר את הכותרת העליונה והתחתונה של הדף הזה",
 	"proofreadpage-button-zoom-in-label": "תקריב",

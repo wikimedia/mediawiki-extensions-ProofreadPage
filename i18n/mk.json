@@ -80,6 +80,8 @@
 	"proofreadpage-group-zoom": "Размер",
 	"proofreadpage-group-other": "Други",
 	"proofreadpage-button-reset-zoom-label": "Врати размер",
+	"proofreadpage-button-rotate-left-label": "Сврти налево",
+	"proofreadpage-button-rotate-right-label": "Сврти надесно",
 	"proofreadpage-button-toggle-layout-label": "Вертикален/хоризонтален распоред",
 	"proofreadpage-button-toggle-visibility-label": "Прикажи / скриј го заглавието и подножјето на страницава",
 	"proofreadpage-button-zoom-in-label": "Приближи",

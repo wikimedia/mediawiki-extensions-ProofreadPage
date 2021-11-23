@@ -84,6 +84,8 @@
 	"proofreadpage-group-zoom": "Zoomaus",
 	"proofreadpage-group-other": "Muu",
 	"proofreadpage-button-reset-zoom-label": "Alkuperäinen koko",
+	"proofreadpage-button-rotate-left-label": "Kierrä vasemmalle",
+	"proofreadpage-button-rotate-right-label": "Kierrä oikealle",
 	"proofreadpage-button-toggle-layout-label": "Pystysuora/vaakasuora ulkoasu",
 	"proofreadpage-button-toggle-visibility-label": "Näytä/piilota tämän sivun yläosa ja alaosa",
 	"proofreadpage-button-zoom-in-label": "Lähennä",
