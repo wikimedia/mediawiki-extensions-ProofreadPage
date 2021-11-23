@@ -98,21 +98,61 @@
 			new mw.Api().saveOption( optionId, convertedValue );
 		}
 	}
+
+	/**
+	 * Construct ann OpenSeadragon legacy-image-pyramid tile source from the
+	 * image element on the page
+	 *
+	 * @param {Object} img the image element
+	 * @return {Object} OSD tile source constructor options
+	 */
+	function constructImagePyramidSource( img ) {
+		var width = parseInt( img.getAttribute( 'width' ) );
+		var height = parseInt( img.getAttribute( 'height' ) );
+
+		var levels = [ {
+			url: img.getAttribute( 'src' ),
+			width: width,
+			height: height
+		} ];
+
+		// Occasionally, there is no srcset set on the server
+		var srcSet = img.getAttribute( 'srcset' );
+		if ( srcSet ) {
+			var parts = srcSet.split( ' ' );
+			for ( var i = 0; i < parts.length - 1; i += 2 ) {
+				var srcUrl = parts[ i ];
+				var srcFactor = parseFloat( parts[ i + 1 ].replace( /x,?/, '' ) );
+
+				levels.push( {
+					url: srcUrl,
+					width: srcFactor * width,
+					height: srcFactor * height
+				} );
+			}
+		}
+
+		return {
+			type: 'legacy-image-pyramid',
+			levels: levels
+		};
+	}
+
 	/**
 	 * Ensure that the zoom system is properly initialized
 	 *
 	 * @param {string} id
 	 */
 	function ensureImageZoomInitialization( id ) {
-		var url1 = $img[ 0 ].getAttribute( 'src' );
-		var srcSet = $img[ 0 ].getAttribute( 'srcset' ).split( ' ' );
-		var url2 = srcSet[ 0 ];
-		var url3 = srcSet[ 2 ];
-		var width = $img[ 0 ].getAttribute( 'width' );
-		var height = $img[ 0 ].getAttribute( 'height' );
+		if ( !$img || $img.length === 0 ) {
+			// No valid image on the page
+			return;
+		}
 
 		// make space for the OSD viewer
 		$img.hide();
+
+		var tileSource = constructImagePyramidSource( $img[ 0 ] );
 
 		var osdParams = {
 			id: id,
@@ -122,25 +162,8 @@
 			visibilityRatio: 0.5,
 			minZoomLevel: 0.5,
 			maxZoomLevel: 4.5,
-			tileSources: {
-				type: 'legacy-image-pyramid',
-				levels: [ {
-					url: url1,
-					height: height,
-					width: width
-				},
-				{
-					url: url2,
-					height: 1.5 * height,
-					width: 1.5 * width
-				},
-				{
-					url: url3,
-					height: 2 * height,
-					width: 2 * width
-				}
-				]
-			}
+			zoomPerClick: 1.2,
+			tileSources: tileSource
 		};
 
 		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
