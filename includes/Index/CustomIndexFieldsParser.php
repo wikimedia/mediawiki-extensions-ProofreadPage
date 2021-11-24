@@ -52,7 +52,13 @@ class CustomIndexFieldsParser {
 	}
 
 	private function loadCustomIndexFieldsConfiguration() {
-		$data = wfMessage( 'proofreadpage_index_data_config' )->inContentLanguage();
+		$data = wfMessage( 'proofreadpage_index_data_config.json' )->inContentLanguage();
+
+		// fallback to the legacy name - T263094
+		if ( !( $data->exists() && $data->plain() != '' ) ) {
+			$data = wfMessage( 'proofreadpage_index_data_config' )->inContentLanguage();
+		}
+
 		if ( $data->exists() &&	$data->plain() != '' ) {
 			$config = FormatJson::decode( $data->plain(), true );
 			if ( $config === null ) {
