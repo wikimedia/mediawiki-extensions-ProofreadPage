@@ -222,7 +222,7 @@ class CustomIndexFieldsParser {
 		$fieldName = strtolower( $dataKey );
 		$entries = $this->parseCustomIndexFields( $content );
 		foreach ( $entries as $entry ) {
-			if ( strtolower( $entry->getKey() ) === $fieldName ) {
+			if ( strtolower( $entry->getData() ) === $fieldName ) {
 				return $entry;
 			}
 		}

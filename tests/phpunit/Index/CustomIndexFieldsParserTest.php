@@ -131,12 +131,15 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetCustomIndexFieldForDataKey() {
-		$content = self::buildContent( "{{\n|Year=2012 or 2013\n}}" );
+		$content = self::buildContent( "{{\n|Pages=2012 or 2013\n}}" );
 		$parser = $this->getContext()->getCustomIndexFieldsParser();
 		$entry = new CustomIndexField(
-			'Year', '2012 or 2013', self::$customIndexFieldsConfiguration['Year']
+			'Pages', '2012 or 2013', self::$customIndexFieldsConfiguration['Pages']
 		);
-		$this->assertEquals( $entry, $parser->getCustomIndexFieldForDataKey( $content, 'year' ) );
+		$this->assertEquals( $entry, $parser->getCustomIndexFieldForDataKey( $content, 'pagelist' ) );
+
+		$this->expectException( OutOfBoundsException::class );
+		$parser->getCustomIndexFieldForDataKey( $content, 'pages' );
 	}
 
 	public function testParseCustomIndexFieldThatDoesNotExist() {
