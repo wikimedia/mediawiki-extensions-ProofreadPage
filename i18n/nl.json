@@ -98,5 +98,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Proefleeskwaliteit",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proefleeskwaliteit",
-	"proofreadpage-index-field-category-label": "Categorieën"
+	"proofreadpage-index-field-category-label": "Categorieën",
+	"tag-proofreadpage-quality2": "Problematisch"
 }

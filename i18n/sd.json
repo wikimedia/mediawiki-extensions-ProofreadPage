@@ -11,12 +11,13 @@
 	"proofreadpage_nextpage": "اڳيون صفحو",
 	"proofreadpage_prevpage": "پويون صفحو",
 	"proofreadpage_quality0_category": "بنان متن",
-	"proofreadpage_quality1_category": "غير چُڪَ چڪاسيل",
+	"proofreadpage_quality1_category": "تصديق نہ ڪيل",
 	"proofreadpage_quality2_category": "اڻانگا",
-	"proofreadpage_quality3_category": "چڪون چڪاسيل",
+	"proofreadpage_quality3_category": "تصديق-ڪيل",
 	"proofreadpage_quality4_category": "توثيق شده",
+	"proofreadpage_quality0_summary": "بنان متن",
 	"proofreadpage_quality1_message": "هن صفحي جي چُڪَ چڪاس ڪا نہ ٿي آهي",
-	"proofreadpage-pagelist-dialog-help-invisible-label": "مدد",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "مددگار",
 	"content-model-proofread-page": "ڪتابي صفحو",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "صفحا"
 }

@@ -27,7 +27,8 @@
 			"Zhuyifei1999",
 			"予弦",
 			"沈澄心",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Xiplus"
 		]
 	},
 	"nstab-page": "页面",
@@ -134,8 +135,8 @@
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "从扫描编号$1开始设置页码",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "设置扫描编号$1的页码",
 	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "需要一份常用页码标签列表。请联系您本地的界面管理员设置标签。",
-	"proofreadpage-preferences-showheaders-label": "在{{ns:page}}名字空间编辑时显示页眉和页脚字段",
-	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}名字空间编辑时使用水平线",
+	"proofreadpage-preferences-showheaders-label": "在{{ns:page}}命名空间编辑时显示页眉和页脚字段",
+	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}命名空间编辑时使用水平线",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "使用新的实验性视觉模式来编辑页面列表。",
 	"proofreadpage-indexquality-alt": "$1个已确认{{PLURAL:$1|页面}}，$2个仅已校对{{PLURAL:$2|页面}}和$3个未校对{{PLURAL:$3|页面}}",
 	"content-model-proofread-page": "图书页面",

@@ -34,6 +34,8 @@
 	"proofreadpage_nologin": "未登入",
 	"proofreadpage_nologintext": "您必須[[Special:UserLogin|先登入]]才能修改頁面的校對狀態。",
 	"proofreadpage_notallowedtext": "您沒有獲得修改這個頁面校對狀態的許可。",
+	"proofreadpage_pagesnotallowed": "錯誤：頁面標籤不能用在 Page: 與 Index: 命名空間",
+	"proofreadpage_pagelistnotallowed": "錯誤：頁面清單標籤僅能用在 Index: 命名空間",
 	"proofreadpage_dataconfig_badformatted": "設定資料中的 Bug",
 	"proofreadpage_dataconfig_badformattedtext": "頁面[[Mediawiki:Proofreadpage index data config]]並非標準 JSON 格式。",
 	"proofreadpage_number_expected": "錯誤：不為數值",
@@ -135,6 +137,14 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校對品質",
 	"proofreadpage-index-field-category-label": "分類",
 	"proofreadpage-index-edit-category-help": "分類以不帶 Category: 前綴寫入，並透過豎線字元 \"|\" 區分。",
+	"tag-proofreadpage-quality0": "沒有文字",
+	"tag-proofreadpage-quality1": "未校對",
 	"tag-proofreadpage-quality2": "有問題",
-	"tag-proofreadpage-quality4": "已驗證"
+	"tag-proofreadpage-quality3": "已校對",
+	"tag-proofreadpage-quality4": "已確認",
+	"tag-proofreadpage-quality0-description": "將頁面品質更改成「沒有文字」的編輯",
+	"tag-proofreadpage-quality1-description": "將頁面品質更改成「未校對」的編輯",
+	"tag-proofreadpage-quality2-description": "將頁面品質更改成「有問題」的編輯",
+	"tag-proofreadpage-quality3-description": "將頁面品質更改成「已校對」的編輯",
+	"tag-proofreadpage-quality4-description": "將頁面品質更改成「已確認」的編輯"
 }

@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Khun Kt",
+			"咽頭べさ"
+		]
+	},
+	"nstab-page": "လိတ်မဲ့ငါ",
+	"nstab-index": "ဟော်ꩻထွားရီးတာႏ",
+	"tooltip-ca-nstab-page": "ထွား လိတ်မဲ့ငါလိတ်ဖွူꩻ",
+	"tooltip-ca-nstab-index": "ထွား လိတ်မဲ့ငါဟော်ꩻထွားရီးတာႏ",
+	"indexpages": "ဟော်ꩻထွားရီးတာႏလိတ်မဲ့ငါဖိုင်ႏ စာႏရင်ꩻ",
+	"proofreadpage_image": "ရုက်ပုင်ႏ",
+	"proofreadpage_index": "ဟော်ꩻထွားရီးတာႏ",
+	"proofreadpage_nosuch_index": "အမာႏ: ဟော်ꩻထွားရီးတာႏနုဲင်းနဝ်ꩻ အဝ်ႏတဝ်း",
+	"proofreadpage_nosuch_file": "အမာႏ: ဖုဲင်နုဲင်းနဝ်ꩻအဝ်ႏတဝ်း",
+	"proofreadpage_nologin": "နွို့ခါꩻတဝ်းအကောက်",
+	"proofreadpage_nextpage": "ထဲင်းယင်းလိတ်မဲ့ငါ",
+	"proofreadpage_prevpage": "ကထွူထိုꩻလဲဉ်းဒါႏ လိတ်မဲ့ငါ",
+	"proofreadpage_quality0_category": "လိတ်ယာႏပါတဝ်း",
+	"proofreadpage_quality1_category": "ဟော်ꩻဗာႏတဝ်းသက်သေႏ",
+	"proofreadpage_quality2_category": "ယပ်ꩻခုဲင်ႏဒါႏ",
+	"proofreadpage_quality3_category": "ဟော်ꩻသက်သေႏ",
+	"proofreadpage_quality4_category": "အွောန်ႏထွူလဲဉ်းအတီႏ",
+	"proofreadpage_quality0_summary": "လိတ်ယာႏပါတဝ်း",
+	"proofreadpage_quality1_summary": "ဟော်ꩻဗာႏတဝ်းသက်သေႏ",
+	"proofreadpage_quality2_summary": "ယပ်ꩻခုဲင်ႏဒါႏ",
+	"proofreadpage_quality3_summary": "ဟော်ꩻသက်သေႏ",
+	"proofreadpage_quality4_summary": "အွောန်ႏထွူလဲဉ်းအတီႏ",
+	"proofreadpage_index_size": "လိတ်မဲ့ငါ ဆေ့ꩻအာဖိုင်ႏ",
+	"proofreadpage_specialpage_label_key": "ထိုမ်ႏထွား:",
+	"proofreadpage_index_listofpages": "လိတ်မဲ့ငါဖိုင်ႏစာႏရင်ꩻ",
+	"proofreadpage_source": "ရွီးခိုႏ",
+	"proofreadpage_styles": "သတုဲင်ပုင်ႏဖိုင်ႏ",
+	"proofreadpage-group-other": "အလင်",
+	"proofreadpage-button-reset-zoom-label": "မူလပေႏတန်",
+	"proofreadpage-pagelist-dialog-cancel": "မာꩻတဝ်းဒွုမ်",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "အစွဲးအကမ်း"
+}
