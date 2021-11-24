@@ -62,6 +62,7 @@ class PagelistTagParser {
 				$image->pageCount(),
 				$this->context->getPageNamespaceId()
 			);
+			$pagination->prefetchPageLinks();
 		} else {
 			$pagination = new SimpleFilePagination( $title, $pageList, $this->context->getPageNamespaceId() );
 		}
