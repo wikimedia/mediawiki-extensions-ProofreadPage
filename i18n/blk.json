@@ -34,6 +34,8 @@
 	"proofreadpage_styles": "သတုဲင်ပုင်ႏဖိုင်ႏ",
 	"proofreadpage-group-other": "အလင်",
 	"proofreadpage-button-reset-zoom-label": "မူလပေႏတန်",
+	"proofreadpage-button-rotate-left-label": "တပန်ႏလွေꩻဖဲ့ꩻစေႏ",
+	"proofreadpage-button-rotate-right-label": "တပန်ႏလွေꩻဖဲ့ꩻထွေ",
 	"proofreadpage-pagelist-dialog-cancel": "မာꩻတဝ်းဒွုမ်",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "အစွဲးအကမ်း"
 }
