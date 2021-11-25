@@ -78,6 +78,11 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 
 		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 
+		if ( isset( $prop[ 'ids' ] ) ) {
+			// We prefetch the page ids
+			$pagination->prefetchPageLinks();
+		}
+
 		$result->addValue( [ 'query' ], $this->getModuleName(), [] );
 
 		foreach ( $pagination as $key => $pageTitle ) {

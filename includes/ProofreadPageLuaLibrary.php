@@ -238,8 +238,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		$this->addTemplateDependencyOnPage( $indexTitle );
 
 		// may be expensive, but cached
-		$pagination = $paginationFactory->getPaginationForIndexTitle( $indexTitle );
-		return $pagination;
+		return $paginationFactory->getPaginationForIndexTitle( $indexTitle );
 	}
 
 	/**
