@@ -7,6 +7,7 @@ use EditPage;
 use Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\UserOptionsLookup;
 use OOUI;
 use ProofreadPage\Context;
 use User;
@@ -32,6 +33,11 @@ class EditPagePage extends EditPage {
 	private $permissionManager;
 
 	/**
+	 * @var UserOptionsLookup
+	 */
+	private $userOptionsLookup;
+
+	/**
 	 * @param Article $article
 	 * @param Context $context
 	 */
@@ -41,6 +47,7 @@ class EditPagePage extends EditPage {
 		$this->pageContentBuilder = new PageContentBuilder( $this->context, $context );
 		$this->pageDisplayHandler = new PageDisplayHandler( $context );
 		$this->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$this->userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 	}
 
 	/**
@@ -105,7 +112,7 @@ class EditPagePage extends EditPage {
 		$out->addHTML( $this->pageDisplayHandler->buildPageContainerEnd( $this->getTitle() ) );
 
 		$out->addModules( 'ext.proofreadpage.page.edit' );
-		if ( $this->context->getUser()->getOption( 'usebetatoolbar' ) ) {
+		if ( $this->userOptionsLookup->getOption( $this->context->getUser(), 'usebetatoolbar' ) ) {
 			$out->addModules( 'ext.wikiEditor' );
 		}
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
