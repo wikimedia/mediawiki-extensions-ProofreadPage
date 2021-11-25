@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Namoroka",
-			"Revi"
+			"Revi",
+			"Ykhwong"
 		]
 	},
 	"apihelp-query+proofread-description": "주어진 페이지의 현재 교정 상태에 대한 정보를 반환합니다.",
@@ -11,5 +12,7 @@
 	"apihelp-query+proofreadinfo-description": "ProofreadPage 확장 기능의 설정에 관한 정보를 반환합니다.",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage 확장 기능의 설정에 관한 정보를 반환합니다.",
 	"apihelp-query+proofreadinfo-example-1": "기본 정보를 반환합니다",
-	"apihelp-query+proofreadinfo-example-3": "이름공간 정보를 반환합니다"
+	"apihelp-query+proofreadinfo-example-3": "이름공간 정보를 반환합니다",
+	"apihelp-query+proofreadpagesinindex-param-prop": "각 문서에 대해 가져올 속성",
+	"apihelp-query+proofreadpagesinindex-example-1": "기본 정보 반환"
 }
