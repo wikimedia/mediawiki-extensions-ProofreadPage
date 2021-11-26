@@ -100,6 +100,8 @@
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Autre",
 	"proofreadpage-button-reset-zoom-label": "Taille par défaut",
+	"proofreadpage-button-rotate-left-label": "Tourner vers la gauche",
+	"proofreadpage-button-rotate-right-label": "Tourner vers la droite",
 	"proofreadpage-button-toggle-layout-label": "Disposition verticale/horizontale",
 	"proofreadpage-button-toggle-visibility-label": "Afficher/cacher l’en-tête et le pied de page de cette page",
 	"proofreadpage-button-zoom-in-label": "Zoomer",
