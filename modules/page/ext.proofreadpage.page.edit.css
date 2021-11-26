@@ -56,3 +56,7 @@
 	color: #808080;
 	font-size: 80%;
 }
+
+.prp-page-content .CodeMirror {
+	flex-grow: 1;
+}
