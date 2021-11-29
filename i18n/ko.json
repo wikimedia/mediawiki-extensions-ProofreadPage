@@ -23,6 +23,7 @@
 	"tooltip-ca-nstab-index": "책 색인 보기",
 	"indexpages": "색인 문서의 목록",
 	"pageswithoutscans": "스캔본이 없는 페이지",
+	"prefs-proofread-pagenamespace": "교정 인터페이스 옵션",
 	"proofreadpage_desc": "텍스트를 원본 스캔본과 쉽게 비교할 수 있습니다",
 	"proofreadpage_image": "그림",
 	"proofreadpage_index": "색인",
