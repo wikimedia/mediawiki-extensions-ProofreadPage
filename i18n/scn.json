@@ -22,6 +22,7 @@
 	"proofreadpage_quality2_category": "Di rivìdiri",
 	"proofreadpage_quality3_category": "Curriggiuta",
 	"proofreadpage_quality4_category": "Cunvalidata",
+	"proofreadpage_quality0_summary": "Senza testu",
 	"proofreadpage_quality1_message": "Sta pàggina nun fu curriggiuta",
 	"proofreadpage_index_size": "Nùmmiru di pàggini",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pàggina|pàggini}}",
