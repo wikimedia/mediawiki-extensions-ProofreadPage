@@ -32,6 +32,7 @@
 	"tooltip-ca-nstab-index": "Afficher l'index du livre",
 	"indexpages": "Liste des livres",
 	"pageswithoutscans": "Pages sans fac-similés",
+	"prefs-proofread-pagenamespace": "Options de l'interface de correction",
 	"proofreadpage_desc": "Permet une comparaison facile entre le texte et sa numérisation originale",
 	"proofreadpage_image": "Image",
 	"proofreadpage_index": "Livre",
