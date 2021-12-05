@@ -4,6 +4,7 @@ namespace ProofreadPage\Index;
 
 use Article;
 use EditPage;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
@@ -59,7 +60,7 @@ class EditIndexPage extends EditPage {
 		$out = $this->context->getOutput();
 		$out->enableOOUI();
 		$inputOptions = [ 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() ];
-		if ( wfReadOnly() ) {
+		if ( MediaWikiServices::getInstance()->getReadOnlyMode()->isReadOnly() ) {
 			$inputOptions['readOnly'] = '';
 		}
 

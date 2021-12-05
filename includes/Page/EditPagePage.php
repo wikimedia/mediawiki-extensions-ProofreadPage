@@ -10,6 +10,7 @@ use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserOptionsLookup;
 use OOUI;
 use ProofreadPage\Context;
+use ReadOnlyMode;
 use User;
 
 /**
@@ -38,6 +39,11 @@ class EditPagePage extends EditPage {
 	private $userOptionsLookup;
 
 	/**
+	 * @var ReadOnlyMode
+	 */
+	private $readOnlyMode;
+
+	/**
 	 * @param Article $article
 	 * @param Context $context
 	 */
@@ -48,6 +54,7 @@ class EditPagePage extends EditPage {
 		$this->pageDisplayHandler = new PageDisplayHandler( $context );
 		$this->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 		$this->userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		$this->readOnlyMode = MediaWikiServices::getInstance()->getReadOnlyMode();
 	}
 
 	/**
@@ -78,7 +85,7 @@ class EditPagePage extends EditPage {
 		}
 
 		$inputAttributes = [];
-		if ( wfReadOnly() ) {
+		if ( $this->readOnlyMode->isReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
 
