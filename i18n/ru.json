@@ -90,6 +90,8 @@
 	"proofreadpage-group-zoom": "Увеличение",
 	"proofreadpage-group-other": "Иное",
 	"proofreadpage-button-reset-zoom-label": "Сбросить увеличение",
+	"proofreadpage-button-rotate-left-label": "Повернуть влево",
+	"proofreadpage-button-rotate-right-label": "Повернуть вправо",
 	"proofreadpage-button-toggle-layout-label": "Вертикальная/горизонтальная разметка",
 	"proofreadpage-button-toggle-visibility-label": "Показать/скрыть верхнюю и нижнюю часть этой страницы",
 	"proofreadpage-button-zoom-in-label": "Приблизить",

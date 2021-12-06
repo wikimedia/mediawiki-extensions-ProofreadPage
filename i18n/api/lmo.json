@@ -4,6 +4,7 @@
 			"Salvemm el lombard"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "Titol de l'indes minga bon \"$1\".",
 	"apihelp-query+proofread-description": "El te da i informazzion sora el stat di corezzion finai di pagine fornide.",
 	"apihelp-query+proofread-summary": "El te da i informazzion sora el stat di corezzion finai di pagine fornide.",
 	"apihelp-query+proofread-example-1": "El te dà el stat di correzion di pagine in del spazzi di nom 250",
@@ -11,5 +12,12 @@
 	"apihelp-query+proofreadinfo-summary": "El te dà di informazzion sora i caratteristiche fonzionai de l'estension ProofreadPage",
 	"apihelp-query+proofreadinfo-param-prop": "Quai proprietà de corezzion otegnì:\n;namespaces:Informazzion sora i spazi de scrivegh denter \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista di livei de qualità de la corezzion.",
 	"apihelp-query+proofreadinfo-example-1": "Dà indrée l'informazzion predefinida",
-	"apihelp-query+proofreadinfo-example-3": "Dà indrée di informazzion sora el spazzi di nom"
+	"apihelp-query+proofreadinfo-example-3": "Dà indrée di informazzion sora el spazzi di nom",
+	"apihelp-query+proofreadpagesinindex-description": "Fà la lista di pagine in un cert indes",
+	"apihelp-query+proofreadpagesinindex-summary": "Fà la lista di pagine in un certo indes",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Limita quante pagine a sarànn dade indree",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "L' ID de la pagina indes per la qual otegnì i pagine",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Quai proprietà otegni per ogni pagina",
+	"apihelp-query+proofreadpagesinindex-param-title": "El titol de la pagina indes per la qual otegnì i pagine",
+	"apihelp-query+proofreadpagesinindex-example-1": "Dà indree l'informazzion predefinida"
 }
