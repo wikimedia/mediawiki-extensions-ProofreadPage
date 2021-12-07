@@ -4,10 +4,16 @@
 			"Aushulz",
 			"Gmelfi",
 			"Pippinu",
-			"Sarvaturi"
+			"Sarvaturi",
+			"Ajeje Brazorf"
 		]
 	},
+	"nstab-page": "Pàggina",
+	"nstab-index": "Ìnnici",
+	"tooltip-ca-nstab-page": "Talìa la pàggina dû libbru",
+	"tooltip-ca-nstab-index": "Talìa l'ìnnici dû libbru",
 	"proofreadpage_image": "Mmàggini",
+	"proofreadpage_index": "Ìnnici",
 	"proofreadpage_nextpage": "Pàggina appressu",
 	"proofreadpage_prevpage": "Pàggina d'antura",
 	"proofreadpage_header": "Ntistazzioni (nun inclusa)",
@@ -16,5 +22,18 @@
 	"proofreadpage_quality2_category": "Di rivìdiri",
 	"proofreadpage_quality3_category": "Curriggiuta",
 	"proofreadpage_quality4_category": "Cunvalidata",
-	"proofreadpage_quality1_message": "Sta pàggina nun fu curriggiuta"
+	"proofreadpage_quality0_summary": "Senza testu",
+	"proofreadpage_quality1_message": "Sta pàggina nun fu curriggiuta",
+	"proofreadpage_index_size": "Nùmmiru di pàggini",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|pàggina|pàggini}}",
+	"proofreadpage-group-other": "Àutru",
+	"proofreadpage-pagelist-dialog-cancel": "Annulla",
+	"proofreadpage-pagelist-dialog-insertchanges": "Nzirisci canciamenti",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Aiutu",
+	"content-model-proofread-page": "Pàggina dû libbru",
+	"content-model-proofread-index": "Ìnnici dû libbru",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pàggini",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
+	"proofreadpage-index-field-category-label": "Catigurìi"
 }

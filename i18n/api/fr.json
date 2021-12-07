@@ -3,7 +3,8 @@
 		"authors": [
 			"Gomoko",
 			"Thibaut120094",
-			"Wladek92"
+			"Wladek92",
+			"Jobrz0405"
 		]
 	},
 	"apihelp-query+proofread-description": "Renvoie des informations sur l’état de correction actuel des pages fournies.",
@@ -12,6 +13,6 @@
 	"apihelp-query+proofreadinfo-description": "Renvoyer des informations sur la configuration de l’extension ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Renvoyer des informations sur la configuration de l’extension ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quelles preuves de correction obtenir :\n;namespaces:Informations sur les espaces de nom « {{ns:Page}} » et « {{ns:Index}} ».\n;qualitylevels:Liste des niveaux de qualité des preuves de correction.",
-	"apihelp-query+proofreadinfo-example-1": "Information rendue par défaut",
+	"apihelp-query+proofreadinfo-example-1": "Remettre les informations par défaut",
 	"apihelp-query+proofreadinfo-example-3": "Retourner les informations de l'espace des noms"
 }

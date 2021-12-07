@@ -11,7 +11,8 @@
 			"Tamaki Wakita",
 			"Tmv",
 			"夢蝶葬花",
-			"青子守歌"
+			"青子守歌",
+			"MathXplore"
 		]
 	},
 	"nstab-page": "ページ",
@@ -100,7 +101,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<pagelist />タグが検出されませんでした。",
 	"proofreadpage-pagelist-parsing-error-php": "バックエンドでpagelistタグの解析中に次のエラーが発生しました、$1",
 	"proofreadpage-pagelist-parsing-error-unknown": "予期しないエラーが検出されました。このエラーをコンソールのログと共にphabricator.wikimedia.orgに報告してください。",
-	"proofreadpage-pagelist-parsing-error-network-issues": "ネットーワークに問題が発生したためページリストの取得に失敗しました。もう一度やり直してください",
+	"proofreadpage-pagelist-parsing-error-network-issues": "ネットワークに問題が発生したためページリストの取得に失敗しました。もう一度やり直してください",
 	"proofreadpage-pagelist-dialog-title": "$1のページリストの編集",
 	"proofreadpage-pagelist-dialog-insertchanges": "変更を挿入",
 	"proofreadpage-pagelist-imageurlnotfound": "このスキャン画像のサムネイルのソースが見つかりませんでした。",

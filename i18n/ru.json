@@ -14,7 +14,8 @@
 			"Stjn",
 			"Vlad5250",
 			"Александр Сигачёв",
-			"Гизатуллина"
+			"Гизатуллина",
+			"Thothsum"
 		]
 	},
 	"nstab-page": "Страница",
@@ -78,6 +79,7 @@
 	"proofreadpage_specialpage_searcherrortext": "Поисковая система не работает. Извините за причиненные неудобства.",
 	"proofreadpage_source": "Источник",
 	"proofreadpage_source_message": "Для создания электронной версии текста использовались отсканированные материалы",
+	"proofreadpage_styles": "Стили",
 	"action-pagequality": "изменение маркера качества страницы",
 	"right-pagequality": "изменять флаг качества страницы",
 	"action-pagequality-admin": "неограниченные правки маркера качества страницы",
@@ -91,6 +93,10 @@
 	"proofreadpage-button-zoom-in-label": "Приблизить",
 	"proofreadpage-button-toggle-layout-label": "Вертикальная/горизонтальная разметка",
 	"proofreadpage-pageinfo-status": "Статус вычитки",
+	"proofreadpage-pagelist-dialog-discard-changes": "Отменить изменения",
+	"proofreadpage-pagelist-dialog-cancel": "Отмена",
+	"proofreadpage-pagelist-dialog-insertchanges": "Вставить изменения",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Справка",
 	"proofreadpage-preferences-showheaders-label": "Показывать поля верхнего и нижнего колонтитулов при редактировании в пространстве имён {{ns:page}}.",
 	"proofreadpage-preferences-horizontal-layout-label": "Использовать горизонтальную раскладку при редактировании в пространстве имён {{ns:page}}.",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|проверенная страница|проверенные страницы|проверенных страниц}}, $2 {{PLURAL:$2|вычитанная страница|вычитанные страницы|вычитанных страниц}} и $3 {{PLURAL:$3|невычитанная страница|невычитанные страницы|невычитанных страниц}}.",

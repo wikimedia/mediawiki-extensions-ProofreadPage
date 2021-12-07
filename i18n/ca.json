@@ -9,7 +9,8 @@
 			"Paucabot",
 			"Qllach",
 			"SMP",
-			"Solde"
+			"Solde",
+			"Galactic Thrasher"
 		]
 	},
 	"nstab-page": "Pàgina",
@@ -73,6 +74,8 @@
 	"proofreadpage_specialpage_searcherrortext": "El motor de cerca no funciona. Disculpeu les molèsties.",
 	"proofreadpage_source": "Font",
 	"proofreadpage_source_message": "Edició digitalitzada d'on s'ha extret aquest text",
+	"proofreadpage_styles": "Estils",
+	"proofreadpage_styles_message": "Estils CSS aplicats al text",
 	"action-pagequality": "modificar l'indicador de qualitat de la pàgina",
 	"right-pagequality": "Modificar l'indicador de qualitat de la pàgina",
 	"action-pagequality-admin": "modificacions no limitades a l'indicador de qualitat de la pàgina",
@@ -96,6 +99,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "No s'ha detectat cap etiqueta <pagelist/>.",
 	"proofreadpage-pagelist-parsing-error-php": "Mentre s'analitzava l'etiqueta pagelist en el servidor, s'ha trobat el següent error: $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "S'ha detectat un error inesperat. Si us plau, reporteu aquest error a phabricator.wikimedia.org mitjançant els registres de la consola.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "No s'ha pogut recuperar la llista de pàgines a causa de problemes de xarxa. Torneu-ho a provar.",
 	"proofreadpage-pagelist-dialog-title": "Editant llista de pàgines per $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Introduïu els canvis",
 	"proofreadpage-pagelist-imageurlnotfound": "No s'ha trobat la font de la miniatura d'aquest escaneig.",

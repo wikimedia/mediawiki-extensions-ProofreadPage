@@ -10,6 +10,9 @@
 	"proofreadpage_index": "Indeksos",
 	"proofreadpage_specialpage_label_key": "Rode:",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|sera|seri}}",
+	"proofreadpage_source": "Zdrojos",
+	"proofreadpage-group-other": "Aver",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Ažutipen",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Seri",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Na",
 	"proofreadpage-index-field-category-label": "Kategoriji"

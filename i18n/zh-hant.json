@@ -14,7 +14,8 @@
 			"TianyinLee",
 			"Wmr",
 			"Wrightbus",
-			"Wwycheuk"
+			"Wwycheuk",
+			"Emojiwiki"
 		]
 	},
 	"nstab-page": "頁面",
@@ -111,7 +112,7 @@
 	"proofreadpage-pagelist-scan-number": "掃描號碼：$1",
 	"proofreadpage-pagelist-display-number": "顯示號碼：$1",
 	"proofreadpage-pagelist-assignedpagenumber": "此頁面已被分配到頁碼：$1",
-	"proofreadpage-pagelist-dialog-help-invisible-label": "幫助",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "說明",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "號碼類型不允許進行編號更改。任何在此欄位的值，更新時將被忽略。",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "頁碼類型：",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "頁面號碼起始自：",

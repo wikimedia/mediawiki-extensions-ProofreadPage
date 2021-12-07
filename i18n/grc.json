@@ -4,7 +4,8 @@
 			"Crazymadlover",
 			"Gts-tg",
 			"Omnipaedista",
-			"PastelKos"
+			"PastelKos",
+			"Michael5iLVEr"
 		]
 	},
 	"nstab-page": "Δέλτος",
@@ -45,10 +46,10 @@
 	"proofreadpage_quality4_message": "Ἠ δέλτος ταύτη ἐλέγχθηκε",
 	"proofreadpage_index_status": "Κατάστασις δείκτη",
 	"proofreadpage_index_size": "Ἀριθμός δέλτων",
-	"proofreadpage_specialpage_label_orderby": "Ταξινόμισης διά:",
+	"proofreadpage_specialpage_label_orderby": "Διατιθέναι κατά:",
 	"proofreadpage_specialpage_label_key": "Ζητεῖν:",
-	"proofreadpage_specialpage_label_sortascending": "Ταξινόμισης αὔξουσα:",
-	"proofreadpage_alphabeticalorder": "Ταξινόμισης ἀλφαβητική",
+	"proofreadpage_specialpage_label_sortascending": "Διατιθέναι κατὰ αὐξάνοντα τρόπον:",
+	"proofreadpage_alphabeticalorder": "Διατιθέναι κατὰ τὴν τῆς ἀλβαβήτου ὁδόν",
 	"proofreadpage_index_listofpages": "Καταλογὴ δέλτων",
 	"proofreadpage_image_message": "Σύνδεμος προς δέλτο εὐρετηρίασης",
 	"proofreadpage_page_status": "Κατάστασις δέλτου",

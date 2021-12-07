@@ -15,7 +15,8 @@
 			"Wayiran",
 			"Yoosef Pooranvary",
 			"ZxxZxxZ",
-			"جواد"
+			"جواد",
+			"Jeeputer"
 		]
 	},
 	"nstab-page": "برگ",
@@ -77,6 +78,7 @@
 	"proofreadpage_specialpage_searcherrortext": "موتور جستجو کار نمی‌کند. پوزش می‌خواهیم.",
 	"proofreadpage_source": "منبع",
 	"proofreadpage_source_message": "برای ایجاد این متن از ویرایش پویش‌شده (اسکن‌شده) استفاده شده‌است.",
+	"proofreadpage_styles": "سبک نمایش",
 	"right-pagequality": "تغییر پرچم کیفیت برگ",
 	"right-pagequality-admin": "ویرایش بدون محدودیت بر وضعیت برگ",
 	"proofreadpage-section-tools": "ابزارهای نمونه‌خوانی",
@@ -95,7 +97,7 @@
 	"content-model-proofread-index": "فهرست کتاب",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "انتخاب برگ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "برگ‌ها",
-	"proofreadpage-visualeditor-node-pages-inspector-description": "تراگنجایش $1",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "تراگنجانش $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "بله",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "خیر",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "کیفیت نمونه‌خوانی",
