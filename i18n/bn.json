@@ -20,7 +20,7 @@
 	"tooltip-ca-nstab-index": "বইয়ের নির্ঘণ্ট দেখুন",
 	"indexpages": "নির্ঘণ্ট পাতার তালিকা",
 	"pageswithoutscans": "স্ক্যান ছাড়া পাতাসমূহ",
-	"proofreadpage_desc": "মূল স্ক্যানের সাথে লেখার সহজ তুলনা অনুমোদন করো",
+	"proofreadpage_desc": "মূল স্ক্যানের সাথে সহজে পাঠ্য মিলিয়ে দেখতে অনুমতি দেয়",
 	"proofreadpage_image": "চিত্র",
 	"proofreadpage_index": "নির্ঘণ্ট",
 	"proofreadpage_index_expected": "ত্রুটি: নির্ঘণ্ট সূচক প্রত্যাশা করা হচ্ছে",
@@ -31,7 +31,7 @@
 	"proofreadpage_nologintext": "পাতার মুদ্রণ সংশোধনের অবস্থা সম্পাদনা করতে আপনাকে অবশ্যই [[Special:UserLogin|প্রবেশ]] করতে হবে।",
 	"proofreadpage_notallowedtext": "আপনার এই পাতার মুদ্রণ সংশোধনের অবস্থা পরিবর্তনের অনুমতি নাই।",
 	"proofreadpage_dataconfig_badformatted": "তথ্য কনফিগারেশনে বাগ  আছে",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] পাতাটিকে ঠিকভাবে JSON ফরম্যাট  করা হয় নি।",
+	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] পাতাটিকে ঠিকভাবে JSON ফরম্যাট করা হয় নি।",
 	"proofreadpage_number_expected": "ত্রুটি: সংখ্যা প্রদান আশা করা হচ্ছে",
 	"proofreadpage_interval_too_large": "ত্রুটি: খুব বড় ব্যবধান",
 	"proofreadpage_invalid_interval": "ত্রুটি: অবৈধ ব্যবধান",
@@ -68,7 +68,7 @@
 	"proofreadpage_image_message": "নির্ঘণ্ট পাতায় লিঙ্ক করুন",
 	"proofreadpage_page_status": "পাতার অবস্থা",
 	"proofreadpage_js_attributes": "লেখক শিরোনাম বছর প্রকাশক",
-	"proofreadpage_index_attributes": "ধরন\nশিরোনাম\nখণ্ড\nলেখক\nঅনুবাদক\nসম্পাদক\nঅলঙ্করণ\nস্কুল\nপ্রকাশক\nঠিকানা|স্থান\nবছর|প্রকাশের বছর\nKey|Sort key\nউৎস|স্ক্যান\nচিত্র|প্রচ্ছদ\nঅগ্রগতি\nপাতাসমূহ||15\nখণ্ডসমূহ||5\nমন্তব্য|সূচী|15\nপ্রস্থ|সম্পাদনা মোডে স্ক্যান রেজুলুশন\nসিএসএস(Css)\nহেডার\nপাদটীকা",
+	"proofreadpage_index_attributes": "লেখক\nশিরোনাম\nবছর|প্রকাশের বছর\nপ্রকাশক\nউৎস\nচিত্র|প্রচ্ছদ চিত্র\nপাতাসমূহ||20\nটীকা||10",
 	"proofreadpage_pages": "$2টি {{PLURAL:$1|পাতা}}",
 	"proofreadpage_specialpage_legend": "নির্ঘণ্ট পাতাসমূহ অনুসন্ধান",
 	"proofreadpage_specialpage_searcherror": "অনুসন্ধান ইঞ্জিনে ত্রুটি",
@@ -128,5 +128,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "মুদ্রণ সংশোধনের গুণমান",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "মুদ্রণ সংশোধনের গুণমান",
 	"proofreadpage-index-field-category-label": "বিষয়শ্রেণীসমূহ",
-	"proofreadpage-index-edit-category-help": "বিষয়শ্রেণীগুলি বিষয়শ্রেণী: উপসর্গ ছাড়াই লেখা হয় এবং একটি পাইপ \"|\" অক্ষর দ্বারা পৃথক করা হয়।"
+	"proofreadpage-index-edit-category-help": "বিষয়শ্রেণীগুলি বিষয়শ্রেণী: উপসর্গ ছাড়াই লেখা হয় এবং একটি পাইপ \"|\" অক্ষর দ্বারা পৃথক করা হয়।",
+	"tag-proofreadpage-quality0": "লেখাবিহীন",
+	"tag-proofreadpage-quality1": "মুদ্রণ সংশোধন করা হয়নি",
+	"tag-proofreadpage-quality2": "সমস্যাসঙ্কুল",
+	"tag-proofreadpage-quality3": "মুদ্রণ সংশোধন করা হয়েছে",
+	"tag-proofreadpage-quality4": "বৈধকরণ"
 }
