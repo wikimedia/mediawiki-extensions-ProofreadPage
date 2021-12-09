@@ -27,3 +27,28 @@
 #prp-page-qualityheader { /* stylelint-disable-line selector-max-id */
 	width: 100%;
 }
+
+/* Vertical side-by-side mode. */
+
+.prp-page-image-openseadragon-vertical {
+	height: 100%;
+}
+
+.prp-page-image-openseadragon-horizontal.prp-layout-is-vertical {
+	display: none;
+}
+
+/* Horizontal above-and-below mode. */
+
+.prp-page-image-openseadragon-horizontal {
+	height: 33vh;
+}
+
+.prp-layout-is-horizontal .prp-page-image {
+	display: none;
+}
+
+.prp-layout-is-horizontal .prp-page-content {
+	border-right: 0;
+	padding-right: 0;
+}
