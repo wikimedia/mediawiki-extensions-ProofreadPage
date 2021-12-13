@@ -4,10 +4,21 @@
 			"Jun Misugi"
 		]
 	},
+	"nstab-page": "Pàgina",
+	"tooltip-ca-nstab-page": "Vedi la pàgina di ru libru",
+	"proofreadpage_image": "Immàgina",
+	"proofreadpage_nologin": "Intradda no effettuadda",
+	"proofreadpage_nextpage": "Pàgina sighenti",
+	"proofreadpage_prevpage": "Pàgina prizzidenti",
 	"proofreadpage_quality0_category": "Senza di testhu",
 	"proofreadpage_quality1_category": "Migga verifiggaddu",
 	"proofreadpage_quality2_category": "Difficulthai di currizioni",
 	"proofreadpage_quality3_category": "Verifiggaddu",
 	"proofreadpage_quality4_category": "Accabaddu",
-	"proofreadpage_quality1_message": "Kistha pàgina no è ancora verifiggadda."
+	"proofreadpage_quality1_message": "Kistha pàgina no è ancora verifiggadda.",
+	"proofreadpage_index_listofpages": "Erencu di pàgini",
+	"proofreadpage_source": "Orìgini",
+	"content-model-proofread-page": "Pàgina di libru",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Emmu",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }

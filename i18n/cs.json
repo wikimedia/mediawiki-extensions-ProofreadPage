@@ -4,7 +4,8 @@
 			"Dvorapa",
 			"Jkjk",
 			"Matěj Grabovský",
-			"Mormegil"
+			"Mormegil",
+			"Skim"
 		]
 	},
 	"nstab-page": "Stránka",
@@ -39,6 +40,11 @@
 	"proofreadpage_quality2_category": "Problematické",
 	"proofreadpage_quality3_category": "Zkontrolováno",
 	"proofreadpage_quality4_category": "Ověřeno",
+	"proofreadpage_quality0_summary": "Bez textu",
+	"proofreadpage_quality1_summary": "Nebylo zkontrolováno",
+	"proofreadpage_quality2_summary": "Problematické",
+	"proofreadpage_quality3_summary": "Zkontrolováno",
+	"proofreadpage_quality4_summary": "Ověřeno",
 	"proofreadpage_quality0_message": "Tuto stránku není potřeba kontrolovat",
 	"proofreadpage_quality1_message": "Tato stránka nebyla zkontrolována",
 	"proofreadpage_quality2_message": "Při kontrole této stránky se objevil problém",
@@ -46,6 +52,7 @@
 	"proofreadpage_quality4_message": "Tato stránka byla ověřena",
 	"proofreadpage_index_status": "Stav indexu",
 	"proofreadpage_index_size": "Počet stránek",
+	"proofreadpage_pages_to_validate": "Počet stránek k ověření",
 	"proofreadpage_specialpage_label_orderby": "Řadit podle:",
 	"proofreadpage_specialpage_label_key": "Hledat:",
 	"proofreadpage_specialpage_label_sortascending": "Seřadit vzestupně",
@@ -75,5 +82,9 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Při editaci ve jmenném prostoru {{ns:page}} používat vodorovné rozložení",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|ověřená stránka|ověřené stránky|ověřených stránek}}, $2 jen {{PLURAL:$2|zkontrolovaná stránka|zkontrolované stránky|zkontrolovaných stránek}} a $3 {{PLURAL:$3|nezkontrolovaná stránka|nezkontrolované stránky|nezkontrolovaných stránek}}",
 	"content-model-proofread-page": "Stránka knihy",
-	"content-model-proofread-index": "Index knihy"
+	"content-model-proofread-index": "Index knihy",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Stránky",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ano",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
+	"proofreadpage-index-field-category-label": "Kategorie"
 }

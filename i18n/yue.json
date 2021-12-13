@@ -3,7 +3,9 @@
 		"authors": [
 			"Asdfugil",
 			"Hello903hello",
-			"Yueman"
+			"Yueman",
+			"Moon0319",
+			"Z423x5c6"
 		]
 	},
 	"nstab-page": "版",
@@ -43,7 +45,7 @@
 	"proofreadpage_quality2_summary": "有問題",
 	"proofreadpage_quality3_summary": "校對",
 	"proofreadpage_quality4_summary": "確認咗",
-	"proofreadpage_quality0_message": "伊版唔駛校對",
+	"proofreadpage_quality0_message": "呢版唔駛校對",
 	"proofreadpage_quality1_message": "呢頁未有人校對過",
 	"proofreadpage_quality2_message": "校對伊版嘅時候有問題",
 	"proofreadpage_quality3_message": "呢版未有人校對過",
@@ -68,7 +70,7 @@
 	"proofreadpage_source_message": "用嚟整爾個文本嘅已經掃描嘅版本",
 	"proofreadpage-section-tools": "校對工具",
 	"proofreadpage-group-zoom": "放大",
-	"proofreadpage-group-other": "其它",
+	"proofreadpage-group-other": "其他",
 	"proofreadpage-button-toggle-visibility-label": "顯示/隱藏爾版嘅版首和版尾",
 	"proofreadpage-button-zoom-out-label": "縮細",
 	"proofreadpage-button-reset-zoom-label": "原本大細",
@@ -83,5 +85,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "係",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "唔係",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校對質素",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校對質素"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校對質素",
+	"proofreadpage-index-field-category-label": "類"
 }

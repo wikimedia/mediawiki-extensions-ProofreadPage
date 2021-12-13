@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iyuqciyang"
+			"Iyuqciyang",
+			"Akamycoco"
 		]
 	},
 	"nstab-page": "patas ruwahan",
@@ -29,7 +30,7 @@
 	"proofreadpage_prevpage": "ruwahan tgbrah",
 	"proofreadpage_header": "plealay bi (aji ga kska)",
 	"proofreadpage_body": "hnigan ruwahan (ga kska)",
-	"proofreadpage_footer": "tqring bi ((aji ga kska)",
+	"proofreadpage_footer": "tqring bi (aji ga kska):",
 	"proofreadpage_toggleheaders": "brahi smmalu mtduwa bqtaan ka patas aji ga kska.",
 	"proofreadpage_quality0_category": "Ungat patas",
 	"proofreadpage_quality1_category": "Ini dai qmita smmalu",
@@ -40,6 +41,7 @@
 	"proofreadpage_quality1_summary": "ini dai qmita smmalu",
 	"proofreadpage_quality2_summary": "niqan ini pntduwa",
 	"proofreadpage_quality3_summary": "wada daan qmita smmalu",
+	"proofreadpage_quality4_summary": "wada daan pgkla",
 	"proofreadpage_quality0_message": "ana ini dai qmita smmalu ka patas ruwahan nii.",
 	"proofreadpage_quality1_message": "Ini dai qmita smmalu ka patas ruwahan nii na.",
 	"proofreadpage_quality2_message": "muda qmita smmalu patas ruwahan nii siida niqan kingal ini pnduwa .",
@@ -47,6 +49,8 @@
 	"proofreadpage_quality4_message": "wada daan ptgkla ka patas ruwahan nii",
 	"proofreadpage_index_status": "ga mmeenu ka qtaan patas snlbu",
 	"proofreadpage_index_size": "sspgan patas ruwahan",
+	"proofreadpage_pages_to_validate": "knlala ruwahan ptasan o wada ggkla da.",
+	"proofreadpage_pages_to_proofread_or_validate": "dai qmita aji uri o ggkla sspgan ruwahan",
 	"proofreadpage_specialpage_label_orderby": "msbbkug:",
 	"proofreadpage_specialpage_label_key": "miying:",
 	"proofreadpage_specialpage_label_sortascending": "bnkgan mgkala baraw",
@@ -54,6 +58,7 @@
 	"proofreadpage_index_listofpages": "Kana patas ruwahan",
 	"proofreadpage_image_message": "plutut bitaq ruwahan qtaan patas snlbu",
 	"proofreadpage_page_status": "mmeenu ka patas ruwahan",
+	"proofreadpage_js_attributes": "seejiq mnatas  pusu kari  hngkawas smnalu patas   smnalu patas",
 	"proofreadpage_index_attributes": "seejiq mnatas\npusu kari\nhngkawas smnalu patas \nsmnalu patas\npnyahan\npatas|nngalan patas ruwahan brah\nspgan knlala ruwahan ||20\nnumal kari||10",
 	"proofreadpage_pages": "$2 ka{{PLURAL:$1| patas ruwahan }}",
 	"proofreadpage_specialpage_legend": "miying patas ruwahan qtaan patas snlbu",
@@ -61,7 +66,9 @@
 	"proofreadpage_specialpage_searcherrortext": "ini tduwa qmpah ka kikay miying, madas msriqu sunan o ini ta bi kla",
 	"proofreadpage_source": "pnyahan",
 	"proofreadpage_source_message": "tgluus qmita samaw o djiyun phiyug patas nii",
+	"action-pagequality": "muda smmalu duri pnskraya knruwahan pusu.",
 	"right-pagequality": "daan smmalu dur i ka pnskaya knkray knhiyi patas ruwaha",
+	"action-pagequality-admin": "quri ptasan ruwahan o hmut psramay matas.",
 	"right-pagequality-admin": "quri ptasan ruwahan o hmut psramay matas",
 	"proofreadpage-section-tools": "qngqaya endaan qmita smmalu",
 	"proofreadpage-group-zoom": "mtduwa pkbilaq ni pkparu",
@@ -72,6 +79,16 @@
 	"proofreadpage-button-zoom-in-label": "pkparu",
 	"proofreadpage-button-toggle-layout-label": "mslagu／mtbalay",
 	"proofreadpage-pageinfo-status": "endaan qmita smmalu o mmeenu",
+	"proofreadpage-pagelist-input-preview-button": "dai plealay qmita ka bnkgan hangan ruwahan ptasan.",
+	"proofreadpage-pagelist-parsing-error-morethanone": "mniyah paah wiki ka kska cinun kari ga qtaan hika aji kingal bi<pagelist /> pnskraya",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": " ini qmita <pagelist /> pnskraya.",
+	"proofreadpage-pagelist-parsing-error-php": "ga bukuy bi  muda pgkla pnskraya bnkgan hangan ruwahan ptasan siida  hlayan saw truma nii ka mqneuqu: $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "aji bi neuqu o Qqtaan knruyan, powda rnisuh patas kdjiyax ka nniqan hhtur o pgklai mqnruqu ka phabricator.wikimedia.org.",
+	"proofreadpage-pagelist-dialog-title": "Editing pagelist for $1",
+	"proofreadpage-pagelist-dialog-insertchanges": "suqi ni priyuxi smmalu",
+	"proofreadpage-pagelist-imageurlnotfound": "Pnyahan snlbuan patas ka powda samaw mqita o ini hlayi.",
+	"proofreadpage-pagelist-type": "Hnigan klgan spgan ruwahan ：$1",
+	"proofreadpage-pagelist-assignedpagenumber": "ruwahan ptasan nii o wada sgun sspgan ruwahan: $1",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} kska iyax patas ptngahan  muda smmalu patas siida qtaan ka iyax gaga niqan tqring patas ruwahan ni sulay patas ruwahan",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} kska iyax patas ptngahan  muda smmalu patas siida dmuuy powsa tgbaraw bi qtaan",
 	"proofreadpage-indexquality-alt": "$1wada spgkla {{PLURAL:$1|patas ruwahan}}，$2wana daan qmita ka patas smlaan {{PLURAL:$2|patas ruwahan}}ni$3ini dai qmita ka smlaan patas{{PLURAL:$3|patas ruwahan}}",
@@ -82,5 +99,8 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "muda $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "kiya",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "aji",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "knhiyi qtaan smmalu patas"
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "knhiyi qtaan smmalu patas",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "knhiyi qtaan smmalu patas",
+	"proofreadpage-index-field-category-label": "keelgan",
+	"proofreadpage-index-edit-category-help": "klgan o ini adas Category: ptasi ka pgbrah ，duri o uda gasil pnhiyug \"|\" psnaki ka nniqan."
 }

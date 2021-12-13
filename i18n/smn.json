@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Trondtr"
+			"Trondtr",
+			"Seipinne",
+			"Yupik"
 		]
 	},
 	"nstab-page": "Sijđo",
 	"proofreadpage_image": "Kove",
+	"proofreadpage_nologin": "Jieh lah čälittâm jieijâd siisâ",
 	"proofreadpage_nextpage": "Čuávuvâš sijđo",
 	"proofreadpage_prevpage": "Oovdeb sijđo",
 	"proofreadpage_quality0_category": "Tevstâttáá",
@@ -13,5 +16,7 @@
 	"proofreadpage_quality2_category": "Váádduh",
 	"proofreadpage_quality3_category": "Njuálguluhhum",
 	"proofreadpage_quality4_category": "Tuhhiittum",
-	"proofreadpage_quality1_message": "Taat sijđo ij lah njuálguluhhum"
+	"proofreadpage_quality1_message": "Taat sijđo ij lah njuálguluhhum",
+	"proofreadpage_index_size": "Siijđoi meeri",
+	"proofreadpage_specialpage_label_key": "Uusâ:"
 }

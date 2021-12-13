@@ -15,7 +15,8 @@
 			"Wayiran",
 			"Yoosef Pooranvary",
 			"ZxxZxxZ",
-			"جواد"
+			"جواد",
+			"Jeeputer"
 		]
 	},
 	"nstab-page": "برگ",
@@ -95,7 +96,7 @@
 	"content-model-proofread-index": "فهرست کتاب",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "انتخاب برگ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "برگ‌ها",
-	"proofreadpage-visualeditor-node-pages-inspector-description": "تراگنجایش $1",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "تراگنجانش $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "بله",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "خیر",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "کیفیت نمونه‌خوانی",

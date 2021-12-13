@@ -9,7 +9,8 @@
 			"F. Cosoleto",
 			"Gianfranco",
 			"Macofe",
-			"Stefano-c"
+			"Stefano-c",
+			"Ciampix"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -73,7 +74,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Il motore di ricerca non funziona. Ci scusiamo per l'inconveniente.",
 	"proofreadpage_source": "Fonte",
 	"proofreadpage_source_message": "Edizione scansionata utilizzata per ricavare questo testo",
+	"action-pagequality": "modificare la qualità della pagina",
 	"right-pagequality": "Modificare la qualità della pagina",
+	"action-pagequality-admin": "modificare senza limiti l'etichetta di qualità della pagina",
 	"right-pagequality-admin": "Modifica senza limiti l'etichetta di qualità della pagina",
 	"proofreadpage-section-tools": "Strumenti di correzione",
 	"proofreadpage-group-zoom": "Zoom",
@@ -84,7 +87,17 @@
 	"proofreadpage-button-zoom-in-label": "Zoom avanti",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizzontale",
 	"proofreadpage-pageinfo-status": "Stato di correzione",
+	"proofreadpage-pagelist-input-preview-button": "Anteprima della lista delle pagine",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Nel codice wiki sono presenti più tag <pagelist />.",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Non è stato trovato nessun tag <pagelist />.",
+	"proofreadpage-pagelist-parsing-error-php": "Si è verificato il seguente errore analizzando l'elenco delle pagine: $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "È stato rilevato un'errore inaspettato. Segnala questo errore in phabricator.wikimedia.org insieme ai registri della consolle.",
+	"proofreadpage-pagelist-dialog-title": "Modifica la lista delle pagine di $1",
+	"proofreadpage-pagelist-dialog-insertchanges": "Inserisci modifiche",
+	"proofreadpage-pagelist-imageurlnotfound": "L'immagine di questa scansione non è stata trovata.",
+	"proofreadpage-pagelist-type": "Tipo di numerazione di pagina: $1",
 	"proofreadpage-pagelist-quality": "Qualità: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "A questa pagina è stato assegnato il numero: $1",
 	"proofreadpage-preferences-showheaders-label": "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usa il layout orizzontale durante la modifica nel namespace {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina riletta|pagine rilette}}, $2 {{PLURAL:$2|pagina solo trascritta|pagine solo trascritte}} e $3 {{PLURAL:$3|pagina incompleta|pagine incomplete}}",
@@ -97,5 +110,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità di correzione",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità di correzione",
-	"proofreadpage-index-field-category-label": "Categorie"
+	"proofreadpage-index-field-category-label": "Categorie",
+	"proofreadpage-index-edit-category-help": "Le categorie sono scritte senza il prefisso Categoria: e sono separate dal carattere \"|\"."
 }

@@ -3,11 +3,19 @@
 		"authors": [
 			"Robin van der Vliet",
 			"Robin0van0der0vliet",
-			"Snakesteuben"
+			"Snakesteuben",
+			"PiefPafPier"
 		]
 	},
-	"proofreadpage_image": "Ôfbylding",
+	"proofreadpage_image": "Ofbylding",
 	"proofreadpage_nextpage": "Folgjende side",
-	"proofreadpage_quality2_category": "Unfolslein",
+	"proofreadpage_quality0_category": "Sûnder tekst",
+	"proofreadpage_quality1_category": "Net-proeflêzen",
+	"proofreadpage_quality2_category": "Problematysk",
+	"proofreadpage_quality3_category": "Proeflêzen",
+	"proofreadpage_quality4_category": "Falidearre",
+	"proofreadpage_quality0_message": "Dizze side hat gjin proeflêzing nedich",
+	"proofreadpage_quality1_message": "Dizze side hat gjin proeflêzing hân",
+	"proofreadpage_quality3_message": "Dizze side hat in proeflêzing hân",
 	"proofreadpage_specialpage_label_key": "Sykje:"
 }

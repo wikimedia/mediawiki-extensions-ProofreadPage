@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ereldej"
+			"Ereldej",
+			"Soul Train",
+			"Батыр Комдошев"
 		]
 	},
-	"nstab-page": "Бÿк",
+	"nstab-page": "Бӱк",
 	"nstab-index": "Индекс",
 	"tooltip-ca-nstab-page": "Бичиктиҥ бÿгин кöрöр",
 	"tooltip-ca-nstab-index": "Бичиктиҥ индексин кöрöр",
@@ -29,9 +31,9 @@
 	"proofreadpage_body": "Бÿктиҥ ичи (ачылап аргалу):",
 	"proofreadpage_footer": "Футер (noinclude):",
 	"proofreadpage_toggleheaders": "noinclude бöлÿктериниҥ кöрÿнерин кöчÿрип ийер",
-	"proofreadpage_quality0_category": "Текст jокко",
+	"proofreadpage_quality0_category": "Бичимел jокко",
 	"proofreadpage_quality1_category": "Тÿзетпес",
-	"proofreadpage_quality2_category": "Бодоштыра",
+	"proofreadpage_quality2_category": "Проблемалу",
 	"proofreadpage_quality3_category": "Тÿзедер",
 	"proofreadpage_quality4_category": "Jöптöлгöн",
 	"proofreadpage_quality0_summary": "Текст jокко",
@@ -62,7 +64,7 @@
 	"proofreadpage_specialpage_searcherror": "Бедирер системада jастыра",
 	"proofreadpage_specialpage_searcherrortext": "Бедиреер система иштебейт. Тутактар учун jаманыс таштагар.",
 	"proofreadpage_source": "Источник",
-	"proofreadpage-button-zoom-out-label": "Кичинектедийер",
+	"proofreadpage-button-zoom-out-label": "Кичинектедип ийер",
 	"proofreadpage-button-zoom-in-label": "Jаанадыйер",
 	"proofreadpage-pageinfo-status": "Тÿзедÿниҥ айалгазы",
 	"content-model-proofread-page": "Бичиктиҥ бÿги",

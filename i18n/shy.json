@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vikoula5"
+		]
+	},
+	"nstab-page": "Asebter",
+	"nstab-index": "Amatar",
+	"tooltip-ca-nstab-page": "Ẓer asebter n adlis",
+	"tooltip-ca-nstab-index": "Ẓer asebter n amatar",
+	"proofreadpage_index": "Amatar",
+	"proofreadpage_nextpage": "Asebter ameḍfir",
+	"proofreadpage_prevpage": "Asebter ssabeq",
+	"proofreadpage_quality0_message": "Asebter-agi ur yettwaseɣti ara",
+	"proofreadpage_specialpage_label_key": "Iruzzi:",
+	"content-model-proofread-page": "Asebter n adlis",
+	"content-model-proofread-index": "Amatar n adlis",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "isebtar",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ih",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Uhu"
+}

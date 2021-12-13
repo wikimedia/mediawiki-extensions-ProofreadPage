@@ -3,9 +3,12 @@
 		"authors": [
 			"Anakmalaysia",
 			"Aurora",
-			"Aviator"
+			"Aviator",
+			"Tofeiku"
 		]
 	},
+	"nstab-page": "Laman",
+	"nstab-index": "Indeks",
 	"indexpages": "Senarai laman indeks",
 	"pageswithoutscans": "Laman yang tidak diimbas",
 	"proofreadpage_desc": "Membolehkan perbandingan mudah bagi teks dengan imbasan asal",
@@ -34,6 +37,9 @@
 	"proofreadpage_quality2_category": "Bermasalah",
 	"proofreadpage_quality3_category": "Disemak",
 	"proofreadpage_quality4_category": "Disahkan",
+	"proofreadpage_quality0_summary": "Tanpa teks",
+	"proofreadpage_quality2_summary": "Bermasalah",
+	"proofreadpage_quality4_summary": "Disahkan",
 	"proofreadpage_quality0_message": "Laman ini tidak perlu dibaca pruf",
 	"proofreadpage_quality1_message": "Laman ini belum dibaca pruf",
 	"proofreadpage_quality2_message": "Masalah timbul ketika membaca pruf laman ini",
@@ -66,5 +72,14 @@
 	"proofreadpage-button-zoom-in-label": "Zum dekat",
 	"proofreadpage-button-toggle-layout-label": "Susun atur menegak/melintang",
 	"proofreadpage-preferences-showheaders-label": "Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama {{ns:page}}",
-	"proofreadpage-preferences-horizontal-layout-label": "Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}"
+	"proofreadpage-preferences-horizontal-layout-label": "Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}",
+	"content-model-proofread-page": "Laman buku",
+	"content-model-proofread-index": "Indeks buku",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "Pemilihan laman",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Laman",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ya",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Tidak",
+	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Mutu baca pruf",
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Mutu baca pruf",
+	"proofreadpage-index-field-category-label": "Kategori"
 }

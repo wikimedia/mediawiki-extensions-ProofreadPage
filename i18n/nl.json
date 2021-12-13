@@ -11,7 +11,8 @@
 			"Romaine",
 			"SPQRobin",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Dutchy45"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -83,6 +84,9 @@
 	"proofreadpage-button-zoom-in-label": "Inzoomen",
 	"proofreadpage-button-toggle-layout-label": "Verticale/horizontale vormgeving",
 	"proofreadpage-pageinfo-status": "Controlestatus",
+	"proofreadpage-pagelist-dialog-insertchanges": "Veranderingen invoegen",
+	"proofreadpage-pagelist-type": "Pagina Nummer Type:$1",
+	"proofreadpage-pagelist-assignedpagenumber": "Aan deze pagina is paginanummer $1 toegekend",
 	"proofreadpage-preferences-showheaders-label": "Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt",
 	"proofreadpage-preferences-horizontal-layout-label": "Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 gevalideerde {{PLURAL:$1|pagina|pagina's}}, $2 alleen proefgelezen {{PLURAL:$2|pagina|pagina's}} en $3 niet proefgelezen {{PLURAL:$3|pagina|pagina's}}",

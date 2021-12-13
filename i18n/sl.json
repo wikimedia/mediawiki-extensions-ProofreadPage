@@ -3,7 +3,8 @@
 		"authors": [
 			"Dbc334",
 			"Janezdrilc",
-			"Yerpo"
+			"Yerpo",
+			"Eleassar"
 		]
 	},
 	"nstab-page": "Stran",
@@ -12,7 +13,7 @@
 	"tooltip-ca-nstab-index": "Prikaži kazalo knjige",
 	"indexpages": "Seznam kazalnih strani",
 	"pageswithoutscans": "Strani brez skeniranj",
-	"proofreadpage_desc": "Omogočajo enostavno primerjavo besedila z izvirno preslikavo",
+	"proofreadpage_desc": "Omogoča preprosto primerjavo besedila z izvirnim skenogramom",
 	"proofreadpage_image": "Slika",
 	"proofreadpage_index": "Kazalo",
 	"proofreadpage_index_expected": "Napaka: pričakovano kazalo",
@@ -64,11 +65,11 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|stran|strani}}",
 	"proofreadpage_specialpage_legend": "Iskanje kazalnih strani",
 	"proofreadpage_specialpage_searcherror": "Napaka iskalnega pogona",
-	"proofreadpage_specialpage_searcherrortext": "Iskalnik ne deluje. Se opravičujemo za nevšečnosti.",
+	"proofreadpage_specialpage_searcherrortext": "Iskalnik ne deluje. Opravičujemo se za nevšečnost.",
 	"proofreadpage_source": "Vir",
 	"proofreadpage_source_message": "Preslikana izdaja, uporabljena za nastanek tega besedila",
 	"right-pagequality": "Spremeni označbo kakovosti strani",
-	"right-pagequality-admin": "Neomejena urejanja oznak kvalitete strani",
+	"right-pagequality-admin": "Neomejena urejanja oznak kakovosti strani",
 	"proofreadpage-section-tools": "Orodja za pregled",
 	"proofreadpage-group-zoom": "Povečava",
 	"proofreadpage-group-other": "Drugo",
@@ -79,7 +80,7 @@
 	"proofreadpage-button-toggle-layout-label": "Navpična/vodoravna postavitev",
 	"proofreadpage-pageinfo-status": "Stanje pregleda",
 	"proofreadpage-preferences-showheaders-label": "Pokaži glavo in nogo, ko urejaš v imenskem prostoru {{ns:page}}",
-	"proofreadpage-preferences-horizontal-layout-label": "Uporabi horizontalen pogled, ko urejaš v imenskem prostoru {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "Pri urejanju v imenskem prostoru {{ns:page}} uporabi vodoravno postavitev",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|potrjena stran|potrjeni strani|potrjene strani|potrjenih strani}}, $2 samo {{PLURAL:$1|pregledana stran|pregledani strani|pregledane strani|pregledanih strani}} in $3 {{PLURAL:$1|nepregledana stran|nepregledani strani|nepregledane strani|nepregledanih strani}}",
 	"content-model-proofread-page": "Stran knjige",
 	"content-model-proofread-index": "Kazalo knjige",

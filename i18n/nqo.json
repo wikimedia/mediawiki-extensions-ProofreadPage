@@ -2,13 +2,45 @@
 	"@metadata": {
 		"authors": [
 			"Lancine.kounfantoh.fofana",
-			"Lanciné.kounfantoh.fofana"
+			"Lanciné.kounfantoh.fofana",
+			"Aboubacar.banamoridou.toure"
 		]
 	},
+	"nstab-page": "ߞߐߜߍ",
+	"nstab-index": "ߡߊ߬ߛߙߋ",
+	"tooltip-ca-nstab-page": "ߞߊ߬ߝߊ ߞߐߜߍ ߦߋ߫",
+	"tooltip-ca-nstab-index": "ߞߊ߬ߝߊ ߡߊ߬ߛߙߋ ߦߋ߫",
+	"indexpages": "ߡߊ߬ߛߙߋ߬ ߞߐߜߍ ߟߎ߬ ߛߙߍߘߍ",
+	"proofreadpage_image": "ߖߌ߬ߦߊ߬ߓߍ",
+	"proofreadpage_index": "ߘߊߕߐߡߦߊ",
+	"proofreadpage_nosuch_index": "ߝߎ߬ߕߎ߲߬ߕߌ:ߡߊ߬ߛߙߋ߬ ߛߎ߮ ߏ߬ ߕߴߦߋ߲߬",
+	"proofreadpage_nosuch_file": "ߝߎ߬ߕߎ߲߬ߕߌ: ߞߐߕߐ߯ ߛߎ߮ ߏ߬ ߕߴߦߋ߲߬",
+	"proofreadpage_indexdupetext": "ߞߐߜߍ ߟߎ߬ ߕߍ߫ ߛߐ߲߬ ߛߙߍߘߍߦߊ߫ ߟߊ߫ ߛߋ߬ߧߊ߬ ߞߋߟߋ߲ ߛߊ߲ߘߐ߫ ߡߊ߬ߛߙߋ߬ ߞߐߜߍ ߘߐ߫.",
+	"proofreadpage_nologin": "ߌ ߜߊ߲߬ߞߎ߲߬ߣߍ߲߬ ߕߍ߫",
+	"proofreadpage_nologintext": "ߌ ߦߴߌ ߞߊߘߊ߲߫ ߞߵߌ ߞߍ߫ [[Special:UserLogin|logged in]] ߘߌ߫ ߞߊ߬ ߞߐߜߍ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲߬ ߘߐߥߛߊ߬ߣߍ߲ ߟߌ߬ߤߟߊ ߟߎ߬ ߡߊߦߟߍ߬ߡߊ߲߫.",
+	"proofreadpage_notallowedtext": "ߌ ߟߊߘߌ߬ߢߍ߬ߣߍ߲߬ ߕߍ߫ ߞߊ߬ ߞߐߜߍ ߣߌ߲߬ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲߬ ߘߐߥߛߊ߬ߣߍ߲ ߟߌ߬ߤߟߊ ߟߎ߬ ߡߊߦߟߍ߬ߡߊ߲߫.",
+	"proofreadpage_nextpage": "ߞߐߜߍ߫ ߣߊ߬ߕߐ",
 	"proofreadpage_quality0_category": "ߛߓߍߟߌ߫ ߕߴߊ߬ ߘߐ߫",
 	"proofreadpage_quality1_category": "ߊ߬ ߕߍ߫ ߞߊ߬ߙߊ߲߬ ߘߐߥߛߊ߬ߣߍ߲߫ ߘߌ߫",
 	"proofreadpage_quality2_category": "ߝߙߋߞߋߡߊ",
 	"proofreadpage_quality3_category": "ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲ ߘߐߥߛߊ߬ߣߍ߲",
 	"proofreadpage_quality4_category": "ߊ߬ ߓߘߊ߫ ߟߊߛߙߋߦߊ߫",
-	"proofreadpage_quality1_message": "ߞߐߜߍ ߡߊ߫ ߞߍ߫ ߞߊ߬ߙߊ߲߬ߕߊ߬ ߘߐߥߛߊ߬ߣߍ߲߫ ߘߌ߫ ߡߎߣߎ߲߬"
+	"proofreadpage_quality0_summary": "ߛߓߍߟߌ߫ ߕߴߊ߬ ߘߐ߫",
+	"proofreadpage_quality1_summary": "ߊ߬ ߕߍ߫ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲߬ ߘߐߥߛߊ߬ߣߍ߲߫ ߘߌ߫",
+	"proofreadpage_quality2_summary": "ߝߙߋߞߋߡߊ",
+	"proofreadpage_quality3_summary": "ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲߬ ߘߐߥߛߊ߬ߣߍ߲",
+	"proofreadpage_quality4_summary": "ߊ߬ ߓߘߊ߫ ߟߊߛߙߋߦߊ߫",
+	"proofreadpage_quality0_message": "ߞߊ߬ߝߊ ߣߌ߲߬ ߡߊ߬ߞߏ߬ ߕߴߊ߬ ߞߍ ߟߊ߫ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ߲߬ ߘߐߥߛߊ߬ߣߍ߲ ߘߌ߫",
+	"proofreadpage_quality1_message": "ߞߐߜߍ ߡߊ߫ ߞߍ߫ ߞߊ߬ߙߊ߲߬ߕߊ߬ ߘߐߥߛߊ߬ߣߍ߲߫ ߘߌ߫ ߡߎߣߎ߲߬",
+	"proofreadpage_index_size": "ߞߐߜߍ ߟߎ߬ ߝߙߍߕߍ",
+	"proofreadpage_pages_to_validate": "ߞߐߜߍ ߝߙߍߕߍ ߟߎ߬ ߓߍ߲߬ߣߍ߲߫ ߦߋ߫ ߞߍ߫",
+	"proofreadpage_specialpage_label_orderby": "ߞߵߊ߬ ߢߣߊߕߐ߬ߡߐ߲߫:",
+	"proofreadpage_specialpage_label_key": "ߢߌߣߌ߲ߠߌ߲",
+	"proofreadpage_alphabeticalorder": "ߛߓߍߛߎ߲ ߖߡߊ߬ߙߌ ߡߊ߬",
+	"proofreadpage_index_listofpages": "ߞߐߜߍ ߟߎ߬ ߛߙߍߘߍ",
+	"proofreadpage_page_status": "ߞߐߜߍ ߡߊ߬ߘߎ߮",
+	"proofreadpage_js_attributes": "ߛߓߍߦߟߊ ߞߎ߲߬ߕߐ߮ ߟߊ߬ߥߊ߲߬ߞߊ߬ߟߌ ߛߊ߲߭",
+	"proofreadpage_pages": "$2 {{PLURAL:|ߞߐߜߍ $1|ߞߐߜߍ ߟߎ߬}}",
+	"proofreadpage_specialpage_searcherror": "ߝߎ߬ߕߎ߲߬ߕߌ ߕߌߙߌ߲ߠߌ߲߫ ߣߌߘߐ ߟߊ߫",
+	"content-model-proofread-page": "ߞߊ߬ߝߊ ߞߐߜߍ"
 }

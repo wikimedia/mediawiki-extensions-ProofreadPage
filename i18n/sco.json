@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"AmaryllisGardener",
-			"John Reid"
+			"John Reid",
+			"MJL"
 		]
 	},
 	"pageswithoutscans": "Pages withoot scans",
@@ -12,5 +13,6 @@
 	"proofreadpage_quality3_category": "Pruifread",
 	"proofreadpage_quality4_category": "Validatit",
 	"proofreadpage_quality1_message": "This page haes nae been pruifread",
-	"proofreadpage-pageinfo-status": "Pruifreadin status"
+	"proofreadpage-pageinfo-status": "Pruifreadin status",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Aye"
 }

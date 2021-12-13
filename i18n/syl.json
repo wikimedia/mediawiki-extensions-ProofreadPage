@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"এম আবু সাঈদ"
+			"এম আবু সাঈদ",
+			"Asmani Haz"
 		]
 	},
 	"nstab-page": "ꠙꠣꠔꠣ",
 	"nstab-index": "ꠡꠥꠌꠤ",
+	"tooltip-ca-nstab-page": "ꠛꠁꠞ ꠚꠣꠔꠣ ꠖꠦꠈꠇ꠆ꠇꠣ",
+	"tooltip-ca-nstab-index": "ꠛꠁꠞ ꠡꠥꠌꠤ ꠖꠦꠈꠇ꠆ꠇꠣ",
 	"indexpages": "ꠡꠥꠌꠤ ꠙꠣꠔꠣꠞ ꠟꠤꠍ꠆ꠐ",
 	"pageswithoutscans": "ꠍ꠆ꠇꠦꠘ ꠍꠣꠠꠣ ꠙꠣꠔꠣ",
 	"proofreadpage_image": "ꠍꠛꠤ",
@@ -13,6 +16,7 @@
 	"proofreadpage_index_expected": "ꠜꠥꠟ: ꠡꠥꠌꠤ ꠌꠣꠁꠀꠞ",
 	"proofreadpage_nosuch_index": "ꠜꠥꠟ: ꠁꠎꠣꠔ ꠡꠥꠌꠤ ꠘꠣꠁ",
 	"proofreadpage_nosuch_file": "ꠜꠥꠟ: ꠁꠎꠣꠔ ꠚꠣꠁꠟ ꠘꠣꠁ",
+	"proofreadpage_indexdupetext": "ꠁꠘ꠆ꠒꠦꠇꠍ ꠙꠦꠁꠎꠧ ꠄꠈꠛꠣꠞꠞ ꠛꠦꠡ ꠙꠦꠁꠎ ꠒꠥꠇꠣꠘꠤ ꠎꠣꠁꠔ ꠘꠣꠄ",
 	"proofreadpage_nologin": "ꠟꠉ ꠁꠘ ꠇꠞꠣ ꠘꠣꠄ",
 	"proofreadpage_notallowedtext": "ꠀꠙꠘꠦ ꠁ ꠙꠣꠔꠣꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒꠤꠋ ꠃꠛꠍ꠆ꠔ ꠛꠖꠟꠣꠁꠔꠣ ꠙꠣꠞꠔꠣ ꠘꠣꠣꠄ",
 	"proofreadpage_number_expected": "ꠜꠥꠟ: ꠡꠋꠇꠣ ꠝꠣꠘ ꠌꠣꠃꠀ ꠃꠞ",
@@ -29,6 +33,20 @@
 	"proofreadpage_quality2_summary": "ꠡꠝꠡ꠆ꠡꠣ ꠀꠍꠦ",
 	"proofreadpage_quality3_summary": "ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠇꠞꠣ",
 	"proofreadpage_quality4_summary": "ꠛꠂꠗ ꠀꠍꠦ",
+	"proofreadpage_index_size": "ꠚꠣꠔꠣ ꠡꠋꠈꠣ",
+	"proofreadpage_specialpage_label_key": "ꠕꠥꠇꠣꠇ꠆ꠇꠣ:",
+	"proofreadpage_index_listofpages": "ꠚꠣꠔꠣꠞ ꠟꠤꠡ꠆ꠐ",
+	"proofreadpage_page_status": "ꠚꠣꠔꠣꠞ ꠅꠛꠍꠔꠣ",
+	"proofreadpage_js_attributes": "ꠟꠦꠈꠇ ꠘꠣꠝ ꠛꠍꠞ ꠍꠣꠚꠣꠃꠞꠣ",
+	"proofreadpage_index_attributes": "ꠟꠦꠈꠇ\nꠘꠣꠝ\nꠛꠍꠞ|ꠍꠣꠚꠣꠘꠤꠞ ꠛꠍꠞ\nꠍꠣꠚꠣꠃꠞꠣ\nSource \nꠍꠛꠤ|ꠇꠜꠣꠞ ꠍꠛꠤ\nRemark||10",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|page|pages}}",
+	"proofreadpage_specialpage_legend": "ꠡꠥꠌꠤ ꠚꠣꠔꠣꠔ ꠕꠥꠇꠣꠇ꠆ꠇꠣ",
+	"proofreadpage_specialpage_searcherror": "search engine ꠅ ꠡꠝꠡ꠆ꠡꠣ",
+	"proofreadpage_specialpage_searcherrortext": "search engine ꠄ ꠈꠣꠝ ꠈꠞꠦꠞ ꠘꠣ। ꠁ ꠅꠡꠥꠛꠤꠗꠣꠞ ꠟꠣꠉꠤ ꠝꠣꠚ ꠍꠣꠁꠀꠞ",
 	"proofreadpage_source": "ꠃꠔꠡ",
-	"proofreadpage-group-zoom": "ꠎꠥꠝ"
+	"proofreadpage-group-zoom": "ꠎꠥꠝ",
+	"proofreadpage-group-other": "ꠛꠣꠖꠛꠣꠇꠤ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ꠅꠄ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ꠘꠣ",
+	"proofreadpage-index-field-category-label": "ꠇꠦꠐꠣꠉꠞꠤ"
 }

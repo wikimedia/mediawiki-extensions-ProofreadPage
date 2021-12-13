@@ -4,14 +4,17 @@
 			"ArmenBakkalian",
 			"Azniv Stepanian",
 			"Kareyac",
-			"Rajemian"
+			"Rajemian",
+			"Շահէն"
 		]
 	},
+	"proofreadpage_nologin": "Դուք մուտք չէք գործած համակարգ",
 	"proofreadpage_quality0_category": "Առանց գրութեան",
 	"proofreadpage_quality1_category": "Չէ սրբագրուած",
 	"proofreadpage_quality2_category": "Խնդրայարոյց",
 	"proofreadpage_quality3_category": "Սրբագրուած",
 	"proofreadpage_quality4_category": "Վաւերագրուած",
 	"proofreadpage_quality1_message": "Այս էջը սրբագրուած չէ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Այո",
 	"proofreadpage-index-field-category-label": "Ստորոգութիւններ"
 }

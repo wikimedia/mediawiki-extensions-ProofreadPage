@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"apihelp-query+proofread-description": "Mengembalikan maklumat tentang status baca pruf terkini laman tertentu.",
+	"apihelp-query+proofread-summary": "Mengembalikan maklumat tentang status baca pruf terkini laman tertentu.",
+	"apihelp-query+proofread-example-1": "Kembalikan status baca pruf bagi laman di ruang nama 250"
+}

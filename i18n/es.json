@@ -16,7 +16,10 @@
 			"Ryo567",
 			"Sanbec",
 			"Themasterriot",
-			"Translationista"
+			"Translationista",
+			"MarcoAurelio",
+			"Ninovolador",
+			"Sukanya121"
 		]
 	},
 	"nstab-page": "Página",
@@ -93,6 +96,16 @@
 	"proofreadpage-button-zoom-in-label": "Acercar",
 	"proofreadpage-button-toggle-layout-label": "Disposición vertical/horizontal",
 	"proofreadpage-pageinfo-status": "Estado de corrección",
+	"proofreadpage-pagelist-input-preview-button": "Previsualizar lista",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Se detectó más de una etiqueta <pagelist /> en el wikitexto original.",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "No se detectó ninguna etiqueta <pagelist />.",
+	"proofreadpage-pagelist-parsing-error-php": "El siguiente error se encontró mientras se analizaba el código de la lista de páginas: $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "Se detectó un error inesperado. Por favor reporte este error en phabricator.wikimedia.org junto con los registros de la consola.",
+	"proofreadpage-pagelist-dialog-title": "Editando la lista de páginas de $1",
+	"proofreadpage-pagelist-dialog-insertchanges": "Insertar cambios",
+	"proofreadpage-pagelist-imageurlnotfound": "No se encontró la miniatura original para esta digitalización",
+	"proofreadpage-pagelist-type": "Tipo de número de la página: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "A esta página se le asignó el número: $1",
 	"proofreadpage-preferences-showheaders-label": "Mostrar campos de cabecera y pie de página cuando se edita en el espacio de nombres {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar diseño horizontal cuando se edita en el espacio de nombres {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|página validada|páginas validadas}}, $2 {{PLURAL:$2|página solo corregida|páginas solo corregidas}} y $3 {{PLURAL:$3|página|páginas}} sin corregir.",

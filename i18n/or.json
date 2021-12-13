@@ -5,7 +5,8 @@
 			"DareDevil",
 			"Jnanaranjan Sahu",
 			"Odisha1",
-			"Psubhashish"
+			"Psubhashish",
+			"Balajijagadesh"
 		]
 	},
 	"nstab-page": "ପୃଷ୍ଠା",
@@ -79,6 +80,7 @@
 	"proofreadpage-button-zoom-in-label": "ବଡ଼ କରନ୍ତୁ",
 	"proofreadpage-button-toggle-layout-label": "ଭୂଲମ୍ବ/ସାମାନ୍ତରାଳ ସଜାଣି",
 	"proofreadpage-pageinfo-status": "ସଂଶୋଧନ ସ୍ଥିତି",
+	"proofreadpage-pagelist-dialog-insertchanges": "மாற்றங்களைச் செலுத்துக",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ନେମସ୍ପେସରେ ବଦଳବେଳେ ଶିରୋନାମ ଏବଂ ମୂଳ ଦେଖାଇବେ",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ନେମସ୍ପେସରେ ବଦଳ ବେଳେ ସାମାନ୍ତରାଳ ସଜାଣି ବ୍ୟବହାର କରିବେ",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|ପୃଷ୍ଠା|ପୃଷ୍ଠାଗୁଡିକୁ}} ବୈଧ କଲା, $2 କେବଳ{{PLURAL:$2|ପୃଷ୍ଠା|ପୃଷ୍ଠାଗୁଡିକୁ}} ସଂଶୋଧନ କଲା ଆଉ $3 {{PLURAL:$3|ପୃଷ୍ଠାକୁ|ପୃଷ୍ଠାଗୁଡିକୁ}} ସଂଶୋଧିତ କଲା ନାହିଁ ।",
@@ -89,5 +91,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ହଁ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ନାଁ",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ପ୍ରମାଣବୈଧତାର ମାନଦଣ୍ଡ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ସଂଶୋଧନ ମାତ୍ରା"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ସଂଶୋଧନ ମାତ୍ରା",
+	"proofreadpage-index-field-category-label": "பகுப்புகள்"
 }

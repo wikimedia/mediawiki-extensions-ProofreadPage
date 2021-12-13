@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Albertas"
+			"Albertas",
+			"Tomasdd"
 		]
 	},
 	"apihelp-query+proofread-description": "Pateikia nurodyto puslapio informaciją apie dabartinį koregavimo statusą.",
 	"apihelp-query+proofread-example-1": "Pateikia tinkamumo statusą puslapių, esančių vardų srityje 250",
 	"apihelp-query+proofreadinfo-description": "Pateikia informaciją apie ProofreadPage plėtinio konfigūraciją.",
-	"apihelp-query+proofreadinfo-param-prop": "Kurią tinkamumo savybę naudoti:\n;namespaces:Informacija apie Page ir Index vardų sritis.\n;qualitylevels:Sąrašas tinkamų kokybės lygių.",
+	"apihelp-query+proofreadinfo-param-prop": "Kurią tinkamumo savybę naudoti:\n;namespaces:Informacija apie \n\"{{ns:Page}}\" ir \n\"{{ns:Index}}\" vardų sritis.\n;qualitylevels:Sąrašas tinkamų kokybės lygių.",
 	"apihelp-query+proofreadinfo-example-1": "Pateikti numatytąją informaciją",
 	"apihelp-query+proofreadinfo-example-3": "Pateikti vardų srities informaciją"
 }

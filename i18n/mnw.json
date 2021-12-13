@@ -3,7 +3,8 @@
 		"authors": [
 			"Aue Nai",
 			"BaRaN6161 TURK",
-			"Htawmonzel"
+			"Htawmonzel",
+			"Ranger-Mon"
 		]
 	},
 	"nstab-page": "မုက်လိက်",
@@ -13,7 +14,7 @@
 	"indexpages": "စရၚ် စၞောန်မုက်လိက်ဂမၠိုၚ်",
 	"pageswithoutscans": "မုက်လိက် ဟွံဗှ်scans",
 	"proofreadpage_desc": "ကဵုအခေါၚ်မလောဲသွာဂွံၜတ်ကၞာတ်လိက်သ္ဂောံဗှ်တမ်မူလ",
-	"proofreadpage_image": "သၞိၚ်ရုပ်",
+	"proofreadpage_image": "သၞိင်ရုပ်",
 	"proofreadpage_index": "စၞောန်",
 	"proofreadpage_index_expected": "ဗၠောတ်: တၚ်စၟဳစၞောန်",
 	"proofreadpage_nosuch_index": "ဗၠေတ် : ဒဒှ်တၚ်စၞောန်ဟွံမွဲ",
@@ -85,6 +86,11 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "မုက်လိက်<pagelist />စာမ်လဝ် ဟွံမဲ။",
 	"proofreadpage-pagelist-parsing-error-php": "အရာမဗၠေတ် မထ္ၜးလဝ် ဗွဲသၟဝ်ဝွံ မံက်တိုန်ကၠုင် သီုဟိုတ် စၟဳလဝ် မွဲသာ် ပ္ဍဲအခိင် မစုတ်စာမ်ဒၟံင် မုက်လိက်ရ။ $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "အရာမဗၠေတ် မမံက်ကၠုင်ဂှ် ပလီုထောအ်လဝ်ရ။ ပဂုန်တုဲ ဂရင်ဗ္တီ ကု အစာဝေပ်သာ် phabricator.wikimedia.org နကဵု မဍဵု ပ္ဍဲကောန်ဍေင်ညိ။",
+	"proofreadpage-pagelist-dialog-title": "ပလေဝ်ဒါန် စရင်မုက်လိက် $1",
+	"proofreadpage-pagelist-dialog-insertchanges": "စုတ် အရာမပြံင်လှာဲဂမၠိုင်",
+	"proofreadpage-pagelist-imageurlnotfound": "တင်ဂၞင်စၞေမ်ၝောအ်တဲ မဂၠာဲဂှ် ဟွံဂွံဆဵု။",
+	"proofreadpage-pagelist-type": "ဂကူဂၞန်မုက်လိက်: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "မုက်လိက်ဏအ် ဒးစုတ် ပ္ဍဲကဵု မုက်လိက် ဂၞန်: $1",
 	"proofreadpage-preferences-showheaders-label": "ထ္ၜးဝှာၚ်က္ဍိုပ် ကေုာံ ဇိုၚ် အခိၚ်မဒါန်ဒၟံၚ်ပ္ဍဲ{{ns:page}} ဒၞဲါယၟု",
 	"proofreadpage-preferences-horizontal-layout-label": "သုၚ်စောဲကေတ် သ္ၚိခံက်အၚ် ဗွဲလနၚ် အခိၚ်မဒါန်ဒၟံၚ်ပ္ဍဲ{{ns:မုက်}} ဒၞဲါယၟု",
 	"proofreadpage-indexquality-alt": "$1 ဒတန်လဝ် {{PLURAL:$1|မုက်လိက်|မုက်လိက်ဂမၠိုၚ်}}, $2 ဗွဟ်မပဒတန်ဟေၚ်{{PLURAL:$2|မုက်|မုက်လိက်ဂမၠိုၚ်}} and $3 ဟွံ ဗွဟ်မပဒတန် {{PLURAL:$3|မုက်|မုက်လိက်ဂမၠိုၚ်}}",

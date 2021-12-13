@@ -5,7 +5,8 @@
 			"Teak",
 			"Vahe Gharakhanyan",
 			"Xelgen",
-			"Դավիթ Սարոյան"
+			"Դավիթ Սարոյան",
+			"Kareyac"
 		]
 	},
 	"tooltip-ca-nstab-page": "Տեսնել գրքի էջը",
@@ -40,6 +41,7 @@
 	"proofreadpage_quality2_message": "Սխալ առաջացավ էջը սրբագրելիս",
 	"proofreadpage_quality3_message": "Այս էջը սրբագրված է",
 	"proofreadpage_quality4_message": "Այս էջը հաստատված է",
+	"proofreadpage_specialpage_label_key": "Որոնել՝",
 	"proofreadpage_index_listofpages": "Էջերի ցանկ",
 	"proofreadpage_image_message": "Հղում ինդեքսի էջին",
 	"proofreadpage_page_status": "Էջի կարգավիճակ",
@@ -57,5 +59,6 @@
 	"proofreadpage-button-zoom-out-label": "Հեռվացնել",
 	"proofreadpage-button-reset-zoom-label": "Բնօրինակ չափը",
 	"proofreadpage-button-zoom-in-label": "Խոշորացնել",
-	"proofreadpage-button-toggle-layout-label": "Պատկերը կողքից/վերևից"
+	"proofreadpage-button-toggle-layout-label": "Պատկերը կողքից/վերևից",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Այո"
 }

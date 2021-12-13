@@ -1,15 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			555
 		]
 	},
-	"apihelp-query+proofread-description": "Devolve informação sobre o estado de revisão atual das páginas indicadas.",
-	"apihelp-query+proofread-summary": "Devolve informação sobre o estado de revisão atual das páginas indicadas.",
-	"apihelp-query+proofread-example-1": "Devolver o estado de revisão das páginas no espaço nominal 250",
-	"apihelp-query+proofreadinfo-description": "Devolver informação sobre a configuração da extensão ProofreadPage.",
-	"apihelp-query+proofreadinfo-summary": "Devolver informação sobre a configuração da extensão ProofreadPage.",
+	"apihelp-query+proofread-description": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
+	"apihelp-query+proofread-summary": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
+	"apihelp-query+proofread-example-1": "Retornar status de revisão para páginas no namespace 250",
+	"apihelp-query+proofreadinfo-description": "Retorna informações sobre a configuração da extensão ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Retorna informações sobre a configuração da extensão ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "As propriedades de revisão a serem obtidas:\n;namespaces:Informação sobre os espaços nominais \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista dos níveis de qualidade de revisão.",
-	"apihelp-query+proofreadinfo-example-1": "Devolver a informação padrão",
-	"apihelp-query+proofreadinfo-example-3": "Devolver informação do espaço nominal"
+	"apihelp-query+proofreadinfo-example-1": "Retornar a informação padrão.",
+	"apihelp-query+proofreadinfo-example-3": "Retornar informações do espaço nominal"
 }

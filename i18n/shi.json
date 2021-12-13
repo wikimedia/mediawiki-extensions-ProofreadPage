@@ -1,16 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amara-Amaziɣ"
+			"Amara-Amaziɣ",
+			"Amire80",
+			"Ayour2002",
+			"Lhoussine AIT TAYFST"
 		]
 	},
-	"nstab-page": "ⵜⴰⵙⵏⴰ",
-	"proofreadpage_quality0_category": "ⴱⵍⴰ ⴰⴹⵔⵉⵙ",
-	"proofreadpage_quality2_category": "ⴳⵉⵙ ⴰⵎⵓⴽⵔⵉⵙ",
-	"proofreadpage_specialpage_label_key": "ⴰⵔⵣⵣⵓ:",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|ⵜⴰⵙⵏⴰ|ⵜⴰⵙⵏⵉⵡⵉⵏ}}",
-	"proofreadpage_source": "ⴰⵙⴰⴳⵎ",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ⵜⴰⵙⵏⵉⵡⵉⵏ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ⵢⴰⵀ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ⵓⵀⵓ"
+	"nstab-page": "tasna",
+	"proofreadpage_quality0_category": "S bla n aḍris",
+	"proofreadpage_quality1_category": "Ur tettuyṣḥaḥ",
+	"proofreadpage_quality2_category": "Gis amukris",
+	"proofreadpage_quality3_category": "Ttawṣḥaḥ",
+	"proofreadpage_quality4_category": "Ittawsḥaḥ",
+	"proofreadpage_quality1_message": "ur-ta tɣti tasna ad",
+	"proofreadpage_specialpage_label_key": "arzzu:",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|tasna|tasniwin}}",
+	"proofreadpage_source": "asagm",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "tasniwin",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "yah",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Uhu"
 }

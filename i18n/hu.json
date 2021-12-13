@@ -6,7 +6,8 @@
 			"Dorgan",
 			"Glanthor Reviol",
 			"KossuthRad",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Hanna Tardos"
 		]
 	},
 	"nstab-page": "Oldal",
@@ -82,6 +83,14 @@
 	"proofreadpage-button-zoom-in-label": "Nagyítás",
 	"proofreadpage-button-toggle-layout-label": "Függőleges/vízszintes elrendezés",
 	"proofreadpage-pageinfo-status": "Korrektúrázási állapot",
+	"proofreadpage-pagelist-input-preview-button": "Oldallista előnézete",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Egynél több <pagelist /> címke található a forráswikiszövegben.",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Nem található <pagelist /> címke.",
+	"proofreadpage-pagelist-parsing-error-unknown": "Váratlan hiba történt. Kérjük, jelentsd a hibát a phabricator.wikimedia.org oldalon a konzolról származó naplókkal.",
+	"proofreadpage-pagelist-dialog-title": "$1 oldallistájának szerkesztése",
+	"proofreadpage-pagelist-dialog-insertchanges": "Változtatások beszúrása",
+	"proofreadpage-pagelist-imageurlnotfound": "Nem található ennek a beolvasásnak a bélyegképforrása.",
+	"proofreadpage-pagelist-type": "Oldalszámtípus: $1",
 	"proofreadpage-preferences-showheaders-label": "Fejléc- és láblécmezők megjelenítése szerkesztés közben az {{ns:page}} névtérben",
 	"proofreadpage-preferences-horizontal-layout-label": "Vízszintes elrendezés használata szerkesztés közben az {{ns:page}} névtérben",
 	"proofreadpage-indexquality-alt": "$1 jóváhagyott oldal, $2 csak korrektúrázott oldal és $3 nem korrektúrázott oldal",
