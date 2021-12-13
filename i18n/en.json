@@ -14,6 +14,7 @@
 	"proofreadpage_index": "Index",
 	"proofreadpage_index_expected": "Error: Index expected",
 	"proofreadpage_nosuch_index": "Error: No such index",
+	"proofreadpage_nosuch_index_category": "Page transclusions that refer to missing Index pages",
 	"proofreadpage_nosuch_file": "Error: No such file",
 	"proofreadpage_indexdupetext": "Pages cannot be listed more than once on an index page.",
 	"proofreadpage_nologin": "Not logged in",
