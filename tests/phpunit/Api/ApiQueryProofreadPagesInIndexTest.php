@@ -26,7 +26,7 @@ class ApiQueryProofreadPagesInIndexTest extends ApiTestCase {
 	}
 
 	private function addArticle( string $title, $newContent ) {
-		$page = WikiPage::factory( Title::newFromText( $title ) );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( Title::newFromText( $title ) );
 		$status = $page->doUserEditContent(
 			$newContent,
 			$this->getTestSysop()->getUser(),
