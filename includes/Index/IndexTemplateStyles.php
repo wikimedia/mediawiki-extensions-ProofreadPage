@@ -2,6 +2,8 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @license GPL-2.0-or-later
  *
@@ -75,7 +77,8 @@ class IndexTemplateStyles {
 		if ( $cssTitle && $cssTitle->exists() ) {
 			// if this is a normal redirect, follow it, because TS will not
 			// do that for the final page
-			$cssTitle = \WikiPage::factory( $cssTitle )->getRedirectTarget() ?: $cssTitle;
+			$cssTitle = MediaWikiServices::getInstance()->getWikiPageFactory()
+				->newFromTitle( $cssTitle )->getRedirectTarget() ?: $cssTitle;
 
 			$ts_attribs = [
 				"src" => $cssTitle->getFullText()
