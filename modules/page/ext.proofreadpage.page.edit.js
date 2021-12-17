@@ -245,7 +245,7 @@
 	 * @param {boolean} [horizontal] Use horizontal layout, inverts if undefined
 	 */
 	function toggleLayout( horizontal ) {
-		var newHeight, setActive;
+		var setActive;
 
 		var wasLayoutHorizontal = isLayoutHorizontal;
 		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
@@ -263,38 +263,21 @@
 		var idToInitialize;
 
 		if ( !isLayoutHorizontal ) {
-			if ( $imgContHorizontal ) {
-				$imgContHorizontal.hide();
-			}
-
-			// Switch CSS widths and heights back to the default side-by-size layout.
-			$imgContVertical
-				.css( {
-					width: imgWidth,
-					height: imgHeight
-				} )
-				.show();
-
-			$wpTextbox.css( { height: '' } );
-
 			idToInitialize = 'prp-page-image-openseadragon-vertical';
 		} else {
 			if ( !$imgContHorizontal ) {
 				$imgContHorizontal = $( '<div>' )
+					.addClass( 'prp-page-image-openseadragon-horizontal' )
 					.attr( 'id', 'prp-page-image-openseadragon-horizontal' )
 					.insertBefore( $editForm );
 			}
-
-			$imgContVertical.hide();
-			$imgContHorizontal.show();
-
-			newHeight = $( window ).height() / 2.7 + 'px';
-			$imgContHorizontal.css( { height: newHeight } );
-
-			$wpTextbox.css( { height: newHeight } );
-
 			idToInitialize = 'prp-page-image-openseadragon-horizontal';
 		}
+
+		// Record current layout status on both layout elements, for CSS convenience.
+		var $layoutParts = $imgContHorizontal.add( $editForm.find( '.prp-page-container' ) );
+		$layoutParts.toggleClass( 'prp-layout-is-vertical', !isLayoutHorizontal );
+		$layoutParts.toggleClass( 'prp-layout-is-horizontal', isLayoutHorizontal );
 
 		ensureImageZoomInitialization( idToInitialize );
 
@@ -609,6 +592,8 @@
 
 		if ( $imgContVertical === undefined ) {
 			$imgContVertical = $( '<div>' )
+				// We'd rather not have the ID, but OSD requires it.
+				.addClass( 'prp-page-image-openseadragon-vertical' )
 				.attr( 'id', 'prp-page-image-openseadragon-vertical' )
 				.appendTo( '.prp-page-image' );
 		}
