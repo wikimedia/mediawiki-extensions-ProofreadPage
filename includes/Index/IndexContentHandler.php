@@ -80,7 +80,7 @@ class IndexContentHandler extends TextContentHandler {
 	private function buildParser() {
 		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$parser->startExternalParse(
-			null, ParserOptions::newCanonical( 'canonical' ), Parser::OT_PLAIN
+			null, ParserOptions::newFromAnon(), Parser::OT_PLAIN
 		);
 		return $parser;
 	}
