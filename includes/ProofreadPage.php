@@ -230,7 +230,11 @@ class ProofreadPage {
 	public static function onOutputPageParserOutput(
 		OutputPage $outputPage, ParserOutput $parserOutput
 	) {
-		if ( $outputPage->getTitle()->inNamespace( NS_MAIN ) ) {
+		$title = $outputPage->getTitle();
+
+		// Some wikis have the main page in NS 0. Avoid adding index-specific info to this page, as
+		// the main page doesn't specfically relate to any one Index (T298023)
+		if ( $title->inNamespace( NS_MAIN ) && !$title->isMainPage() ) {
 			$context = Context::getDefaultContext();
 			$modifier = new TranslusionPagesModifier(
 				$context->getPageQualityLevelLookup(),
