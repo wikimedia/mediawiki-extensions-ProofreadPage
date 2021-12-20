@@ -77,7 +77,7 @@
 	"proofreadpage-button-toggle-layout-label": "Fulotoci na tsaye/kai kai ce",
 	"proofreadpage-pageinfo-status": "Matsayin ingancin rubutu",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Gyara fiye da daya <jerin shafin /> aka angano a cikin source din rubutu wiki.",
-	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Baby <jerin shafi /> angano tags",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Baby <pagelist /> angano tags",
 	"proofreadpage-pagelist-parsing-error-php": "Wannan matsalan anhadu dashi ne lokacin ana duba jerin shafin a karshe, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Angano wani matsala da baa yi tsammani ba. Kayi hakuri ka fadama wannan ya kirkiro wannan matsalan .Wikipedia.org tare da gyara",
 	"proofreadpage-pagelist-dialog-title": "Gayaran jerin shafi don $1",
