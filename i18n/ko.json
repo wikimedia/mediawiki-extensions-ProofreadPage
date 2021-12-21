@@ -29,6 +29,7 @@
 	"proofreadpage_index": "색인",
 	"proofreadpage_index_expected": "오류: 색인이 필요함",
 	"proofreadpage_nosuch_index": "오류: 해당 색인이 없음",
+	"proofreadpage_nosuch_index_category": "존재하지 않는 색인 문서를 가리키는 문서 끼워넣기",
 	"proofreadpage_nosuch_file": "오류: 해당 파일이 없음",
 	"proofreadpage_indexdupetext": "페이지는 색인 문서에 두 번 이상 수록될 수 없습니다.",
 	"proofreadpage_nologin": "로그인하지 않음",

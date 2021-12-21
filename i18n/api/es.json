@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aleator",
 			"Fitoschido",
 			"Macofe"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "El título del índice \"$1\" no es válido.",
 	"apihelp-query+proofread-description": "Devuelve información acerca del estado actual de revisión de las páginas dadas.",
 	"apihelp-query+proofread-summary": "Devuelve información sobre el estado de corrección de pruebas de las páginas especificadas.",
 	"apihelp-query+proofread-example-1": "Devolver el estado de revisión de las páginas en el espacio de nombres 250",
@@ -12,5 +14,12 @@
 	"apihelp-query+proofreadinfo-summary": "Obtener información sobre la configuración de la extensión ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Qué propiedades de corrección se obtendrán:\n;namespaces: información sobre los espacios de nombres \"{{ns:Page}}\" y \"{{ns:Index}}\".\n;qualitylevels: lista de niveles de calidad de corrección.",
 	"apihelp-query+proofreadinfo-example-1": "Devolver la información predeterminada",
-	"apihelp-query+proofreadinfo-example-3": "Devolver la información del espacio de nombres"
+	"apihelp-query+proofreadinfo-example-3": "Devolver la información del espacio de nombres",
+	"apihelp-query+proofreadpagesinindex-description": "Lista las páginas de un determinado índice",
+	"apihelp-query+proofreadpagesinindex-summary": "Lista las páginas de un determinado índice",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Limita el número de páginas que se devolverán.",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "El ID de página de la página de Índice del cual conseguir página",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Qué propiedades se obtendrán para cada página",
+	"apihelp-query+proofreadpagesinindex-param-title": "El título de la página de Índice del cual conseguir páginas",
+	"apihelp-query+proofreadpagesinindex-example-1": "Devolver la información predeterminada"
 }

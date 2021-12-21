@@ -4,6 +4,7 @@
 			"Aleator"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "Títol d'índex \"$1\" invàlid.",
 	"apihelp-query+proofread-description": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
 	"apihelp-query+proofread-summary": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
 	"apihelp-query+proofread-example-1": "Retorna l'estat de revisió de les pàgines de l'espai de noms 250",
@@ -11,5 +12,12 @@
 	"apihelp-query+proofreadinfo-summary": "Retorna informació sobre la configuració de l'extensió ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quines propietats de revisió obtenir:\n;namespaces:Informació sobre els espais de nom \" {{ns:Page}} \" i \" {{ns:Index}} \".\n;qualitylevels:Llista de nivells de qualitat de les revisions.",
 	"apihelp-query+proofreadinfo-example-1": "Retorna la informació per defecte",
-	"apihelp-query+proofreadinfo-example-3": "Retorna informació de l'espai de noms"
+	"apihelp-query+proofreadinfo-example-3": "Retorna informació de l'espai de noms",
+	"apihelp-query+proofreadpagesinindex-description": "Llista les pàgines d'un determinat Índex",
+	"apihelp-query+proofreadpagesinindex-summary": "Llista les pàgines d'un determinat Índex",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Limita quantes pàgines seran retornades",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "L'ID de pàgina de la pàgina d'índex del qual aconseguir pàgines",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Quines propietats aconseguir per cada pàgina",
+	"apihelp-query+proofreadpagesinindex-param-title": "El títol de la pàgina d'Índex del qual aconseguir pàgines",
+	"apihelp-query+proofreadpagesinindex-example-1": "Retorna la informació per defecte"
 }
