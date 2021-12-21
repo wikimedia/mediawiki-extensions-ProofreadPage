@@ -183,7 +183,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	protected function buildFileList() {
 		$backend = new FSFileBackend( [
 			'name' => 'localtesting',
-			'wikiId' => wfWikiID(),
+			'wikiId' => WikiMap::getCurrentWikiId(),
 			'containerPaths' => [ 'data' => __DIR__ . '/../data/media/' ]
 		] );
 		$fileRepo = new FileRepo( [
