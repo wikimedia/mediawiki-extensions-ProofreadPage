@@ -38,6 +38,8 @@
 	"proofreadpage_nologin": "No has accedido",
 	"proofreadpage_nologintext": "Debes haber [[Special:UserLogin|iniciado sesión]] para modificar el estado de corrección de las páginas.",
 	"proofreadpage_notallowedtext": "No tienes permitido cambiar el estado de corrección de esta página.",
+	"proofreadpage_pagesnotallowed": "Error: La etiqueta pages no puede ser utilizada en los espacios de nombre Página: ni Índice:",
+	"proofreadpage_pagelistnotallowed": "Error: La etiqueta pagelist sólo puede ser utilizada en el espacio de nombres Índice:",
 	"proofreadpage_dataconfig_badformatted": "Error en la configuración de datos",
 	"proofreadpage_dataconfig_badformattedtext": "El formato de JSON de la página [[Mediawiki:Proofreadpage index data config]] no es válido.",
 	"proofreadpage_number_expected": "Error: se esperaba un valor numérico",
@@ -138,5 +140,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Calidad de corrección",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Calidad de corrección",
 	"proofreadpage-index-field-category-label": "Categorías",
-	"proofreadpage-index-edit-category-help": "Las categorías se añaden sin el prefijo «Categoría:» y separadas por plecas «|»."
+	"proofreadpage-index-edit-category-help": "Las categorías se añaden sin el prefijo «Categoría:» y separadas por plecas «|».",
+	"tag-proofreadpage-quality0": "Sin texto",
+	"tag-proofreadpage-quality1": "No corregida",
+	"tag-proofreadpage-quality2": "Problemática",
+	"tag-proofreadpage-quality3": "Corregido",
+	"tag-proofreadpage-quality4": "Validada",
+	"tag-proofreadpage-quality0-description": "Modificaciones que cambiaron la calidad de la página a \"Sin texto\"",
+	"tag-proofreadpage-quality1-description": "Modificaciones que cambiaron la calidad de la página a \"No corregida\"",
+	"tag-proofreadpage-quality2-description": "Modificaciones que cambiaron la calidad de la página a \"Problemática\"",
+	"tag-proofreadpage-quality3-description": "Modificaciones que cambiaron la calidad de la página a \"Corregido\"",
+	"tag-proofreadpage-quality4-description": "Modificaciones que cambiaron la calidad de la página a \"Validado\""
 }
