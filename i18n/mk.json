@@ -18,6 +18,7 @@
 	"proofreadpage_index": "Показател",
 	"proofreadpage_index_expected": "Грешка: се очекува показател",
 	"proofreadpage_nosuch_index": "Грешка: нема таков показател",
+	"proofreadpage_nosuch_index_category": "Превметнувања во страници кои се однесуваат на отсутни индексни страници",
 	"proofreadpage_nosuch_file": "Грешка: нема таква податотека",
 	"proofreadpage_indexdupetext": "Страниците не можат да се наведуваат на показателот повеќе од еднаш по страница",
 	"proofreadpage_nologin": "Не сте најавени",
