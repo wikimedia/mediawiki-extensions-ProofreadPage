@@ -240,7 +240,7 @@ title=Test
 <div class="prp-pages-output">
 <p>Title -- <a href="/wiki/Author:Me" title="Author:Me">Author:Me</a>
 {{{from}}} -- {{{to}}}
-<a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a> -- {{{next}}}
+{{{prev}}} -- {{{next}}}
 </p>
 </div>
 !! end
@@ -253,7 +253,7 @@ pages: recursion
 <div class="prp-pages-output">
 <p>Title -- <a href="/wiki/Author:Me" title="Author:Me">Author:Me</a>
 {{{from}}} -- {{{to}}}
-<a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a> -- {{{next}}}
+{{{prev}}} -- {{{next}}}
 </p>
 </div>
 !! end
@@ -269,7 +269,7 @@ title=Test
 <div class="prp-pages-output">
 <p>Lorem Ipsum -- <a href="/wiki/Author:Me" title="Author:Me">Author:Me</a>
 {{{from}}} -- {{{to}}}
-<a href="/wiki/Test/Chapter_3" title="Test/Chapter 3">Chapter 3</a> -- {{{next}}}
+{{{prev}}} -- {{{next}}}
 </p>
 </div>
 !! end

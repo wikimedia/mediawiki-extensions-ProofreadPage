@@ -306,13 +306,15 @@ class PagesTagParser {
 					break;
 				}
 			}
-			if ( $i > 0 ) {
-				$prev = '[[' . $indexLinks[$i - 1]->getTarget()->getFullText() . '|' .
-					$indexLinks[$i - 1]->getLabel() . ']]';
-			}
-			if ( $i + 1 < $indexLinksCount ) {
-				$next = '[[' . $indexLinks[$i + 1]->getTarget()->getFullText() . '|' .
-					$indexLinks[$i + 1]->getLabel() . ']]';
+			if ( isset( $current ) ) {
+				if ( $i > 0 ) {
+					$prev = '[[' . $indexLinks[$i - 1]->getTarget()->getFullText() . '|' .
+						$indexLinks[$i - 1]->getLabel() . ']]';
+				}
+				if ( $i + 1 < $indexLinksCount ) {
+					$next = '[[' . $indexLinks[$i + 1]->getTarget()->getFullText() . '|' .
+						$indexLinks[$i + 1]->getLabel() . ']]';
+				}
 			}
 			if ( isset( $args['current'] ) ) {
 				$current = $args['current'];
