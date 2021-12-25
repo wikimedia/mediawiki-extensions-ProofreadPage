@@ -57,6 +57,8 @@ class TranslusionPagesModifier {
 	}
 
 	/**
+	 * Add the source index and its statistics to the output page (if appropriate)
+	 *
 	 * @param ParserOutput $parserOutput
 	 * @param OutputPage $outputPage
 	 */
