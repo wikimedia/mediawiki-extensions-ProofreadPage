@@ -70,6 +70,7 @@
 	"proofreadpage_index_listofpages": "Κατάλογος σελίδων",
 	"proofreadpage_image_message": "Σύνδεσμος προς τη σελίδα ευρετηρίου",
 	"proofreadpage_page_status": "Κατάσταση σελίδας",
+	"proofreadpage_page_status_logged_out": "Κατάσταση Σελίδας (μόνο εγγεγραμμένοι χρήστες μπορούν να την ορίσουν)",
 	"proofreadpage_js_attributes": "Συγγραφέας Τίτλος Έτος Εκδότης",
 	"proofreadpage_index_attributes": "Συγγραφέας\n\nΤίτλος\n\nΈτος|Έτος έκδοσης\n\nΕκδότης\n\nΠηγή\n\nΕικόνα|Εξώφυλλο\n\nΣελίδες||20\n\nΣχόλια||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|σελίδα|σελίδες}}",

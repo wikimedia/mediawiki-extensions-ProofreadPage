@@ -72,6 +72,7 @@
 	"proofreadpage_index_listofpages": "Lista över sidor",
 	"proofreadpage_image_message": "Länk till indexsidan",
 	"proofreadpage_page_status": "Sidans status",
+	"proofreadpage_page_status_logged_out": "Sidans status (kan endast ändras av inloggade användare)",
 	"proofreadpage_js_attributes": "Författare Titel År Utgivare",
 	"proofreadpage_index_attributes": "Författare\nTitel\nÅr|Utgivningsår\nUtgivare\nKälla\nBild|Omslagsbild\nSidor||20\nAnmärkningar||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|sida|sidor}}",
@@ -88,6 +89,8 @@
 	"proofreadpage-group-zoom": "Zooma",
 	"proofreadpage-group-other": "Övrigt",
 	"proofreadpage-button-reset-zoom-label": "Återställ zoom",
+	"proofreadpage-button-rotate-left-label": "Rotera vänster",
+	"proofreadpage-button-rotate-right-label": "Rotera höger",
 	"proofreadpage-button-toggle-layout-label": "Vertikal/horisontell layout",
 	"proofreadpage-button-toggle-visibility-label": "Visa/dölj denna sidas sidhuvud och sidfot",
 	"proofreadpage-button-zoom-in-label": "Zooma in",
@@ -111,5 +114,10 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturläsningskvalitet",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturläsningskvalitet",
-	"proofreadpage-index-field-category-label": "Kategorier"
+	"proofreadpage-index-field-category-label": "Kategorier",
+	"tag-proofreadpage-quality0": "Utan text",
+	"tag-proofreadpage-quality1": "Inte korrekturläst",
+	"tag-proofreadpage-quality2": "Problematiskt",
+	"tag-proofreadpage-quality3": "Korrekturläst",
+	"tag-proofreadpage-quality4": "Validerad"
 }
