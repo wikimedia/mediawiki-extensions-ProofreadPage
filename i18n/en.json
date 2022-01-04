@@ -145,9 +145,9 @@
 	"tag-proofreadpage-quality2": "Problematic",
 	"tag-proofreadpage-quality3": "Proofread",
 	"tag-proofreadpage-quality4": "Validated",
-	"tag-proofreadpage-quality0-description": "Edits that changed page quality to \"Without text\"",
-	"tag-proofreadpage-quality1-description": "Edits that changed page quality to \"Not proofread\"",
-	"tag-proofreadpage-quality2-description": "Edits that changed page quality to \"Problematic\"",
-	"tag-proofreadpage-quality3-description": "Edits that changed page quality to \"Proofread\"",
-	"tag-proofreadpage-quality4-description": "Edits that changed page quality to \"Validated\""
+	"tag-proofreadpage-quality0-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality4}}\""
 }
