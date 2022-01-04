@@ -126,5 +126,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Έλεγχος ποιότητας",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Έλεγχος ποιότητας",
 	"proofreadpage-index-field-category-label": "Κατηγορίες",
-	"proofreadpage-index-edit-category-help": "Οι κατηγορίες γράφονται χωρίς το πρόθεμα «Κατηγορία:» και διαχωρίζονται με τον χαρακτήρα «|»."
+	"proofreadpage-index-edit-category-help": "Οι κατηγορίες γράφονται χωρίς το πρόθεμα «Κατηγορία:» και διαχωρίζονται με τον χαρακτήρα «|».",
+	"tag-proofreadpage-quality0": "Χωρίς κείμενο",
+	"tag-proofreadpage-quality1": "Δεν έχει γίνει τυπογραφικός έλεγχος",
+	"tag-proofreadpage-quality2": "Προβληματική",
+	"tag-proofreadpage-quality3": "Έχει γίνει τυπογραφικός έλεγχος",
+	"tag-proofreadpage-quality4": "Εγκρίθηκε"
 }
