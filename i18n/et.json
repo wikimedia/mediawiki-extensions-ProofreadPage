@@ -114,5 +114,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrektuuri olek",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektuuri olek",
 	"proofreadpage-index-field-category-label": "Kategooriad",
-	"proofreadpage-index-edit-category-help": "Kategooriad kirjutatuna ilma eesliiteta Kategooria: ja eraldatuna märgiga \"|\" (püstkriips)."
+	"proofreadpage-index-edit-category-help": "Kategooriad kirjutatuna ilma eesliiteta Kategooria: ja eraldatuna märgiga \"|\" (püstkriips).",
+	"tag-proofreadpage-quality0": "Ilma tekstita",
+	"tag-proofreadpage-quality1": "Õigsus tõendamata",
+	"tag-proofreadpage-quality2": "Probleemne",
+	"tag-proofreadpage-quality3": "Õigsus tõendatud‎",
+	"tag-proofreadpage-quality4": "Heakskiidetud",
+	"tag-proofreadpage-quality0-description": "Muudatused, millega määrati lehekülje olekuks \"Ilma tekstita\"",
+	"tag-proofreadpage-quality1-description": "Muudatused, millega määrati lehekülje olekuks \"Õigsus tõendamata\"",
+	"tag-proofreadpage-quality2-description": "Muudatused, millega määrati lehekülje olekuks \"Probleemne\"",
+	"tag-proofreadpage-quality3-description": "Muudatused, millega määrati lehekülje olekuks \"Õigsus tõendatud‎\"",
+	"tag-proofreadpage-quality4-description": "Muudatused, millega määrati lehekülje olekuks \"Heakskiidetud\""
 }
