@@ -48,20 +48,6 @@
 		$img,
 
 		/**
-		 * image height
-		 *
-		 * @type {string}
-		 */
-		imgHeight,
-
-		/**
-		 * image width
-		 *
-		 * @type {string}
-		 */
-		imgWidth,
-
-		/**
 		 * The main edit box
 		 *
 		 * @type {jQuery}
@@ -260,25 +246,14 @@
 			viewer = null;
 		}
 
-		var idToInitialize;
-
-		if ( !isLayoutHorizontal ) {
-			idToInitialize = 'prp-page-image-openseadragon-vertical';
-		} else {
-			if ( !$imgContHorizontal ) {
-				$imgContHorizontal = $( '<div>' )
-					.addClass( 'prp-page-image-openseadragon-horizontal' )
-					.attr( 'id', 'prp-page-image-openseadragon-horizontal' )
-					.insertBefore( $editForm );
-			}
-			idToInitialize = 'prp-page-image-openseadragon-horizontal';
-		}
-
 		// Record current layout status on both layout elements, for CSS convenience.
 		var $layoutParts = $imgContHorizontal.add( $editForm.find( '.prp-page-container' ) );
 		$layoutParts.toggleClass( 'prp-layout-is-vertical', !isLayoutHorizontal );
 		$layoutParts.toggleClass( 'prp-layout-is-horizontal', isLayoutHorizontal );
 
+		var idToInitialize = isLayoutHorizontal ?
+			'prp-page-image-openseadragon-horizontal' :
+			'prp-page-image-openseadragon-vertical';
 		ensureImageZoomInitialization( idToInitialize );
 
 		// eslint-disable-next-line no-jquery/no-global-selector
@@ -598,17 +573,22 @@
 				.appendTo( '.prp-page-image' );
 		}
 
+		if ( $imgContHorizontal === undefined ) {
+			$imgContHorizontal = $( '<div>' )
+				.addClass( 'prp-page-image-openseadragon-horizontal' )
+				.attr( 'id', 'prp-page-image-openseadragon-horizontal' )
+				.insertBefore( $editForm );
+		}
+
 		if ( $img === undefined ) {
 			// eslint-disable-next-line no-jquery/no-global-selector
 			$img = $( '.prp-page-image' ).find( 'img' );
-		}
 
-		if ( imgHeight === undefined ) {
-			imgHeight = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'height' );
-		}
-
-		if ( imgWidth === undefined ) {
-			imgWidth = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'width' );
+			if ( $img.length > 0 ) {
+				var imgHeight = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'height' );
+				// eslint-disable-next-line no-jquery/no-global-selector
+				$( '#prp-page-image-openseadragon-vertical' ).css( 'height', imgHeight );
+			}
 		}
 
 		if ( $wpTextbox === undefined ) {
