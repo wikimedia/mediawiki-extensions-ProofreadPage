@@ -30,10 +30,6 @@
 
 /* Vertical side-by-side mode. */
 
-.prp-page-image-openseadragon-vertical {
-	height: 100%;
-}
-
 .prp-page-image-openseadragon-horizontal.prp-layout-is-vertical {
 	display: none;
 }
