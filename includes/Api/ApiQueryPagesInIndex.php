@@ -95,7 +95,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 			if ( count( $pages ) >= $limit ) {
 				// We've reached the one extra which shows that there are
 				// additional pages to be had. Stop here...
-				$this->setContinueEnumParameter( 'from', $pagination->getPageNumber( $pageTitle ) );
+				$this->setContinueEnumParameter( 'continue', $pagination->getPageNumber( $pageTitle ) );
 				break;
 			}
 
@@ -109,7 +109,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 					null, $pageInfo );
 
 				if ( !$fits ) {
-					$this->setContinueEnumParameter( 'from', $pagination->getPageNumber( $pageTitle ) );
+					$this->setContinueEnumParameter( 'continue', $pagination->getPageNumber( $pageTitle ) );
 					break;
 				}
 			}

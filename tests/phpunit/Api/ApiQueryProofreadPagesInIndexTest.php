@@ -161,6 +161,6 @@ class ApiQueryProofreadPagesInIndexTest extends ApiTestCase {
 		];
 
 		$this->assertEquals( $expected, $apiResult[ 0 ][ 'query' ][ 'proofreadpagesinindex' ] );
-		$this->assertSame( 3, $apiResult[ 0 ][ 'continue' ][ 'prppiifrom' ] );
+		$this->assertSame( 3, $apiResult[ 0 ][ 'continue' ][ 'prppiicontinue' ] );
 	}
 }
