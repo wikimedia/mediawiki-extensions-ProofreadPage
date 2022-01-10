@@ -124,7 +124,8 @@
 		},
 		"ext.proofreadpage.page.navigation": {
 			"skinStyles": {
-				"vector": "page/ext.proofreadpage.page.navigation.vector.less"
+				"vector": "page/ext.proofreadpage.page.navigation.vector.less",
+				"vector-2022": "page/ext.proofreadpage.page.navigation.vector.less"
 			}
 		},
 		"ext.proofreadpage.article": {
