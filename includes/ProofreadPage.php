@@ -410,7 +410,7 @@ class ProofreadPage {
 					$prevText = wfMessage( 'proofreadpage_prevpage' )->plain();
 					$prevUrl = self::getLinkUrlForTitle( $prevTitle );
 					$firstLinks['proofreadPagePrevLink'] = [
-						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
+						'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ] ) ) ? 'icon' : '',
 						'href' => $prevUrl,
 						'text' => $prevText,
 						'title' => $prevText
@@ -442,7 +442,7 @@ class ProofreadPage {
 					$nextText = wfMessage( 'proofreadpage_nextpage' )->plain();
 					$nextUrl = self::getLinkUrlForTitle( $nextTitle );
 					$firstLinks['proofreadPageNextLink'] = [
-						'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
+						'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ] ) ) ? 'icon' : '',
 						'href' => $nextUrl,
 						'text' => $nextText,
 						'title' => $nextText
@@ -475,7 +475,7 @@ class ProofreadPage {
 			$links['namespaces'] = array_merge( $firstLinks, $links['namespaces'] );
 
 			$links['namespaces']['proofreadPageIndexLink'] = [
-				'class' => ( $skin->getSkinName() === 'vector' ) ? 'icon' : '',
+				'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ] ) ) ? 'icon' : '',
 				'href' => $indexTitle->getLinkURL(),
 				'text' => wfMessage( 'proofreadpage_index' )->plain(),
 				'title' => wfMessage( 'proofreadpage_index' )->plain()
