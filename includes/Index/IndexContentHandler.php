@@ -515,18 +515,18 @@ class IndexContentHandler extends TextContentHandler {
 	protected function fillParserOutput(
 		Content $content,
 		ContentParseParams $cpoParams,
-		ParserOutput &$output
+		ParserOutput &$parserOutput
 	) {
 		$title = Title::castFromPageReference( $cpoParams->getPage() );
 		$parserOptions = $cpoParams->getParserOptions();
 
 		if ( $content instanceof IndexRedirectContent ) {
-			$output->addLink( $content->getRedirectTarget() );
+			$parserOutput->addLink( $content->getRedirectTarget() );
 			if ( $cpoParams->getGenerateHtml() ) {
-				$output->setText( Article::getRedirectHeaderHtml(
+				$parserOutput->setText( Article::getRedirectHeaderHtml(
 					$title->getPageLanguage(), $content->getRedirectChain()
 				) );
-				$output->addModuleStyles( 'mediawiki.action.view.redirectPage' );
+				$parserOutput->addModuleStyles( [ 'mediawiki.action.view.redirectPage' ] );
 			}
 		} else {
 			'@phan-var IndexContent $content';
@@ -560,16 +560,16 @@ class IndexContentHandler extends TextContentHandler {
 			$text = '__NOEDITSECTION__' . $text;
 
 			// We do the final rendering
-			$output = MediaWikiServices::getInstance()->getParser()
+			$parserOutput = MediaWikiServices::getInstance()->getParser()
 				// @phan-suppress-next-line PhanTypeMismatchArgument
 				->parse( $text, $title, $parserOptions, true, true, $cpoParams->getRevId() );
-			$output->addTemplate( $templateTitle,
+			$parserOutput->addTemplate( $templateTitle,
 				$templateTitle->getArticleID(),
 				$templateTitle->getLatestRevID()
 			);
 
 			foreach ( $content->getCategories() as $category ) {
-				$output->addCategory( $category->getDBkey(), $category->getText() );
+				$parserOutput->addCategory( $category->getDBkey(), $category->getText() );
 			}
 		}
 	}

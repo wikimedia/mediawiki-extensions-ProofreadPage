@@ -520,13 +520,13 @@ class PageContentHandler extends TextContentHandler {
 	protected function fillParserOutput(
 		Content $content,
 		ContentParseParams $cpoParams,
-		ParserOutput &$output
+		ParserOutput &$parserOutput
 	) {
 		'@phan-var PageContent $content';
 		$title = Title::castFromPageReference( $cpoParams->getPage() );
 		'@phan-var Title $title';
 		if ( $content->isRedirect() ) {
-			$output = $this->wikitextContentHandler->getParserOutput( $content->getBody(), $cpoParams );
+			$parserOutput = $this->wikitextContentHandler->getParserOutput( $content->getBody(), $cpoParams );
 			return;
 		}
 
@@ -550,15 +550,15 @@ class PageContentHandler extends TextContentHandler {
 		}
 		$wikitextContent = new WikitextContent( $wikitext );
 
-		$output = $this->wikitextContentHandler->getParserOutput( $wikitextContent, $cpoParams );
-		$output->addCategory(
+		$parserOutput = $this->wikitextContentHandler->getParserOutput( $wikitextContent, $cpoParams );
+		$parserOutput->addCategory(
 			Title::makeTitleSafe(
 				NS_CATEGORY,
 				$content->getLevel()->getLevelCategoryName()
 			)->getDBkey(),
 			$title->getText()
 		);
-		$output->setPageProperty( 'proofread_page_quality_level', $content->getLevel()->getLevel() );
+		$parserOutput->setPageProperty( 'proofread_page_quality_level', $content->getLevel()->getLevel() );
 
 		// html container
 		$html = Html::openElement( 'div',
@@ -567,26 +567,26 @@ class PageContentHandler extends TextContentHandler {
 				->title( $title )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
-			$output->getText( [ 'enableSectionEditLinks' => false ] ) .
+			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] ) .
 			Html::closeElement( 'div' );
-		$output->setText( $html );
+		$parserOutput->setText( $html );
 
 		$pageDisplayHandler = new PageDisplayHandler( $context );
 		$jsVars = $pageDisplayHandler->getPageJsConfigVars( $title, $content );
-		$output->addJsConfigVars( $jsVars );
+		$parserOutput->addJsConfigVars( $jsVars );
 
 		// add modules
-		$output->addModuleStyles( 'ext.proofreadpage.base' );
+		$parserOutput->addModuleStyles( [ 'ext.proofreadpage.base' ] );
 
 		// add scan image to dependencies
-		$output->addImage( strtok( $title->getDBkey(), '/' ) );
+		$parserOutput->addImage( strtok( $title->getDBkey(), '/' ) );
 
 		// add the styles.css as a dependency (even if it doesn't exist yet)
 		if ( $indexTs !== null ) {
 			$stylesPage = $indexTs->getTemplateStylesPage();
 
 			if ( $stylesPage ) {
-				$output->addTemplate(
+				$parserOutput->addTemplate(
 					$stylesPage,
 					$stylesPage->getArticleID(),
 					$stylesPage->getLatestRevID() );
