@@ -550,7 +550,8 @@ class PageContentHandler extends TextContentHandler {
 		}
 		$wikitextContent = new WikitextContent( $wikitext );
 
-		$output = $this->wikitextContentHandler->getParserOutput( $wikitextContent, $cpoParams );
+		$output = new ParserOutput();
+		$this->wikitextContentHandler->fillParserOutputInternal( $wikitextContent, $cpoParams, $output );
 		$output->addCategory(
 			Title::makeTitleSafe(
 				NS_CATEGORY,
