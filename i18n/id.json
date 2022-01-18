@@ -13,7 +13,8 @@
 			"Rachmat04",
 			"Sonic Speedy",
 			"William Surya Permana",
-			"Mnam23"
+			"Mnam23",
+			"Daud I.F. Argana"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -78,6 +79,7 @@
 	"proofreadpage_source": "Sumber",
 	"proofreadpage_source_message": "Versi pindai yang digunakan untuk membuat naskah ini",
 	"proofreadpage_styles": "Gaya",
+	"proofreadpage_styles_message": "Gaya CSS yang diterapkan kepada teks ini",
 	"action-pagequality": "memodifikasi lencana kualitas halaman",
 	"right-pagequality": "Memodifikasi lencana kualitas halaman",
 	"action-pagequality-admin": "menyunting tanpa batasan pada lencana kualitas halaman",
@@ -101,11 +103,13 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Tak ada tag <pagelist /> terdeteksi.",
 	"proofreadpage-pagelist-parsing-error-php": "Galat berikut ini ditemukan saat mengolah tag daftar halaman di backend, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Galat tak terduga terdeteksi. Harap laporkan galat ini ke phabricator.wikimedia.org dengan log dari konsol.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Gagal mengambil daftar halaman dikarenakan masalah jaringan, tolong coba lagi",
 	"proofreadpage-pagelist-dialog-title": "Menyunting daftar halaman untuk $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Sisipkan Perubahan",
 	"proofreadpage-pagelist-imageurlnotfound": "Sumber gambar mini untuk pindaian ini tidak dapat ditemukan.",
 	"proofreadpage-pagelist-type": "Jenis Nomor Halaman: $1",
 	"proofreadpage-pagelist-scan-number": "Nomor pindaian: $1",
+	"proofreadpage-pagelist-display-number": "Nomor tampilan: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Halaman ini telah ditetapkan nomor halamannya: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Bantuan",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Jenis nomor tidak mengizinkan terjadinya perubahan penomoran. Nilai apa pun dalam bidang ini akan diabaikan saat memperbarui.",
