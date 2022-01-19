@@ -13,7 +13,8 @@
 			"Rachmat.Wahidi",
 			"Rachmat04",
 			"Sonic Speedy",
-			"William Surya Permana"
+			"William Surya Permana",
+			"Daud I.F. Argana"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -32,6 +33,8 @@
 	"proofreadpage_nologin": "Belum masuk log",
 	"proofreadpage_nologintext": "Anda harus [[Special:UserLogin|masuk log]] untuk mengubah status ujibaca halaman.",
 	"proofreadpage_notallowedtext": "Anda tidak diperbolehkan untuk mengubah status uji baca halaman ini.",
+	"proofreadpage_pagesnotallowed": "Galat: Tag halaman tidak bisa digunakan di ruang nama Page: dan Index:",
+	"proofreadpage_pagelistnotallowed": "Galat: Tag daftar halaman hanya bisa digunakan di ruang nama Index:",
 	"proofreadpage_dataconfig_badformatted": "Kekutu dalam konfigurasi data",
 	"proofreadpage_dataconfig_badformattedtext": "Halaman [[Mediawiki:Proofreadpage index data config]] tidak dalam format JSON yang benar.",
 	"proofreadpage_number_expected": "Galat: Nilai angka diperlukan",
@@ -78,6 +81,7 @@
 	"proofreadpage_source": "Sumber",
 	"proofreadpage_source_message": "Versi pindai yang digunakan untuk membuat naskah ini",
 	"proofreadpage_styles": "Gaya",
+	"proofreadpage_styles_message": "Gaya CSS yang diterapkan kepada teks ini",
 	"action-pagequality": "memodifikasi lencana kualitas halaman",
 	"right-pagequality": "Memodifikasi lencana kualitas halaman",
 	"action-pagequality-admin": "menyunting tanpa batasan pada lencana kualitas halaman",
@@ -101,11 +105,13 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Tak ada tag <pagelist /> terdeteksi.",
 	"proofreadpage-pagelist-parsing-error-php": "Galat berikut ini ditemukan saat mengolah tag daftar halaman di backend, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Galat tak terduga terdeteksi. Harap laporkan galat ini ke phabricator.wikimedia.org dengan log dari konsol.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Gagal mengambil daftar halaman dikarenakan masalah jaringan, tolong coba lagi",
 	"proofreadpage-pagelist-dialog-title": "Menyunting daftar halaman untuk $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Sisipkan Perubahan",
 	"proofreadpage-pagelist-imageurlnotfound": "Sumber gambar mini untuk pindaian ini tidak dapat ditemukan.",
 	"proofreadpage-pagelist-type": "Jenis Nomor Halaman: $1",
 	"proofreadpage-pagelist-scan-number": "Nomor pindaian: $1",
+	"proofreadpage-pagelist-display-number": "Nomor tampilan: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Halaman ini telah ditetapkan nomor halamannya: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Bantuan",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Jenis nomor tidak mengizinkan terjadinya perubahan penomoran. Nilai apa pun dalam bidang ini akan diabaikan saat memperbarui.",
@@ -129,5 +135,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kualitas uji baca",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kualitas uji baca",
 	"proofreadpage-index-field-category-label": "Kategori",
-	"proofreadpage-index-edit-category-help": "Kategori ditulis tanpa awalan Category: dan dipisahkan oleh karakter pipa \"|\"."
+	"proofreadpage-index-edit-category-help": "Kategori ditulis tanpa awalan Category: dan dipisahkan oleh karakter pipa \"|\".",
+	"tag-proofreadpage-quality0": "Tanpa teks",
+	"tag-proofreadpage-quality1": "Belum diuji baca",
+	"tag-proofreadpage-quality2": "Bermasalah",
+	"tag-proofreadpage-quality3": "Telah diuji baca",
+	"tag-proofreadpage-quality4": "Tervalidasi",
+	"tag-proofreadpage-quality0-description": "Suntingan yang mengubah kualitas halaman menjadi \"Tanpa teks\"",
+	"tag-proofreadpage-quality1-description": "Suntingan yang mengubah kualitas halaman menjadi \"Belum diuji baca\"",
+	"tag-proofreadpage-quality2-description": "Suntingan yang mengubah kualitas halaman menjadi \"Bermasalah\"",
+	"tag-proofreadpage-quality3-description": "Suntingan yang mengubah kualitas halaman menjadi \"Telah diuji baca\"",
+	"tag-proofreadpage-quality4-description": "Suntingan yang mengubah kualitas halaman menjadi \"Tervalidasi\""
 }
