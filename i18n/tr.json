@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Can",
 			"Erdemaslancan",
 			"Erkan Yilmaz",
 			"Hedda",
@@ -92,6 +93,8 @@
 	"proofreadpage-group-zoom": "Yakınlaştır",
 	"proofreadpage-group-other": "Diğer",
 	"proofreadpage-button-reset-zoom-label": "Özgün boyut",
+	"proofreadpage-button-rotate-left-label": "Sola döndür",
+	"proofreadpage-button-rotate-right-label": "Sağa döndür",
 	"proofreadpage-button-toggle-layout-label": "Yatay/dikey düzen",
 	"proofreadpage-button-toggle-visibility-label": "Bu sayfanın üstbilgisini ve altbilgisini göster/gizle",
 	"proofreadpage-button-zoom-in-label": "Yakınlaştır",
