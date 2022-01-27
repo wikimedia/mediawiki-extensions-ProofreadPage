@@ -68,7 +68,6 @@ class PagelistTagParser {
 		}
 		$count = $pagination->getNumberOfPages();
 
-		$return = '';
 		$from = $args['from'] ?? 1;
 		$to = $args['to'] ?? $count;
 		if ( !is_int( $from ) ) {
@@ -86,35 +85,21 @@ class PagelistTagParser {
 		if ( !FilePagination::isValidInterval( $from, $to, $count ) ) {
 			return $this->formatError( 'proofreadpage_invalid_interval' );
 		}
-
+		$return = [];
 		for ( $i = $from; $i <= $to; $i++ ) {
+			$pageNumberExpression = "";
 			$pageNumber = $pagination->getDisplayedPageNumber( $i );
 			$mode = $pageNumber->getDisplayMode();
-			$view = $pageNumber->getFormattedPageNumber( $title->getPageLanguage() );
 
-			if (
-				$mode === PageNumber::DISPLAY_HIGHROMAN ||
-				$mode === PageNumber::DISPLAY_ROMAN
+			if ( $mode === PageNumber::DISPLAY_HIGHROMAN
+				|| $mode === PageNumber::DISPLAY_ROMAN
 			) {
-				$view = '&#160;' . $view;
+				$pageNumberExpression .= '&#160;';
 			}
+			$pageNumberExpression .= $pageNumber->getFormattedPageNumber( $title->getPageLanguage() );
 
-			$paddingSize = strlen( (string)$count ) - mb_strlen( $view );
-			if ( $paddingSize > 0 && $mode === PageNumber::DISPLAY_NORMAL &&
-				$pageNumber->isNumeric()
-			) {
-				$txt = '<span style="visibility:hidden;">';
-				$pad = $title->getPageLanguage()->formatNumNoSeparators( 0 );
-				for ( $j = 0; $j < $paddingSize; $j++ ) {
-					$txt .= $pad;
-				}
-				$view = $txt . '</span>' . $view;
-			}
 			$pageTitle = $pagination->getPageTitle( $i );
-
-			if ( $pageNumber->isEmpty() || !$title ) {
-				$return .= $view . ' ';
-			} else {
+			if ( !$pageNumber->isEmpty() && $title ) {
 				// Adds the page as a dependency in order to make sure that the Index: page is
 				// purged if the status of the Page: page changes
 				$this->parser->getOutput()->addTemplate(
@@ -123,17 +108,25 @@ class PagelistTagParser {
 					$pageTitle->getLatestRevID()
 				);
 				// TODO: use linker?
-				$return .= '[[' . $pageTitle->getPrefixedText() . '|' . $view . ']] ';
+				$pageNumberExpression = '[[' . $pageTitle->getPrefixedText() . '|' . $pageNumberExpression . ']]';
 			}
+
+			$return[] = Html::rawElement(
+				'span',
+				[ 'class' => 'prp-index-pagelist-page' ],
+				$pageNumberExpression
+			);
 		}
 
 		$this->parser->getOutput()->addImage(
 			$image->getTitle()->getDBkey(), $image->getTimestamp(), $image->getSha1()
 		);
 
-		return Html::rawElement( 'span',
+		return Html::rawElement(
+			'span',
 			[ 'class' => 'prp-index-pagelist' ],
-			trim( $this->parser->recursiveTagParse( $return ) ) );
+			$this->parser->recursiveTagParse( implode( " ", $return ) )
+		);
 	}
 
 	/**
