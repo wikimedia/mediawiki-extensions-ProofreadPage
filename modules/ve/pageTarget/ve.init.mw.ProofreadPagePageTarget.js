@@ -215,9 +215,12 @@ ve.init.mw.ProofreadPagePageTarget.prototype.surfaceReady = function () {
 /**
  * @inheritdoc
  */
-ve.init.mw.ProofreadPagePageTarget.prototype.getHtml = function ( newDoc, oldDoc ) {
+ve.init.mw.ProofreadPagePageTarget.prototype.getDocToSave = function () {
+	// Parent method
+	var doc = ve.init.mw.ProofreadPagePageTarget.super.prototype.getDocToSave.call( this );
+
 	var i,
-		wrapperNodes = newDoc.body.querySelectorAll(
+		wrapperNodes = doc.body.querySelectorAll(
 			'article[data-mw-proofreadPage-wrapper], ' +
 			'header[data-mw-proofreadPage-wrapper], ' +
 			'section[data-mw-proofreadPage-wrapper], ' +
@@ -235,8 +238,7 @@ ve.init.mw.ProofreadPagePageTarget.prototype.getHtml = function ( newDoc, oldDoc
 		wrapperNodes[ i ].parentNode.removeChild( wrapperNodes[ i ] );
 	}
 
-	// Parent method
-	return ve.init.mw.ProofreadPagePageTarget.super.prototype.getHtml.call( this, newDoc, oldDoc );
+	return doc;
 };
 
 /**
