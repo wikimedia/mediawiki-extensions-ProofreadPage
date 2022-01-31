@@ -27,6 +27,7 @@
 	"tooltip-ca-nstab-index": "Переглянути індекс книги",
 	"indexpages": "Список індексових сторінок",
 	"pageswithoutscans": "Сторінки без сканувань",
+	"prefs-proofread-pagenamespace": "Опції інтерфейсу вичитки",
 	"proofreadpage_desc": "Дозволяє легко порівнювати текст і відскановане зображення оригіналу",
 	"proofreadpage_image": "зображення",
 	"proofreadpage_index": "Індекс",
