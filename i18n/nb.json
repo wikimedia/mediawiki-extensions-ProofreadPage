@@ -26,6 +26,8 @@
 	"proofreadpage_nologin": "Ikke innlogget",
 	"proofreadpage_nologintext": "Du må være [[Special:UserLogin|innlogget]] for å kunne forandre status på korrekturlesningen på sider.",
 	"proofreadpage_notallowedtext": "Du har ikke rettigheter til å endre korrekturlesningen på denne siden.",
+	"proofreadpage_pagesnotallowed": "Feil: pages-taggen kan ikke brukes i navnerommene Page: eller Index:",
+	"proofreadpage_pagelistnotallowed": "Feil: pagelist-taggen kan kun brukes i Index:-navnerommet",
 	"proofreadpage_dataconfig_badformatted": "Programfeil i datakonfigurasjonen",
 	"proofreadpage_dataconfig_badformattedtext": "Siden [[Mediawiki:Proofreadpage index data config]] er ikke velformatert JSON.",
 	"proofreadpage_number_expected": "Feil: Numerisk verdi forventet",
@@ -126,5 +128,15 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesingskvalitet",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesingskvalitet",
 	"proofreadpage-index-field-category-label": "Kategorier",
-	"proofreadpage-index-edit-category-help": "Kategorier skrives uten Kategori:-prefikset og atskilles med tegnet «|»."
+	"proofreadpage-index-edit-category-help": "Kategorier skrives uten Kategori:-prefikset og atskilles med tegnet «|».",
+	"tag-proofreadpage-quality0": "Uten tekst",
+	"tag-proofreadpage-quality1": "Ikke korrekturlest",
+	"tag-proofreadpage-quality2": "Problematisk",
+	"tag-proofreadpage-quality3": "Korrekturlest",
+	"tag-proofreadpage-quality4": "Validert",
+	"tag-proofreadpage-quality0-description": "Redigeringer som endret sidekvalitet til «Uten tekst»",
+	"tag-proofreadpage-quality1-description": "Redigeringer som endret sidekvalitet til «Ikke korrekturlest»",
+	"tag-proofreadpage-quality2-description": "Redigeringer som endret sidekvalitet til «Problematisk»",
+	"tag-proofreadpage-quality3-description": "Redigeringer som endret sidekvalitet til «Korrekturlest»",
+	"tag-proofreadpage-quality4-description": "Redigeringer som endret sidekvalitet til «Validert»"
 }
