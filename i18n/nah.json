@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Akapochtli",
-			"Fluence"
+			"Fluence",
+			"Languaeditor"
 		]
 	},
 	"proofreadpage_image": "īxiptli",
 	"proofreadpage_nextpage": "Niman zāzanilli",
 	"proofreadpage_prevpage": "Achto zāzanilli",
-	"proofreadpage_specialpage_label_key": "Tlatemoliztli"
+	"proofreadpage_specialpage_label_key": "Xiktemo"
 }
