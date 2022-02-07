@@ -8,3 +8,7 @@
 	/* stylelint-disable-next-line plugin/no-unsupported-browser-features */
 	resize: both;
 }
+
+.prp-pagelist-dialog-top-panel .prp-index-pagelist-page {
+	display: inline;
+}

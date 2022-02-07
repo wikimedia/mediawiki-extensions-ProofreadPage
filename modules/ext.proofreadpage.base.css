@@ -52,3 +52,9 @@
 	padding: 0;
 	height: 0.6em;
 }
+
+.prp-index-pagelist-page {
+	text-align: right;
+	min-width: 2.125em;
+	display: inline-block;
+}
