@@ -4,6 +4,7 @@
 			"Likibp"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "目録のタイトル「$1」が無効です。",
 	"apihelp-query+proofread-description": "指定したページにおける現在の校正の状態に関する情報を返します。",
 	"apihelp-query+proofread-summary": "指定したページにおける現在の校正の状態に関する情報を返します。",
 	"apihelp-query+proofread-example-1": "名前空間250のページにおける校正の状態を返します",
