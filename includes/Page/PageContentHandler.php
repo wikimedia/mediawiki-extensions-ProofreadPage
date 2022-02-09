@@ -574,7 +574,9 @@ class PageContentHandler extends TextContentHandler {
 
 		$pageDisplayHandler = new PageDisplayHandler( $context );
 		$jsVars = $pageDisplayHandler->getPageJsConfigVars( $title, $content );
-		$parserOutput->addJsConfigVars( $jsVars );
+		foreach ( $jsVars as $key => $value ) {
+			$parserOutput->setJsConfigVar( $key, $value );
+		}
 
 		// add modules
 		$parserOutput->addModuleStyles( [ 'ext.proofreadpage.base' ] );
