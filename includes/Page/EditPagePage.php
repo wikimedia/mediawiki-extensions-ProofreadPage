@@ -60,21 +60,6 @@ class EditPagePage extends EditPage {
 	/**
 	 * @inheritDoc
 	 */
-	protected function isSectionEditSupported() {
-		// sections and forms don't mix
-		return false;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function isSupportedContentModel( $modelId ) {
-		return $modelId === CONTENT_MODEL_PROOFREAD_PAGE;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
 	protected function showContentForm() {
 		$out = $this->context->getOutput();
 

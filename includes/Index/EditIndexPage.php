@@ -40,21 +40,6 @@ class EditIndexPage extends EditPage {
 	/**
 	 * @inheritDoc
 	 */
-	protected function isSectionEditSupported() {
-		// sections and forms don't mix
-		return false;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function isSupportedContentModel( $modelId ) {
-		return $modelId === CONTENT_MODEL_PROOFREAD_INDEX;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
 	protected function showContentForm() {
 		$pageLang = $this->getTitle()->getPageLanguage();
 		$out = $this->context->getOutput();
