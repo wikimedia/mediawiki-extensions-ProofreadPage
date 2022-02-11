@@ -37,6 +37,8 @@ class SpecialProofreadPages extends QueryPage {
 	/** @var bool|null */
 	protected $suppressSqlOffset;
 	/** @var string|null */
+	protected $queryFilter;
+	/** @var string|null */
 	protected $queryOrder;
 	/** @var bool|null */
 	protected $sortAscending;
@@ -69,6 +71,7 @@ class SpecialProofreadPages extends QueryPage {
 
 		$this->searchList = null;
 		$this->searchTerm = $request->getText( 'key' );
+		$this->queryFilter = $request->getText( 'filter' );
 		$this->queryOrder = $request->getText( 'order' );
 		$this->sortAscending = $request->getBool( 'sortascending' );
 		$this->suppressSqlOffset = false;
@@ -188,6 +191,21 @@ class SpecialProofreadPages extends QueryPage {
 				'size' => 50,
 				'default' => $this->searchTerm,
 			],
+			'filter' => [
+				'type' => 'select',
+				'name' => 'filter',
+				'id' => 'filter',
+				'label-message' => 'proofreadpage_specialpage_label_filterby',
+				'default' => $this->queryFilter,
+				'options' => [
+					$this->msg( 'proofreadpage_specialpage_filterby_all' )->text() => 'all',
+					$this->msg( 'proofreadpage_specialpage_filterby_incomplete' )->text() => 'incomplete',
+					$this->msg( 'proofreadpage_specialpage_filterby_proofread' )->text() => 'proofread',
+					$this->msg( 'proofreadpage_specialpage_filterby_proofread_or_validated' )->text() =>
+						'proofreadOrValidated',
+					$this->msg( 'proofreadpage_specialpage_filterby_validated' )->text() => 'validated'
+				]
+			],
 			'order' => [
 				'type' => 'select',
 				'name' => 'order',
@@ -236,9 +254,22 @@ class SpecialProofreadPages extends QueryPage {
 					// If not pages were found do not return results
 					$conds[] = '1=0';
 				}
-			} else {
-				$conds = null;
 			}
+		}
+
+		switch ( $this->queryFilter ) {
+			case 'incomplete':
+				$conds[] = 'pr_count - pr_q0 - pr_q3 - pr_q4 > 0';
+				break;
+			case 'proofread':
+				$conds[] = 'pr_count > 0 and pr_q3 > 0 and pr_count - pr_q0 - pr_q3 - pr_q4 = 0';
+				break;
+			case 'proofreadOrValidated':
+				$conds[] = 'pr_count > 0 and pr_count - pr_q0 - pr_q3 - pr_q4 = 0';
+				break;
+			case 'validated':
+				$conds[] = 'pr_count > 0 and pr_count - pr_q0 - pr_q4 = 0';
+				break;
 		}
 
 		return [
