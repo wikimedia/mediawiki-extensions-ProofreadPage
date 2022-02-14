@@ -3,6 +3,7 @@
 		"authors": [
 			"Albertas",
 			"Eitvys200",
+			"GustasMarc",
 			"Manvydasz",
 			"Matasg",
 			"Vogone"
@@ -52,6 +53,12 @@
 	"proofreadpage_quality4_message": "Šis puslapis buvo patvirtintas",
 	"proofreadpage_index_status": "Indekso statusas",
 	"proofreadpage_index_size": "Puslapių skaičius",
+	"proofreadpage_specialpage_filterby_all": "Visi",
+	"proofreadpage_specialpage_filterby_incomplete": "Nepabaikta",
+	"proofreadpage_specialpage_filterby_proofread": "Rašybos tikrinimas",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "Tikrinta",
+	"proofreadpage_specialpage_filterby_validated": "Patvirtintas",
+	"proofreadpage_specialpage_label_filterby": "Filtruoti pagal:",
 	"proofreadpage_specialpage_label_orderby": "Rikiuoti pagal:",
 	"proofreadpage_specialpage_label_key": "Paieška:",
 	"proofreadpage_specialpage_label_sortascending": "Rikiuoti didėjimo tvarka",

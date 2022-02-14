@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chadyka"
+		]
+	},
+	"apierror-proofreadpage-invalidindex": "Няслушная назва індэксу «$1».",
+	"apihelp-query+proofread-description": "Вяртае інфармацыю пра актуальны статус вычыткі дадзеных старонак.",
+	"apihelp-query+proofread-summary": "Вяртае інфармацыю пра актуальны статус вычыткі дадзеных старонак.",
+	"apihelp-query+proofread-example-1": "Вяртае статус вычыткі старонак у прасторы назваў 250",
+	"apihelp-query+proofreadinfo-description": "Вяртае інфармацыю пра налады пашырэння ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Вяртае інфармацыю пра канфігурацыю пашырэння ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Якія ўласцівасьці вычыткі выдаваць:\n;namespaces:Інфармацыя пра прасторы назваў «{{ns:Page}}» і «{{ns:Index}}».\n;qualitylevels:Спіс узроўняў якасці вычыткі.",
+	"apihelp-query+proofreadinfo-example-1": "Вярнуць дапомную інфармацыю",
+	"apihelp-query+proofreadinfo-example-3": "Вярнуць інфармацыю пра прастору назваў",
+	"apihelp-query+proofreadpagesinindex-description": "Спіс старонак у дадзеным індэксе",
+	"apihelp-query+proofreadpagesinindex-summary": "Спіс старонак у дадзеным індэксе",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Абмежаваць колькі старонак будзе вернута",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Ідэнтыфікатар старонкі індэксу для якога атрымаць старонкі",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Якія ўласцівасці атрымаць для кожнай старонкі",
+	"apihelp-query+proofreadpagesinindex-param-title": "Назва старонкі індэксу для якога атрымаць старонкі",
+	"apihelp-query+proofreadpagesinindex-example-1": "Вярнуць інфармацыю па змоўчанні"
+}

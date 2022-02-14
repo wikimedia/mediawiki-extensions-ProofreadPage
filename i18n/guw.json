@@ -1,10 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Atej2*",
 			"Misteld",
 			"Samatics"
 		]
 	},
+	"proofreadpage_specialpage_filterby_all": "Popo lẹpo",
+	"proofreadpage_specialpage_filterby_incomplete": "Ma pé",
+	"proofreadpage_specialpage_filterby_validated": "Ko yin hinhẹn lodo",
 	"proofreadpage-group-other": "Devo",
 	"proofreadpage-button-reset-zoom-label": "Ojlẹ he eyin sọn bẹjẹeji",
 	"proofreadpage-pagelist-dialog-cancel": "Hònupla"
