@@ -76,7 +76,7 @@
 	"proofreadpage_index_listofpages": "Elenco di pagine",
 	"proofreadpage_image_message": "Collegamento alla pagina indice",
 	"proofreadpage_page_status": "Status della pagina",
-	"proofreadpage_page_status_logged_out": "Stato della pagina (possono cambiarlo solo gli utenti loggati)",
+	"proofreadpage_page_status_logged_out": "Stato della pagina (possono cambiarlo solo gli utenti che hanno effettuato l'accesso)",
 	"proofreadpage_js_attributes": "Autore Titolo Anno Editore",
 	"proofreadpage_index_attributes": "Autore\nTitolo\nAnno|Anno di pubblicazione\nEditore\nFonte\nImmagine|Immagine di copertina\nPagine||20\nNote||10",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pagina|pagine}}",

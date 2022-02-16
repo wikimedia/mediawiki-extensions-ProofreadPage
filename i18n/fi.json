@@ -63,6 +63,8 @@
 	"proofreadpage_index_size": "Sivumäärä",
 	"proofreadpage_pages_to_validate": "Hyväksyttävien sivujen määrä",
 	"proofreadpage_pages_to_proofread_or_validate": "Oikoluettavien tai hyväksyttävien sivujen määrä",
+	"proofreadpage_specialpage_filterby_all": "Kaikki",
+	"proofreadpage_specialpage_label_filterby": "Suodata:",
 	"proofreadpage_specialpage_label_orderby": "Järjestä:",
 	"proofreadpage_specialpage_label_key": "Etsi:",
 	"proofreadpage_specialpage_label_sortascending": "Lajittele nousevassa järjestyksessä",
