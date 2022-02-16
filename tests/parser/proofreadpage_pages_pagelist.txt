@@ -395,7 +395,7 @@ title="Index:Thumb.png"
 !! wikitext
 <pagelist />
 !! html
-<p><span class="prp-index-pagelist"><a href="/index.php?title=Page:Thumb.png&amp;action=edit&amp;redlink=1" class="new" title="Page:Thumb.png (page does not exist)">1</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/index.php?title=Page:Thumb.png&amp;action=edit&amp;redlink=1" class="new" title="Page:Thumb.png (page does not exist)">1</a></span></span>
 </p>
 !! end
 
@@ -407,7 +407,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist />
 !! html
-<p><span class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">1</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a> <a href="/wiki/Page:LoremIpsum.djvu/3" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/3">3</a> <a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">1</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/3" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/3">3</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a></span> <span class="prp-index-pagelist-page"><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></span></span>
 </p>
 !! end
 
@@ -419,7 +419,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist from=4/>
 !! html
-<p><span class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a></span> <span class="prp-index-pagelist-page"><a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></span></span>
 </p>
 !! end
 
@@ -431,7 +431,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist to=2/>
 !! html
-<p><span class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">1</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">1</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></span></span>
 </p>
 !! end
 
@@ -503,7 +503,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist 1to1=roman 2to2=highroman to=2/>
 !! html
-<p><span class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">&#160;i</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">&#160;II</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">&#160;i</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">&#160;II</a></span></span>
 </p>
 !! end
 
@@ -515,7 +515,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist 1=- 2to3=- to=3/>
 !! html
-<p><span class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">-</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">-</a> <a href="/wiki/Page:LoremIpsum.djvu/3" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/3">-</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">-</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">-</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/3" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/3">-</a></span></span>
 </p>
 !! end
 
@@ -527,7 +527,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist 1=3 to=2/>
 !! html
-<p><span class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">3</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">4</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">3</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">4</a></span></span>
 </p>
 !! end
 
@@ -539,7 +539,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist 1=empty to=2/>
 !! html
-<p><span class="prp-index-pagelist">1 <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page">1</span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></span></span>
 </p>
 !! end
 
@@ -552,7 +552,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist to=2/>
 !! html
-<p><span class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">૧</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">૨</a></span>
+<p><span class="prp-index-pagelist"><span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">૧</a></span> <span class="prp-index-pagelist-page"><a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">૨</a></span></span>
 </p>
 !! end
 
