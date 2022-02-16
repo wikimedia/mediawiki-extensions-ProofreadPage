@@ -70,6 +70,8 @@
 	"proofreadpage_source": "Fonte",
 	"proofreadpage_source_message": "Edission scanerizà doparà par inserir sto testo",
 	"proofreadpage_styles": "Stiłi",
+	"proofreadpage_styles_message": "Stili CSS aplicà a sto testo",
+	"action-pagequality": "canbiar el livèl de qualidà de la pagina",
 	"right-pagequality": "Canbiar l'indicador de qualità de la pagina",
 	"right-pagequality-admin": "Canbiamenti sensa limiti a l'eticheta de qualità de la pagina",
 	"proofreadpage-section-tools": "Strumenti de riletura",
@@ -81,6 +83,9 @@
 	"proofreadpage-button-zoom-in-label": "Zoom avanti",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizontale",
 	"proofreadpage-pageinfo-status": "Stato de coresion",
+	"proofreadpage-pagelist-input-preview-button": "Anteprima de la lista de le pagine",
+	"proofreadpage-pagelist-dialog-update-button": "Agiorna la lista de le pagine",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Juto",
 	"proofreadpage-preferences-showheaders-label": "Mostra l'intestasion e 'l pie de pàgina durante ƚa modifega inte'l namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Dopara el layout orixontałe có te modifeghi inte'l namespace {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina rileta|pagine rilete}}, $2 {{PLURAL:$2|pagina solo trascrita|pagine solo trascrite}} e $3 {{PLURAL:$3|pagina inconpleta|pagine inconplete}}",
@@ -92,5 +97,11 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità de riletura",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità de riletura"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità de riletura",
+	"proofreadpage-index-field-category-label": "Categorie",
+	"tag-proofreadpage-quality0": "Sensa testo",
+	"tag-proofreadpage-quality1": "Da trascrivar",
+	"tag-proofreadpage-quality2": "Da sistemar",
+	"tag-proofreadpage-quality3": "Trascrita",
+	"tag-proofreadpage-quality4": "Rilèta"
 }

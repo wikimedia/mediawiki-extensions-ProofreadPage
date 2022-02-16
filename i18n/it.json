@@ -9,7 +9,8 @@
 			"F. Cosoleto",
 			"Gianfranco",
 			"Macofe",
-			"Stefano-c"
+			"Stefano-c",
+			"Ciampix"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -28,6 +29,8 @@
 	"proofreadpage_nologin": "Accesso non effettuato",
 	"proofreadpage_nologintext": "Per modificare lo stato di correzione delle pagine, è necessario aver effettuato [[Special:UserLogin|l'accesso]].",
 	"proofreadpage_notallowedtext": "Non sei autorizzato a modificare lo stato di correzione di questa pagina.",
+	"proofreadpage_pagesnotallowed": "Errore: Il tag pages non può essere utilizzato nei namespace Pagina: e Indice:",
+	"proofreadpage_pagelistnotallowed": "Errore: Il tag pagelist può essere usato solo nel namespace Indice:",
 	"proofreadpage_dataconfig_badformatted": "Problema nella configurazione dei dati",
 	"proofreadpage_dataconfig_badformattedtext": "La pagina [[Mediawiki:Proofreadpage index data config]] non è in un formato JSON corretto.",
 	"proofreadpage_number_expected": "Errore: previsto valore numerico",
@@ -98,6 +101,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Non è stato trovato nessun tag <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Si è verificato il seguente errore analizzando l'elenco delle pagine: $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "È stato rilevato un'errore inaspettato. Segnala questo errore in phabricator.wikimedia.org insieme ai registri della consolle.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Impossibile ottenere l'elenco di pagine per problemi di rete, per favore prova ancora",
 	"proofreadpage-pagelist-dialog-title": "Modifica la lista delle pagine di $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Inserisci modifiche",
 	"proofreadpage-pagelist-imageurlnotfound": "L'immagine di questa scansione non è stata trovata.",
@@ -130,7 +134,12 @@
 	"proofreadpage-index-edit-category-help": "Le categorie sono scritte senza il prefisso Categoria: e sono separate dal carattere \"|\".",
 	"tag-proofreadpage-quality0": "Senza testo",
 	"tag-proofreadpage-quality1": "Da correggere",
+	"tag-proofreadpage-quality2": "Problematica",
 	"tag-proofreadpage-quality3": "Corretta",
+	"tag-proofreadpage-quality4": "Riletta",
+	"tag-proofreadpage-quality0-description": "Modifiche che hanno cambiato la qualità della pagina a \"Senza testo\"",
 	"tag-proofreadpage-quality1-description": "Modifiche che hanno cambiato la qualità della pagina in \"Da correggere\"",
-	"tag-proofreadpage-quality3-description": "Modifiche che hanno cambiato la qualità della pagina in \"Corretta\""
+	"tag-proofreadpage-quality2-description": "Modifiche che hanno cambiato la qualità della pagina a \"Problematica\"",
+	"tag-proofreadpage-quality3-description": "Modifiche che hanno cambiato la qualità della pagina in \"Corretta\"",
+	"tag-proofreadpage-quality4-description": "Modifiche che hanno cambiato la qualità della pagina a \"Riletta\""
 }
