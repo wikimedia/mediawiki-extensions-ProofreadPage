@@ -173,6 +173,7 @@ class SpecialProofreadPages extends QueryPage {
 	public function linkParameters() {
 		return [
 			'key' => $this->searchTerm,
+			'filter' => $this->queryFilter,
 			'order' => $this->queryOrder,
 			'sortascending' => $this->sortAscending
 		];
