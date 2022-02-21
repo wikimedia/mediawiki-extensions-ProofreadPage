@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"CoderSI",
+			"Malikxan",
 			"Sociologist"
 		]
 	},
 	"proofreadpage_quality1_category": "Tuzatilmadi",
 	"proofreadpage_quality3_category": "Koʻzdan kechirildi",
+	"proofreadpage_index_size": "Sahifalar soni",
+	"proofreadpage_specialpage_filterby_all": "Barchasi",
+	"proofreadpage_index_listofpages": "Sahifalar roʻyxati",
 	"proofreadpage-section-tools": "Tuzatish asboblari",
 	"proofreadpage-group-other": "Boshqa"
 }

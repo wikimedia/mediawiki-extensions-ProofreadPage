@@ -25,6 +25,7 @@
 	"proofreadpage_quality0_summary": "Senza testu",
 	"proofreadpage_quality1_message": "Sta pàggina nun fu curriggiuta",
 	"proofreadpage_index_size": "Nùmmiru di pàggini",
+	"proofreadpage_specialpage_filterby_all": "Tutti",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pàggina|pàggini}}",
 	"proofreadpage-group-other": "Àutru",
 	"proofreadpage-pagelist-dialog-cancel": "Annulla",
