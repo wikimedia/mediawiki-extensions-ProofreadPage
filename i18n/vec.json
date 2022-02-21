@@ -69,6 +69,7 @@
 	"proofreadpage_specialpage_searcherrortext": "El motor de riserca nó 'l funsiona. Se scuxemo pa'l incoveniente.",
 	"proofreadpage_source": "Fonte",
 	"proofreadpage_source_message": "Edission scanerizà doparà par inserir sto testo",
+	"action-pagequality": "canbiar el livèl de qualidà de la pagina",
 	"right-pagequality": "Canbiar l'indicador de qualità de la pagina",
 	"right-pagequality-admin": "Canbiamenti sensa limiti a l'eticheta de qualità de la pagina",
 	"proofreadpage-section-tools": "Strumenti de riletura",
@@ -80,6 +81,7 @@
 	"proofreadpage-button-zoom-in-label": "Zoom avanti",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizontale",
 	"proofreadpage-pageinfo-status": "Stato de coresion",
+	"proofreadpage-pagelist-input-preview-button": "Anteprima de la lista de le pagine",
 	"proofreadpage-preferences-showheaders-label": "Mostra l'intestasion e 'l pie de pàgina durante ƚa modifega inte'l namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Dopara el layout orixontałe có te modifeghi inte'l namespace {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pagina rileta|pagine rilete}}, $2 {{PLURAL:$2|pagina solo trascrita|pagine solo trascrite}} e $3 {{PLURAL:$3|pagina inconpleta|pagine inconplete}}",
@@ -91,5 +93,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità de riletura",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità de riletura"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità de riletura",
+	"proofreadpage-index-field-category-label": "Categorie"
 }
