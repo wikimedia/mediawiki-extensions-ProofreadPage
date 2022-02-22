@@ -9,7 +9,8 @@
 			"F. Cosoleto",
 			"Gianfranco",
 			"Macofe",
-			"Stefano-c"
+			"Stefano-c",
+			"Ciampix"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -98,6 +99,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Non è stato trovato nessun tag <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Si è verificato il seguente errore analizzando l'elenco delle pagine: $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "È stato rilevato un'errore inaspettato. Segnala questo errore in phabricator.wikimedia.org insieme ai registri della consolle.",
+	"proofreadpage-pagelist-parsing-error-network-issues": "Impossibile ottenere l'elenco di pagine per problemi di rete, per favore prova ancora",
 	"proofreadpage-pagelist-dialog-title": "Modifica la lista delle pagine di $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Inserisci modifiche",
 	"proofreadpage-pagelist-imageurlnotfound": "L'immagine di questa scansione non è stata trovata.",
