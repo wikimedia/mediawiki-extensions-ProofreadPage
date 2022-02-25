@@ -3,6 +3,7 @@
 		"authors": [
 			"Abdeaitali",
 			"Anass Sedrati",
+			"Ideophagous",
 			"SADIQUI",
 			"Tifratin"
 		]
@@ -18,7 +19,7 @@
 	"proofreadpage_index": "فهرس",
 	"proofreadpage_index_expected": "غلط:فهرس جاي",
 	"proofreadpage_nosuch_index": "غلط: ماكاينش فهرس بحال هاكا",
-	"proofreadpage_nosuch_file": "غلط: ماكاينش بحال هاد لملف",
+	"proofreadpage_nosuch_file": "فالطة: ماكاين تا فيشي بحال هادا",
 	"proofreadpage_indexdupetext": "مايمكنش للصفحات تبان كثر من مرة فالصفحة د لفهرس.",
 	"proofreadpage_nologin": "مامكونيكطيش",
 	"proofreadpage_nologintext": "خاص تكون [[Special:UserLogin|مكونيكطي]] باش تقدر تعدًل حالة تدقيق الصفحات.",
