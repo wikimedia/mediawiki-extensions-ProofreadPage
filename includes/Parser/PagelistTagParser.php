@@ -3,6 +3,7 @@
 namespace ProofreadPage\Parser;
 
 use Html;
+use HtmlArmor;
 use Parser;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
@@ -10,6 +11,7 @@ use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;
 use ProofreadPage\Pagination\PageNumber;
 use ProofreadPage\Pagination\SimpleFilePagination;
+use ProofreadPage\ProofreadPage;
 
 /**
  * @license GPL-2.0-or-later
@@ -99,6 +101,7 @@ class PagelistTagParser {
 			$pageNumberExpression .= $pageNumber->getFormattedPageNumber( $title->getPageLanguage() );
 
 			$pageTitle = $pagination->getPageTitle( $i );
+			$pageNumberExpression = $this->parser->recursiveTagParse( $pageNumberExpression );
 			if ( !$pageNumber->isEmpty() && $title ) {
 				// Adds the page as a dependency in order to make sure that the Index: page is
 				// purged if the status of the Page: page changes
@@ -107,15 +110,16 @@ class PagelistTagParser {
 					$pageTitle->getArticleID(),
 					$pageTitle->getLatestRevID()
 				);
-				// TODO: use linker?
-				$pageNumberExpression = '[[' . $pageTitle->getPrefixedText() . '|' . $pageNumberExpression . ']]';
-			}
 
-			$return[] = Html::rawElement(
-				'span',
-				[ 'class' => 'prp-index-pagelist-page' ],
-				$pageNumberExpression
-			);
+				$qualityClass = ProofreadPage::getQualityLevelClassesForTitle( $pageTitle, true );
+				$linkRenderer = $this->parser->getLinkRenderer();
+				$pageNumberExpression = $linkRenderer->makeLink(
+					$pageTitle,
+					new HtmlArmor( $pageNumberExpression ),
+					[ 'class' => 'prp-index-pagelist-page ' . $qualityClass ]
+				);
+			}
+			$return[] = $pageNumberExpression;
 		}
 
 		$this->parser->getOutput()->addImage(
@@ -123,9 +127,9 @@ class PagelistTagParser {
 		);
 
 		return Html::rawElement(
-			'span',
+			'div',
 			[ 'class' => 'prp-index-pagelist' ],
-			$this->parser->recursiveTagParse( implode( " ", $return ) )
+			implode( ' ', $return )
 		);
 	}
 

@@ -37,6 +37,7 @@ use OutputPage;
 use Parser;
 use ParserOutput;
 use ProofreadPage\Index\IndexTemplateStyles;
+use ProofreadPage\Page\DatabasePageQualityLevelLookup;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Page\PageDisplayHandler;
@@ -188,11 +189,10 @@ class ProofreadPage {
 			if ( $pageTitle !== null && $pageTitle->inNamespace( $context->getPageNamespaceId() ) ) {
 				$pageLevel = $pageQualityLevelLookup->getQualityLevelForPageTitle( $pageTitle );
 				if ( $pageLevel !== null ) {
-					$classes = "prp-pagequality-{$pageLevel}";
-					if ( $inIndexNamespace ) {
-						$classes .= " quality{$pageLevel}";
-					}
-					$colours[$pageTitle->getPrefixedDBkey()] = $classes;
+					$colours[$pageTitle->getPrefixedDBkey()] = self::getQualityClassesForQualityLevel(
+							$pageLevel,
+							$inIndexNamespace
+						);
 				}
 			}
 		}
@@ -706,4 +706,33 @@ class ProofreadPage {
 			return;
 		}
 	}
+
+	/**
+	 * @param Title $pageTitle
+	 * @param bool $inIndexNamespace
+	 * @return string
+	 */
+	public static function getQualityLevelClassesForTitle( Title $pageTitle, bool $inIndexNamespace ): string {
+		$dbLookup = new DatabasePageQualityLevelLookup( $pageTitle->getNamespace() );
+		$pageLevel = $dbLookup->getQualityLevelForPageTitle( $pageTitle );
+
+		return self::getQualityClassesForQualityLevel( $pageLevel, $inIndexNamespace );
+	}
+
+	/**
+	 * @param int|null $pageLevel
+	 * @param bool $inIndexNamespace
+	 * @return string
+	 */
+	public static function getQualityClassesForQualityLevel( ?int $pageLevel, bool $inIndexNamespace ): string {
+		$classes = "";
+		if ( $pageLevel !== null ) {
+			$classes = "prp-pagequality-{$pageLevel}";
+			if ( $inIndexNamespace ) {
+				$classes .= " quality{$pageLevel}";
+			}
+		}
+		return $classes;
+	}
+
 }
