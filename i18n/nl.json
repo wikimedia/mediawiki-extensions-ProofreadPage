@@ -84,6 +84,7 @@
 	"proofreadpage-button-zoom-in-label": "Inzoomen",
 	"proofreadpage-button-toggle-layout-label": "Verticale/horizontale vormgeving",
 	"proofreadpage-pageinfo-status": "Controlestatus",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Geen tags <pagelist /> gedetecteerd.",
 	"proofreadpage-pagelist-dialog-insertchanges": "Veranderingen invoegen",
 	"proofreadpage-pagelist-type": "Pagina Nummer Type:$1",
 	"proofreadpage-pagelist-assignedpagenumber": "Aan deze pagina is paginanummer $1 toegekend",
