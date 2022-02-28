@@ -63,6 +63,7 @@
 	"proofreadpage_quality4_message": "이 페이지는 검증되었습니다",
 	"proofreadpage_index_status": "색인 상태",
 	"proofreadpage_index_size": "페이지 수",
+	"proofreadpage_specialpage_filterby_all": "모두",
 	"proofreadpage_specialpage_label_orderby": "정렬 기준:",
 	"proofreadpage_specialpage_label_key": "검색:",
 	"proofreadpage_specialpage_label_sortascending": "오름차순 정렬",

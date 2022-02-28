@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"Adithyavr",
 			"Ansumang",
 			"Jayantanth",
@@ -61,6 +62,7 @@
 	"proofreadpage_index_size": "पृष्ठ संख्या",
 	"proofreadpage_pages_to_validate": "मान्य होने के लिए पृष्ठों की संख्या",
 	"proofreadpage_pages_to_proofread_or_validate": "प्रूफ्रेड या मान्य होने के लिए पृष्ठों की संख्या",
+	"proofreadpage_specialpage_filterby_all": "सभी",
 	"proofreadpage_specialpage_label_orderby": "द्वारा आदेश",
 	"proofreadpage_specialpage_label_key": "खोज",
 	"proofreadpage_specialpage_label_sortascending": "चढ़ते क्रम में क्रमबद्ध करें",
