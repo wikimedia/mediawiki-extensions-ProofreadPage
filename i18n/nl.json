@@ -74,6 +74,7 @@
 	"proofreadpage_specialpage_searcherrortext": "De zoekmachine werkt niet. Excuses voor het ongemak.",
 	"proofreadpage_source": "Bron",
 	"proofreadpage_source_message": "Gescande versie waarop deze tekst is gebaseerd",
+	"proofreadpage_styles": "Stijlen",
 	"right-pagequality": "Kwaliteitsmarkering voor de pagina wijzigen",
 	"proofreadpage-section-tools": "Hulpmiddelen voor controleren",
 	"proofreadpage-group-zoom": "Zoomen",
@@ -84,6 +85,8 @@
 	"proofreadpage-button-zoom-in-label": "Inzoomen",
 	"proofreadpage-button-toggle-layout-label": "Verticale/horizontale vormgeving",
 	"proofreadpage-pageinfo-status": "Controlestatus",
+	"proofreadpage-pagelist-dialog-cancel": "Annuleren",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Geen tags <pagelist /> gedetecteerd.",
 	"proofreadpage-pagelist-dialog-insertchanges": "Veranderingen invoegen",
 	"proofreadpage-pagelist-type": "Pagina Nummer Type:$1",
 	"proofreadpage-pagelist-assignedpagenumber": "Aan deze pagina is paginanummer $1 toegekend",
@@ -99,5 +102,9 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Proefleeskwaliteit",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Proefleeskwaliteit",
 	"proofreadpage-index-field-category-label": "Categorieën",
-	"tag-proofreadpage-quality2": "Problematisch"
+	"tag-proofreadpage-quality0": "Zonder tekst",
+	"tag-proofreadpage-quality1": "Niet proefgelezen",
+	"tag-proofreadpage-quality2": "Problematisch",
+	"tag-proofreadpage-quality3": "Proefgelezen",
+	"tag-proofreadpage-quality4": "Gevalideerd"
 }

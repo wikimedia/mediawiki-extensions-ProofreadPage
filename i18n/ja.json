@@ -31,6 +31,8 @@
 	"proofreadpage_nologin": "ログインしていません",
 	"proofreadpage_nologintext": "ページの校正の状態を変更するには[[Special:UserLogin|ログイン]]する必要があります。",
 	"proofreadpage_notallowedtext": "このページの校正の状態を変更できません。",
+	"proofreadpage_pagesnotallowed": "エラー：pagesタグはPage:およびIndex:名前空間では使用できません",
+	"proofreadpage_pagelistnotallowed": "エラー；pagelistタグはIndex:名前空間のみ使用できます",
 	"proofreadpage_dataconfig_badformatted": "データ構成の欠陥",
 	"proofreadpage_dataconfig_badformattedtext": "ページ[[Mediawiki:Proofreadpage index data config]]は整形式のJSONではありません。",
 	"proofreadpage_number_expected": "エラー：数値が必要です",
@@ -134,6 +136,12 @@
 	"proofreadpage-index-edit-category-help": "カテゴリはカテゴリ:接頭辞を省略して入力し、パイプ記号 \"|\" で区切ります。",
 	"tag-proofreadpage-quality0": "テキストなし",
 	"tag-proofreadpage-quality1": "未校正",
-	"tag-proofreadpage-quality2": "問題あり",
-	"tag-proofreadpage-quality4": "検証済"
+	"tag-proofreadpage-quality2": "問題有",
+	"tag-proofreadpage-quality3": "校正済",
+	"tag-proofreadpage-quality4": "検証済",
+	"tag-proofreadpage-quality0-description": "ページ品質を「テキストなし」に変更した編集",
+	"tag-proofreadpage-quality1-description": "ページ品質を「未校正」に変更した編集",
+	"tag-proofreadpage-quality2-description": "ページ品質を「問題有」に変更した編集",
+	"tag-proofreadpage-quality3-description": "ページ品質を「校正済」に変更した編集",
+	"tag-proofreadpage-quality4-description": "ページ品質を「検証済」に変更した編集"
 }
