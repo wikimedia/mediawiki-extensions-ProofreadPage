@@ -156,7 +156,7 @@ class CustomIndexFieldsParser {
 			$key = strtolower( $varName );
 			if ( array_key_exists( $key, $contentFields ) ) {
 				$values[$varName] = new CustomIndexField(
-					$varName, $contentFields[$key]->getNativeData(), $property
+					$varName, $contentFields[$key]->getText(), $property
 				);
 			} else {
 				$values[$varName] = new CustomIndexField( $varName, '', $property );
