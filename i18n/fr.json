@@ -40,7 +40,7 @@
 	"proofreadpage_nosuch_index": "Erreur : l’index n’a pas été trouvé",
 	"proofreadpage_nosuch_file": "Erreur : le fichier n’a pas été trouvé",
 	"proofreadpage_indexdupetext": "Les pages ne peuvent pas être listées plus d’une fois sur une page d’index.",
-	"proofreadpage_nologin": "Non connecté",
+	"proofreadpage_nologin": "Non connecté(e)",
 	"proofreadpage_nologintext": "Vous devez être [[Special:UserLogin|connecté]] pour modifier le statut de relecture des pages.",
 	"proofreadpage_notallowedtext": "Vous n’êtes pas autorisé à modifier l’état de relecture de cette page.",
 	"proofreadpage_pagesnotallowed": "Erreur : la balise « pages » ne peut pas être utilisée dans les espaces de nom « Page: » et « Index: »",
