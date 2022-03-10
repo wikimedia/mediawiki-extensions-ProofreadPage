@@ -31,6 +31,11 @@
 	flex: 6;
 }
 
+.prp-page-edit-area-label {
+	color: #808080;
+	font-size: 80%;
+}
+
 .prp-edit-area {
 	display: flex;
 	flex-direction: column;
@@ -50,11 +55,6 @@
 
 #editform .prp-page-content { /* stylelint-disable-line selector-max-id */
 	line-height: 1.5em;
-}
-
-.ext-proofreadpage-label {
-	color: #808080;
-	font-size: 80%;
 }
 
 .prp-page-content .CodeMirror {
