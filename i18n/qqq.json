@@ -84,6 +84,7 @@
 	"proofreadpage_index_size": "One of the possible sorts in [[Special:IndexPages]] : number of pages of a book.\n{{Identical|Number of pages}}",
 	"proofreadpage_pages_to_validate": "One of the possible sorts in [[Special:IndexPages]]: number of pages that have been proofread and need to be validated in a book.",
 	"proofreadpage_pages_to_proofread_or_validate": "One of the possible sorts in [[Special:IndexPages]]: number of pages that need to be proofread and/or validated in a book (i.e., all pages except validated and without text).",
+	"proofreadpage_pages_to_proofread": "One of the possible sorts in [[Special:IndexPages]]: number of pages that need to be proofread in a book (i.e., all pages except validated, proofread and without text).",
 	"proofreadpage_specialpage_filterby_all": "Option to view all index pages in [[Special:IndexPages]].\n\n{{Identical|All}}",
 	"proofreadpage_specialpage_filterby_incomplete": "Option to view only incomplete index pages in [[Special:IndexPages]]",
 	"proofreadpage_specialpage_filterby_proofread": "Option to view only proofread index pages in [[Special:IndexPages]]",

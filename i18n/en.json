@@ -52,6 +52,7 @@
 	"proofreadpage_index_size": "Number of pages",
 	"proofreadpage_pages_to_validate": "Number of pages to be validated",
 	"proofreadpage_pages_to_proofread_or_validate": "Number of pages to be proofread or validated",
+	"proofreadpage_pages_to_proofread": "Number of pages to be proofread",
 	"proofreadpage_specialpage_filterby_all": "All",
 	"proofreadpage_specialpage_filterby_incomplete": "Incomplete",
 	"proofreadpage_specialpage_filterby_proofread": "Proofread",

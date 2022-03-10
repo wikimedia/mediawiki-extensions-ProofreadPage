@@ -216,6 +216,7 @@ class SpecialProofreadPages extends QueryPage {
 				'options' => [
 					$this->msg( 'proofreadpage_index_status' )->text() => 'quality',
 					$this->msg( 'proofreadpage_index_size' )->text() => 'size',
+					$this->msg( 'proofreadpage_pages_to_proofread' )->text() => 'toProofread',
 					$this->msg( 'proofreadpage_pages_to_validate' )->text() => 'toValidate',
 					$this->msg( 'proofreadpage_pages_to_proofread_or_validate' )->text() =>
 						'toProofreadOrValidate',
@@ -293,6 +294,8 @@ class SpecialProofreadPages extends QueryPage {
 				return 'pr_count';
 			case 'alpha':
 				return 'page_title';
+			case 'toProofread':
+				return 'pr_count - pr_q4 - pr_q3 - pr_q0';
 			case 'toValidate':
 				return 'pr_q3';
 			case 'toProofreadOrValidate':
