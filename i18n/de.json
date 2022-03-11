@@ -61,6 +61,7 @@
 	"proofreadpage_index_size": "Anzahl der Seiten",
 	"proofreadpage_pages_to_validate": "Anzahl der zu validierenden Seiten",
 	"proofreadpage_pages_to_proofread_or_validate": "Anzahl der Seiten, die korrekturgelesen oder bestätigt werden sollen.",
+	"proofreadpage_pages_to_proofread": "Anzahl der Seiten zum Korrekturlesen",
 	"proofreadpage_specialpage_filterby_all": "Alle",
 	"proofreadpage_specialpage_filterby_incomplete": "Unvollständig",
 	"proofreadpage_specialpage_filterby_proofread": "Korrekturgelesen",
