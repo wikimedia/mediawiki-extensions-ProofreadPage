@@ -77,6 +77,7 @@
 	"proofreadpage_index_size": "Nombre de pages",
 	"proofreadpage_pages_to_validate": "Nombre de pages à valider",
 	"proofreadpage_pages_to_proofread_or_validate": "Nombre de pages à relire ou à valider",
+	"proofreadpage_pages_to_proofread": "Nombre de pages à relire",
 	"proofreadpage_specialpage_filterby_all": "Tout",
 	"proofreadpage_specialpage_filterby_incomplete": "Incomplet",
 	"proofreadpage_specialpage_filterby_proofread": "Corrigé",
