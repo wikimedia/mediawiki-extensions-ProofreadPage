@@ -65,8 +65,8 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 			// hack to deal with <pagelist 1=2/> type stuff which
 			// makes the first element render as 2/ when using DOMParser.
 			if ( tagEndMatches.length ) {
-				pagelistText = pagelistText.substring( 0, tagEndMatches.index ) +
-					' ' + pagelistText.substring( tagEndMatches.index );
+				pagelistText = pagelistText.slice( 0, tagEndMatches.index ) +
+					' ' + pagelistText.slice( tagEndMatches.index );
 			}
 
 			parsedPagelist = ( new DOMParser() )
