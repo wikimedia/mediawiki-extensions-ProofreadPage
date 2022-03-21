@@ -129,5 +129,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "అచ్చుదిద్దు నాణ్యత",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "అచ్చుదిద్దు నాణ్యత",
 	"proofreadpage-index-field-category-label": "వర్గాలు",
-	"proofreadpage-index-edit-category-help": "వర్గాలు వర్గం:అనే ఉపసర్గ లేకుండా \"|\"  అక్షరం వేరుచేయునట్లు రాయాలి"
+	"proofreadpage-index-edit-category-help": "వర్గాలు వర్గం:అనే ఉపసర్గ లేకుండా \"|\"  అక్షరం వేరుచేయునట్లు రాయాలి",
+	"tag-proofreadpage-quality0-description": "పేజీ నాణ్యతను \"{{int:tag-proofreadpage-quality0}}\" కు మార్చిన దిద్దుబాట్లు",
+	"tag-proofreadpage-quality1-description": "పేజీ నాణ్యతను \"{{int:tag-proofreadpage-quality1}}\" కు మార్చిన దిద్దుబాట్లు",
+	"tag-proofreadpage-quality2-description": "పేజీ నాణ్యతను \"{{int:tag-proofreadpage-quality2}}\" కు మార్చిన దిద్దుబాట్లు",
+	"tag-proofreadpage-quality3-description": "పేజీ నాణ్యతను \"{{int:tag-proofreadpage-quality3}}\" కు మార్చిన దిద్దుబాట్లు",
+	"tag-proofreadpage-quality4-description": "పేజీ నాణ్యతను \"{{int:tag-proofreadpage-quality4}}\" కు మార్చిన దిద్దుబాట్లు"
 }

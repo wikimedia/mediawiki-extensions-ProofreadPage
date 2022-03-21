@@ -63,6 +63,7 @@
 	"proofreadpage_index_size": "Numero di pagine",
 	"proofreadpage_pages_to_validate": "Numero di pagine da rileggere",
 	"proofreadpage_pages_to_proofread_or_validate": "Numero di pagine da trascrivere o rileggere",
+	"proofreadpage_pages_to_proofread": "Numero di pagine da trascrivere",
 	"proofreadpage_specialpage_filterby_all": "Tutti",
 	"proofreadpage_specialpage_filterby_incomplete": "Da trascrivere",
 	"proofreadpage_specialpage_filterby_proofread": "Trascritti",
@@ -148,9 +149,9 @@
 	"tag-proofreadpage-quality2": "Problematica",
 	"tag-proofreadpage-quality3": "Corretta",
 	"tag-proofreadpage-quality4": "Riletta",
-	"tag-proofreadpage-quality0-description": "Modifiche che hanno cambiato la qualità della pagina a \"Senza testo\"",
-	"tag-proofreadpage-quality1-description": "Modifiche che hanno cambiato la qualità della pagina in \"Da correggere\"",
-	"tag-proofreadpage-quality2-description": "Modifiche che hanno cambiato la qualità della pagina a \"Problematica\"",
-	"tag-proofreadpage-quality3-description": "Modifiche che hanno cambiato la qualità della pagina in \"Corretta\"",
-	"tag-proofreadpage-quality4-description": "Modifiche che hanno cambiato la qualità della pagina a \"Riletta\""
+	"tag-proofreadpage-quality0-description": "Modifiche che hanno cambiato la qualità della pagina a \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Modifiche che hanno cambiato la qualità della pagina in \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Modifiche che hanno cambiato la qualità della pagina a \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Modifiche che hanno cambiato la qualità della pagina in \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Modifiche che hanno cambiato la qualità della pagina a \"{{int:tag-proofreadpage-quality4}}\""
 }

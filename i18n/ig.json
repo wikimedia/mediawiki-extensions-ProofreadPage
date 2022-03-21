@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Edith Nwobu",
 			"Oby Ezeilo",
 			"Ukabia",
 			"Uzoma Ozurumba"
@@ -21,5 +22,6 @@
 	"proofreadpage_quality3_category": "Gụzàra",
 	"proofreadpage_specialpage_label_key": "Tùwe:",
 	"proofreadpage_index_listofpages": "Ndétu ihü",
-	"proofreadpage_source": "Mkpọlọ́gwụ̀"
+	"proofreadpage_source": "Mkpọlọ́gwụ̀",
+	"tag-proofreadpage-quality0-description": "Ndezi gbanwere adịm mma ihu gaa na \"{{int:tag-proofreadpage-quality0}}\""
 }

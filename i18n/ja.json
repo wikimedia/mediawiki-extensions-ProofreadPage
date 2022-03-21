@@ -11,6 +11,7 @@
 			"Shirayuki",
 			"Tamaki Wakita",
 			"Tmv",
+			"Yamagata Yusuke",
 			"夢蝶葬花",
 			"青子守歌"
 		]
@@ -152,9 +153,9 @@
 	"tag-proofreadpage-quality2": "問題有",
 	"tag-proofreadpage-quality3": "校正済",
 	"tag-proofreadpage-quality4": "検証済",
-	"tag-proofreadpage-quality0-description": "ページ品質を「テキストなし」に変更した編集",
-	"tag-proofreadpage-quality1-description": "ページ品質を「未校正」に変更した編集",
-	"tag-proofreadpage-quality2-description": "ページ品質を「問題有」に変更した編集",
-	"tag-proofreadpage-quality3-description": "ページ品質を「校正済」に変更した編集",
-	"tag-proofreadpage-quality4-description": "ページ品質を「検証済」に変更した編集"
+	"tag-proofreadpage-quality0-description": "ページ品質を''{{int:tag-proofreadpage-quality0}}''に変更した編集",
+	"tag-proofreadpage-quality1-description": "ページ品質を\"{{int:tag-proofreadpage-quality1}}\"に変更した編集",
+	"tag-proofreadpage-quality2-description": "ページ品質を\"{{int:tag-proofreadpage-quality2}}\"に変更した編集",
+	"tag-proofreadpage-quality3-description": "ページ品質を''{{int:tag-proofreadpage-quality3}}''に変更した編集",
+	"tag-proofreadpage-quality4-description": "ページ品質を''{{int:tag-proofreadpage-quality4}}''に変更した編集"
 }

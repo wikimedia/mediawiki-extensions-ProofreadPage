@@ -7,6 +7,7 @@
 			"Crowley666",
 			"Duolaimi",
 			"Gaoxuewei",
+			"GuoPC",
 			"Hydra",
 			"Interestinghe",
 			"Jimmy xu wrk",
@@ -157,9 +158,9 @@
 	"tag-proofreadpage-quality2": "有问题的",
 	"tag-proofreadpage-quality3": "校对",
 	"tag-proofreadpage-quality4": "已核对",
-	"tag-proofreadpage-quality0-description": "将页面质量更改为“无文本”的编辑",
-	"tag-proofreadpage-quality1-description": "将页面质量更改为“未校对”的编辑",
-	"tag-proofreadpage-quality2-description": "将页面质量更改为“有问题”的编辑",
-	"tag-proofreadpage-quality3-description": "将页面质量更改为“已验证”的编辑",
-	"tag-proofreadpage-quality4-description": "将页面质量更改为“已验证”的编辑"
+	"tag-proofreadpage-quality0-description": "将页面质量更改为“{{int:tag-proofreadpage-quality0}}”的编辑",
+	"tag-proofreadpage-quality1-description": "将页面质量更改为“{{int:tag-proofreadpage-quality1}}”的编辑",
+	"tag-proofreadpage-quality2-description": "将页面质量更改为“{{int:tag-proofreadpage-quality2}}”的编辑",
+	"tag-proofreadpage-quality3-description": "将页面质量更改为“{{int:tag-proofreadpage-quality3}}”的编辑",
+	"tag-proofreadpage-quality4-description": "将页面质量更改为“{{int:tag-proofreadpage-quality4}}”的编辑"
 }

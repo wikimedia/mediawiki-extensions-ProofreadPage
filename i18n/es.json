@@ -6,6 +6,7 @@
 			"Barcex",
 			"Crazymadlover",
 			"Dgstranz",
+			"DiegoAmbrocio",
 			"Fitoschido",
 			"Imre",
 			"Indiralena",
@@ -153,9 +154,9 @@
 	"tag-proofreadpage-quality2": "Problemática",
 	"tag-proofreadpage-quality3": "Corregido",
 	"tag-proofreadpage-quality4": "Validada",
-	"tag-proofreadpage-quality0-description": "Modificaciones que cambiaron la calidad de la página a \"Sin texto\"",
-	"tag-proofreadpage-quality1-description": "Modificaciones que cambiaron la calidad de la página a \"No corregida\"",
-	"tag-proofreadpage-quality2-description": "Modificaciones que cambiaron la calidad de la página a \"Problemática\"",
-	"tag-proofreadpage-quality3-description": "Modificaciones que cambiaron la calidad de la página a \"Corregido\"",
-	"tag-proofreadpage-quality4-description": "Modificaciones que cambiaron la calidad de la página a \"Validado\""
+	"tag-proofreadpage-quality0-description": "Modificaciones que cambiaron la calidad de la página a \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Modificaciones que cambiaron la calidad de la página a \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Modificaciones que cambiaron la calidad de la página a \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Modificaciones que cambiaron la calidad de la página a \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Modificaciones que cambiaron la calidad de la página a \"{{int:tag-proofreadpage-quality4}}\""
 }
