@@ -248,13 +248,14 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 	}
 
 	for ( i = 0; i < parsedPagelist.length; i++ ) {
-
-		enumeratedList.push( {
-			subPage: ( i + 1 ),
-			text: parsedPagelist[ i ].innerHTML,
-			type: ranges[ ( i + 1 ) ] || 'Number',
-			assignedPageNumber: parseInt( parameters.get( i + 1 ) ) || null
-		} );
+		if ( parsedPagelist[ i ].attributes.class.value === 'prp-index-pagelist-page' ) {
+			enumeratedList.push( {
+				subPage: ( i + 1 ),
+				text: parsedPagelist[ i ].innerText,
+				type: ranges[ ( i + 1 ) ] || 'Number',
+				assignedPageNumber: parseInt( parameters.get( i + 1 ) ) || null
+			} );
+		}
 	}
 
 	this.enumeratedList = enumeratedList;

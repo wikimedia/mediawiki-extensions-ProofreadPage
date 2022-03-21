@@ -63,7 +63,7 @@ PagelistPreview.prototype.updatePreview = function ( parameters ) {
 	for ( i = 0; i < parameters.length; i++ ) {
 		// haphazardly put together, figure out the specifics later
 		button = new OO.ui.ButtonOptionWidget( {
-			label: $( '<span>' ).html( parameters[ i ].text ),
+			label: parameters[ i ].text,
 			data: parameters[ i ],
 			title: String( parameters[ i ].subPage )
 		} );
