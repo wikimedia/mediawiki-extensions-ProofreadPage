@@ -149,9 +149,9 @@
 	"tag-proofreadpage-quality2": "בעייתי",
 	"tag-proofreadpage-quality3": "בוצעה הגהה",
 	"tag-proofreadpage-quality4": "אומת",
-	"tag-proofreadpage-quality0-description": "עריכות ששינו את איכות הדף ל\"ללא טקסט\"",
-	"tag-proofreadpage-quality1-description": "עריכות ששינו את איכות הדף ל\"לא בוצעה הגהה\"",
-	"tag-proofreadpage-quality2-description": "עריכות ששינו את איכות הדף ל\"בעייתי\"",
-	"tag-proofreadpage-quality3-description": "עריכות ששינו את איכות הדף ל\"בוצעה הגהה\"",
-	"tag-proofreadpage-quality4-description": "עריכות ששינו את איכות הדף ל\"אומת\""
+	"tag-proofreadpage-quality0-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality4}}\""
 }
