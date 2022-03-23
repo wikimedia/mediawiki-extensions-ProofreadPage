@@ -23,6 +23,8 @@
 	"proofreadpage_nologin": "Chưa đăng nhập",
 	"proofreadpage_nologintext": "Bạn phải [[Special:UserLogin|đăng nhập]] để sửa đổi tình trạng hiệu đính của trang.",
 	"proofreadpage_notallowedtext": "Bạn không được phép thay đổi tình trạng hiệu đính của trang này.",
+	"proofreadpage_pagesnotallowed": "Lỗi: không dùng được thẻ trang tại không gian tên Trang: và Mục lục:",
+	"proofreadpage_pagelistnotallowed": "Lỗi: thẻ pagelist chỉ có thể dùng trong không gian tên Mục lục:",
 	"proofreadpage_dataconfig_badformatted": "Lỗi trong cấu hình dữ liệu",
 	"proofreadpage_dataconfig_badformattedtext": "Trang [[Mediawiki:Proofreadpage index data config]] không tuân theo định dạng JSON.",
 	"proofreadpage_number_expected": "Lỗi: cần giá trị số",
@@ -125,5 +127,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Chất lượng hiệu đính",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Chất lượng hiệu đính",
 	"proofreadpage-index-field-category-label": "Thể loại",
-	"proofreadpage-index-edit-category-help": "Tên thể loại không cần tiền tố Thể loại: và được phân tách bằng dấu gạch sổ \"|\"."
+	"proofreadpage-index-edit-category-help": "Tên thể loại không cần tiền tố Thể loại: và được phân tách bằng dấu gạch sổ \"|\".",
+	"tag-proofreadpage-quality0": "Không có nội dung",
+	"tag-proofreadpage-quality1": "Chưa hiệu đính",
+	"tag-proofreadpage-quality2": "Có vấn đề",
+	"tag-proofreadpage-quality3": "Đã hiệu đính",
+	"tag-proofreadpage-quality4": "Đã phê chuẩn"
 }
