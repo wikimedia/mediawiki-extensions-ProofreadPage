@@ -2,10 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Ikiwaner",
-			"Stephenwanjau"
+			"Stephenwanjau",
+			"Wangombe"
 		]
 	},
 	"proofreadpage_image": "Picha",
 	"proofreadpage_specialpage_label_key": "Tafuta:",
-	"proofreadpage_source": "Chanzo"
+	"proofreadpage_source": "Chanzo",
+	"tag-proofreadpage-quality1-description": "Mabadiliko yaliyobadilisha ubora wa ukurasa kuwa \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Mabadiliko yaliyobadilisha ubora wa ukurasa kuwa \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality4-description": "Mabadiliko yaliyobadilisha ubora wa ukurasa kuwa \"{{int:tag-proofreadpage-quality4}}\""
 }
