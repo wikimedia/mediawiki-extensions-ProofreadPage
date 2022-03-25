@@ -147,9 +147,9 @@
 	"tag-proofreadpage-quality2": "Có vấn đề",
 	"tag-proofreadpage-quality3": "Đã hiệu đính",
 	"tag-proofreadpage-quality4": "Đã phê chuẩn",
-	"tag-proofreadpage-quality0-description": "Sửa đổi khiến chất lượng trang trở thành \"Không có nội dung\"",
-	"tag-proofreadpage-quality1-description": "Sửa đổi khiến chất lượng trang trở thành \"Chưa hiệu đính\"",
-	"tag-proofreadpage-quality2-description": "Sửa đổi khiến chất lượng trang trở thành \"Có vấn đề\"",
-	"tag-proofreadpage-quality3-description": "Sửa đổi khiến chất lượng trang trở thành \"Đã hiệu đính\"",
-	"tag-proofreadpage-quality4-description": "Sửa đổi khiến chất lượng trang trở thành \"Không có phê chuẩn\""
+	"tag-proofreadpage-quality0-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality4}}\""
 }
