@@ -124,9 +124,9 @@
 	"tag-proofreadpage-quality2": "문제 있음",
 	"tag-proofreadpage-quality3": "교정됨",
 	"tag-proofreadpage-quality4": "검증됨",
-	"tag-proofreadpage-quality0-description": "문서 품질을 \"텍스트 없음\"으로 변경한 편집",
-	"tag-proofreadpage-quality1-description": "문서 품질을 \"교정 안 됨\"으로 변경한 편집",
-	"tag-proofreadpage-quality2-description": "문서 품질을 \"문제 있음\"으로 변경한 편집",
-	"tag-proofreadpage-quality3-description": "문서 품질을 \"교정됨\"으로 변경한 편집",
-	"tag-proofreadpage-quality4-description": "문서 품질을 \"검증됨\"으로 변경한 편집"
+	"tag-proofreadpage-quality0-description": "문서 품질을 \"{{int:tag-proofreadpage-quality0}}\"으로 변경한 편집",
+	"tag-proofreadpage-quality1-description": "문서 품질을 \"{{int:tag-proofreadpage-quality1}}\"으로 변경한 편집",
+	"tag-proofreadpage-quality2-description": "문서 품질을 \"{{int:tag-proofreadpage-quality2}}\"으로 변경한 편집",
+	"tag-proofreadpage-quality3-description": "문서 품질을 \"{{int:tag-proofreadpage-quality3}}\"으로 변경한 편집",
+	"tag-proofreadpage-quality4-description": "문서 품질을 \"{{int:tag-proofreadpage-quality4}}\"으로 변경한 편집"
 }

@@ -5,12 +5,20 @@
 			555
 		]
 	},
-	"apihelp-query+proofread-description": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
-	"apihelp-query+proofread-summary": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
-	"apihelp-query+proofread-example-1": "Retornar status de revisão para páginas no namespace 250",
-	"apihelp-query+proofreadinfo-description": "Retorna informações sobre a configuração da extensão ProofreadPage.",
-	"apihelp-query+proofreadinfo-summary": "Retorna informações sobre a configuração da extensão ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "As propriedades de revisão a serem obtidas:\n;namespaces:Informação sobre os espaços nominais \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista dos níveis de qualidade de revisão.",
-	"apihelp-query+proofreadinfo-example-1": "Retornar a informação padrão.",
-	"apihelp-query+proofreadinfo-example-3": "Retornar informações do espaço nominal"
+	"apierror-proofreadpage-invalidindex": "Título de índice \"$1\" inválido.",
+	"apihelp-query+proofread-description": "Devolve informações sobre o estado de revisão atual das páginas fornecidas.",
+	"apihelp-query+proofread-summary": "Devolve informações sobre o estado de revisão atual das páginas fornecidas.",
+	"apihelp-query+proofread-example-1": "Devolver o estado de revisão de páginas do espaço nominal 250",
+	"apihelp-query+proofreadinfo-description": "Devolver informações sobre a configuração da extensão ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Devolver informações sobre a configuração da extensão ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Propriedades de revisão a serem obtidas:\n;namespaces:Informação sobre os espaços nominais \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista dos níveis de qualidade de revisão.",
+	"apihelp-query+proofreadinfo-example-1": "Devolver informação padrão",
+	"apihelp-query+proofreadinfo-example-3": "Devolver informações do espaço nominal",
+	"apihelp-query+proofreadpagesinindex-description": "Listar as páginas de um índice específico",
+	"apihelp-query+proofreadpagesinindex-summary": "Listar as páginas de um índice específico",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Limitar quantas páginas serão devolvidas",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "O identificador da página de índice para a qual obter páginas",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Que propriedades de cada página obter",
+	"apihelp-query+proofreadpagesinindex-param-title": "O título da página de índice para a qual obter páginas",
+	"apihelp-query+proofreadpagesinindex-example-1": "Devolver informação padrão"
 }

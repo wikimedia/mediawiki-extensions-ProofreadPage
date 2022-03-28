@@ -81,6 +81,7 @@
 	"proofreadpage-button-zoom-out-label": "Pomanjšaj",
 	"proofreadpage-pageinfo-status": "Stanje pregleda",
 	"proofreadpage-pagelist-dialog-discard-changes": "Zavrzi spremembe",
+	"proofreadpage-pagelist-dialog-cancel": "Prekliči",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Pomoč",
 	"proofreadpage-preferences-showheaders-label": "Pokaži glavo in nogo, ko urejaš v imenskem prostoru {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Pri urejanju v imenskem prostoru {{ns:page}} uporabi vodoravno postavitev",
