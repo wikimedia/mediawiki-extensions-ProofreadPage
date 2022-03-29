@@ -54,6 +54,8 @@
 	"proofreadpage_quality4_message": "หน้านี้ได้ตรวจสอบแล้ว",
 	"proofreadpage_index_status": "สถานะดัชนี",
 	"proofreadpage_index_size": "จำนวนหน้า",
+	"proofreadpage_pages_to_validate": "จำนวนหน้าที่ต้องตรวจสอบ",
+	"proofreadpage_pages_to_proofread_or_validate": "จำนวนหน้าที่ต้องพิสูจน์อักษรกับตรวจสอบ",
 	"proofreadpage_specialpage_label_orderby": "เรียงลำดับตาม:",
 	"proofreadpage_specialpage_label_key": "ค้นหา:",
 	"proofreadpage_specialpage_label_sortascending": "เรียงจากน้อยไปมาก",
