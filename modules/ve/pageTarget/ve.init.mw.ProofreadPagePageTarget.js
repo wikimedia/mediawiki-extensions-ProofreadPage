@@ -87,7 +87,6 @@ ve.init.mw.ProofreadPagePageTarget.prototype.getEditableContent = function () {
  * @inheritdoc
  */
 ve.init.mw.ProofreadPagePageTarget.prototype.documentReady = function () {
-	this.constructor.static.cleanHtml( this.doc );
 	this.constructor.static.splitSections( this.doc );
 
 	// Parent method
@@ -297,23 +296,6 @@ ve.init.mw.ProofreadPagePageTarget.prototype.parseWikitext = function ( wikitext
 	result.level.user = headerMatchResult[ 2 ];
 	result.header = headerMatchResult[ 4 ];
 	return result;
-};
-
-/**
- * Removes the <div class="pagetext"> node that is still in parser cache
- * TODO: remove this function when Parsoid cache will be purged
- *
- * @param {HTMLDocument} doc Document
- */
-ve.init.mw.ProofreadPagePageTarget.static.cleanHtml = function ( doc ) {
-	var pagetext = doc.querySelector( 'div.pagetext' );
-
-	if ( pagetext ) {
-		while ( pagetext.childNodes.length > 0 ) {
-			pagetext.parentNode.insertBefore( pagetext.firstChild, pagetext );
-		}
-		pagetext.parentNode.removeChild( pagetext );
-	}
 };
 
 /**
