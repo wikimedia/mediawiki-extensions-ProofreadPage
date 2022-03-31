@@ -1,15 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			555
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "Título de índice de digitalizações inválido: \"$1\"",
 	"apihelp-query+proofread-description": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
 	"apihelp-query+proofread-summary": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
-	"apihelp-query+proofread-example-1": "Retornar status de revisão para páginas no namespace 250",
+	"apihelp-query+proofread-example-1": "Retornar status de revisão para páginas no espaço nominal 250",
 	"apihelp-query+proofreadinfo-description": "Retorna informações sobre a configuração da extensão ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Retorna informações sobre a configuração da extensão ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Que propriedades de revisão obter:\n; namespaces: Informações sobre os espaços nominais \"{{ns:Page}}\" e \"{{ns:Index}}\" .\n;qualitylevels: Lista de níveis de qualidade de revisão de texto.",
+	"apihelp-query+proofreadinfo-param-prop": "Propriedades de revisão a serem obtidas:\n;namespaces:Informação sobre os espaços nominais \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista dos níveis de qualidade de revisão.",
 	"apihelp-query+proofreadinfo-example-1": "Retornar a informação padrão.",
-	"apihelp-query+proofreadinfo-example-3": "Retornar informações do espaço nominal"
+	"apihelp-query+proofreadinfo-example-3": "Retornar informações do espaço nominal",
+	"apihelp-query+proofreadpagesinindex-description": "Lista as páginas de um índice em específico",
+	"apihelp-query+proofreadpagesinindex-summary": "Listar as páginas de um índice em específico",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "A ID de página da página de índice a se obter",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Quais propriedades obter de cada página",
+	"apihelp-query+proofreadpagesinindex-param-title": "O título da página de índice a se obter páginas"
 }
