@@ -559,7 +559,10 @@ class PageContentHandler extends TextContentHandler {
 			)->getDBkey(),
 			$title->getText()
 		);
-		$parserOutput->setPageProperty( 'proofread_page_quality_level', $content->getLevel()->getLevel() );
+		$parserOutput->setPageProperty(
+			'proofread_page_quality_level',
+			(string)$content->getLevel()->getLevel()
+		);
 
 		// html container
 		$html = Html::openElement( 'div',
