@@ -53,6 +53,12 @@
 	"proofreadpage_index_size": "Lehekülgede arv",
 	"proofreadpage_pages_to_validate": "Heakskiitmist ootavate lehekülgede arv",
 	"proofreadpage_pages_to_proofread_or_validate": "Õiguse tõendamist või heakskiitmist ootavate lehekülgede arv",
+	"proofreadpage_specialpage_filterby_all": "Kõik",
+	"proofreadpage_specialpage_filterby_incomplete": "Poolik",
+	"proofreadpage_specialpage_filterby_proofread": "Õigsus tõendatud",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "Õigsus tõendatud või heakskiidetud",
+	"proofreadpage_specialpage_filterby_validated": "Heakskiidetud",
+	"proofreadpage_specialpage_label_filterby": "Filter:",
 	"proofreadpage_specialpage_label_orderby": "Järjestusalus:",
 	"proofreadpage_specialpage_label_key": "Otsitav:",
 	"proofreadpage_specialpage_label_sortascending": "Järjesta tõusvalt",
@@ -127,9 +133,9 @@
 	"tag-proofreadpage-quality2": "Probleemne",
 	"tag-proofreadpage-quality3": "Õigsus tõendatud‎",
 	"tag-proofreadpage-quality4": "Heakskiidetud",
-	"tag-proofreadpage-quality0-description": "Muudatused, millega määrati lehekülje olekuks \"Ilma tekstita\"",
-	"tag-proofreadpage-quality1-description": "Muudatused, millega määrati lehekülje olekuks \"Õigsus tõendamata\"",
-	"tag-proofreadpage-quality2-description": "Muudatused, millega määrati lehekülje olekuks \"Probleemne\"",
-	"tag-proofreadpage-quality3-description": "Muudatused, millega määrati lehekülje olekuks \"Õigsus tõendatud‎\"",
-	"tag-proofreadpage-quality4-description": "Muudatused, millega määrati lehekülje olekuks \"Heakskiidetud\""
+	"tag-proofreadpage-quality0-description": "Muudatused, millega määrati lehekülje olekuks \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Muudatused, millega määrati lehekülje olekuks \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Muudatused, millega määrati lehekülje olekuks \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Muudatused, millega määrati lehekülje olekuks \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Muudatused, millega määrati lehekülje olekuks \"{{int:tag-proofreadpage-quality4}}\""
 }
