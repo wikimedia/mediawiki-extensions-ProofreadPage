@@ -5,6 +5,7 @@ namespace ProofreadPage\Api;
 use ApiBase;
 use ApiQueryBase;
 use ProofreadPage\Context;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * @license GPL-2.0-or-later
@@ -94,9 +95,9 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'prop' => [
-				ApiBase::PARAM_DFLT => 'namespaces|qualitylevels',
-				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_DEFAULT => 'namespaces|qualitylevels',
+				ParamValidator::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_TYPE => [
 					'namespaces',
 					'qualitylevels',
 				]
