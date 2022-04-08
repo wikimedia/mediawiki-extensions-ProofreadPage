@@ -136,5 +136,6 @@
 	"tag-proofreadpage-quality1": "মুদ্রণ সংশোধন করা হয়নি",
 	"tag-proofreadpage-quality2": "সমস্যাসঙ্কুল",
 	"tag-proofreadpage-quality3": "মুদ্রণ সংশোধন করা হয়েছে",
-	"tag-proofreadpage-quality4": "বৈধকরণ"
+	"tag-proofreadpage-quality4": "বৈধকরণ",
+	"tag-proofreadpage-quality4-description": "সম্পাদনা করে যা পাতার গুণমানকে \"{{int:tag-proofreadpage-quality4}}\"-এ পরিবর্তিত করেছে"
 }
