@@ -3,7 +3,7 @@
 namespace ProofreadPage\Scribunto;
 
 use Content;
-use MediaWiki\Storage\RevisionRecord;
+use MediaWiki\Revision\RevisionRecord;
 use MWException;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageContent;
