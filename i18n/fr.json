@@ -102,7 +102,7 @@
 	"proofreadpage-button-toggle-layout-label": "Disposition verticale/horizontale",
 	"proofreadpage-pageinfo-status": "État de la relecture",
 	"proofreadpage-pagelist-input-preview-button": "Aperçu de la liste des pages",
-	"proofreadpage-pagelist-parsing-error-morethanone": "Plus d’une balise <pagelist /> a été trouvée dans la source en wikitexte.",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Plus d’une balise <pagelist /> a été trouvée dans la source en wikicode.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Aucune balise <pagelist /> détectée.",
 	"proofreadpage-pagelist-parsing-error-php": "L’erreur suivante s’est produite en analysant sur le serveur la balise « pagelist » : $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Une erreur inattendue est survenue. Veuillez rapporter cette erreur sur phabricator.wikimedia.org avec les journaux de la console.",
