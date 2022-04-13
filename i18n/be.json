@@ -122,7 +122,7 @@
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Заданне нумару старонкі для скану $1",
 	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Патрэбны спіс часта ўжываных метак нумарацыі старонак. Звярніцеся, калі ласка, да вашых адміністратараў інтэрфэйсу, каб наладзіць меткі.",
 	"proofreadpage-preferences-animation-time-label": "Час анімацыі перацягвання (панарамавання) і павелічэння (ад 0 да 2 секунд, прадвызначана: 0). Вышэй — больш гладка, ніжэй — больш хутка.",
-	"proofreadpage-preferences-showheaders-label": "Паказваць палі для верхняга і ніжняга калянтытулаў пры праўкі ў прасторы назваў {{ns:page}}",
+	"proofreadpage-preferences-showheaders-label": "Паказваць палі для верхняга і ніжняга калонтытулаў пры праўкі ў прасторы назваў {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Выкарыстоўваць гарызантальную разметку пры праўкі ў прасторы назваў {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Выкарыстоўваць новы эксперыментальны візуальны рэжым для праўкі спісу старонак.",
 	"proofreadpage-preferences-zoom-factor-label": "Каэфіцыент павелічэння пры пракрутцы (ад 0 да 2 секунд, прадвызначана: 1.2). Вышэй павелічае больш за крок.",
