@@ -111,7 +111,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Progrès non enregistré",
 	"proofreadpage-pagelist-dialog-discard-changes": "Annuler les modifications",
 	"proofreadpage-pagelist-dialog-cancel": "Annuler",
-	"proofreadpage-pagelist-parsing-error-morethanone": "Plus d’une balise <pagelist /> a été trouvée dans la source en wikitexte.",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Plus d’une balise <pagelist /> a été trouvée dans la source en wikicode.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Aucune balise <pagelist /> détectée.",
 	"proofreadpage-pagelist-parsing-error-php": "L’erreur suivante s’est produite en analysant sur le serveur la balise « pagelist » : $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Une erreur inattendue est survenue. Veuillez rapporter cette erreur sur phabricator.wikimedia.org avec les journaux de la console.",
