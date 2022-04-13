@@ -524,7 +524,7 @@ class IndexContentHandler extends TextContentHandler {
 			$parserOutput->addLink( $content->getRedirectTarget() );
 			if ( $cpoParams->getGenerateHtml() ) {
 				$parserOutput->setText( Article::getRedirectHeaderHtml(
-					$title->getPageLanguage(), $content->getRedirectChain()
+					$title->getPageLanguage(), $content->getRedirectTarget()
 				) );
 				$parserOutput->addModuleStyles( [ 'mediawiki.action.view.redirectPage' ] );
 			}
