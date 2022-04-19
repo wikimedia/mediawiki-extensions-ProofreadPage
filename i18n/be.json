@@ -108,7 +108,7 @@
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "Заданне нумару старонкі ад нумару скану $1 і далей",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Заданне нумару старонкі для скану $1",
 	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Патрэбны спіс часта ўжываных метак нумарацыі старонак. Звярніцеся, калі ласка, да вашых адміністратараў інтэрфэйсу, каб наладзіць меткі.",
-	"proofreadpage-preferences-showheaders-label": "Паказваць палі для верхняга і ніжняга калянтытулаў пры праўкі ў прасторы назваў {{ns:page}}",
+	"proofreadpage-preferences-showheaders-label": "Паказваць палі для верхняга і ніжняга калонтытулаў пры праўкі ў прасторы назваў {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Выкарыстоўваць гарызантальную разметку пры праўкі ў прасторы назваў {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Выкарыстоўваць новы эксперыментальны візуальны рэжым для праўкі спісу старонак.",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|правераная старонка|правераныя старонкі|правераных старонак}}, $2 {{PLURAL:$2|вычытаная старонка|вычытаныя старонкі|вычытаных старонак}} і $3 не {{PLURAL:$3|вычытаная старонка|вычытаныя старонкі|вычытаных старонак}}",
