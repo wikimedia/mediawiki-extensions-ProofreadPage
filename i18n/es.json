@@ -19,7 +19,8 @@
 			"Sanbec",
 			"Sukanya121",
 			"Themasterriot",
-			"Translationista"
+			"Translationista",
+			"DiegoAmbrocio"
 		]
 	},
 	"nstab-page": "Página",
@@ -72,6 +73,12 @@
 	"proofreadpage_index_size": "Número de páginas",
 	"proofreadpage_pages_to_validate": "Número de páginas pendientes de validar",
 	"proofreadpage_pages_to_proofread_or_validate": "Número de páginas pendientes de corregir o validar",
+	"proofreadpage_specialpage_filterby_all": "Todo",
+	"proofreadpage_specialpage_filterby_incomplete": "Incompleto",
+	"proofreadpage_specialpage_filterby_proofread": "Corregido",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "Corregir o validar",
+	"proofreadpage_specialpage_filterby_validated": "Validada",
+	"proofreadpage_specialpage_label_filterby": "Filtrar por:",
 	"proofreadpage_specialpage_label_orderby": "Ordenar por:",
 	"proofreadpage_specialpage_label_key": "Buscar:",
 	"proofreadpage_specialpage_label_sortascending": "Orden ascendente",
