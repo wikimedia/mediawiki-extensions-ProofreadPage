@@ -12,6 +12,7 @@
 	display: table-cell;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .prp-indexpages-row .pr_quality {
 	display: inline-block;
 	height: 0.6em;

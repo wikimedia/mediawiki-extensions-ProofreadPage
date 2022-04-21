@@ -1,3 +1,4 @@
+/* stylelint-disable selector-class-pattern */
 /* Adjustments for WikiEditor extension */
 .wikiEditor-ui-view,
 .prp-page-image {
@@ -9,6 +10,7 @@
 	padding: 0;
 	line-height: 1.5em;
 	margin: 0;
+	/* stylelint-disable-next-line plugin/no-unsupported-browser-features */
 	resize: none;
 }
 

@@ -15,6 +15,7 @@
 	margin-left: 0.5em;
 }
 
+/* stylelint-disable selector-class-pattern */
 .quality4 {
 	background-color: #90ff90;
 	border-color: #90ff90;
@@ -52,6 +53,7 @@
 	padding: 0;
 	height: 0.6em;
 }
+/* stylelint-enable selector-class-pattern */
 
 .prp-index-pagelist-page {
 	text-align: center;

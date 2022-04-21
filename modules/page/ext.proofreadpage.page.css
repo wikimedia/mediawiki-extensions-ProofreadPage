@@ -9,6 +9,7 @@
 	padding-right: 12px;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .prp-page-content .pagetext {
 	margin-bottom: 0.5em;
 }

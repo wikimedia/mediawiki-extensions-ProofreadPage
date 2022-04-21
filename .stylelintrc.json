@@ -1,3 +1,14 @@
 {
-	"extends": "stylelint-config-wikimedia/grade-a"
+	"extends": [
+		"stylelint-config-wikimedia/support-modern",
+		"stylelint-config-wikimedia/mediawiki"
+	],
+	"rules": {
+		"selector-class-pattern": [
+			"(ext|mw|ve|prp|oo-ui|cdx|client|skin)-",
+			{
+				"severity": "warning"
+			}
+		]
+	}
 }
