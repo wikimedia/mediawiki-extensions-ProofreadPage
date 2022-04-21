@@ -66,6 +66,7 @@
 	"proofreadpage_index_size": "ページ数",
 	"proofreadpage_pages_to_validate": "検証の対象となるページ数",
 	"proofreadpage_pages_to_proofread_or_validate": "校正または検証の対象となるページ数",
+	"proofreadpage_pages_to_proofread": "校正するページ数",
 	"proofreadpage_specialpage_filterby_all": "すべて",
 	"proofreadpage_specialpage_filterby_incomplete": "未完",
 	"proofreadpage_specialpage_filterby_proofread": "査読済",
