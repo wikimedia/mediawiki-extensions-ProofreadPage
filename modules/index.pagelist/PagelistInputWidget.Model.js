@@ -248,7 +248,7 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 	}
 
 	for ( i = 0; i < parsedPagelist.length; i++ ) {
-		if ( parsedPagelist[ i ].attributes.class.value === 'prp-index-pagelist-page' ) {
+		if ( parsedPagelist[ i ].classList.contains( 'prp-index-pagelist-page' ) ) {
 			enumeratedList.push( {
 				subPage: ( i + 1 ),
 				text: parsedPagelist[ i ].innerText,
