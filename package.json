@@ -23,8 +23,5 @@
 		"stylelint-config-wikimedia": "0.11.1",
 		"wdio-mediawiki": "1.1.1",
 		"webdriverio": "7.3.0"
-	},
-	"dependencies": {
-		"openseadragon": "git+https://github.com/openseadragon/openseadragon.git#6cb2c9e7bc4adebe28e386a093890a6c3e353c6b"
 	}
 }
