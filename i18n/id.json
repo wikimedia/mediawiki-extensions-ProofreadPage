@@ -67,6 +67,13 @@
 	"proofreadpage_index_size": "Banyak halaman",
 	"proofreadpage_pages_to_validate": "Banyaknya halaman yang akan divalidasi",
 	"proofreadpage_pages_to_proofread_or_validate": "Banyaknya halaman yang akan diuji baca atau divalidasi",
+	"proofreadpage_pages_to_proofread": "Jumlah halaman yang perlu diuji baca",
+	"proofreadpage_specialpage_filterby_all": "Semua",
+	"proofreadpage_specialpage_filterby_incomplete": "Belum lengkap",
+	"proofreadpage_specialpage_filterby_proofread": "Telah diuji baca",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "Telah diuji baca atau tervalidasi",
+	"proofreadpage_specialpage_filterby_validated": "Tervalidasi",
+	"proofreadpage_specialpage_label_filterby": "Saring berdasarkan:",
 	"proofreadpage_specialpage_label_orderby": "Urutkan menurut:",
 	"proofreadpage_specialpage_label_key": "Cari:",
 	"proofreadpage_specialpage_label_sortascending": "Urut naik",
@@ -148,9 +155,9 @@
 	"tag-proofreadpage-quality2": "Bermasalah",
 	"tag-proofreadpage-quality3": "Telah diuji baca",
 	"tag-proofreadpage-quality4": "Tervalidasi",
-	"tag-proofreadpage-quality0-description": "Suntingan yang mengubah kualitas halaman menjadi \"Tanpa teks\"",
-	"tag-proofreadpage-quality1-description": "Suntingan yang mengubah kualitas halaman menjadi \"Belum diuji baca\"",
-	"tag-proofreadpage-quality2-description": "Suntingan yang mengubah kualitas halaman menjadi \"Bermasalah\"",
-	"tag-proofreadpage-quality3-description": "Suntingan yang mengubah kualitas halaman menjadi \"Telah diuji baca\"",
-	"tag-proofreadpage-quality4-description": "Suntingan yang mengubah kualitas halaman menjadi \"Tervalidasi\""
+	"tag-proofreadpage-quality0-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality4}}\""
 }
