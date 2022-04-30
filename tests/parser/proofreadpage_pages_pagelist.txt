@@ -499,7 +499,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist 1to1=roman 2to2=highroman to=2/>
 !! html
-<div class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">&#160;i</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">&#160;II</a></div>
+<div class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">i</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">II</a></div>
 !! end
 
 !! test
