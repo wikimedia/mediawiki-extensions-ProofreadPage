@@ -514,6 +514,17 @@ title="Index:LoremIpsum.djvu"
 !! end
 
 !! test
+pagelist: formatting
+!! options
+djvu
+title="Index:LoremIpsum.djvu"
+!! wikitext
+<pagelist 1="''1''" to=1 />
+!! html
+<div class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1"><i>1</i></a></div>
+!! end
+
+!! test
 pagelist: shift
 !! options
 djvu

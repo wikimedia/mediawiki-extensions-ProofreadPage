@@ -101,8 +101,10 @@ class PagelistTagParser {
 			$pageNumberExpression .= $pageNumber->getFormattedPageNumber( $title->getPageLanguage() );
 
 			$pageTitle = $pagination->getPageTitle( $i );
-			$pageNumberExpression = $this->parser->recursiveTagParse( $pageNumberExpression );
-			if ( !$pageNumber->isEmpty() && $title ) {
+			if ( !preg_match( '/^[\p{L}\p{N}\p{Mc}]+$/', $pageNumberExpression ) ) {
+				$pageNumberExpression = $this->parser->recursiveTagParse( $pageNumberExpression );
+			}
+			if ( !$pageNumber->isEmpty() ) {
 				// Adds the page as a dependency in order to make sure that the Index: page is
 				// purged if the status of the Page: page changes
 				$this->parser->getOutput()->addTemplate(
