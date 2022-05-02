@@ -40,7 +40,7 @@ OO.inheritClass( PageNumberInputWidget, OO.ui.Widget );
 
 /**
  * Sets up the suggestions asynchronously
- * seperately from the constructor
+ * separately from the constructor
  *
  * @param  {Object} response
  */

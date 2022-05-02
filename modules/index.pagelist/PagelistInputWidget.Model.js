@@ -137,19 +137,19 @@ PagelistInputWidgetModel.prototype.generateWikitext = function ( parameters ) {
 	// refer to generateParametersFromWikitext() function
 	var pagelistRegex = /<pagelist[^<]*?\/>/gmi,
 		linesRegex = /([\n\r][^=<|>]*=)/g,
-		seperator = ' ',
+		separator = ' ',
 		pagelistText = '<pagelist';
 
 	if ( ( this.wikitext.match( linesRegex ) || [] ).length > 0 ) {
-		seperator = '\n';
+		separator = '\n';
 	}
 
 	parameters.forEach( function ( index, label ) {
 		if ( index.split( /(to|To)/ )[ 0 ] !== index &&
 			index.split( /(to|To)/ )[ 0 ] === index.split( /(to|To)/ )[ 2 ] ) {
-			pagelistText += seperator + index.split( /(to|To)/ )[ 0 ] + '="' + label + '"';
+			pagelistText += separator + index.split( /(to|To)/ )[ 0 ] + '="' + label + '"';
 		} else {
-			pagelistText += seperator + index + '="' + label + '"';
+			pagelistText += separator + index + '="' + label + '"';
 		}
 	} );
 
