@@ -49,8 +49,8 @@
 	flex: 1;
 }
 
-.prp-page-zoom-interface {
-	float: right;
+.group-proofreadpage-secondary .tool {
+	display: inline-block;
 }
 
 #editform .prp-page-content { /* stylelint-disable-line selector-max-id */

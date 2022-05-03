@@ -298,46 +298,56 @@
 	 */
 	function setupWikitextEditor() {
 		var zoomInterface = {
-			zoomIn: new OO.ui.ButtonWidget( {
-				id: 'prp-page-zoomIn',
-				icon: 'zoomIn',
-				framed: false
-			} ),
-			zoomOut: new OO.ui.ButtonWidget( {
-				id: 'prp-page-zoomOut',
-				icon: 'zoomOut',
-				framed: false
-			} ),
-			zoomReset: new OO.ui.ButtonWidget( {
-				id: 'prp-page-zoomReset',
-				icon: 'zoomReset',
-				framed: false
-			} ),
-			rotateLeft: new OO.ui.ButtonWidget( {
-				id: 'prp-page-rotateLeft',
-				icon: 'undo',
-				framed: false
-			} ),
-			rotateRight: new OO.ui.ButtonWidget( {
-				id: 'prp-page-rotateRight',
-				icon: 'redo',
-				framed: false
-			} )
+			zoomIn: {
+				type: 'element',
+				element: new OO.ui.ButtonWidget( {
+					id: 'prp-page-zoomIn',
+					icon: 'zoomIn',
+					framed: false
+				} ).$element
+			},
+			zoomOut: {
+				type: 'element',
+				element: new OO.ui.ButtonWidget( {
+					id: 'prp-page-zoomOut',
+					icon: 'zoomOut',
+					framed: false
+				} ).$element
+			},
+			zoomReset: {
+				type: 'element',
+				element: new OO.ui.ButtonWidget( {
+					id: 'prp-page-zoomReset',
+					icon: 'zoomReset',
+					framed: false
+				} ).$element
+			},
+			rotateLeft: {
+				type: 'element',
+				element: new OO.ui.ButtonWidget( {
+					id: 'prp-page-rotateLeft',
+					icon: 'undo',
+					framed: false
+				} ).$element
+			},
+			rotateRight: {
+				type: 'element',
+				element: new OO.ui.ButtonWidget( {
+					id: 'prp-page-rotateRight',
+					icon: 'redo',
+					framed: false
+				} ).$element
+			}
 		};
 
-		var $viewportControls = $( '<div>' )
-			.addClass( 'prp-page-zoom-interface' )
-			.append(
-				zoomInterface.zoomIn.$element,
-				zoomInterface.zoomOut.$element,
-				zoomInterface.zoomReset.$element,
-				zoomInterface.rotateLeft.$element,
-				zoomInterface.rotateRight.$element
-			);
-
-		$editForm
-			.find( '.wikiEditor-ui-toolbar .section-main' )
-			.after( $viewportControls );
+		$wpTextbox.wikiEditor( 'addToToolbar', {
+			section: 'secondary',
+			groups: {
+				'proofreadpage-secondary': {
+					tools: zoomInterface
+				}
+			}
+		} );
 
 		var tools = {
 			other: {
