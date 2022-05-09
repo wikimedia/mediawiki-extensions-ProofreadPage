@@ -10,6 +10,7 @@
 			"Movses",
 			"Okras",
 			"Ole Yves",
+			"Pacha Tchernof",
 			"Renat",
 			"Sergey kudryavtsev",
 			"Stjn",
@@ -127,9 +128,9 @@
 	"tag-proofreadpage-quality2": "Проблемная",
 	"tag-proofreadpage-quality3": "Вычитка",
 	"tag-proofreadpage-quality4": "Проверено",
-	"tag-proofreadpage-quality0-description": "Правки, в результате которых качество страницы изменилось на \"Без текста\".",
-	"tag-proofreadpage-quality1-description": "Правки, в результате которых качество страницы изменилось на \"Не вычитана\"",
-	"tag-proofreadpage-quality2-description": "Правки, изменившие качество страницы на \"Проблемное\"",
-	"tag-proofreadpage-quality3-description": "Правки, в результате которых качество страницы изменилось на \"Вычитана\"",
+	"tag-proofreadpage-quality0-description": "Правки, изменившие качество страницы на&nbsp«{{int:tag-proofreadpage-quality0}}»",
+	"tag-proofreadpage-quality1-description": "Правки, изменившие качество страницы на&nbsp«{{int:tag-proofreadpage-quality1}}»",
+	"tag-proofreadpage-quality2-description": "Правки, изменившие качество страницы на&nbsp«{{int:tag-proofreadpage-quality2}}»",
+	"tag-proofreadpage-quality3-description": "Правки, изменившие качество страницы на&nbsp«{{int:tag-proofreadpage-quality3}}»",
 	"tag-proofreadpage-quality4-description": "Правки, в результате которых качество страницы изменилось на \"{{int:tag-proofreadpage-quality4}}\"."
 }
