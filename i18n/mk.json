@@ -144,9 +144,9 @@
 	"tag-proofreadpage-quality2": "Проблематична",
 	"tag-proofreadpage-quality3": "Прегледана",
 	"tag-proofreadpage-quality4": "Потврдена",
-	"tag-proofreadpage-quality0-description": "Уредувања кои го сменија квалитетот на страницата на „Без текст“",
-	"tag-proofreadpage-quality1-description": "Уредувања кои го сменија квалитетот на страницата на „Непрегледана“",
-	"tag-proofreadpage-quality2-description": "Уредувања кои го сменија квалитетот на страницата на „Проблематична“",
-	"tag-proofreadpage-quality3-description": "Уредувања кои го сменија квалитетот на страницата на „Прегледана“",
-	"tag-proofreadpage-quality4-description": "Уредувања кои го сменија квалитетот на страницата на „Потврдена“"
+	"tag-proofreadpage-quality0-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality0}}“",
+	"tag-proofreadpage-quality1-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality1}}“",
+	"tag-proofreadpage-quality2-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality2}}“",
+	"tag-proofreadpage-quality3-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality3}}“",
+	"tag-proofreadpage-quality4-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality4}}“"
 }
