@@ -81,7 +81,7 @@
 	"proofreadpage-button-toggle-layout-label": "Вертыкальная/гарызантальная разметка",
 	"proofreadpage-pageinfo-status": "Статус вычыткі",
 	"proofreadpage-pagelist-input-preview-button": "Прагляд спісу старонак",
-	"proofreadpage-pagelist-parsing-error-morethanone": "У крынічным вікітэксце выяўлены больш за адзін тэг <pagelist />.",
+	"proofreadpage-pagelist-parsing-error-morethanone": "У крынічным вікі-тэксце выяўлены больш за адзін тэг <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Не выяўленыя тэгі <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Адбылася такая памылка пры апрацоўцы тэгу pagelist унутры сервера, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Выяўленая нечаканая памылка. Калі ласка, паведаміце аб гэтай памылцы на phabricator.wikimedia.org, прыклаўшы журнал з кансолі.",
