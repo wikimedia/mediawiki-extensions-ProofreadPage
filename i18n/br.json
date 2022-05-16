@@ -4,6 +4,7 @@
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
+			"Huñvreüs",
 			"VIGNERON",
 			"Y-M D"
 		]
@@ -80,7 +81,7 @@
 	"proofreadpage-preferences-showheaders-label": "Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù en esaouenn anv {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Ober gant ar c'hinnig a-led pa vez kemmet traoù en esaouenn anv {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|bajenn|pajenn}} gadarnaet, $2 {{PLURAL:$2|bajenn|pajenn}} bet adlennet hepken ha $3 {{PLURAL:$3|bajenn|pajenn}} hep adlenn",
-	"content-model-proofread-page": "Pajenn: pajenn",
+	"content-model-proofread-page": "Pajenn levr",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Diuz pajenn",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pajennoù",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Treuzkludadur $1",
