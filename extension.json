@@ -94,7 +94,6 @@
 				"user.options",
 				"jquery.textSelection",
 				"ext.proofreadpage.icons",
-				"ext.proofreadpage.ve.pageTarget.init",
 				"oojs-ui-widgets",
 				"oojs-ui.styles.icons-media"
 			],
@@ -270,52 +269,6 @@
 				"desktop",
 				"mobile"
 			]
-		},
-		"ext.proofreadpage.ve.pageTarget.init": {
-			"scripts": [
-				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.init.js"
-			]
-		},
-		"ext.proofreadpage.ve.pageTarget": {
-			"scripts": [
-				"ve/node/ve.dm.MWPagequalityNode.js",
-				"ve/node/ve.ce.MWPagequalityNode.js",
-				"ve/node/ve.ui.MWPagequalityInspector.js",
-				"ve/node/ve.ui.MWPagequalityInspectorTool.js",
-				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.js",
-				"ve/pageTarget/ve.dm.MWPagesSectionNode.js",
-				"ve/pageTarget/ve.ce.MWPagesSectionNode.js"
-			],
-			"styles": [
-				"ve/node/ve.ui.MWPagequalityInspector.css",
-				"ve/pageTarget/ve.init.mw.ProofreadPagePageTarget.css"
-			],
-			"dependencies": [
-				"ext.visualEditor.mwcore",
-				"ext.visualEditor.desktopArticleTarget",
-				"ext.proofreadpage.openseadragon",
-				"oojs-ui.styles.icons-moderation",
-				"oojs-ui.styles.icons-media",
-				"ext.proofreadpage.icons"
-			],
-			"messages": [
-				"proofreadpage-button-zoom-out-label",
-				"proofreadpage-button-reset-zoom-label",
-				"proofreadpage-button-zoom-in-label",
-				"proofreadpage_body",
-				"proofreadpage_footer",
-				"proofreadpage_header",
-				"proofreadpage-visualeditor-node-pagequality-inspector-tooltip",
-				"proofreadpage-visualeditor-node-pagequality-inspector-title",
-				"proofreadpage_quality0_category",
-				"proofreadpage_quality1_category",
-				"proofreadpage_quality2_category",
-				"proofreadpage_quality3_category",
-				"proofreadpage_quality4_category"
-			],
-			"targets": [
-				"desktop"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -349,13 +302,7 @@
 		"VisualEditor": {
 			"PluginModules": [
 				"ext.proofreadpage.ve.node.pages"
-			],
-			"AvailableNamespaces": {
-				"Page": true
-			},
-			"AvailableContentModels": {
-				"proofread-page": "proofread-page"
-			}
+			]
 		}
 	},
 	"ConfigRegistry": {
