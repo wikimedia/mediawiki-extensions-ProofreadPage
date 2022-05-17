@@ -140,8 +140,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Inclusione di $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità di correzione",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità di correzione",
 	"proofreadpage-index-field-category-label": "Categorie",
 	"proofreadpage-index-edit-category-help": "Le categorie sono scritte senza il prefisso Categoria: e sono separate dal carattere \"|\".",
 	"tag-proofreadpage-quality0": "Senza testo",

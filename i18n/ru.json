@@ -120,8 +120,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Включение $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "нет",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Качество вычитки",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Качество вычитки",
 	"proofreadpage-index-field-category-label": "Категории",
 	"proofreadpage-index-edit-category-help": "Категории указываются без префикса \"Category:\" и разделяются вертикальной чертой \"|\".",
 	"tag-proofreadpage-quality0": "Без текста",

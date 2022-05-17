@@ -86,7 +86,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Masvarepe",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 sayfasının görüntülenmesi",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ho",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "var",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Düzeltme kalitesi",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Düzeltme kalitesi"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "var"
 }

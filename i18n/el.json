@@ -123,8 +123,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Συμπερίληψη του $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ναι",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Όχι",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Έλεγχος ποιότητας",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Έλεγχος ποιότητας",
 	"proofreadpage-index-field-category-label": "Κατηγορίες",
 	"proofreadpage-index-edit-category-help": "Οι κατηγορίες γράφονται χωρίς το πρόθεμα «Κατηγορία:» και διαχωρίζονται με τον χαρακτήρα «|».",
 	"tag-proofreadpage-quality0": "Χωρίς κείμενο",

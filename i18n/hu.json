@@ -114,8 +114,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 beillesztése",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Igen",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nem",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrektúrázási minőség",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektúrázási minőség",
 	"proofreadpage-index-field-category-label": "Kategóriák",
 	"proofreadpage-index-edit-category-help": "Az indexlap kategóriái a Kategória: előtag nélkül, függőleges vonallal („|”) elválasztva."
 }

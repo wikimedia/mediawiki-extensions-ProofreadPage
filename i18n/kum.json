@@ -86,7 +86,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Сагьифалар",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 индексни гийирмеге",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Дюр",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Тюгюл",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Тюзелтохувну сан яны",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Тюзелтохувну сан яны"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Тюгюл"
 }

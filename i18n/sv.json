@@ -112,8 +112,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Infogning av $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nej",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturläsningskvalitet",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturläsningskvalitet",
 	"proofreadpage-index-field-category-label": "Kategorier",
 	"tag-proofreadpage-quality0": "Utan text",
 	"tag-proofreadpage-quality1": "Inte korrekturläst",

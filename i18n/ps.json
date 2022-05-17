@@ -81,7 +81,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "مخونه",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "اړونه  د $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "هو",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نه",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ثبوت وړاندې کول اصلي",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ثبوت وړاندې کول اصلي"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نه"
 }

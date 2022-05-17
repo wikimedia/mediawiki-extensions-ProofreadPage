@@ -80,7 +80,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Páiginas",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Trascluson de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Si",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nó",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Culidade de rebison",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Culidade de rebison"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nó"
 }

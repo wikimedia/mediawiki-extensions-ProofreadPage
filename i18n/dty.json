@@ -40,7 +40,5 @@
 	"content-model-proofread-page": "पानो:पानो",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पन्‍नान",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नाइँ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "प्रूफरीडिङ गुणस्तर",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "प्रूफरीडिङ गुणस्तर"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नाइँ"
 }

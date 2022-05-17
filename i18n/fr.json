@@ -158,8 +158,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Oui",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Non",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualité de la relecture",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualité de la relecture",
 	"proofreadpage-index-field-category-label": "Catégories",
 	"proofreadpage-index-edit-category-help": "Les catégories sont écrites sans le préfixe <code>Category:</code> et sont séparées par une barre verticale <code>|</code>.",
 	"tag-proofreadpage-quality0": "Sans texte",

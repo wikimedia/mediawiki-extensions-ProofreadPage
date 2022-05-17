@@ -145,8 +145,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1の参照読み込み",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "はい",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "いいえ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校正の品質",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校正の品質",
 	"proofreadpage-index-field-category-label": "カテゴリ",
 	"proofreadpage-index-edit-category-help": "カテゴリはカテゴリ:接頭辞を省略して入力し、パイプ記号 \"|\" で区切ります。",
 	"tag-proofreadpage-quality0": "テキストなし",

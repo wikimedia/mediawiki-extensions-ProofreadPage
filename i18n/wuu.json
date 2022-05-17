@@ -90,8 +90,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1个嵌入",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "是",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "弗是",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校对质量",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校对质量",
 	"proofreadpage-index-field-category-label": "分类",
 	"proofreadpage-index-edit-category-help": "页面分类没Category: prefix外加没被\"|\"符号分割而被写下来。"
 }

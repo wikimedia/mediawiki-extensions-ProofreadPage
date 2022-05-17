@@ -80,7 +80,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pajes",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclui de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Si",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Cualia de releje",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Cualia de releje"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
 }

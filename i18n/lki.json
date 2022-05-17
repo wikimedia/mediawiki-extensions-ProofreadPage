@@ -76,7 +76,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ولگه‌ل",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "پیوند ئرا $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "أری",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نه",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "کیفیت خلط‌‌گرتن",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "کیفیت خلط‌‌گرتن"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نه"
 }

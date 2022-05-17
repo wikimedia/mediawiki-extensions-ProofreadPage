@@ -124,8 +124,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Registri \"$1\" kasutamine mallina",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jah",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrektuuri olek",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrektuuri olek",
 	"proofreadpage-index-field-category-label": "Kategooriad",
 	"proofreadpage-index-edit-category-help": "Kategooriad kirjutatuna ilma eesliiteta Kategooria: ja eraldatuna märgiga \"|\" (püstkriips).",
 	"tag-proofreadpage-quality0": "Ilma tekstita",

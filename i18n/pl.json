@@ -127,8 +127,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transkluzja z $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Tak",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nie",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Status korekty",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Status korekty",
 	"proofreadpage-index-field-category-label": "Kategorie",
 	"proofreadpage-index-edit-category-help": "Kategorie wpisujemy bez prefiksu Kategoria: i rozdzielamy znakiem „|”.",
 	"tag-proofreadpage-quality0": "Bez treści",

@@ -134,8 +134,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1-এর অন্তর্ভুক্তি",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "হ্যাঁ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "না",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "মুদ্রণ সংশোধনের গুণমান",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "মুদ্রণ সংশোধনের গুণমান",
 	"proofreadpage-index-field-category-label": "বিষয়শ্রেণীসমূহ",
 	"proofreadpage-index-edit-category-help": "বিষয়শ্রেণীগুলি বিষয়শ্রেণী: উপসর্গ ছাড়াই লেখা হয় এবং একটি পাইপ \"|\" অক্ষর দ্বারা পৃথক করা হয়।",
 	"tag-proofreadpage-quality0": "লেখাবিহীন",

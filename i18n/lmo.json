@@ -127,8 +127,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Inclusion de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sì",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nò",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualità de la verifica e corezzion de la pagina",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualità de la verifica e corezzion de la pagina",
 	"proofreadpage-index-field-category-label": "Categorie",
 	"proofreadpage-index-edit-category-help": "I categorie a inn scrivude senza el prefiss Categoria: e inn separade per mezz del carater \"|\".",
 	"tag-proofreadpage-quality0": "Senza test",

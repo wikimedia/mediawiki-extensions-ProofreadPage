@@ -146,8 +146,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transklusi dari $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ya",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Tidak",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kualitas uji baca",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kualitas uji baca",
 	"proofreadpage-index-field-category-label": "Kategori",
 	"proofreadpage-index-edit-category-help": "Kategori ditulis tanpa awalan Category: dan dipisahkan oleh karakter pipa \"|\".",
 	"tag-proofreadpage-quality0": "Tanpa teks",

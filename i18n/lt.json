@@ -91,7 +91,5 @@
 	"content-model-proofread-index": "Knygos indeksas",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Puslapiai",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Taip",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korektūros kokybė",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korektūros kokybė"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne"
 }

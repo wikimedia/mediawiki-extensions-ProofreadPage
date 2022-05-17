@@ -89,8 +89,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transcruxon de $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Sci",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualitæ da coression",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualitæ da coression",
 	"proofreadpage-index-field-category-label": "Categorie",
 	"proofreadpage-index-edit-category-help": "E categorie son scrite sensa o prefisso <code>Category:</code> e son separæ da 'na bara verticâ <code>|</code>."
 }

@@ -135,8 +135,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Превметнување на $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Квалитет на проверката",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Квалитет на проверката",
 	"proofreadpage-index-field-category-label": "Категории",
 	"proofreadpage-index-edit-category-help": "Категориите се пишуваат без претставката Категорија и се одвојуваат со исправена црта — „|“.",
 	"tag-proofreadpage-quality0": "Без текст",

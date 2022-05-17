@@ -116,8 +116,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1을 끼워넣음",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "예",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "아니오",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "교정 품질",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "교정 품질",
 	"proofreadpage-index-field-category-label": "분류",
 	"tag-proofreadpage-quality0": "텍스트 없음",
 	"tag-proofreadpage-quality1": "교정 안 됨",

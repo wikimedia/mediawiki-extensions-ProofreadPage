@@ -135,8 +135,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Ítenging í $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Já",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nei",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Gæði villulesturs",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Gæði villulesturs",
 	"proofreadpage-index-field-category-label": "Flokkar",
 	"proofreadpage-index-edit-category-help": "Flokkar eru skrifaðir án Flokkur: viðskeytisins og eru aðskildir með pípumerki \"|\"",
 	"tag-proofreadpage-quality0": "Án texta",

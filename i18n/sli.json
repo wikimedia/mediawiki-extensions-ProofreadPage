@@ -111,8 +111,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Eibindung vu $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Joa",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesungsqualität",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesungsqualität",
 	"proofreadpage-index-field-category-label": "Kategorien",
 	"proofreadpage-index-edit-category-help": "Kategorien waan uhne dan Category-Präfix geschrieba und durch doas \"|\"-Zeicha vu eiander getrennt."
 }

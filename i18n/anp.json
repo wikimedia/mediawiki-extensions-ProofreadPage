@@ -78,7 +78,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पृष्ठ",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 केरऽ मूल",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नै",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "मुद्रित शोधन केरऽ गुणवत्ता",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "मुद्रितशोधना केरऽ गुणवत्ता"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नै"
 }

@@ -139,8 +139,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 sayfasının görüntülenmesi",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Evet",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Hayır",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "İstinsah kalitesi",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "İstinsah kalitesi",
 	"proofreadpage-index-field-category-label": "Kategoriler",
 	"proofreadpage-index-edit-category-help": "Kategoriler, \"Kategori:\" ön eki olmadan yazılır ve birden fazlaysa her kategorinin arasına \"|\" koyulur.",
 	"tag-proofreadpage-quality0": "Metin olmadan",

@@ -134,8 +134,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 的嵌入",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "是",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "否",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校對品質",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校對品質",
 	"proofreadpage-index-field-category-label": "分類",
 	"proofreadpage-index-edit-category-help": "分類以不帶 Category: 前綴寫入，並透過豎線字元 \"|\" 區分。",
 	"tag-proofreadpage-quality0": "沒有文字",

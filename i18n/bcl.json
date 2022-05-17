@@ -117,8 +117,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion of $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Iyo",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Dae",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kalidad kan patotoong-basa",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kalidad kan patotoong-basa",
 	"proofreadpage-index-field-category-label": "Mga Kategoriya",
 	"proofreadpage-index-edit-category-help": "An mga kategorya ipigsurat nda daing Kategorya: an mga prefix pigseseparar gamit an \"|\" character."
 }

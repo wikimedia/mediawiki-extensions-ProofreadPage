@@ -126,8 +126,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": " $1 ను చొప్పించు",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "అవును",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "వద్దు",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "అచ్చుదిద్దు నాణ్యత",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "అచ్చుదిద్దు నాణ్యత",
 	"proofreadpage-index-field-category-label": "వర్గాలు",
 	"proofreadpage-index-edit-category-help": "వర్గాలు వర్గం:అనే ఉపసర్గ లేకుండా \"|\"  అక్షరం వేరుచేయునట్లు రాయాలి",
 	"tag-proofreadpage-quality0-description": "పేజీ నాణ్యతను \"{{int:tag-proofreadpage-quality0}}\" కు మార్చిన దిద్దుబాట్లు",

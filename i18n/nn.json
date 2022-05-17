@@ -89,8 +89,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Inkludering av $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nei",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesingskvalitet",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesingskvalitet",
 	"proofreadpage-index-field-category-label": "Kategoriar",
 	"proofreadpage-index-edit-category-help": "Kategoriar vert skrive utan Kategori:-prefikset og skiljast med teiknet «|»."
 }

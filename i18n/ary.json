@@ -98,8 +98,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "تضمين $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "آه",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "لا",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "لجودة د التدقيق",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "لجودة د التدقيق",
 	"proofreadpage-index-field-category-label": "تصنيفات",
 	"proofreadpage-index-edit-category-help": "التصنيفات تاتًكتب بلا ماتبدا ب تصنيف: وتاتفرًق بيناتها بحرف الأنبوب \"|\"."
 }

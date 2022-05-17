@@ -96,8 +96,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Включване на $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Качество на коректурата",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Качество на корекцията",
 	"proofreadpage-index-field-category-label": "Категории",
 	"proofreadpage-index-edit-category-help": "Категориите се пишат през представката „Категория:“ и се разделят с вертикална черта „|“."
 }

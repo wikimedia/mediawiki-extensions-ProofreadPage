@@ -149,8 +149,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1的嵌入",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "是",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "否",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "校对质量",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "校对质量",
 	"proofreadpage-index-field-category-label": "分类",
 	"proofreadpage-index-edit-category-help": "类别的书写没有类别：前缀，并由管道“|”字符分隔。",
 	"tag-proofreadpage-quality0": "没有文字",

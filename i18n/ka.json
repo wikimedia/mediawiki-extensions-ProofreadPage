@@ -123,8 +123,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1-ის ჩართვა",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "დიახ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "არა",
-	"proofreadpage-visualeditor-node-pagequality-inspector-title": "კორექტურის კითხვის ხარისხი",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "კორექტურის კითხვის ხარისხი",
 	"proofreadpage-index-field-category-label": "კატეგორიები",
 	"proofreadpage-index-edit-category-help": "კატეგორიები იწერება „კატეგორია:“-ს პრეფიქსის გარეშე და გაიყოფა ვერტიკალური ხაზით „|“."
 }
