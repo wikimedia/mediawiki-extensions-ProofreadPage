@@ -15,7 +15,10 @@
 			"Thothsum",
 			"Vlad5250",
 			"Александр Сигачёв",
-			"Гизатуллина"
+			"Гизатуллина",
+			"Pacha Tchernof",
+			"Renat",
+			"Tanzun"
 		]
 	},
 	"nstab-page": "Страница",
@@ -95,6 +98,7 @@
 	"proofreadpage-button-zoom-in-label": "Приблизить",
 	"proofreadpage-button-toggle-layout-label": "Вертикальная/горизонтальная разметка",
 	"proofreadpage-pageinfo-status": "Статус вычитки",
+	"proofreadpage-pagelist-input-preview-button": "Предпросмотр списка страниц",
 	"proofreadpage-pagelist-dialog-discard-changes": "Отменить изменения",
 	"proofreadpage-pagelist-dialog-cancel": "Отмена",
 	"proofreadpage-pagelist-dialog-insertchanges": "Вставить изменения",
