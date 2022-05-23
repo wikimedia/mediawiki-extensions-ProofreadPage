@@ -301,7 +301,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 	public function testGuessDataFormat( string $text, bool $expectJsonArray,
 		string $expectedFormat ) {
 		$format = self::guessDataFormat( $text, $expectJsonArray );
-		$this->assertEquals( $format, $expectedFormat );
+		$this->assertEquals( $expectedFormat, $format );
 	}
 
 	public function redirectFormatProvider() {
