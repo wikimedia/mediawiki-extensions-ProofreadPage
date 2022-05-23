@@ -146,9 +146,9 @@
 	"tag-proofreadpage-quality2": "Sorunlu",
 	"tag-proofreadpage-quality3": "İstinsah",
 	"tag-proofreadpage-quality4": "Doğrulanmış",
-	"tag-proofreadpage-quality0-description": "Sayfa kalitesini, \"Metin olmadan\" olarak değiştiren düzenlemeler",
-	"tag-proofreadpage-quality1-description": "Sayfa kalitesini, \"İstinsah edilmemiş\" olarak değiştiren düzenlemeler",
-	"tag-proofreadpage-quality2-description": "Sayfa kalitesini, \"Sorunlu\" olarak değiştiren düzenlemeler",
-	"tag-proofreadpage-quality3-description": "Sayfa kalitesini, \"İstinsah\" olarak değiştiren düzenlemeler",
-	"tag-proofreadpage-quality4-description": "Sayfa kalitesini, \"Doğrulandı\" olarak değiştiren düzenlemeler"
+	"tag-proofreadpage-quality0-description": "Sayfa kalitesini, \"{{int:tag-proofreadpage-quality0}}\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality1-description": "Sayfa kalitesini, \"{{int:tag-proofreadpage-quality1}}\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality2-description": "Sayfa kalitesini, \"{{int:tag-proofreadpage-quality2}}\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality3-description": "Sayfa kalitesini, \"{{int:tag-proofreadpage-quality3}}\" olarak değiştiren düzenlemeler",
+	"tag-proofreadpage-quality4-description": "Sayfa kalitesini, \"{{int:tag-proofreadpage-quality4}}\" olarak değiştiren düzenlemeler"
 }
