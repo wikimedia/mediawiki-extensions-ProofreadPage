@@ -15,7 +15,10 @@
 			"Vlad5250",
 			"Александр Сигачёв",
 			"Гизатуллина",
-			"Thothsum"
+			"Thothsum",
+			"Pacha Tchernof",
+			"Renat",
+			"Tanzun"
 		]
 	},
 	"nstab-page": "Страница",
@@ -92,6 +95,7 @@
 	"proofreadpage-button-zoom-in-label": "Приблизить",
 	"proofreadpage-button-toggle-layout-label": "Вертикальная/горизонтальная разметка",
 	"proofreadpage-pageinfo-status": "Статус вычитки",
+	"proofreadpage-pagelist-input-preview-button": "Предпросмотр списка страниц",
 	"proofreadpage-pagelist-dialog-insertchanges": "Вставить изменения",
 	"proofreadpage-preferences-showheaders-label": "Показывать поля верхнего и нижнего колонтитулов при редактировании в пространстве имён {{ns:page}}.",
 	"proofreadpage-preferences-horizontal-layout-label": "Использовать горизонтальную раскладку при редактировании в пространстве имён {{ns:page}}.",
