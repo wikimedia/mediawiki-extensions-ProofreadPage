@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chadyka",
+			"No Sleep till Krupki",
 			"Wizardist",
 			"Хомелка"
 		]
@@ -56,6 +57,7 @@
 	"proofreadpage_index_size": "Колькасць старонак",
 	"proofreadpage_pages_to_validate": "Колькасць старонак для праверкі",
 	"proofreadpage_pages_to_proofread_or_validate": "Колькасць старонак для вычыткі ці праверкі",
+	"proofreadpage_pages_to_proofread": "Колькасць старонак трэба вычытаць",
 	"proofreadpage_specialpage_filterby_all": "Усе",
 	"proofreadpage_specialpage_filterby_incomplete": "Няпоўныя",
 	"proofreadpage_specialpage_filterby_proofread": "Вычытаныя",
@@ -141,9 +143,9 @@
 	"tag-proofreadpage-quality2": "Праблематычная",
 	"tag-proofreadpage-quality3": "Вычытаная",
 	"tag-proofreadpage-quality4": "Правераная",
-	"tag-proofreadpage-quality0-description": "Праўкі, якія змянілі якасць старонкі на «Без тэксту».",
-	"tag-proofreadpage-quality1-description": "Праўкі, якія змянілі якасць старонкі на «Не вычытаная».",
-	"tag-proofreadpage-quality2-description": "Праўкі, якія змянілі якасць старонкі на «Праблематычная».",
-	"tag-proofreadpage-quality3-description": "Праўкі, якія змянілі якасць старонкі на «Вычытаная».",
-	"tag-proofreadpage-quality4-description": "Праўкі, якія змянілі якасць старонкі на «Правераная»."
+	"tag-proofreadpage-quality0-description": "Праўкі, якія змянілі якасць старонкі на «{{int:tag-proofreadpage-quality0}}».",
+	"tag-proofreadpage-quality1-description": "Праўкі, якія змянілі якасць старонкі на «{{int:tag-proofreadpage-quality1}}».",
+	"tag-proofreadpage-quality2-description": "Праўкі, якія змянілі якасць старонкі на «{{int:tag-proofreadpage-quality2}}».",
+	"tag-proofreadpage-quality3-description": "Праўкі, якія змянілі якасць старонкі на «{{int:tag-proofreadpage-quality3}}».",
+	"tag-proofreadpage-quality4-description": "Праўкі, якія змянілі якасць старонкі на «{{int:tag-proofreadpage-quality4}}»."
 }
