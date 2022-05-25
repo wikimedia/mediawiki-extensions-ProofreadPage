@@ -7,6 +7,10 @@
 			"Sushant savla"
 		]
 	},
+	"nstab-page": "પાનું",
+	"nstab-index": "અનુક્રમણિકા",
+	"tooltip-ca-nstab-page": "પુસ્તકનું પાનું જુઓ",
+	"tooltip-ca-nstab-index": "પુસ્તકની અનુક્રમણિકા જુઓ",
 	"indexpages": "સૂચિ પૃષ્ઠોની યાદી",
 	"pageswithoutscans": "સ્કેન વગરના પાના",
 	"proofreadpage_desc": "મૂળ સ્કેન સાથે સરળ સરખામણીની રજા આપો",
@@ -33,6 +37,7 @@
 	"proofreadpage_quality2_category": "સમસ્યારૂપ",
 	"proofreadpage_quality3_category": "ભૂલશુદ્ધિ",
 	"proofreadpage_quality4_category": "પ્રમાણિત",
+	"proofreadpage_quality2_summary": "સમસ્યારૂપ",
 	"proofreadpage_quality0_message": "આ પાનાનું પ્રુફરીડ જરૂરી નથી.",
 	"proofreadpage_quality1_message": "આ પાનાનું પ્રુફરીડિંગ બાકી છે",
 	"proofreadpage_quality2_message": "આ પાનાનું પ્રુફરીડ કરતા તકલીફ આવી હતી.",
@@ -56,5 +61,11 @@
 	"proofreadpage-button-reset-zoom-label": "મૂળ માપ",
 	"proofreadpage-button-zoom-in-label": "ઝૂમ ઇન",
 	"proofreadpage-button-toggle-layout-label": "પાનાંની આડી/ઉભી ગોઠવણ",
-	"proofreadpage-pagelist-dialog-help-invisible-label": "મદદ"
+	"proofreadpage-pagelist-dialog-help-invisible-label": "મદદ",
+	"content-model-proofread-page": "પુસ્તકનું પાનું",
+	"content-model-proofread-index": "પુસ્તકની અનુક્રમણિકા",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "હા",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ના",
+	"proofreadpage-index-field-category-label": "શ્રેણીઓ",
+	"tag-proofreadpage-quality2": "સમસ્યારૂપ"
 }
