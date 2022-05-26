@@ -73,6 +73,6 @@ class ProofreadPageTest extends ProofreadPageTestCase {
 			$hookStatus
 		);
 
-		$this->assertEquals( $hookStatus, $expectedResult );
+		$this->assertEquals( $expectedResult, $hookStatus );
 	}
 }
