@@ -5,6 +5,7 @@
 			"Yoosef Pooranvary"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "عنوان نامعتبر فهرست «$1».",
 	"apihelp-query+proofread-description": "اطلاعاتی درباره وضعیت نمونه‌خوانی برگ‌ها نشان می‌دهد.",
 	"apihelp-query+proofread-summary": "اطلاعاتی درباره وضعیت کنونی نمونه‌خوانی برگ‌های یادشده نشان می‌دهد.",
 	"apihelp-query+proofread-example-1": "وضع نمونه‌خوانی برگ‌ها را در فضای نام ۲۵۰ نشان می‌دهد",
@@ -12,5 +13,9 @@
 	"apihelp-query+proofreadinfo-summary": "اطلاعاتی دربارهٔ پیکربندی افزونهٔ نمونه‌خوانی برگ‌ها نشان می‌دهد.",
 	"apihelp-query+proofreadinfo-param-prop": "کدام ویژگی‌ها را در مورد بازبینی می‌خواهید:\n;namespaces: اطلاعاتی از فضای نام :«{{ns:Page}}» و «{{ns:Index}}».\n;qualitylevels: فهرستی از سطوح نمونه‌خوانی‌ها.",
 	"apihelp-query+proofreadinfo-example-1": "اطلاعات پیشفرض را نشان می‌دهد",
-	"apihelp-query+proofreadinfo-example-3": "اطلاعات فضای نام را نشان می‌دهد"
+	"apihelp-query+proofreadinfo-example-3": "اطلاعات فضای نام را نشان می‌دهد",
+	"apihelp-query+proofreadpagesinindex-description": "برگ‌های یک فهرست را نمایش می‌دهد",
+	"apihelp-query+proofreadpagesinindex-summary": "برگ‌های یک فهرست را نمایش می‌دهد",
+	"apihelp-query+proofreadpagesinindex-param-limit": "شمار برگ‌هایی که باید برگردانده شوند را محدود می‌کند",
+	"apihelp-query+proofreadpagesinindex-example-1": "بازگردانی اطلاعات پیش‌فرض"
 }
