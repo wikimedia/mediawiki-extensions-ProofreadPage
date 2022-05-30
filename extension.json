@@ -131,7 +131,12 @@
 			"scripts": "article/ext.proofreadpage.article.js",
 			"styles": "article/ext.proofreadpage.article.css",
 			"dependencies": [
-				"ext.proofreadpage.base"
+				"ext.proofreadpage.base",
+				"mediawiki.util"
+			],
+			"messages": [
+				"proofreadpage_source_message",
+				"proofreadpage_source"
 			]
 		},
 		"ext.proofreadpage.index": {
