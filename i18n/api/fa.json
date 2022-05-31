@@ -17,5 +17,8 @@
 	"apihelp-query+proofreadpagesinindex-description": "برگ‌های یک فهرست را نمایش می‌دهد",
 	"apihelp-query+proofreadpagesinindex-summary": "برگ‌های یک فهرست را نمایش می‌دهد",
 	"apihelp-query+proofreadpagesinindex-param-limit": "شمار برگ‌هایی که باید برگردانده شوند را محدود می‌کند",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "شناسهٔ برگ صفحهٔ فهرستی که باید برگ‌های آن فراخوان شود",
+	"apihelp-query+proofreadpagesinindex-param-prop": "کدام شاخصه‌ها برای برگ‌ها آورده شود",
+	"apihelp-query+proofreadpagesinindex-param-title": "عنوان صفحهٔ فهرستی که برگ‌های آن باید آورده شود",
 	"apihelp-query+proofreadpagesinindex-example-1": "بازگردانی اطلاعات پیش‌فرض"
 }
