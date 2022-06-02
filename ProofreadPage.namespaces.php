@@ -363,6 +363,14 @@ $proofreadPageNamespacesNames['pa'] = [
 	'index_talk' => 'ਇੰਡੈਕਸ_ਗੱਲ-ਬਾਤ'
 ];
 
+/** Nigerian Pidgin (Naijá) */
+$proofreadPageNamespacesNames['pcm'] = [
+	'page' => 'Pej',
+	'page_talk' => 'Pej_tok',
+	'index' => 'Index',
+	'index_talk' => 'Index_tok',
+];
+
 /** Polish (polski) */
 $proofreadPageNamespacesNames['pl'] = [
 	'page' => 'Strona',
