@@ -7,12 +7,12 @@
  */
 
 // global needed in order to be used inside of ProofreadPageInit
-global $proofreadPageNamespacesNames, $proofreadPageNamespacesAliases;
-$proofreadPageNamespacesNames = [];
-$proofreadPageNamespacesAliases = [];
+global $proofreadPageNamespaceNames, $proofreadPageNamespaceAliases;
+$proofreadPageNamespaceNames = [];
+$proofreadPageNamespaceAliases = [];
 
 /** English (English) */
-$proofreadPageNamespacesNames['en'] = [
+$proofreadPageNamespaceNames['en'] = [
 	'page' => 'Page',
 	'page_talk' => 'Page_talk',
 	'index' => 'Index',
@@ -20,7 +20,7 @@ $proofreadPageNamespacesNames['en'] = [
 ];
 
 /** Arabic (العربية) */
-$proofreadPageNamespacesNames['ar'] = [
+$proofreadPageNamespaceNames['ar'] = [
 	'page' => 'صفحة',
 	'page_talk' => 'نقاش_الصفحة',
 	'index' => 'فهرس',
@@ -28,7 +28,7 @@ $proofreadPageNamespacesNames['ar'] = [
 ];
 
 /** Assamese (অসমীয়া) */
-$proofreadPageNamespacesNames['as'] = [
+$proofreadPageNamespaceNames['as'] = [
 	'page' => 'পৃষ্ঠা',
 	'page_talk' => 'পৃষ্ঠা_আলোচনা',
 	'index' => 'সূচী',
@@ -36,7 +36,7 @@ $proofreadPageNamespacesNames['as'] = [
 ];
 
 /** Basa Bali (Basa Bali) */
-$proofreadPageNamespacesNames['ban'] = [
+$proofreadPageNamespaceNames['ban'] = [
 	'page' => 'Kaca',
 	'page_talk' => 'Pabligbagan_Kaca',
 	'index' => 'Indéks',
@@ -44,7 +44,7 @@ $proofreadPageNamespacesNames['ban'] = [
 ];
 
 /** Belarusian (беларуская) */
-$proofreadPageNamespacesNames['be'] = [
+$proofreadPageNamespaceNames['be'] = [
 	'page' => 'Старонка',
 	'page_talk' => 'Размовы_пра_старонку',
 	'index' => 'Індэкс',
@@ -52,7 +52,7 @@ $proofreadPageNamespacesNames['be'] = [
 ];
 
 /** Bengali (বাংলা) */
-$proofreadPageNamespacesNames['bn'] = [
+$proofreadPageNamespaceNames['bn'] = [
 	'page' => 'পাতা',
 	'page_talk' => 'পাতা_আলাপ',
 	'index' => 'নির্ঘণ্ট',
@@ -60,7 +60,7 @@ $proofreadPageNamespacesNames['bn'] = [
 ];
 
 /** Breton (brezhoneg) */
-$proofreadPageNamespacesNames['br'] = [
+$proofreadPageNamespaceNames['br'] = [
 	'page' => 'Pajenn',
 	'page_talk' => 'Kaozeadenn_pajenn',
 	'index' => 'Meneger',
@@ -68,7 +68,7 @@ $proofreadPageNamespacesNames['br'] = [
 ];
 
 /** Catalan (català) */
-$proofreadPageNamespacesNames['ca'] = [
+$proofreadPageNamespaceNames['ca'] = [
 	'page' => 'Pàgina',
 	'page_talk' => 'Pàgina_Discussió',
 	'index' => 'Llibre',
@@ -76,7 +76,7 @@ $proofreadPageNamespacesNames['ca'] = [
 ];
 
 /** Czech (česky) */
-$proofreadPageNamespacesNames['cs'] = [
+$proofreadPageNamespaceNames['cs'] = [
 	'page' => 'Stránka',
 	'page_talk' => 'Diskuse_ke_stránce',
 	'index' => 'Index',
@@ -84,7 +84,7 @@ $proofreadPageNamespacesNames['cs'] = [
 ];
 
 /** Welsh (Cymraeg) */
-$proofreadPageNamespacesNames['cy'] = [
+$proofreadPageNamespaceNames['cy'] = [
 	'page' => 'Tudalen',
 	'page_talk' => 'Sgwrs_Tudalen',
 	'index' => 'Indecs',
@@ -92,7 +92,7 @@ $proofreadPageNamespacesNames['cy'] = [
 ];
 
 /** Danish (dansk) */
-$proofreadPageNamespacesNames['da'] = [
+$proofreadPageNamespaceNames['da'] = [
 	'page' => 'Side',
 	'page_talk' => 'Sidediskussion',
 	'index' => 'Indeks',
@@ -100,7 +100,7 @@ $proofreadPageNamespacesNames['da'] = [
 ];
 
 /** German (Deutsch) */
-$proofreadPageNamespacesNames['de'] = [
+$proofreadPageNamespaceNames['de'] = [
 	'page' => 'Seite',
 	'page_talk' => 'Seite_Diskussion',
 	'index' => 'Index',
@@ -108,7 +108,7 @@ $proofreadPageNamespacesNames['de'] = [
 ];
 
 /** Greek (Ελληνικά) */
-$proofreadPageNamespacesNames['el'] = [
+$proofreadPageNamespaceNames['el'] = [
 	'page' => 'Σελίδα',
 	'page_talk' => 'Συζήτηση_σελίδας',
 	'index' => 'Μεταγραφή',
@@ -116,7 +116,7 @@ $proofreadPageNamespacesNames['el'] = [
 ];
 
 /** Esperanto (Esperanto) */
-$proofreadPageNamespacesNames['eo'] = [
+$proofreadPageNamespaceNames['eo'] = [
 	'page' => 'Paĝo',
 	'page_talk' => 'Paĝo-Diskuto',
 	'index' => 'Indekso',
@@ -124,7 +124,7 @@ $proofreadPageNamespacesNames['eo'] = [
 ];
 
 /** Spanish (español) */
-$proofreadPageNamespacesNames['es'] = [
+$proofreadPageNamespaceNames['es'] = [
 	'page' => 'Página',
 	'page_talk' => 'Página_Discusión',
 	'index' => 'Índice',
@@ -132,7 +132,7 @@ $proofreadPageNamespacesNames['es'] = [
 ];
 
 /** Estonian (eesti) */
-$proofreadPageNamespacesNames['et'] = [
+$proofreadPageNamespaceNames['et'] = [
 	'page' => 'Lehekülg',
 	'page_talk' => 'Lehekülje_arutelu',
 	'index' => 'Register',
@@ -140,7 +140,7 @@ $proofreadPageNamespacesNames['et'] = [
 ];
 
 /** Basque (Euskara) */
-$proofreadPageNamespacesNames['eu'] = [
+$proofreadPageNamespaceNames['eu'] = [
 	'page' => 'Orrialde',
 	'page_talk' => 'Orrialde_eztabaida',
 	'index' => 'Aurkibide',
@@ -148,7 +148,7 @@ $proofreadPageNamespacesNames['eu'] = [
 ];
 
 /** Persian (فارسی) */
-$proofreadPageNamespacesNames['fa'] = [
+$proofreadPageNamespaceNames['fa'] = [
 	'page' => 'برگه',
 	'page_talk' => 'گفتگوی برگه',
 	'index' => 'فهرست',
@@ -156,7 +156,7 @@ $proofreadPageNamespacesNames['fa'] = [
 ];
 
 /** Finnish (suomi) */
-$proofreadPageNamespacesNames['fi'] = [
+$proofreadPageNamespaceNames['fi'] = [
 	'page' => 'Sivu',
 	'page_talk' => 'Keskustelu_sivusta',
 	'index' => 'Hakemisto',
@@ -164,7 +164,7 @@ $proofreadPageNamespacesNames['fi'] = [
 ];
 
 /** French (Français) */
-$proofreadPageNamespacesNames['fr'] = [
+$proofreadPageNamespaceNames['fr'] = [
 	'page' => 'Page',
 	'page_talk' => 'Discussion_Page',
 	'index' => 'Livre',
@@ -172,7 +172,7 @@ $proofreadPageNamespacesNames['fr'] = [
 ];
 
 /** Northern Frisian (Nordfriisk) */
-$proofreadPageNamespacesNames['frr'] = [
+$proofreadPageNamespaceNames['frr'] = [
 	'page' => 'Seite',
 	'page_talk' => 'Seite_Diskussion',
 	'index' => 'Index',
@@ -180,7 +180,7 @@ $proofreadPageNamespacesNames['frr'] = [
 ];
 
 /** Galician (Galego) */
-$proofreadPageNamespacesNames['gl'] = [
+$proofreadPageNamespaceNames['gl'] = [
 	'page' => 'Páxina',
 	'page_talk' => 'Conversa_páxina',
 	'index' => 'Índice',
@@ -188,7 +188,7 @@ $proofreadPageNamespacesNames['gl'] = [
 ];
 
 /** Gujarati (ગુજરાતી) */
-$proofreadPageNamespacesNames['gu'] = [
+$proofreadPageNamespaceNames['gu'] = [
 	'page' => 'પૃષ્ઠ',
 	'page_talk' => 'પૃષ્ઠ_ચર્ચા',
 	'index' => 'સૂચિ',
@@ -196,7 +196,7 @@ $proofreadPageNamespacesNames['gu'] = [
 ];
 
 /** Hebrew (עברית) */
-$proofreadPageNamespacesNames['he'] = [
+$proofreadPageNamespaceNames['he'] = [
 	'page' => 'עמוד',
 	'page_talk' => 'שיחת_עמוד',
 	'index' => 'מפתח',
@@ -204,7 +204,7 @@ $proofreadPageNamespacesNames['he'] = [
 ];
 
 /** Hindi (हिन्दी) */
-$proofreadPageNamespacesNames['hi'] = [
+$proofreadPageNamespaceNames['hi'] = [
 	'page' => 'पृष्ठ',
 	'page_talk' => 'पृष्ठ_वार्ता',
 	'index' => 'विषयसूची',
@@ -212,7 +212,7 @@ $proofreadPageNamespacesNames['hi'] = [
 ];
 
 /** Croatian (hrvatski) */
-$proofreadPageNamespacesNames['hr'] = [
+$proofreadPageNamespaceNames['hr'] = [
 	'page' => 'Stranica',
 	'page_talk' => 'Razgovor_o_stranici',
 	'index' => 'Sadržaj',
@@ -220,7 +220,7 @@ $proofreadPageNamespacesNames['hr'] = [
 ];
 
 /** Hungarian (magyar) */
-$proofreadPageNamespacesNames['hu'] = [
+$proofreadPageNamespaceNames['hu'] = [
 	'page' => 'Oldal',
 	'page_talk' => 'Oldal_vita',
 	'index' => 'Index',
@@ -228,7 +228,7 @@ $proofreadPageNamespacesNames['hu'] = [
 ];
 
 /** Armenian (Հայերեն) */
-$proofreadPageNamespacesNames['hy'] = [
+$proofreadPageNamespaceNames['hy'] = [
 	'page' => 'Էջ',
 	'page_talk' => 'Էջի_քննարկում',
 	'index' => 'Ինդեքս',
@@ -236,7 +236,7 @@ $proofreadPageNamespacesNames['hy'] = [
 ];
 
 /** Indonesian (Bahasa Indonesia) */
-$proofreadPageNamespacesNames['id'] = [
+$proofreadPageNamespaceNames['id'] = [
 	'page' => 'Halaman',
 	'page_talk' => 'Pembicaraan_Halaman',
 	'index' => 'Indeks',
@@ -244,7 +244,7 @@ $proofreadPageNamespacesNames['id'] = [
 ];
 
 /** Icelandic (íslenska) */
-$proofreadPageNamespacesNames['is'] = [
+$proofreadPageNamespaceNames['is'] = [
 	'page' => 'Blaðsíða',
 	'page_talk' => 'Blaðsíðuspjall',
 	'index' => 'Frumrit',
@@ -252,7 +252,7 @@ $proofreadPageNamespacesNames['is'] = [
 ];
 
 /** Italian (italiano) */
-$proofreadPageNamespacesNames['it'] = [
+$proofreadPageNamespaceNames['it'] = [
 	'page' => 'Pagina',
 	'page_talk' => 'Discussioni_pagina',
 	'index' => 'Indice',
@@ -260,7 +260,7 @@ $proofreadPageNamespacesNames['it'] = [
 ];
 
 /** Javanese (Jawa) */
-$proofreadPageNamespacesNames['jv'] = [
+$proofreadPageNamespaceNames['jv'] = [
 	'page' => 'Kaca',
 	'page_talk' => 'Parembugan_Kaca',
 	'index' => 'Indhèks',
@@ -268,7 +268,7 @@ $proofreadPageNamespacesNames['jv'] = [
 ];
 
 /** Kannada (ಕನ್ನಡ) */
-$proofreadPageNamespacesNames['kn'] = [
+$proofreadPageNamespaceNames['kn'] = [
 	'page' => 'ಪುಟ',
 	'page_talk' => 'ಪುಟ_ಚರ್ಚೆ',
 	'index' => 'ಪರಿವಿಡಿ',
@@ -276,7 +276,7 @@ $proofreadPageNamespacesNames['kn'] = [
 ];
 
 /** Korean (한국어) */
-$proofreadPageNamespacesNames['ko'] = [
+$proofreadPageNamespaceNames['ko'] = [
 	'page' => '페이지',
 	'page_talk' => '페이지토론',
 	'index' => '색인',
@@ -284,7 +284,7 @@ $proofreadPageNamespacesNames['ko'] = [
 ];
 
 /** Latin (Latina) */
-$proofreadPageNamespacesNames['la'] = [
+$proofreadPageNamespaceNames['la'] = [
 	'page' => 'Pagina',
 	'page_talk' => 'Disputatio_Paginae',
 	'index' => 'Liber',
@@ -292,7 +292,7 @@ $proofreadPageNamespacesNames['la'] = [
 ];
 
 /** Ligurian (ligure) */
-$proofreadPageNamespacesNames['lij'] = [
+$proofreadPageNamespaceNames['lij'] = [
 	'page' => 'Pagina',
 	'page_talk' => 'Discuscion_pagina',
 	'index' => 'Ìndiçe',
@@ -300,7 +300,7 @@ $proofreadPageNamespacesNames['lij'] = [
 ];
 
 /** Malayalam (മലയാളം) */
-$proofreadPageNamespacesNames['ml'] = [
+$proofreadPageNamespaceNames['ml'] = [
 	'page' => 'താൾ',
 	'page_talk' => 'താളിന്റെ_സംവാദം',
 	'index' => 'സൂചിക',
@@ -308,7 +308,7 @@ $proofreadPageNamespacesNames['ml'] = [
 ];
 
 /** Marathi (मराठी) */
-$proofreadPageNamespacesNames['mr'] = [
+$proofreadPageNamespaceNames['mr'] = [
 	'page' => 'पान',
 	'page_talk' => 'पान_चर्चा',
 	'index' => 'अनुक्रमणिका',
@@ -316,7 +316,7 @@ $proofreadPageNamespacesNames['mr'] = [
 ];
 
 /** Neapolitan (Napulitano) */
-$proofreadPageNamespacesNames['nap'] = [
+$proofreadPageNamespaceNames['nap'] = [
 	'page' => 'Paggena',
 	'page_talk' => 'Paggena_chiàcchiera',
 	'index' => 'Ennece',
@@ -324,7 +324,7 @@ $proofreadPageNamespacesNames['nap'] = [
 ];
 
 /** Norwegian (bokmål)‬ (‪norsk (bokmål)‬) */
-$proofreadPageNamespacesNames['nb'] = [
+$proofreadPageNamespaceNames['nb'] = [
 	'page' => 'Side',
 	'page_talk' => 'Sidediskusjon',
 	'index' => 'Indeks',
@@ -332,7 +332,7 @@ $proofreadPageNamespacesNames['nb'] = [
 ];
 
 /** Dutch (Nederlands) */
-$proofreadPageNamespacesNames['nl'] = [
+$proofreadPageNamespaceNames['nl'] = [
 	'page' => 'Pagina',
 	'page_talk' => 'Overleg_pagina',
 	'index' => 'Index',
@@ -340,7 +340,7 @@ $proofreadPageNamespacesNames['nl'] = [
 ];
 
 /** N'Ko (ߒߞߏ) */
-$proofreadPageNamespacesNames['nqo'] = [
+$proofreadPageNamespaceNames['nqo'] = [
 	'page' => 'ߞߐߜߍ',
 	'page_talk' => 'ߞߐߜߍ ߢߊߝߐߞߣߍ',
 	'index' => 'ߓߊߕߐ߲ߛߐ߲',
@@ -348,7 +348,7 @@ $proofreadPageNamespacesNames['nqo'] = [
 ];
 
 /** Oriya (ଓଡ଼ିଆ) */
-$proofreadPageNamespacesNames['or'] = [
+$proofreadPageNamespaceNames['or'] = [
 	'page' => 'ପୃଷ୍ଠା',
 	'page_talk' => 'ପୃଷ୍ଠା_ଆଲୋଚନା',
 	'index' => 'ସୂଚୀ',
@@ -356,7 +356,7 @@ $proofreadPageNamespacesNames['or'] = [
 ];
 
 /** Punjabi (ਪੰਜਾਬੀ) */
-$proofreadPageNamespacesNames['pa'] = [
+$proofreadPageNamespaceNames['pa'] = [
 	'page' => 'ਪੰਨਾ',
 	'page_talk' => 'ਪੰਨਾ_ਗੱਲ-ਬਾਤ',
 	'index' => 'ਇੰਡੈਕਸ',
@@ -364,7 +364,7 @@ $proofreadPageNamespacesNames['pa'] = [
 ];
 
 /** Nigerian Pidgin (Naijá) */
-$proofreadPageNamespacesNames['pcm'] = [
+$proofreadPageNamespaceNames['pcm'] = [
 	'page' => 'Pej',
 	'page_talk' => 'Pej_tok',
 	'index' => 'Index',
@@ -372,7 +372,7 @@ $proofreadPageNamespacesNames['pcm'] = [
 ];
 
 /** Polish (polski) */
-$proofreadPageNamespacesNames['pl'] = [
+$proofreadPageNamespaceNames['pl'] = [
 	'page' => 'Strona',
 	'page_talk' => 'Dyskusja_strony',
 	'index' => 'Indeks',
@@ -380,7 +380,7 @@ $proofreadPageNamespacesNames['pl'] = [
 ];
 
 /** Piedmontese (Piemontèis) */
-$proofreadPageNamespacesNames['pms'] = [
+$proofreadPageNamespaceNames['pms'] = [
 	'page' => 'Pàgina',
 	'page_talk' => 'Discussion_ëd_la_pàgina',
 	'index' => 'Tàula',
@@ -388,7 +388,7 @@ $proofreadPageNamespacesNames['pms'] = [
 ];
 
 /** Portuguese (português) */
-$proofreadPageNamespacesNames['pt'] = [
+$proofreadPageNamespaceNames['pt'] = [
 	'page' => 'Página',
 	'page_talk' => 'Página_Discussão',
 	'index' => 'Galeria',
@@ -396,7 +396,7 @@ $proofreadPageNamespacesNames['pt'] = [
 ];
 
 /** Romanian (română) */
-$proofreadPageNamespacesNames['ro'] = [
+$proofreadPageNamespaceNames['ro'] = [
 	'page' => 'Pagină',
 	'page_talk' => 'Discuție_Pagină',
 	'index' => 'Index',
@@ -404,7 +404,7 @@ $proofreadPageNamespacesNames['ro'] = [
 ];
 
 /** Russian (русский) */
-$proofreadPageNamespacesNames['ru'] = [
+$proofreadPageNamespaceNames['ru'] = [
 	'page' => 'Страница',
 	'page_talk' => 'Обсуждение_страницы',
 	'index' => 'Индекс',
@@ -412,21 +412,21 @@ $proofreadPageNamespacesNames['ru'] = [
 ];
 
 /** Sanskrit (संस्कृतम्) */
-$proofreadPageNamespacesNames['sa'] = [
+$proofreadPageNamespaceNames['sa'] = [
 	'page' => 'पृष्ठम्',
 	'page_talk' => 'पृष्ठसम्भाषणम्',
 	'index' => 'अनुक्रमणिका',
 	'index_talk' => 'अनुक्रमणिकासम्भाषणम्',
 ];
 
-$proofreadPageNamespacesAliases['sa'] = [
+$proofreadPageNamespaceAliases['sa'] = [
 	'page' => [ 'पुटम्' ],
 	'page_talk' => [ 'पुटसंवाद' ],
 	'index_talk' => [ 'अनुक्रमणिकासंवाद' ],
 ];
 
 /** Slovenian (slovenščina) */
-$proofreadPageNamespacesNames['sl'] = [
+$proofreadPageNamespaceNames['sl'] = [
 	'page' => 'Stran',
 	'page_talk' => 'Pogovor_o_strani',
 	'index' => 'Kazalo',
@@ -434,7 +434,7 @@ $proofreadPageNamespacesNames['sl'] = [
 ];
 
 /** Serbian Cyrillic (српски (ћирилица)) */
-$proofreadPageNamespacesNames['sr-ec'] = [
+$proofreadPageNamespaceNames['sr-ec'] = [
 	'page' => 'Страница',
 	'page_talk' => 'Разговор_о_страници',
 	'index' => 'Индекс',
@@ -442,7 +442,7 @@ $proofreadPageNamespacesNames['sr-ec'] = [
 ];
 
 /** Serbian Latin (srpski (latinica)) */
-$proofreadPageNamespacesNames['sr-el'] = [
+$proofreadPageNamespaceNames['sr-el'] = [
 	'page' => 'Stranica',
 	'page_talk' => 'Razgovor_o_stranici',
 	'index' => 'Indeks',
@@ -450,7 +450,7 @@ $proofreadPageNamespacesNames['sr-el'] = [
 ];
 
 /** Swedish (svenska) */
-$proofreadPageNamespacesNames['sv'] = [
+$proofreadPageNamespaceNames['sv'] = [
 	'page' => 'Sida',
 	'page_talk' => 'Siddiskussion',
 	'index' => 'Index',
@@ -458,7 +458,7 @@ $proofreadPageNamespacesNames['sv'] = [
 ];
 
 /** Tamil (தமிழ்) */
-$proofreadPageNamespacesNames['ta'] = [
+$proofreadPageNamespaceNames['ta'] = [
 	'page' => 'பக்கம்',
 	'page_talk' => 'பக்கம்_பேச்சு',
 	'index' => 'அட்டவணை',
@@ -466,7 +466,7 @@ $proofreadPageNamespacesNames['ta'] = [
 ];
 
 /** Telugu (తెలుగు) */
-$proofreadPageNamespacesNames['te'] = [
+$proofreadPageNamespaceNames['te'] = [
 	'page' => 'పుట',
 	'page_talk' => 'పుట_చర్చ',
 	'index' => 'సూచిక',
@@ -474,7 +474,7 @@ $proofreadPageNamespacesNames['te'] = [
 ];
 
 /** Thai (ไทย) */
-$proofreadPageNamespacesNames['th'] = [
+$proofreadPageNamespaceNames['th'] = [
 	'page' => 'หน้า',
 	'page_talk' => 'คุยเรื่องหน้า',
 	'index' => 'ดัชนี',
@@ -482,7 +482,7 @@ $proofreadPageNamespacesNames['th'] = [
 ];
 
 /** Turkish (Türkçe) */
-$proofreadPageNamespacesNames['tr'] = [
+$proofreadPageNamespaceNames['tr'] = [
 	'page' => 'Sayfa',
 	'page_talk' => 'Sayfa_tartışma',
 	'index' => 'Dizin',
@@ -490,7 +490,7 @@ $proofreadPageNamespacesNames['tr'] = [
 ];
 
 /** Ukrainian (украї́нська) */
-$proofreadPageNamespacesNames['uk'] = [
+$proofreadPageNamespaceNames['uk'] = [
 	'page' => 'Сторінка',
 	'page_talk' => 'Обговорення_сторінки',
 	'index' => 'Індекс',
@@ -498,7 +498,7 @@ $proofreadPageNamespacesNames['uk'] = [
 ];
 
 /** vèneto (vèneto) */
-$proofreadPageNamespacesNames['vec'] = [
+$proofreadPageNamespaceNames['vec'] = [
 	'page' => 'Pagina',
 	'page_talk' => 'Discussion_pagina',
 	'index' => 'Indice',
@@ -506,7 +506,7 @@ $proofreadPageNamespacesNames['vec'] = [
 ];
 
 /** Vietnamese (Tiếng Việt) */
-$proofreadPageNamespacesNames['vi'] = [
+$proofreadPageNamespaceNames['vi'] = [
 	'page' => 'Trang',
 	'page_talk' => 'Thảo_luận_Trang',
 	'index' => 'Mục_lục',
@@ -514,7 +514,7 @@ $proofreadPageNamespacesNames['vi'] = [
 ];
 
 /** Walloon (walon) */
-$proofreadPageNamespacesNames['wa'] = [
+$proofreadPageNamespaceNames['wa'] = [
 	'page' => 'Pådje',
 	'page_talk' => 'Pådje_copene',
 	'index' => 'Indek',

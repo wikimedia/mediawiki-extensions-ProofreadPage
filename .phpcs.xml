@@ -3,7 +3,7 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki" />
 	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">
 		<properties>
-			<property name="ignoreList" type="array" value="$proofreadPageNamespacesNames,$proofreadPageNamespacesAliases" />
+			<property name="ignoreList" type="array" value="$proofreadPageNamespaceNames,$proofreadPageNamespaceAliases" />
 		</properties>
 	</rule>
 	<file>.</file>

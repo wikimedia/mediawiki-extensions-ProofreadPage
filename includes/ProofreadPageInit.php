@@ -142,31 +142,31 @@ class ProofreadPageInit {
 	 * @return string[]
 	 */
 	private static function getNamespaceAliases( $key ) {
-		global $proofreadPageNamespacesAliases, $wgLanguageCode;
+		global $proofreadPageNamespaceAliases, $wgLanguageCode;
 
-		if ( !isset( $proofreadPageNamespacesAliases[$wgLanguageCode][$key] ) ) {
+		if ( !isset( $proofreadPageNamespaceAliases[$wgLanguageCode][$key] ) ) {
 			return [];
 		}
 
-		return $proofreadPageNamespacesAliases[$wgLanguageCode][$key];
+		return $proofreadPageNamespaceAliases[$wgLanguageCode][$key];
 	}
 
 	/**
-	 * Return the internationalized name of a namespace as set in proofreadPageNamespacesNames.
+	 * Return the internationalized name of a namespace as set in proofreadPageNamespaceNames.
 	 * The english language is used as fallback.
 	 * @param string $key namespace key in the array
 	 * @param string $lang language code by default the wiki language
 	 * @return string
 	 */
 	protected static function getNamespaceName( $key, $lang = '' ) {
-		global $proofreadPageNamespacesNames, $wgLanguageCode;
+		global $proofreadPageNamespaceNames, $wgLanguageCode;
 
 		if ( $lang === '' ) {
 			$lang = $wgLanguageCode;
 		}
 
-		return $proofreadPageNamespacesNames[$lang][$key]
-			?? $proofreadPageNamespacesNames['en'][$key];
+		return $proofreadPageNamespaceNames[$lang][$key]
+			?? $proofreadPageNamespaceNames['en'][$key];
 	}
 
 	/**
