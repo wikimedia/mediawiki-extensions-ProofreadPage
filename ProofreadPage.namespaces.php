@@ -365,10 +365,10 @@ $proofreadPageNamespaceNames['pa'] = [
 
 /** Nigerian Pidgin (Naijá) */
 $proofreadPageNamespaceNames['pcm'] = [
-	'page' => 'Pej',
-	'page_talk' => 'Pej_tok',
+	'page' => 'Dokument_pej',
+	'page_talk' => 'Dokument_pej_tok_abaut_am',
 	'index' => 'Index',
-	'index_talk' => 'Index_tok',
+	'index_talk' => 'Index_tok_abaut_am',
 ];
 
 /** Polish (polski) */
