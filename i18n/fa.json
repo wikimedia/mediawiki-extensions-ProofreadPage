@@ -86,7 +86,7 @@
 	"proofreadpage_page_status_logged_out": "وضعیت برگ (فقط کاربران واردشده به سیستم می‌توانند این مورد را انتخاب کنند)",
 	"proofreadpage_js_attributes": "پدیدآورنده عنوان سال ناشر",
 	"proofreadpage_index_attributes": "پدیدآورنده\nعنوان\nYear|سال انتشار\nناشر\nمنبع\nImage|تصویر جلد\nPages||20\nRemarks||10",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|برگ|برگ}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|برگ}}",
 	"proofreadpage_specialpage_legend": "جستجو در برگ‌های فهرست",
 	"proofreadpage_specialpage_searcherror": "خطا در موتور جستجو",
 	"proofreadpage_specialpage_searcherrortext": "موتور جستجو کار نمی‌کند. پوزش می‌خواهیم.",
