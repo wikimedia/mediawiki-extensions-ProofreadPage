@@ -64,6 +64,7 @@
 	"proofreadpage_header": "Used as label",
 	"proofreadpage_body": "Used as label message",
 	"proofreadpage_footer": "Used as label",
+	"proofreadpage_edit_in_sequence": "Used as the label of a link that launches a interface to edit pages one after another.",
 	"proofreadpage_toggleheaders": "Tooltip at right \"+\" button, at Wikisources, at namespace \"Page\".",
 	"proofreadpage_quality0_category": "{{Identical|Proofreadpage quality0 category}}\n{{Identical|Empty}}",
 	"proofreadpage_quality1_category": "Category name where quality level 1 pages are added to\n{{Identical|Proofreadpage quality1 category}}",
