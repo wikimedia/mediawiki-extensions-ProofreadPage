@@ -36,12 +36,6 @@ class CustomIndexField {
 		$this->key = $key;
 		$this->value = trim( $value );
 		$this->config = $config;
-		if ( isset( $this->config['type'] ) ) {
-			$this->config['type'] = strtolower( $this->config['type'] );
-		}
-		if ( isset( $this->config['data'] ) ) {
-			$this->config['data'] = strtolower( $this->config['data'] );
-		}
 	}
 
 	/**
@@ -72,21 +66,23 @@ class CustomIndexField {
 	 * Return the type of the entry
 	 * @return string
 	 */
-	public function getType() {
-		if ( isset( $this->config['type'] ) && $this->config['type'] != '' ) {
-			return $this->config['type'];
+	public function getType(): string {
+		if ( isset( $this->config['type'] ) && $this->config['type'] !== null && $this->config['type'] !== '' ) {
+			return strtolower( $this->config['type'] );
 		} else {
 			return 'string';
 		}
 	}
 
 	/**
-	 * Return the data value of the entry
-	 * @return string|null
+	 * Return the field's data name.
+	 * This is a lowercase string that defines what sort of information is stored in this field.
+	 *
+	 * @return ?string
 	 */
-	public function getData() {
-		if ( isset( $this->config['data'] ) && $this->config['data'] != '' ) {
-			return $this->config['data'];
+	public function getData(): ?string {
+		if ( isset( $this->config['data'] ) && $this->config['data'] !== null && $this->config['data'] !== '' ) {
+			return strtolower( $this->config['data'] );
 		} else {
 			return null;
 		}
@@ -201,6 +197,6 @@ class CustomIndexField {
 	 * @return bool
 	 */
 	public function isPagelist() {
-		return isset( $this->config['data'] ) && strtolower( $this->config['data'] ) === 'pagelist';
+		return $this->getData() === 'pagelist';
 	}
 }
