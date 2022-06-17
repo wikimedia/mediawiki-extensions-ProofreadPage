@@ -3,6 +3,7 @@
 .*.swp
 .htaccess
 /node_modules/
+/modules/foreign/.foreign/
 /vendor/
 /composer.lock
 .eslintcache
