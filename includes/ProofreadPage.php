@@ -432,9 +432,8 @@ class ProofreadPage {
 							'title' => 'prp-prev-image',
 						] );
 					}
-				}
-				// if the previous page does not exist
-				catch ( OutOfBoundsException $e ) {
+				} catch ( OutOfBoundsException $e ) {
+					// if the previous page does not exist
 				}
 
 				try {
@@ -464,9 +463,8 @@ class ProofreadPage {
 							'title' => 'prp-next-image',
 						] );
 					}
-				}
-				// if the next page does not exist
-				catch ( OutOfBoundsException $e ) {
+				} catch ( OutOfBoundsException $e ) {
+					// if the next page does not exist
 				}
 			} catch ( PageNotInPaginationException $e ) {
 			}
