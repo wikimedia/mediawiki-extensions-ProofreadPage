@@ -280,9 +280,8 @@ class PagesTagParser {
 					$firstpage->getArticleID(),
 					$firstpage->getLatestRevID()
 				);
-			}
-			// if the first page does not exist
-			catch ( OutOfBoundsException $e ) {
+			} catch ( OutOfBoundsException $e ) {
+				// if the first page does not exist
 			}
 		}
 
