@@ -139,15 +139,15 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Có",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Không",
 	"proofreadpage-index-field-category-label": "Thể loại",
-	"proofreadpage-index-edit-category-help": "Tên thể loại không cần tiền tố Thể loại: và được phân tách bằng dấu gạch sổ \"|\".",
+	"proofreadpage-index-edit-category-help": "Tên thể loại không cần tiền tố Thể loại: và được phân tách bằng dấu gạch sổ “|”.",
 	"tag-proofreadpage-quality0": "Không có nội dung",
 	"tag-proofreadpage-quality1": "Chưa hiệu đính",
 	"tag-proofreadpage-quality2": "Có vấn đề",
 	"tag-proofreadpage-quality3": "Đã hiệu đính",
 	"tag-proofreadpage-quality4": "Đã phê chuẩn",
-	"tag-proofreadpage-quality0-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality0}}\"",
-	"tag-proofreadpage-quality1-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality1}}\"",
-	"tag-proofreadpage-quality2-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality2}}\"",
-	"tag-proofreadpage-quality3-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality3}}\"",
-	"tag-proofreadpage-quality4-description": "Sửa đổi khiến chất lượng trang trở thành \"{{int:tag-proofreadpage-quality4}}\""
+	"tag-proofreadpage-quality0-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality0}}”",
+	"tag-proofreadpage-quality1-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality1}}”",
+	"tag-proofreadpage-quality2-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality2}}”",
+	"tag-proofreadpage-quality3-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality3}}”",
+	"tag-proofreadpage-quality4-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality4}}”"
 }
