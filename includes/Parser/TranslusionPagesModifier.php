@@ -73,14 +73,7 @@ class TranslusionPagesModifier {
 		}
 
 		if ( $indexTitle !== null ) {
-			$indexLink = $this->linkRenderer->makeLink(
-				$indexTitle,
-				$outputPage->msg( 'proofreadpage_source' )->text(),
-				[
-					'title' => $outputPage->msg( 'proofreadpage_source_message' )->text()
-				]
-			);
-			$outputPage->addJsConfigVars( 'proofreadpage_source_href', $indexLink );
+			$outputPage->addJsConfigVars( 'prpSourceIndexPage', $indexTitle->getPrefixedText() );
 			$outputPage->addModules( 'ext.proofreadpage.article' );
 		}
 
