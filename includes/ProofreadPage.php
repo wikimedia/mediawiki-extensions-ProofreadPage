@@ -22,12 +22,15 @@
 namespace ProofreadPage;
 
 use CommentStoreComment;
+use Config;
 use DatabaseUpdater;
 use ExtensionRegistry;
 use FixProofreadIndexPagesContentModel;
 use FixProofreadPagePagesContentModel;
 use IContextSource;
 use ImagePage;
+use MediaWiki\Hook\RecentChange_saveHook;
+use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;
@@ -58,7 +61,20 @@ use User;
  - check uniqueness of the index page : when index is saved too
 */
 
-class ProofreadPage {
+class ProofreadPage implements
+	RecentChange_saveHook,
+	SkinTemplateNavigation__UniversalHook
+{
+
+	/** @var Config */
+	private $config;
+
+	/**
+	 * @param Config $config
+	 */
+	public function __construct( Config $config ) {
+		$this->config = $config;
+	}
 
 	/**
 	 * @deprecated use Context::getPageNamespaceId
@@ -517,14 +533,13 @@ class ProofreadPage {
 		}
 	}
 
+	// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 	/**
-	 * Add links in the navigation menus related the current page
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation::Universal
-	 *
-	 * @param SkinTemplate $skin
-	 * @param array[] &$links Structured navigation links
+	 * @inheritDoc
 	 */
-	public static function onSkinTemplateNavigationUniversal( SkinTemplate $skin, array &$links ) {
+	public function onSkinTemplateNavigation__Universal( $skin, &$links ): void {
+		// phpcs:enable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
 		$title = $skin->getTitle();
 		if ( $title === null ) {
 			return;
@@ -605,15 +620,14 @@ class ProofreadPage {
 		return true;
 	}
 
+	// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 	/**
-	 * RecentChange_save hook handler that tags changes according to their content
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/RecentChange_save
-	 *
-	 * @param \RecentChange $rc
+	 * @inheritDoc
 	 */
-	public static function onRecentChangeSave( \RecentChange $rc ) {
-		$useTags = Context::getDefaultContext()->getConfig()->get(
-			'ProofreadPageUseStatusChangeTags' );
+	public function onRecentChange_save( $rc ) {
+		// phpcs:enable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+		$useTags = $this->config->get( 'ProofreadPageUseStatusChangeTags' );
 
 		// not configured to add tags to revisions
 		if ( !$useTags ) {

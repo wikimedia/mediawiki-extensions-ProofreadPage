@@ -291,7 +291,7 @@
 		"wgQueryPages": "ProofreadPage\\ProofreadPage::onwgQueryPages",
 		"GetPreferences": "ProofreadPage\\ProofreadPage::onGetPreferences",
 		"CanonicalNamespaces": "ProofreadPage\\ProofreadPage::onCanonicalNamespaces",
-		"SkinTemplateNavigation::Universal": "ProofreadPage\\ProofreadPage::onSkinTemplateNavigationUniversal",
+		"SkinTemplateNavigation::Universal": "ProofreadPageHooks",
 		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",
 		"EditFormPreloadText": "ProofreadPage\\ProofreadPage::onEditFormPreloadText",
 		"ParserTestTables": "ProofreadPage\\ProofreadPage::onParserTestTables",
@@ -299,9 +299,17 @@
 		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction",
 		"ListDefinedTags": "ProofreadPage\\ProofreadPage::onListDefinedTags",
 		"ChangeTagsListActive": "ProofreadPage\\ProofreadPage::onListDefinedTags",
-		"RecentChange_save": "ProofreadPage\\ProofreadPage::onRecentChangesave",
+		"RecentChange_save": "ProofreadPageHooks",
 		"ScribuntoExternalLibraries": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraries",
 		"ScribuntoExternalLibraryPaths": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraryPaths"
+	},
+	"HookHandlers": {
+		"ProofreadPageHooks": {
+			"class": "ProofreadPage\\ProofreadPage",
+			"services": [
+				"MainConfig"
+			]
+		}
 	},
 	"attributes": {
 		"VisualEditor": {
