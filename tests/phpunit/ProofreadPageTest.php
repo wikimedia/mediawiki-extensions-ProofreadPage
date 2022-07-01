@@ -4,6 +4,7 @@ namespace ProofreadPage;
 
 use CommentStoreComment;
 use MediaWiki\HookContainer\HookRunner;
+use MediaWiki\Page\PageIdentity;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\User\UserIdentity;
@@ -38,14 +39,20 @@ class ProofreadPageTest extends ProofreadPageTestCase {
 	 * @dataProvider provideOnMultiContentSave
 	 */
 	public function testOnMultiContentSave( Status $expectedResult, PageContent $content ) {
+		$pageIdentity = $this->getMockBuilder( PageIdentity::class )
+			->disableOriginalConstructor()
+			->getMock();
+
 		$revRecord = $this->getMockBuilder( MutableRevisionRecord::class )
 			->disableOriginalConstructor()
-			->onlyMethods( [ 'getContent', 'getParentId' ] )
+			->onlyMethods( [ 'getContent', 'getParentId', 'getPage' ] )
 			->getMock();
 		$revRecord->method( 'getContent' )
 			->willReturn( $content );
 		$revRecord->method( 'getParentId' )
 			->willReturn( -1 );
+		$revRecord->method( 'getPage' )
+			->willReturn( $pageIdentity );
 
 		$renderedRev = $this->getMockBuilder( RenderedRevision::class )
 			->disableOriginalConstructor()
