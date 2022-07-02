@@ -69,7 +69,8 @@ class SpecialPagesWithoutScans extends PageQueryPage {
 				'tl_from' => null,
 				'pp_page' => null
 			],
-			'join_conds' => $joinConds
+			'join_conds' => $joinConds,
+			'options' => [ 'DISTINCT' ]
 		];
 	}
 
