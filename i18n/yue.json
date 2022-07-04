@@ -25,7 +25,7 @@
 	"proofreadpage_nologintext": "您一定要[[Special:UserLogin|l簽到]]先可以改頁面嘅校對狀態。",
 	"proofreadpage_notallowedtext": "您唔可以改伊版嘅校對狀態。",
 	"proofreadpage_dataconfig_badformatted": "數據配置嘅錯誤",
-	"proofreadpage_dataconfig_badformattedtext": "伊版[[Mediawiki:Proofreadpage index data config|MediaWiki:校對頁面索引數據配置]]唔係用良好格式嘅JSON嚟寫。",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]]唔係用標準格式嘅JSON嚟寫。",
 	"proofreadpage_number_expected": "錯誤：預期係數值",
 	"proofreadpage_interval_too_large": "錯誤：間隔太長",
 	"proofreadpage_invalid_interval": "錯誤：無效間隔",
