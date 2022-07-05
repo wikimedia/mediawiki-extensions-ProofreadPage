@@ -96,7 +96,7 @@
 	"content-model-proofread-page": "Boekpagina",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Paginaselectie",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagina's",
-	"proofreadpage-visualeditor-node-pages-inspector-description": "Transclusion van $1",
+	"proofreadpage-visualeditor-node-pages-inspector-description": "Invoeging van $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Proefleeskwaliteit",

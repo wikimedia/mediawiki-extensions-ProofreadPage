@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"DaSupremo"
+		]
+	},
+	"nstab-page": "Page",
+	"nstab-index": "Index",
+	"tooltip-ca-nstab-page": "View de book page",
+	"tooltip-ca-nstab-index": "View de book index",
+	"indexpages": "List of index pages",
+	"pageswithoutscans": "Pages wey no get scans",
+	"proofreadpage_desc": "Allow easy comparison for text go de origino scan",
+	"proofreadpage_image": "Image",
+	"proofreadpage_index": "Index",
+	"proofreadpage_index_expected": "Error: Dem expect index",
+	"proofreadpage_nosuch_index": "Error: Such index no dey",
+	"proofreadpage_nosuch_file": "Error: Such file no dey",
+	"proofreadpage_indexdupetext": "Dem no fi list pages more dan once for index page top.",
+	"proofreadpage_nologin": "You no log inside",
+	"proofreadpage_nologintext": "You for be [[Special:UserLogin|logged in]] so say you fi modify de proofreading status for pages.",
+	"proofreadpage_notallowedtext": "Dem no allow say you go change de proofreading status for dis page."
+}
