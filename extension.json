@@ -227,9 +227,14 @@
 		},
 		"ext.proofreadpage.page.editinsequence": {
 			"localBasePath": "modules/page.editinsequence",
+			"styles": [ "styles/index.css" ],
 			"packageFiles": [
 				"index.js",
-				"EditInSequence.Toolbar.js"
+				"Toolbar.js",
+				"PagelistModel.js",
+				"PageNavTools.js",
+				"PageModel.js",
+				"EditorController.js"
 			],
 			"dependencies": [
 				"ext.proofreadpage.page.edit",
@@ -237,7 +242,15 @@
 				"oojs-ui",
 				"oojs-ui-core",
 				"oojs-ui-widgets",
-				"oojs-ui-windows"
+				"oojs-ui-toolbars",
+				"oojs-ui.styles.icons-movement"
+			],
+			"messages": [
+				"prp-editinsequence-http-error-pagelist",
+				"prp-editinsequence-pagination-does-not-exist",
+				"prp-editinsequence-unknown-error",
+				"prp-editinsequence-http-error-page",
+				"prp-editinsequence-error"
 			]
 		},
 		"ext.proofreadpage.icons": {
@@ -294,6 +307,18 @@
 	"ResourceFileModulePaths": {
 		"localBasePath": "modules",
 		"remoteExtPath": "ProofreadPage/modules"
+	},
+	"QUnitTestModule": {
+		"localBasePath": "tests/qunit",
+		"packageFiles": [
+			"index.js",
+			"TestPagelistModel.js",
+			"PagelistModel.test.js",
+			"PageModel.test.js"
+		],
+		"dependencies": [
+			"ext.proofreadpage.page.editinsequence"
+		]
 	},
 	"Hooks": {
 		"SetupAfterCache": "ProofreadPage\\ProofreadPageInit::initNamespaces",
