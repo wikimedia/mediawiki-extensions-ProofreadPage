@@ -74,10 +74,10 @@ class FileProvider {
 				$pageTitle->getFullText() . ' does not provide a page number.'
 			);
 		}
-		$number = $pageTitle->getPageLanguage()->parseFormattedNumber( end( $parts ) );
+		$number = (int)$pageTitle->getPageLanguage()->parseFormattedNumber( end( $parts ) );
 		if ( $number > 0 ) {
 			// Valid page numbers are integer > 0.
-			return (int)$number;
+			return $number;
 		}
 		throw new PageNumberNotFoundException(
 			$pageTitle->getFullText() . ' does not provide a valid page number.'

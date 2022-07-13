@@ -256,7 +256,6 @@ class ProofreadPage implements
 				$context->getPageQualityLevelLookup(),
 				$context->getIndexQualityStatsLookup(),
 				$context->getIndexForPageLookup(),
-				MediaWikiServices::getInstance()->getLinkRenderer(),
 				$context->getPageNamespaceId()
 			);
 			$modifier->modifyPage( $parserOutput, $outputPage );
