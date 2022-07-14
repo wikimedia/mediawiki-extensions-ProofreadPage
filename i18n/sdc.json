@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"F Samaritani",
 			"Jun Misugi"
 		]
 	},
@@ -34,11 +35,24 @@
 	"proofreadpage_index_size": "Nummaru di pagini",
 	"proofreadpage_pages_to_validate": "Nummaru di li pagini ki si debini cunfeimmà",
 	"proofreadpage_specialpage_filterby_all": "Tutti",
+	"proofreadpage_specialpage_filterby_proofread": "Verifiggaddu",
+	"proofreadpage_specialpage_filterby_validated": "Accabaddu",
+	"proofreadpage_specialpage_label_key": "Zercha:",
+	"proofreadpage_specialpage_label_sortascending": "Ordhinamentu criscentu",
 	"proofreadpage_index_listofpages": "Erencu di pàgini",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|pàgina|pàgini}}",
 	"proofreadpage_source": "Orìgini",
+	"proofreadpage-group-other": "Althru",
+	"proofreadpage-pagelist-dialog-update-button": "Aggiorna la listha",
 	"proofreadpage-pagelist-dialog-cancel": "Canzillà",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Aggiuddu",
 	"content-model-proofread-page": "Pàgina di libru",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagini",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Emmu",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
+	"proofreadpage-index-field-category-label": "Categuri",
+	"tag-proofreadpage-quality1": "Migga verifiggaddu",
+	"tag-proofreadpage-quality2": "Difficulthai di currizioni",
+	"tag-proofreadpage-quality3": "Verifiggaddu",
+	"tag-proofreadpage-quality4": "Accabaddu"
 }
