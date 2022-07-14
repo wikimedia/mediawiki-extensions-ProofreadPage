@@ -115,11 +115,11 @@ class PageLevel {
 	/**
 	 * Parse an user name
 	 *
-	 * @param string $name
+	 * @param string|null $name
 	 * @return User|null
 	 */
 	public static function getUserFromUserName( $name = '' ) {
-		if ( $name === '' ) {
+		if ( $name === '' || $name === null ) {
 			return null;
 		} elseif ( IPUtils::isValid( $name ) ) {
 			return User::newFromName( IPUtils::sanitizeIP( $name ), false );
