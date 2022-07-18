@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jun Misugi"
+			"Jun Misugi",
+			"F Samaritani"
 		]
 	},
 	"nstab-page": "Pàgina",
@@ -32,9 +33,15 @@
 	"proofreadpage_index_status": "Cundizioni di l'indizi",
 	"proofreadpage_index_size": "Nummaru di pagini",
 	"proofreadpage_pages_to_validate": "Nummaru di li pagini ki si debini cunfeimmà",
+	"proofreadpage_specialpage_label_key": "Zercha:",
+	"proofreadpage_specialpage_label_sortascending": "Ordhinamentu criscentu",
 	"proofreadpage_index_listofpages": "Erencu di pàgini",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|pàgina|pàgini}}",
 	"proofreadpage_source": "Orìgini",
+	"proofreadpage-group-other": "Althru",
 	"content-model-proofread-page": "Pàgina di libru",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagini",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Emmu",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "No",
+	"proofreadpage-index-field-category-label": "Categuri"
 }
