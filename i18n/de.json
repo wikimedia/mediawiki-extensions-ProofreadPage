@@ -41,6 +41,7 @@
 	"proofreadpage_header": "Kopfzeile (nicht einzufügen):",
 	"proofreadpage_body": "Textkörper (einzufügen):",
 	"proofreadpage_footer": "Fußzeile (nicht einzufügen):",
+	"proofreadpage_edit_in_sequence": "Seiten nacheinander bearbeiten",
 	"proofreadpage_toggleheaders": "Nicht einzufügende Abschnitte ein-/ausblenden",
 	"proofreadpage_quality0_category": "Ohne Text",
 	"proofreadpage_quality1_category": "Nicht korrekturgelesen",
