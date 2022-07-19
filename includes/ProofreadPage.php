@@ -398,7 +398,8 @@ class ProofreadPage implements
 	 * @param array[] &$links Structured navigation links
 	 */
 	private static function addPageNsNavigation( Title $title, SkinTemplate $skin, array &$links ) {
-		$pageDisplayHandler = new PageDisplayHandler( Context::getDefaultContext() );
+		$context = Context::getDefaultContext();
+		$pageDisplayHandler = new PageDisplayHandler( $context );
 
 		// Image link
 		$image = $pageDisplayHandler->getImageFullSize( $title );
@@ -410,11 +411,22 @@ class ProofreadPage implements
 			];
 		}
 
+		if ( EditInSequence::isEnabled( $skin ) ) {
+			$links['views']['proofreadPageEditInSequenceLink'] = [
+				'class' => '',
+				'href' => $title->getLocalURL( [
+						'action' => 'edit',
+						EditInSequence::URLPARAMNAME => 'true'
+					] ),
+				'text' => wfMessage( 'proofreadpage_edit_in_sequence' )->plain()
+			];
+		}
+
 		// Prev, Next and Index links
-		$indexTitle = Context::getDefaultContext()
+		$indexTitle = $context
 			->getIndexForPageLookup()->getIndexForPageTitle( $title );
 		if ( $indexTitle !== null ) {
-			$pagination = Context::getDefaultContext()
+			$pagination = $context
 				->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 
 			$firstLinks = [];

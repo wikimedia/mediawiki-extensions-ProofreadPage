@@ -10,6 +10,7 @@ use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserOptionsLookup;
 use OOUI;
 use ProofreadPage\Context;
+use ProofreadPage\EditInSequence;
 use ReadOnlyMode;
 use User;
 
@@ -111,6 +112,14 @@ class EditPagePage extends EditPage {
 
 		$jsVars = $this->pageDisplayHandler->getPageJsConfigVars( $this->getTitle(), $content );
 		$out->addJsConfigVars( $jsVars );
+
+		$this->addEditInSequenceModule();
+	}
+
+	public function addEditInSequenceModule() {
+		if ( EditInSequence::shouldLoadEditInSequence( $this->context ) ) {
+			$this->context->getOutput()->addModules( 'ext.proofreadpage.page.editinsequence' );
+		}
 	}
 
 	/**

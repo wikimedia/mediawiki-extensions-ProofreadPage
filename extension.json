@@ -225,6 +225,21 @@
 				"ext.proofreadpage.base"
 			]
 		},
+		"ext.proofreadpage.page.editinsequence": {
+			"localBasePath": "modules/page.editinsequence",
+			"packageFiles": [
+				"index.js",
+				"EditInSequence.Toolbar.js"
+			],
+			"dependencies": [
+				"ext.proofreadpage.page.edit",
+				"oojs",
+				"oojs-ui",
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"oojs-ui-windows"
+			]
+		},
 		"ext.proofreadpage.icons": {
 			"class": "ResourceLoaderImageModule",
 			"selectorWithoutVariant": ".oo-ui-icon-{name}",
@@ -341,6 +356,10 @@
 		"ProofreadPageUseStatusChangeTags": {
 			"value": false,
 			"description": "Use the new change tags for page statuses"
+		},
+		"ProofreadPageEnableEditInSequence": {
+			"value": false,
+			"description": "Enable edit in sequence in Page: pages"
 		}
 	},
 	"callback": "ProofreadPage\\ProofreadPage::onRegistration",

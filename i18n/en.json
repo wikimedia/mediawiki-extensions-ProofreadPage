@@ -32,6 +32,7 @@
 	"proofreadpage_header": "Header (noinclude):",
 	"proofreadpage_body": "Page body (to be transcluded):",
 	"proofreadpage_footer": "Footer (noinclude):",
+	"proofreadpage_edit_in_sequence": "Edit pages in sequence",
 	"proofreadpage_toggleheaders": "toggle noinclude sections visibility",
 	"proofreadpage_quality0_category": "Without text",
 	"proofreadpage_quality1_category": "Not proofread",
