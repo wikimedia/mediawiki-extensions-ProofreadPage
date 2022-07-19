@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lea.Fakauvea"
+			"Lea.Fakauvea",
+			"Lea.fakauvea"
 		]
 	},
 	"nstab-page": "Pāsina",
@@ -20,6 +21,8 @@
 	"proofreadpage_nologin": "Kei nofo i tu'a",
 	"proofreadpage_nologintext": "E ma'ua ke ke [[Special:UserLogin|hū mai]] pea feala hau fetogi te kua sivi o te 'u pāsina.",
 	"proofreadpage_notallowedtext": "Mole feala hau fetogi te kua sivi o te pāsina 'aeni.",
+	"proofreadpage_pagesnotallowed": "Hala: Ko te kupu pāsina e mole lava faka'aoga'i i te higoa Pāsina: mo Tāfito:",
+	"proofreadpage_pagelistnotallowed": "Hala: Ko te kupu lisi pāsina e lava faka'aoga'i pe i te higoa Tāfito:",
 	"proofreadpage_dataconfig_badformatted": "E hala te teuteu'i o te gaue",
 	"proofreadpage_dataconfig_badformattedtext": "Ko te pāsina [[Mediawiki:Proofreadpage index data config]] ne'e mole tohi lelei i te JSON.",
 	"proofreadpage_number_expected": "Hala:tohi he nūmelo",
@@ -120,5 +123,10 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Lelei o te fakatonutonu",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Lelei o te fakatonutonu",
 	"proofreadpage-index-field-category-label": "Fa'ahiga",
-	"proofreadpage-index-edit-category-help": "E tohi te 'u Fa'ahiga kae mole faka'aoga'i te mu'a mata'itohi:Fa'ahiga pea e fakava'ava'a aki he laini \"|\"."
+	"proofreadpage-index-edit-category-help": "E tohi te 'u Fa'ahiga kae mole faka'aoga'i te mu'a mata'itohi:Fa'ahiga pea e fakava'ava'a aki he laini \"|\".",
+	"tag-proofreadpage-quality0": "Hala kupu",
+	"tag-proofreadpage-quality1": "He'eki sivi",
+	"tag-proofreadpage-quality2": "Faigata'a",
+	"tag-proofreadpage-quality3": "Sivi",
+	"tag-proofreadpage-quality4": "Fakamo'oni"
 }

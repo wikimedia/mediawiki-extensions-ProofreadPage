@@ -8,10 +8,12 @@
 	"proofreadpage_nologin": "Jiõk leäkku ǩeeʹrjtõõttâm sizz",
 	"proofreadpage_prevpage": "Oouʹdab seidd",
 	"proofreadpage_quality0_category": "teeʹkstʼtää",
+	"proofreadpage_quality0_summary": "Teeʹkstʼtää",
 	"proofreadpage_index_size": "Seeidai mieʹrr",
 	"proofreadpage_specialpage_label_key": "Ooʒʒ:",
 	"proofreadpage_index_listofpages": "Listt seeidain",
 	"proofreadpage-button-reset-zoom-label": "Alggveärlaž šorradvuõtt",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Seeid",
-	"proofreadpage-index-field-category-label": "Kategoria"
+	"proofreadpage-index-field-category-label": "Kategoria",
+	"tag-proofreadpage-quality0": "Teeʹkstʼtää"
 }
