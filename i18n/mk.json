@@ -36,6 +36,7 @@
 	"proofreadpage_header": "Заглавие (не се вклучува):",
 	"proofreadpage_body": "Содржина на страница (за превметнување):",
 	"proofreadpage_footer": "Подножје (не се вклучува):",
+	"proofreadpage_edit_in_sequence": "Уреди страници во низа",
 	"proofreadpage_toggleheaders": "промена на видливоста на пасусите со „noinclude“",
 	"proofreadpage_quality0_category": "Без текст",
 	"proofreadpage_quality1_category": "Непрегледана",

@@ -57,6 +57,7 @@
 	"proofreadpage_header": "En-tête (noinclude) :",
 	"proofreadpage_body": "Contenu (par transclusion) :",
 	"proofreadpage_footer": "Pied de page (noinclude) :",
+	"proofreadpage_edit_in_sequence": "Modifier les pages dans l’ordre",
 	"proofreadpage_toggleheaders": "masquer/montrer les sections « noinclude »",
 	"proofreadpage_quality0_category": "Sans texte",
 	"proofreadpage_quality1_category": "Non corrigée",

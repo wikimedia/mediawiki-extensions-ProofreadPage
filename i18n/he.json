@@ -41,6 +41,7 @@
 	"proofreadpage_header": "כותרת (לא להכללה):",
 	"proofreadpage_body": "גוף הדף (להכללה):",
 	"proofreadpage_footer": "כותרת תחתונה (לא להכללה):",
+	"proofreadpage_edit_in_sequence": "עריכת דפים ברצף",
 	"proofreadpage_toggleheaders": "הצגה או הסתרה של הקטעים שאינם להכללה",
 	"proofreadpage_quality0_category": "ללא טקסט",
 	"proofreadpage_quality1_category": "לא בוצעה הגהה",
