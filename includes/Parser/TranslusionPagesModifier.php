@@ -4,7 +4,6 @@ namespace ProofreadPage\Parser;
 
 use Html;
 use IContextSource;
-use MediaWiki\Linker\LinkRenderer;
 use OutputPage;
 use ParserOutput;
 use ProofreadPage\Index\IndexQualityStatsLookup;
@@ -29,9 +28,6 @@ class TranslusionPagesModifier {
 	/** @var IndexForPageLookup */
 	private $indexForPageLookup;
 
-	/** @var LinkRenderer */
-	private $linkRenderer;
-
 	/** @var int */
 	private $pageNamespaceId;
 
@@ -39,20 +35,17 @@ class TranslusionPagesModifier {
 	 * @param PageQualityLevelLookup $pageQualityLevelLookup
 	 * @param IndexQualityStatsLookup $indexQualityStatsLookup
 	 * @param IndexForPageLookup $indexForPageLookup
-	 * @param LinkRenderer $linkRenderer
 	 * @param int $pageNamespaceId
 	 */
 	public function __construct(
 		PageQualityLevelLookup $pageQualityLevelLookup,
 		IndexQualityStatsLookup $indexQualityStatsLookup,
 		IndexForPageLookup $indexForPageLookup,
-		LinkRenderer $linkRenderer,
 		int $pageNamespaceId
 	) {
 		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
 		$this->indexQualityStatsLookup = $indexQualityStatsLookup;
 		$this->indexForPageLookup = $indexForPageLookup;
-		$this->linkRenderer = $linkRenderer;
 		$this->pageNamespaceId = $pageNamespaceId;
 	}
 
