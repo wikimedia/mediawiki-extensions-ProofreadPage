@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Dvorapa",
+			"Fraxinus.cs",
 			"Jkjk",
 			"Matěj Grabovský",
 			"Mormegil",
@@ -34,6 +35,7 @@
 	"proofreadpage_header": "Hlavička (noinclude):",
 	"proofreadpage_body": "Tělo stránky (pro transkluzi):",
 	"proofreadpage_footer": "Patička (noinclude):",
+	"proofreadpage_edit_in_sequence": "Upravujte stránky postupně",
 	"proofreadpage_toggleheaders": "přepnout viditelnost sekcí noinclude",
 	"proofreadpage_quality0_category": "Bez textu",
 	"proofreadpage_quality1_category": "Nebylo zkontrolováno",
