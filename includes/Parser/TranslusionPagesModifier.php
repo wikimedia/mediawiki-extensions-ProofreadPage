@@ -85,7 +85,7 @@ class TranslusionPagesModifier {
 	private function getIncludedPagePagesTitles( ParserOutput $parserOutput ): array {
 		$templates = $parserOutput->getTemplates();
 
-		if ( !array_key_exists( $this->pageNamespaceId, $templates ) ) {
+		if ( $templates === null || !array_key_exists( $this->pageNamespaceId, $templates ) ) {
 			return [];
 		}
 
