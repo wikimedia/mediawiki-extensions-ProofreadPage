@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"এম আবু সাঈদ",
-			"Asmani Haz"
+			"Asmani Haz",
+			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ"
 		]
 	},
 	"nstab-page": "ꠚꠣꠔꠣ",
@@ -34,18 +35,28 @@
 	"proofreadpage_quality3_summary": "ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠇꠞꠣ",
 	"proofreadpage_quality4_summary": "ꠛꠂꠗ ꠀꠍꠦ",
 	"proofreadpage_index_size": "ꠚꠣꠔꠣ ꠡꠋꠈꠣ",
+	"proofreadpage_specialpage_label_orderby": "ꠅꠔꠣꠖꠤ ꠛꠣꠁꠟ ꠇꠞꠂꠘ:",
 	"proofreadpage_specialpage_label_key": "ꠕꠥꠇꠣꠇ꠆ꠇꠣ:",
+	"proofreadpage_specialpage_label_sortascending": "ꠟꠣꠝꠣꠛꠣꠄꠇꠥꠞꠉꠥꠁꠘ ꠑꠤꠇ ꠇꠞꠂꠘ",
+	"proofreadpage_alphabeticalorder": "ꠛꠞꠚ ꠅꠞ ꠛꠣꠁꠟꠦ",
 	"proofreadpage_index_listofpages": "ꠚꠣꠔꠣꠞ ꠟꠤꠡ꠆ꠐ",
+	"proofreadpage_image_message": "ꠐꠥꠇꠣ ꠙꠣꠔꠣꠞꠟꠉꠦ ꠝꠤꠟꠣꠁꠘ",
 	"proofreadpage_page_status": "ꠚꠣꠔꠣꠞ ꠅꠛꠍꠔꠣ",
 	"proofreadpage_js_attributes": "ꠟꠦꠈꠇ ꠘꠣꠝ ꠛꠍꠞ ꠍꠣꠚꠣꠃꠞꠣ",
-	"proofreadpage_index_attributes": "ꠟꠦꠈꠇ\nꠘꠣꠝ\nꠛꠍꠞ|ꠍꠣꠚꠣꠘꠤꠞ ꠛꠍꠞ\nꠍꠣꠚꠣꠃꠞꠣ\nSource \nꠍꠛꠤ|ꠇꠜꠣꠞ ꠍꠛꠤ\nRemark||10",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|page|pages}}",
+	"proofreadpage_index_attributes": "ꠟꠦꠈꠇ\nꠘꠣꠝ\nꠛꠍꠞ|ꠍꠣꠚꠣꠘꠤꠞ ꠛꠍꠞ\nꠍꠣꠚꠣꠃꠞꠣ\nꠟꠈ \nꠍꠛꠤ|ꠇꠜꠣꠞ ꠍꠛꠤ\nꠘꠣꠝꠒꠣꠇ||10",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|ꠙꠣꠔꠣ|ꠙꠣꠔꠣꠁꠘ}}",
 	"proofreadpage_specialpage_legend": "ꠡꠥꠌꠤ ꠚꠣꠔꠣꠔ ꠕꠥꠇꠣꠇ꠆ꠇꠣ",
-	"proofreadpage_specialpage_searcherror": "search engine ꠅ ꠡꠝꠡ꠆ꠡꠣ",
-	"proofreadpage_specialpage_searcherrortext": "search engine ꠄ ꠈꠣꠝ ꠈꠞꠦꠞ ꠘꠣ। ꠁ ꠅꠡꠥꠛꠤꠗꠣꠞ ꠟꠣꠉꠤ ꠝꠣꠚ ꠍꠣꠁꠀꠞ",
-	"proofreadpage_source": "ꠃꠔꠡ",
+	"proofreadpage_specialpage_searcherror": "ꠕꠥꠇꠣꠘꠤꠞ ꠝꠦꠡꠤꠘꠧ ꠡꠝꠡ꠆ꠡꠣ",
+	"proofreadpage_specialpage_searcherrortext": "ꠕꠥꠇꠣꠘꠤꠞ ꠝꠦꠡꠤꠘꠦ ꠈꠣꠝ ꠈꠞꠦꠞ ꠘꠣ। ꠁ ꠅꠡꠥꠛꠤꠗꠣꠞ ꠟꠣꠉꠤ ꠝꠣꠚ ꠍꠣꠁꠀꠞ",
+	"proofreadpage_source": "ꠟꠈ",
 	"proofreadpage-group-zoom": "ꠎꠥꠝ",
 	"proofreadpage-group-other": "ꠛꠣꠖꠛꠣꠇꠤ",
+	"proofreadpage-button-reset-zoom-label": "ꠀꠡꠟꠤ ꠍꠣꠁꠎ",
+	"proofreadpage-pagelist-dialog-insertchanges": "ꠛꠖꠟꠣꠁꠌꠂꠘꠉꠥꠁꠘ ꠢꠣꠞꠣꠃꠇ꠆ꠇꠣ",
+	"content-model-proofread-page": "ꠛꠁꠞ ꠙꠣꠔꠣ",
+	"content-model-proofread-index": "ꠛꠁꠞ ꠐꠥꠇꠣ",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "ꠙꠣꠔꠣ ꠛꠣꠌꠣ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ꠙꠣꠔꠣꠁꠘ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ꠅꠄ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ꠘꠣ",
 	"proofreadpage-index-field-category-label": "ꠇꠦꠐꠣꠉꠞꠤ"
