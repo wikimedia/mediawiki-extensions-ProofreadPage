@@ -24,7 +24,8 @@
 			"Wladek92",
 			"Wyz",
 			"DreZhsh",
-			"Lyokoï"
+			"Lyokoï",
+			"Linedwell"
 		]
 	},
 	"nstab-page": "Page",
@@ -106,7 +107,7 @@
 	"proofreadpage-button-toggle-layout-label": "Disposition verticale/horizontale",
 	"proofreadpage-pageinfo-status": "État de la relecture",
 	"proofreadpage-pagelist-input-preview-button": "Aperçu de la liste des pages",
-	"proofreadpage-pagelist-dialog-update-button": "Mettre à jour la liste de suivi",
+	"proofreadpage-pagelist-dialog-update-button": "Mettre à jour la liste des pages",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Quitter cette page peut conduire à la perte de l’encours non enregistré.",
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Progrès non enregistré",
 	"proofreadpage-pagelist-dialog-discard-changes": "Annuler les modifications",
