@@ -1,6 +1,7 @@
 ( function () {
 	var Toolbar = require( './Toolbar.js' );
 	var PageNavTools = require( './PageNavTools.js' );
+	var PreviewTool = require( './PreviewTool.js' );
 	var toolFactory = new OO.ui.ToolFactory(),
 		toolGroupFactory = new OO.ui.ToolGroupFactory(),
 		toolbar = new Toolbar( toolFactory, toolGroupFactory, {
@@ -8,14 +9,14 @@
 		} ),
 		// eslint-disable-next-line no-jquery/no-global-selector
 		$content = $( '#content' );
-
 	toolFactory.register( PageNavTools.PrevTool );
 	toolFactory.register( PageNavTools.NextTool );
+	toolFactory.register( PreviewTool );
 
 	toolbar.setup( [
 		{
 			type: 'bar',
-			include: [ 'prev', 'next' ]
+			include: [ 'prev', 'next', 'preview' ]
 		}
 	] );
 
@@ -24,6 +25,7 @@
 	}
 
 	toolbar.initialize();
+	toolbar.emit( 'updateState' );
 }() );
 
 // exposing for tests

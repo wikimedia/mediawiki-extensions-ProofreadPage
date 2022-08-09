@@ -131,6 +131,7 @@ PageModel.prototype.parsePageData = function ( wikitext ) {
 PageModel.prototype.setPageStatus = function ( status ) {
 	this.pageStatus.status = status;
 	this.pageStatus.lastUser = mw.config.get( 'wgUserName' );
+	this.emit( 'pageStatusChanged' );
 };
 
 /**

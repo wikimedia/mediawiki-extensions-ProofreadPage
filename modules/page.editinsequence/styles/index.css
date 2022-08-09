@@ -6,14 +6,15 @@
 }
 
 .prp-edit-in-sequence-preview-area {
+	position: relative;
 	flex: 1;
 	border-right: 1px solid #c8ccd1;
 	padding-right: 12px;
-	display: flex;
 }
 
-.prp-edit-in-sequence-preview-area > div {
+.prp-edit-in-sequence-preview-area > .prp-edit-in-sequence-preview-wrapper {
 	background-color: #fff;
 	width: 100%;
 	height: 100%;
+	overflow: auto;
 }

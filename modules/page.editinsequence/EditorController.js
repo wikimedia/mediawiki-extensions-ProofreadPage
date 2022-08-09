@@ -1,4 +1,5 @@
 var PageModel = require( './PageModel.js' );
+var PreviewWidget = require( './PreviewWidget.js' );
 
 /**
  * Preforms actions that require controlling with the editing interface
@@ -12,8 +13,12 @@ function EditorController( $content, pageModel ) {
 	this.$body = $content.find( '#wpTextbox1' );
 	this.$footer = $content.find( '#wpFooterTextbox' );
 	this.$heading = $content.find( '#firstHeadingTitle' );
+	this.$editorArea = $content.find( '.prp-page-content' );
+	this.previewWidget = new PreviewWidget();
+	this.previewWidget.$element.insertAfter( this.$editorArea );
 	this.pageModel = pageModel;
 	this.pageModel.on( 'pageModelUpdated', this.onPageModelUpdated.bind( this ) );
+	this.pageModel.on( 'pageStatusChanged', this.updatePreview.bind( this ) );
 }
 
 /**
@@ -27,6 +32,7 @@ EditorController.prototype.onPageModelUpdated = function () {
 	} else {
 		this.setDefaultEditorData();
 	}
+	this.updatePreview();
 };
 
 /**
@@ -48,6 +54,49 @@ EditorController.prototype.setDefaultEditorData = function () {
 	this.$header.val( '' );
 	this.$body.val( '' );
 	this.$footer.val( '' );
+};
+
+/**
+ * Builds wikitext from supplied header, body, footer, pageStatus values supplied
+ *
+ * @param {string} header
+ * @param {string} body
+ * @param {string} footer
+ * @param {string} pageStatus
+ * @return {string} wikiText
+ */
+EditorController.prototype.getWikitext = function ( header, body, footer, pageStatus ) {
+	var wikitext = '<noinclude><pagequality level="$level" user="$user" />$header</noinclude>$body<noinclude>$footer</noinclude>';
+	wikitext = wikitext.replace( '$header', header );
+	wikitext = wikitext.replace( '$body', body );
+	wikitext = wikitext.replace( '$footer', footer );
+	wikitext = wikitext.replace( '$level', pageStatus.status );
+	wikitext = wikitext.replace( '$user', pageStatus.lastUser );
+	return wikitext;
+};
+
+/**
+ * Updates the previews of a page with the latest preview, if the preview is not being shown
+ * this function is a no-op
+ */
+EditorController.prototype.updatePreview = function () {
+	this.previewWidget.updatePreview( this.getWikitext( this.$header.val(), this.$body.val(), this.$footer.val(), this.pageModel.getPageStatus() ), this.pageModel.getPageName() );
+};
+/**
+ * Shows the preview
+ */
+EditorController.prototype.showPreview = function () {
+	this.previewWidget.showPreview();
+	this.updatePreview();
+	this.$editorArea.hide();
+};
+
+/**
+ * Hides the preview
+ */
+EditorController.prototype.hidePreview = function () {
+	this.previewWidget.hidePreview();
+	this.$editorArea.show();
 };
 
 module.exports = EditorController;

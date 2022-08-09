@@ -234,6 +234,8 @@
 				"PagelistModel.js",
 				"PageNavTools.js",
 				"PageModel.js",
+				"PreviewTool.js",
+				"PreviewWidget.js",
 				"EditorController.js"
 			],
 			"dependencies": [
@@ -243,14 +245,19 @@
 				"oojs-ui-core",
 				"oojs-ui-widgets",
 				"oojs-ui-toolbars",
-				"oojs-ui.styles.icons-movement"
+				"mediawiki.page.preview",
+				"oojs-ui.styles.icons-movement",
+				"oojs-ui.styles.icons-accessibility"
 			],
 			"messages": [
 				"prp-editinsequence-http-error-pagelist",
 				"prp-editinsequence-pagination-does-not-exist",
 				"prp-editinsequence-unknown-error",
 				"prp-editinsequence-http-error-page",
-				"prp-editinsequence-error"
+				"prp-editinsequence-error",
+				"prp-editinsequence-preview",
+				"prp-edit-in-sequence-preview-api-error",
+				"prp-edit-in-sequence-preview-http-error"
 			]
 		},
 		"ext.proofreadpage.icons": {
