@@ -1,0 +1,757 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>MediaWiki</sitename>
+    <dbname>my_wiki</dbname>
+    <base>http://localhost:8080/wiki/Main_Page</base>
+    <generator>MediaWiki 1.37.0-alpha</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Project</namespace>
+      <namespace key="5" case="first-letter">Project talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="250" case="first-letter">Page</namespace>
+      <namespace key="251" case="first-letter">Page talk</namespace>
+      <namespace key="252" case="first-letter">Index</namespace>
+      <namespace key="253" case="first-letter">Index talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>MediaWiki:Proofreadpage footer template</title>
+    <ns>8</ns>
+    <id>31</id>
+    <revision>
+      <id>323</id>
+      <timestamp>2021-05-22T08:50:45Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with "&lt;!-- --&gt;"</comment>
+      <origin>323</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="8" sha1="azucw8qj7pbr0epmlmfmjnsmuf6ii7q" xml:space="preserve">&lt;!-- --&gt;</text>
+      <sha1>azucw8qj7pbr0epmlmfmjnsmuf6ii7q</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki:Proofreadpage header template</title>
+    <ns>8</ns>
+    <id>30</id>
+    <revision>
+      <id>322</id>
+      <parentid>321</parentid>
+      <timestamp>2021-05-22T08:46:57Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <origin>322</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2284" sha1="2wgerwvmvs0alj2r1d20xaeiqsqxnov" xml:space="preserve">&lt;includeonly&gt;
+&lt;code&gt;
+ | title          = {{{title|}}}
+ | author         = | override_author = {{{author|}}}
+ | translator     = | override_translator = {{{translator|}}}
+ | editor         = | override_editor = {{{editor|}}}
+ | section        = {{{current|}}}
+ | contributor    = {{{contributor|}}}
+ | previous       = {{{prev|{{{previous|}}}}}}
+ | next           = {{{next|}}}
+ | year           = {{{year|}}}
+ | wikipedia      = {{{wikipedia|}}}
+ | commons        = {{{commons|}}}
+ | commonscat     = {{{commonscat|}}}
+ | wikiquote      = {{{wikiquote|}}}
+ | wikinews       = {{{wikinews|}}}
+ | wiktionary     = {{{wiktionary|}}}
+ | wikibooks      = {{{wikibooks|}}}
+ | wikiversity    = {{{wikiversity|}}}
+ | wikispecies    = {{{wikispecies|}}}
+ | meta           = {{{meta|}}}
+ | portal         = {{{portal|}}}
+ | related_author = {{{related_author|}}}
+ | disambiguation = {{{disambiguation|}}}
+ | wikilivres     = {{{wikilivres|}}}
+ | notes          = {{#if:{{{publisher|}}}&lt;!--
+                            --&gt;|{{#if:{{{address|}}}|{{{address}}}:&amp;nbsp;|}}&lt;!--
+                            --&gt;{{{publisher}}}&lt;!--
+                            --&gt;{{#if:{{{yeardate|}}}|&amp;nbsp;({{{yeardate}}})|}}&lt;!--
+                            --&gt;{{#if:{{{from|}}}|,&amp;nbsp;|.&amp;nbsp;}}&lt;!--
+                    --&gt;}}&lt;!--
+                    --&gt;{{#if:{{{from|}}}&lt;!--
+                            --&gt;|{{#ifeq:{{{from}}}|{{{to}}}&lt;!--
+                                    --&gt;|page {{{from}}}&lt;!--
+                            -- else --
+                                    --&gt;|pages {{{from}}}–{{{to}}}&lt;!--
+                            --&gt;}}&lt;!--
+                    --&gt;}}&lt;!--
+                    --&gt;{{{notes|}}}
+ | noby           = {{{noby|}}}
+ | allow_illegal_formatting = yes
+{{#ifeq:{{{value}}}|toc|{{{remarks}}}|}}&lt;!-- NOT implementing another container !!!!
+&lt;/code&gt;
+&lt;div style="width:36em; margin: 0px auto; text-align: justify; text-indent: 2em;" class="ws-summary&gt;
+
+--&gt; &lt;/includeonly&gt;&lt;noinclude&gt;
+
+*This template generates headers for the &lt;nowiki&gt;&lt;pages/&gt;&lt;/nowiki&gt; command, when it is called with "header".
+*It takes its parameters from the index page. 
+*Parameters from the index page can be overridden in the "pages" command.
+*Example:
+ &lt;nowiki&gt;&lt;pages index="foo" header author="bar" /&gt;&lt;/nowiki&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>2wgerwvmvs0alj2r1d20xaeiqsqxnov</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki:Proofreadpage index data config</title>
+    <ns>8</ns>
+    <id>3</id>
+    <revision>
+      <id>287</id>
+      <parentid>286</parentid>
+      <timestamp>2021-01-01T20:44:49Z</timestamp>
+      <contributor>
+        <username>imported&gt;Inductiveload</username>
+        <id>0</id>
+      </contributor>
+      <comment>add webm to Source field</comment>
+      <origin>287</origin>
+      <model>json</model>
+      <format>application/json</format>
+      <text bytes="7687" sha1="t72ucrpyqr9wzjszje5vdndhjrtwt07" xml:space="preserve">{
+    "Type": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Type",
+        "header": true,
+        "values": {
+            "book": "Book",
+            "journal": "Journal",
+            "collection": "Collection",
+            "phdthesis": "Thesis",
+            "dictionary": "Dictionary"
+        },
+        "help": "Type of the book",
+        "data": "type"
+    },
+    "Title": {
+        "type": "page",
+        "size": 1,
+        "default": "",
+        "label": "Title",
+        "header": true,
+        "data": "title",
+        "help": ""
+    },
+    "Language": {
+        "type": "langcode",
+        "size": 1,
+        "default": "en",
+        "header": true,
+        "data": "language",
+        "help": ""
+    },
+    "Volume": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Volume",
+        "header": false,
+        "help": ""
+    },
+    "Author": {
+        "type": "page",
+        "size": 1,
+        "default": "",
+        "label": "Author",
+        "header": true,
+        "data": "author",
+        "delimiter": ";",
+        "help": ""
+    },
+    "Translator": {
+        "type": "page",
+        "size": 1,
+        "default": "",
+        "label": "Translator",
+        "header": true,
+        "data": "translator",
+        "delimiter": ";",
+        "help": ""
+    },
+    "Editor": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Editor",
+        "header": true,
+        "data": "editor",
+        "delimiter": ";",
+        "help": ""
+    },
+    "Illustrator": {
+        "type": "page",
+        "size": 1,
+        "default": "",
+        "label": "Illustrator",
+        "header": false,
+        "data": "illustrator",
+        "delimiter": ";",
+        "help": ""
+    },
+    "School": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "School",
+        "header": false,
+        "data": "school",
+        "help": ""
+    },
+    "Publisher": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Publisher",
+        "header": true,
+        "data": "publisher",
+        "help": "",
+        "delimiter": [
+            ";",
+            "asn"
+        ]
+    },
+    "Address": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Location",
+        "header": true,
+        "data": "place",
+        "delimiter": ";",
+        "help": ""
+    },
+    "Year": {
+        "type": "number",
+        "size": 1,
+        "default": "",
+        "label": "Year of publication",
+        "header": true,
+        "data": "year",
+        "help": ""
+    },
+    "Key": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Sort key",
+        "header": false,
+        "help": ""
+    },
+    "ISBN": {
+        "type": "isbn",
+        "size": 1,
+        "default": "",
+        "label": "International Standard Book Number",
+        "header": false,
+        "data": "identifier",
+        "help": ""
+    },
+    "OCLC": {
+        "type": "oclc",
+        "size": 1,
+        "default": "",
+        "label": "OCLC",
+        "header": false,
+        "data": "identifier",
+        "help": ""
+    },
+    "LCCN": {
+        "type": "lccn",
+        "size": 1,
+        "default": "",
+        "label": "LCCN",
+        "header": false,
+        "data": "identifier",
+        "help": ""
+    },
+    "BNF_ARK": {
+        "type": "ark",
+        "size": 1,
+        "default": "",
+        "label": "ARK from BNF",
+        "header": false,
+        "data": "identifier",
+        "naan": 12148,
+        "help": ""
+    },
+    "ARC": {
+        "type": "arc",
+        "size": 1,
+        "default": "",
+        "label": "National Archives identifier",
+        "header": false,
+        "data": "identifier",
+        "help": ""
+    },
+    "Source": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Scans",
+        "header": false,
+        "help": "",
+        "values": {
+            "_empty_": "other",
+            "djvu": "djvu",
+            "pdf": "pdf",
+            "jpg": "jpg",
+            "png": "png",
+            "gif": "gif",
+            "tif": "tif",
+            "ogg": "ogg",
+            "ogv": "ogv",
+            "webm": "webm"
+        }
+    },
+    "Image": {
+        "type": "string",
+        "size": 1,
+        "default": "1",
+        "label": "Cover image",
+        "header": false,
+        "help": ""
+    },
+    "Progress": {
+        "type": "string",
+        "size": 1,
+        "default": "X",
+        "label": "Progress",
+        "header": false,
+        "values": {
+            "T": "Done",
+            "V": "To be validated",
+            "C": "To be proofread",
+            "MS": "Ready for Match \u0026 Split",
+            "OCR": "Source file needs an OCR text layer",
+            "L": "Source file is incorrect (missing pages, unordered pages, etc)",
+            "X": "Pagelist needed (to verify file is complete and correct before commencing proofreading)"
+        },
+        "data": "progress",
+        "help": ""
+    },
+    "Pages": {
+        "type": "string/line",
+        "size": 15,
+        "default": "\u003Cpagelist /\u003E",
+        "label": "Pages",
+        "header": false,
+        "help": "",
+        "data": "pagelist"
+    },
+    "Volumes": {
+        "type": "string/line",
+        "size": 5,
+        "default": "",
+        "label": "",
+        "header": false,
+        "help": ""
+    },
+    "Remarks": {
+        "type": "string/line",
+        "size": 15,
+        "default": "",
+        "label": "Table of Contents",
+        "header": true,
+        "help": ""
+    },
+    "Width": {
+        "type": "number",
+        "size": 1,
+        "default": "",
+        "label": "Scan resolution in edit mode",
+        "header": false,
+        "help": ""
+    },
+    "Css": {
+        "type": "string/line",
+        "size": 1,
+        "default": "",
+        "label": "Css",
+        "header": true,
+        "help": ""
+    },
+    "Header": {
+        "type": "string",
+        "size": 1,
+        "default": "",
+        "label": "Header",
+        "header": true,
+        "help": ""
+    },
+    "Footer": {
+        "type": "string",
+        "size": 1,
+        "default": "\n",
+        "label": "Footer",
+        "header": true,
+        "help": ""
+    },
+    "Notes": {
+        "type": "string/line",
+        "hidden": true,
+        "header": true
+    },
+    "wikipedia": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "commons": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "commonscat": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wikiquote": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wikidata": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wikinews": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wiktionary": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wikibooks": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wikiversity": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wikispecies": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "meta": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "portal": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    },
+    "wikilivres": {
+        "type": "string",
+        "hidden": true,
+        "header": true
+    }
+}</text>
+      <sha1>t72ucrpyqr9wzjszje5vdndhjrtwt07</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki:Proofreadpage index template</title>
+    <ns>8</ns>
+    <id>2</id>
+    <revision>
+      <id>220</id>
+      <parentid>219</parentid>
+      <timestamp>2019-10-07T07:31:01Z</timestamp>
+      <contributor>
+        <username>imported&gt;Billinghurst</username>
+        <id>0</id>
+      </contributor>
+      <comment>PAGENAMEE -&gt; PAGENAME for file:/media: usage per [[special:permalink/9638391]]</comment>
+      <origin>220</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5796" sha1="q2t7v3ddmxef3v99b6hkvu7jbjfq34o" xml:space="preserve">&lt;onlyinclude&gt;&lt;!--
+	--&gt;{{#ifexist:{{ns:107}}:{{PAGENAME}}|&lt;!--
+		--&gt;{{Index talk remarks}}&lt;!--
+	--&gt;}}&lt;!--
+	--&gt;&lt;indicator name="purge file"&gt;[[File:View-refresh.svg|20px|link={{fullurl:commons:File:{{PAGENAME}}|action=purge}}]]&lt;/indicator&gt;&lt;!--
+	--&gt;&lt;indicator name="book2scroll"&gt;[[File:Library-logo-blue-outline.png|18px|link={{fullurl:toollabs:book2scroll/index.html|lang=en&amp;file={{{n|{{PAGENAMEE}}}}}&amp;startpage={{{p|1}}}}}]]&lt;/indicator&gt;&lt;!--
+	--&gt;&lt;indicator name="transclusion checker"&gt;[[File:Crystal_man.png|20px|link={{fullurl:toollabs:checker/|db=enwikisource_p&amp;title={{FULLPAGENAMEE}}}}|alt=Transclusion_Status_Detection_Tool]]&lt;/indicator&gt;&lt;!--
+--&gt;
+&lt;table style="display:table; border-spacing:1px 1px; box-sizing:border-box; width:100%;"&gt;
+&lt;tr&gt;
+&lt;td style="padding:0; vertical-align:top;"&gt;&lt;!--
+--&gt;&lt;table style="display:inline-table; border-collapse:collapse; border-spacing:0 0; box-sizing:border-box; width:100%;"&gt;
+&lt;tr&gt;
+&lt;td style="padding:0; vertical-align:top;"&gt;
+&lt;div style="float:left; margin:0.50em 0.25em 0.50em 0;"&gt;
+&lt;p style="margin-top:0; margin-bottom:0;"&gt;{{#if:{{{Image|}}}|{{#iferror: {{#expr: 1 + {{{Image}}} }} | {{{Image|[[File:Placeholder book.svg|frameless|link=Special:Upload]]}}} | [[File:{{PAGENAME}}|page={{{Image}}}|frameless|class=ws-cover]]}} }}&lt;/p&gt;
+&lt;/div&gt;
+&lt;table id="prp-indexTable" class="plainlinks" style="border-collapse:separate; border-spacing:2px 2px; box-sizing:border-box; empty-cells:show;"&gt;&lt;!--
+
+	Title--&gt;
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;{{int:wm-license-book-title}}&lt;/th&gt;
+&lt;td id="ws-title" style="vertical-align:top;"&gt;{{{Title}}}{{#if:{{{Volume|}}}|, {{{Volume}}} }}&lt;/td&gt;
+&lt;/tr&gt;&lt;!--
+
+	Author
+
+--&gt;{{#if:{{{Author|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;{{int:wm-license-information-author}}&lt;/th&gt;
+&lt;td id="ws-author" style="vertical-align:top;"&gt;{{{Author}}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Translator
+
+--&gt;{{#if:{{{Translator|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;{{int:wm-license-book-translator}}&lt;/th&gt;
+&lt;td id="ws-translator" style="vertical-align:top;"&gt;{{{Translator}}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Editor
+
+--&gt;{{#if:{{{Editor|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;{{int:wm-license-book-editor}}&lt;/th&gt;
+&lt;td id="ws-editor" style="vertical-align:top;"&gt;{{{Editor}}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Illustrator
+
+--&gt;{{#if:{{{Illustrator|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;{{int:wm-license-book-illustrator}}&lt;/th&gt;
+&lt;td id="ws-illustrator" style="vertical-align:top;"&gt;{{{Illustrator}}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Year
+
+--&gt;{{#if:{{{Year|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;Year&lt;/th&gt;
+&lt;td id="ws-year" style="vertical-align:top;"&gt;{{{Year}}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Publisher
+
+--&gt;{{#if:{{{Publisher|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;{{int:wm-license-book-publisher}}&lt;/th&gt;
+&lt;td id="ws-publisher" style="vertical-align:top;"&gt;{{{Publisher}}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Address / Location
+
+--&gt;{{#if:{{{Address|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;Location&lt;/th&gt;
+&lt;td id="ws-place" style="vertical-align:top;"&gt;{{{Address}}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Source
+
+--&gt;{{#if:{{{Source|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;{{int:wm-license-information-source}}&lt;/th&gt;
+&lt;td id="ws-source" style="vertical-align:top;"&gt;{{#ifexist:media:{{PAGENAME}}|[[:File:{{PAGENAME}}{{!}}{{{Source}}}]]
+|{{{Source}}} }}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Progress
+
+--&gt;{{#if:{{{Progress|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;Progress&lt;/th&gt;
+&lt;td style="vertical-align:top;"&gt;{{#switch:{{{Progress|}}}
+|T=[[Category:Index Validated]][[:Category:Index Validated{{!}}Done—All pages of the work proper are validated]]
+|V=[[Category:Index Proofread]][[:Category:Index Proofread{{!}}Proofread—All pages of the work proper are proofread, but not all are validated]]
+|C=[[Category:Index Not-Proofread]][[:Category:Index Not-Proofread{{!}}To be proofread]]
+|MS=[[Category:Index - Ready for Match and Split]][[:Category:Index - Ready for Match and Split{{!}}Ready for Match and Split]]
+|OCR=[[Category:Index - Text Layer Requested]][[:Category:Index - Text Layer Requested{{!}}Source file needs an OCR text layer]]
+|L=[[Category:Index - File to fix]][[:Category:Index - File to fix{{!}}&lt;span class="error"&gt;Source file must be fixed before proofreading&lt;/span&gt;]]
+|X=[[Category:Index - File to check]][[:Category:Index - File to check{{!}}&lt;span class="error"&gt;Create a pagelist for the source file before commencing proofreading (to verify file is correct)&lt;/span&gt;]]
+|#default=[[Category:Index - Unknown progress]]}}&lt;/td&gt;
+&lt;/tr&gt;
+}}&lt;!--
+
+	Volumes
+
+--&gt;{{#if:{{{Volumes|}}}|
+&lt;tr&gt;
+&lt;th scope="row" style="padding-right:0.50em; text-align:right; vertical-align:top;"&gt;Volumes&lt;/th&gt;
+&lt;td style="vertical-align:top;"&gt;
+{{{Volumes}}}
+&lt;/td&gt;
+&lt;/tr&gt;
+}}
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;&lt;!--
+
+	Pages field
+
+--&gt;
+&lt;tr&gt;
+&lt;td style="vertical-align:top;"&gt;&lt;div class="mw-collapsible" style="margin-right:0.75em;"&gt;
+&lt;p&gt;&lt;b&gt;Pages&lt;/b&gt;&amp;#160;&amp;#160;&amp;#160;(&lt;span style="font-size:83%;"&gt;key&amp;#160;to&amp;#160;[[Help:Page Status{{!}}Page&amp;#160;Status]]&lt;/span&gt;)&amp;#160;&amp;#160;&amp;#160;&lt;/p&gt;
+&lt;div class="index-pagelist mw-collapsible-content" style="text-align:justify;"&gt;
+{{{Pages|}}}
+&lt;/div&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;&lt;!--
+
+	Remarks
+
+--&gt;{{#if:{{{Remarks|}}}|
+&lt;td style="padding:0 0.25em 0 0.25em; vertical-align:top; width:30%;"&gt;
+{{{Remarks}}}
+|&lt;td style="display:none; padding:0; vertical-align:top;"&gt;
+}}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+{{DEFAULTSORT:{{#if:{{{Key|}}}|{{{Key}}}|{{PAGENAME}}}}}}&lt;/onlyinclude&gt;</text>
+      <sha1>q2t7v3ddmxef3v99b6hkvu7jbjfq34o</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki:Proofreadpage pagelist dropdown values.json</title>
+    <ns>8</ns>
+    <id>4</id>
+    <revision>
+      <id>289</id>
+      <parentid>288</parentid>
+      <timestamp>2020-09-11T10:13:38Z</timestamp>
+      <contributor>
+        <username>imported&gt;Inductiveload</username>
+        <id>0</id>
+      </contributor>
+      <comment>conform labels more to local style (— vs -, capitalised words, expand roman descriptions)</comment>
+      <origin>289</origin>
+      <model>json</model>
+      <format>application/json</format>
+      <text bytes="501" sha1="ph8vqu11gguh269r00hrdx4dfo5ik41" xml:space="preserve">[
+    {
+        "label": "Roman numerals (uppercase)",
+        "data": "highroman"
+    },
+    {
+        "label": "Roman numerals (lowercase)",
+        "data": "roman"
+    },
+    {
+        "label": "Number",
+        "data": "Number"
+    },
+    {
+        "label": "Cover of the page",
+        "data": "Cover"
+    },
+    {
+        "label": "— (empty)",
+        "data": "—"
+    },
+    {
+        "label": "ToC",
+        "data": "ToC"
+    },
+    {
+        "label": "Image",
+        "data": "Img"
+    }
+]</text>
+      <sha1>ph8vqu11gguh269r00hrdx4dfo5ik41</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki:Proofreadpage pagenum template</title>
+    <ns>8</ns>
+    <id>29</id>
+    <revision>
+      <id>318</id>
+      <timestamp>2021-05-22T08:37:33Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with "&lt;includeonly&gt;&lt;!--  Outer span: contains the page number as an ID, so you can link to pages by pagenumber in the ''original'' work Also contains data- attributes for JS to pick..."</comment>
+      <origin>318</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="867" sha1="7n7htp5v00o5b8xjqoic2bzjxi331fo" xml:space="preserve">&lt;includeonly&gt;&lt;!--
+
+Outer span: contains the page number as an ID, so you can link to pages by pagenumber in the ''original'' work
+Also contains data- attributes for JS to pick up as needed.
+--&gt;&lt;span &lt;!--
+   --&gt;class="pagenum ws-pagenum" &lt;!--
+   --&gt;id="{{{num}}}" &lt;!--
+   --&gt;data-page-number="{{{num}}}" &lt;!--
+   --&gt;data-page-name="{{{page}}}" &lt;!--
+   --&gt;data-page-index="{{SUBPAGENAME:{{{page}}}}}" &lt;!--
+   --&gt;data-page-quality="{{{quality}}}" &lt;!--
+   --&gt;title="{{urlencode:{{{page}}}|WIKI}}"&lt;!--
+--&gt;&gt;&lt;!--
+
+   Inner span with an id of pagenumberXXX, which allows to anchor to the page if you only know the page index in the file
+   (i.e. the XX in Page:Foo.djvu/XX)
+   --&gt;&lt;span id="pageindex_{{SUBPAGENAME:{{{page}}}}}" class="pagenum-inner ws-noexport"&gt;&lt;!--
+
+        --&gt;&amp;#8203;&lt;!--
+
+   End the inner span
+   --&gt;&lt;/span&gt;&lt;!--
+
+End the outer span
+--&gt;&lt;/span&gt;&lt;/includeonly&gt;</text>
+      <sha1>7n7htp5v00o5b8xjqoic2bzjxi331fo</sha1>
+    </revision>
+  </page>
+</mediawiki>
