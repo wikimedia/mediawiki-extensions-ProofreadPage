@@ -226,9 +226,7 @@ class PagesTagParser {
 			list( $to_page, $to_pagenum ) = end( $pages );
 
 			$pageQualityLevelLookup = $this->context->getPageQualityLevelLookup();
-			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_map( static function ( $item ) {
-				return $item[0];
-			}, $pages ) );
+			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_column( $pages, 0 ) );
 
 			$indexTs = new IndexTemplateStyles( $indexTitle );
 			$out .= $indexTs->getIndexTemplateStyles( ".$outputWrapperClass" );
