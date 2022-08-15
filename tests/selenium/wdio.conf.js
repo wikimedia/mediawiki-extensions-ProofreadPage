@@ -2,6 +2,7 @@
 
 const { config } = require( 'wdio-mediawiki/wdio-defaults.conf.js' );
 const fs = require( 'fs' ),
+	childProcess = require( 'child_process' ),
 	path = require( 'path' );
 
 const localSettingsPath = path.join( __dirname, '../../../../LocalSettings.php' );
@@ -19,6 +20,20 @@ exports.config = {
 			require_once "$IP/extensions/ProofreadPage/tests/selenium/settings/ProofreadPage.LocalSettings.php";
 		}
 		` );
+
+		// per T315214#8153130 and GrowthExperiments implementation of the same
+		// at https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/GrowthExperiments/+/refs/heads/master/tests/selenium/wdio.conf.js#5
+		if ( process.env.QUIBBLE_APACHE ) {
+			childProcess.spawnSync(
+				'service',
+				[ 'php7.2-fpm', 'restart' ]
+			);
+			// Super ugly hack: Run this twice because sometimes the first invocation hangs.
+			childProcess.spawnSync(
+				'service',
+				[ 'php7.2-fpm', 'restart' ]
+			);
+		}
 	},
 	onComplete: function () {
 		fs.writeFileSync( localSettingsPath, localSettingsOldText );
