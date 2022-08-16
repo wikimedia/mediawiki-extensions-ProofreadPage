@@ -78,6 +78,8 @@
 	"proofreadpage-button-zoom-in-label": "Zoumañ",
 	"proofreadpage-button-toggle-layout-label": "Kinnig a-sav/a-led",
 	"proofreadpage-pageinfo-status": "Stad an adlenn",
+	"proofreadpage-pagelist-dialog-cancel": "Nullañ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Skoazell",
 	"proofreadpage-preferences-showheaders-label": "Diskouez maeziennoù talbenn ha traoñ pajenn pa aozer pajennoù en esaouenn anv {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Ober gant ar c'hinnig a-led pa vez kemmet traoù en esaouenn anv {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|bajenn|pajenn}} gadarnaet, $2 {{PLURAL:$2|bajenn|pajenn}} bet adlennet hepken ha $3 {{PLURAL:$3|bajenn|pajenn}} hep adlenn",

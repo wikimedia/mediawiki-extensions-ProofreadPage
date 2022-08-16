@@ -3,7 +3,8 @@
 		"authors": [
 			"Eugrus",
 			"Imre",
-			"פוילישער"
+			"פוילישער",
+			"Pacha Tchernof"
 		]
 	},
 	"nstab-page": "בלאַט",
@@ -23,5 +24,7 @@
 	"proofreadpage_source": "מקור",
 	"proofreadpage-group-zoom": "זום",
 	"proofreadpage-group-other": "אַנדער",
-	"proofreadpage-button-reset-zoom-label": "אריגינעלע גרייס"
+	"proofreadpage-button-reset-zoom-label": "אריגינעלע גרייס",
+	"proofreadpage-pagelist-dialog-cancel": "אַנולירן",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "בלעטער"
 }
