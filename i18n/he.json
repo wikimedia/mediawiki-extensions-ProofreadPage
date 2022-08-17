@@ -111,7 +111,7 @@
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "לא נמצאו תגי <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "בזמן פענוח תג pagelist בשרת, אירעה השגיאה הבאה $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "אירעה שגיאה בלתי־צפויה. נא לדווח על השגיאה הזאת באתר phabricator.wikimedia.org עם הודעות יומן מהמסוף.",
-	"proofreadpage-pagelist-parsing-error-network-issues": "אחזור רשימת הדפים נכשלה בשל בעיות רשת, נא לנסות שוב",
+	"proofreadpage-pagelist-parsing-error-network-issues": "אחזור רשימת הדפים נכשל בשל בעיות רשת, נא לנסות שוב",
 	"proofreadpage-pagelist-dialog-title": "עריכת רשימת דפים עבור $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "הוספת שינויים",
 	"proofreadpage-pagelist-imageurlnotfound": "לא היה אפשר למצוא את מקור התמונה הממוזערת עבור הסריקה הזאת.",
