@@ -54,7 +54,7 @@ abstract class Pagination implements Iterator {
 	/**
 	 * Returns the page number $pageNumber of the book
 	 *
-	 * @param int $pageNumber page number
+	 * @param int $pageNumber
 	 * @return Title
 	 * @throws OutOfBoundsException
 	 */
@@ -63,7 +63,7 @@ abstract class Pagination implements Iterator {
 	/**
 	 * Returns if a page number $pageNumber exists
 	 *
-	 * @param int $pageNumber page number
+	 * @param int $pageNumber
 	 * @return bool
 	 */
 	abstract protected function pageNumberExists( int $pageNumber ): bool;

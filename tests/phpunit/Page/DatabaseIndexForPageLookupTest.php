@@ -13,8 +13,7 @@ use Title;
 class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 
 	public function testGetIndexForPage() {
-		$repoGroupMock = $this->getMockBuilder( \RepoGroup::class )
-			->disableOriginalConstructor()->getMock();
+		$repoGroupMock = $this->createMock( \RepoGroup::class );
 		$repoGroupMock->expects( $this->once() )
 			->method( 'findFile' )
 			->willReturn( $this->buildFileList()[0] );

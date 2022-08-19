@@ -195,9 +195,7 @@ class ProofreadPage implements
 		$inIndexNamespace = $title->inNamespace( $context->getIndexNamespaceId() );
 		$pageQualityLevelLookup = $context->getPageQualityLevelLookup();
 
-		$pageTitles = array_map( static function ( $prefixedDbKey ) {
-			return Title::newFromText( $prefixedDbKey );
-		}, $pageIds );
+		$pageTitles = array_map( [ Title::class, 'newFromText' ], $pageIds );
 		$pageQualityLevelLookup->prefetchQualityLevelForTitles( $pageTitles );
 
 		/** @var Title|null $pageTitle */
