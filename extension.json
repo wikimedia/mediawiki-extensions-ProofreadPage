@@ -236,6 +236,7 @@
 				"PageModel.js",
 				"PreviewTool.js",
 				"PreviewWidget.js",
+				"PageStatusTools.js",
 				"EditorController.js"
 			],
 			"dependencies": [

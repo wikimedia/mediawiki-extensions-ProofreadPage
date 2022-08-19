@@ -28,6 +28,7 @@ describe( 'For a page with eis enabled', function () {
 		EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
 		assert.ok( utils.isEnabledInOOUI( EisPagePage.prevButton ) === false, 'is disabled' );
 		EisPagePage.nextButton.click();
+		EisPagePage.waitForOOUIElementToBeActive( EisPagePage.prevButton );
 		assert.ok( utils.isEnabledInOOUI( EisPagePage.prevButton ), 'but gets enabled when next is clicked' );
 	} );
 
@@ -35,6 +36,7 @@ describe( 'For a page with eis enabled', function () {
 		EisPagePage.openEis( 'Page:LoremIpsum.djvu/5' );
 		assert.ok( utils.isEnabledInOOUI( EisPagePage.nextButton ) === false, 'is disabled' );
 		EisPagePage.prevButton.click();
+		EisPagePage.waitForOOUIElementToBeActive( EisPagePage.nextButton );
 		assert.ok( utils.isEnabledInOOUI( EisPagePage.nextButton ), 'but gets enabled when prev is clicked' );
 	} );
 
