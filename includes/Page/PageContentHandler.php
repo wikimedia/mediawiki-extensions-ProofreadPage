@@ -515,7 +515,10 @@ class PageContentHandler extends TextContentHandler {
 			$indexLang = $context->getCustomIndexFieldsParser()->getContentLanguage( $indexContent );
 			if ( $indexLang ) {
 				// if unrecognized, uses $wgContentLanguage
-				return wfGetLangObj( $indexLang );
+				$services = MediaWikiServices::getInstance();
+				return $services->getLanguageNameUtils()->isKnownLanguageTag( $indexLang ) ?
+					$services->getLanguageFactory()->getLanguage( $indexLang ) :
+					$services->getContentLanguage();
 			}
 		}
 		return parent::getPageLanguage( $title, $content );
