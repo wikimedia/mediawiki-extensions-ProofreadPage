@@ -9,7 +9,6 @@ use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;
-use ProofreadPage\Pagination\PageNumber;
 use ProofreadPage\Pagination\SimpleFilePagination;
 use ProofreadPage\ProofreadPage;
 
@@ -89,21 +88,13 @@ class PagelistTagParser {
 		}
 		$return = [];
 		for ( $i = $from; $i <= $to; $i++ ) {
-			$pageNumberExpression = "";
 			$pageNumber = $pagination->getDisplayedPageNumber( $i );
-			$mode = $pageNumber->getDisplayMode();
-
-			if ( $mode === PageNumber::DISPLAY_HIGHROMAN
-				|| $mode === PageNumber::DISPLAY_ROMAN
-			) {
-				$pageNumberExpression .= '&#160;';
-			}
-			$pageNumberExpression .= $pageNumber->getFormattedPageNumber( $title->getPageLanguage() );
-
-			$pageTitle = $pagination->getPageTitle( $i );
+			$pageNumberExpression = $pageNumber->getFormattedPageNumber( $title->getPageLanguage() );
 			if ( !preg_match( '/^[\p{L}\p{N}\p{Mc}]+$/', $pageNumberExpression ) ) {
 				$pageNumberExpression = $this->parser->recursiveTagParse( $pageNumberExpression );
 			}
+
+			$pageTitle = $pagination->getPageTitle( $i );
 			if ( !$pageNumber->isEmpty() ) {
 				// Adds the page as a dependency in order to make sure that the Index: page is
 				// purged if the status of the Page: page changes
