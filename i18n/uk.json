@@ -114,6 +114,7 @@
 	"proofreadpage-button-zoom-in-label": "Збільшити",
 	"proofreadpage-button-zoom-out-label": "Зменшити",
 	"proofreadpage-pageinfo-status": "Стан перевірки правопису",
+	"prp-editinsequence-unknown-error": "Виявлено неочікувану помилку. Будь ласка, повідомте про цю помилку на phabricator.wikimedia.org.",
 	"proofreadpage-pagelist-input-preview-button": "Переглянути список сторінок",
 	"proofreadpage-pagelist-dialog-update-button": "Оновити список спостереження",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Вихід із цього діалогового вікна може призвести до втрати незбереженого прогресу.",
