@@ -168,6 +168,13 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @inheritDoc
 	 */
+	public function supportsPreloadContent(): bool {
+		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function preloadTransform(
 		Content $content,
 		PreloadTransformParams $pltparams
