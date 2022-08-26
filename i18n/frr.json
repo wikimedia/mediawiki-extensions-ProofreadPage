@@ -50,6 +50,7 @@
 	"proofreadpage_index_size": "Taal faan sidjen",
 	"proofreadpage_pages_to_validate": "Taal faan sidjen tu efterlukin",
 	"proofreadpage_pages_to_proofread_or_validate": "Taal faan sidjen, diar efterluket wurd skel",
+	"proofreadpage_specialpage_filterby_proofread": "Efterluket",
 	"proofreadpage_specialpage_label_orderby": "Sortiare efter:",
 	"proofreadpage_specialpage_label_key": "Schük:",
 	"proofreadpage_specialpage_label_sortascending": "Sortiare faan onern tu boowen",
@@ -87,5 +88,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sidjen",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Iinbinjang faan $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Naan"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Naan",
+	"tag-proofreadpage-quality1": "Ei efterluket",
+	"tag-proofreadpage-quality3": "Efterluket"
 }
