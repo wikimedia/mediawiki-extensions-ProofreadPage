@@ -11,7 +11,6 @@ use ProofreadPage\Context;
 use ProofreadPage\Pagination\Pagination;
 use Title;
 use Wikimedia\ParamValidator\ParamValidator;
-use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 /**
  * API list module for getting the list of pages in an index
@@ -71,8 +70,6 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 				[ 'apierror-proofreadpage-invalidindex', $indexTitle->getFullText() ] );
 		}
 
-		$limit = $params['limit'];
-		$from = intval( $params['continue'] );
 		$prop = array_fill_keys( $params['prop'], true );
 
 		$result = $this->getResult();
@@ -88,18 +85,6 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 		$result->addValue( [ 'query' ], $this->getModuleName(), [] );
 
 		foreach ( $pagination as $key => $pageTitle ) {
-
-			// Skip ahead until we find the region of interest
-			if ( $key < $from ) {
-				continue;
-			}
-
-			if ( count( $pages ) >= $limit ) {
-				// We've reached the one extra which shows that there are
-				// additional pages to be had. Stop here...
-				$this->setContinueEnumParameter( 'continue', $pagination->getPageNumber( $pageTitle ) );
-				break;
-			}
 
 			$pages[] = $pageTitle;
 
@@ -152,10 +137,6 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 	 */
 	protected function getAllowedParams() {
 		return [
-			'continue' => [
-				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
-				ParamValidator::PARAM_TYPE => 'integer',
-			],
 			'prop' => [
 				ParamValidator::PARAM_ISMULTI => true,
 				ParamValidator::PARAM_DEFAULT => 'ids|title',
@@ -170,14 +151,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 			],
 			'pageid' => [
 				ParamValidator::PARAM_TYPE => 'integer',
-			],
-			'limit' => [
-				ParamValidator::PARAM_DEFAULT => 100,
-				ParamValidator::PARAM_TYPE => 'limit',
-				IntegerDef::PARAM_MIN => 1,
-				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
-				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			],
+			]
 		];
 	}
 

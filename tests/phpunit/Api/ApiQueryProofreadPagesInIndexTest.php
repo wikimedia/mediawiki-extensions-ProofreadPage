@@ -132,35 +132,4 @@ class ApiQueryProofreadPagesInIndexTest extends ApiTestCase {
 
 		$this->assertEquals( $expected, $apiResult[ 0 ][ 'query' ][ 'proofreadpagesinindex' ] );
 	}
-
-	/**
-	 * Test with continue and limits
-	 *
-	 * @group medium
-	 */
-	public function testExistingIndexContinueLimit() {
-		$pageName = 'Index:Foobar';
-
-		$apiResult = $this->doApiRequest( [
-			'action' => 'query',
-			'list' => 'proofreadpagesinindex',
-			'prppiititle' => $pageName,
-			'prppiilimit' => 1,
-			'prppiicontinue' => 2,
-		] );
-
-		$this->assertArrayHasKey( 'query', $apiResult[ 0 ] );
-		$this->assertArrayHasKey( 'proofreadpagesinindex', $apiResult[ 0 ][ 'query' ] );
-
-		$expected = [
-			[
-				'pageoffset' => 2,
-				'title' => 'Page:Test 2.jpg',
-				'pageid' => 0
-			],
-		];
-
-		$this->assertEquals( $expected, $apiResult[ 0 ][ 'query' ][ 'proofreadpagesinindex' ] );
-		$this->assertSame( 3, $apiResult[ 0 ][ 'continue' ][ 'prppiicontinue' ] );
-	}
 }
