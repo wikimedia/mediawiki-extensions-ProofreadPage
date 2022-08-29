@@ -92,5 +92,15 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Strani",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "Vključitev $1",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Da",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
+	"tag-proofreadpage-quality0": "brez besedila",
+	"tag-proofreadpage-quality1": "nelektorirano",
+	"tag-proofreadpage-quality2": "problematično",
+	"tag-proofreadpage-quality3": "lektorirano",
+	"tag-proofreadpage-quality4": "potrjeno",
+	"tag-proofreadpage-quality0-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality0}}«",
+	"tag-proofreadpage-quality1-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality1}}«",
+	"tag-proofreadpage-quality2-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality2}}«",
+	"tag-proofreadpage-quality3-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality3}}«",
+	"tag-proofreadpage-quality4-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality4}}«"
 }

@@ -84,6 +84,7 @@
 	"proofreadpage-button-zoom-in-label": "Nagyítás",
 	"proofreadpage-button-zoom-out-label": "Kicsinyítés",
 	"proofreadpage-pageinfo-status": "Korrektúrázási állapot",
+	"prp-editinsequence-unknown-error": "Váratlan hibát észleltünk. Kérjük, jelentsd a phabricator.wikimedia.org címen!",
 	"proofreadpage-pagelist-input-preview-button": "Oldallista előnézete",
 	"proofreadpage-pagelist-dialog-update-button": "Oldallista frissítése",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "A párbeszéd elhagyásával elveszhetnek a mentetlen változtatások.",
