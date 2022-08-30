@@ -5,6 +5,7 @@ const fs = require( 'fs' ),
 	childProcess = require( 'child_process' ),
 	path = require( 'path' );
 
+const phpFpmServiceName = `php${process.env.PHP_VERSION}-fpm`;
 const localSettingsPath = path.join( __dirname, '../../../../LocalSettings.php' );
 const localSettingsOldText = fs.readFileSync( localSettingsPath );
 
@@ -26,12 +27,12 @@ exports.config = {
 		if ( process.env.QUIBBLE_APACHE ) {
 			childProcess.spawnSync(
 				'service',
-				[ 'php7.2-fpm', 'restart' ]
+				[ phpFpmServiceName, 'restart' ]
 			);
 			// Super ugly hack: Run this twice because sometimes the first invocation hangs.
 			childProcess.spawnSync(
 				'service',
-				[ 'php7.2-fpm', 'restart' ]
+				[ phpFpmServiceName, 'restart' ]
 			);
 		}
 	},
