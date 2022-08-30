@@ -41,9 +41,9 @@
 	"proofreadpage_quality2_category": "Kudennek",
 	"proofreadpage_quality3_category": "Reizhet",
 	"proofreadpage_quality4_category": "Kadarnaet",
-	"proofreadpage_quality0_summary": "Hep testenn‎",
+	"proofreadpage_quality0_summary": "Hep testenn",
 	"proofreadpage_quality1_summary": "Da wiriañ",
-	"proofreadpage_quality2_summary": "Kudennek‎",
+	"proofreadpage_quality2_summary": "Kudennek",
 	"proofreadpage_quality3_summary": "Reizhet",
 	"proofreadpage_quality4_summary": "Kadarnaet",
 	"proofreadpage_quality0_message": "Ar bajenn-mañ n'he deus ket ezhomm da vezañ adlennet",
@@ -92,8 +92,8 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ket",
 	"proofreadpage-index-field-category-label": "Rummadoù",
 	"tag-proofreadpage-quality0": "Hep testenn",
-	"tag-proofreadpage-quality1": "Da wiriañ‎",
-	"tag-proofreadpage-quality2": "Kudennek‎",
+	"tag-proofreadpage-quality1": "Da wiriañ",
+	"tag-proofreadpage-quality2": "Kudennek",
 	"tag-proofreadpage-quality3": "Reizhet",
-	"tag-proofreadpage-quality4": "Kadarnaet‎"
+	"tag-proofreadpage-quality4": "Kadarnaet"
 }

@@ -184,13 +184,13 @@ $specialPageAliases['vi'] = [
 	'PagesWithoutScans' => [ 'Trang_không_có_hình_quét' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'IndexPages' => [ '索引页面' ],
 	'PagesWithoutScans' => [ '未扫描页面' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'IndexPages' => [ '索引頁面' ],
 	'PagesWithoutScans' => [ '未掃描頁面' ],
