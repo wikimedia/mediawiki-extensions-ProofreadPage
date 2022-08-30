@@ -67,7 +67,7 @@ class TranslusionPagesModifier {
 
 		if ( $indexTitle !== null ) {
 			$outputPage->addJsConfigVars( 'prpSourceIndexPage', $indexTitle->getPrefixedText() );
-			$outputPage->addModules( 'ext.proofreadpage.article' );
+			$outputPage->setProperty( 'prpSourceIndexPage', $indexTitle->getPrefixedText() );
 		}
 
 		if ( $qualityStats->getNumberOfPages() !== 0 ) {
@@ -76,6 +76,8 @@ class TranslusionPagesModifier {
 				$this->buildQualityStatsBar( $qualityStats, $outputPage )
 			);
 		}
+
+		$outputPage->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.article' ] );
 	}
 
 	/**
