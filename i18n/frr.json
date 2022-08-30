@@ -89,5 +89,7 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ja",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Naan",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korektuurkwaliteet",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korektuurkwaliteet"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korektuurkwaliteet",
+	"tag-proofreadpage-quality1": "Ei efterluket",
+	"tag-proofreadpage-quality3": "Efterluket"
 }
