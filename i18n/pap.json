@@ -7,5 +7,8 @@
 	"proofreadpage_quality0_category": "Sin teksto",
 	"proofreadpage_quality2_category": "Problemátiko",
 	"proofreadpage_quality3_category": "Koregí",
-	"proofreadpage_quality4_category": "Balidá"
+	"proofreadpage_quality4_category": "Balidá",
+	"prp-edit-in-sequence-preview-http-error": "No a logra un bista previo di e página pa motibu di problema ku ret, por fabor purba mas aki ratu.",
+	"prp-edit-in-sequence-preview-api-error": "No a logra un bista previo di e página pa motibu di e eror akí: $1 Si e eror no tabata sperá, por fabor raportá esaki na phabricator.wikimedia.org.",
+	"prp-editinsequence-preview": "Bista previo"
 }

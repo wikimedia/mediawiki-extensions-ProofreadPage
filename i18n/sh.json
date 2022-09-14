@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"OC Ripper",
-			"Vipz"
+			"Vipz",
+			"Vlad5250"
 		]
 	},
 	"proofreadpage_quality0_category": "Bez teksta",
@@ -11,6 +12,7 @@
 	"proofreadpage_quality3_category": "Provjereno",
 	"proofreadpage_quality4_category": "Potvrđeno",
 	"proofreadpage_quality1_message": "Ova stranica nije bila lektorisana",
+	"prp-editinsequence-preview": "Pregled",
 	"tag-proofreadpage-quality0-description": "Uređivanja koja su promijenila kvalitetu stranice na \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Uređivanja koja su promijenila kvalitetu stranice na \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Uređivanja koja su promijenila kvalitetu stranice na \"{{int:tag-proofreadpage-quality2}}\"",
