@@ -3,6 +3,7 @@
 		"authors": [
 			"Chadyka",
 			"No Sleep till Krupki",
+			"Vlad5250",
 			"Wizardist",
 			"Хомелка"
 		]
@@ -102,7 +103,9 @@
 	"prp-editinsequence-pagination-does-not-exist": "Для гэтай старонкі няма падзелу на старонкі, што робіць немагчымым вызначэнне наступнай і папярэдняй старонак. Калі вы лічыце, што гэта была памылка, калі ласка, паведаміце аб гэтай памылцы на phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Выяўленая нечаканая памылка. Калі ласка, паведаміце аб гэтай памылцы на phabricator.wikimedia.org.",
 	"prp-editinsequence-http-error-page": "Не ўдалося атрымаць старонку праз праблемы з сеткай, калі ласка, паўтарыце спробу пазней.",
+	"prp-edit-in-sequence-preview-http-error": "Не ўдалося праглядзець старонку праз праблемы з сеткай, калі ласка, паўтарыце спробу пазней.",
 	"prp-editinsequence-error": "Памылка EditInSequence, немагчыма працягнуць",
+	"prp-editinsequence-preview": "Перадпаказ",
 	"proofreadpage-pagelist-input-preview-button": "Прагляд спісу старонак",
 	"proofreadpage-pagelist-dialog-update-button": "Абнавіць спіс старонак",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Выхад з гэтага акна можа прычыніць страту незахаванага прагрэсу.",
