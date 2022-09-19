@@ -542,6 +542,29 @@ class ProofreadPage implements
 		}
 	}
 
+	/**
+	 * Add the link the style page (if any) on the main namespace pages
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
+	 *
+	 * @param Title $title the page title
+	 * @param SkinTemplate $skin
+	 * @param array[] &$links Structured navigation links
+	 */
+	private static function addMainNsNavigation( Title $title, SkinTemplate $skin, array &$links ) {
+		$outputPage = $skin->getOutput();
+		$indexTitleText = $outputPage->getProperty( 'prpSourceIndexPage' );
+		if ( $indexTitleText !== null ) {
+			$links['namespaces'] = array_slice( $links['namespaces'], 0, 1, true ) +
+				[
+					'proofread-source' => [
+					'title' => $outputPage->msg( 'proofreadpage_source_message' )->text(),
+					'text' => $outputPage->msg( 'proofreadpage_source' )->text(),
+					'href' => Title::newFromText( $indexTitleText )->getLocalUrl(),
+				] ] +
+				array_slice( $links['namespaces'], 1, count( $links['namespaces'] ), true );
+		}
+	}
+
 	// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
 
 	/**
@@ -558,6 +581,8 @@ class ProofreadPage implements
 			self::addPageNsNavigation( $title, $skin, $links );
 		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::addIndexNsNavigation( $title, $skin, $links );
+		} elseif ( $title->inNamespace( NS_MAIN ) ) {
+			self::addMainNsNavigation( $title, $skin, $links );
 		}
 	}
 
