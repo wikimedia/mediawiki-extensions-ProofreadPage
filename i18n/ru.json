@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Deltaspace",
 			"Diralik",
 			"Ferrer",
 			"Innv",
@@ -105,6 +106,9 @@
 	"proofreadpage-button-zoom-in-label": "Приблизить",
 	"proofreadpage-button-zoom-out-label": "Отдалить",
 	"proofreadpage-pageinfo-status": "Статус вычитки",
+	"prp-edit-in-sequence-preview-http-error": "Не удалось выполнить предварительный просмотр страницы из-за проблем с сетью, пожалуйста, повторите попытку позже.",
+	"prp-edit-in-sequence-preview-api-error": "Не удалось выполнить предварительный просмотр страницы из-за следующей ошибки: $1 Если это непредвиденная ошибка, сообщите об этой ошибке на phabricator.wikimedia.org.",
+	"prp-editinsequence-preview": "Предпросмотр",
 	"proofreadpage-pagelist-input-preview-button": "Предпросмотр списка страниц",
 	"proofreadpage-pagelist-dialog-discard-changes": "Отменить изменения",
 	"proofreadpage-pagelist-dialog-cancel": "Отмена",

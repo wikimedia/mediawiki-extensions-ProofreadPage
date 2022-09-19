@@ -96,6 +96,7 @@
 	"proofreadpage-button-zoom-in-label": "Zooma in",
 	"proofreadpage-button-zoom-out-label": "Zooma ut",
 	"proofreadpage-pageinfo-status": "Korrekturläsningsstatus",
+	"prp-editinsequence-preview": "Förhandsgranska",
 	"proofreadpage-pagelist-dialog-discard-changes": "Ta bort ändringar",
 	"proofreadpage-pagelist-dialog-cancel": "Avbryt",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Fler än en <pagelist/>-tagg hittades i källtexten.",

@@ -3,6 +3,7 @@
 		"authors": [
 			"Chadyka",
 			"No Sleep till Krupki",
+			"Tomato Cream",
 			"Vlad5250",
 			"Wizardist",
 			"Хомелка"
@@ -104,6 +105,7 @@
 	"prp-editinsequence-unknown-error": "Выяўленая нечаканая памылка. Калі ласка, паведаміце аб гэтай памылцы на phabricator.wikimedia.org.",
 	"prp-editinsequence-http-error-page": "Не ўдалося атрымаць старонку праз праблемы з сеткай, калі ласка, паўтарыце спробу пазней.",
 	"prp-edit-in-sequence-preview-http-error": "Не ўдалося праглядзець старонку праз праблемы з сеткай, калі ласка, паўтарыце спробу пазней.",
+	"prp-edit-in-sequence-preview-api-error": "Не ўдалося праглядзець старонку праз наступную памылку: $1 Калі гэтая памылка нечаканая, паведаміце пра яе на phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "Памылка EditInSequence, немагчыма працягнуць",
 	"prp-editinsequence-preview": "Перадпаказ",
 	"proofreadpage-pagelist-input-preview-button": "Прагляд спісу старонак",

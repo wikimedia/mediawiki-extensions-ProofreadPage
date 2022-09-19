@@ -117,6 +117,7 @@
 	"prp-editinsequence-unknown-error": "Виявлено неочікувану помилку. Будь ласка, повідомте про цю помилку на phabricator.wikimedia.org.",
 	"prp-editinsequence-http-error-page": "Не вдалося отримати сторінку через проблеми з мережею, спробуйте пізніше.",
 	"prp-editinsequence-error": "Помилка EditInSequence, неможливо продовжити",
+	"prp-editinsequence-preview": "Попередній перегляд",
 	"proofreadpage-pagelist-input-preview-button": "Переглянути список сторінок",
 	"proofreadpage-pagelist-dialog-update-button": "Оновити список спостереження",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Вихід із цього діалогового вікна може призвести до втрати незбереженого прогресу.",
