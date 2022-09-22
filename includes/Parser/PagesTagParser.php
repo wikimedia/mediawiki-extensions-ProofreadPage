@@ -48,6 +48,7 @@ class PagesTagParser {
 	 */
 	public function render( array $args ) {
 		// abort if this is nested <pages> call
+		// @phan-suppress-next-line PhanUndeclaredProperty
 		if ( $this->parser->proofreadRenderingPages ?? false ) {
 			return '';
 		}
@@ -360,6 +361,7 @@ class PagesTagParser {
 			? " lang=\"$contentLang\""
 			: "";
 		$out = "<div class=\"$outputWrapperClass\"$langAttr>\n$out\n</div>";
+		// @phan-suppress-next-line PhanUndeclaredProperty
 		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );
 
@@ -367,6 +369,7 @@ class PagesTagParser {
 		$out = str_replace( $joiner . $placeholder, '', $out );
 		$out = str_replace( $placeholder, $separator, $out );
 
+		// @phan-suppress-next-line PhanUndeclaredProperty
 		unset( $this->parser->proofreadRenderingPages );
 		return $out;
 	}
