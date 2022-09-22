@@ -80,6 +80,8 @@
 	"proofreadpage-button-zoom-in-label": "Povečaj",
 	"proofreadpage-button-zoom-out-label": "Pomanjšaj",
 	"proofreadpage-pageinfo-status": "Stanje pregleda",
+	"prp-edit-in-sequence-preview-http-error": "Predogled strani ni uspel zaradi težav z omrežjem; poskusite znova pozneje.",
+	"prp-editinsequence-preview": "Predogled",
 	"proofreadpage-pagelist-dialog-discard-changes": "Zavrzi spremembe",
 	"proofreadpage-pagelist-dialog-cancel": "Prekliči",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Pomoč",
