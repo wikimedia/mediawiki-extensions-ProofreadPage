@@ -22,7 +22,7 @@
 	"proofreadpage_index_expected": "त्रुटि: सूचकांकको अपेक्षा",
 	"proofreadpage_nosuch_index": "त्रुटी: यस्तो कुनै सूचकांक छैन",
 	"proofreadpage_nosuch_file": "त्रुटी: यस्तो कुनै फाइल छैन",
-	"proofreadpage_nologin": "प्रवेश नगरिएको",
+	"proofreadpage_nologin": "तपाईंले प्रवेश गर्नुभएको छैन",
 	"proofreadpage_nextpage": "अर्को पृष्ठ",
 	"proofreadpage_prevpage": "पहिलो पृष्ठ",
 	"proofreadpage_quality0_category": "पाठ बिना",
