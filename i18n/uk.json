@@ -115,6 +115,7 @@
 	"proofreadpage-button-zoom-out-label": "Зменшити",
 	"proofreadpage-pageinfo-status": "Стан перевірки правопису",
 	"prp-editinsequence-http-error-pagelist": "Не вдалося отримати розбивку на сторінки через проблеми з мережею, спробуйте пізніше.",
+	"prp-editinsequence-pagination-does-not-exist": "Для цієї сторінки не існує розбиття на сторінки, через що неможливо визначити наступну та попередню сторінки. Якщо ви вважаєте, що це була помилка, повідомте про неї на phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Виявлено неочікувану помилку. Будь ласка, повідомте про цю помилку на phabricator.wikimedia.org.",
 	"prp-editinsequence-http-error-page": "Не вдалося отримати сторінку через проблеми з мережею, спробуйте пізніше.",
 	"prp-editinsequence-error": "Помилка EditInSequence, неможливо продовжити",
