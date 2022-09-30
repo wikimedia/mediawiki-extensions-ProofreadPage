@@ -16,19 +16,21 @@
  * http://www.gnu.org/copyleft/gpl.html
  *
  * @file
- * @ingroup ProofreadPage
  */
 
 use MediaWiki\MediaWikiServices;
 use ProofreadPage\ProofreadPage;
 
-$basePath = getenv( 'MW_INSTALL_PATH' ) !== false
-	? getenv( 'MW_INSTALL_PATH' )
-	: __DIR__ . '/../../..';
-require_once $basePath . '/maintenance/Maintenance.php';
+$IP = getenv( 'MW_INSTALL_PATH' );
+if ( $IP === false ) {
+	$IP = __DIR__ . '/../../..';
+}
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Set the content model type for Page: pages
+ *
+ * @ingroup ProofreadPage
  */
 class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 
