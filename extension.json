@@ -140,7 +140,7 @@
 		},
 		"ext.proofreadpage.openseadragon": {
 			"packageFiles": [
-				"foreign/openseadragon/openseadragon.js"
+				"lib/openseadragon/openseadragon.js"
 			]
 		},
 		"ext.proofreadpage.index.pagelist": {
