@@ -365,7 +365,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 */
 	public function testGetAutosummary( $oldContent, $newContent, $expected ) {
 		$this->assertSame(
-			$expected, $this->handler->getAutosummary( $oldContent, $newContent, [] )
+			$expected, $this->handler->getAutosummary( $oldContent, $newContent, 0 )
 		);
 	}
 
