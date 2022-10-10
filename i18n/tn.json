@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rebelagent"
+		]
+	},
+	"nstab-page": "Tsebe",
+	"proofreadpage_image": "Senepe",
+	"proofreadpage_nextpage": "Tsebe e latelang",
+	"proofreadpage_prevpage": "Tsebe e fiteleng",
+	"proofreadpage_index_size": "Palo ya ditsebe",
+	"proofreadpage_specialpage_label_key": "Senka:",
+	"proofreadpage_index_listofpages": "Palo ya ditsebe",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|tsebe|ditsebe}}",
+	"proofreadpage_source": "Motswedi",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Ditsebe",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ee",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nnya",
+	"proofreadpage-index-field-category-label": "Dikarolo"
+}
