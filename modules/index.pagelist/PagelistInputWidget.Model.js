@@ -81,6 +81,14 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 
 			attrs = parsedPagelist.body.childNodes[ 0 ].attributes;
 			for ( i = 0; i < attrs.length; i++ ) {
+				// Make the 'empty' page numbering system explicitly fail
+				// until we can figure out a sane way to get it to not misbehave
+				// both the visual mode and wikitext mode.
+				if ( attrs[ i ].value === 'empty' ) {
+					this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-empty-page-numbering' );
+					return;
+				}
+
 				parameters.set( attrs[ i ].name, attrs[ i ].value );
 			}
 
@@ -241,7 +249,7 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 		return;
 	}
 
-	if ( parsedPagelist[ 0 ].attributes.class.value === 'error' ) {
+	if ( parsedPagelist[ 0 ].attributes.class && parsedPagelist[ 0 ].attributes.class.value === 'error' ) {
 		this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-php',
 			parsedPagelist[ 0 ].innerText );
 		return;

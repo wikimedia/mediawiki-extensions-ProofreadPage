@@ -110,6 +110,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Unsaved progress",
 	"proofreadpage-pagelist-dialog-discard-changes": "Discard changes",
 	"proofreadpage-pagelist-dialog-cancel": "Cancel",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "The 'empty' page numbering type is not supported by the Pagelist Widget.",
 	"proofreadpage-pagelist-parsing-error-morethanone": "More than one <pagelist /> tag was detected in the source wikitext.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "No <pagelist /> tags detected.",
 	"proofreadpage-pagelist-parsing-error-php": "The following error was encountered while parsing the pagelist tag in the backend, $1",
