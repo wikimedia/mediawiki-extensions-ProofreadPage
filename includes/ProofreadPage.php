@@ -29,6 +29,7 @@ use FixProofreadIndexPagesContentModel;
 use FixProofreadPagePagesContentModel;
 use IContextSource;
 use ImagePage;
+use MediaWiki\Hook\OutputPageParserOutputHook;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
@@ -63,7 +64,8 @@ use User;
 
 class ProofreadPage implements
 	RecentChange_saveHook,
-	SkinTemplateNavigation__UniversalHook
+	SkinTemplateNavigation__UniversalHook,
+	OutputPageParserOutputHook
 {
 
 	/** @var Config */
@@ -241,14 +243,15 @@ class ProofreadPage implements
 	 * @param OutputPage $outputPage
 	 * @param ParserOutput $parserOutput
 	 */
-	public static function onOutputPageParserOutput(
-		OutputPage $outputPage, ParserOutput $parserOutput
-	) {
+	public function onOutputPageParserOutput(
+		$outputPage, $parserOutput
+	): void {
 		$title = $outputPage->getTitle();
+		$bookNamespaces = $outputPage->getConfig()->get( 'ProofreadPageBookNamespaces' );
 
-		// Some wikis have the main page in NS 0. Avoid adding index-specific info to this page, as
-		// the main page doesn't specfically relate to any one Index (T298023)
-		if ( $title->inNamespace( NS_MAIN ) && !$title->isMainPage() ) {
+		$outputPage->addJsConfigVars( 'prpProofreadPageBookNamespaces', $bookNamespaces );
+
+		if ( $title->inNamespaces( $bookNamespaces ) && !$title->isMainPage() ) {
 			$context = Context::getDefaultContext();
 			$modifier = new TranslusionPagesModifier(
 				$context->getPageQualityLevelLookup(),
