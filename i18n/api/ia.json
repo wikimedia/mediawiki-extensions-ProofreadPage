@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apierror-proofreadpage-invalidindex": "Titulo de indice \"$1\" non valide.",
+	"apihelp-query+proofread-description": "Restitue information sur le stato de correction de probas del paginas fornite.",
+	"apihelp-query+proofread-summary": "Restitue information sur le stato de correction de probas del paginas fornite.",
+	"apihelp-query+proofread-example-1": "Restitue le stato de correction de probas pro le paginas in le spatio de nomines 250",
+	"apihelp-query+proofreadinfo-description": "Restitue information sur le configuration del extension ProofreadPage.",
+	"apihelp-query+proofreadinfo-summary": "Restitue information sur le configuration del extension ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Qual proprietates de correction de probas obtener:\n;namespaces:Information sur le spatios de nomines \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:Lista de nivellos de qualitate del correction de probas.",
+	"apihelp-query+proofreadinfo-example-1": "Restituer information predefinite",
+	"apihelp-query+proofreadinfo-example-3": "Restituer information de spatio de nomines",
+	"apihelp-query+proofreadpagesinindex-description": "Listar le paginas in un indice fornite",
+	"apihelp-query+proofreadpagesinindex-summary": "Listar le paginas in un indice fornite",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Limitar quante paginas se restitue",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Le ID del pagina de indice pro le qual obtener paginas",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Qual proprietates obtener pro cata pagina",
+	"apihelp-query+proofreadpagesinindex-param-title": "Le titulo del pagina de indice pro le qual obtener paginas",
+	"apihelp-query+proofreadpagesinindex-example-1": "Restituer information predefinite"
+}

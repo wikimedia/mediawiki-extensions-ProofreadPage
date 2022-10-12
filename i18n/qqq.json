@@ -89,7 +89,7 @@
 	"proofreadpage_specialpage_filterby_all": "Option to view all index pages in [[Special:IndexPages]].\n\n{{Identical|All}}",
 	"proofreadpage_specialpage_filterby_incomplete": "Option to view only incomplete index pages in [[Special:IndexPages]]",
 	"proofreadpage_specialpage_filterby_proofread": "Option to view only proofread index pages in [[Special:IndexPages]]",
-	"proofreadpage_specialpage_filterby_proofread_or_validated": "Option to view only proofread or validated index pages in [[Special:IndexPages]]",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "{{doc-important|\"Proofread\" and \"validated\" are adjectives that refer to pages.}}\nOption to view only proofread or validated index pages in [[Special:IndexPages]]",
 	"proofreadpage_specialpage_filterby_validated": "Option to view only validated index pages in [[Special:IndexPages]]",
 	"proofreadpage_specialpage_label_filterby": "Label of the filter select in [[Special:IndexPages]]",
 	"proofreadpage_specialpage_label_orderby": "Label of the order select in [[Special:IndexPages]]\n{{Identical|Order}}",
