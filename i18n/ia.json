@@ -110,6 +110,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Progresso non salveguardate",
 	"proofreadpage-pagelist-dialog-discard-changes": "Abandonar modificationes",
 	"proofreadpage-pagelist-dialog-cancel": "Cancellar",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Le typo de numeration de paginas 'empty' (vacue) non es supportate per le widget Pagelist.",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Plus de un etiquetta <pagelist /> ha essite detegite in le wikitexto fonte.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Nulle etiquetta <pagelist /> detegite.",
 	"proofreadpage-pagelist-parsing-error-php": "Le sequente error ha essite incontrate durante le analyse syntactic del etiquetta pagelist sur le servitor: $1",
@@ -118,6 +119,13 @@
 	"proofreadpage-pagelist-dialog-title": "Modificar le lista de paginas pro $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Inserer cambiamentos",
 	"proofreadpage-pagelist-imageurlnotfound": "Le fonte de miniaturas pro iste scan non poteva esser trovate",
+	"proofreadpage-pagelist-type": "Typo de numero de pagina: $1",
+	"proofreadpage-pagelist-scan-number": "Typo de scan: $1",
+	"proofreadpage-pagelist-display-number": "Numero monstrate: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "A iste pagina ha essite assignate le numero: $1",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Adjuta",
+	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Le typo de numero non permitte le occurrentia de un cambio de numeration. Omne valor in iste campo essera ignorate al actualisar.",
+	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Typo de numero de pagina:",
 	"proofreadpage-preferences-showheaders-label": "Monstrar campos de capite e pede quando modificar in le spatio de nomines \"{{ns:page}}\"",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar le disposition horizontal quando modificar in le spatio de nomines {{ns:page}}"
 }

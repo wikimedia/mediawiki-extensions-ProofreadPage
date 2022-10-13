@@ -116,6 +116,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Ungespeicherte Fortschritte",
 	"proofreadpage-pagelist-dialog-discard-changes": "Änderungen verwerfen",
 	"proofreadpage-pagelist-dialog-cancel": "Abbrechen",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Der Seitennummerierungstyp „empty“ wird vom Seitenlisten-Widget nicht unterstützt.",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Mehr als ein <pagelist />-Tag wurde im Quell-Wikitext entdeckt.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Kein <pagelist />-Tag im Quell-Wikitext entdeckt.",
 	"proofreadpage-pagelist-parsing-error-php": "Der folgende Fehler wurde beim Parsen des pagelist-Tags im Backend festgestellt, $1",

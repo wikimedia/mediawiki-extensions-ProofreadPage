@@ -111,6 +111,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Незачуван напредок",
 	"proofreadpage-pagelist-dialog-discard-changes": "Отфрли ги промените",
 	"proofreadpage-pagelist-dialog-cancel": "Откажи",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Видот на нумерација „empty“ не е поддржан од помагалото Список на страници.",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Пронајдена е повеќе од една назнака <pagelist /> во изворниот викитекст.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Не пронајдов ознаки <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Се јави следнава грешка при расчленувањето на ознаката за списоко на страници во заднината, $1",
