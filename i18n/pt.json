@@ -122,6 +122,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Progresso não gravado",
 	"proofreadpage-pagelist-dialog-discard-changes": "Descartar alterações",
 	"proofreadpage-pagelist-dialog-cancel": "Cancelar",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "O tipo de numeração de páginas 'vazio' não é suportado pelo ''widget'' Pagelist.",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Foi detetada mais do que uma etiqueta <pagelist /> no texto wiki de fonte.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Não foi detetada nenhuma etiqueta <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Foi encontrado o seguinte erro durante a análise sintática da etiqueta \"pagelist\" no servidor: $1",
