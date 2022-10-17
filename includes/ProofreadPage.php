@@ -553,7 +553,7 @@ class ProofreadPage implements
 	 * @param SkinTemplate $skin
 	 * @param array[] &$links Structured navigation links
 	 */
-	private static function addMainNsNavigation( Title $title, SkinTemplate $skin, array &$links ) {
+	private static function addBookSourceNavigation( Title $title, SkinTemplate $skin, array &$links ) {
 		$outputPage = $skin->getOutput();
 		$indexTitleText = $outputPage->getProperty( 'prpSourceIndexPage' );
 		if ( $indexTitleText !== null ) {
@@ -584,8 +584,8 @@ class ProofreadPage implements
 			self::addPageNsNavigation( $title, $skin, $links );
 		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::addIndexNsNavigation( $title, $skin, $links );
-		} elseif ( $title->inNamespace( NS_MAIN ) ) {
-			self::addMainNsNavigation( $title, $skin, $links );
+		} elseif ( $title->inNamespaces( $skin->getConfig()->get( 'ProofreadPageBookNamespaces' ) ) ) {
+			self::addBookSourceNavigation( $title, $skin, $links );
 		}
 	}
 
