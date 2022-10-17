@@ -128,6 +128,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Незбережений прогрес",
 	"proofreadpage-pagelist-dialog-discard-changes": "Відкинути зміни",
 	"proofreadpage-pagelist-dialog-cancel": "Скасувати",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Тип нумерації сторінки 'пустий' не підтримується віджетом списку сторінок.",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Виявлено більше одного тега <pagelist /> у вихідному вікітексті.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Не виявлено тегів <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Сталася така помилка при обробці тегу pagelist на стороні бекенду, $1",
