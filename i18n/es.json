@@ -20,7 +20,8 @@
 			"Sukanya121",
 			"Themasterriot",
 			"Translationista",
-			"DiegoAmbrocio"
+			"DiegoAmbrocio",
+			"McDutchie"
 		]
 	},
 	"nstab-page": "Página",
@@ -76,7 +77,7 @@
 	"proofreadpage_specialpage_filterby_all": "Todo",
 	"proofreadpage_specialpage_filterby_incomplete": "Incompleto",
 	"proofreadpage_specialpage_filterby_proofread": "Corregido",
-	"proofreadpage_specialpage_filterby_proofread_or_validated": "Corregir o validar",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "Corregidas o validadas",
 	"proofreadpage_specialpage_filterby_validated": "Validada",
 	"proofreadpage_specialpage_label_filterby": "Filtrar por:",
 	"proofreadpage_specialpage_label_orderby": "Ordenar por:",
