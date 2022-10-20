@@ -447,10 +447,6 @@ class ProofreadPage implements
 						'rel' => 'prev',
 						'href' => $prevUrl
 					] );
-					$skin->getOutput()->addLink( [
-						'rel' => 'prefetch',
-						'href' => $prevUrl
-					] );
 					$prevThumbnail = $pageDisplayHandler->getImageThumbnail( $prevTitle );
 					if ( $prevThumbnail ) {
 						$skin->getOutput()->addLink( [
@@ -476,10 +472,6 @@ class ProofreadPage implements
 					];
 					$skin->getOutput()->addLink( [
 						'rel' => 'next',
-						'href' => $nextUrl
-					] );
-					$skin->getOutput()->addLink( [
-						'rel' => 'prefetch',
 						'href' => $nextUrl
 					] );
 					$nextThumbnail = $pageDisplayHandler->getImageThumbnail( $nextTitle );
