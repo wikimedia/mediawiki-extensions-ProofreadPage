@@ -419,6 +419,7 @@
 				var imgHeight = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'height' );
 				// eslint-disable-next-line no-jquery/no-global-selector
 				$( '#prp-page-image-openseadragon-vertical' ).css( 'height', imgHeight );
+				$editForm.find( '#wpTextbox1' ).removeAttr( 'rows cols' );
 				// eslint-disable-next-line no-jquery/no-global-selector
 				$( '.prp-page-container' ).css( 'height', imgHeight );
 			}
