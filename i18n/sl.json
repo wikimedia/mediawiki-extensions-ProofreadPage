@@ -21,7 +21,7 @@
 	"proofreadpage_nosuch_file": "Napaka: ni takšne datoteke",
 	"proofreadpage_indexdupetext": "Strani na kazalu ni mogoče navesti več kot enkrat.",
 	"proofreadpage_nologin": "Niste prijavljeni",
-	"proofreadpage_nologintext": "Morate biti [[Special:UserLogin|prijavljeni]] za spreminjanje stanja lekture strani.",
+	"proofreadpage_nologintext": "Za spreminjanje stanja lektoriranja strani morate biti [[Special:UserLogin|prijavljeni]].",
 	"proofreadpage_notallowedtext": "Niste pooblaščeni za spreminjanje stanja lekture te strani.",
 	"proofreadpage_dataconfig_badformatted": "Hrošč v podatkovni nastavitvi",
 	"proofreadpage_dataconfig_badformattedtext": "Stran [[Mediawiki:Proofreadpage index data config]] nima ustreznega JSON-a.",
