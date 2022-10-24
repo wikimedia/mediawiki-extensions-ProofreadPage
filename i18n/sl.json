@@ -21,7 +21,7 @@
 	"proofreadpage_nosuch_file": "Napaka: ni takšne datoteke",
 	"proofreadpage_indexdupetext": "Strani na kazalu ni mogoče navesti več kot enkrat.",
 	"proofreadpage_nologin": "Niste prijavljeni",
-	"proofreadpage_nologintext": "Morate biti [[Special:UserLogin|prijavljeni]] za spreminjanje stanja lekture strani.",
+	"proofreadpage_nologintext": "Za spreminjanje stanja lektoriranja strani morate biti [[Special:UserLogin|prijavljeni]].",
 	"proofreadpage_notallowedtext": "Niste pooblaščeni za spreminjanje stanja lekture te strani.",
 	"proofreadpage_dataconfig_badformatted": "Hrošč v podatkovni nastavitvi",
 	"proofreadpage_dataconfig_badformattedtext": "Stran [[Mediawiki:Proofreadpage index data config]] nima ustreznega JSON-a.",
@@ -68,7 +68,9 @@
 	"proofreadpage_specialpage_searcherrortext": "Iskalnik ne deluje. Opravičujemo se za nevšečnost.",
 	"proofreadpage_source": "Vir",
 	"proofreadpage_source_message": "Preslikana izdaja, uporabljena za nastanek tega besedila",
+	"action-pagequality": "spremembo oznake kakovosti strani",
 	"right-pagequality": "Spremeni označbo kakovosti strani",
+	"action-pagequality-admin": "neomejeno urejanje oznake kakovosti strani",
 	"right-pagequality-admin": "Neomejena urejanja oznak kakovosti strani",
 	"proofreadpage-section-tools": "Orodja za pregled",
 	"proofreadpage-group-zoom": "Povečava",
@@ -90,5 +92,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Da",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kvaliteta pregleda",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kvaliteta pregleda"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kvaliteta pregleda",
+	"proofreadpage-index-field-category-label": "Kategorije"
 }
