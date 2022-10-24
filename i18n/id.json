@@ -123,6 +123,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Perubahan belum tersimpan",
 	"proofreadpage-pagelist-dialog-discard-changes": "Buang perubahan",
 	"proofreadpage-pagelist-dialog-cancel": "Batal",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Jenis penomoran halaman 'kosong' tidak didukung oleh gawit Pagelist.",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Lebih dari satu tag <pagelist /> terdeteksi dalam teks wiki sumber.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Tak ada tag <pagelist /> terdeteksi.",
 	"proofreadpage-pagelist-parsing-error-php": "Galat berikut ini ditemukan saat mengolah tag daftar halaman di backend, $1",
