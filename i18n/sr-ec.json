@@ -13,7 +13,8 @@
 			"Zoranzoki21",
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
-			"Сербијана"
+			"Сербијана",
+			"Vlad5250"
 		]
 	},
 	"nstab-page": "Страница",
@@ -21,7 +22,7 @@
 	"tooltip-ca-nstab-page": "Погледајте страницу књиге",
 	"tooltip-ca-nstab-index": "Погледајте индекс књиге",
 	"indexpages": "Листа индексних страница",
-	"proofreadpage_desc": "Омогући лако упоређивање текста и оригиналног скена.",
+	"proofreadpage_desc": "Омогућава лако упоређивање текста и оригиналног скена.",
 	"proofreadpage_image": "Слика",
 	"proofreadpage_index": "Индекс",
 	"proofreadpage_nologin": "Нисте пријављени",
@@ -60,6 +61,8 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Ако напустите овај дијалог, вероватно ћете изгубити несачувани напредак.",
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Несачуван напредак",
 	"proofreadpage-pagelist-dialog-discard-changes": "Одбаци измене",
+	"proofreadpage-pagelist-dialog-cancel": "Откажи",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Помоћ",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|валидирана страница|валидиране странице|валидираних страница}}, $2 само {{PLURAL:$2|лекторисана страница|лекторисане странице|лекторисаних страница}} и $3 {{PLURAL:$3|нелекторисана страница|нелекторисане странице|нелекторисаних страница}}",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Избор страница",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Странице",
