@@ -96,7 +96,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress": "A sarà su quella finestra chì del lavorà minga salvad l'andarà perdud.",
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Cambiament minga salvad",
 	"proofreadpage-pagelist-dialog-discard-changes": "Lassa perder i modifiche",
-	"proofreadpage-pagelist-dialog-cancel": "Anula",
+	"proofreadpage-pagelist-dialog-cancel": "Anulla",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Pussée de voeuna eticheta <pagelist /> l'è stada trovada in del codes sorgent wiki.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "L'è stada trovada nissuda eticheta <pagelist />.",
 	"proofreadpage-pagelist-parsing-error-php": "Adrée a analizzà la lista di pagine l'è capità quell eror chì: $1",
