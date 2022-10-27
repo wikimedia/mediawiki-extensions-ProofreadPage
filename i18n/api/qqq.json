@@ -30,8 +30,8 @@
 			"Yknok29"
 		]
 	},
-	"apihelp-query+imageforpage-summary": "{{doc-apihelp-summary|query+imageforpage}}",
 	"apihelp-query+imageforpage-description": "{{doc-apihelp-description|query+imageforpage}}",
+	"apihelp-query+imageforpage-summary": "{{doc-apihelp-summary|query+imageforpage}}",
 	"apihelp-query+imageforpage-param-prop": "{{doc-apihelp-param|query+proofreadinfo|prop}}",
 	"apierror-proofreadpage-invalidindex": "{{Doc-apierror}}\nAPI error when an index title is invalid\n* $1 - the title.",
 	"apihelp-query+proofread-description": "{{doc-apihelp-description|query+proofread}}",
