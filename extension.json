@@ -43,7 +43,8 @@
 		"proofreadinfo": "\\ProofreadPage\\Api\\ApiQueryProofreadInfo"
 	},
 	"APIPropModules": {
-		"proofread": "\\ProofreadPage\\Api\\ApiQueryProofread"
+		"proofread": "\\ProofreadPage\\Api\\ApiQueryProofread",
+		"imageforpage": "\\ProofreadPage\\Api\\ApiQueryImageForPage"
 	},
 	"ContentHandlers": {
 		"proofread-page": "\\ProofreadPage\\Page\\PageContentHandler",

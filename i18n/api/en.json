@@ -2,6 +2,9 @@
 	"@metadata": {
 		"authors": []
 	},
+	"apihelp-query+imageforpage-description": "Pre-renders and provides URLs to images for a given page namespace page.",
+	"apihelp-query+imageforpage-summary": "Pre-renders and provides URLs to images for a given page namespace page.",
+	"apihelp-query+imageforpage-param-prop": "Which types of images or properties of images to return for a given page namespace page",
 	"apierror-proofreadpage-invalidindex": "Invalid index title \"$1\".",
 	"apihelp-query+proofread-description": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-summary": "Returns information about the current proofread status of the given pages.",
