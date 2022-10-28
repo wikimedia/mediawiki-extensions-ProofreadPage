@@ -4,6 +4,9 @@
 			"Bjankuloski06"
 		]
 	},
+	"apihelp-query+imageforpage-description": "Претприкажува и дава URL-адреси кон слики за страница од даден именски простор.",
+	"apihelp-query+imageforpage-summary": "Претприкажува и дава URL-адреси кон слики за страница од даден именски простор.",
+	"apihelp-query+imageforpage-param-prop": "Кои видови слики или својства на слики да се дадат за страница од даден именски простор",
 	"apierror-proofreadpage-invalidindex": "Неважечки индексен наслов „$1“.",
 	"apihelp-query+proofread-description": "Дава информации за тековната состојба на проверката на дадени страници.",
 	"apihelp-query+proofread-summary": "Дава информации за тековната состојба на проверката на дадени страници.",

@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eleassar",
 			"Janezdrilc"
 		]
 	},
+	"apihelp-query+imageforpage-description": "Predupodobi in prikaže URL-je slik za dano stran imenskega prostora »Stran«.",
+	"apihelp-query+imageforpage-summary": "Predupodobi in prikaže URL-je slik za dano stran imenskega prostora »Stran«.",
+	"apihelp-query+imageforpage-param-prop": "Katere vrste slik ali lastnosti slik naj se vrnejo za dano stran imenskega prostora »Stran«",
 	"apihelp-query+proofread-description": "Prikaže informacije o trenutnem stanju pregledanosti dotičnih strani.",
 	"apihelp-query+proofread-summary": "Prikaže informacije o trenutnem stanju pregledanosti dotičnih strani.",
 	"apihelp-query+proofread-example-1": "Prikaže status pregledanosti za strani v imenskem prostoru 250",
