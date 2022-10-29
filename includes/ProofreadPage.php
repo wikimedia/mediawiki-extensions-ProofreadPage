@@ -30,6 +30,7 @@ use FixProofreadPagePagesContentModel;
 use IContextSource;
 use ImagePage;
 use MediaWiki\Hook\OutputPageParserOutputHook;
+use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
@@ -65,7 +66,8 @@ use User;
 class ProofreadPage implements
 	RecentChange_saveHook,
 	SkinTemplateNavigation__UniversalHook,
-	OutputPageParserOutputHook
+	OutputPageParserOutputHook,
+	ParserFirstCallInitHook
 {
 
 	/** @var Config */
@@ -152,7 +154,7 @@ class ProofreadPage implements
 	 *
 	 * @param Parser $parser
 	 */
-	public static function onParserFirstCallInit( Parser $parser ) {
+	public function onParserFirstCallInit( $parser ) {
 		$parser->setHook( 'pagelist', static function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
 			$tagParser = new PagelistTagParser( $parser, $context );

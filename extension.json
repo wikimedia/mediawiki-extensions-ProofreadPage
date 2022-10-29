@@ -323,7 +323,7 @@
 	},
 	"Hooks": {
 		"SetupAfterCache": "ProofreadPage\\ProofreadPageInit::initNamespaces",
-		"ParserFirstCallInit": "ProofreadPage\\ProofreadPage::onParserFirstCallInit",
+		"ParserFirstCallInit": "ProofreadPageHooks",
 		"BeforePageDisplay": "ProofreadPage\\ProofreadPage::onBeforePageDisplay",
 		"GetLinkColours": "ProofreadPage\\ProofreadPage::onGetLinkColours",
 		"ImageOpenShowImageInlineBefore": "ProofreadPage\\ProofreadPage::onImageOpenShowImageInlineBefore",
