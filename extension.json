@@ -325,7 +325,7 @@
 		]
 	},
 	"Hooks": {
-		"SetupAfterCache": "ProofreadPage\\ProofreadPageInit::initNamespaces",
+		"SetupAfterCache": "ProofreadPageInitHooks",
 		"ParserFirstCallInit": "ProofreadPageHooks",
 		"BeforePageDisplay": "ProofreadPage\\ProofreadPage::onBeforePageDisplay",
 		"GetLinkColours": "ProofreadPageHooks",
@@ -350,6 +350,12 @@
 	"HookHandlers": {
 		"ProofreadPageHooks": {
 			"class": "ProofreadPage\\ProofreadPage",
+			"services": [
+				"MainConfig"
+			]
+		},
+		"ProofreadPageInitHooks": {
+			"class": "ProofreadPage\\ProofreadPageInit",
 			"services": [
 				"MainConfig"
 			]

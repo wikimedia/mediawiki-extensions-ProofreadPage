@@ -2,6 +2,8 @@
 
 namespace ProofreadPage;
 
+use Config;
+use MediaWiki\Hook\SetupAfterCacheHook;
 use MWException;
 
 /**
@@ -9,7 +11,17 @@ use MWException;
  *
  * Class that contain init system of the ProofreadPage extension
  */
-class ProofreadPageInit {
+class ProofreadPageInit implements SetupAfterCacheHook {
+
+	/** @var Config */
+	private $config;
+
+	/**
+	 * @param Config $config
+	 */
+	public function __construct( Config $config ) {
+		$this->config = $config;
+	}
 
 	/**
 	 * @var int[] the default namespace id for each namespaces
@@ -23,16 +35,16 @@ class ProofreadPageInit {
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SetupAfterCache
 	 */
-	public static function initNamespaces() {
-		global $wgProofreadPageNamespaceIds, $wgTemplateStylesNamespaces;
-
+	public function onSetupAfterCache() {
 		self::initNamespace( 'page' );
 		self::initNamespace( 'index' );
 
+		$proofreadPageNamespaceIds = $this->config->get( 'ProofreadPageNamespaceIds' );
 		if ( \ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' ) ) {
 			// Also Add Index NS to the TemplateStyles auto-CSS list
 			// so that /styles.css can be created
-			$wgTemplateStylesNamespaces[ $wgProofreadPageNamespaceIds[ 'index' ] ] = true;
+			$templateStylesNamespaces = $this->config->get( 'TemplateStylesNamespaces' );
+			$templateStylesNamespaces[ $proofreadPageNamespaceIds[ 'index' ] ] = true;
 		}
 	}
 

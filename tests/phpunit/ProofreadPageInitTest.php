@@ -18,7 +18,16 @@ class ProofreadPageInitTest extends ProofreadPageTestCase {
 		$this->expectException( \MWException::class );
 		try {
 			$wgProofreadPageNamespaceIds['page'] = 'quux';
-			ProofreadPageInit::initNamespaces();
+			$config = new \HashConfig( [
+				'ProofreadPageNamespaceIds' => [
+					'page' => 'quux'
+				],
+				'TemplateStylesNamespaces' => [
+					'10' => true
+				]
+			] );
+			$proofreadPageInit = new ProofreadPageInit( $config );
+			$proofreadPageInit->onSetupAfterCache();
 		} finally {
 			$wgProofreadPageNamespaceIds = $oldValue;
 		}

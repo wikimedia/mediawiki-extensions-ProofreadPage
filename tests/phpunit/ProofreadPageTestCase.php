@@ -108,7 +108,16 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 
 		global $wgNamespacesWithSubpages;
 		$wgNamespacesWithSubpages[NS_MAIN] = true;
-		ProofreadPageInit::initNamespaces();
+		$config = new HashConfig( [
+			'ProofreadPageNamespaceIds' => [
+				'page' => 101
+			],
+			'TemplateStylesNamespaces' => [
+				'10' => true
+			]
+		] );
+		$proofreadPageInit = new ProofreadPageInit( $config );
+		$proofreadPageInit->onSetupAfterCache();
 	}
 
 	/**
