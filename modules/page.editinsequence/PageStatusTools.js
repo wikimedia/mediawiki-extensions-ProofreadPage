@@ -4,7 +4,7 @@
  * @param {string} name Name of the tool
  * @param {string} title Title of the tool
  * @param {number} pageStatus Page status that must set when the tool is clicked
- * @return {object} PageStatusTool class
+ * @return {Object} PageStatusTool class
  */
 function createPageStatusTool( name, title, pageStatus ) {
 	/**
