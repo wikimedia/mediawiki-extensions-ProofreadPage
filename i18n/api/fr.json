@@ -8,9 +8,9 @@
 			"Wladek92"
 		]
 	},
-	"apihelp-query+imageforpage-description": "Effectue un prérendu et fournit des URL vers les images pour une page donnée d’espace de noms de pages.",
-	"apihelp-query+imageforpage-summary": "Effectue un prérendu et fournit des URL vers les images pour une page donnée d’espace de noms de pages.",
-	"apihelp-query+imageforpage-param-prop": "Quels types d’images ou propriétés d’images renvoyer pour une page donnée d’espace de noms de pages",
+	"apihelp-query+imageforpage-description": "Effectue un prérendu et fournit des URL vers les images pour une page donnée d’espace de noms « Page: ».",
+	"apihelp-query+imageforpage-summary": "Effectue un prérendu et fournit des URL vers les images pour une page donnée de l’espace de noms « Page: ».",
+	"apihelp-query+imageforpage-param-prop": "Quels types d’images ou propriétés d’images renvoyer pour une page donnée d’espace de noms « Page: ».",
 	"apierror-proofreadpage-invalidindex": "Titre d’index « $1 » non valide.",
 	"apihelp-query+proofread-description": "Renvoie des informations sur l’état de correction actuel des pages fournies.",
 	"apihelp-query+proofread-summary": "Renvoie des informations sur l’état actuel de correction des pages données.",
