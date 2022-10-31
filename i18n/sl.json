@@ -81,6 +81,16 @@
 	"proofreadpage-button-zoom-in-label": "Povečaj",
 	"proofreadpage-button-toggle-layout-label": "Navpična/vodoravna postavitev",
 	"proofreadpage-pageinfo-status": "Stanje pregleda",
+	"proofreadpage-pagelist-input-preview-button": "Predogled seznama strani",
+	"proofreadpage-pagelist-parsing-error-morethanone": "V izvornem vikibesedilu je bila zaznana več kot ena značka <pagelist />.",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Ni nobene zaznane značke <pagelist />.",
+	"proofreadpage-pagelist-parsing-error-php": "Med razčlenjevanjem značke »pagelist« v ozadju je prišlo do naslednje napake: $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "Zaznana je bila nepričakovana napaka. Prosimo, sporočite to napako na phabricator.wikimedia.org.",
+	"proofreadpage-pagelist-dialog-title": "Urejanje seznama strani za $1",
+	"proofreadpage-pagelist-dialog-insertchanges": "Vstavi spremembe",
+	"proofreadpage-pagelist-imageurlnotfound": "Vira sličic za to skeniranje ni bilo mogoče najti.",
+	"proofreadpage-pagelist-type": "Vrsta številke strani: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "Tej strani je bila dodeljena številka strani: $1",
 	"proofreadpage-preferences-showheaders-label": "Pokaži glavo in nogo, ko urejaš v imenskem prostoru {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Pri urejanju v imenskem prostoru {{ns:page}} uporabi vodoravno postavitev",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|potrjena stran|potrjeni strani|potrjene strani|potrjenih strani}}, $2 samo {{PLURAL:$1|pregledana stran|pregledani strani|pregledane strani|pregledanih strani}} in $3 {{PLURAL:$1|nepregledana stran|nepregledani strani|nepregledane strani|nepregledanih strani}}",
@@ -93,5 +103,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ne",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Kvaliteta pregleda",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Kvaliteta pregleda",
-	"proofreadpage-index-field-category-label": "Kategorije"
+	"proofreadpage-index-field-category-label": "Kategorije",
+	"proofreadpage-index-edit-category-help": "Kategorije so zapisane brez predpone Kategorija: in ločene z navpičnico »|«."
 }

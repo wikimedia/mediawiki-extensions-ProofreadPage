@@ -11,7 +11,10 @@
 			"Zoranzoki21",
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
-			"Сербијана"
+			"Сербијана",
+			"Kizule",
+			"Srđan",
+			"Vlad5250"
 		]
 	},
 	"nstab-page": "Страница",
@@ -19,7 +22,7 @@
 	"tooltip-ca-nstab-page": "Погледајте страницу књиге",
 	"tooltip-ca-nstab-index": "Погледајте индекс књиге",
 	"indexpages": "Листа индексних страница",
-	"proofreadpage_desc": "Омогући лако упоређивање текста и оригиналног скена.",
+	"proofreadpage_desc": "Омогућава лако упоређивање текста и оригиналног скена.",
 	"proofreadpage_image": "Слика",
 	"proofreadpage_index": "Индекс",
 	"proofreadpage_nologin": "Нисте пријављени",

@@ -4,15 +4,16 @@
 			"Gomoko",
 			"Thibaut120094",
 			"Wladek92",
-			"Jobrz0405"
+			"Jobrz0405",
+			"Verdy p"
 		]
 	},
 	"apihelp-query+proofread-description": "Renvoie des informations sur l’état de correction actuel des pages fournies.",
 	"apihelp-query+proofread-summary": "Renvoie des informations sur l’état actuel de correction des pages données.",
-	"apihelp-query+proofread-example-1": "Renvoyer l’état de correction des pages dans l’espace de noms 250",
+	"apihelp-query+proofread-example-1": "Renvoyer l’état de correction des pages dans l’espace de noms 250.",
 	"apihelp-query+proofreadinfo-description": "Renvoyer des informations sur la configuration de l’extension ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Renvoyer des informations sur la configuration de l’extension ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Quelles preuves de correction obtenir :\n;namespaces:Informations sur les espaces de nom « {{ns:Page}} » et « {{ns:Index}} ».\n;qualitylevels:Liste des niveaux de qualité des preuves de correction.",
-	"apihelp-query+proofreadinfo-example-1": "Remettre les informations par défaut",
-	"apihelp-query+proofreadinfo-example-3": "Retourner les informations de l'espace des noms"
+	"apihelp-query+proofreadinfo-param-prop": "Quelles preuves de correction obtenir :\n; namespaces\n: informations sur les espaces de nom « {{ns:Page}} » et « {{ns:Index}} ».\n; qualitylevels\n: liste des niveaux de qualité de relecture.",
+	"apihelp-query+proofreadinfo-example-1": "Renvoyer les informations par défaut",
+	"apihelp-query+proofreadinfo-example-3": "Renvoyer les informations de l’espace de noms"
 }
