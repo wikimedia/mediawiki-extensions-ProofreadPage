@@ -29,6 +29,7 @@ use FixProofreadIndexPagesContentModel;
 use FixProofreadPagePagesContentModel;
 use IContextSource;
 use ImagePage;
+use MediaWiki\Hook\GetLinkColoursHook;
 use MediaWiki\Hook\OutputPageParserOutputHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RecentChange_saveHook;
@@ -67,7 +68,8 @@ class ProofreadPage implements
 	RecentChange_saveHook,
 	SkinTemplateNavigation__UniversalHook,
 	OutputPageParserOutputHook,
-	ParserFirstCallInitHook
+	ParserFirstCallInitHook,
+	GetLinkColoursHook
 {
 
 	/** @var Config */
@@ -190,16 +192,16 @@ class ProofreadPage implements
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetLinkColours
 	 *
-	 * @param string[] $pageIds Prefixed DB keys of the pages linked to, indexed by page_id
+	 * @param string[] $linkcolour_ids Prefixed DB keys of the pages linked to, indexed by page_id
 	 * @param string[] &$colours CSS classes, indexed by prefixed DB keys
 	 * @param Title $title Title of the page being parsed, on which the links will be shown
 	 */
-	public static function onGetLinkColours( array $pageIds, array &$colours, Title $title ) {
+	public function onGetLinkColours( $linkcolour_ids, &$colours, $title ) {
 		$context = Context::getDefaultContext();
 		$inIndexNamespace = $title->inNamespace( $context->getIndexNamespaceId() );
 		$pageQualityLevelLookup = $context->getPageQualityLevelLookup();
 
-		$pageTitles = array_map( [ Title::class, 'newFromText' ], $pageIds );
+		$pageTitles = array_map( [ Title::class, 'newFromText' ], $linkcolour_ids );
 		$pageQualityLevelLookup->prefetchQualityLevelForTitles( $pageTitles );
 
 		/** @var Title|null $pageTitle */

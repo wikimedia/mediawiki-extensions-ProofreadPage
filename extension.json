@@ -325,7 +325,7 @@
 		"SetupAfterCache": "ProofreadPage\\ProofreadPageInit::initNamespaces",
 		"ParserFirstCallInit": "ProofreadPageHooks",
 		"BeforePageDisplay": "ProofreadPage\\ProofreadPage::onBeforePageDisplay",
-		"GetLinkColours": "ProofreadPage\\ProofreadPage::onGetLinkColours",
+		"GetLinkColours": "ProofreadPageHooks",
 		"ImageOpenShowImageInlineBefore": "ProofreadPage\\ProofreadPage::onImageOpenShowImageInlineBefore",
 		"LoadExtensionSchemaUpdates": "ProofreadPage\\ProofreadPage::onLoadExtensionSchemaUpdates",
 		"OutputPageParserOutput": "ProofreadPageHooks",
