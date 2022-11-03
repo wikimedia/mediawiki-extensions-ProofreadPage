@@ -136,6 +136,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Error caused by the API returning unexpected output. Generic error message about reporting to phabricator.",
 	"prp-editinsequence-error": "Title of error message displayed to user when EditInSequence encounters a error state",
 	"prp-editinsequence-preview": "Title of preview button",
+	"proofreadpage-openseadragon-no-image-found": "Message shown when Openseadragon fails to initialize because no image was found for the current page.",
 	"proofreadpage-pagelist-input-preview-button": "Label on preview button for pagelists.",
 	"proofreadpage-pagelist-dialog-update-button": "Label on update button inside dialog used for updating the pagelist.",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Message to be shown when the cancel button is clicked but unsaved work exists",
