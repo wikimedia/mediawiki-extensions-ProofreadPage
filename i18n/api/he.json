@@ -5,9 +5,9 @@
 			"Guycn2"
 		]
 	},
-	"apihelp-query+imageforpage-description": "מכין ומספק URL־ים לתמונות לדף נתון ממרחב השם \"דף\".",
-	"apihelp-query+imageforpage-summary": "מכין ומספק URL־ים לתמונות לדף נתון ממרחב השם \"דף\".",
-	"apihelp-query+imageforpage-param-prop": "אילו סוגי תמונות או מאפייני תמונות להחזיר עבור דף נתון ממרחב השם \"דף\".",
+	"apihelp-query+imageforpage-description": "מכין ומספק URL־ים לתמונות לדף נתון ממרחב השם \"עמוד:\".",
+	"apihelp-query+imageforpage-summary": "מכין ומספק URL־ים לתמונות לדף נתון ממרחב השם \"עמוד:\".",
+	"apihelp-query+imageforpage-param-prop": "אילו סוגי תמונות או מאפייני תמונות להחזיר עבור דף נתון ממרחב השם \"עמוד:\".",
 	"apierror-proofreadpage-invalidindex": "כותרת מפתח בלתי־תקינה \"$1\".",
 	"apihelp-query+proofread-description": "החזרת מידע על מצב ההגהה הנוכחי של הדפים הנתונים.",
 	"apihelp-query+proofread-summary": "החזרת מידע על מצב ההגהה הנוכחי של הדפים הנתונים.",
