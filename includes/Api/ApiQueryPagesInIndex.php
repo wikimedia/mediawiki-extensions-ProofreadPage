@@ -170,7 +170,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 	protected function getExamplesMessages() {
 		$prefix = static::$prefix;
 		return [
-			"action=query&list=proofreadpagesinindex&${prefix}title=Index:Sandbox.djvu"
+			"action=query&list=proofreadpagesinindex&{$prefix}title=Index:Sandbox.djvu"
 				=> 'apihelp-query+proofreadpagesinindex-example-1',
 		];
 	}

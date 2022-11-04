@@ -91,7 +91,7 @@ trait MultiFormatSerializerUtils {
 	protected static function assertContainsOnlyStrings( array $array, bool $emptyAllowed, string $name ) {
 		if ( !self::arrayContainsOnlyStrings( $array, $emptyAllowed ) ) {
 			$strType = $emptyAllowed ? '' : 'non-empty ';
-			$msg = "The array '$name' should contain only ${strType}strings.";
+			$msg = "The array '$name' should contain only {$strType}strings.";
 			throw new MWContentSerializationException( $msg );
 		}
 	}
