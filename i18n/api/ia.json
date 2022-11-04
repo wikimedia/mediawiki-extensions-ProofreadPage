@@ -4,9 +4,9 @@
 			"McDutchie"
 		]
 	},
-	"apihelp-query+imageforpage-description": "Pre-genera e forni URLs a imagines pro un fornite pagina de spatio de nomines de paginas.",
-	"apihelp-query+imageforpage-summary": "Pre-genera e forni URLs a imagines pro un fornite pagina de spatio de nomines de paginas.",
-	"apihelp-query+imageforpage-param-prop": "Qual typos de imagines o proprietates de imagines restituer pro un fornite pagina de spatio de nomines de paginas",
+	"apihelp-query+imageforpage-description": "Pre-genera e forni URLs a imagines pro un fornite pagina in le spatio de nomines \"Pagina:\".",
+	"apihelp-query+imageforpage-summary": "Pre-genera e forni URLs a imagines pro un fornite pagina in le spatio de nomines \"Pagina:\".",
+	"apihelp-query+imageforpage-param-prop": "Qual typos de imagines o proprietates de imagines restituer pro un fornite pagina in le spatio de nomines \"Pagina:\".",
 	"apierror-proofreadpage-invalidindex": "Titulo de indice \"$1\" non valide.",
 	"apihelp-query+proofread-description": "Restitue information sur le stato de correction de probas del paginas fornite.",
 	"apihelp-query+proofread-summary": "Restitue information sur le stato de correction de probas del paginas fornite.",
