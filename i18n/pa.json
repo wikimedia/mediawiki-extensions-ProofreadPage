@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Babanwalia",
+			"Bgo eiu",
 			"Satdeep gill"
 		]
 	},
@@ -86,5 +87,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ਸਫ਼ੇ",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 ਦੀ ਹਵਾਲਾ ਸਮੇਤ ਸ਼ਮੂਲੀਅਤ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ਹਾਂ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ਨਹੀਂ"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ਨਹੀਂ",
+	"proofreadpage-index-field-category-label": "ਸ਼੍ਰੇਣੀਆਂ"
 }
