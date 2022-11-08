@@ -6,7 +6,8 @@
 			"Teak",
 			"Vahe Gharakhanyan",
 			"Xelgen",
-			"Դավիթ Սարոյան"
+			"Դավիթ Սարոյան",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"tooltip-ca-nstab-page": "Տեսնել գրքի էջը",
@@ -60,6 +61,7 @@
 	"proofreadpage-button-reset-zoom-label": "Բնօրինակ չափը",
 	"proofreadpage-button-zoom-in-label": "Խոշորացնել",
 	"proofreadpage-button-toggle-layout-label": "Պատկերը կողքից/վերևից",
+	"proofreadpage-pagelist-dialog-discard-changes": "Չեղարկել փոփոխությունները",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Օգնություն",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Այո"
 }
