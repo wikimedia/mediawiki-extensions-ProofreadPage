@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Babanwalia",
-			"Satdeep gill"
+			"Satdeep gill",
+			"Bgo eiu"
 		]
 	},
 	"nstab-page": "ਸਫ਼ਾ",
@@ -88,5 +89,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ਹਾਂ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ਨਹੀਂ",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "ਪਰੂਫ਼ਰੀਡਿੰਗ ਮਿਆਰ",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ਪਰੂਫ਼ਰੀਡਿੰਗ ਮਿਆਰ"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "ਪਰੂਫ਼ਰੀਡਿੰਗ ਮਿਆਰ",
+	"proofreadpage-index-field-category-label": "ਸ਼੍ਰੇਣੀਆਂ"
 }
