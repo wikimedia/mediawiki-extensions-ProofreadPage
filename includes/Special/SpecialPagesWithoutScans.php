@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Special;
 
-use MediaWiki\MediaWikiServices;
 use PageQueryPage;
 use ProofreadPage\Context;
 
@@ -33,45 +32,29 @@ class SpecialPagesWithoutScans extends PageQueryPage {
 	 */
 	public function getQueryInfo() {
 		$context = Context::getDefaultContext();
-		$linksMigration = MediaWikiServices::getInstance()->getLinksMigration();
-		$queryInfo = $linksMigration->getQueryInfo(
-			'templatelinks',
-			'templatelinks',
-			'LEFT JOIN'
-		);
-		$joinConds = [
-			'templatelinks' => [
-				'LEFT JOIN',
-				[ 'page_id = tl_from' ]
-			],
-			'page_props' => [
-				'LEFT JOIN',
-				[ 'page_id = pp_page', 'pp_propname' => 'disambiguation' ]
-			]
-		];
-		$joinConds = array_merge( $joinConds, $queryInfo['joins'] );
-		if ( in_array( 'linktarget', $queryInfo['tables'] ) ) {
-			$joinConds['linktarget'][1]['lt_namespace'] = $context->getPageNamespaceId();
-			$joinConds['linktarget'][0] = 'LEFT JOIN';
-		} else {
-			$joinConds['templatelinks'][1]['tl_namespace'] = $context->getPageNamespaceId();
-		}
-		return [
-			'tables' => array_merge( [ 'page', 'page_props' ], $queryInfo['tables'] ),
-			'fields' => [
-				'page_namespace AS namespace',
-				'page_title AS title',
-				'page_len AS value'
-			],
-			'conds' => [
+		$queryBuilder = $this->getRecacheDB()->newSelectQueryBuilder()
+			->select( [
+				'namespace' => 'page_namespace',
+				'title' => 'page_title',
+				'value' => 'page_len'
+			] )
+			->from( 'page' )
+			->leftJoin( 'page_props', null, [ 'page_id = pp_page', 'pp_propname' => 'disambiguation' ] )
+			->where( [
+				'pp_page' => null,
 				'page_namespace' => NS_MAIN,
 				'page_is_redirect' => 0,
-				'tl_from' => null,
-				'pp_page' => null
-			],
-			'join_conds' => $joinConds,
-			'options' => [ 'DISTINCT' ]
-		];
+				] );
+		$subQuery = $queryBuilder->newSubquery()
+			->select( 'page_id' )
+			->from( 'page' )
+			->join( 'templatelinks', null, 'page_id = tl_from' )
+			->join( 'linktarget', null, 'tl_target_id = lt_id' )
+			->where( [ 'lt_namespace' => $context->getPageNamespaceId(), 'page_namespace' => NS_MAIN,
+				'page_is_redirect' => 0, ] );
+		$queryBuilder->where( 'page_id NOT IN (' . $subQuery->getSQL() . ')' );
+
+		return $queryBuilder->getQueryInfo();
 	}
 
 	/**
