@@ -111,6 +111,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "ꠀꠘꠣꠎꠝꠣꠇꠞꠣ ꠉꠥꠘ",
 	"proofreadpage-pagelist-dialog-discard-changes": "ꠛꠖꠟꠣꠁꠟꠁꠉꠥꠘ ꠛꠣꠖ ꠖꠤꠟꠣꠁꠘ",
 	"proofreadpage-pagelist-dialog-cancel": "ꠛꠣꠖ ꠖꠦꠈ꠆ꠇꠣ",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "ꠁ 'ꠈꠣꠟꠤ' ꠙꠣꠔꠣ ꠉꠘꠣꠞ ꠗꠞꠘ ꠙꠦꠁꠎꠟꠤꠡ꠆ꠐ ꠃꠁꠎꠦꠐꠅ ꠇꠣꠝ ꠇꠞꠦ ꠘꠣ ॥",
 	"proofreadpage-pagelist-parsing-error-morethanone": "ꠀꠞꠅ",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "ꠘꠣ",
 	"proofreadpage-pagelist-parsing-error-php": "The following error was encountered while parsing the pagelist tag in the backend, $1",
