@@ -142,9 +142,9 @@
 	"tag-proofreadpage-quality2": "Vandræðasíða",
 	"tag-proofreadpage-quality3": "Villulesin",
 	"tag-proofreadpage-quality4": "Staðfest",
-	"tag-proofreadpage-quality0-description": "Breytingar sem beyttu gæði síðunnar í \"Án texta\"",
-	"tag-proofreadpage-quality1-description": "Breytingar sem beyttu gæði síðunnar í \"Ekki villulesin\"",
-	"tag-proofreadpage-quality2-description": "Breytingar sem beyttu gæði síðunnar í \"Vandræðasíða\"",
-	"tag-proofreadpage-quality3-description": "Breytingar sem beyttu gæði síðunnar í \"Villulesin\"",
-	"tag-proofreadpage-quality4-description": "Breytingar sem beyttu gæði síðunnar í \"Staðfest\""
+	"tag-proofreadpage-quality0-description": "Breytingar sem breyttu gæðum síðunnar í \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Breytingar sem breyttu gæðum síðunnar í \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Breytingar sem breyttu gæðum síðunnar í \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Breytingar sem breyttu gæðum síðunnar í \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Breytingar sem breyttu gæðum síðunnar í \"{{int:tag-proofreadpage-quality4}}\""
 }
