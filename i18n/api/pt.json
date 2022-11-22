@@ -5,9 +5,9 @@
 			555
 		]
 	},
-	"apihelp-query+imageforpage-description": "Pré-compõe e fornece URL das imagens, para uma determinada página do espaço nominal de páginas.",
-	"apihelp-query+imageforpage-summary": "Pré-compõe e fornece URL das imagens, para uma determinada página do espaço nominal de páginas.",
-	"apihelp-query+imageforpage-param-prop": "Que tipos de imagens ou propriedades de imagens devem ser devolvidos, para uma determinada página do espaço nominal de páginas",
+	"apihelp-query+imageforpage-description": "Pré-compõe e fornece os URL para as imagens, para uma determinada página do espaço nominal \"Página:\".",
+	"apihelp-query+imageforpage-summary": "Pré-compõe e fornece os URL para as imagens, para uma determinada página do espaço nominal \"Página:\".",
+	"apihelp-query+imageforpage-param-prop": "Que tipos de imagens ou propriedades de imagens devem ser devolvidos, para uma determinada página do espaço nominal \"Página:\".",
 	"apierror-proofreadpage-invalidindex": "Título de índice \"$1\" inválido.",
 	"apihelp-query+proofread-description": "Devolve informações sobre o estado de revisão atual das páginas fornecidas.",
 	"apihelp-query+proofread-summary": "Devolve informações sobre o estado de revisão atual das páginas fornecidas.",
