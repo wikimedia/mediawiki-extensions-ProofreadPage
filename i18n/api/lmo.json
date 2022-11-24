@@ -17,7 +17,7 @@
 	"apihelp-query+proofreadpagesinindex-summary": "Fà la lista di pagine in un certo indes",
 	"apihelp-query+proofreadpagesinindex-param-limit": "Limita quante pagine a sarànn dade indree",
 	"apihelp-query+proofreadpagesinindex-param-pageid": "L' ID de la pagina indes per la qual otegnì i pagine",
-	"apihelp-query+proofreadpagesinindex-param-prop": "Quai proprietà otegni per ogni pagina",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Che proprietà otegni per ogni pagina",
 	"apihelp-query+proofreadpagesinindex-param-title": "El titol de la pagina indes per la qual otegnì i pagine",
 	"apihelp-query+proofreadpagesinindex-example-1": "Dà indree l'informazzion predefinida"
 }
