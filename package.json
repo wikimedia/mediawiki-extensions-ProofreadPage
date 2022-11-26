@@ -4,7 +4,6 @@
 	"scripts": {
 		"test": "grunt test",
 		"fix": "grunt fix",
-		"build": "grunt build",
 		"selenium-daily": "npm run selenium-test",
 		"selenium-test": "wdio tests/selenium/wdio.conf.js",
 		"debug-selenium-flaky-test": "for i in $(seq 1 20); do wdio ./tests/selenium/wdio.conf.js; done"
