@@ -151,5 +151,14 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 OpenSeadragonController.prototype.forceInitialize = function () {
 	this.initialize( this.lastId );
 };
+/**
+ * Returns a URL to the current image source
+ *
+ * @return {string} url to the image
+ * @public
+ */
+OpenSeadragonController.prototype.getCurrentImage = function () {
+	return this.viewer.source.getTileUrl( this.viewer.source.getClosestLevel(), 0, 0 );
+};
 
 module.exports = OpenSeadragonController;
