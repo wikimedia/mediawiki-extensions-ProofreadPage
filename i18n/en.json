@@ -104,6 +104,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Failed to preview the page due to the following error: $1 If this error is unexpected, please report this error to phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "EditInSequence error, cannot proceed further",
 	"prp-editinsequence-preview": "Preview",
+	"proofreadpage-openseadragon-no-image-found": "Failed to initialize OpenSeadragon, no image found.",
 	"proofreadpage-pagelist-input-preview-button": "Preview pagelist",
 	"proofreadpage-pagelist-dialog-update-button": "Update pagelist",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Leaving this dialog may lead to a loss of unsaved progress.",

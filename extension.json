@@ -86,7 +86,7 @@
 		},
 		"ext.proofreadpage.page.edit": {
 			"styles": "page/ext.proofreadpage.page.edit.css",
-			"scripts": "page/ext.proofreadpage.page.edit.js",
+			"packageFiles": [ "page/ext.proofreadpage.page.edit.js", "page/OpenseadragonController.js" ],
 			"dependencies": [
 				"ext.proofreadpage.base",
 				"ext.proofreadpage.page",
@@ -119,6 +119,7 @@
 				"proofreadpage-button-toggle-visibility-label",
 				"proofreadpage-button-zoom-in-label",
 				"proofreadpage-button-zoom-out-label",
+				"proofreadpage-openseadragon-no-image-found",
 				"proofreadpage-preferences-showheaders-label"
 			]
 		},
@@ -230,7 +231,8 @@
 				"PreviewTool.js",
 				"PreviewWidget.js",
 				"PageStatusTools.js",
-				"EditorController.js"
+				"EditorController.js",
+				"OpenseadragonController.js"
 			],
 			"dependencies": [
 				"ext.proofreadpage.page.edit",

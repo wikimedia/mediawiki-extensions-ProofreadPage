@@ -1,6 +1,8 @@
+var OpenSeadragonController = require( './OpenseadragonController.js' );
+
 ( function () {
 	'use strict';
-	var OpenSeadragon = require( 'ext.proofreadpage.openseadragon' );
+
 	mw.proofreadpage = {};
 	var
 		/**
@@ -41,18 +43,9 @@
 		$imgContHorizontal,
 
 		/**
-		 * image element
-		 *
-		 * @type {jQuery}
+		 * OSD Controller, wraps Openseadragon functionality inside a easy to use interface
 		 */
-		$img,
-
-		/**
-		 * the OpenSeadragon image viewer
-		 *
-		 * @type {Object}
-		 */
-		viewer = null;
+		osdController = null;
 
 	/**
 	 * Returns the value of a user option as boolean
@@ -76,122 +69,6 @@
 			mw.user.options.set( optionId, convertedValue );
 			new mw.Api().saveOption( optionId, convertedValue );
 		}
-	}
-
-	/**
-	 * Construct ann OpenSeadragon legacy-image-pyramid tile source from the
-	 * image element on the page
-	 *
-	 * @param {Object} img the image element
-	 * @return {Object} OSD tile source constructor options
-	 */
-	function constructImagePyramidSource( img ) {
-		var width = parseInt( img.getAttribute( 'width' ) );
-		var height = parseInt( img.getAttribute( 'height' ) );
-
-		var levels = [ {
-			url: img.getAttribute( 'src' ),
-			width: width,
-			height: height
-		} ];
-
-		// Occasionally, there is no srcset set on the server
-		var srcSet = img.getAttribute( 'srcset' );
-		if ( srcSet ) {
-			var parts = srcSet.split( ' ' );
-			for ( var i = 0; i < parts.length - 1; i += 2 ) {
-				var srcUrl = parts[ i ];
-				var srcFactor = parseFloat( parts[ i + 1 ].replace( /x,?/, '' ) );
-
-				levels.push( {
-					url: srcUrl,
-					width: srcFactor * width,
-					height: srcFactor * height
-				} );
-			}
-		}
-
-		return {
-			type: 'legacy-image-pyramid',
-			levels: levels
-		};
-	}
-
-	/**
-	 * Ensure that the zoom system is properly initialized
-	 *
-	 * @param {string} id
-	 */
-	function ensureImageZoomInitialization( id ) {
-		if ( !$img || $img.length === 0 ) {
-			// No valid image on the page
-			return;
-		}
-
-		// make space for the OSD viewer
-		$img.hide();
-
-		var tileSource = constructImagePyramidSource( $img[ 0 ] );
-
-		// Set the OSD strings before setting up the buttons
-		var osdStringMap = [
-			[ 'Tooltips.Home', 'proofreadpage-button-reset-zoom-label' ],
-			[ 'Tooltips.ZoomIn', 'proofreadpage-button-zoom-in-label' ],
-			[ 'Tooltips.ZoomOut', 'proofreadpage-button-zoom-out-label' ],
-			[ 'Tooltips.RotateLeft', 'proofreadpage-button-rotate-left-label' ],
-			[ 'Tooltips.RotateRight', 'proofreadpage-button-rotate-right-label' ]
-		];
-
-		osdStringMap.forEach( function ( mapping ) {
-			// eslint-disable-next-line mediawiki/msg-doc
-			OpenSeadragon.setString( mapping[ 0 ], mw.msg( mapping[ 1 ] ) );
-		} );
-
-		var zoomFactor = Number( mw.user.options.get( 'proofreadpage-zoom-factor', 1.2 ) );
-		var animationTime = Number( mw.user.options.get( 'proofreadpage-animation-time', 0 ) );
-
-		var osdParams = {
-			id: id,
-			showFullPageControl: false,
-			preserveViewport: true,
-			animationTime: animationTime,
-			visibilityRatio: 0.5,
-			minZoomLevel: 0.5,
-			maxZoomLevel: 4.5,
-			zoomPerClick: zoomFactor,
-			zoomPerScroll: zoomFactor,
-			tileSources: tileSource
-		};
-
-		if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
-			$.extend( osdParams, {
-				zoomInButton: 'prp-page-zoomIn',
-				zoomOutButton: 'prp-page-zoomOut',
-				homeButton: 'prp-page-zoomReset',
-				rotateLeftButton: 'prp-page-rotateLeft',
-				rotateRightButton: 'prp-page-rotateRight',
-				showRotationControl: true
-			} );
-		} else {
-			osdParams.showNavigationControl = false;
-		}
-
-		viewer = OpenSeadragon( osdParams );
-
-		viewer.viewport.goHome = function () {
-			if ( viewer ) {
-				var oldBounds = viewer.viewport.getBounds();
-				var newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
-				viewer.viewport.fitBounds( newBounds, true );
-			}
-		};
-
-		viewer.addHandler( 'open', function () {
-			// inform any listeners that the OSD viewer is ready
-			mw.hook( 'ext.proofreadpage.osd-viewer-ready' ).fire( viewer );
-		} );
-
-		mw.proofreadpage.viewer = viewer;
 	}
 
 	/**
@@ -226,18 +103,7 @@
 	function toggleLayout( horizontal ) {
 		var setActive;
 
-		var wasLayoutHorizontal = isLayoutHorizontal;
 		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
-
-		if ( viewer && wasLayoutHorizontal === isLayoutHorizontal ) {
-			// nothing changed, nothing to do
-			return;
-		}
-
-		if ( viewer ) {
-			viewer.destroy();
-			viewer = null;
-		}
 
 		// Record current layout status on both layout elements, for CSS convenience.
 		var $layoutParts = $imgContHorizontal.add( $editForm.find( '.prp-page-container' ) );
@@ -247,7 +113,7 @@
 		var idToInitialize = isLayoutHorizontal ?
 			'prp-page-image-openseadragon-horizontal' :
 			'prp-page-image-openseadragon-vertical';
-		ensureImageZoomInitialization( idToInitialize );
+		osdController.initialize( idToInitialize );
 
 		// eslint-disable-next-line no-jquery/no-global-selector
 		setActive = $( '.tool[rel=toggle-layout]' ).data( 'setActive' );
@@ -389,8 +255,10 @@
 
 	/**
 	 * Init global variables of the script
+	 *
+	 * @param {jQuery} $img Image
 	 */
-	function initEnvironment() {
+	function initEnvironment( $img ) {
 		if ( $editForm === undefined ) {
 			// eslint-disable-next-line no-jquery/no-global-selector
 			$editForm = $( '#editform' );
@@ -427,8 +295,27 @@
 	}
 
 	$( function () {
+		// eslint-disable-next-line no-jquery/no-global-selector
+		var $img = $( '.prp-page-image' ).find( 'img' );
+
+		osdController = new OpenSeadragonController( $img, getBooleanUserOption( 'usebetatoolbar' ) );
+		if ( $img.length ) {
+			mw.proofreadpage.openseadragon = osdController;
+			mw.hook( 'ext.proofreadpage.osd-controller-available' ).fire( osdController );
+			// TODO(sohom): Keeping this event for backward compatibility.
+			// will remove once community scripts have been updated.
+			mw.hook( 'ext.proofreadpage.osd-viewer-ready' ).fire( osdController.viewer );
+		} else {
+			mw.notify( mw.msg( 'proofreadpage-openseadragon-no-image-found' ), {
+				type: 'error',
+				autoHide: false
+			} );
+			mw.hook( 'ext.proofreadpage.osd-no-image-found' );
+		}
+
 		initEnvironment();
 		setupPageQuality();
+		$img.hide();
 
 		mw.hook( 'wikiEditor.toolbarReady' ).add( function () {
 			setupWikitextEditor();
@@ -438,7 +325,7 @@
 		// Always initialize the OSD viewer, even if no toolbar for the controls
 		// (otherwise wait for toolbar init so the icons are ready)
 		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
-			ensureImageZoomInitialization( 'prp-page-image-openseadragon-vertical' );
+			osdController.initialize( 'prp-page-image-openseadragon-vertical' );
 		}
 	} );
 
