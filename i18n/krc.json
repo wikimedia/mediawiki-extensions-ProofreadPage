@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ernác",
-			"Iltever"
+			"Iltever",
+			"Къарачайлы"
 		]
 	},
 	"proofreadpage_quality0_category": "Текстсиз",
@@ -10,5 +11,6 @@
 	"proofreadpage_quality2_category": "Проблемалы",
 	"proofreadpage_quality3_category": "Тизетилгенди",
 	"proofreadpage_quality4_category": "Тинтилген",
-	"proofreadpage_quality1_message": "Бу бет тинтилиб тюзетилмегенди"
+	"proofreadpage_quality1_message": "Бу бет тинтилиб тюзетилмегенди",
+	"proofreadpage-openseadragon-no-image-found": "OpenSeadragon инициализацияны ёталмады, сурат табылмады."
 }

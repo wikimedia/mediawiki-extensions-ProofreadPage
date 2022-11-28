@@ -127,6 +127,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Impossible de prévisualiser la page en raison de l’erreur suivante : $1. Si cette erreur est inattendue, veuillez la signaler sur phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "Erreur de modification en séquence (EditInSequence), impossible de continuer plus loin",
 	"prp-editinsequence-preview": "Aperçu",
+	"proofreadpage-openseadragon-no-image-found": "Échec de l’initialisation d’OpenSeadragon, aucune image trouvée.",
 	"proofreadpage-pagelist-input-preview-button": "Aperçu de la liste des pages",
 	"proofreadpage-pagelist-dialog-update-button": "Mettre à jour la liste des pages",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Quitter cette page peut conduire à la perte de l’encours non enregistré.",

@@ -111,6 +111,7 @@
 	"prp-edit-in-sequence-preview-api-error": "תצוגה מקדימה של הדף נכשלה בשל השגיאה הבאה: $1 אם השגיאה הזאת אינה צפויה, נא לדווח עליה באתר phabricator.wikimedia.org",
 	"prp-editinsequence-error": "שגיאת EditInSequence, לא ניתן להמשיך",
 	"prp-editinsequence-preview": "תצוגה מקדימה",
+	"proofreadpage-openseadragon-no-image-found": "אתחול OpenSeadragon נכשל, לא נמצאה תמונה.",
 	"proofreadpage-pagelist-input-preview-button": "תצוגה מקדימה של רשימת הדפים",
 	"proofreadpage-pagelist-dialog-update-button": "עדכון רשימת דפים",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "עזיבת תיבת הדו־שיח הזאת יכולה לגרום לאובדן התקדמות שלא נשמרה.",

@@ -106,6 +106,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Predogled strani ni uspel zaradi naslednje napake: $1 Če je ta napaka nepričakovana, jo sporočite na phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "Napaka EditInSequence, ni mogoče nadaljevati",
 	"prp-editinsequence-preview": "Predogled",
+	"proofreadpage-openseadragon-no-image-found": "Inicializacija OpenSeadragona ni uspela, slike ni bilo mogoče najti.",
 	"proofreadpage-pagelist-input-preview-button": "Predogled seznama strani",
 	"proofreadpage-pagelist-dialog-update-button": "Posodobi seznam strani",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Če zapustite to pogovorno okno, lahko izgubite neshranjeni napredek.",

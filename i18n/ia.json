@@ -104,6 +104,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Non poteva previsualisar le pagina a causa del sequente error: $1. Si iste error es inexpectate, per favor reporta lo sur phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "Error de modification in sequentia (EditInSequence); non es possibile continuar.",
 	"prp-editinsequence-preview": "Previsualisar",
+	"proofreadpage-openseadragon-no-image-found": "Fallimento de initialisation de OpenSeadragon, necun imagine trovate.",
 	"proofreadpage-pagelist-input-preview-button": "Previsualisar lista de paginas",
 	"proofreadpage-pagelist-dialog-update-button": "Actualisar lista de paginas",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Quitar iste dialogo pote causar le perdita del progresso non salveguardate.",

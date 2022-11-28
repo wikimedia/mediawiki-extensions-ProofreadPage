@@ -116,6 +116,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Não foi possível fazer a antevisão da página devido ao seguinte erro: $1 Se este erro é inesperado, reporte-o a phabricator.wikimedia.org,  por favor.",
 	"prp-editinsequence-error": "Erro na edição sequencial (EditInSequence). Não é possível prosseguir.",
 	"prp-editinsequence-preview": "Antever",
+	"proofreadpage-openseadragon-no-image-found": "Falha de inicialização do OpenSeadragon. Não foi encontrada nenhuma imagem.",
 	"proofreadpage-pagelist-input-preview-button": "Antever a \"pagelist\"",
 	"proofreadpage-pagelist-dialog-update-button": "Atualizar a \"pagelist\"",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Sair desta caixa de diálogo pode causar a perda do progresso não gravado.",
