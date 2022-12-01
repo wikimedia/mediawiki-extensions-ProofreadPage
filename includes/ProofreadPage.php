@@ -415,20 +415,29 @@ class ProofreadPage implements
 			];
 		}
 
+		$indexTitle = $context
+			->getIndexForPageLookup()->getIndexForPageTitle( $title );
+
 		if ( EditInSequence::isEnabled( $skin ) ) {
+			$isLoaded = EditInSequence::shouldLoadEditInSequence( $skin );
 			$links['views']['proofreadPageEditInSequenceLink'] = [
-				'class' => '',
+				'class' => $isLoaded ? 'selected' : '',
 				'href' => $title->getLocalURL( [
 						'action' => 'edit',
 						EditInSequence::URLPARAMNAME => 'true'
 					] ),
 				'text' => wfMessage( 'proofreadpage_edit_in_sequence' )->plain()
 			];
+
+			if ( $isLoaded ) {
+				// Deselect the Edit link when EditInSequence is loaded
+				$links['views']['edit']['class'] = '';
+				self::addIndexLink( $skin, $indexTitle, $links );
+				return;
+			}
 		}
 
 		// Prev, Next and Index links
-		$indexTitle = $context
-			->getIndexForPageLookup()->getIndexForPageTitle( $title );
 		if ( $indexTitle !== null ) {
 			$pagination = $context
 				->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
@@ -488,13 +497,23 @@ class ProofreadPage implements
 			// Prepend Prev, Next to namespaces tabs
 			$links['namespaces'] = array_merge( $firstLinks, $links['namespaces'] );
 
-			$links['namespaces']['proofreadPageIndexLink'] = [
-				'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ] ) ) ? 'icon' : '',
-				'href' => $indexTitle->getLinkURL(),
-				'text' => wfMessage( 'proofreadpage_index' )->plain(),
-				'title' => wfMessage( 'proofreadpage_index' )->plain()
-			];
+			self::addIndexLink( $skin, $indexTitle, $links );
 		}
+	}
+
+	/**
+	 * Add the link to the index page from Page: pages.
+	 * @param SkinTemplate $skin
+	 * @param Title $indexTitle
+	 * @param array[] &$links Structured navigation links
+	 */
+	private static function addIndexLink( SkinTemplate $skin, Title $indexTitle, array &$links ) {
+		$links['namespaces']['proofreadPageIndexLink'] = [
+			'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ] ) ) ? 'icon' : '',
+			'href' => $indexTitle->getLinkURL(),
+			'text' => wfMessage( 'proofreadpage_index' )->plain(),
+			'title' => wfMessage( 'proofreadpage_index' )->plain()
+		];
 	}
 
 	/**
