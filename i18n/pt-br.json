@@ -13,7 +13,8 @@
 			"Mariagarbin",
 			"MetalBrasil",
 			"Rafaelff",
-			555
+			555,
+			"Fúlvio"
 		]
 	},
 	"nstab-page": "Página",
@@ -28,7 +29,8 @@
 	"proofreadpage_index": "Índice",
 	"proofreadpage_index_expected": "Erro: era esperado um índice",
 	"proofreadpage_nosuch_index": "Erro: índice inexistente",
-	"proofreadpage_nosuch_file": "Erro: arquivo inexistente",
+	"proofreadpage_nosuch_index_category": "Transclusões de páginas que se referem à páginas de índice ausentes",
+	"proofreadpage_nosuch_file": "Erro: Arquivo inexistente",
 	"proofreadpage_indexdupetext": "As páginas não podem ser listadas mais de uma vez em uma página de índice.",
 	"proofreadpage_nologin": "Você não está autenticado",
 	"proofreadpage_nologintext": "É necessário estar [[Special:UserLogin|autenticado]] para poder alterar o status de revisão das páginas.",
@@ -45,6 +47,7 @@
 	"proofreadpage_header": "Cabeçalho (em modo noinclude):",
 	"proofreadpage_body": "Corpo de página (em modo de transclusão):",
 	"proofreadpage_footer": "Rodapé (em modo noinclude):",
+	"proofreadpage_edit_in_sequence": "Editar páginas em sequência",
 	"proofreadpage_toggleheaders": "alterar a visibilidade das seções noinclude",
 	"proofreadpage_quality0_category": "Sem texto",
 	"proofreadpage_quality1_category": "Não revisadas",
