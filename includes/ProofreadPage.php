@@ -504,10 +504,14 @@ class ProofreadPage implements
 	/**
 	 * Add the link to the index page from Page: pages.
 	 * @param SkinTemplate $skin
-	 * @param Title $indexTitle
+	 * @param ?Title $indexTitle
 	 * @param array[] &$links Structured navigation links
 	 */
-	private static function addIndexLink( SkinTemplate $skin, Title $indexTitle, array &$links ) {
+	private static function addIndexLink( SkinTemplate $skin, ?Title $indexTitle, array &$links ) {
+		if ( $indexTitle === null ) {
+			return;
+		}
+
 		$links['namespaces']['proofreadPageIndexLink'] = [
 			'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ] ) ) ? 'icon' : '',
 			'href' => $indexTitle->getLinkURL(),
