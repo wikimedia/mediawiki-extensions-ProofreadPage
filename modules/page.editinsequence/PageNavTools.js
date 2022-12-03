@@ -6,9 +6,9 @@
 function PrevTool() {
 	PrevTool.super.apply( this, arguments );
 	this.$element.addClass( 'prp-editinsequence-prev' );
-	this.toolbar.pagelistModel.on( 'firstReached', this.onFirstReached.bind( this ) );
-	this.toolbar.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
-	this.toolbar.pagelistModel.on( 'pageListModelReady', this.onPageListModelReady.bind( this ) );
+	this.toolbar.eis.pagelistModel.on( 'firstReached', this.onFirstReached.bind( this ) );
+	this.toolbar.eis.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
+	this.toolbar.eis.pagelistModel.on( 'pageListModelReady', this.onPageListModelReady.bind( this ) );
 	this.setDisabled( true );
 	this.isAtFirst = false;
 }
@@ -24,7 +24,7 @@ PrevTool.static.icon = 'previous';
 PrevTool.prototype.onSelect = function () {
 	this.setActive( false );
 	this.setDisabled( true );
-	this.toolbar.pagelistModel.prev();
+	this.toolbar.eis.pagelistModel.prev();
 };
 
 /**
@@ -71,9 +71,9 @@ PrevTool.prototype.onUpdateState = function () {};
 function NextTool() {
 	NextTool.super.apply( this, arguments );
 	this.$element.addClass( 'prp-editinsequence-next' );
-	this.toolbar.pagelistModel.on( 'lastReached', this.onLastReached.bind( this ) );
-	this.toolbar.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
-	this.toolbar.pagelistModel.on( 'pageListModelReady', this.onPageListModeReady.bind( this ) );
+	this.toolbar.eis.pagelistModel.on( 'lastReached', this.onLastReached.bind( this ) );
+	this.toolbar.eis.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
+	this.toolbar.eis.pagelistModel.on( 'pageListModelReady', this.onPageListModeReady.bind( this ) );
 	this.setDisabled( true );
 	this.isAtLast = false;
 }
@@ -89,7 +89,7 @@ NextTool.static.icon = 'next';
 NextTool.prototype.onSelect = function () {
 	this.setActive( false );
 	this.setDisabled( true );
-	this.toolbar.pagelistModel.next();
+	this.toolbar.eis.pagelistModel.next();
 };
 
 /**

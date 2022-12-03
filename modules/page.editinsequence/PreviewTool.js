@@ -21,9 +21,9 @@ PreviewTool.prototype.onSelect = function () {
 	this.isEnabled = !this.isEnabled;
 	this.setActive( this.isEnabled );
 	if ( this.isEnabled ) {
-		this.toolbar.editorController.showPreview();
+		this.toolbar.eis.editorController.showPreview();
 	} else {
-		this.toolbar.editorController.hidePreview();
+		this.toolbar.eis.editorController.hidePreview();
 	}
 };
 

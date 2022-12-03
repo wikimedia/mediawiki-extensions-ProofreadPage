@@ -1,40 +1,11 @@
 ( function () {
-	var Toolbar = require( './Toolbar.js' );
-	var PageNavTools = require( './PageNavTools.js' );
-	var PreviewTool = require( './PreviewTool.js' );
-	var PageStatusTools = require( './PageStatusTools.js' );
-	var toolFactory = new OO.ui.ToolFactory(),
-		toolGroupFactory = new OO.ui.ToolGroupFactory(),
-		toolbar = new Toolbar( toolFactory, toolGroupFactory, {
-			classes: [ 'prp-edit-in-sequence-toolbar' ]
-		} ),
+	var Toolbar = require( './Toolbar.js' ),
 		// eslint-disable-next-line no-jquery/no-global-selector
-		$content = $( '#content' );
-	toolFactory.register( PageNavTools.PrevTool );
-	toolFactory.register( PageNavTools.NextTool );
-	toolFactory.register( PreviewTool );
-	toolGroupFactory.register( PageStatusTools.PageStatusMenu );
-	PageStatusTools.pageStatuses.forEach( function ( elem ) {
-		toolFactory.register( elem );
-	} );
-
-	toolbar.setup( [
-		{
-			type: 'bar',
-			include: [ 'prev', 'next', 'preview' ]
-		},
-		{
-			type: 'pagestatusmenu',
-			include: [ 'without_text', 'not_proofread', 'problematic', 'proofread', 'validated' ]
-		}
-	] );
-
+		$content = $( '#content' ),
+		eisToolbar = new Toolbar();
 	if ( $content.length ) {
-		$content.prepend( toolbar.$element );
+		$content.prepend( eisToolbar.$element );
 	}
-
-	toolbar.initialize();
-	toolbar.emit( 'updateState' );
 }() );
 
 // exposing for tests

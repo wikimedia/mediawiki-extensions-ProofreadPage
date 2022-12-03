@@ -1,40 +1,64 @@
-var PagelistModel = require( './PagelistModel.js' );
-var PageModel = require( './PageModel.js' );
-var EditorController = require( './EditorController.js' );
-var OpenseadragonController = require( './OpenseadragonController.js' );
-/**
- * Implements the edit-in-sequence toolbar
- *
- * @class
- */
-function Toolbar() {
-	Toolbar.super.apply( this, arguments );
-	this.$element.addClass( 'prp-editinsequence-toolbar' );
-	this.pagelistModel = new PagelistModel( mw.config.get( 'wgPageName' ), mw.config.get( 'prpIndexTitle' ) );
-	this.pageModel = new PageModel( this.pagelistModel );
-	// eslint-disable-next-line no-jquery/no-global-selector
-	this.editorController = new EditorController( $( '#content' ), this.pageModel );
-	this.osdController = null;
-	if ( mw.proofreadpage.openseadragon ) {
-		this.osdController = new OpenseadragonController( mw.proofreadpage.openseadragon, this.pagelistModel );
-	} else {
-		mw.hook( 'ext.proofreadpage.osd-controller-available' ).add( function () {
-			this.osdController = new OpenseadragonController( mw.proofreadpage.openseadragon, this.pagelistModel );
-		}.bind( this ) );
-	}
+var EditInSequence = require( './EditInSequence.js' );
+var PageNavTools = require( './PageNavTools.js' );
+var PreviewTool = require( './PreviewTool.js' );
+var PageStatusTools = require( './PageStatusTools.js' );
 
-	this.pagelistModel.on( 'error', this.showError );
-	this.pageModel.on( 'error', this.showError );
+/**
+ * EditInSequence specific modifications to the standard toolbar
+ *
+ * @param {EditInSequence} editInSequence
+ */
+function Toolbar( editInSequence ) {
+	Toolbar.super.apply( this, Array.prototype.slice.call( arguments, 1 ) );
+	this.$element.addClass( 'prp-editinsequence-child-toolbar' );
+	this.eis = editInSequence;
 }
 
 OO.inheritClass( Toolbar, OO.ui.Toolbar );
 
-Toolbar.prototype.showError = function ( err ) {
-	mw.notify( err, {
-		type: 'error',
-		autoHide: false,
-		title: mw.msg( 'prp-editinsequence-error' )
+/**
+ * Panel holding both the left and right toolbar for EditInSequence
+ *
+ * @class
+ */
+function EisToolbarPanel() {
+	EisToolbarPanel.super.apply( this, {
+		expanded: false
 	} );
-};
+	this.toolFactory = new OO.ui.ToolFactory();
+	this.toolGroupFactory = new OO.ui.ToolGroupFactory();
+	this.toolFactory.register( PageNavTools.PrevTool );
+	this.toolFactory.register( PageNavTools.NextTool );
+	this.toolFactory.register( PreviewTool );
+	this.toolGroupFactory.register( PageStatusTools.PageStatusMenu );
+	PageStatusTools.pageStatuses.forEach( function ( elem ) {
+		this.toolFactory.register( elem );
+	}.bind( this ) );
+	this.eis = new EditInSequence();
 
-module.exports = Toolbar;
+	this.toolbarLeft = new Toolbar( this.eis, this.toolFactory, this.toolGroupFactory, {
+		classes: [ 'prp-edit-in-sequence-toolbar-left' ]
+	} );
+
+	this.toolbarLeft.setup( [
+		{
+			type: 'bar',
+			include: [ 'prev', 'next', 'preview' ]
+		},
+		{
+			type: 'pagestatusmenu',
+			include: [ 'without_text', 'not_proofread', 'problematic', 'proofread', 'validated' ]
+		}
+	] );
+
+	this.$element.addClass( 'prp-edit-in-sequence-toolbar' );
+
+	this.$element.append( this.toolbarLeft.$element );
+
+	this.toolbarLeft.initialize();
+	this.toolbarLeft.emit( 'updateState' );
+}
+
+OO.inheritClass( EisToolbarPanel, OO.ui.PanelLayout );
+
+module.exports = EisToolbarPanel;

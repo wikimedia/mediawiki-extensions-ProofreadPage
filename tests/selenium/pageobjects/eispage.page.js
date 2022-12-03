@@ -8,7 +8,7 @@ class EisPagePage extends Page {
 		super.openTitle( pagename, { action: 'edit', prp_editinsequence: true } );
 		// wait for toolbar to load
 		browser.waitUntil( function () {
-			return browser.$$( '.prp-editinsequence-toolbar' ).length > 0;
+			return browser.$$( '.prp-edit-in-sequence-toolbar' ).length > 0;
 		} );
 		// turn off all unload events for wikiEditor
 		browser.execute( function () {

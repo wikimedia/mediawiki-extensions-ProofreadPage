@@ -27,7 +27,7 @@ function createPageStatusTool( name, title, pageStatus ) {
 	PageStatusTool.prototype.onSelect = function () {
 		this.isCurrentSelection = true;
 		this.toolbar.emit( 'updateState' );
-		this.toolbar.pageModel.setPageStatus( this.pageStatus );
+		this.toolbar.eis.pageModel.setPageStatus( this.pageStatus );
 		this.isCurrentSelection = false;
 	};
 
@@ -48,8 +48,8 @@ function createPageStatusTool( name, title, pageStatus ) {
  */
 function PageStatusMenu() {
 	PageStatusMenu.super.apply( this, arguments );
-	this.toolbar.pageModel.on( 'pageModelUpdated', this.onPageModelUpdated.bind( this ) );
-	this.toolbar.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
+	this.toolbar.eis.pageModel.on( 'pageModelUpdated', this.onPageModelUpdated.bind( this ) );
+	this.toolbar.eis.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
 	this.setDisabled( true );
 	this.$element.addClass( 'prp-editinsequence-page-status' );
 }
@@ -62,7 +62,7 @@ PageStatusMenu.static.name = 'pagestatusmenu';
  * Set the page status when the page is updated by navigating
  */
 PageStatusMenu.prototype.onPageModelUpdated = function () {
-	var status = this.toolbar.pageModel.getPageStatus().status, name;
+	var status = this.toolbar.eis.pageModel.getPageStatus().status, name;
 	for ( name in this.tools ) {
 		if ( this.tools[ name ].getPageStatus() === status ) {
 			this.tools[ name ].setActive( true );
