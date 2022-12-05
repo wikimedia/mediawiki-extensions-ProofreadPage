@@ -4,7 +4,8 @@
 			"Erdemaslancan",
 			"Ganbarzada",
 			"Patriot Kur",
-			"Гусейн"
+			"Гусейн",
+			"Patriot Kor"
 		]
 	},
 	"nstab-page": "Səhifə",
@@ -27,7 +28,7 @@
 	"proofreadpage_quality4_summary": "Osəğande",
 	"proofreadpage_quality1_message": "Im səhifə sərost kardə bıənıbe",
 	"proofreadpage_index_status": "İndeksi status",
-	"proofreadpage_index_size": "Səhifə nümrə",
+	"proofreadpage_index_size": "Səhifə numrə",
 	"proofreadpage_specialpage_label_key": "Nəve:",
 	"proofreadpage_index_listofpages": "Səhifon siyohi",
 	"proofreadpage_page_status": "Səhifə statusi",
@@ -36,7 +37,7 @@
 	"proofreadpage_source": "Səvon",
 	"proofreadpage-group-zoom": "Perosniyə",
 	"proofreadpage-group-other": "Co",
-	"proofreadpage-button-zoom-out-label": "Düyərü karde",
+	"proofreadpage-button-zoom-out-label": "Duyəru karde",
 	"proofreadpage-button-reset-zoom-label": "Əsl pamyə",
 	"proofreadpage-button-zoom-in-label": "Nez karde",
 	"content-model-proofread-page": "Kitobi səhifə",
