@@ -225,6 +225,7 @@
 			"packageFiles": [
 				"index.js",
 				"Toolbar.js",
+				"EditInSequence.js",
 				"PagelistModel.js",
 				"PageNavTools.js",
 				"PageModel.js",
