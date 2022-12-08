@@ -158,7 +158,20 @@ OpenSeadragonController.prototype.forceInitialize = function () {
  * @public
  */
 OpenSeadragonController.prototype.getCurrentImage = function () {
-	return this.viewer.source.getTileUrl( this.viewer.source.getClosestLevel(), 0, 0 );
+	var url = '';
+	try {
+		url = this.viewer.source.getTileUrl( this.viewer.source.getClosestLevel(), 0, 0 );
+	} catch ( e ) {
+		url = this.img;
+	}
+
+	// Normalize the URL, here we create anchor tag and set the href. This
+	// should use the browser's inbuilt URL resolver to create a canonical URL
+	// and should take care of most sneaky edge cases
+	var anchorTag = document.createElement( 'a' );
+	anchorTag.href = url;
+
+	return anchorTag.href;
 };
 
 module.exports = OpenSeadragonController;
