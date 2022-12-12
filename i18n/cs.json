@@ -5,7 +5,9 @@
 			"Jkjk",
 			"Matěj Grabovský",
 			"Mormegil",
-			"Skim"
+			"Skim",
+			"Fraxinus.cs",
+			"JAn Dudík"
 		]
 	},
 	"nstab-page": "Stránka",
@@ -53,6 +55,7 @@
 	"proofreadpage_index_status": "Stav indexu",
 	"proofreadpage_index_size": "Počet stránek",
 	"proofreadpage_pages_to_validate": "Počet stránek k ověření",
+	"proofreadpage_pages_to_proofread_or_validate": "Počet stran ke korektuře nebo ověření",
 	"proofreadpage_specialpage_label_orderby": "Řadit podle:",
 	"proofreadpage_specialpage_label_key": "Hledat:",
 	"proofreadpage_specialpage_label_sortascending": "Seřadit vzestupně",
@@ -68,7 +71,10 @@
 	"proofreadpage_specialpage_searcherrortext": "Vyhledávací systém nefunguje. Omlouváme se za případné potíže.",
 	"proofreadpage_source": "Zdroj",
 	"proofreadpage_source_message": "Naskenovaná verze použitá k vypracování tohoto textu",
+	"action-pagequality": "Upravování příznaku kvality stránky",
 	"right-pagequality": "Upravování příznaku kvality stránky",
+	"action-pagequality-admin": "neomezené úpravy příznaku kvality stránky",
+	"right-pagequality-admin": "Neomezené úpravy příznaku kvality stránky",
 	"proofreadpage-section-tools": "Nástroje pro korekturu",
 	"proofreadpage-group-zoom": "Přiblížení",
 	"proofreadpage-group-other": "Jiné",
