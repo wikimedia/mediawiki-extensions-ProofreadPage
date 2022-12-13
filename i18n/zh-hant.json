@@ -17,7 +17,8 @@
 			"Tranve",
 			"Wmr",
 			"Wrightbus",
-			"Wwycheuk"
+			"Wwycheuk",
+			"捍粵者"
 		]
 	},
 	"nstab-page": "頁面",
@@ -63,7 +64,7 @@
 	"proofreadpage_quality3_summary": "已校對",
 	"proofreadpage_quality4_summary": "已確認",
 	"proofreadpage_quality0_message": "本頁不需要校對",
-	"proofreadpage_quality1_message": "本頁面尚未進行校對",
+	"proofreadpage_quality1_message": "本頁尚未校對",
 	"proofreadpage_quality2_message": "校對本頁時出現了一個問題",
 	"proofreadpage_quality3_message": "本頁已經被校對",
 	"proofreadpage_quality4_message": "本頁已確認",
