@@ -16,14 +16,20 @@
 	"proofreadpage_quality2_category": "Váádduh",
 	"proofreadpage_quality3_category": "Njuálguluhhum",
 	"proofreadpage_quality4_category": "Tuhhiittum",
+	"proofreadpage_quality1_summary": "Njuálguluvâhánnáá",
+	"proofreadpage_quality3_summary": "Njuálguluhhum",
 	"proofreadpage_quality1_message": "Taat sijđo ij lah njuálguluhhum",
+	"proofreadpage_quality3_message": "Taat sijđo lii njuálguluhhum",
 	"proofreadpage_index_size": "Siijđoi meeri",
 	"proofreadpage_specialpage_filterby_all": "Puoh",
+	"proofreadpage_specialpage_filterby_proofread": "Njuálguluhhum",
 	"proofreadpage_specialpage_label_orderby": "Šlajâttâl:",
 	"proofreadpage_specialpage_label_key": "Uusâ:",
 	"proofreadpage_specialpage_label_sortascending": "Šlajâttâl pajaneijee oornigist",
 	"proofreadpage_source": "Käldee",
 	"proofreadpage_styles": "Stiijlah",
 	"proofreadpage-pagelist-dialog-cancel": "Jooskâ",
-	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Siijđoh"
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Siijđoh",
+	"tag-proofreadpage-quality1": "Njuálguluvâhánnáá",
+	"tag-proofreadpage-quality3": "Njuálguluhhum"
 }
