@@ -235,6 +235,32 @@ class PageDisplayHandler {
 	}
 
 	/**
+	 * Get a <link> tag for the given page. This will be of the default width, or the width set in the Index page.
+	 * @param Title $pageTitle
+	 * @param string $rel rel attribute
+	 * @param string $title
+	 * @return string[]|null
+	 */
+	public function getImageHtmlLinkAttributes( Title $pageTitle, string $rel, string $title ): ?array {
+		$thumbnail = $this->getImageThumbnail( $pageTitle );
+		if ( $thumbnail === null ) {
+			return null;
+		}
+
+		$attribs = [
+			'rel' => $rel,
+			'as' => 'image',
+			'href' => $thumbnail->getUrl(),
+			'title' => $title,
+		];
+		$responsiveUrls = array_diff( $thumbnail->responsiveUrls, [ $thumbnail->getUrl() ] );
+		if ( !empty( $responsiveUrls ) ) {
+			$attribs['imagesrcset'] = Html::srcSet( $responsiveUrls );
+		}
+		return $attribs;
+	}
+
+	/**
 	 * Get the given Page's image, resized if required.
 	 *
 	 * @param Title $pageTitle The Page title, e.g. `Page:Lorem.pdf/4`.

@@ -456,14 +456,11 @@ class ProofreadPage implements
 						'text' => $prevText,
 						'title' => $prevText
 					];
-					$prevThumbnail = $pageDisplayHandler->getImageThumbnail( $prevTitle );
-					if ( $prevThumbnail ) {
-						$skin->getOutput()->addLink( [
-							'rel' => 'prefetch',
-							'as' => 'image',
-							'href' => $prevThumbnail->getUrl(),
-							'title' => 'prp-prev-image',
-						] );
+					$prevThumbnailLinkAttributes = $pageDisplayHandler->getImageHtmlLinkAttributes(
+						$prevTitle, 'prefetch', 'prp-prev-image'
+					);
+					if ( $prevThumbnailLinkAttributes ) {
+						$skin->getOutput()->addLink( $prevThumbnailLinkAttributes );
 					}
 				} catch ( OutOfBoundsException $e ) {
 					// if the previous page does not exist
@@ -479,14 +476,11 @@ class ProofreadPage implements
 						'text' => $nextText,
 						'title' => $nextText
 					];
-					$nextThumbnail = $pageDisplayHandler->getImageThumbnail( $nextTitle );
-					if ( $nextThumbnail ) {
-						$skin->getOutput()->addLink( [
-							'rel' => 'prefetch',
-							'as' => 'image',
-							'href' => $nextThumbnail->getUrl(),
-							'title' => 'prp-next-image',
-						] );
+					$nextThumbnailLinkAttributes = $pageDisplayHandler->getImageHtmlLinkAttributes(
+						$nextTitle, 'prefetch', 'prp-next-image'
+					);
+					if ( $nextThumbnailLinkAttributes ) {
+						$skin->getOutput()->addLink( $nextThumbnailLinkAttributes );
 					}
 				} catch ( OutOfBoundsException $e ) {
 					// if the next page does not exist
