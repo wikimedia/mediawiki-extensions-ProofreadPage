@@ -17,7 +17,7 @@ function PageModel( pagelistModel, fallbackType ) {
 	this.body = '';
 	this.footer = '';
 	this.pageStatus = {
-		status: 0,
+		status: 1,
 		lastUser: mw.config.get( 'wgUserName' )
 	};
 	this.pagelistModel.on( 'pageUpdated', this.fetchData.bind( this ) );
@@ -152,8 +152,10 @@ PageModel.prototype.setDefault = function () {
 	this.body = '';
 	this.footer = '';
 	this.header = '';
-	this.pageStatus = 0;
-	this.pageStatusLastUser = mw.config.get( 'wgUserName' );
+	this.pageStatus = {
+		status: 1,
+		lastUser: mw.config.get( 'wgUserName' )
+	};
 	this.emit( 'pageModelUpdated' );
 };
 

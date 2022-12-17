@@ -2,6 +2,8 @@ var EditInSequence = require( './EditInSequence.js' );
 var PageNavTools = require( './PageNavTools.js' );
 var PreviewTool = require( './PreviewTool.js' );
 var PageStatusTools = require( './PageStatusTools.js' );
+var SaveTool = require( './SaveTool.js' );
+var SaveOptionsTool = require( './SaveOptionsTool.js' );
 
 /**
  * EditInSequence specific modifications to the standard toolbar
@@ -25,22 +27,28 @@ function EisToolbarPanel() {
 	EisToolbarPanel.super.apply( this, {
 		expanded: false
 	} );
+
 	this.toolFactory = new OO.ui.ToolFactory();
 	this.toolGroupFactory = new OO.ui.ToolGroupFactory();
+
 	this.toolFactory.register( PageNavTools.PrevTool );
 	this.toolFactory.register( PageNavTools.NextTool );
 	this.toolFactory.register( PreviewTool );
+	this.toolFactory.register( SaveTool );
+	this.toolFactory.register( SaveOptionsTool );
+
 	this.toolGroupFactory.register( PageStatusTools.PageStatusMenu );
 	PageStatusTools.pageStatuses.forEach( function ( elem ) {
 		this.toolFactory.register( elem );
 	}.bind( this ) );
+
 	this.eis = new EditInSequence();
 
-	this.toolbarLeft = new Toolbar( this.eis, this.toolFactory, this.toolGroupFactory, {
+	this.toolbar = new Toolbar( this.eis, this.toolFactory, this.toolGroupFactory, {
 		classes: [ 'prp-edit-in-sequence-toolbar-left' ]
 	} );
 
-	this.toolbarLeft.setup( [
+	this.toolbar.setup( [
 		{
 			type: 'bar',
 			include: [ 'prev', 'next', 'preview' ]
@@ -48,15 +56,20 @@ function EisToolbarPanel() {
 		{
 			type: 'pagestatusmenu',
 			include: [ 'without_text', 'not_proofread', 'problematic', 'proofread', 'validated' ]
+		},
+		{
+			type: 'bar',
+			include: [ 'save', 'saveOptions' ],
+			align: 'after'
 		}
 	] );
 
 	this.$element.addClass( 'prp-edit-in-sequence-toolbar' );
 
-	this.$element.append( this.toolbarLeft.$element );
+	this.$element.append( [ this.toolbar.$element ] );
 
-	this.toolbarLeft.initialize();
-	this.toolbarLeft.emit( 'updateState' );
+	this.toolbar.initialize();
+	this.toolbar.emit( 'updateState' );
 }
 
 OO.inheritClass( EisToolbarPanel, OO.ui.PanelLayout );
