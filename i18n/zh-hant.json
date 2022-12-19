@@ -16,7 +16,9 @@
 			"Wrightbus",
 			"Wwycheuk",
 			"Emojiwiki",
-			"Tranve"
+			"Tranve",
+			"Diskdance",
+			"捍粵者"
 		]
 	},
 	"nstab-page": "頁面",
@@ -57,9 +59,9 @@
 	"proofreadpage_quality3_summary": "已校對",
 	"proofreadpage_quality4_summary": "已確認",
 	"proofreadpage_quality0_message": "本頁不需要校對",
-	"proofreadpage_quality1_message": "本頁面尚未進行校對",
+	"proofreadpage_quality1_message": "本頁尚未校對",
 	"proofreadpage_quality2_message": "校對本頁時出現了一個問題",
-	"proofreadpage_quality3_message": "本頁已經被校對",
+	"proofreadpage_quality3_message": "已校對本頁",
 	"proofreadpage_quality4_message": "本頁已確認",
 	"proofreadpage_index_status": "索引狀態",
 	"proofreadpage_index_size": "頁碼",
@@ -105,8 +107,8 @@
 	"proofreadpage-pagelist-notcreated": "此頁面尚未被建立。",
 	"proofreadpage-pagelist-quality": "品質：$1",
 	"proofreadpage-pagelist-assignedpagenumber": "此頁面已被分配到頁碼：$1",
-	"proofreadpage-preferences-showheaders-label": "{{ns:page}}命名空間中進行編輯時顯示頁眉和頁腳的欄位",
-	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}}命名空間中進行編輯時使用水準佈局",
+	"proofreadpage-preferences-showheaders-label": "在{{ns:page}}命名空間編輯時顯示頁首和頁尾欄位",
+	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}命名空間編輯時用橫向配置",
 	"proofreadpage-indexquality-alt": "$1 個已確認{{PLURAL:$1|頁面|頁面}}，$2 個僅校對的{{PLURAL:$2|頁面|頁面}}，以及 $3 個尚未校對的{{PLURAL:$3|頁面|頁面}}",
 	"content-model-proofread-page": "圖書頁面",
 	"content-model-proofread-index": "書籍索引",
