@@ -36,6 +36,7 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SetupAfterCache
 	 */
 	public function onSetupAfterCache() {
+		global $wgTemplateStylesNamespaces;
 		self::initNamespace( 'page' );
 		self::initNamespace( 'index' );
 
@@ -45,6 +46,7 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 			// so that /styles.css can be created
 			$templateStylesNamespaces = $this->config->get( 'TemplateStylesNamespaces' );
 			$templateStylesNamespaces[ $proofreadPageNamespaceIds[ 'index' ] ] = true;
+			$wgTemplateStylesNamespaces = $templateStylesNamespaces;
 		}
 	}
 
