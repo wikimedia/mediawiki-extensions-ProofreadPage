@@ -103,6 +103,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Dem fail go preview de page sake of de following error: $1 If dis error be unexpected, we beg report dis error go phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "EditInSequence error, no fi proceed further",
 	"prp-editinsequence-preview": "Preview",
+	"proofreadpage-openseadragon-no-image-found": "Dem fail to initialize OpenSeadragon, dem no find image.",
 	"proofreadpage-pagelist-input-preview-button": "Preview pagelist",
 	"proofreadpage-pagelist-dialog-update-button": "Update pagelist",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Leaving dis dialog fi lead to loss of unsaved progress.",
