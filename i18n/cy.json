@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lloffiwr",
-			"Robin Owain"
+			"Robin Owain",
+			"Afalau"
 		]
 	},
 	"indexpages": "Rhestr y mynegeion",
@@ -67,5 +68,5 @@
 	"proofreadpage-pageinfo-status": "Statws y prawfddarllen",
 	"proofreadpage-preferences-showheaders-label": "Dangos y maesydd pennyn a throedyn wrth olygu yn y parth {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "defnyddio gosodiad ar draws pan yn golygu yn y parth {{ns:page}}",
-	"content-model-proofread-page": "Tudalen:tudalen"
+	"content-model-proofread-page": "Tudalen lyfr"
 }
