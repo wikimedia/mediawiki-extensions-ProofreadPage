@@ -136,7 +136,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Error caused by the API returning unexpected output. Generic error message about reporting to phabricator.",
 	"prp-editinsequence-error": "Title of error message displayed to user when EditInSequence encounters a error state",
 	"prp-editinsequence-preview": "Title of preview button",
-	"prp-editinsequence-save-settings-dialog-primary-button-title": "Save settings",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Title of button to save settings",
 	"prp-editinsequence-save-dialog-title": "Title of dialog asking for confirmation before saving current page",
 	"prp-editinsequence-save-settings-dialog-title": "Title asking for metadata associated with changes being made later in the current session (ex: edit summaries)",
 	"prp-editinsequence-save-next-action-label": "Label for a selection asking what to do after saving a page",
@@ -195,9 +195,11 @@
 	"tag-proofreadpage-quality2": "Tag name for changes changing to level 2 quality\n{{{Identical|proofreadpage_quality2_summary}}",
 	"tag-proofreadpage-quality3": "Tag name for changes changing to level 3 quality\n{{Identical|proofreadpage_quality3_summary}}",
 	"tag-proofreadpage-quality4": "Tag name for changes changing to level 4 quality\n{{{Identical|proofreadpage_quality4_summary}}",
+	"tag-proofreadpage-editinsequence": "Tag name for changes made using the EditInSequence mode",
 	"tag-proofreadpage-quality0-description": "Tag description for changes changing to level 0 quality\n{{Identical|proofreadpage_quality0_message}}",
 	"tag-proofreadpage-quality1-description": "Tag description for changes changing to level 1 quality",
 	"tag-proofreadpage-quality2-description": "Tag description for changes changing to level 2 quality",
 	"tag-proofreadpage-quality3-description": "Tag description for changes changing to level 3 quality\n{{Identical|proofreadpage_quality3_message}}",
-	"tag-proofreadpage-quality4-description": "Tag description for changes changing to level 4 quality"
+	"tag-proofreadpage-quality4-description": "Tag description for changes changing to level 4 quality",
+	"tag-proofreadpage-editinsequence-description": "Tag description for changes made using the EditInSequence mode"
 }

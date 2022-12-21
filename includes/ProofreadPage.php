@@ -659,6 +659,8 @@ class ProofreadPage implements
 		$tags[] = Tags::PROBLEMATIC_TAG;
 		$tags[] = Tags::PROOFREAD_TAG;
 		$tags[] = Tags::VALIDATED_TAG;
+		// Add a tag for edits made using EditInSequence
+		$tags[] = EditInSequence::TAGNAME;
 		return true;
 	}
 
@@ -669,16 +671,24 @@ class ProofreadPage implements
 	 */
 	public function onRecentChange_save( $rc ) {
 		// phpcs:enable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
-		$useTags = $this->config->get( 'ProofreadPageUseStatusChangeTags' );
-
-		// not configured to add tags to revisions
-		if ( !$useTags ) {
-			return;
-		}
 
 		$ns = $rc->getAttribute( 'rc_namespace' );
 
 		if ( $ns === self::getPageNamespaceId() ) {
+
+			$requestContext = RequestContext::getMain();
+
+			if ( EditInSequence::isEditInSequenceEdit( $requestContext ) ) {
+				$rc->addTags( [ EditInSequence::TAGNAME ] );
+			}
+
+			$useProofreadTags = $this->config->get( 'ProofreadPageUseStatusChangeTags' );
+
+			// not configured to add tags to revisions
+			if ( !$useProofreadTags ) {
+				return;
+			}
+
 			$tagger = new PageRevisionTagger();
 			$tags = $tagger->getTagsForChange( $rc );
 

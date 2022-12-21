@@ -163,9 +163,11 @@
 	"tag-proofreadpage-quality2": "Problematic",
 	"tag-proofreadpage-quality3": "Proofread",
 	"tag-proofreadpage-quality4": "Validated",
+	"tag-proofreadpage-editinsequence": "EditInSequence",
 	"tag-proofreadpage-quality0-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality3}}\"",
-	"tag-proofreadpage-quality4-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality4}}\""
+	"tag-proofreadpage-quality4-description": "Edits that changed page quality to \"{{int:tag-proofreadpage-quality4}}\"",
+	"tag-proofreadpage-editinsequence-description": "Edits made using the new EditInSequence mode"
 }

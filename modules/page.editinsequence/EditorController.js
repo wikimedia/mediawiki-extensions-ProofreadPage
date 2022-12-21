@@ -133,6 +133,10 @@ EditorController.prototype.save = function () {
 		minor: saveData.isMinorEdit,
 		watch: saveData.shouldWatchlist ? 'watch' : 'preferences',
 		format: 'json'
+	}, {
+		headers: {
+			'X-User-Agent': 'EditInSequence'
+		}
 	} ).then( function ( result ) {
 		if ( result && result.edit && result.edit.result ) {
 			mw.config.set( 'wgPostEdit', 'saved' );
