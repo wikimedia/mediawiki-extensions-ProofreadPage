@@ -127,6 +127,15 @@
 	"prp-edit-in-sequence-preview-api-error": "Impossible de prévisualiser la page en raison de l’erreur suivante : $1. Si cette erreur est inattendue, veuillez la signaler sur phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "Erreur de modification en séquence (EditInSequence), impossible de continuer plus loin",
 	"prp-editinsequence-preview": "Aperçu",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Enregistrer les paramètres",
+	"prp-editinsequence-save-dialog-title": "Enregistrer cette page",
+	"prp-editinsequence-save-settings-dialog-title": "Enregistrer les métadonnées pour les modifications ultérieures",
+	"prp-editinsequence-save-next-action-label": "Après avoir cliqué sur le bouton « $1 », effectuez cette action",
+	"prp-editinsequence-save-next-action-do-nothing": "Ne rien faire",
+	"prp-editinsequence-save-next-action-go-to-next": "Aller à la page suivante",
+	"prp-editinsequence-save-next-action-go-to-prev": "Aller à la page précédente",
+	"prp-editinsequence-show-dialog-toggle-label": "Afficher cette boîte de dialogue chaque fois que « $1 » est cliqué",
+	"prp-editinsequence-editsummary-placeholder": "Décrivez vos modifications",
 	"proofreadpage-openseadragon-no-image-found": "Échec de l’initialisation d’OpenSeadragon, aucune image trouvée.",
 	"proofreadpage-pagelist-input-preview-button": "Aperçu de la liste des pages",
 	"proofreadpage-pagelist-dialog-update-button": "Mettre à jour la liste des pages",
@@ -177,9 +186,11 @@
 	"tag-proofreadpage-quality2": "Problématique",
 	"tag-proofreadpage-quality3": "Corrigée",
 	"tag-proofreadpage-quality4": "Validée",
+	"tag-proofreadpage-editinsequence": "ModificationEnSéquence",
 	"tag-proofreadpage-quality0-description": "Modifications qui ont changé la qualité de la page à « {{int:tag-proofreadpage-quality0}} »",
 	"tag-proofreadpage-quality1-description": "Modifications qui ont changé la qualité de la page à « {{int:tag-proofreadpage-quality1}} »",
 	"tag-proofreadpage-quality2-description": "Modifications qui ont changé la qualité de la page à « {{int:tag-proofreadpage-quality2}} »",
 	"tag-proofreadpage-quality3-description": "Modifications qui ont changé la qualité de la page à « {{int:tag-proofreadpage-quality3}} »",
-	"tag-proofreadpage-quality4-description": "Modifications qui ont changé la qualité de la page à « {{int:tag-proofreadpage-quality4}} »"
+	"tag-proofreadpage-quality4-description": "Modifications qui ont changé la qualité de la page à « {{int:tag-proofreadpage-quality4}} »",
+	"tag-proofreadpage-editinsequence-description": "Modifications effectuées à l’aide du nouveau mode ModificationEnSéquence"
 }

@@ -13,6 +13,8 @@
 	"proofreadpage_quality4_category": "Potvrđeno",
 	"proofreadpage_quality1_message": "Ova stranica nije bila lektorisana",
 	"prp-editinsequence-preview": "Pregled",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Sačuvaj postavke",
+	"prp-editinsequence-save-dialog-title": "Sačuvaj ovu stranicu",
 	"tag-proofreadpage-quality0-description": "Uređivanja koja su promijenila kvalitetu stranice na \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Uređivanja koja su promijenila kvalitetu stranice na \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Uređivanja koja su promijenila kvalitetu stranice na \"{{int:tag-proofreadpage-quality2}}\"",

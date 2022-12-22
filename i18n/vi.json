@@ -3,6 +3,7 @@
 		"authors": [
 			"Max20091",
 			"Minh Nguyen",
+			"Nguyenphutrong2",
 			"Vinhtantran",
 			"Yosari101"
 		]
@@ -97,6 +98,15 @@
 	"proofreadpage-button-zoom-in-label": "Phóng to",
 	"proofreadpage-button-zoom-out-label": "Thu nhỏ",
 	"proofreadpage-pageinfo-status": "Trạng thái hiệu đính",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Lưu các thiết lập",
+	"prp-editinsequence-save-dialog-title": "Lưu trang này",
+	"prp-editinsequence-save-settings-dialog-title": "Lưu siêu dữ liệu cho những thay đổi tiếp theo",
+	"prp-editinsequence-save-next-action-label": "Sau khi nhấp vào nút \" $1 \", hãy thực hiện hành động này",
+	"prp-editinsequence-save-next-action-do-nothing": "Không làm gì cả",
+	"prp-editinsequence-save-next-action-go-to-next": "Tới trang tiếp theo",
+	"prp-editinsequence-save-next-action-go-to-prev": "Tới trang trước",
+	"prp-editinsequence-show-dialog-toggle-label": "Hiển thị hộp thoại này mỗi khi nhấp vào \" $1 \"",
+	"prp-editinsequence-editsummary-placeholder": "Mô tả những thay đổi của bạn",
 	"proofreadpage-pagelist-input-preview-button": "Xem trước danh sách trang",
 	"proofreadpage-pagelist-dialog-update-button": "Cập nhật danh sách trang",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Rời khỏi hộp thoại này có thể làm mất tác vụ chưa được lưu.",
@@ -145,9 +155,11 @@
 	"tag-proofreadpage-quality2": "Có vấn đề",
 	"tag-proofreadpage-quality3": "Đã hiệu đính",
 	"tag-proofreadpage-quality4": "Đã phê chuẩn",
+	"tag-proofreadpage-editinsequence": "EditInSequence",
 	"tag-proofreadpage-quality0-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality0}}”",
 	"tag-proofreadpage-quality1-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality1}}”",
 	"tag-proofreadpage-quality2-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality2}}”",
 	"tag-proofreadpage-quality3-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality3}}”",
-	"tag-proofreadpage-quality4-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality4}}”"
+	"tag-proofreadpage-quality4-description": "Sửa đổi khiến chất lượng trang trở thành “{{int:tag-proofreadpage-quality4}}”",
+	"tag-proofreadpage-editinsequence-description": "Các chỉnh sửa được thực hiện bằng chế độ EditInSequence mới"
 }

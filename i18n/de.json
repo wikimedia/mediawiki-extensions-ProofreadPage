@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Hwboehm",
 			"Imre",
 			"Inkowik",
@@ -118,7 +119,7 @@
 	"prp-editinsequence-save-next-action-go-to-next": "Zur nächsten Seite gehen",
 	"prp-editinsequence-save-next-action-go-to-prev": "Zur vorherigen Seite gehen",
 	"prp-editinsequence-show-dialog-toggle-label": "Dieses Dialogfeld jedes Mal anzeigen, wenn auf „$1“ geklickt wird",
-	"prp-editinsequence-editsummary-placeholder": "Beschreiben deine Änderungen",
+	"prp-editinsequence-editsummary-placeholder": "Beschreibe deine Änderungen",
 	"proofreadpage-openseadragon-no-image-found": "Fehler beim Initialisieren von OpenSeadragon; es wurde kein Bild gefunden.",
 	"proofreadpage-pagelist-input-preview-button": "Vorschau der Seitenliste",
 	"proofreadpage-pagelist-dialog-update-button": "Seitenliste aktualisieren",
@@ -167,9 +168,11 @@
 	"tag-proofreadpage-quality2": "Problematisch",
 	"tag-proofreadpage-quality3": "Korrekturgelesen",
 	"tag-proofreadpage-quality4": "Geprüft",
+	"tag-proofreadpage-editinsequence": "EditInSequence",
 	"tag-proofreadpage-quality0-description": "Änderungen, die die Seitenqualität in „{{int:tag-proofreadpage-quality0}}“ geändert haben",
 	"tag-proofreadpage-quality1-description": "Änderungen, die die Seitenqualität in „{{int:tag-proofreadpage-quality1}}“ geändert haben",
 	"tag-proofreadpage-quality2-description": "Änderungen, die die Seitenqualität in „{{int:tag-proofreadpage-quality2}}“ geändert haben",
 	"tag-proofreadpage-quality3-description": "Änderungen, die die Seitenqualität in „{{int:tag-proofreadpage-quality3}}“ geändert haben",
-	"tag-proofreadpage-quality4-description": "Änderungen, die die Seitenqualität in „{{int:tag-proofreadpage-quality4}}“ geändert haben"
+	"tag-proofreadpage-quality4-description": "Änderungen, die die Seitenqualität in „{{int:tag-proofreadpage-quality4}}“ geändert haben",
+	"tag-proofreadpage-editinsequence-description": "Bearbeitungen mit dem neuen EditInSequence-Modus"
 }
