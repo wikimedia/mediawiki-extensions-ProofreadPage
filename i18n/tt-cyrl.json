@@ -4,6 +4,7 @@
 			"Derslek",
 			"Timming",
 			"Ерней",
+			"Ильгиз",
 			"Ильнар"
 		]
 	},
@@ -13,5 +14,16 @@
 	"proofreadpage_quality2_category": "Проблемалы",
 	"proofreadpage_quality3_category": "Киселеш",
 	"proofreadpage_quality4_category": "Тикшерелде",
-	"proofreadpage_quality1_message": "Бу бит киселешмәгән"
+	"proofreadpage_quality1_message": "Бу бит киселешмәгән",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Көйләнмәләрне саклау",
+	"prp-editinsequence-save-dialog-title": "Бу битне саклау",
+	"prp-editinsequence-save-settings-dialog-title": "Киләсе үзгәрешләр өчен мета-мәгълүматларны саклагыз",
+	"prp-editinsequence-save-next-action-label": "\"$1\" төймәсенә баскач, бу эшне башкарыгыз",
+	"prp-editinsequence-save-next-action-do-nothing": "Берни дә эшләмәскә",
+	"prp-editinsequence-save-next-action-go-to-next": "Киләсе биткә керегез",
+	"prp-editinsequence-save-next-action-go-to-prev": "Үткән биткә керү",
+	"prp-editinsequence-show-dialog-toggle-label": "Бу әңгәмәне \"$1\" басылган саен күрсәтегез",
+	"prp-editinsequence-editsummary-placeholder": "Үзгәрешләрегезне сурәтләгез",
+	"tag-proofreadpage-editinsequence": "EditInSequence",
+	"tag-proofreadpage-editinsequence-description": "Яңа EditInSequence режимы ярдәмендә ясалган үзгәртүләр"
 }

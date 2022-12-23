@@ -165,9 +165,11 @@
 	"tag-proofreadpage-quality2": "problematično",
 	"tag-proofreadpage-quality3": "lektorirano",
 	"tag-proofreadpage-quality4": "potrjeno",
+	"tag-proofreadpage-editinsequence": "EditInSequence",
 	"tag-proofreadpage-quality0-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality0}}«",
 	"tag-proofreadpage-quality1-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality1}}«",
 	"tag-proofreadpage-quality2-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality2}}«",
 	"tag-proofreadpage-quality3-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality3}}«",
-	"tag-proofreadpage-quality4-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality4}}«"
+	"tag-proofreadpage-quality4-description": "Urejanja, ki so kakovost strani spremenila v »{{int:tag-proofreadpage-quality4}}«",
+	"tag-proofreadpage-editinsequence-description": "Urejanja, opravljena z novim načinom EditInSequence"
 }

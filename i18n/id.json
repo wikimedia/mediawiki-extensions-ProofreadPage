@@ -118,6 +118,15 @@
 	"prp-edit-in-sequence-preview-api-error": "Gagal memuat pratinjau halaman karena kesalahan berikut: $1 Jika kesalahan ini tidak terduga, laporkan galat ini ke phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "Kesalahan EditInSequence, tidak dapat melanjutkan lagi",
 	"prp-editinsequence-preview": "Pratayang",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Simpan Pengaturan",
+	"prp-editinsequence-save-dialog-title": "Simpan halaman ini",
+	"prp-editinsequence-save-settings-dialog-title": "Simpan metadata untuk perubahan selanjutnya",
+	"prp-editinsequence-save-next-action-label": "Setelah mengklik tombol \" $1 \", lakukan tindakan ini",
+	"prp-editinsequence-save-next-action-do-nothing": "Tidak melakukan apapun",
+	"prp-editinsequence-save-next-action-go-to-next": "Buka halaman berikutnya",
+	"prp-editinsequence-save-next-action-go-to-prev": "Ke halaman sebelumnya",
+	"prp-editinsequence-show-dialog-toggle-label": "Tampilkan dialog ini setiap kali \" $1 \" diklik",
+	"prp-editinsequence-editsummary-placeholder": "Jelaskan perubahan Anda",
 	"proofreadpage-openseadragon-no-image-found": "Gagal menginisialisasi OpenSeadragon, gambar tidak ditemukan.",
 	"proofreadpage-pagelist-input-preview-button": "Pratinjau daftar halaman",
 	"proofreadpage-pagelist-dialog-update-button": "Perbarui daftar halaman",
@@ -166,9 +175,11 @@
 	"tag-proofreadpage-quality2": "Bermasalah",
 	"tag-proofreadpage-quality3": "Telah diuji baca",
 	"tag-proofreadpage-quality4": "Tervalidasi",
+	"tag-proofreadpage-editinsequence": "EditInSequence",
 	"tag-proofreadpage-quality0-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality3}}\"",
-	"tag-proofreadpage-quality4-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality4}}\""
+	"tag-proofreadpage-quality4-description": "Suntingan yang mengubah kualitas halaman menjadi \"{{int:tag-proofreadpage-quality4}}\"",
+	"tag-proofreadpage-editinsequence-description": "Pengeditan dilakukan menggunakan mode EditInSequence yang baru"
 }

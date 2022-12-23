@@ -168,9 +168,11 @@
 	"tag-proofreadpage-quality2": "בעייתי",
 	"tag-proofreadpage-quality3": "בוצעה הגהה",
 	"tag-proofreadpage-quality4": "אומת",
+	"tag-proofreadpage-editinsequence": "עריכה ברצף",
 	"tag-proofreadpage-quality0-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality3}}\"",
-	"tag-proofreadpage-quality4-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality4}}\""
+	"tag-proofreadpage-quality4-description": "עריכות ששינו את איכות הדף ל\"{{int:tag-proofreadpage-quality4}}\"",
+	"tag-proofreadpage-editinsequence-description": "עריכות שנעשו במצב החדש \"עריכה ברצף\""
 }

@@ -136,7 +136,7 @@
 	"prp-edit-in-sequence-preview-api-error": "Error caused by the API returning unexpected output. Generic error message about reporting to phabricator.",
 	"prp-editinsequence-error": "Title of error message displayed to user when EditInSequence encounters a error state",
 	"prp-editinsequence-preview": "Title of preview button",
-	"prp-editinsequence-save-settings-dialog-primary-button-title": "Title of button to save settings",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Title of button to save settings\n{{Identical|Save settings}}",
 	"prp-editinsequence-save-dialog-title": "Title of dialog asking for confirmation before saving current page",
 	"prp-editinsequence-save-settings-dialog-title": "Title asking for metadata associated with changes being made later in the current session (ex: edit summaries)",
 	"prp-editinsequence-save-next-action-label": "Label for a selection asking what to do after saving a page",

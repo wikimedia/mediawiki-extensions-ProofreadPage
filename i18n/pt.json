@@ -116,6 +116,15 @@
 	"prp-edit-in-sequence-preview-api-error": "Não foi possível fazer a antevisão da página devido ao seguinte erro: $1 Se este erro é inesperado, reporte-o a phabricator.wikimedia.org,  por favor.",
 	"prp-editinsequence-error": "Erro na edição sequencial (EditInSequence). Não é possível prosseguir.",
 	"prp-editinsequence-preview": "Antever",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Gravar definições",
+	"prp-editinsequence-save-dialog-title": "Gravar esta página",
+	"prp-editinsequence-save-settings-dialog-title": "Gravar metadados de alterações subsequentes",
+	"prp-editinsequence-save-next-action-label": "Depois de clicar o botão \"$1\", executar esta operação",
+	"prp-editinsequence-save-next-action-do-nothing": "Não fazer nada",
+	"prp-editinsequence-save-next-action-go-to-next": "Ir para a página seguinte",
+	"prp-editinsequence-save-next-action-go-to-prev": "Ir para a página anterior",
+	"prp-editinsequence-show-dialog-toggle-label": "Mostrar este diálogo sempre que o botão \"$1\" for clicado",
+	"prp-editinsequence-editsummary-placeholder": "Descreva as suas mudanças",
 	"proofreadpage-openseadragon-no-image-found": "Falha de inicialização do OpenSeadragon. Não foi encontrada nenhuma imagem.",
 	"proofreadpage-pagelist-input-preview-button": "Antever a \"pagelist\"",
 	"proofreadpage-pagelist-dialog-update-button": "Atualizar a \"pagelist\"",
@@ -164,9 +173,11 @@
 	"tag-proofreadpage-quality2": "Problemáticas",
 	"tag-proofreadpage-quality3": "Revistas",
 	"tag-proofreadpage-quality4": "Validadas",
+	"tag-proofreadpage-editinsequence": "EditarSequencialmente",
 	"tag-proofreadpage-quality0-description": "Edições que mudaram a qualidade da página para \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Edições que alteraram a qualidade da página para \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Edições que mudaram a qualidade da página para \"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "Edições que mudaram a qualidade da página para \"{{int:tag-proofreadpage-quality3}}\"",
-	"tag-proofreadpage-quality4-description": "Edições que mudaram a qualidade da página para \"{{int:tag-proofreadpage-quality4}}\""
+	"tag-proofreadpage-quality4-description": "Edições que mudaram a qualidade da página para \"{{int:tag-proofreadpage-quality4}}\"",
+	"tag-proofreadpage-editinsequence-description": "Edições realizadas usando o novo modo EditarSequencialmente"
 }
