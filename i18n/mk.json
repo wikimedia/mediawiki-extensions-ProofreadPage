@@ -162,9 +162,11 @@
 	"tag-proofreadpage-quality2": "Проблематична",
 	"tag-proofreadpage-quality3": "Прегледана",
 	"tag-proofreadpage-quality4": "Потврдена",
+	"tag-proofreadpage-editinsequence": "Последователно уредување",
 	"tag-proofreadpage-quality0-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality0}}“",
 	"tag-proofreadpage-quality1-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality1}}“",
 	"tag-proofreadpage-quality2-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality2}}“",
 	"tag-proofreadpage-quality3-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality3}}“",
-	"tag-proofreadpage-quality4-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality4}}“"
+	"tag-proofreadpage-quality4-description": "Уредувања кои го сменија квалитетот на страницата на „{{int:tag-proofreadpage-quality4}}“",
+	"tag-proofreadpage-editinsequence-description": "Уредувања направени со новиот режим Последователно уредување"
 }

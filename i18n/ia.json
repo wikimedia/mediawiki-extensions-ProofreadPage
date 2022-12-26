@@ -161,9 +161,11 @@
 	"tag-proofreadpage-quality2": "Problematic",
 	"tag-proofreadpage-quality3": "Corrigite",
 	"tag-proofreadpage-quality4": "Validate",
+	"tag-proofreadpage-editinsequence": "ModificationInSequentia",
 	"tag-proofreadpage-quality0-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality3}}\"",
-	"tag-proofreadpage-quality4-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality4}}\""
+	"tag-proofreadpage-quality4-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality4}}\"",
+	"tag-proofreadpage-editinsequence-description": "Modificationes facite usante le nove modo ModificationInSequentia"
 }
