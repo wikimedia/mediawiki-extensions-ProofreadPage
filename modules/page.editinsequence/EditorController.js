@@ -19,6 +19,10 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	this.$footer = $content.find( '#wpFooterTextbox' );
 	this.$heading = $content.find( '#firstHeadingTitle' );
 	this.$editorArea = $content.find( '.prp-page-content' );
+	this.$header.on( 'keyup', this.onHeaderChange.bind( this ) );
+	this.$body.on( 'keyup', this.onBodyChange.bind( this ) );
+	this.$footer.on( 'keyup', this.onFooterChange.bind( this ) );
+	mw.hook( 'ext.CodeMirror.switch' ).add( this.onCodeMirrorSwitch.bind( this ) );
 
 	// Remove the actionable items from the default interface
 	$content.find( '.editCheckboxes' ).hide();
@@ -38,6 +42,38 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 OO.mixinClass( EditorController, OO.EventEmitter );
 
 /**
+ * Depending on whether or not codemirror is used, switch update mechanism. For CodeMirror
+ * we use the DOMNodeInserted and DOMNodeRemoved events to detect changes instead of the
+ * 'change' events as in a normal textarea.
+ *
+ * @param {boolean} enabled Status of CodeMirror
+ * @param {jQuery} $textbox textbox corresponding to the CodeMirror extension
+ */
+EditorController.prototype.onCodeMirrorSwitch = function ( enabled, $textbox ) {
+	var $oldBody = this.$body;
+	this.$body = $textbox;
+	if ( enabled ) {
+		this.$body.on( 'DOMNodeInserted DOMNodeRemoved', this.onBodyChange.bind( this ) );
+		$oldBody.off( 'keyup' );
+	} else {
+		this.$body.on( 'keyup', this.onBodyChange.bind( this ) );
+		$oldBody.off( 'DOMNodeInserted DOMNodeRemoved' );
+	}
+};
+
+EditorController.prototype.onHeaderChange = function () {
+	this.pageModel.setHeader( this.$header.val() );
+};
+
+EditorController.prototype.onBodyChange = function () {
+	this.pageModel.setBody( this.$body.textSelection( 'getContents' ) );
+};
+
+EditorController.prototype.onFooterChange = function () {
+	this.pageModel.setFooter( this.$footer.val() );
+};
+
+/**
  * Event handler for pageModelUpdated
  *
  * @see PageModel.js
@@ -55,7 +91,7 @@ EditorController.prototype.onPageModelUpdated = function () {
  * Update the editor interface with data from pageModel
  */
 EditorController.prototype.updateEditorData = function () {
-	var editorData = this.pageModel.getEditorData();
+	var editorData = this.pageModel.getInitialEditorData();
 	this.$heading.text( this.pageModel.getPageName() );
 	this.$header.val( editorData.header );
 	this.$body.val( editorData.body );
@@ -73,31 +109,13 @@ EditorController.prototype.setDefaultEditorData = function () {
 };
 
 /**
- * Builds wikitext from supplied header, body, footer, pageStatus values supplied
- *
- * @param {string} header
- * @param {string} body
- * @param {string} footer
- * @param {string} pageStatus
- * @return {string} wikiText
- */
-EditorController.prototype.getWikitext = function ( header, body, footer, pageStatus ) {
-	var wikitext = '<noinclude><pagequality level="$level" user="$user" />$header</noinclude>$body<noinclude>$footer</noinclude>';
-	wikitext = wikitext.replace( '$header', header );
-	wikitext = wikitext.replace( '$body', body );
-	wikitext = wikitext.replace( '$footer', footer );
-	wikitext = wikitext.replace( '$level', pageStatus.status );
-	wikitext = wikitext.replace( '$user', pageStatus.lastUser );
-	return wikitext;
-};
-
-/**
  * Updates the previews of a page with the latest preview, if the preview is not being shown
  * this function is a no-op
  */
 EditorController.prototype.updatePreview = function () {
-	this.previewWidget.updatePreview( this.getWikitext( this.$header.val(), this.$body.val(), this.$footer.val(), this.pageModel.getPageStatus() ), this.pageModel.getPageName() );
+	this.previewWidget.updatePreview( this.pageModel.getCurrentWikitext(), this.pageModel.getPageName() );
 };
+
 /**
  * Shows the preview
  */
@@ -123,7 +141,7 @@ EditorController.prototype.hidePreview = function () {
 
 EditorController.prototype.save = function () {
 	var saveData = this.saveModel.getSaveData(),
-		wikiText = this.getWikitext( this.$header.val(), this.$body.val(), this.$footer.val(), this.pageModel.getPageStatus() ),
+		wikiText = this.pageModel.getCurrentWikitext(),
 		pageName = this.pageModel.getPageName();
 	return this.api.postWithToken( 'csrf', {
 		action: 'edit',

@@ -14,9 +14,16 @@ function PageModel( pagelistModel, fallbackType ) {
 	this.exists = false;
 	this.pageName = null;
 	this.header = '';
+	this.initialHeader = '';
 	this.body = '';
+	this.initialBody = '';
 	this.footer = '';
+	this.initialFooter = '';
 	this.pageStatus = {
+		status: 1,
+		lastUser: mw.config.get( 'wgUserName' )
+	};
+	this.initialPageStatus = {
 		status: 1,
 		lastUser: mw.config.get( 'wgUserName' )
 	};
@@ -32,6 +39,7 @@ OO.mixinClass( PageModel, OO.EventEmitter );
  * @param {string} page Name of page
  */
 PageModel.prototype.fetchData = function ( page ) {
+	this.emit( 'beforePageModelUpdate' );
 	var api = new mw.Api();
 	this.pageName = page;
 
@@ -42,7 +50,10 @@ PageModel.prototype.fetchData = function ( page ) {
 		titles: page,
 		rvprop: 'content',
 		rvslots: '*'
-	} ).then( this.setPageData.bind( this ) ).catch( function ( err ) {
+	} ).then( function ( result ) {
+		this.setInitialPageData( result );
+		this.setPageData();
+	}.bind( this ) ).catch( function ( err ) {
 		if ( err === 'http' ) {
 			this.handleError( mw.msg( 'prp-editinsequence-http-error-page' ) );
 		} else {
@@ -69,11 +80,11 @@ PageModel.prototype.handleError = function ( err ) {
  * @param {Object} data Data recieved from fetchData
  * @fires pageModelUpdated Event denoting that the PageModel has been updated with data for current page
  */
-PageModel.prototype.setPageData = function ( data ) {
+PageModel.prototype.setInitialPageData = function ( data ) {
 	var pageid = data.query.pageids[ 0 ];
 
 	if ( parseInt( pageid ) === -1 ) {
-		this.setDefault();
+		this.setInitialFallbackPageData();
 		return;
 	}
 
@@ -81,12 +92,11 @@ PageModel.prototype.setPageData = function ( data ) {
 
 	var pageData = this.parsePageData( wikitext );
 
-	this.header = pageData.header;
-	this.body = pageData.body;
-	this.footer = pageData.footer;
-	this.pageStatus = pageData.pageStatus;
+	this.initialHeader = pageData.header;
+	this.initialBody = pageData.body;
+	this.initialFooter = pageData.footer;
+	this.initialPageStatus = pageData.pageStatus;
 	this.exists = true;
-	this.emit( 'pageModelUpdated' );
 };
 
 /**
@@ -135,12 +145,33 @@ PageModel.prototype.setPageStatus = function ( status ) {
 };
 
 /**
+ * @param {string} footer
+ */
+PageModel.prototype.setFooter = function ( footer ) {
+	this.footer = footer;
+};
+
+/**
+ * @param {string} header
+ */
+PageModel.prototype.setHeader = function ( header ) {
+	this.header = header;
+};
+
+/**
+ * @param {string} body
+ */
+PageModel.prototype.setBody = function ( body ) {
+	this.body = body;
+};
+
+/**
  * Handle page not existing and load backup data
  *
  * @private
  * @fires pageModelUpdated Event denoting that the PageModel has been updated with data for current page
  */
-PageModel.prototype.setDefault = function () {
+PageModel.prototype.setInitialFallbackPageData = function () {
 	if ( this.fallbackType === 'ocr' ) {
 		// TODO(sohom): fetch ocr of page image
 		return;
@@ -149,13 +180,23 @@ PageModel.prototype.setDefault = function () {
 		return;
 	}
 	this.exists = false;
-	this.body = '';
-	this.footer = '';
-	this.header = '';
-	this.pageStatus = {
+	this.initialBody = '';
+	this.initialFooter = '';
+	this.initialHeader = '';
+	this.initialPageStatus = {
 		status: 1,
 		lastUser: mw.config.get( 'wgUserName' )
 	};
+};
+
+/**
+ * Sets the page data based on the initial data
+ */
+PageModel.prototype.setPageData = function () {
+	this.body = this.initialBody;
+	this.header = this.initialHeader;
+	this.footer = this.initialFooter;
+	this.pageStatus = this.initialPageStatus;
 	this.emit( 'pageModelUpdated' );
 };
 
@@ -190,16 +231,56 @@ PageModel.prototype.getExists = function () {
 };
 
 /**
+ * Builds wikitext from supplied header, body, footer, pageStatus values
+ *
+ * @param {string} header
+ * @param {string} body
+ * @param {string} footer
+ * @param {Object} pageStatus
+ * @param {number} pageStatus.status
+ * @param {string} pageStatus.lastUser
+ * @public
+ * @return {string} wikiText
+ */
+PageModel.prototype.getWikitext = function ( header, body, footer, pageStatus ) {
+	var wikitext = '<noinclude><pagequality level="$level" user="$user" />$header</noinclude>$body<noinclude>$footer</noinclude>';
+	wikitext = wikitext.replace( '$header', header );
+	wikitext = wikitext.replace( '$body', body );
+	wikitext = wikitext.replace( '$footer', footer );
+	wikitext = wikitext.replace( '$level', pageStatus.status );
+	wikitext = wikitext.replace( '$user', pageStatus.lastUser );
+	return wikitext;
+};
+
+/**
+ * Get a string representing wikitext of the page when editor started editing
+ *
+ * @return {string} Serialized wikitext
+ */
+PageModel.prototype.getInitialWikitext = function () {
+	return this.getWikitext( this.initialHeader, this.initialBody, this.initialFooter, this.initialPageStatus );
+};
+
+/**
+ * Get a string representing wikitext of the page based on the current edits
+ *
+ * @return {string} Serialized wikitext
+ */
+PageModel.prototype.getCurrentWikitext = function () {
+	return this.getWikitext( this.header, this.body, this.footer, this.pageStatus );
+};
+
+/**
  * Get header, footer and body for current page
  *
  * @public
  * @return {Object<string>}
  */
-PageModel.prototype.getEditorData = function () {
+PageModel.prototype.getInitialEditorData = function () {
 	return {
-		header: this.header,
-		body: this.body,
-		footer: this.footer
+		header: this.initialHeader,
+		body: this.initialBody,
+		footer: this.initialFooter
 	};
 };
 
