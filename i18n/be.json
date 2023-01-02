@@ -3,7 +3,11 @@
 		"authors": [
 			"Wizardist",
 			"Хомелка",
-			"Chadyka"
+			"Chadyka",
+			"Maksim L.",
+			"No Sleep till Krupki",
+			"Tomato Cream",
+			"Vlad5250"
 		]
 	},
 	"nstab-page": "Старонка",
@@ -22,7 +26,7 @@
 	"proofreadpage_nologin": "Вы не ўвайшлі ў сістэму",
 	"proofreadpage_nologintext": "Вы павінны [[Special:UserLogin|ўвайсці ў сістэму]], каб змяняць статус праверкі старонкі.",
 	"proofreadpage_notallowedtext": "Вам не дазволена змяняць статус праверкі гэтай старонкі.",
-	"proofreadpage_dataconfig_badformatted": "Няспраўнасць ў канфігурацыі дадзеных",
+	"proofreadpage_dataconfig_badformatted": "Няспраўнасць у канфігурацыі даных",
 	"proofreadpage_dataconfig_badformattedtext": "Старонка [[Mediawiki:Proofreadpage index data config]] не ў блага фарматаваным JSON-е.",
 	"proofreadpage_number_expected": "Памылка: чакаецца лічбавае значэнне",
 	"proofreadpage_interval_too_large": "Памылка: занадта вялікі інтэрвал",
