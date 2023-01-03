@@ -109,6 +109,8 @@
 	"prp-edit-in-sequence-preview-http-error": "Не удалось выполнить предварительный просмотр страницы из-за проблем с сетью, пожалуйста, повторите попытку позже.",
 	"prp-edit-in-sequence-preview-api-error": "Не удалось выполнить предварительный просмотр страницы из-за следующей ошибки: $1 Если это непредвиденная ошибка, сообщите об этой ошибке на phabricator.wikimedia.org.",
 	"prp-editinsequence-preview": "Предпросмотр",
+	"prp-editinsequence-save-next-action-do-nothing": "Ничего не делать",
+	"prp-editinsequence-save-next-action-go-to-next": "Перейти на следующую страницу",
 	"proofreadpage-pagelist-input-preview-button": "Предпросмотр списка страниц",
 	"proofreadpage-pagelist-dialog-discard-changes": "Отменить изменения",
 	"proofreadpage-pagelist-dialog-cancel": "Отмена",
