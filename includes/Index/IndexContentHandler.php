@@ -4,7 +4,6 @@ namespace ProofreadPage\Index;
 
 use Article;
 use Content;
-use ContentHandler;
 use IContextSource;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
@@ -55,7 +54,9 @@ class IndexContentHandler extends TextContentHandler {
 	 * @inheritDoc
 	 */
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_INDEX ) {
-		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
+		$this->wikitextContentHandler = MediaWikiServices::getInstance()
+			->getContentHandlerFactory()
+			->getContentHandler( CONTENT_MODEL_WIKITEXT );
 		$this->parser = $this->buildParser();
 		$this->wikitextLinksExtractor = new WikitextLinksExtractor();
 

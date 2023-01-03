@@ -152,7 +152,9 @@ class PageContent extends TextContent {
 				}
 			}
 		}
-		$contentHandler = \ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
+		$contentHandler = MediaWikiServices::getInstance()
+			->getContentHandlerFactory()
+			->getContentHandler( CONTENT_MODEL_PROOFREAD_PAGE );
 		return $contentHandler->makeEmptyContent();
 	}
 

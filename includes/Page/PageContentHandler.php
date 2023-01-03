@@ -3,7 +3,6 @@
 namespace ProofreadPage\Page;
 
 use Content;
-use ContentHandler;
 use Html;
 use IContextSource;
 use MediaWiki\Content\Renderer\ContentParseParams;
@@ -42,7 +41,9 @@ class PageContentHandler extends TextContentHandler {
 	 */
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_PAGE ) {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ] );
-		$this->wikitextContentHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
+		$this->wikitextContentHandler = MediaWikiServices::getInstance()
+			->getContentHandlerFactory()
+			->getContentHandler( CONTENT_MODEL_WIKITEXT );
 	}
 
 	/**
@@ -364,7 +365,9 @@ class PageContentHandler extends TextContentHandler {
 			return false;
 		}
 
-		$wikitextHandler = ContentHandler::getForModelID( CONTENT_MODEL_WIKITEXT );
+		$wikitextHandler = MediaWikiServices::getInstance()
+			->getContentHandlerFactory()
+			->getContentHandler( CONTENT_MODEL_WIKITEXT );
 		$mergedHeader = $myContent->getHeader()->equals( $yourContent->getHeader() )
 			? $myContent->getHeader()
 			: $wikitextHandler->merge3(

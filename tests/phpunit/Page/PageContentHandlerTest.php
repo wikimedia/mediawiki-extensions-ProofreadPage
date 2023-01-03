@@ -28,7 +28,9 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->handler = ContentHandler::getForModelID( CONTENT_MODEL_PROOFREAD_PAGE );
+		$this->handler = $this->getServiceContainer()
+			->getContentHandlerFactory()
+			->getContentHandler( CONTENT_MODEL_PROOFREAD_PAGE );
 	}
 
 	private static function newContent(
