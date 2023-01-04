@@ -103,6 +103,15 @@
 	"prp-edit-in-sequence-preview-api-error": "Dem fail go preview de page sake of de following error: $1 If dis error be unexpected, we beg report dis error go phabricator.wikimedia.org.",
 	"prp-editinsequence-error": "EditInSequence error, no fi proceed further",
 	"prp-editinsequence-preview": "Preview",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Make you save settings",
+	"prp-editinsequence-save-dialog-title": "Save dis page",
+	"prp-editinsequence-save-settings-dialog-title": "Make you save metadata sake of subsequent changes",
+	"prp-editinsequence-save-next-action-label": "After you click de \"$1\" button, make you perform dis action",
+	"prp-editinsequence-save-next-action-do-nothing": "Make you no do anything",
+	"prp-editinsequence-save-next-action-go-to-next": "Go next page",
+	"prp-editinsequence-save-next-action-go-to-prev": "Go previous page",
+	"prp-editinsequence-show-dialog-toggle-label": "Make you show dis dialog every time dem click \"$1\"",
+	"prp-editinsequence-editsummary-placeholder": "Make you decribe your changes",
 	"proofreadpage-openseadragon-no-image-found": "Dem fail to initialize OpenSeadragon, dem no find image.",
 	"proofreadpage-pagelist-input-preview-button": "Preview pagelist",
 	"proofreadpage-pagelist-dialog-update-button": "Update pagelist",
@@ -151,9 +160,11 @@
 	"tag-proofreadpage-quality2": "Problematic",
 	"tag-proofreadpage-quality3": "Proofread",
 	"tag-proofreadpage-quality4": "Dem validate",
+	"tag-proofreadpage-editinsequence": "EditInSequence",
 	"tag-proofreadpage-quality0-description": "Edits wey e change page quality go \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Edits wey e change quality go \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Edits wey e change page quality go \"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "Edits wey e change page quality go \"{{int:tag-proofreadpage-quality4}}\"",
-	"tag-proofreadpage-quality4-description": "Edits wey e change page quality go \"{{int:tag-proofreadpage-quality4}}\""
+	"tag-proofreadpage-quality4-description": "Edits wey e change page quality go \"{{int:tag-proofreadpage-quality4}}\"",
+	"tag-proofreadpage-editinsequence-description": "Edits dem make wey dem use de fresh EditInSequence mode"
 }
