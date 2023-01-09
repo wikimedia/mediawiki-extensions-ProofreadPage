@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Growingup",
-			"Janatkg"
+			"Janatkg",
+			"Bosogo"
 		]
 	},
 	"proofreadpage_nextpage": "кийинки барак",
 	"proofreadpage_prevpage": "мурунку барак",
 	"proofreadpage_quality0_category": "Текстсиз",
 	"proofreadpage_quality3_category": "Окуп текшерүү",
-	"proofreadpage_quality4_category": "Тастыкталган"
+	"proofreadpage_quality4_category": "Тастыкталган",
+	"proofreadpage_specialpage_label_key": "Издөө:"
 }
