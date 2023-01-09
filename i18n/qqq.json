@@ -152,7 +152,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Title to be displayed when the user clicks on the cancel icon in the dialog despite having unsaved work",
 	"proofreadpage-pagelist-dialog-discard-changes": "Label of button that discards all changes made in the dialog.",
 	"proofreadpage-pagelist-dialog-cancel": "Label of button that cancels current acion\n{{identical|Cancel}}",
-	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Error message when the user uses the 'empty' numbering system in the pagelist.",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Error message when the user uses the 'empty' numbering system in the pagelist ('empty' is a not translatable keyword, like 'roman' or 'highroman').",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Error when there is more than one pagelist tag inside a field meant to accept pagelists.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Error when there is no pagelist tag inside a field meant to accept pagelists.",
 	"proofreadpage-pagelist-parsing-error-php": "Error when the pagelist tag cannot be rendered server side.\nShould contain only one $1 which will be replaced with the error message.",

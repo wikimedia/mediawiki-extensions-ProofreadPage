@@ -66,6 +66,8 @@
 	"proofreadpage-button-zoom-in-label": "Chwyddo",
 	"proofreadpage-button-zoom-out-label": "Lleihau",
 	"proofreadpage-pageinfo-status": "Statws y prawfddarllen",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Cadw gosodiadau",
+	"prp-editinsequence-save-dialog-title": "Cadw'r dudalen hon",
 	"prp-editinsequence-editsummary-placeholder": "Disgrifiwch eich newidiadau",
 	"proofreadpage-preferences-showheaders-label": "Dangos y maesydd pennyn a throedyn wrth olygu yn y parth {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "defnyddio gosodiad ar draws pan yn golygu yn y parth {{ns:page}}",

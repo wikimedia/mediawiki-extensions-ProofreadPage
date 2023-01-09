@@ -4,6 +4,9 @@
 			"Aleator"
 		]
 	},
+	"apihelp-query+imageforpage-description": "Prerenderitza i proporciona URLs a les imatges d'una pàgina determinada a l'espai de noms \"Pàgina:\".",
+	"apihelp-query+imageforpage-summary": "Prerenderitza i proporciona URLs a les imatges d'una pàgina determinada a l'espai de noms \"Pàgina:\".",
+	"apihelp-query+imageforpage-param-prop": "Quin tipus d'imatges o propietats d'imatges tornar per a una determinada pàgina a l'espai de noms \"Pàgina:\".",
 	"apierror-proofreadpage-invalidindex": "Títol d'índex \"$1\" invàlid.",
 	"apihelp-query+proofread-description": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
 	"apihelp-query+proofread-summary": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
