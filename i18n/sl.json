@@ -96,7 +96,7 @@
 	"proofreadpage-button-toggle-layout-label": "Navpična/vodoravna postavitev",
 	"proofreadpage-button-toggle-visibility-label": "Pokaži/skrij glavo in nogo strani",
 	"proofreadpage-button-zoom-in-label": "Povečaj",
-	"proofreadpage-button-zoom-out-label": "Pomanjšaj",
+	"proofreadpage-button-zoom-out-label": "Oddalji",
 	"proofreadpage-pageinfo-status": "Stanje pregleda",
 	"prp-editinsequence-http-error-pagelist": "Predogled strani ni uspel zaradi težav z omrežjem; poskusite znova pozneje.",
 	"prp-editinsequence-pagination-does-not-exist": "Za to stran ni paginacije, zato ni mogoče določiti naslednje in prejšnje strani. Če menite, da je bila to napaka, jo sporočite na phabricator.wikimedia.org.",
