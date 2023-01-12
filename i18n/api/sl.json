@@ -8,6 +8,7 @@
 	"apihelp-query+imageforpage-description": "Predupodobi in prikaže URL-je slik za dano stran v imenskem prostoru »Stran:«.",
 	"apihelp-query+imageforpage-summary": "Predupodobi in prikaže URL-je slik za dano stran v imenskem prostoru »Stran:«.",
 	"apihelp-query+imageforpage-param-prop": "Katere vrste slik ali lastnosti slik naj se vrnejo za dano stran v imenskem prostoru »Stran:«.",
+	"apierror-proofreadpage-invalidindex": "Neveljaven naslov indeksa »$1«.",
 	"apihelp-query+proofread-description": "Prikaže informacije o trenutnem stanju pregledanosti dotičnih strani.",
 	"apihelp-query+proofread-summary": "Prikaže informacije o trenutnem stanju pregledanosti dotičnih strani.",
 	"apihelp-query+proofread-example-1": "Prikaže status pregledanosti za strani v imenskem prostoru 250",
@@ -15,5 +16,12 @@
 	"apihelp-query+proofreadinfo-summary": "Prikaže informacije o nastavitvah Krtačnega odtisa.",
 	"apihelp-query+proofreadinfo-param-prop": "Katere lastnosti pregleda privzeti:\n;namespaces:Informacije o imenskih prostorih \"{{ns:Page}}\" in \"{{ns:Index}}\"",
 	"apihelp-query+proofreadinfo-example-1": "Prikaže začetne informacije",
-	"apihelp-query+proofreadinfo-example-3": "Prikaže informacije imenskega prostora"
+	"apihelp-query+proofreadinfo-example-3": "Prikaže informacije imenskega prostora",
+	"apihelp-query+proofreadpagesinindex-description": "Navedi strani v danem indeksu",
+	"apihelp-query+proofreadpagesinindex-summary": "Navedi strani v danem indeksu",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Omeji, koliko strani bo vrnjenih",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "ID indeksne strani, za katero želite pridobiti strani",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Katere lastnosti naj se pridobijo za vsako stran",
+	"apihelp-query+proofreadpagesinindex-param-title": "Naslov indeksne strani, za katero naj se pridobijo strani",
+	"apihelp-query+proofreadpagesinindex-example-1": "Vrne privzete informacije"
 }
