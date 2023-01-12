@@ -133,12 +133,49 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 	}.bind( this );
 
 	this.viewer.addHandler( 'open', function () {
+		this.initializeViewportFromSavedData( id );
 		this.emit( 'prp-osd-after-creation', this.viewer );
 		// inform any listeners that the OSD viewer is ready
 		mw.hook( 'ext.proofreadpage.osd-viewer-ready' ).fire( this.viewer );
 	}.bind( this ) );
 
+	this.viewer.addHandler( 'viewport-change', function () {
+		// the viewer may have been already destroyed on H/V swap
+		if ( !this.viewer ) {
+			return;
+		}
+
+		var center = this.viewer.viewport.getCenter();
+		var newViewport = {
+			rotation: this.viewer.viewport.getRotation(),
+			zoom: this.viewer.viewport.getZoom(),
+			x: center.x,
+			y: center.y
+		};
+
+		mw.storage.setObject( this.getStorageKey( id ), newViewport, 31536000 );
+	}.bind( this ) );
+
 	this.lastId = id;
+};
+
+/**
+ * Initializes viewport from previously saved data
+ *
+ * @private
+ * @param {string} id Current image orientation
+ */
+OpenSeadragonController.prototype.initializeViewportFromSavedData = function ( id ) {
+	var viewportData = mw.storage.getObject( this.getStorageKey( id ) );
+	if ( viewportData === null ) {
+		return;
+	}
+
+	this.viewer.viewport.setRotation( viewportData.rotation );
+	this.viewer.viewport.zoomTo( viewportData.zoom );
+	this.viewer.viewport.panTo(
+		new OpenSeadragon.Point( viewportData.x, viewportData.y )
+	);
 };
 
 /**
@@ -172,6 +209,20 @@ OpenSeadragonController.prototype.getCurrentImage = function () {
 	anchorTag.href = url;
 
 	return anchorTag.href;
+};
+
+/**
+ * Get Storage key for particular Page: page
+ * We are going to use the following format
+ * mw-prp-page-edit-<name_of_associated_index_page>-<id>
+ * where id denotes vertical/horizontal
+ *
+ * @private
+ * @param {string} id
+ * @return {string} Storage key for given Page: page
+ */
+OpenSeadragonController.prototype.getStorageKey = function ( id ) {
+	return 'mw-prp-page-edit-' + encodeURIComponent( mw.config.get( 'prpIndexTitle' ) ) + id;
 };
 
 module.exports = OpenSeadragonController;
