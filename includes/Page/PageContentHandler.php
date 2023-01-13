@@ -85,13 +85,23 @@ class PageContentHandler extends TextContentHandler {
 		$level = $content->getLevel();
 		$user = $level->getUser();
 
+		if ( $user ) {
+			if ( $user->isHidden() ) {
+				$userName = wfMessage( 'rev-deleted-user' )->inContentLanguage()->text();
+			} else {
+				$userName = $user->getName();
+			}
+		} else {
+			$userName = null;
+		}
+
 		return json_encode( [
 			'header' => $content->getHeader()->serialize(),
 			'body' => $content->getBody()->serialize(),
 			'footer' => $content->getFooter()->serialize(),
 			'level' => [
 				'level' => $level->getLevel(),
-				'user' => $user ? $user->getName() : null
+				'user' => $userName
 			]
 		] );
 	}
@@ -103,7 +113,17 @@ class PageContentHandler extends TextContentHandler {
 	private function serializeContentInWikitext( PageContent $content ) {
 		$level = $content->getLevel();
 		$user = $level->getUser();
-		$userName = $user ? $user->getName() : '';
+
+		if ( $user ) {
+			if ( $user->isHidden() ) {
+				$userName = wfMessage( 'rev-deleted-user' )->inContentLanguage()->text();
+			} else {
+				$userName = $user->getName();
+			}
+		} else {
+			$userName = null;
+		}
+
 		$text =
 			'<noinclude>' .
 				'<pagequality level="' . $level->getLevel() . '" user="' . $userName . '" />' .
