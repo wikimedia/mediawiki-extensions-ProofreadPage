@@ -36,10 +36,21 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	private static function newContent(
 		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
 	) {
+		$user = PageLevel::getUserFromUserName( $proofreader );
+		if ( $user ) {
+			self::setIfUserIsHidden( $user, false );
+		}
 		return new PageContent(
 			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
-			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
+			new PageLevel( $level, $user )
 		);
+	}
+
+	private static function setIfUserIsHidden( $user, $hidden ) {
+		$reflection = new \ReflectionClass( $user );
+		$reflection_property = $reflection->getProperty( 'mHideName' );
+		$reflection_property->setAccessible( true );
+		$reflection_property->setValue( $user, $hidden );
 	}
 
 	public function testCanBeUsedOn() {
