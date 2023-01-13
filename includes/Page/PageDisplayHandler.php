@@ -132,10 +132,20 @@ class PageDisplayHandler {
 	 */
 	public function getPageJsConfigVars( Title $title, PageContent $content ): array {
 		$indexFields = $this->getIndexFieldsForJS( $title );
+		$user = $content->getLevel()->getUser();
+
+		if ( $user ) {
+			if ( $user->isHidden() ) {
+				$userName = wfMessage( 'rev-deleted-user' )->inContentLanguage()->text();
+			} else {
+				$userName = $user->getName();
+			}
+		} else {
+			$userName = null;
+		}
 
 		$jsConfigVars = [
-			'prpPageQualityUser' =>
-				$content->getLevel()->getUser() ? $content->getLevel()->getUser()->getName() : null,
+			'prpPageQualityUser' => $userName,
 			'prpPageQuality' =>
 				$content->getLevel()->getLevel(),
 			'prpIndexFields' => $indexFields
