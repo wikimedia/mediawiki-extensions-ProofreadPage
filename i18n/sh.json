@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"OC Ripper"
+			"OC Ripper",
+			"Vipz",
+			"Vlad5250"
 		]
 	},
 	"proofreadpage_quality0_category": "Bez teksta",
@@ -9,5 +11,18 @@
 	"proofreadpage_quality2_category": "Problematično",
 	"proofreadpage_quality3_category": "Provjereno",
 	"proofreadpage_quality4_category": "Potvrđeno",
-	"proofreadpage_quality1_message": "Ova stranica nije bila lektorisana"
+	"proofreadpage_quality0_message": "Ova stranica ne treba biti lektorisana",
+	"proofreadpage_quality1_message": "Ova stranica nije bila lektorisana",
+	"proofreadpage_quality2_message": "Dogodio se problem pri lektorisanju ove stranice",
+	"proofreadpage_quality3_message": "Ova stranica je lektorisana",
+	"proofreadpage_quality4_message": "Ova stranica je potvrđena",
+	"proofreadpage_index_status": "Indeksiraj status",
+	"proofreadpage_index_size": "Broju stranica",
+	"proofreadpage_specialpage_label_orderby": "Redanje po:",
+	"proofreadpage_specialpage_label_key": "Traži:",
+	"proofreadpage_specialpage_label_sortascending": "Poredaj rastuće",
+	"proofreadpage_alphabeticalorder": "Abecednom redu",
+	"proofreadpage_index_listofpages": "Spisak stranica",
+	"proofreadpage_image_message": "Link na stranicu indeksa",
+	"proofreadpage_page_status": "Status stranice"
 }
