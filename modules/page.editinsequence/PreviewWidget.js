@@ -11,6 +11,7 @@ function PreviewWidget( config ) {
 	OO.ui.mixin.PendingElement.call( this );
 	this.$fullText = $( '<textarea>' );
 	this.$previewArea = $( '<div>' );
+	this.$previewArea.hide();
 	this.errorMessageWidget = new OO.ui.MessageWidget();
 	this.errorMessageWidget.toggle( false );
 	this.$element.append( this.errorMessageWidget.$element );
