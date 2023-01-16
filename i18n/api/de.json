@@ -6,9 +6,9 @@
 			"Metalhead64"
 		]
 	},
-	"apihelp-query+imageforpage-description": "Rendert und stellt URLs zu Bildern für eine bestimmte Seite im Namensraum „Seite“ bereit.",
-	"apihelp-query+imageforpage-summary": "Rendert und stellt URLs zu Bildern für eine bestimmte Seite im Namensraum „Seite“ bereit.",
-	"apihelp-query+imageforpage-param-prop": "Welche Arten von Bildern oder Eigenschaften von Bildern für eine bestimmte Seite zurückgegeben werden sollen im Namensraum „Seite“.",
+	"apihelp-query+imageforpage-description": "Pre-rendert und stellt URLs zu Bildern für eine bestimmte Seite im Namensraum „Seite:“ bereit.",
+	"apihelp-query+imageforpage-summary": "Pre-rendert und stellt URLs zu Bildern für eine bestimmte Seite im Namensraum „Seite:“ bereit.",
+	"apihelp-query+imageforpage-param-prop": "Welche Arten von Bildern oder Eigenschaften von Bildern für eine bestimmte Seite im Namensraum „Seite:“ zurückgegeben werden sollen.",
 	"apierror-proofreadpage-invalidindex": "Ungültiger Index-Titel „$1“.",
 	"apihelp-query+proofread-description": "Gibt Informationen über den Korrekturlesungsstatus der Seiten zurück.",
 	"apihelp-query+proofread-summary": "Liefert Informationen über den aktuellen Status des Korrekturlesens der angegebenen Seiten.",
