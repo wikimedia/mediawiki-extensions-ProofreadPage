@@ -19,7 +19,9 @@
 			"Translationista",
 			"MarcoAurelio",
 			"Ninovolador",
-			"Sukanya121"
+			"Sukanya121",
+			"DiegoAmbrocio",
+			"McDutchie"
 		]
 	},
 	"nstab-page": "Página",
@@ -88,7 +90,7 @@
 	"action-pagequality-admin": "modificaciones no limitadas al nivel de calidad de la página",
 	"right-pagequality-admin": "Ediciones sin restricción a la etiqueta de calidad de la página",
 	"proofreadpage-section-tools": "Herramientas de corrección",
-	"proofreadpage-group-zoom": "Ampliación",
+	"proofreadpage-group-zoom": "Zum",
 	"proofreadpage-group-other": "Otro",
 	"proofreadpage-button-toggle-visibility-label": "Mostrar/ocultar la cabecera y el pie de esta página",
 	"proofreadpage-button-zoom-out-label": "Alejar",
