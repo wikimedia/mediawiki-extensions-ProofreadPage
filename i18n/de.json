@@ -120,6 +120,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Zur vorherigen Seite gehen",
 	"prp-editinsequence-show-dialog-toggle-label": "Dieses Dialogfeld jedes Mal anzeigen, wenn auf „$1“ geklickt wird",
 	"prp-editinsequence-editsummary-placeholder": "Beschreibe deine Änderungen",
+	"prp-editinsequence-could-not-save-edit": "Diese Änderung kann nicht gespeichert werden",
 	"proofreadpage-openseadragon-no-image-found": "Fehler beim Initialisieren von OpenSeadragon; es wurde kein Bild gefunden.",
 	"proofreadpage-pagelist-input-preview-button": "Vorschau der Seitenliste",
 	"proofreadpage-pagelist-dialog-update-button": "Seitenliste aktualisieren",

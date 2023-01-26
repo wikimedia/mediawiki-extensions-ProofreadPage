@@ -120,6 +120,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "לעבור לדף הקודם",
 	"prp-editinsequence-show-dialog-toggle-label": "להציג את תיבת הדו־שיח הזה בכל לחיצה על \"$1\".",
 	"prp-editinsequence-editsummary-placeholder": "נא לתאר את השינויים שלך",
+	"prp-editinsequence-could-not-save-edit": "לא ניתן לשמור את העריכה הזאת",
 	"proofreadpage-openseadragon-no-image-found": "אתחול OpenSeadragon נכשל, לא נמצאה תמונה.",
 	"proofreadpage-pagelist-input-preview-button": "תצוגה מקדימה של רשימת הדפים",
 	"proofreadpage-pagelist-dialog-update-button": "עדכון רשימת דפים",
