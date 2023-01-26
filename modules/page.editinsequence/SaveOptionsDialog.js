@@ -167,10 +167,12 @@ SaveOptionsDialog.prototype.getActionProcess = function ( action ) {
 		return new OO.ui.Process( function () {
 			this.saveGlobalModel.merge( this.saveModel );
 			this.pushPending();
-			this.editorController.save().done( function ( result ) {
-				if ( result && result.edit && result.edit.result === 'Success' ) {
-					this.popPending();
-					this.close( { action: action } );
+			this.editorController.save().always( function ( result, errorResult ) {
+				this.popPending();
+				this.close( { action: action } );
+				if ( errorResult && errorResult.error ) {
+					mw.notify( errorResult.error.info,
+						{ title: mw.msg( 'prp-editinsequence-could-not-save-edit' ), type: 'error' } );
 				}
 			}.bind( this ) );
 		}, this );

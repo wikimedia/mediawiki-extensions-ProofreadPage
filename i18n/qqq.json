@@ -145,6 +145,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Label for a button representing the selection of going to the previous page after saving a page\n* $1 is the label of the save button",
 	"prp-editinsequence-show-dialog-toggle-label": "Label for a toggle asking if the dialog should be shown everytime the save button is clicked.\n* $1 is the label of the save button",
 	"prp-editinsequence-editsummary-placeholder": "Placeholder text for the edit summary input\n{{Identical|Describe your changes}}",
+	"prp-editinsequence-could-not-save-edit": "Title to notification that a edit cannot be saved",
 	"proofreadpage-openseadragon-no-image-found": "Message shown when Openseadragon fails to initialize because no image was found for the current page.",
 	"proofreadpage-pagelist-input-preview-button": "Label on preview button for pagelists.",
 	"proofreadpage-pagelist-dialog-update-button": "Label on update button inside dialog used for updating the pagelist.",
