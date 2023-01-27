@@ -114,6 +114,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Оди на претходната страница",
 	"prp-editinsequence-show-dialog-toggle-label": "Прикажувај го овој дијалог секојпат ќе се стисне на „$1“",
 	"prp-editinsequence-editsummary-placeholder": "Опишете ги направените промени",
+	"prp-editinsequence-could-not-save-edit": "Ова уредување не може да се зачува",
 	"proofreadpage-openseadragon-no-image-found": "Не успеав да го пуштам OpenSeadragon. Не најдов слика.",
 	"proofreadpage-pagelist-input-preview-button": "Преглед на список на страници",
 	"proofreadpage-pagelist-dialog-update-button": "Поднови го списокот на страници",

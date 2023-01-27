@@ -113,6 +113,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Ir al pagina precedente",
 	"prp-editinsequence-show-dialog-toggle-label": "Monstrar iste dialogo cata vice que se clicca sur \"$1\"",
 	"prp-editinsequence-editsummary-placeholder": "Describe tu cambiamentos",
+	"prp-editinsequence-could-not-save-edit": "Iste modification non pote esser salveguardate",
 	"proofreadpage-openseadragon-no-image-found": "Fallimento de initialisation de OpenSeadragon, necun imagine trovate.",
 	"proofreadpage-pagelist-input-preview-button": "Previsualisar lista de paginas",
 	"proofreadpage-pagelist-dialog-update-button": "Actualisar lista de paginas",

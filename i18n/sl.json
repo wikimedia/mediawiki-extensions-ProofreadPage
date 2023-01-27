@@ -115,6 +115,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Pojdi na prejšnjo stran",
 	"prp-editinsequence-show-dialog-toggle-label": "Pokaži to pogovorno okno vsakič, ko kliknem »$1«",
 	"prp-editinsequence-editsummary-placeholder": "Opišite svoje spremembe",
+	"prp-editinsequence-could-not-save-edit": "Tega urejanja ni mogoče shraniti",
 	"proofreadpage-openseadragon-no-image-found": "Inicializacija OpenSeadragona ni uspela, slike ni bilo mogoče najti.",
 	"proofreadpage-pagelist-input-preview-button": "Predogled seznama strani",
 	"proofreadpage-pagelist-dialog-update-button": "Posodobi seznam strani",

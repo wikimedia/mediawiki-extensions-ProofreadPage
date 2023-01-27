@@ -125,6 +125,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Ir para a página anterior",
 	"prp-editinsequence-show-dialog-toggle-label": "Mostrar este diálogo sempre que o botão \"$1\" for clicado",
 	"prp-editinsequence-editsummary-placeholder": "Descreva as suas mudanças",
+	"prp-editinsequence-could-not-save-edit": "Esta edição não pode ser gravada",
 	"proofreadpage-openseadragon-no-image-found": "Falha de inicialização do OpenSeadragon. Não foi encontrada nenhuma imagem.",
 	"proofreadpage-pagelist-input-preview-button": "Antever a \"pagelist\"",
 	"proofreadpage-pagelist-dialog-update-button": "Atualizar a \"pagelist\"",
