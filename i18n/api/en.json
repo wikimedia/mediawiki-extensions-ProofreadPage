@@ -6,6 +6,8 @@
 	"apihelp-query+imageforpage-summary": "Pre-renders and provides URLs to images for a given page in the \"Page:\" namespace.",
 	"apihelp-query+imageforpage-param-prop": "Which types of images or properties of images to return for a given page in the \"Page:\" namespace.",
 	"apierror-proofreadpage-invalidindex": "Invalid index title \"$1\".",
+	"apihelp-query+defaultcontentforpage-description": "Provides the default content for a given page in the \"Page:\" namespace.\n\nThe default content is raw wikitext (potentially including raw HTML tags from untrusted book text layers). It must not be used in HTML unescaped/unparsed!",
+	"apihelp-query+defaultcontentforpage-summary": "Provides the default content for a given page in the \"Page:\" namespace.\n\nThe default content is raw wikitext (potentially including raw HTML tags from untrusted book text layers). It must not be used in HTML unescaped/unparsed!",
 	"apihelp-query+proofread-description": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-summary": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-example-1": "Return proofread status for pages in namespace 250",
