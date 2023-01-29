@@ -149,6 +149,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Use horizontal layout when editing in the {{ns:page}} namespace",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Use the new experimental visual mode to edit the pagelist.",
 	"proofreadpage-preferences-zoom-factor-label": "The zoom factor on scroll (between 1 and 2, default: 1.2). Higher zooms more per step",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Show an edit summary dialog everytime {{GENDER:|you}} save a page in EditInSequence mode",
+	"proofreadpage-preferences-after-save-action-label": "Perform this action after saving a page using the EditInSequence mode",
 	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|page|pages}}, $2 only proofread {{PLURAL:$2|page|pages}} and $3 not proofread {{PLURAL:$3|page|pages}}",
 	"content-model-proofread-page": "Book page",
 	"content-model-proofread-index": "Book index",

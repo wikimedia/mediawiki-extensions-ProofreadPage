@@ -28,7 +28,9 @@
 	"DefaultUserOptions": {
 		"proofreadpage-animation-time": 0,
 		"proofreadpage-zoom-factor": 1.2,
-		"proofreadpage-pagelist-use-visual-mode": "1"
+		"proofreadpage-pagelist-use-visual-mode": "1",
+		"proofreadpage-after-save-action": "do-nothing",
+		"proofreadpage-show-dialog-before-every-save": 1
 	},
 	"SpecialPages": {
 		"IndexPages": "\\ProofreadPage\\Special\\SpecialProofreadPages",
@@ -272,6 +274,8 @@
 			"dependencies": [
 				"ext.proofreadpage.page.edit",
 				"mediawiki.action.view.postEdit",
+				"mediawiki.user",
+				"user.options",
 				"oojs",
 				"oojs-ui",
 				"oojs-ui-core",
@@ -388,7 +392,7 @@
 		"LoadExtensionSchemaUpdates": "ProofreadPage\\ProofreadPage::onLoadExtensionSchemaUpdates",
 		"OutputPageParserOutput": "ProofreadPageHooks",
 		"wgQueryPages": "ProofreadPage\\ProofreadPage::onwgQueryPages",
-		"GetPreferences": "ProofreadPage\\ProofreadPage::onGetPreferences",
+		"GetPreferences": "ProofreadPageHooks",
 		"CanonicalNamespaces": "ProofreadPage\\ProofreadPage::onCanonicalNamespaces",
 		"SkinTemplateNavigation::Universal": "ProofreadPageHooks",
 		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",

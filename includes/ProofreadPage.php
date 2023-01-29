@@ -35,6 +35,7 @@ use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
@@ -69,7 +70,8 @@ class ProofreadPage implements
 	SkinTemplateNavigation__UniversalHook,
 	OutputPageParserOutputHook,
 	ParserFirstCallInitHook,
-	GetLinkColoursHook
+	GetLinkColoursHook,
+	GetPreferencesHook
 {
 
 	/** @var Config */
@@ -293,7 +295,7 @@ class ProofreadPage implements
 	 * @param User $user
 	 * @param array[] &$preferences
 	 */
-	public static function onGetPreferences( $user, array &$preferences ) {
+	public function onGetPreferences( $user, &$preferences ) {
 		$type = 'toggle';
 		// Hide the option from the preferences tab if WikiEditor is loaded
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikiEditor' ) &&
@@ -315,6 +317,28 @@ class ProofreadPage implements
 			'label-message'  => 'proofreadpage-preferences-horizontal-layout-label',
 			'section'        => 'editing/proofread-pagenamespace',
 		];
+
+		if ( $this->config->get( 'ProofreadPageEnableEditInSequence' ) ) {
+			// Show dialog before saving the a Page using EditInSequence
+			$preferences['proofreadpage-show-dialog-before-every-save'] = [
+				'type'           => 'hidden',
+				'label-message'  => 'proofreadpage-preferences-show-dialog-before-every-save-label',
+				'section'        => 'editing/proofread-pagenamespace',
+			];
+
+			// Preference denoting action to be performed
+			// after saving a page in EditInSequence,
+			$preferences['proofreadpage-after-save-action'] = [
+				'type'           => 'hidden',
+				'options'        => [
+					wfMessage( 'prp-editinsequence-save-next-action-do-nothing' )->text() => 'do-nothing',
+					wfMessage( 'prp-editinsequence-save-next-action-go-to-next' )->text() => 'go-to-next',
+					wfMessage( 'prp-editinsequence-save-next-action-go-to-prev' )->text() => 'go-to-prev',
+				],
+				'label-message'  => 'proofreadpage-preferences-after-save-action-label',
+				'section'        => 'editing/proofread-pagenamespace',
+			];
+		}
 
 		// Page image viewer zoom factor
 		$preferences['proofreadpage-zoom-factor'] = [
