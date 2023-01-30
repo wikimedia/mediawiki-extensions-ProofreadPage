@@ -107,6 +107,7 @@
 	"prp-editinsequence-save-next-action-go-to-next": "পরবর্তী পাতায় যান",
 	"prp-editinsequence-save-next-action-go-to-prev": "পূর্ববর্তী পাতায় যান",
 	"prp-editinsequence-editsummary-placeholder": "আপনার পরিবর্তন বর্ণনা করুন",
+	"prp-editinsequence-could-not-save-edit": "এই সম্পাদনাটি সংরক্ষণ করা যাবে না",
 	"proofreadpage-pagelist-input-preview-button": "পাতার তালিকার প্রাকদর্শন",
 	"proofreadpage-pagelist-dialog-update-button": "পাতার তালিকা হালনাগাদ করুন",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "এই ডায়লগটি ছেড়ে গেলে সংরক্ষণ না করা সম্পাদনা হারিয়ে যেতে পারে।",

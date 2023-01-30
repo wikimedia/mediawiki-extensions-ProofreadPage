@@ -99,6 +99,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "아무 것도 안 함",
 	"prp-editinsequence-save-next-action-go-to-next": "다음 페이지로 이동",
 	"prp-editinsequence-editsummary-placeholder": "변경사항 설명",
+	"prp-editinsequence-could-not-save-edit": "이 편집을 저장할 수 없습니다",
 	"proofreadpage-pagelist-dialog-discard-changes": "바뀜 버리기",
 	"proofreadpage-pagelist-dialog-cancel": "취소",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<pagelist /> 태그가 발견되지 않았습니다.",
