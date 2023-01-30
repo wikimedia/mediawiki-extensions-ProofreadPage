@@ -8,7 +8,8 @@
 			"YaronSh",
 			"דגש חזק",
 			"ערן",
-			"דגש"
+			"דגש",
+			"מקף"
 		]
 	},
 	"nstab-page": "דף",
@@ -108,5 +109,5 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "איכות הגהה",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "איכות הגהה",
 	"proofreadpage-index-field-category-label": "קטגוריות",
-	"proofreadpage-index-edit-category-help": "הקטגוריות נכתבנות ללא התחילית Category: (קטגוריה:) ומופרדות במקל אנכי (|)."
+	"proofreadpage-index-edit-category-help": "הקטגוריות נכתבנות ללא התחילית Category: (קטגוריה:) ומופרדות בקו ניצב (\"|\")."
 }
