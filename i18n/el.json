@@ -63,6 +63,7 @@
 	"proofreadpage_index_size": "Αριθμός σελίδων",
 	"proofreadpage_pages_to_validate": "Αριθμός σελίδων προς έγκριση",
 	"proofreadpage_pages_to_proofread_or_validate": "Αριθμός σελίδων προς έλεγχο ή έγκριση",
+	"proofreadpage_pages_to_proofread": "Αριθμός σελίδων προς έλεγχο",
 	"proofreadpage_specialpage_label_orderby": "Ταξινόμηση με:",
 	"proofreadpage_specialpage_label_key": "Αναζήτηση:",
 	"proofreadpage_specialpage_label_sortascending": "Αύξουσα ταξινόμηση",
