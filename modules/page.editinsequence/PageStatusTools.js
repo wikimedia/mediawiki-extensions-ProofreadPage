@@ -22,7 +22,8 @@ function createPageStatusTool( name, title, pageStatus ) {
 
 	PageStatusTool.static.name = name;
 	PageStatusTool.static.title = title;
-	PageStatusTool.static.displayBothIconAndLabel = false;
+	PageStatusTool.static.icon = 'pagequality-level' + pageStatus;
+	PageStatusTool.static.displayBothIconAndLabel = true;
 
 	PageStatusTool.prototype.onSelect = function () {
 		this.isCurrentSelection = true;
@@ -57,6 +58,18 @@ function PageStatusMenu() {
 OO.inheritClass( PageStatusMenu, OO.ui.MenuToolGroup );
 
 PageStatusMenu.static.name = 'pagestatusmenu';
+
+PageStatusMenu.prototype.onUpdateState = function () {
+	var name;
+
+	for ( name in this.tools ) {
+		if ( this.tools[ name ].isActive() ) {
+			this.setIcon( this.tools[ name ].getIcon() );
+		}
+	}
+
+	PageStatusMenu.super.prototype.onUpdateState.call( this );
+};
 
 /**
  * Set the page status when the page is updated by navigating
