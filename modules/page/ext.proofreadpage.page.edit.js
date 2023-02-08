@@ -317,15 +317,14 @@ var OpenSeadragonController = require( './OpenseadragonController.js' );
 		setupPageQuality();
 		$img.hide();
 
+		// Set up the preferences (header/footer and horizontal/vertical layout)
+		// when WikiEditor is active as well as when it's not.
 		mw.hook( 'wikiEditor.toolbarReady' ).add( function () {
 			setupWikitextEditor();
 			setupPreferences();
 		} );
-
-		// Always initialize the OSD viewer, even if no toolbar for the controls
-		// (otherwise wait for toolbar init so the icons are ready)
 		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
-			osdController.initialize( 'prp-page-image-openseadragon-vertical' );
+			setupPreferences();
 		}
 	} );
 
