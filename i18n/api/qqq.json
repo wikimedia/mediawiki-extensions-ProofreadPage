@@ -36,6 +36,8 @@
 	"apierror-proofreadpage-invalidindex": "{{Doc-apierror}}\nAPI error when an index title is invalid\n* $1 - the title.",
 	"apihelp-query+proofread-description": "{{doc-apihelp-description|query+proofread}}",
 	"apihelp-query+proofread-summary": "{{doc-apihelp-summary|query+proofread}}",
+	"apihelp-query+defaultcontentforpage-description": "{{doc-apihelp-description|query+defaultcontentforpage}}",
+	"apihelp-query+defaultcontentforpage-summary": "{doc-apihelp-summary|query+defaultcontentforpage}}",
 	"apihelp-query+proofread-example-1": "{{doc-apihelp-example|query+proofread}}",
 	"apihelp-query+proofreadinfo-description": "{{doc-apihelp-description|query+proofreadinfo}}",
 	"apihelp-query+proofreadinfo-summary": "{{doc-apihelp-summary|query+proofreadinfo}}",
