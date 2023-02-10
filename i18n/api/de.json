@@ -10,6 +10,8 @@
 	"apihelp-query+imageforpage-summary": "Pre-rendert und stellt URLs zu Bildern für eine bestimmte Seite im Namensraum „Seite:“ bereit.",
 	"apihelp-query+imageforpage-param-prop": "Welche Arten von Bildern oder Eigenschaften von Bildern für eine bestimmte Seite im Namensraum „Seite:“ zurückgegeben werden sollen.",
 	"apierror-proofreadpage-invalidindex": "Ungültiger Index-Titel „$1“.",
+	"apihelp-query+defaultcontentforpage-description": "Stellt den Standardinhalt für eine bestimmte Seite im „Page:“-Namensraum bereit.\n\nDer Standardinhalt ist roher Wikitext (möglicherweise einschließlich roher HTML-Tags von nicht vertrauenswürdigen Buchtextebenen). Es darf nicht in HTML unescaped/unparsed verwendet werden!",
+	"apihelp-query+defaultcontentforpage-summary": "Stellt den Standardinhalt für eine bestimmte Seite im „Page:“-Namensraum bereit.\n\nDer Standardinhalt ist roher Wikitext (möglicherweise einschließlich roher HTML-Tags von nicht vertrauenswürdigen Buchtextebenen). Es darf nicht in HTML unescaped/unparsed verwendet werden!",
 	"apihelp-query+proofread-description": "Gibt Informationen über den Korrekturlesungsstatus der Seiten zurück.",
 	"apihelp-query+proofread-summary": "Liefert Informationen über den aktuellen Status des Korrekturlesens der angegebenen Seiten.",
 	"apihelp-query+proofread-example-1": "Gibt den Korrekturlesungsstatus der Seiten im Namensraum 250 zurück",
