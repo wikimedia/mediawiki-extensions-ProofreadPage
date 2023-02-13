@@ -8,6 +8,8 @@
 	"apihelp-query+imageforpage-summary": "Pre-genera e forni URLs a imagines pro un fornite pagina in le spatio de nomines \"Pagina:\".",
 	"apihelp-query+imageforpage-param-prop": "Qual typos de imagines o proprietates de imagines restituer pro un fornite pagina in le spatio de nomines \"Pagina:\".",
 	"apierror-proofreadpage-invalidindex": "Titulo de indice \"$1\" non valide.",
+	"apihelp-query+defaultcontentforpage-description": "Isto forni le contento predefinite pro un pagina specific in le spatio de nomines \"Page:\".\n\nLe contento predefinite es wikitexto brute (que pote includer codice HTML crude proveniente de stratos de texto de libro non fidite). Illo non debe esser usate in HTML sin escappar o interpretar/remover le codice!",
+	"apihelp-query+defaultcontentforpage-summary": "Isto forni le contento predefinite pro un pagina specific in le spatio de nomines \"Page:\".\n\nLe contento predefinite es wikitexto brute (que pote includer codice HTML crude proveniente de stratos de texto de libro non fidite). Illo non debe esser usate in HTML sin escappar o interpretar/remover le codice!",
 	"apihelp-query+proofread-description": "Restitue information sur le stato de correction de probas del paginas fornite.",
 	"apihelp-query+proofread-summary": "Restitue information sur le stato de correction de probas del paginas fornite.",
 	"apihelp-query+proofread-example-1": "Restitue le stato de correction de probas pro le paginas in le spatio de nomines 250",

@@ -12,6 +12,8 @@
 	"apihelp-query+imageforpage-summary": "Effectue un prérendu et fournit des URL vers les images pour une page donnée de l’espace de noms « Page: ».",
 	"apihelp-query+imageforpage-param-prop": "Quels types d’images ou propriétés d’images renvoyer pour une page donnée d’espace de noms « Page: ».",
 	"apierror-proofreadpage-invalidindex": "Titre d’index « $1 » non valide.",
+	"apihelp-query+defaultcontentforpage-description": "Fournit le contenu par défaut pour une page donnée dans l’espace de noms « Page: ».\n\nLe contenu par défaut est le wikitexte brut (pouvant contenir des balises HTML brutes provenant de couches de texte de livre non fiables). Il ne doit pas être utilisé dans du HTML non échappé et non analysé !",
+	"apihelp-query+defaultcontentforpage-summary": "Fournit le contenu par défaut pour une page donnée dans l’espace de noms « Page: ».\n\nLe contenu par défaut est le wikitexte brut (pouvant contenir des balises HTML brutes provenant de couches de texte de livre non fiables). Il ne doit pas être utilisé dans du HTML non échappé et non analysé !",
 	"apihelp-query+proofread-description": "Renvoie des informations sur l’état de correction actuel des pages fournies.",
 	"apihelp-query+proofread-summary": "Renvoie des informations sur l’état actuel de correction des pages données.",
 	"apihelp-query+proofread-example-1": "Renvoyer l’état de correction des pages dans l’espace de noms 250.",

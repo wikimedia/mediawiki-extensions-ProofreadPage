@@ -9,6 +9,8 @@
 	"apihelp-query+imageforpage-summary": "Predupodobi in prikaže URL-je slik za dano stran v imenskem prostoru »Stran:«.",
 	"apihelp-query+imageforpage-param-prop": "Katere vrste slik ali lastnosti slik naj se vrnejo za dano stran v imenskem prostoru »Stran:«.",
 	"apierror-proofreadpage-invalidindex": "Neveljaven naslov indeksa »$1«.",
+	"apihelp-query+defaultcontentforpage-description": "Zagotavlja privzeto vsebino za dano stran v imenskem prostoru »Stran:«.\n\nPrivzeta vsebina je neobdelano vikibesedilo (lahko vključuje neobdelane HTML-značke iz neverodostojnih plasti besedila knjige). Ne sme se uporabljati v HTML neubežno/nerazčlenjeno!",
+	"apihelp-query+defaultcontentforpage-summary": "Zagotavlja privzeto vsebino za dano stran v imenskem prostoru »Stran:«.\n\nPrivzeta vsebina je neobdelano vikibesedilo (lahko vključuje neobdelane HTML-značke iz neverodostojnih plasti besedila knjige). Ne sme se uporabljati v HTML neubežno/nerazčlenjeno!",
 	"apihelp-query+proofread-description": "Prikaže informacije o trenutnem stanju pregledanosti dotičnih strani.",
 	"apihelp-query+proofread-summary": "Prikaže informacije o trenutnem stanju pregledanosti dotičnih strani.",
 	"apihelp-query+proofread-example-1": "Prikaže status pregledanosti za strani v imenskem prostoru 250",
