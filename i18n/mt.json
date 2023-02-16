@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Leli Forte"
+			"Leli Forte",
+			"ToniSant"
 		]
 	},
 	"proofreadpage_quality0_category": "Mingħajr test",
@@ -9,5 +10,6 @@
 	"proofreadpage_quality2_category": "Hemm xi problemi",
 	"proofreadpage_quality3_category": "Ikkoreġut",
 	"proofreadpage_quality4_category": "Ivvalidat",
-	"proofreadpage_quality1_message": "Din il-paġna ma ġietx korretta"
+	"proofreadpage_quality1_message": "Din il-paġna ma ġietx korretta",
+	"proofreadpage-section-tools": "Għodda għall-qari tal-provi"
 }
