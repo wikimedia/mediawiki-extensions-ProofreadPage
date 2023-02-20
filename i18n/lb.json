@@ -3,7 +3,8 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"nstab-page": "Säit",
@@ -79,6 +80,7 @@
 	"proofreadpage-button-zoom-in-label": "Vergréisseren",
 	"proofreadpage-button-zoom-out-label": " Verklengeren",
 	"proofreadpage-pageinfo-status": "Status Iwwerliesen",
+	"prp-editinsequence-could-not-save-edit": "Dës Ännerung kann net gespäichert ginn",
 	"proofreadpage-pagelist-dialog-discard-changes": "Ännerungen annuléieren",
 	"proofreadpage-pagelist-dialog-cancel": "Ofbriechen",
 	"proofreadpage-pagelist-dialog-insertchanges": "Ännerungen drasetuzen",
