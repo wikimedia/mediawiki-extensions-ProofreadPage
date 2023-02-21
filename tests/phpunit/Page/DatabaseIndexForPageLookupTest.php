@@ -29,6 +29,24 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 		);
 	}
 
+	public function testGetIndexForSinglePageFile() {
+		$repoGroupMock = $this->createMock( \RepoGroup::class );
+		$repoGroupMock->expects( $this->once() )
+			->method( 'findFile' )
+			->willReturn( $this->buildFileList()[2] );
+		$lookup = new DatabaseIndexForPageLookup(
+			$this->getIndexNamespaceId(),
+			$repoGroupMock
+		);
+
+		$this->assertEquals(
+			Title::makeTitle( $this->getIndexNamespaceId(),  'Test.jpg' ),
+			$lookup->getIndexForPageTitle(
+				Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' )
+			)
+		);
+	}
+
 	public function testGetIndexForPageNotFound() {
 		$lookup = new DatabaseIndexForPageLookup(
 			$this->getIndexNamespaceId(),

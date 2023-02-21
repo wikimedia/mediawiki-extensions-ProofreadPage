@@ -83,18 +83,23 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	 */
 	private function findPossibleIndexTitleBasedOnName( Title $pageTitle ) {
 		$m = explode( '/', $pageTitle->getText(), 2 );
-		if ( isset( $m[1] ) ) {
-			$imageTitle = Title::makeTitleSafe( NS_FILE, $m[0] );
-			if ( $imageTitle !== null ) {
-				$image = $this->repoGroup->findFile( $imageTitle );
-				// if it is multipage, we use the page order of the file
-				if ( $image && $image->exists() && $image->isMultipage() ) {
-					return Title::makeTitle(
-						$this->indexNamespaceId, $image->getTitle()->getText()
-					);
-				}
-			}
+
+		$fileTitle = Title::makeTitleSafe( NS_FILE, $m[0] );
+		if ( $fileTitle === null ) {
+			return null;
 		}
+
+		$file = $this->repoGroup->findFile( $fileTitle );
+		if ( !$file || !$file->exists() ) {
+			return null;
+		}
+
+		if ( !( $file->isMultipage() xor isset( $m[1] ) ) ) {
+			return Title::makeTitle(
+				$this->indexNamespaceId, $file->getTitle()->getText()
+			);
+		}
+
 		return null;
 	}
 
