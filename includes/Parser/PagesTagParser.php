@@ -85,16 +85,7 @@ class PagesTagParser {
 
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $index );
 		if ( $indexTitle === null || !$indexTitle->exists() ) {
-			$categoryTitle = Title::makeTitleSafe(
-				NS_CATEGORY, wfMessage( 'proofreadpage_nosuch_index_category' )
-			);
-
-			if ( $categoryTitle !== null ) {
-				$this->parser->getOutput()->addCategory(
-					$categoryTitle->getDBkey(), $pageTitle->getText()
-				);
-			}
-
+			$this->parser->addTrackingCategory( 'proofreadpage_nosuch_index_category' );
 			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
 		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
