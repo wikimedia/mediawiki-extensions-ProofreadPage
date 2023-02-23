@@ -136,7 +136,6 @@ class TranslusionPagesModifier {
 	 * @param PagesQualityStats $qualityStats
 	 * @param IContextSource $contextSource
 	 * @return string
-	 * @suppress SecurityCheck-DoubleEscaped phan does not like HTML tags concatenation
 	 */
 	private function buildQualityStatsBar(
 		PagesQualityStats $qualityStats,
