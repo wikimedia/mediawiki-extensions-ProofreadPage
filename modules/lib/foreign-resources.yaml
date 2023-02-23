@@ -1,4 +1,7 @@
 openseadragon:
+  license: BSD-3-Clause
+  homepage: https://openseadragon.github.io/
+  version: 3.1.0
   type: file
   src: https://cdn.jsdelivr.net/npm/openseadragon@3.1.0/build/openseadragon/openseadragon.js
   integrity: sha384-IhLYvpHVUHiuCmPfgYsSMynFbSIWZ9njwcWLxknqhh/3UIuUZD5mWDHe+q8v1dFX

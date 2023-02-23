@@ -22,7 +22,7 @@ class ManageForeignResources extends Maintenance {
 
 	public function execute() {
 		$frm = new ForeignResourceManager(
-			__DIR__ . '/../modules/foreign-resources.yaml',
+			__DIR__ . '/../modules/lib/foreign-resources.yaml',
 			__DIR__ . '/../modules/lib',
 			function ( $text ) {
 				$this->output( $text );
