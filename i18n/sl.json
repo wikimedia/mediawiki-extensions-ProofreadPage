@@ -20,6 +20,7 @@
 	"proofreadpage_index_expected": "Napaka: pričakovano kazalo",
 	"proofreadpage_nosuch_index": "Napaka: ni takšnega kazala",
 	"proofreadpage_nosuch_index_category": "Vključitve strani, ki se nanašajo na manjkajoče indeksne strani",
+	"proofreadpage_nosuch_index_category-desc": "<nowiki><pages/></nowiki> se nanaša na stran kazala, ki ne obstaja.",
 	"proofreadpage_nosuch_file": "Napaka: ni takšne datoteke",
 	"proofreadpage_indexdupetext": "Strani na kazalu ni mogoče navesti več kot enkrat.",
 	"proofreadpage_nologin": "Niste prijavljeni",

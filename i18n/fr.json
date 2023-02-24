@@ -41,6 +41,7 @@
 	"proofreadpage_index_expected": "Erreur : un index est attendu",
 	"proofreadpage_nosuch_index": "Erreur : l’index n’a pas été trouvé",
 	"proofreadpage_nosuch_index_category": "Inclusions de page qui font référence à des pages d’index manquantes",
+	"proofreadpage_nosuch_index_category-desc": "Une balise<nowiki><pages/></nowiki> fait référence à une page d’index inexistante.",
 	"proofreadpage_nosuch_file": "Erreur : le fichier n’a pas été trouvé",
 	"proofreadpage_indexdupetext": "Les pages ne peuvent pas être listées plus d’une fois sur une page d’index.",
 	"proofreadpage_nologin": "Non connecté(e)",
