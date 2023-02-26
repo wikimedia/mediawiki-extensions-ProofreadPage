@@ -14,6 +14,8 @@ function PagelistModel( currentPage, indexPage ) {
 	this.currentIndex = 0;
 	this.indexPage = indexPage;
 	this.pagelist = [];
+	this.pageStatusSaved = false;
+	this.proofreadMap = {};
 	this.fetchPagelistData();
 }
 
@@ -31,8 +33,11 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 	api.post( {
 		action: 'query',
 		list: 'proofreadpagesinindex',
+		generator: 'proofreadpagesinindex',
 		prppiititle: this.indexPage,
-		prppiiprop: 'ids|title',
+		gprppiititle: this.indexPage,
+		prop: 'proofread',
+		prppiiprop: 'ids|title|formattedPageNumber',
 		continue: contd && contd.continue || undefined,
 		prppiicontinue: contd && contd.prppiicontinue || undefined
 	} ).done( function ( response ) {
@@ -41,13 +46,15 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 			return;
 		}
 
+		this.fillProofreadMap( response.query.pages );
+		this.response = this.response.concat( response.query.proofreadpagesinindex );
+
 		if ( response.continue ) {
-			this.response = this.response.concat( response.query.proofreadpagesinindex );
 			this.fetchPagelistData( response.continue );
 			return;
 		}
 
-		this.setPageListData( this.response.concat( response.query.proofreadpagesinindex ) );
+		this.setPageListData( this.response );
 		this.response = [];
 	}.bind( this ) ).catch( function ( err ) {
 		if ( err === 'http' ) {
@@ -59,6 +66,13 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 		}
 		mw.log.error( err );
 	}.bind( this ) );
+};
+
+PagelistModel.prototype.fillProofreadMap = function ( pages ) {
+	var pageKeys = Object.keys( pages );
+	for ( var i = 0; i < pageKeys.length; i++ ) {
+		this.proofreadMap[ pages[ pageKeys[ i ] ].title ] = pages[ pageKeys[ i ] ].proofread;
+	}
 };
 
 /**
@@ -89,7 +103,9 @@ PagelistModel.prototype.setPageListData = function ( response ) {
 			pageNumber: tempPage.pageoffset,
 			exists: tempPage.pageid !== 0,
 			pageid: tempPage.pageid,
-			title: tempPage.title
+			title: tempPage.title,
+			pageStatus: this.proofreadMap[ tempPage.title ] ? this.proofreadMap[ tempPage.title ].quality : -1,
+			formattedPageNumber: tempPage.formattedPageNumber
 		} );
 
 		if ( this.currentPage === tempPage.title ) {
@@ -108,6 +124,14 @@ PagelistModel.prototype.setPageListData = function ( response ) {
 	if ( this.currentIndex === 0 ) {
 		this.emit( 'firstReached' );
 	}
+};
+
+PagelistModel.prototype.getPagelistData = function () {
+	return this.pagelist;
+};
+
+PagelistModel.prototype.saveCurrentPage = function () {
+	this.pageStatusSaved = true;
 };
 
 /**
@@ -138,6 +162,7 @@ PagelistModel.prototype.getNext = function () {
 			title: '',
 			pageNumber: -1,
 			pageid: 0,
+			pageStatus: -1,
 			exists: false
 		};
 	}
@@ -186,6 +211,17 @@ PagelistModel.prototype.getPrev = function () {
  */
 PagelistModel.prototype.getCurrent = function () {
 	return this.pagelist[ this.currentIndex ];
+};
+
+PagelistModel.prototype.setCurrent = function ( index ) {
+	this.currentIndex = index;
+	this.currentPage = this.pagelist[ this.currentIndex ].title;
+	this.emit( 'pageUpdated', this.currentPage );
+};
+
+PagelistModel.prototype.setPageStatus = function ( status ) {
+	this.pagelist[ this.currentIndex ].pageStatus = status;
+	this.emit( 'pageUpdated', this.currentPage );
 };
 
 module.exports = PagelistModel;

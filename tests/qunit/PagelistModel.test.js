@@ -7,12 +7,14 @@ QUnit.test( 'PagelistModel.setPagelistData', function ( assert ) {
 		testcases = [ {
 			pageid: 0,
 			title: 'Page:War and Peace.djvu/1',
-			pageoffset: 1
+			pageoffset: 1,
+			formattedPageNumber: '1'
 		},
 		{
 			pageid: 1,
 			title: 'Page:War and Peace.djvu/2',
-			pageoffset: 3
+			pageoffset: 3,
+			formattedPageNumber: '1'
 		} ];
 	testPagelistModel.setPageListData( testcases );
 
@@ -28,18 +30,22 @@ QUnit.test( 'PagelistModel.getCurrent', function ( assert ) {
 		testcases = [ {
 			pageid: 0,
 			title: 'Page:War and Peace.djvu/1',
-			pageoffset: 1
+			pageoffset: 1,
+			formattedPageNumber: '1'
 		},
 		{
 			pageid: 1,
 			title: 'Page:War and Peace.djvu/2',
-			pageoffset: 3
+			pageoffset: 3,
+			formattedPageNumber: '2'
 		} ];
 	testPagelistModel.setPageListData( testcases );
 	assert.deepEqual( testPagelistModel.getCurrent(), {
 		exists: false,
 		pageid: 0,
 		title: 'Page:War and Peace.djvu/1',
-		pageNumber: 1
+		pageNumber: 1,
+		pageStatus: -1,
+		formattedPageNumber: '1'
 	} );
 } );

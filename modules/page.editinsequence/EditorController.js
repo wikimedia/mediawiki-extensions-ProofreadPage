@@ -157,6 +157,7 @@ EditorController.prototype.save = function () {
 		}
 	} ).then( function ( result ) {
 		if ( result && result.edit && result.edit.result ) {
+			this.pagelistModel.setPageStatus( this.pageModel.getPageStatus().status );
 			mw.config.set( 'wgPostEdit', 'saved' );
 			// The following messages are used here:
 			// * postedit-confirmation-published

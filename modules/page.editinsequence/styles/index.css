@@ -18,3 +18,36 @@
 	height: 100%;
 	overflow: auto;
 }
+
+.prp-eis-page-selection-container {
+	position: relative;
+}
+
+.prp-eis-page-selection-widget-closed div.prp-eis-page-selection-page {
+	padding: 0;
+}
+
+.prp-eis-page-selection-page .oo-ui-buttonElement-frameless > a.oo-ui-buttonElement-button {
+	color: #a2a9b1;
+}
+
+.prp-eis-page-selection-widget-open {
+	height: 30vh;
+	border-bottom: 1px solid #c8ccd1;
+	box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+}
+
+.prp-eis-page-selection-widget-closed {
+	height: 0;
+}
+
+.prp-eis-page-selection-widget {
+	transition: all 250ms;
+	background: #fff;
+	margin-bottom: 2em;
+	position: relative;
+}
+
+.prp-eis-page-selection-widget > .oo-ui-fieldLayout {
+	padding: 2em;
+}
