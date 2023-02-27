@@ -6,7 +6,7 @@
 			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ"
 		]
 	},
-	"nstab-page": "ꠚꠣꠔꠣ",
+	"nstab-page": "ꠙꠣꠔꠣ",
 	"nstab-index": "ꠡꠥꠌꠤ",
 	"tooltip-ca-nstab-page": "ꠛꠁꠞ ꠚꠣꠔꠣ ꠖꠦꠈꠇ꠆ꠇꠣ",
 	"tooltip-ca-nstab-index": "ꠛꠁꠞ ꠡꠥꠌꠤ ꠖꠦꠈꠇ꠆ꠇꠣ",
@@ -83,8 +83,8 @@
 	"proofreadpage-pagelist-input-preview-button": "ꠙꠣꠔꠣꠞ ꠐꠥꠇꠣ ꠀꠉꠥꠀꠘ ꠖꠦꠈꠂꠘ",
 	"proofreadpage-pagelist-parsing-error-morethanone": "ꠀꠞꠅ",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "ꠘꠣ",
-	"proofreadpage-pagelist-parsing-error-php": "The following error was encountered while parsing the pagelist tag in the backend, $1",
-	"proofreadpage-pagelist-parsing-error-unknown": "ꠄꠉꠥ",
+	"proofreadpage-pagelist-parsing-error-php": "ꠙꠦꠁꠎꠟꠤꠡ꠆ꠐ ꠐꠦꠉ ꠌꠣꠟꠣꠘꠤꠔ ꠅꠔꠣ ꠎꠟꠖꠤ ꠝꠤꠟ꠆ꠍꠦ ꠨ $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "ꠄꠉꠥ ꠀꠌꠣꠘ꠆ꠇꠣ ꠎꠟꠖꠤ ꠝꠤꠟ꠆ꠍꠦ ॥ ꠖꠄꠀ ꠇꠞꠤ phabricator.wikimedia.org ꠅ ꠞꠤꠙꠥꠐ ꠖꠦꠃꠇ꠆ꠇꠣ ꠇꠘꠍꠥꠟ ꠟꠉꠡꠁ ॥",
 	"proofreadpage-pagelist-dialog-title": "$1",
 	"proofreadpage-pagelist-dialog-insertchanges": "ꠛꠖꠟꠣꠁꠌꠂꠘꠉꠥꠁꠘ ꠢꠣꠞꠣꠃꠇ꠆ꠇꠣ",
 	"proofreadpage-pagelist-imageurlnotfound": "ꠁ",
@@ -92,7 +92,7 @@
 	"proofreadpage-pagelist-assignedpagenumber": "$1",
 	"proofreadpage-preferences-showheaders-label": "ꠝꠣꠕꠣꠛꠣꠎꠥ ꠖꠦꠈꠣꠁꠟ",
 	"proofreadpage-preferences-horizontal-layout-label": "ꠙꠣꠔꠣꠁꠞꠣ {{ns:page}}",
-	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|page|pages}}, $2 only proofread {{PLURAL:$2|page|pages}} and $3 not proofread {{PLURAL:$3|page|pages}}",
+	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|ꠙꠣꠔꠣ|ꠙꠣꠔꠣꠁꠘ}}, $2 only proofread {{PLURAL:$2|ꠙꠣꠔꠣ|ꠙꠣꠔꠣꠁꠘ}} and $3 not proofread {{PLURAL:$3|ꠙꠣꠔꠣ|ꠙꠣꠔꠣꠁꠘ}}",
 	"content-model-proofread-page": "ꠛꠁꠞ ꠙꠣꠔꠣ",
 	"content-model-proofread-index": "ꠛꠁꠞ ꠐꠥꠇꠣ",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "ꠙꠣꠔꠣ ꠛꠣꠌꠣ",
@@ -101,5 +101,5 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ꠅꠄ",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ꠘꠣ",
 	"proofreadpage-index-field-category-label": "ꠇꠦꠐꠣꠉꠞꠤ",
-	"proofreadpage-index-edit-category-help": "Categories are written without the Category: prefix and are separated by a pipe \"|\" character."
+	"proofreadpage-index-edit-category-help": "ꠇꠦꠐꠣꠉꠞꠤ ꠇꠥꠘꠥ ꠚꠖ ꠍꠣꠠꠣ ꠟꠦꠈꠣ: ꠀꠉꠉꠣꠟꠣ ꠀꠞ ꠅꠄ ꠀꠟꠣꠖꠣ ꠇꠞꠣ ꠙꠣꠁꠙꠞ \"|\" ꠀꠇꠣꠞꠖꠤ ॥"
 }
