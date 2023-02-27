@@ -25,6 +25,7 @@
 	"proofreadpage_index_expected": "שגיאה: נדרש מפתח",
 	"proofreadpage_nosuch_index": "שגיאה: אין מפתח כזה",
 	"proofreadpage_nosuch_index_category": "הכללות דפים שמתייחסים לדפי מפתח חסרים",
+	"proofreadpage_nosuch_index_category-desc": "תג <code><nowiki><pages/></nowiki></code> מתייחס לדף מפתח שאינו קיים.",
 	"proofreadpage_nosuch_file": "שגיאה: אין קובץ כזה",
 	"proofreadpage_indexdupetext": "לא ניתן להציג את הדפים יותר מפעם אחת בדף מפתח.",
 	"proofreadpage_nologin": "לא נכנסת לחשבון",

@@ -26,6 +26,7 @@
 	"proofreadpage_index": "Index",
 	"proofreadpage_index_expected": "Fout: er werd een index verwacht",
 	"proofreadpage_nosuch_index": "Fout: de index bestaat niet",
+	"proofreadpage_nosuch_index_category-desc": "Er is een tag <nowiki><pages/></nowiki> die verwijst naar een indexpagina die niet bestaat.",
 	"proofreadpage_nosuch_file": "Fout: het opgegeven bestand bestaat niet",
 	"proofreadpage_indexdupetext": "Pagina's kunnen niet meer dan één keer op een indexpagina weergegeven worden.",
 	"proofreadpage_nologin": "Niet aangemeld",

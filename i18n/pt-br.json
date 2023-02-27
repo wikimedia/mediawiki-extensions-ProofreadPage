@@ -31,6 +31,7 @@
 	"proofreadpage_index_expected": "Erro: era esperado um índice",
 	"proofreadpage_nosuch_index": "Erro: índice inexistente",
 	"proofreadpage_nosuch_index_category": "Transclusões de páginas que se referem à páginas de índice ausentes",
+	"proofreadpage_nosuch_index_category-desc": "Uma tag <code><nowiki><pages/><nowiki></code> se refere a uma página Index que não existe.",
 	"proofreadpage_nosuch_file": "Erro: Arquivo inexistente",
 	"proofreadpage_indexdupetext": "As páginas não podem ser listadas mais de uma vez em uma página de índice.",
 	"proofreadpage_nologin": "Você não está autenticado",
