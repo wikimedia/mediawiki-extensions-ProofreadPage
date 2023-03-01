@@ -2,15 +2,24 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Xiplus"
+			"Xiplus",
+			"Shizhao"
 		]
 	},
-	"apihelp-query+proofread-description": "返回有关指定页面当前校对状态的信息。",
-	"apihelp-query+proofread-summary": "返回有关指定页面当前校对状态的信息。",
-	"apihelp-query+proofread-example-1": "返回250命名空间页面的校对状态",
+	"apierror-proofreadpage-invalidindex": "无效的索引标题“ $1 ”。",
+	"apihelp-query+proofread-description": "返回指定页面当前校对状态的信息。",
+	"apihelp-query+proofread-summary": "返回指定页面当前校对状态的信息。",
+	"apihelp-query+proofread-example-1": "返回命名空间250页面的校对状态",
 	"apihelp-query+proofreadinfo-description": "返回有关ProofreadPage扩展配置的信息。",
 	"apihelp-query+proofreadinfo-summary": "返回有关ProofreadPage扩展配置的信息。",
 	"apihelp-query+proofreadinfo-param-prop": "要获取的校对属性：\n;namespaces:有关“{{ns:Page}}”和“{{ns:Index}}”命名空间的信息。\n;qualitylevels:校对质量等级列表。",
 	"apihelp-query+proofreadinfo-example-1": "返回默认信息",
-	"apihelp-query+proofreadinfo-example-3": "返回命名空间信息"
+	"apihelp-query+proofreadinfo-example-3": "返回命名空间信息",
+	"apihelp-query+proofreadpagesinindex-description": "列出给定索引中的页面",
+	"apihelp-query+proofreadpagesinindex-summary": "列出给定索引中的页面",
+	"apihelp-query+proofreadpagesinindex-param-limit": "限制将返回多少页",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "要获取页面的索引页面的页面ID",
+	"apihelp-query+proofreadpagesinindex-param-prop": "各页面要获取的属性",
+	"apihelp-query+proofreadpagesinindex-param-title": "要获取页面的索引页面的标题",
+	"apihelp-query+proofreadpagesinindex-example-1": "返回默认信息"
 }
