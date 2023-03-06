@@ -7,7 +7,7 @@
 function SaveOptionsTool() {
 	SaveOptionsTool.super.apply( this, arguments );
 	this.$element.addClass( 'prp-editinsequence-saveoptions' );
-	this.toggle( false );
+	this.toggle( !mw.user.options.get( 'proofreadpage-show-dialog-before-every-save' ) );
 	this.toolbar.eis.saveOptionsModel.on( 'dialogBeforeSaveChange', this.onDialogBeforeSaveChange.bind( this ) );
 }
 

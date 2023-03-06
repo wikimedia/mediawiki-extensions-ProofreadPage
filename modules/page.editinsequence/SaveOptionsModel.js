@@ -3,8 +3,8 @@ function SaveOptionsModel() {
 	this.editSummary = '';
 	this.isMinorEdit = false;
 	this.shouldWatchlist = false;
-	this.afterSaveAction = 'do-nothing';
-	this.showDialogBeforeEverySave = true;
+	this.afterSaveAction = mw.user.options.get( 'proofreadpage-after-save-action' ) || 'do-nothing';
+	this.showDialogBeforeEverySave = Boolean( mw.user.options.get( 'proofreadpage-show-dialog-before-every-save' ) );
 	this.isInitialized = true;
 }
 
@@ -23,10 +23,14 @@ SaveOptionsModel.prototype.setShouldWatchlist = function ( shouldWatchlist ) {
 };
 
 SaveOptionsModel.prototype.setAfterSaveAction = function ( afterSaveAction ) {
+	mw.user.options.set( 'proofreadpage-after-save-action', afterSaveAction );
+	( new mw.Api() ).saveOption( 'proofreadpage-after-save-action', afterSaveAction );
 	this.afterSaveAction = afterSaveAction;
 };
 
 SaveOptionsModel.prototype.setDialogBeforeSave = function ( dialogBeforeSave ) {
+	mw.user.options.set( 'proofreadpage-show-dialog-before-every-save', Number( dialogBeforeSave ) );
+	( new mw.Api() ).saveOption( 'proofreadpage-show-dialog-before-every-save', Number( dialogBeforeSave ) );
 	this.emit( 'dialogBeforeSaveChange', this.showDialogBeforeEverySave );
 	this.showDialogBeforeEverySave = dialogBeforeSave;
 };

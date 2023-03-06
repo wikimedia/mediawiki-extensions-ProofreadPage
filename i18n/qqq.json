@@ -183,6 +183,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Description of the checkbox preference to turn on the new experimental visual mode for editing pagelists in Index pages.",
 	"proofreadpage-preferences-zoom-factor-label": "Description of the numerical preference to adjust the zoom factor in the page image viewer.",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Description of a numerical preference to show an edit summary dialog everytime a page is saved in EditInSequence mode",
+	"proofreadpage-preferences-after-save-action-label": "Description of a string based preference denoting the action to be performed after saving a page using the EditInSequence mode",
 	"proofreadpage-indexquality-alt": "Textual alternative for display of proofreading level of the book. Parameters:\n* $1 is the number of validated pages.\n* $2 is the number of only proofread pages.\n* $3 is the number of not proofread pages.",
 	"content-model-proofread-page": "The name for Page: pages item content model, used when describing what type of content a page contains.",
 	"content-model-proofread-index": "The name for Index: pages item content model, used when describing what type of content a page contains.",
