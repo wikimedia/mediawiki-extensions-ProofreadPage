@@ -152,6 +152,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Pri urejanju v imenskem prostoru {{ns:page}} uporabi vodoravno postavitev",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Za urejanje seznama strani uporabite nov poskusni vizualni način.",
 	"proofreadpage-preferences-zoom-factor-label": "Faktor povečave pri pomiku (med 1 in 2, privzeto: 1,2). Večji faktor pomeni večji pomik na korak.",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Pokaži pogovorno okno za povzetek urejanja vsakič, ko shranim stran v načinu EditInSequence",
+	"proofreadpage-preferences-after-save-action-label": "Izvedi to dejanje po shranjevanju strani v načinu EditInSequence",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|potrjena stran|potrjeni strani|potrjene strani|potrjenih strani}}, $2 samo {{PLURAL:$1|pregledana stran|pregledani strani|pregledane strani|pregledanih strani}} in $3 {{PLURAL:$1|nepregledana stran|nepregledani strani|nepregledane strani|nepregledanih strani}}",
 	"content-model-proofread-page": "Stran knjige",
 	"content-model-proofread-index": "Kazalo knjige",

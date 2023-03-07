@@ -149,6 +149,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Користи хоризонтален распоред при уредување во именскиот простор „{{ns:page}}“",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Користи го новиот опитен нагледен режим за уредувањае на списокот на страници.",
 	"proofreadpage-preferences-zoom-factor-label": "Приближувачкиот фактор на лигањето (помеѓу 1 и 2, по основно: 1.2). Повисокото приближува повеќе за секој чекор",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Покажувај дијалог за опис на уредувањето секојпат кога ќе се {{GENDER:|зачува}} страница во режимот Уредување во низа",
+	"proofreadpage-preferences-after-save-action-label": "Изврши го ова дејсво по зачувувањето на страница во режимот Уредување во низа",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|заверена страница|заверени страници}}, $2 само {{PLURAL:$2|прегледана|прегледани}} и $3 {{PLURAL:$3|некоригирана|некоригирани}}",
 	"content-model-proofread-page": "Страница од книгата",
 	"content-model-proofread-index": "Показател на книгата",

@@ -148,6 +148,7 @@
 	"proofreadpage-preferences-showheaders-label": "Mostrar campos de cabeçalho e rodapé ao editar o espaço nominal {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar layout horizontal ao editar o espaço nominal {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Use o novo modo visual experimental para editar a \"pagelist\".",
+	"proofreadpage-preferences-after-save-action-label": "Realize essa ação após salvar uma página usando o modo EditInSequence",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|página validada|páginas validadas}}, $2 {{PLURAL:$2|página revisada|páginas revisadas}} e $3 {{PLURAL:$3|página não revisada|páginas não revisadas}}",
 	"content-model-proofread-page": "Página do livro",
 	"content-model-proofread-index": "Índice do livro",
