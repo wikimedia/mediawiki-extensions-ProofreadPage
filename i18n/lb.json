@@ -3,12 +3,14 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"nstab-page": "Säit",
 	"nstab-index": "Index",
 	"tooltip-ca-nstab-page": "D'Buchsäit weisen",
+	"tooltip-ca-nstab-index": "De Buchindex weisen",
 	"indexpages": "Lëscht vun Index-Säiten",
 	"pageswithoutscans": "Säiten ouni Scan",
 	"proofreadpage_desc": "Erlaabt et op eng einfach Manéier den Text mat der Originalscan ze vergLäichen",
@@ -47,14 +49,18 @@
 	"proofreadpage_quality2_message": "Et gouf e Probleem beim Iwwerliese vun dëser Säit",
 	"proofreadpage_quality3_message": "Dës Säit gouf iwwerliest",
 	"proofreadpage_quality4_message": "Dës Säit gouf validéiert",
+	"proofreadpage_index_status": "Indexstatus",
 	"proofreadpage_index_size": "Zuel vun de Säiten",
 	"proofreadpage_pages_to_validate": "Zuel vun de Säite fir ze validéieren",
 	"proofreadpage_specialpage_filterby_all": "All",
+	"proofreadpage_specialpage_filterby_incomplete": "Onvollstänneg",
 	"proofreadpage_specialpage_filterby_proofread": "Iwwerliest",
 	"proofreadpage_specialpage_filterby_proofread_or_validated": "Iwwerliest oder validéiert",
 	"proofreadpage_specialpage_filterby_validated": "Validéiert",
+	"proofreadpage_specialpage_label_filterby": "Filteren no:",
 	"proofreadpage_specialpage_label_orderby": "Zortéieren no:",
 	"proofreadpage_specialpage_label_key": "Sichen:",
+	"proofreadpage_specialpage_label_sortascending": "Vu kleng op grouss zortéieren",
 	"proofreadpage_alphabeticalorder": "Alphabetesch Reiefolleg",
 	"proofreadpage_index_listofpages": "Säitelëscht",
 	"proofreadpage_image_message": "Link op d'Indexsäit",
@@ -94,5 +100,8 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Neen",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Qualitéitsniveau Iwwerliesen",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Qualitéitsniveau Iwwerliesen",
-	"proofreadpage-index-field-category-label": "Kategorien"
+	"proofreadpage-index-field-category-label": "Kategorien",
+	"tag-proofreadpage-quality0": "Ouni Text",
+	"tag-proofreadpage-quality3": "Iwwerlies",
+	"tag-proofreadpage-quality4": "Validéiert"
 }

@@ -8,7 +8,8 @@
 			"Metalhead64",
 			"Raimond Spekking",
 			"Tbleher",
-			"ThomasV"
+			"ThomasV",
+			"Brettchenweber"
 		]
 	},
 	"nstab-page": "Seite",
@@ -122,11 +123,11 @@
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Hilfe",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Der Nummerntyp lässt keine Änderung der Nummerierung zu. Jeder Wert in diesem Feld wird bei der Aktualisierung ignoriert.",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Typ der Seitennummer:",
-	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "Die Seitennummerierung beginnt von:",
+	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "Die Seitennummerierung beginnt ab:",
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "Seitenzahl nur für diese Seite ändern",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "Einstellung der Seitenzahl ab Scan Nummer $1",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Einstellung der Seitenzahl für Scan Nummer $1",
-	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Eine Liste der häufig verwendeten Seitennummernlabels ist erforderlich. Bitte wende dich an deinen lokalen Benutzerschnittstellenadministratore um die Labels einzurichten.",
+	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Eine Liste der häufig verwendeten Seitennummernlabels ist erforderlich. Bitte wende dich an deinen lokalen Benutzerschnittstellenadministrator, um die Labels einzurichten.",
 	"proofreadpage-preferences-animation-time-label": "Die Dauer der Schwenk- und Zoom-Animation (zwischen 0 und 2 Sekunden, Standard: 0). Höher ist weicher, niedriger ist schneller",
 	"proofreadpage-preferences-showheaders-label": "Beim Bearbeiten von Seiten im Namensraum {{ns:page}} die Felder für die Kopf- und die Fußzeile anzeigen",
 	"proofreadpage-preferences-horizontal-layout-label": "Beim Bearbeiten von Seiten im Namensraum {{ns:page}} ein horizontales Layout verwenden",
@@ -143,7 +144,7 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesungsqualität",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesungsqualität",
 	"proofreadpage-index-field-category-label": "Kategorien",
-	"proofreadpage-index-edit-category-help": "Kategorien werden ohne den Category-Präfix geschrieben und durch das \"|\"-Zeichen von einander getrennt.",
+	"proofreadpage-index-edit-category-help": "Kategorien werden ohne den Category-Präfix geschrieben und durch das \"|\"-Zeichen voneinander getrennt.",
 	"tag-proofreadpage-quality0": "Ohne Text",
 	"tag-proofreadpage-quality1": "Nicht korrekturgelesen",
 	"tag-proofreadpage-quality2": "Problematisch",
