@@ -155,6 +155,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "שימוש בתצוגה אופקית בעת עריכת דפים במרחב השם \"{{ns:page}}\"",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "להשתמש במצב העריכה החזותי הניסיוני החדש לעריכת רשימת הדפים.",
 	"proofreadpage-preferences-zoom-factor-label": "מקדם תקריב בגלילה (בין 1 ל־2, ברירת מחדל: 1.2). ערך גבוה יותר נותן תקריב גדול יותר בגל צעד",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "הצגת תיבת דו־שיח של תקציר עריכה בכל פעם {{GENDER:|שאתה שומר|שאת שומרת}} דף במצב עריכה ברצף",
+	"proofreadpage-preferences-after-save-action-label": "לבצע את הפעולה הזאת לאחר שמירת דף באמצעות מצב עריכה ברצף",
 	"proofreadpage-indexquality-alt": "{{PLURAL:$1|דף מאומת אחד|$1 דפים מאומתים}}, {{PLURAL:$2|אחד רק מוגה|$1 רק מוגהים}} {{PLURAL:$3|ואחד לא מוגה|ו־$3 לא מוגהים}}",
 	"content-model-proofread-page": "דף בספר",
 	"content-model-proofread-index": "מפתח ספר",

@@ -162,6 +162,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Gunakan tata letak horizontal saat menyunting di ruang nama {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Gunakan mode visual eksperimental yang baru untuk menyunting daftar halaman.",
 	"proofreadpage-preferences-zoom-factor-label": "Faktor pembesaran/pengecilan ketika menggulir (di antara 1 dan 2, baku: 1,2). Faktor yang lebih besar berarti lebih banyak perubahan per langkah",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Tampilkan dialog ringkasan suntingan setiap kali {{GENDER:|Anda}} menyimpan halaman dalam mode EditInSequence",
+	"proofreadpage-preferences-after-save-action-label": "Lakukan tindakan ini setelah menyimpan halaman menggunakan mode EditInSequence",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|halaman|halaman}} tervalidasi, $2 {{PLURAL:$2|halaman|halaman}} telah diuji baca saja dan $3 {{PLURAL:$3|halaman|halaman}} belum diuji baca",
 	"content-model-proofread-page": "Halaman buku",
 	"content-model-proofread-index": "Indeks buku",

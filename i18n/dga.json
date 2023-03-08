@@ -4,5 +4,7 @@
 			"Domo John"
 		]
 	},
-	"proofreadpage_nosuch_index_category-desc": "A\n <code><nowiki><pages/></nowiki></code> tag tẽɛ wulo la Index page na naŋ ba bebe"
+	"proofreadpage_nosuch_index_category-desc": "A\n <code><nowiki><pages/></nowiki></code> tag tẽɛ wulo la Index page na naŋ ba bebe",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Maŋ wuli sɛgere eŋ kyoɔroo yel-ka-N-yel wagere zaa {{GENDER:|fo}} niŋ kompiita gampɛlɛ sɛgere eŋ tɔntutaa sori poɔ",
+	"proofreadpage-preferences-after-save-action-label": "E a eebo ŋa ka fooŋ wa De sɛgere eŋ tɔntutaa soribiŋ ne a kompiita gampɛlɛ"
 }

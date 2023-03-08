@@ -105,6 +105,8 @@
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Hulp",
 	"proofreadpage-preferences-showheaders-label": "Kop- en voettekst velden weergeven als in de naamruimte {{ns:page}} wordt bewerkt",
 	"proofreadpage-preferences-horizontal-layout-label": "Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Telkens wanneer u in de modus \"Bewerking in volgorde\" een pagina opslaat een dialoogvenster voor bewerkingssamenvatting tonen",
+	"proofreadpage-preferences-after-save-action-label": "Deze handeling verrichten na het opslaan van een pagina met behulp van de modus \"Bewerking in volgorde\"",
 	"proofreadpage-indexquality-alt": "$1 gevalideerde {{PLURAL:$1|pagina|pagina's}}, $2 alleen proefgelezen {{PLURAL:$2|pagina|pagina's}} en $3 niet proefgelezen {{PLURAL:$3|pagina|pagina's}}",
 	"content-model-proofread-page": "Boekpagina",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Paginaselectie",
@@ -117,5 +119,6 @@
 	"tag-proofreadpage-quality1": "Niet proefgelezen",
 	"tag-proofreadpage-quality2": "Problematisch",
 	"tag-proofreadpage-quality3": "Proefgelezen",
-	"tag-proofreadpage-quality4": "Gevalideerd"
+	"tag-proofreadpage-quality4": "Gevalideerd",
+	"tag-proofreadpage-editinsequence": "Bewerking op volgorde"
 }

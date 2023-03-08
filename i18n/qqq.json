@@ -136,7 +136,7 @@
 	"prp-editinsequence-http-error-page": "Error displayed when page data cannot be fetched due to network issues",
 	"prp-edit-in-sequence-preview-http-error": "Error displayed when page cannot be previewed due to network issues",
 	"prp-edit-in-sequence-preview-api-error": "Error caused by the API returning unexpected output. Generic error message about reporting to phabricator.",
-	"prp-editinsequence-error": "Title of error message displayed to user when EditInSequence encounters a error state",
+	"prp-editinsequence-error": "Title of error message displayed to user when EditInSequence encounters a error state. '''\"EditInSequence\" should be translated the same as {{msg-mw|Tag-proofreadpage-editinsequence}}.'''",
 	"prp-editinsequence-preview": "Title of preview button",
 	"prp-editinsequence-save-settings-dialog-primary-button-title": "Title of button to save settings\n{{Identical|Save settings}}",
 	"prp-editinsequence-save-dialog-title": "Title of dialog asking for confirmation before saving current page",
@@ -183,8 +183,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Description of the checkbox preference to turn on horizontal layout in the edit form of the Page namespace.",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Description of the checkbox preference to turn on the new experimental visual mode for editing pagelists in Index pages.",
 	"proofreadpage-preferences-zoom-factor-label": "Description of the numerical preference to adjust the zoom factor in the page image viewer.",
-	"proofreadpage-preferences-show-dialog-before-every-save-label": "Description of a numerical preference to show an edit summary dialog everytime a page is saved in EditInSequence mode",
-	"proofreadpage-preferences-after-save-action-label": "Description of a string based preference denoting the action to be performed after saving a page using the EditInSequence mode",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Description of a numerical preference to show an edit summary dialog everytime a page is saved in EditInSequence mode.  '''\"EditInSequence\" should be translated the same as {{msg-mw|Tag-proofreadpage-editinsequence}}.'''",
+	"proofreadpage-preferences-after-save-action-label": "Description of a string based preference denoting the action to be performed after saving a page using the EditInSequence mode. '''\"EditInSequence\" should be translated the same as {{msg-mw|Tag-proofreadpage-editinsequence}}.'''",
 	"proofreadpage-indexquality-alt": "Textual alternative for display of proofreading level of the book. Parameters:\n* $1 is the number of validated pages.\n* $2 is the number of only proofread pages.\n* $3 is the number of not proofread pages.",
 	"content-model-proofread-page": "The name for Page: pages item content model, used when describing what type of content a page contains.",
 	"content-model-proofread-index": "The name for Index: pages item content model, used when describing what type of content a page contains.",
@@ -206,5 +206,5 @@
 	"tag-proofreadpage-quality2-description": "Tag description for changes changing to level 2 quality",
 	"tag-proofreadpage-quality3-description": "Tag description for changes changing to level 3 quality\n{{Identical|proofreadpage_quality3_message}}",
 	"tag-proofreadpage-quality4-description": "Tag description for changes changing to level 4 quality",
-	"tag-proofreadpage-editinsequence-description": "Tag description for changes made using the EditInSequence mode"
+	"tag-proofreadpage-editinsequence-description": "Tag description for changes made using the EditInSequence mode.  '''\"EditInSequence\" should be translated the same as {{msg-mw|Tag-proofreadpage-editinsequence}}.'''"
 }

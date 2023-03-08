@@ -103,7 +103,7 @@
 	"prp-editinsequence-http-error-page": "Non poteva obtener le pagina a causa de problemas del rete; per favor tenta lo de novo plus tarde.",
 	"prp-edit-in-sequence-preview-http-error": "Non poteva previsualisar le pagina a causa de problemas del rete; per favor tenta lo de novo plus tarde.",
 	"prp-edit-in-sequence-preview-api-error": "Non poteva previsualisar le pagina a causa del sequente error: $1. Si iste error es inexpectate, per favor reporta lo sur phabricator.wikimedia.org.",
-	"prp-editinsequence-error": "Error de modification in sequentia (EditInSequence); non es possibile continuar.",
+	"prp-editinsequence-error": "Error de modification in sequentia; non es possibile continuar.",
 	"prp-editinsequence-preview": "Previsualisar",
 	"prp-editinsequence-save-settings-dialog-primary-button-title": "Salveguardar parametros",
 	"prp-editinsequence-save-dialog-title": "Salveguardar iste pagina",
@@ -148,6 +148,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Usar le disposition horizontal quando modificar in le spatio de nomines {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Usar le nove modo visual experimental pro modificar le lista de paginas.",
 	"proofreadpage-preferences-zoom-factor-label": "Le factor de zoom sur le rolamento (inter 1 e 2, predefinition: 1,2). Quanto major, tanto plus zoom per passo.",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Monstrar un dialogo de summario de modification cata vice que tu salveguarda un pagina in modo \"Modification in sequentia\"",
+	"proofreadpage-preferences-after-save-action-label": "Exequer iste action poste haber salveguardate un pagina usante le modo \"Modification in sequentia\"",
 	"proofreadpage-indexquality-alt": "$1 pagina{{PLURAL:$1||s}} validate, $2 pagina{{PLURAL:$2||s}} solmente corrigite e $3 pagina{{PLURAL:$3||s}} non corrigite",
 	"content-model-proofread-page": "Pagina de libro",
 	"content-model-proofread-index": "Indice de libro",
@@ -163,11 +165,11 @@
 	"tag-proofreadpage-quality2": "Problematic",
 	"tag-proofreadpage-quality3": "Corrigite",
 	"tag-proofreadpage-quality4": "Validate",
-	"tag-proofreadpage-editinsequence": "ModificationInSequentia",
+	"tag-proofreadpage-editinsequence": "Modification in sequentia",
 	"tag-proofreadpage-quality0-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality3}}\"",
 	"tag-proofreadpage-quality4-description": "Modificationes que ha cambiate le qualitate del pagina a \"{{int:tag-proofreadpage-quality4}}\"",
-	"tag-proofreadpage-editinsequence-description": "Modificationes facite usante le nove modo ModificationInSequentia"
+	"tag-proofreadpage-editinsequence-description": "Modificationes facite usante le nove modo \"Modification in sequentia\""
 }
