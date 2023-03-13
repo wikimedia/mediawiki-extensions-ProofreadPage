@@ -8,7 +8,8 @@
 			"Metalhead64",
 			"Raimond Spekking",
 			"Tbleher",
-			"ThomasV"
+			"ThomasV",
+			"Brettchenweber"
 		]
 	},
 	"nstab-page": "Seite",
@@ -110,5 +111,5 @@
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "Korrekturlesungsqualität",
 	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "Korrekturlesungsqualität",
 	"proofreadpage-index-field-category-label": "Kategorien",
-	"proofreadpage-index-edit-category-help": "Kategorien werden ohne den Category-Präfix geschrieben und durch das \"|\"-Zeichen von einander getrennt."
+	"proofreadpage-index-edit-category-help": "Kategorien werden ohne den Category-Präfix geschrieben und durch das \"|\"-Zeichen voneinander getrennt."
 }
