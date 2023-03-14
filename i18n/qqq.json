@@ -133,7 +133,7 @@
 	"prp-editinsequence-pagination-does-not-exist": "Error displayed when pagination data cannot be fetched due to the Index: page not existing or not having any Page: pages to link to.",
 	"prp-editinsequence-unknown-error": "Error caused by the API returning unexpected output. Generic error message about reporting to phabricator. {{Identical|proofreadpage-pagelist-parsing-error-unknown}}",
 	"prp-editinsequence-http-error-page": "Error displayed when page data cannot be fetched due to network issues",
-	"prp-editinsequence-error": "Title of error message displayed to user when EditInSequence encounters a error state",
+	"prp-editinsequence-error": "Title of error message displayed to user when EditInSequence encounters a error state. '''\"EditInSequence\" should be translated the same as {{msg-mw|Tag-proofreadpage-editinsequence}}.'''",
 	"proofreadpage-pagelist-input-preview-button": "Label on preview button for pagelists.",
 	"proofreadpage-pagelist-dialog-update-button": "Label on update button inside dialog used for updating the pagelist.",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Message to be shown when the cancel button is clicked but unsaved work exists",

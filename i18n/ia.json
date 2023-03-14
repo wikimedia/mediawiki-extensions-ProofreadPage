@@ -100,7 +100,7 @@
 	"prp-editinsequence-pagination-does-not-exist": "Nulle pagination existe pro iste pagina, lo que rende impossibile le determination del pagina sequente e precedente. Si tu pensa que isto es un error, per favor reporta lo sur phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Un error inexpectate ha essite detegite. Per favor reporta iste error sur phabricator.wikimedia.org.",
 	"prp-editinsequence-http-error-page": "Non poteva obtener le pagina a causa de problemas del rete; per favor tenta lo de novo plus tarde.",
-	"prp-editinsequence-error": "Error de modification in sequentia (EditInSequence); non es possibile continuar.",
+	"prp-editinsequence-error": "Error de modification in sequentia; non es possibile continuar.",
 	"proofreadpage-pagelist-input-preview-button": "Previsualisar lista de paginas",
 	"proofreadpage-pagelist-dialog-update-button": "Actualisar lista de paginas",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Quitar iste dialogo pote causar le perdita del progresso non salveguardate.",
