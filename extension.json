@@ -9,7 +9,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.40.0"
 	},
 	"GroupPermissions": {
 		"user": {
@@ -95,7 +95,10 @@
 		},
 		"ext.proofreadpage.page.edit": {
 			"styles": "page/ext.proofreadpage.page.edit.css",
-			"packageFiles": [ "page/ext.proofreadpage.page.edit.js", "page/OpenseadragonController.js" ],
+			"packageFiles": [
+				"page/ext.proofreadpage.page.edit.js",
+				"page/OpenseadragonController.js"
+			],
 			"dependencies": [
 				"ext.proofreadpage.base",
 				"ext.proofreadpage.page",
@@ -238,7 +241,6 @@
 				"oojs-ui.styles.icons-interactions",
 				"oojs-ui.styles.icons-content",
 				"oojs-ui.styles.icons-media"
-
 			],
 			"targets": [
 				"desktop",
@@ -257,7 +259,9 @@
 		},
 		"ext.proofreadpage.page.editinsequence": {
 			"localBasePath": "modules/page.editinsequence",
-			"styles": [ "styles/index.css" ],
+			"styles": [
+				"styles/index.css"
+			],
 			"packageFiles": [
 				"index.js",
 				"Toolbar.js",
@@ -460,7 +464,9 @@
 			"description": "Enable edit in sequence in Page: pages"
 		},
 		"ProofreadPageBookNamespaces": {
-			"value": [ 0 ],
+			"value": [
+				0
+			],
 			"description": "Namespaces that are considered as book namespaces, mainspace is considered as book namespace by default"
 		}
 	},
