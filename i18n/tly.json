@@ -4,13 +4,14 @@
 			"Erdemaslancan",
 			"Ganbarzada",
 			"Patriot Kur",
-			"Гусейн"
+			"Гусейн",
+			"Patriot Kor"
 		]
 	},
 	"nstab-page": "Səhifə",
 	"nstab-index": "İndeks",
-	"tooltip-ca-nstab-page": "Kitobi səhifə diyəkə",
-	"tooltip-ca-nstab-index": "Kitobi indeksi diyəkə",
+	"tooltip-ca-nstab-page": "Diyəkə bə kitobi səhifə",
+	"tooltip-ca-nstab-index": "Diyəkə bə kitobi indeks",
 	"indexpages": "Səhifə indeksi siyohi",
 	"proofreadpage_image": "Şəkl",
 	"proofreadpage_index": "İndeks",
