@@ -86,7 +86,7 @@ class PageNumberTest extends ProofreadPageTestCase {
 	public function testHuge() {
 		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
 		$number = new PageNumber( '1000000000000000000000000000000000000', PageNumber::DISPLAY_NORMAL );
-		$this->assertEquals( $number->getRawPageNumber( $language ), PHP_INT_MAX );
+		$this->assertEquals( PHP_INT_MAX, $number->getRawPageNumber( $language ) );
 		$this->assertTrue( $number->isNumeric() );
 	}
 }

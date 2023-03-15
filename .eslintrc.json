@@ -9,6 +9,7 @@
 		"ve": "readonly"
 	},
 	"rules": {
-		"max-len": "off"
+		"max-len": "off",
+		"es-x/no-regexp-prototype-flags": "warn"
 	}
 }
