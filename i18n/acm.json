@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"MRidhaAJ"
+		]
+	},
+	"nstab-page": "صفحه",
+	"nstab-index": "فهرس",
+	"tooltip-ca-nstab-page": "طلع صفحة الكتاب",
+	"tooltip-ca-nstab-index": "طلع فهرس الكتاب",
+	"indexpages": "قائمة صفحات الفهرس",
+	"pageswithoutscans": "صفحات بلا فحص",
+	"proofreadpage_image": "صورة",
+	"proofreadpage_index": "فهرس"
+}
