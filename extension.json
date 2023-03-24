@@ -81,11 +81,7 @@
 	},
 	"ResourceModules": {
 		"ext.proofreadpage.base": {
-			"styles": "ext.proofreadpage.base.css",
-			"targets": [
-				"mobile",
-				"desktop"
-			]
+			"styles": "ext.proofreadpage.base.css"
 		},
 		"ext.proofreadpage.page": {
 			"styles": "page/ext.proofreadpage.page.css",
@@ -139,18 +135,10 @@
 			"skinStyles": {
 				"vector": "page/ext.proofreadpage.page.navigation.vector.less",
 				"vector-2022": "page/ext.proofreadpage.page.navigation.vector.less"
-			},
-			"targets": [
-				"mobile",
-				"desktop"
-			]
+			}
 		},
 		"ext.proofreadpage.article": {
-			"styles": "article/ext.proofreadpage.article.css",
-			"targets": [
-				"mobile",
-				"desktop"
-			]
+			"styles": "article/ext.proofreadpage.article.css"
 		},
 		"ext.proofreadpage.index": {
 			"styles": "index/ext.proofreadpage.index.css",
@@ -158,19 +146,11 @@
 			"dependencies": [
 				"oojs-ui-core",
 				"mediawiki.widgets.CategoryMultiselectWidget"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.proofreadpage.openseadragon": {
 			"packageFiles": [
 				"lib/openseadragon/openseadragon.js"
-			],
-			"targets": [
-				"mobile",
-				"desktop"
 			]
 		},
 		"ext.proofreadpage.index.pagelist": {
@@ -239,20 +219,12 @@
 				"oojs-ui.styles.icons-content",
 				"oojs-ui.styles.icons-media"
 
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.proofreadpage.special.indexpages": {
 			"styles": "special/indexpages/ext.proofreadpage.special.indexpages.css",
 			"dependencies": [
 				"ext.proofreadpage.base"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.proofreadpage.page.editinsequence": {
@@ -364,10 +336,6 @@
 				"proofreadpage-visualeditor-node-pages-inspector-description",
 				"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes",
 				"proofreadpage-visualeditor-node-pages-inspector-indexselector-no"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		}
 	},
