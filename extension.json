@@ -84,10 +84,7 @@
 			"styles": "ext.proofreadpage.base.css"
 		},
 		"ext.proofreadpage.page": {
-			"styles": "page/ext.proofreadpage.page.css",
-			"targets": [
-				"desktop"
-			]
+			"styles": "page/ext.proofreadpage.page.css"
 		},
 		"ext.proofreadpage.page.edit": {
 			"styles": "page/ext.proofreadpage.page.edit.css",
@@ -126,9 +123,6 @@
 				"proofreadpage-button-zoom-out-label",
 				"proofreadpage-openseadragon-no-image-found",
 				"proofreadpage-preferences-showheaders-label"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"ext.proofreadpage.page.navigation": {
@@ -287,9 +281,6 @@
 				"prp-editinsequence-preview",
 				"prp-edit-in-sequence-preview-api-error",
 				"prp-edit-in-sequence-preview-http-error"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"ext.proofreadpage.icons": {
