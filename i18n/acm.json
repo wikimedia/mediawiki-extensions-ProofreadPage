@@ -11,6 +11,14 @@
 	"indexpages": "قائمة صفحات الفهرس",
 	"pageswithoutscans": "صفحات بلا فحص",
 	"prefs-proofread-pagenamespace": "خيارات واجهة التصحيح",
+	"proofreadpage_desc": "يسمح بمقارنة سهلة للنص مع المسح الأصلي",
 	"proofreadpage_image": "صورة",
-	"proofreadpage_index": "فهرس"
+	"proofreadpage_index": "فهرس",
+	"proofreadpage_index_expected": "خطأ: فهرس تم توقعه",
+	"proofreadpage_nosuch_index": "خطأ: ماكو فهرس هيج",
+	"proofreadpage_nosuch_file": "خطأ: ماكو ملف هيج",
+	"proofreadpage_nologin": "ما مسجل دخول",
+	"proofreadpage_nologintext": "لازم تصير [[Special:UserLogin|مُسجلًالدخول]] لتعدّل حالة تدقيق الصفحات.",
+	"proofreadpage_notallowedtext": "ما مسموح إلك تغير حالة تصحيح هاي الصفحة.",
+	"proofreadpage_dataconfig_badformatted": "علة في ضبط البيانات"
 }
