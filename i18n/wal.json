@@ -9,5 +9,15 @@
 	"tooltip-ca-nstab-page": "Maxaafaa sinttaa be'a",
 	"tooltip-ca-nstab-index": "Maxaafaa indeksiyaa be'a",
 	"indexpages": "Indeksiyaa sinttaa paatettaa",
-	"pageswithoutscans": "Skkaaneti baynna sinttata"
+	"pageswithoutscans": "Skkaaneti baynna sinttata",
+	"proofreadpage_image": "Misiliyaa",
+	"proofreadpage_index": "Indeksiyaa",
+	"proofreadpage_index_expected": "Bala: Indeksiyee naagettiis",
+	"proofreadpage_nosuch_index": "Bala: Ha indeksee baawa",
+	"proofreadpage_nosuch_file": "Bala: Ha fayilee baawa",
+	"proofreadpage_indexdupetext": "Indeksiyaa sinttan sintati issitooppe daruwaa paatettokkona.",
+	"proofreadpage_nologin": "Gelabaakka",
+	"proofreadpage_nologintext": "Boxooxissa nabbabuwaa sinttaa hanotaa laammanawu neeni [[Special:UserLogin|gelanawu bessaasa]].",
+	"proofreadpage_nextpage": "Kaalliyaa sinttaa",
+	"proofreadpage_prevpage": "Kasetiya sinttaa"
 }
