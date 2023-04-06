@@ -147,6 +147,8 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Use horizontal layout wen you dey edit for de {{ns:page}} namespace inside",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Use de fresh experimental visual mode to edit de pagelist.",
 	"proofreadpage-preferences-zoom-factor-label": "De zoom factor for scroll top (between 1 den 2, default: 1.2). Higher dey zoom more per step",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Show edit summary dialog everytym {{GENDER:|you}} save page for EditInSequence mode insyd",
+	"proofreadpage-preferences-after-save-action-label": "Perform dis action after you save page wey dey use de EditInSequence mode",
 	"proofreadpage-indexquality-alt": "$1 dem validate {{PLURAL:$1|page|pages}}, $2 proofread per {{PLURAL:$2|page|pages}} den $3 dem no proofread {{PLURAL:$3|page|pages}}",
 	"content-model-proofread-page": "Book page",
 	"content-model-proofread-index": "Book index",
