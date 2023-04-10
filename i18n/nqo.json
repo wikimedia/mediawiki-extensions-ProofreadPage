@@ -55,5 +55,11 @@
 	"proofreadpage-pagelist-dialog-title": "$1 ߞߐߜߍߛߙߍߘߍ ߡߊߦߟߍ߬ߡߊ߲߫",
 	"proofreadpage-pagelist-dialog-insertchanges": "ߡߊ߬ߦߟߍ߬ߡߊ߲߬ߠߌ߲ ߠߊߘߏ߲߬",
 	"proofreadpage-pagelist-type": "ߞߐߜߍ ߝߙߍߕߍ ߛߎ߯ߦߊ: $1",
-	"content-model-proofread-page": "ߞߊ߬ߝߊ ߞߐߜߍ"
+	"content-model-proofread-page": "ߞߊ߬ߝߊ ߞߐߜߍ",
+	"content-model-proofread-index": "ߞߊ߬ߝߊ ߡߊ߬ߛߙߋ",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "ߞߐߜߍ ߛߎߥߊ߲ߘߟߌ",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ߞߐߜߍ ߟߎ߬",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ߐ߲߬ߐ߲߬ߐ߲߫",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ߍ߲߬ߍ߲߫",
+	"proofreadpage-index-field-category-label": "ߦߌߟߡߊ ߟߎ߬"
 }
