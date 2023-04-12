@@ -9,7 +9,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.39.0"
 	},
 	"GroupPermissions": {
 		"user": {
@@ -216,7 +216,6 @@
 				"oojs-ui.styles.icons-interactions",
 				"oojs-ui.styles.icons-content",
 				"oojs-ui.styles.icons-media"
-
 			]
 		},
 		"ext.proofreadpage.special.indexpages": {
@@ -227,7 +226,9 @@
 		},
 		"ext.proofreadpage.page.editinsequence": {
 			"localBasePath": "modules/page.editinsequence",
-			"styles": [ "styles/index.css" ],
+			"styles": [
+				"styles/index.css"
+			],
 			"packageFiles": [
 				"index.js",
 				"Toolbar.js",
