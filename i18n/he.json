@@ -152,7 +152,7 @@
 	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "נדרשת רשימת תווי מספרי דפים נפוצים. נא ליצור קשר עם עורכי הממשק המקומיים כדי להגדיר את התוויות.",
 	"proofreadpage-preferences-animation-time-label": "זמן הנפשת הצידוד והתקריב (בין 0 ל־2 שניות, ברירת מחדל: 0). מספר גבוה חלק יותר, מספר נמוך מהיר יותר",
 	"proofreadpage-preferences-showheaders-label": "הצגת כותרת עליונה וכותרת תחתונה בעת עריכת דפים במרחב השם \"{{ns:page}}\"",
-	"proofreadpage-preferences-horizontal-layout-label": "שימוש בתצוגה אופקית בעת עריכת דפים במרחב השם \"{{ns:page}}\"",
+	"proofreadpage-preferences-horizontal-layout-label": "שימוש בעימוד אופקי בעת עריכת דפים במרחב השם \"{{ns:page}}\"",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "להשתמש במצב העריכה החזותי הניסיוני החדש לעריכת רשימת הדפים.",
 	"proofreadpage-preferences-zoom-factor-label": "מקדם תקריב בגלילה (בין 1 ל־2, ברירת מחדל: 1.2). ערך גבוה יותר נותן תקריב גדול יותר בגל צעד",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "הצגת תיבת דו־שיח של תקציר עריכה בכל פעם {{GENDER:|שאתה שומר|שאת שומרת}} דף במצב עריכה ברצף",
