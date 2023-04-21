@@ -8,6 +8,8 @@
 	"apihelp-query+imageforpage-summary": "Prerenderitza i proporciona URLs a les imatges d'una pàgina determinada a l'espai de noms \"Pàgina:\".",
 	"apihelp-query+imageforpage-param-prop": "Quin tipus d'imatges o propietats d'imatges tornar per a una determinada pàgina a l'espai de noms \"Pàgina:\".",
 	"apierror-proofreadpage-invalidindex": "Títol d'índex \"$1\" invàlid.",
+	"apihelp-query+defaultcontentforpage-description": "Proporciona el contingut predeterminat d'una pàgina a l'espai de noms \"Pàgina:\".\n\nEl contingut predeterminat es wikitext sense processar (podria incloure etiquetes HTML sense procesar procedents de capes de text de llibres no fiables). No s'ha d'utilitzar en HTML sense escapament o sense procesar.",
+	"apihelp-query+defaultcontentforpage-summary": "Proporciona el contingut predeterminat d'una pàgina a l'espai de noms \"Pàgina:\".\n\nEl contingut predeterminat es wikitext sense processar (podria incloure etiquetes HTML sense procesar procedents de capes de text de llibres no fiables). No s'ha d'utilitzar en HTML sense escapament o sense procesar.",
 	"apihelp-query+proofread-description": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
 	"apihelp-query+proofread-summary": "Retorna informació sobre l'actual estat de revisió de les pàgines indicades.",
 	"apihelp-query+proofread-example-1": "Retorna l'estat de revisió de les pàgines de l'espai de noms 250",
