@@ -80,7 +80,7 @@ PageNumberInputWidget.prototype.getNumberTypeConfig = function () {
 		action: 'query',
 		prop: 'revisions',
 		titles: 'MediaWiki:Proofreadpage pagelist dropdown values.json',
-		rvslots: '*',
+		rvslots: 'main',
 		rvprop: 'content',
 		formatversion: '2'
 	} ).then( function ( response ) {
