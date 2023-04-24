@@ -49,7 +49,7 @@ PageModel.prototype.fetchData = function ( page ) {
 		indexpageids: true,
 		titles: page,
 		rvprop: 'content',
-		rvslots: '*'
+		rvslots: 'main'
 	} ).then( function ( result ) {
 		this.setInitialPageData( result );
 		this.setPageData();
