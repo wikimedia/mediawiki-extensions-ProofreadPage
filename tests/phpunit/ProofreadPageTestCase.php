@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\WikiMap\WikiMap;
 use PHPUnit\Framework\MockObject\MockObject;
 use ProofreadPage\Context;
 use ProofreadPage\FileProvider;
