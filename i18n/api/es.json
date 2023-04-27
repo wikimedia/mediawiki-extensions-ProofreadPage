@@ -6,7 +6,12 @@
 			"Macofe"
 		]
 	},
+	"apihelp-query+imageforpage-description": "Representa previamente y proporciona direcciones URL a las imágenes de una página determinada en el espacio de nombres \"Página:\".",
+	"apihelp-query+imageforpage-summary": "Representa previamente y proporciona direcciones URL a las imágenes de una página determinada en el espacio de nombres \"Página:\".",
+	"apihelp-query+imageforpage-param-prop": "Qué tipos de imágenes o propiedades de imágenes devolver para una página determinada en el espacio de nombres \"Página:\".",
 	"apierror-proofreadpage-invalidindex": "El título del índice \"$1\" no es válido.",
+	"apihelp-query+defaultcontentforpage-description": "Proporciona el contenido predeterminado para una página del espacio de nombres \"Página:\".\n\nEl contenido predeterminado es wikitexto sin procesar (que posiblemente incluya etiquetas HTML sin procesar procedentes de capas de texto de libros que no son de confianza). ¡No debe usarse en HTML sin escape/sin analizar!",
+	"apihelp-query+defaultcontentforpage-summary": "Proporciona el contenido predeterminado para una página del espacio de nombres \"Página:\".\n\nEl contenido predeterminado es wikitexto sin procesar (que posiblemente incluya etiquetas HTML sin procesar procedentes de capas de texto de libros que no son de confianza). ¡No debe usarse en HTML sin escape/sin analizar!",
 	"apihelp-query+proofread-description": "Devuelve información acerca del estado actual de revisión de las páginas dadas.",
 	"apihelp-query+proofread-summary": "Devuelve información sobre el estado de corrección de pruebas de las páginas especificadas.",
 	"apihelp-query+proofread-example-1": "Devolver el estado de revisión de las páginas en el espacio de nombres 250",
