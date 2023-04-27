@@ -79,6 +79,7 @@
 		"ProofreadPage\\Index\\IndexContentLookupMock": "tests/phpunit/Index/IndexContentLookupMock.php",
 		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php"
 	},
+	"ForeignResourcesDir": "modules/lib",
 	"ResourceModules": {
 		"ext.proofreadpage.base": {
 			"styles": "ext.proofreadpage.base.css"
