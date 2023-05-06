@@ -3,8 +3,8 @@
 namespace ProofreadPage\Page;
 
 use Article;
-use EditPage;
 use Html;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserOptionsLookup;

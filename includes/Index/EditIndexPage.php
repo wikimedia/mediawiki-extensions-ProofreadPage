@@ -3,7 +3,7 @@
 namespace ProofreadPage\Index;
 
 use Article;
-use EditPage;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MWException;
 use OOUI\DropdownInputWidget;
