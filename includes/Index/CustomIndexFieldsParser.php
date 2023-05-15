@@ -4,6 +4,7 @@ namespace ProofreadPage\Index;
 
 use FormatJson;
 use OutOfBoundsException;
+use RequestContext;
 
 /**
  * @license GPL-2.0-or-later
@@ -62,8 +63,7 @@ class CustomIndexFieldsParser {
 		if ( $data->exists() &&	$data->plain() != '' ) {
 			$config = FormatJson::decode( $data->plain(), true );
 			if ( $config === null ) {
-				global $wgOut;
-				$wgOut->showErrorPage(
+				RequestContext::getMain()->getOutput()->showErrorPage(
 					'proofreadpage_dataconfig_badformatted',
 					'proofreadpage_dataconfig_badformattedtext'
 				);
