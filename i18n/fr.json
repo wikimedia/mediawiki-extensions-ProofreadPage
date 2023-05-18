@@ -96,7 +96,7 @@
 	"proofreadpage_image_message": "Lien vers la page d’index",
 	"proofreadpage_page_status": "État de la page",
 	"proofreadpage_page_status_logged_out": "État de la page (seuls les utilisateurs connectés peuvent le définir)",
-	"proofreadpage_js_attributes": "Auteur Titre Année Éditeur",
+	"proofreadpage_js_attributes": "Auteur Titre Année ÉditeurDePublication",
 	"proofreadpage_index_attributes": "Auteur\nTitre\nAnnée|Année de publication\nÉditeur\nSource\nImage|Image en couverture\nPages||20\nRemarques||10",
 	"proofreadpage_pages": "$2 page{{PLURAL:$1||s}}",
 	"proofreadpage_specialpage_legend": "Rechercher dans les pages d’index",
