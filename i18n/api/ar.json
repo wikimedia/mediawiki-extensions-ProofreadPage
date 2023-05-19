@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Abanima",
+			"Alshamiri1",
 			"Meno25"
 		]
 	},
+	"apihelp-query+imageforpage-description": "يعرض مسبقًا ويوفر عناوين URL للصور لصفحة معينة في نطاق  \"الصفحة:\".",
 	"apihelp-query+proofread-description": "يعطي المعلومات حول وضع عملية التحقق للصفحات المختارة.",
 	"apihelp-query+proofread-summary": "يرجع معلومات حول حالة المراجعة للصفحات المعطاة.",
 	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
