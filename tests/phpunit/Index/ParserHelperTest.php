@@ -11,7 +11,7 @@ use ProofreadPageTestCase;
  */
 class ParserHelperTest extends ProofreadPageTestCase {
 
-	public function expandTemplateArgsProvider() {
+	public static function expandTemplateArgsProvider() {
 		return [
 			[
 				'{{{foo}}}',

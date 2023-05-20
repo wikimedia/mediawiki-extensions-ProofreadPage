@@ -198,7 +198,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function provideIntervals() {
+	public static function provideIntervals() {
 		return [
 			[ true, 1, 3, 3 ],
 			[ true, 1, 3, 5 ],

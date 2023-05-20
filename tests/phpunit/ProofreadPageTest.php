@@ -18,7 +18,7 @@ use Status;
  * @covers \ProofreadPage\ProofreadPage
  */
 class ProofreadPageTest extends ProofreadPageTestCase {
-	public function provideOnMultiContentSave() {
+	public static function provideOnMultiContentSave() {
 		return [
 			[
 				Status::newGood(),

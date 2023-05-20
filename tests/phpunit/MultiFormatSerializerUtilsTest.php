@@ -12,7 +12,7 @@ use ProofreadPageTestCase;
 class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 	use MultiFormatSerializerUtils;
 
-	public function isArrayValuesProvider() {
+	public static function isArrayValuesProvider() {
 		return [
 			[
 				[
@@ -49,7 +49,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 		$this->assertTrue( $isArray );
 	}
 
-	public function sequentialArrayProvider() {
+	public static function sequentialArrayProvider() {
 		return [
 			[
 				[],
@@ -90,7 +90,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function arrayKeyExistsProvider() {
+	public static function arrayKeyExistsProvider() {
 		return [
 			[
 				[],
@@ -137,7 +137,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 		$this->assertTrue( $expectExists );
 	}
 
-	public function stringArrayProvider() {
+	public static function stringArrayProvider() {
 		return [
 			[
 				[],
@@ -205,7 +205,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 		$this->assertTrue( $expectedOk );
 	}
 
-	public function guessDataFormatProvider() {
+	public static function guessDataFormatProvider() {
 		return [
 			[
 				'',
@@ -304,7 +304,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 		$this->assertEquals( $expectedFormat, $format );
 	}
 
-	public function redirectFormatProvider() {
+	public static function redirectFormatProvider() {
 		return [
 			[
 				CONTENT_FORMAT_WIKITEXT,

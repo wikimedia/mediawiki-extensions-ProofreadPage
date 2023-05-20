@@ -11,7 +11,7 @@ use ProofreadPageTestCase;
  */
 class PageNumberTest extends ProofreadPageTestCase {
 
-	public function formattedPageNumberProvider() {
+	public static function formattedPageNumberProvider() {
 		return [
 			[ '1', '1', new PageNumber( '1' ), null ],
 			[ 'X', 'X', new PageNumber( '10', PageNumber::DISPLAY_HIGHROMAN ), null ],

@@ -76,7 +76,7 @@ class PageContentTest extends ProofreadPageTestCase {
 		$this->assertSame( $content, $content->copy() );
 	}
 
-	public function equalsProvider() {
+	public static function equalsProvider() {
 		return [
 			[
 				self::buildPageContent(),
@@ -123,7 +123,7 @@ class PageContentTest extends ProofreadPageTestCase {
 		$this->assertSame( 'test', $content->getWikitextForTransclusion() );
 	}
 
-	public function getTextForSummaryProvider() {
+	public static function getTextForSummaryProvider() {
 		return [
 			[
 				self::buildPageContent( 'aaaa', "hello\nworld.", '', 1, 'test' ),

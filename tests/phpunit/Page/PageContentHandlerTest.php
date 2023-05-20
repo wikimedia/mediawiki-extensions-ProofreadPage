@@ -52,7 +52,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertFalse( $this->handler->canBeUsedOn( Title::makeTitle( NS_MAIN, 'Test' ) ) );
 	}
 
-	public function pageWikitextSerializationProvider() {
+	public static function pageWikitextSerializationProvider() {
 		return [
 			[
 				'Experimental header',
@@ -211,7 +211,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function pageJsonSerializationProvider() {
+	public static function pageJsonSerializationProvider() {
 		return [
 			[ 'Foo', 'Bar', 'FooBar', 2, '1.2.3.4', json_encode( [
 				'header' => 'Foo',
@@ -245,7 +245,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function badPageJsonSerializationProvider() {
+	public static function badPageJsonSerializationProvider() {
 		return [
 			[ '' ],
 			[ '124' ],
@@ -385,7 +385,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function providePreSaveTransform() {
+	public static function providePreSaveTransform() {
 		return [
 			[
 				self::buildPageContent( 'hello this is ~~~', '~~~' ),
@@ -425,7 +425,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertTrue( $content->equals( $expectedContent ) );
 	}
 
-	public function providePreloadTransform() {
+	public static function providePreloadTransform() {
 		return [
 			[ self::buildPageContent( 'hello this is ~~~' ),
 				self::buildPageContent( "hello this is ~~~" )
@@ -454,7 +454,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertEquals( $expectedContent, $content );
 	}
 
-	public function getParserOutputHtmlProvider(): array {
+	public static function getParserOutputHtmlProvider(): array {
 		return [
 			[
 				self::buildPageContent( '', 'Test', '' ),
@@ -506,7 +506,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
-	public function getParserOutputRedirectHtmlProvider(): array {
+	public static function getParserOutputRedirectHtmlProvider(): array {
 		return [
 			[
 				self::buildPageContent( '', '#REDIRECT [[Test]]' ),

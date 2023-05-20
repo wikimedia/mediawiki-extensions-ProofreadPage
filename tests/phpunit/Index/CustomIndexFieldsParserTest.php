@@ -150,7 +150,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		$parser->parseCustomIndexField( $content, 'years' );
 	}
 
-	public function replaceVariablesWithIndexEntriesProvider() {
+	public static function replaceVariablesWithIndexEntriesProvider() {
 		return [
 			[
 				"{{\n|Title=Test book\n|Header={{{title}}}\n}}",

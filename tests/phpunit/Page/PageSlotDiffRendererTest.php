@@ -12,23 +12,23 @@ use WikitextContent;
  */
 class PageSlotDiffRendererTest extends ProofreadPageTestCase {
 
-	public function getDiffProvider() {
+	public static function getDiffProvider() {
 		return [
 			[
-				$this->newContent( 'header', 'body', 'footer', 2 ),
-				$this->newContent( 'header', 'body', 'footer', 2 ),
+				self::newContent( 'header', 'body', 'footer', 2 ),
+				self::newContent( 'header', 'body', 'footer', 2 ),
 				''
 			],
 			[
 				null,
-				$this->newContent( 'header', 'body2', 'footer', 2 ),
+				self::newContent( 'header', 'body2', 'footer', 2 ),
 				'Page statusPage status-Not proofread+Problematic' .
 				'Header (noinclude):Header (noinclude): + header ' .
 				'Page body (to be transcluded):Page body (to be transcluded): + body2 ' .
 				'Footer (noinclude):Footer (noinclude): + footer '
 			],
 			[
-				$this->newContent( 'header', 'body', 'footer', 2 ),
+				self::newContent( 'header', 'body', 'footer', 2 ),
 				null,
 				'Page statusPage status-Problematic+Not proofread' .
 				'Header (noinclude):Header (noinclude): - header ' .
@@ -74,7 +74,7 @@ class PageSlotDiffRendererTest extends ProofreadPageTestCase {
 		return preg_replace( '/\s+/', ' ', $diff );
 	}
 
-	private function newContent(
+	private static function newContent(
 		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
 	) {
 		return new PageContent(

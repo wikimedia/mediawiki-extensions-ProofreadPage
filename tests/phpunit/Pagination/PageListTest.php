@@ -10,7 +10,7 @@ use ProofreadPageTestCase;
  */
 class PageListTest extends ProofreadPageTestCase {
 
-	public function getNumberProvider() {
+	public static function getNumberProvider() {
 		return [
 			[
 				new PageNumber( '2' ),

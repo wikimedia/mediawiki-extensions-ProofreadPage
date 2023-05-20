@@ -61,7 +61,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertSame( $content, $content->copy() );
 	}
 
-	public function isEmptyProvider() {
+	public static function isEmptyProvider() {
 		return [
 			[
 				new IndexContent( [] )
@@ -79,7 +79,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertTrue( $content->isEmpty() );
 	}
 
-	public function isNotEmptyProvider() {
+	public static function isNotEmptyProvider() {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'Bar' ) ] )
@@ -97,7 +97,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertFalse( $content->isEmpty() );
 	}
 
-	public function isValidProvider() {
+	public static function isValidProvider() {
 		return [
 			[
 				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY, 'Foo' ) ] )
@@ -112,7 +112,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertTrue( $content->isValid() );
 	}
 
-	public function isNotValidProvider() {
+	public static function isNotValidProvider() {
 		return [
 			[
 				new IndexContent( [], [ Title::makeTitle( -4, 'Foo' ) ] )
@@ -127,7 +127,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertFalse( $content->isValid() );
 	}
 
-	public function equalsProvider() {
+	public static function equalsProvider() {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
@@ -169,7 +169,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertTrue( $a->equals( $b ) );
 	}
 
-	public function notEqualsProvider() {
+	public static function notEqualsProvider() {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
@@ -205,7 +205,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function getTextForSummaryProvider() {
+	public static function getTextForSummaryProvider() {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'bar' ) ] ),
@@ -269,7 +269,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		$this->assertEquals( $pageList, $content->getPagelistTagContent() );
 	}
 
-	public function getPagelistTagContentProvider() {
+	public static function getPagelistTagContentProvider() {
 		return [
 			[
 				new IndexContent( [ 'Pages' => new WikitextContent(

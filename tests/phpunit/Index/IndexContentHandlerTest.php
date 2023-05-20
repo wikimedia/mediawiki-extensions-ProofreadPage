@@ -48,7 +48,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertFalse( $this->handler->canBeUsedOn( Title::makeTitle( NS_MAIN, 'Test' ) ) );
 	}
 
-	public function wikitextSerializationProvider() {
+	public static function wikitextSerializationProvider() {
 		return [
 			[
 				new IndexContent( [] ),
@@ -104,7 +104,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		}
 	}
 
-	public function jsonExceptionSerializationProvider() {
+	public static function jsonExceptionSerializationProvider() {
 		return [
 			'Redirects not supported in JSON' => [
 				new IndexRedirectContent( Title::newFromText( 'Foo' ) ),
@@ -121,7 +121,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->handler->serializeContent( $content, CONTENT_FORMAT_JSON );
 	}
 
-	public function wikitextUnserializationProvider() {
+	public static function wikitextUnserializationProvider() {
 		return [
 			[
 				new IndexContent( [] ),
@@ -303,7 +303,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertEquals( $expectedContent, $fromWikitext );
 	}
 
-	public function jsonUnserializationProvider() {
+	public static function jsonUnserializationProvider() {
 		return [
 			[
 				new IndexContent( [] ),
@@ -481,7 +481,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertTrue( $expectedContent->equals( $unserialized ) );
 	}
 
-	public function jsonExceptionUnserializationProvider() {
+	public static function jsonExceptionUnserializationProvider() {
 		return [
 			'Empty string' => [
 				'',
@@ -624,7 +624,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertInstanceOf( DeleteIndexQualityStats::class, $updates[0] );
 	}
 
-	public function providePreSaveTransform() {
+	public static function providePreSaveTransform() {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'Hello ~~~' ) ] ),
@@ -656,7 +656,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertTrue( $newContent->equals( $expectedContent ) );
 	}
 
-	public function providePreloadTransform() {
+	public static function providePreloadTransform() {
 		return [
 			[
 				new IndexContent( [ 'foo' => new WikitextContent( 'hello this is ~~~' ) ] ),
@@ -688,7 +688,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$this->assertEquals( $expectedContent, $newContent );
 	}
 
-	public function provideValidateSave() {
+	public static function provideValidateSave() {
 		return [
 			[
 				StatusValue::newGood(),

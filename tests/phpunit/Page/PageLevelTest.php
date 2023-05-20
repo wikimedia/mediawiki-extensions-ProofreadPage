@@ -23,7 +23,7 @@ class PageLevelTest extends ProofreadPageTestCase {
 		$this->assertSame( $user, $level->getUser() );
 	}
 
-	public function equalsProvider() {
+	public static function equalsProvider() {
 		return [
 			[
 				new PageLevel( 1, null ),
@@ -55,7 +55,7 @@ class PageLevelTest extends ProofreadPageTestCase {
 		$this->assertSame( $equal, $a->equals( $b ) );
 	}
 
-	public function isChangeAllowedProvider() {
+	public static function isChangeAllowedProvider() {
 		$testUser = User::newFromName( 'Test' );
 		$test2User = User::newFromName( 'Test2' );
 		$test3User = User::newFromName( 'Test3' );
@@ -158,7 +158,7 @@ class PageLevelTest extends ProofreadPageTestCase {
 		$this->assertSame( $result, $old->isChangeAllowed( $new, $permissionManager ) );
 	}
 
-	public function nameProvider() {
+	public static function nameProvider() {
 		return [
 			[
 				'wikiUser',

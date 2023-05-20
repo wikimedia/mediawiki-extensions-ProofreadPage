@@ -12,7 +12,7 @@ use Title;
  */
 class WikitextLinksExtractorTest extends ProofreadPageTestCase {
 
-	public function getLinksToNamespaceProvider() {
+	public static function getLinksToNamespaceProvider() {
 		return [
 			[
 				'[[Foo]]',

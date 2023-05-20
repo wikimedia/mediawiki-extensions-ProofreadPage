@@ -47,7 +47,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 		$this->assertSame( $content, $content->copy() );
 	}
 
-	public function equalsProvider() {
+	public static function equalsProvider() {
 		return [
 			[
 				new IndexRedirectContent( Title::newFromText( 'Foo' ) ),

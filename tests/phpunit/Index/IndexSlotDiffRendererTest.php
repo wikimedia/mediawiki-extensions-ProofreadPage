@@ -14,7 +14,7 @@ use WikitextContent;
  */
 class IndexSlotDiffRendererTest extends ProofreadPageTestCase {
 
-	public function getDiffProvider() {
+	public static function getDiffProvider() {
 		return [
 			[
 				new IndexContent( [

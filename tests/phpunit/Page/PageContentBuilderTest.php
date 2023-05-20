@@ -72,7 +72,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function buildDefaultContentForPageProvider() {
+	public static function buildDefaultContentForPageProvider() {
 		return [
 			[
 				 'Test.djvu/1',
@@ -136,7 +136,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function buildContentFromInputProvider() {
+	public static function buildContentFromInputProvider() {
 		return [
 			[
 				'42',

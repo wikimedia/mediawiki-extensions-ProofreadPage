@@ -35,7 +35,7 @@ class ContextTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function testGetFileProvider() {
+	public function testGetFileProviderFunction() {
 		$this->assertInstanceOf(
 			FileProvider::class,
 			$this->buildDummyContext()->getFileProvider()
