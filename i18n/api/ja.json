@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Likibp"
+			"Likibp",
+			"Shirayuki"
 		]
 	},
 	"apierror-proofreadpage-invalidindex": "目録のタイトル「$1」が無効です。",
@@ -19,5 +20,5 @@
 	"apihelp-query+proofreadpagesinindex-param-pageid": "以下のページを取得する目録ページのページID",
 	"apihelp-query+proofreadpagesinindex-param-prop": "各ページで取得するプロパティ",
 	"apihelp-query+proofreadpagesinindex-param-title": "以下のページを取得する目録ページのタイトル",
-	"apihelp-query+proofreadpagesinindex-example-1": "デフォルトの情報を返す"
+	"apihelp-query+proofreadpagesinindex-example-1": "既定の情報を返す"
 }
