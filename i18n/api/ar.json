@@ -2,9 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Abanima",
-			"Meno25"
+			"Meno25",
+			"Alshamiri1"
 		]
 	},
+	"apihelp-query+imageforpage-description": "يعرض مسبقًا ويوفر عناوين URL للصور لصفحة معينة في نطاق  \"الصفحة:\".",
+	"apihelp-query+imageforpage-summary": "يعرض مسبقًا ويوفر عناوين URL للصور لصفحة معينة في مساحة الاسم \"الصفحة:\".",
+	"apihelp-query+imageforpage-param-prop": "أنواع الصور أو خصائص الصور التي سيتم عرضها لصفحة معينة في مساحة الاسم \"الصفحة:\".",
+	"apierror-proofreadpage-invalidindex": "عنوان فهرس غير صالح \" $1 \".",
+	"apihelp-query+defaultcontentforpage-description": "يوفر المحتوى الافتراضي لصفحة معينة في نطاق  \"الصفحة:\".! N !! N! المحتوى الافتراضي هو نص ويكي خام (من المحتمل أن يتضمن وسوم HTML الأولية من طبقات نص الكتاب غير الموثوق بها). يجب ألا يتم استخدامه في HTML بدون إلغاء / بدون تحليل!",
+	"apihelp-query+defaultcontentforpage-summary": "يوفر المحتوى الافتراضي لصفحة معينة في نطاق  \"الصفحة:\".! N !! N! المحتوى الافتراضي هو نص ويكي خام (من المحتمل أن يتضمنوسوم HTML الأولية من طبقات نص الكتاب غير الموثوق بها). يجب ألا يتم استخدامه في HTML بدون إلغاء / بدون تحليل!",
 	"apihelp-query+proofread-description": "يعطي المعلومات حول وضع عملية التحقق للصفحات المختارة.",
 	"apihelp-query+proofread-summary": "يرجع معلومات حول حالة المراجعة للصفحات المعطاة.",
 	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
@@ -12,5 +19,12 @@
 	"apihelp-query+proofreadinfo-summary": "يرجع معلومات حول ضبط امتداد ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "ما هي خصائص عملية التحقق المطلوب الحصول عليها:\n;namespaces:Information عن نطاقي \"{{ns:Page}}\" و \"{{ns:Index}}\".\n;qualitylevels:List قائمة مستويات جودة عملية التحقق.",
 	"apihelp-query+proofreadinfo-example-1": "إعطاء المعلومات الافتراضية",
-	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات"
+	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات",
+	"apihelp-query+proofreadpagesinindex-description": "قائمة الصفحات في فهرس معين",
+	"apihelp-query+proofreadpagesinindex-summary": "قائمة الصفحات في فهرس معين",
+	"apihelp-query+proofreadpagesinindex-param-limit": "حدد عدد الصفحات التي سيتم إرجاعها",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "معرف الصفحة لصفحة الفهرس للحصول على صفحات لها",
+	"apihelp-query+proofreadpagesinindex-param-prop": "أي الخصائص التي يجب الحصول عليها لكل صفحة",
+	"apihelp-query+proofreadpagesinindex-param-title": "عنوان صفحة الفهرس المراد الحصول على صفحات لها",
+	"apihelp-query+proofreadpagesinindex-example-1": "إعادة المعلومات الافتراضية"
 }
