@@ -46,6 +46,11 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 			return;
 		}
 
+		if ( !response.query.pages ) {
+			this.handleError( this.handleError( mw.msg( 'prp-editinsequence-pagination-does-not-exist' ) ) );
+			return;
+		}
+
 		this.fillProofreadMap( response.query.pages );
 		this.response = this.response.concat( response.query.proofreadpagesinindex );
 
@@ -157,7 +162,7 @@ PagelistModel.prototype.next = function () {
  * @return {Object<string, number, boolean>} Stored details of next page
  */
 PagelistModel.prototype.getNext = function () {
-	if ( this.currentIndex === this.pagelist.length ) {
+	if ( this.currentIndex === this.pagelist.length - 1 ) {
 		return {
 			title: '',
 			pageNumber: -1,
