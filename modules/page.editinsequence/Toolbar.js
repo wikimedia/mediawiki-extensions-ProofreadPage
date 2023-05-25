@@ -4,6 +4,7 @@ var PreviewTool = require( './PreviewTool.js' );
 var PageStatusTools = require( './PageStatusTools.js' );
 var SaveTool = require( './SaveTool.js' );
 var SaveOptionsTool = require( './SaveOptionsTool.js' );
+var PageSelectionTool = require( './PageSelectionTool.js' );
 
 /**
  * EditInSequence specific modifications to the standard toolbar
@@ -36,6 +37,7 @@ function EisToolbarPanel() {
 	this.toolFactory.register( PreviewTool );
 	this.toolFactory.register( SaveTool );
 	this.toolFactory.register( SaveOptionsTool );
+	this.toolFactory.register( PageSelectionTool );
 
 	this.toolGroupFactory.register( PageStatusTools.PageStatusMenu );
 	PageStatusTools.pageStatuses.forEach( function ( elem ) {
@@ -59,14 +61,14 @@ function EisToolbarPanel() {
 		},
 		{
 			type: 'bar',
-			include: [ 'save', 'saveOptions' ],
+			include: [ 'pageSelection', 'save', 'saveOptions' ],
 			align: 'after'
 		}
 	] );
 
 	this.$element.addClass( 'prp-edit-in-sequence-toolbar' );
 
-	this.$element.append( [ this.toolbar.$element ] );
+	this.$element.append( [ this.toolbar.$element, this.eis.getPageSelectionLayout().$element ] );
 
 	this.toolbar.initialize();
 	this.toolbar.emit( 'updateState' );

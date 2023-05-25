@@ -244,7 +244,11 @@
 				"PreviewWidget.js",
 				"PageStatusTools.js",
 				"EditorController.js",
-				"OpenseadragonController.js"
+				"OpenseadragonController.js",
+				"PageSelectionWidget.js",
+				"PageSelectionFilter.js",
+				"PageSelectionLayout.js",
+				"PageSelectionTool.js"
 			],
 			"dependencies": [
 				"ext.proofreadpage.page.edit",
@@ -284,6 +288,10 @@
 				"prp-editinsequence-http-error-page",
 				"prp-editinsequence-error",
 				"prp-editinsequence-preview",
+				"prp-editinsequence-page-filter-label-all",
+				"prp-editinsequence-page-filter-redlink",
+				"prp-editinsequence-page-selection-label",
+				"prp-editinsequence-page-selection-widget-label",
 				"prp-edit-in-sequence-preview-api-error",
 				"prp-edit-in-sequence-preview-http-error"
 			]

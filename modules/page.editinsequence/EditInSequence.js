@@ -4,6 +4,8 @@ var EditorController = require( './EditorController.js' );
 var OpenseadragonController = require( './OpenseadragonController.js' );
 var SaveOptionsDialog = require( './SaveOptionsDialog.js' );
 var SaveOptionsModel = require( './SaveOptionsModel.js' );
+var PageSelectionLayout = require( './PageSelectionLayout.js' );
+var pageSelectionFilter = require( './PageSelectionFilter.js' );
 /**
  * Implements the edit-in-sequence services
  *
@@ -21,6 +23,12 @@ function EditInSequence() {
 		size: 'large'
 	} );
 	OO.ui.getWindowManager().addWindows( [ this.saveOptionsDialog ] );
+	this.pageSelectionLayout = new PageSelectionLayout( this.pagelistModel );
+	for ( var i = 0; i < pageSelectionFilter.length; i++ ) {
+		this.pageSelectionLayout.register( pageSelectionFilter[ i ].name, pageSelectionFilter[ i ] );
+	}
+	mw.hook( 'ext.proofreadpage.page-selection-register-filter' ).fire( this.pageSelectionLayout );
+	this.pageSelectionLayout.initialize();
 	this.osdController = null;
 	if ( mw.proofreadpage.openseadragon ) {
 		this.osdController = new OpenseadragonController( mw.proofreadpage.openseadragon, this.pagelistModel );
@@ -39,6 +47,10 @@ function EditInSequence() {
  */
 EditInSequence.prototype.openSaveDialog = function () {
 	OO.ui.getWindowManager().openWindow( this.saveOptionsDialog );
+};
+
+EditInSequence.prototype.getPageSelectionLayout = function () {
+	return this.pageSelectionLayout;
 };
 
 EditInSequence.prototype.showError = function ( err ) {

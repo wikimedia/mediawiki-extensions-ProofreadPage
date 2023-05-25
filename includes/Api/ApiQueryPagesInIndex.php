@@ -117,8 +117,9 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 	 */
 	private function getPageInfo( Title $pageTitle, $pagination, array $prop ) {
 		// The index of the page within the index - vital for continuation
+		$pageOffset = $pagination->getPageNumber( $pageTitle );
 		$pageInfo = [
-			'pageoffset' => $pagination->getPageNumber( $pageTitle )
+			'pageoffset' => $pageOffset
 		];
 
 		if ( isset( $prop[ 'ids' ] ) ) {
@@ -127,6 +128,12 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 
 		if ( isset( $prop[ 'title' ] ) ) {
 			$pageInfo[ 'title' ] = $pageTitle->getFullText();
+		}
+
+		if ( isset( $prop[ 'formattedPageNumber' ] ) ) {
+			$pageInfo[ 'formattedPageNumber' ] = $pagination
+				->getDisplayedPageNumber( $pageOffset )
+				->getFormattedPageNumber( $this->getLanguage() );
 		}
 
 		return $pageInfo;
@@ -143,6 +150,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 				ParamValidator::PARAM_TYPE => [
 					'ids',
 					'title',
+					'formattedPageNumber',
 				],
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
 			],
