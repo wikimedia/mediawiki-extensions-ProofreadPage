@@ -70,7 +70,7 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
 		var pages = response.query.pages;
 		for ( var i = 0; i < pages.length; i++ ) {
 			var ifp = pages[ i ].imagesforpage;
-			if ( ifp && !this.imageSet[ pages[ i ].title ] ) {
+			if ( ifp && !this.imageSet[ pages[ i ].title ] && ifp.thumbnail ) {
 				var ifpArray = [ ifp.thumbnail, ifp.responsiveimages[ '1.5' ], ifp.responsiveimages[ '2' ] ];
 				this.imageSet[ pages[ i ].title ] = ifpArray;
 				this.preload( ifpArray );
