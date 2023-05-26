@@ -122,6 +122,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "前のページへ",
 	"prp-editinsequence-editsummary-placeholder": "変更内容を説明してください",
 	"prp-editinsequence-could-not-save-edit": "この編集は保存できません",
+	"prp-editinsequence-page-filter-label-all": "すべてのページ",
 	"proofreadpage-openseadragon-no-image-found": "OpenSeadragon の初期化に失敗しました。イメージが見つかりません。",
 	"proofreadpage-pagelist-input-preview-button": "ページリストのプレビュー",
 	"proofreadpage-pagelist-dialog-update-button": "ページリストの更新",
