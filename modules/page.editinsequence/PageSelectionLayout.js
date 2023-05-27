@@ -78,7 +78,7 @@ PageSelectionLayout.prototype.onFilterSelected = function ( page ) {
 PageSelectionLayout.prototype.toggle = function () {
 	this.opened = !this.opened;
 	this.bookletLayout.$element.toggleClass( 'prp-eis-page-selection-widget-open', this.opened );
-	this.bookletLayout.$element.removeClass( 'prp-eis-page-selection-widget-closed', !this.opened );
+	this.bookletLayout.$element.toggleClass( 'prp-eis-page-selection-widget-closed', !this.opened );
 };
 
 /**
