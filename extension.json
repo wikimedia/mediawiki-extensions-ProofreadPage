@@ -262,6 +262,7 @@
 				"oojs-ui-windows",
 				"oojs-ui-toolbars",
 				"mediawiki.page.preview",
+				"oojs-ui.styles.icons-content",
 				"oojs-ui.styles.icons-movement",
 				"oojs-ui.styles.icons-accessibility",
 				"oojs-ui.styles.icons-interactions"

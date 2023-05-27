@@ -25,6 +25,7 @@ PageSelectionTool.prototype.onUpdateState = function () {
 PageSelectionTool.prototype.onSelect = function () {
 	this.selected = !this.selected;
 	this.setActive( this.selected );
+	this.setIcon( this.selected ? 'collapse' : 'arrowNext' );
 	this.toolbar.eis.pageSelectionLayout.toggle();
 };
 
