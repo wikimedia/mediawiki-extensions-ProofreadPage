@@ -150,7 +150,7 @@ PagelistModel.prototype.next = function () {
 	this.currentIndex++;
 	this.currentPage = this.pagelist[ this.currentIndex ].title;
 	this.emit( 'pageUpdated', this.currentPage );
-	if ( this.currentIndex === this.pagelist.length ) {
+	if ( this.currentIndex === this.pagelist.length - 1 ) {
 		this.emit( 'lastReached' );
 	}
 };
