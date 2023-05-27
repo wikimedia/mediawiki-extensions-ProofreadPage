@@ -86,28 +86,35 @@ class ApiQueryImageForPage extends ApiQueryBase {
 			return [];
 		}
 
-		$data = [
-			'thumbnail' => $this->pageDisplayHandler->getImageThumbnail( $title )->getUrl()
-		];
+		$thumbnail = $this->pageDisplayHandler->getImageThumbnail( $title );
+
+		$data = [];
+
+		// Check if the thumbnail has been created, if not do not send back any URL for the thumbnail
+		if ( $thumbnail ) {
+			$data['thumbnail'] = $thumbnail->getUrl();
+		}
 
 		if ( isset( $props['size'] ) ) {
 			$data['size'] = $this->pageDisplayHandler->getImageWidth( $title );
-		}
-
-		if ( isset( $props['fullsize'] ) ) {
-			$data['fullsize'] = $this->pageDisplayHandler->getImageFullSize( $title )->getUrl();
 		}
 
 		if ( isset( $props['filename'] ) ) {
 			$data['filename'] = $file->getName();
 		}
 
-		if ( isset( $props['responsiveimages'] ) ) {
-			$responsiveUrls = $this->pageDisplayHandler->getImageThumbnail( $title )->responsiveUrls;
+		if ( isset( $props['responsiveimages'] ) && $thumbnail ) {
+			$responsiveUrls = $thumbnail->responsiveUrls;
 			$data['responsiveimages'] = [];
 			foreach ( $responsiveUrls as $density => $url ) {
 				$data['responsiveimages'][$density] = $url;
 			}
+		}
+
+		$fullSizeImage = $this->pageDisplayHandler->getImageFullSize( $title );
+
+		if ( isset( $props['fullsize'] ) && $fullSizeImage ) {
+			$data['fullsize'] = $fullSizeImage->getUrl();
 		}
 
 		return $data;
