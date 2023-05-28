@@ -145,6 +145,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Label for a button representing the selection of doing nothing after saving a page",
 	"prp-editinsequence-save-next-action-go-to-next": "Label for a button representing the selection of going to the next page after saving a page",
 	"prp-editinsequence-save-next-action-go-to-prev": "Label for a button representing the selection of going to the previous page after saving a page\n* $1 is the label of the save button",
+	"prp-editinsequence-unsaved-edit-message": "Message displayed when the user has unsaved changes in the current session",
 	"prp-editinsequence-show-dialog-toggle-label": "Label for a toggle asking if the dialog should be shown everytime the save button is clicked.\n* $1 is the label of the save button ({{msg-mw|publishchanges}} or {{msg-mw|savechanges}})",
 	"prp-editinsequence-editsummary-placeholder": "Placeholder text for the edit summary input\n{{Identical|Describe your changes}}",
 	"prp-editinsequence-could-not-save-edit": "Title to notification that a edit cannot be saved",

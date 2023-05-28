@@ -12,7 +12,8 @@ var pageSelectionFilter = require( './PageSelectionFilter.js' );
  * @class
  */
 function EditInSequence() {
-	this.pagelistModel = new PagelistModel( mw.config.get( 'wgPageName' ), mw.config.get( 'prpIndexTitle' ) );
+	var currentPage = decodeURIComponent( location.hash.slice( 1 ) ) || mw.config.get( 'wgPageName' );
+	this.pagelistModel = new PagelistModel( currentPage, mw.config.get( 'prpIndexTitle' ) );
 	this.pageModel = new PageModel( this.pagelistModel );
 	this.saveOptionsModel = new SaveOptionsModel();
 	// eslint-disable-next-line no-jquery/no-global-selector

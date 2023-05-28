@@ -18,6 +18,7 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	this.$body = $content.find( '#wpTextbox1' );
 	this.$footer = $content.find( '#wpFooterTextbox' );
 	this.$heading = $content.find( '#firstHeadingTitle' );
+	this.$headingContainer = $content.find( '#firstHeading' );
 	this.$editorArea = $content.find( '.prp-page-content' );
 	this.$header.on( 'keyup', this.onHeaderChange.bind( this ) );
 	this.$body.on( 'keyup', this.onBodyChange.bind( this ) );
@@ -37,6 +38,13 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	this.pageModel = pageModel;
 	this.pageModel.on( 'pageModelUpdated', this.onPageModelUpdated.bind( this ) );
 	this.pageModel.on( 'pageStatusChanged', this.updatePreview.bind( this ) );
+	this.pageModel.on( 'loadUnsavedEdit', this.onLoadUnsavedEdit.bind( this ) );
+	this.addUnsavedEditIndicator();
+	// Prevent beforeunload from firing when we are saving and instead
+	$( window ).off( 'beforeunload' );
+	if ( mw.confirmCloseWindow ) {
+		mw.confirmCloseWindow( { test: this.onCloseWindow.bind( this ) } );
+	}
 }
 
 OO.mixinClass( EditorController, OO.EventEmitter );
@@ -61,16 +69,61 @@ EditorController.prototype.onCodeMirrorSwitch = function ( enabled, $textbox ) {
 	}
 };
 
+/**
+ *Event handler for when the page is navigated away from
+ *
+ * @return {boolean} False all the time to prevent mw.confirmCloseWindow from firing
+ */
+EditorController.prototype.onCloseWindow = function () {
+	this.pageModel.savePage();
+	return true;
+};
+
+EditorController.prototype.addUnsavedEditIndicator = function () {
+	document.title = '* ' + document.title;
+	this.unsavedEditBadge = new OO.ui.PopupButtonWidget( {
+		icon: 'notice',
+		framed: false,
+		classes: [ 'prp-eis-unsaved-edit-badge' ],
+		invisibleLabel: true,
+		popup: {
+			$content: $( '<div>' ).text( mw.msg( 'prp-editinsequence-unsaved-edit-message' ) ),
+			padded: true
+		}
+	} );
+	this.unsavedEditBadge.toggle( false );
+	this.$headingContainer.before( this.unsavedEditBadge.$element );
+};
+
+EditorController.prototype.toggleUnsavedEditIndicator = function ( show ) {
+	this.unsavedEditBadge.toggle( show );
+};
+
+/**
+ * Show a notification and handling discarding edit when a unsaved edit
+ * is loaded.
+ */
+EditorController.prototype.onLoadUnsavedEdit = function () {
+	this.toggleUnsavedEditIndicator( true );
+	var editorData = this.pageModel.getEditorData();
+	this.$header.val( editorData.header );
+	this.$body.textSelection( 'setContents', editorData.body );
+	this.$footer.val( editorData.footer );
+};
+
 EditorController.prototype.onHeaderChange = function () {
 	this.pageModel.setHeader( this.$header.val() );
+	this.toggleUnsavedEditIndicator( this.pageModel.hasChanges() );
 };
 
 EditorController.prototype.onBodyChange = function () {
 	this.pageModel.setBody( this.$body.textSelection( 'getContents' ) );
+	this.toggleUnsavedEditIndicator( this.pageModel.hasChanges() );
 };
 
 EditorController.prototype.onFooterChange = function () {
 	this.pageModel.setFooter( this.$footer.val() );
+	this.toggleUnsavedEditIndicator( this.pageModel.hasChanges() );
 };
 
 /**
@@ -79,6 +132,7 @@ EditorController.prototype.onFooterChange = function () {
  * @see PageModel.js
  */
 EditorController.prototype.onPageModelUpdated = function () {
+	this.toggleUnsavedEditIndicator( false );
 	if ( this.pageModel.getExists() ) {
 		this.updateEditorData();
 	} else {
@@ -140,6 +194,7 @@ EditorController.prototype.hidePreview = function () {
  */
 
 EditorController.prototype.save = function () {
+	this.toggleUnsavedEditIndicator( false );
 	var saveData = this.saveModel.getSaveData(),
 		wikiText = this.pageModel.getCurrentWikitext(),
 		pageName = this.pageModel.getPageName();
@@ -157,6 +212,7 @@ EditorController.prototype.save = function () {
 		}
 	} ).then( function ( result ) {
 		if ( result && result.edit && result.edit.result ) {
+			this.pageModel.setInitialPageDataToCurrent();
 			this.pagelistModel.setPageStatus( this.pageModel.getPageStatus().status );
 			mw.config.set( 'wgPostEdit', 'saved' );
 			// The following messages are used here:

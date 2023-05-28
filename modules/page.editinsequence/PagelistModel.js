@@ -148,6 +148,7 @@ PagelistModel.prototype.saveCurrentPage = function () {
  */
 PagelistModel.prototype.next = function () {
 	this.currentIndex++;
+	location.hash = this.pagelist[ this.currentIndex ].title;
 	this.currentPage = this.pagelist[ this.currentIndex ].title;
 	this.emit( 'pageUpdated', this.currentPage );
 	if ( this.currentIndex === this.pagelist.length - 1 ) {
@@ -183,6 +184,7 @@ PagelistModel.prototype.getNext = function () {
  */
 PagelistModel.prototype.prev = function () {
 	this.currentIndex--;
+	location.hash = this.pagelist[ this.currentIndex ].title;
 	this.currentPage = this.pagelist[ this.currentIndex ].title;
 	this.emit( 'pageUpdated', this.currentPage );
 	if ( this.currentIndex === 0 ) {
@@ -220,6 +222,7 @@ PagelistModel.prototype.getCurrent = function () {
 
 PagelistModel.prototype.setCurrent = function ( index ) {
 	this.currentIndex = index;
+	location.hash = this.pagelist[ this.currentIndex ].title;
 	this.currentPage = this.pagelist[ this.currentIndex ].title;
 	this.emit( 'pageUpdated', this.currentPage );
 };

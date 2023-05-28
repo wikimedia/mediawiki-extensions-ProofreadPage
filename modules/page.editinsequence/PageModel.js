@@ -39,6 +39,7 @@ OO.mixinClass( PageModel, OO.EventEmitter );
  * @param {string} page Name of page
  */
 PageModel.prototype.fetchData = function ( page ) {
+	this.savePage();
 	this.emit( 'beforePageModelUpdate' );
 	var api = new mw.Api();
 	this.pageName = page;
@@ -53,6 +54,7 @@ PageModel.prototype.fetchData = function ( page ) {
 	} ).then( function ( result ) {
 		this.setInitialPageData( result );
 		this.setPageData();
+		this.loadSavedPage();
 	}.bind( this ) ).catch( function ( err ) {
 		if ( err === 'http' ) {
 			this.handleError( mw.msg( 'prp-editinsequence-http-error-page' ) );
@@ -61,6 +63,61 @@ PageModel.prototype.fetchData = function ( page ) {
 		}
 		mw.log.error( err );
 	} );
+};
+
+/**
+ * Stores the unsaved edits to a page when a page is navigated away from
+ */
+PageModel.prototype.savePage = function () {
+	if ( !this.hasChanges( this.header, this.body, this.footer, this.pageStatus ) ) {
+		return;
+	}
+	mw.storage.setObject( 'prp-editinsequence-page-save-' + this.pageName, {
+		header: this.header,
+		body: this.body,
+		footer: this.footer,
+		pageStatus: this.pageStatus
+	} );
+};
+
+/**
+ * Checks if the unsaved edits to a page need to be saved
+ *
+ * @param {string} header
+ * @param {string} body
+ * @param {string} footer
+ * @param {Object} pageStatus
+ * @return {boolean} True if there are changes, false otherwise
+ */
+PageModel.prototype.hasChanges = function ( header, body, footer, pageStatus ) {
+	return header !== this.initialHeader ||
+	body !== this.initialBody ||
+	footer !== this.initialFooter ||
+	pageStatus.status !== this.initialPageStatus.status ||
+	pageStatus.lastUser !== this.initialPageStatus.lastUser;
+};
+
+/**
+ * Loads unsaved edits to a page if present
+ */
+PageModel.prototype.loadSavedPage = function () {
+	var savedPage = mw.storage.getObject( 'prp-editinsequence-page-save-' + this.pageName );
+	if ( !savedPage ) {
+		return;
+	}
+	this.header = savedPage.header;
+	this.body = savedPage.body;
+	this.footer = savedPage.footer;
+	this.pageStatus = savedPage.pageStatus;
+	this.emit( 'loadUnsavedEdit', {
+		header: this.header,
+		body: this.body,
+		footer: this.footer,
+		pageStatus: this.pageStatus
+	} );
+	// delete saved page
+	mw.storage.remove( 'prp-editinsequence-page-save-' + this.pageName );
+	return;
 };
 
 /**
@@ -252,6 +309,13 @@ PageModel.prototype.getWikitext = function ( header, body, footer, pageStatus ) 
 	return wikitext;
 };
 
+PageModel.prototype.setInitialPageDataToCurrent = function () {
+	this.initialBody = this.body;
+	this.initialHeader = this.header;
+	this.initialFooter = this.footer;
+	this.initialPageStatus = this.pageStatus;
+};
+
 /**
  * Get a string representing wikitext of the page when editor started editing
  *
@@ -271,7 +335,21 @@ PageModel.prototype.getCurrentWikitext = function () {
 };
 
 /**
- * Get header, footer and body for current page
+ *Get header, footer and body for current page after edits
+ *
+ * @public
+ * @return {Object<string>} Header, body, footer for current page
+ */
+PageModel.prototype.getEditorData = function () {
+	return {
+		header: this.header,
+		body: this.body,
+		footer: this.footer
+	};
+};
+
+/**
+ * Get header, footer and body for current page when initially loaded
  *
  * @public
  * @return {Object<string>}
