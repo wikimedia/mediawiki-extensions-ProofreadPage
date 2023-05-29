@@ -111,6 +111,8 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Vai alla pagina precedente",
 	"prp-editinsequence-editsummary-placeholder": "Descrivi le tue modifiche",
 	"prp-editinsequence-could-not-save-edit": "Questa modifica non può essere salvata",
+	"prp-editinsequence-page-filter-label-all": "Tutte le pagine",
+	"prp-editinsequence-page-selection-label": "Vai alla pagina specifica",
 	"proofreadpage-pagelist-input-preview-button": "Anteprima della lista delle pagine",
 	"proofreadpage-pagelist-dialog-update-button": "Aggiorna l'elenco delle pagine",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Chiudere questa finestra causerà la perdita del lavoro non salvato.",

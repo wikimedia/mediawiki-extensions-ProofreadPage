@@ -67,6 +67,7 @@
 	"prp-editinsequence-save-next-action-go-to-prev": "Иди на претходну страницу",
 	"prp-editinsequence-editsummary-placeholder": "Опишите ваше измене",
 	"prp-editinsequence-could-not-save-edit": "Ова измена не може бити сачувана",
+	"prp-editinsequence-page-filter-label-all": "Све странице",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Ако напустите овај дијалог, вероватно ћете изгубити несачувани напредак.",
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Несачуван напредак",
 	"proofreadpage-pagelist-dialog-discard-changes": "Одбаци измене",

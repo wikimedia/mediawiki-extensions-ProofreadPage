@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Esbardu",
+			"Fitoschido",
 			"Tokvo",
 			"Xuacu"
 		]
@@ -78,6 +79,8 @@
 	"proofreadpage-button-zoom-in-label": "Ampliar",
 	"proofreadpage-button-zoom-out-label": "Amenorgar",
 	"proofreadpage-pageinfo-status": "Estáu de la revisión",
+	"prp-editinsequence-page-filter-label-all": "Toles páxines",
+	"prp-editinsequence-page-selection-label": "Dir a una páxina específica",
 	"proofreadpage-preferences-showheaders-label": "Amosar los campos d'encabezáu y pie de páxina al editar nel espaciu de nomes {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar la disposición horizontal al editar nel espaciu de nomes {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|páxina validada|páxines validaes}}, $2 {{PLURAL:$2|páxina revisada|páxines revisaes}} y $3 {{PLURAL:$3|páxina|páxines}} sin revisar",

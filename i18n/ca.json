@@ -124,6 +124,8 @@
 	"prp-editinsequence-show-dialog-toggle-label": "Mostra aquest diàleg cada cop que es fa clic a \"$1\"",
 	"prp-editinsequence-editsummary-placeholder": "Descriu els teus canvis",
 	"prp-editinsequence-could-not-save-edit": "Aquesta edició no es pot desar",
+	"prp-editinsequence-page-filter-label-all": "Totes les pàgines",
+	"prp-editinsequence-page-selection-label": "Ves a una pàgina específica",
 	"proofreadpage-openseadragon-no-image-found": "No s'ha pogut inicialitzar OpenSeadragon, no s'ha trobat cap imatge.",
 	"proofreadpage-pagelist-input-preview-button": "Previsualitza la llista de pàgines",
 	"proofreadpage-pagelist-dialog-update-button": "Actualitza la llista",

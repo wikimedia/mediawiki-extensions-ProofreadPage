@@ -134,6 +134,8 @@
 	"prp-editinsequence-show-dialog-toggle-label": "Mostrar este cuadro de diálogo cada vez que se haga clic en \"$1\"",
 	"prp-editinsequence-editsummary-placeholder": "Describa sus cambios",
 	"prp-editinsequence-could-not-save-edit": "Esta edición no se puede guardar",
+	"prp-editinsequence-page-filter-label-all": "Todas las páginas",
+	"prp-editinsequence-page-selection-label": "Ir a una página específica",
 	"proofreadpage-openseadragon-no-image-found": "No se pudo inicializar OpenSeadragon, no se encontró ninguna imagen.",
 	"proofreadpage-pagelist-input-preview-button": "Previsualizar lista",
 	"proofreadpage-pagelist-dialog-update-button": "Actualizar lista",

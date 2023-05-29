@@ -47,6 +47,8 @@
 	"proofreadpage-button-rotate-left-label": "ဘယ်သို့လှည့်ရန်",
 	"proofreadpage-button-rotate-right-label": "ညာသို့လှည့်ရန်",
 	"proofreadpage-button-zoom-in-label": "အကျယ်ချဲ့ရန်",
+	"prp-editinsequence-page-filter-label-all": "စာမျက်နှာအားလုံး",
+	"prp-editinsequence-page-filter-redlink": "ပြန်လည်လင့်ခ်ချိတ်ထားသော စာမျက်နှာများ",
 	"proofreadpage-pagelist-dialog-cancel": "မလုပ်တော့ပါ",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "အ​ကူ​အ​ညီ​",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "စာမျက်နှာများ",
