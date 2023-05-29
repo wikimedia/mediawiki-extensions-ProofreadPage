@@ -77,6 +77,7 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
 			}
 		}
 		if ( !isCurrentPageRendered ) {
+			this.currentPage = currentPage;
 			this.osdInstance.forceInitialize();
 		}
 	}.bind( this ) );
