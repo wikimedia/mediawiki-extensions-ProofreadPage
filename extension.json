@@ -265,7 +265,8 @@
 				"oojs-ui.styles.icons-content",
 				"oojs-ui.styles.icons-movement",
 				"oojs-ui.styles.icons-accessibility",
-				"oojs-ui.styles.icons-interactions"
+				"oojs-ui.styles.icons-interactions",
+				"ext.proofreadpage.icons.pagelevel"
 			],
 			"messages": [
 				"savechanges",
@@ -321,6 +322,28 @@
 					"variants": [
 						"progressive"
 					]
+				}
+			}
+		},
+		"ext.proofreadpage.icons.pagelevel": {
+			"class": "ResourceLoaderImageModule",
+			"selectorWithoutVariant": ".oo-ui-icon-{name}",
+			"selectorWithVariant": ".oo-ui-image-{variant}.oo-ui-icon-{name}",
+			"images": {
+				"pagequality-level0": {
+					"file": "page/images/pagequality-level0.svg"
+				},
+				"pagequality-level1": {
+					"file": "page/images/pagequality-level1.svg"
+				},
+				"pagequality-level2": {
+					"file": "page/images/pagequality-level2.svg"
+				},
+				"pagequality-level3": {
+					"file": "page/images/pagequality-level3.svg"
+				},
+				"pagequality-level4": {
+					"file": "page/images/pagequality-level4.svg"
 				}
 			}
 		},
