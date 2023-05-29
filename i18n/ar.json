@@ -12,7 +12,8 @@
 			"زكريا",
 			"محمد أحمد عبد الفتاح",
 			"BAB ZAA",
-			"Ulhvulgv"
+			"Ulhvulgv",
+			"Alshamiri1"
 		]
 	},
 	"nstab-page": "صفحة",
@@ -90,6 +91,15 @@
 	"proofreadpage-button-toggle-layout-label": "تخطيط أفقي أو رأسي",
 	"proofreadpage-pageinfo-status": "حالة التصحيح",
 	"proofreadpage-pagelist-input-preview-button": "معاينة قائمة الصفحات",
+	"proofreadpage-pagelist-parsing-error-morethanone": "أكثر من واحد<pagelist /> تم الكشف عن العلامة في نص ويكي المصدر.",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "لا<pagelist /> تم الكشف عن العلامات.",
+	"proofreadpage-pagelist-parsing-error-php": "تم اكتشاف الخطأ التالي أثناء تحليل وسم قائمة الصفحات في الخلفية ، $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "تم اكتشاف خطأ غير متوقع. الرجاء الإبلاغ عن هذا الخطأ إلى phabricator.wikimedia.org بسجلات من وحدة التحكم.'",
+	"proofreadpage-pagelist-dialog-title": "تحرير قائمة الصفحات مقابل $1",
+	"proofreadpage-pagelist-dialog-insertchanges": "أدخل التغييرات",
+	"proofreadpage-pagelist-imageurlnotfound": "تعذر العثور على مصدر الصورة المصغرة لهذا الفحص.",
+	"proofreadpage-pagelist-type": "نوع رقم الصفحة: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "تم تخصيص رقم الصفحة لهذه الصفحة: $1",
 	"proofreadpage-preferences-showheaders-label": "أظهر ترويس الصفحة وتذييلها عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "استخدم الواجهة الأفقية عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|صفحات|صفحة}} تم التحقق منها و $2 {{PLURAL:$2|صفحات|صفحة}} تم تصحيحها و $3 {{PLURAL:$3|صفحات|صفحة}} لم تصحح",
