@@ -10,4 +10,5 @@ $wgDjvuRenderer = 'ddjvu';
 $wgDjvuTxt = 'djvutxt';
 $wgDjvuPostProcessor = 'pnmtojpeg';
 $wgDjvuOutputExtension = 'jpg';
+$wgGroupPermissions['*']['pagequality'] = true;
 $wgProofreadPageEnableEditInSequence = true;
