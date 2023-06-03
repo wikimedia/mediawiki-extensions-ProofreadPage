@@ -52,12 +52,33 @@ function PageStatusMenu() {
 	this.toolbar.eis.pageModel.on( 'pageModelUpdated', this.onPageModelUpdated.bind( this ) );
 	this.toolbar.eis.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
 	this.setDisabled( true );
+	this.hasPageQualityRight = false;
+	this.hasPageQualityAdminRight = false;
+	this.getUserRights().then( function ( rights ) {
+		this.hasPageQualityRight = rights.indexOf( 'pagequality' ) !== -1;
+		this.hasPageQualityAdminRight = rights.indexOf( 'pagequality-admin' ) !== -1;
+	}.bind( this ) ).then( this.onPageModelUpdated.bind( this ) );
 	this.$element.addClass( 'prp-editinsequence-page-status' );
 }
 
 OO.inheritClass( PageStatusMenu, OO.ui.MenuToolGroup );
 
 PageStatusMenu.static.name = 'pagestatusmenu';
+
+PageStatusMenu.prototype.getUserRights = function () {
+	var api = new mw.Api();
+	return api.get( {
+		action: 'query',
+		meta: 'userinfo',
+		uiprop: 'rights'
+	} ).then( function ( data ) {
+		if ( data.query && data.query.userinfo && data.query.userinfo.rights ) {
+			return data.query.userinfo.rights;
+		} else {
+			return [];
+		}
+	} );
+};
 
 PageStatusMenu.prototype.onUpdateState = function () {
 	var name;
@@ -75,14 +96,26 @@ PageStatusMenu.prototype.onUpdateState = function () {
  * Set the page status when the page is updated by navigating
  */
 PageStatusMenu.prototype.onPageModelUpdated = function () {
-	var status = this.toolbar.eis.pageModel.getPageStatus().status, name;
+	var status = this.toolbar.eis.pageModel.getPageStatus().status,
+		user = this.toolbar.eis.pageModel.getPageStatus().lastUser, name;
 	for ( name in this.tools ) {
 		if ( this.tools[ name ].getPageStatus() === status ) {
 			this.tools[ name ].setActive( true );
 			this.tools[ name ].onSelect();
 		}
+
+		if ( name === 'validated' ) {
+			if ( this.hasPageQualityAdminRight ||
+				( status === 3 && user !== mw.config.get( 'wgUserName' ) ) ) {
+				this.tools[ name ].setDisabled( false );
+			} else {
+				this.tools[ name ].setDisabled( true );
+			}
+		}
 	}
-	this.setDisabled( false );
+	if ( this.hasPageQualityRight ) {
+		this.setDisabled( false );
+	}
 };
 
 /**
