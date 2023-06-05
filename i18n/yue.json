@@ -5,7 +5,8 @@
 			"Hello903hello",
 			"Yueman",
 			"Moon0319",
-			"Z423x5c6"
+			"Z423x5c6",
+			"捍粵者"
 		]
 	},
 	"nstab-page": "版",
@@ -60,7 +61,7 @@
 	"proofreadpage_index_listofpages": "頁一覽",
 	"proofreadpage_image_message": "連到索引頁嘅連結",
 	"proofreadpage_page_status": "頁狀態",
-	"proofreadpage_js_attributes": "作者 標題 年份 出版者",
+	"proofreadpage_js_attributes": "作者　標題　年份　出版者",
 	"proofreadpage_index_attributes": "作者\n標題\n年份|出版年份\n出版者\n來源\n圖像|封面照\n頁數||20\n備註||10",
 	"proofreadpage_pages": "$2{{PLURAL:$1|頁}}",
 	"proofreadpage_specialpage_legend": "搵索引咗嘅版",
