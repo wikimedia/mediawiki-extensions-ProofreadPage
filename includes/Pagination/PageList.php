@@ -70,7 +70,7 @@ class PageList {
 				$params = explode( ';', $parameters );
 				foreach ( $params as $param ) {
 					if ( !is_numeric( $param ) ) {
-						if ( in_array( $param, PageNumber::getDisplayModes() ) ) {
+						if ( in_array( $param, PageNumber::getDisplayModes(), true ) ) {
 							$mode = $param;
 						} elseif ( $param == PageNumber::DISPLAY_EMPTY ) {
 							$isEmpty = true;

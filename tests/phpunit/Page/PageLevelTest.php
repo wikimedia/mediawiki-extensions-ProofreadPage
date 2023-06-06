@@ -152,7 +152,7 @@ class PageLevelTest extends ProofreadPageTestCase {
 			->expects( $this->any() )
 			->method( 'userHasRight' )
 			->willReturnCallback( static function ( User $user, string $right ) use ( $rights ) {
-				return in_array( $right, $rights[$user->getName()] );
+				return in_array( $right, $rights[ $user->getName() ], true );
 			} );
 
 		$this->assertSame( $result, $old->isChangeAllowed( $new, $permissionManager ) );

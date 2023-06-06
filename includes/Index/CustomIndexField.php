@@ -161,7 +161,7 @@ class CustomIndexField {
 	 * @return bool
 	 */
 	public function isHeader() {
-		if ( in_array( strtolower( $this->key ), [ 'header', 'footer', 'css', 'width' ] ) ) {
+		if ( in_array( strtolower( $this->key ), [ 'header', 'footer', 'css', 'width' ], true ) ) {
 			return true;
 		} else {
 			if ( isset( $this->config['header'] ) ) {
