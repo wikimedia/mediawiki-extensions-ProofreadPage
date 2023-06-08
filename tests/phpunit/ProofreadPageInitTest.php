@@ -2,6 +2,7 @@
 
 namespace ProofreadPage;
 
+use ConfigException;
 use ProofreadPageTestCase;
 
 /**
@@ -11,39 +12,24 @@ use ProofreadPageTestCase;
 class ProofreadPageInitTest extends ProofreadPageTestCase {
 
 	public function testInitNamespaceThrowsExceptionWhenNamespaceValueIsNotNumeric() {
-		global $wgProofreadPageNamespaceIds;
-
-		$oldValue = $wgProofreadPageNamespaceIds;
-
-		$this->expectException( \MWException::class );
-		try {
-			$wgProofreadPageNamespaceIds['page'] = 'quux';
-			$config = new \HashConfig( [
-				'ProofreadPageNamespaceIds' => [
-					'page' => 'quux'
-				],
-				'TemplateStylesNamespaces' => [
-					'10' => true
-				]
-			] );
-			$proofreadPageInit = new ProofreadPageInit( $config );
-			$proofreadPageInit->onSetupAfterCache();
-		} finally {
-			$wgProofreadPageNamespaceIds = $oldValue;
-		}
+		$this->overrideConfigValue( 'ProofreadPageNamespaceIds', [ 'page' => 'quux' ] );
+		$this->expectException( ConfigException::class );
+		$config = new \HashConfig( [
+			'ProofreadPageNamespaceIds' => [
+				'page' => 'quux'
+			],
+			'TemplateStylesNamespaces' => [
+				'10' => true
+			]
+		] );
+		$proofreadPageInit = new ProofreadPageInit( $config );
+		$proofreadPageInit->onSetupAfterCache();
 	}
 
 	public function testGetNamespaceIdThrowsExceptionWhenKeyDoesNotExist() {
-		global $wgProofreadPageNamespaceIds;
-
-		$oldValue = $wgProofreadPageNamespaceIds;
-		$this->expectException( \MWException::class );
-		try {
-			$wgProofreadPageNamespaceIds = [];
-			ProofreadPageInit::getNamespaceId( 'page' );
-		} finally {
-			$wgProofreadPageNamespaceIds = $oldValue;
-		}
+		$this->overrideConfigValue( 'ProofreadPageNamespaceIds', [] );
+		$this->expectException( ConfigException::class );
+		ProofreadPageInit::getNamespaceId( 'page' );
 	}
 
 }

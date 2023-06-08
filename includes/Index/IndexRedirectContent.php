@@ -3,7 +3,7 @@
 namespace ProofreadPage\Index;
 
 use Content;
-use MWException;
+use InvalidArgumentException;
 use TextContent;
 use Title;
 
@@ -21,11 +21,10 @@ class IndexRedirectContent extends TextContent {
 
 	/**
 	 * @param Title $redirectionTarget
-	 * @throws MWException
 	 */
 	public function __construct( Title $redirectionTarget ) {
 		if ( !$redirectionTarget->isValidRedirectTarget() ) {
-			throw new MWException( $redirectionTarget . ' should be a valid redirection target' );
+			throw new InvalidArgumentException( $redirectionTarget . ' should be a valid redirection target' );
 		}
 		$this->redirectionTarget = $redirectionTarget;
 		parent::__construct(

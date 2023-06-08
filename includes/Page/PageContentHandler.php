@@ -11,7 +11,6 @@ use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
-use MWException;
 use ParserOutput;
 use ProofreadPage\Context;
 use ProofreadPage\Index\IndexTemplateStyles;
@@ -19,6 +18,7 @@ use ProofreadPage\Index\UpdateIndexQualityStats;
 use ProofreadPage\MultiFormatSerializerUtils;
 use TextContentHandler;
 use Title;
+use UnexpectedValueException;
 use WikitextContent;
 use WikitextContentHandler;
 
@@ -134,7 +134,7 @@ class PageContentHandler extends TextContentHandler {
 			case CONTENT_FORMAT_WIKITEXT:
 				return $this->unserializeContentInWikitext( $text );
 			default:
-				throw new MWException(
+				throw new UnexpectedValueException(
 					"Format ' . $format . ' is not supported for content model " . $this->getModelID()
 				);
 		}

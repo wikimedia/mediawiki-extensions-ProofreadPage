@@ -4,13 +4,12 @@ namespace ProofreadPage\Scribunto;
 
 use Content;
 use MediaWiki\Revision\RevisionRecord;
-use MWException;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
+use RuntimeException;
 use Scribunto_LuaEngineTestBase;
 use Title;
-use WikiPage;
 use WikitextContent;
 
 /**
@@ -62,14 +61,13 @@ class IndexAndPageLibraryTest extends Scribunto_LuaEngineTestBase {
 		$page = $this->getServiceContainer()
 			->getWikiPageFactory()
 			->newFromTitle( Title::newFromText( $title ) );
-		$page->loadPageData( WikiPage::READ_LATEST );
 
 		if ( $page->exists() ) {
 			$content = $page->getContent( RevisionRecord::RAW );
 			if ( $newContent->equals( $content ) ) {
 				return;
 			}
-			throw new MWException( "duplicate article '$title' with different content" );
+			throw new RuntimeException( "duplicate article '$title' with different content" );
 		}
 
 		$status = $page->doUserEditContent(
@@ -79,7 +77,7 @@ class IndexAndPageLibraryTest extends Scribunto_LuaEngineTestBase {
 			EDIT_NEW | EDIT_SUPPRESS_RC | EDIT_INTERNAL
 		);
 		if ( !$status->isOK() ) {
-			throw new MWException( $status->getWikiText( false, false, 'en' ) );
+			throw new RuntimeException( $status->__toString() );
 		}
 	}
 

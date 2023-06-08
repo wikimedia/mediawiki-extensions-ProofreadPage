@@ -4,7 +4,6 @@ namespace ProofreadPage\Index;
 
 use Content;
 use MagicWord;
-use MWException;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use Sanitizer;
@@ -32,7 +31,6 @@ class IndexContent extends TextContent {
 	/**
 	 * @param WikitextContent[] $fields
 	 * @param Title[] $categories
-	 * @throws MWException
 	 */
 	public function __construct( array $fields, array $categories = [] ) {
 		$this->fields = $fields;

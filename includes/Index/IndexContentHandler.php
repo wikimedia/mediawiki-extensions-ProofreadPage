@@ -12,7 +12,6 @@ use MediaWiki\Content\ValidationParams;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MWContentSerializationException;
-use MWException;
 use Parser;
 use ParserOptions;
 use ParserOutput;
@@ -23,6 +22,7 @@ use ProofreadPage\MultiFormatSerializerUtils;
 use StatusValue;
 use TextContentHandler;
 use Title;
+use UnexpectedValueException;
 use WikitextContent;
 use WikitextContentHandler;
 
@@ -144,7 +144,7 @@ class IndexContentHandler extends TextContentHandler {
 			case CONTENT_FORMAT_WIKITEXT:
 				return $this->unserializeContentInWikitext( $text );
 			default:
-				throw new MWException(
+				throw new UnexpectedValueException(
 					"Format '$format' is not supported for unserialization of content model " .
 						$this->getModelID()
 				);

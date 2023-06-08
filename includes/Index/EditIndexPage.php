@@ -3,9 +3,9 @@
 namespace ProofreadPage\Index;
 
 use Article;
+use LogicException;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
-use MWException;
 use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
@@ -51,7 +51,7 @@ class EditIndexPage extends EditPage {
 
 		$content = $this->toEditContent( $this->textbox1 );
 		if ( !( $content instanceof IndexContent ) ) {
-			throw new MWException( 'EditIndexPage is only able to display a form for IndexContent' );
+			throw new LogicException( 'EditIndexPage is only able to display a form for IndexContent' );
 		}
 
 		$fields = [];

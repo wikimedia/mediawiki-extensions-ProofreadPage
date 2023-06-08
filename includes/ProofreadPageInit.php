@@ -3,8 +3,8 @@
 namespace ProofreadPage;
 
 use Config;
+use ConfigException;
 use MediaWiki\Hook\SetupAfterCacheHook;
-use MWException;
 
 /**
  * @license GPL-2.0-or-later
@@ -59,7 +59,7 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 
 		if ( isset( $wgProofreadPageNamespaceIds[$key] ) ) {
 			if ( !is_numeric( $wgProofreadPageNamespaceIds[$key] ) ) {
-				throw new MWException(
+				throw new ConfigException(
 					'$wgProofreadPageNamespaceIds[' . $key . '] must be a number.'
 				);
 			}
@@ -198,7 +198,7 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 			// The only case where $wgProofreadPageNamespaceIds is not set is
 			// when a namespace with the default id already exist
 			// and is not a prp namespace.
-			throw new MWException( 'Namespace with id ' . self::$defaultNamespaceIds[$key] .
+			throw new ConfigException( 'Namespace with id ' . self::$defaultNamespaceIds[$key] .
 				' is already set ! ProofreadPage can\'t use his id in order to create ' .
 				self::getNamespaceName( $key, 'en' ) .
 				' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' .
