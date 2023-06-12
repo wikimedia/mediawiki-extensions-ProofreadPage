@@ -15,7 +15,10 @@
 			"Silvonen",
 			"Str4nd",
 			"VezonThunder",
-			"ZeiP"
+			"ZeiP",
+			"MITO",
+			"Mediawikitranslator",
+			"Pyscowicz"
 		]
 	},
 	"nstab-page": "Sivu",
@@ -93,5 +96,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Sivujen valinta",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Sivut",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Kyllä",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei",
+	"proofreadpage-index-field-category-label": "Luokat"
 }
