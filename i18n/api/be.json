@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chadyka"
+			"Chadyka",
+			"Plaga med"
 		]
 	},
 	"apierror-proofreadpage-invalidindex": "Няслушная назва індэксу «$1».",
@@ -19,5 +20,5 @@
 	"apihelp-query+proofreadpagesinindex-param-pageid": "Ідэнтыфікатар старонкі індэксу для якога атрымаць старонкі",
 	"apihelp-query+proofreadpagesinindex-param-prop": "Якія ўласцівасці атрымаць для кожнай старонкі",
 	"apihelp-query+proofreadpagesinindex-param-title": "Назва старонкі індэксу для якога атрымаць старонкі",
-	"apihelp-query+proofreadpagesinindex-example-1": "Вярнуць інфармацыю па змоўчанні"
+	"apihelp-query+proofreadpagesinindex-example-1": "Вярнуць прадвызначаную інфармацыю"
 }
