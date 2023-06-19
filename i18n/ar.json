@@ -3,6 +3,7 @@
 		"authors": [
 			"Abanima",
 			"Alshamiri1",
+			"Asma",
 			"BAB ZAA",
 			"DRIHEM",
 			"Maroen1990",
@@ -126,6 +127,10 @@
 	"prp-editinsequence-show-dialog-toggle-label": "أظهر مربع الحوار هذا في كل مرة يتم فيها النقر على \" $1 \"",
 	"prp-editinsequence-editsummary-placeholder": "صِف تغييراتك",
 	"prp-editinsequence-could-not-save-edit": "لا يمكن حفظ هذا التعديل",
+	"prp-editinsequence-page-filter-label-all": "كل الصفحات",
+	"prp-editinsequence-page-filter-redlink": "الصفحات المعاد ربطها",
+	"prp-editinsequence-page-selection-label": "انتقل إلى صفحة محددة",
+	"prp-editinsequence-page-selection-widget-label": "حدد الصفحة للذهاب إليها",
 	"proofreadpage-openseadragon-no-image-found": "فشل تهيئة OpenSeadragon ، لم يتم العثور على صورة.",
 	"proofreadpage-pagelist-input-preview-button": "معاينة قائمة الصفحات",
 	"proofreadpage-pagelist-dialog-update-button": "تحديث قائمة الصفحات",
