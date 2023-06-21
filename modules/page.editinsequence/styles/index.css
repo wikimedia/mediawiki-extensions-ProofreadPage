@@ -51,3 +51,7 @@
 .prp-eis-page-selection-widget > .oo-ui-fieldLayout {
 	padding: 2em;
 }
+
+.prp-eis-unsaved-edit-badge {
+	float: right;
+}

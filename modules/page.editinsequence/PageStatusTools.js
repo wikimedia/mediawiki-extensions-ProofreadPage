@@ -51,6 +51,7 @@ function PageStatusMenu() {
 	PageStatusMenu.super.apply( this, arguments );
 	this.toolbar.eis.pageModel.on( 'pageModelUpdated', this.onPageModelUpdated.bind( this ) );
 	this.toolbar.eis.pagelistModel.on( 'pageUpdated', this.onPageUpdated.bind( this ) );
+	this.toolbar.eis.pageModel.on( 'loadUnsavedEdit', this.onPageModelUpdated.bind( this ) );
 	this.setDisabled( true );
 	this.hasPageQualityRight = false;
 	this.hasPageQualityAdminRight = false;

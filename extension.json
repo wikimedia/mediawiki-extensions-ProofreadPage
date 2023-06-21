@@ -266,6 +266,7 @@
 				"oojs-ui.styles.icons-movement",
 				"oojs-ui.styles.icons-accessibility",
 				"oojs-ui.styles.icons-interactions",
+				"oojs-ui.styles.icons-alerts",
 				"ext.proofreadpage.icons.pagelevel"
 			],
 			"messages": [
@@ -281,6 +282,7 @@
 				"prp-editinsequence-save-next-action-do-nothing",
 				"prp-editinsequence-save-next-action-go-to-next",
 				"prp-editinsequence-save-next-action-go-to-prev",
+				"prp-editinsequence-unsaved-edit-message",
 				"prp-editinsequence-show-dialog-toggle-label",
 				"prp-editinsequence-editsummary-placeholder",
 				"prp-editinsequence-http-error-pagelist",

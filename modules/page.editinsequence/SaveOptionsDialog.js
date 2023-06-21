@@ -131,7 +131,7 @@ SaveOptionsDialog.prototype.onafterSaveActionChange = function ( item ) {
  */
 SaveOptionsDialog.prototype.getSetupProcess = function ( data ) {
 	data = data || {};
-	if ( !this.saveModel.getDialogBeforeSave() ) {
+	if ( !this.saveGlobalModel.getDialogBeforeSave() ) {
 		data.title = mw.msg( 'prp-editinsequence-save-settings-dialog-title' );
 		data.actions = [
 			{

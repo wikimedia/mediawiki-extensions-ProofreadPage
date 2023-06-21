@@ -112,6 +112,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Do nothing",
 	"prp-editinsequence-save-next-action-go-to-next": "Go to next page",
 	"prp-editinsequence-save-next-action-go-to-prev": "Go to previous page",
+	"prp-editinsequence-unsaved-edit-message": "You have unsaved changes. If you leave this page, your changes will be restored when you come back.",
 	"prp-editinsequence-show-dialog-toggle-label": "Show this dialog every time \"$1\" is clicked",
 	"prp-editinsequence-editsummary-placeholder": "Describe your changes",
 	"prp-editinsequence-could-not-save-edit": "This edit cannot be saved",
