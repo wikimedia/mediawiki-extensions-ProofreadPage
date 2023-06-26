@@ -113,6 +113,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Не прави ништо",
 	"prp-editinsequence-save-next-action-go-to-next": "Оди на следната страница",
 	"prp-editinsequence-save-next-action-go-to-prev": "Оди на претходната страница",
+	"prp-editinsequence-unsaved-edit-message": "Имате незачувани промени. Ако ја напуштите страницава, промените ќе се повратат кога ќе се вратите.",
 	"prp-editinsequence-show-dialog-toggle-label": "Прикажувај го овој дијалог секојпат ќе се стисне на „$1“",
 	"prp-editinsequence-editsummary-placeholder": "Опишете ги направените промени",
 	"prp-editinsequence-could-not-save-edit": "Ова уредување не може да се зачува",

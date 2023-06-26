@@ -5,10 +5,8 @@
 			"Ajeetsinghawadh"
 		]
 	},
-	"apihelp-query+proofread-description": "अभिन कय परिक्षित पन्नन कय स्थिती जानकारी लौटाइ",
 	"apihelp-query+proofread-summary": "अभिन कय परिक्षित पन्नन कय स्थिती जानकारी लौटाइ",
 	"apihelp-query+proofread-example-1": "नेमस्पेस 250 कय पन्नन मे परिक्षित स्थिती मे लौटो",
-	"apihelp-query+proofreadinfo-description": "परिक्षित पन्नन कय विन्यास कय जानकारी लौटो",
 	"apihelp-query+proofreadinfo-summary": "परिक्षित पन्नन कय विन्यास कय जानकारी देखावा",
 	"apihelp-query+proofreadinfo-param-prop": "कवन परिक्षण जानकारी पावय:\n;नामस्थान:\"{{ns:पेज}}\" अउर \"{{ns:अनुक्रम}}\" नामस्थान के बारे मा जानकारी।\n;गुणस्तरस्थिती:परिक्षण गुणस्तर स्थिती कय सुची।",
 	"apihelp-query+proofreadinfo-example-1": "डिफाल्ट जानकारी मे लौटो",

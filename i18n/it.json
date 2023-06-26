@@ -109,6 +109,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Non fare nulla",
 	"prp-editinsequence-save-next-action-go-to-next": "Vai alla pagina successiva",
 	"prp-editinsequence-save-next-action-go-to-prev": "Vai alla pagina precedente",
+	"prp-editinsequence-unsaved-edit-message": "Hai modifiche non salvate. Se esci da questa pagina, le modifiche verranno ripristinate al tuo ritorno.",
 	"prp-editinsequence-editsummary-placeholder": "Descrivi le tue modifiche",
 	"prp-editinsequence-could-not-save-edit": "Questa modifica non può essere salvata",
 	"prp-editinsequence-page-filter-label-all": "Tutte le pagine",

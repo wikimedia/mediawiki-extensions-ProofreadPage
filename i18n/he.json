@@ -119,6 +119,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "לא לעשות דבר",
 	"prp-editinsequence-save-next-action-go-to-next": "לעבור לדף הבא",
 	"prp-editinsequence-save-next-action-go-to-prev": "לעבור לדף הקודם",
+	"prp-editinsequence-unsaved-edit-message": "יש לך שינויים שלא נשמרו. אם {{GENDER:|תעזוב|תעזבי}} את הדף הזה, השינויים שלך ישוחזרו {{GENDER:|כשתחזור|כשתחזרי}}.",
 	"prp-editinsequence-show-dialog-toggle-label": "להציג את תיבת הדו־שיח הזה בכל לחיצה על \"$1\".",
 	"prp-editinsequence-editsummary-placeholder": "נא לתאר את השינויים שלך",
 	"prp-editinsequence-could-not-save-edit": "לא ניתן לשמור את העריכה הזאת",

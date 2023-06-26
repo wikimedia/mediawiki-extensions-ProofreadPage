@@ -4,10 +4,8 @@
 			"Cgboeree"
 		]
 	},
-	"apihelp-query+proofread-description": "Reenvia informa sur la state corente de revide de la pajes presentada.",
 	"apihelp-query+proofread-summary": "Reenvia informa sur la state corente de revide de la pajes presentada.",
 	"apihelp-query+proofread-example-1": "Reenvia state de revide per pajes en spasio de nom 250",
-	"apihelp-query+proofreadinfo-description": "Reenvia informa sur la organiza de la estende ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Reenvia informa sur la organiza de la estende ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Cual cualias esijeda:\n;namespaces:Informa sur \"{{ns:Page}}\" aned \"{{ns:Index}}\" spasios de nom.\n;qualitylevels:lista de niveles de cualia de revide.",
 	"apihelp-query+proofreadinfo-example-1": "Reenvia informa fundal",

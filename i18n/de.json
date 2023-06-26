@@ -119,6 +119,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Nichts tun",
 	"prp-editinsequence-save-next-action-go-to-next": "Zur nächsten Seite gehen",
 	"prp-editinsequence-save-next-action-go-to-prev": "Zur vorherigen Seite gehen",
+	"prp-editinsequence-unsaved-edit-message": "Du hast nicht gespeicherte Änderungen. Wenn du diese Seite verlässt, werden deine Änderungen bei deiner Rückkehr wiederhergestellt.",
 	"prp-editinsequence-show-dialog-toggle-label": "Dieses Dialogfeld jedes Mal anzeigen, wenn auf „$1“ geklickt wird",
 	"prp-editinsequence-editsummary-placeholder": "Beschreibe deine Änderungen",
 	"prp-editinsequence-could-not-save-edit": "Diese Änderung kann nicht gespeichert werden",

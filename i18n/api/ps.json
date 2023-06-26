@@ -5,10 +5,8 @@
 			"Amjad Khan"
 		]
 	},
-	"apihelp-query+proofread-description": "معلومات راګرځونه د ورکړل شويو پاڼو د اوسنۍ ثابت دريځ لپاره.",
 	"apihelp-query+proofread-summary": "معلومات راګرځونه د ورکړل شويو پاڼو د اوسنۍ ثابت دريځ لپاره.",
 	"apihelp-query+proofread-example-1": "راګرځونه د ثبوت دریځ د نومونو په 250 پاڼو کې",
-	"apihelp-query+proofreadinfo-description": "د ثبوت پروسس کولو تمدید د تنظیم کولو په اړه راستنیدنه.",
 	"apihelp-query+proofreadinfo-summary": "د ثبوت پروسس کولو تمدید د تنظیم کولو په اړه راستنیدنه.",
 	"apihelp-query+proofreadinfo-param-prop": "کوم شواهد چې ترلاسه کوي:\nنومونه: د \"{{ns: Page}}\" او \"{{ns: Index}} په اړه معلومات\" نومونه.\n؛ د کیفیت کچه: د کیفیت د کچې د ثابتولو لیست.",
 	"apihelp-query+proofreadinfo-example-1": "ناڅاپي معلومات بیرته راوګرځئ",

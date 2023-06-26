@@ -4,9 +4,7 @@
 			"HalanTul"
 		]
 	},
-	"apihelp-query+proofread-description": "Бу сирэйдэр тургутуллубут туруктарын көрдөрөр.",
 	"apihelp-query+proofread-summary": "Бу сирэйдэр тургутуллубут туруктарын көрдөрөр.",
-	"apihelp-query+proofreadinfo-description": "ProofreadPage кэҥэтии туруорууларын туһунан көрдөр.",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage кэҥэтии туруорууларын туһунан көрдөр.",
 	"apihelp-query+proofreadinfo-example-1": "Анаан этиллибэтэҕинэ көрдөрүллэри төннөр",
 	"apihelp-query+proofreadinfo-example-3": "Аат далын туһунан төннөр"

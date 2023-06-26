@@ -5,10 +5,8 @@
 			"Ramjit Tudu"
 		]
 	},
-	"apihelp-query+proofread-description": "ᱨᱩᱣᱟᱹᱲ ᱧᱮᱛᱮᱞ ᱱᱤᱛᱟᱜ ᱯᱟᱲᱦᱟᱣ ᱟᱹᱨᱩ ᱥᱛᱷᱤᱛᱤ ᱮᱢᱟᱠᱟᱱ ᱥᱟᱦᱴᱟ ᱠᱚ ᱵᱟᱵᱚᱫᱽ ᱛᱮ ᱾",
 	"apihelp-query+proofread-summary": "ᱨᱩᱣᱟᱹᱲ ᱧᱮᱛᱮᱞ ᱱᱤᱛᱟᱜ ᱯᱟᱲᱦᱟᱣ ᱟᱹᱨᱩ ᱥᱛᱷᱤᱛᱤ ᱮᱢᱟᱠᱟᱱ ᱥᱟᱦᱴᱟ ᱠᱚ ᱵᱟᱵᱚᱫᱽ ᱛᱮ ᱾",
 	"apihelp-query+proofread-example-1": "ᱧᱩᱛᱩᱢ ᱡᱟᱜᱟ ᱒᱕᱐ ᱞᱟᱹᱜᱤᱛ proofread ᱚᱵᱚᱥᱛᱷᱟᱨᱮ ᱨᱩᱣᱟᱹᱲ",
-	"apihelp-query+proofreadinfo-description": "Proofread ᱥᱟᱦᱴᱟ ᱵᱟᱹᱲᱛᱤ ᱞᱟᱹᱜᱤᱛ ᱜᱚᱲᱦᱚᱱ ᱨᱮᱱᱟᱜ ᱠᱷᱚᱵᱚᱨ ᱨᱩᱣᱟᱹᱲ",
 	"apihelp-query+proofreadinfo-summary": "Proofread ᱥᱟᱦᱴᱟ ᱵᱟᱹᱲᱛᱤ ᱞᱟᱹᱜᱤᱛ ᱜᱚᱲᱦᱚᱱ ᱨᱮᱱᱟᱜ ᱠᱷᱚᱵᱚᱨ ᱨᱩᱣᱟᱹᱲ",
 	"apihelp-query+proofreadinfo-param-prop": "ᱚᱠᱟ ᱯᱟᱲᱦᱟᱣ ᱟᱹᱨᱩ ᱧᱟᱢ ᱞᱟᱹᱜᱤᱫ : ;ᱨᱟᱠᱷᱟᱧᱩᱛᱩᱢ: ᱧᱮᱛᱮᱞ ᱵᱟᱵᱚᱫᱽ \" {{ns:ᱥᱟᱦᱴᱟ}}\" ᱟᱨ \"{{ns:ᱩᱱᱩᱫᱩᱜ}}\" ᱨᱟᱠᱷᱟᱧᱩᱛᱩᱢ ᱾\n;ᱜᱩᱱ ᱛᱷᱩᱠ: ᱯᱟᱲᱦᱟᱣ ᱟᱹᱨᱩ ᱜᱩᱱ ᱛᱷᱚᱠ ᱞᱤᱥᱴᱤ ᱾",
 	"apihelp-query+proofreadinfo-example-1": "ᱵᱩᱴᱟᱹ ᱠᱷᱚᱵᱚᱨ ᱨᱩᱣᱟᱹᱲ",

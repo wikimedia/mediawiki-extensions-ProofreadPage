@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DiGro",
 			"Donarreiskoffer",
 			"Dutchy45",
 			"Huhbakker",
@@ -96,6 +97,7 @@
 	"proofreadpage-button-zoom-in-label": "Inzoomen",
 	"proofreadpage-button-zoom-out-label": "Uitzoomen",
 	"proofreadpage-pageinfo-status": "Controlestatus",
+	"prp-editinsequence-unsaved-edit-message": "U heeft niet-opgeslagen wijzigingen. Als u deze pagina verlaat, worden uw wijzigingen hersteld wanneer u terugkomt.",
 	"prp-editinsequence-could-not-save-edit": "Deze bewerking kan niet worden opgeslagen",
 	"proofreadpage-pagelist-dialog-cancel": "Annuleren",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Geen tags <pagelist /> gedetecteerd.",

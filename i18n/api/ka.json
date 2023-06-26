@@ -5,10 +5,8 @@
 			"Mehman97"
 		]
 	},
-	"apihelp-query+proofread-description": "გამოაქვს ინფორმაცია მოცემული გვერდების ამჟამინდელი კორექტურის სტატუსის შესახებ.",
 	"apihelp-query+proofread-summary": "გამოაქვს ინფორმაცია მოცემული გვერდების ამჟამინდელი კორექტურის სტატუსის შესახებ.",
 	"apihelp-query+proofread-example-1": "კორექტურის კითხვის სტატუსის გამოტანა გვერდებისთვის სახელთა სივრცეში 250",
-	"apihelp-query+proofreadinfo-description": "ProofreadPage გაფართოების კონფიგურაციის შესახებ ინფორმაციის გამოტანა.",
 	"apihelp-query+proofreadinfo-summary": "გამოაქვს ინფორმაცია კორექტურულ გვერდის გაფართოების კონფიგურაციის შესახებ.",
 	"apihelp-query+proofreadinfo-param-prop": "კორექტურის რომელი შესაძლობლები დავაბრუნოთ:\n;namespaces:ინფორმაცია სახელთასივრცის შესახებ „{{ns:Page}}“ და „{{ns:Index}}“.\n;qualitylevels:კორექტურის ხარისხის დონეების სია.",
 	"apihelp-query+proofreadinfo-example-1": "საწყისი ინფორმაციის დაბრუნება",

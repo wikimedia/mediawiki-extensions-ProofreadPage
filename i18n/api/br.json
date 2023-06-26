@@ -4,9 +4,7 @@
 			"Fulup"
 		]
 	},
-	"apihelp-query+proofread-description": "Adkas a ra titouroù diwar-benn stad an adlenn evit ar pajennoù merket.",
 	"apihelp-query+proofread-example-1": "Adkas stad an adlenn evit ar pajennoù en esaouenn anv 250",
-	"apihelp-query+proofreadinfo-description": "Adkas titouroù diwar-benn kefluniadur an astenn ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Perzhioù adlenn da gaout :\n;namespaces: titouroù diwar-benn an esaouennoù anv \"{{ns:Page}}\" ha \"{{ns:Index}}\".\n;qualitylevels Roll liveoù kalite an adlenn.",
 	"apihelp-query+proofreadinfo-example-1": "Adkas an titouroù dre ziouer",
 	"apihelp-query+proofreadinfo-example-3": "Adkas titouroù an esaouenn anv"

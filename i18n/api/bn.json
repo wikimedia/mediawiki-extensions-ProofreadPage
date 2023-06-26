@@ -5,10 +5,8 @@
 			"আফতাবুজ্জামান"
 		]
 	},
-	"apihelp-query+proofread-description": "প্রদত্ত পৃষ্ঠাগুলির বর্তমান প্রমাণিত অবস্থা সম্পর্কে তথ্য প্রদান",
 	"apihelp-query+proofread-summary": "প্রদত্ত পৃষ্ঠাগুলির বর্তমান প্রমাণিত অবস্থা সম্পর্কে তথ্য প্রদান",
 	"apihelp-query+proofread-example-1": "নামস্থান ২৫০ এ থাকা পৃষ্ঠাগুলোর সংশোধন অবস্থা দেখান",
-	"apihelp-query+proofreadinfo-description": "সংশোধনপাতা এক্সটেনশনের কনফিগারেশন সম্পর্কে তথ্য দেয়।",
 	"apihelp-query+proofreadinfo-example-1": "পূর্বনির্ধারিত তথ্য দেয়",
 	"apihelp-query+proofreadinfo-example-3": "নামস্থানের তথ্য ফেরত দেয়"
 }

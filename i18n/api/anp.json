@@ -4,10 +4,8 @@
 			"Angpradesh"
 		]
 	},
-	"apihelp-query+proofread-description": "पन्ना सब केरऽ वर्तमान प्रूफरीडिंग स्थिति केरऽ बारे मं॑ जानकारी दै छै",
 	"apihelp-query+proofread-summary": "पन्ना सब केरऽ वर्तमान प्रूफरीडिंग स्थिति केरऽ बारे मं॑ जानकारी दै छै",
 	"apihelp-query+proofread-example-1": "पन्ना सब केरऽ नामस्थल २५० मं॑ प्रूफरीडिंग स्थिति केरऽ बारे मं॑ जानकारी दै छै",
-	"apihelp-query+proofreadinfo-description": "प्रूफरीडपन्ना केरऽ विस्तार केरऽ विन्यास के बारे मं॑ जानकारी दै छै",
 	"apihelp-query+proofreadinfo-summary": "प्रूफरीडपन्ना केरऽ विस्तार केरऽ विन्यास के बारे मं॑ जानकारी दै छै",
 	"apihelp-query+proofreadinfo-param-prop": "प्रूफरीड केरऽ कोन गुण क॑ पाना छै :\n;नामस्थल : पेज आरू सूचकांक नामस्थलऽ के बारे मं॑ जानकारी.\n;गुणवत्तास्तर : प्रूफरीड गुणवत्ता केरऽ स्तर के सूची.",
 	"apihelp-query+proofreadinfo-example-1": "वापसी डिफ़ॉल्ट जानकारी",

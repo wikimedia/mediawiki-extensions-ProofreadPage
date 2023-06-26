@@ -4,10 +4,8 @@
 			"Xuacu"
 		]
 	},
-	"apihelp-query+proofread-description": "Devuelve información sobro l'estáu de correición actual de les páxines daes.",
 	"apihelp-query+proofread-summary": "Devuelve información sobro l'estáu de correición actual de les páxines daes.",
 	"apihelp-query+proofread-example-1": "Devuelve l'estáu de correición de les páxines del espaciu de nomes 250",
-	"apihelp-query+proofreadinfo-description": "Devuelve información sobro la configuración de la estensión ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Devuelve información sobro la configuración de la estensión ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Les propiedaes de correición a recibir:\n;namespaces:Información sobro los espacios de nomes \"{{ns:Page}}\" ya \"{{ns:Index}}\".\n;qualitylevels:Llista de niveles de calidá de correición.",
 	"apihelp-query+proofreadinfo-example-1": "Devuelve la información predeterminada",

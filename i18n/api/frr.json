@@ -4,10 +4,8 @@
 			"Murma174"
 		]
 	},
-	"apihelp-query+proofread-description": "Dää informatsioon auer di uugenblakelk stant faan jodiar sidjen.",
 	"apihelp-query+proofread-summary": "Dää informatsioon auer di uugenblakelk stant faan jodiar sidjen.",
 	"apihelp-query+proofread-example-1": "Dää di uugenblakelk stant faan sidjen uun nöömrüm 250",
-	"apihelp-query+proofreadinfo-description": "Dää informatsioon auer't konfiguratsioon faan't ProofreadPage ütjwidjang.",
 	"apihelp-query+proofreadinfo-summary": "Dää informatsioon auer't konfiguratsioon faan't ProofreadPage ütjwidjang.",
 	"apihelp-query+proofreadinfo-param-prop": "Hük proofread dooten turagdu:\n;namespaces:Informatsioon auer nöömrümer „{{ns:Page}}“ an „{{ns:Index}}“.\n;qualitylevels:List faan korektuur-straaler.",
 	"apihelp-query+proofreadinfo-example-1": "Dää standard informatsioon",

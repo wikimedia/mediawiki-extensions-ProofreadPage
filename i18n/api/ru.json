@@ -5,10 +5,8 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-query+proofread-description": "Возвращает информацию о текущем состоянии вычитки данных страниц.",
 	"apihelp-query+proofread-summary": "Возвращает информацию о текущем состоянии вычитки данных страниц.",
 	"apihelp-query+proofread-example-1": "Вернуть информацию о вычитке для страниц в пространстве имён 250",
-	"apihelp-query+proofreadinfo-description": "Вернуть информацию о настройках расширения ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Вернуть информацию о настройках расширения ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Какие свойства проверки вернуть:\n;namespaces: Информация о пространствах имён «{{ns:Page}}» и «{{ns:Index}}».\n;qualitylevels: Список уровней качества проверки.",
 	"apihelp-query+proofreadinfo-example-1": "Вернуть информацию по умолчанию",

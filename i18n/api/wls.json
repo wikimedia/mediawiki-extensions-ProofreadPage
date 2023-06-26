@@ -4,10 +4,8 @@
 			"Lea.Fakauvea"
 		]
 	},
-	"apihelp-query+proofread-description": "Fakaliliu te 'u logo o 'uhiga mo te kua sivi o te 'u pāsina 'aeni.",
 	"apihelp-query+proofread-summary": "Fakaliliu o te 'u logo o 'uhiga mo te kua sivi o te 'u pāsina 'aeni.",
 	"apihelp-query+proofread-example-1": "Fakaliliu te kua sivi o te 'u pāsina 250",
-	"apihelp-query+proofreadinfo-description": "Fakaliliu te 'u logo o 'uhiga mo te fakatu'utu'u o te ProofreadPage extension.",
 	"apihelp-query+proofreadinfo-summary": "Fakaliliu o te 'u logo o 'uhiga mo te fakatu'utu'u o te ProofreadPage extension.",
 	"apihelp-query+proofreadinfo-param-prop": "Ko te 'u fa'ahiga fakatu'utu'u sivi ke ma'u:\n;namespaces:Information o 'uhiga mo te \"{{ns:Page}}\" mo \"{{ns:Index}}\".\n;qualitylevels:List o 'uhiga mo te lelei o te sivi.",
 	"apihelp-query+proofreadinfo-example-1": "Fakaliliu o te 'u logo tāfito",

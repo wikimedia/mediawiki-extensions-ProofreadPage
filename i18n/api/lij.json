@@ -4,10 +4,8 @@
 			"Giromin Cangiaxo"
 		]
 	},
-	"apihelp-query+proofread-description": "O restitoisce de informasioin in sciô prezente stato de rilettua de paggine fornie.",
 	"apihelp-query+proofread-summary": "O restituisce de informassioin in sciô prezente stato de rilettua de paggine fornie.",
 	"apihelp-query+proofread-example-1": "O restitoisce o stato de rilettua pe-e pagine into namespace 250",
-	"apihelp-query+proofreadinfo-description": "O restituisce de informassioin in sciâ configuassion de l'estenscion ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "O restituisce de informassioin in sciâ configuassion de l'estenscion ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quæ propietæ de coression ötengnî:\n;namespaces: informassion in scî namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels: elenco di livelli de qualitæ de coression.",
 	"apihelp-query+proofreadinfo-example-1": "Restituî l'informassion predefinia",

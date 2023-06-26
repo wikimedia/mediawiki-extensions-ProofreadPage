@@ -4,10 +4,8 @@
 			"Candalua"
 		]
 	},
-	"apihelp-query+proofread-description": "El te dà le informasion sul stato de riletura de le pagine fornìe.",
 	"apihelp-query+proofread-summary": "El te dà le informasion sul stato de riletura de le pagine fornìe.",
 	"apihelp-query+proofread-example-1": "Ritorna el stato de rilettura par le pagine nel namespace 250",
-	"apihelp-query+proofreadinfo-description": "El te dà le informasion su la configurasion de l'estension ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "El te dà le informasion su la configurasion de l'estension ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Che proprietà de coresion otegner:\n;namespaces: informasion sui namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels: elenco dei livèi de qualità de coresion.",
 	"apihelp-query+proofreadinfo-example-1": "Dar indrio l'informasion de default",

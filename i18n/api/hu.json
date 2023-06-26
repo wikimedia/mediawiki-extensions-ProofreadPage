@@ -4,10 +4,8 @@
 			"Tacsipacsi"
 		]
 	},
-	"apihelp-query+proofread-description": "Információk lekérése a megadott lapok aktuális korrektúrázási állapotáról.",
 	"apihelp-query+proofread-summary": "Információk lekérése a megadott lapok aktuális korrektúrázási állapotáról.",
 	"apihelp-query+proofread-example-1": "A 250-es névtérben lévő lapok korrektúrázási állapotának lekérése.",
-	"apihelp-query+proofreadinfo-description": "Információk lekérése a ProofreadPage kiterjesztés konfigurációjáról.",
 	"apihelp-query+proofreadinfo-summary": "Információk lekérése a ProofreadPage kiterjesztés konfigurációjáról.",
 	"apihelp-query+proofreadinfo-param-prop": "Lekérendő tulajdonságok:\n;namespaces: Információk az „{{ns:Page}}” és „{{ns:Index}}” névterekről.\n;qualitylevels: A korrektúrázás minőségi szintjeinek listája.",
 	"apihelp-query+proofreadinfo-example-1": "Alapértelmezett információk lekérése",

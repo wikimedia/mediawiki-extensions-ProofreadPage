@@ -4,10 +4,8 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-query+proofread-description": "Returnerer informasjon om den gjeldende korrekturlesingsstatusen til de gitte sidene.",
 	"apihelp-query+proofread-summary": "Returnerer informasjon om korrekturlesingsstatusen til de gitte sidene.",
 	"apihelp-query+proofread-example-1": "Returnerer korrekturlesingsstatus i navneromm 250",
-	"apihelp-query+proofreadinfo-description": "Returnerer informasjon om konfigurasjonen av ProofreadPage-utvidelsen.",
 	"apihelp-query+proofreadinfo-summary": "Returnerer informasjon om konfigurasjonen av ProofreadPage-utvidelsen.",
 	"apihelp-query+proofreadinfo-param-prop": "Hvilke korrekturlesingsegenskaper som hentes:\n;namespaces:Informasjon om navnerommene «{{ns:Page}}» og «{{ns:Index}}»\n;qualitylevels:Liste over kvalitetsnivåer for korrekturlesing.",
 	"apihelp-query+proofreadinfo-example-1": "Returnerer standardinformasjon",

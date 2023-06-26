@@ -4,9 +4,7 @@
 			"Gts-tg"
 		]
 	},
-	"apihelp-query+proofread-description": "Ἐπιστρέφει πληροφορίες διά την τωρινή κατάσταση ἐπαληθεύσεως των δωθέντων δέλτων.",
 	"apihelp-query+proofread-example-1": "Ἐπιστρέφει την τωρινή κατάσταση ἐπαληθεύσεως διά τις δέλτους εἴς τον ὀνοματοχώρον 250",
-	"apihelp-query+proofreadinfo-description": "Ἐπιστρέφει πληροφορίαι δια τις ρυθμίσεις της ἐπεκτάσεως ProofreadPage",
 	"apihelp-query+proofreadinfo-example-1": "Ἐπιστροφή προκαθορισμένων πληροφοριών",
 	"apihelp-query+proofreadinfo-example-3": "Ἐπιστροφή πληροφοριών ὀνοματοχώρου"
 }

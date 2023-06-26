@@ -112,6 +112,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Facer nihil",
 	"prp-editinsequence-save-next-action-go-to-next": "Ir al pagina sequente",
 	"prp-editinsequence-save-next-action-go-to-prev": "Ir al pagina precedente",
+	"prp-editinsequence-unsaved-edit-message": "Tu ha modificationes non salveguardate. Si tu exi de iste pagina, illos essera restaurate quando tu revenira.",
 	"prp-editinsequence-show-dialog-toggle-label": "Monstrar iste dialogo cata vice que se clicca sur \"$1\"",
 	"prp-editinsequence-editsummary-placeholder": "Describe tu cambiamentos",
 	"prp-editinsequence-could-not-save-edit": "Iste modification non pote esser salveguardate",

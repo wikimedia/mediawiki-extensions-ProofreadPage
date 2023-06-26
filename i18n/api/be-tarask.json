@@ -4,10 +4,8 @@
 			"Renessaince"
 		]
 	},
-	"apihelp-query+proofread-description": "Вяртае інфармацыю пра актуальны статус вычыткі дадзеных старонак.",
 	"apihelp-query+proofread-summary": "Вяртае інфармацыю пра актуальны статус вычыткі дадзеных старонак.",
 	"apihelp-query+proofread-example-1": "Вяртае статус вычыткі старонак у прасторы назваў 250",
-	"apihelp-query+proofreadinfo-description": "Вярнуць інфармацыю пра налады пашырэньня ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Вярнуць інфармацыю пра канфігурацыю пашырэньня ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Якія ўласьцівасьці вычыткі выдаваць:\n;namespaces:Інфармацыя пра прасторы назваў «{{ns:Page}}» і «{{ns:Index}}».\n;qualitylevels:Сьпіс узроўняў якасьці вычыткі.",
 	"apihelp-query+proofreadinfo-example-1": "Вярнуць дапомную інфармацыю",

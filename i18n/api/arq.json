@@ -5,9 +5,7 @@
 			"Oldstoneage"
 		]
 	},
-	"apihelp-query+proofread-description": "Returns information about the current proofread status of the given pages.",
 	"apihelp-query+proofread-example-1": "Return proofread status for pages in namespace 250",
-	"apihelp-query+proofreadinfo-description": "Return information about configuration of ProofreadPage extension.",
 	"apihelp-query+proofreadinfo-param-prop": "واش هيّا الدالايل تاع التصحاح الّي مطلوبة:\n;namespaces:معلومات على وساسع السميّة \"{{ns:Page}}\" و \"{{ns:Index}}\".\n;qualitylevels:ليسنة تاع نيفوّات الجودة تاع دلايل` التصحاح.",
 	"apihelp-query+proofreadinfo-example-1": "Return default information",
 	"apihelp-query+proofreadinfo-example-3": "Return namespace information"

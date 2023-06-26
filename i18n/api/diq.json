@@ -5,10 +5,8 @@
 			"Mirzali"
 		]
 	},
-	"apihelp-query+proofread-description": "Perrê deyaye weziyeta timari ra peyd şo malumat",
 	"apihelp-query+proofread-summary": "Pelê ke asenê, weziyetê vurnayışê dinano rocane sero melumat peyser ano.",
 	"apihelp-query+proofread-example-1": "Peyd şo 250ca nemayê weziyeta pere",
-	"apihelp-query+proofreadinfo-description": "Derganiya heqa pera timar kerdışi malumati çerx keno",
 	"apihelp-query+proofreadinfo-summary": "Sazkerdışê derganiya ProofreadPage sero melumat peyser biya.",
 	"apihelp-query+proofreadinfo-param-prop": "Kamci xısusiyeta timar kerdışi şiyayış:\n;caynaman:heqdê cı malumat  \"{{ns:Page}}\" u \"{{ns:Index}}\" namey estê. \n;sewiya ya qeliteyın:Listeya sewiyanê tinar kerdışa.",
 	"apihelp-query+proofreadinfo-example-1": "Peyser şo hesıbyaye malumati",

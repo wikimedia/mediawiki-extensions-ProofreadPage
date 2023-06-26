@@ -5,10 +5,8 @@
 			"Iyuqciyang"
 		]
 	},
-	"apihelp-query+proofread-description": "embrinah duri bitaq pnegkla kari quri patas ruwahan ga muda qmita smlaan patas sayang o mmeenu",
 	"apihelp-query+proofread-summary": "syuki ka tniyu su ruwahan ptasan  quri wada daan qmita sayang ka saw quri pnegkla kari.",
 	"apihelp-query+proofread-example-1": "embrinah duri I 250 ptngahan iyax patas ruwahan endaan qmita smlaan patas o mmeenu",
-	"apihelp-query+proofreadinfo-description": "embrinah duri quri ProofreadPage pnrgkla pnrana pnspuan pnowsa",
 	"apihelp-query+proofreadinfo-summary": "embrinah duri quri ProofreadPage pnegkla pnrana pnspuan pnowsa.",
 	"apihelp-query+proofreadinfo-param-prop": "maangal quri qtaan nsmlaan patas:\n;namespaces: quri “{{ns:Page}}”ni“{{ns:Index}}”kari pnegkla iyax ptngahan。\n;qualitylevels: patas pnsbkug endaan qmita smmalu knklay knhiyi",
 	"apihelp-query+proofreadinfo-example-1": "embrinah duri kari pnegkla pnsramal",

@@ -4,10 +4,8 @@
 			"Reptilien.19831209BE1"
 		]
 	},
-	"apihelp-query+proofread-description": "Rind des infôrmåcions so l’ estat do coridjaedje d’ asteure po les pådjes dinêyes.",
 	"apihelp-query+proofread-summary": "Rind des infôrmåcions so l’ estat do coridjaedje d’ asteure po les pådjes dinêyes.",
 	"apihelp-query+proofread-example-1": "Rind l’ estat do coridjaedje des pådjes dins l’ espåce di lomaedje 250.",
-	"apihelp-query+proofreadinfo-description": "Rinde des infôrmåcions so l’ apontiaedje di l’ ustêye ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Rinde des infôrmåcions so l’ apontiaedje di l’ ustêye ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "kénes prouves di coridjaedje obtini :\n;namespaces:Infôrmåcions so l’ espåce di lomaedje « {{ns:Page}} » et « {{ns:Index}} ».\n;qualitylevels:Djivêye des liveas d’ cwålité des prouves di coridjaedje.",
 	"apihelp-query+proofreadinfo-example-1": "Infôrmåcion premetowe dinêye",

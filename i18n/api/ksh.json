@@ -4,9 +4,7 @@
 			"Purodha"
 		]
 	},
-	"apihelp-query+proofread-description": "Jiff Dahte övver der aktoälle Zohschtand vom Jähjejelässe för di aanjejovve Sigge.",
 	"apihelp-query+proofread-example-1": "Jif der Zohschtand vom Jähjejelässe för Sigge em Appachtemang 250.",
-	"apihelp-query+proofreadinfo-description": "Jif Dahte övver de Enschtällonge vom Zohsazprojramm för et Jähjejelässeuß.",
 	"apihelp-query+proofreadinfo-param-prop": "Wat för en Eijeschaffte vum Jähjelässe ze holle:\n;<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">namespaces</code >:Anjahbe övver de Appachtemangs „{{ns:Page}}“ un „{{ns:Index}}“.\n;<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">qualitylevels</code >:Leß met de Nivohs vun de Qualiteite vum Jähjelässe.",
 	"apihelp-query+proofreadinfo-example-1": "Jif de Schtandatt_Aanjahbe uß",
 	"apihelp-query+proofreadinfo-example-3": "Jif Aanjahbe zom Appachtemang uß"

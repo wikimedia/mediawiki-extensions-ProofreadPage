@@ -4,9 +4,7 @@
 			"Lalotahes"
 		]
 	},
-	"apihelp-query+proofread-description": "lobih ray ’ima hingha’ pinaSowatoroe’ ye:miyen ray ’isahini pinonrowa’  zhwangtay ka pinakSekla’ ka:i’",
 	"apihelp-query+proofread-example-1": "lobih 250 karo:o’an  ye:miyen  ka paponrowa’  zhwangtay",
-	"apihelp-query+proofreadinfo-description": "lobih ray ’ima hingha’ ProofreadPage pinak’izo’ ka pinakSekla’ ka:i’",
 	"apihelp-query+proofreadinfo-example-1": "lobih ray pinyunbi’ ka pinakSekla’ ka:i’",
 	"apihelp-query+proofreadinfo-example-3": "lobih ray karo:o’an"
 }

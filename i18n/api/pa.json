@@ -4,10 +4,8 @@
 			"Satdeep gill"
 		]
 	},
-	"apihelp-query+proofread-description": "ਦਿੱਤੇ ਗਏ ਸਫ਼ਿਆਂ ਦਾ ਮੌਜੂਦਾ ਪਰੂਫ਼ਰਿਡਿੰਗ ਦਾ ਦਰਜਾ ਦਿਖਾਉਂਦਾ ਹੈ।",
 	"apihelp-query+proofread-summary": "ਦਿੱਤੇ ਗਏ ਸਫ਼ਿਆਂ ਦਾ ਮੌਜੂਦਾ ਪਰੂਫ਼ਰਿਡਿੰਗ ਦਾ ਦਰਜਾ ਦਿਖਾਉਂਦਾ ਹੈ।",
 	"apihelp-query+proofread-example-1": "ਨੇਮਸਪੇਸ 250 ਵਿੱਚ ਸਫ਼ਿਆਂ ਦੀ ਪਰੂਫ਼ਰਿਡਿੰਗ ਦਾ ਦਰਜਾ ਦਿਖਾਉਂਦਾ ਹੈ",
-	"apihelp-query+proofreadinfo-description": "ਪਰੂਫ਼ਰੀਡਸਫ਼ਾ ਐਕਸਟੈਨਸ਼ਨ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕਰੋ",
 	"apihelp-query+proofreadinfo-summary": "ਪਰੂਫ਼ਰੀਡਸਫ਼ਾ ਐਕਸਟੈਨਸ਼ਨ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕਰੋ",
 	"apihelp-query+proofreadinfo-param-prop": "ਹੇਠ ਦੇ ਲਈ ਕਿਹੜੀਆਂ ਪਰੂਫਰੀਡ ਪ੍ਰਾਪਰਟੀਜ਼ ਦੀ ਵਰਤੋਂ ਕੀਤੀ ਜਾਵੇ:\n;\"{{ns:Page}}\" ਅਤੇ \"{{ns:Index}}\" ਨਾਮਸਥਾਨਾਂ ਬਾਰੇ namespaces:ਜਾਣਕਾਰੀ\n;qualitylevels:ਪਰੂਫਰੀਡ ਕਵਾਲਟੀ ਲੈਵਲਾਂ ਦੀ ਸੂਚੀ",
 	"apihelp-query+proofreadinfo-example-1": "ਪਹਿਲਾਂ ਤੋਂ ਨਿਸ਼ਚਿਤ ਜਾਣਕਾਰੀ ਦਿਖਾਉਂਦਾ ਹੈ",

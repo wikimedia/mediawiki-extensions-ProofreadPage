@@ -4,10 +4,8 @@
 			"Äberlausitzer"
 		]
 	},
-	"apihelp-query+proofread-description": "Gibt Informationen ieber dan Korrekturlesungsstatus der Seita zuricke.",
 	"apihelp-query+proofread-summary": "Liefert Informationen ieber dan aktuella Status des Korrekturlesens der oagegahna Seita.",
 	"apihelp-query+proofread-example-1": "Gibt dan Korrekturlesungsstatus der Seita eim Noamensraum 250 zuricke",
-	"apihelp-query+proofreadinfo-description": "Gibt Informationen zur Eistallung der Erweiterung „ProofreadPage“ zuricke.",
 	"apihelp-query+proofreadinfo-summary": "Gibt Informationen zur Konfiguration der Erweiterung „ProofreadPage“ zuricke.",
 	"apihelp-query+proofreadinfo-param-prop": "Zurickezugebende Eigenschoafta:\n;namespaces:Information ieber de Noamensräume „{{ns:Page}}“ und „{{ns:Index}}“.\n;qualitylevels:Liste der Korrekturlesungs-Qualitätsstufa.",
 	"apihelp-query+proofreadinfo-example-1": "Gibt Standardinformationen zuricke",

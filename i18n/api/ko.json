@@ -6,10 +6,8 @@
 			"Ykhwong"
 		]
 	},
-	"apihelp-query+proofread-description": "주어진 페이지의 현재 교정 상태에 대한 정보를 반환합니다.",
 	"apihelp-query+proofread-summary": "주어진 페이지의 현재 교정 상태에 대한 정보를 반환합니다.",
 	"apihelp-query+proofread-example-1": "이름공간 250에 위치한 페이지의 교정 상태를 반환함",
-	"apihelp-query+proofreadinfo-description": "ProofreadPage 확장 기능의 설정에 관한 정보를 반환합니다.",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage 확장 기능의 설정에 관한 정보를 반환합니다.",
 	"apihelp-query+proofreadinfo-example-1": "기본 정보를 반환합니다",
 	"apihelp-query+proofreadinfo-example-3": "이름공간 정보를 반환합니다",

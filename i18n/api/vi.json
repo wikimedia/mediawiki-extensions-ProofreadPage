@@ -5,10 +5,8 @@
 			"Vinhtantran"
 		]
 	},
-	"apihelp-query+proofread-description": "Trả về thông về tình trạng hiệu đính hiện thời của trang chỉ định.",
 	"apihelp-query+proofread-summary": "Trả về thông tin về tình trạng hiệu đính hiện thời của trang chỉ định.",
 	"apihelp-query+proofread-example-1": "Trả về tình trạng hiệu đính của trang trong không gian tên 250",
-	"apihelp-query+proofreadinfo-description": "Trả về thông tin cấu hình của bộ mở rộng ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Trả về thông tin cấu hình của bộ mở rộng ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Cần lấy thuộc tính nào:\n;namespaces:Thông tin về không gian tên \"{{ns:Page}}\" và\"{{ns:Index}}\".\n;quanlitylevels:Danh sách các mức chất lượng hiệu định.",
 	"apihelp-query+proofreadinfo-example-1": "Cho ra thông tin mặc định",

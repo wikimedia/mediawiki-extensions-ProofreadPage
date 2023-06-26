@@ -112,6 +112,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Nofo noa",
 	"prp-editinsequence-save-next-action-go-to-next": "Ki mu'a",
 	"prp-editinsequence-save-next-action-go-to-prev": "Ki muli",
+	"prp-editinsequence-unsaved-edit-message": "Ko te 'u fetogi ne'e ke fai ne'e mole ta'ofi. Ka e ke mavae mai ai, pea e ke toe liliu mai o toe ma'u te 'u fetogi ne'e ke fai.",
 	"prp-editinsequence-show-dialog-toggle-label": "Fakahā te felogo'i aeni tu'u ma'u pe mo kā kua lomi te \"$1\"",
 	"prp-editinsequence-editsummary-placeholder": "Fakamatala te'u fetogi ne'e ke fai",
 	"prp-editinsequence-could-not-save-edit": "Ko te fetogi aeni mole lava ta'ofi",

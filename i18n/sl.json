@@ -114,6 +114,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Ne stori ničesar",
 	"prp-editinsequence-save-next-action-go-to-next": "Pojdi na naslednjo stran",
 	"prp-editinsequence-save-next-action-go-to-prev": "Pojdi na prejšnjo stran",
+	"prp-editinsequence-unsaved-edit-message": "Imate neshranjene spremembe. Če boste zapustili to stran, bodo vaše spremembe obnovljene, ko se boste vrnili.",
 	"prp-editinsequence-show-dialog-toggle-label": "Pokaži to pogovorno okno vsakič, ko kliknem »$1«",
 	"prp-editinsequence-editsummary-placeholder": "Opišite svoje spremembe",
 	"prp-editinsequence-could-not-save-edit": "Tega urejanja ni mogoče shraniti",

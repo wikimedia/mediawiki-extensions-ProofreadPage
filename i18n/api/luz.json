@@ -5,10 +5,8 @@
 			"علی ساکی لرستانی"
 		]
 	},
-	"apihelp-query+proofread-description": "اطاعاته دادھ شدنه دربارھ ۉضعیت اصلاح جاری د بلگل دادھ شدنه ۉرایگردۉنه.",
 	"apihelp-query+proofread-summary": "دۊنسیٱل مال ڤٱئزیٱت ایسنی بٱرگیٱل داڌٱ ڤابیڌٱنٱ ایڤٱرگٱردٱناٛ.",
 	"apihelp-query+proofread-example-1": "ۉضعیت اصلاحنه سی بلگل مئنه 250 همدرنگل ۉرایگردۉنه.",
-	"apihelp-query+proofreadinfo-description": "اطلاعاتنه دربارھ پیکربنی زھ فرمت اصلاح بلگه ۉرایگردۉنه.",
 	"apihelp-query+proofreadinfo-param-prop": "یھ کمی خاصیتل اصلاحل سی گرتن:\n;همدرنگل:اطلاعات دربارھ بلگه ۉ همدرنگل بلگه اۉل.\n;سطح کیفیت:لیست سطح کیفیتل اصلاح ۉابیدھ.",
 	"apihelp-query+proofreadinfo-example-1": "اصلاعات پیش فرضنه ۉرایگردۉنه",
 	"apihelp-query+proofreadinfo-example-3": "اطلاعات همدرنگلنه ۉرایگردۉنه"

@@ -4,10 +4,8 @@
 			"Iyumu"
 		]
 	},
-	"apihelp-query+proofread-description": "pacikel ta kinudan patajara makudanga a maumaumaljan naza qadupudupu katiaw.",
 	"apihelp-query+proofread-summary": "pacikel tua patjara pinenetjan a lisadayan a sapitj a patjetucu a kinakemudamudan na kitjumalj ta vinecikan a palyang ta kai",
 	"apihelp-query+proofread-example-1": "pacikel a pasa ta 250 a sinipapungadanan a lisadayan na sapitj ta kitjumalj ta vinecikan a kinakemudan",
-	"apihelp-query+proofreadinfo-description": "pacikelj a pasa ProofreadPage ta pakaizua tu sipaljazuanan a paljayang ta kai",
 	"apihelp-query+proofreadinfo-summary": "pacikelj a pasa tua ProofreadPage ta pakaizua tu sipaljazuanan a paljayang ta kai",
 	"apihelp-query+proofreadinfo-param-prop": "uri malap tua kitjumalj ta vincikan sitjara: \n;namespaces: pakatua “{{ns:Page}}” katua “{{ns:Index}}” a vavecikan ta pinapungadanan a paljayang ta kai.\n;qualitylevels: kitjumalj ta vincikan a ljaljedjeqan tua kinananguaq ta tjuljuren a purarivrivan.",
 	"apihelp-query+proofreadinfo-example-1": "pacikel a pasa tua pakasangas a paljayang ta kai",

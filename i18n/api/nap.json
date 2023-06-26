@@ -6,10 +6,8 @@
 			"Sannita"
 		]
 	},
-	"apihelp-query+proofread-description": "Torna 'e nfurmaziune ncopp' 'o stato d' 'a qualità 'e ccheste paggene.",
 	"apihelp-query+proofread-summary": "Torna 'e nfurmaziune ncopp' 'o stato d' 'a qualità 'e ccheste paggene.",
 	"apihelp-query+proofread-example-1": "Torna 'e nfurmaziune ncopp' 'o stato d' 'a leggiuta d' 'e ppaggene dint' 'o namespace 250",
-	"apihelp-query+proofreadinfo-description": "Torna 'e nfurmaziune ncopp' 'e 'mpustaziune 'e l'estenzione ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Torna 'e nfurmaziune ncopp' 'e 'mpustaziune 'e l'estenzione ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quà proprietà 'e qualità te sirveno:\n;namespaces:Nfurmaziune ncopp' 'e namespace \"{{ns:Page}}\" e \"{{ns:Index}}\".\n;qualitylevels:lista d' 'e levielli 'e qualità d' 'e ppaggene leggiute.",
 	"apihelp-query+proofreadinfo-example-1": "Tuorna 'e nfurmaziune predeterminate",

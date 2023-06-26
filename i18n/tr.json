@@ -127,6 +127,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Hiçbir şey yapma",
 	"prp-editinsequence-save-next-action-go-to-next": "Sonraki sayfaya git",
 	"prp-editinsequence-save-next-action-go-to-prev": "Önceki sayfaya git",
+	"prp-editinsequence-unsaved-edit-message": "Kaydedilmemiş değişiklikleriniz var. Bu sayfadan ayrılırsanız, geri döndüğünüzde değişiklikleriniz geri yüklenecektir.",
 	"prp-editinsequence-show-dialog-toggle-label": "\"$1\" her tıklandığında bu iletişim kutusunu göster",
 	"prp-editinsequence-editsummary-placeholder": "Değişikliklerinizi anlatın",
 	"prp-editinsequence-could-not-save-edit": "Bu değişiklik kaydedilemez",

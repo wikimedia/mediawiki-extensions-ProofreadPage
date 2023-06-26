@@ -5,10 +5,8 @@
 			"Woytecr"
 		]
 	},
-	"apihelp-query+proofread-description": "Zwraca informacje o aktualnym statusie korekty podanych stron.",
 	"apihelp-query+proofread-summary": "Zwraca informacje o aktualnym statusie korekty podanych stron.",
 	"apihelp-query+proofread-example-1": "Zwraca informacje o statusie korekty stron z przestrzeni nazw 250",
-	"apihelp-query+proofreadinfo-description": "Zwraca informacje o konfiguracji rozszerzenia ProofreadPage.",
 	"apihelp-query+proofreadinfo-summary": "Zwraca informacje o konfiguracji rozszerzenia ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Jakie właściwości proofread zwrócić:\n;namespaces:Informacje o przestrzeniach nazw \"{{ns:Page}}\" i \"{{ns:Index}}\".\n;qualitylevels:Lista poziomów proofread.",
 	"apihelp-query+proofreadinfo-example-1": "Zwróć domyślne informacje",

@@ -6,10 +6,8 @@
 			"जनक राज भट्ट"
 		]
 	},
-	"apihelp-query+proofread-description": "दिये गए पृष्ठ के वर्तमान स्थिति की जानकारी दिखाएँ।",
 	"apihelp-query+proofread-summary": "दिये गए पृष्ठ के वर्तमान स्थिति की जानकारी दिखाएँ।",
 	"apihelp-query+proofread-example-1": "नामस्थान 250 के पृष्ठों की स्थिति दिखाएँ।",
-	"apihelp-query+proofreadinfo-description": "शोधक पृष्ठ एक्सटैन्शन की व्यवस्था की जानकारी दिखाएँ।",
 	"apihelp-query+proofreadinfo-summary": "शोधक पृष्ठ एक्सटैन्शन की व्यवस्था की जानकारी दिखाएँ।",
 	"apihelp-query+proofreadinfo-param-prop": "कौन सा शोधक पृष्ठ गुण मिलेगा:\n;नामस्थान:पृष्ठ और नामस्थान की जानकारी।\n;गुणवत्ता-स्तर:गुणवत्ता स्तर अनुसार शोधक पृष्ठ सूची।",
 	"apihelp-query+proofreadinfo-example-1": "वापसी डिफ़ॉल्ट जानकारी",
