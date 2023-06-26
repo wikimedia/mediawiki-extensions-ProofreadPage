@@ -41,11 +41,14 @@
 	"proofreadpage-button-reset-zoom-label": "اصلی سائز",
 	"proofreadpage-button-zoom-in-label": "وݙا کرو",
 	"proofreadpage-pageinfo-status": "پروف ریڈنگ حالت",
+	"proofreadpage-pagelist-dialog-insertchanges": "تبدیلیاں پاؤ",
 	"content-model-proofread-page": "کتاب ورقہ",
 	"content-model-proofread-index": "کتاب فہرست",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "ورقہ چݨݨ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ورقے",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "جیا",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "کو",
 	"proofreadpage-visualeditor-node-pagequality-inspector-title": "پروف ریڈنگ کوالٹی",
-	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "پروف ریڈنگ کوالٹی"
+	"proofreadpage-visualeditor-node-pagequality-inspector-tooltip": "پروف ریڈنگ کوالٹی",
+	"proofreadpage-index-field-category-label": "ونکیاں"
 }
