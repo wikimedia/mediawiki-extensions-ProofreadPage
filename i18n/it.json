@@ -43,6 +43,7 @@
 	"proofreadpage_header": "Intestazione (non inclusa):",
 	"proofreadpage_body": "Corpo della pagina (da includere):",
 	"proofreadpage_footer": "Piè di pagina (non incluso)",
+	"proofreadpage_edit_in_sequence": "Modifica in sequenza",
 	"proofreadpage_toggleheaders": "attiva/disattiva la visibilità delle sezioni non incluse",
 	"proofreadpage_quality0_category": "Senza testo",
 	"proofreadpage_quality1_category": "Da correggere",
