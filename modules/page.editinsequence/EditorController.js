@@ -21,8 +21,11 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	this.$headingContainer = $content.find( '#firstHeading' );
 	this.$editorArea = $content.find( '.prp-page-content' );
 	this.$header.on( 'keyup', this.onHeaderChange.bind( this ) );
+	this.$header.on( 'change', this.onHeaderChange.bind( this ) );
 	this.$body.on( 'keyup', this.onBodyChange.bind( this ) );
+	this.$body.on( 'change', this.onBodyChange.bind( this ) );
 	this.$footer.on( 'keyup', this.onFooterChange.bind( this ) );
+	this.$footer.on( 'change', this.onFooterChange.bind( this ) );
 	mw.hook( 'ext.CodeMirror.switch' ).add( this.onCodeMirrorSwitch.bind( this ) );
 
 	// Remove the actionable items from the default interface
@@ -96,6 +99,11 @@ EditorController.prototype.addUnsavedEditIndicator = function () {
 };
 
 EditorController.prototype.toggleUnsavedEditIndicator = function ( show ) {
+	if ( show && document.title.charAt( 0 ) === '*' ) {
+		document.title = document.title.slice( 2 );
+	} else {
+		document.title = '* ' + document.title;
+	}
 	this.unsavedEditBadge.toggle( show );
 };
 
@@ -104,11 +112,11 @@ EditorController.prototype.toggleUnsavedEditIndicator = function ( show ) {
  * is loaded.
  */
 EditorController.prototype.onLoadUnsavedEdit = function () {
-	this.toggleUnsavedEditIndicator( true );
 	var editorData = this.pageModel.getEditorData();
 	this.$header.val( editorData.header );
 	this.$body.textSelection( 'setContents', editorData.body );
 	this.$footer.val( editorData.footer );
+	this.toggleUnsavedEditIndicator( this.pageModel.hasChanges() );
 };
 
 EditorController.prototype.onHeaderChange = function () {
@@ -163,10 +171,24 @@ EditorController.prototype.setDefaultEditorData = function () {
 };
 
 /**
+ * Sync current header, body and footer with page model
+ * (required to update programattic changes to page model)
+ * should be invoked before important user-facing operations
+ * such as diff, preview and save
+ */
+EditorController.prototype.forceSync = function () {
+	this.pageModel.setHeader( this.$header.val() );
+	this.pageModel.setBody( this.$body.textSelection( 'getContents' ) );
+	this.pageModel.setFooter( this.$footer.val() );
+	this.onFooterChange();
+};
+
+/**
  * Updates the previews of a page with the latest preview, if the preview is not being shown
  * this function is a no-op
  */
 EditorController.prototype.updatePreview = function () {
+	this.forceSync();
 	this.previewWidget.updatePreview( this.pageModel.getCurrentWikitext(), this.pageModel.getPageName() );
 };
 
@@ -194,6 +216,7 @@ EditorController.prototype.hidePreview = function () {
  */
 
 EditorController.prototype.save = function () {
+	this.forceSync();
 	this.toggleUnsavedEditIndicator( false );
 	var saveData = this.saveModel.getSaveData(),
 		wikiText = this.pageModel.getCurrentWikitext(),

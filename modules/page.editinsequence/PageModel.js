@@ -69,7 +69,7 @@ PageModel.prototype.fetchData = function ( page ) {
  * Stores the unsaved edits to a page when a page is navigated away from
  */
 PageModel.prototype.savePage = function () {
-	if ( !this.hasChanges( this.header, this.body, this.footer, this.pageStatus ) ) {
+	if ( !this.hasChanges() ) {
 		return;
 	}
 	mw.storage.setObject( 'prp-editinsequence-page-save-' + this.pageName, {
@@ -89,12 +89,12 @@ PageModel.prototype.savePage = function () {
  * @param {Object} pageStatus
  * @return {boolean} True if there are changes, false otherwise
  */
-PageModel.prototype.hasChanges = function ( header, body, footer, pageStatus ) {
-	return header !== this.initialHeader ||
-	body !== this.initialBody ||
-	footer !== this.initialFooter ||
-	pageStatus.status !== this.initialPageStatus.status ||
-	pageStatus.lastUser !== this.initialPageStatus.lastUser;
+PageModel.prototype.hasChanges = function () {
+	return this.header !== this.initialHeader ||
+	this.body !== this.initialBody ||
+	this.footer !== this.initialFooter ||
+	this.pageStatus.status !== this.initialPageStatus.status ||
+	this.pageStatus.lastUser !== this.initialPageStatus.lastUser;
 };
 
 /**
