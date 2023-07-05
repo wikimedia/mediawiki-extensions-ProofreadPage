@@ -10,6 +10,7 @@
 			"F. Cosoleto",
 			"Gianfranco",
 			"Macofe",
+			"OrbiliusMagister",
 			"Stefano-c"
 		]
 	},
@@ -61,7 +62,7 @@
 	"proofreadpage_quality2_message": "Si è verificato un problema nella correzione di questa pagina",
 	"proofreadpage_quality3_message": "Questa pagina è stata corretta",
 	"proofreadpage_quality4_message": "Questa pagina è stata convalidata",
-	"proofreadpage_index_status": "Stato avanzamento",
+	"proofreadpage_index_status": "Stato di avanzamento dell'indice",
 	"proofreadpage_index_size": "Numero di pagine",
 	"proofreadpage_pages_to_validate": "Numero di pagine da rileggere",
 	"proofreadpage_pages_to_proofread_or_validate": "Numero di pagine da trascrivere o rileggere",
@@ -102,8 +103,8 @@
 	"proofreadpage-button-rotate-right-label": "Ruota a destra",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizzontale",
 	"proofreadpage-button-toggle-visibility-label": "Mostra/Nascondi intestazione e piè di pagina",
-	"proofreadpage-button-zoom-in-label": "Zoom avanti",
-	"proofreadpage-button-zoom-out-label": "Zoom indietro",
+	"proofreadpage-button-zoom-in-label": "Ingrandisci",
+	"proofreadpage-button-zoom-out-label": "riduci",
 	"proofreadpage-pageinfo-status": "Stato di correzione",
 	"prp-editinsequence-http-error-pagelist": "Impossibile caricare la paginazione per problemi di rete, per favore riprova più tardi.",
 	"prp-editinsequence-pagination-does-not-exist": "Non esiste alcuna paginazione per questo Indice, dunque è impossibile determinare le pagine successive e precedenti. Se ritieni che ci sia un errore, segnalalo a phabricator.wikimedia.org.",
