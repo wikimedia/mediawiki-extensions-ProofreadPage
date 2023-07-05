@@ -211,10 +211,10 @@ var OpenSeadragonController = require( './OpenseadragonController.js' );
 
 		var tools = {
 			other: {
-				label: mw.message( 'proofreadpage-group-other' ).escaped(),
+				label: mw.msg( 'proofreadpage-group-other' ),
 				tools: {
 					'toggle-visibility': {
-						label: mw.message( 'proofreadpage-button-toggle-visibility-label' ).text(),
+						label: mw.msg( 'proofreadpage-button-toggle-visibility-label' ),
 						type: 'button',
 						oouiIcon: 'headerFooter',
 						action: {
@@ -225,7 +225,7 @@ var OpenSeadragonController = require( './OpenseadragonController.js' );
 						}
 					},
 					'toggle-layout': {
-						label: mw.message( 'proofreadpage-button-toggle-layout-label' ).text(),
+						label: mw.msg( 'proofreadpage-button-toggle-layout-label' ),
 						type: 'button',
 						oouiIcon: 'switchLayout',
 						action: {
@@ -246,7 +246,7 @@ var OpenSeadragonController = require( './OpenseadragonController.js' );
 			sections: {
 				'proofreadpage-tools': {
 					type: 'toolbar',
-					label: mw.message( 'proofreadpage-section-tools' ).text(),
+					label: mw.msg( 'proofreadpage-section-tools' ),
 					groups: tools
 				}
 			}
