@@ -113,6 +113,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Чүнү-даа кылбас",
 	"prp-editinsequence-save-next-action-go-to-next": "Дараазында арынче шилчиңер",
 	"prp-editinsequence-save-next-action-go-to-prev": "Мурнунда арынче шилчиңер",
+	"prp-editinsequence-unsaved-edit-message": "Шыгжаттынмаан өскертилгелериңер бар. Бо арынны хааптар болзуңарза, өскертилгелериңер катап эглип кээриңерге катап тургустунуп кээр.",
 	"prp-editinsequence-show-dialog-toggle-label": "Бо диалогту \"$1\" деп тана бастынган санында көргүзер",
 	"prp-editinsequence-editsummary-placeholder": "Өскертилгелериңерни тайылбырлаңар",
 	"prp-editinsequence-could-not-save-edit": "Бо эдилге шыгжаттынмас",

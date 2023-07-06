@@ -104,7 +104,7 @@
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizzontale",
 	"proofreadpage-button-toggle-visibility-label": "Mostra/Nascondi intestazione e piè di pagina",
 	"proofreadpage-button-zoom-in-label": "Ingrandisci",
-	"proofreadpage-button-zoom-out-label": "riduci",
+	"proofreadpage-button-zoom-out-label": "Rimpicciolisci",
 	"proofreadpage-pageinfo-status": "Stato di correzione",
 	"prp-editinsequence-http-error-pagelist": "Impossibile caricare la paginazione per problemi di rete, per favore riprova più tardi.",
 	"prp-editinsequence-pagination-does-not-exist": "Non esiste alcuna paginazione per questo Indice, dunque è impossibile determinare le pagine successive e precedenti. Se ritieni che ci sia un errore, segnalalo a phabricator.wikimedia.org.",

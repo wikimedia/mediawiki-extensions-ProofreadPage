@@ -126,6 +126,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Tidak melakukan apapun",
 	"prp-editinsequence-save-next-action-go-to-next": "Buka halaman berikutnya",
 	"prp-editinsequence-save-next-action-go-to-prev": "Ke halaman sebelumnya",
+	"prp-editinsequence-unsaved-edit-message": "Anda memiliki perubahan yang belum disimpan. Jika Anda meninggalkan halaman ini, perubahan Anda akan dipulihkan saat Anda kembali.",
 	"prp-editinsequence-show-dialog-toggle-label": "Tampilkan dialog ini setiap kali \" $1 \" diklik",
 	"prp-editinsequence-editsummary-placeholder": "Jelaskan perubahan Anda",
 	"prp-editinsequence-could-not-save-edit": "Suntingan tidak bisa disimpan",
