@@ -70,11 +70,15 @@ class IndexSlotDiffRendererTest extends ProofreadPageTestCase {
 	 * @dataProvider getDiffProvider
 	 */
 	public function testGetDiff( $oldContent, $newContent, $result ) {
-		$textDiffRenderer = new TextSlotDiffRenderer();
+		$context = RequestContext::getMain();
+		$textDiffRenderer = $this->getServiceContainer()
+			->getContentHandlerFactory()
+			->getContentHandler( CONTENT_MODEL_TEXT )
+			->getSlotDiffRenderer( $context );
 		$textDiffRenderer->setEngine( TextSlotDiffRenderer::ENGINE_PHP );
 
 		$diffRender = new IndexSlotDiffRenderer(
-			RequestContext::getMain(),
+			$context,
 			$this->getContext()->getCustomIndexFieldsParser(),
 			$textDiffRenderer
 		);
