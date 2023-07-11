@@ -2,9 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Kareyac",
+			"Lifeway",
 			"Сай"
 		]
 	},
 	"nstab-page": "Лаштык",
-	"proofreadpage_nextpage": "Вес лаштык"
+	"nstab-index": "Индекс",
+	"proofreadpage_index": "Индекс",
+	"proofreadpage_nextpage": "Вес лаштык",
+	"proofreadpage_page_status": "Велыж шотлык",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Полыш",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Туге",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Уке"
 }
