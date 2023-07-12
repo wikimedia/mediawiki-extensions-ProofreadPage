@@ -10,7 +10,8 @@
 			"F. Cosoleto",
 			"Gianfranco",
 			"Macofe",
-			"Stefano-c"
+			"Stefano-c",
+			"OrbiliusMagister"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -59,7 +60,7 @@
 	"proofreadpage_quality2_message": "Si è verificato un problema nella correzione di questa pagina",
 	"proofreadpage_quality3_message": "Questa pagina è stata corretta",
 	"proofreadpage_quality4_message": "Questa pagina è stata convalidata",
-	"proofreadpage_index_status": "Stato avanzamento",
+	"proofreadpage_index_status": "Stato di avanzamento dell'indice",
 	"proofreadpage_index_size": "Numero di pagine",
 	"proofreadpage_pages_to_validate": "Numero di pagine da rileggere",
 	"proofreadpage_pages_to_proofread_or_validate": "Numero di pagine da trascrivere o rileggere",
@@ -100,8 +101,8 @@
 	"proofreadpage-button-rotate-right-label": "Ruota a destra",
 	"proofreadpage-button-toggle-layout-label": "Layout verticale/orizzontale",
 	"proofreadpage-button-toggle-visibility-label": "Mostra/Nascondi intestazione e piè di pagina",
-	"proofreadpage-button-zoom-in-label": "Zoom avanti",
-	"proofreadpage-button-zoom-out-label": "Zoom indietro",
+	"proofreadpage-button-zoom-in-label": "Ingrandisci",
+	"proofreadpage-button-zoom-out-label": "Rimpicciolisci",
 	"proofreadpage-pageinfo-status": "Stato di correzione",
 	"proofreadpage-pagelist-input-preview-button": "Anteprima della lista delle pagine",
 	"proofreadpage-pagelist-dialog-update-button": "Aggiorna l'elenco delle pagine",
