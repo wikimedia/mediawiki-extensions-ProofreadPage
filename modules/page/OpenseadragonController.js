@@ -97,6 +97,7 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 		maxZoomLevel: 4.5,
 		zoomPerClick: this.zoomFactor,
 		zoomPerScroll: this.zoomFactor,
+		timeout: 2 * 60 * 1000, // 2 minutes
 		tileSources: tileSource
 	};
 
