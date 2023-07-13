@@ -167,20 +167,71 @@ PageModel.prototype.setInitialPageData = function ( data ) {
  * Please update the tests tests/qunit/PageModel.test.js if the logic
  * here is changed to include more edgecases.
  *
+ * TODO(sohom): This logic should roughly mirror
+ * PageContentHandler::unserializeContentInWikitext(...)
+ * until T321446 is fixed.
+ *
  * @private
  * @param {string} wikitext Wikitext of current Page: page
  * @return {Object<string>} Header, body, footer and page status as identified from the wikitext
  */
 PageModel.prototype.parsePageData = function ( wikitext ) {
-	var parsedPagePage = ( new DOMParser() ).parseFromString( wikitext, 'text/html' ),
-		noincludes = parsedPagePage.querySelectorAll( 'body > noinclude' ), pageStatus = {};
-	var header = noincludes[ 0 ].querySelector( 'pagequality' ).innerHTML;
-	pageStatus.status = parseInt( noincludes[ 0 ].querySelector( 'pagequality' ).getAttribute( 'level' ) );
-	pageStatus.lastUser = noincludes[ 0 ].querySelector( 'pagequality' ).getAttribute( 'user' );
-	noincludes[ 0 ].remove();
-	var footer = noincludes[ noincludes.length - 1 ].innerHTML;
-	noincludes[ noincludes.length - 1 ].remove();
-	var body = parsedPagePage.querySelector( 'body' ).innerHTML;
+	var pageRegex = /^<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>$/;
+	var pageQualityRegexPattern1 =
+	/^<pagequality level="([0-4])" user="([\s\S]*?)" *(?:\/>|> *<\/pagequality>)([\s\S]*?)$/;
+	var pageQualityRegexPattern2 =
+	/^<pagequality user="([\s\S]*?)" level="([0-4])" *(?:\/>|> *<\/pagequality>)([\s\S]*?)$/;
+	var parsedWikitext = pageRegex.exec( wikitext );
+	if ( !parsedWikitext || parsedWikitext.length !== 4 ) {
+		// something has gone terribly wrong, so just return the raw text
+		// as the body
+		return {
+			header: '',
+			body: wikitext,
+			footer: '',
+			pageStatus: {
+				status: 1,
+				lastUser: mw.config.get( 'wgUserName' )
+			}
+		};
+	}
+
+	var header = parsedWikitext[ 1 ];
+	var body = parsedWikitext[ 2 ];
+	var footer = parsedWikitext[ 3 ];
+
+	var parsedPageQuality = pageQualityRegexPattern1.exec( header );
+	var pattern = 1;
+
+	if ( !parsedPageQuality || parsedPageQuality.length !== 4 ) {
+		parsedPageQuality = pageQualityRegexPattern2.exec( header );
+		pattern = 2;
+		if ( !parsedPageQuality || parsedPageQuality.length !== 4 ) {
+			// something has gone terribly wrong again,
+			// but atleast we have headers, footers and body
+			return {
+				header: header,
+				body: body,
+				footer: footer,
+				pageStatus: {
+					status: 1,
+					lastUser: mw.config.get( 'wgUserName' )
+				}
+			};
+		}
+	}
+
+	var pageStatus = {};
+	if ( pattern === 1 ) {
+		pageStatus.status = parseInt( parsedPageQuality[ 1 ] );
+		pageStatus.lastUser = parsedPageQuality[ 2 ];
+	} else {
+		pageStatus.status = parseInt( parsedPageQuality[ 2 ] );
+		pageStatus.lastUser = parsedPageQuality[ 1 ];
+	}
+
+	header = parsedPageQuality[ 3 ];
+
 	return {
 		header: header,
 		body: body,

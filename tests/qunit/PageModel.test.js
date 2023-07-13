@@ -22,19 +22,6 @@ QUnit.test( 'PageModel.parsePageData', function ( assert ) {
 				message: 'Normal page'
 			},
 			{
-				wikitext: '<noinclude><pagequality user="User" level="1" />header</noinclude>body<noinclude>footer<noinclude>other-stuff</noinclude></noinclude>',
-				expectedEditorData: {
-					header: 'header',
-					body: 'body',
-					footer: 'footer<noinclude>other-stuff</noinclude>',
-					pageStatus: {
-						status: 1,
-						lastUser: 'User'
-					}
-				},
-				message: 'Noinclude in footer'
-			},
-			{
 				wikitext: '<noinclude><pagequality user="User" level="1" />header</noinclude>body<noinclude>stuff</noinclude><noinclude>more-stuff</noinclude><noinclude>footer</noinclude>',
 				expectedEditorData: {
 					header: 'header',
@@ -48,17 +35,43 @@ QUnit.test( 'PageModel.parsePageData', function ( assert ) {
 				message: 'Noincludes in body'
 			},
 			{
-				wikitext: '<noinclude><pagequality user="User" level="1" />header<noinclude>stuff</noinclude><noinclude>more-stuff</noinclude></noinclude>body<noinclude>footer</noinclude>',
+				wikitext: '<noinclude><pagequality user="User" level="1" />header</noinclude>body<noinclude>footer<references /></noinclude>',
 				expectedEditorData: {
-					header: 'header<noinclude>stuff</noinclude><noinclude>more-stuff</noinclude>',
+					header: 'header',
 					body: 'body',
-					footer: 'footer',
+					footer: 'footer<references />',
 					pageStatus: {
 						status: 1,
 						lastUser: 'User'
 					}
 				},
-				message: 'Noincludes in header'
+				message: 'Self closing tags',
+			},
+			{
+				wikitext: '<noinclude><pagequality user="User" level="1" />header</noinclude>body<noinclude>footer<references></noinclude>',
+				expectedEditorData: {
+					header: 'header',
+					body: 'body',
+					footer: 'footer<references>',
+					pageStatus: {
+						status: 1,
+						lastUser: 'User'
+					}
+				},
+				message: 'Unclosed tags',
+			},
+			{
+				wikitext: '<noinclude><pagequality user="User" level="1" />header</noinclude>body<noinclude>foot<e>er<references></noinclude>',
+				expectedEditorData: {
+					header: 'header',
+					body: 'body',
+					footer: 'foot<e>er<references>',
+					pageStatus: {
+						status: 1,
+						lastUser: 'User'
+					}
+				},
+				message: 'Arbitrary markup',
 			},
 			{
 				wikitext: '<noinclude><pagequality user="User" level="1" />\n\n\nheader\n\n\n</noinclude>\n\n\nbody\n\n\n<noinclude>footer\n\ntrwyirtrewitrew\n\n</noinclude>',
