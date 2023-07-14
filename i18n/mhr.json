@@ -67,6 +67,7 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|велыж}}",
 	"proofreadpage_specialpage_legend": "Индексан велыжым кычалаш",
 	"proofreadpage_specialpage_searcherror": "Кычалме системыште йоҥылыш",
+	"proofreadpage_specialpage_searcherrortext": "Кычалше системе пашам огеш ыште. Йӧнысырым ыштымылан вуеш ит нал.",
 	"proofreadpage_source": "Важ",
 	"proofreadpage_source_message": "Текстын электрон версийжым ышташлан сканироватлыме материал кучылталтын",
 	"proofreadpage_styles": "Стиль-влак",
