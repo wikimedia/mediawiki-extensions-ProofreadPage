@@ -85,6 +85,38 @@ class PageLevel {
 	}
 
 	/**
+	 * Returns if the validation of the level $to is allowed.
+	 * Helper function for isChangeAllowed()
+	 *
+	 * @see isChangeAllowed()
+	 * @param PageLevel $to
+	 * @param PermissionManager $permissionManager
+	 * @return bool
+	 */
+	public function isValidationAllowed( PageLevel $to, PermissionManager $permissionManager ) {
+		if ( $this->getLevel() === self::VALIDATED ) {
+			return true;
+		}
+
+		if ( $permissionManager->userHasRight( $to->getUser(), 'pagequality-admin' ) ) {
+			return true;
+		}
+
+		$fromUser = $this->user ?: $to->getUser();
+
+		$isSameUser = $fromUser !== null
+			&& $fromUser->equals( $to->getUser() );
+
+		if ( $permissionManager->userHasRight( $to->getUser(), 'pagequality-validate' ) ) {
+			if ( $this->level === self::PROOFREAD && !$isSameUser ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Returns if the change of level to level $to is allowed
 	 *
 	 * @param PageLevel $to
@@ -98,18 +130,11 @@ class PageLevel {
 			return false;
 		}
 
-		$fromUser = $this->user ?: $to->getUser();
-		return !(
-			$to->getLevel() === self::VALIDATED &&
-			(
-				$this->level < self::PROOFREAD ||
-				(
-					$this->level === self::PROOFREAD &&
-					$fromUser !== null && $fromUser->getName() === $to->getUser()->getName()
-				)
-			) &&
-			!$permissionManager->userHasRight( $to->getUser(), 'pagequality-admin' )
-		);
+		if ( $to->getLevel() === self::VALIDATED ) {
+			return $this->isValidationAllowed( $to, $permissionManager );
+		}
+
+		return true;
 	}
 
 	/**
