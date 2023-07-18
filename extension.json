@@ -13,17 +13,20 @@
 	},
 	"GroupPermissions": {
 		"user": {
-			"pagequality": true
+			"pagequality": true,
+			"pagequality-validate": true
 		}
 	},
 	"GrantPermissions": {
 		"editpage": {
-			"pagequality": true
+			"pagequality": true,
+			"pagequality-validate": true
 		}
 	},
 	"AvailableRights": [
 		"pagequality",
-		"pagequality-admin"
+		"pagequality-admin",
+		"pagequality-validate"
 	],
 	"DefaultUserOptions": {
 		"proofreadpage-animation-time": 0,

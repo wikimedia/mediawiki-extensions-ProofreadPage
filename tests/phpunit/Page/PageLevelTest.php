@@ -59,12 +59,14 @@ class PageLevelTest extends ProofreadPageTestCase {
 		$testUser = User::newFromName( 'Test' );
 		$test2User = User::newFromName( 'Test2' );
 		$test3User = User::newFromName( 'Test3' );
+		$test4User = User::newFromName( 'Test4' );
 		$ipUser = User::newFromName( '172.16.254.7', false );
 
 		$rights = [
 			'Test' => [ 'pagequality' ],
 			'Test2' => [ 'pagequality' ],
 			'Test3' => [ 'pagequality', 'pagequality-admin' ],
+			'Test4' => [ 'pagequality', 'pagequality-validate' ]
 		];
 
 		return [
@@ -100,6 +102,24 @@ class PageLevelTest extends ProofreadPageTestCase {
 			],
 			[
 				new PageLevel( PageLevel::NOT_PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::VALIDATED, $test2User ),
+				false,
+				$rights
+			],
+			[
+				new PageLevel( PageLevel::PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::VALIDATED, $test2User ),
+				false,
+				$rights
+			],
+			[
+				new PageLevel( PageLevel::PROOFREAD, $testUser ),
+				new PageLevel( PageLevel::VALIDATED, $test4User ),
+				true,
+				$rights
+			],
+			[
+				new PageLevel( PageLevel::PROOFREAD, $testUser ),
 				new PageLevel( PageLevel::VALIDATED, $test2User ),
 				false,
 				$rights

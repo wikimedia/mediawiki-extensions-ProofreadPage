@@ -84,6 +84,8 @@
 	"proofreadpage_styles_message": "CSS styles applied to this text",
 	"action-pagequality": "modify page quality flag",
 	"right-pagequality": "Modify page quality flag",
+	"action-pagequality-validate": "set page quality of a page to validated",
+	"right-pagequality-validate": "Set page quality of a page to validated",
 	"action-pagequality-admin": "edit page quality flag without restriction",
 	"right-pagequality-admin": "Edit page quality flag without restriction",
 	"proofreadpage-section-tools": "Proofread tools",
