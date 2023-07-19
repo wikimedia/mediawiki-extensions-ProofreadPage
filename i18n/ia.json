@@ -84,6 +84,8 @@
 	"proofreadpage_styles_message": "Stilos CSS applicate a iste texto",
 	"action-pagequality": "modificar le marca de qualitate del pagina",
 	"right-pagequality": "Modificar le marca de qualitate del pagina",
+	"action-pagequality-validate": "mitter le qualitate de un pagina a ‘validate’",
+	"right-pagequality-validate": "Mitter le qualitate de un pagina a ‘validate’",
 	"action-pagequality-admin": "modificar sin restriction le marca de qualitate del pagina",
 	"right-pagequality-admin": "Modificar sin restriction le marca de qualitate de paginas",
 	"proofreadpage-section-tools": "Instrumentos pro correction de probas",

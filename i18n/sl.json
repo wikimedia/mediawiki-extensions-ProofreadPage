@@ -86,6 +86,8 @@
 	"proofreadpage_styles_message": "Slogi CSS, uporabljeni za to besedilo",
 	"action-pagequality": "spremembo oznake kakovosti strani",
 	"right-pagequality": "Spremeni označbo kakovosti strani",
+	"action-pagequality-validate": "nastavitev kakovosti strani na potrjeno",
+	"right-pagequality-validate": "Nastevite kakovost strani na potrjeno",
 	"action-pagequality-admin": "urejanje oznak kakovosti strani brez omejitev",
 	"right-pagequality-admin": "Urejanje oznak kakovosti strani brez omejitev",
 	"proofreadpage-section-tools": "Orodja za pregled",
