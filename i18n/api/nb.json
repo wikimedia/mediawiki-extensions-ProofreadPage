@@ -11,5 +11,6 @@
 	"apihelp-query+proofreadinfo-summary": "Returnerer informasjon om konfigurasjonen av ProofreadPage-utvidelsen.",
 	"apihelp-query+proofreadinfo-param-prop": "Hvilke korrekturlesingsegenskaper som hentes:\n;namespaces:Informasjon om navnerommene «{{ns:Page}}» og «{{ns:Index}}»\n;qualitylevels:Liste over kvalitetsnivåer for korrekturlesing.",
 	"apihelp-query+proofreadinfo-example-1": "Returnerer standardinformasjon",
-	"apihelp-query+proofreadinfo-example-3": "Returnerer navneromsinformasjon"
+	"apihelp-query+proofreadinfo-example-3": "Returnerer navneromsinformasjon",
+	"apihelp-query+proofreadpagesinindex-example-1": "Returner standardinformasjon"
 }
