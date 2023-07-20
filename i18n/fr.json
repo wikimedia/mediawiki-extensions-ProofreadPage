@@ -108,6 +108,8 @@
 	"proofreadpage_styles_message": "Styles CSS appliqués à ce texte",
 	"action-pagequality": "modifier la marque de qualité de la page",
 	"right-pagequality": "Modifier le drapeau de qualité de la page",
+	"action-pagequality-validate": "définir la qualité d’une page à valider",
+	"right-pagequality-validate": "Définir la qualité d’une page à valider",
 	"action-pagequality-admin": "modifier l’indicateur de qualité de la page sans restriction",
 	"right-pagequality-admin": "Modifier l’indicateur de qualité de la page sans restriction",
 	"proofreadpage-section-tools": "Outils d’aide à la relecture",
