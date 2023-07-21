@@ -85,6 +85,8 @@
 	"proofreadpage_styles_message": "CSS-стилови применети врз текстов",
 	"action-pagequality": "менување на ознака за квалитет на страницата",
 	"right-pagequality": "Измени ознака за квалитет на страницата",
+	"action-pagequality-validate": "поставање на квалитетот на страница како проверена",
+	"right-pagequality-validate": "Поставање на квалитетот на страница како проверена",
 	"action-pagequality-admin": "менување на ознаката за квалитет на страница без ограничувања",
 	"right-pagequality-admin": "Менување на ознаката за квалитет на страница без ограничувања",
 	"proofreadpage-section-tools": "Лекторски алатки",
