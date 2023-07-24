@@ -85,6 +85,8 @@
 	"proofreadpage_styles_message": "Бо сөзүглелге хамаарыштыр ажыглаан CSS стильдер",
 	"action-pagequality": "арынның шынарының демдээн өскертири",
 	"right-pagequality": "Арынның шынарының демдээн өскертир",
+	"action-pagequality-validate": "арынның шынарын хынаттынган кылдыр тургузуңар",
+	"right-pagequality-validate": "Арынның шынарын хынаттынган кылдыр тургузуңар",
 	"action-pagequality-admin": "арынның шынарының демдээн кызыгаарлаашкын чокка эдер",
 	"right-pagequality-admin": "Арынның шынарының демдээн кызыгаарлаашкын чокка эдер",
 	"proofreadpage-section-tools": "Хынаар херекселдер",

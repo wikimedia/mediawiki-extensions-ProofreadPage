@@ -86,6 +86,8 @@
 	"proofreadpage_styles_message": "Gaya CSS kaanggén ring téks puniki",
 	"action-pagequality": "Uahin lencana kualitas kaca",
 	"right-pagequality": "Uahin lencana kualitas kaca",
+	"action-pagequality-validate": "ngatur kualitas kaca saking kaca antuk kapastika",
+	"right-pagequality-validate": "Ngatur kualitas kaca saking satunggil kaca antuk kapastika",
 	"action-pagequality-admin": "uah kobér kualitas kaca tanpa watesan",
 	"right-pagequality-admin": "Uah kobér kualitas kaca tanpa watesan",
 	"proofreadpage-section-tools": "Piranti uji wacén",

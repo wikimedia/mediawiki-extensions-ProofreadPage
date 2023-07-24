@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
-			"MirrorWuu"
+			"Winston Sung"
 		]
 	},
 	"apihelp-query+proofread-summary": "返回有关指定页面当前校对状态个信息。",
