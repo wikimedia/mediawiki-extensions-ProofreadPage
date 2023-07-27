@@ -170,10 +170,10 @@
 	"tag-proofreadpage-quality3": "Ujiwacén",
 	"tag-proofreadpage-quality4": "Kapastika",
 	"tag-proofreadpage-editinsequence": "EditInSequence",
-	"tag-proofreadpage-quality0-description": "Uahan sané nguah kualitas kaca manados \"Tanpa suratan\"",
-	"tag-proofreadpage-quality1-description": "Uahan sané nguah kualitas kaca manados \"Tan kauji wacén\"",
-	"tag-proofreadpage-quality2-description": "Uahan sané nguah kualitas kaca manados \"Mapikobet\"",
-	"tag-proofreadpage-quality3-description": "Uahan sané nguah kualitas kaca manados \"Uji wacén\"",
-	"tag-proofreadpage-quality4-description": "Uahan sané nguah kualitas kaca manados \"Kapastika\"",
+	"tag-proofreadpage-quality0-description": "Uahan sané nguah kualitas kaca manados \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Uahan sané nguah kualitas kaca manados \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Uahan sané nguah kualitas kaca manados \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Uahan sané nguah kualitas kaca manados \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Uahan sané nguah kualitas kaca manados \"{{int:tag-proofreadpage-quality4}}\"",
 	"tag-proofreadpage-editinsequence-description": "Panguahan kamargiang nganggé mode EditInSequence sané anyar"
 }
