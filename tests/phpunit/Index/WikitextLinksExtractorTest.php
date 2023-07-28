@@ -17,7 +17,7 @@ class WikitextLinksExtractorTest extends ProofreadPageTestCase {
 			[
 				'[[Foo]]',
 				NS_MAIN,
-				[ new Link( Title::newFromText( 'Foo' ), 'Foo' ) ]
+				[ [ 'Foo', 'Foo' ] ]
 			],
 			[
 				'[[Foo]]',
@@ -32,19 +32,19 @@ class WikitextLinksExtractorTest extends ProofreadPageTestCase {
 			[
 				'[[Template:Foo]]',
 				NS_TEMPLATE,
-				[ new Link( Title::newFromText( 'Template:Foo' ), 'Foo' ) ]
+				[ [ 'Template:Foo', 'Foo' ] ]
 			],
 			[
 				'[[Foo|Bar]]',
 				NS_MAIN,
-				[ new Link( Title::newFromText( 'Foo' ), 'Bar' ) ]
+				[ [ 'Foo', 'Bar' ] ]
 			],
 			[
 				'[[Foo]][[Bar]][[<nowiki>]]',
 				NS_MAIN,
 				[
-					new Link( Title::newFromText( 'Foo' ), 'Foo' ),
-					new Link( Title::newFromText( 'Bar' ), 'Bar' )
+					[ 'Foo', 'Foo' ],
+					[ 'Bar', 'Bar' ],
 				]
 			],
 		];
@@ -53,7 +53,11 @@ class WikitextLinksExtractorTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider getLinksToNamespaceProvider
 	 */
-	public function testGetLinksToNamespace( $wikitext, $namespace, $links ) {
+	public function testGetLinksToNamespace( $wikitext, $namespace, $expectedLinks ) {
+		$links = [];
+		foreach ( $expectedLinks as [ $link, $label ] ) {
+			$links[] = new Link( Title::newFromText( $link ), $label );
+		}
 		$this->assertArrayEquals(
 			$links,
 			( new WikitextLinksExtractor() )->getLinksToNamespace( $wikitext, $namespace )
