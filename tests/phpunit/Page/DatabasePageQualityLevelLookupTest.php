@@ -7,6 +7,7 @@ use Title;
 
 /**
  * @group ProofreadPage
+ * @group Database
  * @covers \ProofreadPage\Page\DatabasePageQualityLevelLookup
  */
 class DatabasePageQualityLevelLookupTest extends ProofreadPageTestCase {

@@ -2,9 +2,11 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\User\UserFactory;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
 use Title;
+use User;
 use WikitextContent;
 
 /**
@@ -167,15 +169,22 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 			] )
 		] ) );
 
-		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' );
+		$username = 'AUserName';
+		$user = $this->createMock( User::class );
+		$user->method( 'getName' )->willReturn( $username );
+		$user->method( 'isHidden' )->willReturn( false );
+		$userFactory = $this->createMock( UserFactory::class );
+		$userFactory->method( 'newFromName' )->with( $username )->willReturn( $user );
+		$this->setService( 'UserFactory', $userFactory );
+		$pageTitle = $this->makeEnglishPagePageTitle( 'Test.jpg' );
 		$pageContent = self::buildPageContent(
 			'', '', '',
-			PageLevel::PROOFREAD, 'AUserName' );
+			PageLevel::PROOFREAD, $username );
 
 		$jsVars = $handler->getPageJsConfigVars( $pageTitle, $pageContent );
 
 		$this->assertEqualsCanonicalizing( $jsVars, [
-			'prpPageQualityUser' => 'AUserName',
+			'prpPageQualityUser' => $username,
 			'prpPageQuality' => PageLevel::PROOFREAD,
 			'prpFormattedPageNumber' => 42,
 			'prpIndexTitle' => 'Index:Test',

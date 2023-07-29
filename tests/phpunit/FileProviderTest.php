@@ -140,7 +140,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 	public function testGetPageNumberForPageTitle() {
 		$fileProvider = new FileProviderMock( [] );
 		$this->assertSame( 1, $fileProvider->getPageNumberForPageTitle(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/1' )
+			$this->makeEnglishPagePageTitle( 'Test.djvu/1' )
 		) );
 	}
 
@@ -156,7 +156,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 		$fileProvider = new FileProviderMock( [] );
 		$this->expectException( PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/foo' )
+			$this->makeEnglishPagePageTitle( 'Test.djvu/foo' )
 		);
 	}
 
@@ -164,7 +164,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 		$fileProvider = new FileProviderMock( [] );
 		$this->expectException( PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/-1' )
+			$this->makeEnglishPagePageTitle( 'Test.djvu/-1' )
 		);
 	}
 }

@@ -16,6 +16,7 @@ use WikitextContent;
 
 /**
  * @group ProofreadPage
+ * @group Database
  * @covers \ProofreadPage\Page\PageContentHandler
  */
 class PageContentHandlerTest extends ProofreadPageTestCase {
@@ -521,13 +522,11 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		return [
 			[
 				self::buildPageContent( '', '#REDIRECT [[Test]]' ),
-				'<a href="/index.php?title=Test&amp;action=edit&amp;redlink=1" ' .
-				'class="new" title="Test (page does not exist)">Test</a>'
+				'Test'
 			],
 			[
 				self::buildPageContent( '', '#REDIRECT [[Special:BlankPage]]' ),
-				'<a href="/index.php/Special:BlankPage" ' .
-				'title="Special:BlankPage">Special:BlankPage</a>'
+				'Special:BlankPage'
 			]
 		];
 	}
@@ -535,16 +534,14 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	/**
 	 * @dataProvider getParserOutputRedirectHtmlProvider
 	 */
-	public function testGetParserOutputRedirectHtml( PageContent $content, string $html ) {
-		$expected = '<div class="redirectMsg"><p>Redirect to:</p><ul class="redirectText"><li>' .
-			$html .
-			'</li></ul></div>';
+	public function testGetParserOutputRedirectHtml( PageContent $content, string $redirTarget ) {
 		$contentRenderer = MediaWikiServices::getInstance()->getContentRenderer();
 		$output = $contentRenderer->getParserOutput(
 			$content,
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
 		);
-		$actual = preg_replace( '/<!--.*-->/', '', str_replace( "\n", '', $output->getRawText() ) );
-		$this->assertSame( $expected, $actual );
+		$actual = $output->getRawText();
+		$this->assertStringContainsString( '<div class="redirectMsg">', $actual );
+		$this->assertMatchesRegularExpression( '!<a[^<>]+>' . $redirTarget . '</a>!', $actual );
 	}
 }

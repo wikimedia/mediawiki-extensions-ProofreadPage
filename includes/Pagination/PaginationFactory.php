@@ -69,7 +69,7 @@ class PaginationFactory {
 	 * @param IndexContent $indexContent
 	 * @return Pagination
 	 */
-	public function buildPaginationForIndexContent( Title $indexTitle, IndexContent $indexContent ) {
+	public function buildPaginationForIndexContent( Title $indexTitle, IndexContent $indexContent ): Pagination {
 		try {
 			$file = $this->fileProvider->getFileForIndexTitle( $indexTitle );
 		} catch ( FileNotFoundException $e ) {

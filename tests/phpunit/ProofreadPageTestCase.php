@@ -15,6 +15,7 @@ use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Page\PageQualityLevelLookupMock;
 use ProofreadPage\ProofreadPageInit;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group ProofreadPage
@@ -241,5 +242,18 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
 			new PageLevel( $level, PageLevel::getUserFromUserName( $proofreader ) )
 		);
+	}
+
+	/**
+	 * Helper to obtain a Title in the Page: namespace with the page language set to English, to avoid DB lookups.
+	 *
+	 * @param string $titleText
+	 * @return Title
+	 */
+	protected function makeEnglishPagePageTitle( string $titleText ): Title {
+		$ret = Title::makeTitle( $this->getPageNamespaceId(), $titleText );
+		$wrapper = TestingAccessWrapper::newFromObject( $ret );
+		$wrapper->mPageLanguage = [ 'en', 'en' ];
+		return $wrapper->object;
 	}
 }

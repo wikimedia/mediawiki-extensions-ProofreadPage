@@ -28,6 +28,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 
 		$this->context = new RequestContext();
 		$this->context->setUser( User::newFromName( 'Test' ) );
+		$this->context->setLanguage( 'en' );
 	}
 
 	private static function newContent(
@@ -46,7 +47,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 		$pageTitle, $indexTitle,
 		?IndexContent $indexContent, PageContent $defaultContent
 	) {
-		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), $pageTitle );
+		$pageTitle = $this->makeEnglishPagePageTitle( $pageTitle );
 		if ( $indexTitle !== null ) {
 			$indexTitle = Title::makeTitle( $this->getIndexNamespaceId(), $indexTitle );
 			$context = $this->getContext( [

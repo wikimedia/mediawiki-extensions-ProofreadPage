@@ -25,7 +25,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$context->getPageNamespaceId()
 		);
 		$this->assertSame( 2, $pagination->getPageNumber(
-			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' )
+			$this->makeEnglishPagePageTitle( 'LoremIpsum.djvu/2' )
 		) );
 	}
 
@@ -33,10 +33,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 	 * @dataProvider getPageNumberWithFailureProvider
 	 */
 	public function testGetPageNumberWithFailure(
-		Pagination $pagination, Title $pageTitle
+		Pagination $pagination, string $titleText
 	) {
 		$this->expectException( InvalidArgumentException::class );
-		$pagination->getPageNumber( $pageTitle );
+		$pagination->getPageNumber( $this->makeEnglishPagePageTitle( $titleText ) );
 	}
 
 	public function getPageNumberWithFailureProvider() {
@@ -49,37 +49,37 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		return [
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu/2' )
+				'Test.djvu/2'
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test2.djvu/2' )
+				'Test2.djvu/2'
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), '42.jpg' )
+				'42.jpg'
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu' )
+				'LoremIpsum.djvu'
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/' )
+				'LoremIpsum.djvu/'
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/foo' )
+				'LoremIpsum.djvu/foo'
 			],
 			[
 				// decimal number
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/1.2' )
+				'LoremIpsum.djvu/1.2'
 			],
 			[
 				// number larger than PHP_INT_MAX
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/10000000000000000000000' )
+				'LoremIpsum.djvu/10000000000000000000000'
 			],
 		];
 	}
@@ -136,7 +136,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			$this->makeEnglishPagePageTitle( 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
 			$this->getPageNamespaceId()
@@ -166,7 +166,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			$this->makeEnglishPagePageTitle( 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
 			$this->getPageNamespaceId()

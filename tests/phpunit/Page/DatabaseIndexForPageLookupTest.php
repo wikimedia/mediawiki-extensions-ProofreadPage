@@ -8,6 +8,7 @@ use Title;
 
 /**
  * @group ProofreadPage
+ * @group Database
  * @covers \ProofreadPage\Page\DatabaseIndexForPageLookup
  */
 class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {

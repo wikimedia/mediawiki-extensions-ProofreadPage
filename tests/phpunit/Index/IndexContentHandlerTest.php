@@ -12,12 +12,15 @@ use MediaWiki\Revision\SlotRenderingProvider;
 use MediaWiki\User\UserIdentityValue;
 use MWContentSerializationException;
 use ParserOptions;
+use ProofreadPage\Context;
+use ProofreadPage\Pagination\PaginationFactory;
 use ProofreadPageTestCase;
 use RequestContext;
 use SlotDiffRenderer;
 use StatusValue;
 use TextContent;
 use Title;
+use Wikimedia\TestingAccessWrapper;
 use WikiPage;
 use WikitextContent;
 
@@ -609,11 +612,19 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$srp = $this->createMock( SlotRenderingProvider::class );
 		$handler = new IndexContentHandler();
 
-		$updates = $handler->getSecondaryDataUpdates( $title, $content, SlotRecord::MAIN, $srp );
-		$this->assertInstanceOf( UpdateIndexQualityStats::class, $updates[0] );
+		// Super-ugly hack: avoid unnecessary DB access. There doesn't seem to be a prettier way to achieve this.
+		$defaultCtxWrapper = TestingAccessWrapper::newFromObject( Context::getDefaultContext() );
+		$defaultCtxWrapper->paginationFactory = $this->createMock( PaginationFactory::class );
+		try {
+			$updates = $handler->getSecondaryDataUpdates( $title, $content, SlotRecord::MAIN, $srp );
+			$this->assertInstanceOf( UpdateIndexQualityStats::class, $updates[0] );
 
-		$updates = $handler->getSecondaryDataUpdates( $title, new WikitextContent( '' ), SlotRecord::MAIN, $srp );
-		$this->assertInstanceOf( DeleteIndexQualityStats::class, $updates[0] );
+			$updates = $handler->getSecondaryDataUpdates( $title, new WikitextContent( '' ), SlotRecord::MAIN, $srp );
+			$this->assertInstanceOf( DeleteIndexQualityStats::class, $updates[0] );
+		} finally {
+			// Reset the default context.
+			Context::getDefaultContext( true );
+		}
 	}
 
 	public function testGetDeletionUpdates() {
