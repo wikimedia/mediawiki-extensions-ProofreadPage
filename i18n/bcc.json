@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Baloch Afghanistan",
+			"Moshtank",
 			"Mostafadaneshvar",
 			"RigiMahnoor",
 			"Sultanselim baloch"
@@ -50,12 +51,12 @@
 	"proofreadpage_image_message": "لینک په صفحه اول",
 	"proofreadpage_page_status": "وضعیت صفحه",
 	"proofreadpage_js_attributes": "نویسوک عنوان سال ناشر کنوک",
-	"proofreadpage_index_attributes": "جۏڑݔنۏک\nسرگال\nسال|سال\nنبیسۏک\nسرچمّگ\nاکس\nتاک||20\nنشان||",
+	"proofreadpage_index_attributes": "جۏڈݔنۏک\nسرگال\nسال|سال\nنبیسۏک\nسرچمّگ\nاکس\nتاک||20\nنشان||",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|ورک|ورک}}",
 	"proofreadpage_specialpage_legend": "شۏھاز مہ بنُتاکی تاکاں",
 	"proofreadpage_specialpage_searcherror": "ارور مان شوهازیگء موتور",
 	"proofreadpage_specialpage_searcherrortext": "پر بژنء. شوهازیگین موتور کار نکنت انت.",
-	"proofreadpage_source": "منبئ",
+	"proofreadpage_source": "سرچممگ",
 	"proofreadpage_source_message": "پر ائ تکستء اڈ کتن چه اسکن بوتگین درورء کارمرز بیتگ انت",
 	"right-pagequality": "ٹگل مان تاکئ کوالٹیء بیرک",
 	"proofreadpage-section-tools": "ویرایشی ابزاران",
