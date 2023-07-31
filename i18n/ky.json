@@ -7,6 +7,7 @@
 		]
 	},
 	"nstab-page": "Барак",
+	"proofreadpage_image": "Сүрөт",
 	"proofreadpage_nologin": "Кире элексиз",
 	"proofreadpage_nextpage": "кийинки барак",
 	"proofreadpage_prevpage": "мурунку барак",
@@ -15,6 +16,7 @@
 	"proofreadpage_quality4_category": "Тастыкталган",
 	"proofreadpage_specialpage_label_key": "Издөө:",
 	"proofreadpage_pages": "$2 {{PLURAL:$1|барак}}",
+	"proofreadpage-group-other": "Башка",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Барактар",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ооба",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Жок"
