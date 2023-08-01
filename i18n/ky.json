@@ -18,6 +18,7 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|барак}}",
 	"proofreadpage-group-other": "Башка",
 	"proofreadpage-pagelist-dialog-cancel": "Жокко чыгаруу",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Жардам",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Барактар",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ооба",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Жок"
