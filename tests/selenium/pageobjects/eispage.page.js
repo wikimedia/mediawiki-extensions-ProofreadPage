@@ -1,54 +1,55 @@
 'use strict';
-const Page = require( 'wdio-mediawiki/Page' ),
-	utils = require( '../util/eis-util' );
+const Page = require( 'wdio-mediawiki/Page' );
+const utils = require( '../util/eis-util' );
 
 class EisPagePage extends Page {
-	openEis( pagename ) {
+	async openEis( pagename ) {
 		// eslint-disable-next-line camelcase
-		super.openTitle( pagename, { action: 'edit', prp_editinsequence: true } );
+		await super.openTitle( pagename, { action: 'edit', prp_editinsequence: true } );
 		// wait for toolbar to load
-		browser.waitUntil( function () {
-			return browser.$$( '.prp-edit-in-sequence-toolbar' ).length > 0;
+		await browser.waitUntil( async function () {
+			return await browser.$$( '.prp-edit-in-sequence-toolbar' ).length > 0;
 		} );
 		// turn off all unload events for wikiEditor
-		browser.execute( function () {
+		await browser.execute( function () {
 			// eslint-disable-next-line no-undef
 			$( window ).off( 'beforeunload' );
 		} );
 	}
 
 	get prevButton() {
-		return browser.$$( '.prp-editinsequence-prev' )[ 0 ];
+		return browser.$( '.prp-editinsequence-prev' );
 	}
 
 	get pageStatusButtonLabel() {
-		return browser.$$( '.prp-editinsequence-page-status > span > span.oo-ui-labelElement-label' )[ 0 ];
+		return browser.$( '.prp-editinsequence-page-status > span > span.oo-ui-labelElement-label' );
 	}
 
 	get pageStatusButton() {
-		return browser.$$( '.prp-editinsequence-page-status' )[ 0 ];
+		return browser.$( '.prp-editinsequence-page-status' );
 	}
 
 	get nextButton() {
-		return browser.$$( '.prp-editinsequence-next' )[ 0 ];
+		return browser.$( '.prp-editinsequence-next' );
 	}
 
-	waitForOOUIElementToBeActive( $element ) {
-		browser.waitUntil( function () {
-			return utils.isEnabledInOOUI( $element );
+	async waitForOOUIElementToBeActive( $element ) {
+		await browser.waitUntil( async function () {
+			return await utils.isEnabledInOOUI( $element );
 		} );
 	}
 
-	waitForPageStatusButtonToBeResponsive() {
-		browser.waitUntil( function () {
-			return this.pageStatusButtonLabel.getText() !== '' && this.pageStatusButtonLabel.getText().replace( /\s/g, '' ).length;
-		}.bind( this ), { timeout: 30 * 1000 } );
+	async waitForPageStatusButtonToBeResponsive() {
+		const page = this;
+		await browser.waitUntil( async function () {
+			return await page.pageStatusButtonLabel.getText() !== '' && ( await page.pageStatusButtonLabel.getText() ).replace( /\s/g, '' ).length;
+		}, { timeout: 30 * 1000 } );
 	}
 
-	selectPageStatusFromDropdown( valueName ) {
-		this.pageStatusButton.click();
-		browser.$$( '.oo-ui-tool-name-' + valueName )[ 0 ].waitForDisplayed();
-		browser.$$( '.oo-ui-tool-name-' + valueName )[ 0 ].click();
+	async selectPageStatusFromDropdown( valueName ) {
+		await this.pageStatusButton.click();
+		await browser.$( '.oo-ui-tool-name-' + valueName ).waitForDisplayed();
+		await browser.$( '.oo-ui-tool-name-' + valueName ).click();
 	}
 }
 

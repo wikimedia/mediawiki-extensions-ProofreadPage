@@ -1,10 +1,10 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	EisPagePage = require( '../pageobjects/eispage.page' ),
-	utils = require( '../util/eis-util' ),
-	path = require( 'path' ),
-	MWBot = require( 'mwbot' );
+const assert = require( 'assert' );
+const EisPagePage = require( '../pageobjects/eispage.page' );
+const utils = require( '../util/eis-util' );
+const path = require( 'path' );
+const MWBot = require( 'mwbot' );
 
 const bot = new MWBot( {
 	apiUrl: browser.config.baseUrl + '/api.php'
@@ -19,19 +19,19 @@ describe( 'For a page with the eis, the page status module', function () {
 		await bot.create( 'Page:LoremIpsum.djvu/2', '<noinclude><pagequality level="1" user="Admin" />def</noinclude>456<noinclude>mno</noinclude>', 'Selenium test initialization for edit-in-sequence' );
 	} );
 
-	it( 'should initialize with the value of current page', function () {
-		EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
-		EisPagePage.waitForPageStatusButtonToBeResponsive();
-		assert.ok( EisPagePage.pageStatusButtonLabel.getText() === 'Problematic' );
+	it( 'should initialize with the value of current page', async function () {
+		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
+		await EisPagePage.waitForPageStatusButtonToBeResponsive();
+		assert.ok( await EisPagePage.pageStatusButtonLabel.getText() === 'Problematic' );
 	} );
 
-	it( 'should update on page change', function () {
-		EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
-		EisPagePage.waitForPageStatusButtonToBeResponsive();
-		EisPagePage.selectPageStatusFromDropdown( 'proofread' );
-		EisPagePage.nextButton.click();
-		EisPagePage.waitForPageStatusButtonToBeResponsive();
-		assert.ok( EisPagePage.pageStatusButtonLabel.getText() === 'Not proofread' );
+	it( 'should update on page change', async function () {
+		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
+		await EisPagePage.waitForPageStatusButtonToBeResponsive();
+		await EisPagePage.selectPageStatusFromDropdown( 'proofread' );
+		await EisPagePage.nextButton.click();
+		await EisPagePage.waitForPageStatusButtonToBeResponsive();
+		assert.ok( await EisPagePage.pageStatusButtonLabel.getText() === 'Not proofread' );
 	} );
 
 	after( async function () {
