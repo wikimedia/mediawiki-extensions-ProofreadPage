@@ -59,6 +59,8 @@
 	"proofreadpage-section-tools": "Лекторске алатке",
 	"proofreadpage-group-zoom": "Размера",
 	"proofreadpage-group-other": "Друго",
+	"proofreadpage-button-rotate-left-label": "Ротирај лево",
+	"proofreadpage-button-rotate-right-label": "Ротирај десно",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Ако напустите овај дијалог, вероватно ћете изгубити несачувани напредак.",
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Несачуван напредак",
 	"proofreadpage-pagelist-dialog-discard-changes": "Одбаци измене",
@@ -69,5 +71,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Странице",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Да",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
-	"proofreadpage-index-field-category-label": "Категорије"
+	"proofreadpage-index-field-category-label": "Категорије",
+	"tag-proofreadpage-quality2": "Проблематично"
 }
