@@ -9,8 +9,8 @@ class IndexPage extends Page {
 	}
 
 	// opening a page
-	open() {
-		super.openTitle( 'Index:Foo.djvu', { action: 'edit' } );
+	async open() {
+		await super.openTitle( 'Index:Foo.djvu', { action: 'edit' } );
 	}
 }
 
