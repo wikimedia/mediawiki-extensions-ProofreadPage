@@ -54,8 +54,8 @@ async function setupPrpTemplates( bot ) {
 
 // Check if a element is enabled or disabled via OOUI
 // (the aria-disabled attribute will be set to true)
-function isEnabledInOOUI( element ) {
-	return element.getAttribute( 'aria-disabled' ) === null;
+async function isEnabledInOOUI( element ) {
+	return await element.getAttribute( 'aria-disabled' ) === null;
 }
 
 module.exports = {

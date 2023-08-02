@@ -5,11 +5,11 @@ const assert = require( 'assert' ),
 
 describe( 'Pages in the Index namespace', function () {
 
-	it( 'load the custom editing form in edit mode', function () {
-		IndexPage.open();
+	it( 'load the custom editing form in edit mode', async function () {
+		await IndexPage.open();
 
 		// inputs and textareas load
-		assert( IndexPage.formFields.length > 0 );
+		assert( await IndexPage.formFields.length > 0 );
 
 	} );
 

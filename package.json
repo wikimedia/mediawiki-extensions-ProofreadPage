@@ -9,12 +9,11 @@
 		"debug-selenium-flaky-test": "for i in $(seq 1 20); do wdio ./tests/selenium/wdio.conf.js; done"
 	},
 	"devDependencies": {
-		"@wdio/cli": "7.3.0",
-		"@wdio/dot-reporter": "7.4.2",
-		"@wdio/junit-reporter": "7.4.2",
-		"@wdio/local-runner": "7.3.0",
-		"@wdio/mocha-framework": "7.30.2",
-		"@wdio/sync": "7.3.0",
+		"@wdio/cli": "7.16.13",
+		"@wdio/dot-reporter": "7.16.13",
+		"@wdio/junit-reporter": "7.16.13",
+		"@wdio/local-runner": "7.16.13",
+		"@wdio/mocha-framework": "7.16.13",
 		"eslint-config-wikimedia": "0.25.0",
 		"grunt": "1.6.1",
 		"grunt-banana-checker": "0.10.0",
@@ -22,6 +21,6 @@
 		"grunt-replace": "2.0.2",
 		"grunt-stylelint": "0.18.0",
 		"stylelint-config-wikimedia": "0.14.0",
-		"wdio-mediawiki": "1.2.0"
+		"wdio-mediawiki": "2.2.0"
 	}
 }
