@@ -37,7 +37,7 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 		prppiititle: this.indexPage,
 		gprppiititle: this.indexPage,
 		prop: 'proofread',
-		prppiiprop: 'ids|title|formattedPageNumber',
+		prppiiprop: 'ids|title|formattedpagenumber',
 		continue: contd && contd.continue || undefined,
 		prppiicontinue: contd && contd.prppiicontinue || undefined
 	} ).done( function ( response ) {

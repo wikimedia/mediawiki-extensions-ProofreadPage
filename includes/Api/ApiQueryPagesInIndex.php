@@ -11,6 +11,7 @@ use ProofreadPage\Context;
 use ProofreadPage\Pagination\Pagination;
 use Title;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\ParamValidator\TypeDef\EnumDef;
 
 /**
  * API list module for getting the list of pages in an index
@@ -130,7 +131,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 			$pageInfo[ 'title' ] = $pageTitle->getFullText();
 		}
 
-		if ( isset( $prop[ 'formattedPageNumber' ] ) ) {
+		if ( isset( $prop[ 'formattedpagenumber' ] ) || isset( $prop[ 'formattedPageNumber' ] ) ) {
 			$pageInfo[ 'formattedPageNumber' ] = $pagination
 				->getDisplayedPageNumber( $pageOffset )
 				->getFormattedPageNumber( $this->getLanguage() );
@@ -151,8 +152,15 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 					'ids',
 					'title',
 					'formattedPageNumber',
+					'formattedpagenumber',
 				],
-				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => [
+					'formattedPageNumber' =>
+						'apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated',
+				],
+				EnumDef::PARAM_DEPRECATED_VALUES => [
+					'formattedPageNumber' => true,
+				],
 			],
 			'title' => [
 				ParamValidator::PARAM_TYPE => 'string',
