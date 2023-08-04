@@ -4,6 +4,7 @@ namespace ProofreadPage\Api;
 
 use ApiBase;
 use ApiQueryBase;
+use ApiResult;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Page\PageDisplayHandler;
@@ -109,6 +110,8 @@ class ApiQueryImageForPage extends ApiQueryBase {
 			foreach ( $responsiveUrls as $density => $url ) {
 				$data['responsiveimages'][$density] = $url;
 			}
+			ApiResult::setArrayType( $data['responsiveimages'], 'kvp' );
+			ApiResult::setIndexedTagName( $data['responsiveimages'], 'responsiveimage' );
 		}
 
 		$fullSizeImage = $this->pageDisplayHandler->getImageFullSize( $title );
