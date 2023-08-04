@@ -4,6 +4,10 @@
 	},
 	"apihelp-query+imageforpage-summary": "Pre-renders and provides URLs to images for a given page in the \"Page:\" namespace.",
 	"apihelp-query+imageforpage-param-prop": "Which types of images or properties of images to return for a given page in the \"Page:\" namespace.",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "Return the filename associated with the page being queried",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "Return the size of the image associated with the page being queried",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Return the URL of the full-sized image associated with the page being queried",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Return a list containing the URLs of images at 1x, 1.5x and 2x of the fullsized image associated with the page being queried",
 	"apierror-proofreadpage-invalidindex": "Invalid index title \"$1\".",
 	"apihelp-query+defaultcontentforpage-summary": "Provides the default content for a given page in the \"Page:\" namespace.\n\nThe default content is raw wikitext (potentially including raw HTML tags from untrusted book text layers). It must not be used in HTML unescaped/unparsed!",
 	"apihelp-query+proofread-summary": "Returns information about the current proofread status of the given pages.",
@@ -16,6 +20,11 @@
 	"apihelp-query+proofreadpagesinindex-param-limit": "Limit how many pages will be returned",
 	"apihelp-query+proofreadpagesinindex-param-pageid": "The page ID of the Index page to get pages for",
 	"apihelp-query+proofreadpagesinindex-param-prop": "Which properties to get for each page",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "Return the page ID of each page linked to the index page",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "Return the page title of each page linked to the index page",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "Return the page ID of each page linked to the index page",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "Return the formatted page numbers of each page linked to the index page",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "Return the formatted page numbers of each page linked to the index page. Deprecated, use \"formattedpagenumber\" instead.",
 	"apihelp-query+proofreadpagesinindex-param-title": "The title of the Index page to get pages for",
 	"apihelp-query+proofreadpagesinindex-example-1": "Return default information"
 }
