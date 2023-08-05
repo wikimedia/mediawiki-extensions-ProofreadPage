@@ -100,7 +100,8 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 				ParamValidator::PARAM_TYPE => [
 					'namespaces',
 					'qualitylevels',
-				]
+				],
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
 			],
 		];
 	}
