@@ -6,6 +6,10 @@
 	},
 	"apihelp-query+imageforpage-summary": "Претприкажува и дава URL-адреси кон слики за страница од именскит простор „Страница:“.",
 	"apihelp-query+imageforpage-param-prop": "Кои видови слики или својства на слики да се дадат за страница од именскиот простор „Страница:“.",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "Дај податотечно име поврзано со страницата што се бара",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "Дај ја големината на сликата поврзана со страницата што се бара",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Дај URL на сликата во полна големина, поврзана со страницата што се бара",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Дај список со URL-а на слики 1×, 1,5× и 2× од целосната големина на сликата поврзана со страницата што се бара",
 	"apierror-proofreadpage-invalidindex": "Неважечки индексен наслов „$1“.",
 	"apihelp-query+defaultcontentforpage-summary": "Ја дава стандардно зададената содржина за дадена страница во именскиот простор „Страница:“.\n\nСтандардно зададената содржина е сиров викитекст (потенцијално со сирови HTML-ознаки од недоверливи слоеви од книжен текст). Не смее да се користи во HTML неизменет/нерасчленет!",
 	"apihelp-query+proofread-summary": "Дава информации за тековната состојба на проверката на дадени страници.",
@@ -18,6 +22,11 @@
 	"apihelp-query+proofreadpagesinindex-param-limit": "Ограничи колку страници да е дадат",
 	"apihelp-query+proofreadpagesinindex-param-pageid": "Назнака на индексната страница за која ќе се дадат страници",
 	"apihelp-query+proofreadpagesinindex-param-prop": "Кои својства да се дадат за секоја страница",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "Дај назнака за секоја страница поврзана со индексната страница",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "Дај наслов за секоја страница поврзана со индексната страница",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "Дај назнака за секоја страница поврзана со индексната страница",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "Дај форматиран број на страница за секоја страница поврзана со индексната страница",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "Дај форматиран број на страница за секоја страница поврзана со индексната страница. Застарено, наместо тоа користете „formattedpagenumber“.",
 	"apihelp-query+proofreadpagesinindex-param-title": "Насловот на индексната страница за која ќе се дадат страници",
 	"apihelp-query+proofreadpagesinindex-example-1": "Дај стандардни информации"
 }
