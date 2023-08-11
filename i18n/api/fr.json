@@ -10,6 +10,10 @@
 	},
 	"apihelp-query+imageforpage-summary": "Effectue un prérendu et fournit des URL vers les images pour une page donnée de l’espace de noms « Page: ».",
 	"apihelp-query+imageforpage-param-prop": "Quels types d’images ou propriétés d’images renvoyer pour une page donnée d’espace de noms « Page: ».",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "Renvoyer le nom de fichier associé avec la page demandée",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "Renvoyer la taille de l’image associée avec la page demandée",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Renvoyer l’URL de l’image en taille complète associée à la page demandée",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Renvoyer une liste contenant les URL des images à 1x, 1,5x et 2x l’image en taille pleine associée à la page demandée",
 	"apierror-proofreadpage-invalidindex": "Titre d’index « $1 » non valide.",
 	"apihelp-query+defaultcontentforpage-summary": "Fournit le contenu par défaut pour une page donnée dans l’espace de noms « Page: ».\n\nLe contenu par défaut est le wikitexte brut (pouvant contenir des balises HTML brutes provenant de couches de texte de livre non fiables). Il ne doit pas être utilisé dans du HTML non échappé et non analysé !",
 	"apihelp-query+proofread-summary": "Renvoie des informations sur l’état actuel de correction des pages données.",
@@ -24,6 +28,11 @@
 	"apihelp-query+proofreadpagesinindex-param-limit": "Limiter combien de pages seront renvoyées",
 	"apihelp-query+proofreadpagesinindex-param-pageid": "L’identifiant de la page d’index pour laquelle obtenir les pages",
 	"apihelp-query+proofreadpagesinindex-param-prop": "Quelles propriétés récupérer pour chaque page",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "Renvoyer l’ID de chaque page liée à la page d’index",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "Renvoyer le titre de chaque page liée à la page d’index",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "Renvoyer l’ID de chaque page liée à la page d’index",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "Renvoyer les numéros mis en forme pour chaque page liée à la page d’index",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "Renvoyer les numéros mis en forme de chaque page liée à la page d’index. Obsolète, utiliser plutôt « formattedpagenumber ».",
 	"apihelp-query+proofreadpagesinindex-param-title": "Le titre de la page d’index pour laquelle obtenir les pages",
 	"apihelp-query+proofreadpagesinindex-example-1": "Renvoyer les informations par défaut"
 }
