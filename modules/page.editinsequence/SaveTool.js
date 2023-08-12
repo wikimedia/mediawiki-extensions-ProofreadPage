@@ -17,6 +17,7 @@ if ( mw.config.get( 'wgEditSubmitButtonLabelPublish' ) ) {
 } else {
 	SaveTool.static.title = OO.ui.deferMsg( 'savechanges' );
 }
+// eslint-disable-next-line es-x/no-regexp-prototype-flags
 SaveTool.static.flags = [ 'primary', 'progressive' ];
 SaveTool.static.icon = 'article';
 SaveTool.static.displayBothIconAndLabel = true;
