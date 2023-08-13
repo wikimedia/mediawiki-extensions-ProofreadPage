@@ -14,6 +14,7 @@ function SaveOptionsTool() {
 OO.inheritClass( SaveOptionsTool, OO.ui.Tool );
 
 SaveOptionsTool.static.name = 'saveOptions';
+// eslint-disable-next-line es-x/no-regexp-prototype-flags
 SaveOptionsTool.static.flags = [ 'primary', 'progressive' ];
 SaveOptionsTool.static.icon = 'settings';
 
