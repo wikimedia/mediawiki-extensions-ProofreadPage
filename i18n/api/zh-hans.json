@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"CrownedWharf566",
 			"GuoPC",
 			"Liuxinyu970226",
 			"Shizhao",
@@ -15,7 +16,7 @@
 	"apihelp-query+proofread-example-1": "返回命名空间250页面的校对状态",
 	"apihelp-query+proofreadinfo-summary": "返回有关ProofreadPage扩展配置的信息。",
 	"apihelp-query+proofreadinfo-param-prop": "要获取的校对属性：",
-	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "有关“{{ns:Page}}”和“{{ns:Index}}”命名空间的信息。",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "关于“{{ns:Page}}”和“{{ns:Index}}”命名空间的信息。",
 	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "校对质量等级列表。",
 	"apihelp-query+proofreadinfo-example-1": "返回默认信息",
 	"apihelp-query+proofreadinfo-example-3": "返回命名空间信息",
