@@ -48,6 +48,7 @@ class PageContentBuilder {
 		// default header and footer
 		if ( $indexTitle !== null ) {
 			$params = [];
+			$pageNumber = -1;
 			try {
 				$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 				$pageNumber = $pagination->getPageNumber( $pageTitle );
@@ -60,12 +61,63 @@ class PageContentBuilder {
 
 			$indexFieldsParser = $this->context->getCustomIndexFieldsParser();
 			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
-			$header = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
-				$indexContent, 'header', $params
-			);
-			$footer = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
-				$indexContent, 'footer', $params
-			);
+
+			$header = '';
+
+			if ( $pageNumber !== -1 ) {
+				if ( $pageNumber % 2 === 0 ) {
+					try {
+						$header = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+							$indexContent, 'header_even', $params
+						);
+					} catch ( OutOfBoundsException ) {
+						// fall through since it is not defined in config
+					}
+				} else {
+					try {
+						$header = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+							$indexContent, 'header_odd', $params
+						);
+					} catch ( OutOfBoundsException ) {
+						// fall through since it is not defined in config
+					}
+				}
+			}
+
+			if ( $header === '' ) {
+				$header = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+					$indexContent, 'header', $params
+				);
+			}
+
+			$footer = '';
+
+			if ( $pageNumber !== -1 ) {
+				if ( $pageNumber % 2 === 0 ) {
+					try {
+						$footer = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+							$indexContent, 'footer_even', $params
+						);
+					} catch ( OutOfBoundsException ) {
+						// fall through since it is not defined in config
+					}
+				} else {
+					try {
+						$footer = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+							$indexContent, 'footer_odd', $params
+						);
+					} catch ( OutOfBoundsException ) {
+						// fall through since it is not defined in config
+					}
+				}
+			}
+
+			if ( $footer === '' ) {
+				$footer = $indexFieldsParser->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries(
+					$indexContent, 'footer', $params
+				);
+			}
+
 		} else {
 			$header = $this->contextSource->msg( 'proofreadpage_default_header' )
 				->inContentLanguage()->plain();
