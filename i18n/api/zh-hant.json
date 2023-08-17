@@ -4,7 +4,10 @@
 			"Kly"
 		]
 	},
+	"apihelp-query+imageforpage-summary": "預先彩現並提供「Page:」命名空間中指定頁面的圖片網址。",
+	"apihelp-query+imageforpage-param-prop": "為「Page:」命名空間中的指定頁面回傳圖片的類型或是圖片屬性。",
 	"apierror-proofreadpage-invalidindex": "無效的索引標題「$1」。",
+	"apihelp-query+defaultcontentforpage-summary": "為「Page:」命名空間中的指定頁面提供預設內容。\n\n預設內容是原始 wikitext（可能包含來自不受信任的書籍文字層的原始 HTML 標籤）。這不能使用在未做字元跳脫/未解析的 HTML！",
 	"apihelp-query+proofread-description": "回傳指定頁面的目前校對狀態相關資訊。",
 	"apihelp-query+proofread-summary": "回傳指定頁面的目前校對狀態相關資訊。",
 	"apihelp-query+proofread-example-1": "回傳在命名空間 250 之頁面的校對狀態",
