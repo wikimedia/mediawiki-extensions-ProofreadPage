@@ -4,6 +4,7 @@ namespace ProofreadPage\Pagination;
 
 use Language;
 use NumberFormatter;
+use ProofreadPage\Pagination\CustomNumberFormatters\BengaliCurrencyFormat;
 
 /**
  * @license GPL-2.0-or-later
@@ -16,6 +17,7 @@ class PageNumber {
 	public const DISPLAY_FOLIO = 'folio';
 	public const DISPLAY_FOLIOHIGHROMAN = 'foliohighroman';
 	public const DISPLAY_FOLIOROMAN = 'folioroman';
+	public const DISPLAY_BENGALI_CURRENCY = 'prpbengalicurrency';
 	public const DISPLAY_EMPTY = 'empty';
 
 	/**
@@ -92,6 +94,9 @@ class PageNumber {
 			case self::DISPLAY_FOLIOROMAN:
 				return self::formatICU( $language, 'romanlow', $number ) .
 					$this->formatRectoVerso();
+			case self::DISPLAY_BENGALI_CURRENCY:
+				$formatter = new BengaliCurrencyFormat();
+				return $formatter->formatNumber( $language, $number );
 			default:
 				if ( array_key_exists( $this->displayMode, self::DISPLAY_FROM_ICU ) ) {
 					return self::formatICU( $language, self::DISPLAY_FROM_ICU[$this->displayMode], $number );
@@ -125,6 +130,9 @@ class PageNumber {
 			case self::DISPLAY_FOLIOROMAN:
 				return self::formatICU( $language, 'romanlow', $number ) .
 					$this->rawRectoVerso();
+			case self::DISPLAY_BENGALI_CURRENCY:
+				$formatter = new BengaliCurrencyFormat();
+				return $formatter->formatNumber( $language, $number );
 			default:
 				if ( array_key_exists( $this->displayMode, self::DISPLAY_FROM_ICU ) ) {
 					return self::formatICU( $language, self::DISPLAY_FROM_ICU[$this->displayMode], $number );
@@ -185,6 +193,7 @@ class PageNumber {
 		$modes[] = self::DISPLAY_FOLIO;
 		$modes[] = self::DISPLAY_FOLIOHIGHROMAN;
 		$modes[] = self::DISPLAY_FOLIOROMAN;
+		$modes[] = self::DISPLAY_BENGALI_CURRENCY;
 		return $modes;
 	}
 

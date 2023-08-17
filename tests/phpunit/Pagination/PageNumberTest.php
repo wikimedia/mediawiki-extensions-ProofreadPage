@@ -28,6 +28,12 @@ class PageNumberTest extends ProofreadPageTestCase {
 				new PageNumber( '14', PageNumber::DISPLAY_FOLIOROMAN, false, false ), null ],
 			[ 'test', 'test', new PageNumber( 'test', PageNumber::DISPLAY_ROMAN ), null ],
 			[ '૮', '૮', new PageNumber( '8' ), 'gu' ],
+			[ '৩৵৹', '৩৵৹', new PageNumber( '50', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
+			[ '৩৲', '৩৲', new PageNumber( '48', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
+			[ '১১৲', '১১৲', new PageNumber( '176', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
+			[ '৷৵৹', '৷৵৹', new PageNumber( '6', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
+			[ '০', '০', new PageNumber( '-1', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ]
+
 		];
 	}
 
