@@ -3,7 +3,7 @@
 namespace ProofreadPage\Index;
 
 use Content;
-use MagicWord;
+use MediaWiki\Parser\MagicWord;
 use MediaWiki\Title\Title;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;

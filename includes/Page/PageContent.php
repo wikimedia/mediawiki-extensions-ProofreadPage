@@ -3,8 +3,8 @@
 namespace ProofreadPage\Page;
 
 use Content;
-use MagicWord;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\MagicWord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use TextContent;
