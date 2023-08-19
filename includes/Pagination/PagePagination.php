@@ -3,8 +3,8 @@
 namespace ProofreadPage\Pagination;
 
 use InvalidArgumentException;
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

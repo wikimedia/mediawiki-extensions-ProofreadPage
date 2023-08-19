@@ -3,12 +3,12 @@
 namespace ProofreadPage\Page;
 
 use IContextSource;
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
-use Title;
 use WikitextContent;
 
 /**

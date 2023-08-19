@@ -3,9 +3,9 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Parser;
 use ParserOptions;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

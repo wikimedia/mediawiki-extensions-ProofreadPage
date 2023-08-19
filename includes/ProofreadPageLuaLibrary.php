@@ -3,13 +3,13 @@
 namespace ProofreadPage;
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageLevel;
 use Psr\Log\LoggerInterface;
 use Scribunto_LuaError;
 use Scribunto_LuaLibraryBase;
-use Title;
 use WikitextContent;
 
 class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {

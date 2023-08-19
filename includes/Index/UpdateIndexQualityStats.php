@@ -3,9 +3,9 @@
 namespace ProofreadPage\Index;
 
 use DataUpdate;
+use MediaWiki\Title\Title;
 use ProofreadPage\Page\PageQualityLevelLookup;
 use ProofreadPage\Pagination\Pagination;
-use Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

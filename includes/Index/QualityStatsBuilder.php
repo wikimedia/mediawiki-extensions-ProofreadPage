@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Title\Title;
 use ProofreadPage\Page\PageQualityLevelLookup;
 use ProofreadPage\Pagination\Pagination;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

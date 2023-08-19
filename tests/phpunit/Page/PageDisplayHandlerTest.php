@@ -2,10 +2,10 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
-use Title;
 use User;
 use WikitextContent;
 

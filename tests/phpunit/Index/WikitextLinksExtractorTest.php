@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Title\Title;
 use ProofreadPage\Link;
 use ProofreadPageTestCase;
-use Title;
 
 /**
  * @group ProofreadPage

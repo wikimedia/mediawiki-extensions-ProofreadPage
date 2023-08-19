@@ -4,8 +4,8 @@ namespace ProofreadPage\Pagination;
 
 use Iterator;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

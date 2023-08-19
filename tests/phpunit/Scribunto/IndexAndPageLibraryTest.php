@@ -4,12 +4,12 @@ namespace ProofreadPage\Scribunto;
 
 use Content;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
 use RuntimeException;
 use Scribunto_LuaEngineTestBase;
-use Title;
 use WikitextContent;
 
 /**

@@ -4,11 +4,11 @@ namespace ProofreadPage\Page;
 
 use IContextSource;
 use MediaHandler;
+use MediaWiki\Title\Title;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
 use RequestContext;
-use Title;
 use User;
 use WikitextContent;
 

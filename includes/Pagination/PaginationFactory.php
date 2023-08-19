@@ -2,11 +2,11 @@
 
 namespace ProofreadPage\Pagination;
 
+use MediaWiki\Title\Title;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\FileProvider;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Index\IndexContentLookup;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

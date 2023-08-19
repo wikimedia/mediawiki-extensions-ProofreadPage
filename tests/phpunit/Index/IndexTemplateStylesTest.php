@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
-use Title;
 
 /**
  * @group ProofreadPage

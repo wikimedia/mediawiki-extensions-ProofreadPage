@@ -4,9 +4,9 @@ namespace ProofreadPage\Index;
 
 use Content;
 use IContextSource;
+use MediaWiki\Title\Title;
 use ProofreadPage\DiffFormatterUtils;
 use SlotDiffRenderer;
-use Title;
 use WikitextContent;
 
 /**

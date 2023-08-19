@@ -24,10 +24,10 @@ namespace ProofreadPage\Special;
 use HTMLForm;
 use ISearchResultSet;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use QueryPage;
 use SearchResult;
-use Title;
 
 class SpecialProofreadPages extends QueryPage {
 	/** @var string|null */

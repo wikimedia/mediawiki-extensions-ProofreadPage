@@ -3,9 +3,9 @@
 namespace ProofreadPage\Pagination;
 
 use MediaHandler;
+use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
-use Title;
 use WikitextContent;
 
 /**

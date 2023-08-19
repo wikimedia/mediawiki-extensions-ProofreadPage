@@ -38,6 +38,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use OutOfBoundsException;
 use OutputPage;
@@ -57,7 +58,6 @@ use ProofreadPage\Parser\TranslusionPagesModifier;
 use RequestContext;
 use SkinTemplate;
 use Status;
-use Title;
 use User;
 
 /*

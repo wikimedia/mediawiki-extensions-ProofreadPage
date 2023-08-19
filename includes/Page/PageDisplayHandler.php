@@ -5,13 +5,13 @@ namespace ProofreadPage\Page;
 use Html;
 use Linker;
 use MediaTransformOutput;
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
 use Sanitizer;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

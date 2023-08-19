@@ -2,10 +2,10 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
 use RequestContext;
 use TextSlotDiffRenderer;
-use Title;
 use WikitextContent;
 
 /**

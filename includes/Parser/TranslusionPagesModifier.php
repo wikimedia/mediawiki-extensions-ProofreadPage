@@ -4,13 +4,13 @@ namespace ProofreadPage\Parser;
 
 use Html;
 use IContextSource;
+use MediaWiki\Title\Title;
 use OutputPage;
 use ParserOutput;
 use ProofreadPage\Index\IndexQualityStatsLookup;
 use ProofreadPage\Index\PagesQualityStats;
 use ProofreadPage\Page\IndexForPageLookup;
 use ProofreadPage\Page\PageQualityLevelLookup;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

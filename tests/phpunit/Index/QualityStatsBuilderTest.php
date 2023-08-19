@@ -2,11 +2,11 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Title\Title;
 use ProofreadPage\Page\PageQualityLevelLookupMock;
 use ProofreadPage\Pagination\PageNumber;
 use ProofreadPage\Pagination\PagePagination;
 use ProofreadPageTestCase;
-use Title;
 
 /**
  * @group ProofreadPage

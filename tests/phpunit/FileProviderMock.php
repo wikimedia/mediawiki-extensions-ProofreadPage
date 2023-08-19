@@ -3,7 +3,7 @@
 namespace ProofreadPage;
 
 use File;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @license GPL-2.0-or-later

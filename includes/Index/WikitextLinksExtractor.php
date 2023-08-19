@@ -3,8 +3,8 @@
 namespace ProofreadPage\Index;
 
 use MalformedTitleException;
+use MediaWiki\Title\Title;
 use ProofreadPage\Link;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

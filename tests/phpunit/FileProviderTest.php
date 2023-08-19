@@ -3,8 +3,8 @@
 namespace ProofreadPage;
 
 use File;
+use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
-use Title;
 
 /**
  * @group ProofreadPage

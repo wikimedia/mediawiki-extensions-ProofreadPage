@@ -4,9 +4,9 @@ namespace ProofreadPage\Pagination;
 
 use InvalidArgumentException;
 use MediaHandler;
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPageTestCase;
-use Title;
 
 /**
  * @group ProofreadPage

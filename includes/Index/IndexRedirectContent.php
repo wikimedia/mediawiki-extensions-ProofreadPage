@@ -4,8 +4,8 @@ namespace ProofreadPage\Index;
 
 use Content;
 use InvalidArgumentException;
+use MediaWiki\Title\Title;
 use TextContent;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

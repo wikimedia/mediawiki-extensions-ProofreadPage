@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use Title;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

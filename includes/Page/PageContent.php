@@ -6,8 +6,8 @@ use Content;
 use MagicWord;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use TextContent;
-use Title;
 use WikitextContent;
 
 /**

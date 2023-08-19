@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Parser;
 
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use Parser;
 use ParserOptions;
@@ -12,7 +13,6 @@ use ProofreadPage\Link;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageNumber;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

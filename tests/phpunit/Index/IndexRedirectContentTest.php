@@ -4,11 +4,11 @@ namespace ProofreadPage\Index;
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageReferenceValue;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentityValue;
 use ParserOptions;
 use ProofreadPageTestCase;
 use RequestContext;
-use Title;
 use User;
 
 /**
