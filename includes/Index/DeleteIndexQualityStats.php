@@ -3,7 +3,7 @@
 namespace ProofreadPage\Index;
 
 use DataUpdate;
-use Title;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

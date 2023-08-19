@@ -4,10 +4,10 @@ namespace ProofreadPage\Api;
 
 use ApiQueryBase;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Page\PageContentHandler;
-use Title;
 
 class ApiQueryDefaultContentForPage extends ApiQueryBase {
 	/**

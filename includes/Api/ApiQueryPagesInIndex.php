@@ -7,9 +7,9 @@ use ApiPageSet;
 use ApiQuery;
 use ApiQueryGeneratorBase;
 use LogicException;
+use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\Pagination\Pagination;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\EnumDef;
 

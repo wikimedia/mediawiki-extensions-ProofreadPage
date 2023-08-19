@@ -4,11 +4,11 @@ namespace ProofreadPage\Index;
 
 use Content;
 use MagicWord;
+use MediaWiki\Title\Title;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use Sanitizer;
 use TextContent;
-use Title;
 use WikitextContent;
 
 /**

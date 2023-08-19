@@ -3,6 +3,7 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * @license GPL-2.0-or-later
@@ -12,7 +13,7 @@ use MediaWiki\MediaWikiServices;
 class IndexTemplateStyles {
 
 	/**
-	 * @var \Title
+	 * @var Title
 	 */
 	private $indexTitle;
 
@@ -23,10 +24,10 @@ class IndexTemplateStyles {
 
 	/**
 	 * Sets up an index TemplateStyles provider
-	 * @param \Title $indexTitle the title of the index (or the subpage of an
+	 * @param Title $indexTitle the title of the index (or the subpage of an
 	 * index)
 	 */
-	public function __construct( \Title $indexTitle ) {
+	public function __construct( Title $indexTitle ) {
 		// Use the base page so all subpages of an index share the same stylesheet
 		$this->indexTitle = $indexTitle->getBaseTitle();
 		$this->haveStyleSupport = \ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' );
@@ -43,7 +44,7 @@ class IndexTemplateStyles {
 	 * Return TemplateStyles page for the current index
 	 * This may or may not exist.
 	 *
-	 * @return \Title|null the title of the styles page, or null if no styles support
+	 * @return Title|null the title of the styles page, or null if no styles support
 	 */
 	public function getTemplateStylesPage() {
 		$stylesPage = null;
@@ -59,7 +60,7 @@ class IndexTemplateStyles {
 	 * Returns the canonical index page associated with this page. This is the
 	 * root Index page.
 	 *
-	 * @return \Title the main index page
+	 * @return Title the main index page
 	 */
 	public function getAssociatedIndexPage() {
 		return $this->indexTitle;

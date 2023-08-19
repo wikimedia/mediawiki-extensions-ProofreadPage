@@ -5,10 +5,10 @@ namespace ProofreadPage\Api;
 use ApiBase;
 use ApiQueryBase;
 use ApiResult;
+use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Page\PageDisplayHandler;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiQueryImageForPage extends ApiQueryBase {

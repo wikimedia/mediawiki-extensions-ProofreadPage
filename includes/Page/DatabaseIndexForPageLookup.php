@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Title\Title;
 use RepoGroup;
-use Title;
 
 /**
  * @license GPL-2.0-or-later
@@ -54,7 +54,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 
 	/**
 	 * @param Title $pageTitle
-	 * @return ?\Title
+	 * @return ?Title
 	 */
 	private function findIndexTitle( Title $pageTitle ) {
 		$possibleIndexTitle = $this->findPossibleIndexTitleBasedOnName( $pageTitle );
