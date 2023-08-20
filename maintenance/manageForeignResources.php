@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\ProofreadPage\Maintenance;
 
 use Exception;
-use ForeignResourceManager;
 use Maintenance;
+use MediaWiki\ResourceLoader\ForeignResourceManager;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
