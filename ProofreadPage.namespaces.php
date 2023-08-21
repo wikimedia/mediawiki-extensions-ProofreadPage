@@ -449,14 +449,6 @@ $proofreadPageNamespaceNames['sr-el'] = [
 	'index_talk' => 'Razgovor_o_indeksu'
 ];
 
-/** Sundanese (basa Sunda) */
-$proofreadPageNamespaceNames['su'] = [
-	'page' => 'Kaca',
-	'page_talk' => 'Obrolan_kaca',
-	'index' => 'Indéks',
-	'index_talk' => 'Obrolan_indéks'
-];
-
 /** Swedish (svenska) */
 $proofreadPageNamespaceNames['sv'] = [
 	'page' => 'Sida',
