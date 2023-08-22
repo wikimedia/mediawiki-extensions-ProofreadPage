@@ -9,7 +9,8 @@
 			"Metalhead64",
 			"Raimond Spekking",
 			"Tbleher",
-			"ThomasV"
+			"ThomasV",
+			"Umherirrender"
 		]
 	},
 	"nstab-page": "Seite",
@@ -161,7 +162,7 @@
 	"proofreadpage-preferences-showheaders-label": "Beim Bearbeiten von Seiten im Namensraum {{ns:page}} die Felder für die Kopf- und die Fußzeile anzeigen",
 	"proofreadpage-preferences-horizontal-layout-label": "Beim Bearbeiten von Seiten im Namensraum {{ns:page}} ein horizontales Layout verwenden",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Verwende den neuen experimentellen visuellen Modus, um die Seitenliste zu bearbeiten.",
-	"proofreadpage-preferences-zoom-factor-label": "Der Zoomfaktor beim Scrollen (zwischen 1 und 2, Standard: 1.2). Höhere Zoomfaktoren scrollen mehr pro Schritt",
+	"proofreadpage-preferences-zoom-factor-label": "Der Zoomfaktor beim Scrollen (zwischen 1 und 2, Standard: 1,2). Höhere Zoomfaktoren scrollen mehr pro Schritt",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Jedes Mal, wenn {{GENDER:|du}} eine Seite im EditInSequence-Modus speicherst, einen Bearbeitungszusammenfassungsdialog anzeigen",
 	"proofreadpage-preferences-after-save-action-label": "Diese Aktion nach dem Speichern einer Seite im EditInSequence-Modus ausführen",
 	"proofreadpage-indexquality-alt": "{{PLURAL:$1|Eine bestätigte Seite|$1 bestätigte Seiten}}, {{PLURAL:$2|eine nur korrekturgelesene Seite|$2 nur korrekturgelesene Seiten}} und {{PLURAL:$3|eine nicht korrekturgelesene Seite|$3 nicht korrekturgelesene Seiten}}",
