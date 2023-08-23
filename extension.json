@@ -391,6 +391,7 @@
 	"Hooks": {
 		"SetupAfterCache": "ProofreadPageInitHooks",
 		"ParserFirstCallInit": "ProofreadPageHooks",
+		"GetBetaFeaturePreferences": "ProofreadPage\\ProofreadPage::onGetBetaFeaturePreferences",
 		"BeforePageDisplay": "ProofreadPage\\ProofreadPage::onBeforePageDisplay",
 		"GetLinkColours": "ProofreadPageHooks",
 		"ImageOpenShowImageInlineBefore": "ProofreadPage\\ProofreadPage::onImageOpenShowImageInlineBefore",
