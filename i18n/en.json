@@ -99,6 +99,8 @@
 	"proofreadpage-button-zoom-in-label": "Zoom in",
 	"proofreadpage-button-zoom-out-label": "Zoom out",
 	"proofreadpage-pageinfo-status": "Proofreading status",
+	"prp-editinsequence-beta-label": "Edit in Sequence",
+	"prp-editinsequence-beta-description": "A new editing interface that allows you to edit pages faster.",
 	"prp-editinsequence-http-error-pagelist": "Failed to fetch pagination due to network issues, please try again later.",
 	"prp-editinsequence-pagination-does-not-exist": "No pagination exists for this page making it impossible to determine next and previous pages. If you think this was a mistake, please report this error to phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "An unexpected error was detected. Please report this error to phabricator.wikimedia.org.",

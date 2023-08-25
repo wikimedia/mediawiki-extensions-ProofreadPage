@@ -823,4 +823,27 @@ class ProofreadPage implements
 		return $classes;
 	}
 
+	/**
+	 * @param User $user
+	 * @param array &$betaPrefs
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetBetaFeaturePreferences
+	 */
+	public static function onGetBetaFeaturePreferences( User $user, array &$betaPrefs ) {
+		$extensionAssetsPath = MediaWikiServices::getInstance()
+			->getMainConfig()
+			->get( 'ExtensionAssetsPath' );
+		$betaPrefs[ EditInSequence::BETA_FEATURE_NAME ] = [
+			// The first two are message keys
+			'label-message' => 'prp-editinsequence-beta-label',
+			'desc-message' => 'prp-editinsequence-beta-description',
+			'screenshot' => [
+				'ltr' => "$extensionAssetsPath/ProofreadPage/modules/page/images/eis-ltr.svg",
+				'rtl' => "$extensionAssetsPath/ProofreadPage/modules/page/images/eis-rtl.svg",
+			],
+			'info-link' => 'https://meta.wikimedia.org/wiki/Special:MyLanguage/Wikisource_EditInSequence',
+			'discussion-link' =>
+			'https://meta.wikimedia.org/wiki/Special:MyLanguage/Talk:Wikisource_EditInSequence',
+		];
+	}
+
 }

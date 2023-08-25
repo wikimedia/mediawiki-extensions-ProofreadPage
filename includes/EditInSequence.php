@@ -2,12 +2,15 @@
 
 namespace ProofreadPage;
 
+use ExtensionRegistry;
 use IContextSource;
+use MediaWiki\Extension\BetaFeatures\BetaFeatures;
 
 class EditInSequence {
 	/** url parameter for edit-in-sequence */
 	public const URLPARAMNAME = 'prp_editinsequence';
 	public const TAGNAME = 'proofreadpage-editinsequence';
+	public const BETA_FEATURE_NAME = 'proofreadpage-editinsequence';
 	public const USER_AGENT_NAME = 'EditInSequence';
 
 	/**
@@ -16,7 +19,16 @@ class EditInSequence {
 	 * @return bool
 	 */
 	public static function isEnabled( IContextSource $context ): bool {
-		return $context->getConfig()->get( 'ProofreadPageEnableEditInSequence' );
+		// By default if beta features is not present, enable by default,
+		// else respect beta feature setting
+		$isBetaFeatureEnabled = true;
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
+			$isBetaFeatureEnabled = BetaFeatures::isFeatureEnabled(
+				$context->getUser(),
+				'proofreadpage-editinsequence'
+			);
+		}
+		return $context->getConfig()->get( 'ProofreadPageEnableEditInSequence' ) && $isBetaFeatureEnabled;
 	}
 
 	/**
@@ -26,8 +38,8 @@ class EditInSequence {
 	 * @return bool
 	 */
 	public static function shouldLoadEditInSequence( IContextSource $context ): bool {
-		return self::isEnabled( $context ) &&
-			$context->getRequest()->getBool( self::URLPARAMNAME );
+		return $context->getConfig()->get( 'ProofreadPageEnableEditInSequence' )
+			&& $context->getRequest()->getBool( self::URLPARAMNAME );
 	}
 
 	/**
