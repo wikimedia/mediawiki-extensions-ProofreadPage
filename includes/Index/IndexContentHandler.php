@@ -305,7 +305,7 @@ class IndexContentHandler extends TextContentHandler {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getSlotDiffRendererInternal( IContextSource $context ) {
+	protected function getSlotDiffRendererWithOptions( IContextSource $context, $options = [] ) {
 		return new IndexSlotDiffRenderer(
 			$context,
 			Context::getDefaultContext()->getCustomIndexFieldsParser(),

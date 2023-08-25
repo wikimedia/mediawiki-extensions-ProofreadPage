@@ -352,7 +352,7 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @inheritDoc
 	 */
-	protected function getSlotDiffRendererInternal( IContextSource $context ) {
+	protected function getSlotDiffRendererWithOptions( IContextSource $context, $options = [] ) {
 		return new PageSlotDiffRenderer( $context );
 	}
 
