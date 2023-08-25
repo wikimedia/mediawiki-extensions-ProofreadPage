@@ -302,7 +302,7 @@ class ProofreadPage implements
 			MediaWikiServices::getInstance()->getUserOptionsLookup()
 				->getBoolOption( $user, 'usebetatoolbar' )
 		) {
-			$type = 'hidden';
+			$type = 'api';
 		}
 		// Show header and footer fields when editing in the Page namespace
 		$preferences['proofreadpage-showheaders'] = [
@@ -321,7 +321,7 @@ class ProofreadPage implements
 		if ( $this->config->get( 'ProofreadPageEnableEditInSequence' ) ) {
 			// Show dialog before saving the a Page using EditInSequence
 			$preferences['proofreadpage-show-dialog-before-every-save'] = [
-				'type'           => 'hidden',
+				'type'           => 'api',
 				'label-message'  => 'proofreadpage-preferences-show-dialog-before-every-save-label',
 				'section'        => 'editing/proofread-pagenamespace',
 			];
@@ -329,7 +329,7 @@ class ProofreadPage implements
 			// Preference denoting action to be performed
 			// after saving a page in EditInSequence,
 			$preferences['proofreadpage-after-save-action'] = [
-				'type'           => 'hidden',
+				'type'           => 'api',
 				'options'        => [
 					wfMessage( 'prp-editinsequence-save-next-action-do-nothing' )->text() => 'do-nothing',
 					wfMessage( 'prp-editinsequence-save-next-action-go-to-next' )->text() => 'go-to-next',
