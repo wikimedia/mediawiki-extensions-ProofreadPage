@@ -100,6 +100,8 @@
 	"proofreadpage-button-zoom-in-label": "Приближи",
 	"proofreadpage-button-zoom-out-label": "Оддалечи",
 	"proofreadpage-pageinfo-status": "Состојба на провереност",
+	"prp-editinsequence-beta-label": "Уреди во низа",
+	"prp-editinsequence-beta-description": "Нов уредувачки посредник кој ви овозможува побргу да уредувате страници.",
 	"prp-editinsequence-http-error-pagelist": "Не успеав да го добијам списокот на страници поради мрежен проблем. Обидете се повторно.",
 	"prp-editinsequence-pagination-does-not-exist": "Не постои набројување за оваа страница, што значи дека е невозможно да се одреди кои се следни, а кои се претходни страници. Ако сметате дека ова е грешка, пријавете ја на phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Откриена е неочекувана грешка. Пријавете ја грешката на phabricator.wikimedia.org.",

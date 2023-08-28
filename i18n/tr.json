@@ -114,6 +114,8 @@
 	"proofreadpage-button-zoom-in-label": "Yakınlaştır",
 	"proofreadpage-button-zoom-out-label": "Uzaklaştır",
 	"proofreadpage-pageinfo-status": "İstinsah durumu",
+	"prp-editinsequence-beta-label": "Sırayla Düzenle",
+	"prp-editinsequence-beta-description": "Sayfaları daha hızlı düzenlemenize olanak tanıyan yeni bir düzenleme arayüzü.",
 	"prp-editinsequence-http-error-pagelist": "Ağ sorunları nedeniyle sayfalandırma getirilemedi, lütfen daha sonra tekrar deneyin.",
 	"prp-editinsequence-pagination-does-not-exist": "Bu sayfa için sayfalandırma yoktur; sonraki ve önceki sayfaları belirlemek imkansızdır. Bunun bir sorun olduğunu düşünüyorsanız, lütfen bunu phabricator.wikimedia.org adresine bildirin.",
 	"prp-editinsequence-unknown-error": "Beklenmedik bir hata algılandı. Lütfen bu hatayı phabricator.wikimedia.org adresine bildirin.",

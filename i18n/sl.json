@@ -101,6 +101,8 @@
 	"proofreadpage-button-zoom-in-label": "Povečaj",
 	"proofreadpage-button-zoom-out-label": "Oddalji",
 	"proofreadpage-pageinfo-status": "Stanje pregleda",
+	"prp-editinsequence-beta-label": "Urejanje v zaporedju",
+	"prp-editinsequence-beta-description": "Nov vmesnik za urejanje, ki omogoča hitrejše urejanje strani.",
 	"prp-editinsequence-http-error-pagelist": "Predogled strani ni uspel zaradi težav z omrežjem; poskusite znova pozneje.",
 	"prp-editinsequence-pagination-does-not-exist": "Za to stran ni paginacije, zato ni mogoče določiti naslednje in prejšnje strani. Če menite, da je bila to napaka, jo sporočite na phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Zaznana je bila nepričakovana napaka. Prosimo, sporočite to napako na phabricator.wikimedia.org.",

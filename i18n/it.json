@@ -106,6 +106,8 @@
 	"proofreadpage-button-zoom-in-label": "Ingrandisci",
 	"proofreadpage-button-zoom-out-label": "Rimpicciolisci",
 	"proofreadpage-pageinfo-status": "Stato di correzione",
+	"prp-editinsequence-beta-label": "Modifica in sequenza",
+	"prp-editinsequence-beta-description": "Una nuova interfaccia di modifica che ti consente di modificare le pagine più velocemente.",
 	"prp-editinsequence-http-error-pagelist": "Impossibile caricare la paginazione per problemi di rete, per favore riprova più tardi.",
 	"prp-editinsequence-pagination-does-not-exist": "Non esiste alcuna paginazione per questo Indice, dunque è impossibile determinare le pagine successive e precedenti. Se ritieni che ci sia un errore, segnalalo a phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Si è verificato un errore inatteso. Per favore segnala questo errore su phabricator.wikimedia.org.",

@@ -99,6 +99,8 @@
 	"proofreadpage-button-zoom-in-label": "Aggrandir",
 	"proofreadpage-button-zoom-out-label": "Diminuer",
 	"proofreadpage-pageinfo-status": "Stato de correction de probas",
+	"prp-editinsequence-beta-label": "Modificar in sequentia",
+	"prp-editinsequence-beta-description": "Un nove interfacie de modification que te permitte modificar paginas plus rapidemente.",
 	"prp-editinsequence-http-error-pagelist": "Non poteva obtener le pagination a causa de problemas del rete; per favor tenta lo de novo plus tarde.",
 	"prp-editinsequence-pagination-does-not-exist": "Nulle pagination existe pro iste pagina, lo que rende impossibile le determination del pagina sequente e precedente. Si tu pensa que isto es un error, per favor reporta lo sur phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Un error inexpectate ha essite detegite. Per favor reporta iste error sur phabricator.wikimedia.org.",
