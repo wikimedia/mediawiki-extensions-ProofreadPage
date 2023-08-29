@@ -123,6 +123,8 @@
 	"proofreadpage-button-zoom-in-label": "Zoomer",
 	"proofreadpage-button-zoom-out-label": "Dézoomer",
 	"proofreadpage-pageinfo-status": "État de la relecture",
+	"prp-editinsequence-beta-label": "Modifier en séquence",
+	"prp-editinsequence-beta-description": "Une nouvelle interface d’édition qui vous permet de modifier plus rapidement les pages.",
 	"prp-editinsequence-http-error-pagelist": "Échec de récupération de la pagination en raison de problèmes de réseau. Veuillez essayer à nouveau ultérieurement.",
 	"prp-editinsequence-pagination-does-not-exist": "Aucune pagination n’existe pour cette page, ce qui rend impossible la détermination des pages suivantes et précédentes. Si vous pensez qu’il s’agit d’une erreur, veuillez la signaler sur phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Une erreur inattendue a été détectée. Veuillez la signaler sur phabricator.wikimedia.org.",
