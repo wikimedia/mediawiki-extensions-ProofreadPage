@@ -45,6 +45,7 @@
 	"proofreadpage_header": "Sidhuvud (inkluderas ej):",
 	"proofreadpage_body": "Sidinnehåll (som ska inkluderas):",
 	"proofreadpage_footer": "Sidfot (inkluderas ej):",
+	"proofreadpage_edit_in_sequence": "Redigera sidorna i följd",
 	"proofreadpage_toggleheaders": "visa/dölj sidhuvud",
 	"proofreadpage_quality0_category": "Utan text",
 	"proofreadpage_quality1_category": "Ej korrekturläst",
