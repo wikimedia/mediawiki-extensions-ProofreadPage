@@ -102,6 +102,8 @@
 	"proofreadpage-button-zoom-in-label": "আরও বড়",
 	"proofreadpage-button-zoom-out-label": "আরও ছোট",
 	"proofreadpage-pageinfo-status": "মুদ্রণ সংশোধনের অবস্থা",
+	"prp-editinsequence-http-error-pagelist": "নেটওয়ার্ক সমস্যার কারণে পাতা আনা যায়নি, অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
+	"prp-editinsequence-unknown-error": "একটি অপ্রত্যাশিত ত্রুটি সনাক্ত করা হয়েছে। অনুগ্রহ করে এই ত্রুটিটি phabricator.wikimedia.org -এ জানান।",
 	"prp-editinsequence-http-error-page": "নেটওয়ার্ক সমস্যার কারণে পাতা আনা যায়নি, অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
 	"prp-editinsequence-error": "ক্রমানুসারে-সম্পাদনায় ত্রুটি, সামনে এগোনো যাবে না",
 	"proofreadpage-pagelist-input-preview-button": "পাতার তালিকার প্রাকদর্শন",
