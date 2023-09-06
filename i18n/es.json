@@ -118,6 +118,7 @@
 	"proofreadpage-button-zoom-out-label": "Alejar",
 	"proofreadpage-pageinfo-status": "Estado de corrección",
 	"prp-editinsequence-beta-label": "Edición en serie",
+	"prp-editinsequence-beta-description": "Una nueva interfaz de edición que le permite editar páginas más rápido.",
 	"prp-editinsequence-http-error-pagelist": "No se pudo obtener la paginación debido a problemas de red. Vuelva a intentarlo más tarde.",
 	"prp-editinsequence-pagination-does-not-exist": "No existe paginación para esta página, por lo que es imposible determinar las páginas siguientes y anteriores. Si cree que se trata de un error, infórme de ello en phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Se detectó un error inesperado. Informe de este error en phabricator.wikimedia.org.",
