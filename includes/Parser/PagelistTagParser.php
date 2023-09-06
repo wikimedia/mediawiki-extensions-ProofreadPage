@@ -92,8 +92,6 @@ class PagelistTagParser {
 			$pageNumberExpression = $pageNumber->getFormattedPageNumber( $title->getPageLanguage() );
 			if ( !preg_match( '/^[\p{L}\p{N}\p{Mc}]+$/', $pageNumberExpression ) ) {
 				$pageNumberExpression = $this->parser->recursiveTagParse( $pageNumberExpression );
-			} else {
-				$pageNumberExpression = htmlspecialchars( $pageNumberExpression );
 			}
 
 			$pageTitle = $pagination->getPageTitle( $i );

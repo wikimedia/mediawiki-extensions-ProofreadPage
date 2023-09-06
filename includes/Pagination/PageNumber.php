@@ -5,6 +5,7 @@ namespace ProofreadPage\Pagination;
 use Language;
 use NumberFormatter;
 use ProofreadPage\Pagination\CustomNumberFormatters\BengaliCurrencyFormat;
+use Sanitizer;
 
 /**
  * @license GPL-2.0-or-later
@@ -84,9 +85,9 @@ class PageNumber {
 		$number = (int)$this->number;
 		switch ( $this->displayMode ) {
 			case self::DISPLAY_NORMAL:
-				return $language->formatNumNoSeparators( $number );
+				return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) );
 			case self::DISPLAY_FOLIO:
-				return $language->formatNumNoSeparators( $number ) .
+				return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) ) .
 					$this->formatRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
 				return self::formatICU( $language, 'roman', $number ) .
@@ -120,9 +121,9 @@ class PageNumber {
 		$number = (int)$this->number;
 		switch ( $this->displayMode ) {
 			case self::DISPLAY_NORMAL:
-				return $language->formatNumNoSeparators( $number );
+				return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) );
 			case self::DISPLAY_FOLIO:
-				return $language->formatNumNoSeparators( $number ) .
+				return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) ) .
 					$this->rawRectoVerso();
 			case self::DISPLAY_FOLIOHIGHROMAN:
 				return self::formatICU( $language, 'roman', $number ) .
