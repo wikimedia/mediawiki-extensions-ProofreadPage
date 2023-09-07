@@ -21,7 +21,8 @@
 			"Sanbec",
 			"Sukanya121",
 			"Themasterriot",
-			"Translationista"
+			"Translationista",
+			"No se"
 		]
 	},
 	"nstab-page": "Página",
@@ -55,7 +56,7 @@
 	"proofreadpage_header": "Cabecera (noinclude):",
 	"proofreadpage_body": "Cuerpo de la página (para ser transcluido):",
 	"proofreadpage_footer": "Pie de página (noinclude):",
-	"proofreadpage_edit_in_sequence": "Editar páginas en secuencia",
+	"proofreadpage_edit_in_sequence": "Editar en serie",
 	"proofreadpage_toggleheaders": "cambiar la visibilidad de las secciones noinclude",
 	"proofreadpage_quality0_category": "Sin texto",
 	"proofreadpage_quality1_category": "No corregido",
