@@ -8,6 +8,7 @@ use Scribunto_LuaEngineTestBase;
  * Tests for the genetic aspects of the ProofreadPage Lua libs
  *
  * @group Database
+ * @covers \ProofreadPage\ProofreadPageLuaLibrary
  */
 class ProofreadPageLibraryTest extends Scribunto_LuaEngineTestBase {
 	/** @inheritDoc */
