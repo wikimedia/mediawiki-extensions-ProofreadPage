@@ -540,7 +540,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 			$content,
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
 		);
-		$actual = $output->getRawText();
+		$actual = $output->getText();
 		$this->assertStringContainsString( '<div class="redirectMsg">', $actual );
 		$this->assertMatchesRegularExpression( '!<a[^<>]+>' . $redirTarget . '</a>!', $actual );
 	}
