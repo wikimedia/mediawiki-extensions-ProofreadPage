@@ -3,7 +3,8 @@
 		"authors": [
 			"Babanwalia",
 			"Satdeep gill",
-			"Bgo eiu"
+			"Bgo eiu",
+			"Kuldeepburjbhalaike"
 		]
 	},
 	"nstab-page": "ਸਫ਼ਾ",
@@ -78,6 +79,10 @@
 	"proofreadpage-button-zoom-in-label": "ਅੰਦਰ ਨੂੰ ਜ਼ੂਮ ਕਰੋ",
 	"proofreadpage-button-toggle-layout-label": "ਖੜ੍ਹਵਾਂ/ਲੇਟਵਾਂ ਖਾਕਾ",
 	"proofreadpage-pageinfo-status": "ਪਰੂਫ਼ਰੀਡਿੰਗ ਦਾ ਦਰਜਾ",
+	"proofreadpage-pagelist-input-preview-button": "ਪੇਜਲਿਸਟ ਦੀ ਝਲਕ",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "ਕੋਈ <pagelist /> ਟੈਗ ਨਹੀਂ ਖੋਜੇ ਗਏ।",
+	"proofreadpage-pagelist-type": "ਪੰਨਾ ਨੰਬਰ ਦੀ ਕਿਸਮ: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "ਇਸ ਪੰਨੇ ਨੂੰ ਪੰਨਾ ਨੰਬਰ ਦਿੱਤਾ ਗਿਆ ਹੈ: $1",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ਨਾਮਸਥਾਨ ਵਿੱਚ ਹੈਡਰ ਅਤੇ ਫ਼ੁਟਰ ਦੀ ਜਗ੍ਹਾ ਦਿਖਾਓ",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ਨਾਮਸਥਾਨ ਵਿੱਚ ਸੋਧ ਕਰਦੇ ਸਮੇਂ ਲੇਟਵੇਂ ਖਾਕੇ ਦੀ ਵਰਤੋਂ ਕਰੋ",
 	"proofreadpage-indexquality-alt": "$1 ਪ੍ਰਮਾਣਿਤ {{PLURAL:$1|ਸਫ਼ਾ|ਸਫ਼ੇ}}, $2 ਸਿਰਫ਼ ਪਰੂਫ਼ਰੀਡ {{PLURAL:$2|ਕੀਤਾ ਸਫ਼ਾ| ਕੀਤੇ ਸਫ਼ੇ}} ਅਤੇ $3 ਬਗੈਰ ਪਰੂਫ਼ਰੀਡ {{PLURAL:$3|ਕੀਤਾ ਸਫ਼ਾ|ਕੀਤੇ ਸਫ਼ੇ}}",
