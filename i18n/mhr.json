@@ -3,7 +3,8 @@
 		"authors": [
 			"Kareyac",
 			"Сай",
-			"Lifeway"
+			"Lifeway",
+			"Mxalexandrov86"
 		]
 	},
 	"nstab-page": "Лаштык",
@@ -90,10 +91,15 @@
 	"proofreadpage-button-reset-zoom-label": "Тӱҥалтыш кугыт",
 	"proofreadpage-button-rotate-left-label": "Шолашке савыралаш",
 	"proofreadpage-button-rotate-right-label": "Пурлашке савыралаш",
+	"proofreadpage-button-toggle-layout-label": "Вертикальный/горизонталный пале",
 	"proofreadpage-button-toggle-visibility-label": "Тиде велыжын кӱшыл да ӱлыл ужашыжым ончыкташ/шылташ",
 	"proofreadpage-button-zoom-in-label": "Лишемдаш",
 	"proofreadpage-button-zoom-out-label": "Тораҥдаш",
 	"proofreadpage-pageinfo-status": "Лудын лекме шотлык",
+	"prp-editinsequence-http-error-pagelist": "Вот ден экшыклан кӧра велыж-влаклан шелмаш лийын огыл, варарак угыч тӧчен ончо.",
+	"prp-editinsequence-pagination-does-not-exist": "Тиде велыжлан велыж-влаклан шелмаш уке, садлан ончылно да вара шогышо велыжым палемдаш ок лий.Тиде йоҥлыш лийын ман шотлет гын, тиде йоҥлыш нерген тиде адрес ден палдарыза phabricator.wikimedia.org.",
+	"prp-editinsequence-unknown-error": "Вучыдымо йоҥлыш лектын. Поро лийза, тиде йоҥлыш нерген увертарыза phabricator.wikimedia.org.",
+	"prp-editinsequence-http-error-page": "Вот ден экшыклан кӧра тиде велыжым лукмо огыл, варарак угыч тӧчен ончо.",
 	"proofreadpage-pagelist-input-preview-button": "Велыж спискым ончылгоч ончымаш",
 	"proofreadpage-pagelist-dialog-update-button": "Велыж спискым уэмдаш",
 	"proofreadpage-pagelist-dialog-discard-changes": "Вашталтышым чараш",

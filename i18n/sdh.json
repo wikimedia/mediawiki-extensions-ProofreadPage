@@ -2,12 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Kurdbuddha",
-			"Paraw2"
+			"Paraw2",
+			"TerranBoy"
 		]
 	},
 	"proofreadpage_image": "وێنە",
 	"proofreadpage_quality0_category": "بێ دەق",
 	"proofreadpage_quality2_category": "کێشەدار",
+	"proofreadpage_specialpage_filterby_all": "گشت",
 	"proofreadpage_specialpage_label_key": "مینە",
-	"content-model-proofread-page": "پەڕە: پەرە"
+	"proofreadpage_source": "سەرچاوە",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "دەسمیەت",
+	"content-model-proofread-page": "پەڕەێ کتاو",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "پەڕەیل",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نە"
 }
