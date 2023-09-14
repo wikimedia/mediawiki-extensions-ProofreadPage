@@ -90,15 +90,29 @@
 		"ext.proofreadpage.page": {
 			"styles": "page/ext.proofreadpage.page.css"
 		},
+		"ext.proofreadpage.page.edit.styles": {
+			"styles": [
+				"ext.proofreadpage.base.css",
+				"page/ext.proofreadpage.page.css",
+				"page/ext.proofreadpage.page.edit.css",
+				"page/PageQualityInputWidget.less"
+			]
+		},
 		"ext.proofreadpage.page.edit": {
-			"styles": "page/ext.proofreadpage.page.edit.css",
 			"packageFiles": [
 				"page/ext.proofreadpage.page.edit.js",
-				"page/OpenseadragonController.js"
+				"page/OpenseadragonController.js",
+				"page/PageQualityInputWidget.js"
+			],
+			"styles": [
+				"ext.proofreadpage.base.css",
+				"page/ext.proofreadpage.page.edit.css",
+				"page/PageQualityInputWidget.less"
 			],
 			"dependencies": [
 				"ext.proofreadpage.base",
 				"ext.proofreadpage.page",
+				"ext.proofreadpage.page.edit.styles",
 				"ext.proofreadpage.openseadragon",
 				"mediawiki.user",
 				"user.options",

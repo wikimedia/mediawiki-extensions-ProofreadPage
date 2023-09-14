@@ -1,0 +1,38 @@
+.prp-pageQualityInputWidget {
+	.oo-ui-fieldLayout {
+		display: inline-block;
+	}
+
+	// Hide radio labels.
+	.oo-ui-fieldLayout.oo-ui-fieldLayout-align-inline > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header {
+		display: none;
+	}
+
+	// Move status label to be after the radio buttons.
+	.oo-ui-fieldLayout.oo-ui-labelElement > .oo-ui-fieldLayout-body {
+		align-items: center;
+		flex-direction: row-reverse;
+	}
+
+	.oo-ui-radioSelectWidget {
+		display: flex;
+
+		.oo-ui-radioOptionWidget {
+			display: block;
+			// The HTML structure here changes when the widget is infused, so we reset the spacing to match what it is before JS loads.
+			padding: 0;
+			margin: 0 1em 0 0;
+		}
+	}
+
+	.oo-ui-radioInputWidget,
+	.oo-ui-radioOptionWidget .oo-ui-radioInputWidget {
+		width: auto;
+		border-radius: 50%;
+		border-width: 0.35714em;
+		border-style: solid;
+		box-shadow: 0 0 0 1px rgba( 0, 0, 0, 0.25 );
+		/* Force inline-block in Apex */
+		display: inline-block;
+	}
+}

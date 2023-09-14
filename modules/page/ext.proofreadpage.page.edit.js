@@ -1,4 +1,5 @@
 var OpenSeadragonController = require( './OpenseadragonController.js' );
+var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 
 ( function () {
 	'use strict';
@@ -130,26 +131,6 @@ var OpenSeadragonController = require( './OpenseadragonController.js' );
 	function setupPreferences() {
 		toggleHeaders( getBooleanUserOption( 'proofreadpage-showheaders' ) );
 		toggleLayout( getBooleanUserOption( 'proofreadpage-horizontal-layout' ) );
-	}
-
-	/**
-	 * Init the automatic fill of the summary input box
-	 */
-	function setupPageQuality() {
-		// eslint-disable-next-line no-jquery/no-global-selector
-		$( 'input[name="wpQuality"]' ).on( 'click', function () {
-			// eslint-disable-next-line no-jquery/no-global-selector
-			var $summary = $( 'input#wpSummary, #wpSummary > input' ),
-				// The following messages are used here:
-				// * proofreadpage_quality0_summary
-				// * proofreadpage_quality1_summary
-				// * proofreadpage_quality2_summary
-				// * proofreadpage_quality3_summary
-				// * proofreadpage_quality4_summary
-				pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_summary' ).plain(),
-				summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
-			$summary.val( '/* ' + pageQuality + ' */ ' + summary );
-		} );
 	}
 
 	/**
@@ -314,8 +295,13 @@ var OpenSeadragonController = require( './OpenseadragonController.js' );
 		}
 
 		initEnvironment();
-		setupPageQuality();
 		$img.hide();
+
+		// Set up page quality widget.
+		mw.proofreadpage.PageQualityInputWidget = PageQualityInputWidget;
+		$editForm.find( '.prp-pageQualityInputWidget' ).each( function () {
+			OO.ui.infuse( this );
+		} );
 
 		// Set up the preferences (header/footer and horizontal/vertical layout)
 		// when WikiEditor is active as well as when it's not.
