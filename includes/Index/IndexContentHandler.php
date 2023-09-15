@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Index;
 
-use Article;
 use Content;
 use IContextSource;
 use MediaWiki\Content\Renderer\ContentParseParams;
@@ -531,9 +530,11 @@ class IndexContentHandler extends TextContentHandler {
 		if ( $content instanceof IndexRedirectContent ) {
 			$parserOutput->addLink( $content->getRedirectTarget() );
 			if ( $cpoParams->getGenerateHtml() ) {
-				$parserOutput->setText( Article::getRedirectHeaderHtml(
-					$title->getPageLanguage(), $content->getRedirectTarget()
-				) );
+				$parserOutput->setText( '' );
+				$parserOutput->setRedirectHeader(
+					MediaWikiServices::getInstance()->getLinkRenderer()->makeRedirectHeader(
+						$title->getPageLanguage(), $content->getRedirectTarget()
+					) );
 				$parserOutput->addModuleStyles( [ 'mediawiki.action.view.redirectPage' ] );
 			}
 		} else {
