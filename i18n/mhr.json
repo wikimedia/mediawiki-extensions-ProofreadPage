@@ -3,10 +3,11 @@
 		"authors": [
 			"Сай",
 			"Kareyac",
-			"Lifeway"
+			"Lifeway",
+			"Mxalexandrov86"
 		]
 	},
-	"nstab-page": "Лаштык",
+	"nstab-page": "Велыж",
 	"nstab-index": "Индекс",
 	"tooltip-ca-nstab-page": "Книга велыжым ончалаш",
 	"tooltip-ca-nstab-index": "Книга индексым ончымаш",
@@ -76,11 +77,18 @@
 	"proofreadpage-button-zoom-out-label": "Тораҥдаш",
 	"proofreadpage-button-reset-zoom-label": "Тӱҥалтыш кугыт",
 	"proofreadpage-button-zoom-in-label": "Лишемдаш",
+	"proofreadpage-button-toggle-layout-label": "Вертикальный/горизонталный пале",
 	"proofreadpage-pageinfo-status": "Лудын лекме шотлык",
 	"proofreadpage-pagelist-input-preview-button": "Велыж спискым ончылгоч ончымаш",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Тӱҥалтыш вики-текстыште икте деч шукырак <pagelist />  тегым мумо.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<Pagelist /> тег уке.",
+	"proofreadpage-pagelist-parsing-error-php": "Сервер ужашыште pagelist тегым лончылымо годым тиде йоҥлышым мумо, $1",
+	"proofreadpage-pagelist-parsing-error-unknown": "Вучыдымо йоҥлыш лектын. Поро лий, тиде йоҥлыш нерген консоль гыч лог ден пырля увертаре phabricator.wikimedia.org.",
+	"proofreadpage-pagelist-dialog-title": "Велыж спискым тӧрлымаш $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Вашталтышым шындаш",
+	"proofreadpage-pagelist-imageurlnotfound": "Тиде сканироватлыме пашалан миниатюр источникым мумо огыл.",
 	"proofreadpage-pagelist-type": "Велыж номер тӱрлылык: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "Тиде велыжлан тыгай номерым пумо:$1",
 	"content-model-proofread-page": "Книга велыж",
 	"content-model-proofread-index": "Книга индекс",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Велыжым ойырымаш",
