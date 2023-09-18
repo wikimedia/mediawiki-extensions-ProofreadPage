@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Akamycoco",
+			"Amire80",
 			"Lalotahes"
 		]
 	},
@@ -63,8 +64,8 @@
 	"proofreadpage_specialpage_searcherrortext": "kaki:iman ’injin ’oka’ nanaw ’i patawaw. pak’imahowiS ’iSo’on kin ’awhay.",
 	"proofreadpage_source": "kawa:i’an",
 	"proofreadpage_source_message": " ka’alingo’an panpen nom paskayzaeh ka hini kina:at",
-	"action-pagequality": "ponrowa’ ray ye:mien  ’ima kayzaeh\nkaSakira:a’an",
-	"action-pagequality-admin": "noka ye:miyen  bienji  kaSa:kira:a’an ’inokay ’eleti ka bienji",
+	"action-pagequality": "ponrowa’ ray ye:mien ’ima kayzaeh kaSakira:a’an",
+	"action-pagequality-admin": "noka ye:miyen bienji kaSa:kira:a’an ’inokay ’eleti ka bienji",
 	"proofreadpage-section-tools": "nom paponrowa’",
 	"proofreadpage-group-zoom": "kapak’inhana:an",
 	"proofreadpage-group-other": "’aroma’",

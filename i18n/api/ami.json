@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Akamycoco"
+			"Akamycoco",
+			"Amire80"
 		]
 	},
 	"apihelp-query+proofread-summary": "minokas tayra i lihaf no pisalof no hatini a felih.",
 	"apihelp-query+proofread-example-1": "minokas tayra i 250 a pisongila’ no pipanganganan to felih",
 	"apihelp-query+proofreadinfo-summary": "minokas tayra i lihaf no pitenak ato pisilsil no ProofreadPage",
-	"apihelp-query+proofreadinfo-param-prop": "o aalaen a pinangan no pisalof：\n;namespaces: pakayni i pipanganganan no lihaf  {{ns:Page}}”ato“{{ns:Index}}” 。\n;qualitylevels: misongila’ to kasaselal no ce-lyang a tilid.",
+	"apihelp-query+proofreadinfo-param-prop": "o aalaen a pinangan no pisalof：\n;namespaces: pakayni i pipanganganan no lihaf {{ns:Page}}”ato“{{ns:Index}}” 。\n;qualitylevels: misongila’ to kasaselal no ce-lyang a tilid.",
 	"apihelp-query+proofreadinfo-example-1": "Return default information",
 	"apihelp-query+proofreadinfo-example-3": "minokas tayra i pipanganganan"
 }

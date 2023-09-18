@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"McDutchie"
 		]
 	},
@@ -8,7 +9,7 @@
 	"apihelp-query+imageforpage-param-prop": "Qual typos de imagines o proprietates de imagines restituer pro un fornite pagina in le spatio de nomines \"Pagina:\".",
 	"apihelp-query+imageforpage-paramvalue-prop-filename": "Restitue le nomine de file associate con le pagina consultate",
 	"apihelp-query+imageforpage-paramvalue-prop-size": "Restitue le dimension del imagine associate con le pagina consultate",
-	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Restitue le adresse URL del imagine a dimension complete  associate con le pagina consultate",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Restitue le adresse URL del imagine a dimension complete associate con le pagina consultate",
 	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Restitue un lista que contine le adresses URL de imagines a 1 vice, 1,5 vices e 2 vices le dimension complete del imagine associate con le pagina consultate",
 	"apierror-proofreadpage-invalidindex": "Titulo de indice \"$1\" non valide.",
 	"apihelp-query+defaultcontentforpage-summary": "Isto forni le contento predefinite pro un pagina specific in le spatio de nomines \"Page:\".\n\nLe contento predefinite es wikitexto brute (que pote includer codice HTML crude proveniente de stratos de texto de libro non fidite). Illo non debe esser usate in HTML sin escappar o interpretar/remover le codice!",

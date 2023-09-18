@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Arjunaraoc",
 			"Chaduvari",
 			"Kiranmayee",
@@ -80,7 +81,7 @@
 	"proofreadpage_styles": "శైలులు",
 	"action-pagequality": "పేజీ నాణ్యత జండా మార్చు",
 	"right-pagequality": "పేజీ నాణ్యత జెండాను మార్చు",
-	"action-pagequality-admin": "పేజీ నాణ్యత జండాకు  పరిమితులు లేని మార్పులు",
+	"action-pagequality-admin": "పేజీ నాణ్యత జండాకు పరిమితులు లేని మార్పులు",
 	"right-pagequality-admin": "పేజీ నాణ్యత జండాకు పరిమితులు లేని మార్పులు",
 	"proofreadpage-section-tools": "అచ్చుదిద్దు ఉపకరణాలు",
 	"proofreadpage-group-zoom": "పెద్దది చేయి",

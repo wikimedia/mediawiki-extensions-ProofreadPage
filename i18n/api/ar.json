@@ -3,13 +3,14 @@
 		"authors": [
 			"Abanima",
 			"Alshamiri1",
+			"Amire80",
 			"Meno25"
 		]
 	},
 	"apihelp-query+imageforpage-summary": "يعرض مسبقًا ويوفر عناوين URL للصور لصفحة معينة في مساحة الاسم \"الصفحة:\".",
 	"apihelp-query+imageforpage-param-prop": "أنواع الصور أو خصائص الصور التي سيتم عرضها لصفحة معينة في مساحة الاسم \"الصفحة:\".",
 	"apierror-proofreadpage-invalidindex": "عنوان فهرس غير صالح \" $1 \".",
-	"apihelp-query+defaultcontentforpage-summary": "يوفر المحتوى الافتراضي لصفحة معينة في نطاق  \"الصفحة:\".! N !! N! المحتوى الافتراضي هو نص ويكي خام (من المحتمل أن يتضمنوسوم HTML الأولية من طبقات نص الكتاب غير الموثوق بها). يجب ألا يتم استخدامه في HTML بدون إلغاء / بدون تحليل!",
+	"apihelp-query+defaultcontentforpage-summary": "يوفر المحتوى الافتراضي لصفحة معينة في نطاق \"الصفحة:\".! N !! N! المحتوى الافتراضي هو نص ويكي خام (من المحتمل أن يتضمنوسوم HTML الأولية من طبقات نص الكتاب غير الموثوق بها). يجب ألا يتم استخدامه في HTML بدون إلغاء / بدون تحليل!",
 	"apihelp-query+proofread-summary": "يرجع معلومات حول حالة المراجعة للصفحات المعطاة.",
 	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
 	"apihelp-query+proofreadinfo-summary": "يرجع معلومات حول ضبط امتداد ProofreadPage.",

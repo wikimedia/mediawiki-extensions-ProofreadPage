@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Akamycoco",
+			"Amire80",
 			"Benel",
 			"Bunukwiki"
 		]
 	},
 	"apihelp-query+proofread-summary": "patatiku i nipanutekan a kasabelih ayza misyawtuy setyitase a latuh.",
-	"apihelp-query+proofread-example-1": "patatiku i 250 pangangan tu  kasabelih misyawtuy setyitase",
+	"apihelp-query+proofread-example-1": "patatiku i 250 pangangan tu kasabelih misyawtuy setyitase",
 	"apihelp-query+proofreadinfo-summary": "nu patatikuay i ProofreadPage masudat mapazengay a latuh.",
 	"apihelp-query+proofreadinfo-param-prop": "u maalaay misyawtuy a susin:\n;namespaces:makayzaay i “{{ns:Page}}” atu“{{ns:Index}}” u ngala’ pangangan a latuh.\n;qualitylevels:celyang kasaselel pisyawtuy liseto.",
 	"apihelp-query+proofreadinfo-example-1": "patatiku pataayaw tu latuh",

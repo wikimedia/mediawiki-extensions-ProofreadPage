@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"BaRaN6161 TURK",
 			"Can",
 			"Erdemaslancan",
@@ -101,7 +102,7 @@
 	"right-pagequality": "Sayfa kalitesi işaretini değiştir",
 	"action-pagequality-validate": "bir sayfanın sayfa niteliğini doğrulanmış olarak ayarlamaya",
 	"right-pagequality-validate": "Bir sayfanın sayfa niteliğini doğrulanmış olarak ayarla",
-	"action-pagequality-admin": "sayfa niteliği bayrağını kısıtlamasız  düzenlemeye",
+	"action-pagequality-admin": "sayfa niteliği bayrağını kısıtlamasız düzenlemeye",
 	"right-pagequality-admin": "Sayfa niteliği bayrağını kısıtlamasız düzenle",
 	"proofreadpage-section-tools": "İstinsah araçları",
 	"proofreadpage-group-zoom": "Yakınlaştır",

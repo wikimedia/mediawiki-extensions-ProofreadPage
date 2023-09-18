@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Lalotahes"
 		]
 	},
-	"apihelp-query+proofread-example-1": "lobih 250 karo:o’an  ye:miyen  ka paponrowa’  zhwangtay",
+	"apihelp-query+proofread-example-1": "lobih 250 karo:o’an ye:miyen ka paponrowa’ zhwangtay",
 	"apihelp-query+proofreadinfo-example-1": "lobih ray pinyunbi’ ka pinakSekla’ ka:i’",
 	"apihelp-query+proofreadinfo-example-3": "lobih ray karo:o’an"
 }

@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Arsenekoumyk"
 		]
 	},
 	"apihelp-query+proofread-summary": "Гёрсетилген сагьифаланы гьалиги тюзелтохув турушун гьакъында маълюмат къайтара",
 	"apihelp-query+proofread-example-1": "250 атаралыкъдагъы сагьифаланы тюзелтохув турушун къайтара",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage уьстевлюкню конфигурациясыны гьакъында маълюмат къайтара",
-	"apihelp-query+proofreadinfo-param-prop": "Къайсы тюзелтохув хаслыкъланы чыгъармагъа:\n;атаралыкълар: \"{{ns:Page}}\" ва \"{{ns:Index}}\"  атаралыкъланы утстюнден маълюматлар.\n;сан яны даражалар: сан яны даражаланы сиягьы",
+	"apihelp-query+proofreadinfo-param-prop": "Къайсы тюзелтохув хаслыкъланы чыгъармагъа:\n;атаралыкълар: \"{{ns:Page}}\" ва \"{{ns:Index}}\" атаралыкъланы утстюнден маълюматлар.\n;сан яны даражалар: сан яны даражаланы сиягьы",
 	"apihelp-query+proofreadinfo-example-1": "Барсайын маълюматны къайтармагъа",
 	"apihelp-query+proofreadinfo-example-3": "Атаралакъ уьстюнде маълюматны къайтармагъа"
 }
