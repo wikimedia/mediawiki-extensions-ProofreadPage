@@ -17,7 +17,8 @@
 			"Stultiwikia",
 			"Suelnur",
 			"ToprakM",
-			"Vito Genovese"
+			"Vito Genovese",
+			"Amire80"
 		]
 	},
 	"nstab-page": "Sayfa",
@@ -99,7 +100,7 @@
 	"proofreadpage_styles_message": "Bu metne uygulanan CSS stilleri",
 	"action-pagequality": "sayfa kalitesi işaretini değiştir",
 	"right-pagequality": "Sayfa kalitesi işaretini değiştir",
-	"action-pagequality-admin": "sayfa niteliği bayrağını kısıtlamasız  düzenlemeye",
+	"action-pagequality-admin": "sayfa niteliği bayrağını kısıtlamasız düzenlemeye",
 	"right-pagequality-admin": "Sayfa niteliği bayrağını kısıtlamasız düzenle",
 	"proofreadpage-section-tools": "İstinsah araçları",
 	"proofreadpage-group-zoom": "Yakınlaştır",

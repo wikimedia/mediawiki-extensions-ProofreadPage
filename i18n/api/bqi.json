@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mogoeilor"
+			"Mogoeilor",
+			"Amire80"
 		]
 	},
 	"apihelp-query+proofread-description": "دۊنسمٱندیٱل ناٛ مئن هال و بال ڤانیٱری بٱلگاٛ نشۊن دیاری اکوناٛ.",
-	"apihelp-query+proofread-summary": "ڤورگشت کاری دۊنسمٱندیٱل میزۊنکاری دیندا دیس  حال و بال بلگاٛیٱل پیش خۊن ایساٛنی.",
+	"apihelp-query+proofread-summary": "ڤورگشت کاری دۊنسمٱندیٱل میزۊنکاری دیندا دیس حال و بال بلگاٛیٱل پیش خۊن ایساٛنی.",
 	"apihelp-query+proofread-example-1": "هال و بال ڤانیٱری بٱلگاٛیٱل نٱ سی نومجا نومجا۲۵۰ نشۊن دیاری اٛکوناٛ.",
 	"apihelp-query+proofreadinfo-description": "دۊنسمٱندیٱل سی ٱندوم دیار کونی ڤانیٱری بٱلگاٛیٱل نٱ نشۊن دیاری اٛکوناٛ.",
 	"apihelp-query+proofreadinfo-summary": "ڤورگشت کاری دۊنسمٱندیٱل میزۊنکاری دیندا دیس بلگاٛیٱل پیش خۊن.",
