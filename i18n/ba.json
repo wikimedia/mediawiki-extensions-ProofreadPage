@@ -8,7 +8,8 @@
 			"ҒатаУлла",
 			"Arxivist",
 			"MR973",
-			"З. ӘЙЛЕ"
+			"З. ӘЙЛЕ",
+			"Sagan"
 		]
 	},
 	"nstab-page": "Бит",
@@ -78,12 +79,12 @@
 	"right-pagequality-admin": "биттең сифаты флагын сикһеҙ төҙәтеү",
 	"proofreadpage-section-tools": "Төҙәтеүсе ҡоралдары",
 	"proofreadpage-group-zoom": "Ҙурайтыу",
-	"proofreadpage-group-other": "Икенсе",
-	"proofreadpage-button-toggle-visibility-label": "Биттең өҫкө һәм аҫҡы яғын күрһәтергә/йәшерергә",
+	"proofreadpage-group-other": "Башҡа",
+	"proofreadpage-button-toggle-visibility-label": "Биттең өҫкө һәм аҫҡы өлөшөн күрһәтергә/йәшерергә",
 	"proofreadpage-button-zoom-out-label": "Йырағайтырға",
-	"proofreadpage-button-reset-zoom-label": "Сығанаҡ ҙурлыҡ",
+	"proofreadpage-button-reset-zoom-label": "Нөсхә күләме",
 	"proofreadpage-button-zoom-in-label": "Яҡынайтырға",
-	"proofreadpage-button-toggle-layout-label": "Текә/арҡыры билдә",
+	"proofreadpage-button-toggle-layout-label": "Вертикаль/горизонталь билдә",
 	"proofreadpage-pageinfo-status": "мөхәррирләү статусы",
 	"proofreadpage-pagelist-input-preview-button": "Биттәр исемлеген алдан ҡарау",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Бвштағы викитекста  <pagelist /> тегы берҙән күберәк осрай.",

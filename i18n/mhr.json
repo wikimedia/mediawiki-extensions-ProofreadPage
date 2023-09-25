@@ -89,6 +89,8 @@
 	"proofreadpage-pagelist-imageurlnotfound": "Тиде сканироватлыме пашалан миниатюр источникым мумо огыл.",
 	"proofreadpage-pagelist-type": "Велыж номер тӱрлылык: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Тиде велыжлан тыгай номерым пумо:$1",
+	"proofreadpage-preferences-showheaders-label": "Лӱм кумдыкышто тӧрлымӧ годым кӱшыл да ӱлыл колонтитул кышкарым ончыкташ {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "Лӱм кышкарыште тӧрлымӧ паша годым горизонтал компоновкым кучылт {{ns:page}}",
 	"content-model-proofread-page": "Книга велыж",
 	"content-model-proofread-index": "Книга индекс",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Велыжым ойырымаш",
