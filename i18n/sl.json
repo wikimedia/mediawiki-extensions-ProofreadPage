@@ -159,7 +159,7 @@
 	"proofreadpage-preferences-animation-time-label": "Čas animacije prestavljanja in povečave (med 0 in 2 sekundama, privzeto: 0). Več je bolj gladko, manj je hitreje.",
 	"proofreadpage-preferences-showheaders-label": "Pokaži glavo in nogo, ko urejaš v imenskem prostoru {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Pri urejanju v imenskem prostoru {{ns:page}} uporabi vodoravno postavitev",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Za urejanje seznama strani uporabite nov poskusni vizualni način.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Za urejanje seznama strani uporabi nov poskusni vizualni način.",
 	"proofreadpage-preferences-zoom-factor-label": "Faktor povečave pri pomiku (med 1 in 2, privzeto: 1,2). Večji faktor pomeni večji pomik na korak.",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Pokaži pogovorno okno za povzetek urejanja vsakič, ko shranim stran v načinu EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "Izvedi to dejanje po shranjevanju strani v načinu EditInSequence",
