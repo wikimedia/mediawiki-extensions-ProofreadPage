@@ -21,6 +21,6 @@
 		"grunt-replace": "2.0.2",
 		"grunt-stylelint": "0.19.0",
 		"stylelint-config-wikimedia": "0.16.1",
-		"wdio-mediawiki": "2.2.0"
+		"wdio-mediawiki": "2.3.0"
 	}
 }
