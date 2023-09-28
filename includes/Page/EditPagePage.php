@@ -8,11 +8,11 @@ use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserOptionsLookup;
-use OOUI;
+use OOUI\FieldLayout;
 use ProofreadPage\Context;
 use ProofreadPage\EditInSequence;
+use ProofreadPage\OOUI\PageQualityInputWidget;
 use ReadOnlyMode;
-use User;
 
 /**
  * @license GPL-2.0-or-later
@@ -108,7 +108,7 @@ class EditPagePage extends EditPage {
 		if ( $this->userOptionsLookup->getOption( $this->context->getUser(), 'usebetatoolbar' ) ) {
 			$out->addModules( 'ext.wikiEditor' );
 		}
-		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
+		$out->addModuleStyles( [ 'ext.proofreadpage.page.edit.styles' ] );
 
 		$jsVars = $this->pageDisplayHandler->getPageJsConfigVars( $this->getTitle(), $content );
 		$out->addJsConfigVars( $jsVars );
@@ -159,67 +159,41 @@ class EditPagePage extends EditPage {
 			return $checkboxes;
 		}
 
-		$user = $this->context->getUser();
-		$checkboxes['wpr-pageStatus'] = $this->buildQualityEditWidget( $user, $tabindex );
-
-		return $checkboxes;
-	}
-
-	/**
-	 * @param User $user
-	 * @param int &$tabindex
-	 * @return OOUI\Widget
-	 * @suppress PhanUndeclaredMethod getLevel
-	 */
-	private function buildQualityEditWidget( User $user, &$tabindex ) {
-		/** @var PageLevel $oldLevel */
+		// @phan-suppress-next-line PhanUndeclaredMethod
 		$oldLevel = $this->getCurrentContent()->getLevel();
-		/** @var PageContent $content */
-		$content = $this->toEditContent( $this->textbox1 );
-		$currentLevel = $content->getLevel();
-		/** @var boolean $enabled is the widget enabled? */
-		$enabled = $this->permissionManager->userHasRight( $user, 'pagequality' );
-
-		$html = '';
+		$hasRight = $this->permissionManager->userHasRight( $this->context->getUser(), 'pagequality' );
+		$levels = [];
 		for ( $level = 0; $level <= 4; $level++ ) {
-			$newLevel = new PageLevel( $level, $user );
+			$newLevel = new PageLevel( $level, $this->context->getUser() );
 			$changeAllowed = $oldLevel->isChangeAllowed( $newLevel, $this->permissionManager );
 
 			// Only show valid transitions for the user, unless the user is logged out
 			// then show them all, but they'll be disabled.
-			if ( !$changeAllowed && $enabled ) {
+			if ( !$changeAllowed && $hasRight ) {
 				continue;
 			}
-
-			$msg = 'proofreadpage_quality' . $level . '_category';
-
-			$html .= new OOUI\RadioInputWidget( [
-				'name' => 'wpQuality',
-				'classes' => [ 'prp-quality-radio quality' . $level ],
-				'value' => $level,
-				'tabIndex' => ++$tabindex,
-				'title' => $this->context->msg( $msg ),
-				'selected' => $level === $currentLevel->getLevel(),
-				'disabled' => !$enabled,
-			] );
+			$levels[] = $level;
 		}
 
-		$msg = $enabled ? "proofreadpage_page_status" : "proofreadpage_page_status_logged_out";
+		$pageQualityInputWidget = new PageQualityInputWidget( [
+			'tabindex' => $tabindex,
+			'disabled' => !$hasRight,
+			'levels' => $levels,
+			'value' => $oldLevel->getLevel(),
+		] );
 
-		$content =
-			Html::openElement( 'span', [ 'id' => 'wpQuality-container' ] ) .
-			$html .
-			Html::closeElement( 'span' ) .
-			Html::openElement( 'label', [ 'for' => 'wpQuality-container' ] ) .
-			$this->context->msg( $msg )
-				->title( $this->getTitle() )->parse() .
-			Html::closeElement( 'label' );
-		return new OOUI\Widget(
-			[
-				'classes' => [ 'prp-quality-widget' ],
-				'content' => new OOUI\HtmlSnippet( $content )
-			]
-		);
+		$labelMsg = $pageQualityInputWidget->isDisabled()
+			? 'proofreadpage_page_status_logged_out'
+			: 'proofreadpage_page_status';
+		$fieldLayout = new FieldLayout( $pageQualityInputWidget, [
+			'label' => $this->context->msg( $labelMsg ),
+			// This ID and the .prp-quality-widget class are deprecated, but still used in various user scripts etc.
+			'id' => 'wpQuality-container',
+			'classes' => [ 'prp-page-edit-QualityInputWidget-field', 'prp-quality-widget' ],
+		] );
+
+		$checkboxes['wpr-pageStatus'] = $fieldLayout;
+		return $checkboxes;
 	}
 
 	/**

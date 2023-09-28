@@ -1,19 +1,4 @@
 /* Quality links */
-.prp-quality-radio {
-	border-radius: 50%;
-	border: 0.35714em solid;
-	box-shadow: 0 0 0 1px rgba( 0, 0, 0, 0.25 );
-	/* Force inline-block in Apex */
-	display: inline-block;
-}
-
-.oo-ui-horizontalLayout > .oo-ui-widget.prp-quality-widget {
-	vertical-align: top;
-}
-
-.prp-quality-widget > label {
-	margin-left: 0.5em;
-}
 
 /* stylelint-disable selector-class-pattern */
 .quality4 {

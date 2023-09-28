@@ -62,3 +62,13 @@
 .prp-page-content .CodeMirror {
 	flex-grow: 1;
 }
+
+.prp-page-edit-QualityInputWidget-field.oo-ui-fieldLayout.oo-ui-labelElement.oo-ui-fieldLayout-align-left > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-field {
+	width: auto;
+}
+
+.prp-page-edit-QualityInputWidget-field.oo-ui-fieldLayout.oo-ui-labelElement > .oo-ui-fieldLayout-body {
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+}
