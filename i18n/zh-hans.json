@@ -32,7 +32,8 @@
 			"Zhuyifei1999",
 			"予弦",
 			"沈澄心",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"LittlePaw365"
 		]
 	},
 	"nstab-page": "页面",
@@ -58,7 +59,7 @@
 	"proofreadpage_pagelistnotallowed": "错误：pagelist 标记只能在Index:命名空间中使用",
 	"proofreadpage_dataconfig_badformatted": "数据配置错误",
 	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]]页面不是标准的JSON格式。",
-	"proofreadpage_number_expected": "错误：不为数值",
+	"proofreadpage_number_expected": "错误：需要数字值",
 	"proofreadpage_interval_too_large": "错误：间隔过大",
 	"proofreadpage_invalid_interval": "错误：无法识别间隔",
 	"proofreadpage_nextpage": "下一页",
