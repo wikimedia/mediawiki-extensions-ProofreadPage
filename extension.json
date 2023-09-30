@@ -413,7 +413,7 @@
 		"OutputPageParserOutput": "ProofreadPageHooks",
 		"wgQueryPages": "ProofreadPageHooks",
 		"GetPreferences": "ProofreadPageHooks",
-		"CanonicalNamespaces": "PProofreadPageHooks",
+		"CanonicalNamespaces": "ProofreadPageHooks",
 		"SkinTemplateNavigation::Universal": "ProofreadPageHooks",
 		"ContentHandlerDefaultModelFor": "ProofreadPageHooks",
 		"EditFormPreloadText": "ProofreadPageHooks",
