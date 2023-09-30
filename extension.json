@@ -406,21 +406,21 @@
 		"SetupAfterCache": "ProofreadPageInitHooks",
 		"ParserFirstCallInit": "ProofreadPageHooks",
 		"GetBetaFeaturePreferences": "ProofreadPage\\ProofreadPage::onGetBetaFeaturePreferences",
-		"BeforePageDisplay": "ProofreadPage\\ProofreadPage::onBeforePageDisplay",
+		"BeforePageDisplay": "ProofreadPageHooks",
 		"GetLinkColours": "ProofreadPageHooks",
-		"ImageOpenShowImageInlineBefore": "ProofreadPage\\ProofreadPage::onImageOpenShowImageInlineBefore",
-		"LoadExtensionSchemaUpdates": "ProofreadPage\\ProofreadPage::onLoadExtensionSchemaUpdates",
+		"ImageOpenShowImageInlineBefore": "ProofreadPageHooks",
+		"LoadExtensionSchemaUpdates": "schema",
 		"OutputPageParserOutput": "ProofreadPageHooks",
-		"wgQueryPages": "ProofreadPage\\ProofreadPage::onwgQueryPages",
+		"wgQueryPages": "ProofreadPageHooks",
 		"GetPreferences": "ProofreadPageHooks",
-		"CanonicalNamespaces": "ProofreadPage\\ProofreadPage::onCanonicalNamespaces",
+		"CanonicalNamespaces": "PProofreadPageHooks",
 		"SkinTemplateNavigation::Universal": "ProofreadPageHooks",
-		"ContentHandlerDefaultModelFor": "ProofreadPage\\ProofreadPage::onContentHandlerDefaultModelFor",
-		"EditFormPreloadText": "ProofreadPage\\ProofreadPage::onEditFormPreloadText",
-		"MultiContentSave": "ProofreadPage\\ProofreadPage::onMultiContentSave",
-		"InfoAction": "ProofreadPage\\ProofreadPage::onInfoAction",
-		"ListDefinedTags": "ProofreadPage\\ProofreadPage::onListDefinedTags",
-		"ChangeTagsListActive": "ProofreadPage\\ProofreadPage::onListDefinedTags",
+		"ContentHandlerDefaultModelFor": "ProofreadPageHooks",
+		"EditFormPreloadText": "ProofreadPageHooks",
+		"MultiContentSave": "ProofreadPageHooks",
+		"InfoAction": "ProofreadPageHooks",
+		"ListDefinedTags": "ProofreadPageHooks",
+		"ChangeTagsListActive": "ProofreadPageHooks",
 		"RecentChange_save": "ProofreadPageHooks",
 		"ScribuntoExternalLibraries": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraries",
 		"ScribuntoExternalLibraryPaths": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraryPaths"
@@ -437,6 +437,9 @@
 			"services": [
 				"MainConfig"
 			]
+		},
+		"schema": {
+			"class": "ProofreadPage\\SchemaHooks"
 		}
 	},
 	"attributes": {

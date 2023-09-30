@@ -23,21 +23,28 @@ namespace ProofreadPage;
 
 use CommentStoreComment;
 use Config;
-use DatabaseUpdater;
 use ExtensionRegistry;
-use FixProofreadIndexPagesContentModel;
-use FixProofreadPagePagesContentModel;
 use IContextSource;
 use ImagePage;
+use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
+use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
+use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Hook\CanonicalNamespacesHook;
+use MediaWiki\Hook\EditFormPreloadTextHook;
 use MediaWiki\Hook\GetLinkColoursHook;
+use MediaWiki\Hook\InfoActionHook;
 use MediaWiki\Hook\OutputPageParserOutputHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\Hook\ImageOpenShowImageInlineBeforeHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Revision\Hook\ContentHandlerDefaultModelForHook;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\SpecialPage\Hook\WgQueryPagesHook;
+use MediaWiki\Storage\Hook\MultiContentSaveHook;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use OutOfBoundsException;
@@ -56,6 +63,7 @@ use ProofreadPage\Parser\PagequalityTagParser;
 use ProofreadPage\Parser\PagesTagParser;
 use ProofreadPage\Parser\TranslusionPagesModifier;
 use RequestContext;
+use Skin;
 use SkinTemplate;
 use Status;
 use User;
@@ -71,7 +79,17 @@ class ProofreadPage implements
 	OutputPageParserOutputHook,
 	ParserFirstCallInitHook,
 	GetLinkColoursHook,
-	GetPreferencesHook
+	GetPreferencesHook,
+	BeforePageDisplayHook,
+	ImageOpenShowImageInlineBeforeHook,
+	WgQueryPagesHook,
+	CanonicalNamespacesHook,
+	ContentHandlerDefaultModelForHook,
+	EditFormPreloadTextHook,
+	MultiContentSaveHook,
+	InfoActionHook,
+	ListDefinedTagsHook,
+	ChangeTagsListActiveHook
 {
 
 	/** @var Config */
@@ -127,7 +145,7 @@ class ProofreadPage implements
 	 *
 	 * @param array[] &$queryPages
 	 */
-	public static function onwgQueryPages( array &$queryPages ) {
+	public function onWgQueryPages( &$queryPages ) {
 		$queryPages[] = [ 'SpecialProofreadPages', 'IndexPages' ];
 		$queryPages[] = [ 'SpecialPagesWithoutScans', 'PagesWithoutScans' ];
 	}
@@ -139,7 +157,7 @@ class ProofreadPage implements
 	 * @param string &$model the content model for the page
 	 * @return bool if we have to continue the research for a content handler
 	 */
-	public static function onContentHandlerDefaultModelFor( Title $title, &$model ) {
+	public function onContentHandlerDefaultModelFor( $title, &$model ) {
 		// Warning: do not use Context here because it assumes ContentHandler is already initialized
 		if ( $title->inNamespace( self::getPageNamespaceId() ) ) {
 			$model = CONTENT_MODEL_PROOFREAD_PAGE;
@@ -180,8 +198,9 @@ class ProofreadPage implements
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
 	 *
 	 * @param OutputPage $out
+	 * @param Skin $skin
 	 */
-	public static function onBeforePageDisplay( OutputPage $out ) {
+	public function onBeforePageDisplay( $out, $skin ): void {
 		$title = $out->getTitle();
 
 		if ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
@@ -226,8 +245,8 @@ class ProofreadPage implements
 	 * @param ImagePage $imgpage
 	 * @param OutputPage $out
 	 */
-	public static function onImageOpenShowImageInlineBefore(
-		ImagePage $imgpage, OutputPage $out
+	public function onImageOpenShowImageInlineBefore(
+		$imgpage, $out
 	) {
 		$image = $imgpage->getPage()->getFile();
 		if ( !$image->isMultipage() ) {
@@ -276,7 +295,7 @@ class ProofreadPage implements
 	 * @param string &$text
 	 * @param Title $title
 	 */
-	public static function onEditFormPreloadText( &$text, Title $title ) {
+	public function onEditFormPreloadText( &$text, $title ) {
 		if ( !$title->inNamespace( self::getPageNamespaceId() ) ) {
 			return;
 		}
@@ -371,7 +390,7 @@ class ProofreadPage implements
 	 *
 	 * @param string[] &$namespaces
 	 */
-	public static function onCanonicalNamespaces( array &$namespaces ) {
+	public function onCanonicalNamespaces( &$namespaces ) {
 		$pageNamespaceId = self::getPageNamespaceId();
 		$indexNamespaceId = self::getIndexNamespaceId();
 
@@ -379,33 +398,6 @@ class ProofreadPage implements
 		$namespaces[$pageNamespaceId + 1] = 'Page_talk';
 		$namespaces[$indexNamespaceId] = 'Index';
 		$namespaces[$indexNamespaceId + 1] = 'Index_talk';
-	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/LoadExtensionSchemaUpdates
-	 *
-	 * @param DatabaseUpdater $updater
-	 */
-	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$dbType = $updater->getDB()->getType();
-
-		if ( $dbType === 'mysql' ) {
-			$updater->addExtensionTable( 'pr_index',
-				dirname( __DIR__ ) . '/sql/tables-generated.sql'
-			);
-		} elseif ( $dbType === 'sqlite' ) {
-			$updater->addExtensionTable( 'pr_index',
-				dirname( __DIR__ ) . '/sql/sqlite/tables-generated.sql'
-			);
-		} elseif ( $dbType === 'postgres' ) {
-			$updater->addExtensionTable( 'pr_index',
-				dirname( __DIR__ ) . '/sql/postgres/tables-generated.sql'
-			);
-		}
-
-		// fix issue with content type hardcoded in database
-		$updater->addPostDatabaseUpdateMaintenance( FixProofreadPagePagesContentModel::class );
-		$updater->addPostDatabaseUpdateMaintenance( FixProofreadIndexPagesContentModel::class );
 	}
 
 	/**
@@ -616,7 +608,7 @@ class ProofreadPage implements
 	 * @param IContextSource $context
 	 * @param array[] &$pageInfo The page information
 	 */
-	public static function onInfoAction( IContextSource $context, array &$pageInfo ) {
+	public function onInfoAction( $context, &$pageInfo ) {
 		$title = $context->getTitle();
 		if ( !$title || !$title->canExist() ) {
 			return;
@@ -661,14 +653,29 @@ class ProofreadPage implements
 	}
 
 	/**
-	 * ListDefinedTags and ChangeTagsListActive hook handler
+	 * ListDefinedTags hook handler
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ListDefinedTags
+	 *
+	 * @param array &$tags The list of tags. Add your extension's tags to this array.
+	 */
+	public function onListDefinedTags( &$tags ) {
+		$this->addDefinedTags( $tags );
+	}
+
+	/**
+	 * ChangeTagsListActive hook handler
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ChangeTagsListActive
 	 *
 	 * @param array &$tags The list of tags. Add your extension's tags to this array.
-	 * @return bool
 	 */
-	public static function onListDefinedTags( &$tags ) {
+	public function onChangeTagsListActive( &$tags ) {
+		$this->addDefinedTags( $tags );
+	}
+
+	/**
+	 * @param array &$tags
+	 */
+	private function addDefinedTags( &$tags ) {
 		$tags[] = Tags::WITHOUT_TEXT_TAG;
 		$tags[] = Tags::NOT_PROOFREAD_TAG;
 		$tags[] = Tags::PROBLEMATIC_TAG;
@@ -676,7 +683,6 @@ class ProofreadPage implements
 		$tags[] = Tags::VALIDATED_TAG;
 		// Add a tag for edits made using EditInSequence
 		$tags[] = EditInSequence::TAGNAME;
-		return true;
 	}
 
 	// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
@@ -749,12 +755,12 @@ class ProofreadPage implements
 	 * @param Status $hookStatus
 	 * @return bool|void
 	 */
-	public static function onMultiContentSave(
-		RenderedRevision $renderedRevision,
-		UserIdentity $user,
-		CommentStoreComment $summary,
+	public function onMultiContentSave(
+		$renderedRevision,
+		$user,
+		$summary,
 		$flags,
-		Status $hookStatus
+		$hookStatus
 	) {
 		$revisionRecord = $renderedRevision->getRevision();
 		$content = $revisionRecord->getContent( SlotRecord::MAIN );
