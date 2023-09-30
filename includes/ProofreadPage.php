@@ -409,15 +409,6 @@ class ProofreadPage implements
 	}
 
 	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ParserTestTables
-	 *
-	 * @param string[] &$tables
-	 */
-	public static function onParserTestTables( array &$tables ) {
-		$tables[] = 'pr_index';
-	}
-
-	/**
 	 * Add the links to previous, next, index page and scan image to Page: pages.
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
 	 *
