@@ -91,6 +91,7 @@
 	"proofreadpage-pagelist-assignedpagenumber": "Тиде велыжлан тыгай номерым пумо:$1",
 	"proofreadpage-preferences-showheaders-label": "Лӱм кумдыкышто тӧрлымӧ годым кӱшыл да ӱлыл колонтитул кышкарым ончыкташ {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Лӱм кышкарыште тӧрлымӧ паша годым горизонтал компоновкым кучылт {{ns:page}}",
+	"proofreadpage-indexquality-alt": "$1 тергыме {{PLURAL:$1|велыж|велыж-влак}}, $2 лудмо гына {{PLURAL:$2|велыж|велыж-влак}} да $3 лудмо огыл {{PLURAL:$3|велыж|велыж-влак}}",
 	"content-model-proofread-page": "Книга велыж",
 	"content-model-proofread-index": "Книга индекс",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Велыжым ойырымаш",
