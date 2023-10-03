@@ -33,6 +33,7 @@
 	"proofreadpage_header": "Päis (ei sisaldu):",
 	"proofreadpage_body": "Tekstiosa (sisaldub):",
 	"proofreadpage_footer": "Jalus (ei sisaldu):",
+	"proofreadpage_edit_in_sequence": "Muuda lehekülgi järjest",
 	"proofreadpage_toggleheaders": "Näita või peida sisaldamata osad",
 	"proofreadpage_quality0_category": "Ilma tekstita",
 	"proofreadpage_quality1_category": "Õigsus tõendamata",
