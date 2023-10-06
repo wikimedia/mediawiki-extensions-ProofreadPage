@@ -179,7 +179,8 @@ class EditPagePage extends EditPage {
 			'tabindex' => $tabindex,
 			'disabled' => !$hasRight,
 			'levels' => $levels,
-			'value' => $oldLevel->getLevel(),
+			// @phan-suppress-next-line PhanUndeclaredMethod
+			'value' => $this->toEditContent( $this->textbox1 )->getLevel()->getLevel(),
 		] );
 
 		$labelMsg = $pageQualityInputWidget->isDisabled()
