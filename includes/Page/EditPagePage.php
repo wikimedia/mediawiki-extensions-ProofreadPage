@@ -9,6 +9,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserOptionsLookup;
 use OOUI\FieldLayout;
+use OOUI\HtmlSnippet;
 use ProofreadPage\Context;
 use ProofreadPage\EditInSequence;
 use ProofreadPage\OOUI\PageQualityInputWidget;
@@ -186,7 +187,7 @@ class EditPagePage extends EditPage {
 			? 'proofreadpage_page_status_logged_out'
 			: 'proofreadpage_page_status';
 		$fieldLayout = new FieldLayout( $pageQualityInputWidget, [
-			'label' => $this->context->msg( $labelMsg ),
+			'label' => new HtmlSnippet( $this->context->msg( $labelMsg )->parse() ),
 			// This ID and the .prp-quality-widget class are deprecated, but still used in various user scripts etc.
 			'id' => 'wpQuality-container',
 			'classes' => [ 'prp-page-edit-QualityInputWidget-field', 'prp-quality-widget' ],
