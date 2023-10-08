@@ -177,7 +177,7 @@ class EditPagePage extends EditPage {
 		}
 
 		$pageQualityInputWidget = new PageQualityInputWidget( [
-			'tabindex' => $tabindex,
+			'tabIndex' => ++$tabindex,
 			'disabled' => !$hasRight,
 			'levels' => $levels,
 			// @phan-suppress-next-line PhanUndeclaredMethod
