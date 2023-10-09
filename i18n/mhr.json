@@ -99,5 +99,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 индексым пуртымаш",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Туге",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Уке",
-	"proofreadpage-index-field-category-label": "Категорий-влак"
+	"proofreadpage-index-field-category-label": "Категорий-влак",
+	"proofreadpage-index-edit-category-help": "Категорий-влак Category префикс деч посна палемдалтыт да вертикальный черта \"|\" ден ойыралтыт."
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chuvash2014",
-			"Astahar"
+			"Astahar",
+			"Makarka"
 		]
 	},
 	"nstab-page": "Страница",
@@ -22,6 +23,7 @@
 	"proofreadpage_nologintext": "Страницӑн вуласа тухнин статусне улӑштарма сирӗн малтан [[Special:UserLogin|системӑна кӗмелле]].",
 	"proofreadpage_notallowedtext": "Ку страницӑн вуласа тухнин тӑрӑмне эсир улӑштарма пултараймастӑр.",
 	"proofreadpage_dataconfig_badformatted": "Конфигураци даннӑйӗнчи йӑнӑш",
+	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] страница тӗрӗс мар JSON-форматра.",
 	"proofreadpage_number_expected": "Йӑнӑш: число евӗр пӗлтерӗш кирлӗ",
 	"proofreadpage_interval_too_large": "Йӑнӑш: ытла пысӑк интервал",
 	"proofreadpage_invalid_interval": "Йӑнӑш: тӗрӗс мар интервал",
@@ -75,6 +77,8 @@
 	"proofreadpage-button-reset-zoom-label": "Пысӑклатнине пӗтер",
 	"proofreadpage-button-zoom-in-label": "Пысӑклат",
 	"proofreadpage-pagelist-input-preview-button": "Страницӑсен списокӗн умкурӑмӗ",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<pagelist /> тэг тупӑнмарӗ.",
+	"proofreadpage-pagelist-dialog-title": "$1 валли страницӑсен списокне тӳрлетесси",
 	"proofreadpage-pagelist-dialog-insertchanges": "Улшӑнусене кӗрт",
 	"content-model-proofread-page": "Кӗнеке страници",
 	"content-model-proofread-index": "Кӗнеке индексӗ",
