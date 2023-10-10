@@ -38,20 +38,10 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$header = '', $body = '', $footer = '', $level = 1, $proofreader = null
 	) {
 		$user = PageLevel::getUserFromUserName( $proofreader );
-		if ( $user ) {
-			self::setIfUserIsHidden( $user, false );
-		}
 		return new PageContent(
 			new WikitextContent( $header ), new WikitextContent( $body ), new WikitextContent( $footer ),
 			new PageLevel( $level, $user )
 		);
-	}
-
-	private static function setIfUserIsHidden( $user, $hidden ) {
-		$reflection = new \ReflectionClass( $user );
-		$reflection_property = $reflection->getProperty( 'mHideName' );
-		$reflection_property->setAccessible( true );
-		$reflection_property->setValue( $user, $hidden );
 	}
 
 	public function testCanBeUsedOn() {
@@ -200,10 +190,8 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$header, $body, $footer, $level, $proofreader, $text
 	) {
 		$content = self::newContent( $header, $body, $footer, $level, $proofreader );
-		$this->assertEquals(
-			$content,
-			$this->handler->unserializeContent( $this->handler->serializeContent( $content ) )
-		);
+		$result = $this->handler->unserializeContent( $this->handler->serializeContent( $content ) );
+		$this->assertTrue( $content->equals( $result ) );
 	}
 
 	public function testSerializeContentInJson() {
@@ -300,13 +288,11 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$header, $body, $footer, $level, $proofreader, $text
 	) {
 		$content = self::newContent( $header, $body, $footer, $level, $proofreader );
-		$this->assertEquals(
-			$content,
-			$this->handler->unserializeContent(
-				$this->handler->serializeContent( $content, CONTENT_FORMAT_JSON ),
-				CONTENT_FORMAT_JSON
-			)
+		$result = $this->handler->unserializeContent(
+			$this->handler->serializeContent( $content, CONTENT_FORMAT_JSON ),
+			CONTENT_FORMAT_JSON
 		);
+		$this->assertTrue( $content->equals( $result ) );
 	}
 
 	public function testMakeEmptyContent() {
