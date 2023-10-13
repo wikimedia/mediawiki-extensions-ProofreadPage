@@ -349,10 +349,10 @@ class ProofreadPage implements
 			// after saving a page in EditInSequence,
 			$preferences['proofreadpage-after-save-action'] = [
 				'type'           => 'api',
-				'options'        => [
-					wfMessage( 'prp-editinsequence-save-next-action-do-nothing' )->text() => 'do-nothing',
-					wfMessage( 'prp-editinsequence-save-next-action-go-to-next' )->text() => 'go-to-next',
-					wfMessage( 'prp-editinsequence-save-next-action-go-to-prev' )->text() => 'go-to-prev',
+				'options-messages'        => [
+					'prp-editinsequence-save-next-action-do-nothing' => 'do-nothing',
+					'prp-editinsequence-save-next-action-go-to-next' => 'go-to-next',
+					'prp-editinsequence-save-next-action-go-to-prev' => 'go-to-prev',
 				],
 				'label-message'  => 'proofreadpage-preferences-after-save-action-label',
 				'section'        => 'editing/proofread-pagenamespace',
