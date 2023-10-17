@@ -146,5 +146,10 @@
 	"tag-proofreadpage-quality1": "Лудын лекме огыл",
 	"tag-proofreadpage-quality2": "Нелылык дене",
 	"tag-proofreadpage-quality3": "Лудын лекме",
-	"tag-proofreadpage-quality4": "Тергыме"
+	"tag-proofreadpage-quality4": "Тергыме",
+	"tag-proofreadpage-quality0-description": "Велыжын сайлыкшым вашталтыше тӧрлымаш-влак\"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Велыжын сайлыкшым вашталтыше тӧрлымаш-влак\"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Велыжын сайлыкшым вашталтыше тӧрлымаш-влак \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Велыжын сайлыкшым вашталтыше тӧрлымаш-влак \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Велыжын сайлыкшым вашталтыше тӧрлымаш-влак\"{{int:tag-proofreadpage-quality4}}\""
 }
