@@ -94,7 +94,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	 * @param Title[] $pageTitles
 	 */
 	private function fetchQualityLevelForPageTitlesFromPageProperties( array $pageTitles ) {
-		if ( empty( $pageTitles ) ) {
+		if ( !$pageTitles ) {
 			return;
 		}
 
@@ -120,7 +120,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	 * @param Title[] $pageTitles
 	 */
 	private function fetchQualityLevelForPageTitlesFromPageCategories( array $pageTitles ) {
-		if ( empty( $pageTitles ) ) {
+		if ( !$pageTitles ) {
 			return;
 		}
 

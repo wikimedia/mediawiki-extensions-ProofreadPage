@@ -264,7 +264,7 @@ class PageDisplayHandler {
 			'title' => $title,
 		];
 		$responsiveUrls = array_diff( $thumbnail->responsiveUrls, [ $thumbnail->getUrl() ] );
-		if ( !empty( $responsiveUrls ) ) {
+		if ( $responsiveUrls ) {
 			$attribs['imagesrcset'] = Html::srcSet( $responsiveUrls );
 		}
 		return $attribs;

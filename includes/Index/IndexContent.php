@@ -73,7 +73,7 @@ class IndexContent extends TextContent {
 			}
 		}
 
-		return empty( $this->categories );
+		return !$this->categories;
 	}
 
 	/**

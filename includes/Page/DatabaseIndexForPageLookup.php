@@ -68,7 +68,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 			}
 			$indexesThatLinksHere[] = $indexTitle;
 		}
-		if ( !empty( $indexesThatLinksHere ) ) {
+		if ( $indexesThatLinksHere ) {
 			// TODO: what should we do if there are more than 1 possible index?
 			return reset( $indexesThatLinksHere );
 		}
