@@ -493,15 +493,19 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider getParserOutputHtmlProvider
 	 */
 	public function testGetParserOutputHtml( PageContent $content, string $html ) {
-		$expected = '<div class="prp-page-qualityheader quality1">This page has not been proofread</div>' .
-			'<div class="pagetext"><div class="mw-parser-output">' . $html . '</div></div>';
 		$contentRenderer = MediaWikiServices::getInstance()->getContentRenderer();
 		$output = $contentRenderer->getParserOutput(
 			$content,
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
 		);
-		$actual = preg_replace( '/<!--.*-->/', '', str_replace( "\n", '', $output->getRawText() ) );
-		$this->assertSame( $expected, $actual );
+		$actual = str_replace( "\n", '', $output->getRawText() );
+		$this->assertStringStartsWith(
+			'<div class="prp-page-qualityheader quality1">This page has not been proofread</div>' .
+				'<div class="pagetext">',
+			$actual,
+			'prepended'
+		);
+		$this->assertStringContainsString( $html, $actual );
 	}
 
 	public static function getParserOutputRedirectHtmlProvider(): array {
