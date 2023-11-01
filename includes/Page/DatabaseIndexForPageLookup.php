@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use RepoGroup;
 
@@ -108,17 +109,16 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	 * @return \Generator<Title>
 	 */
 	private function findIndexesWhichLinkTo( Title $title ) {
-		$results = wfGetDB( DB_REPLICA )->select(
-			[ 'page', 'pagelinks' ],
-			[ 'page_namespace', 'page_title' ],
-			[
-				'pl_namespace' => $title->getNamespace(),
-				'pl_title' => $title->getDBkey(),
-				'pl_from=page_id',
-				'pl_from_namespace' => $this->indexNamespaceId
-			],
-			__METHOD__
-		);
+		$linksMigration = MediaWikiServices::getInstance()->getLinksMigration();
+		$titleConditions = $linksMigration->getLinksConditions( 'pagelinks', $title );
+		$results = wfGetDB( DB_REPLICA )->newSelectQueryBuilder()
+			->select( [ 'page_namespace', 'page_title' ] )
+			->from( 'page' )
+			->join( 'pagelinks', null, 'pl_from=page_id' )
+			->where( [ 'pl_from_namespace' => $this->indexNamespaceId ] )
+			->andWhere( $titleConditions )
+			->caller( __METHOD__ )->fetchResultSet();
+
 		foreach ( $results as $row ) {
 			$indexTitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 			if ( $indexTitle !== null ) {
