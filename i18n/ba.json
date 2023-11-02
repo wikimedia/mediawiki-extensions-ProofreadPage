@@ -85,6 +85,8 @@
 	"proofreadpage-group-zoom": "Ҙурайтыу",
 	"proofreadpage-group-other": "Башҡа",
 	"proofreadpage-button-reset-zoom-label": "Нөсхә күләме",
+	"proofreadpage-button-rotate-left-label": "Һулға боролорға",
+	"proofreadpage-button-rotate-right-label": "Уңға боролорға",
 	"proofreadpage-button-toggle-layout-label": "Вертикаль/горизонталь билдә",
 	"proofreadpage-button-toggle-visibility-label": "Биттең өҫкө һәм аҫҡы өлөшөн күрһәтергә/йәшерергә",
 	"proofreadpage-button-zoom-in-label": "Яҡынайтырға",
