@@ -422,8 +422,8 @@
 		"ListDefinedTags": "ProofreadPageHooks",
 		"ChangeTagsListActive": "ProofreadPageHooks",
 		"RecentChange_save": "ProofreadPageHooks",
-		"ScribuntoExternalLibraries": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraries",
-		"ScribuntoExternalLibraryPaths": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraryPaths"
+		"ScribuntoExternalLibraries": "ScribuntoHooks",
+		"ScribuntoExternalLibraryPaths": "ScribuntoHooks"
 	},
 	"HookHandlers": {
 		"ProofreadPageHooks": {
@@ -437,6 +437,9 @@
 			"services": [
 				"MainConfig"
 			]
+		},
+		"ScribuntoHooks": {
+			"class": "ProofreadPage\\ScribuntoHooks"
 		},
 		"schema": {
 			"class": "ProofreadPage\\SchemaHooks"
