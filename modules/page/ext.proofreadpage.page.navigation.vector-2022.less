@@ -1,0 +1,31 @@
+/* stylelint-disable selector-max-id, selector-class-pattern */
+@import 'mediawiki.skin.variables.less';
+
+#ca-proofreadPagePrevLink.icon a {
+	background-image: url( images/next-rtl.svg );
+}
+
+#ca-proofreadPageNextLink.icon a {
+	background-image: url( images/next-ltr.svg );
+}
+
+#ca-proofreadPageIndexLink.icon a {
+	background-image: url( images/collapse.svg );
+}
+
+#ca-proofreadPagePrevLink,
+#ca-proofreadPageNextLink,
+#ca-proofreadPageIndexLink {
+	&.icon a {
+		width: 26px;
+		background-position: 50% 75%;
+		background-repeat: no-repeat;
+		background-size: auto auto;
+		color: transparent;
+
+		&:hover {
+			text-decoration: none;
+			border-bottom: @border-base;
+		}
+	}
+}
