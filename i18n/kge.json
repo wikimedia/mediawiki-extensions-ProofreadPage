@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Es Krim 5 Juta Rasa"
+		]
+	},
+	"nstab-page": "Halaman",
+	"nstab-index": "Indeks",
+	"tooltip-ca-nstab-page": "Liyak halaman buku",
+	"tooltip-ca-nstab-index": "Liyak indeks buku",
+	"indexpages": "Daftar halaman indeks",
+	"pageswithoutscans": "Halaman makka pindaian",
+	"prefs-proofread-pagenamespace": "Opsi antarmuka uji baca",
+	"proofreadpage_desc": "Nyadiako perbandingan antara naskah rik pindaian asli sacara mudah",
+	"proofreadpage_image": "Gambar",
+	"proofreadpage_index": "Indeks",
+	"proofreadpage_index_expected": "Error: Indeks tiporluko",
+	"proofreadpage_nosuch_index": "Error: Indeks hasa makka"
+}

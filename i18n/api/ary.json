@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anass Sedrati"
+			"Anass Sedrati",
+			"Ideophagous"
 		]
 	},
 	"apihelp-query+proofread-description": "تيرجع معلومات على لحالة د عملية التحقق للصفحات لمختارة.",
@@ -11,5 +12,5 @@
 	"apihelp-query+proofreadinfo-summary": "عطي معلومات على ضبط امتداد ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "إينا خصائص د عملية التحقق خاص الحصول عليها:\n;namespaces:Information على النطاقات د \"{{ns:Page}}\" و \"{{ns:Index}}\".\n;qualitylevels:List قائمة مستويات جودة عملية التحقق.",
 	"apihelp-query+proofreadinfo-example-1": "عطي لمعلومات الافتراضية",
-	"apihelp-query+proofreadinfo-example-3": "عطي معلومات على النطاقات"
+	"apihelp-query+proofreadinfo-example-3": "عطي معلومات على لمجالات السمياتية"
 }

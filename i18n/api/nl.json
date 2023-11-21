@@ -2,12 +2,22 @@
 	"@metadata": {
 		"authors": [
 			"Mar(c)",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"McDutchie"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "Ongeldige indextitel “$1”.",
 	"apihelp-query+proofread-description": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",
+	"apihelp-query+proofread-summary": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",
 	"apihelp-query+proofread-example-1": "Geeft proefleesstatus voor pagina's in naamruimte 250",
 	"apihelp-query+proofreadinfo-description": "Geeft informatie over de configuratie van de ProofreadPage-extensie.",
+	"apihelp-query+proofreadinfo-summary": "Geeft informatie over de configuratie van de ProofreadPage-extensie.",
 	"apihelp-query+proofreadinfo-example-1": "Standaardinformatie teruggeven",
-	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven"
+	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven",
+	"apihelp-query+proofreadpagesinindex-summary": "Een lijst maken van de pagina’s in een gegeven index",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Beperken hoeveel pagina’s geretourneerd worden",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "De pagina-ID van de indexpagina waarvoor pagina’s moeten worden opgehaald",
+	"apihelp-query+proofreadpagesinindex-param-prop": "De voor elke pagina op te vragen eigenschappen",
+	"apihelp-query+proofreadpagesinindex-param-title": "De titel van de indexpagina waarvoor pagina’s moeten worden opgevraagd",
+	"apihelp-query+proofreadpagesinindex-example-1": "Standaardinformatie teruggeven"
 }
