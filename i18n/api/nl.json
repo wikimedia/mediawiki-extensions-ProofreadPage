@@ -6,8 +6,31 @@
 			"Robin van der Vliet"
 		]
 	},
+	"apihelp-query+imageforpage-summary": "Verstrekt op basis van de voorverwerking van een gegeven pagina in de naamruimte “Pagina:” de URLs van de afbeeldingen erin.",
+	"apihelp-query+imageforpage-param-prop": "Welke typen afbeeldingen of eigenschappen van afbeeldingen moeten worden geretourneerd voor een bepaalde pagina in de naamruimte “Pagina:”.",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "Retourneert de bij de opgevraagde pagina horende bestandsnaam",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "Retourneert de grootte van de bij de opgevraagde pagina horende afbeelding",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Retourneert de URL van de bij de opgevraagde pagina horende afbeelding op volledige grootte",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Retourneert een lijst met de URL’s van de bij de opgevraagde pagina horende afbeeldingen op 1x, 1,5x en 2x de volledige grootte",
+	"apierror-proofreadpage-invalidindex": "Ongeldige indextitel “$1”.",
 	"apihelp-query+defaultcontentforpage-summary": "Biedt de standaardinhoud voor een bepaalde pagina in de naamruimte \"Page:\".\n\nDe standaardinhoud is ruwe wikitekst (en kan dus ruwe HTML-tags van niet-vertrouwde boektekstlagen bevatten). Deze mag niet zonder escapen of omzetten in HTML-code worden opgenomen!",
+	"apihelp-query+proofread-summary": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",
 	"apihelp-query+proofread-example-1": "Geeft proefleesstatus voor pagina's in naamruimte 250",
+	"apihelp-query+proofreadinfo-summary": "Geeft informatie over de configuratie van de ProofreadPage-extensie.",
+	"apihelp-query+proofreadinfo-param-prop": "De op te vragen proefleeseigenschappen:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "Informatie over de naamruimten “{{ns:Page}}” en “{{ns:Index}}”.",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "Lijst met kwaliteitsniveaus voor proeflezen.",
 	"apihelp-query+proofreadinfo-example-1": "Standaardinformatie teruggeven",
-	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven"
+	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven",
+	"apihelp-query+proofreadpagesinindex-summary": "Een lijst maken van de pagina’s in een gegeven index",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Beperken hoeveel pagina’s geretourneerd worden",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "De pagina-ID van de indexpagina waarvoor pagina’s moeten worden opgehaald",
+	"apihelp-query+proofreadpagesinindex-param-prop": "De voor elke pagina op te vragen eigenschappen",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "Retourneert de pagina-ID van elke pagina die aan de indexpagina is gekoppeld",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "Retourneert de paginatitel van elke pagina die aan de indexpagina is gekoppeld",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "Retourneert de pagina-ID van elke pagina die aan de indexpagina is gekoppeld",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "Retourneert de opgemaakte paginanummers van elke pagina die aan de indexpagina is gekoppeld",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "Retourneert de opgemaakte paginanummers van elke pagina die aan de indexpagina is gekoppeld. Verouderd; gebruik in plaats hiervan “formattedpagenumber”.",
+	"apihelp-query+proofreadpagesinindex-param-title": "De titel van de indexpagina waarvoor pagina’s moeten worden opgevraagd",
+	"apihelp-query+proofreadpagesinindex-example-1": "Standaardinformatie teruggeven"
 }
