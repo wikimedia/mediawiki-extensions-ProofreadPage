@@ -2,12 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Mar(c)",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"McDutchie"
 		]
 	},
 	"apihelp-query+proofread-description": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",
+	"apihelp-query+proofread-summary": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",
 	"apihelp-query+proofread-example-1": "Geeft proefleesstatus voor pagina's in naamruimte 250",
 	"apihelp-query+proofreadinfo-description": "Geeft informatie over de configuratie van de ProofreadPage-extensie.",
+	"apihelp-query+proofreadinfo-summary": "Geeft informatie over de configuratie van de ProofreadPage-extensie.",
 	"apihelp-query+proofreadinfo-example-1": "Standaardinformatie teruggeven",
 	"apihelp-query+proofreadinfo-example-3": "Naamruimte-informatie teruggeven"
 }
