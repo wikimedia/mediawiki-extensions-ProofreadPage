@@ -7,7 +7,7 @@ use Html;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\Options\UserOptionsLookup;
 use OOUI\FieldLayout;
 use OOUI\HtmlSnippet;
 use ProofreadPage\Context;
