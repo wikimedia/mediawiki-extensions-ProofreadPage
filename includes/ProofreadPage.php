@@ -22,12 +22,12 @@
 namespace ProofreadPage;
 
 use CommentStoreComment;
-use Config;
 use ExtensionRegistry;
 use IContextSource;
 use ImagePage;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
+use MediaWiki\Config\Config;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\CanonicalNamespacesHook;
 use MediaWiki\Hook\EditFormPreloadTextHook;
@@ -38,6 +38,7 @@ use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\Hook\ImageOpenShowImageInlineBeforeHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Revision\Hook\ContentHandlerDefaultModelForHook;
@@ -46,9 +47,9 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\Hook\WgQueryPagesHook;
 use MediaWiki\Storage\Hook\MultiContentSaveHook;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use OutOfBoundsException;
-use OutputPage;
 use Parser;
 use ParserOutput;
 use ProofreadPage\Index\IndexTemplateStyles;
@@ -66,7 +67,6 @@ use RequestContext;
 use Skin;
 use SkinTemplate;
 use Status;
-use User;
 
 /*
  @todo :

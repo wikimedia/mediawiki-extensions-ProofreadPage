@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Parser;
 
-use Html;
 use HtmlArmor;
+use MediaWiki\Html\Html;
 use Parser;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;

@@ -2,8 +2,8 @@
 
 namespace ProofreadPage;
 
-use Config;
-use ConfigException;
+use MediaWiki\Config\Config;
+use MediaWiki\Config\ConfigException;
 use MediaWiki\Hook\SetupAfterCacheHook;
 
 /**

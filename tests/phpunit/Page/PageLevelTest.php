@@ -3,8 +3,8 @@
 namespace ProofreadPage\Page;
 
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\User;
 use ProofreadPageTestCase;
-use User;
 
 /**
  * @group ProofreadPage

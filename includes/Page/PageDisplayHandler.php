@@ -2,16 +2,16 @@
 
 namespace ProofreadPage\Page;
 
-use Html;
-use Linker;
 use MediaTransformOutput;
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\Linker;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
-use Sanitizer;
 
 /**
  * @license GPL-2.0-or-later

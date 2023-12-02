@@ -4,10 +4,10 @@ namespace ProofreadPage\Index;
 
 use Content;
 use MediaWiki\Parser\MagicWord;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Title\Title;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
-use Sanitizer;
 use TextContent;
 use WikitextContent;
 

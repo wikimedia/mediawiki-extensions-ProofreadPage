@@ -6,6 +6,7 @@ use Article;
 use LogicException;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
 use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
@@ -15,7 +16,6 @@ use OOUI\TextInputWidget;
 use ProofreadPage\Context;
 use ProofreadPage\OOUI\PagelistInputWidget;
 use ProofreadPage\Pagination\PageNumber;
-use WebRequest;
 use WikitextContent;
 
 /**

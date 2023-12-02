@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use Config;
+use MediaWiki\Config\Config;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContentLookup;
 use ProofreadPage\Index\IndexContentLookupMock;

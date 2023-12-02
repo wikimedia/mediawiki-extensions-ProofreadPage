@@ -3,9 +3,9 @@
 namespace ProofreadPage\Pagination;
 
 use Language;
+use MediaWiki\Parser\Sanitizer;
 use NumberFormatter;
 use ProofreadPage\Pagination\CustomNumberFormatters\BengaliCurrencyFormat;
-use Sanitizer;
 
 /**
  * @license GPL-2.0-or-later

@@ -4,9 +4,9 @@ namespace ProofreadPage\Page;
 
 use Content;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use ProofreadPageTestCase;
 use RequestContext;
-use User;
 use WikitextContent;
 
 /**

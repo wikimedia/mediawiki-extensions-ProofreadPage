@@ -3,11 +3,11 @@
 namespace ProofreadPage\Page;
 
 use Content;
-use Html;
 use IContextSource;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MediaWiki\Title\Title;

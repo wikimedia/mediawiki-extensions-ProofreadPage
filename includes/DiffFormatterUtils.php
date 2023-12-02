@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use Html;
+use MediaWiki\Html\Html;
 
 /**
  * @license GPL-2.0-or-later

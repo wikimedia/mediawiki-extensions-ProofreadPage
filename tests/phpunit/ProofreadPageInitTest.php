@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use ConfigException;
+use MediaWiki\Config\ConfigException;
 use ProofreadPageTestCase;
 
 /**

@@ -3,7 +3,7 @@
 namespace ProofreadPage\Page;
 
 use MediaWiki\Permissions\PermissionManager;
-use User;
+use MediaWiki\User\User;
 use Wikimedia\IPUtils;
 
 /**

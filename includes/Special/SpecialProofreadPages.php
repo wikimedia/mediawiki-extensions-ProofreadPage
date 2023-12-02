@@ -24,9 +24,9 @@ namespace ProofreadPage\Special;
 use HTMLForm;
 use ISearchResultSet;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\QueryPage;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
-use QueryPage;
 use SearchResult;
 
 class SpecialProofreadPages extends QueryPage {
