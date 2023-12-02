@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use InvalidArgumentException;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -98,7 +99,8 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 			return;
 		}
 
-		$results = wfGetDB( DB_REPLICA )->select(
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
+		$results = $dbr->select(
 			[ 'page_props', 'page' ],
 			[ 'page_title', 'pp_value' ],
 			[
@@ -128,8 +130,9 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 			return $title->getDBkey();
 		}, $pageTitles );
 
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
 		foreach ( $this->getCategoryForQualityLevels() as $qualityLevel => $qualityCategory ) {
-			$results = wfGetDB( DB_REPLICA )->select(
+			$results = $dbr->select(
 				[ 'categorylinks', 'page' ],
 				[ 'page_title' ],
 				[

@@ -109,9 +109,11 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	 * @return \Generator<Title>
 	 */
 	private function findIndexesWhichLinkTo( Title $title ) {
-		$linksMigration = MediaWikiServices::getInstance()->getLinksMigration();
+		$services = MediaWikiServices::getInstance();
+		$dbr = $services->getDBLoadBalancerFactory()->getReplicaDatabase();
+		$linksMigration = $services->getLinksMigration();
 		$titleConditions = $linksMigration->getLinksConditions( 'pagelinks', $title );
-		$results = wfGetDB( DB_REPLICA )->newSelectQueryBuilder()
+		$results = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_namespace', 'page_title' ] )
 			->from( 'page' )
 			->join( 'pagelinks', null, 'pl_from=page_id' )
