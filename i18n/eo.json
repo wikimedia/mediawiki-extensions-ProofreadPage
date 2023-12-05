@@ -108,6 +108,7 @@
 	"prp-editinsequence-pagination-does-not-exist": "Neniu paĝigo ekzistas por ĉi tiu paĝo, kio malebligas eltrovi sekvajn kaj antaŭajn paĝojn. Se vi pensas, ke tio estis eraro, bonvolu raporti ĉi tiun eraron al phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Neantaŭvidita eraro estis trovita. Bonvolu raporti tiun ĉi eraron ĉe phabricator.wikimedia.org.",
 	"prp-editinsequence-http-error-page": "Malsukcesis ricevi paĝon pro retaj problemoj, bonvolu provi poste denove.",
+	"prp-editinsequence-error": "EditInSequence-eraro, ne eblas daŭrigi plu",
 	"proofreadpage-pagelist-input-preview-button": "Antaŭvidi paĝoliston",
 	"proofreadpage-pagelist-dialog-update-button": "Ĝisdatigi paĝoliston",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "Forlaso de tiu ĉi dialogo povas rezulti en perdo de nekonservita progreso.",
