@@ -446,6 +446,11 @@
 		}
 	},
 	"attributes": {
+		"Cite": {
+			"AllowedContentModels": [
+				"proofread-page"
+			]
+		},
 		"VisualEditor": {
 			"PluginModules": [
 				"ext.proofreadpage.ve.node.pages"
