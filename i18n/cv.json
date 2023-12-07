@@ -125,6 +125,7 @@
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Страница номерӗн тӗсӗ:",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "Страницӑри номерсен йӗрки ҫапла пуҫланать:",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "$1 сканерланӑ номер валли страница номерне палӑртасси",
+	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ятсен уҫлӑхне тӳрлетнӗ чухне горизонтальлӗ сарӑмпа усӑ курас.",
 	"content-model-proofread-page": "Кӗнеке страници",
 	"content-model-proofread-index": "Кӗнеке индексӗ",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Страницӑна суйласси",
