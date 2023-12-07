@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Agurwin Isaac"
+			"Agurwin Isaac",
+			"DannyS712"
 		]
 	},
 	"nstab-page": "Lakir",
@@ -17,7 +18,7 @@
 	"proofreadpage_index_expected": "Yidigir: Indɛks nar ye di bɛ",
 	"proofreadpage_nosuch_index": "Yidigir: Indɛks kan buudi kae",
 	"proofreadpage_nosuch_index_category": "Lakir banɛ paas taaba ni pa'an indɛks lakirnam",
-	"proofreadpage_nosuch_index_category-desc": "A <code><nowiki><lakirnam/></nowiki></code> taag zi'enɛ tis Indɛks lakir kanɛ kae.",
+	"proofreadpage_nosuch_index_category-desc": "A <code><nowiki><pages/></nowiki></code> taag zi'enɛ tis Indɛks lakir kanɛ kae.",
 	"proofreadpage_nosuch_file": "Yidigir: Faal kan buudi kae",
 	"proofreadpage_indexdupetext": "Lakir kʋ nyaŋi zu'oe gaad nɔɔra yinne indɛks lakirinɛ.",
 	"proofreadpage_nologin": "Fʋ kpɛn' pʋʋginɛ",
