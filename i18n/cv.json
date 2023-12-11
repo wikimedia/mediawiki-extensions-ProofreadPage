@@ -84,6 +84,7 @@
 	"proofreadpage-pagelist-dialog-insertchanges": "Улшӑнусене кӗрт",
 	"proofreadpage-pagelist-type": "Страница номерӗн тӗсӗ: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Ку страницӑна ҫак страница номерне панӑ: $1",
+	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ятсен уҫлӑхне тӳрлетнӗ чухне горизонтальлӗ сарӑмпа усӑ курас.",
 	"content-model-proofread-page": "Кӗнеке страници",
 	"content-model-proofread-index": "Кӗнеке индексӗ",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "Страницӑна суйласси",
