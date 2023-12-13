@@ -6,7 +6,7 @@
 			"Robin van der Vliet"
 		]
 	},
-	"apihelp-query+imageforpage-summary": "Verstrekt op basis van de voorverwerking van een gegeven pagina in de naamruimte “Pagina:” de URLs van de afbeeldingen erin.",
+	"apihelp-query+imageforpage-summary": "Verstrekt op basis van de voorverwerking van een gegeven pagina in de naamruimte “Pagina:” de URL’s van de afbeeldingen erin.",
 	"apihelp-query+imageforpage-param-prop": "Welke typen afbeeldingen of eigenschappen van afbeeldingen moeten worden geretourneerd voor een bepaalde pagina in de naamruimte “Pagina:”.",
 	"apihelp-query+imageforpage-paramvalue-prop-filename": "Retourneert de bij de opgevraagde pagina horende bestandsnaam",
 	"apihelp-query+imageforpage-paramvalue-prop-size": "Retourneert de grootte van de bij de opgevraagde pagina horende afbeelding",

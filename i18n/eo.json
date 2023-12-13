@@ -114,6 +114,8 @@
 	"prp-editinsequence-unknown-error": "Neantaŭvidita eraro estis trovita. Bonvolu raporti tiun ĉi eraron ĉe phabricator.wikimedia.org.",
 	"prp-editinsequence-http-error-page": "Malsukcesis ricevi paĝon pro retaj problemoj, bonvolu provi poste denove.",
 	"prp-edit-in-sequence-preview-http-error": "Malsukcesis antaŭrigardi paĝon pro retaj problemoj, bonvolu provi poste denove.",
+	"prp-edit-in-sequence-preview-api-error": "Malsukcesis antaŭrigardi la paĝon pro la jena eraro: $1 Se ĉi tiu eraro estas neatendita, bonvolu raporti ĉi tiun eraron al phabricator.wikimedia.org.",
+	"prp-editinsequence-error": "EditInSequence-eraro, ne eblas daŭrigi plu",
 	"prp-editinsequence-preview": "Antaŭvido",
 	"prp-editinsequence-save-settings-dialog-primary-button-title": "Konservi agordojn",
 	"prp-editinsequence-save-dialog-title": "Konservi ĉi tiun paĝon",

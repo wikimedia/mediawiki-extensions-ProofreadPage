@@ -5,8 +5,8 @@
 			"ElizaMag"
 		]
 	},
-	"apihelp-query+proofread-example-1": "Дéшаш нийсдара статус юхаяккхар оагIонашта цIерий мотта чу.",
+	"apihelp-query+proofread-example-1": "Юхабоалабе цӀерий ара 250 оагӀоний вычитках бола хоам",
 	"apihelp-query+proofreadinfo-param-prop": "Which proofread properties to get:",
 	"apihelp-query+proofreadinfo-example-1": "Массаза хинна бола хоам (информаци) юхабаккхар",
-	"apihelp-query+proofreadinfo-example-3": "ЦIерий мотта хоам юхабаккхар"
+	"apihelp-query+proofreadinfo-example-3": "ЦӀерий аренах бола хоам юхабоалабе"
 }
