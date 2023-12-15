@@ -19,14 +19,6 @@ class PageRevisionTaggerTest extends ProofreadPageTestCase {
 		$this->tablesUsed[] = 'change_tag';
 		$this->tablesUsed[] = 'revision';
 
-		$this->statusTags = [
-			Tags::WITHOUT_TEXT_TAG,
-			Tags::NOT_PROOFREAD_TAG,
-			Tags::PROBLEMATIC_TAG,
-			Tags::PROOFREAD_TAG,
-			Tags::VALIDATED_TAG
-		];
-
 		// don't care about user permissions here
 		$this->mergeMwGlobalArrayValue(
 			'wgGroupPermissions',
