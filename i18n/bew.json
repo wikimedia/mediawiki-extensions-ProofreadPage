@@ -76,7 +76,7 @@
 	"proofreadpage-button-zoom-in-label": "Gedéin",
 	"proofreadpage-button-toggle-layout-label": "Telepekan nurun/nyamping",
 	"proofreadpage-pageinfo-status": "Status perèksa baca",
-	"proofreadpage-pagelist-input-preview-button": "Pradeleng daptar halaman",
+	"proofreadpage-pagelist-input-preview-button": "Terawang daptar halaman",
 	"proofreadpage-pagelist-parsing-error-morethanone": "Lebi deri atu tenger <pagelist /> keendus di tèks wiki sumber.",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Kaga' ada tenger <pagelist /> keendus.",
 	"proofreadpage-pagelist-parsing-error-php": "Kepapagan ama ni kengabluan pas milahin tenger daptar halaman di bagèan belakang, $1",
