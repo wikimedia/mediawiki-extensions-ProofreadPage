@@ -4,6 +4,7 @@
 			"Jon Harald Søby"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "Ugyldig indekstittel: «$1».",
 	"apihelp-query+proofread-description": "Returnerer informasjon om den gjeldende korrekturlesingsstatusen til de gitte sidene.",
 	"apihelp-query+proofread-summary": "Returnerer informasjon om korrekturlesingsstatusen til de gitte sidene.",
 	"apihelp-query+proofread-example-1": "Returnerer korrekturlesingsstatus i navneromm 250",
@@ -12,5 +13,10 @@
 	"apihelp-query+proofreadinfo-param-prop": "Hvilke korrekturlesingsegenskaper som hentes:\n;namespaces:Informasjon om navnerommene «{{ns:Page}}» og «{{ns:Index}}»\n;qualitylevels:Liste over kvalitetsnivåer for korrekturlesing.",
 	"apihelp-query+proofreadinfo-example-1": "Returnerer standardinformasjon",
 	"apihelp-query+proofreadinfo-example-3": "Returnerer navneromsinformasjon",
+	"apihelp-query+proofreadpagesinindex-summary": "List opp sidene i en gitt indeks",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Begrens hvor mange sider som skal returneres",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Side-ID-en til indekssiden det skal hentes sider for",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Hvilke egenskaper som skal hentes for hver side",
+	"apihelp-query+proofreadpagesinindex-param-title": "Tittelen til indekssiden det skal hentes sider for",
 	"apihelp-query+proofreadpagesinindex-example-1": "Returner standardinformasjon"
 }

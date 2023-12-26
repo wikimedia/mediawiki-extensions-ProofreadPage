@@ -11,7 +11,8 @@
 			"Sibabrata Banerjee",
 			"Sohom Datta",
 			"Titodutta",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"Aishik Rehman"
 		]
 	},
 	"nstab-page": "পাতা",
@@ -55,7 +56,7 @@
 	"proofreadpage_quality4_summary": "বৈধকরণ",
 	"proofreadpage_quality0_message": "এই পাতার মুদ্রণ সংশোধন করার প্রয়োজন নেই",
 	"proofreadpage_quality1_message": "এই পাতার মুদ্রণ সংশোধন করা হয়নি",
-	"proofreadpage_quality2_message": "এই পাতার মুদ্রণ সংশোধন করার সময় কোন সমস্যা ছিল",
+	"proofreadpage_quality2_message": "এই পাতার মুদ্রণ সংশোধন করার সময় কোনো সমস্যা ছিল",
 	"proofreadpage_quality3_message": "এই পাতার মুদ্রণ সংশোধন করা সম্পন্ন হয়েছে",
 	"proofreadpage_quality4_message": "এই পাতা বৈধকরণ করা হয়েছে",
 	"proofreadpage_index_status": "নির্ঘণ্টের অবস্থা",
