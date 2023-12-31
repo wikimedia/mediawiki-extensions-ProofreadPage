@@ -76,7 +76,7 @@ PageNumberInputWidget.prototype.setValue = function ( type ) {
  * @return {jQuery.Promise}
  */
 PageNumberInputWidget.prototype.getNumberTypeConfig = function () {
-	var promise = this.api.get( {
+	const promise = this.api.get( {
 		action: 'query',
 		prop: 'revisions',
 		titles: 'MediaWiki:Proofreadpage pagelist dropdown values.json',
@@ -119,7 +119,7 @@ PageNumberInputWidget.prototype.onEnter = function () {
  * Emits events based on the current value of the ComboboxInput
  */
 PageNumberInputWidget.prototype.updateFormPanel = function () {
-	var data = this.pageNumberTypeInput.getValue();
+	const data = this.pageNumberTypeInput.getValue();
 
 	// Check if the label is one that is provided by ProofreadPage by default
 	// and changes the number format being displayed.

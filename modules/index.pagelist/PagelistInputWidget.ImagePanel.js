@@ -1,4 +1,4 @@
-var OpenSeadragon = require( 'ext.proofreadpage.openseadragon' );
+const OpenSeadragon = require( 'ext.proofreadpage.openseadragon' );
 /**
  * Panel that allows users to veiw a image of the scan
  * for which the page number is being set
@@ -48,7 +48,13 @@ OO.mixinClass( ImagePanel, OO.ui.mixin.PendingElement );
  * @param {number} width
  * @param {number} height
  */
-ImagePanel.prototype.setImageSrc = function ( url, zoomUrlOnePointFive, zoomUrlTwo, width, height ) {
+ImagePanel.prototype.setImageSrc = function (
+	url,
+	zoomUrlOnePointFive,
+	zoomUrlTwo,
+	width,
+	height
+) {
 	this.messages.toggle( false );
 	this.$image.hide();
 	this.popPending();
@@ -197,8 +203,8 @@ ImagePanel.prototype.zoomPan = function ( url, zoomUrlOnePointFive, zoomUrlTwo, 
 
 	this.viewer.viewport.goHome = function () {
 		if ( this.viewer ) {
-			var oldBounds = this.viewer.viewport.getBounds();
-			var newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
+			const oldBounds = this.viewer.viewport.getBounds();
+			const newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
 			this.viewer.viewport.fitBounds( newBounds, true );
 		}
 	}.bind( this );

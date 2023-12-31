@@ -40,7 +40,11 @@ function PagelistPreview( model, config ) {
 		parsingerror: 'hideProgressBar'
 	} );
 
-	this.$element.append( this.progressBar.$element, this.messages.$element, this.buttonSelectWidget.$element );
+	this.$element.append(
+		this.progressBar.$element,
+		this.messages.$element,
+		this.buttonSelectWidget.$element
+	);
 	this.progressBar.toggle( false );
 	this.buttonSelectWidget.toggle( false );
 	this.messages.toggle( false );
@@ -55,14 +59,14 @@ OO.inheritClass( PagelistPreview, OO.ui.Widget );
  * @event previewDisplayed preview displayed succesfully
  */
 PagelistPreview.prototype.updatePreview = function ( parameters ) {
-	var buttonArray = [], button, i;
+	const buttonArray = [];
 	this.messages.toggle( false );
 	this.buttonSelectWidget.toggle( true );
 	this.buttonSelectWidget.clearItems();
 
-	for ( i = 0; i < parameters.length; i++ ) {
+	for ( let i = 0; i < parameters.length; i++ ) {
 		// haphazardly put together, figure out the specifics later
-		button = new OO.ui.ButtonOptionWidget( {
+		const button = new OO.ui.ButtonOptionWidget( {
 			label: parameters[ i ].text,
 			data: parameters[ i ],
 			title: String( parameters[ i ].subPage )
@@ -83,7 +87,7 @@ PagelistPreview.prototype.updatePreview = function ( parameters ) {
  * @event errorDisplayed Error message displayed succesfully
  */
 PagelistPreview.prototype.displayError = function () {
-	var args = [].slice.call( arguments, 0 );
+	const args = [].slice.call( arguments, 0 );
 	this.buttonSelectWidget.toggle( false );
 	this.messages.toggle( true );
 	// pass on whatever arguments passed to the mw.msg function
@@ -103,7 +107,7 @@ PagelistPreview.prototype.onSelect = function () {
 	// we take the `arguments` variable and turn that
 	// into a Array and then insert 'pageselected' in
 	// position 0.
-	var args = [].slice.call( arguments, 0 );
+	const args = [].slice.call( arguments, 0 );
 	args.splice( 0, 0, 'pageselected' );
 	this.emit.apply( this, args );
 };
@@ -132,13 +136,13 @@ PagelistPreview.prototype.selectItemByDataWithoutEvent = function ( data ) {
  * Restore the selected page number after regenerating the pagelist
  */
 PagelistPreview.prototype.restoreSelected = function () {
-	var i, buttonArray = this.buttonArray, selected = this.selected;
+	const buttonArray = this.buttonArray, selected = this.selected;
 
 	if ( !selected ) {
 		return;
 	}
 
-	for ( i = 0; i < buttonArray.length; i++ ) {
+	for ( let i = 0; i < buttonArray.length; i++ ) {
 		if ( buttonArray[ i ].getData().subPage === selected.subPage ) {
 			this.selectItemByDataWithoutEvent( buttonArray[ i ].getData() );
 			return;

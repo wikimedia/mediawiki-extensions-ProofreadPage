@@ -78,7 +78,7 @@ WikitextFormPanel.prototype.updateWikiText = function ( wikitext ) {
  * Updates the DialogModel based on input in the text area.
  */
 WikitextFormPanel.prototype.updateModel = function () {
-	var wikitext = this.multilineTextInput.getValue();
+	const wikitext = this.multilineTextInput.getValue();
 	this.makePending();
 	this.dialogModel.updateCachedData( wikitext );
 };
