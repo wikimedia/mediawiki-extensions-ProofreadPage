@@ -71,7 +71,8 @@ Parameters.prototype.isEmpty = function () {
  * @param  {Function} callback callback to be excuted
  */
 Parameters.prototype.forEach = function ( callback ) {
-	var index, label, data = this.data;
+	let index, label;
+	const data = this.data;
 	for ( index in data ) {
 		index = index.replace( this.secret, '' );
 		label = this.get( index );

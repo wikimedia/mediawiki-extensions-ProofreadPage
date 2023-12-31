@@ -1,5 +1,5 @@
 ( function () {
-	var PagelistInputWidget = require( './PagelistInputWidget.js' );
+	const PagelistInputWidget = require( './PagelistInputWidget.js' );
 
 	mw.proofreadpage = {};
 	mw.proofreadpage.PagelistInputWidget = PagelistInputWidget;

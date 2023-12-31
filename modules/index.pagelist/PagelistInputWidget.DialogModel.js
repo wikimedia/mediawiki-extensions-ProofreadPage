@@ -51,7 +51,7 @@ DialogModel.prototype.setData = function ( data ) {
  * @param  {Object} data Data for current subpage
  */
 DialogModel.prototype.generateImageLink = function ( data ) {
-	var pageTitle = mw.config.get( 'wgFormattedNamespaces' )[ 6 ] + ':' + mw.config.get( 'wgTitle' ),
+	const pageTitle = mw.config.get( 'wgFormattedNamespaces' )[ 6 ] + ':' + mw.config.get( 'wgTitle' ),
 		subpage = data.subPage || 1,
 		imageSize = 1024; // arbitrary number, same as used at PageDisplayHandler.php
 	this.api.get( {
@@ -62,34 +62,38 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 		iiprop: 'url',
 		iiurlparam: 'page' + subpage + '-' + imageSize + 'px'
 	} ).done( function ( response ) {
-		var imageUrl = null,
+		let imageUrl = null,
 			imageZoomUrlOnePointFive = null,
 			imageZoomUrlTwo = null,
 			imageWidth = null,
-			imageHeight = null;
+			imageHeight = null,
+			imageInfo;
 
 		try {
-			imageUrl = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumburl;
-			imageZoomUrlOnePointFive = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 1.5 ];
-			imageZoomUrlTwo = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 2 ];
-			imageWidth = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbwidth;
-			imageHeight = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbheight;
+			imageInfo = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ];
 		} catch ( e ) {
 			this.emit( 'imageurlnotfound' );
 			mw.log.error( e, response );
 			return;
 		}
+
+		imageUrl = imageInfo.thumburl;
+		imageZoomUrlOnePointFive = imageInfo.responsiveUrls[ 1.5 ];
+		imageZoomUrlTwo = imageInfo.responsiveUrls[ 2 ];
+		imageWidth = imageInfo.thumbwidth;
+		imageHeight = imageInfo.thumbheight;
+
 		// incase thumbUrl doesn't exist
 		if ( !imageUrl ) {
 			this.emit( 'imageurlnotfound' );
 			return;
 		}
 		this.obj[ subpage ] = {
-			imageUrl: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumburl,
-			imageZoomUrlOnePointFive: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 1.5 ],
-			imageZoomUrlTwo: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].responsiveUrls[ 2 ],
-			imageWidth: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbwidth,
-			imageHeight: response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ].thumbheight
+			imageUrl: imageInfo.thumburl,
+			imageZoomUrlOnePointFive: imageInfo.responsiveUrls[ 1.5 ],
+			imageZoomUrlTwo: imageInfo.responsiveUrls[ 2 ],
+			imageWidth: imageInfo.thumbwidth,
+			imageHeight: imageInfo.thumbheight
 		};
 		this.emit( 'aftersetimageurl', imageUrl, imageZoomUrlOnePointFive, imageZoomUrlTwo, imageWidth, imageHeight );
 	}.bind( this ) ).catch( function ( e ) {

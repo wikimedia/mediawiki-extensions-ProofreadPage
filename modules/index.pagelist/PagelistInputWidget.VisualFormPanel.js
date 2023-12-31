@@ -1,4 +1,4 @@
-var PageNumberInputWidget = require( './PagelistInputWidget.PageNumberInputWidget.js' );
+const PageNumberInputWidget = require( './PagelistInputWidget.PageNumberInputWidget.js' );
 
 /**
  * Panel that shows current page number status
@@ -99,7 +99,7 @@ OO.inheritClass( VisualFormPanel, OO.ui.PanelLayout );
  * Update page number.
  */
 VisualFormPanel.prototype.onUpdate = function () {
-	var pageNumberType = this.pageNumberInput.getValue(),
+	const pageNumberType = this.pageNumberInput.getValue(),
 		single = this.singlePageToggle.isSelected(),
 		pageNumber = this.numberInput.getValue();
 	this.visualDialogModel.updateCachedData( {

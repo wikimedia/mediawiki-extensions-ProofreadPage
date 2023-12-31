@@ -1,4 +1,4 @@
-var Parameters = require( './PagelistInputWidget.Parameters.js' );
+const Parameters = require( './PagelistInputWidget.Parameters.js' );
 /**
  * A model which keeps track of the parameters, wikitext and a list of Objects
  * containing useful information for displaying a pagelist.
@@ -42,13 +42,13 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 	// https://regex101.com/r/rWhPy6/10
 	// Try a naive way of extracting one pagelist tag and then put whatever we got
 	// into a XML parser which should sort out the parameters stuff for us
-	var pagelistRegex = /<pagelist[^<]*?\/>/gmi,
-		pagelistText,
+	const pagelistRegex = /<pagelist[^<]*?\/>/gmi,
+		parameters = new Parameters();
+
+	let pagelistText,
 		tagEndMatches,
 		parsedPagelist,
-		attrs,
-		parameters = new Parameters(),
-		i;
+		attrs;
 
 	wikitext = wikitext || this.wikitext;
 
@@ -80,7 +80,7 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 			}
 
 			attrs = parsedPagelist.body.childNodes[ 0 ].attributes;
-			for ( i = 0; i < attrs.length; i++ ) {
+			for ( let i = 0; i < attrs.length; i++ ) {
 				// Make the 'empty' page numbering system explicitly fail
 				// until we can figure out a sane way to get it to not misbehave
 				// both the visual mode and wikitext mode.
@@ -143,9 +143,9 @@ PagelistInputWidgetModel.prototype.updateParameters = function ( parameters ) {
  */
 PagelistInputWidgetModel.prototype.generateWikitext = function ( parameters ) {
 	// refer to generateParametersFromWikitext() function
-	var pagelistRegex = /<pagelist[^<]*?\/>/gmi,
-		linesRegex = /([\n\r][^=<|>]*=)/g,
-		separator = ' ',
+	const pagelistRegex = /<pagelist[^<]*?\/>/gmi,
+		linesRegex = /([\n\r][^=<|>]*=)/g;
+	let separator = ' ',
 		pagelistText = '<pagelist';
 
 	if ( ( this.wikitext.match( linesRegex ) || [] ).length > 0 ) {
@@ -178,7 +178,7 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 	// Create a template (per T252706) and then pass it to the parsing api
 	// parse the resulting output and create a array of associative arrays each containing
 	// info about a particular page number
-	var apiWikitext = '{{MediaWiki:Proofreadpage index template|' + this.templateParameter + '=$2}}',
+	let apiWikitext = '{{MediaWiki:Proofreadpage index template|' + this.templateParameter + '=$2}}',
 		pagelistText = '<pagelist ';
 
 	this.emit( 'enumeratedListGenerationStarted' );
@@ -221,10 +221,9 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
  * @param  {mw.proofreadpage.PagelistInputWidget.Parameters} parameters
  */
 PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( response, parameters ) {
-	var parsedText = document.createElement( 'body' ),
-		parsedPagelist,
+	const parsedText = document.createElement( 'body' ),
 		enumeratedList = [],
-		i, ranges = [];
+		ranges = [];
 
 	parameters = parameters || this.parameters;
 	parsedText.innerHTML = response.parse.text[ '*' ];
@@ -232,13 +231,15 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 	// extract all the ranges being set by the pagelist
 	parameters.forEach( function ( index, label ) {
 		if ( index.split( /(to|To)/ )[ 0 ] !== index ) {
-			for ( i = parseInt( index.split( 'to' )[ 0 ] ); i <= parseInt( index.split( 'to' )[ 1 ] ); i++ ) {
+			for ( let i = parseInt( index.split( 'to' )[ 0 ] ); i <= parseInt( index.split( 'to' )[ 1 ] ); i++ ) {
 				ranges[ i ] = label;
 			}
 		} else if ( isNaN( parseInt( label ) ) ) {
 			ranges[ index ] = label;
 		}
 	} );
+
+	let parsedPagelist;
 
 	try {
 		parsedPagelist = parsedText.querySelector( '.prp-index-pagelist' ).children;
@@ -255,7 +256,7 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 		return;
 	}
 
-	for ( i = 0; i < parsedPagelist.length; i++ ) {
+	for ( let i = 0; i < parsedPagelist.length; i++ ) {
 		if ( parsedPagelist[ i ].classList.contains( 'prp-index-pagelist-page' ) ) {
 			enumeratedList.push( {
 				subPage: ( i + 1 ),

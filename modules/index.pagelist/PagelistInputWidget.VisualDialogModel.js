@@ -1,5 +1,5 @@
-var DialogModel = require( './PagelistInputWidget.DialogModel.js' );
-var Parameters = require( './PagelistInputWidget.Parameters.js' );
+const DialogModel = require( './PagelistInputWidget.DialogModel.js' );
+const Parameters = require( './PagelistInputWidget.Parameters.js' );
 
 /**
  * A model used to coordinate various parts of the Dialog UI.
@@ -41,7 +41,7 @@ OO.inheritClass( VisualDialogModel, DialogModel );
  * @param {Object} data A associative array containing the users inputs.
  */
 VisualDialogModel.prototype.updateCachedData = function ( data ) {
-	var params = this.parameters, partialList = this.generatePartialList();
+	const params = this.parameters, partialList = this.generatePartialList();
 
 	this.setRanges( params, data, partialList );
 
@@ -68,7 +68,7 @@ VisualDialogModel.prototype.updateCachedData = function ( data ) {
  * @return {mw.proofreadpage.PagelistInputWidget.Parameters}
  */
 VisualDialogModel.prototype.setRanges = function ( params, data, partialList ) {
-	var subPage = this.data.subPage,
+	const subPage = this.data.subPage,
 		nextChangePoint = this.findNextChangePoint( partialList, subPage, null, params );
 	if ( data.single ) {
 		// If the user wants to change ony one single page
@@ -94,7 +94,7 @@ VisualDialogModel.prototype.setRanges = function ( params, data, partialList ) {
  * @param {Array} partialList  Refer to the description of generatePartialList()
  */
 VisualDialogModel.prototype.setRangesForOverlappingRanges = function ( params, data, partialList ) {
-	var subPage = this.data.subPage,
+	const subPage = this.data.subPage,
 		oldRange = ( partialList[ subPage ] && partialList[ subPage ][ 1 ] && partialList[ subPage ][ 1 ].type ) || 'Number',
 		start = partialList[ subPage ] && partialList[ subPage ][ 0 ].from,
 		end = partialList[ subPage ] && partialList[ subPage ][ 0 ].to,
@@ -164,7 +164,7 @@ VisualDialogModel.prototype.setNumbering = function ( params, data ) {
  * @param  {mw.proofreadpage.PagelistInputWidget.Parameters} params
  */
 VisualDialogModel.prototype.debugOutput = function ( params ) {
-	var pagelistText = 'Wikisource Pagelist Widget visual mode debug output:\n';
+	let pagelistText = 'Wikisource Pagelist Widget visual mode debug output:\n';
 
 	pagelistText += '-----------------------------------------';
 
@@ -234,7 +234,7 @@ VisualDialogModel.prototype.removeUnecessaryNumbering = function ( params, parti
  * @return {mw.proofreadpage.PagelistInputWidget.Parameters}
  */
 VisualDialogModel.prototype.mergeContigousRanges = function ( partialList, params, start, end, label, all ) {
-	var dupStart, dupEnd;
+	let dupStart, dupEnd;
 	if ( partialList[ start - 1 ] && partialList[ start - 1 ][ 0 ].type === label &&
 		partialList[ end + 1 ] && partialList[ end + 1 ][ 0 ].type === label && all ) {
 		// There are ranges both in front and behind the current range with the same label
@@ -273,7 +273,7 @@ VisualDialogModel.prototype.mergeContigousRanges = function ( partialList, param
  * @return {number} index of next 'change point'
  */
 VisualDialogModel.prototype.findNextChangePoint = function ( partialList, currentIndex, currentLabel ) {
-	var i;
+	let i;
 	for ( i = currentIndex + 1; i <= this.lengthOfPagelist; i++ ) {
 		if ( ( currentLabel && ( typeof partialList[ i ] === 'undefined' || partialList[ i ][ 0 ].type !== currentLabel ) ) ) {
 			return i - 1;
@@ -295,10 +295,10 @@ VisualDialogModel.prototype.findNextChangePoint = function ( partialList, curren
  * @return {Array} The partialList
  */
 VisualDialogModel.prototype.generatePartialList = function () {
-	var params = this.parameters, partialList = [], i;
+	const params = this.parameters, partialList = [];
 	params.forEach( function ( index, label ) {
 		if ( index.split( 'to' )[ 0 ] !== index ) {
-			for ( i = parseInt( index.split( /(to|To)/ )[ 0 ] ); i <= parseInt( index.split( /(to|To)/ )[ 2 ] ); i++ ) {
+			for ( let i = parseInt( index.split( /(to|To)/ )[ 0 ] ); i <= parseInt( index.split( /(to|To)/ )[ 2 ] ); i++ ) {
 				if ( !partialList[ i ] ) {
 					partialList[ i ] = [];
 				}
@@ -326,7 +326,7 @@ VisualDialogModel.prototype.generatePartialList = function () {
  * @return {mw.proofreadpage.PagelistInputWidget.Parameters} Processed parameters
  */
 VisualDialogModel.prototype.expandParameters = function ( params ) {
-	var newParams = new Parameters();
+	const newParams = new Parameters();
 	params.forEach( function ( index, label ) {
 		if ( index.split( /(to|To)/ )[ 0 ] === index &&
 			isNaN( label ) ) {
@@ -370,7 +370,7 @@ VisualDialogModel.prototype.handleError = function () {
  * Syncs main model with this model
  */
 VisualDialogModel.prototype.setCachedData = function () {
-	var params = this.parameters,
+	const params = this.parameters,
 		partialList = this.generatePartialList();
 
 	this.removeUnecessaryNumbering( params, partialList );
@@ -387,7 +387,7 @@ VisualDialogModel.prototype.setCachedData = function () {
  * @param  {Array} partialList
  */
 VisualDialogModel.prototype.mergeContigousRangesBeforeUpdate = function ( params, partialList ) {
-	var start,
+	let start,
 		end,
 		dupStart,
 		dupEnd;
@@ -426,7 +426,7 @@ VisualDialogModel.prototype.mergeContigousRangesBeforeUpdate = function ( params
  * @return {boolean} Whether there is unsaved data or not
  */
 VisualDialogModel.prototype.unloadCachedData = function () {
-	var test = !this.changed;
+	const test = !this.changed;
 	if ( test ) {
 		this.parameters = this.mainModel.getParameters();
 		this.changed = false;

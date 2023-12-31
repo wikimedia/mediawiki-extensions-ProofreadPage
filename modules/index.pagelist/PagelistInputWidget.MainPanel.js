@@ -1,7 +1,7 @@
-var ImagePanel = require( './PagelistInputWidget.ImagePanel.js' );
-var WikitextFormPanel = require( './PagelistInputWidget.WikitextFormPanel.js' );
-var VisualFormPanel = require( './PagelistInputWidget.VisualFormPanel.js' );
-var TopPanel = require( './PagelistInputWidget.TopPanel.js' );
+const ImagePanel = require( './PagelistInputWidget.ImagePanel.js' );
+const WikitextFormPanel = require( './PagelistInputWidget.WikitextFormPanel.js' );
+const VisualFormPanel = require( './PagelistInputWidget.VisualFormPanel.js' );
+const TopPanel = require( './PagelistInputWidget.TopPanel.js' );
 /**
  * Main view for Wikisource Pagelist Dialog
  *
@@ -66,7 +66,7 @@ OO.inheritClass( MainPanel, OO.ui.PanelLayout );
  * @param  {OO.ui.OptionWidget} selectedOption
  */
 MainPanel.prototype.onSetData = function ( selectedOption ) {
-	var data = selectedOption.getData() || {};
+	const data = selectedOption.getData() || {};
 	// set data on only the model in use
 	if ( this.visualMode ) {
 		this.visualDialogModel.setData( data );

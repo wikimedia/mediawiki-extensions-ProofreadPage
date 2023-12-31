@@ -1,7 +1,7 @@
-var MainPanel = require( './PagelistInputWidget.MainPanel.js' );
-var WikitextDialogModel = require( './PagelistInputWidget.WikitextDialogModel.js' );
-var VisualDialogModel = require( './PagelistInputWidget.VisualDialogModel.js' );
-var PagelistPreview = require( './PagelistInputWidget.PagelistPreview.js' );
+const MainPanel = require( './PagelistInputWidget.MainPanel.js' );
+const WikitextDialogModel = require( './PagelistInputWidget.WikitextDialogModel.js' );
+const VisualDialogModel = require( './PagelistInputWidget.VisualDialogModel.js' );
+const PagelistPreview = require( './PagelistInputWidget.PagelistPreview.js' );
 
 /**
  * A dialog aimed at allowing a thumbnail of the scan of the page whoes
@@ -20,7 +20,12 @@ function Dialog( model, config ) {
 	this.wikitextDialogModel = new WikitextDialogModel( null, model );
 	this.visualDialogModel = new VisualDialogModel( null, model );
 	this.dialogModel = this.visualMode ? this.visualDialogModel : this.wikitextDialogModel;
-	this.mainPanel = new MainPanel( this.visualMode, this.wikitextDialogModel, this.visualDialogModel, this.preview );
+	this.mainPanel = new MainPanel(
+		this.visualMode,
+		this.wikitextDialogModel,
+		this.visualDialogModel,
+		this.preview
+	);
 
 	Dialog.super.call( this, config );
 }

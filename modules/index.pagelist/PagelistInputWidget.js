@@ -1,6 +1,6 @@
-var Model = require( './PagelistInputWidget.Model.js' );
-var PagelistPreview = require( './PagelistInputWidget.PagelistPreview.js' );
-var PagelistInputWidgetDialog = require( './PagelistInputWidget.Dialog.js' );
+const Model = require( './PagelistInputWidget.Model.js' );
+const PagelistPreview = require( './PagelistInputWidget.PagelistPreview.js' );
+const PagelistInputWidgetDialog = require( './PagelistInputWidget.Dialog.js' );
 /**
  * A widget aimed at making the job of creating pagelists easier
  *
@@ -122,7 +122,7 @@ PagelistInputWidget.prototype.updateTextInput = function ( wikitext ) {
 };
 
 PagelistInputWidget.prototype.changeEditMode = function () {
-	var mode = this.useVisualModeToggle.isSelected() ? '1' : '0';
+	const mode = this.useVisualModeToggle.isSelected() ? '1' : '0';
 	mw.user.options.set( 'proofreadpage-pagelist-use-visual-mode', mode );
 	this.api.saveOption( 'proofreadpage-pagelist-use-visual-mode', mode );
 	this.dialog.changeEditMode( mode );

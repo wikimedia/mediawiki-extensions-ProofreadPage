@@ -1,4 +1,4 @@
-var DialogModel = require( './PagelistInputWidget.DialogModel.js' );
+const DialogModel = require( './PagelistInputWidget.DialogModel.js' );
 /**
  * A model used to coordinate various parts of the Dialog UI.
  * The model caches changes to the wikitext while the dialog is open
@@ -56,7 +56,7 @@ WikiTextDialogModel.prototype.setCachedData = function () {
  * @return {boolean} Whether there is unsaved data or not
  */
 WikiTextDialogModel.prototype.unloadCachedData = function () {
-	var test = !this.changed;
+	const test = !this.changed;
 	if ( test ) {
 		this.wikitext = this.mainModel.getWikitext();
 		this.changed = false;

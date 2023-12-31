@@ -1,7 +1,8 @@
 /**
  * Panel that displays above the Image Panel and provides information about the scan.
  *
- * @param {mw.proofreadpage.PagelistInputWidget.DialogModel} dialogModel Model to coordinate the dialog UI
+ * @param {mw.proofreadpage.PagelistInputWidget.DialogModel} dialogModel
+ * Model to coordinate the dialog UI
  * @param {Object} config
  */
 function TopPanel( dialogModel, config ) {
@@ -58,7 +59,7 @@ TopPanel.prototype.createMessage = function ( msg, icon ) {
  * @param {Object} data
  */
 TopPanel.prototype.setPageData = function ( data ) {
-	var messageArr = [];
+	const messageArr = [];
 	this.$messages.empty();
 	this.data = data;
 	messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-scan-number', data.subPage ), 'article' ) );
