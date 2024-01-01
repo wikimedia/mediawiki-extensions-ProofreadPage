@@ -20,6 +20,7 @@ use WikitextContent;
  * the Index to exist.
  *
  * @group Database
+ * @covers \ProofreadPage\ProofreadPageLuaLibrary
  */
 class IndexAndPageLibraryTest extends Scribunto_LuaEngineTestBase {
 	/** @inheritDoc */
