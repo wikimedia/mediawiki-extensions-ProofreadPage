@@ -27,6 +27,7 @@
 	"proofreadpage-button-toggle-visibility-label": "Montrez/celez la titulo o la pedo di la pagino",
 	"proofreadpage-pagelist-dialog-cancel": "Nuligar",
 	"proofreadpage-pagelist-parsing-error-php": "La sequanta eroro renkontresis dum vort-analizado, $1",
+	"proofreadpage-pagelist-imageurlnotfound": "La miniaturo por ca imajo obtenita per ''scanner'' ne povis trovesar.",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Helpo",
 	"content-model-proofread-page": "Pagino di libro",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Pagini",
