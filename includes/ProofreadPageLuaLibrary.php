@@ -5,8 +5,10 @@ namespace ProofreadPage;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
+use ParserOutput;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageLevel;
+use ProofreadPage\Pagination\Pagination;
 use Psr\Log\LoggerInterface;
 use Scribunto_LuaError;
 use Scribunto_LuaLibraryBase;
@@ -25,7 +27,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	private $logger;
 
 	/**
-	 * @var \ParserOutput|null
+	 * @var ParserOutput|null
 	 */
 	private $parserOutput;
 
@@ -77,6 +79,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 
 	/**
 	 * Add a parser dependency on the given page (index or otherwise)
+	 *
 	 * @param Title|null $pageTitle
 	 */
 	private function addTemplateDependencyOnPage( ?Title $pageTitle ) {
@@ -91,6 +94,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 
 	/**
 	 * Add a parser dependency on every page in the index (and the index itself)
+	 *
 	 * @param Title|null $indexTitle
 	 */
 	private function addTemplateDependencyOnAllPagesInIndex( ?Title $indexTitle ) {
@@ -108,11 +112,11 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	/**
 	 * Return the index statistics for the given index name
 	 *
-	 * This function may be expensive, if the index has not been cached yet.
+	 * This function may be expensive if the index has not yet been cached.
 	 *
-	 * @param string $indexName the index title to get stats for
-	 * @return array the result table, in an array
-	 * @throws Scribunto_LuaError if expensive function count exceeded
+	 * @param string $indexName The index title to get stats for
+	 * @return array The result table, in an array
+	 * @throws Scribunto_LuaError If the expensive function count has been exceeded
 	 */
 	public function doGetIndexProgress( string $indexName ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
@@ -130,7 +134,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		$indexStats = $statsLookup->getStatsForIndexTitle( $indexTitle );
 
 		// Map stats to the Lua table
-		$stats = [
+		return [
 			0 => $indexStats->getNumberOfPagesForQualityLevel( 0 ),
 			1 => $indexStats->getNumberOfPagesForQualityLevel( 1 ),
 			2 => $indexStats->getNumberOfPagesForQualityLevel( 2 ),
@@ -140,15 +144,13 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 			"existing" => $indexStats->getNumberOfPagesWithAnyQualityLevel(),
 			"missing" => $indexStats->getNumberOfPagesWithoutQualityLevel(),
 		];
-
-		return [ $stats ];
 	}
 
 	/**
 	 * Get the IndexContent for a give index
 	 * @param string $indexName the name of the index
 	 * @return IndexContent|null the index content (or null if the index is
-	 *                           not found or the title construction fails)
+	 *  not found or the title construction fails)
 	 */
 	private function getIndexContent( string $indexName ): ?IndexContent {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
@@ -162,32 +164,27 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		// if the index content is needed, there's a dependency on the index
 		$this->addTemplateDependencyOnPage( $indexTitle );
 
-		$indexContent = $contentLookup->getIndexContentForTitle( $indexTitle );
-
-		return $indexContent;
+		return $contentLookup->getIndexContentForTitle( $indexTitle );
 	}
 
 	/**
 	 * Return the index fields for the given index name
 	 *
-	 * This function may be expensive, if the index content has not been cached yet.
+	 * This function may be expensive if the index content has not yet been cached.
 	 *
 	 * @param string $indexName the index title to get stats for
 	 * @return array the result table, in an array
-	 * @throws Scribunto_LuaError if expensive function count exceeded
+	 * @throws Scribunto_LuaError If the expensive function count has been exceeded
 	 */
 	public function doGetIndexFields( string $indexName ): array {
 		// this can be expensive
 		$indexContent = $this->getIndexContent( $indexName );
-		$wikitextFields = $indexContent->getFields();
 
 		$textConverter = static function ( WikitextContent $field ): string {
 			return $field->getText();
 		};
 
-		$textFields = array_map( $textConverter, $wikitextFields );
-
-		return [ $textFields ];
+		return [ array_map( $textConverter, $indexContent->getFields() ) ];
 	}
 
 	/**
@@ -197,25 +194,24 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 * include categories added by the Index page template or any other
 	 * expansion of wikitext.
 	 *
-	 * This function may be expensive, if the index content has not been cached yet.
+	 * This function may be expensive if the index content has not yet been cached.
 	 *
-	 * @param string $indexName the index title to get stats for
-	 * @return array the result table, in an array
-	 * @throws Scribunto_LuaError if expensive function count exceeded
+	 * @param string $indexName The index title to get stats for
+	 * @return array The result table, in an array
+	 * @throws Scribunto_LuaError If the expensive function count has been exceeded
 	 */
 	public function doGetIndexCategories( string $indexName ): array {
 		// this can be expensive
 		$indexContent = $this->getIndexContent( $indexName );
-		$categories = $indexContent->getCategories();
 
 		$textConverter = static function ( Title $field ): string {
 			return $field->getText();
 		};
 
 		// remap into a Lua-esque 1-indexed array of title strings
-		$textCategories = array_map( $textConverter, $categories );
-
-		return [ $textCategories ];
+		return [
+			array_map( $textConverter, $indexContent->getCategories() )
+		];
 	}
 
 	/**
@@ -224,7 +220,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 * Increments the expensive function counter if needed
 	 *
 	 * @param Title $indexTitle
-	 * @return \ProofreadPage\Pagination\Pagination
+	 * @return Pagination
 	 */
 	private function getPaginationForIndex( Title $indexTitle ) {
 		$paginationFactory = $this->context->getPaginationFactory();
@@ -237,34 +233,36 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		// the pagination depends on the index content
 		$this->addTemplateDependencyOnPage( $indexTitle );
 
-		// may be expensive, but cached
+		// maybe expensive, but cached
 		return $paginationFactory->getPaginationForIndexTitle( $indexTitle );
 	}
 
 	/**
-	 * Get the total number of page in the index
-	 * @param string $indexName the index title
-	 * @return array the number of pages of the index, 0 for an invalid index
+	 * Get the total number of pages in the index
+	 *
+	 * @param string $indexName The index title
+	 * @return array The number of pages in the index, 0 for an invalid index
 	 */
 	public function doGetNumberOfPages( string $indexName ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
 
-		// may be expensive
+		// maybe expensive
 		$pagination = $this->getPaginationForIndex( $indexTitle );
 
 		return [ $pagination->getNumberOfPages() ];
 	}
 
 	/**
-	 * The the n'th page in the pagination for an index
-	 * @param string $indexName the index title
-	 * @param int $n the index of the pag in that index (1 is the first)
-	 * @return array the page title, as an array for Lua
+	 * The n'th page in the pagination for an index
+	 *
+	 * @param string $indexName The index title
+	 * @param int $n The index of the pag in that index (1 is the first)
+	 * @return array The page title, as an array for Lua
 	 */
 	public function doGetPageInIndex( string $indexName, int $n ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
 
-		// may be expensive
+		// maybe expensive
 		$pagination = $this->getPaginationForIndex( $indexTitle );
 
 		try {
@@ -278,8 +276,9 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 
 	/**
 	 * Get the quality information for a given page
-	 * @param string $pageName the title of the page to get the info for
-	 * @return array the quality information as an array
+	 *
+	 * @param string $pageName The title of the page to get the info for
+	 * @return array The quality information as an array
 	 */
 	public function doGetPageQuality( string $pageName ): array {
 		$pageTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $pageName );
@@ -293,10 +292,8 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		// the page quality depends only on that page
 		$this->addTemplateDependencyOnPage( $pageTitle );
 
-		$pageLevel = $pqLookup->getQualityLevelForPageTitle( $pageTitle );
-
 		return [ [
-			'level' => $pageLevel,
+			'level' => $pqLookup->getQualityLevelForPageTitle( $pageTitle ),
 			// 'user' => $pageLevel->getUser(), // T289137
 			// 'timestamp' maybe?
 		] ];
@@ -304,8 +301,9 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 
 	/**
 	 * Get the title of the index for a given page
+	 *
 	 * @param Title $pageTitle
-	 * @return Title|null the title of the index
+	 * @return Title|null The title of the index
 	 */
 	private function getIndexForPage( Title $pageTitle ): ?Title {
 		$ifpLookup = $this->context->getIndexForPageLookup();
@@ -320,8 +318,9 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 
 	/**
 	 * Get the title of the index for a given page
-	 * @param string $pageName the title of the page to get the index for
-	 * @return array the name of the index
+	 *
+	 * @param string $pageName The title of the page to get the index for
+	 * @return array The name of the index
 	 */
 	public function doGetIndexForPage( string $pageName ): array {
 		$pageTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $pageName );
@@ -340,20 +339,21 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 
 	/**
 	 * Get the page numbering for a given page
-	 * @param string $pageName the title of the page to get the numbering for
-	 * @return array the name of the index
+	 *
+	 * @param string $pageName The title of the page to get the numbering for
+	 * @return array The name of the index
 	 */
 	public function doGetPageNumbering( string $pageName ): array {
 		$pageTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $pageName );
 
-		# may be expensive
+		// maybe expensive
 		$indexTitle = $this->getIndexForPage( $pageTitle );
 
 		if ( $indexTitle == null ) {
 			return [ null ];
 		}
 
-		// this is a cached lookup, so we'll only look this indexes pagination up once
+		// this is a cached lookup, so we'll only look this indexes pagination up once,
 		// but that first time is expensive
 		$pagination = $this->getPaginationForIndex( $indexTitle );
 		$language = $indexTitle->getPageLanguage();
