@@ -15,8 +15,8 @@
 	},
 	"nstab-page": "பக்கம்",
 	"nstab-index": "அட்டவணை",
-	"tooltip-ca-nstab-page": "புத்தக பக்கத்தை பார்க்கவும்",
-	"tooltip-ca-nstab-index": "புத்தக அட்டவணையைப் பார்க்கவும்",
+	"tooltip-ca-nstab-page": "நூற்பக்கத்தை பார்",
+	"tooltip-ca-nstab-index": "நூலட்டவணையைப் பார்",
 	"indexpages": "அட்டவணையின் பக்கப்பட்டியல்",
 	"pageswithoutscans": "மின்வருடாப் பக்கங்கள்",
 	"prefs-proofread-pagenamespace": "மெய்ப்பு காணலின் இடைமுக வகைகள்",
@@ -62,7 +62,7 @@
 	"proofreadpage_pages_to_proofread": "மெய்ப்பு செய்யவேண்டிய பக்கயெண்ணிக்கை",
 	"proofreadpage_specialpage_filterby_all": "யாவும்",
 	"proofreadpage_specialpage_filterby_incomplete": "முற்றுப்பெறாதவை",
-	"proofreadpage_specialpage_filterby_proofread": "மெய்ப்பு காண்க",
+	"proofreadpage_specialpage_filterby_proofread": "மெய்ப்புப் பார்",
 	"proofreadpage_specialpage_label_orderby": "வரிசை படுத்து:",
 	"proofreadpage_specialpage_label_key": "தேடு:",
 	"proofreadpage_specialpage_label_sortascending": "ஏறுவரிசையில் ஒழுங்குபடுத்துக",
@@ -119,6 +119,6 @@
 	"tag-proofreadpage-quality0": "உரையில்லாதவை",
 	"tag-proofreadpage-quality1": "மெய்ப்பு காணவேண்டியவை",
 	"tag-proofreadpage-quality2": "மேம்பாடு தேவை",
-	"tag-proofreadpage-quality3": "மெய்ப்பு காண்க",
+	"tag-proofreadpage-quality3": "மெய்ப்புப் பார்",
 	"tag-proofreadpage-quality4": "சரிபார்க்கப்பட்டவை"
 }
