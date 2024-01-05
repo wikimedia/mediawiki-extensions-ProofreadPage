@@ -3,6 +3,7 @@
 namespace ProofreadPage;
 
 use MediaWiki\Config\ConfigException;
+use MediaWiki\Config\HashConfig;
 use ProofreadPageTestCase;
 
 /**
@@ -14,7 +15,7 @@ class ProofreadPageInitTest extends ProofreadPageTestCase {
 	public function testInitNamespaceThrowsExceptionWhenNamespaceValueIsNotNumeric() {
 		$this->overrideConfigValue( 'ProofreadPageNamespaceIds', [ 'page' => 'quux' ] );
 		$this->expectException( ConfigException::class );
-		$config = new \HashConfig( [
+		$config = new HashConfig( [
 			'ProofreadPageNamespaceIds' => [
 				'page' => 'quux'
 			],

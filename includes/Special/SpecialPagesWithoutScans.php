@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Special;
 
-use PageQueryPage;
+use MediaWiki\SpecialPage\PageQueryPage;
 use ProofreadPage\Context;
 
 /**

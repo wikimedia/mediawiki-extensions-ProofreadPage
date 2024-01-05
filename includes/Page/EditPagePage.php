@@ -13,7 +13,7 @@ use OOUI\HtmlSnippet;
 use ProofreadPage\Context;
 use ProofreadPage\EditInSequence;
 use ProofreadPage\OOUI\PageQualityInputWidget;
-use ReadOnlyMode;
+use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**
  * @license GPL-2.0-or-later

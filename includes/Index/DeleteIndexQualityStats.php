@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use DataUpdate;
+use MediaWiki\Deferred\DataUpdate;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 

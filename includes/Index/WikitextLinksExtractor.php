@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use MalformedTitleException;
+use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\Title;
 use ProofreadPage\Link;
 

@@ -3,9 +3,9 @@
 namespace ProofreadPage;
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
-use ParserOutput;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\Pagination;

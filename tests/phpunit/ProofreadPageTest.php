@@ -2,16 +2,16 @@
 
 namespace ProofreadPage;
 
-use CommentStoreComment;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Page\PageIdentity;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
+use MediaWiki\Status\Status;
 use MediaWiki\User\UserIdentity;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPageTestCase;
-use Status;
 
 /**
  * @group ProofreadPage

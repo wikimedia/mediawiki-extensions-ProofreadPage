@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Config\HashConfig;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use PHPUnit\Framework\MockObject\MockObject;
 use ProofreadPage\Context;
