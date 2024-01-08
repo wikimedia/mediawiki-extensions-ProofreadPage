@@ -277,9 +277,9 @@ class SpecialProofreadPages extends QueryPage {
 		return [
 			'tables' => [ 'pr_index', 'page' ],
 			'fields' => [
-				'page_namespace AS namespace',
-				'page_title AS title',
-				$this->buildValueField() . ' AS value',
+				'namespace' => 'page_namespace',
+				'title' => 'page_title',
+				'value' => $this->buildValueField(),
 				'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4'
 			],
 			'conds' => $conds,
