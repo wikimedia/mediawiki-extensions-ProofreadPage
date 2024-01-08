@@ -6,5 +6,9 @@
 	},
 	"nstab-page": "Paj",
 	"tooltip-ca-nstab-page": "Vwè paj a liv-la",
-	"proofreadpage_image": "Imaj"
+	"proofreadpage_image": "Imaj",
+	"proofreadpage_nologin": "Ou pa konnékté",
+	"proofreadpage_specialpage_label_key": "Chèché :",
+	"proofreadpage_index_listofpages": "Lis a paj",
+	"proofreadpage_styles": "Istil"
 }
