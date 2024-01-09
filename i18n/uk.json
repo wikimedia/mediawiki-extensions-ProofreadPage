@@ -54,7 +54,7 @@
 	"proofreadpage_header": "Заголовок (не включається):",
 	"proofreadpage_body": "Тіло сторінки (буде включатися):",
 	"proofreadpage_footer": "Нижній колонтитул (не включається):",
-	"proofreadpage_edit_in_sequence": "Вичитуйте сторінки послідовно",
+	"proofreadpage_edit_in_sequence": "Вичитувати сторінки послідовно",
 	"proofreadpage_toggleheaders": "показувати невключені розділи",
 	"proofreadpage_quality0_category": "Без тексту",
 	"proofreadpage_quality1_category": "Не вичитано",
