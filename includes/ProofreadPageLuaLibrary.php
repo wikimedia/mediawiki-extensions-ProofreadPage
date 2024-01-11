@@ -134,7 +134,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 		$indexStats = $statsLookup->getStatsForIndexTitle( $indexTitle );
 
 		// Map stats to the Lua table
-		return [
+		return [ [
 			0 => $indexStats->getNumberOfPagesForQualityLevel( 0 ),
 			1 => $indexStats->getNumberOfPagesForQualityLevel( 1 ),
 			2 => $indexStats->getNumberOfPagesForQualityLevel( 2 ),
@@ -143,7 +143,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 			"total" => $indexStats->getNumberOfPages(),
 			"existing" => $indexStats->getNumberOfPagesWithAnyQualityLevel(),
 			"missing" => $indexStats->getNumberOfPagesWithoutQualityLevel(),
-		];
+		] ];
 	}
 
 	/**
