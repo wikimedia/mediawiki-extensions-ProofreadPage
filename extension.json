@@ -174,7 +174,6 @@
 				"styles/dialog.css",
 				"styles/index.css"
 			],
-			"es6": true,
 			"packageFiles": [
 				"init.js",
 				"PagelistInputWidget.Dialog.js",
