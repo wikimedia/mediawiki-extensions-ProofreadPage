@@ -11,6 +11,7 @@
 	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Returner URL-en til bildet tilknyttet siden det spørres etter, i full størrelse",
 	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Returner ei liste som inneholder URL-ene til bildene for siden det spørres etter, i størrelsene 1x, 1.5x og 2x",
 	"apierror-proofreadpage-invalidindex": "Ugyldig indekstittel: «$1».",
+	"apihelp-query+defaultcontentforpage-summary": "Gir standardinnholdet for en gitt side i «Side:»-navnerommet.\n\nStandardinnholdet er rå wikitekst (som potensielt inneholder råe HTML-tagger fra upålitelige boktekstlag). må ikke brukes i HTML uten å escapes!",
 	"apihelp-query+proofread-summary": "Returnerer informasjon om korrekturlesingsstatusen til de gitte sidene.",
 	"apihelp-query+proofread-example-1": "Returnerer korrekturlesingsstatus i navneromm 250",
 	"apihelp-query+proofreadinfo-summary": "Returnerer informasjon om konfigurasjonen av ProofreadPage-utvidelsen.",
