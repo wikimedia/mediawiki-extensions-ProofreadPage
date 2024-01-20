@@ -52,9 +52,6 @@ class ApiQueryProofreadPagesInIndexTest extends ApiTestCase {
 	}
 
 	protected function setUp(): void {
-		$this->tablesUsed[] = 'page';
-		$this->tablesUsed[] = 'pr_index';
-
 		parent::setUp();
 		$this->articlesSetUp();
 	}

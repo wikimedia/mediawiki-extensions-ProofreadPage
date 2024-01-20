@@ -16,9 +16,6 @@ class PageRevisionTaggerTest extends ProofreadPageTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->tablesUsed[] = 'change_tag';
-		$this->tablesUsed[] = 'revision';
-
 		// don't care about user permissions here
 		$this->mergeMwGlobalArrayValue(
 			'wgGroupPermissions',

@@ -84,12 +84,6 @@ class IndexAndPageLibraryTest extends Scribunto_LuaEngineTestBase {
 
 	/** @before */
 	protected function articlesSetUp(): void {
-		$this->tablesUsed[] = 'pr_index';
-		$this->tablesUsed[] = 'page';
-		$this->tablesUsed[] = 'pagelinks';
-		$this->tablesUsed[] = 'page_props';
-		$this->tablesUsed[] = 'pr_index';
-
 		$this->addArticle(
 			'MediaWiki:Proofreadpage index template',
 			new WikitextContent( '{{{Pages}}}' )
