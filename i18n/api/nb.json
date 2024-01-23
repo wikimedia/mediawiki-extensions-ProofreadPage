@@ -7,6 +7,7 @@
 	"apihelp-query+imageforpage-summary": "Forhåndsrendrer og gir URL-er til bilder for en gitt side i «Page:»-navnerommet.",
 	"apihelp-query+imageforpage-param-prop": "Hvilke typer bilder eller egenskaper for bilder som skal hentes for en gitt side i «Page:»-navnerommet.",
 	"apierror-proofreadpage-invalidindex": "Ugyldig indekstittel: «$1».",
+	"apihelp-query+defaultcontentforpage-summary": "Gir standardinnholdet for en gitt side i «Side:»-navnerommet.\n\nStandardinnholdet er rå wikitekst (som potensielt inneholder råe HTML-tagger fra upålitelige boktekstlag). må ikke brukes i HTML uten å escapes!",
 	"apihelp-query+proofread-description": "Returnerer informasjon om den gjeldende korrekturlesingsstatusen til de gitte sidene.",
 	"apihelp-query+proofread-summary": "Returnerer informasjon om korrekturlesingsstatusen til de gitte sidene.",
 	"apihelp-query+proofread-example-1": "Returnerer korrekturlesingsstatus i navneromm 250",
