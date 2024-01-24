@@ -90,6 +90,8 @@
 	"proofreadpage_styles_message": "CSS-styl som brukes på denne teksten",
 	"action-pagequality": "modifisere sidekvalitetsflagget",
 	"right-pagequality": "Endre sidens kvalitetsflagg",
+	"action-pagequality-validate": "sette sidekvalitet til validert",
+	"right-pagequality-validate": "Sette sidekvalitet til validert",
 	"action-pagequality-admin": "redigere sidekvalitetsflagget uten restriksjoner",
 	"right-pagequality-admin": "Redigere sidekvalitetsflagget uten restriksjoner",
 	"proofreadpage-section-tools": "Korrekturlesingsverktøy",
