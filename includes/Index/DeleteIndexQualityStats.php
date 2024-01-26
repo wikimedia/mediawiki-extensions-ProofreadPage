@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Index;
 
+use IDBAccessObject;
 use MediaWiki\Deferred\DataUpdate;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -34,7 +35,7 @@ class DeleteIndexQualityStats extends DataUpdate {
 	public function doUpdate() {
 		$this->loadBalancer->getConnection( ILoadBalancer::DB_PRIMARY )->delete(
 			'pr_index',
-			[ 'pr_page_id' => $this->indexTitle->getArticleID( Title::READ_LATEST ) ],
+			[ 'pr_page_id' => $this->indexTitle->getArticleID( IDBAccessObject::READ_LATEST ) ],
 			__METHOD__
 		);
 	}

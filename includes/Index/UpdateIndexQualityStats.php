@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Index;
 
+use IDBAccessObject;
 use MediaWiki\Deferred\DataUpdate;
 use MediaWiki\Title\Title;
 use ProofreadPage\Page\PageQualityLevelLookup;
@@ -70,7 +71,7 @@ class UpdateIndexQualityStats extends DataUpdate {
 			'pr_index',
 			'pr_page_id',
 			[
-				'pr_page_id' => $this->indexTitle->getArticleID( Title::READ_LATEST ),
+				'pr_page_id' => $this->indexTitle->getArticleID( IDBAccessObject::READ_LATEST ),
 				'pr_count' => $stats->getNumberOfPages(),
 				'pr_q0' => $stats->getNumberOfPagesForQualityLevel( 0 ),
 				'pr_q1' => $stats->getNumberOfPagesForQualityLevel( 1 ),
