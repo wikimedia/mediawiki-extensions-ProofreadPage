@@ -323,7 +323,7 @@ $proofreadPageNamespaceNames['nap'] = [
 	'index_talk' => 'Ennece_chiàcchiera'
 ];
 
-/** Norwegian (bokmål)‬ (‪norsk (bokmål)‬) */
+/** Norwegian (bokmål) (norsk (bokmål)) */
 $proofreadPageNamespaceNames['nb'] = [
 	'page' => 'Side',
 	'page_talk' => 'Sidediskusjon',
