@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stefán Örvar Sigmundsson"
+		]
+	},
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "Skila skráarnafninu tengdu síðunni sem er umbeðin",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "Skila stærð myndarinnar tengdri síðunni sem er umbeðin",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Skila slóð myndarinnar í fullri stærð sem tengist síðunni sem er umbeðin",
+	"apierror-proofreadpage-invalidindex": "Ógildur frumritstitill „$1“.",
+	"apihelp-query+proofread-summary": "Skilar upplýsingum um núverandi stöðu prófarkalesturs tiltekinna síðna.",
+	"apihelp-query+proofread-example-1": "Skila stöðu prófarkalesturs fyrir síður í nafnrými 250",
+	"apihelp-query+proofreadinfo-summary": "Skila upplýsingum um stillingu ProofreadPage-viðbótar.",
+	"apihelp-query+proofreadinfo-param-prop": "Hvaða eiginleika prófarkalesturs til að sækja:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "Upplýsingar um „{{ns:Page}}“ og „{{ns:Index}}“ nafnrými.",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "Listi yfir gæðastig prófarkalestrar.",
+	"apihelp-query+proofreadinfo-example-1": "Skila sjálfgildum upplýsingum",
+	"apihelp-query+proofreadinfo-example-3": "Skila nafnrýmisupplýsingum",
+	"apihelp-query+proofreadpagesinindex-summary": "Lista síður í tilgreindu frumriti",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Takmarka hversu mörgum síðum verður skilað",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Síðuauðkenni frumritssíðu til að sækja síður fyrir",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Hvaða eiginleika til að sækja fyrir hverja síðu",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "Skila síðuauðkenni fyrir hverja síðu tengdri frumritssíðunni",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "Skila síðutitli hverjar síðu tengdri frumritssíðunni",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "Skila síðuauðkenni fyrir hverja síðu tengdri frumritssíðunni",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "Skila sníddum síðunúmerum hverjar síðu tengdri frumritssíðunni",
+	"apihelp-query+proofreadpagesinindex-param-title": "Titill frumritssíðu til að sækja síður fyrir",
+	"apihelp-query+proofreadpagesinindex-example-1": "Skila sjálfgildum upplýsingum"
+}
