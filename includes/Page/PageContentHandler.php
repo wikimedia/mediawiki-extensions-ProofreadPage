@@ -4,6 +4,7 @@ namespace ProofreadPage\Page;
 
 use Content;
 use IContextSource;
+use MediaWiki\Category\TrackingCategories;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
@@ -31,19 +32,18 @@ class PageContentHandler extends TextContentHandler {
 
 	use MultiFormatSerializerUtils;
 
-	/**
-	 * @var WikitextContentHandler
-	 */
-	protected $wikitextContentHandler;
+	protected WikitextContentHandler $wikitextContentHandler;
+	private TrackingCategories $trackingCategories;
 
 	/**
 	 * @param string $modelId
 	 */
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_PAGE ) {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ] );
-		$this->wikitextContentHandler = MediaWikiServices::getInstance()
-			->getContentHandlerFactory()
+		$services = MediaWikiServices::getInstance();
+		$this->wikitextContentHandler = $services->getContentHandlerFactory()
 			->getContentHandler( CONTENT_MODEL_WIKITEXT );
+		$this->trackingCategories = $services->getTrackingCategories();
 	}
 
 	/**
@@ -585,12 +585,10 @@ class PageContentHandler extends TextContentHandler {
 
 		$parserOutput = new ParserOutput();
 		$this->wikitextContentHandler->fillParserOutputInternal( $wikitextContent, $cpoParams, $parserOutput );
-		$parserOutput->addCategory(
-			Title::makeTitleSafe(
-				NS_CATEGORY,
-				$content->getLevel()->getLevelCategoryName()
-			)->getDBkey(),
-			$title->getText()
+		$this->trackingCategories->addTrackingCategory(
+			$parserOutput,
+			$content->getLevel()->getLevelCategoryKey(),
+			$title
 		);
 		$parserOutput->setPageProperty(
 			'proofread_page_quality_level',

@@ -57,6 +57,11 @@
 		"proofread-index": "\\ProofreadPage\\Index\\IndexContentHandler"
 	},
 	"TrackingCategories": [
+		"proofreadpage_quality0_category",
+		"proofreadpage_quality1_category",
+		"proofreadpage_quality2_category",
+		"proofreadpage_quality3_category",
+		"proofreadpage_quality4_category",
 		"proofreadpage_nosuch_index_category"
 	],
 	"MessagesDirs": {
