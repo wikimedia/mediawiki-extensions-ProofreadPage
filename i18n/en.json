@@ -24,7 +24,7 @@
 	"proofreadpage_pagesnotallowed": "Error: The pages tag cannot be used in the Page: and Index: namespaces",
 	"proofreadpage_pagelistnotallowed": "Error: The pagelist tag can only be used in the Index: namespace",
 	"proofreadpage_dataconfig_badformatted": "Bug in data configuration",
-	"proofreadpage_dataconfig_badformattedtext": "The page [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "The page [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON.",
 	"proofreadpage_number_expected": "Error: Numeric value expected",
 	"proofreadpage_interval_too_large": "Error: Interval too large",
 	"proofreadpage_invalid_interval": "Error: Invalid interval",
