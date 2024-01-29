@@ -183,7 +183,7 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 	}
 
 	/**
-	 * Get the id of the namespace. Required that Mediawiki is loaded and
+	 * Get the id of the namespace. Required that MediaWiki is loaded and
 	 * ProofreadPageInit::initNamespace has been executed for the relevant namespace.
 	 * Warning: It's not the function you search. If you want to know the index or page namespace
 	 * id use ProofreadPage::getIndexNamespaceId() or ProofreadPage::getPageNamespaceId()
