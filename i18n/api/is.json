@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stefán Örvar Sigmundsson"
+		]
+	},
+	"apierror-proofreadpage-invalidindex": "Ógildur frumritstitill „$1“.",
+	"apihelp-query+proofread-summary": "Skilar upplýsingum um núverandi stöðu prófarkalesturs tiltekinna síðna.",
+	"apihelp-query+proofread-example-1": "Skila stöðu prófarkalesturs fyrir síður í nafnrými 250",
+	"apihelp-query+proofreadinfo-summary": "Skila upplýsingum um stillingu ProofreadPage-viðbótar.",
+	"apihelp-query+proofreadinfo-example-1": "Skila sjálfgildum upplýsingum",
+	"apihelp-query+proofreadinfo-example-3": "Skila nafnrýmisupplýsingum",
+	"apihelp-query+proofreadpagesinindex-summary": "Lista síður í tilgreindu frumriti",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Takmarka hversu mörgum síðum verður skilað",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Síðuauðkenni frumritssíðu til að sækja síður fyrir",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Hvaða eiginleika til að sækja fyrir hverja síðu",
+	"apihelp-query+proofreadpagesinindex-param-title": "Titill frumritssíðu til að sækja síður fyrir",
+	"apihelp-query+proofreadpagesinindex-example-1": "Skila sjálfgildum upplýsingum"
+}
