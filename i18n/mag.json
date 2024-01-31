@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"ऐक्टिवेटेड्"
+		]
+	},
+	"nstab-page": "पन्ना",
+	"nstab-index": "अनुक्रम",
+	"tooltip-ca-nstab-page": "पुस्तकके पन्ना देखी",
+	"tooltip-ca-nstab-index": "पुस्तकके अनुक्रम देखी",
+	"indexpages": "अनुक्रम पन्नाके सूची",
+	"proofreadpage_image": "चित्र",
+	"proofreadpage_index": "अनुक्रम",
+	"proofreadpage_index_expected": "त्रुटि: अनुक्रम चाहि",
+	"proofreadpage_nosuch_index": "त्रुटि: ऐसन कौनो अनुक्रम न",
+	"proofreadpage_nosuch_file": "त्रुटि: ऐसन कौनो सञ्चिका न",
+	"proofreadpage_nextpage": "अगिला पन्ना",
+	"proofreadpage_prevpage": "पिछला पन्ना"
+}

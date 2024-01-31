@@ -98,6 +98,7 @@
 	"action-pagequality": "تعديل علامة جودة الصفحة",
 	"right-pagequality": "عدل علامة جودة الصفحة",
 	"action-pagequality-validate": "ضبط حالة الصفحة إلى مُتحقق منها",
+	"right-pagequality-validate": "ضبط حالة الصفحة إلى مُتحقق منها",
 	"action-pagequality-admin": "تحرير علامة جودة الصفحة دون قيود",
 	"right-pagequality-admin": "تحرير علامة جودة الصفحة دون قيود",
 	"proofreadpage-section-tools": "أدوات تصحيح",
