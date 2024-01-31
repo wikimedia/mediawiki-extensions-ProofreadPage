@@ -20,7 +20,7 @@
 	"proofreadpage_index": "Frumrit",
 	"proofreadpage_index_expected": "Villa: Frumrits vænt",
 	"proofreadpage_nosuch_index": "Villa: Ekkert frumrit",
-	"proofreadpage_nosuch_index_category": "Innifalningar síðna sem vísa í frumritssíður sem vantar",
+	"proofreadpage_nosuch_index_category": "Síðuinnifalningar sem vísa á frumritssíður sem vantar",
 	"proofreadpage_nosuch_index_category-desc": "<code><nowiki><pages/></nowiki></code>-merki vísar á frumritssíðu sem er ekki til.",
 	"proofreadpage_nosuch_file": "Villa: Engin skrá",
 	"proofreadpage_indexdupetext": "Síður geta ekki verið listaðar meira en einu sinni á frumritssíðu.",
