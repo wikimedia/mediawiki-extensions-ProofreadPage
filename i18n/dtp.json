@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"CorrelMoris38",
-			"Jjurieee"
+			"Jjurieee",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Liwang",
@@ -27,7 +28,7 @@
 	"proofreadpage_pagesnotallowed": "Ralat: Tag liwang nopo nga au milo gunoon id suang liwang: om Indeks: namespaces",
 	"proofreadpage_pagelistnotallowed": "Ralat: Tag kointayadan liwang nopo nga milo gunoon id suang Indeks: namespace",
 	"proofreadpage_dataconfig_badformatted": "Bug id data do konfigurasi",
-	"proofreadpage_dataconfig_badformattedtext": "Liwang [[Mediawiki:Proofreadpage index data config]] nopo nga okon JSON i nokoformat di tootopot.",
+	"proofreadpage_dataconfig_badformattedtext": "Liwang [[MediaWiki:Proofreadpage index data config]] nopo nga okon JSON i nokoformat di tootopot.",
 	"proofreadpage_number_expected": "Ralat: gatang numbur ii naandasan",
 	"proofreadpage_interval_too_large": "Ralat: selang nopo nga agayo tomod",
 	"proofreadpage_invalid_interval": "Ralat: selang di au sah",

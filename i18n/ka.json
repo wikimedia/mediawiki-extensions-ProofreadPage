@@ -9,6 +9,7 @@
 			"Malafaya",
 			"Mehman97",
 			"OpusDEI",
+			"Reedy",
 			"Sopho",
 			"გიორგიმელა"
 		]
@@ -30,7 +31,7 @@
 	"proofreadpage_nologintext": "თქვენ უნდა [[Special:UserLogin|შეხვიდეთ სისტემაში]] სტატიების კორექტურის სტატუსის შესაცვლელად.",
 	"proofreadpage_notallowedtext": "თქვენ არ შეგიძლიათ ამ გვერდის კორექტურის სტატუსის შეცვლა.",
 	"proofreadpage_dataconfig_badformatted": "შეცდომა კონფიგურაციის მონაცემებში",
-	"proofreadpage_dataconfig_badformattedtext": "გვერდი [[Mediawiki:Proofreadpage index data config]] არ არის კარგად ჩამოყალიბებული JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "გვერდი [[MediaWiki:Proofreadpage index data config]] არ არის კარგად ჩამოყალიბებული JSON.",
 	"proofreadpage_number_expected": "შეცდომა: რიცხვითი მნიშვნელობის ლოდინი",
 	"proofreadpage_interval_too_large": "შეცდომა: ინტერვალი ძალიან დიდია",
 	"proofreadpage_invalid_interval": "შეცდომა: არასწორი ინტერვალი",

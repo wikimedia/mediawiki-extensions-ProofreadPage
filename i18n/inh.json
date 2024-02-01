@@ -3,6 +3,7 @@
 		"authors": [
 			"Adam-Yourist",
 			"ElizaMag",
+			"Reedy",
 			"Tusholi"
 		]
 	},
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "[[Special:UserLogin|Система чудаха]] дез шун, оагIон дéшаш нийсдара статус хувца ера.",
 	"proofreadpage_notallowedtext": "Хьа йиш яц укх оагIон дéшаш нийсдара статус хувца",
 	"proofreadpage_dataconfig_badformatted": "Конфигурацен дараш чура гIалат",
-	"proofreadpage_dataconfig_badformattedtext": "ОагIув [[Mediawiki:Proofreadpage index data config]] харцахьара JSON-форматах я.",
+	"proofreadpage_dataconfig_badformattedtext": "ОагIув [[MediaWiki:Proofreadpage index data config]] харцахьара JSON-форматах я.",
 	"proofreadpage_number_expected": "ГIалат. Таьрахьен значени хила езаш я.",
 	"proofreadpage_interval_too_large": "ГIалат. ТIех яьнна йоккха юкъ.",
 	"proofreadpage_invalid_interval": "ГIалат: харцахьара интервал",

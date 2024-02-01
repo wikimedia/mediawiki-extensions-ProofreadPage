@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dr Lotus Black",
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"Reedy"
 		]
 	},
 	"nstab-page": "စာမျက်နှာ",
@@ -25,7 +26,7 @@
 	"proofreadpage_notallowedtext": "ဤစာမျက်နှာ၏ စိစစ်ဖတ်ရှုခြင်း အခြေအနေကို ပြောင်းလဲရန် သင့်အား ခွင့်မပြုပါ။",
 	"proofreadpage_pagesnotallowed": "အမှား။ စာမျက်နှာများ တဂ်ကို စာမျက်နှာ: နှင့် အညွှန်း: အမည်ညွှန်းများတွင် အသုံးမပြုနိုင်ပါ။",
 	"proofreadpage_dataconfig_badformatted": "ဒေတာဖွဲ့စည်းမှုရှိ ချွတ်ယွင်းချက်",
-	"proofreadpage_dataconfig_badformattedtext": "စာမျက်နှာ [[Mediawiki:Proofreadpage index data config]] သည် ကောင်းစွာပုံစံချထားသော JSON တွင် ရှိမနေပါ။",
+	"proofreadpage_dataconfig_badformattedtext": "စာမျက်နှာ [[MediaWiki:Proofreadpage index data config]] သည် ကောင်းစွာပုံစံချထားသော JSON တွင် ရှိမနေပါ။",
 	"proofreadpage_number_expected": "အမှား။ မျှော်လင့်ထားသော နံပါတ်တန်ဖိုး",
 	"proofreadpage_interval_too_large": "အမှား။ အကြားကာလကြီးလွန်း",
 	"proofreadpage_invalid_interval": "အမှား။ မမှန်သော ကြားဖြတ်ကာလ",

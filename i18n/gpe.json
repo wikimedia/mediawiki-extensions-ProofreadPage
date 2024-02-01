@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"DaSupremo"
+			"DaSupremo",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Page",
@@ -26,7 +27,7 @@
 	"proofreadpage_pagesnotallowed": "Error: Dem no fi use de pages tag for de Page inside: den Index: namespaces",
 	"proofreadpage_pagelistnotallowed": "Error: Dem fi use de pagelist for de Index inside per: namespace",
 	"proofreadpage_dataconfig_badformatted": "Bug for data configuration inside",
-	"proofreadpage_dataconfig_badformattedtext": "De page [[Mediawiki:Proofreadpage index data config]] no dey for well-formatted JSON inside.",
+	"proofreadpage_dataconfig_badformattedtext": "De page [[MediaWiki:Proofreadpage index data config]] no dey for well-formatted JSON inside.",
 	"proofreadpage_number_expected": "Error: Dem dey expect numeric value",
 	"proofreadpage_interval_too_large": "Error: Interval bola too much",
 	"proofreadpage_invalid_interval": "Error: Invalid interval",

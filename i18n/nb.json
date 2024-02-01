@@ -8,6 +8,7 @@
 			"Jon Harald Søby (WMNO)",
 			"Laaknor",
 			"Nghtwlkr",
+			"Reedy",
 			"Simny"
 		]
 	},
@@ -33,7 +34,7 @@
 	"proofreadpage_pagesnotallowed": "Feil: pages-taggen kan ikke brukes i navnerommene Page: eller Index:",
 	"proofreadpage_pagelistnotallowed": "Feil: pagelist-taggen kan kun brukes i Index:-navnerommet",
 	"proofreadpage_dataconfig_badformatted": "Programfeil i datakonfigurasjonen",
-	"proofreadpage_dataconfig_badformattedtext": "Siden [[Mediawiki:Proofreadpage index data config]] er ikke velformatert JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Siden [[MediaWiki:Proofreadpage index data config]] er ikke velformatert JSON.",
 	"proofreadpage_number_expected": "Feil: Numerisk verdi forventet",
 	"proofreadpage_interval_too_large": "Feil: Intervall for stort",
 	"proofreadpage_invalid_interval": "Feil: ugyldig intervall",

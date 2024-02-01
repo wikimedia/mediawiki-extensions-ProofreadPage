@@ -3,6 +3,7 @@
 		"authors": [
 			"Akamycoco",
 			"Iyuqciyang",
+			"Reedy",
 			"Shidailun73"
 		]
 	},
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "ida su asi ka [[Special:UserLogin|ppatas tmay han]]kika mtduwa brahan smmalu ka patas ruwahan o ga mmeenu",
 	"proofreadpage_notallowedtext": "ini su angal snruwaan mtduwa brahan smmalu ka patas ruwahan endaan qmita smmalu o mmenu.",
 	"proofreadpage_dataconfig_badformatted": "Bug ka ga kska pnowsa patas",
-	"proofreadpage_dataconfig_badformattedtext": "patas ruwahan  \n[[Mediawiki:Proofreadpage index data config]] aji kika malu bi pprgun qqtaan JSONiyax ptasan",
+	"proofreadpage_dataconfig_badformattedtext": "patas ruwahan  \n[[MediaWiki:Proofreadpage index data config]] aji kika malu bi pprgun qqtaan JSONiyax ptasan",
 	"proofreadpage_number_expected": "mqnuqu:aji asaw knsspug",
 	"proofreadpage_interval_too_large": "mqnuqu:mqsuqi paru ka iyax",
 	"proofreadpage_invalid_interval": "mqnuqu: iyax pnsnakan o ini klai",

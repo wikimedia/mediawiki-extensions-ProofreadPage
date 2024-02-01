@@ -8,7 +8,8 @@
 			"Horus",
 			"Nullzero",
 			"Octahedron80",
-			"Passawuth"
+			"Passawuth",
+			"Reedy"
 		]
 	},
 	"nstab-page": "หน้า",
@@ -28,7 +29,7 @@
 	"proofreadpage_nologintext": "คุณต้อง[[Special:UserLogin|ล็อกอิน]]เพื่อเปลี่ยนสถานะการพิสูจน์อักษรของหน้าต่าง ๆ",
 	"proofreadpage_notallowedtext": "คุณไม่สามารถเปลี่ยนสถานะการพิสูจน์อักษรของหน้านี้",
 	"proofreadpage_dataconfig_badformatted": "ข้อบกพร่องในการกำหนดค่าข้อมูล",
-	"proofreadpage_dataconfig_badformattedtext": "หน้า [[Mediawiki:Proofreadpage index data config]] ไม่อยู่ในรูปแบบเจซันที่เหมาะสม",
+	"proofreadpage_dataconfig_badformattedtext": "หน้า [[MediaWiki:Proofreadpage index data config]] ไม่อยู่ในรูปแบบเจซันที่เหมาะสม",
 	"proofreadpage_number_expected": "ข้อผิดพลาด: คาดหวังเป็นค่าตัวเลข",
 	"proofreadpage_interval_too_large": "ข้อผิดพลาด: ช่วงกว้างเกินไป",
 	"proofreadpage_invalid_interval": "ข้อผิดพลาด: ช่วงไม่ถูกต้อง",

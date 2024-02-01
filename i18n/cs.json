@@ -7,6 +7,7 @@
 			"Jkjk",
 			"Matěj Grabovský",
 			"Mormegil",
+			"Reedy",
 			"Skim"
 		]
 	},
@@ -31,7 +32,7 @@
 	"proofreadpage_pagesnotallowed": "Chyba: Tag pages nelze použít ve jmenných prostorech Stránka: a Index:",
 	"proofreadpage_pagelistnotallowed": "Chyba: Značku pagelist lze použít pouze ve jmenném prostoru Index:",
 	"proofreadpage_dataconfig_badformatted": "Chyba v datové konfiguraci",
-	"proofreadpage_dataconfig_badformattedtext": "Stránka [[Mediawiki:Proofreadpage index data config]] není platně zformátovaný JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Stránka [[MediaWiki:Proofreadpage index data config]] není platně zformátovaný JSON.",
 	"proofreadpage_number_expected": "Chyba: očekávána číselná hodnota",
 	"proofreadpage_interval_too_large": "Chyba: příliš velký interval",
 	"proofreadpage_invalid_interval": "Chyba: nesprávný interval",

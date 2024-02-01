@@ -4,6 +4,7 @@
 			"Max20091",
 			"Minh Nguyen",
 			"Nguyenphutrong2",
+			"Reedy",
 			"Vinhtantran",
 			"Yosari101"
 		]
@@ -29,7 +30,7 @@
 	"proofreadpage_pagesnotallowed": "Lỗi: không dùng được thẻ trang tại không gian tên Trang: và Mục lục:",
 	"proofreadpage_pagelistnotallowed": "Lỗi: thẻ pagelist chỉ có thể dùng trong không gian tên Mục lục:",
 	"proofreadpage_dataconfig_badformatted": "Lỗi trong cấu hình dữ liệu",
-	"proofreadpage_dataconfig_badformattedtext": "Trang [[Mediawiki:Proofreadpage index data config]] không tuân theo định dạng JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Trang [[MediaWiki:Proofreadpage index data config]] không tuân theo định dạng JSON.",
 	"proofreadpage_number_expected": "Lỗi: cần giá trị số",
 	"proofreadpage_interval_too_large": "Lỗi: khoảng số quá lớn",
 	"proofreadpage_invalid_interval": "Lỗi: khoảng số không hợp lệ",

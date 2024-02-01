@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Reedy",
 			"Winston Sung"
 		]
 	},
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "侬必须[[Special:UserLogin|先登录]]才能修改页面个校对状态。",
 	"proofreadpage_notallowedtext": "侬没获得修改箇个页面校对状态个许可。",
 	"proofreadpage_dataconfig_badformatted": "数据配置错误",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]]页面弗是标准个JSON格式。",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]]页面弗是标准个JSON格式。",
 	"proofreadpage_number_expected": "错误：弗是数值",
 	"proofreadpage_interval_too_large": "错误：间隔过大",
 	"proofreadpage_invalid_interval": "错误：无法识别间隔",

@@ -4,6 +4,7 @@
 			"Gombang",
 			"Iwan Novirion",
 			"Naval Scene",
+			"Reedy",
 			"VoteITP"
 		]
 	},
@@ -20,7 +21,7 @@
 	"proofreadpage_nologintext": "Sudaro aruih [[Special:UserLogin|masuak log]] untuak mampaeloki status koreksi laman.",
 	"proofreadpage_notallowedtext": "Sudaro indak dibuliahan untuak maubah status kalimaik nan tatulih di laman iko.",
 	"proofreadpage_dataconfig_badformatted": "↓Bug dalam konfigurasi data",
-	"proofreadpage_dataconfig_badformattedtext": "↓Laman [[Mediawiki:Proofreadpage index data config]] indak diformat JSON nan bana.",
+	"proofreadpage_dataconfig_badformattedtext": "↓Laman [[MediaWiki:Proofreadpage index data config]] indak diformat JSON nan bana.",
 	"proofreadpage_number_expected": "↓Kasalahan: isi jo angko",
 	"proofreadpage_interval_too_large": "↓Kasalahan: interval talalu gadang",
 	"proofreadpage_invalid_interval": "↓Kasalahan: interval indak sah",

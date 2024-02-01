@@ -7,6 +7,7 @@
 			"Jameela P.",
 			"Manojk",
 			"Praveenp",
+			"Reedy",
 			"Shijualex",
 			"Vssun"
 		]
@@ -28,7 +29,7 @@
 	"proofreadpage_nologintext": "താളുകളുടെ തെറ്റുതിരുത്തൽ വായനയുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്താൻ താങ്കൾ [[Special:UserLogin|പ്രവേശിച്ചിരിക്കേണ്ടതാണ്]].",
 	"proofreadpage_notallowedtext": "ഈ താളിന്റെ തെറ്റുതിരുത്തൽ വായനയുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്താൻ താങ്കൾക്ക് അനുമതിയില്ല.",
 	"proofreadpage_dataconfig_badformatted": "ഡാറ്റ ക്രമീകരണത്തിൽ പിഴവുണ്ട്",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] എന്ന താൾ JSON ഉപയോഗിച്ച് കൃത്യമായി വിന്യസിച്ചിട്ടില്ല",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] എന്ന താൾ JSON ഉപയോഗിച്ച് കൃത്യമായി വിന്യസിച്ചിട്ടില്ല",
 	"proofreadpage_number_expected": "പിഴവ്: സംഖ്യയായുള്ള മൂല്യമാണ് പ്രതീക്ഷിക്കുന്നത്",
 	"proofreadpage_interval_too_large": "പിഴവ്: വളരെ വലിയ ഇടവേള",
 	"proofreadpage_invalid_interval": "പിഴവ്: അസാധുവായ ഇടവേള",

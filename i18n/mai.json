@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Reedy",
 			"बिप्लब आनन्द"
 		]
 	},
@@ -17,7 +18,7 @@
 	"proofreadpage_nologintext": "अहाँके प्रुफरिड पन्नाके स्थिति मिलाओक लेल [[Special:UserLogin|सम्प्रवेश]] करए पडत",
 	"proofreadpage_notallowedtext": "अहाँ ई पन्नाके स्थितिके परिवर्तन नै कर सकैत छी",
 	"proofreadpage_dataconfig_badformatted": "डाटा विन्यासमे त्रुटी",
-	"proofreadpage_dataconfig_badformattedtext": "इ पृष्ठ [[Mediawiki:Proofreadpage index data config]] नै निक स मिलाओल गेल अछि JSON मे",
+	"proofreadpage_dataconfig_badformattedtext": "इ पृष्ठ [[MediaWiki:Proofreadpage index data config]] नै निक स मिलाओल गेल अछि JSON मे",
 	"proofreadpage_number_expected": "त्रुटी:अंकीय मुल्यके आश",
 	"proofreadpage_interval_too_large": "त्रुटी:अन्तरबिराम बहुत बरका",
 	"proofreadpage_invalid_interval": "त्रुटी:अन्तरबिराम गलत",

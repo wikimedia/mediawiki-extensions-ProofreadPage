@@ -9,6 +9,7 @@
 			"Olgak85",
 			"Przemub",
 			"Rail",
+			"Reedy",
 			"Sp5uhe",
 			"Woytecr",
 			"Zdzislaw"
@@ -36,7 +37,7 @@
 	"proofreadpage_pagesnotallowed": "Błąd: Tagu <pages> nie można używać w przestrzeniach Strona: i Indeks:",
 	"proofreadpage_pagelistnotallowed": "Błąd: Tag <pagelist /> może być użyty jedynie w przestrzeni Indeks:",
 	"proofreadpage_dataconfig_badformatted": "Błąd konfiguracji",
-	"proofreadpage_dataconfig_badformattedtext": "Strona [[Mediawiki:Proofreadpage index data config]] nie jest poprawnie sformatowana w JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Strona [[MediaWiki:Proofreadpage index data config]] nie jest poprawnie sformatowana w JSON.",
 	"proofreadpage_number_expected": "Błąd – oczekiwano liczby",
 	"proofreadpage_interval_too_large": "Błąd – zbyt duży odstęp",
 	"proofreadpage_invalid_interval": "Błąd – nieprawidłowy odstęp",

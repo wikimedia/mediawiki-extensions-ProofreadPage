@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Reedy",
 			"Äberlausitzer"
 		]
 	},
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "Du musst [[Special:UserLogin|oagemeldet sei]], im dan Status des Korrekturlesens vu Seita ändern zu kinna.",
 	"proofreadpage_notallowedtext": "Du biest nie berechtigt, dan Status des Korrekturlesens dieser Seite zu ändern.",
 	"proofreadpage_dataconfig_badformatted": "Fehler ei der Datenkonfiguration",
-	"proofreadpage_dataconfig_badformattedtext": "De Seite [[Mediawiki:Proofreadpage index data config]] ies nie ei wohlgeformtem JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "De Seite [[MediaWiki:Proofreadpage index data config]] ies nie ei wohlgeformtem JSON.",
 	"proofreadpage_number_expected": "Fehler: Numerischer Wert erwartet",
 	"proofreadpage_invalid_interval": "Fehler: ungiltiges Intervall",
 	"proofreadpage_nextpage": "Nächste Seite",

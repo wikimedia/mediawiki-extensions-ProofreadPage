@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Akamycoco",
-			"Iyumu"
+			"Iyumu",
+			"Reedy"
 		]
 	},
 	"nstab-page": "sapitj",
@@ -24,7 +25,7 @@
 	"proofreadpage_pagesnotallowed": "nasepasaliv: inika maqatijen a venecik tuazua sinipukeljang a mareka sapitj ituazua sapitj: katua sisutjeketjek tu djaljav a madjumak a sinivecik: sinipapungadanan",
 	"proofreadpage_pagelistnotallowed": "nasepasaliv: amin venecik itjen tuazua sinipukeljang a mareka sapitj itua sisutjeketjek tu djaljav a madjumak a sinivecik: sinipapungadanan",
 	"proofreadpage_dataconfig_badformatted": "namaqaquljis izua i data",
-	"proofreadpage_dataconfig_badformattedtext": "a lisadayan na sapitj aicu a [[Mediawiki:Proofreadpage index data config]] inika sinan kakuletjan tu JSON a tjatjuljuran.",
+	"proofreadpage_dataconfig_badformattedtext": "a lisadayan na sapitj aicu a [[MediaWiki:Proofreadpage index data config]] inika sinan kakuletjan tu JSON a tjatjuljuran.",
 	"proofreadpage_number_expected": "pasaliw: tjara namasan sasupuan",
 	"proofreadpage_interval_too_large": "pasaliw: tjaljeqaca a tideq",
 	"proofreadpage_invalid_interval": "pasaliw: inika maqati a makeljang a tideq",

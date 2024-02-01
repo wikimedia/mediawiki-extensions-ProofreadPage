@@ -4,6 +4,7 @@
 			"Amire80",
 			"GR44 Luc",
 			"Highlander45temp",
+			"Reedy",
 			"Rhdtranslate",
 			"SamGamgee",
 			"SmartNart12"
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "[[Special:UserLogin|Системэм ухэхьэгъэн]] фае нэкӀубгъохэм я укъэбзын статусым ухэӀэзыхьэным пае.",
 	"proofreadpage_notallowedtext": "Мы нэкӀубгъом и укъэбзын статус ухэӀэзыхьэн уфитэп.",
 	"proofreadpage_dataconfig_badformatted": "Хъарзынэщым иконфигурациер къуанчъэ",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] нэкӀубгъом и JSON-форматыр дэгъуэп.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] нэкӀубгъом и JSON-форматыр дэгъуэп.",
 	"proofreadpage_invalid_interval": "Хэукъоныгъэ: Интервалыр къуанчъэ",
 	"proofreadpage_nextpage": "КъыкӀэлъыкӀорэ нэкӀубгъу",
 	"proofreadpage_prevpage": "ПэлъыкӀорэ нэкӀубгъу",

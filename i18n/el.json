@@ -15,6 +15,7 @@
 			"Nikosgranturismogt",
 			"Norhorn",
 			"Omnipaedista",
+			"Reedy",
 			"ZaDiak",
 			"Αντιγόνη"
 		]
@@ -35,7 +36,7 @@
 	"proofreadpage_nologintext": "Πρέπει να είστε [[Special:UserLogin|συνδεδεμένος]] για να αλλάξετε την κατάσταση επαλήθευσης σελίδων.",
 	"proofreadpage_notallowedtext": "Δεν επιτρέπεται να αλλάξετε την κατάσταση διόρθωσης κειμένου αυτής της σελίδας.",
 	"proofreadpage_dataconfig_badformatted": "Σφάλμα στις ρυθμίσεις δεδομένων",
-	"proofreadpage_dataconfig_badformattedtext": "Η σελίδα [[Mediawiki:Proofreadpage index data config]] δεν είναι σε καλά μορφοποιημένο JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Η σελίδα [[MediaWiki:Proofreadpage index data config]] δεν είναι σε καλά μορφοποιημένο JSON.",
 	"proofreadpage_number_expected": "Σφάλμα: αναμενόταν αριθμητικό μέγεθος",
 	"proofreadpage_interval_too_large": "Σφάλμα: υπερβολικά μεγάλο διάστημα",
 	"proofreadpage_invalid_interval": "Σφάλμα: άκυρο διάστημα",

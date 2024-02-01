@@ -4,6 +4,7 @@
 			"Akamycoco",
 			"Benel",
 			"Bunukwiki",
+			"Reedy",
 			"Tokoabibi"
 		]
 	},
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "kanca kisu [[Special:UserLogin|liayaw patalabu]]  itawya misumad tu kasabelih misyawtuy setyitase.",
 	"proofreadpage_notallowedtext": "caay kamahasa papisumad tisuwan tuyni a kasabelih misyawtuy setyitase.",
 	"proofreadpage_dataconfig_badformatted": "setinen ilabu nu kalunasulitan i -Bug",
-	"proofreadpage_dataconfig_badformattedtext": "kasabelih i [[Mediawiki:Proofreadpage index data config]]caay katatungus tu -JSON a kese.",
+	"proofreadpage_dataconfig_badformattedtext": "kasabelih i [[MediaWiki:Proofreadpage index data config]]caay katatungus tu -JSON a kese.",
 	"proofreadpage_number_expected": "mungangaw: caay ku nizatengan a suce",
 	"proofreadpage_interval_too_large": "mungangaw: tadatabaki ku laed nu silit",
 	"proofreadpage_invalid_interval": "mungangaw: caay pakapulita tu laed",

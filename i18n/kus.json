@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Agurwin Isaac",
-			"DannyS712"
+			"DannyS712",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Lakir",
@@ -27,7 +28,7 @@
 	"proofreadpage_pagesnotallowed": "Yidigir: Lakir banɛ tɔ'ɔŋ taaba la kʋ nyaŋi tʋm lakir kaŋ nii: nɛ indɛks: yʋ'ʋrpaalʋnam",
 	"proofreadpage_pagelistnotallowed": "Yidigir: Lakirnam banɛ tɔ'ɔŋ taaba la na nyaŋi tʋmnɛ indɛks ni ma'aa: yʋ'ʋrpaalʋnam",
 	"proofreadpage_dataconfig_badformatted": "Daʋŋ bɛ la'ad maalʋg ni",
-	"proofreadpage_dataconfig_badformattedtext": "Lakir la [[Mediawiki:Proofreadpage index data config]] pʋ an din nar ye di an si'em JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Lakir la [[MediaWiki:Proofreadpage index data config]] pʋ an din nar ye di an si'em JSON.",
 	"proofreadpage_number_expected": "Yidigir: Kaalʋg tɛbisim nar ye di bɛ",
 	"proofreadpage_interval_too_large": "Yidigir: Bɛn la zu'oenɛ galis",
 	"proofreadpage_invalid_interval": "Yidigir: bɛɛna la pʋ tʋmma",

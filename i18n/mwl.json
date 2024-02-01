@@ -3,7 +3,8 @@
 		"authors": [
 			"Athena in Wonderland",
 			"Malafaya",
-			"MokaAkashiyaPT"
+			"MokaAkashiyaPT",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Páigina",
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "Percisa star [[Special:UserLogin|outenticado]] pa altarar l stado de rebison de las páiginas.",
 	"proofreadpage_notallowedtext": "Nun le ye premitido demudar l stado de rebison desta páigina.",
 	"proofreadpage_dataconfig_badformatted": "Erro ne ls dados de cunfiguraçon",
-	"proofreadpage_dataconfig_badformattedtext": "La páigina [[Mediawiki:Proofreadpage index data config]] nun se ancontra corretamente formatada cumo JSON",
+	"proofreadpage_dataconfig_badformattedtext": "La páigina [[MediaWiki:Proofreadpage index data config]] nun se ancontra corretamente formatada cumo JSON",
 	"proofreadpage_number_expected": "Erro: Balor numaral sperado",
 	"proofreadpage_interval_too_large": "Erro: Anterbalo smasiado grande",
 	"proofreadpage_invalid_interval": "Erro: Anterbalo ambálido",

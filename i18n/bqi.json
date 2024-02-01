@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mogoeilor"
+			"Mogoeilor",
+			"Reedy"
 		]
 	},
 	"nstab-page": "بٱلگٱ",
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "ایسا سی آلشد کردن اٛشتڤایٱل ای بلگاٛ آ ڤا بیایین [[ڤیجٱ:ڤامئن ٱڤوڌن|ڤامئن]].",
 	"proofreadpage_notallowedtext": "ایسا سلا نارین شلگ غٱلٱت گری ای بٱلگاٛ نٱ آلشت بڌین.",
 	"proofreadpage_dataconfig_badformatted": "اٛشتڤا مئن راسد کردن دۊنسمٱندیا",
-	"proofreadpage_dataconfig_badformattedtext": "بٱلگاٛ [[Mediawiki:Proofreadpage index data config]] دJSON قالوڤ ناراٛ.",
+	"proofreadpage_dataconfig_badformattedtext": "بٱلگاٛ [[MediaWiki:Proofreadpage index data config]] دJSON قالوڤ ناراٛ.",
 	"proofreadpage_number_expected": "خٱتا:ٱندازاٛ آ شوماراٛ دار پزیرشت نارن.",
 	"proofreadpage_interval_too_large": "خٱتا:دٱرینداٛ غٱلٱڤاٛ گٱپاٛ.",
 	"proofreadpage_invalid_interval": "خٱتا:جوڌا وابیڌن نادوروسد",

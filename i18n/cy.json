@@ -3,6 +3,7 @@
 		"authors": [
 			"Afalau",
 			"Lloffiwr",
+			"Reedy",
 			"Robin Owain"
 		]
 	},
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "Rhaid eich bod wedi [[Special:UserLogin|mewngofnodi]] i newid statws prawfddarllen y tudalennau.",
 	"proofreadpage_notallowedtext": "Ni chewch newid statws prawfddarllen y dudalen hon.",
 	"proofreadpage_dataconfig_badformatted": "Gwall yn ffurfweddiad y data",
-	"proofreadpage_dataconfig_badformattedtext": "Nid yw fformat JSON y dudalen  [[Mediawiki:Proofreadpage index data config]] yn gywir.",
+	"proofreadpage_dataconfig_badformattedtext": "Nid yw fformat JSON y dudalen  [[MediaWiki:Proofreadpage index data config]] yn gywir.",
 	"proofreadpage_number_expected": "Gwall: disgwylid gwerth rhifol",
 	"proofreadpage_interval_too_large": "Gwall: Y cyfwng yn rhy fawr",
 	"proofreadpage_invalid_interval": "Gwall: Cyfwng annilys",

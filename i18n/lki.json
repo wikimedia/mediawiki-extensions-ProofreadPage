@@ -5,7 +5,8 @@
 			"Hosseinblue",
 			"Lakzon",
 			"Miladrahimi",
-			"Mogoeilor"
+			"Mogoeilor",
+			"Reedy"
 		]
 	},
 	"indexpages": "لیست وەڵگەل نمایه",
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "به منظور تغییر وضعیت نمونه‌خوانی صفحات، باید [[Special:UserLogin|وارد شده باشید]].",
 	"proofreadpage_notallowedtext": ".شما مجاز به تغییر وضعیت نمونه‌خوانی این صفحه نیستید",
 	"proofreadpage_dataconfig_badformatted": "اشکال در پیکربندی داده‌ها",
-	"proofreadpage_dataconfig_badformattedtext": "صفحهٔ [[Mediawiki:Proofreadpage index data config]] به صورت درست در فرمت جیسون تعریف نشده است.",
+	"proofreadpage_dataconfig_badformattedtext": "صفحهٔ [[MediaWiki:Proofreadpage index data config]] به صورت درست در فرمت جیسون تعریف نشده است.",
 	"proofreadpage_number_expected": ".خطا:مقدار عددی مورد انتظار است",
 	"proofreadpage_interval_too_large": "خطا:بازهٔ بسیار بزرگ",
 	"proofreadpage_invalid_interval": "خطا: بازهٔ نامعتبر",

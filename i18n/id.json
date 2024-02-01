@@ -14,6 +14,7 @@
 			"Mnam23",
 			"Rachmat.Wahidi",
 			"Rachmat04",
+			"Reedy",
 			"Sonic Speedy",
 			"Veracious",
 			"William Surya Permana"
@@ -41,7 +42,7 @@
 	"proofreadpage_pagesnotallowed": "Galat: Tag halaman tidak bisa digunakan di ruang nama Page: dan Index:",
 	"proofreadpage_pagelistnotallowed": "Galat: Tag daftar halaman hanya bisa digunakan di ruang nama Index:",
 	"proofreadpage_dataconfig_badformatted": "Kekutu dalam konfigurasi data",
-	"proofreadpage_dataconfig_badformattedtext": "Halaman [[Mediawiki:Proofreadpage index data config]] tidak dalam format JSON yang benar.",
+	"proofreadpage_dataconfig_badformattedtext": "Halaman [[MediaWiki:Proofreadpage index data config]] tidak dalam format JSON yang benar.",
 	"proofreadpage_number_expected": "Galat: Nilai angka diperlukan",
 	"proofreadpage_interval_too_large": "Galat: Interval terlalu besar",
 	"proofreadpage_invalid_interval": "Galat: Interval tidak sah",

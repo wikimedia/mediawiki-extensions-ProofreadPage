@@ -4,6 +4,7 @@
 			"Beyronvan",
 			"Lorestani",
 			"Mogoeilor",
+			"Reedy",
 			"علی ساکی لرستانی"
 		]
 	},
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "شوما باید [[ویجه:وامین اومائن کاریار|وامین اومائه]]بويئت سی آلشت كردن شلك غلط گئری ای بلگه .",
 	"proofreadpage_notallowedtext": "شما صلا ناريت شلك غلط گئری ای بلگه نه آلشت بكيد",
 	"proofreadpage_dataconfig_badformatted": "اشتوا د راست كرن دونسمنيا",
-	"proofreadpage_dataconfig_badformattedtext": "بلگه [[Mediawiki:Proofreadpage index data config]] دJSON قالودار نئ .",
+	"proofreadpage_dataconfig_badformattedtext": "بلگه [[MediaWiki:Proofreadpage index data config]] دJSON قالودار نئ .",
 	"proofreadpage_number_expected": "خطا:انازه يا رقمدار پذيرشت بوئه",
 	"proofreadpage_interval_too_large": "خطا:ورودی فره گپه",
 	"proofreadpage_invalid_interval": "خطا:جيابيئن اشتوا",

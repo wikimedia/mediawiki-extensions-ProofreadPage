@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"Reedy"
 		]
 	},
 	"indexpages": "Lisćina indeksowych bokow",
@@ -17,7 +18,7 @@
 	"proofreadpage_nologintext": "Musyš [[Special:UserLogin|pśizjawjony]] byś, aby status kontrolnego cytanja bokow změnił.",
 	"proofreadpage_notallowedtext": "Njesmějoš status kontrolnego cytanja toś togo boka změniś.",
 	"proofreadpage_dataconfig_badformatted": "Zmólka w konfiguraciji datow",
-	"proofreadpage_dataconfig_badformattedtext": "Bok [[Mediawiki:Proofreadpage index data config]] njejo w derje wuformowanem JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Bok [[MediaWiki:Proofreadpage index data config]] njejo w derje wuformowanem JSON.",
 	"proofreadpage_number_expected": "Zmólka: numeriska gódnota wócakowana",
 	"proofreadpage_interval_too_large": "Zmólka: interwal pśewjeliki",
 	"proofreadpage_invalid_interval": "Zmólka: njepłaśiwy interwal",

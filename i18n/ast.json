@@ -3,6 +3,7 @@
 		"authors": [
 			"Esbardu",
 			"Fitoschido",
+			"Reedy",
 			"Tokvo",
 			"Xuacu"
 		]
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "Tien d'[[Special:UserLogin|aniciar sesión]] pa camudar l'estáu de correición de les páxines.",
 	"proofreadpage_notallowedtext": "Nun ta autorizáu a camudar l'estáu de revisión d'esta páxina.",
 	"proofreadpage_dataconfig_badformatted": "Error na configuración de los datos",
-	"proofreadpage_dataconfig_badformattedtext": "La páxina \"[[Mediawiki:Proofreadpage index data config]]\" nun tien un formatu JSON correctu.",
+	"proofreadpage_dataconfig_badformattedtext": "La páxina \"[[MediaWiki:Proofreadpage index data config]]\" nun tien un formatu JSON correctu.",
 	"proofreadpage_number_expected": "Error: esperabase un valor numbéricu",
 	"proofreadpage_interval_too_large": "Error: intervalu demasiao grande",
 	"proofreadpage_invalid_interval": "Error: intervalu inválidu",

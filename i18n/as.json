@@ -6,6 +6,7 @@
 			"Gitartha.bordoloi",
 			"IKHazarika",
 			"Mohsin Ali",
+			"Reedy",
 			"Sagsag",
 			"Simbu123"
 		]
@@ -29,7 +30,7 @@
 	"proofreadpage_pagesnotallowed": "বিসংগতি: পৃষ্ঠা: আৰু সূচী: নামস্থানত এই পৃষ্ঠা টেগসমূহ ব্যৱহাৰ কৰিব নোৱাৰি",
 	"proofreadpage_pagelistnotallowed": "বিসংগতি: এই পৃষ্ঠাতালিকাৰ টেগসমূহ কেৱল সূচী: নামস্থানত ব্যৱহাৰ কৰিব পাৰি",
 	"proofreadpage_dataconfig_badformatted": "তথ্য সজ্জাত বাগ (bug) আছে",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] পৃষ্ঠাটো ভালকৈ ফৰ্মেট JSON কৰা হোৱা নাই।",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] পৃষ্ঠাটো ভালকৈ ফৰ্মেট JSON কৰা হোৱা নাই।",
 	"proofreadpage_number_expected": "ত্ৰুটি: সাংখ্যিক মূল্য আশা কৰা হৈছে",
 	"proofreadpage_interval_too_large": "ত্ৰুটি: ব্যৱধান অতি বেছি",
 	"proofreadpage_invalid_interval": "ত্ৰুটি: অবৈধ ব্যৱধান",

@@ -5,6 +5,7 @@
 			"Aurora",
 			"Aviator",
 			"Lim Natee",
+			"Reedy",
 			"Tofeiku"
 		]
 	},
@@ -30,7 +31,7 @@
 	"proofreadpage_pagesnotallowed": "Ralat: Tag halaman tidak boleh digunakan dalam Halaman: dan Indeks: ruang nama",
 	"proofreadpage_pagelistnotallowed": "Ralat: Tag senarai halaman hanya boleh digunakan dalam Indeks: ruang nama",
 	"proofreadpage_dataconfig_badformatted": "Pepijat dalam konfigurasi data",
-	"proofreadpage_dataconfig_badformattedtext": "Halaman [[Mediawiki:Proofreadpage index data config]] bukan dalam JSON yang diformatkan dengan betul.",
+	"proofreadpage_dataconfig_badformattedtext": "Halaman [[MediaWiki:Proofreadpage index data config]] bukan dalam JSON yang diformatkan dengan betul.",
 	"proofreadpage_number_expected": "Ralat: nilai angka dijangka",
 	"proofreadpage_interval_too_large": "Ralat: selang terlalu besar",
 	"proofreadpage_invalid_interval": "Ralat: selang tidak sah",

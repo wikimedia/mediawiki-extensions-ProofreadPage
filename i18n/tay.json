@@ -3,6 +3,7 @@
 		"authors": [
 			"Akamycoco",
 			"Hitaypayan",
+			"Reedy",
 			"Translatealcd"
 		]
 	},
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "Nanu’ siga [[Special:UserLogin|mzyup su’ qsahuy niya’]] lga, musa’ su’ baqun smbah bniru’ naha’ sa qsahuy qasa.",
 	"proofreadpage_notallowedtext": "Ini’ su’ niya’ swaliy musa’ smbah sa binrwan naha’ sa qsahuy qaniy.",
 	"proofreadpage_dataconfig_badformatted": "Pin’qwan sa qsahuy na “kinbalay biru’ ”",
-	"proofreadpage_dataconfig_badformattedtext": "Biru’ zzngayan na [[Mediawiki:Proofreadpage index data config]] ga, iyat yasa quw spzyang ksu’ na JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Biru’ zzngayan na [[MediaWiki:Proofreadpage index data config]] ga, iyat yasa quw spzyang ksu’ na JSON.",
 	"proofreadpage_number_expected": "Min’uqu’：iyat yasa quw biru’ na llpgan",
 	"proofreadpage_interval_too_large": "Min’uqu’：krahu’ iyal hriq niya’",
 	"proofreadpage_invalid_interval": "Min’uqu’：ini’ baqiy mita’ hriq niya’",

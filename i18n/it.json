@@ -11,6 +11,7 @@
 			"Gianfranco",
 			"Macofe",
 			"OrbiliusMagister",
+			"Reedy",
 			"Stefano-c"
 		]
 	},
@@ -36,7 +37,7 @@
 	"proofreadpage_pagesnotallowed": "Errore: Il tag pages non può essere utilizzato nei namespace Pagina: e Indice:",
 	"proofreadpage_pagelistnotallowed": "Errore: Il tag pagelist può essere usato solo nel namespace Indice:",
 	"proofreadpage_dataconfig_badformatted": "Problema nella configurazione dei dati",
-	"proofreadpage_dataconfig_badformattedtext": "La pagina [[Mediawiki:Proofreadpage index data config]] non è in un formato JSON corretto.",
+	"proofreadpage_dataconfig_badformattedtext": "La pagina [[MediaWiki:Proofreadpage index data config]] non è in un formato JSON corretto.",
 	"proofreadpage_number_expected": "Errore: previsto valore numerico",
 	"proofreadpage_interval_too_large": "Errore: intervallo troppo ampio",
 	"proofreadpage_invalid_interval": "Errore: intervallo non valido",

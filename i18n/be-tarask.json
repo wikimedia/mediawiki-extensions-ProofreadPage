@@ -4,6 +4,7 @@
 			"EugeneZelenko",
 			"Jim-by",
 			"Red Winged Duck",
+			"Reedy",
 			"Renessaince",
 			"Wizardist"
 		]
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "Вы павінны [[Special:UserLogin|ўвайсьці ў сыстэму]], каб зьмяняць статус праверкі старонкі.",
 	"proofreadpage_notallowedtext": "Вам не дазволена зьмяняць статус праверкі гэтай старонкі.",
 	"proofreadpage_dataconfig_badformatted": "Хіба ў канфігурацыі зьвестак",
-	"proofreadpage_dataconfig_badformattedtext": "Старонка [[Mediawiki:Proofreadpage index data config]] зьмяшчае блага фарматаваны JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Старонка [[MediaWiki:Proofreadpage index data config]] зьмяшчае блага фарматаваны JSON.",
 	"proofreadpage_number_expected": "Памылка: чакаецца лічбавае значэньне",
 	"proofreadpage_interval_too_large": "Памылка: занадта вялікі інтэрвал",
 	"proofreadpage_invalid_interval": "Памылка: няслушны інтэрвал",

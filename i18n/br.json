@@ -5,6 +5,7 @@
 			"Fulup",
 			"Gwendal",
 			"Huñvreüs",
+			"Reedy",
 			"VIGNERON",
 			"Y-M D"
 		]
@@ -27,7 +28,7 @@
 	"proofreadpage_nologintext": "Rankout a rit bezañ [[Special:UserLogin|kevreet]] evit kemmañ statud adlenn ar pajennoù.",
 	"proofreadpage_notallowedtext": "Noc'h ket aotreet da gemmañ ar statud reizhañ ar bajenn-mañ.",
 	"proofreadpage_dataconfig_badformatted": "Draen e kefluniadur ar roadennoù",
-	"proofreadpage_dataconfig_badformattedtext": "Furmad JSON ar bajenn [[Mediawiki:Proofreadpage index data config]] n'eo ket mat.",
+	"proofreadpage_dataconfig_badformattedtext": "Furmad JSON ar bajenn [[MediaWiki:Proofreadpage index data config]] n'eo ket mat.",
 	"proofreadpage_number_expected": "Fazi : gortozet e vez un dalvoud niverel",
 	"proofreadpage_interval_too_large": "Fazi : re vras eo an esaouenn",
 	"proofreadpage_invalid_interval": "Fazi : n'eo ket mat an esaouenn",

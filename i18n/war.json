@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Harvzsf",
-			"JinJian"
+			"JinJian",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Pakli",
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "Kinahanglan nimo maka-[[Special:UserLogin|log-in]] para makaliwat han kahimtang han proofreading han mga pakli.",
 	"proofreadpage_notallowedtext": "Diri ka gintutugotan pagliwat han kahimtang han proofreading hini nga pakli.",
 	"proofreadpage_dataconfig_badformatted": "Kompigurasyon han may bug ha datos",
-	"proofreadpage_dataconfig_badformattedtext": "An pakli nga [[Mediawiki:Proofreadpage index data config]] in diri naka upay-pagformat nga JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "An pakli nga [[MediaWiki:Proofreadpage index data config]] in diri naka upay-pagformat nga JSON.",
 	"proofreadpage_number_expected": "Sayop: Namimiling hin numero nga balor",
 	"proofreadpage_interval_too_large": "Sayop: Kadako hin duro an interval",
 	"proofreadpage_invalid_interval": "Sayop: Diri balido nga interval",

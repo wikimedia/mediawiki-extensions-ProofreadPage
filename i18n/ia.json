@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Malafaya",
-			"McDutchie"
+			"McDutchie",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -27,7 +28,7 @@
 	"proofreadpage_pagesnotallowed": "Error: Le etiquetta 'pages' non pote esser usate in le spatios de nomines 'Pagina:' e 'Indice:'.",
 	"proofreadpage_pagelistnotallowed": "Error: Le etiquetta 'pagelist' pote solmente esser usate in le spatio de nomines 'Index:'.",
 	"proofreadpage_dataconfig_badformatted": "Problema in le configuration de datos",
-	"proofreadpage_dataconfig_badformattedtext": "Le pagina [[Mediawiki:Proofreadpage index data config]] non es in formato JSON valide.",
+	"proofreadpage_dataconfig_badformattedtext": "Le pagina [[MediaWiki:Proofreadpage index data config]] non es in formato JSON valide.",
 	"proofreadpage_number_expected": "Error: valor numeric expectate",
 	"proofreadpage_interval_too_large": "Error: intervallo troppo grande",
 	"proofreadpage_invalid_interval": "Error: intervallo invalide",

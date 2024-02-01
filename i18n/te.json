@@ -7,6 +7,7 @@
 			"Kiranmayee",
 			"Mpradeep",
 			"Ravichandra",
+			"Reedy",
 			"Veeven",
 			"రాకేశ్వర"
 		]
@@ -28,7 +29,7 @@
 	"proofreadpage_nologintext": "పుట అచ్చుదిద్దుస్థితి మార్చడానికి మీరు [[Special:UserLogin|గా లాగినయి]] వుండాలి.",
 	"proofreadpage_notallowedtext": "ఈ పుటయొక్క అచ్చుదిద్దుస్థితిని మార్చడానికి మీకు అనుమతిలేదు.",
 	"proofreadpage_dataconfig_badformatted": "డేటా అమరికలో దోషం",
-	"proofreadpage_dataconfig_badformattedtext": " [[Mediawiki:Proofreadpage index data config]] పేజీ  సరియైన JSON తీరులో లేదు.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] పేజీ  సరియైన JSON తీరులో లేదు.",
 	"proofreadpage_number_expected": "లోపం: సంఖ్య ఉండాలి",
 	"proofreadpage_interval_too_large": "లోపం: అంతరం మఱీ ఎక్కువగా వున్నది",
 	"proofreadpage_invalid_interval": "లోపం: అంతరం చెల్లదు",

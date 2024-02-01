@@ -5,6 +5,7 @@
 			"Diki Ananta",
 			"Meursault2004",
 			"NoiX180",
+			"Reedy",
 			"Sumbukompor"
 		]
 	},
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "Panjenengan kudu [[Special:UserLogin|mlebu log]] kanggo ngowah status korèksi kaca.",
 	"proofreadpage_notallowedtext": "Panjenengan ora dililakaké ngowah status korèksi kaca iki.",
 	"proofreadpage_dataconfig_badformatted": "Ana ama ing konfigurasi dhata",
-	"proofreadpage_dataconfig_badformattedtext": "Kaca [[Mediawiki:Proofreadpage index data config]] ora diformat nganggo JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Kaca [[MediaWiki:Proofreadpage index data config]] ora diformat nganggo JSON.",
 	"proofreadpage_number_expected": "Masalah: Butuh aji awujud angka",
 	"proofreadpage_interval_too_large": "Masalah: Kegedhèn let",
 	"proofreadpage_invalid_interval": "Kasalah interval ora sah",

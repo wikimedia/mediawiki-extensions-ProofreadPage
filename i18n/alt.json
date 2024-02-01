@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ereldej",
+			"Reedy",
 			"Soul Train",
 			"Батыр Комдошев"
 		]
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "Бÿктердиҥ тÿзедÿ айалгазын солырга слер болор керек [[Special:UserLogin|logged in]]",
 	"proofreadpage_notallowedtext": "Слер бу бÿктиҥ тÿзедÿ айалгазын солып болбозор",
 	"proofreadpage_dataconfig_badformatted": "Кöргÿзÿлердиҥ конфигурациязында jастыра",
-	"proofreadpage_dataconfig_badformattedtext": "Бÿк, [[Mediawiki:Proofreadpage index data config]] jакшы форматировать эдип салган JSON-до jок",
+	"proofreadpage_dataconfig_badformattedtext": "Бÿк, [[MediaWiki:Proofreadpage index data config]] jакшы форматировать эдип салган JSON-до jок",
 	"proofreadpage_interval_too_large": "Jастыра: öткÿре jаан интервал",
 	"proofreadpage_invalid_interval": "Jастыра: jарабас интервал",
 	"proofreadpage_nextpage": "Келер бÿк",

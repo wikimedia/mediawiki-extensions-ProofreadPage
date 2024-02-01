@@ -3,6 +3,7 @@
 		"authors": [
 			"Akamycoco",
 			"Amire80",
+			"Reedy",
 			"Vickylin77s"
 		]
 	},
@@ -25,7 +26,7 @@
 	"proofreadpage_pagesnotallowed": "sampolo",
 	"proofreadpage_pagelistnotallowed": "moraraw：dengan i Index:  a pipanganganan manga’ay a micokaymas ko “pagelist” a tahapinangan.",
 	"proofreadpage_dataconfig_badformatted": "O Bug no papatoneken a tatiri’en",
-	"proofreadpage_dataconfig_badformattedtext": "Caay ko hiw-zun-ay JSON [[Mediawiki:Proofreadpage index data config]] nona felih",
+	"proofreadpage_dataconfig_badformattedtext": "Caay ko hiw-zun-ay JSON [[MediaWiki:Proofreadpage index data config]] nona felih",
 	"proofreadpage_number_expected": "Moraraw: caay ko ditek",
 	"proofreadpage_interval_too_large": "Moraraw: tada tata’ak ko la’ed",
 	"proofreadpage_invalid_interval": "Moraraw: caay ka sapinang ko la’ed",

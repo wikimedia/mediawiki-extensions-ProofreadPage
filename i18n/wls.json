@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lea.Fakauvea",
-			"Lea.fakauvea"
+			"Lea.fakauvea",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Pāsina",
@@ -27,7 +28,7 @@
 	"proofreadpage_pagesnotallowed": "Hala: Ko te kupu pāsina e mole lava faka'aoga'i i te higoa Pāsina: mo Tāfito:",
 	"proofreadpage_pagelistnotallowed": "Hala: Ko te kupu lisi pāsina e lava faka'aoga'i pe i te higoa Tāfito:",
 	"proofreadpage_dataconfig_badformatted": "E hala te teuteu'i o te gaue",
-	"proofreadpage_dataconfig_badformattedtext": "Ko te pāsina [[Mediawiki:Proofreadpage index data config]] ne'e mole tohi lelei i te JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Ko te pāsina [[MediaWiki:Proofreadpage index data config]] ne'e mole tohi lelei i te JSON.",
 	"proofreadpage_number_expected": "Hala:tohi he nūmelo",
 	"proofreadpage_interval_too_large": "Hala: e lahi fau te laulahi o tana tohi",
 	"proofreadpage_invalid_interval": "Hala: E kovi te laulahi",

@@ -6,6 +6,7 @@
 			"Brahim-essaidi",
 			"Hakim1bal",
 			"Mdb897",
+			"Reedy",
 			"YesIn",
 			"ⵕⴰⵊⵉ"
 		]
@@ -27,7 +28,7 @@
 	"proofreadpage_nologintext": "ⵉⵍⵍⴰ ⵖⵉⴼⴽ [[Special:UserLogin|ⴰⴷ ⵜⴽⵛⵎⴷ]] ⴼⴰⴷ ⴰⴷ ⵜⵙⵏⴼⵍⴷ ⴰⴷⴷⴰⴷ ⵏ ⵓⵣⵣⵔⴰⵢ ⵖⴼ ⵜⴰⵙⵏⵉⵡⵉⵏ.",
 	"proofreadpage_notallowedtext": "ⵓⵔ ⵖⵓⵔⴽ ⵜⵓⵔⴰⴳⵜ ⴰⴷ ⵜⵙⵏⴼⵍⴷ ⴰⴷⴷⴰⴷ ⵏ ⵓⵣⵣⵔⴰⵢ ⵖⴼ ⵜⴰⵙⵏⴰ ⴰⴷ.",
 	"proofreadpage_dataconfig_badformatted": "ⴰⵣⵏⵏⵣⵔⵉ ⴳ ⵓⵙⵏⴰⵎ ⵉ ⵉⵙⴼⴽⴰ.",
-	"proofreadpage_dataconfig_badformattedtext": "ⵜⴰⵙⵏⴰ ⵏ [[Mediawiki:Proofreadpage index data config]] ⵓⵔ ⵉⵙⵖⵥⵏ ⵓⵙⵎⵓⵜⵜⴳ ⵏⵏⵙ ⴳ JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "ⵜⴰⵙⵏⴰ ⵏ [[MediaWiki:Proofreadpage index data config]] ⵓⵔ ⵉⵙⵖⵥⵏ ⵓⵙⵎⵓⵜⵜⴳ ⵏⵏⵙ ⴳ JSON.",
 	"proofreadpage_number_expected": "ⴰⵣⴳⴰⵍ: ⴰⵜⵉⴳ ⴰⵎⵓⵟⵟⵓⵏ ⵉⵜⵜⵉⵢⵜⴰⵎⵏ",
 	"proofreadpage_interval_too_large": "ⴰⵣⴳⴰⵍ: ⵉⴳⵔ ⵉⴳⴳⵓⵜ ⴱⴰⵀⵔⴰ",
 	"proofreadpage_invalid_interval": "ⴰⵣⴳⴰⵍ: ⵉⴳⵔ ⵓⵔ ⵉⵙⵖⵥⵏ",

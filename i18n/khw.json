@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rachitrali"
+			"Rachitrali",
+			"Reedy"
 		]
 	},
 	"nstab-page": "صفحہ",
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "صفحاتن پروف خوانیو کیفیتو تبدیل کوریکو بچے تہ [[Special:UserLogin|لاگ ان]] بیک ضروری شیر۔",
 	"proofreadpage_notallowedtext": "تتے ھیہ صفحہو پروف خوانیو کیفیتو تبدیل کوریکو اجازت نیکی۔",
 	"proofreadpage_dataconfig_badformatted": "ڈیٹا کنفیگریشنہ خرابی",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] و صفحہا ٹھیک طھریقا JSON و استعمالو کورونو نو بیتی شیر۔",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] و صفحہا ٹھیک طھریقا JSON و استعمالو کورونو نو بیتی شیر۔",
 	"proofreadpage_number_expected": "نقص: متوقع عددی قدر",
 	"proofreadpage_interval_too_large": "نقص: وقفہ خاصا طویل درونگار شیر",
 	"proofreadpage_invalid_interval": "نقص: نادرست وقفہ",

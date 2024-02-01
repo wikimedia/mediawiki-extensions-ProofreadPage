@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Reedy",
 			"SatyamMishra"
 		]
 	},
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "प्रूफ़रीडिंग इस्टेटस के बदले खाती आपके [[Special:UserLogin|खाता में प्रवेश]] कइल जरूरी बा।",
 	"proofreadpage_notallowedtext": "एह पन्ना के प्रूफ़रीडिंग इस्टेटस बदले के इजाजत आपके नइखे।",
 	"proofreadpage_dataconfig_badformatted": "डेटा कन्फिगरेशन में बग बा",
-	"proofreadpage_dataconfig_badformattedtext": "पन्ना [[Mediawiki:Proofreadpage index data config]] नीक से फारमेट कइल JSON नइखे।",
+	"proofreadpage_dataconfig_badformattedtext": "पन्ना [[MediaWiki:Proofreadpage index data config]] नीक से फारमेट कइल JSON नइखे।",
 	"proofreadpage_number_expected": "खराबी: अंक में वैल्यू चाहत बाटे",
 	"proofreadpage_interval_too_large": "खराबी: इंटरवल बहुत लमहर बा",
 	"proofreadpage_invalid_interval": "खराबी: अबैध इंटरवल",

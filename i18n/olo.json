@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ilja.mos",
-			"Mashoi7"
+			"Mashoi7",
+			"Reedy"
 		]
 	},
 	"indexpages": "Indeksusivuloin luvettelo",
@@ -18,7 +19,7 @@
 	"proofreadpage_nologintext": "Sinun pidäy olla [[Special:UserLogin|kirjutannuhes]] ku muuttua sivun tarkistusluvendustuatussua.",
 	"proofreadpage_notallowedtext": "Sinul ei ole oigevuksii vaihtua tämän sivun tarkistusluvendustuatussua.",
 	"proofreadpage_dataconfig_badformatted": "Haireh datan konfiguratsies",
-	"proofreadpage_dataconfig_badformattedtext": "Sivu [[Mediawiki:Proofreadpage index data config]] ei ole putilleh formatiiruitu JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Sivu [[MediaWiki:Proofreadpage index data config]] ei ole putilleh formatiiruitu JSON.",
 	"proofreadpage_number_expected": "Haireh: Pidäy olla noumerilline tiedo",
 	"proofreadpage_interval_too_large": "Haireh: Liijan suuri väli",
 	"proofreadpage_invalid_interval": "Haireh: Pädemätöi väli",

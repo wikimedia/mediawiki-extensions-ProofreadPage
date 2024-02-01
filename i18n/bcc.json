@@ -4,6 +4,7 @@
 			"Baloch Afghanistan",
 			"Moshtank",
 			"Mostafadaneshvar",
+			"Reedy",
 			"RigiMahnoor",
 			"Sultanselim baloch"
 		]
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "په تاکانی وانگء تغییر، ضرور انت  [[Special:UserLogin|تها مان بیتگ بیت]].",
 	"proofreadpage_notallowedtext": "شما رء پر ائ تاکء وانگی حالتء ٹگل اجازت نه انت.",
 	"proofreadpage_dataconfig_badformatted": "نکسء مان دیتاء کانفیگورشن",
-	"proofreadpage_dataconfig_badformattedtext": "تاکء [[Mediawiki:Proofreadpage index data config]] پر درستی درورء مان جیسونء فرمت مانا نبوتگ انت.",
+	"proofreadpage_dataconfig_badformattedtext": "تاکء [[MediaWiki:Proofreadpage index data config]] پر درستی درورء مان جیسونء فرمت مانا نبوتگ انت.",
 	"proofreadpage_number_expected": "ارور: عددی درورء لوٹ انت",
 	"proofreadpage_interval_too_large": "ارور: باز ٹوهین اندازگ",
 	"proofreadpage_invalid_interval": "ارور: نامهتبرین اندازگ",

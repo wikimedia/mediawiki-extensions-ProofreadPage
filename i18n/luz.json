@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Reedy",
 			"Sahh",
 			"علی ساکی لرستانی"
 		]
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "ایسه ۉاس بۉی[[Special:UserLogin|ۉرۉد ۉابیدھ]] تا ۉضعیت اصلاحگرایانه داشه بۉی",
 	"proofreadpage_notallowedtext": "ایشا مجاز نبیت سی تغییر ینه ۉضعیت اصلاح ای بلگه",
 	"proofreadpage_dataconfig_badformatted": "گرتاری مئن پیکربنی دادھ یل",
-	"proofreadpage_dataconfig_badformattedtext": "بلگه[[Mediawiki:Proofreadpage index data config]] خۉ نیس مئن فرمت JASON",
+	"proofreadpage_dataconfig_badformattedtext": "بلگه[[MediaWiki:Proofreadpage index data config]] خۉ نیس مئن فرمت JASON",
 	"proofreadpage_number_expected": "خطا: ارزش عددی مۉرد انتظار",
 	"proofreadpage_interval_too_large": "خطا: فاصله گپ بیش از حد",
 	"proofreadpage_invalid_interval": "خطا: فاصله نامعتبر",

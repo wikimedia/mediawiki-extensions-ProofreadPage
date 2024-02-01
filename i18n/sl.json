@@ -4,6 +4,7 @@
 			"Dbc334",
 			"Eleassar",
 			"Janezdrilc",
+			"Reedy",
 			"Yerpo"
 		]
 	},
@@ -29,7 +30,7 @@
 	"proofreadpage_pagesnotallowed": "Napaka: Oznake strani ni mogoče uporabiti v imenskih prostorih Page: in Index:",
 	"proofreadpage_pagelistnotallowed": "Napaka: Oznako seznama strani je mogoče uporabiti samo v imenskem prostoru Index:",
 	"proofreadpage_dataconfig_badformatted": "Hrošč v podatkovni nastavitvi",
-	"proofreadpage_dataconfig_badformattedtext": "Stran [[Mediawiki:Proofreadpage index data config]] nima ustreznega JSON-a.",
+	"proofreadpage_dataconfig_badformattedtext": "Stran [[MediaWiki:Proofreadpage index data config]] nima ustreznega JSON-a.",
 	"proofreadpage_number_expected": "Napaka: pričakovana številčna vrednost",
 	"proofreadpage_interval_too_large": "Napaka: preveliko obdobje",
 	"proofreadpage_invalid_interval": "Napaka: neveljavno obdobje",

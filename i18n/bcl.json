@@ -4,6 +4,7 @@
 			"Brazal.dang",
 			"Filipinayzd",
 			"Kunokuno",
+			"Reedy",
 			"ShimunUfesoj"
 		]
 	},
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "Kaipohan mong [[Special:UserLogin|nakalaog]] tanganing makahira kan pagpakarhay kan pahina",
 	"proofreadpage_notallowedtext": "Dai ka tinutugotan na makahira kan estado kan pagpakarhay  kaining pahina.",
 	"proofreadpage_dataconfig_badformatted": "Sala sa kompigurasyon nin data",
-	"proofreadpage_dataconfig_badformattedtext": "An pahinang [[Mediawiki:Proofreadpage index data config]] bakong well-formatted JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "An pahinang [[MediaWiki:Proofreadpage index data config]] bakong well-formatted JSON.",
 	"proofreadpage_number_expected": "Kasalaan: Numerong kantidad an hinahanap",
 	"proofreadpage_interval_too_large": "Kasalaan: An interbal dakulaon",
 	"proofreadpage_invalid_interval": "Kasalaan: Imbalidong interbal",

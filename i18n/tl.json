@@ -3,6 +3,7 @@
 		"authors": [
 			"AnakngAraw",
 			"Jojit fb",
+			"Reedy",
 			"Sky Harbor",
 			"Stranger195"
 		]
@@ -20,7 +21,7 @@
 	"proofreadpage_nologintext": "Dapat kang [[Special:UserLogin|nakalagda]] upang mabago ang katayuan ng pagwawasto ng mga pahina.",
 	"proofreadpage_notallowedtext": "Hindi ka pinahihintulutang magbago ng katayuan ng pagwawasto ng pahinang ito.",
 	"proofreadpage_dataconfig_badformatted": "Kamalian sa kaayusan ng datos.",
-	"proofreadpage_dataconfig_badformattedtext": "Ang pahinang [[Mediawiki:Proofreadpage index data config]] ay hindi nasa JSON na nakapormat nang maayos.",
+	"proofreadpage_dataconfig_badformattedtext": "Ang pahinang [[MediaWiki:Proofreadpage index data config]] ay hindi nasa JSON na nakapormat nang maayos.",
 	"proofreadpage_number_expected": "Kamalian: inaasahan ang halagang maka-bilang",
 	"proofreadpage_interval_too_large": "Kamalian: napakalaki ng agwat",
 	"proofreadpage_invalid_interval": "Kamalian: hindi tanggap na agwat",

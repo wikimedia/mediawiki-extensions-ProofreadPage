@@ -4,6 +4,7 @@
 			"C.R.",
 			"Candalua",
 			"Chelin",
+			"Reedy",
 			"Ruthven",
 			"Sannita"
 		]
@@ -29,7 +30,7 @@
 	"proofreadpage_notallowedtext": "Nun si autorizzato a cagnà 'o stato 'e verifica 'e chesta paggena.",
 	"proofreadpage_pagesnotallowed": "Errore: 'o tag <code><nowiki><pages/></nowiki></code> nun s'ausa int' 'o namespace Paggena: e Ennece:",
 	"proofreadpage_dataconfig_badformatted": "Prubblema c' 'a cunfigurazzione d' 'e ddate",
-	"proofreadpage_dataconfig_badformattedtext": "'A paggena [[Mediawiki:Proofreadpage index data config]] nun tene 'a formattazzione JSON corretta.",
+	"proofreadpage_dataconfig_badformattedtext": "'A paggena [[MediaWiki:Proofreadpage index data config]] nun tene 'a formattazzione JSON corretta.",
 	"proofreadpage_number_expected": "Errore: c'avesse sta nu nummero",
 	"proofreadpage_interval_too_large": "Errore: chisto intervallo è troppo gruosso",
 	"proofreadpage_invalid_interval": "Errore: chisto intervallo nun è valido",

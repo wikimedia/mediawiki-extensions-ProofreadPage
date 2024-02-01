@@ -3,6 +3,7 @@
 		"authors": [
 			"BukhariSaeed",
 			"Muhammad Shuaib",
+			"Reedy",
 			"Syedalinaqinaqvi",
 			"عثمان خان شاہ",
 			"පසිඳු කාවින්ද"
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "صفحات کی پروف خوانی کی کیفیت تبدیل کرنے کے لیے آپ کو [[Special:UserLogin|لاگ ان]] کرنا ہوگا۔",
 	"proofreadpage_notallowedtext": "آپ کو اس صفحہ کی پروف خوانی کی کیفیت تبدیل کرنے کی اجازت نہیں ہے۔",
 	"proofreadpage_dataconfig_badformatted": "ڈیٹا کنفیگریشن میں خرابی",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] کے صفحہ ميں ٹھیک سے JSON کا استعمال نہیں کیا گیا ہے۔",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] کے صفحہ ميں ٹھیک سے JSON کا استعمال نہیں کیا گیا ہے۔",
 	"proofreadpage_number_expected": "نقص: متوقع عددی قدر",
 	"proofreadpage_interval_too_large": "نقص: وقفہ خاصا طویل ہے",
 	"proofreadpage_invalid_interval": "نقص: نادرست وقفہ",

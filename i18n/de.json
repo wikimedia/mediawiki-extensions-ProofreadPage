@@ -8,6 +8,7 @@
 			"Kghbln",
 			"Metalhead64",
 			"Raimond Spekking",
+			"Reedy",
 			"Tbleher",
 			"ThomasV",
 			"Umherirrender"
@@ -35,7 +36,7 @@
 	"proofreadpage_pagesnotallowed": "Fehler: Das Seiten-Tag kann in den Namensräumen Page: und Index: nicht verwendet werden",
 	"proofreadpage_pagelistnotallowed": "Fehler: Das Seitenlisten-Tag kann nur im Namensraum Index: verwendet werden",
 	"proofreadpage_dataconfig_badformatted": "Fehler in der Datenkonfiguration",
-	"proofreadpage_dataconfig_badformattedtext": "Die Seite [[Mediawiki:Proofreadpage index data config]] ist nicht in wohlgeformtem JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Die Seite [[MediaWiki:Proofreadpage index data config]] ist nicht in wohlgeformtem JSON.",
 	"proofreadpage_number_expected": "Fehler: Numerischer Wert erwartet",
 	"proofreadpage_interval_too_large": "Fehler: Intervall zu groß",
 	"proofreadpage_invalid_interval": "Fehler: ungültiges Intervall",

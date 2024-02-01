@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joetaras",
-			"Reder"
+			"Reder",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Pàgene",
@@ -24,7 +25,7 @@
 	"proofreadpage_pagesnotallowed": "Errore: 'u tag de le pàggene non ge pò essere ausate jndr'à le namespace Page: e Index:",
 	"proofreadpage_pagelistnotallowed": "Errore: 'u tag pagelist pò essere ausate sulamende jndr'à 'u namespace Index:",
 	"proofreadpage_dataconfig_badformatted": "Errore jndr'à configurazione de le date",
-	"proofreadpage_dataconfig_badformattedtext": "'A pàgene [[Mediawiki:Proofreadpage index data config]] non g'è ben formate pe JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "'A pàgene [[MediaWiki:Proofreadpage index data config]] non g'è ben formate pe JSON.",
 	"proofreadpage_number_expected": "Errore: aspettamme 'nu valore numereche",
 	"proofreadpage_interval_too_large": "Errore: indervalle troppe larije",
 	"proofreadpage_invalid_interval": "Errore: indervalle invalide",

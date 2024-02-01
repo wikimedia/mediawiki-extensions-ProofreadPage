@@ -3,6 +3,7 @@
 		"authors": [
 			"Agilight",
 			"Karak-Kyzyl",
+			"Reedy",
 			"Sborsody"
 		]
 	},
@@ -28,7 +29,7 @@
 	"proofreadpage_pagesnotallowed": "Алдаг: Page: биле Index: деп аттар делгеминге арыннарның тегин ажыглап болбас.",
 	"proofreadpage_pagelistnotallowed": "Алдаг: арыннарның даңзы тегин чүгле Index: деп аттар делгеминге ажыглап болур",
 	"proofreadpage_dataconfig_badformatted": "Конфигурацияның медээлеринде частырыг",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] деп арын шын эвес JSON форматта.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] деп арын шын эвес JSON форматта.",
 	"proofreadpage_number_expected": "Алдаг: Болгу дег санныг хемчээл",
 	"proofreadpage_interval_too_large": "Алдаг: Хөлүн эрттир улуг интервал",
 	"proofreadpage_invalid_interval": "Алдаг: Шын эвес интервал",

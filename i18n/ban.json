@@ -4,7 +4,8 @@
 			"Chinamoonroll",
 			"Joseagush",
 			"Luh Gede Krismayanti",
-			"NoiX180"
+			"NoiX180",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Kaca",
@@ -29,7 +30,7 @@
 	"proofreadpage_pagesnotallowed": "Galat: Cihna kaca tan sida kaanggén ring Kaca: miwah Indéks: genaharan",
 	"proofreadpage_pagelistnotallowed": "Galat: Cihna lis kaca wantah sida kaanggén ring Indéks: genaharan",
 	"proofreadpage_dataconfig_badformatted": "Kakutu ring setélan data",
-	"proofreadpage_dataconfig_badformattedtext": "Kaca [[Mediawiki:Proofreadpage index data config]] nénten ring format JSON sané patut.",
+	"proofreadpage_dataconfig_badformattedtext": "Kaca [[MediaWiki:Proofreadpage index data config]] nénten ring format JSON sané patut.",
 	"proofreadpage_number_expected": "Pikobet: Nilai wilangan karereh",
 	"proofreadpage_interval_too_large": "Pikobet: Let keagengan",
 	"proofreadpage_invalid_interval": "Pikobet: Let nénten patut",

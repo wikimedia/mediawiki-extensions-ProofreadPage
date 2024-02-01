@@ -3,7 +3,8 @@
 		"authors": [
 			"Cgboeree",
 			"Katxis",
-			"Malafaya"
+			"Malafaya",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Paje",
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "Tu debe es [[Special:UserLogin|autenticida]] per altera la state de releje de pajes.",
 	"proofreadpage_notallowedtext": "Tu no es permeteda cambia la state de releje de esta paje.",
 	"proofreadpage_dataconfig_badformatted": "Defeto en la ordina de datos",
-	"proofreadpage_dataconfig_badformattedtext": "La paje [[Mediawiki:Proofreadpage ordina de datos de indise]] no es JSON bon formatida.",
+	"proofreadpage_dataconfig_badformattedtext": "La paje [[MediaWiki:Proofreadpage ordina de datos de indise]] no es JSON bon formatida.",
 	"proofreadpage_number_expected": "Era: Valua numeral espetada",
 	"proofreadpage_interval_too_large": "Era: Estende tro grande",
 	"proofreadpage_invalid_interval": "Era: Estende nonvalida",

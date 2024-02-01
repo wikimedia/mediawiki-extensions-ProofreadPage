@@ -3,7 +3,8 @@
 		"authors": [
 			"Akamycoco",
 			"Amire80",
-			"Lalotahes"
+			"Lalotahes",
+			"Reedy"
 		]
 	},
 	"nstab-page": " ye:miyen",
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "So’o ’oy [[Special:UserLogin| minSa’la’  kaS’abo’ ]] ’isa:  ponrowa’  ila kaye:miyen ka pinonrowa’  zhwang tay 。",
 	"proofreadpage_notallowedtext": "So’o ’okay Siwa’i nom ponrowa’ ka hini ye:miyen  pinonrowa’  zhwang tay ka Siniwa’.",
 	"proofreadpage_dataconfig_badformatted": "Se’tin ray kina:at ’izo’ ka Bug",
-	"proofreadpage_dataconfig_badformattedtext": "ye:miyen  [[Mediawiki:Proofreadpage index data config]] ’inokik pyawzhun ka JSON  ke:Se’",
+	"proofreadpage_dataconfig_badformattedtext": "ye:miyen  [[MediaWiki:Proofreadpage index data config]] ’inokik pyawzhun ka JSON  ke:Se’",
 	"proofreadpage_number_expected": " ’inokay paylal’oz ：’am ’okik ka su’zhe:",
 	"proofreadpage_interval_too_large": "’inokay paylal’oz ： jienge: sopaloy a tomal",
 	"proofreadpage_invalid_interval": " ’inokay paylal’oz ： ’oka’ nanaw  ka kinSekla’an jienge:",

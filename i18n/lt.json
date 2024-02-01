@@ -7,6 +7,7 @@
 			"Manvydasz",
 			"Matasg",
 			"Nokeoo",
+			"Reedy",
 			"Vogone"
 		]
 	},
@@ -27,7 +28,7 @@
 	"proofreadpage_nologintext": "Jūs turite būti [[Special:UserLogin|prisijungęs]], norėdamas keisti puslapių statusą.",
 	"proofreadpage_notallowedtext": "Jums neleidžiama pakeisti šio puslapio statuso.",
 	"proofreadpage_dataconfig_badformatted": "Klaida duomenų konfigūracijoje",
-	"proofreadpage_dataconfig_badformattedtext": "Puslapis [[Mediawiki:Proofreadpage index data config]] nėra tinkamai suformatuotas JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Puslapis [[MediaWiki:Proofreadpage index data config]] nėra tinkamai suformatuotas JSON.",
 	"proofreadpage_number_expected": "Klaida: tikėtasi skaitinės vertės",
 	"proofreadpage_interval_too_large": "Klaida: intervalas per didelis",
 	"proofreadpage_invalid_interval": "Klaida: neteisingas intervalas",

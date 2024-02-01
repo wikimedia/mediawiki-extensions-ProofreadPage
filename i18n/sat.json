@@ -8,6 +8,7 @@
 			"Manik Soren",
 			"R Ashwani Banjan Murmu",
 			"Ramjit Tudu",
+			"Reedy",
 			"ᱥᱟᱹᱜᱩᱱ ᱗"
 		]
 	},
@@ -28,7 +29,7 @@
 	"proofreadpage_nologintext": "ᱟᱢ ᱫᱚ [[Special:UserLogin|ᱞᱚᱜᱤᱱ]] ᱡᱟᱹᱨᱩᱲ ᱦᱩᱭᱟᱢᱟ ᱥᱟᱦᱴᱟ ᱨᱮᱱᱟᱜ proofreading status ᱵᱚᱫᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱾",
 	"proofreadpage_notallowedtext": "ᱱᱚᱭᱟ ᱥᱟᱦᱴᱟ ᱨᱮᱱᱟᱜ ᱯᱟᱲᱦᱟᱣ ᱥᱩᱫᱷᱟᱹᱨ ᱚᱵᱚᱥᱛᱟ ᱟᱢᱫᱚ ᱵᱟᱢ ᱵᱚᱫᱚᱞ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ",
 	"proofreadpage_dataconfig_badformatted": "ᱥᱟᱹᱠᱷᱭᱟᱹᱛ ᱜᱚᱲᱦᱚᱱ ᱨᱮ ᱵᱷᱩᱞ",
-	"proofreadpage_dataconfig_badformattedtext": "ᱥᱟᱦᱴᱟ [[Mediawiki:Proofreadpage index data config]] ᱫᱚ ᱵᱷᱟᱹᱜᱤ ᱞᱮᱠᱟᱱ JSON ᱜᱚᱲᱦᱚᱱ ᱨᱮ ᱵᱟᱹᱱᱩᱜ-ᱟ ᱾",
+	"proofreadpage_dataconfig_badformattedtext": "ᱥᱟᱦᱴᱟ [[MediaWiki:Proofreadpage index data config]] ᱫᱚ ᱵᱷᱟᱹᱜᱤ ᱞᱮᱠᱟᱱ JSON ᱜᱚᱲᱦᱚᱱ ᱨᱮ ᱵᱟᱹᱱᱩᱜ-ᱟ ᱾",
 	"proofreadpage_number_expected": "ᱵᱷᱩᱞ : ᱮᱞᱮᱞ ᱫᱟᱢ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ",
 	"proofreadpage_interval_too_large": "ᱵᱷᱩᱞ : ᱟᱹᱰᱤ ᱞᱟᱹᱴᱩ ᱡᱤᱨᱟᱹᱣ",
 	"proofreadpage_invalid_interval": "ᱵᱷᱩᱞ : ᱡᱤᱨᱟᱹᱣ ᱞᱟᱹᱠᱛᱤ ᱵᱟᱹᱱᱩᱜ-ᱟ",

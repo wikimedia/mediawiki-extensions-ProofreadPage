@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bjarki S",
+			"Reedy",
 			"S.Örvarr.S",
 			"Snævar",
 			"Stefán Örvar Sigmundsson",
@@ -30,7 +31,7 @@
 	"proofreadpage_pagesnotallowed": "Villa: Síðumerki má ekki nota í Blaðsíða: eða Frumrit: nafnrýmunum",
 	"proofreadpage_pagelistnotallowed": "Villa: Síðulistamerki má aðeins nota í Frumrit: nafnrýminu",
 	"proofreadpage_dataconfig_badformatted": "Villa í gagnastillingu",
-	"proofreadpage_dataconfig_badformattedtext": "Síðan [[Mediawiki:Proofreadpage index data config]] er ekki vel snítt JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Síðan [[MediaWiki:Proofreadpage index data config]] er ekki vel snítt JSON.",
 	"proofreadpage_number_expected": "Villa: Tölugildis vænt",
 	"proofreadpage_interval_too_large": "Villa: Bil of stórt",
 	"proofreadpage_invalid_interval": "Villa: Ógilt bil",

@@ -4,6 +4,7 @@
 			"Kareyac",
 			"Lifeway",
 			"Mxalexandrov86",
+			"Reedy",
 			"Сай"
 		]
 	},
@@ -29,7 +30,7 @@
 	"proofreadpage_pagesnotallowed": "Йоҥылыш: велыж-влакын тегыштым Page: да Index: лӱм кумдыкышто кучылташ огеш лий",
 	"proofreadpage_pagelistnotallowed": "Йоҥылыш: велыж-влакын тегыштым Index: лӱм кумдыкышто гына кучылташ лиеш",
 	"proofreadpage_dataconfig_badformatted": "Конфигураций данныйыште йоҥылыш",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] велыж чын огыл JSON-форматыште.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] велыж чын огыл JSON-форматыште.",
 	"proofreadpage_number_expected": "Йоҥылыш: числан значений вучалтеш",
 	"proofreadpage_interval_too_large": "Йоҥылыш: утыжден кугу кокла",
 	"proofreadpage_invalid_interval": "Йоҥылыш: Чын огыл кокла",

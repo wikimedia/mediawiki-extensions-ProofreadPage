@@ -4,7 +4,8 @@
 			"1917 Ekim Devrimi",
 			"Erdemaslancan",
 			"Mirzali",
-			"Orbot707"
+			"Orbot707",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Pele",
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "Qey vurnayişê halê raştkerdışê pelan gani şıma [[Special:UserLogin|cı kewiyi]].",
 	"proofreadpage_notallowedtext": "Şıma nêşıkinê halê raştkerdışê na pele bıvurnê.",
 	"proofreadpage_dataconfig_badformatted": "Vıraştışê melumati de xeta",
-	"proofreadpage_dataconfig_badformattedtext": "Pela [[Mediawiki:Proofreadpage index data config]] formatê JSONiê rındi de niya.",
+	"proofreadpage_dataconfig_badformattedtext": "Pela [[MediaWiki:Proofreadpage index data config]] formatê JSONiê rındi de niya.",
 	"proofreadpage_number_expected": "Xeta:Amarin weziyet pawéno",
 	"proofreadpage_interval_too_large": "Xeta: benate/mabên zaf hêrayo",
 	"proofreadpage_invalid_interval": "Xeta: benateyo nemeqbul",

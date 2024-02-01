@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Es Krim 5 Juta Rasa"
+			"Es Krim 5 Juta Rasa",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -26,7 +27,7 @@
 	"proofreadpage_pagesnotallowed": "Error: Tag halaman mak pandai tipakai di ruang golar Page: rik Index:",
 	"proofreadpage_pagelistnotallowed": "Error: Tag daftar halaman bih pandai tigunako di ruang golar Index:",
 	"proofreadpage_dataconfig_badformatted": "Kakutu dilom konfigurasi data",
-	"proofreadpage_dataconfig_badformattedtext": "Halaman [[Mediawiki:Proofreadpage index data config]] mak dilom format JSON sai bonor.",
+	"proofreadpage_dataconfig_badformattedtext": "Halaman [[MediaWiki:Proofreadpage index data config]] mak dilom format JSON sai bonor.",
 	"proofreadpage_number_expected": "Error: Nilai angka tiporluko",
 	"proofreadpage_interval_too_large": "Error: Interval kabalakan ga",
 	"proofreadpage_invalid_interval": "Error: Interval mak sah",

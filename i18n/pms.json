@@ -4,6 +4,7 @@
 			"Borichèt",
 			"Bèrto 'd Sèra",
 			"Dragonòt",
+			"Reedy",
 			"පසිඳු කාවින්ද",
 			555
 		]
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "It deve [[Special:UserLogin|intré ant ël sistema]] për modifiché lë stat ëd verifìca ëd le pàgine.",
 	"proofreadpage_notallowedtext": "It peule pa cambié lë stat ëd verìfica dë sta pàgina-sì.",
 	"proofreadpage_dataconfig_badformatted": "Eror ant la configurassion dij dat",
-	"proofreadpage_dataconfig_badformattedtext": "La pàgina [[Mediawiki:Proofreadpage index data config]] a l'é nen ëstàita butà për da bin an forma JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "La pàgina [[MediaWiki:Proofreadpage index data config]] a l'é nen ëstàita butà për da bin an forma JSON.",
 	"proofreadpage_number_expected": "Eror: valor numérich spetà",
 	"proofreadpage_interval_too_large": "Eror: antërval tròp largh",
 	"proofreadpage_invalid_interval": "Eror: antërval pa bon",

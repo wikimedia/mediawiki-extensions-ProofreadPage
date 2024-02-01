@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ceas08",
-			"Cem Rize"
+			"Cem Rize",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Butʼkʼa:",
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "Sayfaların düzeltme durumunu değiştirmek için [[Special:UserLogin|giriş yapmış]] olmalısınız.",
 	"proofreadpage_notallowedtext": "Bu sayfanın düzeltme durumunu değiştirmenize izin verilmiyor.",
 	"proofreadpage_dataconfig_badformatted": "Veri yapılandırmasında hata",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] sayfası iyi biçimlendirilmiş JSON biçiminde değil.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] sayfası iyi biçimlendirilmiş JSON biçiminde değil.",
 	"proofreadpage_number_expected": "Hata: sayısal değer bekleniyordu",
 	"proofreadpage_interval_too_large": "Hata: aralık çok büyük",
 	"proofreadpage_invalid_interval": "Hata: geçersiz aralık",

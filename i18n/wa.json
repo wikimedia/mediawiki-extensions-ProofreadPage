@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Reedy",
 			"Reptilien.19831209BE1"
 		]
 	},
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "I vos fåt esse [[Special:UserLogin|elodjî]] po poleur candjî l’ estat d’ coridjaedje des pådjes.",
 	"proofreadpage_notallowedtext": "Vos n’ estoz nén otorijhî a candjî l’ estat d’ coridjaedje di cisse pådje ci.",
 	"proofreadpage_dataconfig_badformatted": "Bug dins l’ apontiaedje des dnêyes",
-	"proofreadpage_dataconfig_badformattedtext": "El pådje [[Mediawiki:Proofreadpage index data config]] n’ est nén epådjnêye comifåt e JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "El pådje [[MediaWiki:Proofreadpage index data config]] n’ est nén epådjnêye comifåt e JSON.",
 	"proofreadpage_number_expected": "Aroke : gn a mezåjhe d’ ene valixhance limerike",
 	"proofreadpage_interval_too_large": "Aroke : el distance etur les deus tchifes est trop grande",
 	"proofreadpage_invalid_interval": "Aroke : el distance etur les deus tchifes n’ est nén coreke",

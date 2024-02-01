@@ -3,6 +3,7 @@
 		"authors": [
 			"An13sa",
 			"Joxemai",
+			"Reedy",
 			"Sator",
 			"Subi",
 			"Theklan",
@@ -28,7 +29,7 @@
 	"proofreadpage_nologintext": "[[Special:UserLogin|Saioa hasi]] behar duzu orrien berrikuspen egoera aldatzeko.",
 	"proofreadpage_notallowedtext": "Ez duzu baimenik orrialde honen irakurketa-proba egoera aldatzeko.",
 	"proofreadpage_dataconfig_badformatted": "Akatsa datuen konfigurazioan",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] orriaren JSON formatua ez da egokia.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] orriaren JSON formatua ez da egokia.",
 	"proofreadpage_number_expected": "Akatsa: Zenbaki bat espero zen",
 	"proofreadpage_interval_too_large": "Akatsa: tarte luzeegia",
 	"proofreadpage_invalid_interval": "Akatsa: Tarte ez-baliabarria",

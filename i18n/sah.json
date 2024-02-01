@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"HalanTul"
+			"HalanTul",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Сирэй",
@@ -21,7 +22,7 @@
 	"proofreadpage_nologintext": "Сирэйи бэрэбиэркэлээһин туругун уларытарга [[Special:UserLogin|бэлиэтэммит ааккын этиэхтээххин]].",
 	"proofreadpage_notallowedtext": "Бу сирэйи бэрэбиэркэлээһин туругун уларытар кыаҕыҥ суох.",
 	"proofreadpage_dataconfig_badformatted": "Конфигурация алҕаһа",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] сирэй JSON-формаата алҕастаах.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] сирэй JSON-формаата алҕастаах.",
 	"proofreadpage_number_expected": "Алҕас: Чыыһыла наада",
 	"proofreadpage_interval_too_large": "Алҕас: наһаа улахан кээмэйи эппиккин",
 	"proofreadpage_invalid_interval": "Алҕас: сыыһа интервал",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Les Meloures",
+			"Reedy",
 			"Robby",
 			"Soued031",
 			"Volvox"
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "Dir musst [[Special:UserLogin|ageloggt]] si fir de Status vum Iwwerliese vu Säiten z'änneren.",
 	"proofreadpage_notallowedtext": "Dir sidd net berechtigt de Status vum Iwwerliese vun dëser Säit z'änneren.",
 	"proofreadpage_dataconfig_badformatted": "Feeler an der Datekonfiguratioun",
-	"proofreadpage_dataconfig_badformattedtext": "D'Säit [[Mediawiki:Proofreadpage index data config]] ass net gutt JSON formatéiert.",
+	"proofreadpage_dataconfig_badformattedtext": "D'Säit [[MediaWiki:Proofreadpage index data config]] ass net gutt JSON formatéiert.",
 	"proofreadpage_number_expected": "Feeler: et gouf en numeresche Wäert erwaart",
 	"proofreadpage_interval_too_large": "Feeler: Intervall ze ze grouss",
 	"proofreadpage_invalid_interval": "Feeler: net valabelen Intervall",

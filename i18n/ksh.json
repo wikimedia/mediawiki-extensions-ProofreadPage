@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Reedy"
 		]
 	},
 	"indexpages": "Leß met de Verzeischneß_Sigge",
@@ -17,7 +18,7 @@
 	"proofreadpage_nologintext": "Do möötß ald [[Special:UserLogin|enjelogg]] sin, öm dä {{int:proofreadpage_page_status}} hee ze ändere.",
 	"proofreadpage_notallowedtext": "Do häs nit et Rääsch, heh dä {{int:proofreadpage_page_status}} ze ändere.",
 	"proofreadpage_dataconfig_badformatted": "Ene Fähler es en dä Enschtällonge för de Dahte opjefalle.",
-	"proofreadpage_dataconfig_badformattedtext": "De Sigg [[Mediawiki:Proofreadpage index data config]] es kei jöltesch <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"JavaScript Object Notation\">JSON<i>.",
+	"proofreadpage_dataconfig_badformattedtext": "De Sigg [[MediaWiki:Proofreadpage index data config]] es kei jöltesch <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"JavaScript Object Notation\">JSON<i>.",
 	"proofreadpage_number_expected": "Fähler: En Zahl weet jebruch",
 	"proofreadpage_interval_too_large": "Fähler: Dä Affschtand es zoh jruuß",
 	"proofreadpage_invalid_interval": "Fähler: Dä Afshtand es nit jöltesch",

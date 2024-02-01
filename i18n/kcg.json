@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Kambai Akau"
+			"Kambai Akau",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Wat",
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "Ta hwa a [[Special:UserLogin|nwuo]] ka̱ a cat jhyi yong bu-fang-a̱ka̱feang pejí.",
 	"proofreadpage_notallowedtext": "A sang a̱wat shai yong fang-a̱ka̱feang wat huni bah.",
 	"proofreadpage_dataconfig_badformatted": "Bi shyia̱ mami tyei deita ca̱caat",
-	"proofreadpage_dataconfig_badformattedtext": "Wat hu [[Mediawiki:Proofreadpage index data config]] nwai shyia̱ JSON nang á̱ tak ansham a̱ni.",
+	"proofreadpage_dataconfig_badformattedtext": "Wat hu [[MediaWiki:Proofreadpage index data config]] nwai shyia̱ JSON nang á̱ tak ansham a̱ni.",
 	"proofreadpage_number_expected": "Ghyuap: Á̱ ba̱ng fwuo shyia̱ a̱fi̱ng la̱mba kya",
 	"proofreadpage_interval_too_large": "Ghyuap: A̱wat ka la̱u a̱mgbii",
 	"proofreadpage_invalid_interval": "Ghyuap: A̱kace a̱wat",

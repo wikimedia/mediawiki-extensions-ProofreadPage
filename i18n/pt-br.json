@@ -15,6 +15,7 @@
 			"MetalBrasil",
 			"Rafaelff",
 			"Re demz",
+			"Reedy",
 			555
 		]
 	},
@@ -40,7 +41,7 @@
 	"proofreadpage_pagesnotallowed": "Erro: a tag \"pages\" não pode ser usada nos espaços nominais Página: e Índice:",
 	"proofreadpage_pagelistnotallowed": "Erro: a tag \"pagelist\" só pode ser usada no espaço nominal Índice:",
 	"proofreadpage_dataconfig_badformatted": "Erro nos dados de configuração",
-	"proofreadpage_dataconfig_badformattedtext": "A página [[Mediawiki:Proofreadpage index data config]] não está corretamente formatada como JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "A página [[MediaWiki:Proofreadpage index data config]] não está corretamente formatada como JSON.",
 	"proofreadpage_number_expected": "Erro: era esperado um valor numérico",
 	"proofreadpage_interval_too_large": "Erro: intervalo muito longo",
 	"proofreadpage_invalid_interval": "Erro: intervalo inválido",

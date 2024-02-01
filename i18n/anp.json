@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Angpradesh",
-			"Proabscorp!"
+			"Proabscorp!",
+			"Reedy"
 		]
 	},
 	"nstab-page": "पन्ना",
@@ -26,7 +27,7 @@
 	"proofreadpage_pagesnotallowed": "त्रुटि: पन्ना टैग क उपयोग पन्ना मँ नाय करलौ जाय सकै छै: आरो इंडेक्स: नेमस्पेस",
 	"proofreadpage_pagelistnotallowed": "त्रुटि: पेजलिस्ट टैग क उपयोग केवल इंडेक्स मँ करलौ जाय सकै छै: नेमस्पेस",
 	"proofreadpage_dataconfig_badformatted": "डेटा विन्यास मँ बग",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] क पन्ना में ठीक सँ JSON क उपयोग नाय करलौ गेलौ छै।",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] क पन्ना में ठीक सँ JSON क उपयोग नाय करलौ गेलौ छै।",
 	"proofreadpage_number_expected": "त्रुटि: संख्यात्मक मूल्य केरौ उम्मीद",
 	"proofreadpage_interval_too_large": "त्रुटि: अंतराल बहुत बड़ौ",
 	"proofreadpage_invalid_interval": "त्रुटि: अमान्य अंतराल",

@@ -5,6 +5,7 @@
 			"Conky77",
 			"Fierodelveneto",
 			"GatoSelvadego",
+			"Reedy",
 			"Vajotwo"
 		]
 	},
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "Te ghè da èssar [[Special:UserLogin|autenticà]] par canbiar el stato de revision de le pagine.",
 	"proofreadpage_notallowedtext": "No te ghè el parmesso de canbiar el stato de revision de le pagine.",
 	"proofreadpage_dataconfig_badformatted": "Problema inte ła configurasion de i dati",
-	"proofreadpage_dataconfig_badformattedtext": "Ƚa pàgina [[Mediawiki:Proofreadpage index data config]] no ƚa xe inte on formà JSON coreto.",
+	"proofreadpage_dataconfig_badformattedtext": "Ƚa pàgina [[MediaWiki:Proofreadpage index data config]] no ƚa xe inte on formà JSON coreto.",
 	"proofreadpage_number_expected": "Eròr: me spetavo un valor numerico",
 	"proofreadpage_interval_too_large": "Eròr: intervalo massa grando",
 	"proofreadpage_invalid_interval": "Eròr: intervalo mia valido",

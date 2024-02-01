@@ -3,7 +3,8 @@
 		"authors": [
 			"Bachounda",
 			"GeekEmad",
-			"Oldstoneage"
+			"Oldstoneage",
+			"Reedy"
 		]
 	},
 	"nstab-page": "پاجة",
@@ -23,7 +24,7 @@
 	"proofreadpage_nologintext": "لازم تكون [[Special:UserLogin|مسجل الدخله]] لتعدّل حالة تصحيح الباجات.",
 	"proofreadpage_notallowedtext": "ممنوع عليك  باش تغير حالت  تصحيح هذه الباجه.",
 	"proofreadpage_dataconfig_badformatted": "علة في ضبط المعلومات",
-	"proofreadpage_dataconfig_badformattedtext": "الباحه[[Mediawiki:Proofreadpage index data config]]  ماشي في JSON مهيأه مليح.",
+	"proofreadpage_dataconfig_badformattedtext": "الباحه[[MediaWiki:Proofreadpage index data config]]  ماشي في JSON مهيأه مليح.",
 	"proofreadpage_number_expected": "غلطه: قيمة عددية مستنيه",
 	"proofreadpage_interval_too_large": "غلطه: المده كبيرة بزاف",
 	"proofreadpage_invalid_interval": "غلطة: المدة ماشي صحيحه",

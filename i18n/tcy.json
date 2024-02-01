@@ -4,6 +4,7 @@
 			"BHARATHESHA ALASANDEMAJALU",
 			"Kiranpoojary",
 			"Lokesha kunchadka",
+			"Reedy",
 			"VASANTH S.N.",
 			"Vishwanatha Badikana"
 		]
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "ಈರೆಗ್[[Special:UserLogin|logged in]] ಪುಟೊಕುಲೆನ ಕರಡಚ್ಚುನು ಬದಲ್ ಮಲ್ಪುನ ಸ್ತಾನಮಾನೊ ಈರೆಗ್ ಬೋಡು.",
 	"proofreadpage_notallowedtext": "ಈರೆಗ್ ಪುಟೊಕುಲೆನ ಕರಡಚ್ಚುನು ಬದಲ್ ಮಲ್ಪುನ ಸ್ತಾನಮಾನೊ ಇದ್ದಿ.",
 	"proofreadpage_dataconfig_badformatted": "ದತ್ತಾಂಸೊ ಸಂರಚನೆಡ್ ದೋಸೊ ಇದ್ದಿ",
-	"proofreadpage_dataconfig_badformattedtext": "JSON ಈ ಪುಟೊ[[Mediawiki:Proofreadpage index data config]] ಎಡ್ಡೆ ಸ್ವರೂಪೊಡು ಇದ್ದಿ",
+	"proofreadpage_dataconfig_badformattedtext": "JSON ಈ ಪುಟೊ[[MediaWiki:Proofreadpage index data config]] ಎಡ್ಡೆ ಸ್ವರೂಪೊಡು ಇದ್ದಿ",
 	"proofreadpage_number_expected": "ದೋಸೊ:ತಿರ್ತ್‌ದ ಸಂಕ್ಯೆದ ಬಿಲೆನ್ ನಿರೀಕ್ಷಿಸವೊಲಿ",
 	"proofreadpage_interval_too_large": "ದೋಸೊ:ಮದ್ಯಂತರೊ ದಿಂಜ ಮಲ್ಲೆ ಆಂಡ್",
 	"proofreadpage_invalid_interval": "ದೋಸೊ:ತಪ್ಪು ಮದ್ಯಂತರೊ",

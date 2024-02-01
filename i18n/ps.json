@@ -5,7 +5,8 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
 			"Baloch Khan",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Reedy"
 		]
 	},
 	"nstab-page": "مخ",
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "تاسو بايد زموږ سره [[Special:UserLogin|يوځاي سي]] تر څو د پاڼو د ثبت کولو وضعیت تعدیل کړي.",
 	"proofreadpage_notallowedtext": "تاسو اجازه نلرئ چې د دې پاڼې ثبوتي مخ بدل کړئ.",
 	"proofreadpage_dataconfig_badformatted": "په ډاټا کي يي ورګډ کړي",
-	"proofreadpage_dataconfig_badformattedtext": "دغه مخ [[Mediawiki:Proofreadpage index data config]] سم په برابره بڼه شوی نه دي.",
+	"proofreadpage_dataconfig_badformattedtext": "دغه مخ [[MediaWiki:Proofreadpage index data config]] سم په برابره بڼه شوی نه دي.",
 	"proofreadpage_number_expected": "تېروتنه: د شمېرې اټکل شوې تمه",
 	"proofreadpage_interval_too_large": "تېروتنه: ډیره لویه کچه",
 	"proofreadpage_invalid_interval": "تېروتنه: ناباوره منځنۍ",

@@ -5,6 +5,7 @@
 			"Dferg",
 			"Jon Harald Søby",
 			"Peter Alberti",
+			"Reedy",
 			"Saederup92",
 			"Sarrus"
 		]
@@ -26,7 +27,7 @@
 	"proofreadpage_nologintext": "Du skal være [[Special:UserLogin|logget på]] for at ændre en sides korrekturlæsningsstatus.",
 	"proofreadpage_notallowedtext": "Du har ikke rettigheder til at ændre korrekturlæsningen på denne side.",
 	"proofreadpage_dataconfig_badformatted": "Fejl i dataopsætning",
-	"proofreadpage_dataconfig_badformattedtext": "Siden [[Mediawiki:Proofreadpage index data config]] er ikke i velformateret JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Siden [[MediaWiki:Proofreadpage index data config]] er ikke i velformateret JSON.",
 	"proofreadpage_number_expected": "Fejl: talværdi forventet",
 	"proofreadpage_interval_too_large": "Fejl: for stort interval",
 	"proofreadpage_invalid_interval": "Fejl: ugyldigt interval",

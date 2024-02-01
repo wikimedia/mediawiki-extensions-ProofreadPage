@@ -4,6 +4,7 @@
 			"Babanwalia",
 			"Bgo eiu",
 			"Kuldeepburjbhalaike",
+			"Reedy",
 			"Satdeep gill"
 		]
 	},
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "ਸਫ਼ਿਆਂ ਦੀ ਪਰੂਫ਼ਰੀਡਿੰਗ ਦਾ ਦਰਜਾ ਬਦਲਣ ਲਈ  [[Special:UserLogin|ਲਾਗ]] ਕਰਨਾ ਜ਼ਰੂਰੀ ਹੈ।",
 	"proofreadpage_notallowedtext": "ਤੁਸੀਂ ਇਸ ਸਫ਼ੇ ਦੀ ਪਰੂਫ਼ਰੀਡਿੰਗ ਦਾ ਦਰਜਾ ਨਹੀਂ ਬਦਲ ਸਕਦੇ।",
 	"proofreadpage_dataconfig_badformatted": "ਡਾਟਾ ਕਨਫ਼ਿਗਰੇਸ਼ਨ ਵਿੱਚ ਬਗ ਹੈ",
-	"proofreadpage_dataconfig_badformattedtext": "ਸਫ਼ੇ [[Mediawiki:Proofreadpage index data config]] ਸਹੀ ਤਰੀਕੇ ਦੀ ਜੇਸੋਨ(JSON) ਫਾਰਮੈਟਿੰਗ ਵਿੱਚ ਨਹੀਂ ਹੈ।",
+	"proofreadpage_dataconfig_badformattedtext": "ਸਫ਼ੇ [[MediaWiki:Proofreadpage index data config]] ਸਹੀ ਤਰੀਕੇ ਦੀ ਜੇਸੋਨ(JSON) ਫਾਰਮੈਟਿੰਗ ਵਿੱਚ ਨਹੀਂ ਹੈ।",
 	"proofreadpage_number_expected": "ਗ਼ਲਤੀ: ਇੱਥੇ ਅੰਕ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ",
 	"proofreadpage_interval_too_large": "ਗ਼ਲਤੀ: ਬਹੁਤ ਵੱਡਾ ਇੰਟਰਵਲ",
 	"proofreadpage_invalid_interval": "ਗ਼ਲਤੀ: ਗ਼ਲਤ ਇੰਟਰਵਲ",

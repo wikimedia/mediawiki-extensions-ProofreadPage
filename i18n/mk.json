@@ -3,6 +3,7 @@
 		"authors": [
 			"Bjankuloski06",
 			"Brest",
+			"Reedy",
 			"Vlad5250"
 		]
 	},
@@ -28,7 +29,7 @@
 	"proofreadpage_pagesnotallowed": "Грешка: Ознаката за страници не може да се користи во именските простори Page: и Index:",
 	"proofreadpage_pagelistnotallowed": "Грешка: Ознаката за список на страници може да се користи само во именскиот простор Index:",
 	"proofreadpage_dataconfig_badformatted": "Грешка во поставеноста на податоците",
-	"proofreadpage_dataconfig_badformattedtext": "Страницата [[Mediawiki:Proofreadpage index data config]] не е добро форматирана како JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Страницата [[MediaWiki:Proofreadpage index data config]] не е добро форматирана како JSON.",
 	"proofreadpage_number_expected": "Грешка: се очекува бројчена вредност",
 	"proofreadpage_interval_too_large": "Грешка: растојанието е преголемо",
 	"proofreadpage_invalid_interval": "Грешка: погрешно растојание",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Marwan Mohamad",
+			"Reedy",
 			"Si Gam Acèh"
 		]
 	},
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "Yi'o musti [[Special:UserLogin|tumuwoto log]] monguba status mopo'opiyohu halaman",
 	"proofreadpage_notallowedtext": "Yi'o jamowali momoli'o status uji-baca lo halaman botiye.",
 	"proofreadpage_dataconfig_badformatted": "Bug to delomo konfigurasi data",
-	"proofreadpage_dataconfig_badformattedtext": "Halaman [[Mediawiki:Proofreadpage index data config]] ja to delomo format JSON u banari.",
+	"proofreadpage_dataconfig_badformattedtext": "Halaman [[MediaWiki:Proofreadpage index data config]] ja to delomo format JSON u banari.",
 	"proofreadpage_number_expected": "Tilala: Tuwangi lo angka",
 	"proofreadpage_interval_too_large": "Tilala: wolota ma damango",
 	"proofreadpage_invalid_interval": "Tilala:wolota ja sah",

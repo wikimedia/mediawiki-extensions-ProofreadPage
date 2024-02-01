@@ -4,6 +4,7 @@
 			"Abdeaitali",
 			"Anass Sedrati",
 			"Ideophagous",
+			"Reedy",
 			"SADIQUI",
 			"Tifratin"
 		]
@@ -25,7 +26,7 @@
 	"proofreadpage_nologintext": "خاص تكون [[Special:UserLogin|مكونيكطي]] باش تقدر تعدًل حالة تدقيق الصفحات.",
 	"proofreadpage_notallowedtext": "ماعندكش لحق تبدًل لحالة د التدقيق د هاد الصفحة.",
 	"proofreadpage_dataconfig_badformatted": "مشكيل فضبط البيانات",
-	"proofreadpage_dataconfig_badformattedtext": "الصفحة [[Mediawiki:Proofreadpage index data config]]  مامقاداش مزيان ف JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "الصفحة [[MediaWiki:Proofreadpage index data config]]  مامقاداش مزيان ف JSON.",
 	"proofreadpage_number_expected": "غلط:خاص تكتب نمرة",
 	"proofreadpage_interval_too_large": "غلط: لمجال كبير بزاف",
 	"proofreadpage_invalid_interval": "غلط: مجال غالط",

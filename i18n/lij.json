@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Giromin Cangiaxo",
+			"Reedy",
 			"S4b1nuz E.656"
 		]
 	},
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "Pe modificâ o stato de corression de paggine, bezoeugna avei fæto [[Special:UserLogin|l'accesso]].",
 	"proofreadpage_notallowedtext": "No t'ê aotorizou a modificâ o stato de coression de sta paggina.",
 	"proofreadpage_dataconfig_badformatted": "Babòllo inta configuassion di dæti",
-	"proofreadpage_dataconfig_badformattedtext": "A paggina [[Mediawiki:Proofreadpage index data config]] a no l'è inte 'n JSON ben formatou.",
+	"proofreadpage_dataconfig_badformattedtext": "A paggina [[MediaWiki:Proofreadpage index data config]] a no l'è inte 'n JSON ben formatou.",
 	"proofreadpage_number_expected": "Errô: previsto valô numerico",
 	"proofreadpage_interval_too_large": "Errô: intervallo troppo grosso",
 	"proofreadpage_invalid_interval": "Errô: intervallo invallido",

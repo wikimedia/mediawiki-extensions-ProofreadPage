@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Khun Sar",
+			"Reedy",
 			"Saimawnkham"
 		]
 	},
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "သူတေလႆႈပဵၼ် [[Special:UserLogin|ၶဝ်ႈၸႂ်ႉတိုဝ်းဝႆႉ]] တႃႇတေမူၼ်ႉမႄးၵၢၼ်ၵုမ်းဢၢၼ်ႇၼႃႈလိၵ်ႈတင်းလၢႆ",
 	"proofreadpage_notallowedtext": "ဢမ်ႇပၼ်လႅၵ်ႈလၢႆႈ ငဝ်းလၢႆးၵၢၼ်ၵုမ်းဢၢၼ်ႇ ၼႃႈလိၵ်ႈဢၼ်ၼႆႉ",
 	"proofreadpage_dataconfig_badformatted": "မီးၿၵ်ႉဝႆႉ ၼႂ်းၵၢၼ်ဝၢင်းပိူင်ၶေႃႈမုၼ်း",
-	"proofreadpage_dataconfig_badformattedtext": "ၼႃႈလိၵ်ႈ  [[Mediawiki:Proofreadpage index data config]] ဢမ်ႇတမ်းပိူင်လီၸွမ်း JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "ၼႃႈလိၵ်ႈ  [[MediaWiki:Proofreadpage index data config]] ဢမ်ႇတမ်းပိူင်လီၸွမ်း JSON.",
 	"proofreadpage_number_expected": "ၽိတ်းပိူင်ႈ : ၵႃႊၶၼ်တူဝ်ၼပ်ႉဢၼ်ၶၢတ်ႈလၢမ်းဝႆႉ",
 	"proofreadpage_interval_too_large": "ၽိတ်းပိူင်ႈ: ၶၢဝ်းယၢမ်းၼႂ်းၵႄႈမၼ်းယၢဝ်းပူၼ်ႉတီႈ",
 	"proofreadpage_invalid_interval": "လွင်ႈၽိတ်းပိူင်ႈ : ဢွင်ႈပဝ်ႇၵႄႈမၼ်း ၽိတ်းပိူင်ႈ",

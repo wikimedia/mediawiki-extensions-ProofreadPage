@@ -4,6 +4,7 @@
 			"Amire80",
 			"Awangba Mangang",
 			"Luwangcha",
+			"Reedy",
 			"꯴꯰꯴"
 		]
 	},
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "ꯅꯪꯅꯥ ꯁꯣꯏꯗꯅꯥ [[Special:UserLogin|ꯆꯪꯁꯤꯟꯒꯗꯕꯅꯤ]] ꯈꯨꯗꯝ ꯌꯥꯎꯅꯥ ꯄꯥꯕꯥ ꯂꯃꯥꯏꯁꯤꯡ ꯊꯥꯛ ꯁꯦꯝꯗꯣꯛ-ꯁꯦꯝꯖꯤꯟ ꯇꯧꯅꯕ ꯫",
 	"proofreadpage_notallowedtext": "ꯅꯪ ꯅꯥ ꯃꯁꯤ ꯒꯤ ꯈꯨꯗꯝ ꯇꯥꯛꯂꯤꯕꯥ ꯊꯥꯛ ꯁꯤ ꯒꯤ ꯂꯃꯥꯏꯁꯤ ꯁꯦꯝꯗꯣꯛꯄꯥ ꯌꯥꯗꯦ",
 	"proofreadpage_dataconfig_badformatted": "ꯕꯨꯛ ꯏꯟ ꯗꯥꯇꯥ ꯀꯟꯐꯌꯤꯒꯔꯦꯁꯟ",
-	"proofreadpage_dataconfig_badformattedtext": "ꯂꯃꯥꯏ [[Mediawiki:Proofreadpage index data config]] ꯁꯤ ꯅꯤꯡꯊꯤꯖꯕ JSON ꯃꯑꯣꯡꯗ ꯂꯩꯇꯦ ꯫",
+	"proofreadpage_dataconfig_badformattedtext": "ꯂꯃꯥꯏ [[MediaWiki:Proofreadpage index data config]] ꯁꯤ ꯅꯤꯡꯊꯤꯖꯕ JSON ꯃꯑꯣꯡꯗ ꯂꯩꯇꯦ ꯫",
 	"proofreadpage_number_expected": "ꯑꯔꯥꯟꯕꯥ: ꯃꯁꯤꯡ ꯂꯣꯝꯗꯥ ꯑꯣꯏꯅꯥ ꯊꯥꯖꯩ",
 	"proofreadpage_interval_too_large": "ꯑꯔꯥꯟꯕꯥ:ꯃꯔꯛꯀꯤ ꯃꯇꯃꯁꯤ ꯌꯥꯝꯃꯤ",
 	"proofreadpage_invalid_interval": "ꯑꯔꯥꯟꯕꯥ:ꯃꯔꯛꯀꯤ ꯃꯇꯝꯁꯤ ꯌꯥꯎꯗꯔꯦ",

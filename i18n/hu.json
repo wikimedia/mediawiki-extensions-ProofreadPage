@@ -8,6 +8,7 @@
 			"Glanthor Reviol",
 			"Hanna Tardos",
 			"KossuthRad",
+			"Reedy",
 			"Tacsipacsi"
 		]
 	},
@@ -32,7 +33,7 @@
 	"proofreadpage_pagesnotallowed": "Hiba: a <code><nowiki><pages/></nowiki></code> elem nem használható oldal- és indexnévtérben",
 	"proofreadpage_pagelistnotallowed": "Hiba: a <code><nowiki><pagelist/></nowiki></code> elem csak indexnévtérben használható",
 	"proofreadpage_dataconfig_badformatted": "Hiba az adatok konfigurációjában",
-	"proofreadpage_dataconfig_badformattedtext": "A [[Mediawiki:Proofreadpage index data config]] lap nem helyesen formázott JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "A [[MediaWiki:Proofreadpage index data config]] lap nem helyesen formázott JSON.",
 	"proofreadpage_number_expected": "Hiba: numerikus értéket vártam",
 	"proofreadpage_interval_too_large": "Hiba: az intervallum túl nagy",
 	"proofreadpage_invalid_interval": "Hiba: érvénytelen intervallum",

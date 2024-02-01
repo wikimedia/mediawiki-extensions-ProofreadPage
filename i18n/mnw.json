@@ -4,7 +4,8 @@
 			"Aue Nai",
 			"BaRaN6161 TURK",
 			"Htawmonzel",
-			"Ranger-Mon"
+			"Ranger-Mon",
+			"Reedy"
 		]
 	},
 	"nstab-page": "မုက်လိက်",
@@ -24,7 +25,7 @@
 	"proofreadpage_nologintext": "မၞးထေက်ကဵုဒးဒှ် [[Special:UserLogin|logged in]] သ္ဂောံဒတန်မုက်လိက်ဗွဟ်ဒတန်ကဆံၚ်",
 	"proofreadpage_notallowedtext": "မၞးဟွံဂွံအခေါၚ်သွက်ဂွံပြံၚ်လှာဲကဆံၚ်ဗွဟ်ဒတန်မုက်လိက်ဏအ်",
 	"proofreadpage_dataconfig_badformatted": "က္တိုၚ်ကၟဟ်ပ္ဍဲဒက်ခၞံပတိုန်လစှေ်တၚ်နၚ်",
-	"proofreadpage_dataconfig_badformattedtext": "မုက်လိက်ဂှ် [[Mediawiki:Proofreadpage index data config]]ဂှ် ဟွံလုပ်သၞောတ်-ခိုဟ် ပ္ဍဲခံက် JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "မုက်လိက်ဂှ် [[MediaWiki:Proofreadpage index data config]]ဂှ် ဟွံလုပ်သၞောတ်-ခိုဟ် ပ္ဍဲခံက် JSON.",
 	"proofreadpage_number_expected": "ဗၠေတ်: ၚုဟ်မးဂၠိုၚ်ဂၠေၚ်မစၟဳကေတ်လဝ်",
 	"proofreadpage_interval_too_large": "ဗၠေတ်: အကြာဟဇၞော်လောန်အာ",
 	"proofreadpage_invalid_interval": "ဗၠောတ်: အြကာဟွံထေက်ဒှ်",

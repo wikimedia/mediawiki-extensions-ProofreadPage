@@ -3,6 +3,7 @@
 		"authors": [
 			"Katxis",
 			"MuratTheTurkish",
+			"Reedy",
 			"Yocahuna"
 		]
 	},
@@ -19,7 +20,7 @@
 	"proofreadpage_nologintext": "Yu afi [[Special:UserLogin|logged in]] fi madifai di pruufriidn stietos a piej.",
 	"proofreadpage_notallowedtext": "Yu no lou fi chienj di pruufriidn stietos a dis piej.",
 	"proofreadpage_dataconfig_badformatted": "Bog ina dieta kanfigarieshan",
-	"proofreadpage_dataconfig_badformattedtext": "Di piej [[Mediawiki:Proofreadpage index data config]] no ina no wel-faamat JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "Di piej [[MediaWiki:Proofreadpage index data config]] no ina no wel-faamat JSON.",
 	"proofreadpage_number_expected": "Era: Nyuumerik valyuu expek",
 	"proofreadpage_interval_too_large": "Era: Intaval tuu laaj",
 	"proofreadpage_invalid_interval": "Era: Invalid intaval",

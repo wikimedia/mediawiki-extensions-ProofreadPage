@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Arsenekoumyk",
-			"ArslanX"
+			"ArslanX",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Сагьифа",
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "Сагьифаланы тюзелтохув турушун авушдурмакъ учун [[Special:UserLogin|гириш]] этмеге герексиз.",
 	"proofreadpage_notallowedtext": "Бу сагьифаны тюзелтохув турушун авушдурмагъа сизге гери урулгъан.",
 	"proofreadpage_dataconfig_badformatted": "Конфигурация беримлерде хатадыр",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] сагьифасы яхшы форматылгъан JSON-да тюгюлдюр.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] сагьифасы яхшы форматылгъан JSON-да тюгюлдюр.",
 	"proofreadpage_number_expected": "Хата: Санлы тийир гёзлене чи.",
 	"proofreadpage_interval_too_large": "Хата: интервал артыкъ узакъдыр.",
 	"proofreadpage_invalid_interval": "Хата: Янгылыш интервалы",

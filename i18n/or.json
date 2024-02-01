@@ -7,7 +7,8 @@
 			"Fahimrazick",
 			"Jnanaranjan Sahu",
 			"Odisha1",
-			"Psubhashish"
+			"Psubhashish",
+			"Reedy"
 		]
 	},
 	"nstab-page": "ପୃଷ୍ଠା",
@@ -27,7 +28,7 @@
 	"proofreadpage_nologintext": "ଏହି ପୃଷ୍ଠାର ପ୍ରମାଣପତ୍ର ବଦଳେଇବା ପାଇଁ ଆପଣ [[Special:UserLogin|logged in]] ହୋଇଥିବା ଦରକାର ।",
 	"proofreadpage_notallowedtext": "ଆପଣଙ୍କର ଏହି ପୃଷ୍ଠାର ପ୍ରମାଣପତ୍ର ସ୍ଥିତି ବଦଳାଇବାର ଅଧିକାର ନାହିଁ ।",
 	"proofreadpage_dataconfig_badformatted": "ଡାଟା ସଜାଣିରେ ଅସୁବିଧା ଅଛି",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]]ପୃଷ୍ଠାଟି ଠିକ-ପ୍ରକାର JSONରେ  ନାହିଁ ।",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]]ପୃଷ୍ଠାଟି ଠିକ-ପ୍ରକାର JSONରେ  ନାହିଁ ।",
 	"proofreadpage_number_expected": "ଅସୁବିଧା: ସଂଖ୍ୟା ଆସିବାକଥା",
 	"proofreadpage_interval_too_large": "ଅସୁବିଧା: ଅତ୍ୟଧିକ ବିରତି",
 	"proofreadpage_invalid_interval": "ଅସୁବିଧା: ଅବୈଧ ବିରତି",

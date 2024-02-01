@@ -3,7 +3,8 @@
 		"authors": [
 			"Dundak",
 			"J budissin",
-			"Michawiki"
+			"Michawiki",
+			"Reedy"
 		]
 	},
 	"indexpages": "Lisćina indeksowych stronow",
@@ -19,7 +20,7 @@
 	"proofreadpage_nologintext": "Dyrbiš [[Special:UserLogin|přizjewjeny]] być, zo by status kontrolneho čitanja stronow změnił.",
 	"proofreadpage_notallowedtext": "Njesměš status kontrolneho čitanja tutej strony změnić.",
 	"proofreadpage_dataconfig_badformatted": "Zmylk w konfiguraciji datow",
-	"proofreadpage_dataconfig_badformattedtext": "Strona [[Mediawiki:Proofreadpage index data config]] w derje sformowanym JSON njeje.",
+	"proofreadpage_dataconfig_badformattedtext": "Strona [[MediaWiki:Proofreadpage index data config]] w derje sformowanym JSON njeje.",
 	"proofreadpage_number_expected": "Zmylk: numeriska hódnota wočakowana",
 	"proofreadpage_interval_too_large": "Zmylk: interwal přewulki",
 	"proofreadpage_invalid_interval": "Zmylk: njepłaćiwy interwal",

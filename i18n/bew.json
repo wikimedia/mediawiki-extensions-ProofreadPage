@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bangrapip"
+			"Bangrapip",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -26,7 +27,7 @@
 	"proofreadpage_pagesnotallowed": "Kengabluan: Tenger halaman kaga' bisa dipaké di ruang nama Halaman: èn Indèks:",
 	"proofreadpage_pagelistnotallowed": "Kengabluan: Tenger daptar halaman cuman bisa dipaké di ruang nama Indèks:",
 	"proofreadpage_dataconfig_badformatted": "Bangsat di pengamplasan data",
-	"proofreadpage_dataconfig_badformattedtext": "Halaman [[Mediawiki:Proofreadpage index data config]] kaga' bener bentukan JSON-nya.",
+	"proofreadpage_dataconfig_badformattedtext": "Halaman [[MediaWiki:Proofreadpage index data config]] kaga' bener bentukan JSON-nya.",
 	"proofreadpage_number_expected": "Kengabluan: Nilé angka dibutuhin",
 	"proofreadpage_interval_too_large": "Kengabluan: Lat kegedéan",
 	"proofreadpage_invalid_interval": "Kengabluan: Lat kaga' aci",

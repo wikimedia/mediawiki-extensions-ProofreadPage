@@ -3,7 +3,8 @@
 		"authors": [
 			"Astahar",
 			"Chuvash2014",
-			"Makarka"
+			"Makarka",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Страница",
@@ -28,7 +29,7 @@
 	"proofreadpage_pagesnotallowed": "Йӑнӑш: страницӑсен тэгӗпе Page: тата Index: ятсен уҫлӑхӗнче усӑ курма май ҫук",
 	"proofreadpage_pagelistnotallowed": "Йӑнӑш: страницӑсен списокӗн тэгне Index: ятсен уҫлӑхӗнче кӑна усӑ курма юрать",
 	"proofreadpage_dataconfig_badformatted": "Конфигураци даннӑйӗнчи йӑнӑш",
-	"proofreadpage_dataconfig_badformattedtext": "[[Mediawiki:Proofreadpage index data config]] страница тӗрӗс мар JSON-форматра.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] страница тӗрӗс мар JSON-форматра.",
 	"proofreadpage_number_expected": "Йӑнӑш: число евӗр пӗлтерӗш кирлӗ",
 	"proofreadpage_interval_too_large": "Йӑнӑш: ытла пысӑк интервал",
 	"proofreadpage_invalid_interval": "Йӑнӑш: тӗрӗс мар интервал",

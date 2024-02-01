@@ -6,7 +6,8 @@
 			"E THP",
 			"Ebrahimi-amir",
 			"Koroğlu",
-			"Mousa"
+			"Mousa",
+			"Reedy"
 		]
 	},
 	"indexpages": "ایندکس صحیفه‌لری‌نین لیستی",
@@ -22,7 +23,7 @@
 	"proofreadpage_nologintext": "صحیفه‌لرین دوزلتمه وضعیتینی دییش‌دیرمک اوچون [[Special:UserLogin|گیریش ائده سیز]] اولمالیسینیز.",
 	"proofreadpage_notallowedtext": "بو صحیفه‌نین دوزلتمه وضعیتینی دییشدیرمیینیزه ایجازه وئریلمیر.",
 	"proofreadpage_dataconfig_badformatted": "بیلگی ياپیلاندیرماسیندا خطا",
-	"proofreadpage_dataconfig_badformattedtext": "بو صحیفه‌‌ [[Mediawiki:Proofreadpage index data config]]-ده بیچیملئندیریلمیش جسون دئيیل.",
+	"proofreadpage_dataconfig_badformattedtext": "بو صحیفه‌‌ [[MediaWiki:Proofreadpage index data config]]-ده بیچیملئندیریلمیش جسون دئيیل.",
 	"proofreadpage_number_expected": "خطا: عددی دیر گؤزلنیلیردی بئله انتظار یوخ",
 	"proofreadpage_interval_too_large": "خطا:بازاسی چوخ بویوک",
 	"proofreadpage_invalid_interval": "خطا: اعتبار سیز بازا",

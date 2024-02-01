@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Asmani Haz",
+			"Reedy",
 			"এম আবু সাঈদ",
 			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ"
 		]
@@ -28,7 +29,7 @@
 	"proofreadpage_pagesnotallowed": "ꠛꠦꠠꠣ",
 	"proofreadpage_pagelistnotallowed": "ꠛꠦꠠꠣ",
 	"proofreadpage_dataconfig_badformatted": "ꠔꠁꠔ꠆ꠔ ꠑꠤꠇ꠆ꠇꠞꠣꠔ ꠛꠤꠌꠣ ꠢꠣꠝꠣꠁꠉꠦꠌ",
-	"proofreadpage_dataconfig_badformattedtext": "The page [[Mediawiki:Proofreadpage index data config]] is not in well-formatted JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "The page [[MediaWiki:Proofreadpage index data config]] is not in well-formatted JSON.",
 	"proofreadpage_number_expected": "ꠜꠥꠟ: ꠡꠋꠇꠣ ꠝꠣꠘ ꠌꠣꠃꠀ ꠃꠞ",
 	"proofreadpage_interval_too_large": "ꠜꠥꠟ: ꠛꠦꠡꠤ ꠛꠠ ꠚꠣꠈ",
 	"proofreadpage_invalid_interval": "ꠛꠦꠠꠣ",
