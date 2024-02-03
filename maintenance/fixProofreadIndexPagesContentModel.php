@@ -18,7 +18,6 @@
  * @file
  */
 
-use MediaWiki\MediaWikiServices;
 use ProofreadPage\ProofreadPage;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -56,7 +55,6 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 		$this->output( "Updating content model for Index: pages..\n" );
 		$total = 0;
 		$namespaceId = ProofreadPage::getIndexNamespaceId();
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		do {
 			$pageIds = $dbw->selectFieldValues(
 				'page',
@@ -77,7 +75,7 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 				[ 'page_id' => $pageIds ],
 				__METHOD__
 			);
-			$lbFactory->waitForReplication();
+			$this->waitForReplication();
 			$total += $dbw->affectedRows();
 			$this->output( "$total\n" );
 		} while ( true );
