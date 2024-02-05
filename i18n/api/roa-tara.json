@@ -7,7 +7,10 @@
 	"apihelp-query+proofread-summary": "Torne le 'mbormaziune sus a 'u state de mò de le verifiche pe le pàggene scacchiate.",
 	"apihelp-query+proofread-example-1": "Torne 'u state d'a verifiche pe le pàggene jndr'à 'u namespace 250",
 	"apihelp-query+proofreadinfo-summary": "Torne le 'mbormaziune sus a configurazione de l'estenzione ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Quale probbietà de verifiche a pigghià:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
+	"apihelp-query+proofreadinfo-param-prop": "Quale probbietà de verifiche a pigghià:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "'Mbormaziune sus a \"{{ns:Page}}\" e namespace \"{{ns:Index}}\".",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "Elenghe de le levèlle de qualitate de verifeche.",
 	"apihelp-query+proofreadinfo-example-1": "Tuèrne 'mbormaziune de base",
-	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base"
+	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base",
+	"apihelp-query+proofreadpagesinindex-summary": "Elenghe de le pàggene de 'nu certe indice"
 }
