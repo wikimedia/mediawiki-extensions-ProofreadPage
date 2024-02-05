@@ -158,7 +158,17 @@ class PageLevel {
 	 * @return string
 	 */
 	public function getLevelCategoryName() {
-		return wfMessage( 'proofreadpage_quality' . $this->level . '_category' )
+		return wfMessage( $this->getLevelCategoryKey() )
 			->inContentLanguage()->plain();
+	}
+
+	/**
+	 * Get the message name of the tracking category this level belongs to
+	 */
+	public function getLevelCategoryKey(): string {
+		// Possible messages: proofreadpage_quality0_category,
+		// proofreadpage_quality1_category, proofreadpage_quality2_category,
+		// proofreadpage_quality3_category, proofreadpage_quality4_category
+		return "proofreadpage_quality{$this->level}_category";
 	}
 }

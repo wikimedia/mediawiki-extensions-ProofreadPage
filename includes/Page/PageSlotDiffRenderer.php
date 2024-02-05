@@ -75,9 +75,9 @@ class PageSlotDiffRenderer extends SlotDiffRenderer {
 		return $this->diffFormatterUtils->createHeader(
 				$this->context->msg( 'proofreadpage_page_status' )->parse()
 			) . Html::openElement( 'tr' ) . $this->diffFormatterUtils->createDeletedLine(
-				$this->context->msg( 'proofreadpage_quality' . $old->getLevel() . '_category' )->plain()
+				$this->context->msg( $old->getLevelCategoryKey() )->plain()
 			) . $this->diffFormatterUtils->createAddedLine(
-				$this->context->msg( 'proofreadpage_quality' . $new->getLevel() . '_category' )->plain()
+				$this->context->msg( $new->getLevelCategoryKey() )->plain()
 			) . Html::closeElement( 'tr' );
 	}
 
