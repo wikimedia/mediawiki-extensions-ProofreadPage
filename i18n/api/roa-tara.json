@@ -11,5 +11,6 @@
 	"apihelp-query+proofreadinfo-summary": "Torne le 'mbormaziune sus a configurazione de l'estenzione ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Quale probbietà de verifiche a pigghià:\n;namespaces:Information about \"{{ns:Page}}\" and \"{{ns:Index}}\" namespaces.\n;qualitylevels:List of proofread quality levels.",
 	"apihelp-query+proofreadinfo-example-1": "Tuèrne 'mbormaziune de base",
-	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base"
+	"apihelp-query+proofreadinfo-example-3": "Tuèrne namespace de base",
+	"apihelp-query+proofreadpagesinindex-summary": "Elenghe de le pàggene de 'nu certe indice"
 }
