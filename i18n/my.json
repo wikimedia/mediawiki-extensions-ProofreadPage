@@ -120,6 +120,8 @@
 	"prp-editinsequence-page-selection-label": "သီးသန့်စာမျက်နှာကို သွားပါ",
 	"prp-editinsequence-page-selection-widget-label": "သွားရန် စာမျက်နှာကို ရွေးပါ။",
 	"proofreadpage-pagelist-input-preview-button": "စာမျက်နှာစာရင်းကို အစမ်းကြည့်ပါ။",
+	"proofreadpage-pagelist-dialog-update-button": "စာမျက်နှာစာရင်းကို မွမ်းမံရန်",
+	"proofreadpage-pagelist-dialog-unsaved-progress": "ဤဒိုင်ယာလော့ခ်ကို ချန်ထားခြင်းဖြင့် မသိမ်းဆည်းရသေးသော လုပ်ငန်းစဉ်ကို ဆုံးရှုံးသွားစေနိုင်သည်။",
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "မသိမ်းဆည်းရသေးသော လုပ်ငန်းစဉ်",
 	"proofreadpage-pagelist-dialog-discard-changes": "ပြောင်းလဲမှုများကို မလုပ်တော့ရန်",
 	"proofreadpage-pagelist-dialog-cancel": "မလုပ်တော့ပါ",
