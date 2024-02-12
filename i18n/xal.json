@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Алия"
+		]
+	},
+	"nstab-page": "Халх",
+	"nstab-index": "Индекс",
+	"tooltip-ca-nstab-page": "Дегтрин халхиг үзх",
+	"tooltip-ca-nstab-index": "Дегтрин индексиг үзх",
+	"indexpages": "Индекстә халхсин җигсәлт",
+	"pageswithoutscans": "Скан уга халхс",
+	"proofreadpage_image": "Дүрсн",
+	"proofreadpage_index": "Индекс",
+	"proofreadpage_index_expected": "Эндү: индекснь күләгдҗәнә",
+	"proofreadpage_nosuch_index": "Эндү: тиим индекс уга",
+	"proofreadpage_nosuch_file": "Эндү: тиим файл уга",
+	"proofreadpage_nologin": "Невтрәд уга бәәнәт",
+	"proofreadpage_dataconfig_badformatted": "Тохрлһин өггдлк эндү",
+	"proofreadpage_number_expected": "Эндү: тооһин утхнь күләгдҗәнә",
+	"proofreadpage_interval_too_large": "Эндү: дегәд ик зәәтә",
+	"proofreadpage_invalid_interval": "Эндү: буру зәәтә",
+	"proofreadpage_nextpage": "Дарук халх",
+	"proofreadpage_prevpage": "Өмнк халх",
+	"proofreadpage_header": "Һарцг (орҗахш)"
+}
