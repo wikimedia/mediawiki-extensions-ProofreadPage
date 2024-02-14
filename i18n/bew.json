@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bangrapip"
+			"Bangrapip",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -81,12 +82,12 @@
 	"proofreadpage_source_message": "Pèrsi répéan nyang dipaké bakal ngeja ni tèks",
 	"proofreadpage_styles": "Setil",
 	"proofreadpage_styles_message": "Setil CSS nyang diterepin di ni tèks",
-	"action-pagequality": "dandanin bendèra kualitèt halaman",
-	"right-pagequality": "Dandanin bendèra kualitèt halaman",
-	"action-pagequality-validate": "setèl kualitèt halaman deri atu halaman jadi keaci",
-	"right-pagequality-validate": "Setèl kualitèt halaman deri atu halaman jadi keaci",
-	"action-pagequality-admin": "permak bendèra kualitèt halaman sonder pematesan",
-	"right-pagequality-admin": "Permak bendèra kualitèt halaman sonder pematesan",
+	"action-pagequality": "dandanin bendèra kebagusan halaman",
+	"right-pagequality": "Dandanin bendèra kebagusan halaman",
+	"action-pagequality-validate": "setèl kebagusan halaman deri atu halaman jadi keaci",
+	"right-pagequality-validate": "Setèl kebagusan halaman deri atu halaman jadi keaci",
+	"action-pagequality-admin": "permak bendèra kebagusan halaman sonder pematesan",
+	"right-pagequality-admin": "Permak bendèra kebagusan halaman sonder pematesan",
 	"proofreadpage-section-tools": "Peranti perèksa baca",
 	"proofreadpage-group-zoom": "Penggedéan",
 	"proofreadpage-group-other": "Laènnya",
@@ -172,10 +173,10 @@
 	"tag-proofreadpage-quality3": "Udah diperèksa baca",
 	"tag-proofreadpage-quality4": "Udah ditashih",
 	"tag-proofreadpage-editinsequence": "PermakUrutUrutan",
-	"tag-proofreadpage-quality0-description": "Permakan nyang ngrobah kualitèt halaman ke \"{{int:tag-proofreadpage-quality0}}\"",
-	"tag-proofreadpage-quality1-description": "Permakan nyang ngrobah kualitèt halaman ke \"{{int:tag-proofreadpage-quality1}}\"",
-	"tag-proofreadpage-quality2-description": "Permakan nyang ngrobah kualitèt halaman ke \"{{int:tag-proofreadpage-quality2}}\"",
-	"tag-proofreadpage-quality3-description": "Permakan nyang ngrobah kualitèt halaman ke \"{{int:tag-proofreadpage-quality3}}\"",
-	"tag-proofreadpage-quality4-description": "Permakan nyang ngrobah kualitèt halaman ke \"{{int:tag-proofreadpage-quality4}}\"",
+	"tag-proofreadpage-quality0-description": "Permakan nyang ngrobah kebagusan halaman ke \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Permakan nyang ngrobah kebagusan halaman ke \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Permakan nyang ngrobah kebagusan halaman ke \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Permakan nyang ngrobah kebagusan halaman ke \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Permakan nyang ngrobah kebagusan halaman ke \"{{int:tag-proofreadpage-quality4}}\"",
 	"tag-proofreadpage-editinsequence-description": "Permakan nyang dikeja paké mode PermakUrutUrutan baru"
 }

@@ -4,7 +4,8 @@
 			"Chinamoonroll",
 			"Joseagush",
 			"Luh Gede Krismayanti",
-			"NoiX180"
+			"NoiX180",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Kaca",
@@ -101,6 +102,8 @@
 	"proofreadpage-button-zoom-in-label": "Agengang",
 	"proofreadpage-button-zoom-out-label": "Alitang",
 	"proofreadpage-pageinfo-status": "Status uji wacén",
+	"prp-editinsequence-beta-label": "Uah ring bacakan",
+	"prp-editinsequence-beta-description": "Antarmuka panguahan sané anyar ngamersidayang ragané nguahin kaca langkung gelis.",
 	"prp-editinsequence-http-error-pagelist": "Tan prasida ngamuat lis kaca mawinan pikobet jaringan, durus indayang malih nyanan",
 	"prp-editinsequence-pagination-does-not-exist": "Nénten wénten pagination antuk kaca puniki, sapunika nénten prasida nentuang kaca sadurung miwah salanturné. Pinaka pangapti ragané indik niki kaiwangan, durus parikanda nuju phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Pikobet tan kaduga kauningin. Durusang parikanda pikobet puniki ring phabricator.wikimedia.org .",
