@@ -590,9 +590,9 @@ class PageContentHandler extends TextContentHandler {
 			$content->getLevel()->getLevelCategoryKey(),
 			$title
 		);
-		$parserOutput->setPageProperty(
+		$parserOutput->setNumericPageProperty(
 			'proofread_page_quality_level',
-			(string)$content->getLevel()->getLevel()
+			$content->getLevel()->getLevel()
 		);
 
 		// html container
