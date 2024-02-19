@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Numulunj pilgae",
-			"Reedy"
+			"Reedy",
+			"Валгриш"
 		]
 	},
 	"indexpages": "индекс лопатнень лувомась",
@@ -18,7 +19,7 @@
 	"proofreadpage_nologintext": "Эряви [[Special:UserLogin|сувамс]] видептемань лопатнень статусснон полафтоманди.",
 	"proofreadpage_notallowedtext": "Тя лопать видептемань статусонц тейть полафтомс аф мярьгови.",
 	"proofreadpage_dataconfig_badformatted": "Унжаня содамошинь конфигурациеса",
-	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] лопась аф лац-форматыяфтф JSON.",
+	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] лопась аф лац-ладяв-петьф JSON.",
 	"proofreadpage_number_expected": "Эльбятькс: лувтяшкс учеви",
 	"proofreadpage_interval_too_large": "Эльбятькс: ёткась пяк кувака",
 	"proofreadpage_invalid_interval": "Эльбятькс: аф кондясти ёткась",
