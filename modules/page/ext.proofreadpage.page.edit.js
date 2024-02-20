@@ -46,7 +46,14 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		/**
 		 * OSD Controller, wraps Openseadragon functionality inside a easy to use interface
 		 */
-		osdController = null;
+		osdController = null,
+
+		/**
+		 * Has the wikitext editor UI been updated?
+		 *
+		 * @type {boolean}
+		 */
+		editorUiUpdated = false;
 
 	/**
 	 * Returns the value of a user option as boolean
@@ -134,7 +141,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	}
 
 	/**
-	 * Setup the editing interface
+	 * Set up the editing interface
 	 */
 	function setupWikitextEditor() {
 		var zoomInterface = {
@@ -218,10 +225,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			}
 		};
 
-		// this function is inside the wikiEditor.toolbar ready hook handler
-		$editForm.find( '.prp-page-edit-body' ).append( $wpTextbox );
-		$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
-		$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
+		updateEditorUi();
 
 		$wpTextbox.wikiEditor( 'addToToolbar', {
 			sections: {
@@ -232,6 +236,22 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 				}
 			}
 		} );
+	}
+
+	/**
+	 * Update the wikitext editor UI.
+	 *
+	 * This function is called when the wikitext editor is initialized,
+	 * or if applicable, just before CodeMirror is added to the DOM.
+	 */
+	function updateEditorUi() {
+		if ( editorUiUpdated ) {
+			return;
+		}
+		editorUiUpdated = true;
+		$editForm.find( '.prp-page-edit-body' ).append( $editForm.find( '#wpTextbox1' ) );
+		$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
+		$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
 	}
 
 	/**
@@ -302,6 +322,9 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		$editForm.find( '.prp-pageQualityInputWidget' ).each( function () {
 			OO.ui.infuse( this );
 		} );
+
+		// Ensure DOM manipulations are finished before CodeMirror is initialized.
+		mw.hook( 'ext.CodeMirror.initialize' ).add( updateEditorUi );
 
 		// Set up the preferences (header/footer and horizontal/vertical layout)
 		// when WikiEditor is active as well as when it's not.
