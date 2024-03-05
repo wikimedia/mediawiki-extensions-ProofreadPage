@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Augustus A C",
 			"Gazimagomedov"
 		]
 	},
-	"proofreadpage_quality0_category": "Текст гьечӀого"
+	"proofreadpage_quality0_category": "Текст гьечӀого",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Квеки"
 }
