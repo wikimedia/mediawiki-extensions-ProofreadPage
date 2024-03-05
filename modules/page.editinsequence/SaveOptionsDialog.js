@@ -18,12 +18,7 @@ OO.inheritClass( SaveOptionsDialog, OO.ui.ProcessDialog );
 
 SaveOptionsDialog.static.name = 'SaveOptionsDialog';
 
-var publishButtonLabel = null;
-if ( mw.config.get( 'wgEditSubmitButtonLabelPublish' ) ) {
-	publishButtonLabel = mw.msg( 'publishchanges' );
-} else {
-	publishButtonLabel = mw.msg( 'savechanges' );
-}
+var publishButtonLabel = mw.msg( mw.config.get( 'wgEditSubmitButtonLabelPublish' ) ? 'publishchanges' : 'savechanges' );
 
 SaveOptionsDialog.static.title = OO.ui.deferMsg( 'prp-editinsequence-save-dialog-title' );
 
@@ -38,7 +33,6 @@ SaveOptionsDialog.static.actions = [
 		icon: 'close',
 		action: 'dialogcancel'
 	}
-
 ];
 
 /**
