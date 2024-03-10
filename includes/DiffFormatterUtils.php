@@ -32,7 +32,7 @@ class DiffFormatterUtils {
 	 */
 	public function createAddedLine( $content ) {
 		return $this->createLineWrapper(
-			Html::element( 'ins',  [ 'class' => 'diffchange diffchange-inline' ], $content ),
+			Html::element( 'ins', [ 'class' => 'diffchange diffchange-inline' ], $content ),
 			'diff-addedline',
 			'+'
 		);
@@ -46,7 +46,7 @@ class DiffFormatterUtils {
 	 */
 	public function createDeletedLine( $content ) {
 		return $this->createLineWrapper(
-			Html::element( 'del',  [ 'class' => 'diffchange diffchange-inline' ], $content ),
+			Html::element( 'del', [ 'class' => 'diffchange diffchange-inline' ], $content ),
 			'diff-deletedline',
 			'-'
 		);

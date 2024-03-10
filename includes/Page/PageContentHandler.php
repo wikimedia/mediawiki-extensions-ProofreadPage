@@ -299,12 +299,12 @@ class PageContentHandler extends TextContentHandler {
 
 		if ( $cleanHeader ) {
 			if ( $cleanFooter ) {
-				list( $header, $footer ) = $this->cleanDeprecatedWrappers( $header, $footer );
+				[ $header, $footer ] = $this->cleanDeprecatedWrappers( $header, $footer );
 			} elseif ( $cleanBody ) {
-				list( $header, $body ) = $this->cleanDeprecatedWrappers( $header, $body );
+				[ $header, $body ] = $this->cleanDeprecatedWrappers( $header, $body );
 			} else {
 				// notice that second parameter is unused
-				list( $header, ) = $this->cleanDeprecatedWrappers( $header, '' );
+				[ $header, ] = $this->cleanDeprecatedWrappers( $header, '' );
 			}
 		}
 

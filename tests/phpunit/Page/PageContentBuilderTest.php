@@ -81,7 +81,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				new IndexContent( [
 					'Title' => new WikitextContent( 'Test book' ),
 					'Header' => new WikitextContent( '{{{title}}}' )
-				] ),
+				 ] ),
 				self::newContent( 'Test book', '', '<references />', 1 ),
 			],
 			[
@@ -91,8 +91,8 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 				self::newContent( '', "Lorem ipsum \n2 \n", '<references/>', 1 ),
 			],
 			[
-				'LoremIpsum.djvu/2' ,
-				'LoremIpsum.djvu' ,
+				'LoremIpsum.djvu/2',
+				'LoremIpsum.djvu',
 				new IndexContent( [
 					'Title' => new WikitextContent( 'Test book' ),
 					'Pages' => new WikitextContent( '<pagelist/>' ),

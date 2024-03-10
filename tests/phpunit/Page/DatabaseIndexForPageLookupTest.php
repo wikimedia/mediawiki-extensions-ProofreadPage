@@ -23,7 +23,7 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 			$repoGroupMock
 		);
 		$this->assertEquals(
-			Title::makeTitle( $this->getIndexNamespaceId(),  'LoremIpsum.djvu' ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			$lookup->getIndexForPageTitle(
 				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' )
 			)
@@ -41,7 +41,7 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 		);
 
 		$this->assertEquals(
-			Title::makeTitle( $this->getIndexNamespaceId(),  'Test.jpg' ),
+			Title::makeTitle( $this->getIndexNamespaceId(), 'Test.jpg' ),
 			$lookup->getIndexForPageTitle(
 				Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' )
 			)

@@ -69,14 +69,14 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 				'{"fields":{"foo":"{{bar|baz}}"},"categories":[]}'
 			],
 			[
-				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY,  'Foo' ) ] ),
+				new IndexContent( [], [ Title::makeTitle( NS_CATEGORY, 'Foo' ) ] ),
 				"{{:MediaWiki:Proofreadpage_index_template\n}}\n[[Category:Foo]]",
 				'{"fields":[],"categories":["Foo"]}'
 			],
 			[
 				new IndexContent(
 					[ 'foo' => new WikitextContent( '{{bar|baz}}' ) ],
-					[ Title::makeTitle( NS_CATEGORY,  'Foo' ) ]
+					[ Title::makeTitle( NS_CATEGORY, 'Foo' ) ]
 				),
 				"{{:MediaWiki:Proofreadpage_index_template\n|foo={{bar|baz}}\n}}\n[[Category:Foo]]",
 				'{"fields":{"foo":"{{bar|baz}}"},"categories":["Foo"]}'

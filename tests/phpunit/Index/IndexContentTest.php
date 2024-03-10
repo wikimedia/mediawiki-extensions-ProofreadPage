@@ -41,7 +41,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetCategoriesText() {
-		$category = Title::makeTitle( NS_CATEGORY,  'Foo' );
+		$category = Title::makeTitle( NS_CATEGORY, 'Foo' );
 		$content = new IndexContent( [], [ $category ] );
 		$this->assertSame( [ $category ], $content->getCategories() );
 	}
@@ -56,7 +56,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 	public function testCopy() {
 		$content = new IndexContent(
 			[ 'foo' => new WikitextContent( 'bar' ) ],
-			[ Title::makeTitle( NS_CATEGORY,  'Cat' ) ]
+			[ Title::makeTitle( NS_CATEGORY, 'Cat' ) ]
 		);
 		$this->assertSame( $content, $content->copy() );
 	}

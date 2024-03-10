@@ -112,7 +112,7 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 					'Test_0.jpg' => 0,
 					'Test_1.jpg' => 0,
 				],
-				new PagesQualityStats( 2, [ 0 => 1,  4 => 1 ] ),
+				new PagesQualityStats( 2, [ 0 => 1, 4 => 1 ] ),
 				Title::makeTitle( $this->getPageNamespaceId(), 'Test 0.jpg' ),
 				4
 			],

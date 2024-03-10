@@ -553,7 +553,7 @@ class IndexContentHandler extends TextContentHandler {
 			}
 
 			// We retrieve the view template
-			list( $templateText, $templateTitle ) = $parserHelper->fetchTemplateTextAndTitle(
+			[ $templateText, $templateTitle ] = $parserHelper->fetchTemplateTextAndTitle(
 				Title::makeTitle( NS_MEDIAWIKI, 'Proofreadpage index template' )
 			);
 

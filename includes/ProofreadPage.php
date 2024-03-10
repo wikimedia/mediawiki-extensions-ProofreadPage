@@ -572,10 +572,11 @@ class ProofreadPage implements
 			$links['namespaces'] = array_slice( $links['namespaces'], 0, 1, true ) +
 				[
 					'proofread-source' => [
-					'title' => $outputPage->msg( 'proofreadpage_source_message' )->text(),
-					'text' => $outputPage->msg( 'proofreadpage_source' )->text(),
-					'href' => Title::newFromText( $indexTitleText )->getLocalUrl(),
-				] ] +
+						'title' => $outputPage->msg( 'proofreadpage_source_message' )->text(),
+						'text' => $outputPage->msg( 'proofreadpage_source' )->text(),
+						'href' => Title::newFromText( $indexTitleText )->getLocalUrl(),
+					]
+				] +
 				array_slice( $links['namespaces'], 1, count( $links['namespaces'] ), true );
 		}
 	}

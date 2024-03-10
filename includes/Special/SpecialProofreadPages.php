@@ -59,7 +59,7 @@ class SpecialProofreadPages extends QueryPage {
 	public function execute( $parameters ) {
 		$this->setHeaders();
 		if ( $this->limit == 0 && $this->offset == 0 ) {
-			list( $this->limit, $this->offset ) = $this->getRequest()
+			[ $this->limit, $this->offset ] = $this->getRequest()
 				->getLimitOffsetForUser( $this->getUser() );
 		}
 		$output = $this->getOutput();
@@ -156,15 +156,18 @@ class SpecialProofreadPages extends QueryPage {
 		}
 	}
 
+	/** @inheritDoc */
 	public function isExpensive() {
 		// FIXME: the query does filesort, so we're kinda lying here right now
 		return false;
 	}
 
+	/** @inheritDoc */
 	public function isSyndicated() {
 		return false;
 	}
 
+	/** @inheritDoc */
 	public function isCacheable() {
 		// The page is not cacheable due to its search capabilities
 		return false;

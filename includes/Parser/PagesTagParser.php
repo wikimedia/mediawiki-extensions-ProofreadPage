@@ -213,9 +213,9 @@ class PagesTagParser {
 			}
 
 			/** @var PageNumber $from_pagenum */
-			list( $from_page, $from_pagenum ) = reset( $pages );
+			[ $from_page, $from_pagenum ] = reset( $pages );
 			/** @var PageNumber $to_pagenum */
-			list( $to_page, $to_pagenum ) = end( $pages );
+			[ $to_page, $to_pagenum ] = end( $pages );
 
 			$pageQualityLevelLookup = $this->context->getPageQualityLevelLookup();
 			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_column( $pages, 0 ) );
@@ -225,7 +225,7 @@ class PagesTagParser {
 
 			// write the output
 			/** @var Title $page */
-			foreach ( $pages as list( $page, $pageNumber ) ) {
+			foreach ( $pages as [ $page, $pageNumber ] ) {
 				if ( $contentLang !== 'mixed' ) {
 					$pageLang = $page->getPageLanguage()->getHtmlCode();
 					if ( !$contentLang ) {
@@ -412,7 +412,7 @@ class PagesTagParser {
 		// @phan-suppress-next-line PhanUndeclaredMethod
 		$parser = $indexContent->getContentHandler()->getParser();
 		$parserOptions = ParserOptions::newFromAnon();
-		try  {
+		try {
 			$toc = $this->context->getCustomIndexFieldsParser()->getCustomIndexFieldForDataKey( $indexContent, 'toc' );
 			$wikitext = $parser->preprocess(
 				$toc->getStringValue(),

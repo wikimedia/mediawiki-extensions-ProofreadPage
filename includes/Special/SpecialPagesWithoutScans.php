@@ -19,10 +19,12 @@ class SpecialPagesWithoutScans extends PageQueryPage {
 		parent::__construct( $name );
 	}
 
+	/** @inheritDoc */
 	public function isExpensive() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function isSyndicated() {
 		return false;
 	}

@@ -63,7 +63,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'/* insecure input */',
-			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(),  'Test.jpg' ) )
+			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
 		);
 	}
 
