@@ -456,6 +456,11 @@
 				"proofread-page"
 			]
 		},
+		"CodeMirror": {
+			"ContentModels": [
+				"proofread-page"
+			]
+		},
 		"VisualEditor": {
 			"PluginModules": [
 				"ext.proofreadpage.ve.node.pages"
