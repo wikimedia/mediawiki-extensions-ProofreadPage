@@ -106,7 +106,7 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Óvistuð framvinda",
 	"proofreadpage-pagelist-dialog-discard-changes": "Farga breytingum",
 	"proofreadpage-pagelist-dialog-cancel": "Hætta við",
-	"proofreadpage-pagelist-parsing-error-morethanone": "Fleiri en eitt <pagelist /> merki var greint í uppruna-wikitexta",
+	"proofreadpage-pagelist-parsing-error-morethanone": "Fleiri en eitt <pagelist /> merki var greint í uppruna-wiki-texta",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "Ekkert <pagelist /> merki greint.",
 	"proofreadpage-pagelist-parsing-error-php": "Viðkomandi villa kom upp við þáttun síðulistamerkisins í bakendanum, $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "Óþekkt villa greind. Vinsamlegast tilkynntu þessa villu til phabricator.wikimedia.org ásamt atburðaskrá frá stjórnboðinu.",
