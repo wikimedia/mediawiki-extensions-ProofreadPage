@@ -20,12 +20,9 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	this.$heading = $content.find( '#firstHeadingTitle' );
 	this.$headingContainer = $content.find( '#firstHeading' );
 	this.$editorArea = $content.find( '.prp-page-content' );
-	this.$header.on( 'keyup', this.onHeaderChange.bind( this ) );
-	this.$header.on( 'change', this.onHeaderChange.bind( this ) );
-	this.$body.on( 'keyup', this.onBodyChange.bind( this ) );
-	this.$body.on( 'change', this.onBodyChange.bind( this ) );
-	this.$footer.on( 'keyup', this.onFooterChange.bind( this ) );
-	this.$footer.on( 'change', this.onFooterChange.bind( this ) );
+	this.$header.on( 'keyup change', this.onHeaderChange.bind( this ) );
+	this.$body.on( 'keyup change', this.onBodyChange.bind( this ) );
+	this.$footer.on( 'keyup change', this.onFooterChange.bind( this ) );
 	mw.hook( 'ext.CodeMirror.switch' ).add( this.onCodeMirrorSwitch.bind( this ) );
 
 	// Remove the actionable items from the default interface
@@ -39,9 +36,11 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	this.previewWidget = new PreviewWidget();
 	this.previewWidget.$element.insertAfter( this.$editorArea );
 	this.pageModel = pageModel;
-	this.pageModel.on( 'pageModelUpdated', this.onPageModelUpdated.bind( this ) );
-	this.pageModel.on( 'pageStatusChanged', this.updatePreview.bind( this ) );
-	this.pageModel.on( 'loadUnsavedEdit', this.onLoadUnsavedEdit.bind( this ) );
+	this.pageModel.connect( this, {
+		pageModelUpdated: 'onPageModelUpdated',
+		pageStatusChanged: 'updatePreview',
+		loadUnsavedEdit: 'onLoadUnsavedEdit'
+	} );
 	this.addUnsavedEditIndicator();
 	// Prevent beforeunload from firing when we are saving and instead
 	$( window ).off( 'beforeunload' );
