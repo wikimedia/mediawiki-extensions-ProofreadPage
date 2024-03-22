@@ -422,8 +422,8 @@ class PageContentHandler extends TextContentHandler {
 		$summary = parent::getAutosummary( $oldContent, $newContent, $flags );
 
 		if ( $newContent instanceof PageContent &&
-			( $oldContent === null || $oldContent instanceof PageContent &&
-			!$newContent->getLevel()->equals( $oldContent->getLevel() ) )
+			( $oldContent === null || ( $oldContent instanceof PageContent &&
+			!$newContent->getLevel()->equals( $oldContent->getLevel() ) ) )
 		) {
 			$summary = trim( '/* ' . $newContent->getLevel()->getLevelCategoryName() .
 				' */ ' . $summary );
