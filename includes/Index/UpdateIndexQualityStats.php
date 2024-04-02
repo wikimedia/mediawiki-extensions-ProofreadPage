@@ -67,10 +67,10 @@ class UpdateIndexQualityStats extends DataUpdate {
 			$this->pagination, $this->overrideTitle, $this->overrideLevel
 		);
 
-		$this->loadBalancer->getConnection( ILoadBalancer::DB_PRIMARY )->replace(
-			'pr_index',
-			'pr_page_id',
-			[
+		$this->loadBalancer->getConnection( ILoadBalancer::DB_PRIMARY )->newReplaceQueryBuilder()
+			->replaceInto( 'pr_index' )
+			->uniqueIndexFields( 'pr_page_id' )
+			->row( [
 				'pr_page_id' => $this->indexTitle->getArticleID( IDBAccessObject::READ_LATEST ),
 				'pr_count' => $stats->getNumberOfPages(),
 				'pr_q0' => $stats->getNumberOfPagesForQualityLevel( 0 ),
@@ -78,8 +78,8 @@ class UpdateIndexQualityStats extends DataUpdate {
 				'pr_q2' => $stats->getNumberOfPagesForQualityLevel( 2 ),
 				'pr_q3' => $stats->getNumberOfPagesForQualityLevel( 3 ),
 				'pr_q4' => $stats->getNumberOfPagesForQualityLevel( 4 )
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 }
