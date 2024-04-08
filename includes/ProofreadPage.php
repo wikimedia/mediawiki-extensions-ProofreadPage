@@ -461,7 +461,8 @@ class ProofreadPage implements
 						'class' => in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ], true ) ? 'icon' : '',
 						'href' => $prevUrl,
 						'text' => $prevText,
-						'title' => $prevText
+						'title' => $prevText,
+						'aria-label' => wfMessage( 'proofreadpage_prevpage_label' )->plain(),
 					];
 					$prevThumbnailLinkAttributes = $pageDisplayHandler->getImageHtmlLinkAttributes(
 						$prevTitle, 'prefetch', 'prp-prev-image'
@@ -481,7 +482,8 @@ class ProofreadPage implements
 						'class' => in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ], true ) ? 'icon' : '',
 						'href' => $nextUrl,
 						'text' => $nextText,
-						'title' => $nextText
+						'title' => $nextText,
+						'aria-label' => wfMessage( 'proofreadpage_nextpage_label' )->plain(),
 					];
 					$nextThumbnailLinkAttributes = $pageDisplayHandler->getImageHtmlLinkAttributes(
 						$nextTitle, 'prefetch', 'prp-next-image'
@@ -513,11 +515,13 @@ class ProofreadPage implements
 			return;
 		}
 
+		$indexLabel = wfMessage( 'proofreadpage_index' )->plain();
 		$links['namespaces']['proofreadPageIndexLink'] = [
 			'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ], true ) ) ? 'icon' : '',
 			'href' => $indexTitle->getLinkURL(),
-			'text' => wfMessage( 'proofreadpage_index' )->plain(),
-			'title' => wfMessage( 'proofreadpage_index' )->plain()
+			'text' => $indexLabel,
+			'title' => $indexLabel,
+			'aria-label' => wfMessage( 'proofreadpage_index_label' )->plain(),
 		];
 	}
 

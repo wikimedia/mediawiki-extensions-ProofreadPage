@@ -21,11 +21,15 @@
 		background-position: 50% 75%;
 		background-repeat: no-repeat;
 		background-size: auto auto;
-		color: transparent;
 
 		&:hover {
 			text-decoration: none;
-			border-bottom: @border-base;
+			border-bottom: @border-width-thick @border-style-base @border-color-interactive;
+		}
+
+		span {
+			// Hide the inner text, because the background images (the arrows) are displayed instead.
+			visibility: hidden;
 		}
 	}
 }
