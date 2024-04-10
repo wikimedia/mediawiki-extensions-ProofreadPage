@@ -69,12 +69,12 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 			if ( !$pageIds ) {
 				break;
 			}
-			$dbw->update(
-				'page',
-				[ 'page_content_model' => CONTENT_MODEL_PROOFREAD_INDEX ],
-				[ 'page_id' => $pageIds ],
-				__METHOD__
-			);
+			$dbw->newUpdateQueryBuilder()
+				->update( 'page' )
+				->set( [ 'page_content_model' => CONTENT_MODEL_PROOFREAD_INDEX ] )
+				->where( [ 'page_id' => $pageIds ] )
+				->caller( __METHOD__ )
+				->execute();
 			$this->waitForReplication();
 			$total += $dbw->affectedRows();
 			$this->output( "$total\n" );

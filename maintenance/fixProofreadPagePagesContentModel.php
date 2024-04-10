@@ -51,17 +51,17 @@ class FixProofreadPagePagesContentModel extends LoggedUpdateMaintenance {
 			return false;
 		}
 
-		$db->update(
-			'page',
-			[
+		$db->newUpdateQueryBuilder()
+			->update( 'page' )
+			->set( [
 				'page_content_model' => CONTENT_MODEL_PROOFREAD_PAGE
-			],
-			[
+			] )
+			->where( [
 				'page_namespace' => ProofreadPage::getPageNamespaceId(),
 				'page_content_model' => CONTENT_MODEL_WIKITEXT
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->output( "Update of the content model for Page: pages is done.\n" );
 

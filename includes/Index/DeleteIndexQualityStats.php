@@ -33,10 +33,10 @@ class DeleteIndexQualityStats extends DataUpdate {
 	 * @inheritDoc
 	 */
 	public function doUpdate() {
-		$this->loadBalancer->getConnection( ILoadBalancer::DB_PRIMARY )->delete(
-			'pr_index',
-			[ 'pr_page_id' => $this->indexTitle->getArticleID( IDBAccessObject::READ_LATEST ) ],
-			__METHOD__
-		);
+		$this->loadBalancer->getConnection( ILoadBalancer::DB_PRIMARY )->newDeleteQueryBuilder()
+			->deleteFrom( 'pr_index' )
+			->where( [ 'pr_page_id' => $this->indexTitle->getArticleID( IDBAccessObject::READ_LATEST ) ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 }
