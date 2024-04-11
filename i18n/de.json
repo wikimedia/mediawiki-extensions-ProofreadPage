@@ -11,6 +11,7 @@
 			"Reedy",
 			"Tbleher",
 			"ThomasV",
+			"TomatoCake",
 			"Umherirrender"
 		]
 	},
@@ -42,7 +43,7 @@
 	"proofreadpage_interval_too_large": "Fehler: Intervall zu groß",
 	"proofreadpage_invalid_interval": "Fehler: ungültiges Intervall",
 	"proofreadpage_nextpage": "Nächste Seite",
-	"proofreadpage_nextpage_label": "Zur nächsten Seite",
+	"proofreadpage_nextpage_label": "Zur nächsten Seite gehen",
 	"proofreadpage_prevpage": "Vorherige Seite",
 	"proofreadpage_prevpage_label": "Zur vorherigen Seite gehen",
 	"proofreadpage_header": "Kopfzeile (nicht einzufügen):",
