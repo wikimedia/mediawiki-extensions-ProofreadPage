@@ -108,6 +108,8 @@
 	"proofreadpage-button-zoom-in-label": "Vergrößern",
 	"proofreadpage-button-zoom-out-label": "Verkleinern",
 	"proofreadpage-pageinfo-status": "Korrekturlesungsstatus",
+	"prp-editinsequence-beta-label": "In Sequenz bearbeiten",
+	"prp-editinsequence-beta-description": "Eine neue Bearbeitungsoberfläche, mit der du Seiten schneller bearbeiten kannst.",
 	"prp-editinsequence-http-error-pagelist": "Paginierung konnte aufgrund von Netzwerkproblemen nicht abgerufen werden. Bitte versuche es später erneut.",
 	"prp-editinsequence-pagination-does-not-exist": "Für diese Seite existiert keine Paginierung, was es unmöglich macht, nächste und vorherige Seiten zu bestimmen. Wenn du der Meinung bist, dass dies ein Fehler war, melde diesen Fehler bitte an phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Ein unerwarteter Fehler wurde entdeckt. Bitte melde diesen Fehler an phabricator.wikimedia.org.",
