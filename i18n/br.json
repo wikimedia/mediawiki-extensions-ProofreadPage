@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
@@ -34,6 +35,7 @@
 	"proofreadpage_invalid_interval": "Fazi : n'eo ket mat an esaouenn",
 	"proofreadpage_nextpage": "Pajenn war-lerc'h",
 	"proofreadpage_prevpage": "Pajenn a-raok",
+	"proofreadpage_prevpage_label": "Mont d'ar bajenn gent",
 	"proofreadpage_header": "Talbenn (n'emañ ket e-barzh) :",
 	"proofreadpage_body": "Danvez ar bajenn (da vezañ treuzklozet) :",
 	"proofreadpage_footer": "Traoñ pajenn (n'emañ ket e-barzh) :",
