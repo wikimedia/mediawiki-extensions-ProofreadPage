@@ -4,10 +4,13 @@
 			"محک"
 		]
 	},
+	"nstab-page": "صفحه",
 	"proofreadpage_quality0_category": "بی بنویشته",
 	"proofreadpage_quality1_category": "بازبینی‌نَیی",
 	"proofreadpage_quality2_category": "مشکل‌دار",
 	"proofreadpage_quality3_category": "بازبینی‌بَیی",
 	"proofreadpage_quality4_category": "تأییدبَیی",
-	"proofreadpage_quality1_message": "این صفحه بازخونی نیّه"
+	"proofreadpage_quality1_message": "این صفحه بازخونی نیّه",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|صفحه|صفحه}}",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "صفحات"
 }
