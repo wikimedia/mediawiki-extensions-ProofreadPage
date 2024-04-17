@@ -124,6 +124,9 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 	// TODO(sohom): We want to deprecate this particular way of utilizing Openseadragon. Remove this once the
 	// community has migrated to using the new API.
 	mw.proofreadpage.viewer = this.viewer;
+	// https://phabricator.wikimedia.org/T348078#9720139
+	mw.log.deprecate( mw.proofreadpage, 'viewer', mw.proofreadpage.viewer,
+		'Please use new API. [Since November 2022]' );
 
 	this.viewer.viewport.goHome = function () {
 		if ( this.viewer ) {
