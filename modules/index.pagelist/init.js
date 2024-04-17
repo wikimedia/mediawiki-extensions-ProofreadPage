@@ -2,6 +2,9 @@
 	const PagelistInputWidget = require( './PagelistInputWidget.js' );
 
 	mw.proofreadpage = {};
+	/**
+	 * @internal not a stable API.
+	 */
 	mw.proofreadpage.PagelistInputWidget = PagelistInputWidget;
 
 	try {
