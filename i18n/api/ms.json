@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tofeiku"
+			"Tofeiku",
+			"Lim Natee"
 		]
 	},
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Kembalikan URL imej bersaiz penuh yang dikaitkan dengan halaman yang sedang ditanya",
 	"apihelp-query+proofread-summary": "Mengembalikan maklumat tentang status baca pruf terkini laman tertentu.",
-	"apihelp-query+proofread-example-1": "Kembalikan status baca pruf bagi laman di ruang nama 250"
+	"apihelp-query+proofread-example-1": "Kembalikan status baca pruf bagi laman di ruang nama 250",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Hadkan bilangan halaman yang akan dikembalikan"
 }
