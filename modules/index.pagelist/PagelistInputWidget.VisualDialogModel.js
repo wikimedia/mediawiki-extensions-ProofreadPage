@@ -37,7 +37,6 @@ OO.inheritClass( VisualDialogModel, DialogModel );
  * single  - Whether or not to change the label for only one scan number
  * number  - Any numbering change that needs to be done.
  *
- *
  * @param {Object} data A associative array containing the users inputs.
  */
 VisualDialogModel.prototype.updateCachedData = function ( data ) {
