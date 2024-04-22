@@ -3,7 +3,8 @@
 		"authors": [
 			"Asmani Haz",
 			"এম আবু সাঈদ",
-			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ"
+			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ",
+			"Reedy"
 		]
 	},
 	"nstab-page": "ꠙꠣꠔꠣ",
@@ -111,7 +112,7 @@
 	"proofreadpage-pagelist-parsing-error-morethanone": "ꠀꠞꠅ",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "ꠘꠣ",
 	"proofreadpage-pagelist-parsing-error-php": "ꠙꠦꠁꠎꠟꠤꠡ꠆ꠐ ꠐꠦꠉ ꠌꠣꠟꠣꠘꠤꠔ ꠅꠔꠣ ꠎꠟꠖꠤ ꠝꠤꠟ꠆ꠍꠦ ꠨ $1",
-	"proofreadpage-pagelist-parsing-error-unknown": "ꠄꠉꠥ ꠀꠌꠣꠘ꠆ꠇꠣ ꠎꠟꠖꠤ ꠝꠤꠟ꠆ꠍꠦ ॥ ꠖꠄꠀ ꠇꠞꠤ phabricator.wikimedia.org ꠅ ꠞꠤꠙꠥꠐ ꠖꠦꠃꠇ꠆ꠇꠣ ꠇꠘꠍꠥꠟ ꠟꠉꠡꠁ ॥",
+	"proofreadpage-pagelist-parsing-error-unknown": "ꠄꠉꠥ ꠀꠌꠣꠘ꠆ꠇꠣ ꠎꠟꠖꠤ ꠝꠤꠟ꠆ꠍꠦ ⁕ ꠖꠄꠀ ꠇꠞꠤ phabricator.wikimedia.org ꠅ ꠞꠤꠙꠥꠐ ꠖꠦꠃꠇ꠆ꠇꠣ ꠇꠘꠍꠥꠟ ꠟꠉꠡꠁ ⁕",
 	"proofreadpage-pagelist-parsing-error-network-issues": "ꠘꠣꠙꠣꠞꠣ ꠨ ꠢꠤꠞꠛꠣꠞ ꠖꠦꠈꠂꠘ",
 	"proofreadpage-pagelist-dialog-title": "$1",
 	"proofreadpage-pagelist-dialog-insertchanges": "ꠛꠖꠟꠣꠁꠌꠂꠘꠉꠥꠁꠘ ꠢꠣꠞꠣꠃꠇ꠆ꠇꠣ",
@@ -132,7 +133,7 @@
 	"proofreadpage-preferences-showheaders-label": "ꠝꠣꠕꠣꠛꠣꠎꠥ ꠖꠦꠈꠣꠁꠟ",
 	"proofreadpage-preferences-horizontal-layout-label": "ꠙꠣꠔꠣꠁꠞꠣ {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "ꠛꠦꠛꠀꠞ",
-	"proofreadpage-preferences-zoom-factor-label": "ꠁ",
+	"proofreadpage-preferences-zoom-factor-label": "ꠁ ꠡ꠆ꠇ꠆ꠞꠟ ꠎꠥꠝ ꠚꠦꠇ꠆ꠞꠐꠞꠅ ( 1 ꠀꠞ 2 ꠅꠞ ꠝꠣꠏꠦ ꠪ ꠒꠤꠚꠟ꠆ꠐ ꠪ 1.2 ) ⁕ ꠢꠇꠟ ꠗꠣꠙꠅ ꠃꠌ꠆ꠌꠔꠞ ꠎꠥꠝ ꠛꠦꠡꠤ",
 	"proofreadpage-indexquality-alt": "$1 validated {{PLURAL:$1|ꠙꠣꠔꠣ|ꠙꠣꠔꠣꠁꠘ}}, $2 only proofread {{PLURAL:$2|ꠙꠣꠔꠣ|ꠙꠣꠔꠣꠁꠘ}} and $3 not proofread {{PLURAL:$3|ꠙꠣꠔꠣ|ꠙꠣꠔꠣꠁꠘ}}",
 	"content-model-proofread-page": "ꠛꠁꠞ ꠙꠣꠔꠣ",
 	"content-model-proofread-index": "ꠛꠁꠞ ꠐꠥꠇꠣ",

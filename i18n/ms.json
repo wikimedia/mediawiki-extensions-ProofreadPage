@@ -5,7 +5,8 @@
 			"Aurora",
 			"Aviator",
 			"Tofeiku",
-			"Lim Natee"
+			"Lim Natee",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Laman",
@@ -92,9 +93,11 @@
 	"proofreadpage-button-toggle-visibility-label": "Tunjukkan/sorokkan pengatas dan pembawah laman ini",
 	"proofreadpage-button-zoom-in-label": "Zum dekat",
 	"proofreadpage-button-zoom-out-label": "Zum jauh",
+	"proofreadpage-pageinfo-status": "Status uji baca",
 	"proofreadpage-pagelist-dialog-update-button": "Kemas kini senarai laman",
 	"proofreadpage-pagelist-dialog-discard-changes": "Buang perubahan",
 	"proofreadpage-pagelist-dialog-cancel": "Batalkan",
+	"proofreadpage-pagelist-dialog-insertchanges": "Sisipkan Perubahan",
 	"proofreadpage-pagelist-scan-number": "Nombor imbas: $1",
 	"proofreadpage-pagelist-display-number": "Nombor paparan: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Bantuan",
@@ -110,5 +113,10 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Laman",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ya",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Tidak",
-	"proofreadpage-index-field-category-label": "Kategori"
+	"proofreadpage-index-field-category-label": "Kategori",
+	"tag-proofreadpage-quality0": "Tanpa teks",
+	"tag-proofreadpage-quality1": "Belum diuji baca",
+	"tag-proofreadpage-quality2": "Bermasalah",
+	"tag-proofreadpage-quality3": "Disemak",
+	"tag-proofreadpage-quality4": "Disahkan"
 }
