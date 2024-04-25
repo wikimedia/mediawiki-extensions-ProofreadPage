@@ -318,6 +318,9 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		$img.hide();
 
 		// Set up page quality widget.
+		/**
+		 * @internal not stable for use.
+		 */
 		mw.proofreadpage.PageQualityInputWidget = PageQualityInputWidget;
 		$editForm.find( '.prp-pageQualityInputWidget' ).each( function () {
 			OO.ui.infuse( this );
