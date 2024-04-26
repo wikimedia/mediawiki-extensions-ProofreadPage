@@ -49,12 +49,12 @@ class IndexQualityStatsLookup {
 	 * @return PagesQualityStats
 	 */
 	private function fetchStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {
-		$row = $this->loadBalancer->getConnection( ILoadBalancer::DB_REPLICA )->selectRow(
-			[ 'pr_index' ],
-			[ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ],
-			[ 'pr_page_id' => $indexTitle->getArticleID() ],
-			__METHOD__
-		);
+		$row = $this->loadBalancer->getConnection( ILoadBalancer::DB_REPLICA )->newSelectQueryBuilder()
+			->select( [ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ] )
+			->from( 'pr_index' )
+			->where( [ 'pr_page_id' => $indexTitle->getArticleID() ] )
+			->caller( __METHOD__ )
+			->fetchRow();
 		if ( !$row ) {
 			return new PagesQualityStats( 0, [] );
 		}

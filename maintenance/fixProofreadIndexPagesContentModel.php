@@ -56,16 +56,16 @@ class FixProofreadIndexPagesContentModel extends LoggedUpdateMaintenance {
 		$total = 0;
 		$namespaceId = ProofreadPage::getIndexNamespaceId();
 		do {
-			$pageIds = $dbw->selectFieldValues(
-				'page',
-				'page_id',
-				[
+			$pageIds = $dbw->newSelectQueryBuilder()
+				->select( 'page_id' )
+				->from( 'page' )
+				->where( [
 					'page_namespace' => $namespaceId,
 					'page_content_model' => CONTENT_MODEL_WIKITEXT
-				],
-				__METHOD__,
-				[ 'LIMIT' => $this->mBatchSize ]
-			);
+				] )
+				->limit( $this->mBatchSize )
+				->caller( __METHOD__ )
+				->fetchFieldValues();
 			if ( !$pageIds ) {
 				break;
 			}

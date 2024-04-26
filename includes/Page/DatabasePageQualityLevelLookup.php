@@ -100,19 +100,19 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 		}
 
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
-		$results = $dbr->select(
-			[ 'page_props', 'page' ],
-			[ 'page_title', 'pp_value' ],
-			[
+		$results = $dbr->newSelectQueryBuilder()
+			->select( [ 'page_title', 'pp_value' ] )
+			->from( 'page' )
+			->join( 'page_props', null, 'page_id = pp_page' )
+			->where( [
 				'pp_propname' => 'proofread_page_quality_level',
-				'page_id = pp_page',
 				'page_namespace' => $this->pageNamespaceId,
 				'page_title' => array_map( static function ( Title $pageTitle ) {
 					return $pageTitle->getDBkey();
 				}, $pageTitles )
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		foreach ( $results as $result ) {
 			$this->cache[$result->page_title] = intval( $result->pp_value );
 		}
@@ -132,17 +132,17 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
 		foreach ( $this->getCategoryForQualityLevels() as $qualityLevel => $qualityCategory ) {
-			$results = $dbr->select(
-				[ 'categorylinks', 'page' ],
-				[ 'page_title' ],
-				[
-					'page_id = cl_from',
+			$results = $dbr->newSelectQueryBuilder()
+				->select( 'page_title' )
+				->from( 'page' )
+				->join( 'categorylinks', null, 'page_id = cl_from' )
+				->where( [
 					'page_title' => $pageDbKeys,
 					'cl_to' => $qualityCategory->getDBkey(),
 					'page_namespace' => $this->pageNamespaceId
-				],
-				__METHOD__
-			);
+				] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			foreach ( $results as $result ) {
 				$this->cache[$result->page_title] = $qualityLevel;
