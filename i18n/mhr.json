@@ -106,7 +106,7 @@
 	"proofreadpage-button-zoom-out-label": "Тораҥдаш",
 	"proofreadpage-pageinfo-status": "Лудын лекме шотлык",
 	"prp-editinsequence-beta-label": "Радам ден тӧрлӧ",
-	"prp-editinsequence-beta-description": "Велыж-влакым вашкерак тӧрлымӧ йӧнан у интерфейс.",
+	"prp-editinsequence-beta-description": "Велыж-влакым писынрак тӧрлымӧ йӧнан у интерфейс.",
 	"prp-editinsequence-http-error-pagelist": "Вот ден экшыклан кӧра велыж-влаклан шелмаш лийын огыл, варарак угыч тӧчен ончо.",
 	"prp-editinsequence-pagination-does-not-exist": "Тиде велыжлан велыж-влаклан шелмаш уке, садлан ончылно да вара шогышо велыжым палемдаш ок лий.Тиде йоҥлыш лийын ман шотлет гын, тиде йоҥлыш нерген тиде адрес ден палдарыза phabricator.wikimedia.org.",
 	"prp-editinsequence-unknown-error": "Вучыдымо йоҥлыш лектын. Поро лий, тиде йоҥлыш нерген увертаре phabricator.wikimedia.org.",
