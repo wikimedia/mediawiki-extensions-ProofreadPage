@@ -19,6 +19,8 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|барак}}",
 	"proofreadpage_source": "Булак",
 	"proofreadpage-group-other": "Башка",
+	"proofreadpage-button-zoom-in-label": "Жакындатуу",
+	"proofreadpage-button-zoom-out-label": "Алыстатуу",
 	"proofreadpage-pagelist-dialog-cancel": "Жокко чыгаруу",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Жардам",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Барактар",

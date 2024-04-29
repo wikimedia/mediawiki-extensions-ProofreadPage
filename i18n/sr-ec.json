@@ -53,6 +53,7 @@
 	"proofreadpage_index_size": "Број страница",
 	"proofreadpage_specialpage_filterby_all": "Све",
 	"proofreadpage_specialpage_filterby_incomplete": "Непотпуне",
+	"proofreadpage_specialpage_filterby_proofread": "Прегледано",
 	"proofreadpage_specialpage_filterby_validated": "Потврђено",
 	"proofreadpage_specialpage_label_filterby": "Филтрирај по:",
 	"proofreadpage_specialpage_label_orderby": "Поређај по:",
@@ -89,6 +90,8 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Не",
 	"proofreadpage-index-field-category-label": "Категорије",
 	"tag-proofreadpage-quality0": "Без текста",
+	"tag-proofreadpage-quality1": "Није прегледано",
 	"tag-proofreadpage-quality2": "Проблематично",
+	"tag-proofreadpage-quality3": "Прегледано",
 	"tag-proofreadpage-quality4": "Потврђено"
 }
