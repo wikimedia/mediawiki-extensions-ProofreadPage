@@ -31,9 +31,11 @@ use MediaWiki\Config\Config;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\CanonicalNamespacesHook;
 use MediaWiki\Hook\EditFormPreloadTextHook;
+use MediaWiki\Hook\GetDoubleUnderscoreIDsHook;
 use MediaWiki\Hook\GetLinkColoursHook;
 use MediaWiki\Hook\InfoActionHook;
 use MediaWiki\Hook\OutputPageParserOutputHook;
+use MediaWiki\Hook\ParserAfterParseHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
@@ -67,6 +69,7 @@ use ProofreadPage\Parser\TranslusionPagesModifier;
 use RequestContext;
 use Skin;
 use SkinTemplate;
+use StripState;
 
 /*
  @todo :
@@ -89,7 +92,9 @@ class ProofreadPage implements
 	MultiContentSaveHook,
 	InfoActionHook,
 	ListDefinedTagsHook,
-	ChangeTagsListActiveHook
+	ChangeTagsListActiveHook,
+	GetDoubleUnderscoreIDsHook,
+	ParserAfterParseHook
 {
 
 	/** @var Config */
@@ -822,4 +827,21 @@ class ProofreadPage implements
 		];
 	}
 
+	/**
+	 * @param array &$ids
+	 */
+	public function onGetDoubleUnderscoreIDs( &$ids ) {
+		$ids[] = 'expectwithoutscans';
+	}
+
+	/**
+	 * @param Parser $parser
+	 * @param string &$text
+	 * @param StripState $stripState
+	 */
+	public function onParserAfterParse( $parser, &$text, $stripState ) {
+		if ( $parser->getOutput()->getPageProperty( 'expectwithoutscans' ) !== null ) {
+			$parser->getOutput()->setPageProperty( 'expectwithoutscans', true );
+		}
+	}
 }

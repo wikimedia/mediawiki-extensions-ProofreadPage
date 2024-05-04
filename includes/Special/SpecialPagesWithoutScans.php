@@ -41,9 +41,17 @@ class SpecialPagesWithoutScans extends PageQueryPage {
 				'value' => 'page_len'
 			] )
 			->from( 'page' )
-			->leftJoin( 'page_props', null, [ 'page_id = pp_page', 'pp_propname' => 'disambiguation' ] )
+			->leftJoin( 'page_props', 'pp_disambig', [
+				'page_id = pp_disambig.pp_page',
+				'pp_disambig.pp_propname' => 'disambiguation'
+			] )
+			->leftJoin( 'page_props', 'pp_withoutscans', [
+				'page_id = pp_withoutscans.pp_page',
+				'pp_withoutscans.pp_propname' => 'expectwithoutscans'
+			] )
 			->where( [
-				'pp_page' => null,
+				'pp_disambig.pp_page' => null,
+				'pp_withoutscans.pp_page' => null,
 				'page_namespace' => NS_MAIN,
 				'page_is_redirect' => 0,
 				] );

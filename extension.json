@@ -71,7 +71,8 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"ProofreadPageAlias": "ProofreadPage.alias.php"
+		"ProofreadPageAlias": "ProofreadPage.alias.php",
+		"ProofreadPageMagic": "ProofreadPage.i18n.php"
 	},
 	"AutoloadNamespaces": {
 		"ProofreadPage\\": "includes/"
@@ -428,7 +429,9 @@
 		"ChangeTagsListActive": "ProofreadPageHooks",
 		"RecentChange_save": "ProofreadPageHooks",
 		"ScribuntoExternalLibraries": "ScribuntoHooks",
-		"ScribuntoExternalLibraryPaths": "ScribuntoHooks"
+		"ScribuntoExternalLibraryPaths": "ScribuntoHooks",
+		"GetDoubleUnderscoreIDs": "ProofreadPageHooks",
+		"ParserAfterParse": "ProofreadPageHooks"
 	},
 	"HookHandlers": {
 		"ProofreadPageHooks": {
