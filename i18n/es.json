@@ -109,6 +109,8 @@
 	"proofreadpage_styles_message": "Estilos CSS aplicados a este texto",
 	"action-pagequality": "modificar el nivel de calidad de la página",
 	"right-pagequality": "Modificar la marca de calidad de la página",
+	"action-pagequality-validate": "establecer la calidad de la página de una página como validada",
+	"right-pagequality-validate": "Establecer la calidad de la página de una página como validada",
 	"action-pagequality-admin": "modificar el indicador de calidad de la página sin restricciones",
 	"right-pagequality-admin": "Modificar el indicador de calidad de la página sin restricciones",
 	"proofreadpage-section-tools": "Herramientas de corrección",
