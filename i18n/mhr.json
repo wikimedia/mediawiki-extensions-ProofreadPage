@@ -4,7 +4,8 @@
 			"Kareyac",
 			"Сай",
 			"Lifeway",
-			"Mxalexandrov86"
+			"Mxalexandrov86",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Велыж",
@@ -19,10 +20,10 @@
 	"proofreadpage_index": "Индекс",
 	"proofreadpage_index_expected": "Йоҥылыш: Индекс вучалтеш",
 	"proofreadpage_nosuch_index": "Йоҥылыш: тыгай индекс уке",
-	"proofreadpage_nosuch_index_category": "Улдымо индексан велыж-влакыш ончыктышо велыж-влакым кусарымаш",
+	"proofreadpage_nosuch_index_category": "Индексын уке улшо велыжлаж гычын лаштык-влакым пуртымаш",
 	"proofreadpage_nosuch_index_category-desc": "<code><nowiki><pages/></nowiki></code> тег улдымо индексан велыжыш ончыкта.",
 	"proofreadpage_nosuch_file": "Йоҥылыш: тыгай файл уке",
-	"proofreadpage_indexdupetext": "Велыж-влак индексан велыжыште икыт деч шукырак огыл гана радамлалтын кертыт.",
+	"proofreadpage_indexdupetext": " Индексан велыжыште лаштык-влак ик гана деч шуко радамлалт огыт керт.",
 	"proofreadpage_nologin": "Системыш пурымо огыл",
 	"proofreadpage_nologintext": "Велыжын лудын тӧрлымаш шотлыкым вашталташлан тый [[Special:UserLogin|шкем системылан палдарышаш]] улат.",
 	"proofreadpage_notallowedtext": "Тиде велыжын лудын тӧрлымаш шотлыкшым тый вашталтен от керт.",
