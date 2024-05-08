@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nemoralis"
+		]
+	},
+	"apihelp-query+imageforpage-summary": "\"Səhifə:\" ad fəzasında verilmiş səhifə üçün şəkillərin URL-lərini renderləyir və təqdim edir."
+}
