@@ -7,6 +7,7 @@
 		]
 	},
 	"apihelp-query+imageforpage-summary": "Memprakemas dan menyediakan URL imej untuk sesuatu laman pada ruang nama \"Laman:\".",
+	"apihelp-query+imageforpage-param-prop": "Jenis imej atau sifat imej yang akan dikembalikan untuk halaman tertentu pada ruang nama \"Laman:\".",
 	"apihelp-query+proofread-description": "Mengembalikan maklumat tentang status baca pruf terkini laman tertentu.",
 	"apihelp-query+proofread-summary": "Mengembalikan maklumat tentang status baca pruf terkini laman tertentu.",
 	"apihelp-query+proofread-example-1": "Kembalikan status baca pruf bagi laman di ruang nama 250",
