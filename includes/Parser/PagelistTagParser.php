@@ -53,6 +53,7 @@ class PagelistTagParser {
 		try {
 			$image = $this->context->getFileProvider()->getFileForIndexTitle( $title );
 		} catch ( FileNotFoundException $e ) {
+			$this->parser->addTrackingCategory( 'proofreadpage_nosuch_file_for_index_category' );
 			return $this->formatError( 'proofreadpage_nosuch_file' );
 		}
 

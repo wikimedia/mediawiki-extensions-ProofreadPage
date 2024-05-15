@@ -17,6 +17,8 @@
 	"proofreadpage_nosuch_index": "Error: No such index",
 	"proofreadpage_nosuch_index_category": "Page transclusions that refer to missing Index pages",
 	"proofreadpage_nosuch_index_category-desc": "A <code><nowiki><pages/></nowiki></code> tag refers to an Index page that does not exist.",
+	"proofreadpage_nosuch_file_for_index_category": "Index pages with pagelist tags that refer to a noexistent file",
+	"proofreadpage_nosuch_file_for_index_category-desc": "A <code><nowiki><pagelist/></nowiki></code> tag refers to a file that does not exist.",
 	"proofreadpage_nosuch_file": "Error: No such file",
 	"proofreadpage_indexdupetext": "Pages cannot be listed more than once on an index page.",
 	"proofreadpage_nologin": "Not logged in",
