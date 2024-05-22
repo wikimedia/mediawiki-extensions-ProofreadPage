@@ -8,7 +8,8 @@
 			"Mpradeep",
 			"Ravichandra",
 			"Veeven",
-			"రాకేశ్వర"
+			"రాకేశ్వర",
+			"Reedy"
 		]
 	},
 	"nstab-page": "పుట",
@@ -92,6 +93,7 @@
 	"proofreadpage-button-zoom-in-label": "పెద్దది చేయి",
 	"proofreadpage-button-zoom-out-label": "చిన్నది చేయి",
 	"proofreadpage-pageinfo-status": "అచ్చుదిద్దు స్థితి",
+	"prp-editinsequence-unsaved-edit-message": "మీరు భద్రపరచని మార్పులు కొన్ని ఉన్నాయి. ఈ పేజీని వదలి వెళ్ళిపోయిన పక్షంలో, మళ్ళీ తిరిగి వచ్చినపుడు వాటన్నిటినీ చూపిస్తాం.",
 	"proofreadpage-pagelist-input-preview-button": "పేజీజాబితా మునుజూపు",
 	"proofreadpage-pagelist-dialog-update-button": "పేజీజాబితా నవీకరించు",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "ఈ సంభాషణ వదిలితే భద్రపరచని పని నష్టపోవచ్చు",

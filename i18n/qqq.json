@@ -215,5 +215,5 @@
 	"tag-proofreadpage-quality2-description": "Tag description for changes changing to level 2 quality",
 	"tag-proofreadpage-quality3-description": "Tag description for changes changing to level 3 quality\n{{Identical|proofreadpage_quality3_message}}",
 	"tag-proofreadpage-quality4-description": "Tag description for changes changing to level 4 quality",
-	"tag-proofreadpage-editinsequence-description": "Tag description for changes made using the EditInSequence mode.  '''\"EditInSequence\" should be translated the same as {{msg-mw|Tag-proofreadpage-editinsequence}}.'''"
+	"tag-proofreadpage-editinsequence-description": "Tag description for changes made using the EditInSequence mode. '''\"EditInSequence\" should be translated the same as {{msg-mw|Tag-proofreadpage-editinsequence}}.'''"
 }
