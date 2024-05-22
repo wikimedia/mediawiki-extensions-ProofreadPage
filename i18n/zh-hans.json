@@ -114,7 +114,7 @@
 	"proofreadpage_specialpage_searcherror": "搜索引擎错误",
 	"proofreadpage_specialpage_searcherrortext": "搜索引擎无法工作。很抱歉给您带来的不便。",
 	"proofreadpage_source": "来源",
-	"proofreadpage_source_message": "用以建立此文本的扫描版",
+	"proofreadpage_source_message": "用于建立该段文本的扫描版本",
 	"proofreadpage_styles": "样式",
 	"proofreadpage_styles_message": "应用于此文本的CSS样式",
 	"action-pagequality": "修改页面质量标志",
