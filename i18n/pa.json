@@ -3,6 +3,7 @@
 		"authors": [
 			"Babanwalia",
 			"Bgo eiu",
+			"Cabal",
 			"Kuldeepburjbhalaike",
 			"Reedy",
 			"Satdeep gill"
@@ -110,7 +111,7 @@
 	"prp-editinsequence-show-dialog-toggle-label": "ਹਰ ਵਾਰ \" $1 \" 'ਤੇ ਕਲਿੱਕ ਕਰਨ 'ਤੇ ਇਹ ਡਾਇਲਾਗ ਦਿਖਾਓ",
 	"prp-editinsequence-editsummary-placeholder": "ਆਪਣੀਆਂ ਤਬਦੀਲੀਆਂ ਦਾ ਵਰਣਨ ਕਰੋ",
 	"prp-editinsequence-could-not-save-edit": "ਇਹ ਸੰਪਾਦਨ ਸੁਰੱਖਿਅਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ",
-	"prp-editinsequence-page-filter-label-all": "ਸਭ ਸਫ਼ੇ",
+	"prp-editinsequence-page-filter-label-all": "ਸਾਰੇ ਸਫ਼ੇ",
 	"prp-editinsequence-page-selection-label": "ਖਾਸ ਪੰਨੇ 'ਤੇ ਜਾਓ",
 	"prp-editinsequence-page-selection-widget-label": "ਜਾਣ ਲਈ ਪੰਨਾ ਚੁਣੋ",
 	"proofreadpage-pagelist-input-preview-button": "ਪੇਜਲਿਸਟ ਦੀ ਝਲਕ",
