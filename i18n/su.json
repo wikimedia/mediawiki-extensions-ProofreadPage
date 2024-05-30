@@ -104,9 +104,13 @@
 	"proofreadpage-pagelist-dialog-unsaved-progress-title": "Parobahan nu teu disimpen",
 	"proofreadpage-pagelist-dialog-discard-changes": "Piceun parobahan",
 	"proofreadpage-pagelist-dialog-cancel": "Bolaykeun",
+	"proofreadpage-pagelist-dialog-title": "Ngédit daptar kaca pikeun $1",
 	"proofreadpage-pagelist-dialog-insertchanges": "Selapkeun parobahan",
+	"proofreadpage-pagelist-imageurlnotfound": "Sumber gambar leutik pikeun ieu scan teu bisa kapanggih.",
+	"proofreadpage-pagelist-type": "Jinis Nomer Kaca: $1",
 	"proofreadpage-pagelist-scan-number": "Nomer scan: $1",
 	"proofreadpage-pagelist-display-number": "Jumlah pintonan: $1",
+	"proofreadpage-pagelist-assignedpagenumber": "Ieu kaca geus dibéré nomer kaca: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Pitulung",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Jenis nomer kaca:",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "Nomer kaca dimimitian ti:",
@@ -117,7 +121,9 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Nya",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Henteu",
 	"proofreadpage-index-field-category-label": "Kategori",
+	"tag-proofreadpage-quality0": "Tanpa téks",
 	"tag-proofreadpage-quality1": "Can kariksa",
+	"tag-proofreadpage-quality2": "Masalah",
 	"tag-proofreadpage-quality3": "Geus diuji baca",
 	"tag-proofreadpage-quality4": "Geus divalidasi"
 }
