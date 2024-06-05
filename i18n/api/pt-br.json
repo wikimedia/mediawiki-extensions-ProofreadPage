@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald",
-			555
+			555,
+			"Felipe L. Ewald"
 		]
 	},
 	"apierror-proofreadpage-invalidindex": "Título de índice de digitalizações inválido: \"$1\"",

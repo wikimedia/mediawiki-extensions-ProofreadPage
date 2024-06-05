@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu",
-			555
+			555,
+			"Hamilton Abreu"
 		]
 	},
 	"apihelp-query+imageforpage-summary": "Pré-compõe e fornece os URL para as imagens, para uma determinada página do espaço nominal \"Página:\".",
