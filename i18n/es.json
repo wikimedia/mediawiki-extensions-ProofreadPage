@@ -138,6 +138,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "No hacer nada",
 	"prp-editinsequence-save-next-action-go-to-next": "Ir a la página siguiente",
 	"prp-editinsequence-save-next-action-go-to-prev": "Ir a la página anterior",
+	"prp-editinsequence-unsaved-edit-message": "Tiene cambios sin guardar. Si abandona esta página, sus cambios se restaurarán cuando regrese.",
 	"prp-editinsequence-show-dialog-toggle-label": "Mostrar este cuadro de diálogo cada vez que se haga clic en \"$1\"",
 	"prp-editinsequence-editsummary-placeholder": "Describa sus cambios",
 	"prp-editinsequence-could-not-save-edit": "Esta edición no se puede guardar",
