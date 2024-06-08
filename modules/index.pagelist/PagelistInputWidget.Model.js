@@ -152,7 +152,7 @@ PagelistInputWidgetModel.prototype.generateWikitext = function ( parameters ) {
 		separator = '\n';
 	}
 
-	parameters.forEach( function ( index, label ) {
+	parameters.forEach( ( index, label ) => {
 		if ( index.split( /(to|To)/ )[ 0 ] !== index &&
 			index.split( /(to|To)/ )[ 0 ] === index.split( /(to|To)/ )[ 2 ] ) {
 			pagelistText += separator + index.split( /(to|To)/ )[ 0 ] + '="' + label + '"';
@@ -190,7 +190,7 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 		return;
 	}
 
-	parameters.forEach( function ( index, label ) {
+	parameters.forEach( ( index, label ) => {
 		pagelistText += index + '="' + label + '" ';
 	} );
 
@@ -202,16 +202,16 @@ PagelistInputWidgetModel.prototype.generateEnumeratedList = function ( parameter
 		action: 'parse',
 		title: mw.config.get( 'wgPageName' ),
 		text: apiWikitext
-	} ).done( function ( response ) {
+	} ).done( ( response ) => {
 		this.parseAPItoEnumeratedList( response, parameters );
-	}.bind( this ) ).catch( function ( err ) {
+	} ).catch( ( err ) => {
 		mw.log.error( err );
 		if ( err === 'http' ) {
 			this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-network-issues' );
 		} else {
 			this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-unknown' );
 		}
-	}.bind( this ) );
+	} );
 };
 
 /**
@@ -229,7 +229,7 @@ PagelistInputWidgetModel.prototype.parseAPItoEnumeratedList = function ( respons
 	parsedText.innerHTML = response.parse.text[ '*' ];
 
 	// extract all the ranges being set by the pagelist
-	parameters.forEach( function ( index, label ) {
+	parameters.forEach( ( index, label ) => {
 		if ( index.split( /(to|To)/ )[ 0 ] !== index ) {
 			for ( let i = parseInt( index.split( 'to' )[ 0 ] ); i <= parseInt( index.split( 'to' )[ 1 ] ); i++ ) {
 				ranges[ i ] = label;

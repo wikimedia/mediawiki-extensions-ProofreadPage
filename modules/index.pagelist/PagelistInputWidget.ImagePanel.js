@@ -61,7 +61,7 @@ ImagePanel.prototype.setImageSrc = function (
 	this.pushPending();
 	this.$image.attr( 'src', url );
 
-	this.$image.on( 'load', function () {
+	this.$image.on( 'load', () => {
 		this.popPending();
 		if ( this.viewer ) {
 			this.removeMap( url, zoomUrlOnePointFive, zoomUrlTwo, width, height );
@@ -77,11 +77,11 @@ ImagePanel.prototype.setImageSrc = function (
 		}
 		this.imageLoadFailed = false;
 		this.imageLoadRetries = 0;
-	}.bind( this ) );
-	this.$image.on( 'error', function () {
+	} );
+	this.$image.on( 'error', () => {
 		this.imageLoadFailed = true;
 		this.onImageFailedToLoad();
-	}.bind( this ) );
+	} );
 };
 
 /**
@@ -98,14 +98,14 @@ ImagePanel.prototype.onImageFailedToLoad = function () {
 		this.pageModel.generateImageLink( this.pageModel.data );
 		this.imageLoadRetries++;
 
-		this.apiThrottle = setInterval( function () {
+		this.apiThrottle = setInterval( () => {
 			if ( this.imageLoadFailed ) {
 				this.pageModel.generateImageLink( this.pageModel.data );
 
 				this.imageLoadRetries++;
 				this.imageLoadFailed = false;
 			}
-		}.bind( this ), 2000 );
+		}, 2000 );
 	} else if ( this.imageLoadRetries > 5 ) {
 		clearInterval( this.apiThrottle );
 		this.displayError();

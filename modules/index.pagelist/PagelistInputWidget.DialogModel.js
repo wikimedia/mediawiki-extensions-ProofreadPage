@@ -61,7 +61,7 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 		titles: pageTitle,
 		iiprop: 'url',
 		iiurlparam: 'page' + subpage + '-' + imageSize + 'px'
-	} ).done( function ( response ) {
+	} ).done( ( response ) => {
 		let imageUrl = null,
 			imageZoomUrlOnePointFive = null,
 			imageZoomUrlTwo = null,
@@ -96,7 +96,7 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 			imageHeight: imageInfo.thumbheight
 		};
 		this.emit( 'aftersetimageurl', imageUrl, imageZoomUrlOnePointFive, imageZoomUrlTwo, imageWidth, imageHeight );
-	}.bind( this ) ).catch( function ( e ) {
+	} ).catch( function ( e ) {
 		this.emit( 'imageurlnotfound' );
 		mw.log.error( e );
 	} );

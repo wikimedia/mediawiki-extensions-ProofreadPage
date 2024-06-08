@@ -167,7 +167,7 @@ VisualDialogModel.prototype.debugOutput = function ( params ) {
 
 	pagelistText += '-----------------------------------------';
 
-	params.forEach( function ( index, label ) {
+	params.forEach( ( index, label ) => {
 		pagelistText += '\n' + index + '="' + label + '"';
 	} );
 
@@ -186,7 +186,7 @@ VisualDialogModel.prototype.debugOutput = function ( params ) {
  */
 VisualDialogModel.prototype.resurfaceHiddenEntries = function ( params, start, end ) {
 
-	params.forEach( function ( index, label ) {
+	params.forEach( ( index, label ) => {
 		if ( index.split( /(to|To)/ )[ 0 ] > start && index.split( /(to|To)/ )[ 0 ] < end ) {
 			params.delete( index );
 			params.set( index, label );
@@ -204,7 +204,7 @@ VisualDialogModel.prototype.resurfaceHiddenEntries = function ( params, start, e
  */
 VisualDialogModel.prototype.removeUnecessaryNumbering = function ( params, partialList ) {
 
-	params.forEach( function ( index, label ) {
+	params.forEach( ( index, label ) => {
 		if ( index.split( 'to' )[ 0 ] === index ) {
 			if ( partialList[ index ] ) {
 				label = partialList[ index ][ 0 ].type;
@@ -295,7 +295,7 @@ VisualDialogModel.prototype.findNextChangePoint = function ( partialList, curren
  */
 VisualDialogModel.prototype.generatePartialList = function () {
 	const params = this.parameters, partialList = [];
-	params.forEach( function ( index, label ) {
+	params.forEach( ( index, label ) => {
 		if ( index.split( 'to' )[ 0 ] !== index ) {
 			for ( let i = parseInt( index.split( /(to|To)/ )[ 0 ] ); i <= parseInt( index.split( /(to|To)/ )[ 2 ] ); i++ ) {
 				if ( !partialList[ i ] ) {
@@ -326,7 +326,7 @@ VisualDialogModel.prototype.generatePartialList = function () {
  */
 VisualDialogModel.prototype.expandParameters = function ( params ) {
 	const newParams = new Parameters();
-	params.forEach( function ( index, label ) {
+	params.forEach( ( index, label ) => {
 		if ( index.split( /(to|To)/ )[ 0 ] === index &&
 			isNaN( label ) ) {
 			newParams.set( index + 'to' + index, label );

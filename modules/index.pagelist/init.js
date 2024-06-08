@@ -10,7 +10,7 @@
 	try {
 		// Until I can fgure out a better way to do this
 		// eslint-disable-next-line no-jquery/no-global-selector
-		$( '.prp-pagelistInputWidget' ).each( function ( index, $widget ) {
+		$( '.prp-pagelistInputWidget' ).each( ( index, $widget ) => {
 			mw.proofreadpage.PagelistInputWidget.static.infuse( $widget );
 		} );
 	} catch ( e ) {

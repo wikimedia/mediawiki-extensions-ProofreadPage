@@ -1,5 +1,6 @@
 {
 	"rules": {
-		"no-implicit-globals": "off"
+		"no-implicit-globals": "off",
+		"no-jquery/no-extend": "warn"
 	}
 }

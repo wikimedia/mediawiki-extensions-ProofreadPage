@@ -10,21 +10,21 @@ const bot = new MWBot( {
 	apiUrl: browser.config.baseUrl + '/api.php'
 } );
 
-describe( 'For a page with eis enabled', function () {
-	before( async function () {
+describe( 'For a page with eis enabled', () => {
+	before( async () => {
 		await utils.setupPrpTemplates( bot );
 		await bot.uploadOverwrite( 'File:LoremIpsum.djvu', path.join( __dirname, '../../data/media/LoremIpsum.djvu' ), 'Selenium test initialization for edit-in-sequence' );
 		await bot.create( 'Index:LoremIpsum.djvu', '{{:MediaWiki:Proofreadpage_index_template|Type=book\n|Source=_empty_\n|Image=1\n|Progress=X\n|Pages=<pagelist />\n}}', 'Selenium test initialization for edit-in-sequence' );
 	} );
 
-	it( 'toolbar loads', async function () {
+	it( 'toolbar loads', async () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
 		assert.ok( await EisPagePage.prevButton !== undefined );
 		assert.ok( await EisPagePage.nextButton !== undefined );
 
 	} );
 
-	it( 'prev to page 1', async function () {
+	it( 'prev to page 1', async () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
 		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.prevButton ) === false, 'is disabled' );
 		await EisPagePage.nextButton.click();
@@ -32,7 +32,7 @@ describe( 'For a page with eis enabled', function () {
 		assert.ok( await utils.isEnabledInOOUI( EisPagePage.prevButton ), 'but gets enabled when next is clicked' );
 	} );
 
-	it( 'next to last page', async function () {
+	it( 'next to last page', async () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/5' );
 		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.nextButton ) === false, 'is disabled' );
 		await EisPagePage.prevButton.click();
@@ -40,7 +40,7 @@ describe( 'For a page with eis enabled', function () {
 		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.nextButton ), 'but gets enabled when prev is clicked' );
 	} );
 
-	after( async function () {
+	after( async () => {
 		await bot.delete( 'Index:LoremIpsum.djvu', 'Selenium test teardown for edit-in-sequence' );
 		await bot.delete( 'File:LoremIpsum.djvu', 'Selenium test teardown for edit-in-sequence' );
 	} );

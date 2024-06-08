@@ -83,7 +83,7 @@ PageNumberInputWidget.prototype.getNumberTypeConfig = function () {
 		rvslots: 'main',
 		rvprop: 'content',
 		formatversion: '2'
-	} ).then( function ( response ) {
+	} ).then( ( response ) => {
 		try {
 			return JSON.parse( response.query.pages[ 0 ].revisions[ 0 ].slots.main.content );
 		} catch ( e ) {
@@ -104,7 +104,7 @@ PageNumberInputWidget.prototype.getNumberTypeConfig = function () {
 				}
 			];
 		}
-	}.bind( this ) );
+	} );
 	return promise;
 };
 

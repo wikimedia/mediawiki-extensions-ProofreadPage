@@ -112,10 +112,10 @@ WikitextFormPanel.prototype.stopPending = function () {
  */
 WikitextFormPanel.prototype.setupForm = function () {
 	// Hack to wait until the Dialog has fully loaded
-	setTimeout( function () {
+	setTimeout( () => {
 		this.multilineTextInput.adjustSize( true );
 		this.multilineTextInput.focus();
-	}.bind( this ), 700 );
+	}, 700 );
 };
 
 /**

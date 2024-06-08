@@ -7,11 +7,9 @@ class EisPagePage extends Page {
 		// eslint-disable-next-line camelcase
 		await super.openTitle( pagename, { action: 'edit', prp_editinsequence: true } );
 		// wait for toolbar to load
-		await browser.waitUntil( async function () {
-			return await browser.$$( '.prp-edit-in-sequence-toolbar' ).length > 0;
-		} );
+		await browser.waitUntil( async () => await browser.$$( '.prp-edit-in-sequence-toolbar' ).length > 0 );
 		// turn off all unload events for wikiEditor
-		await browser.execute( function () {
+		await browser.execute( () => {
 			// eslint-disable-next-line no-undef
 			$( window ).off( 'beforeunload' );
 		} );
@@ -34,16 +32,12 @@ class EisPagePage extends Page {
 	}
 
 	async waitForOOUIElementToBeActive( $element ) {
-		await browser.waitUntil( async function () {
-			return await utils.isEnabledInOOUI( $element );
-		} );
+		await browser.waitUntil( async () => await utils.isEnabledInOOUI( $element ) );
 	}
 
 	async waitForPageStatusButtonToBeResponsive() {
 		const page = this;
-		await browser.waitUntil( async function () {
-			return await page.pageStatusButtonLabel.getText() !== '' && ( await page.pageStatusButtonLabel.getText() ).replace( /\s/g, '' ).length;
-		}, { timeout: 30 * 1000 } );
+		await browser.waitUntil( async () => await page.pageStatusButtonLabel.getText() !== '' && ( await page.pageStatusButtonLabel.getText() ).replace( /\s/g, '' ).length, { timeout: 30 * 1000 } );
 	}
 
 	async selectPageStatusFromDropdown( valueName ) {
