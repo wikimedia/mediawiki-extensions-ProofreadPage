@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;

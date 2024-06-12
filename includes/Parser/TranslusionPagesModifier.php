@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Parser;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\ParserOutput;

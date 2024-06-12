@@ -3,10 +3,10 @@
 namespace ProofreadPage\Page;
 
 use Content;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use ProofreadPageTestCase;
-use RequestContext;
 use WikitextContent;
 
 /**

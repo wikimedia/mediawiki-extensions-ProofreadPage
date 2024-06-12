@@ -3,17 +3,17 @@
 namespace ProofreadPage\Index;
 
 use Content;
-use IContextSource;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\Content\ValidationParams;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MediaWiki\Title\Title;
 use MWContentSerializationException;
-use Parser;
 use ParserOptions;
 use PPFrame;
 use ProofreadPage\Context;

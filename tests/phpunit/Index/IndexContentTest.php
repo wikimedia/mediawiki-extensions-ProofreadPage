@@ -2,13 +2,13 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use ProofreadPageTestCase;
-use RequestContext;
 use WikitextContent;
 
 /**

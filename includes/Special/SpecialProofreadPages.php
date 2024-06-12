@@ -21,8 +21,8 @@
 
 namespace ProofreadPage\Special;
 
-use HTMLForm;
 use ISearchResultSet;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\QueryPage;
 use MediaWiki\Title\Title;

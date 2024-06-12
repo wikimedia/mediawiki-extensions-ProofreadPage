@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Context\RequestContext;
 use ProofreadPageTestCase;
-use RequestContext;
 use WikitextContent;
 
 /**

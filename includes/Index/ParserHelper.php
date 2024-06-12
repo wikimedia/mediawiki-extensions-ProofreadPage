@@ -3,8 +3,8 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
-use Parser;
 use ParserOptions;
 
 /**

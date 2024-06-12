@@ -4,7 +4,7 @@ namespace ProofreadPage\Parser;
 
 use HtmlArmor;
 use MediaWiki\Html\Html;
-use Parser;
+use MediaWiki\Parser\Parser;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Pagination\FilePagination;

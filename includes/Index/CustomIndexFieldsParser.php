@@ -3,8 +3,8 @@
 namespace ProofreadPage\Index;
 
 use FormatJson;
+use MediaWiki\Context\RequestContext;
 use OutOfBoundsException;
-use RequestContext;
 
 /**
  * @license GPL-2.0-or-later

@@ -3,13 +3,13 @@
 namespace ProofreadPage\Scribunto;
 
 use Content;
+use MediaWiki\Extension\Scribunto\Tests\Engines\LuaCommon\LuaEngineTestBase;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
 use RuntimeException;
-use Scribunto_LuaEngineTestBase;
 use WikitextContent;
 
 /**
@@ -22,7 +22,7 @@ use WikitextContent;
  * @group Database
  * @covers \ProofreadPage\ProofreadPageLuaLibrary
  */
-class IndexAndPageLibraryTest extends Scribunto_LuaEngineTestBase {
+class IndexAndPageLibraryTest extends LuaEngineTestBase {
 	/** @inheritDoc */
 	protected static $moduleName = 'IndexAndPageLibraryTests';
 

@@ -3,11 +3,11 @@
 namespace ProofreadPage\Page;
 
 use Content;
-use IContextSource;
 use MediaWiki\Category\TrackingCategories;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\ParserOutput;

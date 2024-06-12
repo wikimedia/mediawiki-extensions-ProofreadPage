@@ -2,14 +2,14 @@
 
 namespace ProofreadPage\Scribunto;
 
-use Scribunto_LuaEngineTestBase;
+use MediaWiki\Extension\Scribunto\Tests\Engines\LuaCommon\LuaEngineTestBase;
 
 /**
  * Tests for the genetic aspects of the ProofreadPage Lua libs
  *
  * @covers \ProofreadPage\ProofreadPageLuaLibrary
  */
-class ProofreadPageLibraryTest extends Scribunto_LuaEngineTestBase {
+class ProofreadPageLibraryTest extends LuaEngineTestBase {
 	/** @inheritDoc */
 	protected static $moduleName = 'ProofreadPageLibraryTests';
 

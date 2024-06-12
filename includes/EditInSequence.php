@@ -3,7 +3,7 @@
 namespace ProofreadPage;
 
 use ExtensionRegistry;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\BetaFeatures\BetaFeatures;
 
 class EditInSequence {

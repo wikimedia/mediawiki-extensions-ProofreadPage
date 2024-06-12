@@ -2,6 +2,8 @@
 
 namespace ProofreadPage;
 
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaError;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Title\Title;
@@ -10,11 +12,9 @@ use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\Pagination;
 use Psr\Log\LoggerInterface;
-use Scribunto_LuaError;
-use Scribunto_LuaLibraryBase;
 use WikitextContent;
 
-class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
+class ProofreadPageLuaLibrary extends LibraryBase {
 
 	/**
 	 * @var Context
@@ -116,7 +116,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 *
 	 * @param string $indexName The index title to get stats for
 	 * @return array The result table, in an array
-	 * @throws Scribunto_LuaError If the expensive function count has been exceeded
+	 * @throws LuaError If the expensive function count has been exceeded
 	 */
 	public function doGetIndexProgress( string $indexName ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
@@ -174,7 +174,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 *
 	 * @param string $indexName the index title to get stats for
 	 * @return array the result table, in an array
-	 * @throws Scribunto_LuaError If the expensive function count has been exceeded
+	 * @throws LuaError If the expensive function count has been exceeded
 	 */
 	public function doGetIndexFields( string $indexName ): array {
 		// this can be expensive
@@ -198,7 +198,7 @@ class ProofreadPageLuaLibrary extends Scribunto_LuaLibraryBase {
 	 *
 	 * @param string $indexName The index title to get stats for
 	 * @return array The result table, in an array
-	 * @throws Scribunto_LuaError If the expensive function count has been exceeded
+	 * @throws LuaError If the expensive function count has been exceeded
 	 */
 	public function doGetIndexCategories( string $indexName ): array {
 		// this can be expensive

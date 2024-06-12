@@ -3,7 +3,7 @@
 namespace ProofreadPage\Index;
 
 use Content;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Title\Title;
 use ProofreadPage\DiffFormatterUtils;
 use SlotDiffRenderer;

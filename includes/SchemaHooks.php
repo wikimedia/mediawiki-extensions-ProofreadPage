@@ -21,9 +21,9 @@
 
 namespace ProofreadPage;
 
-use DatabaseUpdater;
 use FixProofreadIndexPagesContentModel;
 use FixProofreadPagePagesContentModel;
+use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 
 class SchemaHooks implements LoadExtensionSchemaUpdatesHook {

@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Parser;
 
+use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
-use Parser;
 use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Index\IndexTemplateStyles;

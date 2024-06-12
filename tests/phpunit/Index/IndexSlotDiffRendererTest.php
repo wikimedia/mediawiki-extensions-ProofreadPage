@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
-use RequestContext;
 use TextSlotDiffRenderer;
 use WikitextContent;
 

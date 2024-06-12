@@ -3,7 +3,7 @@
 namespace ProofreadPage\Page;
 
 use Content;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use ProofreadPage\DiffFormatterUtils;
 use SlotDiffRenderer;
