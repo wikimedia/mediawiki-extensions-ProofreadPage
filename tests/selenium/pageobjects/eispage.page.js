@@ -36,8 +36,7 @@ class EisPagePage extends Page {
 	}
 
 	async waitForPageStatusButtonToBeResponsive() {
-		const page = this;
-		await browser.waitUntil( async () => await page.pageStatusButtonLabel.getText() !== '' && ( await page.pageStatusButtonLabel.getText() ).replace( /\s/g, '' ).length, { timeout: 30 * 1000 } );
+		await browser.waitUntil( async () => await this.pageStatusButtonLabel.getText() !== '' && ( await this.pageStatusButtonLabel.getText() ).replace( /\s/g, '' ).length, { timeout: 30 * 1000 } );
 	}
 
 	async selectPageStatusFromDropdown( valueName ) {

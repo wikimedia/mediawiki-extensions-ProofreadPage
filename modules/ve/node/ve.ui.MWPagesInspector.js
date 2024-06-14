@@ -66,60 +66,59 @@ ve.ui.MWPagesInspector.prototype.getSetupProcess = function ( data ) {
  */
 ve.ui.MWPagesInspector.prototype.setupForm = function () {
 	const isReadOnly = this.isReadOnly(),
-		attributes = this.mwData.attrs,
-		inspector = this;
+		attributes = this.mwData.attrs;
 
 	this.pushPending();
 	this.getFileInfo( attributes.index ).done( ( imageInfo ) => {
-		inspector.addAttributeWidgetToForm( inspector.createIndexWidget(), 'index' );
+		this.addAttributeWidgetToForm( this.createIndexWidget(), 'index' );
 
-		inspector.addAttributeWidgetToForm( new OO.ui.DropdownInputWidget( {
-			options: inspector.buildHeaderFieldSelectorOptions( attributes.header )
+		this.addAttributeWidgetToForm( new OO.ui.DropdownInputWidget( {
+			options: this.buildHeaderFieldSelectorOptions( attributes.header )
 		} ), 'header' );
 
 		if ( imageInfo.pagecount !== undefined ) {
-			inspector.addAttributeWidgetToForm( new OO.ui.NumberInputWidget( {
+			this.addAttributeWidgetToForm( new OO.ui.NumberInputWidget( {
 				isInteger: true,
 				min: 1,
 				max: imageInfo.pagecount
 			} ), 'from' );
-			inspector.addAttributeWidgetToForm( new OO.ui.NumberInputWidget( {
+			this.addAttributeWidgetToForm( new OO.ui.NumberInputWidget( {
 				isInteger: true,
 				min: 1,
 				max: imageInfo.pagecount
 			} ), 'to' );
 		} else {
-			inspector.addAttributeWidgetToForm( new mw.widgets.TitleInputWidget( {
-				namespace: inspector.getIdForNamespace( 'page' )
+			this.addAttributeWidgetToForm( new mw.widgets.TitleInputWidget( {
+				namespace: this.getIdForNamespace( 'page' )
 			} ), 'from' );
-			inspector.addAttributeWidgetToForm( new mw.widgets.TitleInputWidget( {
-				namespace: inspector.getIdForNamespace( 'page' )
+			this.addAttributeWidgetToForm( new mw.widgets.TitleInputWidget( {
+				namespace: this.getIdForNamespace( 'page' )
 			} ), 'to' );
 		}
 
-		inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'fromsection' );
-		inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'tosection' );
+		this.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'fromsection' );
+		this.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'tosection' );
 
 		for ( const key in attributes ) {
-			if ( key in inspector.attributeInputs ) {
-				inspector.attributeInputs[ key ].setValue( attributes[ key ] );
+			if ( key in this.attributeInputs ) {
+				this.attributeInputs[ key ].setValue( attributes[ key ] );
 			} else {
-				inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget( {
+				this.addAttributeWidgetToForm( new OO.ui.TextInputWidget( {
 					value: attributes[ key ]
 				} ), key );
 			}
 		}
 
-		for ( const key in inspector.attributeInputs ) {
-			if ( inspector.attributeInputs[ key ].setReadOnly ) {
-				inspector.attributeInputs[ key ].setReadOnly( isReadOnly );
+		for ( const key in this.attributeInputs ) {
+			if ( this.attributeInputs[ key ].setReadOnly ) {
+				this.attributeInputs[ key ].setReadOnly( isReadOnly );
 			} else {
-				inspector.attributeInputs[ key ].setDisabled( isReadOnly );
+				this.attributeInputs[ key ].setDisabled( isReadOnly );
 			}
 		}
 
-		inspector.updateSize();
-		inspector.popPending();
+		this.updateSize();
+		this.popPending();
 	} );
 };
 
