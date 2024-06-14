@@ -60,7 +60,7 @@ SaveOptionsModel.prototype.getIsInitialized = function () {
 };
 
 SaveOptionsModel.prototype.clone = function () {
-	var cloneObject = new SaveOptionsModel();
+	const cloneObject = new SaveOptionsModel();
 	cloneObject.isMinorEdit = this.isMinorEdit;
 	cloneObject.isInitialized = this.isInitialized;
 	cloneObject.editSummary = this.editSummary;

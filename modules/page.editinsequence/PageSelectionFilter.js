@@ -1,7 +1,7 @@
 function generateFilterForPageSelection( pageStatus ) {
 	return function ( pagelistArray, pageSelectionWidget ) {
-		var pageFilter = [];
-		for ( var i = 0; i < pagelistArray.length; i++ ) {
+		const pageFilter = [];
+		for ( let i = 0; i < pagelistArray.length; i++ ) {
 			if ( pagelistArray[ i ].pageStatus === pageStatus ) {
 				pageFilter.push( true );
 			} else {

@@ -1,11 +1,11 @@
-var OpenSeadragonController = require( './OpenseadragonController.js' );
-var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
+const OpenSeadragonController = require( './OpenseadragonController.js' );
+const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 
 ( function () {
 	'use strict';
 
 	mw.proofreadpage = {};
-	var
+	let
 		/**
 		 * Is the layout horizontal (ie is the scan image on top of the edit area)
 		 *
@@ -72,7 +72,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	 * @param {boolean|null} value value to be set
 	 */
 	function setBooleanUserOption( optionId, value ) {
-		var convertedValue = value ? 1 : 0;
+		const convertedValue = value ? 1 : 0;
 		if ( getBooleanUserOption( optionId ) !== value ) {
 			mw.user.options.set( optionId, convertedValue );
 			new mw.Api().saveOption( optionId, convertedValue );
@@ -86,7 +86,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	 * @param {string} [speed] Speed of the toggle. May be 'fast', 'slow' or undefined
 	 */
 	function toggleHeaders( visible, speed ) {
-		var method, setActive;
+		let method, setActive;
 		headersVisible = visible === undefined ? !headersVisible : visible;
 
 		method = headersVisible ? 'show' : 'hide';
@@ -109,16 +109,16 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	 * @param {boolean} [horizontal] Use horizontal layout, inverts if undefined
 	 */
 	function toggleLayout( horizontal ) {
-		var setActive;
+		let setActive;
 
 		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
 
 		// Record current layout status on both layout elements, for CSS convenience.
-		var $layoutParts = $imgContHorizontal.add( $editForm.find( '.prp-page-container' ) );
+		const $layoutParts = $imgContHorizontal.add( $editForm.find( '.prp-page-container' ) );
 		$layoutParts.toggleClass( 'prp-layout-is-vertical', !isLayoutHorizontal );
 		$layoutParts.toggleClass( 'prp-layout-is-horizontal', isLayoutHorizontal );
 
-		var idToInitialize = isLayoutHorizontal ?
+		const idToInitialize = isLayoutHorizontal ?
 			'prp-page-image-openseadragon-horizontal' :
 			'prp-page-image-openseadragon-vertical';
 		osdController.initialize( idToInitialize );
@@ -144,7 +144,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	 * Set up the editing interface
 	 */
 	function setupWikitextEditor() {
-		var zoomInterface = {
+		const zoomInterface = {
 			zoomIn: {
 				type: 'element',
 				element: new OO.ui.ButtonWidget( {
@@ -187,7 +187,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			}
 		};
 
-		var $wpTextbox = $editForm.find( '#wpTextbox1' );
+		const $wpTextbox = $editForm.find( '#wpTextbox1' );
 		$wpTextbox.wikiEditor( 'addToToolbar', {
 			section: 'secondary',
 			groups: {
@@ -197,7 +197,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			}
 		} );
 
-		var tools = {
+		const tools = {
 			other: {
 				label: mw.msg( 'proofreadpage-group-other' ),
 				tools: {
@@ -285,7 +285,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			$img = $( '.prp-page-image' ).find( 'img' );
 
 			if ( $img.length > 0 ) {
-				var imgHeight = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'height' );
+				const imgHeight = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'height' );
 				// eslint-disable-next-line no-jquery/no-global-selector
 				$( '#prp-page-image-openseadragon-vertical' ).css( 'height', imgHeight );
 				$editForm.find( '#wpTextbox1' ).removeAttr( 'rows cols' );
@@ -295,9 +295,9 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		}
 	}
 
-	$( function () {
+	$( () => {
 		// eslint-disable-next-line no-jquery/no-global-selector
-		var $img = $( '.prp-page-image' ).find( 'img' );
+		const $img = $( '.prp-page-image' ).find( 'img' );
 
 		osdController = new OpenSeadragonController( $img, getBooleanUserOption( 'usebetatoolbar' ) );
 		if ( $img.length ) {
@@ -331,7 +331,7 @@ var PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 
 		// Set up the preferences (header/footer and horizontal/vertical layout)
 		// when WikiEditor is active as well as when it's not.
-		mw.hook( 'wikiEditor.toolbarReady' ).add( function () {
+		mw.hook( 'wikiEditor.toolbarReady' ).add( () => {
 			setupWikitextEditor();
 			setupPreferences();
 		} );

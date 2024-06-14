@@ -28,7 +28,7 @@ OO.mixinClass( PagelistModel, OO.EventEmitter );
  * @param {Object|null} contd continue parameter to be appended to request
  */
 PagelistModel.prototype.fetchPagelistData = function ( contd ) {
-	var api = new mw.Api();
+	const api = new mw.Api();
 
 	api.post( {
 		action: 'query',
@@ -40,7 +40,7 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 		prppiiprop: 'ids|title|formattedpagenumber',
 		continue: contd && contd.continue || undefined,
 		prppiicontinue: contd && contd.prppiicontinue || undefined
-	} ).done( function ( response ) {
+	} ).done( ( response ) => {
 		if ( response.error ) {
 			this.handleError( response.error.info );
 			return;
@@ -61,7 +61,7 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 
 		this.setPageListData( this.response );
 		this.response = [];
-	}.bind( this ) ).catch( function ( err ) {
+	} ).catch( ( err ) => {
 		if ( err === 'http' ) {
 			this.handleError( mw.msg( 'prp-editinsequence-http-error-pagelist' ) );
 		} else if ( err === 'invalidtitle' ) {
@@ -70,12 +70,12 @@ PagelistModel.prototype.fetchPagelistData = function ( contd ) {
 			this.handleError( mw.msg( 'prp-editinsequence-unknown-error' ) );
 		}
 		mw.log.error( err );
-	}.bind( this ) );
+	} );
 };
 
 PagelistModel.prototype.fillProofreadMap = function ( pages ) {
-	var pageKeys = Object.keys( pages );
-	for ( var i = 0; i < pageKeys.length; i++ ) {
+	const pageKeys = Object.keys( pages );
+	for ( let i = 0; i < pageKeys.length; i++ ) {
 		this.proofreadMap[ pages[ pageKeys[ i ] ].title ] = pages[ pageKeys[ i ] ].proofread;
 	}
 };
@@ -101,8 +101,8 @@ PagelistModel.prototype.handleError = function ( err ) {
  * @fires firstReached Event denoting that the current page is the first page in the Pagelist sequence
  */
 PagelistModel.prototype.setPageListData = function ( response ) {
-	var tempPage = null;
-	for ( var i = 0; i < response.length; i++ ) {
+	let tempPage = null;
+	for ( let i = 0; i < response.length; i++ ) {
 		tempPage = response[ i ];
 		this.pagelist.push( {
 			pageNumber: tempPage.pageoffset,

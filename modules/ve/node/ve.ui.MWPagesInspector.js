@@ -65,13 +65,13 @@ ve.ui.MWPagesInspector.prototype.getSetupProcess = function ( data ) {
  * Creates the inspector form using the current data stored in this.mwData
  */
 ve.ui.MWPagesInspector.prototype.setupForm = function () {
-	var key,
+	let key,
 		isReadOnly = this.isReadOnly(),
 		attributes = this.mwData.attrs,
 		inspector = this;
 
 	this.pushPending();
-	this.getFileInfo( attributes.index ).done( function ( imageInfo ) {
+	this.getFileInfo( attributes.index ).done( ( imageInfo ) => {
 		inspector.addAttributeWidgetToForm( inspector.createIndexWidget(), 'index' );
 
 		inspector.addAttributeWidgetToForm( new OO.ui.DropdownInputWidget( {
@@ -141,7 +141,7 @@ ve.ui.MWPagesInspector.prototype.createIndexWidget = function () {
  * @return {number} the namespace id like 252
  */
 ve.ui.MWPagesInspector.prototype.getIdForNamespace = function ( namespaceName ) {
-	var namespaceIds = mw.config.get( 'wgNamespaceIds' );
+	const namespaceIds = mw.config.get( 'wgNamespaceIds' );
 
 	if ( namespaceName in namespaceIds ) {
 		return namespaceIds[ namespaceName ];
@@ -157,7 +157,7 @@ ve.ui.MWPagesInspector.prototype.getIdForNamespace = function ( namespaceName ) 
  * @return {Object[]}
  */
 ve.ui.MWPagesInspector.prototype.buildHeaderFieldSelectorOptions = function ( headerValue ) {
-	var headerInputOptions = [
+	const headerInputOptions = [
 		{ data: '', label: OO.ui.msg( 'proofreadpage-visualeditor-node-pages-inspector-indexselector-no' ) },
 		{ data: '1', label: OO.ui.msg( 'proofreadpage-visualeditor-node-pages-inspector-indexselector-yes' ) }
 	];
@@ -181,12 +181,10 @@ ve.ui.MWPagesInspector.prototype.getFileInfo = function ( fileName ) {
 			prop: 'imageinfo',
 			titles: 'File:' + fileName,
 			iiprop: 'size'
-		} ).then( function ( data ) {
-			var file = data.query.pages[ 0 ];
+		} ).then( ( data ) => {
+			const file = data.query.pages[ 0 ];
 			return file.imageinfo && file.imageinfo[ 0 ] || {};
-		}, function () {
-			return $.Deferred().resolve( {} );
-		} );
+		}, () => $.Deferred().resolve( {} ) );
 	} else {
 		return $.Deferred().resolve( {} );
 	}
@@ -199,7 +197,7 @@ ve.ui.MWPagesInspector.prototype.getFileInfo = function ( fileName ) {
  * @param {string} attributeKey the key of the attribute like "from"
  */
 ve.ui.MWPagesInspector.prototype.addAttributeWidgetToForm = function ( attributeInput, attributeKey ) {
-	var field = new OO.ui.FieldLayout(
+	const field = new OO.ui.FieldLayout(
 		attributeInput,
 		{
 			align: 'left',
@@ -246,7 +244,7 @@ ve.ui.MWPagesInspector.prototype.getTeardownProcess = function ( data ) {
  * @inheritdoc
  */
 ve.ui.MWPagesInspector.prototype.updateMwData = function ( mwData ) {
-	var key;
+	let key;
 
 	// Parent method
 	ve.ui.MWPagesInspector.super.prototype.updateMwData.call( this, mwData );

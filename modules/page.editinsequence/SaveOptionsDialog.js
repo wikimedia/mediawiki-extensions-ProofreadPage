@@ -1,4 +1,4 @@
-var SaveOptionsModel = require( './SaveOptionsModel.js' );
+const SaveOptionsModel = require( './SaveOptionsModel.js' );
 
 /**
  * Dialog asking for save metadata
@@ -18,7 +18,7 @@ OO.inheritClass( SaveOptionsDialog, OO.ui.ProcessDialog );
 
 SaveOptionsDialog.static.name = 'SaveOptionsDialog';
 
-var publishButtonLabel = mw.msg( mw.config.get( 'wgEditSubmitButtonLabelPublish' ) ? 'publishchanges' : 'savechanges' );
+const publishButtonLabel = mw.msg( mw.config.get( 'wgEditSubmitButtonLabelPublish' ) ? 'publishchanges' : 'savechanges' );
 
 SaveOptionsDialog.static.title = OO.ui.deferMsg( 'prp-editinsequence-save-dialog-title' );
 
@@ -144,7 +144,7 @@ SaveOptionsDialog.prototype.getSetupProcess = function ( data ) {
 		.next( function () {
 			this.saveModel = this.saveGlobalModel.clone();
 
-			var saveData = this.saveModel.getSaveData();
+			const saveData = this.saveModel.getSaveData();
 			this.editSummary.setValue( saveData.editSummary );
 			this.minorEditCheckbox.setValue( saveData.isMinorEdit );
 			this.shouldWatchlistCheckbox.setValue( saveData.shouldWatchlist );
@@ -161,14 +161,14 @@ SaveOptionsDialog.prototype.getActionProcess = function ( action ) {
 		return new OO.ui.Process( function () {
 			this.saveGlobalModel.merge( this.saveModel );
 			this.pushPending();
-			this.editorController.save().always( function ( result, errorResult ) {
+			this.editorController.save().always( ( result, errorResult ) => {
 				this.popPending();
 				this.close( { action: action } );
 				if ( errorResult && errorResult.error ) {
 					mw.notify( errorResult.error.info,
 						{ title: mw.msg( 'prp-editinsequence-could-not-save-edit' ), type: 'error' } );
 				}
-			}.bind( this ) );
+			} );
 		}, this );
 	} else if ( action === 'savesettings' ) {
 		return new OO.ui.Process( function () {

@@ -1,5 +1,5 @@
-var PagelistModel = require( './PagelistModel.js' );
-var PageSelectionWidget = require( './PageSelectionWidget.js' );
+const PagelistModel = require( './PagelistModel.js' );
+const PageSelectionWidget = require( './PageSelectionWidget.js' );
 
 /**
  * Manages displaying the filters for the page selection UI
@@ -48,10 +48,10 @@ PageSelectionLayout.prototype.register = function ( name, config ) {
  * @public
  */
 PageSelectionLayout.prototype.initialize = function () {
-	var keys = Object.keys( this.actions );
+	const keys = Object.keys( this.actions );
 	this.pages = [];
-	for ( var i = 0; i < keys.length; i++ ) {
-		var action = this.actions[ keys[ i ] ],
+	for ( let i = 0; i < keys.length; i++ ) {
+		const action = this.actions[ keys[ i ] ],
 			pageSelectionWidget = new PageSelectionWidget( this.pagelistModel );
 		this.pageSelectionWidgets[ keys[ i ] ] = pageSelectionWidget;
 		this.pages.push(

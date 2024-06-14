@@ -1,4 +1,4 @@
-var PagelistModel = require( './PagelistModel.js' );
+const PagelistModel = require( './PagelistModel.js' );
 
 /**
  * Page selection widget
@@ -27,9 +27,9 @@ OO.inheritClass( PageSelectionWidget, OO.ui.Widget );
  * Setup the pagelist when the PagelistModel finishes loading the pagelist
  */
 PageSelectionWidget.prototype.setupPagelist = function () {
-	var pagelist = this.pagelistModel.getPagelistData(),
+	const pagelist = this.pagelistModel.getPagelistData(),
 		pagelistButtons = [];
-	for ( var i = 0; i < pagelist.length; i++ ) {
+	for ( let i = 0; i < pagelist.length; i++ ) {
 		pagelistButtons.push( new OO.ui.ButtonOptionWidget( { label: String( pagelist[ i ].formattedPageNumber ), data: pagelist[ i ].pageNumber } ) );
 	}
 	this.pagelistButtonGroup.addItems( pagelistButtons );
@@ -58,9 +58,9 @@ PageSelectionWidget.prototype.onPagelistSelection = function () {
  * @public
  */
 PageSelectionWidget.prototype.setHighlightedButtons = function ( highlightMap ) {
-	var pagelist = this.pagelistModel.getPagelistData();
-	for ( var i = 0; i < highlightMap.length; i++ ) {
-		var button = this.pagelistButtonGroup.findItemFromData( pagelist[ i ].pageNumber );
+	const pagelist = this.pagelistModel.getPagelistData();
+	for ( let i = 0; i < highlightMap.length; i++ ) {
+		const button = this.pagelistButtonGroup.findItemFromData( pagelist[ i ].pageNumber );
 		button.toggleFramed( highlightMap[ i ] );
 	}
 };

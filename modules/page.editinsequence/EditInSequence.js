@@ -1,18 +1,18 @@
-var PagelistModel = require( './PagelistModel.js' );
-var PageModel = require( './PageModel.js' );
-var EditorController = require( './EditorController.js' );
-var OpenseadragonController = require( './OpenseadragonController.js' );
-var SaveOptionsDialog = require( './SaveOptionsDialog.js' );
-var SaveOptionsModel = require( './SaveOptionsModel.js' );
-var PageSelectionLayout = require( './PageSelectionLayout.js' );
-var pageSelectionFilter = require( './PageSelectionFilter.js' );
+const PagelistModel = require( './PagelistModel.js' );
+const PageModel = require( './PageModel.js' );
+const EditorController = require( './EditorController.js' );
+const OpenseadragonController = require( './OpenseadragonController.js' );
+const SaveOptionsDialog = require( './SaveOptionsDialog.js' );
+const SaveOptionsModel = require( './SaveOptionsModel.js' );
+const PageSelectionLayout = require( './PageSelectionLayout.js' );
+const pageSelectionFilter = require( './PageSelectionFilter.js' );
 /**
  * Implements the edit-in-sequence services
  *
  * @class
  */
 function EditInSequence() {
-	var currentPage = decodeURIComponent( location.hash.slice( 1 ) ) || mw.config.get( 'wgPageName' );
+	const currentPage = decodeURIComponent( location.hash.slice( 1 ) ) || mw.config.get( 'wgPageName' );
 	this.pagelistModel = new PagelistModel( currentPage, mw.config.get( 'prpIndexTitle' ) );
 	this.pageModel = new PageModel( this.pagelistModel );
 	this.saveOptionsModel = new SaveOptionsModel();
@@ -25,7 +25,7 @@ function EditInSequence() {
 	} );
 	OO.ui.getWindowManager().addWindows( [ this.saveOptionsDialog ] );
 	this.pageSelectionLayout = new PageSelectionLayout( this.pagelistModel );
-	for ( var i = 0; i < pageSelectionFilter.length; i++ ) {
+	for ( let i = 0; i < pageSelectionFilter.length; i++ ) {
 		this.pageSelectionLayout.register( pageSelectionFilter[ i ].name, pageSelectionFilter[ i ] );
 	}
 	mw.hook( 'ext.proofreadpage.page-selection-register-filter' ).fire( this.pageSelectionLayout );
@@ -34,9 +34,9 @@ function EditInSequence() {
 	if ( mw.proofreadpage.openseadragon ) {
 		this.osdController = new OpenseadragonController( mw.proofreadpage.openseadragon, this.pagelistModel );
 	} else {
-		mw.hook( 'ext.proofreadpage.osd-controller-available' ).add( function () {
+		mw.hook( 'ext.proofreadpage.osd-controller-available' ).add( () => {
 			this.osdController = new OpenseadragonController( mw.proofreadpage.openseadragon, this.pagelistModel );
-		}.bind( this ) );
+		} );
 	}
 
 	this.pagelistModel.on( 'error', this.showError );

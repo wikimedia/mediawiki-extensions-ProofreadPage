@@ -29,7 +29,7 @@ ve.ce.MWPagesNode.static.rendersEmpty = true;
  * @inheritdoc
  */
 ve.ce.MWPagesNode.static.getDescription = function ( model ) {
-	var indexTitle = new mw.Title( model.getIndexName() );
+	const indexTitle = new mw.Title( model.getIndexName() );
 	return ve.msg( 'proofreadpage-visualeditor-node-pages-inspector-description', indexTitle.getNameText() );
 };
 

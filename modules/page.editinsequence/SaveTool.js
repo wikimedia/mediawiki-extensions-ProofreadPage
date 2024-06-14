@@ -31,7 +31,7 @@ SaveTool.prototype.onSelect = function () {
 		this.toolbar.eis.openSaveDialog();
 		this.toolbar.eis.saveOptionsModel.setIntialized();
 	} else {
-		this.toolbar.eis.editorController.save().always( function ( result, errorResult ) {
+		this.toolbar.eis.editorController.save().always( ( result, errorResult ) => {
 			if ( errorResult && errorResult.error ) {
 				mw.notify( errorResult.error.info,
 					{ title: mw.msg( 'prp-editinsequence-could-not-save-edit' ), type: 'error' } );

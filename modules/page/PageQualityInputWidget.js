@@ -10,7 +10,7 @@ function PageQualityInputWidget( config ) {
 
 	this.connect( this, { change: 'updateSummaryPrefix' } );
 
-	this.radioSelectWidget.items.forEach( function ( e ) {
+	this.radioSelectWidget.items.forEach( ( e ) => {
 		// Add two classes that were added PHP-side (to a different structure).
 		// The following class names may be added here:
 		// * quality0
@@ -29,7 +29,7 @@ OO.inheritClass( PageQualityInputWidget, OO.ui.RadioSelectInputWidget );
  */
 PageQualityInputWidget.prototype.setDisabled = function ( disabled ) {
 	PageQualityInputWidget.super.prototype.setDisabled.call( this, disabled );
-	this.radioSelectWidget.items.forEach( function ( e ) {
+	this.radioSelectWidget.items.forEach( ( e ) => {
 		e.setDisabled( disabled );
 	} );
 };
@@ -39,7 +39,7 @@ PageQualityInputWidget.prototype.setDisabled = function ( disabled ) {
  */
 PageQualityInputWidget.prototype.updateSummaryPrefix = function () {
 	// eslint-disable-next-line no-jquery/no-global-selector
-	var $summary = $( 'input#wpSummary, #wpSummary > input' ),
+	const $summary = $( 'input#wpSummary, #wpSummary > input' ),
 		// The following messages are used here:
 		// * proofreadpage_quality0_summary
 		// * proofreadpage_quality1_summary

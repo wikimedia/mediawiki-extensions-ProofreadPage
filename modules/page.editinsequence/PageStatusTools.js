@@ -12,7 +12,7 @@ function createPageStatusTool( name, title, pageStatus ) {
 	 *
 	 * @class
 	 */
-	var PageStatusTool = function () {
+	const PageStatusTool = function () {
 		PageStatusTool.super.apply( this, arguments );
 		this.isCurrentSelection = false;
 		this.pageStatus = pageStatus;
@@ -55,10 +55,10 @@ function PageStatusMenu() {
 	this.setDisabled( true );
 	this.hasPageQualityRight = false;
 	this.hasPageQualityAdminRight = false;
-	this.getUserRights().then( function ( rights ) {
+	this.getUserRights().then( ( rights ) => {
 		this.hasPageQualityRight = rights.indexOf( 'pagequality' ) !== -1;
 		this.hasPageQualityAdminRight = rights.indexOf( 'pagequality-admin' ) !== -1;
-	}.bind( this ) ).then( this.onPageModelUpdated.bind( this ) );
+	} ).then( this.onPageModelUpdated.bind( this ) );
 	this.$element.addClass( 'prp-editinsequence-page-status' );
 }
 
@@ -67,12 +67,12 @@ OO.inheritClass( PageStatusMenu, OO.ui.MenuToolGroup );
 PageStatusMenu.static.name = 'pagestatusmenu';
 
 PageStatusMenu.prototype.getUserRights = function () {
-	var api = new mw.Api();
+	const api = new mw.Api();
 	return api.get( {
 		action: 'query',
 		meta: 'userinfo',
 		uiprop: 'rights'
-	} ).then( function ( data ) {
+	} ).then( ( data ) => {
 		if ( data.query && data.query.userinfo && data.query.userinfo.rights ) {
 			return data.query.userinfo.rights;
 		} else {
@@ -82,7 +82,7 @@ PageStatusMenu.prototype.getUserRights = function () {
 };
 
 PageStatusMenu.prototype.onUpdateState = function () {
-	var name;
+	let name;
 
 	for ( name in this.tools ) {
 		if ( this.tools[ name ].isActive() ) {
@@ -97,7 +97,7 @@ PageStatusMenu.prototype.onUpdateState = function () {
  * Set the page status when the page is updated by navigating
  */
 PageStatusMenu.prototype.onPageModelUpdated = function () {
-	var status = this.toolbar.eis.pageModel.getPageStatus().status,
+	let status = this.toolbar.eis.pageModel.getPageStatus().status,
 		user = this.toolbar.eis.pageModel.getPageStatus().lastUser, name;
 	for ( name in this.tools ) {
 		if ( this.tools[ name ].getPageStatus() === status ) {
@@ -131,7 +131,7 @@ PageStatusMenu.prototype.onPageUpdated = function () {
 /**
  * Array of PageStatusTools which will be added to the toolbar
  */
-var pageStatuses = [
+const pageStatuses = [
 	createPageStatusTool( 'without_text', mw.msg( 'proofreadpage_quality0_summary' ), 0 ),
 	createPageStatusTool( 'not_proofread', mw.msg( 'proofreadpage_quality1_summary' ), 1 ),
 	createPageStatusTool( 'problematic', mw.msg( 'proofreadpage_quality2_summary' ), 2 ),

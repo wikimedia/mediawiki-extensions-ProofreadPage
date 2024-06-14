@@ -1,4 +1,4 @@
-var PagelistModel = require( './PagelistModel.js' );
+const PagelistModel = require( './PagelistModel.js' );
 
 /**
  * Model to store data about currently editing page
@@ -41,7 +41,7 @@ OO.mixinClass( PageModel, OO.EventEmitter );
 PageModel.prototype.fetchData = function ( page ) {
 	this.savePage();
 	this.emit( 'beforePageModelUpdate' );
-	var api = new mw.Api();
+	const api = new mw.Api();
 	this.pageName = page;
 
 	api.post( {
@@ -51,11 +51,11 @@ PageModel.prototype.fetchData = function ( page ) {
 		titles: page,
 		rvprop: 'content',
 		rvslots: 'main'
-	} ).then( function ( result ) {
+	} ).then( ( result ) => {
 		this.setInitialPageData( result );
 		this.setPageData();
 		this.loadSavedPage();
-	}.bind( this ) ).catch( function ( err ) {
+	} ).catch( function ( err ) {
 		if ( err === 'http' ) {
 			this.handleError( mw.msg( 'prp-editinsequence-http-error-page' ) );
 		} else {
@@ -101,7 +101,7 @@ PageModel.prototype.hasChanges = function () {
  * Loads unsaved edits to a page if present
  */
 PageModel.prototype.loadSavedPage = function () {
-	var savedPage = mw.storage.getObject( 'prp-editinsequence-page-save-' + this.pageName );
+	const savedPage = mw.storage.getObject( 'prp-editinsequence-page-save-' + this.pageName );
 	if ( !savedPage ) {
 		return;
 	}
@@ -138,16 +138,16 @@ PageModel.prototype.handleError = function ( err ) {
  * @fires pageModelUpdated Event denoting that the PageModel has been updated with data for current page
  */
 PageModel.prototype.setInitialPageData = function ( data ) {
-	var pageid = data.query.pageids[ 0 ];
+	const pageid = data.query.pageids[ 0 ];
 
 	if ( parseInt( pageid ) === -1 ) {
 		this.setInitialFallbackPageData();
 		return;
 	}
 
-	var wikitext = data.query.pages[ pageid ].revisions[ 0 ].slots.main[ '*' ];
+	const wikitext = data.query.pages[ pageid ].revisions[ 0 ].slots.main[ '*' ];
 
-	var pageData = this.parsePageData( wikitext );
+	const pageData = this.parsePageData( wikitext );
 
 	this.initialHeader = pageData.header;
 	this.initialBody = pageData.body;
@@ -176,12 +176,12 @@ PageModel.prototype.setInitialPageData = function ( data ) {
  * @return {Object<string>} Header, body, footer and page status as identified from the wikitext
  */
 PageModel.prototype.parsePageData = function ( wikitext ) {
-	var pageRegex = /^<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>$/;
-	var pageQualityRegexPattern1 =
+	const pageRegex = /^<noinclude>([\s\S]*?)<\/noinclude>([\s\S]*)<noinclude>([\s\S]*?)<\/noinclude>$/;
+	const pageQualityRegexPattern1 =
 	/^<pagequality level="([0-4])" user="([\s\S]*?)" *(?:\/>|> *<\/pagequality>)([\s\S]*?)$/;
-	var pageQualityRegexPattern2 =
+	const pageQualityRegexPattern2 =
 	/^<pagequality user="([\s\S]*?)" level="([0-4])" *(?:\/>|> *<\/pagequality>)([\s\S]*?)$/;
-	var parsedWikitext = pageRegex.exec( wikitext );
+	const parsedWikitext = pageRegex.exec( wikitext );
 	if ( !parsedWikitext || parsedWikitext.length !== 4 ) {
 		// something has gone terribly wrong, so just return the raw text
 		// as the body
@@ -196,12 +196,12 @@ PageModel.prototype.parsePageData = function ( wikitext ) {
 		};
 	}
 
-	var header = parsedWikitext[ 1 ];
-	var body = parsedWikitext[ 2 ];
-	var footer = parsedWikitext[ 3 ];
+	let header = parsedWikitext[ 1 ];
+	const body = parsedWikitext[ 2 ];
+	const footer = parsedWikitext[ 3 ];
 
-	var parsedPageQuality = pageQualityRegexPattern1.exec( header );
-	var pattern = 1;
+	let parsedPageQuality = pageQualityRegexPattern1.exec( header );
+	let pattern = 1;
 
 	if ( !parsedPageQuality || parsedPageQuality.length !== 4 ) {
 		parsedPageQuality = pageQualityRegexPattern2.exec( header );
@@ -221,7 +221,7 @@ PageModel.prototype.parsePageData = function ( wikitext ) {
 		}
 	}
 
-	var pageStatus = {};
+	const pageStatus = {};
 	if ( pattern === 1 ) {
 		pageStatus.status = parseInt( parsedPageQuality[ 1 ] );
 		pageStatus.lastUser = parsedPageQuality[ 2 ];
@@ -351,7 +351,7 @@ PageModel.prototype.getExists = function () {
  * @return {string} wikiText
  */
 PageModel.prototype.getWikitext = function ( header, body, footer, pageStatus ) {
-	var wikitext = '<noinclude><pagequality level="$level" user="$user" />$header</noinclude>$body<noinclude>$footer</noinclude>';
+	let wikitext = '<noinclude><pagequality level="$level" user="$user" />$header</noinclude>$body<noinclude>$footer</noinclude>';
 	wikitext = wikitext.replace( '$header', header );
 	wikitext = wikitext.replace( '$body', body );
 	wikitext = wikitext.replace( '$footer', footer );

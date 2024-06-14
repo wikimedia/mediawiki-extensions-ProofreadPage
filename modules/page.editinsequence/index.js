@@ -1,5 +1,5 @@
 ( function () {
-	var Toolbar = require( './Toolbar.js' ),
+	const Toolbar = require( './Toolbar.js' ),
 		// eslint-disable-next-line no-jquery/no-global-selector
 		$content = $( '#content' ),
 		eisToolbar = new Toolbar();

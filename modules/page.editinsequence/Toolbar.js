@@ -1,10 +1,10 @@
-var EditInSequence = require( './EditInSequence.js' );
-var PageNavTools = require( './PageNavTools.js' );
-var PreviewTool = require( './PreviewTool.js' );
-var PageStatusTools = require( './PageStatusTools.js' );
-var SaveTool = require( './SaveTool.js' );
-var SaveOptionsTool = require( './SaveOptionsTool.js' );
-var PageSelectionTool = require( './PageSelectionTool.js' );
+const EditInSequence = require( './EditInSequence.js' );
+const PageNavTools = require( './PageNavTools.js' );
+const PreviewTool = require( './PreviewTool.js' );
+const PageStatusTools = require( './PageStatusTools.js' );
+const SaveTool = require( './SaveTool.js' );
+const SaveOptionsTool = require( './SaveOptionsTool.js' );
+const PageSelectionTool = require( './PageSelectionTool.js' );
 
 /**
  * EditInSequence specific modifications to the standard toolbar
@@ -40,9 +40,9 @@ function EisToolbarPanel() {
 	this.toolFactory.register( PageSelectionTool );
 
 	this.toolGroupFactory.register( PageStatusTools.PageStatusMenu );
-	PageStatusTools.pageStatuses.forEach( function ( elem ) {
+	PageStatusTools.pageStatuses.forEach( ( elem ) => {
 		this.toolFactory.register( elem );
-	}.bind( this ) );
+	} );
 
 	this.eis = new EditInSequence();
 

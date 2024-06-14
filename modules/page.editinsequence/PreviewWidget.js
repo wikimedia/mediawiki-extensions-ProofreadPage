@@ -1,4 +1,4 @@
-var preview = require( 'mediawiki.page.preview' );
+const preview = require( 'mediawiki.page.preview' );
 
 /**
  * Encapsulates the previewing functionality exposed via the EditorController interface
@@ -40,10 +40,10 @@ PreviewWidget.prototype.updatePreview = function ( wikitext, pagename ) {
 			title: pagename,
 			$previewNode: this.$previewArea,
 			$textareaNode: this.$fullText
-		} ).then( function () {
+		} ).then( () => {
 			this.popPending();
 			this.$previewArea.show();
-		}.bind( this ) ).catch( function ( err, response ) {
+		} ).catch( ( err, response ) => {
 			if ( err !== 'http' ) {
 				this.showError( 'prp-edit-in-sequence-preview-api-error', response.error.info );
 			} else {
@@ -51,7 +51,7 @@ PreviewWidget.prototype.updatePreview = function ( wikitext, pagename ) {
 			}
 			this.$previewArea.hide();
 			this.popPending();
-		}.bind( this ) );
+		} );
 	}
 };
 

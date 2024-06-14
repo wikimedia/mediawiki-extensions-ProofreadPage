@@ -1,7 +1,7 @@
-var PagelistModel = require( './PagelistModel.js' );
-var PageModel = require( './PageModel.js' );
-var PreviewWidget = require( './PreviewWidget.js' );
-var SaveOptionsModel = require( './SaveOptionsModel.js' );
+const PagelistModel = require( './PagelistModel.js' );
+const PageModel = require( './PageModel.js' );
+const PreviewWidget = require( './PreviewWidget.js' );
+const SaveOptionsModel = require( './SaveOptionsModel.js' );
 
 /**
  * Preforms actions that require controlling with the editing interface
@@ -60,7 +60,7 @@ OO.mixinClass( EditorController, OO.EventEmitter );
  * @param {jQuery} $textbox textbox corresponding to the CodeMirror extension
  */
 EditorController.prototype.onCodeMirrorSwitch = function ( enabled, $textbox ) {
-	var $oldBody = this.$body;
+	const $oldBody = this.$body;
 	this.$body = $textbox;
 	if ( enabled ) {
 		this.$body.on( 'DOMNodeInserted DOMNodeRemoved', this.onBodyChange.bind( this ) );
@@ -111,7 +111,7 @@ EditorController.prototype.toggleUnsavedEditIndicator = function ( show ) {
  * is loaded.
  */
 EditorController.prototype.onLoadUnsavedEdit = function () {
-	var editorData = this.pageModel.getEditorData();
+	const editorData = this.pageModel.getEditorData();
 	this.$header.val( editorData.header );
 	this.$body.textSelection( 'setContents', editorData.body );
 	this.$footer.val( editorData.footer );
@@ -152,7 +152,7 @@ EditorController.prototype.onPageModelUpdated = function () {
  * Update the editor interface with data from pageModel
  */
 EditorController.prototype.updateEditorData = function () {
-	var editorData = this.pageModel.getInitialEditorData();
+	const editorData = this.pageModel.getInitialEditorData();
 	this.$heading.text( this.pageModel.getPageName() );
 	this.$header.val( editorData.header );
 	this.$body.val( editorData.body );
@@ -217,7 +217,7 @@ EditorController.prototype.hidePreview = function () {
 EditorController.prototype.save = function () {
 	this.forceSync();
 	this.toggleUnsavedEditIndicator( false );
-	var saveData = this.saveModel.getSaveData(),
+	const saveData = this.saveModel.getSaveData(),
 		wikiText = this.pageModel.getCurrentWikitext(),
 		pageName = this.pageModel.getPageName();
 	return this.api.postWithToken( 'csrf', {
@@ -232,7 +232,7 @@ EditorController.prototype.save = function () {
 		headers: {
 			'X-User-Agent': 'EditInSequence'
 		}
-	} ).then( function ( result ) {
+	} ).then( ( result ) => {
 		if ( result && result.edit && result.edit.result ) {
 			this.pageModel.setInitialPageDataToCurrent();
 			this.pagelistModel.setPageStatus( this.pageModel.getPageStatus().status );
@@ -252,7 +252,7 @@ EditorController.prototype.save = function () {
 		}
 
 		return result;
-	}.bind( this ) );
+	} );
 };
 
 module.exports = EditorController;

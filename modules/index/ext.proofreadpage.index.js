@@ -1,4 +1,4 @@
-$( function () {
+$( () => {
 	// eslint-disable-next-line no-jquery/no-global-selector
 	$( '.prp-fieldLayout-help' ).each( function () {
 		OO.ui.infuse( this );
@@ -7,13 +7,11 @@ $( function () {
 	// Categories
 	// eslint-disable-next-line no-jquery/no-global-selector
 	$( '#wpPrpCategories' ).each( function () {
-		var categoryInputWidget = OO.ui.infuse( this.parentNode ),
+		const categoryInputWidget = OO.ui.infuse( this.parentNode ),
 			categorySelector = new mw.widgets.CategoryMultiselectWidget( {} );
 
-		categorySelector.setValue( categoryInputWidget.getValue().split( '|' ).filter( function ( value ) {
-			return value !== '';
-		} ) );
-		categorySelector.on( 'change', function () {
+		categorySelector.setValue( categoryInputWidget.getValue().split( '|' ).filter( ( value ) => value !== '' ) );
+		categorySelector.on( 'change', () => {
 			categoryInputWidget.setValue( categorySelector.getValue().join( '|' ) );
 		} );
 

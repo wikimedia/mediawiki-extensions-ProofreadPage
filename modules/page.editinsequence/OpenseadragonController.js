@@ -1,4 +1,4 @@
-var PagelistModel = require( './PagelistModel.js' );
+const PagelistModel = require( './PagelistModel.js' );
 
 /**
  * A class that controls Openseadragon (OSD) behaviour based on events sent from the pagelistModel.
@@ -25,7 +25,7 @@ function OpenseadragonController( osdInstance, pagelistModel ) {
  * @param {Object} osdParams Unmodified Openseadragon init parameters
  */
 OpenseadragonController.prototype.initializer = function ( osdParams ) {
-	var currentImageSet = this.imageSet[ this.currentPage ];
+	const currentImageSet = this.imageSet[ this.currentPage ];
 	if ( currentImageSet ) {
 		osdParams.tileSources.levels[ 0 ].url = currentImageSet[ 0 ];
 		osdParams.tileSources.levels[ 1 ].url = currentImageSet[ 1 ];
@@ -41,7 +41,7 @@ OpenseadragonController.prototype.initializer = function ( osdParams ) {
  * @param {string} currentPage The page the user is currently on
  */
 OpenseadragonController.prototype.update = function ( currentPage ) {
-	var api = new mw.Api(),
+	const api = new mw.Api(),
 		nextPage = this.pagelistModel.getNext(),
 		prevPage = this.pagelistModel.getPrev(),
 		isCurrentPageRendered = !!this.imageSet[ currentPage ],
@@ -66,12 +66,12 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
 	if ( prevPage.pageNumber !== -1 ) {
 		apiParams.titles += '|' + prevPage.title;
 	}
-	api.get( apiParams ).then( function ( response ) {
-		var pages = response.query.pages;
-		for ( var i = 0; i < pages.length; i++ ) {
-			var ifp = pages[ i ].imagesforpage;
+	api.get( apiParams ).then( ( response ) => {
+		const pages = response.query.pages;
+		for ( let i = 0; i < pages.length; i++ ) {
+			const ifp = pages[ i ].imagesforpage;
 			if ( ifp && !this.imageSet[ pages[ i ].title ] && ifp.thumbnail ) {
-				var ifpArray = [ ifp.thumbnail, ifp.responsiveimages[ '1.5' ], ifp.responsiveimages[ '2' ] ];
+				const ifpArray = [ ifp.thumbnail, ifp.responsiveimages[ '1.5' ], ifp.responsiveimages[ '2' ] ];
 				this.imageSet[ pages[ i ].title ] = ifpArray;
 				this.preload( ifpArray );
 			}
@@ -80,7 +80,7 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
 			this.currentPage = currentPage;
 			this.osdInstance.forceInitialize();
 		}
-	}.bind( this ) );
+	} );
 };
 
 /**
@@ -89,8 +89,8 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
  * @param {Array<string>} ifpArray List of image to preload
  */
 OpenseadragonController.prototype.preload = function ( ifpArray ) {
-	for ( var i = 0; i < ifpArray.length; i++ ) {
-		var img = new Image();
+	for ( let i = 0; i < ifpArray.length; i++ ) {
+		const img = new Image();
 		img.src = ifpArray[ i ];
 		this.preloadSet.push( img );
 	}

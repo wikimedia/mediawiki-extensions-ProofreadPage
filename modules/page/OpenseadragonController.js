@@ -1,4 +1,4 @@
-var OpenSeadragon = require( 'ext.proofreadpage.openseadragon' );
+const OpenSeadragon = require( 'ext.proofreadpage.openseadragon' );
 
 function OpenSeadragonController( $img, usebetatoolbar ) {
 	OO.EventEmitter.call( this );
@@ -30,21 +30,21 @@ OpenSeadragonController.prototype.constructImagePyramidSource = function () {
 		return;
 	}
 
-	var width = parseInt( this.img.getAttribute( 'width' ) );
-	var height = parseInt( this.img.getAttribute( 'height' ) );
-	var levels = [ {
+	const width = parseInt( this.img.getAttribute( 'width' ) );
+	const height = parseInt( this.img.getAttribute( 'height' ) );
+	const levels = [ {
 		url: this.img.getAttribute( 'src' ),
 		width: width,
 		height: height
 	} ];
 
 	// Occasionally, there is no srcset set on the server
-	var srcSet = this.img.getAttribute( 'srcset' );
+	const srcSet = this.img.getAttribute( 'srcset' );
 	if ( srcSet ) {
-		var parts = srcSet.split( ' ' );
-		for ( var i = 0; i < parts.length - 1; i += 2 ) {
-			var srcUrl = parts[ i ];
-			var srcFactor = parseFloat( parts[ i + 1 ].replace( /x,?/, '' ) );
+		const parts = srcSet.split( ' ' );
+		for ( let i = 0; i < parts.length - 1; i += 2 ) {
+			const srcUrl = parts[ i ];
+			const srcFactor = parseFloat( parts[ i + 1 ].replace( /x,?/, '' ) );
 
 			levels.push( {
 				url: srcUrl,
@@ -71,10 +71,10 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 		return;
 	}
 
-	var tileSource = this.constructImagePyramidSource( this.img );
+	const tileSource = this.constructImagePyramidSource( this.img );
 
 	// Set the OSD strings before setting up the buttons
-	var osdStringMap = [
+	const osdStringMap = [
 		[ 'Tooltips.Home', 'proofreadpage-button-reset-zoom-label' ],
 		[ 'Tooltips.ZoomIn', 'proofreadpage-button-zoom-in-label' ],
 		[ 'Tooltips.ZoomOut', 'proofreadpage-button-zoom-out-label' ],
@@ -82,12 +82,12 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 		[ 'Tooltips.RotateRight', 'proofreadpage-button-rotate-right-label' ]
 	];
 
-	osdStringMap.forEach( function ( mapping ) {
+	osdStringMap.forEach( ( mapping ) => {
 		// eslint-disable-next-line mediawiki/msg-doc
 		OpenSeadragon.setString( mapping[ 0 ], mw.msg( mapping[ 1 ] ) );
 	} );
 
-	var osdParams = {
+	const osdParams = {
 		id: id,
 		showFullPageControl: false,
 		preserveViewport: true,
@@ -130,27 +130,27 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 
 	this.viewer.viewport.goHome = function () {
 		if ( this.viewer ) {
-			var oldBounds = this.viewer.viewport.getBounds();
-			var newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
+			const oldBounds = this.viewer.viewport.getBounds();
+			const newBounds = new OpenSeadragon.Rect( 0, 0, 1, oldBounds.height / oldBounds.width );
 			this.viewer.viewport.fitBounds( newBounds, true );
 		}
 	}.bind( this );
 
-	this.viewer.addHandler( 'open', function () {
+	this.viewer.addHandler( 'open', () => {
 		this.initializeViewportFromSavedData( id );
 		this.emit( 'prp-osd-after-creation', this.viewer );
 		// inform any listeners that the OSD viewer is ready
 		mw.hook( 'ext.proofreadpage.osd-viewer-ready' ).fire( this.viewer );
-	}.bind( this ) );
+	} );
 
-	this.viewer.addHandler( 'viewport-change', function () {
+	this.viewer.addHandler( 'viewport-change', () => {
 		// the viewer may have been already destroyed on H/V swap
 		if ( !this.viewer ) {
 			return;
 		}
 
-		var center = this.viewer.viewport.getCenter();
-		var newViewport = {
+		const center = this.viewer.viewport.getCenter();
+		const newViewport = {
 			rotation: this.viewer.viewport.getRotation(),
 			zoom: this.viewer.viewport.getZoom(),
 			x: center.x,
@@ -158,7 +158,7 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 		};
 
 		mw.storage.setObject( this.getStorageKey( id ), newViewport, 31536000 );
-	}.bind( this ) );
+	} );
 
 	this.lastId = id;
 };
@@ -170,7 +170,7 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
  * @param {string} id Current image orientation
  */
 OpenSeadragonController.prototype.initializeViewportFromSavedData = function ( id ) {
-	var viewportData = mw.storage.getObject( this.getStorageKey( id ) );
+	const viewportData = mw.storage.getObject( this.getStorageKey( id ) );
 	if ( viewportData === null ) {
 		return;
 	}
@@ -199,7 +199,7 @@ OpenSeadragonController.prototype.forceInitialize = function () {
  * @public
  */
 OpenSeadragonController.prototype.getCurrentImage = function () {
-	var url = '';
+	let url = '';
 	try {
 		url = this.viewer.source.getTileUrl( this.viewer.source.getClosestLevel(), 0, 0 );
 	} catch ( e ) {
@@ -209,7 +209,7 @@ OpenSeadragonController.prototype.getCurrentImage = function () {
 	// Normalize the URL, here we create anchor tag and set the href. This
 	// should use the browser's inbuilt URL resolver to create a canonical URL
 	// and should take care of most sneaky edge cases
-	var anchorTag = document.createElement( 'a' );
+	const anchorTag = document.createElement( 'a' );
 	anchorTag.href = url;
 
 	return anchorTag.href;
