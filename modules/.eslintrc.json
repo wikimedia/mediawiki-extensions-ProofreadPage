@@ -7,7 +7,6 @@
 	],
 	"rules": {
 		"max-len": "off",
-		"es-x/no-regexp-prototype-flags": "warn",
-		"prefer-const": "warn"
+		"es-x/no-regexp-prototype-flags": "warn"
 	}
 }

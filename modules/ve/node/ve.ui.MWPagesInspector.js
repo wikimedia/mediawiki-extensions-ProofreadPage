@@ -65,8 +65,7 @@ ve.ui.MWPagesInspector.prototype.getSetupProcess = function ( data ) {
  * Creates the inspector form using the current data stored in this.mwData
  */
 ve.ui.MWPagesInspector.prototype.setupForm = function () {
-	let key,
-		isReadOnly = this.isReadOnly(),
+	const isReadOnly = this.isReadOnly(),
 		attributes = this.mwData.attrs,
 		inspector = this;
 
@@ -101,7 +100,7 @@ ve.ui.MWPagesInspector.prototype.setupForm = function () {
 		inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'fromsection' );
 		inspector.addAttributeWidgetToForm( new OO.ui.TextInputWidget(), 'tosection' );
 
-		for ( key in attributes ) {
+		for ( const key in attributes ) {
 			if ( key in inspector.attributeInputs ) {
 				inspector.attributeInputs[ key ].setValue( attributes[ key ] );
 			} else {
@@ -111,7 +110,7 @@ ve.ui.MWPagesInspector.prototype.setupForm = function () {
 			}
 		}
 
-		for ( key in inspector.attributeInputs ) {
+		for ( const key in inspector.attributeInputs ) {
 			if ( inspector.attributeInputs[ key ].setReadOnly ) {
 				inspector.attributeInputs[ key ].setReadOnly( isReadOnly );
 			} else {
@@ -244,13 +243,11 @@ ve.ui.MWPagesInspector.prototype.getTeardownProcess = function ( data ) {
  * @inheritdoc
  */
 ve.ui.MWPagesInspector.prototype.updateMwData = function ( mwData ) {
-	let key;
-
 	// Parent method
 	ve.ui.MWPagesInspector.super.prototype.updateMwData.call( this, mwData );
 
 	mwData.attrs = mwData.attrs || {};
-	for ( key in this.attributeInputs ) {
+	for ( const key in this.attributeInputs ) {
 		mwData.attrs[ key ] = this.attributeInputs[ key ].getValue();
 	}
 };

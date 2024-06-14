@@ -45,11 +45,6 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 	const pagelistRegex = /<pagelist[^<]*?\/>/gmi,
 		parameters = new Parameters();
 
-	let pagelistText,
-		tagEndMatches,
-		parsedPagelist,
-		attrs;
-
 	wikitext = wikitext || this.wikitext;
 
 	if ( pagelistRegex.test( wikitext ) ) {
@@ -58,9 +53,9 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 			this.emit( 'parsingerror', 'proofreadpage-pagelist-parsing-error-morethanone' );
 			return;
 		} else {
-			pagelistText = pagelistRegex.exec( wikitext )[ 0 ];
+			let pagelistText = pagelistRegex.exec( wikitext )[ 0 ];
 
-			tagEndMatches = pagelistText.match( '/>' );
+			const tagEndMatches = pagelistText.match( '/>' );
 
 			// hack to deal with <pagelist 1=2/> type stuff which
 			// makes the first element render as 2/ when using DOMParser.
@@ -69,7 +64,7 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 					' ' + pagelistText.slice( Math.max( 0, tagEndMatches.index ) );
 			}
 
-			parsedPagelist = ( new DOMParser() )
+			const parsedPagelist = ( new DOMParser() )
 				.parseFromString( pagelistText, 'text/html' );
 
 			if ( !parsedPagelist.body.childNodes[ 0 ].hasAttributes() ) {
@@ -79,7 +74,7 @@ PagelistInputWidgetModel.prototype.generateParametersFromWikitext = function ( w
 				return;
 			}
 
-			attrs = parsedPagelist.body.childNodes[ 0 ].attributes;
+			const attrs = parsedPagelist.body.childNodes[ 0 ].attributes;
 			for ( let i = 0; i < attrs.length; i++ ) {
 				// Make the 'empty' page numbering system explicitly fail
 				// until we can figure out a sane way to get it to not misbehave

@@ -62,12 +62,7 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 		iiprop: 'url',
 		iiurlparam: 'page' + subpage + '-' + imageSize + 'px'
 	} ).done( ( response ) => {
-		let imageUrl = null,
-			imageZoomUrlOnePointFive = null,
-			imageZoomUrlTwo = null,
-			imageWidth = null,
-			imageHeight = null,
-			imageInfo;
+		let imageInfo;
 
 		try {
 			imageInfo = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ];
@@ -77,11 +72,11 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 			return;
 		}
 
-		imageUrl = imageInfo.thumburl;
-		imageZoomUrlOnePointFive = imageInfo.responsiveUrls[ 1.5 ];
-		imageZoomUrlTwo = imageInfo.responsiveUrls[ 2 ];
-		imageWidth = imageInfo.thumbwidth;
-		imageHeight = imageInfo.thumbheight;
+		const imageUrl = imageInfo.thumburl;
+		const imageZoomUrlOnePointFive = imageInfo.responsiveUrls[ 1.5 ];
+		const imageZoomUrlTwo = imageInfo.responsiveUrls[ 2 ];
+		const imageWidth = imageInfo.thumbwidth;
+		const imageHeight = imageInfo.thumbheight;
 
 		// incase thumbUrl doesn't exist
 		if ( !imageUrl ) {

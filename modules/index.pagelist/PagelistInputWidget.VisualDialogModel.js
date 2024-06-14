@@ -233,27 +233,26 @@ VisualDialogModel.prototype.removeUnecessaryNumbering = function ( params, parti
  * @return {mw.proofreadpage.PagelistInputWidget.Parameters}
  */
 VisualDialogModel.prototype.mergeContigousRanges = function ( partialList, params, start, end, label, all ) {
-	let dupStart, dupEnd;
 	if ( partialList[ start - 1 ] && partialList[ start - 1 ][ 0 ].type === label &&
 		partialList[ end + 1 ] && partialList[ end + 1 ][ 0 ].type === label && all ) {
 		// There are ranges both in front and behind the current range with the same label
 		// Don't merge this if the all argument is not set
-		dupStart = partialList[ start - 1 ][ 0 ].from;
-		dupEnd = partialList[ end + 1 ][ 0 ].to;
+		const dupStart = partialList[ start - 1 ][ 0 ].from;
+		const dupEnd = partialList[ end + 1 ][ 0 ].to;
 		params.delete( partialList[ start - 1 ][ 0 ].from + 'to' + partialList[ start - 1 ][ 0 ].to );
 		params.delete( partialList[ end + 1 ][ 0 ].from + 'to' + partialList[ end + 1 ][ 0 ].to );
 		params.set( dupStart + 'to' + dupEnd, label );
 	} else if ( partialList[ start - 1 ] && partialList[ start - 1 ][ 0 ].type === label ) {
 		// Range in front of the current range have the same label
-		dupStart = partialList[ start - 1 ][ 0 ].from;
-		dupEnd = partialList[ start - 1 ][ 0 ].to;
+		const dupStart = partialList[ start - 1 ][ 0 ].from;
+		const dupEnd = partialList[ start - 1 ][ 0 ].to;
 		params.delete( dupStart + 'to' + dupEnd );
 		params.set( dupStart + 'to' + end, label );
 	} else if ( partialList[ end + 1 ] && partialList[ end + 1 ][ 0 ].type === label && all ) {
 		// Range behind the current range have the same label
 		// Don't merge this if the all argument is not set
-		dupStart = partialList[ end + 1 ][ 0 ].from;
-		dupEnd = partialList[ end + 1 ][ 0 ].to;
+		const dupStart = partialList[ end + 1 ][ 0 ].from;
+		const dupEnd = partialList[ end + 1 ][ 0 ].to;
 		params.delete( dupStart + 'to' + dupEnd );
 		params.set( start + 'to' + dupEnd, label );
 	} else {
@@ -272,8 +271,7 @@ VisualDialogModel.prototype.mergeContigousRanges = function ( partialList, param
  * @return {number} index of next 'change point'
  */
 VisualDialogModel.prototype.findNextChangePoint = function ( partialList, currentIndex, currentLabel ) {
-	let i;
-	for ( i = currentIndex + 1; i <= this.lengthOfPagelist; i++ ) {
+	for ( let i = currentIndex + 1; i <= this.lengthOfPagelist; i++ ) {
 		if ( ( currentLabel && ( typeof partialList[ i ] === 'undefined' || partialList[ i ][ 0 ].type !== currentLabel ) ) ) {
 			return i - 1;
 		} else if ( !currentLabel && partialList[ i ] || this.parameters.get( i ) ) {
@@ -386,15 +384,11 @@ VisualDialogModel.prototype.setCachedData = function () {
  * @param  {Array} partialList
  */
 VisualDialogModel.prototype.mergeContigousRangesBeforeUpdate = function ( params, partialList ) {
-	let start,
-		end,
-		dupStart,
-		dupEnd;
 	// Merge parameters
 	params.forEach( function ( index, label ) {
 		if ( index.split( /(to|To)/ )[ 0 ] !== index ) {
-			start = parseInt( index.split( /(to|To)/ )[ 0 ] );
-			end = parseInt( index.split( /(to|To)/ )[ 2 ] );
+			const start = parseInt( index.split( /(to|To)/ )[ 0 ] );
+			const end = parseInt( index.split( /(to|To)/ )[ 2 ] );
 
 			if ( ( start - 1 ) <= 0 || ( end + 1 ) >= ( this.lengthOfPagelist - 1 ) ) {
 				return;
@@ -403,14 +397,14 @@ VisualDialogModel.prototype.mergeContigousRangesBeforeUpdate = function ( params
 			if ( partialList[ String( start - 1 ) ] && partialList[ String( start - 1 ) ][ 0 ].type === label ) {
 				params.delete( index );
 				params.delete( partialList[ start - 1 ][ 0 ].from + 'to' + partialList[ start - 1 ][ 0 ].to );
-				dupStart = partialList[ start - 1 ][ 0 ].from;
+				const dupStart = partialList[ start - 1 ][ 0 ].from;
 				label = partialList[ start - 1 ][ 0 ].type;
 
 				params.set( dupStart + 'to' + end, label );
 			} else if ( partialList[ String( end + 1 ) ] && partialList[ String( end + 1 ) ][ 0 ].type === params[ index ] ) {
 				params.delete( index );
 				params.delete( partialList[ end + 1 ][ 0 ].from + 'to' + partialList[ end + 1 ][ 0 ].to );
-				dupEnd = partialList[ end + 1 ][ 0 ].to;
+				const dupEnd = partialList[ end + 1 ][ 0 ].to;
 				label = partialList[ end + 1 ][ 0 ].type;
 
 				params.set( start + 'to' + dupEnd, label );

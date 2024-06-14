@@ -82,9 +82,7 @@ PageStatusMenu.prototype.getUserRights = function () {
 };
 
 PageStatusMenu.prototype.onUpdateState = function () {
-	let name;
-
-	for ( name in this.tools ) {
+	for ( const name in this.tools ) {
 		if ( this.tools[ name ].isActive() ) {
 			this.setIcon( this.tools[ name ].getIcon() );
 		}
@@ -97,9 +95,9 @@ PageStatusMenu.prototype.onUpdateState = function () {
  * Set the page status when the page is updated by navigating
  */
 PageStatusMenu.prototype.onPageModelUpdated = function () {
-	let status = this.toolbar.eis.pageModel.getPageStatus().status,
-		user = this.toolbar.eis.pageModel.getPageStatus().lastUser, name;
-	for ( name in this.tools ) {
+	const status = this.toolbar.eis.pageModel.getPageStatus().status,
+		user = this.toolbar.eis.pageModel.getPageStatus().lastUser;
+	for ( const name in this.tools ) {
 		if ( this.tools[ name ].getPageStatus() === status ) {
 			this.tools[ name ].setActive( true );
 			this.tools[ name ].onSelect();

@@ -86,16 +86,15 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	 * @param {string} [speed] Speed of the toggle. May be 'fast', 'slow' or undefined
 	 */
 	function toggleHeaders( visible, speed ) {
-		let method, setActive;
 		headersVisible = visible === undefined ? !headersVisible : visible;
 
-		method = headersVisible ? 'show' : 'hide';
+		const method = headersVisible ? 'show' : 'hide';
 		$editForm.find( '.prp-page-edit-header' )[ method ]( speed );
 		$editForm.find( '.prp-page-edit-body label.prp-page-edit-area-label' )[ method ]( speed );
 		$editForm.find( '.prp-page-edit-footer' )[ method ]( speed );
 
 		// eslint-disable-next-line no-jquery/no-global-selector
-		setActive = $( '.tool[rel=toggle-visibility]' ).data( 'setActive' );
+		const setActive = $( '.tool[rel=toggle-visibility]' ).data( 'setActive' );
 		if ( setActive ) {
 			setActive( headersVisible );
 		}
@@ -109,7 +108,6 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	 * @param {boolean} [horizontal] Use horizontal layout, inverts if undefined
 	 */
 	function toggleLayout( horizontal ) {
-		let setActive;
 
 		isLayoutHorizontal = horizontal === undefined ? !isLayoutHorizontal : horizontal;
 
@@ -124,7 +122,7 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		osdController.initialize( idToInitialize );
 
 		// eslint-disable-next-line no-jquery/no-global-selector
-		setActive = $( '.tool[rel=toggle-layout]' ).data( 'setActive' );
+		const setActive = $( '.tool[rel=toggle-layout]' ).data( 'setActive' );
 		if ( setActive ) {
 			setActive( isLayoutHorizontal );
 		}

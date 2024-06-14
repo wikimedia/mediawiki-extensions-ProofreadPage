@@ -101,9 +101,8 @@ PagelistModel.prototype.handleError = function ( err ) {
  * @fires firstReached Event denoting that the current page is the first page in the Pagelist sequence
  */
 PagelistModel.prototype.setPageListData = function ( response ) {
-	let tempPage = null;
 	for ( let i = 0; i < response.length; i++ ) {
-		tempPage = response[ i ];
+		const tempPage = response[ i ];
 		this.pagelist.push( {
 			pageNumber: tempPage.pageoffset,
 			exists: tempPage.pageid !== 0,
