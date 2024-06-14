@@ -102,7 +102,7 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 	};
 
 	if ( this.usebetatoolbar ) {
-		$.extend( osdParams, {
+		Object.assign( osdParams, {
 			zoomInButton: 'prp-page-zoomIn',
 			zoomOutButton: 'prp-page-zoomOut',
 			homeButton: 'prp-page-zoomReset',

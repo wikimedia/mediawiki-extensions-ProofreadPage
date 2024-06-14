@@ -6,7 +6,7 @@ var preview = require( 'mediawiki.page.preview' );
  * @param {Object} config Configuration variable
  */
 function PreviewWidget( config ) {
-	config = $.extend( { scrollable: true }, config );
+	config = Object.assign( { scrollable: true }, config );
 	PreviewWidget.super.call( this, config );
 	OO.ui.mixin.PendingElement.call( this );
 	this.$fullText = $( '<textarea>' );
