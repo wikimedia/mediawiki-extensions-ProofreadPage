@@ -30,6 +30,8 @@
 	"proofreadpage_nosuch_index": "Fehler: Kein entsprechender Index",
 	"proofreadpage_nosuch_index_category": "Seiteneinbindungen, die auf fehlende Indexseiten verweisen",
 	"proofreadpage_nosuch_index_category-desc": "Ein <nowiki><pages/></nowiki>-Tag verweist auf eine Indexseite, die nicht existiert.",
+	"proofreadpage_nosuch_file_for_index_category": "Indexseiten mit Seitenlisten-Tags, die auf eine nicht vorhandene Datei verweisen.",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Ein <nowiki><pagelist/></nowiki>-Tag verweist auf eine Datei, die nicht existiert.",
 	"proofreadpage_nosuch_file": "Fehler: Keine entsprechende Datei",
 	"proofreadpage_indexdupetext": "Seiten können nicht mehr als einmal auf einer Indexseite aufgelistet werden.",
 	"proofreadpage_nologin": "Nicht angemeldet",
