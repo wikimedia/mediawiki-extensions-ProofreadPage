@@ -51,6 +51,8 @@
 	"proofreadpage_nosuch_index_category": "{{tracking category name}}\nCategory name where a <code><nowiki><pages/></nowiki></code> tag refers to an index that does not exist",
 	"proofreadpage_nosuch_index_category-desc": "Description for {{msg-mw|proofreadpage_nosuch_index_category}} on [[Special:TrackingCategories]].",
 	"proofreadpage_nosuch_file": "Used as error message",
+	"proofreadpage_nosuch_file_for_index_category": "{{tracking category name}}\nCategory name where a <code><nowiki><pagelist/></nowiki></code> tag refers to a file that does not exist",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Description for {{msg-mw|proofreadpage_nosuch_index_category}} on [[Special:TrackingCategories]].",
 	"proofreadpage_indexdupetext": "Used as error message",
 	"proofreadpage_nologin": "{{Identical|Not logged in}}",
 	"proofreadpage_nologintext": "Used as error message",
