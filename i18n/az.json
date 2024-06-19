@@ -26,6 +26,8 @@
 	"proofreadpage_nosuch_index": "Xəta: Belə bir indeks yoxdur",
 	"proofreadpage_nosuch_index_category": "Olmayan İndeks səhifələrinə istinad edən səhifələr",
 	"proofreadpage_nosuch_index_category-desc": "Mövcud olmayan İndeks səhifəsinə istinad edən <code><nowiki><pages/></nowiki></code> teqi",
+	"proofreadpage_nosuch_file_for_index_category": "Mövcud olmayan fayla istinad edən pagelist etiketləri olan indeks səhifələri",
+	"proofreadpage_nosuch_file_for_index_category-desc": "<code><nowiki><pagelist/></nowiki></code> teqinin istinad etdiyi fayl mövcud deyil",
 	"proofreadpage_nosuch_file": "Xəta: Belə fayl yoxdur",
 	"proofreadpage_indexdupetext": "Səhifələr indeks səhifəsində bir dəfədən çox siyahıya alına bilməz.",
 	"proofreadpage_nologin": "Daxil olmamısınız",

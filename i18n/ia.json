@@ -21,6 +21,8 @@
 	"proofreadpage_nosuch_index": "Error: non existe tal indice",
 	"proofreadpage_nosuch_index_category": "Transclusiones de paginas que face referentia a paginas de indice mancante",
 	"proofreadpage_nosuch_index_category-desc": "Un etiquetta <code><nowiki><pages/></nowiki></code> refere a un pagina Index que non existe.",
+	"proofreadpage_nosuch_file_for_index_category": "Paginas de indice con etiquettas pagelist que refere a un file non existente",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Un etiquetta <code><nowiki><pagelist/></nowiki></code> refere a un file que non existe.",
 	"proofreadpage_nosuch_file": "Error: non existe tal file",
 	"proofreadpage_indexdupetext": "Paginas non pote figurar plus de un vice in un pagina de indice.",
 	"proofreadpage_nologin": "Tu non ha aperite session",
