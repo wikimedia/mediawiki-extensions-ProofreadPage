@@ -287,7 +287,15 @@ class PageDisplayHandler {
 		if ( !$image->exists() ) {
 			return null;
 		}
-		$width = $image->getWidth();
+		$pageNumber = 1;
+		if ( $image->isMultipage() ) {
+			try {
+				$pageNumber = $fileProvider->getPageNumberForPageTitle( $pageTitle );
+			} catch ( PageNumberNotFoundException $e ) {
+			}
+		}
+
+		$width = $image->getWidth( $pageNumber );
 		if ( $constrainWidth ) {
 			$maxWidth = $this->getImageWidth( $pageTitle );
 			if ( $width > $maxWidth ) {
@@ -299,10 +307,7 @@ class PageDisplayHandler {
 		];
 
 		if ( $image->isMultipage() ) {
-			try {
-				$transformAttributes['page'] = $fileProvider->getPageNumberForPageTitle( $pageTitle );
-			} catch ( PageNumberNotFoundException $e ) {
-			}
+			$transformAttributes['page'] = $pageNumber;
 		}
 		$handler = $image->getHandler();
 		if ( !$handler || !$handler->normaliseParams( $image, $transformAttributes ) ) {
