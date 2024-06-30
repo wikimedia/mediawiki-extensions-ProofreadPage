@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use MediaWiki\Title\Title;
+use MediaWiki\Page\PageIdentity;
 
 /**
  * @license GPL-2.0-or-later
@@ -24,21 +24,21 @@ class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 	/**
 	 * @inheritDoc
 	 */
-	public function isPageTitleInCache( Title $pageTitle ): bool {
+	public function isPageTitleInCache( PageIdentity $pageTitle ): bool {
 		return array_key_exists( $pageTitle->getDBkey(), $this->levelForPage );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function flushCacheForPage( Title $pageTitle ) {
+	public function flushCacheForPage( PageIdentity $pageTitle ) {
 		unset( $this->cache[ $pageTitle->getDBkey() ] );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getQualityLevelForPageTitle( Title $pageTitle ) {
+	public function getQualityLevelForPageTitle( PageIdentity $pageTitle ) {
 		if ( !array_key_exists( $pageTitle->getDBkey(), $this->levelForPage ) ) {
 			return null;
 		}

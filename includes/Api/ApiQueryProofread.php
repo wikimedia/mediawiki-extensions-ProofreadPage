@@ -17,7 +17,7 @@ class ApiQueryProofread extends ApiQueryBase {
 	 */
 	public function execute() {
 		$context = Context::getDefaultContext();
-		$pages = $this->getPageSet()->getGoodTitles();
+		$pages = $this->getPageSet()->getGoodPages();
 		$result = $this->getResult();
 
 		$pageNamespaceId = $context->getPageNamespaceId();
@@ -25,7 +25,7 @@ class ApiQueryProofread extends ApiQueryBase {
 		$pageQualityLevelLookup->prefetchQualityLevelForTitles( $pages );
 
 		foreach ( $pages as $pageId => $title ) {
-			if ( $title->inNamespace( $pageNamespaceId ) ) {
+			if ( $title->getNamespace() === $pageNamespaceId ) {
 				$pageQualityLevel = $pageQualityLevelLookup->getQualityLevelForPageTitle( $title );
 				if ( $pageQualityLevel === null ) {
 					continue;
