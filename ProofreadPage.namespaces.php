@@ -307,6 +307,14 @@ $proofreadPageNamespaceNames['ml'] = [
 	'index_talk' => 'സൂചികയുടെ_സംവാദം'
 ];
 
+/** Malay (Bahasa Melayu) */
+$proofreadPageNamespaceNames['ms'] = [
+	'page' => 'Laman',
+	'page_talk' => 'Perbincangan_laman',
+	'index' => 'Indeks',
+	'index_talk' => 'Perbincangan_indeks'
+];
+
 /** Marathi (मराठी) */
 $proofreadPageNamespaceNames['mr'] = [
 	'page' => 'पान',
