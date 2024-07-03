@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use MediaWiki\Title\Title;
+use MediaWiki\Page\PageIdentity;
 
 /**
  * @license GPL-2.0-or-later
@@ -13,27 +13,27 @@ interface PageQualityLevelLookup {
 
 	/**
 	 * Check if the quality of the given page is already cached
-	 * @param Title $pageTitle
+	 * @param PageIdentity $pageTitle
 	 * @return bool
 	 */
-	public function isPageTitleInCache( Title $pageTitle ): bool;
+	public function isPageTitleInCache( PageIdentity $pageTitle ): bool;
 
 	/**
 	 * Flush the cache for a page
 	 *
 	 * This should be done after the page quality is updated.
-	 * @param Title $pageTitle
+	 * @param PageIdentity $pageTitle
 	 */
-	public function flushCacheForPage( Title $pageTitle );
+	public function flushCacheForPage( PageIdentity $pageTitle );
 
 	/**
-	 * @param Title $pageTitle
+	 * @param PageIdentity $pageTitle
 	 * @return int|null
 	 */
-	public function getQualityLevelForPageTitle( Title $pageTitle );
+	public function getQualityLevelForPageTitle( PageIdentity $pageTitle );
 
 	/**
-	 * @param Title[] $pageTitles
+	 * @param PageIdentity[] $pageTitles
 	 */
 	public function prefetchQualityLevelForTitles( array $pageTitles );
 }

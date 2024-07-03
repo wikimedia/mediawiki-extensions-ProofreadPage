@@ -4,6 +4,7 @@ namespace ProofreadPage\Page;
 
 use InvalidArgumentException;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\PageIdentity;
 use MediaWiki\Title\Title;
 
 /**
@@ -21,7 +22,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	private $pageNamespaceId;
 
 	/**
-	 * @var Title[]
+	 * @var PageIdentity[]
 	 */
 	private $categoryForQualityLevel;
 
@@ -38,22 +39,22 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	/**
 	 * @inheritDoc
 	 */
-	public function isPageTitleInCache( Title $pageTitle ): bool {
+	public function isPageTitleInCache( PageIdentity $pageTitle ): bool {
 		return array_key_exists( $pageTitle->getDBkey(), $this->cache );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function flushCacheForPage( Title $pageTitle ) {
+	public function flushCacheForPage( PageIdentity $pageTitle ) {
 		unset( $this->cache[ $pageTitle->getDBkey() ] );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getQualityLevelForPageTitle( Title $pageTitle ) {
-		if ( !$pageTitle->inNamespace( $this->pageNamespaceId ) ) {
+	public function getQualityLevelForPageTitle( PageIdentity $pageTitle ) {
+		if ( !$pageTitle->getNamespace() === $this->pageNamespaceId ) {
 			throw new InvalidArgumentException( $pageTitle . ' is not in Page: namespace' );
 		}
 		$cacheKey = $pageTitle->getDBkey();
@@ -68,8 +69,8 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	 */
 	public function prefetchQualityLevelForTitles( array $pageTitles ) {
 		$pageTitles = array_filter( $pageTitles, function ( $pageTitle ) {
-			return $pageTitle instanceof Title &&
-				$pageTitle->inNamespace( $this->pageNamespaceId ) &&
+			return $pageTitle instanceof PageIdentity &&
+				$pageTitle->getNamespace() === $this->pageNamespaceId &&
 				!array_key_exists( $pageTitle->getDBkey(), $this->cache );
 		} );
 
@@ -77,7 +78,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	}
 
 	/**
-	 * @param Title[] $pageTitles
+	 * @param PageIdentity[] $pageTitles
 	 */
 	private function fetchQualityLevelForPageTitles( array $pageTitles ) {
 		// We set to unknown all qualities
@@ -92,7 +93,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	}
 
 	/**
-	 * @param Title[] $pageTitles
+	 * @param PageIdentity[] $pageTitles
 	 */
 	private function fetchQualityLevelForPageTitlesFromPageProperties( array $pageTitles ) {
 		if ( !$pageTitles ) {
@@ -107,7 +108,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 			->where( [
 				'pp_propname' => 'proofread_page_quality_level',
 				'page_namespace' => $this->pageNamespaceId,
-				'page_title' => array_map( static function ( Title $pageTitle ) {
+				'page_title' => array_map( static function ( PageIdentity $pageTitle ) {
 					return $pageTitle->getDBkey();
 				}, $pageTitles )
 			] )
@@ -119,14 +120,14 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	}
 
 	/**
-	 * @param Title[] $pageTitles
+	 * @param PageIdentity[] $pageTitles
 	 */
 	private function fetchQualityLevelForPageTitlesFromPageCategories( array $pageTitles ) {
 		if ( !$pageTitles ) {
 			return;
 		}
 
-		$pageDbKeys = array_map( static function ( Title $title ){
+		$pageDbKeys = array_map( static function ( PageIdentity $title ){
 			return $title->getDBkey();
 		}, $pageTitles );
 
@@ -155,7 +156,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	 * @return array
 	 */
 	private function filterPagesWithoutKnownQuality( array $pageTitles ) {
-		return array_filter( $pageTitles, function ( Title $pageTitle ) {
+		return array_filter( $pageTitles, function ( PageIdentity $pageTitle ) {
 			return $this->cache[$pageTitle->getDBkey()] === null;
 		} );
 	}
