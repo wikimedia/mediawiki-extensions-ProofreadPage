@@ -267,6 +267,14 @@ $proofreadPageNamespaceNames['jv'] = [
 	'index_talk' => 'Parembugan_Indhèks',
 ];
 
+/** Georgian (ქართული) */
+$proofreadPageNamespaceNames['ka'] = [
+	'page' => 'გვერდი',
+	'page_talk' => 'გვერდის_განხილვა',
+	'index' => 'ინდექსი',
+	'index_talk' => 'ინდექსის_განხილვა'
+];
+
 /** Kannada (ಕನ್ನಡ) */
 $proofreadPageNamespaceNames['kn'] = [
 	'page' => 'ಪುಟ',
@@ -321,6 +329,14 @@ $proofreadPageNamespaceNames['mr'] = [
 	'page_talk' => 'पान_चर्चा',
 	'index' => 'अनुक्रमणिका',
 	'index_talk' => 'अनुक्रमणिका_चर्चा'
+];
+
+/** Burmese (မြန်မာဘာသာ) */
+$proofreadPageNamespaceNames['my'] = [
+	'page' => 'စာမျက်နှာ',
+	'page_talk' => 'စာမျက်နှာ_ဆွေးနွေးချက်',
+	'index' => 'အညွှန်း',
+	'index_talk' => 'အညွှန်း_ဆွေးနွေးချက်'
 ];
 
 /** Neapolitan (Napulitano) */
