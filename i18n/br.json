@@ -7,7 +7,8 @@
 			"Huñvreüs",
 			"Reedy",
 			"VIGNERON",
-			"Y-M D"
+			"Y-M D",
+			"Adriendelucca"
 		]
 	},
 	"nstab-page": "Pajenn",
@@ -40,12 +41,12 @@
 	"proofreadpage_edit_in_sequence": "Kemmañ pajennoù en heuliad",
 	"proofreadpage_toggleheaders": "kuzhat/diskouez ar rannoù noinclude",
 	"proofreadpage_quality0_category": "Hep testenn",
-	"proofreadpage_quality1_category": "Hep adlenn",
+	"proofreadpage_quality1_category": "Nann adlennet",
 	"proofreadpage_quality2_category": "Kudennek",
 	"proofreadpage_quality3_category": "Adlennet",
 	"proofreadpage_quality4_category": "Kadarnaet",
 	"proofreadpage_quality0_summary": "Hep testenn",
-	"proofreadpage_quality1_summary": "Hep adlenn",
+	"proofreadpage_quality1_summary": "Nann adlennet",
 	"proofreadpage_quality2_summary": "Kudennek",
 	"proofreadpage_quality3_summary": "Adlennet",
 	"proofreadpage_quality4_summary": "Kadarnaet",
