@@ -58,6 +58,7 @@
 	"proofreadpage_interval_too_large": "Erreur : intervalle trop grand",
 	"proofreadpage_invalid_interval": "Erreur : intervalle invalide",
 	"proofreadpage_nextpage": "Page suivante",
+	"proofreadpage_nextpage_label": "Aller à la page suivante",
 	"proofreadpage_prevpage": "Page précédente",
 	"proofreadpage_prevpage_label": "Aller à la page précédente",
 	"proofreadpage_header": "En-tête (noinclude) :",

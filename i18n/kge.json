@@ -20,6 +20,8 @@
 	"proofreadpage_nosuch_index": "Error: Indeks hasa makka",
 	"proofreadpage_nosuch_index_category": "Transklusi halaman sai ngacung guk halaman indeks makka",
 	"proofreadpage_nosuch_index_category-desc": "Tag <code><nowiki><pages/></nowiki></code> ngarujuk di halaman indeks sai makka hamak.",
+	"proofreadpage_nosuch_file_for_index_category": "Indeks halaman rik tag daftar halaman sai ngarujuk guk file sai makka",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Tag <code><nowiki><pages/></nowiki></code> ngarujuk di file sai makka hamak.",
 	"proofreadpage_nosuch_file": "Error: Berkas hasa makka",
 	"proofreadpage_indexdupetext": "Halaman mak pandai tidaftarko liyu jak osai di halaman indeks.",
 	"proofreadpage_nologin": "Makkung kuruk log",
