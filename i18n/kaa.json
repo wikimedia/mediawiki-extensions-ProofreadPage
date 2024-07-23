@@ -1,10 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajiniyaz Nurniyazov"
+			"Ajiniyaz Nurniyazov",
+			"Inabat Allanova"
 		]
 	},
+	"nstab-page": "Bet",
+	"nstab-index": "Indeks",
+	"tooltip-ca-nstab-page": "Kitap betin kóriw",
+	"tooltip-ca-nstab-index": "Kitap indeksin kóriw",
+	"proofreadpage_image": "Súwret",
+	"proofreadpage_index": "Indeks",
+	"proofreadpage_nextpage": "Keyingi bet",
+	"proofreadpage_specialpage_filterby_all": "Barlıǵı",
+	"proofreadpage_specialpage_label_key": "Izlew:",
+	"proofreadpage-group-other": "Basqa",
+	"proofreadpage-button-reset-zoom-label": "Negizgi ólshemi",
 	"prp-editinsequence-page-filter-label-all": "Hámme betler",
 	"proofreadpage-openseadragon-no-image-found": "OpenSeadragon iske túsirilmedi, súwret tabılmadı.",
-	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Bet dizimi vidjeti “bos” betti nomerlew túrin qollap-quwatlamaydı."
+	"proofreadpage-pagelist-dialog-cancel": "Biykar etiw",
+	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "Bet dizimi vidjeti “bos” betti nomerlew túrin qollap-quwatlamaydı.",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Járdem",
+	"content-model-proofread-page": "Kitap beti",
+	"content-model-proofread-index": "Kitap indeksi",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Betler",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Awa",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Yaq",
+	"proofreadpage-index-field-category-label": "Kategoriyalar",
+	"tag-proofreadpage-quality0": "Tekstsiz"
 }
