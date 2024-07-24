@@ -235,6 +235,14 @@ $proofreadPageNamespaceNames['hy'] = [
 	'index_talk' => 'Ինդեքսի_քննարկում'
 ];
 
+/** Iban (Jaku Iban) */
+$proofreadPageNamespaceNames['iba'] = [
+	'page' => 'Lambar',
+	'page_talk' => 'Randau_lambar',
+	'index' => 'Indeks',
+	'index_talk' => 'Randau_indeks'
+];
+
 /** Indonesian (Bahasa Indonesia) */
 $proofreadPageNamespaceNames['id'] = [
 	'page' => 'Halaman',
