@@ -52,7 +52,7 @@ class PageNumberTest extends ProofreadPageTestCase {
 	public function testCustomPageNumberFormatsAreSupported() {
 		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
 		foreach ( PageNumber::getDisplayModes() as $displayMode ) {
-			if ( $displayMode !== PageNumber::DISPLAY_NORMAL ) {
+			if ( $displayMode !== PageNumber::DISPLAY_NORMAL && $displayMode !== 'latn' ) {
 				$pageNumber = new PageNumber( '2', $displayMode );
 				$this->assertNotSame( '2', $pageNumber->getFormattedPageNumber( $language ) );
 			}

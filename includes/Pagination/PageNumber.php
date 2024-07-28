@@ -39,6 +39,7 @@ class PageNumber {
 		'mlym' => 'mlym',
 		'orya' => 'orya',
 		'thai' => 'thai',
+		'latn' => 'latn'
 	];
 
 	/** @var string */
