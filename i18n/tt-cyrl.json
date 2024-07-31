@@ -5,7 +5,8 @@
 			"Timming",
 			"Ерней",
 			"Ильгиз",
-			"Ильнар"
+			"Ильнар",
+			"Don Alessandro"
 		]
 	},
 	"proofreadpage_nextpage": "киләсе бит",
@@ -21,7 +22,7 @@
 	"prp-editinsequence-save-dialog-title": "Бу битне саклау",
 	"prp-editinsequence-save-settings-dialog-title": "Киләсе үзгәрешләр өчен мета-мәгълүматларны саклагыз",
 	"prp-editinsequence-save-next-action-label": "\"$1\" төймәсенә баскач, бу эшне башкарыгыз",
-	"prp-editinsequence-save-next-action-do-nothing": "Берни дә эшләмәскә",
+	"prp-editinsequence-save-next-action-do-nothing": "Берни дә эшләмәү",
 	"prp-editinsequence-save-next-action-go-to-next": "Киләсе биткә керегез",
 	"prp-editinsequence-save-next-action-go-to-prev": "Үткән биткә керү",
 	"prp-editinsequence-show-dialog-toggle-label": "Бу әңгәмәне \"$1\" басылган саен күрсәтегез",

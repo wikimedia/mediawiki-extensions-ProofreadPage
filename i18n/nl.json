@@ -13,7 +13,8 @@
 			"Romaine",
 			"SPQRobin",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Pagina",
@@ -128,7 +129,7 @@
 	"prp-editinsequence-save-next-action-go-to-next": "Naar de volgende pagina",
 	"prp-editinsequence-save-next-action-go-to-prev": "Naar de vorige pagina",
 	"prp-editinsequence-unsaved-edit-message": "U hebt niet-opgeslagen wijzigingen. Als u deze pagina verlaat, worden uw wijzigingen hersteld wanneer u terugkomt.",
-	"prp-editinsequence-show-dialog-toggle-label": "Dit dialoogvenster tonen bij elke klik op “$1”",
+	"prp-editinsequence-show-dialog-toggle-label": "Dit dialoogvenster weergeven bij elke klik op “$1”",
 	"prp-editinsequence-editsummary-placeholder": "Beschrijf uw wijzigingen",
 	"prp-editinsequence-could-not-save-edit": "Deze bewerking kan niet worden opgeslagen",
 	"prp-editinsequence-page-filter-label-all": "Alle pagina’s",
@@ -168,7 +169,7 @@
 	"proofreadpage-preferences-horizontal-layout-label": "Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "De nieuwe experimentele visuele modus gebruiken bij het bewerken van de paginalijst.",
 	"proofreadpage-preferences-zoom-factor-label": "De zoomfactor bij scrollen (tussen 1 en 2, standaard: 1,2). Bij hogere waarden wordt per stap meer gezoomd.",
-	"proofreadpage-preferences-show-dialog-before-every-save-label": "Telkens wanneer u in de modus \"Bewerking in volgorde\" een pagina opslaat een dialoogvenster voor bewerkingssamenvatting tonen",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "Telkens wanneer u in de modus \"Bewerking in volgorde\" een pagina opslaat een dialoogvenster voor bewerkingssamenvatting weergeven",
 	"proofreadpage-preferences-after-save-action-label": "Deze handeling verrichten na het opslaan van een pagina met behulp van de modus \"Bewerking in volgorde\"",
 	"proofreadpage-indexquality-alt": "$1 gevalideerde {{PLURAL:$1|pagina|pagina's}}, $2 alleen proefgelezen {{PLURAL:$2|pagina|pagina's}} en $3 niet proefgelezen {{PLURAL:$3|pagina|pagina's}}",
 	"content-model-proofread-page": "Boekpagina",
