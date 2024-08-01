@@ -116,6 +116,8 @@
 	"proofreadpage-button-zoom-in-label": "放大",
 	"proofreadpage-button-zoom-out-label": "縮小",
 	"proofreadpage-pageinfo-status": "校對狀態",
+	"prp-editinsequence-beta-label": "在序列裡編輯",
+	"prp-editinsequence-beta-description": "新的編輯介面能讓您更快地編輯頁面",
 	"prp-editinsequence-http-error-pagelist": "出於網路問題無法取得分頁，請稍後重試。",
 	"prp-editinsequence-pagination-does-not-exist": "此頁面不存在分頁，因此無法確定下一頁和上一頁。如果您認為這是一個誤判，請將此錯誤回報給 phabricator.wikimedia.org。",
 	"prp-editinsequence-unknown-error": "偵測到意外錯誤。請將錯誤回報給 phabricator.wikimedia.org。",
