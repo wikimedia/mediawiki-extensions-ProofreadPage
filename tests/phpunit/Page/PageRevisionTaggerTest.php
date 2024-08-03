@@ -17,13 +17,8 @@ class PageRevisionTaggerTest extends ProofreadPageTestCase {
 		parent::setUp();
 
 		// don't care about user permissions here
-		$this->mergeMwGlobalArrayValue(
-			'wgGroupPermissions',
-			[
-				'*' => [ 'pagequality' => true ],
-			]
-		);
-		$this->setMwGlobals( 'wgProofreadPageUseStatusChangeTags', true );
+		$this->setGroupPermissions( [ '*' => [ 'pagequality' => true ] ] );
+		$this->overrideConfigValue( 'ProofreadPageUseStatusChangeTags', true );
 	}
 
 	private function doEditAtLevel( $page, $text, $level ) {
