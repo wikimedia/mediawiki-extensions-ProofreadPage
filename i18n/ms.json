@@ -150,7 +150,7 @@
 	"tag-proofreadpage-quality2": "Bermasalah",
 	"tag-proofreadpage-quality3": "Disemak",
 	"tag-proofreadpage-quality4": "Disahkan",
-	"tag-proofreadpage-quality0-description": "Suntingan yang menukar kualiti laman kepada \"{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality0-description": "Suntingan yang menukar kualiti laman kepada \"{{int:tag-proofreadpage-quality0}}\"",
 	"tag-proofreadpage-quality1-description": "Suntingan yang menukar kualiti halaman kepada \"{{int:tag-proofreadpage-quality1}}\"",
 	"tag-proofreadpage-quality2-description": "Suntingan yang menukar kualiti halaman kepada \"{{int:tag-proofreadpage-quality2}}\"",
 	"tag-proofreadpage-quality3-description": "Suntingan yang menukar kualiti halaman kepada \"{{int:tag-proofreadpage-quality3}}\"",
