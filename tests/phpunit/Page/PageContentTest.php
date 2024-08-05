@@ -4,6 +4,7 @@ namespace ProofreadPage\Page;
 
 use Content;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use ProofreadPageTestCase;
@@ -27,8 +28,8 @@ class PageContentTest extends ProofreadPageTestCase {
 		$user = new User();
 		$user->setName( '127.0.0.1' );
 
-		$this->setMwGlobals( [
-			'wgTextModelsToParse' => [
+		$this->overrideConfigValues( [
+			MainConfigNames::TextModelsToParse => [
 				CONTENT_MODEL_PROOFREAD_PAGE
 			]
 		] );
