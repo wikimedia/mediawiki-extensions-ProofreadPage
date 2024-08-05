@@ -6,7 +6,6 @@ use Content;
 use ContentHandler;
 use MediaWiki\Content\ValidationParams;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Revision\SlotRenderingProvider;
@@ -652,7 +651,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider providePreSaveTransform
 	 */
 	public function testPreSaveTransform( TextContent $content, TextContent $expectedContent ) {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$user = UserIdentityValue::newAnonymous( '123.123.123.123' );
 		$options = ParserOptions::newFromUser( $user );
 
@@ -686,7 +685,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider providePreloadTransform
 	 */
 	public function testPreloadTransform( IndexContent $content, IndexContent $expectedContent ) {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$options = ParserOptions::newFromAnon();
 
 		$contentTransformer = $services->getContentTransformer();

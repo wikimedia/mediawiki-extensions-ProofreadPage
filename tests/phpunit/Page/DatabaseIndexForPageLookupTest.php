@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Page;
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
 
@@ -51,7 +50,7 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 	public function testGetIndexForPageNotFound() {
 		$lookup = new DatabaseIndexForPageLookup(
 			$this->getIndexNamespaceId(),
-			MediaWikiServices::getInstance()->getRepoGroup()
+			$this->getServiceContainer()->getRepoGroup()
 		);
 		$this->assertNull( $lookup->getIndexForPageTitle(
 			Title::makeTitle( $this->getPageNamespaceId(), 'FooBar' )

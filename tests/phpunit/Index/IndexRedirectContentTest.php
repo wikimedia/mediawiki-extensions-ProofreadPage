@@ -3,7 +3,6 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\Context\RequestContext;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -86,7 +85,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testPreSaveTransform() {
-		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$contentTransformer = $this->getServiceContainer()->getContentTransformer();
 		$user = UserIdentityValue::newAnonymous( '123.123.123.123' );
 		$options = ParserOptions::newFromUser( $user );
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
@@ -101,7 +100,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 	}
 
 	public function testPreloadTransform() {
-		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$contentTransformer = $this->getServiceContainer()->getContentTransformer();
 		$options = ParserOptions::newFromAnon();
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$content = $contentTransformer->preloadTransform(

@@ -4,7 +4,6 @@ namespace ProofreadPage\Page;
 
 use ContentHandler;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentityValue;
@@ -408,7 +407,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider providePreSaveTransform
 	 */
 	public function testPreSaveTransform( PageContent $content, $expectedContent ) {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$user = UserIdentityValue::newAnonymous( '123.123.123.123' );
 		$options = ParserOptions::newFromUser( $user );
 
@@ -440,7 +439,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider providePreloadTransform
 	 */
 	public function testPreloadTransform( PageContent $content, $expectedContent ) {
-		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$contentTransformer = $this->getServiceContainer()->getContentTransformer();
 		$options = ParserOptions::newFromAnon();
 
 		$content = $contentTransformer->preloadTransform(
@@ -493,7 +492,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider getParserOutputHtmlProvider
 	 */
 	public function testGetParserOutputHtml( PageContent $content, string $html ) {
-		$contentRenderer = MediaWikiServices::getInstance()->getContentRenderer();
+		$contentRenderer = $this->getServiceContainer()->getContentRenderer();
 		$output = $contentRenderer->getParserOutput(
 			$content,
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
@@ -525,7 +524,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider getParserOutputRedirectHtmlProvider
 	 */
 	public function testGetParserOutputRedirectHtml( PageContent $content, string $redirTarget ) {
-		$contentRenderer = MediaWikiServices::getInstance()->getContentRenderer();
+		$contentRenderer = $this->getServiceContainer()->getContentRenderer();
 		$output = $contentRenderer->getParserOutput(
 			$content,
 			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )

@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Pagination;
 
-use MediaWiki\MediaWikiServices;
 use ProofreadPageTestCase;
 
 /**
@@ -44,13 +43,13 @@ class PageNumberTest extends ProofreadPageTestCase {
 		$formattedResult, $rawResult, PageNumber $number, $language = null
 	) {
 		$language = ( $language === null ) ? 'en' : $language;
-		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $language );
+		$language = $this->getServiceContainer()->getLanguageFactory()->getLanguage( $language );
 		$this->assertSame( $formattedResult, $number->getFormattedPageNumber( $language ) );
 		$this->assertSame( $rawResult, $number->getRawPageNumber( $language ) );
 	}
 
 	public function testCustomPageNumberFormatsAreSupported() {
-		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
+		$language = $this->getServiceContainer()->getLanguageFactory()->getLanguage( 'en' );
 		foreach ( PageNumber::getDisplayModes() as $displayMode ) {
 			if ( $displayMode !== PageNumber::DISPLAY_NORMAL && $displayMode !== 'latn' ) {
 				$pageNumber = new PageNumber( '2', $displayMode );
@@ -90,7 +89,7 @@ class PageNumberTest extends ProofreadPageTestCase {
 	}
 
 	public function testHuge() {
-		$language = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
+		$language = $this->getServiceContainer()->getLanguageFactory()->getLanguage( 'en' );
 		$number = new PageNumber( '1000000000000000000000000000000000000', PageNumber::DISPLAY_NORMAL );
 		$this->assertEquals( PHP_INT_MAX, $number->getRawPageNumber( $language ) );
 		$this->assertTrue( $number->isNumeric() );
