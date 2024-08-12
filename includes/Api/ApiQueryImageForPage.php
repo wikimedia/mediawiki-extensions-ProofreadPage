@@ -31,7 +31,7 @@ class ApiQueryImageForPage extends ApiQueryBase {
 	 */
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, static::$prefix );
-		$this->context = $this->context = Context::getDefaultContext();
+		$this->context = Context::getDefaultContext();
 		$this->pageDisplayHandler = new PageDisplayHandler( $this->context );
 	}
 
