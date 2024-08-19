@@ -92,6 +92,8 @@
 	"proofreadpage-group-zoom": "Zoom",
 	"proofreadpage-group-other": "Iba pa",
 	"proofreadpage-button-reset-zoom-label": "Orihinal na sukol",
+	"proofreadpage-button-rotate-left-label": "Birikon pa-wala",
+	"proofreadpage-button-rotate-right-label": "Birikon pa-too",
 	"proofreadpage-button-toggle-layout-label": "Vertical/horizontal layout",
 	"proofreadpage-button-toggle-visibility-label": "Ipahiling/itago an header asin footer kan pahina",
 	"proofreadpage-button-zoom-in-label": "Padakulaon",
@@ -134,5 +136,10 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Iyo",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Dae",
 	"proofreadpage-index-field-category-label": "Mga Kategoriya",
-	"proofreadpage-index-edit-category-help": "An mga kategorya ipigsurat nda daing Kategorya: an mga prefix pigseseparar gamit an \"|\" character."
+	"proofreadpage-index-edit-category-help": "An mga kategorya ipigsurat nda daing Kategorya: an mga prefix pigseseparar gamit an \"|\" character.",
+	"tag-proofreadpage-quality0": "Mayo nin teksto",
+	"tag-proofreadpage-quality1": "Dai pa narerepaso",
+	"tag-proofreadpage-quality2": "Problematiko",
+	"tag-proofreadpage-quality3": "Narepaso na",
+	"tag-proofreadpage-quality4": "Napatotohanan nang tama"
 }
