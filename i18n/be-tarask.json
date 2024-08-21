@@ -5,7 +5,8 @@
 			"Jim-by",
 			"Red Winged Duck",
 			"Renessaince",
-			"Wizardist"
+			"Wizardist",
+			"Reedy"
 		]
 	},
 	"nstab-page": "Старонка",
@@ -71,8 +72,8 @@
 	"proofreadpage_source_message": "Сканаваная вэрсія, якая выкарыстоўвалася для стварэньня гэтага тэксту",
 	"action-pagequality": "зьмяненьне сьцяжка якасьці старонкі",
 	"right-pagequality": "Зьмяненьне сьцяжка якасьці старонкі",
-	"action-pagequality-admin": "неабмежаваныя рэдагаваньні сьцяжку якасьці старонкі",
-	"right-pagequality-admin": "Неабмежаваныя рэдагаваньні сьцяжку якасьці старонкі",
+	"action-pagequality-admin": "рэдагаваньні сьцяжку якасьці старонкі без абмежаваньняў",
+	"right-pagequality-admin": "Рэдагаваньні сьцяжку якасьці старонкі без абмежаваньняў",
 	"proofreadpage-section-tools": "Інструмэнты рэдактара",
 	"proofreadpage-group-zoom": "Маштаб",
 	"proofreadpage-group-other": "Іншае",
