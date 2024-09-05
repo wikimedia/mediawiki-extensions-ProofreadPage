@@ -431,8 +431,7 @@
 		"RecentChange_save": "ProofreadPageHooks",
 		"ScribuntoExternalLibraries": "ScribuntoHooks",
 		"ScribuntoExternalLibraryPaths": "ScribuntoHooks",
-		"GetDoubleUnderscoreIDs": "ProofreadPageHooks",
-		"ParserAfterParse": "ProofreadPageHooks"
+		"GetDoubleUnderscoreIDs": "ProofreadPageHooks"
 	},
 	"HookHandlers": {
 		"ProofreadPageHooks": {

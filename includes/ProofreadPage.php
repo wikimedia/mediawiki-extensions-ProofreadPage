@@ -34,7 +34,6 @@ use MediaWiki\Hook\EditFormPreloadTextHook;
 use MediaWiki\Hook\GetDoubleUnderscoreIDsHook;
 use MediaWiki\Hook\GetLinkColoursHook;
 use MediaWiki\Hook\InfoActionHook;
-use MediaWiki\Hook\ParserAfterParseHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
@@ -69,7 +68,6 @@ use ProofreadPage\Parser\PagesTagParser;
 use ProofreadPage\Parser\TranslusionPagesModifier;
 use Skin;
 use SkinTemplate;
-use StripState;
 
 /*
  @todo :
@@ -93,8 +91,7 @@ class ProofreadPage implements
 	InfoActionHook,
 	ListDefinedTagsHook,
 	ChangeTagsListActiveHook,
-	GetDoubleUnderscoreIDsHook,
-	ParserAfterParseHook
+	GetDoubleUnderscoreIDsHook
 {
 
 	/** @var Config */
@@ -832,16 +829,5 @@ class ProofreadPage implements
 	 */
 	public function onGetDoubleUnderscoreIDs( &$ids ) {
 		$ids[] = 'expectwithoutscans';
-	}
-
-	/**
-	 * @param Parser $parser
-	 * @param string &$text
-	 * @param StripState $stripState
-	 */
-	public function onParserAfterParse( $parser, &$text, $stripState ) {
-		if ( $parser->getOutput()->getPageProperty( 'expectwithoutscans' ) !== null ) {
-			$parser->getOutput()->setPageProperty( 'expectwithoutscans', true );
-		}
 	}
 }
