@@ -32,6 +32,8 @@
 	"proofreadpage_nosuch_index": "Fout: de index bestaat niet",
 	"proofreadpage_nosuch_index_category": "Paginatransclusies die verwijzen naar ontbrekende indexpagina's",
 	"proofreadpage_nosuch_index_category-desc": "Er is een tag <nowiki><pages/></nowiki> die verwijst naar een indexpagina die niet bestaat.",
+	"proofreadpage_nosuch_file_for_index_category": "Indexpagina's met pagelist-tags die verwijzen naar een niet-bestaand bestand",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Er is een tag <nowiki><pagelist/></nowiki> die verwijst naar een bestand dat niet bestaat.",
 	"proofreadpage_nosuch_file": "Fout: het opgegeven bestand bestaat niet",
 	"proofreadpage_indexdupetext": "Pagina's kunnen niet meer dan één keer op een indexpagina weergegeven worden.",
 	"proofreadpage_nologin": "Niet aangemeld",
