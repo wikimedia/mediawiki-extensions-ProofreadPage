@@ -1,0 +1,56 @@
+@import 'mediawiki.skin.variables.less';
+
+/* Quality links */
+
+/* stylelint-disable selector-class-pattern */
+.quality4 {
+	background-color: @background-color-success-subtle;
+	border-color: @background-color-success-subtle;
+}
+
+.quality3 {
+	background-color: @background-color-warning-subtle;
+	border-color: @background-color-warning-subtle;
+}
+
+.quality2 {
+	background-color: @background-color-progressive-subtle;
+	border-color: @background-color-progressive-subtle;
+}
+
+.quality1 {
+	background-color: @background-color-error-subtle;
+	border-color: @background-color-error-subtle;
+}
+
+.quality0 {
+	background-color: @background-color-notice-subtle;
+	border-color: @background-color-notice-subtle;
+}
+
+.pr_quality {
+	border-collapse: separate;
+	border-spacing: 0 0;
+	border: 1px dotted @border-color-subtle;
+	text-align: center;
+	max-width: 100%;
+}
+
+.pr_quality td {
+	padding: 0;
+	height: 0.6em;
+}
+/* stylelint-enable selector-class-pattern */
+
+.prp-index-pagelist-page {
+	text-align: center;
+	min-width: 1em;
+	display: inline-block;
+	padding: 0.15em;
+	margin: 1px;
+}
+
+.prp-index-pagelist {
+	display: flex;
+	flex-wrap: wrap;
+}

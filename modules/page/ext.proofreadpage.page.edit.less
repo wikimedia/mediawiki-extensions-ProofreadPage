@@ -1,8 +1,10 @@
 /* stylelint-disable selector-class-pattern */
+@import 'mediawiki.skin.variables.less';
+
 /* Adjustments for WikiEditor extension */
 .wikiEditor-ui-view,
 .prp-page-image {
-	background-color: #e8f2f8;
+	background-color: @background-color-interactive-subtle;
 }
 
 .wikiEditor-ui-text textarea {
@@ -34,7 +36,7 @@
 }
 
 .prp-page-edit-area-label {
-	color: #808080;
+	color: @color-disabled;
 	font-size: 80%;
 }
 
@@ -61,7 +63,7 @@
 
 .prp-page-content .CodeMirror,
 .prp-page-content .cm-editor {
-	background: #fff;
+	background: @background-color-base;
 	flex-grow: 1;
 }
 

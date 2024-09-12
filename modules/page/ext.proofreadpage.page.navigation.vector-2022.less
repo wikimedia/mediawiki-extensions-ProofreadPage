@@ -2,15 +2,15 @@
 @import 'mediawiki.skin.variables.less';
 
 #ca-proofreadPagePrevLink.icon a {
-	background-image: url( images/next-rtl.svg );
+	.cdx-mixin-css-icon( @cdx-icon-previous, @color-base, @size-icon-small, false, center 55% );
 }
 
 #ca-proofreadPageNextLink.icon a {
-	background-image: url( images/next-ltr.svg );
+	.cdx-mixin-css-icon( @cdx-icon-next, @color-base, @size-icon-small, false, center 55% );
 }
 
 #ca-proofreadPageIndexLink.icon a {
-	background-image: url( images/collapse.svg );
+	.cdx-mixin-css-icon( @cdx-icon-collapse, @color-base, @size-icon-small, false, center 55% );
 }
 
 #ca-proofreadPagePrevLink,
@@ -18,9 +18,6 @@
 #ca-proofreadPageIndexLink {
 	&.icon a {
 		width: 26px;
-		background-position: 50% 75%;
-		background-repeat: no-repeat;
-		background-size: auto auto;
 
 		&:hover {
 			text-decoration: none;

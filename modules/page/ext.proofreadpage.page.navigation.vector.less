@@ -1,32 +1,26 @@
 /* stylelint-disable selector-max-id, selector-class-pattern */
+@import 'mediawiki.skin.variables.less';
 
 #ca-proofreadPagePrevLink,
 #ca-proofreadPageNextLink,
 #ca-proofreadPageIndexLink {
 	&.icon a {
-		margin: 0;
-		padding: 0;
+		margin: 0 4px;
 		outline: 0;
-		display: block;
-		width: 26px;
 		/* This hides the text but shows the background image */
 		padding-top: 3.1em;
-		height: 0;
 		overflow: hidden;
-		background-position: 50% 75%;
-		background-repeat: no-repeat;
-		background-size: auto auto;
 	}
 }
 
 #ca-proofreadPagePrevLink.icon a {
-	background-image: url( images/next-rtl.svg );
+	.cdx-mixin-css-icon( @cdx-icon-previous, @color-base, @size-icon-medium, false, center 75% );
 }
 
 #ca-proofreadPageNextLink.icon a {
-	background-image: url( images/next-ltr.svg );
+	.cdx-mixin-css-icon( @cdx-icon-next, @color-base, @size-icon-medium, false, center 75% );
 }
 
 #ca-proofreadPageIndexLink.icon a {
-	background-image: url( images/collapse.svg );
+	.cdx-mixin-css-icon( @cdx-icon-collapse, @color-base, @size-icon-medium, false, center 75% );
 }

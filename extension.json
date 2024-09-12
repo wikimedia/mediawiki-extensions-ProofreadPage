@@ -92,16 +92,16 @@
 	"ForeignResourcesDir": "modules/lib",
 	"ResourceModules": {
 		"ext.proofreadpage.base": {
-			"styles": "ext.proofreadpage.base.css"
+			"styles": "ext.proofreadpage.base.less"
 		},
 		"ext.proofreadpage.page": {
 			"styles": "page/ext.proofreadpage.page.css"
 		},
 		"ext.proofreadpage.page.edit.styles": {
 			"styles": [
-				"ext.proofreadpage.base.css",
+				"ext.proofreadpage.base.less",
 				"page/ext.proofreadpage.page.css",
-				"page/ext.proofreadpage.page.edit.css",
+				"page/ext.proofreadpage.page.edit.less",
 				"page/PageQualityInputWidget.less"
 			]
 		},
@@ -112,8 +112,8 @@
 				"page/PageQualityInputWidget.js"
 			],
 			"styles": [
-				"ext.proofreadpage.base.css",
-				"page/ext.proofreadpage.page.edit.css",
+				"ext.proofreadpage.base.less",
+				"page/ext.proofreadpage.page.edit.less",
 				"page/PageQualityInputWidget.less"
 			],
 			"dependencies": [
@@ -178,7 +178,7 @@
 		"ext.proofreadpage.index.pagelist": {
 			"localBasePath": "modules/index.pagelist",
 			"styles": [
-				"styles/dialog.css",
+				"styles/dialog.less",
 				"styles/index.css"
 			],
 			"packageFiles": [
@@ -251,7 +251,7 @@
 		"ext.proofreadpage.page.editinsequence": {
 			"localBasePath": "modules/page.editinsequence",
 			"styles": [
-				"styles/index.css"
+				"styles/index.less"
 			],
 			"packageFiles": [
 				"index.js",

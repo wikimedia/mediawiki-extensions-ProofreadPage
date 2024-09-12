@@ -1,3 +1,5 @@
+@import 'mediawiki.skin.variables.less';
+
 .prp-edit-in-sequence-toolbar {
 	position: sticky;
 	top: 0;
@@ -9,12 +11,12 @@
 .prp-edit-in-sequence-preview-area {
 	position: relative;
 	flex: 1;
-	border-right: 1px solid #c8ccd1;
+	border-right: 1px solid @border-color-subtle;
 	padding-right: 12px;
 }
 
 .prp-edit-in-sequence-preview-area > .prp-edit-in-sequence-preview-wrapper {
-	background-color: #fff;
+	background-color: @background-color-base;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
@@ -29,12 +31,12 @@
 }
 
 .prp-eis-page-selection-page .oo-ui-buttonElement-frameless > a.oo-ui-buttonElement-button {
-	color: #a2a9b1;
+	color: @border-color-base;
 }
 
 .prp-eis-page-selection-widget-open {
 	height: 30vh;
-	border-bottom: 1px solid #c8ccd1;
+	border-bottom: 1px solid @border-color-subtle;
 	box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
 }
 
@@ -44,7 +46,7 @@
 
 .prp-eis-page-selection-widget {
 	transition: all 250ms;
-	background: #fff;
+	background: @background-color-base;
 	margin-bottom: 2em;
 	position: relative;
 }

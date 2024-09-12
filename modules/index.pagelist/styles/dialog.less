@@ -1,3 +1,5 @@
+@import 'mediawiki.skin.variables.less';
+
 .prp-pagelist-dialog-main-panel {
 	display: flex;
 	justify-content: space-between;
@@ -9,11 +11,11 @@
 }
 
 .prp-pagelist-dialog-stack-layout {
-	border-left: 1px solid #c8ccd1;
+	border-left: 1px solid @border-color-subtle;
 }
 
 .prp-pagelist-dialog-stack-layout > .oo-ui-panelLayout {
-	border-bottom: 1px solid #c8ccd1;
+	border-bottom: 1px solid @border-color-subtle;
 }
 
 .prp-pagelist-dialog-image-panel img {
@@ -25,7 +27,7 @@
 }
 
 .prp-pagelist-dialog-stack-layout > .oo-ui-panelLayout:first-child {
-	background: #fff;
+	background: @background-color-base;
 	box-shadow: 0 1px 4px 1px rgba( 0, 0, 0, 0.25 );
 }
 
