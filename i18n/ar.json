@@ -16,7 +16,8 @@
 			"Ulhvulgv",
 			"ديفيد",
 			"زكريا",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Mohanad"
 		]
 	},
 	"nstab-page": "صفحة",
@@ -113,6 +114,8 @@
 	"proofreadpage-button-zoom-in-label": "تكبير",
 	"proofreadpage-button-zoom-out-label": "تصغير",
 	"proofreadpage-pageinfo-status": "حالة التصحيح",
+	"prp-editinsequence-beta-label": "التحرير بالتسلسل",
+	"prp-editinsequence-beta-description": "واجهة تحرير جديدة تتيح لك تعديل الصفحات بشكل أسرع.",
 	"prp-editinsequence-http-error-pagelist": "فشل جلب ترقيم الصفحات بسبب مشاكل في الشبكة ، يرجى المحاولة مرة أخرى لاحقًا.",
 	"prp-editinsequence-pagination-does-not-exist": "لا يوجد ترقيم صفحات لهذه الصفحة مما يجعل من المستحيل تحديد الصفحات التالية والسابقة. إذا كنت تعتقد أن هذا كان خطأ ، فيرجى إبلاغ phabricator.wikimedia.org بهذا الخطأ.",
 	"prp-editinsequence-unknown-error": "تم اكتشاف خطأ غير متوقع. الرجاء الإبلاغ عن هذا الخطأ إلى phabricator.wikimedia.org.",
@@ -128,6 +131,7 @@
 	"prp-editinsequence-save-next-action-do-nothing": "لا تفعل شيئا",
 	"prp-editinsequence-save-next-action-go-to-next": "انتقل إلى الصفحة التالية",
 	"prp-editinsequence-save-next-action-go-to-prev": "انتقل إلى الصفحة السابقة",
+	"prp-editinsequence-unsaved-edit-message": "لديك تغييرات غير محفوظة. إذا غادرت الصفحة، ستستعاد التغييرات التي قمت بها عند عودتك.",
 	"prp-editinsequence-show-dialog-toggle-label": "أظهر مربع الحوار هذا في كل مرة يتم فيها النقر على \" $1 \"",
 	"prp-editinsequence-editsummary-placeholder": "صِف تغييراتك",
 	"prp-editinsequence-could-not-save-edit": "لا يمكن حفظ هذا التعديل",
@@ -157,7 +161,7 @@
 	"proofreadpage-pagelist-assignedpagenumber": "تم تخصيص رقم الصفحة لهذه الصفحة: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "مساعدة",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "لا يسمح نوع الرقم بحدوث تغيير في الترقيم. سيتم تجاهل أي قيمة في هذا الحقل عند التحديث.",
-	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "نوع رقم الصفحة: $1",
+	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "نسق رقم الصفحة:",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "يبدأ ترقيم الصفحات من:",
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "تغيير رقم الصفحة لهذه الصفحة فقط",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "تعيين رقم الصفحة من رقم المسح $1 فصاعدًا",
