@@ -13,7 +13,11 @@
 			"ديفيد",
 			"زكريا",
 			"محمد أحمد عبد الفتاح",
-			"Alshamiri1"
+			"Alshamiri1",
+			"Asma",
+			"Hubaishan",
+			"Mohanad",
+			"Reedy"
 		]
 	},
 	"nstab-page": "صفحة",
@@ -132,7 +136,7 @@
 	"proofreadpage-pagelist-assignedpagenumber": "تم تخصيص رقم الصفحة لهذه الصفحة: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "مساعدة",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "لا يسمح نوع الرقم بحدوث تغيير في الترقيم. سيتم تجاهل أي قيمة في هذا الحقل عند التحديث.",
-	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "نوع رقم الصفحة: $1",
+	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "نسق رقم الصفحة:",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "يبدأ ترقيم الصفحات من:",
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "تغيير رقم الصفحة لهذه الصفحة فقط",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "تعيين رقم الصفحة من رقم المسح $1 فصاعدًا",
