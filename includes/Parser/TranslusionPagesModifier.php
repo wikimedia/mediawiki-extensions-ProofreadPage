@@ -162,12 +162,11 @@ class TranslusionPagesModifier {
 			'table',
 			[
 				'class' => 'pr_quality',
-				'title' => $contextSource->msg(
-					'proofreadpage-indexquality-alt',
+				'title' => $contextSource->msg( 'proofreadpage-indexquality-alt' )->numParams(
 					$qualityStats->getNumberOfPagesForQualityLevel( 4 ),
 					$qualityStats->getNumberOfPagesForQualityLevel( 3 ),
 					$qualityStats->getNumberOfPagesForQualityLevel( 1 )
-				)
+				)->text()
 			],
 			Html::rawElement( 'tr', [], $output )
 		);
