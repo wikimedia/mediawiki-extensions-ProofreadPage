@@ -22,6 +22,7 @@
 namespace ProofreadPage\Special;
 
 use ISearchResultSet;
+use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\QueryPage;
@@ -339,20 +340,19 @@ class SpecialProofreadPages extends QueryPage {
 		$q4 = $result->pr_q4;
 		$num_void = $size - $q1 - $q2 - $q3 - $q4 - $q0;
 		$void_cell = $num_void
-			? '<td class="qualitye" style="width:' . $num_void . 'px;"></td>'
+			? Html::element( 'td', [ 'class' => 'qualitye', 'style' => "width: {$num_void}px" ] )
 			: '';
-		$textualAlternative = $this->msg( 'proofreadpage-indexquality-alt' )
-			->numParams( $q4, $q3, $q1 )->escaped();
-		$qualityOutput = '<table class="pr_quality" title="' . $textualAlternative . '">
-<tr>
-<td class="quality4" style="width:' . $q4 . 'px;"></td>
-<td class="quality3" style="width:' . $q3 . 'px;"></td>
-<td class="quality2" style="width:' . $q2 . 'px;"></td>
-<td class="quality1" style="width:' . $q1 . 'px;"></td>
-<td class="quality0" style="width:' . $q0 . 'px;"></td>
-' . $void_cell . '
-</tr>
-</table>';
+
+		$qualityOutput = Html::rawElement( 'table', [
+				'class' => 'pr_quality',
+				'title' => $this->msg( 'proofreadpage-indexquality-alt' )->numParams( $q4, $q3, $q1 )->text()
+			], Html::rawElement( 'tr', [], implode( [
+				Html::element( 'td', [ 'class' => 'quality4', 'style' => "width: {$q4}px" ] ),
+				Html::element( 'td', [ 'class' => 'quality3', 'style' => "width: {$q3}px" ] ),
+				Html::element( 'td', [ 'class' => 'quality2', 'style' => "width: {$q2}px" ] ),
+				Html::element( 'td', [ 'class' => 'quality1', 'style' => "width: {$q1}px" ] ),
+				Html::element( 'td', [ 'class' => 'quality0', 'style' => "width: {$q0}px" ] ),
+			] ) . $void_cell ) );
 
 		$dirmark = $this->getLanguage()->getDirMark();
 		$pages = $this->msg( 'proofreadpage_pages', $size )->numParams( $size )->text();
