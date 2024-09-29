@@ -354,10 +354,9 @@ class SpecialProofreadPages extends QueryPage {
 				Html::element( 'td', [ 'class' => 'quality0', 'style' => "width: {$q0}px" ] ),
 			] ) . $void_cell ) );
 
-		$dirmark = $this->getLanguage()->getDirMark();
 		$pages = $this->msg( 'proofreadpage_pages', $size )->numParams( $size )->text();
 
-		return "<div class=\"prp-indexpages-row\"><span>{$plink} {$dirmark}[$pages]</span>" .
+		return "<div class=\"prp-indexpages-row\"><span><bdi>{$plink}</bdi> [$pages]</span>" .
 			"<div>{$qualityOutput}</div></div>";
 	}
 
