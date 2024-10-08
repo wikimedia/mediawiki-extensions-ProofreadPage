@@ -27,6 +27,8 @@
 	"proofreadpage_nosuch_index": "Feil: ingen slik indeks",
 	"proofreadpage_nosuch_index_category": "Sidetransklusjoner som henviser til manglende indekssider",
 	"proofreadpage_nosuch_index_category-desc": "En <code><nowiki><pages/></nowiki></code>-tagg refererer til en indeksside som ikke finnes.",
+	"proofreadpage_nosuch_file_for_index_category": "Indekssider med sidelistetagger som refererer til en ikke-eksisterende fil",
+	"proofreadpage_nosuch_file_for_index_category-desc": "En <code><nowiki><pagelist /></nowiki></code>-tagg refererer til ei fil som ikke finnes.",
 	"proofreadpage_nosuch_file": "Feil: ingen slik fil",
 	"proofreadpage_indexdupetext": "Sider kan ikke listes mer enn en gang på en indeksside.",
 	"proofreadpage_nologin": "Ikke innlogget",
