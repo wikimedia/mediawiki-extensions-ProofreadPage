@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Page;
 
-use ChangeTags;
 use ProofreadPage\Tags;
 use ProofreadPageTestCase;
 
@@ -29,7 +28,7 @@ class PageRevisionTaggerTest extends ProofreadPageTestCase {
 
 	private function assertEditTags( $status, $expectedTags ) {
 		$revisionId = $status->value['revision-record']->getId();
-		$realTags = ChangeTags::getTags( $this->db, null, $revisionId );
+		$realTags = $this->getServiceContainer()->getChangeTagsStore()->getTags( $this->db, null, $revisionId );
 		$this->assertEquals( $expectedTags, $realTags );
 	}
 
