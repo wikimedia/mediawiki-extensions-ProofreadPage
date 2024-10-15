@@ -43,6 +43,14 @@ $proofreadPageNamespaceNames['ban'] = [
 	'index_talk' => 'Pabligbagan_Indéks',
 ];
 
+/** Central Bikol (Bikol Sentral) */
+$proofreadPageNamespaceNames['bcl'] = [
+	'page' => 'Pahina',
+	'page_talk' => 'Olay_sa_pahina',
+	'index' => 'Indeks',
+	'index_talk' => 'Olay_sa_indeks',
+];
+
 /** Belarusian (беларуская) */
 $proofreadPageNamespaceNames['be'] = [
 	'page' => 'Старонка',
