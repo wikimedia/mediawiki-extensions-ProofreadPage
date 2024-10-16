@@ -5,12 +5,19 @@
 			"Omshivaprakash",
 			"VASANTH S.N.",
 			"~aanzx",
-			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ"
+			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ",
+			"Anzx",
+			"Shettyhariprasad"
 		]
 	},
 	"nstab-page": "ಪುಟ",
+	"nstab-index": "ಪರಿವಿಡಿ",
+	"tooltip-ca-nstab-page": "ಪುಸ್ತಕದ ಪುಟವನ್ನು ನೋಡಿ",
+	"tooltip-ca-nstab-index": "ಪುಸ್ತಕದ ಪರಿವಿಡಿಯನ್ನು ನೋಡಿ",
 	"indexpages": "ಪರಿವಿಡಿ ಪುಟಗಳ ಪಟ್ಟಿ",
 	"pageswithoutscans": "ಸ್ಕ್ಯಾನ್‍ಗಳಿಲ್ಲದ ಪುಟಗಳು",
+	"prefs-proofread-pagenamespace": "ಪ್ರೂಫ್ ರೀಡಿಂಗ್ ಇಂಟರ್ಫೇಸ್ ಆಯ್ಕೆಗಳು",
+	"proofreadpage_desc": "ಮೂಲ ಸ್ಕ್ಯಾನ್‌ಗೆ ಪಠ್ಯವನ್ನು ಸುಲಭವಾಗಿ ಹೋಲಿಸಲು ಅನುಮತಿಸಿ",
 	"proofreadpage_image": "ಚಿತ್ರ",
 	"proofreadpage_index": "ಪರಿವಿಡಿ",
 	"proofreadpage_index_expected": "ದೋಷ: ಪರಿವಿಡಿ ನಿರೀಕ್ಷಿಸಲಾಗಿತ್ತು",
