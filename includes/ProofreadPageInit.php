@@ -5,6 +5,7 @@ namespace ProofreadPage;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Hook\SetupAfterCacheHook;
+use MediaWiki\Registration\ExtensionRegistry;
 
 /**
  * @license GPL-2.0-or-later
@@ -40,7 +41,7 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 		self::initNamespace( 'page' );
 		self::initNamespace( 'index' );
 
-		if ( \ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' ) ) {
 			// Also Add Index NS to the TemplateStyles auto-CSS list
 			// so that /styles.css can be created
 			$templateStylesNamespaces = $this->config->get( 'TemplateStylesNamespaces' );

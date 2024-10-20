@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Pagination\CustomNumberFormatters;
 
-use Language;
+use MediaWiki\Language\Language;
 use NumberFormatter;
 
 class BengaliCurrencyFormat {

@@ -2,9 +2,10 @@
 
 namespace ProofreadPage\Api;
 
-use ApiBase;
-use ApiQueryBase;
-use ApiResult;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryBase;
+use MediaWiki\Api\ApiResult;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
@@ -26,7 +27,7 @@ class ApiQueryImageForPage extends ApiQueryBase {
 	private static $prefix = 'prppifp';
 
 	/**
-	 * @param \ApiQuery $query
+	 * @param ApiQuery $query
 	 * @param string $moduleName
 	 */
 	public function __construct( $query, $moduleName ) {

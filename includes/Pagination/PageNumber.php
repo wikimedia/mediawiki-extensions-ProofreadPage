@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Pagination;
 
-use Language;
+use MediaWiki\Language\Language;
 use MediaWiki\Parser\Sanitizer;
 use NumberFormatter;
 use ProofreadPage\Pagination\CustomNumberFormatters\BengaliCurrencyFormat;

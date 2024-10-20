@@ -2,11 +2,11 @@
 
 namespace ProofreadPage\Api;
 
-use ApiBase;
-use ApiPageSet;
-use ApiQuery;
-use ApiQueryGeneratorBase;
 use LogicException;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiPageSet;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryGeneratorBase;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\Pagination\Pagination;

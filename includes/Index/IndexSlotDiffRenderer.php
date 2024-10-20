@@ -2,12 +2,12 @@
 
 namespace ProofreadPage\Index;
 
-use Content;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Title\Title;
 use ProofreadPage\DiffFormatterUtils;
 use SlotDiffRenderer;
-use WikitextContent;
 
 /**
  * SlotDiffRenderer for Index: pages content model

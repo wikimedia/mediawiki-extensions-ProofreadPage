@@ -2,28 +2,28 @@
 
 namespace ProofreadPage\Index;
 
-use Content;
+use MediaWiki\Content\Content;
 use MediaWiki\Content\Renderer\ContentParseParams;
+use MediaWiki\Content\TextContentHandler;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\Content\ValidationParams;
+use MediaWiki\Content\WikitextContent;
+use MediaWiki\Content\WikitextContentHandler;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Parser\PPFrame;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MediaWiki\Title\Title;
 use MWContentSerializationException;
-use ParserOptions;
-use PPFrame;
 use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\MultiFormatSerializerUtils;
 use StatusValue;
-use TextContentHandler;
 use UnexpectedValueException;
-use WikitextContent;
-use WikitextContentHandler;
 
 /**
  * @license GPL-2.0-or-later

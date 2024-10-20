@@ -2,13 +2,13 @@
 
 namespace ProofreadPage\Page;
 
-use Content;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\TextContent;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\MagicWord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use TextContent;
-use WikitextContent;
 
 /**
  * @license GPL-2.0-or-later

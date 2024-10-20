@@ -2,8 +2,9 @@
 
 namespace ProofreadPage\Api;
 
-use ApiBase;
-use ApiQueryBase;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryBase;
 use ProofreadPage\Context;
 use Wikimedia\ParamValidator\ParamValidator;
 
@@ -18,7 +19,7 @@ use Wikimedia\ParamValidator\ParamValidator;
 class ApiQueryProofreadInfo extends ApiQueryBase {
 
 	/**
-	 * @param \ApiQuery $query
+	 * @param ApiQuery $query
 	 * @param string $moduleName
 	 */
 	public function __construct( $query, $moduleName ) {

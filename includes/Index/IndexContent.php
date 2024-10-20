@@ -2,14 +2,14 @@
 
 namespace ProofreadPage\Index;
 
-use Content;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\TextContent;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Parser\MagicWord;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Title\Title;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
-use TextContent;
-use WikitextContent;
 
 /**
  * @license GPL-2.0-or-later

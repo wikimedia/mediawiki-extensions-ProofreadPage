@@ -3,7 +3,9 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
+use MediaWiki\Xml\Xml;
 
 /**
  * @license GPL-2.0-or-later
@@ -30,7 +32,7 @@ class IndexTemplateStyles {
 	public function __construct( Title $indexTitle ) {
 		// Use the base page so all subpages of an index share the same stylesheet
 		$this->indexTitle = $indexTitle->getBaseTitle();
-		$this->haveStyleSupport = \ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' );
+		$this->haveStyleSupport = ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' );
 	}
 
 	/**
@@ -89,7 +91,7 @@ class IndexTemplateStyles {
 				$ts_attribs["wrapper"] = $wrapper;
 			}
 
-			$styles .= \Xml::element( "templatestyles", $ts_attribs, "" );
+			$styles .= Xml::element( "templatestyles", $ts_attribs, "" );
 		}
 		return $styles;
 	}

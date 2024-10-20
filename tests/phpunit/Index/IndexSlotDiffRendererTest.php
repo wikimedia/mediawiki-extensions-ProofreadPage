@@ -2,11 +2,11 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
 use TextSlotDiffRenderer;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

@@ -18,6 +18,7 @@
  * @file
  */
 
+use MediaWiki\Maintenance\LoggedUpdateMaintenance;
 use ProofreadPage\ProofreadPage;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

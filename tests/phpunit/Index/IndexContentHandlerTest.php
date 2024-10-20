@@ -2,26 +2,26 @@
 
 namespace ProofreadPage\Index;
 
-use Content;
-use ContentHandler;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Content\ValidationParams;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Page\PageReferenceValue;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentityValue;
 use MWContentSerializationException;
-use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Pagination\PaginationFactory;
 use ProofreadPageTestCase;
 use SlotDiffRenderer;
 use StatusValue;
-use TextContent;
 use Wikimedia\TestingAccessWrapper;
 use WikiPage;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

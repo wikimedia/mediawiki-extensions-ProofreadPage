@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use MediaHandler;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
@@ -10,7 +11,6 @@ use MediaWiki\User\User;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

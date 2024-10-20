@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\HashConfig;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -17,6 +18,7 @@ use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Page\PageQualityLevelLookupMock;
 use ProofreadPage\ProofreadPageInit;
+use Wikimedia\FileBackend\FSFileBackend;
 use Wikimedia\TestingAccessWrapper;
 
 /**

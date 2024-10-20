@@ -2,13 +2,13 @@
 
 namespace ProofreadPage\Page;
 
-use Content;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use ProofreadPageTestCase;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

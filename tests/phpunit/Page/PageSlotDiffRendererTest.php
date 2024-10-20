@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use ProofreadPageTestCase;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

@@ -2,6 +2,7 @@
 
 namespace ProofreadPage;
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
 use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaError;
 use MediaWiki\Logger\LoggerFactory;
@@ -12,7 +13,6 @@ use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\Pagination;
 use Psr\Log\LoggerInterface;
-use WikitextContent;
 
 class ProofreadPageLuaLibrary extends LibraryBase {
 

@@ -3,10 +3,10 @@
 namespace ProofreadPage\Pagination;
 
 use MediaHandler;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

@@ -3,9 +3,9 @@
 namespace ProofreadPage\Parser;
 
 use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
-use ParserOptions;
 use ProofreadPage\Context;
 use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Index\WikitextLinksExtractor;

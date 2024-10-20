@@ -2,11 +2,11 @@
 
 namespace ProofreadPage\Index;
 
-use IDBAccessObject;
 use MediaWiki\Deferred\DataUpdate;
 use MediaWiki\Title\Title;
 use ProofreadPage\Page\PageQualityLevelLookup;
 use ProofreadPage\Pagination\Pagination;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

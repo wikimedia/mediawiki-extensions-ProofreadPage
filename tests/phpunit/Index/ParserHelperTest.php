@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use ParserOptions;
+use MediaWiki\Parser\ParserOptions;
 use ProofreadPageTestCase;
 
 /**

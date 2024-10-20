@@ -2,16 +2,16 @@
 
 namespace ProofreadPage\Page;
 
-use ContentHandler;
+use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Page\PageReferenceValue;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentityValue;
 use MWContentSerializationException;
-use ParserOptions;
 use ProofreadPageTestCase;
 use SlotDiffRenderer;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

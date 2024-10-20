@@ -2,9 +2,9 @@
 
 namespace ProofreadPage;
 
-use ExtensionRegistry;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\BetaFeatures\BetaFeatures;
+use MediaWiki\Registration\ExtensionRegistry;
 
 class EditInSequence {
 	/** url parameter for edit-in-sequence */

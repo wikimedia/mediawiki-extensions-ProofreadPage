@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Index;
 
-use FormatJson;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Json\FormatJson;
 use OutOfBoundsException;
 
 /**

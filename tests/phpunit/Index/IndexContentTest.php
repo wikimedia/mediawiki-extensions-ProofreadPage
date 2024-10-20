@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -9,7 +10,6 @@ use ProofreadPage\Context;
 use ProofreadPage\Link;
 use ProofreadPage\Pagination\PageList;
 use ProofreadPageTestCase;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

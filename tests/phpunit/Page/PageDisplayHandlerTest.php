@@ -2,12 +2,12 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;
-use WikitextContent;
 
 /**
  * @group ProofreadPage

@@ -21,7 +21,6 @@
 
 namespace ProofreadPage;
 
-use ExtensionRegistry;
 use ImagePage;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
@@ -45,6 +44,7 @@ use MediaWiki\Page\Hook\ImageOpenShowImageInlineBeforeHook;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Revision\Hook\ContentHandlerDefaultModelForHook;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;

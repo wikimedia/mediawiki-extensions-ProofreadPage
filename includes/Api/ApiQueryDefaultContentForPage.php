@@ -2,7 +2,8 @@
 
 namespace ProofreadPage\Api;
 
-use ApiQueryBase;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
@@ -29,7 +30,7 @@ class ApiQueryDefaultContentForPage extends ApiQueryBase {
 	private static $prefix = 'prppdefaultcontent';
 
 	/**
-	 * @param \ApiQuery $query
+	 * @param ApiQuery $query
 	 * @param string $moduleName
 	 */
 	public function __construct( $query, $moduleName ) {

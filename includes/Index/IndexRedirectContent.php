@@ -2,10 +2,10 @@
 
 namespace ProofreadPage\Index;
 
-use Content;
 use InvalidArgumentException;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Title\Title;
-use TextContent;
 
 /**
  * @license GPL-2.0-or-later

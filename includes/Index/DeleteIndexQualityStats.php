@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Index;
 
-use IDBAccessObject;
 use MediaWiki\Deferred\DataUpdate;
 use MediaWiki\Title\Title;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

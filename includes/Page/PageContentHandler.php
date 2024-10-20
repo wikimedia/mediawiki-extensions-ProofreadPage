@@ -2,11 +2,14 @@
 
 namespace ProofreadPage\Page;
 
-use Content;
 use MediaWiki\Category\TrackingCategories;
+use MediaWiki\Content\Content;
 use MediaWiki\Content\Renderer\ContentParseParams;
+use MediaWiki\Content\TextContentHandler;
 use MediaWiki\Content\Transform\PreloadTransformParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
+use MediaWiki\Content\WikitextContent;
+use MediaWiki\Content\WikitextContentHandler;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
@@ -18,10 +21,7 @@ use ProofreadPage\Context;
 use ProofreadPage\Index\IndexTemplateStyles;
 use ProofreadPage\Index\UpdateIndexQualityStats;
 use ProofreadPage\MultiFormatSerializerUtils;
-use TextContentHandler;
 use UnexpectedValueException;
-use WikitextContent;
-use WikitextContentHandler;
 
 /**
  * @license GPL-2.0-or-later

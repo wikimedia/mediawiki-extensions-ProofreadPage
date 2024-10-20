@@ -4,6 +4,7 @@ namespace ProofreadPage\Index;
 
 use Article;
 use LogicException;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\WebRequest;
@@ -16,7 +17,6 @@ use OOUI\TextInputWidget;
 use ProofreadPage\Context;
 use ProofreadPage\OOUI\PagelistInputWidget;
 use ProofreadPage\Pagination\PageNumber;
-use WikitextContent;
 
 /**
  * @license GPL-2.0-or-later

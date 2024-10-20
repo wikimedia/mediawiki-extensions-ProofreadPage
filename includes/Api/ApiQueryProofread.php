@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Api;
 
-use ApiQueryBase;
+use MediaWiki\Api\ApiQueryBase;
 use ProofreadPage\Context;
 
 /**

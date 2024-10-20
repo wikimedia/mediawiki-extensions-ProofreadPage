@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Api\ApiUsageException;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexContent;

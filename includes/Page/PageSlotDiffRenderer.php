@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use Content;
+use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use ProofreadPage\DiffFormatterUtils;

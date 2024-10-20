@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
@@ -9,7 +10,6 @@ use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
 use ProofreadPage\PageNumberNotFoundException;
 use ProofreadPage\Pagination\PageNotInPaginationException;
-use WikitextContent;
 
 /**
  * @license GPL-2.0-or-later
