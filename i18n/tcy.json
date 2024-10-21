@@ -140,7 +140,7 @@
 	"proofreadpage-preferences-pagelist-use-visual-mode": "ಪುಟ ಪಟ್ಟಿನ್ ಸಂಪಾದನೆ ಮಲ್ಪರೆ ಪೊಸ ಪ್ರಯೋಗಾತ್ಮಕ ದೃಶ್ಯ ಮೋಡ್‌ನ್ ಬಳಕೆ ಮಲ್ಪುಲೆ.",
 	"proofreadpage-preferences-zoom-factor-label": "ಸ್ಕ್ರೋಲ್‌ಡ್ ಜೂಮ್ ಫ್ಯಾಕ್ಟರ್ (1 ಬೊಕ್ಕ 2 ನಡುಟು, ಡಿಫಾಲ್ಟ್: 1.2). ಪ್ರತಿ ಹೆಜ್ಜೆಗ್ ಎಚ್ಚಿನ ಜೂಮ್‌ಲು ಜಾಸ್ತಿ",
 	"proofreadpage-indexquality-alt": "$1 ಪ್ರಕಟಿಸಯಿನ {{PLURAL:$1|ಪುಟೊ|ಪುಟೊಕುಲು}}, $2 ಕೇವಲೊ ಪರಿಸೀಲಿಸಯಿನ {{PLURAL:$2|ಪುಟೊ|ಪುಟೊಕುಲು}} ಬುಕ್ಕೊ $3 ಪರಿಸೀಲಿಸಯರೆ ಆವಂದಿನ {{PLURAL:$3|ಪುಟೊ|ಪುಟೊಕುಲು}}",
-	"content-model-proofread-page": "ಪುಸ್ತಕೊ ಪುಟೊ",
+	"content-model-proofread-page": "ಬುಕೂದ ಪುಟೊ",
 	"content-model-proofread-index": "ಪುಟೊತ ಪರಿವಿಡಿ",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "ಪುಟೊತ ಆಯ್ಕೆ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ಪುಟಕುಲು",
