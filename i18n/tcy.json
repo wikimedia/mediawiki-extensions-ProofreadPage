@@ -169,7 +169,7 @@
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "{{GENDER:|you}} EditInSequence ಮೋಡ್‌ಡ್ ಒಂಜಿ ಪುಟೊನು ಒರಿಪಾಯಿನ ಪ್ರತಿ ಸರ್ತಿಲಾ ಒಂಜಿ ಎಡಿಟ್ ಸಾರಾಂಶ ಸಂವಾದೊನು ತೋಜಾಲೆ",
 	"proofreadpage-preferences-after-save-action-label": "EditInSequence ಮೋಡ್‌ನ್ ಬಳಸದ್ ಒಂಜಿ ಪುಟೊನು ಉಳಿತಾಯ ಮಲ್ತಿನ ಬುಕ್ಕೊ ಈ ಕ್ರಮೊನು ಮಲ್ಪುಲೆ",
 	"proofreadpage-indexquality-alt": "$1 ಪ್ರಕಟಿಸಯಿನ {{PLURAL:$1|ಪುಟೊ|ಪುಟೊಕುಲು}}, $2 ಕೇವಲೊ ಪರಿಸೀಲಿಸಯಿನ {{PLURAL:$2|ಪುಟೊ|ಪುಟೊಕುಲು}} ಬುಕ್ಕೊ $3 ಪರಿಸೀಲಿಸಯರೆ ಆವಂದಿನ {{PLURAL:$3|ಪುಟೊ|ಪುಟೊಕುಲು}}",
-	"content-model-proofread-page": "ಪುಸ್ತಕೊ ಪುಟೊ",
+	"content-model-proofread-page": "ಬುಕೂದ ಪುಟೊ",
 	"content-model-proofread-index": "ಪುಟೊತ ಪರಿವಿಡಿ",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "ಪುಟೊತ ಆಯ್ಕೆ",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ಪುಟಕುಲು",
