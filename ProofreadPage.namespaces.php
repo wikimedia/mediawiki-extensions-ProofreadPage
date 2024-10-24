@@ -513,6 +513,14 @@ $proofreadPageNamespaceNames['ta'] = [
 	'index_talk' => 'அட்டவணை_பேச்சு'
 ];
 
+/** Tulu (ತುಳು) */
+$proofreadPageNamespaceNames['tcy'] = [
+	'page' => 'ಪುಟ',
+	'page_talk' => 'ಪುಟತ_ಪಾತೆರ',
+	'index' => 'ಪರಿವಿಡಿ',
+	'index_talk' => 'ಪರಿವಿಡಿತ_ಪಾತೆರ'
+];
+
 /** Telugu (తెలుగు) */
 $proofreadPageNamespaceNames['te'] = [
 	'page' => 'పుట',
