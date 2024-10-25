@@ -1,7 +1,6 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80",
 			"BaRaN6161 TURK",
 			"Can",
 			"Erdemaslancan",
@@ -37,6 +36,8 @@
 	"proofreadpage_nosuch_index": "Hata: Böyle bir dizin yok",
 	"proofreadpage_nosuch_index_category": "Eksik dizin sayfalarına bağlantı veren çapraz sayfa eklemeleri",
 	"proofreadpage_nosuch_index_category-desc": "Var olmayan Dizin sayfasına bağlantı veren <code><nowiki><pages/></nowiki></code> etiketi.",
+	"proofreadpage_nosuch_file_for_index_category": "Varolmayan bir dosyaya atıfta bulunan pagelist etiketine sahip dizin sayfaları",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Var olmayan bir dosyaya bağlantı veren <code><nowiki><pagelist/></nowiki></code> etiketi.",
 	"proofreadpage_nosuch_file": "Hata: Böyle bir dosya yok",
 	"proofreadpage_indexdupetext": "Sayfalar, bir dizin sayfasında birden çok kez listelenemez.",
 	"proofreadpage_nologin": "Oturum açık değil",
