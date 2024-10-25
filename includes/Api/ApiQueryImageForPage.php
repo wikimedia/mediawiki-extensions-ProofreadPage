@@ -26,11 +26,7 @@ class ApiQueryImageForPage extends ApiQueryBase {
 	/** @var string API module prefix */
 	private static $prefix = 'prppifp';
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 */
-	public function __construct( $query, $moduleName ) {
+	public function __construct( ApiQuery $query, string $moduleName ) {
 		parent::__construct( $query, $moduleName, static::$prefix );
 		$this->context = Context::getDefaultContext();
 		$this->pageDisplayHandler = new PageDisplayHandler( $this->context );

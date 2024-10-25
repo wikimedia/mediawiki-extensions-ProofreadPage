@@ -29,11 +29,7 @@ class ApiQueryDefaultContentForPage extends ApiQueryBase {
 	/** @var string API module prefix */
 	private static $prefix = 'prppdefaultcontent';
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 */
-	public function __construct( $query, $moduleName ) {
+	public function __construct( ApiQuery $query, string $moduleName ) {
 		parent::__construct( $query, $moduleName, static::$prefix );
 		$this->context = Context::getDefaultContext();
 		$this->pageContentBuilder = new PageContentBuilder( $this, $this->context );

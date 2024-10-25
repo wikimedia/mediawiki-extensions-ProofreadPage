@@ -26,10 +26,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 	/** @var string API module prefix */
 	private static $prefix = 'prppii';
 
-	/**
-	 * @inheritDoc
-	 */
-	public function __construct( ApiQuery $query, $moduleName ) {
+	public function __construct( ApiQuery $query, string $moduleName ) {
 		parent::__construct( $query, $moduleName, static::$prefix );
 		$this->context = Context::getDefaultContext();
 	}
