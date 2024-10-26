@@ -286,6 +286,7 @@ class PagesTagParser {
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
 			// find next and previous pages in list
+			$current = null;
 			$indexLinksCount = count( $indexLinks );
 			for ( $i = 0; $i < $indexLinksCount; $i++ ) {
 				if ( $pageTitle->equals( $indexLinks[$i]->getTarget() ) ) {
@@ -294,7 +295,7 @@ class PagesTagParser {
 					break;
 				}
 			}
-			if ( isset( $current ) ) {
+			if ( $current !== null ) {
 				if ( $i > 0 ) {
 					$prev = '[[' . $indexLinks[$i - 1]->getTarget()->getFullText() . '|' .
 						$indexLinks[$i - 1]->getLabel() . ']]';
@@ -313,7 +314,7 @@ class PagesTagParser {
 			if ( isset( $args['next'] ) ) {
 				$next = $args['next'];
 			}
-			if ( isset( $current ) ) {
+			if ( $current !== null ) {
 				$h_out .= "|current=$current";
 			}
 			if ( isset( $prev ) ) {
