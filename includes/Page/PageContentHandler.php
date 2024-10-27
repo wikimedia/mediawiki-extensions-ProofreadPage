@@ -417,7 +417,7 @@ class PageContentHandler extends TextContentHandler {
 	 * @inheritDoc
 	 */
 	public function getAutosummary(
-		Content $oldContent = null, Content $newContent = null, $flags = 0
+		?Content $oldContent = null, ?Content $newContent = null, $flags = 0
 	) {
 		$summary = parent::getAutosummary( $oldContent, $newContent, $flags );
 
@@ -511,7 +511,7 @@ class PageContentHandler extends TextContentHandler {
 	private function buildIndexQualityStatsUpdate(
 		Title $pageTitle,
 		Title $indexTitle,
-		Content $pageContent = null
+		?Content $pageContent = null
 	): UpdateIndexQualityStats {
 		$context = Context::getDefaultContext();
 		$newLevel = ( $pageContent instanceof PageContent )
@@ -530,7 +530,7 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @inheritDoc
 	 */
-	public function getPageLanguage( Title $title, Content $content = null ) {
+	public function getPageLanguage( Title $title, ?Content $content = null ) {
 		$context = Context::getDefaultContext();
 		$indexTitle = $context->getIndexForPageLookup()->getIndexForPageTitle( $title );
 		if ( $indexTitle ) {

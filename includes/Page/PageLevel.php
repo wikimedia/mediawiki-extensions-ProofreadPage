@@ -33,7 +33,7 @@ class PageLevel {
 	 * @param int $level
 	 * @param User|null $user
 	 */
-	public function __construct( $level = self::NOT_PROOFREAD, User $user = null ) {
+	public function __construct( $level = self::NOT_PROOFREAD, ?User $user = null ) {
 		$this->level = $level;
 		$this->user = $user;
 	}
@@ -69,7 +69,7 @@ class PageLevel {
 	 * @param PageLevel|null $that
 	 * @return bool
 	 */
-	public function equals( PageLevel $that = null ) {
+	public function equals( ?PageLevel $that = null ) {
 		if ( $that === null ) {
 			return false;
 		}

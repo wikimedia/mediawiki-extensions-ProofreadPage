@@ -45,8 +45,8 @@ class UpdateIndexQualityStats extends DataUpdate {
 		PageQualityLevelLookup $pageQualityLevelLookup,
 		Pagination $pagination,
 		Title $indexTitle,
-		Title $overrideTitle = null,
-		int $overrideLevel = null
+		?Title $overrideTitle = null,
+		?int $overrideLevel = null
 	) {
 		parent::__construct();
 

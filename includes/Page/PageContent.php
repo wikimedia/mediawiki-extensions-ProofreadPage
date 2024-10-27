@@ -106,7 +106,7 @@ class PageContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function equals( Content $that = null ) {
+	public function equals( ?Content $that = null ) {
 		if ( !( $that instanceof PageContent ) || $that->getModel() !== $this->getModel() ) {
 			return false;
 		}
@@ -194,7 +194,7 @@ class PageContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function isCountable( $hasLinks = null, Title $title = null ) {
+	public function isCountable( $hasLinks = null, ?Title $title = null ) {
 		return $this->header->isCountable( $hasLinks, $title ) ||
 			$this->body->isCountable( $hasLinks, $title ) ||
 			$this->footer->isCountable( $hasLinks, $title );

@@ -46,7 +46,7 @@ class PageSlotDiffRenderer extends SlotDiffRenderer {
 	 * @return string
 	 * @suppress PhanParamSignatureMismatch Intentional mismatching Content
 	 */
-	public function getDiff( Content $oldContent = null, Content $newContent = null ) {
+	public function getDiff( ?Content $oldContent = null, ?Content $newContent = null ) {
 		$this->normalizeContents( $oldContent, $newContent, PageContent::class );
 
 		return $this->createLevelDiffs(
