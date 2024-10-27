@@ -50,7 +50,7 @@ class IndexRedirectContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function equals( Content $that = null ) {
+	public function equals( ?Content $that = null ) {
 		return $that instanceof IndexRedirectContent &&
 			$this->redirectionTarget->equals( $that->getRedirectTarget() );
 	}

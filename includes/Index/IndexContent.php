@@ -91,7 +91,7 @@ class IndexContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function equals( Content $that = null ) {
+	public function equals( ?Content $that = null ) {
 		if ( !( $that instanceof IndexContent ) || $that->getModel() !== $this->getModel() ) {
 			return false;
 		}
@@ -160,7 +160,7 @@ class IndexContent extends TextContent {
 	/**
 	 * @inheritDoc
 	 */
-	public function isCountable( $hasLinks = null, Title $title = null ) {
+	public function isCountable( $hasLinks = null, ?Title $title = null ) {
 		foreach ( $this->fields as $value ) {
 			if ( $value->isCountable( $hasLinks, $title ) ) {
 				return true;

@@ -264,7 +264,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 	 * @dataProvider getPagelistTagContentProvider
 	 */
 	public function testGetPagelistTagContent(
-		IndexContent $content, PageList $pageList = null
+		IndexContent $content, ?PageList $pageList = null
 	) {
 		$this->assertEquals( $pageList, $content->getPagelistTagContent() );
 	}

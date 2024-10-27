@@ -60,7 +60,7 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 	/**
 	 * @inheritDoc
 	 */
-	public function getDiff( Content $oldContent = null, Content $newContent = null ) {
+	public function getDiff( ?Content $oldContent = null, ?Content $newContent = null ) {
 		$this->normalizeContents(
 			$oldContent, $newContent,
 			[ IndexContent::class, IndexRedirectContent::class ]
@@ -92,7 +92,7 @@ class IndexSlotDiffRenderer extends SlotDiffRenderer {
 	 * @param Title|null $newTitle
 	 * @return string
 	 */
-	private function createRedirectionDiff( Title $oldTitle = null, Title $newTitle = null ) {
+	private function createRedirectionDiff( ?Title $oldTitle = null, ?Title $newTitle = null ) {
 		$old = ( $oldTitle === null ) ? '' : $oldTitle->getFullText();
 		$new = ( $newTitle === null ) ? '' : $newTitle->getFullText();
 		return $this->createTextDiffOutput( $old, $new,

@@ -29,8 +29,8 @@ class QualityStatsBuilder {
 	 */
 	public function buildStatsForPaginationWithOverride(
 		Pagination $pagination,
-		Title $overridePage = null,
-		int $overridePageLevel = null
+		?Title $overridePage = null,
+		?int $overridePageLevel = null
 	): PagesQualityStats {
 		$pages = iterator_to_array( $pagination );
 		$this->pageQualityLevelLookup->prefetchQualityLevelForTitles( $pages );

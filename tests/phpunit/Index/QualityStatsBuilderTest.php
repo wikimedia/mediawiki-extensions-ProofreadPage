@@ -21,8 +21,8 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 		PagePagination $pagination,
 		array $qualityLevels,
 		PagesQualityStats $qualityStats,
-		Title $overridePage = null,
-		int $overridePageLevel = null
+		?Title $overridePage = null,
+		?int $overridePageLevel = null
 	) {
 		$builder = new QualityStatsBuilder( new PageQualityLevelLookupMock( $qualityLevels ) );
 		$this->assertEquals(
