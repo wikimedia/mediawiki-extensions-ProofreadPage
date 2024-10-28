@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bbeshir"
+		]
+	},
+	"nstab-page": "ገጽ",
+	"proofreadpage_image": "ሱረት",
+	"proofreadpage_nextpage": "ገጽ ላትተለ",
+	"proofreadpage_specialpage_filterby_all": "ኩሉ",
+	"proofreadpage_specialpage_filterby_incomplete": "ለይ ተማ",
+	"proofreadpage_index_listofpages": "ሊስተት ገጻት",
+	"proofreadpage-group-other": "ብዕድ",
+	"prp-editinsequence-page-filter-label-all": "ኩለን አግጸት",
+	"proofreadpage-pagelist-dialog-cancel": "ኣትርፍ",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "ሰዳየት",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ገጻት",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ዓቤ",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "ኢፋል",
+	"proofreadpage-index-field-category-label": "ክፋላት"
+}
