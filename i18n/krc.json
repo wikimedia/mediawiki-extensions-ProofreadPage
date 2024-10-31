@@ -145,6 +145,8 @@
 	"proofreadpage-pagelist-scan-number": "Скан номер: $1",
 	"proofreadpage-pagelist-display-number": "Дисплей номер: $1",
 	"proofreadpage-pagelist-assignedpagenumber": "Бу бетге бет номер берилди: $1",
+	"proofreadpage-pagelist-dialog-visual-help": "https://www.mediawiki.org/wiki/Help:Extension:ProofreadPage/Pagelist_widget",
+	"proofreadpage-pagelist-dialog-wikitext-help": "https://www.mediawiki.org/wiki/Help:Extension:ProofreadPage/Pagelist_syntax",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Болушлукъ",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "Номер тип, номерлендириу тюрлениуню тындырылыууна эркинлик бермейди. Бу къырдагъы къаллай да болсун магъана, джангыртыу заманда джокъ саналлыкъды.",
 	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "Бет Номер Тип:",
