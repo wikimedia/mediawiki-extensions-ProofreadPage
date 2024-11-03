@@ -818,7 +818,7 @@ class ProofreadPage implements
 				'ltr' => "$extensionAssetsPath/ProofreadPage/modules/page/images/eis-ltr.svg",
 				'rtl' => "$extensionAssetsPath/ProofreadPage/modules/page/images/eis-rtl.svg",
 			],
-			'info-link' => 'https://meta.wikimedia.org/wiki/Special:MyLanguage/Wikisource_EditInSequence',
+			'info-link' => 'https://www.mediawiki.org/wiki/Extension:Proofread_Page/Edit-in-Sequence',
 			'discussion-link' =>
 			'https://meta.wikimedia.org/wiki/Special:MyLanguage/Talk:Wikisource_EditInSequence',
 		];
