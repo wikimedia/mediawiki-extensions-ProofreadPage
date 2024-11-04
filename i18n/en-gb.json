@@ -1,10 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80",
 			"Piano1forte2",
 			"Reedy"
 		]
-	},
-	"proofreadpage-pagelist-dialog-unsaved-progress": "Leaving this dialogue may lead to a loss of unsaved progress."
+	}
 }

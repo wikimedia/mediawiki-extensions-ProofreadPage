@@ -26,14 +26,17 @@
 			"Weft",
 			"Wladek92",
 			"Wyz",
-			"Naheulf"
+			"Naheulf",
+			"Mahabarata",
+			"Reedy",
+			"SleaY"
 		]
 	},
 	"nstab-page": "Page",
 	"nstab-index": "Index",
 	"tooltip-ca-nstab-page": "Voir la page du livre",
 	"tooltip-ca-nstab-index": "Afficher l’index du livre",
-	"indexpages": "Liste des pages de sommaire",
+	"indexpages": "Liste des pages d'index",
 	"pageswithoutscans": "Pages sans facsimilé",
 	"prefs-proofread-pagenamespace": "Options de l’interface de relecture",
 	"proofreadpage_desc": "Permet une comparaison facile entre le texte et sa numérisation originale",

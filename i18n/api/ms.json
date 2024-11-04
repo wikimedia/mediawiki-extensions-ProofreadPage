@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Tofeiku",
-			"Lim Natee"
+			"Lim Natee",
+			"Hakimi97"
 		]
 	},
 	"apihelp-query+proofread-description": "Mengembalikan maklumat tentang status baca pruf terkini laman tertentu.",
