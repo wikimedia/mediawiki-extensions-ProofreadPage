@@ -28,14 +28,15 @@
 			"Weft",
 			"Wladek92",
 			"Wyz",
-			"SleaY"
+			"SleaY",
+			"Mahabarata"
 		]
 	},
 	"nstab-page": "Page",
 	"nstab-index": "Index",
 	"tooltip-ca-nstab-page": "Voir la page du livre",
 	"tooltip-ca-nstab-index": "Afficher l’index du livre",
-	"indexpages": "Liste des pages de sommaire",
+	"indexpages": "Liste des pages d'index",
 	"pageswithoutscans": "Pages sans facsimilé",
 	"prefs-proofread-pagenamespace": "Options de l’interface de relecture",
 	"proofreadpage_desc": "Permet une comparaison facile entre le texte et sa numérisation originale",
@@ -44,7 +45,7 @@
 	"proofreadpage_index_expected": "Erreur : un index est attendu",
 	"proofreadpage_nosuch_index": "Erreur : l’index n’a pas été trouvé",
 	"proofreadpage_nosuch_index_category": "Inclusions de page qui font référence à des pages d’index manquantes",
-	"proofreadpage_nosuch_index_category-desc": "Une balise<nowiki><pages/></nowiki> fait référence à une page d’index inexistante.",
+	"proofreadpage_nosuch_index_category-desc": "Une balise <code><nowiki><pages/></nowiki></code> fait référence à une page d’index inexistante.",
 	"proofreadpage_nosuch_file": "Erreur : le fichier n’a pas été trouvé",
 	"proofreadpage_indexdupetext": "Les pages ne peuvent pas être listées plus d’une fois sur une page d’index.",
 	"proofreadpage_nologin": "Non connecté(e)",
