@@ -3,7 +3,6 @@
 		"authors": [
 			"Abanima",
 			"Alshamiri1",
-			"Amire80",
 			"Meno25"
 		]
 	},
@@ -14,7 +13,7 @@
 	"apihelp-query+proofread-summary": "يرجع معلومات حول حالة المراجعة للصفحات المعطاة.",
 	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
 	"apihelp-query+proofreadinfo-summary": "يرجع معلومات حول ضبط امتداد ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "ما هي خصائص عملية التحقق المطلوب الحصول عليها:\n;namespaces:Information عن نطاقي \"{{ns:Page}}\" و \"{{ns:Index}}\".\n;qualitylevels:List قائمة مستويات جودة عملية التحقق.",
+	"apihelp-query+proofreadinfo-param-prop": "أي خصائص إصلاحية تحصل عليها:",
 	"apihelp-query+proofreadinfo-example-1": "إعطاء المعلومات الافتراضية",
 	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات",
 	"apihelp-query+proofreadpagesinindex-summary": "قائمة الصفحات في فهرس معين",
