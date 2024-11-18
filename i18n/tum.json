@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tumbuka Arch"
+		]
+	},
+	"nstab-page": "Jani",
+	"nstab-index": "Mndandanda",
+	"tooltip-ca-nstab-page": "Wonani jani la buku ili",
+	"tooltip-ca-nstab-index": "Wonani mndandanda wa buku",
+	"indexpages": "Mndandanda wa majani ghakusankhika",
+	"proofreadpage_image": "Chithuzi",
+	"proofreadpage_index": "Mndandanda",
+	"proofreadpage_index_expected": "Suzgo: Mndandanda wasachizgikanga",
+	"proofreadpage_nosuch_index": "Suzgo: Palije zina la mndandanda ngati ni ili",
+	"proofreadpage_nosuch_file": "Suzgo: Kuli chinthu ngati ni icho",
+	"proofreadpage_nologin": "Mundanjile mu akaunti"
+}
