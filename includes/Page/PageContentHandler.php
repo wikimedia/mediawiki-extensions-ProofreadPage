@@ -595,6 +595,10 @@ class PageContentHandler extends TextContentHandler {
 			$content->getLevel()->getLevel()
 		);
 
+		$poText = $parserOutput
+			->runOutputPipeline( $cpoParams->getParserOptions(), [ 'enableSectionEditLinks' => false ] )
+			->getContentHolderText();
+
 		// html container
 		$html = Html::openElement( 'div',
 			[ 'class' => 'prp-page-qualityheader quality' . $content->getLevel()->getLevel() ] ) .
@@ -602,7 +606,7 @@ class PageContentHandler extends TextContentHandler {
 				->title( $title )->inContentLanguage()->parse() .
 			Html::closeElement( 'div' ) .
 			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
-			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] ) .
+			$poText .
 			Html::closeElement( 'div' );
 		$parserOutput->setText( $html );
 
