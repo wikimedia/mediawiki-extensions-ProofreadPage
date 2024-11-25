@@ -4,7 +4,7 @@ namespace ProofreadPage;
 
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\HookContainer\HookRunner;
-use MediaWiki\Page\PageIdentity;
+use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Status\Status;
@@ -39,9 +39,7 @@ class ProofreadPageTest extends ProofreadPageTestCase {
 	 * @dataProvider provideOnMultiContentSave
 	 */
 	public function testOnMultiContentSave( Status $expectedResult, PageContent $content ) {
-		$pageIdentity = $this->getMockBuilder( PageIdentity::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$pageIdentity = new PageIdentityValue( 5, NS_MAIN, 'Test', PageIdentityValue::LOCAL );
 
 		$revRecord = $this->getMockBuilder( MutableRevisionRecord::class )
 			->disableOriginalConstructor()
