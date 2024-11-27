@@ -35,6 +35,14 @@ $proofreadPageNamespaceNames['as'] = [
 	'index_talk' => 'সূচী_আলোচনা'
 ];
 
+/** Azerbaijani (Azərbaycanca) */
+$proofreadPageNamespaceNames['az'] = [
+	'page' => 'Səhifə',
+	'page_talk' => 'Səhifə_müzakirəsi',
+	'index' => 'İndeks',
+	'index_talk' => 'İndeks_müzakirəsi'
+];
+
 /** Basa Bali (Basa Bali) */
 $proofreadPageNamespaceNames['ban'] = [
 	'page' => 'Kaca',

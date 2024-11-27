@@ -31,6 +31,12 @@ $specialPageAliases['as'] = [
 	'IndexPages' => [ 'সমল_পৃষ্ঠাসমূহ' ],
 ];
 
+/** Azerbaijani (Azərbaycanca) */
+$specialPageAliases['az'] = [
+	'IndexPages' => [ 'İndeksSəhifələri' ],
+	'PagesWithoutScans' => [ 'SkanOlunmamışSəhifələr' ]
+];
+
 /** Western Balochi (بلوچی رخشانی) */
 $specialPageAliases['bgn'] = [
 	'IndexPages' => [ 'تاکدیمانی_لڑلیست' ],
