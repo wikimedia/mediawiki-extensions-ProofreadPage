@@ -167,7 +167,7 @@
 	"proofreadpage-preferences-animation-time-label": "The pan and zoom animation time (between 0 and 2 seconds, default: 0). Higher is smoother, lower is faster",
 	"proofreadpage-preferences-showheaders-label": "Show header and footer fields when editing in the {{ns:page}} namespace",
 	"proofreadpage-preferences-horizontal-layout-label": "Use horizontal layout when editing in the {{ns:page}} namespace",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Use the new experimental visual mode to edit the pagelist.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Use the new experimental visual mode to edit the pagelist",
 	"proofreadpage-preferences-zoom-factor-label": "The zoom factor on scroll (between 1 and 2, default: 1.2). Higher zooms more per step",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Show an edit summary dialog everytime {{GENDER:|you}} save a page in EditInSequence mode",
 	"proofreadpage-preferences-after-save-action-label": "Perform this action after saving a page using the EditInSequence mode",
