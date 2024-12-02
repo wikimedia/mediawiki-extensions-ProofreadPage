@@ -166,7 +166,7 @@
 	"proofreadpage-preferences-animation-time-label": "Sürüşdürmə və böyütmə animasiyası müddəti (0 ilə 2 saniyə arasında, standart: 0). Yüksək olanda daha hamar, aşağı olanda daha sürətlidir.",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ad fəzasında redaktə edərkən başlıq və aşağı sahələrini göstər",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ad fəzasında redaktə edərkən üfüqi tərtibatdan istifadə et",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Səhifə siyahısını redaktə etmək üçün yeni eksperimental vizual rejimdən istifadə et.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Səhifə siyahısını redaktə etmək üçün yeni eksperimental vizual rejimdən istifadə et",
 	"proofreadpage-preferences-zoom-factor-label": "Sürüşdürmə zamanı böyütmə faktoru (1 ilə 2 arasında, standart: 1.2). Hər addımda daha yüksək böyütmə",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Səhifəni EditInSequence rejimində yadda saxladığınız zaman hər dəfə redaktə xülasəsi pəncərəsini göstər",
 	"proofreadpage-preferences-after-save-action-label": "EditInSequence rejimindən istifadə edərək səhifəni saxladıqdan sonra bu hərəkəti yerinə yetir",

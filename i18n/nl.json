@@ -172,7 +172,7 @@
 	"proofreadpage-preferences-animation-time-label": "De pan- en zoomanimatietijd (tussen 0 en 2 seconden, standaard: 0). Hoger is soepeler, lager is sneller",
 	"proofreadpage-preferences-showheaders-label": "Kop- en voettekstvelden weergeven bij het bewerken in de naamruimte {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Horizontale vormgeving gebruiken tijdens het bewerken in de naamruimte {{ns:page}}",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "De nieuwe experimentele visuele modus gebruiken bij het bewerken van de paginalijst.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "De nieuwe experimentele visuele modus gebruiken bij het bewerken van de paginalijst",
 	"proofreadpage-preferences-zoom-factor-label": "De zoomfactor bij scrollen (tussen 1 en 2, standaard: 1,2). Bij hogere waarden wordt per stap meer gezoomd.",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Telkens wanneer u in de modus \"Bewerking in volgorde\" een pagina opslaat een dialoogvenster voor bewerkingssamenvatting weergeven",
 	"proofreadpage-preferences-after-save-action-label": "Deze handeling verrichten na het opslaan van een pagina met behulp van de modus \"Bewerking in volgorde\"",
