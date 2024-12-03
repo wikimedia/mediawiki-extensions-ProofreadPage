@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Juwan"
+		]
+	},
+	"nstab-page": "kipisi lipu",
+	"nstab-index": "ale lipu",
+	"tooltip-ca-nstab-page": "o lukin e kipisi lipu",
+	"tooltip-ca-nstab-index": "o lukin e ale lipu",
+	"indexpages": "kulupu pi ale lipu",
+	"pageswithoutscans": "lipu la lukin ala",
+	"proofreadpage_image": "sitelen",
+	"proofreadpage_nologin": "lon sijelo ala",
+	"proofreadpage_quality1_category": "alasa pakala ala",
+	"proofreadpage_quality2_category": "pakala",
+	"proofreadpage_quality3_category": "alasa pakala",
+	"proofreadpage_quality4_category": "pini",
+	"proofreadpage_quality0_summary": "toki ala",
+	"proofreadpage_quality1_summary": "alasa pakala ala",
+	"proofreadpage_quality2_summary": "pakala",
+	"proofreadpage_quality3_summary": "alasa pakala",
+	"proofreadpage_quality4_summary": "pini"
+}

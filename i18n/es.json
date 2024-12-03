@@ -42,6 +42,8 @@
 	"proofreadpage_nosuch_index": "Error: no existe este índice",
 	"proofreadpage_nosuch_index_category": "Transclusiones de páginas que hacen referencia a páginas de Índice inexistentes",
 	"proofreadpage_nosuch_index_category-desc": "Una etiqueta <code><nowiki><pages/></nowiki></code> hace referencia a una página de índice que no existe.",
+	"proofreadpage_nosuch_file_for_index_category": "Páginas de índice con etiquetas pagelist que hacen referencia a un archivo inexistente",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Una etiqueta <code><nowiki><pagelist/></nowiki></code> hace referencia a un archivo que no existe.",
 	"proofreadpage_nosuch_file": "Error: no existe el archivo",
 	"proofreadpage_indexdupetext": "Las páginas no pueden ser listadas más de una vez en una página índice.",
 	"proofreadpage_nologin": "No has accedido",

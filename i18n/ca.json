@@ -30,6 +30,8 @@
 	"proofreadpage_nosuch_index": "Error: no existeix l'índex",
 	"proofreadpage_nosuch_index_category": "Transclusions de pàgines que refereixen a pàgines d'Índex inexistent",
 	"proofreadpage_nosuch_index_category-desc": "Una etiqueta <code><nowiki><pages/></nowiki></code> fa referència a una pàgina d'índex que no existeix.",
+	"proofreadpage_nosuch_file_for_index_category": "Pàgines d'índex amb etiquetes pagelist que fan referència a un fitxer inexistent",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Una etiqueta <code><nowiki><pagelist/></nowiki></code> fa referència a un fitxer que no existeix.",
 	"proofreadpage_nosuch_file": "Error: no existeix el fitxer",
 	"proofreadpage_indexdupetext": "Les pàgines no es poden llistar més d'una vegada a una pàgina d'índex.",
 	"proofreadpage_nologin": "No heu iniciat la sessió",
