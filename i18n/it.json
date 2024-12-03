@@ -166,7 +166,7 @@
 	"proofreadpage-preferences-animation-time-label": "Il tempo di animazione della panoramica e dello zoom (tra 0 e 2 secondi, predefinito: 0). Più alto è più fluido, più basso è più veloce",
 	"proofreadpage-preferences-showheaders-label": "Mostra l'intestazione ed il piè di pagina durante la modifica nel namespace {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Usa il layout orizzontale durante la modifica nel namespace {{ns:page}}",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Usa la nuova modalità visuale sperimentale per modificare l'elenco delle pagine.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Usa la nuova modalità visuale sperimentale per modificare l'elenco delle pagine",
 	"proofreadpage-preferences-zoom-factor-label": "Il fattore di zoom sullo scorrimento (tra 1 e 2, default: 1.2). Più alto ingrandisce di più per ciascun passo",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Mostra una finestra di riepilogo delle modifiche ogni volta che salvi una pagina in modalità ModificaInSequenza{{GENDER:|}}",
 	"proofreadpage-preferences-after-save-action-label": "Esegui questa azione dopo aver salvato una pagina usando la modalità ModificaInSequenza",
