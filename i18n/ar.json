@@ -175,7 +175,7 @@
 	"proofreadpage-preferences-animation-time-label": "زمن حركة التحريك والتكبير (بين 0 و 2 ثانية، افتراضيا: 0). رقم أعلى يعني سلاس، رقم أقل يعني أسرع",
 	"proofreadpage-preferences-showheaders-label": "أظهر ترويس الصفحة وتذييلها عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "استخدم الواجهة الأفقية عند التحرير في نطاق {{ns:page}}",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "استخدم الوضع المرئي التجريبي الجديد لتحرير قائمة الصفحات.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "استخدم الوضع المرئي التجريبي الجديد لتحرير قائمة الصفحات",
 	"proofreadpage-preferences-zoom-factor-label": "عامل التكبير عند التمرير (بين 1 و 2 ، افتراضي: 1.2). تكبير / تصغير أعلى لكل خطوة",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "إظهار مربع حوار ملخص التحرير في كل مرة يحفظ {{GENDER: | you}} صفحة في وضع EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "قم بتنفيذ هذا الإجراء بعد حفظ الصفحة باستخدام الوضع EditInSequence",
