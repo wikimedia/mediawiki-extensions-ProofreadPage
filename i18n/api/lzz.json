@@ -1,8 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Cem Rize"
-		]
-	},
-	"apihelp-query+proofreadinfo-param-prop": "Alınacak düzeltme özellikleri:\n;namespaces:\"{{ns:Page}}\" ve \"{{ns:Index}}\" ad alanları hakkındaki bilgiler.\n;qualitylevels:Düzeltme kalite düzeyleri listesi."
-}
