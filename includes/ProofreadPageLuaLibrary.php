@@ -71,13 +71,6 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	}
 
 	/**
-	 * Increment the Lua engine expensive function count
-	 */
-	public function incrementExpensiveFunctionCount() {
-		$this->getEngine()->incrementExpensiveFunctionCount();
-	}
-
-	/**
 	 * Add a parser dependency on the given page (index or otherwise)
 	 *
 	 * @param Title|null $pageTitle
