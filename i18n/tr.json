@@ -176,7 +176,7 @@
 	"proofreadpage-preferences-animation-time-label": "Kaydırma ve yakınlaştırma canlandırma süresi (0 ile 2 saniye arasında, varsayılan: 0). Yüksekse daha pürüzsüz, düşükse daha hızlı",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ad alanını düzenlerken üstbilgi ve altbilgi alanlarını göster",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ad alanında düzenlerken yatay düzen kullan:",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Sayfa listesini düzenlemek için yeni deneysel görsel düzenleyiciyi kullanın.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Sayfa listesini düzenlemek için yeni deneysel görsel düzenleyiciyi kullanın",
 	"proofreadpage-preferences-zoom-factor-label": "Kaydırmadaki yakınlaştırma etkeni (1 ile 2 arasında, varsayılan: 1,2). Adım başına daha fazla yakınlaştırma",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "SıraylaDüzenle kipinde bir sayfayı her {{GENDER:|kaydettiğinizde}} bir değişiklik özeti iletişim kutusu göster",
 	"proofreadpage-preferences-after-save-action-label": "SıraylaDüzenle kipini kullanarak bir sayfayı kaydettikten sonra bu eylemi gerçekleştirin",
