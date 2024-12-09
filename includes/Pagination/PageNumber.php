@@ -5,6 +5,7 @@ namespace ProofreadPage\Pagination;
 use MediaWiki\Language\Language;
 use MediaWiki\Parser\Sanitizer;
 use NumberFormatter;
+use ProofreadPage\Pagination\CustomNumberFormatters\ArabicJommlFormat;
 use ProofreadPage\Pagination\CustomNumberFormatters\BengaliCurrencyFormat;
 
 /**
@@ -19,6 +20,8 @@ class PageNumber {
 	public const DISPLAY_FOLIOHIGHROMAN = 'foliohighroman';
 	public const DISPLAY_FOLIOROMAN = 'folioroman';
 	public const DISPLAY_BENGALI_CURRENCY = 'prpbengalicurrency';
+	public const DISPLAY_ARABIC_JOMML = 'arabicjomml';
+	public const DISPLAY_ARABIC_MAGHRIBI_JOMML = 'arabicjommlmaghribi';
 	public const DISPLAY_EMPTY = 'empty';
 
 	/**
@@ -39,7 +42,8 @@ class PageNumber {
 		'mlym' => 'mlym',
 		'orya' => 'orya',
 		'thai' => 'thai',
-		'latn' => 'latn'
+		'latn' => 'latn',
+		'arab' => 'arab',
 	];
 
 	/** @var string */
@@ -99,6 +103,20 @@ class PageNumber {
 			case self::DISPLAY_BENGALI_CURRENCY:
 				$formatter = new BengaliCurrencyFormat();
 				return $formatter->formatNumber( $language, $number );
+			case self::DISPLAY_ARABIC_JOMML:
+				if ( $number < 1000000 && $number > 0 ) {
+					$formatter = new ArabicJommlFormat();
+					return $formatter->formatNumber( $number );
+				} else {
+					return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) );
+				}
+			case self::DISPLAY_ARABIC_MAGHRIBI_JOMML:
+				if ( $number < 1000000 && $number > 0 ) {
+					$formatter = new ArabicJommlFormat();
+					return $formatter->formatNumber( $number, true );
+				} else {
+					return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) );
+				}
 			default:
 				if ( array_key_exists( $this->displayMode, self::DISPLAY_FROM_ICU ) ) {
 					return self::formatICU( $language, self::DISPLAY_FROM_ICU[$this->displayMode], $number );
@@ -135,6 +153,20 @@ class PageNumber {
 			case self::DISPLAY_BENGALI_CURRENCY:
 				$formatter = new BengaliCurrencyFormat();
 				return $formatter->formatNumber( $language, $number );
+			case self::DISPLAY_ARABIC_JOMML:
+				if ( $number < 1000000 && $number > 0 ) {
+					$formatter = new ArabicJommlFormat();
+					return $formatter->formatNumber( $number );
+				} else {
+					return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) );
+				}
+			case self::DISPLAY_ARABIC_MAGHRIBI_JOMML:
+				if ( $number < 1000000 && $number > 0 ) {
+					$formatter = new ArabicJommlFormat();
+					return $formatter->formatNumber( $number, true );
+				} else {
+					return Sanitizer::escapeHtmlAllowEntities( $language->formatNumNoSeparators( $number ) );
+				}
 			default:
 				if ( array_key_exists( $this->displayMode, self::DISPLAY_FROM_ICU ) ) {
 					return self::formatICU( $language, self::DISPLAY_FROM_ICU[$this->displayMode], $number );
@@ -196,6 +228,8 @@ class PageNumber {
 		$modes[] = self::DISPLAY_FOLIOHIGHROMAN;
 		$modes[] = self::DISPLAY_FOLIOROMAN;
 		$modes[] = self::DISPLAY_BENGALI_CURRENCY;
+		$modes[] = self::DISPLAY_ARABIC_JOMML;
+		$modes[] = self::DISPLAY_ARABIC_MAGHRIBI_JOMML;
 		return $modes;
 	}
 

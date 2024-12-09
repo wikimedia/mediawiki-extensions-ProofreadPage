@@ -31,7 +31,13 @@ class PageNumberTest extends ProofreadPageTestCase {
 			[ '৩৲', '৩৲', new PageNumber( '48', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
 			[ '১১৲', '১১৲', new PageNumber( '176', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
 			[ '৷৵৹', '৷৵৹', new PageNumber( '6', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
-			[ '০', '০', new PageNumber( '-1', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ]
+			[ '০', '০', new PageNumber( '-1', PageNumber::DISPLAY_BENGALI_CURRENCY ), null ],
+			[ 'قكه', 'قكه', new PageNumber( '125', PageNumber::DISPLAY_ARABIC_JOMML ), null ],
+			[ 'بغقكه', 'بغقكه', new PageNumber( '2125', PageNumber::DISPLAY_ARABIC_JOMML ), null ],
+			[ 'غا', 'غا', new PageNumber( '1001', PageNumber::DISPLAY_ARABIC_JOMML ), null ],
+			[ 'قكه', 'قكه', new PageNumber( '125', PageNumber::DISPLAY_ARABIC_MAGHRIBI_JOMML ), null ],
+			[ 'بشقكه', 'بشقكه', new PageNumber( '2125', PageNumber::DISPLAY_ARABIC_MAGHRIBI_JOMML ), null ],
+			[ 'شا', 'شا', new PageNumber( '1001', PageNumber::DISPLAY_ARABIC_MAGHRIBI_JOMML ), null ],
 
 		];
 	}
