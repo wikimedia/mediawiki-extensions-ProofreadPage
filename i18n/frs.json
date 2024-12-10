@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Neronno"
+		]
+	},
+	"nstab-page": "Siid",
+	"nstab-index": "Indeks",
+	"tooltip-ca-nstab-page": "Däi bauksiid biikiiken",
+	"tooltip-ca-nstab-index": "Däi baukindeks biikiiken",
+	"indexpages": "Liest fan indekssiiden",
+	"proofreadpage_index": "Liest",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jóó",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nē"
+}
