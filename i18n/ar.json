@@ -147,7 +147,7 @@
 	"proofreadpage-preferences-horizontal-layout-label": "استخدم الواجهة الأفقية عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "استخدم الوضع المرئي التجريبي الجديد لتحرير قائمة الصفحات.",
 	"proofreadpage-preferences-zoom-factor-label": "عامل التكبير عند التمرير (بين 1 و 2 ، افتراضي: 1.2). تكبير / تصغير أعلى لكل خطوة",
-	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|صفحات|صفحة}} تم التحقق منها و $2 {{PLURAL:$2|صفحات|صفحة}} تم تصحيحها و $3 {{PLURAL:$3|صفحات|صفحة}} لم تصحح",
+	"proofreadpage-indexquality-alt": "{{PLURAL:$1|لا صفحة|صفحة واحدة|صفحتان|$1 صفحات|$1 صفحة}} مُتحقَّق منها، و{{PLURAL:$2|لا صفحة|صفحة واحدة|صفحتان|$2 صفحات|$2 صفحة}} مُصححة، و{{PLURAL:$3|لا صفحة|صفحة واحدة|صفحتان|$3 صفحات|$3 صفحة}} غير مصححة",
 	"content-model-proofread-page": "صفحة كتاب",
 	"content-model-proofread-index": "فهرس الكتاب",
 	"proofreadpage-visualeditor-node-pages-inspector-title": "اختيار الصفحة",
