@@ -163,7 +163,7 @@
 	"proofreadpage-preferences-animation-time-label": "Панорама этиу эмда джууукълашдырыу анимация заманы (0 бла 2 секунд арасында, тынгылау бла:0). Мийик эсе чайкъалмай, алаша эсе теркирек.",
 	"proofreadpage-preferences-showheaders-label": "{{ns:page}} ат аламны тюзетген заманда башлыкъ эмда колонтитул къырланы кёргюз",
 	"proofreadpage-preferences-horizontal-layout-label": "{{ns:page}} ат аламда тюзетиу этген заманда горизонтал белгилеуню хайырланыгъыз",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Бет тизмени тюзетир ючюн джангы экспериментли кёрюнюм модну хайырланыгъыз.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Бет тизмени тюзетир ючюн джангы экспериментли кёрюнюм модну хайырланыгъыз",
 	"proofreadpage-preferences-zoom-factor-label": "Бурдурууда джууукълашдырыу фактор (1 бла 2 арасында, тынгылау бла: 1,2). Хар атламгъа джууукълашдырыуну асламландырыу",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "КёзюуБлаТюзетиу модда бетни хар {{GENDER:|сакъландыргъаныгъызда}} тюзетиу эсеблени диалог терезесин кёргюзюгюз",
 	"proofreadpage-preferences-after-save-action-label": "КёзюуБлаТюзетиу модну хайырланыб, бетни сакъландыргъандан сора бу этиуню тындырыгъыз",
