@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Es Krim 5 Juta Rasa",
-			"Reedy"
+			"Reedy",
+			"Jawadywn"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -124,7 +125,7 @@
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "Ubah nomor halaman untuk halaman hasa bugahan",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "Notopko nomor halaman jak nomor pindayan $1 rik torus",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Notopko nomor halaman untuk nomor pindayan $1",
-	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Daftar nomor halaman say risok tipakay wajib tiisi. Tulung hubungi pangurus antarpudak say tirodik untuk ngatur label hasa.",
+	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Daptar numur halaman say risok tipakay wajib tiisi. Tulung hubungi pangigun antarpudak say tirodik guway ngatur label hasa.",
 	"proofreadpage-preferences-animation-time-label": "Waktu animasi pangisotan rik parubahan ukuran (di antara 0 rik 2 detik, baku: 0). Rada langgar rada mulus, rada ribah rada gancang",
 	"proofreadpage-preferences-showheaders-label": "Jajakko bidang kop rik kukut harak nandani di ruwang golar {{na:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Pakay tata pik horizontal harak nandani di ruwang golar {{na:page}}",

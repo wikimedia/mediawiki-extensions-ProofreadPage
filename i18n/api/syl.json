@@ -1,10 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Asmani Haz"
+			"Asmani Haz",
+			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "ꠁꠘ꠆ꠒꠦꠇ ꠐꠣꠁꠐꠦꠟ \"$1\" ꠜꠦꠟꠤꠒ ꠘꠣꠄ ⁕",
 	"apihelp-query+proofread-description": "ꠎꠦ ꠚꠣꠔꠣ ꠖꠦꠅꠀ ꠅꠁꠍꠦ ꠅꠈꠐꠣꠞ ꠄꠈꠛꠟꠣꠇꠥꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
-	"apihelp-query+proofread-summary": "ꠎꠦ ꠚꠣꠔꠣ ꠖꠦꠅꠀ ꠅꠁꠍꠦ ꠅꠈꠐꠣꠞ ꠄꠈꠛꠟꠣꠇꠥꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
-	"apihelp-query+proofread-example-1": "namespace 250 ꠚꠣꠔꠣꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ"
+	"apihelp-query+proofread-summary": "ꠎꠦ ꠚꠣꠔꠣ ꠖꠦꠅꠀ ꠅꠁꠍꠦ ꠅꠈꠐꠣꠞ ꠄꠈꠛꠟꠣꠇꠥꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ ( ꠀꠟ ) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
+	"apihelp-query+proofread-example-1": "ꠘꠦꠝꠁꠍꠙꠦꠁꠌ 250 ꠚꠣꠔꠣꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ ( ꠀꠟ ) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
+	"apihelp-query+proofreadinfo-summary": "ꠙ꠆ꠞꠥꠚꠞꠤꠒꠙꠦꠎ ꠄꠇ꠆ꠡꠐꠦꠘꠡꠘꠞ ꠇꠘꠚꠤꠉꠣꠞꠦꠡꠘꠞ ꠡꠝ꠆ꠙꠞ꠆ꠇꠤꠔ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ ⁕",
+	"apihelp-query+proofreadinfo-example-1": "ꠒꠤꠚꠟ꠆ꠐ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ ⁕",
+	"apihelp-query+proofreadinfo-example-3": "ꠘꠣꠝꠡ꠆ꠕꠣꠘ ꠡꠝ꠆ꠙꠞ꠆ꠇꠤꠔ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+proofreadpagesinindex-summary": "ꠄꠉꠥ ꠘꠤꠞ꠆ꠖꠤꠡ꠆ꠐ ꠡꠥꠌꠤꠔ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠁꠘ꠆ꠔꠞ ꠔꠣꠟꠤꠇꠣ",
+	"apihelp-query+proofreadpagesinindex-param-limit": "ꠇꠔꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠚꠤꠞꠔ ꠖꠦꠅꠀ ꠅꠁꠛ ꠔꠣ ꠡꠤꠝꠣꠛꠖ꠆ꠗ ꠇꠞꠂꠘ",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠁꠘ ꠙꠣꠅꠀꠞ ꠟꠣꠉꠤ ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠀꠁꠒꠤ",
+	"apihelp-query+proofreadpagesinindex-param-prop": "ꠙ꠆ꠞꠔꠤꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠣꠉꠤ ꠇꠥꠘꠥ ꠛꠂꠡꠤꠡ꠆ꠐꠣꠁꠘ ꠙꠣꠅꠀ ꠃꠌꠤꠔ",
+	"apihelp-query+proofreadpagesinindex-param-title": "ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠁꠘ ꠙꠣꠅꠀꠞ ꠟꠣꠉꠤ ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠡꠤꠞꠥꠘꠣꠝ",
+	"apihelp-query+proofreadpagesinindex-example-1": "ꠒꠤꠚꠟ꠆ꠐ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ"
 }
