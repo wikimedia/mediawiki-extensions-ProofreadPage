@@ -161,7 +161,7 @@
 	"proofreadpage-preferences-animation-time-label": "Waktu animasi pangisotan rik parubahan ukuran (di antara 0 rik 2 detik, baku: 0). Rada langgar rada mulus, rada ribah rada gancang",
 	"proofreadpage-preferences-showheaders-label": "Jajakko bidang kop rik kukut harak nandani di ruwang golar {{na:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Pakay tata pik horizontal harak nandani di ruwang golar {{na:page}}",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Pakay mode visual experimental say anyar untuk nandani daftar halaman.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Pakay mode visual experimental say anyar untuk nandani daftar halaman",
 	"proofreadpage-preferences-zoom-factor-label": "Faktor pambalakan/paronikan harak ngisot (di antara 1 rik 2, baku: 1,2). Faktor say rada balak buhorti rada lamon parubahan per jangkah",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Jajakko dialog ringkasan suntingan satiyap kali {{GENDER:|Niku}} nyimpan halaman dilom mode EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "Gawiko tindakan hasa saradu nyimpan halaman makai mode EditInSequence",

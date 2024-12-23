@@ -18,6 +18,7 @@
 	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
 	"apihelp-query+proofreadinfo-summary": "يرجع معلومات حول ضبط امتداد ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "أي خصائص إصلاحية تحصل عليها:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "معلومات حول مساحات الأسماء \"{{ns:Page}}\" و\"{{ns:Index}}\".",
 	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "قائمة مستويات جودة التدقيق اللغوي.",
 	"apihelp-query+proofreadinfo-example-1": "إعطاء المعلومات الافتراضية",
 	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات",
@@ -29,6 +30,7 @@
 	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "إرجاع عنوان الصفحة لكل صفحة مرتبطة بصفحة الفهرس",
 	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "إرجاع معرف الصفحة لكل صفحة مرتبطة بصفحة الفهرس",
 	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "إرجاع أرقام الصفحات المنسقة لكل صفحة مرتبطة بصفحة الفهرس",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "قم بإرجاع أرقام الصفحات المنسقة لكل صفحة مرتبطة بصفحة الفهرس. تم إيقاف استخدام \"formattedpagenumber\"، لذا استخدم بدلاً من ذلك \"formattedpagenumber\".",
 	"apihelp-query+proofreadpagesinindex-param-title": "عنوان صفحة الفهرس المراد الحصول على صفحات لها",
 	"apihelp-query+proofreadpagesinindex-example-1": "إعادة المعلومات الافتراضية"
 }
