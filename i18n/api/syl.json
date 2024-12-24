@@ -1,9 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
-			"Asmani Haz"
+			"Asmani Haz",
+			"ꠢꠣꠍꠘ ꠞꠣꠎꠣ"
 		]
 	},
-	"apihelp-query+proofread-summary": "ꠎꠦ ꠚꠣꠔꠣ ꠖꠦꠅꠀ ꠅꠁꠍꠦ ꠅꠈꠐꠣꠞ ꠄꠈꠛꠟꠣꠇꠥꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
-	"apihelp-query+proofread-example-1": "namespace 250 ꠚꠣꠔꠣꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ (status) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ"
+	"apihelp-query+imageforpage-summary": "ꠙ꠆ꠞꠤ-ꠞꠦꠘ꠆ꠒꠣꠞ ꠀꠞ ꠄꠉꠥ ꠘꠤꠞ꠆ꠖꠤꠡ꠆ꠐ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠣꠉꠤ \"Page:\" ꠘꠦꠝꠡ꠆ꠙꠦꠡꠦ ꠌꠤꠔ꠆ꠞꠣꠁꠘ꠆ꠔꠞ ꠁꠃꠀꠞꠄꠟ ꠙ꠆ꠞꠖꠣꠘ ꠇꠞꠦ ⁕",
+	"apihelp-query+imageforpage-param-prop": "ꠇꠧꠘ ꠗꠞꠘꠦꠞ ꠌꠤꠔ꠆ꠞ ꠛꠣ ꠌꠤꠔ꠆ꠞꠦꠞ ꠉꠥꠘꠣꠛꠟꠤ ꠄꠉꠥ ꠘꠤꠞ꠆ꠖꠤꠡ꠆ꠐ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠣꠉꠤ 'Page:' ꠘꠣꠝꠡ꠆ꠕꠣꠘ ꠕꠘꠦ ꠚꠤꠞꠔ ꠖꠦꠅꠀ ꠃꠌꠤꠔ ⁕",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "ꠎꠦ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠐꠣ ꠅꠘꠥꠡꠘ꠆ꠗꠣꠘ ꠇꠞꠣ ꠅꠞ ꠔꠣꠞ ꠟꠉꠦ ꠎꠥꠇ꠆ꠔ ꠚꠣꠁꠟꠘꠣꠝꠞ ꠅꠗꠤꠇꠣꠞꠤ ꠚꠤꠞꠔ ꠖꠦꠁꠘ ⁕",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "ꠎꠦ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠐꠣ ꠅꠘꠥꠡꠘ꠆ꠗꠣꠘ ꠇꠞꠣ ꠅꠞ ꠔꠣꠞ ꠟꠉꠦ ꠎꠥꠇ꠆ꠔ ꠌꠤꠔ꠆ꠞꠞ ꠀꠇꠣꠞ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "ꠎꠦ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠐꠣ ꠅꠘꠥꠡꠘ꠆ꠗꠣꠘ ꠇꠞꠣ ꠅꠞ ꠔꠣꠞ ꠟꠉꠦ ꠎꠥꠇ꠆ꠔ ꠙꠥꠞꠣ ꠀꠇꠣꠞꠞ ꠌꠤꠔ꠆ꠞꠞ ꠁꠃꠀꠞꠄꠟ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "ꠎꠦ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠐꠣ ꠅꠘꠥꠡꠘ꠆ꠗꠣꠘ ꠇꠞꠣ ꠅꠞ ꠔꠣꠞ ꠟꠉꠦ ꠎꠥꠇ꠆ꠔ ꠙꠥꠞꠣ ꠀꠇꠣꠞꠞ ꠌꠤꠔ꠆ꠞꠞ 1x ꠨ 1.5x ꠀꠞ 2x ꠅꠞ ꠌꠤꠔ꠆ꠞꠣꠁꠘ꠆ꠔꠞ ꠁꠃꠀꠞꠄꠟ ꠡꠝ꠆ꠛꠟꠤꠔ ꠄꠉꠥ ꠔꠣꠟꠤꠇꠣ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apierror-proofreadpage-invalidindex": "ꠁꠘ꠆ꠒꠦꠇ ꠐꠣꠁꠐꠦꠟ \"$1\" ꠜꠦꠟꠤꠒ ꠘꠣꠄ ⁕",
+	"apihelp-query+defaultcontentforpage-summary": "ꠄꠉꠥ ꠘꠤꠞ꠆ꠖꠤꠡ꠆ꠐ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠣꠉꠤ 'Page:' ꠘꠣꠝꠡ꠆ꠕꠣꠘꠅ ꠒꠤꠚꠟ꠆ꠐ ꠇꠘ꠆ꠐꠦꠘ꠆ꠐ ꠖꠦꠄ ⁕\n\nꠒꠤꠚꠟ꠆ꠐ ꠇꠘ꠆ꠐꠦꠘ꠆ꠐ ꠅꠁꠟꠧ ꠇꠣꠌꠣ ꠃꠁꠇꠤꠐꠦꠇ꠆ꠡꠐ (ꠎꠣꠔꠦ ꠅꠛꠤꠡ꠆ꠡ ꠛꠁꠅꠞ ꠐꠦꠇ꠆ꠡꠐ ꠟꠦꠀꠞꠞ ꠇꠣꠌꠣ ꠄꠁꠌꠐꠤꠄꠝꠄꠟ ꠐꠦꠉ ꠅꠘ꠆ꠔꠞ꠆ꠜꠥꠇ꠆ꠔ  ꠕꠣꠇꠔꠅ ꠙꠣꠞꠦ) ⁕ ꠁꠐꠣ ꠄꠁꠌꠐꠤꠄꠝꠄꠟ ꠅ ꠀꠘꠣꠛꠤꠇ꠆ꠞꠤꠔ/ꠀꠘꠣꠙ꠆ꠞꠡꠦꠡꠒ ꠅꠛꠡ꠆ꠕꠣꠄ ꠛꠦꠛꠀꠞ ꠇꠞꠣ ꠃꠌꠤꠔ ꠘꠣꠄ ।।",
+	"apihelp-query+proofread-summary": "ꠎꠦ ꠚꠣꠔꠣ ꠖꠦꠅꠀ ꠅꠁꠍꠦ ꠅꠈꠐꠣꠞ ꠄꠈꠛꠟꠣꠇꠥꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ ( ꠀꠟ ) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
+	"apihelp-query+proofread-example-1": "ꠘꠦꠝꠁꠍꠙꠦꠁꠌ 250 ꠚꠣꠔꠣꠞ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠅꠛꠍꠔꠣ ( ꠀꠟ ) ꠚꠤꠞꠔ ꠖꠦꠇ꠆ꠇꠣ",
+	"apihelp-query+proofreadinfo-summary": "ꠙ꠆ꠞꠥꠚꠞꠤꠒꠙꠦꠎ ꠄꠇ꠆ꠡꠐꠦꠘꠡꠘꠞ ꠇꠘꠚꠤꠉꠣꠞꠦꠡꠘꠞ ꠡꠝ꠆ꠙꠞ꠆ꠇꠤꠔ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ ⁕",
+	"apihelp-query+proofreadinfo-param-prop": "ꠇꠥꠘꠥ ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠛꠂꠡꠤꠡ꠆ꠐꠢꠇꠟ ꠙꠣꠅꠀ ꠃꠌꠤꠔ ꠪",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "\"{{ns:Page}}\" ꠀꠞ \"{{ns:Index}}\" ꠘꠣꠝꠡ꠆ꠕꠣꠘꠞ ꠡꠝ꠆ꠙꠞ꠆ꠇꠤꠔ ꠔꠁꠔ꠆ꠔ ⁕",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "ꠙ꠆ꠞꠥꠚꠞꠤꠒ ꠉꠥꠘꠉꠔ ꠝꠣꠘꠞ ꠡ꠆ꠔꠞꠞ ꠔꠣꠟꠤꠇꠣ ⁕",
+	"apihelp-query+proofreadinfo-example-1": "ꠒꠤꠚꠟ꠆ꠐ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ ⁕",
+	"apihelp-query+proofreadinfo-example-3": "ꠘꠣꠝꠡ꠆ꠕꠣꠘ ꠡꠝ꠆ꠙꠞ꠆ꠇꠤꠔ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+proofreadpagesinindex-summary": "ꠄꠉꠥ ꠘꠤꠞ꠆ꠖꠤꠡ꠆ꠐ ꠡꠥꠌꠤꠔ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠁꠘ꠆ꠔꠞ ꠔꠣꠟꠤꠇꠣ",
+	"apihelp-query+proofreadpagesinindex-param-limit": "ꠇꠔꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠚꠤꠞꠔ ꠖꠦꠅꠀ ꠅꠁꠛ ꠔꠣ ꠡꠤꠝꠣꠛꠖ꠆ꠗ ꠇꠞꠂꠘ",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠁꠘ ꠙꠣꠅꠀꠞ ꠟꠣꠉꠤ ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠀꠁꠒꠤ",
+	"apihelp-query+proofreadpagesinindex-param-prop": "ꠙ꠆ꠞꠔꠤꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠣꠉꠤ ꠇꠥꠘꠥ ꠛꠂꠡꠤꠡ꠆ꠐꠣꠁꠘ ꠙꠣꠅꠀ ꠃꠌꠤꠔ",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠉꠦ ꠡꠋꠎꠥꠇ꠆ꠔ ꠙ꠆ꠞꠔꠤꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠀꠁꠒꠤ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠉꠦ ꠡꠋꠎꠥꠇ꠆ꠔ ꠙ꠆ꠞꠔꠤꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠡꠤꠞꠥꠘꠣꠝ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠉꠦ ꠡꠋꠎꠥꠇ꠆ꠔ ꠙ꠆ꠞꠔꠤꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠀꠁꠒꠤ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠉꠦ ꠡꠋꠎꠥꠇ꠆ꠔ ꠙ꠆ꠞꠔꠤꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠚꠞꠝꠦꠐ ꠇꠞꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠟꠝ꠆ꠛꠞ ꠚꠤꠞꠔ ꠖꠦꠁꠘ",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠟꠉꠦ ꠡꠋꠎꠥꠇ꠆ꠔ ꠙ꠆ꠞꠔꠤꠐꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠚꠞꠝꠦꠐ ꠇꠞꠣ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣ ꠟꠝ꠆ꠛꠞ ꠚꠤꠞꠔ ꠖꠦꠁꠘ ⁕ ꠒꠤꠙ꠆ꠞꠤꠇꠦꠐꠦꠒ ꠨ \"formattedpagenumber\" ꠛꠦꠛꠀꠞ ꠇꠞꠂꠘ ꠛꠖꠟꠣ ꠢꠤꠡꠣꠛꠦ ⁕",
+	"apihelp-query+proofreadpagesinindex-param-title": "ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠁꠘ ꠙꠣꠅꠀꠞ ꠟꠣꠉꠤ ꠡꠥꠌꠤ ꠙ꠆ꠞꠤꠡ꠆ꠑꠣꠞ ꠡꠤꠞꠥꠘꠣꠝ",
+	"apihelp-query+proofreadpagesinindex-example-1": "ꠒꠤꠚꠟ꠆ꠐ ꠔꠁꠔ꠆ꠔ ꠚꠤꠞꠔ ꠖꠦꠁꠘ"
 }
