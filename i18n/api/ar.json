@@ -13,11 +13,12 @@
 	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "إرجاع عنوان URL للصورة بالحجم الكامل المرتبطة بالصفحة التي يتم الاستعلام عنها",
 	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "إرجاع قائمة تحتوي على عناوين URL للصور بحجم 1x و1.5x و2x من الصورة بالحجم الكامل المرتبطة بالصفحة التي يتم الاستعلام عنها",
 	"apierror-proofreadpage-invalidindex": "عنوان فهرس غير صالح \" $1 \".",
-	"apihelp-query+defaultcontentforpage-summary": "يوفر المحتوى الافتراضي لصفحة معينة في نطاق \"الصفحة:\".! N !! N! المحتوى الافتراضي هو نص ويكي خام (من المحتمل أن يتضمنوسوم HTML الأولية من طبقات نص الكتاب غير الموثوق بها). يجب ألا يتم استخدامه في HTML بدون إلغاء / بدون تحليل!",
+	"apihelp-query+defaultcontentforpage-summary": "يوفر المحتوى الافتراضي لصفحة معينة في مساحة اسم \"الصفحة:\".\n\nالمحتوى الافتراضي هو نص ويكي خام (قد يتضمن علامات HTML خام من طبقات نص كتاب غير موثوقة). لا يجب استخدامه في HTML غير مفسّر/غير مُحلل!",
 	"apihelp-query+proofread-summary": "يرجع معلومات حول حالة المراجعة للصفحات المعطاة.",
 	"apihelp-query+proofread-example-1": "إعطاء وضع عملية التحقق للصفحات في النطاق 250",
 	"apihelp-query+proofreadinfo-summary": "يرجع معلومات حول ضبط امتداد ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "أي خصائص إصلاحية تحصل عليها:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "معلومات حول مساحات الأسماء \"{{ns:Page}}\" و\"{{ns:Index}}\".",
 	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "قائمة مستويات جودة التدقيق اللغوي.",
 	"apihelp-query+proofreadinfo-example-1": "إعطاء المعلومات الافتراضية",
 	"apihelp-query+proofreadinfo-example-3": "إعطاء المعلومات عن النطاقات",
@@ -29,6 +30,7 @@
 	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "إرجاع عنوان الصفحة لكل صفحة مرتبطة بصفحة الفهرس",
 	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "إرجاع معرف الصفحة لكل صفحة مرتبطة بصفحة الفهرس",
 	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "إرجاع أرقام الصفحات المنسقة لكل صفحة مرتبطة بصفحة الفهرس",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "قم بإرجاع أرقام الصفحات المنسقة لكل صفحة مرتبطة بصفحة الفهرس. تم إيقاف استخدام \"formattedpagenumber\"، لذا استخدم بدلاً من ذلك \"formattedpagenumber\".",
 	"apihelp-query+proofreadpagesinindex-param-title": "عنوان صفحة الفهرس المراد الحصول على صفحات لها",
 	"apihelp-query+proofreadpagesinindex-example-1": "إعادة المعلومات الافتراضية"
 }
