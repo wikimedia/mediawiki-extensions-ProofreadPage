@@ -161,7 +161,7 @@
 	"proofreadpage-preferences-animation-time-label": "Le tempore de animation del panoramica e del zoom (inter 0 e 2 secundas, predefinition: 0). Major es plus lisie, minor es plus rapide.",
 	"proofreadpage-preferences-showheaders-label": "Monstrar campos de capite e pede quando modificar in le spatio de nomines \"{{ns:page}}\"",
 	"proofreadpage-preferences-horizontal-layout-label": "Usar le disposition horizontal quando modificar in le spatio de nomines {{ns:page}}",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Usar le nove modo visual experimental pro modificar le lista de paginas.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Usar le nove modo visual experimental pro modificar le lista de paginas",
 	"proofreadpage-preferences-zoom-factor-label": "Le factor de zoom sur le rolamento (inter 1 e 2, predefinition: 1,2). Quanto major, tanto plus zoom per passo.",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Monstrar un dialogo de summario de modification cata vice que tu salveguarda un pagina in modo \"Modification in sequentia\"",
 	"proofreadpage-preferences-after-save-action-label": "Exequer iste action poste haber salveguardate un pagina usante le modo \"Modification in sequentia\"",
