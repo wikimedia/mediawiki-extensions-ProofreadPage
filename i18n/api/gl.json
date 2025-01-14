@@ -1,13 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-query+proofread-summary": "Devolve información acerca do estado actual de revisión das páxinas dadas.",
 	"apihelp-query+proofread-example-1": "Devolver o estado de revisión das páxinas no espazo de nomes 250",
 	"apihelp-query+proofreadinfo-summary": "Devolver información acerca da configuración da extensión ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Que propiedades de revisións obter:\n;namespaces:Información sobre espazos de nomes \"{{ns:Page}}\" e \"{{ns:Index}}\" .\n;qualitylevels:Lista de niveis de cualidade de revisión.",
+	"apihelp-query+proofreadinfo-param-prop": "Que propiedades de revisións obter:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "Información sobre os espazos de nomes \"{{ns:Page}}\" e \"{{ns:Index}}\".",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "Lista dos niveis de calidade de revisión.",
 	"apihelp-query+proofreadinfo-example-1": "Devolve información por defecto",
 	"apihelp-query+proofreadinfo-example-3": "Devolve información do espazo de nomes"
 }
