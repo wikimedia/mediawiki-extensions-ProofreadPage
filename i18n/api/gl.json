@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-query+proofread-description": "Devolve información acerca do estado actual de revisión das páxinas dadas.",
