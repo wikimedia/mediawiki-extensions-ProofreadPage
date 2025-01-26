@@ -2,35 +2,104 @@
 
 /* Quality links */
 
+/* Colors in light mode */
+@proofreadpage-quality0: #ddd;
+@proofreadpage-quality1: #ffa0a0;
+@proofreadpage-quality2: #b0b0ff;
+@proofreadpage-quality3: #ffe867;
+@proofreadpage-quality4: #90ff90;
+
+/* Colors in dark mode */
+@proofreadpage-quality0-dark: #55585e;
+@proofreadpage-quality1-dark: #971602;
+@proofreadpage-quality2-dark: #40408c;
+@proofreadpage-quality3-dark: #666600;
+@proofreadpage-quality4-dark: #00662e;
+
 /* stylelint-disable selector-class-pattern */
 .quality4 {
-	background-color: #90ff90;
-	border-color: #90ff90;
-	color: #202122;
+	background-color: @proofreadpage-quality4;
+	border-color: @proofreadpage-quality4;
+	color: @color-base;
 }
 
 .quality3 {
-	background-color: #ffe867;
-	border-color: #ffe867;
-	color: #202122;
+	background-color: @proofreadpage-quality3;
+	border-color: @proofreadpage-quality3;
+	color: @color-base;
 }
 
 .quality2 {
-	background-color: #b0b0ff;
-	border-color: #b0b0ff;
-	color: #202122;
+	background-color: @proofreadpage-quality2;
+	border-color: @proofreadpage-quality2;
+	color: @color-base;
 }
 
 .quality1 {
-	background-color: #ffa0a0;
-	border-color: #ffa0a0;
-	color: #202122;
+	background-color: @proofreadpage-quality1;
+	border-color: @proofreadpage-quality1;
+	color: @color-base;
 }
 
 .quality0 {
-	background-color: #ddd;
-	border-color: #ddd;
-	color: #202122;
+	background-color: @proofreadpage-quality0;
+	border-color: @proofreadpage-quality0;
+	color: @color-base;
+}
+
+/* For dark mode */
+@media screen {
+	html.skin-theme-clientpref-night .quality4 {
+		background-color: @proofreadpage-quality4-dark;
+		border-color: @proofreadpage-quality4-dark;
+	}
+
+	html.skin-theme-clientpref-night .quality3 {
+		background-color: @proofreadpage-quality3-dark;
+		border-color: @proofreadpage-quality3-dark;
+	}
+
+	html.skin-theme-clientpref-night .quality2 {
+		background-color: @proofreadpage-quality2-dark;
+		border-color: @proofreadpage-quality2-dark;
+	}
+
+	html.skin-theme-clientpref-night .quality1 {
+		background-color: @proofreadpage-quality1-dark;
+		border-color: @proofreadpage-quality1-dark;
+	}
+
+	html.skin-theme-clientpref-night .quality0 {
+		background-color: @proofreadpage-quality0-dark;
+		border-color: @proofreadpage-quality0-dark;
+	}
+}
+
+@media screen and ( prefers-color-scheme: dark ) {
+	html.skin-theme-clientpref-os .quality4 {
+		background-color: @proofreadpage-quality4-dark;
+		border-color: @proofreadpage-quality4-dark;
+	}
+
+	html.skin-theme-clientpref-os .quality3 {
+		background-color: @proofreadpage-quality3-dark;
+		border-color: @proofreadpage-quality3-dark;
+	}
+
+	html.skin-theme-clientpref-os .quality2 {
+		background-color: @proofreadpage-quality2-dark;
+		border-color: @proofreadpage-quality2-dark;
+	}
+
+	html.skin-theme-clientpref-os .quality1 {
+		background-color: @proofreadpage-quality1-dark;
+		border-color: @proofreadpage-quality1-dark;
+	}
+
+	html.skin-theme-clientpref-os .quality0 {
+		background-color: @proofreadpage-quality0-dark;
+		border-color: @proofreadpage-quality0-dark;
+	}
 }
 
 .pr_quality {
