@@ -2,10 +2,45 @@
 	"@metadata": {
 		"authors": [
 			"Abastillas",
-			"Bentong Isles"
+			"Bentong Isles",
+			"Filipinayzd"
 		]
 	},
+	"nstab-page": "Panid",
+	"nstab-index": "Indeks",
+	"tooltip-ca-nstab-page": "Tan-awa ang panid sa libro",
+	"tooltip-ca-nstab-index": "Tan-awa ang indeks sa libro",
+	"indexpages": "Listahan sa mga panid sa indeks",
+	"pageswithoutscans": "Mga panid nga walay scan",
+	"proofreadpage_index": "Indeks",
 	"proofreadpage_nextpage": "Sunod nga panid",
 	"proofreadpage_prevpage": "Miaging panid",
-	"proofreadpage_quality1_message": "Kining maong panid wala pa masuhid"
+	"proofreadpage_quality0_category": "Walay teksto",
+	"proofreadpage_quality1_category": "Dili proofread",
+	"proofreadpage_quality2_category": "Problematiko",
+	"proofreadpage_quality4_category": "Ginapamatud-an",
+	"proofreadpage_quality0_summary": "Walay teksto",
+	"proofreadpage_quality2_summary": "Problematiko",
+	"proofreadpage_quality3_summary": "Pag-proofread",
+	"proofreadpage_quality4_summary": "Ginapamatud-an",
+	"proofreadpage_quality1_message": "Kining maong panid wala pa masuhid",
+	"proofreadpage_specialpage_filterby_all": "Tanan",
+	"proofreadpage_specialpage_filterby_incomplete": "Dili kompleto",
+	"proofreadpage_specialpage_filterby_proofread": "Pag-proofread",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "Pag-proofread o gi-validate",
+	"proofreadpage_specialpage_filterby_validated": "Ginapamatud-an",
+	"proofreadpage_index_listofpages": "Listahan sa mga panid",
+	"proofreadpage_source": "Tinubdan",
+	"proofreadpage_styles": "Mga estilo",
+	"proofreadpage-group-zoom": "Pag-zoom",
+	"proofreadpage-group-other": "Ang uban",
+	"proofreadpage-button-reset-zoom-label": "Ang orihinal nga gidak-on",
+	"proofreadpage-button-rotate-left-label": "Mag-ikot sa wala",
+	"proofreadpage-button-rotate-right-label": "Mag-ikot sa tuo",
+	"proofreadpage-button-toggle-layout-label": "Vertical/horizontal nga layout",
+	"proofreadpage-button-zoom-in-label": "Pag-zoom in",
+	"proofreadpage-button-zoom-out-label": "Pag-zoom out",
+	"prp-editinsequence-preview": "Paunang tan-aw",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "I-save ang mga setting",
+	"prp-editinsequence-save-dialog-title": "I-save kini nga panid"
 }
