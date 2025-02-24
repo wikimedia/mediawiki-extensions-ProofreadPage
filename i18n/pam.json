@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Filipinayzd",
+			"Marivic altabano"
+		]
+	},
+	"nstab-page": "Bulung",
+	"nstab-index": "Indeks",
+	"tooltip-ca-nstab-page": "lawan me ing bulung ning libru",
+	"tooltip-ca-nstab-index": "lawan me ing indeks ning libru",
+	"indexpages": "listahan da reng index pages",
+	"pageswithoutscans": "Page alang scan",
+	"prefs-proofread-pagenamespace": "Proofreading interface options",
+	"proofreadpage_desc": "paburen meng mayan ing pamagkumpara ning text keng orihinal a scan",
+	"proofreadpage_image": "Litratu",
+	"proofreadpage_index": "Indeks",
+	"proofreadpage_index_expected": "Error: Index expected",
+	"proofreadpage_nosuch_index": "Error: Ala yang makanyan a index",
+	"proofreadpage_nosuch_index_category": "Page transclusions na mangabaldugan kareng kulang a Index pages",
+	"proofreadpage_nosuch_file": "Error: Ala yang makanyan a file",
+	"proofreadpage_indexdupetext": "Deng bulung e la malyaring ilista migit king misan king metung a index page.",
+	"proofreadpage-group-other": "Aliwa",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Wa",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ali"
+}
