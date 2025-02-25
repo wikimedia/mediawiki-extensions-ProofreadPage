@@ -6,6 +6,8 @@
 			"Ykhwong"
 		]
 	},
+	"apihelp-query+imageforpage-summary": "\"페이지:\" 이름공간의 주어진 페이지의 그림에 대해 URL을 미리 렌더링하고 보여줍니다.",
+	"apierror-proofreadpage-invalidindex": "잘못된 색인 제목 \"$1\".",
 	"apihelp-query+proofread-summary": "주어진 페이지의 현재 교정 상태에 대한 정보를 반환합니다.",
 	"apihelp-query+proofread-example-1": "이름공간 250에 위치한 페이지의 교정 상태를 반환함",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage 확장 기능의 설정에 관한 정보를 반환합니다.",
