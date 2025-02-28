@@ -23,7 +23,13 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	this.$header.on( 'keyup change', this.onHeaderChange.bind( this ) );
 	this.$body.on( 'keyup change', this.onBodyChange.bind( this ) );
 	this.$footer.on( 'keyup change', this.onFooterChange.bind( this ) );
-	mw.hook( 'ext.CodeMirror.switch' ).add( this.onCodeMirrorSwitch.bind( this ) );
+	const codeMirrorConfig = mw.config.get( 'extCodeMirrorConfig' );
+	if ( codeMirrorConfig && codeMirrorConfig.useV6 ) {
+		// For CodeMirror 6, use the input hook, which won't be fired if CM is turned off.
+		mw.hook( 'ext.CodeMirror.input' ).add( this.onBodyChange.bind( this ) );
+	} else {
+		mw.hook( 'ext.CodeMirror.switch' ).add( this.onCodeMirrorSwitch.bind( this ) );
+	}
 
 	// Remove the actionable items from the default interface
 	$content.find( '.editCheckboxes' ).hide();
@@ -58,6 +64,7 @@ OO.mixinClass( EditorController, OO.EventEmitter );
  *
  * @param {boolean} enabled Status of CodeMirror
  * @param {jQuery} $textbox textbox corresponding to the CodeMirror extension
+ * @todo Remove this function after CodeMirror 5 is retired.
  */
 EditorController.prototype.onCodeMirrorSwitch = function ( enabled, $textbox ) {
 	const $oldBody = this.$body;
