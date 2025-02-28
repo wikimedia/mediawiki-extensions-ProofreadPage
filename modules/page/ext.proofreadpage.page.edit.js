@@ -324,14 +324,14 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			OO.ui.infuse( this );
 		} );
 
-		// Ensure DOM manipulations are finished before CodeMirror is initialized.
-		mw.hook( 'ext.CodeMirror.initialize' ).add( updateEditorUi );
-
 		// Set up the preferences (header/footer and horizontal/vertical layout)
 		// when WikiEditor is active as well as when it's not.
 		mw.hook( 'wikiEditor.toolbarReady' ).add( () => {
 			setupWikitextEditor();
 			setupPreferences();
+
+			// Ensure DOM manipulations are finished before CodeMirror is initialized.
+			mw.hook( 'ext.CodeMirror.initialize' ).add( updateEditorUi );
 		} );
 		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
 			setupPreferences();
