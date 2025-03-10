@@ -3,6 +3,7 @@
 		"authors": [
 			"Ajeje Brazorf",
 			"Aushulz",
+			"GianAntonucci",
 			"Gmelfi",
 			"Pippinu",
 			"Sarvaturi"
@@ -29,7 +30,7 @@
 	"proofreadpage_pages": "$2 {{PLURAL:$1|pàggina|pàggini}}",
 	"proofreadpage-group-other": "Àutru",
 	"proofreadpage-pagelist-dialog-cancel": "Annulla",
-	"proofreadpage-pagelist-dialog-insertchanges": "Nzirisci canciamenti",
+	"proofreadpage-pagelist-dialog-insertchanges": "Metti li canci",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Aiutu",
 	"content-model-proofread-page": "Pàggina dû libbru",
 	"content-model-proofread-index": "Ìnnici dû libbru",
