@@ -545,6 +545,14 @@ $proofreadPageNamespaceNames['th'] = [
 	'index_talk' => 'คุยเรื่องดัชนี'
 ];
 
+/** Tagalog */
+$proofreadPageNamespaceNames['tl'] = [
+	'page' => 'Pahina',
+	'page_talk' => 'Usapan_sa_pahina',
+	'index' => 'Indeks',
+	'index_talk' => 'Usapan_sa_indeks'
+];
+
 /** Turkish (Türkçe) */
 $proofreadPageNamespaceNames['tr'] = [
 	'page' => 'Sayfa',
