@@ -11,6 +11,7 @@ use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Page\PageLevel;
+use ProofreadPage\Pagination\PageNotInPaginationException;
 use ProofreadPage\Pagination\Pagination;
 use Psr\Log\LoggerInterface;
 
@@ -351,8 +352,12 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 		$pagination = $this->getPaginationForIndex( $indexTitle );
 		$language = $indexTitle->getPageLanguage();
 
-		$pageInPagination = $pagination->getPageNumber( $pageTitle );
-		$dispNum = $pagination->getDisplayedPageNumber( $pageInPagination );
+		try {
+			$pageInPagination = $pagination->getPageNumber( $pageTitle );
+			$dispNum = $pagination->getDisplayedPageNumber( $pageInPagination );
+		} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
+			return [ null ];
+		}
 
 		return [ [
 			'position' => $pageInPagination,
