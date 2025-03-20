@@ -4,6 +4,10 @@ namespace ProofreadPage\Scribunto;
 
 use MediaWiki\Extension\Scribunto\Tests\Engines\LuaCommon\LuaEngineTestBase;
 
+if ( !class_exists( LuaEngineTestBase::class ) ) {
+	return;
+}
+
 /**
  * Tests for the genetic aspects of the ProofreadPage Lua libs
  *

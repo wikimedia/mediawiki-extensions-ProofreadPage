@@ -12,6 +12,10 @@ use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
 use RuntimeException;
 
+if ( !class_exists( LuaEngineTestBase::class ) ) {
+	return;
+}
+
 /**
  * Tests the Lua library Page and Index objects.
  *
