@@ -2,9 +2,9 @@
 
 namespace ProofreadPage;
 
-use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigException;
-use MediaWiki\Hook\SetupAfterCacheHook;
+use MediaWiki\Hook\MediaWikiServicesHook;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Registration\ExtensionRegistry;
 
 /**
@@ -12,17 +12,7 @@ use MediaWiki\Registration\ExtensionRegistry;
  *
  * Class that contain init system of the ProofreadPage extension
  */
-class ProofreadPageInit implements SetupAfterCacheHook {
-
-	/** @var Config */
-	private $config;
-
-	/**
-	 * @param Config $config
-	 */
-	public function __construct( Config $config ) {
-		$this->config = $config;
-	}
+class ProofreadPageInit implements MediaWikiServicesHook {
 
 	/**
 	 * @var int[] the default namespace id for each namespaces
@@ -34,17 +24,21 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 	];
 
 	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SetupAfterCache
+	 * @inheritDoc
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/MediaWikiServices
+	 * @see MediaWikiServicesHook for limitations on what services can be accessed
 	 */
-	public function onSetupAfterCache() {
+	public function onMediaWikiServices( $services ) {
 		global $wgTemplateStylesNamespaces, $wgProofreadPageNamespaceIds;
+		$config = $services->getMainConfig();
+
 		self::initNamespace( 'page' );
 		self::initNamespace( 'index' );
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' ) ) {
 			// Also Add Index NS to the TemplateStyles auto-CSS list
 			// so that /styles.css can be created
-			$templateStylesNamespaces = $this->config->get( 'TemplateStylesNamespaces' );
+			$templateStylesNamespaces = $config->get( 'TemplateStylesNamespaces' );
 			$templateStylesNamespaces[ $wgProofreadPageNamespaceIds[ 'index' ] ] = true;
 			$wgTemplateStylesNamespaces = $templateStylesNamespaces;
 		}
@@ -82,7 +76,13 @@ class ProofreadPageInit implements SetupAfterCacheHook {
 		}
 
 		// Also Add Page/Index namespace to $wgContentNamespaces
-		$wgContentNamespaces[] = $wgProofreadPageNamespaceIds[$key];
+		// The condition is here to avoid polluting globals too much during tests; otherwise
+		// the namespaces would be added for every ProofreadPageTestCase and then result in huge
+		// DB queries causing DoS in some core tests.
+		$namespaceId = $wgProofreadPageNamespaceIds[$key];
+		if ( !$wgContentNamespaces || !in_array( $namespaceId, $wgContentNamespaces, true ) ) {
+			$wgContentNamespaces[] = $namespaceId;
+		}
 	}
 
 	/**
