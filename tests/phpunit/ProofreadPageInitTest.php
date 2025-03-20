@@ -4,6 +4,7 @@ namespace ProofreadPage;
 
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Config\HashConfig;
+use MediaWiki\MediaWikiServices;
 use ProofreadPageTestCase;
 
 /**
@@ -23,8 +24,10 @@ class ProofreadPageInitTest extends ProofreadPageTestCase {
 				'10' => true
 			]
 		] );
-		$proofreadPageInit = new ProofreadPageInit( $config );
-		$proofreadPageInit->onSetupAfterCache();
+		$mockServiceContainer = $this->createNoOpMock( MediaWikiServices::class, [ 'getMainConfig' ] );
+		$mockServiceContainer->method( 'getMainConfig' )->willReturn( $config );
+		$proofreadPageInit = new ProofreadPageInit();
+		$proofreadPageInit->onMediaWikiServices( $mockServiceContainer );
 	}
 
 	public function testGetNamespaceIdThrowsExceptionWhenKeyDoesNotExist() {
