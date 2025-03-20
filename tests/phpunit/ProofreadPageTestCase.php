@@ -2,6 +2,7 @@
 
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Content\WikitextContent;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -122,8 +123,10 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 				'10' => true
 			]
 		] );
-		$proofreadPageInit = new ProofreadPageInit( $config );
-		$proofreadPageInit->onSetupAfterCache();
+		$mockServiceContainer = $this->createNoOpMock( MediaWikiServices::class, [ 'getMainConfig' ] );
+		$mockServiceContainer->method( 'getMainConfig' )->willReturn( $config );
+		$proofreadPageInit = new ProofreadPageInit();
+		$proofreadPageInit->onMediaWikiServices( $mockServiceContainer );
 	}
 
 	/**

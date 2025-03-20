@@ -410,7 +410,7 @@
 		]
 	},
 	"Hooks": {
-		"SetupAfterCache": "ProofreadPageInitHooks",
+		"MediaWikiServices": "ProofreadPageInitHooks",
 		"ParserFirstCallInit": "ProofreadPageHooks",
 		"GetBetaFeaturePreferences": "ProofreadPage\\ProofreadPage::onGetBetaFeaturePreferences",
 		"BeforePageDisplay": "ProofreadPageHooks",
@@ -441,10 +441,7 @@
 			]
 		},
 		"ProofreadPageInitHooks": {
-			"class": "ProofreadPage\\ProofreadPageInit",
-			"services": [
-				"MainConfig"
-			]
+			"class": "ProofreadPage\\ProofreadPageInit"
 		},
 		"ScribuntoHooks": {
 			"class": "ProofreadPage\\ScribuntoHooks"
