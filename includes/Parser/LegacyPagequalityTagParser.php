@@ -9,7 +9,7 @@ use MediaWiki\Html\Html;
  *
  * Parser for the <pagequality> tag
  */
-class PagequalityTagParser {
+class LegacyPagequalityTagParser {
 
 	/**
 	 * Render a <pagequality> tag

@@ -1,5 +1,9 @@
 !! Version 2
 
+!! options
+parsoid-compatible=wt2html,wt2wt
+!! end
+
 !! hooks
 pagequality
 !! endhooks
@@ -7,28 +11,36 @@ pagequality
 !! test
 pagequality simple
 !! wikitext
-<pagequality level=3 />
-!! html
+<pagequality level="3" />
+!! html/php
 <div class="prp-page-qualityheader quality3">This page has been proofread</div>
+!! html/parsoid
+<div class="prp-page-qualityheader quality3" typeof="mw:Extension/pagequality" about="#mwt1" data-mw='{"name":"pagequality","attrs":{"level":"3"}}'><span typeof="mw:I18n" data-mw-i18n='{"/":{"lang":"x-page","key":"This page has been proofread","params":[]}}'></span></div>
 !! end
 
 !! test
 pagesquality empty
 !! wikitext
 <pagequality />
-!! html
+!! html/php
+!! html/parsoid
+<p><link typeof="mw:Extension/pagequality" about="#mwt1" data-mw='{"name":"pagequality","attrs":{}}'/></p>
 !! end
 
 !! test
 pagesquality invalid level number
 !! wikitext
-<pagequality level=42 />
-!! html
+<pagequality level="42" />
+!! html/php
+!! html/parsoid
+<p><link typeof="mw:Extension/pagequality" about="#mwt1" data-mw='{"name":"pagequality","attrs":{"level":"42"}}'/></p>
 !! end
 
 !! test
 pagesquality invalid level value
 !! wikitext
-<pagequality level=root />
-!! html
+<pagequality level="root" />
+!! html/php
+!! html/parsoid
+<p><link typeof="mw:Extension/pagequality" about="#mwt1" data-mw='{"name":"pagequality","attrs":{"level":"root"}}'/></p>
 !! end
