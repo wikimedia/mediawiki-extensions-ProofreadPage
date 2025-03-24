@@ -567,9 +567,8 @@ class IndexContentHandler extends TextContentHandler {
 			$text = '__NOEDITSECTION__' . $text;
 
 			// We do the final rendering
-			$parserOutput = MediaWikiServices::getInstance()->getParser()
-				// @phan-suppress-next-line PhanTypeMismatchArgument
-				->parse( $text, $title, $parserOptions, true, true, $cpoParams->getRevId() );
+			$tempContent = new WikitextContent( $text );
+			$parserOutput = $this->wikitextContentHandler->getParserOutput( $tempContent, $cpoParams );
 			$parserOutput->addTemplate( $templateTitle,
 				$templateTitle->getArticleID(),
 				$templateTitle->getLatestRevID()

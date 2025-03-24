@@ -66,9 +66,9 @@ use ProofreadPage\Page\PageContentBuilder;
 use ProofreadPage\Page\PageDisplayHandler;
 use ProofreadPage\Page\PageRevisionTagger;
 use ProofreadPage\Pagination\PageNotInPaginationException;
-use ProofreadPage\Parser\PagelistTagParser;
-use ProofreadPage\Parser\PagequalityTagParser;
-use ProofreadPage\Parser\PagesTagParser;
+use ProofreadPage\Parser\LegacyPagelistTagParser;
+use ProofreadPage\Parser\LegacyPagequalityTagParser;
+use ProofreadPage\Parser\LegacyPagesTagParser;
 use ProofreadPage\Parser\TranslusionPagesModifier;
 
 /*
@@ -184,16 +184,16 @@ class ProofreadPage implements
 	public function onParserFirstCallInit( $parser ) {
 		$parser->setHook( 'pagelist', static function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
-			$tagParser = new PagelistTagParser( $parser, $context );
+			$tagParser = new LegacyPagelistTagParser( $parser, $context );
 			return $tagParser->render( $args );
 		} );
 		$parser->setHook( 'pages', static function ( $input, array $args, Parser $parser ) {
 			$context = Context::getDefaultContext( true );
-			$tagParser = new PagesTagParser( $parser, $context );
+			$tagParser = new LegacyPagesTagParser( $parser, $context );
 			return $tagParser->render( $args );
 		} );
 		$parser->setHook( 'pagequality', static function ( $input, array $args, Parser $parser ) {
-			$tagParser = new PagequalityTagParser();
+			$tagParser = new LegacyPagequalityTagParser();
 			return $tagParser->render( $args );
 		} );
 	}
@@ -862,4 +862,14 @@ class ProofreadPage implements
 		}
 	}
 
+	/**
+	 * Enables parsoid feature flag on parser tests.
+	 *
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ParserTestGlobals
+	 *
+	 * @param array &$globals
+	 */
+	public function onParserTestGlobals( &$globals ) {
+		$globals["wgProofreadPageUseParsoid"] = true;
+	}
 }
