@@ -9,6 +9,7 @@
 		"sourceType": "commonjs"
 	},
 	"rules": {
-		"max-len": "off"
+		"max-len": "off",
+		"no-jquery/no-done-fail": "warn"
 	}
 }

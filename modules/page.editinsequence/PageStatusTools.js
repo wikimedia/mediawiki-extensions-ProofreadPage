@@ -56,8 +56,8 @@ function PageStatusMenu() {
 	this.hasPageQualityRight = false;
 	this.hasPageQualityAdminRight = false;
 	this.getUserRights().then( ( rights ) => {
-		this.hasPageQualityRight = rights.indexOf( 'pagequality' ) !== -1;
-		this.hasPageQualityAdminRight = rights.indexOf( 'pagequality-admin' ) !== -1;
+		this.hasPageQualityRight = rights.includes( 'pagequality' );
+		this.hasPageQualityAdminRight = rights.includes( 'pagequality-admin' );
 	} ).then( this.onPageModelUpdated.bind( this ) );
 	this.$element.addClass( 'prp-editinsequence-page-status' );
 }

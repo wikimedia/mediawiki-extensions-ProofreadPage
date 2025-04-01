@@ -148,7 +148,7 @@ VisualDialogModel.prototype.setNumbering = function ( params, data ) {
 	// is already there if there are any numberings it will always be in the data...
 	//  so we don't need to worry about preserving old ones.
 	if ( data.number && ( data.label === 'Number' || ( mw.config.get( 'prpPagelistBuiltinLabels' ) &&
-		mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( data.label ) !== -1 && data.label !== 'empty' ) ) ) {
+		mw.config.get( 'prpPagelistBuiltinLabels' ).includes( data.label ) && data.label !== 'empty' ) ) ) {
 		params.set( this.data.subPage, data.number );
 	} else {
 		params.delete( this.data.subPage );
@@ -209,7 +209,7 @@ VisualDialogModel.prototype.removeUnecessaryNumbering = function ( params, parti
 			if ( partialList[ index ] ) {
 				label = partialList[ index ][ 0 ].type;
 				if ( mw.config.get( 'prpPagelistBuiltinLabels' ) &&
-				mw.config.get( 'prpPagelistBuiltinLabels' ).indexOf( label ) === -1 ) {
+				!mw.config.get( 'prpPagelistBuiltinLabels' ).includes( label ) ) {
 					params.delete( index );
 				}
 			}

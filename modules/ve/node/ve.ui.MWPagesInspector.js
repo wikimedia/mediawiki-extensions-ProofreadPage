@@ -159,7 +159,7 @@ ve.ui.MWPagesInspector.prototype.buildHeaderFieldSelectorOptions = function ( he
 		{ data: '', label: OO.ui.msg( 'proofreadpage-visualeditor-node-pages-inspector-indexselector-no' ) },
 		{ data: '1', label: OO.ui.msg( 'proofreadpage-visualeditor-node-pages-inspector-indexselector-yes' ) }
 	];
-	if ( [ '', '1' ].indexOf( headerValue ) === -1 ) {
+	if ( ![ '', '1' ].includes( headerValue ) ) {
 		headerInputOptions.push( { data: headerValue, label: headerValue } );
 	}
 	return headerInputOptions;
