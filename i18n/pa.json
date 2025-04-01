@@ -118,7 +118,7 @@
 	"prp-edit-in-sequence-preview-api-error": "ਹੇਠ ਦਿੱਤੀ ਗਲਤੀ ਦੇ ਕਾਰਨ ਸਫ਼ੇ ਦੀ ਝਲਕ ਵੇਖਣ ਵਿੱਚ ਅਸਫਲ: $1 ਜੇਕਰ ਇਹ ਗਲਤੀ ਅਚਾਨਕ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਗਲਤੀ ਦੀ ਇਤਲਾਹ phabricator.wikimedia.org ਤੇ ਕਰੋ।",
 	"prp-editinsequence-error": "ਤਰਤੀਬ-ਵਿੱਚ-ਸੋਧ-ਕਰੋ(EditInSequence) ਦੀ ਗਲਤੀ, ਅੱਗੇ ਨਹੀਂ ਵਧ ਸਕਦੇ",
 	"prp-editinsequence-preview": "ਝਲਕ",
-	"prp-editinsequence-save-settings-dialog-primary-button-title": "ਸੈਟਿੰਗਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "ਤਰਜੀਹਾਂ ਸੰਭਾਲੋ",
 	"prp-editinsequence-save-dialog-title": "ਇਹ ਸਫ਼ਾ ਸੁਰੱਖਿਤ ਕਰੋ",
 	"prp-editinsequence-save-settings-dialog-title": "ਅਗਲੀਆਂ ਤਬਦੀਲੀਆਂ ਲਈ ਮੈਟਾਡੇਟਾ ਸੁਰੱਖਿਅਤ ਕਰੋ",
 	"prp-editinsequence-save-next-action-label": "\" $1 \" ਬਟਨ ਨੂੰ ਦਬਾਉਣ ਤੋਂ ਬਾਅਦ, ਇਹ ਕਾਰਵਾਈ ਕਰੋ",
