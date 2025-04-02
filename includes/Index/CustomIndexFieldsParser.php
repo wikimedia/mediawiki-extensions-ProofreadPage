@@ -52,7 +52,7 @@ class CustomIndexFieldsParser {
 		return $this->configuration;
 	}
 
-	private function loadCustomIndexFieldsConfiguration() {
+	private function loadCustomIndexFieldsConfiguration(): array {
 		$data = wfMessage( 'proofreadpage_index_data_config.json' )->inContentLanguage();
 
 		// fallback to the legacy name - T263094

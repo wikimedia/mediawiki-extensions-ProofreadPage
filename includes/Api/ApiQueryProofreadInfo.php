@@ -39,7 +39,7 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		}
 	}
 
-	protected function appendNamespaces() {
+	protected function appendNamespaces(): bool {
 		$context = Context::getDefaultContext();
 		$data = [
 			'index' => [
@@ -52,7 +52,7 @@ class ApiQueryProofreadInfo extends ApiQueryBase {
 		return $this->getResult()->addValue( 'query', 'proofreadnamespaces', $data );
 	}
 
-	protected function appendQualityLevels() {
+	protected function appendQualityLevels(): bool {
 		$data = [];
 		for ( $i = 0; $i < 5; $i++ ) {
 			$data[$i] = [

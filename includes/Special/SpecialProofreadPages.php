@@ -174,6 +174,7 @@ class SpecialProofreadPages extends QueryPage {
 		return false;
 	}
 
+	/** @inheritDoc */
 	public function linkParameters() {
 		return [
 			'key' => $this->searchTerm,
@@ -292,7 +293,7 @@ class SpecialProofreadPages extends QueryPage {
 		];
 	}
 
-	private function buildValueField() {
+	private function buildValueField(): string {
 		switch ( $this->queryOrder ) {
 			case 'size':
 				return 'pr_count';
@@ -309,7 +310,7 @@ class SpecialProofreadPages extends QueryPage {
 		}
 	}
 
-	public function sortDescending() {
+	public function sortDescending(): bool {
 		return !$this->sortAscending;
 	}
 

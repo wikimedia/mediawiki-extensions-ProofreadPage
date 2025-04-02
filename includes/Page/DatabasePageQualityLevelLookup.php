@@ -171,7 +171,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 		return $this->categoryForQualityLevel;
 	}
 
-	private function computeCategoryForQualityLevels() {
+	private function computeCategoryForQualityLevels(): array {
 		$qualityCategories = [];
 		for ( $qualityLevel = 0; $qualityLevel <= 4; $qualityLevel++ ) {
 			$categoryTitle = Title::makeTitleSafe(

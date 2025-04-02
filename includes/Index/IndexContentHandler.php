@@ -77,7 +77,7 @@ class IndexContentHandler extends TextContentHandler {
 		return $this->parser;
 	}
 
-	private function buildParser() {
+	private function buildParser(): Parser {
 		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$parser->startExternalParse(
 			null, ParserOptions::newFromAnon(), Parser::OT_PLAIN
