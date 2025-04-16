@@ -6,7 +6,7 @@
 		]
 	},
 	"apihelp-query+proofread-summary": "تيرجع معلومات على لحالة د لمراجعة د الصفحات لمعطية.",
-	"apihelp-query+proofread-example-1": "عطي لوضع د عملية التحقق دالصفحات ف النطاق 250",
+	"apihelp-query+proofread-example-1": "عطي لوضع د عملية التحقق د الصفاحي ف لمجال السمياتي 250",
 	"apihelp-query+proofreadinfo-summary": "عطي معلومات على ضبط امتداد ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "إينا خصايل ديال التحقق خاصها تّجاب:",
 	"apihelp-query+proofreadinfo-example-1": "عطي لمعلومات الافتراضية",
