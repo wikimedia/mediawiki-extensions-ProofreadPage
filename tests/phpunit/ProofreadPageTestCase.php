@@ -2,6 +2,9 @@
 
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Content\WikitextContent;
+use MediaWiki\FileRepo\File\File;
+use MediaWiki\FileRepo\File\UnregisteredLocalFile;
+use MediaWiki\FileRepo\FileRepo;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;

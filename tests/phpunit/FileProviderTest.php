@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use File;
+use MediaWiki\FileRepo\File\File;
 use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
 

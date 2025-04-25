@@ -2,10 +2,10 @@
 
 namespace ProofreadPage\Page;
 
-use Article;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\Article;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\Options\UserOptionsLookup;
 use OOUI\FieldLayout;

@@ -5,11 +5,11 @@ namespace ProofreadPage\Page;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\MWContentSerializationException;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentityValue;
-use MWContentSerializationException;
 use ProofreadPageTestCase;
 use SlotDiffRenderer;
 

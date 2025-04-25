@@ -8,20 +8,20 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\Content\ValidationParams;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\MWContentSerializationException;
 use MediaWiki\Page\PageReferenceValue;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Revision\SlotRenderingProvider;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentityValue;
-use MWContentSerializationException;
 use ProofreadPage\Context;
 use ProofreadPage\Pagination\PaginationFactory;
 use ProofreadPageTestCase;
 use SlotDiffRenderer;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
-use WikiPage;
 
 /**
  * @group ProofreadPage

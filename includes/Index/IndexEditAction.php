@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use EditAction;
+use MediaWiki\Actions\EditAction;
 
 /**
  * @license GPL-2.0-or-later

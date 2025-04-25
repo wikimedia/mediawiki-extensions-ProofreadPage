@@ -25,6 +25,7 @@ use ISearchResultSet;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Skin\Skin;
 use MediaWiki\SpecialPage\QueryPage;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
@@ -315,7 +316,7 @@ class SpecialProofreadPages extends QueryPage {
 	}
 
 	/**
-	 * @param \Skin $skin
+	 * @param Skin $skin
 	 * @param \stdClass $result Result row
 	 * @return string|false false to skip the row
 	 */

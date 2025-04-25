@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\RecentChanges\RecentChange;
 use ProofreadPage\Tags;
-use RecentChange;
 
 class PageRevisionTagger {
 

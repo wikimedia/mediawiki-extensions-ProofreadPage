@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use MWContentSerializationException;
+use MediaWiki\Exception\MWContentSerializationException;
 
 /**
  * Serializer that supports Wikitext and JSON, which is something supported

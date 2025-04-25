@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Actions\ViewAction;
 use MediaWiki\Revision\RevisionRecord;
 use ProofreadPage\Context;
-use ViewAction;
 
 /**
  * @license GPL-2.0-or-later

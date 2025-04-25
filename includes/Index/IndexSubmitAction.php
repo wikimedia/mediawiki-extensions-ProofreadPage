@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Index;
 
-use SubmitAction;
+use MediaWiki\Actions\SubmitAction;
 
 /**
  * @license GPL-2.0-or-later

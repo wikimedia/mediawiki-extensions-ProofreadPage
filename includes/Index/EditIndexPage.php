@@ -2,11 +2,11 @@
 
 namespace ProofreadPage\Index;
 
-use Article;
 use LogicException;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\Article;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
 use OOUI\DropdownInputWidget;

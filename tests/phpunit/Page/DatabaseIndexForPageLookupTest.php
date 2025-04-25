@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
 
@@ -13,7 +14,7 @@ use ProofreadPageTestCase;
 class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 
 	public function testGetIndexForPage() {
-		$repoGroupMock = $this->createMock( \RepoGroup::class );
+		$repoGroupMock = $this->createMock( RepoGroup::class );
 		$repoGroupMock->expects( $this->once() )
 			->method( 'findFile' )
 			->willReturn( $this->buildFileList()[0] );
@@ -30,7 +31,7 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 	}
 
 	public function testGetIndexForSinglePageFile() {
-		$repoGroupMock = $this->createMock( \RepoGroup::class );
+		$repoGroupMock = $this->createMock( RepoGroup::class );
 		$repoGroupMock->expects( $this->once() )
 			->method( 'findFile' )
 			->willReturn( $this->buildFileList()[2] );

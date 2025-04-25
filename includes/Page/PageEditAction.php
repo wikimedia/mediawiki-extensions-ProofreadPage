@@ -2,7 +2,7 @@
 
 namespace ProofreadPage\Page;
 
-use EditAction;
+use MediaWiki\Actions\EditAction;
 use ProofreadPage\Context;
 
 /**

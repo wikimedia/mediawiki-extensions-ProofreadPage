@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use MWContentSerializationException;
+use MediaWiki\Exception\MWContentSerializationException;
 use ProofreadPageTestCase;
 
 /**

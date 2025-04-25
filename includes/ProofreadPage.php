@@ -21,7 +21,6 @@
 
 namespace ProofreadPage;
 
-use ImagePage;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\CommentStore\CommentStoreComment;
@@ -41,6 +40,7 @@ use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\Hook\OutputPageParserOutputHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\Hook\ImageOpenShowImageInlineBeforeHook;
+use MediaWiki\Page\ImagePage;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
@@ -48,6 +48,8 @@ use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Revision\Hook\ContentHandlerDefaultModelForHook;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Skin\Skin;
+use MediaWiki\Skin\SkinTemplate;
 use MediaWiki\SpecialPage\Hook\WgQueryPagesHook;
 use MediaWiki\Status\Status;
 use MediaWiki\Storage\Hook\MultiContentSaveHook;
@@ -66,8 +68,6 @@ use ProofreadPage\Parser\PagelistTagParser;
 use ProofreadPage\Parser\PagequalityTagParser;
 use ProofreadPage\Parser\PagesTagParser;
 use ProofreadPage\Parser\TranslusionPagesModifier;
-use Skin;
-use SkinTemplate;
 
 /*
  @todo :

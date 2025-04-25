@@ -2,9 +2,9 @@
 
 namespace ProofreadPage;
 
-use File;
+use MediaWiki\FileRepo\File\File;
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\Title\Title;
-use RepoGroup;
 
 /**
  * @license GPL-2.0-or-later

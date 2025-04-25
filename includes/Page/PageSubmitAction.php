@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Page;
 
+use MediaWiki\Actions\SubmitAction;
 use ProofreadPage\Context;
-use SubmitAction;
 
 /**
  * @license GPL-2.0-or-later
