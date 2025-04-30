@@ -15,7 +15,7 @@ use ProofreadPageTestCase;
 class QualityStatsBuilderTest extends ProofreadPageTestCase {
 
 	/**
-	 * @dataProvider buildStatsForPaginationProviderWithOverride
+	 * @dataProvider provideStatsForPaginationProviderWithOverride
 	 */
 	public function testBuildStatsForPaginationWithOverride(
 		PagePagination $pagination,
@@ -31,7 +31,7 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function buildStatsForPaginationProviderWithOverride() {
+	public function provideStatsForPaginationProviderWithOverride() {
 		return [
 			[
 				new PagePagination(
