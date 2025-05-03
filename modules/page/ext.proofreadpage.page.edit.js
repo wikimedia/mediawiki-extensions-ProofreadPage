@@ -253,9 +253,43 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	}
 
 	/**
+	 * Add CodeMirror to edit form.
+	 */
+	function setupCodeMirror() {
+		let initialCMInstance = true;
+		// Called just before CodeMirror initialization.
+		mw.hook( 'ext.CodeMirror.initialize' ).add( () => {
+			// Don't run again for the new CM instances we'll create later.
+			if ( !initialCMInstance ) {
+				return;
+			}
+			initialCMInstance = false;
+
+			// Ensure DOM manipulations are finished before CodeMirror is initialized.
+			updateEditorUi();
+
+			// Add CodeMirror instances to the header and footer once the main instance is ready.
+			mw.hook( 'ext.CodeMirror.ready' ).add( addCodeMirrorToHeaders );
+		} );
+	}
+
+	/**
+	 * Add CodeMirror instances to the header and footer.
+	 *
+	 * @param {CodeMirror} mainInstance
+	 */
+	function addCodeMirrorToHeaders( mainInstance ) {
+		// Don't run again for the new CM instances we're about to add.
+		mw.hook( 'ext.CodeMirror.ready' ).remove( addCodeMirrorToHeaders );
+		const CodeMirror = require( './ext.proofreadpage.page.edit.codemirror.js' );
+		new CodeMirror( document.getElementById( 'wpHeaderTextbox' ), mainInstance ).initialize();
+		new CodeMirror( document.getElementById( 'wpFooterTextbox' ), mainInstance ).initialize();
+	}
+
+	/**
 	 * Init global variables of the script
 	 *
-	 * @param {jQuery} $img Image
+	 * @param {jQuery} [$img] Image
 	 */
 	function initEnvironment( $img ) {
 		if ( $editForm === undefined ) {
@@ -329,12 +363,11 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		mw.hook( 'wikiEditor.toolbarReady' ).add( () => {
 			setupWikitextEditor();
 			setupPreferences();
-
-			// Ensure DOM manipulations are finished before CodeMirror is initialized.
-			mw.hook( 'ext.CodeMirror.initialize' ).add( updateEditorUi );
+			setupCodeMirror();
 		} );
 		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
 			setupPreferences();
+			setupCodeMirror();
 		}
 	} );
 
