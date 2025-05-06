@@ -2,10 +2,10 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
-use MediaWiki\Xml\Xml;
 
 /**
  * @license GPL-2.0-or-later
@@ -91,7 +91,7 @@ class IndexTemplateStyles {
 				$ts_attribs["wrapper"] = $wrapper;
 			}
 
-			$styles .= Xml::element( "templatestyles", $ts_attribs, "" );
+			$styles .= Html::element( "templatestyles", $ts_attribs, "" );
 		}
 		return $styles;
 	}
