@@ -73,6 +73,8 @@
 	"proofreadpage_source_message": "Сканаваная вэрсія, якая выкарыстоўвалася для стварэньня гэтага тэксту",
 	"action-pagequality": "зьмяненьне сьцяжка якасьці старонкі",
 	"right-pagequality": "Зьмяненьне сьцяжка якасьці старонкі",
+	"action-pagequality-validate": "зьмена якасьці старонкі на „правераную“",
+	"right-pagequality-validate": "Зьмена якасьці старонкі на „правераную“",
 	"action-pagequality-admin": "рэдагаваньні сьцяжку якасьці старонкі без абмежаваньняў",
 	"right-pagequality-admin": "Рэдагаваньні сьцяжку якасьці старонкі без абмежаваньняў",
 	"proofreadpage-section-tools": "Інструмэнты рэдактара",
