@@ -16,14 +16,14 @@ class DatabasePageQualityLevelLookupTest extends ProofreadPageTestCase {
 	 * @dataProvider prefetchQualityLevelForTitlesProvider
 	 */
 	public function testprefetchQualityLevelForTitles( array $titles ) {
-		$lookup = new DatabasePageQualityLevelLookup( $this->getPageNamespaceId() );
+		$lookup = new DatabasePageQualityLevelLookup( self::getPageNamespaceId() );
 		$lookup->prefetchQualityLevelForTitles( $titles );
 
 		// FIXME: The only thing this test does is testing if the code does not fail :-(
 		$this->addToAssertionCount( 1 );
 	}
 
-	public function prefetchQualityLevelForTitlesProvider() {
+	public static function prefetchQualityLevelForTitlesProvider() {
 		return [
 			[
 				[]
@@ -31,7 +31,7 @@ class DatabasePageQualityLevelLookupTest extends ProofreadPageTestCase {
 			[
 				[
 					Title::makeTitle( NS_MAIN, 'Foo' ),
-					Title::makeTitle( $this->getPageNamespaceId(), 'Foo' ),
+					Title::makeTitle( self::getPageNamespaceId(), 'Foo' ),
 					null
 				]
 			]
@@ -39,8 +39,8 @@ class DatabasePageQualityLevelLookupTest extends ProofreadPageTestCase {
 	}
 
 	public function testgetQualityLevelForNotExistingPage() {
-		$pageTitle = Title::makeTitle( $this->getPageNamespaceId(), 'Foo' );
-		$lookup = new DatabasePageQualityLevelLookup( $this->getPageNamespaceId() );
+		$pageTitle = Title::makeTitle( self::getPageNamespaceId(), 'Foo' );
+		$lookup = new DatabasePageQualityLevelLookup( self::getPageNamespaceId() );
 		$this->assertNull( $lookup->getQualityLevelForPageTitle( $pageTitle ) );
 		// FIXME: Need a test for a page with an actual value, rather than null
 	}

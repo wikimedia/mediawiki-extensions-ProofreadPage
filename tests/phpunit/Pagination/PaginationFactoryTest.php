@@ -26,7 +26,7 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		] );
 		$pageList = new PageList( [ '1to2' => '-', '3' => '1', '4to5' => 'roman' ] );
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			$pageList,
 			5,
 			$context->getPageNamespaceId()
@@ -34,13 +34,13 @@ class PaginationFactoryTest extends ProofreadPageTestCase {
 		$this->assertEquals(
 			$pagination,
 			$context->getPaginationFactory()->getPaginationForIndexTitle(
-				Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' )
+				Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' )
 			)
 		);
 	}
 
 	public function testGetPaginationWithoutPagelist() {
-		$indexTitle = Title::makeTitle( $this->getIndexNamespaceId(), 'Test' );
+		$indexTitle = Title::makeTitle( self::getIndexNamespaceId(), 'Test' );
 		$pagination = new PagePagination(
 			[
 				Title::newFromText( 'Page:Test 1.jpg' ),

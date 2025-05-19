@@ -11,8 +11,8 @@ use ProofreadPageTestCase;
  */
 class IndexTemplateStylesTest extends ProofreadPageTestCase {
 
-	public function indexStylesProvider() {
-		$nsIndex = $this->getIndexNamespaceId();
+	public static function indexStylesProvider() {
+		$nsIndex = self::getIndexNamespaceId();
 		return [
 			// A normal index should point to its style subpage
 			[

@@ -31,16 +31,16 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function provideStatsForPaginationProviderWithOverride() {
+	public static function provideStatsForPaginationProviderWithOverride() {
 		return [
 			[
 				new PagePagination(
 					[
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 0.jpg' ),
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.jpg' ),
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 3.jpg' ),
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 4.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 0.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 2.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 3.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 4.jpg' ),
 					],
 					[
 						new PageNumber( '0' ),
@@ -70,7 +70,7 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 			[
 				new PagePagination(
 					[
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 0.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 0.jpg' ),
 					],
 					[
 						new PageNumber( '0' ),
@@ -83,8 +83,8 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 			[
 				new PagePagination(
 					[
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 0.jpg' ),
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 0.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
 					],
 					[
 						new PageNumber( '0' ),
@@ -100,8 +100,8 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 			[
 				new PagePagination(
 					[
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 0.jpg' ),
-						Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 0.jpg' ),
+						Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
 					],
 					[
 						new PageNumber( '0' ),
@@ -113,7 +113,7 @@ class QualityStatsBuilderTest extends ProofreadPageTestCase {
 					'Test_1.jpg' => 0,
 				],
 				new PagesQualityStats( 2, [ 0 => 1, 4 => 1 ] ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 0.jpg' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 0.jpg' ),
 				4
 			],
 		];

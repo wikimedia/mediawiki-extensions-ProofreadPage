@@ -26,7 +26,7 @@ class IndexContentTest extends ProofreadPageTestCase {
 		parent::setUp();
 
 		$this->requestContext = new RequestContext();
-		$this->requestContext->setTitle( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.pdf' ) );
+		$this->requestContext->setTitle( Title::makeTitle( self::getIndexNamespaceId(), 'Test.pdf' ) );
 		$this->requestContext->setUser( new User() );
 	}
 

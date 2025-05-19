@@ -25,7 +25,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 		parent::setUp();
 
 		$this->requestContext = new RequestContext();
-		$this->requestContext->setTitle( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.pdf' ) );
+		$this->requestContext->setTitle( Title::makeTitle( self::getIndexNamespaceId(), 'Test.pdf' ) );
 		$this->requestContext->setUser( new User() );
 	}
 
@@ -91,7 +91,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$content = $contentTransformer->preSaveTransform(
 			$originalContent,
-			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			PageReferenceValue::localReference( self::getIndexNamespaceId(), 'Test.pdf' ),
 			$user,
 			$options
 		);
@@ -105,7 +105,7 @@ class IndexRedirectContentTest extends ProofreadPageTestCase {
 		$originalContent = new IndexRedirectContent( Title::newFromText( 'Foo' ) );
 		$content = $contentTransformer->preloadTransform(
 			$originalContent,
-			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			PageReferenceValue::localReference( self::getIndexNamespaceId(), 'Test.pdf' ),
 			$options
 		);
 

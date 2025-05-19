@@ -42,10 +42,10 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 
 	public function testCanBeUsedOn() {
 		$this->assertTrue( $this->handler->canBeUsedOn(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		) );
 		$this->assertFalse( $this->handler->canBeUsedOn(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+			Title::makeTitle( self::getPageNamespaceId(), 'Test' )
 		) );
 		$this->assertFalse( $this->handler->canBeUsedOn( Title::makeTitle( NS_MAIN, 'Test' ) ) );
 	}
@@ -658,7 +658,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$contentTransformer = $services->getContentTransformer();
 		$newContent = $contentTransformer->preSaveTransform(
 			$content,
-			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			PageReferenceValue::localReference( self::getIndexNamespaceId(), 'Test.pdf' ),
 			$user,
 			$options
 		);
@@ -691,7 +691,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 		$contentTransformer = $services->getContentTransformer();
 		$newContent = $contentTransformer->preloadTransform(
 			$content,
-			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			PageReferenceValue::localReference( self::getIndexNamespaceId(), 'Test.pdf' ),
 			$options
 		);
 

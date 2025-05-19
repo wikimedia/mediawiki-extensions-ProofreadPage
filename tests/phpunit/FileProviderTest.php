@@ -12,8 +12,8 @@ use ProofreadPageTestCase;
  */
 class FileProviderTest extends ProofreadPageTestCase {
 
-	private function getFileFromName( $fileName ) {
-		return $this->getContext()->getFileProvider()->getFileFromTitle(
+	private static function getFileFromName( $fileName ) {
+		return self::getContext()->getFileProvider()->getFileFromTitle(
 			Title::makeTitle( NS_MEDIA, $fileName )
 		);
 	}
@@ -27,16 +27,16 @@ class FileProviderTest extends ProofreadPageTestCase {
 		$this->assertSame( $file, $fileProvider->getFileForIndexTitle( $indexTitle ) );
 	}
 
-	public function indexFileProvider() {
+	public static function indexFileProvider() {
 		$fileProvider = new FileProviderMock( [
-			$this->getFileFromName( 'LoremIpsum.djvu' ),
-			$this->getFileFromName( 'Test.jpg' )
+			self::getFileFromName( 'LoremIpsum.djvu' ),
+			self::getFileFromName( 'Test.jpg' )
 		] );
 
 		return [
 			[
-				Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
-				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+				self::getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 		];
@@ -52,19 +52,19 @@ class FileProviderTest extends ProofreadPageTestCase {
 		$fileProvider->getFileForIndexTitle( $indexTitle );
 	}
 
-	public function indexFileNotFoundProvider() {
+	public static function indexFileNotFoundProvider() {
 		$fileProvider = new FileProviderMock( [
-			$this->getFileFromName( 'LoremIpsum.djvu' ),
-			$this->getFileFromName( 'Test.jpg' )
+			self::getFileFromName( 'LoremIpsum.djvu' ),
+			self::getFileFromName( 'Test.jpg' )
 		] );
 
 		return [
 			[
-				Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum2.djvu' ),
+				Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum2.djvu' ),
 				$fileProvider
 			],
 			[
-				Title::makeTitle( $this->getIndexNamespaceId(), 'Test' ),
+				Title::makeTitle( self::getIndexNamespaceId(), 'Test' ),
 				$fileProvider
 			],
 		];
@@ -79,31 +79,31 @@ class FileProviderTest extends ProofreadPageTestCase {
 		$this->assertSame( $file, $fileProvider->getFileForPageTitle( $pageTitle ) );
 	}
 
-	public function pageFileProvider() {
+	public static function pageFileProvider() {
 		$fileProvider = new FileProviderMock( [
-			$this->getFileFromName( 'LoremIpsum.djvu' ),
-			$this->getFileFromName( 'Test.jpg' )
+			self::getFileFromName( 'LoremIpsum.djvu' ),
+			self::getFileFromName( 'Test.jpg' )
 		] );
 
 		return [
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/4' ),
-				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'LoremIpsum.djvu/4' ),
+				self::getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/djvu/1' ),
-				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'LoremIpsum.djvu/djvu/1' ),
+				self::getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu' ),
-				$this->getFileFromName( 'LoremIpsum.djvu' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'LoremIpsum.djvu' ),
+				self::getFileFromName( 'LoremIpsum.djvu' ),
 				$fileProvider
 			],
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ),
-				$this->getFileFromName( 'Test.jpg' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ),
+				self::getFileFromName( 'Test.jpg' ),
 				$fileProvider
 			],
 		];
@@ -119,19 +119,19 @@ class FileProviderTest extends ProofreadPageTestCase {
 		$fileProvider->getFileForPageTitle( $pageTitle );
 	}
 
-	public function pageFileNotFoundProvider() {
+	public static function pageFileNotFoundProvider() {
 		$fileProvider = new FileProviderMock( [
-			$this->getFileFromName( 'LoremIpsum.djvu' ),
-			$this->getFileFromName( 'Test.jpg' )
+			self::getFileFromName( 'LoremIpsum.djvu' ),
+			self::getFileFromName( 'Test.jpg' )
 		] );
 
 		return [
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum2.djvu/4' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'LoremIpsum2.djvu/4' ),
 				$fileProvider
 			],
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test' ),
 				$fileProvider
 			],
 		];
@@ -148,7 +148,7 @@ class FileProviderTest extends ProofreadPageTestCase {
 		$fileProvider = new FileProviderMock( [] );
 		$this->expectException( PageNumberNotFoundException::class );
 		$fileProvider->getPageNumberForPageTitle(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test.djvu' )
+			Title::makeTitle( self::getPageNamespaceId(), 'Test.djvu' )
 		);
 	}
 

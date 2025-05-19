@@ -17,15 +17,15 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 		$repoGroupMock = $this->createMock( RepoGroup::class );
 		$repoGroupMock->expects( $this->once() )
 			->method( 'findFile' )
-			->willReturn( $this->buildFileList()[0] );
+			->willReturn( self::buildFileList()[0] );
 		$lookup = new DatabaseIndexForPageLookup(
-			$this->getIndexNamespaceId(),
+			self::getIndexNamespaceId(),
 			$repoGroupMock
 		);
 		$this->assertEquals(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			$lookup->getIndexForPageTitle(
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu/2' )
+				Title::makeTitle( self::getPageNamespaceId(), 'LoremIpsum.djvu/2' )
 			)
 		);
 	}
@@ -34,27 +34,27 @@ class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 		$repoGroupMock = $this->createMock( RepoGroup::class );
 		$repoGroupMock->expects( $this->once() )
 			->method( 'findFile' )
-			->willReturn( $this->buildFileList()[2] );
+			->willReturn( self::buildFileList()[2] );
 		$lookup = new DatabaseIndexForPageLookup(
-			$this->getIndexNamespaceId(),
+			self::getIndexNamespaceId(),
 			$repoGroupMock
 		);
 
 		$this->assertEquals(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'Test.jpg' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'Test.jpg' ),
 			$lookup->getIndexForPageTitle(
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' )
 			)
 		);
 	}
 
 	public function testGetIndexForPageNotFound() {
 		$lookup = new DatabaseIndexForPageLookup(
-			$this->getIndexNamespaceId(),
+			self::getIndexNamespaceId(),
 			$this->getServiceContainer()->getRepoGroup()
 		);
 		$this->assertNull( $lookup->getIndexForPageTitle(
-			Title::makeTitle( $this->getPageNamespaceId(), 'FooBar' )
+			Title::makeTitle( self::getPageNamespaceId(), 'FooBar' )
 		) );
 	}
 }

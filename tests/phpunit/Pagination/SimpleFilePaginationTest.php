@@ -15,12 +15,12 @@ class SimpleFilePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumber() {
 		$pagination = new SimpleFilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.jpg' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.jpg' ),
 			new PageList( [] ),
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertSame( 1, $pagination->getPageNumber(
-			Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.jpg' )
+			Title::makeTitle( self::getPageNamespaceId(), 'LoremIpsum.jpg' )
 		) );
 	}
 
@@ -34,28 +34,28 @@ class SimpleFilePaginationTest extends ProofreadPageTestCase {
 		$pagination->getPageNumber( $pageTitle );
 	}
 
-	public function getPageNumberWithFailureProvider() {
+	public static function getPageNumberWithFailureProvider() {
 		$pagination = new SimpleFilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.jpg' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.jpg' ),
 			new PageList( [] ),
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		return [
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' )
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg/2' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg/2' )
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test2.jpg' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test2.jpg' )
 			],
 			[
 				$pagination,
-				Title::makeTitle( $this->getPageNamespaceId(), 'LoremIpsum.djvu' )
+				Title::makeTitle( self::getPageNamespaceId(), 'LoremIpsum.djvu' )
 			],
 		];
 	}
@@ -63,27 +63,27 @@ class SimpleFilePaginationTest extends ProofreadPageTestCase {
 	public function testGetDisplayedPageNumber() {
 		$pageNumber = new PageNumber( 1 );
 		$pagination = new SimpleFilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.jpg' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.jpg' ),
 			new PageList( [] ),
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
 	}
 
 	public function testGetNumberOfPages() {
 		$pagination = new SimpleFilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.jpg' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.jpg' ),
 			new PageList( [] ),
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertSame( 1, $pagination->getNumberOfPages() );
 	}
 
 	public function testGetPageTitle() {
 		$pagination = new SimpleFilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.jpg' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.jpg' ),
 			new PageList( [] ),
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertSame(
 			'Page:LoremIpsum.jpg',
@@ -93,9 +93,9 @@ class SimpleFilePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPageTitleWithFailure() {
 		$pagination = new SimpleFilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.jpg' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.jpg' ),
 			new PageList( [] ),
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->expectException( OutOfBoundsException::class );
 		$pagination->getPageTitle( 42 );

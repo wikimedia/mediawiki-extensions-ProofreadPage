@@ -35,7 +35,7 @@ class PageContentTest extends ProofreadPageTestCase {
 		] );
 
 		$this->requestContext = new RequestContext();
-		$this->requestContext->setTitle( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) );
+		$this->requestContext->setTitle( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) );
 		$this->requestContext->setUser( $user );
 	}
 
