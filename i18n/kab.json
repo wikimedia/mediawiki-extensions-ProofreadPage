@@ -1,13 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Belkacem77"
+			"Belkacem77",
+			"ButterflyOfFire"
 		]
 	},
+	"nstab-page": "Asebter",
+	"proofreadpage_image": "Tugna",
 	"proofreadpage_quality0_category": "S war aḍris",
 	"proofreadpage_quality1_category": "Ur yettwaseɣti ara",
 	"proofreadpage_quality2_category": "D ugur",
 	"proofreadpage_quality3_category": "Yettwaseɣti",
 	"proofreadpage_quality4_category": "yettwaɣbel",
-	"proofreadpage_quality1_message": "Asebter-agi ur yettwaseɣti ara"
+	"proofreadpage_quality1_message": "Asebter-agi ur yettwaseɣti ara",
+	"proofreadpage_specialpage_filterby_all": "Akk",
+	"proofreadpage_specialpage_label_key": "Nadi",
+	"proofreadpage_source": "Aɣbalu",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "Sekles iɣewwaren",
+	"prp-editinsequence-page-filter-label-all": "Akk isebtar",
+	"proofreadpage-pagelist-dialog-cancel": "Semmet",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Tallelt",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Isebtar",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Ih",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Uhu",
+	"proofreadpage-index-field-category-label": "Taggayin"
 }
