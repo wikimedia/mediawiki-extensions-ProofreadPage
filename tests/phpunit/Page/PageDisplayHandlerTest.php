@@ -17,31 +17,31 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 
 	public function testGetImageWidth() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [ 'width' => new WikitextContent( '500' ) ] )
 		] ) );
 		$this->assertSame(
 			500,
-			$handler->getImageWidth( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
+			$handler->getImageWidth( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) )
 		);
 	}
 
 	public function testGetImageWidthWithDefault() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [ 'title' => new WikitextContent( '500' ) ] )
 		] ) );
 		$this->assertSame(
 			PageDisplayHandler::DEFAULT_IMAGE_WIDTH,
-			$handler->getImageWidth( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
+			$handler->getImageWidth( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) )
 		);
 	}
 
 	public function testGetCustomCss() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'CSS' => new WikitextContent( 'width:300px;' )
@@ -49,13 +49,13 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'width:300px;',
-			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
+			$handler->getCustomCss( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) )
 		);
 	}
 
 	public function testGetCustomCssWithInsecureInput() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'CSS' => new WikitextContent( 'background: url(\'/my-bad-url.jpg\');' )
@@ -63,13 +63,13 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'/* insecure input */',
-			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
+			$handler->getCustomCss( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) )
 		);
 	}
 
 	public function testGetCustomCssWithEscaping() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'CSS' => new WikitextContent( 'width:300px;<style>' )
@@ -77,13 +77,13 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'width:300px;&lt;style&gt;',
-			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
+			$handler->getCustomCss( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) )
 		);
 	}
 
 	public function testGetIndexFieldsForJS() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'width' => new WikitextContent( '300' ),
@@ -91,7 +91,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 			] )
 		] ) );
 
-		$indexFields = $handler->getIndexFieldsForJS( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) );
+		$indexFields = $handler->getIndexFieldsForJS( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) );
 
 		$this->assertSame(
 			'300',
@@ -106,7 +106,7 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 
 	public function testGetIndexFieldsForJSWithEscaping() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'Author' => new WikitextContent( '[[Lorem Ipsum]]<script>alert(1)</script>"&' )
@@ -114,13 +114,13 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'[[Lorem Ipsum]]&lt;script&gt;alert(1)&lt;/script&gt;&quot;&amp;',
-			$handler->getIndexFieldsForJS( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )['Author']
+			$handler->getIndexFieldsForJS( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) )['Author']
 		);
 	}
 
 	public function testGetIndexFieldsForJSForCSSWithEscaping() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'CSS' => new WikitextContent( 'width:300px;<style>' )
@@ -128,13 +128,13 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'width:300px;&lt;style&gt;',
-			$handler->getIndexFieldsForJS( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )['CSS']
+			$handler->getIndexFieldsForJS( Title::makeTitle( self::getPageNamespaceId(), 'Test.jpg' ) )['CSS']
 		);
 	}
 
 	public function testGetIndexFieldsForJSForCSSWithQuotes() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'CSS' => new WikitextContent( 'width:100%;\'"Escaping quotes' )
@@ -142,13 +142,13 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'width:100%;&#039;&quot;Escaping quotes',
-			$handler->getIndexFieldsForJS( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.jpg' ) )['CSS']
+			$handler->getIndexFieldsForJS( Title::makeTitle( self::getIndexNamespaceId(), 'Test.jpg' ) )['CSS']
 		);
 	}
 
 	public function testGetIndexFieldsForJSForCSSWithInsecureInput() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'CSS' => new WikitextContent( 'background: url(\'/my-bad-url.jpg\');' )
@@ -156,13 +156,13 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'/* insecure input */',
-			$handler->getIndexFieldsForJS( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.jpg' ) )['CSS']
+			$handler->getIndexFieldsForJS( Title::makeTitle( self::getIndexNamespaceId(), 'Test.jpg' ) )['CSS']
 		);
 	}
 
 	public function testGetJsQualityVarsForPage() {
 		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			'Test.jpg' => Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		], [
 			'Test' => new IndexContent( [
 				'Pages' => new WikitextContent( '[[Page:Test.jpg|42]]' )

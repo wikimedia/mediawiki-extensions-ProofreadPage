@@ -49,14 +49,14 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	) {
 		$pageTitle = $this->makeEnglishPagePageTitle( $pageTitle );
 		if ( $indexTitle !== null ) {
-			$indexTitle = Title::makeTitle( $this->getIndexNamespaceId(), $indexTitle );
+			$indexTitle = Title::makeTitle( self::getIndexNamespaceId(), $indexTitle );
 			$context = $this->getContext( [
 				$pageTitle->getDBkey() => $indexTitle
 			], [
 				$indexTitle->getDBkey() => $indexContent
 			] );
 		} else {
-			$context = $this->getContext();
+			$context = self::getContext();
 		}
 		try {
 			$image = $context->getFileProvider()->getFileForPageTitle( $pageTitle );
@@ -130,7 +130,7 @@ class PageContentBuilderTest extends ProofreadPageTestCase {
 	public function testBuildContentFromInput(
 		$header, $body, $footer, $level, PageLevel $oldLevel, PageContent $newContent
 	) {
-		$contentBuilder = new PageContentBuilder( $this->context, $this->getContext() );
+		$contentBuilder = new PageContentBuilder( $this->context, self::getContext() );
 		$this->assertEquals(
 			$newContent,
 			$contentBuilder->buildContentFromInput( $header, $body, $footer, $level, $oldLevel )

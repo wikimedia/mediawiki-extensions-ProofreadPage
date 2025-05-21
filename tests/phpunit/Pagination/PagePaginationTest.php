@@ -16,9 +16,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	public function testGetPageNumber() {
 		$pagination = new PagePagination(
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test:3.png' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 2.tiff' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -27,7 +27,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 			]
 		);
 		$this->assertSame( 2, $pagination->getPageNumber(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' )
+			Title::makeTitle( self::getPageNamespaceId(), 'Test 2.tiff' )
 		) );
 	}
 
@@ -35,14 +35,14 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$pagination = new PagePagination( [], [] );
 		$this->expectException( InvalidArgumentException::class );
 		$pagination->getPageNumber(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' )
+			Title::makeTitle( self::getPageNamespaceId(), 'Test 2.tiff' )
 		);
 	}
 
 	public function testGetDisplayedPageNumber() {
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new PagePagination(
-			[ Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ) ],
+			[ Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ) ],
 			[ $pageNumber ]
 		);
 		$this->assertSame( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
@@ -57,9 +57,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	public function testGetNumberOfPages() {
 		$pagination = new PagePagination(
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.jpg' ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test:3.png' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 2.jpg' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -73,9 +73,9 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	public function testGetPageTitle() {
 		$pagination = new PagePagination(
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.tiff' ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test:3.png' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 2.tiff' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test:3.png' )
 			],
 			[
 				new PageNumber( 'TOC' ),
@@ -84,7 +84,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 			]
 		);
 		$this->assertEquals(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
+			Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
 			$pagination->getPageTitle( 1 )
 		);
 	}
@@ -98,8 +98,8 @@ class PagePaginationTest extends ProofreadPageTestCase {
 	public function testIterator() {
 		$pagination = new PagePagination(
 			[
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ),
-				Title::makeTitle( $this->getPageNamespaceId(), 'Test 2.jpg' )
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ),
+				Title::makeTitle( self::getPageNamespaceId(), 'Test 2.jpg' )
 			],
 			[ new PageNumber( '1' ), new PageNumber( '2' ) ]
 		);
@@ -113,7 +113,7 @@ class PagePaginationTest extends ProofreadPageTestCase {
 		$pagination->rewind();
 		$this->assertSame( 1, $pagination->key() );
 		$this->assertEquals(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test 1.jpg' ), $pagination->current()
+			Title::makeTitle( self::getPageNamespaceId(), 'Test 1.jpg' ), $pagination->current()
 		);
 	}
 }

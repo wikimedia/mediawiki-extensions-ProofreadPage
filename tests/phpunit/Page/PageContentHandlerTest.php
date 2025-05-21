@@ -45,10 +45,10 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 	public function testCanBeUsedOn() {
 		$this->assertTrue( $this->handler->canBeUsedOn(
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+			Title::makeTitle( self::getPageNamespaceId(), 'Test' )
 		) );
 		$this->assertFalse( $this->handler->canBeUsedOn(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
+			Title::makeTitle( self::getIndexNamespaceId(), 'Test' )
 		) );
 		$this->assertFalse( $this->handler->canBeUsedOn( Title::makeTitle( NS_MAIN, 'Test' ) ) );
 	}
@@ -414,7 +414,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$contentTransformer = $services->getContentTransformer();
 		$content = $contentTransformer->preSaveTransform(
 			$content,
-			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			PageReferenceValue::localReference( self::getIndexNamespaceId(), 'Test.pdf' ),
 			$user,
 			$options
 		);
@@ -444,7 +444,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 
 		$content = $contentTransformer->preloadTransform(
 			$content,
-			PageReferenceValue::localReference( $this->getIndexNamespaceId(), 'Test.pdf' ),
+			PageReferenceValue::localReference( self::getIndexNamespaceId(), 'Test.pdf' ),
 			$options
 		);
 
@@ -495,7 +495,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$contentRenderer = $this->getServiceContainer()->getContentRenderer();
 		$output = $contentRenderer->getParserOutput(
 			$content,
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+			Title::makeTitle( self::getPageNamespaceId(), 'Test' )
 		);
 		$actual = str_replace( "\n", '', $output->getRawText() );
 		$this->assertStringStartsWith(
@@ -527,7 +527,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		$contentRenderer = $this->getServiceContainer()->getContentRenderer();
 		$output = $contentRenderer->getParserOutput(
 			$content,
-			Title::makeTitle( $this->getPageNamespaceId(), 'Test' )
+			Title::makeTitle( self::getPageNamespaceId(), 'Test' )
 		);
 		$actual = $output->runOutputPipeline( ParserOptions::newFromAnon(), [] )->getContentHolderText();
 		$this->assertStringContainsString( '<div class="redirectMsg">', $actual );

@@ -62,7 +62,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 			)
 		];
 		$this->assertEquals(
-			$entries, $this->getContext()->getCustomIndexFieldsParser()->parseCustomIndexFields( $content )
+			$entries, self::getContext()->getCustomIndexFieldsParser()->parseCustomIndexFields( $content )
 		);
 	}
 
@@ -96,7 +96,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		];
 		$this->assertEquals(
 			$entries,
-			$this->getContext()->getCustomIndexFieldsParser()->parseCustomIndexFieldsForHeader( $content )
+			self::getContext()->getCustomIndexFieldsParser()->parseCustomIndexFieldsForHeader( $content )
 		);
 	}
 
@@ -118,13 +118,13 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		];
 		$this->assertEquals(
 			$entries,
-			$this->getContext()->getCustomIndexFieldsParser()->parseCustomIndexFieldsForJS( $content )
+			self::getContext()->getCustomIndexFieldsParser()->parseCustomIndexFieldsForJS( $content )
 		);
 	}
 
 	public function testParseCustomIndexField() {
 		$content = $this->buildContent( "{{\n|Year=2012 or 2013\n}}" );
-		$parser = $this->getContext()->getCustomIndexFieldsParser();
+		$parser = self::getContext()->getCustomIndexFieldsParser();
 		$entry = new CustomIndexField(
 			'Year', '2012 or 2013', self::$customIndexFieldsConfiguration['Year']
 		);
@@ -133,7 +133,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 
 	public function testGetCustomIndexFieldForDataKey() {
 		$content = $this->buildContent( "{{\n|Pages=2012 or 2013\n}}" );
-		$parser = $this->getContext()->getCustomIndexFieldsParser();
+		$parser = self::getContext()->getCustomIndexFieldsParser();
 		$entry = new CustomIndexField(
 			'Pages', '2012 or 2013', self::$customIndexFieldsConfiguration['Pages']
 		);
@@ -145,7 +145,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 
 	public function testParseCustomIndexFieldThatDoesNotExist() {
 		$content = $this->buildContent( "{{\n|Year=2012 or 2013\n}}" );
-		$parser = $this->getContext()->getCustomIndexFieldsParser();
+		$parser = self::getContext()->getCustomIndexFieldsParser();
 		$this->expectException( OutOfBoundsException::class );
 		$parser->parseCustomIndexField( $content, 'years' );
 	}
@@ -206,7 +206,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		$content = $this->buildContent( $pageContent );
 		$this->assertSame(
 			$result,
-			$this->getContext()->getCustomIndexFieldsParser()
+			self::getContext()->getCustomIndexFieldsParser()
 				->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries( $content, $entry, $extraparams )
 		);
 	}
@@ -214,7 +214,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 	public function testReplaceVariablesWithIndexEntriesThatDoesNotExist() {
 		$content = $this->buildContent( "{{\n|Title=Test book\n|Header={{{Pagenum}}}\n}}" );
 		$this->expectException( OutOfBoundsException::class );
-		$this->getContext()->getCustomIndexFieldsParser()
+		self::getContext()->getCustomIndexFieldsParser()
 			->parseCustomIndexFieldWithVariablesReplacedWithIndexEntries( $content, 'headers', [] );
 	}
 }

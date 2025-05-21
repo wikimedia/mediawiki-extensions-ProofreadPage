@@ -16,10 +16,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 
 	public function testGetPageNumber() {
 		$context = $this->getContext( [
-			'LoremIpsum.djvu/2' => Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' )
+			'LoremIpsum.djvu/2' => Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' )
 		] );
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
 			$context->getPageNamespaceId()
@@ -39,12 +39,12 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		$pagination->getPageNumber( $this->makeEnglishPagePageTitle( $titleText ) );
 	}
 
-	public function getPageNumberWithFailureProvider() {
+	public static function getPageNumberWithFailureProvider() {
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		return [
 			[
@@ -90,10 +90,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		}
 		$pageNumber = new PageNumber( 'TOC' );
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			new PageList( [ '1' => 'TOC' ] ),
 			5,
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
 	}
@@ -104,10 +104,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 		}
 		$pageNumber = new PageNumber( 1 );
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertEquals( $pageNumber, $pagination->getDisplayedPageNumber( 1 ) );
 	}
@@ -123,10 +123,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertSame( 5, $pagination->getNumberOfPages() );
 	}
@@ -139,7 +139,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->makeEnglishPagePageTitle( 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->assertSame(
 			'Page:LoremIpsum.djvu/2',
@@ -152,10 +152,10 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
 		}
 		$pagination = new FilePagination(
-			Title::makeTitle( $this->getIndexNamespaceId(), 'LoremIpsum.djvu' ),
+			Title::makeTitle( self::getIndexNamespaceId(), 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 		$this->expectException( OutOfBoundsException::class );
 		$pagination->getPageTitle( 42 );
@@ -169,7 +169,7 @@ class FilePaginationTest extends ProofreadPageTestCase {
 			$this->makeEnglishPagePageTitle( 'LoremIpsum.djvu' ),
 			new PageList( [] ),
 			5,
-			$this->getPageNamespaceId()
+			self::getPageNamespaceId()
 		);
 
 		$this->assertSame( 1, $pagination->key() );

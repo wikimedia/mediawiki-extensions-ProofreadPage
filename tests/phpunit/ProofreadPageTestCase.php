@@ -8,15 +8,13 @@ use MediaWiki\FileRepo\FileRepo;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use PHPUnit\Framework\MockObject\MockObject;
 use ProofreadPage\Context;
 use ProofreadPage\FileProvider;
 use ProofreadPage\FileProviderMock;
 use ProofreadPage\Index\CustomIndexFieldsParser;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPage\Index\IndexContentLookupMock;
-use ProofreadPage\Index\IndexQualityStatsLookup;
-use ProofreadPage\Index\PagesQualityStats;
+use ProofreadPage\Index\IndexQualityStatsLookupMock;
 use ProofreadPage\Page\IndexForPageLookupMock;
 use ProofreadPage\Page\PageContent;
 use ProofreadPage\Page\PageLevel;
@@ -111,7 +109,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	/**
 	 * @var FileProvider
 	 */
-	private $fileProvider;
+	private static $fileProvider;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -136,54 +134,37 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @param Title[] $indexForPage
 	 * @param IndexContent[] $indexContent
 	 * @param int[] $levelForPage
-	 * @param array $qualityStatsForIndex
+	 * @param @param array<string,PagesQualityStats> $qualityStatsForIndex
 	 * @return Context
 	 */
-	protected function getContext(
+	protected static function getContext(
 		array $indexForPage = [], array $indexContent = [], array $levelForPage = [],
 		array $qualityStatsForIndex = []
 	) {
 		return new Context(
 			ProofreadPageInit::getNamespaceId( 'page' ),
 			ProofreadPageInit::getNamespaceId( 'index' ),
-			$this->getFileProvider(),
+			self::getFileProvider(),
 			new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration ),
 			new IndexForPageLookupMock( $indexForPage ),
 			new IndexContentLookupMock( $indexContent ),
 			new PageQualityLevelLookupMock( $levelForPage ),
-			$this->getMockStatsLookup( $qualityStatsForIndex )
+			new IndexQualityStatsLookupMock( $qualityStatsForIndex )
 		);
-	}
-
-	/**
-	 * @param PagesQualityStats[] $qualityStatsForIndex
-	 * @return IndexQualityStatsLookup|MockObject
-	 */
-	private function getMockStatsLookup( array $qualityStatsForIndex ) {
-		$mock = $this->createMock( IndexQualityStatsLookup::class );
-		$mock->method( 'getStatsForIndexTitle' )->willReturnCallback(
-			static function ( Title $indexTitle ) use ( $qualityStatsForIndex ) {
-				if ( !array_key_exists( $indexTitle->getPrefixedDBkey(), $qualityStatsForIndex ) ) {
-					return new PagesQualityStats( 0, [] );
-				}
-				return $qualityStatsForIndex[$indexTitle->getPrefixedDBkey()];
-			}
-		);
-		return $mock;
 	}
 
 	/**
 	 * @return int
 	 */
-	protected function getPageNamespaceId() {
-		return $this->getContext()->getPageNamespaceId();
+	protected static function getPageNamespaceId() {
+		return self::getContext()->getPageNamespaceId();
 	}
 
 	/**
 	 * @return int
 	 */
-	protected function getIndexNamespaceId() {
-		return $this->getContext()->getIndexNamespaceId();
+	protected static function getIndexNamespaceId() {
+		return self::getContext()->getIndexNamespaceId();
 	}
 
 	/**
@@ -191,17 +172,17 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 *
 	 * @return FileProvider
 	 */
-	private function getFileProvider() {
-		if ( $this->fileProvider === null ) {
-			$this->fileProvider = new FileProviderMock( $this->buildFileList() );
+	private static function getFileProvider() {
+		if ( self::$fileProvider === null ) {
+			self::$fileProvider = new FileProviderMock( self::buildFileList() );
 		}
-		return $this->fileProvider;
+		return self::$fileProvider;
 	}
 
 	/**
 	 * @return File[]
 	 */
-	protected function buildFileList() {
+	protected static function buildFileList() {
 		$backend = new FSFileBackend( [
 			'name' => 'localtesting',
 			'wikiId' => WikiMap::getCurrentWikiId(),
@@ -261,7 +242,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @return Title
 	 */
 	protected function makeEnglishPagePageTitle( string $titleText ): Title {
-		$ret = Title::makeTitle( $this->getPageNamespaceId(), $titleText );
+		$ret = Title::makeTitle( self::getPageNamespaceId(), $titleText );
 		$wrapper = TestingAccessWrapper::newFromObject( $ret );
 		$wrapper->mPageLanguage = [ 'en', 'en' ];
 		return $wrapper->object;
