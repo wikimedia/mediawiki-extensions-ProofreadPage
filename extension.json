@@ -432,7 +432,8 @@
 		"RecentChange_save": "ProofreadPageHooks",
 		"ScribuntoExternalLibraries": "ScribuntoHooks",
 		"ScribuntoExternalLibraryPaths": "ScribuntoHooks",
-		"GetDoubleUnderscoreIDs": "ProofreadPageHooks"
+		"GetDoubleUnderscoreIDs": "ProofreadPageHooks",
+		"CodeMirrorGetMode": "CodeMirrorHooks"
 	},
 	"HookHandlers": {
 		"ProofreadPageHooks": {
@@ -447,6 +448,9 @@
 		"ScribuntoHooks": {
 			"class": "ProofreadPage\\ScribuntoHooks"
 		},
+		"CodeMirrorHooks": {
+			"class": "ProofreadPage\\CodeMirrorHooks"
+		},
 		"schema": {
 			"class": "ProofreadPage\\SchemaHooks"
 		}
@@ -454,11 +458,6 @@
 	"attributes": {
 		"Cite": {
 			"AllowedContentModels": [
-				"proofread-page"
-			]
-		},
-		"CodeMirror": {
-			"ContentModels": [
 				"proofread-page"
 			]
 		},
