@@ -6,7 +6,7 @@
 			"Bodhisattwa"
 		]
 	},
-	"apierror-proofreadpage-invalidindex": "অবৈধ নির্ঘণ্ট শিরোনাম \" $1 \"।",
+	"apierror-proofreadpage-invalidindex": "নির্ঘণ্ট শিরোনাম \"$1\" বৈধ নয়।",
 	"apihelp-query+proofread-summary": "প্রদত্ত পৃষ্ঠাগুলির বর্তমান প্রমাণিত অবস্থা সম্পর্কে তথ্য প্রদান",
 	"apihelp-query+proofread-example-1": "নামস্থান ২৫০ এ থাকা পৃষ্ঠাগুলোর সংশোধন অবস্থা দেখান",
 	"apihelp-query+proofreadinfo-example-1": "পূর্বনির্ধারিত তথ্য দেয়",
