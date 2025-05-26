@@ -165,7 +165,7 @@
 	"proofreadpage-preferences-animation-time-label": "Masa animasi sorot dan zum (antara 0 dan 2 saat, lalai: 0). Lebih tinggi lebih lancar, lebih rendah lebih cepat",
 	"proofreadpage-preferences-showheaders-label": "Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}",
-	"proofreadpage-preferences-pagelist-use-visual-mode": "Gunakan mod visual percubaan baharu untuk menyunting senarai laman.",
+	"proofreadpage-preferences-pagelist-use-visual-mode": "Gunakan mod visual percubaan baharu untuk menyunting senarai laman",
 	"proofreadpage-preferences-zoom-factor-label": "Faktor zum pada skrol (antara 1 dan 2, lalai: 1.2). Zum lebih tinggi lebih banyak setiap langkah",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Tunjukkan dialog ringkasan sunting setiap kali {{GENDER:|anda}} menyimpan laman dalam mod EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "Lakukan tindakan ini selepas menyimpan laman menggunakan mod EditInSequence",
