@@ -395,7 +395,7 @@ title="Index:Thumb.png"
 !! wikitext
 <pagelist />
 !! html
-<div class="prp-index-pagelist"><a href="/index.php?title=Page:Thumb.png&amp;action=edit&amp;redlink=1" class="new prp-index-pagelist-page" title="Page:Thumb.png (page does not exist)">1</a></div>
+<div class="prp-index-pagelist"><a href="/index.php?title=Page:Thumb.png&amp;action=edit&amp;redlink=1" class="prp-index-pagelist-page new" title="Page:Thumb.png (page does not exist)">1</a></div>
 !! end
 
 !! test
@@ -406,7 +406,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist />
 !! html
-<div class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">1</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a> <a href="/wiki/Page:LoremIpsum.djvu/3" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/3">3</a> <a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new prp-index-pagelist-page" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></div>
+<div class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/1" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/1">1</a> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a> <a href="/wiki/Page:LoremIpsum.djvu/3" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/3">3</a> <a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="prp-index-pagelist-page new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></div>
 !! end
 
 !! test
@@ -417,7 +417,7 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist from=4/>
 !! html
-<div class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="new prp-index-pagelist-page" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></div>
+<div class="prp-index-pagelist"><a href="/wiki/Page:LoremIpsum.djvu/4" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/4">4</a> <a href="/index.php?title=Page:LoremIpsum.djvu/5&amp;action=edit&amp;redlink=1" class="prp-index-pagelist-page new" title="Page:LoremIpsum.djvu/5 (page does not exist)">5</a></div>
 !! end
 
 !! test
