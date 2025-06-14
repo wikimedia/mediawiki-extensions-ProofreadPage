@@ -7,7 +7,7 @@ const path = require( 'path' );
 const MWBot = require( 'mwbot' );
 
 const bot = new MWBot( {
-	apiUrl: browser.config.baseUrl + '/api.php'
+	apiUrl: browser.options.baseUrl + '/api.php'
 } );
 
 describe( 'For a page with the eis, the page status module', () => {

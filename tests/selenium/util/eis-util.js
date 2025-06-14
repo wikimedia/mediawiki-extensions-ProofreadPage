@@ -45,8 +45,8 @@ async function importTemplates( bot ) {
 
 async function setupPrpTemplates( bot ) {
 	await bot.loginGetEditToken( {
-		username: browser.config.mwUser,
-		password: browser.config.mwPwd
+		username: browser.options.capabilities[ 'mw:user' ],
+		password: browser.options.capabilities[ 'mw:pwd' ]
 	} );
 
 	await importTemplates( bot );
