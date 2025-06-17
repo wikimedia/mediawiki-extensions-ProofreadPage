@@ -131,17 +131,24 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 			return $title->getDBkey();
 		}, $pageTitles );
 
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
+		$services = MediaWikiServices::getInstance();
+		$dbr = $services->getDBLoadBalancerFactory()->getReplicaDatabase();
+		$categorylinksQueryInfo = $services->getLinksMigration()->getQueryInfo( 'categorylinks' );
 		foreach ( $this->getCategoryForQualityLevels() as $qualityLevel => $qualityCategory ) {
+			$categorylinksConditions = $services->getLinksMigration()->getLinksConditions(
+				'categorylinks',
+				$qualityCategory
+			);
 			$results = $dbr->newSelectQueryBuilder()
 				->select( 'page_title' )
 				->from( 'page' )
 				->join( 'categorylinks', null, 'page_id = cl_from' )
+				->joinConds( $categorylinksQueryInfo['joins'] )
 				->where( [
 					'page_title' => $pageDbKeys,
-					'cl_to' => $qualityCategory->getDBkey(),
 					'page_namespace' => $this->pageNamespaceId
 				] )
+				->andWhere( $categorylinksConditions )
 				->caller( __METHOD__ )
 				->fetchResultSet();
 
