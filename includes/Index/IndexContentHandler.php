@@ -578,7 +578,7 @@ class IndexContentHandler extends TextContentHandler {
 			);
 
 			foreach ( $content->getCategories() as $category ) {
-				$parserOutput->addCategory( $category->getDBkey(), $category->getText() );
+				$parserOutput->addCategory( $category );
 			}
 		}
 	}
