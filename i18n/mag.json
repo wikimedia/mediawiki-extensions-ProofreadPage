@@ -114,5 +114,12 @@
 	"tag-proofreadpage-quality1": "अशोधित",
 	"tag-proofreadpage-quality2": "समस्यात्मक",
 	"tag-proofreadpage-quality3": "शोधित",
-	"tag-proofreadpage-quality4": "प्रमाणित"
+	"tag-proofreadpage-quality4": "प्रमाणित",
+	"tag-proofreadpage-editinsequence": "अनुक्रममे-सम्पादन",
+	"tag-proofreadpage-quality0-description": "सम्पादन जे पन्नाके गुणवत्ताके \"{{int:tag-proofreadpage-quality0}}\" मे बदल देलक ।",
+	"tag-proofreadpage-quality1-description": "सम्पादन जे पन्नाके गुणवत्ताके \"{{int:tag-proofreadpage-quality1}}\" मे बदल देलक ।",
+	"tag-proofreadpage-quality2-description": "सम्पादन जे पन्नाके गुणवत्ताके\"{{int:tag-proofreadpage-quality2}}\" मे बदल देलक ।",
+	"tag-proofreadpage-quality3-description": "सम्पादन जे पन्नाके गुणवत्ताके \"{{int:tag-proofreadpage-quality3}}\" मे बदल देलक ।",
+	"tag-proofreadpage-quality4-description": "सम्पादन जे पन्नाके गुणवत्ताके \"{{int:tag-proofreadpage-quality4}}\" मे बदल देलक ।",
+	"tag-proofreadpage-editinsequence-description": "नव अनुक्रममे-सम्पादन मोडके प्रयोग करके कैल गेल सम्पादन"
 }
