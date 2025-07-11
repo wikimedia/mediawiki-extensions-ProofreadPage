@@ -270,7 +270,7 @@ class PagesTagParser {
 					$firstpage->getArticleID(),
 					$firstpage->getLatestRevID()
 				);
-			} catch ( OutOfBoundsException $e ) {
+			} catch ( OutOfBoundsException ) {
 				// if the first page does not exist
 			}
 		}
@@ -418,7 +418,7 @@ class PagesTagParser {
 				$indexTitle, $parserOptions
 			);
 			return $linksExtractor->getLinksToNamespace( $wikitext, NS_MAIN );
-		} catch ( OutOfBoundsException $e ) {
+		} catch ( OutOfBoundsException ) {
 			$links = [];
 			foreach ( $indexContent->getFields() as $field ) {
 				$wikitext = $parser->preprocess(

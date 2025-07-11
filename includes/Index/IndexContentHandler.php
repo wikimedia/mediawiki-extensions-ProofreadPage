@@ -357,7 +357,6 @@ class IndexContentHandler extends TextContentHandler {
 
 		// Categories
 		$categories = $this->arrayMerge3(
-			$oldContent->getCategories(),
 			$myContent->getCategories(),
 			$yourContent->getCategories()
 		);
@@ -366,12 +365,11 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @param array $old
 	 * @param array $my
 	 * @param array $your
 	 * @return array
 	 */
-	private function arrayMerge3( array $old, array $my, array $your ) {
+	private function arrayMerge3( array $my, array $your ) {
 		// TODO: detection of deletions
 		return array_unique( array_merge( $my, $your ) );
 	}

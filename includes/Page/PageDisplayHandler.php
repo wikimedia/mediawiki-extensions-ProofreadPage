@@ -63,7 +63,7 @@ class PageDisplayHandler {
 				if ( is_numeric( $width ) ) {
 					return (int)$width;
 				}
-			} catch ( OutOfBoundsException $e ) {
+			} catch ( OutOfBoundsException ) {
 				return self::DEFAULT_IMAGE_WIDTH;
 			}
 		}
@@ -89,7 +89,7 @@ class PageDisplayHandler {
 			return Sanitizer::escapeHtmlAllowEntities(
 				Sanitizer::checkCss( $css->getStringValue() )
 			);
-		} catch ( OutOfBoundsException $e ) {
+		} catch ( OutOfBoundsException ) {
 			return '';
 		}
 	}
@@ -174,7 +174,7 @@ class PageDisplayHandler {
 				$formattedPageNumber = $displayedPageNumber->getFormattedPageNumber( $title->getPageLanguage() );
 
 				$jsConfigVars[ 'prpFormattedPageNumber' ] = $formattedPageNumber;
-			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
+			} catch ( PageNotInPaginationException | OutOfBoundsException ) {
 			}
 		}
 
@@ -281,7 +281,7 @@ class PageDisplayHandler {
 		$fileProvider = $this->context->getFileProvider();
 		try {
 			$image = $fileProvider->getFileForPageTitle( $pageTitle );
-		} catch ( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException ) {
 			return null;
 		}
 		if ( !$image->exists() ) {
@@ -291,7 +291,7 @@ class PageDisplayHandler {
 		if ( $image->isMultipage() ) {
 			try {
 				$pageNumber = $fileProvider->getPageNumberForPageTitle( $pageTitle );
-			} catch ( PageNumberNotFoundException $e ) {
+			} catch ( PageNumberNotFoundException ) {
 			}
 		}
 

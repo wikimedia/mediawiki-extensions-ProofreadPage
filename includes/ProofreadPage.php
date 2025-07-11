@@ -472,7 +472,7 @@ class ProofreadPage implements
 					if ( $prevThumbnailLinkAttributes ) {
 						$skin->getOutput()->addLink( $prevThumbnailLinkAttributes );
 					}
-				} catch ( OutOfBoundsException $e ) {
+				} catch ( OutOfBoundsException ) {
 					// if the previous page does not exist
 				}
 
@@ -493,10 +493,10 @@ class ProofreadPage implements
 					if ( $nextThumbnailLinkAttributes ) {
 						$skin->getOutput()->addLink( $nextThumbnailLinkAttributes );
 					}
-				} catch ( OutOfBoundsException $e ) {
+				} catch ( OutOfBoundsException ) {
 					// if the next page does not exist
 				}
-			} catch ( PageNotInPaginationException $e ) {
+			} catch ( PageNotInPaginationException ) {
 			}
 
 			// Prepend Prev, Next to namespaces tabs
@@ -567,11 +567,10 @@ class ProofreadPage implements
 	 * Add the link the style page (if any) on the main namespace pages
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
 	 *
-	 * @param Title $title the page title
 	 * @param SkinTemplate $skin
 	 * @param array[] &$links Structured navigation links
 	 */
-	private static function addBookSourceNavigation( Title $title, SkinTemplate $skin, array &$links ) {
+	private static function addBookSourceNavigation( SkinTemplate $skin, array &$links ) {
 		$outputPage = $skin->getOutput();
 		$indexTitleText = $outputPage->getProperty( 'prpSourceIndexPage' );
 		if ( $indexTitleText !== null ) {
@@ -604,7 +603,7 @@ class ProofreadPage implements
 		} elseif ( $title->inNamespace( self::getIndexNamespaceId() ) ) {
 			self::addIndexNsNavigation( $title, $skin, $links );
 		} elseif ( $title->inNamespaces( $skin->getConfig()->get( 'ProofreadPageBookNamespaces' ) ) ) {
-			self::addBookSourceNavigation( $title, $skin, $links );
+			self::addBookSourceNavigation( $skin, $links );
 		}
 	}
 

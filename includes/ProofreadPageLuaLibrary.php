@@ -261,7 +261,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 
 		try {
 			$pageTitle = $pagination->getPageTitle( $n );
-		} catch ( OutOfBoundsException $e ) {
+		} catch ( OutOfBoundsException ) {
 			return [ null ];
 		}
 
@@ -355,7 +355,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 		try {
 			$pageInPagination = $pagination->getPageNumber( $pageTitle );
 			$dispNum = $pagination->getDisplayedPageNumber( $pageInPagination );
-		} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
+		} catch ( PageNotInPaginationException | OutOfBoundsException ) {
 			return [ null ];
 		}
 

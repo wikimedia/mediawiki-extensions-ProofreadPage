@@ -76,7 +76,7 @@ class ApiQueryImageForPage extends ApiQueryBase {
 		try {
 			$fileProvider = $this->context->getFileProvider();
 			$file = $fileProvider->getFileForPageTitle( $title );
-		} catch ( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException ) {
 			return [];
 		}
 

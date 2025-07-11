@@ -32,7 +32,7 @@ class WikitextLinksExtractor {
 						$links[] = new Link( $title, $textLinks[3][$i] );
 					}
 				}
-			} catch ( MalformedTitleException $e ) {
+			} catch ( MalformedTitleException ) {
 				// We ignore invalid links
 			}
 		}

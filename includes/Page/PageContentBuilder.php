@@ -54,7 +54,7 @@ class PageContentBuilder {
 				$displayedPageNumber = $pagination->getDisplayedPageNumber( $pageNumber );
 				$params['pagenum'] = $displayedPageNumber
 					->getFormattedPageNumber( $pageTitle->getPageLanguage() );
-			} catch ( PageNotInPaginationException | OutOfBoundsException $e ) {
+			} catch ( PageNotInPaginationException | OutOfBoundsException ) {
 				// should not happen
 			}
 
@@ -82,7 +82,7 @@ class PageContentBuilder {
 				if ( $image->isMultipage() ) {
 					try {
 						$pageNumber = $fileProvider->getPageNumberForPageTitle( $pageTitle );
-					} catch ( PageNumberNotFoundException $e ) {
+					} catch ( PageNumberNotFoundException ) {
 					}
 				}
 				$text = $image->getHandler()
@@ -93,7 +93,7 @@ class PageContentBuilder {
 					$body = preg_replace( "/(\\\\\d*)/", '', $text );
 				}
 			}
-		} catch ( FileNotFoundException $e ) {
+		} catch ( FileNotFoundException ) {
 		}
 
 		return new PageContent(

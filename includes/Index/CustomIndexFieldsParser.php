@@ -293,7 +293,7 @@ class CustomIndexFieldsParser {
 		try {
 			$entry = $this->getCustomIndexFieldForDataKey( $content, 'language' );
 			return $entry->getType() === 'langcode' ? $entry->getStringValue() : null;
-		} catch ( OutOfBoundsException $e ) {
+		} catch ( OutOfBoundsException ) {
 			return null;
 		}
 	}
