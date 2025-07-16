@@ -13,7 +13,7 @@ class CodeMirrorHooks implements CodeMirrorGetModeHook {
 	/**
 	 * @inheritDoc
 	 */
-	public function onCodeMirrorGetMode( Title $title, ?string &$mode, string $model ) {
+	public function onCodeMirrorGetMode( Title $title, ?string &$mode, string $model ): bool {
 		if ( $model === 'proofread-page' ) {
 			$mode = 'mediawiki';
 			return false;
