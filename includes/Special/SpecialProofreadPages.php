@@ -148,7 +148,7 @@ class SpecialProofreadPages extends QueryPage {
 
 	/**
 	 * Increments $numRows if the last item of the result has been deleted
-	 * @param \Wikimedia\Rdbms\IDatabase $dbr [optional] (unused parameter)
+	 * @param \Wikimedia\Rdbms\IReadableDatabase $dbr [optional] (unused parameter)
 	 * @param \Wikimedia\Rdbms\IResultWrapper $res [optional] (unused parameter)
 	 */
 	public function preprocessResults( $dbr, $res ) {
