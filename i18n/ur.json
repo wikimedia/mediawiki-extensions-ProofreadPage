@@ -6,7 +6,8 @@
 			"Syedalinaqinaqvi",
 			"عثمان خان شاہ",
 			"පසිඳු කාවින්ද",
-			"Reedy"
+			"Reedy",
+			"Satdeep gill"
 		]
 	},
 	"nstab-page": "صفحہ",
@@ -55,6 +56,12 @@
 	"proofreadpage_index_size": "تعداد صفحات",
 	"proofreadpage_pages_to_validate": "غیر توثیق شدہ صفحات کی تعداد",
 	"proofreadpage_pages_to_proofread_or_validate": "غیر توثیق یا غیر تصحیح شدہ صفحات کی تعداد",
+	"proofreadpage_specialpage_filterby_all": "تمام",
+	"proofreadpage_specialpage_filterby_incomplete": "نامکمل",
+	"proofreadpage_specialpage_filterby_proofread": "تصحیح شدہ",
+	"proofreadpage_specialpage_filterby_proofread_or_validated": "پروف ریڈ یا تصدیق شدہ",
+	"proofreadpage_specialpage_filterby_validated": "تصحیح شدہ",
+	"proofreadpage_specialpage_label_filterby": "فلٹر از:",
 	"proofreadpage_specialpage_label_orderby": "ترتیب بلحاظ:",
 	"proofreadpage_specialpage_label_key": "تلاش:",
 	"proofreadpage_specialpage_label_sortascending": "اترتی ترتیب",
@@ -80,6 +87,8 @@
 	"proofreadpage-group-zoom": "زوم",
 	"proofreadpage-group-other": "دیگر",
 	"proofreadpage-button-reset-zoom-label": "اصلی جسامت",
+	"proofreadpage-button-rotate-left-label": "بائیں طرف گھمائیں",
+	"proofreadpage-button-rotate-right-label": "دائیں طرف گھمائیں",
 	"proofreadpage-button-toggle-layout-label": "عمودی/افقی خاکہ",
 	"proofreadpage-button-toggle-visibility-label": "اس صفحے کا عنوان اور حاشیہ دکھائیں/چھپائیں",
 	"proofreadpage-button-zoom-in-label": "بڑا کریں",
