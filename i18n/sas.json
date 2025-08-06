@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"NikolasKHF"
+		]
+	},
+	"nstab-page": "Halaman",
+	"tooltip-ca-nstab-page": "Èngat halaman buku",
+	"proofreadpage_image": "Gambar",
+	"proofreadpage_nologin": "Ndéqman tame",
+	"proofreadpage_nologintext": "Side harus [[Special:UserLogin|tame]] adén bau obah status dadarmace halaman ni.",
+	"proofreadpage_notallowedtext": "Side ndéqn bau obah status dadarmace halaman ni.",
+	"proofreadpage_quality0_category": "Ndéqn araq tulisan",
+	"proofreadpage_quality1_category": "Ndéqman tedadar mace",
+	"proofreadpage_quality2_category": "Araq masalah",
+	"proofreadpage_quality3_category": "Wah tedadar mace",
+	"proofreadpage_quality0_summary": "Ndéqn araq tulisan",
+	"proofreadpage_quality1_summary": "Ndéqman tedadar mace",
+	"proofreadpage_quality2_summary": "Araq masalah",
+	"proofreadpage_quality3_summary": "Wah tedadar mace",
+	"proofreadpage_specialpage_filterby_all": "Kelapuq",
+	"proofreadpage_specialpage_filterby_incomplete": "Ndéqman lengkap",
+	"proofreadpage_specialpage_filterby_proofread": "Wah tedadar mace"
+}
