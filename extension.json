@@ -469,7 +469,7 @@
 		}
 	},
 	"ConfigRegistry": {
-		"proofreadpage": "GlobalVarConfig::newInstance"
+		"proofreadpage": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"config": {
 		"ProofreadPageNamespaceIds": {
