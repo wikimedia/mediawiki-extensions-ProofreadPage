@@ -4,6 +4,7 @@
 			"Max20091",
 			"Minh Nguyen",
 			"Nguyenphutrong2",
+			"Nvdtn19",
 			"Reedy",
 			"Vinhtantran",
 			"Yosari101"
@@ -39,7 +40,7 @@
 	"proofreadpage_header": "Đầu trang (noinclude):",
 	"proofreadpage_body": "Thân trang (sẽ được nhúng):",
 	"proofreadpage_footer": "Chân trang (noinclude):",
-	"proofreadpage_toggleheaders": "thay đổi độ khả kiến của đề mục noinclude",
+	"proofreadpage_toggleheaders": "thay đổi mức hiển thị của đề mục noinclude",
 	"proofreadpage_quality0_category": "Không có nội dung",
 	"proofreadpage_quality1_category": "Chưa hiệu đính",
 	"proofreadpage_quality2_category": "Có vấn đề",
