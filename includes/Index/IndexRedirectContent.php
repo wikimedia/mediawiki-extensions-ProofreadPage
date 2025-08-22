@@ -64,6 +64,13 @@ class IndexRedirectContent extends TextContent {
 
 	/**
 	 * @inheritDoc
+	 */
+	public function getWikitextForTransclusion() {
+		return $this->getText();
+	}
+
+	/**
+	 * @inheritDoc
 	 * @return Title
 	 */
 	public function getRedirectTarget() {
