@@ -63,6 +63,12 @@ class EditPagePage extends EditPage {
 	 * @inheritDoc
 	 */
 	protected function showContentForm() {
+		$content = $this->toEditContent( $this->textbox1 );
+		if ( !$content instanceof PageContent ) {
+			parent::showContentForm();
+			return;
+		}
+
 		$out = $this->context->getOutput();
 
 		// custom CSS for preview
@@ -75,10 +81,6 @@ class EditPagePage extends EditPage {
 		if ( $this->readOnlyMode->isReadOnly() ) {
 			$inputAttributes['readonly'] = '';
 		}
-
-		/** @var PageContent $content */
-		$content = $this->toEditContent( $this->textbox1 );
-		'@phan-var PageContent $content';
 
 		$out->addHTML( $this->pageDisplayHandler->buildPageContainerBegin() );
 		$this->showEditArea(

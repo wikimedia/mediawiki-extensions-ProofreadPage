@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Index;
 
-use LogicException;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
@@ -41,17 +40,18 @@ class EditIndexPage extends EditPage {
 	 * @inheritDoc
 	 */
 	protected function showContentForm() {
+		$content = $this->toEditContent( $this->textbox1 );
+		if ( !$content instanceof IndexContent ) {
+			parent::showContentForm();
+			return;
+		}
+
 		$pageLang = $this->getTitle()->getPageLanguage();
 		$out = $this->context->getOutput();
 		$out->enableOOUI();
 		$inputOptions = [ 'lang' => $pageLang->getCode(), 'dir' => $pageLang->getDir() ];
 		if ( MediaWikiServices::getInstance()->getReadOnlyMode()->isReadOnly() ) {
 			$inputOptions['readOnly'] = '';
-		}
-
-		$content = $this->toEditContent( $this->textbox1 );
-		if ( !( $content instanceof IndexContent ) ) {
-			throw new LogicException( 'EditIndexPage is only able to display a form for IndexContent' );
 		}
 
 		$fields = [];
