@@ -16,6 +16,7 @@ use ProofreadPageTestCase;
 
 /**
  * @group ProofreadPage
+ * @group Database
  * @covers \ProofreadPage\Context
  */
 class ContextTest extends ProofreadPageTestCase {

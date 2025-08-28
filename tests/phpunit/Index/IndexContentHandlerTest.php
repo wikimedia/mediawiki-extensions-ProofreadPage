@@ -25,6 +25,7 @@ use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group ProofreadPage
+ * @group Database
  * @covers \ProofreadPage\Index\IndexContentHandler
  */
 class IndexContentHandlerTest extends ProofreadPageTestCase {

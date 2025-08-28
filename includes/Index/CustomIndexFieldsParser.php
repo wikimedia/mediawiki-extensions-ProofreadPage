@@ -2,8 +2,11 @@
 
 namespace ProofreadPage\Index;
 
+use MediaWiki\Content\JsonContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Json\FormatJson;
+use MediaWiki\MediawikiServices;
+use MediaWiki\Title\Title;
 use OutOfBoundsException;
 
 /**
@@ -52,16 +55,41 @@ class CustomIndexFieldsParser {
 		return $this->configuration;
 	}
 
-	private function loadCustomIndexFieldsConfiguration(): array {
-		$data = wfMessage( 'proofreadpage_index_data_config.json' )->inContentLanguage();
-
-		// fallback to the legacy name - T263094
-		if ( !( $data->exists() && $data->plain() != '' ) ) {
-			$data = wfMessage( 'proofreadpage_index_data_config' )->inContentLanguage();
+	/**
+	 * Load a JSON string from a message name.  This is made complicated
+	 * by the fact that the lookaside to the MediaWiki namespace doesn't
+	 * handle non-wikitext content types -- that is, it escapes the
+	 * contents found so that they are valid wikitext, which means they
+	 * are no longer valid JSON.
+	 */
+	private function loadJsonFromMessage( string $msgName ): ?string {
+		// Loading JSON from a message is awkward.
+		$services = MediaWikiServices::getInstance();
+		$title = Title::newFromText( $msgName, NS_MEDIAWIKI );
+		$revRecord = $title ? $services->getRevisionLookup()->getRevisionByTitle( $title ) : null;
+		$content = $revRecord ? $revRecord->getMainContentRaw() : null;
+		if ( $content instanceof JsonContent ) {
+			return $content->getText();
 		}
+		// Backward-compatibility fallback.
+		// T146771: Messages with non-wikitext types aren't expected to be
+		// transcluded raw.
+		$msg = wfMessage( $msgName )->inContentLanguage();
+		if ( !$msg->exists() ) {
+			// Neither the message nor the override page was found.
+			return null;
+		}
+		$data = $msg->plain();
+		return $data ?: null;
+	}
 
-		if ( $data->exists() &&	$data->plain() != '' ) {
-			$config = FormatJson::decode( $data->plain(), true );
+	private function loadCustomIndexFieldsConfiguration(): array {
+		$data = $this->loadJsonFromMessage( 'proofreadpage_index_data_config.json' );
+		// fallback to the legacy name - T263094
+		$data ??= $this->loadJsonFromMessage( 'proofreadpage_index_data_config' );
+
+		if ( $data ) {
+			$config = FormatJson::decode( $data, true );
 			if ( $config === null ) {
 				RequestContext::getMain()->getOutput()->showErrorPage(
 					'proofreadpage_dataconfig_badformatted',
