@@ -13,6 +13,7 @@ use ProofreadPageTestCase;
 
 /**
  * @group ProofreadPage
+ * @group Database
  * @covers \ProofreadPage\Index\IndexContent
  */
 class IndexContentTest extends ProofreadPageTestCase {
