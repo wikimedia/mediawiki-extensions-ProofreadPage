@@ -32,7 +32,9 @@
 	"proofreadpage_interval_too_large": "نقص: وقفہ خاصا طویل ہے",
 	"proofreadpage_invalid_interval": "نقص: نادرست وقفہ",
 	"proofreadpage_nextpage": "اگلا صفحہ",
+	"proofreadpage_nextpage_label": "اگلے صفحے پر جائیں",
 	"proofreadpage_prevpage": "سابق صفحہ",
+	"proofreadpage_prevpage_label": "پچھلے صفحے پر جائیں",
 	"proofreadpage_header": "عنوان (شامل نہیں کیا جائے گا):",
 	"proofreadpage_body": "صفحہ کا متن (جسے شامل کیا جائے گا):",
 	"proofreadpage_footer": "حاشیہ (شامل نہیں کیا جائے گا):",
@@ -97,7 +99,9 @@
 	"prp-editinsequence-beta-label": "ترتیب میں ترمیم کریں",
 	"prp-editinsequence-preview": "نمائش",
 	"prp-editinsequence-save-settings-dialog-primary-button-title": " سیٹنگ سٹور کریں",
+	"prp-editinsequence-save-dialog-title": "اس صفحہ کو محفوظ کریں",
 	"prp-editinsequence-save-next-action-do-nothing": "کچھ نہ کریں",
+	"prp-editinsequence-page-filter-label-all": "تمام صفحات",
 	"proofreadpage-pagelist-input-preview-button": "فہرست کی نمائش",
 	"proofreadpage-pagelist-dialog-update-button": "تجدید فہرست",
 	"proofreadpage-pagelist-dialog-unsaved-progress": "اس دریچہ کو بند کرنے سے غیر محفوظ ترمیم ضائع ہو جائے گی۔",
@@ -136,5 +140,9 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ہاں",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نہیں",
 	"proofreadpage-index-field-category-label": "زمرہ جات",
-	"proofreadpage-index-edit-category-help": "زمرہ جات بغیر زمرہ: سابقہ کے لکھے گئے ہیں اور انھیں پائپ کی علامت \"|\" سے جدا گیا کیا ہے۔"
+	"proofreadpage-index-edit-category-help": "زمرہ جات بغیر زمرہ: سابقہ کے لکھے گئے ہیں اور انھیں پائپ کی علامت \"|\" سے جدا گیا کیا ہے۔",
+	"tag-proofreadpage-quality0": "بغیر متن",
+	"tag-proofreadpage-quality1": "غیر پروف خوانی شدہ",
+	"tag-proofreadpage-quality2": "پریشان کن",
+	"tag-proofreadpage-quality3": "تصحیح شدہ"
 }
