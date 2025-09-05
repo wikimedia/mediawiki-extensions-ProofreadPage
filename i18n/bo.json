@@ -6,8 +6,15 @@
 	},
 	"nstab-page": "ཤོག་ངོས།",
 	"nstab-index": "གསལ་བྱང་།",
+	"tooltip-ca-nstab-page": "དཔེ་དེབ་ཀྱི་ཤོག་ངོས་ལ་ལྟ་བ།",
+	"tooltip-ca-nstab-index": "དཔེ་དེབ་ཀྱི་གསལ་བྱང་ལ་ལྟ་བ།",
 	"indexpages": "གསལ་བྱང་གི་ཐོ་གཞུང་།",
 	"pageswithoutscans": "བཤེར་པར་མེད་པའི་ཤོག་ངོས།",
 	"prefs-proofread-pagenamespace": "པར་རྩ་ཞུ་དག་མཉེན་ཆས་ཀྱི་གདམ་ཀ",
-	"proofreadpage_desc": "ཡི་རྐྱང་དེ་མ་དཔེའི་བཤེར་པར་དང་ཞིབ་བསྡུར་ལས་སླ་པོར་བྱེད་དུ་འཇུག"
+	"proofreadpage_desc": "ཡི་རྐྱང་དེ་མ་དཔེའི་བཤེར་པར་དང་ཞིབ་བསྡུར་ལས་སླ་པོར་བྱེད་དུ་འཇུག",
+	"proofreadpage_image": "པར་རིས།",
+	"proofreadpage_index": "གསལ་བྱང་།",
+	"proofreadpage_index_label": "གསལ་བྱང་གི་ཤོག་ངོས་སུ་སྐྱོད།",
+	"proofreadpage_index_expected": "ནོར་འཁྲུལ།: གསལ་བྱང་གི་རེ་སྒུག",
+	"proofreadpage_nosuch_index": "ནོར་འཁྲུལ།: གསལ་བྱང་འདི་འདྲ་མེད་པ།"
 }
