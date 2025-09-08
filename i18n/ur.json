@@ -36,6 +36,7 @@
 	"proofreadpage_header": "عنوان (شامل نہیں کیا جائے گا):",
 	"proofreadpage_body": "صفحہ کا متن (جسے شامل کیا جائے گا):",
 	"proofreadpage_footer": "حاشیہ (شامل نہیں کیا جائے گا):",
+	"proofreadpage_edit_in_sequence": "ترتیب وار صفحات میں ترمیم کریں",
 	"proofreadpage_toggleheaders": "غیر شامل شدہ حصوں کی نمائش میں تبدیلی کریں",
 	"proofreadpage_quality0_category": "بغیر متن",
 	"proofreadpage_quality1_category": "غیر پروف خوانی شدہ",
@@ -56,6 +57,7 @@
 	"proofreadpage_index_size": "تعداد صفحات",
 	"proofreadpage_pages_to_validate": "غیر توثیق شدہ صفحات کی تعداد",
 	"proofreadpage_pages_to_proofread_or_validate": "غیر توثیق یا غیر تصحیح شدہ صفحات کی تعداد",
+	"proofreadpage_pages_to_proofread": "پروف ریڈ کرنے کے لیے صفحات کی تعداد",
 	"proofreadpage_specialpage_filterby_all": "تمام",
 	"proofreadpage_specialpage_filterby_incomplete": "نامکمل",
 	"proofreadpage_specialpage_filterby_proofread": "تصحیح شدہ",
@@ -132,5 +134,9 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "ہاں",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "نہیں",
 	"proofreadpage-index-field-category-label": "زمرہ جات",
-	"proofreadpage-index-edit-category-help": "زمرہ جات بغیر زمرہ: سابقہ کے لکھے گئے ہیں اور انھیں پائپ کی علامت \"|\" سے جدا گیا کیا ہے۔"
+	"proofreadpage-index-edit-category-help": "زمرہ جات بغیر زمرہ: سابقہ کے لکھے گئے ہیں اور انھیں پائپ کی علامت \"|\" سے جدا گیا کیا ہے۔",
+	"tag-proofreadpage-quality0": "بغیر متن",
+	"tag-proofreadpage-quality1": "غیر پروف خوانی شدہ",
+	"tag-proofreadpage-quality2": "پریشان کن",
+	"tag-proofreadpage-quality3": "تصحیح شدہ"
 }
