@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pecha-Tsewang"
+			"Pecha-Tsewang",
+			"Tenzin Thoesam"
 		]
 	},
 	"nstab-page": "ཤོག་ངོས།",
@@ -16,5 +17,10 @@
 	"proofreadpage_index": "གསལ་བྱང་།",
 	"proofreadpage_index_label": "གསལ་བྱང་གི་ཤོག་ངོས་སུ་སྐྱོད།",
 	"proofreadpage_index_expected": "ནོར་འཁྲུལ།: གསལ་བྱང་གི་རེ་སྒུག",
-	"proofreadpage_nosuch_index": "ནོར་འཁྲུལ།: གསལ་བྱང་འདི་འདྲ་མེད་པ།"
+	"proofreadpage_nosuch_index": "ནོར་འཁྲུལ།: གསལ་བྱང་འདི་འདྲ་མེད་པ།",
+	"proofreadpage_nosuch_index_category": "དཀར་ཆག་དང་འབྲེལ་མེད་ཀྱི་ཤོག་ངོས།",
+	"proofreadpage_nosuch_index_category-desc": "<code><nowiki><pages/></nowiki></code> ཞེས་པའི་ཁ་བྱང་དེས་དཀར་ཆག་དང་འབྲེལ་མེད་ཀྱི་ཤོག་ངོས་ཤིག་ལ་གཟིགས་སྟོན་བྱེད་ཀྱི་ཡོད།",
+	"proofreadpage_nosuch_file_for_index_category": "ཡིག་ཆ་མེད་པའི་དཀར་ཆག་ཤོག་ངོས།",
+	"proofreadpage_nosuch_file_for_index_category-desc": "\n<code><nowiki><pagelist/></nowiki></code> ཞེས་པའི་ཁ་བྱང་དེས་ཡིག་ཆ་མེད་པ་ཤིག་ལ་གཟིགས་སྟོན་བྱེད་ཀྱི་ཡོད།",
+	"proofreadpage_nosuch_file": "ནོར་འཁྲུལ།: དེ་འདྲའི་ཡིག་ཆ་མེད།"
 }
