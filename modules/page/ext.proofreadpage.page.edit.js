@@ -274,6 +274,11 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	}
 
 	/**
+	 * @typedef CodeMirror
+	 * @see https://doc.wikimedia.org/CodeMirror/master/js/js/CodeMirror.html
+	 */
+
+	/**
 	 * Add CodeMirror instances to the header and footer.
 	 *
 	 * @param {CodeMirror} mainInstance
@@ -281,9 +286,12 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 	function addCodeMirrorToHeaders( mainInstance ) {
 		// Don't run again for the new CM instances we're about to add.
 		mw.hook( 'ext.CodeMirror.ready' ).remove( addCodeMirrorToHeaders );
-		const CodeMirror = require( './ext.proofreadpage.page.edit.codemirror.js' );
-		new CodeMirror( document.getElementById( 'wpHeaderTextbox' ), mainInstance ).initialize();
-		new CodeMirror( document.getElementById( 'wpFooterTextbox' ), mainInstance ).initialize();
+		// eslint-disable-next-line new-cap
+		new mainInstance.child( document.getElementById( 'wpHeaderTextbox' ), mainInstance ).initialize();
+		// eslint-disable-next-line new-cap
+		new mainInstance.child( document.getElementById( 'wpFooterTextbox' ), mainInstance ).initialize();
+		// Force line wrapping since Proofread Page uses flexbox for layout (T380262#10907952).
+		mainInstance.preferences.lockPreference( 'lineWrapping', mainInstance.view, true );
 	}
 
 	/**

@@ -109,7 +109,6 @@
 		"ext.proofreadpage.page.edit": {
 			"packageFiles": [
 				"page/ext.proofreadpage.page.edit.js",
-				"page/ext.proofreadpage.page.edit.codemirror.js",
 				"page/OpenseadragonController.js",
 				"page/PageQualityInputWidget.js"
 			],
