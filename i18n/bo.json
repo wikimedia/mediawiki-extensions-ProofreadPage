@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pecha-Tsewang"
+			"Pecha-Tsewang",
+			"Tenzin Thoesam"
 		]
 	},
 	"nstab-page": "ཤོག་ངོས།",
@@ -15,5 +16,7 @@
 	"proofreadpage_image": "པར་རིས།",
 	"proofreadpage_index": "གསལ་བྱང་།",
 	"proofreadpage_index_expected": "ནོར་འཁྲུལ།: གསལ་བྱང་གི་རེ་སྒུག",
-	"proofreadpage_nosuch_index": "ནོར་འཁྲུལ།: གསལ་བྱང་འདི་འདྲ་མེད་པ།"
+	"proofreadpage_nosuch_index": "ནོར་འཁྲུལ།: གསལ་བྱང་འདི་འདྲ་མེད་པ།",
+	"proofreadpage_nosuch_index_category": "དཀར་ཆག་དང་འབྲེལ་མེད་ཀྱི་ཤོག་ངོས།",
+	"proofreadpage_nosuch_file": "ནོར་འཁྲུལ།: དེ་འདྲའི་ཡིག་ཆ་མེད།"
 }
