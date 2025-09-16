@@ -22,5 +22,7 @@
 	"proofreadpage_nosuch_index_category-desc": "<code><nowiki><pages/></nowiki></code> ཞེས་པའི་ཁ་བྱང་དེས་དཀར་ཆག་དང་འབྲེལ་མེད་ཀྱི་ཤོག་ངོས་ཤིག་ལ་གཟིགས་སྟོན་བྱེད་ཀྱི་ཡོད།",
 	"proofreadpage_nosuch_file_for_index_category": "ཡིག་ཆ་མེད་པའི་དཀར་ཆག་ཤོག་ངོས།",
 	"proofreadpage_nosuch_file_for_index_category-desc": "\n<code><nowiki><pagelist/></nowiki></code> ཞེས་པའི་ཁ་བྱང་དེས་ཡིག་ཆ་མེད་པ་ཤིག་ལ་གཟིགས་སྟོན་བྱེད་ཀྱི་ཡོད།",
-	"proofreadpage_nosuch_file": "ནོར་འཁྲུལ།: དེ་འདྲའི་ཡིག་ཆ་མེད།"
+	"proofreadpage_nosuch_file": "ནོར་འཁྲུལ།: དེ་འདྲའི་ཡིག་ཆ་མེད།",
+	"proofreadpage_indexdupetext": "དཀར་ཆག་ཤིག་ལ་ཤོག་ངོས་གཅིག་ཐེངས་གཅིག་ལས་མང་བ་བཀོད་མི་རུང་།",
+	"proofreadpage_nologin": "ནང་འཛུལ་བྱས་མེད།"
 }
