@@ -586,13 +586,10 @@ class ProofreadPage implements
 		}
 	}
 
-	// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
-
 	/**
 	 * @inheritDoc
 	 */
 	public function onSkinTemplateNavigation__Universal( $skin, &$links ): void {
-		// phpcs:enable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
 		$title = $skin->getTitle();
 		if ( $title === null ) {
 			return;
@@ -691,14 +688,10 @@ class ProofreadPage implements
 		$tags[] = EditInSequence::TAGNAME;
 	}
 
-	// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
-
 	/**
 	 * @inheritDoc
 	 */
 	public function onRecentChange_save( $rc ) {
-		// phpcs:enable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
-
 		$ns = $rc->getAttribute( 'rc_namespace' );
 
 		if ( $ns === self::getPageNamespaceId() ) {
