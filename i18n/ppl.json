@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jose Antonio Guillen Landaverde"
+		]
+	},
+	"nstab-page": "Amat",
+	"tooltip-ca-nstab-page": "shikita ne amat pal ne  amachti",
+	"proofreadpage_image": "Ikwikwil",
+	"proofreadpage_nosuch_file": "tesu kisa yek :  tesu kanaj taanaliis",
+	"proofreadpage_nologin": "Tesu tikalaktuk  mutakutunchin",
+	"proofreadpage_dataconfig_badformatted": "tesu kisa yek : tik ne taekchiwalis pal tajtapual",
+	"proofreadpage_nextpage": "ukse Amat",
+	"proofreadpage_nextpage_label": "shu ka ukse amat",
+	"proofreadpage_prevpage": "←Ne amat ka ipan",
+	"proofreadpage_prevpage_label": "shu ka ikman amat",
+	"proofreadpage_body": "ikeyka pal ne amat",
+	"proofreadpage_footer": "ka ikshitan amat",
+	"prp-editinsequence-preview": "Achtutachialis",
+	"prp-editinsequence-save-settings-dialog-primary-button-title": "shikana ne taekchiwalis",
+	"prp-editinsequence-save-dialog-title": "shikana  ini amat",
+	"prp-editinsequence-save-next-action-do-nothing": "tesu kichiwa datka",
+	"prp-editinsequence-save-next-action-go-to-next": "shu ka yankwik amat",
+	"prp-editinsequence-save-next-action-go-to-prev": "shu ka ikman amat",
+	"prp-editinsequence-page-filter-label-all": "muchi ne amat",
+	"prp-editinsequence-page-filter-redlink": "ajamat iwan  ilpika  itachiska chiltik",
+	"prp-editinsequence-page-selection-label": "tiawel amat tikneki tiaw",
+	"prp-editinsequence-page-selection-widget-label": "shikchijchimi  ne  amat pal a",
+	"proofreadpage-pagelist-dialog-unsaved-progress-title": "tekiw tesu kiana",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Tepalewilis",
+	"content-model-proofread-page": "amat pal ne  amachti",
+	"proofreadpage-visualeditor-node-pages-inspector-title": "takutun pal amat",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "ajamat",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Eje",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Tesu",
+	"proofreadpage-index-field-category-label": "Tajtakutun"
+}
