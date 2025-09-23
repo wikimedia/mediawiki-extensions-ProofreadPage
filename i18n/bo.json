@@ -138,7 +138,7 @@
 	"proofreadpage-pagelist-dialog-cancel": "རྩིས་མེད།",
 	"proofreadpage-pagelist-parsing-error-empty-page-numbering": "'སྟོང་པ་' ཞེས་པའི་ཤོག་ངོས་གྲངས་རིམ་རིགས་དེ་ཤོག་ངོས་ཐོ་གཞུང་ཡོ་ཆས་ཀྱིས་རྒྱབ་སྐྱོར་མི་བྱེད།",
 	"proofreadpage-pagelist-parsing-error-morethanone": "ཝི་ཁི་ཡིག་ཆའི་མཛོད་ནང་<pagelist /> གི་འགྲེལ་རྟགས་འདི་གཅིག་ལས་མང་བ་རྙེད་འདུག",
-	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<pagelist། /> གི་འགྲེལ་རྟགས་གང་ཡང་རྙེད་མ་སོང་།",
+	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "<pagelist /> གི་འགྲེལ་རྟགས་གང་ཡང་རྙེད་མ་སོང་།",
 	"proofreadpage-pagelist-parsing-error-php": "ཝི་ཁི་མཉེན་ཆས་ཀྱི་རྒྱབ་ལྗོངས་ནང་ཤོག་ངོད་ཐོ་གཞུང་གི་འགྲེལ་རྟགས་དབྱེ་ཞིབ་སྐབས་\nགཤམ་གྱི་ནོར་འཁྲུལ་འདི་བྱུང་འདུག $1",
 	"proofreadpage-pagelist-parsing-error-unknown": "གློ་བུར་དུ་ནོར་འཁྲུལ་ཞིག་རྙེད་འདུག ཁྱེད་ཀྱིས་སྤྱོད་བཞིན་པའི་ཀློག་ཀླད་རྒྱུད་གསལ་ཐོ་རྣམས་ phabricator.wikimedia.org ལ་སྙན་ཞུ་གནང་རོགས།",
 	"proofreadpage-pagelist-parsing-error-network-issues": "དྲ་རྒྱའི་དཀའ་ངལ་བྱུང་བའི་རྐྱེན་གྱིས་ཤོག་ངོས་ཐོ་གཞུང་བརྙེད་ཐུབ་མ་སོང་། སླར་ཡང་ཐབས་ཤེས་གནང་རོགས།",
