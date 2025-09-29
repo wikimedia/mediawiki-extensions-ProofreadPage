@@ -1,7 +1,5 @@
-'use strict';
-
-const assert = require( 'assert' ),
-	IndexPage = require( '../pageobjects/index.page' );
+import assert from 'assert';
+import IndexPage from '../pageobjects/index.page.js';
 
 describe( 'Pages in the Index namespace', () => {
 

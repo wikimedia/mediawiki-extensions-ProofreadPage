@@ -1,6 +1,5 @@
-'use strict';
-const Page = require( 'wdio-mediawiki/Page' );
-const utils = require( '../util/eis-util' );
+import Page from 'wdio-mediawiki/Page.js';
+import utils from '../util/eis-util.js';
 
 class EisPagePage extends Page {
 	async openEis( pagename ) {
@@ -46,4 +45,4 @@ class EisPagePage extends Page {
 	}
 }
 
-module.exports = new EisPagePage();
+export default new EisPagePage();

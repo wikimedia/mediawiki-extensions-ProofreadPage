@@ -1,8 +1,10 @@
-'use strict';
+import MWBot from 'mwbot';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const MWBot = require( 'mwbot' );
-const fs = require( 'fs' );
-const path = require( 'path' );
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = path.dirname( fileURLToPath( import.meta.url ) );
 
 // copied/modified from MWBot.upload() at
 // https://github.com/Fannon/mwbot/blob/2f13281e53f3c515120dfff10889b2393819ceef/src/index.js#L708
@@ -58,7 +60,7 @@ async function isEnabledInOOUI( element ) {
 	return await element.getAttribute( 'aria-disabled' ) === null;
 }
 
-module.exports = {
+export default {
 	setupPrpTemplates,
 	isEnabledInOOUI
 };

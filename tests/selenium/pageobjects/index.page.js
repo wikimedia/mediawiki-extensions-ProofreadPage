@@ -1,6 +1,4 @@
-'use strict';
-
-const Page = require( 'wdio-mediawiki/Page' );
+import Page from 'wdio-mediawiki/Page.js';
 
 class IndexPage extends Page {
 	// returns form fields
@@ -14,4 +12,4 @@ class IndexPage extends Page {
 	}
 }
 
-module.exports = new IndexPage();
+export default new IndexPage();

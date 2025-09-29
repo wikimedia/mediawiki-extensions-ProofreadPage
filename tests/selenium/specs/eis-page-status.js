@@ -1,10 +1,12 @@
-'use strict';
+import assert from 'assert';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import EisPagePage from '../pageobjects/eispage.page.js';
+import utils from '../util/eis-util.js';
+import MWBot from 'mwbot';
 
-const assert = require( 'assert' );
-const EisPagePage = require( '../pageobjects/eispage.page' );
-const utils = require( '../util/eis-util' );
-const path = require( 'path' );
-const MWBot = require( 'mwbot' );
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = path.dirname( fileURLToPath( import.meta.url ) );
 
 const bot = new MWBot( {
 	apiUrl: browser.options.baseUrl + '/api.php'
