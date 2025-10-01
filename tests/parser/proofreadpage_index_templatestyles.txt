@@ -1,9 +1,5 @@
 !! Version 2
 
-!! options
-parsoid-compatible=wt2html,wt2wt
-!! end
-
 !! hooks
 pages
 pagelist

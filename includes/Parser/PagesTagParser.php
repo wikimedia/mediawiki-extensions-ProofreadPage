@@ -2,6 +2,8 @@
 
 namespace ProofreadPage\Parser;
 
+use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;
@@ -13,50 +15,44 @@ use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageNumber;
 
 /**
- * Trait for rendering pages tags.
+ * @license GPL-2.0-or-later
+ *
+ * Parser for the <pages> tag
  */
-trait PagesTagRendererTrait {
-	/** @inheritDoc */
-	abstract public function getTitle();
-
-	/** @inheritDoc */
-	abstract public function addTrackingCategory( $category ): void;
-
-	/** @inheritDoc */
-	abstract public function getPageNamespaceId(): int;
-
-	/** @inheritDoc */
-	abstract public function getIndexNamespaceId(): int;
-
-	/** @inheritDoc */
-	abstract public function getPageNumberExpression( $expression ): string;
-
-	/** @inheritDoc */
-	abstract public function addTemplate( $title, $articleId, $revId ): void;
-
-	/** @inheritDoc */
-	abstract public function makeLink( $title, $text, $options = [] ): string;
-
-	/** @inheritDoc */
-	abstract public function addImage( $title, $timestamp, $sha1 ): void;
-
-	/** @inheritDoc */
-	abstract public function setExtensionData( $key, $value ): void;
-
-	/** @inheritDoc */
-	abstract public function getTargetLanguage();
-
-	/** @inheritDoc */
-	abstract public function preprocessWikitext( string $wikitext, Title $title ): string;
+class PagesTagParser {
 
 	/**
-	 * Render the pages tag.
-	 *
-	 * @param \ProofreadPage\Context $context The ProofreadPage context
-	 * @param array $args Tag arguments
-	 * @return string The rendered output
+	 * @var Parser
 	 */
-	public function renderTag( $context, $args ) {
+	private $parser;
+
+	/**
+	 * @var Context
+	 */
+	private $context;
+
+	/**
+	 * @param Parser $parser
+	 * @param Context $context
+	 */
+	public function __construct( Parser $parser, Context $context ) {
+		$this->parser = $parser;
+		$this->context = $context;
+	}
+
+	/**
+	 * Render a <pages> tag
+	 *
+	 * @param array $args tags arguments
+	 * @return string
+	 */
+	public function render( array $args ) {
+		// abort if this is nested <pages> call
+		// FIXME: remove this: T362664
+		if ( $this->parser->proofreadRenderingPages ?? false ) {
+			return '';
+		}
+
 		$index = $args['index'] ?? null;
 		$from = $args['from'] ?? null;
 		$to = $args['to'] ?? null;
@@ -68,35 +64,41 @@ trait PagesTagRendererTrait {
 		$fromsection = $args['fromsection'] ?? null;
 		$onlysection = $args['onlysection'] ?? null;
 
-		$pageTitle = $this->getTitle();
+		$pageTitle = $this->parser->getTitle();
+
+		// abort if the tag is on an index or a page page
 		if (
-			$pageTitle->inNamespace( $this->getIndexNamespaceId() ) ||
-			$pageTitle->inNamespace( $this->getPageNamespaceId() )
+			$pageTitle->inNamespace( $this->context->getIndexNamespaceId() ) ||
+			$pageTitle->inNamespace( $this->context->getPageNamespaceId() )
 		) {
-			throw new ParserError( 'proofreadpage_pagesnotallowed' );
+			return $this->formatError( 'proofreadpage_pagesnotallowed' );
 		}
 		// ignore fromsection and tosection arguments if onlysection is specified
 		if ( $onlysection !== null ) {
 			$fromsection = null;
 			$tosection = null;
 		}
+
 		if ( !$index ) {
-			throw new ParserError( 'proofreadpage_index_expected' );
+			return $this->formatError( 'proofreadpage_index_expected' );
 		}
-		$indexTitle = Title::makeTitleSafe( $this->getIndexNamespaceId(), $index );
+
+		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $index );
 		if ( $indexTitle === null || !$indexTitle->exists() ) {
-			$this->addTrackingCategory( 'proofreadpage_nosuch_index_category' );
-			throw new ParserError( 'proofreadpage_nosuch_index' );
+			$this->parser->addTrackingCategory( 'proofreadpage_nosuch_index_category' );
+			return $this->formatError( 'proofreadpage_nosuch_index' );
 		}
-		$pagination = $context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
+		$pagination = $this->context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle );
 		$outputWrapperClass = 'prp-pages-output';
-		$language = $this->getTargetLanguage();
-		$this->addTemplate(
+		$language = $this->parser->getTargetLanguage();
+		$this->parser->getOutput()->addTemplate(
 			$indexTitle, $indexTitle->getArticleID(), $indexTitle->getLatestRevID()
 		);
 		$out = '';
 
-		$placeholder = $context->getConfig()->get( 'ProofreadPagePageSeparatorPlaceholder' );
+		$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
+		$joiner = $this->context->getConfig()->get( 'ProofreadPagePageJoiner' );
+		$placeholder = $this->context->getConfig()->get( 'ProofreadPagePageSeparatorPlaceholder' );
 
 		$contentLang = null;
 
@@ -110,13 +112,13 @@ trait PagesTagRendererTrait {
 
 				$count = $pagination->getNumberOfPages();
 				if ( $count === 0 ) {
-					throw new ParserError( 'proofreadpage_nosuch_file' );
+					return $this->formatError( 'proofreadpage_nosuch_file' );
 				}
 
 				if ( !$step ) {
 					$step = 1;
 				} elseif ( !is_numeric( $step ) || $step < 1 ) {
-					throw new ParserError( 'proofreadpage_number_expected' );
+					return $this->formatError( 'proofreadpage_number_expected' );
 				} else {
 					$step = (int)$step;
 				}
@@ -127,7 +129,7 @@ trait PagesTagRendererTrait {
 				if ( $include ) {
 					$pagenums = $this->parseNumList( $include );
 					if ( !$pagenums ) {
-						throw new ParserError( 'proofreadpage_invalid_interval' );
+						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 				}
 
@@ -137,13 +139,13 @@ trait PagesTagRendererTrait {
 					$to = $to ?: (string)$count;
 
 					if ( !ctype_digit( $from ) || !ctype_digit( $to ) ) {
-						throw new ParserError( 'proofreadpage_number_expected' );
+						return $this->formatError( 'proofreadpage_number_expected' );
 					}
 					$from = (int)$from;
 					$to = (int)$to;
 
 					if ( $from === 0 || $from > $to || $to > $count ) {
-						throw new ParserError( 'proofreadpage_invalid_interval' );
+						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 
 					for ( $i = $from; $i <= $to; $i++ ) {
@@ -155,19 +157,19 @@ trait PagesTagRendererTrait {
 				if ( $exclude ) {
 					$excluded = $this->parseNumList( $exclude );
 					if ( $excluded == null ) {
-						throw new ParserError( 'proofreadpage_invalid_interval' );
+						return $this->formatError( 'proofreadpage_invalid_interval' );
 					}
 					$pagenums = array_diff( $pagenums, $excluded );
 				}
 
 				if ( count( $pagenums ) / $step > 1000 ) {
-					throw new ParserError( 'proofreadpage_interval_too_large' );
+					return $this->formatError( 'proofreadpage_interval_too_large' );
 				}
 
 				// we must sort the array even if the numerical keys are in a good order.
 				ksort( $pagenums );
 				if ( end( $pagenums ) > $count ) {
-					throw new ParserError( 'proofreadpage_invalid_interval' );
+					return $this->formatError( 'proofreadpage_invalid_interval' );
 				}
 
 				// Create the list of pages to translude.
@@ -184,13 +186,13 @@ trait PagesTagRendererTrait {
 				$fromTitle = null;
 				if ( $from ) {
 					$fromTitle = Title::makeTitleSafe(
-						$context->getPageNamespaceId(), $from
+						$this->context->getPageNamespaceId(), $from
 					);
 				}
 
 				$toTitle = null;
 				if ( $to ) {
-					$toTitle = Title::makeTitleSafe( $context->getPageNamespaceId(), $to );
+					$toTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $to );
 				}
 
 				$adding = ( $fromTitle === null );
@@ -215,7 +217,7 @@ trait PagesTagRendererTrait {
 			/** @var PageNumber $to_pagenum */
 			[ $to_page, $to_pagenum ] = end( $pages );
 
-			$pageQualityLevelLookup = $context->getPageQualityLevelLookup();
+			$pageQualityLevelLookup = $this->context->getPageQualityLevelLookup();
 			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_column( $pages, 0 ) );
 
 			$indexTs = new IndexTemplateStyles( $indexTitle );
@@ -263,7 +265,7 @@ trait PagesTagRendererTrait {
 			$header = 'toc';
 			try {
 				$firstpage = $pagination->getPageTitle( 1 );
-				$this->addTemplate(
+				$this->parser->getOutput()->addTemplate(
 					$firstpage,
 					$firstpage->getArticleID(),
 					$firstpage->getLatestRevID()
@@ -275,11 +277,12 @@ trait PagesTagRendererTrait {
 
 		if ( $header ) {
 			if ( $header == 'toc' ) {
-				$this->setExtensionData( 'proofreadpage_is_toc', true );
+				$this->parser->getOutput()
+					->setExtensionData( 'proofreadpage_is_toc', true );
 			}
 
-			$indexLinks = $this->getTableOfContentLinks( $context, $indexTitle );
-			$pageTitle = $this->getTitle();
+			$indexLinks = $this->getTableOfContentLinks( $indexTitle );
+			$pageTitle = $this->parser->getTitle();
 			$h_out = '{{:MediaWiki:Proofreadpage_header_template';
 			$h_out .= "|value=$header";
 			// find next and previous pages in list
@@ -328,8 +331,8 @@ trait PagesTagRendererTrait {
 				$formattedTo = $to_pagenum->getFormattedPageNumber( $language );
 				$h_out .= "|to=$formattedTo";
 			}
-			$indexContent = $context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
-			$attributes = $context->getCustomIndexFieldsParser()
+			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+			$attributes = $this->context->getCustomIndexFieldsParser()
 				->parseCustomIndexFieldsForHeader( $indexContent );
 			foreach ( $attributes as $attribute ) {
 				$key = strtolower( $attribute->getKey() );
@@ -342,22 +345,24 @@ trait PagesTagRendererTrait {
 			}
 			$h_out .= '}}';
 			$out = $h_out . $out;
-			// wrap the output in a div, to prevent the parser from inserting paragraphs
-			// and to set the content language
 		}
+
+		// wrap the output in a div, to prevent the parser from inserting paragraphs
+		// and to set the content language
 		$langAttr = $contentLang && $contentLang !== 'mixed'
 			? " lang=\"$contentLang\""
 			: "";
-		return "<div class=\"$outputWrapperClass\"$langAttr>\n$out\n</div>";
-	}
+		$out = "<div class=\"$outputWrapperClass\"$langAttr>\n$out\n</div>";
+		$this->parser->proofreadRenderingPages = true;
+		$out = $this->parser->recursiveTagParse( $out );
 
-	/**
-	 * Parse a comma-separated list of pages. A dash indicates an interval of pages
-	 * example: 1-10,23,38
-	 *
-	 * @param string $input
-	 * @return int[]|null an array of pages, or null if the input does not comply to the syntax
-	 */
+		// remove separator after the word-joiner character
+		$out = str_replace( $joiner . $placeholder, '', $out );
+		$out = str_replace( $placeholder, $separator, $out );
+
+		$this->parser->proofreadRenderingPages = false;
+		return $out;
+	}
 
 	/**
 	 * Parse a comma-separated list of pages. A dash indicates an interval of pages
@@ -400,27 +405,25 @@ trait PagesTagRendererTrait {
 	 * @param Title $indexTitle
 	 * @return Link[]
 	 */
-
-	/**
-	 * Fetches all the ns0 links from the "toc" field if it exists or considers all fields and skips the first link.
-	 *
-	 * @param Context $context The ProofreadPage context
-	 * @param Title $indexTitle
-	 * @return Link[]
-	 */
-	protected function getTableOfContentLinks( Context $context, Title $indexTitle ): array {
-		$indexContent = $context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+	private function getTableOfContentLinks( Title $indexTitle ): array {
+		$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
 		$linksExtractor = new WikitextLinksExtractor();
+		// @phan-suppress-next-line PhanUndeclaredMethod
+		$parser = $indexContent->getContentHandler()->getParser();
+		$parserOptions = ParserOptions::newFromAnon();
 		try {
-			$toc = $context->getCustomIndexFieldsParser()->getCustomIndexFieldForDataKey( $indexContent, 'toc' );
-			$wikitext = $this->preprocessWikitext( $toc->getStringValue(), $indexTitle );
+			$toc = $this->context->getCustomIndexFieldsParser()->getCustomIndexFieldForDataKey( $indexContent, 'toc' );
+			$wikitext = $parser->preprocess(
+				$toc->getStringValue(),
+				$indexTitle, $parserOptions
+			);
 			return $linksExtractor->getLinksToNamespace( $wikitext, NS_MAIN );
 		} catch ( OutOfBoundsException ) {
 			$links = [];
 			foreach ( $indexContent->getFields() as $field ) {
-				$wikitext = $this->preprocessWikitext(
+				$wikitext = $parser->preprocess(
 					$field->serialize( CONTENT_FORMAT_WIKITEXT ),
-					$indexTitle
+					$indexTitle, $parserOptions
 				);
 				$links = array_merge(
 					$links,
@@ -433,5 +436,14 @@ trait PagesTagRendererTrait {
 
 			return $links;
 		}
+	}
+
+	/**
+	 * @param string $errorMsg
+	 * @return string
+	 */
+	private function formatError( $errorMsg ) {
+		return '<strong class="error">' . wfMessage( $errorMsg )->inContentLanguage()->escaped() .
+			'</strong>';
 	}
 }

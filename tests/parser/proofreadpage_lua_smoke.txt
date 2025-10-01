@@ -1,9 +1,4 @@
 !! Version 2
-
-!! options
-parsoid-compatible=wt2html,wt2wt
-!! end
-
 # Simplest possible test to check the ProofreadPage Lua lib can be loaded and used
 !! functionhooks
 invoke
