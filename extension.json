@@ -433,8 +433,7 @@
 		"ScribuntoExternalLibraries": "ScribuntoHooks",
 		"ScribuntoExternalLibraryPaths": "ScribuntoHooks",
 		"GetDoubleUnderscoreIDs": "ProofreadPageHooks",
-		"CodeMirrorGetMode": "CodeMirrorHooks",
-		"ParserTestGlobals": "ProofreadPageHooks"
+		"CodeMirrorGetMode": "CodeMirrorHooks"
 	},
 	"HookHandlers": {
 		"ProofreadPageHooks": {
@@ -501,31 +500,8 @@
 				0
 			],
 			"description": "Namespaces that are considered as book namespaces, mainspace is considered as book namespace by default"
-		},
-		"ProofreadPageUseParsoid": {
-			"value": false,
-			"description": "Feature flag to use parsoid as the extension tag parser"
 		}
 	},
-	"ParsoidModules": [
-		{
-			"name": "ProofreadPage",
-			"tags": [
-				{
-					"name": "pagequality",
-					"handler": "ProofreadPage\\Parser\\ParsoidPagequalityTagParser"
-				},
-				{
-					"name": "pagelist",
-					"handler": "ProofreadPage\\Parser\\ParsoidPagelistTagParser"
-				},
-				{
-					"name": "pages",
-					"handler": "ProofreadPage\\Parser\\ParsoidPagesTagParser"
-				}
-			]
-		}
-	],
 	"callback": "ProofreadPage\\ProofreadPage::onRegistration",
 	"load_composer_autoloader": true,
 	"manifest_version": 2
