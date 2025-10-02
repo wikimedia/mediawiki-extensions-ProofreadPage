@@ -56,6 +56,7 @@ class LegacyPagesTagParser {
 		$placeholder = $this->context->getConfig()->get( 'ProofreadPagePageSeparatorPlaceholder' );
 		$out = str_replace( $joiner . $placeholder, '', $out );
 		$out = str_replace( $placeholder, $separator, $out );
+		$this->parser->proofreadRenderingPages = false;
 		return $out;
 	}
 
