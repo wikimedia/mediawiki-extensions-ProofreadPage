@@ -373,25 +373,6 @@
 					"file": "page/images/pagequality-level4.svg"
 				}
 			}
-		},
-		"ext.proofreadpage.ve.node.pages": {
-			"scripts": [
-				"ve/node/ve.dm.MWPagesNode.js",
-				"ve/node/ve.ce.MWPagesNode.js",
-				"ve/node/ve.ui.MWPagesInspector.js",
-				"ve/node/ve.ui.MWPagesInspectorTool.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.mwcore",
-				"oojs-ui.styles.icons-content"
-			],
-			"messages": [
-				"proofreadpage-visualeditor-node-pages-inspector-tooltip",
-				"proofreadpage-visualeditor-node-pages-inspector-title",
-				"proofreadpage-visualeditor-node-pages-inspector-description",
-				"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes",
-				"proofreadpage-visualeditor-node-pages-inspector-indexselector-no"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -432,7 +413,8 @@
 		"RecentChange_save": "ProofreadPageHooks",
 		"ScribuntoExternalLibraries": "ScribuntoHooks",
 		"ScribuntoExternalLibraryPaths": "ScribuntoHooks",
-		"GetDoubleUnderscoreIDs": "ProofreadPageHooks"
+		"GetDoubleUnderscoreIDs": "ProofreadPageHooks",
+		"ResourceLoaderRegisterModules": "ProofreadPageHooks"
 	},
 	"HookHandlers": {
 		"ProofreadPageHooks": {
