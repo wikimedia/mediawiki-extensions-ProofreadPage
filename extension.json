@@ -280,29 +280,6 @@
 					]
 				}
 			}
-		},
-		"ext.proofreadpage.ve.node.pages": {
-			"scripts": [
-				"ve/node/ve.dm.MWPagesNode.js",
-				"ve/node/ve.ce.MWPagesNode.js",
-				"ve/node/ve.ui.MWPagesInspector.js",
-				"ve/node/ve.ui.MWPagesInspectorTool.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.mwcore",
-				"oojs-ui.styles.icons-content"
-			],
-			"messages": [
-				"proofreadpage-visualeditor-node-pages-inspector-tooltip",
-				"proofreadpage-visualeditor-node-pages-inspector-title",
-				"proofreadpage-visualeditor-node-pages-inspector-description",
-				"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes",
-				"proofreadpage-visualeditor-node-pages-inspector-indexselector-no"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -342,7 +319,8 @@
 		"ChangeTagsListActive": "ProofreadPage\\ProofreadPage::onListDefinedTags",
 		"RecentChange_save": "ProofreadPageHooks",
 		"ScribuntoExternalLibraries": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraries",
-		"ScribuntoExternalLibraryPaths": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraryPaths"
+		"ScribuntoExternalLibraryPaths": "ProofreadPage\\ProofreadPage::onScribuntoExternalLibraryPaths",
+		"ResourceLoaderRegisterModules": "ProofreadPageHooks"
 	},
 	"HookHandlers": {
 		"ProofreadPageHooks": {

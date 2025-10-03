@@ -32,6 +32,8 @@ use ImagePage;
 use MediaWiki\Hook\RecentChange_saveHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
+use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
@@ -63,7 +65,8 @@ use User;
 
 class ProofreadPage implements
 	RecentChange_saveHook,
-	SkinTemplateNavigation__UniversalHook
+	SkinTemplateNavigation__UniversalHook,
+	ResourceLoaderRegisterModulesHook
 {
 
 	/** @var Config */
@@ -754,6 +757,46 @@ class ProofreadPage implements
 			}
 		}
 		return $classes;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ): void {
+		$dir = dirname( __DIR__ ) . '/modules';
+		$modules = [];
+
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' ) ) {
+			$modules[ 'ext.proofreadpage.ve.node.pages' ] = [
+				'localBasePath' => $dir,
+				'remoteExtPath' => 'ProofreadPage/modules',
+				'scripts' => [
+					've/node/ve.dm.MWPagesNode.js',
+					've/node/ve.ce.MWPagesNode.js',
+					've/node/ve.ui.MWPagesInspector.js',
+					've/node/ve.ui.MWPagesInspectorTool.js',
+				],
+				'dependencies' => [
+					'ext.visualEditor.mwcore',
+					'oojs-ui.styles.icons-content',
+				],
+				'messages' => [
+					'proofreadpage-visualeditor-node-pages-inspector-tooltip',
+					'proofreadpage-visualeditor-node-pages-inspector-title',
+					'proofreadpage-visualeditor-node-pages-inspector-description',
+					'proofreadpage-visualeditor-node-pages-inspector-indexselector-yes',
+					'proofreadpage-visualeditor-node-pages-inspector-indexselector-no',
+				],
+				"targets" => [
+					"desktop",
+					"mobile"
+				],
+			];
+		}
+
+		if ( count( $modules ) ) {
+			$resourceLoader->register( $modules );
+		}
 	}
 
 }
