@@ -45,6 +45,8 @@ use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Registration\ExtensionRegistry;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
+use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Revision\Hook\ContentHandlerDefaultModelForHook;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\SlotRecord;
@@ -91,7 +93,8 @@ class ProofreadPage implements
 	InfoActionHook,
 	ListDefinedTagsHook,
 	ChangeTagsListActiveHook,
-	GetDoubleUnderscoreIDsHook
+	GetDoubleUnderscoreIDsHook,
+	ResourceLoaderRegisterModulesHook
 {
 
 	/** @var Config */
@@ -822,4 +825,41 @@ class ProofreadPage implements
 	public function onGetDoubleUnderscoreIDs( &$ids ) {
 		$ids[] = 'expectwithoutscans';
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ): void {
+		$dir = dirname( __DIR__ ) . '/modules';
+		$modules = [];
+
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' ) ) {
+			$modules[ 'ext.proofreadpage.ve.node.pages' ] = [
+				'localBasePath' => $dir,
+				'remoteExtPath' => 'ProofreadPage/modules',
+				'scripts' => [
+					've/node/ve.dm.MWPagesNode.js',
+					've/node/ve.ce.MWPagesNode.js',
+					've/node/ve.ui.MWPagesInspector.js',
+					've/node/ve.ui.MWPagesInspectorTool.js',
+				],
+				'dependencies' => [
+					'ext.visualEditor.mwcore',
+					'oojs-ui.styles.icons-content',
+				],
+				'messages' => [
+					'proofreadpage-visualeditor-node-pages-inspector-tooltip',
+					'proofreadpage-visualeditor-node-pages-inspector-title',
+					'proofreadpage-visualeditor-node-pages-inspector-description',
+					'proofreadpage-visualeditor-node-pages-inspector-indexselector-yes',
+					'proofreadpage-visualeditor-node-pages-inspector-indexselector-no',
+				]
+			];
+		}
+
+		if ( count( $modules ) ) {
+			$resourceLoader->register( $modules );
+		}
+	}
+
 }
