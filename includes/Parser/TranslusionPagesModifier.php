@@ -6,6 +6,7 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Parser\ParserOutputLinkTypes;
 use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexQualityStatsLookup;
 use ProofreadPage\Index\PagesQualityStats;
@@ -85,17 +86,17 @@ class TranslusionPagesModifier {
 	 * @return Title[]
 	 */
 	private function getIncludedPagePagesTitles( ParserOutput $parserOutput ): array {
-		$templates = $parserOutput->getTemplates();
-
-		if ( $templates === null || !array_key_exists( $this->pageNamespaceId, $templates ) ) {
-			return [];
-		}
-
-		$titles = [];
-		foreach ( $templates[ $this->pageNamespaceId ] as $dbKey => $pageId ) {
-			$titles[] = Title::makeTitle( $this->pageNamespaceId, $dbKey );
-		}
-		return $titles;
+		// Filter out templates in this namespace
+		$templates = array_filter(
+			$parserOutput->getLinkList( ParserOutputLinkTypes::TEMPLATE ),
+			fn ( $item ) =>
+				$item['link']->getNamespace() === $this->pageNamespaceId
+		);
+		// Convert from TitleValue to Title
+		return array_map(
+			static fn ( $item ) => Title::newFromLinkTarget( $item['link'] ),
+			$templates
+		);
 	}
 
 	/**
