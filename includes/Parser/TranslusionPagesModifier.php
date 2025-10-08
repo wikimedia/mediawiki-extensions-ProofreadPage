@@ -87,10 +87,9 @@ class TranslusionPagesModifier {
 	 */
 	private function getIncludedPagePagesTitles( ParserOutput $parserOutput ): array {
 		// Filter out templates in this namespace
-		$templates = array_filter(
-			$parserOutput->getLinkList( ParserOutputLinkTypes::TEMPLATE ),
-			fn ( $item ) =>
-				$item['link']->getNamespace() === $this->pageNamespaceId
+		$templates = $parserOutput->getLinkList(
+			ParserOutputLinkTypes::TEMPLATE,
+			$this->pageNamespaceId
 		);
 		// Convert from TitleValue to Title
 		return array_map(
