@@ -608,7 +608,7 @@ class PageContentHandler extends TextContentHandler {
 			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
 			$poText .
 			Html::closeElement( 'div' );
-		$parserOutput->setText( $html );
+		$parserOutput->setContentHolderText( $html );
 
 		$pageDisplayHandler = new PageDisplayHandler( $context );
 		$jsVars = $pageDisplayHandler->getPageJsConfigVars( $title, $content );

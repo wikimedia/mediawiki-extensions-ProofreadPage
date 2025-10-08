@@ -528,7 +528,7 @@ class IndexContentHandler extends TextContentHandler {
 		if ( $content instanceof IndexRedirectContent ) {
 			$parserOutput->addLink( $content->getRedirectTarget() );
 			if ( $cpoParams->getGenerateHtml() ) {
-				$parserOutput->setText( '' );
+				$parserOutput->setContentHolderText( '' );
 				$parserOutput->setRedirectHeader(
 					MediaWikiServices::getInstance()->getLinkRenderer()->makeRedirectHeader(
 						$title->getPageLanguage(), $content->getRedirectTarget()
