@@ -106,6 +106,7 @@
 	"proofreadpage-pagelist-dialog-discard-changes": "سمونونه پرېښودل",
 	"proofreadpage-pagelist-dialog-cancel": "ناگارل",
 	"proofreadpage-pagelist-parsing-error-pagelistnotdetected": "هېڅ <pagelist /> نښلنونه ونه موندل شول.",
+	"proofreadpage-pagelist-dialog-title": "$1 لپاره مخلړ سمول",
 	"proofreadpage-pagelist-dialog-insertchanges": "بدلونونه ورټومبل",
 	"proofreadpage-pagelist-imageurlnotfound": "د دې سکين لپاره بټنوک سرچينه ونه موندل شوه.",
 	"proofreadpage-pagelist-type": "مخ شمېرې ډول: $1",
@@ -132,5 +133,10 @@
 	"tag-proofreadpage-quality1": "لوست‌ارزول شوی نه ده",
 	"tag-proofreadpage-quality2": "ستونزمن",
 	"tag-proofreadpage-quality3": "لوست‌ارزونه",
-	"tag-proofreadpage-quality4": "تاييد‌شوی"
+	"tag-proofreadpage-quality4": "تاييد‌شوی",
+	"tag-proofreadpage-quality0-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality0}}\" ته بدل کړ",
+	"tag-proofreadpage-quality1-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality1}}\" ته بدل کړ",
+	"tag-proofreadpage-quality2-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality2}}\" ته بدل کړ",
+	"tag-proofreadpage-quality3-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality3}}\" ته بدل کړ",
+	"tag-proofreadpage-quality4-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality4}}\" ته بدل کړ"
 }
