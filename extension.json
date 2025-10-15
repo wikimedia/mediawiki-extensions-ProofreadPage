@@ -448,6 +448,12 @@
 			"PluginModules": [
 				"ext.proofreadpage.ve.node.pages"
 			]
+		},
+		"ParserMigration": {
+			"AllowedContentModels": [
+				"proofread-page",
+				"proofread-index"
+			]
 		}
 	},
 	"ConfigRegistry": {
