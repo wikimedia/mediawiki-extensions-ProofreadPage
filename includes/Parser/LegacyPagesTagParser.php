@@ -39,25 +39,18 @@ class LegacyPagesTagParser {
 	 * @return string
 	 */
 	public function render( array $args ) {
-		// abort if this is nested <pages> call
-		// FIXME: remove this: T362664
-		if ( $this->parser->proofreadRenderingPages ?? false ) {
-			return '';
-		}
 		try {
 			[ 'output' => $out, 'contentLang' => $contentLang ] = $this->renderTag( $this->context, $args );
 		} catch ( ParserError $e ) {
 			return $e->getHtml();
 		}
 
-		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );
 		$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
 		$joiner = $this->context->getConfig()->get( 'ProofreadPagePageJoiner' );
 		$placeholder = $this->context->getConfig()->get( 'ProofreadPagePageSeparatorPlaceholder' );
 		$out = str_replace( $joiner . $placeholder, '', $out );
 		$out = str_replace( $placeholder, $separator, $out );
-		$this->parser->proofreadRenderingPages = false;
 
 		// Wrap the output in a div with appropriate class and language attribute
 		$langAttr = $contentLang !== null ? " lang=\"$contentLang\"" : "";

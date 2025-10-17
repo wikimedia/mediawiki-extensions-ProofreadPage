@@ -70,6 +70,7 @@ use ProofreadPage\Parser\LegacyPagelistTagParser;
 use ProofreadPage\Parser\LegacyPagequalityTagParser;
 use ProofreadPage\Parser\LegacyPagesTagParser;
 use ProofreadPage\Parser\TranslusionPagesModifier;
+use WeakMap;
 
 /*
  @todo :
@@ -100,11 +101,15 @@ class ProofreadPage implements
 	/** @var Config */
 	private $config;
 
+	/** @var WeakMap<Parser,bool> */
+	private WeakMap $parserInPages;
+
 	/**
 	 * @param Config $config
 	 */
 	public function __construct( Config $config ) {
 		$this->config = $config;
+		$this->parserInPages = new WeakMap();
 	}
 
 	/**
@@ -187,10 +192,19 @@ class ProofreadPage implements
 			$tagParser = new LegacyPagelistTagParser( $parser, $context );
 			return $tagParser->render( $args );
 		} );
-		$parser->setHook( 'pages', static function ( $input, array $args, Parser $parser ) {
-			$context = Context::getDefaultContext( true );
-			$tagParser = new LegacyPagesTagParser( $parser, $context );
-			return $tagParser->render( $args );
+		$parser->setHook( 'pages', function ( $input, array $args, Parser $parser ) {
+			if ( $this->parserInPages[$parser] ?? false ) {
+				// abort if this is nested <pages> call
+				return '';
+			}
+			$this->parserInPages[$parser] = true;
+			try {
+				$context = Context::getDefaultContext( true );
+				$tagParser = new LegacyPagesTagParser( $parser, $context );
+				return $tagParser->render( $args );
+			} finally {
+				$this->parserInPages[$parser] = false;
+			}
 		} );
 		$parser->setHook( 'pagequality', static function ( $input, array $args, Parser $parser ) {
 			$tagParser = new LegacyPagequalityTagParser();
