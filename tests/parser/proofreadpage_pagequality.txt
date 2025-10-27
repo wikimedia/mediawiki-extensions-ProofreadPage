@@ -23,7 +23,7 @@ pagesquality empty
 !! wikitext
 <pagequality />
 !! html/php
-!! html/parsoid+disabled
+!! html/parsoid
 <p class="mw-empty-elt"><link typeof="mw:Extension/pagequality" about="#mwt1" data-mw='{"name":"pagequality","attrs":{}}'/></p>
 !! end
 
@@ -32,7 +32,7 @@ pagesquality invalid level number
 !! wikitext
 <pagequality level="42" />
 !! html/php
-!! html/parsoid+disabled
+!! html/parsoid
 <p class="mw-empty-elt"><link typeof="mw:Extension/pagequality" about="#mwt1" data-mw='{"name":"pagequality","attrs":{"level":"42"}}'/></p>
 !! end
 
@@ -41,6 +41,6 @@ pagesquality invalid level value
 !! wikitext
 <pagequality level="root" />
 !! html/php
-!! html/parsoid+disabled
+!! html/parsoid
 <p class="mw-empty-elt"><link typeof="mw:Extension/pagequality" about="#mwt1" data-mw='{"name":"pagequality","attrs":{"level":"root"}}'/></p>
 !! end
