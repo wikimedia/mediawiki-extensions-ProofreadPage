@@ -44,6 +44,7 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 	 * @param string $src
 	 * @param array $extArgs
 	 * @return DocumentFragment|false|null
+	 * @throws \DOMException
 	 */
 	public function sourceToDom( ParsoidExtensionAPI $extApi, string $src, array $extArgs ) {
 		if ( !$this->useParsoid ) {
@@ -54,20 +55,34 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 		$args = array_column( $extArgs, 'v', 'k' );
 		$this->extApi = $extApi;
 		try {
-			$out = $this->renderTag( $this->context, $args );
+			[ 'output' => $out, 'contentLang' => $contentLang ] = $this->renderTag( $this->context, $args );
 		} catch ( ParserError $e ) {
 			return $e->getDocumentFragment( $extApi );
 		}
+
 		$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
 		$joiner = $this->context->getConfig()->get( 'ProofreadPagePageJoiner' );
 		$placeholder = $this->context->getConfig()->get( 'ProofreadPagePageSeparatorPlaceholder' );
 		$out = str_replace( $joiner . $placeholder, '', $out );
 		$out = str_replace( $placeholder, $separator, $out );
 
-		return $extApi->wikitextToDOM( $out, [
+		$domFragment = $extApi->wikitextToDOM( $out, [
 			'processInNewFrame' => true,
 			'parseOpts' => []
 		], true );
+
+		$doc = $domFragment->ownerDocument;
+		$wrapper = $doc->createElement( 'div' );
+		$wrapper->setAttribute( 'class', 'prp-pages-output' );
+
+		if ( $contentLang !== null ) {
+			$wrapper->setAttribute( 'lang', $contentLang );
+		}
+
+		$wrapper->appendChild( $domFragment );
+		$domFragment->appendChild( $wrapper );
+
+		return $domFragment;
 	}
 
 	/**

@@ -54,7 +54,7 @@ trait PagesTagRendererTrait {
 	 *
 	 * @param \ProofreadPage\Context $context The ProofreadPage context
 	 * @param array $args Tag arguments
-	 * @return string The rendered output
+	 * @return array Array with 'output' (string) and 'contentLang' (string|null) keys
 	 */
 	public function renderTag( $context, $args ) {
 		$index = $args['index'] ?? null;
@@ -345,10 +345,11 @@ trait PagesTagRendererTrait {
 			// wrap the output in a div, to prevent the parser from inserting paragraphs
 			// and to set the content language
 		}
-		$langAttr = $contentLang && $contentLang !== 'mixed'
-			? " lang=\"$contentLang\""
-			: "";
-		return "<div class=\"$outputWrapperClass\"$langAttr>\n$out\n</div>";
+
+		return [
+			'output' => $out,
+			'contentLang' => ( $contentLang && $contentLang !== 'mixed' ) ? $contentLang : null
+		];
 	}
 
 	/**

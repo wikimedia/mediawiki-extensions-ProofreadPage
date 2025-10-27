@@ -45,10 +45,11 @@ class LegacyPagesTagParser {
 			return '';
 		}
 		try {
-			$out = $this->renderTag( $this->context, $args );
+			[ 'output' => $out, 'contentLang' => $contentLang ] = $this->renderTag( $this->context, $args );
 		} catch ( ParserError $e ) {
-			$out = $e->getHtml();
+			return $e->getHtml();
 		}
+
 		$this->parser->proofreadRenderingPages = true;
 		$out = $this->parser->recursiveTagParse( $out );
 		$separator = $this->context->getConfig()->get( 'ProofreadPagePageSeparator' );
@@ -57,7 +58,10 @@ class LegacyPagesTagParser {
 		$out = str_replace( $joiner . $placeholder, '', $out );
 		$out = str_replace( $placeholder, $separator, $out );
 		$this->parser->proofreadRenderingPages = false;
-		return $out;
+
+		// Wrap the output in a div with appropriate class and language attribute
+		$langAttr = $contentLang !== null ? " lang=\"$contentLang\"" : "";
+		return "<div class=\"prp-pages-output\"$langAttr>\n$out\n</div>";
 	}
 
 	/**

@@ -77,6 +77,17 @@ Index:TestSep
 !! endarticle
 
 !! article
+Index:TestUnbalanced
+!! text
+{{:MediaWiki:Proofreadpage_index_template
+|Title=Title
+|Pages=[[Page:TestUnbalanced 1.jpg|1]] [[Page:TestUnbalanced 2.jpg|2]]
+|Author=[[Author:Me]]
+|TOC=
+}}
+!! endarticle
+
+!! article
 Page:Test 1.jpg
 !! text
 Test 1
@@ -144,6 +155,18 @@ but the third and
 Page:TestSep 4.jpg
 !! text
 the fourth does not.
+!! endarticle
+
+!! article
+Page:TestUnbalanced 1.jpg
+!! text
+First page with unbalanced tag </div>
+!! endarticle
+
+!! article
+Page:TestUnbalanced 2.jpg
+!! text
+<div>Second page with balanced tag</div>
 !! endarticle
 
 !! article
@@ -972,4 +995,14 @@ djvu
 <div class="prp-pages-output" lang="en" typeof="mw:Extension/pages" about="#mwt9" data-parsoid='{"stx":"html"}' data-mw='{"name":"pages","attrs":{"index":"TestSep","from":"TestSep 1.jpg","to":"TestSep 4.jpg"}}'>
 <p><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_1.jpg" title="Page:TestSep 1.jpg" about="#mwt1" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_1.jpg"},"sa":{"href":"Page:TestSep 1.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 1.jpg"},"num":{"wt":"1"},"formatted":{"wt":"1"},"quality":{"wt":"1"}},"i":0}}]}'>1</a><span about="#mwt1"> (q-1)</span></span><span about="#mwt2" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 1.jpg","href":"./Page:TestSep_1.jpg"},"params":{},"i":0}}]}'>The first page must be connect-</span><span typeof="mw:Entity" data-parsoid='{"src":"&amp;#32;","srcContent":" "}'> </span><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_2.jpg" title="Page:TestSep 2.jpg" about="#mwt3" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_2.jpg"},"sa":{"href":"Page:TestSep 2.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 2.jpg"},"num":{"wt":"2"},"formatted":{"wt":"2"},"quality":{"wt":"1"}},"i":0}}]}'>2</a><span about="#mwt3"> (q-1)</span></span><span about="#mwt4" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 2.jpg","href":"./Page:TestSep_2.jpg"},"params":{},"i":0}}]}'>ed with the second</span><span typeof="mw:Entity" data-parsoid='{"src":"&amp;#32;","srcContent":" "}'> </span><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_3.jpg" title="Page:TestSep 3.jpg" about="#mwt5" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_3.jpg"},"sa":{"href":"Page:TestSep 3.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 3.jpg"},"num":{"wt":"3"},"formatted":{"wt":"3"},"quality":{"wt":"1"}},"i":0}}]}'>3</a><span about="#mwt5"> (q-1)</span></span><span about="#mwt6" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 3.jpg","href":"./Page:TestSep_3.jpg"},"params":{},"i":0}}]}'>but the third and</span><span typeof="mw:Entity" data-parsoid='{"src":"&amp;#32;","srcContent":" "}'> </span><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_4.jpg" title="Page:TestSep 4.jpg" about="#mwt7" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_4.jpg"},"sa":{"href":"Page:TestSep 4.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 4.jpg"},"num":{"wt":"4"},"formatted":{"wt":"4"},"quality":{"wt":"1"}},"i":0}}]}'>4</a><span about="#mwt7"> (q-1)</span></span><span about="#mwt8" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 4.jpg","href":"./Page:TestSep_4.jpg"},"params":{},"i":0}}]}'>the fourth does not.</span><span typeof="mw:Entity" data-parsoid='{"src":"&amp;#32;","srcContent":" "}'> </span></p>
  </div>
+!! end
+
+!! test
+pages: with unbalanced div shouldn't throw error
+!! options
+djvu
+!! wikitext
+<pages index="TestUnbalanced" from="TestUnbalanced 1.jpg" to="TestUnbalanced 2.jpg" />
+!! html/parsoid
+<div class="prp-pages-output" lang="en" typeof="mw:Extension/pages" about="#mwt5" data-mw='{"name":"pages","attrs":{"index":"TestUnbalanced","from":"TestUnbalanced 1.jpg","to":"TestUnbalanced 2.jpg"}}'><p><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestUnbalanced_1.jpg" title="Page:TestUnbalanced 1.jpg" about="#mwt1" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestUnbalanced_1.jpg"},"sa":{"href":"Page:TestUnbalanced 1.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestUnbalanced 1.jpg"},"num":{"wt":"1"},"formatted":{"wt":"1"},"quality":{"wt":"1"}},"i":0}}]}'>1</a><span about="#mwt1"> (q-1)</span></span><span about="#mwt2" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestUnbalanced 1.jpg","href":"./Page:TestUnbalanced_1.jpg"},"params":{},"i":0}}]}'>First page with unbalanced tag </span><span typeof="mw:Entity" data-parsoid='{"src":"&amp;#32;","srcContent":" "}'> </span><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestUnbalanced_2.jpg" title="Page:TestUnbalanced 2.jpg" about="#mwt3" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestUnbalanced_2.jpg"},"sa":{"href":"Page:TestUnbalanced 2.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestUnbalanced 2.jpg"},"num":{"wt":"2"},"formatted":{"wt":"2"},"quality":{"wt":"1"}},"i":0}}]}'>2</a><span about="#mwt3"> (q-1)</span></span></p><div about="#mwt4" typeof="mw:Transclusion" data-parsoid='{"stx":"html","pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestUnbalanced 2.jpg","href":"./Page:TestUnbalanced_2.jpg"},"params":{},"i":0}}]}'>Second page with balanced tag</div><p><span typeof="mw:Entity" data-parsoid='{"src":"&amp;#32;","srcContent":" "}'> </span></p></div>
 !! end
