@@ -68,7 +68,8 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 
 		$domFragment = $extApi->wikitextToDOM( $out, [
 			'processInNewFrame' => true,
-			'parseOpts' => []
+			'parseOpts' => [],
+			'clearDSROffsets' => true
 		], true );
 
 		$doc = $domFragment->ownerDocument;
@@ -101,5 +102,4 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 		}
 		return $wikitext;
 	}
-
 }
