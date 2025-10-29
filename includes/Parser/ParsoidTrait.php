@@ -63,7 +63,9 @@ trait ParsoidTrait {
 	 */
 	public function getPageNumberExpression( $expression ): string {
 		$pageNumberExpression = $this->extApi->wikitextToDOM( $expression, [
-			'parseOpts' => [ 'context' => 'inline' ]
+			'processInNewFrame' => true,
+			'parseOpts' => [ 'context' => 'inline' ],
+			'clearDSROffsets' => true
 		], true );
 		return $this->extApi->domToHtml( $pageNumberExpression, true );
 	}
