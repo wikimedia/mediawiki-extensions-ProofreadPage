@@ -63,7 +63,7 @@ TopPanel.prototype.setPageData = function ( data ) {
 	this.$messages.empty();
 	this.data = data;
 	messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-scan-number', data.subPage ), 'article' ) );
-	messageArr.push( this.createMessage( $( '<div>' ).html( mw.msg( 'proofreadpage-pagelist-display-number', data.text ) ), 'browser' ) );
+	messageArr.push( this.createMessage( $( '<div>' ).text( mw.msg( 'proofreadpage-pagelist-display-number', data.text ) ), 'browser' ) );
 	messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-type', data.type ), 'tag' ) );
 	if ( data.assignedPageNumber ) {
 		messageArr.push( this.createMessage( mw.msg( 'proofreadpage-pagelist-assignedpagenumber', data.assignedPageNumber ) ) );
