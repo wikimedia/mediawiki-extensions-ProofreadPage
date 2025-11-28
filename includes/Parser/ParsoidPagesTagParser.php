@@ -52,7 +52,7 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 		}
 
 		$this->context = Context::getDefaultContext( true );
-		$args = array_column( $extArgs, 'v', 'k' );
+		$args = $extApi->extArgsToArray( $extArgs );
 		$this->extApi = $extApi;
 		try {
 			[ 'output' => $out, 'contentLang' => $contentLang ] = $this->renderTag( $this->context, $args );
