@@ -80,7 +80,9 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 			$wrapper->setAttribute( 'lang', $contentLang );
 		}
 
-		$wrapper->appendChild( $domFragment );
+		if ( $domFragment->hasChildNodes() ) {
+			$wrapper->appendChild( $domFragment );
+		}
 		$domFragment->appendChild( $wrapper );
 
 		return $domFragment;
