@@ -161,6 +161,7 @@
 	"tag-proofreadpage-quality2": "ستونزمن",
 	"tag-proofreadpage-quality3": "لوست‌ارزونه",
 	"tag-proofreadpage-quality4": "تاييد‌شوی",
+	"tag-proofreadpage-editinsequence": "پرله‌پسې‌سمون",
 	"tag-proofreadpage-quality0-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality0}}\" ته بدل کړ",
 	"tag-proofreadpage-quality1-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality1}}\" ته بدل کړ",
 	"tag-proofreadpage-quality2-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality2}}\" ته بدل کړ",
