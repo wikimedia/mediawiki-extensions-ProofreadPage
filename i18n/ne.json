@@ -38,6 +38,7 @@
 	"proofreadpage_index_attributes": "लेखक\nशीर्षक\nवर्ष|प्रकाशन वर्ष\nप्रकाशक\nस्रोत\nचित्र|मुख्यपृष्ठ चित्र\nपृष्ठहरू||२०\nटिप्पणीहरू||१०",
 	"proofreadpage-group-other": "अन्य",
 	"proofreadpage-button-reset-zoom-label": "मूल आकार",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "सहयोग",
 	"content-model-proofread-page": "पुस्तक पृष्ठ",
 	"content-model-proofread-index": "पुस्तक सूचकाङ्क",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पृष्ठहरू",
