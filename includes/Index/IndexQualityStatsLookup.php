@@ -10,17 +10,12 @@ use Wikimedia\Rdbms\ILoadBalancer;
  */
 class IndexQualityStatsLookup {
 
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-
 	/** @var PagesQualityStats[] */
 	private $cache = [];
 
-	/**
-	 * @param ILoadBalancer $loadBalancer
-	 */
-	public function __construct( ILoadBalancer $loadBalancer ) {
-		$this->loadBalancer = $loadBalancer;
+	public function __construct(
+		private readonly ILoadBalancer $loadBalancer,
+	) {
 	}
 
 	/**

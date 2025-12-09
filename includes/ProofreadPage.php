@@ -98,17 +98,12 @@ class ProofreadPage implements
 	ResourceLoaderRegisterModulesHook
 {
 
-	/** @var Config */
-	private $config;
-
 	/** @var WeakMap<Parser,bool> */
 	private WeakMap $parserInPages;
 
-	/**
-	 * @param Config $config
-	 */
-	public function __construct( Config $config ) {
-		$this->config = $config;
+	public function __construct(
+		private readonly Config $config,
+	) {
 		$this->parserInPages = new WeakMap();
 	}
 

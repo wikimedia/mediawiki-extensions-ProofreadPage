@@ -14,38 +14,14 @@ use SlotDiffRenderer;
  */
 class IndexSlotDiffRenderer extends SlotDiffRenderer {
 
-	/**
-	 * @var IContextSource
-	 */
-	private $context;
+	private readonly DiffFormatterUtils $diffFormatterUtils;
 
-	/**
-	 * @var DiffFormatterUtils
-	 */
-	private $diffFormatterUtils;
-
-	/**
-	 * @var CustomIndexFieldsParser
-	 */
-	private $customIndexFieldsParser;
-
-	/**
-	 * @var SlotDiffRenderer
-	 */
-	private $wikitextSlotDiffRenderer;
-
-	/**
-	 * @inheritDoc
-	 */
 	public function __construct(
-		IContextSource $contextSource,
-		CustomIndexFieldsParser $customIndexFieldsParser,
-		SlotDiffRenderer $wikitextSlotDiffRenderer
+		private readonly IContextSource $context,
+		private readonly CustomIndexFieldsParser $customIndexFieldsParser,
+		private readonly SlotDiffRenderer $wikitextSlotDiffRenderer,
 	) {
-		$this->context = $contextSource;
 		$this->diffFormatterUtils = new DiffFormatterUtils();
-		$this->customIndexFieldsParser = $customIndexFieldsParser;
-		$this->wikitextSlotDiffRenderer = $wikitextSlotDiffRenderer;
 	}
 
 	/** @inheritDoc */

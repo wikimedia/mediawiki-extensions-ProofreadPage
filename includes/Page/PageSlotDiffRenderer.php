@@ -13,21 +13,11 @@ use SlotDiffRenderer;
  */
 class PageSlotDiffRenderer extends SlotDiffRenderer {
 
-	/**
-	 * @var IContextSource
-	 */
-	private $context;
+	private readonly DiffFormatterUtils $diffFormatterUtils;
 
-	/**
-	 * @var DiffFormatterUtils
-	 */
-	private $diffFormatterUtils;
-
-	/**
-	 * @param IContextSource $context
-	 */
-	public function __construct( IContextSource $context ) {
-		$this->context = $context;
+	public function __construct(
+		private readonly IContextSource $context,
+	) {
 		$this->diffFormatterUtils = new DiffFormatterUtils();
 	}
 

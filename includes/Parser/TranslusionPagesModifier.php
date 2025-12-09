@@ -20,34 +20,12 @@ use ProofreadPage\Page\PageQualityLevelLookup;
  */
 class TranslusionPagesModifier {
 
-	/** @var PageQualityLevelLookup */
-	private $pageQualityLevelLookup;
-
-	/** @var IndexQualityStatsLookup */
-	private $indexQualityStatsLookup;
-
-	/** @var IndexForPageLookup */
-	private $indexForPageLookup;
-
-	/** @var int */
-	private $pageNamespaceId;
-
-	/**
-	 * @param PageQualityLevelLookup $pageQualityLevelLookup
-	 * @param IndexQualityStatsLookup $indexQualityStatsLookup
-	 * @param IndexForPageLookup $indexForPageLookup
-	 * @param int $pageNamespaceId
-	 */
 	public function __construct(
-		PageQualityLevelLookup $pageQualityLevelLookup,
-		IndexQualityStatsLookup $indexQualityStatsLookup,
-		IndexForPageLookup $indexForPageLookup,
-		int $pageNamespaceId
+		private readonly PageQualityLevelLookup $pageQualityLevelLookup,
+		private readonly IndexQualityStatsLookup $indexQualityStatsLookup,
+		private readonly IndexForPageLookup $indexForPageLookup,
+		private readonly int $pageNamespaceId,
 	) {
-		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
-		$this->indexQualityStatsLookup = $indexQualityStatsLookup;
-		$this->indexForPageLookup = $indexForPageLookup;
-		$this->pageNamespaceId = $pageNamespaceId;
 	}
 
 	/**

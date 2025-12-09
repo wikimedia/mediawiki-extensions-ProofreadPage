@@ -13,16 +13,9 @@ use MediaWiki\Title\Title;
  */
 class FileProvider {
 
-	/**
-	 * @var RepoGroup the repositories to use
-	 */
-	private $repoGroup;
-
-	/**
-	 * @param RepoGroup $repoGroup the repositories to use
-	 */
-	public function __construct( RepoGroup $repoGroup ) {
-		$this->repoGroup = $repoGroup;
+	public function __construct(
+		private readonly RepoGroup $repoGroup,
+	) {
 	}
 
 	/**

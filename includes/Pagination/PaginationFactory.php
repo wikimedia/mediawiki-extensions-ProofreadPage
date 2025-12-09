@@ -13,15 +13,6 @@ use ProofreadPage\Index\IndexContentLookup;
  */
 class PaginationFactory {
 
-	/** @var FileProvider */
-	private $fileProvider;
-
-	/** @var IndexContentLookup */
-	private $indexContentLookup;
-
-	/** @var int */
-	private $pageNamespaceId;
-
 	/** @var Pagination[] */
 	private $paginations = [];
 
@@ -31,13 +22,10 @@ class PaginationFactory {
 	 * @param int $pageNamespaceId
 	 */
 	public function __construct(
-		FileProvider $fileProvider,
-		IndexContentLookup $indexContentLookup,
-		int $pageNamespaceId
+		private readonly FileProvider $fileProvider,
+		private readonly IndexContentLookup $indexContentLookup,
+		private readonly int $pageNamespaceId,
 	) {
-		$this->fileProvider = $fileProvider;
-		$this->indexContentLookup = $indexContentLookup;
-		$this->pageNamespaceId = $pageNamespaceId;
 	}
 
 	/**
