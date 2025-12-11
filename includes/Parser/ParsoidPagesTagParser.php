@@ -10,6 +10,7 @@ use Wikimedia\Parsoid\DOM\DocumentFragment;
 use Wikimedia\Parsoid\Ext\ExtensionTagHandler;
 use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
 use Wikimedia\Parsoid\Fragments\WikitextPFragment;
+use Wikimedia\Parsoid\Utils\DOMCompat;
 
 /**
  * Parsoid implementation of the <pages> tag handler
@@ -80,9 +81,7 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 			$wrapper->setAttribute( 'lang', $contentLang );
 		}
 
-		if ( $domFragment->hasChildNodes() ) {
-			$wrapper->appendChild( $domFragment );
-		}
+		DOMCompat::appendChild( $wrapper, $domFragment );
 		$domFragment->appendChild( $wrapper );
 
 		return $domFragment;
