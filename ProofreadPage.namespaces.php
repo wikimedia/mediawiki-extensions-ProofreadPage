@@ -331,6 +331,14 @@ $proofreadPageNamespaceNames['lij'] = [
 	'index_talk' => 'Discuscion_ìndiçe',
 ];
 
+/** Minangkabau (Minangkabau) */
+$proofreadPageNamespaceNames['min'] = [
+	'page' => 'Halaman',
+	'page_talk' => 'Rundiang_Halaman',
+	'index' => 'Buku',
+	'index_talk' => 'Rundiang_Buku',
+];
+
 /** Malayalam (മലയാളം) */
 $proofreadPageNamespaceNames['ml'] = [
 	'page' => 'താൾ',
