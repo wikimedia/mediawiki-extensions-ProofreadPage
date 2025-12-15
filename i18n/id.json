@@ -17,7 +17,8 @@
 			"Veracious",
 			"William Surya Permana",
 			"Agam Riyandana",
-			"Reedy"
+			"Reedy",
+			"Penyuwangi"
 		]
 	},
 	"nstab-page": "Halaman",
@@ -141,7 +142,7 @@
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "Ubah nomor halaman untuk halaman ini saja",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "Menetapkan nomor halaman dari nomor pindaian $1 dan seterusnya",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Menetapkan nomor halaman untuk nomor pindaian $1",
-	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Daftar nomor halaman yang sering digunakan wajib diisi. Silakan hubungi pengurus antar muka setempat Anda untuk mengatur label ini.",
+	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Daftar nomor halaman yang sering digunakan wajib diisi. Silakan hubungi pengurus antarmuka lokal Anda untuk mengatur label ini.",
 	"proofreadpage-preferences-animation-time-label": "Waktu animasi pergeseran dan perubahan ukuran (di antara 0 dan 2 detik, baku: 0). Lebih tinggi lebih mulus, lebih rendah lebih cepat",
 	"proofreadpage-preferences-showheaders-label": "Tampilkan bidang kop dan kaki saat menyunting di ruang nama {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gunakan tata letak horizontal saat menyunting di ruang nama {{ns:page}}",
