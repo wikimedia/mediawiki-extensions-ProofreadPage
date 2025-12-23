@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Red Winged Duck",
 			"Renessaince"
 		]
 	},
@@ -8,6 +9,6 @@
 	"apihelp-query+proofread-example-1": "Вяртае статус вычыткі старонак у прасторы назваў 250",
 	"apihelp-query+proofreadinfo-summary": "Вярнуць інфармацыю пра канфігурацыю пашырэньня ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Якія ўласьцівасьці вычыткі выдаваць:",
-	"apihelp-query+proofreadinfo-example-1": "Вярнуць дапомную інфармацыю",
+	"apihelp-query+proofreadinfo-example-1": "Вярнуць перадвызначаную інфармацыю",
 	"apihelp-query+proofreadinfo-example-3": "Вярнуць прастору назваў"
 }
