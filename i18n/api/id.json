@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Marwan Mohamad",
-			"Rachmat04"
+			"Rachmat04",
+			"Bennylin"
 		]
 	},
 	"apihelp-query+proofread-summary": "Dapatkan informasi mengenai status uji-baca saat ini pada halaman yang ditentukan.",
-	"apihelp-query+proofread-example-1": "Mengembalikan status koreksi untuk halaman di ruangnama 250",
+	"apihelp-query+proofread-example-1": "Mengembalikan status koreksi untuk halaman di ruang nama 250",
 	"apihelp-query+proofreadinfo-summary": "Dapatkan informasi mengenai konfigurasi ekstensi ProofreadPage.",
-	"apihelp-query+proofreadinfo-param-prop": "Atribut uji-baca manakan untuk mendapatkan:\n;namespaces:Informasi tentang ruangnama \"{{ns:Page}}\" dan \"{{ns:Index}}\".\n;qualitylevels:daftar tingkatan kualitas uji-baca.",
+	"apihelp-query+proofreadinfo-param-prop": "Properti uji-baca mana untuk dilihat:",
 	"apihelp-query+proofreadinfo-example-1": "Mengembalikan informasi baku",
-	"apihelp-query+proofreadinfo-example-3": "Mengembalikan informasi ruangnama"
+	"apihelp-query+proofreadinfo-example-3": "Mengembalikan informasi ruang nama"
 }
