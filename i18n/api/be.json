@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chadyka",
-			"Plaga med"
+			"Plaga med",
+			"Red Winged Duck"
 		]
 	},
 	"apierror-proofreadpage-invalidindex": "Няслушная назва індэксу «$1».",
@@ -10,7 +11,7 @@
 	"apihelp-query+proofread-example-1": "Вяртае статус вычыткі старонак у прасторы назваў 250",
 	"apihelp-query+proofreadinfo-summary": "Вяртае інфармацыю пра канфігурацыю пашырэння ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "Якія ўласцівасьці вычыткі выдаваць:\n;namespaces:Інфармацыя пра прасторы назваў «{{ns:Page}}» і «{{ns:Index}}».\n;qualitylevels:Спіс узроўняў якасці вычыткі.",
-	"apihelp-query+proofreadinfo-example-1": "Вярнуць дапомную інфармацыю",
+	"apihelp-query+proofreadinfo-example-1": "Вярнуць перадвызначаную інфармацыю",
 	"apihelp-query+proofreadinfo-example-3": "Вярнуць інфармацыю пра прастору назваў",
 	"apihelp-query+proofreadpagesinindex-summary": "Спіс старонак у дадзеным індэксе",
 	"apihelp-query+proofreadpagesinindex-param-limit": "Абмежаваць колькі старонак будзе вернута",
