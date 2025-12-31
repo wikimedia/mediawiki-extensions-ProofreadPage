@@ -16,6 +16,7 @@
 			"Rotsee",
 			"Sabelöga",
 			"Skalman",
+			"Stefan2255",
 			"Thurs",
 			"WikiPhoenix"
 		]
@@ -86,7 +87,7 @@
 	"proofreadpage_styles": "Stilar",
 	"proofreadpage_styles_message": "CSS-stilar som tillämpas på denna text",
 	"right-pagequality": "Ändra sidans kvalitetsflagga",
-	"right-pagequality-admin": "Obegränsade ändringar av sidkvalitetsflaggan",
+	"right-pagequality-admin": "Redigera flaggan för sidans kvalitet utan begränsning",
 	"proofreadpage-section-tools": "Korrekturläsningsverktyg",
 	"proofreadpage-group-zoom": "Zooma",
 	"proofreadpage-group-other": "Övrigt",
