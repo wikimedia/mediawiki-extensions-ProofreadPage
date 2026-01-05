@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lokal Profil",
-			"Magol"
+			"Magol",
+			"Stefan2255"
 		]
 	},
 	"apihelp-query+proofread-description": "Returnerar information om den aktuella korrekturläsningsstatusen för de angivna sidorna.",
