@@ -39,48 +39,6 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		);
 	}
 
-	public function testGetCustomCss() {
-		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
-		], [
-			'Test' => new IndexContent( [
-				'CSS' => new WikitextContent( 'width:300px;' )
-			] )
-		] ) );
-		$this->assertSame(
-			'width:300px;',
-			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
-		);
-	}
-
-	public function testGetCustomCssWithInsecureInput() {
-		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
-		], [
-			'Test' => new IndexContent( [
-				'CSS' => new WikitextContent( 'background: url(\'/my-bad-url.jpg\');' )
-			] )
-		] ) );
-		$this->assertSame(
-			'/* insecure input */',
-			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
-		);
-	}
-
-	public function testGetCustomCssWithEscaping() {
-		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
-		], [
-			'Test' => new IndexContent( [
-				'CSS' => new WikitextContent( 'width:300px;<style>' )
-			] )
-		] ) );
-		$this->assertSame(
-			'width:300px;&lt;style&gt;',
-			$handler->getCustomCss( Title::makeTitle( $this->getPageNamespaceId(), 'Test.jpg' ) )
-		);
-	}
-
 	public function testGetIndexFieldsForJS() {
 		$handler = new PageDisplayHandler( $this->getContext( [
 			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
@@ -142,20 +100,6 @@ class PageDisplayHandlerTest extends ProofreadPageTestCase {
 		] ) );
 		$this->assertSame(
 			'width:100%;&#039;&quot;Escaping quotes',
-			$handler->getIndexFieldsForJS( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.jpg' ) )['CSS']
-		);
-	}
-
-	public function testGetIndexFieldsForJSForCSSWithInsecureInput() {
-		$handler = new PageDisplayHandler( $this->getContext( [
-			'Test.jpg' => Title::makeTitle( $this->getIndexNamespaceId(), 'Test' )
-		], [
-			'Test' => new IndexContent( [
-				'CSS' => new WikitextContent( 'background: url(\'/my-bad-url.jpg\');' )
-			] )
-		] ) );
-		$this->assertSame(
-			'/* insecure input */',
 			$handler->getIndexFieldsForJS( Title::makeTitle( $this->getIndexNamespaceId(), 'Test.jpg' ) )['CSS']
 		);
 	}

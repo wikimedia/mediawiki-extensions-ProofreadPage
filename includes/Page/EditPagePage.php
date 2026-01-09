@@ -66,12 +66,6 @@ class EditPagePage extends EditPage {
 	protected function showContentForm() {
 		$out = $this->context->getOutput();
 
-		// custom CSS for preview
-		$css = $this->pageDisplayHandler->getCustomCss( $this->getTitle() );
-		if ( $css !== '' ) {
-			$out->addInlineStyle( $css );
-		}
-
 		$inputAttributes = [];
 		if ( $this->readOnlyMode->isReadOnly() ) {
 			$inputAttributes['readonly'] = '';

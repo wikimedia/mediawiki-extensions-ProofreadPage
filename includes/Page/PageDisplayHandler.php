@@ -5,7 +5,6 @@ namespace ProofreadPage\Page;
 use MediaTransformOutput;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
-use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;
@@ -71,30 +70,6 @@ class PageDisplayHandler {
 	}
 
 	/**
-	 * Return custom CSS for the page
-	 * Is protected against XSS
-	 * @param Title $pageTitle
-	 * @return string
-	 */
-	public function getCustomCss( Title $pageTitle ) {
-		$indexTitle = $this->context->getIndexForPageLookup()->getIndexForPageTitle( $pageTitle );
-		if ( $indexTitle === null ) {
-			return '';
-		}
-		try {
-			$indexContent = $this->context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
-			$css = $this->context->getCustomIndexFieldsParser()->parseCustomIndexField(
-				$indexContent, 'css'
-			);
-			return Sanitizer::escapeHtmlAllowEntities(
-				Sanitizer::checkCss( $css->getStringValue() )
-			);
-		} catch ( OutOfBoundsException $e ) {
-			return '';
-		}
-	}
-
-	/**
 	 * Santizes and serializes the raw index fields of the associated index page so
 	 * that they can be included inside mw.config in the Page namespace.
 	 * @param Title $title
@@ -114,11 +89,7 @@ class PageDisplayHandler {
 		$serializedFields = [];
 		foreach ( $indexFields as $key => $val ) {
 			// fields may contain raw XSS payloads, santize before putting it in
-			if ( strtolower( $key ) === 'css' ) {
-				$serializedFields[$key] = htmlspecialchars( Sanitizer::checkCss( $val->getStringValue() ), ENT_QUOTES );
-			} else {
-				$serializedFields[$key] = htmlspecialchars( $val->getStringValue() );
-			}
+			$serializedFields[$key] = htmlspecialchars( $val->getStringValue() );
 		}
 		return $serializedFields;
 	}
