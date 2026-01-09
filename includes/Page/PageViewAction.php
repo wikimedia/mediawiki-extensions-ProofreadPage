@@ -48,11 +48,5 @@ class PageViewAction extends ViewAction {
 		// add modules
 		$out->addModules( 'ext.proofreadpage.ve.pageTarget.init' );
 		$out->addModuleStyles( [ 'ext.proofreadpage.base', 'ext.proofreadpage.page' ] );
-
-		// custom CSS
-		$css = $pageDisplayHandler->getCustomCss( $title );
-		if ( $css !== '' ) {
-			$out->addInlineStyle( $css );
-		}
 	}
 }
