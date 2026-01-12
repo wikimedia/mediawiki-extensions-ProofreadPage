@@ -28,6 +28,7 @@ OO.inheritClass( WikiTextDialogModel, DialogModel );
 WikiTextDialogModel.prototype.updateCachedDataFromMainModel = function ( wikitext ) {
 	this.wikitext = wikitext;
 	this.changed = false;
+	this.initialWikitext = wikitext;
 	this.emit( 'updateWikiText', wikitext );
 };
 
@@ -48,6 +49,18 @@ WikiTextDialogModel.prototype.setCachedData = function () {
 	// Using this.changed cause that's more recent
 	this.mainModel.updateWikitext( this.wikitext );
 	this.changed = false;
+};
+
+/**
+ * Check if there are unsaved changes in the dialog
+ *
+ * @return {boolean}
+ */
+WikiTextDialogModel.prototype.hasUnsavedChanges = function () {
+	if ( this.initialWikitext === undefined ) {
+		return false;
+	}
+	return this.wikitext !== this.initialWikitext;
 };
 
 /**
@@ -101,6 +114,16 @@ WikiTextDialogModel.prototype.pagelistPreviewGenerationDone = function () {
  */
 WikiTextDialogModel.prototype.dialogOpened = function () {
 	this.emit( 'dialogOpened' );
+	// Set up unload warning only once
+	if ( !this.unloadWarningSetup ) {
+		const self = this;
+		mw.confirmCloseWindow( {
+			test: function () {
+				return self.hasUnsavedChanges();
+			}
+		} );
+		this.unloadWarningSetup = true;
+	}
 };
 
 module.exports = WikiTextDialogModel;

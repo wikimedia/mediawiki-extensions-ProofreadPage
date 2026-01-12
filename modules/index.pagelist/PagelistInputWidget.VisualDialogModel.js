@@ -344,6 +344,7 @@ VisualDialogModel.prototype.expandParameters = function ( params ) {
 VisualDialogModel.prototype.updateCachedDataFromMainModel = function ( parameters ) {
 	this.parameters = this.expandParameters( parameters );
 	this.changed = false;
+	this.initialParametersString = this.getParametersAsString();
 	this.emit( 'updateParameters' );
 };
 
@@ -414,6 +415,31 @@ VisualDialogModel.prototype.mergeContigousRangesBeforeUpdate = function ( params
 };
 
 /**
+ * Get a string representation of the current parameters for comparison
+ *
+ * @return {string}
+ */
+VisualDialogModel.prototype.getParametersAsString = function () {
+	let str = '';
+	this.parameters.forEach( ( index, label ) => {
+		str += index + '=' + label + '|';
+	} );
+	return str;
+};
+
+/**
+ * Check if there are unsaved changes in the dialog
+ *
+ * @return {boolean}
+ */
+VisualDialogModel.prototype.hasUnsavedChanges = function () {
+	if ( this.initialParametersString === undefined ) {
+		return false;
+	}
+	return this.getParametersAsString() !== this.initialParametersString;
+};
+
+/**
  * Resets cache to state before opening the dialog
  *
  * @return {boolean} Whether there is unsaved data or not
@@ -445,6 +471,16 @@ VisualDialogModel.prototype.setChangedFlag = function ( value ) {
  */
 VisualDialogModel.prototype.dialogOpened = function () {
 	this.emit( 'dialogOpened' );
+	// Set up unload warning only once
+	if ( !this.unloadWarningSetup ) {
+		const self = this;
+		mw.confirmCloseWindow( {
+			test: function () {
+				return self.hasUnsavedChanges();
+			}
+		} );
+		this.unloadWarningSetup = true;
+	}
 };
 
 module.exports = VisualDialogModel;
