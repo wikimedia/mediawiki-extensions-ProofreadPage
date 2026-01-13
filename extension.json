@@ -510,6 +510,18 @@
 				{
 					"name": "pages",
 					"handler": "ProofreadPage\\Parser\\ParsoidPagesTagParser"
+				},
+				{
+					"name": "pageseparator",
+					"handler": "ProofreadPage\\Parser\\ParsoidPagesTagParser"
+				}
+			],
+			"domProcessors": [
+				{
+					"class": "ProofreadPage\\Parser\\DOMProcessor",
+					"services": [
+						"MainConfig"
+					]
 				}
 			]
 		}
