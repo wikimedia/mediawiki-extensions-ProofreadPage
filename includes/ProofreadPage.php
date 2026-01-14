@@ -429,7 +429,7 @@ class ProofreadPage implements
 		// Image link
 		$image = $pageDisplayHandler->getImageFullSize( $title );
 		if ( $image ) {
-			$links['associated-pages']['proofreadPageScanLink'] = [
+			$links['namespaces']['proofreadPageScanLink'] = [
 				'class' => '',
 				'href' => $image->getUrl(),
 				'text' => wfMessage( 'proofreadpage_image' )->plain()
@@ -512,7 +512,7 @@ class ProofreadPage implements
 			}
 
 			// Prepend Prev, Next to namespaces tabs
-			$links['associated-pages'] = array_merge( $firstLinks, $links['associated-pages'] );
+			$links['namespaces'] = array_merge( $firstLinks, $links['namespaces'] );
 
 			self::addIndexLink( $skin, $indexTitle, $links );
 		}
@@ -530,7 +530,7 @@ class ProofreadPage implements
 		}
 
 		$indexLabel = wfMessage( 'proofreadpage_index' )->plain();
-		$links['associated-pages']['proofreadPageIndexLink'] = [
+		$links['namespaces']['proofreadPageIndexLink'] = [
 			'class' => ( in_array( $skin->getSkinName(), [ 'vector', 'vector-2022' ], true ) ) ? 'icon' : '',
 			'href' => $indexTitle->getLinkURL(),
 			'text' => $indexLabel,
@@ -558,16 +558,16 @@ class ProofreadPage implements
 			$stylesSelected = $title->equals( $stylesTitle );
 
 			// link to the styles page
-			$links['associated-pages']['proofreadPageStylesLink'] = $skin->tabAction(
+			$links['namespaces']['proofreadPageStylesLink'] = $skin->tabAction(
 				$stylesTitle, 'proofreadpage_styles', $stylesSelected, '', true );
 
 			if ( $stylesSelected ) {
 				// redirect the Index and Talk links to the root page
 				$rootIndex = $indexTs->getAssociatedIndexPage();
-				$links['associated-pages']['index'] = $skin->tabAction(
+				$links['namespaces']['index'] = $skin->tabAction(
 					$rootIndex, 'index', false, '', true
 				);
-				$links['associated-pages']['index_talk'] = $skin->tabAction(
+				$links['namespaces']['index_talk'] = $skin->tabAction(
 					$rootIndex->getTalkPage(),
 					'talk', false, '', true
 				);
@@ -586,7 +586,7 @@ class ProofreadPage implements
 		$outputPage = $skin->getOutput();
 		$indexTitleText = $outputPage->getProperty( 'prpSourceIndexPage' );
 		if ( $indexTitleText !== null ) {
-			$links['associated-pages'] = array_slice( $links['associated-pages'], 0, 1, true ) +
+			$links['namespaces'] = array_slice( $links['namespaces'], 0, 1, true ) +
 				[
 					'proofread-source' => [
 						'title' => $outputPage->msg( 'proofreadpage_source_message' )->text(),
@@ -594,7 +594,7 @@ class ProofreadPage implements
 						'href' => Title::newFromText( $indexTitleText )->getLocalUrl(),
 					]
 				] +
-				array_slice( $links['associated-pages'], 1, count( $links['associated-pages'] ), true );
+				array_slice( $links['namespaces'], 1, count( $links['namespaces'] ), true );
 		}
 	}
 
