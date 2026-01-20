@@ -91,7 +91,7 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 			imageHeight: imageInfo.thumbheight
 		};
 		this.emit( 'aftersetimageurl', imageUrl, imageZoomUrlOnePointFive, imageZoomUrlTwo, imageWidth, imageHeight );
-	} ).catch( function ( e ) {
+	} ).catch( ( e ) => {
 		this.emit( 'imageurlnotfound' );
 		mw.log.error( e );
 	} );
