@@ -151,7 +151,7 @@
 	"proofreadpage-pagelist-assignedpagenumber": "ཤོག་ངོས་འདིར་ཤོག་གྲངས་གཏན་འབེབས་བྱས་ཟིན།: $1",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "རོགས་རམ།",
 	"proofreadpage-pagelist-dialog-visual-number-field-disabled-but-active": "གྲངས་ཀ་རིགས་འདིས་གྲངས་ཀ་སྒྲིག་བཅོས་བྱེད་ཐུབ་ཀྱི་མི་འདུག གསར་བཟོ་བྱེད་སྐབས་འདིར་ནང་འཇུག་བྱས་པའི་བརྗོད་བྱ་གང་ཡོད་རྩི་མེད་གཏང་གི་ཡིན།",
-	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "ཤོག་གྲངས་ཀྱི་ཨང་ཀིའི་རིགས།:$1",
+	"proofreadpage-pagelist-dialog-visual-page-number-type-input-label": "ཤོག་གྲངས་ཀྱི་ཨང་ཀིའི་རིགས།:",
 	"proofreadpage-pagelist-dialog-visual-page-number-input-label": "ཤོག་ངོས་གྲངས་ཀ་འདི་ནས་འགོ་བཙུགས།:",
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "ཤོག་ངོས་འདི་ཁོ་ནའི་གྲངས་ཀ་བསྒྱུར།",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "ཞིབ་བཤེར་གྱི་གྲངས་ $1 ནས་བཟུང་ཤོག་ངོས་གྲངས་ཀ་སྒྲིག་བཅོས།",
