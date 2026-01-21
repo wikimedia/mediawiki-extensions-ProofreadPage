@@ -296,14 +296,13 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 
 	/**
 	 * Init global variables of the script
-	 *
-	 * @param {jQuery} [$img] Image
 	 */
-	function initEnvironment( $img ) {
+	function initEnvironment() {
 		if ( $editForm === undefined ) {
 			// eslint-disable-next-line no-jquery/no-global-selector
 			$editForm = $( '#editform' );
 		}
+		$editForm.find( '#wpTextbox1' ).removeAttr( 'rows cols' );
 
 		if ( $imgContVertical === undefined ) {
 			$imgContVertical = $( '<div>' )
@@ -318,20 +317,6 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 				.addClass( 'prp-page-image-openseadragon-horizontal' )
 				.attr( 'id', 'prp-page-image-openseadragon-horizontal' )
 				.insertBefore( $editForm );
-		}
-
-		if ( $img === undefined ) {
-			// eslint-disable-next-line no-jquery/no-global-selector
-			$img = $( '.prp-page-image' ).find( 'img' );
-
-			if ( $img.length > 0 ) {
-				const imgHeight = window.getComputedStyle( $img[ 0 ] ).getPropertyValue( 'height' );
-				// eslint-disable-next-line no-jquery/no-global-selector
-				$( '#prp-page-image-openseadragon-vertical' ).css( 'height', imgHeight );
-				$editForm.find( '#wpTextbox1' ).removeAttr( 'rows cols' );
-				// eslint-disable-next-line no-jquery/no-global-selector
-				$( '.prp-page-container' ).css( 'height', imgHeight );
-			}
 		}
 	}
 
@@ -373,6 +358,12 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			setupPreferences();
 			setupCodeMirror();
 		} );
+
+		// Initialize the height of the text UI to match what the resizing bar has stored.
+		mw.hook( 'ext.WikiEditor.resize' ).add( ( resizingBar ) => {
+			$editForm.find( '.wikiEditor-ui-text' ).css( 'height', resizingBar.getResizedPane().height() );
+		} );
+
 		if ( !getBooleanUserOption( 'usebetatoolbar' ) ) {
 			setupPreferences();
 			setupCodeMirror();
