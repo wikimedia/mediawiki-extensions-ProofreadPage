@@ -6,6 +6,7 @@
 			"Red Winged Duck",
 			"Reedy",
 			"Renessaince",
+			"Ucukor",
 			"Wizardist"
 		]
 	},
@@ -114,7 +115,7 @@
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Заданьне нумару старонкі для нумару скану $1",
 	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Патрэбны сьпіс часта ўжываных метак нумарацыі старонак. Каб наладзіць меткі, зьвярніцеся, калі ласка, да вашых адміністратараў інтэрфэйсу.",
 	"proofreadpage-preferences-showheaders-label": "Паказваць палі для верхняга і ніжняга калянтытулаў пры рэдагаваньні ў прасторы назваў {{ns:page}}",
-	"proofreadpage-preferences-horizontal-layout-label": "Выкарыстоўваць гарызантальную разьметку для рэдагаваньня ў прасторы назваў {{ns:page}}",
+	"proofreadpage-preferences-horizontal-layout-label": "Ужыць гарызантальную разьметку для рэдагаваньня ў прасторы назваў {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Для рэдагаваньня сьпісу старонак карыстайцеся новым экспэрымэнтальным візуальным рэжымам",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|правераная старонка|правераныя старонкі|правераных старонак}}, $2 {{PLURAL:$2|вычытаная старонка|вычытаныя старонкі|вычытаных старонак}} і $3 ня {{PLURAL:$3|вычытаная старонка|вычытаныя старонкі|вычытаных старонак}}",
 	"content-model-proofread-page": "Старонка кнігі",
