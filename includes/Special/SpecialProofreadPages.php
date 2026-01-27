@@ -295,20 +295,14 @@ class SpecialProofreadPages extends QueryPage {
 	}
 
 	private function buildValueField(): string {
-		switch ( $this->queryOrder ) {
-			case 'size':
-				return 'pr_count';
-			case 'alpha':
-				return 'page_title';
-			case 'toProofread':
-				return 'pr_count - pr_q4 - pr_q3 - pr_q0';
-			case 'toValidate':
-				return 'pr_q3';
-			case 'toProofreadOrValidate':
-				return 'pr_count - pr_q4 - pr_q0';
-			default:
-				return '2 * pr_q4 + pr_q3';
-		}
+		return match ( $this->queryOrder ) {
+			'size' => 'pr_count',
+			'alpha' => 'page_title',
+			'toProofread' => 'pr_count - pr_q4 - pr_q3 - pr_q0',
+			'toValidate' => 'pr_q3',
+			'toProofreadOrValidate' => 'pr_count - pr_q4 - pr_q0',
+			default => '2 * pr_q4 + pr_q3'
+		};
 	}
 
 	public function sortDescending(): bool {

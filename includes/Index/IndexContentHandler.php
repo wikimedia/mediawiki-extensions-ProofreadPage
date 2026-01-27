@@ -114,17 +114,14 @@ class IndexContentHandler extends TextContentHandler {
 			);
 		}
 
-		switch ( $format ) {
-			case CONTENT_FORMAT_JSON:
-				return $this->serializeContentInJson( $content );
-			case CONTENT_FORMAT_WIKITEXT:
-				return $this->serializeContentInWikitext( $content );
-			default:
-				throw new MWContentSerializationException(
-					"Format '$format' is not supported for serialization of content model " .
-						$this->getModelID()
-				);
-		}
+		return match ( $format ) {
+			CONTENT_FORMAT_JSON => $this->serializeContentInJson( $content ),
+			CONTENT_FORMAT_WIKITEXT => $this->serializeContentInWikitext( $content ),
+			default => throw new MWContentSerializationException(
+				"Format '$format' is not supported for serialization of content model " .
+				$this->getModelID()
+			)
+		};
 	}
 
 	/**
@@ -133,21 +130,16 @@ class IndexContentHandler extends TextContentHandler {
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
 
-		if ( $format === null ) {
-			$format = self::guessDataFormat( $text, false );
-		}
+		$format ??= self::guessDataFormat( $text, false );
 
-		switch ( $format ) {
-			case CONTENT_FORMAT_JSON:
-				return $this->unserializeContentInJson( $text );
-			case CONTENT_FORMAT_WIKITEXT:
-				return $this->unserializeContentInWikitext( $text );
-			default:
-				throw new UnexpectedValueException(
-					"Format '$format' is not supported for unserialization of content model " .
-						$this->getModelID()
-				);
-		}
+		return match ( $format ) {
+			CONTENT_FORMAT_JSON => $this->unserializeContentInJson( $text ),
+			CONTENT_FORMAT_WIKITEXT => $this->unserializeContentInWikitext( $text ),
+			default => throw new UnexpectedValueException(
+				"Format '$format' is not supported for unserialization of content model " .
+				$this->getModelID()
+			)
+		};
 	}
 
 	/**
@@ -195,7 +187,7 @@ class IndexContentHandler extends TextContentHandler {
 						$frame->expand( $value, PPFrame::RECOVER_ORIG )
 					);
 
-					if ( substr( $value, -1 ) === "\n" ) {
+					if ( str_ends_with( $value, "\n" ) ) {
 						// We strip one "\n"
 						$value = substr( $value, 0, -1 );
 					}

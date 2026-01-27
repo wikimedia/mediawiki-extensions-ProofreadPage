@@ -22,18 +22,13 @@ class Tags {
 	 * @return string|null the tag, or null if level doesn't have a known tag
 	 */
 	public static function getTagForPageLevel( PageLevel $level ): ?string {
-		switch ( $level->getLevel() ) {
-			case PageLevel::WITHOUT_TEXT:
-				return self::WITHOUT_TEXT_TAG;
-			case PageLevel::NOT_PROOFREAD:
-				return self::NOT_PROOFREAD_TAG;
-			case PageLevel::PROBLEMATIC:
-				return self::PROBLEMATIC_TAG;
-			case PageLevel::PROOFREAD:
-				return self::PROOFREAD_TAG;
-			case PageLevel::VALIDATED:
-				return self::VALIDATED_TAG;
-		}
-		return null;
+		return match ( $level->getLevel() ) {
+			PageLevel::WITHOUT_TEXT => self::WITHOUT_TEXT_TAG,
+			PageLevel::NOT_PROOFREAD => self::NOT_PROOFREAD_TAG,
+			PageLevel::PROBLEMATIC => self::PROBLEMATIC_TAG,
+			PageLevel::PROOFREAD => self::PROOFREAD_TAG,
+			PageLevel::VALIDATED => self::VALIDATED_TAG,
+			default => null
+		};
 	}
 }

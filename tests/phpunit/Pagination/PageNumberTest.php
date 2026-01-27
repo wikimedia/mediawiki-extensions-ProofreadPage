@@ -48,8 +48,8 @@ class PageNumberTest extends ProofreadPageTestCase {
 	public function testGetFormattedPageNumber(
 		$formattedResult, $rawResult, PageNumber $number, $language = null
 	) {
-		$language = ( $language === null ) ? 'en' : $language;
-		$language = $this->getServiceContainer()->getLanguageFactory()->getLanguage( $language );
+		$language = $this->getServiceContainer()->getLanguageFactory()
+			->getLanguage( $language ?? 'en' );
 		$this->assertSame( $formattedResult, $number->getFormattedPageNumber( $language ) );
 		$this->assertSame( $rawResult, $number->getRawPageNumber( $language ) );
 	}

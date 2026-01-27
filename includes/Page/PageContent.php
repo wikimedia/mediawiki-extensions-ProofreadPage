@@ -143,19 +143,17 @@ class PageContent extends TextContent {
 	 * @return Content
 	 */
 	public static function getContentForRevId( $revId ) {
+		$services = MediaWikiServices::getInstance();
 		if ( $revId !== -1 ) {
-			$revision = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById( $revId );
-			if ( $revision !== null ) {
-				$content = $revision->getContent( SlotRecord::MAIN );
-				if ( $content !== null ) {
-					return $content;
-				}
+			$content = $services->getRevisionStore()->getRevisionById( $revId )
+				?->getContent( SlotRecord::MAIN );
+			if ( $content ) {
+				return $content;
 			}
 		}
-		$contentHandler = MediaWikiServices::getInstance()
-			->getContentHandlerFactory()
-			->getContentHandler( CONTENT_MODEL_PROOFREAD_PAGE );
-		return $contentHandler->makeEmptyContent();
+		return $services->getContentHandlerFactory()
+			->getContentHandler( CONTENT_MODEL_PROOFREAD_PAGE )
+			->makeEmptyContent();
 	}
 
 	/**

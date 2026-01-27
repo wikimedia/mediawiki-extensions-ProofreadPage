@@ -70,12 +70,10 @@ class PageContentHandler extends TextContentHandler {
 	public function serializeContent( Content $content, $format = null ) {
 		$this->checkFormat( $format );
 
-		switch ( $format ) {
-			case CONTENT_FORMAT_JSON:
-				return $this->serializeContentInJson( $content );
-			default:
-				return $this->serializeContentInWikitext( $content );
-		}
+		return match ( $format ) {
+			CONTENT_FORMAT_JSON => $this->serializeContentInJson( $content ),
+			default => $this->serializeContentInWikitext( $content )
+		};
 	}
 
 	/**
@@ -144,20 +142,15 @@ class PageContentHandler extends TextContentHandler {
 	 * @return PageContent
 	 */
 	public function unserializeContent( $text, $format = null ) {
-		if ( $format === null ) {
-			$format = self::guessDataFormat( $text, true );
-		}
+		$format ??= self::guessDataFormat( $text, true );
 
-		switch ( $format ) {
-			case CONTENT_FORMAT_JSON:
-				return $this->unserializeContentInJson( $text );
-			case CONTENT_FORMAT_WIKITEXT:
-				return $this->unserializeContentInWikitext( $text );
-			default:
-				throw new UnexpectedValueException(
-					"Format ' . $format . ' is not supported for content model " . $this->getModelID()
-				);
-		}
+		return match ( $format ) {
+			CONTENT_FORMAT_JSON => $this->unserializeContentInJson( $text ),
+			CONTENT_FORMAT_WIKITEXT => $this->unserializeContentInWikitext( $text ),
+			default => throw new UnexpectedValueException(
+				"Format ' . $format . ' is not supported for content model " . $this->getModelID()
+			)
+		};
 	}
 
 	/**
@@ -623,15 +616,13 @@ class PageContentHandler extends TextContentHandler {
 		$parserOutput->addImage( strtok( $title->getDBkey(), '/' ) );
 
 		// add the styles.css as a dependency (even if it doesn't exist yet)
-		if ( $indexTs !== null ) {
-			$stylesPage = $indexTs->getTemplateStylesPage();
-
-			if ( $stylesPage ) {
-				$parserOutput->addTemplate(
-					$stylesPage,
-					$stylesPage->getArticleID(),
-					$stylesPage->getLatestRevID() );
-			}
+		$stylesPage = $indexTs?->getTemplateStylesPage();
+		if ( $stylesPage ) {
+			$parserOutput->addTemplate(
+				$stylesPage,
+				$stylesPage->getArticleID(),
+				$stylesPage->getLatestRevID()
+			);
 		}
 	}
 }
