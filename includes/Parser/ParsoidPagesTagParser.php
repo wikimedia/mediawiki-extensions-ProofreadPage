@@ -6,11 +6,11 @@ use MediaWiki\Language\Language;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
+use Wikimedia\Parsoid\Core\DOMCompat;
 use Wikimedia\Parsoid\DOM\DocumentFragment;
 use Wikimedia\Parsoid\Ext\ExtensionTagHandler;
 use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
 use Wikimedia\Parsoid\Fragments\WikitextPFragment;
-use Wikimedia\Parsoid\Utils\DOMCompat;
 
 /**
  * Parsoid implementation of the <pages> tag handler

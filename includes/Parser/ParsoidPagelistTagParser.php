@@ -8,9 +8,9 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use ProofreadPage\Context;
 use Wikimedia\Parsoid\DOM\DocumentFragment;
+use Wikimedia\Parsoid\Ext\DOMUtils;
 use Wikimedia\Parsoid\Ext\ExtensionTagHandler;
 use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
-use Wikimedia\Parsoid\Utils\DOMUtils;
 
 /**
  * Parsoid implementation of the <pagelist> tag handler

@@ -3,13 +3,13 @@
 namespace ProofreadPage\Parser;
 
 use MediaWiki\Config\Config;
+use Wikimedia\Parsoid\Core\DOMCompat;
 use Wikimedia\Parsoid\DOM\DocumentFragment;
 use Wikimedia\Parsoid\DOM\Element;
 use Wikimedia\Parsoid\DOM\Node;
 use Wikimedia\Parsoid\Ext\DOMProcessor as ExtDOMProcessor;
 use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
 use Wikimedia\Parsoid\Ext\Utils;
-use Wikimedia\Parsoid\Utils\DOMCompat;
 
 class DOMProcessor extends ExtDOMProcessor {
 
