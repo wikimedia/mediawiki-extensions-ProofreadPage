@@ -40,6 +40,7 @@
 	"proofreadpage_header": "Đầu trang (noinclude):",
 	"proofreadpage_body": "Thân trang (sẽ được nhúng):",
 	"proofreadpage_footer": "Chân trang (noinclude):",
+	"proofreadpage_edit_in_sequence": "Sửa trang liên tiếp",
 	"proofreadpage_toggleheaders": "thay đổi mức hiển thị của đề mục noinclude",
 	"proofreadpage_quality0_category": "Không có nội dung",
 	"proofreadpage_quality1_category": "Chưa hiệu đính",
