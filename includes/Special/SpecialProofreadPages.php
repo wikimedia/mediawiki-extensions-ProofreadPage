@@ -52,7 +52,11 @@ class SpecialProofreadPages extends QueryPage {
 	 */
 	public function __construct( $name = 'IndexPages' ) {
 		parent::__construct( $name );
-		$this->mIncludable = true;
+	}
+
+	/** @inheritDoc */
+	public function isIncludable(): bool {
+		return true;
 	}
 
 	/**
