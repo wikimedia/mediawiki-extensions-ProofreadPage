@@ -3,7 +3,8 @@
 		"authors": [
 			"Arsenekoumyk",
 			"ArslanX",
-			"Reedy"
+			"Reedy",
+			"Кумнац"
 		]
 	},
 	"nstab-page": "Сагьифа",
@@ -12,11 +13,17 @@
 	"tooltip-ca-nstab-index": "Китапны ичделигине къарамакъ",
 	"indexpages": "Индекс сагьифасыланы сиягьы",
 	"pageswithoutscans": "Скансыз сагьифалар",
+	"prefs-proofread-pagenamespace": "Текстни тергевюню интерфейс амаллары",
 	"proofreadpage_desc": "Метинни аслу скан булан тенглешдирмекни имканлы эте",
 	"proofreadpage_image": "Сурат",
 	"proofreadpage_index": "Ичделик",
+	"proofreadpage_index_label": "Герсетилген адамны сагьиыасына чыкъмакъ",
 	"proofreadpage_index_expected": "Хата: Ичделиги ёкъдур",
 	"proofreadpage_nosuch_index": "Хата: Олай ичделик табулмагъан",
+	"proofreadpage_nosuch_index_category": "Етишмейген Индекс бетлеге байлангъан бетлени къошумлары",
+	"proofreadpage_nosuch_index_category-desc": "Тег <code><nowiki><pages/></nowiki></code> герсете ёкъ индекс сагьифаны",
+	"proofreadpage_nosuch_file_for_index_category": "Екъ файлгъа байлангъан теглери булан Индекс бетлер",
+	"proofreadpage_nosuch_file_for_index_category-desc": "Тег <code><nowiki><pagelist/></nowiki></code> герсете екъ файлны",
 	"proofreadpage_nosuch_file": "Хата: Олай саплам ёкъдур",
 	"proofreadpage_indexdupetext": "Сагьифалар индекс сагьифасында бир керенден артыкъ гёрсетилмес",
 	"proofreadpage_nologin": "Гириш этилинмеди",
