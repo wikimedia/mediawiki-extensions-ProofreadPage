@@ -103,5 +103,14 @@
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "पृष्ठ",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "$1 का मूल",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "हाँ",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नहीं"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "नहीं",
+	"proofreadpage-index-field-category-label": "श्रेणियाँ",
+	"proofreadpage-index-edit-category-help": "श्रेणियाँ बिना Category: उपसर्ग के लिखी जाती हैं और पाइप \"|\" कैरेक्टर से विभाजित की जाती हैं।",
+	"tag-proofreadpage-editinsequence": "क्रमानुसार-सम्पादन",
+	"tag-proofreadpage-quality0-description": "पृष्ठ की गुणवत्ता को \"{{int:tag-proofreadpage-quality0}}\" में बदलने वाले सम्पादन",
+	"tag-proofreadpage-quality1-description": "पृष्ठ की गुणवत्ता को \"{{int:tag-proofreadpage-quality1}}\" में बदलने वाले सम्पादन",
+	"tag-proofreadpage-quality2-description": "पृष्ठ की गुणवत्ता को \"{{int:tag-proofreadpage-quality2}}\" में बदलने वाले सम्पादन",
+	"tag-proofreadpage-quality3-description": "पृष्ठ की गुणवत्ता को \"{{int:tag-proofreadpage-quality3}}\" में बदलने वाले सम्पादन",
+	"tag-proofreadpage-quality4-description": "पृष्ठ की गुणवत्ता को \"{{int:tag-proofreadpage-quality4}}\" में बदलने वाले सम्पादन",
+	"tag-proofreadpage-editinsequence-description": "नए क्रमानुसार-सम्पादन मोड के माध्यम से किए गए सम्पादन"
 }
