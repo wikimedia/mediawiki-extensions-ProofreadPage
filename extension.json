@@ -36,7 +36,12 @@
 		"proofreadpage-show-dialog-before-every-save": 1
 	},
 	"SpecialPages": {
-		"IndexPages": "\\ProofreadPage\\Special\\SpecialProofreadPages",
+		"IndexPages": {
+			"class": "\\ProofreadPage\\Special\\SpecialProofreadPages",
+			"services": [
+				"SearchEngineFactory"
+			]
+		},
 		"PagesWithoutScans": "\\ProofreadPage\\Special\\SpecialPagesWithoutScans"
 	},
 	"APIListModules": {
@@ -50,7 +55,12 @@
 	"APIPropModules": {
 		"proofread": "\\ProofreadPage\\Api\\ApiQueryProofread",
 		"imageforpage": "\\ProofreadPage\\Api\\ApiQueryImageForPage",
-		"defaultcontentforpage": "\\ProofreadPage\\Api\\ApiQueryDefaultContentForPage"
+		"defaultcontentforpage": {
+			"class": "\\ProofreadPage\\Api\\ApiQueryDefaultContentForPage",
+			"services": [
+				"ContentHandlerFactory"
+			]
+		}
 	},
 	"ContentHandlers": {
 		"proofread-page": "\\ProofreadPage\\Page\\PageContentHandler",

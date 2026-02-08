@@ -24,7 +24,7 @@ namespace ProofreadPage\Special;
 use ISearchResultSet;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Search\SearchEngineFactory;
 use MediaWiki\Skin\Skin;
 use MediaWiki\SpecialPage\QueryPage;
 use MediaWiki\Title\Title;
@@ -47,11 +47,10 @@ class SpecialProofreadPages extends QueryPage {
 	/** @var true|null */
 	protected $addOne;
 
-	/**
-	 * @param string $name
-	 */
-	public function __construct( $name = 'IndexPages' ) {
-		parent::__construct( $name );
+	public function __construct(
+		private readonly SearchEngineFactory $searchEngineFactory,
+	) {
+		parent::__construct( 'IndexPages' );
 	}
 
 	/** @inheritDoc */
@@ -93,7 +92,7 @@ class SpecialProofreadPages extends QueryPage {
 
 			if ( $this->searchTerm ) {
 				$indexNamespaceId = Context::getDefaultContext()->getIndexNamespaceId();
-				$searchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
+				$searchEngine = $this->searchEngineFactory->create();
 				$searchEngine->setLimitOffset( $this->limit + 1, $this->offset );
 				$searchEngine->setNamespaces( [ $indexNamespaceId ] );
 				$status = $searchEngine->searchText( $this->searchTerm );

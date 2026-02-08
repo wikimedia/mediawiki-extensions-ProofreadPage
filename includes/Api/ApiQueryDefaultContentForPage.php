@@ -4,7 +4,7 @@ namespace ProofreadPage\Api;
 
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\Page\PageContentBuilder;
@@ -29,12 +29,15 @@ class ApiQueryDefaultContentForPage extends ApiQueryBase {
 	/** @var string API module prefix */
 	private static $prefix = 'prppdefaultcontent';
 
-	public function __construct( ApiQuery $query, string $moduleName ) {
+	public function __construct(
+		ApiQuery $query,
+		string $moduleName,
+		IContentHandlerFactory $contentHandlerFactory,
+	) {
 		parent::__construct( $query, $moduleName, static::$prefix );
 		$this->context = Context::getDefaultContext();
 		$this->pageContentBuilder = new PageContentBuilder( $this, $this->context );
-		$this->pageContentHandler = MediaWikiServices::getInstance()
-			->getContentHandlerFactory()
+		$this->pageContentHandler = $contentHandlerFactory
 			->getContentHandler( CONTENT_MODEL_PROOFREAD_PAGE );
 	}
 
