@@ -23,7 +23,7 @@ class PageDisplayHandler {
 	/**
 	 * @var integer default width for scan image
 	 */
-	public const DEFAULT_IMAGE_WIDTH = 1024;
+	public const DEFAULT_IMAGE_WIDTH = 1280;
 
 	/**
 	 * @var Context
@@ -274,7 +274,7 @@ class PageDisplayHandler {
 	 * Get the given Page's image, resized if required.
 	 *
 	 * @param Title $pageTitle The Page title, e.g. `Page:Lorem.pdf/4`.
-	 * @param bool $constrainWidth Reduce the image width to the configured max (1024 px by default).
+	 * @param bool $constrainWidth Reduce the image width to the configured max (1280 px by default).
 	 * @return MediaTransformOutput|null Null if the image could not be determined.
 	 */
 	private function getImageTransform( Title $pageTitle, bool $constrainWidth = true ): ?MediaTransformOutput {
