@@ -27,12 +27,13 @@
 	border-right: 1px solid #c8ccd1;
 }
 
-.prp-page-edit-header {
-	flex: 1;
+.prp-page-edit-header,
+.prp-page-edit-footer {
+	flex: 1 1 15%;
 }
 
 .prp-page-edit-body {
-	flex: 6;
+	flex: 6 2 70%;
 }
 
 .prp-page-edit-area-label {
@@ -40,16 +41,13 @@
 	font-size: 80%;
 }
 
-.prp-edit-area {
+.prp-edit-area,
+.prp-edit-area .ext-codemirror-wrapper {
 	display: flex;
 	flex-direction: column;
 }
 
 .prp-edit-area textarea {
-	flex: 1;
-}
-
-.prp-page-edit-footer {
 	flex: 1;
 }
 
