@@ -577,6 +577,14 @@ $proofreadPageNamespaceNames['uk'] = [
 	'index_talk' => 'Обговорення_індексу',
 ];
 
+/** Urdu (اردو) */
+$proofreadPageNamespaceNames['ur'] = [
+	'page' => 'صفحہ',
+	'page_talk' => 'تبادلۂ_خیال_صفحہ',
+	'index' => 'اشاریہ',
+	'index_talk' => 'تبادلۂ_خیال_اشاریہ',
+];
+
 /** vèneto (vèneto) */
 $proofreadPageNamespaceNames['vec'] = [
 	'page' => 'Pagina',
