@@ -7,6 +7,9 @@ class EisPagePage extends Page {
 		await super.openTitle( pagename, { action: 'edit', prp_editinsequence: true } );
 		// wait for toolbar to load
 		await browser.waitUntil( async () => await browser.$$( '.prp-edit-in-sequence-toolbar' ).length > 0 );
+		await this.waitForPageStatusButtonToBeResponsive();
+		await this.waitForPageNavButtonsReady();
+		await this.dismissWelcomeDialog();
 		// turn off all unload events for wikiEditor
 		await browser.execute( () => {
 			// eslint-disable-next-line no-undef
@@ -30,12 +33,27 @@ class EisPagePage extends Page {
 		return browser.$( '.prp-editinsequence-next' );
 	}
 
+	async waitForPageNavButtonsReady() {
+		await browser.waitUntil(
+			async () => await utils.isEnabledInOOUI( this.prevButton ) ||
+				await utils.isEnabledInOOUI( this.nextButton )
+		);
+	}
+
 	async waitForOOUIElementToBeActive( $element ) {
 		await browser.waitUntil( async () => await utils.isEnabledInOOUI( $element ) );
 	}
 
 	async waitForPageStatusButtonToBeResponsive() {
 		await browser.waitUntil( async () => await this.pageStatusButtonLabel.getText() !== '' && ( await this.pageStatusButtonLabel.getText() ).replace( /\s/g, '' ).length, { timeout: 30 * 1000 } );
+	}
+
+	async dismissWelcomeDialog() {
+		const dialog = browser.$( '.ve-init-mw-welcomeDialog' );
+		if ( await dialog.isDisplayed() ) {
+			await dialog.$( '.oo-ui-actionWidget' ).click();
+			await dialog.waitForDisplayed( { reverse: true } );
+		}
 	}
 
 	async selectPageStatusFromDropdown( valueName ) {

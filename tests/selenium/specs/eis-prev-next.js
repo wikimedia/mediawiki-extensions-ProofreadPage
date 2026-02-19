@@ -28,7 +28,6 @@ describe( 'For a page with eis enabled', () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
 		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.prevButton ) === false, 'is disabled' );
 		await EisPagePage.nextButton.click();
-		await EisPagePage.waitForOOUIElementToBeActive( await EisPagePage.prevButton );
 		assert.ok( await utils.isEnabledInOOUI( EisPagePage.prevButton ), 'but gets enabled when next is clicked' );
 	} );
 
@@ -36,7 +35,6 @@ describe( 'For a page with eis enabled', () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/5' );
 		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.nextButton ) === false, 'is disabled' );
 		await EisPagePage.prevButton.click();
-		await EisPagePage.waitForOOUIElementToBeActive( await EisPagePage.nextButton );
 		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.nextButton ), 'but gets enabled when prev is clicked' );
 	} );
 
