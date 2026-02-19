@@ -1,4 +1,3 @@
-import MWBot from 'mwbot';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -6,52 +5,46 @@ import { fileURLToPath } from 'node:url';
 // eslint-disable-next-line no-underscore-dangle
 const __dirname = path.dirname( fileURLToPath( import.meta.url ) );
 
-// copied/modified from MWBot.upload() at
-// https://github.com/Fannon/mwbot/blob/2f13281e53f3c515120dfff10889b2393819ceef/src/index.js#L708
-async function importTemplates( bot ) {
-	const pathToFile = path.join( __dirname, '../../data/en-wikisource-2021-template-dump.xml' );
-	const templates = fs.createReadStream( pathToFile );
-
-	const params = {
-		action: 'import',
-		filename: path.basename( pathToFile ),
-		xml: templates,
-		interwikiprefix: 'enws',
-		token: bot.editToken,
-		format: 'json'
-	};
-
-	const uploadRequestOptions = MWBot.merge( bot.globalRequestOptions, {
-
-		// https://www.npmjs.com/package/request#support-for-har-12
-		har: {
-			method: 'POST',
-			postData: {
-				mimeType: 'multipart/form-data',
-				params: []
-			}
-		}
+async function importTemplates( api ) {
+	const token = await api.getEditToken();
+	const filePath = path.join( __dirname, '../../data/en-wikisource-2021-template-dump.xml' );
+	// eslint-disable-next-line n/no-unsupported-features/node-builtins
+	const formData = new FormData();
+	formData.append( 'action', 'import' );
+	// eslint-disable-next-line n/no-unsupported-features/node-builtins, security/detect-non-literal-fs-filename
+	formData.append( 'xml', new Blob( [ fs.readFileSync( filePath ) ] ), path.basename( filePath ) );
+	formData.append( 'interwikiprefix', 'enws' );
+	formData.append( 'token', token );
+	// eslint-disable-next-line n/no-unsupported-features/node-builtins
+	await fetch( `${ browser.options.baseUrl }/api.php?format=json`, {
+		method: 'POST',
+		headers: { Cookie: api.cookies.toHeader() },
+		body: formData
 	} );
-
-	// Convert params to HAR 1.2 notation
-	for ( const paramName in params ) {
-		const param = params[ paramName ];
-		uploadRequestOptions.har.postData.params.push( {
-			name: paramName,
-			value: param
-		} );
-	}
-
-	return bot.request( {}, uploadRequestOptions );
 }
 
-async function setupPrpTemplates( bot ) {
-	await bot.loginGetEditToken( {
-		username: browser.options.capabilities[ 'mw:user' ],
-		password: browser.options.capabilities[ 'mw:pwd' ]
+async function uploadFile( api, filename, filePath, summary ) {
+	const token = await api.getEditToken();
+	const fileTitle = filename.startsWith( 'File:' ) ? filename.slice( 5 ) : filename;
+	// eslint-disable-next-line n/no-unsupported-features/node-builtins
+	const formData = new FormData();
+	formData.append( 'action', 'upload' );
+	formData.append( 'filename', fileTitle );
+	formData.append( 'comment', summary );
+	formData.append( 'ignorewarnings', '1' );
+	formData.append( 'token', token );
+	// eslint-disable-next-line n/no-unsupported-features/node-builtins, security/detect-non-literal-fs-filename
+	formData.append( 'file', new Blob( [ fs.readFileSync( filePath ) ] ), fileTitle );
+	// eslint-disable-next-line n/no-unsupported-features/node-builtins
+	await fetch( `${ browser.options.baseUrl }/api.php?format=json`, {
+		method: 'POST',
+		headers: { Cookie: api.cookies.toHeader() },
+		body: formData
 	} );
+}
 
-	await importTemplates( bot );
+async function setupPrpTemplates( api ) {
+	await importTemplates( api );
 }
 
 // Check if a element is enabled or disabled via OOUI
@@ -62,5 +55,6 @@ async function isEnabledInOOUI( element ) {
 
 export default {
 	setupPrpTemplates,
+	uploadFile,
 	isEnabledInOOUI
 };

@@ -14,6 +14,7 @@ const localSettingsPath = path.join( __dirname, '../../../../LocalSettings.php' 
 const localSettingsOldText = fs.readFileSync( localSettingsPath );
 
 export const config = {
+	...wdioDefaults,
 	// Override, or add to, the setting from wdio-mediawiki.
 	// Learn more at https://webdriver.io/docs/configurationfile/
 	//
@@ -42,6 +43,5 @@ export const config = {
 	},
 	onComplete: function () {
 		fs.writeFileSync( localSettingsPath, localSettingsOldText );
-	},
-	...wdioDefaults
+	}
 };
