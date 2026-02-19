@@ -77,6 +77,17 @@ Index:TestSep
 !! endarticle
 
 !! article
+Index:TestSep2
+!! text
+{{:MediaWiki:Proofreadpage_index_template
+|Title=Title
+|Pages=[[Page:TestSep2 1.jpg|1]] [[Page:TestSep2 2.jpg|2]]
+|Author=[[Author:Me]]
+|TOC=
+}}
+!! endarticle
+
+!! article
 Index:TestUnbalanced
 !! text
 {{:MediaWiki:Proofreadpage_index_template
@@ -155,6 +166,20 @@ but the third and
 Page:TestSep 4.jpg
 !! text
 the fourth does not.
+!! endarticle
+
+!! article
+Page:TestSep2 1.jpg
+!! text
+Introduce a paragraph.
+
+The first page must be connect-
+!! endarticle
+
+!! article
+Page:TestSep2 2.jpg
+!! text
+ed with the second
 !! endarticle
 
 !! article
@@ -995,6 +1020,26 @@ djvu
 <div class="prp-pages-output" lang="en" typeof="mw:Extension/pages" about="#mwt9" data-parsoid='{"stx":"html"}' data-mw='{"name":"pages","attrs":{"index":"TestSep","from":"TestSep 1.jpg","to":"TestSep 4.jpg"}}'>
 <p><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_1.jpg" title="Page:TestSep 1.jpg" about="#mwt1" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_1.jpg"},"sa":{"href":"Page:TestSep 1.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 1.jpg"},"num":{"wt":"1"},"formatted":{"wt":"1"},"quality":{"wt":"1"}},"i":0}}]}'>1</a><span about="#mwt1"> (q-1)</span></span><span about="#mwt2" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 1.jpg","href":"./Page:TestSep_1.jpg"},"params":{},"i":0}}]}'>The first page must be connect</span><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_2.jpg" title="Page:TestSep 2.jpg" about="#mwt3" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_2.jpg"},"sa":{"href":"Page:TestSep 2.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 2.jpg"},"num":{"wt":"2"},"formatted":{"wt":"2"},"quality":{"wt":"1"}},"i":0}}]}'>2</a><span about="#mwt3"> (q-1)</span></span><span about="#mwt4" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 2.jpg","href":"./Page:TestSep_2.jpg"},"params":{},"i":0}}]}'>ed with the second</span> <span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_3.jpg" title="Page:TestSep 3.jpg" about="#mwt5" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_3.jpg"},"sa":{"href":"Page:TestSep 3.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 3.jpg"},"num":{"wt":"3"},"formatted":{"wt":"3"},"quality":{"wt":"1"}},"i":0}}]}'>3</a><span about="#mwt5"> (q-1)</span></span><span about="#mwt6" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 3.jpg","href":"./Page:TestSep_3.jpg"},"params":{},"i":0}}]}'>but the third and</span> <span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestSep_4.jpg" title="Page:TestSep 4.jpg" about="#mwt7" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestSep_4.jpg"},"sa":{"href":"Page:TestSep 4.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep 4.jpg"},"num":{"wt":"4"},"formatted":{"wt":"4"},"quality":{"wt":"1"}},"i":0}}]}'>4</a><span about="#mwt7"> (q-1)</span></span><span about="#mwt8" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestSep 4.jpg","href":"./Page:TestSep_4.jpg"},"params":{},"i":0}}]}'>the fourth does not.</span> </p>
  </div>
+!! end
+
+!! test
+pages: with hyphenated word across pages in paragraph
+!! options
+djvu
+!! wikitext
+<pages index="TestSep2" from="TestSep2 1.jpg" to="TestSep2 2.jpg" />
+!! html/php
+<div class="prp-pages-output" lang="en">
+<p><span><a href="/wiki/Page:TestSep2_1.jpg" class="prp-pagequality-1" title="Page:TestSep2 1.jpg">1</a> (q-1)</span>Introduce a paragraph.
+</p><p>The first page must be connect<span><a href="/wiki/Page:TestSep2_2.jpg" class="prp-pagequality-1" title="Page:TestSep2 2.jpg">2</a> (q-1)</span>ed with the second&#32;
+</p>
+</div>
+!! html/parsoid
+<div class="prp-pages-output" lang="en" typeof="mw:Extension/pages" data-mw='{"name":"pages","attrs":{"index":"TestSep2","from":"TestSep2 1.jpg","to":"TestSep2 2.jpg"}}'>
+<p typeof="mw:Transclusion" data-mw='{"parts":["&lt;span>",{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep2 1.jpg"},"num":{"wt":"1"},"formatted":{"wt":"1"},"quality":{"wt":"1"}},"i":0}},"&lt;/span>",{"template":{"target":{"wt":":Page:TestSep2 1.jpg","href":"./Page:TestSep2_1.jpg"},"params":{},"i":1}},"&lt;pageseparator />&lt;span>",{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestSep2 2.jpg"},"num":{"wt":"2"},"formatted":{"wt":"2"},"quality":{"wt":"1"}},"i":2}},"&lt;/span>",{"template":{"target":{"wt":":Page:TestSep2 2.jpg","href":"./Page:TestSep2_2.jpg"},"params":{},"i":3}},"&lt;pageseparator />"]}'><span><a rel="mw:WikiLink" href="./Page:TestSep2_1.jpg" title="Page:TestSep2 1.jpg" class="prp-pagequality-1">1</a> (q-1)</span>Introduce a paragraph.</p>
+<span> </span>
+<p>The first page must be connect<span><a rel="mw:WikiLink" href="./Page:TestSep2_2.jpg" title="Page:TestSep2 2.jpg" class="prp-pagequality-1">2</a> (q-1)</span>ed with the second</p>
+</div>
 !! end
 
 !! test

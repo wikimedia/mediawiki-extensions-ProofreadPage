@@ -7,6 +7,7 @@ use Wikimedia\Parsoid\Core\DOMCompat;
 use Wikimedia\Parsoid\DOM\DocumentFragment;
 use Wikimedia\Parsoid\DOM\Element;
 use Wikimedia\Parsoid\DOM\Node;
+use Wikimedia\Parsoid\DOM\Text;
 use Wikimedia\Parsoid\Ext\DOMProcessor as ExtDOMProcessor;
 use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
 use Wikimedia\Parsoid\Ext\Utils;
@@ -35,16 +36,22 @@ class DOMProcessor extends ExtDOMProcessor {
 		'@phan-var Element|DocumentFragment $root';
 		$nodes = DOMCompat::querySelectorAll( $root, '[typeof~=mw:Extension/pageseparator]' );
 		foreach ( $nodes as $node ) {
-			$pageLastNode = $node->previousSibling->lastChild ?? null;
-			$lastCharOfPage = substr( $pageLastNode->nodeValue ?? '', -1 );
-			if ( $lastCharOfPage === $this->joiner ) {
-				$pageLastNode->nodeValue = substr( $pageLastNode->nodeValue, 0, -1 );
-				$node->parentNode->removeChild( $node );
-			} else {
-				$node->parentNode->replaceChild(
-					$node->ownerDocument->createTextNode( $this->separator ), $node
-				);
+			$pageLastNode = $node->previousSibling;
+			if ( $pageLastNode !== null && !( $pageLastNode instanceof Text ) ) {
+				$pageLastNode = $pageLastNode->lastChild;
 			}
+			if ( $pageLastNode instanceof Text ) {
+				$pageLastNodeVal = ( $pageLastNode->nodeValue ?? '' );
+				$lastCharOfPage = substr( $pageLastNodeVal, -1 );
+				if ( $lastCharOfPage === $this->joiner ) {
+					$pageLastNode->nodeValue = substr( $pageLastNodeVal, 0, -1 );
+					$node->parentNode->removeChild( $node );
+					continue;
+				}
+			}
+			$node->parentNode->replaceChild(
+				$node->ownerDocument->createTextNode( $this->separator ), $node
+			);
 		}
 	}
 
