@@ -20,7 +20,8 @@ export const config = {
 	//
 	// Example:
 	// logLevel: 'info',
-	onPrepare: function () {
+	onPrepare: async ( configuration, param ) => {
+		await wdioDefaults.onPrepare?.( configuration, param );
 		fs.appendFileSync( localSettingsPath, `
 		if ( file_exists( "$IP/extensions/ProofreadPage/tests/selenium/settings/ProofreadPage.LocalSettings.php" ) ) {
 			require_once "$IP/extensions/ProofreadPage/tests/selenium/settings/ProofreadPage.LocalSettings.php";
@@ -41,7 +42,8 @@ export const config = {
 			);
 		}
 	},
-	onComplete: function () {
+	onComplete: async ( exitCode, configuration, capabilities, results ) => {
+		await wdioDefaults.onComplete?.( exitCode, configuration, capabilities, results );
 		fs.writeFileSync( localSettingsPath, localSettingsOldText );
 	}
 };
