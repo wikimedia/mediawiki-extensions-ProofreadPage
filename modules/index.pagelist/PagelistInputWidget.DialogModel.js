@@ -53,7 +53,7 @@ DialogModel.prototype.setData = function ( data ) {
 DialogModel.prototype.generateImageLink = function ( data ) {
 	const pageTitle = mw.config.get( 'wgFormattedNamespaces' )[ 6 ] + ':' + mw.config.get( 'wgTitle' ),
 		subpage = data.subPage || 1,
-		imageSize = 1024; // arbitrary number, same as used at PageDisplayHandler.php
+		imageSize = 1280; // arbitrary number, same as used at PageDisplayHandler.php
 	this.api.get( {
 		action: 'query',
 		prop: 'imageinfo',
