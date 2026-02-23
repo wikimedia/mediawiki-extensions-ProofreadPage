@@ -266,7 +266,9 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			initialCMInstance = false;
 
 			// Ensure DOM manipulations are finished before CodeMirror is initialized.
-			updateEditorUi();
+			if ( getBooleanUserOption( 'usebetatoolbar' ) ) {
+				updateEditorUi();
+			}
 
 			// Add CodeMirror instances to the header and footer once the main instance is ready.
 			mw.hook( 'ext.CodeMirror.ready' ).add( addCodeMirrorToHeaders );
