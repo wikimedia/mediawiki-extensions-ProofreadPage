@@ -29,11 +29,11 @@
 
 .prp-page-edit-header,
 .prp-page-edit-footer {
-	flex: 1 1 15%;
+	flex: 1 1 20%;
 }
 
 .prp-page-edit-body {
-	flex: 6 2 70%;
+	flex: 6 2 60%;
 }
 
 .prp-page-edit-area-label {
@@ -45,6 +45,7 @@
 .prp-edit-area .ext-codemirror-wrapper {
 	display: flex;
 	flex-direction: column;
+	overflow-y: hidden;
 }
 
 .prp-edit-area textarea {
@@ -53,6 +54,11 @@
 
 .group-proofreadpage-secondary .oo-ui-iconElement:first-child {
 	margin-left: 0;
+}
+
+.prp-page-container,
+.prp-page-image-openseadragon-vertical {
+	min-height: 248px;
 }
 
 #editform .prp-page-content { /* stylelint-disable-line selector-max-id */
@@ -73,4 +79,9 @@
 	display: flex;
 	align-items: center;
 	flex-direction: row-reverse;
+}
+
+.wikiEditor-ui-view-resizable .prp-page-image-openseadragon-vertical {
+	// stylelint-disable-next-line declaration-no-important
+	height: 100% !important;
 }

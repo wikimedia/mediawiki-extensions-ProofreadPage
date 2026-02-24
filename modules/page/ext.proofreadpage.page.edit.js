@@ -247,9 +247,17 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 			return;
 		}
 		editorUiUpdated = true;
+		const $container = $editForm.find( '.prp-page-container' );
 		$editForm.find( '.prp-page-edit-body' ).append( $editForm.find( '#wpTextbox1' ) );
 		$editForm.find( '.editOptions' ).before( $editForm.find( '.wikiEditor-ui' ) );
-		$editForm.find( '.wikiEditor-ui-text' ).append( $editForm.find( '.prp-page-container' ) );
+		$editForm.find( '.wikiEditor-ui-text' ).append( $container );
+
+		// Add the resizing bar.
+		if ( typeof $.wikiEditor.createResizingDragBar === 'function' ) {
+			const bottomDragBar = $.wikiEditor.createResizingDragBar( { isEW: false } );
+			$container.after( bottomDragBar.$element );
+			$editForm.find( '.wikiEditor-ui-view' ).addClass( 'wikiEditor-ui-view-resizable' );
+		}
 	}
 
 	/**
