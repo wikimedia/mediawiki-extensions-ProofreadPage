@@ -30,6 +30,10 @@ class IndexAndPageLibraryTest extends LuaEngineTestBase {
 	/** @inheritDoc */
 	protected static $moduleName = 'IndexAndPageLibraryTests';
 
+	protected function getEngineName(): string {
+		return 'LuaStandalone';
+	}
+
 	/**
 	 * Get a string list of links to pages (simulating an image-based index)
 	 * @param string $pattern the pattern for the filenames (should have a single %d in it)
