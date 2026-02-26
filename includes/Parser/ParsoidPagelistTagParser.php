@@ -61,7 +61,7 @@ class ParsoidPagelistTagParser extends ExtensionTagHandler {
 		}
 		$this->extApi = $extApi;
 		$this->context = Context::getDefaultContext( true );
-		$args = array_column( $extArgs, 'v', 'k' );
+		$args = $extApi->extArgsToArray( $extArgs );
 		try {
 			// renderTag should return DocumentFragment for Parsoid parser
 			return $this->renderTag( $this->context, $args );

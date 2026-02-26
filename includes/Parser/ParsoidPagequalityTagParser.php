@@ -30,7 +30,7 @@ class ParsoidPagequalityTagParser extends ExtensionTagHandler {
 			return false;
 		}
 
-		$extArgs = array_column( $extArgs, 'v', 'k' );
+		$extArgs = $extApi->extArgsToArray( $extArgs );
 
 		$levelExists = array_key_exists( 'level', $extArgs );
 		$levelIsNumeric = $levelExists && is_numeric( $extArgs['level'] );
