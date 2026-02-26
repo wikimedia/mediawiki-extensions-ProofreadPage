@@ -26,7 +26,7 @@ if ( !class_exists( LuaEngineTestBase::class ) ) {
  * @group Database
  * @covers \ProofreadPage\ProofreadPageLuaLibrary
  */
-class IndexAndPageLibraryTest extends LuaEngineTestBase {
+abstract class IndexAndPageLibraryTestBase extends LuaEngineTestBase {
 	/** @inheritDoc */
 	protected static $moduleName = 'IndexAndPageLibraryTests';
 

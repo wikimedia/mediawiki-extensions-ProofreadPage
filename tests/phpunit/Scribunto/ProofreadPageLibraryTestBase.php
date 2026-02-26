@@ -13,7 +13,7 @@ if ( !class_exists( LuaEngineTestBase::class ) ) {
  *
  * @covers \ProofreadPage\ProofreadPageLuaLibrary
  */
-class ProofreadPageLibraryTest extends LuaEngineTestBase {
+abstract class ProofreadPageLibraryTestBase extends LuaEngineTestBase {
 	/** @inheritDoc */
 	protected static $moduleName = 'ProofreadPageLibraryTests';
 
