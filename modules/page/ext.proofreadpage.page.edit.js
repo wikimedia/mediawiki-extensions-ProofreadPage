@@ -256,6 +256,16 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		if ( typeof $.wikiEditor.createResizingDragBar === 'function' ) {
 			const bottomDragBar = $.wikiEditor.createResizingDragBar( { isEW: false } );
 			$container.after( bottomDragBar.$element );
+
+			const rightDragBar = $.wikiEditor.createResizingDragBar( { id: 'ext-ProofreadPage-right-dragbar' } );
+			const $content = $editForm.find( '.prp-page-content' );
+			$content.after( rightDragBar.$element );
+			mw.hook( 'ext.WikiEditor.resize' ).add( ( dragBar ) => {
+				if ( dragBar === rightDragBar && $content[ 0 ].style.width ) {
+					$content.addClass( 'prp-page-content-resized' );
+				}
+			} );
+
 			$editForm.find( '.wikiEditor-ui-view' ).addClass( 'wikiEditor-ui-view-resizable' );
 		}
 	}

@@ -9,6 +9,10 @@
 	padding-right: 12px;
 }
 
+.prp-layout-is-vertical > .prp-page-content-resized {
+	flex: none;
+}
+
 /* stylelint-disable-next-line selector-class-pattern */
 .prp-page-content .pagetext {
 	margin-bottom: 0.5em;
@@ -41,7 +45,9 @@
 	height: 33vh;
 }
 
-.prp-layout-is-horizontal .prp-page-image {
+.prp-layout-is-horizontal .prp-page-image,
+/* stylelint-disable-next-line selector-max-id */
+.prp-layout-is-horizontal #ext-ProofreadPage-right-dragbar {
 	display: none;
 }
 
