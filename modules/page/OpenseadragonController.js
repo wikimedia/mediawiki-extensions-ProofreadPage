@@ -40,12 +40,15 @@ OpenSeadragonController.prototype.constructImagePyramidSource = function () {
 
 	// Occasionally, there is no srcset set on the server
 	const srcSet = this.img.getAttribute( 'srcset' );
+	const thumbnailSteps = mw.config.get( 'wgThumbnailSteps' );
 	if ( srcSet ) {
 		const parts = srcSet.split( ' ' );
 		for ( let i = 0; i < parts.length - 1; i += 2 ) {
 			const srcUrl = parts[ i ];
 			const srcFactor = parseFloat( parts[ i + 1 ].replace( /x,?/, '' ) );
-
+			if ( thumbnailSteps instanceof Array && !thumbnailSteps.includes( srcFactor * width ) ) {
+				continue;
+			}
 			levels.push( {
 				url: srcUrl,
 				width: srcFactor * width,
