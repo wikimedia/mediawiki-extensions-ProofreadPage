@@ -1,8 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
-			"R12ntech"
+			"R12ntech",
+			"Tuwewanzi"
 		]
 	},
-	"proofreadpage_specialpage_label_key": "Wóle:"
+	"nstab-page": "Oyúblaye",
+	"proofreadpage_image": "Itówapi",
+	"proofreadpage_nologin": "Čhaž’ónigwa šni",
+	"proofreadpage_nextpage": "Oyúblaye íyokhihe",
+	"proofreadpage_prevpage": "Oyúblaye hékta",
+	"proofreadpage_index_size": "Oyúblaye henákeča",
+	"proofreadpage_specialpage_filterby_all": "Iyúha",
+	"proofreadpage_specialpage_label_key": "Wóle:",
+	"proofreadpage_pages": "{{PLURAL:$1|oyúblaye}} $2",
+	"proofreadpage_source": "Ohútkȟaŋ kiƞ",
+	"proofreadpage-group-other": "Uƞmá kiƞ",
+	"prp-editinsequence-page-filter-label-all": "Oyúblaye iyúha",
+	"proofreadpage-pagelist-dialog-cancel": "Yužúžu {{GENDER:|wo|we|wo/we}}",
+	"proofreadpage-pagelist-dialog-help-invisible-label": "Wóokiye",
+	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Oyúblaye",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "{{GENDER:|Hau|Haƞ|Hau/Haƞ}}",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Hiyá",
+	"proofreadpage-index-field-category-label": "Očháže"
 }
