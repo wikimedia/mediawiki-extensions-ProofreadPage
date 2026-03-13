@@ -53,6 +53,7 @@ class IndexContentHandler extends TextContentHandler {
 	 * @inheritDoc
 	 */
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_INDEX ) {
+		// @phan-suppress-next-line PhanTypeMismatchProperty
 		$this->wikitextContentHandler = MediaWikiServices::getInstance()
 			->getContentHandlerFactory()
 			->getContentHandler( CONTENT_MODEL_WIKITEXT );

@@ -68,7 +68,7 @@ class EditIndexPage extends EditPage {
 		$inputOptions['tabIndex'] = $i;
 		$fields[] = $this->buildCategoriesField( $content->getCategories(), $inputOptions );
 
-		$out->addHTML( new FieldsetLayout( [
+		$out->addHTML( (string)new FieldsetLayout( [
 			'items' => $fields,
 			'classes' => [ 'prp-index-fieldLayout' ]
 		] ) );

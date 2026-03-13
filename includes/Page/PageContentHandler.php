@@ -41,6 +41,7 @@ class PageContentHandler extends TextContentHandler {
 	public function __construct( $modelId = CONTENT_MODEL_PROOFREAD_PAGE ) {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_WIKITEXT, CONTENT_FORMAT_JSON ] );
 		$services = MediaWikiServices::getInstance();
+		// @phan-suppress-next-line PhanTypeMismatchPropertyReal
 		$this->wikitextContentHandler = $services->getContentHandlerFactory()
 			->getContentHandler( CONTENT_MODEL_WIKITEXT );
 		$this->trackingCategories = $services->getTrackingCategories();

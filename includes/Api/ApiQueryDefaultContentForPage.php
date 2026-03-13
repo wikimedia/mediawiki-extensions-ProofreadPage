@@ -37,6 +37,7 @@ class ApiQueryDefaultContentForPage extends ApiQueryBase {
 		parent::__construct( $query, $moduleName, static::$prefix );
 		$this->context = Context::getDefaultContext();
 		$this->pageContentBuilder = new PageContentBuilder( $this, $this->context );
+		// @phan-suppress-next-line PhanTypeMismatchProperty
 		$this->pageContentHandler = $contentHandlerFactory
 			->getContentHandler( CONTENT_MODEL_PROOFREAD_PAGE );
 	}
