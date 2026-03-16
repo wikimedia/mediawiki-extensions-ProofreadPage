@@ -30,8 +30,8 @@ OpenSeadragonController.prototype.constructImagePyramidSource = function () {
 		return;
 	}
 
-	const width = parseInt( this.img.getAttribute( 'width' ) );
-	const height = parseInt( this.img.getAttribute( 'height' ) );
+	const width = parseInt( this.img.naturalWidth || this.img.getAttribute( 'width' ) );
+	const height = parseInt( this.img.naturalHeight || this.img.getAttribute( 'height' ) );
 	const levels = [ {
 		url: this.img.getAttribute( 'src' ),
 		width: width,
