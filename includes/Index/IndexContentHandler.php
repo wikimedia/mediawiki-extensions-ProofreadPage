@@ -95,6 +95,7 @@ class IndexContentHandler extends TextContentHandler {
 
 	/**
 	 * @inheritDoc
+	 * @throws MWContentSerializationException
 	 */
 	public function serializeContent( Content $content, $format = null ) {
 		// if not given, default is Wikitext
@@ -126,6 +127,7 @@ class IndexContentHandler extends TextContentHandler {
 
 	/**
 	 * @inheritDoc
+	 * @throws MWContentSerializationException
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
