@@ -92,6 +92,7 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		$editForm.find( '.prp-page-edit-header' )[ method ]( speed );
 		$editForm.find( '.prp-page-edit-body label.prp-page-edit-area-label' )[ method ]( speed );
 		$editForm.find( '.prp-page-edit-footer' )[ method ]( speed );
+		$editForm.find( '.prp-page-content > .ext-WikiEditor-ResizingDragBar-ns' )[ method ]( speed );
 
 		// eslint-disable-next-line no-jquery/no-global-selector
 		const setActive = $( '.tool[rel=toggle-visibility]' ).data( 'setActive' );
@@ -255,16 +256,51 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 		// Add the resizing bar.
 		if ( typeof $.wikiEditor.createResizingDragBar === 'function' ) {
 			const bottomDragBar = $.wikiEditor.createResizingDragBar( { isEW: false } );
-			$container.after( bottomDragBar.$element );
 
 			const rightDragBar = $.wikiEditor.createResizingDragBar( { id: 'ext-ProofreadPage-right-dragbar' } );
 			const $content = $editForm.find( '.prp-page-content' );
-			$content.after( rightDragBar.$element );
+
+			const headerDragBar = $.wikiEditor.createResizingDragBar( {
+				isEW: false, minPaneSize: 30, id: 'ext-ProofreadPage-header-dragbar'
+			} );
+			const $header = $editForm.find( '.prp-page-edit-header' );
+
+			const footerDragBar = $.wikiEditor.createResizingDragBar( {
+				isEW: false, isBefore: true, minPaneSize: 30, id: 'ext-ProofreadPage-footer-dragbar'
+			} );
+			const $footer = $editForm.find( '.prp-page-edit-footer' );
+
 			mw.hook( 'ext.WikiEditor.resize' ).add( ( dragBar ) => {
 				if ( dragBar === rightDragBar && $content[ 0 ].style.width ) {
 					$content.addClass( 'prp-page-content-resized' );
+				} else if (
+					dragBar === headerDragBar && $header[ 0 ].style.height ||
+					dragBar === footerDragBar && $footer[ 0 ].style.height
+				) {
+					const $target = dragBar === headerDragBar ? $header : $footer;
+
+					// Set a max height to leave space for the body.
+					const maxHeight = ( $content.height() - 50 ) / 2;
+					$target.addClass( 'prp-page-edit-area-resized' );
+					if ( $target.height() > maxHeight ) {
+						$target.height( maxHeight );
+					}
+				} else if ( dragBar === bottomDragBar ) {
+					const maxHeight = ( $content.height() - 50 ) / 2;
+					if ( $header[ 0 ].style.height && $header.height() > maxHeight ) {
+						$header.height( maxHeight );
+					}
+					if ( $footer[ 0 ].style.height && $footer.height() > maxHeight ) {
+						$footer.height( maxHeight );
+					}
 				}
 			} );
+
+			// The resizing bars need to be added to the DOM after the hook handler is registered.
+			$container.after( bottomDragBar.$element );
+			$content.after( rightDragBar.$element );
+			$header.after( headerDragBar.$element );
+			$footer.before( footerDragBar.$element );
 
 			$editForm.find( '.wikiEditor-ui-view' ).addClass( 'wikiEditor-ui-view-resizable' );
 		}
