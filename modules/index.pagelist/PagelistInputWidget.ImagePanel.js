@@ -43,14 +43,12 @@ OO.mixinClass( ImagePanel, OO.ui.mixin.PendingElement );
  * Sets the source of the image and handles
  *
  * @param {string} url
- * @param {string} zoomUrlOnePointFive
  * @param {string} zoomUrlTwo
  * @param {number} width
  * @param {number} height
  */
 ImagePanel.prototype.setImageSrc = function (
 	url,
-	zoomUrlOnePointFive,
 	zoomUrlTwo,
 	width,
 	height
@@ -64,9 +62,9 @@ ImagePanel.prototype.setImageSrc = function (
 	this.$image.on( 'load', () => {
 		this.popPending();
 		if ( this.viewer ) {
-			this.removeMap( url, zoomUrlOnePointFive, zoomUrlTwo, width, height );
+			this.removeMap( url, zoomUrlTwo, width, height );
 		} else {
-			this.zoomPan( url, zoomUrlOnePointFive, zoomUrlTwo, width, height );
+			this.zoomPan( url, zoomUrlTwo, width, height );
 		}
 		// If we have had a 'fail to load' before, clear
 		// the setInterval cause we probably
@@ -126,30 +124,26 @@ ImagePanel.prototype.displayError = function () {
  * Swap the image tilesource, if image already exist
  *
  * @param {string} url
- * @param {string} zoomUrlOnePointFive
  * @param {string} zoomUrlTwo
  * @param {number} width
  * @param {number} height
  */
-ImagePanel.prototype.removeMap = function ( url, zoomUrlOnePointFive, zoomUrlTwo, width, height ) {
-	this.newTileSource = {
-		type: 'legacy-image-pyramid',
-		levels: [ {
-			url: url,
-			height: height,
-			width: width
-		},
-		{
-			url: zoomUrlOnePointFive,
-			height: 1.5 * height,
-			width: 1.5 * width
-		},
-		{
+ImagePanel.prototype.removeMap = function ( url, zoomUrlTwo, width, height ) {
+	const levels = [ {
+		url: url,
+		height: height,
+		width: width
+	} ];
+	if ( zoomUrlTwo ) {
+		levels.push( {
 			url: zoomUrlTwo,
 			height: 2 * height,
 			width: 2 * width
-		}
-		]
+		} );
+	}
+	this.newTileSource = {
+		type: 'legacy-image-pyramid',
+		levels: levels
 	};
 	this.viewer.open( this.newTileSource );
 
@@ -159,12 +153,23 @@ ImagePanel.prototype.removeMap = function ( url, zoomUrlOnePointFive, zoomUrlTwo
  * Add OpenSeadragon library to image, for zooming and panning.
  *
  * @param {string} url
- * @param {string} zoomUrlOnePointFive
  * @param {string} zoomUrlTwo
  * @param {number} width
  * @param {number} height
  */
-ImagePanel.prototype.zoomPan = function ( url, zoomUrlOnePointFive, zoomUrlTwo, width, height ) {
+ImagePanel.prototype.zoomPan = function ( url, zoomUrlTwo, width, height ) {
+	const levels = [ {
+		url: url,
+		height: height,
+		width: width
+	} ];
+	if ( zoomUrlTwo ) {
+		levels.push( {
+			url: zoomUrlTwo,
+			height: 2 * height,
+			width: 2 * width
+		} );
+	}
 	this.viewer = new OpenSeadragon( {
 		id: 'prp-pagelist-openseadragon',
 		zoomInButton: 'prp-openseadragon-zoomIn',
@@ -181,22 +186,7 @@ ImagePanel.prototype.zoomPan = function ( url, zoomUrlOnePointFive, zoomUrlTwo, 
 		maxZoomLevel: 4.5,
 		tileSources: {
 			type: 'legacy-image-pyramid',
-			levels: [ {
-				url: url,
-				height: height,
-				width: width
-			},
-			{
-				url: zoomUrlOnePointFive,
-				height: 1.5 * height,
-				width: 1.5 * width
-			},
-			{
-				url: zoomUrlTwo,
-				height: 2 * height,
-				width: 2 * width
-			}
-			]
+			levels: levels
 		}
 
 	} );

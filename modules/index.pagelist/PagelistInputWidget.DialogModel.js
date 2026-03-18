@@ -14,7 +14,6 @@ function DialogModel( data, mainModel ) {
 	this.mainModel = mainModel;
 	this.obj = {};
 	this.imageUrl = null;
-	this.imageZoomUrlOnePointFive = null;
 	this.imageZoomUrlTwo = null;
 	this.imageHeight = null;
 	this.imageWidth = null;
@@ -33,11 +32,10 @@ DialogModel.prototype.setData = function ( data ) {
 	this.data = data;
 	if ( this.obj[ data.subPage ] ) {
 		this.imageUrl = this.obj[ data.subPage ].imageUrl;
-		this.imageZoomUrlOnePointFive = this.obj[ data.subPage ].imageZoomUrlOnePointFive;
 		this.imageZoomUrlTwo = this.obj[ data.subPage ].imageZoomUrlTwo;
 		this.imageHeight = this.obj[ data.subPage ].imageHeight;
 		this.imageWidth = this.obj[ data.subPage ].imageWidth;
-		this.emit( 'aftersetimageurl', this.imageUrl, this.imageZoomUrlOnePointFive, this.imageZoomUrlTwo, this.imageWidth, this.imageHeight );
+		this.emit( 'aftersetimageurl', this.imageUrl, this.imageZoomUrlTwo, this.imageWidth, this.imageHeight );
 	} else {
 		this.generateImageLink( data );
 	}
@@ -55,6 +53,7 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 		subpage = data.subPage || 1,
 		imageSize = 1280; // arbitrary number, same as used at PageDisplayHandler.php
 	this.api.get( {
+		formatversion: 2,
 		action: 'query',
 		prop: 'imageinfo',
 		indexpageids: true,
@@ -65,7 +64,7 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 		let imageInfo;
 
 		try {
-			imageInfo = response.query.pages[ response.query.pageids[ 0 ] ].imageinfo[ 0 ];
+			imageInfo = response.query.pages[ 0 ].imageinfo[ 0 ];
 		} catch ( e ) {
 			this.emit( 'imageurlnotfound' );
 			mw.log.error( e, response );
@@ -73,8 +72,7 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 		}
 
 		const imageUrl = imageInfo.thumburl;
-		const imageZoomUrlOnePointFive = imageInfo.responsiveUrls[ 1.5 ];
-		const imageZoomUrlTwo = imageInfo.responsiveUrls[ 2 ];
+		const imageZoomUrlTwo = ( imageInfo.responsiveUrls && imageInfo.responsiveUrls[ 2 ] ) || null;
 		const imageWidth = imageInfo.thumbwidth;
 		const imageHeight = imageInfo.thumbheight;
 
@@ -84,13 +82,12 @@ DialogModel.prototype.generateImageLink = function ( data ) {
 			return;
 		}
 		this.obj[ subpage ] = {
-			imageUrl: imageInfo.thumburl,
-			imageZoomUrlOnePointFive: imageInfo.responsiveUrls[ 1.5 ],
-			imageZoomUrlTwo: imageInfo.responsiveUrls[ 2 ],
-			imageWidth: imageInfo.thumbwidth,
-			imageHeight: imageInfo.thumbheight
+			imageUrl: imageUrl,
+			imageZoomUrlTwo: imageZoomUrlTwo,
+			imageWidth: imageWidth,
+			imageHeight: imageHeight
 		};
-		this.emit( 'aftersetimageurl', imageUrl, imageZoomUrlOnePointFive, imageZoomUrlTwo, imageWidth, imageHeight );
+		this.emit( 'aftersetimageurl', imageUrl, imageZoomUrlTwo, imageWidth, imageHeight );
 	} ).catch( ( e ) => {
 		this.emit( 'imageurlnotfound' );
 		mw.log.error( e );
