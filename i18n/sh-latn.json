@@ -23,7 +23,7 @@
 	"proofreadpage_nosuch_file_for_index_category": "Indeksne stranice sa oznakama liste stranica koje se odnose na nepostojeću datoteku",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Oznaka <code><nowiki><pagelist/></nowiki></code> odnosi se na nepostojeću datoteku.",
 	"proofreadpage_nosuch_file": "Greška: nema takve datoteke",
-	"proofreadpage_indexdupetext": "Stranice ne mogu biti prikazane više od jedanput na stranici indeksa.",
+	"proofreadpage_indexdupetext": "Stranice se ne mogu prikazati više od jedanput na stranici indeksa.",
 	"proofreadpage_nologin": "Niste prijavljeni",
 	"proofreadpage_nologintext": "Morate biti [[Special:UserLogin|prijavljeni]] da biste mijenjali status lektoriranja stranica.",
 	"proofreadpage_notallowedtext": "Nemate ovlaštenja da mijenjate status lektoriranja ove stranice.",
