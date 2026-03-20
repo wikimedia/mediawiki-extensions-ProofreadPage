@@ -33,7 +33,7 @@
 	"proofreadpage_dataconfig_badformattedtext": "Stranica [[MediaWiki:Proofreadpage index data config]] nije u dobro formatiranom JSON-u.",
 	"proofreadpage_number_expected": "Greška: očekivana je brojčana vrijednost",
 	"proofreadpage_interval_too_large": "Greška: interval je prevelik",
-	"proofreadpage_invalid_interval": "Greška: interval nije važeći",
+	"proofreadpage_invalid_interval": "Greška: neispravan interval",
 	"proofreadpage_nextpage": "Sljedeća stranica",
 	"proofreadpage_nextpage_label": "Idi na sljedeću stranicu",
 	"proofreadpage_prevpage": "Prethodna stranica",
