@@ -98,7 +98,9 @@
 		"ProofreadPage\\Page\\PageQualityLevelLookupMock": "tests/phpunit/Page/PageQualityLevelLookupMock.php",
 		"ProofreadPage\\Index\\IndexContentLookupMock": "tests/phpunit/Index/IndexContentLookupMock.php",
 		"ProofreadPage\\Index\\IndexQualityStatsLookupMock": "tests/phpunit/Index/IndexQualityStatsLookupMock.php",
-		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php"
+		"ProofreadPageTestCase": "tests/phpunit/ProofreadPageTestCase.php",
+		"ProofreadPage\\Scribunto\\IndexAndPageLibraryTestBase": "tests/phpunit/Scribunto/IndexAndPageLibraryTestBase.php",
+		"ProofreadPage\\Scribunto\\ProofreadPageLibraryTestBase": "tests/phpunit/Scribunto/ProofreadPageLibraryTestBase.php"
 	},
 	"ForeignResourcesDir": "modules/lib",
 	"ResourceModules": {
