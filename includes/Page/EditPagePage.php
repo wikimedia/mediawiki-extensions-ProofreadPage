@@ -4,7 +4,6 @@ namespace ProofreadPage\Page;
 
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Html\Html;
-use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\Article;
 use MediaWiki\Permissions\PermissionManager;
@@ -109,9 +108,6 @@ class EditPagePage extends EditPage {
 		$out->addModuleStyles( [ 'ext.proofreadpage.page.edit.styles' ] );
 
 		$jsVars = $this->pageDisplayHandler->getPageJsConfigVars( $this->getTitle(), $content );
-
-		// Add ThumbnailSteps for use by OpenseadragonController.js
-		$jsVars['wgThumbnailSteps'] = $this->context->getConfig()->get( MainConfigNames::ThumbnailSteps );
 
 		$out->addJsConfigVars( $jsVars );
 

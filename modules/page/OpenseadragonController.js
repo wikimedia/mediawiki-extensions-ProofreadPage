@@ -20,40 +20,65 @@ function OpenSeadragonController( $img, usebetatoolbar ) {
 OO.mixinClass( OpenSeadragonController, OO.EventEmitter );
 
 /**
+ * Get image dimension from the image URL.
+ *
+ * @param {string} url
+ * @return {Promise} Promise that resolves to width and height of the image
+ */
+OpenSeadragonController.prototype.getImageInfo = function ( url ) {
+	return new Promise( ( resolve, reject ) => {
+		const image = new Image();
+
+		image.addEventListener( 'load', () => {
+			resolve( {
+				width: image.naturalWidth,
+				height: image.naturalHeight
+			} );
+		} );
+
+		image.addEventListener( 'error', () => {
+			reject( new Error( 'Failed to load image: ' + url ) );
+		} );
+
+		image.src = url;
+	} );
+};
+
+/**
  * Construct an OpenSeadragon legacy-image-pyramid tile source from the
  * image element on the page
  *
- * @return {Object} OSD tile source constructor options
+ * @return {Promise} OSD tile source constructor options
  */
-OpenSeadragonController.prototype.constructImagePyramidSource = function () {
+OpenSeadragonController.prototype.constructImagePyramidSource = async function () {
 	if ( this.noImageFound ) {
 		return;
 	}
 
-	const width = parseInt( this.img.naturalWidth || this.img.getAttribute( 'width' ) );
-	const height = parseInt( this.img.naturalHeight || this.img.getAttribute( 'height' ) );
+	const url = this.img.getAttribute( 'src' );
+	const { width, height } = await this.getImageInfo( url );
 	const levels = [ {
-		url: this.img.getAttribute( 'src' ),
+		url: url,
 		width: width,
 		height: height
 	} ];
 
 	// Occasionally, there is no srcset set on the server
 	const srcSet = this.img.getAttribute( 'srcset' );
-	const thumbnailSteps = mw.config.get( 'wgThumbnailSteps' );
 	if ( srcSet ) {
 		const parts = srcSet.split( ' ' );
 		for ( let i = 0; i < parts.length - 1; i += 2 ) {
 			const srcUrl = parts[ i ];
-			const srcFactor = parseFloat( parts[ i + 1 ].replace( /x,?/, '' ) );
-			if ( thumbnailSteps instanceof Array && !thumbnailSteps.includes( srcFactor * width ) ) {
-				continue;
+			try {
+				const { width: srcWidth, height: srcHeight } = await this.getImageInfo( srcUrl );
+				levels.push( {
+					url: srcUrl,
+					width: srcWidth,
+					height: srcHeight
+				} );
+			} catch ( e ) {
+				mw.log.warn( e );
 			}
-			levels.push( {
-				url: srcUrl,
-				width: srcFactor * width,
-				height: srcFactor * height
-			} );
 		}
 	}
 
@@ -68,13 +93,13 @@ OpenSeadragonController.prototype.constructImagePyramidSource = function () {
  *
  * @param {string} id
  */
-OpenSeadragonController.prototype.initialize = function ( id ) {
+OpenSeadragonController.prototype.initialize = async function ( id ) {
 
 	if ( this.noImageFound ) {
 		return;
 	}
 
-	const tileSource = this.constructImagePyramidSource( this.img );
+	const tileSource = await this.constructImagePyramidSource( this.img );
 
 	// Set the OSD strings before setting up the buttons
 	const osdStringMap = [
