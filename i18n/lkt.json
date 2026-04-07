@@ -6,10 +6,15 @@
 		]
 	},
 	"nstab-page": "Oyúblaye",
+	"tooltip-ca-nstab-page": "Wówapi oyúblaye kiŋ waŋyáŋka {{GENDER:|yo|ye|yo/ye}}",
 	"proofreadpage_image": "Itówapi",
 	"proofreadpage_nologin": "Čhaž'ónigwa šni",
 	"proofreadpage_nextpage": "Oyúblaye íyokhihe",
+	"proofreadpage_nextpage_label": "Oyúblaye íyokhihe ya {{GENDER:|yo|ye|yo/ye}}",
 	"proofreadpage_prevpage": "Oyúblaye hékta",
+	"proofreadpage_prevpage_label": "Oyúblaye hékta ya {{GENDER:|yo|ye|yo/ye}}",
+	"proofreadpage_quality0_category": "Wičhóiye waníča",
+	"proofreadpage_quality0_summary": "Wičhóiye waníča",
 	"proofreadpage_index_size": "Oyúblaye henákeča",
 	"proofreadpage_specialpage_filterby_all": "Iyúha",
 	"proofreadpage_specialpage_label_key": "Wóle:",
@@ -22,11 +27,15 @@
 	"prp-editinsequence-save-next-action-do-nothing": "Tákuni ečhuŋ šni {{GENDER:|yo|ye|yo/ye}}",
 	"prp-editinsequence-save-next-action-go-to-next": "Oyúblaye íyokhihe ya {{GENDER:|yo|ye|yo/ye}}",
 	"prp-editinsequence-save-next-action-go-to-prev": "Oyúblaye hékta ya {{GENDER:|yo|ye|yo/ye}}",
+	"prp-editinsequence-editsummary-placeholder": "Wóyutȟokča glaítowa {{GENDER:|yo|ye|yo/ye}}",
+	"prp-editinsequence-could-not-save-edit": "Wóyutȟokča éyagnaka oyákihi šni",
 	"prp-editinsequence-page-filter-label-all": "Oyúblaye iyúha",
 	"proofreadpage-pagelist-dialog-cancel": "Yužúžu {{GENDER:|wo|we|wo/we}}",
 	"proofreadpage-pagelist-dialog-help-invisible-label": "Wóokiye",
+	"content-model-proofread-page": "Wówapi oyúblaye",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "Oyúblaye",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "{{GENDER:|Hau|Haƞ|Hau/Haƞ}}",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Hiyá",
-	"proofreadpage-index-field-category-label": "Očháže"
+	"proofreadpage-index-field-category-label": "Očháže",
+	"tag-proofreadpage-quality0": "Wičhóiye waníča"
 }
