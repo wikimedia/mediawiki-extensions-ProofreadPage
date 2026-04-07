@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Neronno"
+			"Neronno",
+			"WikiFayo95"
 		]
 	},
 	"nstab-page": "Siid",
@@ -9,7 +10,7 @@
 	"tooltip-ca-nstab-page": "Däi bauksiid bekiiken",
 	"tooltip-ca-nstab-index": "Däi baukindeks bekiiken",
 	"indexpages": "Liest fan indekssiiden",
-	"proofreadpage_index": "Liest",
+	"proofreadpage_index": "Indeks",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "Jóó",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nē"
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Nee"
 }
