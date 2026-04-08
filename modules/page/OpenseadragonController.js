@@ -31,6 +31,7 @@ OpenSeadragonController.prototype.getImageInfo = function ( url ) {
 
 		image.addEventListener( 'load', () => {
 			resolve( {
+				url,
 				width: image.naturalWidth,
 				height: image.naturalHeight
 			} );
@@ -55,31 +56,13 @@ OpenSeadragonController.prototype.constructImagePyramidSource = async function (
 		return;
 	}
 
-	const url = this.img.getAttribute( 'src' );
-	const { width, height } = await this.getImageInfo( url );
-	const levels = [ {
-		url: url,
-		width: width,
-		height: height
-	} ];
-
-	// Occasionally, there is no srcset set on the server
-	const srcSet = this.img.getAttribute( 'srcset' );
-	if ( srcSet ) {
-		const parts = srcSet.split( ' ' );
-		for ( let i = 0; i < parts.length - 1; i += 2 ) {
-			const srcUrl = parts[ i ];
-			try {
-				const { width: srcWidth, height: srcHeight } = await this.getImageInfo( srcUrl );
-				levels.push( {
-					url: srcUrl,
-					width: srcWidth,
-					height: srcHeight
-				} );
-			} catch ( e ) {
-				mw.log.warn( e );
-			}
-		}
+	const levels = [];
+	try {
+		// currentSrc may be a higher resolution image from srcset
+		levels.push( await this.getImageInfo( this.img.currentSrc ) );
+	} catch ( e ) {
+		const url = this.img.getAttribute( 'src' );
+		levels.push( await this.getImageInfo( url ) );
 	}
 
 	return {
