@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"555",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardoaddad"
 		]
 	},
+	"apihelp-query+imageforpage-summary": "Pré-compõe e fornece os URL para as imagens, para uma determinada página do espaço nominal \"Página:\".",
 	"apierror-proofreadpage-invalidindex": "Título de índice de digitalizações inválido: \"$1\"",
 	"apihelp-query+proofread-summary": "Retorna informações sobre o status de revisão atual das páginas fornecidas.",
 	"apihelp-query+proofread-example-1": "Retornar status de revisão para páginas no espaço nominal 250",
