@@ -134,7 +134,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @param Title[] $indexForPage
 	 * @param IndexContent[] $indexContent
 	 * @param int[] $levelForPage
-	 * @param @param array<string,PagesQualityStats> $qualityStatsForIndex
+	 * @param array<string,PagesQualityStats> $qualityStatsForIndex
 	 * @return Context
 	 */
 	protected static function getContext(
