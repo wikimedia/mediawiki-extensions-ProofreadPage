@@ -20,69 +20,15 @@ function OpenSeadragonController( $img, usebetatoolbar ) {
 OO.mixinClass( OpenSeadragonController, OO.EventEmitter );
 
 /**
- * Get image dimension from the image URL.
- *
- * @param {string} url
- * @return {Promise} Promise that resolves to width and height of the image
- */
-OpenSeadragonController.prototype.getImageInfo = function ( url ) {
-	return new Promise( ( resolve, reject ) => {
-		const image = new Image();
-
-		image.addEventListener( 'load', () => {
-			resolve( {
-				url,
-				width: image.naturalWidth,
-				height: image.naturalHeight
-			} );
-		} );
-
-		image.addEventListener( 'error', () => {
-			reject( new Error( 'Failed to load image: ' + url ) );
-		} );
-
-		image.src = url;
-	} );
-};
-
-/**
- * Construct an OpenSeadragon legacy-image-pyramid tile source from the
- * image element on the page
- *
- * @return {Promise} OSD tile source constructor options
- */
-OpenSeadragonController.prototype.constructImagePyramidSource = async function () {
-	if ( this.noImageFound ) {
-		return;
-	}
-
-	const levels = [];
-	try {
-		// currentSrc may be a higher resolution image from srcset
-		levels.push( await this.getImageInfo( this.img.currentSrc ) );
-	} catch ( e ) {
-		const url = this.img.getAttribute( 'src' );
-		levels.push( await this.getImageInfo( url ) );
-	}
-
-	return {
-		type: 'legacy-image-pyramid',
-		levels: levels
-	};
-};
-
-/**
  * Initialize the zoom system
  *
  * @param {string} id
  */
-OpenSeadragonController.prototype.initialize = async function ( id ) {
+OpenSeadragonController.prototype.initialize = function ( id ) {
 
 	if ( this.noImageFound ) {
 		return;
 	}
-
-	const tileSource = await this.constructImagePyramidSource( this.img );
 
 	// Set the OSD strings before setting up the buttons
 	const osdStringMap = [
@@ -109,7 +55,11 @@ OpenSeadragonController.prototype.initialize = async function ( id ) {
 		zoomPerClick: this.zoomFactor,
 		zoomPerScroll: this.zoomFactor,
 		timeout: 2 * 60 * 1000, // 2 minutes
-		tileSources: tileSource
+		tileSources: {
+			type: 'image',
+			url: this.img.currentSrc,
+			buildPyramid: false
+		}
 	};
 
 	if ( this.usebetatoolbar ) {
