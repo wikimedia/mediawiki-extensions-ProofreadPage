@@ -17,6 +17,8 @@ use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**
  * @license GPL-2.0-or-later
+ * @method PageContent getCurrentContent()
+ * @method PageContent toEditContent(string|false|null)
  */
 class EditPagePage extends EditPage {
 
@@ -157,7 +159,6 @@ class EditPagePage extends EditPage {
 			return $checkboxes;
 		}
 
-		// @phan-suppress-next-line PhanUndeclaredMethod
 		$oldLevel = $this->getCurrentContent()->getLevel();
 		$hasRight = $this->permissionManager->userHasRight( $this->context->getUser(), 'pagequality' );
 		$levels = [];
@@ -177,7 +178,6 @@ class EditPagePage extends EditPage {
 			'tabIndex' => ++$tabindex,
 			'disabled' => !$hasRight,
 			'levels' => $levels,
-			// @phan-suppress-next-line PhanUndeclaredMethod
 			'value' => $this->toEditContent( $this->textbox1 )->getLevel()->getLevel(),
 		] );
 
@@ -201,7 +201,6 @@ class EditPagePage extends EditPage {
 	protected function importContentFormData( &$request ) {
 		/** @var PageContent $content */
 		$content = $this->getCurrentContent();
-		// @phan-suppress-next-line PhanUndeclaredMethod
 		$oldLevel = $content->getLevel();
 
 		return $this->pageContentBuilder->buildContentFromInput(

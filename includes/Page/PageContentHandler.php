@@ -48,7 +48,7 @@ class PageContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @return string
+	 * @return class-string<PageContent>
 	 */
 	protected function getContentClass() {
 		return PageContent::class;

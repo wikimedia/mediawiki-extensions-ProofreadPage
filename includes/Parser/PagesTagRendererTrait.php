@@ -2,6 +2,8 @@
 
 namespace ProofreadPage\Parser;
 
+use HtmlArmor;
+use MediaWiki\Language\Language;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;
@@ -16,37 +18,47 @@ use ProofreadPage\Pagination\PageNumber;
  * Trait for rendering pages tags.
  */
 trait PagesTagRendererTrait {
-	/** @inheritDoc */
-	abstract public function getTitle();
+	abstract public function getTitle(): Title;
 
-	/** @inheritDoc */
+	/** @param string $category */
 	abstract public function addTrackingCategory( $category ): void;
 
-	/** @inheritDoc */
 	abstract public function getPageNamespaceId(): int;
 
-	/** @inheritDoc */
 	abstract public function getIndexNamespaceId(): int;
 
-	/** @inheritDoc */
+	/** @param string $expression */
 	abstract public function getPageNumberExpression( $expression ): string;
 
-	/** @inheritDoc */
+	/**
+	 * @param Title $title
+	 * @param int $articleId
+	 * @param int $revId
+	 */
 	abstract public function addTemplate( $title, $articleId, $revId ): void;
 
-	/** @inheritDoc */
+	/**
+	 * @param Title $title
+	 * @param string|HtmlArmor|null $text
+	 * @param array $options
+	 */
 	abstract public function makeLink( $title, $text, $options = [] ): string;
 
-	/** @inheritDoc */
+	/**
+	 * @param string $title
+	 * @param string|false $timestamp
+	 * @param string|false $sha1
+	 */
 	abstract public function addImage( $title, $timestamp, $sha1 ): void;
 
-	/** @inheritDoc */
+	/**
+	 * @param string $key
+	 * @param mixed $value
+	 */
 	abstract public function setExtensionData( $key, $value ): void;
 
-	/** @inheritDoc */
-	abstract public function getTargetLanguage();
+	abstract public function getTargetLanguage(): Language;
 
-	/** @inheritDoc */
 	abstract public function preprocessWikitext( string $wikitext, Title $title ): string;
 
 	/**

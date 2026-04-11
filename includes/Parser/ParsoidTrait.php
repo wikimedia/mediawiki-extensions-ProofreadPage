@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Parser;
 
+use HtmlArmor;
 use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Parser\ParserOutput;
@@ -93,7 +94,7 @@ trait ParsoidTrait {
 	 * Create a link to a page.
 	 *
 	 * @param Title $title Target title
-	 * @param string|null $text Link text
+	 * @param string|HtmlArmor|null $text Link text
 	 * @param array $options Link options
 	 * @return string The rendered link
 	 */

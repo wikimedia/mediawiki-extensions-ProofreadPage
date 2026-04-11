@@ -49,7 +49,7 @@ class ParserHelper {
 	 * Fetches unparsed text of a template
 	 * @param Title $title
 	 * @see \Parser::fetchTemplateAndTitle()
-	 * @return array (string|bool, Title)
+	 * @return array{0:string|false,1:Title}
 	 */
 	public function fetchTemplateTextAndTitle( Title $title ) {
 		return $this->parser->fetchTemplateAndTitle( $title );

@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Parser;
 
+use HtmlArmor;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
@@ -74,7 +75,7 @@ trait LegacyParserTrait {
 	 * Create a link to a page.
 	 *
 	 * @param Title $title Target title
-	 * @param string|null $text Link text
+	 * @param string|HtmlArmor|null $text Link text
 	 * @param array $options Link options
 	 * @return string The rendered link
 	 */

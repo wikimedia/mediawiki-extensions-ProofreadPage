@@ -64,7 +64,7 @@ class IndexContentHandler extends TextContentHandler {
 	}
 
 	/**
-	 * @return string
+	 * @return class-string<IndexContent>
 	 */
 	protected function getContentClass() {
 		return IndexContent::class;
