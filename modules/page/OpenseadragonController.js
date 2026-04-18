@@ -55,6 +55,8 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 		zoomPerClick: this.zoomFactor,
 		zoomPerScroll: this.zoomFactor,
 		timeout: 2 * 60 * 1000, // 2 minutes
+		// Use canvas rather than webgl to work around CORS issue. T423548.
+		drawer: 'canvas',
 		tileSources: {
 			type: 'image',
 			url: this.img.currentSrc,
