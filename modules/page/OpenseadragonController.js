@@ -153,10 +153,11 @@ OpenSeadragonController.prototype.initializeViewportFromSavedData = function ( i
 OpenSeadragonController.prototype.forceInitialize = function () {
 	this.initialize( this.lastId );
 };
+
 /**
- * Returns a URL to the current image source
+ * Returns the URL to the current image source.
  *
- * @return {string} url to the image
+ * @return {string} URL to the image
  * @public
  */
 OpenSeadragonController.prototype.getCurrentImage = function () {
@@ -164,7 +165,7 @@ OpenSeadragonController.prototype.getCurrentImage = function () {
 	try {
 		url = this.viewer.source.getTileUrl( this.viewer.source.getClosestLevel(), 0, 0 );
 	} catch ( e ) {
-		url = this.img;
+		url = this.img.currentSrc;
 	}
 
 	// Normalize the URL, here we create anchor tag and set the href. This
