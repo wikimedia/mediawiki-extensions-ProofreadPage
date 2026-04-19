@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Parser;
 
-use HtmlArmor;
 use MediaWiki\Language\Language;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
@@ -13,6 +12,7 @@ use ProofreadPage\Link;
 use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageNumber;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 /**
  * Trait for rendering pages tags.

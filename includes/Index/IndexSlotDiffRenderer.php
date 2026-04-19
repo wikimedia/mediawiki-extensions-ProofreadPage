@@ -5,9 +5,9 @@ namespace ProofreadPage\Index;
 use MediaWiki\Content\Content;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Diff\SlotDiffRenderer;
 use MediaWiki\Title\Title;
 use ProofreadPage\DiffFormatterUtils;
-use SlotDiffRenderer;
 
 /**
  * SlotDiffRenderer for Index: pages content model

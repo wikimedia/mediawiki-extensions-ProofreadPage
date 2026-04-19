@@ -4,9 +4,9 @@ namespace ProofreadPage\Page;
 
 use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Diff\SlotDiffRenderer;
 use MediaWiki\Html\Html;
 use ProofreadPage\DiffFormatterUtils;
-use SlotDiffRenderer;
 
 /**
  * SlotDiffRenderer for Page: pages content model

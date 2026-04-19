@@ -3,15 +3,15 @@
 namespace ProofreadPage\Page;
 
 use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\ContentSerializationException;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Exception\MWContentSerializationException;
+use MediaWiki\Diff\SlotDiffRenderer;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentityValue;
 use ProofreadPageTestCase;
-use SlotDiffRenderer;
 
 /**
  * @group ProofreadPage
@@ -276,7 +276,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider badPageJsonSerializationProvider
 	 */
 	public function testUnserializeBadContentInJson( $text ) {
-		$this->expectException( MWContentSerializationException::class );
+		$this->expectException( ContentSerializationException::class );
 		$this->handler->unserializeContent( $text, CONTENT_FORMAT_JSON );
 	}
 

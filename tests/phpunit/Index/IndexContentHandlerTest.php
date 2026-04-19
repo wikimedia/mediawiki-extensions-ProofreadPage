@@ -4,11 +4,12 @@ namespace ProofreadPage\Index;
 
 use MediaWiki\Content\Content;
 use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\ContentSerializationException;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Content\ValidationParams;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Exception\MWContentSerializationException;
+use MediaWiki\Diff\SlotDiffRenderer;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Page\WikiPage;
 use MediaWiki\Parser\ParserOptions;
@@ -19,7 +20,6 @@ use MediaWiki\User\UserIdentityValue;
 use ProofreadPage\Context;
 use ProofreadPage\Pagination\PaginationFactory;
 use ProofreadPageTestCase;
-use SlotDiffRenderer;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
 
@@ -120,7 +120,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 	 * @dataProvider jsonExceptionSerializationProvider
 	 */
 	public function testJsonSerialisationExceptions( TextContent $content ) {
-		$this->expectException( MWContentSerializationException::class );
+		$this->expectException( ContentSerializationException::class );
 		$this->handler->serializeContent( $content, CONTENT_FORMAT_JSON );
 	}
 
@@ -531,7 +531,7 @@ class IndexContentHandlerTest extends ProofreadPageTestCase {
 	 */
 	public function testJsonUnserialisationExceptions( string $jsonSerialization,
 		string $expectedMessage ) {
-		$this->expectException( MWContentSerializationException::class );
+		$this->expectException( ContentSerializationException::class );
 		$this->expectExceptionMessage( $expectedMessage );
 
 		$fromJson = $this->handler->unserializeContent(

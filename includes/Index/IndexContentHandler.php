@@ -3,6 +3,7 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\Content\Content;
+use MediaWiki\Content\ContentSerializationException;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\TextContentHandler;
 use MediaWiki\Content\Transform\PreloadTransformParams;
@@ -11,7 +12,6 @@ use MediaWiki\Content\ValidationParams;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Content\WikitextContentHandler;
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Exception\MWContentSerializationException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOptions;
@@ -96,7 +96,7 @@ class IndexContentHandler extends TextContentHandler {
 
 	/**
 	 * @inheritDoc
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	public function serializeContent( Content $content, $format = null ) {
 		// if not given, default is Wikitext
@@ -111,7 +111,7 @@ class IndexContentHandler extends TextContentHandler {
 		}
 
 		if ( !( $content instanceof IndexContent ) ) {
-			throw new MWContentSerializationException(
+			throw new ContentSerializationException(
 				'IndexContentHandler could only serialize IndexContent'
 			);
 		}
@@ -119,7 +119,7 @@ class IndexContentHandler extends TextContentHandler {
 		return match ( $format ) {
 			CONTENT_FORMAT_JSON => $this->serializeContentInJson( $content ),
 			CONTENT_FORMAT_WIKITEXT => $this->serializeContentInWikitext( $content ),
-			default => throw new MWContentSerializationException(
+			default => throw new ContentSerializationException(
 				"Format '$format' is not supported for serialization of content model " .
 				$this->getModelID()
 			)
@@ -128,7 +128,7 @@ class IndexContentHandler extends TextContentHandler {
 
 	/**
 	 * @inheritDoc
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
@@ -147,7 +147,7 @@ class IndexContentHandler extends TextContentHandler {
 
 	/**
 	 * @param IndexContent $content
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 * @return string
 	 */
 	private function serializeContentInWikitext( IndexContent $content ): string {
@@ -211,7 +211,7 @@ class IndexContentHandler extends TextContentHandler {
 
 	/**
 	 * @param IndexContent $content
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 * @return string
 	 */
 	public function serializeContentInJson( IndexContent $content ): string {
@@ -235,13 +235,13 @@ class IndexContentHandler extends TextContentHandler {
 	/**
 	 * @param string $text
 	 * @return IndexContent
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	private function unserializeContentInJson( $text ): IndexContent {
 		$array = json_decode( $text, true );
 
 		if ( !is_array( $array ) ) {
-			throw new MWContentSerializationException(
+			throw new ContentSerializationException(
 				'The serialization is an invalid JSON array.'
 			);
 		}
@@ -262,7 +262,7 @@ class IndexContentHandler extends TextContentHandler {
 				if ( $title ) {
 					$categories[] = $title;
 				} else {
-					throw new MWContentSerializationException(
+					throw new ContentSerializationException(
 						"The category title '$category' is invalid."
 					);
 				}

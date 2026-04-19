@@ -2,12 +2,12 @@
 
 namespace ProofreadPage\Parser;
 
-use HtmlArmor;
 use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
+use Wikimedia\HtmlArmor\HtmlArmor;
 use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
 
 /**

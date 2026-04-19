@@ -2,8 +2,8 @@
 
 namespace ProofreadPage\Pagination;
 
-use MediaHandler;
 use MediaWiki\Content\WikitextContent;
+use MediaWiki\Media\MediaHandler;
 use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexContent;
 use ProofreadPageTestCase;

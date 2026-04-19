@@ -4,9 +4,9 @@ namespace ProofreadPage\Index;
 
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Diff\TextSlotDiffRenderer;
 use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
-use TextSlotDiffRenderer;
 
 /**
  * @group ProofreadPage

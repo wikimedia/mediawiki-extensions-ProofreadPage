@@ -2,10 +2,10 @@
 
 namespace ProofreadPage\Page;
 
-use MediaHandler;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Media\MediaHandler;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use ProofreadPage\FileNotFoundException;

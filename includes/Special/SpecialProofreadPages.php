@@ -21,15 +21,15 @@
 
 namespace ProofreadPage\Special;
 
-use ISearchResultSet;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Search\ISearchResultSet;
 use MediaWiki\Search\SearchEngineFactory;
+use MediaWiki\Search\SearchResult;
 use MediaWiki\Skin\Skin;
 use MediaWiki\SpecialPage\QueryPage;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
-use SearchResult;
 
 class SpecialProofreadPages extends QueryPage {
 	/** @var string|null */

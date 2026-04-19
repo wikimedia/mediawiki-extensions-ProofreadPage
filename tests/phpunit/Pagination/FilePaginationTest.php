@@ -3,7 +3,7 @@
 namespace ProofreadPage\Pagination;
 
 use InvalidArgumentException;
-use MediaHandler;
+use MediaWiki\Media\MediaHandler;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPageTestCase;

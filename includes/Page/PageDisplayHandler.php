@@ -2,9 +2,9 @@
 
 namespace ProofreadPage\Page;
 
-use MediaTransformOutput;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
+use MediaWiki\Media\MediaTransformOutput;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 use ProofreadPage\Context;

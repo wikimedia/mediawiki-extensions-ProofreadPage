@@ -3,6 +3,7 @@
 namespace ProofreadPage\Parser;
 
 use MediaWiki\Language\Language;
+use MediaWiki\Language\LanguageFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
@@ -21,7 +22,7 @@ class ParsoidPagesTagParser extends ExtensionTagHandler {
 
 	private ParsoidExtensionAPI $extApi;
 	private Context $context;
-	private \MediaWiki\Languages\LanguageFactory $languageFactory;
+	private LanguageFactory $languageFactory;
 	private bool $useParsoid;
 
 	public function __construct() {

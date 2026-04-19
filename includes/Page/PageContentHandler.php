@@ -4,6 +4,7 @@ namespace ProofreadPage\Page;
 
 use MediaWiki\Category\TrackingCategories;
 use MediaWiki\Content\Content;
+use MediaWiki\Content\ContentSerializationException;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\TextContentHandler;
 use MediaWiki\Content\Transform\PreloadTransformParams;
@@ -11,7 +12,6 @@ use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Content\WikitextContentHandler;
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Exception\MWContentSerializationException;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\ParserOutput;
@@ -215,14 +215,14 @@ class PageContentHandler extends TextContentHandler {
 	/**
 	 * @param string $text
 	 * @return PageContent
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 * @suppress PhanTypeMismatchArgument
 	 */
 	private function unserializeContentInJson( $text ) {
 		$array = json_decode( $text, true );
 
 		if ( !is_array( $array ) ) {
-			throw new MWContentSerializationException(
+			throw new ContentSerializationException(
 				'The serialization is an invalid JSON array.'
 			);
 		}

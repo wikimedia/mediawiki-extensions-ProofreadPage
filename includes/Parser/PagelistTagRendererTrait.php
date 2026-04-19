@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Parser;
 
-use HtmlArmor;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
@@ -10,6 +9,7 @@ use ProofreadPage\Pagination\FilePagination;
 use ProofreadPage\Pagination\PageList;
 use ProofreadPage\Pagination\SimpleFilePagination;
 use ProofreadPage\ProofreadPage;
+use Wikimedia\HtmlArmor\HtmlArmor;
 use Wikimedia\Parsoid\DOM\DocumentFragment;
 
 /**

@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use MediaWiki\Exception\MWContentSerializationException;
+use MediaWiki\Content\ContentSerializationException;
 use ProofreadPageTestCase;
 
 /**
@@ -40,7 +40,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 	 */
 	public function testAssertArrayValueIsArray( $value, bool $isArray ) {
 		if ( !$isArray ) {
-			$this->expectException( MWContentSerializationException::class );
+			$this->expectException( ContentSerializationException::class );
 			$this->expectExceptionMessage( "The serialization key 'foo' should be an array." );
 		}
 		self::assertArrayValueIsArray( $value, "foo" );
@@ -128,7 +128,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 	public function testAssertArrayKeyExists( $value, bool $expectExists ) {
 		$key = 'foo';
 		if ( !$expectExists ) {
-			$this->expectException( MWContentSerializationException::class );
+			$this->expectException( ContentSerializationException::class );
 			$this->expectExceptionMessage( "The serialization should contain a '{$key}' entry." );
 		}
 		self::assertArrayKeyExistsInSerialization( $key, $value );
@@ -196,7 +196,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 	public function testArrayContainsOnlyStrings( array $array, bool $emptyAllowed, bool $expectedOk, $msg ) {
 		$key = 'foo';
 		if ( !$expectedOk ) {
-			$this->expectException( MWContentSerializationException::class );
+			$this->expectException( ContentSerializationException::class );
 			$this->expectExceptionMessage( $msg );
 		}
 		self::assertContainsOnlyStrings( $array, $emptyAllowed, $key );
@@ -326,7 +326,7 @@ class MultiFormatSerializerUtilsTest extends ProofreadPageTestCase {
 	 */
 	public function testAssertRedirectFormat( string $format, bool $expectSuitable ) {
 		if ( !$expectSuitable ) {
-			$this->expectException( MWContentSerializationException::class );
+			$this->expectException( ContentSerializationException::class );
 			$this->expectExceptionMessage( "Redirects cannot be serialised as $format" );
 		}
 		self::assertFormatSuitableForRedirect( $format );

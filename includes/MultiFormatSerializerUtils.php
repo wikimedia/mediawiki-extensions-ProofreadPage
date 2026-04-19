@@ -2,7 +2,7 @@
 
 namespace ProofreadPage;
 
-use MediaWiki\Exception\MWContentSerializationException;
+use MediaWiki\Content\ContentSerializationException;
 
 /**
  * Serializer that supports Wikitext and JSON, which is something supported
@@ -13,11 +13,11 @@ trait MultiFormatSerializerUtils {
 	/**
 	 * @param string $key
 	 * @param array $serialization
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	protected static function assertArrayKeyExistsInSerialization( $key, array $serialization ) {
 		if ( !array_key_exists( $key, $serialization ) ) {
-			throw new MWContentSerializationException(
+			throw new ContentSerializationException(
 				"The serialization should contain a '$key' entry."
 			);
 		}
@@ -26,11 +26,11 @@ trait MultiFormatSerializerUtils {
 	/**
 	 * @param array $serialization
 	 * @param string $key
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	protected static function assertArrayValueIsArray( array $serialization, $key ) {
 		if ( !is_array( $serialization[ $key ] ) ) {
-			throw new MWContentSerializationException(
+			throw new ContentSerializationException(
 				"The serialization key '$key' should be an array."
 			);
 		}
@@ -57,11 +57,11 @@ trait MultiFormatSerializerUtils {
 	/**
 	 * @param array $array the array to check
 	 * @param string $name name to use in the error
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	protected static function assertArrayIsSequential( array $array, string $name ) {
 		if ( !self::arrayIsSequential( $array ) ) {
-			throw new MWContentSerializationException(
+			throw new ContentSerializationException(
 				"The array '$name' should be a sequential array."
 			);
 		}
@@ -86,13 +86,13 @@ trait MultiFormatSerializerUtils {
 	 * @param array $array the array to check
 	 * @param bool $emptyAllowed true if the array may contain empty strings
 	 * @param string $name name to use in the error
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	protected static function assertContainsOnlyStrings( array $array, bool $emptyAllowed, string $name ) {
 		if ( !self::arrayContainsOnlyStrings( $array, $emptyAllowed ) ) {
 			$strType = $emptyAllowed ? '' : 'non-empty ';
 			$msg = "The array '$name' should contain only {$strType}strings.";
-			throw new MWContentSerializationException( $msg );
+			throw new ContentSerializationException( $msg );
 		}
 	}
 
@@ -119,11 +119,11 @@ trait MultiFormatSerializerUtils {
 	 * Throw an exception is a redirect is being serialised in a format that
 	 * doesn't support it.
 	 * @param string $format the desired format
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	protected static function assertFormatSuitableForRedirect( string $format ) {
 		if ( $format !== CONTENT_FORMAT_WIKITEXT ) {
-			throw new MWContentSerializationException(
+			throw new ContentSerializationException(
 				"Redirects cannot be serialised as $format"
 			);
 		}

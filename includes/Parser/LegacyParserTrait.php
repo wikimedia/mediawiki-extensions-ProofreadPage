@@ -2,10 +2,10 @@
 
 namespace ProofreadPage\Parser;
 
-use HtmlArmor;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 /**
  * Legacy MediaWiki parser implementation helper
