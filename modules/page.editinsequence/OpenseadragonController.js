@@ -25,11 +25,9 @@ function OpenseadragonController( osdInstance, pagelistModel ) {
  * @param {Object} osdParams Unmodified Openseadragon init parameters
  */
 OpenseadragonController.prototype.initializer = function ( osdParams ) {
-	const currentImageSet = this.imageSet[ this.currentPage ];
-	if ( currentImageSet ) {
-		osdParams.tileSources.levels[ 0 ].url = currentImageSet[ 0 ];
-		osdParams.tileSources.levels[ 1 ].url = currentImageSet[ 1 ];
-		osdParams.tileSources.levels[ 2 ].url = currentImageSet[ 2 ];
+	const currentImage = this.imageSet[ this.currentPage ];
+	if ( currentImage ) {
+		osdParams.tileSources.url = currentImage;
 	}
 };
 
@@ -50,7 +48,7 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
 			format: 'json',
 			prop: 'imageforpage',
 			titles: isCurrentPageRendered ? '' : currentPage,
-			prppifpprop: 'responsiveimages',
+			prppifpprop: '',
 			formatversion: '2'
 		};
 
@@ -71,9 +69,8 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
 		for ( let i = 0; i < pages.length; i++ ) {
 			const ifp = pages[ i ].imagesforpage;
 			if ( ifp && !this.imageSet[ pages[ i ].title ] && ifp.thumbnail ) {
-				const ifpArray = [ ifp.thumbnail, ifp.responsiveimages[ '1.5' ], ifp.responsiveimages[ '2' ] ];
-				this.imageSet[ pages[ i ].title ] = ifpArray;
-				this.preload( ifpArray );
+				this.imageSet[ pages[ i ].title ] = ifp.thumbnail;
+				this.preload( ifp.thumbnail );
 			}
 		}
 		if ( !isCurrentPageRendered ) {
@@ -86,14 +83,12 @@ OpenseadragonController.prototype.update = function ( currentPage ) {
 /**
  * Asynchronously preloads images.
  *
- * @param {Array<string>} ifpArray List of image to preload
+ * @param {string} ifpThumb Image to preload
  */
-OpenseadragonController.prototype.preload = function ( ifpArray ) {
-	for ( let i = 0; i < ifpArray.length; i++ ) {
-		const img = new Image();
-		img.src = ifpArray[ i ];
-		this.preloadSet.push( img );
-	}
+OpenseadragonController.prototype.preload = function ( ifpThumb ) {
+	const img = new Image();
+	img.src = ifpThumb;
+	this.preloadSet.push( img );
 };
 
 module.exports = OpenseadragonController;
