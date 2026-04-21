@@ -19,7 +19,8 @@
 			"Str4nd",
 			"VezonThunder",
 			"ZeiP",
-			"Samoasambia"
+			"Samoasambia",
+			"Wikipeedikko"
 		]
 	},
 	"nstab-page": "Sivu",
@@ -133,8 +134,13 @@
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "Ei",
 	"proofreadpage-index-field-category-label": "Luokat",
 	"tag-proofreadpage-quality0": "Ilman tekstiä",
-	"tag-proofreadpage-quality1": "Ei oikolukua",
+	"tag-proofreadpage-quality1": "Ei oikoluettu",
 	"tag-proofreadpage-quality2": "Ongelmallinen",
 	"tag-proofreadpage-quality3": "Oikoluettu",
-	"tag-proofreadpage-quality4": "Hyväksytty"
+	"tag-proofreadpage-quality4": "Hyväksytty",
+	"tag-proofreadpage-quality0-description": "Muokkaukset, jotka muuttivat sivun laatutasoksi \"{{int:tag-proofreadpage-quality0}}\"",
+	"tag-proofreadpage-quality1-description": "Muokkaukset, jotka muuttivat sivun laatutasoksi \"{{int:tag-proofreadpage-quality1}}\"",
+	"tag-proofreadpage-quality2-description": "Muokkaukset, jotka muuttivat sivun laatutasoksi \"{{int:tag-proofreadpage-quality2}}\"",
+	"tag-proofreadpage-quality3-description": "Muokkaukset, jotka muuttivat sivun laatutasoksi \"{{int:tag-proofreadpage-quality3}}\"",
+	"tag-proofreadpage-quality4-description": "Muokkaukset, jotka muuttivat sivun laatutasoksi \"{{int:tag-proofreadpage-quality4}}\""
 }
