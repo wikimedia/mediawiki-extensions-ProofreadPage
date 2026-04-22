@@ -84,7 +84,7 @@
 	"proofreadpage_page_status_logged_out": "Status laman (hanya pengguna yang log masuk boleh menetapkan perkara ini)",
 	"proofreadpage_js_attributes": "Pengarang Judul Tahun Penerbit",
 	"proofreadpage_index_attributes": "Pengarang\nJudul\nTahun|Tahun diterbitkan\nPenerbit\nSumber\nImej|Imej kulit\nJumlah muka surat||20\nCatatan||10",
-	"proofreadpage_pages": "$2 {{PLURAL:$1|laman|laman}}",
+	"proofreadpage_pages": "$2 {{PLURAL:$1|laman}}",
 	"proofreadpage_specialpage_legend": "Cari laman indeks",
 	"proofreadpage_specialpage_searcherror": "Ralat dalam enjin pencarian",
 	"proofreadpage_specialpage_searcherrortext": "Enjin pencarian tidak berfungsi. Maaf atas sebarang kesulitan.",
