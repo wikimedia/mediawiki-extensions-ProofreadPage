@@ -331,6 +331,14 @@ $proofreadPageNamespaceNames['lij'] = [
 	'index_talk' => 'Discuscion_ìndiçe',
 ];
 
+/** Lakota (Lakȟótiyapi) */
+$proofreadPageNamespaceNames['lkt'] = [
+	'page' => 'Oyúblaye',
+	'page_talk' => 'Oyúblaye_wóakhiye',
+	'index' => 'Owíčhawapi',
+	'index_talk' => 'Owíčhawapi_wóakhiye',
+];
+
 /** Minangkabau (Minangkabau) */
 $proofreadPageNamespaceNames['min'] = [
 	'page' => 'Halaman',
