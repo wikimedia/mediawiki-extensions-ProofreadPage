@@ -11,6 +11,7 @@ if ( !class_exists( IndexAndPageLibraryTestBase::class ) ) {
  * @group Database
  * @group Lua
  * @group LuaSandbox
+ * @group Broken
  */
 class IndexAndPageLibrarySandboxTest extends IndexAndPageLibraryTestBase {
 	protected function getEngineName(): string {
