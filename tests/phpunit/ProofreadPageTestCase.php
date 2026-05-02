@@ -112,8 +112,10 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		global $wgNamespacesWithSubpages;
-		$wgNamespacesWithSubpages[NS_MAIN] = true;
+		$currentSubs = $this->getServiceContainer()->getMainConfig()->get( 'NamespacesWithSubpages' );
+		$currentSubs[ NS_MAIN ] = true;
+
+		$this->overrideConfigValue( 'NamespacesWithSubpages', $currentSubs );
 		$config = new HashConfig( [
 			'ProofreadPageNamespaceIds' => [
 				'page' => 101
