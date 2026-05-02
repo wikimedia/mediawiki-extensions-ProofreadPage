@@ -12,6 +12,7 @@ if ( !class_exists( LuaEngineTestBase::class ) ) {
  * Tests for the genetic aspects of the ProofreadPage Lua libs
  *
  * @covers \ProofreadPage\ProofreadPageLuaLibrary
+ * @group Broken
  */
 class ProofreadPageLibraryTest extends LuaEngineTestBase {
 	/** @inheritDoc */

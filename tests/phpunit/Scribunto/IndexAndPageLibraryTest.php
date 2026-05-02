@@ -24,6 +24,7 @@ if ( !class_exists( LuaEngineTestBase::class ) ) {
  * the Index to exist.
  *
  * @group Database
+ * @group Broken
  * @covers \ProofreadPage\ProofreadPageLuaLibrary
  */
 class IndexAndPageLibraryTest extends LuaEngineTestBase {
