@@ -497,7 +497,7 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 			$content,
 			Title::makeTitle( self::getPageNamespaceId(), 'Test' )
 		);
-		$actual = str_replace( "\n", '', $output->getRawText() );
+		$actual = str_replace( "\n", '', $output->getContentHolderText() );
 		$this->assertStringStartsWith(
 			'<div class="prp-page-qualityheader quality1">This page has not been proofread</div>' .
 				'<div class="pagetext">',
