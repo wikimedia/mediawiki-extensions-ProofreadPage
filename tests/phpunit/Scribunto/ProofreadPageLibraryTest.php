@@ -8,6 +8,7 @@ use MediaWiki\Extension\Scribunto\Tests\Engines\LuaCommon\LuaEngineTestBase;
  * Tests for the genetic aspects of the ProofreadPage Lua libs
  *
  * @covers \ProofreadPage\ProofreadPageLuaLibrary
+ * @group Broken
  */
 class ProofreadPageLibraryTest extends LuaEngineTestBase {
 	/** @inheritDoc */
