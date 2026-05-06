@@ -11,7 +11,7 @@ async function importTemplates( api ) {
 	// eslint-disable-next-line n/no-unsupported-features/node-builtins
 	const formData = new FormData();
 	formData.append( 'action', 'import' );
-	// eslint-disable-next-line n/no-unsupported-features/node-builtins, security/detect-non-literal-fs-filename
+	// eslint-disable-next-line n/no-unsupported-features/node-builtins
 	formData.append( 'xml', new Blob( [ fs.readFileSync( filePath ) ] ), path.basename( filePath ) );
 	formData.append( 'interwikiprefix', 'enws' );
 	formData.append( 'token', token );

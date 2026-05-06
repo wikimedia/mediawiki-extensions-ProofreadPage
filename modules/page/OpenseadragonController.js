@@ -40,7 +40,7 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 	];
 
 	osdStringMap.forEach( ( mapping ) => {
-		// eslint-disable-next-line mediawiki/msg-doc
+
 		OpenSeadragon.setString( mapping[ 0 ], mw.msg( mapping[ 1 ] ) );
 	} );
 
