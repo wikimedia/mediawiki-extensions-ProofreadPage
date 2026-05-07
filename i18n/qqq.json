@@ -64,6 +64,8 @@
 	"proofreadpage_number_expected": "The place where the data entry should be in numeric form",
 	"proofreadpage_interval_too_large": "Error message displayed in content language when the \"step\" interval is too large (number of pages/step > 1000). See also:\n* {{msg-mw|Proofreadpage invalid interval}}",
 	"proofreadpage_invalid_interval": "See also:\n* {{msg-mw|Proofreadpage interval too large}}",
+	"proofreadpage_invalid_interval_category": "{{tracking category name}}\nCategory name where a <code><nowiki><pagelist/></nowiki></code> tag uses an invalid interval or refers to a file that needs to be purged.",
+	"proofreadpage_invalid_interval_category-desc": "Description for {{msg-mw|proofreadpage_invalid_interval_category}} on [[Special:TrackingCategories]].",
 	"proofreadpage_nextpage": "{{Identical|Next page}}",
 	"proofreadpage_nextpage_label": "Label describing the action of the {{msg-mw|proofreadpage_nextpage}} link.",
 	"proofreadpage_prevpage": "{{Identical|Previous page}}",

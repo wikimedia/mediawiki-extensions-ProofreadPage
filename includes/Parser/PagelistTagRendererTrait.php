@@ -104,6 +104,7 @@ trait PagelistTagRendererTrait {
 			$to = (int)$to;
 		}
 		if ( !FilePagination::isValidInterval( $from, $to, $count ) ) {
+			$this->addTrackingCategory( 'proofreadpage_invalid_interval_category' );
 			throw new ParserError( 'proofreadpage_invalid_interval' );
 		}
 		$return = [];

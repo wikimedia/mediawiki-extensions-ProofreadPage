@@ -31,6 +31,8 @@
 	"proofreadpage_number_expected": "Error: Numeric value expected",
 	"proofreadpage_interval_too_large": "Error: Interval too large",
 	"proofreadpage_invalid_interval": "Error: Invalid interval",
+	"proofreadpage_invalid_interval_category": "Index pages with pagelist tags with invalid intervals",
+	"proofreadpage_invalid_interval_category-desc": "A <code><nowiki><pagelist/></nowiki></code> tag uses an invalid interval or refers to a file that needs to be purged.",
 	"proofreadpage_nextpage": "Next page",
 	"proofreadpage_nextpage_label": "Go to the next page",
 	"proofreadpage_prevpage": "Previous page",
