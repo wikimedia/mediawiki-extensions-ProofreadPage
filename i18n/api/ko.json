@@ -3,7 +3,8 @@
 		"authors": [
 			"Namoroka",
 			"Revi",
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
 	"apihelp-query+imageforpage-summary": "\"페이지:\" 이름공간의 주어진 페이지의 그림에 대해 URL을 미리 렌더링하고 보여줍니다.",
@@ -15,6 +16,15 @@
 	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "교정 품질 수준 목록입니다.",
 	"apihelp-query+proofreadinfo-example-1": "기본 정보를 반환합니다",
 	"apihelp-query+proofreadinfo-example-3": "이름공간 정보를 반환합니다",
+	"apihelp-query+proofreadpagesinindex-summary": "주어진 색인에 있는 문서를 나열합니다",
+	"apihelp-query+proofreadpagesinindex-param-limit": "반환될 문서의 수를 제한합니다",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "문서를 가져올 색인 페이지의 페이지 ID입니다",
 	"apihelp-query+proofreadpagesinindex-param-prop": "각 문서에 대해 가져올 속성",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "색인 페이지에 연결된 각 문서의 문서 ID를 반환합니다",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "색인 페이지에 연결된 각 문서의 문서 제목을 반환합니다",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "색인 페이지에 연결된 각 문서의 문서 ID를 반환합니다",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "색인 페이지에 연결된 각 문서의 형식화된 페이지 번호를 반환합니다",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "색인 페이지에 연결된 각 문서의 형식화된 페이지 번호를 반환합니다. 구식으로, 대신 \"formattedpagenumber\"를 사용하세요.",
+	"apihelp-query+proofreadpagesinindex-param-title": "문서를 가져올 색인 페이지의 제목입니다",
 	"apihelp-query+proofreadpagesinindex-example-1": "기본 정보 반환"
 }
