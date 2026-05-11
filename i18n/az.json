@@ -40,6 +40,8 @@
 	"proofreadpage_number_expected": "Xəta: Rəqəmsal dəyər gözlənilirdi",
 	"proofreadpage_interval_too_large": "Xəta: İnterval çox böyükdür",
 	"proofreadpage_invalid_interval": "Xəta: Yanlış interval",
+	"proofreadpage_invalid_interval_category": "Səhv intervallı pagelist teqləri olan indeks səhifələri",
+	"proofreadpage_invalid_interval_category-desc": "<code><nowiki><pagelist/></nowiki></code> teq səhv interval istifadə edir və ya keşinin təmizlənməsi lazım olan fayla istinad edir.",
 	"proofreadpage_nextpage": "Növbəti səhifə",
 	"proofreadpage_nextpage_label": "Növbəti səhifəyə get",
 	"proofreadpage_prevpage": "Əvvəlki səhifə",

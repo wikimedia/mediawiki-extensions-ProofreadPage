@@ -44,6 +44,8 @@
 	"proofreadpage_number_expected": "Fehler: Numerischer Wert erwartet",
 	"proofreadpage_interval_too_large": "Fehler: Intervall zu groß",
 	"proofreadpage_invalid_interval": "Fehler: ungültiges Intervall",
+	"proofreadpage_invalid_interval_category": "Indexseiten mit pagelist-Tags mit ungültigen Intervallen",
+	"proofreadpage_invalid_interval_category-desc": "Ein <code><nowiki><pagelist/></nowiki></code>-Tag verwendet ein ungültiges Intervall oder bezieht sich auf eine Datei, die gepurged werden muss.",
 	"proofreadpage_nextpage": "Nächste Seite",
 	"proofreadpage_nextpage_label": "Zur nächsten Seite gehen",
 	"proofreadpage_prevpage": "Vorherige Seite",
