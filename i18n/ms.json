@@ -39,6 +39,8 @@
 	"proofreadpage_number_expected": "Ralat: nilai angka dijangka",
 	"proofreadpage_interval_too_large": "Ralat: selang terlalu besar",
 	"proofreadpage_invalid_interval": "Ralat: selang tidak sah",
+	"proofreadpage_invalid_interval_category": "Laman indeks dengan tag senarai laman dengan selangan tidak sah",
+	"proofreadpage_invalid_interval_category-desc": "Terdapat tag <code><nowiki><pagelist></pagelist></nowiki></code> yang menggunakan selangan yang tidak sah atau merujuk kepada fail yang perlu disingkirkan.",
 	"proofreadpage_nextpage": "Laman berikutnya",
 	"proofreadpage_nextpage_label": "Pergi ke muka surat seterusnya",
 	"proofreadpage_prevpage": "Laman sebelumnya",

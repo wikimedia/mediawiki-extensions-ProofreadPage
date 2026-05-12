@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aquasen",
 			"Brunoperel",
 			"Candalua",
 			"Crochet.david",
@@ -61,6 +62,7 @@
 	"proofreadpage_number_expected": "Erreur : une valeur numérique est attendue",
 	"proofreadpage_interval_too_large": "Erreur : intervalle trop grand",
 	"proofreadpage_invalid_interval": "Erreur : intervalle invalide",
+	"proofreadpage_invalid_interval_category-desc": "Une balise utilise un intervalle invalide ou fait référence à un fichier qui doit être purgé.<code><nowiki><pagelist></pagelist></nowiki></code>",
 	"proofreadpage_nextpage": "Page suivante",
 	"proofreadpage_nextpage_label": "Aller à la page suivante",
 	"proofreadpage_prevpage": "Page précédente",

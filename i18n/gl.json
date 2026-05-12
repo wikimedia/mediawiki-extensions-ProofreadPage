@@ -38,6 +38,8 @@
 	"proofreadpage_number_expected": "Erro: Agardábase un valor numérico",
 	"proofreadpage_interval_too_large": "Erro: Intervalo moi grande",
 	"proofreadpage_invalid_interval": "Erro: Intervalo non válido",
+	"proofreadpage_invalid_interval_category": "Páxinas de índice con etiquetas de lista de páxinas con intervalos non válidos",
+	"proofreadpage_invalid_interval_category-desc": "Unha etiqueta <code><nowiki><pagelist/></nowiki></code> usa un intervalo non válido ou se refire a un ficheiro que debe purgarse.",
 	"proofreadpage_nextpage": "Páxina seguinte",
 	"proofreadpage_nextpage_label": "Ir á páxina seguinte",
 	"proofreadpage_prevpage": "Páxina anterior",
