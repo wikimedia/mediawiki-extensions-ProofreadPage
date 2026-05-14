@@ -1,12 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abdullahi"
+			"Abdullahi",
+			"AhmedG612"
 		]
 	},
 	"proofreadpage_quality0_category": "Qoraal la'aan",
 	"proofreadpage_quality1_category": "Lama sixin",
 	"proofreadpage_quality2_category": "Dhibaato leh",
 	"proofreadpage_quality3_category": "Sixid",
-	"proofreadpage_quality4_category": "La ansaxiyey"
+	"proofreadpage_quality4_category": "La ansaxiyey",
+	"proofreadpage-button-rotate-right-label": "Boga u rogo dhanka midig",
+	"proofreadpage-button-toggle-visibility-label": "Muuji/qari madaxa iyo hoose ee bogan",
+	"proofreadpage-button-zoom-in-label": "Bogga soo dhoweey"
 }
