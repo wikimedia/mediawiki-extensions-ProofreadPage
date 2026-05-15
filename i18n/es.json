@@ -56,6 +56,8 @@
 	"proofreadpage_number_expected": "Error: se esperaba un valor numérico",
 	"proofreadpage_interval_too_large": "Error: intervalo demasiado grande",
 	"proofreadpage_invalid_interval": "Error: intervalo no válido",
+	"proofreadpage_invalid_interval_category": "Índices con etiquetas pagelist con intervalos inválidos",
+	"proofreadpage_invalid_interval_category-desc": "Una etiqueta <code><nowiki><pagelist/></nowiki></code> utiliza un intervalo inválido, o la página del archivo necesita ser purgada.",
 	"proofreadpage_nextpage": "Página siguiente",
 	"proofreadpage_nextpage_label": "Ir a la página siguiente",
 	"proofreadpage_prevpage": "Página anterior",
