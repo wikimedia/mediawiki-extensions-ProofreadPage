@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use MediaWiki\FileRepo\RepoGroup;
+use MediaWiki\Media\MediaHandler;
 use MediaWiki\Title\Title;
 use ProofreadPageTestCase;
 
@@ -14,6 +15,11 @@ use ProofreadPageTestCase;
 class DatabaseIndexForPageLookupTest extends ProofreadPageTestCase {
 
 	public function testGetIndexForPage() {
+		// Skip when there is no support for DjVu files
+		if ( MediaHandler::getHandler( 'image/vnd.djvu' ) === false ) {
+			$this->markTestSkipped( 'There is no support for DjVu files, please enable it.' );
+		}
+
 		$repoGroupMock = $this->createMock( RepoGroup::class );
 		$repoGroupMock->expects( $this->once() )
 			->method( 'findFile' )
