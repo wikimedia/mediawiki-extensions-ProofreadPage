@@ -5,12 +5,17 @@
 			"AhmedG612"
 		]
 	},
+	"pageswithoutscans": "Bogag aan lahayn sawir qaadis",
 	"proofreadpage_quality0_category": "Qoraal la'aan",
 	"proofreadpage_quality1_category": "Lama sixin",
 	"proofreadpage_quality2_category": "Dhibaato leh",
 	"proofreadpage_quality3_category": "Sixid",
 	"proofreadpage_quality4_category": "La ansaxiyey",
+	"proofreadpage_quality1_message": "Boggan lama hubin",
+	"right-pagequality-validate": "U deji tayada bogga inuu yahay mid la xaqiijiyay",
 	"proofreadpage-button-rotate-right-label": "Boga u rogo dhanka midig",
-	"proofreadpage-button-toggle-visibility-label": "Muuji/qari madaxa iyo hoose ee bogan",
-	"proofreadpage-button-zoom-in-label": "Bogga soo dhoweey"
+	"proofreadpage-button-toggle-layout-label": "U kala beddel qaabka toosan iyo kan jiifka ah",
+	"proofreadpage-button-toggle-visibility-label": "U kala beddel muuqashada madax iyo lugta bogga",
+	"proofreadpage-button-zoom-in-label": "Bogga soo dhoweey",
+	"tag-proofreadpage-quality4": "La xaqiijiyay"
 }
