@@ -20,6 +20,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Index pages with pagelist tags that refer to a nonexistent file",
 	"proofreadpage_nosuch_file_for_index_category-desc": "A <code><nowiki><pagelist/></nowiki></code> tag refers to a file that does not exist.",
 	"proofreadpage_nosuch_file": "Error: No such file",
+	"proofreadpage_invalid_attributes_category": "Page transclusions with invalid attributes",
+	"proofreadpage_invalid_attributes_category-desc": "A <code><nowiki><pages/></nowiki></code> tag uses an unsupported attribute.",
 	"proofreadpage_indexdupetext": "Pages cannot be listed more than once on an index page.",
 	"proofreadpage_nologin": "Not logged in",
 	"proofreadpage_nologintext": "You must be [[Special:UserLogin|logged in]] to modify the proofreading status of pages.",

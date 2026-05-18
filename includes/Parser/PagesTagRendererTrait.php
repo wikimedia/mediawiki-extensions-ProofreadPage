@@ -285,10 +285,23 @@ trait PagesTagRendererTrait {
 			}
 		}
 
+		$validArgs = [
+			'index', 'from', 'to', 'include', 'exclude', 'step',
+			'header', 'tosection', 'fromsection', 'onlysection',
+			'current', 'prev', 'next'
+		];
+
 		if ( $header ) {
 			if ( $header == 'toc' ) {
 				$this->setExtensionData( 'proofreadpage_is_toc', true );
 			}
+			$indexContent = $context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
+			$attributes = $context->getCustomIndexFieldsParser()
+				->parseCustomIndexFieldsForHeader( $indexContent );
+			$indexKeys = array_map( static function ( $attr ) {
+				return strtolower( $attr->getKey() );
+			}, $attributes );
+			$validArgs = array_merge( $validArgs, $indexKeys );
 
 			$indexLinks = $this->getTableOfContentLinks( $context, $indexTitle );
 			$pageTitle = $this->getTitle();
@@ -340,9 +353,6 @@ trait PagesTagRendererTrait {
 				$formattedTo = $to_pagenum->getFormattedPageNumber( $language );
 				$h_out .= "|to=$formattedTo";
 			}
-			$indexContent = $context->getIndexContentLookup()->getIndexContentForTitle( $indexTitle );
-			$attributes = $context->getCustomIndexFieldsParser()
-				->parseCustomIndexFieldsForHeader( $indexContent );
 			foreach ( $attributes as $attribute ) {
 				$key = strtolower( $attribute->getKey() );
 				if ( array_key_exists( $key, $args ) ) {
@@ -358,6 +368,13 @@ trait PagesTagRendererTrait {
 			// and to set the content language
 		}
 
+		// Check for valid attributes
+		foreach ( $args as $argName => $_ ) {
+			if ( !in_array( strtolower( $argName ), $validArgs, true ) ) {
+				$this->addTrackingCategory( 'proofreadpage_invalid_attributes_category' );
+				break;
+			}
+		}
 		return [
 			'output' => $out,
 			'contentLang' => ( $contentLang && $contentLang !== 'mixed' ) ? $contentLang : null

@@ -74,7 +74,8 @@
 		"proofreadpage_quality4_category",
 		"proofreadpage_nosuch_index_category",
 		"proofreadpage_nosuch_file_for_index_category",
-		"proofreadpage_invalid_interval_category"
+		"proofreadpage_invalid_interval_category",
+		"proofreadpage_invalid_attributes_category"
 	],
 	"MessagesDirs": {
 		"ProofreadPage": [
