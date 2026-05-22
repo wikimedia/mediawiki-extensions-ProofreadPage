@@ -47,7 +47,7 @@
 	"proofreadpage_interval_too_large": "Fout: het interval is te groot",
 	"proofreadpage_invalid_interval": "Fout: er is een ongeldige interval opgegeven",
 	"proofreadpage_invalid_interval_category": "Indexpagina's met pagelist-labels met ongeldige intervallen",
-	"proofreadpage_invalid_interval_category-desc": "A <code><nowiki><pagelist/></nowiki></code>-label Het label gebruikt een ongeldig interval of verwijst naar een bestand dat moet worden verwijderd.",
+	"proofreadpage_invalid_interval_category-desc": "A <code><nowiki><pagelist/></nowiki></code>-label Het label gebruikt een incorrect interval of verwijst naar een bestand dat moet worden verwijderd.",
 	"proofreadpage_nextpage": "Volgende pagina",
 	"proofreadpage_nextpage_label": "Naar de volgende pagina gaan",
 	"proofreadpage_prevpage": "Vorige pagina",
