@@ -44,6 +44,8 @@
 	"proofreadpage_number_expected": "Error: s'esperava un valor numèric",
 	"proofreadpage_interval_too_large": "Error: interval massa ampli",
 	"proofreadpage_invalid_interval": "Error: interval no vàlid",
+	"proofreadpage_invalid_interval_category": "Pàgines d'índex amb etiqueta pagelist amb intervals no vàlids",
+	"proofreadpage_invalid_interval_category-desc": "Una etiqueta <code><nowiki><pagelist/></nowiki></code> utilitza un interval invàlid o fa referència a un fitxer que cal purgar.",
 	"proofreadpage_nextpage": "Pàgina següent",
 	"proofreadpage_nextpage_label": "Vés a la pàgina següent",
 	"proofreadpage_prevpage": "Pàgina anterior",
