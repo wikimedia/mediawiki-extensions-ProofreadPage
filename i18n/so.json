@@ -1,12 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abdullahi"
+			"Abdullahi",
+			"AhmedG612"
 		]
 	},
+	"pageswithoutscans": "Bogag aan lahayn sawir qaadis",
+	"proofreadpage_nosuch_file": "Khalad: Fayl noocaas ah ma jiro",
 	"proofreadpage_quality0_category": "Qoraal la'aan",
 	"proofreadpage_quality1_category": "Lama sixin",
 	"proofreadpage_quality2_category": "Dhibaato leh",
 	"proofreadpage_quality3_category": "Sixid",
-	"proofreadpage_quality4_category": "La ansaxiyey"
+	"proofreadpage_quality4_category": "La ansaxiyey",
+	"proofreadpage_quality1_message": "Boggan lama hubin",
+	"right-pagequality-validate": "U deji tayada bogga inuu yahay mid la xaqiijiyay",
+	"tag-proofreadpage-quality4": "La xaqiijiyay"
 }
