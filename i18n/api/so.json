@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"apihelp-query+imageforpage-summary": "Waxay hore u samaysaa oo bixisaa URL-yada sawirrada ee bog gaar ah oo ku jira meel magac \"Bogga:\".",
+	"apihelp-query+imageforpage-param-prop": "Noocyada sawirrada ama sifooyinka sawirrada ee la soo celinayo ee bog gaar ah oo ku jira meel magac \"Bogga:\".",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "Soo celi magaca faylka ee la xiriira bogga la weydiinayo",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "Soo celi cabbirka sawirka ee la xiriira bogga la weydiinayo",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Soo celi URL-ka sawirka buuxa ee la xiriira bogga la weydiinayo",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Soo celi liis ka kooban URL-yada sawirrada ee 1x, 1.5x iyo 2x ee sawirka buuxa ee la xiriira bogga la weydiinayo",
+	"apierror-proofreadpage-invalidindex": "Cinwaan index ah oo aan sax ahayn \"$1\".",
+	"apihelp-query+defaultcontentforpage-summary": "Waxay bixisaa waxa ku jira caadiga ah ee bog gaar ah oo ku jira meel magaca \"Bogga:\".\n\nWaxa ku jira caadiga ahi waa wikitext ceeriin ah (oo laga yaabo inuu ku jiro HTML ceeriin oo ka yimid lakabyo qoraal buug aan la aamini karin). Waa in aan lagu isticmaalin HTML aan la sifeyn ama aan la fasirin!",
+	"apihelp-query+proofread-summary": "Waxay soo celisaa macluumaad ku saabsan heerka hadda ee saxitaanka ee bogagga la siiyay.",
+	"apihelp-query+proofread-example-1": "Soo celi heerka saxitaanka ee bogagga ku jira meel magac 250",
+	"apihelp-query+proofreadinfo-summary": "Soo celi macluumaad ku saabsan habaynta kordhinta ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Sifooyinka saxitaanka ee la rabo in la helo:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "Macluumaad ku saabsan meel magac \"{{ns:Page}}\" iyo \"{{ns:Index}}\".",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "Liiska heerarka tayada saxitaanka.",
+	"apihelp-query+proofreadinfo-example-1": "Soo celi macluumaadka caadiga ah",
+	"apihelp-query+proofreadinfo-example-3": "Soo celi macluumaadka meel magac",
+	"apihelp-query+proofreadpagesinindex-summary": "Liiska bogagga ku jira index la siiyay",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Xaddid tirada bogagga la soo celinayo",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "Aqoonsiga bogga ee bogga tusmada ee laga soo saarayo bogagga",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Sifooyinka la rabo in laga helo bog kasta",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "Soo celi aqoonsiga bogga ee bog kasta oo ku xiran bogga tusmada",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "Soo celi cinwaanka bogga ee bog kasta oo ku xiran bogga tusmada",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "Soo celi aqoonsiga bogga ee bog kasta oo ku xiran bogga tusmada",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "Soo celi aqoonsiga bogga ee bog kasta oo ku xiran bogga tusmada",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "Soo celi lambarrada bogagga ee qaabaysan ee bog kasta oo ku xiran bogga tusmada. Waa la joojiyay, isticmaal \"formattedpagenumber\" beddelkeeda.",
+	"apihelp-query+proofreadpagesinindex-param-title": "Cinwaanka bogga tusmada ee laga helayo bogagga",
+	"apihelp-query+proofreadpagesinindex-example-1": "Soo celi macluumaadka caadiga ah"
+}

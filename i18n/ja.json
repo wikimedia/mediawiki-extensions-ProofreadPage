@@ -14,7 +14,8 @@
 			"Tmv",
 			"Yamagata Yusuke",
 			"夢蝶葬花",
-			"青子守歌"
+			"青子守歌",
+			"Tensama0415"
 		]
 	},
 	"nstab-page": "ページ",
@@ -101,12 +102,12 @@
 	"proofreadpage-group-zoom": "ズーム",
 	"proofreadpage-group-other": "その他",
 	"proofreadpage-button-reset-zoom-label": "元のサイズ",
-	"proofreadpage-button-rotate-left-label": "左に回転",
-	"proofreadpage-button-rotate-right-label": "右に回転",
+	"proofreadpage-button-rotate-left-label": "ページを左に回転",
+	"proofreadpage-button-rotate-right-label": "ページを右に回転",
 	"proofreadpage-button-toggle-layout-label": "垂直レイアウトと水平レイアウトの切り替え",
 	"proofreadpage-button-toggle-visibility-label": "このページのヘッダーとフッターの表示と非表示の切り替え",
-	"proofreadpage-button-zoom-in-label": "拡大",
-	"proofreadpage-button-zoom-out-label": "縮小",
+	"proofreadpage-button-zoom-in-label": "ページを拡大",
+	"proofreadpage-button-zoom-out-label": "ページを縮小",
 	"proofreadpage-pageinfo-status": "校正の状態",
 	"prp-editinsequence-http-error-pagelist": "ネットワークに問題が発生したためページネーションの取得に失敗しました。もう一度やり直してください",
 	"prp-editinsequence-pagination-does-not-exist": "このページにはページネーションが存在しないため、次のページと前のページを判別できません。これが間違いだと思われる場合は、このエラーを phabricator.wikimedia.org に報告してください。",
