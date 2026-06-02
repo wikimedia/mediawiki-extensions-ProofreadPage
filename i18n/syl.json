@@ -36,6 +36,8 @@
 	"proofreadpage_number_expected": "ꠜꠥꠟ ꠪ ꠡꠋꠇꠣ ꠝꠣꠘ ꠌꠣꠃꠀ ꠃꠞ",
 	"proofreadpage_interval_too_large": "ꠜꠥꠟ ꠪ ꠛꠦꠡꠤ ꠛꠠ ꠚꠣꠈ",
 	"proofreadpage_invalid_interval": "ꠛꠦꠠꠣ ꠪ ꠁꠘꠐꠣꠞꠜꠦꠟ ꠜꠦꠟꠤꠒ ꠘꠣꠄ",
+	"proofreadpage_invalid_interval_category": "ꠁꠘ꠆ꠒꠦꠇ ꠙꠣꠔꠣꠁꠘ ꠙꠣꠔꠣꠞ ꠟꠤꠡ꠆ꠐꠤ ꠟꠣꠉꠣꠁꠟ ꠅꠛꠂꠗ ꠁꠘ꠆ꠐꠣꠞꠛꠦꠟꠀꠟꠣ",
+	"proofreadpage_invalid_interval_category-desc": "ꠄꠉꠥ <code><nowiki><pagelist/></nowiki></code> ꠐꠦꠉ ꠎꠦꠐꠣꠄ ꠛꠦꠛꠀꠞ ꠇꠞꠦ ꠅꠛꠂꠗ ꠁꠘ꠆ꠐꠣꠞꠛꠣꠟ ꠘꠣꠄ ꠄꠉꠥ ꠚꠣꠁꠟ ꠛꠥꠏꠣꠄ ꠎꠦꠐꠣ ꠙꠣꠞ꠆ꠎ ꠅꠀ ꠖꠞꠇꠣꠞ ⁕",
 	"proofreadpage_nextpage": "ꠛꠣꠖꠧꠞ ꠙꠣꠔꠣ",
 	"proofreadpage_nextpage_label": "ꠛꠣꠖꠞ ꠙꠣꠔꠣꠔ ꠎꠣꠁꠘ",
 	"proofreadpage_prevpage": "ꠀꠉꠧꠞ ꠙꠣꠔꠣ",
