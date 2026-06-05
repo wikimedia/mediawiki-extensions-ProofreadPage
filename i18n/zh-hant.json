@@ -21,7 +21,8 @@
 			"Wmr",
 			"Wrightbus",
 			"Wwycheuk",
-			"捍粵者"
+			"捍粵者",
+			"LowensteinYang"
 		]
 	},
 	"nstab-page": "頁面",
@@ -116,9 +117,9 @@
 	"proofreadpage-group-zoom": "縮放",
 	"proofreadpage-group-other": "其他",
 	"proofreadpage-button-reset-zoom-label": "原本大小",
-	"proofreadpage-button-rotate-left-label": "向左旋轉",
-	"proofreadpage-button-rotate-right-label": "向右旋轉",
-	"proofreadpage-button-toggle-layout-label": "垂直／水平佈局",
+	"proofreadpage-button-rotate-left-label": "向左旋轉頁面",
+	"proofreadpage-button-rotate-right-label": "向右旋轉頁面",
+	"proofreadpage-button-toggle-layout-label": "在垂直／水平佈局之間切換",
 	"proofreadpage-button-toggle-visibility-label": "顯示／隱藏此頁面的頁眉及頁腳",
 	"proofreadpage-button-zoom-in-label": "放大",
 	"proofreadpage-button-zoom-out-label": "縮小",

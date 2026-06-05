@@ -2,14 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Likibp",
-			"Shirayuki"
+			"Shirayuki",
+			"Tensama0415"
 		]
 	},
 	"apierror-proofreadpage-invalidindex": "目録のタイトル「$1」が無効です。",
 	"apihelp-query+proofread-summary": "指定したページにおける現在の校正の状態に関する情報を返します。",
 	"apihelp-query+proofread-example-1": "名前空間250のページにおける校正の状態を返します",
 	"apihelp-query+proofreadinfo-summary": "ProofreadPage拡張機能の設定に関する情報を返します。",
-	"apihelp-query+proofreadinfo-param-prop": "取得できる校正プロパティ:\n;namespaces:「{{ns:Page}}」と「{{ns:Index}}」名前空間に関する情報。\n;qualitylevels:校正品質レベルの一覧。",
+	"apihelp-query+proofreadinfo-param-prop": "取得できる校正プロパティ:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "「{{ns:Page}}」と「{{ns:Index}}」名前空間に関する情報。",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "校正品質レベルの一覧。",
 	"apihelp-query+proofreadinfo-example-1": "既定の情報を返します",
 	"apihelp-query+proofreadinfo-example-3": "名前空間の情報を返します",
 	"apihelp-query+proofreadpagesinindex-summary": "指定された目録のページをリストする",
