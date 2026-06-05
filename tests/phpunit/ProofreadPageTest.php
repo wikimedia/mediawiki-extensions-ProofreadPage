@@ -3,7 +3,6 @@
 namespace ProofreadPage;
 
 use MediaWiki\CommentStore\CommentStoreComment;
-use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
@@ -67,10 +66,9 @@ class ProofreadPageTest extends ProofreadPageTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$hookContainer = $this->getServiceContainer()->getHookContainer();
-		$hookRunner = new HookRunner( $hookContainer );
+		$proofreadPage = new ProofreadPage( $this->getServiceContainer()->getMainConfig() );
 		$hookStatus = Status::newGood();
-		$hookRunner->onMultiContentSave(
+		$proofreadPage->onMultiContentSave(
 			$renderedRev,
 			$userIdentity,
 			$summary,
