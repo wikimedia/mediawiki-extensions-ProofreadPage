@@ -3,7 +3,8 @@
 		"authors": [
 			"Mar(c)",
 			"McDutchie",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Siebrand"
 		]
 	},
 	"apihelp-query+imageforpage-summary": "Verstrekt op basis van de voorverwerking van een gegeven pagina in de naamruimte “Pagina:” de URL’s van de afbeeldingen erin.",
@@ -16,7 +17,7 @@
 	"apihelp-query+defaultcontentforpage-summary": "Biedt de standaardinhoud voor een bepaalde pagina in de naamruimte \"Page:\".\n\nDe standaardinhoud is ruwe wikitekst (en kan dus ruwe HTML-tags van niet-vertrouwde boektekstlagen bevatten). Deze mag niet zonder escapen of omzetten in HTML-code worden opgenomen!",
 	"apihelp-query+proofread-summary": "Geeft informatie over de huidige proefleesstatus van de gegeven pagina's.",
 	"apihelp-query+proofread-example-1": "Geeft proefleesstatus voor pagina's in naamruimte 250",
-	"apihelp-query+proofreadinfo-summary": "Geeft informatie over de configuratie van de ProofreadPage-extensie.",
+	"apihelp-query+proofreadinfo-summary": "Geeft informatie over de configuratie van de uitbreiding ProofreadPage.",
 	"apihelp-query+proofreadinfo-param-prop": "De op te vragen proefleeseigenschappen:",
 	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "Informatie over de naamruimten “{{ns:Page}}” en “{{ns:Index}}”.",
 	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "Lijst met kwaliteitsniveaus voor proeflezen.",
