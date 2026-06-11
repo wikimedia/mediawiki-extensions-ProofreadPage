@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"apihelp-query+imageforpage-summary": "Vopred vykreslí a poskytne URL adresy obrázkov pre danú stranu v mennom priestore „Page:“.",
+	"apihelp-query+imageforpage-param-prop": "Ktoré typy obrázkov alebo vlastnosti obrázkov sa majú vrátiť pre danú stranu v mennom priestore „Page:“.",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "Vrátiť názov súboru priradený k dopytovanej strane",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "Vrátiť veľkosť obrázka priradeného k dopytovanej strane",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "Vrátiť URL adresu obrázka v plnej veľkosti priradeného k dopytovanej strane",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "Vrátiť zoznam obsahujúci URL adresy obrázkov v 1×, 1,5× a 2× veľkosti obrázka v plnej veľkosti priradeného k dopytovanej strane",
+	"apierror-proofreadpage-invalidindex": "Neplatný názov indexu „$1“.",
+	"apihelp-query+defaultcontentforpage-summary": "Poskytuje predvolený obsah pre danú stranu v mennom priestore „Page:“.\n\nPredvolený obsah je surový wikitext (potenciálne vrátane surových značiek HTML z nedôveryhodných textových vrstiev knihy). Nesmie sa použiť v HTML bez ošetrenia/analýzy!",
+	"apihelp-query+proofread-summary": "Vráti informácie o aktuálnom stave korektúry daných strán.",
+	"apihelp-query+proofread-example-1": "Vrátiť stav korektúry pre strany v mennom priestore 250",
+	"apihelp-query+proofreadinfo-summary": "Vráti informácie o konfigurácii rozšírenia ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "Ktoré vlastnosti korektúry sa majú získať:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "Informácie o menných priestoroch „{{ns:Page}}“ a „{{ns:Index}}“.",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "Zoznam úrovní kvality korektúry.",
+	"apihelp-query+proofreadinfo-example-1": "Vrátiť predvolené informácie",
+	"apihelp-query+proofreadinfo-example-3": "Vrátiť informácie o mennom priestore",
+	"apihelp-query+proofreadpagesinindex-summary": "Zoznam strán v danom indexe",
+	"apihelp-query+proofreadpagesinindex-param-limit": "Obmedzenie počtu vrátených strán",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "ID Index stránky, pre ktorú sa majú získať strany",
+	"apihelp-query+proofreadpagesinindex-param-prop": "Ktoré vlastnosti sa majú získať pre každú stranu",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "Vrátiť ID strany každej strany prepojenej s Index stránkou",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "Vrátiť názov strany každej strany prepojenej s Index stránkou",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "Vrátiť ID strany každej strany prepojenej s Index stránkou",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "Vrátiť naformátované čísla strán každej strany prepojenej s Index stránkou",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "Vrátiť naformátované čísla strán každej strany prepojenej s Index stránkou. Zastarané, použi namiesto toho „formattedpagenumber“.",
+	"apihelp-query+proofreadpagesinindex-param-title": "Názov Index stránky, pre ktorú sa majú získať strany",
+	"apihelp-query+proofreadpagesinindex-example-1": "Vrátiť predvolené informácie"
+}

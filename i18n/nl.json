@@ -45,7 +45,7 @@
 	"proofreadpage_dataconfig_badformattedtext": "De pagina \"[[MediaWiki:Proofreadpage index data config]]\" bevat ongeldige JSON-gegevens.",
 	"proofreadpage_number_expected": "Fout: er werd een numerieke waarde verwacht",
 	"proofreadpage_interval_too_large": "Fout: het interval is te groot",
-	"proofreadpage_invalid_interval": "Fout: er is een ongeldige interval opgegeven",
+	"proofreadpage_invalid_interval": "Fout: er is een onjuist interval opgegeven",
 	"proofreadpage_invalid_interval_category": "Indexpagina's met pagelist-labels met ongeldige intervallen",
 	"proofreadpage_invalid_interval_category-desc": "A <code><nowiki><pagelist/></nowiki></code>-label Het label gebruikt een incorrect interval of verwijst naar een bestand dat moet worden verwijderd.",
 	"proofreadpage_nextpage": "Volgende pagina",
