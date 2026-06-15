@@ -33,6 +33,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Indexseiten mit Seitenlisten-Tags, die auf eine nicht vorhandene Datei verweisen.",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Ein <nowiki><pagelist/></nowiki>-Tag verweist auf eine Datei, die nicht existiert.",
 	"proofreadpage_nosuch_file": "Fehler: Keine entsprechende Datei",
+	"proofreadpage_invalid_attributes_category": "Seiteneinbindungen mit ungültigen Attributen",
+	"proofreadpage_invalid_attributes_category-desc": "Ein <code><nowiki><pages/></nowiki></code>-Tag verwendet ein nicht unterstütztes Attribut.",
 	"proofreadpage_indexdupetext": "Seiten können nicht mehr als einmal auf einer Indexseite aufgelistet werden.",
 	"proofreadpage_nologin": "Nicht angemeldet",
 	"proofreadpage_nologintext": "{{#FORMAL:Du musst|Sie müssen}} [[Special:UserLogin|angemeldet sein]], um den Status des Korrekturlesens von Seiten ändern zu können.",

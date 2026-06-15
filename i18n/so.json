@@ -23,6 +23,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Bogagga tusmada ee leh calaamadaha pagelist ee tixraacaya fayl aan jirin",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Calaamadda <code><nowiki><pagelist/></nowiki></code> waxay tixraacaysaa fayl aan jirin.",
 	"proofreadpage_nosuch_file": "Khalad: Fayl noocaas ah ma jiro",
+	"proofreadpage_invalid_attributes_category": "Bogag ku dhex jira oo leh sifooyin aan sax ahayn",
+	"proofreadpage_invalid_attributes_category-desc": "Calaamad <code><nowiki><pages/></nowiki></code> ah ayaa adeegsanaysa sifo aan la taageerin.",
 	"proofreadpage_indexdupetext": "Bogag laguma qori karo in ka badan hal mar bog tusmo ah.",
 	"proofreadpage_nologin": "Lama soo gelin",
 	"proofreadpage_nologintext": "Waa inaad [[Special:UserLogin|soo gashaa]] si aad u beddesho xaaladda saxitaanka bogagga.",

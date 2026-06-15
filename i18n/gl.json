@@ -27,6 +27,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Páxinas de índice con etiquetas \"pagelist\" que fan referencia a un ficheiro inexistente",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Unha etiqueta <code><nowiki><pagelist/></nowiki></code> fai referencia a un ficheiro que non existe.",
 	"proofreadpage_nosuch_file": "Erro: Non existe ese ficheiro",
+	"proofreadpage_invalid_attributes_category": "Transclusións de páxinas con atributos non válidos",
+	"proofreadpage_invalid_attributes_category-desc": "Unha etiqueta <code><nowiki><pages/></nowiki></code> utiliza un atributo non admitido.",
 	"proofreadpage_indexdupetext": "As páxinas non se poden listar máis dunha vez nunha páxina de índice.",
 	"proofreadpage_nologin": "Non accediches ao sistema",
 	"proofreadpage_nologintext": "Debes [[Special:UserLogin|acceder ao sistema]] para modificar o estado de corrección das páxinas.",

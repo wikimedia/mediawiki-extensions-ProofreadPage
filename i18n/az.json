@@ -29,6 +29,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Mövcud olmayan fayla istinad edən pagelist etiketləri olan indeks səhifələri",
 	"proofreadpage_nosuch_file_for_index_category-desc": "<code><nowiki><pagelist/></nowiki></code> teqinin istinad etdiyi fayl mövcud deyil",
 	"proofreadpage_nosuch_file": "Xəta: Belə fayl yoxdur",
+	"proofreadpage_invalid_attributes_category": "Yanlış atributları olan səhifə əlavələri",
+	"proofreadpage_invalid_attributes_category-desc": "<code><nowiki><pages/></nowiki></code> teqi dəstəklənməyən atributdan istifadə edir.",
 	"proofreadpage_indexdupetext": "Səhifələr indeks səhifəsində bir dəfədən çox siyahıya alına bilməz.",
 	"proofreadpage_nologin": "Daxil olmamısınız",
 	"proofreadpage_nologintext": "Səhifələrin korreksiya statusunu dəyişdirmək üçün [[Special:UserLogin|daxil olmalısınız]].",

@@ -24,6 +24,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Paginas de indice con etiquettas pagelist que refere a un file non existente",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Un etiquetta <code><nowiki><pagelist/></nowiki></code> refere a un file que non existe.",
 	"proofreadpage_nosuch_file": "Error: non existe tal file",
+	"proofreadpage_invalid_attributes_category": "Transclusiones de pagina con attributos non valide",
+	"proofreadpage_invalid_attributes_category-desc": "Un etiquetta <code><nowiki><pages/></nowiki></code> usa un attributo non supportate.",
 	"proofreadpage_indexdupetext": "Paginas non pote figurar plus de un vice in un pagina de indice.",
 	"proofreadpage_nologin": "Tu non ha aperite session",
 	"proofreadpage_nologintext": "Tu debe [[Special:UserLogin|aperir un session]] pro modificar le stato de correction de paginas.",

@@ -37,6 +37,7 @@
 	"proofreadpage_index_expected": "Virhe: täsmennysosiota odotetaan",
 	"proofreadpage_nosuch_index": "Virhe: Kyseistä indeksiä ei ole",
 	"proofreadpage_nosuch_file": "Virhe: tiedostoa ei löydy",
+	"proofreadpage_invalid_attributes_category-desc": "Jollakin <code><nowiki><pages/></nowiki></code>-tunnisteella on määre, jota ei tueta.",
 	"proofreadpage_indexdupetext": "Sivuja ei voida listata useammin kuin kerran hakemistosivulla.",
 	"proofreadpage_nologin": "Et ole kirjautunut sisään",
 	"proofreadpage_nologintext": "Sinun täytyy olla [[Special:UserLogin|kirjautunut sisään]] muuttaaksesi sivun oikolukutilaa.",

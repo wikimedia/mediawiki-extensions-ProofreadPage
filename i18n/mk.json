@@ -25,6 +25,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Индексни страници со ознаки за списоци на страници кои се однесуваат на непостоечка податотека",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Ознаката <code><nowiki><pagelist/></nowiki></code> се однесува на непостоечка податотека.",
 	"proofreadpage_nosuch_file": "Грешка: нема таква податотека",
+	"proofreadpage_invalid_attributes_category": "Превметнати страници со неважечки атрибути",
+	"proofreadpage_invalid_attributes_category-desc": "Ознака <code><nowiki><pages/></nowiki></code> користи неподдржан атрибут.",
 	"proofreadpage_indexdupetext": "Страниците не можат да се наведуваат на показателот повеќе од еднаш по страница",
 	"proofreadpage_nologin": "Не сте најавени",
 	"proofreadpage_nologintext": "Морате да [[Special:UserLogin|се најавите]] за да можете да го менувате статусот на проверката на страници.",
