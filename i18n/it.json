@@ -32,6 +32,7 @@
 	"proofreadpage_nosuch_index_category": "Trasclusioni di pagina che si riferiscono a pagine Indice mancanti",
 	"proofreadpage_nosuch_index_category-desc": "È presente un tag <code><nowiki><pages/></nowiki></code> che punta ad una pagina Indice che non esiste.",
 	"proofreadpage_nosuch_file": "Errore: file non presente",
+	"proofreadpage_invalid_attributes_category": "Transclusioni di pagina con attributi non validi",
 	"proofreadpage_indexdupetext": "Le pagine non possono essere elencate più di una volta su una pagina di indice.",
 	"proofreadpage_nologin": "Accesso non effettuato",
 	"proofreadpage_nologintext": "Per modificare lo stato di correzione delle pagine, è necessario aver effettuato [[Special:UserLogin|l'accesso]].",
