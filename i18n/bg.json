@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArcaneIE",
 			"Borislav",
 			"DCLXVI",
 			"MegaAlex",
@@ -25,6 +26,8 @@
 	"proofreadpage_index_expected": "Грешка: Очаква се индекс",
 	"proofreadpage_nosuch_index": "Грешка: Няма такъв индекс",
 	"proofreadpage_nosuch_file": "Грешка: Няма такъв файл",
+	"proofreadpage_invalid_attributes_category": "Включване на страници с невалидни атрибути",
+	"proofreadpage_invalid_attributes_category-desc": "А<code><nowiki><pages/></nowiki></code> Тагът използва неподдържан атрибут.",
 	"proofreadpage_indexdupetext": "Страниците не могат да се показват повече от веднъж на индексната страница.",
 	"proofreadpage_nologin": "Не сте влезли",
 	"proofreadpage_nologintext": "Трябва да [[Special:UserLogin|влезете]], за да може да променяте състоянието на коректурата на страниците.",

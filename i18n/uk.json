@@ -43,6 +43,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Індексні сторінки з тегами pagelist, які посилаються на відсутній файл",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Тег <code><nowiki><pagelist/></nowiki></code> посилається на відсутній файл.",
 	"proofreadpage_nosuch_file": "Помилка: нема такого файлу",
+	"proofreadpage_invalid_attributes_category": "Включення сторінок з недійсними атрибутами",
+	"proofreadpage_invalid_attributes_category-desc": "Тег <code><nowiki><pages/></nowiki></code> використовує непідтримуваний атрибут.",
 	"proofreadpage_indexdupetext": "Сторінки не можуть бути перелічені в списку на сторінці індексації більше одного разу.",
 	"proofreadpage_nologin": "Не виконаний вхід",
 	"proofreadpage_nologintext": "Ви повинні [[Special:UserLogin|увійти в систему]], щоб змінити статус коректури сторінок.",
