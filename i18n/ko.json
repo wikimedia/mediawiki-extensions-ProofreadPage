@@ -48,7 +48,7 @@
 	"proofreadpage_dataconfig_badformattedtext": "[[MediaWiki:Proofreadpage index data config]] 문서가 올바른 형식의 JSON을 사용하고 있지 않습니다.",
 	"proofreadpage_number_expected": "오류: 숫자 값이 필요함",
 	"proofreadpage_interval_too_large": "오류: 간격이 너무 큼",
-	"proofreadpage_invalid_interval": "오류: 잘못된 간격",
+	"proofreadpage_invalid_interval": "오류: 유효하지 않은 간격",
 	"proofreadpage_nextpage": "다음 페이지",
 	"proofreadpage_nextpage_label": "다음 페이지로 이동",
 	"proofreadpage_prevpage": "이전 페이지",
