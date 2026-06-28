@@ -152,6 +152,15 @@ class EditPagePage extends EditPage {
 	 */
 	public function getCheckboxesWidget( &$tabindex, $checked ) {
 		$checkboxes = parent::getCheckboxesWidget( $tabindex, $checked );
+
+		$content = $this->toEditContent( $this->textbox1 );
+		if ( !$content instanceof PageContent ) {
+			// Whatever we are dealing with here is not in the proofreadPage-page content model
+			// as a result, we should not go any further and just give up and not show our
+			// page quality checkbox.
+			return $checkboxes;
+		}
+
 		if ( $this->isConflict ) {
 			// EditPage::showEditForm() does not call showContentForm() in case of a conflict
 			// because "conflicts can't be resolved […] using the custom edit ui." Don't show the
@@ -178,7 +187,7 @@ class EditPagePage extends EditPage {
 			'tabIndex' => ++$tabindex,
 			'disabled' => !$hasRight,
 			'levels' => $levels,
-			'value' => $this->toEditContent( $this->textbox1 )->getLevel()->getLevel(),
+			'value' => $content->getLevel()->getLevel(),
 		] );
 
 		$labelMsg = $pageQualityInputWidget->isDisabled()
