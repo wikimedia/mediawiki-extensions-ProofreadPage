@@ -23,6 +23,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "I-index ang mga pahina nga may mga tag sang pagelist nga nagapatuhoy sa isa ka wala nagaluntad nga file",
 	"proofreadpage_nosuch_file_for_index_category-desc": "ISA<code><nowiki><pagelist/></nowiki></code> ang tag nagapatuhoy sa isa ka file nga wala nagaluntad.",
 	"proofreadpage_nosuch_file": "Sayop: Walay ing·aning artsibo",
+	"proofreadpage_invalid_attributes_category": "Mga transclusion sang pahina nga may indi balido nga mga kinaiya",
+	"proofreadpage_invalid_attributes_category-desc": "Ang <code><nowiki><pages/></nowiki></code> nga tag nagagamit sang wala ginasuportahan nga kinaiya.",
 	"proofreadpage_indexdupetext": "Ang mga pahina indi mahimo nga ilista sing kapin sa isa ka beses sa isa ka pahina sang indeks.",
 	"proofreadpage_nologin": "Wala naka-log in",
 	"proofreadpage_nologintext": "Kinahanglan nga [[Special:UserLogin|naka-log in]] ka agud mabag-o ang kahimtangan sang pagbasa sang mga pahina.",

@@ -57,6 +57,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "带有引用到不存在文件之页面清单标记的索引页面",
 	"proofreadpage_nosuch_file_for_index_category-desc": "一个<code><nowiki><pagelist/></nowiki></code>标签引用到不存在的文件。",
 	"proofreadpage_nosuch_file": "错误：无此文件",
+	"proofreadpage_invalid_attributes_category": "含有无效属性嵌入的页面",
+	"proofreadpage_invalid_attributes_category-desc": "<code><nowiki><pages/></nowiki></code>标签使用了不支持的属性。",
 	"proofreadpage_indexdupetext": "在索引页中，页面不会被重复列出。",
 	"proofreadpage_nologin": "未登录",
 	"proofreadpage_nologintext": "您必须[[Special:UserLogin|先登录]]才能修改页面的校对状态。",
