@@ -88,6 +88,17 @@ Index:TestSep2
 !! endarticle
 
 !! article
+Index:TestRef
+!! text
+{{:MediaWiki:Proofreadpage_index_template
+|Title=Title
+|Pages=[[Page:TestRef 1.jpg|1]] [[Page:TestRef 2.jpg|2]] [[Page:TestRef 3.jpg|3]] [[Page:TestRef 4.jpg|4]] [[Page:TestRef 5.jpg|5]] [[Page:TestRef 6.jpg|6]]
+|Author=[[Author:Me]]
+|TOC=
+}}
+!! endarticle
+
+!! article
 Index:TestUnbalanced
 !! text
 {{:MediaWiki:Proofreadpage_index_template
@@ -214,6 +225,41 @@ Test/Chapter 3
 !! text
 !! endarticle
 
+!! article
+Page:TestRef 1.jpg
+!! text
+<ref name="note">Reference with hyphen-</ref>
+!! endarticle
+
+!! article
+Page:TestRef 2.jpg
+!! text
+<ref follow="note">ated word.</ref>
+!! endarticle
+
+!! article
+Page:TestRef 3.jpg
+!! text
+<ref name="note">Non hyphen</ref>
+!! endarticle
+
+!! article
+Page:TestRef 4.jpg
+!! text
+<ref follow="note">ated word.</ref>
+!! endarticle
+
+!! article
+Page:TestRef 5.jpg
+!! text
+<ref name="note">Joiner test when<!-- comment --></ref>
+!! endarticle
+
+!! article
+Page:TestRef 6.jpg
+!! text
+<ref follow="note">ends in comment.</ref>
+!! endarticle
 !! test
 pages: without index
 !! wikitext
@@ -1050,4 +1096,79 @@ djvu
 <pages index="TestUnbalanced" from="TestUnbalanced 1.jpg" to="TestUnbalanced 2.jpg" />
 !! html/parsoid
 <div class="prp-pages-output" lang="en" typeof="mw:Extension/pages" about="#mwt5" data-mw='{"name":"pages","attrs":{"index":"TestUnbalanced","from":"TestUnbalanced 1.jpg","to":"TestUnbalanced 2.jpg"}}'><p><span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestUnbalanced_1.jpg" title="Page:TestUnbalanced 1.jpg" about="#mwt1" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestUnbalanced_1.jpg"},"sa":{"href":"Page:TestUnbalanced 1.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestUnbalanced 1.jpg"},"num":{"wt":"1"},"formatted":{"wt":"1"},"quality":{"wt":"1"}},"i":0}}]}'>1</a><span about="#mwt1"> (q-1)</span></span><span about="#mwt2" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestUnbalanced 1.jpg","href":"./Page:TestUnbalanced_1.jpg"},"params":{},"i":0}}]}'>First page with unbalanced tag </span> <span data-parsoid='{"stx":"html"}'><a rel="mw:WikiLink" href="./Page:TestUnbalanced_2.jpg" title="Page:TestUnbalanced 2.jpg" about="#mwt3" typeof="mw:Transclusion" class="prp-pagequality-1" data-parsoid='{"stx":"piped","a":{"href":"./Page:TestUnbalanced_2.jpg"},"sa":{"href":"Page:TestUnbalanced 2.jpg"},"pi":[[{"k":"page","named":true},{"k":"num","named":true},{"k":"formatted","named":true},{"k":"quality","named":true}]]}' data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestUnbalanced 2.jpg"},"num":{"wt":"2"},"formatted":{"wt":"2"},"quality":{"wt":"1"}},"i":0}}]}'>2</a><span about="#mwt3"> (q-1)</span></span></p><div about="#mwt4" typeof="mw:Transclusion" data-parsoid='{"stx":"html","pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":":Page:TestUnbalanced 2.jpg","href":"./Page:TestUnbalanced_2.jpg"},"params":{},"i":0}}]}'>Second page with balanced tag</div></div>
+!! end
+
+!! test
+pages: joins hyphenated word in refs across pages (Parsoid only)
+!! options
+djvu
+!! wikitext
+<pages index="TestRef" from="TestRef 1.jpg" to="TestRef 2.jpg" /><references />
+!! html/php
+<div class="prp-pages-output" lang="en">
+<p><span><a href="/wiki/Page:TestRef_1.jpg" class="prp-pagequality-1" title="Page:TestRef 1.jpg">1</a> (q-1)</span><sup id="cite&#95;ref-note&#95;1-0" class="reference"><a href="#cite_note-note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>&#32;<span><a href="/wiki/Page:TestRef_2.jpg" class="prp-pagequality-1" title="Page:TestRef 2.jpg">2</a> (q-1)</span>&#32;
+</p>
+</div><div class="mw-references-wrap"><ol class="references">
+<li id="cite&#95;note-note-1"><span class="mw-cite-backlink"><a href="#cite_ref-note_1-0">↑</a></span> <span class="reference-text">Reference with hyphen- ated word.</span>
+</li>
+</ol></div>
+!! html/parsoid
+<div class="prp-pages-output" data-mw='{"name":"pages","attrs":{"index":"TestRef","from":"TestRef 1.jpg","to":"TestRef 2.jpg"}}' lang="en" typeof="mw:Extension/pages">
+<p><span><a class="prp-pagequality-1" data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestRef 1.jpg"},"num":{"wt":"1"},"formatted":{"wt":"1"},"quality":{"wt":"1"}},"i":0}}]}' href="./Page:TestRef_1.jpg" rel="mw:WikiLink" title="Page:TestRef 1.jpg" typeof="mw:Transclusion">1</a><span> (q-1)</span></span><sup class="mw-ref reference" data-mw='{"name":"ref","attrs":{"name":"note"},"body":{"id":"mw-reference-text-cite_note-note-1"},"parts":[{"template":{"target":{"wt":":Page:TestRef 1.jpg","href":"./Page:TestRef_1.jpg"},"params":{},"i":0}}]}' id="cite_ref-note_1-0" rel="dc:references" typeof="mw:Transclusion mw:Extension/ref"><a href="./Parser_test#cite_note-note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></span></a></sup> <span><a class="prp-pagequality-1" data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestRef 2.jpg"},"num":{"wt":"2"},"formatted":{"wt":"2"},"quality":{"wt":"1"}},"i":0}}]}' href="./Page:TestRef_2.jpg" rel="mw:WikiLink" title="Page:TestRef 2.jpg" typeof="mw:Transclusion">2</a><span> (q-1)</span></span><sup class="mw-ref reference mw-ref-follow" data-mw='{"name":"ref","attrs":{"follow":"note"},"body":{"id":"mw-reference-text-cite_note-note-1"},"parts":[{"template":{"target":{"wt":":Page:TestRef 2.jpg","href":"./Page:TestRef_2.jpg"},"params":{},"i":0}}]}' rel="dc:references" typeof="mw:Transclusion mw:Extension/ref"><a href="./Parser_test#cite_note-note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></span></a></sup></p>
+</div>
+<div class="mw-references-wrap" data-mw='{"name":"references","attrs":{}}' typeof="mw:Extension/references">
+<ol class="mw-references references">
+<li data-mw-footnote-number="1" id="cite_note-note-1"><span class="mw-cite-backlink"><a href="./Parser_test#cite_ref-note_1-0" rel="mw:referencedBy"><span class="mw-linkback-text">↑</span></a></span> <span class="mw-reference-text reference-text" id="mw-reference-text-cite_note-note-1">Reference with hyphen<span typeof="mw:Cite/Follow">ated word.</span></span></li>
+</ol>
+</div>
+!! end
+
+!! test
+pages: adds separator when ref follow without hyphenated word across pages
+!! options
+djvu
+!! wikitext
+<pages index="TestRef" from="TestRef 3.jpg" to="TestRef 4.jpg" /><references />
+!! html/php
+<div class="prp-pages-output" lang="en">
+<p><span><a href="/wiki/Page:TestRef_3.jpg" class="prp-pagequality-1" title="Page:TestRef 3.jpg">3</a> (q-1)</span><sup id="cite&#95;ref-note&#95;1-0" class="reference"><a href="#cite_note-note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>&#32;<span><a href="/wiki/Page:TestRef_4.jpg" class="prp-pagequality-1" title="Page:TestRef 4.jpg">4</a> (q-1)</span>&#32;
+</p>
+</div><div class="mw-references-wrap"><ol class="references">
+<li id="cite&#95;note-note-1"><span class="mw-cite-backlink"><a href="#cite_ref-note_1-0">↑</a></span> <span class="reference-text">Non hyphen ated word.</span>
+</li>
+</ol></div>
+!! html/parsoid
+<div class="prp-pages-output" data-mw='{"name":"pages","attrs":{"index":"TestRef","from":"TestRef 3.jpg","to":"TestRef 4.jpg"}}' lang="en" typeof="mw:Extension/pages">
+<p><span><a class="prp-pagequality-1" data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestRef 3.jpg"},"num":{"wt":"3"},"formatted":{"wt":"3"},"quality":{"wt":"1"}},"i":0}}]}' href="./Page:TestRef_3.jpg" rel="mw:WikiLink" title="Page:TestRef 3.jpg" typeof="mw:Transclusion">3</a><span> (q-1)</span></span><sup class="mw-ref reference" data-mw='{"name":"ref","attrs":{"name":"note"},"body":{"id":"mw-reference-text-cite_note-note-1"},"parts":[{"template":{"target":{"wt":":Page:TestRef 3.jpg","href":"./Page:TestRef_3.jpg"},"params":{},"i":0}}]}' id="cite_ref-note_1-0" rel="dc:references" typeof="mw:Transclusion mw:Extension/ref"><a href="./Parser_test#cite_note-note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></span></a></sup> <span><a class="prp-pagequality-1" data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestRef 4.jpg"},"num":{"wt":"4"},"formatted":{"wt":"4"},"quality":{"wt":"1"}},"i":0}}]}' href="./Page:TestRef_4.jpg" rel="mw:WikiLink" title="Page:TestRef 4.jpg" typeof="mw:Transclusion">4</a><span> (q-1)</span></span><sup class="mw-ref reference mw-ref-follow" data-mw='{"name":"ref","attrs":{"follow":"note"},"body":{"id":"mw-reference-text-cite_note-note-1"},"parts":[{"template":{"target":{"wt":":Page:TestRef 4.jpg","href":"./Page:TestRef_4.jpg"},"params":{},"i":0}}]}' rel="dc:references" typeof="mw:Transclusion mw:Extension/ref"><a href="./Parser_test#cite_note-note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></span></a></sup></p>
+</div>
+<div class="mw-references-wrap" data-mw='{"name":"references","attrs":{}}' typeof="mw:Extension/references">
+<ol class="mw-references references">
+<li data-mw-footnote-number="1" id="cite_note-note-1"><span class="mw-cite-backlink"><a href="./Parser_test#cite_ref-note_1-0" rel="mw:referencedBy"><span class="mw-linkback-text">↑</span></a></span> <span class="mw-reference-text reference-text" id="mw-reference-text-cite_note-note-1">Non hyphen<span typeof="mw:Cite/Follow"> ated word.</span></span></li>
+</ol>
+</div>
+!! end
+
+!! test
+pages: adds separator when ref follow with previous ref ending in a non-text node
+!! options
+djvu
+!! wikitext
+<pages index="TestRef" from="TestRef 5.jpg" to="TestRef 6.jpg" /><references />
+!! html/php
+<div class="prp-pages-output" lang="en">
+<p><span><a href="/wiki/Page:TestRef_5.jpg" class="prp-pagequality-1" title="Page:TestRef 5.jpg">5</a> (q-1)</span><sup id="cite&#95;ref-note&#95;1-0" class="reference"><a href="#cite_note-note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>&#32;<span><a href="/wiki/Page:TestRef_6.jpg" class="prp-pagequality-1" title="Page:TestRef 6.jpg">6</a> (q-1)</span>&#32;
+</p>
+</div><div class="mw-references-wrap"><ol class="references">
+<li id="cite&#95;note-note-1"><span class="mw-cite-backlink"><a href="#cite_ref-note_1-0">↑</a></span> <span class="reference-text">Joiner test when ends in comment.</span>
+</li>
+</ol></div>
+!! html/parsoid
+<div class="prp-pages-output" data-mw='{"name":"pages","attrs":{"index":"TestRef","from":"TestRef 5.jpg","to":"TestRef 6.jpg"}}' lang="en" typeof="mw:Extension/pages">
+<p><span><a class="prp-pagequality-1" data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestRef 5.jpg"},"num":{"wt":"5"},"formatted":{"wt":"5"},"quality":{"wt":"1"}},"i":0}}]}' href="./Page:TestRef_5.jpg" rel="mw:WikiLink" title="Page:TestRef 5.jpg" typeof="mw:Transclusion">5</a><span> (q-1)</span></span><sup class="mw-ref reference" data-mw='{"name":"ref","attrs":{"name":"note"},"body":{"id":"mw-reference-text-cite_note-note-1"},"parts":[{"template":{"target":{"wt":":Page:TestRef 5.jpg","href":"./Page:TestRef_5.jpg"},"params":{},"i":0}}]}' id="cite_ref-note_1-0" rel="dc:references" typeof="mw:Transclusion mw:Extension/ref"><a href="./Parser_test#cite_note-note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></span></a></sup> <span><a class="prp-pagequality-1" data-mw='{"parts":[{"template":{"target":{"wt":":MediaWiki:Proofreadpage_pagenum_template","href":"./MediaWiki:Proofreadpage_pagenum_template"},"params":{"page":{"wt":"Page:TestRef 6.jpg"},"num":{"wt":"6"},"formatted":{"wt":"6"},"quality":{"wt":"1"}},"i":0}}]}' href="./Page:TestRef_6.jpg" rel="mw:WikiLink" title="Page:TestRef 6.jpg" typeof="mw:Transclusion">6</a><span> (q-1)</span></span><sup class="mw-ref reference mw-ref-follow" data-mw='{"name":"ref","attrs":{"follow":"note"},"body":{"id":"mw-reference-text-cite_note-note-1"},"parts":[{"template":{"target":{"wt":":Page:TestRef 6.jpg","href":"./Page:TestRef_6.jpg"},"params":{},"i":0}}]}' rel="dc:references" typeof="mw:Transclusion mw:Extension/ref"><a href="./Parser_test#cite_note-note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></span></a></sup></p>
+</div>
+<div class="mw-references-wrap" data-mw='{"name":"references","attrs":{}}' typeof="mw:Extension/references">
+<ol class="mw-references references">
+<li data-mw-footnote-number="1" id="cite_note-note-1"><span class="mw-cite-backlink"><a href="./Parser_test#cite_ref-note_1-0" rel="mw:referencedBy"><span class="mw-linkback-text">↑</span></a></span> <span class="mw-reference-text reference-text" id="mw-reference-text-cite_note-note-1">Joiner test when<!-- comment --><span typeof="mw:Cite/Follow"> ends in comment.</span></span></li>
+</ol>
+</div>
 !! end

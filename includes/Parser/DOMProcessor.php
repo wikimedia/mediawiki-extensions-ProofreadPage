@@ -24,6 +24,17 @@ class DOMProcessor extends ExtDOMProcessor {
 		);
 	}
 
+	private function findLastTextNode( ?Node $node ): ?Text {
+		if ( $node instanceof Text ) {
+			return $node;
+		}
+		// Recursively find the last node (where the joiner should be)
+		if ( $node instanceof Element && $node->lastChild ) {
+			return $this->findLastTextNode( $node->lastChild );
+		}
+		return null;
+	}
+
 	/**
 	 * Attempts to replicate:
 	 * $out = str_replace( $joiner . $placeholder, '', $out );
@@ -53,6 +64,32 @@ class DOMProcessor extends ExtDOMProcessor {
 				$node->ownerDocument->createTextNode( $this->separator ), $node
 			);
 		}
-	}
+		// Join refs in the same way
+		$follows = DOMCompat::querySelectorAll( $root, '[typeof~="mw:Cite/Follow"]' );
+		foreach ( $follows as $followNode ) {
+			// Removes the harcoded space introduced by Cite
+			$firstChild = $followNode->firstChild;
+			if ( $firstChild instanceof Text ) {
+				$firstChild->nodeValue = preg_replace( '/^[\s\x{00A0}]+/u', '', $firstChild->nodeValue );
+			}
+			// Search the previous ref for the joiner
+			$prev = $followNode->previousSibling;
 
+			// Cite leaves the first ref as free text, and the next ones as spans
+			$prevTextNode = $this->findLastTextNode( $prev );
+
+			if ( $prevTextNode instanceof Text ) {
+				$val = $prevTextNode->nodeValue;
+				$len = strlen( $this->joiner );
+				// If previous reference ends in joiner, remove it
+				if ( $len > 0 && substr( $val, -$len ) === $this->joiner ) {
+					$prevTextNode->nodeValue = substr( $val, 0, -$len );
+					continue;
+				}
+			}
+			// Else, add the separator
+			$sepNode = $firstChild->ownerDocument->createTextNode( $this->separator );
+			$firstChild->parentNode->insertBefore( $sepNode, $firstChild );
+		}
+	}
 }
