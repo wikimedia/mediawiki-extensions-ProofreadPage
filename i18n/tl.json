@@ -161,7 +161,7 @@
 	"proofreadpage-pagelist-dialog-visual-single-page-toggle-label": "Baguhin ang bilang ng pahina para sa pahinang ito lamang",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-range": "Pagtatakda ng bilang ng pahina mula sa scan number $1 pataas",
 	"proofreadpage-pagelist-dialog-visual-form-panel-label-single": "Pagtatakda ng bilang ng phina para sa scan number $1",
-	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Kailangan ang isang listahan ng karaniwang ginagamit na mga label ng numero ng pahina. Mangyaring makipag-ugnay sa iyong lokal na mga administrador ng interface upang mag-set up ng mga label.",
+	"proofreadpage-pagelist-dialog-visual-config-not-found-message": "Kinakailangan ang talaan ng mga karaniwang ginagamit na etiketa ng bilang ng pahina. Mangyaring makipag-ugnayan sa inyong mga lokal na tagapangasiwa ng interface upang itakda ang mga etiketa.",
 	"proofreadpage-preferences-animation-time-label": "Ang oras ng pag-pan at zoom animation (sa pagitan ng 0 at 2 segundo, default: 0). Ang mas mataas ay mas makinis, ang mas mababa ay mas mabilis",
 	"proofreadpage-preferences-showheaders-label": "Ipakita ang mga kahanayan ng paulo at pampaanan kapag namamatnugot sa loob ng puwang ng pangalan ng {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gamitin ang kalatagang pahalang kapag namamatnugot sa loob ng puwang ng pangalan ng {{ns:page}}",
