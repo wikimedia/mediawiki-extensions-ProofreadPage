@@ -20,7 +20,7 @@
 		"grunt-eslint": "24.3.0",
 		"grunt-replace": "2.0.2",
 		"grunt-stylelint": "0.21.0",
-		"stylelint-config-wikimedia": "0.19.2",
+		"stylelint-config-wikimedia": "0.19.3",
 		"wdio-mediawiki": "6.3.0"
 	}
 }
