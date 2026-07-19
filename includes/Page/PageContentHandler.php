@@ -512,7 +512,7 @@ class PageContentHandler extends TextContentHandler {
 			? $pageContent->getLevel()->getLevel()
 			: null;
 		return new UpdateIndexQualityStats(
-			MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			MediaWikiServices::getInstance()->getConnectionProvider(),
 			$context->getPageQualityLevelLookup(),
 			$context->getPaginationFactory()->getPaginationForIndexTitle( $indexTitle ),
 			$indexTitle,

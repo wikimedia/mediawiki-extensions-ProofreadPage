@@ -6,16 +6,16 @@ use MediaWiki\Deferred\DataUpdate;
 use MediaWiki\Title\Title;
 use ProofreadPage\Page\PageQualityLevelLookup;
 use ProofreadPage\Pagination\Pagination;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IDBAccessObject;
-use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * @license GPL-2.0-or-later
  */
 class UpdateIndexQualityStats extends DataUpdate {
 
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	/** @var IConnectionProvider */
+	private $dbProvider;
 
 	/** @var PageQualityLevelLookup */
 	private $pageQualityLevelLookup;
@@ -33,7 +33,7 @@ class UpdateIndexQualityStats extends DataUpdate {
 	private $overrideLevel;
 
 	/**
-	 * @param ILoadBalancer $loadBalancer
+	 * @param IConnectionProvider $dbProvider
 	 * @param PageQualityLevelLookup $pageQualityLevelLookup
 	 * @param Pagination $pagination
 	 * @param Title $indexTitle
@@ -41,7 +41,7 @@ class UpdateIndexQualityStats extends DataUpdate {
 	 * @param int|null $overrideLevel
 	 */
 	public function __construct(
-		ILoadBalancer $loadBalancer,
+		IConnectionProvider $dbProvider,
 		PageQualityLevelLookup $pageQualityLevelLookup,
 		Pagination $pagination,
 		Title $indexTitle,
@@ -50,7 +50,7 @@ class UpdateIndexQualityStats extends DataUpdate {
 	) {
 		parent::__construct();
 
-		$this->loadBalancer = $loadBalancer;
+		$this->dbProvider = $dbProvider;
 		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
 		$this->pagination = $pagination;
 		$this->indexTitle = $indexTitle;
@@ -67,7 +67,7 @@ class UpdateIndexQualityStats extends DataUpdate {
 			$this->pagination, $this->overrideTitle, $this->overrideLevel
 		);
 
-		$this->loadBalancer->getConnection( ILoadBalancer::DB_PRIMARY )->newReplaceQueryBuilder()
+		$this->dbProvider->getPrimaryDatabase()->newReplaceQueryBuilder()
 			->replaceInto( 'pr_index' )
 			->uniqueIndexFields( 'pr_page_id' )
 			->row( [

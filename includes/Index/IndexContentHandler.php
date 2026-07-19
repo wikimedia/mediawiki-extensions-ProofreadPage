@@ -583,7 +583,7 @@ class IndexContentHandler extends TextContentHandler {
 	private function buildIndexQualityStatsUpdate( Title $title, IndexContent $content ): UpdateIndexQualityStats {
 		$context = Context::getDefaultContext();
 		return new UpdateIndexQualityStats(
-			MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			MediaWikiServices::getInstance()->getConnectionProvider(),
 			$context->getPageQualityLevelLookup(),
 			$context->getPaginationFactory()->buildPaginationForIndexContent( $title, $content ),
 			$title
@@ -595,6 +595,6 @@ class IndexContentHandler extends TextContentHandler {
 	 * @return DeleteIndexQualityStats
 	 */
 	private function buildIndexQualityStatsDelete( Title $title ): DeleteIndexQualityStats {
-		return new DeleteIndexQualityStats( MediaWikiServices::getInstance()->getDBLoadBalancer(), $title );
+		return new DeleteIndexQualityStats( MediaWikiServices::getInstance()->getConnectionProvider(), $title );
 	}
 }
