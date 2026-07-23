@@ -3,7 +3,7 @@
 namespace ProofreadPage\Index;
 
 use MediaWiki\Title\Title;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * @license GPL-2.0-or-later
@@ -14,7 +14,7 @@ class IndexQualityStatsLookup {
 	private $cache = [];
 
 	public function __construct(
-		private readonly ILoadBalancer $loadBalancer,
+		private readonly IConnectionProvider $connectionProvider,
 	) {
 	}
 
@@ -44,7 +44,7 @@ class IndexQualityStatsLookup {
 	 * @return PagesQualityStats
 	 */
 	private function fetchStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {
-		$row = $this->loadBalancer->getConnection( ILoadBalancer::DB_REPLICA )->newSelectQueryBuilder()
+		$row = $this->connectionProvider->getReplicaDatabase()->newSelectQueryBuilder()
 			->select( [ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ] )
 			->from( 'pr_index' )
 			->where( [ 'pr_page_id' => $indexTitle->getArticleID() ] )
