@@ -32,6 +32,11 @@ local function testIndexGetPage( text_or_id, n )
 	return page and page.title.fullText or nil
 end
 
+local function testIndexDisplayedPageNumbers( text_or_id )
+	local index = PRP.newIndex( text_or_id )
+	return index.displayedPageNumbers
+end
+
 --[=[
 Return the quality counts from the given title or page name
 ]=]
@@ -148,6 +153,21 @@ local tests = {
 		func = testIndexGetPage,
 		args = { 'Foobar', 2 },
 		expect = { 'Page:Test 2.jpg' },
+	},
+	{
+		name = 'Get the displayed number of every page of an index',
+		func = testIndexDisplayedPageNumbers,
+		args = { 'Foobar' },
+		expect = {
+			{
+				[1] = '2',
+				[2] = '3',
+				[3] = '4',
+				[4] = '5',
+				[5] = '6',
+				[6] = '7'
+			}
+		}
 	},
 	{
 		name = 'Verify that we can get the quality counts for an index',

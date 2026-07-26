@@ -127,6 +127,13 @@ function proofreadPage.newIndex( title )
 				return data.pageCount
 			end
 
+			if k == 'displayedPageNumbers' then
+				if data.displayedPageNumbers == nil then
+					data.displayedPageNumbers = php.doGetDisplayedPageNumbers( title.text )
+				end
+				return data.displayedPageNumbers
+			end
+
 			return data[k]
 		end,
 		__newindex = function ( t, k, v )

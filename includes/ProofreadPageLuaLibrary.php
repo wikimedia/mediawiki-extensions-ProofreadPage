@@ -48,7 +48,8 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 			'doGetIndexPageNumbers' => [ $this, 'doGetIndexPageNumbers' ],
 			'doGetPageQuality' => [ $this, 'doGetPageQuality' ],
 			'doGetIndexForPage' => [ $this, 'doGetIndexForPage' ],
-			'doGetPageNumbering' => [ $this, 'doGetPageNumbering' ]
+			'doGetPageNumbering' => [ $this, 'doGetPageNumbering' ],
+			'doGetDisplayedPageNumbers' => [ $this, 'doGetDisplayedPageNumbers' ],
 		];
 		$opts = [
 			'NS_INDEX' => $this->context->getIndexNamespaceId(),
@@ -364,5 +365,25 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 			'display' => $dispNum->getFormattedPageNumber( $language ),
 			'raw' => $dispNum->getRawPageNumber( $language )
 		] ];
+	}
+
+	/**
+	 * Get the displayed number of every page in the index, in one call
+	 *
+	 * @param string $indexName The index title
+	 * @return array [ position => displayed number ], 1-indexed for Lua
+	 */
+	public function doGetDisplayedPageNumbers( string $indexName ): array {
+		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
+
+		// maybe expensive
+		$pagination = $this->getPaginationForIndex( $indexTitle );
+		$language = $indexTitle->getPageLanguage();
+
+		$numbers = [];
+		for ( $n = 1; $n <= $pagination->getNumberOfPages(); $n++ ) {
+			$numbers[$n] = $pagination->getDisplayedPageNumber( $n )->getFormattedPageNumber( $language );
+		}
+		return [ $numbers ];
 	}
 }
