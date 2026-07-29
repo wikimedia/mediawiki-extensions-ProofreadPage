@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Volvox"
+		]
+	},
+	"apierror-proofreadpage-invalidindex": "Ongültegen Indextitel „$1“."
+}
