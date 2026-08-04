@@ -8,7 +8,8 @@
 			"Reedy",
 			"Saederup92",
 			"Sarrus",
-			"Steenth"
+			"Steenth",
+			"MGA73"
 		]
 	},
 	"nstab-page": "Side",
@@ -26,7 +27,7 @@
 	"proofreadpage_nosuch_index": "Fejl: Intet indeks med det navn",
 	"proofreadpage_nosuch_index_category": "Sidetransklusioner, der refererer til manglende indekssider",
 	"proofreadpage_nosuch_index_category-desc": "En <code><nowiki><pages/></nowiki></code>-tag refererer til en indeksside, der ikke findes.",
-	"proofreadpage_nosuch_file_for_index_category": "Indeksér sider med sideliste-tags, der refererer til en ikke-eksisterende fil",
+	"proofreadpage_nosuch_file_for_index_category": "Indekssider med sideliste-tags, der refererer til en ikke-eksisterende fil",
 	"proofreadpage_nosuch_file_for_index_category-desc": "En <code><nowiki><pagelist/></nowiki></code>-tag refererer til en fil, der ikke findes.",
 	"proofreadpage_nosuch_file": "Fejl: Filen findes ikke",
 	"proofreadpage_indexdupetext": "Sider kan ikke vises mere end én gang på en indeksside.",
