@@ -6,10 +6,18 @@
 			"شاه زمان پټان"
 		]
 	},
+	"apierror-proofreadpage-invalidindex": "د ليکلړ ناسم سرليک \"$1\".",
 	"apihelp-query+proofread-summary": "معلومات راګرځونه د ورکړل شويو پاڼو د اوسنۍ ثابت دريځ لپاره.",
 	"apihelp-query+proofread-example-1": "راګرځونه د ثبوت دریځ د نومونو په 250 پاڼو کې",
 	"apihelp-query+proofreadinfo-summary": "د ثبوت پروسس کولو تمدید د تنظیم کولو په اړه راستنیدنه.",
 	"apihelp-query+proofreadinfo-param-prop": "د کره‌لوستنې کومې ځانگړتياوې بايد ترلاسه شي:",
-	"apihelp-query+proofreadinfo-example-1": "ناڅاپي معلومات بیرته راوګرځئ",
-	"apihelp-query+proofreadinfo-example-3": "د نوم ځاي معلومات راوګرځوي"
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "د لوست‌ارزونې څرنگوالي کچو لړليک.",
+	"apihelp-query+proofreadinfo-example-1": "تلواله مالومات بېرته راگرځول",
+	"apihelp-query+proofreadinfo-example-3": "د نوم ځاي معلومات راوګرځوي",
+	"apihelp-query+proofreadpagesinindex-summary": "ورکړل شوي ليکلړ کې د مخونو لړليکول",
+	"apihelp-query+proofreadpagesinindex-param-limit": "وټاکئ چې څومره مخونه بېرته راستانه شي",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "د ليکلړ مخ پېژند چې مخونه ورته ترلاسه کېږي",
+	"apihelp-query+proofreadpagesinindex-param-prop": "د هر مخ لپاره کومې ځانتياوې ترلاسه شي",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "د هر مخ پېژند چې د ليکلړ مخ سره تړونی ولري؛ بېرته راستنول",
+	"apihelp-query+proofreadpagesinindex-example-1": "تلواله مالومات بېرته راگرځول"
 }
