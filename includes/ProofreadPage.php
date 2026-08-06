@@ -30,6 +30,7 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Hook\EditFormPreloadTextHook;
 use MediaWiki\Hook\GetDoubleUnderscoreIDsHook;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\Hook\OutputPageParserOutputHook;
@@ -273,7 +274,7 @@ class ProofreadPage implements
 		$link = $linkRenderer->makeKnownLink(
 			$title, $out->msg( 'proofreadpage_image_message' )->text()
 		);
-		$out->addHTML( $link );
+		$out->addHTML( Html::rawElement( 'p', [ 'class' => 'prp-indexpage-link' ], $link ) );
 	}
 
 	/**
