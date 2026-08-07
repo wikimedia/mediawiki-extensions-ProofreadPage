@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Adriendelucca",
+			"Ar choler",
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
@@ -96,7 +97,7 @@
 	"proofreadpage-button-reset-zoom-label": "Ment orin",
 	"proofreadpage-button-rotate-left-label": "Treiñ ar bajenn a-gleiz",
 	"proofreadpage-button-rotate-right-label": "Treiñ ar bajenn a-zehou",
-	"proofreadpage-button-toggle-layout-label": "Gwintañ etre an tres a-sav hag an tres a-led",
+	"proofreadpage-button-toggle-layout-label": "Gwintañ etre an tres a-serzh hag an tres a-led",
 	"proofreadpage-button-toggle-visibility-label": "Gwintañ gweluster an talbenn ha traoñ ar bajenn",
 	"proofreadpage-button-zoom-in-label": "Zoumañ",
 	"proofreadpage-button-zoom-out-label": "Dizoumañ",
