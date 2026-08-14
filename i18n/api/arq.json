@@ -5,8 +5,31 @@
 			"Oldstoneage"
 		]
 	},
+	"apihelp-query+imageforpage-summary": "يقدّم عرضاً مسبقاً وروابط للصور لصفحة معينة في نطاق \"Page:\".",
+	"apihelp-query+imageforpage-param-prop": "أي أنواع من الصور أو خصائص الصور رجع لصفحة معينة في نطاق \"Page:\".",
+	"apihelp-query+imageforpage-paramvalue-prop-filename": "رجع اسم الملف المرتبط بالصفحة المطلوبة.",
+	"apihelp-query+imageforpage-paramvalue-prop-size": "رجع حجم الصورة المرتبطة بالصفحة المطلوبة.",
+	"apihelp-query+imageforpage-paramvalue-prop-fullsize": "رجع رابط الصورة بالحجم الكامل المرتبطة بالصفحة المطلوبة.",
+	"apihelp-query+imageforpage-paramvalue-prop-responsiveimages": "رجع قائمة تحتوي على روابط الصور بمقاييس 1x و 1.5x و 2x للصورة بالحجم الكامل المرتبطة بالصفحة المطلوبة.",
+	"apierror-proofreadpage-invalidindex": "عنوان فهرس ماشي صالح \" $1 \".",
+	"apihelp-query+defaultcontentforpage-summary": "يقدم المحتوى الافتراضي لصفحة معينة في نطاق \"Page:\".\n\nالمحتوى الافتراضي هو نص ويكي خام (يمكن يحتوي على علامات HTML خام من طبقات نص الكتب غير الموثوقة). لا يجب استعماله في HTML من غير ترميز/تحليل!",
+	"apihelp-query+proofread-summary": "يرجع معلومات حول حالة التدقيق (المراجعة) الحالية للصفحات المعطاة.",
 	"apihelp-query+proofread-example-1": "Return proofread status for pages in namespace 250",
-	"apihelp-query+proofreadinfo-param-prop": "واش هيّا الدالايل تاع التصحاح الّي مطلوبة:\n;namespaces:معلومات على وساسع السميّة \"{{ns:Page}}\" و \"{{ns:Index}}\".\n;qualitylevels:ليسنة تاع نيفوّات الجودة تاع دلايل` التصحاح.",
+	"apihelp-query+proofreadinfo-summary": "يرجع معلومات حول إعدادات إضافة ProofreadPage.",
+	"apihelp-query+proofreadinfo-param-prop": "أي خصائص تدقيق (مراجعة) نجيب:",
+	"apihelp-query+proofreadinfo-paramvalue-prop-namespaces": "معلومات حول نطاقات \"{{ns:Page}}\" و \"{{ns:Index}}\".",
+	"apihelp-query+proofreadinfo-paramvalue-prop-qualitylevels": "قائمة بمستويات جودة التدقيق (المراجعة).",
 	"apihelp-query+proofreadinfo-example-1": "Return default information",
-	"apihelp-query+proofreadinfo-example-3": "Return namespace information"
+	"apihelp-query+proofreadinfo-example-3": "Return namespace information",
+	"apihelp-query+proofreadpagesinindex-summary": "اسرد الصفحات في فهرس معين.",
+	"apihelp-query+proofreadpagesinindex-param-limit": "حدد كم صفحة راح ترجع.",
+	"apihelp-query+proofreadpagesinindex-param-pageid": "معرف الصفحة لصفحة الفهرس للحصول على صفحات لها",
+	"apihelp-query+proofreadpagesinindex-param-prop": "واش من خصائص نجيب لكل صفحة.",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-ids": "رجع معرف الصفحة (page ID) لكل صفحة مرتبطة بصفحة الفهرس.",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-title": "رجع عنوان الصفحة لكل صفحة مرتبطة بصفحة الفهرس.",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-pageid": "رجع معرف الصفحة (page ID) لكل صفحة مرتبطة بصفحة الفهرس.",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber": "رجع أرقام الصفحات المنسقة لكل صفحة مرتبطة بصفحة الفهرس.",
+	"apihelp-query+proofreadpagesinindex-paramvalue-prop-formattedpagenumber-deprecated": "رجع أرقام الصفحات المنسقة لكل صفحة مرتبطة بصفحة الفهرس. مهمل، استعمل \"formattedpagenumber\" بداله.",
+	"apihelp-query+proofreadpagesinindex-param-title": "عنوان صفحة الفهرس باش نجيب صفحاتها.",
+	"apihelp-query+proofreadpagesinindex-example-1": "رجع المعلومات الافتراضية."
 }

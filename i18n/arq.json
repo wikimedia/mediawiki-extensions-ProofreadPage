@@ -7,7 +7,7 @@
 			"Reedy"
 		]
 	},
-	"nstab-page": "پاجة",
+	"nstab-page": "صفحه",
 	"nstab-index": "فهرس",
 	"tooltip-ca-nstab-page": "شوف الباجة تاع الكتاب",
 	"tooltip-ca-nstab-index": "شوف الفهرس تاع الكتاب",
@@ -28,7 +28,7 @@
 	"proofreadpage_number_expected": "غلطه: قيمة عددية مستنيه",
 	"proofreadpage_interval_too_large": "غلطه: المده كبيرة بزاف",
 	"proofreadpage_invalid_interval": "غلطة: المدة ماشي صحيحه",
-	"proofreadpage_nextpage": "صفحه جديده",
+	"proofreadpage_nextpage": "الصفحه التاليه",
 	"proofreadpage_prevpage": "الباجه منقبل",
 	"proofreadpage_header": "الرويس (ماهوش داخل):",
 	"proofreadpage_body": "جسم الباجه(باش يدخل):",
@@ -78,6 +78,6 @@
 	"proofreadpage-visualeditor-node-pages-inspector-title": "اختيار الپاجة",
 	"proofreadpage-visualeditor-node-pages-inspector-tooltip": "الپاجات",
 	"proofreadpage-visualeditor-node-pages-inspector-description": "تسياع تاع $1",
-	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "نعم",
+	"proofreadpage-visualeditor-node-pages-inspector-indexselector-yes": "إيه",
 	"proofreadpage-visualeditor-node-pages-inspector-indexselector-no": "لا"
 }
