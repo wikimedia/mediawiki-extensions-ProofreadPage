@@ -287,8 +287,7 @@ trait PagesTagRendererTrait {
 
 		$validArgs = [
 			'index', 'from', 'to', 'include', 'exclude', 'step',
-			'header', 'tosection', 'fromsection', 'onlysection',
-			'current', 'prev', 'next'
+			'header', 'tosection', 'fromsection', 'onlysection'
 		];
 
 		if ( $header ) {
@@ -301,7 +300,7 @@ trait PagesTagRendererTrait {
 			$indexKeys = array_map( static function ( $attr ) {
 				return strtolower( $attr->getKey() );
 			}, $attributes );
-			$validArgs = array_merge( $validArgs, $indexKeys );
+			$validArgs = array_merge( $validArgs, $indexKeys, [ 'current', 'prev', 'next' ] );
 
 			$indexLinks = $this->getTableOfContentLinks( $context, $indexTitle );
 			$pageTitle = $this->getTitle();
