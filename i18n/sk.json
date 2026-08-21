@@ -24,6 +24,8 @@
 	"proofreadpage_nosuch_file_for_index_category": "Index stránky so značkami pagelist, ktoré odkazujú na neexistujúci súbor",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Značka <code><nowiki><pagelist/></nowiki></code> odkazuje na súbor, ktorý neexistuje.",
 	"proofreadpage_nosuch_file": "Chyba: Taký súbor neexistuje",
+	"proofreadpage_invalid_attributes_category": "Vkladania stránok s neplatnými atribútmi",
+	"proofreadpage_invalid_attributes_category-desc": "Značka <code><nowiki><pages/></nowiki></code> používa nepodporovaný atribút.",
 	"proofreadpage_indexdupetext": "Stránky nemožno na indexovej stránke uviesť viac ako raz.",
 	"proofreadpage_nologin": "Nie ste prihlásený",
 	"proofreadpage_nologintext": "Ak chcete meniť stav skontrolovania stránky, musíte sa [[Special:UserLogin|prihlásiť]].",
