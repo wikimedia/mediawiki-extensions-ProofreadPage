@@ -80,11 +80,11 @@ class IndexTemplateStyles {
 		if ( $cssTitle && $cssTitle->exists() ) {
 			// if this is a normal redirect, follow it, because TS will not
 			// do that for the final page
-			$cssTitle = MediaWikiServices::getInstance()->getWikiPageFactory()
-				->newFromTitle( $cssTitle )->getRedirectTarget() ?: $cssTitle;
+			$services = MediaWikiServices::getInstance();
+			$cssTitle = $services->getRedirectLookup()->getRedirectTarget( $cssTitle->toPageIdentity() ) ?: $cssTitle;
 
 			$ts_attribs = [
-				"src" => $cssTitle->getFullText()
+				"src" => $services->getTitleFormatter()->getFullText( $cssTitle )
 			];
 
 			if ( $wrapper ) {
