@@ -271,8 +271,10 @@ class ProofreadPage implements
 		$name = $image->getTitle()->getText();
 		$title = Title::makeTitle( self::getIndexNamespaceId(), $name );
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$out->addModuleStyles( 'codex-styles' );
 		$link = $linkRenderer->makeKnownLink(
-			$title, $out->msg( 'proofreadpage_image_message' )->text()
+			$title, $out->msg( 'proofreadpage_image_message' )->text(),
+			[ 'class' => 'cdx-button cdx-button--fake-button cdx-button--fake-button--enabled' ]
 		);
 		$out->addHTML( Html::rawElement( 'p', [ 'class' => 'prp-indexpage-link' ], $link ) );
 	}
