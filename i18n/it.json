@@ -11,6 +11,7 @@
 			"F. Cosoleto",
 			"Gianfranco",
 			"Macofe",
+			"Matroz",
 			"OrbiliusMagister",
 			"Reedy",
 			"Stefano-c"
@@ -84,7 +85,7 @@
 	"proofreadpage_specialpage_label_sortascending": "Ordinamento crescente",
 	"proofreadpage_alphabeticalorder": "Ordine alfabetico",
 	"proofreadpage_index_listofpages": "Elenco di pagine",
-	"proofreadpage_image_message": "Collegamento alla pagina indice",
+	"proofreadpage_image_message": "Vai alla pagina indice",
 	"proofreadpage_page_status": "Status della pagina",
 	"proofreadpage_page_status_logged_out": "Stato della pagina (possono cambiarlo solo gli utenti che hanno effettuato l'accesso)",
 	"proofreadpage_js_attributes": "Autore Titolo Anno Editore",
