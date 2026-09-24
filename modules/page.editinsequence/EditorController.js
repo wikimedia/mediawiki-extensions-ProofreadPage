@@ -227,39 +227,42 @@ EditorController.prototype.save = function () {
 	const saveData = this.saveModel.getSaveData(),
 		wikiText = this.pageModel.getCurrentWikitext(),
 		pageName = this.pageModel.getPageName();
-	return this.api.postWithToken( 'csrf', {
-		action: 'edit',
-		title: pageName,
-		text: wikiText,
-		summary: saveData.editSummary,
-		minor: saveData.isMinorEdit,
-		watch: saveData.shouldWatchlist ? 'watch' : 'preferences',
-		format: 'json'
-	}, {
-		headers: {
-			'X-User-Agent': 'EditInSequence'
-		}
-	} ).then( ( result ) => {
-		if ( result && result.edit && result.edit.result ) {
-			this.pageModel.setInitialPageDataToCurrent();
-			this.pagelistModel.setPageStatus( this.pageModel.getPageStatus().status );
-			mw.config.set( 'wgPostEdit', 'saved' );
-			// The following messages are used here:
-			// * postedit-confirmation-published
-			// * postedit-confirmation-saved
-			mw.hook( 'postEdit' ).fire();
-			switch ( this.saveModel.getAfterSaveAction() ) {
-				case 'go-to-next':
-					this.pagelistModel.next();
-					break;
-				case 'go-to-previous':
-					this.pagelistModel.prev();
-					break;
+	return this.api.prepareExtensibleApiRequest( 'ext.proofreadpage.editinsequence-extend-save' )
+		// A hook handler that fails must not stop the save
+		.catch( () => ( {} ) )
+		.then( ( hookParams ) => this.api.postWithToken( 'csrf', Object.assign( {}, hookParams, {
+			action: 'edit',
+			title: pageName,
+			text: wikiText,
+			summary: saveData.editSummary,
+			minor: saveData.isMinorEdit,
+			watch: saveData.shouldWatchlist ? 'watch' : 'preferences',
+			format: 'json'
+		} ), {
+			headers: {
+				'X-User-Agent': 'EditInSequence'
 			}
-		}
+		} ) ).then( ( result ) => {
+			if ( result && result.edit && result.edit.result ) {
+				this.pageModel.setInitialPageDataToCurrent();
+				this.pagelistModel.setPageStatus( this.pageModel.getPageStatus().status );
+				mw.config.set( 'wgPostEdit', 'saved' );
+				// The following messages are used here:
+				// * postedit-confirmation-published
+				// * postedit-confirmation-saved
+				mw.hook( 'postEdit' ).fire();
+				switch ( this.saveModel.getAfterSaveAction() ) {
+					case 'go-to-next':
+						this.pagelistModel.next();
+						break;
+					case 'go-to-previous':
+						this.pagelistModel.prev();
+						break;
+				}
+			}
 
-		return result;
-	} );
+			return result;
+		} );
 };
 
 module.exports = EditorController;
