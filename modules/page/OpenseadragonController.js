@@ -20,7 +20,7 @@ function OpenSeadragonController( $img, usebetatoolbar ) {
 OO.mixinClass( OpenSeadragonController, OO.EventEmitter );
 
 /**
- * Initialize the zoom system
+ * Schedule the initialization of the zoom system when the image is loaded
  *
  * @param {string} id
  */
@@ -44,6 +44,24 @@ OpenSeadragonController.prototype.initialize = function ( id ) {
 		OpenSeadragon.setString( mapping[ 0 ], mw.msg( mapping[ 1 ] ) );
 	} );
 
+	if ( this.img.complete ) {
+		this.doInitialize( id );
+	} else {
+		this.img.addEventListener( 'load', () => {
+			this.doInitialize( id );
+		} );
+		this.img.addEventListener( 'error', () => {
+			this.doInitialize( id );
+		} );
+	}
+};
+
+/**
+ * Initialize the zoom system
+ *
+ * @param {string} id
+ */
+OpenSeadragonController.prototype.doInitialize = function ( id ) {
 	const osdParams = {
 		id: id,
 		showFullPageControl: false,
