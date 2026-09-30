@@ -40,7 +40,6 @@ class ApiQueryImageForPage extends ApiQueryBase {
 
 		$pageSet = $this->getPageSet()->getGoodAndMissingPages();
 		$result = $this->getResult();
-		$pagePageImages = [];
 
 		$props = array_fill_keys( $params['prop'], true );
 

@@ -10,16 +10,11 @@ function PreviewWidget( config ) {
 	PreviewWidget.super.call( this, config );
 	OO.ui.mixin.PendingElement.call( this );
 	this.$fullText = $( '<textarea>' );
-	this.$previewArea = $( '<div>' );
-	this.$previewArea.hide();
-	this.errorMessageWidget = new OO.ui.MessageWidget();
-	this.errorMessageWidget.toggle( false );
-	this.$element.append( this.errorMessageWidget.$element );
-	this.$previewArea.addClass( 'prp-edit-in-sequence-preview-wrapper' );
-	this.$element.addClass( 'prp-edit-in-sequence-preview-area' );
-	this.$element.append( this.$previewArea );
-	this.isPreviewShown = false;
-	this.toggle( false );
+	this.errorMessageWidget = new OO.ui.MessageWidget().toggle( false );
+	this.$previewArea = $( '<div>' ).addClass( 'prp-edit-in-sequence-preview-wrapper' );
+	this.$element.addClass( 'prp-edit-in-sequence-preview-area' )
+		.append( this.errorMessageWidget.$element, this.$previewArea );
+	this.hidePreview();
 }
 
 OO.inheritClass( PreviewWidget, OO.ui.PanelLayout );
@@ -56,8 +51,9 @@ PreviewWidget.prototype.updatePreview = function ( wikitext, pagename ) {
 };
 
 PreviewWidget.prototype.showError = function () {
-	this.errorMessageWidget.setLabel( mw.msg.apply( null, arguments ) );
-	this.errorMessageWidget.toggle( true );
+	this.errorMessageWidget
+		.setLabel( mw.msg.apply( null, arguments ) )
+		.toggle( true );
 };
 
 /**

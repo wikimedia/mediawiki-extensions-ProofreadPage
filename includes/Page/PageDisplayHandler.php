@@ -20,7 +20,7 @@ use ProofreadPage\Pagination\PageNotInPaginationException;
 class PageDisplayHandler {
 
 	/**
-	 * @var integer default width for scan image
+	 * @var int Default width for scan image
 	 */
 	public const DEFAULT_IMAGE_WIDTH = 1280;
 
@@ -168,9 +168,9 @@ class PageDisplayHandler {
 	 */
 	public function buildPageContainerEnd( Title $pageTitle ) {
 		return Html::closeElement( 'div' ) .
-			Html::openElement( 'div', [ 'class' => 'prp-page-image' ] ) .
-			$this->buildImageHtml( $pageTitle ) .
-			Html::closeElement( 'div' ) .
+			Html::rawElement( 'div', [ 'class' => 'prp-page-image' ],
+				$this->buildImageHtml( $pageTitle )
+			) .
 			Html::closeElement( 'div' );
 	}
 

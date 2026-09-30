@@ -32,9 +32,7 @@ function EditorController( $content, pageModel, pagelistModel, saveModel ) {
 	}
 
 	// Remove the actionable items from the default interface
-	$content.find( '.editCheckboxes' ).hide();
-	$content.find( '#wpSummaryLabel' ).hide();
-	$content.find( '.editButtons' ).hide();
+	$content.find( '.editCheckboxes, #wpSummaryLabel, .editButtons' ).hide();
 
 	this.saveModel = saveModel;
 	this.pagelistModel = pagelistModel;
