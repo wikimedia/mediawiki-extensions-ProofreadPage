@@ -14,7 +14,7 @@ class IndexQualityStatsLookup {
 	private $cache = [];
 
 	public function __construct(
-		private readonly IConnectionProvider $connectionProvider,
+		private readonly IConnectionProvider $dbProvider,
 	) {
 	}
 
@@ -44,7 +44,7 @@ class IndexQualityStatsLookup {
 	 * @return PagesQualityStats
 	 */
 	private function fetchStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {
-		$row = $this->connectionProvider->getReplicaDatabase()->newSelectQueryBuilder()
+		$row = $this->dbProvider->getReplicaDatabase()->newSelectQueryBuilder()
 			->select( [ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ] )
 			->from( 'pr_index' )
 			->where( [ 'pr_page_id' => $indexTitle->getArticleID() ] )

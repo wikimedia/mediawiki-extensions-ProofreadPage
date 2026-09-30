@@ -97,7 +97,7 @@ class DatabaseIndexForPageLookup implements IndexForPageLookup {
 	 */
 	private function findIndexesWhichLinkTo( Title $title ) {
 		$services = MediaWikiServices::getInstance();
-		$dbr = $services->getDBLoadBalancerFactory()->getReplicaDatabase();
+		$dbr = $services->getConnectionProvider()->getReplicaDatabase();
 		$linksMigration = $services->getLinksMigration();
 		$titleConditions = $linksMigration->getLinksConditions( 'pagelinks', $title );
 		$results = $dbr->newSelectQueryBuilder()

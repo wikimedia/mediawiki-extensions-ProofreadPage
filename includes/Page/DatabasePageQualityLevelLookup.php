@@ -93,7 +93,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 			return;
 		}
 
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 		$results = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_title', 'pp_value' ] )
 			->from( 'page' )
@@ -125,7 +125,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 		}, $pageTitles );
 
 		$services = MediaWikiServices::getInstance();
-		$dbr = $services->getDBLoadBalancerFactory()->getReplicaDatabase();
+		$dbr = $services->getConnectionProvider()->getReplicaDatabase();
 		$categorylinksQueryInfo = $services->getLinksMigration()->getQueryInfo( 'categorylinks' );
 		foreach ( $this->getCategoryForQualityLevels() as $qualityLevel => $qualityCategory ) {
 			$categorylinksConditions = $services->getLinksMigration()->getLinksConditions(

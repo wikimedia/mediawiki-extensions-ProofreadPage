@@ -124,7 +124,7 @@ class Context {
 		static $defaultContext;
 
 		if ( $defaultContext === null || $purge ) {
-			$connectionProvider = MediaWikiServices::getInstance()->getConnectionProvider();
+			$dbProvider = MediaWikiServices::getInstance()->getConnectionProvider();
 			$repoGroup = MediaWikiServices::getInstance()->getRepoGroup();
 			$pageNamespaceId = ProofreadPageInit::getNamespaceId( 'page' );
 			$indexNamespaceId = ProofreadPageInit::getNamespaceId( 'index' );
@@ -134,7 +134,7 @@ class Context {
 				new DatabaseIndexForPageLookup( $indexNamespaceId, $repoGroup ),
 				new DatabaseIndexContentLookup(),
 				new DatabasePageQualityLevelLookup( $pageNamespaceId ),
-				new IndexQualityStatsLookup( $connectionProvider )
+				new IndexQualityStatsLookup( $dbProvider )
 			);
 		}
 
