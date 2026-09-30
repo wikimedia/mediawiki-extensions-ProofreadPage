@@ -10,7 +10,7 @@ use ProofreadPage\Index\IndexContent;
  * @group API
  * @group Database
  * @group medium
- * @covers ProofreadPage\Api\ApiQueryPagesInIndex
+ * @covers \ProofreadPage\Api\ApiQueryPagesInIndex
  */
 class ApiQueryProofreadPagesInIndexTest extends ApiTestCase {
 

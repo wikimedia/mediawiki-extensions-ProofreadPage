@@ -23,6 +23,7 @@ namespace ProofreadPage\Special;
 
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Search\ISearchResultSet;
 use MediaWiki\Search\SearchEngineFactory;
 use MediaWiki\Search\SearchResult;
@@ -84,7 +85,7 @@ class SpecialProofreadPages extends QueryPage {
 		// don't show navigation if included in another page
 		$this->shownavigation = !$this->including();
 
-		if ( !$this->getConfig()->get( 'DisableTextSearch' ) ) {
+		if ( !$this->getConfig()->get( MainConfigNames::DisableTextSearch ) ) {
 			if ( !$this->including() ) {
 				// Only show the search form when not including in another page.
 				$this->displaySearchForm();

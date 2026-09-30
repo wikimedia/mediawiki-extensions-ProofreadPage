@@ -31,6 +31,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Hook\EditFormPreloadTextHook;
 use MediaWiki\Hook\GetDoubleUnderscoreIDsHook;
 use MediaWiki\Html\Html;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\Hook\OutputPageParserOutputHook;
@@ -816,7 +817,7 @@ class ProofreadPage implements
 	public static function onGetBetaFeaturePreferences( User $user, array &$betaPrefs ) {
 		$extensionAssetsPath = MediaWikiServices::getInstance()
 			->getMainConfig()
-			->get( 'ExtensionAssetsPath' );
+			->get( MainConfigNames::ExtensionAssetsPath );
 		$betaPrefs[ EditInSequence::BETA_FEATURE_NAME ] = [
 			// The first two are message keys
 			'label-message' => 'prp-editinsequence-beta-label',
