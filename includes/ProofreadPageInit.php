@@ -4,7 +4,6 @@ namespace ProofreadPage;
 
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Hook\MediaWikiServicesHook;
-use MediaWiki\Registration\ExtensionRegistry;
 
 /**
  * @license GPL-2.0-or-later
@@ -28,17 +27,18 @@ class ProofreadPageInit implements MediaWikiServicesHook {
 	 * @see MediaWikiServicesHook for limitations on what services can be accessed
 	 */
 	public function onMediaWikiServices( $services ) {
-		global $wgTemplateStylesNamespaces, $wgProofreadPageNamespaceIds;
-		$config = $services->getMainConfig();
+		global $wgTemplateStylesNamespaces;
 
 		self::initNamespace( 'page' );
 		self::initNamespace( 'index' );
 
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'TemplateStyles' ) ) {
+		if ( $services->getExtensionRegistry()->isLoaded( 'TemplateStyles' ) ) {
 			// Also Add Index NS to the TemplateStyles auto-CSS list
 			// so that /styles.css can be created
+			$config = $services->getMainConfig();
 			$templateStylesNamespaces = $config->get( 'TemplateStylesNamespaces' );
-			$templateStylesNamespaces[ $wgProofreadPageNamespaceIds[ 'index' ] ] = true;
+			$indexNamespace = $config->get( 'ProofreadPageNamespaceIds' )['index'];
+			$templateStylesNamespaces[$indexNamespace] = true;
 			$wgTemplateStylesNamespaces = $templateStylesNamespaces;
 		}
 	}

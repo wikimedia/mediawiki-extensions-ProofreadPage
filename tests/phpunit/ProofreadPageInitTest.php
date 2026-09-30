@@ -5,6 +5,7 @@ namespace ProofreadPage;
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use ProofreadPageTestCase;
 
 /**
@@ -24,7 +25,12 @@ class ProofreadPageInitTest extends ProofreadPageTestCase {
 				'10' => true
 			]
 		] );
-		$mockServiceContainer = $this->createNoOpMock( MediaWikiServices::class, [ 'getMainConfig' ] );
+		$mockServiceContainer = $this->createNoOpMock( MediaWikiServices::class, [
+			'getExtensionRegistry',
+			'getMainConfig',
+		] );
+		$registry = $this->createMock( ExtensionRegistry::class );
+		$mockServiceContainer->method( 'getExtensionRegistry' )->willReturn( $registry );
 		$mockServiceContainer->method( 'getMainConfig' )->willReturn( $config );
 		$proofreadPageInit = new ProofreadPageInit();
 		$proofreadPageInit->onMediaWikiServices( $mockServiceContainer );

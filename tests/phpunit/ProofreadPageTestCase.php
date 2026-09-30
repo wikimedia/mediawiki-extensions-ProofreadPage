@@ -6,6 +6,7 @@ use MediaWiki\FileRepo\File\File;
 use MediaWiki\FileRepo\File\UnregisteredLocalFile;
 use MediaWiki\FileRepo\FileRepo;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use ProofreadPage\Context;
@@ -126,7 +127,12 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 				'10' => true
 			]
 		] );
-		$mockServiceContainer = $this->createNoOpMock( MediaWikiServices::class, [ 'getMainConfig' ] );
+		$mockServiceContainer = $this->createNoOpMock( MediaWikiServices::class, [
+			'getExtensionRegistry',
+			'getMainConfig',
+		] );
+		$registry = $this->createMock( ExtensionRegistry::class );
+		$mockServiceContainer->method( 'getExtensionRegistry' )->willReturn( $registry );
 		$mockServiceContainer->method( 'getMainConfig' )->willReturn( $config );
 		$proofreadPageInit = new ProofreadPageInit();
 		$proofreadPageInit->onMediaWikiServices( $mockServiceContainer );
