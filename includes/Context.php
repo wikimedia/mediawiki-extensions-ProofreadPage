@@ -109,9 +109,6 @@ class Context {
 		return $this->pageQualityLevelLookup;
 	}
 
-	/**
-	 * @return IndexQualityStatsLookup
-	 */
 	public function getIndexQualityStatsLookup(): IndexQualityStatsLookup {
 		return $this->indexQualityStatsLookup;
 	}

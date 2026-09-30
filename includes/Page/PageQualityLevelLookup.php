@@ -22,7 +22,6 @@ interface PageQualityLevelLookup {
 	 * Flush the cache for a page
 	 *
 	 * This should be done after the page quality is updated.
-	 * @param PageIdentity $pageTitle
 	 */
 	public function flushCacheForPage( PageIdentity $pageTitle );
 

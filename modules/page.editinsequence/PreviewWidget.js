@@ -56,19 +56,12 @@ PreviewWidget.prototype.showError = function () {
 		.toggle( true );
 };
 
-/**
- * @param {string} wikitext
- * Shows the preview
- */
 PreviewWidget.prototype.showPreview = function () {
 	this.isPreviewShown = true;
 	this.toggle( true );
 	this.pushPending();
 };
 
-/**
- * Hides the preview
- */
 PreviewWidget.prototype.hidePreview = function () {
 	this.isPreviewShown = false;
 	this.toggle( false );

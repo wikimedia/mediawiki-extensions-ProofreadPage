@@ -27,10 +27,6 @@ class IndexQualityStatsLookup {
 		return array_key_exists( $indexTitle->getPrefixedDBkey(), $this->cache );
 	}
 
-	/**
-	 * @param Title $indexTitle
-	 * @return PagesQualityStats
-	 */
 	public function getStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {
 		$cacheKey = $indexTitle->getPrefixedDBkey();
 		if ( !array_key_exists( $cacheKey, $this->cache ) ) {
@@ -39,10 +35,6 @@ class IndexQualityStatsLookup {
 		return $this->cache[$cacheKey];
 	}
 
-	/**
-	 * @param Title $indexTitle
-	 * @return PagesQualityStats
-	 */
 	private function fetchStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {
 		$row = $this->dbProvider->getReplicaDatabase()->newSelectQueryBuilder()
 			->select( [ 'pr_count', 'pr_q0', 'pr_q1', 'pr_q2', 'pr_q3', 'pr_q4' ] )

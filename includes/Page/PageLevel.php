@@ -31,7 +31,6 @@ class PageLevel {
 
 	/**
 	 * returns the proofreading level
-	 * @return int
 	 */
 	public function getLevel(): int {
 		return $this->level;

@@ -19,26 +19,15 @@ class PagesQualityStats {
 	) {
 	}
 
-	/**
-	 * @param PagesQualityStats $other
-	 * @return bool
-	 */
 	public function equals( PagesQualityStats $other ): bool {
 		return $this->numberOfPages == $other->numberOfPages &&
 			$this->numberOfPagesByLevel == $other->numberOfPagesByLevel;
 	}
 
-	/**
-	 * @return int
-	 */
 	public function getNumberOfPages(): int {
 		return $this->numberOfPages;
 	}
 
-	/**
-	 * @param int $level
-	 * @return int
-	 */
 	public function getNumberOfPagesForQualityLevel( int $level ): int {
 		if ( !array_key_exists( $level, $this->numberOfPagesByLevel ) ) {
 			return 0;
@@ -46,16 +35,10 @@ class PagesQualityStats {
 		return $this->numberOfPagesByLevel[$level];
 	}
 
-	/**
-	 * @return int
-	 */
 	public function getNumberOfPagesWithAnyQualityLevel(): int {
 		return array_sum( $this->numberOfPagesByLevel );
 	}
 
-	/**
-	 * @return int
-	 */
 	public function getNumberOfPagesWithoutQualityLevel(): int {
 		return $this->numberOfPages - $this->getNumberOfPagesWithAnyQualityLevel();
 	}
@@ -72,20 +55,12 @@ class PagesQualityStats {
 		return new PagesQualityStats( $this->numberOfPages, $newNumberOfPagesByLevel );
 	}
 
-	/**
-	 * @param int $newLevel
-	 * @return self
-	 */
 	public function withPageCreation( int $newLevel ): self {
 		$newNumberOfPagesByLevel = $this->numberOfPagesByLevel;
 		$newNumberOfPagesByLevel[$newLevel]++;
 		return new PagesQualityStats( $this->numberOfPages, $newNumberOfPagesByLevel );
 	}
 
-	/**
-	 * @param int $oldLevel
-	 * @return self
-	 */
 	public function withPageDeletion( int $oldLevel ): self {
 		$newNumberOfPagesByLevel = $this->numberOfPagesByLevel;
 		$newNumberOfPagesByLevel[$oldLevel]--;

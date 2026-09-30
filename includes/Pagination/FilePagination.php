@@ -93,10 +93,6 @@ class FilePagination extends Pagination {
 		return $this->pages[$pageNumber];
 	}
 
-	/**
-	 * @param int $pageNumber
-	 * @return Title
-	 */
 	private function buildPageTitle( int $pageNumber ): Title {
 		$i18nNumber = $this->indexTitle->getPageLanguage()->formatNumNoSeparators( $pageNumber );
 		$title = $this->buildPageTitleFromPageNumber( $i18nNumber );
@@ -112,10 +108,6 @@ class FilePagination extends Pagination {
 		return $title;
 	}
 
-	/**
-	 * @param string $pageNumber
-	 * @return Title
-	 */
 	private function buildPageTitleFromPageNumber( string $pageNumber ): Title {
 		return Title::makeTitle(
 			$this->pageNamespaceId,

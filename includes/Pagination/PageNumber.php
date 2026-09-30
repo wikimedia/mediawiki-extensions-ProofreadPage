@@ -160,44 +160,26 @@ class PageNumber {
 		}
 	}
 
-	/**
-	 * @return bool
-	 */
 	public function isEmpty(): bool {
 		return $this->isEmpty;
 	}
 
-	/**
-	 * @return string
-	 */
 	public function getDisplayMode(): string {
 		return $this->displayMode;
 	}
 
-	/**
-	 * @return bool
-	 */
 	public function isNumeric(): bool {
 		return is_numeric( $this->number );
 	}
 
-	/**
-	 * @return bool
-	 */
 	public function isRecto(): bool {
 		return $this->isRecto;
 	}
 
-	/**
-	 * @return string
-	 */
 	private function formatRectoVerso(): string {
 		return $this->isRecto ? '<sup>r</sup>' : '<sup>v</sup>';
 	}
 
-	/**
-	 * @return string
-	 */
 	private function rawRectoVerso(): string {
 		return $this->isRecto ? 'r' : 'v';
 	}

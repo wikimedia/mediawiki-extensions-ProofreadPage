@@ -590,10 +590,6 @@ class IndexContentHandler extends TextContentHandler {
 		);
 	}
 
-	/**
-	 * @param Title $title
-	 * @return DeleteIndexQualityStats
-	 */
 	private function buildIndexQualityStatsDelete( Title $title ): DeleteIndexQualityStats {
 		return new DeleteIndexQualityStats( MediaWikiServices::getInstance()->getConnectionProvider(), $title );
 	}

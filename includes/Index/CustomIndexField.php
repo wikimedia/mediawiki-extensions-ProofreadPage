@@ -48,7 +48,6 @@ class CustomIndexField {
 
 	/**
 	 * Return the type of the entry
-	 * @return string
 	 */
 	public function getType(): string {
 		if ( isset( $this->config['type'] ) && $this->config['type'] !== null && $this->config['type'] !== '' ) {
@@ -61,8 +60,6 @@ class CustomIndexField {
 	/**
 	 * Return the field's data name.
 	 * This is a lowercase string that defines what sort of information is stored in this field.
-	 *
-	 * @return ?string
 	 */
 	public function getData(): ?string {
 		if ( isset( $this->config['data'] ) && $this->config['data'] !== null && $this->config['data'] !== '' ) {

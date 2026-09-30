@@ -47,10 +47,6 @@ class EditPagePage extends EditPage {
 	 */
 	private $readOnlyMode;
 
-	/**
-	 * @param Article $article
-	 * @param Context $context
-	 */
 	public function __construct( Article $article, Context $context ) {
 		parent::__construct( $article );
 
