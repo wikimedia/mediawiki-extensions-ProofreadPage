@@ -17,11 +17,6 @@ use MediaWiki\Title\Title;
 class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 
 	/**
-	 * @var int
-	 */
-	private $pageNamespaceId;
-
-	/**
 	 * @var PageIdentity[]
 	 */
 	private $categoryForQualityLevel;
@@ -29,11 +24,9 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	/** @var (int|null)[] */
 	private $cache = [];
 
-	/**
-	 * @param int $pageNamespaceId
-	 */
-	public function __construct( $pageNamespaceId ) {
-		$this->pageNamespaceId = $pageNamespaceId;
+	public function __construct(
+		private readonly int $pageNamespaceId,
+	) {
 	}
 
 	/**
@@ -54,7 +47,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	 * @inheritDoc
 	 */
 	public function getQualityLevelForPageTitle( PageIdentity $pageTitle ) {
-		if ( !$pageTitle->getNamespace() === $this->pageNamespaceId ) {
+		if ( $pageTitle->getNamespace() !== $this->pageNamespaceId ) {
 			throw new InvalidArgumentException( $pageTitle . ' is not in Page: namespace' );
 		}
 		$cacheKey = $pageTitle->getDBkey();

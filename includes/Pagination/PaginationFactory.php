@@ -16,11 +16,6 @@ class PaginationFactory {
 	/** @var Pagination[] */
 	private $paginations = [];
 
-	/**
-	 * @param FileProvider $fileProvider
-	 * @param IndexContentLookup $indexContentLookup
-	 * @param int $pageNamespaceId
-	 */
 	public function __construct(
 		private readonly FileProvider $fileProvider,
 		private readonly IndexContentLookup $indexContentLookup,

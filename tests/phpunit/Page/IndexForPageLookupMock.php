@@ -11,14 +11,12 @@ use MediaWiki\Title\Title;
  */
 class IndexForPageLookupMock implements IndexForPageLookup {
 
-	/** @var Title[] */
-	private $indexForPage;
-
 	/**
 	 * @param Title[] $indexForPage
 	 */
-	public function __construct( array $indexForPage ) {
-		$this->indexForPage = $indexForPage;
+	public function __construct(
+		private readonly array $indexForPage,
+	) {
 	}
 
 	/**

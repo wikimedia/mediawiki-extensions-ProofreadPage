@@ -9,19 +9,14 @@ namespace ProofreadPage\Index;
  */
 class PagesQualityStats {
 
-	/** @var int */
-	private $numberOfPages;
-
-	/** @var int[] */
-	private $numberOfPagesByLevel;
-
 	/**
 	 * @param int $numberOfPages
 	 * @param int[] $numberOfPagesByLevel
 	 */
-	public function __construct( int $numberOfPages, array $numberOfPagesByLevel ) {
-		$this->numberOfPages = $numberOfPages;
-		$this->numberOfPagesByLevel = $numberOfPagesByLevel;
+	public function __construct(
+		private readonly int $numberOfPages,
+		private readonly array $numberOfPagesByLevel,
+	) {
 	}
 
 	/**

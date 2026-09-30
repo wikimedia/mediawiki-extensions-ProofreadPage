@@ -11,14 +11,12 @@ use MediaWiki\Page\PageIdentity;
  */
 class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 
-	/** @var int[] */
-	private $levelForPage;
-
 	/**
 	 * @param int[] $levelForPage
 	 */
-	public function __construct( array $levelForPage ) {
-		$this->levelForPage = $levelForPage;
+	public function __construct(
+		private readonly array $levelForPage,
+	) {
 	}
 
 	/**

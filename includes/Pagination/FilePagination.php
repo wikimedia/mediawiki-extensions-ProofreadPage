@@ -12,24 +12,10 @@ use OutOfBoundsException;
  */
 class FilePagination extends Pagination {
 
-	/** @var Title */
-	private $indexTitle;
-
-	/**
-	 * @var PageList representation of the <pagelist> tag
-	 */
-	private $pageList;
-
-	/** @var int */
-	private $numberOfPages;
-
 	/**
 	 * @var Title[] cache of build pages of the pagination as $pageNumber => $page array
 	 */
 	private $pages = [];
-
-	/** @var int */
-	private $pageNamespaceId;
 
 	/**
 	 * @param Title $indexTitle
@@ -38,12 +24,11 @@ class FilePagination extends Pagination {
 	 * @param int $pageNamespaceId
 	 */
 	public function __construct(
-		Title $indexTitle, PageList $pageList, int $numberOfPages, int $pageNamespaceId
+		private readonly Title $indexTitle,
+		private readonly PageList $pageList,
+		private readonly int $numberOfPages,
+		private readonly int $pageNamespaceId,
 	) {
-		$this->indexTitle = $indexTitle;
-		$this->pageList = $pageList;
-		$this->numberOfPages = $numberOfPages;
-		$this->pageNamespaceId = $pageNamespaceId;
 	}
 
 	/**

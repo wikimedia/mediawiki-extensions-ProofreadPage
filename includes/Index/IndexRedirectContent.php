@@ -14,19 +14,12 @@ use MediaWiki\Title\Title;
  */
 class IndexRedirectContent extends TextContent {
 
-	/**
-	 * @var Title
-	 */
-	private $redirectionTarget;
-
-	/**
-	 * @param Title $redirectionTarget
-	 */
-	public function __construct( Title $redirectionTarget ) {
+	public function __construct(
+		private readonly Title $redirectionTarget,
+	) {
 		if ( !$redirectionTarget->isValidRedirectTarget() ) {
 			throw new InvalidArgumentException( $redirectionTarget . ' should be a valid redirection target' );
 		}
-		$this->redirectionTarget = $redirectionTarget;
 		parent::__construct(
 			'#REDIRECT [[' . $redirectionTarget->getFullText() . ']]',
 			CONTENT_MODEL_PROOFREAD_INDEX

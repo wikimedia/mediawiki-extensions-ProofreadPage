@@ -11,19 +11,10 @@ use MediaWiki\Title\Title;
  */
 class Link {
 
-	/** @var Title */
-	private $target;
-
-	/** @var string */
-	private $label;
-
-	/**
-	 * @param Title $target
-	 * @param string $label
-	 */
-	public function __construct( Title $target, $label ) {
-		$this->target = $target;
-		$this->label = $label;
+	public function __construct(
+		private readonly Title $target,
+		private readonly string $label,
+	) {
 	}
 
 	/**

@@ -12,11 +12,6 @@ use RuntimeException;
 class PageList {
 
 	/**
-	 * @var array parameters of the <pagelist> tag
-	 */
-	private $params;
-
-	/**
 	 * @var PageNumber[] PageNumber already computed
 	 */
 	private $pageNumbers = [];
@@ -24,8 +19,9 @@ class PageList {
 	/**
 	 * @param array $params parameters of the <pagelist> tag
 	 */
-	public function __construct( array $params ) {
-		$this->params = $params;
+	public function __construct(
+		private readonly array $params,
+	) {
 	}
 
 	/**

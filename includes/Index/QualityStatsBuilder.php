@@ -11,14 +11,9 @@ use ProofreadPage\Pagination\Pagination;
  */
 class QualityStatsBuilder {
 
-	/** @var PageQualityLevelLookup */
-	private $pageQualityLevelLookup;
-
-	/**
-	 * @param PageQualityLevelLookup $pageQualityLevelLookup
-	 */
-	public function __construct( PageQualityLevelLookup $pageQualityLevelLookup ) {
-		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
+	public function __construct(
+		private readonly PageQualityLevelLookup $pageQualityLevelLookup,
+	) {
 	}
 
 	/**

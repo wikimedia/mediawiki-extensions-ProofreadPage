@@ -14,48 +14,15 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class UpdateIndexQualityStats extends DataUpdate {
 
-	/** @var IConnectionProvider */
-	private $dbProvider;
-
-	/** @var PageQualityLevelLookup */
-	private $pageQualityLevelLookup;
-
-	/** @var Pagination */
-	private $pagination;
-
-	/** @var Title */
-	private $indexTitle;
-
-	/** @var Title|null */
-	private $overrideTitle;
-
-	/** @var int|null */
-	private $overrideLevel;
-
-	/**
-	 * @param IConnectionProvider $dbProvider
-	 * @param PageQualityLevelLookup $pageQualityLevelLookup
-	 * @param Pagination $pagination
-	 * @param Title $indexTitle
-	 * @param Title|null $overrideTitle
-	 * @param int|null $overrideLevel
-	 */
 	public function __construct(
-		IConnectionProvider $dbProvider,
-		PageQualityLevelLookup $pageQualityLevelLookup,
-		Pagination $pagination,
-		Title $indexTitle,
-		?Title $overrideTitle = null,
-		?int $overrideLevel = null
+		private readonly IConnectionProvider $dbProvider,
+		private readonly PageQualityLevelLookup $pageQualityLevelLookup,
+		private readonly Pagination $pagination,
+		private readonly Title $indexTitle,
+		private readonly ?Title $overrideTitle = null,
+		private readonly ?int $overrideLevel = null,
 	) {
 		parent::__construct();
-
-		$this->dbProvider = $dbProvider;
-		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
-		$this->pagination = $pagination;
-		$this->indexTitle = $indexTitle;
-		$this->overrideTitle = $overrideTitle;
-		$this->overrideLevel = $overrideLevel;
 	}
 
 	/**

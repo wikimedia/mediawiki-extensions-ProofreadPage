@@ -46,18 +46,6 @@ class PageNumber {
 		'arab' => 'arab',
 	];
 
-	/** @var string */
-	private $number;
-
-	/** @var string */
-	private $displayMode;
-
-	/** @var bool */
-	private $isEmpty;
-
-	/** @var bool */
-	private $isRecto;
-
 	/**
 	 * @param string $number the page number
 	 * @param string $displayMode the display mode (one of the DISPLAY_* constant)
@@ -65,15 +53,11 @@ class PageNumber {
 	 * @param bool $isRecto true if recto, false if verso (for folio modes only)
 	 */
 	public function __construct(
-		string $number,
-		string $displayMode = self::DISPLAY_NORMAL,
-		bool $isEmpty = false,
-		bool $isRecto = true
+		private readonly string $number,
+		private readonly string $displayMode = self::DISPLAY_NORMAL,
+		private readonly bool $isEmpty = false,
+		private readonly bool $isRecto = true,
 	) {
-		$this->number = $number;
-		$this->displayMode = $displayMode;
-		$this->isEmpty = $isEmpty;
-		$this->isRecto = $isRecto;
 	}
 
 	/**

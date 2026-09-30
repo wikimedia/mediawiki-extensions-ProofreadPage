@@ -9,14 +9,12 @@ use MediaWiki\Title\Title;
  */
 class IndexContentLookupMock implements IndexContentLookup {
 
-	/** @var IndexContent[] */
-	private $contentForIndex;
-
 	/**
 	 * @param IndexContent[] $contentForIndex
 	 */
-	public function __construct( array $contentForIndex ) {
-		$this->contentForIndex = $contentForIndex;
+	public function __construct(
+		private readonly array $contentForIndex,
+	) {
 	}
 
 	/**

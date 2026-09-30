@@ -9,13 +9,12 @@ use MediaWiki\Title\Title;
  */
 class IndexQualityStatsLookupMock extends IndexQualityStatsLookup {
 
-	private array $qualityStatsForIndex;
-
 	/**
 	 * @param array<string,PagesQualityStats> $qualityStatsForIndex
 	 */
-	public function __construct( array $qualityStatsForIndex ) {
-		$this->qualityStatsForIndex = $qualityStatsForIndex;
+	public function __construct(
+		private readonly array $qualityStatsForIndex,
+	) {
 	}
 
 	public function getStatsForIndexTitle( Title $indexTitle ): PagesQualityStats {

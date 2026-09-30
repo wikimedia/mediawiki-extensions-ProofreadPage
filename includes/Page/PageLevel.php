@@ -20,22 +20,13 @@ class PageLevel {
 	public const VALIDATED = 4;
 
 	/**
-	 * @var int proofreading level of the page
+	 * @param int $level proofreading level of the page
+	 * @param User|null $user last user of the page
 	 */
-	protected $level = self::NOT_PROOFREAD;
-
-	/**
-	 * @var User|null last user of the page
-	 */
-	protected $user = null;
-
-	/**
-	 * @param int $level
-	 * @param User|null $user
-	 */
-	public function __construct( $level = self::NOT_PROOFREAD, ?User $user = null ) {
-		$this->level = $level;
-		$this->user = $user;
+	public function __construct(
+		private readonly int $level = self::NOT_PROOFREAD,
+		private readonly ?User $user = null,
+	) {
 	}
 
 	/**
@@ -60,7 +51,8 @@ class PageLevel {
 	 * @return bool
 	 */
 	public function isValid() {
-		return is_int( $this->level ) && $this->level >= 0 && $this->level <= 4;
+		return $this->level >= self::WITHOUT_TEXT &&
+			$this->level <= self::VALIDATED;
 	}
 
 	/**

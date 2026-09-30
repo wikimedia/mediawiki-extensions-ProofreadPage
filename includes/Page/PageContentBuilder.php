@@ -18,23 +18,10 @@ use ProofreadPage\Pagination\PageNotInPaginationException;
  */
 class PageContentBuilder {
 
-	/**
-	 * @var IContextSource
-	 */
-	private $contextSource;
-
-	/**
-	 * @var Context
-	 */
-	private $context;
-
-	/**
-	 * @param IContextSource $contextSource
-	 * @param Context $context
-	 */
-	public function __construct( IContextSource $contextSource, Context $context ) {
-		$this->contextSource = $contextSource;
-		$this->context = $context;
+	public function __construct(
+		private readonly IContextSource $contextSource,
+		private readonly Context $context,
+	) {
 	}
 
 	/**

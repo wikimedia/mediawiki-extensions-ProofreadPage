@@ -19,23 +19,13 @@ use ProofreadPage\Pagination\PageList;
 class IndexContent extends TextContent {
 
 	/**
-	 * @var WikitextContent[]
-	 */
-	private $fields;
-
-	/**
-	 * @var Title[]
-	 */
-	private $categories;
-
-	/**
 	 * @param WikitextContent[] $fields
 	 * @param Title[] $categories
 	 */
-	public function __construct( array $fields, array $categories = [] ) {
-		$this->fields = $fields;
-		$this->categories = $categories;
-
+	public function __construct(
+		private readonly array $fields,
+		private readonly array $categories = [],
+	) {
 		parent::__construct( '', CONTENT_MODEL_PROOFREAD_INDEX );
 	}
 

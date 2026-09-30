@@ -18,39 +18,17 @@ use MediaWiki\Title\Title;
 class PageContent extends TextContent {
 
 	/**
-	 * @var WikitextContent header of the page
-	 */
-	protected $header;
-
-	/**
-	 * @var WikitextContent body of the page
-	 */
-	protected $body;
-
-	/**
-	 * @var WikitextContent footer of the page
-	 */
-	protected $footer;
-
-	/**
-	 * @var PageLevel proofreading level of the page
-	 */
-	protected $level;
-
-	/**
-	 * @param WikitextContent $header
-	 * @param WikitextContent $body
-	 * @param WikitextContent $footer
-	 * @param PageLevel $level
+	 * @param WikitextContent $header header of the page
+	 * @param WikitextContent $body body of the page
+	 * @param WikitextContent $footer footer of the page
+	 * @param PageLevel $level proofreading level of the page
 	 */
 	public function __construct(
-		WikitextContent $header, WikitextContent $body, WikitextContent $footer, PageLevel $level
+		private readonly WikitextContent $header,
+		private readonly WikitextContent $body,
+		private readonly WikitextContent $footer,
+		private readonly PageLevel $level,
 	) {
-		$this->header = $header;
-		$this->body = $body;
-		$this->footer = $footer;
-		$this->level = $level;
-
 		parent::__construct( '', CONTENT_MODEL_PROOFREAD_PAGE );
 	}
 

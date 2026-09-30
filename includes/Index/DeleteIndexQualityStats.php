@@ -12,21 +12,11 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class DeleteIndexQualityStats extends DataUpdate {
 
-	/** @var IConnectionProvider */
-	private $dbProvider;
-
-	/** @var Title */
-	private $indexTitle;
-
-	/**
-	 * @param IConnectionProvider $dbProvider
-	 * @param Title $indexTitle
-	 */
-	public function __construct( IConnectionProvider $dbProvider, Title $indexTitle ) {
+	public function __construct(
+		private readonly IConnectionProvider $dbProvider,
+		private readonly Title $indexTitle,
+	) {
 		parent::__construct();
-
-		$this->dbProvider = $dbProvider;
-		$this->indexTitle = $indexTitle;
 	}
 
 	/**

@@ -13,26 +13,13 @@ use MediaWiki\Title\Title;
  */
 class DatabaseIndexForPageLookup implements IndexForPageLookup {
 
-	/**
-	 * @var int
-	 */
-	private $indexNamespaceId;
-
-	/**
-	 * @var RepoGroup
-	 */
-	private $repoGroup;
-
 	/** @var (?Title)[] */
 	private $cache = [];
 
-	/**
-	 * @param int $indexNamespaceId
-	 * @param RepoGroup $repoGroup
-	 */
-	public function __construct( $indexNamespaceId, RepoGroup $repoGroup ) {
-		$this->indexNamespaceId = $indexNamespaceId;
-		$this->repoGroup = $repoGroup;
+	public function __construct(
+		private readonly int $indexNamespaceId,
+		private readonly RepoGroup $repoGroup,
+	) {
 	}
 
 	/**

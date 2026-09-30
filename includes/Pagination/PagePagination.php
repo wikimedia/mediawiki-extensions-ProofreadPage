@@ -13,26 +13,20 @@ use OutOfBoundsException;
  */
 class PagePagination extends Pagination {
 
-	/** @var Title[] */
-	private $pages = [];
-
-	/** @var PageNumber[] */
-	private $pageNumbers = [];
-
 	/**
 	 * @param Title[] $pages the ordered pages
 	 * @param PageNumber[] $pageNumbers with $pageNumbers[i] the page number of the page $pages[i]
 	 * @throws InvalidArgumentException
 	 */
-	public function __construct( array $pages, array $pageNumbers ) {
+	public function __construct(
+		private readonly array $pages,
+		private readonly array $pageNumbers,
+	) {
 		if ( count( $pages ) !== count( $pageNumbers ) ) {
 			throw new InvalidArgumentException(
 				'The number of page numbers is not the same as the number of pages'
 			);
 		}
-
-		$this->pages = $pages;
-		$this->pageNumbers = $pageNumbers;
 	}
 
 	/**

@@ -26,76 +26,18 @@ use ProofreadPage\Pagination\PaginationFactory;
  */
 class Context {
 
-	/**
-	 * @var int
-	 */
-	private $pageNamespaceId;
+	private PaginationFactory $paginationFactory;
 
-	/**
-	 * @var int
-	 */
-	private $indexNamespaceId;
-
-	/**
-	 * @var FileProvider
-	 */
-	private $fileProvider;
-
-	/**
-	 * @var PaginationFactory
-	 */
-	private $paginationFactory;
-
-	/**
-	 * @var CustomIndexFieldsParser
-	 */
-	private $customIndexFieldsParser;
-
-	/**
-	 * @var IndexForPageLookup
-	 */
-	private $indexForPageLookup;
-
-	/**
-	 * @var IndexContentLookup
-	 */
-	private $indexContentLookup;
-
-	/**
-	 * @var PageQualityLevelLookup
-	 */
-	private $pageQualityLevelLookup;
-
-	/**
-	 * @var IndexQualityStatsLookup
-	 */
-	private $indexQualityStatsLookup;
-
-	/**
-	 * @param int $pageNamespaceId
-	 * @param int $indexNamespaceId
-	 * @param FileProvider $fileProvider
-	 * @param CustomIndexFieldsParser $customIndexFieldsParser
-	 * @param IndexForPageLookup $indexForPageLookup
-	 * @param IndexContentLookup $indexContentLookup
-	 * @param PageQualityLevelLookup $pageQualityLevelLookup
-	 * @param IndexQualityStatsLookup $indexQualityStatsLookup
-	 */
 	public function __construct(
-		$pageNamespaceId, $indexNamespaceId, FileProvider $fileProvider,
-		CustomIndexFieldsParser $customIndexFieldsParser, IndexForPageLookup $indexForPageLookup,
-		IndexContentLookup $indexContentLookup, PageQualityLevelLookup $pageQualityLevelLookup,
-		IndexQualityStatsLookup $indexQualityStatsLookup
+		private readonly int $pageNamespaceId,
+		private readonly int $indexNamespaceId,
+		private readonly FileProvider $fileProvider,
+		private readonly CustomIndexFieldsParser $customIndexFieldsParser,
+		private readonly IndexForPageLookup $indexForPageLookup,
+		private readonly IndexContentLookup $indexContentLookup,
+		private readonly PageQualityLevelLookup $pageQualityLevelLookup,
+		private readonly IndexQualityStatsLookup $indexQualityStatsLookup,
 	) {
-		$this->pageNamespaceId = $pageNamespaceId;
-		$this->indexNamespaceId = $indexNamespaceId;
-		$this->fileProvider = $fileProvider;
-		$this->customIndexFieldsParser = $customIndexFieldsParser;
-		$this->indexForPageLookup = $indexForPageLookup;
-		$this->indexContentLookup = $indexContentLookup;
-		$this->pageQualityLevelLookup = $pageQualityLevelLookup;
-		$this->indexQualityStatsLookup = $indexQualityStatsLookup;
-
 		$this->paginationFactory = new PaginationFactory(
 			$fileProvider,
 			$indexContentLookup,

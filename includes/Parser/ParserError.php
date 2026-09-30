@@ -13,13 +13,12 @@ use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
  */
 class ParserError extends RuntimeException {
 
-	private string $messageKey;
-
 	/**
 	 * @param string $messageKey The message key for the error
 	 */
-	public function __construct( string $messageKey ) {
-		$this->messageKey = $messageKey;
+	public function __construct(
+		private readonly string $messageKey,
+	) {
 		parent::__construct( $messageKey );
 	}
 

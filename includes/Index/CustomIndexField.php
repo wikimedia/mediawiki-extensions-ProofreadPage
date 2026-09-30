@@ -10,32 +10,16 @@ namespace ProofreadPage\Index;
 class CustomIndexField {
 
 	/**
-	 * The key of the entry
-	 * @var string
+	 * @param string $key The key of the entry
+	 * @param string $value The value of the entry
+	 * @param array $config The config of the entry
 	 */
-	protected $key;
-
-	/**
-	 * The value of the entry
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * The config of the entry
-	 * @var array
-	 */
-	protected $config;
-
-	/**
-	 * @param string $key
-	 * @param string $value
-	 * @param array $config
-	 */
-	public function __construct( $key, $value, array $config ) {
-		$this->key = $key;
+	public function __construct(
+		private readonly string $key,
+		private string $value,
+		private readonly array $config,
+	) {
 		$this->value = trim( $value );
-		$this->config = $config;
 	}
 
 	/**

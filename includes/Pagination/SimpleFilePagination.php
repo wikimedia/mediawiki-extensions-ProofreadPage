@@ -13,14 +13,6 @@ use OutOfBoundsException;
 class SimpleFilePagination extends Pagination {
 
 	/** @var Title */
-	private $indexTitle;
-
-	/**
-	 * @var PageList representation of the <pagelist> tag
-	 */
-	private $pageList;
-
-	/** @var Title */
 	private $pageTitle;
 
 	/**
@@ -29,11 +21,11 @@ class SimpleFilePagination extends Pagination {
 	 * @param int $pageNamespaceId
 	 */
 	public function __construct(
-		Title $indexTitle, PageList $pageList, int $pageNamespaceId
+		private readonly Title $indexTitle,
+		private readonly PageList $pageList,
+		int $pageNamespaceId,
 	) {
-		$this->indexTitle = $indexTitle;
 		$this->pageTitle = Title::makeTitle( $pageNamespaceId, $this->indexTitle->getText() );
-		$this->pageList = $pageList;
 	}
 
 	/**

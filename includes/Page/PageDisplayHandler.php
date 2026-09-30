@@ -25,11 +25,6 @@ class PageDisplayHandler {
 	public const DEFAULT_IMAGE_WIDTH = 1280;
 
 	/**
-	 * @var Context
-	 */
-	private $context;
-
-	/**
 	 * Cache for image URLs
 	 *
 	 * @var array
@@ -39,11 +34,9 @@ class PageDisplayHandler {
 		'full' => []
 	];
 
-	/**
-	 * @param Context $context
-	 */
-	public function __construct( Context $context ) {
-		$this->context = $context;
+	public function __construct(
+		private readonly Context $context,
+	) {
 	}
 
 	/**
