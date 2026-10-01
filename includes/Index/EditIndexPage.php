@@ -139,7 +139,7 @@ class EditIndexPage extends EditPage {
 	}
 
 	/**
-	 * @param array $categories
+	 * @param Title[] $categories
 	 * @param array $inputOptions
 	 * @return FieldLayout
 	 */

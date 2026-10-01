@@ -3,6 +3,7 @@
 namespace ProofreadPage\Page;
 
 use InvalidArgumentException;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageIdentity;
 use MediaWiki\Title\Title;
@@ -17,7 +18,7 @@ use MediaWiki\Title\Title;
 class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 
 	/**
-	 * @var PageIdentity[]
+	 * @var array<int,LinkTarget>
 	 */
 	private $categoryForQualityLevel;
 
@@ -152,8 +153,8 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	}
 
 	/**
-	 * @param array $pageTitles
-	 * @return array
+	 * @param PageIdentity[] $pageTitles
+	 * @return PageIdentity[]
 	 */
 	private function filterPagesWithoutKnownQuality( array $pageTitles ) {
 		return array_filter( $pageTitles, function ( PageIdentity $pageTitle ) {
@@ -162,15 +163,16 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	}
 
 	/**
-	 * @return array categoryForQualityLevel
+	 * @return array<int,LinkTarget>
 	 */
 	private function getCategoryForQualityLevels() {
-		if ( $this->categoryForQualityLevel === null ) {
-			$this->categoryForQualityLevel = $this->computeCategoryForQualityLevels();
-		}
+		$this->categoryForQualityLevel ??= $this->computeCategoryForQualityLevels();
 		return $this->categoryForQualityLevel;
 	}
 
+	/**
+	 * @return array<int,LinkTarget>
+	 */
 	private function computeCategoryForQualityLevels(): array {
 		$qualityCategories = [];
 		for ( $qualityLevel = 0; $qualityLevel <= 4; $qualityLevel++ ) {

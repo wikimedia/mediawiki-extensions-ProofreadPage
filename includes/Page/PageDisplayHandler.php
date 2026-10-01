@@ -27,9 +27,9 @@ class PageDisplayHandler {
 	/**
 	 * Cache for image URLs
 	 *
-	 * @var array
+	 * @var array<string,array<string,?MediaTransformOutput>>
 	 */
-	private $imageUrlCache = [
+	private array $imageUrlCache = [
 		'thumb' => [],
 		'full' => []
 	];
@@ -92,7 +92,7 @@ class PageDisplayHandler {
 	 *
 	 * @param Title $title the page title
 	 * @param PageContent $content the page's content
-	 * @return array the array of JS variables
+	 * @return array<string,mixed> the array of JS variables
 	 */
 	public function getPageJsConfigVars( Title $title, PageContent $content ): array {
 		$indexFields = $this->getIndexFieldsForJS( $title );

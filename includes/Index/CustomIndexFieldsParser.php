@@ -16,17 +16,16 @@ use OutOfBoundsException;
  */
 class CustomIndexFieldsParser {
 
-	/** @var array */
+	/** @var array<string,array> */
 	private $configuration;
 
 	/**
 	 * Loads custom configuration
-	 * @param array|null $customIndexFieldsConfiguration (optional)
+	 * @param array<string,array>|null $customIndexFieldsConfiguration (optional)
 	 */
 	public function __construct( ?array $customIndexFieldsConfiguration = null ) {
-		$this->configuration = ( $customIndexFieldsConfiguration === null )
-			? $this->loadCustomIndexFieldsConfiguration()
-			: $customIndexFieldsConfiguration;
+		$this->configuration = $customIndexFieldsConfiguration ??
+			$this->loadCustomIndexFieldsConfiguration();
 	}
 
 	/**
@@ -83,6 +82,9 @@ class CustomIndexFieldsParser {
 		return $data ?: null;
 	}
 
+	/**
+	 * @return array<string,array>
+	 */
 	private function loadCustomIndexFieldsConfiguration(): array {
 		$data = $this->loadJsonFromMessage( 'proofreadpage_index_data_config.json' );
 		// fallback to the legacy name - T263094

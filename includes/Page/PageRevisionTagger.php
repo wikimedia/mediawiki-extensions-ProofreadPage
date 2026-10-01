@@ -10,7 +10,7 @@ class PageRevisionTagger {
 	/**
 	 * Get the tags for a given recent change
 	 * @param RecentChange $rc the recent change
-	 * @return array array of tags
+	 * @return string[] array of tags
 	 */
 	public function getTagsForChange( RecentChange $rc ): array {
 		$newId = $rc->getAttribute( 'rc_this_oldid' );
@@ -24,7 +24,7 @@ class PageRevisionTagger {
 	 * @param int $oldId parent rev ID of the change (0 if new page or don't need
 	 *                   to compare with the previous rev)
 	 * @param int $newId rev ID of the change
-	 * @return array array of tags
+	 * @return string[] array of tags
 	 */
 	public function getTagsForIds( int $oldId, int $newId ): array {
 		$tags = [];

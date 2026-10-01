@@ -66,7 +66,7 @@ trait PagesTagRendererTrait {
 	 *
 	 * @param \ProofreadPage\Context $context The ProofreadPage context
 	 * @param array $args Tag arguments
-	 * @return array Array with 'output' (string) and 'contentLang' (string|null) keys
+	 * @return array{output: string, contentLang: ?string}
 	 */
 	public function renderTag( $context, $args ) {
 		$index = $args['index'] ?? null;

@@ -4,7 +4,6 @@ namespace ProofreadPage;
 
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Hook\MediaWikiServicesHook;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Registration\ExtensionRegistry;
 
 /**
@@ -18,7 +17,7 @@ class ProofreadPageInit implements MediaWikiServicesHook {
 	 * @var int[] the default namespace id for each namespaces
 	 * Called by the SetupAfterCache hook
 	 */
-	protected static $defaultNamespaceIds = [
+	private const DEFAULT_NAMESPACE_IDS = [
 		'page' => 250,
 		'index' => 252
 	];
@@ -68,8 +67,8 @@ class ProofreadPageInit implements MediaWikiServicesHook {
 				$wgProofreadPageNamespaceIds[$key] = $id;
 			} else {
 
-				if ( self::createNamespace( self::$defaultNamespaceIds[$key], $key ) ) {
-					$wgProofreadPageNamespaceIds[$key] = self::$defaultNamespaceIds[$key];
+				if ( self::createNamespace( self::DEFAULT_NAMESPACE_IDS[$key], $key ) ) {
+					$wgProofreadPageNamespaceIds[$key] = self::DEFAULT_NAMESPACE_IDS[$key];
 				}
 				// else: the relevant error message is output by getNamespaceId
 			}
@@ -198,7 +197,7 @@ class ProofreadPageInit implements MediaWikiServicesHook {
 			// The only case where $wgProofreadPageNamespaceIds is not set is
 			// when a namespace with the default id already exist
 			// and is not a prp namespace.
-			throw new ConfigException( 'Namespace with id ' . self::$defaultNamespaceIds[$key] .
+			throw new ConfigException( 'Namespace with id ' . self::DEFAULT_NAMESPACE_IDS[$key] .
 				' is already set ! ProofreadPage can\'t use his id in order to create ' .
 				self::getNamespaceName( $key, 'en' ) .
 				' namespace. Update your LocalSettings.php adding $wgProofreadPageNamespaceIds[' .

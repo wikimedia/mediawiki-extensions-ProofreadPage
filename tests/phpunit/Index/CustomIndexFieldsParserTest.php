@@ -29,36 +29,36 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		);
 		$entries = [
 			'Title' => new CustomIndexField(
-				'Title', 'Test book', self::$customIndexFieldsConfiguration['Title']
+				'Title', 'Test book', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Title']
 			),
 			'Author' => new CustomIndexField(
-				'Author', '[[Author:Me]]', self::$customIndexFieldsConfiguration['Author']
+				'Author', '[[Author:Me]]', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Author']
 			),
 			'Year' => new CustomIndexField(
-				'Year', '2012 or 2013', self::$customIndexFieldsConfiguration['Year']
+				'Year', '2012 or 2013', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Year']
 			),
 			'Pages' => new CustomIndexField(
-				'Pages', '<pagelist />', self::$customIndexFieldsConfiguration['Pages']
+				'Pages', '<pagelist />', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Pages']
 			),
 			'Header' => new CustomIndexField(
-				'Header', '{{{Title}}}', self::$customIndexFieldsConfiguration['Header']
+				'Header', '{{{Title}}}', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Header']
 			),
 			'Footer' => new CustomIndexField(
-				'Footer', '', self::$customIndexFieldsConfiguration['Footer']
+				'Footer', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Footer']
 			),
 			'TOC' => new CustomIndexField(
 				'TOC',
 				"* [[Test/Chapter 1|Chapter 1]]\n* [[Test/Chapter 2|Chapter 2]]",
-				self::$customIndexFieldsConfiguration['TOC']
+				self::CUSTOM_INDEX_FIELDS_CONFIGURATION['TOC']
 			),
 			'Comment' => new CustomIndexField(
-				'Comment', '', self::$customIndexFieldsConfiguration['Comment']
+				'Comment', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Comment']
 			),
 			'width' => new CustomIndexField(
-				'width', '', self::$customIndexFieldsConfiguration['width']
+				'width', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['width']
 			),
 			'CSS' => new CustomIndexField(
-				'CSS', '', self::$customIndexFieldsConfiguration['CSS']
+				'CSS', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['CSS']
 			)
 		];
 		$this->assertEquals(
@@ -73,25 +73,25 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		);
 		$entries = [
 			'Title' => new CustomIndexField(
-				'Title', 'Test book', self::$customIndexFieldsConfiguration['Title']
+				'Title', 'Test book', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Title']
 			),
 			'Author' => new CustomIndexField(
-				'Author', '[[Author:Me]]', self::$customIndexFieldsConfiguration['Author']
+				'Author', '[[Author:Me]]', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Author']
 			),
 			'Comment' => new CustomIndexField(
-				'Comment', '', self::$customIndexFieldsConfiguration['Comment']
+				'Comment', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Comment']
 			),
 			'Header' => new CustomIndexField(
-				'Header', '', self::$customIndexFieldsConfiguration['Header']
+				'Header', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Header']
 			),
 			'Footer' => new CustomIndexField(
-				'Footer', '', self::$customIndexFieldsConfiguration['Footer']
+				'Footer', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Footer']
 			),
 			'width' => new CustomIndexField(
-				'width', '', self::$customIndexFieldsConfiguration['width']
+				'width', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['width']
 			),
 			'CSS' => new CustomIndexField(
-				'CSS', '', self::$customIndexFieldsConfiguration['CSS']
+				'CSS', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['CSS']
 			)
 		];
 		$this->assertEquals(
@@ -107,13 +107,13 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		);
 		$entries = [
 			'Author' => new CustomIndexField(
-				'Author', '[[Author:Me]]', self::$customIndexFieldsConfiguration['Author']
+				'Author', '[[Author:Me]]', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Author']
 			),
 			'width' => new CustomIndexField(
-				'width', '500', self::$customIndexFieldsConfiguration['width']
+				'width', '500', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['width']
 			),
 			'CSS' => new CustomIndexField(
-				'CSS', '', self::$customIndexFieldsConfiguration['CSS']
+				'CSS', '', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['CSS']
 			)
 		];
 		$this->assertEquals(
@@ -126,7 +126,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		$content = $this->buildContent( "{{\n|Year=2012 or 2013\n}}" );
 		$parser = self::getContext()->getCustomIndexFieldsParser();
 		$entry = new CustomIndexField(
-			'Year', '2012 or 2013', self::$customIndexFieldsConfiguration['Year']
+			'Year', '2012 or 2013', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Year']
 		);
 		$this->assertEquals( $entry, $parser->parseCustomIndexField( $content, 'year' ) );
 	}
@@ -135,7 +135,7 @@ class CustomIndexFieldsParserTest extends ProofreadPageTestCase {
 		$content = $this->buildContent( "{{\n|Pages=2012 or 2013\n}}" );
 		$parser = self::getContext()->getCustomIndexFieldsParser();
 		$entry = new CustomIndexField(
-			'Pages', '2012 or 2013', self::$customIndexFieldsConfiguration['Pages']
+			'Pages', '2012 or 2013', self::CUSTOM_INDEX_FIELDS_CONFIGURATION['Pages']
 		);
 		$this->assertEquals( $entry, $parser->getCustomIndexFieldForDataKey( $content, 'pagelist' ) );
 

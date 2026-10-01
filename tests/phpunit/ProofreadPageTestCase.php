@@ -28,8 +28,8 @@ use Wikimedia\TestingAccessWrapper;
  */
 abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 
-	/** @var array */
-	protected static $customIndexFieldsConfiguration = [
+	/** @var array<string,array> */
+	protected const CUSTOM_INDEX_FIELDS_CONFIGURATION = [
 		'Title' => [
 			'type' => 'string',
 			'size' => 1,
@@ -147,7 +147,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 			ProofreadPageInit::getNamespaceId( 'page' ),
 			ProofreadPageInit::getNamespaceId( 'index' ),
 			self::getFileProvider(),
-			new CustomIndexFieldsParser( self::$customIndexFieldsConfiguration ),
+			new CustomIndexFieldsParser( self::CUSTOM_INDEX_FIELDS_CONFIGURATION ),
 			new IndexForPageLookupMock( $indexForPage ),
 			new IndexContentLookupMock( $indexContent ),
 			new PageQualityLevelLookupMock( $levelForPage ),
@@ -175,9 +175,7 @@ abstract class ProofreadPageTestCase extends MediaWikiLangTestCase {
 	 * @return FileProvider
 	 */
 	private static function getFileProvider() {
-		if ( self::$fileProvider === null ) {
-			self::$fileProvider = new FileProviderMock( self::buildFileList() );
-		}
+		self::$fileProvider ??= new FileProviderMock( self::buildFileList() );
 		return self::$fileProvider;
 	}
 

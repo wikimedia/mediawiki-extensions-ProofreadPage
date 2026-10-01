@@ -24,10 +24,10 @@ class ApiQueryImageForPage extends ApiQueryBase {
 	private $pageDisplayHandler;
 
 	/** @var string API module prefix */
-	private static $prefix = 'prppifp';
+	private const PREFIX = 'prppifp';
 
 	public function __construct( ApiQuery $query, string $moduleName ) {
-		parent::__construct( $query, $moduleName, static::$prefix );
+		parent::__construct( $query, $moduleName, static::PREFIX );
 		$this->context = Context::getDefaultContext();
 		$this->pageDisplayHandler = new PageDisplayHandler( $this->context );
 	}

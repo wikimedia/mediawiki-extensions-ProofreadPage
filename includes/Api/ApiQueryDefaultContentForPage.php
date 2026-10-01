@@ -27,14 +27,14 @@ class ApiQueryDefaultContentForPage extends ApiQueryBase {
 	private $pageContentHandler;
 
 	/** @var string API module prefix */
-	private static $prefix = 'prppdefaultcontent';
+	private const PREFIX = 'prppdefaultcontent';
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
 		IContentHandlerFactory $contentHandlerFactory,
 	) {
-		parent::__construct( $query, $moduleName, static::$prefix );
+		parent::__construct( $query, $moduleName, static::PREFIX );
 		$this->context = Context::getDefaultContext();
 		$this->pageContentBuilder = new PageContentBuilder( $this, $this->context );
 		// @phan-suppress-next-line PhanTypeMismatchProperty

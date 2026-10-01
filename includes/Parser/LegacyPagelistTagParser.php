@@ -26,7 +26,7 @@ class LegacyPagelistTagParser {
 	}
 
 	/**
-	 * @param string|array $output
+	 * @param string[] $output
 	 * @return string
 	 */
 	private function renderOutput( $output ): string {

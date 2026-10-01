@@ -50,7 +50,7 @@ trait PagelistTagRendererTrait {
 	abstract public function addImage( $title, $timestamp, $sha1 ): void;
 
 	/**
-	 * @param string|array $output
+	 * @param string[] $output
 	 * @return string|DocumentFragment
 	 */
 	abstract public function renderOutput( $output ): string|DocumentFragment;

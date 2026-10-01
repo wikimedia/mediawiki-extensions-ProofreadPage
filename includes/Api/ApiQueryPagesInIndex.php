@@ -24,10 +24,10 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 	private $context;
 
 	/** @var string API module prefix */
-	private static $prefix = 'prppii';
+	private const PREFIX = 'prppii';
 
 	public function __construct( ApiQuery $query, string $moduleName ) {
-		parent::__construct( $query, $moduleName, static::$prefix );
+		parent::__construct( $query, $moduleName, static::PREFIX );
 		$this->context = Context::getDefaultContext();
 	}
 
@@ -181,7 +181,7 @@ class ApiQueryPagesInIndex extends ApiQueryGeneratorBase {
 	 * @inheritDoc
 	 */
 	protected function getExamplesMessages() {
-		$prefix = static::$prefix;
+		$prefix = static::PREFIX;
 		return [
 			"action=query&list=proofreadpagesinindex&{$prefix}title=Index:Sandbox.djvu"
 				=> 'apihelp-query+proofreadpagesinindex-example-1',

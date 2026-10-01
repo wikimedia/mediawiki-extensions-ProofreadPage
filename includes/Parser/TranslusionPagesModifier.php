@@ -77,7 +77,7 @@ class TranslusionPagesModifier {
 	}
 
 	/**
-	 * @param array $pages
+	 * @param Title[] $pages
 	 * @return Title|null
 	 */
 	private function getIndexTitleForPages( array $pages ): ?Title {
