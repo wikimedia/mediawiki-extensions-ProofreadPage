@@ -104,7 +104,8 @@ abstract class IndexAndPageLibraryTestBase extends LuaEngineTestBase {
 				[
 					'title' => new WikitextContent( '[[Foo Bar]]' ),
 					'Pages' => new WikitextContent( $this->getPageLinkList(
-						'Page:Test %d.jpg', 6, 1 ) )
+						'Page:Test %d.jpg', 6, 1 ) ),
+					'Header' => new WikitextContent( "\n{{header}}\n" )
 				],
 				[]
 			)

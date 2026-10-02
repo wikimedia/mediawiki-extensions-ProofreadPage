@@ -166,6 +166,10 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 *
 	 * This function may be expensive if the index content has not yet been cached.
 	 *
+	 * Note: The returned field values contain raw wikitext and are not trimmed of
+	 * leading or trailing whitespace. Lua callers should use mw.text.trim() if
+	 * trimmed values are needed.
+	 *
 	 * @param string $indexName the index title to get stats for
 	 * @return array the result table, in an array
 	 * @throws LuaError If the expensive function count has been exceeded

@@ -65,6 +65,14 @@ local function testGetPagination( text_or_id )
 end
 
 --[=[
+Return the fields from the given title or page name
+]=]
+local function testGetIndexFields( text_or_id )
+	local index = PRP.newIndex( text_or_id )
+	return index.fields
+end
+
+--[=[
 Return the title from the given title or page name
 ]=]
 local function testGetPageTitle( text_or_id )
@@ -166,6 +174,18 @@ local tests = {
 				[4] = '5',
 				[5] = '6',
 				[6] = '7'
+			}
+		}
+	},
+	{
+		name = 'Verify that index fields return raw wikitext content',
+		func = testGetIndexFields,
+		args = { 'Foobar' },
+		expect = {
+			{
+				title = '[[Foo Bar]]',
+				Pages = '[[Page:Test 1.jpg|1]][[Page:Test 2.jpg|2]][[Page:Test 3.jpg|3]][[Page:Test 4.jpg|4]][[Page:Test 5.jpg|5]][[Page:Test 6.jpg|6]]',
+				Header = '\n{{header}}\n'
 			}
 		}
 	},

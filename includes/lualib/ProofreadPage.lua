@@ -92,6 +92,14 @@ function proofreadPage.newIndex( title )
 		end,
 		__index = function ( t, k )
 
+			--[=[
+			Get a table of the fields set on the index page.
+
+			Field values contain raw wikitext and are not trimmed of leading or
+			trailing whitespace. Use mw.text.trim() if trimmed text is needed.
+			For example:
+			    local title = mw.text.trim( index.fields.Title or '' )
+			]=]
 			if k == 'fields' then
 				if data.fields == nil then
 					data.fields = php.doGetIndexFields( title.text )
