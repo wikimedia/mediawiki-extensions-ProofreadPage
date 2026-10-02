@@ -235,6 +235,8 @@ const PageQualityInputWidget = require( './PageQualityInputWidget.js' );
 				}
 			}
 		} );
+
+		mw.hook( 'ext.proofreadpage.toolbar-ready' ).fire( $wpTextbox );
 	}
 
 	/**
