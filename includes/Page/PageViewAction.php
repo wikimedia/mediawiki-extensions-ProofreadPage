@@ -21,8 +21,9 @@ class PageViewAction extends ViewAction {
 		$title = $this->getTitle();
 		$context = Context::getDefaultContext();
 
-		if ( !$title->inNamespace( $context->getPageNamespaceId() ) ||
-			$out->isPrintable() || $this->getContext()->getRequest()->getCheck( 'diff' )
+		if (
+			!$title->inNamespace( $context->getPageNamespaceId() ) ||
+			 $this->getContext()->getRequest()->getCheck( 'diff' )
 		) {
 			$this->getArticle()->view();
 
