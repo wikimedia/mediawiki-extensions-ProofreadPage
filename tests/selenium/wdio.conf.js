@@ -11,7 +11,9 @@ const __dirname = path.dirname( fileURLToPath( import.meta.url ) );
 
 const phpFpmServiceName = `php${ process.env.PHP_VERSION }-fpm`;
 const localSettingsPath = path.join( __dirname, '../../../../LocalSettings.php' );
-const localSettingsOldText = fs.readFileSync( localSettingsPath );
+// The file exists only when the extension is in a MediaWiki install.
+const hasLocalSettings = fs.existsSync( localSettingsPath );
+const localSettingsOldText = hasLocalSettings ? fs.readFileSync( localSettingsPath ) : null;
 
 export const config = {
 	...wdioDefaults,
@@ -22,11 +24,13 @@ export const config = {
 	// logLevel: 'info',
 	onPrepare: async ( configuration, param ) => {
 		await wdioDefaults.onPrepare?.( configuration, param );
-		fs.appendFileSync( localSettingsPath, `
-		if ( file_exists( "$IP/extensions/ProofreadPage/tests/selenium/settings/ProofreadPage.LocalSettings.php" ) ) {
-			require_once "$IP/extensions/ProofreadPage/tests/selenium/settings/ProofreadPage.LocalSettings.php";
+		if ( hasLocalSettings ) {
+			fs.appendFileSync( localSettingsPath, `
+			if ( file_exists( "$IP/extensions/ProofreadPage/tests/selenium/settings/ProofreadPage.LocalSettings.php" ) ) {
+				require_once "$IP/extensions/ProofreadPage/tests/selenium/settings/ProofreadPage.LocalSettings.php";
+			}
+			` );
 		}
-		` );
 
 		/**
 		 * Reset the PHP-Fpm opcache under Quibble environment
@@ -60,6 +64,8 @@ export const config = {
 	},
 	onComplete: async ( exitCode, configuration, capabilities, results ) => {
 		await wdioDefaults.onComplete?.( exitCode, configuration, capabilities, results );
-		fs.writeFileSync( localSettingsPath, localSettingsOldText );
+		if ( hasLocalSettings ) {
+			fs.writeFileSync( localSettingsPath, localSettingsOldText );
+		}
 	}
 };
