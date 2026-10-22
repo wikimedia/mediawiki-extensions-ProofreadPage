@@ -598,11 +598,14 @@ class PageContentHandler extends TextContentHandler {
 			->getContentHolderText();
 
 		// html container
-		$html = Html::openElement( 'div',
-			[ 'class' => 'prp-page-qualityheader quality' . $content->getLevel()->getLevel() ] ) .
-			wfMessage( 'proofreadpage_quality' . $content->getLevel()->getLevel() . '_message' )
-				->title( $title )->inContentLanguage()->parse() .
-			Html::closeElement( 'div' ) .
+		$qualityMessage = wfMessage( 'proofreadpage_quality' . $content->getLevel()->getLevel() . '_message' )
+			->title( $title )->inContentLanguage();
+		// The page language may differ from the content language the message is in
+		$html = Html::rawElement( 'div', [
+			'class' => 'prp-page-qualityheader quality' . $content->getLevel()->getLevel(),
+			'lang' => $qualityMessage->getLanguage()->getHtmlCode(),
+			'dir' => $qualityMessage->getLanguage()->getDir(),
+		], $qualityMessage->parse() ) .
 			Html::openElement( 'div', [ 'class' => 'pagetext' ] ) .
 			$poText .
 			Html::closeElement( 'div' );

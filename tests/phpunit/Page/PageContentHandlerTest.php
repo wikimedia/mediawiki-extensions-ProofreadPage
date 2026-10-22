@@ -7,6 +7,7 @@ use MediaWiki\Content\ContentSerializationException;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Diff\SlotDiffRenderer;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
@@ -499,12 +500,25 @@ class PageContentHandlerTest extends ProofreadPageTestCase {
 		);
 		$actual = str_replace( "\n", '', $output->getContentHolderText() );
 		$this->assertStringStartsWith(
-			'<div class="prp-page-qualityheader quality1">This page has not been proofread</div>' .
+			'<div class="prp-page-qualityheader quality1" lang="en" dir="ltr">' .
+				'This page has not been proofread</div>' .
 				'<div class="pagetext">',
 			$actual,
 			'prepended'
 		);
 		$this->assertMatchesRegularExpression( $html, $actual );
+	}
+
+	public function testGetParserOutputQualityHeaderDirection() {
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'he' );
+		$output = $this->getServiceContainer()->getContentRenderer()->getParserOutput(
+			self::buildPageContent( '', 'Test', '' ),
+			Title::makeTitle( self::getPageNamespaceId(), 'Test' )
+		);
+		$this->assertStringStartsWith(
+			'<div class="prp-page-qualityheader quality1" lang="he" dir="rtl">',
+			$output->getContentHolderText()
+		);
 	}
 
 	public static function getParserOutputRedirectHtmlProvider(): array {
