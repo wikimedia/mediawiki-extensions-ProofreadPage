@@ -589,6 +589,10 @@ class PageContentHandler extends TextContentHandler {
 			$content->getLevel()->getLevel()
 		);
 
+		// quality0 pages are expected to be short (T435351)
+		if ( $content->getLevel()->getLevel() === PageLevel::WITHOUT_TEXT ) {
+			$parserOutput->setPageProperty( 'expectshortpage', 'true' );
+		}
 		$poText = $parserOutput
 			->runOutputPipeline( $cpoParams->getParserOptions(), [ 'enableSectionEditLinks' => false ] )
 			->getContentHolderText();
