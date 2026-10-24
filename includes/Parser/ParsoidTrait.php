@@ -2,7 +2,6 @@
 
 namespace ProofreadPage\Parser;
 
-use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Title\Title;
@@ -17,7 +16,6 @@ trait ParsoidTrait {
 	private LinkRenderer $linkRenderer;
 	private ParsoidExtensionAPI $extApi;
 	private Context $context;
-	private Language $language;
 
 	/**
 	 * Get the title of the current page.
