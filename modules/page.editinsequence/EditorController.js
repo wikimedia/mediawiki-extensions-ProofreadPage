@@ -234,6 +234,7 @@ EditorController.prototype.save = function () {
 			text: wikiText,
 			summary: saveData.editSummary,
 			minor: saveData.isMinorEdit,
+			notminor: !saveData.isMinorEdit,
 			watch: saveData.shouldWatchlist ? 'watch' : 'preferences',
 			format: 'json'
 		} ), {
