@@ -737,9 +737,9 @@ title="Index:LoremIpsum.djvu"
 !! wikitext
 <pagelist 1="empty" to="2" />
 !! html/php
-<div class="prp-index-pagelist">1 <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></div>
+<div class="prp-index-pagelist"><span class="prp-index-pagelist-page">1</span> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></div>
 !! html/parsoid
-<div class="prp-index-pagelist" typeof="mw:Extension/pagelist" about="#mwt1" data-mw='{"name":"pagelist","attrs":{"1":"empty","to":"2"}}'>1 <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></div>
+<div class="prp-index-pagelist" typeof="mw:Extension/pagelist" about="#mwt1" data-mw='{"name":"pagelist","attrs":{"1":"empty","to":"2"}}'><span class="prp-index-pagelist-page">1</span> <a href="/wiki/Page:LoremIpsum.djvu/2" class="prp-index-pagelist-page prp-pagequality-1 quality1" title="Page:LoremIpsum.djvu/2">2</a></div>
 !! end
 
 !! test

@@ -2,6 +2,7 @@
 
 namespace ProofreadPage\Parser;
 
+use MediaWiki\Html\Html;
 use MediaWiki\Title\Title;
 use ProofreadPage\Context;
 use ProofreadPage\FileNotFoundException;
@@ -130,6 +131,12 @@ trait PagelistTagRendererTrait {
 					$pageTitle,
 					new HtmlArmor( $pageNumberExpression ),
 					[ 'class' => 'prp-index-pagelist-page ' . $qualityClass ]
+				);
+			} else {
+				$pageNumberExpression = Html::rawElement(
+					'span',
+					[ 'class' => 'prp-index-pagelist-page' ],
+					$pageNumberExpression
 				);
 			}
 			$return[] = $pageNumberExpression;
