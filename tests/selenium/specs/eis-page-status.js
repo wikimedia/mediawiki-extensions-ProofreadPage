@@ -1,4 +1,3 @@
-import assert from 'assert';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import EisPagePage from '../pageobjects/eispage.page.js';
@@ -22,7 +21,7 @@ describe( 'For a page with the eis, the page status module', () => {
 	it( 'should initialize with the value of current page', async () => {
 		await EisPagePage.openEis( 'Page:LoremIpsumStatus.djvu/1' );
 		await EisPagePage.waitForPageStatusButtonToBeResponsive();
-		assert.ok( await EisPagePage.pageStatusButtonLabel.getText() === 'Problematic' );
+		await expect( EisPagePage.pageStatusButtonLabel ).toHaveText( 'Problematic' );
 	} );
 
 	it( 'should update on page change', async () => {
@@ -31,7 +30,7 @@ describe( 'For a page with the eis, the page status module', () => {
 		await EisPagePage.selectPageStatusFromDropdown( 'proofread' );
 		await EisPagePage.nextButton.click();
 		await EisPagePage.waitForPageStatusButtonToBeResponsive();
-		assert.ok( await EisPagePage.pageStatusButtonLabel.getText() === 'Not proofread' );
+		await expect( EisPagePage.pageStatusButtonLabel ).toHaveText( 'Not proofread' );
 	} );
 
 	after( async () => {

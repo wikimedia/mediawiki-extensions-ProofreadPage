@@ -1,4 +1,3 @@
-import assert from 'assert';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import EisPagePage from '../pageobjects/eispage.page.js';
@@ -19,23 +18,23 @@ describe( 'For a page with eis enabled', () => {
 
 	it( 'toolbar loads', async () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
-		assert.ok( await EisPagePage.prevButton !== undefined );
-		assert.ok( await EisPagePage.nextButton !== undefined );
+		await expect( EisPagePage.prevButton ).toExist();
+		await expect( EisPagePage.nextButton ).toExist();
 
 	} );
 
 	it( 'prev to page 1', async () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/1' );
-		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.prevButton ) === false, 'is disabled' );
+		await expect( EisPagePage.prevButton ).toHaveElementClass( 'oo-ui-widget-disabled', { message: 'is disabled' } );
 		await EisPagePage.nextButton.click();
-		assert.ok( await utils.isEnabledInOOUI( EisPagePage.prevButton ), 'but gets enabled when next is clicked' );
+		await expect( EisPagePage.prevButton ).toHaveElementClass( 'oo-ui-widget-enabled', { message: 'but gets enabled when next is clicked' } );
 	} );
 
 	it( 'next to last page', async () => {
 		await EisPagePage.openEis( 'Page:LoremIpsum.djvu/5' );
-		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.nextButton ) === false, 'is disabled' );
+		await expect( EisPagePage.nextButton ).toHaveElementClass( 'oo-ui-widget-disabled', { message: 'is disabled' } );
 		await EisPagePage.prevButton.click();
-		assert.ok( await utils.isEnabledInOOUI( await EisPagePage.nextButton ), 'but gets enabled when prev is clicked' );
+		await expect( EisPagePage.nextButton ).toHaveElementClass( 'oo-ui-widget-enabled', { message: 'but gets enabled when prev is clicked' } );
 	} );
 
 	after( async () => {

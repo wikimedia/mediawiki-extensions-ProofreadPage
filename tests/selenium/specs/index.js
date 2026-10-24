@@ -1,4 +1,3 @@
-import assert from 'assert';
 import IndexPage from '../pageobjects/index.page.js';
 
 describe( 'Pages in the Index namespace', () => {
@@ -7,7 +6,7 @@ describe( 'Pages in the Index namespace', () => {
 		await IndexPage.open();
 
 		// inputs and textareas load
-		assert( await IndexPage.formFields.length > 0 );
+		await expect( IndexPage.formFields ).toBeElementsArrayOfSize( { gte: 1 } );
 
 	} );
 
