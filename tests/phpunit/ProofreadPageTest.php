@@ -68,7 +68,7 @@ class ProofreadPageTest extends ProofreadPageTestCase {
 
 		$proofreadPage = new ProofreadPage( $this->getServiceContainer()->getMainConfig() );
 		$hookStatus = Status::newGood();
-		$proofreadPage->onMultiContentSave(
+		$result = $proofreadPage->onMultiContentSave(
 			$renderedRev,
 			$userIdentity,
 			$summary,
@@ -77,5 +77,6 @@ class ProofreadPageTest extends ProofreadPageTestCase {
 		);
 
 		$this->assertEquals( $expectedResult, $hookStatus );
+		$this->assertSame( $expectedResult->isOK(), $result !== false );
 	}
 }

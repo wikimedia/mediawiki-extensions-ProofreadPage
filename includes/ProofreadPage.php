@@ -760,7 +760,7 @@ class ProofreadPage implements
 
 		if ( !( $content->isValid() ) ) {
 			$hookStatus->fatal( 'invalid-content-data' );
-			return;
+			return false;
 		}
 
 		$oldContent = PageContent::getContentForRevId( $revisionRecord->getParentId() );
@@ -771,13 +771,13 @@ class ProofreadPage implements
 
 		if ( !( $oldContent instanceof PageContent ) ) {
 			$hookStatus->fatal( 'invalid-content-data' );
-			return;
+			return false;
 		}
 
 		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( !$oldContent->getLevel()->isChangeAllowed( $content->getLevel(), $permissionManager ) ) {
 			$hookStatus->fatal( 'proofreadpage_notallowedtext' );
-			return;
+			return false;
 		}
 	}
 
