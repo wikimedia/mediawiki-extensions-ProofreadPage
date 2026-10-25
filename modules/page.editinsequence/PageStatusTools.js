@@ -55,9 +55,11 @@ function PageStatusMenu() {
 	this.setDisabled( true );
 	this.hasPageQualityRight = false;
 	this.hasPageQualityAdminRight = false;
+	this.hasPageQualityValidateRight = false;
 	this.getUserRights().then( ( rights ) => {
 		this.hasPageQualityRight = rights.includes( 'pagequality' );
 		this.hasPageQualityAdminRight = rights.includes( 'pagequality-admin' );
+		this.hasPageQualityValidateRight = rights.includes( 'pagequality-validate' );
 	} ).then( this.onPageModelUpdated.bind( this ) );
 	this.$element.addClass( 'prp-editinsequence-page-status' );
 }
@@ -104,8 +106,8 @@ PageStatusMenu.prototype.onPageModelUpdated = function () {
 		}
 
 		if ( name === 'validated' ) {
-			if ( this.hasPageQualityAdminRight ||
-				( status === 3 && user !== mw.config.get( 'wgUserName' ) ) ) {
+			if ( this.hasPageQualityAdminRight || ( this.hasPageQualityValidateRight &&
+				status === 3 && user !== mw.config.get( 'wgUserName' ) ) ) {
 				this.tools[ name ].setDisabled( false );
 			} else {
 				this.tools[ name ].setDisabled( true );
