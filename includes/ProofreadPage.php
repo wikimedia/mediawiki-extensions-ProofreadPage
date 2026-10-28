@@ -451,7 +451,9 @@ class ProofreadPage implements
 						'action' => 'edit',
 						EditInSequence::URLPARAMNAME => 'true'
 					] ),
-				'text' => wfMessage( 'proofreadpage_edit_in_sequence' )->plain()
+				'text' => wfMessage( 'proofreadpage_edit_in_sequence' )->plain(),
+				// Minerva only shows non-edit view actions that have an icon (T333376)
+				'icon' => 'edit',
 			];
 
 			if ( $isLoaded ) {
