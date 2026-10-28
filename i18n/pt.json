@@ -15,7 +15,8 @@
 			"Reedy",
 			"Vitorvicentevalente",
 			"Waldir",
-			"Waldyrious"
+			"Waldyrious",
+			"Sherbrooke"
 		]
 	},
 	"nstab-page": "Página",
@@ -33,6 +34,7 @@
 	"proofreadpage_nosuch_index_category": "Transclusões que referem páginas de índice que estão em falta",
 	"proofreadpage_nosuch_index_category-desc": "Uma etiqueta <code><nowiki><pages/></nowiki></code> faz referência a uma página de índice que não existe.",
 	"proofreadpage_nosuch_file": "Erro: ficheiro não existe",
+	"proofreadpage_invalid_attributes_category-desc": "A tag <pages/> utiliza um atributo não suportado.",
 	"proofreadpage_indexdupetext": "As páginas não podem ser listadas mais do que uma vez numa página de índice.",
 	"proofreadpage_nologin": "Não está autenticado",
 	"proofreadpage_nologintext": "É necessário estar [[Special:UserLogin|autenticado]] para alterar o estado de revisão das páginas.",

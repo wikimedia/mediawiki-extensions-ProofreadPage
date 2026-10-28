@@ -30,7 +30,8 @@
 			"Verdy p",
 			"Weft",
 			"Wladek92",
-			"Wyz"
+			"Wyz",
+			"Sherbrooke"
 		]
 	},
 	"nstab-page": "Page",
@@ -51,6 +52,7 @@
 	"proofreadpage_nosuch_file_for_index_category": "Pages d'index avec des balises « pagelist » qui font référence à un fichier inexistant",
 	"proofreadpage_nosuch_file_for_index_category-desc": "Une balise <code><nowiki><pagelist/></nowiki></code> fait référence à un fichier inexistant.",
 	"proofreadpage_nosuch_file": "Erreur : le fichier n’a pas été trouvé",
+	"proofreadpage_invalid_attributes_category-desc": "Cette catégorie rassemble les pages qui comprennent un ou des paramètres que l'[[mw:Extension:Proofread Page|extension Proofread Page]], utilisée pour effectuer des transclusions, juge fautifs et qui ordonne au moteur de Wikisource de catégoriser dans cette catégorie-ci.",
 	"proofreadpage_indexdupetext": "Les pages ne peuvent pas être listées plus d’une fois sur une page d’index.",
 	"proofreadpage_nologin": "Non connecté(e)",
 	"proofreadpage_nologintext": "Vous devez être [[Special:UserLogin|connecté]] pour modifier le statut de relecture des pages.",
