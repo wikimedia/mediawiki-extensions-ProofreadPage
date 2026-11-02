@@ -14,7 +14,7 @@ div.prp-page-edit-area-resized {
 	flex: none;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
+/* stylelint-disable-next-line wikimedia/selector-class-prefix */
 .prp-page-content .pagetext {
 	margin-bottom: 0.5em;
 }
