@@ -11,7 +11,8 @@
 			"Robin van der Vliet",
 			"Yekrats",
 			"Zhang212",
-			"Ziko"
+			"Ziko",
+			"Tbodt"
 		]
 	},
 	"nstab-page": "Paĝo",
@@ -61,8 +62,8 @@
 	"proofreadpage_quality1_message": "Ĉi tiu paĝo ne estas provlegita",
 	"proofreadpage_quality2_message": "Estis problemo provlegante ĉi tiun paĝon",
 	"proofreadpage_quality3_message": "Ĉi tiu paĝo estas provlegita",
-	"proofreadpage_quality4_message": "Ĉi tiu paĝo estis validigita",
-	"proofreadpage_index_status": "Indekso statuso",
+	"proofreadpage_quality4_message": "Ĉi tiu paĝo estas validigita",
+	"proofreadpage_index_status": "Indeksa stato",
 	"proofreadpage_index_size": "Nombro de paĝoj",
 	"proofreadpage_pages_to_validate": "Nombro de paĝoj validigendaj",
 	"proofreadpage_pages_to_proofread_or_validate": "Nombro de paĝoj provlegendaj aŭ validigendaj",
