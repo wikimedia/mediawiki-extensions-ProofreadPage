@@ -107,9 +107,23 @@ class EditPagePage extends EditPage {
 
 		$jsVars = $this->pageDisplayHandler->getPageJsConfigVars( $this->getTitle(), $content );
 
+		// The quality prefix of the edit summary is saved with the revision, so it is in the
+		// wiki's language rather than in the editor's interface language.
+		$jsVars['prpPageQualitySummaries'] = [
+			PageLevel::WITHOUT_TEXT => $this->getSummaryPrefix( 'proofreadpage_quality0_summary' ),
+			PageLevel::NOT_PROOFREAD => $this->getSummaryPrefix( 'proofreadpage_quality1_summary' ),
+			PageLevel::PROBLEMATIC => $this->getSummaryPrefix( 'proofreadpage_quality2_summary' ),
+			PageLevel::PROOFREAD => $this->getSummaryPrefix( 'proofreadpage_quality3_summary' ),
+			PageLevel::VALIDATED => $this->getSummaryPrefix( 'proofreadpage_quality4_summary' ),
+		];
+
 		$out->addJsConfigVars( $jsVars );
 
 		$this->addEditInSequenceModule();
+	}
+
+	private function getSummaryPrefix( string $messageKey ): string {
+		return $this->context->msg( $messageKey )->inContentLanguage()->plain();
 	}
 
 	public function addEditInSequenceModule() {

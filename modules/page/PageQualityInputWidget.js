@@ -40,13 +40,8 @@ PageQualityInputWidget.prototype.setDisabled = function ( disabled ) {
 PageQualityInputWidget.prototype.updateSummaryPrefix = function () {
 	// eslint-disable-next-line no-jquery/no-global-selector
 	const $summary = $( 'input#wpSummary, #wpSummary > input' ),
-		// The following messages are used here:
-		// * proofreadpage_quality0_summary
-		// * proofreadpage_quality1_summary
-		// * proofreadpage_quality2_summary
-		// * proofreadpage_quality3_summary
-		// * proofreadpage_quality4_summary
-		pageQuality = mw.message( 'proofreadpage_quality' + this.value + '_summary' ).plain(),
+		// In the wiki's language, see EditPagePage::showContentForm()
+		pageQuality = mw.config.get( 'prpPageQualitySummaries' )[ this.value ],
 		summary = $summary.val().replace( /\/\*.*\*\/\s?/, '' );
 	$summary.val( '/* ' + pageQuality + ' */ ' + summary );
 };
