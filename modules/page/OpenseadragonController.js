@@ -70,7 +70,9 @@ OpenSeadragonController.prototype.doInitialize = function ( id ) {
 		visibilityRatio: 0.5,
 		minZoomLevel: 0.5,
 		maxZoomLevel: 4.5,
-		zoomPerClick: this.zoomFactor,
+		// A factor of 1 is how zooming on scroll is turned off, but the zoom buttons
+		// multiply by it too and would stop working, so they never use less than 1.2.
+		zoomPerClick: this.zoomFactor > 1 ? this.zoomFactor : 1.2,
 		zoomPerScroll: this.zoomFactor,
 		timeout: 2 * 60 * 1000, // 2 minutes
 		// Use canvas rather than webgl to work around CORS issue. T423548.
