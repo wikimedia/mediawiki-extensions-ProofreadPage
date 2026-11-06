@@ -4,6 +4,7 @@ namespace ProofreadPage\Parser;
 
 use DOMException;
 use MediaWiki\MediaWikiServices;
+use ProofreadPage\Page\PageLevel;
 use Wikimedia\Parsoid\DOM\DocumentFragment;
 use Wikimedia\Parsoid\Ext\ExtensionTagHandler;
 use Wikimedia\Parsoid\Ext\ParsoidExtensionAPI;
@@ -31,10 +32,11 @@ class ParsoidPagequalityTagParser extends ExtensionTagHandler {
 		}
 
 		$extArgs = $extApi->extArgsToArray( $extArgs );
+		$level = $extArgs['level'] ?? null;
 
-		$levelExists = array_key_exists( 'level', $extArgs );
-		$levelIsNumeric = $levelExists && is_numeric( $extArgs['level'] );
-		$levelIsValid = $levelIsNumeric && intval( $extArgs['level'] ) >= 0 && intval( $extArgs['level'] ) <= 4;
+		$levelIsValid = is_numeric( $level ) &&
+			$level >= PageLevel::WITHOUT_TEXT &&
+			$level <= PageLevel::VALIDATED;
 
 		if ( !$levelIsValid ) {
 			return false;
@@ -42,8 +44,8 @@ class ParsoidPagequalityTagParser extends ExtensionTagHandler {
 
 		$doc = $extApi->getTopLevelDoc();
 		$elem = $doc->createElement( 'div' );
-		$elem->setAttribute( 'class', 'prp-page-qualityheader quality' . $extArgs['level'] );
-		$msg = wfMessage( 'proofreadpage_quality' . $extArgs['level'] . '_message' )->inContentLanguage()->text();
+		$elem->setAttribute( 'class', 'prp-page-qualityheader quality' . $level );
+		$msg = wfMessage( 'proofreadpage_quality' . $level . '_message' )->inContentLanguage()->text();
 		$localizedFragment = $extApi->createPageContentI18nFragment( $msg, [] );
 		$elem->appendChild( $localizedFragment );
 		$dom = $doc->createDocumentFragment();
