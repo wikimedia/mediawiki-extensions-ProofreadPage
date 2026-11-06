@@ -11,7 +11,7 @@ class PagesQualityStats {
 
 	/**
 	 * @param int $numberOfPages
-	 * @param int[] $numberOfPagesByLevel
+	 * @param array<int,int> $numberOfPagesByLevel
 	 */
 	public function __construct(
 		private readonly int $numberOfPages,
@@ -29,10 +29,7 @@ class PagesQualityStats {
 	}
 
 	public function getNumberOfPagesForQualityLevel( int $level ): int {
-		if ( !array_key_exists( $level, $this->numberOfPagesByLevel ) ) {
-			return 0;
-		}
-		return $this->numberOfPagesByLevel[$level];
+		return $this->numberOfPagesByLevel[$level] ?? 0;
 	}
 
 	public function getNumberOfPagesWithAnyQualityLevel(): int {

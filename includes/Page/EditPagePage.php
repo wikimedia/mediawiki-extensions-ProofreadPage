@@ -167,7 +167,7 @@ class EditPagePage extends EditPage {
 		$oldLevel = $this->getCurrentContent()->getLevel();
 		$hasRight = $this->permissionManager->userHasRight( $this->context->getUser(), 'pagequality' );
 		$levels = [];
-		for ( $level = 0; $level <= 4; $level++ ) {
+		for ( $level = PageLevel::WITHOUT_TEXT; $level <= PageLevel::VALIDATED; $level++ ) {
 			$newLevel = new PageLevel( $level, $this->context->getUser() );
 			$changeAllowed = $oldLevel->isChangeAllowed( $newLevel, $this->permissionManager );
 
