@@ -40,16 +40,15 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 
 		// "export" PHP functions to the Lua library interface
 		$lib = [
-			'doGetIndexProgress' => [ $this, 'doGetIndexProgress' ],
-			'doGetIndexFields' => [ $this, 'doGetIndexFields' ],
-			'doGetIndexCategories' => [ $this, 'doGetIndexCategories' ],
-			'doGetNumberOfPages' => [ $this, 'doGetNumberOfPages' ],
-			'doGetPageInIndex' => [ $this, 'doGetPageInIndex' ],
-			'doGetIndexPageNumbers' => [ $this, 'doGetIndexPageNumbers' ],
-			'doGetPageQuality' => [ $this, 'doGetPageQuality' ],
-			'doGetIndexForPage' => [ $this, 'doGetIndexForPage' ],
-			'doGetPageNumbering' => [ $this, 'doGetPageNumbering' ],
-			'doGetDisplayedPageNumbers' => [ $this, 'doGetDisplayedPageNumbers' ],
+			'doGetIndexProgress' => $this->doGetIndexProgress( ... ),
+			'doGetIndexFields' => $this->doGetIndexFields( ... ),
+			'doGetIndexCategories' => $this->doGetIndexCategories( ... ),
+			'doGetNumberOfPages' => $this->doGetNumberOfPages( ... ),
+			'doGetPageInIndex' => $this->doGetPageInIndex( ... ),
+			'doGetPageQuality' => $this->doGetPageQuality( ... ),
+			'doGetIndexForPage' => $this->doGetIndexForPage( ... ),
+			'doGetPageNumbering' => $this->doGetPageNumbering( ... ),
+			'doGetDisplayedPageNumbers' => $this->doGetDisplayedPageNumbers( ... ),
 		];
 		$opts = [
 			'NS_INDEX' => $this->context->getIndexNamespaceId(),
@@ -113,7 +112,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @return array The result table, in an array
 	 * @throws LuaError If the expensive function count has been exceeded
 	 */
-	public function doGetIndexProgress( string $indexName ): array {
+	private function doGetIndexProgress( string $indexName ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
 
 		$statsLookup = $this->context->getIndexQualityStatsLookup();
@@ -171,7 +170,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @return array the result table, in an array
 	 * @throws LuaError If the expensive function count has been exceeded
 	 */
-	public function doGetIndexFields( string $indexName ): array {
+	private function doGetIndexFields( string $indexName ): array {
 		// this can be expensive
 		$indexContent = $this->getIndexContent( $indexName );
 
@@ -195,7 +194,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @return array The result table, in an array
 	 * @throws LuaError If the expensive function count has been exceeded
 	 */
-	public function doGetIndexCategories( string $indexName ): array {
+	private function doGetIndexCategories( string $indexName ): array {
 		// this can be expensive
 		$indexContent = $this->getIndexContent( $indexName );
 
@@ -238,7 +237,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @param string $indexName The index title
 	 * @return array The number of pages in the index, 0 for an invalid index
 	 */
-	public function doGetNumberOfPages( string $indexName ): array {
+	private function doGetNumberOfPages( string $indexName ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
 
 		// maybe expensive
@@ -254,7 +253,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @param int $n The index of the pag in that index (1 is the first)
 	 * @return array The page title, as an array for Lua
 	 */
-	public function doGetPageInIndex( string $indexName, int $n ): array {
+	private function doGetPageInIndex( string $indexName, int $n ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
 
 		// maybe expensive
@@ -275,7 +274,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @param string $pageName The title of the page to get the info for
 	 * @return array The quality information as an array
 	 */
-	public function doGetPageQuality( string $pageName ): array {
+	private function doGetPageQuality( string $pageName ): array {
 		$pageTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $pageName );
 		$pqLookup = $this->context->getPageQualityLevelLookup();
 
@@ -317,7 +316,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @param string $pageName The title of the page to get the index for
 	 * @return array The name of the index
 	 */
-	public function doGetIndexForPage( string $pageName ): array {
+	private function doGetIndexForPage( string $pageName ): array {
 		$pageTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $pageName );
 		$indexTitle = $this->getIndexForPage( $pageTitle );
 
@@ -338,7 +337,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @param string $pageName The title of the page to get the numbering for
 	 * @return array The name of the index
 	 */
-	public function doGetPageNumbering( string $pageName ): array {
+	private function doGetPageNumbering( string $pageName ): array {
 		$pageTitle = Title::makeTitleSafe( $this->context->getPageNamespaceId(), $pageName );
 
 		// maybe expensive
@@ -373,7 +372,7 @@ class ProofreadPageLuaLibrary extends LibraryBase {
 	 * @param string $indexName The index title
 	 * @return array [ position => displayed number ], 1-indexed for Lua
 	 */
-	public function doGetDisplayedPageNumbers( string $indexName ): array {
+	private function doGetDisplayedPageNumbers( string $indexName ): array {
 		$indexTitle = Title::makeTitleSafe( $this->context->getIndexNamespaceId(), $indexName );
 
 		// maybe expensive
