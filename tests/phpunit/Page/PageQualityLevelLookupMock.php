@@ -15,7 +15,7 @@ class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 	private $levelForPage;
 
 	/**
-	 * @param int[] $levelForPage
+	 * @param array<string,int> $levelForPage
 	 */
 	public function __construct( array $levelForPage ) {
 		$this->levelForPage = $levelForPage;
@@ -32,17 +32,14 @@ class PageQualityLevelLookupMock implements PageQualityLevelLookup {
 	 * @inheritDoc
 	 */
 	public function flushCacheForPage( PageIdentity $pageTitle ) {
-		unset( $this->cache[ $pageTitle->getDBkey() ] );
+		unset( $this->levelForPage[ $pageTitle->getDBkey() ] );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	public function getQualityLevelForPageTitle( PageIdentity $pageTitle ) {
-		if ( !array_key_exists( $pageTitle->getDBkey(), $this->levelForPage ) ) {
-			return null;
-		}
-		return $this->levelForPage[ $pageTitle->getDBkey() ];
+		return $this->levelForPage[ $pageTitle->getDBkey() ] ?? null;
 	}
 
 	/**

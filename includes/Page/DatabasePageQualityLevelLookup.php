@@ -26,8 +26,8 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 	 */
 	private $categoryForQualityLevel;
 
-	/** @var (int|null)[] */
-	private $cache = [];
+	/** @var array<string,int|null> */
+	private array $cache = [];
 
 	/**
 	 * @param int $pageNamespaceId
@@ -180,7 +180,7 @@ class DatabasePageQualityLevelLookup implements PageQualityLevelLookup {
 
 	private function computeCategoryForQualityLevels(): array {
 		$qualityCategories = [];
-		for ( $qualityLevel = 0; $qualityLevel <= 4; $qualityLevel++ ) {
+		for ( $qualityLevel = PageLevel::WITHOUT_TEXT; $qualityLevel <= PageLevel::VALIDATED; $qualityLevel++ ) {
 			$categoryTitle = Title::makeTitleSafe(
 				NS_CATEGORY,
 				wfMessage( "proofreadpage_quality{$qualityLevel}_category" )->inContentLanguage()->text()

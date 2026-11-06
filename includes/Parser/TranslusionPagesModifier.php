@@ -11,6 +11,7 @@ use MediaWiki\Title\Title;
 use ProofreadPage\Index\IndexQualityStatsLookup;
 use ProofreadPage\Index\PagesQualityStats;
 use ProofreadPage\Page\IndexForPageLookup;
+use ProofreadPage\Page\PageLevel;
 use ProofreadPage\Page\PageQualityLevelLookup;
 
 /**
@@ -121,11 +122,10 @@ class TranslusionPagesModifier {
 
 		$numberOfPagesByLevel = [];
 		foreach ( $pages as $pageTitle ) {
-			$pageQualityLevel = $this->pageQualityLevelLookup->getQualityLevelForPageTitle( $pageTitle );
-			if ( array_key_exists( $pageQualityLevel, $numberOfPagesByLevel ) ) {
-				$numberOfPagesByLevel[$pageQualityLevel]++;
-			} else {
-				$numberOfPagesByLevel[$pageQualityLevel] = 1;
+			$level = $this->pageQualityLevelLookup->getQualityLevelForPageTitle( $pageTitle );
+			if ( $level !== null ) {
+				$numberOfPagesByLevel[$level] ??= 0;
+				$numberOfPagesByLevel[$level]++;
 			}
 		}
 
@@ -143,7 +143,7 @@ class TranslusionPagesModifier {
 	): string {
 		$totalPages = $qualityStats->getNumberOfPages();
 		$percentages = [];
-		for ( $i = 4; $i >= 0; $i-- ) {
+		for ( $i = PageLevel::VALIDATED; $i >= PageLevel::WITHOUT_TEXT; $i-- ) {
 			$pagesAtLevel = $qualityStats->getNumberOfPagesForQualityLevel( $i );
 			$percentages[$i] = $pagesAtLevel * 100 / $totalPages;
 		}
