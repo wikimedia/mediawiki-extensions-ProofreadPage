@@ -111,6 +111,14 @@ OpenSeadragonController.prototype.doInitialize = function ( id ) {
 	mw.log.deprecate( mw.proofreadpage, 'viewer', mw.proofreadpage.viewer,
 		'Please use new API. [Since November 2022]' );
 
+	// OpenSeadragon flips the image when "f" is pressed, which is easy to hit by accident
+	// while proofreading and has no button to undo it. Rotating has buttons, so keep that.
+	this.viewer.addHandler( 'canvas-key', ( event ) => {
+		if ( event.originalEvent.keyCode === 70 ) {
+			event.preventDefaultAction = true;
+		}
+	} );
+
 	this.viewer.viewport.goHome = function () {
 		if ( this.viewer ) {
 			const oldBounds = this.viewer.viewport.getBounds();
