@@ -165,7 +165,7 @@
 	"proofreadpage-preferences-showheaders-label": "Muuji goobaha madax iyo hoose marka wax laga beddelayo meel magac {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Isticmaal qaab jiif ah marka wax laga beddelayo meel magac {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Isticmaal habka muuqaalka tijaabada ah ee cusub si aad u wax uga beddesho liiska bogagga",
-	"proofreadpage-preferences-zoom-factor-label": "Qiyaasta soo dhawaynta marka la duubayo (inta u dhexeysa 1 iyo 2, caadi: 1.2). Qiimaha sare wuxuu keenaa soo dhawayn badan tallaabo kasta",
+	"proofreadpage-preferences-zoom-factor-label": "Heerka weynaynta marka la rogrogayo (inta u dhexaysa 1 iyo 2, caadiga ah: 1.2, 1 wuxuu damiyaa weynaynta marka la rogrogayo). Heerka sare wuxuu kordhiyaa weynaynta tallaabo kasta",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Muuji daaqadda kooban ee wax-ka-beddelka mar kasta oo {{GENDER:|aad}} kaydiso bog habka EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "Samee tallaabadan kadib marka aad kaydiso bog adigoo isticmaalaya habka EditInSequence",
 	"proofreadpage-indexquality-alt": "$1 bogag la xaqiijiyay {{PLURAL:$1|bog|bogag}}, $2 kaliya bogag la hubiyay saxnaanta {{PLURAL:$2|bog|bogag}} iyo $3 bogag aan la hubin saxnaanta {{PLURAL:$3|bog|bogag}}",
