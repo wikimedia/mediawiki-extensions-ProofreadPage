@@ -170,7 +170,7 @@
 	"proofreadpage-preferences-showheaders-label": "Tunjukkan ruangan pengatas dan pembawah ketika menyunting dalam ruang nama {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Gunakan susun atur melintang ketika menyunting dalam ruang nama {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Gunakan mod visual percubaan baharu untuk menyunting senarai laman",
-	"proofreadpage-preferences-zoom-factor-label": "Faktor zum pada skrol (antara 1 dan 2, lalai: 1.2). Zum lebih tinggi lebih banyak setiap langkah",
+	"proofreadpage-preferences-zoom-factor-label": "Faktor zum semasa skrol (antara 1 dan 2, lalai: 1.2, 1 mematikan zum semasa skrol). Zum yang lebih tinggi akan meningkatkan zum setiap langkah",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Tunjukkan dialog ringkasan sunting setiap kali {{GENDER:|anda}} menyimpan laman dalam mod EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "Lakukan tindakan ini selepas menyimpan laman menggunakan mod EditInSequence",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|laman}} yang disahkan, $2 {{PLURAL:$2|laman}} yang hanya dibaca pruf dan $3 {{PLURAL:$3|laman}} yang belum dibaca pruf",

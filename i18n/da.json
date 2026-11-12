@@ -172,7 +172,7 @@
 	"proofreadpage-preferences-showheaders-label": "Vis sidehoved- og sidefod ved redigering i {{ns:page}}-navneområdet",
 	"proofreadpage-preferences-horizontal-layout-label": "Brug vandret layout ved redigering i {{ns:page}}-navneområdet",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Brug den nye, eksperimentelle og visuelle redigeringstilstand til at redigere sidelisten",
-	"proofreadpage-preferences-zoom-factor-label": "Zoomfaktoren ved rulning (mellem 1 og 2, standard: 1,2). Højere zoom giver mere per trin",
+	"proofreadpage-preferences-zoom-factor-label": "Zoomfaktoren ved rulning (mellem 1 og 2, standard: 1,2, 1 slår zoom ved rulning fra). Højere zoom giver mere per trin",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Vis en dialogboks med redigeringsoversigt, hver gang du gemmer en side i EditInSequence-tilstand",
 	"proofreadpage-preferences-after-save-action-label": "Udfør denne handling efter at have gemt en side ved hjælp af EditInSequence-tilstanden",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|valideret side|validerede sider}}, $2 {{PLURAL:$2|side|sider}}, der kun er korrekturlæst, og $3 {{PLURAL:$3|side|sider}}, der ikke er korrekturlæst",
