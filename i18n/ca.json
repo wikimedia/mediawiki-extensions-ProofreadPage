@@ -173,7 +173,7 @@
 	"proofreadpage-preferences-showheaders-label": "Mostra camps de capçalera i peu en editar en el nom d'espai {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "Utilitza la presentació horitzontal en editar en el nom d'espai {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "Usar el nou mode visual experimental per modificar la llista de pàgines",
-	"proofreadpage-preferences-zoom-factor-label": "El factor de zoom en desplaçament (entre 1 i 2, per defecte: 1.2). A majors zooms, més per pas",
+	"proofreadpage-preferences-zoom-factor-label": "El factor de zoom en desplaçament (entre 1 i 2, valor per defecte: 1.2; 1 el desactiva). A majors zooms, més per pas",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "Mostra un quadre de diàleg de resum d'edició cada vegada que deseu una pàgina en mode EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "Realitzeu aquesta acció després de desar una pàgina amb el mode EditInSequence",
 	"proofreadpage-indexquality-alt": "$1 {{PLURAL:$1|pàgina validada|pàgines validades}}, $2 {{PLURAL:$2|pàgina només corregida|pàginas només corregides}} i $3 {{PLURAL:$3|pàgina|pàgines}} sense corregir.",
