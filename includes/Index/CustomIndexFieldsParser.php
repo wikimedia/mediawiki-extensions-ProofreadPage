@@ -5,7 +5,7 @@ namespace ProofreadPage\Index;
 use MediaWiki\Content\JsonContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Json\FormatJson;
-use MediaWiki\MediawikiServices;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use OutOfBoundsException;
 
