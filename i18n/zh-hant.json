@@ -185,7 +185,7 @@
 	"proofreadpage-preferences-showheaders-label": "在{{ns:page}}命名空間編輯時顯示頁首和頁尾欄位",
 	"proofreadpage-preferences-horizontal-layout-label": "在{{ns:page}}命名空間編輯時用橫向配置",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "使用新的試驗性視覺模式來編輯頁面清單",
-	"proofreadpage-preferences-zoom-factor-label": "滾動的縮放係數（介於 1 到 2 之間，預設值：1.2）。調整越高會縮放更多",
+	"proofreadpage-preferences-zoom-factor-label": "滾動的縮放係數（介於 1 到 2 之間，預設值：1.2，1是關閉捲動時的縮放功能）。調整越高會縮放更多",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "每次{{GENDER:|您}}在 EditInSequence 模式下儲存頁面時顯示編輯摘要的對話框",
 	"proofreadpage-preferences-after-save-action-label": "使用 EditInSequence 模式儲存頁面後執行此操作",
 	"proofreadpage-indexquality-alt": "$1 個已確認{{PLURAL:$1|頁面|頁面}}，$2 個僅校對的{{PLURAL:$2|頁面|頁面}}，以及 $3 個尚未校對的{{PLURAL:$3|頁面|頁面}}",

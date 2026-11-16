@@ -182,7 +182,7 @@
 	"proofreadpage-preferences-showheaders-label": "أظهر ترويس الصفحة وتذييلها عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-preferences-horizontal-layout-label": "استخدم الواجهة الأفقية عند التحرير في نطاق {{ns:page}}",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "استخدم الوضع المرئي التجريبي الجديد لتحرير قائمة الصفحات",
-	"proofreadpage-preferences-zoom-factor-label": "عامل التكبير عند التمرير (بين 1 و 2 ، افتراضي: 1.2). تكبير / تصغير أعلى لكل خطوة",
+	"proofreadpage-preferences-zoom-factor-label": "عامل الزوم عند الدوران (بين 1 و 2 ، الافتراضي: 1.2, 1 دورات الزوم عند إيقاف الدوران). زيادة أكبر في كل خطوة",
 	"proofreadpage-preferences-show-dialog-before-every-save-label": "إظهار مربع حوار ملخص التحرير في كل مرة {{GENDER:تحفظ|تحفظين}} صفحة في وضع EditInSequence",
 	"proofreadpage-preferences-after-save-action-label": "قم بتنفيذ هذا الإجراء بعد حفظ الصفحة باستخدام الوضع EditInSequence",
 	"proofreadpage-indexquality-alt": "{{PLURAL:$1|صفحة واحدة مُحققة|$1 صفحات مُحققة}}، {{PLURAL:$2|صفحة واحدة مُراجعة فقط|$2 صفحات مُراجعة فقط}}، و{{PLURAL:$3|صفحة واحدة غير مُراجعة|$3 صفحات غير مُراجعة}}",
