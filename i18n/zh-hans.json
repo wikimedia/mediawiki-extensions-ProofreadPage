@@ -36,7 +36,8 @@
 			"Zhuyifei1999",
 			"予弦",
 			"沈澄心",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"PacmanD"
 		]
 	},
 	"nstab-page": "页面",
@@ -112,7 +113,7 @@
 	"proofreadpage_specialpage_label_sortascending": "升序",
 	"proofreadpage_alphabeticalorder": "按字母顺序",
 	"proofreadpage_index_listofpages": "页面列表",
-	"proofreadpage_image_message": "至索引页面的链接",
+	"proofreadpage_image_message": "前往索引页",
 	"proofreadpage_page_status": "页面状态",
 	"proofreadpage_page_status_logged_out": "页面状态（只有登录用户才能设置）",
 	"proofreadpage_js_attributes": "作者 标题 年份 出版者",
