@@ -1,9 +1,0 @@
-{
-	"parserOptions": {
-		"sourceType": "commonjs"
-	},
-	"rules": {
-		"no-jquery/no-extend": "warn",
-		"no-jquery/no-done-fail": "warn"
-	}
-}
