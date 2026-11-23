@@ -113,6 +113,7 @@ trait PagesTagRendererTrait {
 		$contentLang = null;
 
 		if ( $from || $to || $include ) {
+			/** @var array{0: Title, 1: PageNumber}[] $pages */
 			$pages = [];
 
 			if ( $pagination instanceof FilePagination ) {
@@ -222,10 +223,12 @@ trait PagesTagRendererTrait {
 				}
 			}
 
-			/** @var PageNumber $from_pagenum */
-			[ $from_page, $from_pagenum ] = reset( $pages );
-			/** @var PageNumber $to_pagenum */
-			[ $to_page, $to_pagenum ] = end( $pages );
+			/** @var ?Title $from_page */
+			/** @var ?PageNumber $from_pagenum */
+			[ $from_page, $from_pagenum ] = array_first( $pages ) ?? [ null, null ];
+			/** @var ?Title $to_page */
+			/** @var ?PageNumber $to_pagenum */
+			[ $to_page, $to_pagenum ] = array_last( $pages ) ?? [ null, null ];
 
 			$pageQualityLevelLookup = $context->getPageQualityLevelLookup();
 			$pageQualityLevelLookup->prefetchQualityLevelForTitles( array_column( $pages, 0 ) );
