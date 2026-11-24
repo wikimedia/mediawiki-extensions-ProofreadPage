@@ -42,6 +42,7 @@
 	"proofreadpage_interval_too_large": "تېروتنه: ډیره لویه کچه",
 	"proofreadpage_invalid_interval": "تېروتنه: ناباوره منځنۍ",
 	"proofreadpage_invalid_interval_category": "د مخونو ليکلړ چې مخلړ نښلنونه له ناسمو ځنډونو سره لري",
+	"proofreadpage_invalid_interval_category-desc": "ا <code><nowiki>مخلړ/></nowiki></code> نښلن يو ناسم ځنډ کاروي يا هغه دوتنې ته اشاره کوي چې سپينولو ته اړتيا لري.",
 	"proofreadpage_nextpage": "بل مخ",
 	"proofreadpage_nextpage_label": "بل مخ ته ورتلل",
 	"proofreadpage_prevpage": "تېر مخ",
@@ -115,6 +116,12 @@
 	"prp-editinsequence-beta-label": "په پرله‌پسې ډول سمول",
 	"prp-editinsequence-beta-description": "د سمون کولو يوه نوې مخبڼه چې تاسو ته په چټکۍ سره د مخونو سمولو اجازه درکوي.",
 	"prp-editinsequence-http-error-pagelist": "د شبکې د ستونزو له کبله د مخ ترلاسنې کې پاتې راغی، مهرباني وکړئ وروسته بيا هڅه وکړئ.",
+	"prp-editinsequence-pagination-does-not-exist": "د دې مخ مخ‌بندۍ لپاره هېڅ مخ شتون نلري چې د راتلونکو او پخوانيو مخونو ټاکل ناشوني کوي. که ستاسو له انده دا يوه تېروتنه وي، مهرباني وکړئ دا تېروتنه phabricator.wikimedia.org کې راپور کړئ.",
+	"prp-editinsequence-unknown-error": "يوه ناڅاپي تېروتنه وموندل شوه. مهرباني وکړئ دا تېروتنه phabricator.wikimedia.org راپور کړئ.",
+	"prp-editinsequence-http-error-page": "د شبکې د ستونزو له کبله د مخ ترلاسنې کې پاتې راغی، مهرباني وکړئ وروسته بيا هڅه وکړئ.",
+	"prp-edit-in-sequence-preview-http-error": "د شبکې د ستونزو له کبله د مخ مخکتنې کې پاتې راغی، مهرباني وکړئ وروسته بيا هڅه وکړئ.",
+	"prp-edit-in-sequence-preview-api-error": "د لاندې تېروتنې له امله د مخ مخکتنه ونشوه: $1ګ\nکه دا تېروتنه ناڅاپي وي، مهرباني وکړئ دا تېروتنه habricator.wikimedia.org ته راپور کړئ.",
+	"prp-editinsequence-error": "پرله‌پسې‌سمون کې تېروتنه، نور پرمخ نشو تللای",
 	"prp-editinsequence-preview": "مخکتنه",
 	"prp-editinsequence-save-settings-dialog-primary-button-title": "اوڼنې خوندي‌کول",
 	"prp-editinsequence-save-dialog-title": "دا مخ خوندي‌‌کول",
@@ -153,6 +160,8 @@
 	"proofreadpage-preferences-showheaders-label": "کله چې د {{ns:page}} نومځای کې سم سمبال کړئ د سر او فوټ فیلډونه وښایاست",
 	"proofreadpage-preferences-horizontal-layout-label": "د {{ns:page}} نومځای کې سمول کله چې افقی ترتیب بدل کړئ",
 	"proofreadpage-preferences-pagelist-use-visual-mode": "د مخلړ سمولو لپاره نوي ازمېښتي ليدنيز ونگ‌ډول څخه کار واخلئ.",
+	"proofreadpage-preferences-show-dialog-before-every-save-label": "هرکله چې {{GENDER:|تاسو}} ي مخ د پرله‌پسې‌سمون ونگ‌ډول کې خوندي کوئ؛ نو د سمون لنډيز ډيالوگ ښکاره کړئ",
+	"proofreadpage-preferences-after-save-action-label": "د پرله‌پسې‌سمون ونگ‌ډول په کارولو سره د مخ خوندي‌کولو وروسته دا چاره ترسره کړئ.",
 	"proofreadpage-indexquality-alt": "$1 اعتبار لرنه {{PLURAL:$1|page|پاڼې}}, $2 يواځې اصلاح {{PLURAL:$2|page|pages}} او $3 نه اصلاح شوي  {{PLURAL:$3|page|مخونه}}",
 	"content-model-proofread-page": "کتاب مخ",
 	"content-model-proofread-index": "کتاب ليکلړ",
@@ -172,5 +181,6 @@
 	"tag-proofreadpage-quality1-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality1}}\" ته بدل کړ",
 	"tag-proofreadpage-quality2-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality2}}\" ته بدل کړ",
 	"tag-proofreadpage-quality3-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality3}}\" ته بدل کړ",
-	"tag-proofreadpage-quality4-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality4}}\" ته بدل کړ"
+	"tag-proofreadpage-quality4-description": "هغه سمونونه چې د مخ څرنگوالی يې \"{{int:tag-proofreadpage-quality4}}\" ته بدل کړ",
+	"tag-proofreadpage-editinsequence-description": "د نوي پرله‌پسې‌سمون ونگ‌دول سره ترسره شوي سمونونه"
 }
